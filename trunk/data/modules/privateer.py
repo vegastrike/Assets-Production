@@ -17,7 +17,9 @@ class privateer (Director.Mission):
     self.loops=(difficulty (credits_to_maximize_difficulty),
           random_encounters (sigdis, detectiondis, gendis, minships,genships,fighterprob,enemyprob,capprob,capdist),
           trading (),
+          dynamic_universe
 #          garbage_collect (),
+
           )
 
   def Execute(self): #this execute function should not need to be changed...

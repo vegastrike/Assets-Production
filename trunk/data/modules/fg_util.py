@@ -135,7 +135,6 @@ def _AddFGToFactionList(fgname,faction):
 	key = MakeFactionKey(faction)
 	Director.pushSaveString (ccp,key,fgname)
 		
-
 def _RemoveFGFromFactionList (fgname,faction):
 	key = MakeFactionKey(faction)
 	lun=Director.getSaveStringLength(ccp,key)
@@ -233,13 +232,40 @@ def FGsInSystem(faction,system):
 def CountFactionShipsInSystem(faction,system):
 	count=0
 	for fgs in FGsInSystem (faction,system):
-		ships=ReadStringList (ffp,MakeFGKey (fgs,faction))
+		ships=ReadStringList (ccp,MakeFGKey (fgs,faction))
 		for num in range(ShipListOffset()+2,len(ships),PerShipDataSize()):
 			try:
 				count+= int(ships[num])
 			except:
 				print 'number ships '+ships[num] + ' not read'
 	return count
+def _prob_round(curnum):
+	ret = int(curnum)
+	diff = curnum-int(curnum)
+	if (diff>0):
+		if (vsrandom.uniform (0,1)<diff):
+			ret+=1
+	else:
+		if (vsrandom.uniform (0,1)<-diff):
+			ret-=1
+	return ret
+
+def GetShipsInFG(fgname,faction):
+	ships = ReadStringList (ccp,MakeFGKey(fgname,faction))
+	count=0
+	for num in range(ShipListOffset()+2,len(ships),PerShipDataSize()):
+		count+=int(ships[num])
+	launchnum = vsrandom.randrange(1,6)
+	if (launchnum>count)
+		launchnum=count
+	ret = []
+	for num in range(ShipListOffset(),len(ships),PerShipDataSize()):
+		curnum=int(ships[num+2])
+		cnum = _prob_round(curnum*float(launchnum)/count)
+		if (cnum>0):
+			ret+=[(ships[num],cnum)]
+	return ret
+
 def LaunchLandShip(fgname,faction,typ,numlaunched=1):
 	key = MakeFGKey (fgname,faction)
 	ships=ReadStringList (cpp,key)
