@@ -13,7 +13,7 @@
 	</Sound>
 	<Defense HudImage="cruiser-hud.spr">
 		<Armor front="3000" right="3200" left="3200" back="3000"/>
-		<Shields front="4200.000000" left="4000" right="4000" back="3800.000000" recharge="70.000000"/>
+		<Shields front="4200.000000" left="4000" right="4000" back="3800.000000" recharge="90.000000"/>
 		<Hull strength="7000.000000"/>
 	</Defense>
 	<Stats mass="1500.000000" momentofinertia="1818.000000" fuel="20000000"></Stats>
@@ -36,21 +36,28 @@
 
 
 <Subunit file="turretlaunchercapmissile" x="-2.381250" y="0.400000" z="-2.455606" ri="0.226708" rj="0.000000" rk="0.973963" qi="-0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="turretbeamheavy" x="-0.000000" y="0.998131" z="-5.900000" ri="0.011594" rj="0.262793" rk="0.964783" qi="0.000000" qj="0.964848" qk="-0.262810"/>
 <Subunit file="turretlaunchercapmissile" x="-3.243412" y="0.400000" z="-4.968820" ri="-0.637206" rj="0.000000" rk="-0.770694" qi="0.000000" qj="1.000000" qk="0.000000"/>
 <Subunit file="turretlaunchercapmissile" x="2.644841" y="0.400000" z="-4.770843" ri="1.000000" rj="0.000000" rk="0.000000" qi="-0.000000" qj="1.000000" qk="0.000000"/>
 <Subunit file="turretlaunchercapmissile" x="2.187699" y="0.400000" z="-2.384122" ri="0.129257" rj="0.000000" rk="0.991611" qi="0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="turret_capship_gun" x="-0.650000" y="0.800000" z="1.975000" ri="1.000000" rj="0.000000" rk="0.000000" qi="-0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="turret_capship_gun" x="0.798447" y="0.800000" z="2.033626" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
 <Subunit file="turretlaunchercapmissile" x="-3.073313" y="0.000000" z="-4.899379" ri="-0.226708" rj="0.000000" rk="-0.973963" qi="0.000000" qj="-1.000000" qk="-0.000000"/>
 <Subunit file="turretlaunchercapmissile" x="2.882210" y="0.000000" z="-4.341503" ri="-0.226708" rj="0.000000" rk="0.973963" qi="-0.000000" qj="-1.000000" qk="0.000000"/>
-<Subunit file="turretbeamheavy" x="-0.000000" y="-0.200000" z="5.096140" ri="-1.000000" rj="0.000000" rk="0.000000" qi="-0.000000" qj="-1.000000" qk="0.000000"/>
 <Subunit file="turretlaunchercapmissile" x="-1.312452" y="0.400000" z="5.613851" ri="-0.315232" rj="0.000000" rk="0.949015" qi="0.000000" qj="1.000000" qk="0.000000"/>
 <Subunit file="turretlaunchercapmissile" x="1.262048" y="0.600000" z="5.714783" ri="0.793417" rj="0.000000" rk="-0.608679" qi="0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="turretbeamheavy" x="0.475000" y="-0.200000" z="7.602201" ri="-0.597359" rj="0.000000" rk="0.801974" qi="-0.000000" qj="-1.000000" qk="0.000000"/>
-<Subunit file="turretbeamheavy" x="-0.491694" y="-0.200000" z="7.527837" ri="-0.597359" rj="0.000000" rk="0.801974" qi="-0.000000" qj="-1.000000" qk="0.000000"/>
-<Subunit file="turretLR_PminusBeam" x="-0.004394" y="0.200000" z="13.616410" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="turretLR_PminusBeam" x="-0.046438" y="0.000000" z="13.757195" ri="-0.543227" rj="0.000000" rk="-0.839586" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+
+<Subunit file="turret_capship_gun" x="-0.750000" y="0.800000" z="1.975000" ri="1.000000" rj="0.000000" rk="0.000000" qi="-0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret_capship_gun" x="0.750000" y="0.800000" z="2.033626" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turretLR_PminusBeam" x="-0.000000" y="0.200000" z="13.616410" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turretLR_PminusBeam" x="-0.000000" y="0.000000" z="13.757195" ri="-0.543227" rj="0.000000" rk="-0.839586" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+
+
+
+<Subunit file="turretbeamheavy" x="-0.000000" y="-0.200000" z="5.096140" ri="-1.000000" rj="0.000000" rk="0.000000" qi="-0.000000" qj="-1.000000" qk="0.000000"/>
+<Subunit file="turretbeamheavy" x="0.500000" y="-0.200000" z="7.500000" ri="-0.597359" rj="0.000000" rk="0.801974" qi="-0.000000" qj="-1.000000" qk="0.000000"/>
+<Subunit file="turretbeamheavy" x="-0.50000" y="-0.200000" z="7.500000" ri="-0.597359" rj="0.000000" rk="0.801974" qi="-0.000000" qj="-1.000000" qk="0.000000"/>
+
+<Subunit file="turretbeamheavy" x="-0.381250" y="0.800000" z="-6.455606" ri="0.226708" rj="0.000000" rk="0.973963" qi="-0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turretbeamheavy" x="0.381250" y="0.800000" z="-6.455606" ri="0.226708" rj="0.000000" rk="0.973963" qi="-0.000000" qj="1.000000" qk="0.000000"/>
+
 
 
 
