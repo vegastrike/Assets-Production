@@ -10,11 +10,14 @@ import unit
 import VS
 
 class bounty (Director.Mission):
-
-	def __init__ (self,minnumsystemsaway, maxnumsystemsaway, creds, run_away, shipdifficulty, tempfaction):
+	def SetVar (self,val):
+	  if (self.var_to_set!=''):
+	    quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,val)
+	def __init__ (self,minnumsystemsaway, maxnumsystemsaway, creds, run_away, shipdifficulty, tempfaction,jumps=(),var_to_set=''):
 	  Director.Mission.__init__ (self)
 	  self.newship=""
 	  self.mplay="all"
+	  self.var_to_set = var_to_set
 	  self.istarget=0
 	  self.obj=0
 	  self.curiter=0
@@ -27,7 +30,7 @@ class bounty (Director.Mission):
 	  sysfile = VS.getSystemFile()
 	  self.you=VS.getPlayer()
 	  self.enemy=VS.Unit()
-	  self.adjsys=go_to_adjacent_systems (self.you,vsrandom.randrange(minnumsystemsaway,maxnumsystemsaway+1))
+	  self.adjsys=go_to_adjacent_systems (self.you,vsrandom.randrange(minnumsystemsaway,maxnumsystemsaway+1),jumps)
 	  self.mplay=universe.getMessagePlayer(self.you)
 	  if (self.you):
 	    VS.IOmessage (0,"bounty mission",self.mplay,"Good Day, %s. Your mission is as follows:" % (self.you.getName()))
@@ -40,6 +43,7 @@ class bounty (Director.Mission):
 	    VS.terminateMission (0)
 	
 	def Win (self,un,terminate):
+	  self.SetVar(1)
 	  VS.IOmessage (0,"bounty mission",self.mplay,"#00ff00Excellent work pilot.")
 	  VS.IOmessage (0,"bounty mission",self.mplay,"#00ff00You have been rewarded for your effort as agreed.")
 	  VS.IOmessage (0,"bounty mission",self.mplay,"#00ff00Your contribution to the war effort will be remembered.")
@@ -50,6 +54,7 @@ class bounty (Director.Mission):
 	  
 	def Lose (self,terminate):
 	  VS.IOmessage(0,"bounty mission",self.mplay,"#ff0000You have failed this mission and will not be rewarded.")
+	  self.SetVar(-1)
 	  if (terminate):
 	    print "lose bounty mission"
 	    VS.terminateMission(0)
@@ -118,7 +123,7 @@ class bounty (Director.Mission):
 		print "ending briefing"        	  
 	
 
-def initrandom (minns, maxns, credsmin, credsmax, run_away, minshipdifficulty, maxshipdifficulty):
+def initrandom (minns, maxns, credsmin, credsmax, run_away, minshipdifficulty, maxshipdifficulty,jumps=(),var_to_set=''):
   you=VS.getPlayer()
   tempfaction
   if (you):
@@ -131,7 +136,7 @@ def initrandom (minns, maxns, credsmin, credsmax, run_away, minshipdifficulty, m
       tempfaction=faction_ships.intToFaction(factionname)
       i+=1
     sd = vsrandom.random()*(maxshipdifficulty-minshipdifficulty)+minshipdifficulty
-    return bounty (minns,maxns,(1.0+(sd*0.5))*(vsrandom.random ()*(credsmax-credsmin)+credsmin),run_away,sd,tempfaction)
+    return bounty (minns,maxns,(1.0+(sd*0.5))*(vsrandom.random ()*(credsmax-credsmin)+credsmin),run_away,sd,tempfaction,jumps,var_to_set)
   else:
     print "aborting bounty initrandom"
     VS.terminateMission(0)
