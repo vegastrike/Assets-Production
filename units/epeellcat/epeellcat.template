@@ -21,7 +21,8 @@
 <Mount weapon="Disruptor" size="light medium special autotracking" x="-5.240053" z="-0.426834" y="0.726702"/>
 <Mount weapon="Disruptor" size="light medium special autotracking" x="5.483819" z="-0.151023" y="0.889213" />
 
-
+<Mount weapon="Neutron" size="Light Medium Heavy" x="0.480426" z="3.783170" y="0.589719" />
+<Mount weapon="Neutron" size="Light Medium Heavy" x="-0.455556" z="3.666667" y="0.666667"/>
 
 <Mount weapon="HeatSeeker" size="light-missile medium-missile" x="-1.369247" z="1.379604" y="0.005125"  volume="181"/>
 <Mount weapon="HeatSeeker" size="light-missile medium-missile" x="1.656804" z="1.490848" y="-0.087377"  volume="181"/>
@@ -29,9 +30,6 @@
 <Mount weapon="Swarm" size="light-missile special-missile autotracking" x="1.656804" z="2.490848" y="-0.387377"  volume="471"/>
 
 
-
-<Mount weapon="Neutron" size="Special Medium Heavy" x="0.480426" z="3.783170" y="0.589719" />
-<Mount weapon="Neutron" size="Special Medium Heavy" x="-0.455556" z="3.666667" y="0.666667"/>
 <Light file="supernova.bmp" x="0.770710" z="-3.150000" y="0.912131" size="1.495000"/>
 <Light file="supernova.bmp" x="-0.841421" z="-3.150000" y="1.124264" size="1.195000"/>
 <Light file="supernova.bmp" x="-1.300000" z="-3.100000" y="-0.200000" size="1.235000"/>

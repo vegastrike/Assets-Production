@@ -10,6 +10,8 @@
 
 <Mount weapon="MassDriver" size="light medium special" x="-3.240053" z="-0.426834" y="0.726702"/>
 <Mount weapon="MassDriver" size="light medium special" x="3.483819" z="-0.151023" y="0.889213" />
+<Mount weapon="Meson" size="Light Medium Heavy" x="1.480426" z="2.783170" y="0.589719" />
+<Mount weapon="Meson" size="Light Medium Heavy" x="-1.455556" z="2.666667" y="0.666667"/>
 
 
 
@@ -19,9 +21,6 @@
 <Mount weapon="Swarm" size="light-missile special-missile" x="1.656804" z="2.490848" y="-0.387377" ammo="47" volume="471"/>
 
 
-
-<Mount weapon="Meson" size="Medium Heavy" x="1.480426" z="2.783170" y="0.589719" />
-<Mount weapon="Meson" size="Medium Heavy" x="-1.455556" z="2.666667" y="0.666667"/>
 <Light file="supernova.bmp" x="0.770710" z="-3.150000" y="0.912131" size="1.495000"/>
 <Light file="supernova.bmp" x="-0.841421" z="-3.150000" y="1.124264" size="1.195000"/>
 <Light file="supernova.bmp" x="-1.300000" z="-3.100000" y="-0.200000" size="1.235000"/>

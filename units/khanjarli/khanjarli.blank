@@ -15,11 +15,11 @@
 	<!-- Weapons -->
 	<Mount weapon="" size="light medium heavy" x="-4" y="1" z="6" />
 	<Mount weapon="" size="light medium heavy" x= "4" y="1" z="6" />
-	<Mount weapon="" size="Light-missile medium-missile heavy-missile" x="-2.85" y="-2" z="-1" ammo="6"/>
-	<Mount weapon="" size="Light-missile medium-missile heavy-missile" x= "2.85" y="-2" z="-1" ammo="6"/>
-	<Mount weapon="" size="Light-missile medium-missile heavy-missile special" x= "5.5" y="-3" z="-3" ammo ="6"/>
-	<Mount weapon="" size="Light-missile medium-missile heavy-missile special" x="-5.5" y="-3" z="-3" ammo ="6"/>
-	<Subunit file="medium_blank" x="0" y="0" z="-19" qi="0" qj="0" qk="-1"/>
+	<Mount weapon="" size="special Light-missile medium-missile heavy-missile" x="-2.85" y="-2" z="-1" ammo="6" volume="901"/>
+	<Mount weapon="" size="special Light-missile medium-missile heavy-missile" x= "2.85" y="-2" z="-1" ammo="6" volume="901"/>
+	<Mount weapon="" size="Light-missile medium-missile heavy-missile special" x= "5.5" y="-3" z="-3" ammo ="6" volume="751"/>
+	<Mount weapon="" size="Light-missile medium-missile heavy-missile special" x="-5.5" y="-3" z="-3" ammo ="6" volume="751"/>
+	<Subunit file="medium_blank" x="0" y="0" z="-19" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1"/>
 
 
 	
