@@ -13,7 +13,9 @@ module universe {
     if ((sysaway<=0)||(max<=0)) {
       _io.sprintf(str,"Your final destination is %s",currentsystem);
       _io.message (1,"game","all",str);
-      return currentsystem;
+	  object ret = _string.new();
+	  _io.sprintf (ret,"%s",currentsystem);
+      return ret;
     } else {
       int nextsysnum=random.randomint(0,max-1);
       object nextsystem=_std.getAdjacentSystem(currentsystem,nextsysnum);
