@@ -1,0 +1,41 @@
+<Unit>
+<!-- The subunits were generated with the following commands
+     ./asteroidgen asteroid.xmesh 4000 160 40 120 .3 10 20 0 1025
+     ./asteroidgen asteroid.lod1.xmesh 4000 160 40 120 .3 6 15 0 1025
+     ./asteroidgen asteroid.lod2.xmesh 4000 160 40 120 .3 4 6 0 1025
+     
+     the command line arguments are in the same order as the questions asked.
+     to make a different LOD use a different seed
+ --><SubUnit file="asteroids"  />
+<SubUnit file="asteroids1600gap"  />
+<SubUnit file="asteroids1600gap"  />
+
+<SubUnit file="asteroids" x="2500" y="2500" z="2500" ri="1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids" x="-2500" y="2500" z="2500" ri="1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
+<SubUnit file="asteroids" x="2500" y="-2500" z="2500" ri="1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/>
+<SubUnit file="asteroids" x="-2500" y="-2500" z="2500" ri="-1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids" x="2500" y="2500" z="-2500" ri="-1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
+<SubUnit file="asteroids" x="-2500" y="2500" z="-2500" ri="-1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/>
+
+<SubUnit file="asteroids" x="2500" y="-2500" z="-2500" />
+<SubUnit file="asteroids" x="-2500" y="-2500" z="-2500"  ri="1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+
+<SubUnit file="asteroids" x="4500" y="000" z="000" />
+<SubUnit file="asteroids" x="-4500" y="000" z="000" />
+<SubUnit file="asteroids" x="000" y="4500" z="000" />
+<SubUnit file="asteroids" x="000" y="-4500" z="000" />
+<SubUnit file="asteroids" x="000" y="000" z="4500" />
+<SubUnit file="asteroids" x="000" y="000" z="-4500" />
+
+
+	<Thrust>
+		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
+		<Maneuver yaw="0000" pitch="0000" roll="0000"/>
+	</Thrust>
+	<Defense>
+		<Hull strength="400000000"/>
+	</Defense>
+
+<Stats mass="60" momentofinertia="60" fuel="20000"></Stats>
+
+</Unit>
