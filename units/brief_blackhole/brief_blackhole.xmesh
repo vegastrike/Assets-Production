@@ -1,0 +1,36 @@
+<Mesh texture="planets/blackhole.png" blend="ONE ONE" scale="1000000">
+	<Points>
+		<Point>
+			<Location x="1" z="1" y="0"/>
+		</Point>
+		<Point>
+			<Location x="-1" z="1" y="0"/>
+		</Point>
+		<Point>
+			<Location x="-1" z="-1" y="0"/>
+		</Point>
+		<Point>
+			<Location x="1" z="-1" y="0"/>
+		</Point>
+	</Points>
+	<Polygons>
+		<Quad>
+			<Vertex point="0" s="0" t="0"/>
+			<Vertex point="1" s="1" t="0"/>
+			<Vertex point="2" s="1" t="1"/>
+			<Vertex point="3" s="0" t="1"/>
+		</Quad>
+		<Quad>
+			<Vertex point="3" s="0" t="0"/>
+			<Vertex point="2" s="1" t="0"/>
+			<Vertex point="1" s="1" t="1"/>
+			<Vertex point="0" s="0" t="1"/>
+		</Quad>
+	</Polygons>
+ <material reflect="0">
+ <specular red="0" green="0" blue="0" alpha="0"/>
+ <ambient red="1" green="1" blue="1" alpha="1"/>
+ <diffuse red="1" green="1" blue="1" alpha="1"/>
+ </material>
+
+</Mesh>
