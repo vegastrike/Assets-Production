@@ -15,6 +15,7 @@ class difficulty:
       VS.SetDifficulty(diff)
 
   def __init__(self,credsMax):
+    print "init diff"
     self.diff=[]
     self.creds=[]
     self.credsToMax=credsMax
@@ -32,7 +33,7 @@ class difficulty:
       self.creds+=[un.getCredits()]
       self.i+=1
       un=VS.getPlayerX(self.i)
-      
+      print "done init diff"
   def usingDifficulty (self):
     return (VS.GetDifficulty()!=1.0)
   
