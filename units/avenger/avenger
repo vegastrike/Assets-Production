@@ -29,7 +29,7 @@
 	</Stats>
 
 	<Computer yaw="60.400002" pitch="50.600006" roll="70.400002" afterburner="148" maxspeed="65" TrackingCone="20" lockcone="35">
-                <Radar itts="true" error="0" range="75000" maxcone="-1" color="true"/>
+                <Radar itts="true" error="0" range="200000" maxcone="-1" color="true"/>
 	</Computer>
 
 	<Jump delay="1" jumpenergy="2100"/>       
