@@ -3,6 +3,10 @@ module escort_mission {
   import universe;
   import unit;
   import faction_ships;
+  import random;
+  import launch;
+
+
   object youcontainer;
   object escortee;
   object faction;
@@ -22,17 +26,15 @@ module escort_mission {
   float ourdistfromjump;
   float cred;
   object beginningSystem;
-  import random;
-  import launch;
-  import faction_ships;
-  bool capship;
   float my_timer;
+  float enemytime;
+  bool intra_system;
   void AddCargoToUnit (object un, int quantity) {
 	  object list=_unit.getRandCargo(quantity);
 	  cargoname=_olist.at(list,0);
 	  int quantity = _unit.addCargo(un,cargoname,_olist.at(list,1),_olist.at(list,2),_olist.at(list,3),_olist.at(list,4),_olist.at(list,5));  
 	  _olist.delete(list);
-  }
+  };
   void ActivateStage1 (object jumppoint) {
     object escname=faction_ships.getRandomFighter("merchant");
     object esc =launch.launch_wave_around_unit("Base",faction,escname,"default",1,distfromjump,jumppoint);
@@ -47,21 +49,23 @@ module escort_mission {
     //esc is not null when we are here
     object capname = faction_ships.getRandomCapitol(faction);
     object un = launch.launch_wave_around_unit ("base",faction,capname,"default",1,distfrombase,esc);
+    basecontainer = _unit.getContainer (un);
     stage=2;
   };
   bool ReadyForStage2() {
-    object un =_unit.getShip(other_system_comp);
+    object un =_unit.getUnit(other_system_comp);
     if (_std.isNull (un)) {
       other_system_comp=0;
     }else {
       other_system_comp=other_system_comp+1;
-      return ((!_string.equal(beginningSystem,_std.getSystemFile))&&(_unit.equal(un,_unit.getUnitFromContainer(escortee))));
+      return ((!_string.equal(beginningSystem,_std.getSystemFile()))&&(_unit.equal(un,_unit.getUnitFromContainer(escortee))));
     }
     return false;
   };
-  void init (int factionname, int missiondifficulty, float our_dist_from_jump, float dist_from_jump, float distance_from_base, float creds, float enemy_time) {
+  void init (int factionname, int missiondifficulty, float our_dist_from_jump, float dist_from_jump, float distance_from_base, float creds, float enemy_time, bool AllInThisSystem) {
     
 	  faction_ships.init();
+	  intra_system=AllInThisSystem;
 	  enemytime=enemy_time;
 	  my_timer=_std.getGameTime()-enemy_time;//will start with enemies;
 	  _std.setNull (escortee);
@@ -72,14 +76,16 @@ module escort_mission {
 	  cred=creds;
 	  distfrombase=distance_from_base;
 	  distfromjump=dist_from_jump;
-	  ourdistfromjump=out_dist_from_jump;
+	  ourdistfromjump=our_dist_from_jump;
 	  difficulty=missiondifficulty;
 	  object mysys=_std.getSystemFile();
 	  beginningSystem = _std.getSystemFile();
 	  object you=_unit.getPlayer();
 	  youcontainer=_unit.getContainer (you);
+	  object str = _string.new();
 	  if (!_std.isNull(you)) {
-	    _io.sprintf(str,"Good Day, %s. Our %s ship near the",_unit.getName (you),faction);
+	    object nam = _unit.getName(you);
+	    _io.sprintf(str,"Good Day, %s. Our %s ship near the",nam,faction);
 	  } else {
 	    _std.terminateMission (false);
 	    return;
@@ -88,7 +94,8 @@ module escort_mission {
 	  object destpoint=universe.getRandomJumppoint();
 	  if (!_std.isNull(destpoint)) {
 	    destination = _unit.getContainer (destpoint);
-	    _io.sprintf(str,"%s jump point. Requires assistance",_unit.getName (destpoint));
+	    object jnam=_unit.getName (destpoint);
+	    _io.sprintf(str,"%s jump point. Requires assistance",jnam);
 	    _io.message (2,"game","all",str);
 	    _io.sprintf(str,"You must see her to our capitol starship on the other side.");
 	    _io.message (3,"game","all",str);
@@ -96,7 +103,7 @@ module escort_mission {
 	      _io.message (4,"game","all","Do not falter here. We will not take failure lightly.");
 	    }
 	  }else {
-	    terminateMission(false);
+	    _std.terminateMission(false);
 	  }
 	  _string.delete(str);
 
@@ -105,6 +112,9 @@ module escort_mission {
 	  int removenum=0;
 	  if (!_std.isNull(you)) {
 	    removenum=_unit.removeCargo(you,cargoname,100,true);
+	    if (removenum==0) {
+	      removenum=1;
+	    }
 	  }
 	  if ((removenum>0)) {
 	    if (difficulty==0) {
@@ -146,24 +156,31 @@ module escort_mission {
 	  }
 	};
 	void GenerateEnemies (object esc) {
-	  if ((_std.GetGameTime()-my_timer)>enemytime) {
-	    if (_string.equal("pirates",faction)) {
+	  object jp = _unit.getUnitFromContainer(destination);
+	  if (!_std.isNull(jp)) {
+	    _unit.setTarget (esc,jp);
+	  }//make sure escort stays on target
+	  float mtime = _std.getGameTime();
+	  if ((mtime-my_timer)>enemytime) {
+	    if (false) {
 	      object randomtype = faction_ships.getRandomFighter ("confed");
-	      launch.launch_wave_around_unit("Shadow","confed",randomtype,"default",difficulty+1,4000,esc);
+	      launch.launch_wave_around_unit("Shadow","confed",randomtype,"default",difficulty+1,4000.0,esc);
 	    }else {
 	      object randtype = faction_ships.getRandomFighterInt(random.randomint(0,faction_ships.getMaxFactions()-1));
-	      launch.launch_wave_around_unit ("Shadow","pirates",randtype,"default",difficulty+1,4500,esc);
+	      launch.launch_wave_around_unit ("Shadow","pirates",randtype,"default",difficulty+1,4500.0,esc);
 	    }
-	    my_timer = _std.getGameTime();
+	    my_timer = mtime;	    
 	  }
+
 	};
-	CheckForCompletion(play,esc) {
+	
+	void CheckForCompletion(object play, object esc) {
 	      object dockingbase = _unit.getUnitFromContainer (basecontainer);
 	      if (_std.isNull(dockingbase)) {
 		takeCargoAndTerminate (play,dockingbase);//will get mad for null docking base
 	      }else {
 		_unit.setTarget(esc,dockingbase);//stay on target
-		if (_unit.getDistance(esc,dockingbase)<400) {
+		if (_unit.getDistance(esc,dockingbase)<400.0) {
 		  object nil;
 		  _std.setNull(nil);
 		  _unit.setTarget(esc,nil);
@@ -182,7 +199,7 @@ module escort_mission {
 	    object jumppoint = _unit.getUnitFromContainer (destination);
 	    if (!_std.isNull(jumppoint)) {
 	      if (_unit.getDistance (jumppoint,play)<ourdistfromjump) {
-		ActivateStage1();
+		ActivateStage1(jumppoint);
 	      }
 	    }else {
 	      _std.terminateMission(false);
@@ -191,13 +208,13 @@ module escort_mission {
 	  } else {
 	    //running part of mission
 	    object esc = _unit.getUnitFromContainer (escortee);
-	    if (std.isNull(esc)) {//if guy dies you're dead, man
+	    if (_std.isNull(esc)) {//if guy dies you're dead, man
 	      takeCargoAndTerminate (play, esc);
 	      return;
 	    }//else generate baddies targetting the escort container
 	    GenerateEnemies (esc);
 	    if (stage==1) {
-	      if (ReadyForStage2()) {
+	      if ((intra_system)||(ReadyForStage2())) {
 		ActivateStage2(esc);
 	      }
 	    }
