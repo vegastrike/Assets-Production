@@ -129,7 +129,6 @@ def RandomFlightgroup (faction):
 		return ''
 	import vsrandom
 	return Director.getSaveString(ccp,key,vsrandom.randrange(0,i))
-
 def ListToPipe (tup):
 	fina=''
 	if (len(tup)):
@@ -433,6 +432,14 @@ def ShipsInFG(fgname,faction,offset=1):
 	for num in range (ShipListOffset(),len(ships),PerShipDataSize()):
 		rez+=[(ships[num],int(ships[num+offset]))]
 	return rez
+def RandomShipIn (fg,fac):
+	key = MakeFGKey(fg,fac)
+	len = Director.getSaveStringLength(ccp,key)-ShipListOffset()
+	len = int(len/PerShipDataSize())
+	if (len>0):
+		return Director.getSaveString(ccp,key,ShipListOffset()+PerShipDataSize()*vsrandom.randrange(0,len))
+	return ''
+
 def minIndex (vals,indices):
 	for i in indices:
 		ok=1
