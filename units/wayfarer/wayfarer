@@ -21,7 +21,7 @@
 	<Sound>
 	</Sound>
 
-	<Defense HudImage="wayfarer-hud.png">
+	<Defense HudImage="wayfarer-hud.spr">
 		<Armor front="250" right="225" left="225" back="240"/>
 		<Shields front="150.000000" back="150.000000" recharge="30.000000"/>
 		<Hull strength="200.000000"/>
@@ -44,8 +44,8 @@
 
 <!-- new elements added -->
 
-    <Light file="supernova.bmp" x="10,84" y="-2,759" z="-18,302" size="6"/>
-    <Light file="supernova.bmp" x="-10,84" y="-2,759" z="-18,302" size="6"/>
+    <Light file="supernova.bmp" x="10,24" y="-2,759" z="-18,302" size="6"/>
+    <Light file="supernova.bmp" x="-10,24" y="-2,759" z="-18,302" size="6"/>
 
         <Dock x="0" y="4.6" z="6" size="10"/>
         <Dock x="0" y="-4.7" z="6" size="10"/>
