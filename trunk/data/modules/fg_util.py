@@ -283,7 +283,7 @@ def FGSystem (fgname,faction):
 		return Director.getSaveString(ccp,key,1)
 	else:
 		#print fgname+' for '+faction+' already died, in no system'
-		return 'no_sector/no_system'
+		return 'nil'
 def TransferFG (fgname,faction,tosys):
 	key = MakeFGKey(fgname,faction)
 	len = Director.getSaveStringLength(ccp,key)
@@ -304,7 +304,7 @@ def AddShipsToFG (fgname,faction,typenumbertuple,starsystem):
 		for tn in typenumbertuple:
 			_AddShipToKnownFG(key,tn)
 	
-def RemoveShipFromFG (fgname,faction,type,landed=0):
+def RemoveShipFromFG (fgname,faction,type,numkill=1,landed=0):
 	key = MakeFGKey (fgname,faction)
 	leg = Director.getSaveStringLength (ccp,key)
 	for i in range (ShipListOffset()+1,leg,PerShipDataSize()):
@@ -316,22 +316,23 @@ def RemoveShipFromFG (fgname,faction,type,landed=0):
 				numlandedships=int (Director.getSaveString (ccp,key,i+1))
 			except:
 				print "unable to get savestring "+i+" from FG "+fgname +" "+faction+ " "+type
-			if (numships>1):
-				numships-=1
+			if (numships>numkill):
+				numships-=numkill
 				if (numships<numlandedships):
 					landed=1
-					print 'trying to remove launched ship '+type+' but all are landed'
+					#print 'trying to remove launched ship '+type+' but all are landed'
 				Director.putSaveString (ccp,key,i,str(numships))
 				if (landed and numlandedships>0):
-					Director.putSaveString(ccp,key,i+1,str(numlandedships-1))
+					Director.putSaveString(ccp,key,i+1,str(numlandedships-numkill))
 			else:
-				numships-=1
+				numkill=numships
+				numships=0
 				for j in range (i-1,i+PerShipDataSize()-1):
 					Director.eraseSaveString(ccp,key,i-1)
 			if (numships>=0):
 				try:
 					totalnumships = int(Director.getSaveString(ccp,key,0))
-					totalnumships -=1
+					totalnumships -=numkill
 					if (totalnumships>=0):
 						Director.putSaveString(ccp,key,0,str(totalnumships))
 						if(totalnumships==0):
@@ -340,8 +341,9 @@ def RemoveShipFromFG (fgname,faction,type,landed=0):
 						print 'error...removing too many ships'
 				except:
 					print 'error, flight record '+fgname+' corrupt'
-			return
+			return numkill
 	print 'cannot find ship to delete in '+faction+' fg ' + fgname
+	return 0
 def BaseFGInSystemName (system):
 	return 'Base_'+system
 def AllFGsInSystem(faction,system):
