@@ -1,9 +1,7 @@
 =================================================
  Readme for VegaStrike version 0.2.9 Beta
 =================================================
-
----*OLD*---
-
+*--ADD STUFF HERE--*
 Vegastrike has finally reached the state of being multisystem!
 This means that many user requests have been accomplished including sound, joystick support, cloaking, bolt weapons, Target viewscreen, nebulae, asteroids, multiple systems, ingame-respawn... the list goes on
 All of the ships are original, never before seen ships modelled by the Vegastrike team!
@@ -13,29 +11,47 @@ And if you can design some missions it would rock!
 =================================================
  Contents
 =================================================
-1) Running Vegastrike In Windows
-2) Running Vegastrike From the Command Line
-3) Playing Music in Vegastrike in Windows (Experemintal)
-4) Docking to a Planet or a Capship
- Trading and Accepting Missions
-5) Interstellar Warp Transit (Jump Drive)
-6) Time Compression / Autopilot
-7) ReSpawn
-8) Transfer Command
-9) Pilot turrets
-10) Single-Player Controls
-11) Features
-12) Editing Missions
-13) Editing AI
+*--ADD STUFF HERE--*
+) Saving and Loading
+) Running Vegastrike In Windows
+) Running Vegastrike From the Command Line
+) Playing Music in Vegastrike in Windows (Experemintal)
+) Docking to a Planet or a Capship
+) Trading and Accepting Missions
+) Interstellar Warp Transit (Jump Drive)
+) Time Compression / Autopilot
+) ReSpawn
+) Transfer Command
+) Pilot turrets
+) Single-Player Controls
+) Multiplayer Controles
+) Features
+) Editing Missions
+) Editing AI
+) Troubleshooting
+) Copyrights
+
+=================================================
+ The Update Utility
+=================================================
+The "Get Recent Update" program will allow you to get the most recent data for vegastrike.
+It will first ask you whether you wish to update the update list.  This will allow you to get the most recent working code if you click "Update".
+After choosing that option, you will be presented with a checkbox and a number of buttons.
+The check box labeled "Restore Factory Defaults" will allow you to revert all of your modified files to the "factory defaults".
+The next button says "Update to recent experimental data" and will update to the most recent code.  When using this button, you may get better code, but it will be experimental.
+The rest of the buttons will update to previous (or more recent, if you updated your update list) releases.
+
+=================================================
+ Saving and Loading
+=================================================
+Y
 
 =================================================
  Running Vegastrike In Windows
 =================================================
-If you want to run the normal privateer mission, just double-click on the "Vegastrike" program.
-
-Or you can drag the mission that you want to run onto the the program named "Vegastrike"
-
-Or you can run the "Mission Launcher" program and select the correct mission.
+You can run the "Mission Launcher" program and select the correct mission.
+Or, if you wish to play the default privateer mission, you may use the Saved Game Selector utility.
+You can also use this
 
 =================================================
  Running Vegastrike From the Command Line
@@ -68,14 +84,22 @@ If you wish to earn money, you will need to know how to dock.
 If you wish to get clearence to land at the base or planet, you must communicate that you wish to land by pressing the '0' key.
 In order to dock to starships, you must press 'd' and to undock, press 'd' again or press 'u'.
 Once docked at the planet or base, you may press '0' again to leave your starship and enter the base.
-See the next section for more information about the bases.
+See the next sections for more information about the bases.
 
 =================================================
- Trading and Accepting Missions
+ Accepting Missions
 =================================================
-Once inside a base, you will see a computer sstem with many choices:
-- Mission BBS: This section will allow you to accept missions if you want to get money.
-- Buy Mode:    This area will allow you to buy cargo for ship.  In order to buy cargo, you must have enough credits (see the top of the screen).  On
+You must accept missions to earn money.  The first step is to click on the "Mission BBS" button.  This will give you a list of mission categories.  You will then need to click on the category name
+There will be missions to attack targets in the Attack  categories.
+In the Neutral category, there will be neutral missions like patroling, escorting and scouting.
+Finally, the Confed, Aera, Pirate, Rlaan or Retro categories will give you missions to diliver cargo, search for contraband or escort ships to other places.  
+Once you have bought the missions, you may check your cockpit screen to see the instructions for the missions.
+When you have completed them, your credits will immediately be added to your account.
+
+=================================================
+ Trading Cargo
+=================================================
+If you wish, you may buy cargo at your base.
 
 =================================================
  Interstellar Warp Transit (Jump Drive)
@@ -183,9 +207,87 @@ Shift-E      Eject
 Shift-Z      Eject cargo
 
 =================================================
+ Multiplayer Controls
+=================================================
+*--ADD STUFF HERE--*
+--------------------
+Player 1
+--------------------
+Arrow keys   Flight Sim style turning (you can also use the keypad arrows)
+\            full throttle
+backspace    zero throttle
+=,+          accel
+-            decel
+enter        fire missile
+space        Fire Guns
+backspace    stop
+tab          Afterburners
+j            engage interstellar warp drive (use at clear blue balls)
+*,ins        Spin Right
+/,del        Spin Left
+Shift-~      shelton slide while holding key
+y            match speed
+t            target
+p            target nearest to center of screen
+n            target enemy targetting you
+Shift-T      reverse cycle through targets
+m            change active missile
+g            change active gun
+v            switch targetting computer mode to navigation mode and then view mode
+w            switch left targetting cpu
+c            cloak
+Shift-W      shift weapons computer mode to damage mode
+Shift-S      next music track
+F1           toggle cockpit/background display
+F2           left
+F3           right
+--------------------
+Player 2
+--------------------
+F4           back
+F5           Chasecam
+F6           Panning Cam (s,a,w,z pan)
+F7           Target Cam
+F8           Strange Cam
+F9           Increase Time Compression
+F10          Reset Time Compression
+F11          Zoom in
+F12          Zoom out
+a,d,w,z      pan ghost cam
+;            respawn -- use after death to recreate your starship
+[            switch ships in battle (use to control allies)
+]            switch to a turret onto your ship
+Shift-A      autopilot to the target
+Shift-P      target enemies for your turret
+Shift-N      Turret Nearest Target
+h            Turrets target threats
+`            SheltonKey
+-            DecelKey
++            AccelKey 
+=            AccelKey
+/            RollLeftKey
+*            RollRightKey
+backspace    StopKey
+\            StartKey
+tab          ABKey 
+!            SuicideKey
+|,pause      PauseKey
+page down    Scroll VDUs down
+page up      Scroll VDUs up
+home         Set Velocity Frame of Refrence
+end          Reset Velocity Frame of Refrence
+Shift-F      Tell wingmen to form up
+Shift-B      Tell wingmen to stop forming up
+Shift-H      Tell wingmen to help you out
+Shift-D      Tell wingmen to attack targetted starship
+1-9          Communicate to your allies
+Shift-E      Eject
+Shift-Z      Eject cargo
+
+=================================================
  Features
 =================================================
-
+*--ADD STUFF HERE--*
 -Autopilot (Shift-A)
 -Better Communications (always has eight choices)
 --
@@ -225,10 +327,12 @@ A mission must begin with the headers:
 <mission>
 	<variables>
 		<var name="defaultplayer" value="blue" 
-		<var name="mission_name" value="4 versus 4"  
+		<var name="mission_name" value="Test Mission"  
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp"  
 		<var name="system" value="sol"  
-		<var name="description" value="4vs4.txt"  
+		<var name="description" value="This is a fun mission."  
+		<var name="author" value="Me"  
+		<var name="briefing" value="In this mission, you will have to have fun, or you will fail."  
 	</variables>
 
 it loads sol.system  as the star system (which is in XML and stores all present planets)
@@ -251,7 +355,7 @@ the rest is in development
 		</flightgroup>
 you must end all flight group tags
 continue with any other flightgroups... you can have as many as you want from as many named factions are you want...
-      </flightgroup>
+      </flightgroups>
 </mission>
 
 =================================================
@@ -313,6 +417,15 @@ this will interrupt the current progress of any scripts
 So that's how to use AI scripts.
 If you want to know more about writing actual maneuvers (like turnaway.xml  which as you can see is in the directory) please contact me at hellcatv@hotmail.com
 you need to have a heavy background in vector math.
+
+=================================================
+ Troubleshooting
+=================================================
+*--ADD STUFF HERE--*
+
+=================================================
+ Copyrights
+=================================================
 
 © 2002 Daniel Horn, Patrick Horn, Alan Shieh, and Aleksander Rawass
        Sabarok Aresh, Stefan Stapelberg
