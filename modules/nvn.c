@@ -69,6 +69,10 @@ module nvn {
   };
   void loop(){
     if (begin==0) {
+		_io.message(0,"game","all","use the '[' key to begin and");
+		_io.message(1,"game","all","to switch control of your ships");
+		_io.message(2,"game","all","or you can have fun flying");
+		_io.message(3,"game","all","in a dumbfire ;)");
 		begin=1;
 	  	object player = _unit.getPlayer();
 		object faction = _unit.getFaction(player);
