@@ -11,6 +11,7 @@ militia=7
 ISO=8
 unknown=9
 factions = ("confed","aera","rlaan","merchant","retro","pirates","hunter","militia","ISO","unknown")
+useBlank = (   0    ,  0   ,   0   ,     1    ,   1   ,   1     ,    1   ,    1    ,  0  ,  0)
 enemies =  ((aera,aera,rlaan,rlaan,retro,pirates,ISO), #confed
             (confed,confed,confed,militia,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,pirates,hunter,merchant,ISO), #aera
             (confed,confed,militia,aera,aera,aera,aera,aera,aera,aera,aera,pirates,retro,retro,retro,retro,retro,hunter),#rlaan
@@ -58,8 +59,9 @@ capitols = (("corvette","starrunner","cruiser","carrier","fleetcarrier","escortc
             ("truck","cargoship","corvette","destroyer"), #ISO
             ("unknown_active",) #unknown
            )
-def appendName():
-  if (usingDifficulty()):
+def appendName(faction):
+  
+  if (useBlank[faction] and usingDifficulty()):
       return ".blank"
   else:
       return ""
@@ -94,10 +96,10 @@ def getRandomShipType(ship_list):
 def getFigher(confed_aera_or_rlaan, fighter):
   fighterlist = fighters[confed_aera_or_rlaan]
   fighterlist = fighterlist[fighter]
-  return fighterlist+appendName()
+  return fighterlist+appendName(confed_aera_or_rlaan)
 
 def getRandomFighterInt(confed_aera_or_rlaan):
-  return getRandomShipType(fighters[confed_aera_or_rlaan])+appendName()
+  return getRandomShipType(fighters[confed_aera_or_rlaan])+appendName(confed_aera_or_rlaan)
 
 def getNumCapitol (confed_aera_or_rlaan):
   return len(capitols[confed_aera_or_rlaan])
