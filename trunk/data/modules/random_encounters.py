@@ -9,6 +9,7 @@ print "before_initin"
 import adventure
 print "after_initin"
 import news
+print "after_news"
 class random_encounters:
   class playerdata:  
     def __init__(self,sig_distance,det_distance):
@@ -216,3 +217,4 @@ class random_encounters:
       self.cur_player=0
     VS.setMissionOwner(self.cur_player)
       
+print "done loading rand enc"
