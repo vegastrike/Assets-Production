@@ -44,8 +44,8 @@ module starships_jumped_and_killed {
       iterator=0;
     }
     //don't push begin_num_ships...that wasn't popped
-    _olist.push_back (iterator);
-    _olist.push_back (sys_iterator);
+    _olist.push_back (my_list,iterator);
+    _olist.push_back (my_list,sys_iterator);
 
   };
 }
