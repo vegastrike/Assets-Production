@@ -330,8 +330,11 @@ def checkSystemRelevant(system):
 	"""returns 1 if the system in question is within a 1 system radius of
 	the players current system"""
 	mysys = VS.getSystemFile()
-	if system in GetAllAdjacentSystems(mysys) or mysys == system:
+	if mysys == system:
 		return 1
+	for i in range(VS.GetNumAdjacentSystems(mysys)):
+		if (VS.GetAdjacentSystem(mysys,i)==system):
+			return 1
 
 def GetAllAdjacentSystems(mystr):
 	syslist = list()
@@ -342,9 +345,9 @@ def GetAllAdjacentSystems(mystr):
 def checkVarListRelevant(newslist,randint):
 	"""returns true only if the newslist is relevant
 	(major or close to home)"""
-	if (not (newslist[0] in minorNewsTypes())):
+	if (not (newslist[1] in minorNewsTypes())):
 		return 1
-	if (newslist[0] in minorNewsTypes()) and (checkSystemRelevant(newslist[6])):
+	if (checkSystemRelevant(newslist[7])):
 		return 1
 
 def processNewsTuple(newsstring,randint):
