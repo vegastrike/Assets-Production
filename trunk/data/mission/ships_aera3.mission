@@ -1,0 +1,56 @@
+<mission>
+<!--
+	<settings>
+		<origin  planet="earth" x="10000.0" y="5000.0" z="-400.0"/>
+	</settings>
+-->
+	<variables>
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="4 versus 4" />
+		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+		<var name="system" value="blank" />
+		<var name="description" value="4vs4.txt" />
+	</variables>
+        <flightgroups>
+
+                <flightgroup name="blue" faction="aera" type="aeon" ainame="sitting_duck" waves="1" nr_ships="1">
+			<pos x="100.0" y="10000.0" z="100.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+                <flightgroup name="yellow" faction="aera" type="aevant" ainame="_ai_rolling" waves="1" nr_ships="2">
+			<pos offset="blue" x="00.0" y="-200.0" z="100.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+
+                <flightgroup name="makkarel" faction="aera" type="kyta" ainame="_ai_rolling" waves="1" nr_ships="2">
+			<pos offset="yellow" x="00.0" y="00.0" z="400.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+                <flightgroup name="brown" faction="aera" type="lekra" ainame="_ai_rolling" waves="1" nr_ships="2">
+			<pos offset="yellow" x="0.0" y="00.0" z="500.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+                <flightgroup name="blobb" faction="aera" type="dagger" ainame="_ai_rolling" waves="1" nr_ships="2">
+			<pos offset="yellow" x="0.0" y="00.0" z="600.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+        </flightgroups>
+
+	<module name="director">
+		<script name="initgame">
+		</script>
+
+		<script name="gameloop">
+		</script>
+	</module>
+</mission>
