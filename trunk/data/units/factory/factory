@@ -1,4 +1,4 @@
-<Unit scale="20">
+<Unit scale="40">
 <Meshfile file="factory.xmesh"/>
 	<Thrust>
 		<Engine Afterburner="00.000000" Forward="000000" Retro="000000" Left="00000" Right="000000" Top="000000" Bottom="00000"/>
