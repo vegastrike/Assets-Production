@@ -27,14 +27,14 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 				,"aggressor"	: aggressor
 				,"defender"	: defender
 				,"success"	: getSuccessStr(success)
-#				,"dockedat"	: getDockFaction()
+				,"dockedat"	: getDockFaction(system)
 				,"scale_event"	: scale_event
 				,"system"	: system
 				,"keyword"	: keyword
 				}
 
-	return formatNewsItem (getNewsItem(getDockFaction(),type_event,stage_event,getSuccessStr(success)
-					 ,getPOV(getDockFaction(),defender,aggressor,getSuccessStr(success))
+	return formatNewsItem (getNewsItem(getDockFaction(system),type_event,stage_event,getSuccessStr(success)
+					 ,getPOV(getDockFaction(system),defender,aggressor,getSuccessStr(success))
 					 ,scale_event,keyword))
 
 # ------------------------------------------------------------------------------
@@ -161,12 +161,16 @@ def validateNewsKeyword(newslist,keyword):
 
 def povCutOff():
 # the "cutoff" value for neutral/good/bad in the getPOV function
-	return 0.15
+	return 0.25
 
 def getPOV(facmy,defender,aggressor,success):
 # returns a rough string approximation of the relation between two functions
 	relatdef = VS.GetRelation(facmy,defender)
 	relatagg = VS.GetRelation(facmy,aggressor)
+	print "relatdef =",
+	print relatdef
+	print "relatagg =",
+	print relatagg
 
 	if (relatdef <= -povCutOff() and relatagg <= -povCutOff()) or (relatdef >= povCutOff() and relatagg >= povCutOff()):
 		return "neutral"
@@ -188,7 +192,7 @@ def getPOV(facmy,defender,aggressor,success):
 		print "Error, one or more values out of range"
 		return "neutral"
 
-def getDockFaction():
+def getDockFaction(system):
 # returns the faction of the place the player is docked at
 #	return "aera" # FIXME -- make the stub functions actually return a useful value!
 	i=0
@@ -200,10 +204,13 @@ def getDockFaction():
 			break
 		un=VS.getUnit(i)
 	if un.isPlanet() or (un.getFactionName() == "neutral"):
-		global allUsefullVariables
-		return VS.GetGalaxyFaction(allUsefullVariables["system"])
+		print "Returning the systems faction"
+		return VS.GetGalaxyFaction(system)
 	else:
+		print "Returning" + un.getFactionName() + "as units faction"
 		return un.getFactionName()
+	
+
 
 def getSuccessStr(success):
 # returns a string either "success" or "loss" based on the arg success
