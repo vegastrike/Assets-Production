@@ -1,4 +1,4 @@
-<system name="Sol" background="cube" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
+<system name="Sol" background="magic_galaxy3" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
 <Light>
 <ambient red=".3" green=".3" blue=".3"/>
 <diffuse red="1" green="1" blue="1"/>
