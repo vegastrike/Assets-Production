@@ -25,12 +25,6 @@
 		<Vehicle file="hellcat" x="200" y="4000" z="10000" faction="aera"/>
 		<Building file="hellcat" x="300" y="2000" z="300" faction="confed"/>
 		<Vehicle file="hellcat" x="500" y="3000" z="100" faction="aera"/>
-		<Building file="forest" x="4300" y="2000" z="300" faction="confed"/>
-
-		<Building file="bridge" x="300" y="2000" z="2300" faction="confed"/>
-		<Building file="forest" x="2300" y="2000" z="2300" faction="confed"/>
-		<Building file="palace" x="3300" y="2000" z="300" faction="confed"/>
-		<Building file="forest" x="3400" y="2000" z="300" faction="confed"/>
 
 	</ContinuousTerrain>
 
