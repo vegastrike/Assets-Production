@@ -37,12 +37,9 @@
 
 	<Stats mass="9.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
 
-	<Computer yaw="100.500000" pitch="100.500000" roll="100.500000" afterburner="140.300003" maxspeed="45.599998"/ >
+	<Computer yaw="100.500000" pitch="100.500000" roll="100.500000" afterburner="140.300003" maxspeed="45.599998">
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
 	</Computer>
-
-	<Energy>
-		<Reactor limit="900"/>
-	</Energy>
        
        	<Jump delay="1" jumpenergy="500"/>       
 	<Hold volume="75">
