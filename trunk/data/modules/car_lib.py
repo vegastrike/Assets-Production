@@ -5,10 +5,21 @@ def isCar(c):
 	return nam=='car' or nam=='porsche'
 
 class Environment(Director.Mission):
-	def __init__ (self):
+	def CreateUnit (self, name):
+		evenodd= (2*(self.num_un %2) - 1)
+		x_coord = -evenodd  * 30 
+		un = VS.launch ("traffic",name,"neutral", "unit","modules/traffic.py",1,1,(x_coord,0,self.num_un*100),'')
+		un.SetOrientation ((0,1,0),(0,0,evenodd))
+		self.num_un+=1
+	def __init__ (self,numcar, numspec):
 		Director.Mission.__init__(self)
 		print 'initing'
 		self.iter=0
+		self.num_un=0
+		for i in range(numcar):
+			self.CreateUnit ("porsche")
+		for i in range(numspec):
+			self.CreateUnit ("car")
 	def Execute(self):
 		un = VS.getUnit (self.iter)
 		if (un):
@@ -31,7 +42,7 @@ class Environment(Director.Mission):
 		if (playa):
 			if (playa!=un):
 				posdiff = playa.Position()[2]-un.Position()[2]
-				if ((posdiff*(2*(posdiff>0)-1))>5000):
+				if ((posdiff*(2*(posdiff>0)-1))>2500):
 					R = un.GetOrientation ()[2]
 	
 					if (posdiff*R[2]<0):
