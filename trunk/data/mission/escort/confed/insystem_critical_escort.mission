@@ -34,5 +34,17 @@
 		<script name="gameloop">
 			<exec module="escort_mission" name="loop"/>
 		</script>
+		<script name="initbriefing">
+			<exec module="escort_mission" name="initbriefing">
+			</exec>
+		</script>
+		<script name="loopbriefing">
+			<exec module="escort_mission" name="loopbriefing">
+			</exec>
+		</script>
+		<script name="endbriefing">
+			<exec module="escort_mission" name="endbriefing">
+			</exec>
+		</script>
 	</module>
 </mission>

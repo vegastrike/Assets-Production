@@ -34,5 +34,19 @@
 		<script name="gameloop">
 			<exec module="bounty" name="loop"/>
 		</script>
+		<script name="initbriefing">
+			<exec module="bounty" name="initbriefing">
+			</exec>
+		</script>
+		<script name="loopbriefing">
+			<exec module="bounty" name="loopbriefing">
+			</exec>
+		</script>
+		<script name="endbriefing">
+			<exec module="bounty" name="endbriefing">
+			</exec>
+		</script>
+
+
 	</module>
 </mission>

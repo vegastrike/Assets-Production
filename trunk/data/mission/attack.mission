@@ -23,7 +23,7 @@
 		<import name="attack_jumppoint"/>
 		<script name="initgame">
 			<exec module="attack_jumppoint" name="init">
-			<const type="int" value="1"/> <!--faction name of thing you should attack 0 confed 1 aera... -->
+			<const type="object" object="string" value="confed"/> <!--faction name of thing you should attack 0 confed 1 aera... -->
 			<const type="int" value="0"/> <!--num systems away the delivery point is -->
 			<const type="int" value="2"/><!--ammt of enemies guaranteed -->
 			<const type="float" value="10000"/> <!--the distance drom base the new ship is generated at -->

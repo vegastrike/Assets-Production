@@ -22,8 +22,8 @@
 	<module name="director">
 		<import name="contraband_mission"/>
 		<script name="initgame">
-			<exec module="contraband_mission" name="init">
-			<const type="object" object="string" value="TetrabionicNuclearPhysicisianiblyCatonisisticAcconicon"/> <!--name of the bad cargo -->
+			<exec module="contraband_mission" name="initrandom">
+			<const type="object" object="string" value="Contraband"/> <!--name of the bad cargo -->
 			<const type="int" value="0"/><!-- the number of systems away the contraband mission is in -->
 			<const type="float" value="5000"/> <!--the distance from the jump point that you have to be at-->
 			<const type="float" value="20480"/> <!-- how much you are paid -->
@@ -37,5 +37,20 @@
 		<script name="gameloop">
 			<exec module="contraband_mission" name="loop"/>
 		</script>
+
+
+		<script name="initbriefing">
+			<exec module="contraband_mission" name="initbriefing">
+			</exec>
+		</script>
+		<script name="loopbriefing">
+			<exec module="contraband_mission" name="loopbriefing">
+			</exec>
+		</script>
+		<script name="endbriefing">
+			<exec module="contraband_mission" name="endbriefing">
+			</exec>
+		</script>
+
 	</module>
 </mission>
