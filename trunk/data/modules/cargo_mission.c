@@ -159,6 +159,7 @@ module cargo_mission {
 		while (i<difficulty) {
 		  un=faction_ships.getRandomFighter(faction);
 		  object newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 200.0,400.0,you);
+		  _unit.setFgDirective(newunit,"B");
 		  _unit.setTarget(newunit,you);
 		  i=i+1;
 		}
