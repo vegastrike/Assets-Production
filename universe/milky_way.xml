@@ -341,7 +341,7 @@
 			      <var name="faction" value="confed"/> 
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="sol_sector/e_eridani sol_sector/tinvallir"/>
+				<var name="jumps" value="sol_sector/e_eridani sol_sector/tingvallir"/>
 				<var name="data" value="1635"/>
 			</sector>
 			<sector name="ella">
@@ -2154,7 +2154,7 @@
 			</sector>
 			<sector name="rigel">
 				<var name="faction" value="pirates"/> 
-				<var name="jumps" value="enigma_sector/niven enigma_sector/ghorah_khar"/>
+				<var name="jumps" value="enigma_sector/niven enigma_sector/ghorah_khar enigma_sector/axis"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1038"/>
