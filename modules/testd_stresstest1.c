@@ -46,8 +46,8 @@ module testd_stresstest1 {
 
     if(step==0){
 
-    launch.launch_around_unit("Kalkos","green","confed","destiny","_ai_stationary",6,8);
-    launch.launch_around_unit("Kalkos","red","confed","nova","_ai_stationary",6,8);
+    bool retval = launch.launch_around_unit("Kalkos","green","confed","destiny","_ai_stationary",6,8);
+    retval=launch.launch_around_unit("Kalkos","red","confed","nova","_ai_stationary",6,8);
 
       orderlist_green=ai_orderlist.newOrderList();
       ai_orderlist.orderFlyTo(orderlist_green,"Arados",null_pos,1.0,true,500.0);
@@ -98,7 +98,7 @@ module testd_stresstest1 {
     ai_orderlist.orderAttack(orderlist_omega,5000.0);
     order.orderList("omega",orderlist_omega);
 
-    launch.launch_around_unit("Poniferos","gamma","confed","destiny","_ai_stationary",6,8);
+    bool retval =launch.launch_around_unit("Poniferos","gamma","confed","destiny","_ai_stationary",6,8);
 
       orderlist_gamma=ai_orderlist.newOrderList();
       ai_orderlist.orderFlyTo(orderlist_gamma,"Arados",null_pos,1.0,true,500.0);
