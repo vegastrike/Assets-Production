@@ -165,7 +165,7 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 			if preferredfaction:
 				for k in faction_ships.enemies[faction_ships.factiondict[thisfaction]]:
 					for m in fg_util.FGsInSystem(k,j[-1]):
-						if (vsrandom.randrange(0,4)==0):#fixme betterthan 4
+						if (vsrandom.randrange(0,5)==0):#fixme betterthan 4
 							generateBountyMission(j,m,k)
 				m = FGsInSystem ("merchant",j[-1])
 				nummerchant=len(m)
@@ -173,7 +173,7 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 				numthisfac=len(m)
 				m+=FGsInSystem (fac,j[-1])
 				
-				numescort = vsrandom.randrange(0,10)
+				numescort = vsrandom.randrange(0,2)
 				if (numescort>len(m)):
 					numescort=len(m)
 				for k in range(numescort):
@@ -183,7 +183,7 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 					if f>=numthisfac:
 						f = fac
 					generateEscortMission(j,k,f)
-			for k in range(vsrandom.randrange(1,4)): ###FIXME: choose a better number than 4.
+			for k in range(vsrandom.randrange(0,3)): ###FIXME: choose a better number than 4.
 				rnd=vsrandom.random()
 				if (rnd<.45):    # 45% - Patrol mission
 					generatePatrolMission(j,vsrandom.randrange(4,10))
