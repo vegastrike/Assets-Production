@@ -16,6 +16,14 @@ module unit {
     return retval;
 
   }; 
+  bool isAsteroid (object un) {
+    object unit_fgid = _unit.getFgName(un);
+    bool retval = _string.equal (unit_fgid,"Asteroid");
+    _string.delete(unit_fgid);
+    return retval;
+
+  }; 
+
   object getSignificant (int whichsignificant, bool landable_only, bool capship_only) {
 	object un;
 	_std.setNull (un);

@@ -118,16 +118,16 @@ module random_encounters {
     float minsig =  minimumSigDistApart();
     float significant_distance;
     float detection_distance;
-    if (sig_distance>minsig*0.25) {
-      significant_distance = minsig*0.25;
-      _olist.set (cur,5,minsig*0.25);
+    if (sig_distance>minsig*0.15) {
+      significant_distance = minsig*0.15;
+      _olist.set (cur,5,minsig*0.15);
     }else {
       _olist.set (cur,5,sig_distance);
             significant_distance = sig_distance;
     }
-    if (det_distance>minsig*0.33) {
-      _olist.set (cur,6,minsig*0.33);
-            detection_distance = minsig*0.33;
+    if (det_distance>minsig*0.2) {
+      _olist.set (cur,6,minsig*0.2);
+            detection_distance = minsig*0.2;
     }else {
       _olist.set (cur,6,det_distance);
             detection_distance = det_distance;
@@ -156,15 +156,40 @@ module random_encounters {
       int numship= random.randomint (1,gen_num_ships);
       object launched = launch.launch_wave_around_unit("privateer",localfaction,fighter,"default",numship,200.0,generation_distance*_std.Rnd()*0.9,un);
       if ((_std.Rnd())<capship_prob) {
-	object capship = faction_ships.getRandomCapitol (localfaction);
-	launched=launch.launch_wave_around_unit("privateer",localfaction,capship,"default",1,200.0,capship_gen_distance*_std.Rnd()*0.9,un);
+	if (AsteroidNear (un,_olist.at (cur,5))) {
+	  _io.printf ("ast near, no cap");
+	}else {
+	  _io.printf ("no asty near");
+	  object capship = faction_ships.getRandomCapitol (localfaction);
+	  launched=launch.launch_wave_around_unit("privateer",localfaction,capship,"default",1,200.0,capship_gen_distance*_std.Rnd()*0.9,un);
+	}
       }
       _string.delete (localfaction);
       i=i+1;
     }
     _string.delete (sysfile);
   };
-
+  bool AsteroidNear (object unit, float how) {
+    int num_ships=0;
+    int count=0;
+    bool retval=false;
+    object un = _unit.getUnit (count);
+    while (!(_std.isNull(un))) {
+      float dd = _olist.at (cur,6);//detectioN_distance
+      if (unit.getSignificantDistance(un,unit)<how                ) {
+	if (unit.isAsteroid (un)) {
+	  _io.printf ("asty near");
+	  retval=true;
+	  _std.setNull(un);
+	}
+      }
+      count=count+1;
+      if (!_std.isNull(un)) {
+	un = _unit.getUnit(count);
+      }
+    }
+    return retval;    
+  };
   bool test_atLeastNInsignificantUnitsNear (object unit, int n) {
     int num_ships=0;
     int count=0;
@@ -178,14 +203,16 @@ module random_encounters {
 	  _io.printf ("unit not sig %d %s %s\n",num_ships,name,testname2);
 	  num_ships=num_ships+1;
 	  if (num_ships>=n){
-	    return true;
+	    _std.setNull(un);
 	  }
 	}
       }
       count=count+1;
-      un = _unit.getUnit(count);
+      if (!_std.isNull(un)) {
+	un = _unit.getUnit(count);
+      }
     }
-    return false;
+    return (num_ships>=n);
   };
 
 
@@ -195,13 +222,16 @@ module random_encounters {
     object un = _unit.getUnit (count);
     while (!(_std.isNull(un))) {
       float dd = _olist.at (cur,6);//detection dis
-      if (unit.getSignificantDistance(unit,un)<dd) {
+      if (unit.getSignificantDistance(unit,un)<dd*1.6) {
 	if ((!_unit.isSignificant(un))&&(!_unit.isSun(un))) {
 	  num_ships=num_ships+1;
 	}
       }
       count=count+1;
       un = _unit.getUnit(count);
+    }
+    if (num_ships>=n) {
+      _io.printf ("n units near");
     }
     return num_ships>=n;
   };
