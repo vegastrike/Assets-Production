@@ -2,9 +2,9 @@
 
 <Meshfile file="turret_capship_torplauncher_gun.xmesh"/>
 
-<Mount weapon="hephaestuspointdefensecannon" mountsize="special" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
-<Mount weapon="capshipdisruptor" mountsize="capship-heavy" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
-<Mount weapon="LR_Beam" mountsize="capship-medium" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
+<Mount weapon="hephaestuspointdefensecannon" size="special" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
+<Mount weapon="capshipdisruptor" size="capship-heavy" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
+<Mount weapon="LR_ParticleBeam" size="capship-medium autotracking" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
 
 		<Thrust>
 		<Engine Afterburner="000000" Forward="000000" Retro="0000" Left="0000" Right="0000" Top="00000" Bottom="000000"/>
