@@ -388,19 +388,19 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 			<var name="LockVertexArrays" value="true"/>
 			<var name="OptimizeVertexArrays" value="true"/>
 			<var name="displaylists" value="false"/>
-			<var name="fullscreen" value="false"/>
+			<var name="fullscreen" value="true"/>
 <!-- #end -->
 <!-- #linux_safe
 			<var name="OptimizeVertexArrays" value="false"/>
 			<var name="displaylists" value="true"/>
 			<var name="OptimizeVertexArrays" value="true"/>
-			<var name="fullscreen" value="false"/>
+			<var name="fullscreen" value="true"/>
 #end -->
 <!-- #stable
 			<var name="OptimizeVertexArrays" value="false"/>
 			<var name="displaylists" value="false"/>
 			<var name="LockVertexArrays" value="false"/>
-			<var name="fullscreen" value="true"/>
+			<var name="fullscreen" value="false"/>
 #end -->
 <!--
 This line starts a Software setting block. Everything betweeen #Software and #end will be
@@ -481,7 +481,7 @@ This is done many times later in this config file
 <!-- #GeForce3
 			<var name="fog" value="true"/>
 			<var name="ModelDetail" value="10"/>
-			<var name="x_resolution" value="1240"/>
+			<var name="x_resolution" value="1280"/>
 			<var name="y_resolution" value="1024"/>
 			<var name="mipmapdetail" value="3"/>
 			<var name="reflection" value="true"/>
