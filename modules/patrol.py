@@ -70,7 +70,7 @@ class patrol (Director.Mission):
         if (self.jnum<len(self.patrolpoints)):
 	    jpoint =self.patrolpoints[self.jnum]
             if (jpoint.isNull()):
-                self.DeletePatrolpoint(self.jnum,"Debris")
+                self.DeletePatrolPoint(self.jnum,"Debris")
             else:
 	      if (self.you.getSignificantDistance (jpoint)<self.distance):
                   self.DeletePatrolPoint(self.jnum,jpoint.getName())
