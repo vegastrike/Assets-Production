@@ -27,7 +27,7 @@
 	</Sound>
 
 	<Stats mass="25.000000" momentofinertia="25.000000" fuel="400000000"></Stats>
-	<Computer yaw="80" pitch="80" roll="85" afterburner="105" maxspeed="37.500">
+	<Computer yaw="80" pitch="80" roll="85" afterburner="105" maxspeed="37.500"/>
 
 	<Jump delay="2" jumpenergy="150"/>       
 
