@@ -1,6 +1,5 @@
 module difficulty {
   object creds;
-  object saved_data;
   int playeriterator;
   float credsToMax;
   float cred_ratio;
@@ -23,7 +22,6 @@ module difficulty {
     object player=_unit.getPlayerX(0);
     int i=0;
     playeriterator=0;
-    saved_data = _olist.new();
     creds=_olist.new();
     float diff = _std.getDifficulty();
     while (!_std.isNull(player)) {
@@ -40,7 +38,6 @@ module difficulty {
 	  diff = saveddiff;
 	}
       }
-      _olist.push_back(saved_data,temp);
       i=i+1;
       player=_unit.getPlayerX(i);
     }
@@ -53,8 +50,13 @@ module difficulty {
       float newcreds = _unit.getCredits (player);
       if (newcreds!=oldcreds) {
 	if (newcreds>oldcreds) {
-	  object save = _olist.at (saved_data,playeriterator);
-       	  float difficulty = _olist.at (save,0);
+	  float difficulty;
+	  object save = _unit.getSaveData (player,"31337ness");
+	  if (_olist.size(save)>0) {
+	    difficulty = _olist.at (save,0);
+	  }else {
+	    difficulty = _std.getDifficulty();
+	  }
 
 	  difficulty=difficulty+((newcreds-oldcreds)/credsToMax);
 	  if (difficulty>0.99999){
