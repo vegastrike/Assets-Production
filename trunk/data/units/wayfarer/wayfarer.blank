@@ -57,8 +57,6 @@
 	</Energy>
 	<Jump missing = "1" delay = "2" jumpenergy = "150"  >
 	</Jump>
-	<description  >
-	</description>
 	<Hold volume = "125" >
 		<Category file = "Natural_Products/Natural_Resources" >
 			<import price = ".8" pricestddev = ".2" quantity = "0" quantitystddev = "5"  >
