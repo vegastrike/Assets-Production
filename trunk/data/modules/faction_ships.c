@@ -1,5 +1,6 @@
 module faction_ships {
   import random;
+  import ship_upgrades;
   object capitols;
   object fighters;
   object unknown_ships;
@@ -48,6 +49,7 @@ module faction_ships {
   void init(){
     make_factions_list();
     make_ships_list();
+    ship_upgrades.init();
   };
   object get_enemy_of (object factionname) {
     return get_X_of (enemies, factionToInt (factionname));
