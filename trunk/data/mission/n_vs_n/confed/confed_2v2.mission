@@ -5,7 +5,7 @@
 
 	<variables>
 		<var name="defaultplayer" value="blue"/>
-		<var name="system" value="sol_sector/sol" />
+		<var name="system" value="sol_sector/polaris" />
 		<var name="description" value="An even battle" />
 	</variables>
         <flightgroups>

@@ -5,11 +5,11 @@
 
 	<variables>
 		<var name="defaultplayer" value="blue"/>
-		<var name="system" value="sol_sector/sirius" />
-		<var name="description" value="An even battle" />
+		<var name="system" value="mission_sector/blockade_tango" />
+		<var name="description" value="You and your wingmen\battle starships" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="dumbfire" ainame="default" waves="1" nr_ships="2">
+                <flightgroup name="blue" faction="aera" type="dumbfire" ainame="default" waves="1" nr_ships="1">
 			<pos x="0400" y="-35400" z="24700.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
@@ -19,15 +19,15 @@
 		</flightgroup>
         </flightgroups>
 	<module name="director">
-		<import name="nvn"/>
+		<import name="gauntlet"/>
 		<script name="initgame">
-			<exec module="nvn" name="initgame">
+			<exec module="gauntlet" name="initgame">
 			<const type="int" value="2"/>
-			<const type="int" value="3"/>
+			<const type="int" value="2"/>
 			</exec>
 		</script>
 		<script name="gameloop">
-			<exec module="nvn" name="loop"/>
+			<exec module="gauntlet" name="loop"/>
 		</script>
 	</module>
 </mission>

@@ -5,7 +5,7 @@
 
 	<variables>
 		<var name="defaultplayer" value="blue"/>
-		<var name="system" value="epsilon_sector/locanda" />
+		<var name="system" value="enigma_sector/blake" />
 		<var name="description" value="An even battle" />
 	</variables>
         <flightgroups>

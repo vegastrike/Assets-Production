@@ -14,13 +14,25 @@
 	</variables>
 		<flightgroups>
 				<flightgroup name="brown" faction="aera" type="firefly" ainame="default" waves="1" nr_ships="1">
+			<pos x="51500" y="2000" z="26000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+				<flightgroup name="brown" faction="confed" type="nova" ainame="default" waves="1" nr_ships="1">
+			<pos x="51500" y="2000" z="25000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+				<flightgroup name="brown" faction="confed" type="tian" ainame="default" waves="1" nr_ships="1">
+			<pos x="51500" y="2000" z="24000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+				<flightgroup name="brown" faction="confed" type="puma" ainame="default" waves="1" nr_ships="1">
 			<pos x="51500" y="2000" z="23000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
-				<flightgroup name="brown" faction="aera" type="fleetcarrier" ainame="default" waves="1" nr_ships="1">
+<!--				<flightgroup name="brown" faction="aera" type="fleetcarrier" ainame="default" waves="1" nr_ships="1">
 			<pos x="51500" y="2000" z="23000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
-		</flightgroup>
+		</flightgroup>-->
 <!--				<flightgroup name="brown" faction="confed" type="yrilan" ainame="default" waves="1" nr_ships="1">
 			<pos x="53400" y="5000" z="28000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
