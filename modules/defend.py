@@ -68,12 +68,12 @@ class defend (Director.Mission):
 	
     def GenerateEnemies (self,jp,you):
         VS.IOmessage (0,"defend",self.mplay,"Eliminate all %s ships here" % self.faction)
-        if (defend):
+        if (self.defend):
             VS.IOmessage (0,"defend",self.mplay,"You must protect %s." % jp.getName ())
         count=0            
         while (count<self.quantity):
 	    launched = launch.launch_wave_around_unit ("Shadow",self.faction,faction_ships.getRandomFighter(self.faction),"default",1,2000.0,4500.0,you,'')
-            if (defend):
+            if (self.defend):
                 launched.SetTarget (jp)
 	    else:
                 launched.SetTarget (you)
@@ -98,7 +98,7 @@ class defend (Director.Mission):
             self.defendee=self.adjsys.SignificantUnit()
         else:
             if (self.defendee.isNull ()):
-		if (defend):
+		if (self.defend):
                     self.FailMission(you)
 		else:
                     self.SuccessMission()
@@ -111,7 +111,7 @@ class defend (Director.Mission):
 		else:
                     un =  self.attackers[self.targetiter]
                     if (not un.isNull()):
-                        if (defend):#		  if (not un.isNull())
+                        if (self.defend):#		  if (not un.isNull())
                             un.SetTarget (self.defendee)
                         else:
                             un.SetTarget (self.you)
