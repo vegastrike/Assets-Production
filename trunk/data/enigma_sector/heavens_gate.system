@@ -5,10 +5,10 @@
 		<specular  red="0.98" green="1" blue="0.9"/>
 	</Light>
 
-	<planet name="Heavens Gate A" file="stars/white_star.png" radius="91000000" x="-260000000" y="0" z="-260000000" gravity="2000" Red="0.92" Green="0.99" Blue="1" ReflectNoLight="true" light="0">
-		<planet name="Heavens Gate B" file="stars/orange_star.png" radius="43333333" gravity="2000" ri="1560000000" rj="0" rk="0" si="0" sj="0" sk="1677000000" day="85800000" year="85800000" Red="1" Green="0.44" Blue="0.13" ReflectNoLight="true" light="0">
+	<planet name="Heavens Gate A" file="stars/white_star.png" radius="9100000" x="-26000000" y="0" z="-26000000" gravity="2000" Red="0.92" Green="0.99" Blue="1" ReflectNoLight="true" light="0">
+		<planet name="Heavens Gate B" file="stars/orange_star.png" radius="4333333" gravity="2000" ri="156000000" rj="0" rk="0" si="0" sj="0" sk="167700000" day="85800000" year="85800000" Red="1" Green="0.44" Blue="0.13" ReflectNoLight="true" light="0">
 		</planet>
-		<planet name="Barnoose"	file="planets/m_class3.png" radius="1281005" gravity="18" ri="260000000.0" rj="0" rk="260000000" si="260000000.0" sj="0" sk="-260000000.0" year="13661700" day="950" position="0">
+		<planet name="Barnoose"	file="planets/m_class3.png" radius="1281005" gravity="18" ri="26000000.0" rj="0" rk="26000000" si="26000000.0" sj="0" sk="-26000000.0" year="13661700" day="950" position="0">
 			<Atmosphere file="sol/earthcloudmaptrans.png" alpha="SRCALPHA INVSRCALPHA" radius="1335830"/>
 			<Ring file="planets/ring.png" innerradius="2259608" outerradius="2460058"  ri="-0.714508" rj="0.436248" rk="0.546960" si="-0.669016" sj="-0.197311" sk="-0.716580" wrapx="180" wrapy="2" year="3081"/>
 			<Ring file="planets/ring.png" innerradius="1966615" outerradius="2177051"  wrapx="220" wrapy="2" year="-3081"/>
