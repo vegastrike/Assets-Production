@@ -20,21 +20,18 @@
 		</flightgroup>
         </flightgroups>
 	<module name="director">
-		<import name="attack_jumppoint"/>
+		<import name="patrol_system"/>
 		<script name="initgame">
-			<exec module="attack_jumppoint" name="init">
-			<const type="int" value="1"/> <!--faction name of thing you should attack 0 confed 1 aera... -->
-			<const type="int" value="0"/> <!--num systems away the delivery point is -->
-			<const type="int" value="2"/><!--ammt of enemies guaranteed -->
-			<const type="float" value="10000"/> <!--the distance drom base the new ship is generated at -->
-			<const type="float" value="20000"/> <!-- how far they have to go to ahve been conisdered run away -->
-			<const type="float" value="3500"/> <!-- how much you are  paid -->
-			<const type="bool" value="true"/> <!--do you need to defend a base here-->
-<!--sample str arg			<const type="object" object="string" value="YOU SUCKORZ"/> -->
+			<exec module="patrol_system" name="init">
+			<const type="int" value="1"/> <!--num systems away -->
+
+			<const type="int" value="3"/><!--num patrol points (not zero)-->
+			<const type="float" value="10000"/> <!--the distance from the points you have to be to get credited -->
+			<const type="float" value="40000"/> <!-- how much you arepaid -->
 			</exec>
 		</script>
 		<script name="gameloop">
-			<exec module="attack_jumppoint" name="loop"/>
+			<exec module="patrol_system" name="loop"/>
 		</script>
 	</module>
 </mission>
