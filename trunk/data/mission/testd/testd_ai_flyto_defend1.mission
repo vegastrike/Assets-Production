@@ -1,0 +1,36 @@
+<mission>
+	<variables>
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="test ai" />
+		<var name="system" value="testai" />
+		<var name="description" value="still in development" />
+		<var name="author" value="Alexander Rawass" />
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="aera" type="firefly" ainame="default" waves="8" nr_ships="1">
+			<pos x="00.0" y="0.0" z="-10000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+	</flightgroups>
+
+	<module name="director">
+
+		<import name="test_ais" />
+
+		<script name="initgame">
+			<exec name="initgame" module="test_ais" />
+		</script>
+
+		<script name="gameloop">
+			<exec name="gameloop" module="test_ais" />
+
+		</script>
+
+		<script name="endgame">
+			<exec name="endgame" module="test_ais" />
+
+		</script>
+	</module>
+
+
+</mission>

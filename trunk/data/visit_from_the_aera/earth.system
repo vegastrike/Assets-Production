@@ -31,7 +31,7 @@
 
 <planet name="Moon" file="sol/moon.png" radius="700" gravity="20" x="2000" y="1000"  z="-8000" position="0" />			
 
-<planet name="jumppoint-mars" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-3000" y="-3000" z="-1000" destination="visit_from_the_aera/mars" />
+<planet name="jumppoint-mars" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-1000" y="-1000" z="-8000" destination="visit_from_the_aera/mars" />
 
 <planet name="jumppoint-drones" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="2000" y="2000" z="-8000" destination="visit_from_the_aera/drones_nebula" />
 

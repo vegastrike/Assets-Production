@@ -72,8 +72,8 @@ module test_ais {
     jumppoint_mars_unit=unit.getUnitByFgID("jumppoint-pluto");
     jumppoint_mars=_unit.getPosition(jumppoint_mars_unit);
 
-    //test_ai_flyto_jumppoint();
-    test_ai_flyto_waypoint_defend();
+    test_ai_flyto_jumppoint();
+    //test_ai_flyto_waypoint_defend();
 
   };
 
@@ -81,5 +81,11 @@ module test_ais {
   };
 
   void endgame(){
+  };
+
+  void initstarsystem(){
+    object sname=_std.GetSystemName();
+
+    _io.printf("INITSTARSYSTEMS name=%s\n",sname);
   };
 }
