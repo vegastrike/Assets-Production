@@ -7,7 +7,7 @@
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="Fly the asteroid field" />
-		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+
 		<var name="system" value="sol_sector/sirius" />
 		<var name="description" value="4vs4.txt" />
 	</variables>

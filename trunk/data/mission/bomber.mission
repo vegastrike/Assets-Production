@@ -2,7 +2,7 @@
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="bomber" />
-		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+
 		<var name="system" value="sol_sector/polaris" />
 		<var name="description" value="4vs4.txt" />
 	</variables>

@@ -2,7 +2,7 @@
    <variables>
       <var name="defaultplayer" value="blue"/>
       <var name="mission_name" value="Launch stress test" />
-      <var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+
       <var name="system" value="blank" />
       <var name="description" value="4vs4.txt" />
 		<var name="author" value="Alexander Rawass" />
