@@ -96,6 +96,11 @@ def formatProperTitle(str):
 			words[i] = words[i][0].capitalize() + words[i][1:]
 	return string.join(words)
 
+def makeVarList(ls):
+# formats a list of variables to be stored in a save game for later reference
+	return string.join(ls,',')
+
+
 # ------------------------------------------------------------------------------
 # Dictionary and Validation functions
 # ------------------------------------------------------------------------------
