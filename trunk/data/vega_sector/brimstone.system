@@ -1,0 +1,69 @@
+<system name="brimstone" background="backgrounds/verypurple" nearstars="500" stars="1000" starspread="150">
+<Light>
+	<ambient red="0.139331" green="0.139331" blue="0.139331"/>
+	<diffuse red="0.816497" green="0.773800" blue="0.637608"/>
+	<specular red="1.000000" green="0.898151" blue="0.609815"/>
+</Light>
+<Light>
+	<ambient red="0.092319" green="0.092319" blue="0.092319"/>
+	<diffuse red="0.441597" green="0.816497" blue="0.496142"/>
+	<specular red="0.292511" green="1.000000" blue="0.369235"/>
+</Light>
+<Light>
+	<ambient red="0.086546" green="0.086546" blue="0.086546"/>
+	<diffuse red="0.816497" green="0.394150" blue="0.465328"/>
+	<specular red="1.000000" green="0.233032" blue="0.324795"/>
+</Light>
+<Asteroid name="AFieldJump" file="AFieldJump" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" x="33890.585938" y="43435.617188" z="44778.945312"  />
+<Planet name="vega_sector/dakota" file="jump.png" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="200.000000" x="33890.585938" y="43435.617188" z="44778.945312" alpha="ONE ONE" destination="vega_sector/dakota"  >
+</Planet>
+<Asteroid name="AFieldJump" file="AFieldJump" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" x="-31005.710938" y="39044.679688" z="-24970.849609"  />
+<Planet name="vega_sector/port_hedland" file="jump.png" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="200.000000" x="-31005.710938" y="39044.679688" z="-24970.849609" alpha="ONE ONE" destination="vega_sector/port_hedland"  >
+</Planet>
+<Planet name="brimstone A" file="stars/orange_star.png" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="15000.000000" x="0" y="0" z="0"  Red="0.666667" Green="0.598767" Blue="0.406543" ReflectNoLight="true" light="0">
+	<Planet name="Manawydan ap Llyr" file="planets/gas_giant5.png" ri="30571.062500" rj="30109.328125" rk="-36596.515625" si="35504.968750" sj="3739.767334" sk="32736.082031" radius="2825.417969" x="55527.660156" y="-65150.132812" z="42242.199219" year= "80983.664062" day="29115.994141"  >
+		<Planet name="Aufaniae" file="planets/Dirt11.png" ri="-4246.780762" rj="4511.797852" rk="2591.837402" si="-2495.287842" sj="-2535.236328" sk="324.686218" radius="725.396362" x="-9784.857422" y="8964.934570" z="9348.242188" year= "37091.984375" day="20350.416016"  >
+		</Planet>
+		<Planet name="vega_sector/planks_star" file="jump.png" ri="4306.352539" rj="6089.854980" rk="-5796.253418" si="5381.757812" sj="82.589035" sk="4085.173340" radius="407.420532" x="-9890.609375" y="-9800.224609" z="4083.054932" year= "38240.960938" day="35244.562500" alpha="ONE ONE" destination="vega_sector/planks_star"  >
+		</Planet>
+		<Planet name="vega_sector/chang_cu" file="jump.png" ri="3195.804688" rj="-1200.759033" rk="-621.787659" si="-2864.413818" sj="-9100.115234" sk="2851.356201" radius="473.547729" x="-9966.889648" y="5324.427246" z="9884.231445" year= "34588.109375" day="19861.908203" alpha="ONE ONE" destination="vega_sector/chang_cu"  >
+		</Planet>
+		<Planet name="vega_sector/mc_auliffe" file="jump.png" ri="-4602.018555" rj="-4947.561035" rk="-3028.886230" si="-2796.547607" sj="3018.642822" sk="-681.820007" radius="449.129944" x="7847.451172" y="-9130.192383" z="-8581.009766" year= "37205.562500" day="5717.345703" alpha="ONE ONE" destination="vega_sector/mc_auliffe"  >
+		</Planet>
+	</Planet>
+	<Planet name="Adsullata" file="planets/m_class10.png" ri="-31290.867188" rj="-50704.718750" rk="-25061.865234" si="60591.085938" sj="-54520.179688" sk="34653.554688" radius="5855.818359" x="-57649.320312" y="-50422.019531" z="33874.304688" year= "140242.015625" day="12765.227539"  >
+		<Planet name="vega_sector/vega" file="jump.png" ri="12339.796875" rj="10789.256836" rk="-3838.281494" si="2823.407715" sj="-6917.652832" sk="-10368.194336" radius="802.596985" x="13585.432617" y="-22791.759766" z="-27612.009766" year= "32320.132812" day="18370.767578" alpha="ONE ONE" destination="vega_sector/vega"  >
+		</Planet>
+		<Planet name="vega_sector/gateway" file="jump.png" ri="21144.123047" rj="-3625.135498" rk="2893.250977" si="3039.632080" sj="2266.931885" sk="-19373.507812" radius="709.593994" x="-11831.026367" y="16786.525391" z="25445.904297" year= "28111.234375" day="17747.017578" alpha="ONE ONE" destination="vega_sector/gateway"  >
+		</Planet>
+	</Planet>
+	<Planet name="Cliodhna" file="sol/mercury.png" ri="-44149.371094" rj="58344.300781" rk="-3522.628662" si="49937.609375" sj="34701.722656" sk="-51117.109375" radius="6854.951660" x="-70106.929688" y="-32799.265625" z="88389.648438" year= "213987.609375" day="11424.046875"  >
+		<Planet name="Arnemetia" file="sol/charon.png" ri="8450.260742" rj="10277.364258" rk="-1904.008179" si="-7684.417969" sj="4137.468262" sk="-11771.517578" radius="2187.173340" x="-22781.132812" y="33670.226562" z="13392.135742" year= "35328.687500" day="23009.201172"  >
+		</Planet>
+		<Planet name="vega_sector/gimle" file="jump.png" ri="6753.352051" rj="-13827.601562" rk="-13822.349609" si="-20364.099609" sj="7464.314453" sk="-17416.683594" radius="1061.411377" x="-20602.546875" y="-13281.650391" z="14518.427734" year= "46341.238281" day="6892.226562" alpha="ONE ONE" destination="vega_sector/gimle"  >
+		</Planet>
+	</Planet>
+	<Planet name="brimstone B" file="stars/white_star.png" ri="-34108.054688" rj="-19915.439453" rk="-33008.562500" si="25269.488281" sj="62913.386719" sk="-64069.464844" radius="13582.308594" x="0" y="0" z="0" year= "98383.812500" day="11550.048828"  Red="0.195008" Green="0.666667" Blue="0.246157" ReflectNoLight="true" light="1">
+		<Planet name="Andraste" file="planets/gas_giant8.png" ri="14571.578125" rj="23777.437500" rk="876.920837" si="22608.812500" sj="-12270.241211" sk="-42981.265625" radius="3527.872314" x="28707.832031" y="45718.257812" z="-55483.492188" year= "57348.847656" day="10339.611328"  >
+			<Planet name="Fand" file="sol/pluto.png" ri="7808.346680" rj="-7243.916992" rk="1160.457642" si="-4188.401855" sj="-4880.729980" sk="-2284.540039" radius="1100.403076" x="-6451.854980" y="-9266.102539" z="7070.155762" year= "22081.904297" day="559.505066"  >
+			</Planet>
+		</Planet>
+		<Planet name="Aine" file="planets/m_class11.png" ri="-59796.457031" rj="55342.589844" rk="-3745.307373" si="-21047.523438" sj="-27112.541016" sk="-64590.351562" radius="7237.519531" x="-43136.769531" y="30670.085938" z="-62968.304688" year= "69524.960938" day="1655.879639"  >
+			<Planet name="Lugh Lamfota" file="planets/Dirt9.png" ri="11142.017578" rj="-19820.302734" rk="21765.814453" si="-24986.796875" sj="-1696.609985" sk="11245.891602" radius="2343.717773" x="-21594.775391" y="-16816.667969" z="-34681.343750" year= "42869.878906" day="36456.992188"  >
+			</Planet>
+		</Planet>
+		<Planet name="brimstone C" file="stars/red_star.png" ri="-28203.996094" rj="57834.214844" rk="37563.125000" si="-33495.953125" sj="-15109.941406" sk="-1886.110352" radius="7628.191406" x="0" y="0" z="0" year= "162306.671875" day="10048.541992"  Red="0.666667" Green="0.155354" Blue="0.216530" ReflectNoLight="true" light="2">
+			<Planet name="Aengus" file="planets/gas_giant2.png" ri="13709.984375" rj="-22635.318359" rk="15332.606445" si="33419.250000" sj="21764.164062" sk="2247.588623" radius="1476.710083" x="14731.354492" y="15052.707031" z="-37525.554688" year= "66245.835938" day="57703.140625"  >
+				<Planet name="Yonne" file="planets/Snow.png" ri="3291.148193" rj="2748.200439" rk="-1816.634155" si="-625.461975" sj="1802.457886" sk="1593.621704" radius="487.504700" x="2284.221924" y="3886.852539" z="5214.915039" year= "45370.128906" day="30741.103516"  >
+				</Planet>
+			</Planet>
+			<Planet name="Sabrina" file="sol/mars.png" ri="-9235.801758" rj="29158.720703" rk="31515.906250" si="-29827.689453" sj="8600.708984" sk="-16698.500000" radius="3656.867188" x="28391.912109" y="27970.505859" z="16467.599609" year= "42438.902344" day="296.724945"  >
+				<Planet name="Sirona" file="sol/io.png" ri="5408.096191" rj="7116.644531" rk="11992.170898" si="14923.635742" sj="-10147.091797" sk="-708.397034" radius="753.433105" x="-8066.146484" y="18044.970703" z="15577.219727" year= "54626.406250" day="41932.750000"  >
+				</Planet>
+			</Planet>
+			<Planet name="Maponos" file="planets/sandylotsaland.png" ri="-14356.407227" rj="-9311.359375" rk="7262.535156" si="-13148.390625" sj="31269.617188" sk="14099.615234" radius="3413.482910" x="-37777.699219" y="31460.287109" z="31999.183594" year= "164304.109375" day="113593.500000"  >
+			</Planet>
+		</Planet>
+	</Planet>
+</Planet>
+</system>
