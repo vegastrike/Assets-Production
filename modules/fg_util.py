@@ -248,7 +248,7 @@ def FGSystem (fgname,faction):
 		return Director.getSaveString(ccp,key,1)
 	else:
 		print 'error retrieving system for '+fgname
-		return VS.getSystemFile()
+		return 'no_sector/no_system'
 def TransferFG (fgname,faction,tosys):
 	key = MakeFGKey(fgname,faction)
 	len = Director.getSaveStringLength(ccp,key)
@@ -280,7 +280,7 @@ def RemoveShipFromFG (fgname,faction,type,landed=0):
 				numships = int (Director.getSaveString (ccp,key,i))
 				numlandedships=int (Director.getSaveString (ccp,key,i+1))
 			except:
-				pass
+				print "unable to get savestring "+i+" from FG "+fgname +" "+faction+ " "+type
 			if (numships>1):
 				numships-=1
 				if (numships<numlandedships):
@@ -299,6 +299,9 @@ def RemoveShipFromFG (fgname,faction,type,landed=0):
 					totalnumships -=1
 					if (totalnumships>=0):
 						Director.putSaveString(ccp,key,0,str(totalnumships))
+						if(totalnumships==0):
+							DeleteFG(fgname,faction)
+							print 'no ships left in the fg'
 					else:
 						print 'error...removing too many ships'
 				except:
@@ -491,3 +494,17 @@ def LaunchShip (fgname,faction,typ,num=1):
 	LaunchLandShip (fgname,faction,typ,num)
 def LandShip (fgname,faction,typ,num=1):
 	LaunchLandShip(fgname,faction,typ,-num)
+def AllShips (faction,offset=1):
+	ret=[]
+	for i in AllFlightgroups (faction):
+		ret+=ShipsInFG (i,faction,offset)
+	return ret
+def SortedAllShips (faction,offset=1):
+	ret={}
+	for i in AllFlightgroups (faction):
+		for j in ShipsInFG(i,faction,offset):
+			if j[0] in ret:
+				ret[j[0]]+=j[1]
+			else:
+				ret[j[0]]=j[1]
+	return ret

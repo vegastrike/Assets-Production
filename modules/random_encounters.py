@@ -171,7 +171,8 @@ class random_encounters:
       self.cur.lastsys=cursys
     for q in self.cur.quests:
       q.SignificantsNear(self.cur.sig_container)
-    
+    import dynamic_universe
+    dynamic_battle.UpdateCombatTurn()
 
   def decideMode(self):
     myunit=VS.getPlayerX(self.cur_player)
