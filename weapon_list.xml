@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
  <Weapons>
 
+<!-- Here is a list of the various roles possible for each weapon (see ai/VegaPriorities.csv for a more up-to-date list):
+
+BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER
+
+-->
+
 <!-- unknown -->
 
-<Beam name="UnknownBeam" mountsize=""> 
+<Beam name="UnknownBeam" mountsize="" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="80" stability="14" refire="2">
 </Energy>
 <Damage rate="200" phasedamage="50" longrange=".5">
@@ -14,7 +20,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="UnknownHeavyBeam" mountsize=""> 
+<Beam name="UnknownHeavyBeam" mountsize="" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="160" stability="20" refire="4">
 </Energy>
 <Damage rate="280" phasedamage="80" longrange=".5">
@@ -26,7 +32,7 @@
 </Beam>
 
 <!-- below has no mountsize to fit on any ship -->
-<Bolt name="UnknownBolt" mountsize=""> 
+<Bolt name="UnknownBolt" mountsize="" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="40" stability="6" refire=".7">
 </Energy>
 <Damage rate="25" phasedamage="50" longrange=".8">
@@ -37,7 +43,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Unknown" mountsize=""> 
+<Bolt name="Unknown" mountsize="" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="45" stability="6" refire=".7">
 </Energy>
 <Damage rate="200" longrange=".5">
@@ -61,7 +67,7 @@
 
 <!-- beams -->
 
-<Beam name="LaserBeam" mountsize="light"> 
+<Beam name="LaserBeam" mountsize="light" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="12" stability="4" refire=".2">
 </Energy>
 <Damage rate="144" longrange="1">
@@ -72,7 +78,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="IonBeam" mountsize="light">
+<Beam name="IonBeam" mountsize="light" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="30" stability="7" refire=".4">
 </Energy>
 <Damage rate="180" longrange=".4">
@@ -83,7 +89,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="KtekBeam" mountsize="heavy"> 
+<Beam name="KtekBeam" mountsize="heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="50" stability="6" refire=".5">
 </Energy>
 <Damage rate="200" longrange=".5">
@@ -94,7 +100,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="DisruptorBeam" mountsize="heavy"> 
+<Beam name="DisruptorBeam" mountsize="heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="14" stability="6" refire=".6">
 </Energy>
 <Damage rate="168" longrange=".5">
@@ -105,7 +111,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="HvyIonBeam" mountsize="Heavy">
+<Beam name="HvyIonBeam" mountsize="Heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="80" stability="5" refire=".2">
 </Energy>
 <Damage rate="480" longrange=".1">
@@ -118,7 +124,7 @@
 
 <!-- balls -->
 
-<Ball name="MassDriver" mountsize="medium"> 
+<Ball name="MassDriver" mountsize="medium" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="6" refire=".475">
 </Energy>
 <Damage rate="26" longrange="1">
@@ -131,7 +137,7 @@
 
 <!-- bolts -->
 
-<Bolt name="Laser" mountsize="light"> 
+<Bolt name="Laser" mountsize="light" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="4" stability="4" refire=".3">
 </Energy>
 <Damage damage="18" longrange="1">
@@ -142,7 +148,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Ktek" mountsize="light"> 
+<Bolt name="Ktek" mountsize="light" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="20" stability="8" refire=".15">
 </Energy>
 <Damage rate="20" longrange=".5">
@@ -153,7 +159,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Particle" mountsize="heavy"> 
+<Bolt name="Particle" mountsize="heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="11" stability="2" refire=".55">
 </Energy>
 <Damage rate="43" longrange="1">
@@ -164,7 +170,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Meson" mountsize="light"> 
+<Bolt name="Meson" mountsize="light" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="8" stability="6" refire=".4">
 </Energy>
 <Damage rate="32" longrange="1">
@@ -175,7 +181,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Disruptor" mountsize="medium" > 
+<Bolt name="Disruptor" mountsize="medium" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER" > 
 <Energy rate="10" stability="6" refire=".3" >
 </Energy>
 <Damage rate="30" longrange="1" >
@@ -186,7 +192,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Ion" mountsize="medium"> 
+<Bolt name="Ion" mountsize="medium" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="16"  refire=".65">
 </Energy>
 <Damage rate="54" longrange="1">
@@ -197,7 +203,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Photon" mountsize="medium"> 
+<Bolt name="Photon" mountsize="medium" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="21.5" stability="6" refire=".66">
 </Energy>
 <Damage rate="37" longrange="1">
@@ -208,7 +214,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Rasor" mountsize="medium">
+<Bolt name="Rasor" mountsize="medium" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="22" stability="4" refire=".2">
 </Energy>
 <Damage rate="32" longrange="1">
@@ -219,7 +225,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Neutron" mountsize="heavy"> 
+<Bolt name="Neutron" mountsize="heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="18" stability="3" refire=".65">
 </Energy>
 <Damage rate="62" longrange="1">
@@ -230,7 +236,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Tachyon" mountsize="heavy"> 
+<Bolt name="Tachyon" mountsize="heavy" role="INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT INERT"> 
 <Energy rate="8" stability="6" refire=".4">
 </Energy>
 <Damage rate="57" longrange="1">
@@ -241,7 +247,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Plasma" mountsize="heavy"> 
+<Bolt name="Plasma" mountsize="heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="22" stability="6" refire=".72">
 </Energy>
 <Damage rate="72" longrange="1">
@@ -252,7 +258,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Reaper" mountsize="heavy"> 
+<Bolt name="Reaper" mountsize="heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="25" stability="6" refire=".7">
 </Energy>
 <Damage rate="80" longrange="1">
@@ -265,7 +271,7 @@
 
 <!-- special -->
 
-<Bolt name="Gauss" mountsize="special">
+<Bolt name="Gauss" mountsize="special" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="0" refire=".1">
 </Energy>
 <Damage rate="1" phasedamage="1" longrange="1">
@@ -276,7 +282,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Stormfire" mountsize="special">
+<Bolt name="Stormfire" mountsize="special" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0.3" stability="0" refire=".001">
 </Energy>
 <Damage rate="5" longrange="1">
@@ -287,7 +293,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="HephaestusPointDefenseCannon" mountsize="special">
+<Bolt name="HephaestusPointDefenseCannon" mountsize="special" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate=".15" stability="0" refire=".05">
 </Energy>
 <Damage rate="2" phasedamage = "1" longrange="1">
@@ -298,7 +304,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="LeechGun" mountsize="special">
+<Bolt name="LeechGun" mountsize="special" role="INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE TROOP SUPPORT POINTDEF SHUTTLE TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
 <Damage rate="-.98" phasedamage="-.98" longrange="1">
@@ -309,7 +315,7 @@
 </Appearance>
 </Bolt>
 
-<Beam name="Tractor" mountsize="special"> 
+<Beam name="Tractor" mountsize="special" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="10" stability="600" refire=".3">
 </Energy>
 <Damage rate="-4800" phasedamage="2400" longrange="1">
@@ -322,7 +328,7 @@
 
 <!-- special-missile -->
 
-<Bolt name="Swarm" mountsize="Special-Missile"> 
+<Bolt name="Swarm" mountsize="Special-Missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="0" stability="0" refire=".1">
 </Energy>
 <Damage rate="20" longrange="1">
@@ -333,7 +339,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="KillerBee" mountsize="Special-Missile"> 
+<Bolt name="KillerBee" mountsize="Special-Missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="0" stability="0" refire=".2">
 </Energy>
 <Damage rate="25" longrange="1">
@@ -344,7 +350,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Hail" mountsize="Special-Missile"> 
+<Bolt name="Hail" mountsize="Special-Missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="0" stability="0" refire=".3">
 </Energy>
 <Damage rate="30" phasedamage="5" longrange="1">
@@ -356,7 +362,7 @@
 </Bolt>
 
 <!-- antiwarhead -->
-<Missile name="Breeze" mountsize="special-missile">
+<Missile name="Breeze" mountsize="special-missile" role="BOMB MISSILE HEAVYMISSILE MINE POINTDEF TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire=".8">
 </Energy>
 <Damage rate="25" longrange="1" radius="10" radialspeed="50" >
@@ -367,7 +373,7 @@
 </Appearance>
 </Missile>
 
-<Missile name="Leech" mountsize="special-missile">
+<Missile name="Leech" mountsize="special-missile" role="BOMB MISSILE HEAVYMISSILE MINE POINTDEF TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire=".8">
 </Energy>
 <Damage rate="-.5" phasedamage="-.5" longrange="1" radius="20" radialspeed="40" >
@@ -380,7 +386,7 @@
 
 <!-- Missile -->
 
-<Missile name="Dumbfire" mountsize="light-missile">
+<Missile name="Dumbfire" mountsize="light-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire=".9">
 </Energy>
 <Damage rate="400" longrange="1" radius="20" radialspeed="20">
@@ -391,7 +397,7 @@
 </Appearance>
 </Missile>
 
-<Missile name="HeatSeeker" mountsize="light-missile">
+<Missile name="HeatSeeker" mountsize="light-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire=".9" locktime="1">
 </Energy>
 <Damage rate="200" longrange="1" radius="150" radialspeed="20">
@@ -402,7 +408,7 @@
 </Appearance>
 </Missile>
 
-<Missile name="ImageRecognition" mountsize="medium-missile">
+<Missile name="ImageRecognition" mountsize="medium-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire="1.2" locktime="2">
 </Energy>
 <Damage rate="240" longrange="1" radius="150" radialspeed="20">
@@ -413,7 +419,7 @@
 </Appearance>
 </Missile>
 
-<Missile name="FriendOrFoe" mountsize="medium-missile">
+<Missile name="FriendOrFoe" mountsize="medium-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire="1.3" locktime=".5">
 </Energy>
 <Damage rate="260" longrange="1" radius="140" radialspeed="20">
@@ -424,7 +430,7 @@
 </Appearance>
 </Missile>
 
-<Missile name="PorcupineMine" mountsize="medium-missile">
+<Missile name="PorcupineMine" mountsize="medium-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire="1">
 </Energy>
 <Damage rate="85" longrange="1" radius="100" radialspeed="30">
@@ -435,7 +441,7 @@
 </Appearance>
 </Missile>
 
-<Missile name="Maul" mountsize="heavy-missile">
+<Missile name="Maul" mountsize="heavy-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire="3">
 </Energy>
 <Damage rate="900" phasedamage="350" longrange="1" radius="180" radialspeed="26">
@@ -447,7 +453,7 @@
 </Missile>
 
 <!-- Area antifighter warhead -->
-<Missile name="Cluster" mountsize="heavy-missile">
+<Missile name="Cluster" mountsize="heavy-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire=".9">
 </Energy>
 <Damage rate="90" longrange="1" radius="900" radialspeed="300">
@@ -458,7 +464,7 @@
 </Appearance>
 </Missile>
 
-<Missile name="Mace" mountsize="heavy-missile">
+<Missile name="Mace" mountsize="heavy-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire="5">
 </Energy>
 <Damage rate="1400" phasedamage="0" longrange="1" radius="800" radialspeed="30" >
@@ -469,7 +475,7 @@
 </Appearance>
 </Missile>
 
-<Missile name="Torpedo" mountsize="heavy-missile">
+<Missile name="Torpedo" mountsize="heavy-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire="3" locktime="5">
 </Energy>
 <Damage rate="600" phasedamage="500" longrange="1" radius="100" radialspeed="50" >
@@ -480,7 +486,7 @@
 </Appearance>
 </Missile>
 
-<Missile name="AdvTorpedo" mountsize="heavy-missile">
+<Missile name="AdvTorpedo" mountsize="heavy-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" refire="4.5" locktime="4">
 </Energy>
 <Damage rate="800" phasedamage="650" longrange="1" radius="150" radialspeed="80" >
@@ -493,7 +499,7 @@
 
 <!-- Capship only -->
 
-<Bolt name="Antimatter" mountsize="capship-light"> 
+<Bolt name="Antimatter" mountsize="capship-light" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="20" stability="6" refire=".3">
 </Energy>
 <Damage rate="250" longrange="1">
@@ -504,7 +510,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Anihilator" mountsize="capship-light" > 
+<Bolt name="Anihilator" mountsize="capship-light" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER" > 
 <Energy rate="150" stability="8" refire="2" >
 </Energy>
 <Damage rate="175" longrange="1" >
@@ -515,7 +521,7 @@
 </Appearance>
 </Bolt>
 
-<Beam name="ParticleBeam" mountsize="capship-light" >
+<Beam name="ParticleBeam" mountsize="capship-light" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER" >
 <Energy rate="65" stability="4" refire="3" >
 </Energy>
 <Damage rate="210" longrange=".6" >
@@ -526,7 +532,7 @@
 </Appearance>
 </Beam>
 
-<Ball name="Flak" mountsize="capship-light" > 
+<Ball name="Flak" mountsize="capship-light" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER" > 
 <Energy rate="250" stability="6" refire="2" >
 </Energy>
 <Damage rate="100" longrange="1" >
@@ -537,7 +543,7 @@
 </Appearance>
 </Ball>
 
-<Ball name="HeavyFlak" mountsize="capship-medium"> 
+<Ball name="HeavyFlak" mountsize="capship-medium" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="350" stability="6" refire="3">
 </Energy>
 <Damage rate="120" longrange="1">
@@ -548,7 +554,7 @@
 </Appearance>
 </Ball>
 
-<Bolt name="Penetrator" mountsize="capship-medium">
+<Bolt name="Penetrator" mountsize="capship-medium" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="90" stability="4" refire="1.4">
 </Energy>
 <Damage rate="90" phasedamage="30" longrange=".7">
@@ -559,7 +565,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="CapshipDisruptor" mountsize="capship-heavy"> 
+<Bolt name="CapshipDisruptor" mountsize="capship-heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="150" stability="6" refire="1.5">
 </Energy>
 <Damage rate="300" longrange="1">
@@ -570,7 +576,7 @@
 </Appearance>
 </Bolt>
 
-<Beam name="LR_Beam" mountsize="capship-medium"> 
+<Beam name="LR_Beam" mountsize="capship-medium" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="30" stability="4" refire="2">
 </Energy>
 <Damage rate="350" longrange=".5">
@@ -581,7 +587,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="LR_ParticleBeam" mountsize="capship-medium" >
+<Beam name="LR_ParticleBeam" mountsize="capship-medium" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER" >
 <Energy rate="100" stability="4" refire="3" >
 </Energy>
 <Damage rate="250" longrange=".4" >
@@ -592,7 +598,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="LR_BeamHvy" mountsize="capship-heavy"> 
+<Beam name="LR_BeamHvy" mountsize="capship-heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="50" stability="6" refire="3">
 </Energy>
 <Damage rate="600" longrange=".4">
@@ -603,7 +609,7 @@
 </Appearance>
 </Beam>
 
-<Bolt name="Vaporisator" mountsize="capship-heavy"> 
+<Bolt name="Vaporisator" mountsize="capship-heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="300" refire="1.5">
 </Energy>
 <Damage rate="450" longrange=".8">
@@ -614,7 +620,7 @@
 </Appearance>
 </Bolt>
 
-<Ball name="Fussion" mountsize="capship-heavy"> 
+<Ball name="Fussion" mountsize="capship-heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="400" refire="6">
 </Energy>
 <Damage rate="800" longrange=".7">
@@ -625,7 +631,7 @@
 </Appearance>
 </Ball>
 
-<Ball name="HeavyFussion" mountsize="capship-heavy"> 
+<Ball name="HeavyFussion" mountsize="capship-heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="900" refire="14">
 </Energy>
 <Damage rate="1200" longrange=".6">
@@ -636,7 +642,7 @@
 </Appearance>
 </Ball>
 
-<Missile name="CapIFF" mountsize="light-capship-missile">
+<Missile name="CapIFF" mountsize="light-capship-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire="9" locktime="4">
 </Energy>
 <Damage rate="240" longrange="1" radius="50" radialspeed="30" >
@@ -648,7 +654,7 @@
 </Missile>
 
 <!-- Area antifighter warhead. -->
-<Missile name="CapCluster" mountsize="light-capship-missile">
+<Missile name="CapCluster" mountsize="light-capship-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire=".9" locktime="5">
 </Energy>
 <Damage rate="150" longrange="1" radialspeed="350" radius="1000" >
@@ -659,7 +665,7 @@
 </Appearance>
 </Missile>
 
-<Missile name="CapshipMissile" mountsize="heavy-capship-missile">
+<Missile name="CapshipMissile" mountsize="heavy-capship-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire="8" locktime="5">
 </Energy>
 <Damage rate="2000" phasedamage="1000" longrange="1" radius="6000" radialspeed="400" >
@@ -671,7 +677,7 @@
 </Missile>
 
 
-<Missile name="KineticMissile" mountsize="heavy-capship-missile">
+<Missile name="KineticMissile" mountsize="heavy-capship-missile" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="0" stability="6" refire="2" locktime="4">
 </Energy>
 <Damage rate="1" phasedamage="1" longrange="1" radius="1" radialspeed="1" >
@@ -684,7 +690,7 @@
 
 <!-- other -->
 
-<Beam name="HandLaser" mountsize="light"> 
+<Beam name="HandLaser" mountsize="light" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="1" stability="4" refire=".2">
 </Energy>
 <Damage rate="10" longrange="1">
@@ -695,7 +701,7 @@
 </Appearance>
 </Beam>
 
-<Bolt name="MOUNT_UPGRADE" mountsize="LIGHT"> 
+<Bolt name="MOUNT_UPGRADE" mountsize="LIGHT" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="1" refire="1">
 </Energy>
 <Damage rate="1" longrange="1">
@@ -707,7 +713,7 @@
 </Bolt>
 
 
-<Beam name="LR_PminusBeam" mountsize="capship-heavy"> 
+<Beam name="LR_PminusBeam" mountsize="capship-heavy" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER"> 
 <Energy rate="80" stability="6" refire="2">
 </Energy>
 <Damage rate="1200" longrange=".7">
@@ -719,7 +725,7 @@
 </Beam>
 
 
-<Bolt name="GrandGauss" mountsize="special">
+<Bolt name="GrandGauss" mountsize="special" role="BOMB MISSILE HEAVYMISSILE MINE INTERCEPTOR FIGHTER BOMBER ESCORTCAP CAPITAL CARRIER BASE GROUND AERO TROOP SUPPORT POINTDEF SHUTTLE CARGO INERT TGROUND TMASSIVE TSMALLCAP TFIGHTER">
 <Energy rate="5" stability="0" refire="2.5">
 </Energy>
 <Damage rate="75" phasedamage="65" longrange="1">
