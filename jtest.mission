@@ -15,14 +15,23 @@
 	</variables>
         <flightgroups>
          	    <flightgroup name="navajo" faction="confed" type="avenger" ainame="default" waves="1" nr_ships="1">
-			<pos x="53300" y="8000" z="40000.0"/>
+			<pos x="110300" y="30000" z="50000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
-			<order order="tmptarget" target="puce"/>
-			<order priority="0" order="superiority" target="enemy"/>
-			<order priority="1" order="bomber" target="puce"/>
-			<order priority="2" order="escort" target="orange"/>
 		    </flightgroup>
-		    <flightgroup name="orange" faction="aera" type="yrilan" ainame="default" waves="1" nr_ships="1">
+
+                <flightgroup name="blue" faction="confed" type="starrunner" ainame="macho" waves="1" nr_ships="1">
+			<pos x="78900" y="30000" z="40000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		    </flightgroup>
+
+
+                <flightgroup name="grey" faction="aera" type="destroyer" ainame="macho" waves="1" nr_ships="1">
+			<pos x="140900" y="30000" z="40000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		    </flightgroup>
+
+	
+<!--		    <flightgroup name="orange" faction="confed" type="yavok" ainame="default" waves="1" nr_ships="1">
 			<pos x="43300" y="4000" z="40000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="puce"/>
@@ -30,7 +39,7 @@
 			<order priority="1" order="bomber" target="puce"/>
 			<order priority="2" order="escort" target="orange"/>
 		    </flightgroup>
-       	    <flightgroup name="puce" faction="confed" type="starfortress" ainame="default" waves="1" nr_ships="1">
+       	    <flightgroup name="puce" faction="confed" type="vitik" ainame="default" waves="1" nr_ships="1">
 			<pos x="60000" y="4000" z="35000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="orange"/>
@@ -38,20 +47,10 @@
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		    </flightgroup>
+	    
 
-                <flightgroup name="blue" faction="confed" type="starrunner" ainame="default" waves="1" nr_ships="1">
-			<pos x="78900" y="4000" z="40000.0"/>
-			<rot x="180.0" y="180.0" z="180.0"/>
-			<order order="tmptarget" target="orange"/>
-			<order priority="0" order="superiority" target="enemy"/>
-			<order priority="1" order="bomber" target="omikron"/>
-			<order priority="2" order="escort" target="blue"/>
-		    </flightgroup>
-		    
-
-               
-               <flightgroup name="red" faction="confed" type="escortcarrier" ainame="default" waves="1" nr_ships="1">
-			<pos x="99400" y="6000" z="40000.0"/>
+                <flightgroup name="red" faction="confed" type="cruiser" ainame="default" waves="1" nr_ships="1">
+			<pos x="99400" y="30000" z="40000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
@@ -59,6 +58,16 @@
 			<order priority="2" order="escort" target="blue"/>
 		  </flightgroup>
 
+              <flightgroup name="ch" faction="confed" type="vark" ainame="default" waves="1" nr_ships="1">
+			<pos x="666400" y="30000" z="40000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omicron"/>
+			<order priority="2" order="escort" target="blue"/>
+		  </flightgroup>
+
+-->
 		
         </flightgroups>
 </mission>
