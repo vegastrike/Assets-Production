@@ -1,0 +1,175 @@
+
+	<module name="testd_module2">
+		<globals>
+			<defvar name="g1" type="float" init="541.032"/>
+			<defvar name="g2" type="float" init="34451.2"/>
+		</globals>
+
+		<import name="common"/>
+		<import name="junk"/>
+
+		<defvar name="d1" type="float" init="234540.0"/>
+		<defvar name="d2" type="float" init="434530.0"/>
+
+		<defvar name="m1" type="float" init="3054.0"/>
+		<defvar name="m2" type="float" init="305433.30"/>
+		<defvar name="g2" type="float" init="-52243.30"/>
+
+		<script name="subroutine">
+			<defvar name="l1" type="float"/>
+			<defvar name="l2" type="float"/>
+
+			<setvar name="l1">
+				<const type="float" value="34543.4"/>
+			</setvar>
+			<setvar name="l2">
+				<const type="float" value="4433.4"/>
+			</setvar>
+
+			<call name="PrintFloats" s1="l1,l2 ">
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+		</script>
+
+		<script name="initgame">
+			<call name="PrintFloats" s1="initgame"/>
+		</script>
+
+		<script name="something">
+			<defvar name="l1" type="float"/>
+			<defvar name="l2" type="float"/>
+
+			<setvar name="l1">
+				<const type="float" value="45465.4"/>
+			</setvar>
+			<setvar name="l2">
+				<const type="float" value="515.43"/>
+			</setvar>
+
+			<call name="PrintFloats" s1="l1,l2 ">
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+			<exec name="test1"/>
+
+			<call name="PrintFloats" s1="l1,l2 ">
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+
+			<exec name="subroutine"/>
+
+			<call name="PrintFloats" s1="gl::g1,g2,m1,m2,l1,l2 ">
+				<var name="g1"/>
+				<var name="g2"/>
+				<var name="m1"/>
+				<var name="m2"/>
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+		</script>
+
+		<script name="test1">
+			<defvar name="l1" type="float"/>
+			<defvar name="l2" type="float"/>
+			<defvar name="m1" type="float"/>
+			<defvar name="g1" type="float"/>
+
+			<call name="PrintFloats" s1="m2t1:::g1,g2,m1,m2,l1,l2 ">
+				<var name="g1"/>
+				<var name="g2"/>
+				<var name="m1"/>
+				<var name="m2"/>
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+			<setvar name="g1">
+				<const type="float" value="23541.34"/>
+			</setvar>
+
+			<setvar name="l1">
+				<const type="float" value="343.344"/>
+			</setvar>
+
+			<setvar name="l2">
+				<const type="float" value="14341.334"/>
+			</setvar>
+
+			<setvar name="m1">
+				<const type="float" value="3421.234"/>
+			</setvar>
+
+
+			<call name="PrintFloats" s1="m2::t1::g1,g2,m1,m2,l1,l2 ">
+				<var name="g1"/>
+				<var name="g2"/>
+				<var name="m1"/>
+				<var name="m2"/>
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+
+		</script>
+
+		<script name="testmore">
+			<defvar name="l1" type="float"/>
+			<defvar name="l2" type="float"/>
+
+			<call name="PrintFloats" s1="g1,g2,m1,m2,l1,l2 ">
+				<var name="g1"/>
+				<var name="g2"/>
+				<var name="m1"/>
+				<var name="m2"/>
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+			<setvar name="g1">
+				<const type="float" value="51.34"/>
+			</setvar>
+
+			<setvar name="l1">
+				<const type="float" value="34433331.34"/>
+			</setvar>
+
+			<setvar name="l2">
+				<const type="float" value="4341.34"/>
+			</setvar>
+
+			<setvar name="m1">
+				<const type="float" value="32411.34534"/>
+			</setvar>
+
+
+			<call name="PrintFloats" s1="g1,g2,m1,m2,l1,l2 ">
+				<var name="g1"/>
+				<var name="g2"/>
+				<var name="m1"/>
+				<var name="m2"/>
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+			<exec name="test1"/>
+
+			<call name="PrintFloats" s1="g1,g2,m1,m2,l1,l2 ">
+				<var name="g1"/>
+				<var name="g2"/>
+				<var name="m1"/>
+				<var name="m2"/>
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+		</script>
+	</module>
+
+</mission>
+

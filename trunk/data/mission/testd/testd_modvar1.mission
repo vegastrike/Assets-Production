@@ -1,0 +1,43 @@
+<mission>
+   <variables>
+      <var name="defaultplayer" value="blue"/>
+      <var name="mission_name" value="Director Test" />
+      <var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+      <var name="system" value="solar-system.xml" />
+      <var name="description" value="4vs4.txt" />
+	<var name="terrain" value="terrain2.xml" />
+   </variables>
+        <flightgroups>
+            <flightgroup name="green" faction="confed" type="rapier" ainame="default" waves="2" nr_ships="6">
+         	<pos x="8000.0" y="0.0" z="0.0"/>
+         	<rot x="180.0" y="180.0" z="180.0"/>
+      	    </flightgroup>
+	</flightgroups>
+
+	<module name="director">
+		<defvar name="total_count" type="float" init="0.032"/>
+		<defvar name="random_count" type="float" init="0.0"/>
+		<script name="gameloop">
+			<defvar name="random_tmp" type="float"/>
+			<defvar name="counter" type="float"/>
+
+			<call name="PrintFloats" s1="before : ">
+				<var name="total_count"/>
+			</call>
+
+			<setvar name="total_count">
+				<const type="float" value="1.34"/>
+			</setvar>
+
+			<call name="PrintFloats" s1="after : ">
+				<var name="total_count"/>
+			</call>
+
+			<setvar name="total_count">
+				<const type="float" value="-0.3"/>
+			</setvar>
+		</script>
+	</module>
+
+</mission>
+

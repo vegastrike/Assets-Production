@@ -1,0 +1,75 @@
+<mission>
+   <variables>
+      <var name="defaultplayer" value="blue"/>
+      <var name="mission_name" value="Director Test" />
+      <var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+      <var name="system" value="solar-system.xml" />
+      <var name="description" value="4vs4.txt" />
+	<var name="terrain" value="terrain2.xml" />
+   </variables>
+        <flightgroups>
+            <flightgroup name="green" faction="confed" type="rapier" ainame="default" waves="2" nr_ships="6">
+         	<pos x="8000.0" y="0.0" z="0.0"/>
+         	<rot x="180.0" y="180.0" z="180.0"/>
+      	    </flightgroup>
+	</flightgroups>
+
+	<module name="director">
+		<defvar name="module_list" type="object" />
+
+		<script name="subroutine">	
+			<arguments>
+				<defvar name="arg1" type="object"/>
+			</arguments>
+
+			<defvar name="loc_list" type="object"/>
+			<defvar name="f1" type="float"/>
+
+			<setvar name="f1">
+				<call name="Rnd" />
+			</setvar>
+
+			<setvar name="loc_list">
+				<call name="olist" cmd="new"/>
+			</setvar>
+
+			<call name="olist" cmd="push_back">
+				<var name="loc_list"/>
+				<var name="f1"/>
+			</call>
+		</script>
+
+		<script name="initgame">
+			<call name="PrintFloats" s1="initgame"/>
+		</script>
+
+		<script name="gameloop">
+			<defvar name="random_tmp" type="float"/>
+			<defvar name="counter" type="float"/>
+			<defvar name="last_random_count" type="float"/>
+
+			<setvar name="total_count">
+				<const type="float" value="75.0"/>
+			</setvar>
+
+			<setvar name="random_count">
+				<const type="float" value="-0.34"/>
+			</setvar>
+
+			<call name="PrintFloats" s1="check1: ">
+				<var name="random_count"/>
+				<var name="total_count"/>
+			</call>
+
+			<exec name="subroutine"/>
+
+			<call name="PrintFloats" s1="check2: ">
+				<var name="random_count"/>
+				<var name="total_count"/>
+			</call>
+
+
+		</script>
+	</module>
+
+</mission>

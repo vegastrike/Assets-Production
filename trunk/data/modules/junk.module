@@ -1,0 +1,52 @@
+	<module name="junk">
+		<import name="common"/>
+
+		<defvar name="total_count" type="float" init="430.0"/>
+		<defvar name="random_count" type="float" init="103.30"/>
+
+		<script name="subroutine">
+			<defvar name="sub_count" type="float"/>
+			<defvar name="random_count" type="float"/>
+
+			<setvar name="random_count">
+				<var name="total_count"/>
+			</setvar>
+
+			<call name="PrintFloats" s1="local random_count">
+				<var name="random_count"/>
+			</call>
+		</script>
+
+		<script name="initgame">
+			<call name="PrintFloats" s1="initgame"/>
+		</script>
+
+		<script name="gameloop">
+			<defvar name="random_tmp" type="float"/>
+			<defvar name="counter" type="float"/>
+			<defvar name="last_random_count" type="float"/>
+
+			<setvar name="total_count">
+				<const type="float" value="75.0"/>
+			</setvar>
+
+			<setvar name="random_count">
+				<const type="float" value="-0.34"/>
+			</setvar>
+
+			<call name="PrintFloats" s1="check1: ">
+				<var name="random_count"/>
+				<var name="total_count"/>
+			</call>
+
+			<exec name="subroutine"/>
+
+			<call name="PrintFloats" s1="check2: ">
+				<var name="random_count"/>
+				<var name="total_count"/>
+			</call>
+
+
+		</script>
+	</module>
+

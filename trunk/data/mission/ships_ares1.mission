@@ -1,0 +1,66 @@
+<mission>
+<!--
+	<settings>
+		<origin  planet="earth" x="10000.0" y="5000.0" z="-400.0"/>
+	</settings>
+-->
+	<variables>
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="4 versus 4" />
+		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+		<var name="system" value="blank" />
+		<var name="description" value="4vs4.txt" />
+	</variables>
+        <flightgroups>
+
+                <flightgroup name="blue" faction="confed" type="aeon" ainame="sitting_duck" waves="1" nr_ships="3">
+			<pos x="100.0" y="10000.0" z="100.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+                <flightgroup name="yellow" faction="confed" type="aevant" ainame="sitting_duck" waves="1" nr_ships="3">
+			<pos offset="blue" x="100.0" y="0.0" z="0.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+                <flightgroup name="cheese" faction="confed" type="dralthi" ainame="sitting_duck" waves="1" nr_ships="3">
+			<pos offset="blue" x="-100.0" y="0.0" z="0.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+                <flightgroup name="fish" faction="confed" type="jalthi" ainame="sitting_duck" waves="1" nr_ships="3">
+			<pos offset="blue" x="-100.0" y="100.0" z="0.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+                <flightgroup name="makkarel" faction="confed" type="kyta" ainame="sitting_duck" waves="1" nr_ships="3">
+			<pos offset="blue" x="-100.0" y="-100.0" z="0.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+                <flightgroup name="brown" faction="confed" type="lekra" ainame="sitting_duck" waves="1" nr_ships="3">
+			<pos offset="blue" x="-300.0" y="-100.0" z="100.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+                <flightgroup name="green" faction="confed" type="ktinga" ainame="sitting_duck" waves="1" nr_ships="1">
+			<pos offset="blue" x="10000.0" y="0.0" z="0.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+                <flightgroup name="red" faction="confed" type="vorcha" ainame="sitting_duck" waves="1" nr_ships="1">
+			<pos offset="blue" x="1000.0" y="100000.0" z="0.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
+
+        </flightgroups>
+</mission>

@@ -1,0 +1,125 @@
+<mission>
+   <variables>
+      <var name="defaultplayer" value="blue"/>
+      <var name="mission_name" value="Director Test" />
+      <var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+      <var name="system" value="solar-system.xml" />
+      <var name="description" value="4vs4.txt" />
+	<var name="terrain" value="terrain2.xml" />
+   </variables>
+        <flightgroups>
+            <flightgroup name="green" faction="confed" type="rapier" ainame="default" waves="2" nr_ships="6">
+         	<pos x="8000.0" y="0.0" z="0.0"/>
+         	<rot x="180.0" y="180.0" z="180.0"/>
+      	    </flightgroup>
+	</flightgroups>
+
+	<module name="director">
+		<globals>
+			<defvar name="g1" type="float" init="1.032"/>
+			<defvar name="g2" type="float" init="341.2"/>
+		</globals>
+
+		<defvar name="m1" type="float" init="30.0"/>
+		<defvar name="m2" type="float" init="303.30"/>
+		<defvar name="g2" type="float" init="-543.30"/>
+
+		<script name="test1">
+			<defvar name="l1" type="float"/>
+			<defvar name="l2" type="float"/>
+			<defvar name="m1" type="float"/>
+			<defvar name="g1" type="float"/>
+
+			<call name="PrintFloats" s1="t1::g1,g2,m1,m2,l1,l2 ">
+				<var name="g1"/>
+				<var name="g2"/>
+				<var name="m1"/>
+				<var name="m2"/>
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+			<setvar name="g1">
+				<const type="float" value="231.34"/>
+			</setvar>
+
+			<setvar name="l1">
+				<const type="float" value="3.344"/>
+			</setvar>
+
+			<setvar name="l2">
+				<const type="float" value="141.334"/>
+			</setvar>
+
+			<setvar name="m1">
+				<const type="float" value="321.234"/>
+			</setvar>
+
+
+			<call name="PrintFloats" s1="t1::g1,g2,m1,m2,l1,l2 ">
+				<var name="g1"/>
+				<var name="g2"/>
+				<var name="m1"/>
+				<var name="m2"/>
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+
+		</script>
+		<script name="gameloop">
+			<defvar name="l1" type="float"/>
+			<defvar name="l2" type="float"/>
+
+			<call name="PrintFloats" s1="g1,g2,m1,m2,l1,l2 ">
+				<var name="g1"/>
+				<var name="g2"/>
+				<var name="m1"/>
+				<var name="m2"/>
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+			<setvar name="g1">
+				<const type="float" value="1.34"/>
+			</setvar>
+
+			<setvar name="l1">
+				<const type="float" value="341.34"/>
+			</setvar>
+
+			<setvar name="l2">
+				<const type="float" value="41.34"/>
+			</setvar>
+
+			<setvar name="m1">
+				<const type="float" value="3211.34"/>
+			</setvar>
+
+
+			<call name="PrintFloats" s1="g1,g2,m1,m2,l1,l2 ">
+				<var name="g1"/>
+				<var name="g2"/>
+				<var name="m1"/>
+				<var name="m2"/>
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+			<exec name="test1"/>
+
+			<call name="PrintFloats" s1="g1,g2,m1,m2,l1,l2 ">
+				<var name="g1"/>
+				<var name="g2"/>
+				<var name="m1"/>
+				<var name="m2"/>
+				<var name="l1"/>
+				<var name="l2"/>
+			</call>
+
+
+		</script>
+	</module>
+
+</mission>
+
