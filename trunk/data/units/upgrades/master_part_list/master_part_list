@@ -563,5 +563,20 @@
 			<Cargo file="Pilot" price="1" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Slaves" price="1" quantity="1" mass=".01" volume="1"/>
 		</Category>
+	<!-- cargo below is senselessly banned by 1 race alone -->
+		<Category file="Contraband/Confed">
+			<Cargo file="ISO_Propaganda" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="ISO_Party_Member" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Socialist_Worker_Journal" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Marijuana" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Former_Political_Prisoners" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Immigrants" price="1" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Contraband/Rlaan">
+
+		</Category>
+		<Category file="Contraband/Aera">
+
+		</Category>
 	</Hold>
 </Unit>

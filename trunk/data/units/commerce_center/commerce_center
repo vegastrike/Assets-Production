@@ -146,16 +146,10 @@
 		<Category file="upgrades/Weapons/Mounted_Guns_Medium">
 			<import price="1" quantity="10" quantitystddev="5"/>
 		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Heavy">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
 		<Category file="upgrades/Weapons/Beam_Arrays_Light">
 			<import price="1" quantity="10" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Weapons/Beam_Arrays_Medium">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Heavy">
 			<import price="1" quantity="10" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Weapons/Mount_Enhancements">
@@ -165,9 +159,6 @@
 			<import price="1" quantity="10" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Engines/Medium">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Engines/Heavy">
 			<import price="1" quantity="10" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Light">
@@ -201,12 +192,6 @@
 			<import price="1" quantity="10" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Radar/Windows">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Radar/Linux">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Radar/BSD">
 			<import price="1" quantity="10" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Miscellaneous">
