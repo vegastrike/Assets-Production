@@ -521,7 +521,7 @@
 </Damage>
 <Distance speed="600" radialspeed=".8" radius="8" pulsespeed="15" range="1200" >
 </Distance>
-<Appearance file="weapons/beamtexture.png" soundwav="MASS.WAV" r=".84" g=".5" b=".9" a="1" >
+<Appearance file="weapons/beamtexture.png" soundwav="beam.wav" r=".84" g=".5" b=".9" a="1" >
 </Appearance>
 </Beam>
 
