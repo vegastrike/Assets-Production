@@ -90,6 +90,17 @@ def processNews(plr):
                 Director.pushSaveString(plr,"news",noos[1:])
             else:
                 import dynamic_news
-                dynamic_news.pushDynamicNews(plr,noos)
+                dynamic_news.manageDynamicNews(plr,noos)
 
-    
+def eraseNewsItem(plr,item):
+    """removes the first news item matching the given item from
+    plr's "dynamic_news" save variable"""
+    import Director
+    for i in range (Director.getSaveStringLength(plr,"dynamic_news")):
+        noos=Director.getSaveString(plr,"dynamic_news",i)
+        if (len(noos)):
+            if item == noos:
+                Director.eraseSaveString(plr,"news",i)
+                print item,
+                print " removed from \"dynamic news\""
+                break

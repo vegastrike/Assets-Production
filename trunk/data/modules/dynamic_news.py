@@ -25,7 +25,7 @@ import dynamic_news_content
 
 
 def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
-			,scale_event,system,keyword,aggressor_flightgroup,aggressor_type, defender_flightgroup, defender_type):
+			,scale_event,system,keyword,aggressor_flightgroup,aggressor_type, defender_flightgroup, defender_type,randint):
 	"""retrieves a relevant news item from the dynamic_news_content.allNews()
 	list, and formats it"""
 	global allUsefullVariables
@@ -34,7 +34,7 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 				,"aggressor"	: aggressor		# -- as of 08/07/03 this is from aggressor down --
 				,"defender"	: defender
 				,"success"	: getSuccessStr(success)
-				,"dockedat"	: getDockFaction(system)
+				,"dockedat"	: getDockFaction()
 				,"scale_event"	: scale_event
 				,"system"	: system
 				,"keyword"	: keyword
@@ -44,9 +44,9 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 				,"defenderFGtype": defender_type
 				}
 
-	return formatNewsItem (getNewsItem(getDockFaction(system),type_event,stage_event,getSuccessStr(success)
-					 ,getPOV(getDockFaction(system),defender,aggressor,getSuccessStr(success))
-					 ,scale_event,keyword))
+	return formatNewsItem (getNewsItem(getDockFaction(),type_event,stage_event,getSuccessStr(success)
+					 ,getPOV(getDockFaction(),defender,aggressor,getSuccessStr(success))
+					 ,scale_event,keyword,randint))
 
 # ------------------------------------------------------------------------------
 # String Formatting functions
@@ -208,7 +208,7 @@ def getPOV(facmy,defender,aggressor,success):
 		print "Error, one or more values out of range"
 		return "neutral"
 
-def getDockFaction(system):
+def getDockFaction():
 	"""returns the faction of the place the player is docked at"""
 #	return "aera" # FIXME -- make the stub functions actually return a useful value!
 	i=0
@@ -221,7 +221,7 @@ def getDockFaction(system):
 		un=VS.getUnit(i)
 	if un.isPlanet() or (un.getFactionName() == "neutral"):
 		print "Returning the systems faction"
-		return VS.GetGalaxyFaction(system)
+		return VS.GetGalaxyFaction(VS.getSystemFile())
 	else:
 		print "Returning" + un.getFactionName() + "as units faction"
 		return un.getFactionName()
@@ -237,18 +237,17 @@ def getSuccessStr(success):
 	elif success == 0:
 		return "draw"
 
-def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword):
+def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword,randint):
 	"""finds a suitable news string from
 	the dynamic_news_content.allNews() dictionary"""
 	faction = validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword)
 	if faction == "barf":
-		print "Error: A suitable news story does not exist, returning a neutral siege story so you can still see the base you're at :-)"
-		listnews = dynamic_news_content.allNews()["neutral"]["siege"][stage_event][success][pov]
-		return getClosestScaleNews(listnews,scale)
+		print "Error: A suitable news story does not exist, returning a warning string."
+		return getClosestScaleNews([(scale,"all","ERROR!\\Invalid news variables:\\(" + makeVarList([faction_base,type_event,stage_event,success,pov,str(scale),keyword]) + ")\\A suitable news story for this event could not be found.\\This is a placeholder error message.\\\\Contact the help-desk for any queries:\\dandandaman@users.sourceforge.net ;-)\\\\\\ -- The Vegastrike Community:\\Struggling with lack of hands to go around since 1998")],scale,randint)
 	listnews = dynamic_news_content.allNews()[faction][type_event][stage_event][success][pov]
-	return getClosestScaleNews(listnews,scale)
+	return getClosestScaleNews(listnews,scale,randint)
 
-def getClosestScaleNews(listof,scale):
+def getClosestScaleNews(listof,scale,randint):
 	"""returns the closest scaled news item from a list of news items"""
 	valtable = []
 	for i in range (len(listof)):
@@ -259,7 +258,12 @@ def getClosestScaleNews(listof,scale):
 			finallist = [valtable[i]]
 		elif finallist[len(finallist) - 1][3] == valtable[i][3]:
 			finallist.append(valtable[i])
-	return finallist[vsrandom.randrange(0,len(finallist), step=1)][2]
+	if randint == -1:
+		global news_random_int
+		news_random_int = vsrandom.randrange(0,len(finallist), step=1)
+		return finallist[news_random_int][2]
+	else:
+		return finallist[randint][2]
 
 def minorNewsTypes():
 	"""a list of all the minor news types that should be system dependent"""
@@ -271,54 +275,61 @@ def checkSystemRelevant(system):
 	if (system in VS.getAllAddjacentSystems(VS.getSystemFile()).append(VS.getSystemFile())):
 		return 1
 
-def checkVarListRelevant(newsstring):
-	"""returns true only if the newsstring is relevant
+def checkVarListRelevant(newslist):
+	"""returns true only if the newslist is relevant
 	(major or close to home)"""
-	ls = newsstring.split(',')
-	if ls[0] in minorNewsTypes():
-		if checkSystemRelevant(ls[6]):
-			return 1
-	return 0
+	if (not (newslist[0] in minorNewsTypes())):
+		return 1
+	if (newslist[0] in minorNewsTypes()) and (checkSystemRelevant(newslist[6])):
+		return 1
 
-def filterRelevantStory(story):
-	"""returns the text to a story only if it is relevant
-	(big or close to home)..otherwise returns an empty string"""
-	text = story[story.find("@SYSTEM@") + len("@SYSTEM@"):]
-	system = story[story.find("@SYSTEM@")][:len("@SYSTEM@")]
-	if checkSystemRelevant(system):
-		return text
-	return ""
+def processNewsTuple(newsstring,randint):
+	"""takes a news variable string and returns the news story taking
+	or not taking into account the random int given/not given"""
 
-def processNewsTuple(newsstring):
-	"""takes a news variable string and returns the news story with
-	stardate and original system preceeding it"""
 	ls = newsstring.split(',')
 	while (len(ls)<12):
 		ls.append ('unknown')
-	ns = makeDynamicNews(ls[0],ls[1],ls[2],ls[3],string.atoi(ls[4]),string.atof(ls[5]),ls[6],ls[7],ls[8],ls[9],ls[10],ls[11])
+	ns = makeDynamicNews(ls[0],ls[1],ls[2],ls[3],string.atoi(ls[4]),string.atof(ls[5]),ls[6],ls[7],ls[8],ls[9],ls[10],ls[11],randint)
+	print ns
+	return ns
 #Added flightgroups as the last few arguments
-	fs = "1234.0" + "@TIME@" + ls[6] + "@SYSTEM@" + ns
-#FIXME: add real time from the newsstring..FIXME: add support for time in newsstring! :-P
-	print fs
-	return fs
+
 
 def manageDynamicNews(player,newsstring):
-	print 'pushing' + newsstring + ' to faction specific news savevar'
-	import Director
-	global allUsefullVariables
-	if checkVarListRelevant(newsstring):
-		Director.pushSaveString(player,"news_" + allUsefullVariables["dockedat"],processNewsTuple(newsstring))
-		Director.pushSaveString(player,"dynamic_news_posted",newsstring + ",FACTIONLIST," + allUsefullVariables["dockedat"])
-# FIXME..erase the original newsstring
-
-def managePostedNews(player,item):
-	itemvars = item[:item.find(",FACTIONLIST,")]
-	if not (checkFactionDone(item)) and checkVarListRelevant(itemvars):
-# FIXME..erase the original item
+	""" manages the dynamic news item passed to it"""
+	print "against its ferrocious struggling I am"
+	print "pushing " + newsstring + " through the generator"
+	ls = newsstring.split(',')
+	dockedat = getDockFaction()
+	isdone = 0
+	for word in ls:
+		if word.find("%RAND" + dockedat) != -1:
+			isdone = 1
+			randint = string.atoi(string.join(word.split("%RAND" + dockedat),""))
+			break
+	varlist = list()
+	for word in ls:
+		if word.find("%RAND") == -1:
+			varlist.append(word)
+	if checkVarListRelevant(varlist):
+		print "news is relevant"
+		varstring = string.join(varlist,",")
 		import Director
-		global allUsefullVariables
-		Director.pushSaveString(player,"news_" + allUsefullVariables["dockedat"],processNewsTuple(itemvars))
-		Director.pushSaveString(player,"dynamic_news_posted",item + "," + allUsefullVariables["dockedat"])
-
+		if isdone == 0:
+			Director.pushSaveString(player,"news",processNewsTuple(varstring,-1))
+			global news_random_int
+			newnewsstring = "%RAND" + dockedat + str(news_random_int) + "," + newsstring
+			Director.pushSaveString(player,"dynamic_news",newnewsstring)
+			print newnewsstring + " added to \"dynamic_news\""
+					#FIXME: delete old dynamic_news string!
+			import news	#This should do it?:
+			news.eraseNewsItem(player,newsstring)
+			print "but he resisted and I had to produce a demi-clone"
+		else:
+			Director.pushSaveString(player,"news",processNewsTuple(varstring,randint))
+			print "and he fried.....FRIED!!!....mwahahahahahaaa"
+	else:
+		print "news " + newsstring + " ignored...not relevant"
 
 
