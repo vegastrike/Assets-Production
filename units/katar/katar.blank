@@ -23,7 +23,7 @@
 	</Mount>
 	<Mount weapon = "" size = "light medium heavy" x = "-2.15" y = "-1.1" z = "2.5" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "-0.406736" qj = "-0.913546" qk = "0.000000"  >
 	</Mount>
-	<Mount weapon = "" size = "lgiht-missile medium-missile special" x = "6.5" y = "-2" z = "1" ammo = ""  >
+	<Mount weapon = "" size = "light-missile medium-missile special" x = "6.5" y = "-2" z = "1" ammo = ""  >
 	</Mount>
 	<Mount weapon = "" size = "light-missile medium-missile special" x = "-6.5" y = "-2" z = "1" ammo = "4"  >
 	</Mount>
