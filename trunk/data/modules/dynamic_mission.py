@@ -3,6 +3,8 @@ import Director
 import fg_util
 import vsrandom
 
+plr=0
+
 #Credit to Peter Trethewey, master of python and all things nefarious
 def getSystemsKAwayNoFaction( start, k ):
 	set = [start]#set of systems that have been visited
@@ -51,11 +53,27 @@ def processSystem(sys):
 		k=k[0]
 	return k.capitalize()
 def writemissionname(name,path):
-	pass
+	if len(path)<=1:
+		name+=" - In System"
+	Director.pushSaveSting(plr, "mission_names", name)
+	
 def writedescription(name):
-	pass
+	Director.pushSaveSting(plr, "mission_descriptions", name)
+	
 def writemissionsavegame (name):
-	pass
+	Director.pushSaveSting(plr, "mission_scripts", name)
+
+def eraseExtras():
+	import sys
+	len=Director.getSaveStringLength(plr, "mission_scripts")
+	if (len!=Director.getSaveStringLength(plr, "mission_names") or len!=Director.getSaveStringLength(plr, "mission_descriptions")):
+		sys.stdout.write("Warning: Number of mission descs., names and scripts are unequal.\n")
+	if len>0:
+		for i in range(len-1,0,-1):
+			Director.eraseSaveString(plr, "mission_scripts", i)
+			Director.eraseSaveString(plr, "mission_names", i)
+			Director.eraseSaveString(plr, "mission_descriptions", i)
+
 def generatePatrolMission (path, numplanets):
 	dist=1000
 	creds = numplanets*500
@@ -161,17 +179,19 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 						f = fac
 					generateEscortMission(j,k,f)
 			for k in range(vsrandom.randrange(1,4)): ###FIXME: choose a better number than 4.
-				if (rnd<.18):    # 18% - Patrol mission
+				if (rnd<.45):    # 45% - Patrol mission
 					generatePatrolMission(maxsysaway, minsysaway,vsrandom.randrange(4,10))
-				elif (rnd<.41):  # 23% - Cargo mission
+				elif (rnd<.9):   # 45% - Cargo mission
 					generateCargoMission(path,true)
-				elif (fac=='pirates'): # 5% - Contraband mission (cargo contraband)
+				elif (fac=='pirates'): # 10% - Contraband mission (cargo contraband)
 					generateCargoMission(path,false)
-				else:            #  5% - Scout mission (patrol one planet)
+				else:            # 10% - Scout mission (patrol one planet)
 					generatePatrolMission(path,1)
 
 def CreateMissions(minsys=1,maxsys=4):
+	eraseExtras()
 	i=0
+	global plr
 	plr=VS.GetPlayer()
 	un=VS.GetUnit(i)
 	while(un):
