@@ -1,24 +1,40 @@
-import universe
+from go_to_adjacent_systems import *
+from go_somewhere_significant import *
 import random
 import launch
 import faction_ships
 import VS
 import Briefing
-class cargo_mission:
+import universe
+import unit
+import Director
+"""
+NOTE:
+  * THIS MODULE Makes an objective named "Deliver cargo to system"
+  * Use go_to_adjacent_systems
+    - Makes objective greener each time you jump...
+    - Makes objective change text to match the system name as you get closer 
+    - The objective doesnt get deleted
+  * THEN Use go_somewhere_significant
+    - Only gets initialized NOW, after you are the right system.
+    - Makes another objective
+    - Objective gets greener as you get closer to significant
+    - Also doesnt get deleted; CARGO mission handles the termination
+"""
+
+class cargo_mission (Director.Mission):
 	you=VS.Unit()
 	faction=""
-	destination=""
 	base=VS.Unit()
 	cargoname=""
-	arrived=0
 	difficulty=1
-	distfrombas=0
 	quantity=1
 	cred=0
 	capship=0
-	mission_time=0
-	jumps=()
-        mplay=self.mplay
+#	mission_time=0
+	adjsys=0
+	arrived=0
+        mplay="all"
 	def initbriefing(self):
 		self.jump_ani=0
 		self.rnd_y=0.0
@@ -72,78 +88,89 @@ class cargo_mission:
 		del self.brief_stage
 		del self.begintime
 	
-	def __init__ (self,factionname, numsystemsaway, cargoquantity, missiondifficulty, distance_from_base, creds, launchoncapship, time_to_complete, category):
-	  self.mission_time=VS.getGameTime()+time_to_complete*100*float(1+numsystemsaway)
+	def __init__ (self,factionname, numsystemsaway, cargoquantity, missiondifficulty, creds, launchoncapship, time_to_complete, category):
+	  Director.Mission.__init__(self);
+#	  self.mission_time=VS.GetGameTime()+time_to_complete*100*float(1+numsystemsaway)
 	  self.capship= launchoncapship
 	  self.faction=factionname
 	  self.cred=creds
-#####	  universe.init()
-	  self.distfrombase=distance_from_base
 	  self.difficulty=missiondifficulty
 	  mysys=VS.getSystemFile()
+	  self.adjsys=go_to_adjacent_systems(self.you,numsystemsaway)
 	  self.quantity=cargoquantity
 	  sysfile = mysys
 	  self.you=VS.getPlayer()
 	  mplay=universe.getMessagePlayer(self.you)
 	  if (self.quantity<1):
 	    self.quantity=1
-	  carg=VS.getRandCargo(quantity,category)
+	  carg=VS.getRandCargo(self.quantity,category)
 	  if (carg.GetQuantity()==0):
-	    carg = VS.getRandCargo(quantity,"")
+	    carg = VS.getRandCargo(quantity,"") #oh no... could be starships...
 	  tempquantity=self.quantity
 	  self.cargoname=carg.GetContent()
-	  name = you.getName ()
+	  name = self.you.getName ()
+	  carg.SetMissionFlag(1)
 	  if (self.you):
 	    quantity = self.you.addCargo(carg)  #I add some cargo
 	  else:
+	    VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000Unable to establish communications. Mission failed.")
 	    VS.terminateMission (0)
 	    return
-	  creds_deducted = (carg.GetPrice()*float(self.quantity)*random.random()+1)
-	  self.cred += creds_deducted
+#	  creds_deducted = (carg.GetPrice()*float(self.quantity)*random.random()+1)
+#	  self.cred += creds_deducted
 	  if (tempquantity>0):
 	    self.cred*=float(quantity)/float(tempquantity)
 	  else:
-	    VS.IOmessage (2,"cargo mission",self.mplay,"You do not have space to add our cargo to the mission. Mission failed.")
+	    VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000You do not have space to add our cargo to the mission. Mission failed.")
 	    VS.terminateMission(0)
-	  return
+	    return
 	  
 	  if (quantity==0):
-	    VS.IOmessage (2,"cargo mission",self.mplay,"You do not have space to add our cargo to the mission. Mission failed.")
+	    VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000You do not have space to add our cargo to the mission. Mission failed.")
 	    VS.terminateMission(0)
- 	    return
+	    return
 	  
 	  VS.IOmessage (0,"cargo mission",self.mplay,"Good Day, %s. Your mission is as follows:" % (name))
-	  (self.destination,self.jumps)=universe.getAdjacentSystems(sysfile,numsystemsaway)
-	  VS.IOmessage (2,"cargo mission",self.mplay,"and give the cargo to a %s unit." % (faction))
-	  VS.IOmessage (3,"cargo mission",self.mplay,"You will receive %d of the %s cargo" % (quantity,cargoname))
-	  VS.IOmessage (4,"cargo mission",self.mplay,"We will deduct %.2f credits from your account for the cargo needed." % (creds_deducted))
-	  VS.IOmessage (5,"cargo mission",self.mplay,"You will earn %.2f more credits when you deliver our cargo." % (creds))
-	  self.you.addCredits (-creds_deducted)
+	  self.adjsys.Print("You should start in the system named %s","Then jump to %s","Finally, jump to %s, your final destination","cargo mission",1)
+	  VS.IOmessage (2,"cargo mission",self.mplay,"Give the cargo to a %s unit." % (self.faction))
+	  VS.IOmessage (3,"cargo mission",self.mplay,"You will receive %d of the %s cargo" % (self.quantity,self.cargoname))
+#	  VS.IOmessage (4,"cargo mission",self.mplay,"We will deduct %.2f credits from your account for the cargo needed." % (creds_deducted))
+	  VS.IOmessage (4,"cargo mission",self.mplay,"You will earn %.2f credits when you deliver our cargo." % (creds))
+#	  self.you.addCredits (-creds_deducted)
 	
 	def takeCargoAndTerminate (self,you, remove):
 	  removenum=0 #if you terminate without remove, you are SKREWED
 	  if (remove):
-	    removenum=you.removeCargo(cargoname,quantity,1)
-	  
-	  if ((removenum==self.quantity) or (self.quantity==0)):
-	    VS.IOmessage (0,"cargo mission",self.mplay,"Excellent work pilot.")
-	    VS.IOmessage (0,"cargo mission",self.mplay,"You have been rewarded for your effort as agreed.")
-	    VS.IOmessage (0,"cargo mission",self.mplay,"Your excellent work will be remembered.")
+	    removenum=you.removeCargo(self.cargoname,self.quantity,1)
+	    mpart=VS.GetMasterPartList()
+	    newcarg=mpart.GetCargo(self.cargoname)
+	    newcarg.SetQuantity(removenum)
+	    self.base.addCargo(newcarg)
+	    has=self.you.hasCargo(self.cargoname)
+	    if (has):
+	      has=self.you.removeCargo(self.cargoname,has,0)
+	      newcarg.SetMissionFlag(0)
+	      newcarg.SetQuantity(has)
+	      self.you.addCargo(newcarg) #It seems that removing and then adding it again is the only way...
+	  if ((removenum>=self.quantity) or (self.quantity==0)):
+	    VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00Excellent work pilot.")
+	    VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00You have been rewarded for your effort as agreed.")
+	    VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00Your excellent work will be remembered.")
 	    you.addCredits(self.cred)
 	    VS.terminateMission(1)
 	    return
 	  else:
-	    VS.IOmessage (0,"cargo mission",self.mplay,"You did not follow through on your end of the deal.")
+	    VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000You did not follow through on your end of the deal.")
 	    if (self.difficulty<1):
-	      VS.IOmessage (0,"cargo mission",self.mplay,"Your pay will be reduced")
-	      VS.IOmessage (0,"cargo mission",self.mplay,"And we will consider if we will accept you on future missions.")
-	      addcred=(float(removenum)/float((self.quantity*(1+self.difficulty))))*self.cred
-	      VS.addCredits(you,addcred)
+	      VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000Your pay will be reduced")
+	      VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000And we will consider if we will accept you on future missions.")
+	      addcred=(float(removenum)/(float(self.quantity*(1+self.difficulty))))*self.cred
+	      you.addCredits(addcred)
 	    else:
-	      VS.IOmessage (0,"cargo mission",self.mplay,"You will not be paid!")
+	      VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000You will not be paid!")
 	      if (self.difficulty>=2):
-		VS.IOmessage (0,"cargo mission",self.mplay,"And your idiocy will be punished.")
-		VS.IOmessage (0,"cargo mission",self.mplay,"You had better run for what little life you have left.")
+		VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000And your idiocy will be punished.")
+		VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000You had better run for what little life you have left.")
 		for i in range(self.difficulty):
 		  un=faction_ships.getRandomFighter(self.faction)
 		  newunit=launch.launch_wave_around_unit("shadow", self.faction, un, "default", 1, 200.0,400.0,you)
@@ -160,37 +187,32 @@ class cargo_mission:
 ##	    if (you):
 ##	      takeCargoAndTerminate(you,0)
 ##	    return
-	  if (arrived):
-	    if (self.base.isNull() or self.you.isNull()):
-	      VS.IOmessage (0,"cargo mission",self.mplay,"Mission failed. You were unable to deliver cargo.")
-	      VS.terminateMission(0)
-	      return
-	    dist=you.getSignificantDistance(base)
-	    if (dist<=self.distfrombase):
+	  if (self.you.isNull() or (self.arrived and self.base.isNull())):
+	    VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000You were unable to deliver cargo. Mission failed.")
+	    VS.terminateMission(0)
+	    return
+	  if (not self.adjsys.Execute()):
+	    return
+	  print "Won a section; class name:"
+#	  print self.adjsys
+	  if (self.arrived):
+	    self.adjsys.Execute=self.adjsys.HaveArrived
+	    if (self.base.isDocked(self.you)):
 	      self.takeCargoAndTerminate(self.you,1)		
 	      return
 	  else:
-	    sysfil = VS.getSystemFile()
-	    if (sysfil==destination):
-	      self.arrived=1
-	      newship=faction_ships.getRandomCapitol(faction)
-	      randint=random.randrange(0,50)
-	      significant = unit.getSignificant (randint,(not capship),0)
-	      if (_std.isNull (significant)):
-		significant =VS.getPlayer()
-	      if (_std.isNull(significant)):
-		self.arrived=0
-	      else:
-		newun=significant
-		if (self.capship):
-		  newun=launch.launch_wave_around_unit("Base",self.faction,newship,"sitting_duck",1,2000.0,5000.0,significant)
-		name = newun.getName ()
-		VS.IOmessage (0,"cargo mission",self.mplay,"You must drop your cargo off with the %s." % (name))
-		if (capship):
-		  name=significant.getName()
-		  VS.IOmessage (0,"cargo mission",self.mplay,"It is docked around the %s landmark." % (name))
-		self.base=newun
+	    self.arrived=1
+	    self.adjsys=go_somewhere_significant(self.you,1,100,self.capship,self.faction)
+	    capstr="planet"
+	    dockstr="land"
+	    if (self.capship):
+	      dockstr="dock"
+	      capstr="ship"
+	    self.adjsys.Print("You must visit the %%s %s" % (capstr),"cargo mission",", docked around the %s",5)
+	    VS.IOmessage(6,"cargo mission",self.mplay,"Once there, %s and we will transport the cargo off of your ship." % (dockstr))
+	    self.base=self.adjsys.SignificantUnit()
 
 def initrandom (factionname, missiondifficulty,creds_per_jump, launchoncapship, sysmin, sysmax, time_to_complete, category):
-	return cargo_mission(factionname,random.random(sysmin,sysmax), random.randrange(4,15), missiondifficulty,400.0,creds_per_jump*float(1+numsys),launchoncapship, 10.0, category)
+	numsys=random.randrange(sysmin,sysmax)
+	return cargo_mission(factionname,numsys, random.randrange(4,15), missiondifficulty,creds_per_jump*float(1+numsys),launchoncapship, 10.0, category)
 

@@ -5,6 +5,7 @@
 ##system_map={}
 ##outstr=""
 import VS
+import random
 
 def getAdjacentSystems (currentsystem, sysaway, jumps=()):
     """returns a tuple in the format ("[lastsystem]",(system1,system2,system3,...))"""
@@ -14,7 +15,7 @@ def getAdjacentSystems (currentsystem, sysaway, jumps=()):
       return (currentsystem,jumps)
     else:
       for i in range (10):
-        nextsystem=VS.getAdjacentSystem(currentsystem,random.randrange(0,max-1))
+        nextsystem=VS.GetAdjacentSystem(currentsystem,random.randrange(0,max))
         if (not (nextsystem in jumps)):
           break
       else:
