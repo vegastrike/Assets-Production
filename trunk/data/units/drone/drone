@@ -1,8 +1,12 @@
 <Unit>
-	<Meshfile file="drone-front.xmesh" />
-	<Meshfile file="drone-base.xmesh" />
+
+	<Meshfile file="drone-front.xmesh" /> 
+	<Meshfile file="drone-base.xmesh" /> 
 	<Meshfile file="drone-side.xmesh" />
 	<BspMesh/>
+
+<!--	<Meshfile file="hornet.xmesh" />  -->
+
 
 <Light file="engine1.png" x="0" y="0" z="-66" size="50" r="0.898039" g="0.803922" b="0.070588"/>
 
