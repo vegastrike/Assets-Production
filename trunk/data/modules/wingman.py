@@ -9,12 +9,13 @@ import universe
 import unit
 import Director
 class wingman (Director.Mission):
-    def __init__ (self,price,factionname,numships):
+    def __init__ (self,price,factionname,numships,difficulty):
         Director.Mission.__init__(self)
         self.price=price
         self.faction=factionname
         self.you = VS.getPlayer()
         self.numships=numships
+        self.diff=difficulty
         self.adjsys=go_somewhere_significant (self.you,0,5000,0)
         self.wingship = faction_ships.getRandomFighter(factionname)
         nam = "[%s]" % self.wingship
@@ -44,8 +45,11 @@ class wingman (Director.Mission):
                                                     500,
                                                     1000,
                                                     self.you)
-                lead.SetTarget(self.you)
-                VS.IOmessage (0,"game","all","[%s] You don't have the agreed money... prepare to DIE")
+                if (self.diff>0):
+                    lead.SetTarget(self.you)
+                    VS.IOmessage (0,"game","all","[%s] You don't have the agreed money... prepare to DIE!"%lead.getName())
+                else:
+                    VS.IOmessage (0,"game","all","[%s] You don't have the money. A fool like you won't last long!"%lead.getName())
     def Execute (self):
         
         if (self.adjsys.Execute()):
