@@ -1,4 +1,4 @@
-<Unit size="10">
+<Unit size="40">
 
 	<cockpit file="light_cockpit.cpt" x="0" y=".5" z="4"/>
 	<Defense>

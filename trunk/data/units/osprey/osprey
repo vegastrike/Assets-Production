@@ -1,4 +1,4 @@
-<Unit scale="1">
+<Unit scale="4">
 	<Meshfile file="osprey.xmesh" />
 	<Mount weapon="Particle" size="Medium Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
 	<Mount weapon="Particle" size="Medium Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	

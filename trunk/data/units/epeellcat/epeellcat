@@ -1,4 +1,4 @@
-<Unit size="10">
+<Unit size="40">
 <Meshfile file="Epeellcat-Body.xmesh"/>
 <Meshfile file="Epeellcat-Cockpit.xmesh"/>
 

@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="8">
 	<Cockpit file="medium_cockpit.cpt"/>
 	<Meshfile file="destiny.xmesh" />
 	<BspMesh/>

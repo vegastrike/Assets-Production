@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="4">
 	<cockpit file="medium_cockpit.cpt" x="0" y=".5" z="4"/>
 	<Defense HudImage="nova-hud.spr">
 		<Shields front="0.000000" back="0.000000"/>
