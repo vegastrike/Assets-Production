@@ -18,7 +18,7 @@ def MakeCorisc(time_of_day='day',mybartender='bases/bartender_default.py'):
     Base.Texture (bar, 'tex', 'bases/industrial/bar'+time_of_day+'.spr', 0, 0)
     Base.Link (bar, 'Exlink1', -1, -1, 0.466797, 2, 'Exit The Bar', 0)
     Base.Link (bar, 'Exlink2', -1, -0.200521, 1, 1.200521, 'Exit The Bar', 0)
-    Base.Python (bar, 'talk', 0.46875, -0.151042, 0.4, 0.4, 'Talk to the Bartender', mybartender,False)
+    Base.Python (bar, 'talk', 0.46875, -0.151042, 0.4, 0.4, 'Talk to the Bartender', mybartender,0)
     Base.Texture(bar,'bartender','bases/industrial/bartender%d.spr' % (vsrandom.randrange(0,4)),0.66875, 0.05)
     fixers.CreateFixers(bar,[(.1,-0.15,.4,.4),])
     
