@@ -10,7 +10,7 @@
 		<Radar itts="false" color="false" error="0" maxcone="1" range="0"/> 
 	</Computer>
 
-	<Energy afterburnenergy="30">
+	<Energy afterburnenergy="0">
 		<Reactor recharge="0" limit="0"/>
 	</Energy>
            	<Jump missing="1" delay="1" jumpenergy="0"/>       
