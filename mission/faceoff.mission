@@ -1,0 +1,24 @@
+<mission>
+	<settings>
+		<origin  planet="earth" x="0000" y="100" z="000.0"/>
+	</settings>
+
+	<variables>
+		<var name="defaultplayer" value="Shadow"/>
+		<var name="credits" value="100000000"/>
+		<var name="system" value="enigma_sector/heavens_gate" />
+		<var name="mission_name" value="Faceoff" />
+		<var name="description" value="Faceoff!." />
+	</variables>
+        <flightgroups>
+                <flightgroup name="Shadow" faction="confed" type="nova" ainame="default" waves="1" nr_ships="1">
+			<pos x="4116136" y="-800" z="00"/> 
+		</flightgroup>
+        </flightgroups>
+	<python>
+import faceoff
+newmission = faceoff.faceoff ()
+newmission=0
+
+</python>
+</mission>
