@@ -18,7 +18,7 @@ import dynamic_news_content
 
 
 def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
-			,scale_event,system,keyword):
+			,scale_event,system,keyword,aggressor_flightgroup,aggressor_type, defender_flightgroup, defender_type):
 # retrieves a relevant news item from the dynamic_news_content.allNews()
 # list, and formats it
 	global allUsefullVariables
@@ -31,6 +31,10 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 				,"scale_event"	: scale_event
 				,"system"	: system
 				,"keyword"	: keyword
+				,"defender_fg"	: defender_flightgroup
+				,"defender_type": defender_type
+				,"aggressor_fg"	: aggressor_flightgroup
+				,"aggressor_type":aggressor_type 
 				}
 
 	return formatNewsItem (getNewsItem(getDockFaction(system),type_event,stage_event,getSuccessStr(success)
@@ -243,7 +247,10 @@ def getClosestScaleNews(listof,scale):
 
 def processNewsTuple(newsstring):
 	ls = newsstring.split(',')
-	ns = makeDynamicNews(ls[0],ls[1],ls[2],ls[3],string.atoi(ls[4]),string.atof(ls[5]),ls[6],ls[7])
+	while (len(ls)<12):
+		ls.append ('unknown')
+	ns = makeDynamicNews(ls[0],ls[1],ls[2],ls[3],string.atoi(ls[4]),string.atof(ls[5]),ls[6],ls[7],ls[8],ls[9],ls[10],ls[11])
+#Added flightgroups as the last few arguments
 	print ns
 	return ns
 #	return newsstring #FIXME
