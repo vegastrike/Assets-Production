@@ -1,6 +1,6 @@
 <Unit>
 	<Meshfile file="purplenebula.xmesh"/>
-	<BSPmesh file="purplenebula.xmesh" RAPID="0"/>
+	<BSPmesh file="purplenebula.xmesh" RAPID="0" BSP="0"/>
 	<Meshfile file="purplenebula.bigger1.xmesh"/>
 	<Meshfile file="purplenebula.bigger2.xmesh"/>
 	<Meshfile file="purplenebula.bigger3.xmesh"/>

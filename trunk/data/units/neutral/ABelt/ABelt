@@ -7,10 +7,10 @@
      the command line arguments are in the same order as the questions asked.
      to make a different LOD use a different seed
  -->
-<SubUnit file="asteroids"  />
-<SubUnit file="asteroids" x="0" y="00" z="00" ri="1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
-<SubUnit file="asteroids" x="00" y="100" z="50" ri="1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
-<SubUnit file="asteroids" x="00" y="50" z="400" ri="1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/>
+<SubUnit file="asteroids400gap"  />
+<SubUnit file="asteroids400gap" x="0" y="00" z="00" ri="1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids400gap" x="00" y="00" z="0" ri="1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
+<SubUnit file="asteroids" x="00" y="400" z="1400" ri="1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/>
 <SubUnit file="asteroids" x="0" y="-400" z="3550" ri="-1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
 <SubUnit file="asteroids" x="00" y="-500" z="3550" ri="-1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
 
