@@ -21,18 +21,9 @@ class quest_contraband_truck_factory (quest.quest_factory):
 class quest_contraband_truck (quest.quest):
 
 
-	def do_aera_count(self):
-		self.aera_count=0
-		for i in self.aera_specopp:
-			if (i):
-				self.aera_count = self.aera_count + 1
-		return self.aera_count
-
-
-
 	def mission_fail(self):
 		print "mission failed"
-		VS.IOmessage (0,"game","news","AERAN WARP CORE EXPLODES: \n GNN reports the explosion of a warp core in Klondike system today.  The unstable core was apparently being smuggled out of Confederation space by cloaked Aeran ships.  It is understood that the Aeran ships, and an unknown privateer vessel were in the aera.  They are presumed destroyed.  Our informant wishes to remain anonymous.")
+		VS.IOmessage (0,"game","news","AERAN WARP CORE EXPLODES: \n GNN reports the explosion of a warp core in Klondike system today.  The unstable core was apparently being smuggled out of Confederation space by cloaked Aeran ships.  It is understood that the Aeran ships, and an unknown privateer vessel were in the aera.  They are presumed destroyed.\n\n  GNN --- Your News Network Anywhere")
 		print "mission terminating"
 
 		print "mission terminated"
@@ -42,9 +33,9 @@ class quest_contraband_truck (quest.quest):
 	def mission_success(self):
 		self.confed_cruiser=launch.launch_wave_around_unit("Sonorous","confed","corvette","default",1,4000,8000,self.cargo_container)
 		self.confed_epeels=launch.launch_wave_around_unit("Sonorous E1","confed","epeellcat","default",5,1000,1000,self.confed_cruiser)
-		VS.IOmessage (3,"game","all","Attention Private Vessel!")
-		VS.IOmessage (4,"game","all","Under Code 1530 of the Trade Practices Charter, we take posession of this cargo pod.")
-		VS.IOmessage (6,"game","all","Please remove yourself or we will remove you.")
+		VS.IOmessage (3,"Sonorous Command","all","Attention Private Vessel!")
+		VS.IOmessage (4,"Sonorous Command","all","Under Code 1530 of the Trade Practices Charter, we take posession of this cargo pod.")
+		VS.IOmessage (6,"Sonorous Command","all","Please remove yourself or we will remove you.")
 		self.jumpout = 0
 		self.quest_exit = 1
 
@@ -111,9 +102,9 @@ class quest_contraband_truck (quest.quest):
 
 			print "begin msgs"
 
-			VS.IOmessage (0,"game","all","[Translate: Aernoss -> Englysh] Turn your attention <surprise> Entity/self triggered item warp core!")
-			VS.IOmessage (5,"game","all","[Translate: Aernoss -> Englysh] <fear, anxiety, anger> Filthy human procreate entity/self!")
-			VS.IOmessage (12,"game","all","[Translate: Aernoss -> Englysh] Group leave fast danger avo...")
+			VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] Turn your attention <surprise> Entity/self triggered item warp core!")
+			VS.IOmessage (5,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <fear, anxiety, anger> Filthy human procreate entity/self!")
+			VS.IOmessage (12,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] Group leave fast danger avo...")
 			print "ended msgs"
 			self.jumpout = 1
 			self.repeat_end2 = 0
@@ -136,10 +127,10 @@ class quest_contraband_truck (quest.quest):
 
 				self.playa.JumpTo("gemini_sector/pestilence")
 				print "jumped playa"
-				VS.IOmessage (0,"game","all","[Translate: Aernoss -> Englysh] ...id")
-				VS.IOmessage (5,"game","all","[Translate: Aernoss -> Englysh] <untranslatable> section of excretement <untranslatable> human <untranslatable> genitalia <untranslatable> fire <untranslatable> nice day.")
+				VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] ...id")
+				VS.IOmessage (5,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <untranslatable> section of excretement <untranslatable> human <untranslatable> genitalia <untranslatable> fire <untranslatable> nice day.")
 
-				VS.IOmessage (0,"game","all","[Translate: Aernoss -> Englysh] Flee smart to go entity/self <conditional> life value.")
+				VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] Flee smart to go entity/self <conditional> life value.")
 
 				print "done all but fail"
 				self.mission_fail()
@@ -160,7 +151,7 @@ class quest_contraband_truck (quest.quest):
 		self.playa = VS.getPlayer()
 		if (self.playa):
 			self.setup_all()
-			VS.IOmessage (3,"game","all","[Computer] Scans show several peices of scrap in this system.  May contain valuable cargo.")
+			VS.IOmessage (3,"[Computer]","all","Scans show several peices of scrap in this system.  May contain valuable cargo.")
 
 
 
@@ -168,10 +159,10 @@ class quest_contraband_truck (quest.quest):
 
 
 # remove this test        self.sysfile = VS.getSystemFile()
-                if self.truck_pirate.getUnitSystemFile()!= VS.getSystemFile():
-			print "Truck has Jumped Away :-)"
-		else:
-			print "Truck is still here! :-("
+#               if self.truck_pirate.getUnitSystemFile()!= VS.getSystemFile():
+#			print "Truck has Jumped Away :-)"
+#		else:
+#			print "Truck is still here! :-("
 
 
 
@@ -193,7 +184,7 @@ class quest_contraband_truck (quest.quest):
 
 			elif self.cargo_container.getMinDis(self.playa.Position()) < 2500 and not self.cargo_container.isNull():
 				if self.repeat_end2 == 1:
-					VS.IOmessage (3,"game","all","[Computer] Warning! Annomalous warp echos detected.")
+					VS.IOmessage (3,"[Computer]","all","Warning! Annomalous warp echos detected.")
 					print
 					print "Aera Un-Cloaked"
 					print
@@ -203,20 +194,19 @@ class quest_contraband_truck (quest.quest):
 			elif self.cargo_container.isNull():
 				if self.repeat_end2 == 1:
 					print "null activating"
-					VS.IOmessage (3,"game","all","[Computer] Warning! De-Cloaking hostiles.")
+					VS.IOmessage (3,"[Computer]","all","Warning! De-Cloaking hostiles.")
 					print
 					print "Aera Un-Cloaked"
 					print
 					unit.TfgCloak(0,self.aera_specopp)
 					unit.setTfgDirective(self.aera_specopp,self.playa,'A')
-					VS.IOmessage (0,"game","all","[Translate: Aernoss -> Englysh] <surprise> Attention all! <anger> Entity/self valueless takes possession away value.")
-					VS.IOmessage (3,"game","all","[Translate: Aernoss -> Englysh] <anger> Filthy human procreate entity/self!  Death done!")
+					VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <surprise> Attention all! <anger> Entity/self valueless takes possession away value.")
+					VS.IOmessage (3,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <anger> Filthy human procreate entity/self!  Death done!")
 					self.repeat_end2 = 0
 
 
 
 			if unit.TfgisNull(self.aera_specopp):
-				VS.IOmessage (0,"game","all","[Computer] Warning! Annomalous fucking python detected.")
 				self.mission_success()
 
 			if self.jumpout == 1:
@@ -225,17 +215,17 @@ class quest_contraband_truck (quest.quest):
 
 			if self.truck_pirate.getMinDis(self.playa.Position()) < 200:
 				if self.repeat_end1 == 2:
-					VS.IOmessage (0,"game","all","I am with Confed Special Service.")
-					VS.IOmessage (0,"game","all","You are hampering a priority 0 operation.")
+					VS.IOmessage (0,"Sonorous E2","all","I am with Confed Special Service.")
+					VS.IOmessage (0,"Sonorous E2","all","You are hampering a priority 0 operation.")
 					self.confed_epeels2=launch.launch_wave_around_unit("Sonorous A3","confed","epeellcat","default",5,1000,5000,self.playa)				
-					VS.IOmessage (5,"game","all","You are Terminated.")
+					VS.IOmessage (5,"Sonorous E2","all","You are Terminated.")
 					self.confed_epeels2.SetTarget(self.playa)
 					self.confed_epeels2.setFgDirective('A')
 					self.repeat_end1 = 3
 
 			elif self.truck_pirate.getMinDis(self.playa.Position()) < 1000:
 				if self.repeat_end1 == 1:
-					VS.IOmessage (0,"game","all","Back off mate, if you know what's good for you.")
+					VS.IOmessage (0,"Smuggler:truck","all","Back off mate, if you know what's good for you.")
 					print "My target is..."
 
 					global truck_exit
@@ -248,13 +238,13 @@ class quest_contraband_truck (quest.quest):
 
 			elif self.truck_pirate.getMinDis(self.playa.Position()) < 3000:
 				if self.repeat_less == 1:
-					VS.IOmessage (0,"game","all","Please stay away, we are carrying valuable cargo.")
+					VS.IOmessage (0,"Smuggler:truck","all","Please stay away, we are carrying valuable cargo.")
 					self.repeat_more = 1
 					self.repeat_less = 0
 
 			else:
 				if self.repeat_more == 1:
-					VS.IOmessage (0,"game","all","Keep your distance.")
+					VS.IOmessage (0,"Smuggler:truck","all","Keep your distance.")
 					self.repeat_more = 0
 					self.repeat_less = 1
 			
