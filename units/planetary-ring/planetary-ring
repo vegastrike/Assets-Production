@@ -4,6 +4,6 @@
 <Meshfile file="Planetary-RingE.xmesh"/>
 <Meshfile file="Planetary-RingW.xmesh"/>
 	<Defense>
-	<Hull strength="1000000000000000000000"/>
+	<Hull strength="100000000000000000000000000000000000000000"/>
 	</Defense>
 </Unit>
