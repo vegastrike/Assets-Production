@@ -17,11 +17,13 @@ if (len!=0):
 	kills=Director.getSaveData(playernum,"kills",len-1)
 if (kills<0):
 	Base.Message("Hello Pilot. " + intro_string + " We are actively seeking new members in our organization.  However to fly defense runs, you need some more experience. Come back when your record is somewhat more interesting and then together we can overthrow the confederacy!");
+elif (VS.numActiveMissions()>1):
+	Base.Message ("It is a pleasure to speak to you; however, if you wish to work with me you must first finish up your other contractual obligations.")
 else:
-	if (Director.getSaveDataLength (playernum,"iso_mission1")==0):
-		AssignMission()
+	if (fixers.checkSaveValue (playernum,"iso_mission1",0)):
 		Base.Message("Hello Mercenary. " + intro_string + " We are actively seeking mercenaries to help us defend our supplies and our party members.  There is a precious in this system vessel carrying several key party members and some valuable sensor data with them.  We offer 18000 credits if you will defend these starships, comrade! Do you accept our offer?")
 #And then if you fail.......
+		AssignMission()
 	elif (fixers.checkSaveValue (playernum,"iso_mission1",-1)):
 		Base.Message ("You conspirator! I should have realized you were a kepitalizt pig when I first smelled our foul stench! You probably got paid to destroy our vessel. If I shared in your lack of honor I would kill you where you stand.  But instead I shall ask my operatives to rid you of your ship. Fly you fool! Fly if you wish to have any shred of your starship left!")
 		fixers.setSaveValue (playernum,"decided_iso_evil",1)
@@ -34,13 +36,13 @@ else:
 		launch.launch_wave_around_unit (fgname,"ISO",type,"default",1,80,300,playa).SetTarget(playa)
 		launch.launch_wave_around_unit (fgname,"ISO",type,"default",1,80,300,playa).SetTarget(playa)
 	else:
-		if (fixers.checkSaveValue (playernum,"iso_mission1",1) and Director.getSaveDataLength(playernum,"iso_mission2")==0):			
+		if (fixers.checkSaveValue (playernum,"iso_mission1",1) and fixers.checkSaveValue(playernum,"iso_mission2",0)):			
 			Base.Message ("Congratulations!")#assign mis 2
 			AssignMission()
-		elif (fixers.checkSaveValue (playernum,"iso_mission2",1) and Director.getSaveDataLength(playernum,"iso_mission3")==0):			
+		elif (fixers.checkSaveValue (playernum,"iso_mission2",1) and fixers.checkSaveValue(playernum,"iso_mission3",0)):			
 			Base.Message ("Congradulations")#assign mis 3:
 			AssignMission()
-		elif (fixers.checkSaveValue (playernum,"iso_mission3",1) and Director.getSaveDataLength(playernum,"iso_mission4")==0):
+		elif (fixers.checkSaveValue (playernum,"iso_mission3",1) and fixers.checkSaveValue(playernum,"iso_mission4",0)):
 			Base.Message ("Congraduati")#assign mis 4
 			AssignMission()
 		elif (fixers.checkSaveValue(playernum,"iso_mission4",1)):
