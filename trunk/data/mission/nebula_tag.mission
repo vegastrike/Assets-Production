@@ -6,10 +6,10 @@
 	<variables>
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="4 versus 4" />
-
+		<var name="mission_name" value="Nebula Tag" />
+		<var name="author" value="Patrick Horn" />
 		<var name="system" value="mission_sector/nebula_tag" />
-		<var name="description" value="4vs4.txt" />
+		<var name="description" value="Fight the computer in the\nebula.  In this mission,you\cannot rely on the radar..." />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="aera" type="lekra" ainame="default" waves="1" nr_ships="2">

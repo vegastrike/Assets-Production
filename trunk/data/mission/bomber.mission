@@ -1,10 +1,9 @@
 <mission>
 	<variables>
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="bomber" />
-
+		<var name="mission_name" value="A bombing mission" />
 		<var name="system" value="sol_sector/polaris" />
-		<var name="description" value="4vs4.txt" />
+		<var name="description" value="Use your powerful weapons to\destroy the many cruisers!" />
 	</variables>
         <flightgroups>
                 <flightgroup name="lilac" faction="aera" type="kira" ainame="default" waves="1" nr_ships="9">
