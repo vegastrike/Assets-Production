@@ -25,6 +25,12 @@
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
 
+                <flightgroup name="pink" faction="confed" type="revoker" ainame="_ai_rolling" waves="1" nr_ships="3">
+			<pos offset="blue" x="300.0" y="0.0" z="0.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+		</flightgroup>
+
 
                 <flightgroup name="green" faction="confed" type="carrier" ainame="_ai_rolling" waves="1" nr_ships="1">
 			<pos offset="blue" x="10000.0" y="0.0" z="0.0"/>
