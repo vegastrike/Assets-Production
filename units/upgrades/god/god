@@ -1,0 +1,22 @@
+<Unit>	
+	<Defense ecm="32767" RepairDroid="6">
+		<Armor front="65535" right="65535" left="65535" back="65535"/>
+		<Shields front="65535" back="65535" recharge="65535" leak="0" recharge="100000000000000"/>
+		<Hull strength="1000000000000000"/>
+		<Cloak missing="0" cloakmin="0" cloakrate="1" cloakglass="0" cloakenergy="0"/>
+	</Defense>
+	<Stats mass="1000000000000000" momentofinertia="1000000000000000" fuel="10000000000000000"></Stats>
+	<Computer yaw="1000000000000000" itts="true" pitch="1000000000000000" roll="1000000000000000" afterburner="1000000000000000" maxspeed="1000000000000000">
+		<Radar itts="true" color="true" error="0" maxcone="-1" range="1000000000000000"/> 
+	</Computer>
+
+	<Energy afterburnenergy="0">
+		<Reactor recharge="1000000000000000" limit="65535"/>
+	</Energy>
+           	<Jump missing="0" delay="1" jumpenergy="65535"/>       
+
+	<Thrust>
+		<Engine Afterburner="1000000000000000" Forward="1000000000000000" Retro="1000000000000000" Left="1000000000000000" Right="1000000000000000" Top="1000000000000000" Bottom="1000000000000000"/>
+		<Maneuver yaw="100000000000000" pitch="1000000000000000" roll="1000000000000000"/>
+	</Thrust>
+</Unit>
