@@ -4,10 +4,13 @@ import VS
 import unit
 import universe
 import vsrandom
+import quest_explore
 class quest_teleport (quest.quest):
     def __init__ (self):
         self.sysfile = VS.getSystemFile()
-        self.timer = VS.GetGameTime();
+        self.timer = VS.GetGameTime()
+        self.explorequest=quest_explore.quest_explore_factory().create()
+        self.explorequest.setsystem('gemini_sector/delta')
     def teleportNPC (self,un):
         pos=un.Position()
         rsiz = un.rSize()
@@ -51,6 +54,7 @@ class quest_teleport (quest.quest):
         else:
             self.teleportPlayer(un)
     def Execute (self):
+        self.explorequest.Execute()
         if (VS.getSystemFile()==self.sysfile):
             mytime = VS.GetGameTime();
             if (mytime-self.timer>10):

@@ -34,7 +34,7 @@ class quest_drone (quest.quest):
             return 1
 
         if (not self.stage):
-            if (self.derelict):
+            if (self.derelict and (VS.getSystemFile()==self.sysfile)):
                 if (self.derelict.getSignificantDistance(playa)<200):
                     self.launchNewDrone()
             else:

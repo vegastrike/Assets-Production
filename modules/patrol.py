@@ -6,10 +6,12 @@ import VS
 import Briefing
 import universe
 import unit
+import quest
 import Director
 class patrol (Director.Mission):
-    def __init__ (self,numsystemsaway, num_significants_to_patrol, distance_from_base, creds):
+    def __init__ (self,numsystemsaway, num_significants_to_patrol, distance_from_base, creds, jumps=(), donevar=''):
           Director.Mission.__init__(self)
+          self.donevar=donevar
           self.jnum=0
           self.cred=creds
 	  self.patrolpoints = []
@@ -20,11 +22,13 @@ class patrol (Director.Mission):
           name = self.you.getName ()
           self.mplay=universe.getMessagePlayer(self.you)
 	  VS.IOmessage (0,"defend",self.mplay,"Greetings, %s. You must patrol a system for us :" % name)
-          self.adjsys = go_to_adjacent_systems(self.you,numsystemsaway)
+          self.adjsys = go_to_adjacent_systems(self.you,numsystemsaway,jumps)
           self.adjsys.Print("From the %s system,","Carefully go to %s.","You should shortly arrive in the %s: patrol it.","patrol",1)
           
     def SuccessMission (self):
         self.you.addCredits (self.cred)
+        if self.donevar!='':
+            quest.removeQuest(self.you.isPlayerStarship(),self.donevar,1)
         VS.IOmessage (0,"computer",self.mplay,"[Computer] Transmitting Data..")
         VS.IOmessage (0,"patrol",self.mplay,"Thank you! Patrol Complete.")
         VS.IOmessage (0,"patrol",self.mplay,"We have credited your account.")
@@ -55,9 +59,9 @@ class patrol (Director.Mission):
                         else:
                             obj=VS.addObjective ("Scan Natural Phenomenon: %s" % nam)
                         VS.IOmessage (0,"patrol",self.mplay,"The object %s " % nam) 
-                    VS.setOwner(obj,self.you)
-                    VS.setCompleteness(obj,-1.0)
-                    self.objectives+=[obj]
+                    VS.setOwner(int(obj),self.you)
+                    VS.setCompleteness(int(obj),-1.0)
+                    self.objectives+=[int(obj)]
                     
         self.quantity=0
 
@@ -82,12 +86,14 @@ class patrol (Director.Mission):
     def Execute (self):
         if (self.you.isNull()):
             VS.terminateMission(0)
+            return            
         if (self.adjsys.Execute()):
             if (self.quantity>0):
 		self.GeneratePatrolList ()
             else:
 		if (self.FinishedPatrol()):
                     self.SuccessMission()
+
     def initbriefing(self):
         print "ending briefing"                
     def loopbriefing(self):

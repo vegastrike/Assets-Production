@@ -23,7 +23,7 @@ def adjustUnitCargo(un,cat,pr,qr):
         carg = un.GetCargoIndex(i)
         if (len(cat)==0 or catInCatList(carg.GetCategory(),cat)):
             carg.SetPrice (pr*carg.GetPrice())
-            carg.SetQuantity (qr*carg.GetQuantity())
+            carg.SetQuantity (int(qr*carg.GetQuantity()))
         carglist += [carg]
     for i in range (numcargo):
         un.removeCargo (carglist[i].GetCategory(),carglist[i].GetQuantity(),1)
