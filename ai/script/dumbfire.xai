@@ -1,10 +1,5 @@
 <SCRIPT>
-<ExecuteFor time="3">
   <MatchLin afterburn="1" terminate="0" local="1">
     <Vector x="0" y="0" z="10000"/>
-  </MatchLin>
-</ExecuteFor>
-  <MatchLin afterburn="1" terminate="0" local="1">
-    <Vector x="0" y="0" z="0"/>
   </MatchLin>
 </SCRIPT>
