@@ -31,7 +31,7 @@
         <asteroid  name= "JumpToBlockadePointAlpha"  file="AFieldBase" faction="neutral"   z="13200" day="-14000"  difficulty=".25"></asteroid>         
         <planet name="JumpToPerry" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-8500" x="-21000" day="240" destination="gemini_sector/perry" />
         <planet name="Mjolnir" file="planets/m_class8.png" radius="300" gravity="20" z="-13000" x="12000" day="300">
-                <planet name="Mjolnir" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
+                <planet name="Mjolnir Atmosphere" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet>
         <asteroid  name= "Mjolnir"  file="AFieldBase" faction="neutral"   z="-13000" x="12000" day="-14000"  difficulty=".25"></asteroid>         
 </system>

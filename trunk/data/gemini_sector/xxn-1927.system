@@ -34,6 +34,6 @@
         <unit name= "Joplin"  file="refinery" faction="confed" z="14000" x="-18000"/>
         <planet name="JumpTo119CE" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-6000" x="-21000" day="240" destination="gemini_sector/119ce"/>
         <planet name="Jolson" file="planets/carribean.png" radius="300" gravity="20" z="-3000" x="-10500" si="-3000" day="300">
-                <planet name="Jolson" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
+                <planet name="Jolson Atmosphere" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet>
 </system>
