@@ -6,7 +6,9 @@
      
      the command line arguments are in the same order as the questions asked.
      to make a different LOD use a different seed
- --><SubUnit file="asteroids"  />
+ -->
+
+<SubUnit file="asteroids1600gap"  />
 <SubUnit file="asteroids1600gap"  />
 <SubUnit file="asteroids1600gap"  />
 

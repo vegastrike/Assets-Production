@@ -1,4 +1,4 @@
-<Mesh texture="purpleneb128a.png" blend="SRCALPHA INVSRCALPHA" scale="65000">
+<Mesh texture="purpleneb128a.png" blend="SRCALPHA INVSRCALPHA" scale="1625">
 <Points>
 <Point>
     <Location x="-4.54282569885254" y="3.69944524765015" z="-0.426064699888229"/>
