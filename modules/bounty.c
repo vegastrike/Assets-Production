@@ -30,14 +30,36 @@ module bounty {
 	    _unit.deleteContainer (enemycontainer);
 	  }
 	};
-	void init (int numsystemsaway, float creds, bool run_away, int shipdifficulty) {
+	void initrandom (int numsystemsaway, float creds, bool run_away, int shipdifficulty) {
+	  faction_ships.init();
+	  object you=_unit.getPlayer();
+	  object tempfaction;
+	  if (!_std.isNull(you)) {
+	    object name = _unit.getFaction (you);
+	    int factionname=random.randomint(0,faction_ships.getMaxFactions());
+	    tempfaction=faction_ships.intToFaction(factionname);
+	    while (_string.equal(name,tempfaction)) {
+	      int factionname=random.randomint(0,faction_ships.getMaxFactions());
+	      tempfaction=faction_ships.intToFaction(factionname);
+	    }
+	    init (numsystemsaway,creds,run_away,shipdifficulty,tempfaction);
+	    _string.delete (name);
+	  }else {
+	    _std.terminateMission(false);
+	  }
+	};
+	void init (int numsystemsaway, float creds, bool run_away, int shipdifficulty, object tempfaction) {
+	  faction = tempfaction;
+	  
+	  
+	  
 	  _std.setNull(newship);
 	  _std.setNull(sigcont);
 	  _std.setNull(enemycontainer);
 	  _std.setNull(youcontainer);
 	  difficulty = shipdifficulty;
 	  runaway=run_away;
-	  faction_ships.init();
+
 	  arrived=0;
 	  curiter=0;
 	  istarget=false;
@@ -47,15 +69,8 @@ module bounty {
 	  object you=_unit.getPlayer();
 	  youcontainer = _unit.getContainer (you);
 	  if (!_std.isNull(you)) {
-	    object name = _unit.getFaction (you);
-	    int factionname=random.randomint(0,faction_ships.getMaxFactions());
-	    faction=faction_ships.intToFaction(factionname);
-	    while (_string.equal(name,faction)) {
-	      int factionname=random.randomint(0,faction_ships.getMaxFactions());
-	      faction=faction_ships.intToFaction(factionname);
-	    }
-	    _string.delete (name);
-	    name=_unit.getName(you);
+
+	    object name=_unit.getName(you);
 
 	    object str = _string.new();
 	    _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
