@@ -1,0 +1,28 @@
+<Unit>
+	<Meshfile file="spacebomb.xmesh"/>
+	<BspMesh RAPID="0"/>
+	<Light file="supernova.bmp" x="0" y="0" z="-2" size= ".6"/>
+
+<Thrust> 
+	<Engine Afterburner="2300"
+		  Forward="800"
+		  Retro="500"
+		  Left="60"
+		  Right="60"
+		  Top="60"
+		  Bottom="60"/>
+			<Maneuver yaw="64.200050" pitch="98.600151" roll="63.200050"/>
+
+</Thrust>
+<Sound></Sound>
+<Defense>
+	<Hull strength="5"/>
+</Defense>
+<Stats mass="0.05" momentofinertia="0.06" fuel="200000"></Stats>
+
+<Computer yaw="5" pitch="5" roll="10" afterburner="240" maxspeed="142"/>
+<Energy>
+	<Reactor recharge="10"
+		   limit="100"/>
+</Energy>
+</Unit>

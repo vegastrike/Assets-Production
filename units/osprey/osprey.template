@@ -15,9 +15,9 @@
 		<Hull strength="1250.000000"/>
 		<Cloak rate=".4" cloakmin=".1"/>
 	</Defense>
-	<Stats mass="3.000000" momentofinertia="3.000000" fuel="200000000"></Stats>
+	<Stats mass="5.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
 	<Cockpit x="0" y="0" z="12"/>
-	<Computer yaw="238.000000" pitch="238.000000" roll="238.000000" afterburner="233.333328" maxspeed="82.666668">
+	<Computer yaw="138.000000" pitch="138.000000" roll="138.000000" afterburner="233.333328" maxspeed="82.666668">
 		<Radar itts="false" color="true" error="0"/> </Computer>
 
 
