@@ -1,0 +1,6 @@
+<Unit><Meshfile file="brief_blackhole.xmesh"/>
+<defense HudImage="blackhole.spr">
+	<hull="100000000000">
+</defense>
+<stats mass="1000000000000"/>
+</Unit>
