@@ -1,7 +1,28 @@
-<Unit>
+<Unit scale="10">
+	<Thrust>
+		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
+		<Maneuver yaw="0000" pitch="0000" roll="10"/>
+	</Thrust>
+	<Defense HudImage="ConfedHq-hud.spr">
+		<Shields front="800" right="800" left="800" back="800" recharge="100"/>
+		<Armor front="8000" right="8000" left="8000" back="8000"/>
+		<Hull strength="4000"/>
+	</Defense>
 
-<Meshfile file="research.xmesh"/>
+<Stats mass="60" momentofinertia="60" fuel="20000"></Stats>
        
+<Meshfile file="research.xmesh"/>
+<Dock x="-2.5" y="5.8" z="0" size=".3"/>       
+<Dock x="2.5" y="5.8" z="0" size=".3"/>       
+<Dock x="-2.0" y="5.8" z="0" size=".3"/>       
+<Dock x="2.0" y="5.8" z="0" size=".3"/>       
+<Dock x="-1.5" y="5.8" z="0" size=".3"/>       
+<Dock x="1.5" y="5.8" z="0" size=".3"/>       
+<Dock x="-1" y="5.8" z="0" size=".3"/>       
+<Dock x="1" y="5.8" z="0" size=".3"/>       
+<Dock x="-.5" y="5.8" z="0" size=".3"/>       
+<Dock x=".5" y="5.8" z="0" size=".3"/>       
+<Dock x="0" y="5.8" z="0" size=".3"/>       
 
 <!-- new elements added -->
 <Subunit file="turret" x="0.028281" y="6.402340" z="0.175269" ri="-0.999981" rj="-0.006110" rk="0.000000" qi="-0.006090" qj="0.996711" qk="0.080805"/>

@@ -1,7 +1,35 @@
 <Unit>
+	<Thrust>
+		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
+		<Maneuver yaw="0000" pitch="0000" roll="10"/>
+	</Thrust>
+	<Defense HudImage="ConfedHq-hud.spr">
+		<Shields front="800" right="800" left="800" back="800" recharge="100"/>
+		<Armor front="8000" right="8000" left="8000" back="8000"/>
+		<Hull strength="4000"/>
+	</Defense>
 
 <Meshfile file="starfortress.xmesh"/>
        
+<Dock x="-1720" y="500" z="0" size="20"/>
+<Dock x="-1680" y="500" z="0" size="20"/>
+<Dock x="-1640" y="500" z="0" size="20"/>
+<Dock x="-1620" y="500" z="0" size="20"/>
+
+<Dock x="1720" y="500" z="0" size="20"/>
+<Dock x="1680" y="500" z="0" size="20"/>
+<Dock x="1640" y="500" z="0" size="20"/>
+<Dock x="1620" y="500" z="0" size="20"/>
+
+<Dock z="1720" y="500" x="0" size="20"/>
+<Dock z="1680" y="500" x="0" size="20"/>
+<Dock z="1640" y="500" x="0" size="20"/>
+<Dock z="1620" y="500" x="0" size="20"/>
+
+<Dock z="-1720" y="500" x="0" size="20"/>
+<Dock z="-1680" y="500" x="0" size="20"/>
+<Dock z="-1640" y="500" x="0" size="20"/>
+<Dock z="-1620" y="500" x="0" size="20"/>
 
 <!-- new elements added -->
 <Subunit file="turret" x="719.092163" y="390.000031" z="387.693512" ri="-0.382683" rj="0.000000" rk="-0.923880" qi="0.000000" qj="-1.000000" qk="-0.000000"/>

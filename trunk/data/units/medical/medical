@@ -1,5 +1,19 @@
-<Unit>
+<Unit scale="10">
+	<Thrust>
+		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
+		<Maneuver yaw="0000" pitch="0000" roll="10"/>
+	</Thrust>
+	<Defense HudImage="ConfedHq-hud.spr">
+		<Shields front="800" right="800" left="800" back="800" recharge="100"/>
+		<Armor front="8000" right="8000" left="8000" back="8000"/>
+		<Hull strength="4000"/>
+	</Defense>
 
+<Stats mass="60" momentofinertia="60" fuel="20000"></Stats>
+       <Dock x="0" y="7.6" z="-7.8" size="1"/> 
+       <Dock x="0" y="7.6" z="-10" size="1"/> 
+       <Dock x="0" y="7.6" z="7.8" size="1"/> 
+       <Dock x="0" y="7.6" z="10" size="1"/> 
 <Meshfile file="station.xmesh"/>
        
 
