@@ -2,14 +2,7 @@ import VS
 import universe
 import unit
 
-class go_to_adjacent_systems:
-  you=VS.Unit()
-  arrivedsys=0
-  jumps=()
-  destination=""
-  obj=0
-  com=0
-  
+class go_to_adjacent_systems:  
   def InSystem(self):
     return self.arrivedsys
   
@@ -23,6 +16,11 @@ class go_to_adjacent_systems:
       VS.setObjective(self.obj,"Jump to the system named %s" % (self.jumps[newind]))
   
   def __init__ (self,you, numsystemsaway):
+    self.arrivedsys=0
+    self.jumps=()
+    self.destination=""
+    self.obj=0
+    self.com=0
     self.you = you
     (self.destination,self.jumps)=universe.getAdjacentSystems(VS.getSystemFile(),numsystemsaway)
     if (len(self.jumps)>0):
