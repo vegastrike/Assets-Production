@@ -5,6 +5,7 @@ module visit_aera {
   import vec3;
   import random_launch;
   import universe;
+  import ai_orderlist;
 
   float lasttime;
   float waittime;
@@ -13,6 +14,7 @@ module visit_aera {
     faction_ships.init();
     random_launch.init();
     universe.init();
+    ai_orderlist.init();
   };
 
   void loop(){
