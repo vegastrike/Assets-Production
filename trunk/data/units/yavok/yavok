@@ -1,4 +1,4 @@
-<Unit scale="1000">
+<Unit scale="215">
 <Meshfile file="yavok.xmesh"/>
 	<Dock x="0" y="0" z="-.3" size=".3"/>
 	<Dock x="0" y="0" z="0" size=".3"/>

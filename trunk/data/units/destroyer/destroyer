@@ -1,4 +1,4 @@
-<Unit scale="1000">
+<Unit scale="120">
 <Meshfile file="destroyer.xmesh"/>
        
 	<Dock x="0" y="-1.162" z="5" size=".4"/>
