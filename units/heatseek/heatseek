@@ -18,7 +18,7 @@
 <Defense>
 	<Hull strength="5"/>
 </Defense>
-<Stats mass="10" momentofinertia="6" fuel="200000"></Stats>
+<Stats mass="0.1" momentofinertia="0.06" fuel="200000"></Stats>
 
 <Computer yaw="110" pitch="124" roll="110" afterburner="1440" maxspeed="420"/>
 <Energy>
