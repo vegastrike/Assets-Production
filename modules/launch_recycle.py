@@ -20,7 +20,7 @@ def move_to (un, where):
 
 def whereTo (radius, launch_around):
   pos = launch_around.Position ()    
-  rsize = ((launch_around.rSize())*2.0)+radius
+  rsize = ((launch_around.rSize())*5.0)+5.0*radius
   return (pos[0]+rsize*random.randrange(-1,2,2),
           pos[1]+rsize*random.randrange(-1,2,2),
           pos[2]+rsize*random.randrange(-1,2,2))
