@@ -1,6 +1,6 @@
 <mission>
 	<settings>
-		<origin  planet="earth" x="0000" y="10000" z="000.0"/>
+		<origin  planet="earth" x="0000" y="4000" z="000.0"/>
 	</settings>
 
 	<variables>
@@ -12,7 +12,7 @@
 		<var name="description" value="4vs4.txt" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="vorcha" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="confed" type="ferret" ainame="default" waves="1" nr_ships="1">
 			<pos x="1000.0" y="2000" z="100.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
