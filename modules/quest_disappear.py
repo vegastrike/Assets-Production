@@ -42,9 +42,10 @@ class quest_disappear (quest.quest):
         if (un!=self.drone):
             if (un.isPlayerStarship()==-1):
                 if (not un.isSignificant()):
-                    if (un.getFlightgroupLeader()!=playa):
-                        if (playa.InRange(un,0,1)):
-                            return 1
+                    if (not un.isSun()):
+                        if (un.getFlightgroupLeader()!=playa):
+                            if (playa.InRange(un,0,1)):
+                                return 1
         return 0
     def killUnit (self,un):
         pos=un.Position()
