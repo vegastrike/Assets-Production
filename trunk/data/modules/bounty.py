@@ -2,6 +2,7 @@ import universe
 from go_to_adjacent_systems import go_to_adjacent_systems
 from go_somewhere_significant import go_somewhere_significant
 import vsrandom
+import Vector
 import launch
 import faction_ships
 import Director
@@ -15,7 +16,7 @@ class bounty (Director.Mission):
 	    quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,val)
 	def __init__ (self,minnumsystemsaway, maxnumsystemsaway, creds, run_away, shipdifficulty, tempfaction,jumps=(),var_to_set=''):
 	  Director.Mission.__init__ (self)
-	  run_away=0
+	  self.firsttime=VS.GetGameTime()
 	  self.newship=""
 	  self.mplay="all"
 	  self.var_to_set = var_to_set
@@ -42,7 +43,9 @@ class bounty (Director.Mission):
 	  else:
 	    print "aboritng bounty constructor..."
 	    VS.terminateMission (0)
-	
+	def AdjLocation(self):
+	  print "ADJUSTING LOC"
+	  self.enemy.SetPosition(Vector.Add(self.enemy.LocalPosition(),Vector.Scale(self.enemy.GetVelocity(),-40)))	#eta 20 sec
 	def Win (self,un,terminate):
 	  self.SetVar(1)
 	  VS.IOmessage (0,"bounty mission",self.mplay,"#00ff00Excellent work pilot.")
@@ -75,6 +78,10 @@ class bounty (Director.Mission):
 		    self.enemy.SetTarget(self.you)
 		  elif (curun.isNull()):
 		    self.curiter=0
+	    else:
+	      if (VS.GetGameTime()>self.firsttime+2.5 and self.enemy):
+	        self.firsttime+=1000000
+	        self.AdjLocation()
 	    if (self.enemy.isNull()):
 	      self.Win(self.you,1)
 	      return
@@ -94,6 +101,8 @@ class bounty (Director.Mission):
 		  if (self.runaway):
 		    self.enemy.SetTarget(significant) #CHANGE TO SetTarget ==>NOT setTarget<==
 		    self.enemy.ActivateJumpDrive(0)
+	            self.firsttime=VS.GetGameTime()
+		    #self.enemy.SetPosAndCumPos(Vector.Add(self.you.Position(),Vector.Vector(0,0,self.you.rSize()*1.2)))
 		  self.arrived=2
 		else:
 		  print "enemy null"
