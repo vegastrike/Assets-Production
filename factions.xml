@@ -112,5 +112,7 @@
 		<stats name="unknown" relation="-.1"/>
 		<stats name="pirates" relation="0"/>
 	</Faction>
+	<Faction name="planets" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
+	</Faction>
 
 </Factions>
