@@ -69,8 +69,8 @@ class difficulty:
           if (self.creds[self.i]<newcreds):
             newdiff=self.getPlayerDifficulty(self.i)+((newcreds-self.creds[self.i])/self.credsToMax)
             if (newdiff>.999):
-              #newdiff=.999
-              newdiff=1
+              newdiff=.999
+              #newdiff=1
             Director.putSaveData(self.i,_key,0,newdiff)
             SetDiff(newdiff)
           self.creds[self.i]=newcreds
