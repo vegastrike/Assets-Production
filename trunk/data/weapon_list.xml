@@ -257,7 +257,7 @@
 <Beam name="LeechGun" mountsize="special"> 
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
-<Damage rate="6" longrange="1">
+<Damage rate="-.9" phasedamage="-.9" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius="1.2" pulsespeed="15" range="800" >
 </Distance>
@@ -337,7 +337,7 @@
 <Missile name="Leech" mountsize="special-missile">
 <Energy rate="0" stability="6" refire=".8">
 </Energy>
-<Damage rate="-.5" longrange="1" radialspeed="1" radius="20">
+<Damage rate="-.5" phasedamage="-.5" longrange="1" radialspeed="1" radius="20">
 </Damage>
 <Distance speed="170"  pulsespeed="15" range="1600" >
 </Distance>
