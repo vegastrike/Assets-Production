@@ -362,7 +362,7 @@
 </Energy>
 <Damage rate="150" longrange="1" radius="90" radialspeed="50">
 </Damage>
-<Distance speed="160" radialspeed=".8" radius=".3" pulsespeed="15" range="3000" volume="45" >
+<Distance speed="260" radialspeed=".8" radius=".3" pulsespeed="15" range="3000" volume="45" >
 </Distance>
 <Appearance file="dumbfire" soundwav="missile_3.wav">
 </Appearance>
@@ -373,7 +373,7 @@
 </Energy>
 <Damage rate="160" longrange="1" radius="25" radialspeed="12">
 </Damage>
-<Distance speed="220"  pulsespeed="15" range="2000" detonationrange="5" volume="90" >
+<Distance speed="260"  pulsespeed="15" range="2000" detonationrange="5" volume="90" >
 </Distance>
 <Appearance file="heatseek" soundwav="missile_3.wav">
 </Appearance>
@@ -382,7 +382,7 @@
 <Missile name="ImageRecognition" mountsize="medium-missile">
 <Energy rate="0" stability="6" refire="1.2" locktime="4">
 </Energy>
-<Damage rate="130" longrange="1" radius="50" radialspeed="20">
+<Damage rate="180" longrange="1" radius="50" radialspeed="20">
 </Damage>
 <Distance speed="160"  pulsespeed="15" range="3700" detonationrange="10" volume="150">
 </Distance>
@@ -440,7 +440,7 @@
 </Energy>
 <Damage rate="900" phasedamage="0" longrange="1" radius="800" radialspeed="160" >
 </Damage>
-<Distance speed="80" pulsespeed="15" range="10000" detonationrange="30" volume="600">
+<Distance speed="40" pulsespeed="15" range="10000" detonationrange="30" volume="600">
 </Distance>
 <Appearance file="torp" >
 </Appearance>
@@ -605,9 +605,9 @@
 <Missile name="CapIFF" mountsize="light-capship-missile">
 <Energy rate="0" stability="6" refire="9" locktime="10">
 </Energy>
-<Damage rate="180" longrange="1" radius="50" radialspeed="25" >
+<Damage rate="240" longrange="1" radius="50" radialspeed="25" >
 </Damage>
-<Distance speed="220" radialspeed=".8" radius="1.6" pulsespeed="15" range="4500" detonationrange="10" volume="200" >
+<Distance speed="220" radialspeed=".8" radius="1.6" pulsespeed="15" range="4500" detonationrange="40" volume="200" >
 </Distance>
 <Appearance file="capiff" >
 </Appearance>
