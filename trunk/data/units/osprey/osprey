@@ -1,8 +1,19 @@
 <Unit>
 	<Meshfile file="osprey.xmesh" />
-	<Mount weapon="Particle" size="Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
-	<Mount weapon="Particle" size="Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
-	<Mount weapon="Ion" size="Medium" x="000000" y="-.6000000" z="12.000000"/>
+	<Mount weapon="Particle" size="Medium Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
+	<Mount weapon="Particle" size="Medium Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
+	<Mount weapon="Ion" size="Light Medium" x="000000" y="-.6000000" z="12.000000"/>
+	<Mount weapon="Torpedo" size="light-missile medium-missile heavy-missile" x="000000" y="-.6000000" z="0.000000" ammo="1"/>
+
+	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-5.000000" y="-.9000000" z="-3.000000" ammo="1"/>	
+	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="5.000000" y="-.9000000" z="-3.000000" ammo="1"/>	
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="4.000000" y="-.9000000" z="-2.000000" ammo="1"/>	
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-4.000000" y="-.9000000" z="-2.000000" ammo="1"/>	
+	<Mount weapon="Dumbfire" size="light-missile" x="3.000000" y="-.9000000" z="-1.000000" ammo="2"/>	
+	<Mount weapon="Dumbfire" size="light-missile" x="-3.000000" y="-.9000000" z="-1.000000" ammo="2"/>	
+	<Mount weapon="Swarm" size="special-missile" x="3.000000" y="-.9000000" z="-0.000000" ammo="40"/>	
+	<Mount weapon="Swarm" size="special-missile" x="-3.000000" y="-.9000000" z="-0.000000" ammo="40"/>	
+
 	
 	<Thrust>
 		<Engine Afterburner="1333.333282" Forward="341.333344" Retro="298.666676" Left="170.666672" Right="170.666672" Top="170.666672" Bottom="170.666672"/>
