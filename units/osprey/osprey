@@ -3,7 +3,6 @@
 	<Mount weapon="Particle" size="Medium Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
 	<Mount weapon="Particle" size="Medium Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
 	<Mount weapon="Ion" size="Light Medium" x="000000" y="-.6000000" z="12.000000"/>
-	<Mount weapon="Torpedo" size="light-missile medium-missile heavy-missile" x="000000" y="-.6000000" z="0.000000" ammo="1"/>
 
 	<Mount weapon="Torpedo" size="heavy-missile" x="-5.000000" y="-.9000000" z="-3.000000" ammo="3"/>	
 	<Mount weapon="Torpedo" size="heavy-missile" x="5.000000" y="-.9000000" z="-3.000000" ammo="3"/>	
@@ -14,7 +13,8 @@
 	<Mount weapon="KillerBee" size="special-missile" x="3.000000" y="-.9000000" z="-0.000000" ammo="30"/>	
 	<Mount weapon="KillerBee" size="special-missile" x="-3.000000" y="-.9000000" z="-0.000000" ammo="30"/>	
 
-	
+	<Subunit file="turretsmall" x="0.089912" y="0.120528" z="-6.000000" ri="0.994033" rj="-0.109082" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
+
 	<Thrust>
 		<Engine Afterburner="1333.333282" Forward="341.333344" Retro="298.666676" Left="170.666672" Right="170.666672" Top="170.666672" Bottom="170.666672"/>
 		<Maneuver yaw="4554.000000" pitch="4554.000000" roll="4554.000000"/>
@@ -30,8 +30,7 @@
 	<Stats mass="5.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
 	<Cockpit x="0" y="0" z="12"/>
 	<Computer yaw="98.000000" pitch="98.000000" roll="98.000000" afterburner="133.333328" maxspeed="42.666668">
-		<Radar itts="false" color="true" error="0"/> </Computer>
-
+		<Radar itts="true" color="true" error="0"/> </Computer>
 
 	<Energy afterburnenergy="30">
 		<Reactor recharge="60" limit="280"/>
@@ -40,6 +39,4 @@
 	<Light file="supernova.bmp" x="1.5" y="0.12" z="-5.8" size="0.880000"/>
 	<Light file="supernova.bmp" x="-1.5" y=".12" z="-5.8" size="0.880000"/>
        	<Jump delay="1" jumpenergy="180"/>       
-<!-- new elements added -->
-<Subunit file="turretsmall" x="0.089912" y="0.120528" z="-6.000000" ri="0.994033" rj="-0.109082" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
 </Unit>

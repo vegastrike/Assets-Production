@@ -164,10 +164,10 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Disruptor" mountsize="medium"> 
-<Energy rate="10" stability="6" refire=".3">
+<Bolt name="Disruptor" mountsize="medium" > 
+<Energy rate="10" stability="6" refire=".3" >
 </Energy>
-<Damage rate="30" longrange="1">
+<Damage rate="30" longrange="1" >
 </Damage>
 <Distance speed="240" radialspeed=".8" radius=".8" length="4" pulsespeed="15" range="842" >
 </Distance>
@@ -469,10 +469,10 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Anihilator" mountsize="capship-light"> 
-<Energy rate="150" stability="8" refire="2">
+<Bolt name="Anihilator" mountsize="capship-light" > 
+<Energy rate="150" stability="8" refire="2" >
 </Energy>
-<Damage rate="175" longrange="1">
+<Damage rate="175" longrange="1" >
 </Damage>
 <Distance speed="400" radialspeed=".8" radius="1.2" length="5" pulsespeed="15" range="2000" >
 </Distance>
@@ -480,10 +480,10 @@
 </Appearance>
 </Bolt>
 
-<Beam name="ParticleBeam" mountsize="capship-light">
-<Energy rate="45" stability="6" refire="6">
+<Beam name="ParticleBeam" mountsize="capship-light" >
+<Energy rate="65" stability="6" refire="6" >
 </Energy>
-<Damage rate="120" longrange=".7">
+<Damage rate="210" longrange=".7" >
 </Damage>
 <Distance speed="600" radialspeed=".8" radius="8" pulsespeed="15" range="1200" >
 </Distance>
@@ -491,10 +491,10 @@
 </Appearance>
 </Beam>
 
-<Ball name="Flak" mountsize="capship-light"> 
-<Energy rate="250" stability="6" refire="2">
+<Ball name="Flak" mountsize="capship-light" > 
+<Energy rate="250" stability="6" refire="2" >
 </Energy>
-<Damage rate="100" longrange="1">
+<Damage rate="100" longrange="1" >
 </Damage>
 <Distance speed="180" radialspeed=".8" radius="3"  pulsespeed="15" range="1500" >
 </Distance>
@@ -524,16 +524,16 @@
 </Appearance>
 </Bolt>
 
-<Ball name="Fussion" mountsize="capship-medium"> 
-<Energy rate="400" refire="6">
+<Bolt name="CapshipDisruptor" mountsize="capship-heavy"> 
+<Energy rate="150" stability="6" refire="1.5">
 </Energy>
-<Damage rate="800" longrange=".7">
+<Damage rate="300" longrange="1">
 </Damage>
-<Distance speed="400" radialspeed=".8" radius="6" pulsespeed="15" range="11000" >
+<Distance speed="240" radialspeed=".8" radius="10" length="40" pulsespeed="15" range="8420" >
 </Distance>
-<Appearance file="mass_driver.ani" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
+<Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
 </Appearance>
-</Ball>
+</Bolt>
 
 <Beam name="LR_Beam" mountsize="capship-medium"> 
 <Energy rate="3" stability="14" refire="8">
@@ -546,7 +546,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="LR_BeamHvy" mountsize="capship-medium"> 
+<Beam name="LR_BeamHvy" mountsize="capship-heavy"> 
 <Energy rate="5" stability="16" refire="10">
 </Energy>
 <Damage rate="500" longrange=".7">
@@ -556,17 +556,6 @@
 <Appearance file="weapons/heavylaserbeam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a=".6" >
 </Appearance>
 </Beam>
-
-<Bolt name="CapshipDisruptor" mountsize="capship-heavy"> 
-<Energy rate="150" stability="6" refire="1.5">
-</Energy>
-<Damage rate="300" longrange="1">
-</Damage>
-<Distance speed="240" radialspeed=".8" radius="10" length="40" pulsespeed="15" range="8420" >
-</Distance>
-<Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
-</Appearance>
-</Bolt>
 
 <Bolt name="Vaporisator" mountsize="capship-heavy"> 
 <Energy rate="300" refire="1.5">
@@ -578,6 +567,17 @@
 <Appearance file="weapons/neutrongun.png" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Bolt>
+
+<Ball name="Fussion" mountsize="capship-heavy"> 
+<Energy rate="400" refire="6">
+</Energy>
+<Damage rate="800" longrange=".7">
+</Damage>
+<Distance speed="400" radialspeed=".8" radius="6" pulsespeed="15" range="11000" >
+</Distance>
+<Appearance file="mass_driver.ani" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
+</Appearance>
+</Ball>
 
 <Missile name="CapIFF" mountsize="light-capship-missile">
 <Energy rate="0" stability="6" refire="9">
