@@ -19,10 +19,14 @@ class escort_mission (Director.Mission):
 		Director.Mission.__init__(self);
 		self.you = VS.getPlayer();
 		self.adjsys=go_to_adjacent_systems(self.you, numsysaway)
+		print "e"
+		self.adjsys.Print("You should start in the system named %s","Then jump to %s","Finally, jump to %s, your final destination","escort mission",1)
+		print "f"
 		self.distfrombase=distance_from_base
+		print "g"
 		self.faction=factionname
-		self.escortee = launch.launch_wave_around_unit(self.you.getFlightgroupName(),
-							       self.you.getFactionName(),
+		self.escortee = launch.launch_wave_around_unit("Escort",
+							       self.faction,
 							       faction_ships.getRandomFighter("merchant"),
 							       "default",
 							       1,
@@ -30,7 +34,9 @@ class escort_mission (Director.Mission):
 							       2.0*self.you.rSize(),
 							       self.you,
 							       "")
-		self.escortee.setFactionName(factionname)
+		print "h"
+		self.escortee.setFlightgroupLeader(self.you)
+		print "dd"
 		self.difficulty=missiondifficulty
 		self.creds = creds
 	def initbriefing(self):
@@ -41,7 +47,7 @@ class escort_mission (Director.Mission):
 	def endbriefing(self):
 		print "ending briefing"        
 	def Execute (self):
-		self.you.setFgDirective('F')
+		self.escortee.setFgDirective('F')
 		self.you.setFlightgroupLeader(self.you)
 		if (self.escortee.isNull()):
 			VS.IOmessage (0,"escort",self.mplay,"#ff0000You were to protect your escort. Mission failed.")
