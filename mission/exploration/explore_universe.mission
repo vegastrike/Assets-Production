@@ -14,7 +14,7 @@
 		<var name="savegame" value="explore_universe_difficulty1" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="wayfarer.blank" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="confed" type="wayfarer.begin" ainame="default" waves="1" nr_ships="1">
 			<pos x="20400" y="-35400" z="84700000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
