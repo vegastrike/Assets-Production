@@ -225,3 +225,11 @@ def getClosestScaleNews(listof,scale):
 			finallist.append(valtable[i])
 	return finallist[vsrandom.randrange(0,len(finallist), step=1)][2]
 
+
+
+def processNewsTuple(newsstring):
+	return newsstring #FIXME
+def pushDynamicNews(player,newsstring):
+	print 'pushing' + newsstring + ' to news savevar
+	import Director
+	Director.pushSaveString(player,"news",processNewsTuple(newsstring))

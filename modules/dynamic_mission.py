@@ -275,3 +275,5 @@ def CreateMissions(minsys=0,maxsys=4):
 	if (basefac=='neutral'):
 		basefac=VS.GetGalaxyFaction(VS.getSystemFile())
 	contractMissionsFor(basefac,minsys,maxsys)
+	import news
+	news.processNews(plr)
