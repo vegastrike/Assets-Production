@@ -5,8 +5,8 @@
        
 
 <!-- new elements added -->
-<Mount weapon="Disruptor" size="Light" x=".1875000" y="-.0125000" z=".9000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>
-<Mount weapon="Disruptor" size="Light" x="-.1875000" y="-.0125000" z=".9000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.032845" qj="-0.999460" qk="0.000000"/>
+<Mount weapon="Laser" size="Light" x=".1875000" y="-.0125000" z=".9000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>
+<Mount weapon="Laser" size="Light" x="-.1875000" y="-.0125000" z=".9000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.032845" qj="-0.999460" qk="0.000000"/>
 
 		<Thrust>
 		<Engine Afterburner="000000" Forward="000000" Retro="0000" Left="0000" Right="0000" Top="00000" Bottom="000000"/>
@@ -21,11 +21,11 @@
 	</Defense>
 	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
 	<Computer yaw="000" pitch="124.200005" roll="0000" afterburner="000000" maxspeed="00000">
-		<Radar itts="true" range="4000" color="true" error="0"/>
+		<Radar itts="true" range="380" color="true" error="0"/>
 	</Computer>
 
 	<Energy>
-		<Reactor recharge="20" limit="1000"/>
+		<Reactor recharge="6" limit="24"/>
 	</Energy>
 
 
