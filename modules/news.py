@@ -95,12 +95,11 @@ def processNews(plr):
 def eraseNewsItem(plr,item):
     """removes the first news item matching the given item from
     plr's "dynamic_news" save variable"""
+#    print "FIXME: someone please write a function to this spec! Every thing I try seems to produce some random result :-/"
     import Director
     for i in range (Director.getSaveStringLength(plr,"dynamic_news")):
         noos=Director.getSaveString(plr,"dynamic_news",i)
-        if (len(noos)):
-            if item == noos:
-                Director.eraseSaveString(plr,"news",i)
-                print item,
-                print " removed from \"dynamic news\""
-                break
+        if noos == item:
+            Director.eraseSaveString(plr,"dynamic_news",i)
+            return
+
