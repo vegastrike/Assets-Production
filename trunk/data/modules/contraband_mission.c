@@ -179,6 +179,7 @@ module contraband_mission {
 			}
 		} else if (stage==0) {
 			if (_unit.getDistance(you,jump)<=dist) {
+				_io.message (0,"game","all","DEBUG: creating enemies...");  //delete this after it works...
 				stage=1;
 				int i=0;
 				int j;
