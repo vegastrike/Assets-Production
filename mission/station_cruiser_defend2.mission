@@ -4,7 +4,7 @@
 		<var name="mission_name" value="Defend your Cruiser" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
 		<var name="system" value="mars_station" />
-		<var name="description" value="4vs4.txt" />
+		<var name="description" value="You are to fly space superiority\in the vicinity of your mars-station\A cruiser is transferred from the station\to the fleet carrier\Watch out for enemy ships!" />
 		<var name="author" value="Alexander Rawass" />
 <!--		<var name="savegame" value="station_cruiser_defend2" />
  -->
@@ -38,12 +38,12 @@
 		</flightgroup>
 
 <!-- helpless cargo ships -->
-
+<!--
                 <flightgroup name="makkarel" faction="confed" type="truck_small" ainame="_ai_rolling" waves="8" nr_ships="1">
 			<pos offset="blue" x="300.0" y="-2000.0" z="4000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
-
+-->
 <!-- bad dudes -->
 
         </flightgroups>

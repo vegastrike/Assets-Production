@@ -9,7 +9,9 @@
 		<var name="mission_name" value="Patrol around Earth" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
 		<var name="system" value="sol_sector/sol_earth" />
-		<var name="description" value="4vs4.txt" />
+		<var name="description" value="Defend the Sol system against the enemies!\Fly with your fighter once round earth\and dive low to fly over the terrain.\No ships will jump in - see in peace" />
+		<var name="author" value="Alexander Rawass" />
+
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="1">
