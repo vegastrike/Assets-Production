@@ -1,15 +1,92 @@
 ----------------------------------------------
-Readme for VegaStrike version 0.1.0 Beta
+Readme for VegaStrike version 0.2.0 Beta2
 ----------------------------------------------
-Vegastrike has finally reached the state of being in Beta!
-This means that many user requests have been accomplished including sound, joystick support, cloaking, bolt weapons, and much, much more!
-All of the ships are original, never before seen ships modelled by me.
-Mail me any comments or suggestions to hellcatv@hotmail.com
-I would welcome any changes or additions to shield.bmp that would make the shield look more realistic!   Or any of the bolt weapons located in the textures subdirectory
+Vegastrike has finally reached the state of being multisystem!
+This means that many user requests have been accomplished including sound, joystick support, cloaking, bolt weapons, Target viewscreen, nebulae, asteroids, multiple systems, ingame-respawn... the list goes on
+All of the ships are original, never before seen ships modelled by the Vegastrike team!
+Mail me any comments or suggestions to vegastrike-users@lists.sourceforge.net
+And if you can design some missions it would rock!
+
+----------------------------------------------
+Running Vegastrike
+---------------------------------------------
+Vegastrike takes a single command parameter indicating which mission it should load
+
+vegastrike mission/explore_universe.mission
+
+is an example of a valid mission call
+
+the -l flag (must be flush with the system) will force a player to begin in a star system.
+
+vegastrike -lvega_sector/vega mission/bomber.mission
+
+will force the bomber mission to run in the vega sector
+
+-------------------------------------------------
+Interstellar Warp Transit (Jump Drive)
+------------------------------------------------
+Most starships come equipped with a warp drive.  Unfortunately they can only be used at large singularities in the space-time continuum.  Your computer signals these points by placing glowing blue balls in those areas.  Their relative size indicates how small a starship must be to fit through the jump point.
+To engage a jump drive, position your ship inside and press 'j'.
+Regulations state that starships should be stopped before jumping-- disasters have resulted from starships travelling at any great speed into a jump point.
+
+-----------
+ Controls:
+-----------
+Arrow keys: Flight Sim style turning
+\ full throttle
+backspace zero throttle
+=,+ accel
+- decel
+ENTER fire missile
+space Fire Guns
+backspace  stop
+TAB Afterburners
+
+j engage interstellar warp drive (use at clear blue balls)
+
+*,ins Spin Right
+/,del Spin Left
+~ (hold down, engage shelton slide)
+y match speed
+t target
+p target nearest to center of screen
+n target enemy targetting you
+T target enemies for your turret
+m change active missile
+g change active gun
+v switch targetting computer mode to navigation mode and then view mode
+w switch left targetting cpu
+Shift-W shift weapons computer mode to damage mode
+
+F1 toggle cockpit/background display
+F2 left
+F3 right
+F4 back
+F5 Chasecam
+F6 Panning Cam (s,a,w,z pan)
+F7 Target Cam
+F8 Strange Cam
+F9 Increase Time Compression
+F10 Reset Time Compression
+F11 Zoom in
+F12 Zoom out
+
+a,d,w,z pan ghost cam
+
+: respawn -- use after death to recreate your starship
+[ switch ships in battle (use to control allies)
 
 -----------
  Features:
 -----------
+-Time compression
+-Multiple Systems
+-Entire Sol sector and Vega sector included!
+-Fly through huge multilayered asteroid fields
+-Explore nebulae where your radar fritzes out
+-Jump to other systems at blue jump points with the 'j' key
+-Respawn with the ':' key (shift and semicolon)
+-Switch Ships with the '[' key
 -Joystick support for a full featured joystick
 -Sound effects that make starships roar as they pass and zap as they die
 -Bolt weapons with glowing lighting effects
@@ -23,39 +100,9 @@ I would welcome any changes or additions to shield.bmp that would make the shiel
 -Shields That Glow upon hit (in the location hit)
 -Customizable missions
 -Stars that fly past as you explore the system
+-RAPID collision system that allows no problems with collisions
 -BSP Trees that allow one to fly close to a starship, and in the runway of (well formed) models...unlike the victory from WC3. 
 -the Normal Force which bounces starships off of each other
------------
- Controls:
------------
-Arrow keys: Flight Sim style turning
-\ full throttle
-backspace zero throttle
-=,+ accel
-- decel
-t target
-m change active missile
-g change active gun
-Shift-T switch targetting computer mode to navigation mode
-Shift-W shift weapons computer mode to damage mode
-ENTER fire missile
-space Fire Guns
-TAB Afterburners
-*,ins Spin Right
-/,del Spin Left
-~ (hold down, engage shelton slide)
-Joystick controls do various undocumented things. Check out vegastrike.config and edit any key bindings you wish for Joystick and/or keyboard
-
-F1 toggle cockpit/background display
-F2 left
-F3 right
-F4 back
-F5 Chasecam
-F6 Panning Cam (s,a,w,z pan)
-F11 Zoom in
-F12 Zoom out
-
-
 
 --------------------------------------
 Editing Missions  
