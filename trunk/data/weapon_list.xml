@@ -460,7 +460,7 @@
 <Missile name="Torpedo" mountsize="heavy-missile">
 <Energy rate="0" stability="6" refire="3" locktime="20">
 </Energy>
-<Damage rate="100" phasedamage="200" longrange="1" radius="100" radialspeed="50" >
+<Damage rate="200" phasedamage="200" longrange="1" radius="100" radialspeed="50" >
 </Damage>
 <Distance speed="40" radialspeed=".8" radius=".7" pulsespeed="15" range="5000" detonationrange="5" volume="200">
 </Distance>
