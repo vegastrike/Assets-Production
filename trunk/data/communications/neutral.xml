@@ -423,6 +423,12 @@
             <edge index="12"/>
             <edge index="19"/>
       </node>
+      <node text="Unable to comply." relationship="-.005"><!-- node 34-->
+            <edge index="0"/>
+      </node>
+      <node text="Acknowledged." relationship="0.01"><!-- node 34-->
+            <edge index="0"/>
+      </node>
       <node text="Prepare To Be Searched. Maintain Speed and Course." relationship="0">
 		<sound file="communications/sounds/contraband.wav" sex="0"/>
 		<edge index="12"/>
