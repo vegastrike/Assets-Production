@@ -7,7 +7,7 @@
 		<var name="description" value="4vs4.txt" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="vorcha" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="1">
 			<pos x="00000.0" y="0000.0" z="0000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>

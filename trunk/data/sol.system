@@ -9,7 +9,7 @@
 <ambient red="1" green=".1" blue="0"/>
 <!--<diffuse red="1" green=".7" blue="0"/>-->
 <!--<attenuated red=".00000001" blue=".00000015"/>-->
-<attenuated red="0" blue=".0000001"/>
+<attenuated red="0" blue=".000000002"/>
 </Light>	
 <Light>
 <ambient red="1" green=".1" blue="0"/>
@@ -18,7 +18,7 @@
 <attenuated red="0" blue=".0000001"/>
 </Light>	
 
-        <planet name="sun" file="sun.bmp" radius="25000" gravity="20" x="30000"  Red=".7" Green=".7" Blue=".7" light="0 1l">
+        <planet name="sun" file="sun.bmp" radius="25000" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0 1l">
 		<planet name="Mercury" file="mercury.bmp" radius="1020" gravity="20" ri="34000" rj="0" rk="0" si="0" sj="0" sk="34000" velocity="5" position="0.25">
 		</planet>
 <unit name= "Victory"  file="drydock" faction="confed" ri="28000" rj="0" rk="0" si="0" sj="0" sk="28000" velocity="5" position="100">
