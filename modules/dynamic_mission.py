@@ -94,9 +94,12 @@ def generatePatrolMission (path, numplanets):
 		ispoint=""
 	writemissionname("Patrol/Patrol_%d_Point%s_in_%s"%(numplanets,ispoint, processSystem(path[-1])),path)	
 
-
+def isNotWorthy(fac):
+	return VS.GetRelation(fac,VS.getPlayer().getFactionName())<0
 def generateEscortMission (path,fg,fac):
 	###
+	if (isNotWorthy(fac)):
+		return
 	typ = fg_util.RandomShipIn(fg,fac)
 	diff=vsrandom.randrange(0,6)	
 	creds=500*diff+1.2*syscreds*len(path)
@@ -117,6 +120,8 @@ def changecat(category):
 		return category
 
 def generateCargoMission (path, numcargos,category, fac):
+	if (isNotWorthy(fac)):
+		return	
 	diff=vsrandom.randrange(0,6)
 	launchcap=(vsrandom.random()>=.75)
 	creds=250*numcargos+500*diff+syscreds*len(path)+5000*(category=="Contraband")+20000*(category=="starships")
@@ -156,6 +161,8 @@ def generateBountyMission (path,fg,fac):
 		writemissionname ("Bounty/Bounty_on_%s_starship_%s"%(fac,processSystem(path[-1])),path)
 
 def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
+	if (isNotWorthy(defendfac)):
+		return
 	defendtyp = fg_util.RandomShipIn(defendfg,defendfac)
 	attacktyp = fg_util.RandomShipIn(attackfg,attackfac)			
 	isbase=fg_util.BaseFGInSystemName(path[-1])==defendfg

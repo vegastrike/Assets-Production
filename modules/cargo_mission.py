@@ -109,6 +109,7 @@ class cargo_mission (Director.Mission):
 	    VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00You have been rewarded for your effort as agreed.")
 	    VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00Your excellent work will be remembered.")
 	    you.addCredits(self.cred)
+	    VS.AdjustRelation(you.getFactionName(),self.faction,.01*self.difficulty)
 	    self.SetVar(1)
 	    VS.terminateMission(1)
 	    return

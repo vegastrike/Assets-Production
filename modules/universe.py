@@ -111,6 +111,7 @@ def getMessagePlayer(un):
         return "p"+str(num)
 
 def punish (you,faction,difficulty):
+    VS.AdjustRelation(you.getFactionName(),faction,difficulty*-.01)
     if (difficulty>=2):
         VS.IOmessage (0,"mission",getMessagePlayer(you),"#ff0000Your idiocy will be punished.")
         VS.IOmessage (0,"mission",getMessagePlayer(you),"#ff0000You had better run for what little life you have left.")
