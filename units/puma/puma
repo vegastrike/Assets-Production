@@ -2,15 +2,15 @@
 	<Meshfile file="puma.xmesh" />
 	<Light file="supernova.bmp" x="0.900000" y="0.000000" z="-8.50000" size="1.500000"/>
 	<Light file="supernova.bmp" x="-0.900000" y="0.000000" z="-8.50000" size="1.500000"/>
-	<Mount weapon="Particle" size="Heavy" x="2.000000" y="1.000000" z="0.000000"/>
-	<Mount weapon="Particle" size="Heavy" x="-2.000000" y="1.000000" z="0.000000"/>
-	<Mount weapon="MassDriver" size="Medium" x="3.000000" y="0.000000" z="0.000000"/>
-	<Mount weapon="MassDriver" size="Medium" x="-3.000000" y="0.000000" z="0.000000"/>
-	<Mount weapon="Dumbfire" size="Light-Missile" x="0.300000" y="-0.100000" z="0.000000" ammo="1"/>
-	<Mount weapon="Dumbfire" size="Light-Missile" x="-0.300000" y="-0.100000" z="0.000000" ammo="1"/>
-	<Mount weapon="Swarm" size="Special-Missile" x="-0.300000" y="-0.100000" z="0.000000" ammo="80"/>
-	<Mount weapon="Swarm" size="Special-Missile" x="0.300000" y="-0.100000" z="0.000000" ammo="80"/>
-	<Mount weapon="Torpedo" size="Heavy-Missile" x="-0.000000" y="0.000000" z="0.000000" ammo="1"/>
+	<Mount weapon="Particle" size="Light Medium Heavy" x="2.000000" y="1.000000" z="0.000000"/>
+	<Mount weapon="Particle" size="Light Medium Heavy" x="-2.000000" y="1.000000" z="0.000000"/>
+	<Mount weapon="MassDriver" size="Light Medium Heavy" x="3.000000" y="0.000000" z="0.000000"/>
+	<Mount weapon="MassDriver" size="Light Medium Heavy" x="-3.000000" y="0.000000" z="0.000000"/>
+	<Mount weapon="Dumbfire" size="Light-Missile Special" x="0.300000" y="-0.100000" z="0.000000" ammo="1" volume="91"/>
+	<Mount weapon="Dumbfire" size="Light-Missile Special" x="-0.300000" y="-0.100000" z="0.000000" ammo="1" volume="91"/>
+	<Mount weapon="Swarm" size="Special-Missile Medium-Missile Heavy-Missile" x="-0.300000" y="-0.100000" z="0.000000" ammo="80" volume="800"/>
+	<Mount weapon="Swarm" size="Special-Missile Medium-Missile Heavy-Missile" x="0.300000" y="-0.100000" z="0.000000" ammo="80" volume="800"/>
+	<Mount weapon="Torpedo" size="Heavy-Missile" x="-0.000000" y="0.000000" z="0.000000" ammo="1" volume="251"/>
 	<Thrust>
 		<Engine Afterburner="1085.000000" Forward="377.600006" Retro="330.400005" Left="188.800003" Right="188.800003" Top="188.800003" Bottom="188.800003"/>
 		<Maneuver yaw="5419.259537" pitch="5419.259537" roll="5419.259537"/>
@@ -23,9 +23,12 @@
 		<Hull strength="134.000000"/>
 	</Defense>
 	<Stats mass="5.000000" momentofinertia="5.000000" fuel="40000000"></Stats>
-	<Computer yaw="164.219986" pitch="164.219986" roll="164.219986" afterburner="108.500000" maxspeed="47.200001"/>
+	<Computer yaw="134.219986" pitch="134.219986" roll="134.219986" afterburner="108.500000" maxspeed="47.200001"/>
 	<Energy>
 		<Reactor recharge="38" limit="350"/>
 	</Energy>
 	<Jump delay="1" jumpenergy="80"/>
+	<Hold volume="50">
+	</Hold>
+
 </Unit>

@@ -29,4 +29,7 @@
 <Mount weapon="KtekBeam" size="Heavy Medium" x="10.533229" y="2.823476" z="2.616701" />
 <Mount weapon="Ktek" size="Heavy Medium" x="7.773383" y="10.995417" z="2.621394"/> 
 <Dock x="-2.389462" y="3.759991" z="0.020980" size="5.000000" ri="0.866026" rj="-0.500000" rk="0.000000" qi="0.000000" qj="-0.000000" qk="-1.000000"/>
+	<Hold volume="150">
+	</Hold>
+
 </Unit>

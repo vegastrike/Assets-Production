@@ -2,14 +2,14 @@
 	<Meshfile file="mongoose.xmesh" />
 	<Light file="supernova.bmp" x="1.500000" y="0.700000" z="-8.000000" size="2.750000"/>
 	<Light file="supernova.bmp" x="-1.500000" y="0.700000" z="-8.000000" size="2.750000"/>
-	<Mount weapon="Photon" size="heavy" x="0.800000" y="-0.600000" z="8.000000"/>
-	<Mount weapon="Photon" size="heavy" x="-0.800000" y="-0.600000" z="8.000000"/>
-	<Mount weapon="Swarm" size="Special-Missile" x="2.000000" y="0.800000" z="-4.000000" ammo="75"/>
-	<Mount weapon="Swarm" size="Special-Missile" x="-2.000000" y="0.800000" z="-4.000000" ammo="75"/>
-	<Mount weapon="Swarm" size="Special-Missile" x="1.000000" y="-1.400000" z="-1.000000" ammo="75"/>
-	<Mount weapon="Swarm" size="Special-Missile" x="-1.000000" y="-1.400000" z="-1.000000" ammo="75"/>
-	<Mount weapon="FriendOrFoe" size="Light-Missile" x="2.5.000000" y="-1.400000" z="-2.000000" ammo="1"/>
-	<Mount weapon="FriendOrFoe" size="Light-Missile" x="-2.5.000000" y="-1.400000" z="-2.000000" ammo="1"/>
+	<Mount weapon="Photon" size="light medium heavy" x="0.800000" y="-0.600000" z="8.000000"/>
+	<Mount weapon="Photon" size="light medium heavy" x="-0.800000" y="-0.600000" z="8.000000"/>
+	<Mount weapon="Swarm" size="Special Special-Missile" x="2.000000" y="0.800000" z="-4.000000" ammo="75" volume="751"/>
+	<Mount weapon="Swarm" size="Special Special-Missile" x="-2.000000" y="0.800000" z="-4.000000" ammo="75" volume="751"/>
+	<Mount weapon="Swarm" size="Special Special-Missile" x="1.000000" y="-1.400000" z="-1.000000" ammo="75" volume="751"/>
+	<Mount weapon="Swarm" size="Special Special-Missile" x="-1.000000" y="-1.400000" z="-1.000000" ammo="75" volume="751"/>
+	<Mount weapon="FriendOrFoe" size="Medium-Missile Light-Missile" x="2.5.000000" y="-1.400000" z="-2.000000" ammo="1" volume="176"/>
+	<Mount weapon="FriendOrFoe" size="Medium-Missile Light-Missile" x="-2.5.000000" y="-1.400000" z="-2.000000" ammo="1" volume="176"/>
 	<Thrust>
 		<Engine Afterburner="1600.000000" Forward="328.000000" Retro="287.000000" Left="164.000000" Right="164.000000" Top="164.000000" Bottom="164.000000"/>
 		<Maneuver yaw="6831.000000" pitch="6831.000000" roll="6831.000000"/>
@@ -27,4 +27,6 @@
 		<Reactor recharge="33" limit="1075"/>
 	</Energy>
 	<Jump delay="1" jumpenergy="80"/>
+	<Hold volume="20"
+	</Hold>
 </Unit>

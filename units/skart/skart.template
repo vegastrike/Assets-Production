@@ -22,4 +22,6 @@
 		<Reactor recharge="160" limit="400"/>
 	</Energy>
 	<Jump delay="1" jumpenergy="250"/>
+	<Hold volume="15">
+	</Hold>
 </Unit>
