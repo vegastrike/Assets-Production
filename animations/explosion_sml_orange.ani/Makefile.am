@@ -1,0 +1,10 @@
+# Makefile.am for vegastrike/data
+pkgdatadir = $(prefix)/games/@PACKAGE@/data/animations/explosion_sml_orange.ani
+
+#pkgdata_DATA = $(wildcard *)
+
+pkgdata_DATA = \
+explode_sml_orange0.alp explode_sml_orange0.bmp explode_sml_orange10.alp explode_sml_orange10.bmp explode_sml_orange11.alp explode_sml_orange11.bmp explode_sml_orange12.alp explode_sml_orange12.bmp explode_sml_orange13.alp explode_sml_orange13.bmp explode_sml_orange14.alp explode_sml_orange14.bmp explode_sml_orange15.alp explode_sml_orange15.bmp explode_sml_orange16.alp explode_sml_orange16.bmp explode_sml_orange17.alp explode_sml_orange17.bmp explode_sml_orange18.alp explode_sml_orange18.bmp explode_sml_orange19.alp explode_sml_orange19.bmp explode_sml_orange1.alp explode_sml_orange1.bmp explode_sml_orange2.alp explode_sml_orange2.bmp explode_sml_orange3.alp explode_sml_orange3.bmp explode_sml_orange4.alp explode_sml_orange4.bmp explode_sml_orange5.alp explode_sml_orange5.bmp explode_sml_orange6.alp explode_sml_orange6.bmp explode_sml_orange7.alp explode_sml_orange7.bmp explode_sml_orange8.alp explode_sml_orange8.bmp explode_sml_orange9.alp explode_sml_orange9.bmp explosion_sml_orange.ani
+
+EXTRA_DIST = $(pkgdata_DATA)
+
