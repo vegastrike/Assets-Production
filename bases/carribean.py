@@ -1,9 +1,11 @@
 import Base
 import vsrandom
+import dynamic_mission
 import VS
 import fixers
 plist=VS.musicAddList('carribean.m3u')
 VS.musicPlayList(plist)    
+dynamic_mission.CreateMissions()
 
 time_of_day='_day'
 

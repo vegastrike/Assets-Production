@@ -1,8 +1,10 @@
 import Base
+import dynamic_mission
 import VS
 def MakePlanet (time_of_day='_day'):
     plist=VS.musicAddList('agricultural.m3u')
     VS.musicPlayList(plist)
+	dynamic_mission.CreateMissions()
     room1 = Base.Room ('Scenery')    
     Base.Texture (room1, 'tex', 'bases/generic/generic'+time_of_day+'.spr', 0, 0)
     Base.Texture (room1, 'tex', 'bases/generic/holo.spr', -.5, -.4)
