@@ -68,6 +68,7 @@ def factionToInt  (faction):
   for i in range(len(factions)):
     if (factions[i]==faction):
       return i
+  return 0
 
 def intToFaction (faction):
   return factions[faction]
