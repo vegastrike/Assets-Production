@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale=".6">
 <cockpit file="rlaan-cockpit.cpt" x="0" y="12" z="10"/>
 <Meshfile file="skart.xmesh"/>
 <Light file="supernova.bmp" x="-0.858347" y="9.587455" z="-27.247974" size="9.939135"/>
