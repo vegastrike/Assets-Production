@@ -30,7 +30,8 @@ module bounty {
 	    _unit.deleteContainer (enemycontainer);
 	  }
 	};
-	void initrandom (int minns, int maxns, float creds, bool run_away, int shipdifficulty) {
+	void initrandom (int minns, int maxns, float credsmin, float credsmax, bool run_away, int minshipdifficulty, int maxshipdifficulty) {
+	  faction_ships.init();	    
 	  object you=_unit.getPlayer();
 	  object tempfaction;
 	  if (!_std.isNull(you)) {
@@ -41,18 +42,20 @@ module bounty {
 	      int factionname=random.randomint(0,faction_ships.getMaxFactions());
 	      tempfaction=faction_ships.intToFaction(factionname);
 	    }
-	    init (minns,maxns,creds,run_away,shipdifficulty,tempfaction);
+	    int sd = random.randomint (minshipdifficulty,maxshipdifficulty);
+	    initstage2 (minns,maxns,(1.0+(_std.Float(sd)*0.5))*random.random (credsmin, credsmax),run_away,sd,tempfaction);
 	    _string.delete (name);
 	  }else {
 	    _std.terminateMission(false);
 	  }
 	};
 	void init (int minnumsystemsaway, int maxnumsystemsaway, float creds, bool run_away, int shipdifficulty, object tempfaction) {
-	  faction_ships.init();
-	  faction = tempfaction;
-	  
-	  
-	  
+	  faction_ships.init();	    
+	  initstage2 (minnumsystemsaway,maxnumsystemsaway,creds,run_away,shipdifficulty,tempfaction);
+	};
+	void initstage2 (int minnumsystemsaway, int maxnumsystemsaway, float creds, bool run_away, int shipdifficulty, object tempfaction) {
+
+	  faction = tempfaction;	  
 	  _std.setNull(newship);
 	  _std.setNull(sigcont);
 	  _std.setNull(enemycontainer);
