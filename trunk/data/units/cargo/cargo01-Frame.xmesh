@@ -1,4 +1,4 @@
-<Mesh texture="cargomesh01.png" scale="5">
+<Mesh texture="cargomesh01.png" scale="2.5">
 <Points>
 <Point>
     <Location x="-50" y="-84.6324081420898" z="423.499969482422"/>
