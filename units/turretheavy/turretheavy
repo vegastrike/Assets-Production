@@ -24,6 +24,6 @@
 	<Energy>
 		<Reactor recharge="85" limit="1000"/>
 	</Energy>
-	<Subunit file="turretgunheavy" y="1" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1" restricted="-.1"/>  
+	<Subunit file="turretgunheavy" y="1" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1" restricted="0"/>  
 
 </Unit>

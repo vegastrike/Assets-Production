@@ -1,4 +1,57 @@
-<Unit scale="80">
+<Unit scale="200">
+<Meshfile file="rlaan_factory.xmesh"/>
+<!--<Mount size="capship-light capship-medium capship-heavy autotracking" type="capshipdisruptor" x="1" y="0" z="0" ri="1" rj="0" rk="0" qi="0" qj="1" qk="0"/>
+<Mount size="capship-light capship-medium capship-heavy autotracking" type="capshipdisruptor" x="-1" y="0" z="0" ri="-1" rj="0" rk="0" qi="0" qj="1" qk="0"/>
+
+<Mount size="capship-light capship-medium capship-heavy autotracking" type="capshipdisruptor" x="0" y="1" z="0" ri="0" rj="1" rk="0" qi="1" qj="0" qk="0"/>
+<Mount size="capship-light capship-medium capship-heavy autotracking" type="capshipdisruptor" x="0" y="-1" z="0" ri="0" rj="-1" rk="0" qi="-1" qj="0" qk="0"/>
+
+<Mount size="capship-light capship-medium capship-heavy autotracking" type="capshipdisruptor" x="0" y="0" z="1" ri="0" rj="0" rk="1" qi="1" qj="0" qk="0"/>
+<Mount size="capship-light capship-medium capship-heavy autotracking" type="capshipdisruptor" x="0" y="0" z="-1" ri="0" rj="0" rk="-1" qi="-1" qj="0" qk="0"/>
+-->
+<SubUnit file="turret_capship_gun" x="1" ri="1" qj="1" restricted="-.5"/>
+<SubUnit file="turret_capship_gun" y="1" rj="1" qi="1" restricted="-.5"/>
+<SubUnit file="turret_capship_gun" z="1" rk="1" qj="1" restricted="-.5"/>
+<SubUnit file="turret_capship_gun" x="-1" ri="-1" qj="1" restricted="-.5"/>
+<SubUnit file="turret_capship_gun" y="-1" rj="-1" qi="1" restricted="-.5"/>
+<SubUnit file="turret_capship_gun" z="-1" rk="-1" qj="1" restricted="-.5"/>
+<Dock x="1" y="0" z="0" size=".15"/>
+<Dock x="-1" y="0" z="0" size=".15"/>
+<Dock x="0" y="1" z="0" size=".15"/>
+<Dock x="0" y="-1" z="0" size=".15"/>
+<Dock x="0" y="0" z="1" size=".15"/>
+<Dock x="0" y="0" z="-1" size=".15"/>
+	<Thrust>
+
+		<Engine Afterburner="00.000000" Forward="000000" Retro="000000" Left="00000" Right="000000" Top="000000" Bottom="00000"/>
+
+		<Maneuver yaw="1" pitch="1" roll="1"/>
+
+	</Thrust>
+
+	<Sound> </Sound>
+
+	<Defense HudImage="factory-hud.spr">
+
+		<Armor front="1200" right="1200" left="1200" back="1200"/>
+
+		<Shields front="1050" right="1050" left="1050" back="1050" recharge="100"/>
+
+		<Hull strength="2000"/>
+
+	</Defense>
+
+	<Stats mass="1000" momentofinertia="1000" fuel="20000"></Stats>
+
+	<Computer yaw="10" pitch="10" roll="10" afterburner="000000" maxspeed="00000"/>
+
+	<Energy>
+
+		<Reactor recharge="400" limit="2070"/>
+
+	</Energy>
+<!--23MAY01-->
+
 	<Hold volume="100000000000">
 		<Category file="Natural_Products/Food">
 			<import price=".4" pricestddev=".2" quantity="0" quantitystddev="0"/>
