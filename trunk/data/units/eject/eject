@@ -10,7 +10,7 @@
 		<Maneuver yaw="20" pitch="20" roll="20"/>
 	</Thrust>
 	<Sound></Sound>
-	<Mount weapon="HandLaser" x="0.584" z=".2" y=".462"/>
+	<Mount weapon="HandLaser" x="0.584" z=".4" y=".462"/>
 	<Defense>
 		<Armor front="10" right="10" left="10" back="10"/>
 		<Shields front="0" back="0" recharge="0"/>
