@@ -23,7 +23,7 @@ class quest_contraband_truck (quest.quest):
 
 	def mission_fail(self):
 		print "mission failed"
-		VS.IOmessage (0,"game","news","AERAN WARP CORE EXPLODES:\\GNN reports the explosion of a warp core in Klondike system today.  The unstable core was apparently being smuggled out of Confederation space by cloaked Aeran ships.  It is understood that the Aeran ships, and an unknown privateer vessel were in the aera.  They are presumed destroyed.\n\n  GNN --- Your News Network Anywhere")
+		VS.IOmessage (0,"game","news","AERAN WARP CORE EXPLODES:\\GNN reports the explosion of a warp core in Klondike system today.  The unstable core was apparently being smuggled out of Confederation space by cloaked Aeran ships.  It is understood that the Aeran ships, and an unknown privateer vessel were in the aera.  They are presumed destroyed.  Although Confederate representatives today would neither confirm nor deny it, it is suspected that this was infact not an entirely unexpected event.\\\\GNN --- Your News Network Anywhere")
 		print "mission terminating"
 
 		print "mission terminated"
@@ -97,7 +97,7 @@ class quest_contraband_truck (quest.quest):
 			VS.playSound("electricity.wav",self.cargo_container.Position(),self.cargo_container.GetVelocity())
 
 			print "adding particle"
-			VS.addParticle(self.cargo_container.Position(),self.cargo_container.GetVelocity(),(1,.2,.2))
+			VS.addParticle(self.cargo_container.Position(),self.cargo_container.GetVelocity(),(1,0.2,0.2))
 			print "added particle"
 			unit.setTfgDirective(self.aera_specopp,self.playa,'A')
 
