@@ -25,7 +25,7 @@ module launch {
     return ok;
   };
 
-  void launch_wave_around_area(object fgname,object faction,object type,object ai,int nr_ships,float r1,float r2,object pos){
+  object launch_wave_around_area(object fgname,object faction,object type,object ai,int nr_ships,float r1,float r2,object pos){
     
 
     float x=_olist.at(pos,0)+(random.random(r1,r2)*random.randomsign());
@@ -34,7 +34,8 @@ module launch {
 
     // _io.printf("launching %d ships type=%s faction=%s around area [%f,%f,%f]\n",nr_ships,type,faction,x,y,z);
 
-    _unit.launch(fgname,faction,type,ai,nr_ships,1,x,y,z);
+    object un=_unit.launch(fgname,faction,type,ai,nr_ships,1,x,y,z);
+    return un;
   };
   void launch_waves_around_area(object fgname,object faction,object type,object ai,int nr_ships,int nr_waves,float r1,float r2,object pos){
     
@@ -87,7 +88,7 @@ module launch {
       i=i+1;
     }
   };
-  void launch_wave_around_significant (object fgname,object faction,object type,object ai,int nr_ships,float radius,int significant_number) {
+  object launch_wave_around_significant (object fgname,object faction,object type,object ai,int nr_ships,float radius,int significant_number) {
     object significant_unit=unit.getSignificant(significant_number);
     object myvec;
     if (_std.isNull(significant_unit)) {
@@ -95,13 +96,16 @@ module launch {
       _olist.push_back(myvec.0);
       _olist.push_back(myvec.0);
       _olist.push_back(myvec.0);
+      object un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,0,radius,myvec);
+      _olist.delete(myvec);
+      return un;
     } else {
       myvec=_unit.getPosition(signigicant_unit);
     }
     float rsiz=_unit.getRSize(significant_unit)*2;
     radius = rsiz+radius;
-    launch_wave_around_area (fgname,faction,type,ai,nr_ships,rsiz,radius,myvec);
-    _olist.delete(myvec);
+    object un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,rsiz,radius,myvec);
+    return un;
  };
 
 }
