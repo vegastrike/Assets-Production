@@ -1,0 +1,70 @@
+<Mesh texture="tinfoil.png">
+<Points>
+<Point>
+    <Location x="-2.41918659210205" y="-2.92523002624512" z="17.7628860473633"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-2.43240189552307" y="-2.958815574646" z="1.33096146583557"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-11.8220729827881" y="-2.92523193359375" z="1.33096146583557"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-11.8220729827881" y="-2.92523193359375" z="1.33096146583557"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-2.43240189552307" y="-7.81669187545776" z="1.33096170425415"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-2.41918659210205" y="-2.92523002624512" z="17.7628860473633"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-11.8220729827881" y="-2.92523193359375" z="1.33096146583557"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-2.43240189552307" y="-2.958815574646" z="1.33096146583557"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-2.43240189552307" y="-7.81669187545776" z="1.33096170425415"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-2.41918659210205" y="-2.92523002624512" z="17.7628860473633"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-2.43240189552307" y="-7.81669187545776" z="1.33096170425415"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+</Points>
+<Polygons>
+<Tri>
+    <Vertex point="0" s="0" t="1"/>
+    <Vertex point="1" s="0" t="0"/>
+    <Vertex point="2" s="1" t="0"/>
+</Tri>
+<Tri>
+    <Vertex point="3" s="0" t="0"/>
+    <Vertex point="4" s="1" t="0"/>
+    <Vertex point="5" s="1" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="6" s="0" t="0"/>
+    <Vertex point="7" s="1" t="0"/>
+    <Vertex point="8" s="1" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="9" s="1" t="1"/>
+    <Vertex point="10" s="0" t="1"/>
+    <Vertex point="1" s="0" t="0"/>
+</Tri>
+</Polygons>
+</Mesh>
