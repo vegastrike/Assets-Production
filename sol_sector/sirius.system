@@ -26,7 +26,8 @@
 	</unit>
 	<unit name= "Victory"  file="ConfedHq" faction="confed" x="27000"  velocity="0" position="100">
 	</unit>
-	<asteroid nebfile="red-nebula.xml" name= "Victory"  file="AField" faction="neutral" x="30000" z="-10000"  velocity="0" position="100" difficulty=".25"></asteroid>
+	<asteroid  name= "Victory"  file="AFieldJump" faction="neutral" x="30000" z="-10000"  velocity="0" position="100" difficulty=".25"></asteroid>
+	<planet  name= "JumpToSol"  file="jump.png" radius="100" faction="neutral" x="30000" z="-10000"  velocity="0" position="100" destination="sol_sector/sol"></planet>
 	<nebula nebfile="red-nebula.xml" file="nebula" x="42000" position="100"/>
 	<unit name= "Victory"  file="station" faction="confed" x="24000"  velocity="0" position="100">	</planet>
 	</unit>
