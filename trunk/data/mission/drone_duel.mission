@@ -6,10 +6,11 @@
 	<variables>
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="4 versus 4" />
-
+		<var name="mission_name" value="Duel the drone!" />
+		<var name="author" value="Daniel Horn" />
 		<var name="system" value="unexplored_space/gwriss" />
-		<var name="description" value="4vs4.txt" />
+		<var name="description" value="Destroy the enemy drone hiding\in an unknown sector." />
+		<var name="briefing" value="retrieve an crashed drone's\weapons to help you defeat\the powerful drone!" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="2">
