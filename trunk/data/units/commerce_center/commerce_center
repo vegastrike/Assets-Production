@@ -1,4 +1,4 @@
-<Unit scale="200">
+<Unit scale="50">
 	<Meshfile file="commerce_center.xmesh" />
 	<Thrust>
 		<Engine Afterburner="1.333333" Forward="0.000000" Retro="0.000000" Left="0.000000" Right="0.000000" Top="0.000000" Bottom="0.000000"/>

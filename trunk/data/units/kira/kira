@@ -29,6 +29,14 @@
 	<Sound>
 	</Sound>
 
+	<Energy>
+		<Reactor recharge="60" limit="900"/>
+	</Energy>
+       
+       	<Jump delay="1" jumpenergy="500"/>       
+	<Hold volume="50">
+	</Hold>
+
 	<Defense HudImage="kira-hud.spr">
 		<Armor front="150" right="90" left="90" back="110"/>
 		<Shields front="300.000000" right="250.000000" left="250.000000" back="300.000000" recharge="25.000000"/>
@@ -37,16 +45,8 @@
 
 	<Stats mass="9.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
 
-	<Computer yaw="93.500000" pitch="93.500000" roll="93.500000" afterburner="119.300003" maxspeed="41.599998"/ >
-		<Radar itts="true" range="25000" color="true"/ >
+	<Computer yaw="93.500000" pitch="93.500000" roll="93.500000" afterburner="119.300003" maxspeed="41.599998">
+		<Radar itts="true" range="25000" color="true"/>
 	</Computer>
-
-	<Energy>
-		<Reactor recharge="60" limit="900"/>
-	</Energy>
-       
-       	<Jump delay="1" jumpenergy="500"/>       
-	<Hold volume="50">
-	</Hold>
 
 </Unit>

@@ -42,7 +42,7 @@
 
 	<Stats mass="9.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
 
-	<Computer yaw="93.500000" pitch="93.500000" roll="93.500000" afterburner="119.300003" maxspeed="41.599998"/ >
+	<Computer yaw="93.500000" pitch="93.500000" roll="93.500000" afterburner="119.300003" maxspeed="41.599998">
 		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
 	</Computer>
 
