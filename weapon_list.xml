@@ -662,7 +662,7 @@
 <Missile name="CapshipMissile" mountsize="heavy-capship-missile">
 <Energy rate="0" stability="6" refire="8" locktime="5">
 </Energy>
-<Damage rate="5000" phasedamage="1000" longrange="1" radius="6000" radialspeed="500" >
+<Damage rate="2000" phasedamage="1000" longrange="1" radius="6000" radialspeed="400" >
 </Damage>
 <Distance speed="1000" pulsespeed="256" range="800000" detonationrange="400" volume="900" >
 </Distance>
