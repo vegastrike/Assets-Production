@@ -1,4 +1,4 @@
-<terrain level="15" detail="128" staticdetail="12" scales=".00002" scalet = ".00002" radius="10000">
+<terrain level="15" detail="128" staticdetail="12" scales=".0000152587890625" scalet = ".0000152587890625" radius="10000">
 
 <texture file="gctexcolored.bmp" blend="ONE ZERO" color="0">
 <material reflect="false">

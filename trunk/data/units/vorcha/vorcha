@@ -1,4 +1,4 @@
-<Unit>
+<Unit cockpit="disabled-cockpit.cpt">
 	<Meshfile file="vorcha.xmesh" />
 	<Light file="supernova.bmp" x="-27.600000" y="1.000000" z="-104.700005" size="12.000000"/>
 	<Light file="supernova.bmp" x="27.600000" y="1.000000" z="-104.700005" size="12.000000"/>
