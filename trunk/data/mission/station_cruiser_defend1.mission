@@ -22,6 +22,16 @@
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
 
+                <flightgroup name="gold" faction="confed" type="cruiser" ainame="_ai_stationary" waves="8" nr_ships="1">
+			<pos offset="blue" x="-300.0" y="500.0" z="1000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="silver" faction="confed" type="carrier" ainame="_ai_stationary" waves="8" nr_ships="1">
+			<pos offset="blue" x="-7000.0" y="-500.0" z="1000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
 <!-- bad dudes -->
 
                 <flightgroup name="alpha" faction="aera" type="aevant" ainame="default" waves="8" nr_ships="4">
@@ -46,4 +56,23 @@
 
 
         </flightgroups>
+
+	<module name="director">
+
+		<import name="station_cruiser_defend1" />
+
+		<script name="initgame">
+			<exec name="initgame" module="station_cruiser_defend1" />
+		</script>
+
+		<script name="gameloop">
+			<exec name="gameloop" module="station_cruiser_defend1" />
+		</script>
+
+		<script name="endgame">
+			<exec name="endgame" module="station_cruiser_defend1" />
+		</script>
+	</module>
+
+
 </mission>

@@ -25,18 +25,18 @@
 
 	<module name="director">
 
-		<import name="testd_ai_waypoints1" />
+		<import name="testd_ai_waypoints2" />
 
 		<script name="initgame">
-			<exec name="initgame" module="testd_ai_waypoints1" />
+			<exec name="initgame" module="testd_ai_waypoints2" />
 		</script>
 
 		<script name="gameloop">
-			<exec name="gameloop" module="testd_ai_waypoints1" />
+			<exec name="gameloop" module="testd_ai_waypoints2" />
 		</script>
 
 		<script name="endgame">
-			<exec name="endgame" module="testd_ai_waypoints1" />
+			<exec name="endgame" module="testd_ai_waypoints2" />
 		</script>
 	</module>
 
