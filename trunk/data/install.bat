@@ -9,6 +9,15 @@ echo You have chosen to install Vega Strike, a program under the GPL.
 echo For documentation about Vegastrike's license and source, visit
 echo http://vegastrike.sourceforge.net
 echo Information about key bindings and gameplay is contained in README
+choice Would you like to read the readme now
+if errorlevel==2 goto FICTION
+type README /p
+:FICTION
+choice Would you like to view the game fiction?
+if errorlevel==2 goto GF3
+type FICTION /p
+
+:GF3
 choice Do you have a GeForce 3 
 if errorlevel==2 goto GeForce2
 copy geforce3.config vegastrike.config
