@@ -1,0 +1,30 @@
+<Unit scale = "6" >
+	<Meshfile file = "kineticmissile.xmesh"  >
+	</Meshfile>
+	<BspMesh  >
+	</BspMesh>
+	<Light file = "supernova.bmp" x = "0" y = "0" z = "-5.90000023841858" size = "2.3"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "109750" Forward = "109746" Retro = "109742" Left = "109752" Right = "109752" Top = "109752" Bottom = "109752"  >
+		</Engine>
+		<Maneuver yaw = "2203" pitch = "2203" roll = "2754"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense explosionAni = "explosion_wave.ani" >
+		<Hull strength = "120"  >
+		</Hull>
+		<Cloak cloakglass = "1" cloakmin = ".25" cloakrate = ".8" cloakenergy = "0"  >
+		</Cloak>
+	</Defense>
+	<Stats mass = "551" momentofinertia = "3672" fuel = "50000"  >
+	</Stats>
+	<Computer yaw = "1.8" pitch = "1.8" roll = "1.10" afterburner = "2000" maxspeed = "2000"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "10" limit = "100"  >
+		</Reactor>
+	</Energy>
+</Unit>

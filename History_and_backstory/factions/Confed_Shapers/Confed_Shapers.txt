@@ -1,0 +1,3 @@
+Faction: Confed_Shapers
+
+While treaty requires that each major memegroup supply military hardware to supplement the Confed's own navy, these ships remain primarily crewed by the original memegroup's citizens.

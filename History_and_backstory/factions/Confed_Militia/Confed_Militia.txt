@@ -1,0 +1,3 @@
+Faction: Confed_Militia
+
+Wartime constraints require the drafting of local forces into patrolling the homefront.  Raw, inexperienced, and often less than fully competent, they are, nevertheless, generally capable of repelling a pirate attack.... if they ever get there to do so.

@@ -1,0 +1,3 @@
+Faction: Aera_Bzbr
+
+The Bzbr are a client race uplifted by the Aera.  They are reasonable laborers, but poor conversationalists, in part due to their lack of vocal cords.  The Aera uplifted the Bzbr out of pity for the Bzbr due to similarities the Bzbr homeworld had with the Aera homeworld.

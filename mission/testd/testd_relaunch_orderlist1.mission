@@ -1,0 +1,40 @@
+<mission>
+	<variables>
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="Pirate Attack on Mars Station" />
+		<var name="system" value="mission_sector/test_relaunch" />
+		<var name="description" value="still in development" />
+		<var name="author" value="Alexander Rawass" />
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="8" nr_ships="1">
+			<pos x="00.0" y="0.0" z="-2000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+	</flightgroups>
+
+	<module name="director">
+
+		<import name="testd_relaunch_orderlist1" />
+
+		<script name="initgame">
+			<exec name="initgame" module="testd_relaunch_orderlist1" />
+		</script>
+
+		<script name="gameloop">
+			<exec name="gameloop" module="testd_relaunch_orderlist1" />
+
+		</script>
+
+		<script name="endgame">
+			<exec name="endgame" module="testd_relaunch_orderlist1" />
+
+		</script>
+
+		<script name="initstarsystem">
+			<exec name="initstarsystem" module="testd_relaunch_orderlist1" />
+		</script>
+	</module>
+
+
+</mission>

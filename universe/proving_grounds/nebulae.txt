@@ -1,0 +1,2 @@
+N25000^red-nebula.xml^red-nebula&E100^powerup_missile
+E200^powerup_turretmaingun&jump100

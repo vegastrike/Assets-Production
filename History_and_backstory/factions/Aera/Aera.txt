@@ -1,0 +1,3 @@
+Faction: Aera
+
+Includes all Aera who follow the will of the Aera Oligarchy, and those non-Aera subject to the will of said body.

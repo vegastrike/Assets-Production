@@ -1,0 +1,3 @@
+Faction: Rlaan_Nuhln
+
+The Nuhln are one of a few Rlaan client species, but are not a very successful group.  Even post uplifting, they are exceptionally slow and dimwitted.  However, due to their ability to mindlessly do boring tasks without complaint, the Rlaan employ them as construction crews, auxillary escort units on convoys, and as customer support at help-desks.

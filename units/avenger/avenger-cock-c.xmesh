@@ -1,0 +1,170 @@
+<Mesh texture="GLASS.PNG">
+<Points>
+<Point>
+    <Location x="5.55749177932739" y="3.5717613697052" z="17.7618141174316"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="6.83325147628784" y="0.792967736721039" z="20.2125720977783"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-6.81182241439819" y="0.792966306209564" z="20.2125720977783"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.53606367111206" y="3.57176041603088" z="17.7618141174316"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.55749177932739" y="4.99800300598145" z="19.1880550384521"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.53606367111206" y="4.99800157546997" z="19.1880550384521"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-6.81182289123535" y="2.54724335670471" z="21.9668483734131"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="6.83325099945068" y="2.54724478721619" z="21.9668502807617"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.53606367111206" y="3.57176041603088" z="17.7618141174316"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.53606367111206" y="4.99800157546997" z="19.1880550384521"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.53606367111206" y="4.99800157546997" z="19.1880550384521"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.55749177932739" y="4.99800300598145" z="19.1880550384521"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.53606367111206" y="3.57176041603088" z="17.7618141174316"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-6.81182241439819" y="0.792966306209564" z="20.2125720977783"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.53606367111206" y="4.99800157546997" z="19.1880550384521"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.53606367111206" y="3.57176041603088" z="17.7618141174316"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-6.81182241439819" y="0.792966306209564" z="20.2125720977783"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="6.83325099945068" y="2.54724478721619" z="21.9668502807617"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="6.83325099945068" y="2.54724478721619" z="21.9668502807617"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-6.81182289123535" y="2.54724335670471" z="21.9668483734131"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-6.81182241439819" y="0.792966306209564" z="20.2125720977783"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="6.83325147628784" y="0.792967736721039" z="20.2125720977783"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.55749177932739" y="3.5717613697052" z="17.7618141174316"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.55749177932739" y="4.99800300598145" z="19.1880550384521"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.55749177932739" y="4.99800300598145" z="19.1880550384521"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="6.83325147628784" y="0.792967736721039" z="20.2125720977783"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+</Points>
+<Polygons>
+<Tri>
+    <Vertex point="0" s="0" t="0"/>
+    <Vertex point="1" s="1" t="0"/>
+    <Vertex point="2" s="1" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="2" s="1" t="1"/>
+    <Vertex point="3" s="0" t="1"/>
+    <Vertex point="0" s="0" t="0"/>
+</Tri>
+<Tri>
+    <Vertex point="4" s="0" t="0"/>
+    <Vertex point="5" s="1" t="0"/>
+    <Vertex point="6" s="1" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="6" s="1" t="1"/>
+    <Vertex point="7" s="0" t="1"/>
+    <Vertex point="4" s="0" t="0"/>
+</Tri>
+<Tri>
+    <Vertex point="0" s="0" t="0"/>
+    <Vertex point="8" s="1" t="0"/>
+    <Vertex point="9" s="1" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="10" s="1" t="1"/>
+    <Vertex point="11" s="0" t="1"/>
+    <Vertex point="0" s="0" t="0"/>
+</Tri>
+<Tri>
+    <Vertex point="12" s="0" t="0"/>
+    <Vertex point="13" s="1" t="0"/>
+    <Vertex point="6" s="1" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="6" s="1" t="1"/>
+    <Vertex point="14" s="0" t="1"/>
+    <Vertex point="15" s="0" t="0"/>
+</Tri>
+<Tri>
+    <Vertex point="16" s="0" t="0"/>
+    <Vertex point="1" s="1" t="0"/>
+    <Vertex point="17" s="1" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="18" s="1" t="1"/>
+    <Vertex point="19" s="0" t="1"/>
+    <Vertex point="20" s="0" t="0"/>
+</Tri>
+<Tri>
+    <Vertex point="21" s="0" t="0"/>
+    <Vertex point="22" s="1" t="0"/>
+    <Vertex point="23" s="1" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="24" s="1" t="1"/>
+    <Vertex point="7" s="0" t="1"/>
+    <Vertex point="25" s="0" t="0"/>
+</Tri>
+</Polygons>
+</Mesh>

@@ -1,0 +1,14 @@
+INSTALLDIR=/usr/local/games/vegastrike
+
+DATA=`find -type f|grep -v "CVS"|grep -v "vegastrike-data"`
+
+all:
+
+dist:
+	echo $(DATA)
+	tar zcvf vegastrike-data-0.1.0.tar.gz $(DATA)
+
+install:
+	mkdir $(INSTALLDIR)/data
+	cp -a * $(INSTALLDIR)/data
+

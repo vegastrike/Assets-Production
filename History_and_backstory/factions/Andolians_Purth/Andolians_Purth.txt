@@ -1,0 +1,3 @@
+Faction: Andolians_Purth
+
+The Purth are an uplifted client species of the Andolians. In large part an experiment in synthesis of work done by the Unadorned and the Mechanists, the Purth are cybernetic beings, with assistive AI and built in networking capacity.  It is only through these upgrades that a Purth achieves something much like sentience.  The Purth were chosen primarily because of their very hardy constitution, and have proved themselves invaluable in high gravity applications.

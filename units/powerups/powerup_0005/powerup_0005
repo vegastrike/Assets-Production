@@ -1,0 +1,23 @@
+<Unit>
+
+<Meshfile file="turret.xmesh"/>
+		<Thrust>
+		<Engine Afterburner="000000" Forward="000000" Retro="0000" Left="0000" Right="0000" Top="00000" Bottom="000000"/>
+		<Maneuver yaw="0" pitch="0" roll="0000"/>
+	</Thrust>
+	<Sound></Sound>
+	<Defense>
+		<Armor front="10" right="1" left="1" back="1"/>
+		<Shields front="10" back="0" left="0" right="0" recharge="5"/>
+		<Hull strength="1"/>
+	</Defense>
+	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
+	<Computer yaw="000" pitch="0" roll="0000" afterburner="000000" maxspeed="00000">
+	</Computer>
+
+	<Energy>
+		<Reactor recharge="0" limit="0"/>
+	</Energy>
+
+
+</Unit>

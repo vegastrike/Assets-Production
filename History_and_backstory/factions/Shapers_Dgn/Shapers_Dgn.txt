@@ -1,0 +1,3 @@
+Faction: Shapers_Dgn
+
+The hapless Dgn serve little purpose beyond being the meaningless gophers and servants of their Shaper masters.

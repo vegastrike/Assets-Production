@@ -1,0 +1,29 @@
+<Unit>
+
+<Meshfile file="turretmaingun.xmesh"/>
+
+       
+
+<!-- new elements added -->
+<Mount weapon="UnknownBeam" size="Light" x="1.875000" y="-0.125000" z="9.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>
+
+		<Thrust>
+		<Engine Afterburner="000000" Forward="000000" Retro="0000" Left="0000" Right="0000" Top="00000" Bottom="000000"/>
+		<Maneuver yaw="0" pitch="0" roll="0000"/>
+	</Thrust>
+	<Sound></Sound>
+	<Defense>
+		<Armor front="1" right="1" left="1" back="1"/>
+		<Shields front="20000" back="20000" recharge="2"/>
+		<Hull strength="1"/>
+	</Defense>
+	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
+	<Computer yaw="000" pitch="0" roll="0000" afterburner="000000" maxspeed="00000">
+	</Computer>
+
+	<Energy>
+		<Reactor recharge="50" limit="30"/>
+	</Energy>
+
+
+</Unit>

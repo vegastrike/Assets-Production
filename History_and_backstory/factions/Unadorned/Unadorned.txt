@@ -1,0 +1,3 @@
+Faction: Unadorned
+
+The Unadorned worship the cold logic of machines, and seek to abandon the limitations of human emotion and irrationality.  Often referred to as the "mad monks of Myztheria", that the other factions believe them to be somewhat insane has not stopped them from making use of their advances in AI and other computational fields.  Motto: Freed of noise, the mind will make true music.

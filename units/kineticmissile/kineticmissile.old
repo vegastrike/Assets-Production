@@ -1,0 +1,29 @@
+<Unit scale ="6">
+	<Meshfile file="kineticmissile.xmesh"/>
+	<BspMesh/>
+	<Light file="supernova.bmp" x="0" y="0" z="-5.90000023841858" size= "2.3"/>
+
+<Thrust> 
+	<Engine Afterburner="5976.80"
+		  Forward="5976.60"
+		  Retro="5976.40"
+		  Left="5976.90"
+		  Right="5976.90"
+		  Top="5976.90"
+		  Bottom="5976.90"/>
+			<Maneuver yaw="120" pitch="120" roll="150"/>
+
+</Thrust>
+<Sound></Sound>
+<Defense explosionAni="explosion_wave.ani">
+	<Hull strength="120"/>
+	<Cloak cloakglass="1" cloakmin=".25" cloakrate=".8" cloakenergy="0"/>
+</Defense>
+<Stats mass="30.06" momentofinertia="200" fuel="50000"></Stats>
+
+<Computer yaw="1.8" pitch="1.8" roll="1.10" afterburner="2000" maxspeed="2000"/>
+<Energy>
+	<Reactor recharge="10"
+		   limit="100"/>
+</Energy>
+</Unit>

@@ -1,0 +1,30 @@
+<system name="Sol" background="cube" stars="10000" starspread="100"  x="0" y="-200" z="0">
+        <planet name="sun" file="sun.bmp" radius="800" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" velocity="0" position="0" emmisiveR="1" emmisiveG="1" emmisiveB="1">
+		<planet name="Mercury" file="mercury.bmp" radius="80" gravity="20" ri="1500" rj="0" rk="0" si="0" sj="0" sk="1500" velocity="5" position="0">
+		</planet>
+		<planet name="Venus" file="venus.bmp" radius="100" gravity="20" ri="2000" rj="0" rk="0" si="0" sj="0" sk="2000" velocity="8" position="0">
+		</planet>
+		<planet name="Earth" file="earth.bmp" radius="100" gravity="20" ri="3000" rj="0" rk="0" si="0" sj="0" sk="3000" velocity="10" position="0">
+			<planet name="Moon" file="moon.bmp" radius="30" gravity="20" ri="200" rj="0" rk="0" si="0" sj="0" sk="200" velocity="2" position="0">
+			</planet>
+
+		</planet>
+		<planet name="Mars" file="mars.bmp" radius="120" gravity="20" ri="4000" rj="0" rk="0" si="0" sj="0" sk="4000" velocity="20" position="0">
+<unit name= "Victory"  file="drydock-Cube_27.xunit" ri="1000" rj="0" rk="0" si="0" sj="0" sk="1000" velocity="5" position="0">
+</unit>
+		</planet>
+         
+		<planet name="Jupiter" file="jupiter.bmp" radius="500" gravity="20" ri="5500" rj="0" rk="0" si="0" sj="0" sk="5500" velocity="15" position="0">
+		</planet>
+		<planet name="Saturn" file="saturn.bmp" radius="350" gravity="20" ri="7000" rj="0" rk="0" si="0" sj="0" sk="7000" velocity="15" position="0">
+			<unit name = "SaturnRing" file="Planetary-Ring.xunit"/>
+		</planet>
+		<planet name="Uranus" file="uranus.bmp" radius="170" gravity="20" ri="9000" rj="0" rk="0" si="0" sj="0" sk="9000" velocity="20" position="0">
+		</planet>
+		<planet name="Neptune" file="neptune.bmp" radius="200" gravity="20" ri="11000" rj="0" rk="0" si="0" sj="0" sk="11000" velocity="40" position="0">
+		</planet>
+		<planet name="Pluto" file="pluto.bmp" radius="50" gravity="20" ri="13000" rj="0" rk="0" si="0" sj="0" sk="13000" velocity="50" position="0">
+		</planet>
+	</planet>
+
+</system>

@@ -1,0 +1,68 @@
+<Unit scale="10">
+	<cockpit file="medium_cockpit.cpt" x="0" y=".5" z="4"/>
+	<Meshfile file="box.xmesh" />
+	<BspMesh/>
+
+	<Mount weapon="Laser" size="Light" x="1.000000" y="0.000000" z="4.000000"/>
+	<Mount weapon="Laser" size="Light" x="-1.000000" y="0.000000" z="4.000000"/>
+	<Mount weapon="Meson" size="Light Medium" x="4.000000" y="0.000000" z="4.500000"/>
+	<Mount weapon="Meson" size="Light Medium" x="-4.000000" y="0.000000" z="4.500000"/>
+	<Mount weapon="Dumbfire" size="light-missile" x="-1.500000" y="-0.200000" z="-1.0000" volume="91" ammo="1"/>
+	<Mount weapon="Dumbfire" size="light-missile" x="1.500000" y="-0.200000" z="-1.00000" volume="91" ammo="1"/>
+
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-2.500000" y="-0.200000" z="-2.00000" ammo="1" volume="200"/>
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="2.500000" y="-0.200000" z="-2.00000" ammo="1" volume="200"/>
+	<Thrust>
+		<Engine Afterburner="1600.000000" Forward="448.000000" Retro="392.000000" Left="224.000000" Right="224.000000" Top="224.000000" Bottom="224.000000"/>
+		<Maneuver yaw="5009.400101" pitch="5009.400101" roll="5009.400101"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage="nova-hud.spr">
+		<Armor front="40" right="35" left="35" back="40"/>
+		<Shields front="60.000000" back="40.000000" recharge="24.000000"/>
+		<Hull strength="200.000000"/>
+	</Defense>
+
+	<Stats mass="2.500000" momentofinertia="2.500000" fuel="40000000"></Stats>
+	<Computer yaw="151.800003" pitch="151.800003" roll="151.800003" afterburner="130.000000" maxspeed="43.000000"/>
+	<Energy afterburnenergy="0">
+		<Reactor recharge="40" limit="160"/>
+	</Energy>
+       	<Jump delay="1" jumpenergy="90"/>       
+
+	<Hold volume="10">
+	</Hold>
+
+       <subunit file="box_accessory" x="9" y="9" z="9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/>    
+       <subunit file="box_accessory" x="9" y="9" z="-9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="9" y="-9" z="9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="9" y="-9" z="-9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="-9" y="9" z="9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="-9" y="9" z="-9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="-9" y="-9" z="9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="-9" y="-9" z="-9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+	 <subunit file="box_accessory" x="0" y="9" z="0" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/>    
+       <subunit file="box_accessory" x="9" y="9" z="0" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="9" y="0" z="0" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="9" y="-9" z="0" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="0" y="-9" z="0" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="-9" y="-9" z="0" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="-9" y="0" z="0" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="-9" y="9" z="0" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+	 <subunit file="box_accessory" x="0" y="0" z="-9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/>    
+       <subunit file="box_accessory" x="0" y="9" z="-9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="9" y="0" z="-9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="-9" y="0" z="-9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="0" y="-9" z="-9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+	 <subunit file="box_accessory" x="0" y="0" z="9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/>    
+       <subunit file="box_accessory" x="0" y="9" z="9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="9" y="0" z="9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="-9" y="0" z="9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+       <subunit file="box_accessory" x="0" y="-9" z="9" ri="0.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="0.000000"/> 
+
+
+
+
+
+</Unit>

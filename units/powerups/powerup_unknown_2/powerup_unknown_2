@@ -1,0 +1,30 @@
+<Unit >
+	<cockpit file="hornet-cockpit.cpt" x="0" y="00" z="10"/>
+
+	<Meshfile file="firefly.xmesh" />
+	<BspMesh/>
+	<Thrust>
+		<Engine Afterburner="500" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
+		<Maneuver yaw="0" pitch="0" roll="0"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Armor front="300" right="150" left="150" back="0"/>
+		<Shields front="20000" back="20000" recharge="3"/>
+		<Hull strength="25"/>
+	</Defense>
+	<Stats mass="5.000000" momentofinertia="14.000000" fuel="40000"></Stats>
+	<Computer yaw="0" pitch="0" roll="0" afterburner="0" maxspeed="50"/>
+	<Energy>
+		<Reactor recharge="60" limit="100"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="10"/>       
+
+	<description>
+	</description>
+
+<!-- new elements added -->
+<Light file="supernova.bmp" x="-0.35" y="1.1" z="-8.000000" size="1.680000"/>
+<Light file="supernova.bmp" x="0.35" y="1.1" z="-8.000000" size="1.680000"/>
+</Unit>

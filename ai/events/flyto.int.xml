@@ -1,0 +1,6 @@
+<AggressiveAI close=".05">
+  <distance max="0.0000001" script="++turntowards.xml">
+  <!-- distance less than .1-->
+  </distance>
+  
+</AggressiveAI>
