@@ -13,17 +13,23 @@ module cargo_mission {
 	import launch;
 	import faction_ships;
 	bool capship;
-	void sys (object currentsystem, int sysaway) {
+	void sys (object currentsystem, int sysaway, object str) {
 	  if (sysaway<=0) {
 	    destination=currentsystem;
+	    _io.sprintf(str,"Jump from %s to your final destination in %s",currentsystem, destination);
+	    _io.message (1,"game","all",str);
 	  } else {
 	    int max=_std.getNumAdjacentSystems(currentsystem);
 	    if (max>0) {
 	      int nextsysnum=random.randomint(0,max-1);
 	      object nextsystem=_std.getAdjacentSystem(currentsystem,nextsysnum);
-	      sys(nextsystem,sysaway-1);
+	      _io.sprintf(str,"Jump from %s to %s.",currentsystem,nextsystem);
+	      _io.message (1,"game","all",str);
+	      sys(nextsystem,sysaway-1,str);
 	    } else {
 	      destination="sol_sector/sol";
+	      _io.sprintf(str,"Your final destination is %s.",destination);
+	      _io.message (1,"game","all",str);
 	    }
 	  }
 	};
@@ -39,7 +45,6 @@ module cargo_mission {
 	  object mysys=_std.getSystemFile();
 	  quantity=cargoquantity;
 	  object sysfile = _std.getSystemFile();
-	  sys(sysfile,numsystemsaway);
 	  object you=_unit.getPlayer();
 	  if (quantity<1){
 	    quantity=1;
@@ -55,13 +60,12 @@ module cargo_mission {
 	    
 	    object str = _string.new();
 	    object name = _unit.getName (you);
-	    _io.sprintf(str,"Good Day, %s",name);
+	    _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
 	    _io.message (0,"game","all",str);
-	    _io.sprintf(str,"Go to system %s and give the",destination);
-	    _io.message (1,"game","all",str);
-	    _io.sprintf(str,"cargo to a unit from our faction: %s",faction);
+	    sys(sysfile,numsystemsaway,str);
+	    _io.sprintf(str,"and give the cargo to a %s unit.",faction);
 	    _io.message (2,"game","all",str);
-	    _io.sprintf(str,"%d of the %s cargo",quantity,cargoname);
+	    _io.sprintf(str,"You will receive %d of the %s cargo",quantity,cargoname);
 	    _io.message (3,"game","all",str);
 	    _string.delete(str);
 	    _olist.delete(list);
