@@ -1,4 +1,4 @@
-<Mesh animation="rlaan.ani" reverse="1">
+<Mesh animation="rlaan_purple.ani" reverse="1">
 <Points>
 	<Point> 
 		<Location x="1" y="1" z="1"/><!-- 0 -->
