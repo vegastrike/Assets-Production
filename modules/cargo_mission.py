@@ -49,8 +49,13 @@ class cargo_mission (Director.Mission):
 	  if (self.quantity<1):
 	    self.quantity=1
 	  carg=VS.getRandCargo(self.quantity,category)
-	  if (carg.GetQuantity()==0):
+	  if (carg.GetQuantity()==0 or category==''):
 	    carg = VS.getRandCargo(self.quantity,"") #oh no... could be starships...
+	    i=0
+	    while i<50 and carg.GetCategory()[:10]=="Contraband":
+	      print "contraband==bad"
+	      carg = VS.getRandCargo(self.quantity,"")
+	      i+=1
 	  tempquantity=self.quantity
 	  self.cargoname=carg.GetContent()
 	  name = self.you.getName ()
