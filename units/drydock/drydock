@@ -2,9 +2,9 @@
 <Meshfile file="drydock-Cube_27-Material.xmesh"/>
 <Meshfile file="drydock-Cube_27-Material1.xmesh"/>
 <Defense>
-	<Hull strength="100"/>
-	<Shields front="40"
-		   back="40"
-		   recharge="10"/>
+	<Hull strength="4000"/>
+	<Shields front="4000"
+		   back="4000"
+		   recharge="20"/>
 </Defense>
 </Unit>

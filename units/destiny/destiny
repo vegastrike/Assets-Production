@@ -1,5 +1,6 @@
 <Unit>
 	<Meshfile file="destiny.xmesh" />
+	<BspMesh/>
 	<Thrust>
 		<Engine Afterburner="1200.000000" Forward="400.333344" Retro="354.666676" Left="202.666672" Right="202.666672" Top="202.666672" Bottom="202.666672"/>
 		<Maneuver yaw="3187.800201" pitch="3187.800201" roll="3187.800201"/>

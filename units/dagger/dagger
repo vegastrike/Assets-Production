@@ -1,5 +1,6 @@
 <Unit>
 	<Meshfile file="dagger.xmesh" />
+	<BspMesh/>
 	<Thrust>
 		<Engine Afterburner="1066.666641" Forward="256.000000" Retro="224.000000" Left="128.000000" Right="128.000000" Top="128.000000" Bottom="128.000000"/>
 		<Maneuver yaw="2732.400101" pitch="3187.800201" roll="2732.400101"/>
