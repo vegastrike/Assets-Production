@@ -1,22 +1,28 @@
-<Unit scale="3">
-<Meshfile file="MiningBase3-1.xmesh"/>
-<Meshfile file="MiningBase3-2.xmesh"/>
-<Meshfile file="MiningBase3-3.xmesh"/>
+<Unit scale="10">
+<Meshfile file="aerminb-Aeramining-Hull.xmesh"/>
+<Meshfile file="aerminb-Aeramining-Roid.xmesh"/>
+<Subunit file="turretbeam" x="-1.339288" y="51.868393" z="15.000998" ri="0.046461" rj="-0.998920" rk="0.000000" qi="0.000000" qj="0.000000" qk="1.000000"/>
+<Subunit file="turretheavy" x="21.621101" y="-35.672886" z="15.000999" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="1.000000"/>
+<Subunit file="turretbeamheavy" x="15.000999" y="0.000998" z="60.000996" ri="1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="1.000000"/>
 	<Thrust>
 		<Engine Afterburner="00.000000" Forward="000000" Retro="000000" Left="00000" Right="000000" Top="000000" Bottom="00000"/>
 		<Maneuver yaw="0000" pitch="00000" roll="00000"/>
 	</Thrust>
 	<Sound> </Sound>
 	<Defense HudImage="MiningBase3-hud.spr">
+		<Shield front="500" back="500" left="500" right="500" recharge="20"/>
 		<Armor front="1000" right="8000" left="8000" back="8000"/>
-		<Hull strength="8000"/>
+		<Hull strength="1000"/>
 	</Defense>
 	<Stats mass="200" momentofinertia="100" fuel="20000"></Stats>
 	<Computer yaw="00000" pitch="00000" roll="0000" afterburner="000000" maxspeed="00000"/>
 	<Energy>
 		<Reactor recharge="0" limit="0"/>
 	</Energy>
-	<Dock x="-184" y="-10" z="79.000000" size="40.000000"/>
+	<Dock x="-92" y="-158" z="-123" size="40"/>
+	<Dock x="9" y="1" z="26.5" size="8"/>
+	<Dock x="9" y="0" z="26.5" size="8"/>
+	<Dock x="9" y="-1" z="26.5" size="8"/>
 	<Hold volume="100000000000">
 		<Category file="Natural_Products/Food">
 			<import price=".2" pricestddev=".1" quantity="0" quantitystddev="0"/>
