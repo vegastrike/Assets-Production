@@ -20,9 +20,9 @@
         <planet name="sun" file="sun.bmp" radius="25000" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0 1l">
 	</planet>
 	<ContinuousTerrain file="continuousterrain.txt" mass=".00000100" y="0000" z="0000" qi="0" qj="0" qk="1" ri="0" rj="1" rk="0">
-		<Building file="hellcat" x="100" y="1000" z="100" faction="confed"/>
-		<Building file="hellcat" x="200" y="4000" z="10000" faction="aera"/>
-		<Building file="hellcat" x="300" y="2000" z="300" faction="confed"/>
+		<vehicle file="hellcat" x="100" y="1000" z="100" faction="confed"/>
+		<vehicle file="hellcat" x="200" y="4000" z="10000" faction="aera"/>
+		<vehicle file="hellcat" x="300" y="2000" z="300" faction="confed"/>
 		<Building file="hellcat" x="500" y="3000" z="100" faction="aera"/>
 	</ContinuousTerrain>
 </system>
