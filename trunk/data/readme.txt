@@ -594,7 +594,8 @@ Shift-D      Tell wingmen to attack targetted starship
 0            Request clearence to land
 Shift-E      Eject
 Shift-Z      Eject cargo
-
+, and .      Change Sound Volume
+< and >      Change Music Volume
 
 *25) Multiplayer Controls*
 
