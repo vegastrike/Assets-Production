@@ -438,14 +438,16 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction):
 		else:
 			return 0
 	else:
-		print 'nil DRAW error'
+		return 0 #print 'nil DRAW error'
 	if (fg_util.NumShipsInFG(fgname,faction)==0):
 		if (fg_util.NumShipsInFG(enfgname,enfaction)==0):
 			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
 		else:
-			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))			
+			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+		return 0
 	elif (fg_util.NumShipsInFG(enfgname,enfaction)==0):
-		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))			
+		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))	
+		return 0
 	if (vsrandom.randrange(0,4)==0):
 		#FIXME  if it is advantageous to stop attacking only!!
 		#FIXME add a stop attacking news report?  -- this should now be fixed, as a draw is reported (not heavilly tested)
