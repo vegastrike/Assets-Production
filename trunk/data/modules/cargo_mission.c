@@ -1,6 +1,7 @@
 module cargo_mission {
   import ai_stationary;
   import universe;
+  object youcontainer;
 	object faction;
 	object destination;
 	object basecontainer;
@@ -28,6 +29,7 @@ module cargo_mission {
 	  quantity=cargoquantity;
 	  object sysfile = _std.getSystemFile();
 	  object you=_unit.getPlayer();
+	  youcontainer=_unit.getContainer (you);
 	  if (quantity<1){
 	    quantity=1;
 	  }
@@ -94,7 +96,7 @@ module cargo_mission {
 	void loop () {
 	  if (arrived) {
 	    object base=_unit.getUnitFromContainer(basecontainer);
-	    object you=_unit.getPlayer();
+	    object you=_unit.getUnitFromContainer(youcontainer);
 	    if (_std.isNull(base)||_std.isNull(you)) {
 	      _std.terminateMission(false);
 	      return;
