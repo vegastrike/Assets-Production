@@ -1,4 +1,4 @@
-import random
+import vsrandom
 import VS
 class trading:
   def __init__(self):
@@ -13,7 +13,7 @@ class trading:
     self.quantity=quant
   
   def Execute(self):
-    quant = (random.random()*(self.quantity-1))+1
+    quant = (vsrandom.random()*(self.quantity-1))+1
     un = VS.getUnit (self.last_ship)
     if (un.isNull()):
       self.last_ship=0
@@ -21,7 +21,7 @@ class trading:
       if (un.isSignificant()):
 	player = VS.getPlayer()
 	if (player!=un):
-	  if (random.random()<.5):
+	  if (vsrandom.random()<.5):
 	    un.incrementCargo(1-(quant*self.price_instability),quant)
 	  else:
 	    un.decrementCargo(1+(self.price_instability))

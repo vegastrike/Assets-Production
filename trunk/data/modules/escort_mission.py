@@ -1,6 +1,6 @@
 from go_to_adjacent_systems import *
 from go_somewhere_significant import *
-import random
+import vsrandom
 import launch
 import faction_ships
 import VS
@@ -66,4 +66,4 @@ class escort_mission (Director.Mission):
 			self.escortee.setFgDirective('b')
 			VS.terminateMission(1)
 def initrandom (factionname,difficulty,creds,entime,numsysaway):
-	return escort_mission(factionname,difficulty,6000,random.randrange(5000,7000),random.randrange(10,300),creds,entime,numsysaway)
+	return escort_mission(factionname,difficulty,6000,vsrandom.randrange(5000,7000),vsrandom.randrange(10,300),creds,entime,numsysaway)

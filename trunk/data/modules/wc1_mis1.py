@@ -1,4 +1,4 @@
-import random
+import vsrandom
 import VS
 import unit
 import launch

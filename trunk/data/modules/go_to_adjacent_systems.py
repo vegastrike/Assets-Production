@@ -2,7 +2,7 @@ import VS
 import universe
 import unit
 import Briefing
-import random
+import vsrandom
 class go_to_adjacent_systems:  
   def InSystem(self):
     return self.arrivedsys
@@ -91,7 +91,7 @@ class go_to_adjacent_systems:
       return self.brief_you
     elif (((time-self.begintime)>=6.0) and (self.brief_stage<size)):
       self.added_warp=1
-      self.rnd_y=(random.random()*40.0-20.0)
+      self.rnd_y=(vsrandom.random()*40.0-20.0)
       Briefing.addShip("brief_jump",self.faction,(20.0*(self.brief_stage+1),self.rnd_y,79.6+self.rnd_y))
       Briefing.enqueueOrder (self.brief_you,(20.0*(self.brief_stage+1) ,self.rnd_y,80.0+self.rnd_y) , 5.0)
       self.begintime=time

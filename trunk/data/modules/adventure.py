@@ -1,6 +1,6 @@
 import quest
 import quest_drone
-import random
+import vsrandom
 import quest_racene
 import quest_disappear
 import quest_rlaan_spy
@@ -54,7 +54,7 @@ def persistentAdventure(playernum):
         if (ret):
             del persistent_adventures[index]            
             return ret
-    if (random.randrange(0,4)==0):
+    if (vsrandom.randrange(0,4)==0):
         (key,val,news)=quest_surplus.makeSurplusShortage()
         if (not adventures.get(key)):
             adventures.setdefault(key,val)

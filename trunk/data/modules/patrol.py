@@ -1,5 +1,5 @@
 from go_to_adjacent_systems import *
-import random
+import vsrandom
 import launch
 import faction_ships
 import VS
@@ -36,7 +36,7 @@ class patrol (Director.Mission):
         str=""
         while (self.quantity>0 and count > 0):
             count -= 1
-	    sig = unit.getSignificant (random.randrange (0,128),0,0)
+	    sig = unit.getSignificant (vsrandom.randrange (0,128),0,0)
             if (not sig.isNull()):
                 if (not (sig in self.patrolpoints)):
                     self.patrolpoints += [sig]
@@ -96,6 +96,6 @@ class patrol (Director.Mission):
     def endbriefing(self):
         print "ending briefing"   
 def initrandom (minsysaway,maxsysaway,minsigtopatrol,maxsigtopatrol,mincred,maxcred):
-    nsys = random.randrange (minsysaway, maxsysaway)
-    nsig = random.randrange (minsigtopatrol, maxsigtopatrol)
-    return patrol (nsys, nsig,random.randrange(100.0,300.0),(1+nsys*0.5)*nsig*random.randrange (mincred,maxcred))
+    nsys = vsrandom.randrange (minsysaway, maxsysaway)
+    nsig = vsrandom.randrange (minsigtopatrol, maxsigtopatrol)
+    return patrol (nsys, nsig,vsrandom.randrange(100.0,300.0),(1+nsys*0.5)*nsig*vsrandom.randrange (mincred,maxcred))

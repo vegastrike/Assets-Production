@@ -1,6 +1,6 @@
 from go_to_adjacent_systems import *
 from go_somewhere_significant import *
-import random
+import vsrandom
 import launch
 import faction_ships
 import VS

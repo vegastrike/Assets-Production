@@ -1,6 +1,6 @@
 from go_to_adjacent_systems import *
 from go_somewhere_significant import *
-import random
+import vsrandom
 import launch
 import faction_ships
 import VS
@@ -58,7 +58,7 @@ class cargo_mission (Director.Mission):
 	    VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000Unable to establish communications. Mission failed.")
 	    VS.terminateMission (0)
 	    return
-#	  creds_deducted = (carg.GetPrice()*float(self.quantity)*random.random()+1)
+#	  creds_deducted = (carg.GetPrice()*float(self.quantity)*vsrandom.random()+1)
 #	  self.cred += creds_deducted
 	  if (tempquantity>0):
 	    self.cred*=float(self.quantity)/float(tempquantity)
@@ -149,6 +149,6 @@ class cargo_mission (Director.Mission):
 	    self.base=self.adjsys.SignificantUnit()
 
 def initrandom (factionname, missiondifficulty,creds_per_jump, launchoncapship, sysmin, sysmax, time_to_complete, category):
-	numsys=random.randrange(sysmin,sysmax)
-	return cargo_mission(factionname,numsys, random.randrange(4,15), missiondifficulty,creds_per_jump*float(1+numsys),launchoncapship, 10.0, category)
+	numsys=vsrandom.randrange(sysmin,sysmax)
+	return cargo_mission(factionname,numsys, vsrandom.randrange(4,15), missiondifficulty,creds_per_jump*float(1+numsys),launchoncapship, 10.0, category)
 

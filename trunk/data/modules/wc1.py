@@ -5,10 +5,10 @@ import VS
 import launch
 import save_util
 import unit
-import random
+import vsrandom
 import Vector
 def findOriginAndMove(carrier,carrierloc=(0000,00,-10000)):
-    origin =unit.getJumpPoint(random.randrange(0,99))
+    origin =unit.getJumpPoint(vsrandom.randrange(0,99))
     beg=Vector.Add(origin.Position(),Vector.Add (carrierloc,(carrier.rSize(),0,0)))
     carrier.SetPosAndCumPos (beg)
     VS.getPlayer().SetPosAndCumPos(Vector.Add(beg,(00,0,100)))

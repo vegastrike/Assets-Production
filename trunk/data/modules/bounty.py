@@ -1,7 +1,7 @@
 import universe
 from go_to_adjacent_systems import go_to_adjacent_systems
 from go_somewhere_significant import go_somewhere_significant
-import random
+import vsrandom
 import launch
 import faction_ships
 import Director
@@ -27,7 +27,7 @@ class bounty (Director.Mission):
 	  sysfile = VS.getSystemFile()
 	  self.you=VS.getPlayer()
 	  self.enemy=VS.Unit()
-	  self.adjsys=go_to_adjacent_systems (self.you,random.randrange(minnumsystemsaway,maxnumsystemsaway+1))
+	  self.adjsys=go_to_adjacent_systems (self.you,vsrandom.randrange(minnumsystemsaway,maxnumsystemsaway+1))
 	  self.mplay=universe.getMessagePlayer(self.you)
 	  if (self.you):
 	    VS.IOmessage (0,"bounty mission",self.mplay,"Good Day, %s. Your mission is as follows:" % (self.you.getName()))
@@ -123,15 +123,15 @@ def initrandom (minns, maxns, credsmin, credsmax, run_away, minshipdifficulty, m
   tempfaction
   if (you):
     name = you.getFaction ()
-    factionname=random.randrange(0,faction_ships.getMaxFactions())
+    factionname=vsrandom.randrange(0,faction_ships.getMaxFactions())
     tempfaction=faction_ships.intToFaction(factionname)
     i=0
     while (name==tempfaction and i<10):
-      factionname=random.randrange(0,faction_ships.getMaxFactions())
+      factionname=vsrandom.randrange(0,faction_ships.getMaxFactions())
       tempfaction=faction_ships.intToFaction(factionname)
       i+=1
-    sd = random.random()*(maxshipdifficulty-minshipdifficulty)+minshipdifficulty
-    return bounty (minns,maxns,(1.0+(sd*0.5))*(random.random ()*(credsmax-credsmin)+credsmin),run_away,sd,tempfaction)
+    sd = vsrandom.random()*(maxshipdifficulty-minshipdifficulty)+minshipdifficulty
+    return bounty (minns,maxns,(1.0+(sd*0.5))*(vsrandom.random ()*(credsmax-credsmin)+credsmin),run_away,sd,tempfaction)
   else:
     print "aborting bounty initrandom"
     VS.terminateMission(0)

@@ -2,7 +2,7 @@ import quest
 import Vector
 import VS
 import unit
-import random
+import vsrandom
 class quest_disappear (quest.quest):
     def __init__ (self):
         self.sysfile = VS.getSystemFile()
@@ -30,9 +30,9 @@ class quest_disappear (quest.quest):
     #not currently used
     def setDroneNear (self,playa):
         vec = playa.Position()
-        vec = Vector.Add (vec,(random.uniform(-1000,1000),
-                               random.uniform(-1000,1000),
-                               random.uniform(-1000,1000)))
+        vec = Vector.Add (vec,(vsrandom.uniform(-1000,1000),
+                               vsrandom.uniform(-1000,1000),
+                               vsrandom.uniform(-1000,1000)))
         if (not self.drone.isNull()):
             self.drone.SetCurPosition(vec)
             self.drone.SetTarget(playa)
@@ -40,7 +40,7 @@ class quest_disappear (quest.quest):
         self.significants=0
         if (VS.getSystemFile()==self.sysfile):
             self.significants=1
-            if (random.randrange(0,10)==0):
+            if (vsrandom.randrange(0,10)==0):
                 self.launchNewDrone()
     def unitRipe (self,playa,un):
         if (un!=self.drone):
@@ -64,7 +64,7 @@ class quest_disappear (quest.quest):
     def DestroyUnit (self):
         playa = VS.getPlayer()
         if (not playa.isNull()):
-            if (random.randrange(0,2)==0):
+            if (vsrandom.randrange(0,2)==0):
                 un=playa.GetTarget()
                 if (not un.isNull()):
                     if (self.unitRipe(playa,un)):
@@ -83,7 +83,7 @@ class quest_disappear (quest.quest):
             mytime = VS.GetGameTime();
             if (mytime-self.timer>10):
                 self.timer=mytime
-                if (random.randrange(0,5)==0):
+                if (vsrandom.randrange(0,5)==0):
                     self.DestroyUnit()
         return 1
 

@@ -2,7 +2,7 @@ import quest
 import Vector
 import VS
 import unit
-import random
+import vsrandom
 class quest_drone (quest.quest):
     def __init__ (self):
         self.sysfile = VS.getSystemFile()
@@ -23,9 +23,9 @@ class quest_drone (quest.quest):
             self.drone=VS.Unit()
     def setDroneNear (self,playa):
         vec = playa.Position()
-        vec = Vector.Add (vec,(random.uniform(-1000,1000),
-                               random.uniform(-1000,1000),
-                               random.uniform(-1000,1000)))
+        vec = Vector.Add (vec,(vsrandom.uniform(-1000,1000),
+                               vsrandom.uniform(-1000,1000),
+                               vsrandom.uniform(-1000,1000)))
         self.drone.SetCurPosition(vec)
         self.drone.SetTarget(playa)
     def Execute (self):

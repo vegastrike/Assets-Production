@@ -2,7 +2,7 @@ import quest
 import Vector
 import VS
 import unit
-import random
+import vsrandom
 import launch
 class quest_rlaan_spy (quest.quest):
     def __init__ (self):

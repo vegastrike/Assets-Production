@@ -2,7 +2,7 @@ import quest
 import Vector
 import VS
 import unit
-import random
+import vsrandom
 import launch
 import faction_ships
 class quest_abu_dhabi (quest.quest):

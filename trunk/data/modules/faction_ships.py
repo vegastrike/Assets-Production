@@ -1,4 +1,4 @@
-import random
+import vsrandom
 from difficulty import usingDifficulty
 confed=0
 aera=1
@@ -78,7 +78,7 @@ def getMaxFactions ():
 
 def get_X_of (mylist, index):
   enemylist = mylist[index]
-  newindex = random.randrange(0,len(enemylist))
+  newindex = vsrandom.randrange(0,len(enemylist))
   return intToFaction(enemylist[newindex])
 
 def get_enemy_of (factionname):
@@ -88,7 +88,7 @@ def get_friend_of (factionname):
   return get_X_of (friendlies, factionToInt(factionname))
 
 def getRandomShipType(ship_list):
-  index=random.randrange(0,len(ship_list))
+  index=vsrandom.randrange(0,len(ship_list))
   return ship_list[index]
 
 def getFigher(confed_aera_or_rlaan, fighter):
