@@ -115,7 +115,15 @@ class random_encounters:
       if (un):
         un = VS.getUnit(count)
     return 0
-
+  def TrueEnProb(self,enprob):
+    ret=1
+    nam = VS.numActiveMissions()
+    while (nam>0):
+      ret*=(1-enprob)
+      nam-=1
+    print 1-ret
+    return 1-ret;
+    
   def launch_near (self,un):
     numfactions=random.randrange(0,4)
     if (numfactions<=0):
@@ -123,7 +131,7 @@ class random_encounters:
     sysfile = VS.getSystemFile()
     for i in range(0,numfactions):
       localfaction = VS.GetGalaxyProperty(sysfile,"faction")
-      if (random.random() < self.enprob):
+      if (random.random() < self.TrueEnProb(self.enprob)):
         localfaction = faction_ships.get_enemy_of (localfaction)
       else:
         localfaction = faction_ships.get_friend_of(localfaction)
