@@ -389,7 +389,7 @@
 		<Category file="upgrades/Experimental">
 		</Category>
 		<Category file="Natural_Products/Food">
-			<Cargo file="Coffee" price="1" quantity="90" mass=".01" volume="1"/>
+			<Cargo file="Coffee" price="140" quantity="90" mass=".01" volume="1"/>
 			<Cargo file="Filtered_Water" price="40" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Generic_Foods" price="100" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Grains" price="70" quantity="1" mass=".01" volume="1"/>
