@@ -107,7 +107,7 @@
 			<Cargo file="wayfarer.begin" price="20000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Merchant/Medium">
-			<Cargo file="wayfarer" price="140000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="longhaul.blank" price="150000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Merchant/Heavy">
 		</Category>
@@ -116,10 +116,13 @@
 		<Category file="starships/Merchant/Heavy_Capship">
 		</Category>
 		<Category file="starships/Hunter/Light">
+			<Cargo file="katar.blank" price="55000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Hunter/Medium">
+			<Cargo file="epeellcat.blank" price="200000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Hunter/Heavy">
+			<Cargo file="khanjarli.blank" price="75000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Hunter/Light_Capship">
 		</Category>
@@ -355,6 +358,8 @@
 			<Cargo file="repulsor_beam" price="50000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="add_fuel" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1"/>
+			<Cargo file="medium_turret" price="10000" quantity="1" mass=".1" volume="1"/>
+			<Cargo file="capship_turret" price="10000" quantity="1" mass=".1" volume="1"/>
 			<Cargo file="cargo_pod" price="20000" quantity="1" mass=".1" volume="1"/>
 			<Cargo file="jump_drive" price="10000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="add_cargo_volume" price="10000" quantity="1" mass=".01" volume="1"/>

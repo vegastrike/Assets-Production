@@ -49,7 +49,7 @@
 	</Computer>
        	<Jump missing="1" delay="1" jumpenergy="90"/>       
 
-	<Hold volume="65">
+	<Hold volume="50">
 	</Hold>
 
 	<Upgrade file="mult_general_downgrade"/>

@@ -40,6 +40,9 @@
 	<Computer yaw="75" pitch="75" roll="75" afterburner="105" maxspeed="37.500">
 		<Radar itts="true" color="true" error="0"/> </Computer>
 
+	<Hold volume="50">
+	    
+	</Hold>
 
 	<Energy afterburnenergy="40">
 		<Reactor recharge="35" limit="700"/>

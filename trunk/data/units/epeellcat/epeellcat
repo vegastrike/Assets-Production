@@ -46,7 +46,7 @@
 	</Energy>
        	<Jump delay="1" jumpenergy="90"/>       
 
-	<Hold volume="65">
+	<Hold volume="50">
 	</Hold>
 
 
