@@ -15,7 +15,7 @@
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="1">
-			<pos x="90400" y="-35400" z="24700.0"/>
+			<pos x="20400" y="-35400" z="24700.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
