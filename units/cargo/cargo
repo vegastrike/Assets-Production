@@ -11,13 +11,13 @@
 	</Thrust>
 	<Sound></Sound>
 	<Defense>
-		<Armor front="30" right="30" left="30" back="30"/>
-		<Shields front="30" back="30" recharge="4.333333"/>
-		<Hull strength="50"/>
+		<Armor front="100" right="80" left="80" back="100"/>
+		<Shields front="150" back="150" recharge="15"/>
+		<Hull strength="500"/>
 		<Cloak cloakmin=".01" cloakrate=".2" cloakenergy="0"/>
 
 	</Defense>
-	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
+	<Stats mass="10" momentofinertia="7" fuel="0"></Stats>
 	<Computer yaw="128" pitch="0" roll="0000" afterburner="000000" maxspeed="00000">
 		<Radar itts="false" range="4000" color="true" error="0"/>
 	</Computer>
