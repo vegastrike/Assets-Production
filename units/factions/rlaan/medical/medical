@@ -10,7 +10,7 @@
 <SubUnit file="turret_capship_gun" x="1" y="-1" z="-1" ri="1" rj="-1" rk="-1" qi=".5" qj="-.5" qk="1" restricted="-.5"/>
 
 <Dock x="0" y="0" z="0" size="3"/>
-	<Meshfile file="star4.xmesh"/>
+	<Meshfile file="star4.bfxm"/>
        	<Thrust>
 		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
 		<Maneuver yaw="0000" pitch="0000" roll="10"/>

@@ -3,7 +3,7 @@
 	</Description>
 	<cockpit file ="medium_cockpit.cpt" x ="0" y =".5" z ="4">
 	</cockpit>
-	<Meshfile file ="box.xmesh">
+	<Meshfile file ="box.bfxm">
 	</Meshfile>
 	<Thrust>
 		<Engine Afterburner =".01" Forward =".01" Retro =".01" Left =".01" Right =".01" Top ="0.01" Bottom ="0.01">

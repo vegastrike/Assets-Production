@@ -17,7 +17,7 @@
 	</Defense>
 	<Stats mass = "175553975" momentofinertia = "175553975" fuel = "20000"  >
 	</Stats>
-	<Meshfile file = "research.xmesh"  >
+	<Meshfile file = "research.bfxm"  >
 	</Meshfile>
 	<Dock x = "-2.5" y = "5.8" z = "0" size = ".3"  >
 	</Dock>

@@ -1,11 +1,5 @@
 <Unit scale ="6">
-	<Meshfile file ="llama_connector.xmesh">
-	</Meshfile>
-	<Meshfile file ="llama_catamaran.xmesh">
-	</Meshfile>
-	<Meshfile file ="llama_body.xmesh">
-	</Meshfile>
-	<Meshfile file ="llama_blink.xmesh">
+	<Meshfile file ="llama.bfxm">
 	</Meshfile>
 	<Description combatRole ="SHUTTLE">
 	</Description>
@@ -77,11 +71,11 @@
 	</Mount>
 	<Mount size ="LIGHT-MISSILE MEDIUM-MISSILE SPECIAL-MISSILE" weapon ="" ammo ="3" volume ="48" x ="0" y ="0" z ="0">
 	</Mount>
-	<Light file ="supernova.bmp" x ="0.00000e+0" y ="0.350000" z ="-2.09200" size ="2">
+	<Light file ="supernova.bmp.bfxm" x ="0.00000e+0" y ="0.350000" z ="-2.09200" size ="2">
 	</Light>
-	<Light file ="supernova.bmp" x ="1.31600" y ="-6.00000e-3" z ="-1.82200" size ="2">
+	<Light file ="supernova.bmp.bfxm" x ="1.31600" y ="-6.00000e-3" z ="-1.82200" size ="2">
 	</Light>
-	<Light file ="supernova.bmp" x ="-1.32800" y ="-6.00000e-3" z ="-1.82200" size ="2">
+	<Light file ="supernova.bmp.bfxm" x ="-1.32800" y ="-6.00000e-3" z ="-1.82200" size ="2">
 	</Light>
 <Upgrade file="mult_general_downgrade"/>
 <Upgrade file="add_general_downgrade"/>

@@ -1,7 +1,8 @@
 <Mesh animation="thrust1.ani" blend="ONE ONE" polygonoffset="3">
  <material reflect="0">
  <specular red="0" green="0" blue="0" alpha="0"/>
- <ambient red="3" green="3" blue="3" alpha="1"/>
+ <ambient red="1" green="1" blue="1" alpha="1"/>
+ <emissive red="1" green="1" blue="1" alpha="1"/>
  <diffuse red="0" green="0" blue="0" alpha="0"/>
  </material>
 

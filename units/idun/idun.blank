@@ -1,8 +1,5 @@
 <Unit scale =".48">
-	<Meshfile file ="idunhi.xmesh">
-	</Meshfile>
-	<Meshfile file ="idunsails.xmesh">
-	</Meshfile>
+	<Meshfile file ="idun.bfxm"/>
 	<description combatrole ="INTERCEPTOR">
 	</description>
 	<cockpit file ="rlaan-cockpit.cpt" x ="0" y ="3" z ="23">

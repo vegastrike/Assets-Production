@@ -38,7 +38,7 @@ class quest_drone (quest.quest):
                 if (self.derelict.getSignificantDistance(playa)<200):
                     self.launchNewDrone()
             else:
-                self.launchNewDrone()                
+                self.launchNewDrone()
         else:
             if (self.drone.isNull()):
                 self.removeQuest();
@@ -54,10 +54,10 @@ class quest_drone (quest.quest):
             else:
                 if (self.jumping):
                     if (playa.getUnitSystemFile()==self.drone.getUnitSystemFile()):
-                        self.drone.SetTarget (playa)                        
+                        self.drone.SetTarget (playa)
                         self.jumping=0
                         self.setDroneNear(playa)
-                    
+
         return 1
 
 class quest_drone_factory (quest.quest_factory):
@@ -65,6 +65,3 @@ class quest_drone_factory (quest.quest_factory):
         quest.quest_factory.__init__ (self,"quest_drone")
     def create (self):
         return quest_drone()
-
-
-

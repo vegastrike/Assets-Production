@@ -3,7 +3,7 @@
 	</Description>
 
 
-<Meshfile file="turretlauncher.xmesh" />
+<Meshfile file="turretlauncher.bfxm" />
 
 <Mount weapon="kineticmissile" size="heavy-capship-missile" x="0" y="0" z="0" ammo ="10" />
 

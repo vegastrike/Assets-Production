@@ -3,10 +3,7 @@
 	</description>
 	<Cockpit file ="medium_cockpit.cpt">
 	</Cockpit>
-	<Meshfile file ="tianhi.xmesh">
-	</Meshfile>
-	<Meshfile file ="tianhiglow.xmesh">
-	</Meshfile>
+	<Meshfile file="schroedinger.bfxm" />
 	<Thrust>
 		<Engine Afterburner ="24000" Forward ="16000" Retro ="16000" Left ="16000" Right ="16000" Top ="16000" Bottom ="16000">
 		</Engine>
@@ -39,7 +36,7 @@
 	</Jump>
 	<Hold volume ="15">
 	</Hold>
-	<Light file ="supernova.bmp" x ="0" y ="-.5" z ="-5.5" size ="10">
+	<Light file ="supernova.bmp.bfxm" x ="0" y ="-.5" z ="-5.5" size ="10">
 	</Light>
 	<Mount weapon ="" size ="LIGHT " x ="0" y ="3" z =".5">
 	</Mount>

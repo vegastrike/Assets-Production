@@ -3,7 +3,7 @@
 	</Description>
 
 
-<Meshfile file="turretbeamheavy.xmesh" />
+<Meshfile file="turretbeamheavy.bfxm" />
 
 
 
@@ -19,12 +19,12 @@
 		<Cloak cloakmin=".01" cloakrate=".2" cloakenergy="0"/>
 	</Defense>
 	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
-	<Computer yaw="7.0" pitch="0" roll="0000" afterburner="000000" maxspeed="00000">
+	<Computer yaw="3" pitch="0" roll="0000" afterburner="000000" maxspeed="00000">
 		<Radar itts="true" range="180500" color="true" error="0" />
 	</Computer>
 
 	<Energy>
-		<Reactor recharge="100" limit="2000"/>
+		<Reactor recharge="1000" limit="5000"/>
 	</Energy>
 	<Subunit file="turretbeampgun" y="1" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1" restricted="0"/>  
 

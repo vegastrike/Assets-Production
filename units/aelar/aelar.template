@@ -3,11 +3,7 @@
 	</description>
 	<cockpit file ="light_cockpit.cpt" x ="0" y ="-.25" z ="7">
 	</cockpit>
-	<Meshfile file ="aelarhi.xmesh">
-	</Meshfile>
-	<Meshfile file ="aelarhiglow.xmesh">
-	</Meshfile>
-	<Meshfile file ="navlights.xmesh">
+	<Meshfile file ="aelar.bfxm">
 	</Meshfile>
 	<Mount weapon ="Photon" size ="light medium autotracking" x ="8" y ="-3" z ="10.85">
 	</Mount>
@@ -89,9 +85,9 @@
 	<upgrade file="add_reactor_capacitance"/>
 	<Jump delay ="1" jumpenergy ="90" insysenergy ="60">
 	</Jump>
-	<Light file ="aeraburn" x ="-2.75" y ="0" z ="-8.75" size ="12" qj ="1">
+	<Light file ="aeraburn.bfxm" x ="-2.75" y ="0" z ="-8.75" size ="12" qj ="1">
 	</Light>
-	<Light file ="aeraburn" x ="2.75" y ="0" z ="-8.75" size ="12" qj ="1">
+	<Light file ="aeraburn.bfxm" x ="2.75" y ="0" z ="-8.75" size ="12" qj ="1">
 	</Light>
 	<Hold volume ="14.400000">
 	</Hold>

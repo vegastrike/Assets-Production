@@ -23,16 +23,16 @@ def loadStringList (playernum,mykey):
             curstr=""
     return rez
 def saveStringList (playernum,mykey,names):
-   length = Director.getSaveDataLength (playernum,mykey)
-   k=1
-   tot=0
-   for i in range (len (names)):
-       tot += len (names[i])+1
-   if (length==0):
-       Director.pushSaveData(playernum,mykey,tot)
-   else:
-       Director.putSaveData(playernum,mykey,0,tot)   
-   for i in range (len (names)):
+    length = Director.getSaveDataLength (playernum,mykey)
+    k=1
+    tot=0
+    for i in range (len (names)):
+        tot += len (names[i])+1
+    if (length==0):
+        Director.pushSaveData(playernum,mykey,tot)
+    else:
+        Director.putSaveData(playernum,mykey,0,tot)
+    for i in range (len (names)):
         for j in range (len (names[i])):
             if (k < length):
                 Director.putSaveData(playernum,mykey,k,allchar.find (names[i][j]))

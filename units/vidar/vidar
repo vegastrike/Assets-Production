@@ -1,6 +1,5 @@
 <Unit scale = "0.5">
-<Meshfile file="vidarhi.xmesh"/>
-<Meshfile file="vidarsails.xmesh"/>
+<Meshfile file="vidar.bfxm"/>
 	<description combatrole="BOMBER"/>
 	<cockpit file="rlaan-cockpit.cpt" x="0" y="3" z="23"/>
 	<Thrust>

@@ -3,14 +3,8 @@
 	</description>
 	<Cockpit file ="medium_cockpit.cpt" x ="0" y =".5" z ="5.5">
 	</Cockpit>
-	<Meshfile file ="destinyhi.xmesh">
-	</Meshfile>
-	<Meshfile file ="destinyhiglow.xmesh">
-	</Meshfile>
-	<Meshfile file ="navlights.xmesh">
-	</Meshfile>
-	<ShieldMesh file ="shield1.xmesh">
-	</ShieldMesh>
+	<Meshfile file="lancelot.bfxm" />
+        <ShieldMesh file="lancelot_shield.bfxm"/>
 	<Mount weapon ="Razor" size ="light medium" x ="-0.6" y ="-2.8" z ="7">
 	</Mount>
 	<Mount weapon ="Razor" size ="light medium" x ="0.6" y ="-2.8" z ="7">
@@ -63,25 +57,25 @@
 	</Jump>
 	<Hold volume ="18.000000">
 	</Hold>
-	<Light file ="supernova.bmp" x ="-3.35" y ="1.125" z ="-9.25" size ="8">
+	<Light file ="supernova.bmp.bfxm" x ="-3.35" y ="1.125" z ="-9.25" size ="8">
 	</Light>
-	<Light file ="supernova.bmp" x ="3.35" y ="1.125" z ="-9.25" size ="8">
+	<Light file ="supernova.bmp.bfxm" x ="3.35" y ="1.125" z ="-9.25" size ="8">
 	</Light>
-	<Light file ="supernova.bmp" x ="-3.5" y =".125" z ="-9.25" size ="3">
+	<Light file ="supernova.bmp.bfxm" x ="-3.5" y =".125" z ="-9.25" size ="3">
 	</Light>
-	<Light file ="supernova.bmp" x ="3.5" y =".125" z ="-9.25" size ="3">
+	<Light file ="supernova.bmp.bfxm" x ="3.5" y =".125" z ="-9.25" size ="3">
 	</Light>
-	<Light file ="supernova.bmp" x ="-3" y =".25" z ="-9.25" size ="3">
+	<Light file ="supernova.bmp.bfxm" x ="-3" y =".25" z ="-9.25" size ="3">
 	</Light>
-	<Light file ="supernova.bmp" x ="3" y =".25" z ="-9.25" size ="3">
+	<Light file ="supernova.bmp.bfxm" x ="3" y =".25" z ="-9.25" size ="3">
 	</Light>
-	<Light file ="supernova.bmp" x ="-3.35" y ="-.3" z ="-9.25" size ="3">
+	<Light file ="supernova.bmp.bfxm" x ="-3.35" y ="-.3" z ="-9.25" size ="3">
 	</Light>
-	<Light file ="supernova.bmp" x ="3.35" y ="-.3" z ="-9.25" size ="3">
+	<Light file ="supernova.bmp.bfxm" x ="3.35" y ="-.3" z ="-9.25" size ="3">
 	</Light>
-	<Light file ="supernova.bmp" x ="-2.9" y ="-.16" z ="-9.25" size ="3">
+	<Light file ="supernova.bmp.bfxm" x ="-2.9" y ="-.16" z ="-9.25" size ="3">
 	</Light>
-	<Light file ="supernova.bmp" x ="2.9" y ="-.16" z ="-9.25" size ="3">
+	<Light file ="supernova.bmp.bfxm" x ="2.9" y ="-.16" z ="-9.25" size ="3">
 	</Light>
 <Upgrade file="mult_general_upgrade"/>
 <Upgrade file="add_general_upgrade"/>

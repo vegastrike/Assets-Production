@@ -55,6 +55,7 @@
 		<stats name="mechanist" relation="-1"/>
 		<stats name="shmrn" relation="-1"/>
 		<stats name="rlaan_briin" relation="-1"/>
+		<Explosion name="explosion_aera.ani"/>
 <!--		<CommAnimation>  
 			<MoodAnimation name="explosion_aera.ani" sex="0"/>  
 		</CommAnimation>  -->
@@ -84,6 +85,7 @@
 		<stats name="mechanist" relation="0.05"/>
 		<stats name="shmrn" relation="0.05"/>
 		<stats name="rlaan_briin" relation=".9"/>
+		<Explosion name="explosion_rlaan.ani"/>
 <!--		<CommAnimation>  
 			<MoodAnimation name="explosion_rlaan.ani" sex="0"/>  
 		</CommAnimation>  -->

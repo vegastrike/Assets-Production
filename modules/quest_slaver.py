@@ -10,7 +10,7 @@ class quest_slaver (quest.quest):
         playa = VS.getPlayer()
         if (playa):
             confed = faction_ships.factions[faction_ships.confed]
-            pirates = faction_ships.factions[faction_ships.pirates]			
+            pirates = faction_ships.factions[faction_ships.pirates]
             illustrious=launch.launch_wave_around_unit ('Illustrious',confed,faction_ships.getRandomCapitol(confed),'default',1,1000,4000,playa)
             launch.launch_wave_around_unit ('Illustrious',confed,faction_ships.getRandomCapitol(confed),'default',2,1000,2000,illustrious)
             launch.launch_wave_around_unit ('Illustrious',confed,faction_ships.getRandomFighter(confed),'default',4,100,200,illustrious)
@@ -28,6 +28,3 @@ class quest_slaver_factory (quest.quest_factory):
         return 1
     def create (self):
         return quest_slaver()
-
-
-

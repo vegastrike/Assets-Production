@@ -42,10 +42,10 @@
 
 <Mount weapon="Capcluster" size="light-capship-missile" x="-168.333334" y="7.733333" z="-49.333344" ammo="12" volume="7200" />
 <Mount weapon="Capcluster" size="light-capship-missile" x="168.333334" y="7.733333" z="-49.333344" ammo="12" volume="7200" />
-<Mount weapon="Capshipmissile" size="heavy-capship-missile" x="-158.333334" y="7.733333" z="-49.333344" ammo="12" volume="12000"/>
-<Mount weapon="Capshipmissile" size="heavy-capship-missile" x="158.333334" y="7.733333" z="-49.333344" ammo="12" volume="12000"/>
-<Mount weapon="AdvTorpedo" size="heavy-missile" x="-148.333334" y="7.733333" z="-49.333344" ammo="24" volume="6000"/>
-<Mount weapon="AdvTorpedo" size="heavy-missile" x="148.333334" y="7.733333" z="-49.333344" ammo="24" volume="6000"/>
+<Mount weapon="torpedo" size="heavy-capship-missile" x="-158.333334" y="7.733333" z="-49.333344" ammo="12" volume="12000"/>
+<Mount weapon="torpedo" size="heavy-capship-missile" x="158.333334" y="7.733333" z="-49.333344" ammo="12" volume="12000"/>
+<Mount weapon="Torpedo" size="heavy-missile" x="-148.333334" y="7.733333" z="-49.333344" ammo="24" volume="6000"/>
+<Mount weapon="Torpedo" size="heavy-missile" x="148.333334" y="7.733333" z="-49.333344" ammo="24" volume="6000"/>
 
 <Subunit file="turret" x="-37.414394" y="13.548389" z="204.285370" ri="0.762493" rj="0.457496" rk="0.457496" qi="-0.432829" qj="0.886268" qk="-0.164887"/>
 <Subunit file="turret" x="37.414394" y="13.548389" z="204.285370" ri="-0.218112" rj="0.280430" rk="0.934765" qi="0.432829" qj="0.886268" qk="-0.164887"/>
@@ -70,6 +70,6 @@
 <Subunit file="turret" x="-35.000000" y="-24.500000" z="-147.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
 <Subunit file="turret" x="35.000000" y="-24.500000" z="-147.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
 
-<Light file="supernova.bmp" x="27.433210" y="2.060570" z="-245.000000" size="56.000000"/>
-<Light file="supernova.bmp" x="-25.389259" y="0.350620" z="-245.000015" size="51.100002"/>
+<Light file="supernova.bmp.bfxm" x="27.433210" y="2.060570" z="-245.000000" size="56.000000"/>
+<Light file="supernova.bmp.bfxm" x="-25.389259" y="0.350620" z="-245.000015" size="51.100002"/>
 </Unit>

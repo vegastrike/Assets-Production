@@ -3,12 +3,7 @@
 	</description>
 	<cockpit file ="light_cockpit.cpt" x ="0" y ="-.25" z ="7">
 	</cockpit>
-	<Meshfile file ="aelarhi.xmesh">
-	</Meshfile>
-	<Meshfile file ="aelarhiglow.xmesh">
-	</Meshfile>
-	<Meshfile file ="navlights.xmesh">
-	</Meshfile>
+	<Meshfile file="aelar.bfxm"/>
 	<Mount weapon ="" size ="LIGHT MEDIUM " x ="8" y ="-3" z ="10.85">
 	</Mount>
 	<Mount weapon ="" size ="LIGHT MEDIUM " x ="-8" y ="-3" z ="10.85">
@@ -73,15 +68,15 @@
 		</Radar>
 	</Computer>
 	<Energy afterburnenergy = "32767">
-		<Reactor warpenergy ="360">
+		<Reactor warpenergy ="1360">
 		</Reactor>
 	</Energy>
 <Upgrade file="reactor_level_0"/>
 	<Jump missing = "1" delay ="1" jumpenergy ="90" insysenergy ="60">
 	</Jump>
-	<Light file ="aeraburn" x ="-2.75" y ="0" z ="-8.75" size ="12" qj ="1">
+	<Light file ="aeraburn.bfxm" x ="-2.75" y ="0" z ="-8.75" size ="12" qj ="1">
 	</Light>
-	<Light file ="aeraburn" x ="2.75" y ="0" z ="-8.75" size ="12" qj ="1">
+	<Light file ="aeraburn.bfxm" x ="2.75" y ="0" z ="-8.75" size ="12" qj ="1">
 	</Light>
 	<Hold volume ="12">
 	</Hold>

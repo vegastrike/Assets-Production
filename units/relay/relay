@@ -11,7 +11,7 @@
 		<Hull strength="3196000"/>
 	</Defense>
 	<Energy limit="2000" recharge="500" />
-<Meshfile file="relay.xmesh"/>
+<Meshfile file="relay.bfxm"/>
 <Dock x="-30" y="16" z="0" size="5"/>
 <Dock x="-25" y="16" z="0" size="5"/>
 <Dock x="-20" y="16" z="0" size="5"/>

@@ -1,0 +1,59 @@
+<!-- XUnit exported from Wings 3D 0.98.12 -->
+<!-- How to edit this file: http://www.joeredcloud.com/kandarwiki/index.php?VsHowtoEditUnitFiles -->
+<Unit scale="1.00000">
+
+<Mount   x="-0.404000" y="-0.866000" z="5.06200" ri="0.00000e+0" rj="0.00000e+0" rk="2.00000" qi="0.00000e+0" qj="1.00000" qk="0.00000e+0" size='Medium Heavy' />
+<Mount   x="0.414000" y="-0.866000" z="5.03800" ri="0.00000e+0" rj="0.00000e+0" rk="2.00000" qi="0.00000e+0" qj="1.00000" qk="0.00000e+0" size='Medium Heavy' />
+<Light   x="0.00000e+0" y="-0.600000" z="-7.43200" file='supernova.bmp' size='5' />
+<Light   x="-0.950000" y="-0.616000" z="-2.92800" file='supernova.bmp' size='3' />
+<Light   x="0.962000" y="-0.600000" z="-2.91000" file='supernova.bmp' size='3' />
+<Mount   x="-0.994000" y="-0.628000" z="-0.736000" ri="0.00000e+0" rj="0.00000e+0" rk="2.00000" qi="0.00000e+0" qj="1.00000" qk="0.00000e+0" size='Medium Heavy' />
+<Mount   x="0.974000" y="-0.610000" z="-0.658000" ri="0.00000e+0" rj="0.00000e+0" rk="2.00000" qi="0.00000e+0" qj="1.00000" qk="0.00000e+0" size='Medium Heavy' />
+<Meshfile   file="quicksilver.xmesh" />
+<!-- BEGIN content of config file -->
+<!-- BEGIN SAMPLE DATA: the rest of the unit-data is to be placed here --> 
+<Thrust >
+  <Engine Afterburner="99126" Forward="19013" Retro="2365" Left="18830" Right="18830" Top="18830" Bottom="18830" />
+  <Maneuver yaw="245627" pitch="203351" roll="338647" />
+</Thrust>
+
+<Computer yaw="60.400002" pitch="50.600006" roll="80.400002" afterburner="85" maxspeed="30">
+  <Radar itts="false" error="0" range="5000" maxcone="-1" color="false" />
+</Computer>
+
+<Defense HudImage="quicksilver-hud.spr">
+  <Shields front="0.00" back="0.00" recharge="0.00" />
+</Defense>
+
+<Stats mass="1096" momentofinertia="1096" fuel="40000000" />
+
+<Energy afterburnenergy="32767" ></Energy>
+
+<Jump missing="1" delay="2" jumpenergy="150" />
+<!-- add a description of your ship here -->
+<description></description>
+<!--
+<CockpitDamage damage="float damage between 0 and 1 of cockpit component" />
+-->
+<Hold volume="125" >
+  <Category file="Natural_Products/Natural_Resources" >
+    <import price=".8" pricestddev=".2" quantity="0" quantitystddev="5" />
+  </Category>
+  <Category file="Fuels/Crude" >
+    <import price="0.8" pricestddev=".2" quantity="0" quantitystddev="2" />
+  </Category>
+  <Category file="Compressed_Gasses" >
+    <import price=".7" pricestddev=".2" quantity="0" quantitystddev="2" />
+  </Category>
+  <Category file="Entertainment" >
+    <import price="1" pricestddev=".1" quantity="0" quantitystddev="1" />
+  </Category>
+</Hold>
+
+
+<upgrade file="shield_2"  />
+<upgrade file="engine_level_0" />
+<upgrade file="lithium" />"
+<upgrade file="hull" />
+<!-- END SAMPLE DATA --><!-- END   content of config file -->
+</Unit>

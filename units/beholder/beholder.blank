@@ -1,19 +1,15 @@
 <Unit>
 	<Description combatRole ="FIGHTER">
 	</Description>
-	<Meshfile file ="s-Cone02-3 - Default.xmesh">
-	</Meshfile>
-	<ShieldMesh file ="s-Cone02-3 - Default.xmesh">
-	</ShieldMesh>
-	<Meshfile file ="s-Cone01-1 - Default.xmesh">
-	</Meshfile>
+	<Meshfile file="beholder.bfxm"/>
+	<ShieldMesh file ="beholder_shield.bfxm"/>
 	<BSPMesh>
 	</BSPMesh>
 	<Mount weapon ="" size ="LIGHT " x ="0" y ="-0.5" z ="13.0">
 	</Mount>
-	<Light file ="supernova.bmp" x ="0" y ="-0.5" z ="13" size ="0.500000">
+	<Light file ="supernova.bmp.bfxm" x ="0" y ="-0.5" z ="13" size ="0.500000">
 	</Light>
-	<Light file ="supernova.bmp" x ="0" y ="0" z ="-7.20000" size ="3.000000">
+	<Light file ="supernova.bmp.bfxm" x ="0" y ="0" z ="-7.20000" size ="3.000000">
 	</Light>
 	<Defense HudImage ="s-hud.spr" ECM ="0" RepairDroid ="0">
 		<Armor front ="1000" right ="1000" left ="1000" back ="1000">
@@ -31,7 +27,7 @@
 		</Radar>
 	</Computer>
 	<Energy afterburnenergy = "32767">
-		<Reactor warpenergy ="600">
+		<Reactor warpenergy ="32000">
 		</Reactor>
 	</Energy>
 <Upgrade file="reactor_level_0"/>

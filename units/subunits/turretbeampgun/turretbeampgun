@@ -2,7 +2,7 @@
 	<Description combatRole="TMASSIVE">
 	</Description>
 
-<Meshfile file="turretbeampgun.xmesh"/>
+<Meshfile file="turretbeampgun.bfxm"/>
 
 	<Mount weapon="RLR_PminusBeam" size="capship-massive" x="3.175000" y="-0.325000" z="18.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>
 	<Mount weapon="RLR_PminusBeam" size="capship-massive" x="-3.175000" y="-0.325000" z="18.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.032845" qj="-0.999460" qk="0.000000"/>
@@ -20,12 +20,12 @@
 		<Cloak cloakmin=".01" cloakrate=".2" cloakenergy="0"/>
 	</Defense>
 	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
-	<Computer yaw="000" pitch="7" roll="0000" afterburner="000000" maxspeed="00000">
+	<Computer yaw="000" pitch="3" roll="0000" afterburner="000000" maxspeed="00000">
 		<Radar itts="true" range="180500" color="true" error="0" />
 	</Computer>
 
 	<Energy>
-		<Reactor recharge="1000" limit="20000"/>
+		<Reactor recharge="2000" limit="20000"/>
 	</Energy>
 
 

@@ -1,7 +1,7 @@
 <Unit scale ="1">
 
 <description combatrole="POINTDEF"/>
-<Meshfile file="rlaanturret.xmesh" />
+<Meshfile file="rlaanturret.bfxm" />
 
 
 

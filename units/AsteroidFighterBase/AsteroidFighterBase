@@ -1,10 +1,7 @@
 <Unit>
 	<Description combatRole="BASE">
 	</Description>
-<Meshfile file="astbase-ast.xmesh"/>
-<Meshfile file="astbase-base.xmesh"/>
-<Meshfile file="astbase-shield.xmesh"/>
-<Meshfile file="astbase-tower.xmesh"/>
+<Meshfile file="asteroidfighterbase.bfxm"/>
 	<cockpit file="centurion-cockpit.cpt" x="0" y="00" z="10"/>
 	<Thrust>
 		<Engine Afterburner="00.000000" Forward="000000" Retro="000000" Left="00000" Right="000000" Top="000000" Bottom="00000"/>

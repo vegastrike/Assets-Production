@@ -1,18 +1,7 @@
 <Unit >
 	<cockpit file = "heavy-cockpit.cpt" x = "0" y = "0" z = "0"  >
 	</cockpit>
-	<Meshfile file = "rescue-hull-e.xmesh"  >
-	</Meshfile>
-	<Meshfile file = "rescue-hull-w.xmesh"  >
-	</Meshfile>
-	<Meshfile file = "rescue-hull-p.xmesh"  >
-	</Meshfile>
-	<Meshfile file = "rescue-hull-h.xmesh"  >
-	</Meshfile>
-	<Meshfile file = "rescue-hull-i.xmesh"  >
-	</Meshfile>
-	<Meshfile file = "rescue-cock-c.xmesh"  >
-	</Meshfile>
+	<Meshfile file="dodo.bfxm"/>
 	<Mount weapon = "handlaser" size = "" x = "9.8108" y = "1.757" z = "11.8091"  >
 	</Mount>
 	<Mount weapon = "handlaser" size = "" x = "-9.8108" y = "1.757" z = "11.8091"  >
@@ -72,9 +61,9 @@
 			</import>
 		</Category>
 	</Hold>
-	<Light file = "supernova.bmp" x = "10.24" y = "-2.759" z = "-18.302" size = "6"  >
+	<Light file = "supernova.bmp.bfxm" x = "10.24" y = "-2.759" z = "-18.302" size = "6"  >
 	</Light>
-	<Light file = "supernova.bmp" x = "-10.24" y = "-2.759" z = "-18.302" size = "6"  >
+	<Light file = "supernova.bmp.bfxm" x = "-10.24" y = "-2.759" z = "-18.302" size = "6"  >
 	</Light>
 	<Dock x = "0" y = "-4.7" z = "6" size = "25"  >
 	</Dock>

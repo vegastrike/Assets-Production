@@ -10,19 +10,23 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-                <var name="system" value="sol_sector/sol" />
+                <var name="system" value="stage_sector/stage" />
 		<var name="description" value="4vs4.txt" />
 	</variables>
 
         <flightgroups>
-            <flightgroup name="navajo" faction="confed" type="dagger" ainame="default" waves="1" nr_ships="120">
+            <flightgroup name="navajo" faction="confed" type="goddard" ainame="default" waves="1" nr_ships="1">
                         <pos x="1200000000" y="4000000" z="50000000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		    </flightgroup>
+        <flightgroup name="Younggringo" faction="aera" type="mule" ainame="default" waves="1" nr_ships="1">
+                        <pos x="1200000000" y="40000000" z="50000000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		    </flightgroup>
 
 
 
-		    <flightgroup name="oldgri44ngo" faction="aera" type="starfish" ainame="default" waves="1" nr_ships="120">
+		    <flightgroup name="oldgringo" faction="pirate" type="research" ainame="default" waves="1" nr_ships="1">
                         <pos x="1200000000" y="4010000" z="50000000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		    </flightgroup>

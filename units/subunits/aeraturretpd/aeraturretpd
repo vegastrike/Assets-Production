@@ -2,7 +2,7 @@
 	<Description combatRole="POINTDEF">
 	</Description>
 
-<Meshfile file="turret_capship_gun.xmesh"/>
+<Meshfile file="turret_capship_gun.bfxm"/>
 
        
 

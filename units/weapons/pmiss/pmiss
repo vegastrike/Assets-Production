@@ -1,7 +1,7 @@
 <Unit>
-	<Meshfile file="pmiss.xmesh"/>
+	<Meshfile file="pmiss.bfxm"/>
 	<BspMesh RAPID="0"/>
-	<Light file="supernova.bmp" x="0" y="0" z="-2" size= "8"/>
+	<Light file="supernova.bmp.bfxm" x="0" y="0" z="-2" size= "8"/>
 
 <Thrust> 
 	<Engine Afterburner="22.00"

@@ -1,7 +1,7 @@
 <Unit scale ="175">
 	<Description combatRole ="CAPITAL">
 	</Description>
-	<Meshfile file ="cruiser.xmesh">
+	<Meshfile file ="archimedes.bfxm">
 	</Meshfile>
 	<Dock x =".50" y =".45" z ="9" size =".3">
 	</Dock>
@@ -37,19 +37,19 @@
 <Upgrade file="reactor_level_0"/>
 	<Jump missing = "1" delay ="1" jumpenergy ="20000" insysenergy ="20000">
 	</Jump>
-	<Light file ="supernova.bmp" x ="-0.007512" y ="0.108995" z ="-13.162303" size ="0.420000">
+	<Light file ="supernova.bmp.bfxm" x ="-0.007512" y ="0.108995" z ="-13.162303" size ="0.420000">
 	</Light>
-	<Light file ="supernova.bmp" x ="-1.298644" y ="0.250378" z ="-9.955322" size ="0.739999">
+	<Light file ="supernova.bmp.bfxm" x ="-1.298644" y ="0.250378" z ="-9.955322" size ="0.739999">
 	</Light>
-	<Light file ="supernova.bmp" x ="-2.182528" y ="0.257965" z ="-9.449021" size ="0.779999">
+	<Light file ="supernova.bmp.bfxm" x ="-2.182528" y ="0.257965" z ="-9.449021" size ="0.779999">
 	</Light>
-	<Light file ="supernova.bmp" x ="-2.919419" y ="0.241751" z ="-9.026920" size ="0.779999">
+	<Light file ="supernova.bmp.bfxm" x ="-2.919419" y ="0.241751" z ="-9.026920" size ="0.779999">
 	</Light>
-	<Light file ="supernova.bmp" x ="1.947601" y ="0.169290" z ="-9.583591" size ="0.690000">
+	<Light file ="supernova.bmp.bfxm" x ="1.947601" y ="0.169290" z ="-9.583591" size ="0.690000">
 	</Light>
-	<Light file ="supernova.bmp" x ="1.252088" y ="0.181478" z ="-9.981990" size ="0.680000">
+	<Light file ="supernova.bmp.bfxm" x ="1.252088" y ="0.181478" z ="-9.981990" size ="0.680000">
 	</Light>
-	<Light file ="supernova.bmp" x ="2.731254" y ="0.138757" z ="-9.134703" size ="0.530000">
+	<Light file ="supernova.bmp.bfxm" x ="2.731254" y ="0.138757" z ="-9.134703" size ="0.530000">
 	</Light>
 	<Subunit file ="capship_blank" x ="-2.381250" y ="0.400000" z ="-2.455606" ri ="0.226708" rj ="0.000000" rk ="0.973963" qi ="-0.000000" qj ="1.000000" qk ="0.000000">
 	</Subunit>

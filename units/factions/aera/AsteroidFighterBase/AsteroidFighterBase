@@ -1,7 +1,7 @@
 <Unit >
 <Description combatRole="BASE">
 </Description>
-	<Meshfile file = "station.xmesh"  >
+	<Meshfile file = "asteroidfighterbase.bfxm"  >
 	</Meshfile>
 	<Thrust >
 		<Engine Afterburner = "568" Forward = "0" Retro = "0" Left = "0" Right = "0" Top = "0" Bottom = "0"  >

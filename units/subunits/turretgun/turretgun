@@ -2,7 +2,7 @@
 	<Description combatRole="TFIGHTER">
 	</Description>
 
-<Meshfile file="turretgun.xmesh"/>
+<Meshfile file="turretgun.bfxm"/>
 
 	<Mount weapon="disruptor" size="heavy" x="1.875000" y="-0.125000" z="9.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>
 	<Mount weapon="disruptor" size="heavy" x="-1.875000" y="-0.125000" z="9.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>

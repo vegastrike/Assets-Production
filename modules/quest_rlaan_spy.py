@@ -11,7 +11,7 @@ class quest_rlaan_spy (quest.quest):
         self.sig=VS.Unit()
     def SignificantsNear(self,significant):
         if (significant.isJumppoint()):
-            import faction_ships			
+            import faction_ships
             VS.IOmessage (0,"game","all","[Computer] Target detected matching engine signature reported for rlaan spy in %s" % self.sysfile)
             VS.IOmessage (0,"game","all","[Computer] Confed was hunting this target...");
             self.spy=launch.launch_wave_around_unit("Spy",faction_ships.factions[faction_ships.rlaan],faction_ships.getRandomFighterInt(faction_ships.rlaan),"default",1,30000,50000,significant)
@@ -34,7 +34,7 @@ class quest_rlaan_spy (quest.quest):
         VS.IOmessage (0,"game","all","[Computer] unable to track.")
         VS.IOmessage (10,"game","all","[Computer] burst transmission to Rlaan space detected.")
         self.removeQuest()
-        
+
     def Execute (self):
         if (VS.getSystemFile()!=self.sysfile):
             return 1
@@ -57,6 +57,3 @@ class quest_rlaan_spy_factory (quest.quest_factory):
         return quest.findQuest(playernum,'rlaan_mining_spy')
     def create (self):
         return quest_rlaan_spy()
-
-
-

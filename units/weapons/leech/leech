@@ -1,11 +1,11 @@
 <Unit >
 	<Description combatRole="MISSILE">
 	</Description>
-	<Meshfile file = "leech.xmesh"  >
+	<Meshfile file = "leech.bfxm"  >
 	</Meshfile>
 	<BspMesh  >
 	</BspMesh>
-	<Light file = "supernova.bmp" x = "0" y = "0" z = "-2" size = ".6"  >
+	<Light file = "supernova.bmp.bfxm" x = "0" y = "0" z = "-2" size = ".6"  >
 	</Light>
 	<Thrust >
 		<Engine Afterburner = "21.9489" Forward = "7.6344" Retro = "4.7715" Left = "5.34408" Right = "5.34408" Top = "5.34408" Bottom = "5.34408"  >

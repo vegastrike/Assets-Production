@@ -17,9 +17,9 @@
 <Beam name="UnknownHeavyBeam" mountsize=""> 
 <Energy rate="400" stability="20" refire="1">
 </Energy>
-<Damage rate="976" phasedamage="321" longrange=".5">
+<Damage rate="9760" phasedamage="3210" longrange=".5">
 </Damage>
-<Distance speed="300000000" radialspeed="8" radius="6" length="1.5" pulsespeed="3" range="16384" >
+<Distance speed="300000000" radialspeed="8" radius="6" length="1.5" pulsespeed="3" range="65536" >
 </Distance>
 <Appearance file="weapons/unknown_beam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a="1" >
 </Appearance>
@@ -62,18 +62,29 @@
 <!-- beams -->
 
 <Beam name="LaserBeam" mountsize="light"> 
-<Energy rate="12" stability="4" refire=".2">
+<Energy rate="16" stability=".35" refire=".6">
 </Energy>
-<Damage rate="144" longrange="1">
+<Damage rate="160" longrange=".9">
 </Damage>
-<Distance speed="300000000" radialspeed=".35" radius=".5" length="1.5" pulsespeed="15" range="2380" >
+<Distance speed="300000000" radialspeed="50" radius=".5" length="1.5" pulsespeed="15" range="4200" >
 </Distance>
 <Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".8" b=".8" a=".9" >
 </Appearance>
 </Beam>
 
+<Beam name="TraceLaser" mountsize="light"> 
+<Energy rate="4" stability="20" refire=".2">
+</Energy>
+<Damage rate="0" longrange="1">
+</Damage>
+<Distance speed="300000000" radialspeed="2" radius=".01" length="2" pulsespeed="4096" range="1000000" >
+</Distance>
+<Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".2" b=".2" a=".8" >
+</Appearance>
+</Beam>
+
 <Beam name="LR_LaserBeam" mountsize="capship-light"> 
-<Energy rate="40" stability="4" refire=".2">
+<Energy rate="40" stability=".75" refire="1.25">
 </Energy>
 <Damage rate="160" longrange="1">
 </Damage>
@@ -89,29 +100,29 @@
 </Energy>
 <Damage rate="210" longrange="1">
 </Damage>
-<Distance speed="300000000" radialspeed="500" radius=".5" length="1.5" pulsespeed="15" range="35000" >
+<Distance speed="300000000" radialspeed="500" radius=".25" length="1.5" pulsespeed="15" range="35000" >
 </Distance>
 <Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".8" b=".8" a=".9" >
 </Appearance>
 </Beam>
 
 <Beam name="IonBeam" mountsize="light">
-<Energy rate="30" stability="7" refire=".4">
+<Energy rate="30" stability="1" refire=".4">
 </Energy>
 <Damage rate="180" longrange=".4">
 </Damage>
-<Distance speed="300000000" radialspeed=".5" radius=".8" length="1.5" pulsespeed="15" range="1000">
+<Distance speed="300000000" radialspeed="5" radius=".25" length="1.5" pulsespeed="15" range="4000">
 </Distance>
 <Appearance file="weapons/pulsebeam.png" soundwav="beam.wav" r="0" g=".5" b=".9" a=".9">
 </Appearance>
 </Beam>
 
 <Beam name="KtekBeam" mountsize="heavy"> 
-<Energy rate="50" stability="6" refire=".5">
+<Energy rate="50" stability="1" refire=".5">
 </Energy>
 <Damage rate="200" longrange=".75">
 </Damage>
-<Distance speed="300000000" radialspeed="1.2" radius="2" length="1.5" pulsespeed="20" range="2000" >
+<Distance speed="300000000" radialspeed="12" radius="1" length="1.5" pulsespeed="20" range="4000" >
 </Distance>
 <Appearance file="weapons/pulsebeam.png" soundwav="beam1.wav" r=".12" g="0" b=".7" a=".9" >
 </Appearance>
@@ -119,22 +130,22 @@
 
 
 <Beam name="KtekBeampd" mountsize="heavy"> 
-<Energy rate="50" stability="6" refire=".5">
+<Energy rate="50" stability=".6" refire=".5">
 </Energy>
 <Damage rate="2" longrange=".75">
 </Damage>
-<Distance speed="300000000" radialspeed="1.2" radius="2" length="1.5" pulsespeed="20" range="6000" >
+<Distance speed="300000000" radialspeed="1.2" radius=".2" length="1.5" pulsespeed="20" range="9000" >
 </Distance>
 <Appearance file="weapons/pulsebeam.png" soundwav="beam1.wav" r=".12" g="0" b=".7" a=".9" >
 </Appearance>
 </Beam>
 
 <Beam name="DisruptorBeam" mountsize="medium"> 
-<Energy rate="14" stability="6" refire=".6">
+<Energy rate="25" stability=".4" refire=".4">
 </Energy>
-<Damage rate="168" longrange=".75">
+<Damage rate="210" longrange=".85">
 </Damage>
-<Distance speed="300000" radialspeed=".6" radius="1" length="4" pulsespeed="15" range="2000" >
+<Distance speed="300000" radialspeed="16" radius="1" length="4" pulsespeed="15" range="3500" >
 </Distance>
 <Appearance file="weapons/disruptorbeam.png" soundwav="beam1.wav" r=".7" g="1" b=".7" a=".6" >
 </Appearance>
@@ -152,11 +163,11 @@
 </Beam>
 
 <Beam name="HvyIonBeam" mountsize="Heavy">
-<Energy rate="80" stability="5" refire=".2">
+<Energy rate="80" stability=".5" refire=".2">
 </Energy>
 <Damage rate="480" longrange=".4">
 </Damage>
-<Distance speed="300000" radialspeed=".4" radius=".6" length="1.5" pulsespeed="20" range="2500">
+<Distance speed="300000" radialspeed="4" radius=".6" length="1.5" pulsespeed="20" range="2500">
 </Distance>
 <Appearance file="weapons/hvyionbeam.png" soundwav="beam.wav" r=".2" g=".4" b=".6" a=".5">
 </Appearance>
@@ -169,11 +180,12 @@
 </Energy>
 <Damage rate="26" longrange="1">
 </Damage>
-<Distance speed="1100" radialspeed=".8" radius="2.4" pulsespeed="15" range="1870" >
+<Distance speed="1100" radialspeed=".8" radius="1.4" pulsespeed="15" range="1870" >
 </Distance>
 <Appearance file="mass_driver.ani" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Ball>
+
 <!--
 <Ball name="Hadouken" mountsize="special"> 
 <Energy rate="400" refire="30">
@@ -268,9 +280,9 @@
 <Bolt name="Razor" mountsize="medium">
 <Energy rate="22" stability="4" refire=".2">
 </Energy>
-<Damage rate="32" longrange="1">
+<Damage rate="42" longrange="1">
 </Damage>
-<Distance speed="1100" radialspeed="1" radius="1.4" length="3" pulsespeed="15" range="4900" >
+<Distance speed="1100" radialspeed="1" radius="1.4" length="3" pulsespeed="15" range="3900" >
 </Distance>
 <Appearance file="weapons/rasor.png" soundwav="sfx07c.wav" r="1" g=".8" b=".8" a=".9" >
 </Appearance>
@@ -281,7 +293,7 @@
 </Energy>
 <Damage rate="62" longrange="1">
 </Damage>
-<Distance speed="900" radialspeed=".8" radius="1.2" length="10" pulsespeed="15" range="1530" >
+<Distance speed="900" radialspeed=".8" radius="1.2" length="10" pulsespeed="15" range="4530" >
 </Distance>
 <Appearance file="weapons/neutrongun.png" soundwav="Neutron.wav" r=".7" g=".7" b="1" a="1" >
 </Appearance>
@@ -310,11 +322,11 @@
 </Bolt>
 
 <Bolt name="Reaper" mountsize="heavy"> 
-<Energy rate="25" stability="6" refire=".7">
+<Energy rate="25" stability="6" refire=".6">
 </Energy>
 <Damage rate="120" longrange="1">
 </Damage>
-<Distance speed="1200" radialspeed=".8" radius="1.2" length="10" pulsespeed="15" range="4100" >
+<Distance speed="6420" radialspeed=".8" radius="1.2" length="10" pulsespeed="15" range="6500" >
 </Distance>
 <Appearance file="weapons/tachyon.png" soundwav="Tachyon.wav" r="1" g="1" b="1" a="1" >
 </Appearance>
@@ -451,7 +463,7 @@
 </Energy>
 <Damage rate="6" phasedamage="4" longrange="1">
 </Damage>
-<Distance speed="2000" radialspeed=".8" radius="5" length="40" pulsespeed="15" range="8000" volume="1">
+<Distance speed="3000" radialspeed=".8" radius="5" length="40" pulsespeed="15" range="2000" volume="1">
 </Distance>
 <Appearance file="weapons/swarm.png" soundwav="missile_3.wav" r=".3" g="1" b=".1" a="1" >
 </Appearance>
@@ -469,9 +481,9 @@
 </Bolt>
 
 <Bolt name="Hail" mountsize="Special-Missile"> 
-<Energy rate="0" stability="0" refire=".3">
+<Energy rate="0" stability="0" refire=".33">
 </Energy>
-<Damage rate="30" phasedamage="5" longrange="1">
+<Damage rate="30" phasedamage="2" longrange="1">
 </Damage>
 <Distance speed="1150" radialspeed=".8" radius="9" length="70" pulsespeed="15" range="5500" volume=".25">
 </Distance>
@@ -585,7 +597,7 @@
 <Missile name="Cluster" mountsize="heavy-missile">
 <Energy rate="0" stability="6" refire=".9">
 </Energy>
-<Damage rate="90" longrange="1" radius="900" radialspeed="300">
+<Damage rate="390" longrange="1" radius="900" radialspeed="300">
 </Damage>
 <Distance speed="800" pulsespeed="15" range="40000" detonationrange="300" volume="5">
 </Distance>
@@ -651,11 +663,11 @@
 </Bolt>
 
 <Beam name="ParticleBeam" mountsize="capship-light" >
-<Energy rate="65" stability="4" refire="3" >
+<Energy rate="65" stability="1" refire="3" >
 </Energy>
-<Damage rate="210" longrange=".6" >
+<Damage rate="210" longrange=".7" >
 </Damage>
-<Distance speed="300000" radialspeed="6" radius="8" pulsespeed="15" range="6000" >
+<Distance speed="300000" radialspeed="24" radius="8" pulsespeed="15" range="9000" >
 </Distance>
 <Appearance file="weapons/beamtexture.png" soundwav="beam.WAV" r=".84" g=".5" b=".9" a="1" >
 </Appearance>
@@ -695,11 +707,11 @@
 </Bolt>
 
 <Bolt name="CapshipDisruptor" mountsize="capship-heavy"> 
-<Energy rate="150" stability="6" refire="1.5">
+<Energy rate="150" stability="6" refire="1">
 </Energy>
-<Damage rate="300" longrange="1">
+<Damage rate="500" longrange="1">
 </Damage>
-<Distance speed="1200" radialspeed=".8" radius="10" length="40" pulsespeed="15" range="42100" >
+<Distance speed="4000" radialspeed=".8" radius="10" length="40" pulsespeed="15" range="42100" >
 </Distance>
 <Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
 </Appearance>
@@ -717,22 +729,22 @@
 </Beam>
 
 <Beam name="LR_ParticleBeam" mountsize="capship-medium" >
-<Energy rate="100" stability="4" refire="3" >
+<Energy rate="100" stability="2" refire="1.5" >
 </Energy>
 <Damage rate="250" longrange=".4" >
 </Damage>
-<Distance speed="300000" radialspeed="6" radius="8" pulsespeed="15" range="60000" >
+<Distance speed="300000" radialspeed="24" radius="8" pulsespeed="15" range="60000" >
 </Distance>
 <Appearance file="weapons/beamtexture.png" soundwav="beam.WAV" r=".84" g=".5" b=".9" a="1" >
 </Appearance>
 </Beam>
 
 <Beam name="LR_BeamHvy" mountsize="capship-heavy"> 
-<Energy rate="50" stability="6" refire="3">
+<Energy rate="100" stability="2" refire="2.25">
 </Energy>
-<Damage rate="600" longrange=".4">
+<Damage rate="1200" longrange=".7">
 </Damage>
-<Distance speed="300000000" radialspeed="20" radius="30" length="8" pulsespeed="18" range="80000" >
+<Distance speed="300000000" radialspeed="200" radius="30" length="8" pulsespeed="18" range="80000" >
 </Distance>
 <Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".7" g="1" b=".7" a=".6" >
 </Appearance>
@@ -786,7 +798,7 @@
 <Missile name="CapCluster" mountsize="light-capship-missile">
 <Energy rate="0" stability="6" refire=".9" locktime="5">
 </Energy>
-<Damage rate="150" longrange="1" radialspeed="350" radius="1000" >
+<Damage rate="360" longrange="1" radialspeed="350" radius="1000" >
 </Damage>
 <Distance speed="800" pulsespeed="15" range="50000" detonationrange="240" volume="600">
 </Distance>
@@ -797,7 +809,7 @@
 <Missile name="CapshipMissile" mountsize="heavy-capship-missile">
 <Energy rate="0" stability="6" refire="40" locktime="5">
 </Energy>
-<Damage rate="10000000" phasedamage="1000000" longrange="1" radius="1500" radialspeed="18000" >
+<Damage rate="10000000" phasedamage="10000" longrange="1" radius="1500" radialspeed="18000" >
 </Damage>
 <Distance speed="1000" pulsespeed="256" range="800000" detonationrange="300" volume="2600" >
 </Distance>
@@ -820,11 +832,11 @@
 <!-- other -->
 
 <Beam name="HandLaser" mountsize="light"> 
-<Energy rate="1" stability="4" refire=".2">
+<Energy rate="1" stability=".2" refire=".25">
 </Energy>
 <Damage rate="10" longrange="1">
 </Damage>
-<Distance speed="300000000" radialspeed=".05" radius=".05" length="1.5" pulsespeed="15" range="240" >
+<Distance speed="300000000" radialspeed="50" radius=".05" length="1.5" pulsespeed="15" range="240" >
 </Distance>
 <Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".8" b=".8" a=".9" >
 </Appearance>
@@ -843,33 +855,33 @@
 
 
 <Beam name="LR_PminusBeam" mountsize="capship-heavy"> 
-<Energy rate="80" stability="6" refire="2">
+<Energy rate="1000" stability=".6" refire="2">
 </Energy>
-<Damage rate="1200" longrange=".7">
+<Damage rate="10000" longrange=".7">
 </Damage>
-<Distance speed="300000" radialspeed="25" radius="30" length="8" pulsespeed="36" range="95000" >
+<Distance speed="300000" radialspeed="250" radius="30" length="8" pulsespeed="36" range="95000" >
 </Distance>
 <Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".6" g=".1" b=".8" a=".6" >
 </Appearance>
 </Beam>
 
 <Beam name="RLR_PminusBeam" mountsize="capship-massive"> 
-<Energy rate="300" stability="18" refire="2">
+<Energy rate="3000" stability=".4" refire="2">
 </Energy>
-<Damage rate="2500" longrange=".9">
+<Damage rate="20000" longrange=".9">
 </Damage>
-<Distance speed="300000" radialspeed="50" radius="100" length="8" pulsespeed="36" range="195000" >
+<Distance speed="300000" radialspeed="1000" radius="100" length="8" pulsespeed="36" range="195000" >
 </Distance>
 <Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".6" g=".1" b=".8" a=".6" >
 </Appearance>
 </Beam>
 
 <Beam name="ktekcapbeam" mountsize="capship-heavy"> 
-<Energy rate="250" stability=".6" refire=".4">
+<Energy rate="500" stability=".6" refire=".4">
 </Energy>
-<Damage rate="2000" longrange=".75">
+<Damage rate="4000" longrange=".75">
 </Damage>
-<Distance speed="300000000" radialspeed="150" radius="15" length="8" pulsespeed="36" range="70000" >
+<Distance speed="300000000" radialspeed="1500" radius="15" length="8" pulsespeed="36" range="70000" >
 </Distance>
 <Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".12" g="0" b=".7" a=".9" >
 </Appearance>
@@ -882,7 +894,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="7.5" radius="15" length="8" pulsespeed="36" range="4000" >
 </Distance>
-<Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".12" g="0" b=".7" a=".9" >
+<Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".12" g=".8" b=".12" a=".85" >
 </Appearance>
 </Beam>
 
@@ -941,7 +953,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="Sanitizer" mountsize="capship-massive"> 
+<Beam name="Whiplash" mountsize="capship-massive"> 
 <Energy rate="4000" stability="1.2" refire="8.8">
 </Energy>
 <Damage rate="50000" longrange=".001">
@@ -951,6 +963,17 @@
 <Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".1" g=".1" b=".4" a=".2" >
 </Appearance>
 </Beam>
+
+<Bolt name="Sanitizer" mountsize="capship-heavy"> 
+<Energy rate="250" stability="6" refire="0.25">
+</Energy>
+<Damage rate="100" longrange="1">
+</Damage>
+<Distance speed="8000" radialspeed=".8" radius="15" length="45" pulsespeed="15" range="160000" >
+</Distance>
+<Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
+</Appearance>
+</Bolt>
 
 <Ball name="discontinuity" mountsize="capship-massive"> 
 <Energy rate="10000" refire="10">

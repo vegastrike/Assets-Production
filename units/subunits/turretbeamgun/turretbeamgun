@@ -1,6 +1,6 @@
 <Unit>
 
-<Meshfile file="turretbeamgun.xmesh"/>
+<Meshfile file="turretbeamgun.bfxm"/>
 <description combatrole="TFIGHTER"/>
 	<Mount weapon="Laserbeam" size="capship-light" x="2" y=".25" z="4.5" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>
 	<Mount weapon="Laserbeam" size="capship-light" x="-2" y=".25" z="4.5" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.032845" qj="-0.999460" qk="0.000000"/>

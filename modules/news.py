@@ -2,6 +2,9 @@ import VS
 import vsrandom
 import universe
 import Director
+import dynamic_news
+global dnewsman_
+dnewsman_ = dynamic_news.NewsManager()
 def saveVal(str):
     return Director.getSaveData(VS.getMissionOwner(),str,0)
 
@@ -21,16 +24,16 @@ class GreaterZero:
     def __init__ (self,str):
         self.str = str
     def __nonzero__ (self):
-        print 'nonzeroing'        
+        print 'nonzeroing'
         return saveVal(self.str)>0
 class LessZero:
     def __init__ (self,str):
         self.str = str
     def __nonzero__ (self):
-        print 'nonzeroing'        
+        print 'nonzeroing'
         return saveVal(self.str)<0
 
-    
+
 news =( ( 'kinneas',(IsZero('kinneas'),),"TEENAGE BOY OUTSMARTS SYSTEM:  A teenager from the Draul Bisa Habitat was caught redhanded on New Poona Mining Base last week, as he was trying to sneak past security without proper identification. The young human male, identified as Kinneas Pinman, somehow managed to make it past spaceport security on Draul Bisa and stow away on a passanger transport bound for the mining base in the Celeste System. While the motives behind Pinman's actions remain unknown, redfaced spaceport officials are hard-pressed to explain how the cheeky computer whizkid managed to elude all their security precautions. Pinman was detained by police on New Poona and will be returned to Draul Bisa within the week."),
         ('congress_convenes',(IsZero('congress_convenes'),),"GREAT CONGRESS CONVENES:  The Great Congress of the Human Star Confederacy convened earlier today at the Confederate Center in Alpha Centauri. On their agenda, possible military intervention to protect human interests in Uln space because of the increased number of pirate raids launched from behind Uln borders. No decisions were made in the heated debate that followed, with the representatives from several indep worlds leaving the Confederate Center in disgust."),#
         ('news_slaver_guild',(IsZero('news_slaver_guild'),NotZero("quest_slaver"),),"SLAVER GUILD EXPOSED:  An operation lead by the HCS Illustrious working in conjunction with Confederate Special Forces uncovered a Slaver Guild in the Rigel System last week. The slavers were based off an outpost inside an asteroid field, and though they had managed to avoid detection by Navy patrols up till now, they had no such luck this time thanks to intelligence forwarded by the local militia. After the Illustrious overcame the outpost's defenses, the Special Forces unit moved in and secured the station, liberating over a hundred slaves, killing close to forty slavers and capturing twice as many. A large number of Uln were discovered on the outpost, and while they will be turned over to Uln authorities, a formal complaint is expected to be issued by the General Secretary to the Uln government within the week."),#
@@ -72,7 +75,7 @@ def newNews():
     import Director
     Director.pushSaveString(player,"dynamic_news",'#'+newsitem[2])
 #    VS.IOmessage(0,"game","news",newsitem[2])
-    
+
 
 def eraseNews(plr):
     import Director
@@ -85,6 +88,9 @@ def processNews(plr):
     import Director
     howmuchnews=Director.getSaveStringLength(plr,"dynamic_news")
     minnews=0
+    print "Processing News"
+    global dnewsman_
+    dnewsman_.updateDockedAtFaction()
     if (howmuchnews>4000):
         minnews=howmuchnews-4000
     for i in range (minnews,howmuchnews):
@@ -92,9 +98,10 @@ def processNews(plr):
         if (len(noos)):
             if (noos.startswith('#')):
                 Director.pushSaveString(plr,"news",noos[1:])
-            else:
-                import dynamic_news
-                dynamic_news.manageDynamicNews(plr,noos)
+            elif dnewsman_.isStoryRelevant(noos):
+                noos = dnewsman_.translateDynamicString(noos)
+                if noos:
+                    Director.pushSaveString(plr,"news",noos)
 
 def eraseNewsItem(plr,item):
     """removes the first news item matching the given item from
@@ -106,4 +113,3 @@ def eraseNewsItem(plr,item):
         if noos == item:
             Director.eraseSaveString(plr,"dynamic_news",i)
             return
-

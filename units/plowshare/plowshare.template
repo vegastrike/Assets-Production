@@ -18,13 +18,9 @@
 <Upgrade file="add_shield_2_capacitance"/>
 <Upgrade file="add_shield_2_capacitance"/>
 <Upgrade file="add_shield_2_capacitance"/>
-	<Meshfile file ="wayfarerhi.xmesh">
+	<Meshfile file ="plowshare.bfxm">
 	</Meshfile>
-	<Meshfile file ="wayfarerhiglow.xmesh">
-	</Meshfile>
-	<Meshfile file ="navlights.xmesh">
-	</Meshfile>
-	<ShieldMesh file ="shield1.xmesh">
+	<ShieldMesh file ="plowshare_shield.bfxm">
 	</ShieldMesh>
 	<Mount weapon ="Tractor" size ="special" x ="11.5" y ="-2.5" z ="24">
 	</Mount>
@@ -74,17 +70,17 @@
 			</import>
 		</Category>
 	</Hold>
-	<Light file ="supernova.bmp" x ="6.3" y ="8" z ="-12.25" size ="8">
+	<Light file ="supernova.bmp.bfxm" x ="6.3" y ="8" z ="-12.25" size ="8">
 	</Light>
-	<Light file ="supernova.bmp" x ="-6.3" y ="8" z ="-12.25" size ="8">
+	<Light file ="supernova.bmp.bfxm" x ="-6.3" y ="8" z ="-12.25" size ="8">
 	</Light>
-	<Light file ="supernova.bmp" x ="12.75" y ="-3.4" z ="-14.75" size ="8">
+	<Light file ="supernova.bmp.bfxm" x ="12.75" y ="-3.4" z ="-14.75" size ="8">
 	</Light>
-	<Light file ="supernova.bmp" x ="-12.75" y ="-3.4" z ="-14.75" size ="8">
+	<Light file ="supernova.bmp.bfxm" x ="-12.75" y ="-3.4" z ="-14.75" size ="8">
 	</Light>
-	<Light file ="supernova.bmp" x ="12.75" y ="-9" z ="-14.75" size ="8">
+	<Light file ="supernova.bmp.bfxm" x ="12.75" y ="-9" z ="-14.75" size ="8">
 	</Light>
-	<Light file ="supernova.bmp" x ="-12.75" y ="-9" z ="-14.75" size ="8">
+	<Light file ="supernova.bmp.bfxm" x ="-12.75" y ="-9" z ="-14.75" size ="8">
 	</Light>
 <Upgrade file="mult_general_upgrade"/>
 <Upgrade file="add_general_upgrade"/>

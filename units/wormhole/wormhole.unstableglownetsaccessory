@@ -1,6 +1,6 @@
 <Unit scale="800">
 
-<Meshfile file="glow_net_unstable.xmesh"/>
+<Meshfile file="glow_net_unstable.bfxm"/>
 
 	<Defense>
 		<Armor front="100000" right="80000" left="80000" back="100000"/>

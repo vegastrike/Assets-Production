@@ -1,7 +1,6 @@
 <Unit scale="3000">
 
-<!--<Meshfile file="glow_stable.xmesh"/>-->
-<Meshfile file="cyl_stable.xmesh"/>
+<Meshfile file="cyl_stable.bfxm"/>
 <BSPMesh usebsp="0"/>
 <Rapidmesh rapid="0"/>
 	<Defense>

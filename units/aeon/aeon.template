@@ -3,9 +3,7 @@
 	</description>
 	<cockpit file ="light_cockpit.cpt" x ="0" y =".25" z ="4.5">
 	</cockpit>
-	<Meshfile file ="aeonhi.xmesh">
-	</Meshfile>
-	<Meshfile file ="aeonhiglow.xmesh">
+	<Meshfile file ="aeonhi.bfxm">
 	</Meshfile>
 	<Mount weapon ="Photon" size ="light medium autotracking" x ="5.600000" y ="-1.600000" z ="3.200000">
 	</Mount>
@@ -56,9 +54,9 @@
 <Upgrade file="mult_gun_cooler"/>
 	<Jump delay ="1" jumpenergy ="90" insysenergy ="45">
 	</Jump>
-	<Light file ="aeraburn" x ="-0.75" y ="-0.086" z ="-10" size ="8">
+	<Light file ="aeraburn.bfxm" x ="-0.75" y ="-0.086" z ="-10" size ="8">
 	</Light>
-	<Light file ="aeraburn" x ="0.75" y ="-0.086" z ="-10" size ="8">
+	<Light file ="aeraburn.bfxm" x ="0.75" y ="-0.086" z ="-10" size ="8">
 	</Light>
 	<Hold volume ="12.000000">
 	</Hold>

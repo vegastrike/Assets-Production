@@ -1,7 +1,7 @@
 <Unit scale ="63">
 	<Description combatRole ="ESCORTCAP">
 	</Description>
-	<Meshfile file ="destroyer2.xmesh">
+	<Meshfile file ="kahan.bfxm">
 	</Meshfile>
 	<Mount weapon ="" size ="CAPSHIP" x ="-1" y ="0" z ="0" ammo ="16">
 	</Mount>

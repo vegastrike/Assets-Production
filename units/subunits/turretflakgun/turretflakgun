@@ -2,7 +2,7 @@
 	<Description combatRole="POINTDEF">
 	</Description>
 
-<Meshfile file="turretflakgun.xmesh"/>
+<Meshfile file="turretflakgun.bfxm"/>
 
 	<Energy>
 		<Reactor recharge="125" limit="2250"/>

@@ -1,5 +1,5 @@
 <Unit scale = "3" >
-	<Meshfile file = "lekra.xmesh"  >
+	<Meshfile file = "convolution.bfxm"  >
 	</Meshfile>
 	<BspMesh  >
 	</BspMesh>
@@ -38,8 +38,8 @@
 	<Mount weapon="DisruptorBeam" size="Medium" x="-0.320000" y="-0.352000" z="4.16400" />
 	<Mount weapon="swarm" size="special-missile" x="-3.00944e-2" y="0.757442" z="-1.86303" ammo="20" volume="5"/>
 	<Mount weapon="torpedo" size="Light-missile medium-missile heavy-missile" x="1.65074" y="-0.522844" z="1.34526e-3" ammo="1" volume="100"/>
-	<Light file = "supernova.bmp" x = "-0.506007" y = "2.40000e-2" z = "-5.16000" size = ".6" />
-	<Light file = "supernova.bmp" x = "9.59928e-2" y = "3.20000e-2" z = "-3.67200" size = ".6" />
+	<Light file = "supernova.bmp.bfxm" x = "-0.506007" y = "2.40000e-2" z = "-5.16000" size = ".6" />
+	<Light file = "supernova.bmp.bfxm" x = "9.59928e-2" y = "3.20000e-2" z = "-3.67200" size = ".6" />
 	<Hold volume = "15">
 	</Hold>
 	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->

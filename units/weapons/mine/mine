@@ -1,7 +1,7 @@
 <Unit scale="0.1">
 	<Description combatRole="MINE">
 	</Description>
-	<Meshfile file="box.xmesh" />
+	<Meshfile file="box.bfxm" />
 
 	<Thrust>
 		<Engine Afterburner="5" Forward="5" Retro="5" Left="5" Right="5" Top="5" Bottom="5"/>

@@ -1,9 +1,7 @@
 <Unit scale = "10" >
 <Description combatRole="BASE">
 </Description>
-	<Meshfile file = "aerminb-Aeramining-Hull.xmesh"  >
-	</Meshfile>
-	<Meshfile file = "aerminb-Aeramining-Roid.xmesh"  >
+	<Meshfile file = "miningbase.bfxm"  >
 	</Meshfile>
 	<Subunit file = "turretbeam" x = "-1.339288" y = "51.868393" z = "15.000998" ri = "0.046461" rj = "-0.998920" rk = "0.000000" qi = "0.000000" qj = "0.000000" qk = "1.000000"  >
 	</Subunit>

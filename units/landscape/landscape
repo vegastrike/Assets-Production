@@ -19,9 +19,7 @@
 		<Engine Afterburner="0" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
 		<Maneuver yaw="000000" pitch="0" roll="0"/>
 	</Thrust>
-	<bspmesh file="nothin.xmesh" bsp="1" rapid="1"/>
-	<rapidmesh file="nothin.xmesh" bsp="1" rapid="1"/>
-	<Meshfile file="landscape.xmesh"/>
-<!--	<Meshfile file="reflection.xmesh"/>-->
-	<Meshfile file="grass.xmesh"/>
+	<bspmesh file="landscape_BSP.bfxm" bsp="1" rapid="1"/>
+	<rapidmesh file="landscape_BSP.bfxm" bsp="1" rapid="1"/>
+	<Meshfile file="landscape.bfxm"/>
 </unit>

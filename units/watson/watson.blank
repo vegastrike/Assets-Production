@@ -1,7 +1,7 @@
 <Unit scale ="1.35">
 	<Description combatRole ="CARRIER">
 	</Description>
-	<Meshfile file ="escortcarrier.xmesh">
+	<Meshfile file ="watson.bfxm">
 	</Meshfile>
 	<Thrust>
 		<Engine Afterburner ="20000000" Forward ="10000000" Retro ="10000000" Left ="1000000" Right ="1000000" Top ="1000000" Bottom ="1000000">
@@ -367,17 +367,17 @@
 	</Dock>
 	<Dock size ="48" x ="0" y ="0" z ="-432">
 	</Dock>
-	<Light file ="supernova.bmp" x ="-109.315216" y ="-11.178051" z ="-504.000031" size ="64.200336">
+	<Light file ="supernova.bmp.bfxm" x ="-109.315216" y ="-11.178051" z ="-504.000031" size ="64.200336">
 	</Light>
-	<Light file ="supernova.bmp" x ="-157.605957" y ="-7.940502" z ="-504.000000" size ="47.399963">
+	<Light file ="supernova.bmp.bfxm" x ="-157.605957" y ="-7.940502" z ="-504.000000" size ="47.399963">
 	</Light>
-	<Light file ="supernova.bmp" x ="-195.157822" y ="-4.150342" z ="-504.000031" size ="31.000000">
+	<Light file ="supernova.bmp.bfxm" x ="-195.157822" y ="-4.150342" z ="-504.000031" size ="31.000000">
 	</Light>
-	<Light file ="supernova.bmp" x ="109.315216" y ="-11.178051" z ="-504.000031" size ="64.200336">
+	<Light file ="supernova.bmp.bfxm" x ="109.315216" y ="-11.178051" z ="-504.000031" size ="64.200336">
 	</Light>
-	<Light file ="supernova.bmp" x ="157.605957" y ="-7.940502" z ="-504.000000" size ="47.399963">
+	<Light file ="supernova.bmp.bfxm" x ="157.605957" y ="-7.940502" z ="-504.000000" size ="47.399963">
 	</Light>
-	<Light file ="supernova.bmp" x ="195.157822" y ="-4.150342" z ="-504.000031" size ="31.000000">
+	<Light file ="supernova.bmp.bfxm" x ="195.157822" y ="-4.150342" z ="-504.000031" size ="31.000000">
 	</Light>
 	<Mount weapon ="" size ="CAPSHIP-LIGHT" x ="58.000000" y ="-61.453083" z ="456.000000" ri ="-0.000000" rj ="0.000000" rk ="1.000000" qi ="0.809017" qj ="0.587785" qk ="0.000000">
 	</Mount>

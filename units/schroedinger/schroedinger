@@ -1,8 +1,7 @@
 <Unit scale="1.25"> 
 <description combatrole="INTERCEPTOR"/>
 	<Cockpit file="medium_cockpit.cpt"/>
-	<Meshfile file="tianhi.xmesh" />
-	<Meshfile file="tianhiglow.xmesh" />
+	<Meshfile file="schroedinger.bfxm" />
 	<Thrust>
 		<Engine Afterburner="24000" Forward="16000" Retro="16000" Left="16000" Right="16000" Top="16000" Bottom="16000"/>
 		<Maneuver yaw="13643.200050" pitch="13643.200050" roll="13643.200050"/>
@@ -26,7 +25,7 @@
 	</Hold>
 
 
-<Light file="supernova.bmp" x="0" y="-.5" z="-5.5" size="10"/>
+<Light file="supernova.bmp.bfxm" x="0" y="-.5" z="-5.5" size="10"/>
 <Mount weapon="laserbeam" size="Light Autotracking" x="0" y="3" z=".5"/>
 <!--
 <Mount weapon="friendorfoe" size="Light-missile Medium-missile" x="-.75" y="3" z=".5" ammo="1" volume="16"/>

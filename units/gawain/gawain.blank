@@ -55,11 +55,11 @@
 	</description>
 	<Hold volume ="30">
 	</Hold>
-	<Light file ="supernova.bmp" x ="0" y ="-.328" z ="-9.75" size ="8">
+	<Light file ="supernova.bmp.bfxm" x ="0" y ="-.328" z ="-9.75" size ="8">
 	</Light>
-	<Light file ="supernova.bmp" x ="0.25" y ="-1.1" z ="-9.75" size ="5">
+	<Light file ="supernova.bmp.bfxm" x ="0.25" y ="-1.1" z ="-9.75" size ="5">
 	</Light>
-	<Light file ="supernova.bmp" x ="-0.25" y ="-1.1" z ="-9.75" size ="5">
+	<Light file ="supernova.bmp.bfxm" x ="-0.25" y ="-1.1" z ="-9.75" size ="5">
 	</Light>
 <Upgrade file="mult_general_downgrade"/>
 <Upgrade file="add_general_downgrade"/>

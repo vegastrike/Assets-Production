@@ -61,7 +61,7 @@
 	</Dock>
 	<Dock x ="-2.2" y ="1.2" z ="1.3" size =".5">
 	</Dock>
-	<Meshfile file ="fighter_barracks.xmesh">
+	<Meshfile file ="fighter_barracks.bfxm">
 	</Meshfile>
 	<Subunit file ="capship_blank" x ="-5.160869" y ="-8.938887" z ="1.964706" ri ="-0.500000" rj ="0.866025" rk ="0.000000" qi ="0.000000" qj ="0.000000" qk ="-1.000000">
 	</Subunit>

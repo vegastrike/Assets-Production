@@ -1,0 +1,62 @@
+<!-- XUnit exported from Wings 3D 0.98.12 -->
+<!-- Made by Major http://netzwelt.gaming-hut.de -->
+<!-- How to edit this file: http://www.joeredcloud.com/kandarwiki/index.php?VsHowtoEditUnitFiles -->
+<Unit scale="1.00000">
+
+<Light   x="2.84400" y="-1.91200" z="-4.08600" file='supernova.bmp' size='2' />
+<Light   x="-2.91000" y="-1.91200" z="-4.08600" file='supernova.bmp' size='2' />
+<Light   x="-0.836000" y="1.18200" z="-5.16800" file='supernova.bmp' size='4' />
+<Light   x="0.838000" y="1.18200" z="-5.16800" file='supernova.bmp' size='4' />
+<Mount   x="-1.68400" y="-2.17200" z="1.64400" ri="0.00000e+0" rj="0.00000e+0" rk="2.00000" qi="0.00000e+0" qj="1.00000" qk="0.00000e+0" weapon='Photon' size='Medium Heavy' />
+<Mount   x="1.80200" y="-2.17200" z="1.64400" ri="0.00000e+0" rj="0.00000e+0" rk="2.00000" qi="0.00000e+0" qj="1.00000" qk="0.00000e+0" weapon='Photon' size='Medium Heavy' />
+
+<Meshfile   file="kafka.xmesh" />
+<!-- BEGIN content of config file -->
+<!-- BEGIN SAMPLE DATA: the rest of the unit-data is to be placed here --> 
+<Thrust >
+  <Engine Afterburner="117007" Forward="22523" Retro="27935" Left="22231" Right="22231" Top="22231" Bottom="22231" />
+  <Maneuver yaw="289943" pitch="239988" roll="399637" />
+</Thrust>
+
+<Computer yaw="60.400002" pitch="50.600006" roll="80.400002" afterburner="85" maxspeed="30" >
+</Computer>
+
+<Defense HudImage="YourShipNmae-hud.spr">
+  <Armor front="250" right="225" left="225" back="240" />
+  <Shields front="150.000000" back="150.000000" recharge="30.000000"  />
+  <Hull strength="200.000000" />
+</Defense>
+
+<Stats mass="1096" momentofinertia="1096" fuel="40000000" />
+
+<Energy>
+  <Reactor recharge="60" limit="400" />
+</Energy>
+
+
+<Jump missing="0" delay="2" jumpenergy="150" />
+<!-- add a description of your ship here -->
+<description></description>
+<!--
+<CockpitDamage damage="float damage between 0 and 1 of cockpit component" />
+-->
+<Hold volume="125" >
+  <Category file="Natural_Products/Natural_Resources" >
+    <import price=".8" pricestddev=".2" quantity="0" quantitystddev="5" />
+  </Category>
+  <Category file="Fuels/Crude" >
+    <import price="0.8" pricestddev=".2" quantity="0" quantitystddev="2" />
+  </Category>
+  <Category file="Compressed_Gasses" >
+    <import price=".7" pricestddev=".2" quantity="0" quantitystddev="2" />
+  </Category>
+  <Category file="Entertainment" >
+    <import price="1" pricestddev=".1" quantity="0" quantitystddev="1" />
+  </Category>
+</Hold>
+
+<!--
+<Upgrade file="file to upgrade this unit with" /> 
+-->
+<!-- END SAMPLE DATA --><!-- END   content of config file -->
+</Unit>

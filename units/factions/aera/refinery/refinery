@@ -17,7 +17,7 @@
 	</Defense>
 	<Stats mass = "328716800" momentofinertia = "328716800" fuel = "20000"  >
 	</Stats>
-	<Meshfile file = "refine-Default-AeraHull2.xmesh"  >
+	<Meshfile file = "refinery.bfxm"  >
 	</Meshfile>
 	<Dock x = "33" y = "18.5" z = "0" size = "2"  >
 	</Dock>

@@ -21,6 +21,3 @@ class quest_abu_dhabi_factory (quest.quest_factory):
         return quest.findQuest (playernum,"abu_dhabi_return")
     def create (self):
         return quest_abu_dhabi()
-
-
-

@@ -1,19 +1,17 @@
 <Unit>
 	<Description combatRole ="FIGHTER">
 	</Description>
-	<Meshfile file ="s-Cone02-3 - Default.xmesh">
+	<Meshfile file ="beholder.bfxm">
 	</Meshfile>
-	<ShieldMesh file ="s-Cone02-3 - Default.xmesh">
+	<ShieldMesh file ="beholder_shield.bfxm">
 	</ShieldMesh>
-	<Meshfile file ="s-Cone01-1 - Default.xmesh">
-	</Meshfile>
 	<BSPMesh>
 	</BSPMesh>
 	<Mount weapon ="UnknownHeavyBeam" size ="Light autotracking" x ="0" y ="-0.5" z ="13.0">
 	</Mount>
-	<Light file ="supernova.bmp" x ="0" y ="-0.5" z ="13" size ="0.500000">
+	<Light file ="supernova.bmp.bfxm" x ="0" y ="-0.5" z ="13" size ="0.500000">
 	</Light>
-	<Light file ="supernova.bmp" x ="0" y ="0" z ="-7.20000" size ="3.000000">
+	<Light file ="supernova.bmp.bfxm" x ="0" y ="0" z ="-7.20000" size ="3.000000">
 	</Light>
 	<Defense HudImage ="s-hud.spr" ECM ="1.000000" RepairDroid ="6">
 		<Armor front ="1000" right ="1000" left ="1000" back ="1000">

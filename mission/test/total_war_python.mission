@@ -12,7 +12,7 @@
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="neutral" type="beholder" ainame="default" waves="100" nr_ships="1">
-			<pos x="8000" y="100" z="2000"/>
+			<pos x="8000" y="100" z="2000000000"/>
  
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>

@@ -1,7 +1,7 @@
 <Unit scale ="1">
 	<Description combatrole ="CAPITAL">
 	</Description>
-	<Meshfile file ="starrunner.xmesh">
+	<Meshfile file ="tesla.bfxm">
 	</Meshfile>
 	<Thrust>
 		<Engine Afterburner ="1200000000" Forward ="600000000" Retro ="800000000" Left ="40000000" Right ="40000000" Top ="40000000" Bottom ="40000000">
@@ -45,15 +45,15 @@
 	</Mount>
 	<Mount weapon ="" size ="CAPSHIP-HEAVY " x ="-192.264206" y ="-95.354103" z ="-216.000000" ri ="0.000000" rj ="0.000000" rk ="1.000000" qi ="0.309017" qj ="-0.951057" qk ="0.000000">
 	</Mount>
-	<Light file ="supernova.bmp" x ="0" y ="-70" z ="-1152" size ="190">
+	<Light file ="supernova.bmp.bfxm" x ="0" y ="-70" z ="-1152" size ="190">
 	</Light>
-	<Light file ="supernova.bmp" x ="524" y ="-193" z ="-1379" size ="92">
+	<Light file ="supernova.bmp.bfxm" x ="524" y ="-193" z ="-1379" size ="92">
 	</Light>
-	<Light file ="supernova.bmp" x ="-524" y ="-193" z ="-1379" size ="92">
+	<Light file ="supernova.bmp.bfxm" x ="-524" y ="-193" z ="-1379" size ="92">
 	</Light>
-	<Light file ="supernova.bmp" x ="221.555344" y ="100" z ="-1211" size ="100">
+	<Light file ="supernova.bmp.bfxm" x ="221.555344" y ="100" z ="-1211" size ="100">
 	</Light>
-	<Light file ="supernova.bmp" x ="-221.555344" y ="100" z ="-1211" size ="100">
+	<Light file ="supernova.bmp.bfxm" x ="-221.555344" y ="100" z ="-1211" size ="100">
 	</Light>
 	<Dock x ="211.844528" y ="61.513916" z ="-720.000000" size ="90.120924" ri ="0.325628" rj ="0.945498" rk ="0.000000" qi ="0.000000" qj ="-0.000000" qk ="1.000000">
 	</Dock>

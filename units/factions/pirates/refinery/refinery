@@ -1,7 +1,7 @@
 <Unit scale = "400" >
 <Description combatRole="BASE">
 </Description>
-	<Meshfile file = "piraterefine.xmesh"  >
+	<Meshfile file = "refinery.bfxm"  >
 	</Meshfile>
 	<Thrust >
 		<Engine Afterburner = "0" Forward = "0" Retro = "0" Left = "0" Right = "0" Top = "0" Bottom = "0"  >

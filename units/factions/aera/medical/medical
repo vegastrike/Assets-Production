@@ -2,7 +2,7 @@
 <Description combatRole="BASE">
 </Description>
 
-<Meshfile file="aera_medium_base.xmesh"/>
+<Meshfile file="medical.bfxm"/>
 
        	<Thrust>
 		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>

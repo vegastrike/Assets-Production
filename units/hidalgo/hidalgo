@@ -1,0 +1,85 @@
+<Unit>
+	<cockpit file ="heavy-cockpit.cpt" x ="0" y ="0" z ="0">
+	</cockpit>
+	<Meshfile file ="hidalgo.xmesh">
+	</Meshfile>
+	<Meshfile file ="hidalgo_sails.xmesh">
+	</Meshfile>
+        <mount weapon="LR_Beam" size="light medium heavy capship-light capship-medium autotracking" x="0.0" y="36.6" z="211.6"/> 
+        <mount weapon="torpedo" size="heavy-missile" x="6.07" y="-15.43" z="122.72" ammo="20" volume="2000"/> 
+        <mount weapon="torpedo" size="heavy-missile" x="-6.07" y="-15.43" z="122.72" ammo="20" volume="2000"/> 
+        <mount weapon="friendorfoe" size="light-missile medium-missile" x="6.07" y="-16.66" z="120.13" ammo="60" volume="960"/>
+        <mount weapon="friendorfoe" size="light-missile medium-missile" x="-6.07" y="-16.66" z="120.13" ammo="60" volume="960"/>
+	<Mount weapon="Swarm" size="special-missile" x="6.07" y="-18.02" z="117.02" ammo="2000" volume="500"/> 
+	<Mount weapon="Swarm" size="special-missile" x="-6.07" y="-18.02" z="117.02" ammo="2000" volume="500"/> 
+
+	<Subunit file="turretbeam" x="38.8" y="7.3" z="56.21" ri="0" rj="1" rk="0" qi="1" qj="0" qk="0"/>
+	<Subunit file="turretbeam" x="-38.8" y="7.3" z="56.21" ri="0" rj="1" rk="0" qi="-1" qj="0" qk="0"/>
+	<Subunit file="turretbeam" x="48.5" y="8.33" z="-120" ri="0" rj="1" rk="0" qi="1" qj="0" qk="0"/>
+	<Subunit file="turretbeam" x="-48.5" y="8.33" z="-120" ri="0" rj="1" rk="0" qi="-1" qj="0" qk="0"/>
+
+	<Subunit file="turretleech" x="0" y="147.81" z="-17.2" ri="0" rj="0" rk="0" qi="-1" qj="1" qk="0"/>
+	<Subunit file="turrettractor" x="0" y="30.33" z="-190.2" ri="0" rj="1" rk="0" qi="0" qj="1" qk="0"/>
+
+	<Thrust>
+		<Engine Afterburner ="550000" Forward ="400000" Retro ="400000" Left ="100000" Right ="100000" Top ="100000" Bottom ="100000">
+		</Engine>
+		<Maneuver yaw ="3000" pitch ="3000" roll ="3000">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="hidalgo-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="1400" right ="1400" left ="1400" back ="1400">
+		</Armor>
+		<Shields front ="3000" back ="3000" recharge ="40">
+		</Shields>
+		<Hull strength ="8000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2"/>
+<Upgrade file="isometal"/>
+
+	<Stats mass ="17000" momentofinertia ="17000" fuel ="160000000000">
+	</Stats>
+
+	<Computer yaw ="2100" pitch ="2100" roll ="2100" afterburner ="185" maxspeed ="170">
+	</Computer>
+	<Energy afterburnenergy = "32767">
+
+		<Reactor recharge="100" limit="6500" warpenergy="1400"/>
+		<Reactor warpenergy ="300">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "0" delay ="1" jumpenergy ="300" insysenergy ="300">
+	</Jump>
+	<description combatRole ="SHUTTLE">
+	</description>
+	<Hold volume ="120000">
+		<Category file ="Fuels/Crude">
+			<import price ="0.8" pricestddev =".2" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="Compressed_Gasses">
+			<import price =".7" pricestddev =".2" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+	</Hold>
+	<Light file = "supernova.bmp.bfxm" x = "19.8" y = "42.2" z = "-193.2" size = "26"  >
+	</Light>
+	<Light file = "supernova.bmp.bfxm" x = "-19.8" y = "42.2" z = "-193.2" size = "26"  >
+	</Light>
+	<Light file = "supernova.bmp.bfxm" x = "33.4" y = "32" z = "-193.2" size = "26"  >
+	</Light>
+	<Light file = "supernova.bmp.bfxm" x = "-33.4" y = "32" z = "-193.2" size = "26"  >
+	</Light>
+	<Light file = "supernova.bmp.bfxm" x = "0.55" y = "-25.2" z = "-189.5" size = "26"  >
+	</Light>
+	<Light file = "supernova.bmp.bfxm" x = "0.55" y = "-39.3" z = "-189.5" size = "26"  >
+	</Light>
+	<Dock x = "0" y = "3.33" z = "-185.3" size = "40"  >
+	</Dock>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

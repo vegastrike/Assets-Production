@@ -1,7 +1,7 @@
 <Unit scale="0.01">
 	<Description combatRole="POINTDEF">
 	</Description>
-	<Meshfile file="box.xmesh" />
+	<Meshfile file="box.bfxm" />
 
 	<Thrust>
 		<Engine Afterburner="300" Forward="150" Retro="150" Left="150" Right="150" Top="150" Bottom="150"/>

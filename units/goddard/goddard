@@ -1,12 +1,6 @@
-<!-- XUnit exported from Wings 3D 0.98.10c -->
 <Unit scale="5.00000">
 
-<Meshfile file="goddard_top.xmesh"/>
-<Meshfile file="goddard_bottom.xmesh"/>
-
-<!-- BEGIN TEMPLATES the following entries are templates (mostly from wayfarer)
-NONE of this values are created dynamically by the script
-edit it to fit the stats of your ship-->
+<Meshfile file="goddard.bfxm"/>
 
 <!-- <ShieldMesh file="name of xmesh to load instead of sphere as shield" /> -->
 
@@ -16,10 +10,12 @@ edit it to fit the stats of your ship-->
 
 <Thrust >
   <Engine Afterburner = "100000" Forward = "80000" Retro = "80000" Left = "75000" Right = "75000" Top = "75000" Bottom = "75000" />
-  <Maneuver yaw = "75000" pitch = "75000" roll = "75000" />
+  <Maneuver yaw = "37500" pitch = "37500" roll = "37500" />
 </Thrust>
 
-<Computer yaw = "60" pitch = "60" roll = "50" afterburner = "220" maxspeed = "210" >
+<Computer yaw = "45" pitch = "45" roll = "45" afterburner = "220" maxspeed = "210">
+	<Radar itts="true" error="0" range="150000000"  TrackingCone =".95" lockcone ="0" maxcone="-1" color="true">
+		</Radar>
 </Computer>
 
 <subunit file="turretpdlong" x="0" y="2.2" z="4.5" ri="0" rj="0" rk="1" qi="0" qj="1" qk="0"/>
@@ -35,8 +31,8 @@ edit it to fit the stats of your ship-->
 <mount weapon="laserbeam" size="light autotracking" x="-12.5" y="-0.1" z="0"/>
 <mount weapon="disruptorbeam" size="light medium autotracking" x="-2" y="0" z="12"/>
 <mount weapon="disruptorbeam" size="light medium autotracking" x="2" y="-0" z="12"/>
-<mount weapon="particlebeam" size="capship-light autotracking" x="-0.1" y="-2" z="13"/>
-<mount weapon="particlebeam" size="capship-light autotracking" x="0.1" y="-2" z="13"/>
+<mount weapon="particlebeam" size="capship-light" x="-0.1" y="-2" z="13"/>
+<mount weapon="particlebeam" size="capship-light" x="0.1" y="-2" z="13"/>
 <mount weapon="friendorfoe" size="light-missile medium-missile" x="4.1" y="0" z="-3" ammo="5" volume="80"/>
 <mount weapon="friendorfoe" size="light-missile medium-missile" x="3.9" y="0" z="-3" ammo="5" volume="80"/>
 <mount weapon="friendorfoe" size="light-missile medium-missile" x="-4.1" y="0" z="-3" ammo="5" volume="80"/>
@@ -46,23 +42,23 @@ edit it to fit the stats of your ship-->
 <mount weapon="friendorfoe" size="light-missile medium-missile" x="-8.1" y="0" z="-3" ammo="5" volume="80"/>
 <mount weapon="friendorfoe" size="light-missile medium-missile" x="-7.9" y="0" z="-3" ammo="5" volume="80"/>
 
-<light file="supernova.bmp" x="0" y="0" z="-4.4" size="1.2"/>
-<light file="supernova.bmp" x="0.6" y="0" z="-4.4" size="1.2"/>
-<light file="supernova.bmp" x="-0.6" y="0" z="-4.4" size="1.2"/>
-<light file="supernova.bmp" x="1.2" y="0" z="-4.4" size="1.2"/>
-<light file="supernova.bmp" x="-1.2" y="0" z="-4.4" size="1.2"/>
-<light file="supernova.bmp" x="1.8" y="0" z="-4.3" size="1.2"/>
-<light file="supernova.bmp" x="-1.8" y="0" z="-4.3" size="1.2"/>
+<light file="supernova.bmp.bfxm" x="0" y="0" z="-4.4" size="1.2"/>
+<light file="supernova.bmp.bfxm" x="0.6" y="0" z="-4.4" size="1.2"/>
+<light file="supernova.bmp.bfxm" x="-0.6" y="0" z="-4.4" size="1.2"/>
+<light file="supernova.bmp.bfxm" x="1.2" y="0" z="-4.4" size="1.2"/>
+<light file="supernova.bmp.bfxm" x="-1.2" y="0" z="-4.4" size="1.2"/>
+<light file="supernova.bmp.bfxm" x="1.8" y="0" z="-4.3" size="1.2"/>
+<light file="supernova.bmp.bfxm" x="-1.8" y="0" z="-4.3" size="1.2"/>
 
-<light file="supernova.bmp" x="5" y="0.275" z="-2" size="2"/>
-<light file="supernova.bmp" x="4" y="0.275" z="-2" size="2"/>
-<light file="supernova.bmp" x="-5" y="0.275" z="-2" size="2"/>
-<light file="supernova.bmp" x="-4" y="0.275" z="-2" size="2"/>
+<light file="supernova.bmp.bfxm" x="5" y="0.275" z="-2" size="2"/>
+<light file="supernova.bmp.bfxm" x="4" y="0.275" z="-2" size="2"/>
+<light file="supernova.bmp.bfxm" x="-5" y="0.275" z="-2" size="2"/>
+<light file="supernova.bmp.bfxm" x="-4" y="0.275" z="-2" size="2"/>
 
-<light file="supernova.bmp" x="8.75" y="0.275" z="-2.75" size="2"/>
-<light file="supernova.bmp" x="9.75" y="0.275" z="-2.75" size="2"/>
-<light file="supernova.bmp" x="-9.75" y="0.275" z="-2.75" size="2"/>
-<light file="supernova.bmp" x="-8.75" y="0.275" z="-2.75" size="2"/>
+<light file="supernova.bmp.bfxm" x="8.75" y="0.275" z="-2.75" size="2"/>
+<light file="supernova.bmp.bfxm" x="9.75" y="0.275" z="-2.75" size="2"/>
+<light file="supernova.bmp.bfxm" x="-9.75" y="0.275" z="-2.75" size="2"/>
+<light file="supernova.bmp.bfxm" x="-8.75" y="0.275" z="-2.75" size="2"/>
 
 <cockpit file = "heavy-cockpit.cpt" x = "0" y = "0" z = "0" />
 
@@ -86,16 +82,12 @@ edit it to fit the stats of your ship-->
 <description combatrole="BOMBER"/>
 
 
-<!--
-<CockpitDamage damage="float damage between 0 and 1 of cockpit component" />
--->
+
 
 <Hold volume = "500" >
 </Hold>
 
-<!--
-<Upgrade file="file to upgrade this unit with" /> 
--->
+
 
 <!-- END   TEMPLATES -->
 	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->

@@ -1,7 +1,7 @@
 <Unit scale ="3">
 
 
-<Meshfile file="turretbeam.xmesh" />
+<Meshfile file="turretbeam.bfxm" />
 <description combatrole="TSMALLCAP"/>
 
 

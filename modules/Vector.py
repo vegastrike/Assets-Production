@@ -3,7 +3,7 @@ def Vector (x,y,z):
 def Add (a,b):
     return (a[0]+b[0],a[1]+b[1],a[2]+b[2])
 def Sub (a,b):
-    return (a[0]-b[0],a[1]-b[1],a[2]-b[2])    
+    return (a[0]-b[0],a[1]-b[1],a[2]-b[2])
 def Neg (a):
     return (-a[0],-a[1],-a[2])
 def Cross(a,b):

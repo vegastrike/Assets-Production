@@ -4,7 +4,7 @@
 	<Thrust >
 		<Engine Afterburner = "0" Forward = "0" Retro = "0" Left = "0" Right = "0" Top = "0" Bottom = "0"  >
 		</Engine>
-		<Maneuver yaw = "0" pitch = "0" roll = "7604180"  >
+		<Maneuver roll = "0" pitch = "0" yaw = "7604180"  >
 		</Maneuver>
 	</Thrust>
 	<Defense HudImage = "medical-hud.spr" >
@@ -16,7 +16,12 @@
 		</Hull>
 	</Defense>
 
-	<Energy limit="10000" recharge="2000" />
+	
+	<Energy afterburnenergy="32000">
+		<Reactor recharge="2000" limit="10000" warpenergy="30000"/>
+	</Energy>
+           	<Jump missing="1" delay="1" jumpenergy="30000" insysenergy="30001"/>     
+
 
 	<Stats mass = "45625101.5" momentofinertia = "45625101.5" fuel = "20000"  >
 	</Stats>
@@ -28,7 +33,7 @@
 	</Dock>
 	<Dock x = "0" y = "7.6" z = "10" size = "1"  >
 	</Dock>
-	<Meshfile file = "station.xmesh"  >
+	<Meshfile file = "medical.bfxm"  >
 	</Meshfile>
 	<Hold volume = "100000000" >
 		<Category file = "Natural_Products/Food" >

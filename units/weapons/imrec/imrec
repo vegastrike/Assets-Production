@@ -1,11 +1,11 @@
 <Unit scale="1.6" >
 	<Description combatRole="MISSILE">
 	</Description>
-	<Meshfile file = "imrec.xmesh"  >
+	<Meshfile file = "imrec.bfxm"  >
 	</Meshfile>
 	<BspMesh RAPID = "0"  >
 	</BspMesh>
-	<Light file = "supernova.bmp" x = "0" y = "0" z = "-2" size = ".6"  >
+	<Light file = "supernova.bmp.bfxm" x = "0" y = "0" z = "-2" size = ".6"  >
 	</Light>
 	<Thrust >
 		<Engine Afterburner = "380" Forward = "380" Retro = "382" Left = "342" Right = "342" Top = "342" Bottom = "342"  >

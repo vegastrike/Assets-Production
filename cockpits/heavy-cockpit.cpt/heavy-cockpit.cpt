@@ -1,9 +1,10 @@
-<Cockpit mesh="cockpit-heavy.xmesh" r=".8" g=".8" b=".8" soundfile="vdu_c.wav" >
+<Cockpit mesh="cockpit-heavy.bfxm" r=".8" g=".8" b=".8" soundfile="vdu_c.wav" >
 	<Crosshairs file="crosshairs.spr" xcent="0" ycent="0"/>
 	<Radar file="radar.spr" />
 	<RearRadar file="radarr.spr" />
 	<Speed file="radar.spr" xcent="-.23" ycent="-.52" width=".018" height=".036"/>
 	<SetSpeed file="radar.spr" xcent=".23" ycent="-.52" width=".018" height=".036"/>
+	<WARPFIELDSTRENGTH file="radar.spr" xcent="-.23" ycent="-.58" width=".018" height=".036"/>
 <!--	<ShieldF file="shieldf.spr"/>
 	<ShieldB file="shieldf.spr" xcent="-.3" ycent="-.92" GaugeDown="1"/>
 	<ArmorL file="armorl.spr"  GaugeLeft="1"/>

@@ -1,7 +1,7 @@
 <Unit scale ="275">
 	<Description combatRole ="CAPITAL">
 	</Description>
-	<Meshfile file ="yavok.xmesh">
+	<Meshfile file ="yavok.bfxm">
 	</Meshfile>
 	<Dock x ="0" y ="0" z ="-.3" size =".3">
 	</Dock>
@@ -65,11 +65,11 @@
 <Upgrade file="reactor_level_0"/>
 	<Jump missing = "1" delay ="1" jumpenergy ="29000" insysenergy ="28000">
 	</Jump>
-	<Light file ="supernova.bmp" x ="0.003974" y ="-0.088041" z ="-10.100000" size ="0.270000">
+	<Light file ="supernova.bmp.bfxm" x ="0.003974" y ="-0.088041" z ="-10.100000" size ="0.270000">
 	</Light>
-	<Light file ="supernova.bmp" x ="0.129814" y ="0.211841" z ="-10.100000" size ="0.250000">
+	<Light file ="supernova.bmp.bfxm" x ="0.129814" y ="0.211841" z ="-10.100000" size ="0.250000">
 	</Light>
-	<Light file ="supernova.bmp" x ="-0.147755" y ="0.207606" z ="-10.100000" size ="0.250000">
+	<Light file ="supernova.bmp.bfxm" x ="-0.147755" y ="0.207606" z ="-10.100000" size ="0.250000">
 	</Light>
 	<Subunit file ="capship_blank" x ="-1.125000" y ="0.300000" z ="-2.475000" ri ="0.986871" rj ="0.000000" rk ="0.161513" qi ="0.000000" qj ="1.000000" qk ="0.000000">
 	</Subunit>

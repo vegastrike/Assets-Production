@@ -1,5 +1,5 @@
 <Unit scale ="4">
-	<Meshfile file ="kyta.xmesh">
+	<Meshfile file ="derivative.bfxm">
 	</Meshfile>
 	<BspMesh>
 	</BspMesh>
@@ -41,9 +41,9 @@
 	</Mount>
 	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE" x ="-1.50600" y ="-0.154000" z ="-1.83200" ammo ="5" volume ="80">
 	</Mount>
-	<Light file ="supernova.bmp" x ="0.158000" y ="2.80064e-2" z ="-4.83800" size ="1">
+	<Light file ="supernova.bmp.bfxm" x ="0.158000" y ="2.80064e-2" z ="-4.83800" size ="1">
 	</Light>
-	<Light file ="supernova.bmp" x ="0.786000" y ="3.40064e-2" z ="-4.83800" size ="1">
+	<Light file ="supernova.bmp.bfxm" x ="0.786000" y ="3.40064e-2" z ="-4.83800" size ="1">
 	</Light>
 	<Hold volume ="20">
 	</Hold>

@@ -1,10 +1,6 @@
 <Unit scale =".69">
-	<Meshfile file ="thrudhi.xmesh">
-	</Meshfile>
-	<Meshfile file ="thrudsails.xmesh">
-	</Meshfile>
-	<ShieldMesh file ="shield1.xmesh">
-	</ShieldMesh>
+<Meshfile file="thrud.bfxm"/>
+<ShieldMesh file="thrud_shield.bfxm"/>	
 	<description combatrole ="FIGHTER">
 	</description>
 	<cockpit file ="rlaan-cockpit.cpt" x ="0" y ="3" z ="23">

@@ -1,8 +1,5 @@
 <Unit scale ="5.00000">
-	<Meshfile file ="goddard_top.xmesh">
-	</Meshfile>
-	<Meshfile file ="goddard_bottom.xmesh">
-	</Meshfile>
+	<Meshfile file ="goddard.bfxm"/>
 	<Thrust>
 		<Engine Afterburner ="100000" Forward ="80000" Retro ="80000" Left ="75000" Right ="75000" Top ="75000" Bottom ="75000">
 		</Engine>
@@ -55,35 +52,35 @@
 	</mount>
 	<mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE" x ="-7.9" y ="0" z ="-3" ammo ="5" volume ="80">
 	</mount>
-	<light file ="supernova.bmp" x ="0" y ="0" z ="-4.4" size ="1.2">
+	<light file ="supernova.bmp.bfxm" x ="0" y ="0" z ="-4.4" size ="1.2">
 	</light>
-	<light file ="supernova.bmp" x ="0.6" y ="0" z ="-4.4" size ="1.2">
+	<light file ="supernova.bmp.bfxm" x ="0.6" y ="0" z ="-4.4" size ="1.2">
 	</light>
-	<light file ="supernova.bmp" x ="-0.6" y ="0" z ="-4.4" size ="1.2">
+	<light file ="supernova.bmp.bfxm" x ="-0.6" y ="0" z ="-4.4" size ="1.2">
 	</light>
-	<light file ="supernova.bmp" x ="1.2" y ="0" z ="-4.4" size ="1.2">
+	<light file ="supernova.bmp.bfxm" x ="1.2" y ="0" z ="-4.4" size ="1.2">
 	</light>
-	<light file ="supernova.bmp" x ="-1.2" y ="0" z ="-4.4" size ="1.2">
+	<light file ="supernova.bmp.bfxm" x ="-1.2" y ="0" z ="-4.4" size ="1.2">
 	</light>
-	<light file ="supernova.bmp" x ="1.8" y ="0" z ="-4.3" size ="1.2">
+	<light file ="supernova.bmp.bfxm" x ="1.8" y ="0" z ="-4.3" size ="1.2">
 	</light>
-	<light file ="supernova.bmp" x ="-1.8" y ="0" z ="-4.3" size ="1.2">
+	<light file ="supernova.bmp.bfxm" x ="-1.8" y ="0" z ="-4.3" size ="1.2">
 	</light>
-	<light file ="supernova.bmp" x ="5" y ="0.275" z ="-2" size ="2">
+	<light file ="supernova.bmp.bfxm" x ="5" y ="0.275" z ="-2" size ="2">
 	</light>
-	<light file ="supernova.bmp" x ="4" y ="0.275" z ="-2" size ="2">
+	<light file ="supernova.bmp.bfxm" x ="4" y ="0.275" z ="-2" size ="2">
 	</light>
-	<light file ="supernova.bmp" x ="-5" y ="0.275" z ="-2" size ="2">
+	<light file ="supernova.bmp.bfxm" x ="-5" y ="0.275" z ="-2" size ="2">
 	</light>
-	<light file ="supernova.bmp" x ="-4" y ="0.275" z ="-2" size ="2">
+	<light file ="supernova.bmp.bfxm" x ="-4" y ="0.275" z ="-2" size ="2">
 	</light>
-	<light file ="supernova.bmp" x ="8.75" y ="0.275" z ="-2.75" size ="2">
+	<light file ="supernova.bmp.bfxm" x ="8.75" y ="0.275" z ="-2.75" size ="2">
 	</light>
-	<light file ="supernova.bmp" x ="9.75" y ="0.275" z ="-2.75" size ="2">
+	<light file ="supernova.bmp.bfxm" x ="9.75" y ="0.275" z ="-2.75" size ="2">
 	</light>
-	<light file ="supernova.bmp" x ="-9.75" y ="0.275" z ="-2.75" size ="2">
+	<light file ="supernova.bmp.bfxm" x ="-9.75" y ="0.275" z ="-2.75" size ="2">
 	</light>
-	<light file ="supernova.bmp" x ="-8.75" y ="0.275" z ="-2.75" size ="2">
+	<light file ="supernova.bmp.bfxm" x ="-8.75" y ="0.275" z ="-2.75" size ="2">
 	</light>
 	<cockpit file ="heavy-cockpit.cpt" x ="0" y ="0" z ="0">
 	</cockpit>

@@ -1,12 +1,8 @@
 <Unit scale =".69336">
 	<Description combatRole ="FIGHTER">
 	</Description>
-	<Meshfile file ="f404p.xmesh">
-	</Meshfile>
-	<Meshfile file ="f404c.xmesh">
-	</Meshfile>
-	<Meshfile file ="f404b.xmesh">
-	</Meshfile>
+<Meshfile file = "hammer.bfxm" >
+	</Meshfile>	
 	<Sound>
 	</Sound>
 	<cockpit file ="light_cockpit.cpt" x ="0" y =".5" z ="10">
@@ -51,7 +47,7 @@
 <Upgrade file="reactor_level_0"/>
 	<Jump missing = "1" delay ="1" jumpenergy ="200" insysenergy ="100">
 	</Jump>
-	<Light file ="supernova.bmp" x ="0.086" y ="-0.269" z ="-14.620000" size ="2.000000">
+	<Light file ="supernova.bmp.bfxm" x ="0.086" y ="-0.269" z ="-14.620000" size ="2.000000">
 	</Light>
 	<Thrust>
 		<Engine Afterburner ="10000" Forward ="4000" Retro ="4000" Left ="4000" Right ="4000" Top ="4000" Bottom ="4000">

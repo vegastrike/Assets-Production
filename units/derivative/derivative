@@ -1,6 +1,6 @@
 <Unit scale="6">
 
-<Meshfile file="aeon.xmesh"/>
+<Meshfile file="derivative.bfxm"/>
 <description combatrole="FIGHTER"/>
 	<cockpit file="light_cockpit.cpt" x="0" y=".21" z="1.548"/>
 	<Mount weapon="Disruptor" size="special heavy" x="-2.24600" y="-0.412000" z="-0.328000" />
@@ -32,9 +32,9 @@
            	<Jump delay="1" jumpenergy="90" insysenergy="40"/>       
 
 <!-- new elements added -->
-	<Light file = "supernova.bmp" x = "0.00000e+0" y = "8.60000e-2" z = "-3.90200" size = ".5" />
-	<Light file = "supernova.bmp" x = "-0.386000" y = "8.60000e-2" z = "-3.90200" size = ".5" />
-	<Light file = "supernova.bmp" x = "0.386000" y = "8.60000e-2" z = "-3.90200" size = ".5" />
+	<Light file = "supernova.bmp.bfxm" x = "0.00000e+0" y = "8.60000e-2" z = "-3.90200" size = ".5" />
+	<Light file = "supernova.bmp.bfxm" x = "-0.386000" y = "8.60000e-2" z = "-3.90200" size = ".5" />
+	<Light file = "supernova.bmp.bfxm" x = "0.386000" y = "8.60000e-2" z = "-3.90200" size = ".5" />
 	<Hold volume="7">
 	</Hold>
 	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->

@@ -1,6 +1,6 @@
 <Unit scale="5000">
 
-<Meshfile file="wormhole_stable.xmesh"/>
+<Meshfile file="wormhole_stable.bfxm"/>
 
 	<Defense>
 		<Armor front="100000" right="80000" left="80000" back="100000"/>

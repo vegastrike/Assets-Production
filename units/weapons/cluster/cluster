@@ -1,11 +1,11 @@
 <Unit >
 	<Description combatRole="HEAVYMISSILE">
 	</Description>
-	<Meshfile file = "cluster.xmesh"  >
+	<Meshfile file = "cluster.bfxm"  >
 	</Meshfile>
 	<BspMesh RAPID = "0"  >
 	</BspMesh>
-	<Light file = "supernova.bmp" x = "0" y = "0" z = "-2" size = ".6"  >
+	<Light file = "supernova.bmp.bfxm" x = "0" y = "0" z = "-2" size = ".6"  >
 	</Light>
 	<Thrust >
 		<Engine Afterburner = "30" Forward = "30" Retro = "30" Left = "3" Right = "3" Top = "3" Bottom = "3"  >

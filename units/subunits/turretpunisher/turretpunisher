@@ -1,6 +1,6 @@
 <Unit scale ="20">
 
-<Meshfile file="turretbeam.xmesh" />
+<Meshfile file="turretbeam.bfxm" />
 	<description combatrole="TSMALLCAP"/>
 		<Thrust>
 		<Engine Afterburner="000000" Forward="000000" Retro="0000" Left="0000" Right="0000" Top="00000" Bottom="000000"/>

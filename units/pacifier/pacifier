@@ -1,8 +1,6 @@
 <Unit>
 	<description combatrole="BOMBER"/>
-	<Meshfile file="ospreyhi.xmesh" />
-	<Meshfile file="ospreyhiglow.xmesh" />
-	<Meshfile file="navlights.xmesh" />
+	<Meshfile file="pacifier.bfxm" />
 
 	<Mount weapon="Plasma" size="Light Medium Heavy" x="1" y="-5.86" z="11.5"/>
 	<Mount weapon="Plasma" size="Light Medium Heavy" x="-1" y="-5.86" z="11.5"/>
@@ -30,19 +28,19 @@
 	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="3.000000" y="-.9000000" z="-1.000000" ammo="5" volume="80"/>	
 	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-3.000000" y="-.9000000" z="-1.000000" ammo="5" volume="80"/>	
 
-	<Light file="supernova.bmp" x="4" y="1.05" z="-15.5" size="13"/>
-	<Light file="supernova.bmp" x="-4" y="1.05" z="-15.5" size="13"/>
-	<Light file="supernova.bmp" x="3.75" y="-.75" z="-17" size="18"/>
-	<Light file="supernova.bmp" x="-3.75" y="-.75" z="-17" size="18"/>
+	<Light file="supernova.bmp.bfxm" x="4" y="1.05" z="-15.5" size="13"/>
+	<Light file="supernova.bmp.bfxm" x="-4" y="1.05" z="-15.5" size="13"/>
+	<Light file="supernova.bmp.bfxm" x="3.75" y="-.75" z="-17" size="18"/>
+	<Light file="supernova.bmp.bfxm" x="-3.75" y="-.75" z="-17" size="18"/>
 
-	<Light file="supernova.bmp" x="3.5" y="-3.75" z="-15.8" size="8"/>
-	<Light file="supernova.bmp" x="-3.5" y="-3.75" z="-15.8" size="8"/>
-	<Light file="supernova.bmp" x="5.25" y="-3.75" z="-15.8" size="8"/>
-	<Light file="supernova.bmp" x="-5.25" y="-3.75" z="-15.8" size="8"/>
-	<Light file="supernova.bmp" x="5.25" y="-5.1" z="-15.8" size="8"/>
-	<Light file="supernova.bmp" x="-5.25" y="-5.1" z="-15.8" size="8"/>
-	<Light file="supernova.bmp" x="3.5" y="-5.1" z="-15.8" size="8"/>
-	<Light file="supernova.bmp" x="-3.5" y="-5.1" z="-15.8" size="8"/>	
+	<Light file="supernova.bmp.bfxm" x="3.5" y="-3.75" z="-15.8" size="8"/>
+	<Light file="supernova.bmp.bfxm" x="-3.5" y="-3.75" z="-15.8" size="8"/>
+	<Light file="supernova.bmp.bfxm" x="5.25" y="-3.75" z="-15.8" size="8"/>
+	<Light file="supernova.bmp.bfxm" x="-5.25" y="-3.75" z="-15.8" size="8"/>
+	<Light file="supernova.bmp.bfxm" x="5.25" y="-5.1" z="-15.8" size="8"/>
+	<Light file="supernova.bmp.bfxm" x="-5.25" y="-5.1" z="-15.8" size="8"/>
+	<Light file="supernova.bmp.bfxm" x="3.5" y="-5.1" z="-15.8" size="8"/>
+	<Light file="supernova.bmp.bfxm" x="-3.5" y="-5.1" z="-15.8" size="8"/>	
 
 	<Thrust>
 		<Engine Afterburner="20000" Forward="15000" Retro="10000" Left="10000" Right="10000" Top="10000" Bottom="10000"/>

@@ -51,14 +51,14 @@ class wingman (Director.Mission):
                 else:
                     VS.IOmessage (0,lead.getName(),"all","You don't have the money. A fool like you won't last long!")
     def Execute (self):
-        
+
         if (self.adjsys.Execute()):
             self.GenerateWingmen()
             VS.terminateMission(1)
     def initbriefing(self):
-        print "ending briefing"                
+        print "ending briefing"
     def loopbriefing(self):
         print "loop briefing"
         Briefing.terminate();
     def endbriefing(self):
-        print "ending briefing"        
+        print "ending briefing"

@@ -41,7 +41,7 @@ def systemCargoDemand (category,priceratio,quantratio,ships=1,planets=1):
                 adjustUnitCargo(un,category,priceratio,quantratio)
         i.advance()
         un=i.current()
-        
+
 def setFirstSaveData(player,key,val):
     mylen = Director.getSaveDataLength(player,key)
     if (mylen>0):
@@ -56,24 +56,24 @@ def getAdjacentSystems (currentsystem, sysaway, jumps=(),preferredfaction=''):
     max=VS.GetNumAdjacentSystems(currentsystem)
     if ((sysaway<=0) or (max<=0)):
 #      _io.message (1,"game","all","Your final destination is %s" % (currentsystem))
-      return (currentsystem,jumps)
+        return (currentsystem,jumps)
     else:
-      syslist=[]
-      numadj=VS.GetNumAdjacentSystems(currentsystem)
-      for i in range(numadj):
-        cursys=VS.GetAdjacentSystem(currentsystem,i)
-        if preferredfaction!=None:
-          if VS.GetGalaxyProperty(cursys,"faction")!=preferredfaction:
-            continue
-        if ((cursys in jumps) or (cursys == VS.getSystemFile())):
-          continue
-        syslist.append(cursys)
-      if not len(syslist):
-        return getAdjacentSystems(currentsystem,0,jumps)
-      nextsystem=syslist[vsrandom.randrange(0,len(syslist))]
+        syslist=[]
+        numadj=VS.GetNumAdjacentSystems(currentsystem)
+        for i in range(numadj):
+            cursys=VS.GetAdjacentSystem(currentsystem,i)
+            if preferredfaction!=None:
+                if VS.GetGalaxyProperty(cursys,"faction")!=preferredfaction:
+                    continue
+            if ((cursys in jumps) or (cursys == VS.getSystemFile())):
+                continue
+            syslist.append(cursys)
+        if not len(syslist):
+            return getAdjacentSystems(currentsystem,0,jumps)
+        nextsystem=syslist[vsrandom.randrange(0,len(syslist))]
 #      _io.message (1,"game","all","Jump from %s to %s." % (currentsystem,nextsystem))
-      return getAdjacentSystems(nextsystem,sysaway-1,jumps+(nextsystem,))
-  
+        return getAdjacentSystems(nextsystem,sysaway-1,jumps+(nextsystem,))
+
 #def getAdjacentSystems (currentsystem, num_systems_away):
 #    return nearsys (currentsystem,num_systems_away,())
 
@@ -88,19 +88,19 @@ def getRandomJumppoint():
     jp_list=getJumppointList()
     size=len(jp_list)
     if (size>0):
-      return jp_list[vsrandom.randrange(0,size)]
+        return jp_list[vsrandom.randrange(0,size)]
     else:
-      return VS.Unit()
+        return VS.Unit()
 
 def getJumppointList():
     jp_list=()
     ship_nr=0
     uni=VS.getUnit(0)
     while(uni):
-      if(uni.isJumppoint()):
-	jp_list+=(uni,)
-      ship_nr+=1
-      uni=VS.getUnit(ship_nr)
+        if(uni.isJumppoint()):
+            jp_list+=(uni,)
+        ship_nr+=1
+        uni=VS.getUnit(ship_nr)
     return jp_list
 
 def getMessagePlayer(un):
@@ -127,17 +127,17 @@ def _tmpint(str,default):
     except:
         return default
 def significantUnits():
-	iter= VS.getUnitList()
-	un = iter.current()
-	ret = []
-	while (iter.notDone()):
-		if (un):
-			if (un.isSignificant()):
-				ret+=[un]
-		iter.advance()
-		un= iter.current()
-	return ret
-	
+    iter= VS.getUnitList()
+    un = iter.current()
+    ret = []
+    while (iter.notDone()):
+        if (un):
+            if (un.isSignificant()):
+                ret+=[un]
+        iter.advance()
+        un= iter.current()
+    return ret
+
 def GetNumSignificantsForSystem (cursys):
     numjmp=VS.GetNumAdjacentSystems(cursys)
     return _tmpint(VS.GetGalaxyProperty(cursys,"num_planets"),3)+_tmpint(VS.GetGalaxyProperty(cursys,"num_moons"),4)+_tmpint(VS.GetGalaxyProperty(cursys,"num_gas_giants"),2)+_tmpint(VS.GetGalaxyProperty(cursys,"num_starbases"),1)+numjmp
@@ -161,4 +161,3 @@ def GetNumSignificantsForSystem (cursys):
 ##      last_system=_std.GetSystemName()
 ##      jumped=true
 ##    return jumped
-

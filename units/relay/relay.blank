@@ -19,7 +19,7 @@
 	<Energy afterburnenergy = "32767">
 	</Energy>
 <Upgrade file="reactor_level_0"/>
-	<Meshfile file ="relay.xmesh">
+	<Meshfile file ="relay.bfxm">
 	</Meshfile>
 	<Dock x ="-30" y ="16" z ="0" size ="5">
 	</Dock>

@@ -1,9 +1,9 @@
 <Unit scale =".50000">
-	<Light x ="-0.249996" y ="0.00000e+0" z ="-1.83758" file ="supernova.bmp" size ="1.5">
+	<Light x ="-0.249996" y ="0.00000e+0" z ="-1.83758" file ="supernova.bmp.bfxm" size ="1.5">
 	</Light>
-	<Light x ="0.250004" y ="0.00000e+0" z ="-1.83758" file ="supernova.bmp" size ="1.5">
+	<Light x ="0.250004" y ="0.00000e+0" z ="-1.83758" file ="supernova.bmp.bfxm" size ="1.5">
 	</Light>
-	<Meshfile file ="eject_pod.xmesh">
+	<Meshfile file ="eject.bfxm">
 	</Meshfile>
 	<RapidMesh rapid ="0">
 	</RapidMesh>

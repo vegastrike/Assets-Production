@@ -1,6 +1,6 @@
 <Unit scale="8">
 
-<Meshfile file="osprey.xmesh"/>
+<Meshfile file="redeemer.bfxm"/>
 
 <Mount weapon="Ion" size="Light Medium" x="0.00000e+0" y="-9.00000e-2" z="1.67200"/>
 
@@ -17,13 +17,13 @@
 
 <Mount weapon = "Swarm" size = "Special Special-Missile" x="0.584000" y="-0.182000" z="0" ammo="40" volume="10"/>
 
-<Light file = "supernova.bmp" x = "-0.330000" y = "8.00000e-3" z = "-1.32400" size = ".25" />
+<Light file = "supernova.bmp.bfxm" x = "-0.330000" y = "8.00000e-3" z = "-1.32400" size = ".25" />
 
-<Light file = "supernova.bmp" x = "-0.538000" y = "8.00000e-3" z = "-1.32400" size = ".25" />
+<Light file = "supernova.bmp.bfxm" x = "-0.538000" y = "8.00000e-3" z = "-1.32400" size = ".25" />
 
-<Light file = "supernova.bmp" x = "0.550000" y = "8.00000e-3" z = "-1.32400" size = ".25" />
+<Light file = "supernova.bmp.bfxm" x = "0.550000" y = "8.00000e-3" z = "-1.32400" size = ".25" />
 
-<Light file = "supernova.bmp" x = "0.342000" y = "8.00000e-3" z = "-1.32400" size = ".25" />
+<Light file = "supernova.bmp.bfxm" x = "0.342000" y = "8.00000e-3" z = "-1.32400" size = ".25" />
 
 <!-- BEGIN TEMPLATES the following entries are templates (mostly from wayfarer)
 NONE of this values are created dynamically by the script

@@ -1,6 +1,6 @@
 <Unit>
 
-<Meshfile file="turretbeamgun.xmesh"/>
+<Meshfile file="turretbeamgun.bfxm"/>
 <description combatrole="POINTDEF"/>
 	<Mount weapon="LR_Disruptorbeam" size="capship-light autotracking" x="0" y="0" z="1" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>
 

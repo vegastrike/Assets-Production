@@ -1,7 +1,7 @@
 <Unit scale ="90">
 	<Description combatRole ="ESCORTCAP">
 	</Description>
-	<Meshfile file ="vark.xmesh">
+	<Meshfile file ="vark.bfxm">
 	</Meshfile>
 	<Thrust>
 		<Engine Afterburner ="900000000" Forward ="42000000" Retro ="42000000" Left ="5000000" Right ="5000000" Top ="5000000" Bottom ="5000000">
@@ -350,25 +350,25 @@
 	</Dock>
 	<Dock x ="-1" y ="-1.27" z ="9.47" size =".4">
 	</Dock>
-	<Light file ="supernova.bmp" x ="3.107134" y ="0.982170" z ="-8.841594" size ="0.700000">
+	<Light file ="supernova.bmp.bfxm" x ="3.107134" y ="0.982170" z ="-8.841594" size ="0.700000">
 	</Light>
-	<Light file ="supernova.bmp" x ="3.929002" y ="0.895344" z ="-8.664594" size ="0.510000">
+	<Light file ="supernova.bmp.bfxm" x ="3.929002" y ="0.895344" z ="-8.664594" size ="0.510000">
 	</Light>
-	<Light file ="supernova.bmp" x ="2.262926" y ="1.164508" z ="-9.039288" size ="0.790000">
+	<Light file ="supernova.bmp.bfxm" x ="2.262926" y ="1.164508" z ="-9.039288" size ="0.790000">
 	</Light>
-	<Light file ="supernova.bmp" x ="1.428900" y ="1.310004" z ="-9.229702" size ="0.970000">
+	<Light file ="supernova.bmp.bfxm" x ="1.428900" y ="1.310004" z ="-9.229702" size ="0.970000">
 	</Light>
-	<Light file ="supernova.bmp" x ="-3.149171" y ="0.971110" z ="-8.832106" size ="0.750000">
+	<Light file ="supernova.bmp.bfxm" x ="-3.149171" y ="0.971110" z ="-8.832106" size ="0.750000">
 	</Light>
-	<Light file ="supernova.bmp" x ="-3.958824" y ="0.827343" z ="-8.644172" size ="0.620000">
+	<Light file ="supernova.bmp.bfxm" x ="-3.958824" y ="0.827343" z ="-8.644172" size ="0.620000">
 	</Light>
-	<Light file ="supernova.bmp" x ="-2.311709" y ="1.111369" z ="-9.021999" size ="0.809999">
+	<Light file ="supernova.bmp.bfxm" x ="-2.311709" y ="1.111369" z ="-9.021999" size ="0.809999">
 	</Light>
-	<Light file ="supernova.bmp" x ="-1.445167" y ="1.301220" z ="-9.225076" size ="0.970000">
+	<Light file ="supernova.bmp.bfxm" x ="-1.445167" y ="1.301220" z ="-9.225076" size ="0.970000">
 	</Light>
-	<Light file ="supernova.bmp" x ="-0.798733" y ="-1.244226" z ="-4.088035" size ="1.630003">
+	<Light file ="supernova.bmp.bfxm" x ="-0.798733" y ="-1.244226" z ="-4.088035" size ="1.630003">
 	</Light>
-	<Light file ="supernova.bmp" x ="0.798733" y ="-1.244226" z ="-4.088036" size ="1.520002">
+	<Light file ="supernova.bmp.bfxm" x ="0.798733" y ="-1.244226" z ="-4.088036" size ="1.520002">
 	</Light>
 	<Mount weapon ="PenetratorMKVI" size ="capship-heavy autotracking" x ="-1.014189" y ="-0.804348" z ="11.984498" ri ="0.000000" rj ="0.000000" rk ="1.000000" qi ="-0.000000" qj ="1.000000" qk ="0.000000">
 	</Mount>

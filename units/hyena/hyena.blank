@@ -1,7 +1,7 @@
 <Unit>
 	<Description combatRole ="FIGHTER">
 	</Description>
-	<Meshfile file ="leokat.xmesh">
+	<Meshfile file ="hyena.bfxm">
 	</Meshfile>
 	<Thrust>
 		<Engine Afterburner ="10000" Forward ="6557" Retro ="5834" Left ="4311" Right ="4311" Top ="3149" Bottom ="1600">
@@ -35,13 +35,13 @@
 	</Jump>
 	<Hold volume ="35">
 	</Hold>
-	<Light file ="supernova.bmp" x ="0.769231" y ="0.875000" z ="-7.505970" size ="1.399999">
+	<Light file ="supernova.bmp.bfxm" x ="0.769231" y ="0.875000" z ="-7.505970" size ="1.399999">
 	</Light>
-	<Light file ="supernova.bmp" x ="-0.706480" y ="0.843911" z ="-7.505970" size ="1.349999">
+	<Light file ="supernova.bmp.bfxm" x ="-0.706480" y ="0.843911" z ="-7.505970" size ="1.349999">
 	</Light>
-	<Light file ="supernova.bmp" x ="1.439378" y ="-1.015805" z ="-7.476228" size ="0.990000">
+	<Light file ="supernova.bmp.bfxm" x ="1.439378" y ="-1.015805" z ="-7.476228" size ="0.990000">
 	</Light>
-	<Light file ="supernova.bmp" x ="-1.439378" y ="-1.015805" z ="-7.476228" size ="1.139999">
+	<Light file ="supernova.bmp.bfxm" x ="-1.439378" y ="-1.015805" z ="-7.476228" size ="1.139999">
 	</Light>
 	<Mount weapon ="" size ="LIGHT MEDIUM" x ="-2.046180" y ="-0.234908" z ="3.363305">
 	</Mount>

@@ -1,5 +1,5 @@
 <Unit scale ="8">
-	<Meshfile file ="osprey.xmesh">
+	<Meshfile file ="redeemer.bfxm">
 	</Meshfile>
 	<Mount weapon ="Ion" size ="Light Medium" x ="0.00000e+0" y ="-9.00000e-2" z ="1.67200">
 	</Mount>
@@ -15,13 +15,13 @@
 	</Mount>
 	<Mount weapon ="Swarm" size ="Special Special-Missile" x ="0.584000" y ="-0.182000" z ="0" ammo ="40" volume ="10">
 	</Mount>
-	<Light file ="supernova.bmp" x ="-0.330000" y ="8.00000e-3" z ="-1.32400" size =".25">
+	<Light file ="supernova.bmp.bfxm" x ="-0.330000" y ="8.00000e-3" z ="-1.32400" size =".25">
 	</Light>
-	<Light file ="supernova.bmp" x ="-0.538000" y ="8.00000e-3" z ="-1.32400" size =".25">
+	<Light file ="supernova.bmp.bfxm" x ="-0.538000" y ="8.00000e-3" z ="-1.32400" size =".25">
 	</Light>
-	<Light file ="supernova.bmp" x ="0.550000" y ="8.00000e-3" z ="-1.32400" size =".25">
+	<Light file ="supernova.bmp.bfxm" x ="0.550000" y ="8.00000e-3" z ="-1.32400" size =".25">
 	</Light>
-	<Light file ="supernova.bmp" x ="0.342000" y ="8.00000e-3" z ="-1.32400" size =".25">
+	<Light file ="supernova.bmp.bfxm" x ="0.342000" y ="8.00000e-3" z ="-1.32400" size =".25">
 	</Light>
 	<Thrust>
 		<Engine Afterburner ="5500" Forward ="4000" Retro ="3500" Left ="3500" Right ="3500" Top ="3500" Bottom ="3500">

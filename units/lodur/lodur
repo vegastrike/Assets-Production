@@ -1,9 +1,6 @@
 <Unit scale = "1.62">
 <description combatrole="CAPITAL"/>
-<Meshfile file="Lodurextra.xmesh"/>
-<Meshfile file="Lodurhi.xmesh"/>
-<Meshfile file="lodursails.xmesh"/>
-<Meshfile file="lodurlights.xmesh"/>
+<Meshfile file="lodur.bfxm"/>
 <Dock size="80" x="0" z="-220" y="-100"/>
 	<Thrust>
 		<Engine Afterburner="800000000" Forward="600000000" Retro="600000000" Left="5000000" Right="5000000" Top="5000000" Bottom="5000000"/>

@@ -1,13 +1,7 @@
 <Unit scale ="1.62">
 	<description combatrole ="CAPITAL">
 	</description>
-	<Meshfile file ="Lodurextra.xmesh">
-	</Meshfile>
-	<Meshfile file ="Lodurhi.xmesh">
-	</Meshfile>
-	<Meshfile file ="lodursails.xmesh">
-	</Meshfile>
-	<Meshfile file ="lodurlights.xmesh">
+	<Meshfile file ="lodur.bfxm">
 	</Meshfile>
 	<Dock size ="80" x ="0" z ="-220" y ="-100">
 	</Dock>

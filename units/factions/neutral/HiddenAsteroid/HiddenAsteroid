@@ -1,5 +1,5 @@
 <Unit>
-<Meshfile file="Hidden.xmesh"/>
+<Meshfile file="hiddenasteroid.bfxm"/>
 	<Thrust>
 		<Engine Afterburner="00.000000" Forward="000000" Retro="000000" Left="00000" Right="000000" Top="000000" Bottom="00000"/>
 		<Maneuver yaw="0000" pitch="00000" roll="00000"/>

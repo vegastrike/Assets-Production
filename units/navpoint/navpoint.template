@@ -1,5 +1,5 @@
 <Unit scale ="1000">
-	<Meshfile file ="nav.xmesh">
+	<Meshfile file ="navpoint.bfxm">
 	</Meshfile>
 	<Defense ECM ="1.000000" RepairDroid ="6">
 		<Hull strength ="1000000000000000">

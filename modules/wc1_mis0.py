@@ -36,13 +36,13 @@ class wc1_mis0:
             return ("vega_sector/vega",0)
         else:
             #failed
-            return ("vega_sector/vega",0) 
+            return ("vega_sector/vega",0)
     def Execute(self):
         playa= VS.getPlayer()
         if (playa):
             for i in range (len(self.nav)):
                 if (self.nav[i]):
-                    if (not self.launched[i]):                    
+                    if (not self.launched[i]):
                         if (playa.getDistance (self.nav[i])<1000):
                             self.LaunchNav(i,playa)
                             self.launched[i]=1

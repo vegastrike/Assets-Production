@@ -49,18 +49,18 @@ class quest_explore (quest.quest):
                     Director.putSaveData(self.playernum,(self.sysfile+"_nav"),0,2)
         elif (sys==self.newsys):
             if not (quest.checkSaveValue(self.playernum,self.newsys+'_navpoint',0)):
-                    print "ret0becausenewsys+_navpoint==0!!!!!!!!!!!"
-                    return 1
+                print "ret0becausenewsys+_navpoint==0!!!!!!!!!!!"
+                return 1
             if plyr!=self.you:
                 if self.notcreatedyet==5:
-                    VS.LoadMission('mission/patrol/explore.mission')
+                    VS.LoadMission('patrol/explore.mission')
                     self.you=plyr
             if quest.findQuest(self.playernum,(self.sysfile+"_nav"),2):
-                VS.LoadMission('mission/patrol/explore.mission')
+                VS.LoadMission('patrol/explore.mission')
                 self.notcreatedyet=5
                 Director.putSaveData(self.playernum,(self.sysfile+"_nav"),0,3)
             elif self.notcreatedyet!=5 and quest.findQuest(self.playernum,(self.sysfile+"_nav"),3):
-                VS.LoadMission('mission/patrol/explore.mission')
+                VS.LoadMission('patrol/explore.mission')
                 self.notcreatedyet=5
         return 1
 

@@ -16,7 +16,7 @@ class total_war (Director.Mission):
     def launch_new_wave(self):
         side = vsrandom.randrange(0,2)
         faction="confed"
-        ai = vsrandom.randrange(0,2)
+        ai = vsrandom.randrange(0,6)
         if (ai==0):
             ai = "printhello.py"
         else:
@@ -32,7 +32,6 @@ class total_war (Director.Mission):
         un=VS.getUnit(0);
         i=0
         while (un):
-            print un->getName()
             i+=1
             un=  VS.getUnit(i)
         time = VS.GetGameTime()
@@ -41,9 +40,9 @@ class total_war (Director.Mission):
             self.waittime=vsrandom.randrange(10.0,30.0)
             self.lasttime=time
     def initbriefing(self):
-        print "ending briefing"                
+        print "ending briefing"
     def loopbriefing(self):
         print "loop briefing"
         Briefing.terminate();
     def endbriefing(self):
-        print "ending briefing"        
+        print "ending briefing"

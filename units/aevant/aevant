@@ -1,7 +1,6 @@
 <Unit scale="1.0919">
 	<cockpit file="light_cockpit.cpt"/>
-	<Meshfile file="aevanthi.xmesh" />
-	<Meshfile file="aevanthiglow.xmesh" />
+	<Meshfile file="aevant.bfxm"/>
 
 	<description combatrole="BOMBER"/>
 	<Thrust>
@@ -20,15 +19,15 @@
 		<Radar itts="true" color="true" error="0"/> </Computer>
 
 	<Energy afterburnenergy="80">
-		<Reactor recharge="240" limit="1200" warpenergy="600"/>
+		<Reactor recharge="240" limit="1200" warpenergy="1600"/>
 	</Energy>
            	<Jump delay="1" jumpenergy="300" insysenergy="200"/>   
 
 <!-- new elements added -->
-<Light file="aeraburn" x="-1" y="5.125" z="-11.25" size="8"/>
-<Light file="aeraburn" x="1" y="5.125" z="-11.25" size="8"/>
-<Light file="aeraburn" x="-1" y="-3" z="-11.25" size="8"/>
-<Light file="aeraburn" x="1" y="-3" z="-11.25" size="8"/>
+<Light file="aeraburn.bfxm" x="-1" y="5.125" z="-11.25" size="8"/>
+<Light file="aeraburn.bfxm" x="1" y="5.125" z="-11.25" size="8"/>
+<Light file="aeraburn.bfxm" x="-1" y="-3" z="-11.25" size="8"/>
+<Light file="aeraburn.bfxm" x="1" y="-3" z="-11.25" size="8"/>
 <!--
 <Mount weapon="Photon" size="Light medium heavy autotracking" x="8.276" y="-3" z="0" />
 <Mount weapon="Photon" size="Light medium heavy autotracking" x="-8.276" y="-3" z="0" />

@@ -3,7 +3,7 @@
 	</Description>
 	<Bspmesh usebsp ="0">
 	</Bspmesh>
-	<Meshfile file ="vitik.xmesh">
+	<Meshfile file ="vitik.bfxm">
 	</Meshfile>
 	<Dock x ="-5" y ="0" z ="-.3" size ="1.9">
 	</Dock>
@@ -3044,17 +3044,17 @@
 	<upgrade file="add_reactor_capacitance"/>
 	<Jump delay ="1" jumpenergy ="20000">
 	</Jump>
-	<Light file ="supernova.bmp" x ="-2.184859" y ="-0.079105" z ="-38.838833" size ="0.660000">
+	<Light file ="supernova.bmp.bfxm" x ="-2.184859" y ="-0.079105" z ="-38.838833" size ="0.660000">
 	</Light>
-	<Light file ="supernova.bmp" x ="-2.862405" y ="-0.101512" z ="-38.838829" size ="0.660000">
+	<Light file ="supernova.bmp.bfxm" x ="-2.862405" y ="-0.101512" z ="-38.838829" size ="0.660000">
 	</Light>
-	<Light file ="supernova.bmp" x ="-3.566908" y ="-0.083632" z ="-38.838833" size ="0.660000">
+	<Light file ="supernova.bmp.bfxm" x ="-3.566908" y ="-0.083632" z ="-38.838833" size ="0.660000">
 	</Light>
-	<Light file ="supernova.bmp" x ="2.874130" y ="-0.084240" z ="-38.838833" size ="0.660000">
+	<Light file ="supernova.bmp.bfxm" x ="2.874130" y ="-0.084240" z ="-38.838833" size ="0.660000">
 	</Light>
-	<Light file ="supernova.bmp" x ="3.550485" y ="-0.079112" z ="-38.838833" size ="0.660000">
+	<Light file ="supernova.bmp.bfxm" x ="3.550485" y ="-0.079112" z ="-38.838833" size ="0.660000">
 	</Light>
-	<Light file ="supernova.bmp" x ="2.219056" y ="-0.084286" z ="-38.838833" size ="0.660000">
+	<Light file ="supernova.bmp.bfxm" x ="2.219056" y ="-0.084286" z ="-38.838833" size ="0.660000">
 	</Light>
 	<Subunit file ="aeraturretadvtorp" x ="0" y ="2" z ="0" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
 	</Subunit>

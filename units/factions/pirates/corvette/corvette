@@ -1,7 +1,7 @@
 <Unit >
 <Description combatRole="ESCORTCAP">
 </Description>
-	<Meshfile file = "corvette.xmesh"  >
+	<Meshfile file = "corvette.bfxm"  >
 	</Meshfile>
 	<Thrust >
 		<Engine Afterburner = "467640" Forward = "218232" Retro = "190953" Left = "109116" Right = "109116" Top = "109116" Bottom = "109116"  >
@@ -115,9 +115,9 @@
 	</Subunit>
 	<Subunit file = "turret" x = "35.000000" y = "-24.500000" z = "-147.000000" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
 	</Subunit>
-	<Light file = "supernova.bmp" x = "27.433210" y = "2.060570" z = "-245.000000" size = "56.000000"  >
+	<Light file = "supernova.bmp.bfxm" x = "27.433210" y = "2.060570" z = "-245.000000" size = "56.000000"  >
 	</Light>
-	<Light file = "supernova.bmp" x = "-25.389259" y = "0.350620" z = "-245.000015" size = "51.100002"  >
+	<Light file = "supernova.bmp.bfxm" x = "-25.389259" y = "0.350620" z = "-245.000015" size = "51.100002"  >
 	</Light>
 	<Hold volume = "1000000000" >
 		<Category file = "Natural_Products/Food" >

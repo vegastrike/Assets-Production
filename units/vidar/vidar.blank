@@ -1,7 +1,5 @@
 <Unit scale ="0.5">
-	<Meshfile file ="vidarhi.xmesh">
-	</Meshfile>
-	<Meshfile file ="vidarsails.xmesh">
+	<Meshfile file ="vidar.bfxm">
 	</Meshfile>
 	<description combatrole ="BOMBER">
 	</description>

@@ -1,9 +1,7 @@
 <Unit scale="1.31726">
 	<description combatrole="FIGHTER"/>
 	<cockpit file="light_cockpit.cpt" x="0" y="-.25" z="7"/>
-	<Meshfile file="aelarhi.xmesh" />
-	<Meshfile file="aelarhiglow.xmesh" />
-	<Meshfile file="navlights.xmesh" />
+	<Meshfile file="aelar.bfxm"/>
 	<Mount weapon="Photon" size="light medium autotracking" x="8" y="-3" z="10.85"/>
 	<Mount weapon="Photon" size="light medium autotracking" x="-8" y="-3" z="10.85"/>
 	<Mount weapon="Photon" size="light medium autotracking" x="6" y="-2.9" z="10.5"/>
@@ -43,13 +41,13 @@
 		<Radar itts="true" color="true" error="0"/> </Computer>
 
 	<Energy afterburnenergy="30">
-		<Reactor recharge="248" limit="1492" warpenergy="360"/>
+		<Reactor recharge="248" limit="1492" warpenergy="1360"/>
 	</Energy>
            	<Jump delay="1" jumpenergy="90" insysenergy="60"/>       
 
 <!-- new elements added -->
-<Light file="aeraburn" x="-2.75" y="0" z="-8.75" size="12" qj="1"/>
-<Light file="aeraburn" x="2.75" y="0" z="-8.75" size="12" qj="1"/>
+<Light file="aeraburn.bfxm" x="-2.75" y="0" z="-8.75" size="12" qj="1"/>
+<Light file="aeraburn.bfxm" x="2.75" y="0" z="-8.75" size="12" qj="1"/>
 	<Hold volume="12">
 	</Hold>
 	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->

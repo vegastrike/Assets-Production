@@ -2,7 +2,7 @@
 	<Description combatRole="TMASSIVE">
 	</Description>
 
-<Meshfile file="box.xmesh"/>
+<Meshfile file="box.bfxm"/>
 
 <Mount weapon="CapshipMissile" mountsize="heavy-capship-missile" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" ammo="60"/>
 

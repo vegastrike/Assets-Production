@@ -20,7 +20,7 @@
 	</Energy>
 	<Jump jumpenergy="4200" insysenergy="4200"/>
 
-<Meshfile file="starfortress.xmesh"/>
+<Meshfile file="starfortress.bfxm"/>
 
 <Dock x="0" y="890" z="738" size="200"/>
 <Dock x="0" y="890" z="-738" size="200"/>

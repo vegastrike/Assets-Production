@@ -14,22 +14,22 @@
 
         <flightgroups>
 
-            <flightgroup name="navajo" faction="confed" type="goddard" ainame="default" waves="1" nr_ships="1">
+            <flightgroup name="navajo" faction="confed" type="franklin" ainame="default" waves="1" nr_ships="1">
                         <pos x="120000" y="40000" z="50000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		    </flightgroup>
 
-            <flightgroup name="gringo" faction="aera" type="tesla" ainame="default" waves="1" nr_ships="1">
+            <flightgroup name="gringo" faction="confed" type="medical" ainame="default" waves="1" nr_ships="2">
                         <pos x="140000" y="60000" z="70000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		    </flightgroup>
 
-
+<!--
             <flightgroup name="pancho" faction="confed" type="gawain" ainame="macho" waves="1" nr_ships="1">
                         <pos x="125000" y="120000" z="70000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		    </flightgroup>
-
+-->
 <!--
             <flightgroup name="apache-B" faction="aera" type="aevant" ainame="default" waves="1" nr_ships="3">
                         <pos x="140000" y="60000" z="70000.0"/>

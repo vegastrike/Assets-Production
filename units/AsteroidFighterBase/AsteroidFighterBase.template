@@ -1,13 +1,7 @@
 <Unit>
 	<Description combatRole ="BASE">
 	</Description>
-	<Meshfile file ="astbase-ast.xmesh">
-	</Meshfile>
-	<Meshfile file ="astbase-base.xmesh">
-	</Meshfile>
-	<Meshfile file ="astbase-shield.xmesh">
-	</Meshfile>
-	<Meshfile file ="astbase-tower.xmesh">
+	<Meshfile file ="asteroidfighterbase.bfxm">
 	</Meshfile>
 	<cockpit file ="centurion-cockpit.cpt" x ="0" y ="00" z ="10">
 	</cockpit>

@@ -1,11 +1,7 @@
 <Unit scale = "3" >
 <Description combatRole="BASE">
 </Description>
-	<Meshfile file = "MiningBase3-1.xmesh"  >
-	</Meshfile>
-	<Meshfile file = "MiningBase3-2.xmesh"  >
-	</Meshfile>
-	<Meshfile file = "MiningBase3-3.xmesh"  >
+	<Meshfile file = "MiningBase.bfxm"  >
 	</Meshfile>
 	<Thrust >
 		<Engine Afterburner = "0" Forward = "0" Retro = "0" Left = "0" Right = "0" Top = "0" Bottom = "0"  >

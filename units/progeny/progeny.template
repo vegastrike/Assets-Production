@@ -1,21 +1,16 @@
 <Unit scale =".94">
-	<Meshfile file ="mongoosehi.xmesh">
-	</Meshfile>
-	<Meshfile file ="mongoosehiglow.xmesh">
-	</Meshfile>
-	<Meshfile file ="navlights.xmesh">
-	</Meshfile>
-	<ShieldMesh file ="shield1.xmesh">
-	</ShieldMesh>
+	<Meshfile file="progeny.bfxm" />
+	<ShieldMesh file="progeny_shield.bfxm"/>	
+
 	<cockpit file ="bomber-cockpit.cpt" x ="0" y =".5" z ="4">
 	</cockpit>
-	<Light file ="supernova.bmp" x ="2.8" y ="2.8" z ="-5" size ="7">
+	<Light file ="supernova.bmp.bfxm" x ="2.8" y ="2.8" z ="-5" size ="7">
 	</Light>
-	<Light file ="supernova.bmp" x ="-2.8" y ="2.8" z ="-5" size ="7">
+	<Light file ="supernova.bmp.bfxm" x ="-2.8" y ="2.8" z ="-5" size ="7">
 	</Light>
-	<Light file ="supernova.bmp" x ="4" y ="2.335" z ="-5" size ="7">
+	<Light file ="supernova.bmp.bfxm" x ="4" y ="2.335" z ="-5" size ="7">
 	</Light>
-	<Light file ="supernova.bmp" x ="-4" y ="2.335" z ="-5" size ="7">
+	<Light file ="supernova.bmp.bfxm" x ="-4" y ="2.335" z ="-5" size ="7">
 	</Light>
 	<description combatrole ="INTERCEPTOR">
 	</description>

@@ -1,9 +1,7 @@
 <Unit>
 	<cockpit file ="bomber-cockpit.cpt" x ="0" y ="00" z ="10">
 	</cockpit>
-	<Meshfile file ="fireflyhi.xmesh">
-	</Meshfile>
-	<Meshfile file ="fireflyhiglow.xmesh">
+	<Meshfile file ="gawain.bfxm">
 	</Meshfile>
 	<Mount weapon ="laserbeam" size ="Light" x ="1.4" y ="0" z =".5">
 	</Mount>
@@ -64,11 +62,11 @@
 	</description>
 	<Hold volume ="36.000000">
 	</Hold>
-	<Light file ="supernova.bmp" x ="0" y ="-.328" z ="-9.75" size ="8">
+	<Light file ="supernova.bmp.bfxm" x ="0" y ="-.328" z ="-9.75" size ="8">
 	</Light>
-	<Light file ="supernova.bmp" x ="0.25" y ="-1.1" z ="-9.75" size ="5">
+	<Light file ="supernova.bmp.bfxm" x ="0.25" y ="-1.1" z ="-9.75" size ="5">
 	</Light>
-	<Light file ="supernova.bmp" x ="-0.25" y ="-1.1" z ="-9.75" size ="5">
+	<Light file ="supernova.bmp.bfxm" x ="-0.25" y ="-1.1" z ="-9.75" size ="5">
 	</Light>
 <Upgrade file="mult_general_upgrade"/>
 <Upgrade file="add_general_upgrade"/>

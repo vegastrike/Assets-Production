@@ -1,41 +1,36 @@
 <Unit scale =".7575722">
 	<cockpit file ="heavy-cockpit.cpt" x ="0" y ="8.26" z ="9.6">
 	</cockpit>
-	<Meshfile file ="pumahi.xmesh">
-	</Meshfile>
-	<Meshfile file ="pumahiglow.xmesh">
-	</Meshfile>
-	<Meshfile file ="navlights.xmesh">
-	</Meshfile>
-	<ShieldMesh file ="shield.xmesh">
+	<Meshfile file="admonisher.bfxm"/>
+	<ShieldMesh file ="admonisher_shield.bfxm">
 	</ShieldMesh>
-	<Light file ="supernova.bmp" x ="4.5" y ="1.8" z ="-13.85" size ="5">
+	<Light file ="supernova.bmp.bfxm" x ="4.5" y ="1.8" z ="-13.85" size ="5">
 	</Light>
-	<Light file ="supernova.bmp" x ="5.1" y ="2.75" z ="-13.85" size ="5">
+	<Light file ="supernova.bmp.bfxm" x ="5.1" y ="2.75" z ="-13.85" size ="5">
 	</Light>
-	<Light file ="supernova.bmp" x ="3.95" y ="2.75" z ="-13.85" size ="5">
+	<Light file ="supernova.bmp.bfxm" x ="3.95" y ="2.75" z ="-13.85" size ="5">
 	</Light>
-	<Light file ="supernova.bmp" x ="-4.5" y ="1.8" z ="-13.85" size ="5">
+	<Light file ="supernova.bmp.bfxm" x ="-4.5" y ="1.8" z ="-13.85" size ="5">
 	</Light>
-	<Light file ="supernova.bmp" x ="-5.1" y ="2.75" z ="-13.85" size ="5">
+	<Light file ="supernova.bmp.bfxm" x ="-5.1" y ="2.75" z ="-13.85" size ="5">
 	</Light>
-	<Light file ="supernova.bmp" x ="-3.95" y ="2.75" z ="-13.85" size ="5">
+	<Light file ="supernova.bmp.bfxm" x ="-3.95" y ="2.75" z ="-13.85" size ="5">
 	</Light>
-	<Light file ="supernova.bmp" x ="4.5" y =".35" z ="-13.85" size ="12">
+	<Light file ="supernova.bmp.bfxm" x ="4.5" y =".35" z ="-13.85" size ="12">
 	</Light>
-	<Light file ="supernova.bmp" x ="-4.5" y =".35" z ="-13.85" size ="12">
+	<Light file ="supernova.bmp.bfxm" x ="-4.5" y =".35" z ="-13.85" size ="12">
 	</Light>
-	<Light file ="supernova.bmp" x ="6.45" y ="-4.8" z ="-12.3" size ="4">
+	<Light file ="supernova.bmp.bfxm" x ="6.45" y ="-4.8" z ="-12.3" size ="4">
 	</Light>
-	<Light file ="supernova.bmp" x ="5.45" y ="-4.8" z ="-12.3" size ="4">
+	<Light file ="supernova.bmp.bfxm" x ="5.45" y ="-4.8" z ="-12.3" size ="4">
 	</Light>
-	<Light file ="supernova.bmp" x ="4.5" y ="-4.8" z ="-12.3" size ="4">
+	<Light file ="supernova.bmp.bfxm" x ="4.5" y ="-4.8" z ="-12.3" size ="4">
 	</Light>
-	<Light file ="supernova.bmp" x ="-6.45" y ="-4.8" z ="-12.3" size ="4">
+	<Light file ="supernova.bmp.bfxm" x ="-6.45" y ="-4.8" z ="-12.3" size ="4">
 	</Light>
-	<Light file ="supernova.bmp" x ="-5.45" y ="-4.8" z ="-12.3" size ="4">
+	<Light file ="supernova.bmp.bfxm" x ="-5.45" y ="-4.8" z ="-12.3" size ="4">
 	</Light>
-	<Light file ="supernova.bmp" x ="-4.5" y ="-4.8" z ="-12.3" size ="4">
+	<Light file ="supernova.bmp.bfxm" x ="-4.5" y ="-4.8" z ="-12.3" size ="4">
 	</Light>
 	<Mount weapon ="" size ="SPECIAL" x ="2.35" y ="6" z ="10.3">
 	</Mount>
@@ -77,7 +72,7 @@
 	<Computer yaw ="64" pitch ="64" roll ="64" afterburner ="200" maxspeed ="200">
 	</Computer>
 	<Energy afterburnenergy = "32767">
-		<Reactor warpenergy ="500">
+		<Reactor warpenergy ="1200">
 		</Reactor>
 	</Energy>
 <Upgrade file="reactor_level_0"/>

@@ -3,11 +3,7 @@
 	</description>
 	<cockpit file ="heavy-cockpit.cpt" x ="0" y ="0" z ="40">
 	</cockpit>
-	<Meshfile file ="longhaulhi.xmesh">
-	</Meshfile>
-	<Meshfile file ="longhaulhiglow.xmesh">
-	</Meshfile>
-	<Meshfile file ="navlights.xmesh">
+	<Meshfile file ="mule.bfxm">
 	</Meshfile>
 	<Mount weapon ="tractor" size ="special autotracking" x ="-4.5" y ="3" z ="32.5">
 	</Mount>
@@ -29,19 +25,19 @@
 	</Dock>
 	<Dock size ="30" x ="-30" y ="0" z ="-37">
 	</Dock>
-	<Light file ="supernova.bmp" x ="5" y ="8.5" z ="-76.75" size ="45">
+	<Light file ="supernova.bmp.bfxm" x ="5" y ="8.5" z ="-76.75" size ="45">
 	</Light>
-	<Light file ="supernova.bmp" x ="-5" y ="8.5" z ="-76.75" size ="45">
+	<Light file ="supernova.bmp.bfxm" x ="-5" y ="8.5" z ="-76.75" size ="45">
 	</Light>
-	<Light file ="supernova.bmp" x ="2.75" y ="-7.375" z ="-76" size ="20">
+	<Light file ="supernova.bmp.bfxm" x ="2.75" y ="-7.375" z ="-76" size ="20">
 	</Light>
-	<Light file ="supernova.bmp" x ="-2.75" y ="-7.375" z ="-76" size ="20">
+	<Light file ="supernova.bmp.bfxm" x ="-2.75" y ="-7.375" z ="-76" size ="20">
 	</Light>
-	<Light file ="supernova.bmp" x ="0" y ="-10.65" z ="-74.75" size ="20">
+	<Light file ="supernova.bmp.bfxm" x ="0" y ="-10.65" z ="-74.75" size ="20">
 	</Light>
-	<Light file ="supernova.bmp" x ="-14.25" y ="-15" z ="-25.5" size ="30">
+	<Light file ="supernova.bmp.bfxm" x ="-14.25" y ="-15" z ="-25.5" size ="30">
 	</Light>
-	<Light file ="supernova.bmp" x ="14.25" y ="-15" z ="-25.5" size ="30">
+	<Light file ="supernova.bmp.bfxm" x ="14.25" y ="-15" z ="-25.5" size ="30">
 	</Light>
 	<Thrust>
 		<Engine Afterburner ="600000" Forward ="300000" Retro ="300000" Left ="10000" Right ="10000" Top ="10000" Bottom ="10000">

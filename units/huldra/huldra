@@ -1,8 +1,5 @@
-<Unit scale = "4.3">
-<Meshfile file="huldrahi.xmesh"/>
-<Meshfile file="huldrasails.xmesh"/>
-<Meshfile file="huldralights.xmesh"/>
-<Meshfile file="huldraextra.xmesh"/>
+<Unit scale = "4.3">0
+<Meshfile file="huldra.bfxm"/>
 
 	<description combatrole="ESCORTCAP"/>
        

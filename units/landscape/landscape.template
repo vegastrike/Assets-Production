@@ -36,14 +36,9 @@
 		<Maneuver yaw ="000000" pitch ="0" roll ="0">
 		</Maneuver>
 	</Thrust>
-	<bspmesh file ="nothin.xmesh" bsp ="1" rapid ="1">
-	</bspmesh>
-	<rapidmesh file ="nothin.xmesh" bsp ="1" rapid ="1">
-	</rapidmesh>
-	<Meshfile file ="landscape.xmesh">
-	</Meshfile>
-	<Meshfile file ="grass.xmesh">
-	</Meshfile>
+	<bspmesh file="landscape_BSP.bfxm" bsp="1" rapid="1"/>
+	<rapidmesh file="landscape_BSP.bfxm" bsp="1" rapid="1"/>
+	<Meshfile file="landscape.bfxm"/>
 <Upgrade file="mult_general_upgrade"/>
 <Upgrade file="add_general_upgrade"/>
 </unit>

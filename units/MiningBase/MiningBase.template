@@ -1,13 +1,7 @@
 <Unit>
 	<Description combatRole ="BASE">
 	</Description>
-	<Meshfile file ="MiningBase2-1.xmesh">
-	</Meshfile>
-	<Meshfile file ="MiningBase2-2.xmesh">
-	</Meshfile>
-	<Meshfile file ="MiningBase2-3.xmesh">
-	</Meshfile>
-	<Meshfile file ="MiningBase2-4.xmesh">
+	<Meshfile file ="MiningBase.bfxm">
 	</Meshfile>
 	<Thrust>
 		<Engine Afterburner ="0" Forward ="0" Retro ="0" Left ="0" Right ="0" Top ="0" Bottom ="0">

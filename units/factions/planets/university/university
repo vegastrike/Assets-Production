@@ -130,6 +130,9 @@
 		<Category file="upgrades/Engines/Engine_Enhancements_Light">
 			<import price="1" pricestddev=".1" quantity="2" quantitystddev="1"/>
 		</Category>
+		<Category file="upgrades/Capacitors/Shields">		
+			<import price="1.1" pricestddev=".2" quantity="0" quantitystddev="2"/>
+		</Category>
 		<Category file="upgrades/Shield_Systems/Light">
 			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
 		</Category>

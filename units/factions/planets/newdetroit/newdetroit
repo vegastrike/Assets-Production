@@ -155,6 +155,12 @@
 		<Category file="upgrades/Miscellaneous/SubUnits">
 			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
 		</Category>
+		<Category file="upgrades/Capacitors/Reactors">		
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="6"/>
+		</Category>
+		<Category file="upgrades/Capacitors/Shields">		
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="6"/>
+		</Category>
 		<Category file="upgrades/Reactors/Light">
 			<import price="1" pricestddev=".1" quantity="15" quantitystddev="4"/>
 		</Category>

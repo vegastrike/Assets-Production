@@ -1,9 +1,7 @@
 <Unit scale ="1.0919">
 	<cockpit file ="light_cockpit.cpt">
 	</cockpit>
-	<Meshfile file ="aevanthi.xmesh">
-	</Meshfile>
-	<Meshfile file ="aevanthiglow.xmesh">
+	<Meshfile file ="aevant.bfxm">
 	</Meshfile>
 	<description combatrole ="BOMBER">
 	</description>
@@ -44,13 +42,13 @@
 <Upgrade file="mult_gun_cooler"/>
 	<Jump delay ="1" jumpenergy ="300" insysenergy ="200">
 	</Jump>
-	<Light file ="aeraburn" x ="-1" y ="5.125" z ="-11.25" size ="8">
+	<Light file ="aeraburn.bfxm" x ="-1" y ="5.125" z ="-11.25" size ="8">
 	</Light>
-	<Light file ="aeraburn" x ="1" y ="5.125" z ="-11.25" size ="8">
+	<Light file ="aeraburn.bfxm" x ="1" y ="5.125" z ="-11.25" size ="8">
 	</Light>
-	<Light file ="aeraburn" x ="-1" y ="-3" z ="-11.25" size ="8">
+	<Light file ="aeraburn.bfxm" x ="-1" y ="-3" z ="-11.25" size ="8">
 	</Light>
-	<Light file ="aeraburn" x ="1" y ="-3" z ="-11.25" size ="8">
+	<Light file ="aeraburn.bfxm" x ="1" y ="-3" z ="-11.25" size ="8">
 	</Light>
 	<Mount weapon ="Photon" size ="Light medium autotracking" x ="6" y ="-2.75" z ="-4.75">
 	</Mount>

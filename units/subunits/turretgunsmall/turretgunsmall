@@ -2,7 +2,7 @@
 	<Description combatRole="TFIGHTER">
 	</Description>
 
-<Meshfile file="turretgunsmall.xmesh"/>
+<Meshfile file="turretgunsmall.bfxm"/>
 
        
 

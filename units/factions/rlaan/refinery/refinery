@@ -19,7 +19,7 @@
 		<Armor front="8000" right="8000" left="8000" back="8000"/>
 		<Hull strength="4000"/>
 	</Defense>
-	<Meshfile file="star4.xmesh"/>
+	<Meshfile file="star4.bfxm"/>
 	<Stats mass="600" momentofinertia="60" fuel="20000"></Stats>
        
 

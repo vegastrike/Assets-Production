@@ -1,0 +1,57 @@
+<!-- XUnit exported from Wings 3D 0.98.12 -->
+<!-- How to edit this file: http://www.joeredcloud.com/kandarwiki/index.php?VsHowtoEditUnitFiles -->
+<Unit scale="1.00000">
+
+<Light   x="0.00000e+0" y="0.692000" z="-5.55600" file='supernova.bmp' size='5' />
+<Mount   x="1.68200" y="0.436000" z="1.94200" ri="0.00000e+0" rj="0.00000e+0" rk="2.00000" qi="0.00000e+0" qj="1.00000" qk="0.00000e+0" weapon='Ion' size='Medium Heavy' />
+<Mount   x="-1.67000" y="0.344000" z="1.92200" ri="0.00000e+0" rj="0.00000e+0" rk="2.00000" qi="0.00000e+0" qj="1.000000" qk="0.00000e+0" weapon='Ion' size='Medium Heavy' />
+<Meshfile   file="sartre.xmesh" />
+<!-- BEGIN content of config file -->
+<!-- BEGIN SAMPLE DATA: the rest of the unit-data is to be placed here --> 
+<Thrust >
+  <Engine Afterburner="217007" Forward="202523" Retro="97935" Left="42231" Right="42231" Top="42231" Bottom="42231" />
+  <Maneuver yaw="489943" pitch="439988" roll="599637" />
+</Thrust>
+
+<Computer yaw="60.400002" pitch="50.600006" roll="80.400002" afterburner="85" maxspeed="30" >
+</Computer>
+
+<Defense HudImage="sartre-hud.spr">
+  <Armor front="250" right="225" left="225" back="240" />
+  <Shields front="150.000000" back="150.000000" recharge="30.000000"  />
+  <Hull strength="200.000000" />
+</Defense>
+
+<Stats mass="1096" momentofinertia="1096" fuel="40000000" />
+
+<Energy>
+  <Reactor recharge="60" limit="400" />
+</Energy>
+
+
+<Jump missing="1" delay="2" jumpenergy="250" />
+<!-- add a description of your ship here -->
+<description></description>
+<!--
+<CockpitDamage damage="float damage between 0 and 1 of cockpit component" />
+-->
+<Hold volume="125" >
+  <Category file="Natural_Products/Natural_Resources" >
+    <import price=".8" pricestddev=".2" quantity="0" quantitystddev="5" />
+  </Category>
+  <Category file="Fuels/Crude" >
+    <import price="0.8" pricestddev=".2" quantity="0" quantitystddev="2" />
+  </Category>
+  <Category file="Compressed_Gasses" >
+    <import price=".7" pricestddev=".2" quantity="0" quantitystddev="2" />
+  </Category>
+  <Category file="Entertainment" >
+    <import price="1" pricestddev=".1" quantity="0" quantitystddev="1" />
+  </Category>
+</Hold>
+
+<!--
+<Upgrade file="file to upgrade this unit with" /> 
+-->
+<!-- END SAMPLE DATA --><!-- END   content of config file -->
+</Unit>

@@ -13,8 +13,7 @@
 <!-- starts out with horrible hull -->
 	<upgrade file="hull"/>
 
-	<Meshfile file="wayfarerhi.xmesh"/>
-	<Meshfile file="wayfarerhiglow.xmesh"/>
+	<Meshfile file="plowshare.bfxm"/>
 
 	<Mount weapon="Disruptor" size="Light Medium Heavy" x="11.5" y="-2.5" z="23" />
 	<Mount weapon="Disruptor" size="Light Medium Heavy" x="-11.5" y="-2.5" z="23" />
@@ -57,12 +56,12 @@
 
 <!-- new elements added -->
 
-    <Light file="supernova.bmp" x="6.3" y="8" z="-12.25" size="8"/>
-    <Light file="supernova.bmp" x="-6.3" y="8" z="-12.25" size="8"/>
-    <Light file="supernova.bmp" x="12.75" y="-3.4" z="-14.75" size="8"/>
-    <Light file="supernova.bmp" x="-12.75" y="-3.4" z="-14.75" size="8"/>
-    <Light file="supernova.bmp" x="12.75" y="-9" z="-14.75" size="8"/>
-    <Light file="supernova.bmp" x="-12.75" y="-9" z="-14.75" size="8"/>
+    <Light file="supernova.bmp.bfxm" x="6.3" y="8" z="-12.25" size="8"/>
+    <Light file="supernova.bmp.bfxm" x="-6.3" y="8" z="-12.25" size="8"/>
+    <Light file="supernova.bmp.bfxm" x="12.75" y="-3.4" z="-14.75" size="8"/>
+    <Light file="supernova.bmp.bfxm" x="-12.75" y="-3.4" z="-14.75" size="8"/>
+    <Light file="supernova.bmp.bfxm" x="12.75" y="-9" z="-14.75" size="8"/>
+    <Light file="supernova.bmp.bfxm" x="-12.75" y="-9" z="-14.75" size="8"/>
 
         <Dock x="0" y="4.6" z="6" size="10"/>
         <Dock x="0" y="-4.7" z="6" size="10"/>

@@ -1,19 +1,19 @@
 <Unit scale="3">
 	<Description combatRole="SUPPORT">
 	</Description>
-	<Meshfile file = "cargoship.xmesh"  >
+	<Meshfile file = "ox.bfxm"  >
 	</Meshfile>
 	<Dock x = "0.0" y = "32.2" z = "-210.00000" size = "100"  >
 	</Dock>
 	<Dock x = "0.0" y = "-13.0" z = "330.00000" size = "20"  >
 	</Dock>
-	<Light file = "supernova.bmp" x = "110.0" y = "70" z = "-280.00000" size = "58"  >
+	<Light file = "supernova.bmp.bfxm" x = "110.0" y = "70" z = "-280.00000" size = "58"  >
 	</Light>
-	<Light file = "supernova.bmp" x = "-110.0" y = "70" z = "-280.00000" size = "58"  >
+	<Light file = "supernova.bmp.bfxm" x = "-110.0" y = "70" z = "-280.00000" size = "58"  >
 	</Light>
-	<Light file = "supernova.bmp" x = "105.0" y = "-48" z = "-220.00000" size = "50"  >
+	<Light file = "supernova.bmp.bfxm" x = "105.0" y = "-48" z = "-220.00000" size = "50"  >
 	</Light>
-	<Light file = "supernova.bmp" x = "-105.0" y = "-48" z = "-220.00000" size = "50"  >
+	<Light file = "supernova.bmp.bfxm" x = "-105.0" y = "-48" z = "-220.00000" size = "50"  >
 	</Light>
 	<Mount weapon = "LR_LaserBeam" size = "Light Medium Heavy capship-light" x = "60.000000" y = "0.000000" z = "200.000000"  >
 	</Mount>

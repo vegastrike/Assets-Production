@@ -29,7 +29,7 @@
 <Upgrade file="reactor_level_0"/>
 	<Jump missing = "1" jumpenergy ="4200" insysenergy ="4200">
 	</Jump>
-	<Meshfile file ="starfortress.xmesh">
+	<Meshfile file ="starfortress.bfxm">
 	</Meshfile>
 	<Dock x ="0" y ="890" z ="738" size ="200">
 	</Dock>

@@ -165,6 +165,12 @@
 		<Category file="upgrades/Shield_Systems/Heavy">
 			<import price="1" quantity="10" quantitystddev="5"/>
 		</Category>
+		<Category file="upgrades/Capacitors/Reactors">		
+			<import price="1" pricestddev=".1" quantity="4" quantitystddev="6"/>
+		</Category>
+		<Category file="upgrades/Capacitors/Shields">		
+			<import price="1" pricestddev=".1" quantity="5" quantitystddev="6"/>
+		</Category>
 		<Category file="upgrades/Shield_Systems/Aera_Milspec">
 			<import price="1" quantity="1" quantitystddev="1"/>
 		</Category>

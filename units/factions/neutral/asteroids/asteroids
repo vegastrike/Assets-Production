@@ -8,7 +8,7 @@
      to make a different LOD use a different seed
  -->
 
-<Meshfile file="asteroid.xmesh"/>
+<Meshfile file="asteroids.bfxm"/>
 <Defense>
     <Hull strength="5000"/>
 </Defense>

@@ -76,6 +76,3 @@ class quest_rogue_militia_factory (quest.quest_factory):
         quest.quest_factory.__init__ (self,"quest_rogue_militia")
     def create (self):
         return quest_rogue_militia()
-
-
-

@@ -1,12 +1,12 @@
 <Unit scale="1.58489">
 
 <!--<Dock    x="0" y="-1.33800" z="0" size='10' />-->
-<Light   x="0" y="0" z="-6.36800" file='supernova.bmp' size='4' />
+<Light   x="0" y="0" z="-6.36800" file='supernova.bmp.bfxm' size='4' />
 <Mount weapon="EMPTorpedo" size="light-missile medium-missile heavy-missile" x="0" y="-.13" z="2" ammo="1" volume="90"/>
 <Mount   x="3.1" y="-0.13" z="2.35" ri="0" rj="0" rk="1" qi="0" qj="1" qk="0" weapon="Hephaestus-mini" size="Light Medium Heavy Special autotracking" ammo="10000"/>
 <Mount   x="-3.1" y="-0.13" z="2.35" ri="0" rj="0" rk="1" qi="0" qj="1" qk="0" weapon="Hephaestus-mini" size="Light Medium Heavy Special autotracking" ammo="10000" />
 
-<Meshfile   file="mat_hunter_hull.xmesh" />
+<Meshfile   file="dostoevsky.bfxm" />
 
 <Thrust >
   <Engine Afterburner="12000" Forward="8000" Retro="8000" Left="8000" Right="8000" Top="8000" Bottom="8000" />

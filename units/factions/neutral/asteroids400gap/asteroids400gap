@@ -8,6 +8,6 @@
      to make a different LOD use a different seed
  -->
 
-<Meshfile file="asteroid400gap.xmesh"/>
+<Meshfile file="asteroid400gap.bfxm"/>
 
 </Unit>

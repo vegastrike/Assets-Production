@@ -38,5 +38,5 @@ class faceoff (Director.Mission):
         time = VS.GetGameTime()
         if (time-self.lasttime>self.waittime):
             #self.launch_new_wave()
-            VS.IOmessage (0,"game","all","[Confed] This is a test of the emergency broadcast system.")            
+            VS.IOmessage (0,"game","all","[Confed] This is a test of the emergency broadcast system.")
             self.lasttime=time

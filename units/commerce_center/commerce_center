@@ -2,7 +2,7 @@
 	<Description combatRole="BASE">
 	</Description>
 
-	<Meshfile file = "commerce_center.xmesh"  >
+	<Meshfile file = "commerce_center.bfxm"  >
 	</Meshfile>
 	<Thrust >
 		<Engine Afterburner = "0" Forward = "0" Retro = "0" Left = "0" Right = "0" Top = "0" Bottom = "0"  >

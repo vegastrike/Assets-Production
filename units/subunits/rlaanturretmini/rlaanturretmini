@@ -1,7 +1,7 @@
 <Unit scale ="6">
 
 <description combatrole="POINTDEF"/>
-<Meshfile file="rlaanturret.xmesh" />
+<Meshfile file="rlaanturret.bfxm" />
 
 
 <Mount weapon="KtekBeam" size="light medium autotracking" x="0" y="0" z="2.25" ri="0" rj="0" rk="1" qi="0" qj="-1" qk="0"/>

@@ -36,7 +36,7 @@
 	</Dock>
 	<Dock x ="0" y ="7.6" z ="10" size ="1">
 	</Dock>
-	<Meshfile file ="station.xmesh">
+	<Meshfile file ="medical.bfxm">
 	</Meshfile>
 	<Hold volume ="120000000.000000">
 		<Category file ="Natural_Products/Food">
