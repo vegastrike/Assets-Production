@@ -148,10 +148,10 @@
 		<Category file="upgrades/Repair_Systems/Research">
 			<import price=".9" pricestddev=".1" quantity="-10" quantitystddev="15"/>
 		</Category>
-		<Category file="upgrades/Radar/Windows">
+		<Category file="upgrades/Radar/Basic">
 			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
 		</Category>
-		<Category file="upgrades/Radar/Linux">
+		<Category file="upgrades/Radar/Intermediate">
 			<import price="1" pricestddev=".1" quantity="2" quantitystddev="1"/>
 		</Category>
 		<Category file="upgrades/Miscellaneous">

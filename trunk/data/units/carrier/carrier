@@ -339,7 +339,7 @@
 		<Category file="upgrades/Repair_Systems/Advanced">
 			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
 		</Category>
-		<Category file="upgrades/Radar/BSD">
+		<Category file="upgrades/Radar/Advanced">
 			<import price="1" pricestddev=".1" quantity="2" quantitystddev="1"/>
 		</Category>
 		<Category file="upgrades/Miscellaneous">

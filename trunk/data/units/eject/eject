@@ -20,7 +20,7 @@
    
 	<Computer yaw="30" pitch="30" roll="50" afterburner="10" maxspeed="5">
 	</Computer>
-	<Upgrade file="radar_windows_95"/>
+	<Upgrade file="SkyScope_Alpha"/>
 	<Energy>
 		<Reactor recharge=".25" limit="10"/>
 	</Energy>
