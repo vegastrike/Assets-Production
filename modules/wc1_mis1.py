@@ -20,7 +20,7 @@ class wc1_mis1:
         self.launched=[0,0]
         self.nav=[launch.launch("nav1","neutral","eject","sitting_duck",1,1,Add(self.origin,(40000,000,50000))),
                   self.jump]
-        self.roids = [VS.launch("Asteroids","neutral","AFieldSparse","asteroid","default",1,1,Add(self.origin,(0000,00000,50000)),"")]
+        self.roids = [VS.launch("Asteroids","AFieldSparse","neutral","asteroid","default",1,1,Add(self.origin,(0000,00000,50000)),"")]
     def moveTrans (self,targ):
         print "moving trans"
         self.transport.SetPosAndCumPos(Add(targ.Position(),(0,0,-1000)))
