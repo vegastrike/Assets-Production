@@ -3,7 +3,7 @@
 	<Meshfile file="space_truck-CrewCommand.xmesh" />
 	<Meshfile file="space_truck-EngineExt.xmesh" />
 	<Meshfile file="space_truck-EngineInt.xmesh" />
-	<Meshfile file="space_truck-Fuel Tanks.xmesh" />
+	<Meshfile file="space_truck-Fuel_Tanks.xmesh" />
 	<Meshfile file="space_truck-Rod01.xmesh" />
 	<Meshfile file="space_truck-Rod02.xmesh" />
 	<Meshfile file="space_truck-Rod03.xmesh" />
