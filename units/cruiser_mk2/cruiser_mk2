@@ -12,7 +12,10 @@
 		<Hull strength="2500.000000"/>
 	</Defense>
 	<Stats mass="360.000000" momentofinertia="270.000000" fuel="20000"></Stats>
-	<Computer yaw="21.400002" pitch="18.200001" roll="31.400002" afterburner="42.000000" maxspeed="18.666666"/>
+	<Computer yaw="21.400002" pitch="18.200001" roll="31.400002" afterburner="42.000000" maxspeed="18.666666">
+		<Radar itts="true" color="true" maxrange="400000" error="0"/>
+	</Computer>
+
 	<Energy>
 		<Reactor recharge="300" limit="2000"/>
 	</Energy>
@@ -27,8 +30,8 @@
 <Mount weapon="CapshipDisruptor" size="Light" x="23.333334" y="-8.333333" z="289.333344"/>
 <Mount name="Flak" mountsize="light" x="-23.333334" y="-10.333333" z="289.333344"/>
 <Mount name="Flak" mountsize="light" x="23.333334" y="-10.333333" z="289.333344"/>
-<Subunit file="beamturret" x="-0.000001" y="31.500000" z="-30.000000" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="beamturret" x="-0.000001" y="-24.500000" z="-30.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+<Subunit file="turretbeam" x="-0.000001" y="31.500000" z="-30.000000" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turretbeam" x="-0.000001" y="-24.500000" z="-30.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
 <Subunit file="turret" x="-0.000001" y="21.000000" z="78.750000" ri="0.476731" rj="0.190693" rk="-0.858116" qi="0.000000" qj="0.976187" qk="0.216930"/>
 <Subunit file="turretheavy" x="-0.000001" y="31.500000" z="-63.000000" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
 <Subunit file="turretheavy" x="-0.000001" y="-24.500000" z="-63.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
