@@ -2,7 +2,7 @@
 <Meshfile file="starfish.xmesh"/>
 <!--<ShieldMesh file="starfishshield.xmesh"/>-->
 	<Defense HudImage="starfish-hud.spr">      
-		<Shields front="0" right="0" left="0" back="5"/>
+		<Shields front="0" right="0" left="0" back="0"/>
 	</Defense>
 	<upgrade file="shield_4"/>
 	<upgrade file="engine_level_0"/>

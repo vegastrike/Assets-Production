@@ -250,7 +250,14 @@ module ship_upgrades {
       i=i+1;
     }
     i=0;
-    while ((creds>500.0)&&(i<100)) {
+    turretcount=_std.Int(diff*50.0);
+    if (turretcount>24) {
+      turretcount=24;
+    } else if (turretcount<3) {
+      turretcount=3;
+    }
+    _io.printf("\nupgrading %d times...\n",turretcount);
+    while (i<turretcount) {
       if (inc<2) {
         mylist=GetRandomWeapon(diff);//weapons go on as first two items of loop
       }else {
@@ -261,7 +268,7 @@ module ship_upgrades {
       curmount=curmount+1;//increase starting mounts hardpoint
       inc = inc+1;
       i=i+1;
-      if (inc>2) {//start over count after 5
+      if (inc>2) {//start over count after 2
 	inc =0;
       }
     }
