@@ -1,4 +1,4 @@
-<Mesh animation="ship.ani" scale="10.000000">
+<Mesh texture="shield.bmp" scale="12.000000">
 <Points>
 	<Point>
 		<Location x="-0.604070" y="0.639055" z="0.002098"/>
