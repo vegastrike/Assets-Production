@@ -38,7 +38,7 @@ def unOrTupleDistance(un,unortuple,significantp):
     else:
       return un.getDistance(unortuple)
 
-def look_for (fg, faction, numships,myunit,  pos, gcd):
+def look_for (fg, faction, numships,myunit,  pos, gcd,newship=[None]):
   i=0
   un = VS.getUnit (i)
   while (un):
@@ -58,6 +58,7 @@ def look_for (fg, faction, numships,myunit,  pos, gcd):
               if (vsrandom.random()<0.75):
                 pos=move_to (un,pos)
                 numships-=1
+                newship[0]=un
                 print "TTYmoving %s to current area" % (name)
             else:
               #toast 'im!
@@ -66,12 +67,13 @@ def look_for (fg, faction, numships,myunit,  pos, gcd):
     i-=1
   return (numships,pos)
 
-def LaunchNext (fg, fac, type, ai, pos, logo):
+def LaunchNext (fg, fac, type, ai, pos, logo,newshp=[None]):
   newship = launch.launch (fg,fac,type,ai,1,1,pos,logo)
   import dynamic_universe
   dynamic_universe.TrackLaunchedShip(fg,fac,type,newship)
   rad=newship.rSize ()
   VS.playAnimation ("warp.ani",pos,(3.0*rad))
+  newshp[0]=newship
   return NextPos (newship,pos)
 def launch_dockable_around_unit (fg,faction,ai,radius,myunit,garbage_collection_distance):
 	import fg_util
@@ -86,19 +88,25 @@ def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_
   for t in typenumbers:
     nr_ships+=t[1]
   print "before"+str(nr_ships)
-  (nr_ships,pos) = look_for (fg,faction,nr_ships,myunit,pos,garbage_collection_distance)
-  print "after "+str(nr_ships)
+  retcontainer=[None]
+  (nr_ships,pos) = look_for (fg,faction,nr_ships,myunit,pos,garbage_collection_distance,retcontainer)
+  print "after "+str(nr_ships)+ str(retcontainer)
   count=0
+  ret=retcontainer[0]
   for tn in typenumbers:
     num = tn[1]
     if num>nr_ships:
       num=nr_ships
     for i in range(num):
-      pos = LaunchNext (fg,faction,tn[0], ai, pos,logo)
+      newship=[None]
+      pos = LaunchNext (fg,faction,tn[0], ai, pos,logo,newship)
+      if (i==0):
+        ret=newship[0]
     nr_ships-=num
     if (nr_ships==0):
-      return
-
+      return ret
+  return ret
+  
 
 def launch_wave_around ( fg, faction, ai, nr_ships, capship, radius, myunit, garbage_collection_distance,logo):
   pos = whereTo(radius, myunit)

@@ -7,6 +7,7 @@ import sys
 import dj_lib
 True=1
 def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=True):
+#  print 'log'+ str( logo) + ' useani '+ str(useani)
   diff=usingDifficulty()
   if useani:
     VS.playAnimation ("warp.ani",vec,300.0)
@@ -36,6 +37,7 @@ def launch_waves_around_area(fgname,faction,type,ai,nr_ships,nr_waves,r1,r2,pos,
   return launch(fgname,faction,type,ai,nr_ships,nr_waves,pos,logo,useani)
 
 def launch_wave_around_area(fgname,faction,type,ai,nr_ships,r1,r2,pos,logo='',useani=True):
+#  print 'log' + str(logo)
   return launch_waves_around_area (fgname,faction,type,ai,nr_ships,1,r1,r2,pos,logo,useani)
 
 def launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves,logo='',useani=True):
@@ -128,9 +130,18 @@ class Launch:
       self._nr_ships=self.num-knum
   def launch(self,myunit):
     self.Preprocess()
-    un = launch_types_around (self.dynfg,self.faction,self._dyn_nr_ships,self.minradius*.5+self.maxradius*.5,myunit,20000,self.logo)
-    if (myunit==None and self._nr_ships>0):
-      launch_wave_around_area (self.fg,self.faction,self.type,self.ai,self._nr_ships, self.minradius,self.maxradius,self.pos,self.logo,self.useani)
-    elif (self._nr_ships>0):
-      launch_wave_around_unit (self.fg,self.faction,self.type,self.ai,self._nr_ships,self.minradius,self.maxradius,myunit,self.logo,self.useani)
+    if (self.dynfg!=''):
+      print 'dynamic launch'
+      import launch_recycle	
+      return launch_recycle.launch_types_around (self.dynfg,self.faction,self._dyn_nr_ships,self.ai,self.minradius*.5+self.maxradius*.5,myunit,20000,self.logo)
+    else:
+      if ((not myunit) and self._nr_ships>0):
+        print 'launch area'
+        return launch_wave_around_area (self.fg,self.faction,self.type,self.ai,self._nr_ships, self.minradius,self.maxradius,self.pos,self.logo,self.useani)
+      elif (self._nr_ships>0):
+        print 'launch more ships'
+        return launch_wave_around_unit (self.fg,self.faction,self.type,self.ai,self._nr_ships,self.minradius,self.maxradius,myunit,self.logo,self.useani)
+      else:
+        print ' error viz ze luch'
+        return launch_wave_around_unit (self.fg,self.faction,self.type,self.ai,1,self.minradius,self.maxradius,myunit,self.logo,self.useani)
     return un

@@ -14,10 +14,11 @@ class bounty (Director.Mission):
 	def SetVar (self,val):
 	  if (self.var_to_set!=''):
 	    quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,val)
-	def __init__ (self,minnumsystemsaway, maxnumsystemsaway, creds, run_away, shipdifficulty, tempfaction,jumps=(),var_to_set=''):
+	def __init__ (self,minnumsystemsaway, maxnumsystemsaway, creds, run_away, shipdifficulty, tempfaction,jumps=(),var_to_set='',dynfg='',dyntype=""):
 	  Director.Mission.__init__ (self)
 	  self.firsttime=VS.GetGameTime()
-	  self.newship=""
+	  self.newship=dyntype
+	  self.dynfg=dynfg	  
 	  self.mplay="all"
 	  self.var_to_set = var_to_set
 	  self.istarget=0
@@ -95,7 +96,18 @@ class bounty (Director.Mission):
 	      if (self.you.getSignificantDistance(significant)<10000.0):
 		if (self.newship==""):
 		  self.newship=faction_ships.getRandomFighter(self.faction)
-		self.enemy=launch.launch_wave_around_unit("Shadow",self.faction,self.newship,"default",1+self.difficulty,3000.0,4000.0,significant)
+		#self.enemy=launch.launch_wave_around_unit("Shadow",self.faction,self.newship,"default",1+self.difficulty,3000.0,4000.0,significant)
+		L = launch.Launch()
+		L.fg="Shadow"
+		L.dynfg=self.dynfg
+		L.type = self.newship
+		L.faction = self.faction
+		L.ai = "default"
+		L.num=1+self.difficulty
+		L.minradius=3000.0
+		L.maxradius = 4000.0
+		self.enemy=L.launch(significant)
+		self.you.SetTarget(self.enemy)
 		self.obj=VS.addObjective("Destroy the Shadow %s ship." % (self.enemy.getName ()))
 		if (self.enemy):
 		  if (self.runaway):
@@ -111,7 +123,8 @@ class bounty (Director.Mission):
 	  else:
 	    if (self.adjsys.Execute()):
 	      self.arrived=1
-	      self.newship=faction_ships.getRandomFighter(self.faction)
+	      if (self.newship=="" and self.dynfg==''):
+		      self.newship=faction_ships.getRandomFighter(self.faction)
 	      self.adjsys=go_somewhere_significant(self.you,0,500)
 	      localdestination=self.adjsys.SignificantUnit().getName()
 	      VS.IOmessage (3,"bounty mission",self.mplay,"You must destroy the %s unit in this system." % (self.newship))

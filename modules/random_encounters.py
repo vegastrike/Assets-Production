@@ -9,6 +9,7 @@ import adventure
 import news
 import universe
 import fg_util
+import dynamic_battle
 class random_encounters:
   class playerdata:  
     def GeneratePhaseAndAmplitude(self):
@@ -171,8 +172,8 @@ class random_encounters:
       self.cur.lastsys=cursys
     for q in self.cur.quests:
       q.SignificantsNear(self.cur.sig_container)
-    import dynamic_battle
-    dynamic_battle.UpdateCombatTurn()
+#    import dynamic_battle
+#    dynamic_battle.UpdateCombatTurn()
 
   def decideMode(self):
     myunit=VS.getPlayerX(self.cur_player)
@@ -223,6 +224,7 @@ class random_encounters:
     self.cur.lastsys=cursys
     return 1
   def Execute(self):
+    dynamic_battle.UpdateCombatTurn()
     if (self.cur_player>=len(self.players)):
       self.AddPlayer()
     self.cur=self.players[self.cur_player]
