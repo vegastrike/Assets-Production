@@ -117,13 +117,19 @@ module cargo_mission {
 	      if (_std.isNull(significant)) {
 		arrived=false;
 	      }else {
+		object newun=significant;
 		if (capship) {
-		  significant=launch.launch_wave_around_unit("Base",faction,newship,"_ai_stationary",1,5000.0,significant);
+		  newun=launch.launch_wave_around_unit("Base",faction,newship,"_ai_stationary",1,5000.0,significant);
 		}
 		object str = _string.new();
-		object name = _unit.getName (significant);
-		_io.sprintf(str,"You must drop your cargo off with the %s unit",name);
+		object name = _unit.getName (newun);
+		_io.sprintf(str,"You must drop your cargo off with the %s unit.",name);
 		_io.message (0,"game","all",str);
+		if (capship) {
+		  name=_unit.getName(significant);
+		  _io.sprintf(str,"It is docked around the %s significant unit.",s);
+		  _io.message (0,"game","all",str);
+		}
 		_string.delete(str);
 		
 		basecontainer=_unit.getContainer(significant);

@@ -4,16 +4,20 @@ module bounty {
 	object enemycontainer;
 	int arrived;
 	int difficulty;
+	int curiter;
 	float cred;
+	import ai_stationary;
 	import universe;
 	import random;
 	import launch;
 	import faction_ships;
-	bool capship;
+	bool istarget;
 	
 	void init (int numsystemsaway, float creds) {
 	  faction_ships.init();
 	  arrived=0;
+	  curiter=0;
+	  istarget=false;
 	  cred=creds;
 	  object mysys=_std.getSystemFile();
 	  object sysfile = _std.getSystemFile();
@@ -65,6 +69,13 @@ module bounty {
 	  object you=_unit.getPlayer();
 	  if (arrived==2) {
 	    enemy=_unit.getUnitFromContainer(enemycontainer);
+	    if (!istarget) {
+	      object curun=_unit.getUnit(curiter);
+	      if (_std.equal(curun,enemy)) {
+		_unit.setTarget(enemy,you);
+	      }
+	      curiter=curiter+1;
+	    }
 	    if (_std.isNull(you)) {
 	      Lose(true);
 	      return;
@@ -86,8 +97,6 @@ module bounty {
 		Win(true);
 		return;
 	      }
-		  _unit.setTarget(enemy,you);
-		  _unit.setTarget(you,enemy);
 	    }
 	  } else {
 	    object sysfil = _std.getSystemFile();
@@ -105,7 +114,7 @@ module bounty {
 	      if (_std.isNull(significant)) {
 		_std.terminateMission (false);
 	      }else {
-		enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,1000.0,you);
+		enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,1000.0,significant);
 		if (isSig) {
 		  _unit.setTarget(enemy,significant);
 		  _unit.Jump(enemy,significant);
