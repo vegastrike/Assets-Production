@@ -12,7 +12,12 @@ attacklist ={}#hashtable mapping (attackfg,attackfaction):(defendfg,defendfactio
 defendlist={}#hashtable mapping (defendfg,defendfaction):(attackfg,attackfaction)
 lastfac=0
 lookorsiege=1
+stardatelen = Director.getSaveDataLength(0,"stardate")
+if (stardatelen==0):
+	Director.pushSaveData(0,"stardate",24799.3)
 def UpdateCombatTurn():
+	stardateinc=0.05
+	Director.putSaveData(0,"stardate",0,Director.getSaveData(0,"stardate",0)+stardateinc)
 	global lastfac
 	global lookorsiege
 	if lastfac>=VS.GetNumFactions():
