@@ -1,4 +1,4 @@
-<system name="Sirius" background="purple2" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
+<system name="Sirius" background="backgrounds/purple2" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
 <Light>
 <ambient red=".3" green=".3" blue=".3"/>
 <diffuse red=".6" green=".6" blue=".6"/>
@@ -24,10 +24,10 @@
 </Light>	
 
         <planet name="SiriusA" file="stars/white_star.png" radius="20000" gravity="20" z="00000"  Red=".9" Green=".9" Blue=".9" light="0">
-	        <planet name="SiriusB" file="stars/white_star.png" radius="13920" gravity="20" ri="220000" sk="180000"  Red=".9" Green=".9" Blue=".9" light="1" year="30000" day="1000"> 
-			<planet name="JumpToLuyten" file="jump.png" alpha="ONE ONE" radius="300" day="1000" year="10000" ri="-50000" sk="30000" destination="sol_sector/luyten"/>
-			<planet name="SiriusC" file="stars/red_star.png" radius="11045" Red=".9" Green=".2" Blue=".3" rk="50000" si="80000" light="2" year="3000" day="300">
-			<planet name="JumpToTikopal" file="jump.png" alpha="ONE ONE" radius="300" day="1000" year="10000" rj="-50000" si="-30000" destination="sol_sector/tikopal"/>
+	        <planet name="SiriusB" file="stars/white_star.png" radius="13920" gravity="20" ri="220000" sk="180000"  Red=".9" Green=".9" Blue=".9" light="1" year="180000" day="1000"> 
+			<planet name="JumpToLuyten" file="jump.png" alpha="ONE ONE" radius="300" day="1000" year="20000" ri="-50000" sk="30000" destination="sol_sector/luyten"/>
+			<planet name="SiriusC" file="stars/red_star.png" radius="11045" Red=".9" Green=".2" Blue=".3" rk="50000" si="80000" light="2" year="10000" day="300">
+			<planet name="JumpToTikopal" file="jump.png" alpha="ONE ONE" radius="300" day="1000" year="80000" rj="-50000" si="-30000" destination="sol_sector/tikopal"/>
 			</planet>
 		</planet>
 		<planet name="Dogon" file="planets/waterlava.png" radius="2000" ri="40000" sk="60000" year="10000" day="2000">
