@@ -13,6 +13,10 @@ module launch {
     _olist.delete(station_pos);
   };
 
+  void launch_around_unit(object station_name,object fgname,object faction,object type,object ai,int nr_ships,int nr_waves){
+    launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves);
+  };
+
   void launch_wave_around_area(object fgname,object faction,object type,object ai,int nr_ships,float r1,float r2,object pos){
     
 
