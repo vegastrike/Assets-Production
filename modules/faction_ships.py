@@ -20,6 +20,29 @@ siegingfactions={"confed":10,
 				 "ISO":40,
 				 "retro":100
 				 }
+fightersPerFG={"confed":10
+				,"aera":9
+				,"ISO":8
+				,"retro":4
+				,"rlaan":11
+				}
+fighterProductionRate={"confed":.02
+				,"aera":.1
+				,"rlaan":.12
+				,"ISO":.14
+				,"default":.1
+				}
+capitalProductionRate={"confed":.005
+				,"aera":.02
+				,"rlaan":.02
+				,"ISO":.03
+				,"default":.01
+				}
+homeworlds={"confed":"sol_sector/sol"
+		,"aera":"enigma_sector/shelton"
+		,"rlaan":"enigma_sector/shanha"
+		,"ISO":"enigma_sector/defiance"
+		}
 useBlank = (   0    ,  0   ,   0   ,     1    ,   1   ,   1     ,    1   ,    1    ,  0  ,  0)
 enemies =  ((aera,aera,rlaan,rlaan,retro,pirates,ISO), #confed
             (confed,confed,confed,militia,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,pirates,hunter,merchant,ISO), #aera

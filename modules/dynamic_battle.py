@@ -24,7 +24,7 @@ def UpdateCombatTurn():
 			lookorsiege=LookForTrouble (fac)
 		else:
 			if (not Siege(fac)):
-				fg_util.CheckAllShips(fac)		
+				#fg_util.CheckAllShips(fac)		
 				lastfac+=1
 				lookorsiege=1
 		#first look for trouble, then go ahead and simulate all the battles
@@ -83,11 +83,11 @@ def Siege(fac):
 				fg =fg_util.RandomFlightgroup(fac)
 				sys = fg_util.FGSystem(fg,fac)
 				enfac=VS.GetGalaxyFaction(sys)
-				if fac == "unknown" or enfac == "unknown":
-					print "ERROR: siege had an unknown faction"
-					return
-				fg_util.CheckAllShips(fac)
-				fg_util.CheckAllShips(enfac)
+				#fg_util.CheckAllShips(fac)
+				#fg_util.CheckAllShips(enfac)
+				#if fac == "unknown" or enfac == "unknown":
+				#	print "ERROR: siege had an unknown faction"
+				#	return
 				if (VS.GetRelation(fac,enfac)<0):#FIXME maybe even less than that
 					numenemyfg = fg_util.NumFactionFGsInSystem(enfac,sys)
 					numfriendfg = fg_util.NumFactionFGsInSystem(fac,sys)
@@ -205,8 +205,8 @@ def randomMovement(fg,fac):
 	if (sys!='nil' and fg!=fg_util.BaseFGInSystemName(sys)):
 		l = universe.getAdjacentSystemList(sys)
 		nthis = fg_util.NumFactionFGsInSystem(fac,sys)
-		suggestednewsys = l[vsrandom.randrange(0,len(l))]
 		if (len(l)):
+			suggestednewsys = l[vsrandom.randrange(0,len(l))]
 			for i in l:
 				ifac = VS.GetGalaxyFaction(i)
 				if (ifac==fac and nthis > fg_util.NumFactionFGsInSystem(fac,i)):
@@ -216,16 +216,33 @@ def randomMovement(fg,fac):
 					return
 			#			print 'moving '+fg+' from '+sys+' to '+ newsys
 			fg_util.TransferFG( fg,fac,suggestednewsys);
+		else:
+			pass #print "flightgroup "+fg+" in system "+sys + " is stuck"
+def XProductionRate(fac,type):
+	if fac in type:
+		return type[fac]
+	return type["default"]
 
 def AddFighterTo(fgname,fac):
 	sys = VS.getSystemFile()
 	#print 'add fighter'
-	fg_util.AddShipsToFG (fgname,fac,((faction_ships.getRandomFighter(fac),1),),sys)
-	rn = vsrandom.randrange(0,10)
+	import generate_dyn_universe
+	numsystems = generate_dyn_universe.systemcount[fac]	
+	numfighters = int(XProductionRate(fac,faction_ships.fighterProductionRate)*numsystems)
+	if (numfighters<1):
+		numfighters=1
+	fg_util.AddShipsToFG (fgname,fac,((faction_ships.getRandomFighter(fac),numfighters),),sys)
+	numcapships = XProductionRate(fac,faction_ships.capitalProductionRate)*numsystems
+	if (numcapships<1):
+		if (vsrandom.uniform(0,1)>numcapships):
+			return
+		numcapships=1
 	sys = fg_util.FGSystem(fgname,fac)
-	if (rn==0 and VS.GetGalaxyFaction(sys)==fac):
-		cap =faction_ships.getRandomCapitol(fac)
-		fg_util.AddShipsToFG(fgname,fac,((cap,1),),sys)
+	if (VS.GetGalaxyFaction(sys)!=fac):
+		if fac in faction_ships.homeworlds:
+			sys=faction_ships.homeworlds[fac]
+	cap =faction_ships.getRandomCapitol(fac)
+	fg_util.AddShipsToFG(fgname,fac,((cap,int(numcapships)),),sys)
 
 #returns false if done with vehicles
 lftiter=0
