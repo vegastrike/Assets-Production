@@ -8,7 +8,7 @@ import Briefing
 import universe
 import unit
 import Director
-
+import quest
 class cargo_mission (Director.Mission):
 	def initbriefing(self):
 		VS.IOmessage (0,"cargo mission","briefing","Your mission for today will be to run some %s cargo" % self.cargoname)
@@ -27,12 +27,15 @@ class cargo_mission (Director.Mission):
 	def endbriefing(self):
 		self.adjsys.endbriefing()
 		del self.briefgametime
-	
-	def __init__ (self,factionname, numsystemsaway, cargoquantity, missiondifficulty, creds, launchoncapship, time_to_complete, category,jumps=()):
+	def SetVar (val):
+	  if (self.var_to_set!=''):
+	    quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,val)
+	def __init__ (self,factionname, numsystemsaway, cargoquantity, missiondifficulty, creds, launchoncapship, time_to_complete, category,jumps=(),var_to_set=''):
 	  Director.Mission.__init__(self);
 	  self.you=VS.Unit()
 	  self.base=VS.Unit()
 	  self.arrived=0
+	  self.var_to_set=var_to_set
 	  self.mplay="all"
 #	  self.mission_time=VS.GetGameTime()+time_to_complete*100*float(1+numsystemsaway)
 	  self.capship= launchoncapship
@@ -101,6 +104,7 @@ class cargo_mission (Director.Mission):
 	    VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00You have been rewarded for your effort as agreed.")
 	    VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00Your excellent work will be remembered.")
 	    you.addCredits(self.cred)
+	    self.SetVar(1)
 	    VS.terminateMission(1)
 	    return
 	  else:
@@ -113,7 +117,7 @@ class cargo_mission (Director.Mission):
 	    else:
 	      VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000You will not be paid!")
 	      universe.punish(self.you,self.faction,self.difficulty)
-
+	    self.SetVar(-1)
 	    VS.terminateMission(0)
 	    return
 	  
@@ -148,7 +152,7 @@ class cargo_mission (Director.Mission):
 	    VS.IOmessage(0,"cargo mission",self.mplay,"Once there, %s and we will transport the cargo off of your ship." % (dockstr))
 	    self.base=self.adjsys.SignificantUnit()
 
-def initrandom (factionname, missiondifficulty,creds_per_jump, launchoncapship, sysmin, sysmax, time_to_complete, category,jumps=()):
+def initrandom (factionname, missiondifficulty,creds_per_jump, launchoncapship, sysmin, sysmax, time_to_complete, category,jumps=(),var_to_set=''):
 	numsys=vsrandom.randrange(sysmin,sysmax)
-	return cargo_mission(factionname,numsys, vsrandom.randrange(4,15), missiondifficulty,creds_per_jump*float(1+numsys),launchoncapship, 10.0, category,jumps)
+	return cargo_mission(factionname,numsys, vsrandom.randrange(4,15), missiondifficulty,creds_per_jump*float(1+numsys),launchoncapship, 10.0, category,jumps,var_to_set)
 
