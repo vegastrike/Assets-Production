@@ -23,7 +23,7 @@ class difficulty:
     un=VS.getPlayerX(0)
     print "unlogical end"
     self.i=0
-    while (un):
+    while (not un.isNull()):
       newdiff=0
       print "get save data length"
       (open ("/tmp/vswroteship","w")).close()
