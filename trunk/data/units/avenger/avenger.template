@@ -16,16 +16,16 @@
 	</Sound>
 
 
-        <Mount weapon="ParticleBeam" size="light medium heavy capship-light" x="-29.815" y="-6.919" z="30.409"/>
-        <Mount weapon="ParticleBeam" size="light medium heavy capship-light" x="29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="ParticleBeam" size="heavy capship-light" x="-29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="ParticleBeam" size="heavy capship-light" x="29.815" y="-6.919" z="30.409"/>
 	<Mount weapon="Penetrator" size="capship-light capship-medium" x="-4.0" y="-4.618" z="19.606" />
 	<Mount weapon="Penetrator" size="capship-light capship-medium" x="4.0" y="-4.618" z="19.606" />
-	<Mount weapon="Penetrator" size="light medium heavy special capship-light capship-medium" x="0.0" y="-4.618" z="19.606" />
+	<Mount weapon="Penetrator" size="special capship-light capship-medium" x="0.0" y="-4.618" z="19.606" volume="2000" />
 
-	<Mount weapon="CapIFF" size="heavy-missile light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
-	<Mount weapon="CapIFF" size="heavy-missile light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
-	<Mount weapon="CapshipMissile" size="heavy-missile light-capship-missile heavy-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="100"/>
-	<Mount weapon="CapshipMissile" size="heavy-missile light-capship-missile heavy-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="100"/>
+	<Mount weapon="CapIFF" size="heavy-missile light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="700"/>
+	<Mount weapon="CapIFF" size="heavy-missile light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="700"/>
+	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="100"/>
+	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="100"/>
 	<Mount weapon="Mace" size="medium-missile heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
 	<Mount weapon="Mace" size="medium-missile heavy-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
 	<Mount weapon="Torpedo" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="700"/>
