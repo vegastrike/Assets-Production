@@ -13,7 +13,7 @@
 
 	<cockpit file="hornet-cockpit.cpt" x="0" y="2" z="23"/>
 	<Thrust>
-		<Engine Afterburner="400.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
+		<Engine Afterburner="268.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
 		<Maneuver yaw="3415.500000" pitch="3415.500000" roll="3415.500000"/>
 	</Thrust>
 	<Sound> </Sound>
@@ -24,7 +24,7 @@
 		<Hull strength="1000"/>
 	</Defense>
 	<Stats mass="7" momentofinertia="7" fuel="2000000000"></Stats>
-	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="80.000000" maxspeed="80.000000"/>
+	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="140.000000" maxspeed="80.000000"/>
 	<Energy>
 		<Reactor recharge="60" limit="470"/>
 	</Energy>

@@ -16,7 +16,7 @@
 	</Defense>
 	<Stats mass="30.000000" momentofinertia="30.000000" fuel="600000000"></Stats>
 	<Computer yaw="238.000000" pitch="265.600006" roll="293.200012" afterburner="120" maxspeed="60">
-		<Radar itts="true" color="true" maxrange="800000" error="0"/> </Computer>
+		<Radar itts="true" color="true" range="800000" error="0"/> </Computer>
 
 	<Energy afterburnenergy="30">
 		<Reactor recharge="280" limit="800"/>

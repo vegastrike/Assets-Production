@@ -10,7 +10,7 @@
 <Mount weapon="Ktek" size="Light" x="3.422477" y="-10.527871" z="12.487250"/>
 
 	<Thrust>
-		<Engine Afterburner="800.000000" Forward="168.000000" Retro="107.000000" Left="104.000000" Right="104.000000" Top="104.000000" Bottom="184.000000"/>
+		<Engine Afterburner="168.000000" Forward="168.000000" Retro="107.000000" Left="104.000000" Right="104.000000" Top="104.000000" Bottom="184.000000"/>
 		<Maneuver yaw="1415.500000" pitch="1415.500000" roll="1415.500000"/>
 	</Thrust>
 	<cockpit x="0" y="0" z="13"/>
@@ -22,7 +22,7 @@
 		<Hull strength="800"/>
 	</Defense>
 	<Stats mass="2" momentofinertia="2" fuel="200000000"></Stats>
-	<Computer yaw="123.500000" pitch="153.500000" roll="103.500000" afterburner="100.000000" maxspeed="100.000000"/>
+	<Computer yaw="123.500000" pitch="153.500000" roll="103.500000" afterburner="160.000000" maxspeed="100.000000"/>
 	<Energy>
 		<Reactor recharge="60" limit="312"/>
 	</Energy>
