@@ -38,7 +38,7 @@ module total_war {
 
     object pos=vec3.new(8000.0,0.0,0.0);
 
-    launch.launch_wave_in_area("fgname",faction_name,typename,"default",nr_ships, 1000.0, pos);
+    launch.launch_wave_in_area("fgname",faction_name,"aevant","default",nr_ships, 1000.0, pos);
 
     _olist.delete(pos);
   };

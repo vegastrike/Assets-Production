@@ -34,6 +34,7 @@ module attack_jumppoint {
 	  }
 	  object str = _string.new();
 	  _io.sprintf(str,"Greetings, %s. You must patrol a system for us:",name);
+	  _string.delete (name);
 	  _io.message (0,"game","all",str);
 	  go_somewhere_significant.init(you,numsystemsaway,true,distance_from_base);
 	  _string.delete(str);

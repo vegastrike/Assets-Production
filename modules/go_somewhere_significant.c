@@ -66,6 +66,7 @@ module go_somewhere_significant {
 		object str = _string.new();
 		object name = _unit.getName (newun);
 		_io.sprintf(str,"You must visit the %s",name);
+		_string.delete (name);
 		_io.message (0,"game","all",str);
 		_string.delete(str);
        		significantun=_unit.getContainer(significant);

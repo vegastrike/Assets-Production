@@ -72,8 +72,6 @@ module faction_ships {
     _olist.push_back(fighters,merchant_ships);
     _olist.push_back(capitols,merchant_ships);//double referenced
     _olist.push_back (merchant_ships,"tian");
-    _olist.push_back (merchant_ships,"cruiser_mk2");
-    _olist.push_back (merchant_ships,"revoker");
 
     unknown_ships=_olist.new();
     _olist.push_back(unknown_ships,"unknown_active");    
