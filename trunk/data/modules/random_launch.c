@@ -122,7 +122,7 @@ module random_launch {
     float max_range=_omap.get(submap,"max_range");
 
     int nr_trucks=random.randomint(min_nr_trucks,max_nr_trucks);
-
+    player_unit=_unit.getPlayer();
     object pos=_unit.getPosition(player_unit);
 
     object type="truck_small";
