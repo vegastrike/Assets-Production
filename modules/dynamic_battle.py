@@ -125,7 +125,7 @@ def TargetEachOther (fgname,faction,enfgname,enfaction):
 		en.SetTarget(al)
 		en.setFgDirective ('h')#help me out here!
 def KillOne (fg,enfac,tn):
-	fg_util.RemoveShipFromFG(fg,enfac,tn[0])
+	fg_util.RemoveShipFromFG(fg,enfac,tn[0],1)
 
 def SimulatedDukeItOut (fgname,faction,enfgname,enfaction):
 	ally=fg_util.LandedShipsInFG(fgname,faction)
