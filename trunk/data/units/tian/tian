@@ -16,7 +16,9 @@
 	<Energy>
 		<Reactor recharge="10" limit="100"/>
 	</Energy>
-       
+       	<Jump delay="1" jumpenergy="90"/>       
+
+
 
 <!-- new elements added -->
 <Light file="supernova.bmp" x="0.000000" y="0.533333" z="-4.133333" size="1.799999"/>
