@@ -50,7 +50,7 @@ all_faction_name_global = {
 		,"dnickp":"FrankenGenies"
 		,"government":"Shaper Directorate"
 		,"possessive":"Shaper's"
-		,"homeworld" :"Bifr�st"
+		,"homeworld" :"Bifröst"
 		,"mstandname":"Gunther Mueller"
 		,"fstandname":"Heather Madsen"
 		}
@@ -301,11 +301,11 @@ def allNews():
 
 								  ]
 
-						,"bad"		: [
+						,"bad"		: [(0.8,"all","I believe this is done, but just not sent to me")
 
 								  ]
 
-						,"neutral"	: [
+						,"neutral"	: [(0.8,"all","I believe this is done, but just not sent to me")
 
 								  ]
 
@@ -315,20 +315,20 @@ def allNews():
 
 								  ]
 
-						,"bad"		: [
+						,"bad"		: [(0.8,"all","I believe this is done, but just not sent to me")
 
 								  ]
 
-						,"neutral"	: [
+						,"neutral"	: [(0.8,"all","I believe this is done, but just not sent to me")
 
 								  ]
 
 						}
-				 ,"draw"   :	{"good"		: [
+				 ,"draw"   :	{"good"		: [(0.8,"all","I believe this is done, but just not sent to me")
 
 								  ]
 
-						,"bad"		: [
+						,"bad"		: [(0.8,"all","I believe this is done, but just not sent to me")
 
 								  ]
 
@@ -362,19 +362,32 @@ def allNews():
 
 						}
 
-				,"draw"   :	{"good"		: [(0.8,"all","draw is good")
-								  
-								  ]
+				,"draw"   :	{"good"		: [(0.8,"all","need a story later, when siege implemented properly")]
 
-						,"bad"		: [(0.8,"all","draw is bad")]
+						,"bad"		: [(0.8,"all","need a story later, when siege implemented properly")]
 
-						,"neutral"	: [(0.8,"all","draw is neutral")]
+						,"neutral"	: [(0.8,"all","need a story later, when siege implemented properly")]
 
 						}
 				 }
 
 
 		}
+
+,"exploration" :	{"end" :	{"success" :	{"good"		: [(0.8,"all","need a story")]
+								,"bad"		: [(0.8,"all","need a story")]
+								,"neutral"		: [(0.8,"all","need a story")]
+								}
+					,"draw" :		{"good"		: [(0.8,"all","need a story")]
+								,"bad"		: [(0.8,"all","need a story")]
+								,"neutral"		: [(0.8,"all","need a story")]
+								}
+					,"loss" :		{"good"		: [(0.8,"all","need a story")]
+								,"bad"		: [(0.8,"all","need a story")]
+								,"neutral"		: [(0.8,"all","need a story")]
+								}
+					}
+			}
 
 ,"battle" :	{"end" :	{"success" :	{"good"	: [(0.1,"all","VAR_defender_dnickp Vaporised!\\In the outer regions of the VAR_system_system system today, the VAR_aggressor_FG squadron of VAR_aggressor_nicks VAR_aggressor_FGtype ships in transit came across a group of VAR_defender_possessive VAR_defender_FGtype fighters on an intercept course with a VAR_aggressor_possessive passenger liner.  The hostiles were engaged and swiftly destroyed by the VAR_aggressor_FGtype squadron -- no energy sources remained active.\\\\\\GNN -- \"We\'re with it when it breaks!\"")
 									  ,(0.3,"player","VAR_aggressor_FG Hero!\\Once again VAR_aggressor_FG, in a VAR_aggressor_FGtype has struck a blow for the VAR_dockedat_full with yet another VAR_defender_possessive flightgroup, this time the VAR_defender_FG Squadran of VAR_defender_FGtype craft, destroyed.  With the war against the VAR_defender_full beginning to drag out, it is people like this hero who will make the difference.  Only with the determination and the will of the people can we ever hope to rid our corner of the galaxy of the VAR_defender_dnickp for good.\\\\\\GNN - In our special report tonight, learn about the VAR_defender_possessive parents who used their own children as shields against VAR_dockedat_nicks troopers.")
@@ -385,57 +398,69 @@ def allNews():
 									  ,(0.5,"player","VAR_aggressor_FG Fleeing from battle:\\The VAR_aggressor_FG VAR_aggressor_FGtype was seen leaving the scene of a skirmish against a group of VAR_defender_possessive VAR_defender_FGtype called \"VAR_defender_FG\".  It is one of the latest of events involving the VAR_aggressor_FG group, who have been active recently in and around VAR_system_system system.  Although their intentions against the VAR_defender_nickp are obviously aggressive, no signs of hostile intent have been shown towards any VAR_dockedat_nicks troops or instalations.\\\\\\GNN -- \"Where the action is...if we can make it.\"")
 									  ]
 						}
-				,"draw" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
+				,"draw" :	{"good"		: [(0.8,"all","need a story for both player and all -- peteyg may be doing this")]
+						,"bad"		: [(0.8,"all","need a story for both player and all -- peteyg may be doing this")]
+						,"neutral"		: [(0.8,"all","need a story for both player and all -- peteyg may be doing this")]
 						}
-				,"loss" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
+				,"loss" :	{"good"		: [(0.8,"all","need a story for both player and all -- peteyg may be doing this")]
+						,"bad"		: [(0.8,"all","need a story for both player and all -- peteyg may be doing this")]
+						,"neutral"		: [(0.8,"all","need a story for both player and all -- peteyg may be doing this")]
 						}
 				}
 		}
 
 
-,"fleetbattle":	{"start" :	{"success" :	{"good"		: [(0.3,"all","The VAR_aggressor_FG Storms the VAR_defender_nickp:\\Moments ago out of the window of my pleasure yacht I witnessed one of the most impressive sights of my career.  The VAR_aggressor_FGtype Class VAR_aggressor_possessive ship VAR_aggressor_FG and support warped right into the middle of a large VAR_defender_possessive VAR_defender_FGtype led invasion force!\\From the few moments I saw (out pilot was heeding the advice of the VAR_aggressor_FG and getting out of there as fast as possible) the VAR_defender_dnicks were taken completely by surprise with somewhere near half of their fleet badly damaged before the VAR_aggressor_nicks forces had gone out of range.  Information on the outcome of the battle will be available later, when out pilot deems it safe to go investigating closer\\\\Daneel Aleki, GNN\\\\GNN -- \"Unlike other news networks, our employees are legally bound to report stories of importance no matter the cost.\"")]
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"draw" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"loss" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				}
+,"fleetbattle":
+	{"start" :		{"success" :	{"good" :		[(0.3,"all","Strike Fleet Engages in Retaliatory Attacks!\\Reports have filtered in of a retaliatory attack on a VAR_defender_possessive VAR_defender_FGtype raiding party. While all reports state that the raiding party has been decimated, VAR_defender_possessive reinforcements are rushing to the fray.\\The Commander Strike Fleet was quoted as saying \‘They strike at our homes, our convoys and our people. It won’t matter where they run, we will follow – and they will end defeated! Should we discover that this raiding party had official sanction, then VAR_defender_possessive forces beware, you shall suffer the same fate.\’\\\\More updates to follow.")
+											,(0.8,"all","The VAR_aggressor_FG Storms the VAR_defender_nickp:\\Moments ago out of the window of my pleasure yacht I witnessed one of the most impressive sights of my career. The VAR_aggressor_FGtype Class VAR_aggressor_possessive ship VAR_aggressor_FG and support warped right into the middle of a large VAR_defender_possessive VAR_defender_FGtype led invasion force!\\From the few moments I saw (out pilot was heeding the advice of the VAR_aggressor_FG and getting out of there as fast as possible) the VAR_defender_dnicks were taken completely by surprise with somewhere near half of their fleet badly damaged before the VAR_aggressor_nicks forces had gone out of range. Information on the outcome of the battle will be available later, when out pilot deems it safe to go investigating closer\\\\Daneel Aleki, GNN")]
 
-		,"middle" :	{"success" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"draw" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"loss" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
+							,"bad" :		[(0.3,"all","VAR_defender_possessive VAR_defender_FGtype Defence Force Fired Upon!\\VAR_aggressor_FGtype’s fired upon VAR_defender_FGtype ships in an unprovoked attack only hours ago! Casualties are currently unknown, but VAR_defender_possessive reinforcements are being rushed to the battle site even now.\\The commander of VAR_defender_FG Defence Force has stated in a press release ‘They started this, but we’ll finish it! It may be that diplomatic negotiations will require the retreat of all forces form the battlezone – but we won’t go until the VAR_aggressor_dnickp do!\\\\Stay online for further updates.")]
+
+							,"neutral" :		[(0.3,"all","VAR_aggressor_possessive Strike Fleet Sighted!\\Confirmed reports have been received of a VAR_aggressor_possessive Strike Fleet grid-searching VAR_system_system space. Unconfirmed reports that the strike fleet is hunting a VAR_defender_possessive VAR_defender_FGtype Class raiding party have also been received. GNN will monitor these events, seeking the reason behind such aggressive actions of the VAR_aggressor_nickp.\\\\GNN – we report the inane news!")]
+								}
+
+
+				,"draw" :		{"good" :		[(0.3,"all","Flagship Damaged, Strike Fleet to Continue Pursuit!\\In a brief encounter yesterday, the VAR_aggressor_FGtype Class VAR_aggressor_FG suffered minor damage after inflicting heavy casualties on a VAR_defender_possessive raiding party. While the flagship has heaved to for repairs, the remainder of the strike fleet will continue to prosecute the VAR_defender_possessive raiding party, now with extreme prejudice.")]
+
+							,"bad" :		[(0.3,"all","VAR_aggressor_dnicks Strike Fleet Repulsed!\\A VAR_defender_possessive trade convoy came under fire from a VAR_aggressor_dnicks Strike Fleet yesterday. News just received reports that while suffering minor damage, the convoy managed to disable the VAR_aggressor_FGtype Class VAR_aggressor_FG, flagship of the strike fleet.\\Will the convoy manage to escape the strike fleet, and flee into the protective arms of its defence force? Will the strike fleet be sent ahead of the crippled flagship? Stay online.")]
+
+							,"neutral" :		[(0.3,"all","Battle in the VAR_system_system System!\\While in pursuit of a VAR_defender_possessive raiding party, the flagship of the VAR_aggressor_possessive Strike Fleet, the VAR_aggressor_FGtype Class VAR_aggressor_FG sustained damage to its engines. In exchange, the strike fleet inflicted serious damage on the raiding party. The raiding party is currently attempting to reach a friendly system, where it expects a VAR_defender_possessive Defence Force will provide support in repulsing the pursuing strike fleet.\\\\Updates to follow.")]
+								}
+
+
+				,"loss" :		{"good" :		[(0.3,"all","Running With Their Tail Between Their Legs!\\A VAR_aggressor_dnicks Strike Fleet was sent fleeing earlier today after encountering a VAR_defender_FGtype, VAR_defender_FGtype, and VAR_defender_FGtype Class Defence Force in VAR_system_system System. After several days of being illegally pursued by this strike fleet, a VAR_defender_possessive trade convoy was welcomed into the protective arms of the Defence Force. After several volleys of weapons fire, the VAR_aggressor_dnicks ran as fast as possible for their own borders.\\It is wonderful, is it not, when we can have a successful trade convoy, AND kick the VAR_aggressor_dnickp where it hurts!\\\\This is GNN – enjoying the fruits of another’s labour!")]
+
+							,"bad" :		[(0.3,"all","Strike Fleet Forced to Retreat!\\Earlier today, a VAR_aggressor_possessive Strike Fleet pursuing a VAR_defender_possessive raiding party retreated from an untenable encounter. Upon entry to the VAR_system_system System, detection equipment registered multiple VAR_defender_possessive VAR_defender_FGtype, VAR_defender_FGtype, and VAR_defender_FGtype Class ships in defensive formation around the raiding party. After trading several volleys of primary weapons fire, the VAR_aggressor_possessive Strike Fleet retreated to friendlier space. The VAR_aggressor_government has called upon all available reserves, and is moving ships from other lines of battle. Now the battle is upon us - WAR!")]
+
+							,"neutral" :		[(0.3,"all","VAR_aggressor_possessive Strike Fleet in Tactical Retreat.\\Earlier today, a VAR_aggressor_possessive Strike Fleet in pursuit of a VAR_defender_possessive raiding party retreated back to friendlier space after encountering unexpected resistance. After jumping into VAR_system_system System, the strike fleet planned to corner and destroy the raiding party, recovering all stolen goods in the process. Instead, the strike fleet encountered VAR_defender_FGtype, VAR_defender_FGtype, and VAR_defender_FGtype Class ships drawn up in defensive order. Laying down a defensive screen of weapons fire, the strike fleet jumped back to its own borders.\\ The VAR_aggressor_government is currently reinforcing the strike fleet with forces from other battle lines.\\Will this reinforced strike fleet re-enter battle? Stay online.")]
+								}
+					}
+
+		,"middle" :	{"success" :	{"good" :		[(0.8,"all","need a story if implemented")]
+							,"bad" :		[(0.8,"all","need a story if implemented")]
+							,"neutral" :		[(0.8,"all","need a story if implemented")]
+							}
+				,"draw" :		{"good" :		[(0.8,"all","need a story if implemented")]
+							,"bad" :		[(0.8,"all","need a story if implemented")]
+							,"neutral" :		[(0.8,"all","need a story if implemented")]
+							}
+				,"loss" :		{"good" :		[(0.8,"all","need a story if implemented")]
+							,"bad" :		[(0.8,"all","need a story if implemented")]
+							,"neutral" :		[(0.8,"all","need a story if implemented")]
+							}
 				}
-		,"end" :	{"success" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"draw" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"loss" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
+		,"end" :	{"success" :	{"good"		: [(0.8,"all","need a story if implemented")]
+							,"bad"		: [(0.8,"all","need a story if implemented")]
+							,"neutral"		: [(0.8,"all","need a story if implemented")]
+							}
+				,"draw" :		{"good"		: [(0.8,"all","need a story if implemented")]
+							,"bad"		: [(0.8,"all","need a story if implemented")]
+							,"neutral"		: [(0.8,"all","need a story if implemented")]
+							}
+				,"loss" :		{"good"		: [(0.8,"all","need a story if implemented")]
+							,"bad"		: [(0.8,"all","need a story if implemented")]
+							,"neutral"		: [(0.8,"all","need a story if implemented")]
+							}
 				}
 		}
 

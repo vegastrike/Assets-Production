@@ -38,9 +38,9 @@ class ShipTracker:
 					import dynamic_news
 					import dynamic_battle
 					numships = updatePlayerKillList(0,self.faction)
-					varList=["destroyed","end","unknown",self.faction,"1",str(dynamic_battle.getImportanceOfType(self.type)),self.starsystem,"all","unknown","unknown",self.fgname,self.type]
+					varList=[str(Director.getSaveData(0,"stardate",0)),"destroyed","end","unknown",self.faction,"1",str(dynamic_battle.getImportanceOfType(self.type)),self.starsystem,"all","unknown","unknown",self.fgname,self.type]
 					if (numships>0 and VS.getPlayer()):
-						varList=["destroyed","end",VS.getPlayer().getFactionName(),self.faction,"1",str(dynamic_battle.getImportanceOfType(self.type)),self.starsystem,"all",VS.getPlayer().getFlightgroupName(),VS.getPlayer().getName(),self.fgname,self.type]
+						varList=[str(Director.getSaveData(0,"stardate",0)),"destroyed","end",VS.getPlayer().getFactionName(),self.faction,"1",str(dynamic_battle.getImportanceOfType(self.type)),self.starsystem,"all",VS.getPlayer().getFlightgroupName(),VS.getPlayer().getName(),self.fgname,self.type]
 					Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(varList))
 			else:
 				fg_util.LandShip(self.fgname,self.faction,self.type)

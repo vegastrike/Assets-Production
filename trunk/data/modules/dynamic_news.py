@@ -24,7 +24,7 @@ import vsrandom
 import dynamic_news_content
 
 
-def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
+def makeDynamicNews	(stardate,type_event,stage_event,aggressor,defender,success
 			,scale_event,system,keyword,aggressor_flightgroup,aggressor_type, defender_flightgroup, defender_type,randint):
 	"""retrieves a relevant news item from the dynamic_news_content.allNews()
 	list, and formats it"""
@@ -45,6 +45,7 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 				,"scale_event"	: scale_event
 				,"system"	: system
 				,"keyword"	: keyword
+				,"stardate" : str(stardate)
 				,"aggressorFG"	: aggressor_flightgroup
 				,"aggressorFGtype": formatShipName(aggressor_type)
 				,"defenderFG"	: defender_flightgroup
@@ -100,6 +101,9 @@ def formatNameTags(word,names):
 			return formatProperTitle(allUsefullVariables["system"][allUsefullVariables["system"].index("/")+1:])
 		if tag == "sector":
 			return formatProperTitle(allUsefullVariables["system"][:allUsefullVariables["system"].index("_")])
+	elif var == "stardate":
+		if tag == "value":
+			return allUsefullVariables[var]
 	elif tag in ["FG","FGtype"] :
 		return allUsefullVariables[var+tag]
 	elif tag in names["alltags"] and validateDictKeys([var_string,tag],dynamic_news_content.allFactionNames()):
@@ -336,10 +340,10 @@ def processNewsTuple(newsstring,randint):
 	or not taking into account the random int given/not given"""
 
 	ls = newsstring.split(',')
-	while (len(ls)<12):
-		ls.append ('unknown')
+#	while (len(ls)<13):
+#		ls.append ('unknown')
 	print 'lsing '+ str(ls)
-	ns = makeDynamicNews(ls[0],ls[1],ls[2],ls[3],string.atoi(ls[4]),string.atof(ls[5]),ls[6],ls[7],ls[8],ls[9],ls[10],ls[11],randint)
+	ns = makeDynamicNews(string.atof(ls[0]),ls[1],ls[2],ls[3],ls[4],string.atoi(ls[5]),string.atof(ls[6]),ls[7],ls[8],ls[9],ls[10],ls[11],ls[12],randint)
 	print ns
 	return ns
 #Added flightgroups as the last few arguments
