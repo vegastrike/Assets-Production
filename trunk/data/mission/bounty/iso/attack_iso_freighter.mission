@@ -21,7 +21,7 @@
         </flightgroups>
 	<python>
 import bounty
-newmission = bounty.bounty (0, 0, 25000, 1, 4, 'ISO',(),'iso_evil2')
+newmission = bounty.bounty (0, 0, 25000, 0, 4, 'ISO',(),'iso_evil2')
 newmission=0
 
 </python>
