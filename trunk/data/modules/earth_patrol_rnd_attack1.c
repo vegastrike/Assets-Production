@@ -11,7 +11,7 @@ module earth_patrol_rnd_attack1 {
   void initgame(){
     lasttime=0.0;
     waittime=random.random(10.0,30.0);
-    faction_ships.make_ships_list();
+    faction_ships.init_no_blank();
     aera_ships=faction_ships.aera();
   };
 

@@ -11,7 +11,7 @@ module explore_rare_enemies {
     lasttime=0.0;
     drone=0;
     waittime=random.random(10.0,35000.0);
-    faction_ships.make_ships_list();
+    faction_ships.init_no_blank();
   };
 
   void launch_new_ships(){
