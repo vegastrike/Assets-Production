@@ -116,7 +116,11 @@ if cp>=0:
 	print 'EndSystemCount'	
 	genUniverse=0
 	curfaclist = fg_util.AllFactions()
-	if (fg_util.ReadStringList(cp,"FactionRefList")!=curfaclist):
+	reflist = fg_util.ReadStringList(cp,"FactionRefList")
+	if (reflist !=curfaclist):
+		print 'reflist is '+str(reflist)
+		print 'curfaclist is '+str(curfaclist) 
+		
 		fg_util.WriteStringList(cp,"FactionRefList",curfaclist)
 		print 'generating ships... ... ...'
 		GenerateAllShips (5000,5) ###Insert number of flight groups and max ships per fg

@@ -260,22 +260,21 @@ def getPOV(facmy,defender,aggressor,success):
 
 def getDockFaction():
 	"""returns the faction of the place the player is docked at"""
-#	return "aera" # FIXME -- make the stub functions actually return a useful value!
 	i=0
 	playa=VS.getPlayer()
 	un=VS.getUnit(i)
 	while(un):
 		i+=1
-		if (un.isDocked(playa)):
+		if (un.isDocked(playa) or playa.isDocked(un)):
+			if not (un.isPlanet() or (un.getFactionName() == "neutral")):
+				fac = un.getFactionName()
+				print 'returning '+un.getName()+' s faction as '+fac+' from flightgroup '+un.getFlightgroupName()
+				return fac
 			break
 		un=VS.getUnit(i)
-	if un.isPlanet() or (un.getFactionName() == "neutral"):
-		retfac = VS.GetGalaxyFaction(VS.getSystemFile())
-		print "Returning " + retfac + " as the systems faction"
-		return retfac
-	else:
-		print "Returning " + un.getFactionName() + " as the units faction"
-		return un.getFactionName()
+	retfac = VS.GetGalaxyFaction(VS.getSystemFile())
+	print "Returning " + retfac + " as the systems faction"
+	return retfac
 	
 
 
