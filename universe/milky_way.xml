@@ -692,7 +692,7 @@
 		</sector>
 		<sector name="vega_sector">
 			<var name="faction" value="confed"/> <!-- if variable is not specified in teh actual system it will check in the sector -->
-			<var name="namelist" value="celtic.txt"/><!-- Vega Sector uses celtic names for planets -->
+			<var name="namelist" value="names.txt"/><!-- Vega Sector uses celtic names for planets -->
 			<var name="planetlist" value="planets.txt"/>	
 			<sector name="mcdaniels_world">
 				<var name="faction" value="confed"/>
@@ -2048,7 +2048,7 @@
 		</sector>
 		<sector name="enigma_sector">
 			<var name="faction" value="confed"/><!-- the default faction for systems in the enigma sector -->		
-			<var name="namelist" value="aztec.txt"/><!-- Enigma Sector uses aztec names for planets -->			
+			<var name="namelist" value="celtic.txt"/><!-- Enigma Sector uses aztec names for planets -->			
 			<sector name="vespus">
 				<var name="sun_radius" value="34000"/>
 			      <var name="faction" value="confed"/> 
@@ -2618,7 +2618,7 @@
 		<sector name="epsilon_sector">
 			<var name="faction" value="aera"/> 
 			<var name="planetlist" value="planets.aera.txt"/><!-- the default faction for systems in the enigma sector -->		
-			<var name="namelist" value="incan.txt"/><!-- Epsilon Sector uses Incan names for planets -->			
+			<var name="namelist" value="aztec.txt"/><!-- Epsilon Sector uses Incan names for planets -->			
 			<sector name="locanda">
 				<var name="sun_radius" value="25000"/>
 			        <var name="faction" value="confed"/> 
@@ -3655,7 +3655,7 @@
 
 		<sector name="hawking_sector">
 			<var name="faction" value="confed"/>
-			<var name="namelist" value="names.txt"/>
+			<var name="namelist" value="incan.txt"/>
 			<sector name="komarov">
 				<var name="faction" value="confed"/> 
 				<var name="jumps" value="sol_sector/lenin avalon_sector/thethys hawking_sector/gilmore"/>
