@@ -39,10 +39,10 @@ friendlies=((confed,confed,confed,militia,militia,militia,militia,merchant,merch
 fighters = (("firefly","destiny","tian","nova","puma","mongoose","destiny","tian","nova","puma","mongoose","avenger"), #confed
             ("dagger","aeon","aevant","kyta","lekra","osprey","kira","butterfly"), #aera
             ("skart","leokat","f109vampire","starfish","hispidus"), #rlaan
-            ("wayfarer","longhaul"), #merchant
+            ("wayfarer","wayfarer","wayfarer","longhaul","longhaul","dryad"), #merchant
             ("firefly","firefly","avenger"), #retro
             ("revoker","firefly","firefly","firefly","wayfarer","katar"), #pirates
-            ("epeellcat","khanjarli","katar"), #hunter
+            ("epeellcat","khanjarli","katar","dryad"), #hunter
             ("mongoose","firefly","firefly","katar"), #militia
             ("eagle","nova","metron"), #ISO
             ("unknown_active",) #unknown
