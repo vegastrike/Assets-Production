@@ -70,6 +70,7 @@ module ai_patrol {
 
       waypoint=calcNextWaypoint(upos);
       
+      _olist.delete(upos);
     }
   };
 
@@ -94,6 +95,7 @@ module ai_patrol {
 
     if(_std.isNull(check_order)){
       //      _io.printf("next waypoint\n");
+      _olist.delete(waypoint);
       getNextWaypoint();
       patrolToWaypoint();
     }
@@ -101,6 +103,7 @@ module ai_patrol {
 
   void quitai(){
     //_io.printf("patrolling ai quitting\n");
+    _string.delete(outstr);
   };
 
 }
