@@ -996,8 +996,7 @@
 			</sector>	
 			<sector name="gimle">
 			        <var name="faction" value="confed"/> 
-				<var name="jumps" value="vega_sector/myfon vega_sector/mc_auliffe vega_sector/dakota vega_sector/
-stone"/>
+				<var name="jumps" value="vega_sector/myfon vega_sector/mc_auliffe vega_sector/dakota vega_sector/brimstone"/>
 				<var name="data" value="1518"/>
 			</sector>	
 			<sector name="nephele">
