@@ -25,6 +25,7 @@ module ai_switching2 {
     object new_order;
     if(mode==0){
       new_order=_order.newMoveTo(myvec,true,1);
+      //new_order=_order.newChangeHeading(myvec,3);
       _io.sprintf(outstr,"moving %s %f %f %f",fgid,x,y,z);
     }
     else{
