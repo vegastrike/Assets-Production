@@ -1,6 +1,6 @@
-<terrain level="15" detail="128" staticdetail="12" scales=".00002" scalet = ".00002">
+<terrain level="15" detail="128" staticdetail="12" scales=".0005" scalet = ".0005">
 
-<texture file="gctexcolored.bmp" blend="ONE ZERO" color="0">
+<texture file="terrain0.bmp" blend="ONE ZERO" color="0">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -90,7 +90,5 @@
 </material>
 </texture> 
 
-<data terrainfile="blank.png" file="demdata/gc16at128.png" scale="7" originX="0" originy="0"  />
-<data terrainfile="blank.png" file="demdata/gc16at64.png" scale="6" originX="16384" originy="16384"  />
- <data terrainfile="blank.png" file="demdata/gc16at32.png" scale="5" originX="24576" originy="24576"  />
+<data terrainfile="terraindebra.png" file="terrainhappy.png" scale="7" originX="0" originy="0"  />
 </terrain>
