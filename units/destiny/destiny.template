@@ -1,0 +1,34 @@
+<Unit>
+	<Thrust>
+		<Engine Afterburner="1400.000000" Forward="500.333344" Retro="454.666676" Left="302.666672" Right="302.666672" Top="302.666672" Bottom="302.666672"/>
+		<Maneuver yaw="3487.800201" pitch="3387.800201" roll="3387.800201"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Armor front="200" right="150" left="150" back="150"/>
+		<Shields front="200.000000" back="200.000000" recharge="30.000000"/>
+		<Hull strength="2400.000000"/>
+		<Cloak cloakmin=".1" cloakrate=".3" cloakenergy="110" cloakglass="true"/>       		
+	</Defense>
+	<Stats mass="3.500000" momentofinertia="3.500000" fuel="40000000"></Stats>
+	<Computer yaw="106.600006" pitch="106.600006" roll="106.600006" afterburner="140.000000" maxspeed="44.666668"/>
+	<Energy>
+		<Reactor recharge="180" limit="380"/>
+	</Energy>
+       	<Jump delay="1" jumpenergy="200"/>       
+
+       
+
+<!-- new elements added -->
+<Mount weapon="Photon" size="light medium" x="-0.557420" y="-0.127850" z="7.305732"/>
+<Mount weapon="Photon" size="light medium" x="0.542021" y="-0.126382" z="7.221802" />
+<Mount weapon="Photon" size="special medium" x="6.470487" y="-0.182350" z="-1.094219"/>
+<Mount weapon="Photon" size="special medium" x="-6.512798" y="-0.183760" z="-1.121801"/>
+
+<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="4.470487" y="-0.182350" z="-1.094219" ammo="2" volume="601"/>
+<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-4.512798" y="-0.183760" z="-1.121801" ammo="2" volume="601"/>
+<Mount weapon="HeatSeeker" size="light-missile" x="3.470487" y="-0.182350" z="-1.094219" ammo="1" volume="401"/>
+<Mount weapon="HeatSeeker" size="light-missile" x="-3.512798" y="-0.183760" z="-1.121801" ammo="1" volume="401"/>
+
+</Unit>

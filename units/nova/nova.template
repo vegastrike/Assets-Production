@@ -16,7 +16,7 @@
 	</Sound>
 	<Defense HudImage="nova-hud.spr">
 		<Armor front="400" right="350" left="350" back="400"/>
-		<Shields front="400.000000" back="300.000000" recharge="40.000000"/>
+		<Shields front="400.000000" back="350.000000" recharge="40.000000"/>
 		<Hull strength="8000.000000"/>
 	</Defense>
 

@@ -1,0 +1,55 @@
+<Unit>
+
+
+<Sound>	</Sound>
+
+<!-- Ship are facing Z axis so for weapon location : X= left/right, y=over/under, 
+								Z=front/back -->
+<!-- made into pretty blue gatling bolt -->
+<Mount weapon="Ktek" size="Special Light Medium Heavy" x="2.80800" y="0.15400" z="19.98000"/>
+
+<Mount weapon="Laser" size="Light" x="3.76500" y="0.15400" z="19.31000"/>
+<Mount weapon="Swarm" size="special special-missile" x="-12" y="0" z="6.5" ammo="100" volume="1001"/>
+<Mount weapon="Dumbfire" size="light-missile" x="-12" y="0" z="6.5" ammo="6" volume="601"/>
+
+
+<Defense>
+	<Armor front="400" right="4000" left="400" back="400"/>
+
+	<Shields front="150.000000" back="150.000000" recharge="25.000000"/>
+
+	<Hull strength="1250.000000"/>
+
+</Defense>
+
+<Stats mass="4.000000" momentofinertia="5.000000" fuel="900000000"></Stats>
+
+<Computer yaw="140.400002" pitch="130.600006" roll="140.400002" afterburner="200" maxspeed="80">
+	<Radar itts="true" color="true" error="0"/> <!-- shifted radar-->
+</Computer>
+<Energy>	
+	<Reactor recharge="80" limit="270"/>
+</Energy>
+<!-- added jump-->
+<Jump delay="2" jumpenergy="60"/>	
+
+
+
+<Light file="supernova.bmp" x="0.086" y="-0.269" z="-14.620000" size="2.000000"/>
+
+
+
+<Thrust>
+
+	<Engine Afterburner="2066.666718" Forward="405.333344" Retro="454.666676" 			Left="402.666672" Right="402.666672" Top="402.666672" Bottom="202.666672"/>
+
+	<Maneuver yaw="6643.200050" pitch="6187.800201" roll="6643.200050"/>
+
+</Thrust>
+
+<Hold volume="50">
+</Hold>
+
+
+
+</Unit>
