@@ -1,4 +1,6 @@
 <Unit scale = "4" >
+	<Description combatRole="BOMBER">
+	</Description>
 	<Meshfile file = "osprey.xmesh"  >
 	</Meshfile>
 	<Mount weapon = "Particle" size = "Medium Heavy" x = "6.000000" y = "-.9000000" z = "-3.000000"  >

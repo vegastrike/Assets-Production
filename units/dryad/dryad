@@ -1,4 +1,6 @@
 <Unit>
+	<Description combatRole="SHUTTLE">
+	</Description>
 	<Meshfile file="Dryad-hull.xmesh"/>
 	<Meshfile file="Dryad-cockpit.xmesh"/>
 

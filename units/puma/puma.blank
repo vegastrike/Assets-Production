@@ -1,4 +1,6 @@
 <Unit scale = "5" >
+	<Description combatRole="INTERCEPTOR">
+	</Description>
 	<cockpit file = "heavy-cockpit.cpt" x = "0" y = ".5" z = "4"  >
 	</cockpit>
 	<Defense HudImage = "puma-hud.spr" >

@@ -1,4 +1,6 @@
 <Unit scale = "2" >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<cockpit file = "medium_cockpit.cpt" x = "0" y = ".5" z = "4"  >
 	</cockpit>
 	<Defense HudImage = "nova-hud.spr" >

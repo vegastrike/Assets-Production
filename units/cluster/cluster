@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="HEAVYMISSILE">
+	</Description>
 	<Meshfile file = "cluster.xmesh"  >
 	</Meshfile>
 	<BspMesh RAPID = "0"  >

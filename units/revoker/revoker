@@ -1,4 +1,6 @@
 <Unit scale = "0.5" >
+	<Description combatRole="SHUTTLE">
+	</Description>
 	<Meshfile file = "revoker-Hull.xmesh"  >
 	</Meshfile>
 	<Meshfile file = "revoker-Cone01.xmesh"  >

@@ -1,4 +1,7 @@
 <Unit scale = "58" >
+	<Description combatRole="CARRIER">
+	</Description>
+
 	<Meshfile file = "vitik.xmesh"  >
 	</Meshfile>
 	<Dock x = "-5" y = "0" z = "-.3" size = "1.9"  >

@@ -1,4 +1,6 @@
 <Unit scale = "175" >
+	<Description combatRole="CAPITAL">
+	</Description>
 	<Meshfile file = "cruiser.xmesh"  >
 	</Meshfile>
 	<Dock x = ".50" y = ".45" z = "9" size = ".3"  >

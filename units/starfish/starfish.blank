@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<Meshfile file = "starfish.xmesh"  >
 	</Meshfile>
 	<Defense HudImage = "starfish-hud.spr" >

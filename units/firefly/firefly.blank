@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="INTERCEPTOR">
+	</Description>
 	<Defense HudImage = "firefly-hud.spr" >
 		<Shields front = "0.000000" back = "0.000000" recharge = "0.000000"  >
 		</Shields>

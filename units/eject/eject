@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="CARGO">
+	</Description>
 	<Meshfile file = "eject.xmesh"  >
 	</Meshfile>
 	<Thrust >

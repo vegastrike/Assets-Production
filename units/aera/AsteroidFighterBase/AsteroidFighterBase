@@ -1,4 +1,6 @@
 <Unit >
+<Description combatRole="BASE">
+</Description>
 	<Meshfile file = "station.xmesh"  >
 	</Meshfile>
 	<Thrust >

@@ -1,4 +1,6 @@
 <Unit scale = "80" >
+<Description combatRole="BASE">
+</Description>
 	<Meshfile file = "aera_factory.xmesh"  >
 	</Meshfile>
 	<Subunit file = "turretLR_PminusBeam" x = "10.914954" y = "1.393833" z = "14.236430" ri = "-0.963072" rj = "0.000000" rk = "-0.269246" qi = "-0.002823" qj = "-0.999945" qk = "0.010097"  >

@@ -1,4 +1,6 @@
 <Unit scale = "2">
+	<Description combatRole="TMASSIVE">
+	</Description>
 
 
 <Meshfile file="turretbeamheavy.xmesh" />

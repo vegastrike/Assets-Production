@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="SUPPORT">
+	</Description>
 	<Meshfile file = "cargoship.xmesh"  >
 	</Meshfile>
 	<Dock x = "0.0" y = "32.2" z = "-210.00000" size = "100"  >

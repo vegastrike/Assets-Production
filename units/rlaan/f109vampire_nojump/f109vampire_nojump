@@ -1,4 +1,6 @@
 <Unit >
+<Description combatRole="INTERCEPTOR">
+</Description>
 	<Meshfile file = "fighter-body.xmesh"  >
 	</Meshfile>
 	<Meshfile file = "fighter-guns.xmesh"  >

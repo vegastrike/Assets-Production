@@ -1,4 +1,6 @@
 <Unit size = "40" >
+	<Description combatRole="INTERCEPTOR">
+	</Description>
 	<cockpit file = "light_cockpit.cpt" x = "0" y = ".5" z = "4"  >
 	</cockpit>
 	<Defense >

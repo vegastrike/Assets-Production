@@ -1,4 +1,6 @@
 <Unit>
+	<Description combatRole="SHUTTLE">
+	</Description>
 	<Defense HudImage="dryad-hud.spr" RepairDroid="0"  ecm="0">
 		<Shields front="0" right="0" left="0"  back="0.000000" recharge="000000"/>
 	</Defense>

@@ -1,4 +1,7 @@
 <Unit >
+	<Description combatRole="SUPPORT">
+	</Description>
+
 	<Jump delay = "15" jumpenergy = "100"  >
 	</Jump>
 	<Meshfile file = "space_truck-CrewCommand.xmesh"  >

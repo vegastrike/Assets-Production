@@ -1,4 +1,6 @@
 <Unit scale = "2" >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<Meshfile file = "lekra.xmesh"  >
 	</Meshfile>
 	<BspMesh  >

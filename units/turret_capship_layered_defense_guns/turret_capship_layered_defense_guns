@@ -1,4 +1,6 @@
 <Unit>
+	<Description combatRole="TSMALLCAP">
+	</Description>
 
 <Meshfile file="turret_capship_torplauncher_gun.xmesh"/>
 
