@@ -18,9 +18,26 @@ is an example of a valid mission call
 
 the -l flag (must be flush with the system) will force a player to begin in a star system.
 
-vegastrike -jvega_sector/vega mission/bomber.mission
+vegastrike -jvega_sector/vega mission/n_vs_n/confed/confed_2v2.mission
 
 will force the bomber mission to run in the vega sector
+
+------------------------------------------------
+Playing Music in Vegastrike in Windows
+------------------------------------------------
+Run setup.exe and select Windows External Music.
+Make sure winamp isn't  "always on top"
+put 3 .m3u playlists in the .vegastrike folder
+they must be called peace.m3u battle.m3u and panic.m3u
+Winamp can create such files.
+If you have winamp in a different location, 
+or wish to use a different music
+player, edit the external_player variable in vegastrike.config
+(use notepad)
+As vegastrike currently does not have music artists, you must choose
+the playlists for yourself.  Songs towards the top get played more often
+during better times...songs on the bottom get played more often during
+worse times.
 
 -------------------------------------------------
 Interstellar Warp Transit (Jump Drive)
@@ -43,8 +60,16 @@ A new starship will be created for you by Bob.
 -------------------------------------------------
 Transfer Command
 -------------------------------------------------
-if you wish to transfer command to another starship, simply press '[' to switch over.  This is useful if you have died and do not wish to call on Bob for help.
+if you wish to transfer command to another starship, simply press '[' to switch over.  This is useful if you have died and do not wish to upset the blaance.  The AI that took over for the ship you left will attack your previously targetted unit, be it friendly or enemy.  You can use this to in effect give orders
+to friends.
 
+-------------------------------------------------
+Pilot turrets
+------------------------------------------------
+To have the vegastrike AI take over for your ship press ']' to go to a turret
+press ']' to return to cockpit again. Another press of ']' will get you to 
+your next turret, and so forth.
+Like with Transfer command, the AI will attack your previously targetted object.
 -----------
  Controls:
 -----------
