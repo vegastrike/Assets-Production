@@ -27,7 +27,6 @@ module launch {
     float x=(random.random(r1,r2)*random.randomsign());
     float y=(random.random(r1,r2)*random.randomsign());
     float z=(random.random(r1,r2)*random.randomsign());
-    _io.printf ("launch %f %f %f\n",x,y,z);
     x = _olist.at(pos,0)+x;
     y = _olist.at(pos,1)+y;
     z = _olist.at(pos,2)+z;
