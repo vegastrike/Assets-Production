@@ -6,7 +6,7 @@
 		<Cloak missing="1" cloakmin="0" cloakrate="0" cloakglass="0" cloakenergy="0"/>
 	</Defense>
 	<Stats mass="0" momentofinertia="0" fuel="0"></Stats>
-	<Computer yaw="0" itts="false" pitch="0" roll="0" afterburner="0" maxspeed="0">
+	<Computer yaw="67.60901" itts="false" pitch="67.60901" roll="67.60901" afterburner="0" maxspeed="0">
 		<Radar itts="false" color="false" error="0" maxcone="1" range="0"/> 
 	</Computer>
 
@@ -17,6 +17,6 @@
 
 	<Thrust>
 		<Engine Afterburner="0" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
-		<Maneuver yaw="67.60901" pitch="67.60901" roll="67.60901"/>
+		<Maneuver yaw="000000" pitch="0" roll="0"/>
 	</Thrust>
 </Unit>
