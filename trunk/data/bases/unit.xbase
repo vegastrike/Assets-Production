@@ -1,0 +1,9 @@
+<Base>
+	<Room Text="Welcome to the Launch Bay">
+		<Launch Text="Launch" x="-.25" y="0" wid="0.5" hei="0.25"/>
+		<Comp Text="Ship Dealer" x="-.4" y="-.25" wid=".8" hei=".25" UpgradeMode="" DowngradeMode="" ShipMode=""/>
+		<Comp Text="Mission Computer" x=".75" y="-.75" wid="0.25" hei="0.5" MissionMode="" BriefingMode="" NewsMode=""/>
+		<Comp Text="Cargo Hold" x=".65" y=".65" wid="0.35" hei="0.35" SellMode="" BuyMode=""/>
+		<Ship x="0" y="0" z="75" ri="0" rj="0" rk="1" qi="0" qj="1" qk="0"/>
+	</Room>
+</Base>
