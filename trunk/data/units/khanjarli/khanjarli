@@ -4,12 +4,12 @@
        
 
 	<!-- Weapons -->
-	<Mount weapon="plasma" size="heavy" x="-4" y="1" z="6" />
-	<Mount weapon="plasma" size="heavy" x= "4" y="1" z="6" />
-	<Mount weapon="dumbfire" size="light-missile" x="-2.85" y="-2" z="-1" ammo="6"/>
-	<Mount weapon="dumbfire" size="Light-missile" x= "2.85" y="-2" z="-1" ammo="6"/>
-	<Mount weapon="imagerecognition" size="Light-missile" x= "5.5" y="-3" z="-3" ammo ="6"/>
-	<Mount weapon="imagerecognition" size="Light-missile" x="-5.5" y="-3" z="-3" ammo ="6"/>
+	<Mount weapon="plasma" size="light medium heavy" x="-4" y="1" z="6" />
+	<Mount weapon="plasma" size="light medium heavy" x= "4" y="1" z="6" />
+	<Mount weapon="dumbfire" size="special light-missile" x="-2.85" y="-2" z="-1" ammo="6" volume="901"/>
+	<Mount weapon="dumbfire" size="special Light-missile" x= "2.85" y="-2" z="-1" ammo="6" volume="901"/>
+	<Mount weapon="imagerecognition" size="Light-missile" x= "5.5" y="-3" z="-3" ammo ="6" volume="751"/>
+	<Mount weapon="imagerecognition" size="Light-missile" x="-5.5" y="-3" z="-3" ammo ="6" volume="751"/>
 
 
 	<!-- Engine lights -->
@@ -21,7 +21,7 @@
 	<Light file="supernova.bmp" x="0" y="4.75" z="-19" size="4.75"/>
 	<Light file="supernova.bmp" x="-4" y="4.311728" z="-19" size="3.5"/>
 
-<Subunit file="turret_medium" x="0" y="0" z="-19" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1"/>/>
+<Subunit file="turret_medium" x="0" y="0" z="-19" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1"/>
 	
 	<Defense HudImage="khanjarli.spr">
 	
