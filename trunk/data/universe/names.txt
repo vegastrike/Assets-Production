@@ -2136,12 +2136,10 @@ Chomsky
 Chopin
 Chou
 Chris
-Christ
 Christendom
 Christensen
 Christenson
 Christiana
-Christianity
 Christiansen
 Christianson
 Christie
@@ -2885,12 +2883,6 @@ Ezekiel
 Ezra
 McElhaney
 McElroy
-MITRE
-MITREs
-OPEC
-TELNET
-TENEX
-UNESCO
 Faber
 Fafnir
 Fagin
@@ -3964,7 +3956,6 @@ Juan
 Juanita
 Jubal
 Judaica
-Judaism
 Judas
 Judd
 Judder
@@ -4475,13 +4466,7 @@ McLanahan
 McLaughlin
 McLean
 McLeod
-MULTICS
 O'Leary
-PASCAL
-SIMULA
-TELNET
-ULTRIX
-CALCOMP
 DeMorgan
 DiMaggio
 Mabel
@@ -5019,8 +5004,6 @@ Muscovy
 Muskegon
 Muslim
 Muslims
-Mussolini
-Mussolinis
 Mussorgsky
 Muzak
 Muzo
@@ -6325,9 +6308,6 @@ Stafford
 Staffordshire
 Stahl
 Staley
-Stalin
-Stalinist
-Stalins
 Stamford
 Stan
 Standish
