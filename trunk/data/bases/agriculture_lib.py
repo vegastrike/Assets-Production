@@ -14,6 +14,6 @@ def MakeAgri (time_of_day='_day'):
     weap = weapons_lib.MakeWeapon (room1,time_of_day)
     Base.Link (room1, 'BarLink', 0.580078, -1, 0.419922, 1.09115, 'Bar', bar)
     Base.Link (room1, 'WeaponsRoom', -1, -1, 0.419922, 1.09115, 'Weapons Room', weap)
-    Base.Launch (room1, 'launch', -1, -1, 2, .8, 'Launch Your Ship')
+    Base.LaunchPython (room1, 'launch','bases/launch_music.py', -1, -1, 2, .8, 'Launch Your Ship')
     ### MUST BE LAST LINK ###
     return (room1,bar,weap)

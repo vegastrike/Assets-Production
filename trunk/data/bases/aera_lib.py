@@ -17,6 +17,6 @@ def MakeAera(time_of_day='day'):
     Base.Link (room1, 'BarLink2', 0.398438, 0.015625, 0.298828, 0.216146, 'Bar', bar)
     Base.Link (room1, 'Weapons1', -0.173828, -0.0338542, 0.429688, 0.653646, 'Weapons Room', weap)
     Base.Link (room1, 'Weapons2', -0.117188, -0.195313, 0.376953, 0.182292, 'Weapons Room', weap)
-    Base.Launch (room1, 'launch', -0.152344, -0.869792, 0.523438, 0.382813, 'Launch Your Ship')
+    Base.LaunchPython (room1, 'launch','bases/launch_music.py', -0.152344, -0.869792, 0.523438, 0.382813, 'Launch Your Ship')
     ### MUST BE LAST LINK ###
     return (room1,bar,weap)
