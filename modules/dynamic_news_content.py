@@ -226,35 +226,8 @@ def allNews():
 
 		}
 
-,"battle" :	{"start" :	{"success" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"draw" :	{"good"		: [(0.5,"all","battle draw good")]
-						,"bad"		: [(0.5,"all","battle draw bad")]
-						,"neutral"	: [(0.5,"all","battle draw neutral")]
-						}
-				,"loss" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				}
-
-		,"middle" :	{"success" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"draw" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"loss" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				}
-		,"end" :	{"success" :	{"good"		: [(0.1,"all","VAR_defender_dnickp Vaporised!\\In the outer regions of the VAR_system_system system today, the VAR_aggressor_FG squadron of VAR_aggressor_nicks VAR_aggressor_FGtype ships in transit came across a group of VAR_defender_possessive VAR_defender_FGtype fighters on an intercept course with a VAR_aggressor_possessive passenger liner.  The hostiles were engaged and swiftly destroyed by the VAR_aggressor_FGtype squadron -- no energy sources remained active.")]
-						,"bad"		: []
+,"battle" :	{"end" :	{"success" :	{"good"		: [(0.1,"all","VAR_defender_dnickp Vaporised!\\In the outer regions of the VAR_system_system system today, the VAR_aggressor_FG squadron of VAR_aggressor_nicks VAR_aggressor_FGtype ships in transit came across a group of VAR_defender_possessive VAR_defender_FGtype fighters on an intercept course with a VAR_aggressor_possessive passenger liner.  The hostiles were engaged and swiftly destroyed by the VAR_aggressor_FGtype squadron -- no energy sources remained active.")]
+						,"bad"		: [(0.3,"player","VAR_aggressor_FG Strikes Civilian Transport!\\The VAR_aggressor_FGtype mercillessly struck down the VAR_defender_FG VAR_defender_FGtype in a surprise raid.  The flightgroup was carrying VAR_defender_nicks tourists, and antiquities on an intersystem taxi service when, without warning, the VAR_aggressor_FGtype swooped in and launched several blasts which destroyed the ships instantly.\\Such an attack is characteristic of the VAR_aggressor_full and their allies, using mercenaries and bounty hunters to terorrise the civilian populations of the VAR-defender_full.  VAR_aggressor_FG in particular is well known for utter contempt for life.")]
 						,"neutral"	: []
 						}
 				,"draw" :	{"good"		: []
@@ -311,44 +284,15 @@ def allNews():
 				}
 		}
 
-,"destroyed":	{"start" :	{"success" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"draw" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"loss" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				}
-
-		,"middle" :	{"success" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"draw" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"loss" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				}
-		,"end" :	{"success" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"draw" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
-						}
-				,"loss" :	{"good"		: []
-						,"bad"		: []
-						,"neutral"	: []
+,"destroyed":	{"end" :	{"success" :	{"good"		: [(0.4,"all","Departed Heroes:\\Tragically, the VAR-defender_FG squadron, comprised mainly of VAR_defender_FGtype fighters have been killed in battle today.  A squadron with a more distinguished career would be hard to find in the VAR-defender_possessive forces, with contributions to many of the great battles of this war.\\Their lead commander Jameson was quoted recently saying \"When a pilot goes into battle if he clears his mind of all things, there is a good chance he will come out of it alive.  If he does not, he risks being distracted and hesitating.  In space, hesitation is death.\"")
+								  ,(0.4,"player","Freelancer Helps the Cause!\\The VAR_aggressor_FG squardon can add yet another kill to their belts today, as they made short work of the VAR_defender_possessive squadron VAR_defender_FG (of type VAR_defender_FGtype) in VAR_system_system system.  VAR_aggressor_FG has been one of the more prominent of the freelance mercenaries, helping the VAR_dockedat_possessive forces and out allies with many of the smaller scale attacks while the majority of our forces have been engaged on the frontlines.  It is people like these that allow most of us to continue with out lives in peace.")
+								  ]
+						,"bad"		: [(0.4,"all","VAR_defender_dnicks Vaporised!\\The VAR_defender_possessive squadron of VAR_defender_FGtype VAR_defender_FG has been obliterated today.  The VAR_defender_dnickp have been disrupting both civilian and military operations around VAR_system_system in the VAR_system_sector Sector, and their destruction is sure to be a boon for all operators in the area.  This writer just wishes this type of thing would occur more often.")
+								  ,(0.4,"player","VAR_aggressor_FG Scurge Strikes Again!\\This time in a VAR_aggressor_FGtype ship, this mercenary group destroyed yet another VAR_defender_nicks squadron, this time the VAR_defender_FG.  One of the VAR_defender_nickp less experienced groups of VAR_defender_FGtype, they battled corageously but were overwhelmed by the VAR_aggressor_possessive forces.  May they rest in peace, these brave heroes of the VAR_defender_full.")
+								  ]
+						,"neutral"	: [(0.5,"all","VAR_defender_FG Destroyed:\\The squadron of mainly VAR_defender_FGtype ships was destroyed today in the VAR_system_system system.  More afraid of VAR_dockedat_possessive forces than we were of them, their destruction will not affect business in the area, let alone on VAR_docketat_homeworld.")
+								  ,(0.5,"player","VAR_defender_FG Destroyed by VAR_aggressor_FG:\\The pilots of VAR_defender_FG saw their last meal earlier today, oblivious their later fate.  The VAR_defender_FG has been wreaking havok in and around VAR_system_system system lately, disrupting much of the VAR_defender_possessive activity.  Such an event however is relatively commonplace these days, and does not do much to upset the lives of VAR_dockedat_possessive citizens any conceivable amount.")
+								  ]
 						}
 				}
 		}
