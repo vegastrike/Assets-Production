@@ -27,7 +27,7 @@ else:
 #And then if you fail.......
 		AssignMission()
 	elif (fixers.checkSaveValue (playernum,"iso_mission1",-1)):
-		Base.Message ("You conspirator! I should have realized you were a kepitalizt pig when I first smelled our foul stench! You probably got paid to destroy our vessel. If I shared in your lack of honor I would kill you where you stand.  But instead I shall ask my operatives to rid you of your ship. The next time any of us see your vessel, it will be fired upon. Leave my presence - you nauseate me.")
+		Base.Message ("You conspirator! I should have realized you were a kepitalizt pig when I first smelled your foul stench! You probably got paid to destroy our vessel. If I shared in your lack of honor I would kill you where you stand.  But instead I shall ask my operatives to rid you of your ship. The next time any of us see your vessel, it will be fired upon. Leave my presence - you nauseate me.")
 		fixers.setSaveValue (playernum,"decided_iso_evil",1)
 		type = faction_ships.getRandomFighter ("ISO")
 		fgname="Lenin'sRevenge"
