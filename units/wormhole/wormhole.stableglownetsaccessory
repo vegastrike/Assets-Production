@@ -6,5 +6,5 @@
 		<Armor front="100000" right="80000" left="80000" back="100000"/>
 		<Hull strength="250000"/>
 	</Defense>
-		<Computer yaw = "0" pitch = "0" roll = "0" />
+		<Computer yaw = "0" pitch = "40" roll = "0" />
 </Unit>
