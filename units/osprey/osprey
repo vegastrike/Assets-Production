@@ -17,6 +17,7 @@
 		<Cloak rate=".4" cloakmin=".1"/>
 	</Defense>
 	<Stats mass="3.000000" momentofinertia="3.000000" fuel="200000000"></Stats>
+	<Cockpit x="0" y="0" z="12"/>
 	<Computer yaw="138.000000" pitch="138.000000" roll="138.000000" afterburner="133.333328" maxspeed="42.666668">
 		<Radar itts="false" color="true" error="0"/> </Computer>
 
