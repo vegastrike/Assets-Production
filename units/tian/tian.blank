@@ -27,7 +27,8 @@
 <Light file="supernova.bmp" x="0.000000" y="5.333333" z="-6.400000" size="0.640000"/>
 <Light file="supernova.bmp" x="-4.066667" y="-2.026667" z="-5.773333" size="0.580000"/>
 <Light file="supernova.bmp" x="4.066667" y="-2.026667" z="-5.773333" size="0.680000"/>
-<Mount weapon="Laser" size="Light Medium" x="4.066667" y="-2.026667" z="-1.773333"/>
-<Mount weapon="Laser" size="Light Medium" x="-4.066667" y="-2.026667" z="-1.773333" />
-<Mount weapon="meson" size="Light Medium Heavy Special" x="0.000000" y="5.333333" z="-1.966667"/>
+<Mount weapon="" size="Light Medium" x="4.066667" y="-2.026667" z="-1.773333"/>
+<Mount weapon="" size="Light Medium" x="-4.066667" y="-2.026667" z="-1.773333" />
+<Mount weapon="" size="Light Medium Heavy Special" x="0.000000" y="5.333333" z="-1.966667"/>
+<Upgrade file="mult_general_downgrade"/>
 </Unit>
