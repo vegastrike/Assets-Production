@@ -1,12 +1,4 @@
-*Vegastrike Player Tutorial*
-
-
-Welcome to Vega Strike, the Open Source Space Free Trade and Combat
-Simulator.
-Here you can explore star systes, engage in trade, make cash and meet
-your destiny!
-
-*1) Contents*
+* 1) Contents*
 
    1. Contents <#i1>
    2. New Features <#i2>
@@ -43,9 +35,18 @@ your destiny!
   33. License <#i31>
 
 
-*2) New Features*
+* 2) New Features*
 
-
+Owning a Whole Fleet With the new *One Fleet Plan* You can own as many
+starships as you wish. Shipping to your system is only 6000 per ship!
+See the *My Fleet* Section in the ship dealer.
+Original Music Ken Suguro and PeteyG have come up with an original score
+for Vega Strike that beats out commercial games. Listen to it and be
+immersed in Vega Strike as it should be.
+Polishing the Engine Docking boxes come up automatically, the Upgrade
+interface has a repair option
+Plot Mission and Fixers You can meet people in the various bars and
+strike deals with them. Dont cross anyone or you may suffer retribution!
 Python Scripting Upgraded various for-pay missions and the basic missions
 Quests And News Linked the local happenings to gameplay challenges and
 cash opportunities
@@ -90,52 +91,68 @@ get damage... don't get damage
 a whole new dimension to vegastrike
 
 
-* 3) Tutorial -- Starting a New Game -- Making a few Credits *
+*  3) Tutorial -- Starting a New Game -- Making a few Credits *
 
-
+*Windows Users*
 To start a new Vegastrike game, click on the Vega Strike Launcher from
 the Start Menu.
 Click on "New Game"
 Type in the save game you wish to save to when you choose save at a base.
 Click "ok" and Vegastrike should launch. Be patient while it generates
 BSP trees for the system. This will only happen the first time.
+*Mac Users*
+Drag VegaStrike.app to the Applications directory.
+Double Click on VegaStrike.app
+*Linux Users*
+Install the rpm
+run vsinstall from the terminal
+run vslauncher from the terminal
+
+When the game starts you will be docked to a station. You can walk
+around the station by clicking on various doors or if you cannot see a
+mouse cursor you can right click to select the different options and
+left click to select the corresponding door.
+Look in the bar to see if there are any people to talk to. If you run
+into one you will find that they often offer good deals--and sometimes
+launch you into great plots! You may find particularly interesting
+people in Heinlein and other interesting systems. Scout about, use
+shift-M in flight to bring up a nice map of nearby sectors. These are
+the ones where most of the plot points take place.
 You will find yourself at the controls of an old starship known as the
 wayfarer. You may wish to read the introduction story for some
 information about how you got to where you are sitting.
 Your wayfarer has an old, out of date, targetting system. You will need
 to face the targets on your radar before you can necessarily target them.
 Press t a few times to survey your surroundings. Locate a planet named
-Agricultural:Arnemetia by turning and pressing 't' consecutively until
-you see it in your right hud. Then press shift-A to turn on autopilot.
-This will move the camera into pan- mode and speed up time until your
-ship has arrived near your target.
+Agricultural:Barnoose by turning and pressing 't' consecutively until
+you see it in your right hud. Then press *a* to turn on autopilot. This
+will move the camera into pan- mode and speed up time until your ship
+has arrived near your target.
 When you exit Autopilot you _may_ encounter pirates, Aera, or other
 unfriendlies. If this is the case you perhaps should turn your ship,
-press p a few times to pick the targets in front of you, and engage
-them! They should not be difficult at this stage of the game, so they
-should be easy kills.
+press *h* a few times to pick the targets in front of you, and engage
+them! *H* cycles through hostile targets. They should not be difficult
+at this stage of the game, so they should be easy kills.
 If your "AUTO" Light is on, however, you know that you are home free.
 Your radar, however does not give an indication of starships intent
 towards you, so you must be cautious until you can afford a better one.
-Turn back to the large earth-like Agricultural planet and press t until
-"Agricultural:Arnemetia" is in your right screen (If you miss it hit
-shift-T to go back). press "0" to request docking clearence. A green or
-red box should appear around your planet. A box turns red if it is
-behind the unit or in a wall, and turns green if it is on your side of
-the unit
+Turn back to the large earth-like Agricultural planet and press *p*
+until "Agricultural:Barnoose" is in your right screen (If you miss it
+hit *p* until you are back). P picks the target closest to your nose...
+it is an easy way to select targets. keep it target. request docking
+clearence. A green or red box should appear around your planet. A box
+turns red if it is behind the unit or in a wall, and turns green if it
+is on your side of the unit
 With the onset of life-sized planets, you must spend a large chunk of
-time to actually get near enough to the surface to dock, so you must
+time to actually get near enough to the surface to dock, so you could
 engage time compression.
 press "+" until your speed is around 300, then hit F9 around 10-16 times
 to speed time enough to quickly engage the dockin clamps. Around 300
-seconds later (compressed as you have into about 10) you will be close
-enough to dock. press 'd' and your comm screen will tell you if you have
-success.
+seconds later (compressed as you have into about 10), a green box will
+appear indicating that you are close enough to dock. press 'd' and your
+comm screen will tell you if you have success.
 Once the comm screens say "Docking Operation Begun". You immediately
 step out of your ship onto the planet.
-The planet graphics themselves are not completed yet, but they are
-underway--in the meantime you'll be presented with a computer interface
-that allows you to conduct business with the planet.
 Agricultural planets sell food, so peruse the cargo list and get food by
 clicking on Natural Resources then "Food". Stock up with your cash. You
 should be able to get enough Grain and Generic Food to fill your cargo bay.
@@ -143,30 +160,19 @@ Buy the food and then Click on the Save/Load button on the top right
 
 Then go to the menu (where the cargo used to be) and click SAVE
 You will get a confirmation dialog. Next time you run the Launcher you
-should Open up your saved game to continue from where you left off. *
-(If you click the LOAD button there, your current ship will be
-destroyed, so you can hit semicolon to respawn and reload!)*
+should Open up your saved game to continue from where you left off.
 Click done on the bottom right. We have some nice foodstuffs, lets
 deliver them to a base where they are needed.
 
-You must undock with the planet. Undocking is somewhat unintuitive, so I
-will go over it briefly here. The full text is below. You may only
-undock from the starship you have targetted. If you somehow lost the
-agricultural planet in the meantime you may not have undocked with it.
-Make sure Agricultural planet is targetted, and press 'u' (or 'd' again)
-to undock.
-If you failed to undock, you will notice the game gets all jittery--this
-is because your thrusters have to fight with the docking clamps to
-turn... So just target the thing you were docked to and try again with a
-'u'.
+Find your way back to your ship and click on it to launch.
 
 We want to run this food to a mining base. Lets try our good mining base
-Draul Bisa--they're often in need of food with these pirates around, and
-cut off trade routes.
-Target Draul Bisa with 't', and then hit shift-a to get there.
+Outer Rings--they're often in need of food with these pirates around,
+and cut off trade routes.
+Target Outer Rings with *t*, and then hit *a* to get there.
 Again you may encounter some enemies.... prepare to engage them!
-When you reach a green guide box, press 'd' again to dock. You should
-then press '0' to enter the base.
+When you reach close enough to see and then fly into a green guide box,
+press 'd' again to dock.
 Once inside the base, you will se the docking screen, like before.
 Except this time, you should click on SellMode to get a list of Items.
 Browse through the Food categories like you did before. You should see
@@ -206,11 +212,13 @@ need to complete a mission.
 
 So take a mission, take off, and prepare to meet your destiny!
 
-*4) Saving and Loading*
+* 4) Saving and Loading*
 
-
-There should be a program named "Launcher" in the vegastrike directory
-or start menu. This will give you a list of choices:
+*This is for PC and Linux users only! Mac users: don't worry; all the
+Vega Strike savegames are in your home directory under .vegastrike.
+change the save game by editing save.txt* There should be a program
+named "Launcher" in the vegastrike directory or start menu. This will
+give you a list of choices:
 Select mission button This allows you to select which mission vegastrike
 will start the next time you press one of the keys below it. Most
 missions do not involve save games and will ignore those options,
@@ -240,8 +248,7 @@ Help button This will print tis on a help window.
 Exit launcher button exits the launcher.
 
 
-*5) The Update Utility*
-
+* 5) The Update Utility*
 
 The "Get Recent Update" program will allow you to get the most recent
 data for vegastrike.
@@ -257,8 +264,7 @@ you may get a better game, but it will be experimental.
 The rest of the buttons will update to previous or more recent releases.
 
 
-*6) Running Vegastrike In Windows*
-
+* 6) Running Vegastrike In Windows*
 
 Make sure you have the most recent nVidia drivers. Old nvidia drivers
 cause problems with display lists and compiled vertex arrays.!!
@@ -269,8 +275,7 @@ The default mission is recommended for an introduction to the Vegastrike
 trading universe. To get the default mission you need not select the
 mission initially.
 
-*7) Running Vegastrike From the Command Line*
-
+* 7) Running Vegastrike From the Command Line*
 
 Vegastrike takes a single command parameter indicating which mission it
 should load
@@ -282,18 +287,11 @@ in a star system.
 .\vegastrike -jvega_sector/vega mission/n_vs_n/confed/confed_2v2.mission
 will force the 2v2 mission to run in the vega sector.
 
-*8) Playing Music in Vegastrike*
+* 8) Playing Music in Vegastrike*
 
-
-Run setup.exe and select Music Only or Music And Sound
-Go to http://aslp.gallaudet.edu/jjg/wcrm/Vault_Room/vault_room.html and
-download his WC2 Collection and his Privateer RF Collection and unzip
-them into the music/ folder where you installed vegastrike (so the midis
-look like music/wc2-05.mid and so forth). Then run vegastrike, and music
-should play :-)
-
-*9) Docking to a Planet or a Capship*
-
+Make sure music is on. Some of the plot depends on it! it's all included
+this time!.
+* 9) Docking to a Planet or a Capship*
 
 If you wish to earn money, you will need to know how to dock.
 First of all, plabnets without a type on them on the right vdu are
@@ -303,15 +301,10 @@ But if it has a type on it on the right vdu, feel free to dock to it!
 industrial:Myplanet
 
 If you wish to get clearence to land at the base or planet, you must
-communicate that you wish to land by pressing the '0' key.
-In order to dock to starships, you must press 'd' and to undock, press
-'d' again or press 'u'.
-Once docked at the planet or base, you may press '0' again to leave your
-starship and enter the base.
-See the next 5 sections for more information about the bases.
+communicate that you wish to land by targetting a base and flying near it.
+In order to dock to starships, you must press 'd' once inside the green box.
 
-*10) Accepting Missions*
-
+* 10) Accepting Missions*
 
 You must accept missions to earn money. The first step is to click on
 the "Mission BBS" button. This will give you a list of mission
@@ -327,8 +320,7 @@ see the instructions for the missions.
 When you have completed them, your credits will immediately be added to
 your account.
 
-*11) Trading Cargo*
-
+* 11) Trading Cargo*
 
 You may buy cargo at the base that you are docked to.
 To find the list of cargo, use the Buy Mode button. When you click on
@@ -361,8 +353,7 @@ Note: you should NOT go the "upgrades" or "starships" categories if you
 want to buy a ship or upgrade it UNLESS you wish to have a starship or
 upgrade in your cargo hold.
 
-*12) Upgrading and Downgrading your Ship*
-
+* 12) Upgrading and Downgrading your Ship*
 
 If you want your ship to get better (so you can do more missions and
 kill harder enemies), you will have to eventually upgrade your junky ship.
@@ -394,8 +385,7 @@ selected the best item in that category. For example, you may have an
 "engine_level_0" and an "engine_level_1" in the list you should
 downgrade the engine_level_1 if you want to get more money out of the item.
 
-*13) Buying a new ship*
-
+* 13) Buying a new ship*
 
 Buying a ship is simple, if you have enough money. Just go to the Ship
 dealer and select the ship that you want.
@@ -406,16 +396,20 @@ started with.
 There are a very few ships without these endings that come pre-equipped
 without those endings. You can buy those ships and then you will not
 have to put upgrades on.
-You should sell all of your upgrades and/or cargo before buying a new
-ship; they will get trashed if you don't.
+Once you buy a new ship, your old ship is stored in the current system.
+You can switch between ships of different type for free. You can own up
+to one ship of each type (you can own a blank and non blank version of a
+ship even). It costs 6000 to ship a starship to a different system, and
+it is free to switch to a ship in your own system. Click on My Fleet in
+the Ship Dealer section of the computer. You will find that you wish to
+"collect them all" so to speak. All your upgrades are saved, so you
+needn't sell them back for half price. Enjoy this new feature.
 
-*14) Briefings and News (Experemintal)*
-
+* 14) Briefings and News (Experemintal)*
 
 Briefings and news have not been added yet. They will come in next release.
 
-*15) Interstellar Warp Transit (Jump Drive)*
-
+* 15) Interstellar Warp Transit (Jump Drive)*
 
 Most starships come equipped with a warp drive. Unfortunately they can
 only be used at large singularities in the space-time continuum. Your
@@ -429,8 +423,7 @@ into a jump point.
 You do not come equipped with one at the beginning, so you must do
 missions to earn enough money to buy one.
 
-*16) Time Compression / Autopilot*
-
+* 16) Time Compression / Autopilot*
 
 Often interstellar travel requires going great distances. To facilitate
 this, we have provided time compression. Press F9 to increase time
@@ -439,8 +432,7 @@ compression. F10 will happen automatically if enemies are nearby.
 If going towards a big object, like a planet, you may autopilot there by
 pressing Shift-A.
 
-*17) Match Velocity Key*
-
+* 17) Match Velocity Key*
 
 In space all speeds are relative...Flightrgroups can be travelling at
 great velocity with respect to a surrounding sun yet appear to be idly
@@ -451,8 +443,7 @@ that your ship is stationary relative to the other starship (unless it
 accelerates faster than you and is accelerating).
 To stop matching velocity press the 'end' key on the keypad.
 
-*18) Tractor Beam*
-
+* 18) Tractor Beam*
 
 A tractor beam is just like a normal beam weapon except that it exerts a
 small force upon its target. If the target is small relative to your
@@ -464,15 +455,13 @@ then to press backspace to stop... this will allow one to pick up cargo
 with ease.
 
 
-*19) ReSpawn*
-
+* 19) ReSpawn*
 
 If you sadly lose your life in combat you may respawn by pressing ';'
 (Player 2 can respawn with '.' )
-A new starship will be created for you by Bob.
+Your game will be loaded with your last saved file..
 
-*20) Ordering Wingmen*
-
+* 20) Ordering Wingmen*
 
 If you are in a mission with more than 1 ship in your flightgroup you
 may order them to do certain things.
@@ -483,9 +472,15 @@ press shift-H to have them attack the object attacking you
 Press shift-B to release them from the above orders
 Wingmen are fickle and may not always obey your commands. They will
 inform you if they do or not.
-
-*21) Communications with Friends and Foes*
-
+Certain missions will require you to escort people to places. Your
+escorts will follow you whever you go, and they will autopilot with you
+to your destination. If you hit auto just before the jump point they
+will go beside you. Then stop in the jump point, wait until they get
+near, and then press 'j'. They will follow you through the jump and
+appear on the other side. Voilla! Then continue to the next destination.
+Getting escorts right is essential to completing the plot missions in
+Heinlein.
+* 21) Communications with Friends and Foes*
 
 When flying in space one may wish to engage in casual conversation with
 nearby starships.
@@ -502,8 +497,7 @@ Be careful as the local authorities may choose to scan your ship for
 contraband. If you refuse to fly straight during this process you may be
 attacked!
 
-*22) Transfer Command*
-
+* 22) Transfer Command*
 
 if you wish to transfer command to another starship, simply press '[' to
 switch over. This is useful if you have died and do not wish to upset
@@ -511,8 +505,7 @@ the blaance. The AI that took over for the ship you left will attack
 your previously targetted unit, be it friendly or enemy. You can use
 this to in effect give orders to friends.
 
-*23) Turrets*
-
+* 23) Turrets*
 
 Turrets do not begin with their own AI at all times. To toggle the AI of
 your turret, you must press 'o'. Pressing this when your turret is off
@@ -528,8 +521,7 @@ to your next turret, and so forth.
 Like with Transfer command, the AI of the turret will attack your
 previously targetted object when you leave the turret.
 
-*24) Single-Player Controls*
-
+* 24) Single-Player Controls*
 
 esc          Quit
 Arrow keys   Flight Sim style turning (you can also use the keypad arrows)
@@ -541,16 +533,17 @@ enter        fire missile
 space        Fire Guns
 backspace    stop
 tab          Afterburners
-j            engage interstellar warp drive (use at clear blue balls)
+j            engage interstellar warp (use at clear blue balls after purchasing a drive)
 *,ins        Spin Right
 /,del        Spin Left
 ~            shelton slide while holding key
 y            match speed
-t            target
+t            target  
 p            target nearest to center of screen
+u	     target all manmade units
 h            target enemy targetting you
-n            target nearest target
-Shift-T      reverse cycle through targets
+n            target Nav Points (Capships, Jump Points, Planets)
+Shift-T      reverse cycle through targets (shift of other target keys will do the same)
 l            lock your target so that it will not switch
 m            change active missile
 g            change active gun
@@ -572,9 +565,8 @@ F9           Increase Time Compression
 F10          Reset Time Compression
 F11          Zoom in
 F12          Zoom out
-a,d,w,z      pan ghost cam
+s,f,q,z      pan ghost cam
 ;            respawn -- use after death to recreate your starship
-[            switch ships in battle (use to control allies)
 ]            switch to a turret onto your ship
 Shift-A      autopilot to the target
 a            autopilot to the target
@@ -590,14 +582,15 @@ Shift-F      Tell wingmen to form up
 Shift-B      Tell wingmen to stop forming up
 Shift-H      Tell wingmen to help you out
 Shift-D      Tell wingmen to attack targetted starship
-1-9          Communicate to your allies
+1-8          Communicate to your allies
 0            Request clearence to land
 Shift-E      Eject
 Shift-Z      Eject cargo
 , and .      Change Sound Volume
 < and >      Change Music Volume
 
-*25) Multiplayer Controls*
+
+* 25) Multiplayer Controls*
 
 --------------------
 Both Players
@@ -698,8 +691,7 @@ left arrow   switch left targetting cpu
 right arrow  switch targetting computer mode to navigation mode and then view mode
 
 
-*26) Changing Controls*
-
+* 26) Changing Controls*
 
 If you wold like to change the controls of Vegastrike, open either
 vegastrike.config or vegastrike.config.2player
@@ -734,7 +726,7 @@ move in opposite direction set inverse to true.
 
 </bindings>
 
-*27) Cockpit Views*
+* 27) Cockpit Views*
 
 <cockpit1.jpg> <hud1.jpg>
  
@@ -868,219 +860,358 @@ crosshair is over your target - fire!
           o   various target camera modes 
 
        
-      *28) Editing Missions*
+      * 28) Editing Missions*
+
+
+      Mission Scripting Tutorial:
+
+      Chapter 1: Introduction <#i28_1>
+      Chapter 2: Basic XML integration <#i28_2>
+      Chapter 3: Python Inheritance In Missions <#i28_3>
+      Chapter 5: Suppery about python-Vegastrike class relationships
+      <#i29_1>
+      Chapter 6: Python - Vega Strike Bindings <#i29_2>
+      Chapter 7: Writing Add On Adventures <#i29_3>
+      Chapter 8: Conclusion <#i29_4>
+
+
+      -------------------------------------------
+      Chapter 1: Introduction
+      -------------------------------------------
+
+      Vega Strike has a powerful missions scripting interface that
+      allows you to nearly modify Vega Strike at whatever level you
+      choose, from the AI scripts (and the physics thereof) to the
+      missions... to the overall plot and goal of the game.
+
+
+      -------------------------------------------
+      Chapter 2: Basic XML integration
+      -------------------------------------------
+
+      First let me start by explaining how to run a python class... in
+      this case we start with the prebuild "privateer.py" script to run
+      our mission.
+      Open up mission/exploration/explore_universe.mission
+      First come the variables that designate how the mission should
+      normally start. By normally I mean if they don't have any save
+      game present.
+
+<mission>
+
+    <variables>
+
+        <var name="defaultplayer" value="blue"/>
+
+        <var name="mission_name" value="Test Mission"  />
+
+        <var name="num_players" value="2"/>
+
+        <var name="credits" value="3500"/>
+
+        <var name="difficulty" value=".05"/>
+
+<!--good starting difficulty here-->
+
+        <var name="splashscreen" value="bad_guys_vs_good_guys.bmp"/>
+
+        <var name="system" value="sol_sector/celeste" />
+
+        <var name="description" value="This is a fun mission."  />
+
+        <var name="author" value="Me" />
+
+        <var name="briefing"
+
+value="In this mission, you will have to have fun, or you will fail."  />
+
+        <var name="savegame" value="explore_universe_difficulty"/>
+
+    </variables>
+
+
+      it loads sol_sector/celeste.system as the star system (which is in
+      XML and stores all present planets)
+      After this, comes the actors in the mission, the flightgroups of
+      fighters. If a mission has more than one player, then each player
+      is the leader (first ship) in each respective flightgroup.
+
+      <flightgroups>
+
+               
+<flightgroup name="blue" faction="privateer" type="wayfarer.begin" ainame="default"
+waves="1" nr_ships="1">
+
+            <pos x="20400"
+y="-35400" z="84700000.0"/>
 
 
 
-Mission Scripting Tutorial:
+            <rot x="180.0"
+y="180.0" z="180.0"/>
 
-Table Of Contents
--------------------
-Chapter 1: Introduction
-Chapter 2: Basic XML integration
-Chapter 3: Python Inheritance In Missions
-Chapter 4: Python Inheritence With AI Scripts
-Chapter 5: Suppery about python-Vegastrike class relationships
-Chapter 6: Python - Vega Strike Bindings
-Chapter 7: Writing Add On Adventures 
-Chapter 8: Conclusion
+        </flightgroup>
+
+    </flightgroups>
 
 
--------------------------------------------
-Chapter 1: Introduction
--------------------------------------------
+      The rot flag is ignored, and the position specifies the x,y,z
+      coords of the blue flightgroup, which is of type wayfarer.begin.
+      Notice that so far there are a lot of values you don't see for
+      long in the default vegastrike game. Credits, System, first
+      flightgroup fighter, difficulty--these are all initial values but
+      can change.... since there is specified a savegame. The savegame
+      makes the mission more of a campaign type mission where things may
+      be saved to disk and reloaded at a later point. If no savegame
+      variable is specified (this is where the autosave goes) then the
+      mission will not save and will be a one time play mission.
+      Future note:
+      If you wanted to add a campaign to the privateer mission you would
+      most likely modify privateer.py to have a campaign module get
+      loaded.... so you wouldn't necessarily need to modify
+      explore_universe.mission just to add a campaign... lets dig
+      further into the meat of the scripting.
 
-Vega Strike has a powerful missions scripting interface that allows you to nearly modify Vega Strike at whatever level you choose, from the AI scripts (and the physics thereof) to the missions... to the overall plot and goal of the game.
+      If a mission has python tags...then it is a python mission and may
+      have some embedded python in it. In this case the python makes a
+      new python object of type privateer in the privateer.py module in
+      the modules/ directory.
 
+    <python>
 
--------------------------------------------
-Chapter 2: Basic XML integration
--------------------------------------------
+from privateer import privateer
 
-First let me start by explaining how to run a python class... in this case we start with the prebuild "privateer.py" script to run our mission.
-Open up mission/exploration/explore_universe.mission
-First come the variables that designate how the mission should normally start.  By normally I mean if they don't have any save game present.
+my_obj=privateer(20000,40000,500,3,2,.6,.25,.02,400000,2000)
 
-      <mission>
-          <variables>
-              <var name="defaultplayer" value="blue" />
-              <var name="mission_name" value="Test Mission"  />
-              <var name="num_players" value="2"/>
-              <var name="credits" value="3500"/>
-              <var name="difficulty" value=".05"/><!--good starting
-      difficulty here-->
-              <var name="splashscreen" value="bad_guys_vs_good_guys.bmp"/>
-              <var name="system" value="sol_sector/celeste"  />
-              <var name="description" value="This is a fun mission."  />
-              <var name="author" value="Me"  />
-              <var name="briefing" value="In this mission, you will have
-      to have fun, or you will fail."  />
-              <var name="savegame" value="explore_universe_difficulty" />
-          </variables>
-
-it loads sol_sector/celeste.system  as the star system (which is in XML and stores all present planets)
-After this, comes the actors in the mission, the flightgroups of fighters. If a mission has more than one player, then each player is the leader (first ship) in each respective flightgroup.
-
-            <flightgroups>
-                      <flightgroup name="blue" faction="privateer"
-      type="wayfarer.begin" ainame="default" waves="1" nr_ships="1">
-                  <pos x="20400" y="-35400" z="84700000.0"/>
-
-                  <rot x="180.0" y="180.0" z="180.0"/>
-              </flightgroup>
-          </flightgroups>
+    </python>
 
 
-The rot flag is ignored, and the position specifies the x,y,z coords of the blue flightgroup, which is of type wayfarer.begin.
-Notice that so far there are a lot of values you don't see for long in the default vegastrike game.   Credits, System, first flightgroup fighter, difficulty--these are all initial values but can change.... since there is specified a savegame.  The savegame makes the mission more of a campaign type mission where things may be saved to disk and reloaded at a later point. If no savegame variable is specified (this is where the autosave goes) then the mission will not save and will be a one time play mission.   
-Future note:
-If you wanted to add a campaign to the privateer mission you would most likely modify privateer.py to have a campaign module get loaded.... so you wouldn't necessarily need to modify explore_universe.mission just to add a campaign... lets dig further into the meat of the scripting.
+      You have to be careful about newlines, etc in the XML, but it
+      shoudl usually work just dandy. You notice that the mission may
+      pass in arguments to the privateer module that can make slight
+      changes in teh gameplay. This allows many cargo missions to use
+      the same module in order to change the parameters of the cargo
+      missions.
+      In this case the values I have selected appear to work relatively
+      well.
 
-If a mission has python tags...then it is a python mission and may have some embedded python in it.   In this case the python makes a new python object of type privateer in the privateer.py module in the modules/ directory. 
+      -------------------------------------------
+      Chapter 3: Python Inheritance In Missions
+      -------------------------------------------
 
-          <python>
-      from privateer import privateer
-      my_obj=privateer(20000,40000,500,3,2,.6,.25,.02,400000,2000)
-          </python>
+      Ok lets dig further into the privateer.py module:
 
-You have to be careful about newlines, etc in the XML, but it shoudl usually work just dandy.   You notice that the mission may pass in arguments to the privateer module that can make slight changes in teh gameplay.  This allows many cargo missions to use the same module in order to change the parameters of the cargo missions.  
-In this case the values I have selected appear to work relatively well.
+      It is a very short module written in more or less pure python... I
+      say more or less for a very specific reason: it inherits from a
+      C++ class!
 
--------------------------------------------
-Chapter 3: Python Inheritance In Missions
--------------------------------------------
+      Director is a C++ class exported to python. All missions must
+      inherit from director.... in this case the mission is very short
+      as it uses other (pure python) modules.
+      random_encounters.random_encounters, difficulty.difficulty and
+      ,trading.trading all do NOT inherit from C++ as this class takes
+      care of the C++ inheritance.
 
-Ok lets dig further into the privateer.py module:
+      The constructor __init__ takes the arguments that we passed in
+      from the XML file and passes them on to the various submodules.
+      The only really really important thing you do in the constructor
+      is call
 
-It is a very short module written in more or less pure python... I say more or less for a very specific reason:  it inherits from a C++ class!
-
-Director is a C++ class exported to python.  All missions must inherit from director.... in this case the mission is very short as it uses other (pure python) modules.  random_encounters.random_encounters, difficulty.difficulty and ,trading.trading all do NOT inherit from C++ as this class takes care of the C++ inheritance.
-
-The constructor __init__ takes the arguments that we passed in from the XML file and passes them on to the various submodules.
-The only really really important thing you do in the constructor is call
-
-Director.Mission.__init__ (self)
-
-
-if you do not do this, Vegastrike will not load your module and will silently fail (this calls the C++ constructor, whcih actually triggers the binding of your module to the python mission).
-
-Each mission module must have an execute function so that something can happen every physics frame.  In this case it just calls execute on all the submodules... not very interesting.
+      Director.Mission.__init__ (self)
 
 
-Missions also may have 2 functions   Pickle (self) which returns a string with a XML mission file that will load the mission properly as well as a string representing the mission in serialized form... if the mission were reloaded that mission would be loaded and its corresponding python would be run, then Unpickle (self, str) would be called (with str being a string) and the expectation that the mission woudl be reloaded.  data/newmission.py has an example of this. 
+      if you do not do this, Vegastrike will not load your module and
+      will silently fail (this calls the C++ constructor, whcih actually
+      triggers the binding of your module to the python mission).
 
-You may also choose to save data in a float by float format as follows (the advantage to this format is that it is saved on a PER PLAYER basis... so that each player may have a different value):
-there are 4 functions at your disposal for this older way to save missions:
-myindex=Director.pushSaveData(int whichplayer, stringkey,floatVal);
-this function adds the key for later retrieval (even after VS quits ) and pushes the float to the end of the hashtable indexed by stringkey
-
-This function modifies a index in a key that has already been pushed back at one point
-Director.putSaveData (intWhichPlayer, stringkey, myIndex, floatVal);
-
-Director.getSaveDataLength (int whichplayer, string key) gets the number of float values for a given player
-
-Director.getSaveData(int whichplayer, stringkey, int num)  gets save data saved at that number
-
-You can make up stringkeys and save only 1 float per key if you wish... each key is allowed to have an vector of possible values. Use as you wish! For the privateer mission I save things with key 31337ness and the one value in there is the difficulty that I write out....
-If a campaign is more global rather than player specific you may just choose to pickle it...however if something is on a per-player basis, it may be best going in these SaveData float vectors.
+      Each mission module must have an execute function so that
+      something can happen every physics frame. In this case it just
+      calls execute on all the submodules... not very interesting.
 
 
-With the exception of AI modules from here on out it's straight python.
-I will go over some of hte functions you can call inside Vega Strike in a minute.
+      Missions also may have 2 functions Pickle (self) which returns a
+      string with a XML mission file that will load the mission properly
+      as well as a string representing the mission in serialized form...
+      if the mission were reloaded that mission would be loaded and its
+      corresponding python would be run, then Unpickle (self, str) would
+      be called (with str being a string) and the expectation that the
+      mission woudl be reloaded. data/newmission.py has an example of this.
+
+      You may also choose to save data in a float by float format as
+      follows (the advantage to this format is that it is saved on a PER
+      PLAYER basis... so that each player may have a different value):
+      there are 4 functions at your disposal for this older way to save
+      missions:
+      myindex=Director.pushSaveData(int whichplayer, stringkey,floatVal);
+      this function adds the key for later retrieval (even after VS
+      quits ) and pushes the float to the end of the hashtable indexed
+      by stringkey
+
+      This function modifies a index in a key that has already been
+      pushed back at one point
+      Director.putSaveData (intWhichPlayer, stringkey, myIndex, floatVal);
+
+      Director.getSaveDataLength (int whichplayer, string key) gets the
+      number of float values for a given player
+
+      Director.getSaveData(int whichplayer, stringkey, int num) gets
+      save data saved at that number
+
+      You can make up stringkeys and save only 1 float per key if you
+      wish... each key is allowed to have an vector of possible values.
+      Use as you wish! For the privateer mission I save things with key
+      31337ness and the one value in there is the difficulty that I
+      write out....
+      If a campaign is more global rather than player specific you may
+      just choose to pickle it...however if something is on a per-player
+      basis, it may be best going in these SaveData float vectors.
 
 
-----------------------------------------------------
+      With the exception of AI modules from here on out it's straight
+      python.
+      I will go over some of hte functions you can call inside Vega
+      Strike in a minute.
 
-      *29) Python Inheritance with AI Scripts*
-
-
-----------------------------------------------------
-
-Let me talk about AI scripts briefly.
-
-you'll notice a nice AI script named printhello.py in the data/printhello.py
-It is very similar to a mission with a few notable differences.
-First of all the AI class you make must inherit from the class VS.PythonAI
-secondly instead of having an __init__ function it must have an init() function.  The reasons for this have something to do with how inheritance works from C++, but this init function takes in self of course and the unit to which thie AI script belongs.
-init may start off some AI scripts from the get go, or you may wait until you execute each frame.   in this case printhello loads the XML script ++turntowards.xml  (which is the hard coded C++ equivalent to ai/scripts/turntowards.xml).
-After loading that AI script it replaces its parents order with the last AI script, in this case the XML script.
-In the Execute function this AI script calls Execute on the hgiher level (which takes care of responding to communications)  and then prints h to the console for no apparent reason.
-
-Lastly and most importantly, the AI sxcript makes a new class for itself...So when the C++ code executes printhello.py it will call the C++ constructor which will take care of binding it.
-
-so when you make a new unit like so:
-
-VS.launch (fgname,type,faction,"unit","printhello.py",nr_ships,nr_waves,vec,logo)
-
-it will have this python AI attached to it....
-However if you are too lazy to write AI's you can use the most excellent default AI
-VS.launch (fgname,type,faction,"unit","default",nr_ships,nr_waves,vec,logo)
+      * 29) Python Inheritance with AI Scripts*
 
 
 
----------------------------------------------------------------
-Chapter 5: Suppery about python-Vegastrike class relationships
----------------------------------------------------------------
+      Mission Scripting Tutorial:
 
-Summary:
-Missions must inherit from Director.Mission
-AI's must inherit from VS.PythonAI
-
-Missions must have an __init__ function with any number of arguments that calls
-Director.Mission.__init__ (self);
-to trigger the C++ binding
-
-AI's must have an init(self, un) function with those exact 2 arguments... the second one is the parent Unit.  I don't recommend you save the unit currently--I'm not sure if it will garbage collect the unit in that case... just call the self.GetParent () function as the Ai script.
-
-Both AI's and Missions may have an Execute(self) function that does somethign each frame depending on the disired result.
-
-Missions may have a Pickle and Unpickle function  in order to save and load the state of a campaign (this can be incredibly complex!)
+      Chapter 1: Introduction <#i28_1>
+      Chapter 2: Basic XML integration <#i28_2>
+      Chapter 3: Python Inheritance In Missions <#i28_3>
+      Chapter 5: Suppery about python-Vegastrike class relationships
+      <#i29_1>
+      Chapter 6: Python - Vega Strike Bindings <#i29_2>
+      Chapter 7: Writing Add On Adventures <#i29_3>
+      Chapter 8: Conclusion <#i29_4>
 
 
-------------------------------------------------------------------
-Chapter 6 Python Vegastrike Bindings
-------------------------------------------------------------------
+      Let me talk about AI scripts briefly.
 
-Vegastrike Utility Functions:
+      you'll notice a nice AI script named printhello.py in the
+      data/printhello.py
+      It is very similar to a mission with a few notable differences.
+      First of all the AI class you make must inherit from the class
+      VS.PythonAI
+      secondly instead of having an __init__ function it must have an
+      init() function. The reasons for this have something to do with
+      how inheritance works from C++, but this init function takes in
+      self of course and the unit to which thie AI script belongs.
+      init may start off some AI scripts from the get go, or you may
+      wait until you execute each frame. in this case printhello loads
+      the XML script ++turntowards.xml (which is the hard coded C++
+      equivalent to ai/scripts/turntowards.xml).
+      After loading that AI script it replaces its parents order with
+      the last AI script, in this case the XML script.
+      In the Execute function this AI script calls Execute on the hgiher
+      level (which takes care of responding to communications) and then
+      prints h to the console for no apparent reason.
 
-Now that you can run complex python scripts that could even play minesweeper at the prompt, you probably want to interact with Vegastrike directly and "do" stuff like make ships, set objectives, and generally give the player a hard time.
+      Lastly and most importantly, the AI sxcript makes a new class for
+      itself...So when the C++ code executes printhello.py it will call
+      the C++ constructor which will take care of binding it.
 
-First of all let me talk about the "stubs".  We have had a clever idea to make missions somewhat testable outside the framework of vegastrike by autogenerating stub functions.
-The way you make stub functions is by using the C++ processor in 2 steps...
+      so when you make a new unit like so:
+
+      VS.launch
+      (fgname,type,faction,"unit","printhello.py",nr_ships,nr_waves,vec,logo)
+
+      it will have this python AI attached to it....
+      However if you are too lazy to write AI's you can use the most
+      excellent default AI
+      VS.launch
+      (fgname,type,faction,"unit","default",nr_ships,nr_waves,vec,logo)
+
+      ---------------------------------------------------------------
+      Chapter 5: Suppery about python-Vegastrike class relationships
+      ---------------------------------------------------------------
+
+      Summary:
+      Missions must inherit from Director.Mission
+      AI's must inherit from VS.PythonAI
+
+      Missions must have an __init__ function with any number of
+      arguments that calls
+      Director.Mission.__init__ (self);
+      to trigger the C++ binding
+
+      AI's must have an init(self, un) function with those exact 2
+      arguments... the second one is the parent Unit. I don't recommend
+      you save the unit currently--I'm not sure if it will garbage
+      collect the unit in that case... just call the self.GetParent ()
+      function as the Ai script.
+
+      Both AI's and Missions may have an Execute(self) function that
+      does somethign each frame depending on the disired result.
+
+      Missions may have a Pickle and Unpickle function in order to save
+      and load the state of a campaign (this can be incredibly complex!)
+
+      ------------------------------------------------------------------
+      Chapter 6 Python Vegastrike Bindings
+      ------------------------------------------------------------------
+
+      Vegastrike Utility Functions:
+
+      Now that you can run complex python scripts that could even play
+      minesweeper at the prompt, you probably want to interact with
+      Vegastrike directly and "do" stuff like make ships, set
+      objectives, and generally give the player a hard time.
+
+      First of all let me talk about the "stubs". We have had a clever
+      idea to make missions somewhat testable outside the framework of
+      vegastrike by autogenerating stub functions.
+      The way you make stub functions is by using the C++ processor in 2
+      steps...
+
 cd src/python
 gcc -E -DPYTHON_STUB=1 unit_wrapper.cpp > ~/data/modules/stub/VS.py
-then edit that file and replace ~ with (newline)(space)(space)
-and you have a sample python stub so you can find out every mission that vegastrike exports. 
-we try to keep these stubs as up to date as possible.
-Anyhow this lets you test your missions at the prompt by adding the two directories
+
+
+      then edit that file and replace ~ with (newline)(space)(space)
+      and you have a sample python stub so you can find out every
+      mission that vegastrike exports.
+      we try to keep these stubs as up to date as possible.
+      Anyhow this lets you test your missions at the prompt by adding
+      the two directories
+
 import sys
 sys.path = sys.path + ['/home/blah/data/modules']
 sys.path = sys.path + ['/home/blah/data/modules/stub']
 import VS
 ...
 
-and then you can run your mission and see if it at least sort of works.
+      and then you can run your mission and see if it at least sort of
+      works.
 
-the stub file also gives you a good idea about what functions are available for you in your missions.
+      the stub file also gives you a good idea about what functions are
+      available for you in your missions.
 
-I will try to give a brief description here... 
+      I will try to give a brief description here...
 
-Feel free to add to the descritptions or to ask me about any that are unclear.
-I give you as follows the VS functions C++ names so you get type information as well!
-Note that these comments are also included in src/universe_util.h
+      Feel free to add to the descritptions or to ask me about any that
+      are unclear.
+      I give you as follows the VS functions C++ names so you get type
+      information as well!
+      Note that these comments are also included in src/universe_util.h
 
-
-//this function sets the "current" system to be "name"  where name may be something like "sol_sector/sol"  or "vega_sector/vega"   this function may take some time if the system has not been loaded before
+//this function sets the "current" system to be "name"  where name may be something like
+//"sol_sector/sol"  or "vega_sector/vega"   this function may take some time if the system
+//has not been loaded before
 
 	void pushSystem (string name);
 
-//this function restores the active system.... there must be an equal number of pushSystems ans popSystems or else Vega Strike may behave unpredictably
+//this function restores the active system.... there must be an equal number of pushSystems
+//and popSystems or else Vega Strike may behave unpredictably
 	void popSystem ();
 //This function gets the current system's official name
 	string getSystemFile();
 //this function gets the current system's nickname (not useful)
 	string getSystemName();
-//this function gets an iterator into the units in the current system... do NOT keep an iterator across a frame--it may get deleted!
+//this function gets an iterator into the units in the current system... do NOT keep an iterator
+//across a frame--it may get deleted!
 	un_iter getUnitList();
 //This function gets a unit given a number (how many iterations to go down in the iterator)
 	Unit *getUnit(int index);
@@ -1095,9 +1226,16 @@ Note that these comments are also included in src/universe_util.h
 			QVector pos, 
 			string squadlogo, 
 			string destinations);
-//this function launches a normal fighter  the name is the flightgroup name, the type is the ship type, the faction is who it belongs to, the unittype is usually "unit" unless you want to make asteroids or nebulae or jump points or planets.  the aistring is either a python filename or "default"  the nr of ships is the number of ships to be launched with this group, the number of waves is num reinforcements... the position is a tuple (x,y,z) where they appear and the squadlogo is a squadron image...you can leave this the empty string '' for the default squadron logo. 
-	Unit* launch (string name_string,string type_string,string faction_string,string unittype, string ai_string,int nr_of_ships,int nr_of_waves, QVector pos, string sqadlogo);
-//this gets a random cargo type (useful for cargo missions) from either any category if category is '' or else from a specific category  'Contraband'  comes to mind!
+//this function launches a normal fighter  the name is the flightgroup name, the type is the ship type,
+//the faction is who it belongs to, the unittype is usually "unit" unless you want to make asteroids or
+//nebulae or jump points or planets.  the aistring is either a python filename or "default"  the nr of
+//ships is the number of ships to be launched with this group, the number of waves is num reinforcements...
+//the position is a tuple (x,y,z) where they appear and the squadlogo is a squadron image...you can leave
+//this the empty string '' for the default squadron logo. 
+	Unit* launch (string name_string,string type_string,string faction_string,string unittype,
+		string ai_string,int nr_of_ships,int nr_of_waves, QVector pos, string sqadlogo);
+//this gets a random cargo type (useful for cargo missions) from either any category if category is ''
+//or else from a specific category  'Contraband'  comes to mind!
 	Cargo getRandCargo(int quantity, string category);
 //This gets the faction name of an index
 	string GetFactionName(int index);
@@ -1105,7 +1243,8 @@ Note that these comments are also included in src/universe_util.h
 	int GetFactionIndex(string name);
 //this gets a relationship between two factions
 	float GetRelation(string myfaction,string theirfaction);
-//this changes the relaationship based on the rank and how mad or happy they are (the relationship is between 0 and 1... so a adjustment of .01 with a rank of 1 is QUITE significant.
+//this changes the relaationship based on the rank and how mad or happy they are (the relationship
+//is between 0 and 1... so a adjustment of .01 with a rank of 1 is QUITE significant.
 	void AdjustRelation(string myfaction,string theirfaction, float factor, float rank);
 //this gets the number of factions in game
 	int GetNumFactions ();
@@ -1125,7 +1264,8 @@ Note that these comments are also included in src/universe_util.h
 	void musicPlaySong(string str);
 //this plays msuci from a given list (where the int is what was returned by musicAddList)
 	void musicPlayList(int which);
-//this gets the difficutly of the game... ranges between 0 and 1... many missions depend on it never going past .99 unless it's always at one.
+//this gets the difficutly of the game... ranges between 0 and 1... many missions depend on it
+//never going past .99 unless it's always at one.
 	float GetDifficulty ();
 //this sets the difficulty
 	void SetDifficulty (float diff);
@@ -1153,23 +1293,36 @@ Note that these comments are also included in src/universe_util.h
 	void setOwner(int which,Unit *owner);
 //this gets an owner of a completeness (NULL means all players can see this objective)
 	Unit* getOwner(int which);
-//this sends an IO message... I'm not sure if delay currently works, but from, to and message do :-) ... if you want to send to the bar do "bar" as the to string... if you want to make news for the news room specify "news"
+//this sends an IO message... I'm not sure if delay currently works, but from, to and message
+//do :-) ... if you want to send to the bar do "bar" as the to string... if you want to make
+//news for the news room specify "news"
     void IOmessage(int delay,string from,string to,string message);
 //this gets a unit with 1 of each cargo type in it
 	Unit *GetMasterPartList ();
 //this gets a unit with a faction's contraband list... may be null (check with isNull)
 	Unit *GetContrabandList (string faction);
-//this sets whether or not a player may autopilot.  Normally they are both 0 and the autopiloting is allowed based on if enemies are near... if you pass in 1 then autopilot will be allowed no matter who is near... if you set -1 then autopilot is never allowed.  global affects all players... player just affects the player who accepted the mission.
+//this sets whether or not a player may autopilot.  Normally they are both 0 and the autopiloting
+//is allowed based on if enemies are near... if you pass in 1 then autopilot will be allowed no
+//matter who is near... if you set -1 then autopilot is never allowed.  global affects all
+//players... player just affects the player who accepted the mission.
 	void SetAutoStatus (int global_auto, int player_auto);
 
 
-Many of these functions return Unit * (for python just Unit)
-However there is a very critical difference between a Python Unit and a C++ Unit *.
-If you have a Python Unit you may keep it across frames... it may turn null (check with isNull()), but you can still keep it.... (if it dies is when it turns null)... in C++ if you keep a Unit * across a frame you WILL cause random segfaults (bad things, hard to find)
-but ya...Python it's safe to keep Unit's returned by functions...just be aware that between frames they may die and then bet tested Null with isNull().
+      Many of these functions return Unit * (for python just Unit)
+      However there is a very critical difference between a Python Unit
+      and a C++ Unit *.
+      If you have a Python Unit you may keep it across frames... it may
+      turn null (check with isNull()), but you can still keep it.... (if
+      it dies is when it turns null)... in C++ if you keep a Unit *
+      across a frame you WILL cause random segfaults (bad things, hard
+      to find)
+      but ya...Python it's safe to keep Unit's returned by
+      functions...just be aware that between frames they may die and
+      then bet tested Null with isNull().
 
-The following comments are done with the python class as the arguments are clearly lsited in VS.py stub function :-)
-"
+      The following comments are done with the python class as the
+      arguments are clearly lsited in VS.py stub function :-)
+
 class Unit:
 #don't call this one :-) it's just there in the stub ... really make units with the VS.launch above
   def __init__(self):
@@ -1256,7 +1409,8 @@ class Unit:
   def Init(self): 
    print "Init"
 #turns on the jump drive (provided energy) this will cause the unit to teleport upon hitting a jump point
-#this also causes the default AI to go for targetted jump points like there's no tomorrow Desintation shoudl be 0 for now
+#this also causes the default AI to go for targetted jump points like there's no tomorrow.
+#Desintation should be 0 for now
   def ActivateJumpDrive(self,destination): 
    print "ActivateJumpDrive"
 #this turns off an active jump drive
@@ -1603,7 +1757,8 @@ class Unit:
   def decrementCargo(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "decrementCargo" 
    return 0
- #get distance plus atmospheric size if large planet (to prevent players from coming too close to surface when leaving autopilot
+ #get distance plus atmospheric size if large planet (to prevent players from coming too close
+ #to surface when leaving autopilot
   def getSignificantDistance(self,other):
    print "getSignificantDistance" 
    return 0
@@ -1664,7 +1819,8 @@ class Unit:
   def queryBSP(self,start,end): 
    print "queryBSP" 
    return (un,(0,0,1),0)
- #how far off is this unit to another unit with guns that have speed and range) (returns a tuple with a cosine and a range normalized between 0 and 1)
+ #how far off is this unit to another unit with guns that have speed and range) (returns a tuple
+ #with a cosine and a range normalized between 0 and 1)
   def cosAngleToITTS(self,un,speed,range): 
    print "cosAngleToITTS" 
    return (.95,10000)
@@ -1689,12 +1845,13 @@ class Unit:
    print "getSubUnit" 
    return Unit()
 
-#this is the unit iterator class...  it is returned in a number of functions... DO NOT keep this across a frame (i.e. save it after Execute()
+#this is the unit iterator class...  it is returned in a number of functions... DO NOT keep this
+#across a frame (i.e. save it after Execute()
 class un_iter:
   #dont' call this...stub only
   def __init__(self):
     print 'un_iter constructor called with (self)'
-    #the current unit this iterator is pointing to (may well be null...that's how you know to stop checking)
+ #the unit this iterator is pointing to (may well be null...that's how you know to stop checking)
   def current(self):
    print "current" 
    return Unit()
@@ -1797,46 +1954,59 @@ class PythonAI:
    print "LastPythonScript"
 
 
---------------------------------------------------------------------
-Chapter 7: Writing Add On Adventures 
---------------------------------------------------------------------
-Honestly you merely need a basic understanding of python in order
-to craft your own add on adventures...but I decided to write a framework
-for consistently and speedily adding adventures to the general exploration
-of Vega Strike.
+      --------------------------------------------------------------------
+      Chapter 7: Writing Add On Adventures
+      --------------------------------------------------------------------
+      Honestly you merely need a basic understanding of python in order
+      to craft your own add on adventures...but I decided to write a
+      framework for consistently and speedily adding adventures to the
+      general exploration of Vega Strike.
 
-I will define adventure as follows:
-A minature mission that gets triggered by a player who goes in its system.
-This mission may either be persistent or nonpersistent... a persistent mission
-will reload the next time the triggering player launched it until the player 
-beats the mission.
+      I will define adventure as follows:
+      A minature mission that gets triggered by a player who goes in its
+      system.
+      This mission may either be persistent or nonpersistent... a
+      persistent mission will reload the next time the triggering player
+      launched it until the player beats the mission.
 
-THE QUEST CLASS: THE ACTUAL QUEST LOGIC GOES HERE
+      THE QUEST CLASS: THE ACTUAL QUEST LOGIC GOES HERE
 
 
-the quest, quest_factory and lastly the adventure modules take care of most of the dirty work...
-all an quest class has to do is the following:
-
+      the quest, quest_factory and lastly the adventure modules take
+      care of most of the dirty work...
+      all an quest class has to do is the following:
 
 class quest_my(quest.quest):
       def __init__ (self):
 	  #do anything you need here
       def Execute (self):
-	  #do anything you need here...and return 1 if you wish to execute again, zero if you wish to terminate yourself
+	  #do anything you need here...return 1 if you wish to execute again, 0 if you wish to
+	  #terminate yourself
 
-That's it.... Though there are some useful functions you may wish to call in your superclass
-self.removeQuest()    #this prevents your player from EVER encountering the quest again in his life
-self.makeQuestPersistent()    #this causes the quest to be loaded the next time your player jumps in after rebooting vegastrike
+      That's it.... Though there are some useful functions you may wish
+      to call in your superclass
+      self.removeQuest() #this prevents your player from EVER
+      encountering the quest again in his life
+      self.makeQuestPersistent() #this causes the quest to be loaded the
+      next time your player jumps in after rebooting vegastrike
 
-generally before returing 0 (temrinating self) in a mission you may wish to make the quest either persistent (comes back next time he starts game) or removed... though you could also leave the quest the way it is and the next time the player goes to the system after rebooting vegastrike he'll get the same quest again :-)
+      generally before returing 0 (temrinating self) in a mission you
+      may wish to make the quest either persistent (comes back next time
+      he starts game) or removed... though you could also leave the
+      quest the way it is and the next time the player goes to the
+      system after rebooting vegastrike he'll get the same quest again :-)
 
-but in order for your quest to be complete you must have two more components
+      but in order for your quest to be complete you must have two more
+      components
 
-THE QUEST FACTORY: A CLASS THAT RETURNS THE QUEST NEEDED
+      THE QUEST FACTORY: A CLASS THAT RETURNS THE QUEST NEEDED
 
-each quest must have a factory that inherits from quest.quest_factory.  and must define both an init, and a create function.
-optionally there's a conditional function called precondition.... That returns a boolean whether or not the quest is ripe for creation (when a player encounters it in its native system that is)
-
+      each quest must have a factory that inherits from
+      quest.quest_factory. and must define both an init, and a create
+      function.
+      optionally there's a conditional function called precondition....
+      That returns a boolean whether or not the quest is ripe for
+      creation (when a player encounters it in its native system that is)
 
 class quest_my_factory (quest.quest_factory):
     def __init__ (self):
@@ -1846,22 +2016,40 @@ class quest_my_factory (quest.quest_factory):
     def precondition(self,playernum):
 	return Director.getSaveData(playernum,"talked_to_sandra",0)>0
 
-The factory must have 2 and can have all 3 of the above functions
-first is the init function... y9ou must call your superclass's init with your name.
-second is the create function... this must simply return the quest class you painstakingly created above
-third is the precondition...this is optional (by default it returns 1...always true)
+      The factory must have 2 and can have all 3 of the above functions
+      first is the init function... y9ou must call your superclass's
+      init with your name. second is the create function... this must
+      simply return the quest class you painstakingly created above
+      third is the precondition...this is optional (by default it
+      returns 1...always true)
 
-the precondition can look in the save variables and see if you have done a task (set by some other quest perhaps) and only then return 1... :-) in that case when a player encounters it for the first time it will check the precondition before launchign the quest....
-note the precondition does NOT get checked once the mission has been turned into a persistent mission.... this is because the mission already made the decision to make itself persistent
-I don't expect many missions to need to be persistent.... I expect more lighthearted adventures that don't drag out if a player quits, etc.
+      the precondition can look in the save variables and see if you
+      have done a task (set by some other quest perhaps) and only then
+      return 1... :-) in that case when a player encounters it for the
+      first time it will check the precondition before launchign the
+      quest.... note the precondition does NOT get checked once the
+      mission has been turned into a persistent mission.... this is
+      because the mission already made the decision to make itself
+      persistent I don't expect many missions to need to be
+      persistent.... I expect more lighthearted adventures that don't
+      drag out if a player quits, etc.
 
-Anyhow... a good example is the persistent quest known as the quest_drone  (quest_drone.py)
-that quest checks to see if you're near an unknown_derelect and if so it launches the badguy drone.... it makes the drone jump and follow you wherever you go until it is destroyed...it is persistent and launches the drone every time you rerun the game....
-Luckily if you're close to the derelect chances are you'll find the gun that you can use to kill the drone.... which brings me right smack into my next point:  location location location!
+      Anyhow... a good example is the persistent quest known as the
+      quest_drone (quest_drone.py)
+      that quest checks to see if you're near an unknown_derelect and if
+      so it launches the badguy drone.... it makes the drone jump and
+      follow you wherever you go until it is destroyed...it is
+      persistent and launches the drone every time you rerun the game....
+      Luckily if you're close to the derelect chances are you'll find
+      the gun that you can use to kill the drone.... which brings me
+      right smack into my next point: location location location!
 
-THE LOCATION AND PERSISTENCE OF A GIVEN QUEST (i.e. HOOKING IT INTO privateer.py)
-adventure.py has the master list of all possible quests in vega strike....
-right now there are two (but one is stupid and will be removed soon enough...that's the default one)
+      THE LOCATION AND PERSISTENCE OF A GIVEN QUEST (i.e. HOOKING IT
+      INTO privateer.py)
+      adventure.py has the master list of all possible quests in vega
+      strike....
+      right now there are two (but one is stupid and will be removed
+      soon enough...that's the default one)
 
 
 adventures = {"gemini_sector/delta_prime":quest_drone.quest_drone_factory(),
@@ -1869,31 +2057,44 @@ adventures = {"gemini_sector/delta_prime":quest_drone.quest_drone_factory(),
 
 persistent_adventures = [quest_drone.quest_drone_factory()]
 
-These are the only 2 lists that will ever need to be changed in the modules that are already there.
-adventures contains a map of location to adventure. Note that there can be only 1 adventure per location (hey players need to be encouraged to actually EXPLORE)
-the second list lists all possible persistent adventures (though they are only loaded from if the given adventure has gotten around to calling self.makeQuestPersistent)
+      These are the only 2 lists that will ever need to be changed in
+      the modules that are already there.
+      adventures contains a map of location to adventure. Note that
+      there can be only 1 adventure per location (hey players need to be
+      encouraged to actually EXPLORE)
+      the second list lists all possible persistent adventures (though
+      they are only loaded from if the given adventure has gotten around
+      to calling self.makeQuestPersistent)
 
-Anyhow just adding more cool missions to this list will make it a lot more fun to explore around and encounter strang epeople, strange news, and a bunch 'o cash :-P
+      Anyhow just adding more cool missions to this list will make it a
+      lot more fun to explore around and encounter strang epeople,
+      strange news, and a bunch 'o cash :-P
 
-Note that we should eventually make the news reports line up with the quests... :-) I have some ideas how to do that
-Basically you can call 
-VS.IOmessage ("game","news","A drone was sighted in the delta prime...blah blah blah")
-and then epople will see it in the game when they click on GNN
-likewise if you send it to 
-VS.IOmessage ("game","bar","A drone was sighted in the delta prime...blah blah blah")
-then you can hear it when you talk to the bartender :-)
+      Note that we should eventually make the news reports line up with
+      the quests... :-) I have some ideas how to do that
+      Basically you can call
+      VS.IOmessage ("game","news","A drone was sighted in the delta
+      prime...blah blah blah")
+      and then epople will see it in the game when they click on GNN
+      likewise if you send it to
+      VS.IOmessage ("game","bar","A drone was sighted in the delta
+      prime...blah blah blah")
+      then you can hear it when you talk to the bartender :-)
 
--------------------------------------------------------------------------
-Chapter 8: Conclusion
--------------------------------------------------------------------------
+      -------------------------------------------------------------------------
+      Chapter 8: Conclusion
+      -------------------------------------------------------------------------
 
-Well this is the best I can do so far... please read this documentation over and let me know if you have any suggestions or clarifications...adn best yet give it a shot and try it out-- and at least look at  modules/cargo_mission.py (whcih is called from a number of missions I think) as well as modules/privateer.py (called by mission/exploration/explore_universe.mission  )
-And certainly try to understand modules/quest_drone.py
-before trying to write a quest (or while trying to write one)
+      Well this is the best I can do so far... please read this
+      documentation over and let me know if you have any suggestions or
+      clarifications...adn best yet give it a shot and try it out-- and
+      at least look at modules/cargo_mission.py (whcih is called from a
+      number of missions I think) as well as modules/privateer.py
+      (called by mission/exploration/explore_universe.mission )
+      And certainly try to understand modules/quest_drone.py
+      before trying to write a quest (or while trying to write one)
 
-
-      *32) Troubleshooting*
-
+      * 32) Troubleshooting*
 
       If you should encounter problems, then you should check these things:
       - Always check if Setup.exe is set to the closest options for your
@@ -1905,8 +2106,7 @@ before trying to write a quest (or while trying to write one)
       vegastrike-users@lists.sourceforge.net
       <mailto:vegastrike-users@lists.sourceforge.net>
 
-      *33) License*
-
+      * 33) License*
 
 
 		    GNU GENERAL PUBLIC LICENSE
@@ -2254,3 +2454,4 @@ proprietary programs.  If your program is a subroutine library, you may
 consider it more useful to permit linking proprietary applications with the
 library.  If this is what you want to do, use the GNU Library General
 Public License instead of this License.
+
