@@ -50,6 +50,7 @@ class quest_contraband_truck (quest.quest):
 
 #		VS.terminateMission(False)
 		print "mission terminated"
+		self.quest_exit = 1
 		return 0
 
 	def mission_success(self):
@@ -60,6 +61,7 @@ class quest_contraband_truck (quest.quest):
 		VS.IOmessage (6,"game","all","Please move away or we will remove you.")
 		self.jumpout = 0
 #		VS.terminateMission(True)
+		self.quest_exit = 1
 		return 0
 
 
@@ -102,6 +104,7 @@ class quest_contraband_truck (quest.quest):
 			self.repeat_end2 = 1
 			self.timer1 = 0
 			self.jumpout = 0
+			self.quest_exit = 0
 			global truck_exit
 			truck_exit = 0
 
@@ -192,6 +195,8 @@ class quest_contraband_truck (quest.quest):
 
 
 	def Execute (self):
+		if self.quest_exit == 1:
+			return 0
 		if (self.playa):
 
 
@@ -239,6 +244,7 @@ class quest_contraband_truck (quest.quest):
 #					print ai_qct_waitjump().truck_exit
 #					print waitjump.truck_exit
 #					print waitjump().truck_exit
+					global truck_exit
 					truck_exit = 1
 					print truck_exit
 
