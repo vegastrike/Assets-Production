@@ -6251,7 +6251,7 @@
 <Vertex point="931" s="0.500000" t="0.000000"/>
 </Tri>
 </Polygons>
-<Material reflect="0">
+<Material reflect="0" LightingOn="0">
 <Specular red="0.000000" green="0.000000" blue="0.000000" alpha="0.000000"/>
 </Material>
 </Mesh>
