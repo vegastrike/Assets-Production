@@ -28,7 +28,7 @@
 			<const type="float" value="17445"/> <!-- how much you are paid -->
 			<const type="bool" value="true"/> <!--does he run away -->
 			<const type="int" value="1"/> <!--difficulty-->
-			<const type="object" object="string" value="aera"/>
+			<const type="object" object="string" value="confed"/>
 			</exec>
 		</script>
 		<script name="gameloop">
