@@ -1,11 +1,11 @@
 <system name="celeste" background="backgrounds/emerald" nearstars="500" stars="1000" starspread="150">
 <Light>
-	<ambient red="0.084558" green="0.084558" blue="0.084558"/>
+	<ambient red="0.0" green="0.0" blue="0.0"/>
 	<diffuse red="0.866025" green="0.356567" blue="0.370882"/>
 	<specular red="1.000000" green="0.169520" blue="0.183405"/>
 </Light>
 <Light>
-	<ambient red="0.178670" green="0.178670" blue="0.178670"/>
+	<ambient red="0.0" green="0.0" blue="0.0"/>
 	<diffuse red="0.866025" green="0.832528" blue="0.837217"/>
 	<specular red="1.000000" green="0.924138" blue="0.934576"/>
 </Light>
