@@ -7,6 +7,9 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_3"/>
 	<Upgrade file="polymer_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
+
         <Mount weapon="Plasma" size="Light Medium Heavy" x="2.15" y="-1.1" z="2.5"/>
         <Mount weapon="Plasma" size="Light Medium Heavy" x="-2.15" y="-1.1" z="2.5"/>
 	

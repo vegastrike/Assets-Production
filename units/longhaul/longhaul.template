@@ -7,6 +7,8 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_3"/>
 	<Upgrade file="polymer_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
  
 	<Mount weapon="Tachyon" size="Light Medium Heavy" x="-4.5" y="3" z="32.5"/>
 	<Mount weapon="Tachyon" size="Light Medium Heavy"  x="4.5" y="3" z="32.5" />

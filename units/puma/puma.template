@@ -7,6 +7,8 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_3"/>
 	<Upgrade file="reinforced_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
 
 
 	<Mount weapon="Particle" size="Light Medium Heavy" x="2.000000" y="1.000000" z="0.000000"/>

@@ -7,6 +7,8 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_5"/>
 	<Upgrade file="micro_shielded_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
 
 	<Meshfile file="aevant.xmesh" />
 	<Thrust>

@@ -7,6 +7,9 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_5"/>
 	<Upgrade file="micro_shielded_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
+
 	<Mount weapon="Anihilator" size="Special Heavy light-capship" x="-1.700000" y="0.100000" z="7.800000"/>
 	<Mount weapon="Anihilator" size="Special Heavy light-capship" x="1.700000" y="0.100000" z="7.800000"/>
 	<Mount weapon="Reaper" size="Heavy" x="-1.400000" y="-2.200000" z="6.000000"/>

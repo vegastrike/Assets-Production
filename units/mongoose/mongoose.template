@@ -7,6 +7,8 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_2"/>
 	<Upgrade file="reinforced_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
 
 	<Mount weapon="Photon" size="light medium heavy Autotracking" x="0.800000" y="-0.600000" z="8.000000"/>
 	<Mount weapon="Photon" size="light medium heavy Autotracking" x="-0.800000" y="-0.600000" z="8.000000"/>

@@ -6,6 +6,8 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_5"/>
 	<Upgrade file="reinforced_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
 
 	<Thrust>
 		<Engine Afterburner="320.000000" Forward="149.333328" Retro="130.666662" Left="74.666664" Right="74.666664" Top="74.666664" Bottom="74.666664"/>

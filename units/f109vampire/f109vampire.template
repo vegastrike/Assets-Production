@@ -7,6 +7,8 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_2"/>
 	<Upgrade file="polymer_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
 
 <!-- new elements added -->
 <Mount weapon="KtekBeam" size="Special Medium Heavy" x="0.730882" y="0.293518" z="23.003031" />
