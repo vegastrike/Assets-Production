@@ -1,3 +1,83 @@
+/* Copyright 2003 NVIDIA Corporation
+The source code provided is freely distributable and may be modified, so long as the NVIDIA header remains unaltered and user modifications are detailed. 
+You may not reverse engineer, decompile, or disassemble the object code, nor attempt in any other manner to obtain source code not provided by NVIDIA.
+NO WARRANTY
+THE SOFTWARE AND ANY OTHER MATERIALS PROVIDED BY NVIDIA TO DEVELOPER HEREUNDER ARE PROVIDED "AS IS."  NVIDIA DISCLAIMS ALL WARRANTIES, EXPRESS, IMPLIED OR STATUTORY, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF TITLE, MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+LIMITATION OF LIABILITY 
+NVIDIA SHALL NOT BE LIABLE TO DEVELOPER, DEVELOPER'S CUSTOMERS, OR ANY OTHER PERSON OR ENTITY CLAIMING THROUGH OR UNDER DEVELOPER FOR ANY LOSS OF PROFITS, INCOME, SAVINGS, OR ANY OTHER CONSEQUENTIAL, INCIDENTAL, SPECIAL, PUNITIVE, DIRECT OR INDIRECT DAMAGES (WHETHER IN AN ACTION IN CONTRACT, TORT OR BASED ON A WARRANTY), EVEN IF NVIDIA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.  THESE LIMITATIONS SHALL APPLY NOTWITHSTANDING ANY FAILURE OF THE ESSENTIAL PURPOSE OF ANY LIMITED REMEDY.  IN NO EVENT SHALL NVIDIA'S AGGREGATE LIABILITY TO DEVELOPER OR ANY OTHER PERSON OR ENTITY CLAIMING THROUGH OR UNDER DEVELOPER EXCEED THE AMOUNT OF MONEY ACTUALLY PAID BY DEVELOPER TO NVIDIA FOR THE SOFTWARE OR ANY OTHER MATERIALS. */
+
+// The goal of this vertex program is to
+// compute diffuse and specular lighting per vertex.
+// We handle only one light and use the Blinn-Phong model.
+// The final color is the sum of four terms:
+// emissive, ambient, diffuse and specular.
+
+void main(float4 position : POSITION,  // Position in model space
+                           float2 texCoord : TEXCOORD0, // Texture coordinates
+                           float3 normal   : NORMAL,    // Normal in model space
+
+                   uniform float4x4 modelViewProj,   // Transform matrix from model space to clip space
+                   uniform float3   lightColor,      // Light color
+                   uniform float3   lightPosition,   // Light position in model space
+                   uniform float3   eyePosition,     // Eye position in model space
+                   uniform float3   Kd,              // Diffuse coefficient
+                   uniform float3   Ks,              // Specular coefficient
+                   uniform float    shininess,       // Shininess
+
+                       out float4 oPosition  : POSITION,  // Position in clip space
+                       out float2 oTexCoord  : TEXCOORD0, // Texture coordinates
+                       out float4 diffuse    : TEXCOORD1, // Diffuse lighting
+                       out float4 specular   : TEXCOORD2  // Specular lighting
+)
+{
+  // *** STEP 0 ***
+
+  // Compute the position in clip space
+  oPosition = mul(modelViewProj, position);
+
+  // Output the texture coordinates
+  oTexCoord = texCoord;
+
+  // *** STEP 1: Compute the diffuse term ***
+
+  // Compute the light vector:
+  // normalized vector from vertex position to light position
+  float3 L = normalize(lightPosition - position.xyz);
+
+  // Compute the diffuse light
+  float diffuseLight = max(dot(L, normal), 0);
+
+  // Modulate by the light color and the diffuse coefficient
+  float3 diff3 = Kd * lightColor * diffuseLight;
+  // *** STEP 2: Compute the specular term ***
+
+  // Compute the view vector:
+  // normalized vector from vertex position to eye position
+  float3 V = normalize(eyePosition - position.xyz);
+
+  // Compute the half-angle vector:
+  // normalized sum of the light vector and the view vector
+  float3 H = normalize(L + V);
+
+  // Compute the specular light
+  float specularLight = pow(max(dot(H, normal), 0), shininess);
+  if (diffuseLight <= 0)
+      specularLight = 0;
+
+  // Modulate by the light color and the specular coefficient
+  float3 spec3= Ks * lightColor * specularLight;
+  specular.x=spec3.x;
+  specular.y=spec3.y;
+  specular.z=spec3.z;
+  specular.w=1;
+  diffuse.x=diff3.x;
+  diffuse.y=diff3.y;
+  diffuse.z=diff3.z;
+  diffuse.w=1;
+//specular = spec3;
+//diffuse=diff3;
+  
+}
 #pragma bind appdata.position = ATTR0
 
 // Input uses vertex position and vertex normal 
@@ -16,71 +96,79 @@ struct vertout
 }; 	 
 
 // Entry point
-vertout main(appdata IN,
-	    uniform float4x4 matModelViewProj,	
-		uniform float4x4 matModelViewIT,
-		uniform float4x4 matModelView,
-		uniform float4 materialDiffuse : DIFFUSE,
-		uniform float4 materialAmbient : AMBIENT,
-		uniform float4 materialSpecular : SPECULAR,
-		uniform float4 materialEmissive : EMISSIVE,
-		uniform float4 vecPower,
-		uniform float4 vecCenter,
-		uniform float4 vecBlendParams,
-		uniform float4 vecLightDir,
-		uniform float4 vecEye,
-		uniform float4 vecTime
-	    )
+void DiffuseSpecularVertex(float4 position : POSITION,  // Position in model space
+                           float2 texCoord : TEXCOORD0, // Texture coordinates
+                           float3 normal   : NORMAL,    // Normal in model space
+
+                   uniform float4x4 modelViewProj,   // Transform matrix from model space to clip space
+                   uniform float3   lightColor,      // Light color
+                   uniform float3   lightPosition,   // Light position in model space
+                   uniform float3   eyePosition,     // Eye position in model space
+                   uniform float3   Kd,              // Diffuse coefficient
+                   uniform float3   Ks,              // Specular coefficient
+                   uniform float    shininess,       // Shininess
+
+                       out float4 oPosition  : POSITION,  // Position in clip space
+                       out float2 oTexCoord  : TEXCOORD0, // Texture coordinates
+                       out float4 diffuse    : TEXCOORD1, // Diffuse lighting
+                       out float4 specular   : TEXCOORD2  // Specular lighting
+)
 
 {
 	vertout OUT;
 
 	// Relative distance of vertexposition to outer perimeter of the ship
-	float fDelta	= abs(distance(vecCenter, IN.vecPosition.xyzz))/vecBlendParams.x;
+	float4 test;
+	test.x=test.y=test.z=test.w=0;
+	float fDelta	= abs(distance(test, position))/.5;  //vecBlendParams.x;
 
 	// Alpha calculation (cloaking)
-	float fAlpha	= (1.0f-fDelta) * vecBlendParams.y;
-	fAlpha			= fAlpha + fDelta * vecBlendParams.z;
-
+	float fAlpha	= (1.0f-fDelta) * .5;//vecBlendParams.y;
+	fAlpha			= fAlpha + fDelta * .5;//vecBlendParams.z;
+	fAlpha=0;
 	// Position in homogenous coordinates
-	float4 vecPos	= float4(IN.vecPosition.x,IN.vecPosition.y , IN.vecPosition.z, 1);
 
 	// Position calculation in eye space
-	vecPos	= mul(matModelViewProj, vecPos);
+	oPosition	= mul(modelViewProj, position);
 
 	// Cloaking vertex movement relative to current alpha 
-	float fDist	= ((vecPos.y - vecCenter.y)+1)/2;
-	vecPos.x = vecPos.x + (sin(fDist+vecTime.x)) * (1.0-fAlpha);
-
-	// Resulting output
-	OUT.HPosition = vecPos;
+	float fDist	= ((position.y - 0)+1)/2;
+	oPosition.x = oPosition.x + (sin(fDist+.5/*vecTime.x*/)) * (1.0-fAlpha);
 
 	// Lightning (to make the not textured model interesting)
 	
-	// Transform normal from model-space to view-space
-    float4 vecNormal = normalize(mul(matModelViewIT, IN.vecNormal.xyzz));
+  float3 L = normalize(lightPosition - position.xyz);
 
-	// Transform the camera location into eye space
-	vecEye = mul(matModelView, vecEye);
-	
-    // Store normalized light vector
-	float4 vecLight	= normalize(vecLightDir);
+  // Compute the diffuse light
+  float diffuseLight = max(dot(L, normal), 0);
 
-    // Calculate vecHalf angle vector     
-    float4 vecHalf = normalize(vecLight + vecEye);                    
+  // Modulate by the light color and the diffuse coefficient
+  float3 diff3 = Kd * lightColor * diffuseLight;
+  // *** STEP 2: Compute the specular term ***
 
-    // Calculate diffuse component
-    float vecDiffuse = dot(vecNormal, vecLight);
+  // Compute the view vector:
+  // normalized vector from vertex position to eye position
+  float3 V = normalize(eyePosition - position.xyz);
 
-    // calculate specular component
-    float fSpecular = dot(vecNormal, vecHalf);
-    fSpecular = pow(fSpecular, vecPower.x);
+  // Compute the half-angle vector:
+  // normalized sum of the light vector and the view vector
+  float3 H = normalize(L + V);
 
-    // Combine ambient, diffuse and specular contributions and output final vertex color
-    OUT.Color =  0.2f * materialAmbient + vecDiffuse * materialDiffuse + fSpecular * materialSpecular + materialEmissive;
-	OUT.Color.w = fAlpha;
+  // Compute the specular light
+  float specularLight = pow(max(dot(H, normal), 0), shininess);
+  if (diffuseLight <= 0)
+      specularLight = 0;
 
-	return OUT;
+  // Modulate by the light color and the specular coefficient
+  float3 spec3= Ks * lightColor * specularLight;
+  specular.x=spec3.x;
+  specular.y=spec3.y;
+  specular.z=spec3.z;
+  specular.w=fAlpha;
+  diffuse.x=diff3.x;
+  diffuse.y=diff3.y;
+  diffuse.z=diff3.z;
+  diffuse.w = fAlpha;
 } 
 
   
