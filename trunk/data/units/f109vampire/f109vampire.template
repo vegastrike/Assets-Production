@@ -19,9 +19,6 @@
 		<Maneuver yaw="3815.500000" pitch="3815.500000" roll="3815.500000"/>
 	</Thrust>
 	<Sound> </Sound>
-	<Defense>
-		<Shields front="200" right="200" left="200" back="200"/>
-	</Defense>
 	<Stats mass="7" momentofinertia="7" fuel="2000000000"></Stats>
 	<Computer yaw="133.500000" pitch="133.500000" roll="133.500000" afterburner="150.000000" maxspeed="88.800000"/>
 

@@ -20,9 +20,6 @@
 <Mount weapon="Dumbfire" size="light-missile" x="-12" y="0" z="6.5" ammo="6" volume="601"/>
 
 
-<Defense>
-	<Shields front="150.000000" left="150" right="150" back="150.000000"/>
-</Defense>
 
 <Stats mass="4.000000" momentofinertia="5.000000" fuel="900000000"></Stats>
 
