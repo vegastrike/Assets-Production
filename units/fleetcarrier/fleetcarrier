@@ -166,4 +166,13 @@
 <Subunit file="turretmainheavy" x="0.0" y="88.122223" z="1280.110840" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.999688" qk="0.024992"/>
 <Subunit file="turretmainheavy" x="0.0" y="-88.947266" z="1200.108887" ri="-0.074767" rj="0.024922" rk="0.996890" qi="0.000000" qj="-0.999688" qk="0.024992"/>
 
+
+	<Hold volume="100000000000">
+		<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>
+		<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
+		<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
+		<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
+		<Cargo file="weapons" price="200" quantity="100" mass=".1" volume=".1"/>
+	</Hold>
+
 </Unit>

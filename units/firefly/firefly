@@ -3,9 +3,9 @@
 
 	<Meshfile file="firefly.xmesh" />
 	<BspMesh/>
-	<Mount weapon="Ion" size="Light" x="10.400000" y="8.00000" z="-6.0000"/>
-	<Mount weapon="Ion" size="Light" x="-10.400000" y="8.00000" z="-6.0000"/>
-	<Mount weapon="Tachyon" size="Light" x="0.00000" y="-4.00000" z="-6.00000"/>
+	<Mount weapon="Ion" size="Medium" x="10.400000" y="8.00000" z="-6.0000"/>
+	<Mount weapon="Ion" size="Medium" x="-10.400000" y="8.00000" z="-6.0000"/>
+	<Mount weapon="Tachyon" size="Heavy" x="0.00000" y="-4.00000" z="-6.00000"/>
 	<Mount weapon="Dumbfire" size="light-missile" x="1.95" y=".45" z="-.75" ammo="3"/>
 	<Mount weapon="Dumbfire" size="light-missile" x="-1.95" y=".45" z="-.75" ammo="3"/>
 	<Mount weapon="ImageRecognition" size="medium-missile" x="1.95" y=".81" z="-.75" ammo="3"/>
@@ -34,6 +34,9 @@
 The FireFly is a light attack figher, used by the confed alliance in their struggle against the aera.
 The FireFly bla bla bla
 	</description>
+	<Hold volume="10">
+	</Hold>
+
 <!-- new elements added -->
 <Light file="supernova.bmp" x="-0.35" y="1.1" z="-8.000000" size="1.680000"/>
 <Light file="supernova.bmp" x="0.35" y="1.1" z="-8.000000" size="1.680000"/>
