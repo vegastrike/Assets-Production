@@ -97,8 +97,8 @@ Things must start with <Unit scale="scalefactor"> scale factor affects the size
 +CockpitDamage**
 	-damage float damage between 0 and 1 of cockpit component
 +Mount**
-	-weapon: weapon from wepaon list
-	-size: size class (which sizes it can hold)
+	-weapon: weapon from weapon list
+	-size: size class (which sizes it can hold) and if it's autotracking (goes inside the long string)
 	-ri*: }
 	-rj*:  } R vector (forward vector) of gun (assume 0,0,1)
 	-rk*: }
