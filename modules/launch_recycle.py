@@ -54,6 +54,8 @@ def look_for (fg, faction, numships,myunit,  pos, gcd):
 
 def LaunchNext (fg, fac, type, ai, pos, logo):
   newship = launch.launch (fg,fac,type,ai,1,1,pos,logo)
+  import dynamic_universe
+  dynamic_universe.TrackLaunchedShip(fg,fac,type,newship)
   rad=newship.rSize ()
   VS.playAnimation ("warp.ani",pos,(3.0*rad))
   return NextPos (newship,pos)
