@@ -1,5 +1,6 @@
 import VS
 GlobalMusic = VS.musicAddList ('launch.m3u')
 def PlayLaunch ():
-	VS.musicPlayList (GlobalMusic)
+	if (GlobalMusic!= -1):
+		VS.musicPlayList (GlobalMusic)
 
