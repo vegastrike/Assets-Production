@@ -6,7 +6,7 @@ def allFactionNames():
 #dnickp -> derogatory nick plural
 	return {
 "alltags" :
-["full","nicks","nickp","dnicks","dnickp","government","posessive","homeworld"]
+["full","nicks","nickp","dnicks","dnickp","government","possessive","homeworld"]
 
 ,"confed" :	{"full" : "Confederation of Inhabited Worlds"
 		,"nicks" : "Confed"
@@ -14,7 +14,7 @@ def allFactionNames():
 		,"dnicks" : "Origami"
 		,"dnickp" : "Origamis"
 		,"government" : "Confederate Senate"
-		,"posessive" : "Confederate"
+		,"possessive" : "Confederate"
 		,"homeworld" : "Earth"
 		}
 
@@ -24,7 +24,7 @@ def allFactionNames():
 		,"dnicks" : "Jingo"
 		,"dnickp" : "Jingos"
 		,"government" : "Aera Oligarchy"
-		,"posessive" : "Aeran"
+		,"possessive" : "Aeran"
 		,"homeworld" : "Aeneth"
 		}
 
@@ -34,7 +34,7 @@ def allFactionNames():
 		,"dnicks" : "Four-Facer"
 		,"dnickp" : "Four-Facers"
 		,"government" : "Rlaan Assembly"
-		,"posessive" : "Rlaan"
+		,"possessive" : "Rlaan"
 		,"homeworld" : "Aantlbzz"
 		}
 
@@ -44,7 +44,7 @@ def allFactionNames():
 		,"dnicks" : "Space Hyena"
 		,"dnickp" : "Space Hyenas"
 		,"government" : "Pirate Factions"
-		,"posessive" : "Pirate's"
+		,"possessive" : "Pirate's"
 		,"homeworld" : "the pirates' homeworld"
 		}
 
@@ -54,7 +54,7 @@ def allFactionNames():
 		,"dnicks" : "Pinko-Terrorist"
 		,"dnickp" : "Pinko-Terrorists"
 		,"government" : "Polit Convention"
-		,"posessive" : "ISO's"
+		,"possessive" : "ISO's"
 		,"homeworld" : "Trotsky"
 		}
 
@@ -64,7 +64,7 @@ def allFactionNames():
 		,"dnicks" : "Bucket-Head"
 		,"dnickp" : "Bucket-Heads"
 		,"government" : "Briin Subordinate Assembly"
-		,"posessive" : "Briin"
+		,"possessive" : "Briin"
 		,"homeworld" : "Bribztkabr"
 		}
 
@@ -74,7 +74,7 @@ def allFactionNames():
 		,"dnicks" : "Wisenheimer"
 		,"dnickp" : "Wisenheimers"
 		,"government" : "Last House"
-		,"posessive" : "Klk'k-an"
+		,"possessive" : "Klk'k-an"
 		,"homeworld" : "Ktah"
 		}
 }
@@ -86,77 +86,115 @@ def allNews():
 
 "neutral" :
 
-{"siege" :	{"start"	:{"success":	{"good"		: []
+{"siege" :	{"start"	:{"success":	{"good"		: [(0.8,"all","The VAR_aggressor_government has openly reported their intent of invasion with VAR_defender_full in the VAR__system_sector Sector today. The VAR_aggressor_possessive forces have strategically blocked all entrance and exit from VAR_system_system and continue a valiant assault upon the planet.")
 
-						,"bad"		: []
+								  ]
 
-						,"neutral"	: []
+						,"bad"		: [(0.3,"all","It is a grave day in VAR_system_system today, as the hordes of the VAR_aggressor_full have senselessly commenced bombardments upon a VAR_defender_possessive planet in VAR_system_sector Sector. The inhabitants were doing nothing that would legally provoke hostile actions, yet VAR_aggressor_possessive troops have already begun their invasion procedures. Can anyone stop these cruel, heartless VAR_aggressor_dnickp?")
+
+								  ]
+
+						,"neutral"	: [(0.6,"all","It seems that the VAR_system_system system has struck a nerve with the VAR_aggressor_government. VAR_aggressor_possessive forces attacked them recently. The local regiment of VAR_defender_nickp fought back but appear to be slowly falling back. By all accounts it seems that the VAR_aggressor_possessive forces will, in the long run, win.")
+
+								  ]
 
 						}
-				 ,"loss"   :	{"good"		: []
+				 ,"loss"   :	{"good"		: [(0.2,"all","Moments after their strike began, the forces of the VAR_aggressor_full were crushed from the VAR_system_system system as the VAR_defender_possessive defence held strong.  The VAR_aggressor_government says they have no intention of retreat. Some ask if this is prudent on the part of the VAR_aggressor_nickp to continue such a hopeless campaign.")
 
-						,"bad"		: []
+								  ]
 
-						,"neutral"	: []
+						,"bad"		: [(0.3,"all","One simple ambush was all that it took to scatter the VAR_aggressor_possessive forces today in VAR_system_sector. Given the high esteem VAR_aggressor_possessive forces are held in the VAR_aggressor_government, and the fact that this was apparently only an initial probing operation, this has been a surprising result to all involved. The VAR_defender_possessive forces defending VAR_system_system, shocked by this sudden invasion, seemed to have regained their composure and are now concentrating their defensive grid to guard against the next attack.")
+
+								  ]
+
+						,"neutral"	: [(0.4,"all","Today, the VAR_aggressor_government is quoted \"The VAR_defender_full will feel our full fury in the VAR_system_system system today!\" Ironically, the VAR_aggressor_possessive forces were repelled in their initial attack. The VAR_defender_government has released a statement saying, \"We no longer have any respect for the VAR_aggressor_government, for we cannot bring ourselves to believe that this was their \"full fury\", yet if it was, we give them our full laughter!\"")
+
+								  ]
 
 						}
-				 ,"draw"   :	{"good"		: []
+				 ,"draw"   :	{"good"		: [(0.4,"all","Deep in the heart of VAR_system_sector Sector, VAR_aggressor_possessive forces have shown their hostile objectives towards VAR_defender_possessive forces in VAR_system_system. Even after this act of hostility, no movement from either side has been reported. Though the VAR_aggressor_government assures the conflict will be swiftly decided, no one can clearly see a victor in this struggle.")
 
-						,"bad"		: []
+								  ]
 
-						,"neutral"	: []
+						,"bad"		: [(0.5,"all","After a brutal landing the VAR_aggressor_possessive force entered into a deadlock with the local VAR_defender_possessive peace keepers. Both sides show no sign of retreat or advancement. The VAR_aggressor_government seem to have placed a large amount of resources in the secrecy of their actions. The word \"barbaric\" comes to mind when pondering the siege technique of the VAR_aggressive_possessive forces, yet nothing has happened that may lead to a swift end.")
+
+								  ]
+
+						,"neutral"	: [(0.6,"all","The makings of a siege seem to be present in VAR_system_sector Sector. Though neither the VAR_aggressor_possessive forces nor the VAR_defender_nickp have shown any mercy, neither has shown any true hostility. Most first-hand accounts suggest that this is the result of some hot-headed and frustrated commanders on both sides, leading their forces into an engagement that seems to be going nowhere fast.")
+
+								  ]
 
 						}
 				 }
 
-		,"middle"	:{"success":	{"good"		: []
+		,"middle"	:{"success":	{"good"		: [
 
-						,"bad"		: []
+								  ]
 
-						,"neutral"	: []
+						,"bad"		: [
 
-						}
+								  ]
 
-				 ,"loss"   :	{"good"		: []
+						,"neutral"	: [
 
-						,"bad"		: []
-
-						,"neutral"	: []
+								  ]
 
 						}
-				 ,"draw"   :	{"good"		: []
 
-						,"bad"		: []
+				 ,"loss"   :	{"good"		: [
 
-						,"neutral"	: []
+								  ]
+
+						,"bad"		: [
+
+								  ]
+
+						,"neutral"	: [
+
+								  ]
+
+						}
+				 ,"draw"   :	{"good"		: [
+
+								  ]
+
+						,"bad"		: [
+
+								  ]
+
+						,"neutral"	: [
+
+								  ]
 
 						}
 				 }
 		
-		,"end"		:{"success":	{"good"		: [(0.7,"all","In yet another event in the VAR_aggressor_posessive-VAR_defender_posessive war, VAR_aggressor_posessive forces have experienced a moral boosting victory today in the VAR_system_system system.  The blockade in the VAR_defender_posessive system ended today, three weeks after it began, with all VAR_defender_posessive supplies exhausted.  No information on the state of the infrastructure, or of casualties is as of yet available.")
+		,"end"		:{"success":	{"good"		: [(0.7,"all","In yet another event in the VAR_aggressor_possessive-VAR_defender_possessive war, VAR_aggressor_possessive forces have experienced a moral boosting victory today in the VAR_system_system system.  The blockade in the VAR_defender_possessive system ended today, three weeks after it began, with all VAR_defender_possessive supplies exhausted.  No information on the state of the infrastructure, or of casualties is as of yet available.")
 								  ]
 
-						,"bad"		: [(0.3,"all","An end to the VAR_aggressor_full's barbaric siege in the VAR_defender_posessive system VAR_system_system in the VAR_system_sector sector occured today.  After several weeks of remorseless blockading, no-one was left alive in any critical part of the VAR_defender_posessive defence.  Such an attrocity could only have been wrought by the VAR_aggressor_nickp, whose remorseless tactics have seen many wins, with the death of thousands of bystanders in a war that may well be going for a long time.  This act has only served to strengthen the resolve of the VAR_dockedat_government on VAR_dockedat_homeworld to boost rescources to the war effort against the VAR_aggressor_full.")
+						,"bad"		: [(0.3,"all","An end to the VAR_aggressor_full's barbaric siege in the VAR_defender_possessive system VAR_system_system in the VAR_system_sector sector occured today.  After several weeks of remorseless blockading, no-one was left alive in any critical part of the VAR_defender_possessive defence.  Such an attrocity could only have been wrought by the VAR_aggressor_nickp, whose remorseless tactics have seen many wins, with the death of thousands of bystanders in a war that may well be going for a long time.  This act has only served to strengthen the resolve of the VAR_dockedat_government on VAR_dockedat_homeworld to boost rescources to the war effort against the VAR_aggressor_full.")
 								  ]
 
-						,"neutral"	: [(0.9,"all","The VAR_aggressor_full has greeted the news of their triumph in the siege in VAR_system_sector sector, VAR_system_system against a VAR_defender_posessive position today with barely a murmor.  Just another in a string of minor victories for the VAR_aggressor_nickp, and a string of minor losses for the VAR_defender_nickp in events which cause barely a murmur in our little corner of the galaxy, especially on VAR_dockedat_homeworld where war news is currently taking a back seat to recent political issues.")
+						,"neutral"	: [(0.9,"all","The VAR_aggressor_full has greeted the news of their triumph in the siege in VAR_system_sector sector, VAR_system_system against a VAR_defender_possessive position today with barely a murmor.  Just another in a string of minor victories for the VAR_aggressor_nickp, and a string of minor losses for the VAR_defender_nickp in events which cause barely a murmur in our little corner of the galaxy, especially on VAR_dockedat_homeworld where war news is currently taking a back seat to recent political issues.")
 
-								  ]
-
-						}
-
-				 ,"loss"   :	{"good"		: [(0.5,"all","The brutal VAR_aggressor_posessive siege against the people of the VAR_system_system in VAR_system_sector has finally been broken. VAR_aggressor_nicks forces have been driven out of the system, and are possibly regrouping for a second attack. Relief convoys are racing along a rapid jump circuit to make it to the suffering people there, bringing badly needed processed food, medical supplies, and relief workers. Estimates of the economic damage are still underway, but to many of the inhabitants of VAR_system_system who have lost loved ones in the defense or in the VAR_aggressor_posessive bombings, there will be no relief as long as the VAR_aggressor_full continues their brutal campaign.")
-								  ]
-
-						,"bad"		: [(0.8,"all","VAR_aggressor_posessive forces have lost the battle of wills in the VAR_system_system system today.  After weeks of blockade action, VAR_aggressor_nicks forces have conceded that they are unable to stop VAR_defender_posessive forces from resupplying.  \"Their warp technology is simply able to ignore all of our inhibitor technologies.\"")
-								  ]
-
-						,"neutral"	: [(0.8,"all","The VAR_defender_posessive defenders of VAR_system_system in the VAR_system_sector have defeated the attacking forces of the VAR_aggressor_full. Local military units, who bore the brunt of the VAR_aggressor_posessive onslaught, have requested additional support in the VAR_defender_nicks -- VAR_aggressor_nicks war. The commander of militia forces in VAR_system_system has stated that the recent siege is a sign that the VAR_system_system is one of the systems being targeted by the VAR_aggressor_posessive military in the VAR_system_sector Sector conflict, and that more military support from the VAR_defender_government would be a wise decision.")
 								  ]
 
 						}
 
-				,"draw"   :	{"good"		: [(0.8,"all","draw is good")]#FIXED by hellcatv...sytnax error
+				 ,"loss"   :	{"good"		: [(0.5,"all","The brutal VAR_aggressor_possessive siege against the people of the VAR_system_system in VAR_system_sector has finally been broken. VAR_aggressor_nicks forces have been driven out of the system, and are possibly regrouping for a second attack. Relief convoys are racing along a rapid jump circuit to make it to the suffering people there, bringing badly needed processed food, medical supplies, and relief workers. Estimates of the economic damage are still underway, but to many of the inhabitants of VAR_system_system who have lost loved ones in the defense or in the VAR_aggressor_possessive bombings, there will be no relief as long as the VAR_aggressor_full continues their brutal campaign.")
+								  ]
+
+						,"bad"		: [(0.8,"all","VAR_aggressor_possessive forces have lost the battle of wills in the VAR_system_system system today.  After weeks of blockade action, VAR_aggressor_nicks forces have conceded that they are unable to stop VAR_defender_possessive forces from resupplying.  \"Their warp technology is simply able to ignore all of our inhibitor technologies.\"")
+								  ]
+
+						,"neutral"	: [(0.8,"all","The VAR_defender_possessive defenders of VAR_system_system in the VAR_system_sector have defeated the attacking forces of the VAR_aggressor_full. Local military units, who bore the brunt of the VAR_aggressor_possessive onslaught, have requested additional support in the VAR_defender_nicks -- VAR_aggressor_nicks war. The commander of militia forces in VAR_system_system has stated that the recent siege is a sign that the VAR_system_system is one of the systems being targeted by the VAR_aggressor_possessive military in the VAR_system_sector Sector conflict, and that more military support from the VAR_defender_government would be a wise decision.")
+								  ]
+
+						}
+
+				,"draw"   :	{"good"		: [(0.8,"all","draw is good")
+								  
+								  ]
 
 						,"bad"		: [(0.8,"all","draw is bad")]
 
