@@ -33,7 +33,6 @@
 <Subunit file="turret" x="14.756778" y="-23.000000" z="14.756778" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
 <Subunit file="turret" x="-15.333606" y="-23.000000" z="-15.333608" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
 <Subunit file="turret" x="21.756910" y="-44.000000" z="2.007913" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
-
 <!--Last Edited by: Vortis-->
 <!--16MAY01-->
 	<Hold volume="100000000000">
@@ -229,7 +228,5 @@
 	</Hold>
 	<Upgrade file="standard_missions"/>
 	<Upgrade file="confed_missions"/>
-
-
 	<Upgrade file="iso_missions"/>
 </Unit>
