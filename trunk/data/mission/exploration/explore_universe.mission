@@ -1,0 +1,55 @@
+<mission>
+	<settings>
+		<origin  planet="earth" x="0000" y="100" z="000.0"/>
+	</settings>
+
+	<variables>
+<!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
+		<var name="credits" value="3500"/>
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="4 versus 4" />
+
+		<var name="system" value="gemini_sector/troy" />
+		<var name="description" value="Enjoy troy in a nova." />
+<!--		<var name="savegame" value="explore_universe_nova" />-->
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="confed" type="newdrone" ainame="default" waves="1" nr_ships="1">
+			<pos x="20400" y="-35400" z="24700.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+                <flightgroup name="green" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="2">
+			<pos x="95400" y="34000" z="30000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+        </flightgroups>
+	<module name="director">
+		<import name="random_encounters"/>
+		<script name="initgame">
+			<exec module="random_encounters" name="init">
+			<const type="float" value="12000"/><!-- significant distance-->
+			<const type="float" value="12000"/><!-- detection distance-->
+			<const type="float" value="5000"/><!-- generation distance -->
+			<const type="int" value="3"/> <!-- min ships -->
+			<const type="int" value="2"/><!--gen ships-->
+			<const type="float" value="0.1"/><!--capship prob-->
+
+			</exec>
+		</script>
+		<script name="gameloop">
+			<exec module="random_encounters" name="loop"/>
+		</script>
+		<script name="initstarsystem">
+			<exec name="initstarsystem" module="random_encounters" />
+		</script>
+
+	</module>
+</mission>
