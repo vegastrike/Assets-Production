@@ -14,10 +14,11 @@ module attack_jumppoint {
   import faction_ships;
   import go_somewhere_significant;
   int ship_check_count;
-
+  bool defend;
   
-	void init (int factionname, int numsystemsaway, int enemyquantity, float distance_from_base, float escape_distance, float creds) {
+	void init (int factionname, int numsystemsaway, int enemyquantity, float distance_from_base, float escape_distance, float creds, bool defend_base) {
 	  ship_check_count=0;
+	  defend = defend_base;
 	  faction_ships.init();
 
 	  faction=faction_ships.intToFaction(factionname);
@@ -42,7 +43,7 @@ module attack_jumppoint {
 	  _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
 	  _string.delete (name);
 	  _io.message (0,"game","all",str);
-	  go_somewhere_significant.init(you,numsystemsaway,true,distance_from_base);
+	  go_somewhere_significant.init(you,numsystemsaway,defend,distance_from_base);
 
 	  _io.sprintf(str,"And there eliminate any %s starships at a point.",faction);
 	  _io.message (2,"game","all",str);
@@ -60,6 +61,15 @@ module attack_jumppoint {
 	  _io.message (0,"game","all","Excellent work pilot.");
 	  _io.message (0,"game","all","You have been rewarded for your effort as agreed.");
 	  destroy();
+	  _std.terminateMission(true);
+	};
+	void FailMission(object you) {
+	  cred = 0.0-cred;
+	  _unit.addCredits (you, cred);
+	  _io.message (0,"game","all","You Allowed the base you were to protect to be destroyed.");
+	  _io.message (0,"game","all","You are a failure to your race!");
+	  _io.message (1,"game","all","We have contacted your bank and informed them of your failure to deliver on credit. They have removed a number of your credits for this inconvenience. Let this serve as a lesson.");
+       	  destroy();
 	  _std.terminateMission(true);
 	};
 
@@ -90,6 +100,14 @@ module attack_jumppoint {
 	  object str = _string.new();
 	  _io.sprintf(str,"Eliminate all %s ships here.",faction);
 	  _io.message (0,"game","all",str);
+	  if (defend) {
+	    if (!_std.isNull(jp)) {
+	      object nam = _unit.getName (jp);
+	      _io.sprintf (str,"You must protect %s.",nam);
+	      _string.delete (nam);
+	      _io.message (0,"game","all",str);
+	    }
+	  }
 	  _string.delete(str);
 	  
 	  while (count<quantity) {
@@ -110,7 +128,11 @@ module attack_jumppoint {
 	    }else {
 	      object base = go_somewhere_significant.SignificantUnit();
 	      if (_std.isNull(base)) {
-		SuccessMission(you);
+		if (defend) {
+		  FailMission(you);
+		}else {
+		  SuccessMission(you);
+		}
 	      }else {
 		if (quantity>0) {
 		  GenerateEnemies (base,you);
