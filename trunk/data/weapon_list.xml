@@ -166,6 +166,17 @@
 </Appearance>
 </Bolt>
 
+<Bolt name="Swarm" mountsize="Special-Missile"> 
+<Energy rate="0" stability="0" refire=".1">
+</Energy>
+<Damage rate="20" longrange="1">
+</Damage>
+<Distance speed="140" radialspeed=".8" radius="5" length="20" pulsespeed="15" range="1000" >
+</Distance>
+<Appearance file="weapons/swarm.png" soundwav="missile_3.wav" r="1" g="1" b="1" a="1" >
+</Appearance>
+</Bolt>
+
 <Bolt name="CapshipDisruptor" mountsize="capship-light"> 
 <Energy rate="150" stability="6" refire="1.5">
 </Energy>

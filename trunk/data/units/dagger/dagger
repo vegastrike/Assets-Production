@@ -25,10 +25,10 @@
 
 
 <!-- new elements added -->
-<Mount weapon="DisruptorBeam" size="Light" x="-3.111663" y="-1.013324" z="6.923400"/>
-<Mount weapon="DisruptorBeam" size="Light" x="3.122948" y="-1.010298" z="6.885867" />
+<Mount weapon="DisruptorBeam" size="medium" x="-3.111663" y="-1.013324" z="6.923400"/>
+<Mount weapon="DisruptorBeam" size="medium" x="3.122948" y="-1.010298" z="6.885867" />
 <Light file="supernova.bmp" x="-1.135555" y="-0.058120" z="-4.542734" size="1.500000"/>
 <Light file="supernova.bmp" x="1.132348" y="-0.017450" z="-4.540268" size="1.500000"/>
 <Light file="supernova.bmp" x="0.000000" y="-0.000000" z="-4.500000" size="1.500000"/>
-<Mount weapon="Plasma" size="Light" x="0.000000" y="-0.270000" z="2.400000"/>
+<Mount weapon="Plasma" size="heavy" x="0.000000" y="-0.270000" z="2.400000"/>
 </Unit>
