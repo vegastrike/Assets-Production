@@ -8,10 +8,10 @@
 	</Sound>
 	<Defense HudImage="carrier-hud.spr">
 		<Armor front="5000" right="4000" left="4000" back="5000"/>
-		<Shields front="6000.000000" right="5000.000000" left="5000.000000" back="6000.000000" recharge="70.000000"/>
+		<Shields front="5000.000000" back="4500.000000" recharge="70.000000"/>
 		<Hull strength="5000.000000"/>
 	</Defense>
-	<Stats mass="1350.000000" momentofinertia="1180.000000" fuel="200000"></Stats>
+	<Stats mass="1350.000000" momentofinertia="1180.000000" fuel="20000000"></Stats>
 	<Computer yaw="17.600000" pitch="17.600000" roll="17.600000" afterburner="58.666666" maxspeed="23.333333">
 		<Radar itts="true" color="true" maxrange="80000"  error="0"/>
 	</Computer>
