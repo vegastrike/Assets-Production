@@ -36,7 +36,10 @@ module starships_jumped_and_killed {
     _olist.pop_back (my_list);
     //don't pop begin_num_ships...taht doesn't change
     if (iterator<_olist.size(starship_list)) {
-      
+      sys_iterator = scan_for (sys_iterator, _olist.at (starship_list,iterator));
+      if (sys_iterator==0) {//if we've been through all the starships
+	iterator=iterator+1;
+      }
     }else {
       iterator=0;
     }
