@@ -3,6 +3,24 @@ module unit {
 
   float lasttime;
 
+  void removeFg(object which_fgid){
+    int ship_nr=0;
+    object unit=_unit.getUnit(ship_nr);
+
+    while((!_std.isNull(unit))){
+      object unit_fgid=_unit.getFgID(unit);
+      //_io.printf("matching %s with %s\n",unit_fgid,patrol_fgid);
+      if(_string.begins(unit_fgid,which_fgid)){
+	_io.printf("removeFg: found match: %s %s\n",unit_fgid,which_fgid);
+
+	_unit.removeFromGame(unit);
+      }
+      ship_nr=ship_nr+1;
+      unit=_unit.getUnit(ship_nr);
+    }
+ 
+  };
+
   object getUnitByFgID(object fgid){
     int ship_nr=0;
     object unit=_unit.getUnit(ship_nr);
@@ -11,9 +29,9 @@ module unit {
 
     while((!_std.isNull(unit)) && _std.isNull(found_unit)){
       object unit_fgid=_unit.getFgID(unit);
-      _io.printf("matching %s with %s\n",unit_fgid,fgid);
+      //_io.printf("matching %s with %s\n",unit_fgid,fgid);
       if(_string.equal(unit_fgid,fgid)){
-	_io.printf("found match: %s %s\n",unit_fgid,fgid);
+	//_io.printf("found match: %s %s\n",unit_fgid,fgid);
 	found_unit=unit;
       }
       ship_nr=ship_nr+1;

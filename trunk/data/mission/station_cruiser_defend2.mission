@@ -1,0 +1,59 @@
+<mission>
+	<variables>
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="4 versus 4" />
+		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+		<var name="system" value="mars_station" />
+		<var name="description" value="4vs4.txt" />
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="8" nr_ships="1">
+			<pos x="10000.0" y="0.0" z="5000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="green" faction="confed" type="nova" ainame="_ai_stationary" waves="8" nr_ships="4">
+			<pos offset="blue" x="100.0" y="100.0" z="100.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="yellow" faction="confed" type="tian" ainame="_ai_stationary" waves="8" nr_ships="4">
+			<pos offset="blue" x="-100.0" y="-100.0" z="300.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+<!-- big ships -->
+
+                <flightgroup name="gold" faction="confed" type="cruiser" ainame="_ai_stationary" waves="8" nr_ships="1">
+			<pos offset="blue" x="-300.0" y="500.0" z="1000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="silver" faction="confed" type="carrier" ainame="_ai_stationary" waves="8" nr_ships="1">
+			<pos offset="blue" x="-7000.0" y="-500.0" z="1000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+<!-- bad dudes -->
+
+        </flightgroups>
+
+	<module name="director">
+
+		<import name="station_cruiser_defend2" />
+
+		<script name="initgame">
+			<exec name="initgame" module="station_cruiser_defend2" />
+		</script>
+
+		<script name="gameloop">
+			<exec name="gameloop" module="station_cruiser_defend2" />
+		</script>
+
+		<script name="endgame">
+			<exec name="endgame" module="station_cruiser_defend2" />
+		</script>
+	</module>
+
+
+</mission>

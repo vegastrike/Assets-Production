@@ -79,9 +79,9 @@ module ai_patrol {
     my_unit=_std.getCurrentAIUnit();
     my_order=_std.getCurrentAIOrder();
 
-    _io.printf("Patrol: mode=%d range=%f Area=",patrol_mode,range);
-    vec3.print(area);
-    _io.printf("\n");
+    //    _io.printf("Patrol: mode=%d range=%f Area=",patrol_mode,range);
+    //vec3.print(area);
+    //_io.printf("\n");
 
     waypoint_index=random.randomint(0,5);
 
@@ -93,14 +93,14 @@ module ai_patrol {
     object check_order=_order.findOrder(my_order,last_order);
 
     if(_std.isNull(check_order)){
-      _io.printf("next waypoint\n");
+      //      _io.printf("next waypoint\n");
       getNextWaypoint();
       patrolToWaypoint();
     }
   };
 
   void quitai(){
-    _io.printf("patrolling ai quitting\n");
+    //_io.printf("patrolling ai quitting\n");
   };
 
 }
