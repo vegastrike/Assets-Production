@@ -93,10 +93,10 @@ def formatNameTags(word,names):
 			return formatProperTitle(allUsefullVariables["system"][allUsefullVariables["system"].index("/")+1:])
 		if tag == "sector":
 			return formatProperTitle(allUsefullVariables["system"][:allUsefullVariables["system"].index("_")])
-	if tag in names["alltags"]:
+	if tag in names["alltags"] and validateDictKeys([var_string,tag],dynamic_news_content.allFactionNames()):
 		return names[var_string][tag]
 	else:
-		print "Error. Invalid news tag."
+		print "Error. Invalid news tag, not found in dictionary."
 		return word
 
 def formatProperTitle(str):
@@ -260,10 +260,6 @@ def getClosestScaleNews(listof,scale,randint):
 			finallist.append(valtable[i])
 	if (len(finallist)==0):
 		return "br0ken"
-	if randint == -1:
-		global news_random_int
-		news_random_int = vsrandom.randrange(0,len(finallist), step=1)
-		return finallist[news_random_int][2]
 	else:
 		return finallist[randint%len(finallist)][2]
 
