@@ -397,6 +397,18 @@
 			<Cargo file="gauss_ammo" price="300" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="breeze_ammo" price="300" quantity="1" mass=".01" volume="1"/>
 		</Category>
+		<Category file="upgrades/Ammunition/3pack">
+			<Cargo file="dumbfire_3pack_ammo" price="20" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="heatseeker_3pack_ammo" price="35" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="image_recognition_3pack_ammo" price="75" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="friend_or_foe_3pack_ammo" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="leech_3pack_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="swarm_3pack_ammo" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="killerbee_3pack_ammo" price="85" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="hail_3pack_ammo" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="gauss_3pack_ammo" price="300" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="breeze_3pack_ammo" price="300" quantity="1" mass=".01" volume="1"/>
+		</Category>
 		<Category file="upgrades/Experimental">
 		</Category>
 		<Category file="Natural_Products/Food">
