@@ -132,9 +132,9 @@ module contraband_mission {
 						jump=you;
 					}
 					while (i<difficulty) {
-						faction=faction_ships.intToFaction(random.randomint(0,(faction_ships.getMaxFactions()-2)));
+						faction=faction_ships.intToFaction(random.randomint(0,(faction_ships.getMaxFactions()-1)));
 						while (!_string.equal(faction,youfaction)) {
-							faction=faction_ships.intToFaction(random.randomint(0,(faction_ships.getMaxFactions()-2)));
+							faction=faction_ships.intToFaction(random.randomint(0,(faction_ships.getMaxFactions()-1)));
 						}
 						un=faction_ships.getRandomFighter(faction);
 						object newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 800.0, 1000.0,jump);
