@@ -17,7 +17,7 @@ len=Director.getSaveDataLength (playernum,"kills");
 kills=0
 if (len!=0):
 	kills=Director.getSaveData(playernum,"kills",len-1)
-if (kills<0):
+if (kills<25):
 	Base.Message("Hello Pilot. " + intro_string + " We are actively seeking new members in our organization.  However to fly defense runs, you need some more experience. Come back when your record is somewhat more interesting and then together we can overthrow the confederacy!");
 elif (VS.numActiveMissions()>1):
 	Base.Message ("It is a pleasure to speak to you; however, if you wish to work with me you must first finish up your other contractual obligations.")
