@@ -38,9 +38,8 @@
 <Stats mass="10.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
 
 <Computer yaw="100" pitch="100" roll="100" afterburner="184" maxspeed="60">
-
-<Radar itts="false" color="true"/>
-</Computer>
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>		
+	</Computer>
 
 
 	<Jump missing="1" delay="1" jumpenergy="400"/>
