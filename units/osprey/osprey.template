@@ -2,23 +2,31 @@
 	<Mount weapon="Particle" size="Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
 	<Mount weapon="Particle" size="Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
 	<Mount weapon="Ion" size="Medium" x="000000" y="-.6000000" z="12.000000"/>
+	<Mount weapon="Torpedo" size="heavy-missile" x="-5.000000" y="-.9000000" z="-3.000000" volume="601"/>	
+	<Mount weapon="Torpedo" size="heavy-missile" x="5.000000" y="-.9000000" z="-3.000000"  volume="601"/>	
+	<Mount weapon="Mace" size="medium-missile heavy-missile" x="4.000000" y="-.9000000" z="-2.000000" volume="601"/>	
+	<Mount weapon="Mace" size="medium-missile heavy-missile" x="-4.000000" y="-.9000000" z="-2.000000"  volume="601"/>	
+	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="3.000000" y="-.9000000" z="-1.000000" volume="201"/>
+	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-3.000000" y="-.9000000" z="-1.000000" volume="201"/>
+	<Mount weapon="KillerBee" size="special-missile" x="3.000000" y="-.9000000" z="-0.000000"  volume="1500"/>	
+	<Mount weapon="KillerBee" size="special-missile" x="-3.000000" y="-.9000000" z="-0.000000" volume="1500"/>	
 	
 	<Thrust>
-		<Engine Afterburner="1333.333282" Forward="341.333344" Retro="298.666676" Left="170.666672" Right="170.666672" Top="170.666672" Bottom="170.666672"/>
-		<Maneuver yaw="4554.000000" pitch="4554.000000" roll="4554.000000"/>
+		<Engine Afterburner="1500.333282" Forward="500.333344" Retro="500.666676" Left="500.666672" Right="500.666672" Top="500.666672" Bottom="500.666672"/>
+		<Maneuver yaw="6000.000000" pitch="6000.000000" roll="6000.000000"/>
 	</Thrust>
 	<Sound>
 	</Sound>
 	<Defense>
 		<Armor front="1000" right="1000" left="1000" back="1000"/>
-		<Shields front="180.000000" right="170.000000" left="170.000000" back="160.000000" recharge="40.000000"/>
+		<Shields front="300.000000" right="300.000000" left="300.000000" back="250.000000" recharge="40.000000"/>
 		<Hull strength="1250.000000"/>
 		<Cloak rate=".4" cloakmin=".1"/>
 	</Defense>
 	<Stats mass="5.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
 	<Cockpit x="0" y="0" z="12"/>
 	<Computer yaw="138.000000" pitch="138.000000" roll="138.000000" afterburner="233.333328" maxspeed="82.666668">
-		<Radar itts="false" color="true" error="0"/> </Computer>
+		<Radar itts="true" color="true" error="0"/> </Computer>
 
 
 	<Energy afterburnenergy="30">
