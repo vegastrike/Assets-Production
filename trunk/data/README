@@ -209,9 +209,107 @@ Shift-Z      Eject cargo
 =================================================
  Multiplayer Controls
 =================================================
-*--ADD STUFF HERE--*
 --------------------
 Player 1
+--------------------
+S            Cockpit::SkipMusicTrack
+F            CommFormUp
+B            CommBreakForm
+H            CommHelpMeOut
+D            CommAttackTarget
+1            Comm1Key
+2            Comm3Key
+3            Comm7Key
+4            DockKey
+5            RequestClearenceKey
+6 player="1" Comm2Key
+7 player="1" Comm4Key
+8 player="1" Comm8Key
+0            RequestClearenceKey
+i,j,k,l      Flight Sim style turning (you can also use the keypad arrows)
+space        FireKey
+y            MatchSpeedKey
+J            JumpKey
+A            AutoKey
+c            CloakKey
+E            EjectKey
+Z            EjectCargoKey
+return       MissileKey
+g            WeapSelKey
+;            Respawn
+[            SwitchControl
+]            TurretControl
+. player="1" Respawn
+{ player="1" SwitchControl
+} player="1" TurretControl
+m            MisSelKey
+t            TargetKey
+p            PickTargetKey
+n            NearestTargetKey
+h            ThreatTargetKey
+T            ReverseTargetKey
+P            TurretTargetKey
+o            TurretAIKey
+N            TurretNearestTargetKey
+H            TurretThreatTargetKey
+`            SheltonKey
+-            DecelKey
++            AccelKey
+=            AccelKey
+/            RollLeftKey
+*            RollRightKey
+backspace    StopKey
+\            StartKey
+tab          ABKey
+!            SuicideKey
+@ player="1" SuicideKey
+keypad-numlock" modifier="none" player="1" command="StopKey
+keypad-0" modifier="none" player="1" command="ABKey
+keypad-enter" modifier="none" player="1" command="MissileKey
+cursor-insert" modifier="none" player="1" command="FireKey
+cursor-delete" modifier="none" player="1" command="SheltonKey
+cursor-home" modifier="none" player="1" command="WeapSelKey
+cursor-end" modifier="none" player="1" command="MisSelKey
+cursor-pageup" modifier="none" player="1" command="JumpKey
+cursor-pagedown" modifier="none" player="1" command="CloakKey
+keypad-9" modifier="none" player="1" command="AutoKey
+keypad-3" modifier="none" player="1" command="TurretAIKey
+keypad-7" modifier="none" player="1" command="SetVelocityRefKey
+keypad-1" modifier="none" player="1" command="SetVelocityNullKey
+keypad-delete" modifier="none" player="1" command="NearestTargetKey
+keypad-minus" modifier="none" player="1" command="DecelKey
+keypad-plus" modifier="none" player="1" command="AccelKey
+keypad-divide" modifier="none" player="1" command="TargetKey
+keypad-multiply" modifier="none" player="1" command="PickTargetKey
+keypad-8" modifier="none" player="1" command="UpKey
+keypad-2" modifier="none" player="1" command="DownKey
+keypad-5" modifier="none" player="1" command="DownKey
+keypad-4" modifier="none" player="1" command="RightKey
+keypad-6" modifier="none" player="1" command="LeftKey
+cursor-up" modifier="none" player="1" command="Cockpit::Inside
+cursor-down" modifier="none" player="1" command="Cockpit::Behind
+cursor-left" modifier="none" player="1" command="Cockpit::SwitchLVDU
+cursor-right" modifier="none" player="1" command="Cockpit::SwitchRVDU
+function-1" Cockpit::Inside
+function-2" Cockpit::InsideLeft
+function-3" Cockpit::InsideRight
+function-4" Cockpit::InsideBack
+function-5" Cockpit::Behind
+function-6" Cockpit::Pan
+function-7" Cockpit::OutsideTarget
+function-8" Cockpit::PanTarget
+function-9" TimeInc
+function-10" TimeReset
+function-11" Cockpit::ZoomIn
+function-12" Cockpit::ZoomOut
+|" PauseKey
+w" Cockpit::SwitchLVDU
+v" Cockpit::SwitchRVDU
+q" SetVelocityRefKey
+z" SetVelocityNullKey
+esc" Cockpit::Quit
+--------------------
+Player 2
 --------------------
 Arrow keys   Flight Sim style turning (you can also use the keypad arrows)
 \            full throttle
@@ -241,9 +339,6 @@ Shift-S      next music track
 F1           toggle cockpit/background display
 F2           left
 F3           right
---------------------
-Player 2
---------------------
 F4           back
 F5           Chasecam
 F6           Panning Cam (s,a,w,z pan)

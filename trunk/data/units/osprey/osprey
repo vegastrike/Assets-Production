@@ -9,7 +9,7 @@
 	<Mount weapon="Mace" size="medium-missile heavy-missile" x="4.000000" y="-.9000000" z="-2.000000" ammo="1" volume="601"/>	
 	<Mount weapon="Mace" size="medium-missile heavy-missile" x="-4.000000" y="-.9000000" z="-2.000000" ammo="1" volume="601"/>	
 	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="3.000000" y="-.9000000" z="-1.000000" ammo="1" volume="201"/>	
-	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-3.000000" y="-.9000000" z="-1.000000" ammo="1" volume="201"/>	
+	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-3.000000" y="-.9000000" z="-1.000000" ammo="10000" volume="201"/>	
 	<Mount weapon="KillerBee" size="special-missile" x="3.000000" y="-.9000000" z="-0.000000" ammo="30" volume="1500"/>	
 	<Mount weapon="KillerBee" size="special-missile" x="-3.000000" y="-.9000000" z="-0.000000" ammo="30" volume="1500"/>	
 
