@@ -33,14 +33,15 @@
 <Subunit file="turret" x="14.756778" y="-23.000000" z="14.756778" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
 <Subunit file="turret" x="-15.333606" y="-23.000000" z="-15.333608" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
 <Subunit file="turret" x="21.756910" y="-44.000000" z="2.007913" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+
 <!--Last Edited by: Vortis-->
-<!--08MAY01-->
+<!--16MAY01-->
 	<Hold volume="100000000000">
 		<Category file="Natural_Products/Food">
 			<import price="1.1" pricestddev=".2" quantity="15" quantitystddev="2"/>
 		</Category>
 		<Category file="Natural_Products/Liquor">
-			<import price="1.05" pricestddev=".1" quantity="1" quantitystddev="1"/>
+			<import price="1.05" pricestddev=".1" quantity="1" quantitystddev="2"/>
 		</Category>
 		<Category file="Natural_Products/Plants">
 			<import price=".9" pricestddev=".1" quantity="0" quantitystddev="0"/>
@@ -103,7 +104,7 @@
 			<import price=".8" pricestddev=".3" quantity="25" quantitystddev="7"/>
 		</Category>
 		<Category file="Electronics/Robotics">
-			<import price="1.1" pricestddev=".2" quantity="2" quantitystddev="1"/>
+			<import price="1.1" pricestddev=".2" quantity="2" quantitystddev="2"/>
 		</Category>
 		<Category file="Manufactured_Goods">
 			<import price=".8" pricestddev=".3" quantity="38" quantitystddev="12"/>
@@ -114,115 +115,121 @@
 		<Category file="Contraband">
 			<import price="1" pricestddev=".4" quantity="0" quantitystddev="0"/>
 		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Light">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Medium">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Heavy">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Light">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Medium">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Heavy">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Weapons/Mount_Enhancements">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Engines/Light">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Engines/Medium">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Engines/Heavy">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Engines/Engine_Enhancements_Light">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Engines/Engine_Enhancements_Medium">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Engines/Engine_Enhancements_Heavy">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Shield_Systems/Light">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Shield_Systems/Medium">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Shield_Systems/Heavy">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Armor_Modification">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Repair_Systems">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Repair_Systems/Advanced">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Repair_Systems/Research">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Radar/Windows">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Radar/Linux">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Radar/BSD">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Miscellaneous">
-			<import price="1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Ammunition">
-			<import price="1" quantity="50" quantitystddev="25"/>
-		</Category>
-<!--Not Currently Used
-		<Category file="upgrades/Ammunition/Bulk">
-			<import price="1" quantity="1" quantitystddev="1"/>
-		</Category>
--->
 		<Category file="starships/Confed/Light">
-			<import price="1" quantity="3" quantitystddev="3"/>
+			<import price="1" pricestdev=".1" quantity="24" quantitystddev="5" />
 		</Category>
 		<Category file="starships/Confed/Medium">
-			<import price="1" quantity="2" quantitystddev="2"/>
-		</Category>
-		<Category file="starships/Confed/Heavy">
-			<import price="1" quantity="2" quantitystddev="2"/>
-		</Category>
-		<Category file="starships/Merchant/Light">
-			<import price="1" quantity="4" quantitystddev="4"/>
-		</Category>
-		<Category file="starships/Merchant/Medium">
-			<import price="1" quantity="2" quantitystddev="2"/>
-		</Category>
-		<Category file="starships/Merchant/Heavy">
-			<import price="1" quantity="2" quantitystddev="2"/>
+			<import price="1" pricestdev=".1" quantity="12" quantitystddev="5" />
 		</Category>
 		<Category file="starships/Militia/Light">
-			<import price="1" quantity="3" quantitystddev="3"/>
+			<import price="1" pricestdev=".1" quantity="24" quantitystddev="5" />
 		</Category>
 		<Category file="starships/Militia/Medium">
-			<import price="1" quantity="2" quantitystddev="2"/>
+			<import price="1" pricestdev=".1" quantity="12" quantitystddev="5" />
 		</Category>
-		<Category file="starships/Militia/Heavy">
-			<import price="1" quantity="2" quantitystddev="2"/>
+		<Category file="starships/Merchant/Light">
+			<import price="1" pricestdev=".1" quantity="24" quantitystddev="5" />
+		</Category>
+		<Category file="starships/Merchant/Medium">
+			<import price="1" pricestdev=".1" quantity="12" quantitystddev="5" />
+		</Category>
+		<Category file="starships/Merchant/Heavy">
+			<import price="1" pricestdev=".1" quantity="6" quantitystddev="5" />
+		</Category>
+		<Category file="starships/Hunter/Light">
+			<import price="1" pricestdev=".1" quantity="24" quantitystddev="5" />
+		</Category>
+		<Category file="starships/Hunter/Medium">
+			<import price="1" pricestdev=".1" quantity="12" quantitystddev="5" />
+		</Category>
+		<Category file="starships/Hunter/Heavy">
+			<import price="1" pricestdev=".1" quantity="6" quantitystddev="5" />
+		</Category>
+		<Category file="starships/ISO/Light">
+			<import price="1" pricestdev=".1" quantity="24" quantitystddev="5" />
+		</Category>
+		<Category file="starships/ISO/Medium">
+			<import price="1" pricestdev=".1" quantity="12" quantitystddev="5" />
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns_Light">
+			<import price="1" pricestdev=".1" quantity="24" quantitystddev="5" />
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns_Medium">
+			<import price="1" pricestdev=".1" quantity="12" quantitystddev="5" />
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns_Heavy">
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays_Light">
+			<import price="1" pricestddev=".1" quantity="12" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays_Medium">
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays_Heavy">
+			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="5"/>
+		</Category>
+		<Category file="upgrades/Weapons/Mount_Enhancements">
+			<import price="1" pricestddev=".1" quantity="12" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Engines/Light">
+			<import price="1" pricestddev=".1" quantity="12" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Engines/Medium">
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Engines/Heavy">
+			<import price="1" pricestddev=".1" quantity="2" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Engines/Engine_Enhancements_Light">
+			<import price="1" pricestddev=".1" quantity="12" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Engines/Engine_Enhancements_Medium">
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Engines/Engine_Enhancements_Heavy">
+			<import price="1" pricestddev=".1" quantity="2" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Shield_Systems/Light">
+			<import price="1" pricestddev=".1" quantity="12" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Shield_Systems/Medium">
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Shield_Systems/Heavy">
+			<import price="1" pricestddev=".1" quantity="2" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Armor_Modification">
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Hull_Upgrades">
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/ECM_Systems">
+			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Repair_Systems">
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Repair_Systems/Advanced">
+			<import price="1" pricestddev=".1" quantity="2" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Radar/Windows">
+			<import price="1" pricestddev=".1" quantity="12" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Radar/Linux">
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Miscellaneous">
+			<import price="1" pricestddev=".1" quantity="6" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Ammunition">
+			<import price="1" pricestddev=".1" quantity="75" quantitystddev="56"/>
 		</Category>
 	</Hold>
 	<Upgrade file="standard_missions"/>
 	<Upgrade file="confed_missions"/>
+
+
 	<Upgrade file="iso_missions"/>
 </Unit>
