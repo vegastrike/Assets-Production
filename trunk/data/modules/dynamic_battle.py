@@ -36,11 +36,12 @@ def BattlesInSystem():
 	return []
 def LookForTrouble(faction,sys):
 	fg = FGsInSystem(faction,sys)
-	for i in faction_ships.enemies[faction_ships.factionToInt(faction)]:
-		efg = AllFGsInSystem(i,sys)
+	for i in fg:
+		enemyfac = faction_ships.get_enemy_of (faction)
+		efg = AllFGsInSystem(enemy,sys)
 		if (len(efg)):
-			if vsrandom.randrange(0,3)==0:#FIXME include some sort of measure "can I win"
-				initiateAttack(fg,faction,efg,i)
+			index=vsrandom.randrange(0,len(efg))#FIXME include some sort of measure "can I win"
+			initiateAttack(fg,faction,efg[index],enemyfac)
 	
 def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
 	i=getUnitList()
