@@ -94,8 +94,8 @@ all_faction_name_global = {
 ,"merchant" :	{"full" : "Merchant's Union"
 		,"nicks" : "Merchie"
 		,"nickp" : "Merchies"
-		,"dnicks" : "pill popper"
-		,"dnickp" : "pill poppers"
+		,"dnicks" : "Pill Popper"
+		,"dnickp" : "Pill Poppers"
 		,"government" : "Merchant Union Council"
 		,"possessive" : "Merchant"
 		,"homeworld" : "Earth"
@@ -113,6 +113,7 @@ all_faction_name_global = {
 		,"mstandname" : "Barry Matthews"
 		,"fstandname" : "Jeanette Karoen"
 		}
+
 ,"militia" :	{"full" : "Confederate Police Force"
 		,"nicks" : "police"
 		,"nickp" : "police"
@@ -374,15 +375,9 @@ def allNews():
 
 		}
 
-,"exploration" :	{"end" :	{"success" :	{"good"		: [(0.8,"all","need a story")]
-								,"bad"		: [(0.8,"all","need a story")]
-								,"neutral"		: [(0.8,"all","need a story")]
-								}
-					,"draw" :		{"good"		: [(0.8,"all","need a story")]
-								,"bad"		: [(0.8,"all","need a story")]
-								,"neutral"		: [(0.8,"all","need a story")]
-								}
-					,"loss" :		{"good"		: [(0.8,"all","need a story")]
+,"exploration" :	{"end" :	{"success" :	{"good"		: [(0.3,"all","VAR_system_system Treasure!\\The VAR_aggressor_possessive exploration squadran of VAR_possessive_FGtype craft, the VAR_possessive_FG, in part of the VAR_aggressor_full's push into unknown space have today stumbled across one of their bigger finds.  VAR_system_system System in the VAR_system_sector Sector contains a wealth of treasure worth exploiting.  In comparission to some of the most recent systems surveyed, VAR_system_system contains many rescources, both mineral and organic, that may prove invaluable in the war effort.  The first wave of military constructed equipment is expected to be completed within the week, with further civilian colonisation expected by the end of the month.\\\\If you wish to find a new life on the frontier, visit your nearest VAR_aggressor_nicks Administration Centre and ask to speak about resettlement plans.\\Frontier Settlement: \"A new life for all\"")
+											,(1.0,"all","Barren Lands:\\A recently found node on the gate network, VAR_system_system System in VAR_system_sector Sector has been found to be, unfortunately, worthless for all VAR_aggressor_nicks uses.  The system contains no exploitable rescources, is awquardly positioned in the jump-gate network, and has a sun that outputs roughly an order of magnitude more ionising radiation than it's Sol equivalent.\\All was not wasted however with this effort.  Some of the jump-gates present in the system show unknown warp-field signatures, making it possible that there may be richer systems beyond this point.  The VAR_aggressor_FGtype's of VAR_aggressor_FG are now however heading home.  After two months of heavy exploration and survey work, the crew is now up for one month recreation leave before heading back to duty.\\\\\\GNN -- \"Reaching Out\"")]
+
 								,"bad"		: [(0.8,"all","need a story")]
 								,"neutral"		: [(0.8,"all","need a story")]
 								}
