@@ -16,4 +16,6 @@
 	<LeftVDU TextRows="10" TextCols="20" file="blank.spr" xcent="-.72" ycent="-.735" width=".42" height=".36" />
 	<VDU TextRows="10" TextCols="20" type="View Nav Target" file="blank.spr" xcent=".73" ycent="-.735" width=".42" height=".36" />
 	<FPS file="radar.spr" xcent=".8" ycent=".7" width=".018" height=".036"/>
+
+	<VDU TextRows="10" TextCols="100" type="Message" file="mvdu.spr"/>
 </Cockpit>
