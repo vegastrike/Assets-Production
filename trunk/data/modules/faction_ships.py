@@ -55,7 +55,7 @@ capitols = (("corvette","starrunner","cruiser","carrier","fleetcarrier","escortc
             ("corvette","destroyer","truck","truck"), #pirates
             ("corvette","destroyer"), #hunter
             ("escortcarrier","cruiser_mk2","corvette","cruiser","destroyer"), #militia
-            ("truck","cargo","corvette","destroyer"), #ISO
+            ("truck","cargoship","corvette","destroyer"), #ISO
             ("unknown_active",) #unknown
            )
 def appendName():

@@ -10,18 +10,6 @@ import unit
 import Director
 
 class cargo_mission (Director.Mission):
-	you=VS.Unit()
-	faction=""
-	base=VS.Unit()
-	cargoname=""
-	difficulty=1
-	quantity=1
-	cred=0
-	capship=0
-#	mission_time=0
-	adjsys=0
-	arrived=0
-        mplay="all"
 	def initbriefing(self):
 		self.jump_ani=0
 		self.rnd_y=0.0
@@ -33,8 +21,8 @@ class cargo_mission (Director.Mission):
 			VS.terminateMission(0)
 			Briefing.terminate()
 			return
-		faction=you.getFaction()
-		name=you.getName()
+		faction=self.you.getFaction()
+		name=self.you.getName()
 		self.brief_you=Briefing.addShip(name,faction,(0.0,0.0,80.0))
 		VS.IOmessage (0,"cargo mission","briefing","Your mission for today will be to deliver some %s cargo to the %s system.\nIn order to get there, you must follow this route that we have planned out for you." % (cargoname,destination))
 	
@@ -77,17 +65,19 @@ class cargo_mission (Director.Mission):
 	
 	def __init__ (self,factionname, numsystemsaway, cargoquantity, missiondifficulty, creds, launchoncapship, time_to_complete, category):
 	  Director.Mission.__init__(self);
+	  self.you=VS.Unit()
+	  self.base=VS.Unit()
+	  self.arrived=0
+	  self.mplay="all"
 #	  self.mission_time=VS.GetGameTime()+time_to_complete*100*float(1+numsystemsaway)
 	  self.capship= launchoncapship
 	  self.faction=factionname
 	  self.cred=creds
 	  self.difficulty=missiondifficulty
-	  mysys=VS.getSystemFile()
 	  self.adjsys=go_to_adjacent_systems(self.you,numsystemsaway)
 	  self.quantity=cargoquantity
-	  sysfile = mysys
 	  self.you=VS.getPlayer()
-	  mplay=universe.getMessagePlayer(self.you)
+	  self.mplay=universe.getMessagePlayer(self.you)
 	  if (self.quantity<1):
 	    self.quantity=1
 	  carg=VS.getRandCargo(self.quantity,category)
@@ -98,7 +88,7 @@ class cargo_mission (Director.Mission):
 	  name = self.you.getName ()
 	  carg.SetMissionFlag(1)
 	  if (self.you):
-	    quantity = self.you.addCargo(carg)  #I add some cargo
+	    self.quantity = self.you.addCargo(carg)  #I add some cargo
 	  else:
 	    VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000Unable to establish communications. Mission failed.")
 	    VS.terminateMission (0)
@@ -130,6 +120,7 @@ class cargo_mission (Director.Mission):
 	  removenum=0 #if you terminate without remove, you are SKREWED
 	  if (remove):
 	    removenum=you.removeCargo(self.cargoname,self.quantity,1)
+	    print "removed %d" % removenum
 	    mpart=VS.GetMasterPartList()
 	    newcarg=mpart.GetCargo(self.cargoname)
 	    newcarg.SetQuantity(removenum)
