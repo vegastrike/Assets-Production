@@ -10,7 +10,7 @@ import unit
 import Director
 import quest
 class defend (Director.Mission):
-    def __init__ (self,factionname,numsystemsaway, enemyquantity, distance_from_base, escape_distance, creds, defendthis, defend_base,protectivefactionname='',var_to_set=''):
+    def __init__ (self,factionname,numsystemsaway, enemyquantity, distance_from_base, escape_distance, creds, defendthis, defend_base,protectivefactionname='',jumps=(),var_to_set=''):
           Director.Mission.__init__(self)
           self.dedicatedattack=vsrandom.randrange(0,2)
           self.arrived=0
@@ -38,7 +38,7 @@ class defend (Director.Mission):
 	  self.you=VS.getPlayer()
           name = self.you.getName ()
           self.mplay=universe.getMessagePlayer(self.you)
-          self.adjsys = go_to_adjacent_systems(self.you,numsystemsaway)  
+          self.adjsys = go_to_adjacent_systems(self.you,numsystemsaway,jumps)  
 	  VS.IOmessage (0,"defend",self.mplay,"Good Day, %s. Your mission is as follows:" % name)
           self.adjsys.Print("You are in the %s system,","Proceed swiftly to %s.","Your arrival point is %s.","defend",1)
 	  VS.IOmessage (2,"defend",self.mplay,"And there eliminate any %s starships at a point."  % self.faction)
@@ -143,6 +143,6 @@ class defend (Director.Mission):
     def endbriefing(self):
         print "ending briefing"        
 		
-def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base,p_faction='',var_to_set=''):
+def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base,p_faction='',jumps=(),var_to_set=''):
     enq=vsrandom.randrange(minenquant,maxenquant)
-    return defend(factionname,numsysaway,enq,8000.0,100000.0,enq*credperen,defendit,defend_base,p_faction,var_to_set)
+    return defend(factionname,numsysaway,enq,8000.0,100000.0,enq*credperen,defendit,defend_base,p_faction,jumps,var_to_set)
