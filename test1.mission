@@ -1,13 +1,17 @@
 <mission>
+	<settings>
+		<origin  planet="earth" x="100.0" y="5000.0" z="-400.0"/>
+	</settings>
+
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="sol" />
+		<var name="system" value="blank" />
 		<var name="description" value="4vs4.txt" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="vorcha" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="confed" type="thunderbolt" ainame="default" waves="1" nr_ships="1">
 			<pos x="00000.0" y="0000.0" z="0000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
@@ -15,9 +19,9 @@
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
-<!--
-                <flightgroup name="blue" faction="confed" type="destiny" ainame="default" waves="8" nr_ships="3">
-			<pos x="12000.0" y="1000.0" z="3000.0"/>
+
+                <flightgroup name="blue" faction="confed" type="hellcat" ainame="default" waves="8" nr_ships="3">
+			<pos x="0" y="100.0" z="0.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
@@ -25,7 +29,7 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
 
-                <flightgroup name="green" faction="confed" type="tian" ainame="default" waves="8" nr_ships="3">
+<!--                <flightgroup name="green" faction="confed" type="tian" ainame="default" waves="8" nr_ships="3">
 			<pos x="13000.0" y="0.0" z="3000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
