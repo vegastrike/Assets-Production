@@ -1,6 +1,12 @@
 <Unit>
-
-
+<!-- The subunits were generated with the following commands
+     ./asteroidgen asteroid.xmesh 4000 160 40 120 .3 10 20 0 1025
+     ./asteroidgen asteroid.lod1.xmesh 4000 160 40 120 .3 6 15 0 1025
+     ./asteroidgen asteroid.lod2.xmesh 4000 160 60 140 .3 4 6 0 1025
+     
+     the command line arguments are in the same order as the questions asked.
+     to make a different LOD use a different seed
+ -->
 <SubUnit file="asteroids"  />
 <SubUnit file="asteroids" x="0" y="00" z="00" ri="1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
 <SubUnit file="asteroids" x="00" y="100" z="50" ri="1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
