@@ -1,0 +1,38 @@
+<mission>
+	<settings>
+		<origin  planet="earth" x="0000" y="100" z="000.0"/>
+	</settings>
+
+	<variables>
+<!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="4 versus 4" />
+		<var name="system" value="sol_sector/vega" />
+		<var name="description" value="Explore the universe as a neutral, quick scout!\Enjoy all 200 star systems\in sol and vega sectors!" />
+		<var name="savegame" value="explore_universe" />
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="neutral" type="tian" ainame="default" waves="1" nr_ships="1">
+			<pos x="90400" y="-35400" z="24700.0"/>
+		</flightgroup>
+
+        </flightgroups>
+
+	<module name="director">
+
+		<import name="explore_universe"/>
+
+		<script name="initgame">
+			<exec module="explore_universe" name="initgame"/>
+		</script>
+
+		<script name="gameloop">
+			<exec module="explore_universe" name="gameloop"/>
+		</script>
+
+		<script name="endgame">
+			<exec module="explore_universe" name="endgame"/>
+		</script>
+	</module>
+
+</mission>
