@@ -383,4 +383,5 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction):
 			fg_util.TransferFG (fgname,faction,ensys)
 	return 1
 		
-
+for i in range(1000):
+	UpdateCombatTurn()
