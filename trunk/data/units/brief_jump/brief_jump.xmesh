@@ -1,0 +1,30 @@
+<Mesh texture="brief_jump.png" blend="ONE ONE" scale="8">
+	<Points>
+		<Point>
+			<Location x="1" z="1" y="0"/>
+		</Point>
+		<Point>
+			<Location x="-1" z="1" y="0"/>
+		</Point>
+		<Point>
+			<Location x="-1" z="-1" y="0"/>
+		</Point>
+		<Point>
+			<Location x="1" z="-1" y="0"/>
+		</Point>
+	</Points>
+	<Polygons>
+		<Quad>
+			<Vertex point="0" s="0" t="0"/>
+			<Vertex point="1" s="1" t="0"/>
+			<Vertex point="2" s="1" t="1"/>
+			<Vertex point="3" s="0" t="1"/>
+		</Quad>
+		<Quad>
+			<Vertex point="3" s="0" t="0"/>
+			<Vertex point="2" s="1" t="0"/>
+			<Vertex point="1" s="1" t="1"/>
+			<Vertex point="0" s="0" t="1"/>
+		</Quad>
+	</Polygons>
+</Mesh>
