@@ -35,7 +35,7 @@
 	</Sound>
 	<Defense hudimage="epeellcat.spr">
 		<Armor front="80" right="65" left="65" back="90"/>
-		<Shields front="80.000000" back="100.000000" recharge="23.000000"/>
+		<Shields front="80.000000" back="100.000000" left="90" right="90"  recharge="23.000000"/>
 		<Hull strength="600.000000"/>
 	</Defense>
 
