@@ -34,7 +34,14 @@ def BattlesInSystem():
 		return persystemattacklist[sys]
 	#return {}  #used to be  a hash table
 	return []
-
+def LookForTrouble(faction,sys):
+	fg = FGsInSystem(faction,sys)
+	for i in faction_ships.enemies[faction_ships.factionToInt(faction)]:
+		efg = AllFGsInSystem(i,sys)
+		if (len(efg)):
+			if vsrandom.randrange(0,3)==0:#FIXME include some sort of measure "can I win"
+				initiateAttack(fg,faction,efg,i)
+	
 def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
 	i=getUnitList()
 	un=i.current()
