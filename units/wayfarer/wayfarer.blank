@@ -1,11 +1,16 @@
 <Unit>
 <cockpit file="heavy-cockpit.cpt" x="0" y="0" z="0"/>
+<!-- this ship starts out with 2 shield facings (can't change the number of shield facings once you start -->
 	<Defense HudImage="wayfarer-hud.spr">
 		<Shields front="0.000000" back="0.000000" recharge="0.000000"/>
 	</Defense>
+<!-- then it gets the basic shield level 2 that you start out with at beginning game...this is level 0 -->
 	<upgrade file="shield_2"/>
+<!-- starts out with engine level 0 -->
 	<upgrade file="engine_level_0"/>
+<!-- starts out with horrible armor -->
 	<upgrade file="lithium"/>
+<!-- starts out with horrible hull -->
 	<upgrade file="hull"/>
 
 	<Meshfile file="rescue-hull-e.xmesh"/>
@@ -29,18 +34,20 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-
+<!-- starting mass and fuel -->
 
 	<Stats mass="10.000000" momentofinertia="10.000000" fuel="40000000"></Stats>
+<!-- starting ypr limits -->
 	<Computer yaw="60.400002" pitch="50.600006" roll="80.400002" afterburner="60" maxspeed="30">
-		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>		
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>		<!-- starting terrible radar that only targets forward (maxcone of .25 is forward only... -1 is 360   0 is 180 ) -->
 	</Computer>
-	<Energy afterburnenergy="32767"/>
-	<Jump missing="1" delay="2" jumpenergy="150"/>       
+	<Energy afterburnenergy="32767"/><!-- can't afterburn -->
+	<Jump missing="1" delay="2" jumpenergy="150"/>       <!-- can't jump -->
 	<description>
 
 	</description>
-	<Hold volume="125">   
+<!-- low cargo -->
+	<Hold volume="125">   <!-- default cargo in ship -->
 		<Category file="Natural_Products/Natural_Resources">
 			<import price=".8" pricestddev=".2" quantity="0" quantitystddev="5"/>
 		</Category>
