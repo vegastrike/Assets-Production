@@ -1,0 +1,32 @@
+<Unit>
+	<Meshfile file="space_truck-Command.xmesh" />
+	<Meshfile file="space_truck-EngineCone.xmesh" />
+	<Meshfile file="space_truck-Fuel Tanks.xmesh" />
+	<Meshfile file="space_truck-Habitat.xmesh" />
+	<Meshfile file="space_truck-Rod01.xmesh" />
+	<Meshfile file="space_truck-Rod02.xmesh" />
+	<Meshfile file="space_truck-Rod03.xmesh" />
+	<Meshfile file="space_truck-Rod04.xmesh" />
+
+	<Thrust>
+		<Engine Afterburner="320.000000" Forward="149.333328" Retro="130.666662" Left="74.666664" Right="74.666664" Top="74.666664" Bottom="74.666664"/>
+		<Maneuver yaw="366.200050" pitch="421.600025" roll="366.200050"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Armor front="800" right="600" left="600" back="600"/>
+		<Shields front="250.000000" back="250.000000" recharge="60.000000"/>
+		<Hull strength="800.000000"/>
+	</Defense>
+	<Stats mass="60.000000" momentofinertia="30.000000" fuel="20000"></Stats>
+	<Computer yaw="21.400002" pitch="25.200001" roll="31.400002" afterburner="32.000000" maxspeed="18.666666"/>
+	<Energy>
+		<Reactor recharge="100" limit="1000"/>
+	</Energy>
+       
+		<cockpit file="hellcat-cockpit.cpt" x="-204.041" y="-30.115" z="545.434"/>
+
+<!--		<Subunit file="truck_cargo01" x="0" y="0" z="216.003"/>
+-->
+</Unit>

@@ -1,0 +1,88 @@
+<Mesh texture="engine1.png">
+<Points>
+<Point>
+    <Location x="-195.878326416016" y="-42.401668548584" z="552.017639160156"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-212.204132080078" y="-42.401668548584" z="552.017639160156"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-212.204132080078" y="-42.401668548584" z="536.748657226562"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-195.878326416016" y="-42.4016723632812" z="536.748657226562"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-194.817153930664" y="-17.8279323577881" z="557.21435546875"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-213.26530456543" y="-17.8279285430908" z="557.21435546875"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-213.26530456543" y="-17.8279323577881" z="535.756225585938"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-194.817153930664" y="-17.8279361724854" z="535.756225585938"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+</Points>
+<Polygons>
+<Tri>
+    <Vertex point="0" s="" t=""/>
+    <Vertex point="1" s="" t=""/>
+    <Vertex point="2" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="2" s="" t=""/>
+    <Vertex point="3" s="" t=""/>
+    <Vertex point="0" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="4" s="" t=""/>
+    <Vertex point="5" s="" t=""/>
+    <Vertex point="1" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="1" s="" t=""/>
+    <Vertex point="0" s="" t=""/>
+    <Vertex point="4" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="5" s="" t=""/>
+    <Vertex point="6" s="" t=""/>
+    <Vertex point="2" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="2" s="" t=""/>
+    <Vertex point="1" s="" t=""/>
+    <Vertex point="5" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="6" s="" t=""/>
+    <Vertex point="7" s="" t=""/>
+    <Vertex point="3" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="3" s="" t=""/>
+    <Vertex point="2" s="" t=""/>
+    <Vertex point="6" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="7" s="" t=""/>
+    <Vertex point="4" s="" t=""/>
+    <Vertex point="0" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="0" s="" t=""/>
+    <Vertex point="3" s="" t=""/>
+    <Vertex point="7" s="" t=""/>
+</Tri>
+</Polygons>
+</Mesh>
