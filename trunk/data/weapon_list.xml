@@ -276,6 +276,17 @@
 </Appearance>
 </Bolt>
 
+<Bolt name="HephaestusPointDefenseCannon" mountsize="special">
+<Energy rate="0" stability="0" refire=".05">
+</Energy>
+<Damage rate="2" longrange="1">
+</Damage>
+<Distance speed="800" radialspeed=".8" radius=".5" pulsespeed="15" range="390" volume="1" >
+</Distance>
+<Appearance file="weapons/graybolt.png" soundwav="MASS.WAV" r=".3" g=".5" b=".95" a="1" >
+</Appearance>
+</Bolt>
+
 <Bolt name="LeechGun" mountsize="special">
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
@@ -550,9 +561,9 @@
 <Beam name="LR_Beam" mountsize="capship-medium"> 
 <Energy rate="3" stability="14" refire="8">
 </Energy>
-<Damage rate="300" longrange=".9">
+<Damage rate="350" longrange=".9">
 </Damage>
-<Distance speed="1100" radialspeed=".8" radius="100" length="8" pulsespeed="18" range="8000" >
+<Distance speed="1100" radialspeed=".8" radius="100" length="8" pulsespeed="18" range="16000" >
 </Distance>
 <Appearance file="weapons/disruptorbeam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a=".6" >
 </Appearance>
@@ -561,7 +572,7 @@
 <Beam name="LR_BeamHvy" mountsize="capship-heavy"> 
 <Energy rate="5" stability="16" refire="10">
 </Energy>
-<Damage rate="500" longrange=".7">
+<Damage rate="600" longrange=".7">
 </Damage>
 <Distance speed="1100" radialspeed=".8" radius="200" length="8" pulsespeed="18" range="16000" >
 </Distance>
@@ -596,7 +607,7 @@
 </Energy>
 <Damage rate="1200" longrange=".6">
 </Damage>
-<Distance speed="400" radialspeed=".8" radius="8" pulsespeed="15" range="19000" >
+<Distance speed="400" radialspeed=".8" radius="8" pulsespeed="15" range="13000" >
 </Distance>
 <Appearance file="mass_driver.ani" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
 </Appearance>
@@ -628,7 +639,7 @@
 <Missile name="CapshipMissile" mountsize="heavy-capship-missile">
 <Energy rate="0" stability="6" refire="5" locktime="60">
 </Energy>
-<Damage rate="1100" phasedamage="200" longrange="1" radius="1000" radialspeed="200" >
+<Damage rate="5000" phasedamage="500" longrange="1" radius="1000" radialspeed="200" >
 </Damage>
 <Distance speed="20" pulsespeed="15" range="25000" detonationrange="40" volume="900" >
 </Distance>
@@ -659,12 +670,14 @@
 <Appearance file="weapons/neutrongun.png" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Bolt>
+
+
 <Beam name="LR_PminusBeam" mountsize="capship-heavy"> 
 <Energy rate="5" stability="16" refire="10">
 </Energy>
-<Damage rate="1000" longrange=".7">
+<Damage rate="1200" longrange=".9">
 </Damage>
-<Distance speed="1700" radialspeed=".8" radius="200" length="8" pulsespeed="36" range="17000" >
+<Distance speed="3000" radialspeed=".8" radius="200" length="8" pulsespeed="36" range="17000" >
 </Distance>
 <Appearance file="weapons/heavylaserbeam.png" soundwav="beam.wav" r=".6" g=".1" b=".8" a=".6" >
 </Appearance>
