@@ -95,7 +95,7 @@
 </Damage>
 <Distance speed="90" radialspeed=".8" radius=".3" length="3" pulsespeed="15" range="306" >
 </Distance>
-<Appearance file="neutron.bmp" soundwav="Neutron.wav" r=".7" g=".7" b="1" a="1" >
+<Appearance file="neutrongun.bmp" soundwav="Neutron.wav" r=".7" g=".7" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -106,7 +106,7 @@
 </Damage>
 <Distance speed="120" radialspeed=".8" radius=".25" length="3" pulsespeed="15" range="408" >
 </Distance>
-<Appearance file="disruptor.bmp" soundwav="ION.WAV" r=".7" g=".4" b="1" a="1" >
+<Appearance file="ion.bmp" soundwav="ION.WAV" r=".7" g=".4" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -173,7 +173,7 @@
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" length="3" pulsespeed="15" range="800" >
 </Distance>
-<Appearance file="neutron.bmp" r=".8" g=".8" b="1" a="1" >
+<Appearance file="neutrongun.bmp" r=".8" g=".8" b="1" a="1" >
 </Appearance>
 </Bolt>
 

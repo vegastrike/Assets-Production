@@ -26,6 +26,6 @@
 		<Radar itts="true" color="true" error="0"/>
 	</Computer>
 	<Energy>
-		<Reactor recharge="10" limit="100"/>
+		<Reactor recharge="46" limit="300"/>
 	</Energy>
 </Unit>
