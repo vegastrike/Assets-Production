@@ -70,10 +70,10 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 		<bind key="9" modifier="none" command="DockKey"/>
 <!--		<bind key="u" modifier="none" command="UnDockKey"/>-->
 		<bind key="0" modifier="none" command="RequestClearenceKey"/>
-		<bind key="i" modifier="none" player="1" command="UpKey"/>
-		<bind key="k" modifier="none" player="1" command="DownKey"/>
-		<bind key="l" modifier="none" player="1" command="RightKey"/>
-		<bind key="j" modifier="none" player="1" command="LeftKey"/>
+		<bind key="i" modifier="none" command="UpKey"/>
+		<bind key="k" modifier="none" command="DownKey"/>
+		<bind key="j" modifier="none" command="RightKey"/>
+		<bind key="l" modifier="none" command="LeftKey"/>
 
  		<bind key="space" modifier="none" command="FireKey" />
  		<bind key="y" modifier="none" command="MatchSpeedKey" />
@@ -116,22 +116,26 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 		<bind key="!" modifier="none" command="SuicideKey"/>
 		<bind key="@" modifier="none" player="1" command="SuicideKey"/>
 
- 		<bind key="keypad-numlock" modifier="none" player="1" command="ReverseTargetKey" />
- 		<bind key="keypad-insert" modifier="none" player="1" command="ABKey" />
+ 		<bind key="keypad-numlock" modifier="none" player="1" command="StopKey" />
+ 		<bind key="keypad-0" modifier="none" player="1" command="ABKey" />
  		<bind key="keypad-enter" modifier="none" player="1" command="MissileKey" />
 
  		<bind key="cursor-insert" modifier="none" player="1" command="FireKey" />
 
-		<bind key="cursor-delete" modifier="none" player="1" command="MissileKey"/>
+		<bind key="cursor-delete" modifier="none" player="1" command="SheltonKey"/>
 		<bind key="cursor-home" modifier="none" player="1" command="WeapSelKey"/>
  		<bind key="cursor-end" modifier="none" player="1" command="MisSelKey" />
 		<bind key="cursor-pageup" modifier="none" player="1" command="JumpKey"/>
 		<bind key="cursor-pagedown" modifier="none" player="1" command="CloakKey"/>
 
 
-		<bind key="keypad-pageup" modifier="none" player="1" command="AutoKey"/>
-		<bind key="keypad-pagedown" modifier="none" player="1" command="TurretAIKey"/>
- 		<bind key="keypad-delete" modifier="none" player="1" command="SheltonKey" />
+		<bind key="keypad-9" modifier="none" player="1" command="AutoKey"/>
+		<bind key="keypad-3" modifier="none" player="1" command="TurretAIKey"/>
+
+		<bind key="keypad-7" modifier="none" player="1" command="SetVelocityRefKey"/>
+		<bind key="keypad-1" modifier="none" player="1" command="SetVelocityNullKey"/>
+
+ 		<bind key="keypad-delete" modifier="none" player="1" command="NearestTargetKey" />
 
 		<bind key="keypad-minus" modifier="none" player="1" command="DecelKey"/>
 		<bind key="keypad-plus" modifier="none" player="1" command="AccelKey" />
@@ -169,6 +173,9 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 
 		<bind key="v" modifier="none" command="Cockpit::SwitchRVDU"/>
 <!--		<bind key="V" modifier="none" command="Cockpit::SwitchRVDU"/>-->
+		<bind key="q" modifier="none" command="SetVelocityRefKey"/>
+		<bind key="z" modifier="none" command="SetVelocityNullKey"/>
+
 <!--
 		<bind key="q" modifier="none" command="Cockpit::PitchDown"/>
 		<bind key="z" modifier="none" command="Cockpit::PitchUp"/>
