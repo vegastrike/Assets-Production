@@ -426,7 +426,10 @@ def launchBase (type,num,faction,system,sig_units,numfighters):
 					   two%len(sig_units),
 					   three%len(sig_units)];
 			which = minIndex(numfighters,indices)
-			numfighters[which]+=1
+			if (sig_units[which].isJumppoint()):
+				numfighters[which]+=20
+			else:
+				numfighters[which]+=1
 			launchSingleBase (type,faction,sig_units[which])
 	else:
 		for i in range(num):
@@ -444,7 +447,6 @@ def launchBases(sys):
 	shipcount=zeros(len(sig_units))	
 	for fg in fgs:
 		launchBase(fg[0],fg[1],fac,sys,sig_units,shipcount)
-
 def GetShipsInFG(fgname,faction):
 	import vsrandom
 	ships = ReadStringList (ccp,MakeFGKey(fgname,faction))
