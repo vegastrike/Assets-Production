@@ -15,8 +15,7 @@
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="privateer" type="wayfarer.begin" ainame="default" waves="1" nr_ships="1">
-			<pos x="20400" y="-35400" z="84700000.0"/>
-
+			<pos x="2060489.312005" y="39.721071" z="302.088612"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
