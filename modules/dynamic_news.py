@@ -122,7 +122,7 @@ def formatShipName(string):
 	something more natural (ie basic Firefly)"""
 	shipext = string.split('.')
 	extension = "millspec";
-	if len(shipext)>0:
+	if len(shipext)>1:
 		extension = shipext[1];
 	ship = shipext[0];
 	if extension == "blank":
