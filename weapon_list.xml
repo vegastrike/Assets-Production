@@ -3,7 +3,7 @@
 
 <!-- unknown -->
 
-<Beam name="UnknownBeam" mountsize="heavy"> 
+<Beam name="UnknownBeam" mountsize=""> 
 <Energy rate="80" stability="14" refire="2">
 </Energy>
 <Damage rate="40" phasedamage="50" longrange=".5">
@@ -15,7 +15,7 @@
 </Beam>
 
 <!-- below has no mountsize to fit on any ship -->
-<Bolt name="UnknownBolt" mountsize="medium"> 
+<Bolt name="UnknownBolt" mountsize=""> 
 <Energy rate="40" stability="6" refire=".7">
 </Energy>
 <Damage rate="0" phasedamage="50" longrange=".8">
@@ -26,7 +26,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Unknown" mountsize="heavy"> 
+<Bolt name="Unknown" mountsize=""> 
 <Energy rate="45" stability="6" refire=".7">
 </Energy>
 <Damage rate="200" longrange=".5">
@@ -37,7 +37,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="UnknownSwarm" mountsize="Special-Missile"> 
+<Bolt name="UnknownSwarm" mountsize=""> 
 <Energy rate="0" stability="0" refire=".2">
 </Energy>
 <Damage rate="25" phasedamage="10" longrange="1">
