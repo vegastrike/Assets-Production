@@ -23,7 +23,78 @@ module faction_ships {
   void init(){
     make_ships_list();
   };
-  
+  object get_enemy_of (object factionname) {
+    object piratesstring = _string.new();
+    float r = _std.Rnd();
+    if (_string.equal (factionname,"merchant")) {
+      _io.sprintf (piratesstring,"pirates");
+    } else if (_string.equal (factionname,"confed")) {
+      if (r<0.3) {
+	_io.sprintf (piratesstring,"aera");
+      }else if (r<0.6) {
+	_io.sprintf (piratesstring,"rlaan");
+      }else if (r<0.7) {
+	_io.sprintf (piratesstring,"retro");
+      }else if (r<0.8 ){
+	_io.sprintf (piratesstring,"ISO");
+      }else {
+	_io.sprintf (piratesstring,"pirates");
+      }
+    } else if (_string.equal (factionname,"aera")) {
+      
+      if (r<0.4) {
+	_io.sprintf (piratesstring,"confed");
+      }else if (r<0.8) {
+	_io.sprintf (piratesstring,"rlaan");
+      }else {
+	_io.sprintf (piratesstring,"pirates");
+      }	    
+    }else if (_string.equal (factionname,"rlaan")) {
+      if (r<0.4) {
+	_io.sprintf (piratesstring,"confed");
+      }else if (r<0.8) {
+	_io.sprintf (piratesstring,"aera");
+      }else {
+	_io.sprintf (piratesstring,"retro");
+      }	    
+    }else if (_string.equal (factionname,"pirates")) {
+      
+      if (r<0.4) {
+	_io.sprintf (piratesstring,"confed");
+      }else if (r<0.8) {
+	_io.sprintf (piratesstring,"aera");
+      }else {
+	_io.sprintf (piratesstring,"retro");
+      }	    
+    }else if (_string.equal (factionname,"ISO")) {
+      
+      if (r<0.4) {
+	_io.sprintf (piratesstring,"confed");
+      }else if (r<0.8) {
+	_io.sprintf (piratesstring,"retro");
+      }else {
+	_io.sprintf (piratesstring,"aera");
+      }	
+    }else if (_string.equal (factionname,"retro")) {
+      if (r<0.4) {
+	_io.sprintf (piratesstring,"confed");
+      }else if (r<0.8) {
+	_io.sprintf (piratesstring,"ISO");
+      }else {
+	_io.sprintf (piratesstring,"rlaan");
+      }
+    } else {
+      if (r<0.4) {
+	_io.sprintf (piratesstring,"confed");
+      }else if (r<0.8) {
+	_io.sprintf (piratesstring,"aera");
+      }else {
+	_io.sprintf (piratesstring,"rlaan");
+      }	    
+    }
+    //_io.printf ("Enemy of type %s is %s",factionname,piratesstring);
+    return piratesstring;
+  };
   void make_ships_list(){
     capitols = _olist.new();
     fighters = _olist.new();

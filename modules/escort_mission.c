@@ -53,7 +53,7 @@ module escort_mission {
     //esc is not null when we are here
     //    _std.playSound ("happy.wav",0.0,0.0,0.0);
     object capname = faction_ships.getRandomCapitol(faction);
-    object un = launch.launch_wave_around_unit ("base",faction,capname,"default",1,distfrombase,distfrombase,esc);
+    object un = launch.launch_wave_around_unit ("Base",faction,capname,"default",1,distfrombase,distfrombase,esc);
     basecontainer = _unit.getContainer (un);
     stage=2;
     object str =_string.new();
@@ -105,62 +105,13 @@ module escort_mission {
   void init (object factionname, int missiondifficulty, float our_dist_from_jump, float dist_from_jump, float distance_from_base, float creds, float enemy_time, bool AllInThisSystem) {
     
 	  faction_ships.init();
-	  piratesstring = _string.new();
+
 	  _std.setNull(youcontainer);
 	  _std.setNull(escortee);
 	  _std.setNull(destination);
 	  _std.setNull(basecontainer);
-	  float r = _std.Rnd();
-	  if (_string.equal (factionname,"merchant")) {
-	    _io.sprintf (piratesstring,"pirates");
-	  } else if (_string.equal (factionname,"confed")) {
-	    if (r<0.3) {
-	      _io.sprintf (piratesstring,"aera");
-	    }else if (r<0.6) {
-	      _io.sprintf (piratesstring,"rlaan");
-	    }else if (r<0.7) {
-	      _io.sprintf (piratesstring,"retro");
-	    }else if (r<0.8 ){
-	      _io.sprintf (piratesstring,"ISO");
-	    }else {
-	      _io.sprintf (piratesstring,"pirates");
-	    }
-	  } else if (_string.equal (factionname,"aera")) {
+	  piratesstring = faction_ships.get_enemy_of (factionname);
 
-	    if (r<0.4) {
-	      _io.sprintf (piratesstring,"confed");
-	    }else if (r<0.8) {
-	      _io.sprintf (piratesstring,"rlaan");
-	    }else {
-	      _io.sprintf (piratesstring,"pirates");
-	    }	    
-	  }else if (_string.equal (factionname,"rlaan")) {
-	    if (r<0.4) {
-	      _io.sprintf (piratesstring,"confed");
-	    }else if (r<0.8) {
-	      _io.sprintf (piratesstring,"aera");
-	    }else {
-	      _io.sprintf (piratesstring,"retro");
-	    }	    
-	  }else if (_string.equal (factionname,"pirates")) {
-
-	    if (r<0.4) {
-	      _io.sprintf (piratesstring,"confed");
-	    }else if (r<0.8) {
-	      _io.sprintf (piratesstring,"aera");
-	    }else {
-	      _io.sprintf (piratesstring,"retro");
-	    }	    
-	  }else if (_string.equal (factionname,"ISO")) {
-
-	    if (r<0.4) {
-	      _io.sprintf (piratesstring,"confed");
-	    }else if (r<0.8) {
-	      _io.sprintf (piratesstring,"retro");
-	    }else {
-	      _io.sprintf (piratesstring,"aera");
-	    }	    
-	  }
 	  intra_system=AllInThisSystem;
 	  enemytime=enemy_time;
 	  my_timer=_std.getGameTime()-enemy_time;//will start with enemies;
@@ -252,6 +203,7 @@ module escort_mission {
 		un=faction_ships.getRandomFighter(faction);
 		object newunit=launch.launch_wave_around_unit("Shadow", faction, un, "default", 1,1000.0, 1000.0,play);
 		_unit.setTarget(newunit,play);
+		_unit.setFgDirective (newunit,"B");
 		i=i+1;
 		
 	      }
@@ -259,7 +211,7 @@ module escort_mission {
 		if (!_std.isNull(basecontainer)) {
 		  object bas = _unit.getUnitFromContainer (basecontainer);
 		  if (!_std.isNull(bas)) {
-		    _unit.setTarget (bas,play);
+		    //		    _unit.setTarget (bas,play);
 		  }
 		}
 	      }
@@ -281,12 +233,13 @@ module escort_mission {
 	      object randomtype = faction_ships.getRandomFighter ("confed");
 	      launched = launch.launch_wave_around_unit("XShadowX","confed",randomtype,"default",difficulty+1,200.0,4000.0,esc);
 	    }else {
-	      object randtype = faction_ships.getRandomFighterInt(random.randomint(0,faction_ships.getMaxFactions()-1));
-	      launched = launch.launch_wave_around_unit ("XShadowX","pirates",randtype,"default",difficulty+1,200.0,4500.0,esc);
+	      object randtype = faction_ships.getRandomFighter(piratesstring);
+	      launched = launch.launch_wave_around_unit ("XShadowX",piratesstring,randtype,"default",difficulty+1,200.0,4500.0,esc);
 	      //launched = launch.launch_wave_around_unit ("XShadowX","pirates","revoker","default",difficulty+1,4500.0,esc);
 	    }
 	    if (!_std.isNull (launched)) {
 	      _unit.setTarget(launched,esc);
+	      _unit.setFgDirective (launched,"B");
 	      //	      _std.playSound ("happy.wav",0.0,0.0,0.0);
 	    }
 	    my_timer = mtime;	    

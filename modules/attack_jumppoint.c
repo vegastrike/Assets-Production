@@ -16,11 +16,19 @@ module attack_jumppoint {
   bool defend;
   object attackers;
   int targetiter;  
-	void init (object factionname, int numsystemsaway, int enemyquantity, float distance_from_base, float escape_distance, float creds, bool defend_base) {
+  object defendee;
+  bool defendbase;
+  void initrandom (object factionname, int numsystemsaway, int minenquant, int maxenquant, float credperenemy, bool defend, bool defend_base) {
+    int enq = random.randomint (minenquant,maxenquant);
+    init (factionname, numsystemsaway, enq, 8000.0,50000.0, _std.Float (enq)*credperenemy,defend,defend_base);
+  };
+	void init (object factionname, int numsystemsaway, int enemyquantity, float distance_from_base, float escape_distance, float creds, bool defendthis, bool defend_base) {
+	  defendbase = defend_base;
+	  _std.setNull(defendee);
 	  attackers = _olist.new ();
 	  targetiter = 0;
 	  ship_check_count=0;
-	  defend = defend_base;
+	  defend = defendthis;
 	  faction_ships.init();
 
 	  faction=_string.new();
@@ -46,14 +54,20 @@ module attack_jumppoint {
 	  _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
 	  _string.delete (name);
 	  _io.message (0,"game","all",str);
-	  go_somewhere_significant.init(you,numsystemsaway,defend,false,distance_from_base);
-
+	  if (defend_base) {
+	    go_somewhere_significant.init_base_only(you,numsystemsaway,distance_from_base);
+	  }else {
+	    go_somewhere_significant.init(you,numsystemsaway,defend,false,distance_from_base);
+	  }
 	  _io.sprintf(str,"And there eliminate any %s starships at a point.",faction);
 	  _io.message (2,"game","all",str);
 	  _string.delete(str);
 	};
 	void destroy () {
 	  int i=0;
+	  if (!_std.isNull (defendee)) {
+	    _unit.deleteContainer (defendee);
+	  }
 	  while (i<_olist.size(attackers)) {
 	    object cont = _olist.at (attackers,i);
 	    _unit.deleteContainer (cont);
@@ -142,7 +156,24 @@ module attack_jumppoint {
 	      destroy();
 	      _std.terminateMission(false);
 	    }else {
-	      object base = go_somewhere_significant.SignificantUnit();
+	      if (_std.isNull (defendee)) {
+		object def;
+		_std.setNull(def);
+		if ((!defend)||(defendbase)) {
+		  def =go_somewhere_significant.SignificantUnit();
+		}else {
+		  object temp = go_somewhere_significant.SignificantUnit();
+		  if (_std.isNull (temp)) {
+		    temp = you;
+		  }
+		  object fac = faction_ships.get_enemy_of (faction);
+		  object randtype = faction_ships.getRandomCapitol (fac);
+		  def = launch.launch_wave_around_unit ("Halo",fac,randtype,"default",1,2000.0,2500.0,temp);		  
+		  _string.delete (fac);
+		}
+		defendee = _unit.getContainer (def);
+	      }
+	      object base = _unit.getUnitFromContainer (defendee);
 	      if (_std.isNull(base)) {
 		if (defend) {
 		  FailMission(you);
@@ -153,18 +184,20 @@ module attack_jumppoint {
 		if (quantity>0) {
 		  GenerateEnemies (base,you);
 		}
-		if (targetiter>_olist.size(attackers)) {
+		if (targetiter>=_olist.size(attackers)) {
 		  targetiter=0;
 		}else {
 		  object cont =  _olist.at (attackers,targetiter);
 		  object un = _unit.getUnitFromContainer (cont);
 		  if (!_std.isNull(un)) {
 		    if (defend) {
+		      //		      _io.printf ("targetting base");
 		      _unit.setTarget (un,base);
 		    }else {
 		      _unit.setTarget (un,you);
 		    }
 		  }
+		  targetiter=targetiter+1;
 		}
 		if (NoEnemiesInArea (base)) {
 		  SuccessMission(you);

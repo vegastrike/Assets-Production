@@ -88,7 +88,7 @@ module launch {
     return un;
   };
   object launch_wave_around_significant (object fgname,object faction,object type,object ai,int nr_ships,float minradius, float maxradius,int significant_number) {
-    object significant_unit=unit.getSignificant(significant_number,false);
+    object significant_unit=unit.getSignificant(significant_number,false,false);
     if (_std.isNull(significant_unit)) {
       significant_unit = _unit.getPlayer();
     }
