@@ -83,7 +83,7 @@
 			<Cargo file="radar_open_bsd" price="140000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="radar_free_bsd" price="160000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1"/>
-			<Cargo file="cloaking_device" price="259000" quantity="1" mass="8.9" volume="1"/>
+			<Cargo file="cloaking_device" price="259000" quantity="1" mass="0.01" volume="1"/>
 		</Category>
 		<Category file="Small_Arms_and_Armor">
 			 <Cargo file="weapons" price="32" quantity="1" mass=".02" volume="1"/>	
@@ -152,7 +152,7 @@
 			<Cargo file="DiLithium" price="13.5" quantity="1" mass="0.04" volume="1"/>
 			<Cargo file="TriLithium" price="63.5" quantity="1" mass="0.06" volume="1"/>
 			<Cargo file="Carbon" price="2" quantity="1" mass="0.02" volume="1"/>
-			<Cargo file="Crystalized Carbon" price="35" quantity="1" mass="0.02" volume="1"/>                		<Cargo file="Hydrogen" price="14" quantity="1" mass="0.001" volume="1"/>
+			<Cargo file="Crystalized Carbon" price="35" quantity="1" mass="0.02" volume="1"/>                		        <Cargo file="Hydrogen" price="14" quantity="1" mass="0.001" volume="1"/>
 			<Cargo file="Oxygen" price="13" quantity="1" mass="0.001" volume="1"/>
                 </Category>
 		<Category file="Waste">
@@ -187,7 +187,18 @@
 			<Cargo file="human_organs" price="325" quantity="1" mass="0.02" volume="1"/>
 		</Category>
 		<category file="software">
-
+			<Cargo file="RedHat Linux" price="50"/>
+			<Cargo file="Mandrake Linux" price="45"/>
+			<Cargo file="SuSe Linux" price="40"/>
+			<Cargo file="Debian Linux" price="10"/>
+			<Cargo file="OpenBSD" price="50"/>
+			<Cargo file="RedHat Linux" price="10"/>
+			<Cargo file="iBSD" price="150"/>
+			<Cargo file="FreeBSD" price="60"/>
+			<Cargo file="Wind0ws Personal Edition" price="200"/>
+			<Cargo file="Wind0ws Advanced Server" price="700"/>
+			<Cargo file="Wind0ws More Advanced Server" price="800"/>
+			<Cargo file="Wind0ws Advanced Server No Paperclip" price="900"/>
 		</category>
 		<category file="science">
 			<Cargo file="scientific_research" price="590" quantity="1" mass="0.02" volume="1"/>
@@ -209,20 +220,7 @@
 		</Category>
 		<Category file="plot_cargo">
 		</Category>
-		<Category file="classified">
-			<Cargo file="classified_military_logs" price="284000" quantity="14" mass=".01" volume="1"/>
-			<Cargo file="classified_military_plans" price="598400" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="classified_military_report" price="360000" quantity="4" mass=".05" volume="1"/>
-			<Cargo file="classified_cargo_crate" price="980000" quantity="8" mass="10" volume="4"/>
-			<Cargo file="classified_cargo_barrel" price="980000" quantity="8" mass="10" volume="4"/>
-			<Cargo file="classified_junk" price="91020" quantity="10" mass="5.1" volume="10"/>
-			<Cargo file="classified_military_junk" price="98364" quantity="2" mass="5.1" volume="10"/>
-		</Category>
-		<Category file="experemental_weapons">
-		</Category>
-		<Category file="experemental_devices">
-		</Category>
-		<Category file="plot_cargo">
+		<Category file="Misc">
 		</Category>
 	</Hold>
 </Unit>
