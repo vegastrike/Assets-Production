@@ -41,20 +41,25 @@ class waitjump(VS.PythonAI):
 		if quest_contraband_truck.truck_exit == 1:
 			self.trucktarget = ((self.GetParent()).GetTarget())
 			self.count = 0
-			self.getJumppoint(self.trucktarget,self.GetParent())
+#			self.getJumppoint(self.trucktarget,self.GetParent())
+#			if (self.trucktarget.isNull()):
+#				print "flagrant system error"
+			self.GetParent().SetTarget(universe.getRandomJumppoint())
+			self.trucktarget = ((self.GetParent()).GetTarget())
+			self.trucktarget_locat = self.trucktarget.Position()
 # starts him afterburning to target
-			self.GetParent().MoveTo(self.trucktarget,1)
-#			self.GetParent().AddReplaceLastOrder(1)
+			self.MoveTo(self.trucktarget_locat,1)
+			self.AddReplaceLastOrder(1)
 			if self.timer == 0:
 				self.timer = VS.GetGameTime()
 				print "Timer Set"
 			elif self.timer + 20 < VS.GetGameTime():
 # gets him to auto to the jump and jump out
 				self.GetParent().ActivateJumpDrive(0)
-				self.GetParent().AddReplaceLastOrder(1)
+#				self.GetParent().AddReplaceLastOrder(1)
 				print "should be go for good!................now!!!"
-			print "should be go................now!!!"
-			sys.stdout.write('Should be working...')
+#			print "should be go................now!!!"
+#			sys.stdout.write('Should be working...')
 #			sys.stdout.write('h')
 			return 1
 		return 1
