@@ -43,6 +43,7 @@ module cargo_mission {
 	    quantity = _unit.addCargo(you,cargoname        ,_olist.at(list,1),_olist.at(list,2),_olist.at(list,3),_olist.at(list,4),_olist.at(list,5));  //ADD CARGO HERE
 	    object name = _unit.getName (you);
 	    _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
+	    _string.delete (name);
 	  } else {
 	    //don't destroy--somethign else went wrong
 	    _std.terminateMission (false);
@@ -145,10 +146,12 @@ module cargo_mission {
 		object str = _string.new();
 		object name = _unit.getName (newun);
 		_io.sprintf(str,"You must drop your cargo off with the %s unit.",name);
+		_string.delete (name);
 		_io.message (0,"game","all",str);
 		if (capship) {
 		  name=_unit.getName(significant);
 		  _io.sprintf(str,"It is docked around the %s landmark.",name);
+		  _string.delete (name);
 		  _io.message (0,"game","all",str);
 		  
 		}

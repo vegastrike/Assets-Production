@@ -56,6 +56,7 @@ module escort_mission {
     object str =_string.new();
     object nam =_unit.getName(un);
     _io.sprintf (str,"This is the %s starship, %s.  Your orders are to ensure that our Freighter arrives here in tact!",faction, nam);
+    _string.delete (nam);
     _io.message (0,"game","all",str);
     _string.delete (str);
   };
@@ -69,10 +70,36 @@ module escort_mission {
     }
     return false;
   };
+  void destroy() {
+    _io.printf ("mission terminated");
+    _string.delete (piratesstring);
+    if (!_std.isNull(youcontainer)) {
+      _unit.deleteContainer (youcontainer);
+      _std.setNull(youcontainer);
+    }
+    if (!_std.isNull(escortee)) {
+      _unit.deleteContainer (escortee);
+      _std.setNull(escortee);
+    }
+    _string.delete (beginningSystem);
+    _string.delete (faction);
+    if (!_std.isNull(destination)) {
+      _unit.deleteContainer (destination);
+      _std.setNull(destination);
+    }
+    if (!_std.isNull (basecontainer)) {
+      _unit.deleteContainer (basecontainer);
+      _std.setNull(basecontainer);
+    }
+  };
   void init (int factionname, int missiondifficulty, float our_dist_from_jump, float dist_from_jump, float distance_from_base, float creds, float enemy_time, bool AllInThisSystem) {
     
 	  faction_ships.init();
 	  piratesstring = _string.new();
+	  _std.setNull(youcontainer);
+	  _std.setNull(escortee);
+	  _std.setNull(destination);
+	  _std.setNull(basecontainer);
 	  _io.sprintf (piratesstring,"pirates");
 	  intra_system=AllInThisSystem;
 	  enemytime=enemy_time;
@@ -95,7 +122,9 @@ module escort_mission {
 	  if (!_std.isNull(you)) {
 	    object nam = _unit.getName(you);
 	    _io.sprintf(str,"Good Day, %s. Our %s ship near the",nam,faction);
+	    _string.delete (nam);
 	  } else {
+	    
 	    _std.terminateMission (false);
 	    return;
 	  }
@@ -105,6 +134,7 @@ module escort_mission {
 	    destination = _unit.getContainer (destpoint);
 	    object jnam=_unit.getName (destpoint);
 	    _io.sprintf(str,"%s jump point. Requires assistance",jnam);
+	    _string.delete (jnam);
 	    _io.message (2,"game","all",str);
 	    if (!intra_system) {
 
@@ -145,6 +175,7 @@ module escort_mission {
 	      _io.message (0,"game","all","These waters aren't as friendly as some skies.");
 	    }
 	    _unit.addCredits(play,cred);
+	    destroy();
 	    _std.terminateMission(true);
 	  } else {
 	    _io.message (0,"game","all","You did not follow through on your end of the deal.");
@@ -171,6 +202,7 @@ module escort_mission {
 		}
 	      }
 	    }
+	    destroy();
 	    _std.terminateMission(false);
 
 	  }
@@ -189,6 +221,7 @@ module escort_mission {
 	    }else {
 	      object randtype = faction_ships.getRandomFighterInt(random.randomint(0,faction_ships.getMaxFactions()-1));
 	      launched = launch.launch_wave_around_unit ("XShadowX","pirates",randtype,"default",difficulty+1,4500.0,esc);
+	      //launched = launch.launch_wave_around_unit ("XShadowX","pirates","revoker","default",difficulty+1,4500.0,esc);
 	    }
 	    if (!_std.isNull (launched)) {
 	      _unit.setTarget(launched,esc);
@@ -216,6 +249,7 @@ module escort_mission {
 	void loop () {
 	  object play = _unit.getUnitFromContainer (youcontainer);
 	  if (_std.isNull(play)) {
+	    destroy();
 	    _std.terminateMission(false);
 	    return;
 	  }
@@ -226,6 +260,7 @@ module escort_mission {
 		ActivateStage1(jumppoint);
 	      }
 	    }else {
+	      destroy();
 	      _std.terminateMission(false);
 	      return;
 	    }

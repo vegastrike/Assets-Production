@@ -17,7 +17,7 @@ module bounty {
 	bool istarget;
 	void destroy () {
 	  _string.delete (faction);
-	  //DO NOT DELETE...internal member of unit	  _string.delete (destination);
+	  _string.delete (destination);
 	  if (!_std.isNull(sigcont)) {
 	    _unit.deleteContainer (sigcont);
 	  }
@@ -29,6 +29,7 @@ module bounty {
 	  }
 	};
 	void init (int numsystemsaway, float creds) {
+	  _std.setNull(newship);
 	  _std.setNull(sigcont);
 	  _std.setNull(enemycontainer);
 	  _std.setNull(youcontainer);
@@ -50,9 +51,12 @@ module bounty {
 	      int factionname=random.randomint(0,faction_ships.getMaxFactions());
 	      faction=faction_ships.intToFaction(factionname);
 	    }
+	    _string.delete (name);
 	    name=_unit.getName(you);
+
 	    object str = _string.new();
 	    _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
+	    _string.delete (name);
 	    _io.message (0,"game","all",str);
 	    _io.message (0,"game","all","In order to get to your destination, you must:");
 	    destination=universe.getAdjacentSystem (sysfile,numsystemsaway);
@@ -131,7 +135,9 @@ module bounty {
 	  } else if (arrived==1) {
 	    object significant=_unit.getUnitFromContainer(sigcont);
 		if (_unit.getDistance(you,significant)<5000.0) {
-	      newship=faction_ships.getRandomFighter(faction);
+		  if (_std.isNull(newship)) {
+		    newship=faction_ships.getRandomFighter(faction);
+		  }
 	      enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,4000.0,significant);
 	      enemycontainer=_unit.getContainer(enemy);
 	      if (!_std.isNull(enemy)) {
