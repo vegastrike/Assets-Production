@@ -81,6 +81,9 @@
 		<Category file="Electronics">
 			<import price="1.1" pricestddev=".1" quantity="5" quantitystddev="2"/>
 		</Category>
+		<Category file="Electronics/Bionics">
+			<import price=".87" pricestddev=".1" quantity="15" quantitystddev="25"/>
+		</Category>
 		<Category file="Electronics/Robotics">
 			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
 		</Category>
