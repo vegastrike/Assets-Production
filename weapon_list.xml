@@ -1,4 +1,6 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
  <Weapons>
+
 <Bolt name="Laser" mountsize="light"> 
 <Energy rate="4" stability="4" refire=".3">
 </Energy>
@@ -21,7 +23,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="KtekBeam" mountsize="light"> 
+<Beam name="KtekBeam" mountsize="heavy"> 
 <Energy rate="50" stability="8" refire=".5">
 </Energy>
 <Damage rate="100" longrange=".5">
@@ -32,7 +34,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="UnknownBeam" > 
+<Beam name="UnknownBeam" mountsize="heavy"> 
 <Energy rate="80" stability="14" refire="2">
 </Energy>
 <Damage rate="40" phasedamage="50" longrange=".5">
@@ -42,8 +44,9 @@
 <Appearance file="weapons/unknown_beam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a="1" >
 </Appearance>
 </Beam>
+
 <!-- below has no mountsize to fit on any ship -->
-<Bolt name="UnknownBolt"> 
+<Bolt name="UnknownBolt" mountsize="medium"> 
 <Energy rate="40" stability="6" refire=".7">
 </Energy>
 <Damage rate="0" phasedamage="50" longrange=".8">
@@ -53,6 +56,7 @@
 <Appearance file="weapons/unknown_bolt.png" soundwav="Neutron.wav" r=".5" g="1" b=".5" a=".8" >
 </Appearance>
 </Bolt>
+
 <Bolt name="Unknown" mountsize="heavy"> 
 <Energy rate="45" stability="6" refire=".7">
 </Energy>
@@ -65,7 +69,7 @@
 </Bolt>
 
 
-<Bolt name="Ktek" mountsize="heavy"> 
+<Bolt name="Ktek" mountsize="light"> 
 <Energy rate="20" stability="8" refire=".15">
 </Energy>
 <Damage rate="20" longrange=".5">
@@ -76,54 +80,9 @@
 </Appearance>
 </Bolt>
 
+<Beam name="IonBeam" mountsize="light"><Energy rate="30" stability="10" refire=".4"></Energy><Damage rate="90" longrange=".4"></Damage><Distance speed="140" radialspeed="1" radius=".8" length="1.5" pulsespeed="15" range="200"></Distance><Appearance file="weapons/pulsebeam.png" soundwav="beam.wav" r="0" g=".5" b=".9" a=".9"></Appearance></Beam>
+<Beam name="HvyIonBeam" mountsize="Heavy"><Energy rate="80" stability="5" refire=".2"></Energy><Damage rate="140" longrange=".1"></Damage><Distance speed="200" radialspeed="2" radius=".6" length="1.5" pulsespeed="20" range="100"></Distance><Appearance file="weapons/hvyionbeam.png" soundwav="beam.wav" r=".2" g=".4" b=".6" a=".5"></Appearance></Beam>
 
-
-
-<Beam name="IonBeam" mountsize="light">
-<Energy rate="30" stability="10" refire=".4">
-</Energy>
-<Damage rate="90" longrange=".4">
-</Damage>
-<Distance speed="140" radialspeed="1" radius=".8" length="1.5" pulsespeed="15" range="200">
-</Distance>
-<Appearance file="weapons/pulsebeam.png" soundwav="beam.wav" r="0" g=".5" b=".9" a=".9">
-</Appearance>
-</Beam>
-
-<Beam name="HvyIonBeam" mountsize="Heavy">
-<Energy rate="80" stability="5" refire=".2">
-</Energy>
-<Damage rate="140" longrange=".1">
-</Damage>
-<Distance speed="200" radialspeed="2" radius=".6" length="1.5" pulsespeed="20" range="100">
-</Distance>
-<Appearance file="weapons/hvyionbeam.png" soundwav="beam.wav" r=".2" g=".4" b=".6" a=".5">
-</Appearance>
-</Beam>
-
-
-
-<Missile name="Dumbfire" mountsize="light-missile">
-<Energy rate="0" stability="6" refire=".2">
-</Energy>
-<Damage rate="150" longrange="1">
-</Damage>
-<Distance speed="160" radialspeed=".8" radius=".3" pulsespeed="15" range="3000" >
-</Distance>
-<Appearance file="dumbfire" soundwav="missile_3.wav">
-</Appearance>
-</Missile>
-
-<Missile name="HeatSeeker" mountsize="light-missile">
-<Energy rate="0" stability="6" refire=".4">
-</Energy>
-<Damage rate="100" longrange="1">
-</Damage>
-<Distance speed="140" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
-</Distance>
-<Appearance file="heatseek" soundwav="missile_3.wav">
-</Appearance>
-</Missile>
 
 <Bolt name="Particle" mountsize="medium"> 
 <Energy rate="11" stability="2" refire=".55">
@@ -158,7 +117,7 @@
 </Appearance>
 </Ball>
 
-<Bolt name="Meson" mountsize="light"> 
+<Bolt name="Meson" mountsize="medium"> 
 <Energy rate="8" stability="6" refire=".4">
 </Energy>
 <Damage rate="32" longrange="1">
@@ -180,17 +139,6 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Swarm" mountsize="Special-Missile"> 
-<Energy rate="0" stability="0" refire=".1">
-</Energy>
-<Damage rate="20" longrange="1">
-</Damage>
-<Distance speed="200" radialspeed=".8" radius="5" length="20" pulsespeed="15" range="750" >
-</Distance>
-<Appearance file="weapons/swarm.png" soundwav="missile_3.wav" r="1" g="1" b="1" a="1" >
-</Appearance>
-</Bolt>
-
 <Bolt name="CapshipDisruptor" mountsize="capship-light"> 
 <Energy rate="150" stability="6" refire="1.5">
 </Energy>
@@ -202,40 +150,8 @@
 </Appearance>
 </Bolt>
 
-<Missile name="Torpedo" mountsize="heavy-missile">
-<Energy rate="0" stability="6" refire="2">
-</Energy>
-<Damage rate="1250" longrange="1">
-</Damage>
-<Distance speed="600" radialspeed=".8" radius=".7" pulsespeed="15" range="1000" >
-</Distance>
-<Appearance file="heatseek" soundwav="missile_3.wav">
-</Appearance>
-</Missile>
 
-<Missile name="Leech" mountsize="special-missile">
-<Energy rate="0" stability="6" refire=".5">
-</Energy>
-<Damage rate="-.5" longrange="1">
-</Damage>
-<Distance speed="1000" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
-</Distance>
-<Appearance file="leech" >
-</Appearance>
-</Missile>
-
-<Missile name="Mace" mountsize="heavy-missile">
-<Energy rate="0" stability="6" refire="1">
-</Energy>
-<Damage rate="800" longrange=".5">
-</Damage>
-<Distance speed="800" radialspeed=".8" radius=".3" pulsespeed="15" range="800" >
-</Distance>
-<Appearance file="dumbfire" >
-</Appearance>
-</Missile>
-
-<Bolt name="Anihilator" mountsize="medium"> 
+<Bolt name="Anihilator" mountsize="heavy"> 
 <Energy rate="150" stability="8" refire="2">
 </Energy>
 <Damage rate="175" longrange="1">
@@ -246,7 +162,7 @@
 </Appearance>
 </Bolt>
 
-<Ball name="Fussion" mountsize="medium"> 
+<Ball name="Fussion" mountsize="capship-medium"> 
 <Energy rate="400" refire="6">
 </Energy>
 <Damage rate="800" longrange=".7">
@@ -257,7 +173,7 @@
 </Appearance>
 </Ball>
 
-<Bolt name="Vaporisator" mountsize="medium"> 
+<Bolt name="Vaporisator" mountsize="capship-light"> 
 <Energy rate="300" refire="1.5">
 </Energy>
 <Damage rate="600" longrange=".8">
@@ -268,7 +184,7 @@
 </Appearance>
 </Bolt>
 
-<Beam name="LR_Beam" mountsize="heavy"> 
+<Beam name="LR_Beam" mountsize="capship-light"> 
 <Energy rate="3" stability="14" refire="8">
 </Energy>
 <Damage rate="300" longrange=".9">
@@ -279,7 +195,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="LR_BeamHvy" mountsize="heavy"> 
+<Beam name="LR_BeamHvy" mountsize="capship-medium"> 
 <Energy rate="5" stability="16" refire="10">
 </Energy>
 <Damage rate="500" longrange=".7">
@@ -303,7 +219,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Ion" mountsize="heavy"> 
+<Bolt name="Ion" mountsize="medium"> 
 <Energy rate="16"  refire=".65">
 </Energy>
 <Damage rate="54" longrange="1">
@@ -314,7 +230,7 @@
 </Appearance>
 </Bolt>
 
-<Beam name="DisruptorBeam" mountsize="medium"> 
+<Beam name="DisruptorBeam" mountsize="heavy"> 
 <Energy rate="14" stability="6" refire=".6">
 </Energy>
 <Damage rate="84" longrange=".5">
@@ -329,7 +245,7 @@
 <Bolt name="Tachyon" mountsize="heavy"> 
 <Energy rate="8" stability="6" refire=".4">
 </Energy>
-<Damage rate="37" longrange="1">
+<Damage rate="57" longrange="1">
 </Damage>
 <Distance speed="250" radialspeed=".8" radius="1.2" length="5" pulsespeed="15" range="425" >
 </Distance>
@@ -374,7 +290,7 @@
 <Bolt name="Antimatter" mountsize="capship-light"> 
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
-<Damage rate="6" longrange="1">
+<Damage rate="250" longrange="1">
 </Damage>
 <Distance speed="300" radialspeed=".8" radius="1.2" length="5" pulsespeed="15" range="800" >
 </Distance>
@@ -382,16 +298,6 @@
 </Appearance>
 </Bolt>
 
-<Beam name="Stormfire" mountsize="special"> 
-<Energy rate="1" stability="6" refire=".3">
-</Energy>
-<Damage rate="6" longrange="1">
-</Damage>
-<Distance speed="300" radialspeed=".8" radius="1.2" pulsespeed="15" range="800" >
-</Distance>
-<Appearance file="weapons/beamtexture.png" soundwav="MASS.WAV" r="1" g=".5" b=".5" a="1" >
-</Appearance>
-</Beam>
 
 <Beam name="LeechGun" mountsize="special"> 
 <Energy rate="1" stability="6" refire=".3">
@@ -415,14 +321,96 @@
 </Appearance>
 </Beam>
 
+
+<!-- Missile -->
+
+<Missile name="Dumbfire" mountsize="light-missile">
+<Energy rate="0" stability="6" refire=".2">
+</Energy>
+<Damage rate="150" longrange="1">
+</Damage>
+<Distance speed="160" radialspeed=".8" radius=".3" pulsespeed="15" range="3000" >
+</Distance>
+<Appearance file="dumbfire" soundwav="missile_3.wav">
+</Appearance>
+</Missile>
+
+<Missile name="HeatSeeker" mountsize="light-missile">
+<Energy rate="0" stability="6" refire=".4">
+</Energy>
+<Damage rate="100" longrange="1">
+</Damage>
+<Distance speed="140" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
+</Distance>
+<Appearance file="heatseek" soundwav="missile_3.wav">
+</Appearance>
+</Missile>
+
+
+<Bolt name="Swarm" mountsize="Special-Missile"> 
+<Energy rate="0" stability="0" refire=".1">
+</Energy>
+<Damage rate="20" longrange="1">
+</Damage>
+<Distance speed="200" radialspeed=".8" radius="5" length="20" pulsespeed="15" range="750" >
+</Distance>
+<Appearance file="weapons/swarm.png" soundwav="missile_3.wav" r="1" g="1" b="1" a="1" >
+</Appearance>
+</Bolt>
+
+<Bolt name="Stormfire" mountsize="Special-Missile"> 
+<Energy rate="0" stability="0" refire=".001">
+</Energy>
+<Damage rate="5" longrange="1">
+</Damage>
+<Distance speed="600" radialspeed=".8" radius=".5" pulsespeed="15" range="500" >
+</Distance>
+<Appearance file="weapons/beam.png" soundwav="MASS.WAV" r="1" g=".5" b=".5" a="1" >
+</Appearance>
+</Bolt>
+
+<Missile name="Torpedo" mountsize="heavy-missile">
+<Energy rate="0" stability="6" refire="2">
+</Energy>
+<Damage rate="1250" longrange="1">
+</Damage>
+<Distance speed="40" radialspeed=".8" radius=".7" pulsespeed="15" range="5000" >
+</Distance>
+<Appearance file="heatseek" soundwav="missile_3.wav">
+</Appearance>
+</Missile>
+
+<Missile name="Leech" mountsize="special-missile">
+<Energy rate="0" stability="6" refire=".5">
+</Energy>
+<Damage rate="-.5" longrange="1">
+</Damage>
+<Distance speed="100" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
+</Distance>
+<Appearance file="leech" >
+</Appearance>
+</Missile>
+
+<Missile name="Mace" mountsize="heavy-missile">
+<Energy rate="0" stability="6" refire="1">
+</Energy>
+<Damage rate="600" phasedamage="250" longrange="1">
+</Damage>
+<Distance speed="80" radialspeed=".8" radius=".3" pulsespeed="15" range="5000" >
+</Distance>
+<Appearance file="dumbfire" >
+</Appearance>
+</Missile>
+
+
 <Missile name="PorcupineMine" mountsize="medium-missile">
 <Energy rate="0" stability="6" refire=".2">
 </Energy>
 <Damage rate="45" longrange="1">
 </Damage>
-<Distance speed="10" radialspeed=".8" radius="1.2" pulsespeed="15"range="15000" >
+<Distance speed="1" radialspeed=".8" radius="1.2" pulsespeed="15" range="10000" >
 </Distance>
-<Appearance file="dumbfire" >
+<Appearance file="pmine" >
 </Appearance>
 </Missile>
 
@@ -431,7 +419,7 @@
 </Energy>
 <Damage rate="2500" longrange="1">
 </Damage>
-<Distance speed="500" radialspeed=".8" radius="1.2" pulsespeed="15" range="10000" >
+<Distance speed="10" radialspeed=".8" radius="1.2" pulsespeed="15" range="10000" >
 </Distance>
 <Appearance file="dumbfire" >
 </Appearance>
@@ -454,7 +442,7 @@
 </Energy>
 <Damage rate="75" longrange="1">
 </Damage>
-<Distance speed="125" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
+<Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
 </Distance>
 <Appearance file="friendorfoe" >
 </Appearance>
