@@ -11,18 +11,18 @@
 	</Thrust>
 	<Sound></Sound>
 	<Defense>
-		<Armor front="80" right="80" left="80" back="80"/>
-		<Shields front="130" back="130" recharge="9.333333"/>
-		<Hull strength="110"/>
+		<Armor front="400" right="400" left="400" back="400"/>
+		<Shields front="600" back="600" right="600" left="600" recharge="40"/>
+		<Hull strength="250"/>
 		<Cloak cloakmin=".01" cloakrate=".2" cloakenergy="0"/>
 	</Defense>
-	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
+	<Stats mass="6" momentofinertia="6" fuel="20000"></Stats>
 	<Computer yaw="33" pitch="0" roll="0000" afterburner="000000" maxspeed="00000">
 		<Radar itts="true" range="90000" color="true" error="0" lockcone="0.1"/>
 	</Computer>
 
 	<Energy>
-		<Reactor recharge="10" limit="10"/>
+		<Reactor recharge="30" limit="30"/>
 	</Energy>
 	<Subunit file="turret_capship_dreadnaughtblend_guns" y="1" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1" restricted="0"/>  
 	
