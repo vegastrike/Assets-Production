@@ -24,10 +24,11 @@
 	</planet>
 	<unit name= "Victory"  file="drydock" faction="confed" x="28000"  position="100">
 	</unit>
-	<unit name= "Victory"  file="ConfedHq" faction="confed" x="27000"  velocity="0" position="100">
+	<unit name= "Victory"  file="MiningBase" faction="confed"   velocity="0" x="30000" z="-10000" position="100">
 	</unit>
-	<asteroid  name= "Victory"  file="AFieldJumpSparse" faction="neutral" x="30000" z="-10000"  velocity="0" position="100" difficulty=".25"></asteroid>
-	<planet  name= "JumpToSol"  file="jump.png" radius="100" faction="neutral" x="30000" z="-10000"  velocity="0" position="100" destination="sol_sector/sol"></planet>
+	<asteroid  name= "Victory"  file="AFieldBaseThin" faction="neutral" x="30000" z="-10000"  velocity="0" position="100" difficulty=".25"></asteroid>
+
+	<planet  name= "JumpToSol"  file="jump.png" radius="100" faction="neutral" x="27000" z="0000"  velocity="0" position="100" destination="sol_sector/sol"></planet>
 	<nebula nebfile="red-nebula.xml" file="nebula" x="42000" position="100"/>
 	<unit name= "Victory"  file="station" faction="confed" x="24000"  velocity="0" position="100">	</planet>
 	</unit>
