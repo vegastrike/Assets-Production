@@ -22,6 +22,11 @@
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
 
+                <flightgroup name="thuna" faction="confed" type="firefly" ainame="_ai_stationary" waves="8" nr_ships="4">
+			<pos offset="blue" x="000.0" y="-100.0" z="100.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
                 <flightgroup name="makkarel" faction="confed" type="tian" ainame="_ai_stationary" waves="8" nr_ships="4">
 			<pos offset="blue" x="000.0" y="00.0" z="100.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>

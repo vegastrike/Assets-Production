@@ -44,9 +44,9 @@ module ai_flyto_waypoint {
 
     //    abort_range=100.0;
 
-    _io.printf("Waypoint: ");
-    vec3.print(waypoint);
-    _io.printf(" vel=%f  range=%f\n",vel,abort_range);
+    //_io.printf("Waypoint: ");
+    //vec3.print(waypoint);
+    //_io.printf(" vel=%f  range=%f\n",vel,abort_range);
     
     vel=vel*100.0;
 
@@ -60,7 +60,7 @@ module ai_flyto_waypoint {
     //        _io.printf("distance=%f\n",dist);
 
     if(dist<abort_range){
-      _io.printf("distance smaller\n");
+      // _io.printf("distance smaller\n");
       _order.eraseOrder(my_order,last_head_order);
       _order.eraseOrder(my_order,last_move_order);
       
@@ -78,7 +78,7 @@ module ai_flyto_waypoint {
   };
 
   void quitai(){
-    _io.printf("ai_flyto_waypoints1 quitting\n");
+    //_io.printf("ai_flyto_waypoints1 quitting\n");
   };
 
 }
