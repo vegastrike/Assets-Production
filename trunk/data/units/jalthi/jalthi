@@ -18,6 +18,7 @@
 	</Thrust>
 	<Sound></Sound>
 	<Defense>
+		<Cloak/>
 		<Armor front="20" right="17" left="17" back="10"/>
 		<Shields front="160" back="160" recharge="2.500000"/>
 		<Hull strength="200"/>
