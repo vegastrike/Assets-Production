@@ -504,6 +504,24 @@ void make_ships_list(bool use_blank){
 
     unknown_ships=_olist.new();
     _olist.push_back(unknown_ships,"unknown_active");    
+
+    if (use_blank) {
+      int i=0;
+      while (i<_olist.size (fighters)) {
+	object f = _olist.at (fighters,i);
+	int j=0;
+	while (j<_olist.size (f)) {
+	  _io.printf ("reforming list");
+	  object str = _olist.at (f,j);
+	  object bak = _string.new();
+	  _io.sprintf (bak,"%s.blank",str);
+	  _io.sprintf (str,"%s",bak);
+	  _string.delete (bak);
+	  j=j+1;
+	}
+	i=i+1;
+      }
+    }
   };
   
   object getRandomShipType(object ship_list){
