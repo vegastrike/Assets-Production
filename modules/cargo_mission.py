@@ -208,8 +208,8 @@ class cargo_mission (Director.Mission):
 	    if (self.capship):
 	      dockstr="dock"
 	      capstr="ship"
-	    self.adjsys.Print("You must visit the %%s %s" % (capstr),"cargo mission",", docked around the %s",5)
-	    VS.IOmessage(6,"cargo mission",self.mplay,"Once there, %s and we will transport the cargo off of your ship." % (dockstr))
+	    self.adjsys.Print("You must visit the %%s %s" % (capstr),"cargo mission",", docked around the %s",0)
+	    VS.IOmessage(0,"cargo mission",self.mplay,"Once there, %s and we will transport the cargo off of your ship." % (dockstr))
 	    self.base=self.adjsys.SignificantUnit()
 
 def initrandom (factionname, missiondifficulty,creds_per_jump, launchoncapship, sysmin, sysmax, time_to_complete, category):
