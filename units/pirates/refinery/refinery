@@ -107,7 +107,7 @@
 		<Category file="Contraband/Medical">
 			<import price=".8" pricestddev=".3" quantity="34" quantitystddev="12"/>
 		</Category>
-		<Category file="starships/Aera/Heavy">
+<!--		<Category file="starships/Aera/Heavy">
 			<import price="1.2" pricestdev=".1" quantity="-25" quantitystddev="26" />
 		</Category>
 		<Category file="starships/Rlaan/Heavy">
@@ -127,7 +127,7 @@
 		</Category>
 		<Category file="starships/Militia/Heavy">
 			<import price="1.1" pricestdev=".1" quantity="-50" quantitystddev="55" />
-		</Category>
+		</Category>-->
 		<Category file="starships/Merchant/Heavy">
 			<import price="1" pricestdev=".1" quantity="-50" quantitystddev="55" />
 		</Category>
