@@ -32,6 +32,7 @@ class go_somewhere_significant:
           significant=you
         self.orbitee="%s" % (significant.getName())
         self.capship=1
+        print "orbitee %s " % self.orbitee
         significant=launch.launch_wave_around_unit("Base",capshipfaction,newship,"sitting_duck",1,2000.0,5000.0,significant,"")
     else:
       significant = universe.getRandomJumppoint ()
