@@ -139,7 +139,7 @@ module bounty {
 	      if (_std.isNull(newship)) {
 		newship=faction_ships.getRandomFighter(faction);
 	      }
-	      enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,4000.0,significant);
+	      enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,3000.0,4000.0,significant);
 	      enemycontainer=_unit.getContainer(enemy);
 	      if (!_std.isNull(enemy)) {
 		if (runaway) {
@@ -172,7 +172,7 @@ module bounty {
 	      } else {
 		if (isSig) {	//ADD OTHER JUMPING IF STATEMENT CODE HERE
 		} else {
-		  enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,1000.0,significant);
+		  enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,500.0,1000.0,significant);
 		  enemycontainer=_unit.getContainer(enemy);
 		  _unit.setTarget(you,enemy);
 		  arrived=2;

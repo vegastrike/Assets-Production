@@ -34,9 +34,9 @@ module random_encounters {
       int numship= random.randomint (1,gen_num_ships);
       object rnd= faction_ships.getRandomFighterInt(fac);
       object myfaction = faction_ships.intToFaction(fac);
-      object launched = launch.launch_wave_around_unit("privateer",myfaction,rnd,"default",numship,generation_distance,un);
+      object launched = launch.launch_wave_around_unit("privateer",myfaction,rnd,"default",numship,200.0,generation_distance,un);
       if ((_std.Rnd())<capship_prob) {
-	launched=launch.launch_wave_around_unit("privateer",myfaction,rnd,"default",1,generation_distance,un);
+	launched=launch.launch_wave_around_unit("privateer",myfaction,rnd,"default",1,200.0,generation_distance,un);
       }
       i=i+1;
     }

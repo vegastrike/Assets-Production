@@ -37,7 +37,7 @@ module escort_mission {
   };
   void ActivateStage1 (object jumppoint) {
     object escname=faction_ships.getRandomFighter("merchant");
-    object esc =launch.launch_wave_around_unit("Base",faction,escname,"default",1,distfromjump,jumppoint);
+    object esc =launch.launch_wave_around_unit("Base",faction,escname,"default",1,distfromjump*0.5,distfromjump,jumppoint);
     AddCargoToUnit(esc,100);
     _unit.setName(esc,"Freighter");
     _unit.setTarget (esc,jumppoint);
@@ -50,7 +50,7 @@ module escort_mission {
   void ActivateStage2 (object esc) {
     //esc is not null when we are here
     object capname = faction_ships.getRandomCapitol(faction);
-    object un = launch.launch_wave_around_unit ("base",faction,capname,"default",1,distfrombase,esc);
+    object un = launch.launch_wave_around_unit ("base",faction,capname,"default",1,distfrombase,distfrombase,esc);
     basecontainer = _unit.getContainer (un);
     stage=2;
     object str =_string.new();
@@ -188,7 +188,7 @@ module escort_mission {
 	      object un;
 	      while (i<difficulty) {
 		un=faction_ships.getRandomFighter(faction);
-		object newunit=launch.launch_wave_around_unit("Shadow", faction, un, "default", 1, 1000.0,play);
+		object newunit=launch.launch_wave_around_unit("Shadow", faction, un, "default", 1,1000.0, 1000.0,play);
 		_unit.setTarget(newunit,play);
 		i=i+1;
 		
@@ -217,10 +217,10 @@ module escort_mission {
 	    object launched;
 	    if (_string.equal(piratesstring,faction)) {
 	      object randomtype = faction_ships.getRandomFighter ("confed");
-	      launched = launch.launch_wave_around_unit("XShadowX","confed",randomtype,"default",difficulty+1,4000.0,esc);
+	      launched = launch.launch_wave_around_unit("XShadowX","confed",randomtype,"default",difficulty+1,200.0,4000.0,esc);
 	    }else {
 	      object randtype = faction_ships.getRandomFighterInt(random.randomint(0,faction_ships.getMaxFactions()-1));
-	      launched = launch.launch_wave_around_unit ("XShadowX","pirates",randtype,"default",difficulty+1,4500.0,esc);
+	      launched = launch.launch_wave_around_unit ("XShadowX","pirates",randtype,"default",difficulty+1,200.0,4500.0,esc);
 	      //launched = launch.launch_wave_around_unit ("XShadowX","pirates","revoker","default",difficulty+1,4500.0,esc);
 	    }
 	    if (!_std.isNull (launched)) {
