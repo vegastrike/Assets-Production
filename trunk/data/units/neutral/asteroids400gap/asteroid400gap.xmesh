@@ -17576,4 +17576,6 @@
 </Material>
 <LOD meshfile="asteroid400gap.lod1.xmesh" size="40000"/>
 <LOD meshfile="asteroid400gap.lod2.xmesh" size="5000"/>
+<LOD meshfile="noroids.xmesh" size="100"/>
+
 </Mesh>
