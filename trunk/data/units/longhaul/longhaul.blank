@@ -20,7 +20,7 @@
 	<Mount weapon="" size="Light-missile Medium-missile" x="-6.5" y="3" z="12.5" ammo ="5"/>
 	<Mount weapon="" size="Light-missile Medium-missile Heavy-missile Special" x="0" y="3" z="2.5" ammo = "8" />	
 	
-	<Subunit file="" x="0" y="5.486964" z="-8.088474" ri="1.000000" rj="0.000000" rk="-0.000000" qi="-0.000000" qj="0.789352" qk="-0.613941"/>
+	<Subunit file="medium_blank" x="0" y="5.486964" z="-8.088474" ri="1.000000" rj="0.000000" rk="-0.000000" qi="-0.000000" qj="0.789352" qk="-0.613941"/>
 
 	<Thrust>
 		<Engine Afterburner="903.666718" Forward="173.333344" Retro="215.666676" Left="171.666672" Right="171.666672" Top="171.666672" Bottom="171.666672"/>
