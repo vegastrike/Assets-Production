@@ -8,6 +8,25 @@ def MakeStarSystemFGKey (starsystem):
 	return 'FG:'+str(starsystem)
 def ShipListOffset ():
 	return 3
+
+def GetRandomFGNames (numflightgroups):
+	rez=[]
+	for i in range (numflightgroups)
+		rez.append(str(i))
+	return rez
+origfgoffset=0
+def TweakFGNames (origfgnames):
+	global origfgoffset
+	tweaker=str(origfgoffset)
+	tweaktuple = ('prime','double_prime','triple_prime','quad_prime','quint_prime')
+	if (origfgoffset<len(tweaktuple)):
+		tweaker = tweaktuple[origfgoffset]
+	rez=[]
+	for i in origfgnames:
+		rez.append (i+'_'+tweaker)
+	origfgoffset+=1
+	return rez
+		
 def WriteStringList(cp,key,tup):
 	siz = getSaveStringLength (cp,key)
 	s_size=siz;
@@ -35,9 +54,7 @@ def ListToPipe (tup):
 		fina+='|'+tup[i]
 	return fina
 
-class dynamicuniverse:
-
-	def _MakeFGString (self,starsystem,typenumlist):
+	def _MakeFGString (starsystem,typenumlist):
 		totalships = 0
 		ret = []
 		damage=0
@@ -46,94 +63,136 @@ class dynamicuniverse:
 			strlist+=[str(tt[0]),str(tt[1])]
 		return [str(totalships),str(starsystem),str(damage)]+strlist
 
-	def _AddShiptoKnownFG(self,key,tn):
-		len = Director.getSaveStringLength (self.cp,key)
+	def _AddShiptoKnownFG(key,tn):
+		leg = Director.getSaveStringLength (dynamic_universe.cp,key)
 		try:
-			numtotships =int(Director.getSaveString(self.cp,key,0))
+			numtotships =int(Director.getSaveString(dynamic_universe.cp,key,0))
 			numtotships+=int(tn[1])
-			Director.putSaveString(self.cp,key,0,str(numtotships))
+			Director.putSaveString(dynamic_universe.cp,key,0,str(numtotships))
 		except:
 			print 'error adding ship to flightgroup'
-		for i in range (ShipListOffset+1,len,2):
-			if (Director.getSaveString(self.cp,key,i-1)==str(tn[0])):
+		for i in range (ShipListOffset+1,leg,2):
+			if (Director.getSaveString(dynamic_universe.cp,key,i-1)==str(tn[0])):
 				numships=0
 				try:
 					numships+= int(tn[1])
-					numships+= int (Director.getSaveString(self.cp,key,i))
+					numships+= int (Director.getSaveString(dynamic_universe.cp,key,i))
 				except:
 					pass
-				Director.putSaveString(self.cp,key,i,str(numships))
+				Director.putSaveString(dynamic_universe.cp,key,i,str(numships))
 				return
-		Director.pushSaveString(self.cp,key,str(tn[0]))
-		Director.pushSaveString(self.cp,key,str(tn[1]))
+		Director.pushSaveString(dynamic_universe.cp,key,str(tn[0]))
+		Director.pushSaveString(dynamic_universe.cp,key,str(tn[1]))
 
-	def _AddFGToSystem (self,fgname,faction,starsystem):
+	def _AddFGToSystem (fgname,faction,starsystem):
 		key = MakeStarSystemFGKey (starsystem)
-		len = Director.getSaveStringLength (self.cp,key)
+		leg = Director.getSaveStringLength (dynamic_universe.cp,key)
 		index = VS.getFactionIndex (faction)
-		if (len>index):
-			st=Director.getSaveString (self.cp,key,index)
+		if (leg>index):
+			st=Director.getSaveString (dynamic_universe.cp,key,index)
 			if (len(st)>0):
 				st+='|'
-			Director.putSaveString(self.cp,key,index,st+fgname)
+			Director.putSaveString(dynamic_universe.cp,key,index,st+fgname)
 		else:
-			for i in range (len,index):
-				Director.pushSaveString(self.cp,key,'')
-			Director.pushSaveString(self.cp,key,fgname)
+			for i in range (leg,index):
+				Director.pushSaveString(dynamic_universe.cp,key,'')
+			Director.pushSaveString(dynamic_universe.cp,key,fgname)
 
-	def _RemoveFGFromSystem (self,fgname,faction,starsystem):
+		
+	def _RemoveFGFromSystem (fgname,faction,starsystem):
 		key = MakeStarSystemFGKey( starsystem)
-		len = Director.getSaveStringLength(self.cp,key)
+		leg = Director.getSaveStringLength(dynamic_universe.cp,key)
 		index = VS.getFactionIndex(faction)
-		if (len>index):
-			tup = Director.getSaveString (self.cp,key,index).split('|')
+		if (leg>index):
+			tup = Director.getSaveString (dynamic_universe.cp,key,index).split('|')
 			try:
 				del tup[tup.index(fgname)]
-				Director.putSaveString(self.cp,key,index,ListToPipe(tup))			
+				Director.putSaveString(dynamic_universe.cp,key,index,ListToPipe(tup))			
 			except:
 				print 'fg '+fgname+' not found in '+starsystem
 		else:
 			print 'no ships of faction '+faction+' in '+starsystem
 
-	def _AddFGToFactionList(self,fgname,faction):
+	def _AddFGToFactionList(fgname,faction):
 		key = MakeFactionKey(faction)
-		Director.pushSaveString (self.cp,key,fgname)
-	def _RemoveFGFromFactionList (self,fgname,faction):
+		Director.pushSaveString (dynamic_universe.cp,key,fgname)
+			
+
+	def _RemoveFGFromFactionList (fgname,faction):
 		key = MakeFactionKey(faction)
-		Director.getSaveStringLength()
-		#FIXME
-	def DeleteFlightgroup(self,fgname,faction):
+		lun=Director.getSaveStringLength(dynamic_universe.cp,key)
+		for i in range (lun):
+			if (Director.getSaveString(dynamic_universe.cp,key,i)==fgname):
+				Director.eraseSaveString(dynamic_universe.cp,key,i)
+				return 1
+		return 0
+
+	def CheckFG (fgname,faction):
 		key = MakeFGKey (fgname,faction)
-		len = Director.getSaveStringLength (self.cp,key)
+		leg = VS.getSaveStringLength (dynamic_universe.cp,key)
+		totalships=0
+		try:
+			for i in range (ShipListOffset+1,leg,2):
+				totalships+=int(VS.getSaveString(dynamic_universe.cp,key,i))
+			if (totalships!=int(VS.getSaveString(dynamic_universe.cp,key,0))):
+				print 'mismatch on flightgroup '+fgname+' faction '+faction
+				return 0
+		except:
+			print 'nonint readingo n flightgroup '+fgname+'faction '+faction
+			return 0
+		return 1
+	def PurgeZeroShips (faction):
+		key=MakeFactionKey(faction)
+		for i in range (VS.getSaveDataLength (dynamic_universe.cp,key))
+			curfg=VS.getSaveData(dynamic_universe.cp,key,i)
+			CheckFG (curfg,faction)
+			numships=NumShipsInFG(curfg,faction)
+			if (numships==0):
+				DeleteFG(curfg,faction)
+			
+	def NumShipsInFG (fgname,faction):
+		key = MakeFGKey (fgname,faction):
+		len = Director.getSaveStringLength (dynamic_universe.cp,key)
+		if (len==0):
+			return 0
+		else:
+			try:
+				return int(Director.getSaveString(dynamic_universe.cp,key,0)
+			except:
+				print 'fatal: flightgroup without size'
+	def DeleteFG(fgname,faction):
+		key = MakeFGKey (fgname,faction)
+		len = Director.getSaveStringLength (dynamic_universe.cp,key)
 		if (len>=ShipListOffset()):
-			starsystem=Director.getSaveString(self.cp,key,1)
-			self._RemoveFGFromSystem(starsystem)
-			self._RemoveFGFromFactionList(fgname,faction)
-	def AddShipsToFG (self,fgname,faction,typenumbertuple,starsystem):
+			starsystem=Director.getSaveString(dynamic_universe.cp,key,1)
+			_RemoveFGFromSystem(starsystem)
+			_RemoveFGFromFactionList(fgname,faction)
+			WriteStringList (dynamic_universe.cp,MakeFGKey(fgname,faction),[] )
+	def AddShipsToFG (fgname,faction,typenumbertuple,starsystem):
 		key = MakeFGKey(fgname,faction)	
-		len = Director.getSaveStringLength (self.cp,key)
+		len = Director.getSaveStringLength (dynamic_universe.cp,key)
 		if (len<ShipListOffset()):
-			WriteStringList(self.cp,key,self._MakeFGString( starsystem,typenumbertuple) )
-			self._AddFGToSystem (fgname,faction,starsystem)
-			self._AddFGToFactionList (fgname,faction)
+			WriteStringList(dynamic_universe.cp,key,_MakeFGString( starsystem,typenumbertuple) )
+			_AddFGToSystem (fgname,faction,starsystem)
+			_AddFGToFactionList (fgname,faction)
 		else:
 			for tn in typenumbertuple:
-				self._AddShipToKnownFG(key,tn)
+				_AddShipToKnownFG(key,tn)
 		
-	def RemoveShipFromFG (self,fgname,faction,type):
+	def RemoveShipFromFG (fgname,faction,type):
 		key = MakeFGKey (fgname,faction)
-		len = Director.getSaveStringLength (self.cp,key)
-		for i in range (ShipListOffset+1,len,2):
-			if (Director.getSaveString(self.cp,key,i-1)==str(type)):
+		leg = Director.getSaveStringLength (dynamic_universe.cp,key)
+		for i in range (ShipListOffset+1,leg,2):
+			if (Director.getSaveString(dynamic_universe.cp,key,i-1)==str(type)):
 				numships=0
 				try:
-					numships = int (Director.getSaveString (self.cp,key,i))
+					numships = int (Director.getSaveString (dynamic_universe.cp,key,i))
 				except:
 					pass
 				if (numships>0):
 					numships-=1
-					Director.putSaveString (self.cp,key,i,str(numships))
+					Director.putSaveString (dynamic_universe.cp,key,i,str(numships))
 				else:
-					Director.eraseSaveString(self.cp,key,i)
-					Director.eraseSaveString(self.cp,key,i-1)
+					Director.eraseSaveString(dynamic_universe.cp,key,i)
+					Director.eraseSaveString(dynamic_universe.cp,key,i-1)
 		print 'cannot find ship to delete in '+faction+' fg ' + fgname
