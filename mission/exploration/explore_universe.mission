@@ -11,7 +11,7 @@
 		<var name="difficulty" value=".05"/><!--good starting difficulty here-->
 		<var name="system" value="vega_sector/vega" />
 		<var name="description" value="Enjoy troy in a nova." />
-		<var name="savegame" value="explore_universe_difficulty1" />
+		<var name="savegame" value="explore_universe_difficulty" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="wayfarer.begin" ainame="default" waves="1" nr_ships="1">
@@ -43,10 +43,8 @@
 			<const type="int" value="2"/><!--gen ships-->
 			<const type="float" value="0.6"/><!--fighter prob-->
 			<const type="float" value="0.25"/><!--enemy prob-->
-			<const type="float" value="0.1"/><!--capship prob-->
+			<const type="float" value="0.02"/><!--capship prob-->
 			<const type="float" value="400000.0"/><!--credits to maximize difficulty-->
-			<const type="float" value="80000.0"/><!--enemy starting cred-->
-			<const type="float" value="0.25"/><!--enemy credits earnage-->
 			<const type="float" value="-20000.0"/><!--garbage collection distance: negative disables-->
 			<const type="float" value="2000.0"/><!--capship generation distance-->
 			</exec>
