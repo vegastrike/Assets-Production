@@ -36,7 +36,7 @@
 		<script name="initgame">
 			<exec module="gauntlet" name="initgame">
 			<const type="int" value="3"/>
-			<const type="int" value="6"/>
+			<const type="int" value="4"/>
 			</exec>
 		</script>
 		<script name="gameloop">
