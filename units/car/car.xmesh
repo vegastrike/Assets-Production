@@ -1,0 +1,143 @@
+<Mesh texture="Capskn3.bmp" scale="5.00000">
+<Points>
+	<Point>
+		<Location x=".55000" y="000000" z="3.000"/>
+		<Normal i="1" j="0" k="1"/>
+	</Point>
+	<Point> <!--1-->
+		<Location x="1.8" y="1.3" z="0"/>
+		<Normal i=".86" j=".45" k=".25"/>
+	</Point>
+	<Point>
+		<Location x="1.8" y="0000000" z="0.0000"/>
+		<Normal i=".86" j="0.45" k="-0.25"/>
+	</Point>
+	<Point>
+		<Location x="1" y="1.1" z="-2.8"/>
+		<Normal i="0.666667" j="0.333333" k="-0.666667"/>
+	</Point>
+	<Point>
+		<Location x="1" y=".83" z="-2.8"/>
+		<Normal i="0.666667" j="-0.333333" k="-0.666667"/>
+	</Point>
+
+
+	<Point><!--5-->
+		<Location x="-.55000" y="000000" z="3.00"/>
+		<Normal i="-1" j="0" k="1"/>
+	</Point>
+	<Point><!--6-->
+		<Location x="-1.8" y="1.3" z="0"/>
+		<Normal i="-.86" j=".45" k=".25"/>
+	</Point>
+	<Point>
+		<Location x="-1.8" y="000000" z="0.0000"/>
+		<Normal i="-.86" j="0.45" k="-0.25"/>
+	</Point>
+	<Point>
+		<Location x="-1" y="1.1" z="-2.8"/>
+		<Normal i="-0.666667" j="0.333333" k="-0.666667"/>
+	</Point>
+	<Point>
+		<Location x="-1" y=".83" z="-2.8"/>
+		<Normal i="-0.666667" j="-0.333333" k="-0.666667"/>
+	</Point>
+	<Point>
+		<Location x="1.8" y="1.2200000" z="-1.0000"/>
+		<Normal i=".86" j="0.45" k="-0.25"/>
+	</Point>
+	<Point>
+		<Location x="-1.8" y="1.2200000" z="-1.0000"/>
+		<Normal i=".86" j="0.45" k="-0.25"/>
+	</Point>
+	<Point>
+		<Location x="1.8" y="0000000" z="-1.0000"/>
+		<Normal i=".86" j="0.45" k="-0.25"/>
+	</Point>
+	<Point>
+		<Location x="-1.8" y="0000000" z="-1.0000"/>
+		<Normal i=".86" j="0.45" k="-0.25"/>
+	</Point>
+
+</Points>
+<Polygons>
+	<Tri>
+		<Vertex point="5" s="0.000000" t="0.000000"/>
+		<Vertex point="6" s="0.000000" t="1.000000"/>
+		<Vertex point="7" s="1.000000" t="1.000000"/>
+	</Tri>
+	<Tri>
+		<Vertex point="0" s="0.000000" t="0.000000"/>
+		<Vertex point="2" s="0.000000" t="1.000000"/>
+		<Vertex point="1" s="1.000000" t="1.000000"/>
+	</Tri>
+	<Quad>
+		<Vertex point="0" s="0.000000" t="0.000000"/>
+		<Vertex point="1" s="0.000000" t="1.000000"/>
+		<Vertex point="6" s="1.000000" t="1.000000"/>
+		<Vertex point="5" s="1.000000" t="0.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="7" s="1.000000" t="0.000000"/>
+		<Vertex point="2" s="1.000000" t="1.000000"/>
+		<Vertex point="0" s="0.000000" t="1.000000"/>
+		<Vertex point="5" s="0.0000" t="0.000000"/>
+	</Quad>
+
+	<Quad>
+		<Vertex point="11" s="0.000000" t="0.000000"/>
+		<Vertex point="10" s="0.000000" t="1.000000"/>
+		<Vertex point="3" s="1.000000" t="1.000000"/>
+		<Vertex point="8" s="1.000000" t="0.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="10" s="1.000000" t="0.000000"/>
+		<Vertex point="12" s="1.000000" t="1.000000"/>
+		<Vertex point="4" s="0.000000" t="1.000000"/>
+		<Vertex point="3" s="0.000000" t="0.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="11" s="0.000000" t="0.000000"/>
+		<Vertex point="8" s="0.000000" t="1.000000"/>
+		<Vertex point="9" s="1.000000" t="1.000000"/>
+		<Vertex point="13" s="1.000000" t="0.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="9" s="1.00000" t="000000"/>
+		<Vertex point="4" s="1.000000" t="1.000000"/>
+		<Vertex point="12" s="0.000000" t="1.000000"/>
+		<Vertex point="13" s="0.000000" t="0.000000"/>
+	</Quad>
+	<Quad><!-- engine-->
+		<Vertex point="8" s="0.000000" t="0.000000"/>
+		<Vertex point="3" s="0.000000" t="1.000000"/>
+		<Vertex point="4" s="1.000000" t="1.000000"/>
+		<Vertex point="9" s="1.000000" t="0.000000"/>
+	</Quad>
+	<Quad><!-- side-->
+		<Vertex point="1" s="0.000000" t="0.000000"/>
+		<Vertex point="2" s="0.000000" t="1.000000"/>
+		<Vertex point="12" s="1.000000" t="1.000000"/>
+		<Vertex point="10" s="1.000000" t="0.000000"/>
+	</Quad>
+	<Quad><!-- side-->
+		<Vertex point="11" s="0.000000" t="0.000000"/>
+		<Vertex point="13" s="0.000000" t="1.000000"/>
+		<Vertex point="7" s="1.000000" t="1.000000"/>
+		<Vertex point="6" s="1.000000" t="0.000000"/>
+	</Quad>
+	<Quad><!-- side-->
+		<Vertex point="11" s="0.000000" t="0.000000"/>
+		<Vertex point="6" s="0.000000" t="1.000000"/>
+		<Vertex point="1" s="1.000000" t="1.000000"/>
+		<Vertex point="10" s="1.000000" t="0.000000"/>
+	</Quad>
+	<Quad><!-- side-->
+		<Vertex point="12" s="0.000000" t="0.000000"/>
+		<Vertex point="2" s="0.000000" t="1.000000"/>
+		<Vertex point="7" s="1.000000" t="1.000000"/>
+		<Vertex point="13" s="1.000000" t="0.000000"/>
+	</Quad>
+
+</Polygons>
+</Mesh>

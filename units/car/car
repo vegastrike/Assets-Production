@@ -1,0 +1,46 @@
+<Unit scale="1">
+	<cockpit file="medium_cockpit.cpt" x="0" y="2.5" z="5"/>
+	<Meshfile file="car.xmesh" />
+
+	<Mount weapon="UnknownBolt" size="Light" x=".000000" y="2.500000" z="4.000000"/>
+<!--	<Mount weapon="Laser" size="Light" x="-1.000000" y="0.000000" z="4.000000"/>-->
+	<Thrust>
+		<Engine Afterburner="1600.000000" Forward="448.000000" Retro="392.000000" Left="224.000000" Right="224.000000" Top="224.000000" Bottom="224.000000"/>
+		<Maneuver yaw="5009.400101" pitch="0" roll="0"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage="nova-hud.spr" ECM=".01">
+		<Armor front="40" right="35" left="35" back="40"/>
+		<Shields front="60.000000" back="40.000000" recharge="24.000000"/>
+		<Hull strength="200.000000"/>
+	</Defense>
+
+	<Stats mass="2.500000" momentofinertia="2.500000" fuel="40000000"></Stats>
+	<Computer yaw="151.800003" pitch="0" roll="0" afterburner="130.000000" maxspeed="43.000000"/>
+	<Energy afterburnenergy="0">
+		<Reactor recharge="30" limit="140"/>
+	</Energy>
+       	<Jump delay="1" jumpenergy="90"/>       
+
+<!-- new elements added -->
+<Light file="supernova.bmp" x="-4" y="4.8" z="-14.00000" size="2.00000" red="1" green="0" blue="0"/>
+<Light file="supernova.bmp" x="4" y="4.8" z="-14.00000" size="2.00000" red="1" green="0" blue="0"/>
+<Light file="supernova.bmp" x="0" y="4.8" z="-14.00000" size="2.000000" red="0" green="0" blue="0"/>
+
+<Light file="supernova.bmp" x="-3" y="4.8" z="-14.00000" size=".70000" red="1" green="1" blue="1"/><!-- backup lights-->
+<Light file="supernova.bmp" x="3" y="4.8" z="-14.00000" size=".70000" red="1" green="1" blue="1"/>
+
+<!-- headlights!-->
+<Light file="supernova.bmp" x="-2.25" y=".6" z="14.50000" size="1.50000" red="1" green="1" blue="1" />
+<Light file="supernova.bmp" x="2.25" y=".6" z="14.50000" size="1.50000" red="1" green="1" blue="1"/>
+<!-- tail lights -->
+<Light file="supernova.bmp" x="-1" y="4.8" z="-14.00000" size="2.00000" red=".8" green="0" blue="0"/>
+<Light file="supernova.bmp" x="1" y="4.8" z="-14.00000" size="2.00000" red=".8" green="0" blue="0"/>
+<Light file="supernova.bmp" x="-3" y="4.8" z="-14.00000" size="2.00000" red=".8" green="0" blue="0"/>
+<Light file="supernova.bmp" x="3" y="4.8" z="-14.00000" size="2.00000" red=".8" green="0" blue="0"/>
+
+	<Hold volume="10">
+	</Hold>
+
+</Unit>
