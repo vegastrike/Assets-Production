@@ -1,4 +1,4 @@
-<Unit>
+<Unit cockpit="hornet-cockpit.cpt">
 	<Meshfile file="hornet.xmesh" />
 <!-- 	<Subunit file="turret" y="5"/>-->
 
