@@ -1,0 +1,22 @@
+<Unit>	
+	<Upgrade file="god"/>
+	<Defense>
+		<Armor front="0" right="0" left="0" back="0"/>
+		<Shields front="0" back="0" recharge="0" leak="0" recharge="00000000000000"/>
+		<Hull strength="000000000000000"/>
+		<Cloak missing="0" cloakmin="0" cloakrate="1" cloakglass="0" cloakenergy="0"/>
+	</Defense>
+	<Stats mass="000000000000000" momentofinertia="000000000000000" fuel="10000000000000000"></Stats>
+	<Computer yaw="000000000000000" itts="true" pitch="000000000000000" roll="000000000000000" afterburner="000000000000000" maxspeed="000000000000000">
+	</Computer>
+
+	<Energy afterburnenergy="0">
+		<Reactor recharge="000000000000000" limit="0"/>
+	</Energy>
+           	<Jump missing="0" delay="1" jumpenergy="100"/>       
+
+	<Thrust>
+		<Engine Afterburner="000000000000000" Forward="000000000000000" Retro="000000000000000" Left="000000000000000" Right="000000000000000" Top="000000000000000" Bottom="000000000000000"/>
+		<Maneuver yaw="00000000000000" pitch="000000000000000" roll="000000000000000"/>
+	</Thrust>
+</Unit>
