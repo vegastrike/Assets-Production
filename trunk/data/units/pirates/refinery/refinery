@@ -12,12 +12,12 @@
 		<Hull strength="4000"/>
 	</Defense>
 
-<Stats mass="60" momentofinertia="60" fuel="20000"></Stats>
+<Stats mass="600" momentofinertia="60" fuel="20000"></Stats>
        
 <!-- new elements added -->
 <Subunit file="turret" x="3.0001435" y="0.000000" z="0.098221" ri="0.986394" rj="0.000000" rk="-0.164399" qi="0.000000" qj="-1.000000" qk="0.000000"/>
 <Subunit file="turret" x="-3.000188" y="0.000000" z="-0.056604" ri="-0.986394" rj="0.000000" rk="0.164399" qi="0.000000" qj="-1.000000" qk="0.000000"/>
-<Subunit file="turret" x="0.715657" y="1.027444" z="1.521747" ri="0.527664" rj="-0.820853" rk="-0.218566" qi="0.382683" qj="0.000000" qk="0.923880"/>
+<Subunit file="turretbeam" x="0.715657" y="1.027444" z="1.521747" ri="0.527664" rj="-0.820853" rk="-0.218566" qi="0.382683" qj="0.000000" qk="0.923880"/>
 <Dock x="0" y="2.4" z="2.3" size=".24"/>
 <Dock x="0" y="2.4" z="2.1" size=".24"/>
 <Dock x="0" y="2.4" z="1.9" size=".24"/>

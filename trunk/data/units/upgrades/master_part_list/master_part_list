@@ -463,10 +463,10 @@
 			<Cargo file="Topaz" price="800" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Gems/Industrial">
-			<Cargo file="Corundum" price="1400" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Dilithium" price="1340" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Quartz" price="1000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Trilithium" price="1600" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Corundum_Crystals" price="1400" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Dilithium_Crystals" price="1340" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Quartz_Crystals" price="1000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Trilithium_Crystals" price="1600" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Stone">
 			<Cargo file="Clay" price="25" quantity="1" mass=".01" volume="1"/>
