@@ -13,8 +13,16 @@
 	</variables>
         <flightgroups>
 
-                <flightgroup name="blue" faction="neutral" type="starrunner" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="neutral" type="escortcarrier" ainame="default" waves="1" nr_ships="1">
 			<pos x="53400" y="4000" z="40000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+                <flightgroup name="blue" faction="neutral" type="commerce_center" ainame="default" waves="1" nr_ships="1">
+			<pos x="53400" y="4000" z="50000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>

@@ -1,20 +1,22 @@
 <Unit>
+	<Upgrade file="godsansshields"/>
+	<Defense>
+		<Shields front="0.000000"  back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<Upgrade file="shield_2_Level1"/>
+	<Upgrade file="isometal"/>
+	<Upgrade file="engine_level_3"/>
+	<Upgrade file="polymer_hull"/>
 	<Thrust>
 		<Engine Afterburner="1800.000000" Forward="633.333313" Retro="566.666649" Left="466.666656" Right="466.666656" Top="466.666656" Bottom="466.666656"/>
 		<Maneuver yaw="4043.200050" pitch="4043.200050" roll="4043.200050"/>
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense hudImage="tian-hud.spr">
-		<Armor front="200" right="200" left="200" back="200"/>
-		<Shields front="100.000000" back="100.000000" recharge="20.000000"/>
-		<Hull strength="1000.000000"/>
-	</Defense>
+	
 	<Stats mass="1.750000" momentofinertia="1.750000" fuel="50000000"></Stats>
 	<Computer yaw="150.400002" pitch="150.400002" roll="150.400002" afterburner="190.000000" maxspeed="88"/>
-	<Energy>
-		<Reactor recharge="120" limit="300"/>
-	</Energy>
+
        	<Jump delay="1" jumpenergy="90"/>       
 	<Hold volume="60">
 
