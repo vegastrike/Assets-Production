@@ -1,5 +1,5 @@
 <Unit scale="200">
-<Meshfile file="rlaan_factory.xmesh"/>
+<Meshfile file="star6.xmesh"/>
 <!--<Mount size="capship-light capship-medium capship-heavy autotracking" type="capshipdisruptor" x="1" y="0" z="0" ri="1" rj="0" rk="0" qi="0" qj="1" qk="0"/>
 <Mount size="capship-light capship-medium capship-heavy autotracking" type="capshipdisruptor" x="-1" y="0" z="0" ri="-1" rj="0" rk="0" qi="0" qj="1" qk="0"/>
 
@@ -31,19 +31,17 @@
 
 	<Sound> </Sound>
 
-	<Defense HudImage="factory-hud.spr">
+	<Defense>
 
-		<Armor front="1200" right="1200" left="1200" back="1200"/>
+		<Armor front="6200" right="6200" left="6200" back="6200"/>
 
-		<Shields front="1050" right="1050" left="1050" back="1050" recharge="100"/>
-
-		<Hull strength="2000"/>
+		<Hull strength="8000"/>
 
 	</Defense>
 
 	<Stats mass="1000" momentofinertia="1000" fuel="20000"></Stats>
 
-	<Computer yaw="10" pitch="10" roll="10" afterburner="000000" maxspeed="00000"/>
+	<Computer yaw="0.1" pitch="0.1" roll="0.1" afterburner="000000" maxspeed="00000"/>
 
 	<Energy>
 
