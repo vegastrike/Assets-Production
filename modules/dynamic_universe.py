@@ -11,14 +11,15 @@ class ShipTracker:
 		self.starsystem = VS.getSystemFile()
 		self.type=typ
 	def Check(self):
-		if (not un):
+		import fg_util
+		if (not self.un):
 			if (VS.systemInMemory (self.starsystem)):
-				RemoveShipFromFG(self.fgname,self.faction,self.type)
+				fg_util.RemoveShipFromFG(self.fgname,self.faction,self.type)
 			else:
-				LandShip(self.fgname,self.faction,self.type)
+				fg_util.LandShip(self.fgname,self.faction,self.type)
 			return 0
 		else:
-			sys=un.getUnitSystemFile()
+			sys=self.un.getUnitSystemFile()
 			if (len(sys)):
 				self.starsystem=sys
 		return 1
