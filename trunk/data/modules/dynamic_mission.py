@@ -52,11 +52,23 @@ def generateCargoMission (path, contraband):
 	###
 	pass
 def generateBountyMission (path,fg,fac):
-	###
-	pass
+	syscreds=500
+	runaway=vsrandom.random()
+	creds=2000+2000*runaway
+	writemissionsavegame("import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %g, '%s')\ntemp=0\n"%(creds+syscreds*len(path), runaway, vsrandom.randrange(0,6), fac, path))
+
 def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
-	###
-	pass
+	isbase=fg_util.BaseFGInSystemName(path[-1])==defendfg
+	creds=1000
+	syscreds=500
+	writemissionsavegame("import defend\ntemp=defend.defend('%s', %d, %d, 8000.0, 100000.0, %g, True, %d, '%s', %s, '', '%s', '', '%s')\ntemp=0\n"%
+	                     (attackfac, 0, quantity, creds*quantity+syscreds*len(path), isbase, defendfac, str(path), attackfg, defendfg))
+	iscapitol=""
+	if isbase:
+		iscapitol="capitol "
+	writedescription("A %s assault wing has jumped in and is moving for an attack on one of our %sstarships in %s.\nYour task is to eliminate them before they eliminate our starship.\nYour reward is %d credits per fighter."%(attackfac, iscapitol, path[-1], creds))
+	writemissionname("Defend_%s_from_%s"%(defendfac, attackfac))
+
 def contractMissionsFor(fac,minsysaway,maxsysaway):
 	fac=faction_ships.intToFaction(fac)
 	enemies = list(faction_ships.enemies[fac])
