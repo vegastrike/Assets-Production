@@ -6,7 +6,7 @@ def getallchar ():
         rez += "%c"% i
     return rez
 allchar = getallchar()
-def loadStringList (playernum,mykey):
+def loadStringTuple (playernum,mykey):
     lengt = Director.getSaveDataLength (playernum,mykey)
     if (lengt<1):
         return ()
@@ -22,7 +22,7 @@ def loadStringList (playernum,mykey):
             rez = rez + (curstr,)
             curstr=""
     return rez
-def saveStringList (playernum,mykey,names):
+def saveStringTuple (playernum,mykey,names):
    length = Director.getSaveDataLength (playernum,mykey)
    k=1
    tot=0
