@@ -173,14 +173,14 @@ module contraband_mission {
 				}
 				olistcont=_olist.at(goodolist,good_iterator);
 				olistun=_unit.getUnitFromContainer(olistcont);
-				if (_std.isNull(olistun)) {
+				while (_std.isNull(olistun)) {
 					good_dest=good_dest+1;
 					all_left=all_left-1;
 					_unit.deleteContainer(olistcont);
 					_olist.erase(goodolist,good_iterator);
 				}
 			}
-			olistcont=_olist.at(goodolist,good_iterator);
+			olistcont=_olist.at(badolist,bad_iterator);
 			olistun=_unit.getUnitFromContainer(olistcont);
 			if ((_std.isNull(bunit))||  //resetting iterators for bad ships
 					(_std.equal(olistun,bunit))) {
@@ -191,7 +191,7 @@ module contraband_mission {
 				}
 				olistcont=_olist.at(badolist,bad_iterator);
 				olistun=_unit.getUnitFromContainer(olistcont);
-				if (_std.isNull(olistun)) {
+				while (_std.isNull(olistun)) {
 					bad_left=bad_left-1;
 					all_left=all_left-1;
 					_unit.deleteContainer(olistcont);
