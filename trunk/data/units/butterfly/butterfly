@@ -55,7 +55,7 @@
 
 
 <Energy>	
-	<Reactor recharge="65" limit="400"/> <!--less recharge -->
+	<Reactor recharge="65" limit="800"/> <!--less recharge -->
 </Energy>
 <Jump delay="2" jumpenergy="350"/> <!-- reduced jump energy so that it is less than limit -->
 

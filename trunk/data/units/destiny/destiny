@@ -16,7 +16,7 @@
 	<Stats mass="3.500000" momentofinertia="3.500000" fuel="40000000"></Stats>
 	<Computer yaw="96.600006" pitch="96.600006" roll="96.600006" afterburner="120.000000" maxspeed="40.666668"/>
 	<Energy>
-		<Reactor recharge="100" limit="300"/>
+		<Reactor recharge="100" limit="380"/>
 	</Energy>
        	<Jump delay="1" jumpenergy="200"/>       
 

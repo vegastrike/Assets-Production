@@ -21,14 +21,58 @@
 	</Thrust>
 	<Hold volume="100000000000">
 		<Category file="upgrades">
-			<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>	
-			<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
-			<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
-			<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
+			<Cargo file="laser" price="1000" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="laser_beam" price="1200" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="mass_driver" price="1500" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="stormfire" price="2000" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="meson_blaster" price="2500" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="disruptor" price="3000" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="disruptor_beam" price="4000" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="neutron_gun" price="5000" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="tractor_beam" price="7500" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="particle_cannon" price="10000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="photon_gun" price="15000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="tachyon_cannon" price="20000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="ion_beam" price="35000" quantity="1" mass=".01" volume="1"/>			
+			<Cargo file="ion" price="40000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="repulsor_beam" price="50000" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="ktek_gun" price="60000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="leech_gun" price="66000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="plasma_gun" price="80000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="fusion_gun" price="100000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="ktek_beam" price="120000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="dumbfire_3pack_ammo" price="60" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="dumbfire_ammo" price="200" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="heatseeker_3pack_ammo" price="105" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="heatseeker_ammo" price="350" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="image_recognition_3pack_ammo" price="225" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="image_recognition_ammo" price="750" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="friend_or_foe_3pack_ammo" price="300" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="friend_or_foe_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="torpedo" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="leech_ammo" price="4000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="swarm_ammo" price="800" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="afterburner" price="3000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="plasteel" price="1000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="lithium" price="500" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="tungsten" price="1500" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="dilithium" price="1600" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="isometal" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="trilithium" price="10000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="afterburner" price="3000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_4" price="10000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_4_Level2" price="30000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_4_Level3" price="50000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_4_Level4" price="100000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_4_Level5" price="150000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_2" price="8000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_2_Level2" price="25000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_2_Level3" price="40000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_2_Level4" price="90000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_2_Level5" price="140000" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1"/>
 			<Cargo file="cloaking_device" price="259000" quantity="1" mass="8.9" volume="1"/>
-			<Cargo file="experemental_UnknownBeam" price="3980000" quantity="1" mass="29.8" volume="1"/>
-			<Cargo file="experemental_UnknownBolt" price="4860000" quantity="1" mass="27.4" volume="1"/>
-			<Cargo file="experemental_CloakingDevice" price="1380000" quantity="1" mass="18.4" volume="1"/>
 			<Cargo file="experemental_ShieldRegenerator" price="5000000" quantity="1" mass="27.4" volume="1"/>
 		</Category>
 		<Category file="arms">

@@ -35,7 +35,7 @@
 	<Radar itts="true" color="true" error="0"/> <!-- shifted radar-->
 </Computer>
 <Energy>	
-	<Reactor recharge="42" limit="100"/>
+	<Reactor recharge="42" limit="170"/>
 </Energy>
 <!-- added jump-->
 <Jump delay="2" jumpenergy="60"/>	

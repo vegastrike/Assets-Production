@@ -34,7 +34,7 @@
 
 
 	<Energy afterburnenergy="30">
-		<Reactor recharge="60" limit="200"/>
+		<Reactor recharge="60" limit="280"/>
 	</Energy>
        
 	<Light file="supernova.bmp" x="1.5" y="0.12" z="-5.8" size="0.880000"/>

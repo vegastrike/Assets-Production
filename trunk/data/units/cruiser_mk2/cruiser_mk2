@@ -17,7 +17,7 @@
 	</Computer>
 
 	<Energy>
-		<Reactor recharge="300" limit="2000"/>
+		<Reactor recharge="300" limit="5500"/>
 	</Energy>
 	<Jump delay="1" jumpenergy="1800"/>              
 
