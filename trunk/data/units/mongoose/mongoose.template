@@ -1,0 +1,29 @@
+<Unit>
+	<Mount weapon="Photon" size="light medium heavy" x="0.800000" y="-0.600000" z="8.000000"/>
+	<Mount weapon="Photon" size="light medium heavy" x="-0.800000" y="-0.600000" z="8.000000"/>
+	<Mount weapon="Swarm" size="Special Special-Missile" x="2.000000" y="0.800000" z="-4.000000" ammo="75" volume="1000" />
+	<Mount weapon="Swarm" size="Special Special-Missile" x="-2.000000" y="0.800000" z="-4.000000" ammo="75" volume="1000"/>
+	<Mount weapon="Swarm" size="Special Special-Missile" x="1.000000" y="-1.400000" z="-1.000000" ammo="75" volume="1000"/>
+	<Mount weapon="Swarm" size="Special Special-Missile" x="-1.000000" y="-1.400000" z="-1.000000" ammo="75" volume="1000"/>
+	<Mount weapon="FriendOrFoe" size="Medium-missile Light-Missile" x="2.5.000000" y="-1.400000" z="-2.000000" ammo="1" volume="201"/>
+	<Mount weapon="FriendOrFoe" size="Medium-Missile Light-Missile" x="-2.5.000000" y="-1.400000" z="-2.000000" ammo="1" volume="201"/>
+	<Thrust>
+		<Engine Afterburner="1800.000000" Forward="528.000000" Retro="487.000000" Left="464.000000" Right="464.000000" Top="464.000000" Bottom="464.000000"/>
+		<Maneuver yaw="7031.000000" pitch="7031.000000" roll="7031.000000"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Armor front="60" right="60" left="60" back="60"/>
+		<Shields front="75.000000" back="75.000000" recharge="25.000000"/>
+		<Hull strength="300.000000"/>
+	</Defense>
+	<Stats mass="5.000000" momentofinertia="5.000000" fuel="80000000"></Stats>
+	<Computer yaw="217.000000" pitch="217.000000" roll="217.000000" afterburner="165.000000" maxspeed="51.000000"/>
+	<Energy afterburnenergy="35">
+		<Reactor recharge="140" limit="1075"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="80"/>
+	<Hold volume="60">
+	</Hold>
+</Unit>

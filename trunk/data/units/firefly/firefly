@@ -3,15 +3,15 @@
 
 	<Meshfile file="firefly.xmesh" />
 	<BspMesh/>
-	<Mount weapon="Ion" size="Medium" x="10.400000" y="8.00000" z="-6.0000"/>
-	<Mount weapon="Ion" size="Medium" x="-10.400000" y="8.00000" z="-6.0000"/>
-	<Mount weapon="Tachyon" size="Heavy" x="0.00000" y="-4.00000" z="-6.00000"/>
-	<Mount weapon="Swarm" size="special-missile" x="1.95" y=".45" z="-.75" ammo="60"/>
-	<Mount weapon="Swarm" size="special-missile" x="-1.95" y=".45" z="-.75" ammo="60"/>
-	<Mount weapon="ImageRecognition" size="medium-missile" x="1.95" y=".81" z="-.75" ammo="3"/>
-	<Mount weapon="ImageRecognition" size="medium-missile" x="-1.95" y=".81" z="-.75" ammo="3"/>
-	<Mount weapon="Torpedo" size="heavy-missile" x="1.95" y="1.05" z="-.75" ammo="3"/>
-	<Mount weapon="Torpedo" size="heavy-missile" x="-1.95" y="1.05" z="-.75" ammo="3"/>
+	<Mount weapon="Ion" size="Light Medium" x="10.400000" y="8.00000" z="-6.0000"/>
+	<Mount weapon="Ion" size="Light Medium" x="-10.400000" y="8.00000" z="-6.0000"/>
+	<Mount weapon="Tachyon" size="Special Light Medium Heavy" x="0.00000" y="-4.00000" z="-6.00000"/>
+	<Mount weapon="Swarm" size="special special-missile medium-missile" x="1.95" y=".45" z="-.75" ammo="60" volume="601"/>
+	<Mount weapon="Swarm" size="Special special-missile medium-missile" x="-1.95" y=".45" z="-.75" ammo="60" volume="601"/>
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="1.95" y=".81" z="-.75" ammo="3" volume="451"/>
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-1.95" y=".81" z="-.75" ammo="3" volume="451"/>
+	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="1.95" y="1.05" z="-.75" ammo="3" volume="601"/>
+	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="-1.95" y="1.05" z="-.75" ammo="3" volume="601"/>
 	<Thrust>
 		<Engine Afterburner="1066.666718" Forward="205.333344" Retro="254.666676" Left="202.666672" Right="202.666672" Top="202.666672" Bottom="202.666672"/>
 		<Maneuver yaw="2643.200050" pitch="2187.800201" roll="3643.200050"/>
@@ -34,7 +34,7 @@
 The FireFly is a light attack figher, used by the confed alliance in their struggle against the aera.
 The FireFly bla bla bla
 	</description>
-	<Hold volume="10">
+	<Hold volume="30">
 	</Hold>
 
 <!-- new elements added -->

@@ -18,22 +18,22 @@
 
 <Mount weapon="Ion" size="Light Medium" x="-6.612" y="1.305" z="7.355"/>
 
-<Mount weapon="Plasma" size="Heavy" x="3.572" y="1.305" z="7.355"/>
+<Mount weapon="Plasma" size="Special Medium Heavy" x="3.572" y="1.305" z="7.355"/>
 
-<Mount weapon="Plasma" size="Heavy" x="-3.572" y="1.305" z="7.355"/>
+<Mount weapon="Plasma" size="Special Medium Heavy" x="-3.572" y="1.305" z="7.355"/>
 
-<Mount weapon="Tachyon" size="Medium Heavy" x="3.572" y="-1.305" z="7.355"/>
+<Mount weapon="Tachyon" size="Light Medium Heavy" x="3.572" y="-1.305" z="7.355"/>
 
-<Mount weapon="Tachyon" size="Medium Heavy" x="-3.572" y="-1.305" z="7.355"/>
+<Mount weapon="Tachyon" size="Light Medium Heavy" x="-3.572" y="-1.305" z="7.355"/>
 
 
-<Mount weapon="DumbFire" size="light-missile" x="-6,5" y="-1.305" z="7.355" ammo="6"/>
+<Mount weapon="DumbFire" size="light-missile" x="-6,5" y="-1.305" z="7.355" ammo="6" volume="301"/>
 
-<Mount weapon="DumbFire" size="light-missile" x="6.5" y="-1.305" z="7.355" ammo="6"/>
+<Mount weapon="DumbFire" size="light-missile" x="6.5" y="-1.305" z="7.355" ammo="6" volume="301"/>
 
-<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-6,5" y="-1.305" z="7.355" ammo="4"/>
+<Mount weapon="ImageRecognition" size="special-missile light-missile medium-missile" x="-6,5" y="-1.305" z="7.355" ammo="4" volume="601"/>
 
-<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="6.5" y="-1.305" z="7.355" ammo="4"/>
+<Mount weapon="ImageRecognition" size="special-missile light-missile medium-missile" x="6.5" y="-1.305" z="7.355" ammo="4" volume="601"/>
 
 
 <Defense HudImage="f208-hud.spr">

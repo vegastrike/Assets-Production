@@ -25,13 +25,13 @@
 <!-- new elements added -->
 <Mount weapon="Photon" size="light medium" x="-0.557420" y="-0.127850" z="7.305732"/>
 <Mount weapon="Photon" size="light medium" x="0.542021" y="-0.126382" z="7.221802" />
-<Mount weapon="Photon" size="medium" x="6.470487" y="-0.182350" z="-1.094219"/>
-<Mount weapon="Photon" size="medium" x="-6.512798" y="-0.183760" z="-1.121801"/>
+<Mount weapon="Photon" size="special medium" x="6.470487" y="-0.182350" z="-1.094219"/>
+<Mount weapon="Photon" size="special medium" x="-6.512798" y="-0.183760" z="-1.121801"/>
 
-<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="4.470487" y="-0.182350" z="-1.094219" ammo="2"/>
-<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-4.512798" y="-0.183760" z="-1.121801" ammo="2"/>
-<Mount weapon="HeatSeeker" size="light-missile" x="3.470487" y="-0.182350" z="-1.094219" ammo="1"/>
-<Mount weapon="HeatSeeker" size="light-missile" x="-3.512798" y="-0.183760" z="-1.121801" ammo="1"/>
+<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="4.470487" y="-0.182350" z="-1.094219" ammo="2" volume="301"/>
+<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-4.512798" y="-0.183760" z="-1.121801" ammo="2" volume="301"/>
+<Mount weapon="HeatSeeker" size="light-missile" x="3.470487" y="-0.182350" z="-1.094219" ammo="1" volume="101"/>
+<Mount weapon="HeatSeeker" size="light-missile" x="-3.512798" y="-0.183760" z="-1.121801" ammo="1" volume="101"/>
 
 <Light file="supernova.bmp" x="-1.250000" y="0.000000" z="-4.800000" size="1.000000"/>
 <Light file="supernova.bmp" x="1.250000" y="0.000000" z="-4.800000" size="1.000000"/>

@@ -1,0 +1,30 @@
+<Unit>
+	<Thrust>
+		<Engine Afterburner="1633.333282" Forward="733.333313" Retro="666.666649" Left="566.666656" Right="566.666656" Top="566.666656" Bottom="566.666656"/>
+		<Maneuver yaw="2587.800201" pitch="7831.000000" roll="7831.000000"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Armor front="1000" right="1000" left="1000" back="1000"/>
+		<Shields front="300.000000" right="200.000000" left="200.000000" back="200.000000" recharge="40.000000"/>
+		<Hull strength="3200.000000"/>
+	</Defense>
+	<Stats mass="2.250000" momentofinertia="2.250000" fuel="200000000"></Stats>
+	<Computer yaw="146.600006" pitch="227.000000" roll="227.000000" afterburner="139.333328" maxspeed="72.666664">
+		<Radar itts="true" color="true" error="0"/> </Computer>
+
+
+	<Energy afterburnenergy="40">
+		<Reactor recharge="180" limit="430"/>
+	</Energy>
+       	<Jump delay="1" jumpenergy="300"/>              
+
+<!-- new elements added --><Mount weapon="Tachyon" size="Light Medium Heavy" x="11.876769" y="-5.930247" z="5.804338" />
+<Mount weapon="Ion" size="Light Medium Heavy" x="-1.622411" y="-0.535396" z="10.406069" />
+<Mount weapon="DisruptorBeam" size="Medium" x="-6.561853" y="0.000000" z="1.594064" />
+<Mount weapon="meson" size="Light Medium" x="0.000000" y="4.545461" z="-4.466930" />
+<Mount weapon="Swarm" size="Special special-missile" x="-0.700000" y="0.000000" z="-0.000000" ammo="20"/>	
+	<Hold volume="55">
+	</Hold>
+</Unit>

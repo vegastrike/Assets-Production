@@ -2,9 +2,9 @@
 <Meshfile file="fighter-body.xmesh"/>
 <Meshfile file="fighter-guns.xmesh"/>
 <!-- new elements added -->
-<Mount weapon="KtekBeam" size="Medium Heavy" x="0.730882" y="0.293518" z="23.003031" />
-<Mount weapon="Disruptor" size="Medium" x="-0.010562" y="0.432593" z="25.065680" />
-<Mount weapon="KtekBeam" size="Medium Heavy" x="-0.731581" y="0.229109" z="22.665678"/>
+<Mount weapon="KtekBeam" size="Special Medium Heavy" x="0.730882" y="0.293518" z="23.003031" />
+<Mount weapon="Disruptor" size="Light Medium" x="-0.010562" y="0.432593" z="25.065680" />
+<Mount weapon="KtekBeam" size="Special Medium Heavy" x="-0.731581" y="0.229109" z="22.665678"/>
 
 <Light file="supernova.bmp" x="3.386960" y="2.524278" z="-10.232185" size="4.677816"/>
 <Light file="supernova.bmp" x="-2.894827" y="2.631000" z="-11.071307" size="4.717809"/>
@@ -29,4 +29,6 @@
 		<Reactor recharge="60" limit="470"/>
 	</Energy>
 	<Jump delay="1" jumpenergy="350"/>
+	<Hold volume="25">
+	</Hold>
 </Unit>

@@ -1,0 +1,56 @@
+<Unit>
+
+
+
+<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="-5.277" y="2.683" z="21.963"/>
+
+<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="5.277" y="2.683" z="21.963"/>
+
+<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="3,027" y="-3,899" z="18,562"/>
+
+<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="-3,021" y="-3,924" z="18,562"/>
+
+
+
+<Defense>
+
+	<Armor front="2000" right="2000" left="2000" back="2000"/>
+
+	<Shields front="500.000000" back="500.000000" recharge="60.000000"/>
+
+	<Hull strength="1000.000000"/>
+
+</Defense>
+
+
+<Stats mass="10.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
+
+<Computer yaw="140" pitch="140" roll="140" afterburner="214" maxspeed="85">
+</Computer>
+
+
+<Energy>	
+	<Reactor recharge="400" limit="1400"/>
+</Energy>
+	<Jump delay="1" jumpenergy="400"/>
+
+
+<!-- Ship are facing Z axis so for light location : X= left/right, y=over/under, 
+								Z=front/back -->
+
+
+
+<Thrust>
+
+	<Engine Afterburner="1566.666718" Forward="405.333344" Retro="454.666676" 			Left="402.666672" Right="402.666672" Top="402.666672" Bottom="402.666672"/>
+
+	<Maneuver yaw="3943.200050" pitch="3887.800201" roll="3843.200050"/>
+
+</Thrust>
+
+
+	<Hold volume="100">
+	</Hold>
+
+
+</Unit>

@@ -1,0 +1,38 @@
+<Unit >
+	<cockpit file="hornet-cockpit.cpt" x="0" y="00" z="10"/>
+
+	<Mount weapon="Ion" size="Light Medium" x="10.400000" y="8.00000" z="-6.0000"/>
+	<Mount weapon="Ion" size="Light Medium" x="-10.400000" y="8.00000" z="-6.0000"/>
+	<Mount weapon="Tachyon" size="Special Light Medium Heavy" x="0.00000" y="-4.00000" z="-6.00000"/>
+	<Mount weapon="Swarm" size="special special-missile medium-missile" x="1.95" y=".45" z="-.75" ammo="60" volume="801"/>
+	<Mount weapon="Swarm" size="Special special-missile medium-missile" x="-1.95" y=".45" z="-.75" ammo="60" volume="801"/>
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="1.95" y=".81" z="-.75" ammo="3" volume="751"/>
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-1.95" y=".81" z="-.75" ammo="3" volume="751"/>
+	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="1.95" y="1.05" z="-.75" ammo="3" volume="801"/>
+	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="-1.95" y="1.05" z="-.75" ammo="3" volume="801"/>
+	<Thrust>
+		<Engine Afterburner="1566.666718" Forward="405.333344" Retro="454.666676" Left="402.666672" Right="402.666672" Top="402.666672" Bottom="402.666672"/>
+		<Maneuver yaw="2943.200050" pitch="2787.800201" roll="5643.200050"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage="firefly-hud.spr">
+		<Armor front="450" right="420" left="420" back="420"/>
+		<Shields front="400.000000" back="400.000000" recharge="50.000000"/>
+		<Hull strength="2000.000000"/>
+	</Defense>
+	<Stats mass="14.000000" momentofinertia="14.000000" fuel="40000000"></Stats>
+	<Computer yaw="120.400002" pitch="116.600006" roll="120.400002" afterburner="114" maxspeed="39.9"/>
+	<Energy>
+		<Reactor recharge="160" limit="280"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="100"/>       
+
+	<description>
+The FireFly is a light attack figher, used by the confed alliance in their struggle against the aera.
+The FireFly bla bla bla
+	</description>
+	<Hold volume="60">
+	</Hold>
+
+</Unit>
