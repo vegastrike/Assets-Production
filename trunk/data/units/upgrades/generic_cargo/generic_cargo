@@ -15,7 +15,7 @@
 		<Shields front="0" back="0" recharge="0"/>
 		<Hull strength="30"/>
 	</Defense>
-	<Stats mass="1" momentofinertia="1" fuel="1"></Stats>
+	<Stats mass="50" momentofinertia="1" fuel="1"></Stats>
    
 	<Computer yaw="0" pitch="0" roll="00" afterburner="000000" maxspeed="00000">
 	</Computer>
