@@ -177,8 +177,15 @@
 		<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
 		<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
 	     </Category>
+	     <Category file="missions">
+		<Cargo file="mission/total_war1.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+	     </Category>
 	     <Category file="weapons">
 		<Cargo file="weapons" price="200" quantity="100" mass=".1" volume=".1"/>
+	     </Category>
+	     <Category file="starships">
+		<Cargo file="nova" price="15000" quantity="10" mass="2" volume="500"/>
+		<Cargo file="tian" price="10000" quantity="20" mass="1" volume="400"/>
 	     </Category>
 	</Hold>
 
