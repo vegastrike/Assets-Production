@@ -52,7 +52,7 @@
 		<stats name="privateer" relation="0"/>
 	</Faction>
 
-	<Faction name="retro" logoRGB="logos/RetroPri.png" secLogoRGB="logos/RetroSec.png" contraband="contraband">
+	<Faction name="retro" logoRGB="logos/RetroPri.png" secLogoRGB="logos/RetroPri.png" contraband="contraband">
 		<stats name="ISO" relation="-1"/>
 		<stats name="confed" relation="-.8"/>
 		<stats name="militia" relation="-.3"/>
