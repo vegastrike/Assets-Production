@@ -3,7 +3,7 @@
 		<var name="defaultplayer" value="blue"/>
 	</variables>
         <flightgroups>
-                <flightgroup name="green" faction="rebels" type="hornet-strong" ainame="default" waves="2" nr_ships="2">
+                <flightgroup name="green" faction="rebels" type="hornet" ainame="default" waves="2" nr_ships="2">
 			<pos x="8000.0" y="0.0" z="3000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order priority="0" order="superiority" target="enemy"/>
