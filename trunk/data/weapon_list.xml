@@ -1,12 +1,12 @@
  <Weapons>
 <Bolt name="Laser" mountsize="light"> 
-<Energy rate=".1" stability="4" refire=".2">
+<Energy rate="4" stability="4" refire=".3">
 </Energy>
-<Damage rate="36" damage="36" longrange="1">
+<Damage damage="18" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed="1" radius=".25" length="3" pulsespeed="15" range="800" >
+<Distance speed="140" radialspeed="1" radius=".25" length="3" pulsespeed="15" range="476" >
 </Distance>
-<Appearance file="laser.bmp" soundwav="Laser.wav" r="1" g=".7" b=".7" a="1" >
+<Appearance file="laserred.bmp" soundwav="Laser.wav" r="1" g=".3" b=".3" a="1" >
 </Appearance>
 </Bolt>
 
@@ -15,7 +15,7 @@
 </Energy>
 <Damage rate="36" damage="36" longrange="1">
 </Damage>
-<Distance speed="140" radialspeed="1" radius=".25" length="1.5" pulsespeed="15" range="800" >
+<Distance speed="140" radialspeed="1" radius=".3" length="1.5" pulsespeed="15" range="476" >
 </Distance>
 <Appearance file="beam.bmp" soundwav="beam.wav" r="1" g=".8" b=".8" a=".9" >
 </Appearance>
@@ -45,11 +45,11 @@
 </Missile>
 
 <Bolt name="Particle" mountsize="medium"> 
-<Energy rate="4" stability="2" refire=".2">
+<Energy rate="11" stability="2" refire=".55">
 </Energy>
-<Damage rate="42" longrange="1">
+<Damage rate="43" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".25" length="3" pulsespeed="15" range="600" >
+<Distance speed="100" radialspeed=".8" radius=".25" length="3" pulsespeed="15" range="340" >
 </Distance>
 <Appearance file="particle.bmp" soundwav="Particle.wav" r="1" g=".5" b=".5" a="1" >
 </Appearance>
@@ -67,55 +67,55 @@
 </Ball>
 
 <Ball name="MassDriver" mountsize="light"> 
-<Energy rate="1.5" stability="6" refire=".3">
+<Energy rate="6" refire=".475">
 </Energy>
-<Damage rate="28" longrange="1">
+<Damage rate="26" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".5" pulsespeed="15" range="400" >
+<Distance speed="110" radialspeed=".8" radius=".5" pulsespeed="15" range="374" >
 </Distance>
 <Appearance file="mass_driver.ani" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Ball>
 
 <Bolt name="Meson" mountsize="light"> 
-<Energy rate="2" stability="6" refire=".3">
+<Energy rate="8" stability="6" refire=".4">
 </Energy>
-<Damage rate="25" longrange="1">
+<Damage rate="32" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".3" length="3" pulsespeed="15" range="500" >
+<Distance speed="130" radialspeed=".8" radius=".3" length="3" pulsespeed="15" range="442" >
 </Distance>
 <Appearance file="meson.bmp" soundwav="Tachyon.wav" r="1" g="1" b="1" a=".8" >
 </Appearance>
 </Bolt>
 
 <Bolt name="Neutron" mountsize="heavy"> 
-<Energy rate="4" stability="3" refire=".5">
+<Energy rate="18" stability="3" refire=".65">
 </Energy>
-<Damage rate="40" longrange="1">
+<Damage rate="62" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".3" length="3" pulsespeed="15" range="250" >
+<Distance speed="90" radialspeed=".8" radius=".3" length="3" pulsespeed="15" range="306" >
 </Distance>
 <Appearance file="neutron.bmp" soundwav="Neutron.wav" r=".7" g=".7" b="1" a="1" >
 </Appearance>
 </Bolt>
 
 <Bolt name="Ion" mountsize="light"> 
-<Energy rate="4" stability="6" refire=".3">
+<Energy rate="16"  refire=".65">
 </Energy>
-<Damage rate="28" longrange="1">
+<Damage rate="54" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".25" length="3" pulsespeed="15" range="400" >
+<Distance speed="120" radialspeed=".8" radius=".25" length="3" pulsespeed="15" range="408" >
 </Distance>
 <Appearance file="disruptor.bmp" soundwav="ION.WAV" r=".7" g=".4" b="1" a="1" >
 </Appearance>
 </Bolt>
 
 <Beam name="Disruptor" mountsize="light"> 
-<Energy rate="4" stability="6" refire=".3">
+<Energy rate="14" stability="6" refire=".6">
 </Energy>
-<Damage rate="28" longrange="1">
+<Damage rate="48" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".25" length="3" pulsespeed="15" range="400" >
+<Distance speed="130" radialspeed=".8" radius=".25" length="3" pulsespeed="15" range="400" >
 </Distance>
 <Appearance file="disruptorbeam.bmp" soundwav="beam.wav" r=".7" g="1" b=".7" a=".6" >
 </Appearance>
@@ -123,44 +123,44 @@
 
 
 <Bolt name="Tachyon" mountsize="light"> 
-<Energy rate="10" stability="6" refire=".3">
+<Energy rate="8" stability="6" refire=".4">
 </Energy>
-<Damage rate="20" longrange="1">
+<Damage rate="37" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".3" length="4" pulsespeed="15" range="700" >
+<Distance speed="125" radialspeed=".8" radius=".3" length="4" pulsespeed="15" range="425" >
 </Distance>
 <Appearance file="tachyon.bmp" soundwav="Tachyon.wav" r="1" g="1" b=".8" a="1" >
 </Appearance>
 </Bolt>
 
 <Bolt name="Plasma" mountsize="light"> 
-<Energy rate="15" stability="6" refire=".3">
+<Energy rate="22" stability="6" refire=".72">
 </Energy>
-<Damage rate="6" longrange="1">
+<Damage rate="72" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".4" length="5" pulsespeed="15" range="650" >
+<Distance speed="84" radialspeed=".8" radius=".4" length="5" pulsespeed="15" range="286" >
 </Distance>
 <Appearance file="ion.bmp" r="1" g=".8" b="1" a="1" >
 </Appearance>
 </Bolt>
 
 <Bolt name="Reaper" mountsize="light"> 
-<Energy rate="1" stability="6" refire=".3">
+<Energy rate="25" stability="6" refire=".7">
 </Energy>
-<Damage rate="6" longrange="1">
+<Damage rate="80" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".3" length="3" pulsespeed="15" range="1000" >
+<Distance speed="112.5" radialspeed=".8" radius=".3" length="3" pulsespeed="15" range="420" >
 </Distance>
 <Appearance file="tachyon.bmp" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Bolt>
 
 <Bolt name="Photon" mountsize="light"> 
-<Energy rate="1" stability="6" refire=".3">
+<Energy rate="21.5" stability="6" refire=".66">
 </Energy>
-<Damage rate="6" longrange="1">
+<Damage rate="37" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".25" length="3" pulsespeed="15" range="1100" >
+<Distance speed="112.5" radialspeed=".8" radius=".25" length="3" pulsespeed="15" range="420" >
 </Distance>
 <Appearance file="disruptor.bmp" r=".8" g="1" b=".8" a="1" >
 </Appearance>
