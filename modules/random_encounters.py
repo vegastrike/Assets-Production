@@ -54,6 +54,7 @@ class random_encounters:
     self.players+=[random_encounters.playerdata(self.sig_distance,self.det_distance)]
 #    print "add player"
   def NewSystemHousekeeping(self,oldsystem,newsystem):
+    fg_util.launchBases(newsystem)
     news.newNews()
     newquest = adventure.newAdventure (self.cur_player,oldsystem,newsystem)
     if (newquest):
@@ -180,6 +181,8 @@ class random_encounters:
     significant_unit = self.cur.sig_container
     if (significant_unit.isNull()):
       un=VS.getUnit(self.cur.last_ship)
+      if (self.DifferentSystemP()):
+        un.setNull()
       if (un.isNull ()):
         self.SetModeZero()
       else:
@@ -192,21 +195,24 @@ class random_encounters:
     else:
       #significant_unit is something.... lets see what it is
       cursys = VS.getSystemFile()
-      if (cursys== self.cur.lastsys):
+      if (self.DifferentSystemP()):
+        print "different"
+        self.SetModeZero()
+        significant_unit.setNull ()
+      else:
         dd = self.cur.detection_distance
         if (myunit.getSignificantDistance (significant_unit)>dd):
           self.SetModeZero ()
           return VS.Unit()
         else:
           return significant_unit
-      else:
-        print "different"
-        self.NewSystemHousekeeping(self.cur.lastsys,cursys)
-        self.cur.lastsys=cursys
-        self.SetModeZero()
-        significant_unit.setNull ()
       return significant_unit
-
+  def DifferentSystemP(self):
+    cursys=VS.getSystemFile()
+    if (cursys==self.cur.lastsys):
+      return 1
+    self.NewSystemHousekeeping(self.cur.lastsys,cursys)
+    self.cur.lastsys=cursys
   def Execute(self):
     if (self.cur_player>=len(self.players)):
       self.AddPlayer()

@@ -1,11 +1,14 @@
 import Director
 import VS
-
+import vsrandom
 ccp=VS.getCurrentPlayer()
 
 def MaxNumFlightgroupsInSystem ():
 	return 10
-
+def MaxNumBasesInSystem():
+	return 10
+def MinNumBasesInSystem():
+	return 0
 def MakeFactionKey (faction):
 	return 'FF:'+str(VS.GetFactionIndex(faction))
 def MakeFGKey (fgname,faction):
@@ -21,11 +24,48 @@ def AllFactions ():
 	for i in range (VS.GetNumFactions()):
 		facs+= [VS.GetFactionName(i)]
 	return facs
+basenamelist=[]
+flightgroupnamelist=[]
+genericalphabet=['Alpha','Beta','Gamma','Delta','Epsilon','Zeta','Phi','Omega']
+def ReadBaseNameList():
+	bnl=[]
+	try:
+		f = fopen ('universe/names.txt','r')
+		bnl = f.readlines()
+		f.close()
+	except:
+		try:
+			f = fopen ('../universe/names.txt','r')
+			bnl = f.readlines()
+			f.close()
+		except:
+			global genericalphabet
+			bnl=genericalphabet
+	for i in range(len(bnl)):
+		bnl[i].rstrip()
+	return bnl
 def GetRandomFGNames (numflightgroups, faction):
-	rez=[]
-	for i in range (numflightgroups):
-		rez.append(str(i))
-	return rez
+	global flightgroupnamelist
+	if (len(flightgroupnamelist)==0):
+		flightgroupnamelist = ReadBaseNameList()
+	for i in range (numflightgroups-len(flightgroupnamelist)):
+		flightgroupnamelist.append(str(i))
+	return flightgroupnamelist
+def GetRandomBaseName (n):
+	retval=[]
+	global basenamelist
+	try:
+		import seedrandom
+		if (len(basenamelist)==0):
+			basenamelist=ReadBaseNameList()
+		for i in range (n):
+			retval+=[basenamelist[seedrandom.rand()%len(basenamelist)]]
+	except:
+		retval=[]
+		for i in range (n):
+			retval+=[str(n)]
+			n+=1
+	return retval
 origfgoffset=0
 def TweakFGNames (origfgnames):
 	global origfgoffset
@@ -263,7 +303,9 @@ def RemoveShipFromFG (fgname,faction,type,landed=0):
 					print 'error, flight record '+fgname+' corrupt'
 			return
 	print 'cannot find ship to delete in '+faction+' fg ' + fgname
-def FGsInSystem(faction,system):
+def BaseFGInSystemName (system):
+	return 'Base_'+system
+def AllFGsInSystem(faction,system):
 	key = MakeStarSystemFGKey (system)
 	leg = Director.getSaveStringLength (ccp,key)
 	facnum = VS.GetFactionIndex (faction)
@@ -273,6 +315,24 @@ def FGsInSystem(faction,system):
 		if (len(st)>0):
 			ret = st.split('|')
 	return ret
+
+def FGsInSystem(faction,system):
+	ret = AllFGsInSystem(faction,system)
+	basefg = BaseFGInSystemName(system)
+	if (basefg in ret):
+		del ret[ret.index(basefg)]
+	return ret
+
+def BaseFGInSystem(faction,system):
+	ret = AllFGsInSystem(faction,system)
+	basefg = BaseFGInSystemName(system)
+	if (basefg in ret):
+		return 1
+	return 0
+def BaseFG(faction,system):
+	if (BaseFGInSystem(faction,system)):
+		return LandedShipsInFG (BaseFGInSystemName(system),faction)		
+	return []
 def CountFactionShipsInSystem(faction,system):
 	count=0
 	for fgs in FGsInSystem (faction,system):
@@ -303,6 +363,87 @@ def ShipsInFG(fgname,faction,offset=1):
 	for num in range (ShipListOffset(),len(ships),PerShipDataSize()):
 		rez+=[(ships[num],int(ships[num+offset]))]
 	return rez
+def minIndex (vals,indices):
+	for i in indices:
+		ok=1
+		for j in indices:
+			if vals[j]<vals[i]:
+				ok=0
+		if ok:
+			return i
+	return 0
+
+def launchBaseOrbit(type,faction,loc,orbitradius,orbitspeed,unit):
+	import Vector
+	import dynamic_universe
+	R = Vector.Vector(vsrandom.uniform(.5*orbitradius,orbitradius),
+					  vsrandom.uniform(.5*orbitradius,orbitradius),
+					  vsrandom.uniform(.5*orbitradius,orbitradius))
+	RMag = Vector.Mag(R)
+	T = Vector.Vector(vsrandom.uniform(.5*orbitradius,orbitradius),
+					  vsrandom.uniform(.75*orbitradius,.85*orbitradius),
+					  vsrandom.uniform(.5*orbitradius,orbitradius))
+	S = Vector.Cross (T,R)
+	
+	S = Vector.Scale(S,
+					 vsrandom.uniform (.4*orbitradius,orbitradius)
+					 /Vector.Mag(S))
+	SMag = Vector.Mag(S)	
+	bas=VS.launch("Base",type,faction,"unit","default",1,1,Vector.Add(loc,R),'')
+	nam=GetRandomBaseName (1);
+	R = Vector.Scale (R,(RMag+2.0*bas.rSize())/RMag)
+	S = Vector.Scale (S,(SMag+2.0*bas.rSize())/SMag)	
+	bas.orbit (unit,orbitspeed,R,S,(0.0,0.0,0.0))
+	
+	dynamic_universe.TrackLaunchedShip (BaseFGInSystemName(VS.getSystemFile()),
+										faction,
+										type,
+										bas)
+def launchSingleBase (type,faction,sig):
+	radpct = VS.getPlanetRadiusPercent()
+	radpct = sig.rSize()*(1+radpct)
+	speed = vsrandom.uniform (0,50)
+	launchBaseOrbit (type,faction,(0,0,0),radpct,speed,sig)
+def launchBaseStuck (type,faction):
+	un=VS.getPlayer()
+	maxspeed=100.1
+	if (un):
+		maxspeed=un.maxAfterburnerSpeed+30.1
+	un.setNull();
+	launchBaseOrbit (type,faction,un.GetPosition(),maxspeed*180,0,un)
+def launchBase (type,num,faction,system,sig_units,numfighters):
+	import seedrandom
+	print 'launching base '+ type
+	seedrandom.seed(seedrandom.seedstring(seedrandom.interleave(['type',
+																 'faction',
+																 'system'])))
+	if (len(sig_units)):
+		for i in range (num):
+			one=seedrandom.rand()
+			two=seedrandom.rand()
+			three=seedrandom.rand()
+			indices = [one%len(sig_units),
+					   two%len(sig_units),
+					   three%len(sig_units)];
+			which = minIndex(numfighters,indices)
+			numfighters[which]+=1
+			launchSingleBase (type,faction,sig_units[which])
+	else:
+		for i in range(num):
+			launchBaseStuck(type,faction)
+def zeros (le):
+	shipcount=[];
+	for i in range(le): shipcount+=[0];
+	return shipcount
+def launchBases(sys):
+	import universe
+	print 'launching bases for '+sys
+	fac = VS.GetGalaxyFaction(sys)
+	fgs = BaseFG (fac,sys)
+	sig_units = universe.significantUnits()
+	shipcount=zeros(len(sig_units))	
+	for fg in fgs:
+		launchBase(fg[0],fg[1],fac,sys,sig_units,shipcount)
 
 def GetShipsInFG(fgname,faction):
 	import vsrandom

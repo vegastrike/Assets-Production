@@ -25,6 +25,26 @@ def GenerateAllShips (numflightgroups,maxshipinfg):
 		fgnames.append(fg_util.GetRandomFGNames(numflightgroups,faction_ships.factions[fnr]))
 		for i in range(numflightgroups):
 			fglists[-1].append(GenerateFgShips(vsrandom.randrange(maxshipinfg)+1,fnr))
+def AddBasesToSystem (faction,sys):
+	if faction in faction_ships.factions:
+		fsfac= list(faction_ships.factions).index(faction)
+		numbases =vsrandom.randrange(fg_util.MinNumBasesInSystem(),
+									 fg_util.MaxNumBasesInSystem())
+		shiplist=[]
+		nums=[]
+		for i in range(numbases):
+			whichbase = faction_ships.bases[fsfac][vsrandom.randrange(0,len(faction_ships.bases[fsfac]))]
+			if whichbase in shiplist:
+				nums[shiplist.index(whichbase)]+=1
+			else:
+				shiplist+=[whichbase]
+				nums+=[1]
+		tn =[]
+		for i in range (len(shiplist)):
+			tn+=[ (shiplist[i],nums[i])]
+		fg_util.AddShipsToFG(fg_util.BaseFGInSystemName (sys),faction,tn,sys)
+		
+
 
 def AddSysDict (cursys):
 	#pick random fighter from insysenemies with .3 probability OR pick one from the friendlies list.
@@ -32,6 +52,7 @@ def AddSysDict (cursys):
 	sysfaction=VS.GetGalaxyProperty(cursys,"faction")
 	global fgnames, fglists
 	i=0
+	AddBasesToSystem(sysfaction, cursys)
 	for i in range (vsrandom.randrange(fg_util.MaxNumFlightgroupsInSystem())): #number of fgs in a system.
 		faction=sysfaction
 		if vsrandom.random()<.3 or sysfaction=='unknown' or sysfaction=='':
