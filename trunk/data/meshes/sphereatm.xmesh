@@ -1,5 +1,5 @@
 <!-- Xmesh exported from Wings 3D 0.98.09 -->
-<Mesh blend="SRCALPHA ONE" texture="atm.png" scale="1" sharevertex="0">
+<Mesh blend="SRCALPHA INVSRCALPHA" texture="atm.png" scale="1" sharevertex="0">
 <!-- 545 vertices, 1024 faces -->
 <Points>
   <Point>
@@ -7307,9 +7307,9 @@
 </Polygons>
 <!-- Materialname="Material #2" -->
 <Material reflect="0.0" LightningOn="1" >
-   <Diffuse red="0.5" green="0.5" blue="0.5" alpha="0.5" />
+   <Diffuse red="1.0" green="1.0" blue="1.0" alpha="1.0" />
   <Ambient red="0.0" green="0.0" blue="0.0" alpha="0.00000" />
   <Specular red="0.0" green="0.0" blue="0.0" alpha="0.00000" />   
-  <Emissive red=".5" green=".5" blue=".5" alpha=".5"/>
+  <Emissive red="1.0" green="1.0" blue="1.0" alpha="1.0"/>
 </Material>
 </Mesh>
