@@ -1974,14 +1974,14 @@
 				<var name="data" value="2700"/>
 			</sector>
 			<sector name="mahrahn">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="gemini_sector/blockadepointtango trkpahn_sector/sumtlor"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2390"/>
 			</sector>
 			<sector name="lisacc">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="trkpahn_sector/tktarak trkpahn_sector/nderpak"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
@@ -2010,21 +2010,21 @@
 				<var name="data" value="1935"/>
 			</sector>
 			<sector name="trpakh">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="gemini_sector/blockadepointalpha gemini_sector/sumn-kpta trkpahn/sumtlor"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1215"/>
 			</sector>
 			<sector name="sumn-kpta">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="gemini_sector/trpakh gemini_sector/hyades"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1987"/>
 			</sector>
 			<sector name="hyades">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="gemini_sector/sumn-kpta gemini_sector/blockadepointcharlie"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
