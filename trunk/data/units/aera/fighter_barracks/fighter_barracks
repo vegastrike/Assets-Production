@@ -240,7 +240,7 @@
 		<Category file="upgrades/Armor_Modification">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="5"/>
 		</Category>
-		<Category file="upgrades/Armor_Modification/Confed_Milspec">
+		<Category file="upgrades/Armor_Modification/Rlaan_Milspec">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
 		</Category>
 		<Category file="upgrades/Hull_Upgrades">

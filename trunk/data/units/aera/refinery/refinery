@@ -3,7 +3,7 @@
 		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
 		<Maneuver yaw="0000" pitch="0000" roll="10"/>
 	</Thrust>
-	<Defense HudImage="ConfedHq-hud.spr">
+	<Defense>
 		<Shields front="800" right="800" left="800" back="800" recharge="100"/>
 		<Armor front="8000" right="8000" left="8000" back="8000"/>
 		<Hull strength="4000"/>
@@ -52,7 +52,7 @@
 			<import price=".8" pricestddev=".2" quantity="38" quantitystddev="12"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Aera_Alloys">
-			<import price=".6" pricestddev=".6" quantity="38" quantitystddev="12"/>
+			<import price=".6" pricestddev=".15" quantity="38" quantitystddev="12"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Radioactive">
 			<import price=".8" pricestddev=".1" quantity="25" quantitystddev="10"/>
