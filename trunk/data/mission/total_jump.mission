@@ -6,7 +6,7 @@
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="credits" value="100000"/>
-		<var name="system" value="blank" />
+		<var name="system" value="enigma_sector/heavens_gate" />
 		<var name="mission_name" value="HireWingman" />
 		<var name="description" value="Two merchants are looking to form a convoy with willing participant. Capital required: 60000." />
 	</variables>
@@ -22,8 +22,8 @@
 		</flightgroup>
         </flightgroups>
 	<python>
-import total_jump
-newmission = total_jump.total_jump ()
+import jump_privateer
+newmission = jump_privateer.jump_privateer(20000,40000,500,3,2,.6,.25,.1,400000,2000)
 newmission=0
 
 </python>
