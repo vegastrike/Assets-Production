@@ -53,6 +53,8 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 -->
 
         <bindings>
+		<bind key=")" modifier="none" command="Cockpit::PitchDown"/>
+
 		<bind key="S" modifier="none" command="Cockpit::SkipMusicTrack" />
  		<bind key="F" modifier="none" command="CommFormUp" />
  		<bind key="B" modifier="none" command="CommBreakForm" />
@@ -293,7 +295,7 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 	    </section>
 	    <section name="unit">
 		<!-- light to use for ships -->
-		<color name="ship_ambient" r="0.0" g="0.0" b="0.0" a="1.0"/>
+		<color name="ship_ambient" r="0.3" g="0.3" b="0.3" a="1.0"/>
 		<color name="engine" r="1" g="1" b="1" a="1"/>
             </section>
 	    <section name="terrain">
@@ -358,7 +360,7 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 			</section>
 			<var name="shield_texture" value="shield.bmp"/>
 			<var name="star_shine" value="shine.ani flare1.ani flare2.ani flare3.ani flare4.ani flare5.ani flare6.ani"/>
-			<var name="head_lag" value="10"/>
+			<var name="head_lag" value="2"/>
 			<var name="cockpit_shake" value="3"/>
 			<var name="cockpit_shake_max" value="20"/>
 			<var name="shake_reduction" value="8"/>
