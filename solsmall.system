@@ -1,0 +1,34 @@
+<system name="Sol" background="cube" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
+<Light>
+<ambient red=".3" green=".3" blue=".3"/>
+<diffuse red="1" green="1" blue="1"/>
+<specular red="1" green="1" blue="1"/>
+</Light>
+
+<Light>
+<ambient red="1" green=".1" blue="0"/>
+<!--<diffuse red="1" green=".7" blue="0"/>-->
+<!--<attenuated red=".00000001" blue=".00000015"/>-->
+<attenuated red="0" blue=".000000002"/>
+</Light>	
+<Light>
+<ambient red="1" green=".1" blue="0"/>
+<!--<diffuse red="1" green=".7" blue="0"/>-->
+<!--<attenuated red=".00000001" blue=".00000015"/>-->
+<attenuated red="0" blue=".0000001"/>
+</Light>	
+
+        <planet name="sun" file="sun.bmp" radius="25000" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0 1l">
+	</planet>
+	<unit name= "Victory"  file="drydock" faction="confed" x="28000"  position="100">
+	</unit>
+	<unit name= "Victory"  file="ConfedHq" faction="confed" x="27000"  velocity="0" position="100">
+	</unit>
+	<unit name= "Victory"  file="station" faction="confed" x="24000"  velocity="0" position="100">
+	</unit>
+	<unit name= "Victory"  file="carrier" faction="confed" x="22000"  velocity="0" position="100">
+	</unit>
+	<unit name= "Victory"  file="ta5" faction="confed" x="20000"  velocity="0" position="100">
+	</unit>
+
+</system>
