@@ -19,13 +19,14 @@
 	<Mount weapon="Neutron" size="special medium heavy Autotracking" x="2.000000" y="-0.200000" z="5.200000"/>
 	<Mount weapon="Neutron" size="special medium heavy Autotracking" x="-2.000000" y="-0.200000" z="5.200000"/>
 	<Thrust>
-		<Engine Afterburner="2266.666718" Forward="600.666687" Retro="613.333351" Left="393.333344" Right="393.333344" Top="393.333344" Bottom="393.333344"/>
-		<Maneuver yaw="4654.000000" pitch="5664.800201" roll="6775.600403"/>
+		<Engine Afterburner="27481" Forward="7282" Retro="7432" Left="4768" Right="4768" Top="4768" Bottom="4768"/>
+		<Maneuver yaw="56426" pitch="68672" roll="82142"/>
 	</Thrust>
 	<Sound>
 	</Sound>
 
-	<Stats mass="3.000000" momentofinertia="3.000000" fuel="600000000"></Stats>
+	<Stats mass="36.373" momentofinertia="36.373" fuel="600000000"></Stats>
+
 	<Computer yaw="148.000000" pitch="170.600006" roll="200.200012" afterburner="144" maxspeed="56">
 </Computer>
 
