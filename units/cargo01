@@ -1,8 +1,8 @@
 <Unit>
 
 
-<Meshfile file="cargo01.xmesh" />
-
+<Meshfile file="cargo01-Frame.xmesh" />
+<Meshfile file="cargo01-Sides.xmesh" />
 
 
 		<Thrust>
