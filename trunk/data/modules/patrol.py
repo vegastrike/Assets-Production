@@ -85,7 +85,13 @@ class patrol (Director.Mission):
             else:
 		if (self.FinishedPatrol()):
                     self.SuccessMission()
-
+    def initbriefing(self):
+        print "ending briefing"                
+    def loopbriefing(self):
+        print "loop briefing"
+        Briefing.terminate();
+    def endbriefing(self):
+        print "ending briefing"   
 def initrandom (minsysaway,maxsysaway,minsigtopatrol,maxsigtopatrol,mincred,maxcred):
     nsys = random.randrange (minsysaway, maxsysaway)
     nsig = random.randrange (minsigtopatrol, maxsigtopatrol)
