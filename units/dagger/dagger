@@ -7,7 +7,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense hudimage="dagger-hud.spr">
 		<Armor front="400" right="300" left="300" back="400"/>
 		<Shields front="100.000000" right="80.000000" left="80.000000" back="70.000000" recharge="26.000000"/>
 		<Hull strength="400.000000"/>

@@ -14,7 +14,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense HudImage="mongoose-hud.spr">
 		<Armor front="60" right="60" left="60" back="60"/>
 		<Shields front="150.000000" back="150.000000" recharge="25.000000"/>
 		<Hull strength="300.000000"/>

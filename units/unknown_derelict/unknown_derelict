@@ -10,7 +10,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense hudImage="unknown_derelict-hud.spr">
 		<Armor front="80" right="70" left="70" back="60"/>
 		<Shields front="100000.000000" back="100000.000000" left="100000" right="100000" recharge="10.000000"/>
 		<Hull strength="200.000000"/>

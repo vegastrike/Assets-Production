@@ -10,7 +10,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense HudImage="osprey-hud.spr">
 		<Armor front="100" right="100" left="100" back="100"/>
 		<Shields front="80.000000" right="70.000000" left="70.000000" back="60.000000" recharge="20.000000"/>
 		<Hull strength="250.000000"/>

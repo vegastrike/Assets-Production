@@ -6,7 +6,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense HudImage="aevant-hud.spr">
 		<Armor front="400" right="300" left="300" back="250"/>
 		<Shields front="260.000000" right="250.000000" left="250.000000" back="220.000000" recharge="30.000000"/>
 		<Hull strength="250.000000"/>

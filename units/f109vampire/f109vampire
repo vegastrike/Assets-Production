@@ -17,7 +17,7 @@
 		<Maneuver yaw="3415.500000" pitch="3415.500000" roll="3415.500000"/>
 	</Thrust>
 	<Sound> </Sound>
-	<Defense>
+	<Defense HudImage="f109vampire-hud.spr">
 		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="60" cloakglass="false"/>       
 		<Armor front="500" right="480" left="480" back="600"/>
 		<Shields front="30" right="25" left="25" back="25" recharge="36.166667"/>

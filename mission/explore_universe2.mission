@@ -6,6 +6,7 @@
 	<variables>
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 		<var name="defaultplayer" value="blue"/>
+		<var name="savegame" value="explore_universe2"/>
 		<var name="mission_name" value="Explore the unknown quadrant..." />
 		<var name="author" value="Daniel Horn" />
 		<var name="system" value="unexplored_space/gwriss" />

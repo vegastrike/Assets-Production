@@ -8,7 +8,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense HudImage="lekra-hud.spr">
 		<Armor front="200" right="200" left="200" back="100"/>
 		<Shields front="30.000000" right="20.000000" left="20.000000" back="20.000000" recharge="23.000000"/>
 		<Hull strength="400.000000"/>

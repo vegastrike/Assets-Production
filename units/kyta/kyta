@@ -4,10 +4,10 @@
 	<Thrust>
 		<Engine Afterburner="1196.999969" Forward="334.399994" Retro="292.599995" Left="167.199997" Right="167.199997" Top="167.199997" Bottom="167.199997"/>
 		<Maneuver yaw="2415.500000" pitch="3415.500000" roll="3415.500000"/>
-	</Thrust>
+	</Thrust >
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense HudImage="kyta-hud.spr">
 		<Armor front="100" right="80" left="80" back="100"/>
 		<Shields front="24.000000" right="20.000000" left="20.000000" back="24.000000" recharge="23.000000"/>
 		<Hull strength="250.000000"/>

@@ -6,7 +6,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense HudImage="cruiser_mk2.spr">
 		<Armor front="3200" right="2600" left="2600" back="2800"/>
 		<Shields front="3500.000000" back="3500.000000" recharge="80.000000"/>
 		<Hull strength="2500.000000"/>
