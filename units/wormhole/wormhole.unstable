@@ -1,4 +1,6 @@
 <Unit scale="800">
+<BSPMesh usebsp="0"/>
+<Rapidmesh rapid="0"/>
 
 <Meshfile file="cyl_unstable.xmesh"/>
 
