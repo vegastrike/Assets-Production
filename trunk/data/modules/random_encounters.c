@@ -41,6 +41,29 @@ module random_encounters {
       i=i+1;
     }
   };
+
+  bool test_atLeastNInsignificantUnitsNear (object unit, int n) {
+    int num_ships=0;
+    int count=0;
+    object un = _unit.getUnit (count);
+    while (!(_std.isNull(un))) {
+      if (_unit.getDistance(unit,un)<detection_distance) {
+	if (!unit.isSignificant(un)) {
+	  object name = _unit.getFgName (un);
+	  _io.printf ("unit not sig %d %s",num_ships,name);
+	  num_ships=num_ships+1;
+	  if (num_ships>=n){
+	    return true;
+	  }
+	}
+      }
+      count=count+1;
+      un = _unit.getUnit(count);
+    }
+    return false;
+  };
+
+
   bool atLeastNInsignificantUnitsNear (object unit, int n) {
     int num_ships=0;
     int count=0;
