@@ -307,7 +307,11 @@ def manageDynamicNews(player,newsstring):
 		if word.find("%RAND" + dockedat) != -1:
 			isdone = 1
 			randint = string.atoi(string.join(word.split("%RAND" + dockedat),""))
+			print "Previous generation of new event found, randint is",
+			print randint			
 			break
+		else:
+			print "No previous generation of event found"
 	varlist = list()
 	for word in ls:
 		if word.find("%RAND") == -1:
