@@ -41,6 +41,12 @@ class total_jump (Director.Mission):
         if (vsrandom.randrange(0,10)==0):
             launch.launch_wave_around_unit ("ShadowCap",faction,faction_ships.getRandomCapitol(faction),ai,1,2000.0,4000.0,VS.getPlayer(),'')
     def Execute (self):
+#        un=VS.getUnit(0);
+#        i=0
+#        while (un):
+#            print un.getName()
+#            i+=1
+#            un=  VS.getUnit(i)
         time = VS.GetGameTime()
         if (time-self.lasttime>self.waittime):
             self.launch_new_wave()
