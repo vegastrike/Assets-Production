@@ -16,6 +16,7 @@ class defend (Director.Mission):
           self.mplay="all"
 	  self.defendbase = defend_base	  
 	  self.attackers = []
+          self.objective= 0
 	  self.targetiter = 0
 	  self.ship_check_count=0
 	  self.defend = defendthis
@@ -51,12 +52,14 @@ class defend (Director.Mission):
         un= VS.getUnit (self.ship_check_count)
         self.ship_check_count+=1
         if (un.isNull ()):
+            VS.setCompleteness(self.objective,1.0)
 	    return 1
         
         if (un!=self.you):
             if (un.getFactionName()==self.faction): 
                 if (un.getSignificantDistance (jp)<self.escdist):
                     if (un.getFlightgroupName()!="Base"):
+                        VS.setObjective(self.objective,"Destroy the %s"%un.getName())
                         self.ship_check_count=0
         return 0
 	
@@ -64,7 +67,11 @@ class defend (Director.Mission):
         VS.IOmessage (0,"defend",self.mplay,"Eliminate all %s ships here" % self.faction)
         if (self.defend):
             VS.IOmessage (0,"defend",self.mplay,"You must protect %s." % jp.getName ())
-        count=0            
+        count=0
+        VS.addObjective ("Protect %s from %s" % (jp.getName(),self.faction))
+        self.objective = VS.addObjective ("Destroy All %s Hostiles" % self.faction)
+        VS.setCompleteness(self.objective,-1.0)
+
         while (count<self.quantity):
 	    launched = launch.launch_wave_around_unit ("Shadow",self.faction,faction_ships.getRandomFighter(self.faction),"default",1,2000.0,4500.0,you,'')
             if (self.defend):
