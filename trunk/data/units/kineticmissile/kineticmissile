@@ -3,7 +3,10 @@
 	</Description>
 	<Meshfile file = "kineticmissile.xmesh"  >
 	</Meshfile>
-	<BspMesh  >
+	<RapidMesh rapid="false">
+	
+	</RapidMesh>
+	<BspMesh  usebsp="true" rapid="false">	
 	</BspMesh>
 	<Light file = "supernova.bmp" x = "0" y = "0" z = "-5.90000023841858" size = "2.3"  >
 	</Light>
