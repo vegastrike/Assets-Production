@@ -102,7 +102,7 @@ module cargo_mission {
 	      arrived=true;
 	      object newship=faction_ships.getRandomCapitol(faction);
 	      int randint=random.randomint(0,50);
-	      object newunit=launch.launch_wave_around_significant("Base",faction,newship,"default",1,5000.0,randint);
+	      object newunit=launch.launch_wave_around_significant("Base",faction,newship,"_ai_stationary",1,5000.0,randint);
 	      basecontainer=_unit.getContainer(newunit);
 	    }
 	    _string.delete (sysfil);
