@@ -1,0 +1,40 @@
+<Unit>	
+	<Defense HudImage="f109vampire-hud.spr">
+		<Shields front="000000" right="0.000000" left="0.000000" back="0.000000" />
+	</Defense>
+	<upgrade file="shield_4"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
+<Energy afterburnenergy="32767">
+</Energy>
+<Meshfile file="fighter-body.xmesh"/>
+<Meshfile file="fighter-guns.xmesh"/>
+<!-- new elements added -->
+<Mount weapon="" size="Special Medium Heavy" x="0.730882" y="0.293518" z="23.003031" />
+<Mount weapon="" size="Light Medium" x="-0.010562" y="0.432593" z="25.065680" />
+<Mount weapon="" size="Special Medium Heavy" x="-0.731581" y="0.229109" z="22.665678"/>
+
+<Light file="supernova.bmp" x="3.386960" y="2.524278" z="-10.232185" size="4.677816"/>
+<Light file="supernova.bmp" x="-2.894827" y="2.631000" z="-11.071307" size="4.717809"/>
+<Light file="supernova.bmp" x="-18.526455" y="3.429340" z="0.421196" size="3.297047"/>
+<Light file="supernova.bmp" x="18.440897" y="3.276502" z="0.167332" size="3.630991"/>
+
+	<cockpit file="hornet-cockpit.cpt" x="0" y="3" z="23"/>
+	<Thrust>
+		<Engine Afterburner="268.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
+		<Maneuver yaw="3415.500000" pitch="3415.500000" roll="3415.500000"/>
+	</Thrust>
+	<Sound> </Sound>
+
+
+	<Stats mass="7" momentofinertia="7" fuel="2000000000"></Stats>
+	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="140.000000" maxspeed="80.000000">
+			<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	</Computer>
+
+	<Jump missing="1" delay="1" jumpenergy="350"/>
+	<Hold volume="25">
+	</Hold>
+	<Upgrade file="mult_general_downgrade"/>
+</Unit>

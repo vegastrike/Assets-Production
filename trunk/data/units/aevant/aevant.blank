@@ -1,0 +1,53 @@
+<Unit>
+	<Defense HudImage="aevant-hud.spr">
+		<Shields front="000000" right="0.000000" left="0.000000" back="0.000000" />
+	</Defense>
+	<upgrade file="shield_4"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
+	<Energy afterburnenergy="32767">
+	</Energy>
+	<Meshfile file="aevant.xmesh" />
+	<Thrust>
+		<Engine Afterburner="896.999969" Forward="234.399994" Retro="192.599995" Left="137.199997" Right="130.199997" Top="167.199997" Bottom="167.199997"/>
+		<Maneuver yaw="2415.500000" pitch="2415.500000" roll="2415.500000"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Stats mass="10.000000" momentofinertia="10.000000" fuel="1000000000"></Stats>
+	<Computer yaw="80.500000" pitch="90.500000" roll="80.500000" afterburner="119.699997" maxspeed="35.799999">
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	</Computer>
+
+
+           	<Jump missing="1" delay="1" jumpenergy="500"/>              
+
+      
+
+<!-- new elements added -->
+<Light file="supernova.bmp" x="-1.850000" y="-0.000000" z="-9.600000" size="1.358022"/>
+<Light file="supernova.bmp" x="1.850000" y="0.000000" z="-9.600000" size="1.187018"/>
+<Mount weapon="" size="Light medium heavy" x="8.045031" y="-4.217878" z="0.973509" />
+<Mount weapon="" size="Light medium heavy" x="-8.022359" y="-4.201684" z="0.913285" />
+<Mount weapon="" size="medium heavy" x="8.082913" y="-0.368988" z="0.747223" />
+<Mount weapon="" size="medium heavy" x="-8.157103" y="-0.379586" z="1.100964" />
+<Light file="supernova.bmp" x="-0.000000" y="0.000000" z="-9.200000" size="2.064038"/>
+<Mount weapon="" size="Light special" x="1.871961" y="0.374392" z="12.062358" />
+<Mount weapon="" size="Light special" x="-1.885182" y="0.377037" z="12.112597"/>
+<Mount weapon="" size="Special-Missile" x="1.871961" y="0.374392" z="-2.062358" ammo="40"/>
+<Mount weapon="" size="Special-Missile" x="-1.885182" y="0.377037" z="-2.06112597" ammo="40"/>
+
+<Mount weapon="" size="Light-missile medium-missile heavy-missile" x="6.045031" y="-3.217878" z="0.973509" ammo="2" volume="601"/>
+<Mount weapon="" size="Light-missile medium-missile heavy-missile" x="-6.022359" y="-3.201684" z="0.913285" ammo="2" volume="601"/>
+<Mount weapon="" size="light-missile" x="6.082913" y="-.368988" z="0.747223" ammo="2" volume="201"/>
+<Mount weapon="" size="light-missile" x="-6.157103" y="-.379586" z="1.100964" ammo="2" volume="201"/>
+
+<Mount weapon="" size="medium-missile" x="5.082913" y=".368988" z="0.747223" ammo="2" volume="301"/>
+<Mount weapon="" size="medium-missile" x="-5.157103" y=".379586" z="1.100964" ammo="2" volume="301"/>
+	<Hold volume="65">
+	</Hold>
+
+	<Upgrade file="mult_general_downgrade"/>
+
+</Unit>

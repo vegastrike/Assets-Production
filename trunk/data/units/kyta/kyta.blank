@@ -1,0 +1,36 @@
+<Unit>
+	<Defense HudImage="kyta-hud.spr">
+		<Shields front="000000" right="0.000000" left="0.000000" back="0.000000" />
+	</Defense>
+	<upgrade file="shield_4"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
+	<Energy afterburnenergy="32767">
+	</Energy>
+
+	<Meshfile file="kyta.xmesh" />
+	<BspMesh/>
+	<Thrust>
+		<Engine Afterburner="1196.999969" Forward="334.399994" Retro="292.599995" Left="167.199997" Right="167.199997" Top="167.199997" Bottom="167.199997"/>
+		<Maneuver yaw="2415.500000" pitch="3415.500000" roll="3415.500000"/>
+	</Thrust >
+	<Sound>
+	</Sound>
+	<Stats mass="2.000000" momentofinertia="2.000000" fuel="100000000"></Stats>
+	<Computer yaw="103.500000" pitch="243.500000" roll="203.500000" afterburner="149.699997" maxspeed="70.299999">
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	</Computer>
+
+
+       	<Jump missing="1" delay="1" jumpenergy="90"/>
+<!-- new elements added -->
+<Light file="supernova.bmp" x="0.574761" y="-0.023331" z="-10.736850" size="0.822411"/>
+<Light file="supernova.bmp" x="1.386666" y="0.000000" z="-10.986665" size="0.564805"/>
+<Mount weapon="Tachyon" size="Special Heavy" x="-6.118179" y="0.000000" z="2.773746" />
+<Mount weapon="DisruptorBeam" size="Light Medium" x="-1.301772" y="-0.130177" z="8.584977" />
+	<Hold volume="8">
+	</Hold>
+	<Upgrade file="mult_general_downgrade"/>
+
+</Unit>

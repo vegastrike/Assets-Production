@@ -6,7 +6,8 @@
 	<upgrade file="engine_level_0"/>
 	<upgrade file="lithium"/>
 	<upgrade file="hull"/>
-
+	<Energy afterburnenergy="32767">
+	</Energy>
 	<Meshfile file="rescue-hull-e.xmesh"/>
 	<Meshfile file="rescue-hull-w.xmesh"/>
 	<Meshfile file="rescue-hull-p.xmesh"/>
@@ -31,10 +32,12 @@
 
 
 	<Stats mass="10.000000" momentofinertia="10.000000" fuel="40000000"></Stats>
-	<Computer yaw="60.400002" pitch="50.600006" roll="80.400002" afterburner="60" maxspeed="30"/>
-
+	<Computer yaw="60.400002" itts="false" pitch="50.600006" roll="80.400002" afterburner="60" maxspeed="30">
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	</Computer>
 	<Jump missing="1" delay="2" jumpenergy="150"/>       
-	<Energy afterburnenergy="32767"/>
+	<Energy afterburnenergy="32767">
+	</Energy>
 	<description>
 
 	</description>
