@@ -14,7 +14,9 @@ module random_encounters {
   int lastmode;//were we in battle mode (true) or cruise mode(false)
   float enprob;
   object sig_container;
-  void init(float sigdis, float detectiondis, float gendis, int minnships, int gennships, float unitprob, float enemyprob, float capprob){
+  int player_num;
+  void init(int player, float sigdis, float detectiondis, float gendis, int minnships, int gennships, float unitprob, float enemyprob, float capprob){
+    player_num=player;
     enprob = enemyprob;
     fighterprob = unitprob;
     _std.setNull(sig_container);
@@ -49,10 +51,10 @@ module random_encounters {
       object fighter = faction_ships.getRandomFighter (localfaction);
       
       int numship= random.randomint (1,gen_num_ships);
-      object launched = launch.launch_wave_around_unit("privateer",localfaction,fighter,"default",numship,200.0,generation_distance,un);
+      object launched = launch.launch_wave_around_unit("privateer",localfaction,fighter,"default",numship,200.0,generation_distance*_std.Rnd()*0.9,un);
       if ((_std.Rnd())<capship_prob) {
 	object capship = faction_ships.getRandomCapitol (localfaction);
-	launched=launch.launch_wave_around_unit("privateer",localfaction,capship,"default",1,200.0,generation_distance,un);
+	launched=launch.launch_wave_around_unit("privateer",localfaction,capship,"default",1,200.0,generation_distance*_std.Rnd()*0.9,un);
       }
       _string.delete (localfaction);
       i=i+1;
@@ -123,7 +125,7 @@ module random_encounters {
     return significant_unit;
   };
   object decideMode() {
-    object player_unit=_unit.getPlayer();
+    object player_unit=_unit.getPlayerX(player_num);
     if (_std.isNull(player_unit)) {
       SetModeZero();
       return player_unit;
@@ -154,6 +156,7 @@ module random_encounters {
     }
   };
   void loop() {
+    object player_unit=_unit.getPlayerX(player_num);
     object un = decideMode ();
     if (curmode!=lastmode) {
       _io.printf ("curmodechange %d %d",curmode,lastmode);
@@ -163,7 +166,7 @@ module random_encounters {
 	  if (!atLeastNInsignificantUnitsNear (un,min_num_ships)) {
 	    //determine whether to launch more ships next to significant thing based on ships in that range  
 	    _io.printf ("launch near");
-	    launch_near (un);
+	    launch_near (player_unit);
 	  } 
 	}
       }
