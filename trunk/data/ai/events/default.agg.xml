@@ -1,36 +1,36 @@
 <AggressiveAI time="7">
-<distance max=".03" script="++shelton-slide.xml"/>
-<!-- distance less than .1-->
-<distance min="0.03" max=".2"> 
+<meterdistance max="200" script="++shelton-slide.xml"/>
+<!-- meterdistance less than .1-->
+<meterdistance min="60" max="200"> 
   <threat max=".2" script="++afterburnerslide.xml">
   </threat>
-</distance>
-<distance min="0.03" max=".2"> 
+</meterdistance>
+<meterdistance min="20" max="200"> 
   <threat min=".2" max=".7" script="++shelton-slide.xml">
   </threat>
-</distance>
-<distance min="0.03" max=".1" script="++cloak.xml"> 
+</meterdistance>
+<meterdistance min="30" max="100" script="++cloak.xml"> 
   <threat min=".7" script="++evade.xml">
   </threat>
-</distance>
-<!-- distance midrange .1-->
-<distance min=".1" max=".6">
+</meterdistance>
+<!-- meterdistance midrange .1-->
+<meterdistance min="100" max="600">
   <threat max=".8" script="++turntowards.xml">
   </threat>
-</distance>
-<distance min=".1" max=".6">
+</meterdistance>
+<meterdistance min="100" max="600">
   <threat min=".8"  script="++afterburnerslide.xml">
   </threat>
-</distance>
+</meterdistance>
 
-<!-- distance far out-->
-<distance min=".6" script="++turntowards.xml">
+<!-- meterdistance far out-->
+<meterdistance min="600" script="++turntowards.xml">
   <threat max=".8" script="++afterburn-turntowards.xml">
   </threat>
-</distance>
-<distance min=".6" script="++evade.xml">
+</meterdistance>
+<meterdistance min="600" script="++evade.xml">
   <threat min=".8"  script="++afterburn-turntowards.xml">
   </threat>
-</distance>
+</meterdistance>
 
 </AggressiveAI>
