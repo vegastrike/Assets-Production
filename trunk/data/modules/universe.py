@@ -75,8 +75,15 @@ def getAdjacentSystems (currentsystem, sysaway, jumps=(),preferredfaction=''):
       return getAdjacentSystems(nextsystem,sysaway-1,jumps+(nextsystem,))
   
 #def getAdjacentSystems (currentsystem, num_systems_away):
-#    return nearsys (currentsystem,num_systems_away,()) 
-  
+#    return nearsys (currentsystem,num_systems_away,())
+
+def getAdjacentSystemList ():
+    list=[]
+    max=VS.GetNumAdjacentSystems();
+    for i in range(max):
+        list.append(VS.GetAdjacentSystem(i))
+    return list
+
 def getRandomJumppoint():
     jp_list=getJumppointList()
     size=len(jp_list)
