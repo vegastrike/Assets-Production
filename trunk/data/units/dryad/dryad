@@ -2,7 +2,7 @@
 	<Meshfile file="Dryad-hull.xmesh"/>
 	<Meshfile file="Dryad-cockpit.xmesh"/>
 
-	<cockpit file="medium-cockpit.cpt" x="0.000000" y="0.000000" z="0.000000"/>
+	<cockpit file="medium_cockpit.cpt" x="0.000000" y="0.000000" z="0.000000"/>
 
 	<Thrust>
 		<Engine Afterburner="1066.666718" Forward="605.333344" Retro="554.666676" Left="402.666672" Right="452.666672" Top="402.666672" Bottom="452.666672"/>
