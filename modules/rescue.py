@@ -35,9 +35,13 @@ class rescue (Director.Mission):
 			return
 		if (self.arrived==0):
 			self.adjsys=go_somewhere_significant.go_somewhere_significant(self.you,0,10000.)
+			sys = VS.getSystemFile()
+			import dynamic_battle
+			if sys in dynamic_battle.rescuelist:
+				del dynamic_battle.rescuelist[sys]
 			self.arrived=1
 		elif (self.arrived==1):
-			self.eject = launch.launch_wave_around_unit("Helpless Pilot",self.faction,"eject","default",1,3000.0,4000.0,self.adjsys.SignificantUnit())
+			self.eject = launch.launch_wave_around_unit("Rescue Pilot",self.faction,"eject","default",1,3000.0,4000.0,self.adjsys.SignificantUnit())
 			self.arrived=2
 			self.eject.setName("Pilot")
 			L = launch.Launch()
