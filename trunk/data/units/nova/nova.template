@@ -1,24 +1,22 @@
 <Unit>
-	<Meshfile file="nova.xmesh" />
-	<BspMesh/>
 	<Mount weapon="Laser" size="Light" x="1.000000" y="0.000000" z="4.000000"/>
 	<Mount weapon="Laser" size="Light" x="-1.000000" y="0.000000" z="4.000000"/>
 	<Mount weapon="Meson" size="Light Medium" x="4.000000" y="0.000000" z="4.500000"/>
 	<Mount weapon="Meson" size="Light Medium" x="-4.000000" y="0.000000" z="4.500000"/>
-	<Mount weapon="Dumbfire" size="light-missile" x="-1.500000" y="-0.200000" z="-1.0000" ammo="3"/>
-	<Mount weapon="Dumbfire" size="light-missile" x="1.500000" y="-0.200000" z="-1.00000" ammo="3"/>
+	<Mount weapon="Dumbfire" size="light-missile" x="-1.500000" y="-0.200000" z="-1.0000" volume="240"/>
+	<Mount weapon="Dumbfire" size="light-missile" x="1.500000" y="-0.200000" z="-1.00000" volume="240"/>
 
-	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-2.500000" y="-0.200000" z="-2.00000" ammo="2"/>
-	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="2.500000" y="-0.200000" z="-2.00000" ammo="2"/>
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-2.500000" y="-0.200000" z="-2.00000" volume="340"/>
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="2.500000" y="-0.200000" z="-2.00000" volume="340"/>
 	<Thrust>
-		<Engine Afterburner="2600.000000" Forward="848.000000" Retro="492.000000" Left="424.000000" Right="424.000000" Top="424.000000" Bottom="424.000000"/>
+		<Engine Afterburner="4000.000000" Forward="1048.000000" Retro="692.000000" Left="624.000000" Right="624.000000" Top="624.000000" Bottom="624.000000"/>
 		<Maneuver yaw="10009.400101" pitch="10009.400101" roll="10009.400101"/>
 	</Thrust>
 	<Sound>
 	</Sound>
 	<Defense HudImage="nova-hud.spr">
 		<Armor front="400" right="350" left="350" back="400"/>
-		<Shields front="600.000000" back="400.000000" recharge="50.000000"/>
+		<Shields front="400.000000" back="300.000000" recharge="40.000000"/>
 		<Hull strength="8000.000000"/>
 	</Defense>
 
