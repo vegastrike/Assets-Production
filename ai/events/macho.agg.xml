@@ -1,8 +1,8 @@
 <AggressiveAI time="20">
 <meterdistance max="600" script="++kickstop.xml"/>
 <!-- meterdistance less than .1-->
-<meterdistance min="600" script="++turntowards.xml">
-  <threat min="0" script="++afterburn-turntowards.xml">
+<meterdistance min="600" script="++turntowardsitts.xml">
+  <threat min="0" script="++afterburn-turntowards-itts.xml">
   </threat>
 </meterdistance>
 </AggressiveAI>
