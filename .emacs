@@ -32,6 +32,7 @@
 (make-face 'paren-match-face)
 (set-face-foreground 'paren-match-face "White")
 (set-face-background 'paren-match-face "Black")
+(setq auto-save-default nil)
 (setq show-paren-face 'paren-match-face)
 (setq auto-mode-alist
       (cons '("\\.h$" . c++-mode) (cons '("\\.py$" . python-mode) auto-mode-alist)))
