@@ -45,6 +45,16 @@ def getSignificant (whichsignificant, landable_only, capship_only):
 	return un
   
   #this one terminates if fewer than so many planets exist with null
+
+def inSystem (unit):
+    i=VS.getUnitList ()
+    un = i.current()
+    while (un):
+        if (un==unit):
+            return 1
+        i.advance()
+        un=i.current()
+    return 0
 def getPlanet (whichsignificant, sig):
 	un=VS.Unit()
 	signum=0
@@ -70,7 +80,7 @@ def getJumpPoint(whichsignificant):
 	while (signum<whichsignificant):
 		un=VS.getUnit(which)
 		if (un):
-			if (_unit.isJumppoint(un)):
+			if (un.isJumppoint()):
 				signum=signum+1
 			which=which+1							
 		else:
@@ -88,7 +98,7 @@ def obsolete_getNearestEnemy(my_unit,range):
     while(unit):
       unit_pos=un.getPosition()
       dist=my_unit.getMinDis(unit_pos)
-      relation=_unit.getRelation(my_unit,unit)
+      relation=my_unit.getRelation(unit)
       if(relation<0.0):
 	if((my_unit==unit) and (dist<range) and (dist<min_dist)):
 	  min_dist=dist
@@ -96,12 +106,12 @@ def obsolete_getNearestEnemy(my_unit,range):
       ship_nr=ship_nr+1
       unit=VS.getUnit(ship_nr)
     if(min_enemy):
-      other_fgid=_unit.getFgID(min_enemy)
+      other_fgid=min_enemy.getFgID()
     return min_enemy
   
 
 def obsolete_getThreatOrEnemyInRange(un,range):
-    threat=_unit.getThreat(un)
+    threat=un.getThreat()
     if(threat.isNull()):
       threat=obsolete_getNearestEnemy(un,range)
     return threat
