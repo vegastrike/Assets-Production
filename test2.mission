@@ -20,6 +20,14 @@
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
+                <flightgroup name="blue" faction="aera" type="lekra" ainame="default" waves="1" nr_ships="5">
+			<pos x="31000" y="000" z="0000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
 
 <!--                <flightgroup name="blue" faction="aera" type="hellcat" ainame="default" waves="8" nr_ships="3">
 			<pos x="29000" y="5000.0" z="29000.0"/>

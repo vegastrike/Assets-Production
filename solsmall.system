@@ -19,15 +19,14 @@
 </Light>	
 
         <planet name="sun" file="sun.bmp" radius="2" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0">
-	<planet name="JumpPoint" file="green.bmp" radius="4000" gravity="20" ri="57000" rj="0" rk="0" si="0" sj="0" sk="57000" velocity="0" position="0" destination="sol">
-
 	</planet>
+	<planet name="JumpPoint" file="jump.png" alpha="ONE ONE" radius="100" gravity="20" x="29000" velocity="0" position="0" destination="sol">
 	</planet>
 	<unit name= "Victory"  file="drydock" faction="confed" x="28000"  position="100">
 	</unit>
 	<unit name= "Victory"  file="ConfedHq" faction="confed" x="27000"  velocity="0" position="100">
 	</unit>
-	<unit name= "Victory"  file="station" faction="confed" x="24000"  velocity="0" position="100">
+	<unit name= "Victory"  file="station" faction="confed" x="24000"  velocity="0" position="100">	</planet>
 	</unit>
 	<unit name= "Victory"  file="carrier" faction="confed" x="22000"  velocity="0" position="100">
 	</unit>
