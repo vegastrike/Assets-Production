@@ -48,6 +48,7 @@ module bounty {
 	    initstage2 (minns,maxns,(1.0+(_std.Float(sd)*0.5))*random.random (credsmin, credsmax),run_away,sd,tempfaction);
 	    _string.delete (name);
 	  }else {
+	    _io.printf ("aborting random");
 	    _std.terminateMission(false);
 	  }
 	};
@@ -90,6 +91,7 @@ module bounty {
 	    _io.message (4,"game","all","(if you survive).  Good luck!");
 	    _string.delete(str);
 	  } else {
+	    _io.printf ("aboritng stage 2");
 	    _std.terminateMission (false);
 	  }
 	};
@@ -101,6 +103,7 @@ module bounty {
 	  _unit.addCredits(un,cred);
 	  if (terminate) {
 	    destroy();
+		_io.printf ("you win!");
 	    _std.terminateMission(true);
 	  }
 	};
@@ -109,6 +112,7 @@ module bounty {
 	  _io.message(0,"game","all","You have failed this mission and will not be rewarded.");
 	  if (terminate) {
 	    destroy();
+	    _io.printf ("aborting lose");
 	    _std.terminateMission(false);
 	  }
 	};
@@ -144,21 +148,22 @@ module bounty {
 	    object sysfil = _std.getSystemFile();
 	    if (!_string.equal (sysfil,destination)) {
 	      arrived=3;
-	      enemy=_unit.getUnitFromContainer(enemycontainer);
-	      if (_std.isNull(you)) {
-		Lose(true);
-		return;
-	      }
-	      if (_std.isNull(enemy)) {
-		Win(you,true);
-		return;
-	      }
 	    } else {
 	      _std.ResetTimeCompression();
+	    }	   
+	    enemy=_unit.getUnitFromContainer(enemycontainer);
+	    if (_std.isNull(you)) {
+	      Lose(true);
+	      return;
+	    }
+	    if (_std.isNull(enemy)) {
+	      Win(you,true);
+	      return;
 	    }
 	  } else if (arrived==1) {
 	    object significant=_unit.getUnitFromContainer(sigcont);
 	    if (_std.isNull (significant)) {
+		_io.printf ("sig null");
 	      _std.terminateMission(false);
 	    }else {
 	      if (unit.getSignificantDistance(you,significant)<10000.0) {
@@ -194,6 +199,7 @@ module bounty {
 		isSig=true;
 	      }
 	      if (_std.isNull(significant)) {
+		_io.printf ("aborting");
 		_std.terminateMission (false);
 	      } else {
 		object localdestination=_unit.getName(significant);
