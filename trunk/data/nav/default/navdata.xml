@@ -1,0 +1,45 @@
+<nav>
+
+<console> 
+	<Meshfile file="console.xmesh"    x_small=".3"  x_large=".7"  y_small = ".3" y_large = ".7" z="0" scale="1.0"/>
+</console>
+
+<button1>
+<Meshfile file="b_dest.xmesh"   x=".75" y=".9"  z="0" dx=".2" dy=".05" scale="1.0"/>
+</button1>
+
+<button2>
+<Meshfile file="b_add.xmesh"    x=".75" y=".8"  z="0" dx=".2" dy=".05" scale="1.0"/>
+</button2>
+
+<button3>
+<Meshfile file="b_sub.xmesh"    x=".75" y=".7"  z="0" dx=".2" dy=".05" scale="1.0"/>
+</button3>
+
+<button4>
+<Meshfile file="b_clear.xmesh"  x=".75" y=".6"  z="0" dx=".2" dy=".05" scale="1.0"/>
+</button4>
+
+<button5>
+<Meshfile file="b_navmis.xmesh" x=".75" y=".5" z="0" dx=".2" dy=".05" scale="1.0"/>
+</button5>
+
+<button6>
+<Meshfile file="b_up.xmesh"     x=".75" y=".4" z="0" dx=".2" dy=".05" scale="1.0"/>
+</button6>
+
+<button7>
+<Meshfile file="b_down.xmesh"   x=".75" y=".3" z="0" dx=".2" dy=".05" scale="1.0"/>
+</button7>
+
+<systemiteminfo>
+<Info itemscale="3.0" zshiftmultiplier="2.5" itemzscalefactor="2.0"/>
+</systemiteminfo>
+
+<factioncolours>
+<colour faction="confed" r=".5" g="1" b=".5" a="1"/>
+<colour faction="rlaan" r="1" g=".5" b=".5" a="1"/>
+<colour faction="aera" r=".5" g=".5" b="1" a="1"/>
+</factioncolours>
+
+</nav>
