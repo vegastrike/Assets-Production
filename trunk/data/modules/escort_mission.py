@@ -9,6 +9,7 @@ import universe
 import unit
 import Director
 import quest
+escort_num=0
 class escort_mission (Director.Mission):
 	you=VS.Unit()
 	escortee=VS.Unit()
@@ -26,7 +27,9 @@ class escort_mission (Director.Mission):
 		self.distfrombase=distance_from_base
 		print "g"
 		self.faction=factionname
-		self.escortee = launch.launch_wave_around_unit("Escort",
+		global escort_num
+		escort_num+=1
+		self.escortee = launch.launch_wave_around_unit("Escort"+str(escort_num),
 							       self.faction,
 							       faction_ships.getRandomFighter("merchant"),
 							       "default",
@@ -53,7 +56,7 @@ class escort_mission (Director.Mission):
 			VS.IOmessage (0,"escort",self.mplay,"#ff0000You were to protect your escort. Mission failed.")
 			VS.terminateMission(0)
 			return
-		self.you.setFlightgroupLeader(self.you)
+		self.escortee.setFlightgroupLeader(self.you)
 		if (self.escortee.isNull()):
 			VS.IOmessage (0,"escort",self.mplay,"#ff0000You were to protect your escort. Mission failed.")
 			universe.punish(self.you,self.faction,self.difficulty)
@@ -72,6 +75,7 @@ class escort_mission (Director.Mission):
 			self.you.addCredits(self.creds)
 			VS.IOmessage (0,"escort",self.mplay,"#00ff00Excellent work! You have completed this mission!")
 			self.escortee.setFgDirective('b')
+			self.escortee.setFlightgroupLeader(self.escortee)
 			if (self.var_to_set!=''):
 				quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,1)
 			VS.terminateMission(1)
