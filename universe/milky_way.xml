@@ -50,6 +50,59 @@
 				<var name="backgroundlist" value="background.txt"/>
 				
 			</sector>			
+
+
+			<sector name="minlimit">
+				<var name="sun_radius" value="2000"/>
+				<var name="compactness" value="1.1"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="0"/>
+				<var name="num_planets" value="2"/>
+				<var name="num_moons" value="0"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="false"/>
+				<var name="num_natural_phenomena" value="0"/>
+				<var name="num_starbases" value="1"/>
+				<var name="faction" value="unknown"/>
+				<var name="namelist" value="names.txt"/>
+				<var name="data" value="0"/>
+				<var name="num_jump" value="1"/>
+				<var name="starlist" value="stars.txt"/>
+				<var name="gasgiantlist" value="gas_giants.txt"/>
+				<var name="planetlist" value="planets.txt"/>
+				<var name="moonlist" value="moons.txt"/>
+				<var name="unitlist" value="smallunits.txt"/>
+				<var name="asteroidlist" value="asteroids.txt"/>
+				<var name="nebulalist" value="nebulae.txt"/>
+				<var name="backgroundlist" value="background.txt"/>
+			</sector>			
+			<sector name="maxlimit">
+				<var name="sun_radius" value="100000"/>
+				<var name="compactness" value="2.5"/>
+				<var name="num_stars" value="4"/>
+				<var name="num_gas_giants" value="3"/>
+				<var name="num_planets" value="8"/>
+				<var name="num_moons" value="7"/>
+				<var name="nebulae"   value="true"/>
+				<var name="asteroids"   value="true"/>
+				<var name="num_natural_phenomena" value="2"/>
+				<var name="num_starbases" value="6"/>
+				<var name="num_jump" value="1000"/>
+				<var name="faction" value="unknown"/>
+				<var name="namelist" value="names.txt"/>
+				<var name="data" value="0"/>
+				<var name="starlist" value="stars.txt"/>
+				<var name="gasgiantlist" value="gas_giants.txt"/>
+				<var name="planetlist" value="planets.txt"/>
+				<var name="moonlist" value="moons.txt"/>
+				<var name="unitlist" value="smallunits.txt"/>
+				<var name="asteroidlist" value="asteroids.txt"/>
+				<var name="nebulalist" value="nebulae.txt"/>
+				<var name="backgroundlist" value="background.txt"/>
+				
+			</sector>			
+
+
 		</sector>
 		<sector name="sol_sector">
 			<var name="faction" value="confed"/><!-- the default faction for systems in the sol sector -->		
