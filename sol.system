@@ -46,7 +46,7 @@
 		</planet>
 
 		<planet name="Earth" file="earth.bmp" radius="3000" gravity="20" ri="57000" rj="0" rk="0" si="0" sj="0" sk="57000" velocity="0" position="0">
-		<planet name="Earth" file="earthcloudmaptrans.bmp" alpha="earthcloudmaptrans.alp" radius="3200" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" velocity="0" position="0"/>
+		<planet name="Earth" file="earthcloudmaptrans.png" alpha="true" radius="3200" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" velocity="0" position="0"/>
                 <ContinuousTerrain file="continuousterrain.txt" mass=".00000100" y="0000" z="30000" qi="0" qj="0" qk="1" ri="0" rj="1" rk="0"/>
                                 <Atmosphere radius="10000"/>
 
