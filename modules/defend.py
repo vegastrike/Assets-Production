@@ -79,7 +79,7 @@ class defend (Director.Mission):
             self.attackers += [ launched ]
 	    count+=1
         self.quantity=0
-    def loop ():
+    def Execute (self):
         if (self.you.isNull() or (self.arrived and self.defendee.isNull())):
             VS.IOmessage (0,"defend",self.mplay,"#ff0000You were unable to arrive in time to help. Mission failed.")
             VS.terminateMission(0)
