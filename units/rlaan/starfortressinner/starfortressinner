@@ -20,9 +20,9 @@
 
 	<Defense>
 
-		<Armor front="12000" right="12000" left="12000" back="12000"/>
+		<Armor front="6000" right="6000" left="6000" back="6000"/>
 
-		<Hull strength="20000"/>
+		<Hull strength="8000"/>
 
 	</Defense>
 
