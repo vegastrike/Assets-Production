@@ -11,57 +11,22 @@ import Director
 
 class cargo_mission (Director.Mission):
 	def initbriefing(self):
-		self.jump_ani=0
-		self.rnd_y=0.0
-		self.added_warp=1
-		self.brief_stage=0
-		self.begintime= VS.GetGameTime()-6.0
-		print "starting briefing"
-		if (self.you.isNull()):
-			VS.terminateMission(0)
-			Briefing.terminate()
-			return
-		faction=self.you.getFactionName()
-		name=self.you.getName()
-		self.brief_you=Briefing.addShip(name,faction,(0.0,0.0,80.0))
-		VS.IOmessage (0,"cargo mission","briefing","Your mission for today will be to deliver some %s cargo to the %s system.\nIn order to get there, you must follow this route that we have planned out for you." % (self.cargoname,self.adjsys.DestinationSystem()))
+		VS.IOmessage (0,"cargo mission","briefing","Your mission for today will be to run some %s cargo" % self.cargoname)
+		self.briefgametime = 0
+		self.adjsys.initbriefing()
+
 	
 	def loopbriefing(self):
-		size=len(self.adjsys.JumpPoints())
-		time = VS.GetGameTime()
-		Briefing.setCamPosition((1.6*(time-self.begintime)*self.brief_stage,0.0,0.0))
-		if (((time-self.begintime)>=5.0) and self.added_warp):
-			self.jump_ani=Briefing.addShip("brief_warp",self.faction,(20.0*(self.brief_stage),self.rnd_y,79.5+self.rnd_y))
-			self.added_warp=0
-		if (((time-self.begintime)>=6.0)):
-			if (self.jump_ani!=0):
-				Briefing.removeShip(self.jump_ani)
-				self.jump_ani=0
-		if ((size==self.brief_stage) and ((time-self.begintime)>=6.0)):
+		brief_you=self.adjsys.loopbriefing()
+		if (brief_you != -1):
 			VS.IOmessage(0,"cargo mission","briefing","Once there, you must drop the cargo off at a specified unit")
-			self.brief_stage=size+1
-			self.added_warp=0
-			self.time=0.0
-		elif ((self.brief_stage>size) and ((time-self.begintime)>=11.0)):
-			Briefing.terminate()
-			return
-		elif (((time-self.begintime)>=6.0) and (self.brief_stage<size)):
-			self.added_warp=1
-			self.rnd_y=(random.random()*40.0-20.0)
-			Briefing.addShip("brief_jump",self.faction,(20.0*(self.brief_stage+1),self.rnd_y,79.6+self.rnd_y))
-			Briefing.enqueueOrder (self.brief_you,(20.0*(self.brief_stage+1) ,self.rnd_y,80.0+self.rnd_y) , 5.0)
-			self.begintime=time
-			myname=self.adjsys.JumpPoints() [self.brief_stage]
-			VS.IOmessage (0,"cargo mission","briefing","You must go to the '%s' jump point" % (myname))
-			self.brief_stage+=1
-	
+			if (self.briefgametime==0):
+				self.briefgametime = VS.GetGameTime()
+			elif ((VS.GetGameTime()-self.briefgametime)>5):
+				Briefing.terminate()
 	def endbriefing(self):
-		print "endinging briefing"
-		del self.jump_ani
-		del self.rnd_y
-		del self.added_warp
-		del self.brief_stage
-		del self.begintime
+		self.adjsys.endbriefing()
+		del self.briefgametime
 	
 	def __init__ (self,factionname, numsystemsaway, cargoquantity, missiondifficulty, creds, launchoncapship, time_to_complete, category):
 	  Director.Mission.__init__(self);
@@ -74,9 +39,9 @@ class cargo_mission (Director.Mission):
 	  self.faction=factionname
 	  self.cred=creds
 	  self.difficulty=missiondifficulty
+	  self.you=VS.getPlayer()
 	  self.adjsys=go_to_adjacent_systems(self.you,numsystemsaway)
 	  self.quantity=cargoquantity
-	  self.you=VS.getPlayer()
 	  self.mplay=universe.getMessagePlayer(self.you)
 	  if (self.quantity<1):
 	    self.quantity=1
