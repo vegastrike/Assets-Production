@@ -24,7 +24,7 @@ module nvn {
 
     return faction_ships.confed();
   };
-  object launch_new_ships(object stringi, int number, bool isequal){
+  object launch_new_ships(object stringi, int number, bool isequal, object fgname) {
     object faction_name;
     float side;
     int tmp=0;
@@ -55,25 +55,27 @@ module nvn {
       object typename=faction_ships.getRandomShipType(ship_list);
       object player=_unit.getPlayer();
       object player_pos=_unit.getPosition(player);
-      launch.launch_wave_around_area("fgname",faction_name,typename,"default",1,500.0,5000.0,player_pos);
+      launch.launch_wave_around_area(fgname,faction_name,typename,"default",1,500.0,5000.0,player_pos);
       tmp=tmp+1;
     }
     return faction_name;
   };
-
+  void reset_loop (int ours, int theirs) {
+    begin=0;
+    numfriend=ours;
+    numenemy=theirs;
+  };
   void initgame(int ours, int theirs){
     faction_ships.make_ships_list();
-	begin=0;
-	numfriend=ours;
-	numenemy=theirs;
+    reset_loop (ours,theirs);
   };
   void loop(){
     if (begin==0) {
 		begin=1;
 	  	object player = _unit.getPlayer();
 		object faction = _unit.getFaction(player);
-		launch_new_ships(faction,numfriend,true);
-		launch_new_ships(faction,numenemy,false);
+		launch_new_ships(faction,numfriend,true,"Linux");
+		launch_new_ships(faction,numenemy,false,"XP");
 		_io.message(0,"game","all","use the '[' key to begin and");
 		_io.message(1,"game","all","to switch control of your ships");
 		_io.message(2,"game","all","or you can have fun flying");
