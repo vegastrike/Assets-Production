@@ -38,4 +38,7 @@
 		<Vertex point="0" s="0.090196" t="0.031373"/>
 	</Tri>
 </Polygons>
+<material reflect="0">
+<specular red="0" green="0" blue="0"/>
+</material>
 </Mesh>
