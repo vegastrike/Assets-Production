@@ -155,7 +155,7 @@ def allNews():
 						}
 				 }
 
-		,"middle"	:{"success":	{"good"		: [
+		,"middle"	:{"success":	{"good"		: [(0.3,"all","Blockade in VAR_system_system System:\\VAR_aggressor_posessive media reports that the blockade which began recently in the VAR_system_system system is still continuing. According to <VAR_aggressor_posessive>'s reporters, their military has sustained only modest losses, while the VAR_defender_posessive defenders suffer mounting casualties. Many analysts predict that it is only a matter of time before a major VAR_aggressor_posessive breakthrough is made. Caution is warned when approaching the VAR_system_system system. VAR_aggressor_posessive forces have received orders to fire upon any of ships suspected of shipping supplies to VAR_defender_possessive defenders.")
 
 								  ]
 
@@ -169,7 +169,7 @@ def allNews():
 
 						}
 
-				 ,"loss"   :	{"good"		: [
+				 ,"loss"   :	{"good"		: [(0.3,"all","VAR_system_system Assult Crushed!\\The first assaults of the VAR_aggressor_posessive attackers on the blockade which began recently in the VAR_system_system system have been successfully stopped. Waves of <VAR_aggressor_posessive>'s fighters have been destroyed and their burning wrecks are drifting in the solar wind. Many important supplies have successfully reached VAR_defender_posessive bases, thanks to the efforts of VAR_defender_posessive-sympathetic privateers. Many independent analysts predict that the full flow of supplies which are reaching <VAR_defender_posessive>'s bases will be be critical in the final stages of the siege.")
 
 								  ]
 
@@ -190,14 +190,14 @@ def allNews():
 
 								  ]
 
-						,"neutral"	: [
+						,"neutral"	: [(0.1,"all","The Hell of VAR_system_system:\\The large attack which began recently in the VAR_defender_system system rages. The balance between VAR_aggressor and VAR_defender forces is precarious, and each force has suffered heavy losses. There is no clear consensus among military analysts as to who the victor in this siege will be, pointing to the parity of the two forces. Some have predicted that the siege could come down to supplies, both military and economic. Which side can outlast the other in attrition and supplies remains to be seen.")
 
 								  ]
 
 						}
 				 }
 		
-		,"end"		:{"success":	{"good"		: [(0.7,"all","VAR_aggressor_full Victory in VAR_system_system!\\In yet another event in the VAR_aggressor_possessive-VAR_defender_possessive war, VAR_aggressor_possessive forces have experienced a moral boosting victory today in the VAR_system_system system.  The blockade in the VAR_defender_possessive system ended today, three weeks after it began, with all VAR_defender_possessive supplies exhausted.  No information on the state of the infrastructure, or of casualties is as of yet available."),(0.7,"all","endONE"),(0.7,"all","endTWO"),(0.7,"all","endTHREE"),(0.7,"all","endFOUR"),(0.7,"all","endFIVE")
+		,"end"		:{"success":	{"good"		: [(0.7,"all","VAR_aggressor_full Victory in VAR_system_system!\\In yet another event in the VAR_aggressor_possessive-VAR_defender_possessive war, VAR_aggressor_possessive forces have experienced a moral boosting victory today in the VAR_system_system system.  The blockade in the VAR_defender_possessive system ended today, three weeks after it began, with all VAR_defender_possessive supplies exhausted.  No information on the state of the infrastructure, or of casualties is as of yet available.")
 								  ]
 
 						,"bad"		: [(0.3,"all","Tragedy in VAR_system_system:\\An end to the VAR_aggressor_full's barbaric siege in the VAR_defender_possessive system VAR_system_system in the VAR_system_sector sector occured today.  After several weeks of remorseless blockading, no-one was left alive in any critical part of the VAR_defender_possessive defence.  Such an attrocity could only have been wrought by the VAR_aggressor_nickp, whose remorseless tactics have seen many wins, with the death of thousands of bystanders in a war that may well be going for a long time.  This act has only served to strengthen the resolve of the VAR_dockedat_government on VAR_dockedat_homeworld to boost rescources to the war effort against the VAR_aggressor_full.\\\\\\GNN -- \"We Care.\"")
@@ -297,11 +297,12 @@ def allNews():
 				}
 		}
 
-,"destroyed":	{"end" :	{"success" :	{"good"		: [(0.4,"all","Departed Heroes:\\Tragically, the VAR-defender_FG squadron, comprised mainly of VAR_defender_FGtype fighters have been killed in battle today.  A squadron with a more distinguished career would be hard to find in the VAR-defender_possessive forces, with contributions to many of the great battles of this war.\\Their lead commander Jameson was quoted recently saying \"When a pilot goes into battle if he clears his mind of all things, there is a good chance he will come out of it alive.  If he does not, he risks being distracted and hesitating.  In space, hesitation is death.\"")
-								  ,(0.4,"player","Freelancer Helps the Cause!\\The VAR_aggressor_FG squardon can add yet another kill to their belts today, as they made short work of the VAR_defender_possessive squadron VAR_defender_FG (of type VAR_defender_FGtype) in VAR_system_system system.  VAR_aggressor_FG has been one of the more prominent of the freelance mercenaries, helping the VAR_dockedat_possessive forces and out allies with many of the smaller scale attacks while the majority of our forces have been engaged on the frontlines.  It is people like these that allow most of us to continue with out lives in peace.")
+,"destroyed":	{"end" :	{"success" :	{"good"	: [(0.6,"all","VAR_defender_FG Debris:\\Debris believed to be from the VAR_defender_FGtype of the VAR_defender_possessive Squadron VAR_defender_FG has been found today in VAR_system_system.  This group is believed to be responsible for various attacks on VAR_dockedat_possessive installations in and around the area in the past few months, including an attack on Major General VAR_dockedat_mstandname's entorage.  These VAR_defender_dnickp will not be missed by anyone around here.\\\\\\GNN -- \"We report REAL news\"")
+										  ,(0.4,"player","Freelancer Helps the Cause!\\The VAR_aggressor_FG squardon can add yet another kill to their belts today, as they made short work of the VAR_defender_possessive squadron VAR_defender_FG (of type VAR_defender_FGtype) in VAR_system_system system.  VAR_aggressor_FG has been one of the more prominent of the freelance mercenaries, helping the VAR_dockedat_possessive forces and out allies with many of the smaller scale attacks while the majority of our forces have been engaged on the frontlines.  It is people like these that allow most of us to continue with out lives in peace.")
 								  ]
 						,"bad"		: [(0.4,"all","VAR_defender_dnicks Vaporised!\\The VAR_defender_possessive squadron of VAR_defender_FGtype VAR_defender_FG has been obliterated today.  The VAR_defender_dnickp have been disrupting both civilian and military operations around VAR_system_system in the VAR_system_sector Sector, and their destruction is sure to be a boon for all operators in the area.  This writer just wishes this type of thing would occur more often.")
-								  ,(0.4,"player","VAR_aggressor_FG Scurge Strikes Again!\\This time in a VAR_aggressor_FGtype ship, this mercenary group destroyed yet another VAR_defender_nicks squadron, this time the VAR_defender_FG.  One of the VAR_defender_nickp less experienced groups of VAR_defender_FGtype, they battled corageously but were overwhelmed by the VAR_aggressor_possessive forces.  May they rest in peace, these brave heroes of the VAR_defender_full.")
+									  ,(0.4,"all","Departed Heroes:\\Tragically, the VAR_defender_FG squadron, comprised mainly of VAR_defender_FGtype fighters have been killed in battle today.  A squadron with a more distinguished career would be hard to find in the VAR_defender_possessive forces, with contributions to many of the great battles of this war.\\Their lead commander Jameson was quoted recently saying \"When a pilot goes into battle if he clears his mind of all things, there is a good chance he will come out of it alive.  If he does not, he risks being distracted and hesitating.  In space, hesitation is death.\"")
+									  ,(0.4,"player","VAR_aggressor_FG Scurge Strikes Again!\\This time in a VAR_aggressor_FGtype ship, this mercenary group destroyed yet another VAR_defender_nicks squadron, this time the VAR_defender_FG.  One of the VAR_defender_nickp's less experienced groups of VAR_defender_FGtype, they battled corageously but were overwhelmed by the VAR_aggressor_possessive forces.  May they rest in peace, these brave heroes of the VAR_defender_full.")
 								  ]
 						,"neutral"	: [(0.5,"all","VAR_defender_FG Destroyed:\\The squadron of mainly VAR_defender_FGtype ships was destroyed today in the VAR_system_system system.  More afraid of VAR_dockedat_possessive forces than we were of them, their destruction will not affect business in the area, let alone on VAR_docketat_homeworld.")
 								  ,(0.5,"player","VAR_defender_FG Destroyed by VAR_aggressor_FG:\\The pilots of VAR_defender_FG saw their last meal earlier today, oblivious their later fate.  The VAR_defender_FG has been wreaking havok in and around VAR_system_system system lately, disrupting much of the VAR_defender_possessive activity.  Such an event however is relatively commonplace these days, and does not do much to upset the lives of VAR_dockedat_possessive citizens any conceivable amount.")
