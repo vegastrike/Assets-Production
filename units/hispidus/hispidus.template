@@ -21,7 +21,7 @@
 
 <Stats mass="10.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
 
-<Computer yaw="140" pitch="140" roll="140" afterburner="214" maxspeed="85">
+<Computer yaw="140" pitch="140" roll="140" afterburner="204" maxspeed="75">
 </Computer>
 
 	<Jump delay="1" jumpenergy="400"/>

@@ -6,7 +6,7 @@
 		<Cloak missing="1" cloakmin="0" cloakrate="0" cloakglass="0" cloakenergy="0"/>
 	</Defense>
 	<Stats mass="0" momentofinertia="0" fuel="0"></Stats>
-	<Computer yaw="1.18" itts="false" pitch="1.18" roll="1.18" afterburner="0" maxspeed="0">
+	<Computer yaw="67.60901" itts="false" pitch="67.60901" roll="67.60901" afterburner="0" maxspeed="0">
 		<Radar itts="false" color="false" error="0" maxcone="1" range="0"/> 
 	</Computer>
 

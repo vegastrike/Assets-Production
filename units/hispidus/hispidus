@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="4">
 <Meshfile file="adronew1.xmesh"/>
 <Meshfile file="adronew2.xmesh"/>
 <Meshfile file="adronew3.xmesh"/>
@@ -20,9 +20,9 @@
 
 <Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="5.277" y="2.683" z="21.963"/>
 
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="3,027" y="-3,899" z="18,562"/>
+<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="3.027" y="-3.899" z="18.562"/>
 
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="-3,021" y="-3,924" z="18,562"/>
+<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="-3.021" y="-3.924" z="18.562"/>
 
 
 
@@ -30,7 +30,7 @@
 
 	<Armor front="500" right="500" left="500" back="500"/>
 
-	<Shields front="500.000000" back="500.000000" recharge="50.000000"/>
+	<Shields front="500.000000" back="500.000000" recharge="40.000000"/>
 
 	<Hull strength="1000.000000"/>
 
@@ -39,7 +39,7 @@
 
 <Stats mass="10.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
 
-<Computer yaw="120" pitch="120" roll="120" afterburner="204" maxspeed="75">
+<Computer yaw="100" pitch="100" roll="100" afterburner="184" maxspeed="60">
 
 <Radar itts="false" color="true"/>
 </Computer>
