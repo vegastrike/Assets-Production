@@ -30,7 +30,7 @@
         <planet name="JumpToJunction" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-17200" x="12800" day="240" destination="gemini_sector/junction"/>
         <planet name="JumpToTingerhoff" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="7500" day="240" destination="gemini_sector/tingerhoff"/>
         <unit name= "Macabee"  file="MiningBase" faction="confed" z="15200" x="0"/>
-        <asteroid  name= "Macabee"  file="AFieldBase" faction="neutral"   z="15200" x="0" day="-14000"  difficulty=".25"></asteroid>         
+        <asteroid  name= "Macabee"  file="AFieldBaseThin" faction="neutral"   z="15200" x="0" day="-14000"  difficulty=".25"></asteroid>         
         <planet name="JumpToCapella" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="8200" x="-10200" day="240" destination="gemini_sector/capella"/>
         <planet name="JumpToKM-252" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-7200" x="-3500" day="240" destination="gemini_sector/km-252" />
 </system>

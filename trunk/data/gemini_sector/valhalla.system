@@ -28,7 +28,7 @@
 </Light>	
 
         <unit name= "Valkyrie"  file="MiningBase" faction="confed" z="-15000" x="-21000"/>
-        <asteroid  name= "Valkyrie"  file="AFieldBase" faction="neutral"   z="-15000" x="-21000" y="-14000"  difficulty=".25"></asteroid>         
+        <asteroid  name= "Valkyrie"  file="AFieldBaseSparse" faction="neutral"   z="-15000" x="-21000" y="-14000"  difficulty=".25"></asteroid>         
         <planet name="Nav 2" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="0" day="240" />
         <planet name="JumpToTelar" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="14000" x="22000" day="240" destination="gemini_sector/telar"/>
         <planet name="JumpToEden" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="14000" x="-22000" day="240" destination="gemini_sector/eden"/>

@@ -29,7 +29,7 @@
 
         <planet name="JumpToRygannon" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-11300" x="-14000" day="240" destination="gemini_sector/rygannon"/>
         <planet name="Nav2" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="-6000" x="16000" day="240" />
-        <asteroid  name= "Nav2"  file="AFieldBase" faction="neutral"   z="-6000" x="16000" day="-14000"  difficulty=".25"></asteroid>         
+        <asteroid  name= "Nav2"  file="AFieldBaseSparse" faction="neutral"   z="-6000" x="16000" day="-14000"  difficulty=".25"></asteroid>         
         <planet name="JumpToPalan" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="16000" x="0"  day="240" destination="gemini_sector/palan"/>
-        <asteroid  name= "_"  file="AFieldBase" faction="neutral"   z="2700" x="-5300" day="-14000"  difficulty=".25"></asteroid>         
+        <asteroid  name=""  file="AFieldBaseSparse" faction="neutral"   z="2700" x="-5300" day="-14000"  difficulty=".25"></asteroid>         
 </system>

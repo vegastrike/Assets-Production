@@ -28,5 +28,5 @@
 </Light>	
 
         <planet name="JumpToBlockadePointTango" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="12000" day="240" destination="gemini_sector/blockadepointtango" />
-        <asteroid  name= "JumpToBlockadePointTango"  file="AFieldBase" faction="neutral"   z="0" x="12000" day="-14000"  difficulty=".25"></asteroid>    
+        <asteroid  name= "JumpToBlockadePointTango"  file="AFieldBaseThin" faction="neutral"   z="0" x="12000" day="-14000"  difficulty=".25"></asteroid>    
 </system>
