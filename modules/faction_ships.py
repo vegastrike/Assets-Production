@@ -37,7 +37,7 @@ friendlies=((confed,confed,confed,militia,militia,militia,militia,merchant,merch
 
 fighters = (("firefly","destiny","tian","nova","puma","mongoose","destiny","tian","nova","puma","mongoose","avenger"), #confed
             ("dagger","aeon","aevant","kyta","lekra","osprey","kira","butterfly"), #aera
-            ("skart","f109vampire","starfish","hispidus"), #rlaan
+            ("skart","leokat","f109vampire","starfish","hispidus"), #rlaan
             ("wayfarer","longhaul"), #merchant
             ("firefly","firefly","avenger"), #retro
             ("revoker","firefly","firefly","firefly","wayfarer","katar"), #pirates
@@ -47,15 +47,15 @@ fighters = (("firefly","destiny","tian","nova","puma","mongoose","destiny","tian
             ("unknown_active",) #unknown
            )
 
-capitols = (("cruiser","starrunner","cruiser_mk2","carrier","fleetcarrier","escortcarrier"), #confed
+capitols = (("corvette","starrunner","cruiser","carrier","fleetcarrier","escortcarrier"), #confed
             ("yrilan",), #aera
             ("rlaan_cruiser",), #rlaan
             ("truck","cargoship"), #merchant
-            ("cruiser_mk2","cruiser","cruiser","truck"), #retro
-            ("cruiser_mk2","cruiser","cruiser","truck","truck"), #pirates
-            ("cruiser_mk2","cruiser","cruiser"), #hunter
-            ("escortcarrier","cruiser_mk2","cruiser","cruiser"), #militia
-            ("truck","cargo","cruiser"), #ISO
+            ("cruiser_mk2","corvette","destroyer","cruiser","truck"), #retro
+            ("corvette","destroyer","truck","truck"), #pirates
+            ("corvette","destroyer"), #hunter
+            ("escortcarrier","cruiser_mk2","corvette","cruiser","destroyer"), #militia
+            ("truck","cargo","corvette","destroyer"), #ISO
             ("unknown_active",) #unknown
            )
 def appendName():
