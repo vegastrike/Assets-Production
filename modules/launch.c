@@ -31,4 +31,23 @@ module launch {
 
     _unit.launch(fgname,faction,type,ai,nr_ships,x,y,z);
   };
+
+  void launchShipsAtWaypoints(object waypoints,object faction,object type,object ainame,int nr){
+    int i=0;
+    object outstr=_string.new();
+
+    while(i<_olist.size(waypoints)){
+      _io.sprintf(outstr,"wp%d",i);
+
+      object wp=_olist.at(waypoints,i);
+      float x=_olist.at(wp,0);
+      float y=_olist.at(wp,1);
+      float z=_olist.at(wp,2);
+
+      _unit.launch(outstr,faction,type,ainame,nr,x,y,z);
+      i=i+1;
+    }
+  };
+
+
 }
