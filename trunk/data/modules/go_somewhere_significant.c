@@ -17,6 +17,9 @@ module go_somewhere_significant {
   };
   //only run this function if we are InSystem();
   object SignificantUnit() {
+    if (_std.isNull(significantun)) {
+      return significantun;
+    }
     return _unit.getUnitFromContainer (significantun);
   };
   object DestinationSystem () {

@@ -1,7 +1,12 @@
 module contraband_mission {
+	import random;
+	import launch;
+	import faction_ships;
 	import universe;
+	import starships_jumped_and_killed;
+	import go_somewhere_significant;
+
 	object youcontainer;
-	object jumpcontainer;
 	object cargoname;
 	int stage;
 	int nr_waves;
@@ -9,42 +14,24 @@ module contraband_mission {
 	int nr_ships;
 	int difficulty;
 	float cred;
-	import random;
-	import launch;
-	import faction_ships;
 	object goodolist;
 	object badolist;
 	float badchance;
-	int good_iterator;
-	int bad_iterator;
-	int sys_giterator;
-	int sys_biterator;
-	int bad_left;
-	int all_left;
-	int good_dest;
 
-	void init (object cargo, float distance, float creds, int diff, int ships, float bad_pct) {
+	void init (object cargo, int num_systems_away, float distance, float creds, int diff, int ships, float bad_pct) {
 		object you=_unit.getPlayer();
 		if (_std.isNull(you)) {
 			_std.terminateMission (false);
 			return;
 		}
 		faction_ships.init();
+
 		nr_ships=ships;
-		sys_giterator=0;
-		sys_biterator=0;
 		nr_waves=0;
-		good_iterator=0;
-		bad_iterator=0;
-		good_dest=0;
-		bad_left=0;
 		badchance=bad_pct;
-		all_left=ships;
 		goodolist=_olist.new();
 		badolist=_olist.new();
 		stage=0;
-		object jump=unit.getJumpPoint(random.randomint(0,50));
-		jumpcontainer=_unit.getContainer(jump);
 		difficulty=diff;
 		if ((nr_ships<=0)||(bad_pct<=0.0)) {
 			_std.terminateMission(false);
@@ -57,69 +44,65 @@ module contraband_mission {
 		object name=(_unit.getName(you));
 		_io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
 		_string.delete(name);
+		go_somewhere_significant.init(num_systems_away,false,true,distance);
 		_io.message (1,"game","all",str);
 		_io.sprintf(str,"We heard that there is a lot of %s cargo being",cargoname);
 		_io.message (2,"game","all",str);
-		name=(_unit.getName(jump));
-		_io.sprintf(str,"transported illegally into the %s system.",name);
-		_string.delete(name);
+		name=(go_somewhere_significant.DestinationSystem());
+		_io.sprintf(str,"transported illegally out of the %s system.",name);
 		_io.message (3,"game","all",str);
-		_io.message (4,"game","all","Guard that jump point for the cargo and");
-		_io.message (5,"game","all","destroy anyone with the cargo.  Destroying");
-		_io.message (6,"game","all","fighters without this cargo is illegal");
-		_io.message (7,"game","all","and could result in an enormus penalty.");
-		_io.message (12,"game","all","It might take a little time to ensure");
-		_io.sprintf (str,"that no %s cargo has left",cargoname);
-		_io.message (13,"game","all",str);
-		_io.message (14,"game","all","this system and to reward your account");
-		_io.message (15,"game","all","with the credits.");
+
 		_string.delete(str);
 	};
 	void Terminate (object you) {
-		object jump=_unit.getUnitFromContainer(jumpcontainer);
-		_unit.deleteContainer(jumpcontainer);
+
 		_unit.deleteContainer(youcontainer);
-		int i=0;
-		int siz=_olist.size(goodolist);
-		object cont;
-		_io.printf("THE END IS NEAR!!!");
-		while(i<siz) {
-			cont=_olist.at(goodolist,i);
-			_unit.deleteContainer(cont);
-			i=i+1;
-		}
-		i=0;
-		siz=_olist.size(badolist);
-		while(i<siz) {
-			cont=_olist.at(badolist,i);
-			_unit.deleteContainer(cont);
-			i=i+1;
-		}
-		_olist.delete(goodolist);
-		_olist.delete(badolist);
-		if (_std.isNull(you)) {
+		if (_std.isNull(you)||stage==0) {
+			go_somewhere_significant.destroy();
+			if (stage>0) {
+			  starships_jumped_and_killed.destroy();
+			}
 			_std.terminateMission(false);
+			return;
 		}
+		object jump=go_somewhere_significant.SignificantUnit();
+	        int bad_left = starships_jumped_and_killed.ships_alive (badolist);
+	        int good_dest = starships_jumped_and_killed.original_num_ships() -
+		                starships_jumped_and_killed.ships_alive (goodolist);
 		if ((bad_left==0)&&(good_dest==0)) {
-			_io.message (0,"game","all","Excellent work pilot.");
-			_io.message (0,"game","all","You have been rewarded for your effort as agreed.");
-			_io.message (0,"game","all","Your contribution to the war effort will be remembered.");
+			_io.message (0,"game","all","Thank you for eliminating these smuggling contraband shippers.");
+			if (random.random(0.0,1.0)<.2) {
+			  _io.message (0,"game","all","Enjoy your reward, and remember: don't drink and drive.");
+			} if (random.random(0.0,1.0)<.25) {
+			  _io.message (0,"game","all","Drugs and contraband are bad.");
+			  _io.message (0,"game","all","Here is your cash. Remember: Just say no.");
+			}else {
+			  _io.message (0,"game","all","These scum have deserved to eat dust for a long time.");
+			  _io.message (0,"game","all","It is a pleasure to see such idiots go down without a fight!");
+			}
 			_unit.addCredits(you,cred);
+			starships_jumped_and_killed.destroy();
+			go_somewhere_significant.destroy();
 			_std.terminateMission(true);
 			return;
 		} else {
-			_io.message (0,"game","all","You did not follow through on your end of the deal.");
+			_io.message (0,"game","all","How could you fail us.");
 
 			if ((difficulty<1)&&((bad_left+good_dest)<nr_waves)) {
-				_io.message (0,"game","all","Your pay will be reduced");
-				_io.message (0,"game","all","And we will consider if we will accept you on future missions.");
+				_io.message (0,"game","all","We cannot compensate you for fouling up a critical job.");
+				_io.message (0,"game","all","Be glad we even spared a dime.");
 				float addcred=cred-((bad_left+good_dest)/nr_waves);
 				_unit.addCredits(you,addcred);
 			} else {
-				_io.message (0,"game","all","You will not be paid!");
+				_io.message (0,"game","all","Drug trafficker and fiend!");
+				if (random.random(0.0,1.0)<.2) {
+				  _io.message (0,"game","all","You probably smoked half of the contraband shipped");
+				}
 				if (difficulty>=2) {
-					_io.message (0,"game","all","And your idiocy will be punished.");
-					_io.message (0,"game","all","You had better run for what little life you have left.");
+					_io.message (0,"game","all","You will pay for your smuggling crimes.");
+					if (random.random(0.0,1.0)<.5) {
+					  _io.message (0,"game","all","Run MSF, Run.");//minimum spanning forest: see forest gump
+					}
 					i=0;
 					object un;
 					if ((bad_left+good_dest)>nr_waves) {
@@ -142,84 +125,35 @@ module contraband_mission {
 					}
 				}
 			}
+			starships_jumped_and_killed.destroy();
+			go_somewhere_significant.destroy();
 			_std.terminateMission(false);
 			return;
 		}
 	};
 	void loop () {
-		object jump=_unit.getUnitFromContainer(jumpcontainer);
+
 		object you=_unit.getUnitFromContainer(youcontainer);
 		if (stage==1) {
 			_std.ResetTimeCompression();
-			object gunit=_unit.getUnit(sys_giterator);
-			if (_std.isNull(gunit)) {  //a good ship left the system
-				all_left=all_left-1;
-			}
-			object bunit=_unit.getUnit(sys_biterator);
-			if (_std.isNull(bunit)) {  //a contraband ship left the system...
-				all_left=all_left-1;
-				_io.printf("_std.isNull(bunit)   //a contraband ship left the system...\n");
+			object jump=go_somewhere_significant.SignificantUnit();
+			starships_jumped_and_killed.loop (badolist);
+			starships_jumped_and_killed.loop (goodolist);
+			if (starships_jumped_and_killed.ships_alive(badolist)!=
+			    starships_jumped_and_killed.ship_in_system(badolist)) {  //a contraband ship left the system...
 				Terminate(you);
 				return;
 			}
-			object olistcont=_olist.at(goodolist,good_iterator);
-			object olistun=_unit.getUnitFromContainer(olistcont);
-			if ((_std.isNull(gunit))||  //resetting iterators for good ships
-					(_std.equal(olistun,gunit))) {
-				sys_giterator=0;
-				good_iterator=good_iterator+1;
-				if (good_iterator>=_olist.size(goodolist)) {
-					good_iterator=0;
-				}
-				olistcont=_olist.at(goodolist,good_iterator);
-				olistun=_unit.getUnitFromContainer(olistcont);
-				while (_std.isNull(olistun)) {
-					good_dest=good_dest+1;
-					all_left=all_left-1;
-					_unit.deleteContainer(olistcont);
-					_olist.erase(goodolist,good_iterator);
-				}
-				if (good_iterator>=_olist.size(goodolist)) {
-					good_iterator=0;
-				}
-				if (_olist.size(goodolist)<=0) {
-					_olist.push_back(goodolist,youcontainer);
-				}
-			}
-			olistcont=_olist.at(badolist,bad_iterator);
-			olistun=_unit.getUnitFromContainer(olistcont);
-			if ((_std.isNull(bunit))||  //resetting iterators for bad ships
-					(_std.equal(olistun,bunit))) {
-				sys_biterator=0;
-				bad_iterator=bad_iterator+1;
-				if (bad_iterator>=_olist.size(badolist)) {
-					bad_iterator=0;
-				}
-				olistcont=_olist.at(badolist,bad_iterator);
-				olistun=_unit.getUnitFromContainer(olistcont);
-				while (_std.isNull(olistun)) {
-					bad_left=bad_left-1;
-					all_left=all_left-1;
-					_unit.deleteContainer(olistcont);
-					_olist.erase(badolist,bad_iterator);
-				}
-				if (bad_iterator>=_olist.size(badolist)) {
-					bad_iterator=0;
-				}
-				if (_olist.size(badolist)<=0) {
-					_olist.push_back(badolist,youcontainer);
-				}
-			}
-			sys_giterator=sys_giterator+1;
-			sys_biterator=sys_biterator+1;
+			int all_left = starships_jumped_and_killed.ships_alive(badolist)+starships_jumped_and_killed.ships_in_system(goodolist);
 			if (all_left==0) {
-				_io.printf("all_left==0\n");
 				Terminate(you);
 				return;
 			}
 		} else if (stage==0) {
-			if (_unit.getDistance(you,jump)<=dist) {
-				_io.message (0,"game","all","DEBUG: creating enemies...");  //delete this after it works...
+			if (go_somewhere_significant.HaveArrived()) {
+				object jump = go_somewhere_significant.SignificantUnit();
+				printIntro (jump);
+
 				stage=1;
 				int i=0;
 				int j;
@@ -242,7 +176,9 @@ module contraband_mission {
 					volume=_std.Rnd()*100;
 				}
 				int rndint;
-				while ((i<nr_ships)||(_olist.size(badolist)==0)||(_olist.size(goodolist)==0)) {
+				object starships_bad =_olist.new();
+				object starships_good =_olist.new();
+				while ((i<nr_ships)||(_olist.size(starships_bad)==0)||(_olist.size(starships_good)==0)) {
 					cargonum=random.randomint(0,8);
 					cargonum2=random.randomint(0,10-cargonum);
 					notlist=faction_ships.getRandomFighter("merchant");
@@ -258,12 +194,12 @@ module contraband_mission {
 					}
 					if ((_std.Rnd())<badchance) {
 						cargonum2=cargonum2-1;
-						_olist.push_back(badolist,_unit.getContainer(newfighter));
+						_olist.push_back(starships_bad,_unit.getContainer(newfighter));
 						bad_left=bad_left+1;
 						nr_waves=nr_waves+1;
 						rndint=_unit.addCargo(newfighter,cargoname,"illegal",price,random.randomint(1,10),mass,volume);
 					} else {
-						_olist.push_back(goodolist,_unit.getContainer(newfighter));
+						_olist.push_back(starships_good,_unit.getContainer(newfighter));
 					}
 					j=0;
 					while (j<cargonum2) {
@@ -274,7 +210,27 @@ module contraband_mission {
 					}
 					i=i+1;
 				}
+				starships_jumped_and_killed.init (goodolist,starships_good);
+				starships_jumped_and_killed.init (badolist,starships_bad);
 			}
 		}
 	};
+	void PrintIntro (object jumppoint) {
+	  object str = _string.new();
+	  object jname = _unit.getName(jumppoint);
+	  _io.sprintf (str,"Assure no %s cargo heading to the %s", cargoname,jname); 
+	  _io.message (0,"game","all",str);
+	  _io.message (1,"game","all","jump point leaves the system, and");
+	  _io.message (2,"game","all","destroy anyone with said cargo.  Destroying");
+	  _io.message (3,"game","all","fighters without this cargo is illegal");
+	  _io.message (4,"game","all","and could result in an enormus penalty.");
+	  _io.message (10,"game","all","It might take a little time to ensure");
+	  _io.sprintf (str,"that no %s cargo has left",cargoname);
+	  _io.message (11,"game","all",str);
+	  _io.message (12,"game","all","that system and to reward your account");
+	  _io.message (13,"game","all","with the credits.");
+	  _string.delete (str);
+	  _string.delete (jname);
+	};
+
 }
