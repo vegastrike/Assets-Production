@@ -22,11 +22,6 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
-		<Armor front="60" right="60" left="60" back="60"/>
-		<Shields front="75.000000" back="75.000000" recharge="25.000000"/>
-		<Hull strength="300.000000"/>
-	</Defense>
 	<Stats mass="5.000000" momentofinertia="5.000000" fuel="80000000"></Stats>
 	<Computer yaw="217.000000" pitch="217.000000" roll="217.000000" afterburner="165.000000" maxspeed="51.000000"/>
 	<Energy afterburnenergy="35">
