@@ -168,11 +168,18 @@
 
 
 	<Hold volume="100000000000">
+	    <Category file="food">
+		<Import price="3" quantity="24"/>
+	    </Category>
+	    <Category file="upgrades">
 		<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>
 		<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
 		<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
 		<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
+	     </Category>
+	     <Category file="weapons">
 		<Cargo file="weapons" price="200" quantity="100" mass=".1" volume=".1"/>
+	     </Category>
 	</Hold>
 
 </Unit>
