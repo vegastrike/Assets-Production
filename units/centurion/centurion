@@ -1,4 +1,6 @@
-<Unit cockpit="centurion-cockpit.cpt">
+<Unit >
+	<cockpit file="centurion-cockpit.cpt" x="0" y="1" z="10"/>
+
 	<Meshfile file="centurion.xmesh" />
 	<Light file="supernova.bmp" x="-2.500000" y="1.400000" z="-11.600000" size="2.200000"/>
 	<Light file="supernova.bmp" x="2.500000" y="1.400000" z="-11.600000" size="2.200000"/>
