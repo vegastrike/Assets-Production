@@ -8,7 +8,7 @@ class FG:
 		self.fac=fact		
 
 #hashed by system, then by 
-persystemattacklist {}
+persystemattacklis= {}
 
 attacklist ={}
 defendlist={}
