@@ -29,4 +29,5 @@
 
         <planet name="JumpToRegallis" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-7000" x="-15500" day="240" destination="gemini_sector/regallis" />
         <planet name="JumpToPyrenees" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="12500" x="8500" day="240" destination="gemini_sector/pyrenees"/>
+        <planet name="JumpToAgea" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="00" x="00" day="240" destination="avalon_sector/agea"/>
 </system>
