@@ -5,6 +5,7 @@ import random
 import launch
 import faction_ships
 import Director
+import Briefing
 import unit
 import VS
 

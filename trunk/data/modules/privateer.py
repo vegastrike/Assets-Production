@@ -3,7 +3,7 @@ from random_encounters import random_encounters
 from difficulty import difficulty
 #from garbage_collect import garbage_collect
 import Director
-
+import Briefing
 class privateer (Director.Mission):
   loops=()
   def __init__ (self,sigdis, detectiondis, gendis, minships, genships, fighterprob, enemyprob, capprob, credits_to_maximize_difficulty, capdist):#negative garbage collect dist disables that feature
