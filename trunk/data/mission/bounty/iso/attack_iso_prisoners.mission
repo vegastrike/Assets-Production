@@ -21,7 +21,7 @@
         </flightgroups>
 	<python>
 import bounty
-newmission = bounty.bounty (0, 0, 25000, 1, 4, 'merchant',('enigma_sector/enigma','enigma_sector/blake','enigma_sector/adams'),'iso_evil3')
+newmission = bounty.bounty (0, 0, 28000, 1, 4, 'merchant',('enigma_sector/enigma','enigma_sector/blake','enigma_sector/adams'),'iso_evil3')
 newmission=0
 
 </python>
