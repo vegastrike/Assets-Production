@@ -1,8 +1,8 @@
 module random_encounters {
   import random;
   import faction_ships;
+  import launch_recycle;
   import launch;
-
   float sig_distance;//backup var
   float det_distance;//backup var
   float generation_distance;
@@ -24,7 +24,7 @@ module random_encounters {
   //  float significant_distance;
   //  float detection_distance;
   //}
-  void init(float sigdis, float detectiondis, float gendis, int minnships, int gennships, float unitprob, float enemyprob, float capprob, float capdist){
+  void init(float sigdis, float detectiondis, float gendis,  int minnships, int gennships, float unitprob, float enemyprob, float capprob, float capdist){
     capship_gen_distance=capdist;
     //    player_num=player;
     enprob = enemyprob;
@@ -138,6 +138,7 @@ module random_encounters {
   void SetEnemyProb (float enp) {
     enprob = enp;
   };
+
   void launch_near (object un) {
     int numfactions=random.randomint(0,3);
     if (numfactions==0) {
@@ -153,16 +154,18 @@ module random_encounters {
 	localfaction = faction_ships.get_friend_of(localfaction);
       }
       object fighter = faction_ships.getRandomFighter (localfaction);
-      
+
       int numship= random.randomint (1,gen_num_ships);
-      object launched = launch.launch_wave_around_unit("privateer",localfaction,fighter,"default",numship,200.0,generation_distance*_std.Rnd()*0.9,un);
-      if ((_std.Rnd())<capship_prob) {
+      float det_distance = _olist.at (cur,6);
+      launch_recycle.launch_wave_around(localfaction,fighter,"default",numship,generation_distance*_std.Rnd()*0.9,un, 2.0*det_distance);
+      float rnd_num = _std.Rnd();
+      if (rnd_num<capship_prob) {
 	if (AsteroidNear (un,_olist.at (cur,5))) {
 	  _io.printf ("ast near, no cap");
 	}else {
 	  _io.printf ("no asty near");
 	  object capship = faction_ships.getRandomCapitol (localfaction);
-	  launched=launch.launch_wave_around_unit("privateer",localfaction,capship,"default",1,200.0,capship_gen_distance*_std.Rnd()*0.9,un);
+	  object launched=launch.launch_wave_around_unit("Capitol",localfaction,capship,"default",1,200.0,capship_gen_distance*_std.Rnd()*0.9,un);
 	}
       }
       _string.delete (localfaction);
