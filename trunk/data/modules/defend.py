@@ -72,7 +72,8 @@ class defend (Director.Mission):
         
         if (un!=self.you):
             if (un.getFactionName()==self.faction): 
-                if (un.getSignificantDistance (jp)<self.escdist):
+#                if (un.getSignificantDistance (jp)<self.escdist):
+                if 1:
                     if (un.getFlightgroupName()!="Base"):
                         VS.setObjective(self.objective,"Destroy the %s"%un.getName())
                         self.ship_check_count=0

@@ -123,12 +123,12 @@ def generateBountyMission (path,fg,fac):
 	if (cap):
 		creds*=40
 	finalprice=creds+syscreds*len(path)
-	writemissionsavegame("import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %d, '%s', %s, '%s','%s')\ntemp=0\n"%(finalprice, runaway, diff, fac, str(path), fg,typ))
+	writemissionsavegame("import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %d, '%s', %s, '', '%s','%s')\ntemp=0\n"%(finalprice, runaway, diff, fac, str(path), fg,typ))
 	writedescription("A %s starship in the %s flightgroup has been harassing operations in the %s system. Reward for the termination of said ship is %d credits."%(typ,fg, processSystem(path[-1]), finalprice))
 	if (cap):
-		writemissionname ("Bounty/Bounty_on_%s_Capital_Vessel"%fac,path)
+		writemissionname ("Bounty/Bounty_on_%s_Capital_Vessel_in_%s"%(fac,processSystem(path[-1])),path)
 	else:
-		writemissionname ("Bounty/Bounty_on_%s_starship"%fac,path)
+		writemissionname ("Bounty/Bounty_on_%s_starship_%s"%(fac,processSystem(path[-1])),path)
 
 def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	defendtyp = fg_util.RandomShipIn(defendfg,defendfac)
@@ -173,6 +173,7 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 			l = dynamic_battle.BattlesInSystem(j[-1])
 #			print l
 			nodefend=True
+			#THERE IS OFTEN 2-4 OF THE AME BATTLE!!!!!!!!! YTHOIS IS RIDICULOUS AND <B>MUST</B> BE FIXED
 			for k in l:
 				if (VS.GetRelation(fac,k[1][1])>=0):
 					nodefend=False
