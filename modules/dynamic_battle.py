@@ -486,7 +486,9 @@ def stopAttack (fgname,faction):
 def initiateAttack (fgname,faction,sys,enfgname,enfaction):
 	capitala = fg_util.CapshipInFG(fgname,faction)
 	capitalb = fg_util.CapshipInFG(enfgname,enfaction)
-	iscap = capitala and capitalb
+	iscap = None
+	if capitala and capitalb:
+		iscap = capitala+','+capitalb
 	if (fg_util.BaseFGInSystemName(sys)==fgname):
 		fg=(enfgname,enfaction)#this is for a base... self defence
 		efg=(fgname,faction)
@@ -506,11 +508,13 @@ def initiateAttack (fgname,faction,sys,enfgname,enfaction):
 #only works for FG's that are not the base FG...the base FG cannot initiate attacks as far as I know.
 #though initiateAttack switches them around appropriately
 def attackFlightgroup (fgname, faction, enfgname, enfaction,iscap):
-	battlename = "battle"
 	if (iscap):
 		battlename="fleetbattle"
-	leader = fg_util.getFgLeaderType(fgname,faction)
-	enleader = fg_util.getFgLeaderType(enfgname,enfaction)
+		(leader,enleader)=iscap.split(",")
+	else:
+		battlename = "battle"	
+		leader = fg_util.getFgLeaderType(fgname,faction)
+		enleader = fg_util.getFgLeaderType(enfgname,enfaction)
 	sys = fg_util.FGSystem (fgname,faction)
 	ensys = fg_util.FGSystem (enfgname,enfaction)
 	if (sys==ensys):
