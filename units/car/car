@@ -34,13 +34,13 @@
 
 
 <!-- left blinken-->
-<Light file="supernova.bmp" x="-.65" y=".04" z="2.80000" size=".150000" red="1" green="1" blue=".5" lighttype="leftblink"/>
-<Light file="supernova.bmp" x="-.9" y=".85" z="-2.800000" size=".150000" red="1" green="1" blue=".5" lighttype="leftblink"/>
+<Light file="supernova.bmp" x="-.65" y=".04" z="2.80000" size=".150000" red="1" green="1" blue=".5" lighttype="rightblink"/>
+<Light file="supernova.bmp" x="-.9" y=".85" z="-2.800000" size=".150000" red="1" green="1" blue=".5" lighttype="rightblink"/>
 
 
 <!-- right blinken -->
-<Light file="supernova.bmp" x=".65" y=".04" z="2.80000" size=".150000" red="1" green="1" blue=".5" lighttype="rightblink"/>
-<Light file="supernova.bmp" x=".9" y=".85" z="-2.800000" size=".150000" red="1" green="1" blue=".5" lighttype="rightblink"/>
+<Light file="supernova.bmp" x=".65" y=".04" z="2.80000" size=".150000" red="1" green="1" blue=".5" lighttype="leftblink"/>
+<Light file="supernova.bmp" x=".9" y=".85" z="-2.800000" size=".150000" red="1" green="1" blue=".5" lighttype="leftblink"/>
 
 
 <!-- headlights!-->
