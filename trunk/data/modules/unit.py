@@ -15,8 +15,6 @@ def isAsteroid (un):
     retval = unit_fgid=="Asteroid"
     return retval
 
-   
-
 def getSignificant (whichsignificant, landable_only, capship_only):
 	un=VS.Unit()
 	which=0
@@ -111,7 +109,7 @@ def setPreciseTargetShip (which_fgid, target_unit):
       while(un.isNull()):
         unit_fgid=un.getFgID()
         if(unit_fgid[:len(which_fgid)]==which_fgid):
-	  un.setTarget(target_unit)
+	  un.SetTarget(target_unit)
         ship_nr=ship_nr+1
         un=VS.getUnit(ship_nr)
     

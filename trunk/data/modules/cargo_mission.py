@@ -112,14 +112,8 @@ class cargo_mission (Director.Mission):
 	      you.addCredits(addcred)
 	    else:
 	      VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000You will not be paid!")
-	      if (self.difficulty>=2):
-		VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000And your idiocy will be punished.")
-		VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000You had better run for what little life you have left.")
-		for i in range(self.difficulty):
-		  un=faction_ships.getRandomFighter(self.faction)
-		  newunit=launch.launch_wave_around_unit("shadow", self.faction, un, "default", 1, 200.0,400.0,you)
-		  newunit.setFgDirective("B")
-		  newunit.setTarget(you)
+	      universe.punish(self.you,self.faction,self.difficulty)
+
 	    VS.terminateMission(0)
 	    return
 	  

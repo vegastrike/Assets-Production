@@ -4,9 +4,11 @@
 ##old_system=""
 ##system_map={}
 ##outstr=""
+
 import VS
 import random
-
+import faction_ships
+import launch
 def getAdjacentSystems (currentsystem, sysaway, jumps=()):
     """returns a tuple in the format ("[lastsystem]",(system1,system2,system3,...))"""
     max=VS.GetNumAdjacentSystems(currentsystem)
@@ -51,6 +53,17 @@ def getMessagePlayer(un):
         return "all"
     else:
         return "p"+str(num)
+
+def punish (you,faction,difficulty):
+    if (difficulty>=2):
+        VS.IOmessage (0,"mission",getMessagePlayer(you),"#ff0000Your idiocy will be punished.")
+        VS.IOmessage (0,"mission",getMessagePlayer(you),"#ff0000You had better run for what little life you have left.")
+        for i in range(difficulty):
+            un=faction_ships.getRandomFighter(faction)
+            newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 200.0,400.0,you)
+            newunit.setFgDirective("B")
+            newunit.SetTarget(you)
+
 
 #use go_somewhere_significant instead:
 ##def __init__(): #(?)
