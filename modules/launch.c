@@ -29,7 +29,7 @@ module launch {
     float z=_olist.at(pos,2)+(random.random(r1,r2)*random.randomsign());
 
     // _io.printf("launching %d ships type=%s faction=%s around area [%f,%f,%f]\n",nr_ships,type,faction,x,y,z);
-    return _unit.launch(fgname,faction,type,ai,nr_ships,nr_waves,x,y,z,"CommieSecRGB.bmp","CommieSecA.bmp");
+    return _unit.launch(fgname,faction,type,ai,nr_ships,nr_waves,x,y,z);
   };
   object launch_wave_around_area(object fgname,object faction,object type,object ai,int nr_ships,float r1,float r2,object pos){
     return launch_waves_around_area (fgname,faction,type,ai,nr_ships,1,r1,r2,pos);
