@@ -2382,11 +2382,16 @@
 			</sector>
 			<sector name="defiance">
 				<var name="faction" value="ISO"/> 
-				<var name="num_stars" value="2"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="0"/>
+				<var name="num_planets" value="9"/>
 				<var name="jumps" value="enigma_sector/blake"/>
+				<var name="namelist" value="iso.txt"/><!-- Vega Sector uses celtic names for planets -->
+				<var name="planetlist" value="planets.iso.txt"/>	
+
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="1"/>
-				<var name="data" value="2146"/>
+				<var name="data" value="2778"/>
 			</sector>
 			<sector name="dyson">
 				<var name="sun_radius" value="34000"/>
