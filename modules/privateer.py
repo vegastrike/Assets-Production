@@ -17,6 +17,13 @@ class privateer (Director.Mission):
   def Execute(self): #this execute function should not need to be changed...
     for i in self.loops:
        i.Execute()
+  def initbriefing(self):
+    print "ending briefing"                
+  def loopbriefing(self):
+    print "loop briefing"
+    Briefing.terminate();
+  def endbriefing(self):
+    print "ending briefing"        
 
 #def initstarsystem():
 #  random_encounters.initstarsystem() #??? that isn't there
