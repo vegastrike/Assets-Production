@@ -8,6 +8,7 @@ class privateer (Director.Mission):
   loops=()
   def __init__ (self,sigdis, detectiondis, gendis, minships, genships, fighterprob, enemyprob, capprob, credits_to_maximize_difficulty, capdist):#negative garbage collect dist disables that feature
     Director.Mission.__init__(self)
+
     self.loops=(difficulty (credits_to_maximize_difficulty),
           random_encounters (sigdis, detectiondis, gendis, minships,genships,fighterprob,enemyprob,capprob,capdist),
           trading (),
