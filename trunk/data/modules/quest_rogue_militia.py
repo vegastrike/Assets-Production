@@ -15,7 +15,7 @@ class quest_rogue_militia (quest.quest):
         self.gametime = VS.GetGameTime()
         self.militia = []
         for i in range(difficulty):
-            self.militia += [launch.launch_wave_around_unit("RogueMilitia","pirates",faction_ships.getRandomFighter("militia"),"default",1,30,100,playa)]
+            self.militia += [launch.launch_wave_around_unit("RogueMilitia","pirates",faction_ships.getRandomFighter("militia"),"default",1,100,150,playa)]
         #        self.distractMilitia()
         VS.IOmessage (0,"RogueMilitia","all","This is the milita: You must pay toll to pass through these parts")
         VS.IOmessage (0,"RogueMilitia","all","Power down your engines for 10 seconds and allow us to remove 2000 credits")
@@ -31,6 +31,7 @@ class quest_rogue_militia (quest.quest):
         targ = unit.getSignificant(2,1,1)
         for un in self.militia:
             un.SetTarget(targ)
+            un.SetVelocity ((500,500,500))
     def Execute (self):
         playa=VS.getPlayer()
         if (playa.isNull()):
