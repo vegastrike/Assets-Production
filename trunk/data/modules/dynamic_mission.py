@@ -77,10 +77,17 @@ def eraseExtras():
 			Director.eraseSaveString(plr, "mission_names", i)
 			Director.eraseSaveString(plr, "mission_descriptions", i)
 
+fixerpct=0.1
+
 def generatePatrolMission (path, numplanets):
 	dist=1000
 	creds = numplanets*500
-	writemissionsavegame ("import patrol\ntemp=patrol.patrol(0, %d, %d, %d, %s)\ntemp=0\n"%(numplanets, dist, creds, str(path)))
+	addstr=""
+	isFixer=vsrandom.random()<fixerpct
+	if isFixer:
+		creds*=2
+		addstr+="#F#bases/fixers/confed.spr#Talk to the Confed Officer#Thank you.  Your help makes space a safer place.#\n"
+	writemissionsavegame (addstr+"import patrol\ntemp=patrol.patrol(0, %d, %d, %d, %s)\ntemp=0\n"%(numplanets, dist, creds, str(path)))
 	writedescription("Insystem authorities would like a detailed scan of the %s system. We require %d nav locations be visited on the scanning route.  The pay for this mission is %d."%(processSystem(path[-1]),numplanets,creds))
 	ispoint="s"
 	if numplanets==1:
@@ -93,7 +100,12 @@ def generateEscortMission (path,fg,fac):
 	typ = fg_util.RandomShipIn(fg,fac)
 	diff=vsrandom.randrange(0,6)	
 	creds=500*diff+1.2*syscreds*len(path)
-	writemissionsavegame ("import escort_mission\ntemp=escort_mission.initrandom('%s', %d, %g, 0, 0, %s, '','%s','%s')\ntemp=0\n"%(fac, diff, float(creds), str(path),fg,typ))
+	addstr=""
+	isFixer=vsrandom.random()<fixerpct
+	if isFixer:
+		creds*=2
+		addstr+="#F#bases/fixers/merchant.spr#Talk to the Merchant#Thank you. I entrust that you will safely guide my collegue until you reach the destination.#\n"
+	writemissionsavegame (addstr+"import escort_mission\ntemp=escort_mission.initrandom('%s', %d, %g, 0, 0, %s, '','%s','%s')\ntemp=0\n"%(fac, diff, float(creds), str(path),fg,typ))
 	writedescription("The %s %s in the %s flightgroup requres an escort to %s. The reward for a successful escort is is %d."%(fac,typ,fg, processSystem(path[-1]),creds))
 	writemissionname("Escort/Escort_%s_to_%s"%(fac,processSystem(path[-1])),path)	
 
@@ -108,7 +120,12 @@ def generateCargoMission (path, numcargos,category, fac):
 	diff=vsrandom.randrange(0,6)
 	launchcap=(vsrandom.random()>=.75)
 	creds=250*numcargos+500*diff+syscreds*len(path)+5000*(category=="Contraband")+20000*(category=="starships")
-	writemissionsavegame ("import cargo_mission\ntemp=cargo_mission.cargo_mission('%s', 0, %d, %d, %g, %d, 0, '%s', %s, '')\ntemp=0\n"%(fac, numcargos, diff, creds, launchcap, category, str(path)))
+	addstr=""
+	isFixer=vsrandom.random()<fixerpct
+	if isFixer:
+		creds*=2
+		addstr+="#F#bases/fixers/merchant.spr#Talk to the Merchant#Thank you. I entrust you will make the delivery successfully.#\n"
+	writemissionsavegame (addstr+"import cargo_mission\ntemp=cargo_mission.cargo_mission('%s', 0, %d, %d, %g, %d, 0, '%s', %s, '')\ntemp=0\n"%(fac, numcargos, diff, creds, launchcap, category, str(path)))
 	if (category==''):
 		category='generic'
 	writedescription("We need to deliver some %s cargo to the %s system. The mission is worth %d to us.  You will deliver it to a base owned by the %s"%(category, processSystem(path[-1]),creds,fac))
@@ -123,7 +140,15 @@ def generateBountyMission (path,fg,fac):
 	if (cap):
 		creds*=40
 	finalprice=creds+syscreds*len(path)
-	writemissionsavegame("import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %d, '%s', %s, '', '%s','%s')\ntemp=0\n"%(finalprice, runaway, diff, fac, str(path), fg,typ))
+	addstr=""
+	isFixer=vsrandom.random()<fixerpct
+	if isFixer:
+		creds*=2
+		addstr+="#F#bases/fixers/hunter.spr#Talk with the Bounty Hunter#We will pay you on mission completion.  And as far as anyone knows-- we never met."
+		if (runaway):
+			addstr += '\nAlso-- we have information that the target may be informed about your attack and may be ready to run. Be quick!'
+		addstr+="#\n"
+	writemissionsavegame(addstr+"import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %d, '%s', %s, '', '%s','%s')\ntemp=0\n"%(finalprice, runaway, diff, fac, str(path), fg,typ))
 	writedescription("A %s starship in the %s flightgroup has been harassing operations in the %s system. Reward for the termination of said ship is %d credits."%(typ,fg, processSystem(path[-1]), finalprice))
 	if (cap):
 		writemissionname ("Bounty/Bounty_on_%s_Capital_Vessel_in_%s"%(fac,processSystem(path[-1])),path)
@@ -141,7 +166,12 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	reallydefend = "1"
 	if (vsrandom.randrange(0,4)==0):
 		reallydefend="0"
-	writemissionsavegame("import defend\ntemp=defend.defend('%s', %d, %d, 8000.0, 100000.0, %g, %s, %d, '%s', %s, '%s', '%s', '%s', '%s')\ntemp=0\n"%
+	addstr=""
+	isFixer=vsrandom.random()<fixerpct
+	if isFixer:
+		creds*=2
+		addstr+="#F#bases/fixers/confed.spr#Talk to the Confed Officer#Thank you. Your defense will help confed in the long run.  We appreciate the support of the bounty hunting community.#\n"
+	writemissionsavegame(addstr+"import defend\ntemp=defend.defend('%s', %d, %d, 8000.0, 100000.0, %g, %s, %d, '%s', %s, '%s', '%s', '%s', '%s')\ntemp=0\n"%
 	                     (attackfac, 0, quantity, creds*quantity+syscreds*len(path), reallydefend, isbase, defendfac, str(path), attacktyp,attackfg, defendtyp, defendfg))
 	iscapitol=""
 	if isbase:
@@ -171,14 +201,11 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 		for j in getSystemsNAway(cursystem,i,preferredfaction):
 			import dynamic_battle
 			l = dynamic_battle.BattlesInSystem(j[-1])
-#			print l
 			nodefend=1
-			#THERE IS OFTEN 2-4 OF THE AME BATTLE!!!!!!!!! YTHOIS IS RIDICULOUS AND <B>MUST</B> BE FIXED
 			for k in l:
 				if (VS.GetRelation(fac,k[1][1])>=0):
 					nodefend=0
 					generateDefendMission(j,k[1][0],k[1][1],k[0][0],k[0][1])
-#			print 'PREFERREDfacTiON-Is- '+str(preferredfaction)
 			if preferredfaction:
 				(m,nummerchant,numthisfac)=GetFactionToDefend(thisfaction, fac, j[-1])
 				for kk in faction_ships.enemies[faction_ships.factiondict[thisfaction]]:

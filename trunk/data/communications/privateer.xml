@@ -592,7 +592,7 @@
 		<edge index="55"/>
 		<edge index="25"/>
 	</node>
-	<node text="Ok. Now you've gotten me angry, prepare to die!" relationship=".07"><!-- node 58-->
+	<node text="Ok. Now you've gotten me angry, prepare to die!" relationship="-.07"><!-- node 58-->
 		<edge index="18"/>
 		<edge index="59"/>
 		<edge index="12"/>
