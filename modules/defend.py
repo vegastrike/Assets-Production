@@ -61,7 +61,8 @@ class defend (Director.Mission):
         if (un!=self.you):
             if (un.getFactionName()==self.faction): 
                 if (un.getSignificantDistance (jp)<self.escdist):
-                    if (un.getFlightgroupName!="Base"):
+                    if (un.getFlightgroupName()!="Base"):
+                        print un.getName()
                         self.ship_check_count=0
         return 0
 	
@@ -89,7 +90,10 @@ class defend (Director.Mission):
             return
         if (not self.arrived):
             self.arrived=1
-            self.adjsys=go_somewhere_significant (self.you,self.defend,self.distance_from_base,self.defend_base,faction_ships.get_enemy_of(self.faction))
+            tempfaction=""
+            if (self.defend_base):
+                tempfaction = faction_ships.get_enemy_of(self.faction)
+            self.adjsys=go_somewhere_significant (self.you,self.defend,self.distance_from_base,self.defend,tempfaction)
             self.adjsys.Print ("You must visit the %s","defend","docked around the %s", 0)
             self.defendee=self.adjsys.SignificantUnit()
         else:
