@@ -38,6 +38,9 @@
 
 	</Energy>
 	<Jump delay="1" jumpenergy="10"/>       
+	<Hold volume="65">
+	    
+	</Hold>
 
 	
 	<description>

@@ -48,7 +48,7 @@
 	<Computer yaw="137.800003" pitch="121.800003" roll="127.800003" afterburner="128.000000" maxspeed="42.500000"/>
        	<Jump delay="1" jumpenergy="90"/>       
 
-	<Hold volume="95">
+	<Hold volume="65">
 	</Hold>
 
 
