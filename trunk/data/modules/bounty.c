@@ -30,7 +30,7 @@ module bounty {
 	    _unit.deleteContainer (enemycontainer);
 	  }
 	};
-	void initrandom (int numsystemsaway, float creds, bool run_away, int shipdifficulty) {
+	void initrandom (int minns, int maxns, float creds, bool run_away, int shipdifficulty) {
 	  faction_ships.init();
 	  object you=_unit.getPlayer();
 	  object tempfaction;
@@ -42,13 +42,13 @@ module bounty {
 	      int factionname=random.randomint(0,faction_ships.getMaxFactions());
 	      tempfaction=faction_ships.intToFaction(factionname);
 	    }
-	    init (numsystemsaway,creds,run_away,shipdifficulty,tempfaction);
+	    init (minns,maxns,creds,run_away,shipdifficulty,tempfaction);
 	    _string.delete (name);
 	  }else {
 	    _std.terminateMission(false);
 	  }
 	};
-	void init (int numsystemsaway, float creds, bool run_away, int shipdifficulty, object tempfaction) {
+	void init (int minnumsystemsaway, int maxnumsystemsaway, float creds, bool run_away, int shipdifficulty, object tempfaction) {
 	  faction = tempfaction;
 	  
 	  
@@ -77,7 +77,7 @@ module bounty {
 	    _string.delete (name);
 	    _io.message (0,"game","all",str);
 	    _io.message (0,"game","all","In order to get to your destination, you must:");
-	    destination=universe.getAdjacentSystem (sysfile,numsystemsaway);
+	    destination=universe.getAdjacentSystem (sysfile,random.randomint (minnumsystemsaway,maxnumsystemsaway));
 	    _io.sprintf(str,"Once there, you must destroy a %s unit.",faction);
 	    _io.message (2,"game","all",str);
 	    _io.message (3,"game","all","You will then recieve credits as your reward");
