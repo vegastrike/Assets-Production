@@ -2,16 +2,12 @@ import VS
 import Director
 import fg_util
 import vsrandom
-class FG:
-	def __init__(self,fgname,faction):
-		self.fg=fgname
-		self.fac=fact		
 
-#hashed by system, then by 
+#hashed by system, then contains lists of pairs of (flightgroup,faction) pairs
 persystemattacklis= {}
 
-attacklist ={}
-defendlist={}
+attacklist ={}#hashtable mapping (attackfg,attackfaction):(defendfg,defendfaction)
+defendlist={}#hashtable mapping (defendfg,defendfaction):(attackfg,attackfaction)
 def SimulateBattles():
 	deadbattles=[]
 	global persystemattacklist
@@ -19,16 +15,16 @@ def SimulateBattles():
 	persystemattacklist = {}
 	for ally in attacklist:
 		enemy = attacklist[ally]		
-		if (not attackFlightgroup (ally.fg,ally.fac,enemy.fg,enemy.fac)):
+		if (not attackFlightgroup (ally[0],ally[1],enemy[0],enemy[1])):
 			deadbattles+=[ally]
 		else:
-			sys = fg_util.FGSystem(ally.fg,ally.fac)
+			sys = fg_util.FGSystem(ally[0],ally[1])
 			#if not (sys in persystemattacklist):
 			#	persystemattacklist[sys]={}#used to be a haash table in BattlesInSystem
 			#(persystemattacklist[sys])[ally]=enemy
 			persystemattacklist[sys]+=[(ally,enemy)]
 	for i in deadbattles:
-		stopAttack(i)
+		stopAttack(i[0],i[1])
 def BattlesInSystem():
 	if sys in persystemattacklist:
 		return persystemattacklist[sys]
@@ -143,21 +139,21 @@ def LaunchEqualShips (fgname, faction, enfgname, enfaction):
 		LaunchMoreShips (enfgname,enfaction,enland,int((numenland*numlaunch/numland)-numenlaunch))		
 	
 def stopAttack (fgname,faction):
-	ally=FG (fgname,faction)
+	ally=(fgname,faction)
 	if ally in attacklist:
 		enemy = attacklist[ally]
 		sys = fg_util.FGSystem (fgname,faction)
 		if (VS.systemInMemory(sys)):
 			VS.pushSystem(sys)
-			StopTargettingEachOther(fgname,faction,enemy.fg,enemy.fac)
+			StopTargettingEachOther(fgname,faction,enemy[0],enemy[1])
 			VS.popSystem(sys)
 		del defendlist[enemy]
 		del attacklist[ally]
 		
 
 def initiateAttack (fgname,faction,enfgname,enfaction):
-	fg = FG(fgname,faction)
-	efg = FG(enfgname,enfaction)
+	fg = (fgname,faction)
+	efg = (enfgname,enfaction)
 	attacklist[fg]=efg
 	defendlist[efg]=fg
 
