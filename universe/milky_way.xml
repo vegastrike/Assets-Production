@@ -2387,11 +2387,11 @@
 				<var name="data" value="1346"/>
 			</sector>
 			<sector name="defiance">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="ISO"/> 
 				<var name="num_stars" value="2"/>
 				<var name="jumps" value="enigma_sector/blake"/>
 				<var name="nebulae"   value="false"/>
-				<var name="num_starbases" value="0"/>
+				<var name="num_starbases" value="1"/>
 				<var name="data" value="2146"/>
 			</sector>
 			<sector name="dyson">
