@@ -48,10 +48,10 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %docdir /usr/local/share/doc/vegastrike
 /usr/local/share/doc/vegastrike/readme.txt
-%doc /usr/local/share/man1/vegastrike.1
-%doc /usr/local/share/man1/vssetup.1
-%doc /usr/local/share/man1/vslauncher.1
-%doc /usr/local/share/man1/vsinstall.1
+%doc /usr/local/share/man/man1/vegastrike.1
+%doc /usr/local/share/man/man1/vssetup.1
+%doc /usr/local/share/man/man1/vslauncher.1
+%doc /usr/local/share/man/man1/vsinstall.1
 /usr/local/bin/vsinstall
 # Normal files
 /usr/local/share/vegastrike/data
