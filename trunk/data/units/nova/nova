@@ -1,5 +1,4 @@
 <Unit scale="15.00000">
-<cockpit file = "medium_cockpit.cpt" x = "0" y = ".5" z = "4"  />
 <Meshfile file="nova_blink.xmesh"/>
 <Meshfile file="nova.xmesh"/>
 
@@ -44,7 +43,7 @@
 	<Jump delay = "1" jumpenergy = "90"  >
 	</Jump>
 
-<cockpit file = "medium-cockpit.cpt" x = "0.00000e+0" y = "8.40000e-2" z = "2.09000" />
+<cockpit file = "medium_cockpit.cpt" x = "0.00000e+0" y = "8.40000e-2" z = "2.09000" />
 <Hold volume = "10" >
 </Hold>
 </Unit>
