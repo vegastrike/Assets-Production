@@ -1,6 +1,6 @@
 Name: vegastrike-data
 Summary: Vegastrike - a free 3D space fight simulator (data files)
-Version: 0.2.9.2CVS
+Version: 0.2.9CVS
 Release: 1
 Copyright: GPL
 Group: X11/GL/Games
