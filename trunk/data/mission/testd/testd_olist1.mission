@@ -44,30 +44,11 @@
 		</script>
 
 		<script name="gameloop">
-			<defvar name="random_tmp" type="float"/>
-			<defvar name="counter" type="float"/>
-			<defvar name="last_random_count" type="float"/>
+			<defvar name="l1" type="object"/>
 
-			<setvar name="total_count">
-				<const type="float" value="75.0"/>
-			</setvar>
-
-			<setvar name="random_count">
-				<const type="float" value="-0.34"/>
-			</setvar>
-
-			<call name="PrintFloats" s1="check1: ">
-				<var name="random_count"/>
-				<var name="total_count"/>
-			</call>
-
-			<exec name="subroutine"/>
-
-			<call name="PrintFloats" s1="check2: ">
-				<var name="random_count"/>
-				<var name="total_count"/>
-			</call>
-
+			<exec name="subroutine">
+				<var name="l1"/>
+			</exec>
 
 		</script>
 	</module>
