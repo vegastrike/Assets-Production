@@ -31,7 +31,6 @@
 		</script>
 
 		<script name="gameloop">
-			<exec module="launchtest" name="print_unitlist"/>
 			<exec module="launchtest" name="launch_test"/>
 		</script>
 

@@ -18,7 +18,7 @@ module earth_patrol_rnd_attack1 {
   void launch_new_ships(){
     object typename=faction_ships.getRandomShipType(aera_ships);
 
-    float nr_ships=random.random(2.0,4.0);
+    int nr_ships=random.randomint(2,4);
 
     object player=_unit.getPlayer();
     object player_pos=_unit.getPosition(player);
