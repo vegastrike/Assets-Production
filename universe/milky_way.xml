@@ -4267,7 +4267,7 @@
 				<var name="data" value="2682"/>
 			</sector>
 			<sector name="tcsc_1569">
-				<var name="faction" value="unkown"/> 
+				<var name="faction" value="unknown"/> 
 				<var name="jumps" value="avalon_sector/kier"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="1"/>
