@@ -11,10 +11,10 @@
 		<var name="difficulty" value=".2"/><!--good starting difficulty here-->
 		<var name="system" value="gemini_sector/troy" />
 		<var name="description" value="Enjoy troy in a nova." />
-		<var name="savegame" value="explore_universe_difficulty" />
+		<var name="savegame" value="explore_universe_difficulty1" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="wayfarer.begin" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="confed" type="wayfarer" ainame="default" waves="1" nr_ships="1">
 			<pos x="20400" y="-35400" z="24700.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
