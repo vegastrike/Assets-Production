@@ -6,27 +6,28 @@
 	<variables>
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 <!--		<var name="difficulty" value=".1" />-->
-
+		<var name="credits" value="10000"/>
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="sol_sector/sol" />
+		<var name="system" value="nothing" />
 		<var name="description" value="4vs4.txt" />
 	</variables>
+
         <flightgroups>
-         	    <flightgroup name="navajo" faction="confed" type="avenger" ainame="default" waves="1" nr_ships="1">
-			<pos x="110300" y="30000" z="50000.0"/>
+         	    <flightgroup name="navajo" faction="neutral" type="avenger" ainame="default" waves="1" nr_ships="1">
+                        <pos x="120000" y="30000" z="50000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		    </flightgroup>
 
-                <flightgroup name="blue" faction="confed" type="starrunner" ainame="macho" waves="1" nr_ships="1">
-			<pos x="78900" y="30000" z="40000.0"/>
+                <flightgroup name="federales" faction="confed" type="starrunner" ainame="macho" waves="1" nr_ships="1">
+                        <pos x="105000" y="30000" z="40000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		    </flightgroup>
 
 
-                <flightgroup name="grey" faction="aera" type="destroyer" ainame="macho" waves="1" nr_ships="1">
-			<pos x="140900" y="30000" z="40000.0"/>
+                <flightgroup name="contras" faction="aera" type="destroyer" ainame="macho" waves="1" nr_ships="1">
+                        <pos x="135000" y="30000" z="40000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		    </flightgroup>
 
