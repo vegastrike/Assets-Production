@@ -39,6 +39,7 @@ module go_somewhere_significant {
     distfrombase=distance_away_to_trigger;
     object sysfile = _std.getSystemFile();
     destination=universe.getAdjacentSystem(sysfile,numsystemsaway);
+    _string.delete (sysfile);
     arrivedsys=false;
     arrivedarea=false;
   };

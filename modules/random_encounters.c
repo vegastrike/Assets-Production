@@ -12,8 +12,10 @@ module random_encounters {
   float fighterprob;
   int curmode;//are we in battle mode (true) or cruise mode (false)
   int lastmode;//were we in battle mode (true) or cruise mode(false)
+  float enprob;
   object sig_container;
-  void init(float sigdis, float detectiondis, float gendis, int minnships, int gennships, float unitprob, float capprob){
+  void init(float sigdis, float detectiondis, float gendis, int minnships, int gennships, float unitprob, float enemyprob, float capprob){
+    enprob = enemyprob;
     fighterprob = unitprob;
     _std.setNull(sig_container);
     faction_ships.init();
@@ -27,23 +29,35 @@ module random_encounters {
     gen_num_ships=gennships;
     capship_prob=capprob;
   };
+  void SetEnemyProb (float enp) {
+    enprob = enp;
+  };
   void launch_near (object un) {
     int numfactions=random.randomint(0,3);
     if (numfactions==0) {
       numfactions=1;
     }
     int i=0;
+    object sysfile = _std.getSystemFile();
     while (i<numfactions) {
-      int fac = random.randomint(0,faction_ships.getMaxFactions()-1);
-      int numship= random.randomint (1,gen_num_ships);
-      object rnd= faction_ships.getRandomFighterInt(fac);
-      object myfaction = faction_ships.intToFaction(fac);
-      object launched = launch.launch_wave_around_unit("privateer",myfaction,rnd,"default",numship,200.0,generation_distance,un);
-      if ((_std.Rnd())<capship_prob) {
-	launched=launch.launch_wave_around_unit("privateer",myfaction,rnd,"default",1,200.0,generation_distance,un);
+      object localfaction = _std.getGalaxyProperty(sysfile,"faction");
+      if (_std.Rnd() < enprob) {
+	localfaction = faction_ships.get_enemy_of (localfaction);
+      }else {
+	localfaction = faction_ships.get_friend_of(localfaction);
       }
+      object fighter = faction_ships.getRandomFighter (localfaction);
+      
+      int numship= random.randomint (1,gen_num_ships);
+      object launched = launch.launch_wave_around_unit("privateer",localfaction,fighter,"default",numship,200.0,generation_distance,un);
+      if ((_std.Rnd())<capship_prob) {
+	object capship = faction_ships.getRandomCapitol (localfaction);
+	launched=launch.launch_wave_around_unit("privateer",localfaction,capship,"default",1,200.0,generation_distance,un);
+      }
+      _string.delete (localfaction);
       i=i+1;
     }
+    _string.delete (sysfile);
   };
 
   bool test_atLeastNInsignificantUnitsNear (object unit, int n) {
