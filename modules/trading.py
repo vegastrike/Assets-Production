@@ -1,12 +1,11 @@
 import random
 import VS
 class trading:
-  quantity=4
-  last_ship=0
-  price_instability=0.01
   def __init__(self):
-    pass #does nothing; all variables are set in the 3 lines above
-  
+    self.last_ship=0
+    self.quantity=4
+    self.price_instability=0.01
+    
   def SetPriceInstability(self, inst):
     self.price_instability=inst
   
