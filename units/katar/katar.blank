@@ -1,4 +1,4 @@
-<Unit size="10">
+<Unit size="3">
 
 	<cockpit file="light_cockpit.cpt" x="0" y=".5" z="4"/>
 	<Defense HudImage="katar-hud.spr">
