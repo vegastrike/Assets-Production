@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="800">
 
 <Meshfile file="glow_net_stable.xmesh"/>
 
