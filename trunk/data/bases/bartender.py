@@ -2,7 +2,7 @@ import Base
 import VS
 import random
 
-thingstosay=('Hello! Lots of travellers about. Have yourself a seat and enjoy a nice cool fuzzy buzzer.',
+tender={"default":('Hello! Lots of travellers about. Have yourself a seat and enjoy a nice cool fuzzy buzzer.',
              'Bottoms up for ye olde bartender, eh?',
              'Tilt back a nice cool one, friend.',
              "News is sparse around here, check back with me later when I've talked with some more of the haulers coming in later today.",
@@ -28,16 +28,46 @@ thingstosay=('Hello! Lots of travellers about. Have yourself a seat and enjoy a 
              "A toast to the men and women of the Confederate Armed Forces! If not for them, we'd all be learning how to speak Aera right about now. If those things even have vocal chords.",
              "Hey, did you hear the news? Word is that the 5th Fleet under Admiral Johansson managed to bag a whole bunch of those nasty Aeran cruisers in a battle not far from here! Maybe this war is winnable after all!",
              "We might have been able to pick off some of the outlying Aeran outposts, but I hear their core planets are a tough nut to crack. The HCS Zhukov tracked this huge Rlaan battle fleet as it entered orbit around one of the planets, but then it simply disappeared off their scopes! The fleet that is, not the planet.",
-             )
+                   ),
+        "pirate":("You've got a lot of nerve coming in here looking like that, pal! This joint enforces a strict dress-code. Here, put this eye-patch on before you cause a scene. And ruffle your hair a bit, or someone might think you're with the Navy!",
+                  "If you have a weapon on you, make sure it remains out of sight. The crews of the Skalawag and the Black Death duked it out in here a couple of hours ago, and some people got killed. The last thing we need right now is someone waving his gun around.",
+                  "What are ye pesterin' me for, pal? If you want to be a pirate, you should go talk to the three important-looking pirates in the next room! Wait a second...",
+                  "Kasper Foch, now there's a guy you don't want to mess with. He's the pirate captain that entered an ion storm and flew out again without a scratch, while his three Militia pursuers were never heard of again. There's this story going around of how he single-handedly took out a Confederate Missile Cruiser.",
+                  "There's a lot of deserters from the Navy around here these days. Punks they drafted off the street, taught how to fly and then handed a ship. You figure the guys at HQ would be smarter than that.",
+                  "A Rlaan transport can be a good target, if you're willing to take the risk. If those guys see you attacking one of their unarmed ships... well, sometimes they just won't stop hunting you! And you've heard what they do to humans they capture alive, haven't you?",
+                  "You know, if we lose the war against the Aera, it probably won't matter much, because the majority of us won't be around to see it, but what if we win? The whole fleet would return to peacekeeping duties in human systems, and it would mean the end of space piracy as we know it!",
+                  "Hey, I hope your ship has a large cargo hold. We could always use some more smugglers out there, distributing our goods. Can you believe that there are some colonists out there who still don't know the true glory of Khaisalantimin F62, or as most people just call it, 'khais'?",
+                  "This assassin came in here a while ago. Ex-Special Forces guy. Apparently, the government sent some of his collegues to silence him for good after he'd carried out a particularly nasty mission in Rlaan space, but he made it out and now he'll do any job for money.",),
+        "refinery":("Sorry for the broken glass on the floor. The base was shook up a bit a couple of hours ago. Apparently, some guy on approach lost control and crashed right into the side of the station. Don't worry, it's nothing our damage control crews can't handle, but the poor guy who crashed won't be flying again. Or breathing, for that matter."),
+        "military":("A Russian Special Forces unit came through here this morning. Real quiet guys. Looked like they'd seen a lot of action. From what I could gather, they were going to catch a transport out of here and into the fray again later tonight.",
+                    "This Army captain had a drink here yesterday. Tall guy from Mars. Now, I've seen a lot, but this guy... half his face, both of his legs and his left arm had all been replaced with cybernetics due to injuries he'd taken on the field. He looked a bit clumsy, but very strong. I swear, soon a soldier will do more good if he's blown to pieces, so that he can be rebuilt with machine parts.",
+                    "A couple of guys from the Confederate Air Force was here a while back. We don't get many of those here usually. They may rely on the Navy for transportation between planets, but those Air Force boys and girls are solid gold when it comes to campaigns planetside!",
+                    "Hey, are you a mercenary? We've got plenty of missions here for you to fly, if you're willing. The fleet is spread thin as it is, so if you want to do your part, you're more than welcome!",)
+        }
+
              
-(text,sound)=Base.GetRandomBarMessage()
-rndnum=random.randrange(0,2)
-if (rndnum==1 or text==''):
-    if (len(thingstosay)>0):
-        Base.Message (thingstosay[random.randrange(0,len(thingstosay))])
+def GetDefaultBartenderText():
+    txt =tender.get("default")
+    if (not txt):
+        return ("Hello")
+    return txt
+
+def GetBartenderText(str):
+    txt = tender.get (str)
+    if (txt):
+        return txt
+    return GetDefaultBartenderText()
+def Speak(thingstosay):
+    (text,sound)=Base.GetRandomBarMessage()
+    rndnum=random.randrange(0,2)
+    if (rndnum==1 or text==''):
+        mylen=len(thingstosay)
+        if (mylen>0):
+            Base.Message (thingstosay[random.randrange(0,mylen)])
+        else:
+            Base.Message ('Hello!')
     else:
-        Base.Message ('Hello!')
-else:
-    Base.Message (text)
-    if (sound!=''):
-        VS.playSound (sound)
+        Base.Message (text)
+        if (sound!=''):
+            VS.playSound (sound)
+
