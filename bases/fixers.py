@@ -40,9 +40,6 @@ class Fixer:
 		Base.Python(room,self.name,x,y,wid,hei,self.text,self.choices,True)
 
 fixers={"enigma_sector/niven":[
-#	Fixer("patrick","Talk to Patrick",[("quest_drone",0)],"bases/fixers/pirate.spr","bases/fixers/patrick.py"),
-#	Fixer("isoguy","Talk to Communist",[],"bases/fixers/iso.spr","bases/fixers/patrick.py"),
-#	Fixer("drone","Talk to Evil Dude",[("31337ness",.05),("quest_drone",1)],"bases/fixers/cloak.spr","bases/fixers/patrick.py"),
 	Fixer("explore","Talk to the Explorer",[("enigma_sector/enigma_nav",0)],"bases/fixers/militia.spr","bases/fixers/explore_enigma.py"),
 	Fixer("explore","Talk to the Explorer",[("enigma_sector/enigma_nav",3),("gemini_sector/delta_navpoint",0),("gemini_sector/beta_navpoint",0)],"bases/fixers/militia.spr","bases/fixers/explore_notready.py"),
 	Fixer("explore","Talk to the Explorer",[("enigma_sector/enigma_nav",3),("gemini_sector/delta_navpoint",1),("gemini_sector/beta_navpoint",0)],"bases/fixers/militia.spr","bases/fixers/explore_beta.py"),
@@ -57,8 +54,12 @@ fixers={"enigma_sector/niven":[
 	Fixer("confed_drone","Talk to the Confed Officer",[("quest_drone",1)],"bases/fixers/confed.spr","bases/fixers/attack_drone1.py"),
 	Fixer("confed_drone","Talk to the Confed Officer",[("quest_drone",-1)],"bases/fixers/confed.spr","bases/fixers/attack_drone1.py")
 	],"enigma_sector/heinlein":[
-	Fixer ("rowenna","Speak with Rowenna",[("decided_iso_evil",0)],"bases/fixers/iso.spr","bases/fixers/iso.py"),
+	Fixer ("rowenna","Speak with Rowenna",[("decided_iso_evil",0),("iso_mission2",0)],"bases/fixers/iso.spr","bases/fixers/iso.py"),
 	Fixer ("cloaked_man","Speak with hooded figure",[("decided_iso_good",0)],"bases/fixers/cloak.spr","bases/fixers/iso_antagonist.py")
+	],"enigma_sector/adams":[
+	Fixer ("rowenna","Speak with Rowenna",[("decided_iso_evil",0),("iso_mission3",0),("iso_mission2",1)],"bases/fixers/iso.spr","bases/fixers/iso.py")
+	],"enigma_sector/defiance":[
+	Fixer ("rowenna","Speak with Rowenna",[("decided_iso_evil",0),("iso_mission3",1)],"bases/fixers/iso.spr","bases/fixers/iso.py")
 	]}
 
 def AppendFixer(name,fixer):
