@@ -6,7 +6,7 @@
 
 	<Mount weapon="Torpedo" size="heavy-missile" x="-5.000000" y="-.9000000" z="-3.000000" ammo="3" volume="601"/>	
 	<Mount weapon="Torpedo" size="heavy-missile" x="5.000000" y="-.9000000" z="-3.000000" ammo="3" volume="601"/>	
-	<Mount weapon="Mace" size="medium-missile heavy-missile" x="4.000000" y="-.9000000" z="-2.000000" ammo="1" volume="601"/>	
+	<Mount weapon="capshipmissile" size="medium-missile heavy-missile" x="4.000000" y="-.9000000" z="-2.000000" ammo="100" volume="601"/>	
 	<Mount weapon="Mace" size="medium-missile heavy-missile" x="-4.000000" y="-.9000000" z="-2.000000" ammo="1" volume="601"/>	
 	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="3.000000" y="-.9000000" z="-1.000000" ammo="1" volume="201"/>	
 	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-3.000000" y="-.9000000" z="-1.000000" ammo="1" volume="201"/>	

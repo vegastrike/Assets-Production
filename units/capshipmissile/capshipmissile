@@ -15,12 +15,14 @@
 
 </Thrust>
 <Sound></Sound>
-<Defense>
+<Defense explosionAni="explosion_wave.ani">
 	<Hull strength="12"/>
+	<Cloak cloakglass="1" cloakmin=".25" cloakrate=".8" cloakenergy="0"/>
 </Defense>
 <Stats mass="0.003" momentofinertia=".2" fuel="50000"></Stats>
 
-<Computer yaw="8" pitch="8" roll="10" afterburner="290" maxspeed="210"/>
+<!--<Computer yaw="8" pitch="8" roll="10" afterburner="290" maxspeed="210"/>-->
+<Computer yaw=".8" pitch=".8" roll=".10" afterburner="10" maxspeed="10"/>
 <Energy>
 	<Reactor recharge="10"
 		   limit="100"/>
