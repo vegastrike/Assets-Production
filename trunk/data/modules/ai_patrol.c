@@ -18,7 +18,8 @@ module ai_patrol {
   class object outstr;
   class object my_unit;
   class object my_order;
-  
+  class object my_fgid;
+
   object calcNextWaypoint(object upos){
       float x=_olist.at(upos,0);
       float y=_olist.at(upos,1);
@@ -82,7 +83,8 @@ module ai_patrol {
     my_unit=_std.getCurrentAIUnit();
     my_order=_std.getCurrentAIOrder();
 
-    //    _io.printf("Patrol: mode=%d range=%f Area=",patrol_mode,range);
+    my_fgid=_unit.getFgID(my_unit);
+    _io.printf("Patrolling ai: %s: mode=%d range=%f Area=",my_fgid,patrol_mode,range);
     //vec3.print(area);
     //_io.printf("\n");
 
@@ -104,7 +106,7 @@ module ai_patrol {
   };
 
   void quitai(){
-    _io.printf("patrolling ai quitting\n");
+    _io.printf("%s: patrolling ai quitting\n",my_fgid);
     //    _string.delete(outstr);
   };
 
