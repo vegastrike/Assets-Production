@@ -23,6 +23,8 @@ And if you can design some missions it would rock!
 ) Interstellar Warp Transit (Jump Drive)
 ) Time Compression / Autopilot
 ) ReSpawn
+) Ordering Wingmen
+) Communications with Friends and Foes
 ) Transfer Command
 ) Pilot turrets
 ) Single-Player Controls
@@ -76,21 +78,20 @@ You can also use this for any other mission that uses a saved game (like the 2-p
 =================================================
 Vegastrike takes a single command parameter indicating which mission it should load
 
-	./vegastrike mission/explore_universe.mission
+	.\vegastrike mission/explore_universe.mission
 
 is an example of a valid mission call.
 
 The -j flag (must be flush with the system) will force a player to begin in a star system.
 
-	./vegastrike -jvega_sector/vega mission/n_vs_n/confed/confed_2v2.mission
+	.\vegastrike -jvega_sector/vega mission/n_vs_n/confed/confed_2v2.mission
 
-will force the bomber mission to run in the vega sector.
+will force the 2v2 mission to run in the vega sector.
 
 =================================================
  Playing Music in Vegastrike in Windows (Experemintal)
 =================================================
 Run setup.exe and select Windows External Music.
-Make sure winamp isn't  "always on top".
 Put 3 .m3u playlists in the .vegastrike folder that must be called peace.m3u battle.m3u and panic.m3u.  Winamp can create such files.
 As vegastrike currently does not have music artists, you must choose the playlists for yourself.  Songs towards the top get played more often
 During better times...songs on the bottom get played more often during worse times.
@@ -136,21 +137,43 @@ If going twoards a big object, like a planet, you may autopilot there by pressin
 =================================================
  ReSpawn
 =================================================
-If you sadly lose your life in combat you may respawn by pressing ':'
+If you sadly lose your life in combat you may respawn by pressing ';'
 A new starship will be created for you by Bob.
+
+=================================================
+ Ordering Wingmen
+=================================================
+If you are in a mission with more than 1 ship in your flightgroup you may order them to do certain things.
+Press shift-F to have them form on your wing and follow you through jump points
+Press shift-A to have them attack your target
+press shift-H to have them attack the object attacking you
+Press shift-B to release them from the above orders
+Wingmen are fickle and may not always obey your commands.  They will inform you if they do or not.
+
+=================================================
+ Communications with Friends and Foes
+=================================================
+When flying in space one may wish to engage in casual conversation with nearby starships.
+Target a starship and press a number key to communicate with the ship.
+Conversation topics are generally ordered from nice (low numbers) to threatening (high numbers), however you may wish to change your vdu to comm mode (press 'v' to cycle to it) in order to see exactly what you will say to your target.
+If you choose particularly menacing taunts, the target may get angry and attack you instead of its current target.
+Likewise often one can use the comms to restore relationships with hostile people.
+Be careful as the local authorities may choose to scan your ship for contraband.  If you refuse to fly straight during this process you may be attacked!
 
 =================================================
  Transfer Command
 =================================================
-if you wish to transfer command to another starship, simply press '[' to switch over.  This is useful if you have died and do not wish to upset the blaance.  The AI that took over for the ship you left will attack your previously targetted unit, be it friendly or enemy.  You can use this to in effect give orders
-to friends.
+if you wish to transfer command to another starship, simply press '[' to switch over.  This is useful if you have died and do not wish to upset the blaance.  The AI that took over for the ship you left will attack your previously targetted unit, be it friendly or enemy.  You can use this to in effect give orders to friends.
 
 =================================================
- Pilot turrets
+ Turrets
 =================================================
-To have the vegastrike AI take over for your ship press ']' to go to a turret.
+Turrets do not begin with their own AI at all times.  To toggle the AI of your turret, you must press 'o'. Pressing this when your turret is off will turn on your turret and tell it to attack your target.  Pressing o again will turn off your turret and make it sit idle.
+Turrets can be told to attack your target.  do this by pressing 'shift-P'.  once they attack your target you may switch your target and they will continue to attack the target you told them to.
+ 
+Press ']' to physically go to a turret.
 Press ']' to return to cockpit again. Another press of ']' will get you to your next turret, and so forth.
-Like with Transfer command, the AI will attack your previously targetted object.
+Like with Transfer command, the AI of the turret will attack your previously targetted object when you leave the turret.
 
 =================================================
  Single-Player Controls

@@ -43,10 +43,10 @@ Function .onInstSuccess
 	ExecWait $INSTDIR/OpenALwEAX.exe
       ExecWait $INSTDIR/SETUP.EXE 
       MessageBox MB_YESNO "Installation Successful. View readme?" IDNO NoReadme
-         Exec "notepad.exe $INSTDIR\README"
+         ExecShell "open" $INSTDIR\README
          NoReadme:
       MessageBox MB_YESNO "Would you like to veiw the story behind VegaStrike 0.2.9?" IDNO NoStory
-         Exec "notepad.exe $INSTDIR\CelesteStory.txt"
+         ExecShell "open" $INSTDIR\CelesteStory.txt
          NoStory:
   FunctionEnd
 
