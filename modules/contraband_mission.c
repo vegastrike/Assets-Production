@@ -39,7 +39,7 @@ module contraband_mission {
 		badolist=_olist.new();
 		stage=0;
 		object jump=unit.getJumpPoint(random.randomint(0,50));
-		jumpcontainer=jump;
+		jumpcontainer=_unit.getContainer(jump);
 		difficulty=diff;
 		if ((nr_ships<=0)||(bad_pct<=0.0)) {
 			_std.terminateMission(false);
@@ -140,8 +140,8 @@ module contraband_mission {
 				all_left=all_left-1;
 				Terminate(you);
 			}
-			object olistun=_olist.at(goodolist,good_iterator);
-			olistun=_unit.getUnitFromContainer(olistun);
+			object olistcont=_olist.at(goodolist,good_iterator);
+			object olistun=_unit.getUnitFromContainer(olistcont);
 			if ((_std.isNull(gunit))||  //resetting iterators for good ships
 					(_std.equal(olistun,gunit))) {
 				sys_giterator=0;
@@ -149,8 +149,8 @@ module contraband_mission {
 				if (good_iterator>=_olist.size(goodolist)) {
 					good_iterator=0;
 				}
-				olistun=_olist.at(goodolist,good_iterator);
-				olistun=_unit.getUnitFromContainer(olistun);
+				olistcont=_olist.at(goodolist,good_iterator);
+				olistun=_unit.getUnitFromContainer(olistcont);
 				if (_std.isNull(olistun)) {
 					good_dest=good_dest+1;
 					all_left=all_left-1;
@@ -164,8 +164,8 @@ module contraband_mission {
 				if (bad_iterator>=_olist.size(badolist)) {
 					bad_iterator=0;
 				}
-				olistun=_olist.at(badolist,bad_iterator);
-				olistun=_unit.getUnitFromContainer(olistun);
+				olistcont=_olist.at(badolist,bad_iterator);
+				olistun=_unit.getUnitFromContainer(olistcont);
 				if (_std.isNull(olistun)) {
 					bad_left=bad_left-1;
 					all_left=all_left+1;
@@ -185,6 +185,7 @@ module contraband_mission {
 				int j;
 				int cargonum;
 				int cargonum2;
+				object notlist;
 				object newfighter;
 				object randcargo;
 				float price=_std.Rnd()*50000;
@@ -204,8 +205,8 @@ module contraband_mission {
 				while ((i<nr_ships)||(_olist.size(badolist)==0)||(_olist.size(goodolist)==0)) {
 					cargonum=random.randomint(0,8);
 					cargonum2=random.randomint(0,10-cargonum);
-					newfighter=faction_ships.getRandomFighter("merchant");
-					newfighter=launch.launch_wave_around_unit("Base", "merchant",newfighter,"default",1,_std.Rnd()*100000,jump);
+					notlist=faction_ships.getRandomFighter("merchant");
+					newfighter=launch.launch_wave_around_unit("Base", "merchant",notlist,"default",1,_std.Rnd()*100000,jump);
 					j=0;
 					while (j<cargonum) {
 						rndint=random.randomint(1,10);
@@ -214,6 +215,7 @@ module contraband_mission {
 						j=j+1;
 					}
 					if ((_std.Rnd())<badchance) {
+						cargonum2=cargonum2-1;
 						_olist.push_back(badolist,_unit.getContainer(newfighter));
 						bad_left=bad_left+1;
 						nr_waves=nr_waves+1;
