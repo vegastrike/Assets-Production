@@ -11,21 +11,14 @@
          	<pos x="8000.0" y="0.0" z="0.0"/>
          	<rot x="180.0" y="180.0" z="180.0"/>
       	    </flightgroup>
-            <flightgroup name="blue" faction="ares" type="dagger" ainame="default" waves="2" nr_ships="6">
-         	<pos offset="green" x="1000.0" y="0.0" z="0.0"/>
-         	<rot x="180.0" y="180.0" z="180.0"/>
-      	    </flightgroup>
 	</flightgroups>
 
 	<module name="director">
 
-		<import name="unit"/>
-
-		<script name="initgame">
-		</script>
+		<import name="string"/>
 
 		<script name="gameloop">
-			<exec module="unit" name="print_unitlist"/>
+			<exec module="string" name="loop"/>
 		</script>
 
 </mission>
