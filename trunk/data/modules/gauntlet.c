@@ -9,7 +9,9 @@ module gauntlet {
   int begin;
   int numfriend;
   int numenemy;
+  int round;
   void initgame(int ours, int theirs){
+    round=0;
     nvn.initgame(ours,theirs);
     begin=0;
     waittime=101;
@@ -28,9 +30,13 @@ module gauntlet {
 	if (_std.isNull(badunit)) {
 	  nvn.reset_loop (numfriend,numenemy);
 	  nvn.loop();
+	  round = round+1;
 	  _io.message(0,"game","all","use the '[' key to begin and");
 	  _io.message(1,"game","all","to switch control of your ships");
-	  _io.message(2,"game","all","New Round...");
+	  object str = _string.new();
+	  _io.sprintf (str,"Round %d...",round);
+	  _io.message(2,"game","all",str);
+	  _string.delete(str);
 	  _io.message(3,"game","all","FIGHT!");
 	  if (waittime==101) {
 	    numfriend=numfriend-1;//do not count 'you'
