@@ -2,7 +2,7 @@
 	<Faction name="neutral" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
 	</Faction>
 
-	<Faction name="confed" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+	<Faction name="confed" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png" contraband="contraband">
 		<stats name="retro" relation="-.4"/>
 		<stats name="ISO" relation="-1"/>
 		<stats name="militia" relation=".9"/>
@@ -22,7 +22,7 @@
 <!--		</CommAnimation>-->
 	</Faction>
 
-	<Faction name="aera" logoRGB="AeraPri.png" secLogoRGB="AeraSec.png">
+	<Faction name="aera" logoRGB="AeraPri.png" secLogoRGB="AeraSec.png" contraband="contraband">
 <!--		<Explosion name="explosion_wave.ani"/>
 		<Explosion name="static_round.ani"/>-->
 		<stats name="ISO" relation="-.4"/>
@@ -52,7 +52,7 @@
 		<stats name="privateer" relation="0"/>
 	</Faction>
 
-	<Faction name="retro" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+	<Faction name="retro" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png" contraband="contraband">
 		<stats name="ISO" relation="-1"/>
 		<stats name="confed" relation="-.8"/>
 		<stats name="militia" relation="-.3"/>
@@ -66,7 +66,7 @@
 
 	</Faction>
 
-	<Faction name="militia" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+	<Faction name="militia" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png" contraband="contraband">
 		<stats name="ISO" relation="-.4"/>
 		<stats name="confed" relation=".6"/>
 		<stats name="aera" relation="-.7"/>
@@ -163,7 +163,7 @@
 		<stats name="rlaan" relation="-.1"/>
 
 	</Faction>
-	<Faction name="ISO" logoRGB="ISOPri.png" secLogoRGB="ISOSec.png">
+	<Faction name="ISO" logoRGB="ISOPri.png" secLogoRGB="ISOSec.png" contraband="contraband">
 
 		<stats name="rlaan" relation="0"/>
 		<stats name="confed" relation="-.9"/>

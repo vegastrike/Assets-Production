@@ -136,7 +136,7 @@
 			<import price="1" quantity="10" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Heavy">
-			<import price="1" quantity="10" quantitystddev="5"/>
+			<import price="1" quantity="0" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Shield_Systems/Light">
 			<import price="1" quantity="10" quantitystddev="5"/>

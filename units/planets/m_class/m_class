@@ -153,6 +153,12 @@
 		<Category file="upgrades/Ammunition">
 			<import price="1" pricestddev=".1" quantity="52" quantitystddev="28"/>
 		</Category>
+		<Category file="upgrades/Engines/Engine_Enhancements_Light">
+			<import price="1" pricestddev=".1" quantity="3" quantitystddev="2"/>
+		</Category>
+		<Category file="upgrades/Engines/Engine_Enhancements_Medium">
+			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+		</Category>
 	</Hold>
 	<Upgrade file="standard_missions"/>
 	<Upgrade file="confed_missions"/>

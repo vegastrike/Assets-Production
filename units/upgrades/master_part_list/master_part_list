@@ -594,6 +594,8 @@
 		</Category>
 		<Category file="Contraband/Aera">
 		</Category>
+		<Category file="Contraband/Retro">
+		</Category>
 		<Category file="missions/Neutral">
 			<Cargo file="mission/bounty/bounty.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/patrol/patrol_5_insys.mission" mass=".0000001" quantity="1"/>
