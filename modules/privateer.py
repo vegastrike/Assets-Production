@@ -1,9 +1,13 @@
 from trading import trading
 from random_encounters import random_encounters
+print "done ran"
 from difficulty import difficulty
+print "difficulty begin"
 #from garbage_collect import garbage_collect
 import Director
+print "directing"
 import Briefing
+print "briefd"
 class privateer (Director.Mission):
   loops=()
   def __init__ (self,sigdis, detectiondis, gendis, minships, genships, fighterprob, enemyprob, capprob, credits_to_maximize_difficulty, capdist):#negative garbage collect dist disables that feature
