@@ -22,7 +22,7 @@
 
 	<Stats mass="750.000000" momentofinertia="500.000000" fuel="20000000"></Stats>
 	<Computer yaw="60.00000" pitch="60.00000" roll="100.00000" afterburner="120.00000" maxspeed="65.0">
-		<Radar itts="true" color="true" maxrange="90000"  error="0"/>
+		<Radar itts="true" color="true" range="90000"  error="0"/>
 	</Computer>
 	<Energy>
 		<Reactor recharge="500" limit="20000"/>

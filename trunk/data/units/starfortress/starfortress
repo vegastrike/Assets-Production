@@ -10,7 +10,7 @@
 	</Defense>
 	<Stats mass="70" momentofinertia="50" fuel="20000"></Stats>
 	<Computer>
-	 <Radar itts="true" color="true" maxrange="110000"  error="0"/>
+	 <Radar itts="true" color="true" range="110000"  error="0"/>
 	</Computer>
 <Meshfile file="starfortress.xmesh"/>
 
