@@ -521,7 +521,7 @@
 </Damage>
 <Distance speed="600" radialspeed=".8" radius="8" pulsespeed="15" range="1200" >
 </Distance>
-<Appearance file="weapons/beamtexture.png" soundwav="beam.wav" r=".84" g=".5" b=".9" a="1" >
+<Appearance file="weapons/beamtexture.png" soundwav="beam.WAV" r=".84" g=".5" b=".9" a="1" >
 </Appearance>
 </Beam>
 
@@ -648,13 +648,25 @@
 </Missile>
 
 <Missile name="CapshipMissile" mountsize="heavy-capship-missile">
-<Energy rate="0" stability="6" refire="5" locktime="60">
+<Energy rate="0" stability="6" refire="8" locktime="40">
 </Energy>
-<Damage rate="5000" phasedamage="500" longrange="1" radius="1000" radialspeed="200" >
+<Damage rate="16000000" phasedamage="100000" longrange="1" radius="6000" radialspeed="20" >
 </Damage>
-<Distance speed="200" pulsespeed="15" range="40000" detonationrange="400" volume="900" >
+<Distance speed="1000" pulsespeed="256" range="80000" detonationrange="400" volume="900" >
 </Distance>
 <Appearance file="capshipmissile" >
+</Appearance>
+</Missile>
+
+
+<Missile name="KineticMissile" mountsize="heavy-capship-missile">
+<Energy rate="0" stability="6" refire="2" locktime="2">
+</Energy>
+<Damage rate="1" phasedamage="1" longrange="1" radius="1" radialspeed="1" >
+</Damage>
+<Distance speed="2000" pulsespeed="256" range="80000" detonationrange="-40000000" volume="900" >
+</Distance>
+<Appearance file="kineticmissile" >
 </Appearance>
 </Missile>
 
