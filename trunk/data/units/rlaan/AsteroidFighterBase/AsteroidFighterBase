@@ -20,8 +20,9 @@
 
 	<Sound> </Sound>
 
-	<Defense>
+	<Defense HudImage="AsteroidFighterBase-hud.spr">
 
+	
 		<Armor front="20000" right="20000" left="20000" back="20000"/>
 
 		<Hull strength="24000"/>

@@ -13,7 +13,7 @@
 
 	<Sound> </Sound>
 
-	<Defense>
+	<Defense HudImage="AsteroidFighterBase-hud.spr">
 
 		<Armor front="40000" right="40000" left="40000" back="40000"/>
 

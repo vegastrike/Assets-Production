@@ -10,7 +10,7 @@
 <SubUnit file="turret_capship_gun" x="1" y="-1" z="-1" ri="1" rj="-1" rk="-1" qi=".5" qj="-.5" qk="1" restricted="-.5"/>
 
 	<SubUnit file="starfortressinner" ri="1" qj="1"/>
-	<Hold volume="100000000000">
+
 
 	<Thrust>
 
@@ -22,7 +22,7 @@
 
 	<Sound> </Sound>
 
-	<Defense>
+	<Defense HudImage="AsteroidFighterBase-hud.spr">
 
 		<Armor front="8000" right="8000" left="8000" back="8000"/>
 
@@ -39,7 +39,7 @@
 		<Reactor recharge="400" limit="2070"/>
 
 	</Energy>
-
+	<Hold volume="100000000000">
 		<Category file="Natural_Products/Food">
 			<import price=".5" pricestddev=".2" quantity="0" quantitystddev="2"/>
 		</Category>
