@@ -19,7 +19,7 @@
 	</Upgrade>
 	<Mount weapon = "KtekBeam" size = "Special Medium Heavy" x = "0.730882" y = "0.293518" z = "23.003031"  >
 	</Mount>
-	<Mount weapon = "Disruptor" size = "Light Medium Autotracking" x = "-0.010562" y = "0.432593" z = "25.065680"  >
+	<Mount weapon = "Disruptor" size = "Special Light Medium Autotracking" x = "-0.010562" y = "0.432593" z = "25.065680"  >
 	</Mount>
 	<Mount weapon = "KtekBeam" size = "Special Medium Heavy" x = "-0.731581" y = "0.229109" z = "22.665678"  >
 	</Mount>

@@ -25,9 +25,11 @@
 	</Mount>
 	<Mount weapon = "MassDriver" size = "Light Medium Heavy" x = "-3.000000" y = "0.000000" z = "0.000000"  >
 	</Mount>
-	<Mount weapon = "Dumbfire" size = "Light-Missile Special" x = "0.300000" y = "-0.100000" z = "0.000000" volume = "201"  >
+	<Mount weapon = "" size = "Special Autotracking" x = "0.300000" y = "-0.100000" z = "0.000000" volume = "201"  >
 	</Mount>
-	<Mount weapon = "Dumbfire" size = "Light-Missile Special" x = "-0.300000" y = "-0.100000" z = "0.000000" volume = "201"  >
+	<Mount weapon = "Dumbfire" size = "Light-Missile" x = "0.300000" y = "-0.100000" z = "0.000000" volume = "201"  >
+	</Mount>
+	<Mount weapon = "Dumbfire" size = "Light-Missile" x = "-0.300000" y = "-0.100000" z = "0.000000" volume = "201"  >
 	</Mount>
 	<Mount weapon = "Swarm" size = "Heavy-Missile Medium-Missile Special-Missile" x = "-0.300000" y = "-0.100000" z = "0.000000" volume = "1000"  >
 	</Mount>

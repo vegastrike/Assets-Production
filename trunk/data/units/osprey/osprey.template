@@ -21,7 +21,7 @@
 	</Mount>
 	<Mount weapon = "Particle" size = "Heavy" x = "-6.000000" y = "-.9000000" z = "-3.000000"  >
 	</Mount>
-	<Mount weapon = "Ion" size = "Medium AUTOTRACKING" x = "000000" y = "-.6000000" z = "12.000000"  >
+	<Mount weapon = "Ion" size = "Medium Special AUTOTRACKING" x = "000000" y = "-.6000000" z = "12.000000"  >
 	</Mount>
 	<Mount weapon = "Torpedo" size = "heavy-missile" x = "-5.000000" y = "-.9000000" z = "-3.000000" volume = "1201"  >
 	</Mount>

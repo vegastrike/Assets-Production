@@ -35,7 +35,7 @@
 	<description>
 	</description>
 
-	<Hold volume="30">
+	<Hold volume="70">
 	</Hold>
 
 	<Mount weapon="Ion" size="Light Medium" x="0.8" y="0.300300" z="15.600299" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>

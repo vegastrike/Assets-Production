@@ -47,7 +47,7 @@
 	</Mount>
 	<Mount weapon = "Ktek" size = "Light Medium Autotracking" x = "12.415822" y = "-1.534798" z = "-1.049985"  >
 	</Mount>
-	<Mount weapon = "" size = "Special" x = "0" y = "-.23" z = "4"  >
+	<Mount weapon = "" size = "Special Autotracking" x = "0" y = "-.23" z = "4"  >
 	</Mount>
 	<Hold volume = "45"  >
 	</Hold>

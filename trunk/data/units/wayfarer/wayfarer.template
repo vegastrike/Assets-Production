@@ -25,9 +25,9 @@
 	</Mount>
 	<Mount weapon = "ImageRecognition" size = "light-missile medium-missile" x = "29.815" y = "-6.919" z = "30.409" ammo = "6" volume = "1201"  >
 	</Mount>
-	<Mount weapon = "Tractor" size = "Special" x = "29.815" y = "-6.919" z = "30.409"  >
+	<Mount weapon = "Tractor" size = "Special Autotracking" x = "29.815" y = "-6.919" z = "30.409"  >
 	</Mount>
-	<Mount weapon = "Tractor" size = "Special" x = "-29.815" y = "-6.919" z = "30.409"  >
+	<Mount weapon = "Tractor" size = "Special Autotracking" x = "-29.815" y = "-6.919" z = "30.409"  >
 	</Mount>
 	<Thrust >
 		<Engine Afterburner = "153644" Forward = "32944" Retro = "32981" Left = "32981" Right = "33200" Top = "33200" Bottom = "33200"  >

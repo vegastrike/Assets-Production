@@ -11,9 +11,9 @@
 	</Mount>
 	<cockpit file = "light_cockpit.cpt" x = "0" y = ".5" z = "10"  >
 	</cockpit>
-	<Mount weapon = "Laser" size = "Light Autotracking" x = "3.76500" y = "0.15400" z = "19.31000"  >
+	<Mount weapon = "Laser" size = "Light Special Autotracking" x = "3.76500" y = "0.15400" z = "19.31000"  >
 	</Mount>
-	<Mount weapon = "Swarm" size = "Special special-missile" x = "-12" y = "0" z = "6.5" ammo = "80" volume = "801"  >
+	<Mount weapon = "Swarm" size = "special-missile" x = "-12" y = "0" z = "6.5" ammo = "80" volume = "801"  >
 	</Mount>
 	<Mount weapon = "Dumbfire" size = "light-missile" x = "-12" y = "0" z = "6.5" ammo = "6" volume = "361"  >
 	</Mount>

@@ -34,8 +34,8 @@
 <Mount weapon="Neutron" size="medium heavy" x="8.082913" y="-0.368988" z="0.747223" />
 <Mount weapon="Neutron" size="medium heavy" x="-8.157103" y="-0.379586" z="1.100964" />
 <Light file="supernova.bmp" x="-0.000000" y="0.000000" z="-9.200000" size="2.064038"/>
-<Mount weapon="LaserBeam" size="Light special" x="1.871961" y="0.374392" z="12.062358" />
-<Mount weapon="LaserBeam" size="Light special" x="-1.885182" y="0.377037" z="12.112597"/>
+<Mount weapon="LaserBeam" size="Light special autotracking" x="1.871961" y="0.374392" z="12.062358" />
+<Mount weapon="LaserBeam" size="Light special autotracking" x="-1.885182" y="0.377037" z="12.112597"/>
 <Mount weapon="Swarm" size="Special-Missile" x="1.871961" y="0.374392" z="-2.062358" ammo="40"/>
 <Mount weapon="Swarm" size="Special-Missile" x="-1.885182" y="0.377037" z="-2.06112597" ammo="40"/>
 

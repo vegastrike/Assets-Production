@@ -53,6 +53,9 @@
 	</Mount>
 	<Mount weapon = "" size = "special medium heavy" x = "0.000000" y = "-0.270000" z = "2.400000"  >
 	</Mount>
+	<Mount weapon = "" size = "special" x = "0.000000" y = "-0.270000" z = "2.400000"  >
+	</Mount>
+
 	<Upgrade file = "mult_general_downgrade"  >
 	</Upgrade>
 </Unit>

@@ -21,6 +21,8 @@
 	</Mount>
 	<Mount weapon = "Photon" size = "light medium heavy Autotracking" x = "-0.800000" y = "-0.600000" z = "8.000000"  >
 	</Mount>
+	<Mount weapon = "Tractor" size = "special Autotracking" x = "-0.000000" y = "-0.400000" z = "8.200000"  >
+	</Mount>
 	<Mount weapon = "Swarm" size = "Special Special-Missile" x = "2.000000" y = "0.800000" z = "-4.000000" ammo = "75" volume = "1000"  >
 	</Mount>
 	<Mount weapon = "Swarm" size = "Special Special-Missile" x = "-2.000000" y = "0.800000" z = "-4.000000" ammo = "75" volume = "1000"  >
