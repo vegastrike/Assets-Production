@@ -1,4 +1,5 @@
 <Unit>
+	<cockpit file="heavy-cockpit.cpt"/>
 	<Defense HudImage="aevant-hud.spr">
 		<Shields front="000000" right="0.000000" left="0.000000" back="0.000000" />
 	</Defense>
