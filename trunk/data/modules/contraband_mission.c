@@ -226,7 +226,7 @@ module contraband_mission {
 					cargonum2=random.randomint(0,10-cargonum);
 					notlist=faction_ships.getRandomFighter("merchant");
 					
-					newfighter=launch.launch_wave_around_unit ("Base","merchant",notlist,"default",1,min_distance,max_distance,jump);
+					newfighter=launch.launch_wave_around_unit ("Smuggler","pirates",notlist,"default",1,min_distance,max_distance,jump);
 					
 					_unit.setFgDirective(newfighter,"B");
 					_unit.setTarget(newfighter,jump);
@@ -247,7 +247,7 @@ module contraband_mission {
                                                 if (_olist.size(randcargo)>0) {
 						  object cname=_olist.at (randcargo,0);
   						  if (!_string.equal (cargoname,cname)) {
-						    _io.printf ("adding good cargo %s",cname);
+						    //						    _io.printf ("adding good cargo %s",cname);
 						    rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
 						  }
                                                 }
@@ -263,7 +263,7 @@ module contraband_mission {
                                                 if (_olist.size (randcargo)>0) {
 						  object cname=_olist.at (randcargo,0);
 						  if (!_string.equal (cargoname,cname)) {
-						    _io.printf ("adding good cargo %s",cname);
+						    //						    _io.printf ("adding good cargo %s",cname);
 						    rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
 						  }
 						  j=j+1;
