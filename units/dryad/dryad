@@ -54,8 +54,6 @@
 	<Light file="supernova.bmp" x="-3.8" y="1.4" z="-3.0" size="1.9"/>
 	<Light file="supernova.bmp" x="0" y="1.8" z="-3.6" size="1.1"/>
 
-	<Hold volume="15">
-	</Hold>
 
 	<description>
 The Dryad is heavy supermacy fighter. It's main purpose is to tie in dogfight enemy escorts, forcing as many of them as possible to leave bombers and capital ships without cover. It has powerful shield and excellent maneurability, but only average speed.
