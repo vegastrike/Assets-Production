@@ -46,9 +46,9 @@ def makeDynamicNews	(stardate,type_event,stage_event,aggressor,defender,success
 				,"system"	: system
 				,"keyword"	: keyword
 				,"stardate" : str(stardate)
-				,"aggressorFG"	: aggressor_flightgroup
+				,"aggressorFG"	: formatName(aggressor_flightgroup)
 				,"aggressorFGtype": formatShipName(aggressor_type)
-				,"defenderFG"	: defender_flightgroup
+				,"defenderFG"	: formatName(defender_flightgroup)
 				,"defenderFGtype": formatShipName(defender_type)
 				}
 
@@ -98,9 +98,9 @@ def formatNameTags(word,names):
 	var_string = allUsefullVariables[var]
 	if var == "system":
 		if tag == "system":
-			return formatProperTitle(allUsefullVariables["system"][allUsefullVariables["system"].index("/")+1:])
+			return formatProperTitle(formatName(allUsefullVariables["system"][allUsefullVariables["system"].index("/")+1:]))
 		if tag == "sector":
-			return formatProperTitle(allUsefullVariables["system"][:allUsefullVariables["system"].index("_")])
+			return formatProperTitle(formatName(allUsefullVariables["system"][:allUsefullVariables["system"].index("_")]))
 	elif var == "stardate":
 		if tag == "value":
 			return allUsefullVariables[var]
@@ -121,6 +121,10 @@ def formatProperTitle(str):
 			if words[i][0] in string.lowercase:
 				words[i] = words[i][0].capitalize() + words[i][1:]
 	return string.join(words)
+
+def formatName(strin):
+	"""removes any underscores or dots and replaces them with spaces"""
+	return string.join(string.join(strin.split('.')).split('_'))
 
 def formatShipName(strin):
 	"""formats a standard ship name (ie firefly.blank) to
@@ -216,10 +220,10 @@ def getPOV(facmy,defender,aggressor,success):
 	two functions"""
 	relatdef = VS.GetRelation(facmy,defender)
 	relatagg = VS.GetRelation(facmy,aggressor)
-	print "relatdef =",
-	print relatdef
-	print "relatagg =",
-	print relatagg
+#	print "relatdef =",
+#	print relatdef
+#	print "relatagg =",
+#	print relatagg
 
 	if (relatdef <= -povCutOff() and relatagg <= -povCutOff()) or (relatdef >= povCutOff() and relatagg >= povCutOff()):
 		return "neutral"
@@ -351,18 +355,18 @@ def processNewsTuple(newsstring,randint):
 
 def manageDynamicNews(player,newsstring):
 	""" manages the dynamic news item passed to it"""
-	print "against its ferrocious struggling I am"
-	print "pushing " + newsstring + " through the generator"
+#	print "against its ferrocious struggling I am"
+#	print "pushing " + newsstring + " through the generator"
 	varlist = newsstring.split(',')
 	varlist.reverse()
 	randint = int(varlist.pop())
 	varlist.reverse()
 	if checkVarListRelevant(varlist,randint):
-		print "news is relevant"
+#		print "news is relevant"
 		varstring = string.join(varlist,",")
 		import Director
 		Director.pushSaveString(player,"news",processNewsTuple(varstring,randint))
 	else:
-		print "news " + newsstring + " ignored...not relevant"
-
+#		print "news " + newsstring + " ignored...not relevant"
+		print ".",
 
