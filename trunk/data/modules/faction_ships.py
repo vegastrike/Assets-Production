@@ -14,11 +14,11 @@ factions = ("confed","aera","rlaan","merchant","retro","pirates","hunter","milit
 factiondict={}
 for i in range(len(factions)):
     factiondict[factions[i]]=i
-siegingfactions={"confed":10,
-				 "aera":10,
-				 "rlaan":10,
-				 "ISO":40,
-				 "retro":100
+siegingfactions={"confed":50,
+				 "aera":50,
+				 "rlaan":50,
+				 "ISO":200,
+				 "retro":500
 				 }
 fightersPerFG={"confed":10
 				,"aera":9
@@ -32,11 +32,11 @@ fighterProductionRate={"confed":.02
 				,"ISO":.14
 				,"default":.1
 				}
-capitalProductionRate={"confed":.002
-				,"aera":.02
-				,"rlaan":.02
-				,"ISO":.03
-				,"default":.01
+capitalProductionRate={"confed":.0005
+				,"aera":.005
+				,"rlaan":.005
+				,"ISO":.0075
+				,"default":.0025
 				}
 homeworlds={"confed":"sol_sector/sol"
 		,"aera":"enigma_sector/shelton"

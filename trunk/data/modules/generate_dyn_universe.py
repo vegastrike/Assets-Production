@@ -11,11 +11,16 @@ fglists=[] #list of lists for each flightgroups to lists of ships for each facti
 origfgnames=[]
 origfglists=[]
 import faction_ships
+def XProductionRate(fac,type):
+	if fac in type:
+		return type[fac]
+	return type["default"]
 
 def GenerateFgShips (maxshipinfg,factionnr):
 	lst=[]
 	capship=()
-	if vsrandom.random()<.1:
+	fac = faction_ships.intToFaction(factionnr)
+	if vsrandom.random()<XProductionRate(fac,faction_ships.capitalProductionRate)/XProductionRate(fac,faction_ships.fighterProductionRate):
 		capship=((faction_ships.getRandomCapitolInt(factionnr),1),)
 	return ((faction_ships.getRandomFighterInt(factionnr),maxshipinfg),)+capship
 
