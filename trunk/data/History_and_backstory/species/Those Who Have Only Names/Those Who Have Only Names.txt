@@ -1,7 +1,12 @@
-Species: 
+Species: Unknown
 
-Physical Characteristics:
+Physical Characteristics: Unknown
 
-Habitat:
+Habitat: Unknown
 
 Culture:
+
+What little is described of this group is gleaned from writings left behind by 
+the Ancients.  While most descriptions are quite vague, it is clear that TWHON, 
+if the Ancients are a reliable source, were at least as advanced as the 
+Ancients, and much older.
