@@ -1,9 +1,13 @@
 import Base
 import VS
+import dynamic_mission
 import fixers
 #import bar_lib
 #import weapons_lib
 
+plist=VS.musicAddList ('commerce_center.m3u')
+VS.musicPlayList(plist)
+dynamic_mission.CreateMissions()
 room0 = Base.Room ('Landing Platform')
 room1 = Base.Room ('Mission Room')
 room2 = Base.Room ('Main Concourse')
@@ -29,6 +33,3 @@ Base.Link (room2, 'mission', -0.8925, -0.34, 1.89, 0.446667, 'Mission Room', roo
 Base.Link (room3, 'Conc', -0.7025, -0.756667, 0.3375, 1.75667, 'Main Concourse', room2)
 Base.Comp (room3, 'upg', -0.3625, -0.726667, 0.2925, 1.72, 'Upgrade Ship', 'UPGRADEMODE DOWNGRADEMODE')
 Base.Comp (room3, 'shd', 0.06, -0.68, 0.345, 0.74, 'Ship Dealer', 'SHIPMODE')
-
-plist=VS.musicAddList('commerce_center.m3u')
-VS.musicPlayList(plist)    

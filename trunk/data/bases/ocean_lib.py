@@ -1,12 +1,14 @@
 import vsrandom
 import bar_lib
 import weapons_lib
+import dynamic_mission
 import Base
 import VS
 def MakeLandingAndConcourse (time_of_day='_day'):
 
     plist=VS.musicAddList('ocean.m3u')
     VS.musicPlayList(plist)
+	dynamic_mission.CreateMissions()
     new_time_of_day=time_of_day
     if (vsrandom.randrange(0,3)==0):
         new_time_of_day='_storm'
