@@ -50,13 +50,18 @@ def processSystem(sys):
 	else:
 		k=k[0]
 	return k.capitalize()
-
+def writemissionname(name,path):
+	pass
+def writedescription(name):
+	pass
+def writemissionsavegame (name):
+	pass
 def generatePatrolMission (path, numplanets):
 	dist=1000
 	creds = numplanets*500
 	writemissionsavegame ("import patrol\ntemp=patrol.patrol(0, %d, %d, %d, %s)\ntemp=0\n"%(numplanets, dist, creds, str(path)))
 	writedescription("Insystem authorities would like a detailed scan of the %s system. We require %d nav locations be visited on the scanning route.  The pay for this mission is %d."%(processSystem(path[-1]),numplanets,creds))
-	writemissionname("Patrol_%d_Points_in_%s"%(numplanets,processSystem(path[-1])))	
+	writemissionname("Patrol_%d_Points_in_%s"%(numplanets,processSystem(path[-1])),path[-1])	
 
 
 def generateEscortMission (path,fg,fac):
@@ -66,7 +71,7 @@ def generateEscortMission (path,fg,fac):
 	creds=500*diff+1.2*syscreds*len(path)
 	writemissionsavegame ("import escort_mission\ntemp=escort_mission.escort_mission('%s', %d, %d, %g, 0, %s, '','%s','%s')\ntemp=0\n"%(fac, diff, creds, str(path),fg,typ))
 	writedescription("The %s %s in the %s flightgroup requres an escort to %s. The reward for a successful escort is is %d."%(fac,typ,fg, processSystem(path[-1]),creds))
-	writemissionname("Escort_%s_to_%s"%(fac,processSystem(path[-1])))	
+	writemissionname("Escort_%s_to_%s"%(fac,processSystem(path[-1])),path[-1])	
 
 def generateCargoMission (path, category, fac):
 	numcargos=vsrandom.randrange(1,15)
@@ -77,17 +82,23 @@ def generateCargoMission (path, category, fac):
 	creds=250*numcargos+500*diff+syscreds*len(path)+1000*(category.lower()=="contraband")
 	writemissionsavegame ("import cargo_mission\ntemp=cargo_mission.cargo_mission('%s', 0, %d, %d, %g, %d, 0, '%s', %s, '')\ntemp=0\n"%(fac, numcargos, diff, creds, launchcap, category, str(path)))
 	writedescription("We need to deliver some %s cargo to the %s system. The mission is worth %d to us.  You will deliver it to a base owned by the %s"%(category, processSystem(path[-1]),creds,fac))
-	writemissionname("Deliver_%s_to_%s"%(category,processSystem(path[-1])))
+	writemissionname("Deliver_%s_to_%s"%(category,processSystem(path[-1])),path[-1])
 
 def generateBountyMission (path,fg,fac):
-	typ = fg_util.RandomShipIn(fg,fac)	
+	typ = fg_util.RandomShipIn(fg,fac)
+	cap = faction_ships.isCapital(typ)
 	diff=vsrandom.randrange(0,6)
 	runaway=(vsrandom.random()>=.75)
 	creds=1000+2000*runaway+500*diff+syscreds*len(path)
+	if (cap):
+		creds*=40
 	finalprice=creds+syscreds*len(path)
 	writemissionsavegame("import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %d, '%s', %s, '%s','%s')\ntemp=0\n"%(finalprice, runaway, diff, fac, str(path), fg,typ))
 	writedescription("A %s starship in the %s flightgroup has been harassing operations in the %s system. Reward for the termination of said ship is %d credits."%(typ,fg, processSystem(path[-1]), finalprice))
-	writemissionname ("Bounty_on_%s_starship"%fac)
+	if (cap):
+		writemissionname ("Bounty_on_%s_Capital_Vessel"%fac,path[-1])
+	else:
+		writemissionname ("Bounty_on_%s_starship"%fac,path[-1])
 
 def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	defendtyp = fg_util.RandomShipIn(defendfg,defendfac)
@@ -106,7 +117,7 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	if isbase:
 		iscapitol="capitol "
 	writedescription("A %s assault wing named %s has jumped in and is moving for an attack on one of our %sstarships, a %s, in the %s system.\nYour task is to eradicate them before they eliminate our starship.\nIntelligence shows that they have starships of type %s. Your reward is %d credits per fighter."%(attackfac, attackfg, iscapitol, defendtyp, processSystem(path[-1]), attacktyp,creds))
-	writemissionname("Defend_%s_from_%s"%(defendfac, attackfac))
+	writemissionname("Defend_%s_from_%s"%(defendfac, attackfac),path[-1])
 
 def contractMissionsFor(fac,minsysaway,maxsysaway):
 	fac=faction_ships.intToFaction(fac)
