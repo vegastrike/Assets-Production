@@ -380,6 +380,11 @@ void make_ships_list(bool use_blank){
     _olist.push_back(confed_ships,"nova");
     _olist.push_back(confed_ships,"puma");
     _olist.push_back(confed_ships,"mongoose");
+    _olist.push_back(confed_ships,"destiny");
+    _olist.push_back(confed_ships,"tian");
+    _olist.push_back(confed_ships,"nova");
+    _olist.push_back(confed_ships,"puma");
+    _olist.push_back(confed_ships,"mongoose");
     _olist.push_back(confed_ships,"avenger");
 
     object aera_ships=_olist.new();
@@ -394,7 +399,6 @@ void make_ships_list(bool use_blank){
     _olist.push_back(aera_ships,"lekra");
     _olist.push_back(aera_ships,"osprey");
     _olist.push_back(aera_ships,"kira");
-    _olist.push_back(aera_ships,"metron");
     _olist.push_back(aera_ships,"butterfly");
 
     object rlaan_ships=_olist.new();
@@ -411,12 +415,12 @@ void make_ships_list(bool use_blank){
     object merchant_ships=_olist.new();
     _olist.push_back(fighters,merchant_ships);
     _olist.push_back (merchant_ships,"wayfarer");
-    _olist.push_back(rlaan_capitol,"longhaul");
+    _olist.push_back(merchant_ships,"longhaul");
 
     object merchant_capitol=_olist.new();
     _olist.push_back(capitols,merchant_capitol);//double referenced
-    _olist.push_back (merchant_capitol,"longhaul");
-    _olist.push_back (merchant_capitol,"khanjarli");
+    _olist.push_back (merchant_capitol,"truck");
+    _olist.push_back (merchant_capitol,"cargoship");
 
 
     object Xships=_olist.new();
@@ -426,11 +430,7 @@ void make_ships_list(bool use_blank){
     //    retro
     _olist.push_back (Xships,"firefly");
     _olist.push_back (Xships,"firefly");
-    _olist.push_back (Xships,"wayfarer");
-    _olist.push_back (Xships,"wayfarer");
     _olist.push_back (Xships,"avenger");
-    _olist.push_back (Xships,"tian");
-    _olist.push_back (Xships,"tian");
 
     _olist.push_back (Xcapitol,"cruiser_mk2");
     _olist.push_back (Xcapitol,"cruiser");
@@ -448,14 +448,11 @@ void make_ships_list(bool use_blank){
     _olist.push_back (Xships,"firefly");
     _olist.push_back (Xships,"firefly");
     _olist.push_back (Xships,"wayfarer");
-    _olist.push_back (Xships,"wayfarer");
-    _olist.push_back (Xships,"tian");
+    _olist.push_back (Xships,"katar");
     _olist.push_back (Xcapitol,"cruiser_mk2");
     _olist.push_back (Xcapitol,"cruiser");
     _olist.push_back (Xcapitol,"cruiser");
-    _olist.push_back (Xcapitol,"cargo");
     _olist.push_back (Xcapitol,"truck");
-    _olist.push_back (Xcapitol,"cargo");
     _olist.push_back (Xcapitol,"truck");
 
    
@@ -466,9 +463,9 @@ void make_ships_list(bool use_blank){
     object Xcapitol=_olist.new();
     _olist.push_back(capitols,Xcapitol);
     //    hunters
-    _olist.push_back (Xships,"puma");
-    _olist.push_back (Xships,"eagle");
-    _olist.push_back (Xships,"avenger");
+    _olist.push_back (Xships,"epeellcat");
+    _olist.push_back (Xships,"khanjarli");
+    _olist.push_back (Xships,"katar");
     _olist.push_back (Xcapitol,"cruiser_mk2");
     _olist.push_back (Xcapitol,"cruiser");
     _olist.push_back (Xcapitol,"cruiser");
@@ -482,7 +479,8 @@ void make_ships_list(bool use_blank){
     //    militia
     _olist.push_back (Xships,"mongoose");
     _olist.push_back (Xships,"firefly");
-    _olist.push_back (Xships,"tian");
+    _olist.push_back (Xships,"firefly");
+    _olist.push_back (Xships,"katar");
     _olist.push_back (Xcapitol,"cruiser_mk2");
     _olist.push_back (Xcapitol,"cruiser");
     _olist.push_back (Xcapitol,"escortcarrier");
@@ -496,7 +494,7 @@ void make_ships_list(bool use_blank){
     //    iso
     _olist.push_back (Xships,"eagle");
     _olist.push_back (Xships,"nova");
-    _olist.push_back (Xships,"tian");
+    _olist.push_back (Xships,"metron");
     _olist.push_back (Xcapitol,"cargo");
     _olist.push_back (Xcapitol,"cruiser");
     _olist.push_back (Xcapitol,"truck");

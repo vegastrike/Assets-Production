@@ -18,14 +18,14 @@ module ship_upgrades {
     }
     return ch;
   };
-  object GetDiffCargo (float diff, object base_category, object all_category) {
+  object GetDiffCargo (float diff, object base_category, object all_category, bool use_all) {
     object cat=_string.new();
     int ch=0;
-    if (diff<=0.1) {
+    if (diff<=0.2) {
       ch=1;
-    } else if (diff<=0.3) {
+    } else if (diff<=0.4) {
       ch=2-random.randomint(0,1);
-    } else if (diff<=0.5) {
+    } else if ((diff<=0.7)||use_all) {
       ch=3-random.randomint(0,2);
     }//ch is 0 if it is any upgrades/Weapon  otherwise it coudl be light, medium or heavy or some random set between Light and X (l,med,or heavy)
     if (ch==1) {
@@ -56,9 +56,9 @@ module ship_upgrades {
     float rndnum=_std.Rnd();
     object cat;
     if (rndnum<0.5) {
-      cat=GetDiffCargo(diff,"upgrades/Weapons/Beam_Arrays_","upgrades/Weapons");
+      cat=GetDiffCargo(diff,"upgrades/Weapons/Beam_Arrays_","upgrades/Weapons",true);
     } else {
-      cat=GetDiffCargo(diff,"upgrades/Weapons/Mounted_Guns_","upgrades/Weapons");
+      cat=GetDiffCargo(diff,"upgrades/Weapons/Mounted_Guns_","upgrades/Weapons",true);
     }
     object item=getItem(cat,"upgrades/Weapons");
     _string.delete(cat);
@@ -83,7 +83,7 @@ module ship_upgrades {
 
   object GetRandomAfterburner (float diff) {//get random afterburner from master part list
     object cat;
-    cat=GetDiffCargo(diff,"upgrades/Engines/Engine_Enhancements_","upgrades/Engines");
+    cat=GetDiffCargo(diff,"upgrades/Engines/Engine_Enhancements_","upgrades/Engines",false);
     object item=getItem(cat,"upgrades/Engines");
     _string.delete(cat);
     return item;
@@ -178,6 +178,11 @@ module ship_upgrades {
     UpgradeRadar (un);
     if ((_std.Rnd()<0.9) &&(_std.Rnd()<(diff*5.0))) {
       UpgradeAfterburner(un,diff);
+      if ((_std.Rnd()<0.9) &&(_std.Rnd()<(diff*5.0))) {     
+	percent=_unit.upgrade(un,"jump_drive",i,i,false,true);
+      }
+    }else {
+      percent=_unit.upgrade(un,"jump_drive",i,i,false,true);
     }
     //and after some careful review of the code in question, it appears upgrades below are already offered by default on blank ships...only need to give 'em a pair of guns
 
