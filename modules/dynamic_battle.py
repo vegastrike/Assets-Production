@@ -83,6 +83,9 @@ def Siege(fac):
 				fg =fg_util.RandomFlightgroup(fac)
 				sys = fg_util.FGSystem(fg,fac)
 				enfac=VS.GetGalaxyFaction(sys)
+				if fac == "unknown" or enfac == "unknown":
+					print "ERROR: siege had an unknown faction"
+					return
 				fg_util.CheckAllShips(fac)
 				fg_util.CheckAllShips(enfac)
 				if (VS.GetRelation(fac,enfac)<0):#FIXME maybe even less than that
