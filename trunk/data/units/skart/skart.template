@@ -8,6 +8,8 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_2"/>
 	<Upgrade file="polymer_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
 
 <Mount weapon="" size="Light Autotracking" x="-1.922219" y="12.883912" z="5.532851" />
 <Mount weapon="" size="Light Autotracking" x="1.297383" y="14.866834" z="4.464215" />

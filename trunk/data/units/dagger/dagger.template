@@ -7,6 +7,9 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_3"/>
 	<Upgrade file="micro_shielded_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
+
 	<Thrust>
 		<Engine Afterburner="1166.666641" Forward="356.000000" Retro="324.000000" Left="328.000000" Right="328.000000" Top="328.000000" Bottom="328.000000"/>
 		<Maneuver yaw="2932.400101" pitch="3287.800201" roll="2832.400101"/>

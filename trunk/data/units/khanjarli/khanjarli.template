@@ -6,6 +6,9 @@
 	<Upgrade file="shield_4_Level5"/>
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_5"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
+
 	<Upgrade file="polymer_hull"/>
         <!-- Weapons -->
 	<Mount weapon="plasma" size="light medium heavy autotracking" x="-4" y="1" z="6" />
