@@ -37,17 +37,17 @@ module nvn {
     while (tmp==0) {
       side=_std.Rnd();
       _io.printf("sid%f",side);
-      if ((side>0.66)&&!(_string.equal(stringi,"aera"))) {
-        ship_list=faction_ships.aera();
-        faction_name="aera";
+      if ((side>0.86)&&!(_string.equal(stringi,"rlaan"))) {
+        ship_list=faction_ships.rlaan();
+        faction_name="rlaan";
         tmp=tmp+1;
-      }else if (((side>0.33)&&(side<0.67))&&!(_string.equal(stringi,"confed"))) {
+      }else if (((side>0.43)&&(side<0.87))&&!(_string.equal(stringi,"confed"))) {
         ship_list=faction_ships.confed();
          faction_name="confed";
          tmp=tmp+1;
-      }else if ((side<0.34)&&!(_string.equal(stringi,"rlaan"))){
-        ship_list=faction_ships.rlaan();
-        faction_name="rlaan";
+      }else if ((side<0.44)&&!(_string.equal(stringi,"aera"))){
+        ship_list=faction_ships.aera();
+        faction_name="aera";
         tmp=tmp+1;
       }
     }
