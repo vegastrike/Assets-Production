@@ -30,6 +30,7 @@
 			<const type="float" value="20000"/> <!-- how far they have to go to ahve been conisdered run away -->
 			<const type="float" value="3500"/> <!-- how much you are  paid -->
 			<const type="bool" value="true"/> <!--do you need to defend a base here-->
+			<const type="bool" value="false"/> <!--do you need to defend a base here-->
 <!--sample str arg			<const type="object" object="string" value="YOU SUCKORZ"/> -->
 			</exec>
 		</script>
