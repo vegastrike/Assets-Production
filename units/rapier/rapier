@@ -18,7 +18,7 @@
 	<Sound>	</Sound>
 	<Defense HudImage="rapier-top.spr">
 		<Armor front="50" right="30" left="30" back="40"/>
-		<Shields front="80" back="70" recharge="5.500000"/>
+		<Shields front="80" back="70" recharge="33.000000"/>
 		<Hull strength="40"/>
 	</Defense>
 	<Stats mass="6" momentofinertia="6" fuel="20000"></Stats>
@@ -26,6 +26,6 @@
 		<Radar itts="true" color="true" error="0"/>
 	</Computer>
 	<Energy>
-		<Reactor recharge="46" limit="300"/>
+		<Reactor recharge="40" limit="300"/>
 	</Energy>
 </Unit>

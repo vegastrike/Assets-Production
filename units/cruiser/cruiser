@@ -1,0 +1,31 @@
+<Unit>
+	<Meshfile file="cruiser.xmesh" />
+	<Thrust>
+		<Engine Afterburner="320.000000" Forward="149.333328" Retro="130.666662" Left="74.666664" Right="74.666664" Top="74.666664" Bottom="74.666664"/>
+		<Maneuver yaw="366.200050" pitch="421.600025" roll="366.200050"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Armor front="800" right="600" left="600" back="600"/>
+		<Shields front="250.000000" back="250.000000" recharge="60.000000"/>
+		<Hull strength="800.000000"/>
+	</Defense>
+	<Stats mass="60.000000" momentofinertia="30.000000" fuel="20000"></Stats>
+	<Computer yaw="21.400002" pitch="25.200001" roll="31.400002" afterburner="32.000000" maxspeed="18.666666"/>
+	<Energy>
+		<Reactor recharge="100" limit="1000"/>
+	</Energy>
+       
+
+<!-- new elements added -->
+<Subunit file="turret" x="-37.414394" y="13.548389" z="204.285370" ri="0.762493" rj="0.457496" rk="0.457496" qi="-0.432829" qj="0.886268" qk="-0.164887"/>
+<Subunit file="turret" x="33.709522" y="13.614289" z="194.914291" ri="-0.218112" rj="0.280430" rk="0.934765" qi="0.432829" qj="0.886268" qk="-0.164887"/>
+<Mount weapon="Flak" size="Light" x="-23.333334" y="-9.333333" z="289.333344"/>
+<Mount weapon="Flak" size="Light" x="23.333334" y="-9.333333" z="289.333344"/>
+<Subunit file="turret" x="-0.000001" y="21.000000" z="78.750000" ri="0.476731" rj="0.190693" rk="-0.858116" qi="0.000000" qj="0.976187" qk="0.216930"/>
+<Subunit file="turret" x="-0.000001" y="31.500000" z="-63.000000" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret" x="-0.000001" y="-24.500000" z="-63.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+<Light file="supernova.bmp" x="27.433210" y="2.060570" z="-245.000000" size="56.000000"/>
+<Light file="supernova.bmp" x="-25.389259" y="0.350620" z="-245.000015" size="51.100002"/>
+</Unit>

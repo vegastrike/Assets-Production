@@ -1,7 +1,13 @@
 <SCRIPT>
-  <MatchLin afterburn="1" terminate="0" local="1">
-    <Vector x="0" y="0" z="10000"/>
-  </MatchLin>
   <FaceTarget terminate="0">
   </FaceTarget>
+<EXECUTEFOR time="10">
+  <MatchLin afterburn="0" terminate="0" local="1">
+    <Vector x="0" y="0" z="10000"/>
+  </MatchLin>
+</EXECUTEFOR>
+  <MatchLin afterburn="0" terminate="0" local="1">
+    <Vector x="0" y="0" z="0"/>
+  </MatchLin>
+ 
 </SCRIPT>

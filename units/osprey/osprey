@@ -1,0 +1,29 @@
+<Unit>
+	<Meshfile file="osprey.xmesh" />
+	<Mount weapon="Particle" size="Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
+	<Mount weapon="Particle" size="Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
+	<Mount weapon="Ion" size="Medium" x="000000" y="-.6000000" z="12.000000"/>
+	
+	<Thrust>
+		<Engine Afterburner="1333.333282" Forward="341.333344" Retro="298.666676" Left="170.666672" Right="170.666672" Top="170.666672" Bottom="170.666672"/>
+		<Maneuver yaw="4554.000000" pitch="4554.000000" roll="4554.000000"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Armor front="100" right="100" left="100" back="100"/>
+		<Shields front="80.000000" right="70.000000" left="70.000000" back="60.000000" recharge="20.000000"/>
+		<Hull strength="250.000000"/>
+	</Defense>
+	<Stats mass="3.000000" momentofinertia="3.000000" fuel="20000"></Stats>
+	<Computer yaw="138.000000" pitch="138.000000" roll="138.000000" afterburner="133.333328" maxspeed="42.666668"/>
+	<Energy>
+		<Reactor recharge="50" limit="100"/>
+	</Energy>
+       
+	<Light file="supernova.bmp" x="1.5" y="0.12" z="-5.8" size="0.880000"/>
+	<Light file="supernova.bmp" x="-1.5" y=".12" z="-5.8" size="0.880000"/>
+
+<!-- new elements added -->
+<Subunit file="turretsmall" x="0.089912" y="0.120528" z="-6.000000" ri="0.994033" rj="-0.109082" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
+</Unit>

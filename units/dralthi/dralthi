@@ -15,12 +15,12 @@
 	<Sound> </Sound>
 	<Defense>
 		<Armor front="45" right="30" left="30" back="35"/>
-		<Shields front="50" back="50" recharge="3.333333"/>
+		<Shields front="50" back="50" recharge="20"/>
 		<Hull strength="170"/>
 	</Defense>
 	<Stats mass="7" momentofinertia="7" fuel="20000"></Stats>
 	<Computer yaw="138.000000" pitch="193.200012" roll="138.000000" afterburner="122.400002" maxspeed="40.000000"/>
 	<Energy>
-		<Reactor recharge="10" limit="100"/>
+		<Reactor recharge="22" limit="200"/>
 	</Energy>
 </Unit>

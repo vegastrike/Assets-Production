@@ -1,0 +1,28 @@
+<Unit>
+	<Meshfile file="imrec.xmesh"/>
+	<BspMesh/>
+	<Light file="supernova.bmp" x="0" y="0" z="-2" size= ".6"/>
+
+<Thrust> 
+	<Engine Afterburner="4000"
+		  Forward="4000"
+		  Retro="4000"
+		  Left="4000"
+		  Right="4000"
+		  Top="4000"
+		  Bottom="4000"/>
+			<Maneuver yaw="400.200050" pitch="400.600151" roll="400.200050"/>
+
+</Thrust>
+<Sound></Sound>
+<Defense>
+	<Hull strength="5"/>
+</Defense>
+<Stats mass="10" momentofinertia="6" fuel="200000"></Stats>
+
+<Computer yaw="410" pitch="424" roll="410" afterburner="2000" maxspeed="1800"/>
+<Energy>
+	<Reactor recharge="10"
+		   limit="100"/>
+</Energy>
+</Unit>
