@@ -1484,7 +1484,7 @@
 				<var name="data" value="2922"/>
 			</sector>			
 			<sector name="pentonville">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="pirates"/> 
 				<var name="jumps" value="gemini_sector/119ce"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="1"/>
@@ -1666,7 +1666,7 @@
 				<var name="sun_radius" value="18000"/>
 			      <var name="faction" value="confed"/> 
 				<var name="compactness" value="2.3"/>
-				<var name="num_stars" value="0"/>
+				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="0"/>
 				<var name="num_planets" value="0"/>
 				<var name="num_moons" value="12"/>
@@ -1679,7 +1679,7 @@
 			</sector>
 			<sector name="sherwood">
 				<var name="sun_radius" value="42000"/>
-			      <var name="faction" value="confed"/> 
+			      <var name="faction" value="pirates"/> 
 				<var name="compactness" value="3.8"/>
 				<var name="num_stars" value="2"/>
 				<var name="num_gas_giants" value="4"/>
@@ -1722,10 +1722,10 @@
 				<var name="data" value="2452"/>
 			</sector>
 			<sector name="telar">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="pirates"/> 
 				<var name="jumps" value="gemini_sector/17-ar gemini_sector/valhalla gemini_sector/j900"/>
 				<var name="nebulae"   value="true"/>
-				<var name="num_starbases" value="0"/>
+				<var name="num_starbases" value="1"/>
 				<var name="data" value="1348"/>
 			</sector>
 			<sector name="valhalla">
@@ -1792,7 +1792,7 @@
 				<var name="data" value="1345"/>
 			</sector>
 			<sector name="capella">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="pirates"/> 
 				<var name="jumps" value="gemini_sector/crab-12 gemini_sector/famine gemini_sector/nexus"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="1"/>
@@ -3410,7 +3410,7 @@
 				<var name="sun_radius" value="17000"/>
 			      <var name="faction" value="confed"/> 
 				<var name="compactness" value="3.8"/>
-				<var name="num_stars" value="0"/>
+				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="3"/>
 				<var name="num_planets" value="4"/>
 				<var name="num_moons" value="3"/>
