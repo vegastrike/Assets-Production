@@ -20,7 +20,9 @@
 </Defense>
 <Stats mass="0.01" momentofinertia="0.6" fuel="200000"></Stats>
 
-<Computer yaw="50" pitch="50" roll="50" afterburner="220" maxspeed="220"/>
+<Computer yaw="50" pitch="50" roll="50" afterburner="220" maxspeed="220">
+		<Radar itts="false" color="false" error=".25" maxcone="0" lockcone=".851" trackingcone=".931" range="10000"/> 
+</Computer>
 <Energy>
 	<Reactor recharge="0"
 		   limit="00"/>
