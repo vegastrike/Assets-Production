@@ -41,7 +41,12 @@ def getSignificant (whichsignificant, landable_only, capship_only):
 		  else:
 		    if (un.isSignificant()):
 		      signum=signum+1
-		  which=which+1			
+		  which=which+1
+	if (not un):
+		if (capship_only):
+			return getSignificant(whichsignificant,landable_only,0)
+		else:
+			return getSignificant (whichsignificant,0,0)
 	return un
   
   #this one terminates if fewer than so many planets exist with null

@@ -38,8 +38,7 @@ class go_somewhere_significant:
       significant = universe.getRandomJumppoint ()
     if (significant.isNull()):
       print "ERROR: no significants found in starsystem %s" % (self.sysfil)
-      VS.terminateMission(0)
-      return
+      self.significantun=VS.getPlayer()
     else:
       self.significantun=significant
       self.obj=VS.addObjective("You must visit the %s" % (significant.getName ()))
