@@ -1,7 +1,7 @@
 import sys
 import VS
 import Director
-sys.path += ['../../modules/stub/','../../modules','../../bases']
+sys.path += ['../../modules/stub/','../modules/stub/','../modules','../bases','../../modules','../../bases']
 def kfac (k):
 	if (k==0):
 		return 1

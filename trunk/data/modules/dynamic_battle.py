@@ -58,6 +58,9 @@ def Siege(fac):
 						VS.SetGalaxyFaction(sys,fac)
 						print fac + ' took over '+ sys + ' originally owned by '+enfac
 						#ok now we have him... while the siege is going on the allies had better initiate the battle--because we're now defending the place...  so that means if the owners are gone this place is ours at this point in time #FIXME write news story!!!
+						import generate_dyn_universe
+						generate_dyn_universe.AddBasesToSystem(fac,sys)
+						#HACK, regenerate bases instnatly
 			siegenumber+=1
 		return 1
 	else:
@@ -133,14 +136,22 @@ def randomMovement(fg,fac):
 #			print 'moving '+fg+' from '+sys+' to '+ newsys
 			fg_util.TransferFG( fg,fac,newsys);
 
+def AddFighterTo(fgname,fac):
+	sys = VS.getSystemFile()
+	fg_util.AddShipsToFG (fgname,fac,((faction_ships.getRandomFighter(fac),1),),sys)
+
+
 #returns false if done with vehicles
 lftiter=0
 import Director
 def LookForTrouble (faction):
 	global lftiter
 	key = fg_util.MakeFactionKey(faction)
-	if (lftiter>=Director.getSaveStringLength(fg_util.ccp,key)):
+	numfg=Director.getSaveStringLength(fg_util.ccp,key)
+	if (lftiter>=numfg):
 		lftiter=0
+		if (numfg):
+			AddFighterTo(Director.getSaveString(fg_util.ccp,key,vsrandom.randrange(0,numfg)),faction)
 		return 0
 	i = Director.getSaveString(fg_util.ccp,key,lftiter)
 	lftiter+=1	

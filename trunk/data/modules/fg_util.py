@@ -154,12 +154,12 @@ def _MakeFGString (starsystem,typenumlist):
 
 def _AddShipToKnownFG(key,tn):
 	leg = Director.getSaveStringLength (ccp,key)
-	try:
-		numtotships =int(Director.getSaveString(ccp,key,0))
-		numtotships+=int(tn[1])
-		Director.putSaveString(ccp,key,0,str(numtotships))
-	except:
-		print 'error adding ship to flightgroup'
+	#try:
+	numtotships =int(Director.getSaveString(ccp,key,0))
+	numtotships+=int(tn[1])
+	Director.putSaveString(ccp,key,0,str(numtotships))
+	#except:
+	#	print 'error adding ship to flightgroup'
 	for i in range (ShipListOffset()+1,leg,PerShipDataSize()):
 		if (Director.getSaveString(ccp,key,i-1)==str(tn[0])):
 			numships=0
