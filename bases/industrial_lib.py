@@ -4,7 +4,10 @@ import vsrandom
 import VS
 import fixers
 def MakeCorisc(time_of_day='day',mybartender='bases/bartender_default.py'):
-    plist=VS.musicAddList('industrial.m3u')
+    playlist = 'industrial.m3u'
+    if (mybartender=='bases/bartender_union.py'):
+        playlist='university.m3u'
+    plist=VS.musicAddList(playlist)
     VS.musicPlayList(plist)    
 
     room1 = Base.Room ('Landing Platform')
