@@ -36,7 +36,6 @@ class random_encounters:
     self.enprob = enemyprob
     self.fighterprob = unitprob
 
-    faction_ships.init()
     self.det_distance = detectiondis
     self.sig_distance = sigdis
 
