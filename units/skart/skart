@@ -16,7 +16,7 @@
 	<cockpit x="0" y="0" z="13"/>
 	<Sound> </Sound>
 	<Defense>
-		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="0" cloakglass="false"/>       
+		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="60" cloakglass="false"/>       
 		<Armor front="200" right="280" left="280" back="200"/>
 		<Shields front="20" right="20" left="20" back="20" recharge="50"/>
 		<Hull strength="800"/>
@@ -26,5 +26,5 @@
 	<Energy>
 		<Reactor recharge="60" limit="312"/>
 	</Energy>
-
+	<Jump delay="1" jumpenergy="250"/>
 </Unit>

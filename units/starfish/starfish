@@ -8,6 +8,7 @@
 	</Thrust>
 	<Sound> </Sound>
 	<Defense>
+		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="120" cloakglass="false"/>       
 		<Armor front="100" right="80" left="80" back="100"/>
 		<Shields front="40" right="30" left="30" back="35" recharge="34.166667"/>
 		<Hull strength="2500"/>
@@ -18,7 +19,7 @@
 		<Reactor recharge="120" limit="2000"/>
 	</Energy>
 
-       
+	<Jump delay="1" jumpenergy="1500"/>       
 
 <!-- new elements added -->
 <Light file="supernova.bmp" x="-2.864209" y="6.381647" z="0.020980" size="1.800000"/>

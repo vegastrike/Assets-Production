@@ -18,7 +18,7 @@
 	</Thrust>
 	<Sound> </Sound>
 	<Defense>
-		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="0" cloakglass="false"/>       
+		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="60" cloakglass="false"/>       
 		<Armor front="500" right="480" left="480" back="600"/>
 		<Shields front="30" right="25" left="25" back="25" recharge="36.166667"/>
 		<Hull strength="1000"/>
@@ -28,5 +28,5 @@
 	<Energy>
 		<Reactor recharge="60" limit="470"/>
 	</Energy>
-
+	<Jump delay="1" jumpenergy="350"/>
 </Unit>
