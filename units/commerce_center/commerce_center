@@ -1,0 +1,54 @@
+<Unit scale="100">
+	<Meshfile file="commerce_center.xmesh" />
+	<Thrust>
+		<Engine Afterburner="1.333333" Forward="0.000000" Retro="0.000000" Left="0.000000" Right="0.000000" Top="0.000000" Bottom="0.000000"/>
+		<Maneuver yaw="0.455400" pitch="0.455400" roll="0.455400"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense hudImage="station-hud.spr">
+		<Armor front="60000" right="60000" left="60000" back="60000"/>
+		<Shields front="10000.000000" right="10000.000000" left="10000.000000" back="10000.000000" recharge="100.000000"/>
+		<Hull strength="20000.000000"/>
+	</Defense>
+	<Stats mass="100000" momentofinertia="1500.000000" fuel="20000"></Stats>
+	<Computer yaw="0.13800" pitch="0.13800" roll="0.13800" afterburner="0.133333" maxspeed="0.000000"/>
+	<Energy>
+		<Reactor recharge="100" limit="18000"/>
+	</Energy>
+       <Dock x="0" y="-22.60" z="-7.25" size="1.5"/>
+       <Dock x="0" y="-22.60" z="-8.00" size="1.5"/>
+       <Dock x="0" y="-22.60" z="-8.75" size="1.5"/>
+       <Dock x="0" y="-22.60" z="-9.50" size="1.5"/>
+       <Dock x="0" y="-22.60" z="-10.25" size="1.5"/>
+       <Dock x="0" y="-22.60" z="-11.00" size="1.5"/>
+       <Dock x="0" y="-22.60" z="-11.75" size="1.5"/>
+       <Dock x="0" y="-22.60" z="-12.50" size="1.5"/>
+       <Dock x="0" y="-22.60" z="7.25" size="1.5"/>
+       <Dock x="0" y="-22.60" z="8.00" size="1.5"/>
+       <Dock x="0" y="-22.60" z="8.75" size="1.5"/>
+       <Dock x="0" y="-22.60" z="9.50" size="1.5"/>
+       <Dock x="0" y="-22.60" z="10.25" size="1.5"/>
+       <Dock x="0" y="-22.60" z="11.00" size="1.5"/>
+       <Dock x="0" y="-22.60" z="11.75" size="1.5"/>
+       <Dock x="0" y="-22.60" z="12.50" size="1.5"/>
+
+       <Dock z="0" y="-22.60" x="-7.25" size="1.5"/>
+       <Dock z="0" y="-22.60" x="-8.00" size="1.5"/>
+       <Dock z="0" y="-22.60" x="-8.75" size="1.5"/>
+       <Dock z="0" y="-22.60" x="-9.50" size="1.5"/>
+       <Dock z="0" y="-22.60" x="-10.25" size="1.5"/>
+       <Dock z="0" y="-22.60" x="-11.00" size="1.5"/>
+       <Dock z="0" y="-22.60" x="-11.75" size="1.5"/>
+       <Dock z="0" y="-22.60" x="-12.50" size="1.5"/>
+       <Dock z="0" y="-22.60" x="7.25" size="1.5"/>
+       <Dock z="0" y="-22.60" x="8.00" size="1.5"/>
+       <Dock z="0" y="-22.60" x="8.75" size="1.5"/>
+       <Dock z="0" y="-22.60" x="9.50" size="1.5"/>
+       <Dock z="0" y="-22.60" x="10.25" size="1.5"/>
+       <Dock z="0" y="-22.60" x="11.00" size="1.5"/>
+       <Dock z="0" y="-22.60" x="11.75" size="1.5"/>
+       <Dock z="0" y="-22.60" x="12.50" size="1.5"/>
+
+
+</Unit>
