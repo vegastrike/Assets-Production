@@ -51,6 +51,8 @@ class go_somewhere_significant:
     VS.IOmessage(time,fro,universe.getMessagePlayer(self.you),visitstr % (self.significantun.getName()))
   def DestinationSystem(self):
     return self.sysfil
+  def JumpPoints (self):
+    return (self.sysfile)
   def Execute(self):
     if (self.significantun.isNull() or self.you.isNull() or VS.getSystemFile()!=self.sysfil):
       return 0
