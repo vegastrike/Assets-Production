@@ -272,7 +272,7 @@ module escort_mission {
 	  if (stage==0) {
 	    object jumppoint = _unit.getUnitFromContainer (destination);
 	    if (!_std.isNull(jumppoint)) {
-	      if (_unit.getDistance (jumppoint,play)<ourdistfromjump) {
+	      if (unit.getSignificantDistance (play,jumppoint)<ourdistfromjump) {
 		ActivateStage1(jumppoint);
 	      }
 	    }else {

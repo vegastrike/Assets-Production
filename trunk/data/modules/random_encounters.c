@@ -67,7 +67,7 @@ module random_encounters {
     int count=0;
     object un = _unit.getUnit (count);
     while (!(_std.isNull(un))) {
-      if (_unit.getDistance(unit,un)<detection_distance) {
+      if (unit.getSignificantDistance(un,unit)<detection_distance) {
 	if ((!_unit.isSignificant(un))&&(!_unit.isSun(un))) {
 	  object name = _unit.getFgName (un);
 	  object testname2 = _unit.getName(un);
@@ -90,7 +90,7 @@ module random_encounters {
     int count=0;
     object un = _unit.getUnit (count);
     while (!(_std.isNull(un))) {
-      if (_unit.getDistance(unit,un)<detection_distance) {
+      if (unit.getSignficiantDistance(unit,un)<detection_distance) {
 	if ((!_unit.isSignificant(un))&&(!_unit.isSun(un))) {
 	  num_ships=num_ships+1;
 	}
@@ -137,7 +137,7 @@ module random_encounters {
       if (_std.isNull (un)) {
 	SetModeZero();
       }else {
-	if ((_unit.getDistance(un,player_unit)<significant_distance)&&(_unit.isSignificant(un))) {
+	if ((unit.getSignificantDistance(un,player_unit)<significant_distance)&&(_unit.isSignificant(un))) {
 	  SetModeOne (un);
 	  return un;
 	}	  
@@ -147,7 +147,7 @@ module random_encounters {
       return un;
     } else {
       //significant_unit is somethign.... lets see what it is
-      if (_unit.getDistance (significant_unit,player_unit)>detection_distance) {
+      if (unit.getSignificantDistance (player_unit,significant_unit)>detection_distance) {
 	SetModeZero ();
 	return sig_container;
       } else {

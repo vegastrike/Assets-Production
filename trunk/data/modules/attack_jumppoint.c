@@ -112,7 +112,7 @@ module attack_jumppoint {
 	  object me = _unit.getUnitFromContainer (youcontainer);
 	  if (!_unit.equal (un,me)) {
 	    if (_string.equal (fac,faction)) {
-	      if (_unit.getDistance (jp,un)<escdist) {
+	      if (unit.getSignificantDistance (un,jp)<escdist) {
 		ship_check_count=0;
 	      }
 	    }

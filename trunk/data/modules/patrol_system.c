@@ -96,7 +96,7 @@ module patrol_system {
 	    object jpoint = _unit.getUnitFromContainer (tmp);
 	    bool visited = _std.isNull(jpoint);
 	    if (!_std.isNull(jpoint)) {
-	      if (_unit.getDistance (you,jpoint)<distance) {
+	      if (unit.getSignificantDistance (you,jpoint)<distance) {
 		object str = _string.new();
 		object nam = _unit.getName(jpoint);
 		_io.sprintf (str,"[Computer] %s scanned, data saved...",nam);
