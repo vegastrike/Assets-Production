@@ -33,6 +33,6 @@
         <asteroid  name= "Nav3"  file="AFieldBase" faction="neutral"   z="8200" x="-3000" day="-14000"  difficulty=".25"></asteroid>         
         <planet name="JumpToCMF-A" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="16500" x="-6000" day="240" destination="gemini_sector/cmf-a"/>
         <planet name="Nitir" file="planets/m_class1.png" radius="300" gravity="20" z="11000" x="11100" day="300">
-                <planet name="Nitir" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
+                <planet name="Nitir Atmosphere" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet>
 </system>

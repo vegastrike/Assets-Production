@@ -32,7 +32,7 @@
         <planet name="JumpToXXN-1927" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="11000" x="0" day="240" destination="gemini_sector/xxn-1927"/>
         <planet name="JumpToManchester" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="17000" x="4000" day="240" destination="gemini_sector/manchester"/>
         <planet name="NewDetroit" file="planets/Dirt.png" radius="300" gravity="20" z="-3000"  x="-13000"  day="300">
-                <planet name="NewDetroit" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
+                <planet name="NewDetroit Atmosphere" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet>  
         <planet name="JumpToRikel" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="5000" x="-21000" day="240" destination="gemini_sector/rikel"/>
         <planet name="JumpToND-57" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-8500" x="-18000" day="240" destination="gemini_sector/nd-57"/>

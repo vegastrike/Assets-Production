@@ -28,7 +28,7 @@
 </Light>	
 
         <planet name="N1912-1" file="planets/m_class9.png" radius="300" gravity="20" z="-3000" x="0" day="300">
-                <planet name="N1912-1" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
+                <planet name="N1912-1 Atmosphere" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet>
        <planet name="Nav 2" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="8000" x="11500" day="240" />        
        <planet name="JumpToHind'sVariableN" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="13500" x="-14000" day="240" destination="gemini_sector/hindsvariablen"/>

@@ -31,6 +31,6 @@
         <planet name="JumpToNewcastle" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="11000" x="-10500" day="240" destination="gemini_sector/newcastle"/>
         <planet name="Nav 3" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="7500" day="240" />        
         <planet name="Elysia" file="planets/m_class1.png" radius="300" gravity="20" z="-12000" x="0" day="300">
-                <planet name="Elysia" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
+                <planet name="Elysia Atmosphere" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet>
 </system>
