@@ -1,0 +1,23 @@
+<Unit>
+<Meshfile file="Thunderbolt-Tbolt-Tbolt5.xmesh"/>
+<Meshfile file="Thunderbolt-Tbolt-Tbolt6.xmesh"/>
+<Meshfile file="Thunderbolt-Tbolt-Tbolt1.xmesh"/> 
+<Meshfile file="Thunderbolt-Tbolt-Tbolt2.xmesh"/>
+<Meshfile file="Thunderbolt-Tbolt-Tbolt3.xmesh"/>
+<Meshfile file="Thunderbolt-Tbolt-Tbolt4.xmesh"/>
+       
+
+<!-- new elements added -->
+<Mount weapon="Laser" size="Light" x="-3.664264" y="-0.271562" z="18.833694" ri="-0.002902" rj="-0.397328" rk="0.917672" qi="-0.999971" qj="-0.005300" qk="-0.005457"/>
+<Mount weapon="Laser" size="Light" x="-2.749822" y="-1.202563" z="18.434395" ri="-0.002902" rj="-0.397328" rk="0.917672" qi="-0.999971" qj="-0.005300" qk="-0.005457"/>
+<Mount weapon="Laser" size="Light" x="-4.641777" y="-1.267287" z="18.406189" ri="0.000000" rj="-0.393286" rk="0.919416" qi="0.999999" qj="0.001607" qk="0.000687"/>
+<Mount weapon="Laser" size="Light" x="-10.018555" y="-0.042969" z="-0.474609" ri="-0.855376" rj="-0.001101" rk="0.518007" qi="-0.518006" qj="-0.000667" qk="-0.855377"/>
+<Mount weapon="Laser" size="Light" x="8.816572" y="-0.035813" z="0.810405" ri="0.841739" rj="0.000289" rk="0.539884" qi="-0.539883" qj="0.002701" qk="0.841736"/>
+<Mount weapon="Laser" size="Light" x="3.058206" y="-0.288848" z="18.834108" ri="0.002216" rj="-0.400269" rk="0.916395" qi="-0.000968" qj="-0.916398" qk="-0.400268"/>
+<Mount weapon="Laser" size="Light" x="2.286927" y="-1.205416" z="18.436014" ri="0.002216" rj="-0.400269" rk="0.916395" qi="-0.000968" qj="-0.916398" qk="-0.400268"/>
+<Light file="supernova.bmp" x="-11.713358" y="-0.029429" z="-29.338348" size="4.590010"/>
+<Light file="supernova.bmp" x="-7.964138" y="-0.279593" z="-29.798759" size="5.960042"/>
+<Subunit file="turretsmall" x="-0.363932" y="1.870443" z="-33.357422" ri="0" rj="-1.000000" rk="0" qi="0" qj="-0" qk="-1"/>
+<Light file="supernova.bmp" x="7.879027" y="-0.198842" z="-29.751879" size="6.220047"/>
+<Light file="supernova.bmp" x="12.139435" y="-0.128245" z="-29.255386" size="4.860016"/>
+</Unit>
