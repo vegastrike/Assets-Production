@@ -310,9 +310,9 @@
 </Bolt>
 
 <Beam name="Tractor" mountsize="special"> 
-<Energy rate="10" stability="6" refire=".3">
+<Energy rate="10" stability="600" refire=".3">
 </Energy>
-<Damage rate="-600" phasedamage="300" longrange="1">
+<Damage rate="-4800" phasedamage="2400" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed="5" radius="5" pulsespeed="-5" range="4000" >
 </Distance>
