@@ -19,7 +19,7 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
         </flightgroups>
-	<module name="director" python="./mission/cargo/iso/to_fleet_outsystem.py">
+	<module name="director">
 		<import name="cargo_mission"/>
 		<script name="initbriefing">
 			<exec module="cargo_mission" name="initbriefing">
