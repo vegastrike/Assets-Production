@@ -33,6 +33,8 @@
 
 <planet name="jumppoint-mars" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-3000" y="-3000" z="-1000" destination="visit_from_the_aera/mars" />
 
+<planet name="jumppoint-drones" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="2000" y="2000" z="-8000" destination="visit_from_the_aera/drones_nebula" />
+
 <unit name= "station-north"  file="station" x="000" y="4000" z="-2000" position="0" faction="confed" />
 <unit name= "station-south"  file="station" x="000" y="-4000" z="2000" position="0" faction="confed" />
 <unit name= "station-east"  file="station" x="-4000" y="00" z="2000" position="0" faction="confed" />

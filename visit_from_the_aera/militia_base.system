@@ -34,7 +34,7 @@
 
 <planet name="jumppoint-pluto" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-3000" y="-3000" z="-1000" destination="visit_from_the_aera/pluto" />
 
-<planet name="jumppoint-earth" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-3000" y="3000" z="6000" destination="visit_from_the_aera/atralia" />
+<planet name="jumppoint-atralia" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-3000" y="3000" z="6000" destination="visit_from_the_aera/atralia" />
 
 
 

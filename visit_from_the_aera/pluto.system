@@ -26,6 +26,8 @@
 
 <planet name="jumppoint-mars" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="2000" y="-1000" z="-7000" destination="visit_from_the_aera/mars" />
 
+<planet name="jumppoint-mbase" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-1000" y="5000" z="3000" destination="visit_from_the_aera/militia_base" />
+
 <unit name= "hq-pluto"  file="ConfedHq" x="2000" y="2000" z="-2000" position="0" faction="confed" />
 
 

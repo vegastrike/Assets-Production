@@ -2,7 +2,7 @@
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="Militia Attack on Mars Station" />
-		<var name="system" value="visit_from_the_aera/mars" />
+		<var name="system" value="visit_from_the_aera/earth" />
 		<var name="description" value="still in development" />
 		<var name="author" value="Alexander Rawass" />
 	</variables>
@@ -11,20 +11,23 @@
 			<pos x="00.0" y="0.0" z="-10000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
+	</flightgroups>
 
 	<module name="director">
 
-		<import name="station_cruiser_defend2" />
+		<import name="visit_aera10" />
 
 		<script name="initgame">
-
+			<exec name="initgame" module="visit_aera10" />
 		</script>
 
 		<script name="gameloop">
+			<exec name="gameloop" module="visit_aera10" />
 
 		</script>
 
 		<script name="endgame">
+			<exec name="endgame" module="visit_aera10" />
 
 		</script>
 	</module>

@@ -30,7 +30,7 @@
 
 <planet name="moon-c" file="planets/molton_iron.png" radius="500" gravity="20" x="-2000" y="-1000"  z="-3000" position="0" />			
 
-<planet name="jumppoint-mars" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-3000" y="-3000" z="-1000" destination="visit_from_the_aera/mars" />
+<planet name="jumppoint-mneb" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-3000" y="-3000" z="-1000" destination="visit_from_the_aera/militia_nebula" />
 
 <planet name="jumppoint-earth" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-3000" y="3000" z="-1000" destination="visit_from_the_aera/earth" />
 

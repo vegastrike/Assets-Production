@@ -30,7 +30,9 @@
 <planet name="Golcha" file="planets/molton_iron" radius="500" gravity="20" x="--6000" y="-6000"  z="-8000" position="0" />			
 
 
-<planet name="jumppoint-mars" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-2000" y="-1000" z="-4000" destination="visit_from_the_aera/mars" />
+<planet name="jumppoint-mbase" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="-2000" y="-1000" z="-4000" destination="visit_from_the_aera/militia_base" />
+
+<planet name="jumppoint-aerastation" file="jump.png" alpha="ONE ONE" radius="500" gravity="20" x="4000" y="4000" z="-2000" destination="visit_from_the_aera/aera_station" />
 
 <!--
 <Nebula name="militia-nebula" file="green-nebula" nebfile="green-nebula.xml" />
