@@ -243,6 +243,9 @@
 			<Cargo file="repair_ai" price="200000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="repair_ai_advanced" price="300000" quantity="1" mass=".01" volume="1"/>
 		</Category>
+		<Category file="upgrades/Radar">
+			<Cargo file="hud_repair" price="4000" quantity="1" mass=".01" volume="1"/>
+		</Category>
 		<Category file="upgrades/Radar/Windows">
 			<Cargo file="radar_windows_95" price="5000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="radar_windows_98" price="10000" quantity="1" mass=".01" volume="1"/>
