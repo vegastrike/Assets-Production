@@ -42,6 +42,7 @@
 			<const type="int" value="2"/><!-- min systems away-->
 			<const type="int" value="4"/><!-- max systems away-->
 			<const type="float" value="1800"/><!-- time to reach-->
+			<const type="object"  object="string" value=""/>
 			</exec>
 		</script>
 		<script name="gameloop">

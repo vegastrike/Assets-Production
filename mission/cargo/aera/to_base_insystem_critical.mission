@@ -6,8 +6,8 @@
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="system" value="enigma_sector/blake" />
-		<var name="mission_name" value="Cargo Mission -- Contraband" />
-		<var name="description" value="A pirate on a base nearby needs a resupply of his goods. You will have to avoid patrols on the way and deliver this to him. Failure will result in death; however the pay is good: 4650." />
+		<var name="mission_name" value="Deliver Urgent Cargo" />
+		<var name="description" value="Aera needs important cargo delivered to a military base on an installation in system ASAP. If the mission is completed you will be credited 3420.  This cargo is critical for our operations, you must deliver immediately, within 3 minutes. Failure will be punished." />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="2">
@@ -35,15 +35,15 @@
 		</script>
 		<script name="initgame">
 			<exec module="cargo_mission" name="init">
-			<const type="object" object="string" value="pirates"/>
+			<const type="object" object="string" value="aera"/>
 			<const type="int" value="0"/> <!--num systems away the delivery point is -->
 			<const type="int" value="6"/><!--ammt of cargo in hold -->
-			<const type="int" value="4"/> <!--difficulty of mission(do they send peeps after you)-->
+			<const type="int" value="6"/> <!--difficulty of mission(do they send peeps after you)-->
 			<const type="float" value="400"/> <!--the distance drom base the new ship is generated at -->
-			<const type="float" value="4650"/> <!-- how much you are paid -->
+			<const type="float" value="3420"/> <!-- how much you are paid -->
 			<const type="bool" value="false"/><!-- if they send a capship or prefer to have you drop it at a planet -->
-			<const type="float" value="1200"/>
-			<const type="object"  object="string" value="Contraband"/>
+			<const type="float" value="180"/>
+			<const type="object"  object="string" value=""/>
 			</exec>
 		</script>
 		<script name="gameloop">

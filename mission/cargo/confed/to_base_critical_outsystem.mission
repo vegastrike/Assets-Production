@@ -7,7 +7,7 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="system" value="enigma_sector/blake" />
 		<var name="mission_name" value="Long Range Base Cargo Delivery" />
-		<var name="description" value="A Navy base around 5 systems away needs some critical cargo. We will disclose the exact location upon mission acceptance.  You must deliver your cargo successfully or risk disciplinary action; however, your pay will be 1425 per system traversed in a minimal path to the destination. Good luck, pilot."/>
+		<var name="description" value="A Navy base around 5 systems away needs some critical cargo. We will disclose the exact location upon mission acceptance.  You must deliver your cargo successfully or risk disciplinary action; however, your pay will be 1825 per system traversed in a minimal path to the destination. Good luck, pilot."/>
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="2">
@@ -41,7 +41,8 @@
 			<const type="bool" value="false"/><!-- if they send a capship or prefer to have you drop it at a planet -->
 			<const type="int" value="3"/><!-- min systems away-->
 			<const type="int" value="6"/><!-- max systems away-->
-			<const type="float" value="1425"/> <!-- time per system -->
+			<const type="float" value="1825"/> <!-- time per system -->
+			<const type="object"  object="string" value=""/>
 			</exec>
 		</script>
 		<script name="gameloop">
