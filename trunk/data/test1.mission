@@ -12,7 +12,7 @@
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="vorcha" ainame="default" waves="1" nr_ships="1">
-			<pos x="00000.0" y="10000.0" z="0000.0"/>
+			<pos x="100.0" y="10000.0" z="100.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
