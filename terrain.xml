@@ -89,7 +89,7 @@
 <diffuse red="1" green="1" blue="1" alpha="1"/>
 </material>
 </texture> 
-
+<!--<data terrainfile="tiny.png" file="tiny.png" scale="14" originX="0" originy="0"  />-->
 <data terrainfile="blank.png" file="demdata/gc16at128.png" scale="7" originX="0" originy="0"  />
 <data terrainfile="blank.png" file="demdata/gc16at64.png" scale="6" originX="16384" originy="16384"  />
  <data terrainfile="blank.png" file="demdata/gc16at32.png" scale="5" originX="24576" originy="24576"  />
