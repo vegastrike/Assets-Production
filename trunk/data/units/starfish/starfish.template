@@ -4,9 +4,9 @@
 		<Shields front="0.000000" right="0.000000" left="0.000000" back="0.000000" recharge="0.000000"/>
 		<Hull strength="1250.000000"/>
 	</Defense>
-	<Upgrade file="shield_4_Level3"/>
+	<Upgrade file="shield_4_Level2"/>
 	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_2"/>
+	<Upgrade file="engine_level_3"/>
 	<Upgrade file="micro_shielded_hull"/>
 
 	<cockpit file="centurion-cockpit.cpt" x="0" y="00" z="00"/>
@@ -15,15 +15,10 @@
 		<Maneuver yaw="2015.500000" pitch="2015.500000" roll="3515.500000"/>
 	</Thrust>
 	<Sound> </Sound>
-	<Defense>
-		<Armor front="8000" right="8000" left="8000" back="8000"/>
-		<Shields front="400" right="400" left="400" back="400" recharge="50"/>
-		<Hull strength="2500"/>
-	</Defense>
 	<Stats mass="14" momentofinertia="14" fuel="80000000"></Stats>
 	<Computer yaw="80.500000" pitch="80.500000" roll="403.500000" afterburner="90.000000" maxspeed="80.000000"/>
 	<Energy>
-		<Reactor recharge="200" limit="2040"/>
+		<Reactor limit="2040"/>
 	</Energy>
 
 	<Jump delay="1" jumpenergy="1500"/>       

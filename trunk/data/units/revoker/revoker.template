@@ -1,4 +1,13 @@
 <Unit scale="0.5">
+	<Upgrade file="godsansshields"/>
+	<Defense>
+		<Shields front="0.000000"  back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<Upgrade file="shield_2_Level5"/>
+	<Upgrade file="isometal"/>
+	<Upgrade file="engine_level_5"/>
+	<Upgrade file="micro_shielded_hull"/>
+
 	<Meshfile file="revoker-Hull.xmesh" />
 	<Meshfile file="revoker-Cone01.xmesh" />
 	<Meshfile file="revoker-Cone02.xmesh" />
@@ -19,16 +28,9 @@
 		<Maneuver yaw="2415.500000" pitch="2415.500000" roll="2415.500000"/>
 	</Thrust>
 	<Sound> </Sound>
-	<Defense>
-		<Armor front="2000" right="2000" left="2000" back="2000"/>
-		<Shields front="600" right="600" left="600" back="600" recharge="60.166667"/>
-		<Hull strength="4500"/>
-	</Defense>
+	
 	<Stats mass="7" momentofinertia="7" fuel="2000000000"></Stats>
 	<Computer yaw="73.500000" pitch="73.500000" roll="73.500000" afterburner="80.000000" maxspeed="42.000000"/>
-	<Energy>
-		<Reactor recharge="247" limit="1130"/>
-	</Energy>
 	<Jump delay="1" jumpenergy="800"/>
 	<Hold volume="300">
 

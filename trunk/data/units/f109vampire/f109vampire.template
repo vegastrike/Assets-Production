@@ -3,7 +3,7 @@
 	<Defense>
 		<Shields front="0.000000"  left="0" right="0" back="0.000000" recharge="0.000000"/>
 	</Defense>
-	<Upgrade file="shield_4_Level3"/>
+	<Upgrade file="shield_4_Level4"/>
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_2"/>
 	<Upgrade file="polymer_hull"/>
@@ -24,9 +24,7 @@
 	</Defense>
 	<Stats mass="7" momentofinertia="7" fuel="2000000000"></Stats>
 	<Computer yaw="133.500000" pitch="133.500000" roll="133.500000" afterburner="150.000000" maxspeed="88.800000"/>
-	<Energy>
-		<Reactor recharge="180" limit="470"/>
-	</Energy>
+
 	<Jump delay="1" jumpenergy="350"/>
 	<Hold volume="60">
 	</Hold>

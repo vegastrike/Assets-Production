@@ -1,4 +1,14 @@
 <Unit>
+	<Upgrade file="godsansshields"/>
+	<Defense>
+		<Shields front="0.000000"  back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<Upgrade file="shield_2_Level3"/>
+	<Upgrade file="isometal"/>
+	<Upgrade file="engine_level_3"/>
+	<Upgrade file="reinforced_hull"/>
+
+
 	<Mount weapon="Particle" size="Light Medium Heavy" x="2.000000" y="1.000000" z="0.000000"/>
 	<Mount weapon="Particle" size="Light Medium Heavy" x="-2.000000" y="1.000000" z="0.000000"/>
 	<Mount weapon="MassDriver" size="Light Medium Heavy" x="3.000000" y="0.000000" z="0.000000"/>
@@ -14,16 +24,10 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
-		<Armor front="1500" right="1500" left="1500" back="1500"/>
-		<Shields front="300.000000" back="300.000000" recharge="40.000000"/>
-		<Hull strength="2340.000000"/>
-	</Defense>
+
 	<Stats mass="5.000000" momentofinertia="5.000000" fuel="40000000"></Stats>
 	<Computer yaw="164.219986" pitch="164.219986" roll="164.219986" afterburner="128.500000" maxspeed="49.200001"/>
-	<Energy>
-		<Reactor recharge="140" limit="350"/>
-	</Energy>
+
 	<Jump delay="1" jumpenergy="80"/>
 	<Hold volume="75">
 	</Hold>
