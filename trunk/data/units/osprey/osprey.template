@@ -30,9 +30,12 @@
 
 
 	<Energy afterburnenergy="30">
-		<Reactor recharge="100" limit="400"/>
+		<Reactor recharge="140" limit="400"/>
 	</Energy>
        	<Jump delay="1" jumpenergy="180"/>       
 <!-- new elements added -->
 <Subunit file="turretsmall" x="0.089912" y="0.120528" z="-6.000000" ri="0.994033" rj="-0.109082" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
+	<Hold volume="60">
+	</Hold>
+
 </Unit>

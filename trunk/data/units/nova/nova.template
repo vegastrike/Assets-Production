@@ -28,9 +28,6 @@
        	<Jump delay="1" jumpenergy="90"/>       
 
 <!-- new elements added -->
-<Light file="supernova.bmp" x="-0.431327" y="-0.039966" z="-4.300000" size="0.600000"/>
-<Light file="supernova.bmp" x="0.085989" y="-0.067569" z="-4.300000" size="0.700000"/>
-<Light file="supernova.bmp" x="0.550726" y="-0.043842" z="-4.300000" size="0.620000"/>
 	<Hold volume="40">
 	</Hold>
 

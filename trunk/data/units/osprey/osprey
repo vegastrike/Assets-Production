@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="1">
 	<Meshfile file="osprey.xmesh" />
 	<Mount weapon="Particle" size="Medium Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
 	<Mount weapon="Particle" size="Medium Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
@@ -24,7 +24,7 @@
 	<Defense HudImage="osprey-hud.spr">
 		<Armor front="100" right="100" left="100" back="100"/>
 		<Shields front="80.000000" right="70.000000" left="70.000000" back="60.000000" recharge="20.000000"/>
-		<Hull strength="250.000000"/>
+		<Hull strength="2500000.000000"/>
 		<Cloak rate=".4" cloakmin=".1"/>
 	</Defense>
 	<Stats mass="5.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
@@ -39,4 +39,6 @@
 	<Light file="supernova.bmp" x="1.5" y="0.12" z="-5.8" size="0.880000"/>
 	<Light file="supernova.bmp" x="-1.5" y=".12" z="-5.8" size="0.880000"/>
        	<Jump delay="1" jumpenergy="180"/>       
+	<Hold volume="40">
+	</Hold>
 </Unit>
