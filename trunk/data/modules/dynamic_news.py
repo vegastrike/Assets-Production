@@ -28,6 +28,13 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 			,scale_event,system,keyword,aggressor_flightgroup,aggressor_type, defender_flightgroup, defender_type,randint):
 	"""retrieves a relevant news item from the dynamic_news_content.allNews()
 	list, and formats it"""
+
+	if aggressor_flightgroup == "blue": #if the player was the attacker
+		aggressor_flightgroup = "Huntington" #FIXME: make it the players callsign (or even fleetname)!
+		if keyword == "all":
+			keyword = "player"
+		
+
 	global allUsefullVariables
 	allUsefullVariables =	{"type_event"	: type_event		#NOTE: atm none of the used in the content
 				,"stage_event"	: stage_event		#can have punctuation in it :-(
@@ -39,9 +46,9 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 				,"system"	: system
 				,"keyword"	: keyword
 				,"aggressorFG"	: aggressor_flightgroup
-				,"aggressorFGtype":aggressor_type 
+				,"aggressorFGtype": formatShipName(aggressor_type)
 				,"defenderFG"	: defender_flightgroup
-				,"defenderFGtype": defender_type
+				,"defenderFGtype": formatShipName(defender_type)
 				}
 
 	return formatNewsItem (getNewsItem(getDockFaction(),type_event,stage_event,getSuccessStr(success)
@@ -109,6 +116,18 @@ def formatProperTitle(str):
 		if words[i][0] in string.lowercase:
 			words[i] = words[i][0].capitalize() + words[i][1:]
 	return string.join(words)
+
+def formatShipName(string):
+	"""formats a standard ship name (ie firefly.blank) to
+	something more natural (ie basic Firefly)"""
+	(ship,extension) = string.split('.')
+	if extension == "blank":
+		return "basic" + formatProperTitle(ship)
+	elif extension == "millspec":
+		return "modified" + formatProperTitle(ship)
+	else:
+		return formatProperTitle(ship)
+		
 
 def makeVarList(ls):
 	"""formats a list of variables to be stored in a save game
