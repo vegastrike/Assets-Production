@@ -1,0 +1,32 @@
+<Unit>
+	<Meshfile file="drone-front.xmesh" />
+	<Meshfile file="drone-base.xmesh" />
+	<Meshfile file="drone-side.xmesh" />
+	<BspMesh/>
+
+<Light file="engine1.png" x="0" y="0" z="-66" size="50" r="0.898039" g="0.803922" b="0.070588"/>
+
+<Mount weapon="Laser" size="Light" x="21.741" y="0" z="26" />
+<Mount weapon="Laser" size="Light" x="-21.741" y="0" z="26" />
+<Mount weapon="LaserBeam" size="Light" x="0" y="21.741" z="26" />
+<Mount weapon="LaserBeam" size="Light" x="0" y="-21.741" z="26" />
+<Mount weapon="Dumbfire" size="Light" x="0" y="-21.741" z="26" />
+
+	<Thrust>
+		<Engine Afterburner="2000" Forward="798" Retro="685" Left="385" Right="385" Top="385" Bottom="385"/>
+		<Maneuver yaw="2187.800201" pitch="6831.000000" roll="6831.000000"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Armor front="100" right="100" left="100" back="50"/>
+		<Shields front="30.000000" right="0" left="0" back="0" recharge="0"/>
+		<Hull strength="400.000000"/>
+	</Defense>
+	<Stats mass="1.250000" momentofinertia="2.250000" fuel="20000"></Stats>
+	<Computer yaw="116.600006" pitch="207.000000" roll="207.000000" afterburner="200.333328" maxspeed="400">
+	</Computer>
+	<Energy>
+		<Reactor recharge="78" limit="100"/>
+	</Energy>
+</Unit>
