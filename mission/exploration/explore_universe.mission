@@ -26,7 +26,7 @@
         </flightgroups>
 	<python>
 from privateer import privateer
-my_obj=privateer(20000,40000,500,3,2,.6,.25,.02,400000,2000)
+my_obj=privateer(20000,40000,500,3,2,.6,.25,.1,400000,2000)
 	</python>
 <!--	<module name="director">
 		<import name="privateer"/>
