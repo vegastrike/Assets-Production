@@ -4,6 +4,8 @@ def allFactionNames():
 #nickp -> plural
 #dnicks -> derogatory nick singular
 #dnickp -> derogatory nick plural
+#mstandname -> standard male name
+#fstandname -> standard female name
 	return {
 "alltags" :
 ["full","nicks","nickp","dnicks","dnickp","government","possessive","homeworld"]
@@ -16,6 +18,8 @@ def allFactionNames():
 		,"government" : "Confederate Senate"
 		,"possessive" : "Confederate"
 		,"homeworld" : "Earth"
+		,"mstandname" : "Bruce Johnson"
+		,"fstandname" : "Michelle Petridge"
 		}
 
 ,"merchant" :	{"full" : "Merchant Union"
@@ -26,6 +30,8 @@ def allFactionNames():
 		,"government" : "Merchant Union Council"
 		,"possessive" : "Merchant"
 		,"homeworld" : "Earth"
+		,"mstandname" : "James Stroffs"
+		,"fstandname" : "Amanda Barnard"
 		}
 
 ,"militia" :	{"full" : "Confederate Police Force"
@@ -36,6 +42,8 @@ def allFactionNames():
 		,"government" : "High Commission"
 		,"possessive" : "militia"
 		,"homeworld" : "Earth"
+		,"mstandname" : "Barry Mathews"
+		,"fstandname" : "Jannette Karoen"
 		}
 
 ,"aera" :	{"full" : "Aeran Ascendency"
@@ -192,7 +200,7 @@ def allNews():
 		,"end"		:{"success":	{"good"		: [(0.7,"all","VAR_aggressor_full Victory in VAR_system_system!\\In yet another event in the VAR_aggressor_possessive-VAR_defender_possessive war, VAR_aggressor_possessive forces have experienced a moral boosting victory today in the VAR_system_system system.  The blockade in the VAR_defender_possessive system ended today, three weeks after it began, with all VAR_defender_possessive supplies exhausted.  No information on the state of the infrastructure, or of casualties is as of yet available."),(0.7,"all","endONE"),(0.7,"all","endTWO"),(0.7,"all","endTHREE"),(0.7,"all","endFOUR"),(0.7,"all","endFIVE")
 								  ]
 
-						,"bad"		: [(0.3,"all","Tragedy in VAR_system_system:\\An end to the VAR_aggressor_full's barbaric siege in the VAR_defender_possessive system VAR_system_system in the VAR_system_sector sector occured today.  After several weeks of remorseless blockading, no-one was left alive in any critical part of the VAR_defender_possessive defence.  Such an attrocity could only have been wrought by the VAR_aggressor_nickp, whose remorseless tactics have seen many wins, with the death of thousands of bystanders in a war that may well be going for a long time.  This act has only served to strengthen the resolve of the VAR_dockedat_government on VAR_dockedat_homeworld to boost rescources to the war effort against the VAR_aggressor_full.")
+						,"bad"		: [(0.3,"all","Tragedy in VAR_system_system:\\An end to the VAR_aggressor_full's barbaric siege in the VAR_defender_possessive system VAR_system_system in the VAR_system_sector sector occured today.  After several weeks of remorseless blockading, no-one was left alive in any critical part of the VAR_defender_possessive defence.  Such an attrocity could only have been wrought by the VAR_aggressor_nickp, whose remorseless tactics have seen many wins, with the death of thousands of bystanders in a war that may well be going for a long time.  This act has only served to strengthen the resolve of the VAR_dockedat_government on VAR_dockedat_homeworld to boost rescources to the war effort against the VAR_aggressor_full.\\\\\\GNN -- \"We Care.\"")
 								  ]
 
 						,"neutral"	: [(0.9,"all","VAR_defender_possessive VAR_system_system -to- VAR_aggressor_possessive VAR_system_system:\\The VAR_aggressor_full has greeted the news of their triumph in the siege in VAR_system_sector sector, VAR_system_system against a VAR_defender_possessive position today with barely a murmor.  Just another in a string of minor victories for the VAR_aggressor_nickp, and a string of minor losses for the VAR_defender_nickp in events which cause barely a murmur in our little corner of the galaxy, especially on VAR_dockedat_homeworld where war news is currently taking a back seat to recent political issues.")
@@ -226,11 +234,14 @@ def allNews():
 
 		}
 
-,"battle" :	{"end" :	{"success" :	{"good"		: [(0.1,"all","VAR_defender_dnickp Vaporised!\\In the outer regions of the VAR_system_system system today, the VAR_aggressor_FG squadron of VAR_aggressor_nicks VAR_aggressor_FGtype ships in transit came across a group of VAR_defender_possessive VAR_defender_FGtype fighters on an intercept course with a VAR_aggressor_possessive passenger liner.  The hostiles were engaged and swiftly destroyed by the VAR_aggressor_FGtype squadron -- no energy sources remained active.")
-										  ,(0.3,"player","VAR_aggressor_FG Hero!\\Once again VAR_aggressor_FG, in a VAR_aggressor_FGtype has struck a blow for the VAR_dockedat_full with yet another VAR_defender_possessive flightgroup, this time the VAR_defender_FG Squadran of VAR_defender_FGtype craft, destroyed.  With the war against the VAR_defender_full beginning to drag out, it is people like this hero who will make the difference.  Only with the determination and the will of the people can we ever hope to rid our corner of the galaxy of the VAR_defender_dnicks for good.\\\\\\GNN - In our special report tonight, learn about the VAR_defender_possessive parents who used their own children as shields against VAR_dockadat_nicks troopers.")
-										  ]
-						,"bad"		: [(0.3,"player","VAR_aggressor_FG Strikes Civilian Transport!\\The VAR_aggressor_FGtype mercillessly struck down the VAR_defender_FG VAR_defender_FGtype in a surprise raid.  The flightgroup was carrying VAR_defender_nicks tourists, and antiquities on an intersystem taxi service when, without warning, the VAR_aggressor_FGtype swooped in and launched several blasts which destroyed the ships instantly.\\Such an attack is characteristic of the VAR_aggressor_full and their allies, using mercenaries and bounty hunters to terorrise the civilian populations of the VAR-defender_full.  VAR_aggressor_FG in particular is well known for utter contempt for life.")]
-						,"neutral"	: []
+,"battle" :	{"end" :	{"success" :	{"good"	: [(0.1,"all","VAR_defender_dnickp Vaporised!\\In the outer regions of the VAR_system_system system today, the VAR_aggressor_FG squadron of VAR_aggressor_nicks VAR_aggressor_FGtype ships in transit came across a group of VAR_defender_possessive VAR_defender_FGtype fighters on an intercept course with a VAR_aggressor_possessive passenger liner.  The hostiles were engaged and swiftly destroyed by the VAR_aggressor_FGtype squadron -- no energy sources remained active.\\\\\\GNN -- \"We\'re with it when it breaks!\"")
+									  ,(0.3,"player","VAR_aggressor_FG Hero!\\Once again VAR_aggressor_FG, in a VAR_aggressor_FGtype has struck a blow for the VAR_dockedat_full with yet another VAR_defender_possessive flightgroup, this time the VAR_defender_FG Squadran of VAR_defender_FGtype craft, destroyed.  With the war against the VAR_defender_full beginning to drag out, it is people like this hero who will make the difference.  Only with the determination and the will of the people can we ever hope to rid our corner of the galaxy of the VAR_defender_dnicks for good.\\\\\\GNN - In our special report tonight, learn about the VAR_defender_possessive parents who used their own children as shields against VAR_dockadat_nicks troopers.")
+									  ]
+						,"bad"		: [(0.5,"all","Another Patrol lost:\\Yet another routine patrol by a squadran of VAR_defender_FGtype craft was lost today on a routine sweep of VAR_system_system.  It is believed those responsible was the VAR_aggressor_possessive flightgroup VAR_aggressor_FG, whose VAR_aggressor_FGtype's have been terrorising the area recently.  The local militia were, once again, caught undermanned, with the earliest response arriving ten minutes after the attack was over.  It is believed that the VAR_aggressor_FG group, made up of mainly VAR_aggressor_FGtype type craft was responsible for the latest incident.  Funding for the local VAR_dockedat_possessive militia has been dropping steadily over the past decade, as funds have been redirected towards the fronts of the war against the VAR_aggressor_full.\\\\\\GNN -- Coming Up to our Paid Subscribers:\\An interview with VAR_dockedat_mstandname, System Police Commissioner.")
+									  ,(0.3,"player","VAR_aggressor_FG Strikes Civilian Transport!\\The VAR_aggressor_FGtype mercillessly struck down the VAR_defender_FG VAR_defender_FGtype in a surprise raid.  The flightgroup was carrying VAR_defender_nicks tourists, and antiquities on an intersystem taxi service when, without warning, the VAR_aggressor_FGtype swooped in and launched several blasts which destroyed the ships instantly.\\Such an attack is characteristic of the VAR_aggressor_full and their allies, using mercenaries and bounty hunters to terorrise the civilian populations of the VAR-defender_full.  VAR_aggressor_FG in particular is well known for utter contempt for life.")]
+						,"neutral"		: [(0.6,"all","Battle Debris in VAR_system_system:\\Debris from an apparent skirmish has been found in VAR_system_system System today.  Although it has been confirmed that none of the craft were VAR_dockedat_possessive, the factions responsible have not been released.\\\\UPDATE:  Debris recovered from the scene included two identity tags.  It is believed that one of the crafts involved was a VAR_defender_possessive VAR_defender_FGtype, belonging to the VAR_defender_FG.\\Pictures from a nearby spy beacon apparently also show a group of VAR_aggressor_FGtype ships leaving the area.  It is believed that these were of VAR_aggressor_possessive origin.\\The local representative of the VAR_dockedat_government, VAR_dockedat_fstandname has denied that recent events indicate that they are being pulled into hostilities between the VAR_defender_nicks and VAR_aggressor_nicks.\\\\\\GNN -- Bringing irrelevant events to your doorstep.")
+									  ,(0.5,"player","VAR_aggressor_FG Fleeing from battle:\\The VAR_aggressor_FG VAR_aggressor_FGtype was seen leaving the scene of a skirmish against a group of VAR_defender_possessive VAR_defender_FGtype called \"VAR_defender_FG\".  It is one of the latest of events involving the VAR_aggressor_FG group, who have been active recently in and around VAR_system_system system.  Although their intentions against the VAR_defender_nickp are obviously aggressive, no signs of hostile intent have been shown towards any VAR_dockedat_nicks troops or instalations.\\\\\\GNN -- \"Where the action is...if we can make it.\"")
+									  ]
 						}
 				,"draw" :	{"good"		: []
 						,"bad"		: []
@@ -244,7 +255,7 @@ def allNews():
 		}
 
 
-,"fleetbattle":	{"start" :	{"success" :	{"good"		: [(0.3,"all","The VAR_aggressor_FG Storms the VAR_defender_nickp:\\Moments ago out of the window of my pleasure yacht I witnessed one of the most impressive sights of my career.  The VAR_aggressor_FGtype Class VAR_aggressor_possessive ship VAR_aggressor_FG and support warped right into the middle of a large VAR_defender_possessive VAR_defender_FGtype led invasion force!\\From the few moments I saw (out pilot was heeding the advice of the VAR_aggressor_FG and getting out of there as fast as possible) the VAR_defender_dnicks were taken completely by surprise with somewhere near half of their fleet badly damaged before the VAR_aggressor_nicks forces had gone out of range.  Information on the outcome of the battle will be available later, when out pilot deems it safe to go investigating closer\\\\Daneel Aleki, GNN")]
+,"fleetbattle":	{"start" :	{"success" :	{"good"		: [(0.3,"all","The VAR_aggressor_FG Storms the VAR_defender_nickp:\\Moments ago out of the window of my pleasure yacht I witnessed one of the most impressive sights of my career.  The VAR_aggressor_FGtype Class VAR_aggressor_possessive ship VAR_aggressor_FG and support warped right into the middle of a large VAR_defender_possessive VAR_defender_FGtype led invasion force!\\From the few moments I saw (out pilot was heeding the advice of the VAR_aggressor_FG and getting out of there as fast as possible) the VAR_defender_dnicks were taken completely by surprise with somewhere near half of their fleet badly damaged before the VAR_aggressor_nicks forces had gone out of range.  Information on the outcome of the battle will be available later, when out pilot deems it safe to go investigating closer\\\\Daneel Aleki, GNN\\\\GNN -- \"Unlike other news networks, our employees are legally bound to report stories of importance no matter the cost.\"")]
 						,"bad"		: []
 						,"neutral"	: []
 						}
