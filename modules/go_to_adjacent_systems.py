@@ -4,6 +4,12 @@ import unit
 import Briefing
 import vsrandom
 import Director
+def formatSystemName(ship):
+    where=ship.rfind("/")
+    if (where!=-1):
+        ship=ship[where+1:]
+    return ship.capitalize()
+
 class go_to_adjacent_systems:  
     def InSystem(self):
         return self.arrivedsys
@@ -15,7 +21,10 @@ class go_to_adjacent_systems:
         return self.jumps
       
     def ChangeObjective(self,newind):
-        VS.setObjective(self.obj,"Jump to the system named %s" % (self.jumps[newind]))
+        if (self.jumps[-1]!=self.jumps[newind]):
+            VS.setObjective(self.obj,"Jump to %s enroute to %s." % (formatSystemName(self.jumps[newind]),formatSystemName(self.jumps[-1])))
+        else:
+            VS.setObjective(self.obj,"Jump to final system: %s." % (formatSystemName(self.jumps[-1])))
     
     def __init__ (self,you, numsystemsaway,jumps=(),preffaction=''):
         self.arrivedsys=0
@@ -37,7 +46,8 @@ class go_to_adjacent_systems:
             self.obj=VS.addObjective("")
             self.com=(1.0/float(len(self.jumps)))
             VS.setCompleteness(self.obj,0)
-            VS.setOwner(self.obj,self.you)
+            if (self.you):
+                VS.setOwner(self.obj,self.you)
             self.ChangeObjective(0)
         else:
             self.arrivedsys=1
@@ -45,11 +55,12 @@ class go_to_adjacent_systems:
     def Print(self,beginstr,midstr,endstr,fro,wait=0):
         msgply=universe.getMessagePlayer(self.you)
         if (len(self.jumps)>0):
-            VS.IOmessage(wait,fro,msgply,beginstr % (VS.getSystemFile()))
+            VS.IOmessage(wait,fro,msgply,beginstr % (formatSystemName(VS.getSystemFile())))
             for i in range(len(self.jumps)-1):
-                VS.IOmessage(wait,fro,msgply,midstr % (self.jumps[i]))
-            VS.IOmessage(wait,fro,msgply,endstr % (self.jumps[len(self.jumps)-1]))
-        
+                VS.IOmessage(wait,fro,msgply,midstr % (formatSystemName(self.jumps[i])))
+            VS.IOmessage(wait,fro,msgply,endstr % (formatSystemName(self.jumps[len(self.jumps)-1])))
+    def HaveArrived(self):
+        return self.arrivedsys       
     def Execute (self):
         cursys=VS.getSystemFile()
         if (cursys in self.jumps):

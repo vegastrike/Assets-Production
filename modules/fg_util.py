@@ -60,7 +60,7 @@ def ReadBaseNameList(faction):
                     global genericalphabet
                     bnl=genericalphabet
     for i in range(len(bnl)):
-        bnl[i]=bnl[i].rstrip()
+        bnl[i]=bnl[i].rstrip()#.decode('utf8','ignore')
     import vsrandom
     vsrandom.shuffle(bnl)
     return bnl
@@ -98,13 +98,12 @@ origfgoffset=0
 def TweakFGNames (origfgnames):
     global origfgoffset
     tweaker=str(origfgoffset)
-    tweaktuple = ('prime','alpha','aleph','arc','beta','quadratis','zeta')
+    tweaktuple = ('Squadron','Prime','Arc','Alpha','Aleph','Beta','Quadratis','Zeta','X','Plus','Blade','Delta','Dash','Xprime','Gamma','Hydris','Dual','Tri','Quad','Penta','Hex','Octo','Deca','Octate')
     if (origfgoffset<len(tweaktuple)):
         tweaker = tweaktuple[origfgoffset]
     rez=[]
     for i in origfgnames:
         rez.append (i+'_'+tweaker)
-    origfgoffset+=1
     return rez
             
 def WriteStringList(cp,key,tup):
@@ -190,6 +189,10 @@ def _AddFGToSystem (fgname,faction,starsystem):
         st=Director.getSaveString (ccp,key,index)
         if (len(st)>0):
             st+='|'
+        try:
+            test=st+fgname
+        except:
+            fgname=fgname.decode('utf8','ignore')
         Director.putSaveString(ccp,key,index,st+fgname)
     else:
         for i in range (leg,index):
@@ -323,7 +326,9 @@ def AddShipsToFG (fgname,faction,typenumbertuple,starsystem):
         WriteStringList(ccp,key,_MakeFGString( starsystem,typenumbertuple) )
         _AddFGToSystem (fgname,faction,starsystem)
         _AddFGToFactionList (fgname,faction)
+        #print 'adding new fg '+fgname+" of "+str(typenumbertuple)+" to "+starsystem
     else:
+        #print 'adding old fg '+fgname+" of "+str(typenumbertuple)+" to "+FGSystem(fgname,faction)
         for tn in typenumbertuple:
             _AddShipToKnownFG(key,tn)
 
@@ -545,8 +550,21 @@ def launchBases(sys):
     shipcount=zeros(len(sig_units)) 
     for fg in fgs:
         launchBase(fg[0],fg[1],fac,sys,sig_units,shipcount)
-def GetShipsInFG(fgname,faction):
+
+def DefaultNumShips():
     import vsrandom
+    diff=VS.GetDifficulty()
+    if (diff>.9):
+       return vsrandom.randrange(1,5)
+    if (diff>.5):
+       return vsrandom.randrange(1,4)
+    if (diff>.2):
+       return vsrandom.randrange(1,3)
+    if (vsrandom.randrange(0,4)==0):
+       return 2
+    return 1
+
+def GetShipsInFG(fgname,faction):
     ships = ReadStringList (ccp,MakeFGKey(fgname,faction))
     if (len(ships)<=ShipListOffset()):
         return []
@@ -554,7 +572,7 @@ def GetShipsInFG(fgname,faction):
         count=int(ships[0])
     except:
         print 'bad flightgroup record '+ships
-    launchnum = vsrandom.randrange(1,6)
+    launchnum = DefaultNumShips()
     if (launchnum>count):
         launchnum=count
     ret = []

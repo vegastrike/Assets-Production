@@ -23,7 +23,6 @@ b=1
 #from fixers import Fixer
 
 
-
 def getNewInfo(conversation, ref="Root"):
     """Returns two strings, the first is the text for the node, the second is
     the choices."""

@@ -746,6 +746,24 @@
 		<edge index="12"/>
 		<edge index="9"/>
 	</node>	
+	<node text="And I sent another one off to the netherworld!" relationship="-.0625">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>
+	<node text="Your end is near!" relationship="-.125">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>
+	<node text="While you may have the advantage now, the battle is mine!" relationship="-.125">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>	
 	<node text="*hit*" relationship="-.1">
 		<edge index="18"/>
 		<edge index="58"/>

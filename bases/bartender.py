@@ -260,7 +260,7 @@ tender={"general":("Hey, pal. What'll it be?",
 			                    )
 			             }
 
-             
+speaktimes=0             
 def GetDefaultBartenderText():
     txt =tender.get("general")
     if (not txt):

@@ -25,13 +25,13 @@
         </flightgroups>
 	<python>
 from privateer import privateer
-my_obj=privateer(20000,40000,500,3,2,.6,.25,.1,400000,2000)
+my_obj=privateer(8000,40000,500,3,2,.6,.25,.1,400000,2000)
 	</python>
 <!--	<module name="director">
 		<import name="privateer"/>
 		<script name="initgame">
 			<exec module="privateer" name="init">
-			<const type="float" value="20000.0"/><!-- significant distance-->
+			<const type="float" value="8000.0"/><!-- significant distance-->
 			<const type="float" value="40000.0"/><!-- detection distance-->
 			<const type="float" value="500.0"/><!-- generation distance -->
 			<const type="int" value="3"/> <!-- min ships -->

@@ -62,7 +62,8 @@ class bounty (Director.Mission):
         if (terminate):
             print "lose bounty mission"
             VS.terminateMission(0)
-          
+    def LaunchedEnemies(self,significant):
+	pass       
     def Execute (self):
         isSig=0
         if (self.you.isNull()):
@@ -105,13 +106,15 @@ class bounty (Director.Mission):
                     L.num=1+self.difficulty
                     L.minradius=3000.0
                     L.maxradius = 4000.0
+                    try:
+                        L.minradius*=faction_ships.launch_distance_factor
+                        L.maxradius*=faction_ships.launch_distance_factor
+                    except:
+                        pass
                     self.enemy=L.launch(significant)
                     self.you.SetTarget(self.enemy)
-                    for i in range(len(self.greetingText)):
-                        fromname="Comm"
-                        if (i==0):
-                            fromname=self.enemy.getFlightgroupName()+":"+self.enemy.getName()
-                        VS.IOmessage (i*4,fromname,self.mplay,self.greetingText[i])
+                    import universe
+                    universe.greet(self.greetingText,self.enemy,self.you)
                     self.obj=VS.addObjective("Destroy the %s ship." % (self.enemy.getName ()))
                     if (self.enemy):
                         if (self.runaway):
@@ -119,6 +122,7 @@ class bounty (Director.Mission):
                             self.enemy.ActivateJumpDrive(0)
                             self.firsttime=VS.GetGameTime()
                             #self.enemy.SetPosAndCumPos(Vector.Add(self.you.Position(),Vector.Vector(0,0,self.you.rSize()*1.2)))
+                        self.LaunchedEnemies(significant)
                         self.arrived=2
                     else:
                         print "enemy null"
@@ -138,7 +142,7 @@ class bounty (Director.Mission):
                 if (self.runaway):        #ADD OTHER JUMPING IF STATEMENT CODE HERE
                     VS.IOmessage (4,"bounty mission",self.mplay,"Target is fleeing to the jump point!")
                     VS.IOmessage (5,"bounty mission",self.mplay,"Target Destination appears to be %s" % (localdestination))
-                elif (self.displayLocation!=0):
+                elif (self.displayLocation):
                     VS.IOmessage (4,"bounty mission",self.mplay,"Scanners detect bounty target!")
                     VS.IOmessage (5,"bounty mission",self.mplay,"Coordinates appear near %s" % (localdestination))
                 else:            

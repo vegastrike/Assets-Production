@@ -26,7 +26,7 @@
 	<Eject file="eject.spr"/>
 <!--	<LeftVDU TextRows="15" TextCols="25" type="Shield  Manifest" file="wvdu.spr" xcent="-.47" ycent="-.75"/>-->
 	<VDU TextRows="30" TextCols="25" type="Weapon Manifest Damage" file="wvdu.spr" xcent="-.8" ycent=".2"/>	
-	<VDU  TextRows="15" TextCols="25" type="Comm View TargetManifest Nav Target" file ="rvdu.spr" xcent=".775" ycent="-.75"/>
+	<VDU  TextRows="15" TextCols="25" type="Target Comm View TargetManifest Nav" file ="rvdu.spr" xcent=".775" ycent="-.75"/>
 	<VDU TextRows="15" TextCols="25" type="Shield  Manifest" file="lvdu.spr" xcent="-.775" ycent="-.75"/>
 	<VDU TextRows="14" TextCols="100" type="Message" file="mvdu.spr"/>
 	<VDU TextRows="30" TextCols="30" type="Objectives" file="objvdu.spr"/>

@@ -8,8 +8,8 @@ import dj_lib
 def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=1):
 #  print 'log'+ str( logo) + ' useani '+ str(useani)
     diff=usingDifficulty()
-    if useani:
-        VS.playAnimation ("warp.ani",vec,300.0)
+#    if useani:
+#        VS.playAnimation ("warp.ani",vec,300.0)
     if (not diff or (type.find(".blank")==-1)):
         ret = VS.launch (fgname,type,faction,"unit",ai,nr_ships,nr_waves,VS.SafeEntrancePoint (vec,40),logo)
         dj_lib.PlayMusik(0,dj_lib.HOSTILE_NEWLAUNCH_DISTANCE)
@@ -102,6 +102,7 @@ class Launch:
         self._nr_ships=0
         self.pos=(0,0,0)
         self.fgappend=''
+        self.forcetype=False;
         self.capitalp=0
     def Preprocess (self):
         self._preprocess=1
@@ -131,6 +132,9 @@ class Launch:
                 self.type=faction_ships.getRandomFighterInt(faction_ships.factionToInt(self.faction))
                 self.fg = self.dynfg        
                 self.dynfg=''
+            if self.forcetype and len(self._dyn_nr_ships)==0 and self.type!='':
+                self._dyn_nr_ships=[(self.type,1)]
+                knum=1
             for i in tn:
                 if (knum>=self.num):
                     break

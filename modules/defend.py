@@ -77,7 +77,7 @@ class defend (Director.Mission):
 
         un= self.attackers[self.ship_check_count]
         self.ship_check_count+=1
-        if (un.isNull()):
+        if (un.isNull() or (un.GetHullPercent()<.7 and self.defendee.getDistance(un)>7000)):
             return 0
         else:
             VS.setObjective(self.objective,"Destroy the %s"%un.getName())
@@ -85,18 +85,11 @@ class defend (Director.Mission):
         return 0
         
     def GenerateEnemies (self,jp,you):
-        if (self.respawn==0):
-            self.respawn=1
-            for i in range(len(self.greetingText)):                
-                VS.IOmessage(i*3,"%s vessel"%self.faction,self.mplay,self.greetingText[i])
-        else:
-            VS.IOmessage (0,"defend",self.mplay,"Eliminate all %s ships here" % self.faction)
-        if (self.defend):
-            VS.IOmessage (0,"defend",self.mplay,"[Computer] You must protect the %s %s." % (jp.getFullname(),jp.getName ()))
+        VS.IOmessage (0,"escort mission",self.mplay,"You must protect %s." % jp.getName ())
         count=0
-        VS.addObjective ("Protect %s %s from %s" % (jp.getFullname(), jp.getName(),self.faction))
+        VS.addObjective ("Protect %s %s from %s" % (jp.getFullname(), jp.getName(),self.faction.capitalize()))
         self.objective = VS.addObjective ("Destroy All %s Hostiles" % self.faction)
-        VS.setCompleteness(self.objective,-1.0)
+        VS.setCompleteness(self.objective,0.0)
         print "quantity "+str(self.quantity)
         while (count<self.quantity):
             L = launch.Launch()
@@ -106,11 +99,15 @@ class defend (Director.Mission):
             else:
                 L.type=self.dynatktype
             L.ai="default";L.num=1;L.minradius=2000.0;L.maxradius=4500.0
+            try:
+                L.minradius*=faction_ships.launch_distance_factor
+                L.maxradius*=faction_ships.launch_distance_factor
+            except:
+                pass
             L.faction=self.faction
             launched=L.launch(you)
             if (count==0):              
                 self.you.SetTarget(launched)            
-
             if (self.defend):
                 launched.SetTarget (jp)
             else:
@@ -119,6 +116,13 @@ class defend (Director.Mission):
                 launched.setFgDirective('B')
             self.attackers += [ launched ]
             count+=1
+        if (self.respawn==0 and len(self.attackers)>0):
+            self.respawn=1
+            import universe
+            universe.greet(self.greetingText,self.attackers[0],you);
+        else:
+            VS.IOmessage (0,"escort mission",self.mplay,"Eliminate all %s ships here" % self.faction)
+
         self.quantity=0
     def Execute (self):
         if (self.you.isNull() or (self.arrived and self.defendee.isNull())):
@@ -135,7 +139,7 @@ class defend (Director.Mission):
                 tempfaction=self.protectivefaction
                 if (tempfaction==''):
                     tempfaction = faction_ships.get_enemy_of(self.faction)
-            self.adjsys=go_somewhere_significant (self.you,self.defend,self.distance_from_base,self.defend or self.defend_base,tempfaction,self.dyndeffg)
+            self.adjsys=go_somewhere_significant (self.you,self.defend_base or self.defend,self.distance_from_base,self.defend,tempfaction,self.dyndeffg,1,not self.defend_base)
             self.adjsys.Print ("You must visit the %s","defend","near the %s", 0)
             self.defendee=self.adjsys.SignificantUnit()
         else:

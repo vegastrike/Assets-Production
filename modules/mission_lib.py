@@ -8,7 +8,6 @@ import escort_mission
 import vsrandom
 import universe
 import faction_ships
-import Base
 import VS
 last_constructor={}
 saved_args = (1,1,1,1,)#nice patrol args
@@ -20,22 +19,52 @@ lastMission=None
 def SetLastMission(which):
 	global lastMission
 	lastMission=str(which)
+	print 'set last mission to "'+str(which)+'"'
 
 def LoadLastMission():
 	global lastMission
 	which=lastMission
 	if which in last_constructor and which in last_args:
 		if last_constructor[which]==None:
-			exec last_args[which]
+			if type(last_args[which])==str:
+				VS.LoadMissionScript(last_args[which])
+			else:
+				VS.LoadMissionScript(repr(last_args[which])+"()")
 		else:
-			apply (last_constructor[which],last_args[which])
+			cons=last_constructor[which]
+			if type(cons)!=str:
+				cons=cons.__name__			
+			if type(last_args[which])==str:
+				VS.LoadMissionScript('#\nimport '+cons+'\n'+cons+'.'+cons+last_args[which])
+			else:
+				VS.LoadMissionScript('#\nimport '+cons+'\n'+cons+'.'+cons+repr(last_args[which]))
+		del last_args[which]
+		del last_constructor[which]
+	else:
+		print 'No last mission with name "'+str(which)+'"'
+	if which in last_briefing[0]:
+		del last_briefing[0][which]
+	if which in last_briefing[1]:
+		del last_briefing[1][which]
 	lastMission=None
-def BriefLastMission(which,first):
+
+def BriefLastMission(which,first,textbox=None):
+	import Base
 	which=str(which)
 	if first<0 or first>=len(last_briefing):
 		return
 	if (which in last_briefing[first]):
-		Base.Message (last_briefing[first][which])
+		if textbox:
+			Base.SetTextBoxText(Base.GetCurRoom(),textbox, last_briefing[first][which])
+		else:
+			Base.Message (last_briefing[first][which])
+
+def AddNewMission(which,args,constructor=None,briefing0='',briefing1=''):
+	which=str(which)
+	last_constructor[which]=constructor
+	last_args[which]=args
+	last_briefing[0][which]=briefing0
+	last_briefing[1][which]=briefing1
 
 def Jumplist (jumps):
 	if not len(jumps):
@@ -68,12 +97,19 @@ def CreateRandomMission(whichnum):
 an array as the which element. Returns the sprite file and text"""
 	which=str(whichnum)
 	missiontype = vsrandom.random();
+	fac = VS.GetGalaxyFaction(VS.getSystemFile())
+	if fac=="pirates":
+		if (missiontype>.5):
+			return ()
+		missiontype*=.2;
+	elif (VS.GetRelation(fac,"pirates")<-.8 and missiontype<.1):
+		missiontype=.1+.9*missiontype
 	plr=VS.getPlayer().isPlayerStarship()
-	while (len (last_constructor)<=whichnum):
-		last_constructor[which]=(patrol.patrol)
-		last_args[which]=(saved_args)
-		last_briefing[0][which]=('ERROR in mission_lib.py.')
-		last_briefing[1][which]=('ERROR in mission_lib.py.')
+#	while (len (last_constructor)<=whichnum):
+#		last_constructor[which]=(patrol.patrol)
+#		last_args[which]=(saved_args)
+#		last_briefing[0][which]=('ERROR in mission_lib.py.')
+#		last_briefing[1][which]=('ERROR in mission_lib.py.')
 	if (missiontype<.05):
 		return MakePlunder(which)
 	elif (missiontype<.1):####CONTRABAND
@@ -84,6 +120,8 @@ an array as the which element. Returns the sprite file and text"""
 			script=Director.getSaveString(plr,"mission_scripts",indx)
 			if script.find("#F#")!=-1:
 				goodlist.append(indx)
+		goodlist.sort()
+		goodlist.reverse()
 		if len(goodlist):
 			i=goodlist[vsrandom.randrange(len(goodlist))]
 			script=Director.getSaveString(plr,"mission_scripts",i)
@@ -138,6 +176,8 @@ def CreateGuildMissions(guildname,nummissions,accepttypes):
 		last_briefing[0][which]=desc
 		last_briefing[1][which]=''
 		goodlist.pop(goodi)
+	delit.sort()
+	delit.reverse()
 	for i in delit:
 		Director.eraseSaveString(plr,"misson_scripts",i)
 		Director.eraseSaveString(plr,"misson_descriptions",i)

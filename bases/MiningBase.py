@@ -1,6 +1,10 @@
-import unit_lib
+import Base
+import dynamic_mission
 import VS
-plist=VS.musicAddList('unit.m3u')
-VS.musicPlayList(plist)    
 
-(room1, room2, bar, weap) = unit_lib.MakeUnit ('bases/bartender_mining.py')
+weap=-1
+room0=-1
+plist=VS.musicAddList('unit.m3u')
+VS.musicPlayList(plist)
+import mining_lib
+mining_lib.MakeMining(True,True)

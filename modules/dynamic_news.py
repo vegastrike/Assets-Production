@@ -2,6 +2,7 @@
 import VS
 import vsrandom
 import string
+import stardate
 
 class SystemInformation:
 
@@ -49,7 +50,12 @@ class NewsTranslator:
         try:
             return self.vars[var][tag]
         except:
-            results = self.dynamic_data.getFactionData(self.vars[var]['faction'], tag)
+            try:
+                results = self.dynamic_data.getFactionData(self.vars[var]['faction'], tag)
+            except:
+                st = 'ERROR_%s_%s'%(var,tag)#this is in case there is a typo like 'docketat'
+                print st
+                results=['ERROR_%s_%s'%(var,tag)]
             return results[self.rand_int % len(results)]
 
     def translateWord(self, word):
@@ -95,7 +101,7 @@ class NewsTranslator:
         self.vars['system'] = syste_
         for i in range(len(self.item)):
             self.item[i] = self.translateWord(self.item[i])
-        return string.join(self.item) + self.STARDATE_TEXT + str(self.vars['stardate']['value'])
+        return string.join(self.item) + self.STARDATE_TEXT + stardate.formatStarDate(self.vars['dockedat']['faction'],self.vars['stardate']['value'])
 
     def formatText(self, text, punc=[' ' , '_' , '.'], capitalise=True):
         for pun in punc:
@@ -107,7 +113,6 @@ class NewsTranslator:
                     tex[i] = tex[i].capitalize()
             text = string.join(tex)
         return text
-
 
 class DynamicNewsData:
 
@@ -299,7 +304,7 @@ class NewsManager:
             elif success == self.SUCCESS_DRAW:
                 return self.POV_BAD
         else:
-            print "ERROR:  VS is returning crap for relationship numbers"
+            print "ERROR:  VS is returning -0 for relationship relatagg number"
             return self.POV_NEUTRAL
 
     def sTovarlist(self, s):
@@ -361,7 +366,7 @@ class NewsManager:
     def writeDynamicString(self, varlist):
         """Stores a news story list into the \"dynamic news\"
         key in the save game."""
-        print 'Dynamic news Event'
+#        print 'Dynamic news Event'
         varlist = string.join([str(vsrandom.randrange(0,4194304))]+varlist,',')
         import Director        
         Director.pushSaveString(0,"dynamic_news",varlist)

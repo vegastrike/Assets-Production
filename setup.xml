@@ -1,0 +1,83 @@
+<?xml version="1.0" standalone="yes"?>
+<install product="vegastrike" desc="Vegastrike Space Simulator" version="0.4.3" uninstall="uninstall.sh" binarypath="/usr/local/bin"
+         promptbinaries="no" express="no" splashpos="top" superuser="yes">
+  <eula>
+   COPYING
+  </eula>
+  <readme>
+   README
+  </readme>
+  <install_drop_list>
+    /usr/local/games /usr/share/local /usr/local/share 
+    /usr/share /usr/games /opt/share /usr/local
+  </install_drop_list>
+  <component name="Default" version="0.4.3" default="yes">
+
+    <option required="true">
+      Vegastrike Binaries
+      <help>Required to play Vegastrike, or any compatible mod.</help>
+      <binary arch="x86" symlink="vegastrike" play="no">
+        vegastrike
+      </binary>
+      <binary arch="x86" symlink="soundserver" play="no">
+        soundserver
+      </binary>
+
+      <option>
+        Vegastrike Data (the Vegastrike Universe)
+        <help>Required to play Vegastrike.</help>
+        <binary symlink="play_vs" icon="vegastrike.xpm" name="Vegastrike" play="no">
+          play_vs
+        </binary>
+        <binary arch="x86" symlink="vslauncher" play="no">
+          vslauncher
+        </binary>
+        <binary arch="x86" symlink="vssetup" play="no">
+          setup
+        </binary>
+        <files>
+          data4.x/.vegastrike/*
+          data4.x/ai/*
+          data4.x/animations/*
+          data4.x/bases/*
+          data4.x/cockpits/*
+          data4.x/communications/*
+          data4.x/documentation/*
+          data4.x/history/*
+          data4.x/meshes/*
+          data4.x/mission/*
+          data4.x/modules/*
+          data4.x/sectors/*
+          data4.x/sounds/*
+          data4.x/sprites/*
+          data4.x/stats/*
+          data4.x/textures/*
+          data4.x/units/*
+          data4.x/universe/*
+          data4.x/Version.txt
+          data4.x/cursor1.cur
+          data4.x/factions.xml
+          data4.x/master_part_list.csv
+          data4.x/setup.config
+          data4.x/vegastrike.config
+          data4.x/weapon_list.xml
+          vegastrike.xpm
+        </files>
+
+          <option>
+            Music
+            <help>Melodies to set the mood.</help>
+            <files>
+              data4.x/music/*
+            </files>
+            <script message="Installing Music">
+                cp $SETUP_INSTALLPATH/soundserver $SETUP_INSTALLPATH/data4.x/
+            </script>
+          </option>
+
+      </option>
+
+    </option>
+
+  </component>
+</install>

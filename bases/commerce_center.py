@@ -23,7 +23,7 @@ Base.Link (room0, 'Conc', -0.453125, -0.291667, 0.767578, 0.770833, 'Main Concou
 
 Base.Comp (room1, 'missioncomp', 0.2775, -0.28, 0.7175, 0.503333, 'Mission Computer', 'Missions News')
 Base.Link (room1, 'Conc', -0.9975, -0.996667, 1.9925, 0.373333, 'Main Concourse', room2)
-fixers.CreateFixers(room1,[(-.9, -0.293333, 0.4, 0.4)])
+fixers.CreateFixers(room1,[(-.9, -0.61, 0.25, 0.667)])
 
 Base.Link (room2, 'launchplat', -1, -0.993333, 1.9875, 0.363333, 'Landing Platform', room0)
 Base.Comp (room2, 'buysell', -0.0625, -0.62, 0.7575, 0.3, 'Cargo Computer', 'Cargo')
@@ -31,5 +31,6 @@ Base.Link (room2, 'mall', -0.6675, -0.623333, 0.2375, 0.28, 'Shopping Mall', roo
 Base.Link (room2, 'mission', -0.8925, -0.34, 1.89, 0.446667, 'Mission Room', room1)
 
 Base.Link (room3, 'Conc', -0.7025, -0.756667, 0.3375, 1.75667, 'Main Concourse', room2)
+Base.Link (room3, 'Conc', -1 ,-0.98,  2, .045667, 'Main Concourse', room2)
 Base.Comp (room3, 'upg', -0.3625, -0.726667, 0.2925, 1.72, 'Upgrade Ship', 'Upgrade Info')
 Base.Comp (room3, 'shd', 0.06, -0.68, 0.345, 0.74, 'Ship Dealer', 'ShipDealer')

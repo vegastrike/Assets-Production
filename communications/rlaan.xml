@@ -743,6 +743,24 @@
 		<edge index="12"/>
 		<edge index="9"/>
 	</node>	
+	<node text="Enemy target destroyed!" relationship="-.0625">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>
+	<node text="You are battered! Surrender now!" relationship="-.125">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>
+	<node text="I am damaged, yet undefeated!" relationship="-.125">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>	
 	<node text="*hit*" relationship="-.1">
 		<edge index="18"/>
 		<edge index="58"/>

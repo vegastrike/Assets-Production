@@ -1,13 +1,12 @@
 import VS
 def isLandable (un):
-    unit_fgid = un.getFlightgroupName()
-    retval = (((un.isPlanet ()) and (not un.isSun()) and (not un.isJumppoint())) or unit_fgid=="Base")
-    return retval
+    if (un):
+        return un.isDockableUnit()
 
 def isBase (un):
     unit_fgid = un.getFlightgroupName()
     retval = unit_fgid=="Base"
-    return retval
+    return retval and not un.isSun()
 
 def findPlayerNum (un):
     for i in range (VS.getNumPlayers()):
@@ -19,6 +18,16 @@ def isAsteroid (un):
     unit_fgid = un.getFlightgroupName()
     retval = unit_fgid=="Asteroid"
     return retval
+
+
+def getUnitFullName(un):
+    thename=(un.getName())
+    fg=un.getFlightgroupName()
+    if fg=='Base':
+        thename=un.getFullname()+' '+thename.replace('_',' ')
+    elif fg!='Shadow' and fg!='':
+        thename=thename+' in the '+fg+' flightgroup'            
+    return thename
 
 def getSignificant (whichsignificant, landable_only, capship_only):
     import vsrandom

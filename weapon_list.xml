@@ -255,6 +255,17 @@
 </Appearance>
 </Bolt>
 
+<Bolt name="LR_Disruptor" mountsize="heavy" > 
+<Energy rate="40" stability="6" refire=".35" >
+</Energy>
+<Damage rate="25" longrange="1" >
+</Damage>
+<Distance speed="1600" radialspeed=".8" radius=".8" length="8" pulsespeed="15" range="8210" >
+</Distance>
+<Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r=".8" g="1" b=".8" a=".9" >
+</Appearance>
+</Bolt>
+
 <Bolt name="Ion" mountsize="medium"> 
 <Energy rate="16"  refire=".65">
 </Energy>
@@ -674,22 +685,22 @@
 </Beam>
 
 <Ball name="Flak" mountsize="capship-light" > 
-<Energy rate="250" stability="6" refire="2" >
+<Energy rate="40" stability="6" refire=".25" >
 </Energy>
-<Damage rate="100" longrange="1" >
+<Damage rate="4" longrange="1" >
 </Damage>
-<Distance speed="900" radialspeed=".8" radius="3"  pulsespeed="15" range="7500" >
+<Distance speed="3000" radialspeed=".8" radius="1"  pulsespeed="15" range="10000" >
 </Distance>
 <Appearance file="explosion_orange.ani" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Ball>
 
 <Ball name="HeavyFlak" mountsize="capship-medium"> 
-<Energy rate="350" stability="6" refire="3">
+<Energy rate="350" stability="6" refire=".33">
 </Energy>
-<Damage rate="120" longrange="1">
+<Damage rate="220" longrange="1">
 </Damage>
-<Distance speed="950" radialspeed=".8" radius="5"  pulsespeed="15" range="12500" >
+<Distance speed="3500" radialspeed=".8" radius="5"  pulsespeed="15" range="12500" >
 </Distance>
 <Appearance file="explosion_orange.ani" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
 </Appearance>
@@ -809,9 +820,9 @@
 <Missile name="CapshipMissile" mountsize="heavy-capship-missile">
 <Energy rate="0" stability="6" refire="40" locktime="5">
 </Energy>
-<Damage rate="10000000" phasedamage="10000" longrange="1" radius="1500" radialspeed="18000" >
+<Damage rate="10000000000" phasedamage="1000000" longrange="1" radius="100" radialspeed="1000000" >
 </Damage>
-<Distance speed="1000" pulsespeed="256" range="800000" detonationrange="300" volume="2600" >
+<Distance speed="1000" pulsespeed="256" range="8000000" detonationrange="100" volume="2600" >
 </Distance>
 <Appearance file="capshipmissile" >
 </Appearance>
@@ -967,7 +978,7 @@
 <Bolt name="Sanitizer" mountsize="capship-heavy"> 
 <Energy rate="250" stability="6" refire="0.25">
 </Energy>
-<Damage rate="100" longrange="1">
+<Damage rate="150" longrange="1">
 </Damage>
 <Distance speed="8000" radialspeed=".8" radius="15" length="45" pulsespeed="15" range="160000" >
 </Distance>

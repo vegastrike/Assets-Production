@@ -8,4 +8,5 @@ if VS.numActiveMissions()>1:
 else:
 	mission_lib.SetLastMission(1);
 	mission_lib.BriefLastMission(1,1)
-	VS.LoadMission('internal_mission_lib.mission')
+	#VS.LoadMission('internal_mission_lib.mission')
+	mission_lib.LoadLastMission()

@@ -48,6 +48,7 @@ class escort_mission (Director.Mission):
             L.type = faction_ships.getRandomFighter("merchant")
         else:
             L.type = dyntype
+            L.forcetype=True
         L.dynfg = dynfg
         L.ai = "default"
         L.num=1
@@ -102,7 +103,7 @@ class escort_mission (Director.Mission):
             VS.IOmessage (0,"escort",self.mplay,"#00ff00Excellent work! You have completed this mission!")
             self.escortee.setFgDirective('b')
             self.escortee.setFlightgroupLeader(self.escortee)
-            self.escortee.performDockingOperations(self.adjsys.SignificantUnit())
+            self.escortee.performDockingOperations(self.adjsys.SignificantUnit(),0)
             self.adjsys.SignificantUnit().setCombatRole(self.role);
             if (self.var_to_set!=''):
                 quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,1)

@@ -14,7 +14,7 @@
 		<var name="savegame" value="explore_universe_difficulty" />
 	</variables>
         <flightgroups>
-                <flightgroup name="Shlimazel" faction="privateer" type="llama.begin" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="Shlimazel" faction="privateer" type="beholder" ainame="default" waves="1" nr_ships="1">
 			<pos x="-95124024.543917" y="412089916.256812" z="-110779667.398050"/>  
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
@@ -39,47 +39,47 @@
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="Agesipolis" faction="neutral" type="Vitik" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="Agesipolis" faction="neutral" type="vitik" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="60000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="Anaxidamus" faction="neutral" type="Yrilan" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="Anaxidamus" faction="neutral" type="yrilan" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="80000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="Areus" faction="neutral" type="Aevant" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="Areus" faction="neutral" type="aevant" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="100000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="Ariston" faction="neutral" type="Aelar" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="Ariston" faction="neutral" type="aelar" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="120000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="Ancestor" faction="neutral" type="Ancestor" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="Ancestor" faction="neutral" type="ancestor" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="140000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="Archimedes" faction="neutral" type="Archimedes" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="Archimedes" faction="neutral" type="archimedes" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="160000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="AeraAsteroidFighterBase" faction="Aera" type="asteroidfighterbase" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="AeraAsteroidFighterBase" faction="Aera" type="AsteroidFighterBase" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="180000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="ConfedAsteroidfighterbase" faction="confed" type="asteroidfighterbase" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="ConfedAsteroidfighterbase" faction="confed" type="AsteroidFighterBase" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="200000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="rlaanasteroidfighterbase" faction="rlaan" type="asteroidfighterbase" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="rlaanasteroidfighterbase" faction="rlaan" type="AsteroidFighterBase" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="220000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
@@ -219,22 +219,22 @@
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="aeraminingbase" faction="aera" type="miningbase" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="aeraminingbase" faction="aera" type="MiningBase" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="760000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="confedminingbase" faction="confed" type="miningbase" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="confedminingbase" faction="confed" type="MiningBase" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="780000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="pirateminingbase" faction="pirates" type="miningbase" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="pirateminingbase" faction="pirates" type="MiningBase" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="800000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<flightgroup name="rlaanminingbase" faction="rlaan" type="miningbase" ainame="borken.py" waves="1" nr_ships="1">
+<flightgroup name="rlaanminingbase" faction="rlaan" type="MiningBase" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="820000" y="-10000" z="0"/>
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
@@ -369,38 +369,15 @@
 		    <rot x="180" y="180" z="180"/>
 </flightgroup>
 
-<!-- end pre-cache -->
+<!--end pre-cache -->
 
 
 
 
         </flightgroups>
-	<python>
+<python>
 from privateer import privateer
 my_obj=privateer(20000,40000,500,3,2,.6,.25,.1,400000,2000)
-	</python>
-<!--	<module name="director">
-		<import name="privateer"/>
-		<script name="initgame">
-			<exec module="privateer" name="init">
-			<const type="float" value="20000.0"/><!-- significant distance-->
-			<const type="float" value="40000.0"/><!-- detection distance-->
-			<const type="float" value="500.0"/><!-- generation distance -->
-			<const type="int" value="3"/> <!-- min ships -->
-			<const type="int" value="2"/><!--gen ships-->
-			<const type="float" value="0.6"/><!--fighter prob-->
-			<const type="float" value="0.25"/><!--enemy prob-->
-			<const type="float" value="0.02"/><!--capship prob-->
-			<const type="float" value="400000.0"/><!--credits to maximize difficulty-->
-			<const type="float" value="2000.0"/><!--capship generation distance-->
-			</exec>
-		</script>
-		<script name="gameloop">
-			<exec module="privateer" name="loop"/>
-		</script>
-		<script name="initstarsystem">
-			<exec name="initstarsystem" module="privateer" />
-		</script>
+</python>
 
-	</module>-->
 </mission>

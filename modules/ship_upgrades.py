@@ -68,8 +68,13 @@ def getRandIncDec (type):
         type=5
     return type
 
+def GetShieldLevelZero(faces):
+    return "shield_%d"%faces
+
 def GetRandomShield (faces,type):#gets random shield system from master part list
     type = getRandIncDec (type)
+    if type == 0:
+        return GetShieldLevelZero(faces)
     cat="shield_%d_Level%d" % (faces,type)
     return cat
 
@@ -117,6 +122,14 @@ def UpgradeEngine (un, diff):
             cat = GetRandomShield (4,type)
             temp=un.upgrade (cat,0,0,1,0)
             print "Upgrading Shield4 %s percent %f" % (cat,temp)
+            return True
+    cat=GetShieldLevelZero(2)
+    temp = un.upgrade(cat,0,0,1,0)
+    print "Upgrading Shield2 level 0... percent="+str(temp)
+    cat=GetShieldLevelZero(4)
+    temp = un.upgrade(cat,0,0,1,0)
+    print "Upgrading Shield4 level 0... percent="+str(temp)
+    return False
 
 def GetRandomHull ():
     item=getItem("upgrades/Hull_Upgrades")
@@ -213,7 +226,7 @@ def upgradeUnit (un, diff):
             else:
                 mycargo=GetRandomAmmo()
             cont = mycargo.GetContent()
-            if (cont.find('tractor')==-1 and cont.find('repulsor')==-1):
+            if (cont.find('tractor')==-1 and cont.find('repulsor')==-1 and cont.find("steltek_gun")==-1):
                 creds =upgradeHelper (un,mycargo,curmount,creds,0,1)#we pass this in to the credits...and we only loop through all mounts if we're adding a weapon
                 break
         curmount+=1#increase starting mounts hardpoint

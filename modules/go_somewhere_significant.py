@@ -6,6 +6,16 @@ import vsrandom
 import launch
 import Briefing
 import launch_recycle
+def moveUnitTo(un,place,radius):
+    where=place.LocalPosition()
+    print "moving "+un.getName() +" to "+place.getName()
+    prsize=place.rSize();
+    prp = VS.getPlanetRadiusPercent()
+    if (place.isPlanet()):
+        prsize*=1+prp
+    where=(where[0]+un.rSize()+prsize+radius,where[1],where[2]);
+    un.SetPosition(VS.SafeEntrancePoint(where,un.rSize()))
+    return un
 class go_somewhere_significant:
 #  frameoffset=0 #see note at bottom
 #  begsigdis=1.0 #same note
@@ -14,8 +24,11 @@ class go_somewhere_significant:
 
     def SignificantUnit(self):
         return self.significantun
-
-    def __init__ (self,you, landable_only, distance_away_to_trigger,base_only=0,capshipfaction="", dyn_fg="", showObjective=1):
+    
+    def getSignificantFullName(self):
+        return unit.getUnitFullName(self.significantun)
+    
+    def __init__ (self,you, landable_only, distance_away_to_trigger,base_only=0,capshipfaction="", dyn_fg="", showObjective=1, forcestarship=0):
         self.obj=0
         self.showObjective=showObjective
         self.orbitee=""
@@ -24,21 +37,72 @@ class go_somewhere_significant:
         self.arrivedarea=0
         self.distfrombase=distance_away_to_trigger
         significant=VS.Unit()
+        aroundthe=""
         self.sysfil=VS.getSystemFile()
         if (landable_only or base_only):
             randint=vsrandom.randrange(0,128)
-            significant = unit.getSignificant (randint,landable_only,base_only)
-            if (capshipfaction!=""):
-                newship=faction_ships.getRandomCapitol(capshipfaction)
+            lim=1
+            if landable_only and not base_only:
+                lim=10
+            for i in range(lim):
+                significant = unit.getSignificant (randint,landable_only,base_only)
+                
+                if significant.isPlanet():
+                    break
+                else:
+                    randint+=1
+            if (landable_only and not unit.isLandable(significant)) or forcestarship:
+                self.capship=1
+                if (capshipfaction==""):
+                    capshipfaction="merchant"
+            if (self.capship and capshipfaction!=""):
                 if (significant.isNull()):
                     significant=you
                 self.orbitee="%s" % (significant.getName())
                 self.capship=1
                 print "orbitee %s " % self.orbitee
                 if (dyn_fg==""):
-                    significant=launch.launch_wave_around_unit("Base",capshipfaction,newship,"sitting_duck",1,2000.0,5000.0,significant,"")
+                    newship=faction_ships.getRandomCapitol(capshipfaction)
+                    testun=VS.getUnit(0)
+                    itt=1
+                    found=False
+                    near=2000.0
+                    far=5000.0
+                    try:
+                        near*=faction_ships.launch_distance_factor
+                        far*=faction_ships.launch_distance_factor
+                    except:
+                        pass
+
+                    while(testun):
+                        if testun.getFactionName()==capshipfaction and faction_ships.isCapital(testun.getName()):
+                           significant=moveUnitTo(testun,significant,near)
+                           found=True
+                           break
+                        testun=VS.getUnit(itt)
+                        itt+=1
+                    if (not found):
+                        significant=launch.launch_wave_around_unit("Base",capshipfaction,newship,"sitting_duck",1,near,far,significant,"")
                 else:
-                    significant=launch_recycle.launch_dockable_around_unit(dyn_fg,capshipfaction,"sitting_duck",5000,significant,20000)
+                    near=5000.0
+                    try:
+                        near*=faction_ships.launch_distance_factor
+                    except:
+                        pass
+                    found=False
+                    aroundthe=" near "+unit.getUnitFullName(significant);
+                    testun=VS.getUnit(0)
+                    itt=1
+                    while(testun):
+                        if testun.getFactionName()==capshipfaction and faction_ships.isCapital(testun.getName()):
+                           significant=moveUnitTo(testun,significant,near)
+                           found=True
+                           break
+                        testun=VS.getUnit(itt)
+                        itt+=1
+                    if (not found):
+                        significant=launch_recycle.launch_dockable_around_unit(dyn_fg,capshipfaction,"sitting_duck",near,significant,4*near,'','Base')
+                    significant.setFullname(dyn_fg)
         else:
             significant = universe.getRandomJumppoint ()
         if (significant.isNull()):
@@ -47,20 +111,21 @@ class go_somewhere_significant:
         else:
             self.significantun=significant
             if (self.showObjective):
-                self.obj=VS.addObjective("You must visit the %s" % (significant.getName ()))
+                self.obj=VS.addObjective("You must visit the %s%s" % (self.getSignificantFullName (),aroundthe))
                 VS.setOwner(self.obj,VS.getPlayer())
 #      self.begsigdis=self.you.getSignificantDistance(self.significantun) #see note below
 
     def Print(self,visitstr,fro,dockstr="\0%s",time=0):
         if (self.capship):
             visitstr+=(dockstr % (self.orbitee))
-        VS.IOmessage(time,fro,universe.getMessagePlayer(self.you),visitstr % (self.significantun.getName()))
+        thename=self.getSignificantFullName()
+        VS.IOmessage(time,fro,universe.getMessagePlayer(self.you),visitstr % (thename) )
     def DestinationSystem(self):
-        return self.sysfil
+        return self.significantun.getUnitSystemFile();
     def JumpPoints (self):
-        return (self.sysfile)
+        return self.DestinationSystem()
     def Execute(self):
-        if (self.significantun.isNull() or self.you.isNull() or VS.getSystemFile()!=self.sysfil):
+        if (self.significantun.isNull() or self.you.isNull() or VS.getSystemFile()!=self.DestinationSystem()):
             return 0
 #    self.frameoffset+=1 #see note below...
         sigdis=self.you.getSignificantDistance(self.significantun)

@@ -743,6 +743,25 @@
 		<edge index="12"/>
 		<edge index="9"/>
 	</node>	
+	<node text="And another loser cashes in his chips!" relationship="-.0625">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>
+	<node text="Pirate! Your ship is damaged, retreat or face the consequences." relationship="-.125">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>
+	<node text="Mayday! Merchant in need of assistance.  Anyone please respond!" relationship="-.125">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>	
+
 	<node text="*hit*" relationship="-.1">
 		<edge index="18"/>
 		<edge index="58"/>

@@ -19,15 +19,24 @@ def payCheck(playernum,savevalue,value,money):
         setSaveValue(playernum,savevalue,value+1)
 
 class Choice:
+	_number=0
 	def __init__(self,pics,actions,name):
 		self.pics=pics
 		self.name=name
+		self.index=name.replace('/','_')+'/'+str(Choice._number)
+		Choice._number+=1
 		self.actions=actions
-	def Draw(self,room,x,y,wid,hei):
-		Base.Texture(room,self.name,self.pics,x+(wid/2.),y+(wid/2.))
-		Base.Python(room,self.name,x,y,wid,hei,self.name,self.actions,1)
-		activelinks.append((room,self.name))
-		activeobjs.append((room,self.name))
+	def drawobjs(self,room,x,y,wid,hei):
+		Base.Texture(room,self.index,self.pics,x+(wid/2.),y+(wid/2.))
+		Base.Python(room,self.index,x,y,wid,hei,self.name,self.actions,1)
+		global activelinks
+		global activeobjs
+		activelinks.append((room,self.index))
+		print '*** add link: '+str((room,self.index))
+		print activelinks
+		activeobjs.append((room,self.index))
+		print '*** add obj: '+str((room,self.index))
+		print activeobjs
 class Fixer:
 	"""A class that draws nobody."""
 	def __init__(self,name,text,precondition,image,choices):
@@ -63,7 +72,7 @@ class CFixer(Fixer):
             self.image=self.image[:pos]
 
     def abletodraw(self):
-        print "Fixer can draw? -- " + str(self.conversation.canDraw())
+#        print "Fixer can draw? -- " + str(self.conversation.canDraw())
         return self.conversation.canDraw()
 
 class NoFixer (Fixer):
@@ -79,11 +88,15 @@ class NoFixer (Fixer):
 		"""Don't create the python script OR the texture, so trhe user won't notice :-)"""
 		pass
 
-def RandFixer (which):
+def RandFixer (room,which):
 	fixer=mission_lib.CreateRandomMission(which)
 	if fixer==():
 		return NoFixer()
 	return Fixer(fixer[1].split(' ')[-1].lower(),fixer[1],[],fixer[0],"bases/fixers/generic%d.py"%which)
+
+def getCampaignFixers (room):
+	import campaign_lib
+	return campaign_lib.getFixersToDisplay(room)
 
 fixers={"enigma_sector/niven":[
 	Fixer("explore","Talk to the Explorer",[("enigma_sector/enigma_nav",0)],"bases/fixers/militia.spr","bases/fixers/explore_enigma.py"),
@@ -179,10 +192,18 @@ def AppendFixer(name,fixer):
 	fixers[name]=fixer
 
 def DestroyActiveButtons ():
+	global activelinks
+	global activeobjs
 	for button in activelinks:
 		Base.EraseLink(button[0],button[1])
+		print '*** erase link: '+str(button)
+		print activelinks
 	for button in activeobjs:
 		Base.EraseObj(button[0],button[1])
+		print '*** erase obj: '+str(button)
+		print activeobjs
+	activeobjs=[]
+	activelinks=[]
 def CreateChoiceButtons (room,buttonlist,vert=0,spacing=.025,wid=.2,hei=.2):
 	x=0
 	if (vert):
@@ -193,48 +214,61 @@ def CreateChoiceButtons (room,buttonlist,vert=0,spacing=.025,wid=.2,hei=.2):
 		x=-(wid*len(buttonlist)+(len(buttonlist)-1)*spacing)/2.
 	print x,y
 	for button in buttonlist:
-		button.Draw(room,x,y,wid,hei)
+		print '*** draw: '+str(button.index)
+		button.drawobjs(room,x,y,wid,hei)
 		if (vert):
 			y-=(spacing+hei)
 		else:
 			x+=spacing+wid
-		
-def CreateFixers (room,locations):
-	fixerlist = getCFixers(VS.getPlayer().isPlayerStarship())
+
+global fixerloaded
+fixerloaded=0
+def CreateCampaignFixers (room,locations,j=0):
+	fixerlist = getCampaignFixers(room)
 	locfixers = fixers.get (VS.getSystemFile())
 	if locfixers:
 		fixerlist+=locfixers
-	j=0
 	if (fixerlist):
+		global fixerloaded
+		fixerloaded+=1
 		for i in range (len(fixerlist)):
-			if (j<len(locations) and fixerlist[i].abletodraw()):
+			if (j<len(locations) and fixerlist[i] and fixerlist[i].abletodraw()):
 				append=''
 				if len(locations[j])>4:
 					append=locations[j][4]
 				fixerlist[i].drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3],append)
 				j+=1
+	return j
+
+def CreateMissionFixers (room,locations,j=0):
 	rndnum=vsrandom.random()
-	if rndnum<.7 and j==0:
-		f=RandFixer(0)
-		if (j<len(locations)):
-			append=''
-			if len(locations[j])>4:
-				append=locations[j][4]
-			f.drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3],append)
+	if rndnum<.7 and j<len(locations):
+		f=RandFixer(room,0)
+		append=''
+		if len(locations[j])>4:
+			append=locations[j][4]
+		f.drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3],append)
 		j+=1
 		img=f.image
 		rndnum=vsrandom.random()
-		if rndnum<.6:
+		if rndnum<.6 and j<len(locations):
 			i=0
 			while f.image==img and i<10:
-				f=RandFixer(1)
+				f=RandFixer(room,1)
 				i+=1
-			if i<10 and j<len(locations):
+			if i<10:
 				append=''
 				if len(locations[j])>4:
 					append=locations[j][4]
 				f.drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3],append)
 				j+=1
+	return j
+
+def CreateFixers (room,locations):
+	j=0
+	j=CreateCampaignFixers(room,locations,j)
+	j=CreateMissionFixers(room,locations,j)
+	return j
 
 class Conversation:
 
@@ -275,14 +309,14 @@ class Conversation:
 
     def canDraw(self):
         """Checks if the required precondition has been satisfied."""
-        print "Checking if can draw"
-        print self.preconditions
-        print "len " + str(len(self.preconditions))
+#        print "Checking if can draw"
+#        print self.preconditions
+#        print "len " + str(len(self.preconditions))
         for precon in self.preconditions:
             if not fixer_lib.evaluateCondition(precon):
-                print "uhoh"
+#                print "uhoh"
                 return 0
-        print "okay"
+#        print "okay"
         return 1
 
     def getNewInfo(self, nam=str()):
@@ -360,9 +394,9 @@ class Node:
             le = len(self.subnodes)
             for i in range(le):
                 if fixer_lib.evaluateConditions(self.subnodes[i].conditions):
-                    print "Returning subnode with text=" + self.subnodes[i].text
+#                    print "Returning subnode with text=" + self.subnodes[i].text
                     return self.subnodes[i]
-                print "Rejecting subnode with text=" + self.subnodes[i].text
+#                print "Rejecting subnode with text=" + self.subnodes[i].text
             return self.subnodes[le - 1]
 
 class RootNode(Node):

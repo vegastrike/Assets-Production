@@ -1,0 +1,31 @@
+Sol II Texture Credits
+
+ariel-cel.jpg               Celestia/Chris Laurel               http://www.shatters.net/celestia/
+asteroid.jpg                VegaStrike 0.3.9
+charon.png                  VegaStrike 0.3.9
+densering.png               VegaStrike 0.3.9
+earth.jpg                   NASA Earth Observatory              http://earthobservatory.nasa.gov/Newsroom/BlueMarble/
+earthcloudmaptrans.png      NASA EO modified by Coridon Henshaw
+earthlights.jpg             NASA Earth Observatory              http://earthobservatory.nasa.gov/Newsroom/BlueMarble/
+earthspecular.png           NASA EO modified by Coridon Henshaw
+enceladus-cel.jpg           Celestia/Chris Laurel               http://www.shatters.net/celestia/
+iapetus-cel.jpg             Celestia/Chris Laurel               http://www.shatters.net/celestia/
+jupiter_vgr2-Jonsson.jpg    Björn Jónsson                       http://www.mmedia.is/~bjj/
+mar0kuu2-seal.jpg           NASA JPL/Dave Seal                  http://maps.jpl.nasa.gov/
+marscloudmaptrans.png       VegaStrike 0.3.9 Earth cloud map
+marslights.jpg              Coridon Henshaw
+mercury-trew.jpg            James Hasting-Trew                  http://gw.marketingden.com/planets/planets.html
+mimas-cel.jpg               Celestia/Chris Laurel               http://www.shatters.net/celestia/
+miranda-cel.jpg             Celestia/Chris Laurel               http://www.shatters.net/celestia/
+moonmap4k-trew.jpg          James Hasting-Trew                  http://gw.marketingden.com/planets/planets.html
+neptune-Jonsson.jpg         Björn Jónsson                       http://www.mmedia.is/~bjj/
+oberon-cel.jpg              Celestia/Chris Laurel               http://www.shatters.net/celestia/
+plutomap2k-trew.jpg         James Hasting-Trew                  http://gw.marketingden.com/planets/planets.html
+proteus-ou.jpg              OpenUniverse                        http://www.openuniverse.org
+saturn-Jonsson.jpg          Björn Jónsson                       http://www.mmedia.is/~bjj/
+tethys-cel.jpg              Celestia/Chris Laurel               http://www.shatters.net/celestia/
+titania-cel.jpg             Celestia/Chris Laurel               http://www.shatters.net/celestia/
+triton-ou.jpg               OpenUniverse                        http://www.openuniverse.org
+umbriel-cel.jpg             Celestia/Chris Laurel               http://www.shatters.net/celestia/
+uranusmap-trew.jpg          James Hasting-Trew                  http://gw.marketingden.com/planets/planets.html
+ven0mss2-seal.jpg           NASA JPL/Dave Seal                  http://maps.jpl.nasa.gov/

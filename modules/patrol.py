@@ -33,6 +33,12 @@ class patrol (Director.Mission):
         VS.IOmessage (0,"patrol",self.mplay,"Thank you! Patrol Complete.")
         VS.IOmessage (0,"patrol",self.mplay,"We have credited your account.")
         VS.terminateMission(1)
+    def FailMission (self):
+        self.you.addCredits (self.cred)
+        if self.donevar!='':
+            quest.removeQuest(self.you.isPlayerStarship(),self.donevar,-1)
+        VS.IOmessage (0,"patrol",self.mplay,"Mission a failure!")
+        VS.terminateMission(0)
 
     def GeneratePatrolList (self):
         VS.IOmessage (0,"patrol",self.mplay,"You must get within %f klicks of" % self.distance)

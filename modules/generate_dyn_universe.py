@@ -15,11 +15,11 @@ def XProductionRate(fac,type):
         return type[fac]
     return type["default"]
 
-def GenerateFgShips (shipinfg,factionnr):
+def GenerateFgShips (shipinfg,factionnr,friendly):
     lst=[]
     capship=()
     fac = faction_ships.intToFaction(factionnr)
-    if vsrandom.random()<XProductionRate(fac,faction_ships.capitalProductionRate)/XProductionRate(fac,faction_ships.fighterProductionRate):
+    if (friendly==2 or (friendly==1 and vsrandom.random()<XProductionRate(fac,faction_ships.capitalProductionRate)/XProductionRate(fac,faction_ships.fighterProductionRate))):
         capship=((faction_ships.getRandomCapitolInt(factionnr),1),)
     return ((faction_ships.getRandomFighterInt(factionnr),shipinfg),)+capship
 
@@ -69,8 +69,23 @@ def AddBasesToSystem (faction,sys):
             tn+=[ (shiplist[i],nums[i])]
         fg_util.AddShipsToFG(fg_util.BaseFGInSystemName (sys),faction,tn,sys)
 
+numericalfaction=0
 
+def GetNewFGName(faction):
+    factionnr=faction_ships.factionToInt(faction)
+    global numericalfaction
+    if(factionnr>=len(fgnames)):
+        print "Faction "+faction+" unable to create fgname"
 
+        numericalfaction+=1
+        return "Alpha_"+str(numericalfaction)
+    if (not len(fgnames[factionnr])):
+        fgnames[factionnr]=fg_util.TweakFGNames(origfgnames[factionnr])
+        fg_util.origfgoffset+=1
+    k=vsrandom.randrange(0,len(fgnames[factionnr])); #pop returns item inside array
+    fgname=fgnames[factionnr][k]
+    del fgnames[factionnr][k]
+    return fgname
 def AddSysDict (cursys):
     #pick random fighter from insysenemies with .3 probability OR pick one from the friendlies list.
 #       print 'Addsysdict'
@@ -80,17 +95,20 @@ def AddSysDict (cursys):
     AddBasesToSystem(sysfaction, cursys)
     for i in range (1+vsrandom.randrange(fg_util.MinNumFlightgroupsInSystem()-1,fg_util.MaxNumFlightgroupsInSystem())): #number of fgs in a system.
         faction=sysfaction
+        friendly=0
         if vsrandom.random()<.3 or sysfaction=='unknown' or sysfaction=='':
             faction=faction_ships.get_rabble_of(sysfaction)
         else:
+            if (faction==sysfaction):
+                friendly=1
+            if (sysfaction in faction_ships.homeworlds):
+                if (cursys==faction_ships.homeworlds[sysfaction]):
+                    friendly=2
             faction=faction_ships.get_friend_of(sysfaction)
         factionnr=faction_ships.factionToInt(faction)
         global maxshipsinfg
-        typenumbertuple=GenerateFgShips(vsrandom.randrange(maxshipsinfg)+1,factionnr)
-        if (not len(fgnames[factionnr])):
-            fgnames[factionnr]=fg_util.TweakFGNames(origfgnames[factionnr])
-
-        fgname=fgnames[factionnr].pop(-1) #pop returns item inside array
+        typenumbertuple=GenerateFgShips(vsrandom.randrange(maxshipsinfg)+1,factionnr,friendly)
+        fgname=GetNewFGName(faction)
         fg_util.AddShipsToFG (fgname,faction,typenumbertuple,cursys)
     return i
 
@@ -129,6 +147,9 @@ if cp>=0:
         fg_util.PurgeZeroShips(i)
         systemcount[i]=0
     print 'StartSystemCount'
+    sys=VS.getSystemFile()
+    if (VS.GetGalaxyProperty("Sol/Sol","jumps")!="" and VS.GetGalaxyProperty("Sol/Sol","faction")!=""):
+        sys="Sol/Sol"
     ForEachSys(VS.getSystemFile(),CountSystems)
     print systemcount
     print 'EndSystemCount'
@@ -145,7 +166,12 @@ if cp>=0:
         print 'placing ships... ... ...'
         genUniverse=Makesys(VS.getSystemFile())
         #now every system has distributed ships in the save data!
-
+    else:
+        GenerateAllShips()
+        print "Second Load"
+        for i in range(len(fgnames)):
+            fgnames[i]=fg_util.TweakFGNames(origfgnames[i])
+        fg_util.origfgoffset+=1
     campaigns.loadAll(cp)
     #TODO: add ships to current system (for both modes)  uru?
 else:

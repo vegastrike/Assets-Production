@@ -68,19 +68,30 @@ def look_for (fg, faction, numships,myunit,  pos, gcd,newship=[None]):
     return (numships,pos)
   
 def LaunchNext (fg, fac, type, ai, pos, logo,newshp=[None],fgappend=''):
-    newship = launch.launch (fg+fgappend,fac,type,ai,1,1,pos,logo)
+    print "Launch nexting "+str(type)
+    combofg=fg+fgappend
+    if (fgappend=='Base'):
+        combofg=fgappend
+    newship = launch.launch (combofg,fac,type,ai,1,1,pos,logo)
     import dynamic_universe
     dynamic_universe.TrackLaunchedShip(fg,fac,type,newship)
     rad=newship.rSize ()
-    VS.playAnimation ("warp.ani",pos,(3.0*rad))
+#VS.playAnimation ("warp.ani",pos,(3.0*rad))
     newshp[0]=newship
     return NextPos (newship,pos)
-def launch_dockable_around_unit (fg,faction,ai,radius,myunit,garbage_collection_distance,logo=''):
+
+def launch_dockable_around_unit (fg,faction,ai,radius,myunit,garbage_collection_distance,logo='',fgappend=''):
     import fg_util
     for i in fg_util.LandedShipsInFG(fg,faction):
         if (i[0]=='mule.blank' or i[0]=='mule' or faction_ships.isCapital(i[0])):
-            return launch_types_around (fg,faction,[i],ai,radius,myunit,garbage_collection_distance,logo)
-    return launch.launch_wave_around_unit(fg,faction,'mule',ai,1,radius,radius*1.5,myunit,logo)
+            un=launch_types_around (fg,faction,[i],ai,radius,myunit,garbage_collection_distance,logo,fgappend)
+            if (un.isDockableUnit()):
+                return un
+    if (fgappend=='Base'):
+        fg=fgappend
+    else:
+        fg=fg+fgappend
+    return launch.launch_wave_around_unit(fg,faction,faction_ships.getRandomCapitol(faction),ai,1,radius,radius*1.5,myunit,logo)
 
 def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_collection_distance,logo,fgappend=''):
     pos = whereTo(radius, myunit)
@@ -89,11 +100,13 @@ def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_
         nr_ships+=t[1]
     print "before"+str(nr_ships)
     retcontainer=[None]
-    if (fgappend==''):
-        (nr_ships,pos) = look_for (fg,faction,nr_ships,myunit,pos,garbage_collection_distance,retcontainer)
+    if (fgappend=='' and nr_ships>1):
+        (nr_ships,pos) = look_for (fg,faction,nr_ships-1,myunit,pos,garbage_collection_distance,retcontainer)
+        nr_ships+=1
     print "after "+str(nr_ships)+ str(retcontainer)
     count=0
     ret=retcontainer[0]
+    found=0
     for tn in typenumbers:
         num = tn[1]
         if num>nr_ships:
@@ -101,8 +114,9 @@ def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_
         for i in range(num):
             newship=[None]
             pos = LaunchNext (fg,faction,tn[0], ai, pos,logo,newship,fgappend)
-            if (i==0):
+            if (i==0 and found==0):
                 ret=newship[0]
+                found=1
         nr_ships-=num
         if (nr_ships==0):
             return ret

@@ -743,6 +743,24 @@
 		<edge index="12"/>
 		<edge index="9"/>
 	</node>	
+	<node text="And score one for the resume!" relationship="-.0625">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>
+	<node text="Killing you will put me in the black!" relationship="-.125">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>
+	<node text="Oh this is not good!" relationship="-.125">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>	
 	<node text="*hit*" relationship="-.1">
 		<edge index="18"/>
 		<edge index="58"/>

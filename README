@@ -1,0 +1,74 @@
+
+                          ----------------------
+                             Vegastrike 0.4.3
+                          ----------------------
+
+Welcome to Vegastrike!
+
+First of all, a big thanks to Ludwig from the lokisetup icculus.org mailing
+list.  Without his patience and help, we wouldn't have been able to get these
+installers done :-)
+
+For detailed instructions on how to play, see the manual included in the
+installation directory.  An updated version may be available here:
+
+ --> http://vegastrike.sourceforge.net/phpwiki/index.php/VegastrikeManual <--
+
+For any technical questions, workarounds or bugs, see the rest of our WIKI
+resource:
+
+        -->  http://vegastrike.sourceforge.net/phpwiki/  <--
+
+While you're there, you should take a browse around the website:
+
+        -->  http://vegastrike.sourceforge.net  <--
+
+and visit our forums:
+
+        -->  http://vegastrike.sourceforge.net/forums/  <--
+
+
+
+--- System Requirements ---
+
+    * Hard Drive Space (note: to install the game, /tmp must have enough room
+                        to extract the data)
+          o ~240 MB (No music)
+          o ~300 MB (With music)
+
+    * Absolute Minimum Requirement (read: technically possible, but don't
+                                    bother)
+          o Processor: Pentium I 200 MHz or Apple G3 400MHz
+          o Video card: 3d card with 16 MB of memory (although it will work
+                                                     without a 3d card too)
+          o Screen color depth: 16 bit
+          o RAM: 256 MB
+          o Swap space: ???
+          o HD: As above.
+
+    * Reasonable Minimum Requirement
+          o Processor: Pentium III 500 MHz
+          o Video card: 3d card with 32 MB of memory, and HT&L support
+          o Screen color depth: 16 bit
+          o RAM: 384 MB
+          o Swap space: 512 MB
+          o HD: As above.
+
+    * "I want to play Vegastrike at a decent speed and framerate" Requirement
+          o Processor: Pentium III 800 MHz
+          o Video card: 3d card with 64 MB of memory, and HT&L support
+          o Screen color depth: 32 bit
+          o RAM: 512 MB
+          o Swap space: 512 MB
+          o HD: As above.
+
+    * 3l337 Requirement (Make Largo proud)
+          o Processor: x MHz, where x -> infinity as 3l337ness -> 1
+          o Video card: for (long i=0;i<this_year.length();i++)
+                            {newCard(i,USD(500));}
+          o Screen color depth: 32 bit
+          o RAM: 4096 MB
+          o Swap space: Real men will hot-plug new memory modules as needed.
+          o HD: I mirror Sourceforge.net, can you?
+
+© The Vegastrike Project 2005

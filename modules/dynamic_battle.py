@@ -68,6 +68,13 @@ def moveSurroundingCapshipsToSiege(fac,sys):
                 suc=1
     return suc
 
+def neighborFaction(sys,fac):
+    for i in range (VS.GetNumAdjacentSystems(sys)):
+        asys=VS.GetAdjacentSystem(sys,i)
+        if (VS.GetGalaxyFaction(asys)==fac):
+            return True
+    return False
+ 
 #returns false if Siege is done going through all its vehicles
 def Siege(fac):
     global siegenumber
@@ -93,69 +100,70 @@ def Siege(fac):
                 fg =fg_util.RandomFlightgroup(fac)
                 sys = fg_util.FGSystem(fg,fac)
                 enfac=VS.GetGalaxyFaction(sys)
-                #fg_util.CheckAllShips(fac)
-                #fg_util.CheckAllShips(enfac)
-                if enfac == "unknown":
-                    print "exploration"
-                    fgleader = fg_util.getFgLeaderType(fg,fac)
-                    exploration = 1
+                if (not sys in faction_ships.invincible_systems):
+                    #fg_util.CheckAllShips(fac)
+                    #fg_util.CheckAllShips(enfac)
+                    if enfac == "unknown":
+                        print "exploration: "+sys
+                        fgleader = fg_util.getFgLeaderType(fg,fac)
+                        exploration = 1
 
-                else:
-                    exploration = 0
-                if (VS.GetRelation(fac,enfac)<0):#FIXME maybe even less than that
-                    numenemyfg = fg_util.NumFactionFGsInSystem(enfac,sys)
-                    numfriendfg = fg_util.NumFactionFGsInSystem(fac,sys)
-                    #print 'siegarol enemioes '+str(numenemyfg)+ ' friends '+str(numfriendfg)
-                    global dnewsman_
-                    if exploration:
-                        if sys != 'nil':
+                    else:
+                        exploration = 0
+                    if (VS.GetRelation(fac,enfac)<0 and neighborFaction(sys,fac)):#FIXME maybe even less than that
+                        numenemyfg = fg_util.NumFactionFGsInSystem(enfac,sys)
+                        numfriendfg = fg_util.NumFactionFGsInSystem(fac,sys)
+                        #print 'siegarol enemioes '+str(numenemyfg)+ ' friends '+str(numfriendfg)
+                        global dnewsman_
+                        if exploration:
+                            if sys != 'nil':
+                                import generate_dyn_universe
+                                generate_dyn_universe.TakeoverSystem(fac,sys)
+                                #HACK, regenerate bases instnatly
+                                dnewsman_.writeDynamicString([str(Director.getSaveData(0,"stardate",0)),dnewsman_.TYPE_EXPLORATION,dnewsman_.STAGE_END,fac,enfac,dnewsman_.SUCCESS_WIN,str(getImportanceOfSystem(sys)),sys,dnewsman_.KEYWORD_DEFAULT,fg,fgleader,"unknown","unknown"])
+                                                                        #FIXME use keyword (ignore
+                                                                        #keyword for now Daniel)
+
+                        elif (numenemyfg==0 and numfriendfg==0): #If both annihalate each other completely (unlikely but possible)
+                            facnum = VS.GetFactionIndex (fac)
+                            print 'cehcking started'
+                            print "DRAW error "+fg+" sys has "+sys+" has " +str(fg_util.NumFactionFGsInSystem(fac,sys))+" String is "+Director.getSaveString(0,fg_util.MakeStarSystemFGKey(sys),facnum)
+                            if sys != 'nil':
+                                dnewsman_.writeDynamicString([str(Director.getSaveData(0,"stardate",0)),dnewsman_.TYPE_SIEGE,dnewsman_.STAGE_END,fac,enfac,dnewsman_.SUCCESS_WIN,str(getImportanceOfSystem(sys)),sys,dnewsman_.KEYWORD_DEFAULT,fg,"unknown","unknown","unknown"])
+                                                                        #FIXME use keyword (ignore
+                                                                        #keyword for now Daniel)
+
+                        elif (numenemyfg==0 and (fg_util.CapshipInFG(fg,fac) or moveSurroundingCapshipsToSiege(fac,sys))):      #If aggressor succeeded
+                            print fac + ' took over '+ sys + ' originally owned by '+enfac
+                            #ok now we have him... while the siege is going on the allies had better initiate the battle--because we're now defending the place...  so that means if the owners are gone this place is ours at this point in time
+                            fgs = fg_util.FGsInSystem(fac,sys)
+                            if (len(fgs)>0):
+                                fgs=fgs[0]
+                            else:
+                                fgs = "unknown"
+                            if sys != 'nil':
+                                dnewsman_.writeDynamicString([str(Director.getSaveData(0,"stardate",0)),dnewsman_.TYPE_SIEGE,dnewsman_.STAGE_END,fac,enfac,dnewsman_.SUCCESS_WIN,str(getImportanceOfSystem(sys)),sys,dnewsman_.KEYWORD_DEFAULT,fgs,"unknown","unknown","unknown"])
+                                                                        #FIXME use keyword (ignore
+                                                                        #keyword for now Daniel)
+
                             import generate_dyn_universe
                             generate_dyn_universe.TakeoverSystem(fac,sys)
                             #HACK, regenerate bases instnatly
-                            dnewsman_.writeDynamicString([str(Director.getSaveData(0,"stardate",0)),dnewsman_.TYPE_EXPLORATION,dnewsman_.STAGE_END,fac,enfac,dnewsman_.SUCCESS_WIN,str(getImportanceOfSystem(sys)),sys,dnewsman_.KEYWORD_DEFAULT,fg,fgleader,"unknown","unknown"])
-                                                                    #FIXME use keyword (ignore
-                                                                    #keyword for now Daniel)
 
-                    elif (numenemyfg==0 and numfriendfg==0): #If both annihalate each other completely (unlikely but possible)
-                        facnum = VS.GetFactionIndex (fac)
-                        print 'cehcking started'
-                        print "DRAW error "+fg+" sys has "+sys+" has " +str(fg_util.NumFactionFGsInSystem(fac,sys))+" String is "+Director.getSaveString(0,fg_util.MakeStarSystemFGKey(sys),facnum)
-                        if sys != 'nil':
-                            dnewsman_.writeDynamicString([str(Director.getSaveData(0,"stardate",0)),dnewsman_.TYPE_SIEGE,dnewsman_.STAGE_END,fac,enfac,dnewsman_.SUCCESS_WIN,str(getImportanceOfSystem(sys)),sys,dnewsman_.KEYWORD_DEFAULT,fg,"unknown","unknown","unknown"])
-                                                                    #FIXME use keyword (ignore
-                                                                    #keyword for now Daniel)
-
-                    elif (numenemyfg==0 and (fg_util.CapshipInFG(fg,fac) or moveSurroundingCapshipsToSiege(fac,sys))):      #If aggressor succeeded
-                        print fac + ' took over '+ sys + ' originally owned by '+enfac
-                        #ok now we have him... while the siege is going on the allies had better initiate the battle--because we're now defending the place...  so that means if the owners are gone this place is ours at this point in time
-                        fgs = fg_util.FGsInSystem(fac,sys)
-                        if (len(fgs)>0):
-                            fgs=fgs[0]
-                        else:
-                            fgs = "unknown"
-                        if sys != 'nil':
-                            dnewsman_.writeDynamicString([str(Director.getSaveData(0,"stardate",0)),dnewsman_.TYPE_SIEGE,dnewsman_.STAGE_END,fac,enfac,dnewsman_.SUCCESS_WIN,str(getImportanceOfSystem(sys)),sys,dnewsman_.KEYWORD_DEFAULT,fgs,"unknown","unknown","unknown"])
-                                                                    #FIXME use keyword (ignore
-                                                                    #keyword for now Daniel)
-
-                        import generate_dyn_universe
-                        generate_dyn_universe.TakeoverSystem(fac,sys)
-                        #HACK, regenerate bases instnatly
-
-                    elif (numfriendfg==0):  #If aggressor lost
-                        print 'wtf!!'
-                        fgs = fg_util.FGsInSystem(enfac,sys)
-                        if (len(fgs)>0):
-                            fgs=fgs[0]
-                        else:
-                            fgs = "unknown"
-                        if sys != 'nil':
-                            dnewsman_.writeDynamicString([str(Director.getSaveData(0,"stardate",0)),dnewsman_.TYPE_SIEGE,dnewsman_.STAGE_END,fac,enfac,dnewsman_.SUCCESS_LOSS,str(getImportanceOfSystem(sys)),sys,dnewsman_.KEYWORD_DEFAULT,"unknown","unknown",fgs,"unknown"])
-                                                                    #FIXME use keyword (ignore
-                                                                    #keyword for now Daniel)
+                        elif (numfriendfg==0):  #If aggressor lost
+                            print 'wtf!!'
+                            fgs = fg_util.FGsInSystem(enfac,sys)
+                            if (len(fgs)>0):
+                                fgs=fgs[0]
+                            else:
+                                fgs = "unknown"
+                            if sys != 'nil':
+                                dnewsman_.writeDynamicString([str(Director.getSaveData(0,"stardate",0)),dnewsman_.TYPE_SIEGE,dnewsman_.STAGE_END,fac,enfac,dnewsman_.SUCCESS_LOSS,str(getImportanceOfSystem(sys)),sys,dnewsman_.KEYWORD_DEFAULT,"unknown","unknown",fgs,"unknown"])
+                                                                        #FIXME use keyword (ignore
+                                                                        #keyword for now Daniel)
 
 
-                    #FIXME add if statements if there is instead a (non appocalyptic) draw (if waring factions have relations "almost neutral" you could have a cease fire, or if the two factions are evenly matched and go nowhere a withdraw of the attackers might occur)!!!
+                        #FIXME add if statements if there is instead a (non appocalyptic) draw (if waring factions have relations "almost neutral" you could have a cease fire, or if the two factions are evenly matched and go nowhere a withdraw of the attackers might occur)!!!
             siegenumber+=1
         return 1
     else:
@@ -243,14 +251,38 @@ def randomMovement(fg,fac):
         else:
             pass #print "flightgroup "+fg+" in system "+sys + " is stuck"
 
-def AddFighterTo(fgname,fac):
+def AddFighterTo(fgname,fac,isNew=False):
     sys = VS.getSystemFile()
     #print 'add fighter'
     import generate_dyn_universe
     numsystems = generate_dyn_universe.systemcount[fac]
+    if (VS.GetGalaxyFaction(sys)!=fac):
+        try:
+            homeworlds=faction_ships.production_centers
+        except:
+            homeworlds=faction_ships.homeworlds
+        if fac in homeworlds:
+            if type(homeworlds[fac])==type(""):
+                sys=homeworlds[fac]
+            else:
+                sys=homeworlds[fac][vsrandom.randrange(0,len(homeworlds[fac]))]
     numfighters = int(generate_dyn_universe.XProductionRate(fac,faction_ships.fighterProductionRate)*numsystems)
     if (numfighters<1):
         numfighters=1
+    #print "Generating "+str(numfighters)+ " fighters for "+fac+" at "+sys
+    if isNew:
+        fgk=fg_util.AllFGsInSystem(fac,sys)        
+        if len(fgk):
+            fgname=fgk[vsrandom.randrange(0,len(fgk))]
+            stat=6
+            if fac in faction_ships.fightersPerFG:
+                stat=faction_ships.fightersPerFG[fac]
+            elif "default" in faction_ships.fightersPerFG:
+                stat=faction_ships.fightersPerFG["default"]
+            if fg_util.NumShipsInFG(fgname,fac)+numfighters<=numfighters+stat:
+                isNew=False
+        if isNew:
+            fgname=generate_dyn_universe.GetNewFGName(fac)
     fg_util.AddShipsToFG (fgname,fac,((faction_ships.getRandomFighter(fac),numfighters),),sys)
     numcapships = generate_dyn_universe.XProductionRate(fac,faction_ships.capitalProductionRate)*numsystems
     if (numcapships<1):
@@ -258,10 +290,18 @@ def AddFighterTo(fgname,fac):
             return
         numcapships=1
     sys = fg_util.FGSystem(fgname,fac)
-    if (VS.GetGalaxyFaction(sys)!=fac):
-        if fac in faction_ships.homeworlds:
-            sys=faction_ships.homeworlds[fac]
+    if (1 or VS.GetGalaxyFaction(sys)!=fac):
+        try:
+            homeworlds=faction_ships.production_centers
+        except:
+            homeworlds=faction_ships.homeworlds
+        if fac in homeworlds:
+            if type(homeworlds[fac])==type(""):
+                sys=homeworlds[fac]
+            else:
+                sys=homeworlds[fac][vsrandom.randrange(0,len(homeworlds[fac]))]
     cap =faction_ships.getRandomCapitol(fac)
+    print "Generating "+str(numcapships)+ " capship "+cap+" for "+fac+" at "+sys
     fg_util.AddShipsToFG(fgname,fac,((cap,int(numcapships)),),sys)
 
 #returns false if done with vehicles
@@ -273,8 +313,11 @@ def LookForTrouble (faction):
     numfg=Director.getSaveStringLength(fg_util.ccp,key)
     if (lftiter>=numfg):
         lftiter=0
-        if (numfg):
-            AddFighterTo(Director.getSaveString(fg_util.ccp,key,vsrandom.randrange(0,numfg)),faction)
+        if (0 and numfg):
+            AddFighterTo(Director.getSaveString(fg_util.ccp,key,vsrandom.randrange(0,numfg)),faction,False)
+            import generate_dyn_universe
+        if faction in faction_ships.fighterProductionRate:
+            AddFighterTo("Alpha",faction,True)
         return 0
     i = Director.getSaveString(fg_util.ccp,key,lftiter)
     lftiter+=1

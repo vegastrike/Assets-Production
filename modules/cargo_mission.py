@@ -62,7 +62,14 @@ class cargo_mission (Director.Mission):
         name = self.you.getName ()
         carg.SetMissionFlag(1)
         if (not self.you.isNull()):
-            self.quantity = self.you.addCargo(carg)  #I add some cargo
+            tmpcarg=self.you.GetCargo(self.cargoname)
+            if tmpcarg.GetMissionFlag() and tmpcarg.GetQuantity()>2:
+                quantum=int(tmpcarg.GetQuantity()/3)
+                quantum=self.you.removeCargo(carg.GetContent(),quantum,True)#use it if player has it
+                carg.SetQuantity(1+quantum)
+                self.quantity=self.you.addCargo(carg)
+            else:
+                self.quantity = self.you.addCargo(carg)  #I add some cargo
         else:
             VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000Unable to establish communications. Mission failed.")
             VS.terminateMission (0)
@@ -83,7 +90,7 @@ class cargo_mission (Director.Mission):
 
         VS.IOmessage (0,"cargo mission",self.mplay,"Good Day, %s. Your mission is as follows:" % (name))
         self.adjsys.Print("You should start in the system named %s","Then jump to %s","Finally, jump to %s, your final destination","cargo mission",1)
-        VS.IOmessage (2,"cargo mission",self.mplay,"Give the cargo to a %s unit." % (self.faction))
+        VS.IOmessage (2,"cargo mission",self.mplay,"Give the cargo to a %s unit or planet." % (self.faction))
         VS.IOmessage (3,"cargo mission",self.mplay,"You will receive %d of the %s cargo" % (self.quantity,self.cargoname))
 #         VS.IOmessage (4,"cargo mission",self.mplay,"We will deduct %.2f credits from your account for the cargo needed." % (creds_deducted))
         VS.IOmessage (4,"cargo mission",self.mplay,"You will earn %.2f credits when you deliver our cargo." % (creds))
@@ -102,11 +109,11 @@ class cargo_mission (Director.Mission):
             self.base.addCargo(newcarg)
             has=self.you.hasCargo(self.cargoname)
             if (has):
-                has=self.you.removeCargo(self.cargoname,has,0)
+                has=self.you.removeCargo(self.cargoname,has,1)
                 newcarg.SetMissionFlag(0)
                 newcarg.SetQuantity(has)
                 self.you.addCargo(newcarg) #It seems that removing and then adding it again is the only way...
-        if ((removenum>=self.quantity) or (self.quantity==0)):
+        if ((removenum>=self.quantity) or (self.quantity==0) or removenum>=1):
             VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00Excellent work pilot.")
             VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00You have been rewarded for your effort as agreed.")
             VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00Your excellent work will be remembered.")
@@ -151,10 +158,13 @@ class cargo_mission (Director.Mission):
                 return
         else:
             self.arrived=1
-            self.adjsys=go_somewhere_significant(self.you,1,100,self.capship,self.faction)
+            tempfac=self.faction
+            if vsrandom.random()<=.5:
+                tempfac=''
+            self.adjsys=go_somewhere_significant(self.you,1,100,self.capship,tempfac)
             capstr="planet"
             dockstr="land"
-            if (self.capship):
+            if tempfac=='':
                 dockstr="dock"
                 capstr="ship"
             self.adjsys.Print("You must visit the %%s %s" % (capstr),"cargo mission",", docked around the %s",0)

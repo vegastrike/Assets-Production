@@ -3,22 +3,43 @@ import bar_lib
 import weapons_lib
 import dynamic_mission
 
-def MakeUnit (bartendername='bases/bartender_default.py'):
-    dynamic_mission.CreateMissions()
-    room1 = Base.Room ('Landing Platform')
-    room2 = Base.Room ('Main Concourse')
-    Base.Texture (room1, 'tex', 'bases/generic/base_entrance.spr', 0, 0)
-    Base.Texture (room2, 'tex', 'bases/generic/base_concourse.spr', 0, 0)
-    Base.Ship (room1, 'ship', (0,-.3*2,2*2),(0,.93,-.34) ,(-1,0,0))
-    Base.LaunchPython (room1, 'launch','bases/launch_music.py', -0.841797, -0.859375, 1.5625, 0.565104, 'Launch Your Ship')
-    Base.Link (room1, 'Conc', -0.453125, -0.291667, 0.767578, 0.770833, 'Concourse',room2)
-    #Base.LaunchPython (room, 'launch','bases/launch_music.py', -0.841797, -0.859375, 1.5625, 0.565104, 'newlaunchlink')
-    #Base.Link (room, 'link', -0.453125, -0.291667, 0.767578, 0.770833, 'newgotolink', -842150451)
-    bar = bar_lib.MakeBar (room2,'_night',bartendername)
-    weap = weapons_lib.MakeWeapon (room2,'_night')
-    Base.Link (room2, 'BarLink', -0.669922, -0.721354, 0.292969, 0.403646, 'Bar', bar)
-    Base.Link (room2, 'WeaponsRoom', 0.382813, -0.731771, 0.326172, 0.427083, 'Weapons Room', weap)
-    Base.Link (room2, 'LandingLink', -0.142578, -0.244792, 0.341797, 0.338542, 'Landing Platform', room1)
-    Base.Comp (room2, 'MissionComputer', -0.425781, -0.307292, 0.183594, 0.200521, 'Mission Computer', 'News Missions')
-    Base.Comp (room2, 'CargoComputer', 0.289063, -0.283854, 0.146484, 0.179688, 'Cargo Computer', 'Cargo')
-    return (room1, room2, bar, weap)
+def MakeUnit (bartendername='bases/bartender_default.py',time_of_day=''):
+	dynamic_mission.CreateMissions()
+	room = Base.Room ('Landing_Bay')
+	room0 = room
+	Base.Texture (room, 'background', 'bases/civilian/civilian_landing'+time_of_day+'.spr', 0, 0)
+	Base.Ship (room, 'my_ship', (0.065918,-0.454948,3), (0, 0.93, -0.34), (-1, 0, 0))
+
+	room = Base.Room ('Main_Concourse')
+	room1 = room
+	Base.Texture (room, 'background', 'bases/civilian/civilian_concourse'+time_of_day+'.spr', 0, 0)
+	import bar
+	room=bar.MakeMiningBar(room1,'bases/mining/mining_bar'+time_of_day,bartendername)
+	room2 = room
+
+	room = Base.Room ('Upgrade_Facilities/Ship_Dealer')
+	room3 = room
+	Base.Texture (room, 'background', 'bases/civilian/civilian_weaponroom'+time_of_day+'.spr', 0, 0)
+	Base.Ship (room, 'my_ship', (-0.765918,-0.054948,3.5), (0, 0.93, -0.34), (-1, 0, 0))
+
+
+	room = Base.Room ('Trade_Room')
+	room6 = room
+	Base.Texture (room, 'background', 'bases/civilian/civilian_traderoom'+time_of_day+'.spr', 0, 0)
+
+	Base.LaunchPython (room0, 'my_launch_id', 'bases/launch_music.py', -0.308594, -0.703125, 0.669922, 0.520833, 'Launch')
+	Base.Link (room0, 'my_link_id', -1.00391, -0.997396, 0.316406, 1.99219, 'Main_Concourse', room1)
+	Base.Link (room0, 'my_link_id', -1, -0.997396, 1.99805, 0.135417, 'Main_Concourse', room1)
+
+	Base.Link (room1, 'my_link_id', -1, -0.997396, 1.99805, 0.135417, 'Landing_Pad', room0)
+	Base.Link (room1, 'my_link_id', 0.417969, -0.460938, 0.158203, 0.263021, 'Bar', room2)
+	Base.Link (room1, 'my_link_id', -0.806641, -0.473958, 0.201172, 0.289062, 'Upgrade_Facilities/Ship_Dealer', room3)
+	Base.Link (room1, 'my_link_id', -0.337891, -0.539062, 0.357422, 1.51562, 'Trade_Room', room6)
+	Base.Link (room2, 'my_link_id', -1, -0.994792, 1.99414, 0.0911459, 'Main_Concourse', room2)
+	Base.Link (room2, 'my_link_id', -0.998047, -0.997396, 1.99414, 0.138021, 'Main_Concourse', room1)
+	Base.Comp (room3, 'my_comp_id', -0.236328, -0.513021, 0.5, 0.53125, 'Upgrade_Computer', 'Upgrade ShipDealer Info ')
+	Base.Link (room3, 'my_link_id', -1, -0.997396, 1.99805, 0.117188, 'Main_Concourse', room1)
+	Base.Link (room6, 'my_link_id', -1, -0.994792, 1.99609, 0.101562, 'Main_Concourse', room1)
+	Base.Comp (room6, 'my_comp_id', -0.457031, -0.164062, 0.617188, 0.572917, 'Trade', 'Cargo Missions News Info ')
+
+	return (room0, room1, room2, room3)

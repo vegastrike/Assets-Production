@@ -743,6 +743,24 @@
 		<edge index="12"/>
 		<edge index="9"/>
 	</node>	
+	<node text="God smiles upon me again, for my enemy has been vanquished!" relationship="-.0625">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>
+	<node text="You will be sent directly to hell!" relationship="-.125">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>
+	<node text="You cannot defeat me, it is not in God's wish!" relationship="-.125">
+		<edge index="4"/>
+		<edge index="7"/>
+		<edge index="12"/>
+		<edge index="9"/>
+	</node>	
 	<node text="*hit*" relationship="-.1">
 		<edge index="18"/>
 		<edge index="58"/>

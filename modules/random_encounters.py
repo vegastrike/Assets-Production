@@ -21,6 +21,11 @@ class random_encounters:
             return self.prob_amplitude*(.6+.4*VS.cos ((self.prob_phase*3.1415926536*2)/self.prob_period))
         def __init__(self,sig_distance,det_distance):
             print "init playerdat"
+            try:
+                faction_ships.Precache()
+            except:
+                import sys
+                print str(sys.exc_info()[0])+str(sys.exc_info()[1])
             self.quests=[]
             self.curquest=0
             self.last_ship=0
@@ -35,6 +40,7 @@ class random_encounters:
     def __init__(self, sigdis, detectiondis, gendis,  minnships, gennships, unitprob, enemyprob, capprob, capdist):
         unitprob=1
         print "init random enc"
+        
         self.capship_gen_distance=capdist
         #    player_num=player
         self.enprob = enemyprob
@@ -129,6 +135,10 @@ class random_encounters:
             num=len(fglist)
             print 'Probability numbers: ',num, fg_util.MaxNumFlightgroupsInSystem()#,numsigs
             avg=float(num)/float(fg_util.MaxNumFlightgroupsInSystem())#/float(numsigs)
+            fortress_level=0
+            if cursys in faction_ships.fortress_systems:
+                foretress_level=faction_ships.fortress_systems[cursys]
+            avg*=(not (VS.GetRelation(VS.GetGalaxyFaction(cursys),faction)<0 and cursys in faction_ships.fortress_systems))*fortress_level+(1-fortress_level)
             print 'Chance for %s ship: %g'%(faction, avg)
             rndnum=vsrandom.random()
             print 'Random number: %g; will generate ship: %d'%(rndnum,rndnum<avg)

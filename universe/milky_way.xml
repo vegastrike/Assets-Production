@@ -15,6 +15,20 @@
        <var name="initial" value="i"/>
        <var name="lights" value="Dirt_light.png Dirt_light_repeat.pngwrapx64wrapy64"/>
    </planet>
+   <planet name="Human_Homeworld:Earth">
+       <var name="texture" value="sol2/Earth"/>
+       <var name="initial" value="earth"/>
+       <var name="lights" value="earthlights.jpg "/>
+   </planet>
+   <planet name="Mars">
+       <var name="texture" value="sol2/mars"/>
+       <var name="initial" value="mars"/>
+       <var name="lights" value="marslights.jpg"/>
+   </planet>
+   <planet name="Luna">
+       <var name="texture" value="sol2/moon"/>
+       <var name="initial" value="moon"/>
+   </planet>
    <planet name="Arid">
        <var name="texture" value="planets/desert"/>
        <var name="initial" value="a"/>
@@ -31955,7 +31969,7 @@
 			<var name="xyz" value="-3.671645 2.346233 -4.309870"/>
 			<var name="jumps" value=""/>
 		</system>
-		<system name="Sol"><var name="planets" value="fa"/>
+		<system name="Sol"><var name="planets" value="mol v *earth **mars ****gg ********gg gd *gd fa"/>
 			<var name="designation" value="Sol"/>
 			<var name="data" value="-637487863"/>
 			<var name="faction" value="confed"/>

@@ -41,17 +41,30 @@ class rescue (Director.Mission):
                 del dynamic_battle.rescuelist[sys]
             self.arrived=1
         elif (self.arrived==1):
-            self.eject = launch.launch_wave_around_unit("Rescue Pilot",self.faction,"eject","default",1,3000.0,4000.0,self.adjsys.SignificantUnit())
+            mymin=2500.
+            mymax=3000.
+#            try:
+#                mymin*=faction_ships.launch_distance_factor
+#                mymax*=faction_ships.launch_distance_factor
+#            except:
+#                pass            
+            self.eject = launch.launch_wave_around_unit("Rescue Pilot",self.faction,"eject","default",1,mymin,mymax,self.adjsys.SignificantUnit())
             self.arrived=2
             self.eject.setName("Pilot")
             L = launch.Launch()
             L.fg = "Shadow"
+            L.faction=self.enfaction
             L.dynfg = self.enflightgroup
             L.type = faction_ships.getRandomFighter(self.enfaction)
             L.ai="default"
             L.num=self.numenemy
             L.minradius=5000
             L.maxradius=15000
+            try:
+                L.minradius*=faction_ships.launch_distance_factor
+                L.maxradius*=faction_ships.launch_distance_factor
+            except:
+                pass
             self.enemy=L.launch(self.adjsys.SignificantUnit())
             self.enemy.SetTarget(self.eject)
             self.enemy.setFgDirective("A.")

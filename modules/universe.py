@@ -161,3 +161,82 @@ def GetNumSignificantsForSystem (cursys):
 ##      last_system=_std.GetSystemName()
 ##      jumped=true
 ##    return jumped
+
+def greet(greetingText,enemy=None,you=None):
+    for i in range(len(greetingText)):
+        color="#ff0000"
+        text=greetingText[i]
+        if type(greetingText[i])==tuple:
+            if not len(greetingText[i]):
+                continue
+            if len(greetingText[i])>1 and greetingText[i][1]:
+                color="#0000ff"
+            if len(greetingText[i])>2 and greetingText[i][2]:
+                VS.playSound(greetingText[i][2],(0.,0.,0.),(0.,0.,0.))
+            text=greetingText[i][0]
+        if (enemy):
+            fromname=enemy.getFlightgroupName()+", "+enemy.getName()+"#000000"
+        else:
+            fromname="[Unidentified]"
+        if (you):
+            toname = getMessagePlayer(you)
+        else:
+            toname="all"
+        VS.IOmessage (8+i*4,color+fromname,toname,"#ff0000"+text+"#000000")
+
+def getDockedBase():
+    iter = VS.getUnitList()
+    while iter.notDone():
+        if VS.getPlayer().isDocked(iter.current()) or iter.current().isDocked(VS.getPlayer()):
+            return iter.current()
+        iter.advance()
+    return iter.current()
+def getDockedBaseName():
+    un = getDockedBase()
+    if (un):
+        return (un.getName(),un.getFullname())
+    return ('','')
+
+
+def addTechLevel(level, addToBase=True):
+	try:
+		import faction_ships
+		upgrades=faction_ships.earnable_upgrades[level]
+	except:
+		print "No tech level named "+str(level)
+		return
+	bas=getDockedBase()
+	if (not bas):
+		import unit
+		import vsrandom
+		print "getting significant for upgrade addage"
+		bas = unit.getSignificant(vsrandom.randrange(1,20),1,0);
+	for upgrade in upgrades:
+		if (len(upgrade)<5):
+			print "Upgrade list not big enough to add to tech"
+			print upgrade
+			continue
+		import Director
+		import VS
+		cp = VS.getCurrentPlayer()
+		siz = Director.getSaveStringLength(cp,"master_part_list_content")
+		doIt=True
+		for index in range (siz):
+			if (Director.getSaveString(cp,"master_part_list_content",index)==upgrade[0]):
+				doIt=False
+		if (doIt):
+			print "added UPGRADE AS FOLLOWS to tech level "
+			print upgrade
+			Director.pushSaveString(cp,"master_part_list_content",str(upgrade[0]))
+			Director.pushSaveString(cp,"master_part_list_category",str(upgrade[1]))
+			Director.pushSaveString(cp,"master_part_list_price",str(upgrade[2]))
+			Director.pushSaveString(cp,"master_part_list_mass",str(upgrade[3]))
+			Director.pushSaveString(cp,"master_part_list_volume",str(upgrade[4]))
+			if (len(upgrade)>5):
+				Director.pushSaveString(cp,"master_part_list_description",str(upgrade[5]))				
+			else:
+				Director.pushSaveString(cp,"master_part_list_description","No description")				
+			if (bas and addToBase):
+				print " adding "+str(upgrade[0]) +" to base "+bas.getName()
+				cargo=VS.Cargo(str(upgrade[0]),str(upgrade[1]),float(upgrade[2]),1,float(upgrade[3]),float(upgrade[4]))
+				bas.forceAddCargo(cargo)

@@ -2,6 +2,8 @@ _savedata=[{},{},{},{},{},{},{},{},{},{}]
 _savestrs=[{},{},{},{},{},{},{},{},{},{}]
 #"""Can query-replace Hash with nothing to enable printfs comments"""
 class Mission:
+    def __init__(self):
+        pass
     def Pickle(self):
         print 'pickling'
         return ''
@@ -28,6 +30,12 @@ def getSaveData (whichplayer, key,num):
 #    print 'DIRECTOR:getSaveData Player%d["%s"][%d]=%g'%(whichplayer,key,num,_savedata[whichplayer][key][num])
     return _savedata[whichplayer][key][num]
 def pushSaveData (whichplayer,key,val):
+    try:
+       key=key.encode('ascii','ignore')
+       #val=val.decode()
+    except:
+       pass
+
     global _savedata
     try:
 	_savedata[whichplayer][key].append(val)
@@ -43,6 +51,11 @@ def eraseSaveData (whichplayer,key,num):
 def putSaveString (whichplayer, key, num, val):
     global _savestrs
 #    print 'DIRECTOR:putSaveString: "%s" --> StrPlayer%d["%s"][%d]'%(val,whichplayer,key,num)
+    try:
+       key=key.encode('ascii','ignore')
+       #val=val.decode()
+    except:
+       pass
     _savestrs[whichplayer][key][num]=val
     return len(_savestrs[whichplayer][key])
 def getSaveStringLength (whichplayer, key):

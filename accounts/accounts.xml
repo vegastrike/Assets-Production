@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<accounts>
+	<player name="test1" password="test1" />
+	<player name="test2" password="test2" />
+	<player name="test3" password="test3" />
+</accounts>
