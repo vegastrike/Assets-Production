@@ -70,7 +70,7 @@ def getAdjacentSystems (currentsystem, sysaway, jumps=(),preferredfaction=''):
         syslist.append(cursys)
       if not len(syslist):
         return getAdjacentSystems(currentsystem,0,jumps)
-      nextsystem=syslist[vsrandom.randrange(0,max)]
+      nextsystem=syslist[vsrandom.randrange(0,len(syslist))]
 #      _io.message (1,"game","all","Jump from %s to %s." % (currentsystem,nextsystem))
       return getAdjacentSystems(nextsystem,sysaway-1,jumps+(nextsystem,))
   
