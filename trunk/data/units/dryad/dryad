@@ -1,0 +1,63 @@
+<Unit>
+	<Meshfile file="Dryad-hull.xmesh"/>
+	<Meshfile file="Dryad-cockpit.xmesh"/>
+
+	<cockpit file="medium-cockpit.cpt" x="0.000000" y="0.000000" z="0.000000"/>
+
+	<Thrust>
+		<Engine Afterburner="1066.666718" Forward="605.333344" Retro="554.666676" Left="402.666672" Right="452.666672" Top="402.666672" Bottom="452.666672"/>
+		<Maneuver yaw="3643.200050" pitch="3187.800201" roll="4643.200050"/>
+	</Thrust>
+
+	<Sound>
+	</Sound>
+
+	<Defense HudImage="dryad-hud.spr" RepairDroid="2"  ecm=".003">
+		<Armor front="130" right="110" left="110" back="120"/>
+		<Shields front="280.0" right="260" left="260"  back="270.000000" recharge="35.000000"/>
+		<Cloak missing="1" cloakmin=".25" cloakrate=".1" cloakenergy="79.0"  cloakglass="false"/>
+		<Hull strength="250.000000"/>
+	</Defense>
+
+	<Stats mass="11.000000" momentofinertia="11.000000" fuel="170000000">
+	</Stats>
+
+	<Computer yaw="60.400002" pitch="50.600006" roll="70.400002" afterburner="128" maxspeed="45" TrackingCone="20" lockcone="35">
+                <Radar itts="true" error="0" range="40000" maxcone="-1" color="true"/>
+	</Computer>
+
+	<Jump delay="1" jumpenergy="380"/>       
+
+	<Energy afterburnenergy="20">
+		<Reactor recharge="20" limit="400"/>
+	</Energy>
+
+	<description>
+	</description>
+
+	<Hold volume="30">
+	</Hold>
+
+	<Mount weapon="Ion" size="Light Medium" x="0.8" y="0.300300" z="15.600299" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+	<Mount weapon="Ion" size="Light Medium" x="-0.8" y="0.300300" z="15.600299" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+	<Mount weapon="Stormfire" size="Medium Heavy Special Autotracking" ammo="5000" volume="1000" x="11.6" y="-2.5" z="5" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+	<Mount weapon="Stormfire" size="Medium Heavy Special Autotracking" ammo="5000" volume="1000" x="-11.6" y="-2.5" z="5" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+
+	<Mount size="light-missile medium-missile special-missile" weapon="breeze" ammo="20" volume="1000" x="1.9" y="-1.0" z="4.2" qi="0.000000" qj="-1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
+	<Mount size="light-missile medium-missile special-missile" weapon="breeze" ammo="20" volume="1000" x="-1.9" y="-1.0" z="4.2" qi="0.000000" qj="-1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
+	<Mount size="medium-missile heavy-missile" weapon="friendorfoe" ammo="2" volume="400" x="3.9" y="1.8" z="6.2" qi="0.000000" qj="-1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
+	<Mount size="medium-missile heavy-missile" weapon="friendorfoe" ammo="2" volume="400" x="-3.9" y="1.8" z="6.2" qi="0.000000" qj="-1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
+
+	<Light file="supernova.bmp" x="3.8" y="1.4" z="-3.0" size="1.9"/>
+	<Light file="supernova.bmp" x="-3.8" y="1.4" z="-3.0" size="1.9"/>
+	<Light file="supernova.bmp" x="0" y="1.8" z="-3.6" size="1.1"/>
+
+	<Hold volume="15">
+	</Hold>
+
+	<description>
+The Dryad is heavy supermacy fighter. It's main purpose is to tie in dogfight enemy escorts, forcing as many of them as possible to leave bombers and capital ships without cover. It has powerful shield and excellent maneurability, but only average speed.
+There are some rumors about assaut modification in development.
+	</description>
+
+</Unit>

@@ -1,0 +1,61 @@
+<Unit>
+	<Defense HudImage="dryad-hud.spr" RepairDroid="0"  ecm="0">
+		<Shields front="0" right="0" left="0"  back="0.000000" recharge="000000"/>
+	</Defense>
+        <upgrade file="shield_4"/>
+        <upgrade file="engine_level_0"/>
+        <upgrade file="lithium"/>
+        <upgrade file="hull"/>
+        <Energy afterburnenergy="32767">
+        </Energy>
+	
+	<Meshfile file="Dryad-hull.xmesh"/>
+	<Meshfile file="Dryad-cockpit.xmesh"/>
+
+	<cockpit file="medium-cockpit.cpt" x="0.000000" y="0.000000" z="0.000000"/>
+
+	<Thrust>
+		<Engine Afterburner="800.666718" Forward="465.333344" Retro="404.666676" Left="352.666672" Right="352.666672" Top="352.666672" Bottom="302.666672"/>
+		<Maneuver yaw="2743.200050" pitch="2787.800201" roll="3643.200050"/>
+	</Thrust>
+
+	<Sound>
+	</Sound>
+
+	<Stats mass="11.000000" momentofinertia="11.000000" fuel="170000000">
+	</Stats>
+
+	<Computer yaw="45.400002" pitch="40.600006" roll="50.400002" afterburner="128" maxspeed="45" TrackingCone="20" lockcone="35">
+                <Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	</Computer>
+
+	<Jump missing="1" delay="1" jumpenergy="380"/>       
+
+	<description>
+	</description>
+
+	<Hold volume="30">
+	</Hold>
+
+	<Mount weapon="" size="Light Medium" x="0.8" y="0.300300" z="15.600299" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+	<Mount weapon="" size="Light Medium" x="-0.8" y="0.300300" z="15.600299" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+	<Mount weapon="" size="Medium Heavy Special" ammo="5000" volume="1000" x="11.6" y="-2.5" z="5" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/> <!-- you can add autotracking -->
+	<Mount weapon="" size="Medium Heavy Special" ammo="5000" volume="1000" x="-11.6" y="-2.5" z="5" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+
+	<Mount size="light-missile medium-missile special-missile" weapon="" ammo="" volume="1000" x="1.9" y="-1.0" z="4.2" qi="0.000000" qj="-1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
+	<Mount size="light-missile medium-missile special-missile" weapon="" ammo="" volume="1000" x="-1.9" y="-1.0" z="4.2" qi="0.000000" qj="-1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
+	<Mount size="medium-missile heavy-missile" weapon="" ammo="" volume="400" x="3.9" y="1.8" z="6.2" qi="0.000000" qj="-1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
+	<Mount size="medium-missile heavy-missile" weapon="" ammo="" volume="400" x="-3.9" y="1.8" z="6.2" qi="0.000000" qj="-1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
+
+	<Light file="supernova.bmp" x="3.8" y="1.4" z="-3.0" size="1.9"/>
+	<Light file="supernova.bmp" x="-3.8" y="1.4" z="-3.0" size="1.9"/>
+	<Light file="supernova.bmp" x="0" y="1.8" z="-3.6" size="1.1"/>
+
+	<Hold volume="15">
+	</Hold>
+
+	<description>
+The Dryad is heavy supermacy fighter. It's main purpose is to tie in dogfight enemy escorts, forcing as many of them as possible to leave bombers and capital ships without cover. It has powerful shield and excellent maneurability, but only average speed.
+	</description>
+
+</Unit>
