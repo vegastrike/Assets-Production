@@ -9,6 +9,7 @@ HOSTILE_AUTODIST=10000
 un = VS.getPlayer()
 if (not un):
     VS.musicPlayList (PEACELIST)
+    print "peace"
 else:
     perfect=1
     iter = VS.getUnitList()
@@ -18,11 +19,15 @@ else:
         if (ftmp<0 and un.getDistance(target)<HOSTILE_AUTODIST):
             perfect=0
         iter.advance()
+        target=iter.current()
     if (perfect):
         VS.musicPlayList(PEACELIST)
+        print "peace"
     else:
-        ftmp = (un.FShieldData()+2*un.GetHullPercent()+un->RShieldData()-2.8)*10
+        ftmp = (un.FShieldData()+2*un.GetHullPercent()+un.RShieldData()-2.8)*10
         if (ftmp<-.5):
             VS.musicPlayList(PANICLIST)
+            print "panic"
         else:
             VS.musicPlayList(BATTLELIST)
+            print "battle"
