@@ -348,4 +348,20 @@
 <Vertex point="16" s="0.419608" t="0.909804"/>
 </Tri>
 </Polygons>
+<Logo type="1" rotate="-2.349998" size="18.490328" offset="0.010000">
+	<Ref point="0" weight="2.079999" />
+	<Ref point="3" weight="1.000000" />
+	<Ref point="2" weight="2.169999" />
+</Logo>
+<Logo type="1" rotate="-1.489999" size="16.580284" offset="0.010000">
+	<Ref point="4" weight="1.659999" />
+	<Ref point="5" weight="0.730000" />
+	<Ref point="6" weight="1.000000" />
+</Logo>
+<Logo type="0" rotate="-1.609999" size="19.670355" offset="0.010000">
+	<Ref point="12" weight="8.250094" />
+	<Ref point="11" weight="1.699999" />
+	<Ref point="10" weight="9.170115" />
+</Logo>
+
 </Mesh>

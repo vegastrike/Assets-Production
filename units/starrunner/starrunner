@@ -16,33 +16,24 @@
 		<Radar itts="true" color="true" maxrange="80000"  error="0"/>
 	</Computer>
 	<Energy>
-		<Reactor recharge="340" limit="15000"/>
+		<Reactor recharge="600" limit="15000"/>
 	</Energy>
 	<Jump delay="1" jumpenergy="9000"/>              
 
 	<Hold volume="100000000000">
-	    <Category file="food">
-		<Import price="3" pricestddev="1.4" quantity="24" quantitystddev="10"/>
-	    </Category>
-	    <Category file="upgrades">
-		<Import price="1" quantity="1"/>
-		<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>
-		<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
-		<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
-		<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
-	     </Category>
-	     <Category file="missions">
-		<Cargo file="mission/cargo.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
-		<Cargo file="mission/inc.mission" price="1000" quantity="100" mass=".1" volume=".1"/>
-		<Cargo file="mission/dec.mission" price="1000" quantity="100" mass=".1" volume=".1"/>
-	     </Category>
-	     <Category file="weapons">
-		<Cargo file="weapons" price="200" quantity="100" mass=".1" volume=".1"/>
-	     </Category>
-	     <Category file="starships">
-		<Cargo file="nova" price="15000" quantity="10" mass="2" volume="500"/>
-		<Cargo file="tian" price="10000" quantity="20" mass="1" volume="400"/>
-	     </Category>
 	</Hold>
-
+<Mount weapon="Vaporisator" size="Light" x="-22.117918" y="-11.391530" z="23.000000" ri="-0.000000" rj="0.000000" rk="-1.000000" qi="-0.809017" qj="0.587785" qk="0.000000"/>
+<Mount weapon="CapshipDisruptor" size="Light" x="-19.210701" y="-10.039334" z="20.000000" ri="-0.000000" rj="0.000000" rk="-1.000000" qi="-0.809017" qj="0.587785" qk="0.000000"/>
+<Mount weapon="Fussion" size="Light" x="-16.022017" y="-8.580213" z="18.000000" ri="-0.000000" rj="0.000000" rk="-1.000000" qi="-0.809017" qj="0.587785" qk="0.000000"/>
+<Mount weapon="Fussion" size="Light" x="16.022017" y="-7.946175" z="18.000000" ri="0.000000" rj="-0.000000" rk="-1.000000" qi="-0.309017" qj="-0.951057" qk="0.000000"/>
+<Mount weapon="Vaporizator" size="Light" x="22.117918" y="-11.391529" z="23.000000" ri="0.000000" rj="0.000000" rk="-1.000000" qi="0.309017" qj="-0.951056" qk="0.000000"/>
+<Mount weapon="CapshipDisruptor" size="Light" x="19.210701" y="-9.405297" z="20.000000" ri="0.000000" rj="-0.000000" rk="-1.000000" qi="-0.309017" qj="-0.951056" qk="0.000000"/>
+<Light file="supernova.bmp" x="-43.791855" y="-16.133621" z="114.970261" size="7.740082"/>
+<Light file="supernova.bmp" x="43.672062" y="-16.200645" z="114.970497" size="6.920063"/>
+<Light file="supernova.bmp" x="-18.462944" y="8.371350" z="100.970558" size="8.500099"/>
+<Light file="supernova.bmp" x="18.178116" y="8.219944" z="100.971313" size="8.5"/>
+<Dock x="-17.653711" y="5.126160" z="60.000000" size="7.510077" ri="-0.325628" rj="0.945498" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
+<Dock x="17.653709" y="5.126160" z="60.000000" size="8.050089" ri="-0.910366" rj="0.413803" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
+<Dock x="44.236790" y="-16.293341" z="74.000000" size="5.930040" ri="0.867033" rj="-0.498250" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
+<Dock x="-44.435791" y="-16.316875" z="74.000000" size="6.360051" ri="-0.916137" rj="-0.400865" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
 </Unit>

@@ -3327,6 +3327,16 @@
  <ambient red="1" green="1" blue="1" alpha="1"/>
  <diffuse red="1" green="1" blue="1" alpha="1"/>
  </material>
+<Logo type="0" rotate="2.929998" size="0.260000" offset="0.010000">
+	<Ref point="134" weight="1.000000" />
+	<Ref point="135" weight="1.000000" />
+	<Ref point="136" weight="1.000000" />
+</Logo>
+<Logo type="1" rotate="1.659999" size="0.130000" offset="0.010000">
+	<Ref point="166" weight="0.180001" />
+	<Ref point="162" weight="1.000000" />
+	<Ref point="167" weight="1.989999" />
+</Logo>
 
 <Logo type="5" rotate="0.000000" size="0.180000" offset="0.010000">
 	<Ref point="7" weight="11.170161" />

@@ -2165,5 +2165,25 @@
 	<Ref point="122" weight="1.000000" />
 	<Ref point="120" weight="1.000000" />
 </Logo>
+<Logo type="0" rotate="0.000000" size="26.630514" offset="0.010000">
+	<Ref point="85" weight="1.539999" />
+	<Ref point="72" weight="1.000000" />
+	<Ref point="75" weight="2.589998" />
+</Logo>
+<Logo type="0" rotate="3.109998" size="21.050386" offset="0.010000">
+	<Ref point="167" weight="19.340347" />
+	<Ref point="164" weight="1.000000" />
+	<Ref point="0" weight="12.850200" />
+</Logo>
+<Logo type="1" rotate="3.129997" size="19.040340" offset="0.010000">
+	<Ref point="60" weight="-5.760036" />
+	<Ref point="46" weight="14.340234" />
+	<Ref point="169" weight="11.590171" />
+</Logo>
+<Logo type="1" rotate="0.000000" size="21.930407" offset="0.010000">
+	<Ref point="172" weight="19.690355" />
+	<Ref point="166" weight="1.000000" />
+	<Ref point="12" weight="17.290300" />
+</Logo>
 
 </Mesh>

@@ -1580,4 +1580,28 @@
 <Vertex point="171" s="0.972549" t="0.517647"/>
 </Quad>
 </Polygons>
+<Logo type="1" rotate="1.929999" size="14.330233" offset="0.010000">
+	<Ref point="180" weight="1.000000" />
+	<Ref point="183" weight="1.000000" />
+	<Ref point="182" weight="1.000000" />
+	<Ref point="181" weight="1.000000" />
+</Logo>
+<Logo type="0" rotate="0.650000" size="21.830384" offset="0.010000">
+	<Ref point="128" weight="0.310001" />
+	<Ref point="129" weight="2.769998" />
+	<Ref point="126" weight="3.569998" />
+	<Ref point="127" weight="2.309999" />
+</Logo>
+<Logo type="1" rotate="3.219997" size="13.910223" offset="0.010000">
+	<Ref point="167" weight="1.000000" />
+	<Ref point="168" weight="1.000000" />
+	<Ref point="169" weight="1.000000" />
+	<Ref point="170" weight="1.000000" />
+</Logo>
+<Logo type="0" rotate="2.999998" size="21.800404" offset="0.010000">
+	<Ref point="45" weight="-1.149999" />
+	<Ref point="44" weight="2.309999" />
+	<Ref point="47" weight="0.280001" />
+	<Ref point="46" weight="1.310000" />
+</Logo>
 </Mesh>
