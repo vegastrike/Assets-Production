@@ -1,7 +1,7 @@
 <!--29Jan03-->
 
-<!--Last Edited by: Daniel-->
-<!--23MAY01-->
+<!--Last Edited by: Laurent-->
+<!--6APR03-->
 <Unit>
 	<Defense>
 		<Armor front="0" right="00" left="00" back="00"/>
@@ -24,74 +24,75 @@
 	</Thrust>
 	<Hold volume="100000000000">
 		<Category file="starships/Neutral">
-			<Cargo file="wayfarer.blank" price="6000" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: Unknown \ Model: Wayfarer \ Crew Capacity: Unknown \ \ Stats - \  Mass: 1096 mTons \  Accelerations - \  Fore: 22523 \  Aft: 27935\  Port: 22231 \  Starboard: 22231 \  Up: 22231 \  Down: 22231 \  Max. Velocity For \   Manual Control: 108 km/h \  Hold Volume: 125 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="wayfarer.begin" price="600" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: Unknown \ Model: Wayfarer \ Crew Capacity: Unknown \ \ Stats - \  Mass: 1096 mTons \  Accelerations - \  Fore: 22523 \  Aft: 27935 \  Port: 22231 \  Starboard: 22231 \  Up: 22231 \  Down: 22231 \  Max. Velocity For \   Manual Control: 108 km/h \  Hold Volume: 125 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="wayfarer.blank" price="6000" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="wayfarer.begin" price="600" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Aera/Light">
-			<Cargo file="kyta.blank" price="40000" quantity="1" mass=".01" volume="300" description="\ Manufacturer: Unknown \ Model: Kyta \ Crew Capacity: Unknown \ \ Stats - \  Mass: 17.046 mTons\  Accelerations - \  Fore: 2850 \  Aft: 2493 \  Port: 1425 \  Starboard: 1425 \  Up: 1425 \  Down: 1425 \  Max. Velocity For \   Manual Control: 253 km/h \  Hold Volume: 8 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="metron.blank" price="60000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: Unknown \ Model: Metron \ Crew Capacity: Unknown \ \ Stats - \  Mass: 342 mTons\  Accelerations - \  Fore: 17593 \  Aft: 21821 \  Port: 17365 \  Starboard: 17365 \  Up: 17365 \  Down: 17365 \  Max. Velocity For \   Manual Control: 234 km/h \  Hold Volume: 14 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown  " />
+			<Cargo file="kyta.blank" price="40000" quantity="1" mass=".01" volume="300" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="metron.blank" price="60000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Aera/Medium">
-			<Cargo file="lekra.blank" price="125000" quantity="1" mass=".01" volume="600" description="\ Manufacturer: Unknown \ Model: Lekra \ Crew Capacity: Unknown \ \ Stats - \  Mass: 409 mTons \  Accelerations - \  Fore: 97066 \  Aft: 84932 \  Port: 48533 \  Starboard: 48533 \  Up: 48533\  Down: 48533 \  Max. Velocity For \   Manual Control: 240 km/h \  Hold Volume: 25 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="aeon.blank" price="250000" quantity="1" mass=".01" volume="400" description="\ Manufacturer: Unknown \ Model: Aeon \ Crew Capacity: Unknown \ \ Stats - \  Mass: 36.373 mTons \  Accelerations - \  Fore: 7112 \  Aft: 6223 \  Port: 3556 \  Starboard: 3556 \  Up: 3556 \  Down: 3556 \  Max. Velocity For \   Manual Control: 198 km/h \  Hold Volume: 7 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="lekra.blank" price="125000" quantity="1" mass=".01" volume="600" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="aeon.blank" price="250000" quantity="1" mass=".01" volume="400" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Aera/Heavy">
-			<Cargo file="dagger.blank" price="80000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: Unknown \ Model: Dagger \ Crew Capacity: Unknown \ \ Stats - \  Mass: 995 mTons \  Accelerations - \  Fore: 50984 \  Aft: 44611 \  Port: 25492 \  Starboard: 25492 \  Up: 25492 \  Down: 25492 \  Max. Velocity For \   Manual Control: 115 km/h \  Hold Volume: Unknown \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="osprey.blank" price="100000" quantity="1" mass=".01" volume="800" description="\ Manufacturer: Unknown \ Model: Osprey \ Crew Capacity: Unknown \ \ Stats - \  Mass: 849 mTons \  Accelerations - \  Fore: 57964 \  Aft: 50655 \  Port: 28897 \  Starboard: 28897 \  Up: 28897 \  Down: 28897 \  Max. Velocity For \   Manual Control: 153.6 km/h \  Hold Volume: 40 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="aevant.blank" price="150000" quantity="1" mass=".01" volume="1200" description="\ Manufacturer: Unknown \ Model: Aevant \ Crew Capacity: Unknown \ \ Stats - \  Mass: 841.433 mTons \  Accelerations - \  Fore: 19689 \  Aft: 16155 \  Port: 10938 \  Starboard: 10938 \  Up: 14052 \  Down: 14052 \  Max. Velocity For \   Manual Control: 129 km/h \  Hold Volume: 65 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="butterfly.blank" price="240000" quantity="1" mass=".01" volume="1400" description="\ Manufacturer: Unknown \ Model: Butterfly \ Crew Capacity: Unknown \ \ Stats - \  Mass: 419 mTons \  Accelerations - \  Fore: 8422 \  Aft: 12982 \  Port: 12814 \  Starboard: 12814 \  Up: 12814 \  Down: 12814 \  Max. Velocity For \   Manual Control: 180 km/h \  Hold Volume: 75 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="kira.blank" price="250000" quantity="1" mass=".01" volume="1200" description="\ Manufacturer: Unknown \ Model: Kira \ Crew Capacity: Unknown \ \ Stats - \  Mass: 406 mTons \  Accelerations - \  Fore: 6447 \  Aft: 5833 \  Port: 5210 \  Starboard: 5210 \  Up: 5255 \  Down: 5255 \  Max. Velocity For \   Manual Control: 149.7 km/h \  Hold Volume: Unknown \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="dagger.blank" price="80000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="osprey.blank" price="100000" quantity="1" mass=".01" volume="800" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="aevant.blank" price="150000" quantity="1" mass=".01" volume="1200" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="butterfly.blank" price="240000" quantity="1" mass=".01" volume="1400" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="kira.blank" price="250000" quantity="1" mass=".01" volume="1200" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Aera/Milspec">
-			<Cargo file="metron" price="250000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: Unknown \ Model: Metron \ Crew Capacity: Unknown \ \ Stats - \  Mass: 342 mTons\  Accelerations - \  Fore: 17593 \  Aft: 21821 \  Port: 17365 \  Starboard: 17365 \  Up: 17365 \  Down: 17365 \  Max. Velocity For \   Manual Control: 234 km/h \  Hold Volume: 14 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown  " />
-			<Cargo file="lekra" price="300000" quantity="1" mass=".01" volume="600" description="\ Manufacturer: Unknown \ Model: Lekra \ Crew Capacity: Unknown \ \ Stats - \  Mass: 409 mTons \  Accelerations - \  Fore: 97066 \  Aft: 84932 \  Port: 48533 \  Starboard: 48533 \  Up: 48533\  Down: 48533 \  Max. Velocity For \   Manual Control: 240 km/h \  Hold Volume: 25 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="osprey" price="500000" quantity="1" mass=".01" volume="800" description="\ Manufacturer: Unknown \ Model: Osprey \ Crew Capacity: Unknown \ \ Stats - \  Mass: 849 mTons \  Accelerations - \  Fore: 57964 \  Aft: 50655 \  Port: 28897 \  Starboard: 28897 \  Up: 28897 \  Down: 28897 \  Max. Velocity For \   Manual Control: 153.6 km/h \  Hold Volume: 40 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+
+			<Cargo file="metron" price="250000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="lekra" price="300000" quantity="1" mass=".01" volume="600" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="osprey" price="500000" quantity="1" mass=".01" volume="800" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Aera/Light_Capship">
 		</Category>
 		<Category file="starships/Aera/Heavy_Capship">
 		</Category>
 		<Category file="starships/Rlaan/Light">
-			<Cargo file="skart.blank" price="30000" quantity="1" mass=".01" volume="300" description="\ Manufacturer: Unknown \ Model: Skart \ Crew Capacity: Unknown \ \ Stats - \  Mass: 878 mTons \  Accelerations - \  Fore: 73825 \  Aft: 47019 \  Port: 45701 \  Starboard: 45701 \  Up: 45701 \  Down: 80856 \  Max. Velocity For \   Manual Control: 360 km/h \  Hold Volume: 30 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="leokat.blank" price="80000" quantity="1" mass=".01" volume="400" description="\ Manufacturer: Unknown \ Model: Leokat \ Crew Capacity: Unknown \ \ Stats - \  Mass: 45.1815 mTons \  Accelerations - \  Fore: 6557 \  Aft: 5834 \  Port: 4311 \  Starboard: 4311 \  Up: 3149 \  Down: 1600 \  Max. Velocity For \   Manual Control: 266 km/h \  Hold Volume: 35 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="skart.blank" price="30000" quantity="1" mass=".01" volume="300" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="leokat.blank" price="80000" quantity="1" mass=".01" volume="400" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Rlaan/Medium">
-			<Cargo file="f109vampire.blank" price="90000" quantity="1" mass=".01" volume="800" description="\ Manufacturer: Unknown \ Model: F109Vampire \ Crew Capacity: Unknown \ \ Stats - \  Mass: 888 mTons \  Accelerations - \  Fore: 34021 \  Aft: 18660 \  Port: 23357 \  Starboard: 23357 \  Up: 23357 \  Down: 23357 \  Max. Velocity For \   Manual Control: 288 km/h \  Hold Volume: 25 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="f109vampire.blank" price="90000" quantity="1" mass=".01" volume="800" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Rlaan/Heavy">
-			<Cargo file="starfish.blank" price="100000" quantity="1" mass=".01" volume="2000" description="\ Manufacturer: Unknown \ Model: Starfish \ Crew Capacity: Unknown \ \ Stats - \  Mass: 64.176 mTons \  Accelerations - \  Fore: 1228 \  Aft: 673 \  Port: 843 \  Starboard: 843 \  Up: 843 \  Down: 843 \  Max. Velocity For \   Manual Control: 252 km/h \  Hold Volume: 100 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="revoker.blank" price="115000" quantity="1" mass=".01" volume="3000" description="\ Manufacturer: Unknown \ Model: Revoker \ Crew Capacity: Unknown \ \ Stats - \  Mass: 90733 mTons \  Accelerations - \  Fore: 3473779 \  Aft: 1905394 \  Port: 2384983 \  Starboard: 2384983 \  Up: 2384983 \  Down: 2384983 \  Max. Velocity For \   Manual Control: 115 km/h \  Hold Volume: 200 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="hispidus.blank" price="130000" quantity="1" mass=".01" volume="2500" description="\ Manufacturer: Unknown \ Model: Hispidus \ Crew Capacity: Unknown \ \ Stats - \  Mass: 21000 \  Accelerations - \  Fore: 431200 \  Aft: 534800 \  Port: 425600 \  Starboard: 425600 \  Up: 425600 \  Down: 425600 \  Max. Velocity For \   Manual Control: 216 km/h \  Hold Volume: 60 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="starfish.blank" price="100000" quantity="1" mass=".01" volume="2000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="revoker.blank" price="115000" quantity="1" mass=".01" volume="3000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="hispidus.blank" price="130000" quantity="1" mass=".01" volume="2500" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Rlaan/Milspec">
-			<Cargo file="skart" price="290000" quantity="1" mass=".01" volume="300" description="\ Manufacturer: Unknown \ Model: Skart \ Crew Capacity: Unknown \ \ Stats - \  Mass: 878 mTons \  Accelerations - \  Fore: 73825 \  Aft: 47019 \  Port: 45701 \  Starboard: 45701 \  Up: 45701 \  Down: 80856 \  Max. Velocity For \   Manual Control: 360 km/h \  Hold Volume: 30 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="skart" price="290000" quantity="1" mass=".01" volume="300" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Rlaan/Light_Capship">
 		</Category>
 		<Category file="starships/Rlaan/Heavy_Capship">
 		</Category>
 		<Category file="starships/Confed/Light">
-			<Cargo file="tian.blank" price="30000" quantity="1" mass=".01" volume="200" description="\ Manufacturer: Unknown \ Model: Tian \ Crew Capacity: Unknown \ \ Stats - \  Mass: 278 mTons \  Accelerations - \  Fore: 84760 \  Aft: 74165 \  Port: 42380 \  Starboard: 42380 \  Up: 42380 \  Down: 42380 \  Max. Velocity For \   Manual Control: 240 km/h \  Hold Volume: 15 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="tian.blank" price="30000" quantity="1" mass=".01" volume="200" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Confed/Medium">
-			<Cargo file="mongoose.blank" price="80000" quantity="1" mass=".01" volume="400" description="\ Manufacturer: Unknown \ Model: Mongoose \ Crew Capacity: Unknown \ \ Stats - \  Mass: 21.605 mTons \  Accelerations - \  Fore: 1417 \  Aft: 1240 \  Port: 708 \  Starboard: 708 \  Up: 708 \  Down: 708 \  Max. Velocity For \   Manual Control: 147 km/h \  Hold Volume: Unknown \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="nova.blank" price="90000" quantity="1" mass=".01" volume="280" description="\ Manufacturer: Unknown \ Model: Nova \ Crew Capacity: Unknown \ \ Stats - \  Mass: 27.3825 mTons \  Accelerations - \  Fore: 4906 \  Aft: 4293 \  Port: 2453 \  Starboard: 2453 \  Up: 2453 \  Down: 2453 \  Max. Velocity For \   Manual Control: 154 km/h \  Hold Volume: 10 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="mongoose.blank" price="80000" quantity="1" mass=".01" volume="400" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="nova.blank" price="90000" quantity="1" mass=".01" volume="280" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Confed/Heavy">
-			<Cargo file="firefly.blank" price="70000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: Unknown \ Model: Firefly \ Crew Capacity: Unknown \ \ Stats - \  Mass: 78.533 mTons \  Accelerations - \  Fore: 1151 \  Aft: 1428 \  Port: 1136 \  Starboard: 1136 \  Up: 1136 \  Down: 1136 \  Max. Velocity For \   Manual Control: 122 km/h \  Hold Volume: 30 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="puma.blank" price="160000" quantity="1" mass=".01" volume="600" description="\ Manufacturer: Unknown \ Model: Puma \ Crew Capacity: Unknown \ \ Stats - \  Mass: 1486 mTons \  Accelerations - \  Fore: 93542 \  Aft: 81849 \  Port: 46771 \  Starboard: 46771 \  Up: 46771 \  Down: 46771 \  Max. Velocity For \   Manual Control: 170 km/h \  Hold Volume: 50 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="avenger.blank" price="220000" quantity="1" mass=".01" volume="1400" description="\ Manufacturer: Unknown \ Model: Avenger \ Crew Capacity: Unknown \ \ Stats - \  Mass: 1096.941 mTons \  Accelerations - 14013 \  Fore: 17363 \  Aft: 13808 \  Port: 13808 \  Starboard: 13808 \  Up: 13808 \  Down: 13808 \  Max. Velocity For \   Manual Control: 234 km/h \  Hold Volume: 30 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="firefly.blank" price="70000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="puma.blank" price="160000" quantity="1" mass=".01" volume="600" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="avenger.blank" price="220000" quantity="1" mass=".01" volume="1400" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Confed/Milspec">
-			<Cargo file="destiny.blank" price="300000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: Unknown \ Model: Destiny \ Crew Capacity: Unknown \ \ Stats - \  Mass: 1073\  Accelerations - \  Fore: 122748 \  Aft: 108746 \  Port: 62140 \  Starboard: 62140 \  Up: 62140 \  Down: 62140 \  Max. Velocity For \   Manual Control: 146 km/h\  Hold Volume: Unknown \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="avenger" price="2200000" quantity="1" mass=".01" volume="1400" description="\ Manufacturer: Unknown \ Model: Avenger \ Crew Capacity: Unknown \ \ Stats - \  Mass: 1096.941 mTons \  Accelerations - 14013 \  Fore: 17363 \  Aft: 13808 \  Port: 13808 \  Starboard: 13808 \  Up: 13808 \  Down: 13808 \  Max. Velocity For \   Manual Control: 234 km/h \  Hold Volume: 30 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="tian" price="210000" quantity="1" mass=".01" volume="200" description="\ Manufacturer: Unknown \ Model: Tian \ Crew Capacity: Unknown \ \ Stats - \  Mass: 278 mTons \  Accelerations - \  Fore: 84760 \  Aft: 74165 \  Port: 42380 \  Starboard: 42380 \  Up: 42380 \  Down: 42380 \  Max. Velocity For \   Manual Control: 240 km/h \  Hold Volume: 15 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="nova" price="320000" quantity="1" mass=".01" volume="280" description="\ Manufacturer: Unknown \ Model: Nova \ Crew Capacity: Unknown \ \ Stats - \  Mass: 27.3825 mTons \  Accelerations - \  Fore: 4906 \  Aft: 4293 \  Port: 2453 \  Starboard: 2453 \  Up: 2453 \  Down: 2453 \  Max. Velocity For \   Manual Control: 154 km/h \  Hold Volume: 10 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="puma" price="470000" quantity="1" mass=".01" volume="600" description="\ Manufacturer: Unknown \ Model: Puma \ Crew Capacity: Unknown \ \ Stats - \  Mass: 1486 mTons \  Accelerations - \  Fore: 93542 \  Aft: 81849 \  Port: 46771 \  Starboard: 46771 \  Up: 46771 \  Down: 46771 \  Max. Velocity For \   Manual Control: 170 km/h \  Hold Volume: 50 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="firefly" price="570000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: Unknown \ Model: Firefly \ Crew Capacity: Unknown \ \ Stats - \  Mass: 78.533 mTons \  Accelerations - \  Fore: 1151 \  Aft: 1428 \  Port: 1136 \  Starboard: 1136 \  Up: 1136 \  Down: 1136 \  Max. Velocity For \   Manual Control: 122 km/h \  Hold Volume: 30 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="destiny.blank" price="300000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="avenger" price="2200000" quantity="1" mass=".01" volume="1400" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="tian" price="210000" quantity="1" mass=".01" volume="200" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="nova" price="320000" quantity="1" mass=".01" volume="280" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="puma" price="470000" quantity="1" mass=".01" volume="600" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="firefly" price="570000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Confed/Light_Capship">
-			<Cargo file="corvette.blank" price="600000" quantity="1" mass=".01" volume="100000" description="\ Manufacturer: Unknown \ Model: Corvette \ Crew Capacity: Unknown \ \ Stats - \  Mass: 379958 mTons \  Accelerations - \  Fore: 218232 \  Aft: 190953 \  Port: 109116 \  Starboard: 109116 \  Up: 109116 \  Down: 109116 \  Max. Velocity For \   Manual Control: 103 km/h \  Hold Volume: 1000000000 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="corvette.blank" price="600000" quantity="1" mass=".01" volume="100000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Confed/Heavy_Capship">
 		</Category>
@@ -106,29 +107,29 @@
 		<Category file="starships/Militia/Heavy_Capship">
 		</Category>
 		<Category file="starships/Merchant/Light">
-			<Cargo file="wayfarer.blank" price="50000" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: Unknown \ Model: Wayfarer \ Crew Capacity: Unknown \ \ Stats - \  Mass: 1096 mTons \  Accelerations - \  Fore: 22523 \  Aft: 27935\  Port: 22231 \  Starboard: 22231 \  Up: 22231 \  Down: 22231 \  Max. Velocity For \   Manual Control: 108 km/h \  Hold Volume: 125 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="wayfarer.begin" price="60000" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: Unknown \ Model: Wayfarer \ Crew Capacity: Unknown \ \ Stats - \  Mass: 1096 mTons \  Accelerations - \  Fore: 22523 \  Aft: 27935\  Port: 22231 \  Starboard: 22231 \  Up: 22231 \  Down: 22231 \  Max. Velocity For \   Manual Control: 108 km/h \  Hold Volume: 125 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="wayfarer.blank" price="50000" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="wayfarer.begin" price="60000" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Merchant/Medium">
-			<Cargo file="longhaul.blank" price="130000" quantity="1" mass=".01" volume="2000" description="\ Manufacturer: Unknown \ Model: Longhaul\ Crew Capacity: Unknown \ \ Stats - \  Mass: 992 mTons \  Accelerations - \  Fore: 10167 \  Aft: 8896 \  Port: 5083 \  Starboard: 5083 \  Up: 5083 \  Down: 5083 \  Max. Velocity For \   Manual Control: 120 km/h \  Hold Volume: 150 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="dryad.blank" price="150000" quantity="1" mass=".01" volume="2000" description="\ Manufacturer: Unknown \ Model: Dryad \ Crew Capacity: Unknown\ \ Stats - \  Mass: 11 mTons \  Accelerations - \  Fore: 605.333344 \  Aft: 554.666676 \  Port: 402.666672 \  Starboard: 452.666672 \  Up: 402.666672 \  Down: 452.666672 \  Max. Velocity For \   Manual Control: 162 km/h \  Hold Volume: 15 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="longhaul.blank" price="130000" quantity="1" mass=".01" volume="2000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="dryad.blank" price="150000" quantity="1" mass=".01" volume="2000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Merchant/Heavy">
-			<Cargo file="cargoship" price="700000" quantity="1" mass=".01" volume="4000" description="\ Manufacturer: Unknown \ Model: Cargoship \ Crew Capacity: Unknown \ \ Stats - \  Mass: 2030040 \  Accelerations - \  Fore: 4342030 \  Aft: 5385245 \  Port: 4285640 \  Starboard: 4285640 \  Up: 4285640 \  Down: 4285640 \  Max. Velocity For \   Manual Control: 133 km/h \  Hold Volume: 300 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="cargoship" price="700000" quantity="1" mass=".01" volume="4000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Merchant/Light_Capship">
 		</Category>
 		<Category file="starships/Merchant/Heavy_Capship">
 		</Category>
 		<Category file="starships/Hunter/Light">
-			<Cargo file="katar.blank" price="65000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: Unknown \ Model: Katar \ Crew Capacity: Unknown \ \ Stats - \  Mass: 1278 mTons \  Accelerations - \  Fore: 178933 \  Aft: 191714 \  Port: 140590 \  Starboard: 140590 \  Up: 140590 \  Down: 140590 \  Max. Velocity For \   Manual Control: 178 km/h \  Hold Volume: 65 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="katar.blank" price="65000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Hunter/Medium">
-			<Cargo file="epeellcat.blank" price="240000" quantity="1" mass=".01" volume="800" description="\ Manufacturer: Unknown \ Model: Epeellcat \ Crew Capacity: Unknown \ \ Stats - \  Mass: 6.1461 mTons \  Accelerations - \  Fore: 338 \  Aft: 398 \  Port: 169 \  Starboard: 169 \  Up: 169 \  Down: 169 \  Max. Velocity For \   Manual Control: 131 km/h \  Hold Volume: 50 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="epeellcat.blank" price="240000" quantity="1" mass=".01" volume="800" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Hunter/Heavy">
-			<Cargo file="khanjarli.blank" price="120000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: Unknown \ Model: khanjarli \ Crew Capacity: Unknown \ \ Stats - \  Mass: 308 mTons \  Accelerations - \  Fore: 8216 \  Aft: 7271 \  Port: 4149 \  Starboard: 4149 \  Up: 4149 \  Down: 4149 \  Max. Velocity For \   Manual Control: 135 km/h \  Hold Volume: 50 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
-			<Cargo file="avenger" price="1200000" quantity="1" mass=".01" volume="1400" description="\ Manufacturer: Unknown \ Model: Avenger \ Crew Capacity: Unknown \ \ Stats - \  Mass: 1096.941 \  Accelerations - \  Fore: 14013 \  Aft: 17363 \  Port: 13808 \  Starboard: 13808 \  Up: 13808 \  Down: 13808 \  Max. Velocity For \   Manual Control: 234 km/h \  Hold Volume: 30 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="khanjarli.blank" price="120000" quantity="1" mass=".01" volume="500" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="avenger" price="1200000" quantity="1" mass=".01" volume="1400" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/Hunter/Light_Capship">
 		</Category>
@@ -137,7 +138,7 @@
 		<Category file="starships/ISO/Light">
 		</Category>
 		<Category file="starships/ISO/Medium">
-			<Cargo file="eagle.blank" price="110000" quantity="1" mass=".01" volume="900" description="\ Manufacturer: Unknown \ Model: Eagle \ Crew Capacity: Unknown \ \ Stats - \  Mass: 65.184 \  Accelerations - \  Fore: 2796 \  Aft: 3302 \  Port: 3284 \  Starboard: 3284 \  Up: 3284 \  Down: 3284 \  Max. Velocity For \   Manual Control: 137 km/h \  Hold Volume: 70 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="eagle.blank" price="110000" quantity="1" mass=".01" volume="900" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
 		</Category>
 		<Category file="starships/ISO/Heavy">
 		</Category>
@@ -226,16 +227,16 @@
 			<Cargo file="autotracking" price="100000" quantity="1" mass=".01" volume="1" description="While all mounted weapons have inherent auto-tracking capabilities, these defaults are limited in civilian mounts.  A full-powered military auto-tracker like this greatly enhances weapon accuracy." />
 		</Category>
 		<Category file="upgrades/Engines/Light">
-			<Cargo file="engine_level_0" price="4000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />	
-			<Cargo file="engine_level_1" price="10000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="engine_level_0" price="4000" quantity="1" mass=".01" volume="1" description="Standard light engine (level 0).\ \ Stat - \    Reactor recharge: 20\    Limit: 140" />
+			<Cargo file="engine_level_1" price="10000" quantity="1" mass=".01" volume="1" description="Standard light engine (level 1).\ \ Stat - \    Reactor recharge: 80\    Limit: 260" />
 		</Category>
 		<Category file="upgrades/Engines/Medium">
-			<Cargo file="engine_level_2" price="30000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="engine_level_3" price="60000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="engine_level_2" price="30000" quantity="1" mass=".01" volume="1" description="Standard medium engine (level 2).\ \ Stat - \    Reactor recharge: 140\    Limit: 400" />
+			<Cargo file="engine_level_3" price="60000" quantity="1" mass=".01" volume="1" description="Standard medium engine (level 3).\ \ Stat - \    Reactor recharge: 180\    Limit: 500" />
 		</Category>
 		<Category file="upgrades/Engines/Heavy">
-			<Cargo file="engine_level_4" price="100000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="engine_level_5" price="150000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="engine_level_4" price="100000" quantity="1" mass=".01" volume="1" description="Standard heavy engine (level 4).\ \ Stat - \    Reactor recharge: 210\    Limit: 580" />
+			<Cargo file="engine_level_5" price="150000" quantity="1" mass=".01" volume="1" description="Standard heavy engine (level 5).\ \ Stat - \    Reactor recharge: 260\    Limit: 760" />
 		</Category>
 		<Category file="upgrades/Engines/Aera_Milspec">
 		</Category>
@@ -247,7 +248,7 @@
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Light">
 			<Cargo file="afterburner_generic" price="3000" quantity="1" mass=".01" volume="1" description="The generic afterburner dumps reactive fuel into the superheated exhaust." />
-<!--			<Cargo file="thruster_retrofit" price="20000" quantity="1" mass=".01" volume="1" description="Upgrading to more modern thruster units provides an increase in performance without having to alter the inertial compensator." />-->
+			<Cargo file="thruster_retrofit" price="20000" quantity="1" mass=".01" volume="1" description="Upgrading to more modern thruster units provides an increase in performance without having to alter the inertial compensator." />
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Medium">
 			<Cargo file="afterburner" price="16000" quantity="1" mass=".01" volume="1" description="Dumping fuelinto the superheated exhaust, and adding additional heating elements to the exhaust increases thrust." />
@@ -257,27 +258,27 @@
 		<Category file="upgrades/Engines/Engine_Enhancements_Heavy">
 			<Cargo file="mult_maneuver_enhancer" price="200000" quantity="1" mass=".01" volume="1" description="Minor reinforcements and significant upgrades of the inertial compensators allow for more interesting maneuvers." />
 			<Cargo file="mult_speed_enhancer" price="250000" quantity="1" mass=".01" volume="1" description="By improving the tolerances on a vessel's passive particle shielding and autocompensating software, higher speeds can be safely reached." />
-<!--			<Cargo file="thruster_upgrade" price="30000" quantity="1" mass=".01" volume="1" description="By enhancing the inertial compensators, the existing thrusters can work closer to full output." />
-			<Cargo file="replacement_thrusters" price="40000" quantity="1" mass=".01" volume="1" description="When the inertial compensator can take more than the thrusters can give, it's time for new thrusters." />-->
+			<Cargo file="thruster_upgrade" price="30000" quantity="1" mass=".01" volume="1" description="By enhancing the inertial compensators, the existing thrusters can work closer to full output." />
+			<Cargo file="replacement_thrusters" price="40000" quantity="1" mass=".01" volume="1" description="When the inertial compensator can take more than the thrusters can give, it's time for new thrusters." />
 		</Category>
 		<Category file="upgrades/Shield_Systems/Light">
-			<Cargo file="shield_2" price="3500" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="shield_2_Level1" price="9000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="shield_4" price="4000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="shield_4_Level1" price="10000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="shield_2" price="3500" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 40\    Back: 40\    Left: 0\    Right: 0\    Recharge rate: 15" />
+			<Cargo file="shield_2_Level1" price="9000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 100\    Back: 100\    Left: 0\    Right: 0\    Rrecharge rate: 20" />
+			<Cargo file="shield_4" price="4000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 40\    Back: 40\    Left: 40\    Right: 40\    Recharge rate: 15" />
+			<Cargo file="shield_4_Level1" price="10000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 100\    Back: 100\    Left: 100\    Rright: 100\    Recharge rate: 20" />
 		</Category>
 		<Category file="upgrades/Shield_Systems/Medium">
-			<Cargo file="shield_2_Level2" price="25000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="shield_2_Level3" price="40000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="shield_4_Level2" price="30000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="shield_4_Level3" price="50000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="shield_2_Level2" price="25000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 200\    Back: 200\    Left: 0\    Right: 0\    Recharge rate: 25" />
+			<Cargo file="shield_2_Level3" price="40000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 300\    Back: 300\    Left: 0\    right: 0\    Recharge rate: 30" />
+			<Cargo file="shield_4_Level2" price="30000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 200\    Back: 200\    Left: 200\    Right: 200\    Recharge rate: 25" />
+			<Cargo file="shield_4_Level3" price="50000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 300\    Back: 300\    Left: 300\    Right: 300\    Recharge rate: 30" />
 		</Category>
 		<Category file="upgrades/Shield_Systems/Heavy">
-			<Cargo file="shield_2_Level4" price="90000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="shield_2_Level5" price="140000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="shield_4_Level4" price="100000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="shield_4_Level5" price="150000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="mult_shield_regenerator" price="170000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="shield_2_Level4" price="90000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 400\    Back: 400\    Left: 0\    Right: 0\    Recharge rate: 35" />
+			<Cargo file="shield_2_Level5" price="140000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 500\    Back: 500\    Left: 0\    Right: 0\    Recharge rate: 40" />
+			<Cargo file="shield_4_Level4" price="100000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 400\    Back: 400\    Left: 400\    Right: 400\    Recharge rate: 35" />
+			<Cargo file="shield_4_Level5" price="150000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 500\    Back: 500\    Left: 500\    Right: 500\    Recharge rate: 40" />
+			<Cargo file="mult_shield_regenerator" price="170000" quantity="1" mass=".01" volume="1" description="Increase the recharge rate of all the shield.\ \ Stat - \    Recharge rate: +25%" />
 		</Category>
 		<Category file="upgrades/Shield_Systems/Aera_Milspec">
 		</Category>
@@ -288,8 +289,8 @@
 		<Category file="upgrades/Shield_Systems/ISO_Milspecs">
 		</Category>
 		<Category file="upgrades/Armor_Modification">
-			<Cargo file="plasteel" price="1000" quantity="1" mass=".01" volume="1" description="In some senses closer to an extending of the hull than an actual armoring, plasteel is nonetheless cheap and cost-effective." />
-			<Cargo file="tungsten" price="1500" quantity="1" mass=".01" volume="1" description="Dense, and with a high melting temperature, tungsten based armor is crude, but not ineffective." />
+			<Cargo file="plasteel" price="1000" quantity="1" mass=".01" volume="1" description="In some senses closer to an extending of the hull than an actual armoring, plasteel is nonetheless cheap and cost-effective.\ \ Stat - \    Armor: 100" />
+			<Cargo file="tungsten" price="1500" quantity="1" mass=".01" volume="1" description="Dense, and with a high melting temperature, tungsten based armor is crude, but not ineffective.\ \ Stat - \    Armor: 200" />
 		</Category>
 		<Category file="upgrades/Armor_Modification/Aera_Milspec">
 			<Cargo file="TantalumCarbide" price="500" quantity="1" mass=".01" volume="1" description="Though possessed of a very high melting point, it is, however, not a particularly good armor by itself.  It is, however, cheap for the Aera to produce." />
@@ -304,25 +305,25 @@
 		<Category file="upgrades/Armor_Modification/ISO_Milspecs">
 		</Category>
 		<Category file="upgrades/Hull_Upgrades">
-			<Cargo file="hull" price="1000" quantity="1" mass=".01" volume="1" description="" />
-			<Cargo file="plated_hull" price="12000" quantity="1" mass=".01" volume="1" description="Electro-plating of dense and then conductive metals to a ships hull tend to greatly improve its usefulness." />
-			<Cargo file="double_plated_hull" price="15000" quantity="1" mass=".01" volume="1" description="Making use of vacuum's excellent insulating properties, those not worried about extra mass and extra expense can add a two layer dent and radiator plate to their vessels." />
+			<Cargo file="hull" price="1000" quantity="1" mass=".01" volume="1" description="Basic metal hull.\ \ Stat - \    Hull strength: 200" />
+			<Cargo file="plated_hull" price="12000" quantity="1" mass=".01" volume="1" description="Electro-plating of dense and then conductive metals to a ships hull tend to greatly improve its usefulness.\ \ Stat - \    Hull strength: 1000" />
+			<Cargo file="double_plated_hull" price="15000" quantity="1" mass=".01" volume="1" description="Making use of vacuum's excellent insulating properties, those not worried about extra mass and extra expense can add a two layer dent and radiator plate to their vessels.\ \ Stat - \    Hull strength: 1500" />
 		</Category>
 		<Category file="upgrades/Hull_Upgrades/Aera_Milspec">
-			<Cargo file="coated_hull" price="5000" quantity="1" mass=".01" volume="1" description="By lining the hull in radiator vanes embedded in high temperature ablatives sitting on a kinetic distributor, energy is spread over a broader region of the hull, allowing the hull to take more damage before any one part collapses." />
+			<Cargo file="coated_hull" price="5000" quantity="1" mass=".01" volume="1" description="By lining the hull in radiator vanes embedded in high temperature ablatives sitting on a kinetic distributor, energy is spread over a broader region of the hull, allowing the hull to take more damage before any one part collapses.\ \ Stat - \    Hull strength: 400" />
 		</Category>
 		<Category file="upgrades/Hull_Upgrades/Rlaan_Milspec">
-			<Cargo file="micro_shielded_hull" price="30000" quantity="1" mass=".01" volume="1" description="By embedding scores of miniaturized shield units in the hull, the ability of the hull to absorb damage is massively increased, at the cost of significant energy draw." />
+			<Cargo file="micro_shielded_hull" price="30000" quantity="1" mass=".01" volume="1" description="By embedding scores of miniaturized shield units in the hull, the ability of the hull to absorb damage is massively increased, at the cost of significant energy draw.\ \ Stat - \    Hull strength: 4000" />
 		</Category>
 		<Category file="upgrades/Hull_Upgrades/Confed_Milspec">
-			<Cargo file="polymer_hull" price="10000" quantity="1" mass=".01" volume="1" description="Optimized for minimal mass, this hull is constructed out of crossweaved long carbon nanotubules embedded in a hard epoxy and covered with a thin layer of UV protectant." />
-			<Cargo file="reinforced_hull" price="25000" quantity="1" mass=".01" volume="1" description="The base hull design is modified with additional buttresses and honycomb regions to increase resiliency to damage." />
+			<Cargo file="polymer_hull" price="10000" quantity="1" mass=".01" volume="1" description="Optimized for minimal mass, this hull is constructed out of crossweaved long carbon nanotubules embedded in a hard epoxy and covered with a thin layer of UV protectant.\ \ Stat - \    Hull strength: 750" />
+			<Cargo file="reinforced_hull" price="25000" quantity="1" mass=".01" volume="1" description="The base hull design is modified with additional buttresses and honycomb regions to increase resiliency to damage.\ \ Stat - \    Hull strength: 2000" />
 		</Category>
 		<Category file="upgrades/Hull_Upgrades/ISO_Milspecs">
 		</Category>
 		<Category file="upgrades/ECM_Systems">
-			<Cargo file="ecm_package_1" price="5000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="ecm_package_2" price="15000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="ecm_package_1" price="5000" quantity="1" mass=".01" volume="1" description="Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\ \ Stat - \    Defense: 0.02" />
+			<Cargo file="ecm_package_2" price="15000" quantity="1" mass=".01" volume="1" description="Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\ \ Stat - \    Defense: 0.07" />
 		</Category>
 		<Category file="upgrades/ECM_Systems/Aera_Milspec">
 		</Category>
@@ -346,19 +347,19 @@
 			<Cargo file="repair_ai_advanced" price="300000" quantity="1" mass=".01" volume="1" description="Similar to the normal repair ai, but with code optimizations and a better warranty." />
 		</Category>
 		<Category file="upgrades/Radar/Basic">
-			<Cargo file="SkyScope_Alpha" price="5000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="SkyScope_AlphaPlus" price="10000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="StarScanner_2530" price="20000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="SkyScope_Alpha" price="5000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : No\    Radar ITTS: No\    Radar color: No\    Radar error: 0.5\    Radar Range: 5000\    Cone:\      Lock: 0.901\      Tracking: 0.9601" />
+			<Cargo file="SkyScope_AlphaPlus" price="10000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : No\    Radar ITTS: No\    Radar color: No\    Radar error: 0.25\    Radar Range: 10000\    Cone:\      Lock: 0.851\      Tracking: 0.931" />
+			<Cargo file="StarScanner_2530" price="20000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : No\    Radar ITTS: No\    Radar color: Yes\    Radar error: 0\    Radar Range: 8000\    Cone:\      Lock: 0.781\      Tracking: 0.92" />
 		</Category>
 		<Category file="upgrades/Radar/Intermediate">
-			<Cargo file="SkyScope_Beta" price="20000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="StarScanner_2545" price="40000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="Hawkeye_ZX-16" price="80000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="SkyScope_Beta" price="20000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error:0. 25\    Radar Range: 20000\    Cone:\      Lock: 0.851\      Tracking: 0.901" />
+			<Cargo file="StarScanner_2545" price="40000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : No\    Radar ITTS: No\    Radar color: Yes\    Radar error: 0\    Radar Range: 14000\    Cone:\      Lock: 0.751\      Tracking: 0.901" />
+			<Cargo file="Hawkeye_ZX-16" price="80000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error: 0\    Radar Range: 14000\    Cone:\      Lock: 0.71\      Tracking: 0.951" />
 		</Category>
 		<Category file="upgrades/Radar/Advanced">
-			<Cargo file="StarScanner_2600" price="120000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="Hawkeye_ZX-50" price="140000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
-			<Cargo file="Hawkeye_ZX-86" price="160000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="StarScanner_2600" price="120000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : No\    Radar ITTS: Yes\    Radar color: Yes\    Radar error: 0\    Radar Range: 20000\    Cone:\      Lock:0.801\      Tracking: 0.851" />
+			<Cargo file="Hawkeye_ZX-50" price="140000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error: 0\    Radar Range: 40000\    Cone:\      Lock: 0.782\      Tracking: 0.831" />
+			<Cargo file="Hawkeye_ZX-86" price="160000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: Yes\    Radar error: 0\    Radar Range: 50000\    Cone:\      Lock: 0.85\      Tracking: 0.85" />
 		</Category>
 		<Category file="upgrades/Weapons/Turrets">
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1" description="Given the armament commonly placed in such turrets, the small turret has become affectionately known as 'the machine that goes ping'." />
@@ -370,9 +371,9 @@
 			<Cargo file="cargo_pod" price="20000" quantity="1" mass=".1" volume="1" description="Some pieces of cargo won't fit in many ships, especially, many ships." />
 		</Category>
 		<Category file="upgrades/Miscellaneous">
-			<Cargo file="add_fuel" price="1000" quantity="1" mass=".01" volume="1" description="Every action requires a reaction." />
+			<Cargo file="add_fuel" price="1000" quantity="1" mass=".01" volume="1" description="Every action requires a reaction.\ \ Stat : \    Add 10000000 fuel" />
 			<Cargo file="jump_drive" price="10000" quantity="1" mass=".01" volume="1" description="Though only usable at weak points in space, this device allows for tunneling through these points." />
-			<Cargo file="add_cargo_volume" price="10000" quantity="1" mass=".01" volume="1" description="It is truly amazing to find out how much extra space one has if one slightly alters safety specs." />
+			<Cargo file="add_cargo_volume" price="10000" quantity="1" mass=".01" volume="1" description="It is truly amazing to find out how much extra space one has if one slightly alters safety specs.\ \ Stat - \    Add 50 cargo volume" />
 
 		</Category>
 		<Category file="upgrades/Miscellaneous/Aera_Milspec">
@@ -414,11 +415,11 @@
 		</Category>
 		<Category file="upgrades/Experimental">
 			<Cargo file="reaper_gun" price="1200000" quantity="1" mass=".01" volume="1" description="\ Stats - \   Power Draw: \   Refire Delay: \   Exit Velocity: \   Damage Rating: \   Range:" />
-			<Cargo file="cloaking_device" price="259000" quantity="1" mass="8.9" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="cloaking_device" price="259000" quantity="1" mass="8.9" volume="1" description="This device uses gravity manipulation technology. A powerful gravitational lens bends the radiation emitted by active sensors around the ship. This renders the vehicle completely invisible to both active and passive sensors." />
 			<Cargo file="advtorpedo_ammo" price="2000" quantity="1" mass=".01" volume="1" description="\ Stats - \   Rounds/Launcher: \   Refire Delay: \   Max Velocity: \   Damage Rating: \   Range:" />
 			<Cargo file="hail_3pack_ammo" price="90" quantity="1" mass=".01" volume="1" description="\ Stats - \   Rounds/Launcher: \   Refire Delay: \   Max Velocity: \   Damage Rating: \   Range:" />
 			<Cargo file="leech_ammo" price="1000" quantity="1" mass=".01" volume="1" description="\ Stats - \   Rounds/Launcher: \   Refire Delay: \   Max Velocity: \   Damage Rating: \   Range:" />
-			<Cargo file="ecm_package_3" price="30000" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
+			<Cargo file="ecm_package_3" price="30000" quantity="1" mass=".01" volume="1" description="Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\ \ Stat - \    Defense: 0.14" />
 		</Category>
 
 		<Category file="Natural_Products/Aera_Food">
@@ -660,7 +661,7 @@
 		</Category>
 		<Category file="Manufactured_Goods">
 			<Cargo file="Carpets" price="55" quantity="1" mass=".01" volume="1" description="Carpets, albeit of far less dust loving varieties, have made their way into space primarily because large slabs of metal are cold to walk on." />
-			<Cargo file="Furniture" price="140" quantity="1" mass=".01" volume="1" description="No matter what their size or shape, all corporeal beings need something to park their butt-equivalent on." />
+			<Cargo file="Furniture" price="140" quantity="1" mass=".01" volume="1" description="No matter how their size or shape, all corporeal beings need something to park their butt-equivalent on." />
 			<Cargo file="Home_Appliances" price="100" quantity="1" mass=".01" volume="1" description="From the esoteric hover-masseuse to the ubiquitous InstaNuker, these are the champions of eternal consumerism." />
 			<Cargo file="Hygiene_Supplies" price="110" quantity="1" mass=".01" volume="1" description="As advanced as the sentient races have become, they have not escaped the need for a good scrubbing up every once and a while. Cremes and balms promise to use the latest advances in nanoscale chemical transport to remove wrinkles and provide superior skin tone, anti-esthers seek out and destroy unpleasant scent particles, and orifice specific probes prevent awkward mucus excretions." />
 			<Cargo file="Janitorial_Supplies" price="105" quantity="1" mass=".01" volume="1" description="While most developed worlds are moving away from using living janitors, the need for chemical cleansers and means to apply them has not changed." />
@@ -695,7 +696,7 @@
 	<!-- cargo below is senselessly banned by 1 race alone -->
 		<Category file="Contraband/Confed">
 			<Cargo file="ISO_Propaganda" price="100" quantity="1" mass=".01" volume="1" description="A fair portion of it's true a fair portion of the time, but all of it's illegal all of the time."/>
-			<Cargo file="ISO_Party_Member" price="800" quantity="1" mass=".01" volume="1" description="Anyone in Confederation space willing to openly declare their membership in the ISO either has great fortitude or suffers from great idiocy. The same however, must be said of those willing to transport them through said space." />			
+			<Cargo file="ISO_Party_Member" price="800" quantity="1" mass=".01" volume="1" description="Anyone in Confederation space willing to openly declare their membership in the ISO either has great fortitude or suffers from great idiocy. The same however, must be said of those willing to transport them through said space." />
 			<Cargo file="Socialist_Worker_Journal" price="35" quantity="1" mass=".01" volume="1" description="The Socialist Worker Journal is a bi-monthly electronic publication believed to have its origins on Berkeley in the Defiance system. The SWJ highlights the importance of advancing socialism, and features artwork and music produced by workers, for workers.  This product has been officially deemed 'unworthy for use even in the task of wiping one's rear.'" />
 			<Cargo file="Former_Political_Prisoners" price="920" quantity="1" mass=".01" volume="1" description="Are you now, or have you ever been, a member of the ISO?" />
 			<Cargo file="Immigrants" price="160" quantity="1" mass=".01" volume="1" description="With the passing of the Confederation's so called 'Enough is Enough' legislation, it is illegal to transport individuals whose stated purpose is to settle on a planet deemed to have already reached its maximum desired population.  While many decried the legislative package as both idiotic and unenforceable and hearings on the act dragged on for years, the coalition of Purists, High Born, Shapers, and various minor factions prevailed over the opposition of the Andolians and the Merchants, with the Unadorned not deigning to participate in the discussion." />
