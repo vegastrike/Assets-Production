@@ -21,6 +21,7 @@
 
 <!-- new elements added -->
 <Subunit file="turretbeamheavy" x="0.638871" y="22.638174" z="-0.317480" ri="-0.394286" rj="0.000000" rk="-0.918988" qi="0.130978" qj="0.989791" qk="-0.056195"/>
+<Hold volume="10000">
 		<Category file="Natural_Products/Food">
 			<import price="1.2" pricestddev=".1" quantity="5" quantitystddev="3"/>
 		</Category>
