@@ -6,8 +6,8 @@
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="system" value="enigma_sector/blake" />
-		<var name="mission_name" value="Cargo Mission" />
-		<var name="description" value="Deliver cargo to a system" />
+		<var name="mission_name" value="Base Cargo Delivery" />
+		<var name="description" value="A long range base requires a resupply. We will disclose the location upon mission acceptance. The base is over 8 systems away. Your pay will be 1100 per system traversed in a minimal path to the destination. It can use any and all supplies you bring to it."/>
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="2">
@@ -21,15 +21,28 @@
         </flightgroups>
 	<module name="director">
 		<import name="cargo_mission"/>
+		<script name="initbriefing">
+			<exec module="cargo_mission" name="initbriefing">
+			</exec>
+		</script>
+		<script name="loopbriefing">
+			<exec module="cargo_mission" name="loopbriefing">
+			</exec>
+		</script>
+		<script name="endbriefing">
+			<exec module="cargo_mission" name="endbriefing">
+			</exec>
+		</script>
 		<script name="initgame">
-			<exec module="cargo_mission" name="init">
-			<const type="int" value="2"/> <!--faction name 0 confed 1 aera... -->
-			<const type="int" value="2"/> <!--num systems away the delivery point is -->
-			<const type="int" value="2"/><!--ammt of cargo in hold -->
+			<exec module="cargo_mission" name="initrandom">
+			<const type="object" object="string" value="confed"/>
 			<const type="int" value="0"/> <!--difficulty of mission(do they send peeps after you)-->
-			<const type="float" value="1000"/> <!--the distance drom base the new ship is generated at -->
-			<const type="float" value="2048"/> <!-- how much you are laid ...err paid -->
+			<const type="float" value="1000"/> <!-- how much you are paid -->
 			<const type="bool" value="false"/><!-- if they send a capship or prefer to have you drop it at a planet -->
+			<const type="int" value="8"/><!-- min systems away-->
+			<const type="int" value="12"/><!-- max systems away-->
+			<const type="float" value="3400"/><!--time -->
+			<const type="object"  object="string" value=""/>
 			</exec>
 		</script>
 		<script name="gameloop">
