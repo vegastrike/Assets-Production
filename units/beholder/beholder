@@ -1,11 +1,12 @@
 <Unit>
 <Meshfile file="s-Cone02-3 - Default.xmesh"/>
+<ShieldMesh file="s-Cone02-3 - Default.xmesh"/>
 <Meshfile file="s-Cone01-1 - Default.xmesh"/>
+<BSPMesh/>
 
-
-<Mount weapon="Disruptorbeam" size="Light" x="0" y="-0.5" z="13.0"/>
-<Light file="supernovaa.png" x="0" y="-0.5" z="13" size="0.500000"/>
-<Light file="supernovaa.png" x="0" y="0" z="-7.20000" size="3.000000"/>
+<Mount weapon="UnknownHeavyBeam" size="Light" x="0" y="-0.5" z="13.0"/>
+<Light file="supernova.bmp" x="0" y="-0.5" z="13" size="0.500000"/>
+<Light file="supernova.bmp" x="0" y="0" z="-7.20000" size="3.000000"/>
 
 
 
@@ -13,7 +14,7 @@
 
 	<Armor front="500" right="500" left="500" back="500"/>
 
-	<Shields front="500.000000" back="500.000000" recharge="120.000000"/>
+	<Shields front="500.000000" back="500.000000" recharge="180.000000"/>
 
 	<Hull strength="1000.000000"/>
 
