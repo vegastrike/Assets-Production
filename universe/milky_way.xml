@@ -108,6 +108,11 @@
 			<var name="faction" value="confed"/><!-- the default faction for systems in the sol sector -->		
 			<var name="namelist" value="greek.txt"/><!-- Sol Sector uses green names for planets -->			
 			<var name="planetlist" value="planets.txt"/>	
+			<sector name="sol">
+			        <var name="faction" value="confed"/> 
+			 
+				<var name="jumps" value="sol_sector/talos sol_sector/polaris sol_sector/sirius"/>
+			</sector>
 			<sector name="weslyn">
 			        <var name="faction" value="confed"/> 
 				<var name="sun_radius" value="8000"/>
@@ -150,7 +155,7 @@
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="false"/>
 				<var name="num_natural_phenomena" value="1"/>
-				<var name="jumps" value="sol_sector/tikopal sol_sector/alpha_centauri sol_sector/luyten sol_sector/bradshaw sol_sector/frase"/>
+				<var name="jumps" value="sol_sector/tikopal sol_sector/alpha_tauri sol_sector/luyten sol_sector/bradshaw sol_sector/frase"/>
 				<var name="data" value="1625"/>
 			</sector>	
 			<sector name="tikopal">
@@ -504,7 +509,7 @@
 			<sector name="sirius">
 			      <var name="faction" value="confed"/> 
 				<var name="num_starbases" value="0"/>
-				<var name="jumps" value="vega_sector/proxima sol_sector/luyten sol_sector/weslyn sol_sector/tikopal "/>
+				<var name="jumps" value="vega_sector/proxima sol_sector/luyten sol_sector/weslyn sol_sector/sol sol_sector/tikopal "/>
 				<var name="data" value="2347"/>
 			</sector>
 			<sector name="leonis">
@@ -1162,7 +1167,7 @@
 				<var name="num_moons" value="2"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="vega_sector/kreiger vega_sector/acrux"/>
+				<var name="jumps" value="vega_sector/krieger vega_sector/acrux"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2358"/>
@@ -1782,7 +1787,7 @@
 			</sector>
 			<sector name="pestilence">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/death gemini_sector/"/>
+				<var name="jumps" value="gemini_sector/death gemini_sector/war"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1436"/>
@@ -2264,7 +2269,7 @@
 			<sector name="telamon">
 				<var name="faction" value="aera"/> 
 				<var name="planetlist" value="planets.aera.txt"/> 
-				<var name="jumps" value="enigma_sector/racene enigma_sector/speardon engima_sector/callimachius epsilon_sector/trafalgar epsilon_sector/circe"/>
+				<var name="jumps" value="enigma_sector/racene enigma_sector/speardon enigma_sector/callimachius epsilon_sector/trafalgar epsilon_sector/circe"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1397"/>
@@ -2686,7 +2691,7 @@
 			<sector name="deneb">
 				<var name="faction" value="aera"/> 
 				<var name="planetlist" value="planets.aera.txt"/> 
-				<var name="jumps" value="vega_sector/delius epsilon_sector/canewdon epsilon_prima"/>
+				<var name="jumps" value="vega_sector/delius epsilon_sector/canewdon epsilon_sector/epsilon_prima"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2109"/>
@@ -3687,7 +3692,7 @@
 			<var name="namelist" value="incan.txt"/>
 			<sector name="komarov">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="sol_sector/lenin avalon_sector/thethys hawking_sector/gilmore"/>
+				<var name="jumps" value="sol_sector/lenin avalon_sector/tethys hawking_sector/gilmore"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1940"/>
@@ -4242,7 +4247,7 @@
 			</sector>
 			<sector name="mccall">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="avalon_sector/avalon avalon_sector/pereus avalon_sector/leon"/>
+				<var name="jumps" value="avalon_sector/avalon avalon_sector/perseus avalon_sector/leon"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="2345"/>
