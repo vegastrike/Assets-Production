@@ -49,14 +49,14 @@
 	<Mount weapon="Penetrator" size="capship-medium" x="4.0" y="-4.618" z="19.606" />
 	<Mount weapon="Penetrator" size="capship-medium" x="0.0" y="-4.618" z="19.606" />
 
-	<Mount weapon="CapIFF" size="light-capship-missile" x="-10.0" y="1.757" z="-3.5" ammo="6"/>
-	<Mount weapon="CapIFF" size="light-capship-missile" x="10.0" y="1.757" z="-3.5" ammo="6"/>
-	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="-10.0" y="1.757" z="-3.5" ammo="1"/>
-	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="10.0" y="1.757" z="-3.5" ammo="1"/>
-	<Mount weapon="Mace" size="heavy-missile" x="-10.0" y="1.757" z="-3.5" ammo="1"/>
-	<Mount weapon="Mace" size="heavy-missile" x="10.0" y="1.757" z="-3.5" ammo="1"/>
-	<Mount weapon="Torpedo" size="heavy-missile" x="-10.0" y="1.757" z="-3.5" ammo="3"/>
-	<Mount weapon="Torpedo" size="heavy-missile" x="10.0" y="1.757" z="-3.5" ammo="3"/>
+	<Mount weapon="CapIFF" size="light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="4"/>
+	<Mount weapon="CapIFF" size="light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="4"/>
+	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1"/>
+	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1"/>
+	<Mount weapon="Mace" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="1"/>
+	<Mount weapon="Mace" size="heavy-missile" x="10.0" y="1.757" z="3.5" ammo="1"/>
+	<Mount weapon="Torpedo" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="3"/>
+	<Mount weapon="Torpedo" size="heavy-missile" x="10.0" y="1.757" z="3.5" ammo="3"/>
 	<Mount weapon="Hail" size="special-missile" x="-10.0" y="-3.5" z="11.8091" ammo="110"/>
         <Mount weapon="Hail" size="special-missile" x="10.0" y="-3.5" z="11.8091" ammo="110"/>
 	

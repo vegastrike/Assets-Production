@@ -487,7 +487,7 @@
 </Damage>
 <Distance speed="600" radialspeed=".8" radius="8" pulsespeed="15" range="1200" >
 </Distance>
-<Appearance file="weapons/beamtexture.png" soundwav="MASS.WAV" r="1" g=".5" b=".5" a="1" >
+<Appearance file="weapons/beamtexture.png" soundwav="MASS.WAV" r=".84" g=".5" b=".9" a="1" >
 </Appearance>
 </Beam>
 
@@ -518,9 +518,9 @@
 </Energy>
 <Damage rate="90" phasedamage="30" longrange=".7">
 </Damage>
-<Distance speed="240" radialspeed="1" radius="7" length="9" pulsespeed="15" range="2400" >
+<Distance speed="240" radialspeed="1" radius="7" length="10" pulsespeed="15" range="2400" >
 </Distance>
-<Appearance file="weapons/penetrator.png" soundwav="sfx07c.wav" r="1" g=".8" b=".8" a=".9" >
+<Appearance file="weapons/penetrator.png" soundwav="sfx07c.wav" r=".9" g=".7" b="1" a=".7" >
 </Appearance>
 </Bolt>
 
