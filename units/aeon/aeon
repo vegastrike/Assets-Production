@@ -1,4 +1,5 @@
 <Unit>
+	<cockpit file="light_cockpit.cpt" x="0" y=".25" z="4.5"/>
 	<Meshfile file="aeon.xmesh" />
 	<Mount weapon="DisruptorBeam" size="light medium" x="5.600000" y="-1.600000" z="3.200000"/>
 	<Mount weapon="DisruptorBeam" size="light medium" x="-5.600000" y="-1.600000" z="3.200000"/>

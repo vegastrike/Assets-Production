@@ -15,6 +15,7 @@
 <!-- made into pretty blue gatling bolt -->
 <Mount weapon="Photon" size="Special Light Medium Heavy Autotracking" x="2.80800" y="0.15400" z="19.98000"/>
 
+	<cockpit file="light_cockpit.cpt" x="0" y=".5" z="10"/>
 <Mount weapon="Laser" size="Light Autotracking" x="3.76500" y="0.15400" z="19.31000"/>
 <Mount weapon="Swarm" size="Special special-missile" x="-12" y="0" z="6.5" ammo="80" volume="801"/>
 <Mount weapon="Dumbfire" size="light-missile" x="-12" y="0" z="6.5" ammo="6" volume="361"/>

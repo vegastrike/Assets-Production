@@ -14,15 +14,15 @@
 <Meshfile file="adronec4.xmesh"/>
 <Meshfile file="adronecock.xmesh"/>
 
+<cockpit file="medium_cockpit.cpt" x="0" y=".23" z="8"/>
 
+<Mount weapon="Ktek" size="Light Medium Heavy Special Autotrack" x="-5.277" y="2.683" z="21.963"/>
 
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="-5.277" y="2.683" z="21.963"/>
+<Mount weapon="Ktek" size="Light Medium Heavy Special Autotrack" x="5.277" y="2.683" z="21.963"/>
 
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="5.277" y="2.683" z="21.963"/>
+<Mount weapon="Ktek" size="Light Medium Heavy Special Autotrack" x="3.027" y="-3.899" z="18.562"/>
 
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="3.027" y="-3.899" z="18.562"/>
-
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="-3.021" y="-3.924" z="18.562"/>
+<Mount weapon="Ktek" size="Light Medium Heavy Special Autotrack" x="-3.021" y="-3.924" z="18.562"/>
 
 
 

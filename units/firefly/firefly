@@ -1,5 +1,5 @@
 <Unit >
-	<cockpit file="hornet-cockpit.cpt" x="0" y="00" z="10"/>
+	<cockpit file="bomber-cockpit.cpt" x="0" y="00" z="10"/>
 
 	<Meshfile file="firefly.xmesh" />
 	<BspMesh/>
