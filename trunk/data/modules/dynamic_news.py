@@ -31,10 +31,10 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 				,"scale_event"	: scale_event
 				,"system"	: system
 				,"keyword"	: keyword
-				,"defender_fg"	: defender_flightgroup
-				,"defender_type": defender_type
 				,"aggressor_fg"	: aggressor_flightgroup
 				,"aggressor_type":aggressor_type 
+				,"defender_fg"	: defender_flightgroup
+				,"defender_type": defender_type
 				}
 
 	return formatNewsItem (getNewsItem(getDockFaction(system),type_event,stage_event,getSuccessStr(success)
