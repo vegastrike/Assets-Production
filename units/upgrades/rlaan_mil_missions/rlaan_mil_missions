@@ -19,7 +19,7 @@
 		<Engine Afterburner="0" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
 		<Maneuver yaw="000000" pitch="0" roll="0"/>
 	</Thrust>
-	<Hold volume="4">
+	<Hold volume="0">
 	<Category file="missions/Rlaan_Milspec">
 		<import price="1" quantity="-3" quantitystddev="4"/>
 	</Category>
