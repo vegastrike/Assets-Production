@@ -1,5 +1,4 @@
 # 299 "unit_wrapper.cpp"
-import random
 import sys
 import math
 import time
@@ -66,6 +65,7 @@ def launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
 _cargotypes = ['boxes','plastic','metal','junk','food']
 def getRandCargo(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "getRandCargo"
+   import vsrandom
    which = vsrandom.randrange(0,len(_cargotypes))
    return Cargo(_cargotypes[which],_cargotypes[which],1,1,1,1)
 _factions=['neutral','confed','aera','merchant','retro','militia','rlaan','powerups','upgrades','unknown','pirates','hunter','privateer','ISO','planets']
@@ -79,6 +79,7 @@ def GetFactionIndex(name):
    return 0
 def GetRelation(myfac,theirfac):
    print "GetRelation" 
+   import vsrandom
    return vsrandom.uniform(-1,1)
 def AdjustRelation(myfac,theirfac,val):
    print "AdjustRelation"
@@ -94,18 +95,24 @@ def SetTimeCompression(val):
    print "SetTimeCompression"
 def GetAdjacentSystem(mystr,which):
    print "GetAdjacentSystem" 
+   import vsrandom
    return chr (vsrandom.randrange(ord('a'),ord('z')))
 def GetGalaxyProperty(sysname,faction):
    import faction_ships
+   import vsrandom
    return faction_ships.factions[vsrandom.randrange(0,len(faction_ships.factions))]
 def GetNumAdjacentSystems(mystr):
    print "GetNumAdjacentSystems" 
+   import vsrandom
    return vsrandom.randrange(0,5)
 def musicAddList(mystr):
    print "musicAddList" 
    return 0
 def musicSkip ():
    pass
+def getCurrentPlayer ():
+   import vsrandom
+   return vsrandom.randrange(0,2)
 def musicLoopList (numloops):
    pass
 def musicPlaySong(mysong):
@@ -153,6 +160,7 @@ def setCompleteness(which, compl):
 def getCompleteness(which):
    setObjective (which,_objectives[which])
    print "getCompleteness" 
+   import vsrandom
    return vsrandom.randrange(0,3)*.5
 def setOwner(which,un):
    print "setOwner"
@@ -162,6 +170,7 @@ def getOwner(which):
 def IOmessage(time,fr,to,message):
    sys.stderr.write("IOmessage [printed in %f seconds; from %s to %s: '%s']\n" % (time,fr,to,message))
 def numActiveMissions():
+   import vsrandom
    return vsrandom.randrange(1,3)
 def GetMasterPartList():
    print "GetMasterPartList" 
@@ -174,6 +183,7 @@ def SetAutoStatus(glob,playa):
 def string ():
   return ''
 def unorNone():
+  import vsrandom
   if (vsrandom.randrange(0,6)):
     return _unitlist[vsrandom.randrange(0,len(_unitlist))]
   else:
@@ -270,6 +280,7 @@ class Unit:
 
   def Threat(self):
    print "Threat" 
+   import vsrandom
    return _unitlist[vsrandom.randrange(0,len(_unitlist))]
   def TargetTurret(self,targ): 
    print "TargetTurret"
@@ -441,6 +452,7 @@ class Unit:
   def getFactionName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "getFactionName" 
    import faction_ships
+   import vsrandom
    return faction_ships.factions[vsrandom.randrange(0,len(faction_ships.factions)-1)]
   def getFactionIndex(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "getFactionIndex" 
@@ -460,6 +472,7 @@ class Unit:
    return ''
   def getFlightgroupLeader(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "getFlightgroupLeader" 
+   import vsrandom
    return _unitlist[vsrandom.randrange(0,len(_unitlist))]
   def addCredits(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "addCredits"
@@ -638,6 +651,7 @@ class PythonAI:
    print "Execute"
   def GetParent(self):
    print "GetParent" 
+   import vsrandom
    return _unitlist[vsrandom.randrange(0,len(_unitlist))]
   def __init__(self):
     print 'PythonAI constructor called with (self)'
