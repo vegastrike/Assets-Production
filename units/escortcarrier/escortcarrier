@@ -23,6 +23,32 @@
 	<Hold volume="1000000000">
 	</Hold>
 
+<Dock size="4.0" x="0" y="0" z="3"/>
+<Dock size="4.0" x="0" y="0" z="6"/>
+<Dock size="4.0" x="0" y="0" z="9"/>
+<Dock size="4.0" x="0" y="0" z="12"/>
+<Dock size="4.0" x="0" y="0" z="15"/>
+<Dock size="4.0" x="0" y="0" z="18"/>
+<Dock size="4.0" x="0" y="0" z="21"/>
+<Dock size="4.0" x="0" y="0" z="24"/>
+<Dock size="4.0" x="0" y="0" z="27"/>
+<Dock size="4.0" x="0" y="0" z="30"/>
+<Dock size="4.0" x="0" y="0" z="33"/>
+<Dock size="4.0" x="0" y="0" z="36"/>
+<Dock size="4.0" x="0" y="0" z="0"/>
+<Dock size="4.0" x="0" y="0" z="-3"/>
+<Dock size="4.0" x="0" y="0" z="-6"/>
+<Dock size="4.0" x="0" y="0" z="-9"/>
+<Dock size="4.0" x="0" y="0" z="-12"/>
+<Dock size="4.0" x="0" y="0" z="-15"/>
+<Dock size="4.0" x="0" y="0" z="-18"/>
+<Dock size="4.0" x="0" y="0" z="-21"/>
+<Dock size="4.0" x="0" y="0" z="-24"/>
+<Dock size="4.0" x="0" y="0" z="-27"/>
+<Dock size="4.0" x="0" y="0" z="-30"/>
+<Dock size="4.0" x="0" y="0" z="-33"/>
+<Dock size="4.0" x="0" y="0" z="-36"/>
+
 <!-- new elements added -->
 <Light file="supernova.bmp" x="-109.315216" y="-11.178051" z="-504.000031" size="64.200336"/>
 <Light file="supernova.bmp" x="-157.605957" y="-7.940502" z="-504.000000" size="47.399963"/>
