@@ -1,4 +1,4 @@
-<Mesh animation="ship.ani" >
+<Mesh animation="rlaan_purple.ani" >
 <Points>
 	<Point> 
 		<Location x="1" y="0" z="0"/><!-- 0 -->
