@@ -28,12 +28,13 @@ def AllFactions ():
 	for i in range (VS.GetNumFactions()):
 		facs+= [VS.GetFactionName(i)]
 	return facs
-basenamelist=[]
+basenamelist={}
 flightgroupnamelist={}
 genericalphabet=['Alpha','Beta','Gamma','Delta','Epsilon','Zeta','Phi','Omega']
 def ReadBaseNameList(faction):
 	bnl=[]
-	filname = 'universe/fgnames/'+faction+'.txt'
+	print 'reading base names '+str(faction)
+	filename = 'universe/fgnames/'+faction+'.txt'
 	try:
 		f = open (filename,'r')
 		bnl = f.readlines()
@@ -60,19 +61,25 @@ def GetRandomFGNames (numflightgroups, faction):
 	global flightgroupnamelist
 	if (not (faction in flightgroupnamelist)):
 		flightgroupnamelist[faction]=ReadBaseNameList(faction)
-	for i in range (numflightgroups-len(flightgroupnamelist)):
-		flightgroupnamelist[faction].append(str(i))
-	return flightgroupnamelist
+	additional=[]
+	if (numflightgroups>len(flightgroupnamelist[faction])):
+		for i in range (numflightgroups-len(flightgroupnamelist)):
+			additional.append(str(i))
+	return additional+flightgroupnamelist[faction]
+basecounter=0
 def GetRandomBaseName (n,faction):
+	global basecounter
 	retval=[]
 	global basenamelist
 	try:
 		import seedrandom
-		if (len(basenamelist)==0):
-			basenamelist=ReadBaseNameList(faction+'_base')
+		if (not (faction in basenamelist)):
+			basenamelist[faction]=ReadBaseNameList(faction+'_base')
 		for i in range (n):
-			retval+=[basenamelist[seedrandom.rand()%len(basenamelist)]]
+			retval+=[basenamelist[faction][basecounter%len(basenamelist[faction])]]
+			basecounter+=1
 	except:
+		print 'uhoh base lsit wrong'
 		retval=[]
 		for i in range (n):
 			retval+=[str(n)]
