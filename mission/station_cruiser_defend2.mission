@@ -6,7 +6,8 @@
 		<var name="system" value="mars_station" />
 		<var name="description" value="4vs4.txt" />
 		<var name="author" value="Alexander Rawass" />
-
+<!--		<var name="savegame" value="station_cruiser_defend2" />
+ -->
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="8" nr_ships="1">
