@@ -8,7 +8,7 @@
 		<var name="credits" value="3500"/>
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
-		<var name="difficulty" value=".2"/><!--good starting difficulty here-->
+		<var name="difficulty" value=".1"/><!--good starting difficulty here-->
 		<var name="system" value="gemini_sector/troy" />
 		<var name="description" value="Enjoy troy in a nova." />
 		<var name="savegame" value="explore_universe_difficulty1" />
@@ -16,6 +16,7 @@
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="wayfarer.begin" ainame="default" waves="1" nr_ships="1">
 			<pos x="20400" y="-35400" z="84700000.0"/>
+
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
@@ -35,8 +36,8 @@
 		<import name="privateer"/>
 		<script name="initgame">
 			<exec module="privateer" name="init">
-			<const type="float" value="1700.0"/><!-- significant distance-->
-			<const type="float" value="8000.0"/><!-- detection distance-->
+			<const type="float" value="20000.0"/><!-- significant distance-->
+			<const type="float" value="40000.0"/><!-- detection distance-->
 			<const type="float" value="500.0"/><!-- generation distance -->
 			<const type="int" value="3"/> <!-- min ships -->
 			<const type="int" value="2"/><!--gen ships-->
