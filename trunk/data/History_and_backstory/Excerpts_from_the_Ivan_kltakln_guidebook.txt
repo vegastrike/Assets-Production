@@ -1,19 +1,19 @@
 [From “The Klk’k guide to one’s interstellar locale” 12th ed. Ivan Kltakln tr. J. Valthorpe  
 catalogued Andolian central distribution, 3263]
 
-Space: n.  	1.	That which is between objects of interest.
-	2. 	A rather large, dark, and primarily empty expanse where, contrary to 	
-		one’s initial fears, one is exceptionally unlikely to be eaten by a grue.
-	3.	The void in which one must travel if one does not wish to spend one’s 	
+Space: n. 1.	That which is between objects of interest.
+	  2. 	A rather large, dark, and primarily empty expanse where, contrary to 	
+ 		one’s initial fears, one is exceptionally unlikely to be eaten by a grue.
+	  3.	The void in which one must travel if one does not wish to spend one’s 	
 		existence wandering around the underdeveloped worlds of minor 	
 		political entities.
 .
 .
 .
 
-Rlaan: n.	1. 	Humanized representation of the name used by the pair of species from 	
+Rlaan: n. 1. 	Humanized representation of the name used by the pair of species from 	
 		the 4th planet in system SCx9362.
-	2.	Either of the two species from SCx9362.  Rlaan are radialy symmetric 	
+	  2.	Either of the two species from SCx9362.  Rlaan are radialy symmetric 	
 		beings with a base four split.  Their workers stand about one meter high 
 		at the prime knee, and are nearly one meter in diameter.  Members of 	
 		their warrior caste tend towards being 50% larger in both dimensions.  	
@@ -34,14 +34,8 @@ Rlaan: n.	1. 	Humanized representation of the name used by the pair of species f
 .
 .
 
-Rlaan: adj.	1. 	Of or concerning the Rlaan.
-	2.	Of or concerning any of the entities subject to the control of the Rlaan 	
-		Assembly.
-.
-.
-.
 
-Aera: n.	1. 	A member of an intelligent centauroid species from some misbegotten 	
+Aera: n. 1. 	A member of an intelligent centauroid species from some misbegotten 	
 		hell of a jungle world orbiting SCx62381.  The Aera are oxygen-	
 		nitrogen breathers, with a strong internal skeleton, smooth, ashen-gray 	
 		leathery skin, a decided lack of psychiatric assistance for their 		
