@@ -11,7 +11,7 @@ module proving_grounds {
     lasttime=0.0;
     drone=0;
     waittime=random.random(110.0,130.0);
-    faction_ships.make_ships_list();
+    faction_ships.init_no_blank();
   };
 
   void launch_new_ships(){
