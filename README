@@ -1,24 +1,23 @@
 =================================================
  Readme for VegaStrike version 0.2.9 Beta
 =================================================
-*--ADD STUFF HERE--*
-Vegastrike has finally reached the state of being multisystem!
-This means that many user requests have been accomplished including sound, joystick support, cloaking, bolt weapons, Target viewscreen, nebulae, asteroids, multiple systems, ingame-respawn... the list goes on
-All of the ships are original, never before seen ships modelled by the Vegastrike team!
-Mail me any comments or suggestions to vegastrike-users@lists.sourceforge.net
-And if you can design some missions it would rock!
+
+
+
 
 =================================================
  Contents
 =================================================
-*--ADD STUFF HERE--*
-) Contents
-) The Update Utility
-) Saving and Loading
-) Running Vegastrike In Windows
-) Running Vegastrike From the Command Line
-) Playing Music in Vegastrike in Windows (Experemintal)
-) Docking to a Planet or a Capship
+0) Intro
+1) Contents
+2) New Features
+3) Tutorial 
+4) Saving and Loading
+5) The Update Utility
+6) Running Vegastrike In Windows
+7) Running Vegastrike From the Command Line
+8) Playing Music in Vegastrike in Windows (Experemintal)
+9) Docking to a Planet or a Capship
 ) Trading and Accepting Missions
 ) Interstellar Warp Transit (Jump Drive)
 ) Time Compression / Autopilot
@@ -36,19 +35,72 @@ And if you can design some missions it would rock!
 ) Copyrights
 
 =================================================
- The Update Utility
+New Features
 =================================================
-The "Get Recent Update" program will allow you to get the most recent data for vegastrike.
-It will first ask you whether you wish to update the update list.  This will allow you to get the most recent working code if you click "Update".
-After choosing that option, you will be presented with a checkbox and a number of buttons.
-The check box labeled "Restore Factory Defaults" will allow you to revert all of your modified files to the "factory defaults".
-The next button says "Update to recent experimental data" and will update to the most recent developmental data.  When using this button, you may get a better game, but it will be experimental.
-The rest of the buttons will update to previous or more recent releases.
+Installer/Uninstaller  - Allows players to easily install OpenAL and VS
+Autoupdater            - Keeps the player up to date and allows players to restore edited versions
+Splitscreen Multiplayer- Coop gauntlet with a friend or blow him to shreds--even trading and exploration i spossible in this mode!
+Save Games             - Having persistent gameplay over multiple sections is possible
+Large Star System Size - Vegastrike engine has been upgraded to use double precision floating values so that realistic system size is possible
+Communications/Orders  - Allows the player to contact neutrals and taunt enemies. Wingmen can be ordered.
+Autopilot              - Lets the player quickly go from one zone of combat to another
+Trading                - Lets players run guns to make money
+Missions for cash      - Players can now contract out for spare cash
+Ship Upgrades          - Don't like your ship? buy a new one or get some better weapons or engines!
+Missiles               - Missile can lock on to their targets and track them with ease
+ECM systems            - err...almost ease
+Autotracking Weapons   - Guns may be updated to seek to their targets
+Tractor beams          - Small pieces of cargo may be taken into a hold. look for these when a large cargo-laden ship has exploded
+Energy Removing Guns   - Leech energy down to nada on their targets
+System Damage          - Hud displays flicker and weapons blow off... maneuverability decreases and many more horrible things happen when you get damage... don't get damage
+3d Cockpits            - With accurate lighting and damage effects these cockpits add a whole new dimension to vegastrike
+
+=======================================================
+Tutorial -- Starting a New Game -- Making a few Credits
+=======================================================
+To start a new Vegastrike game, click on the Vega Strike Launcher from the Start Menu.
+Click on "New Game"
+Type in the save game you wish to save to when you choose save at a base.
+Click "ok" and Vegastrike should launch. Be patient while it generates BSP trees for the system. This will only happen the first time.
+You will find yourself at the controls of an old starship known as the wayfarer. You may wish to read the introduction story for some information about how you got to where you are sitting.
+Your wayfarer has an old, out of date, Windows-Brand targetting system.  You will need to face the targets on your radar before you can necessarily target them.  
+Press t a few times to survey your surroundings.  Locate a planet named Agricultural:Poseidon by turning and pressing 't' consecutively until you see it in your right hud.  Then press shift-A to turn on autopilot.  This will move the camera into pan- mode and speed up time until your ship has arrived near your target.
+When you exit Autopilot you _may_ encounter pirates, Aera, or other unfriendlies.  If this is the case you perhaps should turn your ship, press p a few times to pick the targets in front of you, and engage them!  They should not be difficult at this stage of the game, so they should be easy kills.
+If your "AUTO" Light is on, however, you know that you are home free.  Your radar, however does not give an indication of starships intent towards you, so you must be cautious until you can afford a better one.
+Turn back to the large earth-like Agricultural planet and press t until "Agricultural:Poseidon" is in your right screen (If you miss it hit shift-T to go back).  press "0" to request docking clearence.  A white box should appear around your planet.
+With the onset of life-sized planets, you must spend a large chunk of time to actually get near enough to the surface to dock, so you must engage time compression.
+press "+" until your speed is around 300, then hit F9 around 10-16 times to speed time enough to quickly engage the dockin clamps.   Around 300 seconds later (compressed as you have into about 10) you will be close enough to dock.  press 'd' and your comm screen will tell you if you have success.
+Once the comm screens say "Docking Operation Begun" press "0" to step out of your ship onto the planet.
+The planet graphics themselves are not completed yet, but they are underway--in the meantime you'll be presented with a computer interface that allows you to conduct business with the planet.
+Agricultural planets sell food, so peruse the cargo list and get food by clicking on Natural Resources then "Food".   Stock up with your cash.  You should be able to get enough Grain and Generic Food to fill your cargo bay.
+Buy the food and then Click on the Save/Load button on the top right
+
+Then go to the menu (where the cargo used to be) and click "Save"
+You will get a confirmation dialog.  Next time you run the Launcher you should Open up your saved game to continue from where you left off.
+Click done on the bottom right.  We have some nice foodstuffs, lets deliver them to a base where they are needed.
+
+You must undock with the planet.   Undocking is somewhat unintuitive, so I will go over it briefly here.  The full text is below.  You may only undock from the starship you have targetted. If you somehow lost the agricultural planet in the meantime you may not have undocked with it.  Make sure Agricultural planet is targetted, and press 'u' (or 'd' again) to undock.
+If you failed to undock, you will notice the game gets all jittery--this is because your thrusters have to fight with the docking clamps to turn...  So just target the thing you were docked to and try again with a 'u'.
+ 
+We want to run this food to a mining base.  Lets try our good mining base New Poona--they're often in need of food with these pirates around, and cut off trade routes.
+Target New Poona with 't', and then hit shift-a to get there. 
+Again you may encounter some enemies.... prepare to engage them!
+When you reach a white guide box, press 'd' again to dock.  You should then press '0' to enter the base.
+Once inside the base, you will se the docking screen, like before.  Except this time, you should click on SellMode to get a list of Items.  
+Browse through the Food categories like you did before.  You should see the same cargo that you bought back at the planet.  Select both of them.  Notice that the prices are greater; you can sell them for more than you bought them for!  so click on the SellCargo button until all of your cargo is gone.
+By doing this, you just earned a lot of money.  We should maybe buy something usefil with this money, like an afterburner to allow you to go a lot faster.  Go to UpgradeShip an select Engines.  Then you will see Light and Engine Enhancements Light.  To get an afterburner, choose afterburner_generic from the Engine Enhancements Light category.  about 2700 credits should have immediately been deducted from your account and you should immediately have an afterburner installed on your ship.
+There is another way to earn money.  You can do missions.  To find a list of missions, go to the MissionBBS. The categories are listed by who offered the mission or who you have to kill. Make sure not to take missions where you kill someone you wish to be an ally of.  Killin units of a given race affects your relationship with them far more than merely taunting them, so be careful who you choose to be your friends.
+In the beginning it would be wise to take cargo missions and simple scout and patrol missions.  Make sure you select missions that occur "in system"... many missions require you to jump out of system to complete them, and you need at least 9000 credits to afford a jump drive.
+This is one of the most important improvements you can get for your starship. It will allow you to complete many more missions and explore a better part of the galaxy.
+
+If mission directions get lost in the battle chatter use page up and page down to scroll through the messages and find the directions you need to complete a mission.  
+
+So take a mission, take off, and prepare to meet your destiny!
 
 =================================================
  Saving and Loading
 =================================================
-There should be a program named "Launcher" in the vegastrike directory.  This will give you a list of choices:
+There should be a program named "Launcher" in the vegastrike directory or start menu.  This will give you a list of choices:
 
 Select mission button - This allows you to select which mission vegastrike will start the next time you press one of the keys below it.  Most missions do not involve save games and will ignore those options, however the default, in the mission/exploration folder will indeed ustilize the save games you specify.  If you ignore this option you begin in the standard trading/bounty hunting mission.
 
@@ -67,11 +119,21 @@ Help button - This will print tis on a help window.
 Exit launcher button - exits the launcher.
 
 =================================================
+ The Update Utility
+=================================================
+The "Get Recent Update" program will allow you to get the most recent data for vegastrike.
+It will first ask you whether you wish to update the update list.  This will allow you to get the most recent working code if you click "Update".
+After choosing that option, you will be presented with a checkbox and a number of buttons.
+The check box labeled "Restore Factory Defaults" will allow you to revert all of your modified files to the "factory defaults".
+The next button says "Update to recent experimental data" and will update to the most recent developmental data.  When using this button, you may get a better game, but it will be experimental.
+The rest of the buttons will update to previous or more recent releases.
+
+
+=================================================
  Running Vegastrike In Windows
 =================================================
-You can run the "Mission Launcher" program and select the correct mission.
-Or, if you wish to play the default privateer mission, you may use the Launcher utility.
-You can also use this for any other mission that uses a saved game (like the 2-player privateer mission.)
+After completing setup, run the Launcher program.  Select the mission you wish to play then run it by clicking on "New Game" and typing in a save game  (or else by clicking run without save game if it is a simple mission)
+The default mission is recommended for an introduction to the Vegastrike trading universe. To get the default mission you need not select the mission initially.
 
 =================================================
  Running Vegastrike From the Command Line
@@ -132,12 +194,24 @@ You do not come equipped with one at the beginning, so you must do missions to e
  Time Compression / Autopilot
 =================================================
 Often interstellar travel requires going great distances. To facilitate this, we have provided time compression.  Press F9 to increase time compression to get where you're going.  Press F10 to drop out of time compression.  F10 will happen automatically if enemies are nearby.
-If going twoards a big object, like a planet, you may autopilot there by pressing Shift-A.
+If going towards a big object, like a planet, you may autopilot there by pressing Shift-A.
+
+=================================================
+Match Velocity Key
+=================================================
+In space all speeds are relative...Flightrgroups can be travelling at great velocity with respect to a surrounding sun yet appear to be idly drifting into space.  A player may instruct his computer to match velocity of a starship by pressing the 'home' key on the keypad. This will set '0' to be the speed of that starship. Backspace will assure that your ship is stationary relative to the other starship (unless it accelerates faster than you and is accelerating). 
+To stop matching velocity press the 'end' key on the keypad.
+
+=================================================
+Tractor Beam
+=================================================
+A tractor beam is just like a normal beam weapon except that it exerts a small force upon its target.  If the target is small relative to your ship or is a chunk of cargo, holding a tractor beam on it will cause the cargo to come towards you and eventually enter your hold.  It is almost impossible to tractor cargo that is moving with respect to your ship, so the suggestion is to press 'home' to match velocity with the cargo, and then to press backspace to stop... this will allow one to pick up cargo with ease.
+
 
 =================================================
  ReSpawn
 =================================================
-If you sadly lose your life in combat you may respawn by pressing ';'
+If you sadly lose your life in combat you may respawn by pressing ';' (Player 2 can respawn with '.' )
 A new starship will be created for you by Bob.
 
 =================================================
