@@ -276,16 +276,16 @@
 </Appearance>
 </Bolt>
 
-<Beam name="LeechGun" mountsize="special">
+<Bolt name="LeechGun" mountsize="special">
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
-<Damage rate="-.9" phasedamage="-.9" longrange="1">
+<Damage rate="-.98" phasedamage="-.98" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius="1.2" pulsespeed="15" range="800" volume="20" >
 </Distance>
 <Appearance file="weapons/ion.png" r="1" g=".8" b="1" a="1" >
 </Appearance>
-</Beam>
+</Bolt>
 
 <Beam name="Tractor" mountsize="special"> 
 <Energy rate="10" stability="6" refire=".3">
