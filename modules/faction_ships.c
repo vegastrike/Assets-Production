@@ -12,6 +12,10 @@ module faction_ships {
     return aera_ships;
   };
 
+  void init(){
+    make_ships_list();
+  };
+
   void make_ships_list(){
     confed_ships=_olist.new();
 
@@ -39,4 +43,16 @@ module faction_ships {
     return ship_type;
   };
 
+  object getRandomFighter(object faction){
+    object type;
+
+    if(_string.equal(faction,"confed")){
+      type=getRandomShipType(confed_ships);
+    }
+    else if(_string.equal(faction,"aera")){
+      type=getRandomShipType(aera_ships);
+    }
+
+    return type;
+  };
 }
