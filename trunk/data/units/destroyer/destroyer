@@ -41,7 +41,7 @@
 
 	<Hold volume="1000000000">
 		<Category file="Natural_Products/Food">
-			<import price="1.3" pricestddev=".2" quantity="15" quantitystddev="20"/>
+			<import price="1.25" pricestddev=".2" quantity="4" quantitystddev="20"/>
 		</Category>
 		<Category file="Natural_Products/Liquor">
 			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="1"/>
@@ -89,7 +89,7 @@
 			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="3"/>
 		</Category>
 		<Category file="Supplies/Aerospace_Supplies">
-			<import price="1.2" pricestddev=".3" quantity="4" quantitystddev="6"/>
+			<import price="1.2" pricestddev=".3" quantity="4" quantitystddev="9"/>
 		</Category>
 		<Category file="Supplies/Agriculteral_Supplies">
 			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
@@ -143,7 +143,7 @@
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="1"/>
 		</Category>
 		<Category file="upgrades/Weapons/Beam_Arrays_Confed_Milspec">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="5"/>
+			<import price="1" pricestddev=".1" quantity="1" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Weapons/Mount_Enhancements">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="5"/>
@@ -167,13 +167,13 @@
 			<import price="1" pricestddev=".1" quantity="1" quantitystddev="4"/>
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Light">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="5"/>
+			<import price="1" pricestddev=".1" quantity="2" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Medium">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+			<import price="1" pricestddev=".1" quantity="1" quantitystddev="2"/>
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Heavy">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+			<import price="1" pricestddev=".1" quantity="1" quantitystddev="2"/>
 		</Category>
 		<Category file="upgrades/Shield_Systems/Light">
 			<import price="1" pricestdev=".1" quantity="0" quantitystddev="5" />
@@ -191,7 +191,7 @@
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Armor_Modification/Confed_Milspec">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+			<import price="1" pricestddev=".1" quantity="3" quantitystddev="2"/>
 		</Category>
 		<Category file="upgrades/Hull_Upgrades">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="5"/>
@@ -209,7 +209,7 @@
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Repair_Systems/Research">
-			<import price="1.2" pricestddev=".1" quantity="0" quantitystddev="0"/>
+			<import price="1.2" pricestddev=".1" quantity="-10" quantitystddev="14"/>
 		</Category>
 		<Category file="upgrades/Repair_Systems/Advanced">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="4"/>
@@ -227,7 +227,7 @@
 			<import price="1" pricestddev=".1" quantity="80" quantitystddev="80"/>
 		</Category>
 		<Category file="upgrades/Experimental">
-			<import price="1.2" pricestddev=".2" quantity="0" quantitystddev="0"/>
+			<import price="1.2" pricestddev=".2" quantity="-10" quantitystddev="14"/>
 		</Category>
 
 	</Hold>
