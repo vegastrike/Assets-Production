@@ -10,7 +10,7 @@ module bounty {
 	int curiter;
 	int difficulty;
 	float cred;
-	import ai_stationary;
+	//	import ai_stationary;
 	import universe;
 	import random;
 	import launch;
@@ -183,7 +183,7 @@ module bounty {
 	      object newship=faction_ships.getRandomFighter(faction);
 	      int randint=random.randomint(0,50);
 	      object significant = unit.getJumpPoint (randint);
-	      object localdestination=_unit.getName(significant);
+
 	      if (_std.isNull (significant)) {
 		significant =_unit.getPlayer();
 	      } else {
@@ -193,6 +193,7 @@ module bounty {
 	      if (_std.isNull(significant)) {
 		_std.terminateMission (false);
 	      } else {
+		object localdestination=_unit.getName(significant);
 		if (isSig) {	//ADD OTHER JUMPING IF STATEMENT CODE HERE
 		} else {
 		  enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1+difficulty,500.0,1000.0,significant);
