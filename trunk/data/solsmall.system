@@ -18,7 +18,10 @@
 <attenuated red="0" blue=".0000001"/>
 </Light>	
 
-        <planet name="sun" file="sun.bmp" radius="25000" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0 1l">
+        <planet name="sun" file="sun.bmp" radius="2" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0">
+	<planet name="JumpPoint" file="green.bmp" radius="4000" gravity="20" ri="57000" rj="0" rk="0" si="0" sj="0" sk="57000" velocity="0" position="0" destination="sol">
+
+	</planet>
 	</planet>
 	<unit name= "Victory"  file="drydock" faction="confed" x="28000"  position="100">
 	</unit>
