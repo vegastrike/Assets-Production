@@ -1,0 +1,41 @@
+<Unit>
+	<Upgrade file="godsansshields"/>
+	<Defense>
+		<Shields front="0.000000"  back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<Upgrade file="shield_2_Level2"/>
+	<Upgrade file="isometal"/>
+	<Upgrade file="engine_level_3"/>
+	<Upgrade file="polymer_hull"/>
+        <Mount weapon="Plasma" size="Light Medium Heavy" x="2.15" y="-1.1" z="2.5"/>
+        <Mount weapon="Plasma" size="Light Medium Heavy" x="-2.15" y="-1.1" z="2.5"/>
+	
+	<Mount weapon="ImageRecognition" size="medium-missile" x="6.5" y="-2" z="1" ammo="6"/>
+	<Mount weapon="ImageRecognition" size="medium-missile" x="6.5" y="-2" z="1" ammo="6"/>
+	
+	
+	<Thrust>
+		<Engine Afterburner="2000.666718" Forward="400.333344" Retro="400.666676" Left="400.666672" Right="402.666672" Top="402.666672" Bottom="402.666672"/>
+		<Maneuver yaw="3000.200050" pitch="3000.800201" roll="5000.200050"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+
+
+	<Stats mass="2.000000" momentofinertia="2.000000" fuel="50000000"></Stats>
+	<Computer yaw="140.400002" pitch="160.600006" roll="192.400002" afterburner="200" maxspeed="69.5"/>
+
+	<Jump delay="1" jumpenergy="10"/>       
+
+	<description>
+
+	</description>
+	<Hold volume="25">
+	    
+	</Hold>
+
+<!-- new elements added -->
+
+
+
+</Unit>
