@@ -4,7 +4,7 @@
 	</settings>
 
 	<variables>
-		<var name="terrain" value="terrain.xml"/>
+		<var name="continuousterrain" value="continuousterrain.txt"/>
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
