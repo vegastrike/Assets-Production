@@ -22,7 +22,7 @@
 	</Defense>
 	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
 	<Computer yaw="124.000" pitch="124.200005" roll="0000" afterburner="000000" maxspeed="00000">
-		<Radar itts="true" range="380" color="true" error="0"/>
+		<Radar itts="true" range="10000" color="true" error="0"/>
 	</Computer>
 
 	<Energy>
