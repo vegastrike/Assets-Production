@@ -19,6 +19,7 @@ class defend (Director.Mission):
     mplay="all"
     
     def __init__ (self,factionname,numsystemsaway, enemyquantity, distance_from_base, escape_distance, creds, defendthis, defend_base):
+          Director.Mission.__init__(self)
 	  self.defendbase = defend_base	  
 	  self.attackers = []
 	  self.targetiter = 0
@@ -29,7 +30,7 @@ class defend (Director.Mission):
 	  self.escdist = escape_distance
 	  self.cred=creds
 	  self.quantity=enemyquantity
-	  
+	  self.distance_from_base=distance_from_base
 	  self.you=VS.getPlayer()
 
           name = self.you.getName ()
@@ -38,20 +39,19 @@ class defend (Director.Mission):
           self.adjsys = go_to_adjacent_systems(self.you,numsystemsaway)
           self.adjsys.Print("You are in the %s system,","Proceed swiftly to %s.","Your arrival point is %s.","defend",1)
 	  VS.IOmessage (2,"defend",self.mplay,"And there eliminate any %s starships at a point."  % self.faction)
-    def SuccessMission ():
-        self.you.addCredits (cred)
+    def SuccessMission (self):
+        self.you.addCredits (self.cred)
         VS.IOmessage(0,"defend",self.mplay,"Excellent work pilot! Your effort has thwarted the foe!")
         VS.IOmessage(0,"defend",self.mplay,"You have been rewarded for your effort as agreed.")
         VS.terminateMission(1)
-    def FailMission ():
-        self.you.addCredits (-cred)
-        _unit.addCredits (you, cred)
-        _io.message (0,"defend",self.mplay,"You Allowed the base you were to protect to be destroyed.")
-        _io.message (0,"defend",self.mplay,"You are a failure to your race!")
-        _io.message (1,"defend",self.mplay,"We have contacted your bank and informed them of your failure to deliver on credit. They have removed a number of your credits for this inconvenience. Let this serve as a lesson.")
+    def FailMission (self):
+        self.you.addCredits (-self.cred)
+        VS.IOmessage (0,"defend",self.mplay,"You Allowed the base you were to protect to be destroyed.")
+        VS.IOmessage (0,"defend",self.mplay,"You are a failure to your race!")
+        VS.IOmessage (1,"defend",self.mplay,"We have contacted your bank and informed them of your failure to deliver on credit. They have removed a number of your credits for this inconvenience. Let this serve as a lesson.")
         _std.terminateMission(0)
-    def NoEnemiesInArea (jp):
-        if (go_somewhere_significant.DestinationSystem()!=VS.getSystemFile()):
+    def NoEnemiesInArea (self,jp):
+        if (self.adjsys.DestinationSystem()!=VS.getSystemFile()):
 	    return 0
         un= VS.getUnit (self.ship_check_count)
         self.ship_check_count+=1
@@ -59,22 +59,23 @@ class defend (Director.Mission):
 	    return 1
         
         if (un!=self.you):
-            if (un.getFaction()==faction): 
-                if (unit.getSignificantDistance (un,jp)<escdist):
-                    self.ship_check_count=0
+            if (un.getFactionName()==self.faction): 
+                if (un.getSignificantDistance (jp)<self.escdist):
+                    if (un.getFlightgroupName!="Base"):
+                        self.ship_check_count=0
         return 0
 	
-    def GenerateEnemies (jp,you):
+    def GenerateEnemies (self,jp,you):
         VS.IOmessage (0,"defend",self.mplay,"Eliminate all %s ships here" % self.faction)
         if (defend):
             VS.IOmessage (0,"defend",self.mplay,"You must protect %s." % jp.getName ())
         count=0            
         while (count<self.quantity):
-	    launched = launch.launch_wave_around_unit ("Shadow",self.faction,faction_ships.getRandomFighter(self.faction),"default",1,2000.0,4500.0,you)
+	    launched = launch.launch_wave_around_unit ("Shadow",self.faction,faction_ships.getRandomFighter(self.faction),"default",1,2000.0,4500.0,you,'')
             if (defend):
-                launched.setTarget (jp)
+                launched.SetTarget (jp)
 	    else:
-                launched.setTarget (you)
+                launched.SetTarget (you)
 	    launched.setFgDirective('B')
             self.attackers += [ launched ]
 	    count+=1
@@ -96,7 +97,7 @@ class defend (Director.Mission):
 		if (defend):
                     self.FailMission(you)
 		else:
-                    self.SuccessMission(you)
+                    self.SuccessMission()
                     return
             else:
 		if (self.quantity>0):
@@ -105,11 +106,12 @@ class defend (Director.Mission):
                     self.targetiter=0
 		else:
                     un =  self.attackers[self.targetiter]
-                    if (defend):#		  if (not un.isNull())
-                        un.setTarget (self.defendee)
-                    else:
-                        un.setTarget (self.you)
+                    if (not un.isNull()):
+                        if (defend):#		  if (not un.isNull())
+                            un.SetTarget (self.defendee)
+                        else:
+                            un.SetTarget (self.you)
                     self.targetiter=self.targetiter+1
-                if (self.NoEnemiesInArea (base)):
-                    self.SuccessMission(you)
+                if (self.NoEnemiesInArea (self.defendee)):
+                    self.SuccessMission()
 		
