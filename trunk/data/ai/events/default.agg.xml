@@ -1,15 +1,15 @@
 <AggressiveAI time="7">
-<meterdistance max="200" script="++shelton-slide.xml"/>
+<meterdistance max="60" script="++shelton-slide.xml"/>
 <!-- meterdistance less than .1-->
 <meterdistance min="60" max="200"> 
-  <threat max=".2" script="++afterburnerslide.xml">
+  <threat min=".2" max=".7" script="++afterburnerslide.xml">
   </threat>
 </meterdistance>
-<meterdistance min="20" max="200"> 
-  <threat min=".2" max=".7" script="++shelton-slide.xml">
+<meterdistance min="60" max="200"> 
+  <threat max=".2" script="++shelton-slide.xml">
   </threat>
 </meterdistance>
-<meterdistance min="30" max="100" script="++cloak.xml"> 
+<meterdistance min="60" max="200" script="++cloak.xml"> 
   <threat min=".7" script="++evade.xml">
   </threat>
 </meterdistance>
