@@ -2,7 +2,7 @@ import Base
 import bar_lib
 import weapons_lib
 
-def MakeUnit (barterndername='bases/bartender_default.py'):
+def MakeUnit (bartendername='bases/bartender_default.py'):
     room1 = Base.Room ('Landing Platform')
     room2 = Base.Room ('Main Concourse')
     Base.Texture (room1, 'tex', 'bases/generic/base_entrance.spr', 0, 0)
