@@ -19,11 +19,11 @@ When creating a new group, you need only add a new line
 These line set the currently used settings. This allows them to show up as selected (currently enclosed in [])
 #set Video TNT
 #set Resolution 800x600
-#set Sound audio_3d_linux
+#set Sound audio_on_windows_music
 #set Computer P800MHz
-#set Color win_16
+#set Color win_32
 #set Difficulty easy
-#set OperatingSystem linux_safe
+#set OperatingSystem windows_safe
 #set Mouse warp_mouse
 #set Joystick joy_normal
 A description for the catagories. This is text that appears in the menu
@@ -389,34 +389,34 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 			<var name="OptimizeVertexCondition" value="1"/>
 			<var name="SharedVertexArrays" value="true"/>
 
-<!-- #windows_safe
+<!-- #windows_safe -->
 			<var name="LockVertexArrays" value="true"/>
 			<var name="OptimizeVertexArrays" value="true"/>
 			<var name="displaylists" value="false"/>
-#end -->
-<!-- #linux_safe -->
+<!-- #end -->
+<!-- #linux_safe
 			<var name="LockVertexArrays" value="true"/>
 			<var name="displaylists" value="true"/>
 			<var name="OptimizeVertexArrays" value="true"/>
-<!-- #end -->
+#end -->
 <!-- #stable
 			<var name="OptimizeVertexArrays" value="false"/>
 			<var name="displaylists" value="false"/>
 			<var name="LockVertexArrays" value="false"/>
 #end -->
 
-<!-- #win_16 -->
+<!-- #win_16
 			<var name="colordepth" value="16"/>
      	       	<var name="zfar" value="80000"/>
 			<var name="fullscreen" value="false"/>
 
-<!-- #end -->
-<!-- #win_32
+#end -->
+<!-- #win_32 -->
 			<var name="colordepth" value="32"/>
 			<var name="zfar" value="600000"/>
 			<var name="fullscreen" value="false"/>
 
-#end -->
+<!-- #end -->
 <!-- #full_16
 			<var name="colordepth" value="16"/>
         	       	<var name="zfar" value="80000"/>
@@ -653,23 +653,23 @@ This is done many times later in this config file
 			<var name="peaceplaylist" value="peace.m3u"/>
 			<var name="panicplaylist" value="panic.m3u"/>
 			<var name="threadtime" value="2000"/>	
-<!-- #audio_on_linux_music audio_3d_linux windows_ext_music_on -->
+<!-- #audio_on_linux_music audio_3d_linux windows_ext_music_on
 			<var name="Volume"	value="1"/>
-<!-- #end -->
-<!-- #audio_on_windows_music audio_3d_windows
-			<var name="Volume"	value="55"/>
 #end -->
-<!-- #windows_ext_music_on audio_on_windows_music
+<!-- #audio_on_windows_music audio_3d_windows -->
+			<var name="Volume"	value="55"/>
+<!-- #end -->
+<!-- #windows_ext_music_on audio_on_windows_music -->
 			<var name="Music" value="true"/>
 			<var name="use_external_player" value="true"/>
 			<var name="external_player" value="C:\Program Files\Winamp\Winamp.exe"/>
 			<var name="external_play_option" value="/PLAY"/>
 			<var name="external_enqueue_option" value="/ADD"/>
-#end -->
-<!-- #audio_3d_linux audio_3d_windows audio_off -->
+<!-- #end -->
+<!-- #audio_3d_linux audio_3d_windows audio_off
 			<var name="use_external_player" value="false"/>
 			<var name="Music" value="false"/>
-<!-- #end -->
+#end -->
 <!-- #linux_int_music_on
 			<var name="use_external_player" value="false"/>
 			<var name="Music" value="true"/>
@@ -796,10 +796,11 @@ This is done many times later in this config file
 			<var name="atmosphereheight" value="10"/>
 			<var name="game_speed" value="10"/>
 			<var name="game_accel" value="0.5"/>
-			<var name="game_speed_lying" value="false">
+			<var name="game_speed_lying" value="false"/>
 			<var name="FuelUsage" value=".05"/>
 			<var name="AfterburnerFuelUsage" value=".2"/>
-			<var name="missile_bounce" value ="true">
+			<var name="missile_bounce" value="true"/>
+			<var name="BouncePercent" value="1"/>
 			<!-- the next variable tells what percentage
 			      of normal the shields recharge in a nebule.
 			      Zero means shields do not work in nebulae -->
