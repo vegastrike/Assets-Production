@@ -105,7 +105,7 @@ module bounty {
 	      if (_std.isNull(significant)) {
 		_std.terminateMission (false);
 	      }else {
-		enemy=launch.launch_wave_around_unit("shadow",faction,newship,"default",1,1000.0,you);
+		enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,1000.0,you);
 		if (isSig) {
 		  _unit.setTarget(enemy,significant);
 		  _unit.Jump(enemy,significant);
