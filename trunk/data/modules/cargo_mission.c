@@ -15,8 +15,45 @@ module cargo_mission {
 	import launch;
 	import faction_ships;
 	bool capship;
+	float begintime;
+	float time;
+	
+	void initbriefing() {
+	  begintime= _std.getGameTime();
+	  _io.printf ("starting briefing");
+	  int a=_briefing.addShip("starrunner","confed",0.0,0.0,100.0);
 
-  
+	  // int b=_briefing.addShip("starrunner","confed",0.0,0.0,1000.0);
+	  //int c=_briefing.addShip("starrunner","confed",0.0,0.0,10000.0);
+	  //int d=_briefing.addShip("starrunner","confed",100.0,0.0,00.0);
+	  _briefing.enqueueOrder (a,1000.0,10.0,1000.0,15.0);
+	  //_briefing.enqueueOrder (b,4000.0,0.0-10.0,2000.0,15.0);
+	  //_briefing.enqueueOrder (c,1000.0,10.0,1000.0,15.0);
+	  //_briefing.enqueueOrder (d,4000.0,0.0-10.0,2000.0,15.0);
+	};
+	void loopbriefing() {
+	  
+	  time = _std.getGameTime();
+	  _io.printf ("running briefing %f", time-begintime);
+	  if ((time-begintime)<15.0){
+	    object str = _string.new();
+	    _io.sprintf (str,"%f",time);
+	    _io.message (0,"game","briefing",str);
+	    _string.delete(str);
+	  }else {
+	    _io.message (0,"game","briefing","WE HAVE FINISHED MOVING");	  
+	  }
+
+	  if ((time-begintime)>20.0) {
+	    _io.printf ("DADADATERMINATED");
+	    _briefing.terminate();
+	  }
+	};
+	void endbriefing() {
+	  _io.printf ("endinging briefing");
+	};
+
+	
 	void init (int factionname, int numsystemsaway, int cargoquantity, int missiondifficulty, float distance_from_base, float creds, bool launchoncapship) {
 	  _std.setNull (youcontainer);
 	  _std.setNull(basecontainer);
