@@ -4,7 +4,7 @@ import VS
 import faction_ships
 import random
 import launch
-
+import Briefing
 class go_somewhere_significant:
 #  frameoffset=0 #see note at bottom
 #  begsigdis=1.0 #same note
@@ -64,4 +64,20 @@ class go_somewhere_significant:
 #    if ((not self.arrivedarea) and (self.frameoffset%25)):
 #      VS.setCompleteness(self.obj,(1-(float(sigdis)/float(self.begsigdis)))) #doesn't work too well... for now, it will be 0 until you dock
     return self.HaveArrived()
-  
+  def initbriefing (self):
+    self.mytime = VS.GetGameTime();
+    faction=self.you.getFactionName();
+    name=self.you.getName()
+    self.brief_you=Briefing.addShip(name,faction,(40.0,0.0,80.0))
+    faction=self.significantun.getFactionName()
+    name = self.significantun.getName()
+    self.brief_sig=Briefing.addShip(name,faction,(-40,0.0,8000.0))
+    Briefing.enqueueOrder (self.brief_you,(-30,0.0,7900.0),5.0)
+  def loopbriefing (self):
+    if (VS.GetGameTime()-self.mytime>5):
+      return self.brief_you
+    return -1
+  def endbriefing(self):
+    del self.mytime
+    del self.brief_you
+    del self.brief_sig

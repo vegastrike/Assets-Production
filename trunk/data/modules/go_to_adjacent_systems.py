@@ -1,7 +1,8 @@
 import VS
 import universe
 import unit
-
+import Briefing
+import random
 class go_to_adjacent_systems:  
   def InSystem(self):
     return self.arrivedsys
@@ -56,3 +57,54 @@ class go_to_adjacent_systems:
         VS.setCompleteness(self.obj,self.com*curind)
     return self.arrivedsys
 
+  def initbriefing(self):
+    self.jump_ani=0
+    self.rnd_y=0.0
+    self.added_warp=1
+    self.brief_stage=0
+    self.begintime= VS.GetGameTime()-6.0
+    print "starting briefing"
+    if (self.you.isNull()):
+      Briefing.terminate()
+      return
+    self.faction=self.you.getFactionName()
+    name=self.you.getName()
+    self.brief_you=Briefing.addShip(name,self.faction,(0.0,0.0,80.0))
+    VS.IOmessage (0,"go_to_adjacent_system","briefing","You must go to the %s system. In order to get there, you must follow this route that we have planned out for you." % self.DestinationSystem())
+	
+  def loopbriefing(self):
+    size=len(self.JumpPoints())
+    time = VS.GetGameTime()
+    Briefing.setCamPosition((1.6*(time-self.begintime)*self.brief_stage,0.0,0.0))
+    if (((time-self.begintime)>=5.0) and self.added_warp):
+      self.jump_ani=Briefing.addShip("brief_warp",self.faction,(20.0*(self.brief_stage),self.rnd_y,79.5+self.rnd_y))
+      self.added_warp=0
+    if (((time-self.begintime)>=6.0)):
+      if (self.jump_ani!=0):
+        Briefing.removeShip(self.jump_ani)
+        self.jump_ani=0
+    if ((size==self.brief_stage) and ((time-self.begintime)>=6.0)):
+      self.brief_stage=size+1
+      self.added_warp=0
+      self.time=0.0
+    elif ((self.brief_stage>size) and ((time-self.begintime)>=11.0)):
+      return self.brief_you
+    elif (((time-self.begintime)>=6.0) and (self.brief_stage<size)):
+      self.added_warp=1
+      self.rnd_y=(random.random()*40.0-20.0)
+      Briefing.addShip("brief_jump",self.faction,(20.0*(self.brief_stage+1),self.rnd_y,79.6+self.rnd_y))
+      Briefing.enqueueOrder (self.brief_you,(20.0*(self.brief_stage+1) ,self.rnd_y,80.0+self.rnd_y) , 5.0)
+      self.begintime=time
+      myname=self.JumpPoints() [self.brief_stage]
+      VS.IOmessage (0,"cargo mission","briefing","You must go to the '%s' jump point" % (myname))
+      self.brief_stage+=1
+    return -1
+  def endbriefing(self):
+    print "endinging briefing"
+    del self.jump_ani
+    del self.rnd_y
+    del self.added_warp
+    del self.brief_stage
+    del self.begintime
+    del self.faction
+    del self.brief_you
