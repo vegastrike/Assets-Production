@@ -74,7 +74,6 @@
 
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1"/>
 			<Cargo file="cloaking_device" price="259000" quantity="1" mass="8.9" volume="1"/>
-			<Cargo file="experemental_ShieldRegenerator" price="5000000" quantity="1" mass="27.4" volume="1"/>
 		</Category>
 		<Category file="arms">
 			<Cargo file="weapons" price="300" quantity="1" mass=".1" volume="1"/>	
