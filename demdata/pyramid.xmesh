@@ -1,0 +1,41 @@
+<Mesh texture="Random_Metal.png" scale="20.000000">
+<Points>
+	<Point>
+		<Location x="1.000000" y="0.000000" z="1.000000"/>
+	</Point>
+	<Point>
+		<Location x="-1.000000" y="0.000000" z="1.000000"/>
+	</Point>
+	<Point>
+		<Location x="-1.000000" y="0.000000" z="-1.000000"/>
+	</Point>
+	<Point>
+		<Location x="1.00000" y="0.000000" z="-1.00000"/>
+	</Point>
+	<Point>
+		<Location x="0.00000" y="1.5000" z="0000"/>
+	</Point>
+</Points>
+<Polygons>
+	<Tri>
+		<Vertex point="0" s="0.286275" t="0.952941"/>
+		<Vertex point="4" s="0.231373" t="0.211765"/>
+		<Vertex point="1" s="0.145098" t="0.952941"/>
+	</Tri>
+	<Tri>
+		<Vertex point="1" s="0.031373" t="0.996078"/>
+		<Vertex point="4" s="0.027451" t="0.176471"/>
+		<Vertex point="2" s="0.094118" t="0.956863"/>
+	</Tri>
+	<Tri>
+		<Vertex point="2" s="0.094118" t="0.956863"/>
+		<Vertex point="4" s="0.027451" t="0.176471"/>
+		<Vertex point="3" s="0.031373" t="0.996078"/>
+	</Tri>
+	<Tri>
+		<Vertex point="3" s="0.227451" t="0.031373"/>
+		<Vertex point="4" s="0.145098" t="0.800000"/>
+		<Vertex point="0" s="0.090196" t="0.031373"/>
+	</Tri>
+</Polygons>
+</Mesh>
