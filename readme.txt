@@ -15,7 +15,7 @@ your destiny!
    5. The Update Utility <#i5>
    6. Running Vegastrike In Windows <#i6>
    7. Running Vegastrike From the Command Line <#i7>
-   8. Playing Music in Vegastrike in Windows (Experemintal) <#i8>
+   8. Playing Music in Vegastrike <#i8>
    9. Docking to a Planet or a Capship <#i9>
   10. Accepting Missions <#i10>
   11. Trading Cargo <#i11>
@@ -282,16 +282,15 @@ in a star system.
 .\vegastrike -jvega_sector/vega mission/n_vs_n/confed/confed_2v2.mission
 will force the 2v2 mission to run in the vega sector.
 
-*8) Playing Music in Vegastrike in Windows (Experemintal)*
+*8) Playing Music in Vegastrike*
 
 
-Run setup.exe and select Windows External Music.
-Put 3 .m3u playlists in the .vegastrike folder that must be called
-peace.m3u battle.m3u and panic.m3u. Winamp can create such files.
-As vegastrike currently does not have music artists, you must choose the
-playlists for yourself. Songs towards the top get played more often
-During better times...songs on the bottom get played more often during
-worse times.
+Run setup.exe and select Music Only or Music And Sound
+Go to http://aslp.gallaudet.edu/jjg/wcrm/Vault_Room/vault_room.html and
+download his WC2 Collection and his Privateer RF Collection and unzip
+them into the music/ folder where you installed vegastrike (so the midis
+look like music/wc2-05.mid and so forth). Then run vegastrike, and music
+should play :-)
 
 *9) Docking to a Planet or a Capship*
 
@@ -901,39 +900,48 @@ First let me start by explaining how to run a python class... in this case we st
 Open up mission/exploration/explore_universe.mission
 First come the variables that designate how the mission should normally start.  By normally I mean if they don't have any save game present.
 
-	
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-	
+      <mission>
+          <variables>
+              <var name="defaultplayer" value="blue" />
+              <var name="mission_name" value="Test Mission"  />
+              <var name="num_players" value="2"/>
+              <var name="credits" value="3500"/>
+              <var name="difficulty" value=".05"/><!--good starting
+      difficulty here-->
+              <var name="splashscreen" value="bad_guys_vs_good_guys.bmp"/>
+              <var name="system" value="sol_sector/celeste"  />
+              <var name="description" value="This is a fun mission."  />
+              <var name="author" value="Me"  />
+              <var name="briefing" value="In this mission, you will have
+      to have fun, or you will fail."  />
+              <var name="savegame" value="explore_universe_difficulty" />
+          </variables>
 
 it loads sol_sector/celeste.system  as the star system (which is in XML and stores all present planets)
 After this, comes the actors in the mission, the flightgroups of fighters. If a mission has more than one player, then each player is the leader (first ship) in each respective flightgroup.
-      
-                
-			
 
-			
-		
-	
+            <flightgroups>
+                      <flightgroup name="blue" faction="privateer"
+      type="wayfarer.begin" ainame="default" waves="1" nr_ships="1">
+                  <pos x="20400" y="-35400" z="84700000.0"/>
+
+                  <rot x="180.0" y="180.0" z="180.0"/>
+              </flightgroup>
+          </flightgroups>
+
+
 The rot flag is ignored, and the position specifies the x,y,z coords of the blue flightgroup, which is of type wayfarer.begin.
 Notice that so far there are a lot of values you don't see for long in the default vegastrike game.   Credits, System, first flightgroup fighter, difficulty--these are all initial values but can change.... since there is specified a savegame.  The savegame makes the mission more of a campaign type mission where things may be saved to disk and reloaded at a later point. If no savegame variable is specified (this is where the autosave goes) then the mission will not save and will be a one time play mission.   
 Future note:
 If you wanted to add a campaign to the privateer mission you would most likely modify privateer.py to have a campaign module get loaded.... so you wouldn't necessarily need to modify explore_universe.mission just to add a campaign... lets dig further into the meat of the scripting.
 
 If a mission has python tags...then it is a python mission and may have some embedded python in it.   In this case the python makes a new python object of type privateer in the privateer.py module in the modules/ directory. 
-	
-from privateer import privateer
-my_obj=privateer(20000,40000,500,3,2,.6,.25,.02,400000,2000)
-	
+
+          <python>
+      from privateer import privateer
+      my_obj=privateer(20000,40000,500,3,2,.6,.25,.02,400000,2000)
+          </python>
+
 You have to be careful about newlines, etc in the XML, but it shoudl usually work just dandy.   You notice that the mission may pass in arguments to the privateer module that can make slight changes in teh gameplay.  This allows many cargo missions to use the same module in order to change the parameters of the cargo missions.  
 In this case the values I have selected appear to work relatively well.
 
@@ -1040,7 +1048,7 @@ First of all let me talk about the "stubs".  We have had a clever idea to make m
 The way you make stub functions is by using the C++ processor in 2 steps...
 cd src/python
 gcc -E -DPYTHON_STUB=1 unit_wrapper.cpp > ~/data/modules/stub/VS.py
-then edit that file and replace ~ with 
+then edit that file and replace ~ with (newline)(space)(space)
 and you have a sample python stub so you can find out every mission that vegastrike exports. 
 we try to keep these stubs as up to date as possible.
 Anyhow this lets you test your missions at the prompt by adding the two directories
