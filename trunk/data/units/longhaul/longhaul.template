@@ -1,0 +1,42 @@
+<Unit>
+	<Upgrade file="godsansshields"/>
+	<Defense>
+		<Shields front="0.000000"  back="0.000000" left="0" right="0"  recharge="0.000000"/>
+	</Defense>
+	<Upgrade file="shield_4_Level3"/>
+	<Upgrade file="isometal"/>
+	<Upgrade file="engine_level_3"/>
+	<Upgrade file="polymer_hull"/>
+ 
+	<Mount weapon="Tachyon" size="Light Medium" x="-4.5" y="3" z="32.5"/>
+	<Mount weapon="Tachyon" size="Light Medium" x="4.5" y="3" z="32.5" />
+	<Mount weapon="Plasma" size="Light Medium Heavy" x="-0" y="2" z="30"/>
+
+	<Mount weapon="imagerecognition" size="Light-missile Medium-missile" x="6.5" y="3" z="12.5" ammo = "5"/>
+	<Mount weapon="imagerecognition" size="Light-missile Medium-missile" x="-6.5" y="3" z="12.5" ammo ="5"/>
+	<Mount weapon="torpedoe" size="Light-missile Medium-missile Heavy-missile Special" x="0" y="3" z="2.5" ammo = "8" />	
+	
+	
+	<Subunit file="turretsmall" x="0.162158" y="5.486964" z="-8.088474" ri="1.000000" 			rj="0.000000" rk="-0.000000" qi="-0.000000" qj="0.789352" qk="-0.613941"/>
+
+	<Thrust>
+		<Engine Afterburner="1400.666718" Forward="300.333344" Retro="300.666676" Left="300.666672" Right="302.666672" Top="302.666672" Bottom="302.666672"/>
+		<Maneuver yaw="2843.200050" pitch="2587.800201" roll="3843.200050"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+
+	<Stats mass="25.000000" momentofinertia="25.000000" fuel="400000000"></Stats>
+	<Computer yaw="80" pitch="80" roll="85" afterburner="105" maxspeed="37.500">
+
+	<Jump delay="2" jumpenergy="150"/>       
+
+	<description>
+
+	</description>
+	<Hold volume="182">
+	    
+	</Hold>
+
+
+</Unit>
