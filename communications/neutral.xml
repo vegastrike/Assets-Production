@@ -4,14 +4,20 @@
 		<edge index="5"/>
 		<edge index="6"/>
 	</node>
-	<node text="All is Fine"  relationship="0">
+	<node text="All is Fine" relationship="0">
+		<sound file="contraband.wav" sex="0"/>
+
 		<edge index="2"/>
 		<edge index="3"/>
 	</node>
 	<node text="You are nice." relationship=".1">
+		<sound file="contraband.wav" sex="0"/>
+
 		<edge index="3"/>
 	</node>
-	<node text="I hate you"  sound="electricity.wav" relationship="-.1">
+	<node text="I hate you" relationship="-.1">
+
+		<sound file="contraband.wav" sex="0"/>
 		<edge index="1"/>
 		<edge index="3"/>
 	</node>
@@ -27,6 +33,7 @@
 	</node>
 
 	<node text="Prepare To Be Searched. Maintain Speed and Course." relationship="0">
+		<sound file="contraband.wav" sex="0"/>
 		<edge index="1"/>
 		<edge index="3"/>
 	</node>
@@ -39,6 +46,7 @@
 		<edge index="3"/>
 	</node>
 	<node text="Your course is deviating. Maintain course!" relationship="0">
+
 		<edge index="1"/>
 		<edge index="3"/>
 	</node>	
