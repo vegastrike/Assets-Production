@@ -1,4 +1,4 @@
-<system name="niven" background="backgrounds/blue2" nearstars="500" stars="1000" starspread="150">
+<system name="niven" background="backgrounds/darkgreen" nearstars="500" stars="1000" starspread="150">
 <Light>
 	<ambient red="0.000000" green="0.000000" blue="0.000000"/>
 	<diffuse red="1.000000" green="0.980281" blue="0.800528"/>
@@ -28,7 +28,7 @@
 		</Planet>
 	</Planet>
 	<Planet name="Gwenn Teir Bronn" file="planets/Snow2.png" ri="56930140.000000" rj="-53308572.000000" rk="10671122.000000" si="26806942.000000" sj="32368306.000000" sk="18684562.000000" radius="456651.531250" x="55205124.000000" y="-56631828.000000" z="77792184.000000" year= "109840680.000000" day="226.712799"  >
-	<CityLights file="planets/Dirt_light.png" wrapx="64" wrapy="64"/>
+	<CityLights file="planets/Dirt_light_repeat.png" wrapx="64" wrapy="64"/>
 		<Planet name="JumpToGwynedd" file="jump.png" ri="-520806.218750" rj="-557401.125000" rk="-361997.437500" si="858460.562500" sj="-286096.218750" sk="-794539.500000" radius="179.979996" x="1242461.375000" y="-1129478.750000" z="1335314.625000" year= "1958083.000000" day="506.356964" alpha="ONE ONE" destination="enigma_sector/gwynedd"  >
 		</Planet>
 		<Planet name="JumpToGhorah_khar" file="jump.png" ri="-114201.195312" rj="-904118.625000" rk="-378352.562500" si="-536373.187500" sj="-60525.859375" sk="306531.593750" radius="145.931168" x="1024404.187500" y="-1176651.625000" z="1169631.750000" year= "1580569.750000" day="134.740082" alpha="ONE ONE" destination="enigma_sector/ghorah_khar"  >
