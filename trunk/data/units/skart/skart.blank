@@ -1,5 +1,5 @@
 <Unit>
-<cockpit file="medium_cockpit.cpt" x="0" y="5" z="10"/>
+<cockpit file="rlaan-cockpit.cpt" x="0" y="5" z="10"/>
 <Meshfile file="skart.xmesh"/>
 	<Defense HudImage="skart-hud.spr">
 		<Shields front="000000" right="0.000000" left="0.000000" back="0.000000" />
