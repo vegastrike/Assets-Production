@@ -22,7 +22,7 @@ class trading:
 	player = VS.getPlayer()
 	if (player!=un):
 	  if (vsrandom.random()<.5):
-	    un.incrementCargo(1-(quant*self.price_instability),quant)
+	    un.incrementCargo(1-(quant*self.price_instability),int(quant))
 	  else:
 	    un.decrementCargo(1+(self.price_instability))
       self.last_ship+=1
