@@ -1,7 +1,17 @@
-Species: 
+Species: Ancients A, Ancients B
 
-Physical Characteristics:
+Physical Characteristics: 
+
+Species A were moderately sized beings, between 1 - 3 meters in height, and no 
+more than 2 meters in diameter
+
+Species B were smaller beings, no more than a meter wide, high, or thick.
 
 Habitat:
 
+The native habitats of these creatures are unknown.  Given the nature of the 
+planets they settled, it can be assumed that they were carbon-based lifeforms.
+
 Culture:
+
+Beyond their technological advancement, little is known.
