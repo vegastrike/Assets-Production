@@ -85,7 +85,7 @@ def getRandomRadar ():
 def UpgradeRadar (un):
   cat = getRandomRadar ()
   temp=un.upgrade (cat,0,0,1,0)    
-"""Only tested to here
+
 def UpgradeAfterburner (un,diff):
   i=0
   while (i<diff*3.0):
@@ -93,13 +93,13 @@ def UpgradeAfterburner (un,diff):
     temp=un.upgrade (cat.GetContent(),0,0,1,0)    
     i=i+1
 
-def getRandomEngine (diff, cat): #get random engine from master part list
+def getRandomEngine (diff): #get random engine from master part list
   myint=GetDiffInt(diff)
   cat="engine_level_%d" % (myint)
   return (myint,cat)
 
 def UpgradeEngine (un, diff):
-  (type,cat) = getRandomEngine (diff,cat)
+  (type,cat) = getRandomEngine (diff)
   if (type!=0):
     temp=un.upgrade (cat,0,0,1,0)    
     print "Upgrading Engine %s percent %f" % (cat,temp) 
@@ -134,7 +134,6 @@ def GetRandomRepairSys ():
 #this function sets up a blank unit with some basic upgrades that are really a necessecity for any sort of figthing
 def basicUnit (un, diff):
   i=0
-  percent
   while (i<2):#two lasers
     percent=un.upgrade("laser",i,i,0,1)
     i=i+1
