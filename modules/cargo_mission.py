@@ -8,19 +8,6 @@ import Briefing
 import universe
 import unit
 import Director
-"""
-NOTE:
-  * THIS MODULE Makes an objective named "Deliver cargo to system"
-  * Use go_to_adjacent_systems
-    - Makes objective greener each time you jump...
-    - Makes objective change text to match the system name as you get closer 
-    - The objective doesnt get deleted
-  * THEN Use go_somewhere_significant
-    - Only gets initialized NOW, after you are the right system.
-    - Makes another objective
-    - Objective gets greener as you get closer to significant
-    - Also doesnt get deleted; CARGO mission handles the termination
-"""
 
 class cargo_mission (Director.Mission):
 	you=VS.Unit()
@@ -136,6 +123,7 @@ class cargo_mission (Director.Mission):
 	  VS.IOmessage (3,"cargo mission",self.mplay,"You will receive %d of the %s cargo" % (self.quantity,self.cargoname))
 #	  VS.IOmessage (4,"cargo mission",self.mplay,"We will deduct %.2f credits from your account for the cargo needed." % (creds_deducted))
 	  VS.IOmessage (4,"cargo mission",self.mplay,"You will earn %.2f credits when you deliver our cargo." % (creds))
+	  VS.IOmessage (4,"game","all","#00ff00Good luck!")
 #	  self.you.addCredits (-creds_deducted)
 	
 	def takeCargoAndTerminate (self,you, remove):
