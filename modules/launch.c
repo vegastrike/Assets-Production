@@ -9,10 +9,7 @@ module launch {
     float y=_olist.at(pos,1)+(random.random(r1,r2)*random.randomsign());
     float z=_olist.at(pos,2)+(random.random(r1,r2)*random.randomsign());
 
-     _io.printf("launching %d ships type=%s faction=%s around area [%f,%f,%f]\n",nr_ships,type,faction,x,y,z);
-
-    _io.message("game","all","launching new wave of fighters:");
-    _io.message("game","all",type);
+    // _io.printf("launching %d ships type=%s faction=%s around area [%f,%f,%f]\n",nr_ships,type,faction,x,y,z);
 
     _unit.launch(fgname,faction,type,ai,nr_ships,x,y,z);
   };
@@ -24,10 +21,7 @@ module launch {
     float y=_olist.at(pos,1)+random.random((0.0-radius)/2.0,radius/2.0);
     float z=_olist.at(pos,2)+random.random((0.0-radius)/2.0,radius/2.0);
 
-    _io.printf("launching %d ships type=%s faction=%s in area [%f,%f,%f]\n",nr_ships,type,faction,x,y,z);
-
-    _io.message("game","all","launching new wave of fighters:");
-    _io.message("game","all",type);
+    //    _io.printf("launching %d ships type=%s faction=%s in area [%f,%f,%f]\n",nr_ships,type,faction,x,y,z);
 
     _unit.launch(fgname,faction,type,ai,nr_ships,x,y,z);
   };

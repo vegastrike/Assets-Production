@@ -29,9 +29,12 @@ module order {
 	object upos=_unit.getPosition(unit);
 	object new_order=_order.newPatrol(pmode,upos,range,around_unit);
 	_order.enqueueOrderFirst(unit_order,new_order);
+	
+	_olist.delete(upos);
       }
       ship_nr=ship_nr+1;
       unit=_unit.getUnit(ship_nr);
+      _string.delete(unit_fgid);
     }
   };
 
@@ -50,6 +53,8 @@ module order {
     object new_order=_order.newPatrol(pmode,upos,range,around_unit);
 
     _order.enqueueOrderFirst(unit_order,new_order);
+
+    _olist.delete(upos);
   };
 
   void flyToOtherShip(object which_fg,object dest_fg,float vel,bool afburn,float range){
@@ -59,13 +64,13 @@ module order {
     object old_order=_unit.getOrder(alpha_ship);
 
     object carrier_ship=unit.getUnitByFgID(dest_fg);
-    object carrier_pos=_unit.getPosition(carrier_ship);
-
-    object waypoint=carrier_pos;
+    object waypoint=_unit.getPosition(carrier_ship);
 
     object new_order=_order.newFlyToWaypoint(waypoint,vel,afburn,range);
 
     _order.enqueueOrderFirst(old_order,new_order);
+
+    _olist.delete(waypoint);
   };
 
   void flyToWaypoint(object which_fgid,object dest_vec3,float vel,bool afburn,float range){
@@ -85,6 +90,7 @@ module order {
       }
       ship_nr=ship_nr+1;
       unit=_unit.getUnit(ship_nr);
+      _string.delete(unit_fgid);
     }
   };
 
@@ -105,6 +111,7 @@ module order {
       }
       ship_nr=ship_nr+1;
       unit=_unit.getUnit(ship_nr);
+      _string.delete(unit_fgid);
     }
   };
 

@@ -24,6 +24,8 @@ module ai_flyto_waypoint {
     last_move_order=_order.newMatchLinearVelocity(forward,true,afterburner,false);
 
     _order.enqueueOrder(my_order,last_move_order);
+
+    _olist.delete(forward);
   };
 
   void flyTo(object npos){
@@ -34,6 +36,8 @@ module ai_flyto_waypoint {
 
     _order.enqueueOrder(my_order,last_head_order);
     _order.enqueueOrder(my_order,last_move_order);
+
+    _olist.delete(forward);
   };
 
   void initai(){
@@ -41,8 +45,6 @@ module ai_flyto_waypoint {
 
     my_unit=_std.getCurrentAIUnit();
     my_order=_std.getCurrentAIOrder();
-
-    //    abort_range=100.0;
 
     //_io.printf("Waypoint: ");
     //vec3.print(waypoint);
@@ -79,6 +81,7 @@ module ai_flyto_waypoint {
 
   void quitai(){
     //_io.printf("ai_flyto_waypoints1 quitting\n");
+    _string.delete(outstr);
   };
 
 }

@@ -7,18 +7,16 @@ module unit {
     int ship_nr=0;
     object unit=_unit.getUnit(ship_nr);
     object target_unit=unit.getUnitByFgID(target_fgid);
-    object check_fgid=_unit.getFgID(target_unit);
-
-    _io.printf("target check fgid: %s\n",check_fgid);
     
     while((!_std.isNull(unit))){
       object unit_fgid=_unit.getFgID(unit);
-      _io.printf("matching %s with %s\n",unit_fgid,which_fgid);
+      //_io.printf("matching %s with %s\n",unit_fgid,which_fgid);
       if(_string.begins(unit_fgid,which_fgid)){
-	_io.printf("setTarget found match: %s %s\n",unit_fgid,target_fgid);
+	//_io.printf("setTarget found match: %s %s\n",unit_fgid,target_fgid);
 
 	_unit.setTarget(unit,target_unit);
       }
+      _string.delete(unit_fgid);
       ship_nr=ship_nr+1;
       unit=_unit.getUnit(ship_nr);
     }
@@ -31,15 +29,16 @@ module unit {
 
     while((!_std.isNull(unit))){
       object unit_fgid=_unit.getFgID(unit);
-      _io.printf("removeFg: matching %s with %s\n",unit_fgid,which_fgid);
+      //_io.printf("removeFg: matching %s with %s\n",unit_fgid,which_fgid);
       if(_string.begins(unit_fgid,which_fgid)){
-	_io.printf("removeFg: found match: %s %s\n",unit_fgid,which_fgid);
+	//_io.printf("removeFg: found match: %s %s\n",unit_fgid,which_fgid);
 
 	_unit.removeFromGame(unit);
       }
       else{
 	ship_nr=ship_nr+1;
       }
+      _string.delete(unit_fgid);
       unit=_unit.getUnit(ship_nr);
     }
  
@@ -60,6 +59,7 @@ module unit {
       }
       ship_nr=ship_nr+1;
       unit=_unit.getUnit(ship_nr);
+      _string.delete(unit_fgid);
     }
 
     return found_unit;
@@ -112,6 +112,8 @@ module unit {
 
       ship_nr=ship_nr+1;
       unit=_unit.getUnit(ship_nr);
+
+      _string.delete(fgid);
     }
   };
 
