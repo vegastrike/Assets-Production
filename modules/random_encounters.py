@@ -16,7 +16,7 @@ class random_encounters:
       self.prob_period = 20*vsrandom.random()+1
     def UpdatePhaseAndAmplitude(self):
       self.prob_phase+=1;
-      return self.prob_amplitude*VS.cos ((self.prob_phase*3.1415926536*2)/self.prob_period)
+      return self.prob_amplitude*(.6+.4*VS.cos ((self.prob_phase*3.1415926536*2)/self.prob_period))
     def __init__(self,sig_distance,det_distance):
       print "init playerdat"
       self.quests=[]
