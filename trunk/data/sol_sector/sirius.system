@@ -18,7 +18,7 @@
 <attenuated red="0" blue=".0000001"/>
 </Light>	
 
-        <planet name="sun" file="sol_sector/sirius.png" radius="2" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0">
+        <planet name="sun" file="sol_sector/sirius.png" radius="20000" gravity="20" z="00000"  Red=".7" Green=".7" Blue=".7" light="0">
 	</planet>
 	<planet name="JumpPoint" file="jump.png" alpha="ONE ONE" radius="100" gravity="20" x="29000" velocity="0" position="0" destination="sol_sector/sol">
 	</planet>
