@@ -34,19 +34,19 @@ genericalphabet=['Alpha','Beta','Gamma','Delta','Epsilon','Zeta','Phi','Omega']
 def ReadBaseNameList():
 	bnl=[]
 	try:
-		f = fopen ('universe/names.txt','r')
+		f = open ('universe/names.txt','r')
 		bnl = f.readlines()
 		f.close()
 	except:
 		try:
-			f = fopen ('../universe/names.txt','r')
+			f = open ('../universe/names.txt','r')
 			bnl = f.readlines()
 			f.close()
 		except:
 			global genericalphabet
 			bnl=genericalphabet
 	for i in range(len(bnl)):
-		bnl[i].rstrip()
+		bnl[i]=bnl[i].rstrip()
 	return bnl
 def GetRandomFGNames (numflightgroups, faction):
 	global flightgroupnamelist
