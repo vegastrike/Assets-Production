@@ -11,18 +11,18 @@
 		  Right="560"
 		  Top="560"
 		  Bottom="560"/>
-			<Maneuver yaw="6643.200050" pitch="8098.600151" roll="6643.200050"/>
+			<Maneuver yaw="664.200050" pitch="809.600151" roll="664.200050"/>
 
 </Thrust>
 <Sound></Sound>
 <Defense>
 	<Hull strength="5"/>
 </Defense>
-<Stats mass="0.1" momentofinertia="0.06" fuel="200000"></Stats>
+<Stats mass="0.1" momentofinertia="0.6" fuel="200000"></Stats>
 
-<Computer yaw="110" pitch="124" roll="110" afterburner="1440" maxspeed="420"/>
+<Computer yaw="50" pitch="50" roll="50" afterburner="220" maxspeed="220"/>
 <Energy>
-	<Reactor recharge="10"
-		   limit="100"/>
+	<Reactor recharge="0"
+		   limit="00"/>
 </Energy>
 </Unit>
