@@ -2,9 +2,8 @@ import VS
 import sys
 import random
 from Vector import *
+import car_lib
 maxspeed=43
-def isCar(c):
-	return c.getName()=='car'
 
 class TrafficAI(VS.PythonAI):
     def restoreCruisingSpeed(self,speed):
@@ -24,7 +23,7 @@ class TrafficAI(VS.PythonAI):
 	parent = self.GetParent()
 	if (parent and un):
 		if (parent!=un):
-			if (isCar (un)):
+			if (car_lib.isCar (un)):
 				posdiff=SafeNorm(Sub (un.Position(),parent.Position())) 			#look 1 second ahead
 #				distInOneSec = Dot (Sub(parent.GetVelocity(),un.GetVelocity()),posdiff)
 				distInOneSec = Dot (Sub(parent.GetVelocity(),un.GetVelocity()),posdiff)
