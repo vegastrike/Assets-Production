@@ -37,6 +37,7 @@ class random_encounters:
     self.gen_num_ships=gennships
     self.capship_prob=capprob
     self.cur_player=0
+    self.sig_distance_table = {"enigma_sector/heavens_gate":(2000,4000)}
     print "end random enc"
   def AddPlayer (self):
 #    print "begin add player"
@@ -55,6 +56,11 @@ class random_encounters:
     if (qdf):
       self.cur.quests+=[qdf]
   def CalculateSignificantDistance(self):
+    sysfile = VS.getSystemFile()
+    if sysfile in self.sig_distance_table:
+      self.cur.significant_distance = self.sig_distance_table[sysfile][0]
+      self.cur.detection_distance = self.sig_distance_table[sysfile][1]
+      return
     minsig =  unit.minimumSigDistApart()
     if (self.sig_distance>minsig*0.15):
       self.cur.significant_distance=minsig*0.15
