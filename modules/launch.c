@@ -3,18 +3,26 @@ module launch {
   import random;
   import unit;
 
-  void launch_around_station(object station_name,object fgname,object faction,object type,object ai,int nr_ships,int nr_waves){
+  bool launch_around_station(object station_name,object fgname,object faction,object type,object ai,int nr_ships,int nr_waves){
     object station_unit=unit.getUnitByFgID(station_name);
+    if(_std.isNull(station_unit)){
+      _io.printf("launch.c:launch_around_station did not find unit %s\n",station_name);
+      return false;
+    }
     object station_pos=_unit.getPosition(station_unit);
 
     float rsize=_unit.getRSize(station_unit);
 
     launch_waves_around_area(fgname,faction,type,ai,nr_ships,nr_waves,rsize,rsize*2.0,station_pos);
     _olist.delete(station_pos);
+
+    return true;
   };
 
-  void launch_around_unit(object station_name,object fgname,object faction,object type,object ai,int nr_ships,int nr_waves){
-    launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves);
+  bool launch_around_unit(object station_name,object fgname,object faction,object type,object ai,int nr_ships,int nr_waves){
+    bool ok=launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves);
+
+    return ok;
   };
 
   void launch_wave_around_area(object fgname,object faction,object type,object ai,int nr_ships,float r1,float r2,object pos){

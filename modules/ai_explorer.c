@@ -50,8 +50,11 @@ module ai_explorer {
       select_jumppoint();
 
     }
+    _string.delete(new_system);
   };
 
   void quitai(){
+    //    _string.delete(fgid);
+    //_string.delete(current_system);
   };
 }

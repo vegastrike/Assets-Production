@@ -26,7 +26,10 @@ module order {
     // patrol in the area around fg patrol_fgid
 
     object around_unit=unit.getUnitByFgID(around_fgid);
-
+    if(_std.isNull(around_unit)){
+      _io.printf("order.c:patrolFg  unit %s not found\n",around_fgid);
+      return;
+    }
     int ship_nr=0;
     object unit=_unit.getUnit(ship_nr);
 
@@ -55,8 +58,15 @@ module order {
     // patrol in the area around fg patrol_fgid
 
     object around_unit=unit.getUnitByFgID(around_fgid);
+    if(_std.isNull(around_unit)){
+      _io.printf("order.c:patrolShip  around_unit %s not found\n",around_fgid);
+      return;
+    }
 
     object unit=unit.getUnitByFgID(patrol_fgid);
+    if(_std.isNull(unit)){
+      _io.printf("order.c:patrolShip  patrol_unit %s not found\n",patrol_fgid);      return;
+    }
     object unit_order=_unit.getOrder(unit);
 
     object upos=_unit.getPosition(unit);
@@ -72,9 +82,18 @@ module order {
     // sends flighgroup which_fg to flightgroup dest_fg
 
     object alpha_ship=unit.getUnitByFgID(which_fg);
+    if(_std.isNull(alpha_ship)){
+      _io.printf("order.c:flyToOtherShip which_fg %s has NULL unit\n",which_fg);
+      return;
+    }
     object old_order=_unit.getOrder(alpha_ship);
 
     object carrier_ship=unit.getUnitByFgID(dest_fg);
+    if(_std.isNull(carrier_ship)){
+      _io.printf("order.c:flyToOtherShip dest_fg %s has NULL unit\n",dest_fg);
+      return;
+    }
+ 
     object waypoint=_unit.getPosition(carrier_ship);
 
     object new_order=_order.newFlyToWaypoint(waypoint,vel,afburn,range);

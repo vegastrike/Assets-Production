@@ -31,7 +31,7 @@ module ai_flyto_waypoint_defend {
 
   void checkModes(){
     // _io.printf("before threat\n");
-    object threat=unit.getThreatOrEnemyInRange(my_unit,defend_range);
+    object threat=unit.obsolete_getThreatOrEnemyInRange(my_unit,defend_range);
     //_io.printf("after threat\n");
     if(mode==0){
       // we are in flyto-mode
@@ -76,6 +76,10 @@ module ai_flyto_waypoint_defend {
 
   void initai(){
     outstr=_string.new();
+    _io.printf("ai_flyto_waypoint_defend.c is obsolete - do not use!\n");
+    _done=true;
+    return;
+  
     _std.setNull(null_target);
 
     my_unit=_std.getCurrentAIUnit();
