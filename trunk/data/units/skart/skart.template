@@ -1,0 +1,25 @@
+<Unit>
+
+<Mount weapon="" size="Light" x="-1.922219" y="12.883912" z="5.532851" />
+<Mount weapon="" size="Light" x="1.297383" y="14.866834" z="4.464215" />
+<Mount weapon="Ktek" size="Heavy Medium" x="-3.213775" y="-10.523225" z="12.789357"/>
+<Mount weapon="Ktek" size="Heavy Medium" x="3.422477" y="-10.527871" z="12.487250"/>
+
+	<Thrust>
+		<Engine Afterburner="500.000000" Forward="500.000000" Retro="400.000000" Left="400.000000" Right="400.000000" Top="400.000000" Bottom="400.000000"/>
+		<Maneuver yaw="1815.500000" pitch="1815.500000" roll="1815.500000"/>
+	</Thrust>
+	<cockpit x="0" y="0" z="13"/>
+	<Sound> </Sound>
+	<Defense>
+		<Armor front="400" right="480" left="480" back="400"/>
+		<Shields front="150" right="150" left="150" back="150" recharge="50"/>
+		<Hull strength="800"/>
+	</Defense>
+	<Stats mass="2" momentofinertia="2" fuel="200000000"></Stats>
+	<Computer yaw="143.500000" pitch="183.500000" roll="123.500000" afterburner="190.000000" maxspeed="160.000000"/>
+	<Energy>
+		<Reactor recharge="160" limit="400"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="250"/>
+</Unit>
