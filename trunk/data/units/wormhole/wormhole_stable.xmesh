@@ -1,6 +1,6 @@
 <!-- Xmesh exported from Wings 3D 0.98.11 -->
 <!-- How to edit this file: http://www.joeredcloud.com/kandarwiki/index.php?VsHowtoEditMeshFiles -->
-<Mesh Scale="1" texture='wh_rgb_stable.png'  texture1="wh_spec_stable.png" blend="ONE ONE" sharevertex='0'>
+<Mesh Scale=".0166666666666" texture='wh_rgb_stable.png'  texture1="wh_spec_stable.png" blend="ONE ONE" sharevertex='0'>
 <!-- 144 vertices, 144 faces -->
 <Points>
   <Point>
@@ -1447,7 +1447,7 @@
   </Quad>
 </Polygons>
 <!-- Materialname="wormhole_auv" -->
-<Material reflect="1.00000" LightningOn="1" >
+<Material reflect="1" LightningOn="1" >
   <Diffuse red="1.00000" green="1.00000" blue="1.00000" alpha="1.00000" />
   <Ambient red="1.00000" green="1.00000" blue="1.00000" alpha="1.00000" />
   <Specular red="1.00000" green="1.00000" blue="1.00000" alpha="1.00000" />
