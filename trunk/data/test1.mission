@@ -5,6 +5,8 @@
 
 	<variables>
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
+		<var name="difficulty" value=".1" />
+
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
@@ -13,8 +15,16 @@
 	</variables>
         <flightgroups>
 
-                <flightgroup name="blue" faction="neutral" type="osprey" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="confed" type="wayfarer.blank" ainame="default" waves="1" nr_ships="1">
 			<pos x="53400" y="4000" z="40000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+                <flightgroup name="blue" faction="aera" type="skart" ainame="default" waves="1" nr_ships="1">
+			<pos x="53400" y="6000" z="40000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>

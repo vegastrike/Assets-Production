@@ -9,7 +9,7 @@
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
 		<var name="system" value="blank" />
-		<var name="credits" value="15000" />
+		<var name="credits" value="1000000" />
 		<var name="description" value="4vs4.txt" />
 	</variables>
 		<flightgroups>
