@@ -3,6 +3,8 @@ intro_string="Have you heard of the Interplanetary Socialist Organization? We ar
 import Base
 import fixers
 import Director
+import faction_ships
+import launch
 def AssignMission ():
 	fixers.DestroyActiveButtons ()
 	fixers.CreateChoiceButtons(Base.GetCurRoom(),[
