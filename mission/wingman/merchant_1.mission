@@ -8,7 +8,7 @@
 		<var name="credits" value="00000"/>
 		<var name="system" value="enigma_sector/blake" />
 		<var name="mission_name" value="HireWingman" />
-		<var name="description" value="Two merchants are looking to form a convoy with willing participant. Capital required: 60000." />
+		<var name="description" value="Two merchants are looking to form a convoy with willing participant. Capital required: 12000." />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="1">
@@ -23,7 +23,7 @@
         </flightgroups>
 	<python>
 import wingman
-newmission = wingman.wingman (60000, 'merchant', 2,0)
+newmission = wingman.wingman (12000, 'merchant', 2,0)
 newmission=0
 
 </python>

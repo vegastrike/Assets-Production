@@ -8,7 +8,7 @@
 		<var name="credits" value="00000"/>
 		<var name="system" value="enigma_sector/blake" />
 		<var name="mission_name" value="HireWingman" />
-		<var name="description" value="Rlaan lone escort in need of cash. Will escort alien or rlaan alike. Cost 10000 for rlaan 24000 for other species." />
+		<var name="description" value="Rlaan lone escort in need of cash. Will escort alien or rlaan alike. Cost 1000 for rlaan 4800 for other species." />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="1">
@@ -22,7 +22,7 @@
         </flightgroups>
 	<python>
 import wingman
-newmission = wingman.wingman (24000, 'rlaan', 1,1)
+newmission = wingman.wingman (4800, 'rlaan', 1,1)
 newmission=0
 
 </python>
