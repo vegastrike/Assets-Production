@@ -27,6 +27,6 @@
 <attenuated red="0" blue=".0000001"/>
 </Light>	
 
-        <unit name=""  file="MiningBase" faction="pirate" z="7500" x="7500"/>
+        <unit name=""  file="MiningBase" faction="pirates" z="7500" x="7500"/>
         <planet name="JumpToNexus" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-14500" x="-6000" day="240" destination="gemini_sector/nexus"  />
 </system>
