@@ -1,12 +1,4 @@
-def allFactionNames():
-# returns a dictionary containing all the variations on faction names known to man
-#nicks -> singular
-#nickp -> plural
-#dnicks -> derogatory nick singular
-#dnickp -> derogatory nick plural
-#mstandname -> standard male name
-#fstandname -> standard female name
-	return {
+all_faction_name_global = {
 "alltags" :
 ["full","nicks","nickp","dnicks","dnickp","government","possessive","homeworld","mstandname","fstandname"]
 
@@ -21,7 +13,66 @@ def allFactionNames():
 		,"mstandname" : "Bruce Johnson"
 		,"fstandname" : "Michelle Petridge"
 		}
-
+,"andolian":	{"full" : "Andolian"
+		,"nicks" : "Andolian"
+		,"nickp" : "Andolians"
+		,"dnicks": "Link-Junky"
+		,"dnickp": "Link-Junkies"
+		,"government" : "Andolian Senate"
+		,"possessive" : "Andolian"
+		,"mstandname": "Aarron Kester"
+		,"fstandname": "Amy Jalarki"
+		}
+,"highborn":	{"full" : "Highborn"
+		,"nicks": "Highborn"
+		,"nickp": "Highborn"
+		,"dnicks":"Lowborn"
+		,"dnickp":"Lowborn"
+		,"government":"Highborn Electors"
+		,"possessive":"Highborn's"
+		,"mstandname":"Fredrick Kennedy"
+		,"fstandname":"Isabella Miranda"
+		}
+,"shaper":	{"full": "Shaper"
+		,"nicks": "Shaper"
+		,"nickp":"Shapers"
+		,"dnicks":"Control Freak"
+		,"dnickp":"Control Freaks"
+		,"government":"Shaper Directorate"
+		,"possessive":"Shaper's"
+		}
+,"unadorned":	{"full" : "Unadorned"
+		,"nicks": "Unadorned"
+		,"nickp": "Unadorned"
+		,"dnicks":"Unheard of"
+		,"dnickp":"Unworthy"
+		,"government":"Unadorned Representatives"
+		,"possessive":"Unadorned's"
+		}
+,"purist":	{"full" : "Purist"
+		,"nicks" : "Purist"
+		,"nickp" : "Purists"
+		,"dnicks" : "Unpure"
+		,"dnickp" : "Unpures"
+		,"government": "Purist Regents"
+		,"possessive":"Purists'"
+		}
+,"forsaken":	{"full" : "The Union of Lost Settlers"
+		,"nicks":"Forsaken"
+		,"nickp":"Forsaken"
+		,"dnicks":"Lost Soul"
+		,"dnickp":"Lost Souls"
+		,"government": "Lost Settlers Council"
+		,"possessive":"Forsaken"
+		}
+,"LIHW":	{"full" : "League Of Independent Worlds"
+		,"nicks":"LIHW"
+		,"nickp":"LIHW"
+		,"dnicks":"Indep"
+		,"dnickp":"Indeps"
+		,"government":"League Of Independent Worlds Council"
+		,"possessive":"LIHW"
+		}
 ,"merchant" :	{"full" : "Merchant Union"
 		,"nicks" : "trader"
 		,"nickp" : "traders"
@@ -33,7 +84,17 @@ def allFactionNames():
 		,"mstandname" : "James Stroffs"
 		,"fstandname" : "Amanda Barnard"
 		}
-
+,"homeland-security" : {"full" : "Homeland Security Force"
+		,"nicks" : "police"
+		,"nickp" : "police"
+		,"dnicks": "po'"
+		,"dnickp": "fuzz"
+		,"government" : "High Commission"
+		,"possessive" : "police"
+		,"homeworld" : "Earth"
+		,"mstandname" : "Barry Matthews"
+		,"fstandname" : "Jannette Karoen"
+		}
 ,"militia" :	{"full" : "Confederate Police Force"
 		,"nicks" : "police"
 		,"nickp" : "police"
@@ -55,7 +116,24 @@ def allFactionNames():
 		,"possessive" : "Aeran"
 		,"homeworld" : "Aeneth"
 		}
-
+,"retro":	{"full" : "Retro Religious Advocacy"
+		,"nicks": "Retro"
+		,"nickp": "Retros"
+		,"dnicks": "Fanatic"
+		,"dnickp": "Fanatics"
+		,"government" : "Clergy"
+		,"possessive" : "Retro's"
+		,"homeworld" : "Eden"
+		}
+,"luddites":	{"full" : "Anti-Technologist Front"
+		,"nicks": "Anti-Technologist"
+		,"nickp": "Anti-Technologists"
+		,"dnicks": "Luddite"
+		,"dnickp": "Luddites"
+		,"government" : "Clergy"
+		,"possessive" : "Luddite's"
+		,"homeworld" : "Eden"
+		}
 ,"rlaan" :	{"full" : "Rlaan Sovereignty"
 		,"nicks" : "Rlaan"
 		,"nickp" : "Rlaan"
@@ -77,6 +155,17 @@ def allFactionNames():
 		,"mstandname" : "Butch Austin"
 		,"fstandname" : "Judy \'One Eye\' McGill"
 		}
+,"hunter" :	{"full" : "Bounty Hunter's Guild"
+		,"nicks" : "Bounty Hunter"
+		,"nickp" : "Bounty Hunters"
+		,"dnicks" : "Slime Slinger"
+		,"dnickp" : "Rat Wringers"
+		,"government" : "Hunter's Guild Council"
+		,"possessive" : "Hunter's"
+		,"homeworld" : "Earth"
+		,"mstandname" : "Vart Nemkis"
+		,"fstandname" : "Mir Karok"
+		}
 
 ,"ISO" :	{"full" : "Interstellar Socialist Organization"
 		,"nicks" : "ISO"
@@ -87,7 +176,33 @@ def allFactionNames():
 		,"possessive" : "ISO's"
 		,"homeworld" : "Trotsky"
 		}
-
+,"unknown":	{"full" : "unknown forces"
+		,"nicks" : "unmarked ship"
+		,"nickp" : "unidentified force"
+		,"dnicks" : "bandit"
+		,"dnickp" : "bandits"
+		,"government" : "unknown organization"
+		,"possesive": "bandit's"
+		,"homeworld" : "Plural"
+		}
+,"uln":		{"full":"Uln"
+		,"nicks":"Uln"
+		,"nickp":"Uln"
+		,"dnicks":"Less than brilliant one"
+		,"dnickp":"Less than clever ones"
+		,"government":"Uln Representative Democracy"
+		,"possessive":"Uln's"
+		,"homeworld": "Ulnia"
+		}
+,"dgn":		{"full":"Dgn"
+		,"nicks":"Dgn"
+		,"nickp":"Dgn"
+		,"dnicks":"Needed One"
+		,"dnickp":"Needed Ones"
+		,"government":"Dgn Representative Democracy"
+		,"possessive":"Dgn's"
+		,"homeworld": "Dgnia"
+		}
 ,"rlaan-briin" :{"full" : "Rlaan-Briin"
 		,"nicks" : "Briin"
 		,"nickp" : "Briin"
@@ -98,7 +213,7 @@ def allFactionNames():
 		,"homeworld" : "Bribztkabr"
 		}
 
-,"klk'k" :	{"full" : "Klk'k "
+,"klkk" :	{"full" : "Klk'k "
 		,"nicks" : "Klk'k"
 		,"nickp" : "Klk'k"
 		,"dnicks" : "Wisenheimer"
@@ -108,6 +223,17 @@ def allFactionNames():
 		,"homeworld" : "Ktah"
 		}
 }
+
+def allFactionNames():
+# returns a dictionary containing all the variations on faction names known to man
+#nicks -> singular
+#nickp -> plural
+#dnicks -> derogatory nick singular
+#dnickp -> derogatory nick plural
+#mstandname -> standard male name
+#fstandname -> standard female name
+	return all_faction_name_global
+
 
 
 def allNews():
