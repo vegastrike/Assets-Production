@@ -117,7 +117,7 @@ class random_encounters:
           localfaction=near_faction
           gen_num_ships*=3
       else:
-	self.cap_prob/=3;#1/3 chance of capships within a nation border
+	cap_prob/=3;#1/3 chance of capships within a nation border
       numship= vsrandom.randrange(1,int(gen_num_ships)+1)
       self.det_distance = self.cur.detection_distance
       launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,0,self.generation_distance*vsrandom.random()*0.9,un, 2.0*self.det_distance,"")
