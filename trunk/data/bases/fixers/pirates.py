@@ -1,6 +1,7 @@
 import Base
 import fixers
 import Director
+import VS
 def AssignMission ():
 	fixers.DestroyActiveButtons ()
 	fixers.CreateChoiceButtons(Base.GetCurRoom(),[
