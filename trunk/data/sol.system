@@ -50,7 +50,9 @@
                 <ContinuousTerrain file="continuousterrain.txt" mass=".00000100" y="0000" z="30000" qi="0" qj="0" qk="1" ri="0" rj="1" rk="0"/>
                                 <Atmosphere radius="10000"/>
 
-			<planet name="Moon" file="moon.bmp" radius="800" gravity="20" ri="10000" rj="0" rk="0" si="0" sj="0" sk="10000" velocity="2" position="0">
+			<planet name="Moon" file="moon.bmp" radius="800" gravity="20" ri="10000" rj="0" rk="0" si="0" sj="0" sk="10000" velocity="2" position="0">			
+			</planet>
+			<planet name="Jump" file="green.bmp" radius="800" gravity="20" ri="10000" rj="0" rk="0" si="0" sj="0" sk="10000" velocity="2" position="2" destination="solsmall">
 			</planet>
 
 		</planet>
