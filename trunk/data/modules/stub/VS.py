@@ -2,7 +2,7 @@
 import sys
 import math
 import time
-_sysfile = ['SYSTEMa']
+_sysfile = ['SYSTEMaa']
 _unitlist=[]
 
 def timeofday():
@@ -70,8 +70,11 @@ def getUnitList():
    print "getUnitList" 
    return un_iter()
 def getUnit(which):
-   print "getUnit" 
-   return _unitlist[which]
+   print "getUnit"
+   if (len(_unitlist)>which):
+      return _unitlist[which]
+   else:
+      return 0
 def getNumUnits():
    return len(_unitlist)
 def cacheAnimation(ani):
@@ -108,6 +111,8 @@ def GetRelation(myfac,theirfac):
 		enn=faction_ships.factionToInt(theirfac)
 		if enn in faction_ships.enemies[myn]:
 			return -1
+		if enn in faction_ships.friendlies[myn]:
+			return 1
 		return 0
 	except:
 		print 'bad faction'+myfac + theirfac 
@@ -680,10 +685,10 @@ class Cargo:
   def SetCategory(self,category): 
    print "SetCategory"
   def GetCategory(self):
-   print "GetCategory"
+   print "GetCategory" 
    import vsrandom
    if vsrandom.randrange(0,2)==0:
-      return "Contraband"
+    return "Contraband"
    return "Medical"
   def SetMissionFlag(self,flag): 
    print "SetMissionFlag"
