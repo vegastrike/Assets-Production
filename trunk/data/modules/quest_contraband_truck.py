@@ -95,7 +95,7 @@ class quest_contraband_truck (quest.quest):
 		if self.repeat_end2 == 2 and not self.cargo_container.isNull():
 			if self.timer1 == 0:
 				self.timer1 = VS.GetGameTime()
-#			self.cargo_container.Split(75)
+			self.cargo_container.Split(75)
 			VS.playAnimation("explosion_wave.ani",self.cargo_container.Position(),300)
 			VS.playAnimation("explosion_wave.ani",self.cargo_container.Position(),100)
 			VS.playAnimation("explosion_wave.ani",self.cargo_container.Position(),700)
@@ -165,6 +165,21 @@ class quest_contraband_truck (quest.quest):
 
 
 	def Execute (self):
+
+
+# remove this test        self.sysfile = VS.getSystemFile()
+                if self.truck_pirate.getUnitSystemFile()!= VS.getSystemFile():
+			print "Truck has Jumped Away :-)"
+		else:
+			print "Truck is still here! :-("
+
+
+
+
+
+
+
+
 		if self.quest_exit == 1:
 			return 0
 		if (self.playa):
