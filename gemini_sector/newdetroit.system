@@ -1,4 +1,4 @@
-<system name="New Detroit" background="backgrounds/blue_galaxy1" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
+<system name="New Detroit" background="backgrounds/blue_galaxy1" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0" scalesystem="1">
 <Light>
 <ambient red=".3" green=".3" blue=".3"/>
 <diffuse red="1" green="0.894427190999916" blue="2.23606797749979"/>
@@ -31,8 +31,8 @@
         <planet name="JumpToRaxis" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-5500" x="7500" day="240" destination="gemini_sector/raxis"/>
         <planet name="JumpToXXN-1927" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="11000" x="0" day="240" destination="gemini_sector/xxn-1927"/>
         <planet name="JumpToManchester" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="17000" x="4000" day="240" destination="gemini_sector/manchester"/>
-        <planet name="NewDetroit" file="planets/newdetroit.png" radius="300" gravity="20" z="-3000"  x="-13000"  day="300">
-<!--                <planet name="NewDetroit Atmosphere" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
+        <planet name="NewDetroit" file="planets/newdetroit.png" citylights="planets/Dirt_light.png" radius="300" gravity="20" z="-3000"  x="-13000" day="3000">
+<!--                <planet name="NewDetroit Atmosphere" file="sol/dirtyatmos.png" alpha="true" radius="320" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
 -->
         </planet>  
         <planet name="JumpToRikel" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="5000" x="-21000" day="240" destination="gemini_sector/rikel"/>
