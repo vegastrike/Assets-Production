@@ -626,6 +626,56 @@
 <!--End of Other Nodes -->
 
 <!-- Built-in Conversations --> 
+	<node text="Docking operation complete. You're free of the docking clamps." relationship="0.01">
+		<edge index="8"/>
+		<edge index="7"/>
+		<edge index="6"/>
+		<edge index="5"/>
+		<edge index="23"/>
+		<edge index="9"/>
+		<edge index="22"/>
+		<edge index="17"/>
+	</node>
+	<node text="You are not in docking clamps. Move into one of the white guide boxes and try to dock again." relationship="-.005">
+		<edge index="4"/>
+		<edge index="24"/>
+		<edge index="12"/>
+		<edge index="1"/>
+		<edge index="15"/>
+		<edge index="14"/>
+		<edge index="19"/>
+		<edge index="22"/>
+	</node>
+	<node text="Docking operation begun; press 0 to step into our starship." relationship="0.01">
+		<edge index="8"/>
+		<edge index="7"/>
+		<edge index="6"/>
+		<edge index="5"/>
+		<edge index="23"/>
+		<edge index="9"/>
+		<edge index="22"/>
+		<edge index="17"/>
+	</node>
+	<node text="You are not authorized to land here!" relationship="-.005">
+		<edge index="4"/>
+		<edge index="24"/>
+		<edge index="12"/>
+		<edge index="1"/>
+		<edge index="15"/>
+		<edge index="14"/>
+		<edge index="19"/>
+		<edge index="22"/>
+	</node>
+	<node text="Clearence code acknowledged; move into landing pattern and dock at the white indicators." relationship="0.01">
+		<edge index="8"/>
+		<edge index="7"/>
+		<edge index="6"/>
+		<edge index="5"/>
+		<edge index="23"/>
+		<edge index="9"/>
+		<edge index="22"/>
+		<edge index="17"/>
+	</node>
 	<node text="Unable to comply." relationship="-.005">
 		<edge index="4"/>
 		<edge index="24"/>
