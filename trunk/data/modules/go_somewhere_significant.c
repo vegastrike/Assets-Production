@@ -19,10 +19,10 @@ module go_somewhere_significant {
   object DestinationSystem () {
     return destination;
   };
-  void init (object you, int numsystemsaway, bool usecap, float distance_away_to_trigger) {
+  void init (object you, int numsystemsaway, bool capship_only, float distance_away_to_trigger) {
     _std.setNull ( significantun);
     youcontainer = _unit.getContainer (you);
-    capship = usecap;
+    capship = capship_only;
     distfrombase=distance_away_to_trigger;
     object sysfile = _std.getSystemFile();
     destination=universe.getAdjacentSystem(sysfile,numsystemsaway);
@@ -56,8 +56,8 @@ module go_somewhere_significant {
 	    object sysfil = _std.getSystemFile();
 	    if (_string.equal (sysfil,destination)) {
 	      arrivedsys=true;
-	      int randint=random.randomint(0,50);
-	      object significant = unit.getSignificant (randint,!capship);
+	      int randint=random.randomint(0,128);
+	      object significant = unit.getSignificant (randint,capship);
 	      if (_std.isNull (significant)) {
 		significant =_unit.getPlayer();
 	      }

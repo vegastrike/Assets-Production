@@ -36,7 +36,7 @@ module patrol_system {
 	  _io.sprintf(str,"Greetings, %s. You must patrol a system for us:",name);
 	  _string.delete (name);
 	  _io.message (0,"game","all",str);
-	  go_somewhere_significant.init(you,numsystemsaway,true,distance_from_base);
+	  go_somewhere_significant.init(you,numsystemsaway,false,distance_from_base);
 	  _string.delete(str);
 	  patrolpoints=_olist.new();
 	};
@@ -55,6 +55,7 @@ module patrol_system {
 	  _unit.addCredits (you, cred);
 	  _io.message (0,"game","all","Thank you! Patrol Complete.");
 	  _io.message (0,"game","all","We have credited your account.");
+	  destroy();
 	  _std.terminateMission(true);
 	};
 	void GeneratePatrolList (object you) {
@@ -109,6 +110,7 @@ module patrol_system {
 	  if (go_somewhere_significant.InSystem()) {
 	    object you=_unit.getUnitFromContainer(youcontainer);
 	    if (_std.isNull (you)) {
+	      destroy();
 	      _std.terminateMission(false);
 	    }else {
 	      if (quantity>0) {//generate jump point olist
