@@ -37,7 +37,7 @@ class defend (Director.Mission):
 	  VS.IOmessage (0,"defend",self.mplay,"Good Day, %s. Your mission is as follows:" % name)
           self.adjsys = go_to_adjacent_systems(self.you,numsystemsaway)
           self.adjsys.Print("You are in the %s system,","Proceed swiftly to %s.","Your arrival point is %s.","defend",1)
-	  VS.IOmessage (2,"defend",self.mplay,"And there eliminate any %s starships at a point."  % faction)
+	  VS.IOmessage (2,"defend",self.mplay,"And there eliminate any %s starships at a point."  % self.faction)
     def SuccessMission ():
         self.you.addCredits (cred)
         VS.IOmessage(0,"defend",self.mplay,"Excellent work pilot! Your effort has thwarted the foe!")
@@ -51,21 +51,21 @@ class defend (Director.Mission):
         _io.message (1,"defend",self.mplay,"We have contacted your bank and informed them of your failure to deliver on credit. They have removed a number of your credits for this inconvenience. Let this serve as a lesson.")
         _std.terminateMission(0)
     def NoEnemiesInArea (jp):
-        if (!_string.equal(go_somewhere_significant.DestinationSystem(),VS.getSystemFile())):
+        if (go_somewhere_significant.DestinationSystem()!=VS.getSystemFile()):
 	    return 0
-        object un= VS.getUnit (self.ship_check_count)
+        un= VS.getUnit (self.ship_check_count)
         self.ship_check_count+=1
         if (un.isNull ()):
 	    return 1
         
-        if (!_unit.equal (un,self.you)):
+        if (un!=self.you):
             if (un.getFaction()==faction): 
                 if (unit.getSignificantDistance (un,jp)<escdist):
                     self.ship_check_count=0
         return 0
 	
     def GenerateEnemies (jp,you):
-        _io.message (0,"defend",self.mplay,"Eliminate all %s ships here" % self.faction)
+        VS.IOmessage (0,"defend",self.mplay,"Eliminate all %s ships here" % self.faction)
         if (defend):
             VS.IOmessage (0,"defend",self.mplay,"You must protect %s." % jp.getName ())
         count=0            
@@ -106,9 +106,9 @@ class defend (Director.Mission):
 		else:
                     un =  self.attackers[self.targetiter]
                     if (defend):#		  if (not un.isNull())
-                        _unit.setTarget (un,self.defendee)
+                        un.setTarget (self.defendee)
                     else:
-                        _unit.setTarget (un,self.you)
+                        un.setTarget (self.you)
                     self.targetiter=self.targetiter+1
                 if (self.NoEnemiesInArea (base)):
                     self.SuccessMission(you)

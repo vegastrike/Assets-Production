@@ -16,7 +16,7 @@ def getAdjacentSystems (currentsystem, sysaway, jumps=()):
     else:
       for i in range (10):
         nextsystem=VS.GetAdjacentSystem(currentsystem,random.randrange(0,max))
-        if (not (nextsystem in jumps)):
+        if (not (nextsystem in jumps) and (not (nextsystem == VS.getSystemFile()))):
           break
       else:
         return getAdjacentSystems(currentsystem,0,jumps)
