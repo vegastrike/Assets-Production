@@ -54,7 +54,7 @@ def makeDynamicNews	(stardate,type_event,stage_event,aggressor,defender,success
 
 	return formatNewsItem (getNewsItem(getDockFaction(),type_event,stage_event,getSuccessStr(success)
 					 ,getPOV(getDockFaction(),defender,aggressor,getSuccessStr(success))
-					 ,scale_event,keyword,randint))
+					 ,scale_event,keyword,randint),randint)
 
 # ------------------------------------------------------------------------------
 # String Formatting functions
@@ -77,7 +77,9 @@ def splitPunWord(word):
 	else:
 		return [pre_pun,word_2,"",""]
 
-def formatNewsItem(item):
+def formatNewsItem(item,rint):
+	import seedrandom
+	randint = seedrandom.rands(rint)
 	"""returns the formatted news item built from the relevant data"""
 	lines = item.split("\n")
 	for i in range (len(lines)):
@@ -85,11 +87,13 @@ def formatNewsItem(item):
 		for j in range (len(words)):
 			if words[j].find("VAR_") != -1:
 				word = splitPunWord(words[j])
-				words[j] = word[0] + formatNameTags(word[1],dynamic_news_content.allFactionNames()) + word[2] + word[3]
+				words[j] = word[0] + formatNameTags(word[1],dynamic_news_content.allFactionNames(),randint) + word[2] + word[3]
+				randint = seedrandom.rands(randint)
+				
 		lines[i] = string.join(words)
 	return string.join(lines,"\n")
 
-def formatNameTags(word,names):
+def formatNameTags(word,names,randint):
 	"""formats a news tag to be the string so desired
 	valid tags include "system_sector", "aggressor_nick"
 	and "defender_homeplanet" """
@@ -115,7 +119,8 @@ def formatNameTags(word,names):
 	elif tag in ["FG","FGtype"] :
 		return allUsefullVariables[var+tag]
 	elif tag in names["alltags"] and validateDictKeys([var_string,tag],dynamic_news_content.allFactionNames()):
-		return names[var_string][tag][0]
+		tmp = names[var_string][tag]
+		return tmp[randint%len(tmp)]
 	else:
 		print "Error. Invalid news tag, not found in dictionary."
 		return word
