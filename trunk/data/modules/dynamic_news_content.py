@@ -253,8 +253,10 @@ def allFactionNames():
 
 def allNews():
 # returns a dictionary containing all the dynamic news items in existancs ;-)
-	return	{
+	global _all_news_global
+	return _all_news_global
 
+_all_news_global = {
 "neutral" :
 
 {"siege" :	{"start"	:{"success":	{"good"		: [(0.8,"all","BLOCKADE!\\The VAR_aggressor_government has openly reported their intent of invasion with VAR_defender_full in the VAR__system_sector Sector today. The VAR_aggressor_possessive forces have strategically blocked all entrance and exit from VAR_system_system and continue a valiant assault upon the planet.")
