@@ -5,7 +5,7 @@ ccp=VS.getCurrentPlayer()
 #Aera Plants
 #Rlaan Rocks
 #Hum0n Cities
-#Uln Verbs
+#Uln adVerbs
 #klkk Adjectives
 def MaxNumFlightgroupsInSystem ():
 	return 10
@@ -29,39 +29,47 @@ def AllFactions ():
 		facs+= [VS.GetFactionName(i)]
 	return facs
 basenamelist=[]
-flightgroupnamelist=[]
+flightgroupnamelist={}
 genericalphabet=['Alpha','Beta','Gamma','Delta','Epsilon','Zeta','Phi','Omega']
-def ReadBaseNameList():
+def ReadBaseNameList(faction):
 	bnl=[]
+	filname = 'universe/fgnames/'+faction+'.txt'
 	try:
-		f = open ('universe/names.txt','r')
+		f = open (filename,'r')
 		bnl = f.readlines()
 		f.close()
 	except:
 		try:
-			f = open ('../universe/names.txt','r')
+			f = open ('../'+filename,'r')
 			bnl = f.readlines()
 			f.close()
 		except:
-			global genericalphabet
-			bnl=genericalphabet
+			try:
+				f = open ('../universe/names.txt','r')
+				bnl = f.readlines()
+				f.close()
+			except:
+				global genericalphabet
+				bnl=genericalphabet
 	for i in range(len(bnl)):
 		bnl[i]=bnl[i].rstrip()
+	import vsrandom
+	vsrandom.shuffle(bnl)
 	return bnl
 def GetRandomFGNames (numflightgroups, faction):
 	global flightgroupnamelist
-	if (len(flightgroupnamelist)==0):
-		flightgroupnamelist = ReadBaseNameList()
+	if (not (faction in flightgroupnamelist)):
+		flightgroupnamelist[faction]=ReadBaseNameList(faction)
 	for i in range (numflightgroups-len(flightgroupnamelist)):
-		flightgroupnamelist.append(str(i))
+		flightgroupnamelist[faction].append(str(i))
 	return flightgroupnamelist
-def GetRandomBaseName (n):
+def GetRandomBaseName (n,faction):
 	retval=[]
 	global basenamelist
 	try:
 		import seedrandom
 		if (len(basenamelist)==0):
-			basenamelist=ReadBaseNameList()
+			basenamelist=ReadBaseNameList(faction+'_base')
 		for i in range (n):
 			retval+=[basenamelist[seedrandom.rand()%len(basenamelist)]]
 	except:
@@ -445,7 +453,7 @@ def launchBaseOrbit(type,faction,loc,orbitradius,orbitspeed,unit):
 					 /Vector.Mag(S))
 	SMag = Vector.Mag(S)	
 	bas=VS.launch("Base",type,faction,"unit","default",1,1,Vector.Add(loc,R),'')
-	nam=GetRandomBaseName (1);
+	nam=GetRandomBaseName (1,faction);
 	R = Vector.Scale (R,(RMag+2.0*bas.rSize())/RMag)
 	S = Vector.Scale (S,(SMag+2.0*bas.rSize())/SMag)	
 	bas.orbit (unit,orbitspeed,R,S,(0.0,0.0,0.0))
