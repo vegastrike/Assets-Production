@@ -41,7 +41,7 @@ module contraband_mission {
 		object jump=unit.getJumpPoint(random.randomint(0,50));
 		jumpcontainer=jump;
 		difficulty=diff;
-		if ((nr_ships==0)||(nr_waves==0)) {
+		if ((nr_ships<=0)||(bad_pct<=0.0)) {
 			_std.terminateMission(false);
 		}
 		cred=creds;
