@@ -1375,7 +1375,7 @@ stone"/>
 				<var name="num_moons" value="1"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="false"/>
-				<var name="jumps" value="vega_sector/hyperion vega_Sector/alcor vega_sector/tartarus rlaa_sector/ktkhur"/>
+				<var name="jumps" value="vega_sector/hyperion vega_sector/alcor vega_sector/tartarus rlaa_sector/ktkhur"/>
 				<var name="num_natural_phenomena" value="0"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1351"/>
@@ -1428,7 +1428,7 @@ stone"/>
 			</sector>
 			<sector name="troy">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/gemini gemini_sector/pendars_star gemini_sector/war gemini_sector/pyrennes"/>
+				<var name="jumps" value="gemini_sector/gemini gemini_sector/pendersstar gemini_sector/war gemini_sector/pyrennes"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1345"/>
@@ -1443,7 +1443,7 @@ stone"/>
 				<var name="num_moons" value="2"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/gemini gemini_sector/119ce gemini_sector/nexus gemini_sector/castor gemini_sector/pendars_star gemini_sector/new_constantinople"/>
+				<var name="jumps" value="gemini_sector/gemini gemini_sector/119ce gemini_sector/nexus gemini_sector/castor gemini_sector/pendersstar gemini_sector/newconstantinople"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="2843"/>
@@ -1455,7 +1455,7 @@ stone"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1345"/>
 			</sector>
-			<sector name="pendars_star">
+			<sector name="pendersstar">
 				<var name="faction" value="confed"/> 
 				<var name="jumps" value="gemini_sector/junction gemini_sector/troy"/>
 				<var name="nebulae"   value="true"/>
@@ -1472,7 +1472,7 @@ stone"/>
 				<var name="num_moons" value="3"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/junction gemini_sector/xxn_1927 gemini_sector/padre gemini_sector/pentonville"/>
+				<var name="jumps" value="gemini_sector/junction gemini_sector/xxn-1927 gemini_sector/padre gemini_sector/pentonville"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2438"/>
@@ -1501,7 +1501,7 @@ stone"/>
 				<var name="num_moons" value="4"/>
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="false"/>
-				<var name="jumps" value="gemini_sector/troy gemini_sector/freyja gemini_sector/cm_n1054 avalon_sector/callisto"/>
+				<var name="jumps" value="gemini_sector/troy gemini_sector/freyja gemini_sector/cm-n1054 avalon_sector/callisto"/>
 				<var name="num_natural_phenomena" value="2"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1381"/>
@@ -1513,14 +1513,14 @@ stone"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="2615"/>
 			</sector>
-			<sector name="cm_n1054">
+			<sector name="cm-n1054">
 				<var name="faction" value="confed"/> 
 				<var name="jumps" value="gemini_sector/pyrennes"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1381"/>
 			</sector>
-			<sector name="xxn_1927">
+			<sector name="xxn-1927">
 				<var name="sun_radius" value="48000"/>
 			      <var name="faction" value="confed"/> 
 				<var name="compactness" value="3.9"/>
@@ -1530,14 +1530,14 @@ stone"/>
 				<var name="num_moons" value="3"/>
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/oxford gemini_sector/119ce gemini_sector/new_detroit gemini_sector/new_constantinople gemini_sector/metsor"/>
+				<var name="jumps" value="gemini_sector/oxford gemini_sector/119ce gemini_sector/newdetroit gemini_sector/newconstantinople gemini_sector/metsor"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2167"/>
 			</sector>
 			<sector name="oxford">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/xxn_1927 gemini_sector/shangrila gemini_sector/saxtogue sol_sector/mastif"/>
+				<var name="jumps" value="gemini_sector/xxn-1927 gemini_sector/shangrila gemini_sector/saxtogue sol_sector/mastif"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1658"/>
@@ -1549,7 +1549,7 @@ stone"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2913"/>
 			</sector>
-			<sector name="new_detroit">
+			<sector name="newdetroit">
 				<var name="sun_radius" value="35000"/>
 			      <var name="faction" value="confed"/> 
 				<var name="compactness" value="5.3"/>
@@ -1559,42 +1559,42 @@ stone"/>
 				<var name="num_moons" value="6"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/xxn_1927 gemini_sector/nd_57 gemini_sector/raxis gemini_sector/saxtogue gemini_sector/perry gemini_sector/manchester gemini_sector/rikel"/>
+				<var name="jumps" value="gemini_sector/xxn-1927 gemini_sector/nd-57 gemini_sector/raxis gemini_sector/saxtogue gemini_sector/perry gemini_sector/manchester gemini_sector/rikel"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="2"/>
 				<var name="data" value="1248"/>
 			</sector>
-			<sector name="nd_57">
+			<sector name="nd-57">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/new_detroit"/>
+				<var name="jumps" value="gemini_sector/newdetroit"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1531"/>
 			</sector>
 			<sector name="raxis">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/new_detroit"/>
+				<var name="jumps" value="gemini_sector/newdetroit"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1681"/>
 			</sector>
 			<sector name="saxtogue">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/new_detroit gemini_sector/oxford"/>
+				<var name="jumps" value="gemini_sector/newdetroit gemini_sector/oxford"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2613"/>
 			</sector>
 			<sector name="manchester">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/new_detroit"/>
+				<var name="jumps" value="gemini_sector/newdetroit"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1386"/>
 			</sector>
 			<sector name="metsor">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/xxn_1927 gemini_sector/newcastle"/>
+				<var name="jumps" value="gemini_sector/xxn-1927 gemini_sector/newcastle"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2381"/>
@@ -1613,7 +1613,7 @@ stone"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1365"/>
 			</sector>
-			<sector name="new_constantinople">
+			<sector name="newconstantinople">
 				<var name="sun_radius" value="48000"/>
 			      <var name="faction" value="confed"/> 
 				<var name="compactness" value="4.3"/>
@@ -1623,42 +1623,42 @@ stone"/>
 				<var name="num_moons" value="15"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="false"/>
-				<var name="jumps" value="gemini_sector/xxn_1927 gemini_sector/aldebran gemini_sector/junction gemini_sector/varnus gemini_sector/44p_im"/>
+				<var name="jumps" value="gemini_sector/xxn-1927 gemini_sector/aldebran gemini_sector/junction gemini_sector/varnus gemini_sector/44-p-im"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="2"/>
 				<var name="data" value="2351"/>
 			</sector>
 			<sector name="varnus">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/new_constantinople"/>
+				<var name="jumps" value="gemini_sector/newconstantinople"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2369"/>
 			</sector>		
 			<sector name="aldebran">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/new_constantinople gemini_sector/hinds_variable sol_sector/camelot"/>
+				<var name="jumps" value="gemini_sector/newconstantinople gemini_sector/hindsvariablen sol_sector/camelot"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1649"/>
 			</sector>
-			<sector name="hinds_variable">
+			<sector name="hindsvariablen">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/aldebran gemini_sector/dn_n1912"/>
+				<var name="jumps" value="gemini_sector/aldebran gemini_sector/dn-n1912"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1159"/>
 			</sector>
-			<sector name="dn_n1912">
+			<sector name="dn-n1912">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/hinds_variable"/>
+				<var name="jumps" value="gemini_sector/hindsvariablen"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1364"/>
 			</sector>
-			<sector name="44p_im">
+			<sector name="44-p-im">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/new_constantinople gemini_sector/rikel"/>
+				<var name="jumps" value="gemini_sector/newconstantinople gemini_sector/rikel"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2165"/>
@@ -1688,12 +1688,12 @@ stone"/>
 				<var name="num_moons" value="8"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/ragallis gemini_sector/new_caledonia gemini_sector/famine gemini_sector/pollux"/>
+				<var name="jumps" value="gemini_sector/ragallis gemini_sector/newcaledonia gemini_sector/famine gemini_sector/pollux"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1268"/>
 			</sector>
-			<sector name="new_caledonia">
+			<sector name="newcaledonia">
 				<var name="sun_radius" value="18000"/>
 			      <var name="faction" value="confed"/> 
 				<var name="compactness" value="2.8"/>
@@ -1703,28 +1703,28 @@ stone"/>
 				<var name="num_moons" value="5"/>
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="false"/>
-				<var name="jumps" value="gemini_sector/sherwood gemini_sector/prospect gemini_sector/crab_12 gemini_sector/17_ar"/>
+				<var name="jumps" value="gemini_sector/sherwood gemini_sector/prasepe gemini_sector/crab-12 gemini_sector/17-ar"/>
 				<var name="num_natural_phenomena" value="2"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2921"/>
 			</sector>
-			<sector name="prospect">
+			<sector name="prasepe">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/new_caledonia"/>
+				<var name="jumps" value="gemini_sector/newcaledonia"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1652"/>
 			</sector>
-			<sector name="17_ar">
+			<sector name="17-ar">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/new_caledonia gemini_sector/telar"/>
+				<var name="jumps" value="gemini_sector/newcaledonia gemini_sector/telar"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2452"/>
 			</sector>
 			<sector name="telar">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/17_ar gemini_sector/valhalla gemini_sector/j900"/>
+				<var name="jumps" value="gemini_sector/17-ar gemini_sector/valhalla gemini_sector/j900"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1348"/>
@@ -1785,16 +1785,16 @@ stone"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1550"/>
 			</sector>
-			<sector name="crab_12">
+			<sector name="crab-12">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/new_caledonia gemini_Sector/capella"/>
+				<var name="jumps" value="gemini_sector/newcaledonia gemini_sector/capella"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1345"/>
 			</sector>
 			<sector name="capella">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/crab_12 gemini_sector/famine gemini_sector/nexus"/>
+				<var name="jumps" value="gemini_sector/crab-12 gemini_sector/famine gemini_sector/nexus"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1654"/>
@@ -1809,12 +1809,12 @@ stone"/>
 				<var name="num_moons" value="5"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/capella gemini_sector/junction gemini_sector/km_252 gemini_sector/tingerhoff"/>
+				<var name="jumps" value="gemini_sector/capella gemini_sector/junction gemini_sector/km-252 gemini_sector/tingerhoff"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="2173"/>
 			</sector>
-			<sector name="km_252">
+			<sector name="km-252">
 				<var name="faction" value="confed"/> 
 				<var name="jumps" value="gemini_sector/nexus"/>
 				<var name="nebulae"   value="true"/>
@@ -1831,12 +1831,12 @@ stone"/>
 				<var name="num_moons" value="0"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="false"/>
-				<var name="jumps" value="gemini_sector/nexus gemini_sector/perry gemini_sector/cmf_a gemini_sector/palin"/>
+				<var name="jumps" value="gemini_sector/nexus gemini_sector/perry gemini_sector/cmf-a gemini_sector/palan"/>
 				<var name="num_natural_phenomena" value="2"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1786"/>
 			</sector>
-			<sector name="palin">
+			<sector name="palan">
 				<var name="faction" value="confed"/> 
 				<var name="jumps" value="gemini_sector/tingerhoff gemini_sector/xytani"/>
 				<var name="nebulae"   value="true"/>
@@ -1845,7 +1845,7 @@ stone"/>
 			</sector>
 			<sector name="xytani">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/palin gemini_sector/ryganon"/>
+				<var name="jumps" value="gemini_sector/palan gemini_sector/ryganon"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1264"/>
@@ -1888,7 +1888,7 @@ stone"/>
 				<var name="nebulalist" value="unexp_nebulae.txt"/>
 				<var name="data" value="1357"/>
 			</sector>
-			<sector name="cmf_a">
+			<sector name="cmf-a">
 				<var name="faction" value="confed"/> 
 				<var name="jumps" value="gemini_sector/tingerhoff gemini_sector/nitir"/>
 				<var name="nebulae"   value="false"/>
@@ -1905,21 +1905,21 @@ stone"/>
 				<var name="num_moons" value="3"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/midgard gemini_sector/tingerhoff gemini_sector/nitir gemini_sector/surter gemini_sector/new_detroit gemini_sector/newcastle gemini_sector/ragnaro"/>
+				<var name="jumps" value="gemini_sector/midgard gemini_sector/tingerhoff gemini_sector/nitir gemini_sector/surtur gemini_sector/newdetroit gemini_sector/newcastle gemini_sector/ragnarok"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="5"/>
 				<var name="data" value="1439"/>
 			</sector>
-			<sector name="surter">
+			<sector name="surtur">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/perry gemini_sector/41_gs gemini_sector/blockade_charlie"/>
+				<var name="jumps" value="gemini_sector/perry gemini_sector/41-gs gemini_sector/blockadepointcharlie"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2981"/>
 			</sector>
-			<sector name="41_gs">
+			<sector name="41-gs">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/"/>
+				<var name="jumps" value="gemini_sector/surtur"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1398"/>
@@ -1933,19 +1933,19 @@ stone"/>
 			</sector>
 			<sector name="rikel">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/midgard gemini_sector/new_detroit"/>
+				<var name="jumps" value="gemini_sector/midgard gemini_sector/newdetroit"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1672"/>
 			</sector>
 			<sector name="nitir">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/cmf_a gemini_sector/perry gemini_sector/blockade_tango"/>
+				<var name="jumps" value="gemini_sector/cmf-a gemini_sector/perry gemini_sector/blockadepointtango"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1760"/>
 			</sector>
-			<sector name="blockade_tango">
+			<sector name="blockadepointtango">
 				<var name="sun_radius" value="28000"/>
 			      <var name="faction" value="confed"/> 
 				<var name="compactness" value="2.3"/>
@@ -1962,7 +1962,7 @@ stone"/>
 			</sector>
 			<sector name="mahrahn">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/blockade_tango trkpahn_sector/sumtlor"/>
+				<var name="jumps" value="gemini_sector/blockadepointtango trkpahn_sector/sumtlor"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2390"/>
@@ -1974,14 +1974,14 @@ stone"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2561"/>
 			</sector>
-			<sector name="ragnaro">
+			<sector name="ragnarok">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/perry gemini_sector/blockade_alpha"/>
+				<var name="jumps" value="gemini_sector/perry gemini_sector/blockadepointalpha"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1987"/>
 			</sector>
-			<sector name="blockade_alpha">
+			<sector name="blockadepointalpha">
 				<var name="sun_radius" value="41000"/>
 			      <var name="faction" value="confed"/> 
 				<var name="compactness" value="5.2"/>
@@ -1991,19 +1991,19 @@ stone"/>
 				<var name="num_moons" value="2"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/ragnaro gemini_sector/trpakh"/>
+				<var name="jumps" value="gemini_sector/ragnarok gemini_sector/trpakh"/>
 				<var name="num_natural_phenomena" value="2"/>
 				<var name="num_starbases" value="4"/>
 				<var name="data" value="1935"/>
 			</sector>
 			<sector name="trpakh">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/blockade_alpha gemini_sector/sumnkp_ta trkpahn/sumtlor"/>
+				<var name="jumps" value="gemini_sector/blockadepointalpha gemini_sector/sumn-kpta trkpahn/sumtlor"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1215"/>
 			</sector>
-			<sector name="sumnkp_ta">
+			<sector name="sumn-kpta">
 				<var name="faction" value="confed"/> 
 				<var name="jumps" value="gemini_sector/trpakh gemini_sector/hyades"/>
 				<var name="nebulae"   value="false"/>
@@ -2012,12 +2012,12 @@ stone"/>
 			</sector>
 			<sector name="hyades">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/sumnkp_ta gemini_sector/blockade_charlie"/>
+				<var name="jumps" value="gemini_sector/sumn-kpta gemini_sector/blockadepointcharlie"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2314"/>
 			</sector>
-			<sector name="blockade_charlie">
+			<sector name="blockadepointcharlie">
 				<var name="sun_radius" value="15000"/>
 			      <var name="faction" value="confed"/> 
 				<var name="compactness" value="2.9"/>
@@ -4454,7 +4454,7 @@ stone"/>
 				<var name="unitlist" value="nebula_tag/units"/>
 				<var name="nebulalist" value="nebula_tag/nebulae.txt"/>
 			</sector>
-			<sector name="blockade_tango">
+			<sector name="blockadepointtango">
 				<var name="sun_radius" value="20000"/>
 				<var name="faction" value="neutral"/> 
 				<var name="compactness" value="2.3"/>
