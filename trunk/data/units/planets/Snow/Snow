@@ -57,7 +57,7 @@
 			<import price=".5" pricestddev=".2" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Supplies/Mining_Supplies">
-			<import price=".7 pricestddev=".2" quantity="0" quantitystddev="0"/>
+			<import price=".7" pricestddev=".2" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Supplies/Construction_Supplies">
 			<import price="1.35" pricestddev=".4" quantity="10" quantitystddev="15"/>
