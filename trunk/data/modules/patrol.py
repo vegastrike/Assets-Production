@@ -44,20 +44,23 @@ class patrol (Director.Mission):
                     fac =sig.getFactionName()
                     nam =sig.getName ()
                     if (fac!="neutral"):
-                        obj=VS.addObjective ("Scan %s's object %s"% (fac,nam))
-                        str+=("%s owned %s " % (fac,nam))
+                        obj=VS.addObjective ("Scan %s's %s"% (fac,nam))
+                        VS.IOmessage (0,"patrol",self.mplay,"%s owned %s " % (fac,nam))
                     else:
                         if (sig.isPlanet()):
-                            obj=VS.addObjective ("Scan Planet %s" % nam)
+                            if (sig.isJumppoint()):
+                                obj=VS.addObjective ("Scan Jumppoint %s" % nam)
+                            else:
+                                obj=VS.addObjective ("Scan Planet %s" % nam)
                         else:
                             obj=VS.addObjective ("Scan Natural Phenomenon: %s" % nam)
-                        str+=("%s" % nam)
+                        VS.IOmessage (0,"patrol",self.mplay,"The object %s " % nam) 
                     VS.setOwner(obj,self.you)
                     VS.setCompleteness(obj,-1.0)
                     self.objectives+=[obj]
                     
         self.quantity=0
-        VS.IOmessage (0,"patrol",self.mplay,str)
+
     def DeletePatrolPoint (self,num,nam):
         VS.IOmessage (0,"patrol",self.mplay,"[Computer] %s scanned, data saved..."%nam)
         VS.setCompleteness(self.objectives[self.jnum],1.0)
