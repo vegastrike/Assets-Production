@@ -2,31 +2,31 @@
 <Meshfile file="fighter-body.xmesh"/>
 <Meshfile file="fighter-guns.xmesh"/>
 <!-- new elements added -->
-<Mount weapon="Laser" size="Light" x="0.730882" y="0.293518" z="23.003031" />
-<Mount weapon="Laser" size="Light" x="-0.010562" y="0.432593" z="25.065680" />
-<Mount weapon="Laser" size="Light" x="-0.731581" y="0.229109" z="22.665678"/>
+<Mount weapon="KtekBeam" size="Light" x="0.730882" y="0.293518" z="23.003031" />
+<Mount weapon="Disruptor" size="Light" x="-0.010562" y="0.432593" z="25.065680" />
+<Mount weapon="KtekBeam" size="Light" x="-0.731581" y="0.229109" z="22.665678"/>
 
 <Light file="supernova.bmp" x="3.386960" y="2.524278" z="-10.232185" size="4.677816"/>
 <Light file="supernova.bmp" x="-2.894827" y="2.631000" z="-11.071307" size="4.717809"/>
 <Light file="supernova.bmp" x="-18.526455" y="3.429340" z="0.421196" size="3.297047"/>
 <Light file="supernova.bmp" x="18.440897" y="3.276502" z="0.167332" size="3.630991"/>
 
-	<cockpit file="centurion-cockpit.cpt" x="0" y="00" z="10"/>
+	<cockpit file="hornet-cockpit.cpt" x="0" y="2" z="23"/>
 	<Thrust>
-		<Engine Afterburner="1200.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
+		<Engine Afterburner="400.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
 		<Maneuver yaw="3415.500000" pitch="3415.500000" roll="3415.500000"/>
 	</Thrust>
 	<Sound> </Sound>
 	<Defense>
-		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="0" cloakglass="true"/>       
-		<Armor front="0" right="80" left="80" back="100"/>
-		<Shields front="0" right="250" left="250" back="250" recharge="4.166667"/>
-		<Hull strength="5"/>
+		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="0" cloakglass="false"/>       
+		<Armor front="500" right="480" left="480" back="600"/>
+		<Shields front="30" right="25" left="25" back="25" recharge="16.166667"/>
+		<Hull strength="1000"/>
 	</Defense>
 	<Stats mass="7" momentofinertia="7" fuel="20000"></Stats>
-	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="120.000000" maxspeed="42.000000"/>
+	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="80.000000" maxspeed="80.000000"/>
 	<Energy>
-		<Reactor recharge="47" limit="470"/>
+		<Reactor recharge="60" limit="470"/>
 	</Energy>
 
 </Unit>

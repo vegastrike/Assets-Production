@@ -15,9 +15,31 @@
 </Energy>
 <Damage rate="72" longrange="1">
 </Damage>
-<Distance speed="140" radialspeed="1" radius=".4" length="1.5" pulsespeed="15" range="476" >
+<Distance speed="140" radialspeed="1" radius=".5" length="1.5" pulsespeed="15" range="476" >
 </Distance>
 <Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".8" b=".8" a=".9" >
+</Appearance>
+</Beam>
+
+<Beam name="KtekBeam" mountsize="light"> 
+<Energy rate="50" stability="8" refire=".5">
+</Energy>
+<Damage rate="100" longrange="1">
+</Damage>
+<Distance speed="240" radialspeed="1" radius="2" length="1.5" pulsespeed="20" range="400" >
+</Distance>
+<Appearance file="weapons/pulsebeam.png" soundwav="beam.wav" r=".12" g="0" b=".7" a=".9" >
+</Appearance>
+</Beam>
+
+<Beam name="IonBeam" mountsize="light"> 
+<Energy rate="30" stability="10" refire=".4">
+</Energy>
+<Damage rate="90" longrange=".4">
+</Damage>
+<Distance speed="140" radialspeed="1" radius=".8" length="1.5" pulsespeed="15" range="200" >
+</Distance>
+<Appearance file="weapons/pulsebeam.png" soundwav="beam.wav" r="0" g=".5" b=".9" a=".9" >
 </Appearance>
 </Beam>
 
