@@ -18,6 +18,8 @@ module cargo_mission {
 
   
 	void init (int factionname, int numsystemsaway, int cargoquantity, int missiondifficulty, float distance_from_base, float creds, bool launchoncapship) {
+	  _std.setNull (youcontainer);
+	  _std.setNull(basecontainer);
 	  capship= launchoncapship;
 	  faction_ships.init();
 	  faction=faction_ships.intToFaction(factionname);
@@ -42,6 +44,7 @@ module cargo_mission {
 	    object name = _unit.getName (you);
 	    _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
 	  } else {
+	    //don't destroy--somethign else went wrong
 	    _std.terminateMission (false);
 	    return;
 	  }
@@ -57,6 +60,16 @@ module cargo_mission {
 	  _string.delete(str);
 	  _olist.delete(list);
 	};
+	void destroy() {
+	  _unit.deleteContainer (youcontainer);
+	  if (arrived) {
+	    if (!_std.isNull(basecontainer)) {
+	      _unit.deleteContainer (basecontainer);
+	    }
+	  }
+	  _string.delete (destination);
+	  _string.delete (faction);
+	};
 	void takeCargoAndTerminate (object you) {
 	  int removenum=_unit.removeCargo(you,cargoname,quantity,true);
 	  if ((removenum==quantity)||(quantity==0)) {
@@ -64,6 +77,7 @@ module cargo_mission {
 	    _io.message (0,"game","all","You have been rewarded for your effort as agreed.");
 	    _io.message (0,"game","all","Your contribution to the war effort will be remembered.");
 	    _unit.addCredits(you,cred);
+	    destroy();
 	    _std.terminateMission(true);
 	    return;
 	  } else {
@@ -91,6 +105,7 @@ module cargo_mission {
 		}
 	      }
 	    }
+	    destroy();
 	    _std.terminateMission(false);
 	    return;
 	  }
@@ -100,6 +115,8 @@ module cargo_mission {
 	    object base=_unit.getUnitFromContainer(basecontainer);
 	    object you=_unit.getUnitFromContainer(youcontainer);
 	    if (_std.isNull(base)||_std.isNull(you)) {
+	      _io.message (0,"game","all","Mission failed. You were unable to deliver cargo.");
+	      destroy();
 	      _std.terminateMission(false);
 	      return;
 	    }
