@@ -60,7 +60,7 @@ module cargo_mission {
 	    _io.message (0,"game","all","Excellent work pilot.");
 	    _io.message (0,"game","all","You have been rewarded for your effort as agreed.");
 	    _io.message (0,"game","all","Your contribution to the war effort will be remembered.");
-	    _unit.addCredits(cred);
+	    _unit.addCredits(you,cred);
 	    _std.terminateMission(true);
 	  } else {
 	    _io.message (0,"game","all","You did not follow through on your end of the deal.");
@@ -69,7 +69,7 @@ module cargo_mission {
 	      _io.message (0,"game","all","Your pay will be reduced");
 	      _io.message (0,"game","all","And we will consider if we will accept you on future missions.");
 	      float addcred=(_std.Float(removenum)/_std.Float((quantity*(1+difficulty))))*cred;
-	      _unit.addCredits(addcred);
+	      _unit.addCredits(you,addcred);
 	    } else {
 	      _io.message (0,"game","all","You will not be paid!");
 	      if (difficulty>=2) {
@@ -127,7 +127,7 @@ module cargo_mission {
 		_io.message (0,"game","all",str);
 		if (capship) {
 		  name=_unit.getName(significant);
-		  _io.sprintf(str,"It is docked around the %s significant unit.",s);
+		  _io.sprintf(str,"It is docked around the %s significant unit.",name);
 		  _io.message (0,"game","all",str);
 		}
 		_string.delete(str);
