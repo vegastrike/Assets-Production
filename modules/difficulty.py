@@ -26,16 +26,21 @@ class difficulty:
     while (un):
       newdiff=0
       print "get save data length"
+      (open ("/tmp/vswroteship","w")).close()
       if (Director.getSaveDataLength(self.i,_key)):
+        (open ("/tmp/vsgotdata","w")).close()
         print "get save dat"
         newdiff=Director.getSaveData(self.i,_key,0)
         print "get save end"
       else:
+        (open ("/tmp/vsmakedata","w")).close()
         print "get difficulty start"
         newdiff=VS.GetDifficulty()
         print "get diff done"
         Director.pushSaveData(self.i,_key,newdiff)
         print "done director"
+        (open ("/tmp/vsdonedir","w")).close()
+      (open ("/tmp/vssetdifficulty","w")).close()
       self.diff+=[newdiff]
       print "set diff start"        
       SetDiff(newdiff)
@@ -45,6 +50,7 @@ class difficulty:
       print "save unit"
       un=VS.getPlayerX(self.i)
       print "done init diff"
+    (open ("/tmp/vsdoneinitdiff","w")).close()
     print "done init diff FINAL"
   def usingDifficulty (self):
     return (VS.GetDifficulty()!=1.0)
