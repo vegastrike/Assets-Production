@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="10">
 
 <Meshfile file="aera_medium_base.xmesh"/>
 
@@ -13,7 +13,14 @@
 	</Defense>
 
 <Stats mass="60" momentofinertia="60" fuel="20000"></Stats>
-
+<Dock x="-60" y="69" z="-92" size="12"/>
+<Dock x="-46" y="69" z="-92" size="12"/>
+<Dock x="-32" y="69" z="-92" size="12"/>
+<Dock x="-18" y="69" z="-92" size="12"/>
+<Dock x="-4" y="69" z="-92" size="12"/>
+<Dock x="10" y="69" z="-92" size="12"/>
+<Dock x="24" y="69" z="-92" size="12"/>
+<Dock x="38" y="69" z="-92" size="12"/>
 <!-- new elements added -->
 <Subunit file="turret" x="99.811310" y="-100.000008" z="63.396221" ri="-1.000000" rj="0.000000" rk="0.000000" qi="-0.000000" qj="-1.000000" qk="-0.000000"/>
 <Subunit file="turret" x="-105.106529" y="-100.000000" z="87.946404" ri="-1.000000" rj="0.000000" rk="0.000000" qi="-0.000000" qj="-1.000000" qk="-0.000000"/>
