@@ -1,6 +1,6 @@
 import Base
 import VS
-import random
+import vsrandom
 
 tender={"default":('Hello! Lots of travellers about. Have yourself a seat and enjoy a nice cool fuzzy buzzer.',
              'Bottoms up for ye olde bartender, eh?',
@@ -73,11 +73,11 @@ def GetBartenderText(str):
     return GetDefaultBartenderText()
 def Speak(thingstosay):
     (text,sound)=Base.GetRandomBarMessage()
-    rndnum=random.randrange(0,2)
+    rndnum=vsrandom.randrange(0,2)
     if (rndnum==1 or text==''):
         mylen=len(thingstosay)
         if (mylen>0):
-            Base.Message (thingstosay[random.randrange(0,mylen)])
+            Base.Message (thingstosay[vsrandom.randrange(0,mylen)])
         else:
             Base.Message ('Hello!')
     else:

@@ -1,4 +1,4 @@
-import random
+import vsrandom
 import bar_lib
 import weapons_lib
 import Base
@@ -8,7 +8,7 @@ def MakeLandingAndConcourse (time_of_day='_day'):
     plist=VS.musicAddList('agricultural.m3u')
     VS.musicPlayList(plist)
     new_time_of_day=time_of_day
-    if (random.randrange(0,3)==0):
+    if (vsrandom.randrange(0,3)==0):
         new_time_of_day='_storm'
     room1 = Base.Room ('Landing Platform')
     room2 = Base.Room ('Main Concourse')
