@@ -254,7 +254,7 @@
 
 <!-- special -->
 
-<Bolt name="Gaus" mountsize="special">
+<Bolt name="Gauss" mountsize="special">
 <Energy rate="0" stability="0" refire=".1">
 </Energy>
 <Damage rate="1" phasedamage="2" longrange="1">
