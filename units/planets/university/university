@@ -3,7 +3,7 @@
 <Unit>
 	<Hold volume="100000000000">
 		<Category file="Natural_Products/Food">
-			<import price="1.2" pricestddev=".2" quantity="5" quantitystddev="2"/>
+			<import price=".8" pricestddev=".2" quantity="40" quantitystddev="20"/>
 		</Category>
 		<Category file="Natural_Products/Liquor">
 			<import price="1" pricestddev=".2" quantity="0" quantitystddev="0"/>
