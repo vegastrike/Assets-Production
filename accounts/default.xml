@@ -1,71 +1,54 @@
-<Unit scale="1.000000">
-	<Jump missing="1" jumpenergy="150" delay="2" damage="0" wormhole="0"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<CockpitDamage damage="1.000000"/>
-	<Defense HudImage="wayfarer-hud.spr" RepairDroid="0" ECM="0.000000">
-		<Cloak missing="1" cloakmin="0.000000" cloakglass="0" cloakrate="0.003052" cloakenergy="0.000000"/>
-		<Armor front="50" back="50" left="50" right="50"/>
-		<Shields front="40.000000" back="40.000000" recharge="15.000000" leak="0"/>
-		<Hull strength="200.000000" maximum="200.000000"/>
-	</Defense>
-	<Energy afterburnenergy="32767">
-		<Reactor recharge="20.000000" limit="140"/>
-	</Energy>
-	<Stats mass="10.000000" momentofinertia="10.000000" fuel="39931068.000000"/>
+<Unit scale=".94">
+	<description combatrole="FIGHTER"/>
+	<Cockpit file="medium_cockpit.cpt" x="0" y=".5" z="5.5"/>
+	<Meshfile file="destinyhi.xmesh" />
+	<Meshfile file="destinyhiglow.xmesh" />
+	<Meshfile file="navlights.xmesh" />
+        <ShieldMesh file="shield1.xmesh"/>
+
+<Mount weapon="Razor" size="light medium" x="-0.6" y="-2.8" z="7"/>
+<Mount weapon="Razor" size="light medium" x="0.6" y="-2.8" z="7"/>
+<Mount weapon="Reaper" size="medium heavy" x="-2" y="-0.16" z="11"/>
+<Mount weapon="Reaper" size="medium heavy" x="2" y="-0.16" z="11"/>
+
+<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="4.470487" y="-0.182350" z="-1.094219" ammo="3" volume="48"/>
+<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-4.512798" y="-0.183760" z="-1.121801" ammo="3" volume="48"/>
+<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="3.470487" y="-0.182350" z="-1.094219" ammo="3" volume="48"/>
+<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-3.512798" y="-0.183760" z="-1.121801" ammo="3" volume="48"/>
+
 	<Thrust>
-		<Maneuver yaw="2239.199951" pitch="1853.800171" roll="3087.199951"/>
-		<Engine forward="173.333344" retro="215.666672" left="171.666672" right="171.666672" top="171.666672" bottom="171.666672" afterburner="903.666748"/>
+		<Engine Afterburner="25000" Forward="17000" Retro="17000" Left="17000" Right="17000" Top="17000" Bottom="17000"/>
+		<Maneuver yaw="17000" pitch="17000" roll="17000"/>
 	</Thrust>
-	<cockpit file="heavy-cockpit.cpt" x="0.000000" y="0.000000" z="0.000000"/>
-	<Meshfile file="rescue-hull-e.xmesh"/>
-	<Meshfile file="rescue-hull-w.xmesh"/>
-	<Meshfile file="rescue-hull-p.xmesh"/>
-	<Meshfile file="rescue-hull-h.xmesh"/>
-	<Meshfile file="rescue-hull-i.xmesh"/>
-	<Meshfile file="rescue-cock-c.xmesh"/>
-	<Mount size="LIGHT MEDIUM HEAVY " weapon="Laser" x="9.810800" y="1.757000" z="11.809100" qi="0.000000" qj="1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
-	<Mount size="LIGHT MEDIUM HEAVY " x="-9.810800" y="1.757000" z="11.809100" qi="0.000000" qj="1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
-	<Mount size="LIGHT-MISSILE MEDIUM-MISSILE " weapon="ImageRecognition" ammo="6" volume="901" x="-29.815001" y="-6.919000" z="30.409000" qi="0.000000" qj="1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
-	<Mount size="LIGHT-MISSILE MEDIUM-MISSILE " ammo="6" volume="901" x="29.815001" y="-6.919000" z="30.409000" qi="0.000000" qj="1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
-	<Mount size="SPECIAL " x="29.815001" y="-6.919000" z="30.409000" qi="0.000000" qj="1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
-	<Mount size="SPECIAL " x="-29.815001" y="-6.919000" z="30.409000" qi="0.000000" qj="1.000000" qk="0.000000" ri="0.000000" rj="0.000000" rk="1.000000"/>
-	<Sound/>
-	<Computer yaw="60.400005" pitch="50.600006" roll="80.400002" afterburner="60.000000" maxspeed="30.000000">
-		<Radar itts="0" color="0" mintargetsize="0" range="10000.000000" maxcone="0.000000" TrackingCone="0.931000" lockcone="0.851000"/>
-	</Computer>
-	<description/>
-	<Hold volume="125">
-		<Category file="0"/>
-	</Hold>
-	<Light file="supernova.bmp" x="10.24" y="-2.759" z="-18.302" size="6"/>
-	<Light file="supernova.bmp" x="-10.24" y="-2.759" z="-18.302" size="6"/>
-	<Dock x="0" y="4.6" z="6" size="10"/>
-	<Dock x="0" y="-4.7" z="6" size="10"/>
+	<Defense HudImage="destiny-hud.spr">
+		<Armor front="360" right="215" left="215" back="100"/>
+		<Shields front="600" left="600" right="600" back="600" recharge="60"/>
+		<Hull strength="325"/>
+	</Defense>
+	<Stats mass="171" momentofinertia="171" fuel="40000000"/>
+	<Computer yaw="96" pitch="96" roll="96" afterburner="260" maxspeed="240"/>
+	<Energy>
+		<Reactor recharge="192" limit="1024" warpenergy="600"/>
+	</Energy>
+       	<Jump delay="1" jumpenergy="200" insysenergy="90"/>       
+
+       <Hold volume="15" />
+
+<!-- new elements added -->
+
+
+<Light file="supernova.bmp" x="-3.35" y="1.125" z="-9.25" size="8"/>
+<Light file="supernova.bmp" x="3.35" y="1.125" z="-9.25" size="8"/>
+
+<Light file="supernova.bmp" x="-3.5" y=".125" z="-9.25" size="3"/>
+<Light file="supernova.bmp" x="3.5" y=".125" z="-9.25" size="3"/>
+
+<Light file="supernova.bmp" x="-3" y=".25" z="-9.25" size="3"/>
+<Light file="supernova.bmp" x="3" y=".25" z="-9.25" size="3"/>
+
+<Light file="supernova.bmp" x="-3.35" y="-.3" z="-9.25" size="3"/>
+<Light file="supernova.bmp" x="3.35" y="-.3" z="-9.25" size="3"/>
+
+<Light file="supernova.bmp" x="-2.9" y="-.16" z="-9.25" size="3"/>
+<Light file="supernova.bmp" x="2.9" y="-.16" z="-9.25" size="3"/>
 </Unit>
