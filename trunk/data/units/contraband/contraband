@@ -6,8 +6,5 @@
 		<Category file="Contraband">
 			<Import quantity="1"/>
 		</Category>
-		<Category file="Contraband/Confed">
-			<Import quantity="1"/>
-		</Category>
 	</Hold>
 </Unit>
