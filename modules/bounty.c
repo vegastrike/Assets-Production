@@ -26,10 +26,10 @@ module bounty {
 	  object you=_unit.getPlayer();
 	  if (!_std.isNull(you)) {
 	    object name = _unit.getFaction (you);
-	    int factionname=random.randomint(0,2);
+	    int factionname=random.randomint(0,faction_ships.getMaxFactions());
 	    faction=faction_ships.intToFaction(factionname);
 	    while (_string.equal(name,faction)) {
-	      int factionname=random.randomint(0,2);
+	      int factionname=random.randomint(0,faction_ships.getMaxFactions());
 	      faction=faction_ships.intToFaction(factionname);
 	    }
 	    name=_unit.getName(you);
