@@ -44,19 +44,19 @@ def getSystemsNAway (start,k,preferredfaction):
 
 def generatePatrolMission (path, numplanets):
 	###
-
+	pass
 def generateEscortMission (path,fg,fac):
 	###
-
+	pass
 def generateCargoMission (path, contraband):
 	###
-
+	pass
 def generateBountyMission (path,fg,fac):
 	###
-
+	pass
 def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	###
-
+	pass
 def contractMissionsFor(fac,minsysaway,maxsysaway):
 	fac=faction_ships.intToFaction(fac)
 	enemies = list(faction_ships.enemies[fac])
@@ -77,23 +77,36 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 			for k in l:
 				if (VS.GetRelation(fac,l[1][1])>0):
 					generateDefendMission(j,l[1][0],l[1][1],l[0][0],l[0][1])
+			if preferredfaction:
+				for k in faction_ships.enemies[faction_ships.factiondict[thisfaction]]:
+					for m in fg_util.FGsInSystem(k,j[-1]):
+						if (vsrandom.randrange(0,4)==0):#fixme betterthan 4
+							generateBountyMission(j,m,k)
+				m = FGsInSystem ("merchant",j[-1])
+				nummerchant=len(m)
+				m+=FGsInSystem (thisfaction,j[-1])
+				numthisfac=len(m)
+				m+=FGsInSystem (fac,j[-1])
+				
+				numescort = vsrandom.randrange(0,10)
+				if (numescort>len(m)):
+					numescort=len(m)
+				for k in range(numescort):
+					f = "merchant"
+					if f>=nummerchant:
+						f= thisfaction
+					if f>=numthisfac:
+						f = fac
+					generateEscortMission(j,k,f)
 			for k in range(vsrandom.randrange(1,4)): ###FIXME: choose a better number than 4.
-				pass
-		if (rnd<.18):    # 18% - Patrol mission
-			generatePatrolMission(maxsysaway, minsysaway,vsrandom.randrange(4,10)):
-		elif (rnd<.41):  # 23% - Cargo mission
-			generateCargoMission(path,true)
-		elif (rnd<.59):  # 18% - Bounty mission
-			generateBountyMission(path)
-		elif (rnd<.77):  # 18% - Defend mission
-			generateDefendMission(path)
-		if (rnd<.95):    # 18% - Escort mission
-			generateEscortMission(path):
-		elif (fac=='pirates'): # 5% - Contraband mission (cargo contraband)
-			generateCargoMission(path,false)
-		else:            #  5% - Scout mission (patrol one planet)
-			generatePatrolMission(path,1)
-	return script
+				if (rnd<.18):    # 18% - Patrol mission
+					generatePatrolMission(maxsysaway, minsysaway,vsrandom.randrange(4,10))
+				elif (rnd<.41):  # 23% - Cargo mission
+					generateCargoMission(path,true)
+				elif (fac=='pirates'): # 5% - Contraband mission (cargo contraband)
+					generateCargoMission(path,false)
+				else:            #  5% - Scout mission (patrol one planet)
+					generatePatrolMission(path,1)
 
 def CreateMissions(minsys=1,maxsys=4):
 	i=0

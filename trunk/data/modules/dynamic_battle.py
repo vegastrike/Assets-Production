@@ -4,7 +4,7 @@ import fg_util
 import vsrandom
 import faction_ships
 #hashed by system, then contains lists of pairs of (flightgroup,faction) pairs
-persystemattacklis= {}
+persystemattacklist= {}
 
 attacklist ={}#hashtable mapping (attackfg,attackfaction):(defendfg,defendfaction)
 defendlist={}#hashtable mapping (defendfg,defendfaction):(attackfg,attackfaction)
