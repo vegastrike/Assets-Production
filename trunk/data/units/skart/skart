@@ -15,7 +15,7 @@
 	</Thrust>
 	<cockpit x="0" y="0" z="13"/>
 	<Sound> </Sound>
-	<Defense>
+	<Defense HudImage="skart-hud.spr">
 		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="60" cloakglass="false"/>       
 		<Armor front="200" right="280" left="280" back="200"/>
 		<Shields front="20" right="20" left="20" back="20" recharge="50"/>

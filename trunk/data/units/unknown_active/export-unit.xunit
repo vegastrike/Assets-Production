@@ -1,0 +1,39 @@
+<Unit>
+<!--<Meshfile file="astroid.xmesh"/>-->
+<Meshfile file="Drone1.xmesh"/>
+<Meshfile file="Drone3.xmesh"/>
+<Meshfile file="Drone2.xmesh"/>
+
+<!--<Meshfile file="ConfedHq1.xmesh"/>-->
+<!--<Meshfile file="astbasebata1-shield gen-repulsor.xmesh"/>
+<Meshfile file="astbasebata1-tower-tower.xmesh"/>-->
+	<cockpit file="centurion-cockpit.cpt" x="0" y="00" z="10"/>
+	<Thrust>
+		<Engine Afterburner="800.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
+		<Maneuver yaw="3415.500000" pitch="3415.500000" roll="3415.500000"/>
+	</Thrust>
+	<Sound> </Sound>
+	<Defense>
+		<Armor front="100" right="80" left="80" back="100"/>
+		<Shields front="250" right="250" left="250" back="250" recharge="4.166667"/>
+		<Hull strength="250"/>
+	</Defense>
+	<Stats mass="7" momentofinertia="7" fuel="20000"></Stats>
+	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="120.000000" maxspeed="42.000000"/>
+	<Energy>
+		<Reactor recharge="47" limit="470"/>
+	</Energy>
+
+       
+
+<!-- new elements added -->
+<Mount weapon="UnknownBeam" size="Heavy" x="-15.833333" y="3.575820" z="58.726788" ri="-0.622141" rj="0.475267" rk="0.622142" qi="-0.681164" qj="-0.720337" qk="-0.130883"/>
+<Mount weapon="UnknownBeam" size="Heavy" x="15.318306" y="3.931693" z="58.726788" ri="0.233590" rj="0.755929" rk="0.611561" qi="-0.892458" qj="0.416335" qk="-0.173737"/>
+<Light file="supernova.bmp" x="-14.558598" y="4.705065" z="-59.838497" size="18.400000"/>
+<Light file="supernova.bmp" x="12.919494" y="3.609854" z="-59.238785" size="18.000000"/>
+<Mount weapon="UnknownBolt" size="Heavy" x="-15.318306" y="2.068307" z="58.726788" ri="-0.233590" rj="-0.755929" rk="0.611561" qi="0.892458" qj="-0.416335" qk="-0.173737"/>
+<Mount weapon="UnknownBolt" size="Heavy" x="15.318307" y="2.068307" z="58.726788" ri="0.233590" rj="-0.755929" rk="0.611561" qi="0.972335" qj="0.181601" qk="-0.146919"/>
+<Mount weapon="Laser" size="Light" x="-11.666667" y="-3.651640" z="49.756847" ri="-0.781029" rj="0.596657" rk="0.184375" qi="-0.613652" qj="-0.788034" qk="-0.049327"/>
+<Mount weapon="Laser" size="Light" x="-9.442946" y="-4.617121" z="54.150455" ri="0.622141" rj="0.475267" rk="0.622142" qi="0.681164" qj="-0.720337" qk="-0.130883"/>
+<Mount weapon="Laser" size="Light" x="9.643875" y="-4.753923" z="54.455894" ri="-0.622141" rj="0.475267" rk="0.622142" qi="-0.681164" qj="-0.720337" qk="-0.130883"/>
+</Unit>

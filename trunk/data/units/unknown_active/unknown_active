@@ -8,7 +8,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense hudImage="unknown_active-hud.spr">
 		<Armor front="150" right="100" left="100" back="100"/>
 		<Shields front="100.000000" back="100.000000" left="100" right="100" recharge="1400.000000"/>
 		<Hull strength="100.000000"/>

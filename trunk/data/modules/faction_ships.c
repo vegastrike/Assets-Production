@@ -28,6 +28,8 @@ module faction_ships {
     _olist.push_back(confed_ships,"destiny");
     _olist.push_back(confed_ships,"tian");
     _olist.push_back(confed_ships,"nova");
+    _olist.push_back(confed_ships,"puma");
+    _olist.push_back(confed_ships,"mongoose");
 
     aera_ships=_olist.new();
 

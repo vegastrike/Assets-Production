@@ -8,7 +8,7 @@
 		<Maneuver yaw="0000" pitch="00000" roll="00000"/>
 	</Thrust>
 	<Sound> </Sound>
-	<Defense>
+	<Defense HudImage="MiningBase-hud.spr">
 		<Armor front="1000" right="8000" left="8000" back="8000"/>
 		<Shields front="650" right="650" left="650" back="650" recharge="47"/>
 		<Hull strength="2500"/>

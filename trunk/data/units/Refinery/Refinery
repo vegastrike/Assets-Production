@@ -6,7 +6,7 @@
 		<Maneuver yaw="0000" pitch="00000" roll="00000"/>
 	</Thrust>
 	<Sound> </Sound>
-	<Defense>
+	<Defense HudImage="Refinery-hud.spr">
 		<Armor front="1000" right="1000" left="1000" back="1000"/>
 		<Shields front="1650" right="1650" left="1650" back="1650" recharge="47"/>
 		<Hull strength="5000"/>

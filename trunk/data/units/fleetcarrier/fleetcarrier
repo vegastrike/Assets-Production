@@ -6,7 +6,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense HudImage="carrier-hud.spr">
 		<Armor front="5000" right="4000" left="4000" back="5000"/>
 		<Shields front="6000.000000" right="5000.000000" left="5000.000000" back="6000.000000" recharge="70.000000"/>
 		<Hull strength="5000.000000"/>

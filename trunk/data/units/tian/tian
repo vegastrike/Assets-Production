@@ -6,7 +6,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense hudImage="tian-hud.spr">
 		<Armor front="20" right="20" left="20" back="20"/>
 		<Shields front="30.000000" back="70.000000" recharge="20.000000"/>
 		<Hull strength="100.000000"/>

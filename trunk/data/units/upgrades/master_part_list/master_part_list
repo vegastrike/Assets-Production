@@ -20,11 +20,18 @@
 		<Maneuver yaw="000000" pitch="0" roll="0"/>
 	</Thrust>
 	<Hold volume="100000000000">
-		<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>
-		<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
-		<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
-		<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
-		<Cargo file="foodstuffs" price="200" quantity="1" mass=".01" volume="1"/>
-		<Cargo file="grain" price="100" quantity="1" mass=".01" volume="1"/>
+		<Category file="upgrades">
+			<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>	
+			<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
+			<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
+			<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
+		</Category>
+		<Category file="arms">
+			<Cargo file="weapons" price="300" quantity="1" mass=".1" volume="1"/>	
+		</Category>
+		<Category file="food">
+			<Cargo file="foodstuffs" price="200" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="grain" price="100" quantity="1" mass=".01" volume="1"/>
+		</Category>
 	</Hold>
 </Unit>

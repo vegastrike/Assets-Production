@@ -22,7 +22,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense hudimage="drone-hud.spr">
 		<Armor front="100" right="100" left="100" back="50"/>
 		<Shields front="30.000000" right="0" left="0" back="0" recharge="0"/>
 		<Hull strength="400.000000"/>

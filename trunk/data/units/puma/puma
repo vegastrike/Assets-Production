@@ -17,7 +17,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense HudImage="puma-hud.spr">
 		<Armor front="134" right="134" left="134" back="134"/>
 		<Shields front="250.000000" back="250.000000" recharge="30.000000"/>
 		<Hull strength="134.000000"/>

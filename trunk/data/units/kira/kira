@@ -13,7 +13,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense HudImage="kira-hud.spr">
 		<Armor front="150" right="90" left="90" back="110"/>
 		<Shields front="300.000000" right="250.000000" left="250.000000" back="300.000000" recharge="25.000000"/>
 		<Hull strength="300.000000"/>

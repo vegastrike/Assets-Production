@@ -10,7 +10,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense HudImage="aeon-hud.spr">
 		<Armor front="45" right="40" left="40" back="40"/>
 		<Shields front="50.000000" back="40.000000" recharge="20.000000"/>
 		<Hull strength="100.000000"/>

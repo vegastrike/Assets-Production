@@ -7,7 +7,7 @@
 		<Maneuver yaw="1415.500000" pitch="1415.500000" roll="3415.500000"/>
 	</Thrust>
 	<Sound> </Sound>
-	<Defense>
+	<Defense HudImage="starfish-hud.spr">
 		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="120" cloakglass="false"/>       
 		<Armor front="100" right="80" left="80" back="100"/>
 		<Shields front="40" right="30" left="30" back="35" recharge="34.166667"/>
