@@ -40,6 +40,7 @@
 		<Vertex point="0" s="0.000000" t="0.000000"/>
 		<Vertex point="3" s="0.000000" t="1.000000"/>
 		<Vertex point="4" s="1.000000" t="1.000000"/>
+	</Tri>
 	<Tri>
 		<Vertex point="3" s="0.000000" t="1.000000"/>
 		<Vertex point="4" s="1.000000" t="1.000000"/>
@@ -49,6 +50,7 @@
 		<Vertex point="1" s="1.000000" t="0.000000"/>
 		<Vertex point="4" s="1.000000" t="1.000000"/>
 		<Vertex point="5" s="0.000000" t="1.000000"/>
+	</Tri>
 	<Tri>
 		<Vertex point="4" s="1.000000" t="1.000000"/>
 		<Vertex point="5" s="0.000000" t="1.000000"/>
@@ -58,6 +60,7 @@
 		<Vertex point="2" s="0.000000" t="0.000000"/>
 		<Vertex point="5" s="0.000000" t="1.000000"/>
 		<Vertex point="3" s="1.000000" t="1.000000"/>
+	</Tri>
 	<Tri>
 		<Vertex point="5" s="0.000000" t="1.000000"/>
 		<Vertex point="3" s="1.000000" t="1.000000"/>
