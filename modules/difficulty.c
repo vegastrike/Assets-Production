@@ -8,10 +8,25 @@ module difficulty {
   float getCredDifficulty() {
     return getPlayerCredDifficulty (_unit.getPlayer());
   };
+  bool usingDifficulty () {
+    object player=_unit.getPlayer();
+    object temp = _unit.getSaveData (player,"31337ness");
+    return (_olist.size(temp)>0);
+  };
+  float getPlayerDifficulty (object playa) {
+    float ret=0.0;
+    if (!_std.isNull(playa)) {
+      object temp =  _unit.getSaveData (playa,"31337ness");
+      if (_olist.size(temp)>0) {
+	ret = _olist.at (temp,0);
+      }
+    }
+    return ret;
+  };
   float getPlayerCredDifficulty (object playa) {
     float ret=0.0;
     if (!_std.isNull(playa)) {
-      object temp =  _unit.getSaveData (playa,313374420.0);
+      object temp =  _unit.getSaveData (playa,"31337ness");
       if (_olist.size(temp)>1) {
 	ret = _olist.at (temp,1);
       }
@@ -30,7 +45,7 @@ module difficulty {
     cred_ratio = cred_diff_ratio;
     cached_cred_difficulty = cred_diff;
     while (!_std.isNull(player)) {
-      object temp = _unit.getSaveData (player,313374420.0);
+      object temp = _unit.getSaveData (player,"31337ness");
       float mycred = _unit.getCredits (player);
       _olist.push_back(creds,mycred);
       if (_olist.size(temp)==0) {
