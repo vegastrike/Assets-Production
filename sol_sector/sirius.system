@@ -24,7 +24,7 @@
 	</planet>
 	<unit name= "Victory"  file="drydock" faction="confed" x="28000"  position="100">
 	</unit>
-	<unit name= "Victory"  file="AsteroidFighterBase" faction="confed"   velocity="0" x="30000" z="-10000" position="100">
+	<unit name= "Victory"  file="MiningBase" faction="confed"   velocity="0" x="30000" z="-10000" position="100">
 	</unit>
 	<asteroid  name= "Victory"  file="AFieldBaseThin" faction="neutral" x="30000" z="-10000"  velocity="0" position="100" difficulty=".25"></asteroid>
 
