@@ -17,8 +17,8 @@
 			<pos x="51500" y="2000" z="32000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
-				<flightgroup name="brown" faction="confed" type="Refinery" ainame="default" waves="1" nr_ships="1">
-			<pos x="51500" y="2000" z="25000.0"/>
+				<flightgroup name="brown" faction="confed" type="fleetcarrier" ainame="default" waves="1" nr_ships="1">
+			<pos x="51500" y="2000" z="32000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
 <!--				<flightgroup name="brown" faction="confed" type="tian" ainame="default" waves="1" nr_ships="1">
