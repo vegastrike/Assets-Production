@@ -18,7 +18,7 @@ def doit(n=1000):
 		dynamic_battle.UpdateCombatTurn()
 
 	
-doit(100000)
+doit(10000)
 print 'hi'
 import dynamic_mission
 Director.dontdoprint=False

@@ -87,7 +87,8 @@ def launchJumppoint(name,faction,type,unittype,ai,nr,nrwaves,pos,squadlogo,desti
    return _unitlist[len(_unitlist)-nr]
 
 def launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
-   print "launch" 
+   print "launch"
+   global _unitlist
    for i in range (nr):
       _unitlist+=[Unit(type,name)]
    return _unitlist[len(_unitlist)-nr]
@@ -201,7 +202,8 @@ def addObjective(name):
 def setObjective(which,name):
    print "setObjective"
    _objectives[which]=name
-
+def SafeEntrancePoint(vec,dist):
+   return vec
 def setCompleteness(which, compl):
    bleh = float(compl)
    print "setCompleteness"

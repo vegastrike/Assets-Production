@@ -111,14 +111,25 @@ class Launch:
     if self.dynfg!='':
       import fg_util
       tn=fg_util.ShipsInFG(self.dynfg,self.faction)
-      for i in range (len(tn)):
-        if (tn[i][0]==self.type):
-          knum=tn[i][1]
-          if (knum>self.num):
-            knum=self.num
-          self._dyn_nr_ships=[(self.type,knum)]
-          del tn[i]
-          break
+      print 'dynamic launching from '+str(tn)+' from flightgroup '+self.dynfg + ' faction '+ self.faction
+      knum=0
+      if (self.type!=''):
+        for i in range (len(tn)):
+          if (tn[i][0]==self.type):
+            knum=tn[i][1]
+            if (knum>self.num):
+              knum=self.num
+            self._dyn_nr_ships=[(self.type,knum)]
+            del tn[i]
+            break
+        if (tn==[]):
+          print 'Dyn-Launch: tn==[]'
+          self.dynfg=''
+          
+      elif (tn==[]):
+        print "Dyn-Launch: tn==[], dynfg==\'\'"
+        self.type=faction_ships.getRandomFighterInt(faction_ships.factionToInt(self.faction))
+        self.dynfg=''
       for i in tn:
         if (knum>=self.num):
           break

@@ -93,9 +93,16 @@ def generateEscortMission (path,fg,fac):
 	typ = fg_util.RandomShipIn(fg,fac)
 	diff=vsrandom.randrange(0,6)	
 	creds=500*diff+1.2*syscreds*len(path)
-	writemissionsavegame ("import escort_mission\ntemp=escort_mission.escort_mission('%s', %d, %d, %g, 0, %s, '','%s','%s')\ntemp=0\n"%(fac, diff, creds, str(path),fg,typ))
+	writemissionsavegame ("import escort_mission\ntemp=escort_mission.initrandom('%s', %d, %g, 0, 0, %s, '','%s','%s')\ntemp=0\n"%(fac, diff, float(creds), str(path),fg,typ))
 	writedescription("The %s %s in the %s flightgroup requres an escort to %s. The reward for a successful escort is is %d."%(fac,typ,fg, processSystem(path[-1]),creds))
 	writemissionname("Escort/Escort_%s_to_%s"%(fac,processSystem(path[-1])),path)	
+
+def changecat(category):
+	l=category.split('/')
+	if len(l)>1:
+		return l[-1]+'_'+l[0]
+	else:
+		return category
 
 def generateCargoMission (path, numcargos,category, fac):
 	diff=vsrandom.randrange(0,6)
@@ -105,7 +112,7 @@ def generateCargoMission (path, numcargos,category, fac):
 	if (category==''):
 		category='generic'
 	writedescription("We need to deliver some %s cargo to the %s system. The mission is worth %d to us.  You will deliver it to a base owned by the %s"%(category, processSystem(path[-1]),creds,fac))
-	writemissionname("Cargo/Deliver_%s_to_%s"%(category,processSystem(path[-1])),path)
+	writemissionname("Cargo/Deliver_%s_to_%s"%(changecat(category),processSystem(path[-1])),path)
 
 def generateBountyMission (path,fg,fac):
 	typ = fg_util.RandomShipIn(fg,fac)
@@ -142,6 +149,14 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	writedescription("A %s assault wing named %s has jumped in and is moving for an attack on one of our %sstarships, a %s, in the %s system.\nYour task is to eradicate them before they eliminate our starship.\nIntelligence shows that they have starships of type %s. Your reward is %d credits per fighter."%(attackfac, attackfg, iscapitol, defendtyp, processSystem(path[-1]), attacktyp,creds))
 	writemissionname("Defend/Defend_%s_from_%s"%(defendfac, attackfac),path)
 
+def GetFactionToDefend(thisfaction, fac, cursys):
+	m = fg_util.FGsInSystem ("merchant",cursys)
+	nummerchant=len(m)
+	m+=fg_util.FGsInSystem (thisfaction,cursys)
+	numthisfac=len(m)
+	m+=fg_util.FGsInSystem (fac,cursys)
+	return (m,nummerchant,numthisfac)
+
 def contractMissionsFor(fac,minsysaway,maxsysaway):
 	facnum=faction_ships.factionToInt(fac)
 	enemies = list(faction_ships.enemies[facnum])
@@ -149,53 +164,71 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 	cursystem = VS.getSystemFile()
 	thisfaction = VS.GetGalaxyFaction (cursystem)
 	preferredfaction=None
-	if (VS.GetRelation (fac,thisfaction)>0):
+	if (VS.GetRelation (fac,thisfaction)>=0):
 		preferredfaction=thisfaction#try to stay in this territory
 	l=[]
 	for i in range (minsysaway,maxsysaway+1):
 		for j in getSystemsNAway(cursystem,i,preferredfaction):
 			import dynamic_battle
 			l = dynamic_battle.BattlesInSystem(j[-1])
-			print l
+#			print l
+			nodefend=True
 			for k in l:
 				if (VS.GetRelation(fac,k[1][1])>=0):
+					nodefend=False
 					generateDefendMission(j,k[1][0],k[1][1],k[0][0],k[0][1])
+#			print 'PREFERREDfacTiON-Is- '+str(preferredfaction)
 			if preferredfaction:
-				for k in faction_ships.enemies[faction_ships.factiondict[thisfaction]]:
-					for m in fg_util.FGsInSystem(k,j[-1]):
-						if (vsrandom.randrange(0,5)==0):#fixme betterthan 4
-							generateBountyMission(j,m,k)
-				m = FGsInSystem ("merchant",j[-1])
-				nummerchant=len(m)
-				m+=FGsInSystem (thisfaction,j[-1])
-				numthisfac=len(m)
-				m+=FGsInSystem (fac,j[-1])
-				
+				(m,nummerchant,numthisfac)=GetFactionToDefend(thisfaction, fac, j[-1])
+				for kk in faction_ships.enemies[faction_ships.factiondict[thisfaction]]:
+					k=faction_ships.intToFaction(kk)
+					for mm in fg_util.FGsInSystem(k,j[-1]):
+						if (vsrandom.randrange(0,4)==0):#fixme betterthan 4
+							if nodefend and len(m) and vsrandom.random()<.4:
+								if 1:#for i in range(vsrandom.randrange(1,3)):
+									rnd=vsrandom.randrange(0,len(m))
+									def_fg=m[rnd]
+									def_fac = "merchant"
+									if rnd>=nummerchant:
+										def_fac= thisfaction
+									if rnd>=numthisfac:
+										def_fac = fac
+									generateDefendMission(j,def_fg,def_fac,mm,k)
+								nodefend=False
+							elif vsrandom.random()<.5:
+								generateBountyMission(j,mm,k)
 				numescort = vsrandom.randrange(0,2)
 				if (numescort>len(m)):
 					numescort=len(m)
-				for k in range(numescort):
+				count=0
+				for k in m:
+					if vsrandom.random()<.97:
+						count+=1
+						continue
 					f = "merchant"
-					if f>=nummerchant:
+					if count>=nummerchant:
 						f= thisfaction
-					if f>=numthisfac:
+					if count>=numthisfac:
 						f = fac
 					generateEscortMission(j,k,f)
+					count+=1
 			for k in range(vsrandom.randrange(-3,3)): ###FIXME: choose a better number than 4.
 				if k<0:
 					k=0
 				rnd=vsrandom.random()
-				if (rnd<.45):    # 45% - Patrol mission
+				if (rnd<.3):    # 30% - nothing
+					continue
+				if (rnd<.6):    # 30% - Patrol Mission
 					generatePatrolMission(j,vsrandom.randrange(4,10))
-				else:   # 45% - Cargo mission
+				else:   # 40% - Cargo mission
 					numcargos=vsrandom.randrange(1,25)
 					if numcargos>20:
 						numcargos=20
 					category=''
-					if (rnd>.87 and basefac!='confed' and basefac != "ISO"):
+					if (rnd>.87 and fac!='confed' and fac != "ISO"):
 						category='Contraband'
 					carg=VS.getRandCargo(numcargos,category)
-					generateCargoMission(j,numcargos,carg.GetCategory(),basefac)
+					generateCargoMission(j,numcargos,carg.GetCategory(),fac)
 
 def CreateMissions(minsys=0,maxsys=4):
 	eraseExtras()
@@ -213,4 +246,4 @@ def CreateMissions(minsys=0,maxsys=4):
 		basefac=un.getFactionName()
 	if (basefac=='neutral'):
 		basefac=VS.GetGalaxyFaction(VS.getSystemFile())
-	contractMissionsFor(plrun.getFactionName(),minsys,maxsys)
+	contractMissionsFor(basefac,minsys,maxsys)

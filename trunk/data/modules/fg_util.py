@@ -50,8 +50,13 @@ def ReadBaseNameList(faction):
 				bnl = f.readlines()
 				f.close()
 			except:
-				global genericalphabet
-				bnl=genericalphabet
+				try:
+					f = open ('universe/names.txt','r')
+					bnl = f.readlines()
+					f.close()
+				except:
+					global genericalphabet
+					bnl=genericalphabet
 	for i in range(len(bnl)):
 		bnl[i]=bnl[i].rstrip()
 	import vsrandom
@@ -363,6 +368,8 @@ def BaseFGInSystemName (system):
 def AllFGsInSystem(faction,system):
 	key = MakeStarSystemFGKey (system)
 	leg = Director.getSaveStringLength (ccp,key)
+#	if 1:#(not (Director.dontdoprint)):
+#		print faction
 	facnum = VS.GetFactionIndex (faction)
 	ret=[]
 	if (leg>facnum):

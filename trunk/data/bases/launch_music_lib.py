@@ -8,4 +8,4 @@ def PlayLaunch ():
 	else:
 		if (GlobalMusic!= -1):
 			VS.musicPlayList (GlobalMusic)
-			VS.micro_sleep(6000000)
+#			VS.micro_sleep(6000000)
