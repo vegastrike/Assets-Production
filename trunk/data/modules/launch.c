@@ -24,7 +24,7 @@ module launch {
   };
   object launch (object fgname, object faction, object type,object ai, int nr_ships, int nr_waves, float x, float y, float z){
     float creds=difficulty.getCredDifficulty();
-    if (creds>0.0) {
+    if (creds==0.0) {
       object ret = _unit.launch (fgname,faction,type,ai,nr_ships,nr_waves,x,y,z);
       return ret;
     }
