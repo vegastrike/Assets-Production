@@ -42,7 +42,7 @@ module tutorial1_flying {
 
     //_io.printf("gameloop0\n");
     float newtime=_std.getGameTime();
-
+    player_unit=_unit.getPlayer();
     float angle=_unit.getAngle(player_unit,teacher_unit);
 
     object teacher_pos=_unit.getPosition(teacher_unit);
