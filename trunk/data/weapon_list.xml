@@ -659,5 +659,14 @@
 <Appearance file="weapons/neutrongun.png" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Bolt>
-
+<Beam name="LR_PminusBeam" mountsize="capship-heavy"> 
+<Energy rate="5" stability="16" refire="10">
+</Energy>
+<Damage rate="1000" longrange=".7">
+</Damage>
+<Distance speed="1700" radialspeed=".8" radius="200" length="8" pulsespeed="36" range="17000" >
+</Distance>
+<Appearance file="weapons/heavylaserbeam.png" soundwav="beam.wav" r=".6" g=".1" b=".8" a=".6" >
+</Appearance>
+</Beam>
 </Weapons>
