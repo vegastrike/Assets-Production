@@ -5,7 +5,9 @@ import launch
 import VS
 import unit
 import sys
+print "before_initin"
 import adventure
+print "after_initin"
 import news
 class random_encounters:
   class playerdata:  
