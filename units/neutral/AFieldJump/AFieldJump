@@ -1,0 +1,56 @@
+<Unit>
+
+<SubUnit file="asteroids400gap"  />
+<SubUnit file="asteroids400gap" x="0" y="30" z="00" ri="1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids400gap" x="00" y="14" z="50" ri="1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
+<SubUnit file="asteroids400gap" x="00" y="24" z="-40" ri="1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/>
+<SubUnit file="asteroids400gap" x="00" y="30" z="50" ri="-1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids400gap" x="00" y="00" z="-50" ri="-1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
+
+
+<SubUnit file="asteroids" x="4000" y="800" z="-400" />
+<SubUnit file="asteroids" x="4000" y="-800" z="1024"  ri="1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids" x="4000" y="800" z="-1024"  ri="1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
+<!--<SubUnit file="asteroids" x="4000" y="800" z="-800"  ri="1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/>
+
+<SubUnit file="asteroids" y="4000" x="1024"  z="-400" ri="-1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids" y="4000" x="1024"  z="1024"  ri="-1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>-->
+<SubUnit file="asteroids" y="4000" x="-800"  z="-400"  ri="-1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids" y="4000" x="100"  z="-1000"  ri="-1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
+<SubUnit file="asteroids" y="4000" x="400"  z="-00"  ri="-1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/> 
+
+
+<SubUnit file="asteroids" y="-4000" z="1024"  x="-1024" />
+<SubUnit file="asteroids" y="-4000" z="-800"  x="00"  ri="1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids" y="-4000" z="1024"  x="400"  ri="1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
+<SubUnit file="asteroids" y="-4000" z="800"  x="500"  ri="1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/>
+<SubUnit file="asteroids" y="-4000" z="400"  x="1024"  ri="-1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<!--<SubUnit file="asteroids" y="-4000" z="1000"  x="-500"  ri="-1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
+<SubUnit file="asteroids" y="-4000" z="400"  x="-400" ri="-1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/> 
+<SubUnit file="asteroids" z="-4000" x="00" y="00" />
+<SubUnit file="asteroids" z="-4000" x="800" y="800" ri="1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids" z="-4000" x="1024" y="800" ri="1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>-->
+<SubUnit file="asteroids" z="-4000" x="400" y="-800" ri="1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/>
+<SubUnit file="asteroids" z="-4000" x="400" y="400" ri="-1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids" z="-4000" x="400" y="-800" ri="-1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
+<!--<SubUnit file="asteroids" z="-4000" x="1024" y="800" ri="-1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/> 
+<SubUnit file="asteroids" z="-4000" x="800" y="800" />
+
+<SubUnit file="asteroids" z="4000" y="400" x="800"  ri="1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids" z="4000" y="-800" x="-800" ri="1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>-->
+<SubUnit file="asteroids" z="4000" y="-1024" x="800" ri="1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/>
+<SubUnit file="asteroids" z="4000" y="-800" x="-240" ri="-1" rj="0" rk="0" qi="0" qj="0" qk="1" pi="0" pj="1" pk="0"/>
+<SubUnit file="asteroids" z="4000" y="800" x="1024" ri="-1" rj="0" rk="0" qi="0" qj="0" qk="-1" pi="0" pj="-1" pk="0"/>
+<!--<SubUnit file="asteroids" z="4000" x="00" y="00"  ri="-1" rj="0" rk="0" qi="0" qj="1" qk="0" pi="0" pj="0" pk="1"/> -->
+
+	<Thrust>
+		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
+		<Maneuver yaw="0000" pitch="0000" roll="0000"/>
+	</Thrust>
+	<Defense>
+		<Hull strength="400000000"/>
+	</Defense>
+
+<Stats mass="60" momentofinertia="60" fuel="20000"></Stats>
+
+</Unit>
