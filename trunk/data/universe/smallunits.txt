@@ -1,1 +1,1 @@
-U400^MiningBase2 U400^MiningBase3 U400^MiningBase U1000^ConfedHq U2000^station U1200^Refinery U200^drydock U400^MiningBase2 U400^MiningBase3 U400^MiningBase U1000^ConfedHq U2000^station U1200^Refinery U200^drydock U400^MiningBase2 U400^MiningBase3 U400^MiningBase U1000^ConfedHq U2000^station U1200^Refinery U200^drydock U3000^commerce_center
+U400^MiningBase2 U400^MiningBase U1500^ConfedHq U2000^station U1200^refinery U200^drydock U200^drydock  U3000^commerce_center U2000^research U2000^relay U2800^starfortress U1400^fighter_barracks
