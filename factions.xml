@@ -5,6 +5,7 @@
 		<stats name="merchant" relation ="0"/>
 		<stats name="aera" relation="0"/>
 		<stats name="rlaan" relation="0"/>
+		<stats name="unknown" relation="0"/>
 	</Faction>
 
 	<Faction name="confed" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
@@ -13,6 +14,7 @@
 		<stats name="merchant" relation =".3"/>
 		<stats name="aera" relation="-.9"/>
 		<stats name="rlaan" relation="-0.1"/>
+		<stats name="unknown" relation="-.1"/>
 	</Faction>
 
 	<Faction name="aera" logoRGB="TechPriRGB.bmp" logoA="TechPriA.bmp">
@@ -21,6 +23,7 @@
 		<stats name="militia" relation="-.9"/>
 		<stats name="merchant" relation ="-.8"/>
 		<stats name="rlaan" relation="-1"/>
+		<stats name="unknown" relation="-.1"/>
 	</Faction>
 
 	<Faction name="merchant" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
@@ -29,6 +32,7 @@
 		<stats name="retro" relation=".2"/>
 		<stats name="militia" relation="-.6"/>
 		<stats name="rlaan" relation=".5"/>
+		<stats name="unknown" relation="-.1"/>
 	</Faction>
 
 	<Faction name="retro" logoRGB="TechPriRGB.bmp" logoA="TechPriA.bmp">
@@ -38,6 +42,7 @@
 		<stats name="militia" relation="-.6"/>
 		<stats name="merchant" relation =".3"/>
 		<stats name="rlaan" relation="-1"/>
+		<stats name="unknown" relation="-.1"/>
 	</Faction>
 
 	<Faction name="militia" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
@@ -47,14 +52,25 @@
 		<stats name="militia" relation="1"/>
 		<stats name="merchant" relation =".3"/>
 		<stats name="rlaan" relation="-.4"/>
+		<stats name="unknown" relation="-.1"/>
 	</Faction>
 
 	<Faction name="rlaan" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
 		<stats name="retro" relation="-1"/>
 		<stats name="militia" relation="0"/>
-		<stats name="merchant" relation="0"/>
+		<stats name="merchant" relation="-.3"/>
 		<stats name="confed" relation="-.3"/>
 		<stats name="aera" relation="-1"/>
+		<stats name="unknown" relation="-.1"/>
+	</Faction>
+	<Faction name="unknown" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
+		<stats name="retro" relation="-1"/>
+		<stats name="rlaan" relation="-1"/>
+		<stats name="militia" relation="-1"/>
+		<stats name="merchant" relation="-1"/>
+		<stats name="confed" relation="-1"/>
+		<stats name="aera" relation="-1"/>
+		<stats name="unknown" relation="0"/>
 	</Faction>
 
 </Factions>
