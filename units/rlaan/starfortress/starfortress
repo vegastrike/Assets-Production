@@ -1,4 +1,46 @@
-<Unit scale="1">
+<Unit scale="6400">
+	<Thrust>
+
+
+		<Engine Afterburner="00.000000" Forward="000000" Retro="000000" Left="00000" Right="000000" Top="000000" Bottom="00000"/>
+
+
+		<Maneuver yaw="0" pitch="0" roll="0"/>
+
+
+	</Thrust>
+
+
+	<Sound> </Sound>
+
+	<Defense>
+
+		<Armor front="40000" right="40000" left="40000" back="40000"/>
+
+		<Hull strength="40000"/>
+
+	</Defense>
+
+	<Stats mass="1000" momentofinertia="1000" fuel="20000"></Stats>
+
+	<Computer yaw="0" pitch="0" roll="0" afterburner="000000" maxspeed="00000"/>
+
+	<Energy>
+
+		<Reactor recharge="400" limit="2070"/>
+
+	</Energy>
+<Dock x="0" y="0" z="0" size=".07"/>
+<SubUnit file="turret_capship_gun" x="1" y="1" z="1" ri="1" rj="1" rk="1" qi=".5" qj=".5" qk="-1" restricted="-.5"/>
+
+<SubUnit file="turret_capship_gun" x="-1" y="1" z="-1" ri="-1" rj="1" rk="-1" qi="-.5" qj=".5" qk="1" restricted="-.5"/>
+
+<SubUnit file="turret_capship_gun" x="-1" y="-1" z="1" ri="-1" rj="-1" rk="1" qi="-.5" qj="-.5" qk="-1" restricted="-.5"/>
+
+<SubUnit file="turret_capship_gun" x="1" y="-1" z="-1" ri="1" rj="-1" rk="-1" qi=".5" qj="-.5" qk="1" restricted="-.5"/>
+
+	<Meshfile file="tri.xmesh"/>
+	<SubUnit file="AsteroidFighterBase"/>
 
 <!-- new elements added -->
 	<Hold volume="100000000000">
