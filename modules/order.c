@@ -9,6 +9,17 @@ module order {
   float gametime;
   bool did_it;
 
+  void findAndErase(object base_order,object find_order){
+    if(_std.isNull(find_order)){
+      return;
+    }
+    object found_order=_order.findOrder(base_order,find_order);
+    
+    if(!_std.isNull(found_order)){
+      _order.eraseOrder(base_order,find_order);
+    }
+  };
+
   void patrolFg(int pmode,object patrol_fgid,object around_fgid,float range,float patrol_speed){
     // sends each flightgroup matching patrol_fgid to either
     // patrol around the first flightgroup matching around_fdid or

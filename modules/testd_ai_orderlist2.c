@@ -44,6 +44,7 @@ module testd_ai_orderlist2 {
       _io.message(1,"game","all","our station is under attack");
       _io.message(2,"game","all","proceed to jumppoint-mars quickly");
 
+      //      launch.launch_wave_in_area("brown","confed","truck_small","_ai_stationary",2,5000.0,silver_lpos);
       launch.launch_wave_in_area("silver","confed","cruiser","_ai_stationary",2,2000.0,silver_lpos);
       launch.launch_wave_in_area("gold","confed","cruiser","_ai_stationary",2,4000.0,gold_lpos);
 
@@ -61,6 +62,8 @@ module testd_ai_orderlist2 {
 
       orderlist_green=ai_orderlist.newOrderList();
       ai_orderlist.orderFlyTo(orderlist_green,"station-north",null_pos,1.0,true,500.0);
+      ai_orderlist.orderFlyTo(orderlist_green,"station-west",null_pos,1.0,true,500.0);
+      ai_orderlist.orderFlyTo(orderlist_green,"station-south",null_pos,1.0,true,500.0);
       order.orderList("green",orderlist_green);
 
       orderlist_red=ai_orderlist.newOrderList();
@@ -68,7 +71,7 @@ module testd_ai_orderlist2 {
       ai_orderlist.orderDefend(orderlist_red,200.0);
       ai_orderlist.orderAttack(orderlist_red,1000.0);
 
-      order.orderList("red",orderlist_red);
+      //      order.orderList("red",orderlist_red);
 
       step=step+1;
     }
