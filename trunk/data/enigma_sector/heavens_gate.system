@@ -23,7 +23,7 @@
 				<FogElement file="sphereatm.xmesh" ScaleAtmosphereHeight="1.0325" red=".5" blue=".5" green=".5" alpha=".5" dired=".5" diblue=".5" digreen=".5" dialpha=".5" concavity="0" focus=".5" minalpha="0" maxalpha="1"/>
 				<FogElement file="sphereatm.xmesh" ScaleAtmosphereHeight="1.04" red=".5" blue=".5" green=".5" alpha=".5" dired=".5" diblue=".5" digreen=".5" dialpha=".5" concavity="0" focus=".5" minalpha="0" maxalpha="1"/>
 			</Fog>
-			<Ring file="planets/ring.png" innerradius="2259608" outerradius="2460058"  ri="-0.714508" rj="0.436248" rk="0.546960" si="-0.669016" sj="-0.197311" sk="-0.716580" wrapx="180" wrapy="2" year="3081"/>
+			<!--<Ring file="planets/ring.png" innerradius="2259608" outerradius="2460058"  ri="-0.714508" rj="0.436248" rk="0.546960" si="-0.669016" sj="-0.197311" sk="-0.716580" wrapx="180" wrapy="2" year="3081"/>-->
 			<Ring file="planets/ring.png" innerradius="1966615" outerradius="2177051"  wrapx="220" wrapy="2" year="-3081"/>
 			<Unit name="Inner Rings" file="MiningBase" ri="2059833" rj="-400" rk="0" si="0" sj="-400" sk="2059833" faction="confed"  year="1118260" day="20700" />
 			<planet name="JumpToNovayaKiev"	file="jump.png" ri="2059833" rj="0" rk="-8462" si="-8462" sj="0" sk="2059833" radius="200" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/novaya_kiev"/>
@@ -34,7 +34,7 @@
 			<planet name="JumpToTesla" file="jump.png" ri="2082021" rj="5360" rk="0" si="0" sj="5360" sk="2082021" radius="200" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/tesla"/>
 			<planet name="JumpToSterling" file="jump.png" ri="2076881" rj="2680" rk="6724" si="2076881" sj="2680" sk="6724" radius="200" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/sterling"/>
 			<planet name="JumpToVespus" file="jump.png" ri="2071742" rj="0" rk="8247" si="8247" sj="0" sk="2071742" radius="200" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/vespus"/>
-			<planet name="Nief" file="planets/Snow2.png" ri="2553705" rj="-481963" rk="0" si="0" sj="-481963" sk="2553705" radius="416000" gravity="5" year="7161700" day="950" position="0">
+			<planet name="Nief" file="planets/Snow2.png" ri="12768525" rj="-2409815" rk="0" si="0" sj="-2409815" sk="12768525" radius="416000" gravity="5" year="7161700" day="950" position="0">
 			<Fog /> <!--red=".5" blue="1" green="1" alpha="0" concavity=".24" focus=".5"-->
 </planet>
 		</planet>
