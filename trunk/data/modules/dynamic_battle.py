@@ -6,19 +6,35 @@ class FG:
 	def __init__(self,fgname,faction):
 		self.fg=fgname
 		self.fac=fact		
-	
+
+#hashed by system, then by 
+persystemattacklist {}
+
 attacklist ={}
 defendlist={}
 def SimulateBattles():
 	deadbattles=[]
-	
+	global persystemattacklist
+	global attacklist
+	persystemattacklist = {}
 	for ally in attacklist:
 		enemy = attacklist[ally]		
 		if (not attackFlightgroup (ally.fg,ally.fac,enemy.fg,enemy.fac)):
 			deadbattles+=[ally]
+		else:
+			sys = fg_util.FGSystem(ally.fg,ally.fac)
+			#if not (sys in persystemattacklist):
+			#	persystemattacklist[sys]={}#used to be a haash table in BattlesInSystem
+			#(persystemattacklist[sys])[ally]=enemy
+			persystemattacklist[sys]+=[(ally,enemy)]
 	for i in deadbattles:
 		stopAttack(i)
-		
+def BattlesInSystem():
+	if sys in persystemattacklist:
+		return persystemattacklist[sys]
+	#return {}  #used to be  a hash table
+	return []
+
 def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
 	i=getUnitList()
 	un=i.current()
