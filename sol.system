@@ -19,6 +19,8 @@
 </Light>	
 
         <planet name="sun" file="sun.bmp" radius="25000" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0 1l">
+		<planet name="Earth" file="earthcloudmaptrans.bmp" alpha="earthcloudmaptrans.alp" radius="3200" gravity="20" ri="57000" rj="0" rk="0" si="0" sj="0" sk="57000" velocity="10" position="0"/>
+
 		<planet name="Mercury" file="mercury.bmp" radius="1020" gravity="20" ri="34000" rj="0" rk="0" si="0" sj="0" sk="34000" velocity="5" position="0.25">
 		</planet>
 <unit name= "Victory"  file="drydock" faction="confed" ri="28000" rj="0" rk="0" si="0" sj="0" sk="28000" velocity="5" position="100">
@@ -29,14 +31,7 @@
 </unit>
 
 		</planet>
-		<planet name="Earth" file="earth.bmp" radius="3000" gravity="20" ri="57000" rj="0" rk="0" si="0" sj="0" sk="57000" velocity="10" position="0">
 
-		<ContinuousTerrain file="continuousterrain.txt" mass=".00000100" y="0000" z="30000" qi="0" qj="0" qk="1" ri="0" rj="1" rk="0"/>
-		<Atmosphere radius="10000"/>
-			<planet name="Moon" file="moon.bmp" radius="800" gravity="20" ri="10000" rj="0" rk="0" si="0" sj="0" sk="10000" velocity="2" position="0">
-			</planet>
-
-		</planet>
 		<planet name="Mars" file="mars.bmp" faction="neutral" radius="3800" gravity="20" ri="75000" rj="0" rk="0" si="0" sj="0" sk="75000" velocity="20" position="0.750">
 		</planet>
          
@@ -51,5 +46,15 @@
 		</planet>
 		<planet name="Pluto" file="pluto.bmp" radius="600" gravity="20" ri="300000" rj="0" rk="0" si="0" sj="0" sk="250000" velocity="50" position="2.375">
 		</planet>
+
+		<planet name="Earth" file="earth.bmp" radius="3000" gravity="20" ri="57000" rj="0" rk="0" si="0" sj="0" sk="57000" velocity="10" position="0">
+                <ContinuousTerrain file="continuousterrain.txt" mass=".00000100" y="0000" z="30000" qi="0" qj="0" qk="1" ri="0" rj="1" rk="0"/>
+                                <Atmosphere radius="10000"/>
+
+			<planet name="Moon" file="moon.bmp" radius="800" gravity="20" ri="10000" rj="0" rk="0" si="0" sj="0" sk="10000" velocity="2" position="0">
+			</planet>
+
+		</planet>
+
 	</planet>
 </system>
