@@ -11,7 +11,7 @@
 	</Light>
 
 	<planet name="Heavens Gate A" file="stars/orange_star.png" radius="5100000" x="-26000000" y="0" z="-26000000" gravity="2000" Red="1" Green="0.44" Blue=".13" ReflectNoLight="true" light="1">
-		<planet name="Heavens Gate B" file="stars/white_star.png" radius="4333333" gravity="2000" ri="156000000" rj="0" rk="0" si="0" sj="0" sk="167700000" day="85800000" year="85800000" Red="1" Green="1" Blue="1" ReflectNoLight="true" light="0">
+		<planet name="Heavens Gate B" file="stars/white_star.png" radius="4333333" gravity="2000" ri="86000000" rj="0" rk="0" si="0" sj="0" sk="67700000" day="85800000" year="85800000" Red="1" Green="1" Blue="1" ReflectNoLight="true" light="0">
 		</planet>
 		<planet name="Barnoose"	file="planets/m_class3.png" radius="1281005" gravity="18" ri="26000000.0" rj="0" rk="26000000" si="26000000.0" sj="0" sk="-26000000.0" year="13661700" day="950" position="0">
 			<Atmosphere file="sol/earthcloudmaptrans.png" alpha="SRCALPHA INVSRCALPHA" radius="1335830"/>
