@@ -28,6 +28,7 @@ class Choice:
 		activelinks.append((room,self.name))
 		activeobjs.append((room,self.name))
 class Fixer:
+	"""A class that draws nobody."""
 	def __init__(self,name,text,precondition,image,choices):
 		self.name = name
 		self.text = text
@@ -46,10 +47,24 @@ class Fixer:
 		Base.Texture(room,self.name,self.image,x+(wid/2),y+(hei/2))
 		Base.Python(room,self.name,x,y,wid,hei,self.text,self.choices,1)
 
-class RandFixer (Fixer):
-	def __init__ (self,which):
-		fixer=mission_lib.CreateRandomMission(which)
-		Fixer.__init__(self,fixer[1].split(' ')[-1].lower(),fixer[1],[],fixer[0],"bases/fixers/generic%d.py"%which)
+class NoFixer (Fixer):
+	"""Class that displays nobody.  Should maybe draw a bartender guy to talk to."""
+	def __init__(self):
+		Fixer.__init__(self,'nobody','Bar',[],'','')
+
+	def abletodraw(self):
+		"""A NoFixer can't draw."""
+		return 0
+
+	def drawobjs(self,room,x,y,wid,hei):
+		"""Don't create the python script OR the texture, so trhe user won't notice :-)"""
+		pass
+
+def RandFixer (which):
+	fixer=mission_lib.CreateRandomMission(which)
+	if fixer==():
+		return NoFixer()
+	return Fixer(fixer[1].split(' ')[-1].lower(),fixer[1],[],fixer[0],"bases/fixers/generic%d.py"%which)
 
 fixers={"enigma_sector/niven":[
 	Fixer("explore","Talk to the Explorer",[("enigma_sector/enigma_nav",0)],"bases/fixers/militia.spr","bases/fixers/explore_enigma.py"),
@@ -130,14 +145,14 @@ def CreateFixers (room,locations):
 				fixerlist[i].drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3])
 				j+=1
 	rndnum=vsrandom.random()
-	if rndnum<.1 and j==0:
+	if rndnum<.7 and j==0:
 		f=RandFixer(0)
 		if (j<len(locations)):
 			f.drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3])
 		j+=1
 		img=f.image
 		rndnum=vsrandom.random()
-		if rndnum<.75:
+		if rndnum<.6:
 			i=0
 			while f.image==img and i<10:
 				f=RandFixer(1)
