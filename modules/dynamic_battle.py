@@ -33,11 +33,15 @@ siegenumtimes=0
 siegeprob=0
 #fixme
 def getImportanceOfSystem(sys):
-	if (VS.getGalaxyProperty(sys,"faction")==VS.getGalaxyFaction(sys)):
+	if (VS.GetGalaxyProperty(sys,"faction")==VS.GetGalaxyFaction(sys)):
 		return .5
 	else:
 		return .1
-
+def getImportanceOfType (typ):
+	import faction_ships
+	if (faction_ships.isCapital(typ)):
+		return 1
+	return .5
 #returns false if Siege is done going through all its vehicles
 def Siege(fac):
 	global siegenumber
@@ -64,7 +68,7 @@ def Siege(fac):
 				if (VS.GetRelation(fac,enfac)<0):#FIXME maybe even less than that
 					if (fg_util.NumFactionFGsInSystem(enfac,sys)==0) and (fg_util.NumFactionFGsInSystem(fac,sys)==0): #If both annihalate each other completely (unlikely but possible)
 						Director.pushSaveString(0,"dynamic_news"
-						,dynamic_news.makeVarList(["siege","end",fac,enfac,"0",str(getImportanceOfSystem(sys)),sys,"all"]))
+						,dynamic_news.makeVarList(["siege","end",fac,enfac,"0",str(getImportanceOfSystem(sys)),sys,"all",fg,"unknown","unknown","unknown"]))
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 
@@ -72,8 +76,14 @@ def Siege(fac):
 						VS.SetGalaxyFaction(sys,fac)
 						print fac + ' took over '+ sys + ' originally owned by '+enfac
 						#ok now we have him... while the siege is going on the allies had better initiate the battle--because we're now defending the place...  so that means if the owners are gone this place is ours at this point in time
+
+						fgs = fg_util.FGsInSystem(fac,sys)
+						if (len(fgs)>0):
+							fgs=fgs[0]
+						else:
+							fgs = "unknown"
 						Director.pushSaveString(0,"dynamic_news"
-						,dynamic_news.makeVarList(["siege","end",fac,enfac,"1",str(getImportanceOfSystem(sys)),sys,"all"]))
+						,dynamic_news.makeVarList(["siege","end",fac,enfac,"1",str(getImportanceOfSystem(sys)),sys,"all",fgs,"unknown","unknown","unknown"]))
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 
@@ -82,8 +92,13 @@ def Siege(fac):
 						#HACK, regenerate bases instnatly
 
 					elif (fg_util.NumFactionFGsInSystem(fac,sys)==0):	#If aggressor lost
+						fgs = fg_util.FGsInSystem(enfac,sys)
+						if (len(fgs)>0):
+							fgs=fgs[0]
+						else:
+							fgs = "unknown"
 						Director.pushSaveString(0,"dynamic_news"
-						,dynamic_news.makeVarList(["siege","end",fac,enfac,"-1",getImportanceOfSystem(sys),sys,"all"]))
+						,dynamic_news.makeVarList(["siege","end",fac,enfac,"-1",getImportanceOfSystem(sys),sys,"all","unknown","unknown",fgs,"unknown"]))
 												#FIXME get proper scale
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
@@ -379,6 +394,7 @@ def stopAttack (fgname,faction):
 		
 
 def initiateAttack (fgname,faction,sys,enfgname,enfaction):
+	Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","start",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,"unknown",enfgname,"unknown"]))
 	if (fg_util.BaseFGInSystemName(sys)==fgname):
 		fg=(enfgname,enfaction)#this is for a base... self defence
 		efg=(fgname,faction)
@@ -414,13 +430,22 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction):
 			return 0
 	if (vsrandom.randrange(0,4)==0):
 		#FIXME  if it is advantageous to stop attacking only!!
+		#FIXME add a stop attacking news report?
 		return 0
 	if (vsrandom.randrange(0,4)==0 and enfgname!=fg_util.BaseFGInSystemName(ensys)):
 		#FIXME  if it is advantageous to run away only
+		#FIXME add a retreat news report?
 		num=VS.GetNumAdjacentSystems(ensys)
 		if (num>0):
 			ensys=VS.GetAdjacentSystem(ensys,vsrandom.randrange(0,num))
 			fg_util.TransferFG (fgname,faction,ensys)
+	if (fg_util.NumShipsInFG(fgname,faction)==0):
+		if (fg_util.NumShipsInFG(enfgname,enfaction)==0):
+			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,"unknown",enfgname,"unknown"]))
+		else:
+			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,"unknown",enfgname,"unknown"]))			
+	elif (fg_util.NumShipsInFG(enfgname,enfaction)==0):
+		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"1",str(getImportanceOfSystem(sys)),sys,"all",fgname,"unknown",enfgname,"unknown"]))			
 	return 1
 		
 ##for i in range(10000):
