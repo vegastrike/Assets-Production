@@ -44,22 +44,18 @@
 	<Hold volume="30">
 	</Hold>
 
-        <Mount weapon="ParticleBeam" size="heavy capship-light autotracking" x="-29.815" y="-6.919" z="30.409"/>
-        <Mount weapon="ParticleBeam" size="heavy capship-light autotracking" x="29.815" y="-6.919" z="30.409"/>
-	<Mount weapon="Penetrator" size="capship-light capship-medium" x="-4.0" y="-4.618" z="19.606" />
-	<Mount weapon="Penetrator" size="capship-light capship-medium" x="4.0" y="-4.618" z="19.606" />
+      <Mount weapon="ParticleBeam" size="heavy capship-light autotracking" x="-29.815" y="-6.919" z="30.409"/>
+      <Mount weapon="ParticleBeam" size="heavy capship-light autotracking" x="29.815" y="-6.919" z="30.409"/>
 	<Mount weapon="Penetrator" size="special capship-light capship-medium" x="0.0" y="-4.618" z="19.606" />
 
 	<Mount weapon="Mace" size="light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="600"/>
 	<Mount weapon="Mace" size="light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="600"/>
-	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>
-	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>
 	<Mount weapon="Maul" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
 	<Mount weapon="Maul" size="heavy-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
-	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="700"/>
-	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="700"/>
+	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="4" volume="700"/>
+	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="10.0" y="1.757" z="3.5" ammo="4" volume="700"/>
 	<Mount weapon="Hail" size="special-missile" x="-10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
-        <Mount weapon="Hail" size="special-missile" x="10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
+      <Mount weapon="Hail" size="special-missile" x="10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
 	
         <subunit file="turret" x="0" y="5.3" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
         <subunit file="turret" x="0" y="-5.5" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
