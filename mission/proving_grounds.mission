@@ -6,10 +6,10 @@
 	<variables>
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="4 versus 4" />
-		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+		<var name="mission_name" value="Proving Grounds" />
+		<var name="author" value="Patrick Horn" />
 		<var name="system" value="mission_sector/proving_grounds" />
-		<var name="description" value="4vs4.txt" />
+		<var name="description" value="Use the many powerups that\you find to your advantage!\Watch out for the nebulas\and astroids!" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="rlaan" type="f109vampire_nojump" ainame="default" waves="1" nr_ships="1">

@@ -6,10 +6,11 @@
 	<variables>
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="4 versus 4" />
-
-		<var name="system" value="mission_sector/tag2" />
-		<var name="description" value="4vs4.txt" />
+		<var name="mission_name" value="Jump-point Tag" />
+		<var name="author" value="Patrick Horn" />
+		<var name="system" value="mission_sector/tag" />
+		<var name="description" value="Try to use the 15 jump-points\orbiting around planets to your\advantage in this 5 versus 1\battle." />
+		<var name="briefing" value="Activate your jump drive by\going into the balls and pressing 'j'\\Destroy all hostile enemies..." />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="rlaan" type="f109vampire" ainame="default" waves="1" nr_ships="1">

@@ -6,11 +6,10 @@
 	<variables>
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="4 versus 4" />
-
-		<var name="system" value="vega_sector/tyr" />
-		<var name="description" value="4vs4.txt" />
-		<var name="savegame" value="explore_universe2" />
+		<var name="mission_name" value="Explore the unknown quadrant..." />
+		<var name="author" value="Daniel Horn" />
+		<var name="system" value="unexplored_space/gwriss" />
+		<var name="description" value="Explore the unknown quadrants\to maybe find some unknown\treasures!" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="rlaan" type="f109vampire" ainame="default" waves="1" nr_ships="2">
