@@ -26,7 +26,7 @@
 <!--<attenuated red=".00000001" blue=".00000015"/>-->
 <attenuated red="0" blue=".0000001"/>
 </Light>	
-        <unit name= "_"  file="MiningBase" faction="pirate" z="-12500" x="-10500"/>
+        <unit name= "_"  file="MiningBase" faction="pirates" z="-12500" x="-10500"/>
         <asteroid  name= "_"  file="AFieldBase" faction="neutral"   z="-12500" x="-10500" day="-14000" difficulty=".25"></asteroid>         
         <planet name="JumpTo119CE" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="11000" x="9500" day="240" destination="gemini_sector/119ce"  />
 </system>
