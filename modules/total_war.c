@@ -34,7 +34,7 @@ module total_war {
 
     object typename=faction_ships.getRandomShipType(ship_list);
 
-    float nr_ships=random.random(2.0,6.0);
+    int nr_ships=random.randomint(2,6);
 
     object pos=vec3.new(8000.0,0.0,0.0);
 

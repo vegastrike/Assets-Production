@@ -31,7 +31,7 @@ module earth_patrol_rnd_attack2 {
 
     object typename=faction_ships.getRandomShipType(ship_list);
 
-    float nr_ships=random.random(2.0,4.0);
+    int nr_ships=random.randomint(2,4);
 
     object player=_unit.getPlayer();
     object player_pos=_unit.getPosition(player);

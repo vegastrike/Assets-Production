@@ -35,14 +35,9 @@ module faction_ships {
   };
 
   object getRandomShipType(object ship_list){
-    _io.PrintFloats(:s1="getRandomShipType1";);
-    float size=_olist.size(ship_list);
-    _io.PrintFloats(:s1="getRandomShipType2";);
+    int size=_olist.size(ship_list);
 
-    float index=random.random(0.0,size-1.0);
-    _io.PrintFloats(:s1="getRandomShipType3";);
-
-    _io.PrintFloats(:s1="getRandomShipType"; size,index);
+    int index=random.randomint(0,size-1);
 
     object ship_type=_olist.at(ship_list,index);
    

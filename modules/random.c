@@ -11,6 +11,18 @@ module random {
     }
   };
 
+  int randomint(int r1,int r2){
+    float r=_std.Rnd();
+    int range=r2-r1;
+    range=range+1;
+
+    r=r*range;
+    
+    int i=r1+_std.Int(r);
+    
+    return i;
+  };
+
   float random(float r1,float r2){
     float r=_std.Rnd();
     float range=r2-r1;
