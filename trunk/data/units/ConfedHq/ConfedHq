@@ -88,4 +88,224 @@
 <Subunit file="turret" x="2362.500244" y="0.000674" z="-825.000244" ri="-0.000000" rj="1.000000" rk="0.000000" qi="0.940887" qj="0.000000" qk="-0.338721"/>
 <Subunit file="turret" x="1019.999939" y="0.000000" z="2137.500244" ri="0.000000" rj="1.000000" rk="0.000000" qi="0.000000" qj="-0.000000" qk="1.000000"/>
 <Subunit file="turret" x="1340.949341" y="0.000000" z="1725.000122" ri="-0.494333" rj="0.000000" rk="0.869273" qi="0.869273" qj="0.000000" qk="0.494333"/>
+	<Hold volume="100000000000">
+		<Category file="Natural_Products/Food">
+			<import price="1.1" pricestddev=".2" quantity="150" quantitystddev="2"/>
+		</Category>
+		<Category file="Natural_Products/Liquor">
+			<import price="1.05" pricestddev=".1" quantity="10" quantitystddev="1"/>
+		</Category>
+		<Category file="Natural_Products/Plants">
+			<import price=".9" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Natural_Products/Natural_Resources">
+			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Raw_Materials/Metals/Crude">
+			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Raw_Materials/Metals/Precious">
+			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Raw_Materials/Metals/Alloys">
+			<import price="1.1" pricestddev=".1" quantity="20" quantitystddev="20"/>
+		</Category>
+		<Category file="Raw_Materials/Metals/Radioactive">
+			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Raw_Materials/Gems/Jewelry">
+			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Raw_Materials/Gems/Industrial">
+			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Raw_Materials/Stone">
+			<import price=".8" pricestddev=".1" quantity="00" quantitystddev="0"/>
+		</Category>
+		<Category file="Fuels/Crude">
+			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Fuels/Refined">
+			<import price="1.1" pricestddev=".3" quantity="10" quantitystddev="10"/>
+		</Category>
+		<Category file="Compressed_Gasses">
+			<import price="1.1" pricestddev=".1" quantity="10" quantitystddev="10"/>
+		</Category>
+		<Category file="Recycled_Products">
+			<import price="1.1" pricestddev=".1" quantity="10" quantitystddev="7"/>
+		</Category>
+		<Category file="Machinery_Goods">
+			<import price="1.1" pricestddev=".1" quantity="50" quantitystddev="30"/>
+		</Category>
+		<Category file="Supplies/Aerospace_Supplies">
+			<import price="1.2" pricestddev=".1" quantity="30" quantitystddev="10"/>
+		</Category>
+		<Category file="Research/Electronics">
+		<!-- priced at 1/10 their normal price... heh -->
+			<import price="12" pricestddev="2" quantity="3" quantitystddev="10"/>
+		</Category>
+		<Category file="Supplies/Agriculteral_Supplies">
+			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Supplies/Mining_Supplies">
+			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Supplies/Construction_Supplies">
+			<import price="1.1" pricestddev=".2" quantity="10" quantitystddev="10"/>
+		</Category>
+		<Category file="Supplies/Medical_Supplies">
+			<import price="1.1" pricestddev=".1" quantity="3" quantitystddev="3"/>
+		</Category>
+		<Category file="Electronics">
+			<import price="1.2" pricestddev=".2" quantity="50" quantitystddev="40"/>
+		</Category>
+		<Category file="Electronics/Robotics">
+			<import price="1.1" pricestddev=".2" quantity="20" quantitystddev="10"/>
+		</Category>
+		<Category file="Manufactured_Goods">
+			<import price=".9" pricestddev=".2" quantity="30" quantitystddev="20"/>
+		</Category>
+		<Category file="Entertainment">
+			<import price="1.1" pricestddev=".2" quantity="10" quantitystddev="10"/>
+		</Category>
+		<Category file="Contraband/Medical">
+			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Contraband">
+			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="starships/Confed/Light">
+			<import price="1" pricestdev=".1" quantity="20" quantitystddev="100" />
+		</Category>
+		<Category file="starships/Confed/Medium">
+			<import price="1" pricestdev=".1" quantity="15" quantitystddev="70" />
+		</Category>
+		<Category file="starships/Confed/Heavy">
+			<import price="1" pricestdev=".1" quantity="10" quantitystddev="050" />
+		</Category>
+		<Category file="starships/Confed/Milspec">
+			<import price="1" pricestdev=".1" quantity="5" quantitystddev="20" />
+		</Category>
+		<Category file="starships/Militia/Light">
+			<import price="1" pricestdev=".1" quantity="15" quantitystddev="70" />
+		</Category>
+		<Category file="starships/Militia/Medium">
+			<import price="1" pricestdev=".1" quantity="10" quantitystddev="50" />
+		</Category>
+		<Category file="starships/Militia/Heavy">
+			<import price="1" pricestdev=".1" quantity="5" quantitystddev="20" />
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns_Light">
+			<import price="1" pricestdev=".1" quantity="20" quantitystddev="100" />
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns_Medium">
+			<import price="1" pricestdev=".1" quantity="10" quantitystddev="50" />
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns_Heavy">
+			<import price="1" pricestddev=".1" quantity="8" quantitystddev="30"/>
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns_Confed_Milspec">
+			<import price="1" pricestddev=".1" quantity="5" quantitystddev="20"/>
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays_Light">
+			<import price="1" pricestdev=".1" quantity="10" quantitystddev="50" />
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays_Medium">
+			<import price="1" pricestddev=".1" quantity="5" quantitystddev="20"/>
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays_Heavy">
+			<import price="1" pricestddev=".1" quantity="2" quantitystddev="10"/>
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays_Confed_Milspec">
+			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="50"/>
+		</Category>
+		<Category file="upgrades/Weapons/Mount_Enhancements">
+			<import price="1" pricestddev=".1" quantity="10" quantitystddev="50"/>
+		</Category>
+		<Category file="upgrades/Engines/Light">
+			<import price="1" pricestdev=".1" quantity="20" quantitystddev="100" />
+		</Category>
+		<Category file="upgrades/Engines/Medium">
+			<import price="1" pricestdev=".1" quantity="10" quantitystddev="50" />
+		</Category>
+		<Category file="upgrades/Engines/Heavy">
+			<import price="1" pricestdev=".1" quantity="5" quantitystddev="20" />
+		</Category>
+		<Category file="upgrades/Engines/Confed_Milspec">
+			<import price="1" pricestddev=".1" quantity="2" quantitystddev="20"/>
+		</Category>
+		<Category file="upgrades/Engines/Engine_Enhancements_Light">
+			<import price="1" pricestddev=".1" quantity="10" quantitystddev="50"/>
+		</Category>
+		<Category file="upgrades/Engines/Engine_Enhancements_Medium">
+			<import price="1" pricestddev=".1" quantity="5" quantitystddev="20"/>
+		</Category>
+		<Category file="upgrades/Engines/Engine_Enhancements_Heavy">
+			<import price="1" pricestddev=".1" quantity="2" quantitystddev="10"/>
+		</Category>
+		<Category file="upgrades/Shield_Systems/Light">
+			<import price="1" pricestdev=".1" quantity="10" quantitystddev="50" />
+		</Category>
+		<Category file="upgrades/Shield_Systems/Medium">
+			<import price="1" pricestddev=".1" quantity="5" quantitystddev="20"/>
+		</Category>
+		<Category file="upgrades/Shield_Systems/Heavy">
+			<import price="1" pricestddev=".1" quantity="2" quantitystddev="10"/>
+		</Category>
+		<Category file="upgrades/Shield_Systems/Confed_Milspec">
+			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="50"/>
+		</Category>
+		<Category file="upgrades/Armor_Modification">
+			<import price="1" pricestddev=".1" quantity="10" quantitystddev="50"/>
+		</Category>
+		<Category file="upgrades/Armor_Modification/Confed_Milspec">
+			<import price="1" pricestddev=".1" quantity="5" quantitystddev="20"/>
+		</Category>
+		<Category file="upgrades/Hull_Upgrades">
+			<import price="1" pricestddev=".1" quantity="10" quantitystddev="50"/>
+		</Category>
+		<Category file="upgrades/Hull_Upgrades/Confed_Milspec">
+			<import price="1" pricestddev=".1" quantity="5" quantitystddev="20"/>
+		</Category>
+		<Category file="upgrades/ECM_Systems">
+			<import price="1" pricestddev=".1" quantity="10" quantitystddev="50"/>
+		</Category>
+		<Category file="upgrades/ECM_Systems/Confed_Milspec">
+			<import price="1" pricestddev=".1" quantity="5" quantitystddev="20"/>
+		</Category>
+		<Category file="upgrades/Repair_Systems">
+			<import price="1" pricestddev=".1" quantity="10" quantitystddev="50"/>
+		</Category>
+		<Category file="upgrades/Repair_Systems/Research">
+			<import price="1.2" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="upgrades/Repair_Systems/Advanced">
+			<import price="1" pricestddev=".1" quantity="5" quantitystddev="20"/>
+		</Category>
+		<Category file="upgrades/Radar/Windows">
+			<import price="1" pricestdev=".1" quantity="10" quantitystddev="50" />
+		</Category>
+		<Category file="upgrades/Radar/Linux">
+			<import price="1" pricestddev=".1" quantity="5" quantitystddev="20"/>
+		</Category>
+		<Category file="upgrades/Radar/BSD">
+			<import price="1" pricestddev=".1" quantity="2" quantitystddev="10"/>
+		</Category>
+		<Category file="upgrades/Miscellaneous">
+			<import price="1" pricestddev=".1" quantity="10" quantitystddev="50"/>
+		</Category>
+		<Category file="upgrades/Miscellaneous/Confed_Milspec">
+			<import price="1" pricestddev=".1" quantity="2" quantitystddev="10"/>
+		</Category>
+		<Category file="upgrades/Ammunition">
+			<import price="1" pricestddev=".1" quantity="300" quantitystddev="250"/>
+		</Category>
+		<Category file="upgrades/Experimental">
+			<import price="1.4" pricestddev=".2" quantity="0" quantitystddev="0"/>
+		</Category>
+	</Hold>
+	<Upgrade file="standard_missions"/>
+	<Upgrade file="confed_missions"/>
+	<Upgrade file="confed_mil_missions"/>
+
 </Unit>
