@@ -109,7 +109,57 @@ module escort_mission {
 	  _std.setNull(escortee);
 	  _std.setNull(destination);
 	  _std.setNull(basecontainer);
-	  _io.sprintf (piratesstring,"pirates");
+	  float r = _std.Rnd();
+	  if (_string.equal (factionname,"merchant")) {
+	    _io.sprintf (piratesstring,"pirates");
+	  } else if (_string.equal (factionname,"confed")) {
+	    if (r<0.3) {
+	      _io.sprintf (piratesstring,"aera");
+	    }else if (r<0.6) {
+	      _io.sprintf (piratesstring,"rlaan");
+	    }else if (r<0.7) {
+	      _io.sprintf (piratesstring,"retro");
+	    }else if (r<0.8 ){
+	      _io.sprintf (piratesstring,"ISO");
+	    }else {
+	      _io.sprintf (piratesstring,"pirates");
+	    }
+	  } else if (_string.equal (factionname,"aera")) {
+
+	    if (r<0.4) {
+	      _io.sprintf (piratesstring,"confed");
+	    }else if (r<0.8) {
+	      _io.sprintf (piratesstring,"rlaan");
+	    }else {
+	      _io.sprintf (piratesstring,"pirates");
+	    }	    
+	  }else if (_string.equal (factionname,"rlaan")) {
+	    if (r<0.4) {
+	      _io.sprintf (piratesstring,"confed");
+	    }else if (r<0.8) {
+	      _io.sprintf (piratesstring,"aera");
+	    }else {
+	      _io.sprintf (piratesstring,"retro");
+	    }	    
+	  }else if (_string.equal (factionname,"pirates")) {
+
+	    if (r<0.4) {
+	      _io.sprintf (piratesstring,"confed");
+	    }else if (r<0.8) {
+	      _io.sprintf (piratesstring,"aera");
+	    }else {
+	      _io.sprintf (piratesstring,"retro");
+	    }	    
+	  }else if (_string.equal (factionname,"ISO")) {
+
+	    if (r<0.4) {
+	      _io.sprintf (piratesstring,"confed");
+	    }else if (r<0.8) {
+	      _io.sprintf (piratesstring,"retro");
+	    }else {
+	      _io.sprintf (piratesstring,"aera");
+	    }	    
+	  }
 	  intra_system=AllInThisSystem;
 	  enemytime=enemy_time;
 	  my_timer=_std.getGameTime()-enemy_time;//will start with enemies;

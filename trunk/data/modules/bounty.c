@@ -8,6 +8,7 @@ module bounty {
 	int arrived;
 	int difficulty;
 	int curiter;
+	int difficulty;
 	float cred;
 	import ai_stationary;
 	import universe;
@@ -29,11 +30,12 @@ module bounty {
 	    _unit.deleteContainer (enemycontainer);
 	  }
 	};
-	void init (int numsystemsaway, float creds, bool run_away) {
+	void init (int numsystemsaway, float creds, bool run_away, int shipdifficulty) {
 	  _std.setNull(newship);
 	  _std.setNull(sigcont);
 	  _std.setNull(enemycontainer);
 	  _std.setNull(youcontainer);
+	  difficulty = shipdifficulty;
 	  runaway=run_away;
 	  faction_ships.init();
 	  arrived=0;
@@ -63,7 +65,7 @@ module bounty {
 	    destination=universe.getAdjacentSystem (sysfile,numsystemsaway);
 	    _io.sprintf(str,"Once there, you must destroy a %s unit.",faction);
 	    _io.message (2,"game","all",str);
-	    _io.message (3,"game","all","You will then recieve lots of money as your reward");
+	    _io.message (3,"game","all","You will then recieve credits as your reward");
 	    _io.message (4,"game","all","(if you survive).  Good luck!");
 	    _string.delete(str);
 	  } else {
@@ -139,7 +141,7 @@ module bounty {
 	      if (_std.isNull(newship)) {
 		newship=faction_ships.getRandomFighter(faction);
 	      }
-	      enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,3000.0,4000.0,significant);
+	      enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1+difficulty,3000.0,4000.0,significant);
 	      enemycontainer=_unit.getContainer(enemy);
 	      if (!_std.isNull(enemy)) {
 		if (runaway) {
@@ -172,7 +174,7 @@ module bounty {
 	      } else {
 		if (isSig) {	//ADD OTHER JUMPING IF STATEMENT CODE HERE
 		} else {
-		  enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,500.0,1000.0,significant);
+		  enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1+difficulty,500.0,1000.0,significant);
 		  enemycontainer=_unit.getContainer(enemy);
 		  _unit.setTarget(you,enemy);
 		  arrived=2;
