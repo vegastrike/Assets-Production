@@ -1,4 +1,4 @@
-<Mesh texture="grey_metal.png" scale="0.25">
+<Mesh  texture1="grey_metalPPL.jpg" texture="grey_metal.png" scale="0.25">
 <Points>
 <Point>
     <Location x="-132.743362426758" y="-132.730346679688" z="-133.988296508789"/>

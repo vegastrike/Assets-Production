@@ -1,4 +1,4 @@
-<Mesh texture="osprey.bmp" scale="3.000000">
+<Mesh  texture1="ospreyPPL.jpg" texture="osprey.bmp" scale="3.000000">
 <Points>
 	<Point>
 		<Location x="-0.070000" y="-0.200000" z="4.000000"/>

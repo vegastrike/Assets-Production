@@ -1,4 +1,4 @@
-<Mesh texture="destiny.bmp" scale="2.000000">
+<Mesh  texture1="destinyPPL.jpg" texture="destiny.bmp" scale="2.000000">
 <Points>
 	<Point>
 		<Location x="-0.200000" y="-0.070000" z="4.000000"/>

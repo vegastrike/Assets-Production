@@ -1,4 +1,4 @@
-<Mesh texture="hull2.bmp">
+<Mesh  texture1="hull2PPL.jpg" texture="hull2.bmp">
 <Points>
 <Point>
     <Location x="0.0883883461356163" y="0.0883883461356163" z="4.55555534362793"/>

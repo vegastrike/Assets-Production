@@ -1,4 +1,4 @@
-<Mesh texture="FGHTSKN2.png" scale="0.100000">
+<Mesh  texture1="FGHTSKN2PPL.jpg" texture="FGHTSKN2.png" scale="0.100000">
 <Points>
 	<Point>
 		<Location x="8.471320" y="-18.634008" z="-70.939598"/> <!-- "0" -->

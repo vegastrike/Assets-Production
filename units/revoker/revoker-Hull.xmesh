@@ -1,4 +1,4 @@
-<Mesh texture="manned_front.png">
+<Mesh  texture1="manned_frontPPL.jpg" texture="manned_front.png">
 <Points>
 	<Point>
 		<Location x="0.728067" y="-239.808014" z="-43.450848"/>

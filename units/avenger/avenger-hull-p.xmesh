@@ -1,4 +1,4 @@
-<Mesh texture="mid.png">
+<Mesh  texture1="midPPL.jpg" texture="mid.png">
 <Points>
 <Point>
     <Location x="7.6322169303894" y="-7.5169529914856" z="0.216734915971756"/>
