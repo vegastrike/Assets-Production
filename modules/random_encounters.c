@@ -23,19 +23,6 @@ module random_encounters {
   void launch_near (object un) {
     
   }
-  bool isSignificant(object un) {
-    object unit_fgid = _unit.getFgID(un);
-    if (_unit.isPlanet (un) ||
-	_unit.isJumppoint(un) ||
-	_string.equal (unit_fgid,"Nebula") ||
-	_string.equal (unit_fgid,"Base") ||
-	_string.equal (unit_fgid,"Asteroid")) {
-      _string.delete(fgid);
-      return true;
-    }
-    _string.delete(fgid);
-    return false;
-  };
   bool atLeastNInsignificantUnitsNear (object unit, int n) {
     int num_ships=0;
     int count=0;
