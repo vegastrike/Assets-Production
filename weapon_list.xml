@@ -448,4 +448,15 @@
 </Appearance>
 </Missile>
 
+<Beam name="HandLaser" mountsize="light"> 
+<Energy rate="1" stability="4" refire=".2">
+</Energy>
+<Damage rate="7.2" longrange="1">
+</Damage>
+<Distance speed="14" radialspeed=".1" radius=".05" length="1.5" pulsespeed="15" range="47" >
+</Distance>
+<Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".8" b=".8" a=".9" >
+</Appearance>
+</Beam>
+
 </Weapons>
