@@ -17161,7 +17161,7 @@
 <Vertex point="1748" s="1.000000" t="0.666667"/>
 </Tri>
 </Polygons>
-<Material reflect="0">
+<Material reflect="0" LightingOn="0"> 
 <Specular red="0.000000" green="0.000000" blue="0.000000" alpha="0.000000"/>
 </Material>
 <LOD meshfile="asteroid800gap.lod1.xmesh" size="40000"/>

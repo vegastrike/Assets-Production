@@ -3599,6 +3599,6 @@
     <Vertex point="268" s="-0.499999821186066" t="5.64758348464966"/>
 </Tri>
 </Polygons>
-<material reflect="0">
+<material reflect="0" LightingOn="0">
 </material>
 </Mesh>
