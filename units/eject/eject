@@ -7,7 +7,7 @@
 <!-- new elements added -->
 		<Thrust>
 		<Engine Afterburner="1" Forward=".5" Retro=".5" Left=".5" Right=".5" Top=".5" Bottom=".5"/>
-		<Maneuver yaw="000" pitch="000" roll="000"/>
+		<Maneuver yaw="20" pitch="20" roll="20"/>
 	</Thrust>
 	<Sound></Sound>
 	<Defense>
@@ -15,9 +15,9 @@
 		<Shields front="0" back="0" recharge="0"/>
 		<Hull strength="30"/>
 	</Defense>
-	<Stats mass=".1" momentofinertia=".1" fuel="100"></Stats>
+	<Stats mass=".1" momentofinertia=".1" fuel="10000"></Stats>
    
-	<Computer yaw="0" pitch="0" roll="00" afterburner="000000" maxspeed="00000">
+	<Computer yaw="50" pitch="50" roll="50" afterburner="20" maxspeed="10">
 	</Computer>
 
 	<Energy>
