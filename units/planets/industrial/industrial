@@ -65,6 +65,18 @@
 		<Category file="Supplies/Medical_Supplies">
 			<import price="1.1" pricestddev=".1" quantity="5" quantitystddev="3"/>
 		</Category>
+		<Category file="Research/Industrial">
+			<import price="13" pricestddev="3" quantity="0" quantitystddev="0"/>
+		<!-- price these at 1/10 their normal price...-->
+		</Category>
+		<Category file="Research/Environmental">
+			<import price="11" pricestddev="2" quantity="0" quantitystddev="0"/>
+		<!-- price these at 1/10 their normal price...-->
+		</Category>
+		<Category file="Research/Electronics">
+			<import price="11" pricestddev="2" quantity="0" quantitystddev="0"/>
+		<!-- price these at 1/10 their normal price...-->
+		</Category>
 		<Category file="Electronics">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
@@ -77,6 +89,7 @@
 		<Category file="Entertainment">
 			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
 		</Category>
+
 		<Category file="Contraband">
 			<import price="1.2" pricestddev=".4" quantity="0" quantitystddev="0"/>
 		</Category>
