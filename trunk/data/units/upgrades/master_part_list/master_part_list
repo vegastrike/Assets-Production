@@ -56,6 +56,7 @@
 			<Cargo file="bioelectrical_simulators" price="10000" quantity="100" mass="6" volume="1"/>
 			<Cargo file="pleasure_bots" price="400" quantity="5" mass="4" volume="1"/>
 			<Cargo file="slaves" price="1350" quantity="100" mass="1.2" volume="1"/>
+			<Cargo file="eject" price="1350" quantity="100" mass="1.2" volume="1"/>
 			<Cargo file="military_software" price="500" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="cargo">
