@@ -470,7 +470,7 @@
 			<Cargo file="Lithium" price="40" quantity="1" mass=".01" volume="1" description="In human space, lithium is primarily mined to support the pharmaceutical companies' endless need for pills to control the ever expanding population of manic-depressives." />
 			<Cargo file="Iron_Ore" price="52" quantity="1" mass=".01" volume="1" description="Iron has been vital in the histories of all of the spacefaring races.  The prime variance is the ratio of cast iron cookware to iron and steel killingware." />
 			<Cargo file="Nickel" price="50" quantity="1" mass=".01" volume="1" description="Useful as an anti-corrosive coating, nickel is often mined in bulk from nickel-iron asteroids." />
-			<Cargo file="Tin" price="47" quantity="1" mass=".01" volume="1" description="Without tin, the interstellar sardine trade would flounder." />
+			<Cargo file="Tin" price="47" quantity="1" mass=".01" volume="1" description="Absent tin, the interstellar sardine trade would flounder." />
 			<Cargo file="Tungsten" price="110" quantity="1" mass=".01" volume="1" description="Due to its exceptional melting temperature and continued tensile strength at high temperatures, tungsten is a vital part of the spacefaring industry." />
 		</Category>
 		<Category file="Raw_Materials/Metals/Precious">
