@@ -1504,12 +1504,12 @@ stone"/>
 			</sector>
 			<sector name="newcastle">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="gemini_sector/metsor gemini_sector/perry gemini_sector/muriga"/>
+				<var name="jumps" value="gemini_sector/metsor gemini_sector/perry gemini_sector/auriga"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1351"/>
 			</sector>
-			<sector name="muriga">
+			<sector name="auriga">
 				<var name="faction" value="confed"/> 
 				<var name="jumps" value="gemini_sector/newcastle"/>
 				<var name="nebulae"   value="false"/>
