@@ -1,6 +1,5 @@
 import Base
 import sys
-import agriculture_lib
+import planet_lib
 time_of_day='_sunset'
-
-(landing_platform,bar,weap) = agriculture_lib.MakeAgri (time_of_day)
+room=planet_lib.MakePlanet (time_of_day)

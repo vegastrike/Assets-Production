@@ -1,8 +1,10 @@
 import Base
 import bar_lib
 import weapons_lib
-
+import VS
 def MakeSnow(time_of_day='day'):
+    plist=VS.musicAddList('ice.m3u')
+    VS.musicPlayList(plist)    
     room1 = Base.Room ('Main Concourse')
     Base.Texture (room1, 'tex', 'bases/Snow/landing'+time_of_day+'.spr', 0, 0)
     Base.Comp (room1, 'CargoComputer', -0.306641, -0.263021, 0.105469, 0.420833, 'Cargo Computer', 'BUYMODE SELLMODE')

@@ -1,8 +1,11 @@
 import Base
 import bar_lib
 import weapons_lib
+import VS
 
 def MakeAera(time_of_day='day'):
+    plist=VS.musicAddList('aera.m3u')
+    VS.musicPlayList(plist)    
     room1 = Base.Room ('Aera Planet')
     Base.Texture (room1, 'tex', 'bases/generic/aera_planet.spr', 0, 0)
     Base.Comp (room1, 'CargoComputer', 0.472656, -0.614583, 0.152344, 0.403646, 'Cargo Computer', 'BUYMODE SELLMODE')

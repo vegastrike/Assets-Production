@@ -1,8 +1,11 @@
 import Base
 import weapons_lib
 import random
-
+import VS
 def MakeCorisc(time_of_day='day',mybartender='bases/bartender_default.py'):
+    plist=VS.musicAddList('industrial.m3u')
+    VS.musicPlayList(plist)    
+
     room1 = Base.Room ('Landing Platform')
     Base.Texture (room1, 'tex', 'bases/industrial/landing'+time_of_day+'.spr', 0, 0)
     bar = Base.Room ('Bar')
