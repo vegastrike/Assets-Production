@@ -23,7 +23,7 @@
 		<import name="patrol_system"/>
 		<script name="initgame">
 			<exec module="patrol_system" name="init">
-			<const type="int" value="0"/> <!--num systems away -->
+			<const type="int" value="1"/> <!--num systems away -->
 
 			<const type="int" value="6"/><!--num patrol points (not zero)-->
 			<const type="float" value="300"/> <!--the distance from the points you have to be to get credited -->
