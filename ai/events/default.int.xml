@@ -4,8 +4,8 @@
    </threat>
   </hull>
 
-  <distance max=".03" script="++turnaway.xml">
+  <meterdistance max="60" script="++turnaway.xml">
   <!-- distance less than .1-->
-  </distance>
+  </meterdistance>
   
 </AggressiveAI>
