@@ -320,7 +320,7 @@ class Unit:
    print "Cloak"
   def RemoveFromSystem(self): 
    print "RemoveFromSystem"
-  def PositionITTS(self,local_posit,speed): 
+  def PositionITTS(self,local_posit,vel,speed): 
    print "PositionITTS" 
    return (0,0,0)
   def Position(self):

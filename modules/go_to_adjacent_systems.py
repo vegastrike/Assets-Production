@@ -3,6 +3,7 @@ import universe
 import unit
 import Briefing
 import vsrandom
+import Director
 class go_to_adjacent_systems:  
   def InSystem(self):
     return self.arrivedsys
@@ -27,6 +28,11 @@ class go_to_adjacent_systems:
     if len(jumps)>0:
       sys=jumps[-1] 
     (self.destination,self.jumps)=universe.getAdjacentSystems(sys,numsystemsaway,jumps,preffaction)
+    for i in self.jumps:
+      key = "visited_"+i
+      leng=Director.getSaveStringLength(VS.getCurrentPlayer(),key)
+      if leng==0:
+        Director.pushSaveString(VS.getCurrentPlayer(),key,"m")
     if (len(self.jumps)>0):
       self.obj=VS.addObjective("")
       self.com=(1.0/float(len(self.jumps)))
