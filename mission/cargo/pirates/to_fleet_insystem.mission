@@ -6,7 +6,7 @@
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="system" value="enigma_sector/blake" />
-		<var name="mission_name" value="Cargo Mission" />
+		<var name="mission_name" value="Contraband Delivery Mission" />
 		<var name="description" value="To all money grubbing privateers out there. We need you to deliver some contraband to a base in this system. We will let you know the details later. Don't sell our spoils or be spoiled by our forces. We pirates will pay is 2450 credits." />
 	</variables>
         <flightgroups>

@@ -6,7 +6,7 @@
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="system" value="enigma_sector/blake" />
-		<var name="mission_name" value="Base Cargo Delivery" />
+		<var name="mission_name" value="Base Cargo Delivery (Illegal)" />
 		<var name="description" value="A long range base requires a resupply of goods. Confederate patrols may intercept you on the way, but as a good privateer you should avoid them lest they cause you to lose your cargo--that could also be dangerous to your health. Your pay will be 2040 per system traversed. "/>
 	</variables>
         <flightgroups>
