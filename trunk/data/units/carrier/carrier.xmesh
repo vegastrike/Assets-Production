@@ -595,205 +595,205 @@
 		<Vertex point="42" s="0.752941" t="0.360784"/>
 	</Quad>
 </Polygons>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="35" weight="6.350051" />
 	<Ref point="3" weight="1.000000" />
 	<Ref point="1" weight="1.000000" />
 	<Ref point="33" weight="1.000000" />
 </Logo>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="35" weight="1.000000" />
 	<Ref point="3" weight="5.430030" />
 	<Ref point="1" weight="1.000000" />
 	<Ref point="33" weight="1.000000" />
 </Logo>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="35" weight="1.000000" />
 	<Ref point="3" weight="1.000000" />
 	<Ref point="1" weight="7.620080" />
 	<Ref point="33" weight="1.000000" />
 </Logo>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="35" weight="1.969999" />
 	<Ref point="3" weight="1.000000" />
 	<Ref point="1" weight="2.199999" />
 	<Ref point="33" weight="11.510169" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.380000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.380000" offset=".10000">
 	<Ref point="63" weight="4.780015" />
 	<Ref point="31" weight="4.420007" />
 	<Ref point="30" weight="1.000000" />
 	<Ref point="62" weight="1.000000" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.390000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.390000" offset=".10000">
 	<Ref point="63" weight="1.000000" />
 	<Ref point="31" weight="1.000000" />
 	<Ref point="30" weight="1.000000" />
 	<Ref point="62" weight="1.000000" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.410000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.410000" offset=".10000">
 	<Ref point="63" weight="1.000000" />
 	<Ref point="31" weight="1.000000" />
 	<Ref point="30" weight="3.739997" />
 	<Ref point="62" weight="3.939997" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.370000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.370000" offset=".10000">
 	<Ref point="49" weight="1.000000" />
 	<Ref point="50" weight="1.000000" />
 	<Ref point="18" weight="1.000000" />
 	<Ref point="17" weight="1.000000" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.330000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.330000" offset=".10000">
 	<Ref point="49" weight="4.820016" />
 	<Ref point="50" weight="1.000000" />
 	<Ref point="18" weight="1.520000" />
 	<Ref point="17" weight="4.370006" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.360000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.360000" offset=".10000">
 	<Ref point="49" weight="1.549999" />
 	<Ref point="50" weight="5.520032" />
 	<Ref point="18" weight="4.840016" />
 	<Ref point="17" weight="1.539999" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.450000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.450000" offset=".10000">
 	<Ref point="6" weight="1.000000" />
 	<Ref point="12" weight="1.000000" />
 	<Ref point="11" weight="1.000000" />
 	<Ref point="5" weight="1.000000" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.440000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.440000" offset=".10000">
 	<Ref point="6" weight="6.660058" />
 	<Ref point="12" weight="1.260000" />
 	<Ref point="11" weight="1.929999" />
 	<Ref point="5" weight="6.290050" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.410000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.410000" offset=".10000">
 	<Ref point="6" weight="1.220000" />
 	<Ref point="12" weight="4.450007" />
 	<Ref point="11" weight="5.120023" />
 	<Ref point="5" weight="1.150000" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.440000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.440000" offset=".10000">
 	<Ref point="37" weight="1.000000" />
 	<Ref point="43" weight="1.000000" />
 	<Ref point="44" weight="1.000000" />
 	<Ref point="38" weight="1.000000" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.450000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.450000" offset=".10000">
 	<Ref point="37" weight="6.790061" />
 	<Ref point="43" weight="1.000000" />
 	<Ref point="44" weight="1.809999" />
 	<Ref point="38" weight="4.490008" />
 </Logo>
-<Logo type="5" rotate="0.000000" size="0.420000" offset="0.010000">
+<Logo type="5" rotate="0.000000" size="0.420000" offset=".10000">
 	<Ref point="37" weight="1.490000" />
 	<Ref point="43" weight="5.740037" />
 	<Ref point="44" weight="5.680036" />
 	<Ref point="38" weight="1.410000" />
 </Logo>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="36" weight="15.280255" />
 	<Ref point="34" weight="1.310000" />
 	<Ref point="2" weight="1.410000" />
 	<Ref point="4" weight="1.619999" />
 </Logo>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="36" weight="1.849999" />
 	<Ref point="34" weight="2.279999" />
 	<Ref point="2" weight="20.080364" />
 	<Ref point="4" weight="4.600011" />
 </Logo>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="36" weight="2.739998" />
 	<Ref point="34" weight="11.430167" />
 	<Ref point="2" weight="1.549999" />
 	<Ref point="4" weight="1.000000" />
 </Logo>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="36" weight="1.410000" />
 	<Ref point="34" weight="1.470000" />
 	<Ref point="2" weight="1.200000" />
 	<Ref point="4" weight="13.910224" />
 </Logo>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="17" weight="1.000000" />
 	<Ref point="15" weight="1.000000" />
 	<Ref point="47" weight="1.000000" />
 	<Ref point="49" weight="1.000000" />
 </Logo>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="63" weight="1.000000" />
 	<Ref point="48" weight="1.000000" />
 	<Ref point="16" weight="1.000000" />
 	<Ref point="31" weight="1.000000" />
 </Logo>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="11" weight="1.000000" />
 	<Ref point="12" weight="1.000000" />
 	<Ref point="10" weight="1.000000" />
 	<Ref point="9" weight="1.000000" />
 </Logo>
-<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="3" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="43" weight="1.000000" />
 	<Ref point="41" weight="1.000000" />
 	<Ref point="42" weight="1.000000" />
 	<Ref point="44" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="0" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="3" weight="2.879998" />
 	<Ref point="35" weight="2.909998" />
 	<Ref point="39" weight="1.000000" />
 	<Ref point="7" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="0" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="36" weight="2.829998" />
 	<Ref point="4" weight="2.749998" />
 	<Ref point="8" weight="1.000000" />
 	<Ref point="40" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="0" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="15" weight="1.000000" />
 	<Ref point="17" weight="1.000000" />
 	<Ref point="18" weight="1.000000" />
 	<Ref point="13" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="0" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="49" weight="1.000000" />
 	<Ref point="47" weight="1.000000" />
 	<Ref point="45" weight="1.000000" />
 	<Ref point="50" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="0" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="14" weight="1.000000" />
 	<Ref point="30" weight="1.000000" />
 	<Ref point="31" weight="1.000000" />
 	<Ref point="16" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="0" rotate="0.000000" size="0.500000" offset=".10000">
 	<Ref point="62" weight="1.000000" />
 	<Ref point="46" weight="1.000000" />
 	<Ref point="48" weight="1.000000" />
 	<Ref point="63" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="0.270000" size="0.500000" offset="0.010000">
+<Logo type="0" rotate="0.270000" size="0.500000" offset=".10000">
 	<Ref point="9" weight="1.000000" />
 	<Ref point="7" weight="1.000000" />
 	<Ref point="5" weight="1.000000" />
 	<Ref point="11" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="-0.210000" size="0.500000" offset="0.010000">
+<Logo type="0" rotate="-0.210000" size="0.500000" offset=".10000">
 	<Ref point="39" weight="1.000000" />
 	<Ref point="41" weight="1.000000" />
 	<Ref point="43" weight="1.000000" />
 	<Ref point="37" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="-0.180000" size="0.500000" offset="0.010000">
+<Logo type="0" rotate="-0.180000" size="0.500000" offset=".10000">
 	<Ref point="8" weight="1.000000" />
 	<Ref point="10" weight="1.000000" />
 	<Ref point="12" weight="1.000000" />
 	<Ref point="6" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="0.160000" size="0.500000" offset="0.010000">
+<Logo type="0" rotate="0.160000" size="0.500000" offset=".10000">
 	<Ref point="42" weight="1.000000" />
 	<Ref point="40" weight="1.000000" />
 	<Ref point="38" weight="1.000000" />
