@@ -112,7 +112,36 @@ def setPreciseTargetShip (which_fgid, target_unit):
 	  un.SetTarget(target_unit)
         ship_nr=ship_nr+1
         un=VS.getUnit(ship_nr)
-    
+
+def getMinDistFrom(sig1):
+    sig2=getPlanet (0,0)
+    mindist=100000000000000000000000000000000000000000000.0
+    i=0
+    while (sig2):
+      tempdist = sig1.getSignificantDistance(sig2)
+      if (tempdist<mindist and tempdist>0.0):
+          mindist=tempdist
+      i+=1
+      sig2 = getPlanet (i,0)
+    return mindist
+
+def minimumSigDistApart():
+    sig1=getPlanet (0,0)
+    i=0
+    mindist=100000000000000000000000000000000000000000000.0
+    ave=0.0
+    while (sig1):
+      tempdist = getMinDistFrom (sig1)
+      if (ave<0.9):
+        mindist = tempdist
+      else:
+        mindist += tempdist
+      ave+=1.0
+      i+=1
+      sig1 = getPlanet (i,0)
+    if (ave!=0.0):
+      mindist = mindist/ave
+    return mindist
   
 def getUnitByName (name):
     ship_nr=0

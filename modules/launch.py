@@ -25,9 +25,9 @@ def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo=''):
   return ret
 
 def launch_waves_around_area(fgname,faction,type,ai,nr_ships,nr_waves,r1,r2,pos,logo=''):
-  pos=((pos[0]+random.randrange(r1,r2,1,float)*random.randrange(-1,2,2)),
-       (pos[1]+random.randrange(r1,r2,1,float)*random.randrange(-1,2,2)),
-       (pos[2]+random.randrange(r1,r2,1,float)*random.randrange(-1,2,2)))
+  pos=((pos[0]+random.uniform(r1,r2)*random.randrange(-1,2,2)),
+       (pos[1]+random.uniform(r1,r2)*random.randrange(-1,2,2)),
+       (pos[2]+random.uniform(r1,r2)*random.randrange(-1,2,2)))
   VS.playAnimation ("warp.ani",pos,300.0)
   return launch(fgname,faction,type,ai,nr_ships,nr_waves,pos,logo)
 
@@ -47,9 +47,9 @@ def launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves,
 launch_around_unit=launch_around_station
 
 def launch_waves_in_area(fgname,faction,type,ai,nr_ships,nr_waves,radius,pos,logo=''):
-  pos=(pos[0]+random.randrange((0.0-radius)/2,radius/2.0,1,float),
-       pos[1]+random.randrange((0.0-radius)/2,radius/2.0,1,float),
-       pos[2]+random.randrange((0.0-radius)/2,radius/2.0,1,float))
+  pos=(pos[0]+random.uniform((-radius)/2,radius/2.0),
+       pos[1]+random.uniform((-radius)/2,radius/2.0),
+       pos[2]+random.uniform((-radius)/2,radius/2.0))
   VS.playAnimation ("warp.ani",pos,300.0)
   un = launch(fgname,faction,type,ai,nr_ships,nr_waves,pos,logo)
 

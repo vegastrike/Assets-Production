@@ -82,7 +82,8 @@ class bounty (Director.Mission):
 	      if (self.you.getSignificantDistance(significant)<10000.0):
 		if (self.newship==""):
 		  self.newship=faction_ships.getRandomFighter(self.faction)
-		self.enemy=launch.launch_wave_around_unit("Base",self.faction,self.newship,"default",1+self.difficulty,3000.0,4000.0,significant)
+		self.enemy=launch.launch_wave_around_unit("Shadow",self.faction,self.newship,"default",1+self.difficulty,3000.0,4000.0,significant)
+		self.obj=VS.addObjective("Destroy the Shadow %s ship." % (self.enemy.getName ()))
 		if (self.enemy):
 		  if (self.runaway):
 		    self.enemy.SetTarget(significant) #CHANGE TO SetTarget ==>NOT setTarget<==

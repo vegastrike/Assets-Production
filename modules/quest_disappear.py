@@ -20,17 +20,15 @@ class quest_disappear (quest.quest):
                 self.drone.SetTarget(playa)
                 pos=self.drone.Position()
                 size=10*self.drone.rSize()
-                if (size<1000):
-                    size=1000
                 VS.playAnimation("explosion_wave.ani",pos,size)
                 VS.musicPlaySong('../music/galacticbattle.mp3')
 
     #not currently used
     def setDroneNear (self,playa):
         vec = playa.Position()
-        vec = Vector.Add (vec,(random.randrange(-1000,1000),
-                               random.randrange(-1000,1000),
-                               random.randrange(-1000,1000)))
+        vec = Vector.Add (vec,(random.uniform(-1000,1000),
+                               random.uniform(-1000,1000),
+                               random.uniform(-1000,1000)))
         if (not self.drone.isNull()):
             self.drone.SetCurPosition(vec)
             self.drone.SetTarget(playa)
@@ -51,11 +49,13 @@ class quest_disappear (quest.quest):
     def killUnit (self,un):
         pos=un.Position()
         size=4*un.rSize()
+        if (size<1000):
+            size=1000
         print "kill"
         print un.getName()
         un.Kill()
         VS.playAnimation("explosion_wave.ani",pos,size)
-
+        VS.playSound("cloak.wav",pos,(1,0,0))
     def DestroyUnit (self):
         playa = VS.getPlayer()
         if (not playa.isNull()):

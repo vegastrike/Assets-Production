@@ -23,9 +23,9 @@ class quest_drone (quest.quest):
             self.drone=VS.Unit()
     def setDroneNear (self,playa):
         vec = playa.Position()
-        vec = Vector.Add (vec,(random.randrange(-1000,1000),
-                               random.randrange(-1000,1000),
-                               random.randrange(-1000,1000)))
+        vec = Vector.Add (vec,(random.uniform(-1000,1000),
+                               random.uniform(-1000,1000),
+                               random.uniform(-1000,1000)))
         self.drone.SetCurPosition(vec)
         self.drone.SetTarget(playa)
     def Execute (self):

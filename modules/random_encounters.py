@@ -35,35 +35,6 @@ class random_encounters:
     self.cur_player=0
   def AddPlayer (self):
     self.players+=[random_encounters.playerdata(self.sig_distance,self.det_distance)]
-  def getMinDistFrom(self,sig1):
-    sig2=unit.getPlanet (0,0)
-    mindist=100000000000000000000000000000000000000000000.0
-    i=0
-    while (sig2):
-      tempdist = sig1.getSignificantDistance(sig2)
-      if (tempdist<mindist and tempdist>0.0):
-          mindist=tempdist
-      i+=1
-      sig2 = unit.getPlanet (i,0)
-    return mindist
-
-  def minimumSigDistApart(self):
-    sig1=unit.getPlanet (0,0)
-    i=0
-    mindist=100000000000000000000000000000000000000000000.0
-    ave=0.0
-    while (sig1):
-      tempdist = self.getMinDistFrom (sig1)
-      if (ave<0.9):
-        mindist = tempdist
-      else:
-        mindist += tempdist
-      ave+=1.0
-      i+=1
-      sig1 = unit.getPlanet (i,0)
-    if (ave!=0.0):
-      mindist = mindist/ave
-    return mindist
   def NewSystemHousekeeping(self,oldsystem,newsystem):
     news.newNews()
     newquest = adventure.newAdventure (self.cur_player,oldsystem,newsystem)
@@ -77,7 +48,7 @@ class random_encounters:
     if (qdf):
       self.cur.quests+=[qdf]
   def CalculateSignificantDistance(self):
-    minsig =  self.minimumSigDistApart()
+    minsig =  unit.minimumSigDistApart()
     if (self.sig_distance>minsig*0.15):
       self.cur.significant_distance=minsig*0.15
     else:
