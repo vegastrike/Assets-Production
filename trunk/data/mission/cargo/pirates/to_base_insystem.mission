@@ -6,7 +6,7 @@
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="system" value="enigma_sector/blake" />
-		<var name="mission_name" value="Cargo Mission" />
+		<var name="mission_name" value="Cargo Mission -- Contraband" />
 		<var name="description" value="A pirate on a base nearby needs a resupply of his goods. You will have to avoid patrols on the way and deliver this to him. Failure will result in death; however the pay is good: 1650." />
 	</variables>
         <flightgroups>

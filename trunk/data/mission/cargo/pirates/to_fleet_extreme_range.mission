@@ -6,7 +6,7 @@
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="system" value="enigma_sector/blake" />
-		<var name="mission_name" value="Fleet Cargo Delivery" />
+		<var name="mission_name" value="Contraband Cargo Delivery" />
 		<var name="description" value="A remote pirate group needs your help to deliver them some cargo of the illegal type.  We will pay you over 2000 a system for this run.  Pirates don't smoke each others weed, so make sure you get it all to the location in one piece, comprehend? "/>
 	</variables>
         <flightgroups>
