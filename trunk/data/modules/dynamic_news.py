@@ -5,6 +5,15 @@ import dynamic_news_content
 
 # Here are functions that retrieve and format the news from the dictionary
 # returned by the dynamic_news_content.allNews() function
+#
+#	- type_event is a string of the event type (siege, fleetbattle)
+#	- stage_event is a string of the event's stage ("start", "middle", "end")
+#	- aggressor is a string of the aggressor faction (ie "confed","rlaan")
+#	- defender "   "    "    "   "  defender faction
+#	- success is an int, how much success the attacker is having (success = 1, loss = -1, draw = 0)
+#	- scale_event is a float, the "importance" of the event (0.0 is highest, 1.0 is lowest)
+#	- system is the system string where the event happened (ie "sol_sector/sol")
+#	- keyword is not really important right now, but will allow us to call up specific news stories in the future.. #	  for example we may write a special story for a siege of planet earth....just use "all" for now
 
 
 
@@ -48,18 +57,6 @@ def splitPunWord(word):
 		return [pre_pun,middle,end_pun,end_alpha]
 	else:
 		return [pre_pun,word_2,"",""]
-
-#	for i in range(len(word)):
-#		if word[i] == "_" or word[i] not in string.punctuation:
-#			middle+=word[i]
-#	wordsplit+= [middle]
-#	end = word[len(wordsplit[0])+len(wordsplit[1]):]
-#	end_pun = ""
-#	for i in range(len(end)):
-#		if end[i] in string.punctuation:
-#			end_pun+= [word[i]]
-#	end_alpha = end[len(end_pun)]
-#	return wordsplit
 
 def formatNewsItem(item):
 # returns the formatted news item built from the relevant data
@@ -187,7 +184,7 @@ def getPOV(facmy,defender,aggressor,success):
 
 def getDockFaction():
 # returns the faction of the place the player is docked at
-#	return "aera" # FIXME -- actually return a useful value!
+#	return "aera" # FIXME -- make the stub functions actually return a useful value!
 	i=0
 	playa=VS.GetPlayer()
 	un=VS.GetUnit(i)
@@ -205,9 +202,9 @@ def getSuccessStr(success):
 # returns a string either "success" or "loss" based on the arg success
 	if success == 1:
 		return "success"
-	elif success == 0:
-		return "loss"
 	elif success == -1:
+		return "loss"
+	elif success == 0:
 		return "draw"
 
 def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword):
@@ -217,14 +214,14 @@ def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword):
 
 def getClosestScaleNews(listof,scale):
 # returns the closest scaled news item from a list of news items
-	relscalelist = []
+	valtable = []
 	for i in range (len(listof)):
-		relscalelist.append(listof[i] + (abs(scale - listof[i][0]),))
-	final_list = [relscalelist[0]]
-	for i in range (len(relscalelist)):
-		if relscalelist[i][3] < final_list[0][0]:
-			final_list = [relscalelist[i]]
-		elif relscalelist[i][3] == final_list[0][0]:
-			final_list = final_list.append(relscalelist[i])
-	return final_list[vsrandom.randrange(0,len(final_list), step=1)][2]
+		valtable.append(listof[i] + (abs(scale - listof[i][0]),))
+	finallist = [valtable[0]]
+	for i in range (1,len(valtable)):
+		if finallist[0][3] > valtable[i][3]:
+			finallist = [valtable[i]]
+		elif finallist[len(finallist) - 1][3] == valtable[i][3]:
+			finallist.append(valtable[i])
+	return finallist[vsrandom.randrange(0,len(finallist), step=1)][2]
 
