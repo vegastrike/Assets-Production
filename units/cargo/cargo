@@ -25,5 +25,6 @@
 	<Energy>
 		<Reactor recharge="10" limit="140"/>
 	</Energy>
-
+	<Hold volume="1000">
+	</Hold>
 </Unit>
