@@ -3,9 +3,8 @@
       <var name="defaultplayer" value="blue"/>
       <var name="mission_name" value="Director Test" />
       <var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-      <var name="system" value="solar-system.xml" />
+      <var name="system" value="blank" />
       <var name="description" value="4vs4.txt" />
-	<var name="terrain" value="terrain2.xml" />
    </variables>
         <flightgroups>
             <flightgroup name="green" faction="confed" type="rapier" ainame="default" waves="2" nr_ships="6">
