@@ -19,8 +19,8 @@
 	</Sound>
 
 
-        <Mount weapon="ParticleBeam" size="heavy capship-light autotracking" x="-29.815" y="-6.919" z="30.409"/>
-        <Mount weapon="ParticleBeam" size="heavy capship-light autotracking" x="29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="ParticleBeam" size="special heavy capship-light autotracking" x="-29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="ParticleBeam" size="special heavy capship-light autotracking" x="29.815" y="-6.919" z="30.409"/>
 	<Mount weapon="Penetrator" size="capship-light capship-medium" x="-4.0" y="-4.618" z="19.606" />
 <!--	<Mount weapon="Penetrator" size="capship-light capship-medium" x="4.0" y="-4.618" z="19.606" />
 	<Mount weapon="Penetrator" size="special capship-light capship-medium" x="0.0" y="-4.618" z="19.606" volume="2000" />
@@ -33,8 +33,8 @@
 	<Mount weapon="Mace" size="medium-missile heavy-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
 	<Mount weapon="Torpedo" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="800"/>
 	<Mount weapon="Torpedo" size="heavy-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="800"/>
-	<Mount weapon="Hail" size="special special-missile" x="-10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
-        <Mount weapon="Hail" size="special special-missile" x="10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
+	<Mount weapon="Hail" size="special-missile" x="-10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
+        <Mount weapon="Hail" size="special-missile" x="10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
 	
 	<Stats mass="1096.941" momentofinertia="1096.941" fuel="170000000">
 	</Stats>

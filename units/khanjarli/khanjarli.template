@@ -21,13 +21,15 @@
 	</Mount>
 	<Mount weapon = "plasma" size = "light medium heavy autotracking" x = "4" y = "1" z = "6"  >
 	</Mount>
-	<Mount weapon = "torpedoe" size = "special Light-missile medium-missile heavy-missile" x = "-2.85" y = "-2" z = "-1" ammo = "6"  >
+	<Mount weapon = "Tractor" size = "special autotracking" x = "4" y = "1" z = "6"  >
 	</Mount>
-	<Mount weapon = "torpedoe" size = "special Light-missile medium-missile heavy-missile" x = "2.85" y = "-2" z = "-1" ammo = "6"  >
+	<Mount weapon = "torpedo" size = "Light-missile medium-missile heavy-missile" x = "-2.85" y = "-2" z = "-1" ammo = "6"  >
 	</Mount>
-	<Mount weapon = "torpedoe" size = "Light-missile medium-missile heavy-missile special" x = "5.5" y = "-3" z = "-3" ammo = "6"  >
+	<Mount weapon = "torpedo" size = "Light-missile medium-missile heavy-missile" x = "2.85" y = "-2" z = "-1" ammo = "6"  >
 	</Mount>
-	<Mount weapon = "torpedoe" size = "Light-missile medium-missile heavy-missile special" x = "-5.5" y = "-3" z = "-3" ammo = "6"  >
+	<Mount weapon = "torpedo" size = "Light-missile medium-missile heavy-missile " x = "5.5" y = "-3" z = "-3" ammo = "6"  >
+	</Mount>
+	<Mount weapon = "torpedo" size = "Light-missile medium-missile heavy-missile " x = "-5.5" y = "-3" z = "-3" ammo = "6"  >
 	</Mount>
 	<Subunit file = "medium_blank" x = "0" y = "0" z = "-19" ri = "0" rj = "1" rk = "0" qi = "0" qj = "0" qk = "-1"  >
 	</Subunit>

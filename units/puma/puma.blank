@@ -29,9 +29,11 @@
 	</Mount>
 	<Mount weapon = "" size = "Light Medium Heavy" x = "-3.000000" y = "0.000000" z = "0.000000"  >
 	</Mount>
-	<Mount weapon = "" size = "Light-Missile Special" x = "0.300000" y = "-0.100000" z = "0.000000" ammo = "1" volume = "91"  >
+	<Mount weapon = "" size = "Special" x = "0.300000" y = "-0.100000" z = "0.000000" >
 	</Mount>
-	<Mount weapon = "" size = "Light-Missile Special" x = "-0.300000" y = "-0.100000" z = "0.000000" ammo = "1" volume = "91"  >
+	<Mount weapon = "" size = "Light-Missile" x = "0.300000" y = "-0.100000" z = "0.000000" ammo = "1" volume = "91"  >
+	</Mount>
+	<Mount weapon = "" size = "Light-Missile" x = "-0.300000" y = "-0.100000" z = "0.000000" ammo = "1" volume = "91"  >
 	</Mount>
 	<Mount weapon = "" size = "Special-Missile Medium-Missile Heavy-Missile" x = "-0.300000" y = "-0.100000" z = "0.000000" ammo = "80" volume = "800"  >
 	</Mount>

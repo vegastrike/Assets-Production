@@ -3,9 +3,9 @@
 	</cockpit>
 	<Meshfile file = "nova.xmesh"  >
 	</Meshfile>
-	<Mount weapon = "Laser" size = "Light" x = "1.000000" y = "0.000000" z = "4.000000"  >
+	<Mount weapon = "Laser" size = "Light Special" x = "1.000000" y = "0.000000" z = "4.000000"  >
 	</Mount>
-	<Mount weapon = "Laser" size = "Light" x = "-1.000000" y = "0.000000" z = "4.000000"  >
+	<Mount weapon = "Laser" size = "Light Special" x = "-1.000000" y = "0.000000" z = "4.000000"  >
 	</Mount>
 	<Mount weapon = "Meson" size = "Light Medium" x = "4.000000" y = "0.000000" z = "4.500000"  >
 	</Mount>

@@ -7,6 +7,8 @@
 	</Mount>
 	<Mount weapon = "plasma" size = "light medium heavy" x = "4" y = "1" z = "6"  >
 	</Mount>
+	<Mount weapon = "Tractor" size = "special autotracking" x = "4" y = "1" z = "6"  >
+	</Mount>
 	<Mount weapon = "dumbfire" size = "special light-missile" x = "-2.85" y = "-2" z = "-1" ammo = "6" volume = "901"  >
 	</Mount>
 	<Mount weapon = "dumbfire" size = "special Light-missile" x = "2.85" y = "-2" z = "-1" ammo = "6" volume = "901"  >

@@ -21,6 +21,8 @@
 	</Mount>
 	<Mount weapon = "Plasma" size = "Light Medium Heavy" x = "-2.15" y = "-1.1" z = "2.5"  >
 	</Mount>
+	<Mount weapon = "Tractor" size = "Special Autotracking" x = "0" y = "-.5" z = "2.5"  >
+	</Mount>
 	<Mount weapon = "ImageRecognition" size = "medium-missile" x = "6.5" y = "-2" z = "1" ammo = "6"  >
 	</Mount>
 	<Mount weapon = "ImageRecognition" size = "medium-missile" x = "6.5" y = "-2" z = "1" ammo = "6"  >

@@ -23,9 +23,9 @@
 	</Sound>
 	<Mount weapon = "" size = "Special Light Medium Heavy" x = "2.80800" y = "0.15400" z = "19.98000"  >
 	</Mount>
-	<Mount weapon = "" size = "Light" x = "3.76500" y = "0.15400" z = "19.31000"  >
+	<Mount weapon = "" size = "Light Special" x = "3.76500" y = "0.15400" z = "19.31000"  >
 	</Mount>
-	<Mount weapon = "" size = "Special special-missile" x = "-12" y = "0" z = "6.5" ammo = "80" volume = "801"  >
+	<Mount weapon = "" size = "special-missile" x = "-12" y = "0" z = "6.5" ammo = "80" volume = "801"  >
 	</Mount>
 	<Mount weapon = "" size = "light-missile" x = "-12" y = "0" z = "6.5" ammo = "6" volume = "361"  >
 	</Mount>
