@@ -22,7 +22,7 @@
 	<python>
 import defend
 import vsrandom
-newmission = defend.initrandom ('confed', 0, 4, 10, 4200, 1,0,'ISO','iso_mission4')
+newmission = defend.initrandom ('confed', 0, 4, 10, 4200, 1,0,'ISO',(),'iso_mission4')
 newmission=0
 
 </python>
