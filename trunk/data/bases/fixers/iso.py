@@ -34,11 +34,13 @@ else:
 		type = faction_ships.getRandomFighter ("ISO")
 		launch.launch_wave_around_unit (fgname,"ISO",type,"default",1,80,300,playa).SetTarget(playa)
 		launch.launch_wave_around_unit (fgname,"ISO",type,"default",1,80,300,playa).SetTarget(playa)
-		launch.launch_wave_around_unit (fgname,"ISO",type,"default",1,80,300,playa).SetTarget(playa)
 	elif (fixers.checkSaveValue (playernum,"iso_mission2",-1) or fixers.checkSaveValue (playernum,"iso_mission3",-1) or fixers.checkSaveValue (playernum,"iso_mission4",-1)):
 		Base.Message ("You have failed the ISO.  I should have known not to entrust a self serving mercenary with the key plans of our organization. Go now... make money for yourself--I know you do not care for the peoples future.")
 	else:
-		if (fixers.checkSaveValue (playernum,"iso_mission1",1) and fixers.checkSaveValue(playernum,"iso_mission2",0)):			
+		if (fixers.checkSaveValue (playernum,"iso_mission1",1) and fixers.checkSaveValue(playernum,"iso_mission2",0)):
+			if (fixers.checkSaveValue (playernum,"iso_mission1_paid",0)):
+				playa.addCredits(18000)
+				fixers.setSaveValue(playernum,"iso_mission1_paid",1)
 			Base.Message ("Thank you for your help in defending our starship.  We had no idea that confed was on to us there.  I do believe it is not safe so far away from the defiance sector.  We have a starship in urgent need of escort.  It is a small, speedy merchant vessel that hopefully will slip past confeds defenses.  We have programmed its flight computer to follow you through jump points and to autopilot to your destination when you press the 'a' key.  Its final destination is the Adams sector; however, be wary that such a small ship will have trouble navigating throug the black hole in Enigma sector, so I have suggested an alternate route that will take you trhough a few backwater systems to adams.  Will you assist us?")#assign mis 2
 			AssignMission()
 		elif (fixers.checkSaveValue (playernum,"iso_mission2",1) and fixers.checkSaveValue(playernum,"iso_mission3",0)):			
