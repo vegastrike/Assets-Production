@@ -3,19 +3,43 @@ module unit {
 
   float lasttime;
 
+  void setTargetShip(object which_fgid,object target_fgid){
+    int ship_nr=0;
+    object unit=_unit.getUnit(ship_nr);
+    object target_unit=unit.getUnitByFgID(target_fgid);
+    object check_fgid=_unit.getFgID(target_unit);
+
+    _io.printf("target check fgid: %s\n",check_fgid);
+    
+    while((!_std.isNull(unit))){
+      object unit_fgid=_unit.getFgID(unit);
+      _io.printf("matching %s with %s\n",unit_fgid,which_fgid);
+      if(_string.begins(unit_fgid,which_fgid)){
+	_io.printf("setTarget found match: %s %s\n",unit_fgid,target_fgid);
+
+	_unit.setTarget(unit,target_unit);
+      }
+      ship_nr=ship_nr+1;
+      unit=_unit.getUnit(ship_nr);
+    }
+  };
+
+
   void removeFg(object which_fgid){
     int ship_nr=0;
     object unit=_unit.getUnit(ship_nr);
 
     while((!_std.isNull(unit))){
       object unit_fgid=_unit.getFgID(unit);
-      //_io.printf("matching %s with %s\n",unit_fgid,patrol_fgid);
+      _io.printf("removeFg: matching %s with %s\n",unit_fgid,which_fgid);
       if(_string.begins(unit_fgid,which_fgid)){
 	_io.printf("removeFg: found match: %s %s\n",unit_fgid,which_fgid);
 
 	_unit.removeFromGame(unit);
       }
-      ship_nr=ship_nr+1;
+      else{
+	ship_nr=ship_nr+1;
+      }
       unit=_unit.getUnit(ship_nr);
     }
  

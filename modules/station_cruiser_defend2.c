@@ -5,7 +5,9 @@ module station_cruiser_defend2 {
   import ai_flyto_waypoint;
   import waypoints1;
   import order;
- 
+  import ai_superiority;
+  import ai_patrol;
+
   float gametime;
   bool did_it;
   object outstr;
@@ -17,6 +19,7 @@ module station_cruiser_defend2 {
   bool flag_distress_call;
   bool flag_jumppoint_reached;
   bool flag_enemy_attack;
+  bool flag_ship_return;
 
   void initgame(){
     gametime=_std.getGameTime();
@@ -25,6 +28,7 @@ module station_cruiser_defend2 {
     order.flyToOtherShip("gold-0","silver-0",0.5,false,1000.0);
     order.patrolFg(0,"green-","-nothing-",1000.0);
     order.patrolFg(1,"yellow-","gold-0",300.0);
+
 
     _io.message("confed","confed","It's another nice day lad");
     _io.message("confed","confed","nothing to worry about");
@@ -39,6 +43,7 @@ module station_cruiser_defend2 {
     flag_distress_call=true;
     flag_jumppoint_reached=true;
     flag_enemy_attack=true;
+    flag_ship_return=true;
 
     launchpos=vec3.new(10000.0,0.0,7000.0);
     enemy_launchpos=vec3.new(10000.0,0.0-2000.0,7000.0);
@@ -67,9 +72,9 @@ module station_cruiser_defend2 {
     }
 
     if(flag_jumppoint_reached && newtime>30.0){
-      //unit.removeFg("red-");
-      //unit.removeFg("brown-");
-      //unit.removeFg("yellow-");
+      unit.removeFg("red-");
+      unit.removeFg("brown-");
+      unit.removeFg("yellow-");
 
       _io.message("confed","confed","red,brown and yellow have jumped");
 
@@ -79,13 +84,38 @@ module station_cruiser_defend2 {
       launch.launch_wave_in_area("alpha","aera","aeon","_ai_stationary",4,200.0,enemy_launchpos);
       launch.launch_wave_in_area("beta","aera","aevant","_ai_stationary",4,200.0,enemy_launchpos);
 
-      // da fehlt noch was
+      order.spaceSuperiority("alpha-");
+      order.spaceSuperiority("beta-");
+
+      unit.setTargetShip("alpha-","gold-0");
+      unit.setTargetShip("beta-","mars-station");
 
       _io.message("confed","confed","Alert! Aera ships have jumped in");
       _io.message("confed","confed","Defend our Installations");
       _io.message("aera","all","Die, you earthling scum!");
 
+      order.spaceSuperiority("green-");
+      unit.setTargetShip("green-","beta-0");
+
       flag_enemy_attack=false;
+    }
+    if(flag_ship_return && newtime>60.0){
+      launch.launch_wave_in_area("yellow","confed","tian","_ai_stationary",4,200.0,jumppoint);
+      launch.launch_wave_in_area("red","confed","firefly","_ai_stationary",4,200.0,jumppoint);
+      launch.launch_wave_in_area("brown","confed","tian","_ai_stationary",4,200.0,jumppoint);
+
+      order.spaceSuperiority("yellow-");
+      order.spaceSuperiority("brown-");
+      order.spaceSuperiority("red-");
+
+      unit.setTargetShip("yellow-","alpha-0");
+      unit.setTargetShip("red-","alpha-0");
+      unit.setTargetShip("brown-","beta-0");
+
+      _io.message("confed","confed","our ships are returning from Pluto!");
+      _io.message("confed","confed","it was a fake distress call");
+
+      flag_ship_return=false;
     }
   };
 
