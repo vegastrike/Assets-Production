@@ -21,9 +21,9 @@ module gauntlet {
       object player = _unit.getPlayer();
       if (!_std.isNull(player)) {
 	object faction = _unit.getFaction(player);
-	_unit.scanSystem(player);
-	object badunit= _unit.scannerNearestEnemy(player);//faster
-	//object badunit= unit.obsolete_getNearestEnemy(player,50000.0);
+	//_unit.scanSystem(player);
+	//object badunit= _unit.scannerNearestEnemy(player);//faster
+	object badunit= unit.obsolete_getNearestEnemy(player,50000.0);
 // I'll improve this -alex
 	if (_std.isNull(badunit)) {
 	  nvn.reset_loop (numfriend,numenemy);
