@@ -19,7 +19,13 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
         </flightgroups>
-	<module name="director">
+	<python>
+import bounty
+newmission = bounty.bounty (1, 4, 20694, 0, 3, 'retro')
+newmission=0
+
+</python>
+	<madule name="director">
 		<import name="bounty"/>
 		<script name="initgame">
 			<exec module="bounty" name="init">
