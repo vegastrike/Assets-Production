@@ -215,4 +215,5 @@
 		</Category>
 	</Hold>
 	<Upgrade file="standard_missions"/>
+	<Upgrade file="confed_missions"/>
 </Unit>
