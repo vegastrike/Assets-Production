@@ -1,6 +1,6 @@
 Name: vegastrike-data
 Summary: Vegastrike - a free 3D space fight simulator (data files)
-Version: 0.2.9.3CVS
+Version: 0.2.9.4
 Release: 2
 Copyright: GPL
 Group: X11/GL/Games
@@ -14,8 +14,7 @@ Provides: vegastrike-data
 %description
 Vega Strike Celeste - Trade, Fight and Explore the Universe
 
-Vegastrike is a free 3D Space Fight Simulator/RPG under the GPL
-
+Vega Strike is a 3d OpenGL GPL Action RPG space sim for Windows/Linux that allows a player to trade and bounty hunt in the spirit of Elite. You start in an old beat up Wayfarer cargo ship, with endless possibility before you and just enough cash to scrape together a life. Yet danger lurks in the space beyond.
 
 this archive contains the data files necessary to play Vegastrike.
 
