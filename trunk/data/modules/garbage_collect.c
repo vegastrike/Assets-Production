@@ -14,7 +14,7 @@ module garbage_collect {
     }else {
       object player_unit=_unit.getPlayer();
       if (!std.isNull(player_unit)) {
-	if (_unit.getDistance(un,player_unit)>invalid_distance&&!random_encounters.isSignificant(un)) {
+	if (_unit.getDistance(un,player_unit)>invalid_distance&&(!_unit.isSignificant(un))&&(!_unit.isSun(un))) {
 	  last_ship=last_ship-1;
 	  _unit.removeFromGame(un);
 	}	  

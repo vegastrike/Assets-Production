@@ -11,7 +11,9 @@ module random_encounters {
   float capship_prob;//probability a capship will be there
   int curmode;//are we in battle mode (true) or cruise mode (false)
   int lastmode;//were we in battle mode (true) or cruise mode(false)
+  object sig_container;
   void init(float sigdis, float detectiondis, float gendis, int minnships, int gennships, float capprob){
+    _std.setNull(sig_container);
     faction_ships.init();
     detection_distance = detectiondis;
     significant_distance = sigdis;
@@ -48,9 +50,10 @@ module random_encounters {
     object un = _unit.getUnit (count);
     while (!(_std.isNull(un))) {
       if (_unit.getDistance(unit,un)<detection_distance) {
-	if (!unit.isSignificant(un)) {
+	if ((!_unit.isSignificant(un))&&(!_unit.isSun(un))) {
 	  object name = _unit.getFgName (un);
-	  _io.printf ("unit not sig %d %s",num_ships,name);
+	  object testname2 = _unit.getName(un);
+	  _io.printf ("unit not sig %d %s %s\n",num_ships,name,testname2);
 	  num_ships=num_ships+1;
 	  if (num_ships>=n){
 	    return true;
@@ -70,9 +73,11 @@ module random_encounters {
     object un = _unit.getUnit (count);
     while (!(_std.isNull(un))) {
       if (_unit.getDistance(unit,un)<detection_distance) {
-	if (!unit.isSignificant(un)) {
+	if ((!_unit.isSignificant(un))&&(!_unit.isSun(un))) {
 	  object name = _unit.getFgName (un);
-	  //	  _io.printf ("unit not sig %d %s",num_ships,name);
+	  object testname2 = _unit.getName(un);
+	  float blah = _unit.getDistance(unit,un);
+	  _io.printf ("unit not sig %d %f %s %s\n",num_ships,blah,name,testname2);
 	  num_ships=num_ships+1;
 	}
       }
@@ -81,42 +86,77 @@ module random_encounters {
     }
     return num_ships>=n;
   };
- 
+  void SetModeZero() {
+    last_ship=0;
+    curmode=0;
+    if (!_std.isNull(sig_container)) {
+      _unit.deleteContainer (sig_container);
+      _std.setNull(sig_container);
+    }
+  };
+  void SetModeOne (object significant) {
+    SetModeZero();
+    curmode=1;
+    sig_container = _unit.getContainer (significant);
+  };
+  object HaveWeSignificant () {
+    if (_std.isNull (sig_container)) {
+      return sig_container;
+    }
+    object significant_unit=_unit.getUnitFromContainer (sig_container);
+    if (_std.isNull(significant_unit)) {
+      _unit.deleteContainer (sig_container);
+      _std.setNull(sig_container);
+    }
+    return significant_unit;
+  };
   object decideMode() {
-    object un= _unit.getUnit (last_ship);
-    if (_std.isNull (un)) {
-      curmode=0;
-      last_ship=0;
-    }else {
-      object player_unit=_unit.getPlayer();
-      if (!_std.isNull(player_unit)) {
-	if ((_unit.getDistance(un,player_unit)<significant_distance)&&(unit.isSignificant(un))) {
-	  //	  _io.printf ("playerwithin obj");
-	  curmode=1;
-	  last_ship=0;
+    object player_unit=_unit.getPlayer();
+    if (_std.isNull(player_unit)) {
+      SetModeZero();
+      return player_unit;
+    }
+    
+    object significant_unit = HaveWeSignificant();
+    if (_std.isNull(significant_unit)) {
+      object un= _unit.getUnit (last_ship);
+      if (_std.isNull (un)) {
+	SetModeZero();
+      }else {
+	if ((_unit.getDistance(un,player_unit)<significant_distance)&&(_unit.isSignificant(un))) {
+      	  _io.printf ("playerwithin obj");
+	  SetModeOne (un);
 	  return un;
 	}	  
+	last_ship=last_ship+1;
       }
-      last_ship=last_ship+1;
+      _std.setNull(un);
+      return un;
+    } else {
+      //significant_unit is somethign.... lets see what it is
+      if (_unit.getDistance (significant_unit,player_unit)>detection_distance) {
+	SetModeZero ();
+	return sig_container;
+      } else {
+	return significant_unit;
+      }
     }
-    _std.setNull(un);
-    return un;
   };
   void loop() {
     //    _io.printf ("loop");
     object un = decideMode ();
     if (curmode!=lastmode) {
-      //      _io.printf ("curmodechange %d %d",curmode,lastmode);
+      _io.printf ("curmodechange %d %d",curmode,lastmode);
       lastmode=curmode;//processed this event; don't process again if in critical zone
       if (!_std.isNull(un)) {
 	if (!atLeastNInsignificantUnitsNear (un,min_num_ships)) {
 	  //determine whether to launch more ships next to significant thing based on ships in that range  
-	  //	  _io.printf ("launch near");
+      	  _io.printf ("launch near");
 	  launch_near (un);
 	} 
-	//	_io.printf ("found done");
+       	_io.printf ("found done");
       }
-      //      _io.printf ("mode change done");
+      _io.printf ("mode change done");
     }
     //    _io.printf ("loopdone");
   };
