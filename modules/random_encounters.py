@@ -5,11 +5,8 @@ import launch
 import VS
 import unit
 import sys
-print "before_initin"
 import adventure
-print "after_initin"
 import news
-print "after_news"
 class random_encounters:
   class playerdata:  
     def __init__(self,sig_distance,det_distance):
@@ -41,9 +38,9 @@ class random_encounters:
     self.cur_player=0
     print "end random enc"
   def AddPlayer (self):
-    print "begin add player"
+#    print "begin add player"
     self.players+=[random_encounters.playerdata(self.sig_distance,self.det_distance)]
-    print "add player"
+#    print "add player"
   def NewSystemHousekeeping(self,oldsystem,newsystem):
     news.newNews()
     newquest = adventure.newAdventure (self.cur_player,oldsystem,newsystem)
