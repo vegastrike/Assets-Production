@@ -1,26 +1,26 @@
 <Unit>
 	<Meshfile file="heatseek.xmesh"/>
 	<BspMesh RAPID="0"/>
-	<Light file="supernova.bmp" x="0" y="0" z="-2.00000023841858" size= ".6"/>
+	<Light file="supernova.bmp" x="0" y="0" z="-2.30000023841858" size= ".8"/>
 
 <Thrust> 
-	<Engine Afterburner="300"
-		  Forward="200"
-		  Retro="100"
-		  Left="100"
-		  Right="100"
-		  Top="100"
-		  Bottom="100"/>
-			<Maneuver yaw="64.200050" pitch="69.600151" roll="64.200050"/>
+	<Engine Afterburner="25"
+		  Forward="20"
+		  Retro="19"
+		  Left="11"
+		  Right="11"
+		  Top="11"
+		  Bottom="11"/>
+			<Maneuver yaw="54.200050" pitch="59.600151" roll="54.200050"/>
 
 </Thrust>
 <Sound></Sound>
 <Defense>
 	<Hull strength="5"/>
 </Defense>
-<Stats mass="0.12" momentofinertia="0.1" fuel="2000000000000"></Stats>
+<Stats mass="0.12" momentofinertia="0.1" fuel="2000"></Stats>
 
-<Computer yaw="40" pitch="40" roll="40" afterburner="540" maxspeed="320"/>
+<Computer yaw="18" pitch="18" roll="18" afterburner="340" maxspeed="290"/>
 <Energy>
 	<Reactor recharge="10"
 		   limit="100"/>

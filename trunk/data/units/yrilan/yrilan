@@ -1,14 +1,9 @@
 <Unit>
 	<Meshfile file="yrilan.xmesh" />
-	<Mount weapon="Fussiom" mountsize="heavy" x="-1.400000" y="-1.400000" z="6.400000"/>
-	<Mount weapon="Fussion" mountsize="heavy" x="1.400000" y="-1.400000" z="6.400000"/>
-	<Mount weapon="LR_Beam" mountsize="heavy" x="-0.700000" y="-1.400000" z="5.500000"/>
-	<Mount weapon="LR_Beam" mountsize="heavy" x="0.700000" y="-1.400000" z="5.500000"/>
-	<Mount weapon="torpedo" size="Medium-Missile" x="-5.800000" y="0.000000" z="-2.000000" ammo="16"/>
-	<Mount weapon="torpedo" size="Medium-Missile" x="5.800000" y="0.000000" z="-2.000000" ammo="16"/>
+
 	<Thrust>
-		<Engine Afterburner="93.000031" Forward="32.799988" Retro="29.199989" Left="12.399994" Right="12.399994" Top="16.399994" Bottom="16.399994"/>
-		<Maneuver yaw="15.500000" pitch="15.500000" roll="15.500000"/>
+		<Engine Afterburner="1930.000031" Forward="932.799988" Retro="829.199989" Left="812.399994" Right="812.399994" Top="816.399994" Bottom="816.399994"/>
+		<Maneuver yaw="215.500000" pitch="215.500000" roll="215.500000"/>
 	</Thrust>
 	<Sound>
 	</Sound>
@@ -17,71 +12,78 @@
 		<Shields front="4000.000000" right="3200.000000" left="3200.000000" back="3400.000000" recharge="50.000000"/>
 		<Hull strength="5000.000000"/>
 	</Defense>
-	<Stats mass="570.000000" momentofinertia="427.000000" fuel="20000"></Stats>
+	<Stats mass="570.000000" momentofinertia="427.000000" fuel="900000000"></Stats>
 	<Computer yaw="13.500000" pitch="13.500000" roll="13.500000" afterburner="89.300003" maxspeed="41.599998"/>
 	<Energy>
-		<Reactor recharge="500" limit="11000"/>
+		<Reactor recharge="500" limit="7000"/>
 	</Energy>
 	<Jump delay="1" jumpenergy="6500"/>       
-<Mount weapon="Torpedo" size="Medium-Missile" x="-5.800000" y="0.000000" z="-2.000000" ammo="10"/>
 
-<!-- new elements added -->
-<!--<Light file="supernova.bmp" x="4.500000" y="-0.000000" z="-18.000000" size="3.265019"/>
-<Light file="supernova.bmp" x="-4.500000" y="-0.000000" z="-18.000000" size="3.297020"/>-->
-<Mount weapon="Mace" size="light-capship-missile" x="16.761928" y="-0.011904" z="4.649717" ammo="10"/>
-<Mount weapon="Mace" size="light-capship-missile" x="-16.760555" y="-0.011972" z="11.388722" ammo="10"/>
-<!--<Subunit file="turretheavy" x="0.000000" y="1.550000" z="-12.000000" ri="1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
-<Subunit file="turretheavy" x="-1.200000" y="0.000000" z="-3.000000" ri="0.000000" rj="0.000000" rk="-1.000000" qi="0.780869" qj="0.624695" qk="0.000000"/>
-<Subunit file="turret" x="4.450000" y="0.000000" z="19.550000" ri="0.701334" rj="0.127515" rk="0.701334" qi="0.707107" qj="0.000000" qk="-0.707107"/>
-<Subunit file="turret" x="-4.450000" y="-0.000000" z="19.550000" ri="-0.701334" rj="-0.127515" rk="0.701334" qi="-0.707107" qj="0.000000" qk="-0.707107"/>
-    -->   
+	<Mount weapon="Fussiom" mountsize="heavy" x="-1.400000" y="-1.400000" z="6.400000"/>
+	<Mount weapon="Fussion" mountsize="heavy" x="1.400000" y="-1.400000" z="6.400000"/>
+	<Mount weapon="LR_Beam" mountsize="heavy" x="-0.700000" y="-1.400000" z="5.500000"/>
+	<Mount weapon="LR_Beam" mountsize="heavy" x="0.700000" y="-1.400000" z="5.500000"/>
+	<Mount weapon="Vaporisator" size="Heavy" x="645.450027" y="21.620836" z="100.175053"/>
+	<Mount weapon="Vaporisator" size="Heavy" x="-645.723236" y="21.643602" z="100.584839"/>
+	<Mount weapon="CapshipMissle" size="heavy-capship-missile" x="-5.800000" y="0.000000" z="-2.000000" ammo="6"/>
+	<Mount weapon="CapshipMissle" size="heavy-capship-missile" x="5.800000" y="0.000000" z="-2.000000" ammo="6"/>
 
-<!-- new elements added -->
-<Subunit file="turret" x="267.667328" y="-0.070786" z="963.458496" ri="0.998752" rj="0.049938" rk="0.000000" qi="0.049690" qj="-0.993808" qk="0.099381"/>
-<Subunit file="turret" x="-267.873528" y="-0.179744" z="963.265808" ri="-0.706665" rj="-0.035333" rk="-0.706665" qi="-0.049690" qj="-0.993808" qk="0.099381"/>
-<Subunit file="turretmain" x="0.000000" y="12.000000" z="180.000000" ri="0.282216" rj="-0.188144" rk="0.940721" qi="0.000000" qj="0.980581" qk="0.196116"/>
-<Light file="supernova.bmp" x="6.067526" y="-12.261633" z="-636.000000" size="9.920132"/>
-<Light file="supernova.bmp" x="6.666323" y="12.706255" z="-636.000000" size="9.940132"/>
-<Light file="supernova.bmp" x="0.322466" y="0.844543" z="-636.000000" size="20.020363"/>
-<Light file="supernova.bmp" x="42.756214" y="3.113204" z="-636.000000" size="20.500374"/>
-<Light file="supernova.bmp" x="-6.067526" y="-12.261633" z="-636.000000" size="9.920132"/>
-<Light file="supernova.bmp" x="-6.666323" y="12.706255" z="-636.000000" size="9.940132"/>
-<Light file="supernova.bmp" x="-42.756214" y="3.113204" z="-636.000000" size="20.500374"/>
-<Subunit file="turret" x="240.711082" y="24.000000" z="-300.171707" ri="0.995881" rj="0.000000" rk="0.090673" qi="0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="turret" x="-249.708427" y="24.000000" z="-300.475128" ri="0.997495" rj="0.000000" rk="0.070738" qi="0.000000" qj="1.000000" qk="0.000000"/>
-<Light file="supernova.bmp" x="240.000000" y="0.000000" z="-720.000000" size="20.920383"/>
-<Light file="supernova.bmp" x="200.094818" y="0.513853" z="-720.000000" size="18.420326"/>
-<Light file="supernova.bmp" x="276.949173" y="-0.024924" z="-720.000000" size="18.680332"/>
-<Light file="supernova.bmp" x="-240.000000" y="0.000000" z="-720.000000" size="21.850405"/>
-<Light file="supernova.bmp" x="-200.635033" y="-0.202282" z="-720.000015" size="18.970339"/>
-<Light file="supernova.bmp" x="-276.241051" y="0.105462" z="-720.000000" size="18.360325"/>
-<Mount weapon="Vaporisator" size="Heavy" x="645.450027" y="21.620836" z="100.175053"/>
-<Mount weapon="Vaporisator" size="Heavy" x="-645.723236" y="21.643602" z="100.584839"/>
-<Subunit file="turretbeam" x="291.441833" y="-300.906944" z="100.325504"/>
-<Subunit file="turretbeam" x="-291.441833" y="-300.906944" z="100.325504"/>
-<Subunit file="turretbeam" x="120.000000" y="360.990784" z="90.486170"/>
-<Subunit file="turretbeam" x="-120.000000" y="360.990784" z="90.486170"/>
-<Subunit file="turretheavy" x="0.000000" y="-24.000000" z="-258.000000" ri="0.000000" rj="0.000000" rk="-1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
-<Subunit file="turretheavy" x="0.037804" y="24.000000" z="-561.943649" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="turret" x="120.279072" y="-30.465117" z="468.341003" ri="0.000000" rj="0.000000" rk="-1.000000" qi="0.124035" qj="-0.992278" qk="0.000000"/>
-<Subunit file="turret" x="-120.896015" y="-30.512999" z="468.360397" ri="-0.888889" rj="0.111111" rk="-0.444444" qi="-0.124035" qj="-0.992278" qk="0.000000"/>
-<Subunit file="turretheavy" x="120.000000" y="30.500000" z="315.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.124035" qj="0.992278" qk="-0.000000"/>
-<Subunit file="turretheavy" x="-120.000000" y="30.500000" z="315.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.124035" qj="0.992278" qk="0.000000"/>
-<Dock x="96" y="0" z="1000" size="200"/><!-- -574 -->
-<Dock x="-96" y="0" z="1000" size="200"/>
-<Dock x="96" y="0" z="800" size="200"/><!-- -574 -->
-<Dock x="-96" y="0" z="800" size="200"/>
-<Dock x="96" y="0" z="600" size="200"/><!-- -574 -->
-<Dock x="-96" y="0" z="600" size="200"/>
-<Dock x="96" y="0" z="400" size="200"/><!-- -574 -->
-<Dock x="-96" y="0" z="400" size="200"/>
-<Dock x="96" y="0" z="200" size="200"/><!-- -574 -->
-<Dock x="-96" y="0" z="200" size="200"/>
-<Dock x="96" y="0" z="00" size="200"/><!-- -574 -->
-<Dock x="-96" y="0" z="00" size="200"/>
-<Dock x="96" y="0" z="-200" size="200"/><!-- -574 -->
-<Dock x="-96" y="0" z="-200" size="200"/>
-<Dock x="96" y="0" z="-400" size="200"/><!-- -574 -->
-<Dock x="-96" y="0" z="-400" size="200"/>
+	<Light file="supernova.bmp" x="240.000000" y="0.000000" z="-720.000000" size="20.920383"/>
+	<Light file="supernova.bmp" x="200.094818" y="0.513853" z="-720.000000" size="18.420326"/>
+	<Light file="supernova.bmp" x="276.949173" y="-0.024924" z="-720.000000" size="18.680332"/>
+	<Light file="supernova.bmp" x="-240.000000" y="0.000000" z="-720.000000" size="21.850405"/>
+	<Light file="supernova.bmp" x="-200.635033" y="-0.202282" z="-720.000015" size="18.970339"/>
+	<Light file="supernova.bmp" x="-276.241051" y="0.105462" z="-720.000000" size="18.360325"/>
+	<Light file="supernova.bmp" x="6.067526" y="-12.261633" z="-636.000000" size="9.920132"/>
+	<Light file="supernova.bmp" x="6.666323" y="12.706255" z="-636.000000" size="9.940132"/>
+	<Light file="supernova.bmp" x="0.322466" y="0.844543" z="-636.000000" size="20.020363"/>
+	<Light file="supernova.bmp" x="42.756214" y="3.113204" z="-636.000000" size="20.500374"/>
+	<Light file="supernova.bmp" x="-6.067526" y="-12.261633" z="-636.000000" size="9.920132"/>
+	<Light file="supernova.bmp" x="-6.666323" y="12.706255" z="-636.000000" size="9.940132"/>
+	<Light file="supernova.bmp" x="-42.756214" y="3.113204" z="-636.000000" size="20.500374"/>
+
+	<Subunit file="turretmain" x="0.000000" y="12.000000" z="180.000000" ri="0.282216" rj="-0.188144" rk="0.940721" qi="0.000000" qj="0.980581" qk="0.196116"/>
+
+	<Subunit file="turretlauncher" x="0.000000" y="-30.000000" z="-358.000000" ri="0.000000" rj="0.000000" rk="-1.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
+	<Subunit file="turretlauncher" x="0.000000" y="30.000000" z="-358.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
+
+	<Subunit file="turretbeam" x="291.441833" y="300.906944" z="100.325504"/>
+	<Subunit file="turretbeam" x="-291.441833" y="300.906944" z="100.325504"/>
+	<Subunit file="turretbeam" x="120.000000" y="-360.990784" z="90.486170"/>
+	<Subunit file="turretbeam" x="-120.000000" y="-360.990784" z="90.486170"/>
+
+	<Subunit file="turretheavy" x="267.667328" y="-0.070786" z="963.458496" ri="0.998752" rj="0.049938" rk="0.706665" qi="0.049690" qj="-0.993808" qk="0.099381"/>
+	<Subunit file="turretheavy" x="-267.873528" y="-0.179744" z="963.265808" ri="-0.998752" rj="-0.049938" rk="-0.706665" qi="-0.049690" qj="-0.993808" qk="0.099381"/>
+	<Subunit file="turretheavy" x="267.667328" y="-0.070786" z="963.458496" ri="0.998752" rj="0.049938" rk="0.706665" qi="0.049690" qj="0.993808" qk="0.099381"/>
+	<Subunit file="turretheavy" x="-267.873528" y="-0.179744" z="963.265808" ri="-0.998752" rj="-0.049938" rk="-0.706665" qi="-0.049690" qj="0.993808" qk="0.099381"/>
+
+	<Subunit file="turretflak" x="0.000000" y="-30.000000" z="700.000000" ri="0.000000" rj="0.000000" rk="-1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+	<Subunit file="turretflak" x="0.000000" y="30.000000" z="70.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
+	<Subunit file="turretflak" x="0.000000" y="-30.000000" z="-561.943649" ri="0.000000" rj="0.000000" rk="-1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+	<Subunit file="turretflak" x="0.000000" y="30.000000" z="-561.943649" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
+
+	<Subunit file="turret" x="120.000000" y="30.500000" z="315.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.124035" qj="0.992278" qk="-0.000000"/>
+	<Subunit file="turret" x="-120.000000" y="30.500000" z="315.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.124035" qj="0.992278" qk="0.000000"/>
+	<Subunit file="turret" x="240.711082" y="24.000000" z="-300.171707" ri="0.995881" rj="0.000000" rk="0.090673" qi="0.000000" qj="1.000000" qk="0.000000"/>
+	<Subunit file="turret" x="-249.708427" y="24.000000" z="-300.475128" ri="0.997495" rj="0.000000" rk="0.070738" qi="0.000000" qj="1.000000" qk="0.000000"/>
+	<Subunit file="turret" x="120.279072" y="-30.465117" z="468.341003" ri="0.000000" rj="0.000000" rk="-1.000000" qi="0.124035" qj="-0.992278" qk="0.000000"/>
+	<Subunit file="turret" x="-120.896015" y="-30.512999" z="468.360397" ri="-0.888889" rj="0.111111" rk="-0.444444" qi="-0.124035" qj="-0.992278" qk="0.000000"/>
+
+	<Dock x="96" y="0" z="1000" size="200"/><!-- -574 -->
+	<Dock x="-96" y="0" z="1000" size="200"/>
+	<Dock x="96" y="0" z="800" size="200"/><!-- -574 -->
+	<Dock x="-96" y="0" z="800" size="200"/>
+	<Dock x="96" y="0" z="600" size="200"/><!-- -574 -->
+	<Dock x="-96" y="0" z="600" size="200"/>
+	<Dock x="96" y="0" z="400" size="200"/><!-- -574 -->
+	<Dock x="-96" y="0" z="400" size="200"/>
+	<Dock x="96" y="0" z="200" size="200"/><!-- -574 -->
+	<Dock x="-96" y="0" z="200" size="200"/>
+	<Dock x="96" y="0" z="00" size="200"/><!-- -574 -->
+	<Dock x="-96" y="0" z="00" size="200"/>
+	<Dock x="96" y="0" z="-200" size="200"/><!-- -574 -->
+	<Dock x="-96" y="0" z="-200" size="200"/>
+	<Dock x="96" y="0" z="-400" size="200"/><!-- -574 -->
+	<Dock x="-96" y="0" z="-400" size="200"/>
 
 </Unit>

@@ -1,26 +1,26 @@
-<Unit scale="10">
-	<Meshfile file="missile.xmesh"/>
-	<BspMesh RAPID="0"/>
-	<Light file="supernova.bmp" x="0" y="0" z="-2" size= ".6"/>
+<Unit>
+	<Meshfile file="capshipmissile.xmesh"/>
+	<BspMesh/>
+	<Light file="supernova.bmp" x="0" y="0" z="-5.90000023841858" size= "2.3"/>
 
 <Thrust> 
-	<Engine Afterburner="500"
-		  Forward="500"
-		  Retro="100"
-		  Left="0"
-		  Right="0"
-		  Top="0"
-		  Bottom="0"/>
-	<Maneuver yaw="43.200050" pitch="35.600151" roll="43.200050"/>
+	<Engine Afterburner="20"
+		  Forward="15"
+		  Retro="12"
+		  Left="9"
+		  Right="9"
+		  Top="9"
+		  Bottom="9"/>
+			<Maneuver yaw="12" pitch="12" roll="15"/>
 
 </Thrust>
 <Sound></Sound>
 <Defense>
-	<Hull strength="20"/>
+	<Hull strength="12"/>
 </Defense>
-<Stats mass="5" momentofinertia="6" fuel="200000"></Stats>
+<Stats mass="0.3" momentofinertia=".2" fuel="3000"></Stats>
 
-<Computer yaw="5" pitch="5" roll="5" afterburner="20" maxspeed="20"/>
+<Computer yaw="8" pitch="8" roll="10" afterburner="260" maxspeed="210"/>
 <Energy>
 	<Reactor recharge="10"
 		   limit="100"/>
