@@ -12,8 +12,8 @@ module launchtest {
 
     if((time-lasttime)>5.0){
       _io.printf("launching new wave\n");
-      _unit.launch("omega","confed","ferret","default",6, 8000.0, 0.0-100.0, 200.0);
-      _unit.launch("blabla","confed","rapier","default",6, 7800.0, 0.0-100.0, 200.0);
+      _unit.launch("omega","confed","firefly","default",6, 8000.0, 0.0-100.0, 200.0);
+      _unit.launch("blabla","confed","tian","default",6, 7800.0, 0.0-100.0, 200.0);
       _unit.launch("teta","aera","dagger","default",4 , 8000.0, 200.0, 0.0-500.0);
       _unit.launch("teta","aera","aeon","default",4 , 8200.0, 200.0, 0.0-500.0);
       _io.printf("launch finished\n\n");

@@ -16,20 +16,15 @@ module faction_ships {
     confed_ships=_olist.new();
 
     _olist.push_back(confed_ships,"firefly");
-    _olist.push_back(confed_ships,"ferret");
-    _olist.push_back(confed_ships,"headhunter");
-    _olist.push_back(confed_ships,"hellcat");
-    _olist.push_back(confed_ships,"hornet");
-    _olist.push_back(confed_ships,"rapier");
-    _olist.push_back(confed_ships,"centurion");
+    _olist.push_back(confed_ships,"destiny");
+    _olist.push_back(confed_ships,"tian");
+    _olist.push_back(confed_ships,"nova");
 
     aera_ships=_olist.new();
 
     _olist.push_back(aera_ships,"dagger");
     _olist.push_back(aera_ships,"aeon");
     _olist.push_back(aera_ships,"aevant");
-    _olist.push_back(aera_ships,"dralthi");
-    _olist.push_back(aera_ships,"jalthi");
     _olist.push_back(aera_ships,"kyta");
     _olist.push_back(aera_ships,"lekra");
   };

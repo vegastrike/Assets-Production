@@ -1,0 +1,48 @@
+<mission>
+	<settings>
+		<origin  planet="earth" x="0000" y="100" z="000.0"/>
+	</settings>
+
+	<variables>
+<!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="4 versus 4" />
+		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+		<var name="system" value="sol" />
+		<var name="description" value="4vs4.txt" />
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="confed" type="hellcat" ainame="default" waves="4" nr_ships="1">
+			<pos x="53400" y="4000" z="30000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="green" faction="confed" type="cruiser" ainame="sitting_duck" waves="1" nr_ships="1">
+			<pos offset="blue" x="1000.0" y="-1000.0" z="1000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="yellow" faction="confed" type="rapier" ainame="default" waves="1" nr_ships="4">
+			<pos offset="green" x="0" y="500.0" z="-500.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="brown" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="4">
+			<pos offset="green" x="500.0" y="500.0" z="-500.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+<!-- the bad dudes -->
+
+                <flightgroup name="alpha" faction="aera" type="dagger" ainame="default" waves="1" nr_ships="8">
+			<pos offset="green" x="-100.0" y="-1000.0" z="-500.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="alpha" faction="aera" type="aeon" ainame="default" waves="1" nr_ships="8">
+			<pos offset="green" x="-100.0" y="1000.0" z="-500.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+        </flightgroups>
+</mission>

@@ -13,31 +13,37 @@
 	</variables>
         <flightgroups>
 
-                <flightgroup name="blue" faction="confed" type="firefly" ainame="sitting_duck" waves="1" nr_ships="3">
+                <flightgroup name="blue" faction="confed" type="firefly" ainame="_ai_rolling" waves="1" nr_ships="3">
 			<pos x="100.0" y="10000.0" z="100.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
 
-                <flightgroup name="yellow" faction="confed" type="dagger" ainame="sitting_duck" waves="1" nr_ships="3">
+                <flightgroup name="yellow" faction="confed" type="dagger" ainame="_ai_rolling" waves="1" nr_ships="3">
 			<pos offset="blue" x="100.0" y="0.0" z="0.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
 
 
-                <flightgroup name="green" faction="confed" type="carrier" ainame="sitting_duck" waves="1" nr_ships="1">
+                <flightgroup name="green" faction="confed" type="carrier" ainame="_ai_rolling" waves="1" nr_ships="1">
 			<pos offset="blue" x="10000.0" y="0.0" z="0.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
 
-                <flightgroup name="red" faction="confed" type="ConfedHq" ainame="sitting_duck" waves="1" nr_ships="1">
+                <flightgroup name="red" faction="confed" type="ConfedHq" ainame="_ai_rolling" waves="1" nr_ships="1">
 			<pos offset="blue" x="1000.0" y="100000.0" z="0.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
-
-
         </flightgroups>
+
+	<module name="director">
+		<script name="initgame">
+		</script>
+
+		<script name="gameloop">
+		</script>
+	</module>
 </mission>
