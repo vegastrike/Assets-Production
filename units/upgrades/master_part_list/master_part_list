@@ -52,6 +52,8 @@
 			<Cargo file="torpedo_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="leech_ammo" price="4000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="swarm_ammo" price="800" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="killer_bee_ammo" price="800" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="hail_ammo" price="800" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="afterburner" price="3000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="plasteel" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="lithium" price="500" quantity="1" mass=".01" volume="1"/>
