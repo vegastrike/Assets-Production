@@ -1,0 +1,33 @@
+<mission>
+   <variables>
+      <var name="defaultplayer" value="blue"/>
+      <var name="mission_name" value="Director Test" />
+      <var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+      <var name="system" value="blank" />
+      <var name="description" value="4vs4.txt" />
+   </variables>
+        <flightgroups>
+            <flightgroup name="green" faction="confed" type="rapier" ainame="default" waves="2" nr_ships="6">
+         	<pos x="8000.0" y="0.0" z="0.0"/>
+         	<rot x="180.0" y="180.0" z="180.0"/>
+      	    </flightgroup>
+            <flightgroup name="blue" faction="ares" type="dagger" ainame="default" waves="2" nr_ships="6">
+         	<pos offset="green" x="1000.0" y="0.0" z="0.0"/>
+         	<rot x="180.0" y="180.0" z="180.0"/>
+      	    </flightgroup>
+	</flightgroups>
+
+	<module name="director">
+
+		<import name="unit"/>
+
+		<script name="initgame">
+			<exec module="unit" name="initgame"/>
+		</script>
+
+		<script name="gameloop">
+			<exec module="unit" name="print_unitlist"/>
+			<exec module="unit" name="launch_test"/>
+		</script>
+
+</mission>
