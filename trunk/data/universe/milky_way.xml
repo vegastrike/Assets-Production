@@ -921,7 +921,7 @@
 			</sector>	
 			<sector name="tyr">
 			        <var name="faction" value="aera"/> 
-				<var name="jumps" value="kilrah_sector/gwriss vega_sector/nephele epsilon_sector/masa vega_sector/hawkins vega_sector/hellespont"/>
+				<var name="jumps" value="rlaa_sector/gwriss vega_sector/nephele epsilon_sector/masa vega_sector/hawkins vega_sector/hellespont"/>
 				<var name="data" value="1518"/>
 			</sector>	
 			<sector name="bairds_star">
@@ -942,7 +942,7 @@ stone"/>
 			</sector>	
 			<sector name="nephele">
 			        <var name="faction" value="aera"/> 
-				<var name="jumps" value="kilrah_sector/hrekkah vega_sector/tyr epsilon_sector/loki vega_sector/alcor"/>
+				<var name="jumps" value="rlaa_sector/hrekkah vega_sector/tyr epsilon_sector/loki vega_sector/alcor"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1520"/>
 			</sector>	
@@ -1001,7 +1001,7 @@ stone"/>
 				<var name="num_moons" value="5"/>
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="false"/>
-				<var name="jumps" value="vega_sector/kursawa vega_sector/alcor vega_sector/tyr kilrah_system/tlan_meth kilrah_system/hhrass"/>
+				<var name="jumps" value="vega_sector/kursawa vega_sector/alcor vega_sector/tyr rlaa_system/tlan_meth rlaa_system/hhrass"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1523"/>
@@ -1224,7 +1224,7 @@ stone"/>
 				<var name="num_moons" value="0"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="false"/>
-				<var name="jumps" value="vega_sector/ymir vega_sector/tyr kilrah_system/kntqal epsilon_sector/quallat"/>
+				<var name="jumps" value="vega_sector/ymir vega_sector/tyr rlaa_system/kntqal epsilon_sector/quallat"/>
 				<var name="num_natural_phenomena" value="0"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="2354"/>
@@ -1245,14 +1245,14 @@ stone"/>
 			</sector>
 			<sector name="knmeth">
 				<var name="faction" value="rlaan"/> 
-				<var name="jumps" value="vega_sector/knrek kilrah_sector/hhrass_tgor"/>
+				<var name="jumps" value="vega_sector/knrek rlaa_sector/hhrass_tgor"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2068"/>
 			</sector>
 			<sector name="gwrikath">
 				<var name="faction" value="rlaan"/> 
-				<var name="jumps" value="kilrah_sector/gwriss"/>
+				<var name="jumps" value="rlaa_sector/gwriss"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2068"/>
@@ -1267,7 +1267,7 @@ stone"/>
 				<var name="num_moons" value="3"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="vega_sector/kurasawa vega_sector/hellespont vega_sector/cairo vega_sector/freya kilrah_sector/mshren kilrah_sector/mlon_meth"/>
+				<var name="jumps" value="vega_sector/kurasawa vega_sector/hellespont vega_sector/cairo vega_sector/freya rlaa_sector/mshren rlaa_sector/mlon_meth"/>
 				<var name="num_natural_phenomena" value="0"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="2354"/>
@@ -1303,7 +1303,7 @@ stone"/>
 			</sector>
 			<sector name="krissth">
 				<var name="faction" value="rlaan"/> 
-				<var name="jumps" value="vega_sector/ardai kilrah_sector/knkir"/>
+				<var name="jumps" value="vega_sector/ardai rlaa_sector/knkir"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2732"/>
