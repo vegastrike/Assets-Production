@@ -39,7 +39,7 @@ def launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves,
   if(station_unit.isNull()):
     sys.stderr.write("launch.py:launch_around_station did not find unit %s\n" % (station_name))
     return VS.Unit()
-  station_pos=station_unit.getPosition()
+  station_pos=station_unit.Position()
   rsize=station_unit.rSize()
   launched =launch_waves_around_area(fgname,faction,type,ai,nr_ships,nr_waves,rsize,rsize*2.0,station_pos,logo)
   return launched
@@ -69,7 +69,7 @@ def launch_wave_around_unit (fgname, faction, type, ai, nr_ships, minradius, max
   if (my_unit.isNull()):
     un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,minradius,maxradius,myvec,logo)
     return un
-  myvec=my_unit.Position()
+  myvec=my_unit.LocalPosition()
   print myvec
   rsiz=my_unit.rSize()
   un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,rsiz+minradius,rsiz+maxradius,myvec,logo)
