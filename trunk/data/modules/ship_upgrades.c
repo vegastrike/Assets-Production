@@ -151,11 +151,9 @@ module ship_upgrades {
   //this function sets up a blank unit with some basic upgrades that are really a necessecity for any sort of figthing
   void basicUnit (object un, float diff) {
     int i=0;
-    int curmount=0;
     float percent;
     while (i<2) {//two lasers
-      percent=_unit.upgrade(un,"laser",curmount,curmount,false,true);
-      curmount=curmount+1;
+      percent=_unit.upgrade(un,"laser",i,i,false,true);
       i=i+1;
     }
     UpgradeEngine (un,diff);
@@ -179,11 +177,13 @@ module ship_upgrades {
   float upgradeHelper (object un, object mylist, int curmount,float creds, bool force, bool cycle) {
      float newcreds=0.0;
      if (_olist.size(mylist)==0) {//if somehow the cargo isn't there
+       _io.printf ("error.. crgo not found");
        _olist.delete (mylist);//deleet list
        return 0.0; //and terminate the enclosing loop by saying we're out of cash
      }else {
        object str=_olist.at(mylist,0);//otherwise our name is the 0th item
        newcreds=_olist.at (mylist,2);//and the price is the 2nd
+       _io.printf ("soft upgrading %s\n",str);
         newcreds = newcreds*_unit.upgrade(un,str,curmount,curmount,force,cycle);
         creds = creds -newcreds;//we added some newcreds and subtracted them from credit ammt
         _olist.delete (mylist);//then we delete the list
@@ -200,27 +200,7 @@ module ship_upgrades {
     float rndnum;
     int inc=0;
     basicUnit(un,diff);
-/*
-    int numammos=_std.Int(10.0*diff);//number of ammo is 50 * difficulty (lots)
-    if (numammos>8) {//if it's more tan 30 total, we reduce to 30
-      numammos=8;
-    } else if (numammos<1) {//otherwise we clamp at 5...(too much alreadY0
-      numammos=1;
-    }
-    //then we cycle through the ammo
 
-    while (inc<numammos) {
-      mylist=_unit.getRandCargo(0,"upgrades/Ammunition/3pack");//and get it
-      if (_olist.size(mylist)<=0) {
-        inc=numammos;
-      } else {
-        str=_olist.at(mylist,0);
-        float temp=_unit.upgrade(un,str,inc,inc,false,true);//and apply it at no charge
-      }
-      _olist.delete(mylist);
-      inc=inc+1;
-    }
-    */
     mylist = GetRandomHull();//ok now we get some hull upgrades
     creds =upgradeHelper (un,mylist,0,creds,true,false);
 
@@ -249,16 +229,19 @@ module ship_upgrades {
       }
       i=i+1;
     }
-    i=0;
     turretcount=_std.Int(diff*50.0);
+    _io.printf("\nupgrading %d times...\n",turretcount);
     if (turretcount>24) {
       turretcount=24;
     } else if (turretcount<3) {
       turretcount=3;
     }
-    _io.printf("\nupgrading %d times...\n",turretcount);
+    _io.printf("clipping at %d times...\n",turretcount);
+    i=0;
+
     while (i<turretcount) {
-      if (inc<2) {
+      _io.printf("loop %d..\n",i);
+      if (_std.Rnd()<0.66) {
         mylist=GetRandomWeapon(diff);//weapons go on as first two items of loop
       }else {
         mylist=GetRandomAmmo();
@@ -266,11 +249,7 @@ module ship_upgrades {
       creds =upgradeHelper (un,mylist,curmount,creds,false,true);//we pass this in to the credits...and we only loop through all mounts if we're adding a weapon
       
       curmount=curmount+1;//increase starting mounts hardpoint
-      inc = inc+1;
       i=i+1;
-      if (inc>2) {//start over count after 2
-	inc =0;
-      }
     }
   };
 
