@@ -86,24 +86,24 @@ def allNews():
 
 "neutral" :
 
-{"siege" :	{"start"	:{"success":	{"good"		: [(0.8,"all","The VAR_aggressor_government has openly reported their intent of invasion with VAR_defender_full in the VAR__system_sector Sector today. The VAR_aggressor_possessive forces have strategically blocked all entrance and exit from VAR_system_system and continue a valiant assault upon the planet.")
+{"siege" :	{"start"	:{"success":	{"good"		: [(0.8,"all","BLOCKADE!\\The VAR_aggressor_government has openly reported their intent of invasion with VAR_defender_full in the VAR__system_sector Sector today. The VAR_aggressor_possessive forces have strategically blocked all entrance and exit from VAR_system_system and continue a valiant assault upon the planet.")
 
 								  ]
 
-						,"bad"		: [(0.3,"all","It is a grave day in VAR_system_system today, as the hordes of the VAR_aggressor_full have senselessly commenced bombardments upon a VAR_defender_possessive planet in VAR_system_sector Sector. The inhabitants were doing nothing that would legally provoke hostile actions, yet VAR_aggressor_possessive troops have already begun their invasion procedures. Can anyone stop these cruel, heartless VAR_aggressor_dnickp?")
+						,"bad"		: [(0.3,"all","VAR_aggressor_nickp Invasion Plans?\\It is a grave day in VAR_system_system today, as the hordes of the VAR_aggressor_full have senselessly commenced bombardments upon a VAR_defender_possessive planet in VAR_system_sector Sector. The inhabitants were doing nothing that would legally provoke hostile actions, yet VAR_aggressor_possessive troops have already begun their invasion procedures. Can anyone stop these cruel, heartless VAR_aggressor_dnickp?")
 
 								  ]
 
-						,"neutral"	: [(0.6,"all","It seems that the VAR_system_system system has struck a nerve with the VAR_aggressor_government. VAR_aggressor_possessive forces attacked them recently. The local regiment of VAR_defender_nickp fought back but appear to be slowly falling back. By all accounts it seems that the VAR_aggressor_possessive forces will, in the long run, win.")
+						,"neutral"	: [(0.6,"all","VAR_aggressor_possessive on the Offencive:\\It seems that the VAR_system_system system has struck a nerve with the VAR_aggressor_government. VAR_aggressor_possessive forces recently launched an attack in the system, and met some resistance from the local regiment of VAR_defender_nickp.  However, this resistance appears to be fading. By all accounts it seems that the VAR_aggressor_possessive forces will, in the long run, win.")
 
 								  ]
 
 						}
-				 ,"loss"   :	{"good"		: [(0.2,"all","Moments after their strike began, the forces of the VAR_aggressor_full were crushed from the VAR_system_system system as the VAR_defender_possessive defence held strong.  The VAR_aggressor_government says they have no intention of retreat. Some ask if this is prudent on the part of the VAR_aggressor_nickp to continue such a hopeless campaign.")
+				 ,"loss"   :	{"good"		: [(0.2,"all","VAR_defender_nickp Repel Attack:\\Moments after their strike began, the forces of the VAR_aggressor_full were crushed from the VAR_system_system system as the VAR_defender_possessive defence held strong.  The VAR_aggressor_government says they have no intention of retreat. Some ask if this is prudent on the part of the VAR_aggressor_nickp to continue such a hopeless campaign.")
 
 								  ]
 
-						,"bad"		: [(0.3,"all","One simple ambush was all that it took to scatter the VAR_aggressor_possessive forces today in VAR_system_sector. Given the high esteem VAR_aggressor_possessive forces are held in the VAR_aggressor_government, and the fact that this was apparently only an initial probing operation, this has been a surprising result to all involved. The VAR_defender_possessive forces defending VAR_system_system, shocked by this sudden invasion, seemed to have regained their composure and are now concentrating their defensive grid to guard against the next attack.")
+						,"bad"		: [(0.3,"all","VAR_aggressor_nickp Beaten By VAR_defender_dnickp?\\One simple ambush was all that it took to demolish the VAR_aggressor_possessive forces today in VAR_system_sector. Given the high esteem VAR_aggressor_possessive forces are held in the VAR_dockedat_government, and the fact that this was apparently the beginnings of a full scale assult, this has been a surprising result to all. The VAR_defender_possessive forces defending VAR_system_system, shocked by their sudden reprieve, have now had time to ready their defensive grid, making another attack by the VAR_aggressor_possessive forces a much greater challenge.")
 
 								  ]
 
