@@ -1,6 +1,6 @@
 <terrain level="14" detail="128" staticdetail="12" scales=".000030517578125" scalet = ".000030517578125" radius="10000">
 
-<texture file="gctexcoloredlr.bmp" blend="ONE ZERO" color="0">
+<texture file="gctexcoloredlr.png" blend="ONE ZERO" color="0">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
