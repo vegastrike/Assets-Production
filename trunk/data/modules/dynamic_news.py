@@ -117,20 +117,23 @@ def formatProperTitle(str):
 			words[i] = words[i][0].capitalize() + words[i][1:]
 	return string.join(words)
 
-def formatShipName(string):
+def formatShipName(strin):
 	"""formats a standard ship name (ie firefly.blank) to
 	something more natural (ie basic Firefly)"""
-	shipext = string.split('.')
-	extension = "millspec";
-	if len(shipext)>1:
-		extension = shipext[1];
-	ship = shipext[0];
-	if extension == "blank":
-		return "basic" + formatProperTitle(ship)
-	elif extension == "millspec":
-		return "modified" + formatProperTitle(ship)
+	lis = strin.split('.')
+	if len(lis) > 1:
+		extension = lis[len(lis)-1]
+		if extension == "blank":
+			ship = string.join(string.join(lis[:len(lis)-1]," ").split('_'),' ')
+			return "basic " + formatProperTitle(ship)
+		elif extension == "millspec":
+			ship = string.join(string.join(lis[:len(lis)-1]," ").split('_'),' ')
+			return "modified " + formatProperTitle(ship)
+		else:
+			ship = string.join(string.join(lis," ").split('_'),' ')
+			return formatProperTitle(ship)
 	else:
-		return formatProperTitle(ship)
+		return formatProperTitle(string.join(lis[0].split('_'),' '))
 		
 
 def makeVarList(ls):
@@ -245,10 +248,11 @@ def getDockFaction():
 			break
 		un=VS.getUnit(i)
 	if un.isPlanet() or (un.getFactionName() == "neutral"):
-		print "Returning the systems faction"
-		return VS.GetGalaxyFaction(VS.getSystemFile())
+		retfac = VS.GetGalaxyFaction(VS.getSystemFile())
+		print "Returning " + retfac + " as the systems faction"
+		return retfac
 	else:
-		print "Returning" + un.getFactionName() + "as units faction"
+		print "Returning " + un.getFactionName() + " as the units faction"
 		return un.getFactionName()
 	
 
@@ -268,9 +272,22 @@ def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword,ra
 	faction = validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword)
 	if faction == "barf":
 		print "Error: A suitable news story does not exist, returning a warning string."
-		return getClosestScaleNews([(scale,"all","ERROR!\\Invalid news variables:\\(" + string.join([faction_base,type_event,stage_event,success,pov,str(scale),keyword],',') + ")\\A suitable news story for this event could not be found.  @hellcatv: don't worry, flightgroup info is available, it just doesn't get passed down this far (it's stored in the global instead) but you know it's there so don't worry ;-)\\This is a placeholder error message.\\\\Contact the help-desk for any queries:\\dandandaman@users.sourceforge.net ;-)\\\\\\ -- The Vegastrike Community:\\Struggling with lack of hands to go around since 1998")],scale,randint)
-	listnews = dynamic_news_content.allNews()[faction][type_event][stage_event][success][pov]
+		return getClosestScaleNews([(scale,"all","ERROR!\\Invalid news variables:\\(" + string.join([faction_base,type_event,stage_event,success,pov,str(scale),keyword],',') + ")\\A suitable news story for this event could not be found.\\@hellcatv: don't worry, flightgroup info is available, it just doesn't get passed down this far (it's stored in the global instead) but you know it's there so don't worry ;-)\\This is a placeholder error message.\\\\Contact the help-desk for any queries:\\dandandaman@users.sourceforge.net ;-)\\\\\\ -- The Vegastrike Community:\\Struggling with lack of hands to go around since 1998")],scale,randint)
+	elif faction == "barfbarfbarfbarfbarfbarfbarfbarf":
+		print "Error: News variables correct.  Content not available."
+		return getClosestScaleNews([(scale,"all","ERROR!\\No content available:\\(" + string.join([faction_base,type_event,stage_event,success,pov,str(scale),keyword],',') + ")\\A suitable news story for this event could not be found.  Content must not be completed for this section.\\@hellcatv: don't worry, flightgroup info is available, it just doesn't get passed down this far (it's stored in the global instead) but you know it's there so don't worry ;-)\\This is a placeholder error message.\\\\Contact the help-desk for any queries:\\dandandaman@users.sourceforge.net ;-)\\\\\\ -- The Vegastrike Community:\\Struggling with lack of hands to go around since 1998")],scale,randint)
+		
+	listnews = filterForKeyword(dynamic_news_content.allNews()[faction][type_event][stage_event][success][pov],keyword)
 	return getClosestScaleNews(listnews,scale,randint)
+
+def filterForKeyword(listnews,keyword):
+	"""filters a list of news items to return a list of only those
+	matching the specified keyword"""
+	kwlist = list()
+	for item in listnews:
+		if item[1] == keyword:
+			kwlist.append(item)
+	return kwlist
 
 def getClosestScaleNews(listof,scale,randint):
 	"""returns the closest scaled news item from a list of news items"""
