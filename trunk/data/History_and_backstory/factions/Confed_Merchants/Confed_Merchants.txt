@@ -1,0 +1,3 @@
+Faction: Confed_Merchants
+
+While not a major supplier of military vessels, the vast majority of conscripted freight is drafted from the ranks of the Merchant memegroup.
