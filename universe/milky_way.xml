@@ -1464,7 +1464,7 @@
 				<var name="data" value="1345"/>
 			</sector>
 			<sector name="pendersstar">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="pirates"/> 
 				<var name="jumps" value="gemini_sector/junction gemini_sector/troy"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
