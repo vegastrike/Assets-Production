@@ -2,7 +2,7 @@
 
 <Meshfile file="turret_capship_torplauncher_gun.xmesh"/>
 
-<Mount weapon="torpedo" mountsize="heavy-capship-missile" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" amo="15"/>
+<Mount weapon="torpedo" mountsize="heavy-capship-missile" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" ammo="15" />
 
 		<Thrust>
 		<Engine Afterburner="000000" Forward="000000" Retro="0000" Left="0000" Right="0000" Top="00000" Bottom="000000"/>
