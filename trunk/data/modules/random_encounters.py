@@ -8,6 +8,7 @@ import sys
 import adventure
 import news
 import universe
+import Director
 class random_encounters:
   class playerdata:  
     def GeneratePhaseAndAmplitude(self):
@@ -18,6 +19,7 @@ class random_encounters:
       self.prob_phase+=1;
       return self.prob_amplitude*(.6+.4*VS.cos ((self.prob_phase*3.1415926536*2)/self.prob_period))
     def __init__(self,sig_distance,det_distance):
+      self.stuff = 0;
       print "init playerdat"
       self.quests=[]
       self.curquest=0
@@ -31,6 +33,7 @@ class random_encounters:
       self.GeneratePhaseAndAmplitude()
       print "done playerdat"
   def __init__(self, sigdis, detectiondis, gendis,  minnships, gennships, unitprob, enemyprob, capprob, capdist):
+    self.stuff = 0;
     unitprob=1
     print "init random enc"
     self.capship_gen_distance=capdist
@@ -249,7 +252,8 @@ class random_encounters:
         self.SetModeZero()
         significant_unit.setNull ()
       return significant_unit
-
+  def randstr(self):
+    return "%c%c%c%c%c%c%c%c" % (vsrandom.randrange(1,255),vsrandom.randrange(1,255),vsrandom.randrange(1,255),vsrandom.randrange(1,255),vsrandom.randrange(1,255),vsrandom.randrange(1,255),vsrandom.randrange(1,255),vsrandom.randrange(1,255))
   def Execute(self):
     if (self.cur_player>=len(self.players)):
       self.AddPlayer()
@@ -261,6 +265,14 @@ class random_encounters:
         del self.cur.quests[self.cur.curquest]
     else:
       self.cur.curquest=0
+    key = "%c \nc"%vsrandom.randrange(1,255)
+    tlen=Director.getSaveStringLength(self.cur_player,key)
+    bleh=0
+    if (bleh==1):
+      if (tlen>0 and vsrandom.randrange(0,3)==0):
+        Director.putSaveString(self.cur_player,key,0,self.randstr())
+      else:
+        Director.pushSaveString(0,key,self.randstr())
     un = self.decideMode ()
     if (self.cur.curmode!=self.cur.lastmode):
       #lastmode=curmode#processed this event don't process again if in critical zone
