@@ -1,0 +1,25 @@
+<mission>
+   <variables>
+      <var name="defaultplayer" value="blue"/>
+      <var name="mission_name" value="Director Test" />
+      <var name="system" value="blank" />
+      <var name="description" value="" />
+	<var name="author" value="Alexander Rawass" />	
+	<var name="briefing" value="still in development" />
+   </variables>
+        <flightgroups>
+            <flightgroup name="makkarel" faction="confed" type="firefly" ainame="default" waves="2" nr_ships="1">
+         	<pos x="8000.0" y="0.0" z="0.0"/>
+         	<rot x="180.0" y="180.0" z="180.0"/>
+      	    </flightgroup>
+            <flightgroup name="green" faction="confed" type="nova" ainame="default" waves="4" nr_ships="8">
+         	<pos offset="makkarel" x="-400.0" y="0.0" z="300.0"/>
+         	<rot x="180.0" y="180.0" z="180.0"/>
+      	    </flightgroup>
+            <flightgroup name="alpha" faction="aera" type="dagger" ainame="default" waves="4" nr_ships="8">
+         	<pos offset="green" x="800.0" y="0.0" z="300.0"/>
+         	<rot x="180.0" y="180.0" z="180.0"/>
+      	    </flightgroup>
+	</flightgroups>
+
+</mission>
