@@ -165,8 +165,8 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="CapshipDisruptor" mountsize="light"> 
-<Energy rate="100" stability="6" refire=".6">
+<Bolt name="CapshipDisruptor" mountsize="capship-light"> 
+<Energy rate="150" stability="6" refire="1.5">
 </Energy>
 <Damage rate="300" longrange="1">
 </Damage>
@@ -175,6 +175,96 @@
 <Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
 </Appearance>
 </Bolt>
+
+<Missile name="Torpedo" mountsize="heavy-missile">
+<Energy rate="0" stability="6" refire=".3">
+</Energy>
+<Damage rate="800" longrange="1">
+</Damage>
+<Distance speed="180" radialspeed=".8" radius=".7" pulsespeed="15" range="3500" >
+</Distance>
+<Appearance file="heatseek" soundwav="missile_3.wav">
+</Appearance>
+</Missile>
+
+<Missile name="Leech" mountsize-"special-missile">
+<Energy rate="0" stability="6" refire=".3">
+</Energy>
+<Damage rate="80" longrange="1">
+</Damage>
+<Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
+</Distance>
+<Appearance file="leech" >
+</Appearance>
+</Missile>
+
+<Missile name="Mace" mountsize="heavy-missile">
+<Energy rate="0" stability="6" refire="6">
+</Energy>
+<Damage rate="2500" longrange="1">
+</Damage>
+<Distance speed="40" radialspeed=".8" radius=".3" pulsespeed="15" range="800" >
+</Distance>
+<Appearance file="dumbfire" >
+</Appearance>
+</Missile>
+
+<Bolt name="Anihilator" mountsize="medium"> 
+<Energy rate="150" stability="8" refire="2">
+</Energy>
+<Damage rate="175" longrange="1">
+</Damage>
+<Distance speed="400" radialspeed=".8" radius="1.2" length="5" pulsespeed="15" range="2000" >
+</Distance>
+<Appearance file="weapons/neutrongun.png" soundwav="ION.WAV" r="1" g="1" b="1" a="1" >
+</Appearance>
+</Bolt>
+
+<Ball name="Fussion" mountsize="medium"> 
+<Energy rate="400" refire="6">
+</Energy>
+<Damage rate="800" longrange=".7">
+</Damage>
+<Distance speed="400" radialspeed=".8" radius="6" pulsespeed="15" range="11000" >
+</Distance>
+<Appearance file="mass_driver.ani" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
+</Appearance>
+</Ball>
+
+<Bolt name="Vaporisator" mountsize="medium"> 
+<Energy rate="300" refire="1.5">
+</Energy>
+<Damage rate="600" longrange=".8">
+</Damage>
+<Distance speed="400" radialspeed=".8" radius="18" length="90" pulsespeed="15" range="9000" >
+</Distance>
+<Appearance file="weapons/neutrongun.png" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
+</Appearance>
+</Bolt>
+
+<Beam name="LR_Beam" mountsize="heavy"> 
+<Energy rate="3" stability="14" refire="8">
+</Energy>
+<Damage rate="300" longrange=".9">
+</Damage>
+<Distance speed="1100" radialspeed=".8" radius="100" length="8" pulsespeed="18" range="8000" >
+</Distance>
+<Appearance file="weapons/disruptorbeam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a=".6" >
+</Appearance>
+</Beam>
+
+<Beam name="LR_BeamHvy" mountsize="heavy"> 
+<Energy rate="5" stability="16" refire="10">
+</Energy>
+<Damage rate="500" longrange=".7">
+</Damage>
+<Distance speed="1100" radialspeed=".8" radius="200" length="8" pulsespeed="18" range="16000" >
+</Distance>
+<Appearance file="weapons/heavylaserbeam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a=".6" >
+</Appearance>
+</Beam>
+
+
 
 <Bolt name="Neutron" mountsize="heavy"> 
 <Energy rate="18" stability="3" refire=".65">
@@ -311,13 +401,13 @@
 </Missile>
 
 <Missile name="CapshipMissile" mountsize="light-capship-missile">
-<Energy rate="0" stability="6" refire=".3">
+<Energy rate="0" stability="6" refire="4">
 </Energy>
-<Damage rate="80" longrange="1">
+<Damage rate="2000" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius="1.2" pulsespeed="15" range="2000" >
+<Distance speed="150" radialspeed=".8" radius="1.2" pulsespeed="15" range="6000" >
 </Distance>
-<Appearance file="capship" >
+<Appearance file="dumbfire" >
 </Appearance>
 </Missile>
 
@@ -344,35 +434,4 @@
 </Appearance>
 </Missile>
 
-<Missile name="Torpedo" mountsize="heavy-missile">
-<Energy rate="0" stability="6" refire=".3">
-</Energy>
-<Damage rate="80" longrange="1">
-</Damage>
-<Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
-</Distance>
-<Appearance file="dumbfire" >
-</Appearance>
-</Missile>
-
-<Missile name="Leech" mountsize-"special-missile">
-<Energy rate="0" stability="6" refire=".3">
-</Energy>
-<Damage rate="80" longrange="1">
-</Damage>
-<Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
-</Distance>
-<Appearance file="leech" >
-</Appearance>
-</Missile>
-
-<Missile name="Mace" mountsize="heavy-missile">
-<Energy rate="0" stability="6" refire=".3">
-</Energy>
-<Damage rate="80" longrange="1">
-</Damage>
-<Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
-</Distance>
-<Appearance file="dumbfire" >
-</Appearance>
-</Missile>
+</Weapons>
