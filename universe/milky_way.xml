@@ -3013,7 +3013,7 @@ stone"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
 				<var name="jumps" value="epsilon_sector/mithrak_mang epsilon_sector/bifrost mshrak_sector/ktrk_pah mshrak_sector/jokr_pak epsilon_sector/asgard epsilon_sector/mithrill"/>
-				<var name="num_natural_phenomena" value="3"/>
+				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2002"/>
 			</sector>
@@ -3104,7 +3104,7 @@ stone"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
 				<var name="jumps" value="argent_sector/benford argent_sector/hentrich argent_sector/schmidt argent_sector/alderson"/>
-				<var name="num_natural_phenomena" value="3"/>
+				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1961"/>
 			</sector>
@@ -3147,7 +3147,7 @@ stone"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
 				<var name="jumps" value="argent_sector/torres argent_sector/venture argent_sector/olivia"/>
-				<var name="num_natural_phenomena" value="3"/>
+				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1961"/>
 			</sector>
@@ -3176,7 +3176,7 @@ stone"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
 				<var name="jumps" value="argent_sector/mclean argent_sector/olivia argent_sector/everett argent_sector/tcsc_1701"/>
-				<var name="num_natural_phenomena" value="3"/>
+				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1961"/>
 			</sector>
@@ -3353,7 +3353,7 @@ stone"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
 				<var name="jumps" value="argent_sector/dano argent_sector/coppock argent_sector/miller argent_sector/miniyar"/>
-				<var name="num_natural_phenomena" value="4"/>
+				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="2"/>
 				<var name="data" value="1912"/>
 			</sector>
@@ -3410,7 +3410,7 @@ stone"/>
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="true"/>
 				<var name="jumps" value="argent_sector/lesnick argent_sector/reid argent_sector/phoenix argent_sector/destiny"/>
-				<var name="num_natural_phenomena" value="2"/>
+				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="3"/>
 				<var name="data" value="2941"/>
 			</sector>
@@ -4283,6 +4283,22 @@ stone"/>
 				<var name="unitlist" value="nebula_tag/units"/>
 				<var name="nebulalist" value="nebula_tag/nebulae.txt"/>
 			</sector>
+			<sector name="blockade_tango">
+				<var name="sun_radius" value="20000"/>
+				<var name="faction" value="neutral"/> 
+				<var name="compactness" value="2.3"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="3"/>
+				<var name="num_planets" value="4"/>
+				<var name="num_moons" value="3"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="false"/>
+				<var name="jumps" value="gemini_sector/nitir gemini_sector/mahrahn gemini_sector/lisacc trkpahn_sector/sumnlkor"/>
+				<var name="num_natural_phenomena" value="0"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2700"/>
+			</sector>
+
 		</sector>
 	</systems>
 </galaxy>
