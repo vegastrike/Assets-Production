@@ -338,7 +338,7 @@
 </Energy>
 <Damage rate="25" longrange="1" radius="10" radialspeed="3" >
 </Damage>
-<Distance speed="380"  pulsespeed="15" range="2600" DetonationRange="5" volume="25" >
+<Distance speed="380"  pulsespeed="15" range="2600" DetonationRange="5" volume="50" >
 </Distance>
 <Appearance file="leech" >
 </Appearance>
@@ -586,6 +586,17 @@
 <Damage rate="800" longrange=".7">
 </Damage>
 <Distance speed="400" radialspeed=".8" radius="6" pulsespeed="15" range="11000" >
+</Distance>
+<Appearance file="mass_driver.ani" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
+</Appearance>
+</Ball>
+
+<Ball name="HeavyFussion" mountsize="capship-heavy"> 
+<Energy rate="900" refire="14">
+</Energy>
+<Damage rate="1200" longrange=".6">
+</Damage>
+<Distance speed="400" radialspeed=".8" radius="8" pulsespeed="15" range="19000" >
 </Distance>
 <Appearance file="mass_driver.ani" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
 </Appearance>
