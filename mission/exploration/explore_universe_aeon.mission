@@ -8,12 +8,12 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 
-		<var name="system" value="gemini_sector/troy" />
-		<var name="description" value="Enjoy troy in a nova." />
+		<var name="system" value="vega_sector/hellespont" />
+		<var name="description" value="The universe unfolds before you" />
 		<var name="savegame" value="explore_universe_nova" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="aera" type="aeon" ainame="default" waves="1" nr_ships="1">
 			<pos x="90400" y="-35400" z="24700.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
@@ -21,7 +21,7 @@
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
-                <flightgroup name="green" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="2">
+                <flightgroup name="green" faction="aera" type="osprey" ainame="default" waves="1" nr_ships="2">
 			<pos x="95400" y="34000" z="30000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
