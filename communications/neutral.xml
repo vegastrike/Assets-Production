@@ -112,7 +112,7 @@
 	<node text="You're going down!" relationship="-.1"><!-- node 11-->
 
 	</node>
-	<node text="Keep your vidcom open, flying in shared space." relationship=".01"><!-- node 12-->
+	<node text="Flying in shared space, keep your vidcom open." relationship=".01"><!-- node 12-->
 		<edge index="4"/>
 		<edge index="24"/>
 		<edge index="41"/>
@@ -123,14 +123,14 @@
 		<edge index="22"/>
 	</node>
 	<node text="I don't talk to your kind." relationship="-.075"><!-- node 13-->
-		<edge index=""/>
-		<edge index=""/>
-		<edge index=""/>
-		<edge index=""/>
-		<edge index=""/>
-		<edge index=""/>
-		<edge index=""/>
-		<edge index=""/>
+		<edge index="12"/>
+		<edge index="1"/>
+		<edge index="16"/>
+		<edge index="19"/>
+		<edge index="22"/>
+		<edge index="39"/>
+		<edge index="43"/>
+		<edge index="17"/>
 	</node>
 	<node text="Where did you pick up that piece of junk?" relationship="-.02"><!-- node 14-->
 		<edge index=""/>
@@ -205,7 +205,7 @@
 	<node text="Trade is down, and I'm pissed!" relationship="-.015"><!-- node 35-->
 
 	</node>
-	<node text="You slimy privateer--always getting in the way of my operations." relationship="-.03"><!-- node 36-->
+	<node text="You slimy privateer--always getting in the way of my operations." relationship="-.04"><!-- node 36-->
 
 	</node>
 	<node text="May luck be with you." relationship=".04"><!-- node 38-->
@@ -244,7 +244,47 @@
 		<edge index="13"/>
 		<edge index="22"/>
 	</node>
-	<node text="We will dominate you." relationship="-.025"><!-- node 38-->
+	<node text="We will dominate you." relationship="-.095"><!-- node 43-->
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+	</node>
+	<node text="At Han Sulu's Ship Dealer. Was quite a bargain!" relationship=".015"><!-- node 44-->
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+	</node>
+	<node text="She can make .5 past light speed...she may not look like much, but she's got it where it counts" relationship=".05"><!-- node 45-->
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+	</node>
+	<node text="Don't mess with my ship, you pirate!" relationship=".05"><!-- node 46-->
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+		<edge index=""/>
+	</node>
+	<node text="This ship cost me blood, sweat and money--it's irreplacable." relationship="-.01"><!-- node 47-->
 		<edge index=""/>
 		<edge index=""/>
 		<edge index=""/>
