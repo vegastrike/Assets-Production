@@ -10,6 +10,8 @@ import Director
 class patrol (Director.Mission):
     def __init__ (self,numsystemsaway, num_significants_to_patrol, distance_from_base, creds):
           Director.Mission.__init__(self)
+          self.jnum=0
+          self.cred=creds
 	  self.patrolpoints = []
           self.objectives = []
 	  self.distance = distance_from_base
@@ -36,19 +38,19 @@ class patrol (Director.Mission):
             count -= 1
 	    sig = unit.getSignificant (random.randrange (0,128),0,0)
             if (not sig.isNull()):
-                if (not (sig in patrol)):
+                if (not (sig in self.patrolpoints)):
                     self.patrolpoints += [sig]
                     self.quantity=self.quantity-1
                     fac =sig.getFactionName()
                     nam =sig.getName ()
                     if (fac!="neutral"):
-                        obj=VS.addObjective ("Scan %s's object %s"% (fac,name))
+                        obj=VS.addObjective ("Scan %s's object %s"% (fac,nam))
                         str+=("%s owned %s " % (fac,nam))
                     else:
                         if (sig.isPlanet()):
-                            obj=VS.addObjective ("Scan Planet %s"% (fac,name))
+                            obj=VS.addObjective ("Scan Planet %s" % nam)
                         else:
-                            obj=VS.addObjective ("Scan Natural Phenomenon: %s"% (fac,name))
+                            obj=VS.addObjective ("Scan Natural Phenomenon: %s" % nam)
                         str+=("%s" % nam)
                     VS.setOwner(obj,self.you)
                     VS.setCompleteness(obj,-1.0)
@@ -56,7 +58,7 @@ class patrol (Director.Mission):
                     
         self.quantity=0
         VS.IOmessage (0,"patrol",self.mplay,str)
-    def DeletePatrolPoint (num,nam):
+    def DeletePatrolPoint (self,num,nam):
         VS.IOmessage (0,"patrol",self.mplay,"[Computer] %s scanned, data saved..."%nam)
         VS.setCompleteness(self.objectives[self.jnum],1.0)
         del self.objectives[self.jnum]        
@@ -65,16 +67,16 @@ class patrol (Director.Mission):
         if (self.jnum<len(self.patrolpoints)):
 	    jpoint =self.patrolpoints[self.jnum]
             if (jpoint.isNull()):
-                DeletePatrolpoint(self.jnum,"Debris")
+                self.DeletePatrolpoint(self.jnum,"Debris")
             else:
 	      if (self.you.getSignificantDistance (jpoint)<self.distance):
-                  DeletePatrolPoint(self.jnum,jpoint.getName())
+                  self.DeletePatrolPoint(self.jnum,jpoint.getName())
               else:
-                  jnum+=1                  
+                  self.jnum+=1                  
         else:
-	    jnum=0
+	    self.jnum=0
         return (len(self.patrolpoints)==0)
-    def Execute ():
+    def Execute (self):
         if (self.you.isNull()):
             VS.terminateMission(0)
         if (self.adjsys.Execute()):
@@ -84,3 +86,7 @@ class patrol (Director.Mission):
 		if (self.FinishedPatrol()):
                     self.SuccessMission()
 
+def initrandom (minsysaway,maxsysaway,minsigtopatrol,maxsigtopatrol,mincred,maxcred):
+    nsys = random.randrange (minsysaway, maxsysaway)
+    nsig = random.randrange (minsigtopatrol, maxsigtopatrol)
+    return patrol (nsys, nsig,random.randrange(100.0,300.0),(1+nsys*0.5)*nsig*random.randrange (mincred,maxcred))

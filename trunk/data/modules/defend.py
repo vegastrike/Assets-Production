@@ -113,3 +113,6 @@ class defend (Director.Mission):
                 if (self.NoEnemiesInArea (self.defendee)):
                     self.SuccessMission()
 		
+def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base):
+    enq=random.randrange(minenquant,maxenquant)
+    return defend(factionname,numsysaway,enq,8000.0,100000.0,enq*credperen,defendit,defend_base)
