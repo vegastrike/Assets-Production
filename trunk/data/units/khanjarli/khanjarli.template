@@ -1,45 +1,54 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  back="0.000000" left="0" right="0" recharge="0.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" back = "0.000000" left = "0" right = "0" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_4_Level5"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_5"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-	<Upgrade file="polymer_hull"/>
-        <!-- Weapons -->
-	<Mount weapon="plasma" size="light medium heavy autotracking" x="-4" y="1" z="6" />
-	<Mount weapon="plasma" size="light medium heavy autotracking" x= "4" y="1" z="6" />
-	<Mount weapon="torpedoe" size="special Light-missile medium-missile heavy-missile" x="-2.85" y="-2" z="-1" ammo="6"/>
-	<Mount weapon="torpedoe" size="special Light-missile medium-missile heavy-missile" x= "2.85" y="-2" z="-1" ammo="6"/>
-	<Mount weapon="torpedoe" size="Light-missile medium-missile heavy-missile special" x= "5.5" y="-3" z="-3" ammo ="6"/>
-	<Mount weapon="torpedoe" size="Light-missile medium-missile heavy-missile special" x="-5.5" y="-3" z="-3" ammo ="6"/>
-	<Subunit file="medium_blank" x="0" y="0" z="-19" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1"/>
-
-	
-	<Thrust>
-		<Engine Afterburner="1200" Forward="400" retro="354" Left="202" Right="202" Top="202" Bottom="202"/>
-		<Maneuver yaw="1587" pitch="1587" roll="2087"/>
+	<Upgrade file = "shield_4_Level5"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_5"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Upgrade file = "polymer_hull"  >
+	</Upgrade>
+	<Mount weapon = "plasma" size = "light medium heavy autotracking" x = "-4" y = "1" z = "6"  >
+	</Mount>
+	<Mount weapon = "plasma" size = "light medium heavy autotracking" x = "4" y = "1" z = "6"  >
+	</Mount>
+	<Mount weapon = "torpedoe" size = "special Light-missile medium-missile heavy-missile" x = "-2.85" y = "-2" z = "-1" ammo = "6"  >
+	</Mount>
+	<Mount weapon = "torpedoe" size = "special Light-missile medium-missile heavy-missile" x = "2.85" y = "-2" z = "-1" ammo = "6"  >
+	</Mount>
+	<Mount weapon = "torpedoe" size = "Light-missile medium-missile heavy-missile special" x = "5.5" y = "-3" z = "-3" ammo = "6"  >
+	</Mount>
+	<Mount weapon = "torpedoe" size = "Light-missile medium-missile heavy-missile special" x = "-5.5" y = "-3" z = "-3" ammo = "6"  >
+	</Mount>
+	<Subunit file = "medium_blank" x = "0" y = "0" z = "-19" ri = "0" rj = "1" rk = "0" qi = "0" qj = "0" qk = "-1"  >
+	</Subunit>
+	<Thrust >
+		<Engine Afterburner = "24648" Forward = "8216" retro = "7271" Left = "4149" Right = "4149" Top = "4149" Bottom = "4149"  >
+		</Engine>
+		<Maneuver yaw = "32596" pitch = "32596" roll = "42866"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-
-
-		<Stats mass="15.000000" momentofinertia="15.000000" fuel="400000000"></Stats>
-	<Computer yaw="80" pitch="85" roll="90" afterburner="115" maxspeed="41.500">
-	<Radar itts="true" color="true" error="0"/> </Computer>       
-
-	<Jump delay="2" jumpenergy="150"/>       
-
-	<description>
-
+	<Stats mass = "308" momentofinertia = "308" fuel = "400000000"  >
+	</Stats>
+	<Computer yaw = "80" pitch = "85" roll = "90" afterburner = "115" maxspeed = "41.500" >
+		<Radar itts = "true" color = "true" error = "0"  >
+		</Radar>
+	</Computer>
+	<Jump delay = "2" jumpenergy = "150"  >
+	</Jump>
+	<description  >
 	</description>
-	<Hold volume="75">
-	    
+	<Hold volume = "75"  >
 	</Hold>
-
-
 </Unit>

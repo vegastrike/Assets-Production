@@ -1,35 +1,52 @@
-<Unit>
-	<Meshfile file="Drone1.xmesh" />
-	<Meshfile file="Drone2.xmesh" />
-	<Meshfile file="Drone3.xmesh" />
-	<Thrust>
-		<Engine Afterburner="10066.666718" Forward="2586.666687" Retro="2513.333351" Left="2593.333344" Right="2593.333344" Top="2593.333344" Bottom="2593.333344"/>
-		<Maneuver yaw="25540.000000" pitch="24640.800201" roll="33750.600403"/>
+<Unit >
+	<Meshfile file = "Drone1.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "Drone2.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "Drone3.xmesh"  >
+	</Meshfile>
+	<Thrust >
+		<Engine Afterburner = "2118771" Forward = "544426" Retro = "528991" Left = "545829" Right = "545829" Top = "545829" Bottom = "545829"  >
+		</Engine>
+		<Maneuver yaw = "5375505" pitch = "5186247" roll = "7103623"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	<Defense hudImage="unknown_active-hud.spr">
-		<Armor front="15" right="10" left="10" back="10"/>
-		<Shields front="200.000000" back="200.000000" recharge="2400.000000"/>
-		<Hull strength="50.000000"/>
-		<Cloak cloakmin="0" cloakrate=".1" cloakenergy="280"/>
+	<Defense hudImage = "unknown_active-hud.spr" >
+		<Armor front = "15" right = "10" left = "10" back = "10"  >
+		</Armor>
+		<Shields front = "200.000000" back = "200.000000" recharge = "2400.000000"  >
+		</Shields>
+		<Hull strength = "50.000000"  >
+		</Hull>
+		<Cloak cloakmin = "0" cloakrate = ".1" cloakenergy = "280"  >
+		</Cloak>
 	</Defense>
-	<Stats mass="30.000000" momentofinertia="30.000000" fuel="600000000"></Stats>
-	<Computer yaw="238.000000" pitch="265.600006" roll="293.200012" afterburner="120" maxspeed="60">
-		<Radar itts="true" color="true" range="800000" error="0"/> </Computer>
-
-	<Energy afterburnenergy="30">
-		<Reactor recharge="280" limit="800"/>
+	<Stats mass = "6314" momentofinertia = "6314" fuel = "600000000"  >
+	</Stats>
+	<Computer yaw = "238.000000" pitch = "265.600006" roll = "293.200012" afterburner = "120" maxspeed = "60" >
+		<Radar itts = "true" color = "true" range = "800000" error = "0"  >
+		</Radar>
+	</Computer>
+	<Energy afterburnenergy = "30" >
+		<Reactor recharge = "280" limit = "800"  >
+		</Reactor>
 	</Energy>
-       <cockpit x="0" y="8" z="50"/>
-           	<Jump delay="1" jumpenergy="280"/>       
-<!-- new elements added -->
-
-<!-- new elements added -->
-<Mount weapon="UnknownBeam" size="Heavy" x="-15.833333" y="3.575820" z="58.726788"/>
-<Mount weapon="UnknownBeam" size="Heavy" x="15.318306" y="3.931693" z="58.726788" />
-<Light file="supernova.bmp" x="-14.558598" y="4.705065" z="-59.838497" size="18.400000"/>
-<Light file="supernova.bmp" x="12.919494" y="3.609854" z="-59.238785" size="18.000000"/>
-<Mount weapon="UnknownBolt" size="Heavy" x="-9.442946" y="-4.617121" z="54.150455" />
-<Mount weapon="UnknownBolt" size="Heavy" x="9.643875" y="-4.753923" z="54.455894" />
+	<cockpit x = "0" y = "8" z = "50"  >
+	</cockpit>
+	<Jump delay = "1" jumpenergy = "280"  >
+	</Jump>
+	<Mount weapon = "UnknownBeam" size = "Heavy" x = "-15.833333" y = "3.575820" z = "58.726788"  >
+	</Mount>
+	<Mount weapon = "UnknownBeam" size = "Heavy" x = "15.318306" y = "3.931693" z = "58.726788"  >
+	</Mount>
+	<Light file = "supernova.bmp" x = "-14.558598" y = "4.705065" z = "-59.838497" size = "18.400000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "12.919494" y = "3.609854" z = "-59.238785" size = "18.000000"  >
+	</Light>
+	<Mount weapon = "UnknownBolt" size = "Heavy" x = "-9.442946" y = "-4.617121" z = "54.150455"  >
+	</Mount>
+	<Mount weapon = "UnknownBolt" size = "Heavy" x = "9.643875" y = "-4.753923" z = "54.455894"  >
+	</Mount>
 </Unit>

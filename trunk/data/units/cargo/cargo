@@ -1,78 +1,100 @@
-<Unit>
-
-
-<Meshfile file="cargo01-Frame.xmesh" />
-<Meshfile file="cargo01-Sides.xmesh" />
-
-
-		<Thrust>
-		<Engine Afterburner="000000" Forward="000000" Retro="0000" Left="0000" Right="0000" Top="00000" Bottom="000000"/>
-		<Maneuver yaw="0" pitch="0" roll="0"/>
+<Unit >
+	<Meshfile file = "cargo01-Frame.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "cargo01-Sides.xmesh"  >
+	</Meshfile>
+	<Thrust >
+		<Engine Afterburner = "0" Forward = "0" Retro = "0" Left = "0" Right = "0" Top = "0" Bottom = "0"  >
+		</Engine>
+		<Maneuver yaw = "0" pitch = "0" roll = "0"  >
+		</Maneuver>
 	</Thrust>
-	<Sound></Sound>
-	<Defense>
-		<Armor front="100" right="80" left="80" back="100"/>
-		<Shields front="150" back="150" recharge="15"/>
-		<Hull strength="500"/>
-		<Cloak cloakmin=".01" cloakrate=".2" cloakenergy="0"/>
-
+	<Sound  >
+	</Sound>
+	<Defense >
+		<Armor front = "100" right = "80" left = "80" back = "100"  >
+		</Armor>
+		<Shields front = "150" back = "150" recharge = "15"  >
+		</Shields>
+		<Hull strength = "500"  >
+		</Hull>
+		<Cloak cloakmin = ".01" cloakrate = ".2" cloakenergy = "0"  >
+		</Cloak>
 	</Defense>
-	<Stats mass="10" momentofinertia="7" fuel="0"></Stats>
-	<Computer yaw="128" pitch="0" roll="0000" afterburner="000000" maxspeed="00000">
-		<Radar itts="false" range="4000" color="true" error="0"/>
+	<Stats mass = "57960" momentofinertia = "40572" fuel = "0"  >
+	</Stats>
+	<Computer yaw = "128" pitch = "0" roll = "0000" afterburner = "000000" maxspeed = "00000" >
+		<Radar itts = "false" range = "4000" color = "true" error = "0"  >
+		</Radar>
 	</Computer>
-
-	<Energy>
-		<Reactor recharge="10" limit="140"/>
+	<Energy >
+		<Reactor recharge = "10" limit = "140"  >
+		</Reactor>
 	</Energy>
-	<Hold volume="1000">
-		<Category file="Natural_Products/Food">
-			<import price=".7" pricestddev=".2" quantity="0" quantitystddev="10"/>
+	<Hold volume = "1000" >
+		<Category file = "Natural_Products/Food" >
+			<import price = ".7" pricestddev = ".2" quantity = "0" quantitystddev = "10"  >
+			</import>
 		</Category>
-		<Category file="Natural_Products/Liquor">
-			<import price=".8" pricestddev=".2" quantity="0" quantitystddev="2"/>
+		<Category file = "Natural_Products/Liquor" >
+			<import price = ".8" pricestddev = ".2" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="Natural_Products/Plants">
-			<import price=".8" pricestddev=".2" quantity="0" quantitystddev="2"/>
+		<Category file = "Natural_Products/Plants" >
+			<import price = ".8" pricestddev = ".2" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="Natural_Products/Natural_Resources">
-			<import price=".8" pricestddev=".2" quantity="0" quantitystddev="5"/>
+		<Category file = "Natural_Products/Natural_Resources" >
+			<import price = ".8" pricestddev = ".2" quantity = "0" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="Fuels/Crude">
-			<import price="0.8" pricestddev=".2" quantity="0" quantitystddev="2"/>
+		<Category file = "Fuels/Crude" >
+			<import price = "0.8" pricestddev = ".2" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="Fuels/Refined">
-			<import price="1.2" pricestddev=".3" quantity="0" quantitystddev="2"/>
+		<Category file = "Fuels/Refined" >
+			<import price = "1.2" pricestddev = ".3" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="Compressed_Gasses">
-			<import price=".7" pricestddev=".2" quantity="0" quantitystddev="2"/>
+		<Category file = "Compressed_Gasses" >
+			<import price = ".7" pricestddev = ".2" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="Machinery_Goods">
-			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="4"/>
+		<Category file = "Machinery_Goods" >
+			<import price = "1.1" pricestddev = ".1" quantity = "0" quantitystddev = "4"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Agriculteral_Supplies">
-			<import price="1.2" pricestddev=".1" quantity="0" quantitystddev="7"/>
+		<Category file = "Supplies/Agriculteral_Supplies" >
+			<import price = "1.2" pricestddev = ".1" quantity = "0" quantitystddev = "7"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Mining_Supplies">
-			<import price=".6" pricestddev=".1" quantity="0" quantitystddev="1"/>
+		<Category file = "Supplies/Mining_Supplies" >
+			<import price = ".6" pricestddev = ".1" quantity = "0" quantitystddev = "1"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Construction_Supplies">
-			<import price="1.2" pricestddev=".1" quantity="0" quantitystddev="5"/>
+		<Category file = "Supplies/Construction_Supplies" >
+			<import price = "1.2" pricestddev = ".1" quantity = "0" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Medical_Supplies">
-			<import price="1.2" pricestddev=".1" quantity="0" quantitystddev="3"/>
+		<Category file = "Supplies/Medical_Supplies" >
+			<import price = "1.2" pricestddev = ".1" quantity = "0" quantitystddev = "3"  >
+			</import>
 		</Category>
-		<Category file="Electronics">
-			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+		<Category file = "Electronics" >
+			<import price = "1.1" pricestddev = ".1" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="Electronics/Robotics">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="1"/>
+		<Category file = "Electronics/Robotics" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "1"  >
+			</import>
 		</Category>
-		<Category file="Manufactured_Goods">
-			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+		<Category file = "Manufactured_Goods" >
+			<import price = "1.1" pricestddev = ".1" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="Entertainment">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="1"/>
+		<Category file = "Entertainment" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "1"  >
+			</import>
 		</Category>
 	</Hold>
 </Unit>

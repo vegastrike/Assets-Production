@@ -1,55 +1,64 @@
-<Unit size="10">
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  back="0.000000" left="0" right="0" recharge="0.000000"/>	</Defense>
-	<Upgrade file="shield_4_Level3"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_3"/>
-	<Upgrade file="micro_shielded_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-
-
-<Meshfile file="Epeellcat-Body.xmesh"/>
-<Meshfile file="Epeellcat-Cockpit.xmesh"/>
-
-<!-- new elements added -->
-
-<!-- what the hiell
-<Mount weapon="Laser" size="Light" x="-0.982843" z="-0.316667" y="0.888562" ri="-0.659975" rj="0.358979" rk="-0.659975" qi="0.253836" qj="0.933346" qk="0.253836"/>
--->
-
-<Mount weapon="Disruptor" size="light medium special autotracking" x="-5.240053" z="-0.426834" y="0.726702"/>
-<Mount weapon="Disruptor" size="light medium special autotracking" x="5.483819" z="-0.151023" y="0.889213" />
-
-<Mount weapon="Neutron" size="Light Medium Heavy" x="0.480426" z="3.783170" y="0.589719" />
-<Mount weapon="Neutron" size="Light Medium Heavy" x="-0.455556" z="3.666667" y="0.666667"/>
-
-<Mount weapon="HeatSeeker" size="light-missile medium-missile" x="-1.369247" z="1.379604" y="0.005125"  volume="181"/>
-<Mount weapon="HeatSeeker" size="light-missile medium-missile" x="1.656804" z="1.490848" y="-0.087377"  volume="181"/>
-<Mount weapon="Swarm" size="light-missile special-missile autotracking" x="-1.369247" z="2.379604" y="-0.38125"  volume="471"/>
-<Mount weapon="Swarm" size="light-missile special-missile autotracking" x="1.656804" z="2.490848" y="-0.387377"  volume="471"/>
-
-
-<Light file="supernova.bmp" x="0.770710" z="-3.150000" y="0.912131" size="1.495000"/>
-<Light file="supernova.bmp" x="-0.841421" z="-3.150000" y="1.124264" size="1.195000"/>
-<Light file="supernova.bmp" x="-1.300000" z="-3.100000" y="-0.200000" size="1.235000"/>
-<Light file="supernova.bmp" x="1.500000" z="-3.100000" y="-0.200000" size="1.135000"/>
-
-	<Thrust>
-		<Engine Afterburner="1300.000000" Forward="448.000000" Retro="392.000000" Left="224.000000" Right="224.000000" Top="224.000000" Bottom="224.000000"/>
-		<Maneuver yaw="4009.400101" pitch="4009.400101" roll="4009.400101"/>
+<Unit size = "10" >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" back = "0.000000" left = "0" right = "0" recharge = "0.000000"  >
+		</Shields>
+	</Defense>
+	<Upgrade file = "shield_4_Level3"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_3"  >
+	</Upgrade>
+	<Upgrade file = "micro_shielded_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Meshfile file = "Epeellcat-Body.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "Epeellcat-Cockpit.xmesh"  >
+	</Meshfile>
+	<Mount weapon = "Disruptor" size = "light medium special autotracking" x = "-5.240053" z = "-0.426834" y = "0.726702"  >
+	</Mount>
+	<Mount weapon = "Disruptor" size = "light medium special autotracking" x = "5.483819" z = "-0.151023" y = "0.889213"  >
+	</Mount>
+	<Mount weapon = "Neutron" size = "Light Medium Heavy" x = "0.480426" z = "3.783170" y = "0.589719"  >
+	</Mount>
+	<Mount weapon = "Neutron" size = "Light Medium Heavy" x = "-0.455556" z = "3.666667" y = "0.666667"  >
+	</Mount>
+	<Mount weapon = "HeatSeeker" size = "light-missile medium-missile" x = "-1.369247" z = "1.379604" y = "0.005125" volume = "181"  >
+	</Mount>
+	<Mount weapon = "HeatSeeker" size = "light-missile medium-missile" x = "1.656804" z = "1.490848" y = "-0.087377" volume = "181"  >
+	</Mount>
+	<Mount weapon = "Swarm" size = "light-missile special-missile autotracking" x = "-1.369247" z = "2.379604" y = "-0.38125" volume = "471"  >
+	</Mount>
+	<Mount weapon = "Swarm" size = "light-missile special-missile autotracking" x = "1.656804" z = "2.490848" y = "-0.387377" volume = "471"  >
+	</Mount>
+	<Light file = "supernova.bmp" x = "0.770710" z = "-3.150000" y = "0.912131" size = "1.495000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-0.841421" z = "-3.150000" y = "1.124264" size = "1.195000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-1.300000" z = "-3.100000" y = "-0.200000" size = "1.235000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "1.500000" z = "-3.100000" y = "-0.200000" size = "1.135000"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "1775" Forward = "611" Retro = "535" Left = "305" Right = "305" Top = "305" Bottom = "305"  >
+		</Engine>
+		<Maneuver yaw = "5476" pitch = "5476" roll = "5476"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-
-	<Stats mass="4.500000" momentofinertia="3.500000" fuel="40000000"></Stats>
-	<Computer yaw="137.800003" pitch="121.800003" roll="127.800003" afterburner="128.000000" maxspeed="42.500000"/>
-       	<Jump delay="1" jumpenergy="90"/>       
-
-	<Hold volume="65">
+	<Stats mass = "6.1461" momentofinertia = "4.7803" fuel = "40000000"  >
+	</Stats>
+	<Computer yaw = "137.800003" pitch = "121.800003" roll = "127.800003" afterburner = "128.000000" maxspeed = "42.500000"  >
+	</Computer>
+	<Jump delay = "1" jumpenergy = "90"  >
+	</Jump>
+	<Hold volume = "65"  >
 	</Hold>
-
-
 </Unit>

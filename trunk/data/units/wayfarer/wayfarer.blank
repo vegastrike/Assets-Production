@@ -1,70 +1,82 @@
-<Unit>
-<cockpit file="heavy-cockpit.cpt" x="0" y="0" z="0"/>
-<!-- this ship starts out with 2 shield facings (can't change the number of shield facings once you start -->
-	<Defense HudImage="wayfarer-hud.spr">
-		<Shields front="0.000000" back="0.000000" recharge="0.000000"/>
+<Unit >
+	<cockpit file = "heavy-cockpit.cpt" x = "0" y = "0" z = "0"  >
+	</cockpit>
+	<Defense HudImage = "wayfarer-hud.spr" >
+		<Shields front = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-<!-- then it gets the basic shield level 2 that you start out with at beginning game...this is level 0 -->
-	<upgrade file="shield_2"/>
-<!-- starts out with engine level 0 -->
-	<upgrade file="engine_level_0"/>
-<!-- starts out with horrible armor -->
-	<upgrade file="lithium"/>
-<!-- starts out with horrible hull -->
-	<upgrade file="hull"/>
-
-	<Meshfile file="rescue-hull-e.xmesh"/>
-	<Meshfile file="rescue-hull-w.xmesh"/>
-	<Meshfile file="rescue-hull-p.xmesh"/>
-	<Meshfile file="rescue-hull-h.xmesh"/>
-	<Meshfile file="rescue-hull-i.xmesh"/>
-	<Meshfile file="rescue-cock-c.xmesh"/>
-
-	<Mount weapon="" size="Light Medium Heavy" x="9.8108" y="1.757" z="11.8091" />
-	<Mount weapon="" size="Light Medium Heavy" x="-9.8108" y="1.757" z="11.8091" />
-
-       <Mount weapon="" size="light-missile medium-missile" x="-29.815" y="-6.919" z="30.409" ammo="6" volume="901"/>
-       <Mount weapon="" size="light-missile medium-missile" x="29.815" y="-6.919" z="30.409" ammo="6" volume="901"/>
-        <Mount weapon="" size="Special" x="29.815" y="-6.919" z="30.409"/>
-        <Mount weapon="" size="Special" x="-29.815" y="-6.919" z="30.409"/>
-	
-	<Thrust>
-		<Engine Afterburner="903.666718" Forward="173.333344" Retro="215.666676" Left="171.666672" Right="171.666672" Top="171.666672" Bottom="171.666672"/>
-		<Maneuver yaw="2239.200050" pitch="1853.800201" roll="3087.200050"/>
+	<upgrade file = "shield_2"  >
+	</upgrade>
+	<upgrade file = "engine_level_0"  >
+	</upgrade>
+	<upgrade file = "lithium"  >
+	</upgrade>
+	<upgrade file = "hull"  >
+	</upgrade>
+	<Meshfile file = "rescue-hull-e.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "rescue-hull-w.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "rescue-hull-p.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "rescue-hull-h.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "rescue-hull-i.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "rescue-cock-c.xmesh"  >
+	</Meshfile>
+	<Mount weapon = "" size = "Light Medium Heavy" x = "9.8108" y = "1.757" z = "11.8091"  >
+	</Mount>
+	<Mount weapon = "" size = "Light Medium Heavy" x = "-9.8108" y = "1.757" z = "11.8091"  >
+	</Mount>
+	<Mount weapon = "" size = "light-missile medium-missile" x = "-29.815" y = "-6.919" z = "30.409" ammo = "6" volume = "901"  >
+	</Mount>
+	<Mount weapon = "" size = "light-missile medium-missile" x = "29.815" y = "-6.919" z = "30.409" ammo = "6" volume = "901"  >
+	</Mount>
+	<Mount weapon = "" size = "Special" x = "29.815" y = "-6.919" z = "30.409"  >
+	</Mount>
+	<Mount weapon = "" size = "Special" x = "-29.815" y = "-6.919" z = "30.409"  >
+	</Mount>
+	<Thrust >
+		<Engine Afterburner = "99126" Forward = "19013" Retro = "23657" Left = "18830" Right = "18830" Top = "18830" Bottom = "18830"  >
+		</Engine>
+		<Maneuver yaw = "245627" pitch = "203351" roll = "338647"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-<!-- starting mass and fuel -->
-
-	<Stats mass="10.000000" momentofinertia="10.000000" fuel="40000000"></Stats>
-<!-- starting ypr limits -->
-	<Computer yaw="60.400002" pitch="50.600006" roll="80.400002" afterburner="60" maxspeed="30">
-		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>		<!-- starting terrible radar that only targets forward (maxcone of .25 is forward only... -1 is 360   0 is 180 ) -->
+	<Stats mass = "1096" momentofinertia = "1096" fuel = "40000000"  >
+	</Stats>
+	<Computer yaw = "60.400002" pitch = "50.600006" roll = "80.400002" afterburner = "60" maxspeed = "30" >
+		<Radar itts = "false" error = "0" range = "5000" maxcone = ".25" color = "false"  >
+		</Radar>
 	</Computer>
-	<Energy afterburnenergy="32767"/><!-- can't afterburn -->
-	<Jump missing="1" delay="2" jumpenergy="150"/>       <!-- can't jump -->
-	<description>
-
+	<Energy afterburnenergy = "32767"  >
+	</Energy>
+	<Jump missing = "1" delay = "2" jumpenergy = "150"  >
+	</Jump>
+	<description  >
 	</description>
-<!-- low cargo -->
-	<Hold volume="125">   <!-- default cargo in ship -->
-		<Category file="Natural_Products/Natural_Resources">
-			<import price=".8" pricestddev=".2" quantity="0" quantitystddev="5"/>
+	<Hold volume = "125" >
+		<Category file = "Natural_Products/Natural_Resources" >
+			<import price = ".8" pricestddev = ".2" quantity = "0" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="Fuels/Crude">
-			<import price="0.8" pricestddev=".2" quantity="0" quantitystddev="2"/>
+		<Category file = "Fuels/Crude" >
+			<import price = "0.8" pricestddev = ".2" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="Entertainment">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="1"/>
-		</Category>	
+		<Category file = "Entertainment" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "1"  >
+			</import>
+		</Category>
 	</Hold>
-
-<!-- new elements added -->
-
-    <Light file="supernova.bmp" x="10.24" y="-2.759" z="-18.302" size="6"/>
-    <Light file="supernova.bmp" x="-10.24" y="-2.759" z="-18.302" size="6"/>
-
-        <Dock x="0" y="4.6" z="6" size="10"/>
-        <Dock x="0" y="-4.7" z="6" size="10"/>
-
+	<Light file = "supernova.bmp" x = "10.24" y = "-2.759" z = "-18.302" size = "6"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-10.24" y = "-2.759" z = "-18.302" size = "6"  >
+	</Light>
+	<Dock x = "0" y = "4.6" z = "6" size = "10"  >
+	</Dock>
+	<Dock x = "0" y = "-4.7" z = "6" size = "10"  >
+	</Dock>
 </Unit>

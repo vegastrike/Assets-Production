@@ -1,34 +1,48 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000" left="0" right="0" back="0.000000" recharge="0.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" left = "0" right = "0" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_4_Level2"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_3"/>
-	<Upgrade file="micro_shielded_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-	<Thrust>
-		<Engine Afterburner="1166.666641" Forward="356.000000" Retro="324.000000" Left="328.000000" Right="328.000000" Top="328.000000" Bottom="328.000000"/>
-		<Maneuver yaw="2932.400101" pitch="3287.800201" roll="2832.400101"/>
+	<Upgrade file = "shield_4_Level2"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_3"  >
+	</Upgrade>
+	<Upgrade file = "micro_shielded_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Thrust >
+		<Engine Afterburner = "232351" Forward = "70900" Retro = "64527" Left = "65323" Right = "65323" Top = "65323" Bottom = "65323"  >
+		</Engine>
+		<Maneuver yaw = "584010" pitch = "654791" roll = "564095"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	<Stats mass="5.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
-	<Computer yaw="92.800003" pitch="106.600006" roll="92.800003" afterburner="116.666664" maxspeed="38.000000"/>
-	<Jump delay="1" jumpenergy="400"/>              
-
-
-<!-- new elements added -->
-<Mount weapon="DisruptorBeam" size="light medium" x="-3.111663" y="-1.013324" z="6.923400"/>
-<Mount weapon="DisruptorBeam" size="light medium" x="3.122948" y="-1.010298" z="6.885867" />
-<Mount weapon="Torpedo" size="heavy-missile" x="2.000000" y="-1.270000" z="-0.400000" ammo="1" volume="201"/>
-<Mount weapon="Torpedo" size="heavy-missile" x="-2.000000" y="-1.270000" z="-0.400000" ammo="1" volume="201"/>
-
-<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="2.500000" y="-.270000" z="-1.400000" ammo="1" volume="151"/>
-<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-2.500000" y="-.270000" z="-1.400000" ammo="1" volume="151"/>
-
-<Mount weapon="Plasma" size="special medium heavy Autotracking" x="0.000000" y="-0.270000" z="2.400000"/>
+	<Stats mass = "995" momentofinertia = "995" fuel = "200000000"  >
+	</Stats>
+	<Computer yaw = "92.800003" pitch = "106.600006" roll = "92.800003" afterburner = "116.666664" maxspeed = "38.000000"  >
+	</Computer>
+	<Jump delay = "1" jumpenergy = "400"  >
+	</Jump>
+	<Mount weapon = "DisruptorBeam" size = "light medium" x = "-3.111663" y = "-1.013324" z = "6.923400"  >
+	</Mount>
+	<Mount weapon = "DisruptorBeam" size = "light medium" x = "3.122948" y = "-1.010298" z = "6.885867"  >
+	</Mount>
+	<Mount weapon = "Torpedo" size = "heavy-missile" x = "2.000000" y = "-1.270000" z = "-0.400000" ammo = "1" volume = "201"  >
+	</Mount>
+	<Mount weapon = "Torpedo" size = "heavy-missile" x = "-2.000000" y = "-1.270000" z = "-0.400000" ammo = "1" volume = "201"  >
+	</Mount>
+	<Mount weapon = "FriendOrFoe" size = "light-missile medium-missile" x = "2.500000" y = "-.270000" z = "-1.400000" ammo = "1" volume = "151"  >
+	</Mount>
+	<Mount weapon = "FriendOrFoe" size = "light-missile medium-missile" x = "-2.500000" y = "-.270000" z = "-1.400000" ammo = "1" volume = "151"  >
+	</Mount>
+	<Mount weapon = "Plasma" size = "special medium heavy Autotracking" x = "0.000000" y = "-0.270000" z = "2.400000"  >
+	</Mount>
 </Unit>

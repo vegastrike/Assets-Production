@@ -1,34 +1,52 @@
-<Unit>
-<Meshfile file="fighter-body.xmesh"/>
-<Meshfile file="fighter-guns.xmesh"/>
-<!-- new elements added -->
-<Mount weapon="KtekBeam" size="Special Medium Heavy" x="0.730882" y="0.293518" z="23.003031" />
-<Mount weapon="Disruptor" size="Light Medium" x="-0.010562" y="0.432593" z="25.065680" />
-<Mount weapon="KtekBeam" size="Special Medium Heavy" x="-0.731581" y="0.229109" z="22.665678"/>
-
-<Light file="supernova.bmp" x="3.386960" y="2.524278" z="-10.232185" size="4.677816"/>
-<Light file="supernova.bmp" x="-2.894827" y="2.631000" z="-11.071307" size="4.717809"/>
-<Light file="supernova.bmp" x="-18.526455" y="3.429340" z="0.421196" size="3.297047"/>
-<Light file="supernova.bmp" x="18.440897" y="3.276502" z="0.167332" size="3.630991"/>
-
-	<cockpit file="rlaan-cockpit.cpt" x="0" y="3" z="23"/>
-	<Thrust>
-		<Engine Afterburner="268.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
-		<Maneuver yaw="3415.500000" pitch="3415.500000" roll="3415.500000"/>
+<Unit >
+	<Meshfile file = "fighter-body.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "fighter-guns.xmesh"  >
+	</Meshfile>
+	<Mount weapon = "KtekBeam" size = "Special Medium Heavy" x = "0.730882" y = "0.293518" z = "23.003031"  >
+	</Mount>
+	<Mount weapon = "Disruptor" size = "Light Medium" x = "-0.010562" y = "0.432593" z = "25.065680"  >
+	</Mount>
+	<Mount weapon = "KtekBeam" size = "Special Medium Heavy" x = "-0.731581" y = "0.229109" z = "22.665678"  >
+	</Mount>
+	<Light file = "supernova.bmp" x = "3.386960" y = "2.524278" z = "-10.232185" size = "4.677816"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-2.894827" y = "2.631000" z = "-11.071307" size = "4.717809"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-18.526455" y = "3.429340" z = "0.421196" size = "3.297047"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "18.440897" y = "3.276502" z = "0.167332" size = "3.630991"  >
+	</Light>
+	<cockpit file = "rlaan-cockpit.cpt" x = "0" y = "3" z = "23"  >
+	</cockpit>
+	<Thrust >
+		<Engine Afterburner = "34021" Forward = "34021" Retro = "18660" Left = "23357" Right = "23357" Top = "23357" Bottom = "23357"  >
+		</Engine>
+		<Maneuver yaw = "433580" pitch = "433580" roll = "433580"  >
+		</Maneuver>
 	</Thrust>
-	<Sound> </Sound>
-	<Defense HudImage="f109vampire-hud.spr">
-		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="60" cloakglass="false"/>       
-		<Armor front="500" right="480" left="480" back="600"/>
-		<Shields front="30" right="25" left="25" back="25" recharge="36.166667"/>
-		<Hull strength="1000"/>
+	<Sound  >
+	</Sound>
+	<Defense HudImage = "f109vampire-hud.spr" >
+		<Cloak cloakmin = ".3" cloakrate = ".1" cloakenergy = "60" cloakglass = "false"  >
+		</Cloak>
+		<Armor front = "500" right = "480" left = "480" back = "600"  >
+		</Armor>
+		<Shields front = "30" right = "25" left = "25" back = "25" recharge = "36.166667"  >
+		</Shields>
+		<Hull strength = "1000"  >
+		</Hull>
 	</Defense>
-	<Stats mass="7" momentofinertia="7" fuel="2000000000"></Stats>
-	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="140.000000" maxspeed="80.000000"/>
-	<Energy>
-		<Reactor recharge="60" limit="470"/>
+	<Stats mass = "888" momentofinertia = "888" fuel = "2000000000"  >
+	</Stats>
+	<Computer yaw = "103.500000" pitch = "103.500000" roll = "103.500000" afterburner = "140.000000" maxspeed = "80.000000"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "60" limit = "470"  >
+		</Reactor>
 	</Energy>
-	<Jump delay="1" jumpenergy="350"/>
-	<Hold volume="25">
+	<Jump delay = "1" jumpenergy = "350"  >
+	</Jump>
+	<Hold volume = "25"  >
 	</Hold>
 </Unit>

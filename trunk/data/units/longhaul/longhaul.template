@@ -1,46 +1,56 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  back="0.000000" left="0" right="0"  recharge="0.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" back = "0.000000" left = "0" right = "0" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_4_Level3"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_3"/>
-	<Upgrade file="polymer_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
- 
-	<Mount weapon="Tachyon" size="Light Medium Heavy" x="-4.5" y="3" z="32.5"/>
-	<Mount weapon="Tachyon" size="Light Medium Heavy"  x="4.5" y="3" z="32.5" />
-	<Mount weapon="Plasma" size="Light Medium Heavy Autotracking" x="-0" y="2" z="30"/>
-
-	<Mount weapon="" size="Special" x="6.5" y="3" z="12.5"/>
-	<Mount weapon="" size="Special" x="-6.5" y="3" z="12.5" />
-	<Mount weapon="imagerecognition" size="Light-missile Medium-missile" x="6.5" y="3" z="12.5" ammo = "5"/>
-	<Mount weapon="imagerecognition" size="Light-missile Medium-missile" x="-6.5" y="3" z="12.5" ammo ="5"/>
-	<Mount weapon="torpedo" size="Light-missile Medium-missile Heavy-missile Special-missile" x="0" y="3" z="2.5" ammo = "8" />	
-	
-	
-	<Subunit file="turretsmall" x="0.162158" y="5.486964" z="-8.088474" ri="1.000000" 			rj="0.000000" rk="-0.000000" qi="-0.000000" qj="0.789352" qk="-0.613941"/>
-
-	<Thrust>
-		<Engine Afterburner="1400.666718" Forward="300.333344" Retro="300.666676" Left="300.666672" Right="302.666672" Top="302.666672" Bottom="302.666672"/>
-		<Maneuver yaw="2843.200050" pitch="2587.800201" roll="3843.200050"/>
+	<Upgrade file = "shield_4_Level3"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_3"  >
+	</Upgrade>
+	<Upgrade file = "polymer_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Mount weapon = "Tachyon" size = "Light Medium Heavy" x = "-4.5" y = "3" z = "32.5"  >
+	</Mount>
+	<Mount weapon = "Tachyon" size = "Light Medium Heavy" x = "4.5" y = "3" z = "32.5"  >
+	</Mount>
+	<Mount weapon = "Plasma" size = "Light Medium Heavy Autotracking" x = "-0" y = "2" z = "30"  >
+	</Mount>
+	<Mount weapon = "" size = "Special" x = "6.5" y = "3" z = "12.5"  >
+	</Mount>
+	<Mount weapon = "" size = "Special" x = "-6.5" y = "3" z = "12.5"  >
+	</Mount>
+	<Mount weapon = "imagerecognition" size = "Light-missile Medium-missile" x = "6.5" y = "3" z = "12.5" ammo = "5"  >
+	</Mount>
+	<Mount weapon = "imagerecognition" size = "Light-missile Medium-missile" x = "-6.5" y = "3" z = "12.5" ammo = "5"  >
+	</Mount>
+	<Mount weapon = "torpedo" size = "Light-missile Medium-missile Heavy-missile Special-missile" x = "0" y = "3" z = "2.5" ammo = "8"  >
+	</Mount>
+	<Subunit file = "turretsmall" x = "0.162158" y = "5.486964" z = "-8.088474" ri = "1.000000" rj = "0.000000" rk = "-0.000000" qi = "-0.000000" qj = "0.789352" qk = "-0.613941"  >
+	</Subunit>
+	<Thrust >
+		<Engine Afterburner = "55631" Forward = "11928" Retro = "11941" Left = "11941" Right = "12021" Top = "12021" Bottom = "12021"  >
+		</Engine>
+		<Maneuver yaw = "112926" pitch = "102782" roll = "152644"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-
-	<Stats mass="25.000000" momentofinertia="25.000000" fuel="400000000"></Stats>
-	<Computer yaw="80" pitch="80" roll="85" afterburner="105" maxspeed="37.500"/>
-
-	<Jump delay="2" jumpenergy="150"/>       
-
-	<description>
-
+	<Stats mass = "992" momentofinertia = "992" fuel = "400000000"  >
+	</Stats>
+	<Computer yaw = "80" pitch = "80" roll = "85" afterburner = "105" maxspeed = "37.500"  >
+	</Computer>
+	<Jump delay = "2" jumpenergy = "150"  >
+	</Jump>
+	<description  >
 	</description>
-	<Hold volume="225">
-	    
+	<Hold volume = "225"  >
 	</Hold>
-
-
 </Unit>

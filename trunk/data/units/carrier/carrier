@@ -1,362 +1,528 @@
-<Unit>
-	<Meshfile file="carrier.xmesh" />
-	<Thrust>
-		<Engine Afterburner="186.666660" Forward="106.666664" Retro="93.333331" Left="53.333332" Right="53.333332" Top="53.333332" Bottom="53.333332"/>
-		<Maneuver yaw="910.800013" pitch="910.800013" roll="910.800013"/>
+<Unit >
+	<Meshfile file = "carrier.xmesh"  >
+	</Meshfile>
+	<Thrust >
+		<Engine Afterburner = "485651769" Forward = "277515299" Retro = "242825887" Left = "138757649" Right = "138757649" Top = "138757649" Bottom = "138757649"  >
+		</Engine>
+		<Maneuver yaw = "2369633858" pitch = "2369633858" roll = "2369633858"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	<Defense HudImage="carrier-hud.spr">
-		<Armor front="3000" right="3000" left="3000" back="3000"/>
-		<Shields front="1000.000000" right="1000.000000" left="1000.000000" back="1000.000000" recharge="80.000000"/>
-		<Hull strength="5000.000000"/>
+	<Defense HudImage = "carrier-hud.spr" >
+		<Armor front = "3000" right = "3000" left = "3000" back = "3000"  >
+		</Armor>
+		<Shields front = "1000.000000" right = "1000.000000" left = "1000.000000" back = "1000.000000" recharge = "80.000000"  >
+		</Shields>
+		<Hull strength = "5000.000000"  >
+		</Hull>
 	</Defense>
-	<Stats mass="50.000000" momentofinertia="50.000000" fuel="20000"></Stats>
-	<Computer yaw="27.600000" pitch="27.600000" roll="27.600000" afterburner="18.666666" maxspeed="13.333333"/>
-	<Energy>
-		<Reactor recharge="10" limit="1100"/>
+	<Stats mass = "130085300" momentofinertia = "130085300" fuel = "20000"  >
+	</Stats>
+	<Computer yaw = "27.600000" pitch = "27.600000" roll = "27.600000" afterburner = "18.666666" maxspeed = "13.333333"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "10" limit = "1100"  >
+		</Reactor>
 	</Energy>
-       	<Jump delay="1" jumpenergy="80"/>       
-<Dock x="265" y="0" z="-1400" size="100"/>
-<Dock x="0" y="0" z="-1400" size="100"/>
-<Dock x="-265" y="0" z="-1400" size="100"/>
-<Dock x="265" y="0" z="-1300" size="100"/>
-<Dock x="0" y="0" z="-1300" size="100"/>
-<Dock x="-265" y="0" z="-1300" size="100"/>
-<Dock x="265" y="0" z="-1200" size="100"/>
-<Dock x="0" y="0" z="-1200" size="100"/>
-<Dock x="-265" y="0" z="-1200" size="100"/>
-<Dock x="265" y="0" z="-1100" size="100"/>
-<Dock x="0" y="0" z="-1100" size="100"/>
-<Dock x="-265" y="0" z="-1100" size="100"/>
-<Dock x="265" y="0" z="-1000" size="100"/>
-<Dock x="0" y="0" z="-1000" size="100"/>
-<Dock x="-265" y="0" z="-1000" size="100"/>
-<Dock x="265" y="0" z="-900" size="100"/>
-<Dock x="0" y="0" z="-900" size="100"/>
-<Dock x="-265" y="0" z="-900" size="100"/>
-
-<Dock x="265" y="0" z="-800" size="100"/>
-<Dock x="0" y="0" z="-800" size="100"/>
-<Dock x="-265" y="0" z="-800" size="100"/>
-
-
-<Dock x="265" y="0" z="-700" size="100"/>
-<Dock x="0" y="0" z="-700" size="100"/>
-<Dock x="-265" y="0" z="-700" size="100"/>
-
-<Dock x="265" y="0" z="-600" size="100"/>
-<Dock x="0" y="0" z="-600" size="100"/>
-<Dock x="-265" y="0" z="-600" size="100"/>
-
-<Dock x="265" y="0" z="-500" size="100"/>
-<Dock x="0" y="0" z="-500" size="100"/>
-<Dock x="-265" y="0" z="-500" size="100"/>
-
-<Dock x="265" y="0" z="-400" size="100"/>
-<Dock x="0" y="0" z="-400" size="100"/>
-<Dock x="-265" y="0" z="-400" size="100"/>
-
-<Dock x="265" y="0" z="-300" size="100"/>
-<Dock x="0" y="0" z="-300" size="100"/>
-<Dock x="-265" y="0" z="-300" size="100"/>
-
-<Dock x="265" y="0" z="-200" size="100"/>
-<Dock x="0" y="0" z="-200" size="100"/>
-<Dock x="-265" y="0" z="-200" size="100"/>
-
-<Dock x="265" y="0" z="-100" size="100"/>
-<Dock x="0" y="0" z="-100" size="100"/>
-<Dock x="-265" y="0" z="-100" size="100"/>
-
-<Dock x="265" y="0" z="00" size="100"/>
-<Dock x="0" y="0" z="00" size="100"/>
-<Dock x="-265" y="0" z="00" size="100"/>
-
-
-<Dock x="265" y="0" z="1400" size="100"/>
-<Dock x="0" y="0" z="1400" size="100"/>
-<Dock x="-265" y="0" z="1400" size="100"/>
-<Dock x="265" y="0" z="1300" size="100"/>
-<Dock x="0" y="0" z="1300" size="100"/>
-<Dock x="-265" y="0" z="1300" size="100"/>
-<Dock x="265" y="0" z="1200" size="100"/>
-<Dock x="0" y="0" z="1200" size="100"/>
-<Dock x="-265" y="0" z="1200" size="100"/>
-<Dock x="265" y="0" z="1100" size="100"/>
-<Dock x="0" y="0" z="1100" size="100"/>
-<Dock x="-265" y="0" z="1100" size="100"/>
-<Dock x="265" y="0" z="1000" size="100"/>
-<Dock x="0" y="0" z="1000" size="100"/>
-<Dock x="-265" y="0" z="1000" size="100"/>
-<Dock x="265" y="0" z="900" size="100"/>
-<Dock x="0" y="0" z="900" size="100"/>
-<Dock x="-265" y="0" z="900" size="100"/>
-
-<Dock x="265" y="0" z="800" size="100"/>
-<Dock x="0" y="0" z="800" size="100"/>
-<Dock x="-265" y="0" z="800" size="100"/>
-
-
-<Dock x="265" y="0" z="700" size="100"/>
-<Dock x="0" y="0" z="700" size="100"/>
-<Dock x="-265" y="0" z="700" size="100"/>
-
-<Dock x="265" y="0" z="600" size="100"/>
-<Dock x="0" y="0" z="600" size="100"/>
-<Dock x="-265" y="0" z="600" size="100"/>
-
-<Dock x="265" y="0" z="500" size="100"/>
-<Dock x="0" y="0" z="500" size="100"/>
-<Dock x="-265" y="0" z="500" size="100"/>
-
-<Dock x="265" y="0" z="400" size="100"/>
-<Dock x="0" y="0" z="400" size="100"/>
-<Dock x="-265" y="0" z="400" size="100"/>
-
-<Dock x="265" y="0" z="300" size="100"/>
-<Dock x="0" y="0" z="300" size="100"/>
-<Dock x="-265" y="0" z="300" size="100"/>
-
-<Dock x="265" y="0" z="200" size="100"/>
-<Dock x="0" y="0" z="200" size="100"/>
-<Dock x="-265" y="0" z="200" size="100"/>
-
-<Dock x="265" y="0" z="100" size="100"/>
-<Dock x="0" y="0" z="100" size="100"/>
-<Dock x="-265" y="0" z="100" size="100"/>
-
-
-<!-- new elements added -->
-<Subunit file="turret" x="297.541321" y="111.443909" z="342.244110" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.999688" qk="0.024992"/>
-<Subunit file="turret" x="-273.263031" y="110.510124" z="379.595337" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.999688" qk="0.024992"/>
-<Subunit file="turret" x="-249.341995" y="87.532906" z="1298.683960" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.999688" qk="0.024992"/>
-<Subunit file="turret" x="253.502670" y="87.122223" z="1315.110840" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.999688" qk="0.024992"/>
-<Light file="supernova.bmp" x="4.500088" y="-474.285889" z="-1600.000000" size="152.000000"/>
-<Light file="supernova.bmp" x="-0.000001" y="-320.000000" z="-1600.000000" size="156.000000"/>
-<Light file="supernova.bmp" x="2.892566" y="-179.173615" z="-1600.000000" size="164.000000"/>
-<Light file="supernova.bmp" x="0.000001" y="320.000000" z="-1600.000000" size="148.000000"/>
-<Light file="supernova.bmp" x="-0.836774" y="456.703857" z="-1600.000000" size="132.000000"/>
-<Light file="supernova.bmp" x="7.182299" y="190.274643" z="-1600.000000" size="144.000000"/>
-<Light file="supernova.bmp" x="-700.000000" y="0.000000" z="-1600.000000" size="180.000000"/>
-<Light file="supernova.bmp" x="-518.586487" y="1.486937" z="-1599.999756" size="176.000000"/>
-<Light file="supernova.bmp" x="-880.904846" y="4.020197" z="-1600.000000" size="164.000000"/>
-<Light file="supernova.bmp" x="700.000000" y="-0.000000" z="-1600.000000" size="176.000000"/>
-<Light file="supernova.bmp" x="519.658752" y="8.460168" z="-1600.000000" size="180.000000"/>
-<Light file="supernova.bmp" x="878.492310" y="0.782123" z="-1600.000122" size="168.000000"/>
-<Subunit file="turret" x="360.002106" y="-114.454712" z="221.811600" ri="-0.074767" rj="0.024922" rk="0.996890" qi="0.000000" qj="-0.999688" qk="0.024992"/>
-<Subunit file="turretbeam" x="-296.773407" y="-88.955132" z="1241.795288" ri="-0.074767" rj="0.024922" rk="0.996890" qi="0.000000" qj="-0.999688" qk="0.024992"/>
-<Subunit file="turretbeam" x="290.479553" y="-88.947266" z="1242.108887" ri="-0.074767" rj="0.024922" rk="0.996890" qi="0.000000" qj="-0.999688" qk="0.024992"/>
-<Subunit file="turret" x="-355.310547" y="-114.063446" z="237.462311" ri="-0.074767" rj="0.024922" rk="0.996890" qi="0.000000" qj="-0.999688" qk="0.024992"/>
-<Subunit file="turretmain" x="-0.000001" y="560.000000" z="-1400.000000" ri="-0.049938" rj="0.000000" rk="0.998752" qi="0.000000" qj="1.000000" qk="-0.000000"/>
-<Subunit file="turretmain" x="0.000001" y="-560.000000" z="-1400.000000" ri="0.049938" rj="0.000000" rk="0.998752" qi="0.000000" qj="-1.000000" qk="0.000000"/>
-<Subunit file="turretmainheavy" x="-1000.000000" y="0.000000" z="-1400.000000" ri="0.000000" rj="-1.000000" rk="0.000000" qi="-1.000000" qj="0.000000" qk="0.000000"/>
-<Subunit file="turretmainheavy" x="1000.000000" y="-0.000000" z="-1400.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="1.000000" qj="0.000000" qk="-0.000000"/>
-	<Hold volume="10000000000">
-		<Category file="Natural_Products/Food">
-			<import price="1.3" pricestddev=".2" quantity="15" quantitystddev="2"/>
-		</Category>
-		<Category file="Natural_Products/Liquor">
-			<import price="1.05" pricestddev=".1" quantity="1" quantitystddev="1"/>
-		</Category>
-		<Category file="Natural_Products/Plants">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Natural_Products/Natural_Resources">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Raw_Materials/Metals/Crude">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Raw_Materials/Metals/Precious">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Raw_Materials/Metals/Alloys">
-			<import price="1.15" pricestddev=".1" quantity="2" quantitystddev="2"/>
-		</Category>
-		<Category file="Raw_Materials/Metals/Radioactive">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Raw_Materials/Gems/Jewelry">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Raw_Materials/Gems/Industrial">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Raw_Materials/Stone">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Fuels/Crude">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Fuels/Refined">
-			<import price="1.3" pricestddev=".3" quantity="1" quantitystddev="1"/>
-		</Category>
-		<Category file="Compressed_Gasses">
-			<import price="1.1" pricestddev=".1" quantity="1" quantitystddev="1"/>
-		</Category>
-		<Category file="Recycled_Products">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Machinery_Goods">
-			<import price="1.1" pricestddev=".1" quantity="5" quantitystddev="3"/>
-		</Category>
-		<Category file="Supplies/Aerospace_Supplies">
-			<import price="1.2" pricestddev=".3" quantity="3" quantitystddev="1"/>
-		</Category>
-		<Category file="Supplies/Agriculteral_Supplies">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Supplies/Mining_Supplies">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Supplies/Construction_Supplies">
-			<import price=".8" pricestddev=".2" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Supplies/Medical_Supplies">
-			<import price="1.1" pricestddev=".1" quantity="3" quantitystddev="3"/>
-		</Category>
-		<Category file="Electronics">
-			<import price="1.2" pricestddev=".2" quantity="5" quantitystddev="4"/>
-		</Category>
-		<Category file="Electronics/Robotics">
-			<import price="1.1" pricestddev=".2" quantity="2" quantitystddev="1"/>
-		</Category>
-		<Category file="Manufactured_Goods">
-			<import price=".9" pricestddev=".2" quantity="3" quantitystddev="2"/>
-		</Category>
-		<Category file="Entertainment">
-			<import price="1.1" pricestddev=".2" quantity="1" quantitystddev="1"/>
-		</Category>
-		<Category file="Contraband/Medical">
-			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="Contraband">
-			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="starships/Confed/Light">
-			<import price="1" pricestdev=".2" quantity="2" quantitystddev="14" />
-		</Category>
-		<Category file="starships/Confed/Medium">
-			<import price="1.1" pricestdev=".2" quantity="0" quantitystddev="18" />
-		</Category>
-		<Category file="starships/Confed/Heavy">
-			<import price="1.2" pricestdev=".2" quantity="0" quantitystddev="14" />
-		</Category>
-		<Category file="starships/Confed/Milspec">
-			<import price="1.3" pricestdev=".3" quantity="0" quantitystddev="10" />
-		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Light">
-			<import price="1" pricestdev=".1" quantity="20" quantitystddev="10" />
-		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Medium">
-			<import price="1.1" pricestdev=".1" quantity="10" quantitystddev="5" />
-		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Heavy">
-			<import price="1.1" pricestddev=".1" quantity="8" quantitystddev="3"/>
-		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Confed_Milspec">
-			<import price="1.1" pricestddev=".1" quantity="5" quantitystddev="2"/>
-		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Light">
-			<import price="1" pricestdev=".1" quantity="10" quantitystddev="5" />
-		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Medium">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
-		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Heavy">
-			<import price="1" pricestddev=".1" quantity="2" quantitystddev="1"/>
-		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Confed_Milspec">
-			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Weapons/Mount_Enhancements">
-			<import price="1" pricestddev=".1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Weapons/Turrets">
-			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
-		</Category>
-		<Category file="upgrades/Miscellaneous/SubUnits">
-			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
-		</Category>
-		<Category file="upgrades/Engines/Light">
-			<import price="1" pricestdev=".1" quantity="20" quantitystddev="10" />
-		</Category>
-		<Category file="upgrades/Engines/Medium">
-			<import price="1" pricestdev=".1" quantity="10" quantitystddev="5" />
-		</Category>
-		<Category file="upgrades/Engines/Heavy">
-			<import price="1" pricestdev=".1" quantity="5" quantitystddev="2" />
-		</Category>
-		<Category file="upgrades/Engines/Confed_Milspec">
-			<import price="1" pricestddev=".1" quantity="1" quantitystddev="4"/>
-		</Category>
-		<Category file="upgrades/Engines/Engine_Enhancements_Light">
-			<import price="1" pricestddev=".1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Engines/Engine_Enhancements_Medium">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
-		</Category>
-		<Category file="upgrades/Engines/Engine_Enhancements_Heavy">
-			<import price="1" pricestddev=".1" quantity="2" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Shield_Systems/Light">
-			<import price="1" pricestdev=".1" quantity="10" quantitystddev="5" />
-		</Category>
-		<Category file="upgrades/Shield_Systems/Medium">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
-		</Category>
-		<Category file="upgrades/Shield_Systems/Heavy">
-			<import price="1" pricestddev=".1" quantity="1" quantitystddev="3"/>
-		</Category>
-		<Category file="upgrades/Shield_Systems/Confed_Milspec">
-			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Armor_Modification">
-			<import price="1" pricestddev=".1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Armor_Modification/Confed_Milspec">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
-		</Category>
-		<Category file="upgrades/Hull_Upgrades">
-			<import price="1" pricestddev=".1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Hull_Upgrades/Confed_Milspec">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
-		</Category>
-		<Category file="upgrades/ECM_Systems">
-			<import price="1" pricestddev=".1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/ECM_Systems/Confed_Milspec">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
-		</Category>
-		<Category file="upgrades/Repair_Systems">
-			<import price="1" pricestddev=".1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Repair_Systems/Research">
-			<import price="1.2" pricestddev=".1" quantity="0" quantitystddev="0"/>
-		</Category>
-		<Category file="upgrades/Repair_Systems/Advanced">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
-		</Category>
-		<Category file="upgrades/Radar/Advanced">
-			<import price="1" pricestddev=".1" quantity="2" quantitystddev="1"/>
-		</Category>
-		<Category file="upgrades/Miscellaneous">
-			<import price="1" pricestddev=".1" quantity="10" quantitystddev="5"/>
-		</Category>
-		<Category file="upgrades/Miscellaneous/Confed_Milspec">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="4"/>
-		</Category>
-		<Category file="upgrades/Ammunition">
-			<import price="1" pricestddev=".1" quantity="200" quantitystddev="50"/>
-		</Category>
-		<Category file="upgrades/Experimental">
-			<import price="1.4" pricestddev=".2" quantity="0" quantitystddev="0"/>
+	<Jump delay = "1" jumpenergy = "80"  >
+	</Jump>
+	<Dock x = "265" y = "0" z = "-1400" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-1400" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-1400" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-1300" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-1300" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-1300" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-1200" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-1200" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-1200" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-1100" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-1100" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-1100" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-1000" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-1000" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-1000" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-900" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-900" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-900" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-800" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-800" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-800" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-700" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-700" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-700" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-600" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-600" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-600" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-500" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-500" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-500" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-400" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-400" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-400" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-300" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-300" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-300" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-200" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-200" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-200" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "-100" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "-100" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "-100" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "00" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "00" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "00" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "1400" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "1400" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "1400" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "1300" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "1300" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "1300" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "1200" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "1200" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "1200" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "1100" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "1100" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "1100" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "1000" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "1000" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "1000" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "900" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "900" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "900" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "800" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "800" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "800" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "700" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "700" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "700" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "600" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "600" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "600" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "500" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "500" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "500" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "400" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "400" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "400" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "300" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "300" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "300" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "200" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "200" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "200" size = "100"  >
+	</Dock>
+	<Dock x = "265" y = "0" z = "100" size = "100"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "100" size = "100"  >
+	</Dock>
+	<Dock x = "-265" y = "0" z = "100" size = "100"  >
+	</Dock>
+	<Subunit file = "turret" x = "297.541321" y = "111.443909" z = "342.244110" ri = "-1.000000" rj = "0.000000" rk = "0.000000" qi = "0.000000" qj = "0.999688" qk = "0.024992"  >
+	</Subunit>
+	<Subunit file = "turret" x = "-273.263031" y = "110.510124" z = "379.595337" ri = "-1.000000" rj = "0.000000" rk = "0.000000" qi = "0.000000" qj = "0.999688" qk = "0.024992"  >
+	</Subunit>
+	<Subunit file = "turret" x = "-249.341995" y = "87.532906" z = "1298.683960" ri = "-1.000000" rj = "0.000000" rk = "0.000000" qi = "0.000000" qj = "0.999688" qk = "0.024992"  >
+	</Subunit>
+	<Subunit file = "turret" x = "253.502670" y = "87.122223" z = "1315.110840" ri = "-1.000000" rj = "0.000000" rk = "0.000000" qi = "0.000000" qj = "0.999688" qk = "0.024992"  >
+	</Subunit>
+	<Light file = "supernova.bmp" x = "4.500088" y = "-474.285889" z = "-1600.000000" size = "152.000000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-0.000001" y = "-320.000000" z = "-1600.000000" size = "156.000000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "2.892566" y = "-179.173615" z = "-1600.000000" size = "164.000000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "0.000001" y = "320.000000" z = "-1600.000000" size = "148.000000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-0.836774" y = "456.703857" z = "-1600.000000" size = "132.000000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "7.182299" y = "190.274643" z = "-1600.000000" size = "144.000000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-700.000000" y = "0.000000" z = "-1600.000000" size = "180.000000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-518.586487" y = "1.486937" z = "-1599.999756" size = "176.000000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-880.904846" y = "4.020197" z = "-1600.000000" size = "164.000000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "700.000000" y = "-0.000000" z = "-1600.000000" size = "176.000000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "519.658752" y = "8.460168" z = "-1600.000000" size = "180.000000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "878.492310" y = "0.782123" z = "-1600.000122" size = "168.000000"  >
+	</Light>
+	<Subunit file = "turret" x = "360.002106" y = "-114.454712" z = "221.811600" ri = "-0.074767" rj = "0.024922" rk = "0.996890" qi = "0.000000" qj = "-0.999688" qk = "0.024992"  >
+	</Subunit>
+	<Subunit file = "turretbeam" x = "-296.773407" y = "-88.955132" z = "1241.795288" ri = "-0.074767" rj = "0.024922" rk = "0.996890" qi = "0.000000" qj = "-0.999688" qk = "0.024992"  >
+	</Subunit>
+	<Subunit file = "turretbeam" x = "290.479553" y = "-88.947266" z = "1242.108887" ri = "-0.074767" rj = "0.024922" rk = "0.996890" qi = "0.000000" qj = "-0.999688" qk = "0.024992"  >
+	</Subunit>
+	<Subunit file = "turret" x = "-355.310547" y = "-114.063446" z = "237.462311" ri = "-0.074767" rj = "0.024922" rk = "0.996890" qi = "0.000000" qj = "-0.999688" qk = "0.024992"  >
+	</Subunit>
+	<Subunit file = "turretmain" x = "-0.000001" y = "560.000000" z = "-1400.000000" ri = "-0.049938" rj = "0.000000" rk = "0.998752" qi = "0.000000" qj = "1.000000" qk = "-0.000000"  >
+	</Subunit>
+	<Subunit file = "turretmain" x = "0.000001" y = "-560.000000" z = "-1400.000000" ri = "0.049938" rj = "0.000000" rk = "0.998752" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
+	</Subunit>
+	<Subunit file = "turretmainheavy" x = "-1000.000000" y = "0.000000" z = "-1400.000000" ri = "0.000000" rj = "-1.000000" rk = "0.000000" qi = "-1.000000" qj = "0.000000" qk = "0.000000"  >
+	</Subunit>
+	<Subunit file = "turretmainheavy" x = "1000.000000" y = "-0.000000" z = "-1400.000000" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "1.000000" qj = "0.000000" qk = "-0.000000"  >
+	</Subunit>
+	<Hold volume = "10000000000" >
+		<Category file = "Natural_Products/Food" >
+			<import price = "1.3" pricestddev = ".2" quantity = "15" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "Natural_Products/Liquor" >
+			<import price = "1.05" pricestddev = ".1" quantity = "1" quantitystddev = "1"  >
+			</import>
+		</Category>
+		<Category file = "Natural_Products/Plants" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Natural_Products/Natural_Resources" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Raw_Materials/Metals/Crude" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Raw_Materials/Metals/Precious" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Raw_Materials/Metals/Alloys" >
+			<import price = "1.15" pricestddev = ".1" quantity = "2" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "Raw_Materials/Metals/Radioactive" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Raw_Materials/Gems/Jewelry" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Raw_Materials/Gems/Industrial" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Raw_Materials/Stone" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Fuels/Crude" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Fuels/Refined" >
+			<import price = "1.3" pricestddev = ".3" quantity = "1" quantitystddev = "1"  >
+			</import>
+		</Category>
+		<Category file = "Compressed_Gasses" >
+			<import price = "1.1" pricestddev = ".1" quantity = "1" quantitystddev = "1"  >
+			</import>
+		</Category>
+		<Category file = "Recycled_Products" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Machinery_Goods" >
+			<import price = "1.1" pricestddev = ".1" quantity = "5" quantitystddev = "3"  >
+			</import>
+		</Category>
+		<Category file = "Supplies/Aerospace_Supplies" >
+			<import price = "1.2" pricestddev = ".3" quantity = "3" quantitystddev = "1"  >
+			</import>
+		</Category>
+		<Category file = "Supplies/Agriculteral_Supplies" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Supplies/Mining_Supplies" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Supplies/Construction_Supplies" >
+			<import price = ".8" pricestddev = ".2" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Supplies/Medical_Supplies" >
+			<import price = "1.1" pricestddev = ".1" quantity = "3" quantitystddev = "3"  >
+			</import>
+		</Category>
+		<Category file = "Electronics" >
+			<import price = "1.2" pricestddev = ".2" quantity = "5" quantitystddev = "4"  >
+			</import>
+		</Category>
+		<Category file = "Electronics/Robotics" >
+			<import price = "1.1" pricestddev = ".2" quantity = "2" quantitystddev = "1"  >
+			</import>
+		</Category>
+		<Category file = "Manufactured_Goods" >
+			<import price = ".9" pricestddev = ".2" quantity = "3" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "Entertainment" >
+			<import price = "1.1" pricestddev = ".2" quantity = "1" quantitystddev = "1"  >
+			</import>
+		</Category>
+		<Category file = "Contraband/Medical" >
+			<import price = "0" pricestddev = "0" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "Contraband" >
+			<import price = "0" pricestddev = "0" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "starships/Confed/Light" >
+			<import price = "1" pricestdev = ".2" quantity = "2" quantitystddev = "14"  >
+			</import>
+		</Category>
+		<Category file = "starships/Confed/Medium" >
+			<import price = "1.1" pricestdev = ".2" quantity = "0" quantitystddev = "18"  >
+			</import>
+		</Category>
+		<Category file = "starships/Confed/Heavy" >
+			<import price = "1.2" pricestdev = ".2" quantity = "0" quantitystddev = "14"  >
+			</import>
+		</Category>
+		<Category file = "starships/Confed/Milspec" >
+			<import price = "1.3" pricestdev = ".3" quantity = "0" quantitystddev = "10"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Weapons/Mounted_Guns_Light" >
+			<import price = "1" pricestdev = ".1" quantity = "20" quantitystddev = "10"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Weapons/Mounted_Guns_Medium" >
+			<import price = "1.1" pricestdev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Weapons/Mounted_Guns_Heavy" >
+			<import price = "1.1" pricestddev = ".1" quantity = "8" quantitystddev = "3"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Weapons/Mounted_Guns_Confed_Milspec" >
+			<import price = "1.1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Weapons/Beam_Arrays_Light" >
+			<import price = "1" pricestdev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Weapons/Beam_Arrays_Medium" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Weapons/Beam_Arrays_Heavy" >
+			<import price = "1" pricestddev = ".1" quantity = "2" quantitystddev = "1"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Weapons/Beam_Arrays_Confed_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "-2" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Weapons/Mount_Enhancements" >
+			<import price = "1" pricestddev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Weapons/Turrets" >
+			<import price = "1" pricestddev = ".1" quantity = "1" quantitystddev = "1"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Miscellaneous/SubUnits" >
+			<import price = "1" pricestddev = ".1" quantity = "1" quantitystddev = "1"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Engines/Light" >
+			<import price = "1" pricestdev = ".1" quantity = "20" quantitystddev = "10"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Engines/Medium" >
+			<import price = "1" pricestdev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Engines/Heavy" >
+			<import price = "1" pricestdev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Engines/Confed_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "1" quantitystddev = "4"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Engines/Engine_Enhancements_Light" >
+			<import price = "1" pricestddev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Engines/Engine_Enhancements_Medium" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Engines/Engine_Enhancements_Heavy" >
+			<import price = "1" pricestddev = ".1" quantity = "2" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Shield_Systems/Light" >
+			<import price = "1" pricestdev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Shield_Systems/Medium" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Shield_Systems/Heavy" >
+			<import price = "1" pricestddev = ".1" quantity = "1" quantitystddev = "3"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Shield_Systems/Confed_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "-2" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Armor_Modification" >
+			<import price = "1" pricestddev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Armor_Modification/Confed_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Hull_Upgrades" >
+			<import price = "1" pricestddev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Hull_Upgrades/Confed_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/ECM_Systems" >
+			<import price = "1" pricestddev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/ECM_Systems/Confed_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Repair_Systems" >
+			<import price = "1" pricestddev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Repair_Systems/Research" >
+			<import price = "1.2" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Repair_Systems/Advanced" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Radar/Advanced" >
+			<import price = "1" pricestddev = ".1" quantity = "2" quantitystddev = "1"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Miscellaneous" >
+			<import price = "1" pricestddev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Miscellaneous/Confed_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "4"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Ammunition" >
+			<import price = "1" pricestddev = ".1" quantity = "200" quantitystddev = "50"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Experimental" >
+			<import price = "1.4" pricestddev = ".2" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
 	</Hold>
-	<Upgrade file="standard_missions"/>
-	<Upgrade file="confed_missions"/>
-	<Upgrade file="confed_mil_missions"/>
-
+	<Upgrade file = "standard_missions"  >
+	</Upgrade>
+	<Upgrade file = "confed_missions"  >
+	</Upgrade>
+	<Upgrade file = "confed_mil_missions"  >
+	</Upgrade>
 </Unit>

@@ -1,39 +1,46 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  back="0.000000" recharge="0.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_2_Level1"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_3"/>
-	<Upgrade file="polymer_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-	<Thrust>
-		<Engine Afterburner="1800.000000" Forward="633.333313" Retro="566.666649" Left="466.666656" Right="466.666656" Top="466.666656" Bottom="466.666656"/>
-		<Maneuver yaw="4043.200050" pitch="4043.200050" roll="4043.200050"/>
+	<Upgrade file = "shield_2_Level1"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_3"  >
+	</Upgrade>
+	<Upgrade file = "polymer_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Thrust >
+		<Engine Afterburner = "286066" Forward = "100653" Retro = "90058" Left = "74165" Right = "74165" Top = "74165" Bottom = "74165"  >
+		</Engine>
+		<Maneuver yaw = "642569" pitch = "642569" roll = "642569"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	
-	<Stats mass="1.750000" momentofinertia="1.750000" fuel="50000000"></Stats>
-	<Computer yaw="150.400002" pitch="150.400002" roll="150.400002" afterburner="190.000000" maxspeed="88"/>
-
-       	<Jump delay="1" jumpenergy="90"/>       
-	<Hold volume="60">
-
+	<Stats mass = "278" momentofinertia = "278" fuel = "50000000"  >
+	</Stats>
+	<Computer yaw = "150.400002" pitch = "150.400002" roll = "150.400002" afterburner = "190.000000" maxspeed = "88"  >
+	</Computer>
+	<Jump delay = "1" jumpenergy = "90"  >
+	</Jump>
+	<Hold volume = "60"  >
 	</Hold>
-<Mount weapon="Laser" size="Light Medium" x="-1.056411" y="-1.226957" z="3.200000" />
-<Mount weapon="Laser" size="Light Medium" x="1.056411" y="-1.226957" z="3.200000" />
-<Mount weapon="Meson" size="Light Medium Heavy Special Autotracking" x="0" y="0.910165" z="3.662162"/>
-<Mount weapon="" size="Special" x="-1.629525" y="1.044771" z="3.200000" />
-<Mount weapon="" size="Special" x="1.629525" y="1.044771" z="3.200000"/>
-
-
-<!-- old mesh
-<Mount weapon="Laser" size="Light Medium" x="4.066667" y="-2.026667" z="-1.773333"/>
-<Mount weapon="Laser" size="Light Medium" x="-4.066667" y="-2.026667" z="-1.773333" />
-<Mount weapon="meson" size="Light Medium Heavy Special Autotracking" x="0.000000" y="5.333333" z="-1.966667"/>
--->
+	<Mount weapon = "Laser" size = "Light Medium" x = "-1.056411" y = "-1.226957" z = "3.200000"  >
+	</Mount>
+	<Mount weapon = "Laser" size = "Light Medium" x = "1.056411" y = "-1.226957" z = "3.200000"  >
+	</Mount>
+	<Mount weapon = "Meson" size = "Light Medium Heavy Special Autotracking" x = "0" y = "0.910165" z = "3.662162"  >
+	</Mount>
+	<Mount weapon = "" size = "Special" x = "-1.629525" y = "1.044771" z = "3.200000"  >
+	</Mount>
+	<Mount weapon = "" size = "Special" x = "1.629525" y = "1.044771" z = "3.200000"  >
+	</Mount>
 </Unit>

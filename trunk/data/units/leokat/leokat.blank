@@ -1,34 +1,52 @@
-<Unit>
-	<Defense HudImage="leokat-hud.spr">
-		<Shields front="000000" right="0.000000" left="0.000000" back="0.000000" />
+<Unit >
+	<Defense HudImage = "leokat-hud.spr" >
+		<Shields front = "000000" right = "0.000000" left = "0.000000" back = "0.000000"  >
+		</Shields>
 	</Defense>
-	<upgrade file="shield_4"/>
-	<upgrade file="engine_level_0"/>
-	<upgrade file="lithium"/>
-	<upgrade file="hull"/>
-	<Meshfile file="leokat.xmesh"/>
-	<Thrust>
-		<Engine Afterburner="900.000000" Forward="508.000000" Retro="452.000000" Left="334.000000" Right="334.000000" Top="244.000000" Bottom="124.000000"/>
-		<Maneuver yaw="4409.400101" pitch="4709.400101" roll="4409.400101"/>
+	<upgrade file = "shield_4"  >
+	</upgrade>
+	<upgrade file = "engine_level_0"  >
+	</upgrade>
+	<upgrade file = "lithium"  >
+	</upgrade>
+	<upgrade file = "hull"  >
+	</upgrade>
+	<Meshfile file = "leokat.xmesh"  >
+	</Meshfile>
+	<Thrust >
+		<Engine Afterburner = "11618" Forward = "6557" Retro = "5834" Left = "4311" Right = "4311" Top = "3149" Bottom = "1600"  >
+		</Engine>
+		<Maneuver yaw = "56920" pitch = "60793" roll = "56920"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	<Stats mass="3.500000" momentofinertia="4.500000" fuel="200000000"></Stats>
-	<computer yaw="111.800003" pitch="121.800003" roll="91.800003" afterburner="132.5000000" maxspeed="74.000000">
-			<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	<Stats mass = "45.1815" momentofinertia = "58.0905" fuel = "200000000"  >
+	</Stats>
+	<computer yaw = "111.800003" pitch = "121.800003" roll = "91.800003" afterburner = "132.5000000" maxspeed = "74.000000" >
+		<Radar itts = "false" error = "0" range = "5000" maxcone = ".25" color = "false"  >
+		</Radar>
 	</computer>
-       	<Jump missing="1" delay="1" jumpenergy="100"/>       
-	<Hold volume="30">
+	<Jump missing = "1" delay = "1" jumpenergy = "100"  >
+	</Jump>
+	<Hold volume = "30"  >
 	</Hold>
-
-<!-- new elements added -->
-<Light file="supernova.bmp" x="0.769231" y="0.875000" z="-7.305970" size="1.399999"/>
-<Light file="supernova.bmp" x="-0.706480" y="0.843911" z="-7.305970" size="1.349999"/>
-<Light file="supernova.bmp" x="1.439378" y="-1.015805" z="-7.276228" size="0.990000"/>
-<Light file="supernova.bmp" x="-1.439378" y="-1.015805" z="-7.276228" size="1.139999"/>
-<Mount weapon="" size="Light Medium Heavy" x="-2.046180" y="-0.234908" z="3.363305"/>
-<Mount weapon="" size="Light Medium Heavy" x="2.020314" y="-0.229934" z="3.395984" />
-<Mount weapon="" size="Light Medium" x="-12.491931" y="-1.545735" z="-1.098580"/>
-<Mount weapon="" size="Light Medium" x="12.415822" y="-1.534798" z="-1.049985" />
-<Mount weapon="" size="Special" x="0" y="-.23" z="4"/><!-- tractor mount -->
+	<Light file = "supernova.bmp" x = "0.769231" y = "0.875000" z = "-7.305970" size = "1.399999"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-0.706480" y = "0.843911" z = "-7.305970" size = "1.349999"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "1.439378" y = "-1.015805" z = "-7.276228" size = "0.990000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-1.439378" y = "-1.015805" z = "-7.276228" size = "1.139999"  >
+	</Light>
+	<Mount weapon = "" size = "Light Medium Heavy" x = "-2.046180" y = "-0.234908" z = "3.363305"  >
+	</Mount>
+	<Mount weapon = "" size = "Light Medium Heavy" x = "2.020314" y = "-0.229934" z = "3.395984"  >
+	</Mount>
+	<Mount weapon = "" size = "Light Medium" x = "-12.491931" y = "-1.545735" z = "-1.098580"  >
+	</Mount>
+	<Mount weapon = "" size = "Light Medium" x = "12.415822" y = "-1.534798" z = "-1.049985"  >
+	</Mount>
+	<Mount weapon = "" size = "Special" x = "0" y = "-.23" z = "4"  >
+	</Mount>
 </Unit>

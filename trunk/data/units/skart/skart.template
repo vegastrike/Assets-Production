@@ -1,30 +1,46 @@
-<Unit scale=".6">
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  left="0" right="0" back="0.000000" recharge="0.000000"/>
+<Unit scale = ".6" >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" left = "0" right = "0" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_4_Level2"/>
-
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_2"/>
-	<Upgrade file="polymer_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-<Mount weapon="" size="Light Autotracking" x="-1.922219" y="12.883912" z="5.532851" />
-<Mount weapon="" size="Light Autotracking" x="1.297383" y="14.866834" z="4.464215" />
-<Mount weapon="Ktek" size="Heavy Medium" x="-3.213775" y="-10.523225" z="12.789357"/>
-<Mount weapon="Ktek" size="Heavy Medium" x="3.422477" y="-10.527871" z="12.487250"/>
-
-	<Thrust>
-		<Engine Afterburner="500.000000" Forward="500.000000" Retro="400.000000" Left="400.000000" Right="400.000000" Top="400.000000" Bottom="400.000000"/>
-		<Maneuver yaw="1815.500000" pitch="1815.500000" roll="1815.500000"/>
+	<Upgrade file = "shield_4_Level2"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_2"  >
+	</Upgrade>
+	<Upgrade file = "polymer_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Mount weapon = "" size = "Light Autotracking" x = "-1.922219" y = "12.883912" z = "5.532851"  >
+	</Mount>
+	<Mount weapon = "" size = "Light Autotracking" x = "1.297383" y = "14.866834" z = "4.464215"  >
+	</Mount>
+	<Mount weapon = "Ktek" size = "Heavy Medium" x = "-3.213775" y = "-10.523225" z = "12.789357"  >
+	</Mount>
+	<Mount weapon = "Ktek" size = "Heavy Medium" x = "3.422477" y = "-10.527871" z = "12.487250"  >
+	</Mount>
+	<Thrust >
+		<Engine Afterburner = "219718" Forward = "219718" Retro = "175775" Left = "175775" Right = "175775" Top = "175775" Bottom = "175775"  >
+		</Engine>
+		<Maneuver yaw = "797799" pitch = "797799" roll = "797799"  >
+		</Maneuver>
 	</Thrust>
-	<cockpit x="0" y="0" z="13"/>
-	<Sound> </Sound>
-	<Stats mass="2" momentofinertia="2" fuel="200000000"></Stats>
-	<Computer yaw="143.500000" pitch="183.500000" roll="123.500000" afterburner="190.000000" maxspeed="160.000000"/>
-	<Jump delay="1" jumpenergy="250"/>
-	<Hold volume="15">
+	<cockpit x = "0" y = "0" z = "13"  >
+	</cockpit>
+	<Sound  >
+	</Sound>
+	<Stats mass = "878" momentofinertia = "878" fuel = "200000000"  >
+	</Stats>
+	<Computer yaw = "143.500000" pitch = "183.500000" roll = "123.500000" afterburner = "190.000000" maxspeed = "160.000000"  >
+	</Computer>
+	<Jump delay = "1" jumpenergy = "250"  >
+	</Jump>
+	<Hold volume = "15"  >
 	</Hold>
 </Unit>

@@ -1,72 +1,92 @@
-<Unit>
-<cockpit file="heavy-cockpit.cpt" x="0" y="0" z="0"/>
-	<Defense HudImage="longhaul-hud.spr">
-		<Shields front="0.000000" back="0.000000" left="0" right="0" recharge="0.000000"/>
+<Unit >
+	<cockpit file = "heavy-cockpit.cpt" x = "0" y = "0" z = "0"  >
+	</cockpit>
+	<Defense HudImage = "longhaul-hud.spr" >
+		<Shields front = "0.000000" back = "0.000000" left = "0" right = "0" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<upgrade file="shield_4"/>
-	<upgrade file="engine_level_0"/>
-	<upgrade file="lithium"/>
-	<upgrade file="hull"/>
-
-	<Meshfile file="longhaul-body.xmesh"/>
-	<Meshfile file="longhaul-cockpit.xmesh"/>
-	<!-- Weapons -->
-
-	<Mount weapon="" size="Light Medium" x="-4.5" y="3" z="32.5"/>
-	<Mount weapon="" size="Light Medium" x="4.5" y="3" z="32.5" />
-	<Mount weapon="" size="Light Medium Heavy Autotracking" x="-0" y="2" z="30"/>
-	<Mount weapon="" size="Special" x="6.5" y="3" z="12.5"/>
-	<Mount weapon="" size="Special" x="-6.5" y="3" z="12.5" />
-
-	<Mount weapon="" size="Light-missile Medium-missile" x="6.5" y="3" z="12.5" ammo = "5" volume="901"/>
-	<Mount weapon="" size="Light-missile Medium-missile" x="-6.5" y="3" z="12.5" ammo ="5" volume="901"/>
-	<Mount weapon="" size="Light-missile Medium-missile Heavy-missile Special-missile" x="0" y="3" z="2.5" ammo = "8" volume="751" />	
-	
-	<Subunit file="medium_blank" x="0" y="5.486964" z="-8.088474" ri="1.000000" rj="0.000000" rk="-0.000000" qi="-0.000000" qj="0.789352" qk="-0.613941"/>
-
-	<Thrust>
-		<Engine Afterburner="903.666718" Forward="173.333344" Retro="215.666676" Left="171.666672" Right="171.666672" Top="171.666672" Bottom="171.666672"/>
-		<Maneuver yaw="1500" pitch="1500" roll="2000"/>
+	<upgrade file = "shield_4"  >
+	</upgrade>
+	<upgrade file = "engine_level_0"  >
+	</upgrade>
+	<upgrade file = "lithium"  >
+	</upgrade>
+	<upgrade file = "hull"  >
+	</upgrade>
+	<Meshfile file = "longhaul-body.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "longhaul-cockpit.xmesh"  >
+	</Meshfile>
+	<Mount weapon = "" size = "Light Medium" x = "-4.5" y = "3" z = "32.5"  >
+	</Mount>
+	<Mount weapon = "" size = "Light Medium" x = "4.5" y = "3" z = "32.5"  >
+	</Mount>
+	<Mount weapon = "" size = "Light Medium Heavy Autotracking" x = "-0" y = "2" z = "30"  >
+	</Mount>
+	<Mount weapon = "" size = "Special" x = "6.5" y = "3" z = "12.5"  >
+	</Mount>
+	<Mount weapon = "" size = "Special" x = "-6.5" y = "3" z = "12.5"  >
+	</Mount>
+	<Mount weapon = "" size = "Light-missile Medium-missile" x = "6.5" y = "3" z = "12.5" ammo = "5" volume = "901"  >
+	</Mount>
+	<Mount weapon = "" size = "Light-missile Medium-missile" x = "-6.5" y = "3" z = "12.5" ammo = "5" volume = "901"  >
+	</Mount>
+	<Mount weapon = "" size = "Light-missile Medium-missile Heavy-missile Special-missile" x = "0" y = "3" z = "2.5" ammo = "8" volume = "751"  >
+	</Mount>
+	<Subunit file = "medium_blank" x = "0" y = "5.486964" z = "-8.088474" ri = "1.000000" rj = "0.000000" rk = "-0.000000" qi = "-0.000000" qj = "0.789352" qk = "-0.613941"  >
+	</Subunit>
+	<Thrust >
+		<Engine Afterburner = "35891" Forward = "6884" Retro = "8565" Left = "6818" Right = "6818" Top = "6818" Bottom = "6818"  >
+		</Engine>
+		<Maneuver yaw = "59576" pitch = "59576" roll = "79435"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-
-	<Stats mass="25.000000" momentofinertia="25.000000" fuel="200000000"></Stats>
-	<Computer yaw="70" pitch="70" roll="70" afterburner="95" maxspeed="33.500">
-		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>		
+	<Stats mass = "992" momentofinertia = "992" fuel = "200000000"  >
+	</Stats>
+	<Computer yaw = "70" pitch = "70" roll = "70" afterburner = "95" maxspeed = "33.500" >
+		<Radar itts = "false" error = "0" range = "5000" maxcone = ".25" color = "false"  >
+		</Radar>
 	</Computer>
-	<Energy afterburnenergy="32767"/>
-	<Jump missing="1" delay="2" jumpenergy="150"/>       
-	<description>
-
+	<Energy afterburnenergy = "32767"  >
+	</Energy>
+	<Jump missing = "1" delay = "2" jumpenergy = "150"  >
+	</Jump>
+	<description  >
 	</description>
-	<Hold volume="150">
-		<Category file="Natural_Products/Food">
-			<import price=".7" pricestddev=".2" quantity="0" quantitystddev="10"/>
-		</Category>    
-		<Category file="Fuels/Refined">
-			<import price="1.2" pricestddev=".3" quantity="0" quantitystddev="2"/>
+	<Hold volume = "150" >
+		<Category file = "Natural_Products/Food" >
+			<import price = ".7" pricestddev = ".2" quantity = "0" quantitystddev = "10"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Mining_Supplies">
-			<import price=".6" pricestddev=".1" quantity="0" quantitystddev="1"/>
+		<Category file = "Fuels/Refined" >
+			<import price = "1.2" pricestddev = ".3" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="Electronics">
-			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+		<Category file = "Supplies/Mining_Supplies" >
+			<import price = ".6" pricestddev = ".1" quantity = "0" quantitystddev = "1"  >
+			</import>
+		</Category>
+		<Category file = "Electronics" >
+			<import price = "1.1" pricestddev = ".1" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
 	</Hold>
-
-<!-- new elements added -->
-
-    
-	<!-- Thrusters -->
-
-	<Light file="supernova.bmp" x="19" y="3" z="-13" size="2.5"/>
-	<Light file="supernova.bmp" x="22" y="3" z="-13" size="2.5"/>
-	<Light file="supernova.bmp" x="11.5" y="9.75" z="-10" size="2.8"/>
-	<Light file="supernova.bmp" x="14" y="9.75" z="-10" size="2.8"/>
-	<Light file="supernova.bmp" x="-19" y="3" z="-13" size="2.5"/>
-	<Light file="supernova.bmp" x="-22" y="3" z="-13" size="2.5"/>
-	<Light file="supernova.bmp" x="-11.5" y="9.75" z="-10" size="2.8"/>
-	<Light file="supernova.bmp" x="-14" y="9.75" z="-10" size="2.8"/>
-
+	<Light file = "supernova.bmp" x = "19" y = "3" z = "-13" size = "2.5"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "22" y = "3" z = "-13" size = "2.5"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "11.5" y = "9.75" z = "-10" size = "2.8"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "14" y = "9.75" z = "-10" size = "2.8"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-19" y = "3" z = "-13" size = "2.5"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-22" y = "3" z = "-13" size = "2.5"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-11.5" y = "9.75" z = "-10" size = "2.8"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-14" y = "9.75" z = "-10" size = "2.8"  >
+	</Light>
 </Unit>

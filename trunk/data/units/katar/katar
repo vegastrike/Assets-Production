@@ -1,53 +1,46 @@
-<Unit scale="3">
-	<Meshfile file="Katar-Katar-Body.xmesh"/>
-	<Meshfile file="Katar-Katar-Material26.xmesh"/>
-       
-
-	<!-- Weapons -->
-
-	<Mount weapon="Tachyon" size="medium" x="2.15" y="-1.1" z="2.5" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.406736" qj="0.913546" qk="0.000000"/>
-	<Mount weapon="Tachyon" size="medium" x="-2.15" y="-1.1" z="2.5" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.406736" qj="-0.913546" qk="0.000000"/>
-	<Mount weapon="ImageRecognition" size="medium-missile"  x="6.5" y="-2" z="1" ammo="4"/>
-	<Mount weapon="ImageRecognition" size="medium-missile" x="-6.5" y="-2" z="1" ammo="4"/>
-
-	<!-- Engines --> 
-
-	<Light file="supernova.bmp" x="-5.25" y="-1" z="-10.7" size="3.500000"/>
-	<Light file="supernova.bmp" x="5.25" y="-1" z="-10.7" size="3.500000"/>
-
-	<!-- Specs -->	
-
-	<Thrust>
-		<Engine Afterburner="1300" Forward="280" Retro="300" Left="220" Right="220" Top="220" Bottom="220"/>
-		<Maneuver yaw="2000" pitch="2000" roll="2000"/>
+<Unit scale = "3" >
+	<Meshfile file = "Katar-Katar-Body.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "Katar-Katar-Material26.xmesh"  >
+	</Meshfile>
+	<Mount weapon = "Tachyon" size = "medium" x = "2.15" y = "-1.1" z = "2.5" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "-0.406736" qj = "0.913546" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "Tachyon" size = "medium" x = "-2.15" y = "-1.1" z = "2.5" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "-0.406736" qj = "-0.913546" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "ImageRecognition" size = "medium-missile" x = "6.5" y = "-2" z = "1" ammo = "4"  >
+	</Mount>
+	<Mount weapon = "ImageRecognition" size = "medium-missile" x = "-6.5" y = "-2" z = "1" ammo = "4"  >
+	</Mount>
+	<Light file = "supernova.bmp" x = "-5.25" y = "-1" z = "-10.7" size = "3.500000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "5.25" y = "-1" z = "-10.7" size = "3.500000"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "830764" Forward = "178933" Retro = "191714" Left = "140590" Right = "140590" Top = "140590" Bottom = "140590"  >
+		</Engine>
+		<Maneuver yaw = "1278099" pitch = "1278099" roll = "1278099"  >
+		</Maneuver>
 	</Thrust>
-	
-	<Defense HudImage="katar-hud.spr">
-		<Armor front="200" right="200" left="200" back="200"/>
-		<Shields front="75.000000" back="75.000000" recharge="25.000000"/>
-		<Hull strength="250.000000"/>
+	<Defense HudImage = "katar-hud.spr" >
+		<Armor front = "200" right = "200" left = "200" back = "200"  >
+		</Armor>
+		<Shields front = "75.000000" back = "75.000000" recharge = "25.000000"  >
+		</Shields>
+		<Hull strength = "250.000000"  >
+		</Hull>
 	</Defense>
-		
-	<Stats mass="2.000000" momentofinertia="2.000000" fuel="30000000">
+	<Stats mass = "1278" momentofinertia = "1278" fuel = "30000000"  >
 	</Stats>
-	
-	<Computer yaw="120" pitch="120" roll="150" afterburner="169.5" maxspeed="59.5"/>
-
-	<Energy>
-		<Reactor recharge="80" limit="800"/>
-
+	<Computer yaw = "120" pitch = "120" roll = "150" afterburner = "169.5" maxspeed = "59.5"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "80" limit = "800"  >
+		</Reactor>
 	</Energy>
-	<Jump delay="1" jumpenergy="10"/>       
-	<Hold volume="65">
-	    
+	<Jump delay = "1" jumpenergy = "10"  >
+	</Jump>
+	<Hold volume = "65"  >
 	</Hold>
-
-	
-	<description>
-	The katar is a light bounty hunter ship. It's exceptionnal thrust leave most unwanted 
-combatants far behind. It diverst most power to it's engines and guns thus the shields are 
-somewhat weaker. The designers compensated for this by re-enforcing the armour. 
-Common rolls: Long range bounty hunter ship. Recon/Scouts. Light escort. Quick strikes. 
+	<description  >
 	</description>
-
 </Unit>

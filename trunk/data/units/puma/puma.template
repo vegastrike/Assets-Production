@@ -1,36 +1,54 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  back="0.000000" recharge="0.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_2_Level3"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_3"/>
-	<Upgrade file="reinforced_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-
-	<Mount weapon="Particle" size="Light Medium Heavy" x="2.000000" y="1.000000" z="0.000000"/>
-	<Mount weapon="Particle" size="Light Medium Heavy" x="-2.000000" y="1.000000" z="0.000000"/>
-	<Mount weapon="MassDriver" size="Light Medium Heavy" x="3.000000" y="0.000000" z="0.000000"/>
-	<Mount weapon="MassDriver" size="Light Medium Heavy" x="-3.000000" y="0.000000" z="0.000000"/>
-	<Mount weapon="Dumbfire" size="Light-Missile Special" x="0.300000" y="-0.100000" z="0.000000"  volume="201"/>
-	<Mount weapon="Dumbfire" size="Light-Missile Special" x="-0.300000" y="-0.100000" z="0.000000"  volume="201"/>
-	<Mount weapon="Swarm" size="Heavy-Missile Medium-Missile Special-Missile" x="-0.300000" y="-0.100000" z="0.000000" volume="1000"/>
-	<Mount weapon="Swarm" size="Heavy-Missile Medium-Missile Special-Missile" x="0.300000" y="-0.100000" z="0.000000"  volume="1000"/>
-	<Mount weapon="Torpedo" size="Heavy-Missile" x="-0.000000" y="0.000000" z="0.000000" volume="401"/>
-	<Thrust>
-		<Engine Afterburner="1385.000000" Forward="677.600006" Retro="530.400005" Left="488.800003" Right="488.800003" Top="488.800003" Bottom="488.800003"/>
-		<Maneuver yaw="6419.259537" pitch="6519.259537" roll="6419.259537"/>
+	<Upgrade file = "shield_2_Level3"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_3"  >
+	</Upgrade>
+	<Upgrade file = "reinforced_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Mount weapon = "Particle" size = "Light Medium Heavy" x = "2.000000" y = "1.000000" z = "0.000000"  >
+	</Mount>
+	<Mount weapon = "Particle" size = "Light Medium Heavy" x = "-2.000000" y = "1.000000" z = "0.000000"  >
+	</Mount>
+	<Mount weapon = "MassDriver" size = "Light Medium Heavy" x = "3.000000" y = "0.000000" z = "0.000000"  >
+	</Mount>
+	<Mount weapon = "MassDriver" size = "Light Medium Heavy" x = "-3.000000" y = "0.000000" z = "0.000000"  >
+	</Mount>
+	<Mount weapon = "Dumbfire" size = "Light-Missile Special" x = "0.300000" y = "-0.100000" z = "0.000000" volume = "201"  >
+	</Mount>
+	<Mount weapon = "Dumbfire" size = "Light-Missile Special" x = "-0.300000" y = "-0.100000" z = "0.000000" volume = "201"  >
+	</Mount>
+	<Mount weapon = "Swarm" size = "Heavy-Missile Medium-Missile Special-Missile" x = "-0.300000" y = "-0.100000" z = "0.000000" volume = "1000"  >
+	</Mount>
+	<Mount weapon = "Swarm" size = "Heavy-Missile Medium-Missile Special-Missile" x = "0.300000" y = "-0.100000" z = "0.000000" volume = "1000"  >
+	</Mount>
+	<Mount weapon = "Torpedo" size = "Heavy-Missile" x = "-0.000000" y = "0.000000" z = "0.000000" volume = "401"  >
+	</Mount>
+	<Thrust >
+		<Engine Afterburner = "411836" Forward = "201486" Retro = "157716" Left = "145346" Right = "145346" Top = "145346" Bottom = "145346"  >
+		</Engine>
+		<Maneuver yaw = "1908800" pitch = "1938536" roll = "1908800"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-
-	<Stats mass="5.000000" momentofinertia="5.000000" fuel="40000000"></Stats>
-	<Computer yaw="164.219986" pitch="164.219986" roll="164.219986" afterburner="128.500000" maxspeed="49.200001"/>
-
-	<Jump delay="1" jumpenergy="80"/>
-	<Hold volume="75">
+	<Stats mass = "1485" momentofinertia = "1485" fuel = "40000000"  >
+	</Stats>
+	<Computer yaw = "164.219986" pitch = "164.219986" roll = "164.219986" afterburner = "128.500000" maxspeed = "49.200001"  >
+	</Computer>
+	<Jump delay = "1" jumpenergy = "80"  >
+	</Jump>
+	<Hold volume = "75"  >
 	</Hold>
 </Unit>
