@@ -2,14 +2,14 @@
 	<Mount weapon="Particle" size="Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
 	<Mount weapon="Particle" size="Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
 	<Mount weapon="Ion" size="Medium" x="000000" y="-.6000000" z="12.000000"/>
-	<Mount weapon="Torpedo" size="heavy-missile" x="-5.000000" y="-.9000000" z="-3.000000" volume="601"/>	
-	<Mount weapon="Torpedo" size="heavy-missile" x="5.000000" y="-.9000000" z="-3.000000"  volume="601"/>	
-	<Mount weapon="Mace" size="medium-missile heavy-missile" x="4.000000" y="-.9000000" z="-2.000000" volume="601"/>	
-	<Mount weapon="Mace" size="medium-missile heavy-missile" x="-4.000000" y="-.9000000" z="-2.000000"  volume="601"/>	
-	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="3.000000" y="-.9000000" z="-1.000000" volume="201"/>
-	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-3.000000" y="-.9000000" z="-1.000000" volume="201"/>
-	<Mount weapon="KillerBee" size="special-missile" x="3.000000" y="-.9000000" z="-0.000000"  volume="1500"/>	
-	<Mount weapon="KillerBee" size="special-missile" x="-3.000000" y="-.9000000" z="-0.000000" volume="1500"/>	
+	<Mount weapon="Torpedo" size="heavy-missile" x="-5.000000" y="-.9000000" z="-3.000000" volume="1201"/>	
+	<Mount weapon="Torpedo" size="heavy-missile" x="5.000000" y="-.9000000" z="-3.000000"  volume="1201"/>	
+	<Mount weapon="Mace" size="medium-missile heavy-missile" x="4.000000" y="-.9000000" z="-2.000000" volume="1201"/>	
+	<Mount weapon="Mace" size="medium-missile heavy-missile" x="-4.000000" y="-.9000000" z="-2.000000"  volume="1201"/>	
+	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="3.000000" y="-.9000000" z="-1.000000" volume="401"/>
+	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-3.000000" y="-.9000000" z="-1.000000" volume="401"/>
+	<Mount weapon="KillerBee" size="special-missile" x="3.000000" y="-.9000000" z="-0.000000"  volume="3200"/>	
+	<Mount weapon="KillerBee" size="special-missile" x="-3.000000" y="-.9000000" z="-0.000000" volume="3200"/>	
 	
 	<Thrust>
 		<Engine Afterburner="1500.333282" Forward="500.333344" Retro="500.666676" Left="500.666672" Right="500.666672" Top="500.666672" Bottom="500.666672"/>
