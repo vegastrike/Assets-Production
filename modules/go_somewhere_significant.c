@@ -9,6 +9,10 @@ module go_somewhere_significant {
   bool HaveArrived () {
     return arrivedarea;
   };
+  bool InSystem() {
+    return arrivedsys;
+  };
+  //only run this function if we are InSystem();
   object SignificantUnit() {
     return _unit.getUnitFromContainer (significantun);
   };
@@ -16,6 +20,7 @@ module go_somewhere_significant {
     return destination;
   };
   void init (object you, int numsystemsaway, bool usecap, float distance_away_to_trigger) {
+    _std.setNull ( significantun);
     youcontainer = _unit.getContainer (you);
     capship = usecap;
     distfrombase=distance_away_to_trigger;
@@ -24,6 +29,16 @@ module go_somewhere_significant {
     arrivedsys=false;
     arrivedarea=false;
   };
+  void destroy() {
+    _unit.deleteContainer (youcontainer);
+    _std.setNull(youcontainer);
+    _string.delete (destination);
+    _std.setNull(destination);
+    if (arrivedsys) {
+      _unit.deleteContainer (significant);
+      _std.setNull(significant);
+    }
+  }
   void loop() {
 	  if (arrivedsys) {
 	    object base=_unit.getUnitFromContainer(significantun);

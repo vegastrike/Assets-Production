@@ -34,6 +34,7 @@ module attack_jumppoint {
 	  if (!_std.isNull(you)) {
 	    name = _unit.getName (you);
 	  } else {
+	    //don't destruct...something else went wrong
 	    _std.terminateMission (false);
 	    return;
 	  }
@@ -46,10 +47,18 @@ module attack_jumppoint {
 	  _io.message (2,"game","all",str);
 	  _string.delete(str);
 	};
+	void destroy () {
+	  _unit.deleteContainer (youcontainer);
+	  _std.setNull (youcontainer);
+	  _string.delete (faction);
+	  _std.setNull (faction);
+	  go_somewhere_significant.destroy();
+	}
 	void SuccessMission(object you) {
 	  _unit.addCredits (you, cred);
 	  _io.message (0,"game","all","Excellent work pilot.");
 	  _io.message (0,"game","all","You have been rewarded for your effort as agreed.");
+	  destroy();
 	  _std.terminateMission(true);
 	};
 
@@ -95,6 +104,7 @@ module attack_jumppoint {
 	  if (go_somewhere_significant.HaveArrived()) {
 	    object you=_unit.getUnitFromContainer(youcontainer);
 	    if (_std.isNull (you)) {
+	      destroy();
 	      _std.terminateMission(false);
 	    }else {
 	      object base = go_somewhere_significant.SignificantUnit();
