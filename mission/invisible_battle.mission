@@ -1,0 +1,24 @@
+<mission>
+
+	<variables>
+		<var name="defaultplayer" value="zombie"/>
+		<var name="system" value="unexplored_space/gwriss" />
+		<var name="mission_name" value="Invisible battle" />
+		<var name="description" value="An Aveger encounters F-109 Vampire wing in the deep space" />
+	</variables>
+
+	<flightgroups>
+                <flightgroup name="zombie" faction="confed" type="avenger" ainame="default" waves="1" nr_ships="1">
+			<pos x="90400" y="-1400" z="24700.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order priority="0" order="patrol_defend" target="coil"/>
+		</flightgroup>
+
+                <flightgroup name="omega" faction="rlaan" type="f109vampire" ainame="default" waves="1" nr_ships="3">
+			<pos x="90400" y="140" z="23100.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order priority="0" order="patrol_defend" target="coil"/>
+		</flightgroup>
+	</flightgroups>
+
+</mission>
