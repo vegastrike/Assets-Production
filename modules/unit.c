@@ -128,8 +128,8 @@ module unit {
     float time=_std.getGameTime();
 
     if((time-lasttime)>10.0){
-      _unit.launch("omega","confed","hornet","default",4, 8000.0, 0.0-100.0, 100.0);
-      _unit.launch("teta","aera","dagger","default",4, 8000.0, 1000.0, 0.0-500.0);
+      _unit.launch("omega","confed","hornet","default",4,1, 8000.0, 0.0-100.0, 100.0);
+      _unit.launch("teta","aera","dagger","default",4,1, 8000.0, 1000.0, 0.0-500.0);
       lasttime=time;
     }
   };

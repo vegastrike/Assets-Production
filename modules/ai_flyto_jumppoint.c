@@ -63,21 +63,21 @@ module ai_flyto_jumppoint {
 
     if(_std.isNull(last_flyto)){
       // the FlyToWaiypoint has exited
-      _io.printf("reached waypoint1: %s dist=%f\n",fgid,dist);
+      //      _io.printf("reached waypoint1: %s dist=%f\n",fgid,dist);
       //      _unit.Jump(my_unit);
       flyto_order=_order.newFlyToWaypoint(destpos,fly_speed,afterburner,range);
       _order.enqueueOrder(my_order,flyto_order);
     }
 
     if(dist<jumppoint_rsize){
-      _io.printf("reached waypoint2: %s dist=%f\n",fgid,dist);
+      //_io.printf("reached waypoint2: %s dist=%f\n",fgid,dist);
       _unit.Jump(my_unit);
     }
 
    };
 
   void quitai(){
-    _io.printf("ai_flyto_jumppoints1 quitting: %s\n",fgid);
+    //_io.printf("ai_flyto_jumppoints1 quitting: %s\n",fgid);
     _string.delete(outstr);
   };
 

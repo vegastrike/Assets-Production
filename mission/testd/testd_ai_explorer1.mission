@@ -1,0 +1,30 @@
+<mission>
+	<settings>
+		<origin  planet="earth" x="0000" y="100" z="000.0"/>
+	</settings>
+
+	<variables>
+<!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="Jump-point Tag" />
+		<var name="author" value="Patrick Horn" />
+		<var name="system" value="mission_sector/tag" />
+		<var name="description" value="Try to use the 15 jump-points to\your advantage in this 5 versus 1\battle." />
+		<var name="briefing" value="Activate your jump drive by\going into the balls and pressing 'j'\\Destroy all hostile enemies..." />
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="1">
+			<pos x="-5927.11" y="-2540.82" z="282.354"/>
+		</flightgroup>
+
+        </flightgroups>
+	<module name="director">
+		<import name="testd_ai_explorer1"/>
+		<script name="initgame">
+			<exec module="testd_ai_explorer1" name="initgame"/>
+		</script>
+		<script name="gameloop">
+			<exec module="testd_ai_explorer1" name="gameloop"/>
+		</script>
+	</module>
+</mission>

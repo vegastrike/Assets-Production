@@ -1,8 +1,8 @@
 <mission>
 	<variables>
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="Pirate Attack on Mars Station" />
-		<var name="system" value="visit_from_the_aera/earth" />
+		<var name="mission_name" value="test ai" />
+		<var name="system" value="testai" />
 		<var name="description" value="still in development" />
 		<var name="author" value="Alexander Rawass" />
 	</variables>
@@ -15,24 +15,25 @@
 
 	<module name="director">
 
-		<import name="visit_aera10" />
+		<import name="test_ais" />
 
 		<script name="initgame">
-			<exec name="initgame" module="visit_aera10" />
+			<exec name="initgame" module="test_ais" />
 		</script>
 
 		<script name="gameloop">
-			<exec name="gameloop" module="visit_aera10" />
+			<exec name="gameloop" module="test_ais" />
 
 		</script>
 
 		<script name="endgame">
-			<exec name="endgame" module="visit_aera10" />
+			<exec name="endgame" module="test_ais" />
 
 		</script>
 
 		<script name="initstarsystem">
-			<exec name="initstarsystem" module="visit_aera10" />
+			<exec name="initstarsystem" module="test_ais" />
+
 		</script>
 	</module>
 
