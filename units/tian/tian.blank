@@ -1,5 +1,5 @@
 <Unit>
-	<Cockpit file="light_cockpit.cpt"/>
+	<Cockpit file="medium_cockpit.cpt"/>
 	<Meshfile file="tian.xmesh" />
 	<Thrust>
 		<Engine Afterburner="1600.000000" Forward="533.333313" Retro="466.666649" Left="266.666656" Right="266.666656" Top="266.666656" Bottom="266.666656"/>

@@ -1,5 +1,5 @@
 <Unit scale="4">
-<cockpit file="medium_cockpit.cpt" x="0" y=".23" z="8"/>
+<cockpit file="rlaan-cockpit.cpt" x="0" y=".23" z="8"/>
 <Meshfile file="adronew1.xmesh"/>
 <Meshfile file="adronew2.xmesh"/>
 <Meshfile file="adronew3.xmesh"/>

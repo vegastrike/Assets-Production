@@ -14,7 +14,7 @@
 <Meshfile file="adronec4.xmesh"/>
 <Meshfile file="adronecock.xmesh"/>
 
-<cockpit file="medium_cockpit.cpt" x="0" y=".23" z="8"/>
+<cockpit file="rlaan-cockpit.cpt" x="0" y=".23" z="8"/>
 
 <Mount weapon="Ktek" size="Light Medium Heavy Special Autotrack" x="-5.277" y="2.683" z="21.963"/>
 
