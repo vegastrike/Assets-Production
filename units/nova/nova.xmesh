@@ -345,13 +345,13 @@
 	<Ref point="29" weight="2.819998" />
 	<Ref point="30" weight="3.309998" />
 </Logo>
-<Logo type="0" rotate="3.179997" size="0.670000" offset="0.010000">
+<Logo type="1" rotate="3.179997" size="0.670000" offset="0.010000">
 	<Ref point="18" weight="2.789998" />
 	<Ref point="9" weight="3.199998" />
 	<Ref point="23" weight="1.340000" />
 	<Ref point="17" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="3.209997" size="0.600000" offset="0.010000">
+<Logo type="1" rotate="3.209997" size="0.600000" offset="0.010000">
 	<Ref point="30" weight="2.749998" />
 	<Ref point="39" weight="2.789998" />
 	<Ref point="38" weight="1.000000" />

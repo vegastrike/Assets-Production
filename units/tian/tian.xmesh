@@ -296,13 +296,13 @@
 	<Ref point="31" weight="1.000000" />
 	<Ref point="30" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="3.549997" size="0.480000" offset="0.010000">
+<Logo type="1" rotate="3.549997" size="0.480000" offset="0.010000">
 	<Ref point="4" weight="1.000000" />
 	<Ref point="6" weight="1.000000" />
 	<Ref point="5" weight="1.000000" />
 	<Ref point="3" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="-0.839999" size="0.500000" offset="0.010000">
+<Logo type="1" rotate="-0.839999" size="0.500000" offset="0.010000">
 	<Ref point="19" weight="1.000000" />
 	<Ref point="21" weight="1.000000" />
 	<Ref point="22" weight="1.000000" />

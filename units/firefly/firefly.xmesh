@@ -333,13 +333,13 @@
 	<Ref point="23" weight="8.520101" />
 	<Ref point="6" weight="2.429999" />
 </Logo>
-<Logo type="0" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="1" rotate="0.000000" size="0.500000" offset="0.010000">
 	<Ref point="15" weight="1.270000" />
 	<Ref point="33" weight="2.099999" />
 	<Ref point="16" weight="1.310000" />
 	<Ref point="32" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="0.000000" size="0.500000" offset="0.010000">
+<Logo type="1" rotate="0.000000" size="0.500000" offset="0.010000">
 	<Ref point="33" weight="2.159999" />
 	<Ref point="15" weight="1.000000" />
 	<Ref point="32" weight="1.589999" />
