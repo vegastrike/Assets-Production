@@ -54,10 +54,10 @@
 <Light file="supernova.bmp" x="-92.241051" y="0.105462" z="-240.000000" size="18.360325"/>
 <Mount weapon="Vaporisator" size="Heavy" x="215.450027" y="7.620836" z="33.175053"/>
 <Mount weapon="Vaporisator" size="Heavy" x="-215.723236" y="7.643602" z="33.584839"/>
-<Subunit file="beamturret" x="97.441833" y="-99.906944" z="32.325504"/>
-<Subunit file="beamturret" x="-97.441833" y="-99.906944" z="32.325504"/>
-<Subunit file="beamturret" x="40.000000" y="120.990784" z="29.486170"/>
-<Subunit file="beamturret" x="-40.000000" y="120.990784" z="29.486170"/>
+<Subunit file="turretbeam" x="97.441833" y="-99.906944" z="32.325504"/>
+<Subunit file="turretbeam" x="-97.441833" y="-99.906944" z="32.325504"/>
+<Subunit file="turretbeam" x="40.000000" y="120.990784" z="29.486170"/>
+<Subunit file="turretbeam" x="-40.000000" y="120.990784" z="29.486170"/>
 <Subunit file="turretheavy" x="0.000000" y="-8.000000" z="-86.000000" ri="0.000000" rj="0.000000" rk="-1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
 <Subunit file="turretheavy" x="0.037804" y="8.000000" z="-187.943649" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
 <Subunit file="turret" x="40.279072" y="-10.465117" z="156.341003" ri="0.000000" rj="0.000000" rk="-1.000000" qi="0.124035" qj="-0.992278" qk="0.000000"/>
