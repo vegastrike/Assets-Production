@@ -1,4 +1,6 @@
 <Unit>
+	<Description combatRole="BOMBER">
+	</Description>
 <Meshfile file="avenger-hull-e.xmesh"/>
 <Meshfile file="avenger-hull-w.xmesh"/>
 <Meshfile file="avenger-hull-p.xmesh"/>

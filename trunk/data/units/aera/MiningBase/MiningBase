@@ -1,4 +1,6 @@
 <Unit scale = "10" >
+<Description combatRole="BASE">
+</Description>
 	<Meshfile file = "aerminb-Aeramining-Hull.xmesh"  >
 	</Meshfile>
 	<Meshfile file = "aerminb-Aeramining-Roid.xmesh"  >

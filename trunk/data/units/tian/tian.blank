@@ -1,4 +1,6 @@
 <Unit scale = "1.5" >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<Cockpit file = "medium_cockpit.cpt"  >
 	</Cockpit>
 	<Meshfile file = "TigerShark.xmesh"  >

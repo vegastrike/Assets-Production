@@ -1,4 +1,6 @@
 <Unit>
+	<Description combatRole="POINTDEF">
+	</Description>
 
 
 <Meshfile file="turretflak.xmesh" />

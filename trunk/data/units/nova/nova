@@ -27,6 +27,7 @@
 	</Thrust>
 	<Sound  >
 	</Sound>
+	<Description combatRole="FIGHTER"/>
 	<Defense HudImage = "nova-hud.spr" >
 		<Armor front = "40" right = "35" left = "35" back = "40"  >
 		</Armor>

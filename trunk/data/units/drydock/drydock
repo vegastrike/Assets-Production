@@ -1,4 +1,6 @@
 <Unit>
+	<Description combatRole="BASE">
+	</Description>
 <Meshfile file="drydock-Cube_27-Material.xmesh"/>
 <Meshfile file="drydock-Cube_27-Material1.xmesh"/>
 <Defense>

@@ -1,4 +1,6 @@
 <Unit>
+	<Description combatRole="TMASSIVE">
+	</Description>
 
 <Meshfile file="turretlaunchergun.xmesh"/>
 

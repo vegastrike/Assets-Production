@@ -1,4 +1,6 @@
 <Unit scale="1320">
+<Description combatRole="BASE">
+</Description>
 <Meshfile file="tri.xmesh"/>
 
 <SubUnit file="turret_capship_gun" x="1" y="1" z="1" ri="1" rj="1" rk="1" qi=".5" qj=".5" qk="-1" restricted="-,5"/>

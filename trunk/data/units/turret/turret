@@ -16,6 +16,7 @@
 		<Hull strength="50"/>
 		<Cloak cloakmin=".01" cloakrate=".2" cloakenergy="0"/>
 	</Defense>
+	<Description CombatRole="TFIGHTER"/>
 	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
 	<Computer yaw="64" pitch="0" roll="0000" afterburner="000000" maxspeed="00000">
 		<Radar itts="true" range="4000" color="true" error="0"/>

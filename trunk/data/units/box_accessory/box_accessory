@@ -1,4 +1,6 @@
 <Unit scale="10">
+	<Description combatRole="CARGO">
+	</Description>
 	<cockpit file="medium_cockpit.cpt" x="0" y=".5" z="4"/>
 	<Meshfile file="box.xmesh" />
 	<BspMesh/>

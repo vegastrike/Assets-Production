@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<Meshfile file = "starfish.xmesh"  >
 	</Meshfile>
 	<cockpit file = "rlaan-cockpit.cpt" x = "0" y = "00" z = "00"  >

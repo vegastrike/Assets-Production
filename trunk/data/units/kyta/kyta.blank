@@ -1,4 +1,6 @@
 <Unit scale = "2" >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<Defense HudImage = "kyta-hud.spr" >
 		<Shields front = "000000" right = "0.000000" left = "0.000000" back = "0.000000"  >
 		</Shields>

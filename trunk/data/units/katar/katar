@@ -1,4 +1,6 @@
 <Unit scale = "3" >
+	<Description combatRole="SHUTTLE">
+	</Description>
 	<Meshfile file = "Katar-Katar-Body.xmesh"  >
 	</Meshfile>
 	<Meshfile file = "Katar-Katar-Material26.xmesh"  >

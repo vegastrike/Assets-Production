@@ -1,4 +1,7 @@
 <Unit scale = "50" >
+	<Description combatRole="BASE">
+	</Description>
+
 	<Meshfile file = "commerce_center.xmesh"  >
 	</Meshfile>
 	<Thrust >

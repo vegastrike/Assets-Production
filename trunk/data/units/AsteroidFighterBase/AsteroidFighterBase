@@ -1,4 +1,6 @@
 <Unit>
+	<Description combatRole="BASE">
+	</Description>
 <Meshfile file="astbase-ast.xmesh"/>
 <Meshfile file="astbase-base.xmesh"/>
 <Meshfile file="astbase-shield.xmesh"/>

@@ -1,4 +1,6 @@
 <Unit >
+<Description combatRole="BASE">
+</Description>
 	<Meshfile file = "MiningBase1-1.xmesh"  >
 	</Meshfile>
 	<Meshfile file = "MiningBase1-2.xmesh"  >

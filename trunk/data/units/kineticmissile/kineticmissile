@@ -1,4 +1,6 @@
 <Unit scale = "6" >
+	<Description combatRole="HEAVYMISSILE">
+	</Description>
 	<Meshfile file = "kineticmissile.xmesh"  >
 	</Meshfile>
 	<BspMesh  >

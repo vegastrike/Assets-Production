@@ -1,4 +1,6 @@
 <Unit scale="6">
+	<Description combatRole="TSMALLCAP">
+	</Description>
 
 
 <Meshfile file="turretlauncher.xmesh" />

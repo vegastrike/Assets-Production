@@ -1,4 +1,6 @@
 <Unit>
+	<Description combatRole="TFIGHTER">
+	</Description>
 
 
 <Meshfile file="turretsmall.xmesh" />

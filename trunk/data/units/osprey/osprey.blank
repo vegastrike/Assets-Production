@@ -1,4 +1,6 @@
 <Unit scale = "4" >
+	<Description combatRole="BOMBER">
+	</Description>
 	<Defense HudImage = "osprey-hud.spr" >
 		<Shields front = "0.000000" right = "0.000000" left = "0.000000" back = "0.000000"  >
 		</Shields>
