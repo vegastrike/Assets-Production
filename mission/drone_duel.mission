@@ -8,13 +8,20 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="sol_sector/vega" />
+		<var name="system" value="unexplored_space/gwriss" />
 		<var name="description" value="4vs4.txt" />
-		<var name="savegame" value="explore_universe" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="rlaan" type="f109vampire" ainame="default" waves="1" nr_ships="1">
-			<pos x="90400" y="-35400" z="24700.0"/>
+                <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="2">
+			<pos x="4000" y="1400" z="11700.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+                <flightgroup name="green" faction="unknown" type="unknown_active" ainame="default" waves="1" nr_ships="1">
+			<pos x="5000" y="-14000" z="11700.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
@@ -22,22 +29,22 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
 
+
+
+
+
         </flightgroups>
 
 	<module name="director">
 
-		<import name="explore_universe"/>
+		<import name="drone_duel"/>
 
 		<script name="initgame">
-			<exec module="explore_universe" name="initgame"/>
+			<exec module="drone_duel" name="initgame"/>
 		</script>
 
 		<script name="gameloop">
-			<exec module="explore_universe" name="gameloop"/>
-		</script>
-
-		<script name="endgame">
-			<exec module="explore_universe" name="endgame"/>
+			<exec module="drone_duel" name="gameloop"/>
 		</script>
 	</module>
 

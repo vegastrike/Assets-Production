@@ -22,12 +22,12 @@ module drone_duel {
 
     if(step==0){
       _io.message(0,"game","all","Something isn't right out here");
-      _io.message(1 "game","all","in unexplored space.");
+      _io.message(1,"game","all","in unexplored space.");
       step=step+1;
-      lasttime=newtime;
+      gametime=newtime;
     }
 
-    if(step==1&&newtime>(lasttime+10)){
+    if((step==1)&&(newtime>(gametime+10))){
       _io.message(0,"game","all","I'm reading...something out here...");
       _io.message(1,"game","all","I'll check it out!");
     }

@@ -238,6 +238,13 @@
 			<var name="num_natural_phenomena" value="1"/>
 			<var name="asteroidlist" value="unexp_asteroids.txt"/>
 			<var name="nebulalist" value="unexp_nebulae.txt"/>
+			<sector name="gwriss">
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="true"/>
+				<var name="backgroundlist" value="backgrounds/darkgreen"/>
+				<var name="jumps" value="unexplored_space/delta unexplored_space/alpha unexplored_space/gamma vega_sector/nephele"/>
+				<var name="data" value="2918" />
+			</sector>
 		</sector>
 		<sector name="vega_sector">
 			<var name="faction" value="confed"/> <!-- if variable is not specified in teh actual system it will check in the sector -->
