@@ -32,7 +32,8 @@ def Siege(fac):
 				enfac=VS.GetGalaxyFaction(sys)
 				if (VS.GetRelation(fac,enfac)<0):#FIXME maybe even less than that
 					if (fg_util.NumFactionFGsInSystem(enfac,sys)==0):
-						SetGalaxyFaction(fac)
+						VS.SetGalaxyFaction(sys,fac)
+						print fac + ' took over '+ sys + ' originally owned by '+enfac
 						#ok now we have him... while the siege is going on the allies had better initiate the battle--because we're now defending the place...  so that means if the owners are gone this place is ours at this point in time #FIXME write news story!!!
 					
 					

@@ -258,7 +258,7 @@ def FGSystem (fgname,faction):
 	if (len>1):
 		return Director.getSaveString(ccp,key,1)
 	else:
-		print 'error retrieving system for '+fgname
+		print fgname+' already died, in no system'
 		return 'no_sector/no_system'
 def TransferFG (fgname,faction,tosys):
 	key = MakeFGKey(fgname,faction)
@@ -312,7 +312,6 @@ def RemoveShipFromFG (fgname,faction,type,landed=0):
 						Director.putSaveString(ccp,key,0,str(totalnumships))
 						if(totalnumships==0):
 							DeleteFG(fgname,faction)
-							print 'no ships left in the fg'
 					else:
 						print 'error...removing too many ships'
 				except:
@@ -350,17 +349,28 @@ def BaseFG(faction,system):
 		return LandedShipsInFG (BaseFGInSystemName(system),faction)		
 	return []
 def NumFactionFGsInSystem(faction,system):
-	return  Director.getSaveStringLength (ccp,MakeStarSystemFGKey (system))
-	
+	key = MakeStarSystemFGKey (system)
+	leg = Director.getSaveStringLength (ccp,key)
+	facnum = VS.GetFactionIndex (faction)
+	st=''
+	if (leg>facnum):
+		st=Director.getSaveString(ccp,key,facnum)
+	if (st):
+		return st.count('|')+1
+	return 0
+
 def CountFactionShipsInSystem(faction,system):
 	count=0
+	st=''
 	for fgs in FGsInSystem (faction,system):
+		st+=fgs+' '
 		ships=ReadStringList (ccp,MakeFGKey (fgs,faction))
 		for num in range(ShipListOffset()+2,len(ships),PerShipDataSize()):
 			try:
 				count+= int(ships[num])
 			except:
 				print 'number ships '+ships[num] + ' not read'
+	print 'OFFICIALCOUNT '+st
 	return count
 def _prob_round(curnum):
 	import vsrandom
