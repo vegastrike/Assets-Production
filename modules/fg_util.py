@@ -222,7 +222,7 @@ def RemoveShipFromFG (fgname,faction,type):
 def FGsInSystem(faction,system):
 	key = MakeStarSystemFGKey (system)
 	leg = Director.getSaveStringLength (ccp,key)
-	facnum = VS.getFactionIndex (faction)
+	facnum = VS.GetFactionIndex (faction)
 	ret=[]
 	if (leg>facnum):
 		st=Director.getSaveString(ccp,key,facnum)

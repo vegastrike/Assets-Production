@@ -33,7 +33,7 @@ def Execute():
 		if (not _ships[curiter].Check()):
 			del (_ships[curiter])
 		else:
-			curiter++
+			curiter+=1
 	else:
 		curiter=0
 
