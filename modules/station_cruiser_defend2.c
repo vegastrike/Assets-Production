@@ -30,15 +30,15 @@ module station_cruiser_defend2 {
     order.patrolFg(1,"yellow-","gold-0",300.0);
 
 
-    _io.message("confed","confed","It's another nice day lad");
-    _io.message("confed","confed","nothing to worry about");
-    _io.message("confed","confed","we are expecting no attacks");
-    _io.message("confed","confed","here are your orders for today:");
-    _io.message("confed","confed","we are moving the cruiser gold-0");
-    _io.message("confed","confed","to our carrier silver-0");
-    _io.message("confed","confed","green has orders to patrol around the station");
-    _io.message("confed","confed","yellow has orders to follow gold-0 and secure it");
-    _io.message("confed","confed","blue, your task is it to fly support when needed");
+    _io.message(0,"confed","confed","It's another nice day lad");
+    _io.message(1,"confed","confed","nothing to worry about");
+    _io.message(2,"confed","confed","we are expecting no attacks");
+    _io.message(5,"confed","confed","here are your orders for today:");
+    _io.message(6,"confed","confed","we are moving the cruiser gold-0");
+    _io.message(7,"confed","confed","to our carrier silver-0");
+    _io.message(10,"confed","confed","green has orders to patrol around the station");
+    _io.message(11,"confed","confed","yellow has orders to follow gold-0 and secure it");
+    _io.message(12,"confed","confed","blue, your task is it to fly support when needed");
 
     flag_distress_call=true;
     flag_jumppoint_reached=true;
@@ -53,13 +53,13 @@ module station_cruiser_defend2 {
   void gameloop(){
     float newtime=_std.getGameTime();
 
-    if(flag_distress_call && newtime>10.0){
-      _io.message("confed","confed","we have got an emergecy call from pluto");
-      _io.message("confed","confed","our HQ is getting attacked");
-      _io.message("confed","confed","we will send support");
-      _io.message("confed","confed","yellow, red and brown will do it");
-      _io.message("confed","confed","blue, green, it's now to you to protect");
-      _io.message("confed","confed","the station and the cruiser");
+    if(flag_distress_call && newtime>20.0){
+      _io.message(0,"confed","confed","we have got an emergecy call from pluto");
+      _io.message(0,"confed","confed","our HQ is getting attacked");
+      _io.message(0,"confed","confed","we will send support");
+      _io.message(2,"confed","confed","yellow, red and brown will do it");
+      _io.message(2,"confed","confed","blue, green, it's now to you to protect");
+      _io.message(2,"confed","confed","the station and the cruiser");
 
       launch.launch_wave_in_area("red","confed","firefly","_ai_stationary",4,200.0,launchpos);
       launch.launch_wave_in_area("brown","confed","tian","_ai_stationary",4,200.0,launchpos);
@@ -76,7 +76,7 @@ module station_cruiser_defend2 {
       unit.removeFg("brown-");
       unit.removeFg("yellow-");
 
-      _io.message("confed","confed","red,brown and yellow have jumped");
+      _io.message(0,"confed","confed","red,brown and yellow have jumped");
 
       flag_jumppoint_reached=false;
     }
@@ -90,9 +90,9 @@ module station_cruiser_defend2 {
       unit.setTargetShip("alpha-","gold-0");
       unit.setTargetShip("beta-","mars-station");
 
-      _io.message("confed","confed","Alert! Aera ships have jumped in");
-      _io.message("confed","confed","Defend our Installations");
-      _io.message("aera","all","Die, you earthling scum!");
+      _io.message(0,"confed","confed","Alert! Aera ships have jumped in");
+      _io.message(0,"confed","confed","Defend our Installations");
+      _io.message(2,"aera","all","Die, you earthling scum!");
 
       order.spaceSuperiority("green-");
       unit.setTargetShip("green-","beta-0");
@@ -112,8 +112,8 @@ module station_cruiser_defend2 {
       unit.setTargetShip("red-","alpha-0");
       unit.setTargetShip("brown-","beta-0");
 
-      _io.message("confed","confed","our ships are returning from Pluto!");
-      _io.message("confed","confed","it was a fake distress call");
+      _io.message(0,"confed","confed","our ships are returning from Pluto!");
+      _io.message(1,"confed","confed","it was a fake distress call");
 
       flag_ship_return=false;
     }
