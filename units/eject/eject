@@ -1,0 +1,28 @@
+<Unit>
+
+<Meshfile file="box.xmesh"/>
+
+       
+
+<!-- new elements added -->
+		<Thrust>
+		<Engine Afterburner="1" Forward=".5" Retro=".5" Left=".5" Right=".5" Top=".5" Bottom=".5"/>
+		<Maneuver yaw="000" pitch="000" roll="000"/>
+	</Thrust>
+	<Sound></Sound>
+	<Defense>
+		<Armor front="10" right="10" left="10" back="10"/>
+		<Shields front="0" back="0" recharge="0"/>
+		<Hull strength="30"/>
+	</Defense>
+	<Stats mass=".1" momentofinertia=".1" fuel="100"></Stats>
+   
+	<Computer yaw="0" pitch="0" roll="00" afterburner="000000" maxspeed="00000">
+	</Computer>
+
+	<Energy>
+		<Reactor recharge="0" limit="0"/>
+	</Energy>
+
+
+</Unit>
