@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="900">
 <Meshfile file="Planetary-Ring.xmesh"/>
 <Meshfile file="Planetary-RingS.xmesh"/>
 <Meshfile file="Planetary-RingE.xmesh"/>
