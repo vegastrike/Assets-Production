@@ -588,4 +588,10 @@ def SortedAllShips (faction,offset=1):
 				ret[j[0]]=j[1]
 	return ret
 def getFgLeaderType(fgname,faction):
-	return ShipsInFG(fgname,faction)[0][0]
+#	print "wah " +str(ShipsInFG(fgname,faction))
+	l = ShipsInFG(fgname,faction)
+	if (len(l)):
+		if (len(l[0])):
+			return l[0][0];
+	import faction_ships
+	return faction_ships.getRandomFighter(faction)
