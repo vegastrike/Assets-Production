@@ -194,7 +194,7 @@ module bounty {
 		isSig=true;
 	      }
 	      if (_std.isNull(significant)) {
-		a_std.terminateMission (false);
+		_std.terminateMission (false);
 	      } else {
 		object localdestination=_unit.getName(significant);
 		if (isSig) {	//ADD OTHER JUMPING IF STATEMENT CODE HERE
