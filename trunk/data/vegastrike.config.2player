@@ -622,10 +622,10 @@ This is done many times later in this config file
 			<var name="explode" value="explosion.wav"/>
 		</section>
 		<section name="joystick">
-			<var name="warp_mouse" value="false"/>
+			<var name="warp_mouse" value="true"/>
 			<var name="warp_mouse_zone" value="200"/>
 			<var name="mouse_exponent" value="1"/>
-			<var name="mouse_sensitivity" value=".1"/>
+			<var name="mouse_sensitivity" value="50"/>
 			<var name="deadband" value="0.05"/>
 			<var name="debug_digital_hatswitch" value="false"/>
 			<var name="force_feedback" value="false" />
