@@ -10,7 +10,7 @@ class ShipTracker:
 		self.faction= faction
 		self.starsystem = VS.getSystemFile()
 		self.type=typ
-	def Check():
+	def Check(self):
 		if (not un):
 			if (VS.systemInMemory (self.starsystem)):
 				RemoveShipFromFG(self.fgname,self.faction,self.type)
