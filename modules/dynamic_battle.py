@@ -13,8 +13,33 @@ def UpdateCombatTurn():
 	for i in range (numfac):
 		fac = VS.GetFactionName(i)
 		LookForTrouble (fac)
+		Siege(fac)
 	SimulateBattles();
-
+def Siege(fac):
+	turns_till_siege_effective=100
+	numfg= fg_util.NumAllFlightgroups(fac)
+	if (numfg):
+		prob = float(numfg)/float(turns_till_siege_effective);
+		numtimes = int (prob)
+		if (numtimes==0):
+			numtimes=1
+		else:
+			prob =1
+		for i in range(numtimes):
+			if (vsrandom.uniform(0,1)<prob):
+				fg =fg_util.RandomFlightgroup(fac)
+				sys = fg_util.FGSystem(fg,fac)
+				enfac=VS.GetGalaxyFaction(sys)
+				if (VS.GetRelation(fac,enfac)<0):#FIXME maybe even less than that
+					if (fg_util.NumFactionFGsInSystem(enfac,sys)==0):
+						SetGalaxyFaction(fac)
+						#ok now we have him... while the siege is going on the allies had better initiate the battle--because we're now defending the place...  so that means if the owners are gone this place is ours at this point in time #FIXME write news story!!!
+					
+					
+					
+				
+	
+	
 def SimulateBattles():
 	deadbattles=[]
 	global persystemattacklist
