@@ -1,0 +1,58 @@
+<Mesh texture="ENG.PNG">
+<Points>
+<Point>
+    <Location x="-7.59620952606201" y="-0.0560444183647633" z="-18.2765445709229"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-7.59620904922485" y="-5.13218641281128" z="-18.2765464782715"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-12.7064189910889" y="-5.13218688964844" z="-18.2765464782715"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-12.7064189910889" y="-0.0560448653995991" z="-18.2765445709229"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="7.6322169303894" y="-5.1321849822998" z="-18.2765464782715"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="7.63221645355225" y="-0.0560430884361267" z="-18.2765445709229"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="12.7424259185791" y="-0.0560426414012909" z="-18.2765445709229"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="12.7424268722534" y="-5.13218450546265" z="-18.2765464782715"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+</Points>
+<Polygons>
+<Tri>
+    <Vertex point="0" s="0" t="0"/>
+    <Vertex point="1" s="1" t="0"/>
+    <Vertex point="2" s="1" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="2" s="1" t="1"/>
+    <Vertex point="3" s="0" t="1"/>
+    <Vertex point="0" s="0" t="0"/>
+</Tri>
+<Tri>
+    <Vertex point="4" s="0" t="0"/>
+    <Vertex point="5" s="1" t="0"/>
+    <Vertex point="6" s="1" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="6" s="1" t="1"/>
+    <Vertex point="7" s="0" t="1"/>
+    <Vertex point="4" s="0" t="0"/>
+</Tri>
+</Polygons>
+</Mesh>
