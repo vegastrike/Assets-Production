@@ -1,4 +1,4 @@
-<Mesh texture="saturn-ring.png" alphamap="true" scale="4411" blend="SRCALPHA INVSRCALPHA">
+<Mesh texture="sol/saturn-ring.png" alphamap="true" scale="4411" blend="SRCALPHA INVSRCALPHA">
 <Points>
 	<Point>
 		<Location x="3.729561" y="0.010164" z="3.729561"/>
