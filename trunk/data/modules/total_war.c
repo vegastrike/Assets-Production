@@ -22,7 +22,6 @@ module total_war {
 
 
     float side=_std.Rnd();
-    _io.PrintFloats(:s1="launching new wave side="; side);
     
     if(side>=0.5){
       ship_list=faction_ships.confed();
@@ -33,9 +32,7 @@ module total_war {
       faction_name="aera";
     }
 
-    _string.print(faction_name);
     object typename=faction_ships.getRandomShipType(ship_list);
-    _string.print(typename);
 
     float nr_ships=random.random(2.0,6.0);
 
