@@ -80,8 +80,8 @@ module difficulty {
        	  float difficulty = _olist.at (save,0);
 
 	  difficulty=difficulty+((newcreds-oldcreds)/credsToMax);
-	  if (difficulty>.99999){
-	    difficulty=.99999;
+	  if (difficulty>0.99999){
+	    difficulty=0.99999;
 	  }
 	  _olist.set(save,0,difficulty);
 	  _std.setDifficulty(difficulty);
