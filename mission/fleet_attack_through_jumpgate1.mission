@@ -47,7 +47,7 @@
 <!-- bad dudes -->
 
         </flightgroups>
-<!--
+
 	<module name="director">
 
 		<import name="station_cruiser_defend2" />
@@ -65,5 +65,5 @@
 		</script>
 	</module>
 
--->
+
 </mission>
