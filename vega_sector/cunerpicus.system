@@ -13,7 +13,13 @@
 
         <planet name="Cunerpicus" file="sun.bmp" radius="1" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" velocity="0" position="0" Red=".5" Green=".5" Blue=".9" light="0 1l" faction="neutral">
 </planet>
-	                <Terrain file="terrain/cunerpicus/lyed.sphereterrain" x="0" y="0" z="0" radius="32000" mass="0.0000100" qi="0" qj="1" qk="0" ri="0" rj="0" rk="1" si="0" sj="0" sk="0" position="0" faction="neutral"/>
+	                <Terrain name="Lyed" file="terrain/cunerpicus/lyed.sphereterrain" x="0" y="0" z="0" radius="64000" mass="0.0000100" qi="0" qj="1" qk="0" ri="0" rj="0" rk="1" si="0" sj="0" sk="0" position="0" faction="neutral"/>
+
+<!--<NEBULA nebfile="units/neutral/white-atmosphere/white-atmosphere.nebula" file="white-atmosphere" x="0" y="0" z="0"/> -->
+
+<!--<Nebula name="Lyed Atmosphere" file="white-atmosphere" nebfile="white-atmosphere.nebula" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" x="0" y="0" z="0"/>-->
+
+
 
 <!--ice, lyed-->
 <!--fire, ogon-->
