@@ -1,0 +1,111 @@
+<mission>
+   <variables>
+      <var name="defaultplayer" value="blue"/>
+      <var name="mission_name" value="Director Test" />
+      <var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+      <var name="system" value="solar-system.xml" />
+      <var name="description" value="4vs4.txt" />
+	<var name="terrain" value="terrain2.xml" />
+   </variables>
+        <flightgroups>
+            <flightgroup name="green" faction="confed" type="rapier" ainame="default" waves="2" nr_ships="6">
+         	<pos x="8000.0" y="0.0" z="0.0"/>
+         	<rot x="180.0" y="180.0" z="180.0"/>
+      	    </flightgroup>
+	</flightgroups>
+
+	<module name="director">
+
+		<import name="common"/>
+
+		<defvar name="module_list" type="object" />
+
+		<script name="fill_list" return="object">	
+			<arguments>
+				<defvar name="maxcount" type="float"/>
+			</arguments>
+
+			<defvar name="loc_list" type="object"/>
+			<defvar name="f1" type="float"/>
+			<defvar name="count" type="float"/>
+
+			<setvar name="loc_list">
+				<call name="olist" cmd="new"/>
+			</setvar>
+			<setvar name="count">
+				<var name="maxcount"/>
+			</setvar>
+			<setvar name="count">
+				<const type="float" value="0.0"/>
+			</setvar>
+
+			<while>
+				<test test="le">
+					<var name="count"/>
+					<var name="maxcount"/>
+				</test>
+				<block>
+	
+					<setvar name="f1">
+						<call name="Rnd" />
+					</setvar>
+					<call name="olist" cmd="push_back">
+						<var name="loc_list"/>
+						<var name="f1"/>
+					</call>
+					<call name="PrintFloats" s1="random: ">
+						<var name="f1"/>
+					</call>
+
+					<call name="olist" cmd="toxml">
+						<var name="loc_list"/>
+					</call>
+
+					<exec name="PrintFloatList" module="common">
+						<var name="loc_list"/>
+					</exec>
+
+					<setvar name="count">
+						<fmath math="+">
+							<var name="count"/>
+							<const type="float" value="1.0"/>
+						</fmath>
+					</setvar>
+
+				</block>
+			</while>
+
+					<call name="PrintFloats" s1="after while"/>
+
+					<call name="olist" cmd="toxml">
+						<var name="loc_list"/>
+					</call>
+
+			<return><var name="loc_list"/></return>
+		</script>
+
+		<script name="initgame">
+			<call name="PrintFloats" s1="initgame"/>
+		</script>
+
+		<script name="gameloop">
+			<defvar name="l1" type="object"/>
+
+
+			<setvar name="l1">
+				<exec name="fill_list">
+					<fmath math="*">
+						<call name="Rnd"/>
+						<const type="float" value="10.0"/>
+					</fmath>
+				</exec>
+			</setvar>
+
+			<call name="olist" cmd="toxml">
+				<var name="l1"/>
+			</call>
+
+		</script>
+	</module>
+
+</mission>

@@ -1,4 +1,49 @@
 <module name="common">
 
+  <script name="PrintFloatList">
+     <arguments>
+         <defvar name="mylist" type="object"/>
+     </arguments>
+
+     <defvar name="count" type="float"/>
+     <defvar name="size" type="float"/>
+
+	<setvar name="count">
+		<const type="float" value="0.0"/>
+	</setvar>
+	<setvar name="size">
+		<call name="olist" cmd="size">
+			<var name="mylist"/>
+		</call>
+	</setvar>
+
+	<while>
+	   <test test="lt">
+		<var name="count"/>
+		<var name="size"/>
+	   </test>
+	   <block>
+		<defvar name="f1" type="float"/>
+
+		<setvar name="f1">
+			<call name="olist" cmd="at">
+				<var name="mylist"/>
+				<var name="count"/>
+			</call>
+		</setvar>
+
+		<call name="PrintFloats">
+			<var name="count"/>
+			<var name="f1"/>
+		</call>
+					<setvar name="count">
+						<fmath math="+">
+							<var name="count"/>
+							<const type="float" value="1.0"/>
+						</fmath>
+					</setvar>
+	   </block>
+	</while>
+    </script>
 
 </module>
