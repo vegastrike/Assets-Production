@@ -33,6 +33,10 @@
 		<script name="gameloop">
 			<exec module="total_war" name="loop"/>
 		</script>
+
+		<script name="endgame">
+			<exec module="total_war" name="end"/>
+		</script>
 	</module>
 
 </mission>
