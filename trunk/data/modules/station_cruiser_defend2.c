@@ -48,6 +48,8 @@ module station_cruiser_defend2 {
     launchpos=vec3.new(10000.0,0.0,7000.0);
     enemy_launchpos=vec3.new(10000.0,0.0-2000.0,7000.0);
     jumppoint=vec3.new(12000.0,0.0,5000.0);
+
+    unit.print_unitlist();
   };
 
   void gameloop(){

@@ -53,7 +53,7 @@ module ai_patrol {
   };
 
   void patrolToWaypoint(){
-    _io.printf("patrol_speed=%f\n",patrol_speed);
+    //    _io.printf("patrol_speed=%f\n",patrol_speed);
     object new_order=_order.newFlyToWaypoint(waypoint,patrol_speed,false,100.0);
 
     _order.enqueueOrder(my_order,new_order);
