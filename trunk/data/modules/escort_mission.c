@@ -36,8 +36,9 @@ module escort_mission {
 	  _olist.delete(list);
   };
   void ActivateStage1 (object jumppoint) {
+    //_std.playSound ("happy.wav",0.0,0.0,0.0);
     object escname=faction_ships.getRandomFighter("merchant");
-    object esc =launch.launch_wave_around_unit("Base",faction,escname,"default",1,distfromjump*0.5,distfromjump,jumppoint);
+    object esc =launch.launch_wave_around_unit("Base",faction,escname,"flyto",1,distfromjump*0.5,distfromjump,jumppoint);
     AddCargoToUnit(esc,100);
     _unit.setName(esc,"Freighter");
     _unit.setTarget (esc,jumppoint);
@@ -49,6 +50,7 @@ module escort_mission {
   };
   void ActivateStage2 (object esc) {
     //esc is not null when we are here
+    //    _std.playSound ("happy.wav",0.0,0.0,0.0);
     object capname = faction_ships.getRandomCapitol(faction);
     object un = launch.launch_wave_around_unit ("base",faction,capname,"default",1,distfrombase,distfrombase,esc);
     basecontainer = _unit.getContainer (un);
@@ -59,12 +61,14 @@ module escort_mission {
     _string.delete (nam);
     _io.message (0,"game","all",str);
     _string.delete (str);
+    //    int s=_unit.communicateTo (play,esc,0.0);
   };
   bool ReadyForStage2() {
     object un =_unit.getUnit(other_system_comp);
     if (_std.isNull (un)) {
       other_system_comp=0;
     }else {
+
       other_system_comp=other_system_comp+1;
       return ((!_string.equal(beginningSystem,_std.getSystemFile()))&&(_unit.equal(un,_unit.getUnitFromContainer(escortee))));
     }
@@ -173,6 +177,7 @@ module escort_mission {
 	      _io.message (0,"game","all","You have been paid.");
 	      _io.message (0,"game","all","We suggest you get out of here.");
 	      _io.message (0,"game","all","These waters aren't as friendly as some skies.");
+	      
 	    }
 	    _unit.addCredits(play,cred);
 	    destroy();
@@ -225,6 +230,7 @@ module escort_mission {
 	    }
 	    if (!_std.isNull (launched)) {
 	      _unit.setTarget(launched,esc);
+	      //	      _std.playSound ("happy.wav",0.0,0.0,0.0);
 	    }
 	    my_timer = mtime;	    
 	  }
