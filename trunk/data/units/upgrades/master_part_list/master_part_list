@@ -210,6 +210,7 @@
 		<Category file="upgrades/Weapons/Beam_Arrays_ISO_Milspecs">
 		</Category>
 		<Category file="upgrades/Weapons/Mount_Enhancements">
+			<Cargo file="mult_gun_cooler" price="300000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="tractor_capability" price="50000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="autotracking" price="100000" quantity="1" mass=".01" volume="1"/>
 		</Category>
@@ -265,6 +266,7 @@
 			<Cargo file="shield_2_Level5" price="140000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_4_Level4" price="100000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_4_Level5" price="150000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="mult_shield_regenerator" price="170000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="upgrades/Shield_Systems/Aera_Milspec">
 		</Category>
@@ -353,10 +355,10 @@
 			<Cargo file="repulsor_beam" price="50000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="add_fuel" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1"/>
+			<Cargo file="cargo_pod" price="20000" quantity="1" mass=".1" volume="1"/>
 			<Cargo file="jump_drive" price="10000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="add_cargo_volume" price="10000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="mult_shield_regenerator" price="170000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="mult_gun_cooler" price="300000" quantity="1" mass=".01" volume="1"/>
+
 		</Category>
 		<Category file="upgrades/Miscellaneous/Aera_Milspec">
 			<Cargo file="cloaking_device" price="259000" quantity="1" mass="8.9" volume="1"/>
