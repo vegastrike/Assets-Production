@@ -44,7 +44,7 @@ module ship_upgrades {
       cat=GetDiffCargo(diff,"upgrades/Weapons/Mounted_Guns_","upgrades/Weapons");
     }
     object item=getItem(cat,"upgrades/Weapons");
-    _olist.delete(cat);
+    _string.delete(cat);
     return item;
   };
 
