@@ -1,4 +1,4 @@
-<Mesh texture="cruiser.bmp" scale="70.000000">
+<Mesh texture="confed/cruiser.png" scale="70.000000">
 <Points>
 	<Point>
 		<Location x="-0.000000" y="0.000000" z="5.600000"/>
