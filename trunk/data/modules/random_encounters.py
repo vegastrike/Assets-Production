@@ -31,6 +31,7 @@ class random_encounters:
       self.GeneratePhaseAndAmplitude()
       print "done playerdat"
   def __init__(self, sigdis, detectiondis, gendis,  minnships, gennships, unitprob, enemyprob, capprob, capdist):
+    unitprob=1
     print "init random enc"
     self.capship_gen_distance=capdist
     #    player_num=player
