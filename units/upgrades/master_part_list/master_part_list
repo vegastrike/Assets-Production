@@ -1,5 +1,5 @@
-<!--Last Edited by: Vortis-->
-<!--20MAY01-->
+<!--Last Edited by: Daniel-->
+<!--23MAY01-->
 <Unit>
 	<Defense>
 		<Armor front="0" right="00" left="00" back="00"/>
@@ -536,7 +536,17 @@
 			<Cargo file="First_Aid_Kits" price="1" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Synthetic_Limbs" price="1" quantity="1" mass=".01" volume="1"/>
 		</Category>
-		<Category file="Supplies/Medical_Supplies/Bio_Enhancements">
+		<Category file="Research/Medical">
+		<!-- price these at 1/10 their normal price...-->
+		</Category>
+		<Category file="Research/Industrial">
+		<!-- price these at 1/10 their normal price...-->
+		</Category>
+		<Category file="Research/Environmental">
+		<!-- price these at 1/10 their normal price...-->
+		</Category>
+		<Category file="Research/Electronics">
+		<!-- price these at 1/10 their normal price...-->
 		</Category>
 		<Category file="Electronics">
 			<Cargo file="Computers" price="1" quantity="1" mass=".01" volume="1"/>
@@ -561,6 +571,9 @@
 			<Cargo file="Games" price="1" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Holo_Vids" price="1" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Rare_Artwork" price="1" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Contraband/Medical">
+			<Cargo file="Organs" price="1" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband">
 			<Cargo file="Illegal_Weapons" price="1" quantity="1" mass=".01" volume="1"/>
