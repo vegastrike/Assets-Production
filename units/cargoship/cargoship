@@ -1,0 +1,49 @@
+<Unit>
+	<Meshfile file="cargoship.xmesh"/>
+
+	<Light file="supernova.bmp" x="0.0" y="32.2" z="-210.00000" size="100"/>
+
+	<Thrust>
+		<Engine Afterburner="966.666718" Forward="205.333344" Retro="254.666676" Left="202.666672" Right="202.666672" Top="202.666672" Bottom="202.666672"/>
+		<Maneuver yaw="1643.200050" pitch="1187.800201" roll="1143.200050"/>
+	</Thrust>
+
+	<Sound>
+	</Sound>
+
+	<Defense HudImage="cargoship.spr">
+		<Armor front="380" right="400" left="400" back="-330"/>
+		<Shields front="1000.0" right="970" left="970"  back="950.000000" recharge="20.000000"/>
+		<Hull strength="250.000000"/>
+	</Defense>
+
+	<Stats mass="96.000000" momentofinertia="16.000000" fuel="170000000">
+	</Stats>
+
+	<Computer yaw="32.400002" pitch="32.600006" roll="35.400002" afterburner="68" maxspeed="37">
+                <Radar itts="false" error="0" range="35000" color="true"/>
+	</Computer>
+
+	<Jump delay="1" jumpenergy="900"/>       
+
+	<Energy>
+		<Reactor recharge="20" limit="1000"/>
+	</Energy>
+
+	<description>
+	</description>
+
+	<Hold volume="300">
+	</Hold>
+
+	<Subunit file="turretheavy" x="-0.0" y="-4.64302" z="306" ri="0.018352" rj="-0.233119" rk="0.972275" qi="-0.000000" qj="0.972439" qk="0.233159"/>
+	<Subunit file="turretheavy" x="-0.0" y="-30.00000" z="306" ri="-0.064512" rj="0.000000" rk="-0.997917" qi="-0.000000" qj="-1.000000" qk="-0.000000"/>
+	<Subunit file="turret" x="-120" y="113" z="-162" ri="-0.311052" rj="-0.180082" rk="-0.933176" qi="-0.501036" qj="0.865426" qk="-0.000000"/>
+	<Subunit file="turret" x="120" y="113" z="-162" ri="0.865426" rj="-0.501036" rk="-0.000000" qi="0.482932" qj="0.834155" qk="0.266385"/>
+	<Subunit file="turret" x="-120" y="-95" z="-102" ri="0.096161" rj="0.251852" rk="0.962976" qi="-0.482932" qj="-0.834155" qk="0.266385"/>
+	<Subunit file="turret" x="120" y="-95" z="-102" ri="0.865426" rj="0.501037" rk="-0.000000" qi="0.482932" qj="-0.834155" qk="0.266385"/>
+	<Subunit file="turretheavy" x="-315" y="-16" z="-179" ri="-0.9" rj="-0.13" rk="0.32" qi="0.14" qj="-0.98" qk="0.000000"/>
+	<Subunit file="turretheavy" x="315" y="-16" z="-179" ri="-0.9" rj="-0.13" rk="0.32" qi="0.14" qj="-0.98" qk="0.000000"/>
+	<Subunit file="turretheavy" x="-228" y="54" z="-118" ri="0.156323" rj="0.781613" rk="-0.603858" qi="-0.980581" qj="0.196116" qk="0.000000"/>
+	<Subunit file="turretheavy" x="228" y="44" z="-118" ri="-0.156323" rj="0.781613" rk="-0.603858" qi="-0.980581" qj="-0.196116" qk="-0.000000"/>
+</Unit>
