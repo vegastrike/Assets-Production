@@ -1,0 +1,30 @@
+<Unit cockpit="centurion-cockpit.cpt">
+	<Meshfile file="centurion.xmesh" />
+	<Light file="supernova.bmp" x="-2.500000" y="1.400000" z="-11.600000" size="2.200000"/>
+	<Light file="supernova.bmp" x="2.500000" y="1.400000" z="-11.600000" size="2.200000"/>
+	<Light file="supernova.bmp" x="-2.500000" y="-1.80000" z="-11.600000" size="2.200000"/>
+	<Light file="supernova.bmp" x="2.50000" y="-1.80000" z="-11.600001" size="2.200000"/>
+	
+	<Mount weapon="Ion" size="Medium" x="4.800632" y="-0.583861" z="1.739729" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.707107" qj="0.707107" qk="0.000000"/>
+	<Mount weapon="Particle" size="Heavy" x="3.762658" y="-0.713608" z="2.258716" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.707107" qj="-0.707106" qk="0.000000"/>
+	<Mount weapon="Particle" size="Heavy" x="-3.762658" y="-0.713608" z="2.258716" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.707107" qj="-0.707106" qk="0.000000"/>
+	<Mount weapon="Ion" size="Medium" x="-4.800632" y="-0.583861" z="1.739729" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.707106" qj="-0.707107" qk="0.000000"/>
+	<Mount weapon="ImageRecognition" size="Medium-Missile" x="-5.977868" y="-1.712155" z="-0.595714" ri="0.0000" rj="0.0000" rk="1.0000" qi="0.984808" qj="-0.173648" qk="-0.000000"/>
+	<Mount weapon="ImageRecognition" size="Medium-Missile" x="5.977868" y="-1.712155" z="-0.595714" ri="-0.0000" rj="0.0000" rk="1.0000" qi="-0.155316" qj="0.880839" qk="-0.447214"/>
+
+
+	<Thrust>
+		<Engine Afterburner="600.000000" Forward="168.000000" Retro="147.000000" Left="84.000000" Right="84.000000" Top="84.000000" Bottom="84.000000"/>
+		<Maneuver yaw="3415.500000" pitch="3415.500000" roll="3415.500000"/>
+	</Thrust>
+	<Defense>
+		<Armor front="1000" right="800" left="800" back="1000"/>
+		<Shields front="2500" right="2500" left="2500" back="2500" recharge="41.66667"/>
+		<Hull strength="2500"/>
+<Cloak cloakmin=".1" cloakrate=".3" cloakenergy="120"/>	</Defense>
+	<Stats mass="7" momentofinertia="7" fuel="20000"></Stats>
+	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="100.000000" maxspeed="50.000000">
+<Radar itts="true" color="true" error="0"/> </Computer>	<Energy>
+		<Reactor recharge="100" limit="1000"/>
+	</Energy>
+<Subunit file="turretsmall" x="0.0001" y="-0.20" z="-10.0" qk="-30.518112"/>       
