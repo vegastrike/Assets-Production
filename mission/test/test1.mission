@@ -8,21 +8,12 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="blank2" />
+		<var name="system" value="sol_sector/sol" />
 		<var name="description" value="4vs4.txt" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="hellcat" ainame="default" waves="1" nr_ships="1" unit_type="vehicle" terrain_nr="0">
-			<pos x="604.0" y="4000" z="3000.0"/>
-			<rot x="180.0" y="180.0" z="180.0"/>
-			<order order="tmptarget" target="omikron"/>
-			<order priority="0" order="superiority" target="enemy"/>
-			<order priority="1" order="bomber" target="omikron"/>
-			<order priority="2" order="escort" target="blue"/>
-		</flightgroup>
-<!--
-                <flightgroup name="blue" faction="confed" type="hellcat" ainame="default" waves="8" nr_ships="3">
-			<pos x="0" y="100.0" z="0.0"/>
+                <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="1">
+			<pos x="53400" y="4000" z="30000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
@@ -30,6 +21,15 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
 
+<!--                <flightgroup name="blue" faction="aera" type="firefly" ainame="default" waves="8" nr_ships="3">
+			<pos x="50000" y="5000.0" z="29000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+<!--
                 <flightgroup name="green" faction="confed" type="tian" ainame="default" waves="8" nr_ships="3">
 			<pos x="13000.0" y="0.0" z="3000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
