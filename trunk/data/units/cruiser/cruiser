@@ -16,6 +16,18 @@
 	<Energy>
 		<Reactor recharge="100" limit="1000"/>
 	</Energy>
+<Dock x="-110" y="28" z="-97" size="60"/>
+<Dock x="110" y="28" z="-97" size="60"/>
+<Dock x="-110" y="-11" z="-38" size="60"/>
+<Dock x="110" y="-11" z="-38" size="60"/>
+<Dock x="-110" y="28" z="-37" size="60"/>
+<Dock x="110" y="28" z="-37" size="60"/>
+<Dock x="-110" y="-11" z="30" size="60"/>
+<Dock x="110" y="-11" z="-30" size="60"/>
+<Dock x="-110" y="28" z="-38" size="60"/>
+<Dock x="110" y="28" z="-38" size="60"/>
+<Dock x="-110" y="-11" z="90" size="60"/>
+<Dock x="110" y="-11" z="90" size="60"/>
        
 
 <!-- new elements added -->
