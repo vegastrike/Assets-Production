@@ -12,7 +12,7 @@
 		<Shields front="55.000000" left="55" right="55" back="55.000000" recharge="23.500000"/>
 		<Hull strength="300.000000"/>
 	</Defense>
-
+	<cockpit file="rlaan-cockpit.cpt" x="0" y="0" z="0"/>
 	<Stats mass="3.500000" momentofinertia="4.500000" fuel="200000000"></Stats>
 	<Computer yaw="111.800003" pitch="121.800003" roll="91.800003" afterburner="132.5000000" maxspeed="74.000000"/>
 	<Energy afterburnenergy="0">
