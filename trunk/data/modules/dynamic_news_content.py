@@ -298,7 +298,7 @@ def allNews():
 						}
 				 }
 
-		,"middle"	:{"success":	{"good"		: [(0.3,"all","Blockade in VAR_system_system System:\\VAR_aggressor_posessive media reports that the blockade which began recently in the VAR_system_system system is still continuing. According to <VAR_aggressor_posessive>'s reporters, their military has sustained only modest losses, while the VAR_defender_posessive defenders suffer mounting casualties. Many analysts predict that it is only a matter of time before a major VAR_aggressor_posessive breakthrough is made. Caution is warned when approaching the VAR_system_system system. VAR_aggressor_posessive forces have received orders to fire upon any of ships suspected of shipping supplies to VAR_defender_possessive defenders.")
+		,"middle"	:{"success":	{"good"		: [(0.3,"all","Blockade in VAR_system_system System:\\VAR_aggressor_possessive media reports that the blockade which began recently in the VAR_system_system system is still continuing. According to <VAR_aggressor_possessive>'s reporters, their military has sustained only modest losses, while the VAR_defender_possessive defenders suffer mounting casualties. Many analysts predict that it is only a matter of time before a major VAR_aggressor_possessive breakthrough is made. Caution is warned when approaching the VAR_system_system system. VAR_aggressor_possessive forces have received orders to fire upon any of ships suspected of shipping supplies to VAR_defender_possessive defenders.")
 
 								  ]
 
@@ -312,7 +312,7 @@ def allNews():
 
 						}
 
-				 ,"loss"   :	{"good"		: [(0.3,"all","VAR_system_system Assult Crushed!\\The first assaults of the VAR_aggressor_posessive attackers on the blockade which began recently in the VAR_system_system system have been successfully stopped. Waves of <VAR_aggressor_posessive>'s fighters have been destroyed and their burning wrecks are drifting in the solar wind. Many important supplies have successfully reached VAR_defender_posessive bases, thanks to the efforts of VAR_defender_posessive-sympathetic privateers. Many independent analysts predict that the full flow of supplies which are reaching <VAR_defender_posessive>'s bases will be be critical in the final stages of the siege.")
+				 ,"loss"   :	{"good"		: [(0.3,"all","VAR_system_system Assult Crushed!\\The first assaults of the VAR_aggressor_possessive attackers on the blockade which began recently in the VAR_system_system system have been successfully stopped. Waves of <VAR_aggressor_possessive>'s fighters have been destroyed and their burning wrecks are drifting in the solar wind. Many important supplies have successfully reached VAR_defender_possessive bases, thanks to the efforts of VAR_defender_possessive-sympathetic privateers. Many independent analysts predict that the full flow of supplies which are reaching <VAR_defender_possessive>'s bases will be be critical in the final stages of the siege.")
 
 								  ]
 
