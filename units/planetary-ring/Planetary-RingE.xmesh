@@ -1315,490 +1315,484 @@
 </Points>
 <Polygons>
 	<Quad>
-		<Vertex point="0" s="0.875000" t="1.000000"/>
-		<Vertex point="1" s="0.875000" t="0.937500"/>
-		<Vertex point="2" s="0.900000" t="0.937500"/>
-		<Vertex point="3" s="0.900000" t="1.000000"/>
+		<Vertex point="178" s="0.050000" t="1.000000"/>
+		<Vertex point="176" s="0.025000" t="1.000000"/>
+		<Vertex point="177" s="0.025000" t="0.937500"/>
+		<Vertex point="179" s="0.050000" t="0.937500"/>
 	</Quad>
 	<Quad>
-		<Vertex point="4" s="0.850000" t="1.000000"/>
-		<Vertex point="5" s="0.850000" t="0.937500"/>
-		<Vertex point="1" s="0.875000" t="0.937500"/>
-		<Vertex point="0" s="0.875000" t="1.000000"/>
+		<Vertex point="179" s="0.050000" t="0.937500"/>
+		<Vertex point="177" s="0.025000" t="0.937500"/>
+		<Vertex point="180" s="0.025000" t="0.875000"/>
+		<Vertex point="181" s="0.050000" t="0.875000"/>
 	</Quad>
 	<Quad>
-		<Vertex point="1" s="0.875000" t="0.937500"/>
-		<Vertex point="6" s="0.875000" t="0.875000"/>
-		<Vertex point="7" s="0.900000" t="0.875000"/>
-		<Vertex point="2" s="0.900000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="5" s="0.850000" t="0.937500"/>
-		<Vertex point="8" s="0.850000" t="0.875000"/>
-		<Vertex point="6" s="0.875000" t="0.875000"/>
-		<Vertex point="1" s="0.875000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="11" s="0.875000" t="0.812500"/>
-		<Vertex point="9" s="0.850000" t="0.812500"/>
-		<Vertex point="10" s="0.850000" t="0.750000"/>
-		<Vertex point="12" s="0.875000" t="0.750000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="7" s="0.900000" t="0.875000"/>
-		<Vertex point="6" s="0.875000" t="0.875000"/>
-		<Vertex point="11" s="0.875000" t="0.812500"/>
-		<Vertex point="13" s="0.900000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="6" s="0.875000" t="0.875000"/>
-		<Vertex point="8" s="0.850000" t="0.875000"/>
-		<Vertex point="9" s="0.850000" t="0.812500"/>
-		<Vertex point="11" s="0.875000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="13" s="0.900000" t="0.812500"/>
-		<Vertex point="11" s="0.875000" t="0.812500"/>
-		<Vertex point="12" s="0.875000" t="0.750000"/>
-		<Vertex point="14" s="0.900000" t="0.750000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="17" s="0.800000" t="1.000000"/>
-		<Vertex point="15" s="0.800000" t="0.937500"/>
-		<Vertex point="16" s="0.825000" t="0.937500"/>
-		<Vertex point="18" s="0.825000" t="1.000000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="16" s="0.825000" t="0.937500"/>
-		<Vertex point="19" s="0.825000" t="0.875000"/>
-		<Vertex point="8" s="0.850000" t="0.875000"/>
-		<Vertex point="5" s="0.850000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="15" s="0.800000" t="0.937500"/>
-		<Vertex point="20" s="0.800000" t="0.875000"/>
-		<Vertex point="19" s="0.825000" t="0.875000"/>
-		<Vertex point="16" s="0.825000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="22" s="0.775000" t="1.000000"/>
-		<Vertex point="21" s="0.775000" t="0.937500"/>
-		<Vertex point="15" s="0.800000" t="0.937500"/>
-		<Vertex point="17" s="0.800000" t="1.000000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="24" s="0.750000" t="1.000000"/>
-		<Vertex point="23" s="0.750000" t="0.937500"/>
-		<Vertex point="21" s="0.775000" t="0.937500"/>
-		<Vertex point="22" s="0.775000" t="1.000000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="21" s="0.775000" t="0.937500"/>
-		<Vertex point="25" s="0.775000" t="0.875000"/>
-		<Vertex point="20" s="0.800000" t="0.875000"/>
-		<Vertex point="15" s="0.800000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="23" s="0.750000" t="0.937500"/>
-		<Vertex point="26" s="0.750000" t="0.875000"/>
-		<Vertex point="25" s="0.775000" t="0.875000"/>
-		<Vertex point="21" s="0.775000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="29" s="0.825000" t="0.875000"/>
-		<Vertex point="27" s="0.825000" t="0.937500"/>
-		<Vertex point="28" s="0.850000" t="0.937500"/>
-		<Vertex point="30" s="0.850000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="18" s="0.825000" t="1.000000"/>
-		<Vertex point="16" s="0.825000" t="0.937500"/>
-		<Vertex point="5" s="0.850000" t="0.937500"/>
-		<Vertex point="4" s="0.850000" t="1.000000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="27" s="0.825000" t="0.937500"/>
-		<Vertex point="18" s="0.825000" t="1.000000"/>
-		<Vertex point="4" s="0.850000" t="1.000000"/>
-		<Vertex point="28" s="0.850000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="31" s="0.800000" t="0.937500"/>
-		<Vertex point="17" s="0.800000" t="1.000000"/>
-		<Vertex point="18" s="0.825000" t="1.000000"/>
-		<Vertex point="27" s="0.825000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="28" s="0.850000" t="0.937500"/>
-		<Vertex point="4" s="0.850000" t="1.000000"/>
-		<Vertex point="0" s="0.875000" t="1.000000"/>
-		<Vertex point="32" s="0.875000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="34" s="0.775000" t="0.875000"/>
-		<Vertex point="33" s="0.775000" t="0.937500"/>
-		<Vertex point="31" s="0.800000" t="0.937500"/>
-		<Vertex point="35" s="0.800000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="37" s="0.750000" t="0.875000"/>
-		<Vertex point="36" s="0.750000" t="0.937500"/>
-		<Vertex point="33" s="0.775000" t="0.937500"/>
-		<Vertex point="34" s="0.775000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="35" s="0.800000" t="0.875000"/>
-		<Vertex point="31" s="0.800000" t="0.937500"/>
-		<Vertex point="27" s="0.825000" t="0.937500"/>
-		<Vertex point="29" s="0.825000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="33" s="0.775000" t="0.937500"/>
-		<Vertex point="22" s="0.775000" t="1.000000"/>
-		<Vertex point="17" s="0.800000" t="1.000000"/>
-		<Vertex point="31" s="0.800000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="36" s="0.750000" t="0.937500"/>
-		<Vertex point="24" s="0.750000" t="1.000000"/>
-		<Vertex point="22" s="0.775000" t="1.000000"/>
-		<Vertex point="33" s="0.775000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="38" s="0.825000" t="0.812500"/>
-		<Vertex point="39" s="0.800000" t="0.812500"/>
-		<Vertex point="40" s="0.800000" t="0.750000"/>
-		<Vertex point="41" s="0.825000" t="0.750000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="8" s="0.850000" t="0.875000"/>
-		<Vertex point="19" s="0.825000" t="0.875000"/>
-		<Vertex point="38" s="0.825000" t="0.812500"/>
-		<Vertex point="9" s="0.850000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="19" s="0.825000" t="0.875000"/>
-		<Vertex point="20" s="0.800000" t="0.875000"/>
-		<Vertex point="39" s="0.800000" t="0.812500"/>
-		<Vertex point="38" s="0.825000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="42" s="0.775000" t="0.812500"/>
-		<Vertex point="43" s="0.750000" t="0.812500"/>
-		<Vertex point="44" s="0.750000" t="0.750000"/>
-		<Vertex point="45" s="0.775000" t="0.750000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="20" s="0.800000" t="0.875000"/>
-		<Vertex point="25" s="0.775000" t="0.875000"/>
-		<Vertex point="42" s="0.775000" t="0.812500"/>
-		<Vertex point="39" s="0.800000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="25" s="0.775000" t="0.875000"/>
-		<Vertex point="26" s="0.750000" t="0.875000"/>
-		<Vertex point="43" s="0.750000" t="0.812500"/>
-		<Vertex point="42" s="0.775000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="39" s="0.800000" t="0.812500"/>
-		<Vertex point="42" s="0.775000" t="0.812500"/>
-		<Vertex point="45" s="0.775000" t="0.750000"/>
-		<Vertex point="40" s="0.800000" t="0.750000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="41" s="0.825000" t="0.750000"/>
-		<Vertex point="40" s="0.800000" t="0.750000"/>
-		<Vertex point="46" s="0.800000" t="0.812500"/>
-		<Vertex point="47" s="0.825000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="12" s="0.875000" t="0.750000"/>
-		<Vertex point="10" s="0.850000" t="0.750000"/>
-		<Vertex point="48" s="0.850000" t="0.812500"/>
-		<Vertex point="49" s="0.875000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="10" s="0.850000" t="0.750000"/>
-		<Vertex point="41" s="0.825000" t="0.750000"/>
-		<Vertex point="47" s="0.825000" t="0.812500"/>
-		<Vertex point="48" s="0.850000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="48" s="0.850000" t="0.812500"/>
-		<Vertex point="47" s="0.825000" t="0.812500"/>
-		<Vertex point="29" s="0.825000" t="0.875000"/>
-		<Vertex point="30" s="0.850000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="9" s="0.850000" t="0.812500"/>
-		<Vertex point="38" s="0.825000" t="0.812500"/>
-		<Vertex point="41" s="0.825000" t="0.750000"/>
-		<Vertex point="10" s="0.850000" t="0.750000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="45" s="0.775000" t="0.750000"/>
-		<Vertex point="44" s="0.750000" t="0.750000"/>
-		<Vertex point="50" s="0.750000" t="0.812500"/>
-		<Vertex point="51" s="0.775000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="40" s="0.800000" t="0.750000"/>
-		<Vertex point="45" s="0.775000" t="0.750000"/>
-		<Vertex point="51" s="0.775000" t="0.812500"/>
-		<Vertex point="46" s="0.800000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="46" s="0.800000" t="0.812500"/>
-		<Vertex point="51" s="0.775000" t="0.812500"/>
-		<Vertex point="34" s="0.775000" t="0.875000"/>
-		<Vertex point="35" s="0.800000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="51" s="0.775000" t="0.812500"/>
-		<Vertex point="50" s="0.750000" t="0.812500"/>
-		<Vertex point="37" s="0.750000" t="0.875000"/>
-		<Vertex point="34" s="0.775000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="47" s="0.825000" t="0.812500"/>
-		<Vertex point="46" s="0.800000" t="0.812500"/>
-		<Vertex point="35" s="0.800000" t="0.875000"/>
-		<Vertex point="29" s="0.825000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="52" s="0.925000" t="1.000000"/>
-		<Vertex point="53" s="0.925000" t="0.937500"/>
-		<Vertex point="54" s="0.950000" t="0.937500"/>
-		<Vertex point="55" s="0.950000" t="1.000000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="53" s="0.925000" t="0.937500"/>
-		<Vertex point="56" s="0.925000" t="0.875000"/>
-		<Vertex point="57" s="0.950000" t="0.875000"/>
-		<Vertex point="54" s="0.950000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="2" s="0.900000" t="0.937500"/>
-		<Vertex point="7" s="0.900000" t="0.875000"/>
-		<Vertex point="56" s="0.925000" t="0.875000"/>
-		<Vertex point="53" s="0.925000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="58" s="0.900000" t="0.875000"/>
-		<Vertex point="59" s="0.900000" t="0.937500"/>
-		<Vertex point="60" s="0.925000" t="0.937500"/>
-		<Vertex point="61" s="0.925000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="32" s="0.875000" t="0.937500"/>
-		<Vertex point="0" s="0.875000" t="1.000000"/>
-		<Vertex point="3" s="0.900000" t="1.000000"/>
-		<Vertex point="59" s="0.900000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="60" s="0.925000" t="0.937500"/>
-		<Vertex point="52" s="0.925000" t="1.000000"/>
-		<Vertex point="55" s="0.950000" t="1.000000"/>
-		<Vertex point="62" s="0.950000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="59" s="0.900000" t="0.937500"/>
-		<Vertex point="3" s="0.900000" t="1.000000"/>
-		<Vertex point="52" s="0.925000" t="1.000000"/>
-		<Vertex point="60" s="0.925000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="3" s="0.900000" t="1.000000"/>
-		<Vertex point="2" s="0.900000" t="0.937500"/>
-		<Vertex point="53" s="0.925000" t="0.937500"/>
-		<Vertex point="52" s="0.925000" t="1.000000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="63" s="-0.025000" t="1.000000"/>
-		<Vertex point="64" s="-0.025000" t="0.937500"/>
+		<Vertex point="177" s="0.025000" t="0.937500"/>
 		<Vertex point="65" s="0.000000" t="0.937500"/>
-		<Vertex point="66" s="0.000000" t="1.000000"/>
+		<Vertex point="68" s="0.000000" t="0.875000"/>
+		<Vertex point="180" s="0.025000" t="0.875000"/>
 	</Quad>
 	<Quad>
-		<Vertex point="64" s="-0.025000" t="0.937500"/>
-		<Vertex point="67" s="-0.025000" t="0.875000"/>
-		<Vertex point="68" s="0.000000" t="0.875000"/>
+		<Vertex point="176" s="0.025000" t="1.000000"/>
+		<Vertex point="66" s="0.000000" t="1.000000"/>
 		<Vertex point="65" s="0.000000" t="0.937500"/>
+		<Vertex point="177" s="0.025000" t="0.937500"/>
 	</Quad>
 	<Quad>
-		<Vertex point="69" s="-0.050000" t="1.000000"/>
-		<Vertex point="70" s="-0.050000" t="0.937500"/>
-		<Vertex point="64" s="-0.025000" t="0.937500"/>
-		<Vertex point="63" s="-0.025000" t="1.000000"/>
+		<Vertex point="184" s="0.050000" t="0.875000"/>
+		<Vertex point="182" s="0.025000" t="0.875000"/>
+		<Vertex point="183" s="0.025000" t="0.937500"/>
+		<Vertex point="185" s="0.050000" t="0.937500"/>
 	</Quad>
 	<Quad>
-		<Vertex point="70" s="-0.050000" t="0.937500"/>
-		<Vertex point="71" s="-0.050000" t="0.875000"/>
-		<Vertex point="67" s="-0.025000" t="0.875000"/>
-		<Vertex point="64" s="-0.025000" t="0.937500"/>
+		<Vertex point="186" s="0.075000" t="0.875000"/>
+		<Vertex point="184" s="0.050000" t="0.875000"/>
+		<Vertex point="185" s="0.050000" t="0.937500"/>
+		<Vertex point="187" s="0.075000" t="0.937500"/>
 	</Quad>
 	<Quad>
-		<Vertex point="61" s="0.925000" t="0.875000"/>
-		<Vertex point="60" s="0.925000" t="0.937500"/>
-		<Vertex point="62" s="0.950000" t="0.937500"/>
-		<Vertex point="72" s="0.950000" t="0.875000"/>
+		<Vertex point="185" s="0.050000" t="0.937500"/>
+		<Vertex point="183" s="0.025000" t="0.937500"/>
+		<Vertex point="176" s="0.025000" t="1.000000"/>
+		<Vertex point="178" s="0.050000" t="1.000000"/>
 	</Quad>
 	<Quad>
-		<Vertex point="73" s="-0.025000" t="0.875000"/>
-		<Vertex point="74" s="-0.025000" t="0.937500"/>
+		<Vertex point="183" s="0.025000" t="0.937500"/>
 		<Vertex point="75" s="0.000000" t="0.937500"/>
-		<Vertex point="76" s="0.000000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="74" s="-0.025000" t="0.937500"/>
-		<Vertex point="63" s="-0.025000" t="1.000000"/>
 		<Vertex point="66" s="0.000000" t="1.000000"/>
-		<Vertex point="75" s="0.000000" t="0.937500"/>
+		<Vertex point="176" s="0.025000" t="1.000000"/>
 	</Quad>
 	<Quad>
-		<Vertex point="77" s="-0.050000" t="0.875000"/>
-		<Vertex point="78" s="-0.050000" t="0.937500"/>
-		<Vertex point="74" s="-0.025000" t="0.937500"/>
-		<Vertex point="73" s="-0.025000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="78" s="-0.050000" t="0.937500"/>
-		<Vertex point="69" s="-0.050000" t="1.000000"/>
-		<Vertex point="63" s="-0.025000" t="1.000000"/>
-		<Vertex point="74" s="-0.025000" t="0.937500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="57" s="0.950000" t="0.875000"/>
-		<Vertex point="56" s="0.925000" t="0.875000"/>
-		<Vertex point="79" s="0.925000" t="0.812500"/>
-		<Vertex point="80" s="0.950000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="56" s="0.925000" t="0.875000"/>
-		<Vertex point="7" s="0.900000" t="0.875000"/>
-		<Vertex point="13" s="0.900000" t="0.812500"/>
-		<Vertex point="79" s="0.925000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="80" s="0.950000" t="0.812500"/>
-		<Vertex point="79" s="0.925000" t="0.812500"/>
-		<Vertex point="81" s="0.925000" t="0.750000"/>
-		<Vertex point="82" s="0.950000" t="0.750000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="81" s="0.925000" t="0.750000"/>
-		<Vertex point="14" s="0.900000" t="0.750000"/>
-		<Vertex point="83" s="0.900000" t="0.812500"/>
-		<Vertex point="84" s="0.925000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="79" s="0.925000" t="0.812500"/>
-		<Vertex point="13" s="0.900000" t="0.812500"/>
-		<Vertex point="14" s="0.900000" t="0.750000"/>
-		<Vertex point="81" s="0.925000" t="0.750000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="14" s="0.900000" t="0.750000"/>
-		<Vertex point="12" s="0.875000" t="0.750000"/>
-		<Vertex point="49" s="0.875000" t="0.812500"/>
-		<Vertex point="83" s="0.900000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="82" s="0.950000" t="0.750000"/>
-		<Vertex point="81" s="0.925000" t="0.750000"/>
-		<Vertex point="84" s="0.925000" t="0.812500"/>
-		<Vertex point="85" s="0.950000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="84" s="0.925000" t="0.812500"/>
-		<Vertex point="83" s="0.900000" t="0.812500"/>
-		<Vertex point="58" s="0.900000" t="0.875000"/>
-		<Vertex point="61" s="0.925000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="88" s="-0.025000" t="0.812500"/>
-		<Vertex point="86" s="-0.050000" t="0.812500"/>
-		<Vertex point="87" s="-0.050000" t="0.750000"/>
-		<Vertex point="89" s="-0.025000" t="0.750000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="67" s="-0.025000" t="0.875000"/>
-		<Vertex point="88" s="-0.025000" t="0.812500"/>
-		<Vertex point="90" s="0.000000" t="0.812500"/>
-		<Vertex point="68" s="0.000000" t="0.875000"/>
-	</Quad>
-	<Quad>
-		<Vertex point="88" s="-0.025000" t="0.812500"/>
-		<Vertex point="89" s="-0.025000" t="0.750000"/>
-		<Vertex point="91" s="0.000000" t="0.750000"/>
-		<Vertex point="90" s="0.000000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="67" s="-0.025000" t="0.875000"/>
-		<Vertex point="71" s="-0.050000" t="0.875000"/>
-		<Vertex point="86" s="-0.050000" t="0.812500"/>
-		<Vertex point="88" s="-0.025000" t="0.812500"/>
-	</Quad>
-	<Quad>
-		<Vertex point="92" s="-0.025000" t="0.812500"/>
-		<Vertex point="73" s="-0.025000" t="0.875000"/>
+		<Vertex point="182" s="0.025000" t="0.875000"/>
 		<Vertex point="76" s="0.000000" t="0.875000"/>
-		<Vertex point="93" s="0.000000" t="0.812500"/>
+		<Vertex point="75" s="0.000000" t="0.937500"/>
+		<Vertex point="183" s="0.025000" t="0.937500"/>
 	</Quad>
 	<Quad>
-		<Vertex point="89" s="-0.025000" t="0.750000"/>
-		<Vertex point="87" s="-0.050000" t="0.750000"/>
-		<Vertex point="94" s="-0.050000" t="0.812500"/>
-		<Vertex point="92" s="-0.025000" t="0.812500"/>
+		<Vertex point="188" s="0.075000" t="1.000000"/>
+		<Vertex point="178" s="0.050000" t="1.000000"/>
+		<Vertex point="179" s="0.050000" t="0.937500"/>
+		<Vertex point="189" s="0.075000" t="0.937500"/>
 	</Quad>
 	<Quad>
-		<Vertex point="85" s="0.950000" t="0.812500"/>
-		<Vertex point="84" s="0.925000" t="0.812500"/>
-		<Vertex point="61" s="0.925000" t="0.875000"/>
-		<Vertex point="72" s="0.950000" t="0.875000"/>
+		<Vertex point="191" s="0.100000" t="0.937500"/>
+		<Vertex point="189" s="0.075000" t="0.937500"/>
+		<Vertex point="190" s="0.075000" t="0.875000"/>
+		<Vertex point="192" s="0.100000" t="0.875000"/>
 	</Quad>
 	<Quad>
-		<Vertex point="89" s="-0.025000" t="0.750000"/>
-		<Vertex point="92" s="-0.025000" t="0.812500"/>
-		<Vertex point="93" s="0.000000" t="0.812500"/>
+		<Vertex point="189" s="0.075000" t="0.937500"/>
+		<Vertex point="179" s="0.050000" t="0.937500"/>
+		<Vertex point="181" s="0.050000" t="0.875000"/>
+		<Vertex point="190" s="0.075000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="193" s="0.100000" t="0.875000"/>
+		<Vertex point="186" s="0.075000" t="0.875000"/>
+		<Vertex point="187" s="0.075000" t="0.937500"/>
+		<Vertex point="194" s="0.100000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="195" s="0.100000" t="1.000000"/>
+		<Vertex point="188" s="0.075000" t="1.000000"/>
+		<Vertex point="189" s="0.075000" t="0.937500"/>
+		<Vertex point="191" s="0.100000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="194" s="0.100000" t="0.937500"/>
+		<Vertex point="187" s="0.075000" t="0.937500"/>
+		<Vertex point="188" s="0.075000" t="1.000000"/>
+		<Vertex point="195" s="0.100000" t="1.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="187" s="0.075000" t="0.937500"/>
+		<Vertex point="185" s="0.050000" t="0.937500"/>
+		<Vertex point="178" s="0.050000" t="1.000000"/>
+		<Vertex point="188" s="0.075000" t="1.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="196" s="0.125000" t="0.937500"/>
+		<Vertex point="194" s="0.100000" t="0.937500"/>
+		<Vertex point="195" s="0.100000" t="1.000000"/>
+		<Vertex point="197" s="0.125000" t="1.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="90" s="0.000000" t="0.812500"/>
 		<Vertex point="91" s="0.000000" t="0.750000"/>
+		<Vertex point="198" s="0.025000" t="0.750000"/>
+		<Vertex point="199" s="0.025000" t="0.812500"/>
 	</Quad>
 	<Quad>
-		<Vertex point="92" s="-0.025000" t="0.812500"/>
-		<Vertex point="94" s="-0.050000" t="0.812500"/>
-		<Vertex point="77" s="-0.050000" t="0.875000"/>
-		<Vertex point="73" s="-0.025000" t="0.875000"/>
+		<Vertex point="180" s="0.025000" t="0.875000"/>
+		<Vertex point="199" s="0.025000" t="0.812500"/>
+		<Vertex point="200" s="0.050000" t="0.812500"/>
+		<Vertex point="181" s="0.050000" t="0.875000"/>
 	</Quad>
 	<Quad>
-		<Vertex point="95" s="0.875000" t="0.875000"/>
-		<Vertex point="32" s="0.875000" t="0.937500"/>
-		<Vertex point="59" s="0.900000" t="0.937500"/>
-		<Vertex point="58" s="0.900000" t="0.875000"/>
+		<Vertex point="199" s="0.025000" t="0.812500"/>
+		<Vertex point="198" s="0.025000" t="0.750000"/>
+		<Vertex point="201" s="0.050000" t="0.750000"/>
+		<Vertex point="200" s="0.050000" t="0.812500"/>
 	</Quad>
 	<Quad>
-		<Vertex point="30" s="0.850000" t="0.875000"/>
-		<Vertex point="28" s="0.850000" t="0.937500"/>
-		<Vertex point="32" s="0.875000" t="0.937500"/>
-		<Vertex point="95" s="0.875000" t="0.875000"/>
+		<Vertex point="68" s="0.000000" t="0.875000"/>
+		<Vertex point="90" s="0.000000" t="0.812500"/>
+		<Vertex point="199" s="0.025000" t="0.812500"/>
+		<Vertex point="180" s="0.025000" t="0.875000"/>
 	</Quad>
 	<Quad>
-		<Vertex point="83" s="0.900000" t="0.812500"/>
-		<Vertex point="49" s="0.875000" t="0.812500"/>
-		<Vertex point="95" s="0.875000" t="0.875000"/>
-		<Vertex point="58" s="0.900000" t="0.875000"/>
+		<Vertex point="198" s="0.025000" t="0.750000"/>
+		<Vertex point="202" s="0.025000" t="0.812500"/>
+		<Vertex point="203" s="0.050000" t="0.812500"/>
+		<Vertex point="201" s="0.050000" t="0.750000"/>
 	</Quad>
 	<Quad>
-		<Vertex point="49" s="0.875000" t="0.812500"/>
-		<Vertex point="48" s="0.850000" t="0.812500"/>
-		<Vertex point="30" s="0.850000" t="0.875000"/>
-		<Vertex point="95" s="0.875000" t="0.875000"/>
+		<Vertex point="202" s="0.025000" t="0.812500"/>
+		<Vertex point="182" s="0.025000" t="0.875000"/>
+		<Vertex point="184" s="0.050000" t="0.875000"/>
+		<Vertex point="203" s="0.050000" t="0.812500"/>
 	</Quad>
 	<Quad>
-		<Vertex point="96" s="0.725000" t="0.937500"/>
-		<Vertex point="23" s="0.750000" t="0.937500"/>
-		<Vertex point="24" s="0.750000" t="1.000000"/>
-		<Vertex point="97" s="0.725000" t="1.000000"/>
+		<Vertex point="93" s="0.000000" t="0.812500"/>
+		<Vertex point="76" s="0.000000" t="0.875000"/>
+		<Vertex point="182" s="0.025000" t="0.875000"/>
+		<Vertex point="202" s="0.025000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="91" s="0.000000" t="0.750000"/>
+		<Vertex point="93" s="0.000000" t="0.812500"/>
+		<Vertex point="202" s="0.025000" t="0.812500"/>
+		<Vertex point="198" s="0.025000" t="0.750000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="203" s="0.050000" t="0.812500"/>
+		<Vertex point="184" s="0.050000" t="0.875000"/>
+		<Vertex point="186" s="0.075000" t="0.875000"/>
+		<Vertex point="204" s="0.075000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="200" s="0.050000" t="0.812500"/>
+		<Vertex point="201" s="0.050000" t="0.750000"/>
+		<Vertex point="205" s="0.075000" t="0.750000"/>
+		<Vertex point="206" s="0.075000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="190" s="0.075000" t="0.875000"/>
+		<Vertex point="206" s="0.075000" t="0.812500"/>
+		<Vertex point="207" s="0.100000" t="0.812500"/>
+		<Vertex point="192" s="0.100000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="181" s="0.050000" t="0.875000"/>
+		<Vertex point="200" s="0.050000" t="0.812500"/>
+		<Vertex point="206" s="0.075000" t="0.812500"/>
+		<Vertex point="190" s="0.075000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="201" s="0.050000" t="0.750000"/>
+		<Vertex point="203" s="0.050000" t="0.812500"/>
+		<Vertex point="204" s="0.075000" t="0.812500"/>
+		<Vertex point="205" s="0.075000" t="0.750000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="208" s="0.100000" t="0.750000"/>
+		<Vertex point="209" s="0.100000" t="0.812500"/>
+		<Vertex point="210" s="0.125000" t="0.812500"/>
+		<Vertex point="211" s="0.125000" t="0.750000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="205" s="0.075000" t="0.750000"/>
+		<Vertex point="204" s="0.075000" t="0.812500"/>
+		<Vertex point="209" s="0.100000" t="0.812500"/>
+		<Vertex point="208" s="0.100000" t="0.750000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="204" s="0.075000" t="0.812500"/>
+		<Vertex point="186" s="0.075000" t="0.875000"/>
+		<Vertex point="193" s="0.100000" t="0.875000"/>
+		<Vertex point="209" s="0.100000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="206" s="0.075000" t="0.812500"/>
+		<Vertex point="205" s="0.075000" t="0.750000"/>
+		<Vertex point="208" s="0.100000" t="0.750000"/>
+		<Vertex point="207" s="0.100000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="212" s="0.150000" t="0.875000"/>
+		<Vertex point="213" s="0.125000" t="0.875000"/>
+		<Vertex point="196" s="0.125000" t="0.937500"/>
+		<Vertex point="214" s="0.150000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="213" s="0.125000" t="0.875000"/>
+		<Vertex point="193" s="0.100000" t="0.875000"/>
+		<Vertex point="194" s="0.100000" t="0.937500"/>
+		<Vertex point="196" s="0.125000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="210" s="0.125000" t="0.812500"/>
+		<Vertex point="213" s="0.125000" t="0.875000"/>
+		<Vertex point="212" s="0.150000" t="0.875000"/>
+		<Vertex point="215" s="0.150000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="209" s="0.100000" t="0.812500"/>
+		<Vertex point="193" s="0.100000" t="0.875000"/>
+		<Vertex point="213" s="0.125000" t="0.875000"/>
+		<Vertex point="210" s="0.125000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="217" s="0.150000" t="1.000000"/>
+		<Vertex point="197" s="0.125000" t="1.000000"/>
+		<Vertex point="216" s="0.125000" t="0.937500"/>
+		<Vertex point="218" s="0.150000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="197" s="0.125000" t="1.000000"/>
+		<Vertex point="195" s="0.100000" t="1.000000"/>
+		<Vertex point="191" s="0.100000" t="0.937500"/>
+		<Vertex point="216" s="0.125000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="218" s="0.150000" t="0.937500"/>
+		<Vertex point="216" s="0.125000" t="0.937500"/>
+		<Vertex point="219" s="0.125000" t="0.875000"/>
+		<Vertex point="220" s="0.150000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="216" s="0.125000" t="0.937500"/>
+		<Vertex point="191" s="0.100000" t="0.937500"/>
+		<Vertex point="192" s="0.100000" t="0.875000"/>
+		<Vertex point="219" s="0.125000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="207" s="0.100000" t="0.812500"/>
+		<Vertex point="208" s="0.100000" t="0.750000"/>
+		<Vertex point="211" s="0.125000" t="0.750000"/>
+		<Vertex point="221" s="0.125000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="219" s="0.125000" t="0.875000"/>
+		<Vertex point="221" s="0.125000" t="0.812500"/>
+		<Vertex point="222" s="0.150000" t="0.812500"/>
+		<Vertex point="220" s="0.150000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="192" s="0.100000" t="0.875000"/>
+		<Vertex point="207" s="0.100000" t="0.812500"/>
+		<Vertex point="221" s="0.125000" t="0.812500"/>
+		<Vertex point="219" s="0.125000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="221" s="0.125000" t="0.812500"/>
+		<Vertex point="211" s="0.125000" t="0.750000"/>
+		<Vertex point="223" s="0.150000" t="0.750000"/>
+		<Vertex point="222" s="0.150000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="224" s="0.175000" t="0.875000"/>
+		<Vertex point="212" s="0.150000" t="0.875000"/>
+		<Vertex point="214" s="0.150000" t="0.937500"/>
+		<Vertex point="225" s="0.175000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="214" s="0.150000" t="0.937500"/>
+		<Vertex point="196" s="0.125000" t="0.937500"/>
+		<Vertex point="197" s="0.125000" t="1.000000"/>
+		<Vertex point="217" s="0.150000" t="1.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="226" s="0.200000" t="0.937500"/>
+		<Vertex point="225" s="0.175000" t="0.937500"/>
+		<Vertex point="227" s="0.175000" t="1.000000"/>
+		<Vertex point="228" s="0.200000" t="1.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="225" s="0.175000" t="0.937500"/>
+		<Vertex point="214" s="0.150000" t="0.937500"/>
+		<Vertex point="217" s="0.150000" t="1.000000"/>
+		<Vertex point="227" s="0.175000" t="1.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="227" s="0.175000" t="1.000000"/>
+		<Vertex point="217" s="0.150000" t="1.000000"/>
+		<Vertex point="218" s="0.150000" t="0.937500"/>
+		<Vertex point="229" s="0.175000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="230" s="0.200000" t="0.875000"/>
+		<Vertex point="224" s="0.175000" t="0.875000"/>
+		<Vertex point="225" s="0.175000" t="0.937500"/>
+		<Vertex point="226" s="0.200000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="231" s="0.250000" t="0.875000"/>
+		<Vertex point="232" s="0.225000" t="0.875000"/>
+		<Vertex point="233" s="0.225000" t="0.937500"/>
+		<Vertex point="234" s="0.250000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="232" s="0.225000" t="0.875000"/>
+		<Vertex point="230" s="0.200000" t="0.875000"/>
+		<Vertex point="226" s="0.200000" t="0.937500"/>
+		<Vertex point="233" s="0.225000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="234" s="0.250000" t="0.937500"/>
+		<Vertex point="233" s="0.225000" t="0.937500"/>
+		<Vertex point="235" s="0.225000" t="1.000000"/>
+		<Vertex point="236" s="0.250000" t="1.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="233" s="0.225000" t="0.937500"/>
+		<Vertex point="226" s="0.200000" t="0.937500"/>
+		<Vertex point="228" s="0.200000" t="1.000000"/>
+		<Vertex point="235" s="0.225000" t="1.000000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="228" s="0.200000" t="1.000000"/>
+		<Vertex point="227" s="0.175000" t="1.000000"/>
+		<Vertex point="229" s="0.175000" t="0.937500"/>
+		<Vertex point="237" s="0.200000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="237" s="0.200000" t="0.937500"/>
+		<Vertex point="229" s="0.175000" t="0.937500"/>
+		<Vertex point="238" s="0.175000" t="0.875000"/>
+		<Vertex point="239" s="0.200000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="229" s="0.175000" t="0.937500"/>
+		<Vertex point="218" s="0.150000" t="0.937500"/>
+		<Vertex point="220" s="0.150000" t="0.875000"/>
+		<Vertex point="238" s="0.175000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="236" s="0.250000" t="1.000000"/>
+		<Vertex point="235" s="0.225000" t="1.000000"/>
+		<Vertex point="240" s="0.225000" t="0.937500"/>
+		<Vertex point="241" s="0.250000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="235" s="0.225000" t="1.000000"/>
+		<Vertex point="228" s="0.200000" t="1.000000"/>
+		<Vertex point="237" s="0.200000" t="0.937500"/>
+		<Vertex point="240" s="0.225000" t="0.937500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="241" s="0.250000" t="0.937500"/>
+		<Vertex point="240" s="0.225000" t="0.937500"/>
+		<Vertex point="242" s="0.225000" t="0.875000"/>
+		<Vertex point="243" s="0.250000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="240" s="0.225000" t="0.937500"/>
+		<Vertex point="237" s="0.200000" t="0.937500"/>
+		<Vertex point="239" s="0.200000" t="0.875000"/>
+		<Vertex point="242" s="0.225000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="223" s="0.150000" t="0.750000"/>
+		<Vertex point="215" s="0.150000" t="0.812500"/>
+		<Vertex point="244" s="0.175000" t="0.812500"/>
+		<Vertex point="245" s="0.175000" t="0.750000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="222" s="0.150000" t="0.812500"/>
+		<Vertex point="223" s="0.150000" t="0.750000"/>
+		<Vertex point="245" s="0.175000" t="0.750000"/>
+		<Vertex point="246" s="0.175000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="211" s="0.125000" t="0.750000"/>
+		<Vertex point="210" s="0.125000" t="0.812500"/>
+		<Vertex point="215" s="0.150000" t="0.812500"/>
+		<Vertex point="223" s="0.150000" t="0.750000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="245" s="0.175000" t="0.750000"/>
+		<Vertex point="244" s="0.175000" t="0.812500"/>
+		<Vertex point="247" s="0.200000" t="0.812500"/>
+		<Vertex point="248" s="0.200000" t="0.750000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="215" s="0.150000" t="0.812500"/>
+		<Vertex point="212" s="0.150000" t="0.875000"/>
+		<Vertex point="224" s="0.175000" t="0.875000"/>
+		<Vertex point="244" s="0.175000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="248" s="0.200000" t="0.750000"/>
+		<Vertex point="247" s="0.200000" t="0.812500"/>
+		<Vertex point="249" s="0.225000" t="0.812500"/>
+		<Vertex point="250" s="0.225000" t="0.750000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="244" s="0.175000" t="0.812500"/>
+		<Vertex point="224" s="0.175000" t="0.875000"/>
+		<Vertex point="230" s="0.200000" t="0.875000"/>
+		<Vertex point="247" s="0.200000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="250" s="0.225000" t="0.750000"/>
+		<Vertex point="249" s="0.225000" t="0.812500"/>
+		<Vertex point="251" s="0.250000" t="0.812500"/>
+		<Vertex point="252" s="0.250000" t="0.750000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="249" s="0.225000" t="0.812500"/>
+		<Vertex point="232" s="0.225000" t="0.875000"/>
+		<Vertex point="231" s="0.250000" t="0.875000"/>
+		<Vertex point="251" s="0.250000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="247" s="0.200000" t="0.812500"/>
+		<Vertex point="230" s="0.200000" t="0.875000"/>
+		<Vertex point="232" s="0.225000" t="0.875000"/>
+		<Vertex point="249" s="0.225000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="238" s="0.175000" t="0.875000"/>
+		<Vertex point="246" s="0.175000" t="0.812500"/>
+		<Vertex point="253" s="0.200000" t="0.812500"/>
+		<Vertex point="239" s="0.200000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="220" s="0.150000" t="0.875000"/>
+		<Vertex point="222" s="0.150000" t="0.812500"/>
+		<Vertex point="246" s="0.175000" t="0.812500"/>
+		<Vertex point="238" s="0.175000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="246" s="0.175000" t="0.812500"/>
+		<Vertex point="245" s="0.175000" t="0.750000"/>
+		<Vertex point="248" s="0.200000" t="0.750000"/>
+		<Vertex point="253" s="0.200000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="253" s="0.200000" t="0.812500"/>
+		<Vertex point="248" s="0.200000" t="0.750000"/>
+		<Vertex point="250" s="0.225000" t="0.750000"/>
+		<Vertex point="254" s="0.225000" t="0.812500"/>
+	</Quad>
+	<Quad>
+		<Vertex point="242" s="0.225000" t="0.875000"/>
+		<Vertex point="254" s="0.225000" t="0.812500"/>
+		<Vertex point="255" s="0.250000" t="0.812500"/>
+		<Vertex point="243" s="0.250000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="239" s="0.200000" t="0.875000"/>
+		<Vertex point="253" s="0.200000" t="0.812500"/>
+		<Vertex point="254" s="0.225000" t="0.812500"/>
+		<Vertex point="242" s="0.225000" t="0.875000"/>
+	</Quad>
+	<Quad>
+		<Vertex point="254" s="0.225000" t="0.812500"/>
+		<Vertex point="250" s="0.225000" t="0.750000"/>
+		<Vertex point="252" s="0.250000" t="0.750000"/>
+		<Vertex point="255" s="0.250000" t="0.812500"/>
 	</Quad>
 
 </Polygons>
