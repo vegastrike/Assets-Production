@@ -11,11 +11,13 @@ import quest_rogue_militia
 import quest_teleport
 import quest_surplus
 import VS
+import quest_isowing
 #VS is only for news
 adventures = {"gemini_sector/delta_prime":quest_drone.quest_drone_factory(),
               "enigma_sector/callimanchius":quest_surplus.quest_surplus_factory(('Supplies/Medical','Research/Environmental',),1.5,.5,0,1,('callimanchius_disaster',),),
               "sol_sector/alpha_centauri":quest_surplus.quest_surplus_factory(('Supplies/Construction_Supplies','Manufactured_Goods',),1.5,.5,0,1,('holman_population',),),
               "enigma_sector/racene":quest_racene.quest_racene_factory(),
+              "enigma_sector/defiance":quest_isowing.quest_isowing_factory(),
               "enigma_sector/axis":quest_disappear.quest_disappear_factory(),
               "enigma_sector/novaya_kiev":quest_rlaan_spy.quest_rlaan_spy_factory(),
               "enigma_sector/rigel":quest_slaver.quest_slaver_factory(),
@@ -24,7 +26,8 @@ adventures = {"gemini_sector/delta_prime":quest_drone.quest_drone_factory(),
               "enigma_sector/heinlein":quest_rogue_militia.quest_rogue_militia_factory(),
               "enigma_sector/enigma":quest_teleport.quest_teleport_factory()}
 
-persistent_adventures = [quest_drone.quest_drone_factory()]
+persistent_adventures = [quest_drone.quest_drone_factory(),
+                         quest_isowing.quest_isowing_factory()]
 
 def removePersistentAdventure(newq):
     mylen = len(persistent_adventures)

@@ -39,6 +39,8 @@ class quest:
         removeQuest(self.playernum,self.name,value)
     def makeQuestPersistent(self):
         self.removeQuest(-1)
+    def isPersistent (self):
+        return persistentQuest (self.playernum,self.name)
     def Execute(self):
         print "default"
         return 1
