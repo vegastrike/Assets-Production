@@ -42,25 +42,34 @@ def getSystemsNAway (start,k,preferredfaction):
 		return l
 	return lbak
 
+syscreds=500
+
 def generatePatrolMission (path, numplanets):
 	###
 	pass
+
 def generateEscortMission (path,fg,fac):
 	###
 	pass
-def generateCargoMission (path, contraband):
-	###
-	pass
+
+def generateCargoMission (path, category, fac):
+	numcargos=vsrandom.randrange(1,15)
+	if numcargos>10:
+		numcargos=10
+	diff=vsrandom.randrange(0,6)
+	launchcap=(vsrandom.random()>=.75)
+	creds=250*numcargos+500*diff+syscreds*len(path)+1000*(category.lower()=="contraband")
+	writemissionsavegame ("import cargo_mission\ntemp=cargo_mission.cargo_mission('%s', 0, %d, %d, %g, %d, 0, '%s', %s, '')\ntemp=0\n"%(fac, numcargos, diff, creds, launchcap, category, path))
+
 def generateBountyMission (path,fg,fac):
-	syscreds=500
-	runaway=vsrandom.random()
-	creds=2000+2000*runaway
-	writemissionsavegame("import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %g, '%s')\ntemp=0\n"%(creds+syscreds*len(path), runaway, vsrandom.randrange(0,6), fac, path))
+	diff=vsrandom.randrange(0,6)
+	runaway=(vsrandom.random()>=.75)
+	creds=1000+2000*runaway+500*diff+syscreds*len(path)
+	writemissionsavegame("import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %g, '%s', %s, '%s')\ntemp=0\n"%(creds+syscreds*len(path), runaway, diff, fac, path, fg))
 
 def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	isbase=fg_util.BaseFGInSystemName(path[-1])==defendfg
 	creds=1000
-	syscreds=500
 	writemissionsavegame("import defend\ntemp=defend.defend('%s', %d, %d, 8000.0, 100000.0, %g, True, %d, '%s', %s, '', '%s', '', '%s')\ntemp=0\n"%
 	                     (attackfac, 0, quantity, creds*quantity+syscreds*len(path), isbase, defendfac, str(path), attackfg, defendfg))
 	iscapitol=""
