@@ -110,6 +110,7 @@
 			<Cargo file="longhaul.blank" price="150000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Merchant/Heavy">
+			<Cargo file="cargoship" price="350000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Merchant/Light_Capship">
 		</Category>
