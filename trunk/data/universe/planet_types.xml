@@ -1,0 +1,16 @@
+<PlanetTypes>
+	<Planet type="Dirt" name="Industrial" />
+	<Planet type="newdetroit" name="Industrial" />
+	<Planet type="earth" name="Industrial" />
+	<Planet type="m_class" name="Agricultural" />
+	<Planet type="university" name="University" />
+	<Planet type="Snow" name="Ice Colony" />
+	<Planet type="carribean" name="Pleasure"
+	<Planet type="ocean" name="Oceanic" />
+	<Planet type="tundra" name="Rlaan_Ice_Agriculture" />
+	<Planet type="n_class" name="Aera_Industrial" />
+	<Planet type="j_class" name="Aera_Ice_Colony" />
+	<Planet type="k_class" name="Aera_Agriculture" />
+	<Planet type="n_class" name="Aera_Industrial" />
+	<Planet type="Lava" name="Rlaan_Industrial" />
+</PlanetTypes>
