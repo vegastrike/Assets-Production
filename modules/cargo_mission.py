@@ -71,7 +71,7 @@ class cargo_mission (Director.Mission):
 	  if (tempquantity>0):
 	    self.cred*=float(self.quantity)/float(tempquantity)
 	  else:
-	    VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000You do not have space to add our cargo to the mission. Mission failed.")
+	    VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000You do not have space to add our %s cargo to your ship. Mission failed."%self.cargoname)
 	    VS.terminateMission(0)
 	    return
 	  

@@ -4,7 +4,8 @@ import fg_util
 import vsrandom
 import faction_ships
 #hashed by system, then contains lists of pairs of (flightgroup,faction) pairs
-persystemattacklist= {}
+cpsal= {} #Current PerSystem AttackList
+persystemattacklist= cpsal #assign this to a pointer to cpsal THE FIRST TIME ONLY
 
 attacklist ={}#hashtable mapping (attackfg,attackfaction):(defendfg,defendfaction)
 defendlist={}#hashtable mapping (defendfg,defendfaction):(attackfg,attackfaction)
@@ -70,7 +71,7 @@ deadbattles=[]
 deadbattlesiter=-2
 def SimulateBattles():
 	global deadbattles
-	global persystemattacklist
+	global cpsal
 	global attacklist
 	global simulateiter
 	global deadbattlesiter
@@ -84,7 +85,8 @@ def SimulateBattles():
 				deadbattlesiter-=1
 				return True
 		else:
-			persystemattacklist = {}
+			persystemattacklist=cpsal
+			cpsal = {}
 			simulateiter= attacklist.iteritems()
 	try:
 	#if (1):
@@ -97,9 +99,9 @@ def SimulateBattles():
 				deadbattles+=[ally]
 			else:
 				sys = fg_util.FGSystem(ally[0],ally[1])
-				if not (sys in persystemattacklist):
-					persystemattacklist[sys]=[]
-				persystemattacklist[sys]+=[(ally,enemy)]#continue the battle
+				if not (sys in cpsal):
+					cpsal[sys]=[]
+				cpsal[sys]+=[(ally,enemy)]#continue the battle
 		except:
 			print 'horrible error line 102 dynamic_battle.py'
 	except:
@@ -107,8 +109,8 @@ def SimulateBattles():
 		deadbattlesiter = len(deadbattles)-1
 	return True
 def BattlesInSystem(sys):
-	if sys in persystemattacklist:
-		return persystemattacklist[sys]
+	if sys in cpsal:
+		return cpsal[sys]
 	#return {}  #used to be  a hash table
 	return []
 def LookForSystemWideTrouble(faction,sys):
