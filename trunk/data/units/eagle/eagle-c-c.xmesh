@@ -1,4 +1,4 @@
-<Mesh texture="glass.png" blend="ONE ONE">
+<Mesh texture="glass.png" blend="ONE ONE" scale=".1">
 <Points>
 <Point>
     <Location x="-3.94851040840149" y="3.94635081291199" z="30.4478454589844"/>

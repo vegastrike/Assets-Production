@@ -5,5 +5,18 @@
 <Meshfile file="eagle-h-h.xmesh"/>
 <Meshfile file="eagle-h-i.xmesh"/>
 <Meshfile file="eagle-c-c.xmesh"/>
-</Unit>
+       
 
+
+<!-- new elements added -->
+<Mount weapon="Laser" size="Light" x="-10.962538" y="4.039893" z="8.599527" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000"/>
+<Mount weapon="Laser" size="Light" x="10.961246" y="3.947175" z="8.599527" ri="0.000000" rj="0.000000" rk="1.000000" qi="1.000000" qj="0.000000" qk="0.000000"/>
+<Mount weapon="Laser" size="Light" x="-12.777982" y="-1.545418" z="6.636857" ri="0.000000" rj="0.000000" rk="1.000000" qi="1.000000" qj="0.000000" qk="0.000000"/>
+<Mount weapon="Laser" size="Light" x="12.774457" y="-1.545662" z="6.636857" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000"/>
+<Mount weapon="Laser" size="Light" x="-6.086652" y="-0.687403" z="14.729491" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000"/>
+<Mount weapon="Laser" size="Light" x="6.186234" y="-0.687404" z="14.729491" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000"/>
+<Light file="supernova.bmp" x="1.609877" y="1.222875" z="-8.380663" size="1.929035"/>
+<Light file="supernova.bmp" x="-1.509109" y="1.200359" z="-8.380663" size="1.949035"/>
+<Light file="supernova.bmp" x="1.654507" y="-1.499093" z="-8.380664" size="1.659028"/>
+<Light file="supernova.bmp" x="-1.708406" y="-1.483915" z="-8.380664" size="1.630028"/>
+</Unit>
