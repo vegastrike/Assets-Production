@@ -1,5 +1,5 @@
 import Base
-import random
+import vsrandom
 import VS
 plist=VS.musicAddList('carribean.m3u')
 VS.musicPlayList(plist)    
@@ -14,7 +14,7 @@ Base.Ship (relax, 'ship', (0,.388,8), (0,.9,-.15), (1,0,0))
 Base.LaunchPython (relax, 'Launch','bases/launch_music.py', -0.1, 0.25, 0.2, 0.268229, 'Launch')
 bar = Base.Room ('Bar')
 Base.Texture (bar, 'tex', 'bases/carribean/bar.spr', 0, 0)
-Base.Texture (bar,'bartender','bases/generic/bartender%d.spr' % (random.randrange(0,4)), -0.469922, 0.080208)
+Base.Texture (bar,'bartender','bases/generic/bartender%d.spr' % (vsrandom.randrange(0,4)), -0.469922, 0.080208)
 Base.Python (bar, 'talk', -0.669922, -0.119792, 0.4, 0.4, 'Talk to the Bartender', 'bases/bartender_carribean.py')
 concourse = Base.Room ('Concourse')
 Base.Texture (concourse, 'tex', 'bases/carribean/concourse.spr', 0, 0)
