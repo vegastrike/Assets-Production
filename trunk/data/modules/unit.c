@@ -24,16 +24,16 @@ module unit {
   };
   object getSignificant (int whichsignificant, bool capship_only) {
 	object un;
+	_std.setNull (un);
 	int which=0;
 	int signum=0;
-	while (signum<whichsignificant) {
+	while (signum<=whichsignificant) {
 		un=_unit.getUnit(which);
 		if (_std.isNull(un)) {
-			which=0;
-			if (signum==0){
-				_std.setNull(un);
-				return un;
-			}	
+		  which=0;
+		  if (signum==0){
+		    return un;
+		  }	
 		}else {
 		  if (capship_only) {
 		    if (isLandable (un)) {

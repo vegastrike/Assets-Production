@@ -35,10 +35,12 @@ module go_somewhere_significant {
     _string.delete (destination);
     _std.setNull(destination);
     if (arrivedsys) {
-      _unit.deleteContainer (significant);
-      _std.setNull(significant);
+      if (!_std.isNull(significantun)) {
+	_unit.deleteContainer (significantun);
+	_std.setNull(significantun);
+      }
     }
-  }
+  };
   void loop() {
 	  if (arrivedsys) {
 	    object base=_unit.getUnitFromContainer(significantun);
