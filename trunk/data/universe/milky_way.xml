@@ -1827,7 +1827,7 @@
 				<var name="data" value="2173"/>
 			</sector>
 			<sector name="km-252">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="pirates"/> 
 				<var name="jumps" value="gemini_sector/nexus"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="0"/>
