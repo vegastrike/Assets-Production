@@ -230,6 +230,6 @@ def getClosestScaleNews(listof,scale):
 def processNewsTuple(newsstring):
 	return newsstring #FIXME
 def pushDynamicNews(player,newsstring):
-	print 'pushing' + newsstring + ' to news savevar
+	print 'pushing' + newsstring + ' to news savevar'
 	import Director
 	Director.pushSaveString(player,"news",processNewsTuple(newsstring))
