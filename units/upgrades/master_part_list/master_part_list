@@ -740,6 +740,8 @@
 			<Cargo file="mission/cargo/confed/to_base_extreme_range.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/cargo/confed/to_fleet_extreme_range.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/cargo/confed/to_fleet_outsystem.mission" mass=".0000001" quantity="1"/>
+			<Cargo file="mission/wingman/confed_1.mission" mass=".000001" quantity="1"/>
+			<Cargo file="mission/wingman/militia_1.mission" mass=".000001" quantity="1"/>
 		</Category>
 		<Category file="missions/Confed_Milspec">
 			<Cargo file="mission/escort/confed/insystem_critical_escort.mission" mass=".0000001" quantity="1"/>
@@ -748,6 +750,7 @@
 			<Cargo file="mission/cargo/confed/to_fleet_critical_outsystem.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/cargo/confed/to_base_insystem_critical.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/cargo/confed/to_base_critical_outsystem.mission" mass=".0000001" quantity="1"/>
+			<Cargo file="mission/wingman/confed_2.mission" mass=".000001" quantity="1"/>
 		</Category>
 		<Category file="missions/Aera">
 			<Cargo file="mission/escort/aera/outsystem_escort.mission" mass=".0000001" quantity="1"/>
@@ -766,10 +769,14 @@
 			<Cargo file="mission/cargo/aera/to_fleet_critical_outsystem.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/cargo/aera/to_base_critical_outsystem.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/cargo/aera/to_base_insystem_critical.mission" mass=".0000001" quantity="1"/>
+			<Cargo file="mission/wingman/aera_1.mission" mass=".000001" quantity="1"/>
 		</Category>
 		<Category file="missions/Rlaan">
 			<Cargo file="mission/escort/rlaan/outsystem_escort.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/escort/rlaan/insystem_escort.mission" mass=".0000001" quantity="1"/>
+			<Cargo file="mission/wingman/rlaan_1.mission" mass=".000001" quantity="1"/>
+			<Cargo file="mission/wingman/rlaan_2.mission" mass=".000001" quantity="1"/>
+			<Cargo file="mission/wingman/rlaan_3.mission" mass=".000001" quantity="1"/>
 		</Category>
 		<Category file="missions/Rlaan_Milspec">
 			<Cargo file="mission/escort/rlaan/insystem_critical_escort.mission" mass=".0000001" quantity="1"/>
@@ -814,6 +821,8 @@
 			<Cargo file="mission/cargo/merchant/to_base_extreme_range.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/cargo/merchant/to_starship_insystem.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/cargo/merchant/to_starship_extreme_range.mission" mass=".0000001" quantity="1"/>
+			<Cargo file="mission/wingman/merchant_1.mission" mass=".000001" quantity="1"/>
+			<Cargo file="mission/wingman/hunter_1.mission" mass=".000001" quantity="1"/>
 		</Category>
 		<Category file="missions/Retro">
 		</Category>
