@@ -1,7 +1,7 @@
 <Unit scale="5">
-	<cockpit file="medium_cockpit.cpt" x="0" y="1.5" z=".1"/>
+	<cockpit file="car_cockpit.cpt" x="0" y="1.5" z=".1"/>
 	<Meshfile file="car.xmesh" />
-
+	
 	<Mount weapon="UnknownBolt" size="Light" x=".000000" y=".700000" z="4.000000"/>
 <!--	<Mount weapon="Laser" size="Light" x="-1.000000" y="0.000000" z="4.000000"/>-->
 	<Thrust>
@@ -10,7 +10,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense HudImage="nova-hud.spr" ECM=".01">
+	<Defense HudImage="car-hud.spr" ECM=".01">
 		<Armor front="40" right="35" left="35" back="40"/>
 		<Shields front="60.000000" back="40.000000" recharge="24.000000"/>
 		<Hull strength="200.000000"/>
