@@ -46,7 +46,7 @@ module total_war {
     float rr = _std.Rnd();
     if (rr<0.125) {
      
-    
+    nr_ships=1;
     float r = _std.Rnd();
     if (r<0.25) {
       launch.launch_wave_in_area("fgname",faction_name,"starrunner","default",nr_ships, 15000.0, pos);

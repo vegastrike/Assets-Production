@@ -1,4 +1,4 @@
-import random
+import vsrandom
 import unit
 import launch
 import VS
@@ -6,7 +6,7 @@ import faction_ships
 
 def NextPos (un, pos):
   rad=un.rSize ()
-  whichcoord = random.randrange(0,3)
+  whichcoord = vsrandom.randrange(0,3)
   x = pos[whichcoord]
   pos = list(pos)
   x=x+3.0*rad
@@ -21,9 +21,9 @@ def move_to (un, where):
 def whereTo (radius, launch_around):
   pos = launch_around.Position ()    
   rsize = ((launch_around.rSize())*5.0)+5.0*radius
-  return (pos[0]+rsize*random.randrange(-1,2,2),
-          pos[1]+rsize*random.randrange(-1,2,2),
-          pos[2]+rsize*random.randrange(-1,2,2))
+  return (pos[0]+rsize*vsrandom.randrange(-1,2,2),
+          pos[1]+rsize*vsrandom.randrange(-1,2,2),
+          pos[2]+rsize*vsrandom.randrange(-1,2,2))
 
 def look_for (fg, faction, numships,myunit,  pos, gcd):
   i=0
@@ -41,7 +41,7 @@ def look_for (fg, faction, numships,myunit,  pos, gcd):
         name = un.getName ()
         if ((fg==fgname) and (fac==faction)):
             if (numships>0):
-              if (random.random()<0.75):
+              if (vsrandom.random()<0.75):
                 pos=move_to (un,pos)
                 numships-=1
                 print "TTYmoving %s to current area" % (name)

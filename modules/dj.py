@@ -1,5 +1,5 @@
 import VS
-import random
+import vsrandom
 BATTLELIST=0
 PEACELIST=1
 PANICLIST=2

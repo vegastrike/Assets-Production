@@ -1,19 +1,19 @@
-import random
+import vsrandom
 import VS
 def GetDiffInt (diff):
   ch=0
   if (diff<=0.1):
     ch=0
   elif (diff<=0.3):
-    ch=1-random.randrange(0,2)
+    ch=1-vsrandom.randrange(0,2)
   elif (diff<=0.5):
-    ch=2-random.randrange(0,3)
+    ch=2-vsrandom.randrange(0,3)
   elif (diff<=0.7):
-    ch=3-random.randrange(0,4)
+    ch=3-vsrandom.randrange(0,4)
   elif (diff<=0.9):
-    ch=4-random.randrange(0,5)
+    ch=4-vsrandom.randrange(0,5)
   else:
-    ch=5-random.randrange(0,6)
+    ch=5-vsrandom.randrange(0,6)
   return ch
 
 # This function makes a string based on the difficulty. In this way it can be restricted to light or medium mounts when the difficulty is low, avoiding unaffordable weapons
@@ -24,9 +24,9 @@ def GetDiffCargo (diff, base_category, all_category, use_all, dont_use_all=0):
   if (diff<=0.2):
     ch=1
   elif (diff<=0.4):
-    ch=2-random.randrange(dont_use_all,3)
+    ch=2-vsrandom.randrange(dont_use_all,3)
   elif ((diff<=0.7) or use_all):
-    ch=3-random.randrange(dont_use_all,4)
+    ch=3-vsrandom.randrange(dont_use_all,4)
   #ch is 0 if it is any upgrades/Weapon  otherwise it coudl be light, medium or heavy or some random set between Light and X (l,med,or heavy)
   if (ch==1):
     cat = "%sLight" % (base_category)
@@ -49,7 +49,7 @@ def getItem (cat,parentcat=None):
   return list
 
 def GetRandomWeapon (diff):#gets random beam or mounted gun from master part list
-  rndnum=random.random()
+  rndnum=vsrandom.random()
   cat="upgrades"
   if (rndnum<0.5):
     cat=GetDiffCargo(diff,"upgrades/Weapons/Beam_Arrays_","upgrades/Weapons",1)
@@ -61,7 +61,7 @@ def GetRandomWeapon (diff):#gets random beam or mounted gun from master part lis
   return item
 
 def getRandIncDec (type):
-  type += random.randrange (-1,2,2)
+  type += vsrandom.randrange (-1,2,2)
   if (type<0):
     type=0
   elif (type>5):
@@ -79,7 +79,7 @@ def GetRandomAfterburner (diff):#get random afterburner from master part list
   return item
 
 def getRandomRadar ():
-  myint=random.randrange(0,3)
+  myint=vsrandom.randrange(0,3)
   item="SkyScope_Beta"
   if (myint<=0):
     item="StarScanner_2545"
@@ -144,9 +144,9 @@ def basicUnit (un, diff):
     i=i+1
   UpgradeEngine (un,diff)
   UpgradeRadar (un)
-  if ((random.random()<0.9) and (random.random()<(diff*5.0))):
+  if ((vsrandom.random()<0.9) and (vsrandom.random()<(diff*5.0))):
     UpgradeAfterburner(un,diff)
-    if ((random.random()<0.9) and (random.random()<(diff*5.0))):     
+    if ((vsrandom.random()<0.9) and (vsrandom.random()<(diff*5.0))):     
       percent=un.upgrade("jump_drive",i,i,0,1)
   else:
     percent=un.upgrade("jump_drive",i,i,0,1)
@@ -185,7 +185,7 @@ def upgradeUnit (un, diff):
   mycargo = GetRandomArmor()#and some random armor
   creds =upgradeHelper (un,mycargo,0,creds,1,0)
   inc=0
-  rndnum=random.random()*2
+  rndnum=vsrandom.random()*2
   if (rndnum<diff):
     mycargo = GetRandomRepairSys()#here there is a small chance that you will get a repair system.
     creds =upgradeHelper (un,mycargo,0,creds,1,0)
@@ -206,7 +206,7 @@ def upgradeUnit (un, diff):
     turretcount=3
   for i in range(turretcount):
     for j in range (10):
-      if (random.random()<0.66):
+      if (vsrandom.random()<0.66):
         mycargo=GetRandomWeapon(diff)#weapons go on as first two items of loop
       else:
         mycargo=GetRandomAmmo()

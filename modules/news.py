@@ -1,5 +1,5 @@
 import VS
-import random
+import vsrandom
 import universe
 import Director
 def saveVal(str):
@@ -59,9 +59,9 @@ news =( ( 'kinneas',(IsZero('kinneas'),),"TEENAGE BOY OUTSMARTS SYSTEM:  A teena
         ('beagle_exploration',(IsZero('beagle_exploration'),),"THE BEAGLE RETURNS:   The HCS Beagle returned to a human port this afternoon after having finished its six-year exploration mission in an unknown region of space. The Beagle's 68 crewmembers expressed great relief at being back in human space, and it will be some time before the ship leaves on another mission to map unexplored systems. The Department of Space Exploration revealed that the Beagle had not made contact with any new sentient races, but that it had gathered an 'impressive' amount of data, mostly regarding habitable planets and the locations of new jump-points. "),
         )
 def newNews():
-    if (random.randrange(0,2)!=0):
+    if (vsrandom.randrange(0,2)!=0):
         return
-    newsitem = random.randrange (0,len(news))
+    newsitem = vsrandom.randrange (0,len(news))
     newsitem = news[newsitem]
     player = VS.getMissionOwner()
     for conditional in newsitem[1]:

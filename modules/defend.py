@@ -1,6 +1,6 @@
 from go_to_adjacent_systems import *
 from go_somewhere_significant import *
-import random
+import vsrandom
 import launch
 import faction_ships
 import VS
@@ -11,7 +11,7 @@ import Director
 class defend (Director.Mission):
     def __init__ (self,factionname,numsystemsaway, enemyquantity, distance_from_base, escape_distance, creds, defendthis, defend_base):
           Director.Mission.__init__(self)
-          self.dedicatedattack=random.randrange(0,2)
+          self.dedicatedattack=vsrandom.randrange(0,2)
           self.arrived=0
           self.quantity=0
           self.mplay="all"
@@ -133,5 +133,5 @@ class defend (Director.Mission):
         print "ending briefing"        
 		
 def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base):
-    enq=random.randrange(minenquant,maxenquant)
+    enq=vsrandom.randrange(minenquant,maxenquant)
     return defend(factionname,numsysaway,enq,8000.0,100000.0,enq*credperen,defendit,defend_base)

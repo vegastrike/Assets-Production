@@ -1,6 +1,6 @@
 import VS
 import sys
-import random
+import vsrandom
 from Vector import *
 import car_lib
 maxspeed=45
@@ -13,7 +13,7 @@ class TrafficAI(VS.PythonAI):
 	self.GetParent().setSpeed(speed)
     def init(self,un):
 	self.shipiter=0;
-	self.speed = random.uniform (maxspeed/3,maxspeed);
+	self.speed = vsrandom.uniform (maxspeed/3,maxspeed);
 	print 'self.speed'
 	print self.speed
 	self.stopping=0

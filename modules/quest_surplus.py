@@ -2,7 +2,7 @@ import quest
 import Vector
 import VS
 import unit
-import random
+import vsrandom
 import universe
 class quest_surplus (quest.quest):
     def __init__ (self,categories,pr,qr,ships,planets):
@@ -34,8 +34,8 @@ class quest_surplus_factory (quest.quest_factory):
         return quest_surplus(self.categories,self.priceratio,self.quantratio,self.ships,self.planets)
 
 def makeSurplusShortage():
-    (sys,mylist)=universe.getAdjacentSystems(VS.getSystemFile(),random.randrange(1,3))
-    adj=random.uniform (-.5,.5)
+    (sys,mylist)=universe.getAdjacentSystems(VS.getSystemFile(),vsrandom.randrange(1,3))
+    adj=vsrandom.uniform (-.5,.5)
     myquest=0
     cats = (VS.getRandCargo(1,"").GetCategory(), VS.getRandCargo(1,"").GetCategory())
     news=""

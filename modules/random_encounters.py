@@ -1,4 +1,4 @@
-import random
+import vsrandom
 import faction_ships
 import launch_recycle
 import launch
@@ -88,28 +88,28 @@ class random_encounters:
     return 1-ret;
     
   def launch_near (self,un):
-    numfactions=random.randrange(0,4)
+    numfactions=vsrandom.randrange(0,4)
     if (numfactions<=0):
       numfactions=1
     sysfile = VS.getSystemFile()
     cap_prob=self.capship_prob
     for i in range(0,numfactions):
       localfaction = VS.GetGalaxyProperty(sysfile,"faction")
-      if (random.random() < self.TrueEnProb(self.enprob)):
+      if (vsrandom.random() < self.TrueEnProb(self.enprob)):
         localfaction = faction_ships.get_enemy_of (localfaction)
       else:
         localfaction = faction_ships.get_friend_of(localfaction)
-      numship= random.randrange(1,self.gen_num_ships+1)
+      numship= vsrandom.randrange(1,self.gen_num_ships+1)
       self.det_distance = self.cur.detection_distance
-      launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,0,self.generation_distance*random.random()*0.9,un, 2.0*self.det_distance,"")
-      if (random.random()<cap_prob):
+      launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,0,self.generation_distance*vsrandom.random()*0.9,un, 2.0*self.det_distance,"")
+      if (vsrandom.random()<cap_prob):
         if (self.AsteroidNear (un,self.cur.significant_distance)):
           print "ast near, no cap"
         else:
           print "no asty near"
           cap_prob=.6
           capship = faction_ships.getRandomCapitol (localfaction)
-          launch_recycle.launch_wave_around("Capitol",localfaction,"default",1,1,self.capship_gen_distance*(0.5+(random.random()*0.4)),un, 8.0*self.det_distance,"")
+          launch_recycle.launch_wave_around("Capitol",localfaction,"default",1,1,self.capship_gen_distance*(0.5+(vsrandom.random()*0.4)),un, 8.0*self.det_distance,"")
 
   def atLeastNInsignificantUnitsNear (self,uni, n):
     num_ships=0
@@ -198,7 +198,7 @@ class random_encounters:
       #lastmode=curmode#processed this event don't process again if in critical zone
       self.cur.lastmode=self.cur.curmode
       print "curmodechange %d" % (self.cur.curmode)#?
-      if (random.random()<self.fighterprob and un):
+      if (vsrandom.random()<self.fighterprob and un):
         if (not self.atLeastNInsignificantUnitsNear (un,self.min_num_ships)):
           #determine whether to launch more ships next to significant thing based on ships in that range  
           print ("launch near")

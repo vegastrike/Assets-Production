@@ -1,5 +1,5 @@
 from trading import trading
-from random_encounters import random_encounters
+from random_encounters import vsrandom_encounters
 from difficulty import difficulty
 #from garbage_collect import garbage_collect
 import Director

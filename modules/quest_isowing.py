@@ -2,7 +2,7 @@ import quest
 import Vector
 import VS
 import unit
-import random
+import vsrandom
 import save_util
 import faction_ships
 import universe
@@ -113,7 +113,7 @@ class quest_isowing (quest.quest):
             self.names = self.genShipTypes (self.num)
             self.makeAdversary(self.enfaction,self.ennum)            
             self.Intro()
-                #random.randrange (1,self.num+1))
+                #vsrandom.randrange (1,self.num+1))
         self.SpawnShips ()
         self.putShipTypes(self.names)
 

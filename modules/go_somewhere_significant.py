@@ -2,7 +2,7 @@ import unit
 import universe
 import VS
 import faction_ships
-import random
+import vsrandom
 import launch
 import Briefing
 class go_somewhere_significant:
@@ -24,7 +24,7 @@ class go_somewhere_significant:
     significant=VS.Unit()
     self.sysfil=VS.getSystemFile()
     if (landable_only or base_only):
-      randint=random.randrange(0,128)
+      randint=vsrandom.randrange(0,128)
       significant = unit.getSignificant (randint,landable_only,base_only)
       if (capshipfaction!=""):
         newship=faction_ships.getRandomCapitol(capshipfaction)

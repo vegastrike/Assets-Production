@@ -3,7 +3,7 @@ import Vector
 import VS
 import unit
 import universe
-import random
+import vsrandom
 class quest_teleport (quest.quest):
     def __init__ (self):
         self.sysfile = VS.getSystemFile()
@@ -12,7 +12,7 @@ class quest_teleport (quest.quest):
         pos=un.Position()
         rsiz = un.rSize()
         size=4*rsiz
-        sig = unit.getSignificant (random.randrange(0,50),0,0)
+        sig = unit.getSignificant (vsrandom.randrange(0,50),0,0)
         if (not sig):
             return
         nam = sig.getName()
@@ -20,9 +20,9 @@ class quest_teleport (quest.quest):
             return
         targetpos = sig.Position()
         arad = sig.rSize()*2+size
-        targetpos = Vector.Add(targetpos,(random.uniform(arad,arad*1.5),
-                                          random.uniform(arad,arad*1.5),
-                                          random.uniform(arad,arad*1.5)))
+        targetpos = Vector.Add(targetpos,(vsrandom.uniform(arad,arad*1.5),
+                                          vsrandom.uniform(arad,arad*1.5),
+                                          vsrandom.uniform(arad,arad*1.5)))
         targetpos = VS.SafeEntrancePoint (targetpos,rsiz)
         if (size<1000):
             size=1000
@@ -37,7 +37,7 @@ class quest_teleport (quest.quest):
         if (un.DockedOrDocking()):
             print "YOWWW"
         else:
-            if (random.randrange(0,3)==0):
+            if (vsrandom.randrange(0,3)==0):
                 (adj,test) = universe.getAdjacentSystems(self.sysfile,1)
                 un.JumpTo(adj)
             else:
@@ -57,7 +57,7 @@ class quest_teleport (quest.quest):
                 self.timer=mytime
                 numunits=VS.getNumUnits()
                 if (numunits>0):
-                    self.teleportUnit(VS.getUnit(random.randrange(0,numunits)))
+                    self.teleportUnit(VS.getUnit(vsrandom.randrange(0,numunits)))
         return 1
 
 class quest_teleport_factory (quest.quest_factory):

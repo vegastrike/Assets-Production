@@ -6,7 +6,7 @@
 ##outstr=""
 
 import VS
-import random
+import vsrandom
 import faction_ships
 import Director
 import launch
@@ -57,7 +57,7 @@ def getAdjacentSystems (currentsystem, sysaway, jumps=()):
       return (currentsystem,jumps)
     else:
       for i in range (10):
-        nextsystem=VS.GetAdjacentSystem(currentsystem,random.randrange(0,max))
+        nextsystem=VS.GetAdjacentSystem(currentsystem,vsrandom.randrange(0,max))
         if (not (nextsystem in jumps) and (not (nextsystem == VS.getSystemFile()))):
           break
       else:
@@ -72,7 +72,7 @@ def getRandomJumppoint():
     jp_list=getJumppointList()
     size=len(jp_list)
     if (size>0):
-      return jp_list[random.randrange(0,size)]
+      return jp_list[vsrandom.randrange(0,size)]
     else:
       return VS.Unit()
 
