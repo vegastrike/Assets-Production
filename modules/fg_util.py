@@ -11,7 +11,7 @@ def ShipListOffset ():
 
 def GetRandomFGNames (numflightgroups):
 	rez=[]
-	for i in range (numflightgroups)
+	for i in range (numflightgroups):
 		rez.append(str(i))
 	return rez
 origfgoffset=0
@@ -37,7 +37,7 @@ def WriteStringList(cp,key,tup):
 		putSaveString(cp,key,i,tup[i])
 	for i in range (s_size,lentup):
 		pushSaveString(cp,key,tup[i])
-	for i in range (lentup,s_size)):
+	for i in range (lentup,s_size):
 		eraseSaveString(cp,key,lentup)
 def ReadStringList (cp,key):
 	siz = getSaveStringLength (cp,key)
@@ -50,7 +50,7 @@ def ListToPipe (tup):
 	fina=''
 	if (len(tup)):
 		fina=tup[0]
-	for i in range (len(tup)-1)
+	for i in range (len(tup)-1):
 		fina+='|'+tup[i]
 	return fina
 
@@ -143,21 +143,21 @@ def ListToPipe (tup):
 		return 1
 	def PurgeZeroShips (faction):
 		key=MakeFactionKey(faction)
-		for i in range (VS.getSaveDataLength (dynamic_universe.cp,key))
-			curfg=VS.getSaveData(dynamic_universe.cp,key,i)
+		for i in range (VS.getSaveStringLength (dynamic_universe.cp,key)):
+			curfg=VS.getSaveString(dynamic_universe.cp,key,i)
 			CheckFG (curfg,faction)
 			numships=NumShipsInFG(curfg,faction)
 			if (numships==0):
 				DeleteFG(curfg,faction)
 			
 	def NumShipsInFG (fgname,faction):
-		key = MakeFGKey (fgname,faction):
+		key = MakeFGKey (fgname,faction)
 		len = Director.getSaveStringLength (dynamic_universe.cp,key)
 		if (len==0):
 			return 0
 		else:
 			try:
-				return int(Director.getSaveString(dynamic_universe.cp,key,0)
+				return int(Director.getSaveString(dynamic_universe.cp,key,0))
 			except:
 				print 'fatal: flightgroup without size'
 	def DeleteFG(fgname,faction):
