@@ -1,34 +1,35 @@
-<Unit >
-	<Description combatRole="CARGO">
-	</Description>
-	<Meshfile file = "eject.xmesh"  >
-	</Meshfile>
-	<Thrust >
-		<Engine Afterburner = "0.6375" Forward = "0.255" Retro = "0.255" Left = "0.255" Right = "0.255" Top = "0.255" Bottom = "0.255"  >
-		</Engine>
-		<Maneuver yaw = "19.125" pitch = "19.125" roll = "19.125"  >
-		</Maneuver>
-	</Thrust>
-	<Sound  >
-	</Sound>
-	<Mount weapon = "HandLaser" size = "light special" x = "0.584" z = ".4" y = ".462"  >
-	</Mount>
-	<Defense HudImage = "eject-hud.spr" >
-		<Armor front = "20" right = "20" left = "20" back = "20"  >
-		</Armor>
-		<Shields front = "0" back = "0" recharge = "0"  >
-		</Shields>
-		<Hull strength = "30"  >
-		</Hull>
-	</Defense>
-	<Stats mass = "0.1275" momentofinertia = "0.1275" fuel = "10000"  >
-	</Stats>
-	<Computer yaw = "30" pitch = "30" roll = "50" afterburner = "10" maxspeed = "5"  >
-	</Computer>
-	<Upgrade file = "SkyScope_Alpha"  >
-	</Upgrade>
-	<Energy >
-		<Reactor recharge = ".25" limit = "10"  >
-		</Reactor>
-	</Energy>
+<!-- XUnit exported from Wings 3D 0.98.15a -->
+<!-- How to edit this file: http://www.joeredcloud.com/kandarwiki/index.php?VsHowtoEditUnitFiles -->
+<Unit scale=".50000">
+
+<Light   x="-0.249996" y="0.00000e+0" z="-1.83758" file='supernova.bmp' size='1.5' />
+<Light   x="0.250004" y="0.00000e+0" z="-1.83758" file='supernova.bmp' size='1.5' />
+<Meshfile   file="eject_pod.xmesh" />
+<Mount   x="-4.07186e-6" y="-0.150000" z="1.99709" ri="-1.06144e-5" rj="0.00000e+0" rk="2.00000" qi="0.00000e+0" qj="1.00000" qk="0.00000e+0" weapon='HandLaser' size='light special' />
+<!-- BEGIN content of config file -->
+<Description combatRole="CARGO"></Description>
+
+<Thrust >
+  <Engine Afterburner = "0.6375" Forward = "0.255" Retro = "0.255" Left = "0.255" Right = "0.255" Top = "0.255" Bottom = "0.255"  />
+  <Maneuver yaw = "19.125" pitch = "19.125" roll = "19.125"  />
+</Thrust>
+
+<Sound> </Sound>
+
+<Defense HudImage = "eject-hud.spr" >
+  <Armor front = "0" right = "2" left = "2" back = "20"  />
+  <Shields front = "0" back = "0" recharge = "0"  />
+  <Hull strength = "30"  />
+</Defense>
+
+<Stats mass = "0.1275" momentofinertia = "0.1275" fuel = "10000"  />
+
+<Computer yaw = "30" pitch = "30" roll = "50" afterburner = "10" maxspeed = "5"  />
+
+<Upgrade file = "SkyScope_Alpha"  />
+
+<Energy >
+  <Reactor recharge = ".25" limit = "10"  />
+</Energy>
+<!-- END   content of config file -->
 </Unit>
