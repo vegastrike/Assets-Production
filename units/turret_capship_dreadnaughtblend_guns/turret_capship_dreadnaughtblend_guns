@@ -7,8 +7,8 @@
 <Mount weapon="hephaestuspointdefensecannon" size="special" x="-0.200000" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
 <Mount weapon="fussion" size="capship-heavy" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
 <Mount weapon="capshipmissile" size="heavy-capship-missile" x="0.200000" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" ammo ="10" />
-<Mount weapon="LR_Beam" size="capship-medium" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
-<Mount weapon="LR_Beam" size="capship-medium" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
+<Mount weapon="LR_Beam" size="capship-medium autotracking" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
+<Mount weapon="LR_Beam" size="capship-medium autotracking" x="0" y="-0.225000" z="22.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000" />
 
 		<Thrust>
 		<Engine Afterburner="000000" Forward="000000" Retro="0000" Left="0000" Right="0000" Top="00000" Bottom="000000"/>
@@ -23,7 +23,7 @@
 	</Defense>
 	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
 	<Computer yaw="000" pitch="32" roll="0000" afterburner="000000" maxspeed="00000">
-		<Radar itts="true" range="30000" color="true" error="0" lockcone="0.1"/>
+		<Radar itts="true" range="1000000" color="true" error="0" lockcone="0.1"/>
 	</Computer>
 
 	<Energy>
