@@ -202,10 +202,14 @@ def upgradeUnit (un, diff):
   elif (turretcount<3):
     turretcount=3
   for i in range(turretcount):
-    if (random.random()<0.66):
-      mycargo=GetRandomWeapon(diff)#weapons go on as first two items of loop
-    else:
-      mycargo=GetRandomAmmo()
-    creds =upgradeHelper (un,mycargo,curmount,creds,0,1)#we pass this in to the credits...and we only loop through all mounts if we're adding a weapon
+    for j in range (10):
+      if (random.random()<0.66):
+        mycargo=GetRandomWeapon(diff)#weapons go on as first two items of loop
+      else:
+        mycargo=GetRandomAmmo()
+        cont = mycargo.GetContent()
+        if (cont.find('tractor')==-1 and cont.find('repulsor')==-1):
+          creds =upgradeHelper (un,mycargo,curmount,creds,0,1)#we pass this in to the credits...and we only loop through all mounts if we're adding a weapon
+          break
     curmount+=1#increase starting mounts hardpoint
   
