@@ -10,13 +10,13 @@ module unit {
 	_string.equal (unit_fgid,"Nebula") ||
 	_string.equal (unit_fgid,"Base") ||
 	_string.equal (unit_fgid,"Asteroid")) {
-      _string.delete(fgid);
+      _string.delete(unit_fgid);
       return true;
     }
-    _string.delete(fgid);
+    _string.delete(unit_fgid);
     return false;
   };
-  object getSignficiant (int whichsignificant) {
+  object getSignificant (int whichsignificant) {
 	object un;
 	int which=0;
 	int signum=0;
@@ -163,8 +163,8 @@ module unit {
     float time=_std.getGameTime();
 
     if((time-lasttime)>10.0){
-      _unit.launch("omega","confed","nova","default",4,1, 8000.0, 0.0-100.0, 100.0);
-      _unit.launch("teta","aera","dagger","default",4,1, 8000.0, 1000.0, 0.0-500.0);
+      object launched = _unit.launch("omega","confed","nova","default",4,1, 8000.0, 0.0-100.0, 100.0);
+      launched=_unit.launch("teta","aera","dagger","default",4,1, 8000.0, 1000.0, 0.0-500.0);
       lasttime=time;
     }
   };
