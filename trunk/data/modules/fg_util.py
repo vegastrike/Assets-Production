@@ -587,3 +587,5 @@ def SortedAllShips (faction,offset=1):
 			else:
 				ret[j[0]]=j[1]
 	return ret
+def getFgLeaderType(fgname,faction):
+	return ShipsInFG(fgname,faction)[0][0]
