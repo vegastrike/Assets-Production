@@ -15,7 +15,7 @@ module ai_orderlist {
 
   // routines for the module (not classes)
 
-  void orderFlyto(object order_list,object wp_name,object waypoint_pos,float speed,bool afterburner,float abort_range){
+  void orderFlyTo(object order_list,object wp_name,object waypoint_pos,float speed,bool afterburner,float abort_range){
     object new_submap=_omap.new();
 
     _omap.set(new_submap,"order","flyto");
@@ -129,6 +129,8 @@ module ai_orderlist {
   // ================= ai class methods  ====================
 
   void checkFlyto(object submap){
+    my_do_flyto=true;
+    my_flyto_map=submap;
   };
 
   // -----------------------------------------------------------
@@ -166,10 +168,15 @@ module ai_orderlist {
   // -----------------------------------------------------------
 
   void executeOrder(){
+    _io.printf("%s: executing order\n",my_fgid);
+    //my_do_attack=false;
+    _io.printf("%s: attack=%b defend=%b flyto=%b\n",my_fgid,my_do_attack,my_do_defend,my_do_flyto);
     if(my_do_attack){
       // I should attack
+      _io.printf("%s: executing order attack0\n",my_fgid);
       if(my_mode!=0){
 	// we switch from other to attack mode
+	_io.printf("%s: executing order attack1\n",my_fgid);
 	my_mode=0;
 
 	_order.eraseOrder(my_order,my_last_order);
@@ -182,6 +189,7 @@ module ai_orderlist {
       // I should defend myself
       if(my_mode!=1){
 	// we switch do defend mode
+	_io.printf("%s: executing order defend\n",my_fgid);
 	my_mode=1;
 
 	my_last_order=_order.newAggressiveAI("default.agg.xml","default.int.xml");
@@ -197,6 +205,8 @@ module ai_orderlist {
     }
     else if(my_do_patrol){
       // I should patrol
+    _io.printf("%s: executing order patrol\n",my_fgid);
+
       if(my_mode!=3){
 	//switch to patrol mode
 	initPatrol();
@@ -214,6 +224,7 @@ module ai_orderlist {
   // -----------------------------------------------------------
 
   void initFlyto(){
+    _io.printf("%s: init flyto\n",my_fgid);
     my_mode=2;
 
     object wp_name=_omap.get(my_flyto_map,"wp_name");
@@ -222,18 +233,25 @@ module ai_orderlist {
     bool afterburner=_omap.get(my_flyto_map,"afterburner");
     float abort_range=_omap.get(my_flyto_map,"abort_range");
 
+    _io.printf("%s: init flyto2\n",my_fgid);
     _order.eraseOrder(my_order,my_last_order);
+    _io.printf("%s: init flyto3\n",my_fgid);
 
     if(!_string.equal(wp_name,"-none-")){
       // we don't fly to a position, but to a unit
+      _io.printf("%s: init flyto unit\n",my_fgid);
       my_flyto_unit=unit.getUnitByFgID(wp_name);
 
-      if(_unit.isJumppoint(my_flyto_unit)){
+      if(_std.isNull(my_flyto_unit)){
+	_io.printf("waypoint not found\n");
+      }
+      else if(_unit.isJumppoint(my_flyto_unit)){
 	// we have to fly to a jumppoint
 	my_last_order=_order.newFlyToJumppoint(my_flyto_unit,speed,afterburner);
       }
       else{
 	// normal unit
+	_io.printf("%s: init flyto10\n",my_fgid);
 	_olist.delete(my_flyto_pos);
 
 	my_flyto_pos=_unit.getPosition(my_flyto_unit);
@@ -260,6 +278,12 @@ module ai_orderlist {
   };
 
   void initStdAction(){
+    _io.printf("init stdaction\n");
+    object pos=_unit.getPosition(my_unit);
+    my_last_order=_order.newPatrol(0,pos,500.0,null_target,0.6);
+
+    _order.enqueueOrder(my_order,my_last_order);
+    //_olist.delete(pos);
   };
 
   // -----------------------------------------------------------
@@ -286,26 +310,26 @@ module ai_orderlist {
     
     while((!_std.isNull(unit))){
       if(!_std.equal(my_unit,unit)){
-	//_io.printf("checking ship %d\n",ship_nr);
+	_io.printf("%s: checking ship %d\n",my_fgid,ship_nr);
 	object unit_pos=_unit.getPosition(unit);
 	float dist=_unit.getMinDis(my_unit,unit_pos);
 	float relation=_unit.getRelation(my_unit,unit);
 
 	if(relation<0.0){
 	  //we are enmies
-	  if(dist<min_dist_enemy){
-	    min_dist_enemy=dist;
+	  if(dist<min_enemy_dist){
+	    min_enemy_dist=dist;
 	    min_enemy=unit;
 	  }
 	}
 	if(relation>0.0){
 	  //we are friends
-	  if(dist<min_dist_friend){
-	    min_dist_friend=dist;
+	  if(dist<min_friend_dist){
+	    min_friend_dist=dist;
 	    min_friend=unit;
 	  }
 	  // check for flightgroup leader
-	  fgname=_unit.getFgName(unit);
+	  object fgname=_unit.getFgName(unit);
 	  if(_string.equal(my_fgname,fgname)){
 	    // it's a ship from our flightgroup
 	    int fgnum=_unit.getFgSubnumber(unit);
@@ -317,8 +341,8 @@ module ai_orderlist {
 	  }
 	}
 	// for all ships
-	if(dist<min_dist_ship){
-	  min_dist_ship=dist;
+	if(dist<min_ship_dist){
+	  min_ship_dist=dist;
 	  min_ship=unit;
 	}
 	
@@ -328,20 +352,27 @@ module ai_orderlist {
       unit=_unit.getUnit(ship_nr);
     }
 
-    my_nearest_enemy_dist=min_dist_enemy;
+    my_nearest_enemy_dist=min_enemy_dist;
     my_nearest_enemy=min_enemy;
 
-    my_nearest_friend_dist=min_dist_friend;
+    my_nearest_friend_dist=min_friend_dist;
     my_nearest_friend=min_friend;
 
-    my_nearest_ship_dist=min_dist_ship;
+    my_nearest_ship_dist=min_ship_dist;
     my_nearest_ship=min_ship;
 
+    _io.printf("%s: system scanned\n",my_fgid);
   };
 
   // -----------------------------------------------------------
 
   void checkModes(){
+    my_do_attack=false;
+    my_do_defend=false;
+    my_do_flyto=false;
+    my_do_patrol=false;
+
+    _io.printf("%s: checking modes\n",my_fgid);
     int size=_olist.size(my_order_list);
 
     int i=0;
@@ -349,7 +380,8 @@ module ai_orderlist {
       object submap=_olist.at(my_order_list,i);
       
       object order=_omap.get(submap,"order");
-      
+      _io.printf("%s: order[%d]=%s\n",my_fgid,i,order);
+
       if(_string.equal(order,"flyto")){
 	checkFlyto(submap);
       }
@@ -362,6 +394,7 @@ module ai_orderlist {
       else if(_string.equal(order,"patrol")){
 	checkPatrol(submap);
       }
+      i=i+1;
     }
 
     executeOrder();
@@ -378,9 +411,10 @@ module ai_orderlist {
 
     my_fgid=_unit.getFgID(my_unit);
     my_fgnum=_unit.getFgSubnumber(my_unit);
-    my_fgname=_unit.getFgName(unit);
+    my_fgname=_unit.getFgName(my_unit);
 
     my_resolution=resolution+random.random(0.0-resolution_delta,resolution_delta);
+    _io.printf("%s: my_resulution=%f\n",my_fgid,my_resolution);
 
     //last_order=_order.newFlyToWaypoint(waypoint,vel,afterburner,abort_range);
     //_order.enqueueOrder(my_order,last_order);
