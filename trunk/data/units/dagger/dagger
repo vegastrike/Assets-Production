@@ -30,5 +30,11 @@
 <Light file="supernova.bmp" x="-1.135555" y="-0.058120" z="-4.542734" size="1.500000"/>
 <Light file="supernova.bmp" x="1.132348" y="-0.017450" z="-4.540268" size="1.500000"/>
 <Light file="supernova.bmp" x="0.000000" y="-0.000000" z="-4.500000" size="1.500000"/>
+<Mount weapon="Torpedo" size="heavy-missile" x="2.000000" y="-1.270000" z="-0.400000" ammo="1"/>
+<Mount weapon="Torpedo" size="heavy-missile" x="-2.000000" y="-1.270000" z="-0.400000" ammo="1"/>
+
+<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="2.500000" y="-.270000" z="-1.400000" ammo="1"/>
+<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-2.500000" y="-.270000" z="-1.400000" ammo="1"/>
+
 <Mount weapon="Plasma" size="heavy" x="0.000000" y="-0.270000" z="2.400000"/>
 </Unit>
