@@ -28,9 +28,9 @@ class TrafficAI(VS.PythonAI):
 #				distInOneSec = Dot (Sub(parent.GetVelocity(),un.GetVelocity()),posdiff)
 				distInOneSec = Dot (Sub(parent.GetVelocity(),un.GetVelocity()),posdiff)
 				if (distInOneSec>un.getDistance(parent) and Dot (posdiff,un.GetOrientation()[2])>0):
-					print "%s too close to %s \n" % (parent.getName(),un.getName())
-					print distInOneSec
-					print un.getDistance (parent)
+#					print "%s too close to %s \n" % (parent.getName(),un.getName())
+#					print distInOneSec
+#					print un.getDistance (parent)
 					self.restoreCruisingSpeed(0)
 					self.stopping=1
 					self.shipiter=-1 #-1 + 1 =0
