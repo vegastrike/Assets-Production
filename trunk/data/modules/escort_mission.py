@@ -49,6 +49,10 @@ class escort_mission (Director.Mission):
 		print "ending briefing"        
 	def Execute (self):
 		self.escortee.setFgDirective('F')
+		if self.you.isNull():
+			VS.IOmessage (0,"escort",self.mplay,"#ff0000You were to protect your escort. Mission failed.")
+			VS.terminateMission(0)
+			return
 		self.you.setFlightgroupLeader(self.you)
 		if (self.escortee.isNull()):
 			VS.IOmessage (0,"escort",self.mplay,"#ff0000You were to protect your escort. Mission failed.")
