@@ -362,6 +362,7 @@
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1"/>
 			<Cargo file="medium_turret" price="10000" quantity="1" mass=".1" volume="1"/>
 			<Cargo file="capship_turret" price="10000" quantity="1" mass=".1" volume="1"/>
+			<Cargo file="capship_turret_heavy" price="10000" quantity="1" mass=".1" volume="1"/>
 		</Category>
 		<Category file="upgrades/Miscellaneous/SubUnits">
 			<Cargo file="cargo_pod" price="20000" quantity="1" mass=".1" volume="1"/>
