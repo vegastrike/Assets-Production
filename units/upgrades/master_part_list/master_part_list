@@ -49,7 +49,7 @@
 			<Cargo file="image_recognition_ammo" price="750" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="friend_or_foe_3pack_ammo" price="300" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="friend_or_foe_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="torpedo" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="torpedo_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="leech_ammo" price="4000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="swarm_ammo" price="800" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="afterburner" price="3000" quantity="1" mass=".01" volume="1"/>
@@ -60,6 +60,7 @@
 			<Cargo file="isometal" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="trilithium" price="10000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="afterburner" price="3000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="add_cargo_volume" price="10000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_4" price="10000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_4_Level2" price="30000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_4_Level3" price="50000" quantity="1" mass=".01" volume="1"/>
