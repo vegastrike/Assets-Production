@@ -1,4 +1,12 @@
 <Unit>
+	<Upgrade file="godsansshields"/>
+	<Defense>
+		<Shields front="0.000000"  back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<Upgrade file="shield_2_Level2"/>
+	<Upgrade file="isometal"/>
+	<Upgrade file="engine_level_1"/>
+	<Upgrade file="polymer_hull"/>
         <Mount weapon="Ion" size="Light Medium Heavy" x="-29,815" y="-6,919" z="30,409"/>
         <Mount weapon="Ion" size="Light Medium Heavy" x="29,815" y="-6,919" z="30,409"/>
 	
@@ -14,18 +22,10 @@
 	<Sound>
 	</Sound>
 
-	<Defense HudImage="wayfarer-hud.spr">
-		<Armor front="1000" right="1000" left="1000" back="1000"/>
-		<Shields front="200.000000" back="200.000000" recharge="20.000000"/>
-		<Hull strength="2000.000000"/>
-	</Defense>
 
 	<Stats mass="10.000000" momentofinertia="10.000000" fuel="40000000"></Stats>
 	<Computer yaw="60.400002" pitch="50.600006" roll="80.400002" afterburner="85" maxspeed="30"/>
 
-	<Energy>
-		<Reactor recharge="80" limit="400"/>
-	</Energy>
 	<Jump delay="2" jumpenergy="150"/>       
 
 	<description>

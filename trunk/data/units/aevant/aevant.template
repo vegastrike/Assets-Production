@@ -1,4 +1,13 @@
 <Unit>
+	<Upgrade file="godsansshields"/>
+	<Defense>
+		<Shields front="0.000000"  right="0" left="0" back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<Upgrade file="shield_4_Level4"/>
+	<Upgrade file="isometal"/>
+	<Upgrade file="engine_level_5"/>
+	<Upgrade file="micro_shielded_hull"/>
+
 	<Meshfile file="aevant.xmesh" />
 	<Thrust>
 		<Engine Afterburner="1296.999969" Forward="334.399994" Retro="292.599995" Left="187.199997" Right="180.199997" Top="187.199997" Bottom="187.199997"/>
@@ -6,11 +15,6 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense HudImage="aevant-hud.spr">
-		<Armor front="400" right="300" left="300" back="250"/>
-		<Shields front="400.000000" right="400.000000" left="400.000000" back="360.000000" recharge="35.000000"/>
-		<Hull strength="2500.000000"/>
-	</Defense>
 	<Stats mass="10.000000" momentofinertia="10.000000" fuel="1000000000"></Stats>
 	<Computer yaw="88.500000" pitch="94.500000" roll="88.500000" afterburner="130.699997" maxspeed="39.799999">
 		<Radar itts="true" color="true" error="0"/> </Computer>

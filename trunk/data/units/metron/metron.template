@@ -1,5 +1,12 @@
 <Unit>
-
+	<Upgrade file="godsansshields"/>
+	<Defense>
+		<Shields front="0.000000" left="0" right="0" back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<Upgrade file="shield_4_Level2"/>
+	<Upgrade file="isometal"/>
+	<Upgrade file="engine_level_2"/>
+	<Upgrade file="double_plated_hull"/>
 
 <Sound>	</Sound>
 
@@ -14,12 +21,7 @@
 
 
 <Defense>
-	<Armor front="400" right="4000" left="400" back="400"/>
-
-	<Shields front="150.000000" back="150.000000" recharge="25.000000"/>
-
-	<Hull strength="1250.000000"/>
-
+	<Shields front="150.000000" left="150" right="150" back="150.000000"/>
 </Defense>
 
 <Stats mass="4.000000" momentofinertia="5.000000" fuel="900000000"></Stats>
@@ -27,9 +29,6 @@
 <Computer yaw="140.400002" pitch="130.600006" roll="140.400002" afterburner="200" maxspeed="80">
 	<Radar itts="true" color="true" error="0"/> <!-- shifted radar-->
 </Computer>
-<Energy>	
-	<Reactor recharge="80" limit="270"/>
-</Energy>
 <!-- added jump-->
 <Jump delay="2" jumpenergy="60"/>	
 
