@@ -7,17 +7,17 @@
       <var name="description" value="4vs4.txt" />
    </variables>
         <flightgroups>
-            <flightgroup name="makkarel" faction="confed" type="ferret" ainame="default" waves="2" nr_ships="1">
+            <flightgroup name="makkarel" faction="confed" type="firefly" ainame="default" waves="2" nr_ships="1">
          	<pos x="8000.0" y="0.0" z="-100.0"/>
          	<rot x="180.0" y="180.0" z="180.0"/>
       	    </flightgroup>
 <!--
-            <flightgroup name="green" faction="confed" type="hornet" ainame="_ai_switching2" waves="2" nr_ships="4">
+            <flightgroup name="green" faction="confed" type="tian" ainame="_ai_switching2" waves="2" nr_ships="4">
          	<pos offset="makkarel" x="-1000.0" y="0.0" z="100.0"/>
          	<rot x="180.0" y="180.0" z="180.0"/>
       	    </flightgroup>
 -->
-            <flightgroup name="alpha" faction="aera" type="hellcat" ainame="_ai_flyto3" waves="2" nr_ships="4">
+            <flightgroup name="alpha" faction="aera" type="destiny" ainame="_ai_flyto3" waves="2" nr_ships="4">
          	<pos offset="makkarel" x="0.0" y="0.0" z="200.0"/>
          	<rot x="180.0" y="180.0" z="180.0"/>
       	    </flightgroup>
@@ -39,18 +39,18 @@
          	<rot x="180.0" y="180.0" z="180.0"/>
       	    </flightgroup>
 
-            <flightgroup name="zebra" faction="aera" type="dagger" ainame="_ai_circling" waves="2" nr_ships="2">
+            <flightgroup name="zebra" faction="aera" type="aevant" ainame="_ai_circling" waves="2" nr_ships="2">
          	<pos offset="makkarel" x="100.0" y="-100.0" z="200.0"/>
          	<rot x="180.0" y="180.0" z="180.0"/>
       	    </flightgroup>
 
-            <flightgroup name="bonga" faction="aera" type="dagger" ainame="_ai_stationary" waves="2" nr_ships="2">
+            <flightgroup name="bonga" faction="aera" type="aeon" ainame="_ai_stationary" waves="2" nr_ships="2">
          	<pos offset="makkarel" x="-100.0" y="-100.0" z="200.0"/>
          	<rot x="180.0" y="180.0" z="180.0"/>
       	    </flightgroup>
 
 
-            <flightgroup name="killa" faction="aera" type="jalthi" ainame="_ai_switching2" waves="2" nr_ships="1">
+            <flightgroup name="killa" faction="aera" type="lekra" ainame="_ai_switching2" waves="2" nr_ships="1">
          	<pos offset="makkarel" x="00.0" y="50.0" z="500.0"/>
          	<rot x="180.0" y="180.0" z="180.0"/>
       	    </flightgroup>
