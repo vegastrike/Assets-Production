@@ -131,12 +131,13 @@ module cargo_mission {
 		_io.message (0,"game","all",str);
 		if (capship) {
 		  name=_unit.getName(significant);
-		  _io.sprintf(str,"It is docked around the %s significant unit.",name);
+		  _io.sprintf(str,"It is docked around the %s landmark.",name);
 		  _io.message (0,"game","all",str);
+		  
 		}
 		_string.delete(str);
 		
-		basecontainer=_unit.getContainer(significant);
+		basecontainer=_unit.getContainer(newun);
 	      }
 	    }
 	    _string.delete (sysfil);

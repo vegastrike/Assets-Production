@@ -4,7 +4,7 @@ module unit {
   float lasttime;
   bool isLandable (object un) {
     object unit_fgid = _unit.getFgID(un);
-    bool retval = (_unit.isPlanet (un) ||
+    bool retval = (((_unit.isPlanet (un))&&(!_unit.isJumppoint(un))) ||
 		   _string.equal (unit_fgid,"Base"));
     _string.delete(unit_fgid);
     return retval;
