@@ -1,7 +1,6 @@
 module universe {
-
   import ai_flyto_jumppoint;
-  import ai_orderlist;
+
 
   object current_system;
   object last_system;
@@ -9,6 +8,29 @@ module universe {
   object system_map;
   object outstr;
 
+  object nearsys (object currentsystem, int sysaway, object str) {
+    int max=_std.getNumAdjacentSystems(currentsystem);
+    if ((sysaway<=0)||(max<=0)) {
+      _io.sprintf(str,"Your final destination is %s",currentsystem);
+      _io.message (1,"game","all",str);
+      return currentsystem;
+    } else {
+      int nextsysnum=random.randomint(0,max-1);
+      object nextsystem=_std.getAdjacentSystem(currentsystem,nextsysnum);
+      _io.sprintf(str,"Jump from %s to %s.",currentsystem,nextsystem);
+      _io.message (1,"game","all",str);
+      return nearsys(nextsystem,sysaway-1,str);
+    }
+  };
+  
+  object getAdjacentSystem (object currentsystem, int num_systems_away) {
+    object str = _string.new();
+    object temp=nearsys (currentsystem,num_systems_away,str);
+    _string.delete(str);
+    return temp;
+  };
+
+  
   object getRandomJumppoint(){
     object jp_list=getJumppointList();
 
@@ -69,5 +91,4 @@ module universe {
     }
     return jumped;
   };
-
 }
