@@ -1,0 +1,38 @@
+<mission>
+	<settings>
+		<origin  planet="earth" x="0000" y="100" z="000.0"/>
+	</settings>
+
+	<variables>
+		<var name="defaultplayer" value="blue"/>
+		<var name="system" value="sol_sector/hammer" />
+		<var name="mission_name" value="Contraband Mission" />
+		<var name="description" value="Destroy ships with contraband on them." />
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="2">
+			<pos x="0400" y="-35400" z="24700.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+        </flightgroups>
+	<module name="director">
+		<import name="contraband_mission"/>
+		<script name="initgame">
+			<exec module="contraband_mission" name="init">
+			<const type="object" object="string" value="contraband"/> <!--name of the bad cargo -->
+			<const type="float" value="5000"/> <!--the distance from the jump point that you have to be at-->
+			<const type="float" value="20480"/> <!-- how much you are laid ...err paid -->
+			<const type="int" value="5"/> <!--difficulty of mission(do they send peeps after you)-->
+			<const type="int" value="20"/> <!--number of ships (maybe do a random number???) -->
+			<const type="float" value="0.2"/><!--percentage of those ships that will be bad-->
+			</exec>
+		</script>
+		<script name="gameloop">
+			<exec module="contraband_mission" name="loop"/>
+		</script>
+	</module>
+</mission>
