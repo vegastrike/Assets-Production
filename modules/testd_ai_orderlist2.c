@@ -62,8 +62,8 @@ module testd_ai_orderlist2 {
 
       orderlist_green=ai_orderlist.newOrderList();
       ai_orderlist.orderFlyTo(orderlist_green,"station-north",null_pos,1.0,true,500.0);
-      ai_orderlist.orderFlyTo(orderlist_green,"station-west",null_pos,1.0,true,500.0);
-      ai_orderlist.orderFlyTo(orderlist_green,"station-south",null_pos,1.0,true,500.0);
+      //      ai_orderlist.orderFlyTo(orderlist_green,"station-west",null_pos,1.0,true,500.0);
+      //ai_orderlist.orderFlyTo(orderlist_green,"station-south",null_pos,1.0,true,500.0);
       order.orderList("green",orderlist_green);
 
       orderlist_red=ai_orderlist.newOrderList();
