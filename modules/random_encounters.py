@@ -131,6 +131,9 @@ class random_encounters:
           launch_recycle.launch_wave_around("Capitol",localfaction,"default",1,1,self.capship_gen_distance*(0.5+(vsrandom.random()*0.4)),un, 8.0*self.det_distance,"")
 
   def launch_near(self,un):
+    if (VS.GetGameTime()<10):
+      print "hola!"
+      return
     randomnum=vsrandom.random()
     system=cursys=VS.getSystemFile()
     faction=curfac=VS.GetGalaxyProperty(system,"faction")
