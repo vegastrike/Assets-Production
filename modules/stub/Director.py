@@ -34,7 +34,7 @@ def pushSaveData (whichplayer,key,val):
     except:
 	_savedata[whichplayer][key]=[val]
     print 'DIRECTOR:pushSaveData: %g --> Player%d["%s"][%d]'%(val,whichplayer,key,len(_savedata[whichplayer][key]))
-    return len(_savedata[whichplayer][key])
+    return len(_savedata[whichplayer][key])-1
 def eraseSaveData (whichplayer,key,num):
     global _savedata
     del _savedata[whichplayer][key][num]
@@ -65,7 +65,7 @@ def pushSaveString (whichplayer,key,val):
     except:
 	_savestrs[whichplayer][key]=[val]
     print 'DIRECTOR:pushSaveString: "%s" --> StrPlayer%d["%s"][%d]'%(val,whichplayer,key,len(_savestrs[whichplayer][key]))
-    return len(_savestrs[whichplayer][key])
+    return len(_savestrs[whichplayer][key])-1
 def eraseSaveString (whichplayer,key,num):
     global _savestrs
     del _savestrs[whichplayer][key][num]

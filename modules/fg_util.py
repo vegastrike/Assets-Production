@@ -76,7 +76,7 @@ def _MakeFGString (starsystem,typenumlist):
 		strlist+=[str(tt[0]),str(tt[1]),str(tt[1])]
 	return [str(totalships),str(starsystem),str(damage)]+strlist
 
-def _AddShiptoKnownFG(key,tn):
+def _AddShipToKnownFG(key,tn):
 	leg = Director.getSaveStringLength (ccp,key)
 	try:
 		numtotships =int(Director.getSaveString(ccp,key,0))
@@ -84,7 +84,7 @@ def _AddShiptoKnownFG(key,tn):
 		Director.putSaveString(ccp,key,0,str(numtotships))
 	except:
 		print 'error adding ship to flightgroup'
-	for i in range (ShipListOffset+1,leg,PerShipDataSize()):
+	for i in range (ShipListOffset()+1,leg,PerShipDataSize()):
 		if (Director.getSaveString(ccp,key,i-1)==str(tn[0])):
 			numships=0
 			numactiveships=0
@@ -149,7 +149,7 @@ def CheckFG (fgname,faction):
 	leg = Director.getSaveStringLength (ccp,key)
 	totalships=0
 	try:
-		for i in range (ShipListOffset+1,leg,PerShipDataSize()):
+		for i in range (ShipListOffset()+1,leg,PerShipDataSize()):
 			shipshere=Director.getSaveString(ccp,key,i)
 			totalships+=int(shipshere)
 			Director.putSaveString(ccp,key,i+1,shipshere)#set num actives to zero
@@ -205,7 +205,7 @@ def AddShipsToFG (fgname,faction,typenumbertuple,starsystem):
 def RemoveShipFromFG (fgname,faction,type):
 	key = MakeFGKey (fgname,faction)
 	leg = Director.getSaveStringLength (ccp,key)
-	for i in range (ShipListOffset+1,leg,PerShipDataSize()):
+	for i in range (ShipListOffset()+1,leg,PerShipDataSize()):
 		if (Director.getSaveString(ccp,key,i-1)==str(type)):
 			numships=0
 			try:
@@ -240,6 +240,7 @@ def CountFactionShipsInSystem(faction,system):
 				print 'number ships '+ships[num] + ' not read'
 	return count
 def _prob_round(curnum):
+	import vsrandom
 	ret = int(curnum)
 	diff = curnum-int(curnum)
 	if (diff>0):
@@ -251,6 +252,7 @@ def _prob_round(curnum):
 	return ret
 
 def GetShipsInFG(fgname,faction):
+	import vsrandom
 	ships = ReadStringList (ccp,MakeFGKey(fgname,faction))
 	count=0
 	for num in range(ShipListOffset()+2,len(ships),PerShipDataSize()):
