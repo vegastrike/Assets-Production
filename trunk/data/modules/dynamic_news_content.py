@@ -10,11 +10,31 @@ def allFactionNames():
 
 ,"confed" :	{"full" : "Confederation of Inhabited Worlds"
 		,"nicks" : "Confed"
-		,"nickp" : "Confed"
+		,"nickp" : "Confeds"
 		,"dnicks" : "Origami"
 		,"dnickp" : "Origamis"
 		,"government" : "Confederate Senate"
 		,"possessive" : "Confederate"
+		,"homeworld" : "Earth"
+		}
+
+,"merchant" :	{"full" : "Merchant Union"
+		,"nicks" : "trader"
+		,"nickp" : "traders"
+		,"dnicks" : "pill popper"
+		,"dnickp" : "pill poppers"
+		,"government" : "Merchant Union Council"
+		,"possessive" : "Merchant"
+		,"homeworld" : "Earth"
+		}
+
+,"militia" :	{"full" : "Confederate Police Force"
+		,"nicks" : "police"
+		,"nickp" : "police"
+		,"dnicks" : "space copper"
+		,"dnickp" : "space coppers"
+		,"government" : "High Commission"
+		,"possessive" : "militia"
 		,"homeworld" : "Earth"
 		}
 
@@ -103,7 +123,7 @@ def allNews():
 
 								  ]
 
-						,"bad"		: [(0.3,"all","VAR_aggressor_nickp Beaten By VAR_defender_dnickp?\\One simple ambush was all that it took to demolish the VAR_aggressor_possessive forces today in VAR_system_sector. Given the high esteem VAR_aggressor_possessive forces are held in the VAR_dockedat_government, and the fact that this was apparently the beginnings of a full scale assult, this has been a surprising result to all. The VAR_defender_possessive forces defending VAR_system_system, shocked by their sudden reprieve, have now had time to ready their defensive grid, making another attack by the VAR_aggressor_possessive forces a much greater challenge.")
+						,"bad"		: [(0.3,"all","VAR_aggressor_nickp Beaten By VAR_defender_dnickp?\\One simple ambush was all that it took to demolish the VAR_aggressor_possessive forces today in VAR_system_sector. Given the high esteem VAR_aggressor_possessive forces are held in the VAR_dockedat_government, and the fact that this was apparently the beginnings of a full scale assult, this has been a surprising result to all. The VAR_defender_possessive forces defending VAR_system_system, shocked by their sudden reprieve, have now had time to ready their defensive grid, making another attack by the VAR_aggressor_possessive forces a much greater challenge."),(0.3,"all","startONE"),(0.3,"all","startTWO"),(0.3,"all","startTHREE"),(0.3,"all","startFOUR"),(0.3,"all","startFIVE")
 
 								  ]
 
@@ -169,7 +189,7 @@ def allNews():
 						}
 				 }
 		
-		,"end"		:{"success":	{"good"		: [(0.7,"all","VAR_aggressor_full Victory in VAR_system_system!\\In yet another event in the VAR_aggressor_possessive-VAR_defender_possessive war, VAR_aggressor_possessive forces have experienced a moral boosting victory today in the VAR_system_system system.  The blockade in the VAR_defender_possessive system ended today, three weeks after it began, with all VAR_defender_possessive supplies exhausted.  No information on the state of the infrastructure, or of casualties is as of yet available.")
+		,"end"		:{"success":	{"good"		: [(0.7,"all","VAR_aggressor_full Victory in VAR_system_system!\\In yet another event in the VAR_aggressor_possessive-VAR_defender_possessive war, VAR_aggressor_possessive forces have experienced a moral boosting victory today in the VAR_system_system system.  The blockade in the VAR_defender_possessive system ended today, three weeks after it began, with all VAR_defender_possessive supplies exhausted.  No information on the state of the infrastructure, or of casualties is as of yet available."),(0.7,"all","endONE"),(0.7,"all","endTWO"),(0.7,"all","endTHREE"),(0.7,"all","endFOUR"),(0.7,"all","endFIVE")
 								  ]
 
 						,"bad"		: [(0.3,"all","Tragedy in VAR_system_system:\\An end to the VAR_aggressor_full's barbaric siege in the VAR_defender_possessive system VAR_system_system in the VAR_system_sector sector occured today.  After several weeks of remorseless blockading, no-one was left alive in any critical part of the VAR_defender_possessive defence.  Such an attrocity could only have been wrought by the VAR_aggressor_nickp, whose remorseless tactics have seen many wins, with the death of thousands of bystanders in a war that may well be going for a long time.  This act has only served to strengthen the resolve of the VAR_dockedat_government on VAR_dockedat_homeworld to boost rescources to the war effort against the VAR_aggressor_full.")
@@ -205,6 +225,135 @@ def allNews():
 
 
 		}
+
+,"battle" :	{"start" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: [(0.5,"all","battle draw good")]
+						,"bad"		: [(0.5,"all","battle draw bad")]
+						,"neutral"	: [(0.5,"all","battle draw neutral")]
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+
+		,"middle" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		,"end" :	{"success" :	{"good"		: [(0.1,"all","VAR_defender_dnickp Vaporised!\\In the outer regions of the VAR_system_system system today, the VAR_aggressor_FG squadron of VAR_aggressor_nicks VAR_aggressor_FGtype ships in transit came across a group of VAR_defender_possessive VAR_defender_FGtype fighters on an intercept course with a VAR_aggressor_possessive passenger liner.  The hostiles were engaged and swiftly destroyed by the VAR_aggressor_FGtype squadron -- no energy sources remained active.")]
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		}
+
+
+,"fleetbattle":	{"start" :	{"success" :	{"good"		: [(0.3,"all","The VAR_aggressor_FG Storms the VAR_defender_nickp:\\Moments ago out of the window of my pleasure yacht I witnessed one of the most impressive sights of my career.  The VAR_aggressor_FGtype Class VAR_aggressor_possessive ship VAR_aggressor_FG and support warped right into the middle of a large VAR_defender_possessive VAR_defender_FGtype led invasion force!\\From the few moments I saw (out pilot was heeding the advice of the VAR_aggressor_FG and getting out of there as fast as possible) the VAR_defender_dnicks were taken completely by surprise with somewhere near half of their fleet badly damaged before the VAR_aggressor_nicks forces had gone out of range.  Information on the outcome of the battle will be available later, when out pilot deems it safe to go investigating closer\\\\Daneel Aleki, GNN")]
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+
+		,"middle" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		,"end" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		}
+
+,"destroyed":	{"start" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+
+		,"middle" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		,"end" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		}
+
+
 }
 
 
@@ -267,4 +416,133 @@ def allNews():
 		,"end" : {}
 		}
 
+,"merchant" : {
+"siege" :	{"start" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+
+		,"middle" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		,"end" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		}
+
+,"battle" :	{"start" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+
+		,"middle" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		,"end" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		}
+
+,"fleetbattle":	{"start" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+
+		,"middle" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		,"end" :	{"success" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"draw" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				,"loss" :	{"good"		: []
+						,"bad"		: []
+						,"neutral"	: []
+						}
+				}
+		}
+}
+
+#\/The last close bracket for the whole dictionary\/
 }

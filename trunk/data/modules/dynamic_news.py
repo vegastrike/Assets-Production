@@ -93,7 +93,9 @@ def formatNameTags(word,names):
 			return formatProperTitle(allUsefullVariables["system"][allUsefullVariables["system"].index("/")+1:])
 		if tag == "sector":
 			return formatProperTitle(allUsefullVariables["system"][:allUsefullVariables["system"].index("_")])
-	if tag in names["alltags"] and validateDictKeys([var_string,tag],dynamic_news_content.allFactionNames()):
+	elif tag in ["FG","FGtype"] :
+		return allUsefullVariables[var+tag]
+	elif tag in names["alltags"] and validateDictKeys([var_string,tag],dynamic_news_content.allFactionNames()):
 		return names[var_string][tag]
 	else:
 		print "Error. Invalid news tag, not found in dictionary."
@@ -243,7 +245,7 @@ def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword,ra
 	faction = validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword)
 	if faction == "barf":
 		print "Error: A suitable news story does not exist, returning a warning string."
-		return getClosestScaleNews([(scale,"all","ERROR!\\Invalid news variables:\\(" + string.join([faction_base,type_event,stage_event,success,pov,str(scale),keyword],',') + ")\\A suitable news story for this event could not be found.\\This is a placeholder error message.\\\\Contact the help-desk for any queries:\\dandandaman@users.sourceforge.net ;-)\\\\\\ -- The Vegastrike Community:\\Struggling with lack of hands to go around since 1998")],scale,randint)
+		return getClosestScaleNews([(scale,"all","ERROR!\\Invalid news variables:\\(" + string.join([faction_base,type_event,stage_event,success,pov,str(scale),keyword],',') + ")\\A suitable news story for this event could not be found.  @hellcatv: don't worry, flightgroup info is available, it just doesn't get passed down this far (it's stored in the global instead) but you know it's there so don't worry ;-)\\This is a placeholder error message.\\\\Contact the help-desk for any queries:\\dandandaman@users.sourceforge.net ;-)\\\\\\ -- The Vegastrike Community:\\Struggling with lack of hands to go around since 1998")],scale,randint)
 	listnews = dynamic_news_content.allNews()[faction][type_event][stage_event][success][pov]
 	return getClosestScaleNews(listnews,scale,randint)
 
@@ -265,13 +267,20 @@ def getClosestScaleNews(listof,scale,randint):
 
 def minorNewsTypes():
 	"""a list of all the minor news types that should be system dependent"""
-	return ["skirmish","destroyed"]
+	return ["battle","destroyed"]
 
 def checkSystemRelevant(system):
 	"""returns 1 if the system in question is within a 1 system radius of
 	the players current system"""
-	if (system in VS.getAllAddjacentSystems(VS.getSystemFile()).append(VS.getSystemFile())):
+	mysys = VS.getSystemFile()
+	if system in GetAllAdjacentSystems(mysys) or mysys == system:
 		return 1
+
+def GetAllAdjacentSystems(mystr):
+	syslist = list()
+	for i in range(VS.GetNumAdjacentSystems(mystr)):
+		syslist.append(VS.GetAdjacentSystem(mystr,i))
+	return syslist
 
 def checkVarListRelevant(newslist,randint):
 	"""returns true only if the newslist is relevant
