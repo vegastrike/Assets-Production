@@ -1,0 +1,665 @@
+<vegaconfig>
+<!-- Comment lines beggining with a # are used by vssetup
+
+This line sets up what groups will appear in the menu. To add a group, just insert it into the line
+#groups Computer Video Difficulty Experiment Sound Music
+
+These are the choices for each group. Again, to add a setting for a group, just insert it into a line
+When creating a new group, you need only add a new line
+#cat Computer P200MHz P500MHz P800MHz
+#cat Video GeForce3 GeForce2 Voodoo TNT Software
+#cat Difficulty easy medium hard
+#cat Experiment stable windows_safe linux_safe
+#cat Sound audio_on_windows audio_on_linux audio_off audio_3d_windows audio_3d_linux
+#cat Music windows_ext_music_on music_off linux_int_music_on
+
+These line set the currently used settings. This allows them to show up as selected (currently enclosed in [])
+#set Video GeForce3
+#set Sound audio_off
+#set Music music_off
+#set Computer P500MHz
+#set Difficulty easy
+#set Experiment linux_safe
+A description for the catagories. This is text that appears in the menu
+#desc Software No Acceleration
+#desc TNT Radeon and TNT
+#desc GeForce2 GeForce2MX
+#desc GeForce3 Radeon2 and GeForce2Ultra
+#desc easy Easy
+#desc medium Medium
+#desc hard Hard
+#desc audio_on_linux Sound On Linux
+#desc audio_on_windows Sound On Windows
+#desc audio_off No Sound
+#desc audio_3d_linux 3D Sound Linux
+#desc audio_3d_windows 3D Sound Windows
+#desc windows_ext_music_on Windows Winamp Music (EXPERIMENTAL)
+#desc music_off No Music
+#desc linux_int_music_on Linux Music
+#desc windows_safe Windows2000 nVidia
+#desc linux_safe Standard
+#desc stable Safe Mode
+#desc P200MHz 200MHz
+#desc P500MHz 500MHz
+#desc P800MHz 800MHz
+
+#endheader
+
+Setup will now stop looking header options. This line isn't required, but it will stop
+the program from trying to look through the whole file for something we know isn't there
+
+Farther down, you will see "#Software". Currently, it's line 213. You'll find more comments there
+-->
+
+        <bindings>
+ 		<bind key="1" modifier="none" command="Comm1Key" />
+ 		<bind key="2" modifier="none" command="Comm2Key" />
+ 		<bind key="3" modifier="none" command="Comm3Key" />
+ 		<bind key="4" modifier="none" command="Comm4Key" />
+ 		<bind key="5" modifier="none" command="Comm5Key" />
+ 		<bind key="6" modifier="none" command="Comm6Key" />
+ 		<bind key="7" modifier="none" player="1" command="Comm1Key" />
+ 		<bind key="8" modifier="none" player="1" command="Comm2Key" />
+ 		<bind key="9" modifier="none" player="1" command="Comm3Key" />
+
+ 		<bind key="space" modifier="none" command="FireKey" />
+ 		<bind key="J" modifier="none" command="JumpKey" />
+ 		<bind key="j" modifier="none" player="1" command="JumpKey" />
+ 		<bind key="c" modifier="none" command="CloakKey" />
+ 		<bind key="return" modifier="none" player="1" command="MissileKey" />
+ 		<bind key="b" modifier="none" command="MissileKey" />
+		<bind key="g" modifier="none" command="WeapSelKey"/>
+		<bind key="m" modifier="none" player="1" command="WeapSelKey"/>
+		<bind key=";" modifier="none" player="1" command="Respawn"/>
+		<bind key=":" modifier="none" command="Respawn"/>
+
+		<bind key="[" modifier="none" player="1" command="SwitchControl"/>
+		<bind key="]" modifier="none" player="1" command="TurretControl"/>
+		<bind key="{" modifier="none" command="SwitchControl"/>
+		<bind key="}" modifier="none" command="TurretControl"/>
+
+
+		<bind key="d" modifier="none" command="DockKey"/>
+		<bind key="D" modifier="none" command="DockKey"/>
+		<bind key="C" modifier="none" command="RequestClearenceKey"/>	
+		<bind key="u" modifier="none"  player="1" command="UnDockKey"/>
+		<bind key="U" modifier="none"  player="1" command="UnDockKey"/>
+
+		<bind key="0" modifier="none"  player="1" command="RequestClearenceKey"/>
+		<bind key="m" modifier="none" command="MisSelKey"/>
+		<bind key="M" modifier="none" player="1" command="MisSelKey"/>
+
+		<bind key="t" modifier="none" command="TargetKey" />
+		<bind key="r" modifier="none" command="PickTargetKey" />
+		<bind key="o" modifier="none" player="1" command="TargetKey" />
+		<bind key="p" modifier="none" player="1" command="PickTargetKey" />
+		<bind key="T" modifier="none" command="TurretTargetKey" />
+		<bind key="R" modifier="none" command="TurretPickTargetKey" />
+		<bind key="O" modifier="none" player="1" command="TurretTargetKey" />
+		<bind key="P" modifier="none" player="1" command="TurretPickTargetKey" />
+
+                <bind key="`" modifier="none" command="SheltonKey" />
+                <bind key="cursor-home" modifier="none" player="1" command="SheltonKey" />
+
+                <bind key="-" modifier="none" player="1" command="DecelKey"/>
+                <bind key="+" modifier="none" player="1" command="AccelKey" />
+
+
+<!--?-->        <bind key="/" modifier="none" player="1" command="PickTargetKey"/>
+
+
+                <bind key="v" modifier="none" command="DecelKey"/>
+                <bind key="f" modifier="none"  command="AccelKey"/>
+                <bind key="backspace" modifier="none" player="1" command="StopKey"/>
+                <bind key="\" modifier="none" player="1" command="StartKey"/>
+
+
+		<bind key="tab" modifier="none" command="ABKey" />
+                <bind key="*" modifier="none" player="1" command="ABKey"/>
+
+                <bind key="cursor-up" modifier="none" player="1" command="UpKey"/>
+                <bind key="cursor-down" modifier="none" player="1" command="DownKey"/>
+                <bind key="cursor-left" modifier="none" player="1" command="RightKey"/>
+                <bind key="cursor-right" modifier="none" player="1" command="LeftKey"/>
+                <bind key="cursor-insert" modifier="none" player="1" command="FireKey"/>
+<!--?-->                <bind key="cursor-delete" modifier="none" command="RollRightKey"/>
+
+                <bind key="w" modifier="none" command="UpKey"/>
+                <bind key="s" modifier="none" command="DownKey"/>
+                <bind key="a" modifier="none" command="RightKey"/>
+                <bind key="d" modifier="none" command="LeftKey"/>
+                <bind key="z" modifier="none" command="RollLeftKey"/>
+                <bind key="x" modifier="none" command="RollRightKey"/>
+
+                <bind key="function-1" modifier="none" command="Cockpit::Inside"/>
+                <bind key="function-2" modifier="none" command="Cockpit::InsideLeft"/>
+                <bind key="function-3" modifier="none" command="Cockpit::InsideRight"/>
+                <bind key="function-4" modifier="none" command="Cockpit::InsideBack"/>
+                <bind key="function-5" modifier="none" command="Cockpit::Behind"/>
+
+                <bind key="function-6" modifier="none" player="1" command="Cockpit::Inside"/>
+                <bind key="function-7" modifier="none" player="1" command="Cockpit::InsideBack"/>
+                <bind key="function-8" modifier="none" player="1" command="Cockpit::Behind"/>
+
+                <bind key="function-9" modifier="none" command="TimeInc"/>
+                <bind key="|" modifier="none" command="PauseKey"/>
+                <bind key="function-10" modifier="none" command="TimeReset"/>
+
+<!--?-->                <bind key="function-11" modifier="none" command="Cockpit::ZoomIn"/>
+<!--?-->                <bind key="function-12" modifier="none" command="Cockpit::ZoomOut"/>
+
+                <bind key="Q" modifier="none" command="Cockpit::SwitchLVDU"/>
+                <bind key="q" modifier="none" command="Cockpit::SwitchRVDU"/>
+                <bind key="l" modifier="none" player="1" command="Cockpit::SwitchRVDU"/>
+                <bind key="L" modifier="none" player="1" command="Cockpit::SwitchLVDU"/>
+
+<!--?                <bind key="cursor-pagedown" modifier="none" command="Cockpit::ScrollDown"/>-->
+<!--?                <bind key="cursor-pageup" modifier="none" command="Cockpit::ScrollUp"/>-->
+<!--?                <bind key="cursor-home" modifier="none" command="SetVelocityRefKey"/>-->
+<!--?                <bind key="cursor-end" modifier="none" command="SetVelocityNullKey"/>-->
+
+                <bind key="esc" modifier="none" command="Cockpit::Quit"/>
+
+		<bind joystick="0" button="0" modifier="none" command="FireKey" />
+		<bind joystick="0" button="1" modifier="none" command="ABKey" />
+		<bind joystick="0" button="2" modifier="none" command="MissileKey" />
+
+		<bind joystick="0" button="3" modifier="none" command="TargetKey" />
+		<bind joystick="1" button="0" modifier="none" command="FireKey" />
+		<bind joystick="1" button="1" modifier="none" command="ABKey" />
+		<bind joystick="1" button="2" modifier="none" command="MissileKey" />
+
+		<bind joystick="1" button="3" modifier="none" command="TargetKey" />
+		<axis name="x" joystick="0" axis="0" inverse="false" />
+		<axis name="y" joystick="0" axis="1" inverse="false" />
+		<axis name="x" joystick="1" axis="0" inverse="false" />
+		<axis name="y" joystick="1" axis="1" inverse="false" />
+
+
+		<!-- use this if you've got a throttle control
+			<axis name="throttle" joystick="0" axis="2"/>
+		-->
+
+		<!-- use this if you want to use your third axis as roll around z
+			<axis name="z" joystick="0" axis="2"/>
+		-->
+
+		<!-- if you have a joystick with an analogue hatswitch -->
+		<axis name="hatswitch" nr="0" margin="0.15" joystick="0" axis="2">
+			<hatswitch value="-1.0"/>
+		<!--	<hatswitch value="-0.6"/>	-->
+			<hatswitch value="-0.19"/>
+			<hatswitch value="0.1"/>
+		</axis>
+
+
+
+        </bindings>
+        <colors>
+	    <section name="absolute">
+		<!-- absolute colors -->
+                <color name="red"	r="1.0" g="0.0" b="0.0" a="1.0"/>
+                <color name="green"	r="0.0" g="1.0" b="0.0" a="1.0"/>
+                <color name="blue"	r="0.0" g="0.0" b="1.0" a="1.0"/>
+                <color name="yellow"	r="1.0" g="1.0" b="0.0" a="1.0"/>
+                <color name="black"	r="0.0" g="0.0" b="0.0" a="1.0"/>
+                <color name="white"	r="1.0" g="1.0" b="1.0" a="1.0"/>
+                <color name="violet"	r="1.0" g="0.0" b="1.0" a="1.0"/>
+                <color name="light-blue"	r="0.68" g="0.9" b="1.0" a="1.0"/>
+                <color name="pink"	r="1.0" g="0.47" b="0.64" a="1.0"/>
+                <color name="dark-red"	r="0.1" g="0.0" b="0.0" a="1.0"/>
+		
+                <color name="dark-blue"	r="0.0" g="0.0" b="0.2" a="1.0"/>
+	    </section>
+	    <section name="unit">
+		<!-- light to use for ships -->
+		<color name="ship_ambient" r="0.0" g="0.0" b="0.0" a="1.0"/>
+		<color name="engine" r="1" g="1" b="1" a="1"/>
+            </section>
+	    <section name="terrain">
+		<color name="terrain_ambient" r="0.0" g="0.0" b="0.0" a="1.0"/>
+	    </section>
+	    <section name="default">
+		<!-- <color name="testcolor" r="0.5" b="0.7" g="0.4" a="0.3"/> -->
+
+		<!-- colors to use in radar/target rectangles -->
+		<color name="enemy"		section="absolute" ref="red"/>
+		<color name="friend"		section="absolute" ref="green"/>
+		<color name="neutral"		section="absolute" ref="yellow"/>
+		<color name="attacking_ship"	section="absolute" ref="blue"/>
+		<color name="locking_ship"	section="absolute" ref="violet"/>
+		<color name="targetting_ship"	section="absolute" ref="light-blue"/>
+		<color name="target"		section="absolute" ref="violet"/>
+		<color name="planet"		r="1.0" g="1.0" b="0.6" a="1.0" />
+
+
+		<!-- light to use for planets -->
+		<color name="planet_ambient" r="0.0" g="0.0" b="0.0" a="1.0"/>
+		<color name="planet_mat_ambient" r="1" g="1" b="1" a="1.0"/>
+		<color name="planet_mat_diffuse" r="1" g="1" b="1" a="1.0"/>
+		<color name="planet_mat_specular" r="0" g="0" b="0" a="1.0"/>
+		<color name="planet_mat_emmissive" r="0" g="0" b="0" a="1.0"/>
+		<!-- set this to dark-blue to get the real spacey feeling -->
+		<color name="space_background" ref="dark-blue" section="absolute"/>
+	    </section>
+        </colors>
+	<variables>
+		<section name="data">
+			<var name="universe_path" value="universe"/>
+			<var name="sharedtextures" value="textures"/>
+			<var name="sharedsounds" value="sounds"/>
+		</section>
+		<section name="terrain">
+<!-- #easy -->
+			<var name="mass" value=".4000001"/>
+<!-- #end -->
+<!-- #medium
+			<var name="mass" value="100.0000001"/>
+#end -->
+
+<!-- #hard
+			<var name="mass" value="1000.0000001"/>
+#end -->
+
+			<var name="radius" value="0000"/>
+			<var name="xscale" value="1"/>
+			<var name="yscale" value="1"/>
+			<var name="zscale" value="1"/>
+		</section>
+        	<section name="graphics/general">
+		</section>
+        	<section name="graphics/mesh">
+		</section>
+        	<section name="graphics">
+			<section name="mesh">
+				<var name="testvar" value="-4"/>
+			</section>
+
+			<var name="star_body_radius" value=".4"/>
+			<var name="star_glow_radius" value="1.3"/>
+			<var name="glow_ambient_star_light" value="false"/>
+			<var name="glow_diffuse_star_light" value="false"/>
+
+			<var name="HaloOffset" value=".5"/>
+			<var name="HaloFarDraw" value="false"/> <!--experimental -->
+			<var name="draw_star_glow_halo" value="false"/><!--experimental-->
+
+			<var name="UnitSwitchCockpitChange" value="false"/><!--slow unit switch-->
+			<var name="SwitchCockpitToDefaultOnUnitSwitch" value="false"/><!--slower unit switch-->
+			<var name="jumpgatesize" value="17.5"/>
+			<var name="jumpgate" value="warp.ani"/>
+			<var name="LogoOffset" value="-4"/>
+			<var name="fogdetail" value="2"/>
+			<var name="LogoOffsetScale" value="-30.8"/>
+			<var name="MouseCursor" value="false"/>
+			<var name="OptimizeVertexCondition" value="1"/>
+			<var name="SharedVertexArrays" value="true"/>
+
+<!-- #windows_safe
+			<var name="LockVertexArrays" value="true"/>
+			<var name="OptimizeVertexArrays" value="true"/>
+			<var name="displaylists" value="false"/>
+			<var name="fullscreen" value="true"/>
+#end -->
+<!-- #linux_safe -->
+			<var name="OptimizeVertexArrays" value="false"/>
+			<var name="displaylists" value="true"/>
+			<var name="OptimizeVertexArrays" value="true"/>
+			<var name="fullscreen" value="false"/>
+<!-- #end -->
+<!-- #stable
+			<var name="OptimizeVertexArrays" value="false"/>
+			<var name="displaylists" value="false"/>
+			<var name="LockVertexArrays" value="false"/>
+			<var name="fullscreen" value="true"/>
+#end -->
+<!--
+This line starts a Software setting block. Everything betweeen #Software and #end will be
+Commented if the setting is disabled, and uncommented when the setting is enabled
+Any setting blocks not configured in the header (such as software instead of Software) will be ignored
+The default setting has this on
+You can also specify more than 1 setting for the block. If you do
+"#Software Voodoo", than either one of these will enable the block
+This is done many times later in this config file
+-->
+<!-- #Software
+			<var name="fog" value="false"/>
+			<var name="ModelDetail" value=".3"/>
+			<var name="x_resolution" value="512"/>
+			<var name="y_resolution" value="384"/>
+			<var name="mipmapdetail" value="0"/>
+			<var name="reflection" value="false"/>
+			<var name="ForceLighting" value="0"/>
+			<var name="high_quality_font" value="true"/>
+			<var name="font_antialias" value="false"/>
+			<var name="font_point" value="16"/>
+			<var name="draw_star_body" value="true"/>
+			<var name="draw_star_glow" value="false"/>	
+			<var name="high_quality_sprites" value="false"/>
+
+#end -->
+<!-- #Voodoo
+			<var name="fog" value="false"/>
+			<var name="ModelDetail" value=".4"/>
+			<var name="x_resolution" value="640"/>
+			<var name="y_resolution" value="480"/>
+			<var name="mipmapdetail" value="1"/>
+			<var name="reflection" value="true"/>
+			<var name="ForceLighting" value="0"/>
+			<var name="high_quality_font" value="false"/>
+			<var name="font_antialias" value="true"/>
+			<var name="font_point" value="14"/>
+			<var name="draw_star_body" value="true"/>
+			<var name="draw_star_glow" value="true"/>	
+			<var name="high_quality_sprites" value="true"/>
+
+#end -->
+<!-- #P800MHz
+			<var name="ForceLighting" value="1"/>
+#end -->
+<!-- #TNT
+			<var name="fog" value="true"/>
+			<var name="ModelDetail" value="1"/>
+			<var name="x_resolution" value="800"/>
+			<var name="y_resolution" value="600"/>
+			<var name="mipmapdetail" value="2"/>
+			<var name="reflection" value="false"/>
+			<var name="ForceLighting" value="0"/>
+			<var name="high_quality_font" value="true"/>
+			<var name="font_antialias" value="false"/>
+			<var name="font_point" value="14"/>
+			<var name="draw_star_body" value="true"/>
+			<var name="draw_star_glow" value="true"/>	
+			<var name="high_quality_sprites" value="false"/>
+#end -->
+
+
+
+<!-- #GeForce2
+			<var name="fog" value="true"/>
+			<var name="ModelDetail" value="1"/>
+			<var name="x_resolution" value="1024"/>
+			<var name="y_resolution" value="768"/>
+			<var name="mipmapdetail" value="2"/>
+			<var name="reflection" value="true"/>
+			<var name="high_quality_font" value="false"/>
+			<var name="font_antialias" value="false"/>
+			<var name="font_point" value="16"/>
+			<var name="draw_star_body" value="true"/>
+			<var name="draw_star_glow" value="false"/>	
+			<var name="high_quality_sprites" value="false"/>
+#end -->
+<!-- #GeForce3 -->
+			<var name="fog" value="true"/>
+			<var name="ModelDetail" value="10"/>
+			<var name="x_resolution" value="1240"/>
+			<var name="y_resolution" value="1024"/>
+			<var name="mipmapdetail" value="3"/>
+			<var name="reflection" value="true"/>
+			<var name="high_quality_font" value="false"/>
+			<var name="font_antialias" value="true"/>
+			<var name="font_point" value="16"/>
+			<var name="draw_star_body" value="true"/>
+			<var name="draw_star_glow" value="true"/>	
+			<var name="high_quality_sprites" value="true"/>
+<!-- #end -->
+
+
+<!-- #Software Voodoo TNT GeForce2
+			<var name="colordepth" value="16"/>
+        	       	<var name="zfar" value="60000"/>
+#end -->
+<!-- #GeForce3 -->
+			<var name="colordepth" value="32"/>
+			<var name="zfar" value="600000"/>
+<!-- #end -->
+
+                	<var name="fov" value="60.0"/>
+                	<var name="aspect" value="1.3"/>
+                	<var name="znear" value="4.0"/>
+
+			<var name="use_wireframe" value="0"/>
+<!-- #Software
+			<var name="starblend" value="false"/>
+#end -->
+<!-- #TNT Voodoo GeForce2 GeForce3 -->
+			<var name="starblend" value="true"/>
+<!-- #end -->
+
+<!-- #Software
+			<var name="background" value="false"/>
+#end -->
+<!-- #Voodoo TNT GeForce2 GeForce3 -->
+			<var name="background" value="true"/>
+<!-- #end -->
+<!-- #Software Voodoo TNT GeForce2
+			<var name="cockpit" value="false"/>
+#end -->
+<!-- #GeForce3 -->
+			<var name="cockpit" value="true"/>
+<!-- #end -->
+
+<!-- #Software Voodoo
+			<var name="planet_detail" value="16"/>
+			<var name="jump_detail" value="8"/>
+#end -->
+<!-- #TNT GeForce2
+			<var name="planet_detail" value="20"/>
+			<var name="jump_detail" value="16"/>
+#end -->
+<!-- #GeForce3 -->
+			<var name="planet_detail" value="32"/>
+			<var name="jump_detail" value="16"/>
+<!-- #end -->
+
+<!-- #Software
+			<var name="lightcutoff" value="0.16"/>
+			<var name="lightoptimalintensity" value="0.16"/>
+#end -->
+<!-- #Voodoo GeForce2
+			<var name="lightcutoff" value="0.06"/>
+			<var name="lightoptimalintensity" value="0.06"/>
+#end -->
+<!-- #TNT
+			<var name="lightcutoff" value="0.06"/>
+			<var name="lightoptimalintensity" value="0.08"/>
+#end -->
+<!-- #GeForce3 -->
+			<var name="lightcutoff" value="0.04"/>
+			<var name="lightoptimalintensity" value="0.06"/>
+<!-- #end -->
+
+			<var name="lightsaturation" value="0.95"/>
+<!-- #Software Voodoo GeForce2
+			<var name="separatespecularcolor" value="false"/>
+#end -->
+<!-- #TNT GeForce3 -->
+			<var name="separatespecularcolor" value="true"/>
+<!-- #end -->
+			<var name="numlights"	value="4"/>
+			<section name="hud" >
+				<var name="drawAllTargetBoxes" value="false" />
+				<var name="drawAlwaysITTS" value="true" />
+				<var name="radarType" value="WC" />
+				<var name="radarRange" value="20000" />
+				<var name="drawLineToTarget" value="false" />
+				<var name="drawLineToTargetsTarget" value="false" />
+				<var name="drawLineToITTS" value="false" />
+			</section>
+		</section>
+		<section name="audio">
+<!-- #audio_3d_windows audio_3d_linux
+			<var name="Positional" value="true"/>
+#end -->
+<!-- #auio_on_windows audio_on_linux audio_off -->
+			<var name="Positional" value="false"/>
+<!-- #end -->
+			<var name="Doppler" value="false"/>
+			<var name="DooplerScale" value=".1"/>
+<!-- #P200MHz
+			<var name="every_other_mount" value="true"/>
+			<var name="MaxSingleSounds" value="5"/>
+			<var name="MaxTotalSounds" value="16"/>
+#end -->
+<!-- #P500MHz -->
+			<var name="every_other_mount" value="true"/>
+			<var name="MaxSingleSounds" value="8"/>
+			<var name="MaxTotalSounds" value="24"/>
+<!-- #end -->
+<!-- #P800MHz
+			<var name="every_other_mount" value="false"/>
+			<var name="MaxSingleSounds" value="12"/>
+			<var name="MaxTotalSounds" value="32"/>
+#end -->
+			<var name="frequency" value="22050"/>
+<!-- #audio_on_windows audio_on_linux audio_3d_windows audio_3d_linux
+			<var name="Sound" value="true"/>
+#end -->
+<!-- #audio_off -->
+			<var name="Sound" value="false"/>
+<!-- #end -->
+			<var name="battleplaylist" value="battle.m3u"/>
+			<var name="peaceplaylist" value="peace.m3u"/>
+			<var name="panicplaylist" value="panic.m3u"/>
+			<var name="threadtime" value="2000"/>	
+<!-- #audio_on_linux audio_3d_linux
+			<var name="Volume"	value="1"/>
+#end -->
+<!-- #audio_on_windows audio_3d_windows
+			<var name="Volume"	value="70"/>
+#end -->
+<!-- #windows_ext_music_on
+			<var name="Music" value="true"/>
+			<var name="use_external_player" value="true"/>
+			<var name="external_player" value="C:\Program Files\Winamp\Winamp.exe"/>
+			<var name="external_play_option" value="/PLAY"/>
+			<var name="external_enqueue_option" value="/ADD"/>
+#end -->
+<!-- #music_off -->
+			<var name="use_external_player" value="false"/>
+			<var name="Music" value="false"/>
+<!-- #end -->
+<!-- #linux_int_music_on
+			<var name="use_external_player" value="false"/>
+			<var name="Music" value="true"/>
+#end -->
+		</section>
+		<section name="unitaudio">
+			<var name="afterburner" value="engine_5.wav"/>
+			<var name="cloak" value="cloak.wav"/>
+			<var name="shield" value="shieldhit2.wav"/>
+			<var name="armor" value="armorhit.wav"/>
+			<var name="hull" value="armorhit.wav"/>
+			<var name="explode" value="explosion.wav"/>
+		</section>
+		<section name="joystick">
+			<var name="deadband" value="0.05"/>
+			<var name="debug_digital_hatswitch" value="false"/>
+			<var name="force_feedback" value="false" />
+			<var name="ff_device" value="0" />
+		</section>
+		<section name="general">
+			<var name="default_mission" value="mission/exploration/explore_universe_nova.mission"/>
+			<var name="galaxy" value="milky_way.xml"/>
+			<var name="yaw" value="0"/>			<var name="pitch" value="0"/>			<var name="roll" value="0"/>
+			<var name="remove_impossible_downgrades" value="true"/>
+
+<!-- #P200MHz
+			<var name="simulation_atom" value="0.12"/>
+			<var name="numoldsystems" value="4"/>
+#end -->
+<!-- #P500MHz -->
+			<var name="simulation_atom" value="0.09"/>
+			<var name="numoldsystems" value="8"/>
+<!-- #end -->
+<!-- #P800MHz
+			<var name="simulation_atom" value="0.06"/>
+			<var name="numoldsystems" value="20"/>
+#end -->
+			<var name="garbagecollectfrequency" value="20"/>
+<!-- #windows_safe linux_safe -->
+			<var name="deleteoldsystems" value="true"/>
+<!-- #end -->
+<!-- #stable
+			<var name="deleteoldsystems" value="false"/>
+#end -->
+
+
+        	</section>
+		<section name="AI">
+			<section name="Targetting">
+				<var name="TargetSwitchReactionTime" value=".8"/>
+				<var name="TargetSwitchProbability" value=".01"/>
+			</section>
+			<section name="Firing">
+				<var name="MissileProbability" value=".01"/>
+			</section>
+		</section>
+		<section name="physics">
+			<var name="ai_pilot_when_in_turret" value="true"/>
+			<var name="atmosphereheight" value="10"/>
+			<!-- the next variable tells what percentage
+			      of normal the shields recharge in a nebule.
+			      Zero means shields do not work in nebulae -->
+			<!-- the next variable tells how accurately systems shoudl be simulated where the player isn't in.   Really you don't need much accuracy -->
+<!-- #P200MHz
+			<var name="NumRunningSystems" value="3"/>
+			<var name="InactiveSystemTime" value=".8"/>
+#end -->
+<!-- #P500MHz -->
+			<var name="NumRunningSystems" value="4"/>
+			<var name="InactiveSystemTime" value=".6"/>
+<!-- #end -->
+<!-- #P800MHz
+			<var name="NumRunningSystems" value="8"/>
+			<var name="InactiveSystemTime" value=".9"/>
+#end -->
+<!-- #easy -->
+			<var name="autodist" value="200"/>
+			<var name="YearScale" value="10"/>
+			<var name="AsteroidDifficulty" value=".5"/>
+			<var name="AfterburnerFuelUsage" value="1"/>
+			<var name="NoFuelThrust" value="1"/>
+			<var name="NoFuelAfterburn" value=".1"/>
+			<var name="nebula_shield_recharge" value=".5"/>
+<!-- #end -->
+<!-- #medium
+			<var name="nebula_shield_recharge" value=".25"/>
+			<var name="autodist" value="500"/>
+			<var name="YearScale" value="2"/>
+			<var name="AsteroidDifficulty" value=".8"/>
+			<var name="AfterburnerFuelUsage" value="10"/>
+			<var name="NoFuelThrust" value="1"/>
+			<var name="NoFuelAfterburn" value=".1"/>
+#end -->
+<!-- #hard
+			<var name="nebula_shield_recharge" value="0"/>
+			<var name="autodist" value="2500"/>
+			<var name="YearScale" value=".3"/>
+			<var name="AsteroidDifficulty" value="1.2"/>
+			<var name="AfterburnerFuelUsage" value="40"/>
+			<var name="NoFuelThrust" value=".5"/>
+			<var name="NoFuelAfterburn" value="0"/>
+#end -->
+			<var name="Drone" value="unknown_active"/>
+		</section>
+		<section name="interpreter">
+			<var name="debuglevel" value="0"/>
+			<var name="startgame" value="true"/>
+		</section>
+		<section name="player">
+			<var name="realname" 	value="insert-name-here"/>
+			<var name="email" 	value="email@where-ever.net"/>
+			<var name="homepage"	value="none"/>
+			<var name="callsign" 	value="HellcatV"/>
+			<var name="logo" 	value="unknown.bmp"/>
+		</section>
+		<section name="player2">
+			<var name="realname" 	value="insert-name-here"/>
+			<var name="email" 	value="email@where-ever.net"/>
+			<var name="homepage"	value="none"/>
+			<var name="callsign" 	value="TigerShark"/>
+			<var name="logo" 	value="unknown.bmp"/>
+		</section>
+	</variables>
+</vegaconfig>
