@@ -49,6 +49,7 @@ class escort_mission (Director.Mission):
 		self.you.setFlightgroupLeader(self.you)
 		if (self.escortee.isNull()):
 			VS.IOmessage (0,"escort",self.mplay,"#ff0000You were to protect your escort. Mission failed.")
+			universe.punish(self.you,self.faction,self.difficulty)
 			VS.terminateMission(0)
 			return   
 		if (not self.adjsys.Execute()):
