@@ -264,7 +264,7 @@
 		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0" />
 		<Maneuver yaw="0" pitch="0" roll="0" />
 	</Thrust>
-	<Defense HudImage="af-hud.spr">
+	<Defense HudImage="afj-hud.spr">
 		<Hull strength="400000000" />
 	</Defense>
 	<Stats mass="60" momentofinertia="60" fuel="20000">
