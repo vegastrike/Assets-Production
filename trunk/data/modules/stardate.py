@@ -1,13 +1,11 @@
-def getFacCal(fac,stdt):									#FIXME: make docked faction dependent
+def getFacCal(fac,stdt):								#FIXME: add some other factions date systems....all ready to go :-)
 	"""takes a stardate string and returns a list of ints with
 	[year,month,date,hour,minute,second]"""
-	zeroyear = getZeroYear("faction")
-	styear = stdt[:stdt.find('.')-3]
-	styeardec = float(stdt[len(styear):])		#FIXME: only goes up to 1 stardate accuracy
-	return makeFacDate(int(zeroyear+int(styear)),styeardec,fac)
-
-def makeFacDate(year,frac,fac):
-	return [year] + getMDDHMS(frac,getDateSystem(fac),year,fac)
+	datesys = getDateSystem(fac)
+	facstdt = float(stdt)*datesys[3]
+	incyear = int(facstdt)/1000
+	year = incyear+getZeroYear("faction")
+	return [year] + getMDDHMS(facstdt-(incyear*1000),datesys,year,fac)
 
 def daysinMonth(monthsystem,month):
 	for mon in monthsystem:
@@ -64,11 +62,14 @@ def getDateSystem(faction):
 
 
 def getStarToDay(monthsystem):
-	"""returns a particlar races stardate to day ration"""
-	return daysinYear(monthsystem) / 1000.0	#FIXME: make faction dependent
+	"""returns a particlar races stardate to day ratio"""
+	return daysinYear(monthsystem) / 1000.0
 
 def getZeroYear(faction):
-	return 2003	#FIXME: make faction dependent
+	if faction == "confed":
+		return 2403
+	else:
+		return 2403
 
 def getLeap(year,faction):
 	if faction == "confed":
@@ -87,10 +88,14 @@ def getLeap(year,faction):
 			return list()
 
 def facDateSystems():
-	"""returns the date systems for all the factions with special ones"""
+	"""returns the date systems for all the factions with special ones.
+	It is a tuple, with the first item a list of (month,#days) tuples, the second
+	a tuple with (#hoursperday,#minutesperhour,#secondsperminute), the third is
+	a list of the names for the time divisions, and the last is the number of
+	cycles (years) per standard kilostardate."""
 	return {
 
 	"standard" :
-	([("January",31),("February",28),("March",31),("April",30),("May",31),("June",30),("July",31),("August",31),("September",30),("October",31),("November",30),("December",31)],(24,60,60),["year","month","week","day","hour","minute","second"])
+	([("January",31),("February",28),("March",31),("April",30),("May",31),("June",30),("July",31),("August",31),("September",30),("October",31),("November",30),("December",31)],(24,60,60),["year","month","week","day","hour","minute","second"],1)
 
 	}
