@@ -21,7 +21,7 @@
         </flightgroups>
 	<python>
 import bounty
-newmission = bounty.bounty (0, 0, 7285, 1, 0, 'pirate')
+newmission = bounty.bounty (0, 0, 7285, 1, 0, 'pirates')
 newmission=0
 
 </python>
