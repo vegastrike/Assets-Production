@@ -157,7 +157,7 @@ def generateBountyMission (path,fg,fac):
 		creds*=2
 		addstr+="#F#bases/fixers/hunter.spr#Talk with the Bounty Hunter#We will pay you on mission completion.  And as far as anyone knows-- we never met."
 		if (runaway):
-			addstr += '\nAlso-- we have information that the target may be informed about your attack and may be ready to run. Be quick!'
+			addstr += '#Also-- we have information that the target may be informed about your attack and may be ready to run. Be quick!'
 		addstr+="#\n"
 	writemissionsavegame(addstr+"import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %d, '%s', %s, '', '%s','%s')\ntemp=0\n"%(finalprice, runaway, diff, fac, str(path), fg,typ))
 	diffstr = ""
