@@ -171,20 +171,27 @@ class random_encounters:
       self.cur.lastsys=cursys
     for q in self.cur.quests:
       q.SignificantsNear(self.cur.sig_container)
-    import dynamic_universe
+    import dynamic_battle
     dynamic_battle.UpdateCombatTurn()
 
   def decideMode(self):
     myunit=VS.getPlayerX(self.cur_player)
-    if (myunit.isNull()):
+    if (not myunit):
       self.SetModeZero()
       return myunit
     significant_unit = self.cur.sig_container
-    if (significant_unit.isNull()):
+#        un=VS.getUnit(0);
+#        i=0
+#        while (un):
+#            print un.getName()
+#            i+=1
+#            un=  VS.getUnit(i)
+	
+    if (not significant_unit):
       un=VS.getUnit(self.cur.last_ship)
       if (self.DifferentSystemP()):
         un.setNull()
-      if (un.isNull ()):
+      if (not un):
         self.SetModeZero()
       else:
         sd = self.cur.significant_distance
@@ -211,9 +218,10 @@ class random_encounters:
   def DifferentSystemP(self):
     cursys=VS.getSystemFile()
     if (cursys==self.cur.lastsys):
-      return 1
+      return 0
     self.NewSystemHousekeeping(self.cur.lastsys,cursys)
     self.cur.lastsys=cursys
+    return 1
   def Execute(self):
     if (self.cur_player>=len(self.players)):
       self.AddPlayer()
