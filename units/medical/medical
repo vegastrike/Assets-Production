@@ -83,7 +83,7 @@
 			<import price=".8" pricestddev=".1" quantity="25" quantitystddev="20"/>
 		</Category>
 		<Category file="Research/Medical">
-			<import price="13" pricestddev="2" quantity="0" quantitystddev="2"/>
+			<import price="11" pricestddev="1" quantity="0" quantitystddev="2"/>
 		<!-- price these at 1/10 their normal price...-->
 		</Category>
 		<Category file="Research/Electronics">
