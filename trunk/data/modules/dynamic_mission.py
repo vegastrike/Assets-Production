@@ -135,7 +135,8 @@ def generateCargoMission (path, numcargos,category, fac):
 		category='generic'
 	writedescription("We need to deliver some %s cargo to the %s system. The mission is worth %d to us.  You will deliver it to a base owned by the %s"%(category, processSystem(path[-1]),creds,fac))
 	writemissionname("Cargo/Deliver_%s_to_%s"%(changecat(category),processSystem(path[-1])),path)
-
+def generateRescueMission(parth,fac,enfg,enfac):
+	pass
 def generateBountyMission (path,fg,fac):
 	typ = fg_util.RandomShipIn(fg,fac)
 	cap = faction_ships.isCapital(typ)
