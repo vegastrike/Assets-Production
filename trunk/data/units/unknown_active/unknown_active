@@ -9,9 +9,9 @@
 	<Sound>
 	</Sound>
 	<Defense>
-		<Armor front="450" right="400" left="400" back="400"/>
+		<Armor front="150" right="100" left="100" back="100"/>
 		<Shields front="100.000000" back="100.000000" left="100" right="100" recharge="1400.000000"/>
-		<Hull strength="1000.000000"/>
+		<Hull strength="100.000000"/>
 		<Cloak cloakmin="0" cloakrate=".1" cloakenergy="280"/>
 	</Defense>
 	<Stats mass="30.000000" momentofinertia="30.000000" fuel="600000000"></Stats>
