@@ -3,17 +3,6 @@ import Director
 import fg_util
 import vsrandom
 
-def contractMissionsFor(fac,minsysaway,maxsysaway):
-	fac=faction_ships.intToFaction(fac)
-	enemies = list(faction_ships.enemies[fac])
-	script=''
-	while len(enemies):
-		index=vsrandom.randrange(0,len(enemies))
-		script=contractMissionForTo(fac,enemies[index],minsysaway,maxsysaway)
-		if (script):
-			return script
-		del enemies[index]
-	return script
 
 #Credit to Peter Trethewey, master of python and all things nefarious
 def getSystemsKAwayNoFaction( start, k ):
@@ -28,7 +17,7 @@ def getSystemsKAwayNoFaction( start, k ):
 		pathtor=[]
 		for iind in range(len(set)):
 			i = set[iind]
-generateEscortMission			l = universe.getAdjacentSystemList(i)
+			l = universe.getAdjacentSystemList(i)
 			for jind in range(len(l)):
 				j=l[jind]
 				if not (j in set or j in r):
@@ -56,39 +45,40 @@ def getSystemsNAway (start,k,preferredfaction):
 def generatePatrolMission (path, numplanets):
 	###
 
-def generateEscortMission (path):
+def generateEscortMission (path,fg,fac):
 	###
 
 def generateCargoMission (path, contraband):
 	###
 
-def generateBountyMission (path):
+def generateBountyMission (path,fg,fac):
 	###
 
-def generateDefendMission (path):
+def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	###
 
-def contractMissionForTo (fac,enemy,minsysaway,maxsysaway):
-	"""Creates a mission for faction `fac' and against `enemy'"""
+def contractMissionsFor(fac,minsysaway,maxsysaway):
+	fac=faction_ships.intToFaction(fac)
+	enemies = list(faction_ships.enemies[fac])
 	script=''
 	cursystem = VS.getSystemFile()
 	thisfaction = VS.GetGalaxyFaction (cursystem)
 	preferredfaction=None
 	if (VS.GetRelation (fac,thisfaction)>0):
-		preferredfaction=fac#try to stay in this territory
+		preferredfaction=thisfaction#try to stay in this territory
 	l=[]
 	for i in range (minsysaway,maxsysaway+1):
-		l.append(getSystemsNAway(cursystem,i,preferredfaction)):
-	maxmissions=vsrandom.randrange(1,30) ###FIXME: choose a better number than 30.
-	#Note: not all maxmissions missions will be created: sometimes, conditions may not allow certain types missions to be created.
-	for cur in range(0,maxmissions):
-		rnd=vsrandom.random()
-		if (rnd<.5):
-			dist=0
-			path=[]
-		else:
-			dist=vsrandom.randrange(maxsysaway+1-minsysaway)
-			path=l[dist][len(l[dist])]
+		for j in getSystemsNAway(cursystem,i,preferredfaction):
+			import dynamic_battle
+			try:
+				l = dynamic_battle.persystemattacklist
+			except:
+				l= []
+			for k in l:
+				if (VS.GetRelation(fac,l[1][1])>0):
+					generateDefendMission(j,l[1][0],l[1][1],l[0][0],l[0][1])
+			for k in range(vsrandom.randrange(1,4)): ###FIXME: choose a better number than 4.
+				pass
 		if (rnd<.18):    # 18% - Patrol mission
 			generatePatrolMission(maxsysaway, minsysaway,vsrandom.randrange(4,10)):
 		elif (rnd<.41):  # 23% - Cargo mission
