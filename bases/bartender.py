@@ -16,8 +16,6 @@ tender={"default":('Hello! Lots of travellers about. Have yourself a seat and en
              "So what's your take on the war? A friend of mine in the Navy told me the Aera have the Rlaan on the ropes now. Won't be long before everything's quiet on that front. And when that happens, the Aera will bring all of their high-tech weapons to bear on us. Things aren't looking good.",
              "This fellow brought a jhorg in here yesterday. Ever heard about the jhorg? They're small scaly creatures from New Bremen that can mimic everything you say with perfect accuracy. Forget parrots, these things are better than tape recorders!",
              "A couple of goons from the Security Police came in here earlier looking for some guy named Jensen. Wouldn't say what it was about, but let me tell you, I was just as happy when they left. I swear, half the bar found excuses to be elsewhere the moment those two guys entered, and I don't blame them.",
-             "Some idiots from the ISO came in here yesterday handing out phamphlets and bothering the customers. They wouldn't take a hint, so I had them thrown out. I don't know who's worst, the ISO or those religious fanatics they fight with all the time.",
-             "You know about those Rlaan? Supposedly, they never attack unarmed vessels. Well, word is there's this rogue Rlaan cruiser hiding out near here. Fled to our side of the border when their own Star Force had enough of them. I hear it attacks anything or anyone that comes in its way.",
              "The pirates out on the frontier are getting more organized by the day. I hear they've overran entire systems and colonies. Some of the guys are placing bets on what will bring about our fall first. The pirates from within or the Aera from the outside?",
              "This captain of a Wayfarer came in here the other day, looking like she could really use a drink. It turned out she had been chased by pirates across three systems! Persistant little buggers, aren't they? And the militia wasn't much help.",
              "Every so often, a Rlaan comes in here. They have their own civilian sector pretty much like our own, and sometimes a couple of their privateers find their way across the border. But let me tell you, never give them beer. One of them had that, and he got into some sort of violent spasms and threw up over the whole bar. Not a pretty sight.",
@@ -31,6 +29,8 @@ tender={"default":('Hello! Lots of travellers about. Have yourself a seat and en
                    ),
         "pirate":("You've got a lot of nerve coming in here looking like that, pal! This joint enforces a strict dress-code. Here, put this eye-patch on before you cause a scene. And ruffle your hair a bit, or someone might think you're with the Navy!",
                   "If you have a weapon on you, make sure it remains out of sight. The crews of the Skalawag and the Black Death duked it out in here a couple of hours ago, and some people got killed. The last thing we need right now is someone waving his gun around.",
+                  "Some idiots from the ISO came in here yesterday handing out phamphlets and bothering the customers. They wouldn't take a hint, so I had them thrown out. I don't know who's worst, the ISO or those religious fanatics they fight with all the time.",
+             "You know about those Rlaan? Supposedly, they never attack unarmed vessels. Well, word is there's this rogue Rlaan cruiser hiding out near here. Fled to our side of the border when their own Star Force had enough of them. I hear it attacks anything or anyone that comes in its way.",
                   "What are ye pesterin' me for, pal? If you want to be a pirate, you should go talk to the three important-looking pirates in the next room! Wait a second...",
                   "Kasper Foch, now there's a guy you don't want to mess with. He's the pirate captain that entered an ion storm and flew out again without a scratch, while his three Militia pursuers were never heard of again. There's this story going around of how he single-handedly took out a Confederate Missile Cruiser.",
                   "There's a lot of deserters from the Navy around here these days. Punks they drafted off the street, taught how to fly and then handed a ship. You figure the guys at HQ would be smarter than that.",
@@ -41,8 +41,22 @@ tender={"default":('Hello! Lots of travellers about. Have yourself a seat and en
         "refinery":("Sorry for the broken glass on the floor. The base was shook up a bit a couple of hours ago. Apparently, some guy on approach lost control and crashed right into the side of the station. Don't worry, it's nothing our damage control crews can't handle, but the poor guy who crashed won't be flying again. Or breathing, for that matter."),
         "military":("A Russian Special Forces unit came through here this morning. Real quiet guys. Looked like they'd seen a lot of action. From what I could gather, they were going to catch a transport out of here and into the fray again later tonight.",
                     "This Army captain had a drink here yesterday. Tall guy from Mars. Now, I've seen a lot, but this guy... half his face, both of his legs and his left arm had all been replaced with cybernetics due to injuries he'd taken on the field. He looked a bit clumsy, but very strong. I swear, soon a soldier will do more good if he's blown to pieces, so that he can be rebuilt with machine parts.",
+                    "Some idiots from the ISO came in here yesterday handing out phamphlets and bothering the customers. They wouldn't take a hint, so I had them thrown out. I don't know who's worst, the ISO or those religious fanatics they fight with all the time.",
+                    "You know about those Rlaan? Supposedly, they never attack unarmed vessels. Well, word is there's this rogue Rlaan cruiser hiding out near here. Fled to our side of the border when their own Star Force had enough of them. I hear it attacks anything or anyone that comes in its way.",
                     "A couple of guys from the Confederate Air Force was here a while back. We don't get many of those here usually. They may rely on the Navy for transportation between planets, but those Air Force boys and girls are solid gold when it comes to campaigns planetside!",
-                    "Hey, are you a mercenary? We've got plenty of missions here for you to fly, if you're willing. The fleet is spread thin as it is, so if you want to do your part, you're more than welcome!",)
+                    "Hey, are you a mercenary? We've got plenty of missions here for you to fly, if you're willing. The fleet is spread thin as it is, so if you want to do your part, you're more than welcome!",),
+        "iso":("4B4ND0N TH3 R4NK5 0F TH3 18M 80URG301513! L1NU5 M4K35 C0MPUT3R5 F0R TH3 M0DERN PR0L3T4R14T3!",
+               "J00 H4V3 N0TH1NG T0 L053 8UT J00R CH41N5!",
+               "FR0M 34CH 4CC0RD1NG T0 TH31R M34N5, T0 34CH 4CC0RD1NG T0 TH31R N33D5",
+               "4LL P0W3R T0 TH3 P30P13",
+               "GR33D H4S P01S0N3D M3N'5 50UL5 -- H4S B4RR1C4D3D TH3 W0RLD W1TH H4T3 -- H45 G0053ST3PP3D US 1NT0 M1S3RY 4ND BL00D5H3D.",
+               "W3 H4V3 D3V3L0P3D 5P33D, BUT W3 H4V3 5HUT OUR53LV35 IN M4CH1N3RY TH4T G1V35 4BUND4NC3 H45 L3FT U5 1N W4NT. 0UR KN0WL3DG3 H45 M4D3 U5 CYNIC4L; OUR CL3V3RN355 H4RD 4ND UNKIND.",
+               "W3 THINK TOO MUCH 4ND F33L TOO LITTL3.",
+               "MOR3 TH4N M4CHIN3RY W3 N33D HUM4NITY.",
+               "MOR3 TH4N CL3V3RN355 W3 N33D KINDN355. WITHOUT TH353 QU4LITI35 LIF3 WILL B3 VIOL3NT 4ND 4LL WILL B3 LO55",
+               "W3 4R3 COMING OUT OF TH3 D4RKN355 INTO TH3 LIGHT!",
+               "W3 4R3 COMING INTO 4 N3W WORLD! LOOK UP H4NN4H! TH3 5OUL OF M4N H45 B33N GIV3N WING5 4ND 4T L45T H3 I5 B3GINNING TO FLY.",
+               )
         }
 
              
