@@ -30,7 +30,7 @@
 	<Sound>
 	</Sound>
 	<Stats mass="5.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
-	<Cockpit x="0" y="0" z="12"/>
+	<Cockpit file="light_cockpit.cpt" x="0" y="0" z="12"/>
 	<Computer yaw="98.000000" pitch="98.000000" roll="98.000000" afterburner="133.333328" maxspeed="42.666668">
 		<Radar itts="false" range="5000" cone=".25" color="false" error="0"/> 
 	</Computer>

@@ -1,5 +1,5 @@
 <Unit>
-	<cockpit file="light_cockpit.cpt"/>
+	<cockpit file="heavy-cockpit.cpt"/>
 	<Meshfile file="aevant.xmesh" />
 	<Thrust>
 		<Engine Afterburner="896.999969" Forward="234.399994" Retro="192.599995" Left="137.199997" Right="130.199997" Top="167.199997" Bottom="167.199997"/>
