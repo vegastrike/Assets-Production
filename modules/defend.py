@@ -112,6 +112,13 @@ class defend (Director.Mission):
                     self.targetiter=self.targetiter+1
                 if (self.NoEnemiesInArea (self.defendee)):
                     self.SuccessMission()
+    def initbriefing(self):
+        print "ending briefing"                
+    def loopbriefing(self):
+        print "loop briefing"
+        Briefing.terminate();
+    def endbriefing(self):
+        print "ending briefing"        
 		
 def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base):
     enq=random.randrange(minenquant,maxenquant)
