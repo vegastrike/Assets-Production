@@ -356,7 +356,7 @@
 </Appearance>
 </Bolt>
 
-<Bolt name="Ion" mountsize="heavy"> 
+<Bolt name="Ion" mountsize="medium"> 
 <Energy rate="16"  refire=".65">
 </Energy>
 <Damage rate="54" longrange="1">
