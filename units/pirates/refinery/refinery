@@ -164,6 +164,12 @@
 		<Category file="upgrades/Weapons/Beam_Arrays_Milspec">
 			<import price="1" pricestddev=".1" quantity="3" quantitystddev="1"/>
 		</Category>
+		<Category file="upgrades/Weapons/Turrets">
+			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
+		</Category>
+		<Category file="upgrades/Miscellaneous/SubUnits">
+			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
+		</Category>
 		<Category file="upgrades/Engines/Heavy">
 			<import price="1" pricestddev=".1" quantity="12" quantitystddev="6"/>
 		</Category>

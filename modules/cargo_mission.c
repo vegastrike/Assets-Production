@@ -118,7 +118,7 @@ module cargo_mission {
 	    quantity=1;
 	  }
 	  object list=_unit.getRandCargo(quantity,category);
-	  while ((_std.Int(_olist.at(list,5))>5)) {
+	  if (_olist.size(list)==0) {
 	    _olist.delete (list);
 	    list = _unit.getRandCargo(quantity);
 	  }
@@ -264,3 +264,4 @@ module cargo_mission {
 	  }
 	};
 }
+

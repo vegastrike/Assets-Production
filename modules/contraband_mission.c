@@ -29,7 +29,13 @@ module contraband_mission {
 	//END DEBUG
 	void initrandom (object category, int num_systems_away, float distance, float creds, int diff, int ships, float bad_pct, float mindistance, float maxdistance) {
 	  object list = _unit.getRandCargo (1,category);
-	  object carg= _olist.at (list,0);
+          object carg;
+          if (_olist.size (list)>0) {
+	    carg= _olist.at (list,0);
+          }else {
+            carg = _string.new();
+            _io.sprintf (carg,"Slaves");
+          }
 	  _olist.delete (list);
 	  init (carg, num_systems_away,distance,creds,diff,ships, bad_pct, mindistance,maxdistance);
 	};
@@ -238,9 +244,13 @@ module contraband_mission {
 					while (j<cargonum) {
 						rndint=random.randomint(1,10);
 						randcargo=_unit.getRandCargo(rndint);
-						if (!_string.equal (cargoname,_olist.at (randcargo,0))) {
-						  rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
-						}
+                                                if (_olist.size(randcargo)>0) {
+  						  if (!_string.equal (cargoname,_olist.at (randcargo,0))) {
+						    rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
+						  }
+                                                }
+                                                _olist.delete (randcargo);
+
 						j=j+1;
 					}
 					j=0;
@@ -248,10 +258,14 @@ module contraband_mission {
 						rndint=random.randomint(1,10);
 
 						randcargo=_unit.getRandCargo(rndint);
-						if (!_string.equal (cargoname,_olist.at (randcargo,0))) {
-						  rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
-						}
-						j=j+1;
+                                                if (_olist.size (randcargo)>0) {
+						  if (!_string.equal (cargoname,_olist.at (randcargo,0))) {
+						    rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
+						  }
+						  j=j+1;
+                                                }
+                                                _olist.delete (randcargo);
+
 					}
 					i=i+1;
 				}

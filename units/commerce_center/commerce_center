@@ -201,6 +201,12 @@
 		<Category file="upgrades/Weapons/Mount_Enhancements">
 			<import price="1" pricestddev=".1" quantity="10" quantitystddev="5"/>
 		</Category>
+		<Category file="upgrades/Weapons/Turrets">
+			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
+		</Category>
+		<Category file="upgrades/Miscellaneous/SubUnits">
+			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
+		</Category>
 		<Category file="upgrades/Engines/Light">
 			<import price="1" pricestddev=".1" quantity="20" quantitystddev="10"/>
 		</Category>
