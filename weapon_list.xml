@@ -32,7 +32,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="UnknownBeam" mountsize="heavy"> 
+<Beam name="UnknownBeam" > 
 <Energy rate="80" stability="14" refire="2">
 </Energy>
 <Damage rate="40" phasedamage="50" longrange=".5">
@@ -42,7 +42,8 @@
 <Appearance file="weapons/unknown_beam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a="1" >
 </Appearance>
 </Beam>
-<Bolt name="UnknownBolt" mountsize="heavy"> 
+<!-- below has no mountsize to fit on any ship -->
+<Bolt name="UnknownBolt"> 
 <Energy rate="40" stability="6" refire=".7">
 </Energy>
 <Damage rate="0" phasedamage="50" longrange=".8">
