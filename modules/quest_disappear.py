@@ -23,6 +23,7 @@ class quest_disappear (quest.quest):
                 if (size<1000):
                     size=1000
                 VS.playAnimation("explosion_wave.ani",pos,size)
+                VS.musicPlaySong('../music/galacticbattle.mp3')
 
     #not currently used
     def setDroneNear (self,playa):
