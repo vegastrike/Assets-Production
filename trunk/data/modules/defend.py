@@ -109,7 +109,7 @@ class defend (Director.Mission):
                 tempfaction=self.protectivefaction
                 if (tempfaction==''):
                     tempfaction = faction_ships.get_enemy_of(self.faction)
-            self.adjsys=go_somewhere_significant (self.you,self.defend,self.distance_from_base,self.defend,tempfaction)
+            self.adjsys=go_somewhere_significant (self.you,self.defend,self.distance_from_base,self.defend or self.defend_base,tempfaction)
             self.adjsys.Print ("You must visit the %s","defend","docked around the %s", 0)
             self.defendee=self.adjsys.SignificantUnit()
         else:
