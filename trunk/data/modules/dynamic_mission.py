@@ -2,8 +2,11 @@ import VS
 import Director
 import fg_util
 import vsrandom
+import faction_ships
+import universe
 
 plr=0
+basefac='neutral'
 
 #Credit to Peter Trethewey, master of python and all things nefarious
 def getSystemsKAwayNoFaction( start, k ):
@@ -55,13 +58,13 @@ def processSystem(sys):
 def writemissionname(name,path):
 	if len(path)<=1:
 		name+=" - In System"
-	Director.pushSaveSting(plr, "mission_names", name)
+	Director.pushSaveString(plr, "mission_names", name)
 	
 def writedescription(name):
-	Director.pushSaveSting(plr, "mission_descriptions", name)
+	Director.pushSaveString(plr, "mission_descriptions", name)
 	
 def writemissionsavegame (name):
-	Director.pushSaveSting(plr, "mission_scripts", name)
+	Director.pushSaveString(plr, "mission_scripts", name)
 
 def eraseExtras():
 	import sys
@@ -99,6 +102,8 @@ def generateCargoMission (path, category, fac):
 	launchcap=(vsrandom.random()>=.75)
 	creds=250*numcargos+500*diff+syscreds*len(path)+1000*(category.lower()=="contraband")
 	writemissionsavegame ("import cargo_mission\ntemp=cargo_mission.cargo_mission('%s', 0, %d, %d, %g, %d, 0, '%s', %s, '')\ntemp=0\n"%(fac, numcargos, diff, creds, launchcap, category, str(path)))
+	if (category==''):
+		category='generic'
 	writedescription("We need to deliver some %s cargo to the %s system. The mission is worth %d to us.  You will deliver it to a base owned by the %s"%(category, processSystem(path[-1]),creds,fac))
 	writemissionname("Deliver_%s_to_%s"%(category,processSystem(path[-1])),path[-1])
 
@@ -138,8 +143,8 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	writemissionname("Defend_%s_from_%s"%(defendfac, attackfac),path[-1])
 
 def contractMissionsFor(fac,minsysaway,maxsysaway):
-	fac=faction_ships.intToFaction(fac)
-	enemies = list(faction_ships.enemies[fac])
+	facnum=faction_ships.factionToInt(fac)
+	enemies = list(faction_ships.enemies[facnum])
 	script=''
 	cursystem = VS.getSystemFile()
 	thisfaction = VS.GetGalaxyFaction (cursystem)
@@ -151,12 +156,12 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 		for j in getSystemsNAway(cursystem,i,preferredfaction):
 			import dynamic_battle
 			try:
-				l = dynamic_battle.persystemattacklist
+				l = dynamic_battle.persystemattacklist[j]
 			except:
 				l= []
 			for k in l:
-				if (VS.GetRelation(fac,l[1][1])>0):
-					generateDefendMission(j,l[1][0],l[1][1],l[0][0],l[0][1])
+				if (VS.GetRelation(fac,k[1][1])>0):
+					generateDefendMission(j,k[1][0],k[1][1],k[0][0],k[0][1])
 			if preferredfaction:
 				for k in faction_ships.enemies[faction_ships.factiondict[thisfaction]]:
 					for m in fg_util.FGsInSystem(k,j[-1]):
@@ -179,24 +184,27 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 						f = fac
 					generateEscortMission(j,k,f)
 			for k in range(vsrandom.randrange(1,4)): ###FIXME: choose a better number than 4.
+				rnd=vsrandom.random()
 				if (rnd<.45):    # 45% - Patrol mission
-					generatePatrolMission(maxsysaway, minsysaway,vsrandom.randrange(4,10))
+					generatePatrolMission(j,vsrandom.randrange(4,10))
 				elif (rnd<.9):   # 45% - Cargo mission
-					generateCargoMission(path,true)
+					generateCargoMission(j,'',basefac)
 				elif (fac=='pirates'): # 10% - Contraband mission (cargo contraband)
-					generateCargoMission(path,false)
+					generateCargoMission(j,'Contraband',basefac)
 				else:            # 10% - Scout mission (patrol one planet)
-					generatePatrolMission(path,1)
+					generatePatrolMission(j,1)
 
-def CreateMissions(minsys=1,maxsys=4):
+def CreateMissions(minsys=0,maxsys=4):
 	eraseExtras()
 	i=0
 	global plr
-	plr=VS.GetPlayer()
-	un=VS.GetUnit(i)
+	plrun=VS.getPlayer()
+	plr=plrun.isPlayerStarship()
+	un=VS.getUnit(i)
 	while(un):
 		i+=1
-		if (un.isDocked(plr)):
+		if (un.isDocked(plrun)):
 			break
-		un=VS.GetUnit(i)
-	contractMissionsFor(plr.GetFactionNum(),minsys,maxsys)
+		un=VS.getUnit(i)
+	basefac=un.getFactionName()
+	contractMissionsFor(plrun.getFactionName(),minsys,maxsys)
