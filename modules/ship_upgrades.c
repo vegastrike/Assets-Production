@@ -136,6 +136,7 @@ module ship_upgrades {
         str=_olist.at(mylist,0);
         float temp=_unit.upgrade(un,str,inc,inc,false,true);
       }
+      inc=inc+1;
     }
     mylist = GetRandomHull();
     creds =upgradeHelper (un,mylist,0,creds,false);
