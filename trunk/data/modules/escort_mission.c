@@ -97,10 +97,7 @@ module escort_mission {
     }
   };
   void initrandom (object factionname, int missiondifficulty, float creds, float entime, bool insys) {
-    float targetdist = random.random(2000.0,20000.0);
-    if (insys) {
-      targetdist=200.0;
-    }
+    float targetdist = random.random(5000.0,20000.0);
     init (factionname,missiondifficulty, 6000.0, random.random(4000.0,8000.0), targetdist, creds,entime,insys);
   };
 
