@@ -1,7 +1,7 @@
 <Unit scale="800">
 
 <!--<Meshfile file="glow_stable.xmesh"/>-->
-<Meshfile file="wh-engine.xmesh"/>
+<Meshfile file="cyl_stable.xmesh"/>
 
 	<Defense>
 		<Armor front="100000" right="80000" left="80000" back="100000"/>
