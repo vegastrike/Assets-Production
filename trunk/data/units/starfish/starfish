@@ -1,0 +1,40 @@
+<Unit>
+<Meshfile file="starfish.xmesh"/>
+	<cockpit file="centurion-cockpit.cpt" x="73" y="-58" z="128"/>
+	<Thrust>
+		<Engine Afterburner="800.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
+		<Maneuver yaw="3415.500000" pitch="3415.500000" roll="3415.500000"/>
+	</Thrust>
+	<Sound> </Sound>
+	<Defense>
+		<Armor front="100" right="80" left="80" back="100"/>
+		<Shields front="250" right="250" left="250" back="250" recharge="4.166667"/>
+		<Hull strength="250"/>
+	</Defense>
+	<Stats mass="7" momentofinertia="7" fuel="20000"></Stats>
+	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="120.000000" maxspeed="42.000000"/>
+	<Energy>
+		<Reactor recharge="47" limit="470"/>
+	</Energy>
+
+       
+
+<!-- new elements added -->
+<Light file="supernova.bmp" x="70.135788" y="-51.618351" z="128.020981" size="1.800000"/>
+<Light file="supernova.bmp" x="73.032700" y="-53.538593" z="128.020996" size="2.500000"/>
+<Light file="supernova.bmp" x="72.184456" y="-57.051525" z="128.020981" size="2.400000"/>
+<Light file="supernova.bmp" x="67.993668" y="-53.654484" z="128.020981" size="1.800000"/>
+<Light file="supernova.bmp" x="68.948051" y="-56.513638" z="128.020996" size="1.800000"/>
+Mount weapon="Laser" size="Light" x="73.340202" y="-42.339325" z="130.633942" />
+<Mount weapon="Laser" size="Light" x="64.594078" y="-43.729057" z="130.638458" />
+<Mount weapon="Laser" size="Light" x="59.038506" y="-50.511597" z="130.628922" />
+<Mount weapon="Laser" size="Light" x="58.928894" y="-59.264542" z="130.630249" />
+<Mount weapon="Laser" size="Light" x="81.149330" y="-46.512794" z="130.674088" />
+<Mount weapon="Laser" size="Light" x="64.681908" y="-65.460289" z="130.600769"
+/>
+<Mount weapon="Laser" size="Light" x="73.020004" y="-66.895386" z="130.546646" />
+<Mount weapon="Laser" size="Light" x="80.138565" y="-62.772926" z="130.540787" />
+<Mount weapon="Laser" size="Light" x="83.533234" y="-55.176521" z="130.616699" />
+<Mount weapon="Laser" size="Light" x="80.773376" y="-47.004581" z="130.621384" />
+<Dock x="70.610542" y="-54.240009" z="128.020981" size="5.000000" qj="1" rk="-1"/>
+</Unit>

@@ -20,7 +20,7 @@
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
-                <flightgroup name="blue" faction="aera" type="lekra" ainame="default" waves="1" nr_ships="5">
+                <flightgroup name="blue" faction="aera" type="lekra" ainame="default" waves="1" nr_ships="1">
 			<pos x="31000" y="000" z="0000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
