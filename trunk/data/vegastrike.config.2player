@@ -163,6 +163,14 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 		<bind joystick="0" button="2" modifier="none" command="MissileKey" />
 
 		<bind joystick="0" button="3" modifier="none" command="TargetKey" />
+		<bind mouse="0" player="1" button="0" modifier="none" command="FireKey" />
+		<bind mouse="0" button="1" modifier="none" command="ABKey" />
+		<bind mouse="0" button="2" modifier="none" command="MissileKey" />
+
+		<bind mouse="0" button="3" modifier="none" command="TargetKey" />
+		<axis name="x" mouse="0" axis="0" inverse="false" />
+		<axis name="y" mouse="0" axis="1" inverse="false" />
+
 		<bind joystick="1" button="0" modifier="none" command="FireKey" />
 		<bind joystick="1" button="1" modifier="none" command="ABKey" />
 		<bind joystick="1" button="2" modifier="none" command="MissileKey" />
@@ -551,6 +559,9 @@ This is done many times later in this config file
 			<var name="explode" value="explosion.wav"/>
 		</section>
 		<section name="joystick">
+
+<var name="warp_mouse" value="true"/>
+<var name="mouse_sensitivity" value="5"/>
 			<var name="deadband" value="0.05"/>
 			<var name="debug_digital_hatswitch" value="false"/>
 			<var name="force_feedback" value="false" />
