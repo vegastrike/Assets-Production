@@ -163,6 +163,9 @@ def makeVarList(ls):
 	for later reference"""
 	return string.join([str(vsrandom.randrange(0,4194304))]+ls,',')
 
+def formatStarDate(stri):
+	"""formats a stardate string for appending to the news story"""
+	return "\\\\\\Story first broadcast:\\StarDate " + stri[:stri.find('.')+3]
 
 # ------------------------------------------------------------------------------
 # Dictionary and Validation functions
@@ -364,7 +367,7 @@ def processNewsTuple(newsstring,randint):
 	print 'lsing '+ str(ls)
 	ns = makeDynamicNews(string.atof(ls[0]),ls[1],ls[2],ls[3],ls[4],string.atoi(ls[5]),string.atof(ls[6]),ls[7],ls[8],ls[9],ls[10],ls[11],ls[12],randint)
 	print ns
-	return ns
+	return ns + formatStarDate(ls[0])
 #Added flightgroups as the last few arguments
 
 
