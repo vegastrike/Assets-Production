@@ -20,30 +20,35 @@
 	</Energy>
 	<Jump delay="1" jumpenergy="9000"/>              
 
+<Light file="supernova.bmp" x="-9.109605" y="-0.931502" z="-41.999996" size="5.350028"/>
+<Light file="supernova.bmp" x="-13.133830" y="-0.661709" z="-42.000004" size="3.949997"/>
+<Light file="supernova.bmp" x="-16.263153" y="-0.345863" z="-42.000000" size="3.38"/>
+<Light file="supernova.bmp" x="9.109605" y="-0.931502" z="-41.999996" size="5.350028"/>
+<Light file="supernova.bmp" x="13.133830" y="-0.661709" z="-42.000004" size="3.949997"/>
+<Light file="supernova.bmp" x="16.263153" y="-0.345863" z="-42.000000" size="3.38"/>
+
+<Subunit file="turret" x="-14.099874" y="1.333333" z="-33.560551" ri="0.906831" rj="0.088045" rk="0.412196" qi="-0.099681" qj="0.994996" qk="0.006766"/>
+<Subunit file="turret" x="-17.680523" y="0.160790" z="-37.293293" ri="-0.067721" rj="0.000000" rk="-0.997704" qi="-0.997704" qj="0.000000" qk="0.067721"/>
+<Subunit file="turret" x="14.099874" y="1.333333" z="-33.560551" ri="0.906831" rj="0.088045" rk="0.412196" qi="-0.099681" qj="0.994996" qk="0.006766"/>
+<Subunit file="turret" x="-9.000000" y="1.000000" z="8.535973" ri="0.974125" rj="0.000000" rk="0.226010" qi="-0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret" x="9.000000" y="1.000000" z="8.535973" ri="-0.793101" rj="0.000000" rk="-0.609090" qi="0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret" x="9.501051" y="1.000000" z="19.850870" ri="0.793101" rj="0.000000" rk="0.609090" qi="0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret" x="9.000000" y="1.000000" z="32.535973" ri="-0.793101" rj="0.000000" rk="-0.609091" qi="0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret" x="-9.000000" y="1.000000" z="32.535973" ri="0.974125" rj="0.000000" rk="0.226010" qi="-0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret" x="-9.000000" y="1.000000" z="20.535973" ri="0.974125" rj="0.000000" rk="0.226011" qi="-0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret" x="-9.000000" y="1.000000" z="-15.464027" ri="0.974125" rj="0.000000" rk="0.226010" qi="-0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret" x="-9.000000" y="1.000000" z="-3.464028" ri="0.974125" rj="0.000000" rk="0.226011" qi="-0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret" x="9.000000" y="1.000000" z="-3.464028" ri="-0.793101" rj="0.000000" rk="-0.609090" qi="0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret" x="9.000000" y="1.000000" z="-15.464027" ri="-0.793101" rj="0.000000" rk="-0.609090" qi="0.000000" qj="1.000000" qk="0.000000"/>
+<Subunit file="turret" x="14.099874" y="-2.000000" z="-38.560551" ri="-0.691966" rj="-0.201551" rk="-0.693225" qi="0.263075" qj="-0.964610" qk="0.017857"/>
+<Subunit file="turret" x="-14.099874" y="-2.000000" z="-38.560551" ri="-0.067721" rj="0.000000" rk="-0.997704" qi="-0.263075" qj="-0.964610" qk="0.017857"/>
+<Mount weapon="Antimatter" size="Light" x="4.833333" y="-5.121090" z="38.000000" ri="-0.000000" rj="0.000000" rk="1.000000" qi="0.809017" qj="0.587785" qk="0.000000"/>
+<Mount weapon="LR_BeamHvy" size="Light" x="3.166667" y="-5.121090" z="38.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.309017" qj="-0.951057" qk="0.000000"/>
+<Mount weapon="LR_BeamHvy" size="Light" x="-4.833333" y="-5.121090" z="38.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.309017" qj="-0.951057" qk="0.000000"/>
+<Mount weapon="Antimatter" size="Light" x="-3.166667" y="-5.121090" z="38.000000" ri="-0.000000" rj="0.000000" rk="1.000000" qi="0.809017" qj="0.587785" qk="0.000000"/>
 
 	<Hold volume="100000000000">
-	    <Category file="food">
-		<Import price="3" pricestddev="1.4" quantity="24" quantitystddev="10"/>
-	    </Category>
-	    <Category file="upgrades">
-		<Import price="1" quantity="1"/>
-		<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>
-		<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
-		<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
-		<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
-	     </Category>
-	     <Category file="missions">
-		<Cargo file="mission/cargo.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
-		<Cargo file="mission/inc.mission" price="1000" quantity="100" mass=".1" volume=".1"/>
-		<Cargo file="mission/dec.mission" price="1000" quantity="100" mass=".1" volume=".1"/>
-	     </Category>
-	     <Category file="weapons">
-		<Cargo file="weapons" price="200" quantity="100" mass=".1" volume=".1"/>
-	     </Category>
-	     <Category file="starships">
-		<Cargo file="nova" price="15000" quantity="10" mass="2" volume="500"/>
-		<Cargo file="tian" price="10000" quantity="20" mass="1" volume="400"/>
-	     </Category>
+
 	</Hold>
 
 </Unit>
