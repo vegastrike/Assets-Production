@@ -165,7 +165,7 @@
 		<Category file="Supplies/Medical_Supplies">
 			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
-		<Category file="Supplies/Medical_Supplies">
+		<Category file="Supplies/Aera_Medical_Supplies">
 			<import price="1.9" pricestddev=".1" quantity="3" quantitystddev="3"/>
 		</Category>
 		<Category file="Electronics">
@@ -184,6 +184,7 @@
 			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Contraband">
+			<Cargo file="Pilot" price="1000" quantity="0" mass=".01" volume="1"/>
 			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="starships/Aera/Light">

@@ -40,7 +40,7 @@
 <Subunit file="turretLR_PminusBeam" x="0.000000" y="300.000000" z="240.000000" ri="0.554700" rj="0.000000" rk="-0.832050" qi="0.000000" qj="1.000000" qk="0.000000"/>
 	<Hold volume="100000000">
 		<Category file="Natural_Products/Food">
-			<import price=".3" pricestddev=".2" quantity="20" quantitystddev="15"/>
+			<import price=".3" pricestddev=".2" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Natural_Products/Aera_Food">
 			<import price="2.15" pricestddev=".2" quantity="20" quantitystddev="15"/>
@@ -105,8 +105,8 @@
 		<Category file="Supplies/Construction_Supplies">
 			<import price=".2" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
-		<Category file="Supplies/Medical_Supplies">
-			<import price=".8" pricestddev=".1" quantity="25" quantitystddev="20"/>
+		<Category file="Supplies/Aera_Medical_Supplies">
+			<import price="1.6" pricestddev=".1" quantity="25" quantitystddev="20"/>
 		</Category>
 		<Category file="Research/Medical">
 			<import price="10" pricestddev="1" quantity="0" quantitystddev="2"/>
