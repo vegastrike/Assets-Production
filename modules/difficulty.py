@@ -38,6 +38,11 @@ class difficulty:
   
   def Execute(self):
 #    for i in range(len(self.creds)): #uncomment this if you want to check all in 1 frame
+      if (len(self.creds)<=0):
+        if (self.i!=-1):
+          self.i=-1
+          raise IndexError("Empty creds and diff arrays in difficulty module\nUnable to find any players...")
+        return
       i=self.i #comment this if you want to check all in 1 frame
       un=VS.getPlayerX(i)
       newcreds=un.getCredits()
