@@ -1960,7 +1960,7 @@
 			</sector>
 			<sector name="blockadepointtango">
 				<var name="sun_radius" value="28000"/>
-			      <var name="faction" value="confed"/> 
+			      <var name="faction" value="rlaan"/> 
 				<var name="compactness" value="2.3"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="3"/>
@@ -1996,7 +1996,7 @@
 			</sector>
 			<sector name="blockadepointalpha">
 				<var name="sun_radius" value="41000"/>
-			      <var name="faction" value="confed"/> 
+			      <var name="faction" value="rlaan"/> 
 				<var name="compactness" value="5.2"/>
 				<var name="num_stars" value="2"/>
 				<var name="num_gas_giants" value="1"/>
@@ -2032,7 +2032,7 @@
 			</sector>
 			<sector name="blockadepointcharlie">
 				<var name="sun_radius" value="15000"/>
-			      <var name="faction" value="confed"/> 
+			      <var name="faction" value="rlaan"/> 
 				<var name="compactness" value="2.9"/>
 				<var name="num_stars" value="2"/>
 				<var name="num_gas_giants" value="1"/>
@@ -4497,7 +4497,7 @@
 			</sector>
 			<sector name="blockadepointtango">
 				<var name="sun_radius" value="20000"/>
-				<var name="faction" value="neutral"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="compactness" value="2.3"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="3"/>
