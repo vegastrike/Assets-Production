@@ -494,7 +494,7 @@
 	</Point>
 	<Point>
 		<Location x="30.000000" y="20.000000" z="131.568756"/>
-		<Normal i="nan" j="nan" k="nan"/>
+		<Normal i="-.98" j="-.16" k="-.07"/>
 	</Point>
 	<Point>
 		<Location x="29.864960" y="20.000000" z="188.764664"/>
@@ -510,7 +510,7 @@
 	</Point>
 	<Point>
 		<Location x="-45.000000" y="20.000000" z="103.905190"/>
-		<Normal i="nan" j="nan" k="nan"/>
+		<Normal i=".85" j="0" k="-.511497"/>
 	</Point>
 	<Point>
 		<Location x="-45.000000" y="30.000000" z="103.905190"/>
@@ -534,11 +534,11 @@
 	</Point>
 	<Point>
 		<Location x="-30.000000" y="40.000000" z="131.568756"/>
-		<Normal i="nan" j="nan" k="nan"/>
+		<Normal i=".98" j="0" k="-.16"/>
 	</Point>
 	<Point>
 		<Location x="-30.000000" y="20.000000" z="131.568756"/>
-		<Normal i="nan" j="nan" k="nan"/>
+		<Normal i=".98" j="0" k="-.16"/>
 	</Point>
 	<Point>
 		<Location x="-30.130266" y="20.000000" z="188.764664"/>
@@ -554,7 +554,7 @@
 	</Point>
 	<Point>
 		<Location x="30.000000" y="40.000000" z="131.568756"/>
-		<Normal i="nan" j="nan" k="nan"/>
+		<Normal i="-0.999374" j="0.000000" k="-0.035386"/>
 	</Point>
 	<Point>
 		<Location x="15.000000" y="40.000000" z="188.764664"/>
@@ -1334,7 +1334,7 @@
 	</Point>
 	<Point>
 		<Location x="15.000000" y="20.000000" z="-69.177139"/>
-		<Normal i="nan" j="nan" k="nan"/>
+		<Normal i="0.319451" j="0.820226" k="0.474532"/>
 	</Point>
 	<Point>
 		<Location x="30.000000" y="14.157993" z="-69.177139"/>
