@@ -173,8 +173,10 @@ def SetDifficulty(diff):
    _difficulty=diff
 def playSound(soundName,loc,speed):
    print "playSound"
-def playAnimation(aniName,loc,size,growth):
+def playAnimation(aniName,loc,size):
    print "playAnimation"
+def playAnimationGrow(aniName,loc,size,growth):
+   print "playAnimationGrow"
 def terminateMission(success):
    print "terminateMission"
 def getPlayer():
