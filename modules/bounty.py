@@ -107,14 +107,14 @@ class bounty (Director.Mission):
 	        VS.IOmessage (4,"bounty mission",self.mplay,"Scanners are picking up a metallic object!")
 	        VS.IOmessage (5,"bounty mission",self.mplay,"Coordinates appear near %s" % (localdestination))
 	
-	def initbriefing():
+	def initbriefing(self):
 		print "ending briefing"                
 	
-	def loopbriefing():
+	def loopbriefing(self):
 		print "loop briefing"
 		Briefing.terminate();
 	
-	def endbriefing():
+	def endbriefing(self):
 		print "ending briefing"        	  
 	
 
