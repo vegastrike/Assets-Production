@@ -125,6 +125,17 @@ def _tmpint(str,default):
         return int(str)
     except:
         return default
+def significantUnits():
+	iter= VS.getUnitList()
+	un = iter.current()
+	ret = []
+	while (un):
+		if (un.isSignificant()):
+			ret+=[un]
+		iter.advance()
+		un= iter.current()
+	return ret
+	
 def GetNumSignificantsForSystem (cursys):
     numjmp=VS.GetNumAdjacentSystems(cursys)
     return _tmpint(VS.GetGalaxyProperty(cursys,"num_planets"),3)+_tmpint(VS.GetGalaxyProperty(cursys,"num_moons"),4)+_tmpint(VS.GetGalaxyProperty(cursys,"num_gas_giants"),2)+_tmpint(VS.GetGalaxyProperty(cursys,"num_starbases"),1)+numjmp
