@@ -1,0 +1,37 @@
+<Unit>
+	<Hold volume="100000000000">
+	    <Category file="food">
+		<Cargo file="foodstuffs" price="200" quantity="1" mass=".01" volume="1"/>
+		<Cargo file="grain" price="100" quantity="1" mass=".01" volume="1"/>
+		<Cargo file="candy" price="25" quantity="1000" mass=".005" volume=".5"/>
+		<Cargo file="fruit" price="25" quantity="1000" mass="2" volume="2"/>
+		<Cargo file="moldy_fruit" price="25" quantity="1000" mass="2" volume="2"/>
+	    </Category>
+	    <Category file="upgrades">
+		<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>
+		<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
+		<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
+		<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
+	     </Category>
+	     <Category file="missions">
+		<Cargo file="mission/cargo/confed_cargo_easy.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+		<Cargo file="mission/cargo/confed_cargo_hardest.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+		<Cargo file="mission/cargo/confed_cargo_medium.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+		<Cargo file="mission/cargo/aera_cargo_easy.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+		<Cargo file="mission/cargo/aera_cargo_hardest.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+		<Cargo file="mission/cargo/aera_cargo_medium.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+		<Cargo file="mission/cargo/rlaan_cargo_easy.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+		<Cargo file="mission/cargo/rlaan_cargo_hardest.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+		<Cargo file="mission/cargo/rlaan_cargo_medium.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+		<Cargo file="mission/bounty.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+	     </Category>
+	     <Category file="weapons">
+		<Cargo file="weapons" price="200" quantity="100" mass=".1" volume=".1"/>
+	     </Category>
+	     <Category file="starships">
+		<Cargo file="nova" price="15000" quantity="1" mass="2" volume="500"/>
+		<Cargo file="tian" price="10000" quantity="1" mass="1" volume="400"/>
+	     </Category>
+	</Hold>
+
+</Unit>
