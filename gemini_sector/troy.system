@@ -37,4 +37,5 @@
         </planet>
         <planet name="JumpToWar" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="10" x="16000" day="240" destination="gemini_sector/war"/>
         <planet name="Nav 8" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="0" day="240" />
+        <planet name="JumpToGemini" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="5000" y="16000" day="240" destination="gemini_sector/gemini"/>
 </system>
