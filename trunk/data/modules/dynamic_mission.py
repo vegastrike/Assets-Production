@@ -2,8 +2,6 @@ import VS
 import Director
 import fg_util
 import vsrandom
-	
-
 
 def contractMissionsFor(fac,minsysaway,maxsysaway):
 	fac=faction_ships.intToFaction()
@@ -66,3 +64,14 @@ def contractMissionForTo (fac,enemy,minsysaway,maxsysaway):
 		for j in getSystemsNAway(cursystem,i,preferredfaction):
 			pass
 	return script
+
+def CreateMissions(minsys=1,maxsys=4):
+	i=0
+	plr=VS.GetPlayer()
+	un=VS.GetUnit(i)
+	while(un):
+		i+=1
+		if (un.isDocked(plr)):
+			break
+		un=VS.GetUnit(i)
+	contractMissionsFor(plr.GetFactionNum(),minsys,maxsys)
