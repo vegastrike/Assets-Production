@@ -17,7 +17,7 @@
 <!--<attenuated red=".00000001" blue=".00000015"/>-->
 <attenuated red="0" blue=".0000001"/>
 </Light>	
-        <planet name="sun" file="sun.bmp" radius="25000" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0 1l">
+        <planet name="sun" file="sol/sun.png" radius="25000" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0 1l">
 	<Atmosphere radius="25000"/>
 	<ContinuousTerrain file="continuousterrain.txt" mass=".00000100" y="000
 0" z="30000" qi="0" qj="0" qk="1" ri="0" rj="1" rk="0">
@@ -28,7 +28,7 @@
 
 	</ContinuousTerrain>
 
-		<planet name="sargh" file="earth.bmp" radius="1440" gravity="20" ri="100000" rk="100000">
+		<planet name="sargh" file="sol/earth.png" radius="1440" gravity="20" ri="100000" rk="100000">
 <!--		<atmosphere/>-->
 		</planet>
 	</planet>
