@@ -1,7 +1,15 @@
 <Unit>
 
 <Meshfile file="relay.xmesh"/>
-       
+<Dock x="-30" y="16" z="0" size="5"/>
+<Dock x="-25" y="16" z="0" size="5"/>
+<Dock x="-20" y="16" z="0" size="5"/>
+<Dock x="-15" y="16" z="0" size="5"/>
+<Dock x="30" y="16" z="0" size="5"/>
+<Dock x="25" y="16" z="0" size="5"/>
+<Dock x="20" y="16" z="0" size="5"/>
+<Dock x="15" y="16" z="0" size="5"/>
+        
 
 <!-- new elements added -->
 <Subunit file="turret" x="0.638871" y="22.638174" z="-0.317480" ri="-0.394286" rj="0.000000" rk="-0.918988" qi="0.130978" qj="0.989791" qk="-0.056195"/>
