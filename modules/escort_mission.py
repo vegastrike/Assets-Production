@@ -40,7 +40,8 @@ class escort_mission (Director.Mission):
 		#					       self.you,
 		#					       "")
 		L=launch.Launch()
-		L.fg ="Escort"+str(escort_num)
+		L.fgappend = str(escort_num)
+		L.fg ="Escort"
 		L.faction=self.faction
 		if (dynfg=='' and dyntype==''):
 			L.type = faction_ships.getRandomFighter("merchant")

@@ -492,7 +492,7 @@ def launchBaseStuck (type,faction):
 	un=VS.getPlayer()
 	maxspeed=100.1
 	if (un):
-		maxspeed=un.maxAfterburnerSpeed+30.1
+		maxspeed=un.maxAfterburnerSpeed()+30.1
 	un.setNull();
 	launchBaseOrbit (type,faction,un.GetPosition(),maxspeed*180,0,un)
 def launchBase (type,num,faction,system,sig_units,numfighters):

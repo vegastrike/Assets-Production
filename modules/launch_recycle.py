@@ -67,8 +67,8 @@ def look_for (fg, faction, numships,myunit,  pos, gcd,newship=[None]):
     i-=1
   return (numships,pos)
 
-def LaunchNext (fg, fac, type, ai, pos, logo,newshp=[None]):
-  newship = launch.launch (fg,fac,type,ai,1,1,pos,logo)
+def LaunchNext (fg, fac, type, ai, pos, logo,newshp=[None],fgappend=''):
+  newship = launch.launch (fg+fgappend,fac,type,ai,1,1,pos,logo)
   import dynamic_universe
   dynamic_universe.TrackLaunchedShip(fg,fac,type,newship)
   rad=newship.rSize ()
@@ -82,14 +82,15 @@ def launch_dockable_around_unit (fg,faction,ai,radius,myunit,garbage_collection_
 			return launch_types_around (fg,faction,[i],ai,radius,myunit,garbage_collection_distance,logo)
 	return launch.launch_wave_around_unit(fg,faction,'truck',ai,1,radius,radius*1.5,myunit,logo)
 
-def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_collection_distance,logo):
+def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_collection_distance,logo,fgappend=''):
   pos = whereTo(radius, myunit)
   nr_ships=0
   for t in typenumbers:
     nr_ships+=t[1]
   print "before"+str(nr_ships)
   retcontainer=[None]
-  (nr_ships,pos) = look_for (fg,faction,nr_ships,myunit,pos,garbage_collection_distance,retcontainer)
+  if (fgappend==''):
+    (nr_ships,pos) = look_for (fg,faction,nr_ships,myunit,pos,garbage_collection_distance,retcontainer)
   print "after "+str(nr_ships)+ str(retcontainer)
   count=0
   ret=retcontainer[0]
@@ -99,7 +100,7 @@ def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_
       num=nr_ships
     for i in range(num):
       newship=[None]
-      pos = LaunchNext (fg,faction,tn[0], ai, pos,logo,newship)
+      pos = LaunchNext (fg,faction,tn[0], ai, pos,logo,newship,fgappend)
       if (i==0):
         ret=newship[0]
     nr_ships-=num

@@ -93,7 +93,7 @@ class bounty (Director.Mission):
 	      VS.terminateMission(0)
 	      return
 	    else:
-	      if (self.you.getSignificantDistance(significant)<10000.0):
+	      if (self.you.getSignificantDistance(significant)<self.adjsys.distfrombase):
 		if (self.newship==""):
 		  self.newship=faction_ships.getRandomFighter(self.faction)
 		#self.enemy=launch.launch_wave_around_unit("Shadow",self.faction,self.newship,"default",1+self.difficulty,3000.0,4000.0,significant)
@@ -108,7 +108,7 @@ class bounty (Director.Mission):
 		L.maxradius = 4000.0
 		self.enemy=L.launch(significant)
 		self.you.SetTarget(self.enemy)
-		self.obj=VS.addObjective("Destroy the Shadow %s ship." % (self.enemy.getName ()))
+		self.obj=VS.addObjective("Destroy the %s ship." % (self.enemy.getName ()))
 		if (self.enemy):
 		  if (self.runaway):
 		    self.enemy.SetTarget(significant) #CHANGE TO SetTarget ==>NOT setTarget<==
@@ -125,9 +125,12 @@ class bounty (Director.Mission):
 	      self.arrived=1
 	      if (self.newship=="" and self.dynfg==''):
 		      self.newship=faction_ships.getRandomFighter(self.faction)
-	      self.adjsys=go_somewhere_significant(self.you,0,500)
+	      self.adjsys=go_somewhere_significant(self.you,0,10000.0)
 	      localdestination=self.adjsys.SignificantUnit().getName()
-	      VS.IOmessage (3,"bounty mission",self.mplay,"You must destroy the %s unit in this system." % (self.newship))
+	      tmpfg=self.dynfg
+	      if len(tmpfg)==0:
+		      tmpfg="shadow"
+	      VS.IOmessage (3,"bounty mission",self.mplay,"You must destroy the %s unit in the %s flightgroup in this system." % (self.newship,tmpfg))
 	      if (self.runaway):	#ADD OTHER JUMPING IF STATEMENT CODE HERE
 	        VS.IOmessage (4,"bounty mission",self.mplay,"He is running towards the jump point.  Catch him!")
 	        VS.IOmessage (5,"bounty mission",self.mplay,"he is going to %s" % (localdestination))
