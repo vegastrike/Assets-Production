@@ -31,4 +31,5 @@
 <Mount weapon="Ion" size="Light Medium" x="-1.622411" y="-0.535396" z="10.406069" />
 <Mount weapon="DisruptorBeam" size="Medium" x="-6.561853" y="0.000000" z="1.594064" />
 <Mount weapon="meson" size="Light Medium" x="0.000000" y="4.545461" z="-4.466930" />
+<Mount weapon="Swarm" size="special-missile" x="0.000000" y="0.000000" z="-0.000000" ammo="20"/>	
 </Unit>
