@@ -11,11 +11,11 @@ echo http://vegastrike.sourceforge.net
 echo Information about key bindings and gameplay is contained in README
 choice Would you like to read the readme now
 if errorlevel==2 goto FICTION
-type README /p
+more README
 :FICTION
 choice Would you like to view the game fiction?
 if errorlevel==2 goto GF3
-type FICTION /p
+more FICTION
 
 :GF3
 choice Do you have a GeForce 3 
