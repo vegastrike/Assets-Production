@@ -21051,5 +21051,5 @@
 	<Vertex point="3003" s="0.7073010206222534" t="0.970930768176913"/>
 </Tri>
 </Polygons>
-
+<LOD meshfile="starrunner_720.xmesh" size="300"/>
 </Mesh>
