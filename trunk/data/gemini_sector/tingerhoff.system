@@ -1,6 +1,6 @@
 <system name="Tingerhoff" background="backgrounds/blue_galaxy1" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
 <Light>
-<ambient red=".3" green=".3" blue=".3"/>
+<ambient red="000.0" green="000.0" blue="000.0"/>
 <diffuse red="0.774596669241483" green="0.774596669241483" blue="1"/>
 <specular red="0.6" green="0.6" blue="1"/>
 </Light>
@@ -9,7 +9,7 @@
 0000" y="00.00" z="-14594814.000000"  Red="0.6" Green="0.6" Blue="1" ReflectNoLight="true" light="0"/>
 
 <Light>
-<ambient red=".3" green=".3" blue=".3"/>
+<ambient red="000.0" green="000.0" blue="000.0"/>
 <diffuse red="1" green="1" blue="1"/>
 <specular red="1" green="1" blue="1"/>
 </Light>
