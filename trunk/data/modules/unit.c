@@ -49,6 +49,27 @@ module unit {
 	}
 	return un;
   };
+  object getJumpPoint (int whichsignificant) {
+	object un;
+	int which=0;
+	int signum=0;
+	while (signum<whichsignificant) {
+		un=_unit.getUnit(which);
+		if (_std.isNull(un)) {
+			which=0;
+			if (signum==0){
+				_std.setNull(un);
+				return un;
+			}	
+		}else {
+			if (_unit.isJumppoint(un)) {
+				signum=signum+1;
+			}
+			which=which+1;			
+		}
+	}
+	return un;
+  };
   object obsolete_getNearestEnemy(object my_unit,float range){
     int ship_nr=0;
     float min_dist=9999999.0;
