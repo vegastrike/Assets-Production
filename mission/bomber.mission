@@ -1,0 +1,28 @@
+<mission>
+	<variables>
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="bomber" />
+		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+		<var name="system" value="sol_sector/polaris" />
+		<var name="description" value="4vs4.txt" />
+	</variables>
+        <flightgroups>
+                <flightgroup name="lilac" faction="aera" type="kira" ainame="default" waves="1" nr_ships="9">
+			<pos x="10000.0" y="0.0" z="3000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+                <flightgroup name="blue" faction="confed" type="cruiser" ainame="default" waves="1" nr_ships="8">
+			<pos x="7000.0" y="0.0" z="3000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+                <flightgroup name="blue" faction="confed" type="tian" ainame="default" waves="1" nr_ships="3">
+			<pos x="7000.0" y="2000.0" z="1000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+                <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="3">
+			<pos x="7000.0" y="-2000.0" z="5000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+        </flightgroups>
+</mission>

@@ -1,0 +1,29 @@
+<Unit>
+
+<Meshfile file="turretbeam.xmesh"/>
+
+       
+
+<!-- new elements added -->
+		<Thrust>
+		<Engine Afterburner="4000" Forward="4000" Retro="4000" Left="4000" Right="4000" Top="4000" Bottom="4000"/>
+		<Maneuver yaw="1000" pitch="1000" roll="1000"/>
+	</Thrust>
+	<Sound></Sound>
+	<Defense>
+		<Armor front="1" right="1" left="1" back="1"/>
+		<Shields front="20000" back="20000" recharge="2"/>
+		<Hull strength="1"/>
+		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="60" cloakglass="false"/>    
+	</Defense>
+	<Stats mass="1" momentofinertia="1" fuel="1"></Stats>
+   
+	<Computer yaw="25" pitch="25" roll="00025" afterburner="000000" maxspeed="00000">
+	</Computer>
+
+	<Energy>
+		<Reactor recharge="0" limit="0"/>
+	</Energy>
+
+
+</Unit>
