@@ -1,4 +1,4 @@
-<Unit>
+<Unit cockpit="hellcat-cockpit.cpt">
 	<Meshfile file="hellcat.xmesh" />
 	<Light file="supernova.bmp" x="0.000000" y="0.800000" z="-8.200000" size="2.700000"/>
 	<Light file="supernova.bmp" x="2.600000" y="0.500000" z="-8.000000" size="2.200000"/>
@@ -26,6 +26,6 @@
 	<Stats mass="7" momentofinertia="7" fuel="20000"></Stats>
 	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="60.000000" maxspeed="21.000000"/>
 	<Energy>
-		<Reactor recharge="10" limit="100"/>
+		<Reactor recharge="47" limit="470"/>
 	</Energy>
 </Unit>

@@ -1,4 +1,4 @@
-<Cockpit front="centurion-cockpit.spr" left="centurion-cockpit-left.spr" right="centurion-cockpit-right.spr" back="centurion-cockpit-back.spr" ViewOffset=".2857" CockpitOffset="1.6666">
+<Cockpit front="centurion-cockpit.spr" left="centurion-cockpit-left.spr" right="centurion-cockpit-right.spr" back="centurion-cockpit-back.spr" ViewOffset=".2857" CockpitOffset=".45">
 	
 <Crosshairs file="crosshairs.spr" height=".55"/>
 	
