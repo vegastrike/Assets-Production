@@ -158,6 +158,7 @@
 		<Category file="Entertainment">
 			<import price="1.1" pricestddev=".2" quantity="1" quantitystddev="1"/>
 		</Category>
+		<Cargo file="Pilot" price="1040" quantity="0" mass=".01" volume="1"/>
 		<Category file="Contraband/Medical">
 			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
 		</Category>
