@@ -18,7 +18,7 @@ is an example of a valid mission call
 
 the -l flag (must be flush with the system) will force a player to begin in a star system.
 
-vegastrike -lvega_sector/vega mission/bomber.mission
+vegastrike -jvega_sector/vega mission/bomber.mission
 
 will force the bomber mission to run in the vega sector
 
