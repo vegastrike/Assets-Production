@@ -38,10 +38,14 @@ goto end
 
 
 :voodoo
+choice Do you have a 3dfx card
+if errorlevel==2 goto software
 echo Installing Voodoo drivers
 copy voodoo.config vegastrike.config
 
-
+:software
+echo Installing software drivers
+copy software.config vegastrike.config
 
 
 
