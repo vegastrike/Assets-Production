@@ -42,10 +42,10 @@ def getSignificant (whichsignificant, landable_only, capship_only):
   #this one terminates if fewer than so many planets exist with null
 def getPlanet (whichsignificant, sig):
 	un=VS.Unit()
-	which=0
 	signum=0
+        i = VS.getUnitList()
 	while (signum<=whichsignificant):
-		un=VS.getUnit(which)
+		un=i.current()
 		if (un):
 		  if(sig):
 		    if (un.isSignificant ()):
@@ -53,10 +53,9 @@ def getPlanet (whichsignificant, sig):
 		  else:
 		    if (un.isPlanet ()):
 		      signum=signum+1
-		  which=which+1			
+		  i.advance()			
 		else:
-		  if (signum<=whichsignificant):
-		    signum=whichsignificant+1
+                    break
 	return un
   
 def getJumpPoint(whichsignificant):

@@ -30,7 +30,7 @@ def adjustUnitCargo(un,cat,pr,qr):
     for i in range (numcargo):
         un.addCargo(carglist[i])
     carglist=0
-
+#universe.systemCargoDemand (("Natural_Products","starships",),.0001,1000)
 def systemCargoDemand (category,priceratio,quantratio):
     i = VS.getUnitList()
     un = i.current()
