@@ -1,4 +1,4 @@
-<Mesh texture="Rapier.bmp" scale="0.100000">
+<Mesh texture="Rapier.bmp" scale=".1">
 <Points>
 	<Point>
 		<Location x="-6.999000" y="-9.999000" z="137.998993"/>

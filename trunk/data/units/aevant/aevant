@@ -12,7 +12,9 @@
 		<Hull strength="250.000000"/>
 	</Defense>
 	<Stats mass="10.000000" momentofinertia="10.000000" fuel="20000"></Stats>
-	<Computer yaw="80.500000" pitch="90.500000" roll="80.500000" afterburner="119.699997" maxspeed="35.799999"/>
+	<Computer yaw="80.500000" pitch="90.500000" roll="80.500000" afterburner="119.699997" maxspeed="35.799999">
+		<Radar itts="false" color="true" error="0"/> </Computer>
+
 	<Energy>
 		<Reactor recharge="110" limit="600"/>
 	</Energy>

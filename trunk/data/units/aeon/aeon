@@ -17,7 +17,9 @@
 		<Cloak cloakmin=".25" cloakrate=".2" cloakenergy="64"/>
 	</Defense>
 	<Stats mass="3.000000" momentofinertia="3.000000" fuel="20000"></Stats>
-	<Computer yaw="138.000000" pitch="165.600006" roll="193.200012" afterburner="134" maxspeed="55"/>
+	<Computer yaw="138.000000" pitch="165.600006" roll="193.200012" afterburner="134" maxspeed="55">
+		<Radar itts="false" color="true" error="0"/> </Computer>
+
 	<Energy>
 		<Reactor recharge="64" limit="100"/>
 	</Energy>
