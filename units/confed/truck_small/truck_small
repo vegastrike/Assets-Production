@@ -10,7 +10,7 @@
 	<Meshfile file="space_truck-Rod04.xmesh" />
 
 	<Thrust>
-		<Engine Afterburner="320.000000" Forward="149.333328" Retro="130.666662" Left="74.666664" Right="74.666664" Top="74.666664" Bottom="74.666664"/>
+		<Engine Afterburner="700.000000" Forward="250" Retro="130" Left="75" Right="75" Top="75" Bottom="75"/>
 		<Maneuver yaw="366.200050" pitch="421.600025" roll="366.200050"/>
 	</Thrust>
 	<Sound>
@@ -26,10 +26,10 @@
 		<Reactor recharge="100" limit="1000"/>
 	</Energy>
        
-		<cockpit file="hellcat-cockpit.cpt" x="-510.1025" y="-75.2875" z="1363.585"/>
+		<cockpit file="hellcat-cockpit.cpt" x="-51.01025" y="-7.52875" z="136.3585"/>
 
-		<Subunit file="cargo" x="0" y="0" z="540.0075"/>
-<Light file="engine1.png" x="0" y="0" z="-630.1675" size="125" r="0.698039216" g="0.39215686" b="0.39215686"/>
+		<Subunit file="cargo" x="0" y="0" z="54.00075"/>
+<Light file="engine1.png" x="0" y="0" z="-63.01675" size="12.5" r="0.698039216" g="0.39215686" b="0.39215686"/>
 
 
 
