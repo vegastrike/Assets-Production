@@ -1,4 +1,4 @@
-<Mesh texture="AeraHull.png" scale="20.000000">
+<Mesh  texture1="AeraHullPPL.jpg" texture="AeraHull.png" scale="20.000000">
 <Points>
 	<Point>
 		<Location x="3.333333" y="3.000000" z="-5.500000"/>

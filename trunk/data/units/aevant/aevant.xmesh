@@ -1,4 +1,4 @@
-<Mesh texture="aevant.bmp" scale="0.100000">
+<Mesh  texture1="aevantPPL.jpg" texture="aevant.bmp" scale="0.100000">
 <Points>
 	<Point>
 		<Location x="-0.000000" y="-0.000000" z="220.000000"/>

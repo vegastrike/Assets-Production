@@ -1,4 +1,4 @@
-<Mesh texture="glass.png" scale=".01">
+<Mesh  texture1="glassPPL.jpg" texture="glass.png" scale=".01">
 <Points>
 <Point>
     <Location x="-20" z="23.75" y="40"/>
@@ -595,4 +595,4 @@
     <Vertex point="92" s="0.440333276987076" t="0.487416744232178"/>
 </Tri>
 </Polygons>
-</Mesh>
+</Mesh>€
