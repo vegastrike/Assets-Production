@@ -11,6 +11,9 @@ militia=7
 ISO=8
 unknown=9
 factions = ("confed","aera","rlaan","merchant","retro","pirates","hunter","militia","ISO","unknown")
+factiondict={}
+for i in range(len(factions)):
+    factiondict[factions[i]]=i
 useBlank = (   0    ,  0   ,   0   ,     1    ,   1   ,   1     ,    1   ,    1    ,  0  ,  0)
 enemies =  ((aera,aera,rlaan,rlaan,retro,pirates,ISO), #confed
             (confed,confed,confed,militia,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,pirates,hunter,merchant,ISO), #aera
@@ -86,6 +89,13 @@ capitols = (("corvette","starrunner","cruiser","carrier","fleetcarrier","escortc
             ("unknown_active",) #unknown
            )
 capitals=capitols
+capitaldict={}
+for i in capitols:
+	for j in i:
+		capitaldict[j]=1
+def isCapital(type):
+	return type in capitaldict
+
 generic_bases = ("drydock",
 				 "starfortress","starfortress",
 				 "research","research",
@@ -107,6 +117,10 @@ bases = (generic_bases,
 		 generic_bases, #ISO
 		 generic_bases, #unknown
 		 )
+basedict={}
+for i in bases:
+  for j in i:
+    basedict[j]=1
 
 def appendName(faction):
   
@@ -116,9 +130,10 @@ def appendName(faction):
       return ""
   
 def factionToInt  (faction):
-  for i in range(len(factions)):
-    if (factions[i]==faction):
-      return i
+  try:
+    return factiondict[faction]
+  except:
+    return 0
   return 0
 
 def intToFaction (faction):
