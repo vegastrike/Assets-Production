@@ -1,0 +1,23 @@
+#! /bin/sh
+
+# Attempt to automatically update this directory and build a RPM file
+# Must be root
+
+#cvs -z3 up -d
+rm -f *.exe *.dll
+
+cp vegastrike-data.spec /usr/src/RPM/SPECS/
+# Make tar file
+cd ..
+if [ ! -e vegastrike-data ]; then 
+    ln -s data vegastrike-data
+fi
+tar -hzcf vegastrike-data.tar.gz vegastrike-data
+
+cp vegastrike-data.tar.gz /usr/src/RPM/SOURCES/
+
+# Now make RPM
+cd /usr/src/RPM/SPECS
+rpm -ba vegastrike-data.spec
+
+echo Hopefully you have just built an RPM file.
