@@ -7,7 +7,7 @@
 	</Defense>
 	<Stats mass="0" momentofinertia="0" fuel="0"></Stats>
 	<Computer yaw="0" itts="false" pitch="0" roll="0" afterburner="0" maxspeed="0">
-		<Radar itts="false" color="false" error=".25" maxcone="0" lockcone=".851" trackingcone=".931" range="10000"/> 
+		<Radar itts="false" color="false" error=".25" maxcone="-1" lockcone=".851" trackingcone=".931" range="10000"/> 
 	</Computer>
 
 	<Energy afterburnenergy="0">
