@@ -1,8 +1,8 @@
 <Factions>
-	<Faction name="neutral" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
+	<Faction name="neutral" logoRGB="logos/NeutralPri.png" secLogoRGB="logos/NeutralSec.png">
 	</Faction>
 
-	<Faction name="confed" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png" contraband="contraband">
+	<Faction name="confed" logoRGB="TerranPri.png" secLogoRGB="logos/TerranSec.png" contraband="contraband">
 		<stats name="retro" relation="-.4"/>
 		<stats name="ISO" relation="-1"/>
 		<stats name="militia" relation=".9"/>
@@ -22,7 +22,7 @@
 <!--		</CommAnimation>-->
 	</Faction>
 
-	<Faction name="aera" logoRGB="AeraPri.png" secLogoRGB="AeraSec.png" contraband="contraband">
+	<Faction name="aera" logoRGB="logos/AeraPri.png" secLogoRGB="logos/AeraSec.png" contraband="contraband">
 <!--		<Explosion name="explosion_wave.ani"/>
 		<Explosion name="static_round.ani"/>-->
 		<stats name="ISO" relation="-.4"/>
@@ -39,7 +39,7 @@
 
 	</Faction>
 
-	<Faction name="merchant" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+	<Faction name="merchant" logoRGB="logos/MerchantPri.png" secLogoRGB="logos/MerchantSec.png">
 		<stats name="ISO" relation=".25"/>
 		<stats name="militia" relation=".9"/>
 		<stats name="confed" relation =".95"/>
@@ -52,7 +52,7 @@
 		<stats name="privateer" relation="0"/>
 	</Faction>
 
-	<Faction name="retro" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png" contraband="contraband">
+	<Faction name="retro" logoRGB="logos/RetroPri.png" secLogoRGB="logos/RetroSec.png" contraband="contraband">
 		<stats name="ISO" relation="-1"/>
 		<stats name="confed" relation="-.8"/>
 		<stats name="militia" relation="-.3"/>
@@ -66,7 +66,7 @@
 
 	</Faction>
 
-	<Faction name="militia" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png" contraband="contraband">
+	<Faction name="militia" logoRGB="logos/MilitiaPri.png" secLogoRGB="logos/TerranPri.png" contraband="contraband">
 		<stats name="ISO" relation="-.4"/>
 		<stats name="confed" relation=".6"/>
 		<stats name="aera" relation="-.7"/>
@@ -80,7 +80,7 @@
 
 	</Faction>
 
-	<Faction name="rlaan" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
+	<Faction name="rlaan" logoRGB="logos/RlaanPri.png" secLogoRGB="logos/RlaanSec.png">
 <!--		<Explosion name="explosion_wave.ani"/>
 		<Explosion name="static_round.ani"/>-->
 		<stats name="ISO" relation=".1"/>
@@ -94,7 +94,7 @@
 		<stats name="retro" relation="-1"/>
 		<stats name="privateer" relation="-.1"/>
 	</Faction>
-	<Faction name="powerups" logoRGB="NeutalPri.png" secLogoRGB="NeutralSec.png">
+	<Faction name="powerups" logoRGB="logos/NeutalPri.png" secLogoRGB="logos/NeutralSec.png">
 		<stats name="ISO" relation="-.1"/>
 		<stats name="confed" relation="-.1"/>
 		<stats name="aera" relation="-1"/>
@@ -107,11 +107,11 @@
 		<stats name="privateer" relation="-.1"/>
 		<stats name="rlaan" relation="1"/>
 	</Faction>
-	<Faction name="upgrades" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
+	<Faction name="upgrades" logoRGB="logos/NeutralPri.png" secLogoRGB="logos/NeutralSec.png">
 
 
 	</Faction>
-	<Faction name="unknown" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+	<Faction name="unknown" logoRGB="logos/HunterPri.png" secLogoRGB="logos/HunterSec.png">
 		<stats name="confed" relation="-.1"/>
 		<stats name="aera" relation="-.1"/>
 		<stats name="merchant" relation ="-.1"/>
@@ -137,7 +137,7 @@
 		<stats name="privateer" relation="-.1"/>
 
 	</Faction>
-	<Faction name="hunter" logoRGB="PiratesPri.png" secLogoRGB="PiratesSec.png">
+	<Faction name="hunter" logoRGB="logos/HunterPri.png" secLogoRGB="HunterSec.png">
 		<stats name="ISO" relation="0"/>
 		<stats name="confed" relation="0"/>
 		<stats name="aera" relation="-.1"/>
@@ -150,7 +150,7 @@
 		<stats name="privateer" relation="0"/>
 
 	</Faction>
-	<Faction name="privateer" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+	<Faction name="privateer" logoRGB="logos/HunterPri.png" secLogoRGB="logos/HunterSec.png">
 		<stats name="ISO" relation="0"/>
 		<stats name="confed" relation="0"/>
 		<stats name="aera" relation="-.2"/>
@@ -179,7 +179,7 @@
 
 
 
-	<Faction name="planets" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
+	<Faction name="planets" logoRGB="logos/NeutralPri.png" secLogoRGB="logos/NeutralSec.png">
 	</Faction>
 
 </Factions>
