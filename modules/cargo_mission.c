@@ -1,5 +1,5 @@
 module cargo_mission {
-  import ai_stationary;
+  //  import ai_stationary;
   import universe;
   object youcontainer;
 	object faction;
@@ -241,7 +241,7 @@ module cargo_mission {
 	      }else {
 		object newun=significant;
 		if (capship) {
-		  newun=launch.launch_wave_around_unit("Base",faction,newship,"_ai_stationary",1,2000.0,5000.0,significant);
+		  newun=launch.launch_wave_around_unit("Base",faction,newship,"sitting_duck",1,2000.0,5000.0,significant);
 		}
 		object str = _string.new();
 		object name = _unit.getName (newun);
