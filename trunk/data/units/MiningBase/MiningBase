@@ -20,7 +20,7 @@
 		</Armor>
 		<Shields front = "650" right = "650" left = "650" back = "650" recharge = "47"  >
 		</Shields>
-		<Hull strength = "2500"  >
+		<Hull strength = "50000"  >
 		</Hull>
 	</Defense>
 	<Stats mass = "8241769" momentofinertia = "8241769" fuel = "20000"  >
