@@ -1216,7 +1216,7 @@ stone"/>
 			</sector>
 			<sector name="hawkins">
 				<var name="sun_radius" value="27500"/>
-			      <var name="faction" value="rlaan"/> 
+			      <var name="faction" value="kilrathi"/> 
 				<var name="compactness" value="1.6"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="1"/>
@@ -1230,28 +1230,28 @@ stone"/>
 				<var name="data" value="2354"/>
 			</sector>
 			<sector name="ndele">
-				<var name="faction" value="rlaan"/> 
+				<var name="faction" value="kilrathi"/> 
 				<var name="jumps" value="epsilon_sector/khotan mshrak_sector/tproknor"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2068"/>
 			</sector>
 			<sector name="knrek">
-				<var name="faction" value="rlaan"/> 
+				<var name="faction" value="kilrathi"/> 
 				<var name="jumps" value="vega_sector/knmeth"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2386"/>
 			</sector>
 			<sector name="knmeth">
-				<var name="faction" value="rlaan"/> 
+				<var name="faction" value="kilrathi"/> 
 				<var name="jumps" value="vega_sector/knrek rlaa_sector/hhrass_tgor"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2068"/>
 			</sector>
 			<sector name="gwrikath">
-				<var name="faction" value="rlaan"/> 
+				<var name="faction" value="kilrathi"/> 
 				<var name="jumps" value="rlaa_sector/gwriss"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
@@ -1259,7 +1259,7 @@ stone"/>
 			</sector>
 			<sector name="hyperion">
 				<var name="sun_radius" value="4200"/>
-			      <var name="faction" value="rlaan"/> 
+			      <var name="faction" value="kilrathi"/> 
 				<var name="compactness" value="3.7"/>
 				<var name="num_stars" value="2"/>
 				<var name="num_gas_giants" value="1"/>
@@ -1274,7 +1274,7 @@ stone"/>
 			</sector>
 			<sector name="freya">
 				<var name="sun_radius" value="2100"/>
-			      <var name="faction" value="rlaan"/> 
+			      <var name="faction" value="kilrathi"/> 
 				<var name="compactness" value="1.6"/>
 				<var name="num_stars" value="0"/>
 				<var name="num_gas_giants" value="1"/>
@@ -1295,14 +1295,14 @@ stone"/>
 				<var name="data" value="2068"/>
 			</sector>
 			<sector name="ardai">
-				<var name="faction" value="rlaan"/> 
+				<var name="faction" value="kilrathi"/> 
 				<var name="jumps" value="vega_sector/kirssth"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1382"/>
 			</sector>
 			<sector name="krissth">
-				<var name="faction" value="rlaan"/> 
+				<var name="faction" value="kilrathi"/> 
 				<var name="jumps" value="vega_sector/ardai rlaa_sector/knkir"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
@@ -2065,7 +2065,7 @@ stone"/>
 			</sector>
 			<sector name="ghorah_khar">
 				<var name="sun_radius" value="27000"/>
-			      <var name="faction" value="rlaan"/> 
+			      <var name="faction" value="kilrathi"/> 
 				<var name="compactness" value="1.6"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="0"/>
@@ -2173,7 +2173,7 @@ stone"/>
 			</sector>
 			<sector name="ktithrak_mang">
 				<var name="sun_radius" value="43000"/>
-			      <var name="faction" value="rlaan"/> 
+			      <var name="faction" value="kilrathi"/> 
 				<var name="compactness" value="2.5"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="1"/>
@@ -2187,14 +2187,14 @@ stone"/>
 				<var name="data" value="1916"/>
 			</sector>
 			<sector name="karakh">
-				<var name="faction" value="rlaan"/> 
+				<var name="faction" value="kilrathi"/> 
 				<var name="jumps" value="enigma_sector/ktithrak_mang epsilon_sector/shariha"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2064"/>
 			</sector>
 			<sector name="trkharna">
-				<var name="faction" value="rlaan"/> 
+				<var name="faction" value="kilrathi"/> 
 				<var name="jumps" value="enigma_sector/tithrak_mang gemini_sector/repleetah epsilon_sector/tvx_aq"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
@@ -3442,6 +3442,760 @@ stone"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1721"/>
+			</sector>
+		</sector>
+
+		<sector name="hawking_sector">
+			<var name="faction" value="confed"/>
+			<var name="namelist" value="names.txt"/>
+			<sector name="komarov">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="sol_sector/lenin avalon_sector/thethys hawking_sector/gilmore"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1940"/>
+			</sector>
+			<sector name="gilmore">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/komarov hawking_sector/marie hawking_sector/chemla avalon_sector/athena"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1210"/>
+			</sector>
+			<sector name="chemla">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/gilmore"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2910"/>
+			</sector>
+			<sector name="marie">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/gilmore hawking_sector/jeni"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="1094"/>
+			</sector>
+			<sector name="jeni">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/marie"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2192"/>
+			</sector>
+			<sector name="cherenkov">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/titov sol_sector/minsk"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1035"/>
+			</sector>
+			<sector name="titov">
+				<var name="sun_radius" value="11000"/>
+			      <var name="faction" value="confed"/> 
+				<var name="compactness" value="6.2"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="1"/>
+				<var name="num_planets" value="9"/>
+				<var name="num_moons" value="4"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="false"/>
+				<var name="jumps" value="hawking_sector/cherenkov hawking_sector/korolyov hawking_sector/new_baikal hawking_sector/hawking"/>
+				<var name="num_natural_phenomena" value="1"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1172"/>
+			</sector>
+			<sector name="korolyov">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/titov hawking_sector/leonov hawking_sector/vostock"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1385"/>
+			</sector>
+			<sector name="vostock">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/korolyov"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2165"/>
+			</sector>
+			<sector name="leonov">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/vostock hawking_sector/kasparov hawking_sector/new_baikal"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1681"/>
+			</sector>
+			<sector name="kasparov">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/leonov"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1162"/>
+			</sector>
+			<sector name="new_baikal">
+				<var name="sun_radius" value="41000"/>
+			      <var name="faction" value="confed"/> 
+				<var name="compactness" value="2.2"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="1"/>
+				<var name="num_planets" value="4"/>
+				<var name="num_moons" value="1"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="true"/>
+				<var name="jumps" value="hawking_sector/leonov hawking_sector/titov hawking_sector/glushko hawking_sector/barnes hawking_sector/waldrip"/>
+				<var name="num_natural_phenomena" value="1"/>
+				<var name="num_starbases" value="2"/>
+				<var name="data" value="1254"/>
+			</sector>
+			<sector name="glushko">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/new_baikal"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1941"/>
+			</sector>
+			<sector name="waldrip">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/new_baikal hawking_sector/brunet"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1843"/>
+			</sector>
+			<sector name="brunet">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/priest hawking_sector/barnes hawking_sector/waldrip"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="615"/>
+			</sector>
+			<sector name="priest">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/brunet hawking_sector/tcsc_0725 hawking_sector/tcsc_0790"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="1610"/>
+			</sector>
+			<sector name="tcsc_0725">
+				<var name="faction" value="unknown"/> 
+				<var name="jumps" value="hawking_sector/priest"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1088"/>
+			</sector>
+			<sector name="tcsc_0790">
+				<var name="faction" value="unknown"/> 
+				<var name="jumps" value="hawking_sector/priest"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1997"/>
+			</sector>
+			<sector name="barnes">
+				<var name="sun_radius" value="41000"/>
+			      <var name="faction" value="confed"/> 
+				<var name="compactness" value="2.2"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="1"/>
+				<var name="num_planets" value="4"/>
+				<var name="num_moons" value="1"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="true"/>
+				<var name="jumps" value="hawking_sector/brunet hawking_sector/brown hawking_sector/illiyoys_star hawking_sector/new_baikal hawking_sector/merrell"/>
+				<var name="num_natural_phenomena" value="1"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="978"/>
+			</sector>
+			<sector name="brown">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/barnes hawking_sector/tcsc_1860"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2167"/>
+			</sector>
+			<sector name="tcsc_1860">
+				<var name="faction" value="unknown"/> 
+				<var name="jumps" value="hawking_sector/brown"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2584"/>
+			</sector>
+			<sector name="ivans_joy">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/ivans_folly"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2416"/>
+			</sector>
+			<sector name="ivans_folly">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/ivans_joy sol_sector/ross_51g"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1726"/>
+			</sector>
+			<sector name="illiyoys_star">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/barnes hawking_sector/sagan"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1118"/>
+			</sector>
+			<sector name="sagan">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/illiyoys_star hawking_sector/newton"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1913"/>
+			</sector>
+			<sector name="merrell">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/brown hawking_sector/barnes hawking_sector/outreach"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1913"/>
+			</sector>
+			<sector name="outreach">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/merrell hawking_sector/wasteland"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1068"/>
+			</sector>
+			<sector name="wasteland">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/outreach hawking_sector/newton"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1000"/>
+			</sector>
+			<sector name="newton">
+				<var name="sun_radius" value="36000"/>
+			      <var name="faction" value="confed"/> 
+				<var name="compactness" value="4.7"/>
+				<var name="num_stars" value="2"/>
+				<var name="num_gas_giants" value="4"/>
+				<var name="num_planets" value="3"/>
+				<var name="num_moons" value="4"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="false"/>
+				<var name="jumps" value="hawking_sector/sagan hawking_sector/hawking hawking_sector/wateland hawking_sector/apollo"/>
+				<var name="num_natural_phenomena" value="1"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2978"/>
+			</sector>
+			<sector name="hawking">
+				<var name="sun_radius" value="50000"/>
+			      <var name="faction" value="confed"/> 
+				<var name="compactness" value="8.0"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="7"/>
+				<var name="num_planets" value="6"/>
+				<var name="num_moons" value="18"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="true"/>
+				<var name="jumps" value="hawking_sector/newton hawking_sector/titov hawking_sector/mercury hawking_sector/galileo hawking_sector/gauss hawking_sector/eagle_base"/>
+				<var name="num_natural_phenomena" value="1"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1067"/>
+			</sector>
+			<sector name="mercury">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/hawking"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1050"/>
+			</sector>
+			<sector name="galileo">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/hawking"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1180"/>
+			</sector>
+			<sector name="gauss">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/hawking sol_sector/todd"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1274"/>
+			</sector>
+			<sector name="apollo">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/newton hawking_sector/eagle_base"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1440"/>
+			</sector>
+			<sector name="eagle_base">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/hawking hawking_sector/apollo hawking_sector/shepard hawking_sector/sts_51l"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1861"/>
+			</sector>
+			<sector name="sts_51l">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/eagle_base"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1710"/>
+			</sector>
+			<sector name="shepard">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/eagle_base argent_sector/yaeger"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2981"/>
+			</sector>
+			<sector name="chandley">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="argent_sector/destiny argent_sector/yaeger hawking_sector/white hawking_sector/grissom"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1910"/>
+			</sector>
+			<sector name="white">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/chandley hawking_sector/grissom"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2364"/>
+			</sector>
+			<sector name="grissom">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/white hawking_sector/chandley hawking_sector/armstrong"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1189"/>
+			</sector>
+			<sector name="armstrong">
+				<var name="sun_radius" value="50000"/>
+			      <var name="faction" value="confed"/> 
+				<var name="compactness" value="8.0"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="7"/>
+				<var name="num_planets" value="6"/>
+				<var name="num_moons" value="18"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="true"/>
+				<var name="jumps" value="hawking_sector/grissom hawking_sector/aldrin hawking_sector/sommers hawking_sector/david hawking_sector/mahavier hawking_sector/collins"/>
+				<var name="num_natural_phenomena" value="1"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="1873"/>
+			</sector>
+			<sector name="collins">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/armstrong"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1819"/>
+			</sector>
+			<sector name="aldrin">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/sommers hawking_sector/armstrong"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1971"/>
+			</sector>
+			<sector name="mahavier">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/david hawking_sector/oldziey hawking_sector/armstrong"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2431"/>
+			</sector>
+			<sector name="sommers">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/mu_cephei hawking_sector/aldrin hawking_sector/david hawking_sector/armstrong"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="972"/>
+			</sector>
+			<sector name="mu_cephei">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/sommers"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2269"/>
+			</sector>
+			<sector name="oldziey">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/david hawking_sector/mahavier"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="2762"/>
+			</sector>
+			<sector name="david">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/oldziey hawking_sector/mahavier hawking_sector/sommers hawking_sector/armstrong hawking_sector/tcsc_1575"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="258"/>
+			</sector>
+			<sector name="tcsc_1575">
+				<var name="faction" value="unknown"/> 
+				<var name="jumps" value="hawking_sector/david"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2742"/>
+			</sector>
+		</sector>
+
+		<sector name="avalon_sector">
+			<var name="faction" value="confed"/>
+			<var name="namelist" value="names.txt"/>
+			<sector name="tethys">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="hawking_sector/komarov avalon_sector/poseidon"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1782"/>
+			</sector>
+			<sector name="poseidon">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/tethys avalon_sector/aphrodite"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1789"/>
+			</sector>
+			<sector name="aphrodite">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/poseidon avalon_sector/athena avalon_sector/callisto"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1247"/>
+			</sector>
+			<sector name="athena">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/aphrodite avalon_sector/hades hawking_sector/gilmore"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1023"/>
+			</sector>
+			<sector name="hades">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/athena avalon_sector/aries avalon_sector/pugh"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="2169"/>
+			</sector>
+			<sector name="aries">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/hades avalon_sector/deimos avalon_sector/phobos"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2426"/>
+			</sector>
+			<sector name="deimos">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/aries"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2631"/>
+			</sector>
+			<sector name="phobos">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/aries"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2354"/>
+			</sector>
+			<sector name="pugh">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/hades avalon_sector/russ avalon_sector/pietzsch"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="1201"/>
+			</sector>
+			<sector name="russ">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/pugh avalon_sector/tcsc_2195"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1642"/>
+			</sector>
+			<sector name="tcsc_2195">
+				<var name="faction" value="unknown"/> 
+				<var name="jumps" value="avalon_sector/russ"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2891"/>
+			</sector>
+			<sector name="pietzsch">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/pugh avalon_sector/thetac_orionis avalon_sector/tcsc_2025"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2025"/>
+			</sector>
+			<sector name="thetac_orionis">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/pietzsch"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="198"/>
+			</sector>
+			<sector name="tcsc_2025">
+				<var name="faction" value="unknown"/> 
+				<var name="jumps" value="avalon_sector/pietzsch"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1477"/>
+			</sector>
+			<sector name="callisto">
+				<var name="sun_radius" value="12000"/>
+			      <var name="faction" value="confed"/> 
+				<var name="compactness" value="2.0"/>
+				<var name="num_stars" value="2"/>
+				<var name="num_gas_giants" value="4"/>
+				<var name="num_planets" value="8"/>
+				<var name="num_moons" value="3"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="true"/>
+				<var name="jumps" value="avalon_sector/roma avalon_sector/agea avalon_sector/jericho avalon_sector/alexandria gemini_sector/pyrennes"/>
+				<var name="num_natural_phenomena" value="1"/>
+				<var name="num_starbases" value="2"/>
+				<var name="data" value="1073"/>
+			</sector>
+			<sector name="roma">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/callsito"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1197"/>
+			</sector>
+			<sector name="agea">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/callisto gemini_sector/freyja"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1477"/>
+			</sector>
+			<sector name="alexandria">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/callisto avalon_sector/hephestus"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1084"/>
+			</sector>
+			<sector name="hephestus">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/alexandria avalon_sector/forge avalon_sector/perseus"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1385"/>
+			</sector>
+			<sector name="forge">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/hephestus"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1837"/>
+			</sector>
+			<sector name="perseus">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/hephestus avalon_sector/mccall"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2147"/>
+			</sector>
+			<sector name="mccall">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/avalon avalon_sector/pereus avalon_sector/leon"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="2345"/>
+			</sector>
+			<sector name="leon">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/mccall avalon_sector/kier"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="1621"/>
+			</sector>
+			<sector name="kier">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/leon avalon_sector/tcsc_1569"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2682"/>
+			</sector>
+			<sector name="tcsc_1569">
+				<var name="faction" value="unkown"/> 
+				<var name="jumps" value="avalon_sector/kier"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="2922"/>
+			</sector>
+			<sector name="jericho">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/callisto avalon_sector/haven avalon_sector/babel"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1477"/>
+			</sector>
+			<sector name="haven">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/tanis gemini_sector/j900"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2098"/>
+			</sector>
+			<sector name="tanis">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/haven avalon_sector/dis"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="2187"/>
+			</sector>
+			<sector name="dis">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/tanis avalon_sector/cibola avalon_sector/xualla"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2681"/>
+			</sector>
+			<sector name="cibola">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/dis avalon_sector/gomorrah"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1245"/>
+			</sector>
+			<sector name="gomorrah">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/cibola avalon_sector/sodom"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2392"/>
+			</sector>
+			<sector name="sodom">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/gomorrah"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="1068"/>
+			</sector>
+			<sector name="xualla">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/dis avalon_sector/ubar"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="395"/>
+			</sector>
+			<sector name="ubar">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/xualla avalon_sector/avalon"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="1261"/>
+			</sector>
+			<sector name="babel">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/new_atlantis avalon_sector/jericho"/>
+				<var name="nebulae"   value="false"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2774"/>
+			</sector>
+			<sector name="new_atlantis">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/babel avalon_sector/britannia"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2911"/>
+			</sector>
+			<sector name="britannia">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/avalon avalon_sector/new_atlantis"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1730"/>
+			</sector>
+			<sector name="avalon">
+				<var name="sun_radius" value="52000"/>
+			      <var name="faction" value="confed"/> 
+				<var name="compactness" value="10.0"/>
+				<var name="num_stars" value="3"/>
+				<var name="num_gas_giants" value="6"/>
+				<var name="num_planets" value="9"/>
+				<var name="num_moons" value="12"/>
+				<var name="nebulae"   value="true"/>
+				<var name="asteroids"   value="true"/>
+				<var name="jumps" value="avalon_sector/ubar avalon_sector/britannia avalon_sector/mccall avalon_sector/paylode avalon_sector/el_dorado"/>
+				<var name="num_natural_phenomena" value="1"/>
+				<var name="num_starbases" value="2"/>
+				<var name="data" value="1831"/>
+			</sector>
+			<sector name="paylode">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/avalon"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1782"/>
+			</sector>
+			<sector name="el_dorado">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/avalon avalon_sector/hermann avalon_sector/giunta"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2105"/>
+			</sector>
+			<sector name="hermann">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/el_dorado avalon_sector/carlos"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1653"/>
+			</sector>
+			<sector name="carlos">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/hermann avalon_sector/mira"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="1"/>
+				<var name="data" value="282"/>
+			</sector>
+			<sector name="mira">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/carlos"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2836"/>
+			</sector>
+			<sector name="giunta">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/el_dorado avalon_sector/grajeda"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1831"/>
+			</sector>
+			<sector name="grajeda">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/giunta avalon_sector/tcsc_9102"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="1164"/>
+			</sector>
+			<sector name="tcsc_9102">
+				<var name="faction" value="confed"/> 
+				<var name="jumps" value="avalon_sector/grajeda"/>
+				<var name="nebulae"   value="true"/>
+				<var name="num_starbases" value="2"/>
+				<var name="data" value="1260"/>
+			</sector>
+			<sector name="dallas">
+				<var name="sun_radius" value="24000"/>
+			      <var name="faction" value="confed"/> 
+				<var name="compactness" value="12.0"/>
+				<var name="num_stars" value="4"/>
+				<var name="num_gas_giants" value="8"/>
+				<var name="num_planets" value="12"/>
+				<var name="num_moons" value="21"/>
+				<var name="nebulae"   value="true"/>
+				<var name="asteroids"   value="true"/>
+				<var name="jumps" value="avalon_sector/dallas"/>
+				<var name="num_natural_phenomena" value="1"/>
+				<var name="num_starbases" value="2"/>
+				<var name="data" value="3000"/>
 			</sector>
 		</sector>
 
