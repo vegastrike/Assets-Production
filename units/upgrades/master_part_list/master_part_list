@@ -419,16 +419,22 @@
 		</Category>
 
 		<Category file="Natural_Products/Aera_Food">
+			<Cargo file="Aera_Ration" price="40" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Jhurlon" price="140" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Salted_Thok" price="130" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Natural_Products/Rlaan_Food">
+			<Cargo file="Rlaan_Nutripack" price="140" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Rlaan_Luxury_Nutripack" price="150" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Rlaan_Generic_Nutripack" price="40" quantity="1" mass=".01" volume="1"/>
 		</Category>
-
 		<Category file="Natural_Products/Food">
-			<Cargo file="Coffee" price="140" quantity="90" mass=".01" volume="1"/>
+			<Cargo file="Coffee" price="140" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Filtered_Water" price="40" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Generic_Foods" price="100" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Grains" price="70" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Livestock" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Fish" price="115" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Livestock" price="110" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Luxury_Foods" price="120" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Meats" price="110" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Produce" price="80" quantity="1" mass=".01" volume="1"/>
@@ -443,6 +449,8 @@
 			<Cargo file="Rum" price="60" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Natural_Products/Plants">
+
+			<Cargo file="Khaisalantimin_F62" price="500" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Cocaine" price="420" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Marijuana" price="220" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Tobacco" price="110" quantity="1" mass=".01" volume="1"/>
@@ -481,8 +489,16 @@
 			<Cargo file="Steel" price="76" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Aera_Alloys">
+			<Cargo file="Polysteel" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Bipolite" price="78" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Tritanium" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Duranium" price="110" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Neutronium" price="130" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Rlaan_Alloys">
+			<Cargo file="Obsidisteel" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Carbonium" price="40" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Molybdenum" price="70" quantity="1" mass=".01" volume="1"/>
 		</Category>
 
 		<Category file="Raw_Materials/Metals/Radioactive">
@@ -526,11 +542,17 @@
 			<Cargo file="Diesel" price="130" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Gasoline" price="150" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Methane" price="125" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Hexane" price="124" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Propane" price="140" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Fuels/Aera_Refined">
+			<Cargo file="Baakonite" price="70" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="AntiMatter_Pack" price="180" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Fuels/Rlaan_Refined">
+
+			<Cargo file="Biopower_Pack" price="180" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Vibranium" price="40" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Compressed_Gasses">
 			<Cargo file="Argon" price="10" quantity="1" mass=".01" volume="1"/>
@@ -577,19 +599,30 @@
 			<Cargo file="PreFab_Buildings" price="44" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Supplies/Rlaan_Construction_Supplies">
+			<Cargo file="BioGenerator" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="BioRestructurizer" price="96" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Supplies/Aera_Medical_Supplies">
+			<Cargo file="Aera_First_Aid_Kit" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Pseudotherms" price="90" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Supplies/Rlaan_Medical_Supplies">
+			<Cargo file="DNA_Resequencer" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Rlaan_Aid_Regrower" price="90" quantity="1" mass=".01" volume="1"/>
 		</Category>
 
 		<Category file="Supplies/Medical_Supplies">
 			<Cargo file="Cryogenic_Supplies" price="505" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="First_Aid_Kits" price="480" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Syringes" price="480" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Research/Aera_Medical">
+			<Cargo file="DNA_Fork()" price="300" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="DNA_Thread_Create" price="300" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Research/Rlaan_Medical">
+			<Cargo file="Bio_Adapters" price="200" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Bio_DNA_Splicers" price="300" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Research/Medical">
 			<Cargo file="Synthetic_Limbs" price="200" quantity="1" mass=".01" volume="1"/>
@@ -627,7 +660,8 @@
 			<Cargo file="Robo_Workers" price="290" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Electronics/Bionics">
-
+			<Cargo file="Cyborg_Workers" price="270" quantity="1" mass=".01" volume="1"/>		
+			<Cargo file="Cyborg_Defenders" price="270" quantity="1" mass=".01" volume="1"/>		
 		</Category>
 		<Category file="Manufactured_Goods">
 			<Cargo file="Carpets" price="55" quantity="1" mass=".01" volume="1"/>
@@ -638,8 +672,12 @@
 			<Cargo file="Textiles" price="53" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Clothing" price="60" quantity="1" mass=".01" volume="1"/>
 		</Category>
+		<Category file="Manufactured_Goods/Perflubrons">
+			<Cargo file="Liquiair" price="40" quantity="1" mass=".01" volume="1"/>		
+		</Category>
 		<Category file="Entertainment/Aera">
-
+			<Cargo file="IntaTouch" price="50" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="VirtuArea" price="50" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Entertainment">
 			<Cargo file="Books" price="50" quantity="1" mass=".01" volume="1"/>
@@ -649,12 +687,16 @@
 			<Cargo file="Rare_Artwork" price="105" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband/Medical">
-			<Cargo file="Organs" price="450" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Black_Market_Organs" price="450" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Biological_Agents" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Virii" price="250" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Resistant_Bacteria" price="90" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband">
 			<Cargo file="Illegal_Weapons" price="300" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Pilot" price="760" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Slaves" price="750" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Clones" price="720" quantity="1" mass=".01" volume="1"/>
 		</Category>
 	<!-- cargo below is senselessly banned by 1 race alone -->
 		<Category file="Contraband/Confed">
@@ -665,8 +707,12 @@
 			<Cargo file="Immigrants" price="160" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband/Rlaan">
+			<Cargo file="Rlaan_Poison" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Zhollus" price="80" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband/Aera">
+			<Cargo file="RetrifiedSalt" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="AeraNerveStimuli" price="80" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband/Retro">
 		</Category>
