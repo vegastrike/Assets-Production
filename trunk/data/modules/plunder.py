@@ -1,5 +1,6 @@
 from go_somewhere_significant import go_somewhere_significant
 import vsrandom
+import universe
 import launch
 import faction_ships
 import Director
@@ -9,29 +10,31 @@ import VS
 
 class plunder (Director.Mission):
 
-	def __init__ (self, creds, shipdifficulty, faction, quantity, category, returntobase, var_when_done=''):
+	def __init__ (self, creds, faction, quantity, category, returntobase, var_when_done=''):
 	  Director.Mission.__init__ (self)
 	  self.newship=""
 	  self.mplay="all"
 	  self.obj=0
 	  self.enemy=VS.Unit()
 	  self.curiter=0
+	  self.content=""
 	  self.quantity=quantity
 	  self.arrived=0
-	  self.faction = faction	  
-	  self.difficulty = shipdifficulty
+	  self.faction = faction
 	  self.cred=creds
 	  self.category=category
+	  self.donevar=var_when_done
 	  sysfile = VS.getSystemFile()
-	  self.newship=faction_ships.getRandomFighter(self.faction)
+	  self.newship=faction_ships.getRandomFighter('merchant')
 	  self.you=VS.getPlayer()
-	  self.gosig=go_somewhere_significant(self.you,False,500)
+	  self.pos=self.you.Position()
+	  self.gosig=go_somewhere_significant(self.you,False,10000.)
 	  self.mplay=universe.getMessagePlayer(self.you)
 	  if (self.you):
 	    VS.IOmessage (0,"plunder mission",self.mplay,"Your mission is to destroy a %s merchant unit." % (self.newship))
 	    VS.IOmessage (1,"plunder mission",self.mplay,"It is orbiting around the %s planet in the system." % (self.gosig.SignificantUnit().getName()))
-	    VS.IOmessage (2,"plunder mission",self.mplay,"After it is destroyed, pick up all %s cargo that got ejected.",self.category)
-	    VS.IOmessage (3,"plunder mission",self.mplay,"Then return to a %s base with your cargo. #00ff00Good luck!",self.faction)
+	    VS.IOmessage (2,"plunder mission",self.mplay,"After it is destroyed, pick up all %s cargo that got ejected."%self.category)
+	    VS.IOmessage (3,"plunder mission",self.mplay,"Then return to a %s base with your cargo. #00ff00Good luck!"%self.faction)
 	  else:
 	    print "aboritng plunder constructor..."
 	    VS.terminateMission (0)
@@ -40,15 +43,18 @@ class plunder (Director.Mission):
 	  VS.IOmessage (0,"plunder mission",self.mplay,"#00ff00Excellent work pilot.")
 	  VS.IOmessage (0,"plunder mission",self.mplay,"#00ff00You have been rewarded for your effort as agreed.")
 	  VS.IOmessage (0,"plunder mission",self.mplay,"#00ff00Your contribution to the war effort will be remembered.")
+	  print "do you win?"
 	  un.addCredits(self.cred)
-	  quest.removeQuest(self.you.isPlayerStarship(),self.donevar,1)
+	  if len(self.donevar):
+	    quest.removeQuest(self.you.isPlayerStarship(),self.donevar,1)
 	  if (terminate):
 	    print "you win plunder mission!"
 	    VS.terminateMission(1)
 	  
 	def Lose (self,terminate):
 	  VS.IOmessage(0,"plunder mission",self.mplay,"#ff0000You have failed this mission and will not be rewarded.")
-	  quest.removeQuest(int(self.mplay[1:]),self.donevar,-1)
+	  if len(self.donevar):
+	    quest.removeQuest(int(self.mplay[1:]),self.donevar,-1)
 	  if (terminate):
 	    print "lose plunder mission"
 	    VS.terminateMission(0)
@@ -59,18 +65,29 @@ class plunder (Director.Mission):
 	    self.Lose (1)
 	    return
 	  if (self.arrived==3):
-	    self.Win(1)#####TEMPORARY... ADD go_somewhere_significant AND _T_H_E_N_ WIN WHEN YOU ARE DOCKED!
+	    self.gosig.Execute()
+	    cargquant=self.you.GetCargo(self.content).GetQuantity()
+	    if cargquant<self.quantity:
+#	      print "ohnooohnoohno!!!!!!!"
+	      VS.IOmessage(0,"plunder mission",self.mplay,'Not enough of %s cargo... Get more until you have %d.'%(self.quantity))
+	      VS.setCompleteness(self.obj,0.)
+	    elif self.you.isDocked(self.gosig.SignificantUnit()) or self.gosig.SignificantUnit().isDocked(self.you):
+#	      print "du hast gewonnen!"
+	      self.you.removeCargo(self.content,self.quantity,True)
+	      self.Win(self.you,True)
+#	    else:
+#	      print 'hihohohiho'
 	  elif (self.arrived==2):
-	    if not len(self.enemy):
-	      self.gosig
+	    cargquant=self.you.GetCargo(self.content).GetQuantity()
+	    VS.setCompleteness(self.obj,float(cargquant)/float(self.quantity))
+	    if cargquant==self.quantity:
 	      self.arrived=3
-	    else:
-	      for i in range(len(self.enemy)):
-	        if not self.enemy[i]:
-	          self.enemy.pop(i)
-	          VS.setCompleteness(self.obj,VS.getCompleteness(self.obj)+(1/self.quantity))
+	      self.gosig=go_somewhere_significant(self.you,True,3000.,True,"pirates")
+	      self.gosig.SignificantUnit().SetHull(9999999999.9999999999)
+	      VS.IOmessage(0,"plunder mission",self.mplay,'Give all of your cargo to the %s unit.'%(self.gosig.SignificantUnit().getName()))
 	  elif (self.arrived==1):
 	    if (self.enemy):
+	      self.pos=self.enemy.Position()
 	      curun=VS.getUnit(self.curiter)
 	      self.curiter+=1
 	      if (curun==self.enemy):
@@ -81,13 +98,10 @@ class plunder (Director.Mission):
 	      VS.setCompleteness(self.obj,1.)
 	      self.arrived=2
 	      self.enemy=[]
-	      for i in range(self.quantity):
-	        carg=VS.getRandCargo(self.quantity,self.category)
-	        if (carg.GetQuantity()==0):
-	          carg = VS.getRandCargo(self.quantity,"") #oh no... could be starships...
-	        self.enemy.append(launch.launch_wave_around_unit("shadow","upgrades","generic_cargo","sitting_duck",1,50.,100.,self.you))
-	        self.enemy[-1].setName(carg.GetContent())
-	      self.obj=VS.addObjective("Pick up %d %s cargo"%(self.quantity,self.category))
+	      for i in range(self.quantity*2):
+	        launch.launch_wave_around_area("shadow","upgrades","generic_cargo","sitting_duck",1,5.,10.,self.pos,'',False).setName(self.content)
+	      self.obj=VS.addObjective("Pick up %d %s cargo"%(self.quantity,self.content))
+	      VS.IOmessage(0,"plunder mission",self.mplay,'You must now pick up at least %d of the %s cargo.'%(self.quantity,self.content))
 	  else:
 	    significant=self.gosig.SignificantUnit()
 	    if (significant.isNull ()):
@@ -97,8 +111,17 @@ class plunder (Director.Mission):
 	    else:
 	      if (self.you.getSignificantDistance(significant)<10000.0):
 		if (self.newship==""):
-		  self.newship=faction_ships.getRandomFighter(self.faction)
-		self.enemy=launch.launch_wave_around_unit("shadow","merchant",self.newship,"default",1+self.difficulty,200.0,500.0,self.you)
+		  self.newship=faction_ships.getRandomFighter('merchant')
+	        carg=VS.getRandCargo(self.quantity,self.category)
+	        if (carg.GetQuantity()==0):
+	          carg = VS.getRandCargo(self.quantity,"") #oh no... could be starships...
+	        self.content=carg.GetContent()
+	        carg.SetQuantity(self.quantity*2)
+		self.enemy=launch.launch_wave_around_unit("shadow","merchant",self.newship,"default",1,200.0,500.0,self.you)
+		self.enemy.addCargo(carg)
+		VS.setCompleteness(self.gosig.obj,1.)
+	        VS.IOmessage(0,"plunder mission",self.mplay,'You must now destroy the %s ship.'%self.newship)
+	        VS.IOmessage(0,"plunder mission",self.mplay,'That fighter contains the wanted %s cargo in its hold.'%self.content)
 		self.obj=VS.addObjective("Destroy the %s ship." % (self.enemy.getName ()))
 		if (self.enemy):
 		  self.arrived=1
@@ -108,14 +131,14 @@ class plunder (Director.Mission):
 		  return
 	
 	def initbriefing(self):
-		print "ending briefing"                
+		print "ending briefing"
 	
 	def loopbriefing(self):
 		print "loop briefing"
 		Briefing.terminate();
 	
 	def endbriefing(self):
-		print "ending briefing"        	  
+		print "ending briefing"
 	
 
 ##def initrandom (minns, maxns, credsmin, credsmax, run_away, minshipdifficulty, maxshipdifficulty):
