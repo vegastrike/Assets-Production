@@ -19,13 +19,23 @@
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
-                <flightgroup name="bluer" faction="aera" type="car" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="bluer" faction="aera" type="car" ainame="modules/traffic.py" waves="1" nr_ships="1">
 			<pos x="00" y="00" z="1000"/>
-			<rot x="180.0" y="180.0" z="180.0"/>
-			<order order="tmptarget" target="omikron"/>
-			<order priority="0" order="superiority" target="enemy"/>
-			<order priority="1" order="bomber" target="omikron"/>
-			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+                <flightgroup name="bluerw" faction="aera" type="car" ainame="modules/traffic.py" waves="1" nr_ships="1">
+			<pos x="00" y="00" z="500"/>
+		</flightgroup>
+                <flightgroup name="bbluer" faction="aera" type="car" ainame="modules/traffic.py" waves="1" nr_ships="1">
+			<pos x="00" y="00" z="1500"/>
+		</flightgroup>
+                <flightgroup name="bbbluer" faction="aera" type="car" ainame="modules/traffic.py" waves="1" nr_ships="1">
+			<pos x="00" y="00" z="1200"/>
+		</flightgroup>
+                <flightgroup name="bluoer" faction="aera" type="car" ainame="modules/traffic.py" waves="1" nr_ships="1">
+			<pos x="00" y="00" z="300"/>
+		</flightgroup>
+                <flightgroup name="buluer" faction="aera" type="car" ainame="modules/traffic.py" waves="1" nr_ships="1">
+			<pos x="00" y="00" z="1000"/>
 		</flightgroup>
 <!--                <flightgroup name="ground" faction="neutral" type="landscape" ainame="default" waves="1" nr_ships="1">
 			<pos x="00" y="00" z="11000"/>
