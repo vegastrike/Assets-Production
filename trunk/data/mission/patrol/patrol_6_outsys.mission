@@ -19,10 +19,16 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
         </flightgroups>
-	<module name="director">
-		<import name="patrol_system"/>
+	<python>
+import patrol
+newmission = patrol.patrol (1, 7, 300, 9700)
+newmission=0
+
+</python>
+	<madule name="director">
+		<import name="patrol"/>
 		<script name="initgame">
-			<exec module="patrol_system" name="init">
+			<exec module="patrol" name="init">
 			<const type="int" value="1"/> <!--num systems away -->
 
 			<const type="int" value="7"/><!--num patrol points (not zero)-->
@@ -31,19 +37,19 @@
 			</exec>
 		</script>
 		<script name="gameloop">
-			<exec module="patrol_system" name="loop"/>
+			<exec module="patrol" name="loop"/>
 		</script>
 
 		<script name="initbriefing">
-			<exec module="patrol_system" name="initbriefing">
+			<exec module="patrol" name="initbriefing">
 			</exec>
 		</script>
 		<script name="loopbriefing">
-			<exec module="patrol_system" name="loopbriefing">
+			<exec module="patrol" name="loopbriefing">
 			</exec>
 		</script>
 		<script name="endbriefing">
-			<exec module="patrol_system" name="endbriefing">
+			<exec module="patrol" name="endbriefing">
 			</exec>
 		</script>
 
