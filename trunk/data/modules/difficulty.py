@@ -19,19 +19,30 @@ class difficulty:
     self.diff=[]
     self.creds=[]
     self.credsToMax=credsMax
+    print "unlogical start"
     un=VS.getPlayerX(0)
+    print "unlogical end"
     self.i=0
     while (un):
       newdiff=0
+      print "get save data length"
       if (Director.getSaveDataLength(self.i,_key)):
+        print "get save dat"
         newdiff=Director.getSaveData(self.i,_key,0)
+        print "get save end"
       else:
+        print "get difficulty start"
         newdiff=VS.GetDifficulty()
+        print "get diff done"
         Director.pushSaveData(self.i,_key,newdiff)
-      self.diff+=[newdiff]        
+        print "done director"
+      self.diff+=[newdiff]
+      print "set diff start"        
       SetDiff(newdiff)
+      print "set diff end"
       self.creds+=[un.getCredits()]
       self.i+=1
+      print "save unit"
       un=VS.getPlayerX(self.i)
       print "done init diff"
   def usingDifficulty (self):
