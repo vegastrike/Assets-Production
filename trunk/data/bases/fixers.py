@@ -10,6 +10,11 @@ def checkSaveValue (playernum,questname, value):
 def setSaveValue (playernum,name,value):
 	quest.removeQuest(playernum,name,value);
 
+def payCheck(playernum,savevalue,value,money):
+    if checkSaveValue(playernum,savevalue,value):
+        VS.getPlayerX(playernum).addCredits(money)
+        setSaveValue(playernum,savevalue,value+1)
+
 class Choice:
 	def __init__(self,pics,actions,name):
 		self.pics=pics
@@ -61,7 +66,6 @@ fixers={"enigma_sector/niven":[
 	Fixer ("rowenna","Speak with Rowenna",[("decided_iso_evil",0),("iso_mission3",0),("iso_mission2",-1)],"bases/fixers/iso.spr","bases/fixers/iso.py"),
 	Fixer ("cloaked_man","Speak with hooded figure",[("decided_iso_good",0),("iso_evil2",1)],"bases/fixers/cloak.spr","bases/fixers/iso_antagonist.py")
 	],"enigma_sector/defiance":[
-	Fixer ("rowenna","Speak with Rowenna",[("decided_iso_evil",0),("iso_mission3",0)],"bases/fixers/iso.spr","bases/fixers/iso.py"),
 	Fixer ("rowenna","Speak with Rowenna",[("decided_iso_evil",0),("iso_mission3",1)],"bases/fixers/iso.spr","bases/fixers/iso.py"),
 	Fixer ("rowenna","Speak with Rowenna",[("decided_iso_evil",0),("iso_mission3",-1)],"bases/fixers/iso.spr","bases/fixers/iso.py")
 	],"enigma_sector/blake":[
