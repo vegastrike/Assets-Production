@@ -13,7 +13,7 @@
 	<Defense>
 		<Armor front="10" right="10" left="10" back="10"/>
 		<Shields front="0" back="0" recharge="0"/>
-		<Hull strength="30"/>
+		<Hull strength="10000"/>
 	</Defense>
 	<Stats mass="50" momentofinertia="1" fuel="1"></Stats>
    
