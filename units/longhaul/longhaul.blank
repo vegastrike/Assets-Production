@@ -1,0 +1,57 @@
+<Unit>
+<cockpit file="heavy-cockpit.cpt" x="0" y="0" z="0"/>
+	<Defense HudImage="longhaul-hud.spr">
+		<Shields front="0.000000" back="0.000000" left="0" right="0" recharge="0.000000"/>
+	</Defense>
+	<upgrade file="shield_4"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
+
+	<Meshfile file="longhaul-body.xmesh"/>
+	<Meshfile file="longhaul-cockpit.xmesh"/>
+	<!-- Weapons -->
+
+	<Mount weapon="" size="Light Medium" x="-4.5" y="3" z="32.5"/>
+	<Mount weapon="" size="Light Medium" x="4.5" y="3" z="32.5" />
+	<Mount weapon="" size="Light Medium Heavy" x="-0" y="2" z="30"/>
+
+	<Mount weapon="" size="Light-missile Medium-missile" x="6.5" y="3" z="12.5" ammo = "5"/>
+	<Mount weapon="" size="Light-missile Medium-missile" x="-6.5" y="3" z="12.5" ammo ="5"/>
+	<Mount weapon="" size="Light-missile Medium-missile Heavy-missile Special" x="0" y="3" z="2.5" ammo = "8" />	
+	
+	<Subunit file="" x="0" y="5.486964" z="-8.088474" ri="1.000000" rj="0.000000" rk="-0.000000" qi="-0.000000" qj="0.789352" qk="-0.613941"/>
+
+	<Thrust>
+		<Engine Afterburner="903.666718" Forward="173.333344" Retro="215.666676" Left="171.666672" Right="171.666672" Top="171.666672" Bottom="171.666672"/>
+		<Maneuver yaw="1500" pitch="1500" roll="2000"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+
+	<Stats mass="25.000000" momentofinertia="25.000000" fuel="200000000"></Stats>
+	<Computer yaw="70" pitch="70" roll="70" afterburner="95" maxspeed="33.500">
+	<Energy afterburnenergy="32767"/>
+	<Jump missing="1" delay="2" jumpenergy="150"/>       
+	<description>
+
+	</description>
+	<Hold volume="175">
+	    
+	</Hold>
+
+<!-- new elements added -->
+
+    
+	<!-- Thrusters -->
+
+	<Light file="supernova.bmp" x="19" y="3" z="-13" size="2.5"/>
+	<Light file="supernova.bmp" x="22" y="3" z="-13" size="2.5"/>
+	<Light file="supernova.bmp" x="11.5" y="9.75" z="-10" size="2.8"/>
+	<Light file="supernova.bmp" x="14" y="9.75" z="-10" size="2.8"/>
+	<Light file="supernova.bmp" x="-19" y="3" z="-13" size="2.5"/>
+	<Light file="supernova.bmp" x="-22" y="3" z="-13" size="2.5"/>
+	<Light file="supernova.bmp" x="-11.5" y="9.75" z="-10" size="2.8"/>
+	<Light file="supernova.bmp" x="-14" y="9.75" z="-10" size="2.8"/>
+
+</Unit>
