@@ -2,7 +2,12 @@
 CURPWD=$PWD
 mkdir $HOME/.vegastrike
 cd $HOME/.vegastrike
-echo "default"> save.txt
+if cat save.txt ;
+then
+touch save.txt;
+else
+echo "default"> save.txt ;
+fi
 cp /usr/local/share/vegastrike/data/setup.config .
 cp /usr/local/share/vegastrike/data/vegastrike.config .
 /usr/local/bin/vssetup
