@@ -8,17 +8,18 @@ import Briefing
 import universe
 import unit
 import Director
-
+import quest
 class escort_mission (Director.Mission):
 	you=VS.Unit()
 	escortee=VS.Unit()
 	adjsys=0
 	arrived=0
         mplay="all"
-	def __init__ (self,factionname, missiondifficulty, our_dist_from_jump, dist_from_jump, distance_from_base, creds, enemy_time, numsysaway):
+	def __init__ (self,factionname, missiondifficulty, our_dist_from_jump, dist_from_jump, distance_from_base, creds, enemy_time, numsysaway,jumps=(),var_to_set=''):
 		Director.Mission.__init__(self);
 		self.you = VS.getPlayer();
-		self.adjsys=go_to_adjacent_systems(self.you, numsysaway)
+		self.adjsys=go_to_adjacent_systems(self.you, numsysaway,jumps)
+		self.var_to_set = var_to_set;
 		print "e"
 		self.adjsys.Print("You should start in the system named %s","Then jump to %s","Finally, jump to %s, your final destination","escort mission",1)
 		print "f"
@@ -52,6 +53,8 @@ class escort_mission (Director.Mission):
 		if (self.escortee.isNull()):
 			VS.IOmessage (0,"escort",self.mplay,"#ff0000You were to protect your escort. Mission failed.")
 			universe.punish(self.you,self.faction,self.difficulty)
+			if (self.var_to_set!=''):
+				quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,-1)
 			VS.terminateMission(0)
 			return   
 		if (not self.adjsys.Execute()):
@@ -64,6 +67,8 @@ class escort_mission (Director.Mission):
 			self.you.addCredits(self.creds)
 			VS.IOmessage (0,"escort",self.mplay,"#00ff00Excellent work! You have completed this mission!")
 			self.escortee.setFgDirective('b')
+			if (self.var_to_set!=''):
+				quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,1)
 			VS.terminateMission(1)
-def initrandom (factionname,difficulty,creds,entime,numsysaway):
-	return escort_mission(factionname,difficulty,6000,vsrandom.randrange(5000,7000),vsrandom.randrange(10,300),creds,entime,numsysaway)
+def initrandom (factionname,difficulty,creds,entime,numsysaway,jumps=(),var_to_set=''):
+	return escort_mission(factionname,difficulty,6000,vsrandom.randrange(5000,7000),vsrandom.randrange(10,300),creds,entime,numsysaway,jumps,var_to_set)
