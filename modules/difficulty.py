@@ -45,6 +45,7 @@ class difficulty:
       print "save unit"
       un=VS.getPlayerX(self.i)
       print "done init diff"
+    print "done init diff FINAL"
   def usingDifficulty (self):
     return (VS.GetDifficulty()!=1.0)
   
