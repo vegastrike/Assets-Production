@@ -101,7 +101,7 @@ def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
 	while (un):
 		if ((un.getFactionName()==enfaction and un.getFlightgroupName()==enfgname) or
 			(un.getFactionName()==faction and un.getFlightgroupName()==fgname)):
-			un.SetFgDirective ('b')
+			un.setFgDirective ('b')
 		#check to see that its' in this flightgroup or something :-)
 		un=i.next()
 
