@@ -230,6 +230,7 @@ module cargo_mission {
 	  }
 	};
 	void loop () {
+	  /*
 	  if (_std.getGameTime()>mission_time) {
 	    _io.message (0,"game","all","You Have failed to deliver your cargo in a timely manner.");
 	    _io.message (0,"game","all","The cargo is no longer of need to us.");
@@ -239,6 +240,7 @@ module cargo_mission {
 	    }
 	    return;
 	  }
+	  */
 	  if (arrived) {
 	    object base=_unit.getUnitFromContainer(basecontainer);
 	    object you=_unit.getUnitFromContainer(youcontainer);
