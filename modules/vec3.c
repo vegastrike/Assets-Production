@@ -1,5 +1,15 @@
 module vec3 {
 
+  import random;
+
+  void print(object v3){
+    float x=_olist.at(v3,0);
+    float y=_olist.at(v3,1);
+    float z=_olist.at(v3,2);
+    
+    _io.printf("[ %f , %f , %f ]",x,y,z);
+  };
+
   object new(float x,float y,float z){
     object v3=_olist.new();
 

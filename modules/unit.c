@@ -3,6 +3,26 @@ module unit {
 
   float lasttime;
 
+  object getUnitByFgID(object fgid){
+    int ship_nr=0;
+    object unit=_unit.getUnit(ship_nr);
+    object found_unit;
+    _std.setNull(found_unit);
+
+    while((!_std.isNull(unit)) && _std.isNull(found_unit)){
+      object unit_fgid=_unit.getFgID(unit);
+      _io.printf("matching %s with %s\n",unit_fgid,fgid);
+      if(_string.equal(unit_fgid,fgid)){
+	_io.printf("found match: %s %s\n",unit_fgid,fgid);
+	found_unit=unit;
+      }
+      ship_nr=ship_nr+1;
+      unit=_unit.getUnit(ship_nr);
+    }
+
+    return found_unit;
+  };
+
   void initgame(){
     lasttime=0.0;
   };
@@ -21,7 +41,7 @@ module unit {
     object unit_list=_olist.new();
     int ship_nr=0;
     object unit=_unit.getUnit(ship_nr);;
-
+    
     while(!_std.isNull(unit)){
       _olist.push_back(unit_list,unit);
       

@@ -20,4 +20,7 @@
 		</planet>
 	</planet>
 
+	<planet name="JumpPoint" file="jump.png" alpha="ONE ONE" radius="100" gravity="20"  x="10000" y="0" z="7000"  velocity="0" position="0" destination="blank">
+	</planet>
+
 </system>

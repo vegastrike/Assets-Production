@@ -1,5 +1,7 @@
 module waypoints1 {
 
+  import ai_stationary;
+
   object waypoints;
   object outstr;
 
@@ -13,7 +15,7 @@ module waypoints1 {
     object wp1=vec3.new(8000.0,500.0,0.0-500.0);
     object wp2=vec3.new(8000.0,0.0-500.0,0.0-500.0);
     object wp3=vec3.new(8000.0,0.0-500.0,500.0);
-    object wp4=vec3.new(8000.0,0.0,0.0);
+    object wp4=vec3.new(9000.0,0.0,0.0);
 
     _olist.push_back(waypoints,wp0);
     _olist.push_back(waypoints,wp2);
@@ -35,7 +37,7 @@ module waypoints1 {
       float y=_olist.at(wp,1);
       float z=_olist.at(wp,2);
 
-      _unit.launch(outstr,"neutral","kyta","_ai_stationary",1,x,y,z);
+      _unit.launch(outstr,"neutral","dagger","_ai_stationary",1,x,y,z);
       i=i+1;
     }
   };

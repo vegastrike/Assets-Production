@@ -1,4 +1,4 @@
-<system name="Wasteland" background="red_galaxy1" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
+<system name="Wasteland" background="fiery_galaxy" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
 <Light>
 <ambient red=".3" green=".3" blue=".3"/>
 <diffuse red="1" green=".8" blue=".8"/>
@@ -19,5 +19,9 @@
 		<unit name = "station" file="station" faction="aera" ri="4000" sk="3000"/>
 		</planet>
 	</planet>
+
+	<planet name="JumpPoint" file="jump.png" alpha="ONE ONE" radius="100" gravity="20"  x="8000" y="100" z="2000"  velocity="0" position="0" destination="pluto_hq">
+	</planet>
+
 
 </system>
