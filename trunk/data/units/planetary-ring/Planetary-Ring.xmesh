@@ -1800,6 +1800,10 @@
 		<Vertex point="24" s="0.750000" t="1.000000"/>
 		<Vertex point="97" s="0.725000" t="1.000000"/>
 	</Quad>
-
+ <material reflect="0">
+ <specular red="0" green="0" blue="0" alpha="0"/>
+ <ambient red="1" green="1" blue="1" alpha="1"/>
+ <diffuse red="1" green="1" blue="1" alpha="1"/>
+</material>
 </Polygons>
 </Mesh>
