@@ -3,21 +3,26 @@ import sys
 import random
 from Vector import *
 import car_lib
-maxspeed=43
+maxspeed=80
 
 class TrafficAI(VS.PythonAI):
     def restoreCruisingSpeed(self,speed):
-	self.MatchLinearVelocity(0,(0,0,speed),0,1)
+	vel = Scale (self.GetParent().GetOrientation()[2],speed)
+	self.MatchLinearVelocity(0,vel,0,1)
         self.AddReplaceLastOrder(1)
 	self.GetParent().setSpeed(speed)
     def init(self,un):
 	self.shipiter=0;
-	self.speed = random.uniform (0,maxspeed);
+	self.speed = random.uniform (maxspeed/2,maxspeed);
 	print 'self.speed'
 	print self.speed
 	self.stopping=0
+	self.begin=1
 	self.restoreCruisingSpeed(self.speed)
     def Execute(self):
+	if (self.begin):
+		self.begin=0
+		self.restoreCruisingSpeed(self.speed)
         VS.PythonAI.Execute(self)
 	un = VS.getUnit (self.shipiter);
 	parent = self.GetParent()
