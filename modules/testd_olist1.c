@@ -2,12 +2,16 @@ module testd_olist1 {
 
   object list_of_lists;
   float nr_of_lists,max_nr_lists;
+  float test:=0.0;
+  float test2:=0.0;
 
  void loop(){
-    float counter;
+   //   float blah:=3.4;
+
+    float counter=_std.Rnd()*20.0;
     object new_list;
 
-    counter=_std.Rnd()*20.0;
+    //    counter=_std.Rnd()*20.0;
 
     _io.PrintFloats(:s1="creating a list with "; :s2=" numbers"; counter);
 
@@ -24,9 +28,9 @@ module testd_olist1 {
     nr_of_lists=nr_of_lists+1.0;
 
     if(nr_of_lists>max_nr_lists){
-      float i;
+      float i=0.0;
       object sublist;
-      i=0.0;
+      //      i=0.0;
 
       while(i<max_nr_lists){
 	_io.PrintFloats(:s1="subList nr. "; i);
@@ -50,15 +54,13 @@ module testd_olist1 {
   };
 
   object fill_list(float counter){
-    object list;
-    list=_olist.new();
+    object list=_olist.new();
+    //    list=_olist.new();
     //_io.PrintFloats(:s1="after init";);
 
-    float  i;
-    i=0.0;
+    float  i=0.0;
     while(i<counter){
-      float tmp;
-      tmp=_std.Rnd();
+      float tmp=_std.Rnd();
       _olist.push_back(list,tmp);
       i=i+1.0;
       //_io.PrintFloats(:s1="end of while";);
