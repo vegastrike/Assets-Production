@@ -10,8 +10,8 @@
 		</planet>
 		<planet name="Barnoose"	file="planets/m_class3.png" radius="1281005" gravity="18" ri="260000000.0" rj="0" rk="260000000" si="260000000.0" sj="0" sk="-260000000.0" year="13661700" day="950" position="0">
 			<Atmosphere file="sol/earthcloudmaptrans.png" alpha="SRCALPHA INVSRCALPHA" radius="1335830"/>
-			<Ring file="planets/ring.png" innerradius="2259608" outerradius="2460058"  ri="-0.714508" rj="0.436248" rk="0.546960" si="-0.669016" sj="-0.197311" sk="-0.716580" wrapx="180" wrapy="1" year="3081"/>
-			<Ring file="planets/ring.png" innerradius="1966615" outerradius="2177051"  wrapx="220" wrapy="9" year="-3081"/>
+			<Ring file="planets/ring.png" innerradius="2259608" outerradius="2460058"  ri="-0.714508" rj="0.436248" rk="0.546960" si="-0.669016" sj="-0.197311" sk="-0.716580" wrapx="180" wrapy="2" year="3081"/>
+			<Ring file="planets/ring.png" innerradius="1966615" outerradius="2177051"  wrapx="220" wrapy="2" year="-3081"/>
 			<Unit name="Inner Rings" file="MiningBase" ri="2059833" rj="-400" rk="0" si="0" sj="-400" sk="2059833" faction="confed"  year="1118260" day="20700" />
 			<planet name="JumpToNovayaKiev"	file="jump.png" ri="2059833" rj="0" rk="-8462" si="-8462" sj="0" sk="2059833" radius="200" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/novaya_kiev"/>
 			<planet name="JumpToAdams" file="jump.png" ri="2059833" rj="6086" rk="6086" si="6086" sj="6086" sk="2059833" radius="200" year="34154250" day="16020" alpha="ONE ONE" destination="enigma_sector/adams"/>
