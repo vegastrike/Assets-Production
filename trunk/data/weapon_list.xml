@@ -42,6 +42,19 @@
 <Appearance file="weapons/unknown_beam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a="1" >
 </Appearance>
 </Beam>
+
+<Missile name="Dumbfire" mountsize="light-missile">
+<Energy rate="0" stability="6" refire=".3">
+</Energy>
+<Damage rate="120" longrange="1">
+</Damage>
+<Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="4000" >
+</Distance>
+<Appearance file="dumbfire" soundwav="missile_3.wav">
+</Appearance>
+</Missile>
+
+
 <!-- below has no mountsize to fit on any ship -->
 <Bolt name="UnknownBolt"> 
 <Energy rate="40" stability="6" refire=".7">
@@ -89,23 +102,13 @@
 </Beam>
 
 
-<Missile name="Dumbfire" mountsize="light-missile">
-<Energy rate="0" stability="6" refire=".3">
-</Energy>
-<Damage rate="80" longrange="1">
-</Damage>
-<Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
-</Distance>
-<Appearance file="dumbfire" soundwav="missile_3.wav">
-</Appearance>
-</Missile>
 
 <Missile name="HeatSeeker" mountsize="light-missile">
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
-<Damage rate="80" longrange="1">
+<Damage rate="100" longrange="1">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
+<Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2400" >
 </Distance>
 <Appearance file="heatseek" soundwav="missile_3.wav">
 </Appearance>
@@ -193,9 +196,9 @@
 </Energy>
 <Damage rate="800" longrange="1">
 </Damage>
-<Distance speed="180" radialspeed=".8" radius=".7" pulsespeed="15" range="3500" >
+<Distance speed="200" radialspeed=".8" radius=".7" pulsespeed="15" range="3500" >
 </Distance>
-<Appearance file="heatseek" soundwav="missile_3.wav">
+<Appearance file="dumbfire" soundwav="missile_3.wav">
 </Appearance>
 </Missile>
 
@@ -427,7 +430,7 @@
 <Missile name="ImageRecognition" mountsize="medium-missile">
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
-<Damage rate="80" longrange="1">
+<Damage rate="85" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius="1.2" pulsespeed="15" range="2000" >
 </Distance>
