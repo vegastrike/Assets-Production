@@ -32,9 +32,19 @@ class dantestmission (quest.quest):
 			self.un1=launch.launch_wave_around_unit("siege_loss","trigger","box","default",1,1,2000,self.playa)
 			self.un2=launch.launch_wave_around_unit("siege_draw","trigger","box","default",1,1,1000,self.playa)
 
-			self.triggkey = [1,1,1]
+			self.numguard = 4
+			self.guard = ()
+			for i in range(self.numguard):
+				self.guard = self.guard + (launch.launch_wave_around_unit("Guardians","neutral","drone","default",1,1,4000,self.playa),)
+
+			self.triggkey = [1,1,1,1]
 
 	def Execute (self):
+		if 0 in self.triggkey and self.triggkey[3] == 1:
+			print "0 in triggkey"
+			unit.setTfgDirective(self.guard,self.playa,'A')
+			self.triggkey[3] = 0
+
 		if self.un0.isNull() and self.triggkey[0]:
 			print "siege_win"
 			self.triggkey[0] = 0

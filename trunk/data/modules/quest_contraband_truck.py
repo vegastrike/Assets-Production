@@ -23,7 +23,7 @@ class quest_contraband_truck (quest.quest):
 
 	def mission_fail(self):
 		print "mission failed"
-		VS.IOmessage (0,"game","news","AERAN WARP CORE EXPLODES: \n GNN reports the explosion of a warp core in Klondike system today.  The unstable core was apparently being smuggled out of Confederation space by cloaked Aeran ships.  It is understood that the Aeran ships, and an unknown privateer vessel were in the aera.  They are presumed destroyed.\n\n  GNN --- Your News Network Anywhere")
+		VS.IOmessage (0,"game","news","AERAN WARP CORE EXPLODES:\\GNN reports the explosion of a warp core in Klondike system today.  The unstable core was apparently being smuggled out of Confederation space by cloaked Aeran ships.  It is understood that the Aeran ships, and an unknown privateer vessel were in the aera.  They are presumed destroyed.\n\n  GNN --- Your News Network Anywhere")
 		print "mission terminating"
 
 		print "mission terminated"
@@ -210,18 +210,18 @@ class quest_contraband_truck (quest.quest):
 			if unit.TfgisNull(self.aera_specopp):
 				self.mission_success()
 
-#			if self.truck_pirate.getSystemFile() /= self.playa.getSystemFile():
-#				if self.timer2 == 0:
-#					self.timer2 = 40 + VS.GetGameTime()
-#				if VS.GetGameTime() > self.timer2:
-#					#FIXME: remove truck from game cleanly
+			if self.truck_pirate.getUnitSystemFile() != VS.getSystemFile():
+				if self.timer2 == 0:
+					self.timer2 = 40 + VS.GetGameTime()
+				if VS.GetGameTime() > self.timer2:
+					self.truck_pirate.Kill()
 					
 
 			if self.jumpout == 1:
 				self.end_destruction()
 
 
-			if self.truck_pirate.getMinDis(self.playa.Position()) < 200:
+			if self.truck_pirate.getMinDis(self.playa.Position()) < 200 and (not self.truck_pirate.isNull()):
 				if self.repeat_end1 == 2:
 					VS.IOmessage (0,"Sonorous E2","all","I am with Confed Special Service.")
 					VS.IOmessage (0,"Sonorous E2","all","You are hampering a priority 0 operation.")
@@ -231,7 +231,7 @@ class quest_contraband_truck (quest.quest):
 					self.confed_epeels2.setFgDirective('A')
 					self.repeat_end1 = 3
 
-			elif self.truck_pirate.getMinDis(self.playa.Position()) < 1000:
+			elif self.truck_pirate.getMinDis(self.playa.Position()) < 1000 and (not self.truck_pirate.isNull()):
 				if self.repeat_end1 == 1:
 					VS.IOmessage (0,"Smuggler:truck","all","Back off mate, if you know what's good for you.")
 					print "My target is..."
@@ -244,7 +244,7 @@ class quest_contraband_truck (quest.quest):
 					self.repeat_less = 0
 					self.repeat_end1 = 2
 
-			elif self.truck_pirate.getMinDis(self.playa.Position()) < 3000:
+			elif self.truck_pirate.getMinDis(self.playa.Position()) < 3000 and (not self.truck_pirate.isNull()):
 				if self.repeat_less == 1:
 					VS.IOmessage (0,"Smuggler:truck","all","Please stay away, we are carrying valuable cargo.")
 					self.repeat_more = 1
@@ -256,13 +256,13 @@ class quest_contraband_truck (quest.quest):
 					self.repeat_more = 0
 					self.repeat_less = 1
 			
-
-
-
-
-
-
-
+#FIXME: (for 0.4) fix with existing ships
+#FIXME: (final) integrate with existing systems
+#FIXME: cruiser tractor in cargo!
+#FIXME: monetary rewards
+#FIXME: add fixer to bar in new system
+#FIXME: comms from specific ships
+#FIXME: faction relation consequences
 
 #			self.makeQuestPersistent()
 			return 1
