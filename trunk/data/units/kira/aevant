@@ -1,0 +1,33 @@
+<Unit>
+	<Meshfile file="aevant.xmesh" />
+	<Thrust>
+		<Engine Afterburner="896.999969" Forward="234.399994" Retro="192.599995" Left="137.199997" Right="130.199997" Top="167.199997" Bottom="167.199997"/>
+		<Maneuver yaw="2415.500000" pitch="2415.500000" roll="2415.500000"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Armor front="400" right="300" left="300" back="250"/>
+		<Shields front="260.000000" right="250.000000" left="250.000000" back="220.000000" recharge="30.000000"/>
+		<Hull strength="250.000000"/>
+	</Defense>
+	<Stats mass="10.000000" momentofinertia="10.000000" fuel="20000"></Stats>
+	<Computer yaw="80.500000" pitch="90.500000" roll="80.500000" afterburner="119.699997" maxspeed="35.799999"/>
+	<Energy>
+		<Reactor recharge="110" limit="600"/>
+	</Energy>
+       
+
+      
+
+<!-- new elements added -->
+<Light file="supernova.bmp" x="-1.850000" y="-0.000000" z="-9.600000" size="1.358022"/>
+<Light file="supernova.bmp" x="1.850000" y="0.000000" z="-9.600000" size="1.187018"/>
+<Mount weapon="Ion" size="Light" x="8.045031" y="-4.217878" z="0.973509" />
+<Mount weapon="Ion" size="Light" x="-8.022359" y="-4.201684" z="0.913285" />
+<Mount weapon="Neutron" size="Light" x="8.082913" y="-0.368988" z="0.747223" />
+<Mount weapon="Neutron" size="Light" x="-8.157103" y="-0.379586" z="1.100964" />
+<Light file="supernova.bmp" x="-0.000000" y="0.000000" z="-9.200000" size="2.064038"/>
+<Mount weapon="LaserBeam" size="Light" x="1.871961" y="0.374392" z="12.062358" />
+<Mount weapon="LaserBeam" size="Light" x="-1.885182" y="0.377037" z="12.112597"/>
+</Unit>
