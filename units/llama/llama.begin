@@ -1,0 +1,68 @@
+<Unit scale ="6">
+	<Meshfile file ="llama_connector.xmesh">
+	</Meshfile>
+	<Meshfile file ="llama_catamaran.xmesh">
+	</Meshfile>
+	<Meshfile file ="llama_body.xmesh">
+	</Meshfile>
+	<Meshfile file ="llama_blink.xmesh">
+	</Meshfile>
+	<Description combatRole ="SHUTTLE">
+	</Description>
+	<cockpit file ="medium_cockpit.cpt" x ="0.000000" y ="0.000000" z ="0.000000">
+	</cockpit>
+	<Thrust>
+		<Engine Afterburner ="130000" Forward ="80000" Retro ="80000" Left ="30000" Right ="30000" Top ="30000" Bottom ="30000">
+		</Engine>
+		<Maneuver yaw ="90000" pitch ="90000" roll ="90000">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="llama-hud.spr" RepairDroid ="0" ecm ="0">
+		<Armor front ="200" right ="200" left ="200" back ="200">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Cloak missing ="1" cloakmin =".25" cloakrate =".1" cloakenergy ="79.0" cloakglass ="false">
+		</Cloak>
+		<Hull strength ="400">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4"/>
+	<Stats mass ="1000" momentofinertia ="1000" fuel ="170000000">
+	</Stats>
+	<Computer yaw ="90.0" pitch ="90.0" roll ="90.0" afterburner ="290" maxspeed ="200" TrackingCone =".99" lockcone ="35">
+		<Radar itts="false" error="0" range="30000000" maxcone="-1" color="false">
+		</Radar>
+	</Computer>
+	<Jump missing = "1" delay ="1" jumpenergy ="280" insysenergy ="180">
+	</Jump>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="480">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Hold volume ="500">
+	</Hold>
+	<Mount weapon ="Laser" size ="LIGHT MEDIUM" x ="1.01200" y ="-6.80000e-2" z ="3.40800">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM" x ="-0.964000" y ="-6.80000e-2" z ="3.40800">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT" x ="0.380000" y ="0.176000" z ="1.07600">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT" x ="-0.336000" y ="0.176000" z ="1.07600">
+	</Mount>
+	<Mount size ="LIGHT-MISSILE MEDIUM-MISSILE SPECIAL-MISSILE" weapon ="dumbfire" ammo ="3" volume ="48" x ="0" y ="0" z ="0">
+	</Mount>
+	<Mount size ="LIGHT-MISSILE MEDIUM-MISSILE SPECIAL-MISSILE" weapon ="" ammo ="3" volume ="48" x ="0" y ="0" z ="0">
+	</Mount>
+	<Light file ="supernova.bmp" x ="0.00000e+0" y ="0.350000" z ="-2.09200" size ="2">
+	</Light>
+	<Light file ="supernova.bmp" x ="1.31600" y ="-6.00000e-3" z ="-1.82200" size ="2">
+	</Light>
+	<Light file ="supernova.bmp" x ="-1.32800" y ="-6.00000e-3" z ="-1.82200" size ="2">
+	</Light>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

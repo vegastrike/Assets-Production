@@ -52,11 +52,10 @@
 	</Computer>
 	<Energy >
 		<Reactor recharge = "7000" limit = "300000"  warpenergy="20000">
-		<Jump jumpenergy="19500" insysenergy="19000"/>
 		</Reactor>
 	</Energy>
-	<Jump delay = "1" jumpenergy = "20000"  >
-	</Jump>
+	<Jump jumpenergy="19500" insysenergy="19000"/>
+
 	<Light file = "supernova.bmp" x = "-2.184859" y = "-0.079105" z = "-38.838833" size = "0.660000"  >
 	</Light>
 	<Light file = "supernova.bmp" x = "-2.862405" y = "-0.101512" z = "-38.838829" size = "0.660000"  >

@@ -54,10 +54,11 @@
 	</Computer>
 	<Energy afterburnenergy = "32767">
 		<Reactor warpenergy ="20000">
-			<Jump missing = "1" jumpenergy ="19500" insysenergy ="19000">
-			</Jump>
 		</Reactor>
 	</Energy>
+	<Jump missing = "1" jumpenergy ="19500" insysenergy ="19000">
+	</Jump>
+
 <Upgrade file="reactor_level_0"/>
 	<Jump missing = "1" delay ="1" jumpenergy ="20000">
 	</Jump>

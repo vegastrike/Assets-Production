@@ -399,6 +399,17 @@
 </Appearance>
 </Beam>
 
+<Beam name="Repulsor" mountsize="special"> 
+<Energy rate="10" stability="600" refire=".3">
+</Energy>
+<Damage rate="48000" phasedamage="-48000" longrange="1">
+</Damage>
+<Distance speed="150" radialspeed="5" radius="5" pulsespeed="5" range="4000" >
+</Distance>
+<Appearance file="weapons/tractorbeam.png" r="0" g=".9" b=".5" a="1" >
+</Appearance>
+</Beam>
+
 <Beam name="HeavyTractor" mountsize="special"> 
 <Energy rate="10" stability="600" refire=".3">
 </Energy>
@@ -474,7 +485,7 @@
 </Energy>
 <Damage rate="25" longrange="1" radius="10" radialspeed="50" >
 </Damage>
-<Distance speed="1900"  pulsespeed="15" range="26000" DetonationRange="50" volume="4" >
+<Distance speed="1900"  pulsespeed="15" range="26000" DetonationRange="20" volume="4" >
 </Distance>
 <Appearance file="leech" >
 </Appearance>
@@ -496,7 +507,7 @@
 </Energy>
 <Damage rate="-800" phasedamage="-300" longrange="1" radius="200" radialspeed="200" >
 </Damage>
-<Distance speed="200" pulsespeed="15" range="1000000" detonationrange="50" volume="90">
+<Distance speed="200" pulsespeed="15" range="1000000" detonationrange="40" volume="90">
 </Distance>
 <Appearance file="torpedo" soundwav="missile_3.wav">
 </Appearance>
@@ -509,7 +520,7 @@
 </Energy>
 <Damage rate="400" longrange="1" radius="20" radialspeed="20">
 </Damage>
-<Distance speed="1300" pulsespeed="15" range="30000" detonationrange="60"  volume="1" >
+<Distance speed="1300" pulsespeed="15" range="30000" detonationrange="30"  volume="1" >
 </Distance>
 <Appearance file="dumbfire" soundwav="missile_3.wav">
 </Appearance>
@@ -520,7 +531,7 @@
 </Energy>
 <Damage rate="200" longrange="1" radius="150" radialspeed="20">
 </Damage>
-<Distance speed="1300"  pulsespeed="15" range="40000" detonationrange="80" volume="3" >
+<Distance speed="1300"  pulsespeed="15" range="40000" detonationrange="10" volume="3" >
 </Distance>
 <Appearance file="heatseek" soundwav="missile_3.wav">
 </Appearance>
@@ -529,9 +540,9 @@
 <Missile name="ImageRecognition" mountsize="medium-missile">
 <Energy rate="0" stability="6" refire="4.2" locktime="2">
 </Energy>
-<Damage rate="240" longrange="1" radius="150" radialspeed="20">
+<Damage rate="260" longrange="1" radius="150" radialspeed="20">
 </Damage>
-<Distance speed="800"  pulsespeed="15" range="37000" detonationrange="40" volume="12">
+<Distance speed="800"  pulsespeed="15" range="37000" detonationrange="5" volume="12">
 </Distance>
 <Appearance file="imrec" >
 </Appearance>
@@ -540,9 +551,9 @@
 <Missile name="FriendOrFoe" mountsize="medium-missile">
 <Energy rate="0" stability="6" refire="4" locktime=".2">
 </Energy>
-<Damage rate="260" longrange="1" radius="140" radialspeed="20">
+<Damage rate="290" longrange="1" radius="140" radialspeed="20">
 </Damage>
-<Distance speed="750" pulsespeed="15" range="35000" detonationrange="40" volume="16">
+<Distance speed="750" pulsespeed="15" range="35000" detonationrange="6" volume="16">
 </Distance>
 <Appearance file="friendorfoe" >
 </Appearance>
@@ -553,7 +564,7 @@
 </Energy>
 <Damage rate="185" longrange="1" radius="1000" radialspeed="160">
 </Damage>
-<Distance speed="500" pulsespeed="250" range="100000" detonationrange="1000" volume="5">
+<Distance speed="500" pulsespeed="250" range="100000" detonationrange="800" volume="5">
 </Distance>
 <Appearance file="mine" >
 </Appearance>
@@ -564,7 +575,7 @@
 </Energy>
 <Damage rate="900" phasedamage="350" longrange="1" radius="180" radialspeed="26">
 </Damage>
-<Distance speed="450" pulsespeed="15" range="9500" detonationrange="30" volume="2">
+<Distance speed="450" pulsespeed="15" range="9500" detonationrange="25" volume="2">
 </Distance>
 <Appearance file="spacebomb" >
 </Appearance>
@@ -598,7 +609,7 @@
 </Energy>
 <Damage rate="50000" phasedamage="40000" longrange="1" radius="200" radialspeed="500" >
 </Damage>
-<Distance speed="200" pulsespeed="15" range="1000000" detonationrange="50" volume="100">
+<Distance speed="200" pulsespeed="15" range="1000000" detonationrange="40" volume="100">
 </Distance>
 <Appearance file="torpedo" soundwav="missile_3.wav">
 </Appearance>
@@ -609,7 +620,7 @@
 </Energy>
 <Damage rate="80000" phasedamage="65000" longrange="1" radius="250" radialspeed="800" >
 </Damage>
-<Distance speed="850" pulsespeed="15" range="1000000" detonationrange="70" volume="100">
+<Distance speed="850" pulsespeed="15" range="1000000" detonationrange="60" volume="100">
 </Distance>
 <Appearance file="torpedo" soundwav="missile_3.wav">
 </Appearance>
@@ -765,7 +776,7 @@
 </Energy>
 <Damage rate="320" longrange="1" radius="50" radialspeed="30" >
 </Damage>
-<Distance speed="1100" pulsespeed="15" range="45000" detonationrange="90" volume="40" >
+<Distance speed="1100" pulsespeed="15" range="45000" detonationrange="10" volume="40" >
 </Distance>
 <Appearance file="capiff" >
 </Appearance>
@@ -788,7 +799,7 @@
 </Energy>
 <Damage rate="10000000" phasedamage="1000000" longrange="1" radius="1500" radialspeed="18000" >
 </Damage>
-<Distance speed="1000" pulsespeed="256" range="800000" detonationrange="400" volume="2600" >
+<Distance speed="1000" pulsespeed="256" range="800000" detonationrange="300" volume="2600" >
 </Distance>
 <Appearance file="capshipmissile" >
 </Appearance>
@@ -957,7 +968,7 @@
 </Energy>
 <Damage rate="30" longrange="1" radius="150" radialspeed="20">
 </Damage>
-<Distance speed="400"  pulsespeed="15" range="250000" detonationrange="100" volume="90" >
+<Distance speed="400"  pulsespeed="15" range="250000" detonationrange="-1" volume="90" >
 </Distance>
 <Appearance file="Thermopylae" soundwav="missile_3.wav">
 </Appearance>

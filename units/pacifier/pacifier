@@ -69,4 +69,5 @@
        	<Jump delay="1" jumpenergy="300" insysenergy="250"/>       
 	<Hold volume="40">
 	</Hold>
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

@@ -54,4 +54,5 @@
     <Light file="supernova.bmp" x="-12.75" y="-3.4" z="-14.75" size="8"/>
     <Light file="supernova.bmp" x="12.75" y="-9" z="-14.75" size="8"/>
     <Light file="supernova.bmp" x="-12.75" y="-9" z="-14.75" size="8"/>
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

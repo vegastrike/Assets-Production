@@ -50,4 +50,5 @@
 <cockpit file = "medium_cockpit.cpt" x = "0" y = "0" z = "2.09000" />
 <Hold volume = "1000" >
 </Hold>
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

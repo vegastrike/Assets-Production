@@ -52,4 +52,5 @@
 	<Mount weapon = "friendorfoe" size = "Special light-missile" x = "0" y = "-.23" z = "4" ammo="1" volume="16">
 	</Mount>
 
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

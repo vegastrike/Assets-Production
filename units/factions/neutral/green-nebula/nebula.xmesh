@@ -3600,6 +3600,5 @@
 </Tri>
 </Polygons>
 <material reflect="0" LightingOn="0">
-<Specular red="0" green="0" blue="0" alpha="1"/>
 </material>
 </Mesh>

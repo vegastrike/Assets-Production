@@ -28,4 +28,5 @@
 <Mount weapon="Ktek" size="Light Medium Heavy" x="-.75" y="-6" z="3.25"/>
 <Mount weapon="Ktek" size="Light Medium Heavy" x=".75" y="-6" z="3.25"/>
 
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

@@ -7575,7 +7575,6 @@
     <Vertex point="757" s="4.95374488830566" t="2.9768214225769"/>
 </Tri>
 </Polygons>
-<Material reflect="0">
-<Specular red="0" green="0" blue="0" alpha="1"/>
-</Material>
+<material reflect="0">
+</material>
 </Mesh>

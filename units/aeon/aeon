@@ -35,4 +35,5 @@
 <Light file="aeraburn" x="0.75" y="-0.086" z="-10" size="8"/>
 	<Hold volume="10">
 	</Hold>
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

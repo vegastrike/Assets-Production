@@ -89,4 +89,5 @@
 	</Description>
 <Upgrade file="mult_general_downgrade"/>
 <Upgrade file="add_general_downgrade"/>
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

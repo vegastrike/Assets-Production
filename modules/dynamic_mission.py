@@ -137,7 +137,7 @@ def generateEscortMission (path,fg,fac):
 		addstr+="#F#bases/fixers/merchant.spr#Talk to the Merchant#Thank you. I entrust that you will safely guide my collegue until you reach the destination.#\n"
 	writemissionsavegame (addstr+"import escort_mission\ntemp=escort_mission.initrandom('%s', %d, %g, 0, 0, %s, '','%s','%s')\ntemp=0\n"%(fac, diff, float(creds), str(path),fg,typ))
 	writedescription("The %s %s in the %s flightgroup requres an escort to %s. The reward for a successful escort is is %d."%(fac,typ,fg, processSystem(path[-1]),creds))
-	writemissionname("Escort/Escort_%s_to_%s"%(fac,processSystem(path[-1])),path)	
+	writemissionname("Escort/Escort_%s_%s_to_%s"%(fac,fg,processSystem(path[-1])),path)	
 
 def changecat(category):
 	l=category.split('/')
@@ -198,9 +198,9 @@ def generateBountyMission (path,fg,fac):
 		diffstr="  The ship in question is thought to have %d starships for protection."%diff
 	writedescription("A %s starship in the %s flightgroup has been harassing operations in the %s system. Reward for the termination of said ship is %d credits.%s"%(typ,fg, processSystem(path[-1]), finalprice,diffstr))
 	if (cap):
-		writemissionname ("Bounty/Bounty_on_%s_Capital_Vessel_in_%s"%(fac,processSystem(path[-1])),path)
+		writemissionname ("Bounty/on_%s_Capital_Vessel_in_%s"%(fac,processSystem(path[-1])),path)
 	else:
-		writemissionname ("Bounty/Bounty_on_%s_starship_%s"%(fac,processSystem(path[-1])),path)
+		writemissionname ("Bounty/on_%s_starship_in_%s"%(fac,processSystem(path[-1])),path)
 
 def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	if (isNotWorthy(defendfac)):
@@ -231,6 +231,22 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	writedescription("A %s assault wing named %s has jumped in and is moving for an attack on one of our %sstarships, a %s, in the %s system.\nYour task is to eradicate them before they eliminate our starship.\nIntelligence shows that they have %d starships of type %s. Your reward is %d credits per fighter."%(attackfac, attackfg, iscapitol, defendtyp, processSystem(path[-1]),quantity, attacktyp,creds))
 	writemissionname("Defend/Defend_%s_from_%s"%(defendfac, attackfac),path)
 
+
+def generateWingmanMission(fg, faction):
+	numships=vsrandom.randrange(1,4)
+	creds=10000+15000*numships
+	writemissionsavegame("import wingman\newmission = wingman.wingman (%f, '%s', %d, 0)\newmission=0"%(creds, faction, numships))
+	s="A pilot"
+	EorA="a"
+	are="is"
+	if numships > 1:
+		s=str(numships)+" pilots"
+		EorA="e"
+		are="are"
+	writedescription(s+" in the %s faction %s willing to help you out and fight with you as long as you pay %d credits."%(faction, are, creds))
+	writemissionname("Wingmen/Hire_%d_%s_Wingm%sn"%(numships,faction,EorA),[VS.getSystemFile()])
+	
+	
 def GetFactionToDefend(thisfaction, fac, cursys):
 	m = fg_util.FGsInSystem ("merchant",cursys)
 	nummerchant=len(m)
@@ -299,7 +315,10 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 						f= thisfaction
 					if count>=numthisfac:
 						f = fac
-					generateEscortMission(j,k,f)
+					if (vsrandom.random()<.1):
+						generateWingmanMission(k,f)
+					else:
+						generateEscortMission(j,k,f)
 					count+=1
 			for k in range(vsrandom.randrange(-3,3)): ###FIXME: choose a better number than 4.
 				if k<0:
@@ -336,5 +355,6 @@ def CreateMissions(minsys=0,maxsys=4):
 	if (basefac=='neutral'):
 		basefac=VS.GetGalaxyFaction(VS.getSystemFile())
 	contractMissionsFor(basefac,minsys,maxsys)
+	generateWingmanMission
 	import news
 	news.processNews(plr)

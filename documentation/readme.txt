@@ -204,7 +204,13 @@ system"... many missions require you to jump out of system to complete
 them, and you need at least 9000 credits to afford a jump drive.
 This is one of the most important improvements you can get for your
 starship. It will allow you to complete many more missions and explore a
-better part of the galaxy.
+better part of the galaxy.  Jump drives require blue energy to be charged to
+a certain value before you may jump.  if you are inside a green jump wireframe
+just wait until the blue energy is high enough that the blue jump light flickers.
+The starting ship has extra jump energy for your convenience... but oftentimes 
+more powerful ships will take longer to charge up and get out of there, forcing 
+players 
+
 
 If mission directions get lost in the battle chatter use page up and
 page down to scroll through the messages and find the directions you
@@ -218,11 +224,11 @@ So take a mission, take off, and prepare to meet your destiny!
 go to Applications/ then to Utilities/
 then double click on terminal.app
 then type
-open ~/.vegastrike/save.txt
+open ~/.vegastrike/save.4.x.txt
 and edit that file to change your savegame :-)
 
 ***This is for PC and Linux users only:
-change the save game by editing save.txt* There should be a program
+change the save game by editing save.4.x.txt* There should be a program
 named "Launcher" in the vegastrike directory or start menu. This will
 give you a list of choices:
 Select mission button This allows you to select which mission vegastrike
@@ -424,21 +430,32 @@ areas.  It is in the shape of a doughnut, and it is colored depending on the
 faction who owns the system. If it's not green then you better watch out,
 this is BEAR territory Garrrah! :-)
 
-To engage a jump drive, position your ship inside and press 'j'.
+To engage a jump drive, position your ship inside and press 'j' when the 
+blue "Jump" light turns on. You may have to recharge your energy somewhat
+to make the interstellar transit. Your jump energy is indicated in blue.
 Regulations state that starships should be stopped before jumping--
 disasters have resulted from starships travelling at any great speed
 into a jump point.
 You do not come equipped with one at the beginning, so you must do
 missions to earn enough money to buy one.
 
+
 * 16) Time Compression / Autopilot*
 
+Most interstellar transit happens through a insystem warp system.
+target a destination and press 'a' when the auto light is on.
+You may not do an insystem jump if inside an asteroid field because
+the rocks interfere with your computer calculation.
+
+
 Often interstellar travel requires going great distances. To facilitate
-this, we have provided time compression. Press F9 to increase time
-compression to get where you're going. Press F10 to drop out of time
-compression. F10 will happen automatically if enemies are nearby.
-If going towards a big object, like a planet, you may autopilot there by
-pressing Shift-A.
+this, we have provided Noncombat mode.
+You may press 'y' to engage in noncombat mode...then your fullspeed goes 
+up by a factor of 100,000 you can use + or - to adjust your speed; however,
+since this is not a combat mode, your shields will drain due to dust particles
+hitting your shields.
+
+
 
 * 17) Match Velocity Key*
 
@@ -545,7 +562,7 @@ j            engage interstellar warp (use at clear green projections  after pur
 *,ins        Spin Right
 /,del        Spin Left
 ~            shelton slide while holding key
-y            match speed
+y            toggle non combat mode (increase max speed by 1000x)
 t            target  
 p            target nearest to center of screen
 u	     target all manmade units
@@ -576,8 +593,8 @@ F12          Zoom out
 s,f,q,z      pan ghost cam
 ;            respawn -- use after death to recreate your starship
 ]            switch to a turret onto your ship
-Shift-A      autopilot to the target
-a            autopilot to the target
+Shift-A      insystem warp to the target
+a            insystem warp to the target
 Shift-P      target enemies for your turret
 Shift-N      Turret Nearest Target
 Shift-!      Suicide

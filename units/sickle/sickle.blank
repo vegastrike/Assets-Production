@@ -41,7 +41,7 @@
 	</Mount>
 	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE" x ="1.056411" y ="-1.226957" z ="3.200000" ammo ="2" volume ="32">
 	</Mount>
-	<Mount weapon ="" size ="LIGHT MEDUIUM" x ="0" y ="0.1" z ="3">
+	<Mount weapon ="" size ="LIGHT MEDIUM" x ="0" y ="0.1" z ="3">
 	</Mount>
 	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE SPECIAL" x ="-1.629525" y ="1.044771" z ="3.200000" ammo ="2" volume ="32">
 	</Mount>
@@ -57,4 +57,5 @@
 	</Light>
 <Upgrade file="mult_general_downgrade"/>
 <Upgrade file="add_general_downgrade"/>
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

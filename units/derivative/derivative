@@ -37,4 +37,5 @@
 	<Light file = "supernova.bmp" x = "0.386000" y = "8.60000e-2" z = "-3.90200" size = ".5" />
 	<Hold volume="7">
 	</Hold>
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

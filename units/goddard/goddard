@@ -98,4 +98,5 @@ edit it to fit the stats of your ship-->
 -->
 
 <!-- END   TEMPLATES -->
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

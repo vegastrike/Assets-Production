@@ -29,4 +29,5 @@
 <Mount weapon="Ktek" size="Light" x="-4.5" y="-.6" z="12.25"/>
 <Mount weapon="Ktek" size="Light" x="4.5" y="-.6" z="12.25"/>
 <Mount weapon="torpedo" size="heavy-missile" x="0" y="-0.5" z="0" ammo="8" volume="800"/> 
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

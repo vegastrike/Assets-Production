@@ -39,7 +39,7 @@
 	</Mount>
 	<Mount weapon = "friendorfoe" size = "Light-missile Medium-missile" x = "1.056411" y = "-1.226957" z = "3.200000" ammo="2" volume="32">
 	</Mount>
-	<Mount weapon = "hvyionbeam" size = "Light meduium" x = "0" y = "0.1" z = "3"  >
+	<Mount weapon = "hvyionbeam" size = "Light medium" x = "0" y = "0.1" z = "3"  >
 	</Mount>
 	<Mount weapon = "friendorfoe" size = "light-missile medium-missile Special" x = "-1.629525" y = "1.044771" z = "3.200000" ammo="2" volume="32">
 	</Mount>
@@ -53,4 +53,5 @@
 	</Light>
 	<Light file = "supernova.bmp" x = "-0.863464" y = "-1.003810" z = "-3.000000" size = "0.40000"  >
 	</Light>
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>

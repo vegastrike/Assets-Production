@@ -17431,9 +17431,9 @@
 <Vertex point="1770" s="1.000000" t="0.500000"/>
 </Tri>
 </Polygons>
-<LOD meshfile="asteroid1600gap.lod1.xmesh" size="1000000"/>
-<LOD meshfile="asteroid1600gap.lod2.xmesh" size="125000"/>
-<LOD meshfile="noroids.xmesh" size="2500"/>
+<LOD meshfile="asteroid1600gap.lod1.xmesh" size="40000"/>
+<LOD meshfile="asteroid1600gap.lod2.xmesh" size="5000"/>
+<LOD meshfile="noroids.xmesh" size="100"/>
 <Material reflect="0" LightingOn="0">
 <Specular red="0.000000" green="0.000000" blue="0.000000" alpha="0.000000"/>
 </Material>

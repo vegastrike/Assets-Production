@@ -69,4 +69,5 @@
 	</Hold>
 <Upgrade file="mult_general_upgrade"/>
 <Upgrade file="add_general_upgrade"/>
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
 </Unit>
