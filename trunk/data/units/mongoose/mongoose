@@ -1,5 +1,5 @@
 <Unit>
-	<cockpit file="bomber_cockpit.cpt" x="0" y=".5" z="4"/>
+	<cockpit file="bomber-cockpit.cpt" x="0" y=".5" z="4"/>
 	<Meshfile file="mongoose.xmesh" />
 	<Light file="supernova.bmp" x="1.500000" y="0.700000" z="-8.000000" size="2.750000"/>
 	<Light file="supernova.bmp" x="-1.500000" y="0.700000" z="-8.000000" size="2.750000"/>
