@@ -7,7 +7,7 @@ import save_util
 import faction_ships
 import universe
 import launch
-import tuples_fg
+#import tuples_fg
 
 
 class quest_contraband_truck_factory (quest.quest_factory):
@@ -28,41 +28,26 @@ class quest_contraband_truck (quest.quest):
 				self.aera_count = self.aera_count + 1
 		return self.aera_count
 
-# This stuff should now be done in the ai
-#	def getJumppoint(self,target,ship):
-#		if (target.isJumppoint()):
-#			ship.SetTarget(target)
-#
-#		else:
-#			target = VS.getUnit(self.count)
-#			self.count = self.count + 1
-#			self.getJumppoint(target,ship)
-		
 
-	def aera_attack(self):
-		self.aera_specopp[self.count].SetTarget(self.playa)
-		self.aera_specopp[self.count].setFgDirective('A')
 
 	def mission_fail(self):
 		print "mission failed"
-		VS.IOmessage (0,"game","news","AERAN WARP CORE EXPLODES: \n GNN reports the explosion of a warp core in Klondike system today.  The unstable core was apparently being smuggled through the system by cloaked Aeran ships.  When merchants entered the system, they took the apparently unguarded cargo pod as scrap and approached.  It exploded soon after.  Aeran and merchant ships presumed destroyed.  Our informant wishes to remain anonymous.")
+		VS.IOmessage (0,"game","news","AERAN WARP CORE EXPLODES: \n GNN reports the explosion of a warp core in Klondike system today.  The unstable core was apparently being smuggled out of Confederation space by cloaked Aeran ships.  It is understood that the Aeran ships, and an unknown privateer vessel were in the aera.  They are presumed destroyed.  Our informant wishes to remain anonymous.")
 		print "mission terminating"
 
-#		VS.terminateMission(False)
 		print "mission terminated"
 		self.quest_exit = 1
-		return 0
+
 
 	def mission_success(self):
 		self.confed_cruiser=launch.launch_wave_around_unit("Sonorous","confed","corvette","default",1,4000,8000,self.cargo_container)
 		self.confed_epeels=launch.launch_wave_around_unit("Sonorous E1","confed","epeellcat","default",5,1000,1000,self.confed_cruiser)
-		VS.IOmessage (3,"game","all","Attention Merchant Vessel!")
-		VS.IOmessage (4,"game","all","Under Code 1530 of the Trade Practices Charter, we take posessoin of this cargo pod.")
-		VS.IOmessage (6,"game","all","Please move away or we will remove you.")
+		VS.IOmessage (3,"game","all","Attention Private Vessel!")
+		VS.IOmessage (4,"game","all","Under Code 1530 of the Trade Practices Charter, we take posession of this cargo pod.")
+		VS.IOmessage (6,"game","all","Please remove yourself or we will remove you.")
 		self.jumpout = 0
-#		VS.terminateMission(True)
 		self.quest_exit = 1
-		return 0
+
 
 
 
@@ -89,14 +74,12 @@ class quest_contraband_truck (quest.quest):
 			self.numaera = 4
 			self.aera_specopp = ()
 			for i in range(self.numaera):
-#				self.aera_specopp = self.aera_specopp + (VS.launch("Aera/SpecOpp","dagger","aera","unit",
-#                "default",1,1,self.cargo_container.Position() + (0,3000,5000),""),)
 				self.aera_specopp = self.aera_specopp + (launch.launch_wave_around_unit("Aera/SpecOpp","aera","dagger","default",1,2000,4000,self.playa),)
 
 			print
 			print "Aera Cloaked"
 			print
-			tuples_fg.fgCloak(1,self.aera_specopp)
+			unit.TfgCloak(1,self.aera_specopp)
 
 			self.repeat_more = 1
 			self.repeat_less = 1
@@ -109,10 +92,10 @@ class quest_contraband_truck (quest.quest):
 			truck_exit = 0
 
 	def start_destruction(self):
-		if self.repeat_end2 == 2:
+		if self.repeat_end2 == 2 and not self.cargo_container.isNull():
 			if self.timer1 == 0:
 				self.timer1 = VS.GetGameTime()
-			self.cargo_container.Split(75)
+#			self.cargo_container.Split(75)
 			VS.playAnimation("explosion_wave.ani",self.cargo_container.Position(),300)
 			VS.playAnimation("explosion_wave.ani",self.cargo_container.Position(),100)
 			VS.playAnimation("explosion_wave.ani",self.cargo_container.Position(),700)
@@ -124,13 +107,10 @@ class quest_contraband_truck (quest.quest):
 			print "adding particle"
 			VS.addParticle(self.cargo_container.Position(),self.cargo_container.GetVelocity(),(1,.2,.2))
 			print "added particle"
-			tuples_fg.fgAttackTgt(self.aera_specopp,self.playa)
+			unit.setTfgDirective(self.aera_specopp,self.playa,'A')
 
-#			self.count = 0
-#			for i in range(self.numaera):
-#				self.aera_attack()
-#				self.count = self.count + 1
 			print "begin msgs"
+
 			VS.IOmessage (0,"game","all","[Translate: Aernoss -> Englysh] Turn your attention <surprise> Entity/self triggered item warp core!")
 			VS.IOmessage (5,"game","all","[Translate: Aernoss -> Englysh] <fear, anxiety, anger> Filthy human procreate entity/self!")
 			VS.IOmessage (12,"game","all","[Translate: Aernoss -> Englysh] Group leave fast danger avo...")
@@ -140,7 +120,7 @@ class quest_contraband_truck (quest.quest):
 			print "ended start_destruction"
 
 	def end_destruction(self):
-		print "testing timer"
+#		print "testing timer"
 		if (self.timer1 + 12) <= VS.GetGameTime():
 
 				print "playing sounds"
@@ -150,18 +130,9 @@ class quest_contraband_truck (quest.quest):
 
 				print "attempting the jump"
 
-				tuples_fg.fgJumpTo(self.aera_specopp,"gemini_sector/pestilence")
+				unit.TfgJumpTo(self.aera_specopp,"gemini_sector/pestilence")
 
 				print "attempted the jump"
-
-#				self.count = 0
-#				for i in range(self.numaera):
-#					self.aera_specopp[self.count].JumpTo("gemini_sector/pestilence")
-#					self.aera_attack()
-#					self.count = self.count + 1
-
-
-
 
 				self.playa.JumpTo("gemini_sector/pestilence")
 				print "jumped playa"
@@ -170,7 +141,6 @@ class quest_contraband_truck (quest.quest):
 
 				VS.IOmessage (0,"game","all","[Translate: Aernoss -> Englysh] Flee smart to go entity/self <conditional> life value.")
 
-#				VS.IOmessage (1,"game","all","Oh no, what that idiot has done!")
 				print "done all but fail"
 				self.mission_fail()
 
@@ -200,29 +170,42 @@ class quest_contraband_truck (quest.quest):
 		if (self.playa):
 
 
-			if self.cargo_container.getMinDis(self.playa.Position()) < 2500:
-				if self.repeat_end2 == 1:
-					VS.IOmessage (3,"game","all","[Computer] Warning! Annomalous warp echos detected.")
-					print
-					print "Aera Un-loaked"
-					print
-					tuples_fg.fgCloak(0,self.aera_specopp)
-#					self.count = 0
-#					for i in range(self.numaera):
-#						self.aera_specopp[self.count].Cloak(0)
-#						self.count = self.count + 1
-					self.repeat_end2 = 2
-
-			if self.cargo_container.getMinDis(self.playa.Position()) < 1000:
-				self.start_destruction()
-
 			if self.jumpout == 1:
 				self.end_destruction()
 
+			elif self.cargo_container.getMinDis(self.playa.Position()) < 1000:
+				self.start_destruction()
 
-			if tuples_fg.fgisNull(self.aera_specopp):
+			elif self.cargo_container.getMinDis(self.playa.Position()) < 2500 and not self.cargo_container.isNull():
+				if self.repeat_end2 == 1:
+					VS.IOmessage (3,"game","all","[Computer] Warning! Annomalous warp echos detected.")
+					print
+					print "Aera Un-Cloaked"
+					print
+					unit.TfgCloak(0,self.aera_specopp)
+					self.repeat_end2 = 2
+
+			elif self.cargo_container.isNull():
+				if self.repeat_end2 == 1:
+					print "null activating"
+					VS.IOmessage (3,"game","all","[Computer] Warning! De-Cloaking hostiles.")
+					print
+					print "Aera Un-Cloaked"
+					print
+					unit.TfgCloak(0,self.aera_specopp)
+					unit.setTfgDirective(self.aera_specopp,self.playa,'A')
+					VS.IOmessage (0,"game","all","[Translate: Aernoss -> Englysh] <surprise> Attention all! <anger> Entity/self valueless takes possession away value.")
+					VS.IOmessage (3,"game","all","[Translate: Aernoss -> Englysh] <anger> Filthy human procreate entity/self!  Death done!")
+					self.repeat_end2 = 0
+
+
+
+			if unit.TfgisNull(self.aera_specopp):
 				VS.IOmessage (0,"game","all","[Computer] Warning! Annomalous fucking python detected.")
+				self.mission_success()
 
+			if self.jumpout == 1:
+				self.end_destruction()
 
 
 			if self.truck_pirate.getMinDis(self.playa.Position()) < 200:
@@ -235,26 +218,14 @@ class quest_contraband_truck (quest.quest):
 					self.confed_epeels2.setFgDirective('A')
 					self.repeat_end1 = 3
 
-			if self.truck_pirate.getMinDis(self.playa.Position()) < 1000:
+			elif self.truck_pirate.getMinDis(self.playa.Position()) < 1000:
 				if self.repeat_end1 == 1:
 					VS.IOmessage (0,"game","all","Back off mate, if you know what's good for you.")
 					print "My target is..."
 
-#					print ai_qct_waitjump.truck_exit
-#					print ai_qct_waitjump().truck_exit
-#					print waitjump.truck_exit
-#					print waitjump().truck_exit
 					global truck_exit
 					truck_exit = 1
 					print truck_exit
-
-# This stuff should now be done in the ai
-#					self.trucktarget = self.truck_pirate.GetTarget()
-#					self.count = 0
-#					self.getJumppoint(self.trucktarget,self.truck_pirate)
-#					self.truck_pirate.MoveTo(self.trucktarget,1)
-#					self.truck_pirate.ActivateJumpDrive(0)
-
 
 					self.repeat_more = 0
 					self.repeat_less = 0
