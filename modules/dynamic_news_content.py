@@ -304,11 +304,11 @@ _all_news_global = {
 
 								  ]
 
-						,"bad"		: [(0.8,"all","I believe this is done, but just not sent to me")
+						,"bad"		: [(0.8,"all","I believe this is done, but just not sent to me0x13")
 
 								  ]
 
-						,"neutral"	: [(0.8,"all","I believe this is done, but just not sent to me")
+						,"neutral"	: [(0.8,"all","I believe this is done, but just not sent to me0x14")
 
 								  ]
 
@@ -318,20 +318,20 @@ _all_news_global = {
 
 								  ]
 
-						,"bad"		: [(0.8,"all","I believe this is done, but just not sent to me")
+						,"bad"		: [(0.8,"all","I believe this is done, but just not sent to me0x15")
 
 								  ]
 
-						,"neutral"	: [(0.8,"all","I believe this is done, but just not sent to me")
+						,"neutral"	: [(0.8,"all","I believe this is done, but just not sent to me0x16")
 
 								  ]
 
 						}
-				 ,"draw"   :	{"good"		: [(0.8,"all","I believe this is done, but just not sent to me")
+				 ,"draw"   :	{"good"		: [(0.8,"all","I believe this is done, but just not sent to me0x17")
 
 								  ]
 
-						,"bad"		: [(0.8,"all","I believe this is done, but just not sent to me")
+						,"bad"		: [(0.8,"all","I believe this is done, but just not sent to me0x18")
 
 								  ]
 
@@ -365,11 +365,11 @@ _all_news_global = {
 
 						}
 
-				,"draw"   :	{"good"		: [(0.8,"all","need a story later, when siege implemented properly")]
+				,"draw"   :	{"good"		: [(0.8,"all","need a story later, when siege implemented properly0x19")]
 
-						,"bad"		: [(0.8,"all","need a story later, when siege implemented properly")]
+						,"bad"		: [(0.8,"all","VAR_system_system in VAR_system_sector standoff VAR_aggressor_nicks VAR_defender_nicks need a story later, when siege implemented properly0x1a")]
 
-						,"neutral"	: [(0.8,"all","need a story later, when siege implemented properly")]
+						,"neutral"	: [(0.8,"all","need a story later, when siege implemented properly0x1b")]
 
 						}
 				 }
@@ -380,7 +380,7 @@ _all_news_global = {
 ,"exploration" :	{"end" :	{"success" :	{"good"		: [(0.3,"all","VAR_system_system Treasure!\\The VAR_aggressor_possessive exploration squadran of VAR_aggressor_FGtype craft, the VAR_aggressor_FG, in part of the VAR_aggressor_full's push into unknown space have today stumbled across one of their bigger finds.  VAR_system_system System in the VAR_system_sector Sector contains a wealth of treasure worth exploiting.  In comparission to some of the most recent systems surveyed, VAR_system_system contains many rescources, both mineral and organic, that may prove invaluable in the war effort.  The first wave of military constructed equipment is expected to be completed within the week, with further civilian colonisation expected by the end of the month.\\\\If you wish to find a new life on the frontier, visit your nearest VAR_aggressor_nicks Administration Centre and ask to speak about resettlement plans.\\Frontier Settlement: \"A new life for all\"")
 											,(1.0,"all","Barren Lands:\\A recently found node on the gate network, VAR_system_system System in VAR_system_sector Sector has been found to be, unfortunately, worthless for all VAR_aggressor_nicks uses.  The system contains no exploitable rescources, is awquardly positioned in the jump-gate network, and has a sun that outputs roughly an order of magnitude more ionising radiation than it's Sol equivalent.\\All was not wasted however with this effort.  Some of the jump-gates present in the system show unknown warp-field signatures, making it possible that there may be richer systems beyond this point.  The VAR_aggressor_FGtype's of VAR_aggressor_FG are now however heading home.  After two months of heavy exploration and survey work, the crew is now up for one month recreation leave before heading back to duty.\\\\\\GNN -- \"Reaching Out\"")]
 
-								,"bad"		: [(0.8,"all","VAR_aggressor_nicks \"Discovers\" VAR_system_system\\ VAR_aggressor_possessive forces reel in yet another system. Sources say that VAR_aggressor_dnickp has snagged VAR_system_system in order to increase their production in the long term so they can expand their borders more efficiently. While our border worlds are glad they are expanding out and not towards VAR_dockedat_possessive space, it is such reckless expansionism that make it difficult to put a heel on VAR_aggressor_possessive growing threat.")]
+								,"bad"		: [(0.8,"all","VAR_aggressor_nicks Discovers VAR_system_system\\ VAR_aggressor_possessive forces reel in yet another system. Sources say that VAR_aggressor_dnickp have snagged VAR_system_system in order to increase their production in the long term so they can expand their borders more efficiently. While our border worlds are glad they are expanding out and not towards VAR_dockedat_possessive space, it is such reckless expansionism that make it difficult to put a heel on VAR_aggressor_possessive growing threat.\\\\\\GNN -- \"Uncovering their discovering.\"")]
 								,"neutral"		: [(0.8,"all","VAR_aggressor_nicks Colonizes New World\\ VAR_aggressor_full has sent its first colony ships to the unexplored system of VAR_system_system in the VAR_system_sector sector. Interested in opening new frontiers and fostering new growth, VAR_aggressor_nicks has declared this world a member of their VAR_aggressor_government.")]
 								}
 					}
@@ -395,8 +395,8 @@ _all_news_global = {
 									  ,(0.5,"player","VAR_aggressor_FG Fleeing from battle:\\The VAR_aggressor_FG VAR_aggressor_FGtype was seen leaving the scene of a skirmish against a group of VAR_defender_possessive VAR_defender_FGtype called \"VAR_defender_FG\".  It is one of the latest of events involving the VAR_aggressor_FG group, who have been active recently in and around VAR_system_system system.  Although their intentions against the VAR_defender_nickp are obviously aggressive, no signs of hostile intent have been shown towards any VAR_dockedat_nicks troops or instalations.\\\\\\GNN -- \"Where the action is...if we can make it.\"")
 									  ]
 						}
-				,"draw" :	{"good"		: [(0.8,"all","Fight to the Draw in VAR_system_system\\The skirmish between the VAR_aggressor_possessive VAR_aggressor_FG and the notorious VAR_defender_nicks VAR_defender_FG squadron of VAR_defender_FGtype starships has ended with no decicive victor. Both sides took some blows, and the  VAR_aggressor_FG lost a VAR_aggressor_FGtype before the forces disengaged.\\\\\\GNN -- \"Our Snooze Is Your News\"")]
-						,"bad"		: [(0.8,"all","VAR_aggressor_nicks Repulsed but not defeated\\A Battle erupted between the VAR_aggressor_possessive VAR_aggressor_FG squad and the VAR_defender_nicks forces. VAR_defender_mstandname, wing leader of the VAR_defender_nicks squadron, the VAR_defender_FG, said, \"We definitely did not fire the first shot. We were pursued and attacked-- so we defended ourselves and pulverized one of their VAR_aggressor_FGtype craft. We were not outmanned nor outgunned, we just repulsed the enemy, that's all.\" Sources indicate that while both attacker and defender sustained damage, no clear winner emerged from the skirmish, and casualites on both sides were limited.\\\\\\GNN -- \"Interviews while you cruise\"")]
+				,"draw" :	{"bad"		: [(0.8,"all","Fight to the Draw in VAR_system_system\\The skirmish between the VAR_aggressor_possessive VAR_aggressor_FG and the notorious VAR_defender_nicks VAR_defender_FG squadron of VAR_defender_FGtype starships has ended with no decicive victor. Both sides took some blows, and the  VAR_aggressor_FG lost a VAR_aggressor_FGtype before the forces disengaged.\\\\\\GNN -- \"Our Snooze Is Your News\"")]
+						,"good"		: [(0.8,"all","VAR_aggressor_nicks Repulsed but not defeated\\A Battle erupted between the VAR_aggressor_possessive VAR_aggressor_FG squad and the VAR_defender_nicks forces. VAR_defender_mstandname, wing leader of the VAR_defender_nicks squadron, the VAR_defender_FG, said, \"We definitely did not fire the first shot. We were pursued and attacked-- so we defended ourselves and pulverized one of their VAR_aggressor_FGtype craft. We were not outmanned nor outgunned, we just repulsed the enemy, that's all.\" Sources indicate that while both attacker and defender sustained damage, no clear winner emerged from the skirmish, and casualites on both sides were limited.\\\\\\GNN -- \"Interviews while you cruise\"")]
 						,"neutral"		: [(0.8,"all","Game of Cat and Mouse ends in VAR_aggressor_nicks - VAR_defender_nicks stalemate.\\The VAR_aggressor_FG flightgroup reportedly opened fire in the VAR_system_system system. Their prey was the VAR_defender_nicks VAR_defender_FG squadron, which immediately dived into a dense asteroid field for cover.  Both sides continued ineffectual long range engagement through the rocks, until the VAR_aggressor_FG squad ran out of long range ordinance and ran low on fuel. A VAR_aggressor_FGtype braved the rocks and twisted through the 'roids until the VAR_defender_nicks leader in his VAR_defender_FGtype cut the first off and fired chaff and engaged ECM in an already dense section of the field.  Without a reliable guidance computer the VAR_aggressor_nicks VAR_aggressor_FGtype pulled into a less dense region of the asteroids and gave up the hunt.\\\\\\GNN -- \"We get the sand out of your eye, but you need to pull your head out of the sand.\"")]
 						}
 				,"loss" :	{"good"		: [(0.5,"player","Tragic skirmish in VAR_system_system\\A small skirmish in VAR_system_system resulted in the defeat of the VAR_aggressor_nickp starship, type VAR_aggressor_FGtype.  Authorities viewed the small skirmish as a sad but isolated case and state that this skirmish in no way should indicate that the VAR_system_sector is any less safe than other sectors.\"Some people are just reckless--there's nothing you can do. Stay out of dark allies and dark nebulae--stick to flight lanes. These are the only ways to get around out here.\" said a local who asked to remain unnamed.\\\\\\GNN -- \"We Care rhymes with Go Bare\""),(0.4,"all","VAR_system_system Skirmish ends in defeat for VAR_aggressor_nicks\\With hositilities rising in the VAR_system_sector, the VAR_aggressor_nicks flightgroup VAR_aggressor_FG initiated combat with the VAR_defender_nickp squadron of VAR_defender_FGtype, the VAR_defender_FG s.  Initially the battle went well for the VAR_aggressor_nicks; however, the tides rapidly turned when both sides got close enough for beam weapons to become effective.  The VAR_defender_FG had newly retrofitted their ships with new auto targetting and tracking system, leaving the VAR_aggressor_FG squad without a chance to evade.  Desparately a number of SOS signals were triggered, but by the time local authorities arrived to assist, only debris remained from the bloody battle.\\\\\\GNN -- \"We report bad things to death\""),(0.8,"all","VAR_aggressor_FG brutally repulsed at VAR_system_system\\A small skirmish between the VAR_aggressor_nicks squadron and the VAR_defender_nicks VAR_defender_FG pierced the silence of space in VAR_system_system today as the VAR_defender_dnickp gave the VAR_aggressor_nicks a run for their money. Unforunately for the VAR_aggressor_FG squad, the weapons and manpower did not last through the fight, and no ships were left functional.  Many of the VAR_aggressor_nicks pilots involved in the battle will not be returning home after space was scorched. The VAR_aggressor_government was not directly available for comment, but as usual, Funeral arrangements will be subsidized by their directive.\\\\\\GNN -- \"All for one, one for all.\"")]
@@ -433,30 +433,30 @@ _all_news_global = {
 								}
 					}
 
-		,"middle" :	{"success" :	{"good" :		[(0.8,"all","need a story if implemented")]
-							,"bad" :		[(0.8,"all","need a story if implemented")]
-							,"neutral" :		[(0.8,"all","need a story if implemented")]
+		,"middle" :	{"success" :	{"good" :		[(0.8,"all","need a story if implemented0x1")]
+							,"bad" :		[(0.8,"all","need a story if implemented0x2")]
+							,"neutral" :		[(0.8,"all","need a story if implemented0x3")]
 							}
-				,"draw" :		{"good" :		[(0.8,"all","need a story if implemented")]
-							,"bad" :		[(0.8,"all","need a story if implemented")]
-							,"neutral" :		[(0.8,"all","need a story if implemented")]
+				,"draw" :		{"good" :		[(0.8,"all","need a story if implemented0x4")]
+							,"bad" :		[(0.8,"all","need a story if implemented0x5")]
+							,"neutral" :		[(0.8,"all","need a story if implemented0x6")]
 							}
-				,"loss" :		{"good" :		[(0.8,"all","need a story if implemented")]
-							,"bad" :		[(0.8,"all","need a story if implemented")]
-							,"neutral" :		[(0.8,"all","need a story if implemented")]
+				,"loss" :		{"good" :		[(0.8,"all","need a story if implemented0x7")]
+							,"bad" :		[(0.8,"all","need a story if implemented0x8")]
+							,"neutral" :		[(0.8,"all","need a story if implemented0x9")]
 							}
 				}
-		,"end" :	{"success" :	{"good"		: [(0.8,"all","need a story if implemented")]
-							,"bad"		: [(0.8,"all","need a story if implemented")]
-							,"neutral"		: [(0.8,"all","need a story if implemented")]
+		,"end" :	{"success" :	{"good"		: [(0.8,"all","VAR_aggressor_possessive Fleet, VAR_aggressor_FG triumphs over VAR_defender_dnicks in VAR_system_system\\After an excruciating battle, the VAR_aggressor_nicks emerged victorious through superior leadership and tactics, combined with a strong will for victory. However, VAR_aggressor_nicks forces were not without mercy-- when their victory was certain, the VAR_aggressor_FG fleet offered generous terms for surrender. But the captain of the VAR_defender_dnicks VAR_defender_FGtype said, \"I shall rather bake in your beams than bake in your torture ovens. Give me death on my feet rather than death in your coop!\" and drained the last power in the capacitors to deliver a blow to the VAR_aggressor_FGtype flagship. The battle was soon over with no VAR_defender_nicks ships active and few survivers.\\\\\\GNN -- \"Your dirt is what we blurt\"")]
+							,"bad"		: [(0.8,"all","VAR_aggressor_dnickp hose VAR_defender_nicks fleet in VAR_system_system\\In a recklessly aggressive move, the VAR_aggressor_possessive VAR_aggressor_FG fleet moved to engage the VAR_defender_nicks VAR_defender_FG, heedless of casualties on either side.  Unfortunately the VAR_defender_nicks was hopelessly outgunned.  Yet they held their ground to the last man, and every single starship was vaporized or incapacitated. Casualty numbers are still coming in; however, it does not look postiive for the VAR_defender_nicks or the families of the crew. Whether or not this is a severe blow to the entire VAR_defender_full remains to be seen, but it is clear that people in the VAR_system_system certainly are less sure that VAR_defender_nicks will continue to win the war with the VAR_defender_dnickp.\\\\\\GNN -- \"For better or worse, we are there First.\"")]
+							,"neutral"		: [(0.8,"all","VAR_aggressor_nicks destroyes entire VAR_defender_nicks VAR_defender_FG fleet.\\Sources today report that VAR_aggressor_nicks has taken major steps to attack VAR_defender_nicks forces.  A fleet battle erupted in VAR_system_system and both forces were caught in the fray.  The VAR_aggressor_nicks VAR_aggressor_FGtype flagship swept into the midst of the VAR_defender_FG fleet, causing havoc and confusion as the VAR_defender_nicks realized they were outmanned and outgunned.  Shortly the VAR_defender_FGtype flagship was incapacitated and the defender's strategy fell to shreds. Polls in VAR_system_system indicate that the VAR_defender_possessive reputation has taken a severe hit.\\\\\\GNN -- \"Bringing news to viewers like you.\"")]
 							}
-				,"draw" :		{"good"		: [(0.8,"all","need a story if implemented")]
-							,"bad"		: [(0.8,"all","need a story if implemented")]
-							,"neutral"		: [(0.8,"all","need a story if implemented")]
+				,"draw" :		{"good"		: [(0.8,"all","VAR_aggressor_dnickp staved off by the VAR_defender_nicks VAR_defender_FG in VAR_system_system\\After hours of pulverizing blows, the VAR_defender_nicks forces successfully both the VAR_defender_FG and the VAR_aggressor_nicks VAR_aggressor_FG fleet were left in ruins.  Armed with the VAR_aggressor_FGtype flagship and numerous other fighters, the VAR_aggressor_FG had enough firepower to destroy all ships, both friendly and enemy.  Both sides sustained severe casualties, a result of inadequate point defense and rampant long range missile bombardment.  The few remaining fighters were incapacitated and left in space without resupply as the capital vessels including the VAR_defender_FGtype flagship were eradicated.  The VAR_defender_government issued a statement saying, \"Though damage to both sides was beyond severe, the VAR_defender_nicks forces did an admirable job staving off the attack, and the morale blow to the VAR_aggressor_dnickp will be brutal.\"\\\\\\GNN -- \"We mislead 'less you reread\"")]
+							,"bad"		: [(0.8,"all","VAR_aggressor_nickp and VAR_defender_nickp eradicate each other in VAR_system_system\\In a sudden strike by the VAR_aggressor_nick VAR_aggressor_FG fleet, a well planned strategic missile assault went astray and both sides ended up fighting in a close, brutal beam battle. No starships were left in tact  and survivors are making their ways to their respective bases in escape pods. Privateers would be encouraged to assist transporting stray VAR_aggressor_possessive pilots to their respective stations if in the VAR_system_system in the VAR_system_sector.\\\\\\GNN -- \"We care for our people too.\"")]
+							,"neutral"		: [(0.8,"all","VAR_aggressor_nicks VAR_aggressor_FG and VAR_aggressor_nicks VAR_aggressor_FG wipe each other out in VAR_system_system\\A nasty battle erupted into a fleet slaughter in the VAR_system_system as VAR_aggressor_nicks and VAR_defender_nicks ships died left and right.  No ship was left functional in the slaughter and many pilots are thought to be wasting away on a few hours of life support.  GNN reccommends humanitarian aid to the VAR_system_system.  This could be a battle that demoralizes both the VAR_aggressor_full and the VAR_defender_full. No concrete statement was issued by either government.\\\\\\GNN --\"Our flair is your care\"")]
 							}
-				,"loss" :		{"good"		: [(0.8,"all","need a story if implemented")]
-							,"bad"		: [(0.8,"all","need a story if implemented")]
-							,"neutral"		: [(0.8,"all","need a story if implemented")]
+				,"loss" :		{"good"		: [(0.8,"all","VAR_aggressor_dnicks attack on VAR_defender_nicks in VAR_system_system: a serious miscalculation\\The VAR_defender_FG fleet was the target of a large VAR_aggressor_nicks assault in what may turn out to be one of the largest miscalculations in the VAR_aggressor_full - VAR_defender_full war.  The VAR_agressor_possessive VAR_aggressor_FG fleet positioned their ships for long range attacks on the VAR_defender_FG.  However <VAR_defender_FG>'s flagship, a VAR_defender_FGtype class starship ordered allied ships into position and arranged a hasty counterstrike.  Through the glaring of anti-missile fire, many sources report that a large number of the VAR_aggressor_nicks missiles just were not downed by the VAR_aggressor_dnickp, and struck the VAR_aggressor_FG flagship, the VAR_defender_FGtype. After the explosions started to die down, the VAR_defender_FG closed to close range and finished the last of the VAR_aggressor_nickp.  This may be a critical strike to the VAR_aggressor_dnicks.\\\\\\GNN -- \"Your direction for connection\"")]
+							,"bad"		: [(0.8,"all","Tables turn for VAR_aggressor_nicks fleet in VAR_system_system\\In what started as a well planned assault on the VAR_defender_nicks fleet, the VAR_defender_FG, the VAR_aggressor_nickp were in for an unsettling surprise:  the VAR_defender_FG with its VAR_defender_FGtype flagship outmatched them at every turn.  VAR_aggressor_nicks ECM was apparently ill applied, resulting in a missile barrage that took out the VAR_aggressor_FGtype flagship.  After some close and tight fighting, all VAR_defender_nicks forces were obliterated and unfortunate victory went to the VAR_aggressor_full.\\\\\\GNN -- \"Your source for remorse\"")]
+							,"neutral"		: [(0.8,"all","VAR_aggressor_nicks loses fleet fight with VAR_defender_nicks in VAR_system_system\\The VAR_aggressor_nicks VAR_aggressor_FG fleet struck the VAR_defender_possessive VAR_defender_FGtype flagships with an initial fury that drove the VAR_defender_nicks defense to a fury leading to the ultimate destruction of the VAR_aggressor_nicks fleet.  The VAR_defender_nicks VAR_defender_FG fleet was successful in destroying any traces of the VAR_aggressor_FG fleet and have broadcasted victory throughout the VAR_system_system.  Whether this will be a critical blow to VAR_aggressor_nicks remains to be seen, but it is certainly a dent in their machinery.\\\\\\GNN -- \"We are there so you musn't care\"")]
 							}
 				}
 		}
