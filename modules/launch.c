@@ -46,6 +46,7 @@ module launch {
       z=z-rsize;
       i=i+1;
     }
+    return ret;
   };
   object launch_waves_around_area(object fgname,object faction,object type,object ai,int nr_ships,int nr_waves,float r1,float r2,object pos){
     float x=(random.random(r1,r2)*random.randomsign());
