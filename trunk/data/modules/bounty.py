@@ -1,6 +1,6 @@
 import universe
-import go_to_adjacent_systems import go_to_adjacent_systems
-import go_somewhere_significant import go_somewhere_significant
+from go_to_adjacent_systems import go_to_adjacent_systems
+from go_somewhere_significant import go_somewhere_significant
 import random
 import launch
 import faction_ships
@@ -10,9 +10,6 @@ import unit
 import VS
 
 class bounty (Director.Mission):
-	enemy=VS.Unit()
-	you=VS.Unit()
-	significant=VS.Unit()
 
 	def __init__ (self,minnumsystemsaway, maxnumsystemsaway, creds, run_away, shipdifficulty, tempfaction):
 	  Director.Mission.__init__ ()
@@ -29,15 +26,17 @@ class bounty (Director.Mission):
 	  mysys=VS.getSystemFile()
 	  sysfile = VS.getSystemFile()
 	  self.you=VS.getPlayer()
+	  self.enemy=VS.Unit()
+	  self.significant=VS.Unit()
 	  self.adjsys=go_to_adjacent_systems (self.you,random.randrange(minnumsystemsaway,maxnumsystemsaway+1))
 	  self.mplay=universe.getMessagePlayer(self.you)
 	  if (you):
 	    VS.IOmessage (0,"bounty mission",self.mplay,"Good Day, %s. Your mission is as follows:" % (you.getName()))
 	    self.adjsys.Print("You should start in the system named %s","Then jump to %s","Finally, jump to %s, your final destination","bounty mission",1)
-	    VS.IOmessage (2,"bounty mission",self.mplay,"Once there, you must destroy a %s unit.", % (faction))
+	    VS.IOmessage (2,"bounty mission",self.mplay,"Once there, you must destroy a %s unit." % (faction))
 	    VS.IOmessage (3,"bounty mission",self.mplay,"You will then %.2f credits as your reward (if you survive)." % (self.cred))
 	    VS.IOmessage (4,"bounty mission",self.mplay,"#00ff00Good luck!")
-	   else:
+	  else:
 	    print "aboritng bounty constructor..."
 	    VS.terminateMission (0)
 	
@@ -58,22 +57,20 @@ class bounty (Director.Mission):
 	  
 	def loop (self):
 	  isSig=0
-	  enemy=VS.Unit()
 	  if (self.you.isNull()):
 	    self.Lose (1)
 	    return
 	  if (self.arrived==3):
-	    enemy=self.enemy
 	    if (not self.istarget):
 	      curun=VS.getUnit(self.curiter)
-	      if (not enemy.isNull()):
-		if (curun==enemy):
-		  enemy.setTarget(you)
+	      if (self.enemy):
+		if (curun==self.enemy):
+		  self.enemy.setTarget(self.you)
 	      self.curiter+=1
 	    if (you.isNull()):
 	      self.Lose(1)
 	      return
-	    if (enemy.isNull()):
+	    if (self.enemy.isNull()):
 	      self.Win(you,1)
 	      return
 	  elif (self.arrived==2):
@@ -81,11 +78,10 @@ class bounty (Director.Mission):
 	      self.arrived=3
 	    else:
 	      VS.ResetTimeCompression()
-	    enemy=self.enemy
-	    if (you.isNull()):
+	    if (self.you.isNull()):
 	      Lose(1)
 	      return
-	    if (enemy.isNull()):
+	    if (self.enemy.isNull()):
 	      Win(you,1)
 	      return
 	  elif (self.arrived==1):
@@ -98,14 +94,14 @@ class bounty (Director.Mission):
 		if (self.newship==""):
 		  self.newship=faction_ships.getRandomFighter(faction)
 		self.enemy=launch.launch_wave_around_unit("Base",self.faction,self.newship,"default",1+self.difficulty,3000.0,4000.0,self.significant)
-		if (enemy):
+		if (self.enemy):
 		  if (runaway):
 		    self.enemy.setTarget(significant)
 		    self.enemy.Jump()
 		    self.arrived=2
 		  else:
 		    self.arrived=3
-	   else:
+	  else:
 	    if (self.adjsys.Execute()):
 	      self.arrived=1
 	      self.newship=faction_ships.getRandomFighter(faction)
@@ -122,9 +118,11 @@ class bounty (Director.Mission):
 	
 	def initbriefing():
 		print "ending briefing"                
+	
 	def loopbriefing():
 		print "loop briefing"
 		Briefing.terminate();
+	
 	def endbriefing():
 		print "ending briefing"        	  
 	
