@@ -92,6 +92,7 @@ class random_encounters:
     if (numfactions<=0):
       numfactions=1
     sysfile = VS.getSystemFile()
+    cap_prob=self.capship_prob
     for i in range(0,numfactions):
       localfaction = VS.GetGalaxyProperty(sysfile,"faction")
       if (random.random() < self.TrueEnProb(self.enprob)):
@@ -101,11 +102,12 @@ class random_encounters:
       numship= random.randrange(1,self.gen_num_ships+1)
       self.det_distance = self.cur.detection_distance
       launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,0,self.generation_distance*random.random()*0.9,un, 2.0*self.det_distance,"")
-      if (random.random()<self.capship_prob):
+      if (random.random()<cap_prob):
         if (self.AsteroidNear (un,self.cur.significant_distance)):
           print "ast near, no cap"
         else:
           print "no asty near"
+          cap_prob=.6
           capship = faction_ships.getRandomCapitol (localfaction)
           launch_recycle.launch_wave_around("Capitol",localfaction,"default",1,1,self.capship_gen_distance*(0.5+(random.random()*0.4)),un, 8.0*self.det_distance,"")
 
