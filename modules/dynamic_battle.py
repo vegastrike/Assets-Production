@@ -85,19 +85,33 @@ def Siege(fac):
 				enfac=VS.GetGalaxyFaction(sys)
 				#fg_util.CheckAllShips(fac)
 				#fg_util.CheckAllShips(enfac)
-				#if fac == "unknown" or enfac == "unknown":
-				#	print "ERROR: siege had an unknown faction"
-				#	return
+				if enfac == "unknown":
+					print "exploration"
+					fgleader = fg_util.getFgLeaderType(fg,fac)
+					exploration = 1
+					
+				else:
+					exploration = 0
 				if (VS.GetRelation(fac,enfac)<0):#FIXME maybe even less than that
 					numenemyfg = fg_util.NumFactionFGsInSystem(enfac,sys)
 					numfriendfg = fg_util.NumFactionFGsInSystem(fac,sys)
 					#print 'siegarol enemioes '+str(numenemyfg)+ ' friends '+str(numfriendfg)
-					if (numenemyfg==0 and numfriendfg==0): #If both annihalate each other completely (unlikely but possible)
+					if exploration:
+						if sys != 'nil':
+							Director.pushSaveString(0,"dynamic_news"
+						,dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"exploration","end",fac,enfac,"1",str(getImportanceOfSystem(sys)),sys,"all",fg,fgleader,"unknown","unknown"]))
+												#FIXME use keyword (ignore
+												#keyword for now Daniel)
+
+						import generate_dyn_universe
+						generate_dyn_universe.TakeoverSystem(fac,sys)
+						#HACK, regenerate bases instnatly
+					elif (numenemyfg==0 and numfriendfg==0): #If both annihalate each other completely (unlikely but possible)
 						facnum = VS.GetFactionIndex (fac)
 						print 'cehcking started'
 						print "DRAW error "+fg+" sys has "+sys+" has " +str(fg_util.NumFactionFGsInSystem(fac,sys))+" String is "+Director.getSaveString(0,fg_util.MakeStarSystemFGKey(sys),facnum)
 						if sys != 'nil':
-							Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["siege","end",fac,enfac,"0",str(getImportanceOfSystem(sys)),sys,"all",fg,"unknown","unknown","unknown"]))
+							Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"siege","end",fac,enfac,"0",str(getImportanceOfSystem(sys)),sys,"all",fg,"unknown","unknown","unknown"]))
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 
@@ -111,7 +125,7 @@ def Siege(fac):
 							fgs = "unknown"
 						if sys != 'nil':
 							Director.pushSaveString(0,"dynamic_news"
-						,dynamic_news.makeVarList(["siege","end",fac,enfac,"1",str(getImportanceOfSystem(sys)),sys,"all",fgs,"unknown","unknown","unknown"]))
+						,dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"siege","end",fac,enfac,"1",str(getImportanceOfSystem(sys)),sys,"all",fgs,"unknown","unknown","unknown"]))
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 
@@ -128,7 +142,7 @@ def Siege(fac):
 							fgs = "unknown"
 						if sys != 'nil':
 							Director.pushSaveString(0,"dynamic_news"
-						,dynamic_news.makeVarList(["siege","end",fac,enfac,"-1",str(getImportanceOfSystem(sys)),sys,"all","unknown","unknown",fgs,"unknown"]))
+						,dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"siege","end",fac,enfac,"-1",str(getImportanceOfSystem(sys)),sys,"all","unknown","unknown",fgs,"unknown"]))
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 
@@ -466,7 +480,7 @@ def stopAttack (fgname,faction):
 
 def initiateAttack (fgname,faction,sys,enfgname,enfaction):
 # FIXME This should only occur for fleet battles, so is commented out for now
-#	Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","start",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,"unknown",enfgname,"unknown"]))
+#	Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","start",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,"unknown",enfgname,"unknown"]))
 	if (fg_util.BaseFGInSystemName(sys)==fgname):
 		fg=(enfgname,enfaction)#this is for a base... self defence
 		efg=(fgname,faction)
@@ -506,22 +520,22 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction):
 		return 0 #print 'nil DRAW error'
 	if (fg_util.NumShipsInFG(fgname,faction)==0):
 		if (fg_util.NumShipsInFG(enfgname,enfaction)==0):
-			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
 		else:
-			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
 		return 0
 	elif (fg_util.NumShipsInFG(enfgname,enfaction)==0):
-		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))	
+		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","end",faction,enfaction,"1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))	
 		return 0
 	if (vsrandom.randrange(0,4)==0):
 		#FIXME  if it is advantageous to stop attacking only!!
 		#FIXME add a stop attacking news report?  -- this should now be fixed, as a draw is reported (not heavilly tested)
-		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
 		return 0
 	if (vsrandom.randrange(0,4)==0 and enfgname!=fg_util.BaseFGInSystemName(ensys)):
 		#FIXME  if it is advantageous to run away only
 		#FIXME add a retreat news report?  -- this should now be fixed, as a draw is reported (not heavilly tested)
-		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
 		num=VS.GetNumAdjacentSystems(ensys)
 		if (num>0):
 			ensys=VS.GetAdjacentSystem(ensys,vsrandom.randrange(0,num))
