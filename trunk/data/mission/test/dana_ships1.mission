@@ -8,26 +8,26 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="sol_sector/luyten" />
+		<var name="system" value="sol_sector/weslyn" />
 		<var name="description" value="4vs4.txt" />
 	</variables>
         <flightgroups>
 
-                <flightgroup name="blue" faction="confed" type="truck_small" ainame="_ai_rolling" waves="1" nr_ships="1">
-			<pos x="100.0" y="10000.0" z="100.0"/>
+                <flightgroup name="blue" faction="confed" type="excalibur" ainame="_ai_rolling" waves="1" nr_ships="4">
+			<pos x="1000000.0" y="200000000.0" z="1000000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
 
-                <flightgroup name="pink" faction="confed" type="revoker" ainame="_ai_rolling" waves="1" nr_ships="3">
-			<pos offset="blue" x="300.0" y="500.0" z="0.0"/>
+<!--                <flightgroup name="red" faction="confed" type="truck_small" ainame="_ai_rolling" waves="1" nr_ships="1">
+			<pos x="1000000.0" y="200000200.0" z="1000000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
 
                 <flightgroup name="yellow" faction="confed" type="truck_small" ainame="_ai_rolling" waves="1" nr_ships="3">
 			<pos offset="blue" x="300.0" y="500.0" z="10000.0"/>
-			<rot x="180.0" y="180.0" z="180.0"/>
+
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
 
@@ -36,7 +36,7 @@
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
-
+-->
         </flightgroups>
 
 	<module name="director">
