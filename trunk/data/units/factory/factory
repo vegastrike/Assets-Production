@@ -223,4 +223,6 @@
 		</Category>
 	</Hold>
 	<Upgrade file="standard_missions"/>
+	<Upgrade file="confed_missions"/>
+	<Upgrade file="iso_missions"/>
 </Unit>

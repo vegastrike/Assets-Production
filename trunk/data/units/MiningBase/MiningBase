@@ -19,4 +19,7 @@
 		<Reactor recharge="47" limit="1020"/>
 	</Energy>
 	<Dock x="-24" y="-266" z="73.000000" size="100.000000"/>
+	<Upgrade file="pirate_missions"/>
+	<Upgrade file="standard_missions"/>
+
 </Unit>
