@@ -24,7 +24,8 @@
 		<script name="initgame">
 			<exec module="bounty" name="init">
 			<const type="int" value="1"/> <!--num systems away the delivery point is -->
-			<const type="float" value="20480"/> <!-- how much you are laid ...err paid -->
+			<const type="float" value="20480"/> <!-- how much you are paid -->
+			<const type="bool" value="false"/> <!--does he run away -->
 			</exec>
 		</script>
 		<script name="gameloop">
