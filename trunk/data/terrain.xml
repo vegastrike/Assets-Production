@@ -1,4 +1,4 @@
-<terrain level="15" detail="12" staticdetail="12">
+<terrain level="15" detail="128" staticdetail="12">
 
 <texture file="terrain0.bmp" blend="ONE ZERO" color="0" scales=".001" scalet=".001">
 <material reflect="false">
@@ -9,7 +9,7 @@
 </material>
 </texture> 
 
-<texture file="terrain1.bmp" blend="ONE ZERO" color="0" scales=".001" scalet=".001">
+<texture file="terrain1.bmp" blend="ONE ZERO" color="1" scales=".001" scalet=".001">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -18,7 +18,7 @@
 </material>
 </texture> 
 
-<texture file="terrain2.bmp" blend="ONE ZERO" color="0" scales=".001" scalet=".001">
+<texture file="terrain2.bmp" blend="ONE ZERO" color="2" scales=".001" scalet=".001">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -27,7 +27,7 @@
 </material>
 </texture> 
 
-<texture file="terrain3.bmp" blend="ONE ZERO" color="0" scales=".001" scalet=".001">
+<texture file="terrain3.bmp" blend="ONE ZERO" color="3" scales=".001" scalet=".001">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -36,7 +36,7 @@
 </material>
 </texture> 
 
-<texture file="terrain4.bmp" blend="ONE ZERO" color="0" scales=".001" scalet=".001">
+<texture file="terrain4.bmp" blend="ONE ZERO" color="4" scales=".001" scalet=".001">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -45,7 +45,7 @@
 </material>
 </texture> 
 
-<texture file="terrain5.bmp" blend="ONE ZERO" color="0" scales=".001" scalet=".001">
+<texture file="terrain5.bmp" blend="ONE ZERO" color="5" scales=".001" scalet=".001">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -54,7 +54,7 @@
 </material>
 </texture> 
 
-<texture file="terrain6.bmp" blend="ONE ZERO" color="0" scales=".001" scalet=".001">
+<texture file="terrain6.bmp" blend="ONE ZERO" color="6" scales=".001" scalet=".001">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -63,7 +63,7 @@
 </material>
 </texture> 
 
-<texture file="terrain7.bmp" blend="ONE ZERO" color="0" scales=".001" scalet=".001">
+<texture file="terrain7.bmp" blend="ONE ZERO" color="7" scales=".001" scalet=".001">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -72,7 +72,7 @@
 </material>
 </texture> 
 
-<texture file="terrain8.bmp" blend="ONE ZERO" color="0" scales=".001" scalet=".001">
+<texture file="terrain8.bmp" blend="ONE ZERO" color="8" scales=".001" scalet=".001">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -81,7 +81,7 @@
 </material>
 </texture> 
 
-<texture file="terrain9.bmp" blend="ONE ZERO" color="0" scales=".001" scalet=".001">
+<texture file="terrain9.bmp" blend="ONE ZERO" color="9" scales=".001" scalet=".001">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
