@@ -29,7 +29,11 @@ def seedstring (stru):
 		global totalnormchar,RAND_MAX
 		num+=getNumFromChar(stru[l-i-1])
 		num*=totalnormchar;
-		num%=RAND_MAX
+		num = num % RAND_MAX
+		try:
+			num = int(num)
+		except:
+			print 'warning'
 	return num
 def interleave (slist):
 	touch=True
