@@ -21,7 +21,7 @@
 	<Light file="supernova.bmp" x="0" y="4.75" z="-19" size="4.75"/>
 	<Light file="supernova.bmp" x="-4" y="4.311728" z="-19" size="3.5"/>
 
-<Subunit file="turretsmall" x="0" y="0" z="-19" qi="0" qj="0" qk="-1"/>
+<Subunit file="turretsmall" x="0" y="0" z="-19" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1"/>/>
 	
 	<Defense HudImage="khanjarli.spr">
 	
