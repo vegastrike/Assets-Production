@@ -612,8 +612,6 @@
 		</Category>
 		<Category file="Research/Electronics">
 			<Cargo file="Quantum_Deductor" price="420" quantity="1" mass=".01" volume="1"/>
-		</Category>
-
 			<Cargo file="Biparticle_Transistor" price="1" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Virtual_Tunneling_Terminal" price="240" quantity="1" mass=".01" volume="1"/>
 		<!-- price these at 1/10 their normal price...-->
