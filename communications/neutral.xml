@@ -181,8 +181,8 @@
 		<edge index="3"/>
 	</node>
 	<node text="Cease your fire! I have no conflict with you!" relationship=".05"><!-- node 18-->
-		<edge index="58"/>
 		<edge index="59"/>
+		<edge index="1"/>
 		<edge index="12"/>
 		<edge index="9"/>
 		<edge index="36"/>

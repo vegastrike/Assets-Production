@@ -36,6 +36,7 @@
 	<Computer yaw="60.400002" itts="false" pitch="50.600006" roll="80.400002" afterburner="60" maxspeed="30">
 		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
 	</Computer>
+	<upgrade file="radar_windows_2k"/>
 	<Jump missing="1" delay="2" jumpenergy="150"/>       
 	<Energy afterburnenergy="32767">
 	</Energy>

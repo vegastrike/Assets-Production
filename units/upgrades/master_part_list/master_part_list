@@ -158,7 +158,7 @@
 		<Category file="starships/Pirate/Heavy_Capship">
 		</Category>
 		<Category file="upgrades/Weapons/Mounted_Guns_Light">
-			<Cargo file="laser" price="1000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="laser" price="1000" quantity="1" mass=".01" volume="1" description="This blaster is commonly found in weapon shops across the galaxy. Trustworthy, dependable, everything a privateer wants when he's hunting for money."/>
 			<Cargo file="meson_blaster" price="2500" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="upgrades/Weapons/Mounted_Guns_Medium">
