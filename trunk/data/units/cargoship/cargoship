@@ -1,8 +1,15 @@
 <Unit>
 	<Meshfile file="cargoship.xmesh"/>
 
-	<Light file="supernova.bmp" x="0.0" y="32.2" z="-210.00000" size="100"/>
-
+<!--	<Light file="supernova.bmp" x="0.0" y="32.2" z="-210.00000" size="100"/>-->
+	<Dock x="0.0" y="32.2" z="-210.00000" size="100"/>
+	<Dock x="0.0" y="-13.0" z="330.00000" size="20"/>
+	<Light file="supernova.bmp" x="110.0" y="70" z="-280.00000" size="58"/>
+	<Light file="supernova.bmp" x="-110.0" y="70" z="-280.00000" size="58"/>
+	<Light file="supernova.bmp" x="105.0" y="-48" z="-220.00000" size="50"/>
+	<Light file="supernova.bmp" x="-105.0" y="-48" z="-220.00000" size="50"/>
+	<Mount weapon="LaserBeam" size="Light Medium Heavy capship-light" x="60.000000" y="0.000000" z="200.000000"/>
+	<Mount weapon="LaserBeam" size="Light Medium Heavy capship-light" x="-60.000000" y="0.000000" z="200.000000"/>
 	<Thrust>
 		<Engine Afterburner="966.666718" Forward="205.333344" Retro="254.666676" Left="202.666672" Right="202.666672" Top="202.666672" Bottom="202.666672"/>
 		<Maneuver yaw="1643.200050" pitch="1187.800201" roll="1143.200050"/>
@@ -24,10 +31,10 @@
                 <Radar itts="false" error="0" range="35000" color="true"/>
 	</Computer>
 
-	<Jump delay="1" jumpenergy="900"/>       
+	<Jump delay="1" jumpenergy="100"/>       
 
 	<Energy>
-		<Reactor recharge="20" limit="1000"/>
+		<Reactor recharge="20" limit="1100"/>
 	</Energy>
 
 	<description>
