@@ -1,17 +1,24 @@
 import sys
 import VS
-import pickle
 import Director
+def usingDifficulty ():
+  return (VS.GetDifficulty()!=1.0)
+
+def SetDiff(diff):
+  if (diff>VS.GetDifficulty()):
+    VS.SetDifficulty(diff)
+
 _key="31337ness"
 class difficulty:
-  diff=()
-  creds=()
+  diff=[]
+  creds=[]
   credsToMax=1
   i=0 #comment this if you want to check all in 1 frame
-  def SetDiff(diff):
+  
+  def SetDiff(self,diff):
     if (diff>VS.GetDifficulty()):
       VS.SetDifficulty(diff)
-  
+
   def __init__(self,credsMax):
     self.credsToMax=credsMax
     un=VS.getPlayerX(0)
@@ -20,13 +27,13 @@ class difficulty:
       newdiff=0
       if (Director.getSaveDataLength(i,_key)):
         newdiff=Director.getSaveData(i,_key,0)
-        self.diff+=(newdiff,)
+        self.diff+=[newdiff]
       else:
         newdiff=VS.GetDifficulty()
-        self.diff+=(newdiff,)
+        self.diff+=[newdiff]
         Director.pushSaveData(i,_key,newdiff)
       SetDiff(newdiff)
-      self.creds+=(un.getCredits(),)
+      self.creds+=[un.getCredits()]
       i+=1
       un=VS.getPlayerX(i)
       
@@ -43,12 +50,14 @@ class difficulty:
           self.i=-1
           raise IndexError("Empty creds and diff arrays in difficulty module\nUnable to find any players...")
         return
+      if (i>=len(self.creds)):
+        i=0
       i=self.i #comment this if you want to check all in 1 frame
       un=VS.getPlayerX(i)
       newcreds=un.getCredits()
       if (self.creds[i]!=newcreds):
         if (self.creds[i]>newcreds):
-          newdiff=((newcreds-self.creds)/self.credsToMax)
+          newdiff=((newcreds-self.creds[i])/self.credsToMax)
           Director.putSaveData(i,_key,0,newdiff)
           SetDiff(newdiff)
         self.creds[i]=newcreds
