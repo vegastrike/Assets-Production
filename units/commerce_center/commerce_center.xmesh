@@ -4998,5 +4998,90 @@
 	<Vertex point="719" s="0.7209494709968567" t="0.373325347900391"/>
 </Tri>
 </Polygons>
+<Logo type="3" rotate="0.000000" size="3.059998" offset="0.010000">
+	<Ref point="698" weight="1.000000" />
+	<Ref point="697" weight="1.000000" />
+	<Ref point="702" weight="1.000000" />
+</Logo>
+<Logo type="3" rotate="0.000000" size="3.489997" offset="0.010000">
+	<Ref point="706" weight="1.000000" />
+	<Ref point="705" weight="1.000000" />
+	<Ref point="704" weight="1.000000" />
+</Logo>
+<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+	<Ref point="710" weight="1.000000" />
+	<Ref point="709" weight="1.000000" />
+	<Ref point="714" weight="1.000000" />
+</Logo>
+<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+	<Ref point="720" weight="1.000000" />
+	<Ref point="717" weight="1.000000" />
+	<Ref point="716" weight="1.000000" />
+</Logo>
+<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+	<Ref point="674" weight="1.000000" />
+	<Ref point="673" weight="1.000000" />
+	<Ref point="678" weight="1.000000" />
+</Logo>
+<Logo type="0" rotate="0.000000" size="0.500000" offset="0.010000">
+	<Ref point="674" weight="1.000000" />
+	<Ref point="673" weight="1.000000" />
+	<Ref point="678" weight="1.000000" />
+</Logo>
+<Logo type="0" rotate="0.000000" size="0.500000" offset="0.010000">
+	<Ref point="674" weight="1.000000" />
+	<Ref point="673" weight="1.000000" />
+	<Ref point="678" weight="1.000000" />
+</Logo>
+<Logo type="3" rotate="0.000000" size="3.369997" offset="0.010000">
+	<Ref point="682" weight="1.000000" />
+	<Ref point="681" weight="1.000000" />
+	<Ref point="680" weight="1.000000" />
+</Logo>
+<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+	<Ref point="686" weight="1.000000" />
+	<Ref point="685" weight="1.000000" />
+	<Ref point="690" weight="1.000000" />
+</Logo>
+<Logo type="3" rotate="0.000000" size="0.500000" offset="0.010000">
+	<Ref point="694" weight="1.000000" />
+	<Ref point="693" weight="1.000000" />
+	<Ref point="692" weight="1.000000" />
+</Logo>
+<Logo type="3" rotate="0.000000" size="12.960201" offset="0.010000">
+	<Ref point="86" weight="1.000000" />
+	<Ref point="84" weight="1.000000" />
+	<Ref point="83" weight="1.000000" />
+</Logo>
+<Logo type="3" rotate="0.000000" size="9.680126" offset="0.010000">
+	<Ref point="78" weight="2.449999" />
+	<Ref point="79" weight="45.448380" />
+	<Ref point="80" weight="44.638515" />
+</Logo>
+<Logo type="0" rotate="1.279999" size="7.410075" offset="0.010000">
+	<Ref point="165" weight="1.000000" />
+	<Ref point="166" weight="1.000000" />
+	<Ref point="167" weight="1.000000" />
+</Logo>
+<Logo type="1" rotate="1.219999" size="7.170069" offset="0.010000">
+	<Ref point="159" weight="1.000000" />
+	<Ref point="160" weight="1.000000" />
+	<Ref point="161" weight="1.000000" />
+</Logo>
+<Logo type="0" rotate="1.209999" size="5.480031" offset="0.010000">
+	<Ref point="153" weight="1.000000" />
+	<Ref point="154" weight="1.000000" />
+	<Ref point="155" weight="1.000000" />
+</Logo>
+<Logo type="1" rotate="3.089998" size="6.110045" offset="0.010000">
+	<Ref point="173" weight="1.000000" />
+	<Ref point="171" weight="1.000000" />
+	<Ref point="172" weight="1.000000" />
+</Logo>
+<Logo type="0" rotate="0.000000" size="8.690104" offset="0.010000">
+	<Ref point="636" weight="2.429999" />
+	<Ref point="632" weight="64.525375" />
+	<Ref point="637" weight="1.000000" />
+</Logo>
 
 </Mesh>
