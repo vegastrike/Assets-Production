@@ -1,5 +1,5 @@
-<Unit scale="1">
-	<Meshfile file="starrunner.xmesh" />
+<Unit>
+	<Meshfile file="escortcarrier.xmesh" />
 	<Thrust>
 		<Engine Afterburner="66.666660" Forward="36.666664" Retro="23.333331" Left="13.333332" Right="13.333332" Top="13.333332" Bottom="13.333332"/>
 		<Maneuver yaw="21.800013" pitch="21.800013" roll="21.800013"/>
@@ -19,6 +19,7 @@
 		<Reactor recharge="340" limit="15000"/>
 	</Energy>
 	<Jump delay="1" jumpenergy="9000"/>              
+
 
 	<Hold volume="100000000000">
 	    <Category file="food">

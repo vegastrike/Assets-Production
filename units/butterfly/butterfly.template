@@ -3,13 +3,21 @@
 <!-- Faction : Not assigned -->
 
 <Unit>
-
+	<Upgrade file="godsansshields"/>
+	<Defense>
+		<Shields front="0.000000" left="0" right="0"  back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<Upgrade file="shield_4_Level5"/>
+	<Upgrade file="isometal"/>
+	<Upgrade file="engine_level_4"/>
+	<Upgrade file="micro_shielded_hull"/>
 
 <Sound>	</Sound>
 
 <!-- Ship are facing Z axis so for weapon location : X= left/right, y=over/under, 
 								Z=front/back -->
-
+<hold volume="115">
+</hold>
 <!-- changed mount size from Light to Light and Medium...meaning -->
 <!-- it can hold both light and medium guns when purchased from store -->
 <Mount weapon="Ion" size="Light Medium" x="6.612" y="1.305" z="7.355"/>
@@ -34,15 +42,6 @@
 <Mount weapon="ImageRecognition" size="special-missile light-missile medium-missile" x="6.5" y="-1.305" z="7.355" ammo="4" volume="801"/>
 
 
-<Defense>
-
-	<Armor front="400" right="280" left="280" back="320"/>
-<!--changed Recharge to sane value -->
-	<Shields front="500.000000" back="475.000000" recharge="60.000000"/>
-
-	<Hull strength="600.000000"/>
-
-</Defense>
 
 
 <Stats mass="5.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
@@ -52,9 +51,6 @@
 </Computer>
 
 
-<Energy>	
-	<Reactor recharge="240" limit="800"/> <!--less recharge -->
-</Energy>
 <Jump delay="2" jumpenergy="350"/> <!-- reduced jump energy so that it is less than limit -->
 
 

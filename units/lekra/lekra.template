@@ -1,4 +1,12 @@
 <Unit>
+	<Upgrade file="godsansshields"/>
+	<Defense>
+		<Shields front="0.000000"  left="0" right="0" back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<Upgrade file="shield_4_Level2"/>
+	<Upgrade file="isometal"/>
+	<Upgrade file="engine_level_4"/>
+	<Upgrade file="plated_hull"/>
 	<Thrust>
 		<Engine Afterburner="1633.333282" Forward="733.333313" Retro="666.666649" Left="566.666656" Right="566.666656" Top="566.666656" Bottom="566.666656"/>
 		<Maneuver yaw="2587.800201" pitch="7831.000000" roll="7831.000000"/>
