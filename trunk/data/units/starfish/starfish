@@ -1,7 +1,7 @@
 <Unit>
 <Meshfile file="starfish.xmesh"/>
 <!--<ShieldMesh file="starfishshield.xmesh"/>-->
-	<cockpit file="centurion-cockpit.cpt" x="0" y="00" z="00"/>
+	<cockpit file="medium_cockpit.cpt" x="0" y="00" z="00"/>
 	<Thrust>
 		<Engine Afterburner="280.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
 		<Maneuver yaw="1415.500000" pitch="1415.500000" roll="3415.500000"/>

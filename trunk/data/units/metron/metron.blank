@@ -3,7 +3,7 @@
 <!-- Faction : Not assigned -->
 
 <Unit>
-
+	<cockpit file="light_cockpit.cpt" x="0" y=".5" z="10"/>
 <Defense HudImage="f404-hud.spr">
 	<Shields front="0.000000" left="0" right="0" back="0.000000"/>
 

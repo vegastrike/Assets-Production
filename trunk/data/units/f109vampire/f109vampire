@@ -11,7 +11,7 @@
 <Light file="supernova.bmp" x="-18.526455" y="3.429340" z="0.421196" size="3.297047"/>
 <Light file="supernova.bmp" x="18.440897" y="3.276502" z="0.167332" size="3.630991"/>
 
-	<cockpit file="hornet-cockpit.cpt" x="0" y="3" z="23"/>
+	<cockpit file="medium_cockpit.cpt" x="0" y="3" z="23"/>
 	<Thrust>
 		<Engine Afterburner="268.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
 		<Maneuver yaw="3415.500000" pitch="3415.500000" roll="3415.500000"/>
