@@ -11,6 +11,7 @@ import Director
 class defend (Director.Mission):
     def __init__ (self,factionname,numsystemsaway, enemyquantity, distance_from_base, escape_distance, creds, defendthis, defend_base):
           Director.Mission.__init__(self)
+          self.dedicatedattack=random.randrange(0,2)
           self.arrived=0
           self.quantity=0
           self.mplay="all"
@@ -107,16 +108,17 @@ class defend (Director.Mission):
             else:
 		if (self.quantity>0):
                     self.GenerateEnemies (self.defendee,self.you)
-		if (self.targetiter>=len(self.attackers)):
-                    self.targetiter=0
-		else:
-                    un =  self.attackers[self.targetiter]
-                    if (not un.isNull()):
-                        if (self.defend):#		  if (not un.isNull())
-                            un.SetTarget (self.defendee)
-                        else:
-                            un.SetTarget (self.you)
-                    self.targetiter=self.targetiter+1
+                if (self.ship_check_count==0 and self.dedicatedattack):
+                    if (self.targetiter>=len(self.attackers)):
+                        self.targetiter=0
+                    else:
+                        un =  self.attackers[self.targetiter]
+                        if (not un.isNull()):
+                            if (self.defend):#		  if (not un.isNull())
+                                un.SetTarget (self.defendee)
+                            else:
+                                un.SetTarget (self.you)
+                        self.targetiter=self.targetiter+1
                 if (self.NoEnemiesInArea (self.defendee)):
                     self.SuccessMission()
     def initbriefing(self):
