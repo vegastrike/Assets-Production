@@ -1,5 +1,5 @@
 <Unit>	
-	<Defense ecm="32767" RepairDroid="6">
+	<Defense ecm="1" RepairDroid="6">
 		<Armor front="65535" right="65535" left="65535" back="65535"/>
 		<Shields front="65535" back="65535" recharge="65535" leak="0" recharge="100000000000000"/>
 		<Hull strength="1000000000000000"/>

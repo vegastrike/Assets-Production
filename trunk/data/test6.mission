@@ -13,7 +13,7 @@
 		<var name="description" value="4vs4.txt" />
 	</variables>
 		<flightgroups>
-				<flightgroup name="brown" faction="confed" type="lekra" ainame="default" waves="1" nr_ships="1">
+				<flightgroup name="brown" faction="confed" type="osprey" ainame="default" waves="1" nr_ships="1">
 			<pos x="51500" y="2000" z="32000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>

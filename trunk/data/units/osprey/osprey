@@ -4,14 +4,14 @@
 	<Mount weapon="Particle" size="Medium Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
 	<Mount weapon="Ion" size="Light Medium" x="000000" y="-.6000000" z="12.000000"/>
 
-	<Mount weapon="Torpedo" size="heavy-missile" x="-5.000000" y="-.9000000" z="-3.000000" ammo="3"/>	
-	<Mount weapon="Torpedo" size="heavy-missile" x="5.000000" y="-.9000000" z="-3.000000" ammo="3"/>	
-	<Mount weapon="Mace" size="medium-missile heavy-missile" x="4.000000" y="-.9000000" z="-2.000000" ammo="1"/>	
-	<Mount weapon="Mace" size="medium-missile heavy-missile" x="-4.000000" y="-.9000000" z="-2.000000" ammo="1"/>	
-	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="3.000000" y="-.9000000" z="-1.000000" ammo="1"/>	
-	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-3.000000" y="-.9000000" z="-1.000000" ammo="1"/>	
-	<Mount weapon="KillerBee" size="special-missile" x="3.000000" y="-.9000000" z="-0.000000" ammo="30"/>	
-	<Mount weapon="KillerBee" size="special-missile" x="-3.000000" y="-.9000000" z="-0.000000" ammo="30"/>	
+	<Mount weapon="Torpedo" size="heavy-missile" x="-5.000000" y="-.9000000" z="-3.000000" ammo="3" volume="601"/>	
+	<Mount weapon="Torpedo" size="heavy-missile" x="5.000000" y="-.9000000" z="-3.000000" ammo="3" volume="601"/>	
+	<Mount weapon="Mace" size="medium-missile heavy-missile" x="4.000000" y="-.9000000" z="-2.000000" ammo="1" volume="601"/>	
+	<Mount weapon="Mace" size="medium-missile heavy-missile" x="-4.000000" y="-.9000000" z="-2.000000" ammo="1" volume="601"/>	
+	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="3.000000" y="-.9000000" z="-1.000000" ammo="1" volume="201"/>	
+	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-3.000000" y="-.9000000" z="-1.000000" ammo="1" volume="201"/>	
+	<Mount weapon="KillerBee" size="special-missile" x="3.000000" y="-.9000000" z="-0.000000" ammo="30" volume="1500"/>	
+	<Mount weapon="KillerBee" size="special-missile" x="-3.000000" y="-.9000000" z="-0.000000" ammo="30" volume="1500"/>	
 
 	<Subunit file="turretsmall" x="0.089912" y="0.120528" z="-6.000000" ri="0.994033" rj="-0.109082" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
 
