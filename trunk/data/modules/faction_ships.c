@@ -3,15 +3,20 @@ module faction_ships {
 
   object confed_ships;
   object aera_ships;
-
+  object unknown_ships;
+  object rlaan_ships;
   object confed(){
     return confed_ships;
   };
-
+  object unknown(){
+    return unknown_ships;
+  };
   object aera(){
     return aera_ships;
   };
-
+  object rlaan(){
+    return rlaan_ships;
+  };
   void init(){
     make_ships_list();
   };
@@ -31,6 +36,18 @@ module faction_ships {
     _olist.push_back(aera_ships,"aevant");
     _olist.push_back(aera_ships,"kyta");
     _olist.push_back(aera_ships,"lekra");
+    _olist.push_back(aera_ships,"osprey");
+    _olist.push_back(aera_ships,"kira");
+
+    rlaan_ships=_olist.new();
+
+    _olist.push_back(rlaan_ships,"skart");
+    _olist.push_back(rlaan_ships,"f109vampire");
+    _olist.push_back(rlaan_ships,"starfish");
+
+    unknown_ships=_olist.new();
+
+    _olist.push_back(unknown_ships,"unknown_active");    
   };
 
   object getRandomShipType(object ship_list){
@@ -51,6 +68,12 @@ module faction_ships {
     }
     else if(_string.equal(faction,"aera")){
       type=getRandomShipType(aera_ships);
+    }
+    else if (_string.equal(faction,"rlaan")){
+      type=getRandomShipType(rlaan_ships);
+    }
+    else if (_string.equal(faction,"unknown")){
+      type=getRandomShipType(unknown_ships);
     }
 
     return type;

@@ -42,7 +42,8 @@ module random_launch {
 
     _olist.push_back(launch_list,new_submap);
 
-    float thentime=calc_thentime(min_time,max_time);
+    float thentime=min_time;
+      //calc_thentime(min_time,max_time);
 
     _io.printf("new thentime=%f\n",thentime);
     _olist.push_back(wait_list,thentime);
