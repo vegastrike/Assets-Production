@@ -47,7 +47,9 @@ module total_war {
 
     if((time-lasttime)>waittime){
       launch_new_wave();
-      
+
+      _io.printMsgList();
+
       waittime=random.random(5.0,10.0);
       lasttime=time;
     }
