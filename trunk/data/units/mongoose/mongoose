@@ -1,0 +1,28 @@
+<Unit>
+	<Meshfile file="mongoose.xmesh" />
+	<Light file="supernova.bmp" x="1.500000" y="0.700000" z="-8.000000" size="2.750000"/>
+	<Light file="supernova.bmp" x="-1.500000" y="0.700000" z="-8.000000" size="2.750000"/>
+	<Mount weapon="Photon" size="heavy" x="0.800000" y="-0.600000" z="8.000000"/>
+	<Mount weapon="Photon" size="heavy" x="-0.800000" y="-0.600000" z="8.000000"/>
+	<Mount weapon="Swarm" size="Special-Missile" x="2.000000" y="0.800000" z="-4.000000" ammo="15"/>
+	<Mount weapon="Swarm" size="Special-Missile" x="-2.000000" y="0.800000" z="-4.000000" ammo="15"/>
+	<Mount weapon="Swarm" size="Special-Missile" x="1.000000" y="-1.400000" z="-1.000000" ammo="15"/>
+	<Mount weapon="Swarm" size="Special-Missile" x="-1.000000" y="-1.400000" z="-1.000000" ammo="15"/>
+	<Thrust>
+		<Engine Afterburner="1600.000000" Forward="328.000000" Retro="287.000000" Left="164.000000" Right="164.000000" Top="164.000000" Bottom="164.000000"/>
+		<Maneuver yaw="6831.000000" pitch="6831.000000" roll="6831.000000"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Armor front="60" right="60" left="60" back="60"/>
+		<Shields front="150.000000" back="150.000000" recharge="25.000000"/>
+		<Hull strength="300.000000"/>
+	</Defense>
+	<Stats mass="5.000000" momentofinertia="5.000000" fuel="80000000"></Stats>
+	<Computer yaw="207.000000" pitch="207.000000" roll="207.000000" afterburner="160.000000" maxspeed="41.000000"/>
+	<Energy afterburnenergy="35">
+		<Reactor recharge="25" limit="2000"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="80"/>
+</Unit>
