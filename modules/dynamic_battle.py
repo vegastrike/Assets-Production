@@ -99,7 +99,6 @@ def Siege(fac):
 							fgs = "unknown"
 						Director.pushSaveString(0,"dynamic_news"
 						,dynamic_news.makeVarList(["siege","end",fac,enfac,"-1",getImportanceOfSystem(sys),sys,"all","unknown","unknown",fgs,"unknown"]))
-												#FIXME get proper scale
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 
@@ -394,7 +393,8 @@ def stopAttack (fgname,faction):
 		
 
 def initiateAttack (fgname,faction,sys,enfgname,enfaction):
-	Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","start",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,"unknown",enfgname,"unknown"]))
+# FIXME This should only occur for fleet battles, so is commented out for now
+#	Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","start",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,"unknown",enfgname,"unknown"]))
 	if (fg_util.BaseFGInSystemName(sys)==fgname):
 		fg=(enfgname,enfaction)#this is for a base... self defence
 		efg=(fgname,faction)
@@ -430,11 +430,13 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction):
 			return 0
 	if (vsrandom.randrange(0,4)==0):
 		#FIXME  if it is advantageous to stop attacking only!!
-		#FIXME add a stop attacking news report?
+		#FIXME add a stop attacking news report?  -- this should now be fixed, as a draw is reported (not heavilly tested)
+		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,"unknown",enfgname,"unknown"]))
 		return 0
 	if (vsrandom.randrange(0,4)==0 and enfgname!=fg_util.BaseFGInSystemName(ensys)):
 		#FIXME  if it is advantageous to run away only
-		#FIXME add a retreat news report?
+		#FIXME add a retreat news report?  -- this should now be fixed, as a draw is reported (not heavilly tested)
+		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,"unknown",enfgname,"unknown"]))
 		num=VS.GetNumAdjacentSystems(ensys)
 		if (num>0):
 			ensys=VS.GetAdjacentSystem(ensys,vsrandom.randrange(0,num))
