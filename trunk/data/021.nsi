@@ -35,7 +35,7 @@
     CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Vega Strike Launcher.lnk" "$INSTDIR\Launcher.exe" "" "$INSTDIR\Launcher.exe" 0
     CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Setup.lnk" "$INSTDIR\setup.exe" "" "$INSTDIR\setup.exe" 0
     CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
-    CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Auto Updater.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\AutoUpdate.exe" 0
+    CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Auto Updater.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\AutoUpdate.bat" 0
   SectionEnd
 
 ;Other Functions - this one is what to do once install is completed
