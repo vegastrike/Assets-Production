@@ -60,6 +60,26 @@ def LaunchNext (fg, fac, type, ai, pos, logo):
   VS.playAnimation ("warp.ani",pos,(3.0*rad))
   return NextPos (newship,pos)
 
+def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_collection_distance,logo):
+  pos = whereTo(radius, myunit)
+  nr_ships=0
+  for t in typenumbers:
+    nr_ships+=t[1]
+  print "before"+str(nr_ships)
+  (nr_ships,pos) = look_for (fg,faction,nr_ships,myunit,pos,garbage_collection_distance)
+  print "after "+str(nr_ships)
+  count=0
+  for tn in typenumbers:
+    num = tn[1]
+    if num>nr_ships:
+      num=nr_ships
+    for i in range(num):
+      pos = LaunchNext (fg,faction,tn[0], ai, pos,logo)
+    nr_ships-=num
+    if (nr_ships==0):
+      return
+
+
 def launch_wave_around ( fg, faction, ai, nr_ships, capship, radius, myunit, garbage_collection_distance,logo):
   pos = whereTo(radius, myunit)
   print "before"+str(nr_ships)

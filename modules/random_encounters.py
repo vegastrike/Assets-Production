@@ -117,24 +117,25 @@ class random_encounters:
       print "hola!"
       return
     cursys=VS.getSystemFile()
-    numsigs=universe.GetNumSignificantsForSystem(cursys)
-    for factionnum in range(faction_ships.getMaxFactions()):
+#    numsigs=universe.GetNumSignificantsForSystem(cursys)
+    for factionnum in range(faction_ships.getMaxFactions()-1):
       faction=faction_ships.intToFaction(factionnum)
       fglist=fg_util.FGsInSystem(faction,cursys)
       if not len(fglist):
+        print 'no flight group for faction: '+faction+' in system '+cursys+'.'
         continue
       num=len(fglist)
-      print type(num), type(fg_util.MaxNumFlightgroupsInSystem()),type(numsigs)
-      avg=float(num)/float(fg_util.MaxNumFlightgroupsInSystem())/float(numsigs)
+      print 'Probability numbers: ',num, fg_util.MaxNumFlightgroupsInSystem()#,numsigs
+      avg=float(num)/float(fg_util.MaxNumFlightgroupsInSystem())#/float(numsigs)
       print 'Chance for %s ship: %g'%(faction, avg)
       rndnum=vsrandom.random()
-      print 'Random number: %g; will generate ship: '%(rndnum,rndnum<avg)
+      print 'Random number: %g; will generate ship: %d'%(rndnum,rndnum<avg)
       if rndnum<avg:
         #now we know that we will generate some ships!
         flightgroup=fglist[vsrandom.randrange(len(fglist))]
-        typenumbers=fg_util.GetShipsInFG(faction,flightgroup)
-        for tn in typenumbers:
-          launch.launch_wave_around(flightgroup,faction,tn[0],'default',tn[1],self.generation_distance*vsrandom.random()*0.9,un,self.generation_distance*vsrandom.random()*2,un,'')
+        typenumbers=fg_util.GetShipsInFG(flightgroup,faction)
+        print 'FG Name: "%s", ShipTypes: %s'%(flightgroup,str(typenumbers))
+        launch_recycle.launch_types_around(flightgroup,faction,typenumbers,'default',self.generation_distance*vsrandom.random()*0.9,un,self.generation_distance*vsrandom.random()*2,'')
   def atLeastNInsignificantUnitsNear (self,uni, n):
     num_ships=0
     count=0
@@ -222,7 +223,8 @@ class random_encounters:
       #lastmode=curmode#processed this event don't process again if in critical zone
       self.cur.lastmode=self.cur.curmode
       print "curmodechange %d" % (self.cur.curmode)#?
-      if ((vsrandom.random()<(self.fighterprob*self.cur.UpdatePhaseAndAmplitude())) and un):
+      if un:
+#      if ((vsrandom.random()<(self.fighterprob*self.cur.UpdatePhaseAndAmplitude())) and un):
         if (not self.atLeastNInsignificantUnitsNear (un,self.min_num_ships)):
           #determine whether to launch more ships next to significant thing based on ships in that range  
           print ("launch near")
