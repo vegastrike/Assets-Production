@@ -107,6 +107,18 @@ module ship_upgrades {
     temp=_unit.upgrade (un,cat,0,0,true,false);    
     _string.delete (cat);
   };
+  void UpgradeAfterburner (object un,float diff) {
+    float temp;
+    float i=0.0;
+    while (i<diff*3.0) {
+      object cat = GetRandomAfterburner(diff);
+      object name = _olist.at (cat,0);
+      temp=_unit.upgrade (un,name,0,0,true,false);    
+      _olist.delete (cat);
+      i=i+1.0;
+    }
+
+  };
   int getRandomEngine (float diff, object cat) { //get random engine from master part list
     //WARNING: CAT MUST BE NEWED BEFORE PASSING IT IN.
     int myint=GetDiffInt(diff);
@@ -164,6 +176,9 @@ module ship_upgrades {
     }
     UpgradeEngine (un,diff);
     UpgradeRadar (un);
+    // if ((_std.Rnd()<0.9) &&(_std.Rnd()<(diff*4.0))) {
+      UpgradeAfterburner(un,diff);
+      // }
     //and after some careful review of the code in question, it appears upgrades below are already offered by default on blank ships...only need to give 'em a pair of guns
 
     //some engines

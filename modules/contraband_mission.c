@@ -226,7 +226,7 @@ module contraband_mission {
 					cargonum2=random.randomint(0,10-cargonum);
 					notlist=faction_ships.getRandomFighter("merchant");
 					
-					newfighter=launch.launch_wave_around_unit ("Base","merchant",notlist,"default",1,min_distance,max_distance,jump);
+					newfighter=launch.launch_wave_around_unit ("Base","merchant",notlist,"flyto",1,min_distance,max_distance,jump);
 					
 					_unit.setFgDirective(newfighter,"B");
 					_unit.setTarget(newfighter,jump);
