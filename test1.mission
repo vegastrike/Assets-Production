@@ -5,7 +5,7 @@
 
 	<variables>
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
-		<var name="difficulty" value=".1" />
+<!--		<var name="difficulty" value=".1" />-->
 
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
@@ -23,7 +23,7 @@
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
-                <flightgroup name="orange" faction="confed" type="lekra" ainame="default" waves="1" nr_ships="2">
+                <flightgroup name="orange" faction="aera" type="puma" ainame="default" waves="1" nr_ships="2">
 			<pos x="53400" y="4000" z="40000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
