@@ -52,7 +52,7 @@ class cargo_mission (Director.Mission):
 	  self.cargoname=carg.GetContent()
 	  name = self.you.getName ()
 	  carg.SetMissionFlag(1)
-	  if (self.you):
+	  if (not self.you.isNull()):
 	    self.quantity = self.you.addCargo(carg)  #I add some cargo
 	  else:
 	    VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000Unable to establish communications. Mission failed.")
