@@ -1,5 +1,7 @@
 <Mesh texture="white.bmp" scale=".1">
 <Points>
+
+
 <Point>
     <Location x="0" z="-3.01528167724609" y="12.9688415527344"/>
 <!--  <Normal i="0" j="1" k="0"/> -->
@@ -1512,6 +1514,15 @@
     <Location x="1.75773811340332" z="-1" y="10.6178426742554"/>
 <!--  <Normal i="0" j="1" k="0"/> -->
 </Point>
+<Point>
+    <Location x="10" z="10" y="10"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-10" z="-10" y="-10"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+
 </Points>
 <Polygons>
 <Tri>
