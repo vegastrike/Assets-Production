@@ -54,6 +54,7 @@
 		<sector name="sol_sector">
 			<var name="faction" value="confed"/><!-- the default faction for systems in the sol sector -->		
 			<var name="namelist" value="greek.txt"/><!-- Sol Sector uses green names for planets -->			
+			<var name="planetlist" value="planets.txt"/>	
 			<sector name="weslyn">
 			        <var name="faction" value="confed"/> 
 				<var name="sun_radius" value="8000"/>
