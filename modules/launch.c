@@ -32,6 +32,9 @@ module launch {
     _string.print(faction);
     _string.print(type);
 
+    _io.message("game","all","launching new wave of fighters:");
+    _io.message("game","all",type);
+
     _unit.launch(fgname,faction,type,ai,nr_ships,x,y,z);
   };
 }
