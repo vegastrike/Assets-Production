@@ -1,4 +1,4 @@
-<terrain level="15" detail="256" staticdetail="15" scales="0.0000152587890625" scalet="0.0000152587890625" radius="1000">
+<terrain level="16" detail="256" staticdetail="12" scales="0.0000152587890625" scalet="0.0000152587890625" radius="1000">
 
 <texture file="textures/cunerpicus/lyed.png" blend="ONE ZERO" color="0">
 <material reflect="true">
