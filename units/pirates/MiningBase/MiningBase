@@ -98,6 +98,9 @@
 		<Category file="Contraband">
 			<import price=".8" pricestddev=".3" quantity="34" quantitystddev="12"/>
 		</Category>
+		<Category file="Contraband/Medical">
+			<import price=".8" pricestddev=".3" quantity="34" quantitystddev="12"/>
+		</Category>
 		<Category file="starships/Aera/Light">
 			<import price="1" pricestdev=".1" quantity="-25" quantitystddev="26" />
 		</Category>
