@@ -1,7 +1,7 @@
 <system name="Wasteland" background="red05" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
 <Light>
 <ambient red=".3" green=".3" blue=".3"/>
-<diffuse red="1" green=".8" blue=".8"/>
+<diffuse red="1" green="1" blue="1"/>
 <specular red="1" green="1" blue="1"/>
 </Light>
 
@@ -9,10 +9,22 @@
 <ambient red="1" green=".1" blue="0"/>
 <!--<diffuse red="1" green=".7" blue="0"/>-->
 <!--<attenuated red=".00000001" blue=".00000015"/>-->
+<attenuated red="0" blue=".000000002"/>
+</Light>	
+<Light>
+<ambient red="1" green=".1" blue="0"/>
+<!--<diffuse red="1" green=".7" blue="0"/>-->
+<!--<attenuated red=".00000001" blue=".00000015"/>-->
 <attenuated red="0" blue=".0000001"/>
-</Light>
-
-        <planet name="sun" file="sun.bmp" radius="2" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" velocity="0" position="0" Red=".7" Green=".5" Blue=".5" light="0 1l" faction="neutral">
+</Light>	
+        <planet name="sun" file="sun.bmp" radius="25000" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0 1l">
 	</planet>
-
+	<ContinuousTerrain file="continuousterrain.txt" mass=".00000100" y="0000" z="0000" qi="0" qj="0" qk="1" ri="0" rj="1" rk="0">
+		<Building file="hellcat" x="100" y="1000" z="100" faction="confed"/>
+		<Building file="hellcat" x="200" y="4000" z="10000" faction="aera"/>
+		<Building file="hellcat" x="300" y="2000" z="300" faction="confed"/>
+		<Building file="hellcat" x="500" y="3000" z="100" faction="aera"/>
+	</ContinuousTerrain>
 </system>
+
+

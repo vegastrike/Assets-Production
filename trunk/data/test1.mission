@@ -4,7 +4,7 @@
 	</settings>
 
 	<variables>
-		<var name="continuousterrain" value="continuousterrain.txt"/>
+<!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
@@ -12,8 +12,8 @@
 		<var name="description" value="4vs4.txt" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="hellcat" ainame="default" waves="1" nr_ships="1">
-			<pos x="1000.0" y="1000" z="100.0"/>
+                <flightgroup name="blue" faction="confed" type="hellcat" ainame="default" waves="1" nr_ships="1" terrain_nr="0">
+			<pos x="604.0" y="4000" z="3000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
