@@ -34,7 +34,7 @@ module launch_recycle {
     _olist.set (pos,whichcoord,x);
   };
 
-  int look_for (object faction, object type, int numships,object myunit,  object pos, float gcd) {
+  int look_for (object fg, object faction, int numships,object myunit,  object pos, float gcd) {
     int i=0;
     object un = _unit.getUnit (i);
     while (!_std.isNull (un)) {
@@ -49,13 +49,15 @@ module launch_recycle {
 	  object fac = _unit.getFaction (un);
 	  object fgname = _unit.getFgName (un);
 	  object name = _unit.getName (un);
-	  if (_string.equal (fac,fgname)) {
-	    if ((_string.equal (type,name)) ||(_std.Rnd()<0.5)) {
-	      if (_string.equal (fac,faction)) {
-		move_to (un,pos);
-		numships = numships-1;
-		_io.printf ("TTYmoving %s to current area\n",name);
-	      }else {
+	  if (_string.equal (fg,fgname)) {
+	    if (_string.equal (fac,faction)) {
+	      if (numships>0) {
+		if (_std.Rnd()<0.75) {
+		  move_to (un,pos);
+		  numships = numships-1;
+		  _io.printf ("TTYmoving %s to current area\n",name);
+		}
+	      } else {
 		//toast 'im!
 		_unit.removeFromGame (un);
 		_io.printf ("TTYaxing %s\n",name);
@@ -72,11 +74,18 @@ module launch_recycle {
     return numships;
   };
 
-  void launch_wave_around (object faction, object type, object ai, int nr_ships, float radius, object myunit, float garbage_collection_distance) {
+  void launch_wave_around ( object fg, object faction, object ai, int nr_ships, bool capship, float radius, object myunit, float garbage_collection_distance) {
     object pos = whereTo(radius, myunit);
-    nr_ships = look_for (faction,type,nr_ships,myunit,pos,garbage_collection_distance);
+
+    nr_ships = look_for (fg,faction,nr_ships,myunit,pos,garbage_collection_distance);
     while (nr_ships>0) {
-      LaunchNext (faction,faction,type, ai, pos);
+      object type;
+      if (capship) {
+	type = faction_ships.getRandomCapitol(faction);
+      }else {
+	type = faction_ships.getRandomFighter(faction);
+      }
+      LaunchNext (fg,faction,type, ai, pos);
 
       nr_ships = nr_ships-1;
     }
