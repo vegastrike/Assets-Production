@@ -227,7 +227,7 @@
 			</sector>
 			<sector name="mastif">
 			        <var name="faction" value="confed"/> 
-				<var name="jumps" value="sol_sector/weslyn sol_sector/celeste gemeni_sector/oxford sol_sector/mauer"/>
+				<var name="jumps" value="sol_sector/weslyn sol_sector/celeste gemini_sector/oxford sol_sector/mauer"/>
 				<var name="data" value="1999"/>
 			</sector>	
 			<sector name="aquila">
