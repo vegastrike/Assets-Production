@@ -98,7 +98,17 @@ class dynamicuniverse:
 	def _AddFGToFactionList(self,fgname,faction):
 		key = MakeFactionKey(faction)
 		Director.pushSaveString (self.cp,key,fgname)
-	
+	def _RemoveFGFromFactionList (self,fgname,faction):
+		key = MakeFactionKey(faction)
+		Director.getSaveStringLength()
+		#FIXME
+	def DeleteFlightgroup(self,fgname,faction):
+		key = MakeFGKey (fgname,faction)
+		len = Director.getSaveStringLength (self.cp,key)
+		if (len>=ShipListOffset()):
+			starsystem=Director.getSaveString(self.cp,key,1)
+			self._RemoveFGFromSystem(starsystem)
+			self._RemoveFGFromFactionList(fgname,faction)
 	def AddShipsToFG (self,fgname,faction,typenumbertuple,starsystem):
 		key = MakeFGKey(fgname,faction)	
 		len = Director.getSaveStringLength (self.cp,key)
