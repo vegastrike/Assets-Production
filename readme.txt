@@ -81,7 +81,7 @@ Agricultural planets sell food, so peruse the cargo list and get food by clickin
 Buy the food and then Click on the Save/Load button on the top right
 
 Then go to the menu (where the cargo used to be) and click "Save"
-You will get a confirmation dialog.  Next time you run the Launcher you should Open up your saved game to continue from where you left off.
+You will get a confirmation dialog.  Next time you run the Launcher you should Open up your saved game to continue from where you left off.  (If you click the LOAD button there, your current ship will be destroyed, so you can hit semicolon to respawn and reload the last game you had saved!)
 Click done on the bottom right.  We have some nice foodstuffs, lets deliver them to a base where they are needed.
 
 You must undock with the planet.   Undocking is somewhat unintuitive, so I will go over it briefly here.  The full text is below.  You may only undock from the starship you have targetted. If you somehow lost the agricultural planet in the meantime you may not have undocked with it.  Make sure Agricultural planet is targetted, and press 'u' (or 'd' again) to undock.
@@ -112,7 +112,15 @@ Select mission button - This allows you to select which mission vegastrike will 
 
 Start a new game button - Start a new game in the Vegastrike universe.  You start with a dinged up old wayfarer and head from the vega sector with the hope of finding profit and adventure on the frontier.  To begin afresh you must choose a new saved game.
 
-Load game button - This opens up a saved game you had finished playing before.  To save you must dock at the base and click on the save/load button and choose the save option.
+Load game button - This opens up a saved game you had finished playing before.  To save you must dock at the base and click on the save/load button and choose the save option. 
+	     (NOTE that if you
+	     choose the LOAD button
+             from a base IN GAME, your
+             ship will be destroyed so
+             you can press respawn
+             (semicolon) and continue
+             where you last saved from!
+             This is not quite as intuitive  as we would have hoped :-(.
 
 Recover autosave button - This button allows a player to recover their most recently played game into the selected save game upon next run.  If the player quits or the player docks, and then dies, it will restore to the last saved position.
 
