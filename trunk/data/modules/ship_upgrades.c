@@ -193,7 +193,8 @@ module ship_upgrades {
   };
   
 
-  void upgradeUnit (object un, float creds, float diff) {
+  void upgradeUnit (object un, float diff) {
+    float creds=0.0;
     int curmount=0;
     object mylist;
     object str;

@@ -23,8 +23,8 @@ module launch {
     return launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves);
   };
   object launch (object fgname, object faction, object type,object ai, int nr_ships, int nr_waves, float x, float y, float z){
-    float creds=difficulty.getCredDifficulty();
-    if (creds==0.0) {
+    bool diff=difficulty.usingDifficulty();
+    if (diff) {
       object ret = _unit.launch (fgname,faction,type,ai,nr_ships,nr_waves,x,y,z);
       return ret;
     }
@@ -39,7 +39,9 @@ module launch {
 	ret = mynew;
 	rsize =_unit.getRSize (mynew)*1.75;
       }
-      ship_upgrades.upgradeUnit ( mynew,creds,difficulty);
+      if (rsize<500.0) {
+	ship_upgrades.upgradeUnit ( mynew,difficulty);
+      }
       x=x-rsize;
       //	y=y-rsize;
       z=z-rsize;
