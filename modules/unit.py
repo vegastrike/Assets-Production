@@ -9,7 +9,12 @@ def isBase (un):
     retval = unit_fgid=="Base"
     return retval
 
-   
+def findPlayerNum (un):
+    for i in range (VS.getNumPlayers()):
+        if (VS.getPlayerX(i)==VS.getPlayer()):
+            return i
+    return 0
+        
 def isAsteroid (un):
     unit_fgid = un.getFlightgroupName()
     retval = unit_fgid=="Asteroid"
