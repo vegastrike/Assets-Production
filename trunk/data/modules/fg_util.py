@@ -282,7 +282,7 @@ def FGSystem (fgname,faction):
 	if (len>1):
 		return Director.getSaveString(ccp,key,1)
 	else:
-		print fgname+' already died, in no system'
+		#print fgname+' for '+faction+' already died, in no system'
 		return 'no_sector/no_system'
 def TransferFG (fgname,faction,tosys):
 	key = MakeFGKey(fgname,faction)
