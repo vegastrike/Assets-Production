@@ -13,7 +13,7 @@
 	</Defense>
 	<Stats mass="1150.000000" momentofinertia="1018.000000" fuel="20000000"></Stats>
 	<Computer yaw="57.600000" pitch="57.600000" roll="97.600000" afterburner="108.666666" maxspeed="54.333333">
-		<Radar itts="true" color="true" maxrange="90000"  error="0"/>
+		<Radar itts="true" color="true" maxrange="90000"  error="0" TrackingCone=".25" lockcone="0" />
 	</Computer>
 	<Energy>
 		<Reactor recharge="700" limit="30000"/>
@@ -21,12 +21,12 @@
 	<Jump delay="1" jumpenergy="20000"/>              
 
 
-<Mount weapon="HeavyFussion" size="capship-heavy" x="265.415009" y="-136.698349" z="-276.000000" ri="-0.000000" rj="0.000000" rk="1.000000" qi="0.809017" qj="0.587785" qk="0.000000"/>
-<Mount weapon="HeavyFussion" size="capship-heavy" x="-265.415009" y="-136.698349" z="-276.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.809017" qj="-0.587785" qk="0.000000"/>
-<Mount weapon="HeavyFussion" size="capship-heavy" x="230.528397" y="-120.472023" z="-240.000000" ri="-0.000000" rj="0.000000" rk="1.000000" qi="0.809017" qj="0.587785" qk="0.000000"/>
-<Mount weapon="HeavyFussion" size="capship-heavy" x="-230.528397" y="-112.863564" z="-240.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.309017" qj="-0.951056" qk="0.000000"/>
-<Mount weapon="HeavyFussion" size="capship-heavy" x="192.264206" y="-102.962555" z="-216.000000" ri="-0.000000" rj="0.000000" rk="1.000000" qi="0.809017" qj="0.587785" qk="0.000000"/>
-<Mount weapon="HeavyFussion" size="capship-heavy" x="-192.264206" y="-95.354103" z="-216.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.309017" qj="-0.951057" qk="0.000000"/>
+<Mount weapon="HeavyFussion" size="capship-heavy autotracking" x="265.415009" y="-136.698349" z="-276.000000" ri="-0.000000" rj="0.000000" rk="1.000000" qi="0.809017" qj="0.587785" qk="0.000000"/>
+<Mount weapon="HeavyFussion" size="capship-heavy autotracking" x="-265.415009" y="-136.698349" z="-276.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.809017" qj="-0.587785" qk="0.000000"/>
+<Mount weapon="HeavyFussion" size="capship-heavy autotracking" x="230.528397" y="-120.472023" z="-240.000000" ri="-0.000000" rj="0.000000" rk="1.000000" qi="0.809017" qj="0.587785" qk="0.000000"/>
+<Mount weapon="HeavyFussion" size="capship-heavy autotracking" x="-230.528397" y="-112.863564" z="-240.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.309017" qj="-0.951056" qk="0.000000"/>
+<Mount weapon="HeavyFussion" size="capship-heavy autotracking" x="192.264206" y="-102.962555" z="-216.000000" ri="-0.000000" rj="0.000000" rk="1.000000" qi="0.809017" qj="0.587785" qk="0.000000"/>
+<Mount weapon="HeavyFussion" size="capship-heavy autotracking" x="-192.264206" y="-95.354103" z="-216.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.309017" qj="-0.951057" qk="0.000000"/>
 
 <Light file="supernova.bmp" x="0" y="-70" z="-1152" size="190"/>
 <Light file="supernova.bmp" x="524" y="-193" z="-1379" size="92"/>
