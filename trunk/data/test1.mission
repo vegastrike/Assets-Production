@@ -7,7 +7,7 @@
 		<var name="description" value="4vs4.txt" />
 	</variables>
         <flightgroups>
-                <flightgroup name="green" faction="rebels" type="hornet" ainame="default" waves="2" nr_ships="2">
+                <flightgroup name="green" faction="confed" type="hornet" ainame="default" waves="2" nr_ships="2">
 			<pos x="8000.0" y="0.0" z="3000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
@@ -15,7 +15,7 @@
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
-                <flightgroup name="blue" faction="rebels" type="jalthi" ainame="default" waves="2" nr_ships="2">
+                <flightgroup name="blue" faction="rebels" type="hornet" ainame="default" waves="2" nr_ships="2">
 			<pos  offset="green" x="1000.0" y="0.0" z="0.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
