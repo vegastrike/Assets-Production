@@ -1,71 +1,92 @@
-<Unit>
-	<Meshfile file="cargoship.xmesh"/>
-
-<!--	<Light file="supernova.bmp" x="0.0" y="32.2" z="-210.00000" size="100"/>-->
-	<Dock x="0.0" y="32.2" z="-210.00000" size="100"/>
-	<Dock x="0.0" y="-13.0" z="330.00000" size="20"/>
-	<Light file="supernova.bmp" x="110.0" y="70" z="-280.00000" size="58"/>
-	<Light file="supernova.bmp" x="-110.0" y="70" z="-280.00000" size="58"/>
-	<Light file="supernova.bmp" x="105.0" y="-48" z="-220.00000" size="50"/>
-	<Light file="supernova.bmp" x="-105.0" y="-48" z="-220.00000" size="50"/>
-	<Mount weapon="LaserBeam" size="Light Medium Heavy capship-light" x="60.000000" y="0.000000" z="200.000000"/>
-	<Mount weapon="LaserBeam" size="Light Medium Heavy capship-light" x="-60.000000" y="0.000000" z="200.000000"/>
-	<Thrust>
-		<Engine Afterburner="966.666718" Forward="205.333344" Retro="254.666676" Left="202.666672" Right="202.666672" Top="202.666672" Bottom="202.666672"/>
-		<Maneuver yaw="1643.200050" pitch="1187.800201" roll="1143.200050"/>
+<Unit >
+	<Meshfile file = "cargoship.xmesh"  >
+	</Meshfile>
+	<Dock x = "0.0" y = "32.2" z = "-210.00000" size = "100"  >
+	</Dock>
+	<Dock x = "0.0" y = "-13.0" z = "330.00000" size = "20"  >
+	</Dock>
+	<Light file = "supernova.bmp" x = "110.0" y = "70" z = "-280.00000" size = "58"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-110.0" y = "70" z = "-280.00000" size = "58"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "105.0" y = "-48" z = "-220.00000" size = "50"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-105.0" y = "-48" z = "-220.00000" size = "50"  >
+	</Light>
+	<Mount weapon = "LaserBeam" size = "Light Medium Heavy capship-light" x = "60.000000" y = "0.000000" z = "200.000000"  >
+	</Mount>
+	<Mount weapon = "LaserBeam" size = "Light Medium Heavy capship-light" x = "-60.000000" y = "0.000000" z = "200.000000"  >
+	</Mount>
+	<Thrust >
+		<Engine Afterburner = "20441376" Forward = "4342030" Retro = "5385245" Left = "4285640" Right = "4285640" Top = "4285640" Bottom = "4285640"  >
+		</Engine>
+		<Maneuver yaw = "34747519" pitch = "25117520" roll = "24174394"  >
+		</Maneuver>
 	</Thrust>
-
-	<Sound>
+	<Sound  >
 	</Sound>
-
-	<Defense HudImage="cargoship.spr">
-		<Armor front="380" right="400" left="400" back="-330"/>
-		<Shields front="1000.0" right="970" left="970"  back="950.000000" recharge="20.000000"/>
-		<Hull strength="250.000000"/>
+	<Defense HudImage = "cargoship.spr" >
+		<Armor front = "380" right = "400" left = "400" back = "-330"  >
+		</Armor>
+		<Shields front = "1000.0" right = "970" left = "970" back = "950.000000" recharge = "20.000000"  >
+		</Shields>
+		<Hull strength = "250.000000"  >
+		</Hull>
 	</Defense>
-
-	<Stats mass="96.000000" momentofinertia="16.000000" fuel="170000000">
+	<Stats mass = "2030040" momentofinertia = "338340" fuel = "170000000"  >
 	</Stats>
-
-	<Computer yaw="32.400002" pitch="32.600006" roll="35.400002" afterburner="68" maxspeed="37">
-                <Radar itts="false" error="0" range="35000" color="true"/>
+	<Computer yaw = "32.400002" pitch = "32.600006" roll = "35.400002" afterburner = "68" maxspeed = "37" >
+		<Radar itts = "false" error = "0" range = "35000" color = "true"  >
+		</Radar>
 	</Computer>
-
-	<Jump delay="1" jumpenergy="100"/>       
-
-	<Energy>
-		<Reactor recharge="20" limit="1100"/>
+	<Jump delay = "1" jumpenergy = "100"  >
+	</Jump>
+	<Energy >
+		<Reactor recharge = "20" limit = "1100"  >
+		</Reactor>
 	</Energy>
-
-	<description>
+	<description  >
 	</description>
-
-	<Hold volume="300">
-		<Category file="Natural_Products/Food">
-			<import price=".7" pricestddev=".2" quantity="0" quantitystddev="30"/>
+	<Hold volume = "300" >
+		<Category file = "Natural_Products/Food" >
+			<import price = ".7" pricestddev = ".2" quantity = "0" quantitystddev = "30"  >
+			</import>
 		</Category>
-		<Category file="Machinery_Goods">
-			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="4"/>
+		<Category file = "Machinery_Goods" >
+			<import price = "1.1" pricestddev = ".1" quantity = "0" quantitystddev = "4"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Agriculteral_Supplies">
-			<import price="1.2" pricestddev=".1" quantity="0" quantitystddev="7"/>
+		<Category file = "Supplies/Agriculteral_Supplies" >
+			<import price = "1.2" pricestddev = ".1" quantity = "0" quantitystddev = "7"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Construction_Supplies">
-			<import price="1.2" pricestddev=".1" quantity="0" quantitystddev="5"/>
+		<Category file = "Supplies/Construction_Supplies" >
+			<import price = "1.2" pricestddev = ".1" quantity = "0" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Medical_Supplies">
-			<import price="1.2" pricestddev=".1" quantity="0" quantitystddev="3"/>
+		<Category file = "Supplies/Medical_Supplies" >
+			<import price = "1.2" pricestddev = ".1" quantity = "0" quantitystddev = "3"  >
+			</import>
 		</Category>
 	</Hold>
-
-	<Subunit file="turretheavy" x="-0.0" y="-4.64302" z="306" ri="0.018352" rj="-0.233119" rk="0.972275" qi="-0.000000" qj="0.972439" qk="0.233159"/>
-	<Subunit file="turretheavy" x="-0.0" y="-30.00000" z="306" ri="-0.064512" rj="0.000000" rk="-0.997917" qi="-0.000000" qj="-1.000000" qk="-0.000000"/>
-	<Subunit file="turret" x="-120" y="113" z="-162" ri="-0.311052" rj="-0.180082" rk="-0.933176" qi="-0.501036" qj="0.865426" qk="-0.000000"/>
-	<Subunit file="turret" x="120" y="113" z="-162" ri="0.865426" rj="-0.501036" rk="-0.000000" qi="0.482932" qj="0.834155" qk="0.266385"/>
-	<Subunit file="turret" x="-120" y="-95" z="-102" ri="0.096161" rj="0.251852" rk="0.962976" qi="-0.482932" qj="-0.834155" qk="0.266385"/>
-	<Subunit file="turret" x="120" y="-95" z="-102" ri="0.865426" rj="0.501037" rk="-0.000000" qi="0.482932" qj="-0.834155" qk="0.266385"/>
-	<Subunit file="turretheavy" x="-315" y="-16" z="-179" ri="-0.9" rj="-0.13" rk="0.32" qi="0.14" qj="-0.98" qk="0.000000"/>
-	<Subunit file="turretheavy" x="315" y="-16" z="-179" ri="-0.9" rj="-0.13" rk="0.32" qi="0.14" qj="-0.98" qk="0.000000"/>
-	<Subunit file="turretheavy" x="-228" y="54" z="-118" ri="0.156323" rj="0.781613" rk="-0.603858" qi="-0.980581" qj="0.196116" qk="0.000000"/>
-	<Subunit file="turretheavy" x="228" y="44" z="-118" ri="-0.156323" rj="0.781613" rk="-0.603858" qi="-0.980581" qj="-0.196116" qk="-0.000000"/>
+	<Subunit file = "turretheavy" x = "-0.0" y = "-4.64302" z = "306" ri = "0.018352" rj = "-0.233119" rk = "0.972275" qi = "-0.000000" qj = "0.972439" qk = "0.233159"  >
+	</Subunit>
+	<Subunit file = "turretheavy" x = "-0.0" y = "-30.00000" z = "306" ri = "-0.064512" rj = "0.000000" rk = "-0.997917" qi = "-0.000000" qj = "-1.000000" qk = "-0.000000"  >
+	</Subunit>
+	<Subunit file = "turret" x = "-120" y = "113" z = "-162" ri = "-0.311052" rj = "-0.180082" rk = "-0.933176" qi = "-0.501036" qj = "0.865426" qk = "-0.000000"  >
+	</Subunit>
+	<Subunit file = "turret" x = "120" y = "113" z = "-162" ri = "0.865426" rj = "-0.501036" rk = "-0.000000" qi = "0.482932" qj = "0.834155" qk = "0.266385"  >
+	</Subunit>
+	<Subunit file = "turret" x = "-120" y = "-95" z = "-102" ri = "0.096161" rj = "0.251852" rk = "0.962976" qi = "-0.482932" qj = "-0.834155" qk = "0.266385"  >
+	</Subunit>
+	<Subunit file = "turret" x = "120" y = "-95" z = "-102" ri = "0.865426" rj = "0.501037" rk = "-0.000000" qi = "0.482932" qj = "-0.834155" qk = "0.266385"  >
+	</Subunit>
+	<Subunit file = "turretheavy" x = "-315" y = "-16" z = "-179" ri = "-0.9" rj = "-0.13" rk = "0.32" qi = "0.14" qj = "-0.98" qk = "0.000000"  >
+	</Subunit>
+	<Subunit file = "turretheavy" x = "315" y = "-16" z = "-179" ri = "-0.9" rj = "-0.13" rk = "0.32" qi = "0.14" qj = "-0.98" qk = "0.000000"  >
+	</Subunit>
+	<Subunit file = "turretheavy" x = "-228" y = "54" z = "-118" ri = "0.156323" rj = "0.781613" rk = "-0.603858" qi = "-0.980581" qj = "0.196116" qk = "0.000000"  >
+	</Subunit>
+	<Subunit file = "turretheavy" x = "228" y = "44" z = "-118" ri = "-0.156323" rj = "0.781613" rk = "-0.603858" qi = "-0.980581" qj = "-0.196116" qk = "-0.000000"  >
+	</Subunit>
 </Unit>

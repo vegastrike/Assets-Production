@@ -1,52 +1,66 @@
-<Unit scale="3">
-	<Meshfile file="ta7.xmesh" />
-	
-	<Mount weapon="Anihilator" size="Special Heavy light-capship" x="-1.700000" y="0.100000" z="7.800000"/>
-	<Mount weapon="Anihilator" size="Special Heavy light-capship" x="1.700000" y="0.100000" z="7.800000"/>
-	<Mount weapon="Reaper" size="Heavy" x="-1.400000" y="-2.200000" z="6.000000"/>
-	<Mount weapon="Reaper" size="Heavy" x="1.400000" y="-2.200000" z="6.000000"/>
-	<Mount weapon="Disruptor" size="Light Medium" x="5.761928" y="-0.011904" z="2.949717"/>
-	<Mount weapon="Disruptor" size="Light Medium" x="-5.760555" y="-0.011972" z="2.988722"/>
-
-	<Mount weapon="Torpedo" size="heavy-missile" x="-5.800000" y="0.000000" z="-1.500000" ammo="6" volume="1201"/>
-	<Mount weapon="Hail" size="light-missile medium-missile special-missile" x="0.000000" y="2.500000" z="-3.500000" ammo="40" volume="601"/>
-	<Mount weapon="Mace" size="heavy-missile" x="0.0000000" y="0.000000" z="8.000000" ammo="1" volume="601"/>
-	<Mount weapon="Hail" size="light-missile medium-missile special-missile" x="0.000000" y="1.500000" z="-3.500000" ammo="40" volume="601"/>
-	<Mount weapon="Torpedo" size="heavy-missile" x="5.800000" y="0.000000" z="-1.500000" ammo="6" volume="1201"/>
-
-	<Subunit file="turretsmall" x="1.450000" y="0.000000" z="6.550000" ri="0.701334" rj="0.127515" rk="0.701334" qi="0.707107" qj="0.000000" qk="-0.707107"/>
-	<Subunit file="turret_medium" x="-1.450000" y="-0.000000" z="6.550000" ri="-0.701334" rj="-0.127515" rk="0.701334" qi="-0.707107" qj="0.000000" qk="-0.707107"/>
-	<Subunit file="turret_medium" x="0.000000" y="0.550000" z="-4.000000" ri="1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
-
-	<Light file="supernova.bmp" x="1.500000" y="-0.000000" z="-6.000000" size="1.265019"/>
-	<Light file="supernova.bmp" x="-1.500000" y="-0.000000" z="-6.000000" size="1.297020"/>
-	
-	<Thrust>
-		<Engine Afterburner="293.000031" Forward="142.799988" Retro="129.199989" Left="115.399994" Right="115.399994" Top="116.399994" Bottom="116.399994"/>
-		<Maneuver yaw="241.500000" pitch="241.500000" roll="241.500000"/>
+<Unit scale = "3" >
+	<Meshfile file = "ta7.xmesh"  >
+	</Meshfile>
+	<Mount weapon = "Anihilator" size = "Special Heavy light-capship" x = "-1.700000" y = "0.100000" z = "7.800000"  >
+	</Mount>
+	<Mount weapon = "Anihilator" size = "Special Heavy light-capship" x = "1.700000" y = "0.100000" z = "7.800000"  >
+	</Mount>
+	<Mount weapon = "Reaper" size = "Heavy" x = "-1.400000" y = "-2.200000" z = "6.000000"  >
+	</Mount>
+	<Mount weapon = "Reaper" size = "Heavy" x = "1.400000" y = "-2.200000" z = "6.000000"  >
+	</Mount>
+	<Mount weapon = "Disruptor" size = "Light Medium" x = "5.761928" y = "-0.011904" z = "2.949717"  >
+	</Mount>
+	<Mount weapon = "Disruptor" size = "Light Medium" x = "-5.760555" y = "-0.011972" z = "2.988722"  >
+	</Mount>
+	<Mount weapon = "Torpedo" size = "heavy-missile" x = "-5.800000" y = "0.000000" z = "-1.500000" ammo = "6" volume = "1201"  >
+	</Mount>
+	<Mount weapon = "Hail" size = "light-missile medium-missile special-missile" x = "0.000000" y = "2.500000" z = "-3.500000" ammo = "40" volume = "601"  >
+	</Mount>
+	<Mount weapon = "Mace" size = "heavy-missile" x = "0.0000000" y = "0.000000" z = "8.000000" ammo = "1" volume = "601"  >
+	</Mount>
+	<Mount weapon = "Hail" size = "light-missile medium-missile special-missile" x = "0.000000" y = "1.500000" z = "-3.500000" ammo = "40" volume = "601"  >
+	</Mount>
+	<Mount weapon = "Torpedo" size = "heavy-missile" x = "5.800000" y = "0.000000" z = "-1.500000" ammo = "6" volume = "1201"  >
+	</Mount>
+	<Subunit file = "turretsmall" x = "1.450000" y = "0.000000" z = "6.550000" ri = "0.701334" rj = "0.127515" rk = "0.701334" qi = "0.707107" qj = "0.000000" qk = "-0.707107"  >
+	</Subunit>
+	<Subunit file = "turret_medium" x = "-1.450000" y = "-0.000000" z = "6.550000" ri = "-0.701334" rj = "-0.127515" rk = "0.701334" qi = "-0.707107" qj = "0.000000" qk = "-0.707107"  >
+	</Subunit>
+	<Subunit file = "turret_medium" x = "0.000000" y = "0.550000" z = "-4.000000" ri = "1.000000" rj = "0.000000" rk = "0.000000" qi = "0.000000" qj = "0.000000" qk = "-1.000000"  >
+	</Subunit>
+	<Light file = "supernova.bmp" x = "1.500000" y = "-0.000000" z = "-6.000000" size = "1.265019"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-1.500000" y = "-0.000000" z = "-6.000000" size = "1.297020"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "13229" Forward = "6447" Retro = "5833" Left = "5210" Right = "5210" Top = "5255" Bottom = "5255"  >
+		</Engine>
+		<Maneuver yaw = "10904" pitch = "10904" roll = "10904"  >
+		</Maneuver>
 	</Thrust>
-
-	<Sound>
+	<Sound  >
 	</Sound>
-
-	<Energy>
-		<Reactor recharge="60" limit="900"/>
+	<Energy >
+		<Reactor recharge = "60" limit = "900"  >
+		</Reactor>
 	</Energy>
-       
-       	<Jump delay="1" jumpenergy="500"/>       
-	<Hold volume="50">
+	<Jump delay = "1" jumpenergy = "500"  >
+	</Jump>
+	<Hold volume = "50"  >
 	</Hold>
-
-	<Defense HudImage="kira-hud.spr">
-		<Armor front="150" right="90" left="90" back="110"/>
-		<Shields front="300.000000" right="250.000000" left="250.000000" back="300.000000" recharge="25.000000"/>
-		<Hull strength="300.000000"/>
+	<Defense HudImage = "kira-hud.spr" >
+		<Armor front = "150" right = "90" left = "90" back = "110"  >
+		</Armor>
+		<Shields front = "300.000000" right = "250.000000" left = "250.000000" back = "300.000000" recharge = "25.000000"  >
+		</Shields>
+		<Hull strength = "300.000000"  >
+		</Hull>
 	</Defense>
-
-	<Stats mass="9.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
-
-	<Computer yaw="93.500000" pitch="93.500000" roll="93.500000" afterburner="119.300003" maxspeed="41.599998">
-		<Radar itts="true" range="25000" color="true"/>
+	<Stats mass = "406" momentofinertia = "225" fuel = "200000000"  >
+	</Stats>
+	<Computer yaw = "93.500000" pitch = "93.500000" roll = "93.500000" afterburner = "119.300003" maxspeed = "41.599998" >
+		<Radar itts = "true" range = "25000" color = "true"  >
+		</Radar>
 	</Computer>
-
 </Unit>

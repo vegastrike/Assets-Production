@@ -1,40 +1,58 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000" right="0.000000" left="0.000000" back="0.000000" recharge="0.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" right = "0.000000" left = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_4_Level3"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_2"/>
-	<Upgrade file="double_plated_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-	<Mount weapon="Particle" size="Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
-	<Mount weapon="Particle" size="Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
-	<Mount weapon="Ion" size="Medium AUTOTRACKING" x="000000" y="-.6000000" z="12.000000"/>
-	<Mount weapon="Torpedo" size="heavy-missile" x="-5.000000" y="-.9000000" z="-3.000000" volume="1201"/>	
-	<Mount weapon="Torpedo" size="heavy-missile" x="5.000000" y="-.9000000" z="-3.000000"  volume="1201"/>	
-	<Mount weapon="Mace" size="medium-missile heavy-missile" x="4.000000" y="-.9000000" z="-2.000000" volume="1201"/>	
-	<Mount weapon="Mace" size="medium-missile heavy-missile" x="-4.000000" y="-.9000000" z="-2.000000"  volume="1201"/>	
-	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="3.000000" y="-.9000000" z="-1.000000" volume="401"/>
-	<Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-3.000000" y="-.9000000" z="-1.000000" volume="401"/>
-	<Mount weapon="KillerBee" size="special-missile" x="3.000000" y="-.9000000" z="-0.000000"  volume="3200"/>	
-	<Mount weapon="KillerBee" size="special-missile" x="-3.000000" y="-.9000000" z="-0.000000" volume="3200"/>	
-	
-	<Thrust>
-		<Engine Afterburner="1500.333282" Forward="500.333344" Retro="500.666676" Left="500.666672" Right="500.666672" Top="500.666672" Bottom="500.666672"/>
-		<Maneuver yaw="6000.000000" pitch="6000.000000" roll="6000.000000"/>
+	<Upgrade file = "shield_4_Level3"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_2"  >
+	</Upgrade>
+	<Upgrade file = "double_plated_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Mount weapon = "Particle" size = "Heavy" x = "6.000000" y = "-.9000000" z = "-3.000000"  >
+	</Mount>
+	<Mount weapon = "Particle" size = "Heavy" x = "-6.000000" y = "-.9000000" z = "-3.000000"  >
+	</Mount>
+	<Mount weapon = "Ion" size = "Medium AUTOTRACKING" x = "000000" y = "-.6000000" z = "12.000000"  >
+	</Mount>
+	<Mount weapon = "Torpedo" size = "heavy-missile" x = "-5.000000" y = "-.9000000" z = "-3.000000" volume = "1201"  >
+	</Mount>
+	<Mount weapon = "Torpedo" size = "heavy-missile" x = "5.000000" y = "-.9000000" z = "-3.000000" volume = "1201"  >
+	</Mount>
+	<Mount weapon = "Mace" size = "medium-missile heavy-missile" x = "4.000000" y = "-.9000000" z = "-2.000000" volume = "1201"  >
+	</Mount>
+	<Mount weapon = "Mace" size = "medium-missile heavy-missile" x = "-4.000000" y = "-.9000000" z = "-2.000000" volume = "1201"  >
+	</Mount>
+	<Mount weapon = "FriendOrFoe" size = "light-missile medium-missile" x = "3.000000" y = "-.9000000" z = "-1.000000" volume = "401"  >
+	</Mount>
+	<Mount weapon = "FriendOrFoe" size = "light-missile medium-missile" x = "-3.000000" y = "-.9000000" z = "-1.000000" volume = "401"  >
+	</Mount>
+	<Mount weapon = "KillerBee" size = "special-missile" x = "3.000000" y = "-.9000000" z = "-0.000000" volume = "3200"  >
+	</Mount>
+	<Mount weapon = "KillerBee" size = "special-missile" x = "-3.000000" y = "-.9000000" z = "-0.000000" volume = "3200"  >
+	</Mount>
+	<Thrust >
+		<Engine Afterburner = "254700" Forward = "84900" Retro = "84900" Left = "84900" Right = "84900" Top = "84900" Bottom = "84900"  >
+		</Engine>
+		<Maneuver yaw = "1018800" pitch = "1018800" roll = "1018800"  >
+		</Maneuver>
 	</Thrust>
-
-	<Computer yaw="138.000000" pitch="138.000000" roll="138.000000" afterburner="233.333328" maxspeed="82.666668">
+	<Stats mass = "849" momentofinertia = "849"  >
+	</Stats>
+	<Computer yaw = "138.000000" pitch = "138.000000" roll = "138.000000" afterburner = "233.333328" maxspeed = "82.666668"  >
 	</Computer>
-
-
-       	<Jump delay="1" jumpenergy="180"/>       
-<!-- new elements added -->
-<Subunit file="turretsmall" x="0.089912" y="0.120528" z="-6.000000" ri="0.994033" rj="-0.109082" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
-	<Hold volume="60">
+	<Jump delay = "1" jumpenergy = "180"  >
+	</Jump>
+	<Subunit file = "turretsmall" x = "0.089912" y = "0.120528" z = "-6.000000" ri = "0.994033" rj = "-0.109082" rk = "0.000000" qi = "0.000000" qj = "0.000000" qk = "-1.000000"  >
+	</Subunit>
+	<Hold volume = "60"  >
 	</Hold>
-
 </Unit>

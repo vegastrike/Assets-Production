@@ -1,36 +1,46 @@
-<Unit>
-
-	<Meshfile file="drone-front.xmesh" /> 
-	<Meshfile file="drone-base.xmesh" /> 
-	<Meshfile file="drone-side.xmesh" />
-	<BspMesh/>
-
-<!--	<Meshfile file="hornet.xmesh" />  -->
-
-
-<Light file="engine1.png" x="0" y="0" z="-66" size="50" r="0.898039" g="0.803922" b="0.070588"/>
-
-<Mount weapon="Unknown" size="Light Medium Heavy" x="21.741" y="0" z="26" />
-<Mount weapon="Unknown" size="Light Medium Heavy" x="-21.741" y="0" z="26" />
-<Mount weapon="UnknownBeam" size="Light Medium Heavy" x="0" y="21.741" z="26" />
-<Mount weapon="UnknownBeam" size="Light Medium Heavy" x="0" y="-21.741" z="26" />
-<Mount weapon="Mace" ammo="1" size="Heavy-Missile" x="0" y="-21.741" z="26" volume="500"/>
-
-	<Thrust>
-		<Engine Afterburner="8000" Forward="798" Retro="685" Left="385" Right="385" Top="385" Bottom="385"/>
-		<Maneuver yaw="2187.800201" pitch="6831.000000" roll="6831.000000"/>
+<Unit >
+	<Meshfile file = "drone-front.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "drone-base.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "drone-side.xmesh"  >
+	</Meshfile>
+	<BspMesh  >
+	</BspMesh>
+	<Light file = "engine1.png" x = "0" y = "0" z = "-66" size = "50" r = "0.898039" g = "0.803922" b = "0.070588"  >
+	</Light>
+	<Mount weapon = "Unknown" size = "Light Medium Heavy" x = "21.741" y = "0" z = "26"  >
+	</Mount>
+	<Mount weapon = "Unknown" size = "Light Medium Heavy" x = "-21.741" y = "0" z = "26"  >
+	</Mount>
+	<Mount weapon = "UnknownBeam" size = "Light Medium Heavy" x = "0" y = "21.741" z = "26"  >
+	</Mount>
+	<Mount weapon = "UnknownBeam" size = "Light Medium Heavy" x = "0" y = "-21.741" z = "26"  >
+	</Mount>
+	<Mount weapon = "Mace" ammo = "1" size = "Heavy-Missile" x = "0" y = "-21.741" z = "26" volume = "500"  >
+	</Mount>
+	<Thrust >
+		<Engine Afterburner = "673320375" Forward = "67163707" Retro = "57653057" Left = "32403543" Right = "32403543" Top = "32403543" Bottom = "32403543"  >
+		</Engine>
+		<Maneuver yaw = "184136306" pitch = "574931435" roll = "574931435"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	<Defense hudimage="drone-hud.spr">
-		<Armor front="100" right="100" left="100" back="50"/>
-		<Shields front="30.000000" right="0" left="0" back="0" recharge="0"/>
-		<Hull strength="400.000000"/>
+	<Defense hudimage = "drone-hud.spr" >
+		<Armor front = "100" right = "100" left = "100" back = "50"  >
+		</Armor>
+		<Shields front = "30.000000" right = "0" left = "0" back = "0" recharge = "0"  >
+		</Shields>
+		<Hull strength = "400.000000"  >
+		</Hull>
 	</Defense>
-	<Stats mass="1.250000" momentofinertia="2.250000" fuel="20000"></Stats>
-	<Computer yaw="116.600006" pitch="207.000000" roll="207.000000" afterburner="800" maxspeed="400">
+	<Stats mass = "105206" momentofinertia = "189371" fuel = "20000"  >
+	</Stats>
+	<Computer yaw = "116.600006" pitch = "207.000000" roll = "207.000000" afterburner = "800" maxspeed = "400"  >
 	</Computer>
-	<Energy>
-		<Reactor recharge="200" limit="1000"/>
+	<Energy >
+		<Reactor recharge = "200" limit = "1000"  >
+		</Reactor>
 	</Energy>
 </Unit>

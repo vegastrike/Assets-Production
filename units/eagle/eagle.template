@@ -1,60 +1,58 @@
-<!-- Name : F-208 -->
-<!-- Type : Space Superiority/Heavy Fighter -->
-<!-- Faction : Not assigned -->
-
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000" back="0.000000" recharge="0.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_2_Level3"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_4"/>
-	<Upgrade file="micro_shielded_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-<Sound>	</Sound>
-
-<!-- Ship are facing Z axis so for weapon location : X= left/right, y=over/under, 
-								Z=front/back -->
-<hold volume="130">
-</hold>
-<!-- changed mount size from Light to Light and Medium...meaning -->
-<!-- it can hold both light and medium guns when purchased from store -->
-<Mount weapon="Laser" size="Light Medium Heavy" x="-10.962538" y="4.039893" z="8.599527" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000"/>
-<Mount weapon="Laser" size="Light Medium Heavy" x="10.961246" y="3.947175" z="8.599527" ri="0.000000" rj="0.000000" rk="1.000000" qi="1.000000" qj="0.000000" qk="0.000000"/>
-<Mount weapon="Laser" size="Light Medium Heavy" x="-12.777982" y="-1.545418" z="6.636857" ri="0.000000" rj="0.000000" rk="1.000000" qi="1.000000" qj="0.000000" qk="0.000000"/>
-<Mount weapon="Laser" size="Light Medium Heavy" x="12.774457" y="-1.545662" z="6.636857" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000"/>
-<Mount weapon="Laser" size="Light Medium Special Autotracking" x="-6.086652" y="-0.687403" z="14.729491" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000"/>
-<Mount weapon="Laser" size="Light Medium Special Autotracking" x="6.186234" y="-0.687404" z="14.729491" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000"/>
-<Mount weapon="dumbfire" size="Light-Missile Medium-Missile" x="2.186234" y="-0.000687404" z="4.729491" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000" volume="400"/>
-<Mount weapon="dumbfire" size="Light-Missile Medium-Missile" x="-3.186234" y="-0.000687404" z="4.729491" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000" volume="400"/>
-<Mount weapon="" size="Medium-Missile Heavy-Missile" x="2.186234" y="-0.000687404" z="4.729491" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000" volume="400"/>
-<Mount weapon="dumbfire" size="Medium-Missile Heavy-Missile" x="-3.186234" y="-0.000687404" z="4.729491" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000" volume="400"/>
-
-<Stats mass="5.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
-<!-- changed maxspeed to 124-->
-<Computer yaw="115" pitch="110" roll="105" afterburner="136" maxspeed="60">
-	<Radar itts="true" color="true" error="0"/> <!-- put radar in computer -->
-</Computer>
-
-
-<Jump delay="2" jumpenergy="350"/> <!-- reduced jump energy so that it is less than limit -->
-
-
-<!-- Ship are facing Z axis so for light location : X= left/right, y=over/under, 
-								Z=front/back -->
-
-
-
-<Thrust>
-
-	<Engine Afterburner="866.666718" Forward="300.333344" Retro="354.666676" 			Left="352.666672" Right="352.666672" Top="352.666672" Bottom="352.666672"/>
-<!-- less maneuver and engine thrust -->
-	<Maneuver yaw="2043.200050" pitch="2087.800201" roll="1843.200050"/>
-
-</Thrust>
-
-
+	<Upgrade file = "shield_2_Level3"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_4"  >
+	</Upgrade>
+	<Upgrade file = "micro_shielded_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Sound  >
+	</Sound>
+	<hold volume = "130"  >
+	</hold>
+	<Mount weapon = "Laser" size = "Light Medium Heavy" x = "-10.962538" y = "4.039893" z = "8.599527" ri = "0.000000" rj = "-0.000000" rk = "1.000000" qi = "-1.000000" qj = "-0.000000" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "Laser" size = "Light Medium Heavy" x = "10.961246" y = "3.947175" z = "8.599527" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "1.000000" qj = "0.000000" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "Laser" size = "Light Medium Heavy" x = "-12.777982" y = "-1.545418" z = "6.636857" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "1.000000" qj = "0.000000" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "Laser" size = "Light Medium Heavy" x = "12.774457" y = "-1.545662" z = "6.636857" ri = "0.000000" rj = "-0.000000" rk = "1.000000" qi = "-1.000000" qj = "-0.000000" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "Laser" size = "Light Medium Special Autotracking" x = "-6.086652" y = "-0.687403" z = "14.729491" ri = "0.000000" rj = "-0.000000" rk = "1.000000" qi = "-1.000000" qj = "-0.000000" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "Laser" size = "Light Medium Special Autotracking" x = "6.186234" y = "-0.687404" z = "14.729491" ri = "0.000000" rj = "-0.000000" rk = "1.000000" qi = "-1.000000" qj = "-0.000000" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "dumbfire" size = "Light-Missile Medium-Missile" x = "2.186234" y = "-0.000687404" z = "4.729491" ri = "0.000000" rj = "-0.000000" rk = "1.000000" qi = "-1.000000" qj = "-0.000000" qk = "0.000000" volume = "400"  >
+	</Mount>
+	<Mount weapon = "dumbfire" size = "Light-Missile Medium-Missile" x = "-3.186234" y = "-0.000687404" z = "4.729491" ri = "0.000000" rj = "-0.000000" rk = "1.000000" qi = "-1.000000" qj = "-0.000000" qk = "0.000000" volume = "400"  >
+	</Mount>
+	<Mount weapon = "" size = "Medium-Missile Heavy-Missile" x = "2.186234" y = "-0.000687404" z = "4.729491" ri = "0.000000" rj = "-0.000000" rk = "1.000000" qi = "-1.000000" qj = "-0.000000" qk = "0.000000" volume = "400"  >
+	</Mount>
+	<Mount weapon = "dumbfire" size = "Medium-Missile Heavy-Missile" x = "-3.186234" y = "-0.000687404" z = "4.729491" ri = "0.000000" rj = "-0.000000" rk = "1.000000" qi = "-1.000000" qj = "-0.000000" qk = "0.000000" volume = "400"  >
+	</Mount>
+	<Stats mass = "65.184" momentofinertia = "65.184" fuel = "20000000"  >
+	</Stats>
+	<Computer yaw = "115" pitch = "110" roll = "105" afterburner = "136" maxspeed = "60" >
+		<Radar itts = "true" color = "true" error = "0"  >
+		</Radar>
+	</Computer>
+	<Jump delay = "2" jumpenergy = "350"  >
+	</Jump>
+	<Thrust >
+		<Engine Afterburner = "11297" Forward = "3914" Retro = "4622" Left = "4597" Right = "4597" Top = "4597" Bottom = "4597"  >
+		</Engine>
+		<Maneuver yaw = "26636" pitch = "27217" roll = "24028"  >
+		</Maneuver>
+	</Thrust>
 </Unit>

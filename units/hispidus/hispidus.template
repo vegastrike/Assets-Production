@@ -1,50 +1,44 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000" right="0.000000" left="0.000000" back="0.000000" recharge="0.000000"/>
-		<Hull strength="1250.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" right = "0.000000" left = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
+		<Hull strength = "1250.000000"  >
+		</Hull>
 	</Defense>
-	<Upgrade file="shield_4_Level5"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_5"/>
-	<Upgrade file="micro_shielded_hull"/>
-
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special Autotracking" x="-5.277" y="2.683" z="21.963"/>
-
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special Autotracking" x="5.277" y="2.683" z="21.963"/>
-
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special Autotracking" x="3,027" y="-3,899" z="18,562"/>
-
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special Autotracking" x="-3,021" y="-3,924" z="18,562"/>
-
-
-<Stats mass="10.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
-
-<Computer yaw="140" pitch="140" roll="140" afterburner="204" maxspeed="75">
-</Computer>
-
-	<Jump delay="1" jumpenergy="400"/>
-
-
-<!-- Ship are facing Z axis so for light location : X= left/right, y=over/under, 
-								Z=front/back -->
-
-
-
-<Thrust>
-
-	<Engine Afterburner="1566.666718" Forward="405.333344" Retro="454.666676" 			Left="402.666672" Right="402.666672" Top="402.666672" Bottom="402.666672"/>
-
-	<Maneuver yaw="3943.200050" pitch="3887.800201" roll="3843.200050"/>
-
-</Thrust>
-
-
-	<Hold volume="100">
+	<Upgrade file = "shield_4_Level5"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_5"  >
+	</Upgrade>
+	<Upgrade file = "micro_shielded_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Mount weapon = "HvyIonBeam" size = "Light Medium Heavy Special Autotracking" x = "-5.277" y = "2.683" z = "21.963"  >
+	</Mount>
+	<Mount weapon = "HvyIonBeam" size = "Light Medium Heavy Special Autotracking" x = "5.277" y = "2.683" z = "21.963"  >
+	</Mount>
+	<Mount weapon = "HvyIonBeam" size = "Light Medium Heavy Special Autotracking" x = "3,027" y = "-3,899" z = "18,562"  >
+	</Mount>
+	<Mount weapon = "HvyIonBeam" size = "Light Medium Heavy Special Autotracking" x = "-3,021" y = "-3,924" z = "18,562"  >
+	</Mount>
+	<Stats mass = "21000" momentofinertia = "10500" fuel = "20000000"  >
+	</Stats>
+	<Computer yaw = "140" pitch = "140" roll = "140" afterburner = "204" maxspeed = "75"  >
+	</Computer>
+	<Jump delay = "1" jumpenergy = "400"  >
+	</Jump>
+	<Thrust >
+		<Engine Afterburner = "3290000" Forward = "851200" Retro = "954800" Left = "845600" Right = "845600" Top = "845600" Bottom = "845600"  >
+		</Engine>
+		<Maneuver yaw = "8280720" pitch = "8164380" roll = "8070720"  >
+		</Maneuver>
+	</Thrust>
+	<Hold volume = "100"  >
 	</Hold>
-
-
 </Unit>

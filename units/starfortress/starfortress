@@ -8,7 +8,7 @@
 		<Armor front="8000" right="8000" left="8000" back="8000"/>
 		<Hull strength="12000"/>
 	</Defense>
-	<Stats mass="70" momentofinertia="50" fuel="20000"></Stats>
+        <Stats mass="12866977500" momentofinertia="12866977500" fuel="20000"></Stats>
 	<Computer>
 	 <Radar itts="true" color="true" range="110000"  error="0"/>
 	</Computer>

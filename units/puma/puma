@@ -1,35 +1,56 @@
-<Unit scale="5">
-	<cockpit file="heavy-cockpit.cpt" x="0" y=".5" z="4"/>
-	<Meshfile file="puma.xmesh" />
-	<Light file="supernova.bmp" x="0.900000" y="0.000000" z="-8.50000" size="1.500000"/>
-	<Light file="supernova.bmp" x="-0.900000" y="0.000000" z="-8.50000" size="1.500000"/>
-	<Mount weapon="Particle" size="Light Medium Heavy" x="2.000000" y="1.000000" z="0.000000"/>
-	<Mount weapon="Particle" size="Light Medium Heavy" x="-2.000000" y="1.000000" z="0.000000"/>
-	<Mount weapon="MassDriver" size="Light Medium Heavy" x="3.000000" y="0.000000" z="0.000000"/>
-	<Mount weapon="MassDriver" size="Light Medium Heavy" x="-3.000000" y="0.000000" z="0.000000"/>
-	<Mount weapon="Dumbfire" size="Light-Missile Special" x="0.300000" y="-0.100000" z="0.000000" ammo="1" volume="91"/>
-	<Mount weapon="Dumbfire" size="Light-Missile Special" x="-0.300000" y="-0.100000" z="0.000000" ammo="1" volume="91"/>
-	<Mount weapon="ImageRecognition" size="Special-Missile Medium-Missile Heavy-Missile" x="-0.300000" y="-0.100000" z="0.000000" ammo="2" volume="800"/>
-	<Mount weapon="ImageRecognition" size="Special-Missile Medium-Missile Heavy-Missile" x="0.300000" y="-0.100000" z="0.000000" ammo="2" volume="800"/>
-	<Mount weapon="Torpedo" size="Heavy-Missile" x="-0.000000" y="0.000000" z="0.000000" ammo="1" volume="251"/>
-	<Thrust>
-		<Engine Afterburner="1085.000000" Forward="377.600006" Retro="330.400005" Left="188.800003" Right="188.800003" Top="188.800003" Bottom="188.800003"/>
-		<Maneuver yaw="5419.259537" pitch="5419.259537" roll="5419.259537"/>
+<Unit scale = "5" >
+	<cockpit file = "heavy-cockpit.cpt" x = "0" y = ".5" z = "4"  >
+	</cockpit>
+	<Meshfile file = "puma.xmesh"  >
+	</Meshfile>
+	<Light file = "supernova.bmp" x = "0.900000" y = "0.000000" z = "-8.50000" size = "1.500000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-0.900000" y = "0.000000" z = "-8.50000" size = "1.500000"  >
+	</Light>
+	<Mount weapon = "Particle" size = "Light Medium Heavy" x = "2.000000" y = "1.000000" z = "0.000000"  >
+	</Mount>
+	<Mount weapon = "Particle" size = "Light Medium Heavy" x = "-2.000000" y = "1.000000" z = "0.000000"  >
+	</Mount>
+	<Mount weapon = "MassDriver" size = "Light Medium Heavy" x = "3.000000" y = "0.000000" z = "0.000000"  >
+	</Mount>
+	<Mount weapon = "MassDriver" size = "Light Medium Heavy" x = "-3.000000" y = "0.000000" z = "0.000000"  >
+	</Mount>
+	<Mount weapon = "Dumbfire" size = "Light-Missile Special" x = "0.300000" y = "-0.100000" z = "0.000000" ammo = "1" volume = "91"  >
+	</Mount>
+	<Mount weapon = "Dumbfire" size = "Light-Missile Special" x = "-0.300000" y = "-0.100000" z = "0.000000" ammo = "1" volume = "91"  >
+	</Mount>
+	<Mount weapon = "ImageRecognition" size = "Special-Missile Medium-Missile Heavy-Missile" x = "-0.300000" y = "-0.100000" z = "0.000000" ammo = "2" volume = "800"  >
+	</Mount>
+	<Mount weapon = "ImageRecognition" size = "Special-Missile Medium-Missile Heavy-Missile" x = "0.300000" y = "-0.100000" z = "0.000000" ammo = "2" volume = "800"  >
+	</Mount>
+	<Mount weapon = "Torpedo" size = "Heavy-Missile" x = "-0.000000" y = "0.000000" z = "0.000000" ammo = "1" volume = "251"  >
+	</Mount>
+	<Thrust >
+		<Engine Afterburner = "268787" Forward = "93542" Retro = "81849" Left = "46771" Right = "46771" Top = "46771" Bottom = "46771"  >
+		</Engine>
+		<Maneuver yaw = "1342513" pitch = "1342513" roll = "1342513"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	<Defense HudImage="puma-hud.spr">
-		<Armor front="234" right="234" left="234" back="234"/>
-		<Shields front="150.000000" back="150.000000" recharge="20.000000"/>
-		<Hull strength="134.000000"/>
+	<Defense HudImage = "puma-hud.spr" >
+		<Armor front = "234" right = "234" left = "234" back = "234"  >
+		</Armor>
+		<Shields front = "150.000000" back = "150.000000" recharge = "20.000000"  >
+		</Shields>
+		<Hull strength = "134.000000"  >
+		</Hull>
 	</Defense>
-	<Stats mass="6.000000" momentofinertia="5.000000" fuel="40000000"></Stats>
-	<Computer yaw="134.219986" pitch="134.219986" roll="134.219986" afterburner="108.500000" maxspeed="47.200001"/>
-	<Energy>
-		<Reactor recharge="38" limit="350"/>
+	<Stats mass = "1486" momentofinertia = "1238" fuel = "40000000"  >
+	</Stats>
+	<Computer yaw = "134.219986" pitch = "134.219986" roll = "134.219986" afterburner = "108.500000" maxspeed = "47.200001"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "38" limit = "350"  >
+		</Reactor>
 	</Energy>
-	<Jump delay="1" jumpenergy="80"/>
-	<Hold volume="50">
+	<Jump delay = "1" jumpenergy = "80"  >
+	</Jump>
+	<Hold volume = "50"  >
 	</Hold>
-
 </Unit>

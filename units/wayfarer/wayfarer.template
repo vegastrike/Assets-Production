@@ -1,50 +1,54 @@
-<Unit>
-	<Upgrade file="godsansshields"/> <!-- this replaces the stats with the biggest values.... it's the "god" file included in vega strike   But not the shield values -->
-	<Defense>
-		<Shields front="0.000000"  back="0.000000" recharge="0.000000"/> <!-- this tells vega strike that it has 2 shields .. front and back... if you included left and right values then you'd have 4 shields -->
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_2_Level2"/> <!-- this tells vegastrike that the maximum shield is a 2 facing, level 2 shield.... you might want a shield_4_Level3 for a centurion...capitals count -->
-	<Upgrade file="isometal"/> <!-- maximum armor is isometal -->
-	<Upgrade file="engine_level_1"/> <!-- maximum engine is level 1 -->
-	<Upgrade file="polymer_hull"/> <!-- max hull is polymer... might want to allow double plated hulls for this.... -->
-	<Upgrade file="mult_shield_regenerator"/> <!-- now in addition to the shields allow a shield regenerator -->
-	<Upgrade file="mult_gun_cooler"/><!-- and a gun cooler -->
-<!-- below are the standard weapons.... you need to specify if the template should allow units to have special weapons like tractor beams...and ammo limits...and ammo volume limits -->
-	<Mount weapon="Ion" size="Light Medium Heavy" x="9.8108" y="1.757" z="11.8091" />
-	<Mount weapon="Ion" size="Light Medium Heavy" x="-9.8108" y="1.757" z="11.8091" />
-
-       <Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-29.815" y="-6.919" z="30.409" ammo="6" volume="1201"/>
-       <Mount weapon="ImageRecognition" size="light-missile medium-missile" x="29.815" y="-6.919" z="30.409" ammo="6" volume="1201"/>
-        <Mount weapon="Tractor" size="Special" x="29.815" y="-6.919" z="30.409"/>
-        <Mount weapon="Tractor" size="Special" x="-29.815" y="-6.919" z="30.409"/>
-	
-
-	<!-- these are the maximum engine accel stats that this ship can have -->
-	<Thrust>
-		<Engine Afterburner="1400.666718" Forward="300.333344" Retro="300.666676" Left="300.666672" Right="302.666672" Top="302.666672" Bottom="302.666672"/>
-		<Maneuver yaw="2843.200050" pitch="2587.800201" roll="3843.200050"/>
+	<Upgrade file = "shield_2_Level2"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_1"  >
+	</Upgrade>
+	<Upgrade file = "polymer_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Mount weapon = "Ion" size = "Light Medium Heavy" x = "9.8108" y = "1.757" z = "11.8091"  >
+	</Mount>
+	<Mount weapon = "Ion" size = "Light Medium Heavy" x = "-9.8108" y = "1.757" z = "11.8091"  >
+	</Mount>
+	<Mount weapon = "ImageRecognition" size = "light-missile medium-missile" x = "-29.815" y = "-6.919" z = "30.409" ammo = "6" volume = "1201"  >
+	</Mount>
+	<Mount weapon = "ImageRecognition" size = "light-missile medium-missile" x = "29.815" y = "-6.919" z = "30.409" ammo = "6" volume = "1201"  >
+	</Mount>
+	<Mount weapon = "Tractor" size = "Special" x = "29.815" y = "-6.919" z = "30.409"  >
+	</Mount>
+	<Mount weapon = "Tractor" size = "Special" x = "-29.815" y = "-6.919" z = "30.409"  >
+	</Mount>
+	<Thrust >
+		<Engine Afterburner = "153644" Forward = "32944" Retro = "32981" Left = "32981" Right = "33200" Top = "33200" Bottom = "33200"  >
+		</Engine>
+		<Maneuver yaw = "311882" pitch = "283866" roll = "421576"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-
-<!-- these are the maximum fuel stats -->
-	<Stats mass="10.000000" momentofinertia="10.000000" fuel="40000000"></Stats>
-<!-- and here we go limiting the yaw and speed max -->
-	<Computer yaw="70.400002" pitch="60.600006" roll="92.400002" afterburner="100" maxspeed="36"/>
-<!-- best jump drive it can have -->
-	<Jump delay="2" jumpenergy="150"/>       
-
-	<description>
-
+	<Stats mass = "1096" momentofinertia = "1096" fuel = "40000000"  >
+	</Stats>
+	<Computer yaw = "70.400002" pitch = "60.600006" roll = "92.400002" afterburner = "100" maxspeed = "36"  >
+	</Computer>
+	<Jump delay = "2" jumpenergy = "150"  >
+	</Jump>
+	<description  >
 	</description>
-<!-- maximum cargo can hold including upgrades -->
-	<Hold volume="182">
-	    
+	<Hold volume = "182"  >
 	</Hold>
-
-<!-- new elements added -->
-
-        <Dock x="0" y="4.6" z="6" size="10"/>
-        <Dock x="0" y="-4.7" z="6" size="10"/>
-
+	<Dock x = "0" y = "4.6" z = "6" size = "10"  >
+	</Dock>
+	<Dock x = "0" y = "-4.7" z = "6" size = "10"  >
+	</Dock>
 </Unit>

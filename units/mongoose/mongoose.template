@@ -1,35 +1,56 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000" back="0.000000" recharge="0.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_2_Level1"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_2"/>
-	<Upgrade file="reinforced_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-	<Mount weapon="Photon" size="light medium heavy Autotracking" x="0.800000" y="-0.600000" z="8.000000"/>
-	<Mount weapon="Photon" size="light medium heavy Autotracking" x="-0.800000" y="-0.600000" z="8.000000"/>
-	<Mount weapon="Swarm" size="Special Special-Missile" x="2.000000" y="0.800000" z="-4.000000" ammo="75" volume="1000" />
-	<Mount weapon="Swarm" size="Special Special-Missile" x="-2.000000" y="0.800000" z="-4.000000" ammo="75" volume="1000"/>
-	<Mount weapon="Swarm" size="Special Special-Missile" x="1.000000" y="-1.400000" z="-1.000000" ammo="75" volume="1000"/>
-	<Mount weapon="Swarm" size="Special Special-Missile" x="-1.000000" y="-1.400000" z="-1.000000" ammo="75" volume="1000"/>
-	<Mount weapon="FriendOrFoe" size="Medium-missile Light-Missile" x="2.5.000000" y="-1.400000" z="-2.000000" ammo="1" volume="201"/>
-	<Mount weapon="FriendOrFoe" size="Medium-Missile Light-Missile" x="-2.5.000000" y="-1.400000" z="-2.000000" ammo="1" volume="201"/>
-	<Thrust>
-		<Engine Afterburner="1800.000000" Forward="528.000000" Retro="487.000000" Left="464.000000" Right="464.000000" Top="464.000000" Bottom="464.000000"/>
-		<Maneuver yaw="7031.000000" pitch="7031.000000" roll="7031.000000"/>
+	<Upgrade file = "shield_2_Level1"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_2"  >
+	</Upgrade>
+	<Upgrade file = "reinforced_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Mount weapon = "Photon" size = "light medium heavy Autotracking" x = "0.800000" y = "-0.600000" z = "8.000000"  >
+	</Mount>
+	<Mount weapon = "Photon" size = "light medium heavy Autotracking" x = "-0.800000" y = "-0.600000" z = "8.000000"  >
+	</Mount>
+	<Mount weapon = "Swarm" size = "Special Special-Missile" x = "2.000000" y = "0.800000" z = "-4.000000" ammo = "75" volume = "1000"  >
+	</Mount>
+	<Mount weapon = "Swarm" size = "Special Special-Missile" x = "-2.000000" y = "0.800000" z = "-4.000000" ammo = "75" volume = "1000"  >
+	</Mount>
+	<Mount weapon = "Swarm" size = "Special Special-Missile" x = "1.000000" y = "-1.400000" z = "-1.000000" ammo = "75" volume = "1000"  >
+	</Mount>
+	<Mount weapon = "Swarm" size = "Special Special-Missile" x = "-1.000000" y = "-1.400000" z = "-1.000000" ammo = "75" volume = "1000"  >
+	</Mount>
+	<Mount weapon = "FriendOrFoe" size = "Medium-missile Light-Missile" x = "2.5.000000" y = "-1.400000" z = "-2.000000" ammo = "1" volume = "201"  >
+	</Mount>
+	<Mount weapon = "FriendOrFoe" size = "Medium-Missile Light-Missile" x = "-2.5.000000" y = "-1.400000" z = "-2.000000" ammo = "1" volume = "201"  >
+	</Mount>
+	<Thrust >
+		<Engine Afterburner = "7777" Forward = "2281" Retro = "2104" Left = "2004" Right = "2004" Top = "2004" Bottom = "2004"  >
+		</Engine>
+		<Maneuver yaw = "30380" pitch = "30380" roll = "30380"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	<Stats mass="5.000000" momentofinertia="5.000000" fuel="80000000"></Stats>
-	<Computer yaw="217.000000" pitch="217.000000" roll="217.000000" afterburner="165.000000" maxspeed="51.000000"/>
-	<Energy afterburnenergy="35">
-		<Reactor recharge="140" limit="1075"/>
+	<Stats mass = "21.605" momentofinertia = "21.605" fuel = "80000000"  >
+	</Stats>
+	<Computer yaw = "217.000000" pitch = "217.000000" roll = "217.000000" afterburner = "165.000000" maxspeed = "51.000000"  >
+	</Computer>
+	<Energy afterburnenergy = "35" >
+		<Reactor recharge = "140" limit = "1075"  >
+		</Reactor>
 	</Energy>
-	<Jump delay="1" jumpenergy="80"/>
-	<Hold volume="60">
+	<Jump delay = "1" jumpenergy = "80"  >
+	</Jump>
+	<Hold volume = "60"  >
 	</Hold>
 </Unit>

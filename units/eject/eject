@@ -1,29 +1,32 @@
-<Unit>
-
-<Meshfile file="eject.xmesh"/>
-
-       
-
-<!-- new elements added -->
-		<Thrust>
-		<Engine Afterburner=".5" Forward=".2" Retro=".2" Left=".2" Right=".2" Top=".2" Bottom=".2"/>
-		<Maneuver yaw="15" pitch="15" roll="15"/>
+<Unit >
+	<Meshfile file = "eject.xmesh"  >
+	</Meshfile>
+	<Thrust >
+		<Engine Afterburner = "0.6375" Forward = "0.255" Retro = "0.255" Left = "0.255" Right = "0.255" Top = "0.255" Bottom = "0.255"  >
+		</Engine>
+		<Maneuver yaw = "19.125" pitch = "19.125" roll = "19.125"  >
+		</Maneuver>
 	</Thrust>
-	<Sound></Sound>
-	<Mount weapon="HandLaser" size="light special" x="0.584" z=".4" y=".462"/>
-	<Defense HudImage="eject-hud.spr">
-		<Armor front="20" right="20" left="20" back="20"/>
-		<Shields front="0" back="0" recharge="0"/>
-		<Hull strength="30"/>
+	<Sound  >
+	</Sound>
+	<Mount weapon = "HandLaser" size = "light special" x = "0.584" z = ".4" y = ".462"  >
+	</Mount>
+	<Defense HudImage = "eject-hud.spr" >
+		<Armor front = "20" right = "20" left = "20" back = "20"  >
+		</Armor>
+		<Shields front = "0" back = "0" recharge = "0"  >
+		</Shields>
+		<Hull strength = "30"  >
+		</Hull>
 	</Defense>
-	<Stats mass=".1" momentofinertia=".1" fuel="10000"></Stats>
-   
-	<Computer yaw="30" pitch="30" roll="50" afterburner="10" maxspeed="5">
+	<Stats mass = "0.1275" momentofinertia = "0.1275" fuel = "10000"  >
+	</Stats>
+	<Computer yaw = "30" pitch = "30" roll = "50" afterburner = "10" maxspeed = "5"  >
 	</Computer>
-	<Upgrade file="SkyScope_Alpha"/>
-	<Energy>
-		<Reactor recharge=".25" limit="10"/>
+	<Upgrade file = "SkyScope_Alpha"  >
+	</Upgrade>
+	<Energy >
+		<Reactor recharge = ".25" limit = "10"  >
+		</Reactor>
 	</Energy>
-
-
 </Unit>

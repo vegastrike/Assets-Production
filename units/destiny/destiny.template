@@ -1,36 +1,50 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  back="0.000000" recharge="0.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_2_Level2"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_2"/>
-	<Upgrade file="polymer_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-	<Thrust>
-		<Engine Afterburner="1400.000000" Forward="500.333344" Retro="454.666676" Left="302.666672" Right="302.666672" Top="302.666672" Bottom="302.666672"/>
-		<Maneuver yaw="3487.800201" pitch="3387.800201" roll="3387.800201"/>
+	<Upgrade file = "shield_2_Level2"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_2"  >
+	</Upgrade>
+	<Upgrade file = "polymer_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Thrust >
+		<Engine Afterburner = "429260" Forward = "153409" Retro = "139407" Left = "92802" Right = "92802" Top = "92802" Bottom = "92802"  >
+		</Engine>
+		<Maneuver yaw = "1069411" pitch = "1038750" roll = "1038750"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	<Stats mass="3.500000" momentofinertia="3.500000" fuel="40000000"></Stats>
-	<Computer yaw="106.600006" pitch="106.600006" roll="106.600006" afterburner="140.000000" maxspeed="44.666668"/>
-       	<Jump delay="1" jumpenergy="200"/>       
-
-       
-
-<!-- new elements added -->
-<Mount weapon="Photon" size="light medium Autotracking" x="-0.557420" y="-0.127850" z="7.305732"/>
-<Mount weapon="Photon" size="light medium Autotracking" x="0.542021" y="-0.126382" z="7.221802" />
-<Mount weapon="Photon" size="special medium Autotracking" x="6.470487" y="-0.182350" z="-1.094219"/>
-<Mount weapon="Photon" size="special medium Autotracking" x="-6.512798" y="-0.183760" z="-1.121801"/>
-
-<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="4.470487" y="-0.182350" z="-1.094219" ammo="2" volume="601"/>
-<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-4.512798" y="-0.183760" z="-1.121801" ammo="2" volume="601"/>
-<Mount weapon="HeatSeeker" size="light-missile" x="3.470487" y="-0.182350" z="-1.094219" ammo="1" volume="401"/>
-<Mount weapon="HeatSeeker" size="light-missile" x="-3.512798" y="-0.183760" z="-1.121801" ammo="1" volume="401"/>
-
+	<Stats mass = "1073" momentofinertia = "1073" fuel = "40000000"  >
+	</Stats>
+	<Computer yaw = "106.600006" pitch = "106.600006" roll = "106.600006" afterburner = "140.000000" maxspeed = "44.666668"  >
+	</Computer>
+	<Jump delay = "1" jumpenergy = "200"  >
+	</Jump>
+	<Mount weapon = "Photon" size = "light medium Autotracking" x = "-0.557420" y = "-0.127850" z = "7.305732"  >
+	</Mount>
+	<Mount weapon = "Photon" size = "light medium Autotracking" x = "0.542021" y = "-0.126382" z = "7.221802"  >
+	</Mount>
+	<Mount weapon = "Photon" size = "special medium Autotracking" x = "6.470487" y = "-0.182350" z = "-1.094219"  >
+	</Mount>
+	<Mount weapon = "Photon" size = "special medium Autotracking" x = "-6.512798" y = "-0.183760" z = "-1.121801"  >
+	</Mount>
+	<Mount weapon = "ImageRecognition" size = "light-missile medium-missile" x = "4.470487" y = "-0.182350" z = "-1.094219" ammo = "2" volume = "601"  >
+	</Mount>
+	<Mount weapon = "ImageRecognition" size = "light-missile medium-missile" x = "-4.512798" y = "-0.183760" z = "-1.121801" ammo = "2" volume = "601"  >
+	</Mount>
+	<Mount weapon = "HeatSeeker" size = "light-missile" x = "3.470487" y = "-0.182350" z = "-1.094219" ammo = "1" volume = "401"  >
+	</Mount>
+	<Mount weapon = "HeatSeeker" size = "light-missile" x = "-3.512798" y = "-0.183760" z = "-1.121801" ammo = "1" volume = "401"  >
+	</Mount>
 </Unit>

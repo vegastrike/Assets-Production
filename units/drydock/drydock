@@ -7,4 +7,7 @@
 		   back="4000"
 		   recharge="20"/>
 </Defense>
+<Stats mass = "243506" momentofinertia = "243506" fuel = "200000000"  >
+</Stats>
+
 </Unit>

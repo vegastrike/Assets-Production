@@ -1,37 +1,52 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  left="0" right="0" back="0.000000" recharge="0.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" left = "0" right = "0" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_4_Level2"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_4"/>
-	<Upgrade file="plated_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-	<Thrust>
-		<Engine Afterburner="1633.333282" Forward="733.333313" Retro="666.666649" Left="566.666656" Right="566.666656" Top="566.666656" Bottom="566.666656"/>
-		<Maneuver yaw="2587.800201" pitch="7831.000000" roll="7831.000000"/>
+	<Upgrade file = "shield_4_Level2"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_4"  >
+	</Upgrade>
+	<Upgrade file = "plated_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Thrust >
+		<Engine Afterburner = "297265" Forward = "133465" Retro = "121332" Left = "103132" Right = "103132" Top = "103132" Bottom = "103132"  >
+		</Engine>
+		<Maneuver yaw = "470977" pitch = "1425234" roll = "1425234"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-
-	<Stats mass="2.250000" momentofinertia="2.250000" fuel="200000000"></Stats>
-	<Computer yaw="146.600006" pitch="227.000000" roll="227.000000" afterburner="139.333328" maxspeed="72.666664">
-		<Radar itts="true" color="true" error="0"/> </Computer>
-
-
-	<Energy afterburnenergy="40">
-		<Reactor recharge="180" limit="430"/>
+	<Stats mass = "409" momentofinertia = "409" fuel = "200000000"  >
+	</Stats>
+	<Computer yaw = "146.600006" pitch = "227.000000" roll = "227.000000" afterburner = "139.333328" maxspeed = "72.666664" >
+		<Radar itts = "true" color = "true" error = "0"  >
+		</Radar>
+	</Computer>
+	<Energy afterburnenergy = "40" >
+		<Reactor recharge = "180" limit = "430"  >
+		</Reactor>
 	</Energy>
-       	<Jump delay="1" jumpenergy="300"/>              
-
-<!-- new elements added --><Mount weapon="Tachyon" size="Light Medium Heavy" x="11.876769" y="-5.930247" z="5.804338" />
-<Mount weapon="Ion" size="Light Medium Heavy" x="-1.622411" y="-0.535396" z="10.406069" />
-<Mount weapon="DisruptorBeam" size="Medium" x="-6.561853" y="0.000000" z="1.594064" />
-<Mount weapon="meson" size="Light Medium" x="0.000000" y="4.545461" z="-4.466930" />
-<Mount weapon="Swarm" size="Special special-missile" x="-0.700000" y="0.000000" z="-0.000000" ammo="20"/>	
-	<Hold volume="55">
+	<Jump delay = "1" jumpenergy = "300"  >
+	</Jump>
+	<Mount weapon = "Tachyon" size = "Light Medium Heavy" x = "11.876769" y = "-5.930247" z = "5.804338"  >
+	</Mount>
+	<Mount weapon = "Ion" size = "Light Medium Heavy" x = "-1.622411" y = "-0.535396" z = "10.406069"  >
+	</Mount>
+	<Mount weapon = "DisruptorBeam" size = "Medium" x = "-6.561853" y = "0.000000" z = "1.594064"  >
+	</Mount>
+	<Mount weapon = "meson" size = "Light Medium" x = "0.000000" y = "4.545461" z = "-4.466930"  >
+	</Mount>
+	<Mount weapon = "Swarm" size = "Special special-missile" x = "-0.700000" y = "0.000000" z = "-0.000000" ammo = "20"  >
+	</Mount>
+	<Hold volume = "55"  >
 	</Hold>
 </Unit>

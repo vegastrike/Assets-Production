@@ -1,44 +1,46 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  back="0.000000" recharge="0.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_2_Level2"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_3"/>
-	<Upgrade file="polymer_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-        <Mount weapon="Plasma" size="Light Medium Heavy" x="2.15" y="-1.1" z="2.5"/>
-        <Mount weapon="Plasma" size="Light Medium Heavy" x="-2.15" y="-1.1" z="2.5"/>
-	
-	<Mount weapon="ImageRecognition" size="medium-missile" x="6.5" y="-2" z="1" ammo="6"/>
-	<Mount weapon="ImageRecognition" size="medium-missile" x="6.5" y="-2" z="1" ammo="6"/>
-	
-	
-	<Thrust>
-		<Engine Afterburner="2000.666718" Forward="400.333344" Retro="400.666676" Left="400.666672" Right="402.666672" Top="402.666672" Bottom="402.666672"/>
-		<Maneuver yaw="3000.200050" pitch="3000.800201" roll="5000.200050"/>
+	<Upgrade file = "shield_2_Level2"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_3"  >
+	</Upgrade>
+	<Upgrade file = "polymer_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Mount weapon = "Plasma" size = "Light Medium Heavy" x = "2.15" y = "-1.1" z = "2.5"  >
+	</Mount>
+	<Mount weapon = "Plasma" size = "Light Medium Heavy" x = "-2.15" y = "-1.1" z = "2.5"  >
+	</Mount>
+	<Mount weapon = "ImageRecognition" size = "medium-missile" x = "6.5" y = "-2" z = "1" ammo = "6"  >
+	</Mount>
+	<Mount weapon = "ImageRecognition" size = "medium-missile" x = "6.5" y = "-2" z = "1" ammo = "6"  >
+	</Mount>
+	<Thrust >
+		<Engine Afterburner = "1278526" Forward = "255833" Retro = "256046" Left = "256046" Right = "257324" Top = "257324" Bottom = "257324"  >
+		</Engine>
+		<Maneuver yaw = "1917277" pitch = "1917661" roll = "3195377"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-
-
-	<Stats mass="2.000000" momentofinertia="2.000000" fuel="50000000"></Stats>
-	<Computer yaw="140.400002" pitch="160.600006" roll="192.400002" afterburner="200" maxspeed="69.5"/>
-
-	<Jump delay="1" jumpenergy="10"/>       
-
-	<description>
-
+	<Stats mass = "1278" momentofinertia = "1278" fuel = "50000000"  >
+	</Stats>
+	<Computer yaw = "140.400002" pitch = "160.600006" roll = "192.400002" afterburner = "200" maxspeed = "69.5"  >
+	</Computer>
+	<Jump delay = "1" jumpenergy = "10"  >
+	</Jump>
+	<description  >
 	</description>
-	<Hold volume="85">
-	    
+	<Hold volume = "85"  >
 	</Hold>
-
-<!-- new elements added -->
-
-
-
 </Unit>

@@ -1,266 +1,366 @@
-<Unit scale="225">
-<Meshfile file="yavok.xmesh"/>
-	<Dock x="0" y="0" z="-.3" size=".3"/>
-	<Dock x="0" y="0" z="0" size=".3"/>
-	<Dock x="0" y="0" z=".3" size=".3"/>
-	<Dock x="0" y="0" z=".6" size=".3"/>
-	<Dock x="0" y="0" z=".9" size=".3"/>
-	<Dock x="0" y="0" z="1.2" size=".3"/>
-	<Dock x="0" y="0" z="1.5" size=".3"/>
-	<Dock x="0" y="0" z="1.8" size=".3"/>
-	<Dock x="0" y="0" z="2.4" size=".3"/>
-	<Dock x="0" y="0" z="2.7" size=".3"/>
-	<Dock x="0" y="0" z="3.0" size=".3"/>
-	<Dock x="0" y="0" z="3.3" size=".3"/>
-	<Dock x="0" y="0" z="3.6" size=".3"/>
-	<Dock x="0" y="0" z="3.9" size=".3"/>
-	<Dock x="0" y="0" z="4.2" size=".3"/>
-	<Dock x="0" y="0" z="4.5" size=".3"/>
-
-	<Thrust>
-		<Engine Afterburner="66.666660" Forward="36.666664" Retro="23.333331" Left="13.333332" Right="13.333332" Top="13.333332" Bottom="13.333332"/>
-		<Maneuver yaw="21.800013" pitch="21.800013" roll="21.800013"/>
+<Unit scale = "225" >
+	<Meshfile file = "yavok.xmesh"  >
+	</Meshfile>
+	<Dock x = "0" y = "0" z = "-.3" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "0" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = ".3" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = ".6" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = ".9" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "1.2" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "1.5" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "1.8" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "2.4" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "2.7" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "3.0" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "3.3" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "3.6" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "3.9" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "4.2" size = ".3"  >
+	</Dock>
+	<Dock x = "0" y = "0" z = "4.5" size = ".3"  >
+	</Dock>
+	<Thrust >
+		<Engine Afterburner = "1831558" Forward = "1007357" Retro = "641045" Left = "366311" Right = "366311" Top = "366311" Bottom = "366311"  >
+		</Engine>
+		<Maneuver yaw = "598920" pitch = "598920" roll = "598920"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	<Defense HudImage="yavok-hud.spr">
-		<Armor front="5000" right="4000" left="4000" back="5000"/>
-		<Shields front="18000.000000" left="21000.000000" right = "21000.0000" back="19000.000000" recharge="130.000000"/>
-		<Hull strength="5000.000000"/>
+	<Defense HudImage = "yavok-hud.spr" >
+		<Armor front = "5000" right = "4000" left = "4000" back = "5000"  >
+		</Armor>
+		<Shields front = "18000.000000" left = "21000.000000" right = "21000.0000" back = "19000.000000" recharge = "130.000000"  >
+		</Shields>
+		<Hull strength = "5000.000000"  >
+		</Hull>
 	</Defense>
-	<Stats mass="6000.000000" momentofinertia="5000.000000" fuel="20000000"></Stats>
-	<Computer yaw="17.600000" pitch="17.600000" roll="17.600000" afterburner="97.6" maxspeed="86.75309">
-		<Radar itts="true" color="true" range="120000"  error="0"/>
+	<Stats mass = "164840273" momentofinertia = "137366894" fuel = "20000000"  >
+	</Stats>
+	<Computer yaw = "17.600000" pitch = "17.600000" roll = "17.600000" afterburner = "97.6" maxspeed = "86.75309" >
+		<Radar itts = "true" color = "true" range = "120000" error = "0"  >
+		</Radar>
 	</Computer>
-	<Energy>
-		<Reactor recharge="1200" limit="60000"/>
+	<Energy >
+		<Reactor recharge = "1200" limit = "60000"  >
+		</Reactor>
 	</Energy>
-	<Jump delay="1" jumpenergy="29000"/>              
-
-       
-
-
-<!-- new elements added -->
-<Light file="supernova.bmp" x="0.003974" y="-0.088041" z="-10.100000" size="0.270000"/>
-<Light file="supernova.bmp" x="0.129814" y="0.211841" z="-10.100000" size="0.250000"/>
-<Light file="supernova.bmp" x="-0.147755" y="0.207606" z="-10.100000" size="0.250000"/>
-
-<Subunit file="turret_capship_dreadnaughtblend" x="-1.125000" y="0.300000" z="-2.475000" ri="0.986871" rj="0.000000" rk="0.161513" qi="0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="turret_capship_dreadnaughtblend" x="1.125000" y="0.300000" z="-2.475000" ri="0.919145" rj="0.000000" rk="-0.393919" qi="0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="turret_capship_dreadnaughtblend" x="-1.125000" y="-0.300000" z="-2.475000" ri="0.780869" rj="0.000000" rk="-0.624695" qi="0.000000" qj="-1.000000" qk="0.000000"/>
-<Subunit file="turret_capship_dreadnaughtblend" x="1.125000" y="-0.300000" z="-2.475000" ri="0.196116" rj="0.000000" rk="0.980581" qi="0.000000" qj="-1.000000" qk="0.000000"/>
-<Subunit file="turret_capship_dreadnaughtblend" x="1.209322" y="0.674524" z="-6.754664" ri="0.757222" rj="0.210770" rk="-0.618216" qi="-0.345704" qj="0.932388" qk="-0.105555"/>
-<Subunit file="turret_capship_dreadnaughtblend" x="-1.436994" y="0.741910" z="-6.905079" ri="-0.292024" rj="0.000000" rk="-0.956411" qi="0.345704" qj="0.932388" qk="-0.105555"/>
-<Subunit file="turret_capship_dreadnaughtblend" x="-2.977863" y="-0.829740" z="-8.494670" ri="-0.720015" rj="0.000000" rk="-0.693959" qi="0.113708" qj="-0.986485" qk="-0.117977"/>
-<Subunit file="turret_capship_dreadnaughtblend" x="2.944307" y="-0.819658" z="-8.546635" ri="-0.024792" rj="0.121527" rk="-0.992278" qi="-0.113708" qj="-0.986485" qk="-0.117977"/>
-<Subunit file="turret_capship_dreadnaughtblend" x="-3.226635" y="0.837388" z="-8.670492" ri="0.024792" rj="-0.121527" rk="-0.992278" qi="0.113708" qj="0.986485" qk="-0.117977"/>
-<Subunit file="turret_capship_dreadnaughtblend" x="3.146072" y="0.837936" z="-8.588262" ri="-0.993422" rj="-0.114507" rk="0.000000" qi="-0.113708" qj="0.986485" qk="-0.117977"/>
-
-<Subunit file="turretLR_PminusBeam" x="-0.016667" y="0.432518" z="5.650000" ri="1.000000" rj="0.000000" rk="0.000000" qi="-0.000000" qj="0.984746" qk="0.173995"/>
-<Subunit file="turretLR_PminusBeam" x="-0.432518" y="-0.016667" z="5.650000" ri="0.000000" rj="1.000000" rk="0.000000" qi="-0.984746" qj="0.000000" qk="0.173995"/>
-<Subunit file="turretLR_PminusBeam" x="-0.016667" y="-0.432518" z="5.650000" ri="0.019329" rj="0.173963" rk="0.984563" qi="0.000000" qj="-0.984746" qk="0.173995"/>
-<Subunit file="turretLR_PminusBeam" x="0.432518" y="-0.016667" z="5.650000" ri="-0.173963" rj="0.019329" rk="0.984563" qi="0.984746" qj="0.000000" qk="0.173995"/>
-
-<Mount weapon="GrandGauss" size="special" x="1.177931" y="-0.016667" z="7.600000" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.110432" qj="-0.993884" qk="0.000000"/>
-<Mount weapon="GrandGauss" size="special" x="-0.016667" y="1.177931" z="7.600000" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.000000" qj="1.000000" qk="0.000000"/>
-<Mount weapon="GrandGauss" size="special" x="-1.177931" y="-0.016667" z="7.600000" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-1.000000" qj="-0.000000" qk="0.000000"/>
-<Mount weapon="GrandGauss" size="special" x="-0.016667" y="-1.177931" z="7.600000" ri="0.000000" rj="-0.000000" rk="1.000000" qi="-0.993884" qj="0.110432" qk="0.000000"/>
-
-	<Hold volume="100000000000">
-		<Category file="Natural_Products/Food">
-			<import price=".7" pricestddev=".2" quantity="0" quantitystddev="0"/>
+	<Jump delay = "1" jumpenergy = "29000"  >
+	</Jump>
+	<Light file = "supernova.bmp" x = "0.003974" y = "-0.088041" z = "-10.100000" size = "0.270000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "0.129814" y = "0.211841" z = "-10.100000" size = "0.250000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-0.147755" y = "0.207606" z = "-10.100000" size = "0.250000"  >
+	</Light>
+	<Subunit file = "turret_capship_dreadnaughtblend" x = "-1.125000" y = "0.300000" z = "-2.475000" ri = "0.986871" rj = "0.000000" rk = "0.161513" qi = "0.000000" qj = "1.000000" qk = "0.000000"  >
+	</Subunit>
+	<Subunit file = "turret_capship_dreadnaughtblend" x = "1.125000" y = "0.300000" z = "-2.475000" ri = "0.919145" rj = "0.000000" rk = "-0.393919" qi = "0.000000" qj = "1.000000" qk = "0.000000"  >
+	</Subunit>
+	<Subunit file = "turret_capship_dreadnaughtblend" x = "-1.125000" y = "-0.300000" z = "-2.475000" ri = "0.780869" rj = "0.000000" rk = "-0.624695" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
+	</Subunit>
+	<Subunit file = "turret_capship_dreadnaughtblend" x = "1.125000" y = "-0.300000" z = "-2.475000" ri = "0.196116" rj = "0.000000" rk = "0.980581" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
+	</Subunit>
+	<Subunit file = "turret_capship_dreadnaughtblend" x = "1.209322" y = "0.674524" z = "-6.754664" ri = "0.757222" rj = "0.210770" rk = "-0.618216" qi = "-0.345704" qj = "0.932388" qk = "-0.105555"  >
+	</Subunit>
+	<Subunit file = "turret_capship_dreadnaughtblend" x = "-1.436994" y = "0.741910" z = "-6.905079" ri = "-0.292024" rj = "0.000000" rk = "-0.956411" qi = "0.345704" qj = "0.932388" qk = "-0.105555"  >
+	</Subunit>
+	<Subunit file = "turret_capship_dreadnaughtblend" x = "-2.977863" y = "-0.829740" z = "-8.494670" ri = "-0.720015" rj = "0.000000" rk = "-0.693959" qi = "0.113708" qj = "-0.986485" qk = "-0.117977"  >
+	</Subunit>
+	<Subunit file = "turret_capship_dreadnaughtblend" x = "2.944307" y = "-0.819658" z = "-8.546635" ri = "-0.024792" rj = "0.121527" rk = "-0.992278" qi = "-0.113708" qj = "-0.986485" qk = "-0.117977"  >
+	</Subunit>
+	<Subunit file = "turret_capship_dreadnaughtblend" x = "-3.226635" y = "0.837388" z = "-8.670492" ri = "0.024792" rj = "-0.121527" rk = "-0.992278" qi = "0.113708" qj = "0.986485" qk = "-0.117977"  >
+	</Subunit>
+	<Subunit file = "turret_capship_dreadnaughtblend" x = "3.146072" y = "0.837936" z = "-8.588262" ri = "-0.993422" rj = "-0.114507" rk = "0.000000" qi = "-0.113708" qj = "0.986485" qk = "-0.117977"  >
+	</Subunit>
+	<Subunit file = "turretLR_PminusBeam" x = "-0.016667" y = "0.432518" z = "5.650000" ri = "1.000000" rj = "0.000000" rk = "0.000000" qi = "-0.000000" qj = "0.984746" qk = "0.173995"  >
+	</Subunit>
+	<Subunit file = "turretLR_PminusBeam" x = "-0.432518" y = "-0.016667" z = "5.650000" ri = "0.000000" rj = "1.000000" rk = "0.000000" qi = "-0.984746" qj = "0.000000" qk = "0.173995"  >
+	</Subunit>
+	<Subunit file = "turretLR_PminusBeam" x = "-0.016667" y = "-0.432518" z = "5.650000" ri = "0.019329" rj = "0.173963" rk = "0.984563" qi = "0.000000" qj = "-0.984746" qk = "0.173995"  >
+	</Subunit>
+	<Subunit file = "turretLR_PminusBeam" x = "0.432518" y = "-0.016667" z = "5.650000" ri = "-0.173963" rj = "0.019329" rk = "0.984563" qi = "0.984746" qj = "0.000000" qk = "0.173995"  >
+	</Subunit>
+	<Mount weapon = "GrandGauss" size = "special" x = "1.177931" y = "-0.016667" z = "7.600000" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "-0.110432" qj = "-0.993884" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "GrandGauss" size = "special" x = "-0.016667" y = "1.177931" z = "7.600000" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "-0.000000" qj = "1.000000" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "GrandGauss" size = "special" x = "-1.177931" y = "-0.016667" z = "7.600000" ri = "0.000000" rj = "-0.000000" rk = "1.000000" qi = "-1.000000" qj = "-0.000000" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "GrandGauss" size = "special" x = "-0.016667" y = "-1.177931" z = "7.600000" ri = "0.000000" rj = "-0.000000" rk = "1.000000" qi = "-0.993884" qj = "0.110432" qk = "0.000000"  >
+	</Mount>
+	<Hold volume = "100000000000" >
+		<Category file = "Natural_Products/Food" >
+			<import price = ".7" pricestddev = ".2" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Natural_Products/Aera_Food">
-			<import price="1.9" pricestddev=".2" quantity="15" quantitystddev="20"/>
+		<Category file = "Natural_Products/Aera_Food" >
+			<import price = "1.9" pricestddev = ".2" quantity = "15" quantitystddev = "20"  >
+			</import>
 		</Category>
-		<Category file="Natural_Products/Liquor">
-			<import price="1.1" pricestddev=".1" quantity="10" quantitystddev="1"/>
+		<Category file = "Natural_Products/Liquor" >
+			<import price = "1.1" pricestddev = ".1" quantity = "10" quantitystddev = "1"  >
+			</import>
 		</Category>
-		<Category file="Natural_Products/Plants">
-			<import price=".95" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		<Category file = "Natural_Products/Plants" >
+			<import price = ".95" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Natural_Products/Natural_Resources">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		<Category file = "Natural_Products/Natural_Resources" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Raw_Materials/Metals/Crude">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		<Category file = "Raw_Materials/Metals/Crude" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Raw_Materials/Metals/Precious">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		<Category file = "Raw_Materials/Metals/Precious" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Raw_Materials/Metals/Alloys">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		<Category file = "Raw_Materials/Metals/Alloys" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Raw_Materials/Metals/Aera_Alloys">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="20"/>
+		<Category file = "Raw_Materials/Metals/Aera_Alloys" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "20"  >
+			</import>
 		</Category>
-		<Category file="Raw_Materials/Metals/Radioactive">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		<Category file = "Raw_Materials/Metals/Radioactive" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Raw_Materials/Gems/Jewelry">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		<Category file = "Raw_Materials/Gems/Jewelry" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Raw_Materials/Gems/Industrial">
-			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		<Category file = "Raw_Materials/Gems/Industrial" >
+			<import price = "1.1" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Raw_Materials/Stone">
-			<import price=".8" pricestddev=".1" quantity="00" quantitystddev="0"/>
+		<Category file = "Raw_Materials/Stone" >
+			<import price = ".8" pricestddev = ".1" quantity = "00" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Fuels/Crude">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		<Category file = "Fuels/Crude" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Fuels/Refined">
-			<import price="1.2" pricestddev=".3" quantity="0" quantitystddev="10"/>
+		<Category file = "Fuels/Refined" >
+			<import price = "1.2" pricestddev = ".3" quantity = "0" quantitystddev = "10"  >
+			</import>
 		</Category>
-		<Category file="Fuels/Aera_Refined">
-			<import price="1.05" pricestddev=".3" quantity="0" quantitystddev="10"/>
+		<Category file = "Fuels/Aera_Refined" >
+			<import price = "1.05" pricestddev = ".3" quantity = "0" quantitystddev = "10"  >
+			</import>
 		</Category>
-		<Category file="Machinery_Goods">
-			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="30"/>
+		<Category file = "Machinery_Goods" >
+			<import price = "1.1" pricestddev = ".1" quantity = "0" quantitystddev = "30"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Aerospace_Supplies">
-			<import price="1.2" pricestddev=".1" quantity="0" quantitystddev="10"/>
+		<Category file = "Supplies/Aerospace_Supplies" >
+			<import price = "1.2" pricestddev = ".1" quantity = "0" quantitystddev = "10"  >
+			</import>
 		</Category>
-		<Category file="Research/Electronics">
-		<!-- priced at 1/10 their normal price... heh -->
-			<import price="12" pricestddev="2" quantity="-5" quantitystddev="10"/>
+		<Category file = "Research/Electronics" >
+			<import price = "12" pricestddev = "2" quantity = "-5" quantitystddev = "10"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Agriculteral_Supplies">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		<Category file = "Supplies/Agriculteral_Supplies" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Mining_Supplies">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		<Category file = "Supplies/Mining_Supplies" >
+			<import price = ".8" pricestddev = ".1" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Construction_Supplies">
-			<import price="1.1" pricestddev=".2" quantity="0" quantitystddev="10"/>
+		<Category file = "Supplies/Construction_Supplies" >
+			<import price = "1.1" pricestddev = ".2" quantity = "0" quantitystddev = "10"  >
+			</import>
 		</Category>
-		<Category file="Supplies/Aera_Medical_Supplies">
-			<import price="1.9" pricestddev=".1" quantity="-1" quantitystddev="3"/>
+		<Category file = "Supplies/Aera_Medical_Supplies" >
+			<import price = "1.9" pricestddev = ".1" quantity = "-1" quantitystddev = "3"  >
+			</import>
 		</Category>
-		<Category file="Electronics">
-			<import price="1.2" pricestddev=".2" quantity="0" quantitystddev="20"/>
+		<Category file = "Electronics" >
+			<import price = "1.2" pricestddev = ".2" quantity = "0" quantitystddev = "20"  >
+			</import>
 		</Category>
-		<Category file="Electronics/Robotics">
-			<import price="1.1" pricestddev=".2" quantity="0" quantitystddev="10"/>
+		<Category file = "Electronics/Robotics" >
+			<import price = "1.1" pricestddev = ".2" quantity = "0" quantitystddev = "10"  >
+			</import>
 		</Category>
-		<Category file="Entertainment/Aera">
-			<import price="1.7" pricestddev=".2" quantity="0" quantitystddev="10"/>
+		<Category file = "Entertainment/Aera" >
+			<import price = "1.7" pricestddev = ".2" quantity = "0" quantitystddev = "10"  >
+			</import>
 		</Category>
-		<Category file="Contraband/Medical">
-			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
+		<Category file = "Contraband/Medical" >
+			<import price = "0" pricestddev = "0" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="Contraband">
-			<Cargo file="Pilot" price="1000" quantity="0" mass=".01" volume="1"/>
-			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
+		<Category file = "Contraband" >
+			<Cargo file = "Pilot" price = "1000" quantity = "0" mass = "274" volume = "1"  >
+			</Cargo>
+			<import price = "0" pricestddev = "0" quantity = "0" quantitystddev = "0"  >
+			</import>
 		</Category>
-		<Category file="starships/Aera/Light">
-			<import price="1" pricestdev=".1" quantity="20" quantitystddev="15" />
+		<Category file = "starships/Aera/Light" >
+			<import price = "1" pricestdev = ".1" quantity = "20" quantitystddev = "15"  >
+			</import>
 		</Category>
-		<Category file="starships/Aera/Medium">
-			<import price="1" pricestdev=".1" quantity="10" quantitystddev="15" />
+		<Category file = "starships/Aera/Medium" >
+			<import price = "1" pricestdev = ".1" quantity = "10" quantitystddev = "15"  >
+			</import>
 		</Category>
-		<Category file="starships/Aera/Heavy">
-			<import price="1" pricestdev=".1" quantity="5" quantitystddev="15" />
+		<Category file = "starships/Aera/Heavy" >
+			<import price = "1" pricestdev = ".1" quantity = "5" quantitystddev = "15"  >
+			</import>
 		</Category>
-		<Category file="starships/Aera/Milspec">
-			<import price="1" pricestdev=".1" quantity="10" quantitystddev="15" />
+		<Category file = "starships/Aera/Milspec" >
+			<import price = "1" pricestdev = ".1" quantity = "10" quantitystddev = "15"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Light">
-			<import price="1" pricestdev=".1" quantity="0" quantitystddev="100" />
+		<Category file = "upgrades/Weapons/Mounted_Guns_Light" >
+			<import price = "1" pricestdev = ".1" quantity = "0" quantitystddev = "100"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Medium">
-			<import price="1" pricestdev=".1" quantity="0" quantitystddev="50" />
+		<Category file = "upgrades/Weapons/Mounted_Guns_Medium" >
+			<import price = "1" pricestdev = ".1" quantity = "0" quantitystddev = "50"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Heavy">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="30"/>
+		<Category file = "upgrades/Weapons/Mounted_Guns_Heavy" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "30"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Aera_Milspec">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="20"/>
+		<Category file = "upgrades/Weapons/Mounted_Guns_Aera_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "20"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Weapons/Turrets">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="1"/>
+		<Category file = "upgrades/Weapons/Turrets" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "1"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Light">
-			<import price="1" pricestdev=".1" quantity="10" quantitystddev="50" />
+		<Category file = "upgrades/Weapons/Beam_Arrays_Light" >
+			<import price = "1" pricestdev = ".1" quantity = "10" quantitystddev = "50"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Medium">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="20"/>
+		<Category file = "upgrades/Weapons/Beam_Arrays_Medium" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "20"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Heavy">
-			<import price="1" pricestddev=".1" quantity="2" quantitystddev="10"/>
+		<Category file = "upgrades/Weapons/Beam_Arrays_Heavy" >
+			<import price = "1" pricestddev = ".1" quantity = "2" quantitystddev = "10"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Aera_Milspec">
-			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="50"/>
+		<Category file = "upgrades/Weapons/Beam_Arrays_Aera_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "-2" quantitystddev = "50"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Weapons/Mount_Enhancements">
-			<import price="1" pricestddev=".1" quantity="10" quantitystddev="50"/>
+		<Category file = "upgrades/Weapons/Mount_Enhancements" >
+			<import price = "1" pricestddev = ".1" quantity = "10" quantitystddev = "50"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Engines/Light">
-			<import price="1" pricestdev=".1" quantity="2" quantitystddev="10" />
+		<Category file = "upgrades/Engines/Light" >
+			<import price = "1" pricestdev = ".1" quantity = "2" quantitystddev = "10"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Engines/Medium">
-			<import price="1" pricestdev=".1" quantity="1" quantitystddev="5" />
+		<Category file = "upgrades/Engines/Medium" >
+			<import price = "1" pricestdev = ".1" quantity = "1" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Engines/Heavy">
-			<import price="1" pricestdev=".1" quantity="5" quantitystddev="2" />
+		<Category file = "upgrades/Engines/Heavy" >
+			<import price = "1" pricestdev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Engines/Engine_Enhancements_Light">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="5"/>
+		<Category file = "upgrades/Engines/Engine_Enhancements_Light" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Engines/Engine_Enhancements_Medium">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+		<Category file = "upgrades/Engines/Engine_Enhancements_Medium" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Shield_Systems/Light">
-			<import price="1" pricestdev=".1" quantity="0" quantitystddev="5" />
+		<Category file = "upgrades/Shield_Systems/Light" >
+			<import price = "1" pricestdev = ".1" quantity = "0" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Shield_Systems/Medium">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+		<Category file = "upgrades/Shield_Systems/Medium" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Shield_Systems/Heavy">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="1"/>
+		<Category file = "upgrades/Shield_Systems/Heavy" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "1"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Shield_Systems/Aera_Milspec">
-			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="5"/>
+		<Category file = "upgrades/Shield_Systems/Aera_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "-2" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Armor_Modification">
-			<import price="1" pricestddev=".1" quantity="1" quantitystddev="5"/>
+		<Category file = "upgrades/Armor_Modification" >
+			<import price = "1" pricestddev = ".1" quantity = "1" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Armor_Modification/Aera_Milspec">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
+		<Category file = "upgrades/Armor_Modification/Aera_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Hull_Upgrades">
-			<import price="1" pricestddev=".1" quantity="1" quantitystddev="5"/>
+		<Category file = "upgrades/Hull_Upgrades" >
+			<import price = "1" pricestddev = ".1" quantity = "1" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Hull_Upgrades/Aera_Milspec">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
+		<Category file = "upgrades/Hull_Upgrades/Aera_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="upgrades/ECM_Systems">
-			<import price="1" pricestddev=".1" quantity="1" quantitystddev="5"/>
+		<Category file = "upgrades/ECM_Systems" >
+			<import price = "1" pricestddev = ".1" quantity = "1" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="upgrades/ECM_Systems/Aera_Milspec">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
+		<Category file = "upgrades/ECM_Systems/Aera_Milspec" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Repair_Systems/Advanced">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
+		<Category file = "upgrades/Repair_Systems/Advanced" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Radar/Intermediate">
-			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
+		<Category file = "upgrades/Radar/Intermediate" >
+			<import price = "1" pricestddev = ".1" quantity = "5" quantitystddev = "2"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Radar/Advanced">
-			<import price="1" pricestddev=".1" quantity="2" quantitystddev="1"/>
+		<Category file = "upgrades/Radar/Advanced" >
+			<import price = "1" pricestddev = ".1" quantity = "2" quantitystddev = "1"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Miscellaneous">
-			<import price="1" pricestddev=".1" quantity="10" quantitystddev="5"/>
+		<Category file = "upgrades/Miscellaneous" >
+			<import price = "1" pricestddev = ".1" quantity = "10" quantitystddev = "5"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Ammunition">
-			<import price="1" pricestddev=".1" quantity="0" quantitystddev="25"/>
+		<Category file = "upgrades/Ammunition" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "25"  >
+			</import>
 		</Category>
-		<Category file="upgrades/Experimental">
-			<import price="1.4" pricestddev=".2" quantity="-8" quantitystddev="10"/>
+		<Category file = "upgrades/Experimental" >
+			<import price = "1.4" pricestddev = ".2" quantity = "-8" quantitystddev = "10"  >
+			</import>
 		</Category>
 	</Hold>
-	<Upgrade file="standard_missions"/>
-	<Upgrade file="aera_mil_missions"/>
-
-
+	<Upgrade file = "standard_missions"  >
+	</Upgrade>
+	<Upgrade file = "aera_mil_missions"  >
+	</Upgrade>
 </Unit>

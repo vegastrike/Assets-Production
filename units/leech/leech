@@ -1,28 +1,28 @@
-<Unit>
-	<Meshfile file="leech.xmesh"/>
-	<BspMesh/>
-	<Light file="supernova.bmp" x="0" y="0" z="-2" size= ".6"/>
-
-<Thrust> 
-	<Engine Afterburner="2300"
-		  Forward="800"
-		  Retro="500"
-		  Left="560"
-		  Right="560"
-		  Top="560"
-		  Bottom="560"/>
-			<Maneuver yaw="6643.200050" pitch="8098.600151" roll="6643.200050"/>
-
-</Thrust>
-<Sound></Sound>
-<Defense>
-	<Hull strength="5"/>
-</Defense>
-<Stats mass="10" momentofinertia="6" fuel="200000"></Stats>
-
-<Computer yaw="110" pitch="124" roll="110" afterburner="1440" maxspeed="420"/>
-<Energy>
-	<Reactor recharge="10"
-		   limit="100"/>
-</Energy>
+<Unit >
+	<Meshfile file = "leech.xmesh"  >
+	</Meshfile>
+	<BspMesh  >
+	</BspMesh>
+	<Light file = "supernova.bmp" x = "0" y = "0" z = "-2" size = ".6"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "21.9489" Forward = "7.6344" Retro = "4.7715" Left = "5.34408" Right = "5.34408" Top = "5.34408" Bottom = "5.34408"  >
+		</Engine>
+		<Maneuver yaw = "63.3961" pitch = "77.2849" roll = "63.3961"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense >
+		<Hull strength = "5"  >
+		</Hull>
+	</Defense>
+	<Stats mass = "0.09543" momentofinertia = "0.057258" fuel = "200000"  >
+	</Stats>
+	<Computer yaw = "110" pitch = "124" roll = "110" afterburner = "1440" maxspeed = "420"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "10" limit = "100"  >
+		</Reactor>
+	</Energy>
 </Unit>

@@ -1,38 +1,44 @@
-<Unit>
-	<Meshfile file="DroneD.3ds-Sphere_7-Material1.xmesh"/>
-	<Meshfile file="DroneD.3ds-Sphere_7-Material2.xmesh"/>
-	<Meshfile file="DroneD.3ds-Sphere_7-Material3.xmesh"/>
-	<Meshfile file="DroneD.3ds-Sphere_7-Material.xmesh" />
-<!--	<Meshfile file="Hidden.xmesh"/> -->
-	<Thrust>
-		<Engine Afterburner="0" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
-		<Maneuver yaw="000.000000" pitch="000" roll="0"/>
+<Unit >
+	<Meshfile file = "DroneD.3ds-Sphere_7-Material1.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "DroneD.3ds-Sphere_7-Material2.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "DroneD.3ds-Sphere_7-Material3.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "DroneD.3ds-Sphere_7-Material.xmesh"  >
+	</Meshfile>
+	<Thrust >
+		<Engine Afterburner = "0" Forward = "0" Retro = "0" Left = "0" Right = "0" Top = "0" Bottom = "0"  >
+		</Engine>
+		<Maneuver yaw = "0" pitch = "0" roll = "0"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	<Defense hudImage="unknown_derelict-hud.spr">
-		<Armor front="0" right="0" left="0" back="0"/>
-		<Shields front="100000.000000" back="100000.000000" left="100000" right="100000" recharge="5.000000"/>
-		<Hull strength="1000.000000"/>
-		<Cloak missing="1" cloakmin="0" cloakrate="0" cloakglass="0" cloakenergy="0"/>
+	<Defense hudImage = "unknown_derelict-hud.spr" >
+		<Armor front = "0" right = "0" left = "0" back = "0"  >
+		</Armor>
+		<Shields front = "100000.000000" back = "100000.000000" left = "100000" right = "100000" recharge = "5.000000"  >
+		</Shields>
+		<Hull strength = "1000.000000"  >
+		</Hull>
+		<Cloak missing = "1" cloakmin = "0" cloakrate = "0" cloakglass = "0" cloakenergy = "0"  >
+		</Cloak>
 	</Defense>
-	<Stats mass=".5000000" momentofinertia=".5000000" fuel="20000000"></Stats>
-	<Computer yaw="4" pitch="4" itts="false" roll="4" afterburner="4" maxspeed="2">
-		<Radar itts="false" color="false" range="00" error="0" maxcone="1"/> </Computer>
-
-	<Energy afterburnenergy="0">
-		<Reactor recharge="40" limit="46"/>
+	<Stats mass = "4446" momentofinertia = "4446" fuel = "20000000"  >
+	</Stats>
+	<Computer yaw = "4" pitch = "4" itts = "false" roll = "4" afterburner = "4" maxspeed = "2" >
+		<Radar itts = "false" color = "false" range = "00" error = "0" maxcone = "1"  >
+		</Radar>
+	</Computer>
+	<Energy afterburnenergy = "0" >
+		<Reactor recharge = "40" limit = "46"  >
+		</Reactor>
 	</Energy>
-       <cockpit x="0" y="8" z="50"/>
-       <Jump missing="1" delay="1" jumpenergy="0"/>       
-<!-- new elements added -->
-
-<!-- new elements added -->
-<!--<Mount weapon="UnknownBeam" size="" x="-15.833333" y="3.575820" z="58.726788"/>
-<Mount weapon="UnknownBeam" size="Heavy" x="15.318306" y="3.931693" z="58.726788" />
-<Light file="supernova.bmp" x="-14.558598" y="4.705065" z="-59.838497" size="18.400000"/>
-<Light file="supernova.bmp" x="12.919494" y="3.609854" z="-59.238785" size="18.000000"/>
-<Mount weapon="UnknownBolt" size="Heavy" x="-9.442946" y="-4.617121" z="54.150455" />-->
-<Mount weapon="UnknownBolt" size="Heavy" x="9.643875" y="-4.753923" z="54.455894" />
-
+	<cockpit x = "0" y = "8" z = "50"  >
+	</cockpit>
+	<Jump missing = "1" delay = "1" jumpenergy = "0"  >
+	</Jump>
+	<Mount weapon = "UnknownBolt" size = "Heavy" x = "9.643875" y = "-4.753923" z = "54.455894"  >
+	</Mount>
 </Unit>

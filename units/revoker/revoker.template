@@ -1,55 +1,80 @@
-<Unit scale="0.5">
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  back="0.000000" left="0" right="0" recharge="0.000000"/>
+<Unit scale = "0.5" >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" back = "0.000000" left = "0" right = "0" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<Upgrade file="shield_4_Level5"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_5"/>
-	<Upgrade file="micro_shielded_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-	<Meshfile file="revoker-Hull.xmesh" />
-	<Meshfile file="revoker-Cone01.xmesh" />
-	<Meshfile file="revoker-Cone02.xmesh" />
-	<Meshfile file="revoker-Cone03.xmesh" />
-	<Meshfile file="revoker-Frame01.xmesh" />
-	<Meshfile file="revoker-Glower01.xmesh" />
-	<Meshfile file="revoker-Glower02.xmesh" />
-	<Meshfile file="revoker-Glower03.xmesh" /> 
-	<Meshfile file="revoker-Side.xmesh" />
-	<Meshfile file="revoker-GunBit01.xmesh" />
-	<Meshfile file="revoker-GunBit02.xmesh" />
-	<Meshfile file="revoker-Guns.xmesh" />
-
-	
-	<cockpit x="0" y="00" z="10"/>
-	<Thrust>
-		<Engine Afterburner="1600.000000" Forward="668.000000" Retro="647.000000" Left="684.000000" Right="684.000000" Top="684.000000" Bottom="684.000000"/>
-		<Maneuver yaw="2415.500000" pitch="2415.500000" roll="2415.500000"/>
+	<Upgrade file = "shield_4_Level5"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_5"  >
+	</Upgrade>
+	<Upgrade file = "micro_shielded_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<Meshfile file = "revoker-Hull.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "revoker-Cone01.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "revoker-Cone02.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "revoker-Cone03.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "revoker-Frame01.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "revoker-Glower01.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "revoker-Glower02.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "revoker-Glower03.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "revoker-Side.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "revoker-GunBit01.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "revoker-GunBit02.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "revoker-Guns.xmesh"  >
+	</Meshfile>
+	<cockpit x = "0" y = "00" z = "10"  >
+	</cockpit>
+	<Thrust >
+		<Engine Afterburner = "20738982" Forward = "8658525" Retro = "8386326" Left = "8865915" Right = "8865915" Top = "8865915" Bottom = "8865915"  >
+		</Engine>
+		<Maneuver yaw = "31309383" pitch = "31309383" roll = "31309383"  >
+		</Maneuver>
 	</Thrust>
-	<Sound> </Sound>
-	
-	<Stats mass="7" momentofinertia="7" fuel="2000000000"></Stats>
-	<Computer yaw="73.500000" pitch="73.500000" roll="73.500000" afterburner="80.000000" maxspeed="42.000000"/>
-	<Jump delay="1" jumpenergy="800"/>
-	<Hold volume="300">
-
-	</Hold>       
-<Dock x="0" y="0" z="50" size="25"/>	
-<Mount weapon="KtekBeam" size="Light Medium Heavy Autotracking" x="127.0566" y="43.7594" z="121.3314" ri="-0.249141" rj="-0.024868" rk="0.968148" qi="-0.395678" qj="-0.909816" qk="-0.125192"/>
-<Mount weapon="Ktek" size="Light Medium Heavy Autotracking" x="119.3102" y="23.8918" z="118.8276" ri="-0.249142" rj="-0.024868" rk="0.968148" qi="-0.395678" qj="-0.909816" qk="-0.125192"/>
-<Mount weapon="Ktek" size="Light Medium Heavy Autotracking" x="115.6352" y="60.7088" z="118.8276" ri="-0.249142" rj="-0.024868" rk="0.968148" qi="-0.395678" qj="-0.909816" qk="-0.125192"/>
-<Mount weapon="KtekBeam" size="Light Medium Heavy Autotracking" x="-127.2548" y="41.7694" z="121.3318" ri="0.249142" rj="-0.024868" rk="0.968148" qi="0.567703" qj="0.813658" qk="-0.125192"/>
-<Mount weapon="Ktek" size="Light Medium Heavy Autotracking" x="-115.7342" y="59.7138" z="118.828" ri="0.249142" rj="-0.024868" rk="0.968148" qi="0.567703" qj="0.813658" qk="-0.125192"/>
-<Mount weapon="Ktek" size="Light Medium Heavy Autotracking" x="-119.409" y="22.8968" z="118.828" ri="0.249142" rj="-0.024868" rk="0.968148" qi="0.567704" qj="0.813658" qk="-0.125193"/>
-
-
-
-<!-- Turrets -->
-<Subunit file="turretsmall" x="35.4364" y="-229.1204" z="16.2628" ri="-0.091138" rj="0.293527" rk="0.951596" qi="0.424036" qj="-0.853177" qk="0.303780"/>
-<Subunit file="turretsmall" x="-35.3528" y="-229.3952" z="15.4892" ri="-0.084938" rj="-0.290906" rk="-0.952974" qi="-0.447383" qj="-0.843463" qk="0.297352"/>
-
-
+	<Sound  >
+	</Sound>
+	<Stats mass = "90733" momentofinertia = "90733" fuel = "2000000000"  >
+	</Stats>
+	<Computer yaw = "73.500000" pitch = "73.500000" roll = "73.500000" afterburner = "80.000000" maxspeed = "42.000000"  >
+	</Computer>
+	<Jump delay = "1" jumpenergy = "800"  >
+	</Jump>
+	<Hold volume = "300"  >
+	</Hold>
+	<Dock x = "0" y = "0" z = "50" size = "25"  >
+	</Dock>
+	<Mount weapon = "KtekBeam" size = "Light Medium Heavy Autotracking" x = "127.0566" y = "43.7594" z = "121.3314" ri = "-0.249141" rj = "-0.024868" rk = "0.968148" qi = "-0.395678" qj = "-0.909816" qk = "-0.125192"  >
+	</Mount>
+	<Mount weapon = "Ktek" size = "Light Medium Heavy Autotracking" x = "119.3102" y = "23.8918" z = "118.8276" ri = "-0.249142" rj = "-0.024868" rk = "0.968148" qi = "-0.395678" qj = "-0.909816" qk = "-0.125192"  >
+	</Mount>
+	<Mount weapon = "Ktek" size = "Light Medium Heavy Autotracking" x = "115.6352" y = "60.7088" z = "118.8276" ri = "-0.249142" rj = "-0.024868" rk = "0.968148" qi = "-0.395678" qj = "-0.909816" qk = "-0.125192"  >
+	</Mount>
+	<Mount weapon = "KtekBeam" size = "Light Medium Heavy Autotracking" x = "-127.2548" y = "41.7694" z = "121.3318" ri = "0.249142" rj = "-0.024868" rk = "0.968148" qi = "0.567703" qj = "0.813658" qk = "-0.125192"  >
+	</Mount>
+	<Mount weapon = "Ktek" size = "Light Medium Heavy Autotracking" x = "-115.7342" y = "59.7138" z = "118.828" ri = "0.249142" rj = "-0.024868" rk = "0.968148" qi = "0.567703" qj = "0.813658" qk = "-0.125192"  >
+	</Mount>
+	<Mount weapon = "Ktek" size = "Light Medium Heavy Autotracking" x = "-119.409" y = "22.8968" z = "118.828" ri = "0.249142" rj = "-0.024868" rk = "0.968148" qi = "0.567704" qj = "0.813658" qk = "-0.125193"  >
+	</Mount>
+	<Subunit file = "turretsmall" x = "35.4364" y = "-229.1204" z = "16.2628" ri = "-0.091138" rj = "0.293527" rk = "0.951596" qi = "0.424036" qj = "-0.853177" qk = "0.303780"  >
+	</Subunit>
+	<Subunit file = "turretsmall" x = "-35.3528" y = "-229.3952" z = "15.4892" ri = "-0.084938" rj = "-0.290906" rk = "-0.952974" qi = "-0.447383" qj = "-0.843463" qk = "0.297352"  >
+	</Subunit>
 </Unit>

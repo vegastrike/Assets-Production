@@ -1,43 +1,50 @@
-<Unit size="3">
-
-	<cockpit file="light_cockpit.cpt" x="0" y=".5" z="4"/>
-	<Defense HudImage="katar-hud.spr">
-		<Shields front="0.000000" back="0.000000" recharge="0.000000"/>
+<Unit size = "3" >
+	<cockpit file = "light_cockpit.cpt" x = "0" y = ".5" z = "4"  >
+	</cockpit>
+	<Defense HudImage = "katar-hud.spr" >
+		<Shields front = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<upgrade file="shield_2"/>
-	<upgrade file="engine_level_0"/>
-	<upgrade file="lithium"/>
-	<upgrade file="hull"/>
-	<Energy afterburnenergy="32767">
+	<upgrade file = "shield_2"  >
+	</upgrade>
+	<upgrade file = "engine_level_0"  >
+	</upgrade>
+	<upgrade file = "lithium"  >
+	</upgrade>
+	<upgrade file = "hull"  >
+	</upgrade>
+	<Energy afterburnenergy = "32767"  >
 	</Energy>
-
-<Meshfile file="Katar-Katar-Material26.xmesh"/>
-<Meshfile file="Katar-Katar-Body.xmesh"/>
-
-	<Mount weapon="" size="light medium heavy" x="2.15" y="-1.1" z="2.5" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.406736" qj="0.913546" qk="0.000000"/>
-	<Mount weapon="" size="light medium heavy" x="-2.15" y="-1.1" z="2.5" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.406736" qj="-0.913546" qk="0.000000"/>
-	<Mount weapon="" size="lgiht-missile medium-missile special"  x="6.5" y="-2" z="1" ammo=""/>
-	<Mount weapon="" size="light-missile medium-missile special" x="-6.5" y="-2" z="1" ammo="4"/>
-
-	<Thrust>
-		<Engine Afterburner="1300" Forward="280" Retro="300" Left="220" Right="220" Top="220" Bottom="220"/>
-		<Maneuver yaw="2000" pitch="2000" roll="2000"/>
+	<Meshfile file = "Katar-Katar-Material26.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "Katar-Katar-Body.xmesh"  >
+	</Meshfile>
+	<Mount weapon = "" size = "light medium heavy" x = "2.15" y = "-1.1" z = "2.5" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "-0.406736" qj = "0.913546" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "" size = "light medium heavy" x = "-2.15" y = "-1.1" z = "2.5" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "-0.406736" qj = "-0.913546" qk = "0.000000"  >
+	</Mount>
+	<Mount weapon = "" size = "lgiht-missile medium-missile special" x = "6.5" y = "-2" z = "1" ammo = ""  >
+	</Mount>
+	<Mount weapon = "" size = "light-missile medium-missile special" x = "-6.5" y = "-2" z = "1" ammo = "4"  >
+	</Mount>
+	<Thrust >
+		<Engine Afterburner = "830764" Forward = "178933" Retro = "191714" Left = "140590" Right = "140590" Top = "140590" Bottom = "140590"  >
+		</Engine>
+		<Maneuver yaw = "1278099" pitch = "1278099" roll = "1278099"  >
+		</Maneuver>
 	</Thrust>
-
-	<Sound>
+	<Sound  >
 	</Sound>
-
-
-	<Stats mass="2.000000" momentofinertia="2.000000" fuel="30000000">
+	<Stats mass = "1278" momentofinertia = "1278" fuel = "30000000"  >
 	</Stats>
-	<Computer yaw="120" pitch="120" roll="160" afterburner="169.5000000" maxspeed="49.500000">
-		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	<Computer yaw = "120" pitch = "120" roll = "160" afterburner = "169.5000000" maxspeed = "49.500000" >
+		<Radar itts = "false" error = "0" range = "5000" maxcone = ".25" color = "false"  >
+		</Radar>
 	</Computer>
-       	<Jump missing="1" delay="1" jumpenergy="10"/>       
-
-	<Hold volume="65">
+	<Jump missing = "1" delay = "1" jumpenergy = "10"  >
+	</Jump>
+	<Hold volume = "65"  >
 	</Hold>
-
-	<Upgrade file="mult_general_downgrade"/>
-
+	<Upgrade file = "mult_general_downgrade"  >
+	</Upgrade>
 </Unit>

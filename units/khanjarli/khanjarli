@@ -1,55 +1,62 @@
-<Unit>
-<Meshfile file="khanjarli.xmesh"/>
-<Meshfile file="khanjarli-1.xmesh"/>
-       
-
-	<!-- Weapons -->
-	<Mount weapon="plasma" size="light medium heavy" x="-4" y="1" z="6" />
-	<Mount weapon="plasma" size="light medium heavy" x= "4" y="1" z="6" />
-	<Mount weapon="dumbfire" size="special light-missile" x="-2.85" y="-2" z="-1" ammo="6" volume="901"/>
-	<Mount weapon="dumbfire" size="special Light-missile" x= "2.85" y="-2" z="-1" ammo="6" volume="901"/>
-	<Mount weapon="imagerecognition" size="Light-missile" x= "5.5" y="-3" z="-3" ammo ="6" volume="751"/>
-	<Mount weapon="imagerecognition" size="Light-missile" x="-5.5" y="-3" z="-3" ammo ="6" volume="751"/>
-
-
-	<!-- Engine lights -->
-	<Light file="supernova.bmp" x="7.5" y="-0.3" z="-24" size="4"/>
-	<Light file="supernova.bmp" x="10" y="-1.5" z="-24" size="4"/>
-	<Light file="supernova.bmp" x="-7.5" y="-0.3" z="-24" size="4"/>
-	<Light file="supernova.bmp" x="-10" y="-1.5" z="-24" size="4"/>
-	<Light file="supernova.bmp" x="4" y="4.311728" z="-19" size="3.5"/>
-	<Light file="supernova.bmp" x="0" y="4.75" z="-19" size="4.75"/>
-	<Light file="supernova.bmp" x="-4" y="4.311728" z="-19" size="3.5"/>
-
-<Subunit file="turret_medium" x="0" y="0" z="-19" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1"/>
-	
-	<Defense HudImage="khanjarli.spr">
-	
-		<Armor front="600" right="550" left="550" back="600"/>
-		<Shields front="600" right="600" left="600" back="600" recharge="20"/>
-		<Hull strength="1200.000000"/>
-
+<Unit >
+	<Meshfile file = "khanjarli.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "khanjarli-1.xmesh"  >
+	</Meshfile>
+	<Mount weapon = "plasma" size = "light medium heavy" x = "-4" y = "1" z = "6"  >
+	</Mount>
+	<Mount weapon = "plasma" size = "light medium heavy" x = "4" y = "1" z = "6"  >
+	</Mount>
+	<Mount weapon = "dumbfire" size = "special light-missile" x = "-2.85" y = "-2" z = "-1" ammo = "6" volume = "901"  >
+	</Mount>
+	<Mount weapon = "dumbfire" size = "special Light-missile" x = "2.85" y = "-2" z = "-1" ammo = "6" volume = "901"  >
+	</Mount>
+	<Mount weapon = "imagerecognition" size = "Light-missile" x = "5.5" y = "-3" z = "-3" ammo = "6" volume = "751"  >
+	</Mount>
+	<Mount weapon = "imagerecognition" size = "Light-missile" x = "-5.5" y = "-3" z = "-3" ammo = "6" volume = "751"  >
+	</Mount>
+	<Light file = "supernova.bmp" x = "7.5" y = "-0.3" z = "-24" size = "4"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "10" y = "-1.5" z = "-24" size = "4"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-7.5" y = "-0.3" z = "-24" size = "4"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-10" y = "-1.5" z = "-24" size = "4"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "4" y = "4.311728" z = "-19" size = "3.5"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "0" y = "4.75" z = "-19" size = "4.75"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-4" y = "4.311728" z = "-19" size = "3.5"  >
+	</Light>
+	<Subunit file = "turret_medium" x = "0" y = "0" z = "-19" ri = "0" rj = "1" rk = "0" qi = "0" qj = "0" qk = "-1"  >
+	</Subunit>
+	<Defense HudImage = "khanjarli.spr" >
+		<Armor front = "600" right = "550" left = "550" back = "600"  >
+		</Armor>
+		<Shields front = "600" right = "600" left = "600" back = "600" recharge = "20"  >
+		</Shields>
+		<Hull strength = "1200.000000"  >
+		</Hull>
 	</Defense>
-	<Thrust>
-		<Engine Afterburner="1200" Forward="400" retro="354" Left="202" Right="202" Top="202" Bottom="202"/>
-		<Maneuver yaw="1587" pitch="1587" roll="2087"/>
+	<Thrust >
+		<Engine Afterburner = "24648" Forward = "8216" retro = "7271" Left = "4149" Right = "4149" Top = "4149" Bottom = "4149"  >
+		</Engine>
+		<Maneuver yaw = "32596" pitch = "32596" roll = "42866"  >
+		</Maneuver>
 	</Thrust>
-
-
-	<Stats mass="15.000000" momentofinertia="15.000000" fuel="200000000"></Stats>
-	<Computer yaw="75" pitch="75" roll="75" afterburner="105" maxspeed="37.500">
-		<Radar itts="true" color="true" error="0"/> </Computer>
-
-	<Hold volume="50">
-	    
+	<Stats mass = "308" momentofinertia = "308" fuel = "200000000"  >
+	</Stats>
+	<Computer yaw = "75" pitch = "75" roll = "75" afterburner = "105" maxspeed = "37.500" >
+		<Radar itts = "true" color = "true" error = "0"  >
+		</Radar>
+	</Computer>
+	<Hold volume = "50"  >
 	</Hold>
-
-	<Energy afterburnenergy="40">
-		<Reactor recharge="35" limit="700"/>
+	<Energy afterburnenergy = "40" >
+		<Reactor recharge = "35" limit = "700"  >
+		</Reactor>
 	</Energy>
-           	<Jump delay="1" jumpenergy="100"/>
-
+	<Jump delay = "1" jumpenergy = "100"  >
+	</Jump>
 </Unit>
-
-
-

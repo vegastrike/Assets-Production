@@ -1,28 +1,28 @@
-<Unit>
-	<Meshfile file="heatseek.xmesh"/>
-	<BspMesh RAPID="0"/>
-	<Light file="supernova.bmp" x="0" y="0" z="-2.30000023841858" size= ".8"/>
-
-<Thrust> 
-	<Engine Afterburner="25"
-		  Forward="20"
-		  Retro="19"
-		  Left="11"
-		  Right="11"
-		  Top="11"
-		  Bottom="11"/>
-			<Maneuver yaw="54.200050" pitch="59.600151" roll="54.200050"/>
-
-</Thrust>
-<Sound></Sound>
-<Defense>
-	<Hull strength="5"/>
-</Defense>
-<Stats mass="0.12" momentofinertia="0.1" fuel="2000"></Stats>
-
-<Computer yaw="18" pitch="18" roll="18" afterburner="340" maxspeed="290"/>
-<Energy>
-	<Reactor recharge="10"
-		   limit="100"/>
-</Energy>
+<Unit >
+	<Meshfile file = "heatseek.xmesh"  >
+	</Meshfile>
+	<BspMesh RAPID = "0"  >
+	</BspMesh>
+	<Light file = "supernova.bmp" x = "0" y = "0" z = "-2.30000023841858" size = ".8"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "16.2473" Forward = "12.9978" Retro = "12.3479" Left = "7.14879" Right = "7.14879" Top = "7.14879" Bottom = "7.14879"  >
+		</Engine>
+		<Maneuver yaw = "35.2241" pitch = "38.7335" roll = "35.2241"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense >
+		<Hull strength = "5"  >
+		</Hull>
+	</Defense>
+	<Stats mass = "0.0779868" momentofinertia = "0.064989" fuel = "2000"  >
+	</Stats>
+	<Computer yaw = "18" pitch = "18" roll = "18" afterburner = "340" maxspeed = "290"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "10" limit = "100"  >
+		</Reactor>
+	</Energy>
 </Unit>

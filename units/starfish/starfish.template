@@ -1,42 +1,64 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000" right="0.000000" left="0.000000" back="0.000000" recharge="0.000000"/>
-		<Hull strength="1250.000000"/>
+<Unit >
+	<Upgrade file = "godsansshields"  >
+	</Upgrade>
+	<Defense >
+		<Shields front = "0.000000" right = "0.000000" left = "0.000000" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
+		<Hull strength = "1250.000000"  >
+		</Hull>
 	</Defense>
-	<Upgrade file="shield_4_Level2"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_3"/>
-	<Upgrade file="micro_shielded_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-	<cockpit file="centurion-cockpit.cpt" x="0" y="00" z="00"/>
-	<Thrust>
-		<Engine Afterburner="580.000000" Forward="468.000000" Retro="247.000000" Left="284.000000" Right="284.000000" Top="284.000000" Bottom="284.000000"/>
-		<Maneuver yaw="2015.500000" pitch="2015.500000" roll="3515.500000"/>
+	<Upgrade file = "shield_4_Level2"  >
+	</Upgrade>
+	<Upgrade file = "isometal"  >
+	</Upgrade>
+	<Upgrade file = "engine_level_3"  >
+	</Upgrade>
+	<Upgrade file = "micro_shielded_hull"  >
+	</Upgrade>
+	<Upgrade file = "mult_shield_regenerator"  >
+	</Upgrade>
+	<Upgrade file = "mult_gun_cooler"  >
+	</Upgrade>
+	<cockpit file = "centurion-cockpit.cpt" x = "0" y = "00" z = "00"  >
+	</cockpit>
+	<Thrust >
+		<Engine Afterburner = "2658" Forward = "2145" Retro = "1132" Left = "1301" Right = "1301" Top = "1301" Bottom = "1301"  >
+		</Engine>
+		<Maneuver yaw = "9239" pitch = "9239" roll = "16115"  >
+		</Maneuver>
 	</Thrust>
-	<Sound> </Sound>
-	<Stats mass="14" momentofinertia="14" fuel="80000000"></Stats>
-	<Computer yaw="80.500000" pitch="80.500000" roll="403.500000" afterburner="90.000000" maxspeed="80.000000"/>
-	<Energy>
-		<Reactor limit="2040"/>
+	<Sound  >
+	</Sound>
+	<Stats mass = "64.176" momentofinertia = "64.176" fuel = "80000000"  >
+	</Stats>
+	<Computer yaw = "80.500000" pitch = "80.500000" roll = "403.500000" afterburner = "90.000000" maxspeed = "80.000000"  >
+	</Computer>
+	<Energy >
+		<Reactor limit = "2040"  >
+		</Reactor>
 	</Energy>
-
-	<Jump delay="1" jumpenergy="1500"/>       
-
-<!-- new elements added -->
-<Mount weapon="KtekBeam" size="Heavy Medium" x="0.340207" y="15.660674" z="2.633940"/>
-<Mount weapon="Disruptor" size="Medium Light Special Autotracking" x="-8.405925" y="14.270943" z="2.638443"/>
-<Mount weapon="Ktek" size="Heavy Medium Autotracking" x="-13.961499" y="7.488401" z="2.628920"/>
-<Mount weapon="Disruptor" size="Medium Light Special Autotracking" x="-14.071106" y="-1.264541" z="2.630254"/>
-<Mount weapon="KtekBeam" size="Heavy Medium" x="-8.318096" y="-7.460289" z="2.600782"/>
-<Mount weapon="Disruptor" size="Medium Light Special Autotracking" x="0.020000" y="-8.895386" z="2.546662" />
-<Mount weapon="Ktek" size="Heavy Medium Autotracking" x="7.138566" y="-4.772924" z="2.540798" />
-<Mount weapon="KtekBeam" size="Heavy Medium" x="10.533229" y="2.823476" z="2.616701" />
-<Mount weapon="Ktek" size="Heavy Medium Autotracking" x="7.773383" y="10.995417" z="2.621394"/> 
-<Dock x="-2.389462" y="3.759991" z="0.020980" size="5.000000" ri="0.866026" rj="-0.500000" rk="0.000000" qi="0.000000" qj="-0.000000" qk="-1.000000"/>
-	<Hold volume="150">
+	<Jump delay = "1" jumpenergy = "1500"  >
+	</Jump>
+	<Mount weapon = "KtekBeam" size = "Heavy Medium" x = "0.340207" y = "15.660674" z = "2.633940"  >
+	</Mount>
+	<Mount weapon = "Disruptor" size = "Medium Light Special Autotracking" x = "-8.405925" y = "14.270943" z = "2.638443"  >
+	</Mount>
+	<Mount weapon = "Ktek" size = "Heavy Medium Autotracking" x = "-13.961499" y = "7.488401" z = "2.628920"  >
+	</Mount>
+	<Mount weapon = "Disruptor" size = "Medium Light Special Autotracking" x = "-14.071106" y = "-1.264541" z = "2.630254"  >
+	</Mount>
+	<Mount weapon = "KtekBeam" size = "Heavy Medium" x = "-8.318096" y = "-7.460289" z = "2.600782"  >
+	</Mount>
+	<Mount weapon = "Disruptor" size = "Medium Light Special Autotracking" x = "0.020000" y = "-8.895386" z = "2.546662"  >
+	</Mount>
+	<Mount weapon = "Ktek" size = "Heavy Medium Autotracking" x = "7.138566" y = "-4.772924" z = "2.540798"  >
+	</Mount>
+	<Mount weapon = "KtekBeam" size = "Heavy Medium" x = "10.533229" y = "2.823476" z = "2.616701"  >
+	</Mount>
+	<Mount weapon = "Ktek" size = "Heavy Medium Autotracking" x = "7.773383" y = "10.995417" z = "2.621394"  >
+	</Mount>
+	<Dock x = "-2.389462" y = "3.759991" z = "0.020980" size = "5.000000" ri = "0.866026" rj = "-0.500000" rk = "0.000000" qi = "0.000000" qj = "-0.000000" qk = "-1.000000"  >
+	</Dock>
+	<Hold volume = "150"  >
 	</Hold>
-
 </Unit>
