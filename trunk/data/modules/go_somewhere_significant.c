@@ -73,9 +73,15 @@ module go_somewhere_significant {
 	      arrivedarea=true;
 	    }
 	  } else if (!arrivedsys) {
+//		  _io.printf("ff");
+
 	    object sysfil = _std.getSystemFile();
-	    if (_string.equal (sysfil,destination)) {
-	      arrivedsys=true;
+//		  _io.printf("ee");
+
+		if (_string.equal (sysfil,destination)) {
+//		  _io.printf("gg");
+
+			arrivedsys=true;
 	      object significant;
 	      if (capship) {
 		int randint=random.randomint(0,128);
@@ -100,7 +106,11 @@ module go_somewhere_significant {
 	      }
 	    }
 	    _string.delete (sysfil);
+//		  _io.printf("vv");
+
 	  }    
+//		  _io.printf("ww");
+
 
   };
 }

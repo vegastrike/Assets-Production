@@ -149,7 +149,9 @@ module attack_jumppoint {
 	  quantity=0;
     	};
 	void loop () {
+
 	  go_somewhere_significant.loop();
+
 	  if (go_somewhere_significant.HaveArrived()) {
 	    object you=_unit.getUnitFromContainer(youcontainer);
 	    if (_std.isNull (you)) {
@@ -166,14 +168,18 @@ module attack_jumppoint {
 		  if (_std.isNull (temp)) {
 		    temp = you;
 		  }
+
 		  object fac = faction_ships.get_enemy_of (faction);
 		  object randtype = faction_ships.getRandomCapitol (fac);
+
 		  def = launch.launch_wave_around_unit ("Halo",fac,randtype,"default",1,2000.0,2500.0,temp);		  
 		  _string.delete (fac);
 		}
 		defendee = _unit.getContainer (def);
 	      }
+
 	      object base = _unit.getUnitFromContainer (defendee);
+
 	      if (_std.isNull(base)) {
 		if (defend) {
 		  FailMission(you);
@@ -182,11 +188,13 @@ module attack_jumppoint {
 		}
 	      }else {
 		if (quantity>0) {
+
 		  GenerateEnemies (base,you);
 		}
 		if (targetiter>=_olist.size(attackers)) {
 		  targetiter=0;
 		}else {
+
 		  object cont =  _olist.at (attackers,targetiter);
 		  object un = _unit.getUnitFromContainer (cont);
 		  if (!_std.isNull(un)) {
@@ -197,6 +205,7 @@ module attack_jumppoint {
 		      _unit.setTarget (un,you);
 		    }
 		  }
+
 		  targetiter=targetiter+1;
 		}
 		if (NoEnemiesInArea (base)) {
