@@ -149,7 +149,8 @@
 			<Cargo file="skart" price="290000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 -->
-		<Category file="upgrades/Weapons/Mounted_Guns">
+
+<!--Unplaced Weapons for you to sort TS. Bwahaha
 			<Cargo file="laser" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="mass_driver" price="1500" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="stormfire" price="2000" quantity="1" mass=".01" volume="1"/>
@@ -167,14 +168,42 @@
 			<Cargo file="anihilator_gun" price="90000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="penetrator_gun" price="110000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="fusion_gun" price="1000000" quantity="1" mass=".01" volume="1"/>
-		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays">
 			<Cargo file="laser_beam" price="1200" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="tractor_beam" price="7500" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="disruptor_beam" price="4000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="ion_beam" price="35000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="repulsor_beam" price="50000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="ktek_beam" price="120000" quantity="1" mass=".01" volume="1"/>
+-->
+		<Category file="upgrades/Weapons/Mounted_Guns/Light">
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns/Medium">
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns/Heavy">
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns/Aera_Milspec">
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns/Rlaan_Milspec">
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns/Confed_Milspec">
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns/ISO_Milspecs">
+		</Category>
+		<Category file="upgrades/Weapons/Mounted_Guns/Light">
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays/Light">
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays/Medium">
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays/Heavy">
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays/Aera_Milspec">
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays/Rlaan_Milspec">
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays/Confed_Milspec">
+		</Category>
+		<Category file="upgrades/Weapons/Beam_Arrays/ISO_Milspecs">
 		</Category>
 		<Category file="upgrades/Weapons/Mount_Enhancements">
 			<Cargo file="tractor_capability" price="50000" quantity="1" mass=".01" volume="1"/>
