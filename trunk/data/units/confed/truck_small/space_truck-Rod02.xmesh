@@ -1,4 +1,4 @@
-<Mesh texture="truck_grip.png" scale="2.5">
+<Mesh texture="truck_grip.png" scale="0.25">
 <Points>
 <Point>
     <Location x="-184.66828918457" y="-13.9865131378174" z="573.003051757812"/>

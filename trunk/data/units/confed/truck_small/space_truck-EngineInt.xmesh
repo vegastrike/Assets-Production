@@ -1,4 +1,4 @@
-<Mesh animation="engineglowred.ani" scale="2.5">
+<Mesh animation="engineglowred.ani" scale="0.25">
 <Points>
 <Point>
     <Location x="-59.8581123352051" y="-34.5461692810059" z="-403.493530273438"/>
