@@ -24,9 +24,10 @@ def getNumFromChar(c):
 	return charnum
 def seedstring (stru):
 	num=0
-	for i in stru:
+	l=len (stru)
+	for i in range(l):
 		global totalnormchar,RAND_MAX
-		num+=getNumFromChar(i)
+		num+=getNumFromChar(stru[l-i-1])
 		num*=totalnormchar;
 		num%=RAND_MAX
 	return num
