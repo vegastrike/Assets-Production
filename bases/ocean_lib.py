@@ -8,7 +8,7 @@ def MakeLandingAndConcourse (time_of_day='_day'):
 
     plist=VS.musicAddList('ocean.m3u')
     VS.musicPlayList(plist)
-	dynamic_mission.CreateMissions()
+    dynamic_mission.CreateMissions()
     new_time_of_day=time_of_day
     if (vsrandom.randrange(0,3)==0):
         new_time_of_day='_storm'
