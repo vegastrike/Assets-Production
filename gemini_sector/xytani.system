@@ -1,4 +1,4 @@
-<system name="Xytani" background="backgrounds/blue_galaxy1" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
+<system scalesystem="3" name="Xytani" background="backgrounds/blue_galaxy1" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
 <Light>
 <ambient red="000.0" green="000.0" blue="000.0"/>
 <diffuse red="1" green="0.894427190999916" blue="0.707106781186548"/>

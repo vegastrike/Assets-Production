@@ -1,4 +1,4 @@
-<system name="Shangri La" background="backgrounds/fiery_galaxy" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
+<system scalesystem="3" name="Shangri La" background="backgrounds/fiery_galaxy" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
 <Light>
 <ambient red="000.0" green="000.0" blue="000.0"/>
 <diffuse red="1" green="1" blue="0.836660026534076"/>
