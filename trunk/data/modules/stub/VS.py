@@ -51,6 +51,9 @@ def popSystem():
 def getSystemFile():
    print "getSystemFile" 
    return _sysfile[-1]
+def getPlanetRadiusPercent ():
+	return .75
+
 def getSystemName():
    print "getSystemName" 
    return _sysfile[-1]+' system'
@@ -90,9 +93,17 @@ def GetFactionIndex(name):
       return _factions.index(name)
    return 0
 def GetRelation(myfac,theirfac):
-   print "GetRelation" 
-   import vsrandom
-   return vsrandom.uniform(-1,1)
+	import faction_ships
+	try:
+		myn=faction_ships.factionToInt(myfac)
+		enn=faction_ships.factionToInt(theirfac)
+		if enn in faction_ships.enemies[myn]:
+			return -1
+		return 0
+	except:
+		print 'bad faction'+myfac + theirfac 
+		import vsrandom
+		return vsrandom.uniform(-1,1)
 def AdjustRelation(myfac,theirfac,val):
    print "AdjustRelation"
 def GetNumFactions():
@@ -112,6 +123,12 @@ def GetGalaxyProperty(sysname,faction):
    import faction_ships
    import vsrandom
    return faction_ships.factions[vsrandom.randrange(0,len(faction_ships.factions))]
+def GetGalaxyFaction(sysname):
+	return GetGalaxyProperty(sysname,"faction")
+def SetGalaxyFaction(sysname,faction):
+	print faction+' took over '+sysname
+	print 'NEWS STORY'
+
 def GetNumAdjacentSystems(mystr):
    import vsrandom
    return vsrandom.randrange(1,6)
@@ -132,6 +149,8 @@ def musicPlayList(mylist):
    print "musicPlayList"
 _difficulty=.88
 def LoadMission (whichmission):
+   temp = str(whichmission)
+def LoadMissionScript (whichmission):
    temp = str(whichmission)
 def GetDifficulty():
    return _difficulty

@@ -100,6 +100,17 @@ def ReadStringList (cp,key):
 def AllFlightgroups (faction):
 	key = MakeFactionKey (faction)
 	return ReadStringList(ccp,key)
+def NumAllFlightgroups (faction):
+	key = MakeFactionKey(faction)
+	return Director.getSaveStringLength(ccp,key)
+def RandomFlightgroup (faction):
+	key = MakeFactionKey(faction)
+	i = Director.getSaveStringLength(ccp,MakeFactionKey(faction))
+	if (i==0):
+		return ''
+	import vsrandom
+	return Director.getSaveString(ccp,key,vsrandom.randrange(0,i))
+
 def ListToPipe (tup):
 	fina=''
 	if (len(tup)):
@@ -338,6 +349,9 @@ def BaseFG(faction,system):
 	if (BaseFGInSystem(faction,system)):
 		return LandedShipsInFG (BaseFGInSystemName(system),faction)		
 	return []
+def NumFactionFGsInSystem(faction,system):
+	return  Director.getSaveStringLength (ccp,MakeStarSystemFGKey (system))
+	
 def CountFactionShipsInSystem(faction,system):
 	count=0
 	for fgs in FGsInSystem (faction,system):
