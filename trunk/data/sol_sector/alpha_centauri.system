@@ -26,9 +26,10 @@
         <planet name="Rigil Kentaurus" file="sol/sun.png" radius="20000" gravity="20" z="00000"  Red=".9" Green=".9" Blue=".9" ReflectNoLight="true" light="0">
 	        <planet name="AlphaCentauriB" file="stars/white_star.png" radius="14920" gravity="20" rk="60000" si="60000"  Red="1" Green=".47" Blue=".38" ReflectNoLight="true" light="1" year="180000" day="1000"/> 
 		<planet name="JumpToAlphaCentauri" file="jump.png" alpha="ONE ONE" radius="900" day="1000" year="28000" ri="36000" sk="35000" destination="sol_sector/alpha_centauri"/>
-		<planet name="Weigert" file="planets/Dirt2.png" radius="2800" ri="80000" sk="80000" year="10000" day="2000"/>
-		<planet name="Holman" file="planets/m_class5.png" radius="3500" ri="100000" sk="100000" year="15000" day="4000">
+		<planet name="Weigert" file="planets/Dirt1.png" radius="2800" ri="80000" sk="80000" year="10000" day="2000"/>
+		<planet name="Holman" file="planets/m_class.png" radius="3500" ri="100000" sk="100000" year="15000" day="4000">
 			<planet name="JumpToSol" file="jump.png" alpha="ONE ONE" radius="500" faction="neutral" sk="20000" ri="25555" day="100" year="8000" destination="sol_sector/sol"/>
+			<unit name="Naval Shipyard" file="factory" faction="confed" sk="30000" rj="30000"/>
 			<planet name="Hart" file="planets/rocky.png" radius="300" ri="15000" sj="18000" day="1000" year="1000"/>	
 		</planet>
 		<planet name="Kasting" file="planets/gas_giant5.png" radius="10000" ri="90000" sj="130000" day="1200" year="10000">
