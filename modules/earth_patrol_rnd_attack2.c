@@ -10,7 +10,7 @@ module earth_patrol_rnd_attack2 {
   void initgame(){
     lasttime=0.0;
     drone=0;
-    waittime=random.random(10.0,30.0);
+    waittime=50.0;
     faction_ships.make_ships_list();
   };
 
@@ -53,7 +53,7 @@ module earth_patrol_rnd_attack2 {
     if((time-lasttime)>waittime){
       launch_new_ships();
 
-      waittime=waittime+random.random(5.0,10.0);
+      waittime=waittime+random.random(0.0,5.0);
       lasttime=time;
     }
 

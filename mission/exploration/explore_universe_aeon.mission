@@ -6,11 +6,12 @@
 	<variables>
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 		<var name="defaultplayer" value="blue"/>
+		<var name="credits" value="3500"/>
 		<var name="mission_name" value="4 versus 4" />
 
 		<var name="system" value="vega_sector/hellespont" />
 		<var name="description" value="The universe unfolds before you" />
-		<var name="savegame" value="explore_universe_nova" />
+		<var name="savegame" value="explore_universe_aeon" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="aera" type="aeon" ainame="default" waves="1" nr_ships="1">
