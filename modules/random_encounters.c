@@ -74,10 +74,6 @@ module random_encounters {
     while (!(_std.isNull(un))) {
       if (_unit.getDistance(unit,un)<detection_distance) {
 	if ((!_unit.isSignificant(un))&&(!_unit.isSun(un))) {
-	  object name = _unit.getFgName (un);
-	  object testname2 = _unit.getName(un);
-	  float blah = _unit.getDistance(unit,un);
-	  _io.printf ("unit not sig %d %f %s %s\n",num_ships,blah,name,testname2);
 	  num_ships=num_ships+1;
 	}
       }
@@ -124,7 +120,6 @@ module random_encounters {
 	SetModeZero();
       }else {
 	if ((_unit.getDistance(un,player_unit)<significant_distance)&&(_unit.isSignificant(un))) {
-      	  _io.printf ("playerwithin obj");
 	  SetModeOne (un);
 	  return un;
 	}	  
@@ -143,7 +138,6 @@ module random_encounters {
     }
   };
   void loop() {
-    //    _io.printf ("loop");
     object un = decideMode ();
     if (curmode!=lastmode) {
       _io.printf ("curmodechange %d %d",curmode,lastmode);
@@ -154,11 +148,8 @@ module random_encounters {
       	  _io.printf ("launch near");
 	  launch_near (un);
 	} 
-       	_io.printf ("found done");
       }
-      _io.printf ("mode change done");
     }
-    //    _io.printf ("loopdone");
   };
   void initstarsystem () {
     last_ship=0;
