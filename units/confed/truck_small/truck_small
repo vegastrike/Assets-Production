@@ -1,40 +1,52 @@
-<Unit>
-       	<Jump delay="15" jumpenergy="100"/>
-	<Meshfile file="space_truck-CrewCommand.xmesh" />
-	<Meshfile file="space_truck-EngineExt.xmesh" />
-	<Meshfile file="truck_small-hull_dock.xmesh" />
-	<Meshfile file="truck_small-hull_shell.xmesh" />
-	<Meshfile file="space_truck-EngineInt.xmesh" />
-<!--	<Meshfile file="space_truck-Fuel_Tanks.xmesh" /> -->
-	<Meshfile file="space_truck-Rod01.xmesh" />
-	<Meshfile file="space_truck-Rod02.xmesh" />
-	<Meshfile file="space_truck-Rod03.xmesh" />
-	<Meshfile file="space_truck-Rod04.xmesh" />
-
-	<Thrust>
-		<Engine Afterburner="1000.000000" Forward="800" Retro="700" Left="100" Right="100" Top="100" Bottom="100"/>
-		<Maneuver yaw="366.200050" pitch="421.600025" roll="366.200050"/>
+<Unit >
+	<Jump delay = "15" jumpenergy = "100"  >
+	</Jump>
+	<Meshfile file = "space_truck-CrewCommand.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "space_truck-EngineExt.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "truck_small-hull_dock.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "truck_small-hull_shell.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "space_truck-EngineInt.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "space_truck-Rod01.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "space_truck-Rod02.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "space_truck-Rod03.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "space_truck-Rod04.xmesh"  >
+	</Meshfile>
+	<Thrust >
+		<Engine Afterburner = "3133382" Forward = "2506705" Retro = "2193367" Left = "313338" Right = "313338" Top = "313338" Bottom = "313338"  >
+		</Engine>
+		<Maneuver yaw = "1147444" pitch = "1321033" roll = "1147444"  >
+		</Maneuver>
 	</Thrust>
-	<Sound>
+	<Sound  >
 	</Sound>
-	<Defense>
-		<Armor front="300" right="500" left="500" back="400"/>
-		<Shields front="300.000000" back="250.000000" recharge="60.000000"/>
-		<Hull strength="800.000000"/>
+	<Defense >
+		<Armor front = "300" right = "500" left = "500" back = "400"  >
+		</Armor>
+		<Shields front = "300.000000" back = "250.000000" recharge = "60.000000"  >
+		</Shields>
+		<Hull strength = "800.000000"  >
+		</Hull>
 	</Defense>
-	<Stats mass="40" momentofinertia="10" fuel="4000000000"></Stats>
-	<Computer yaw="40" pitch="40" roll="40" afterburner="500" maxspeed="80"/>
-	<Energy>
-		<Reactor recharge="100" limit="1000"/>
+	<Stats mass = "125335" momentofinertia = "31333" fuel = "4000000000"  >
+	</Stats>
+	<Computer yaw = "40" pitch = "40" roll = "40" afterburner = "500" maxspeed = "80"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "100" limit = "1000"  >
+		</Reactor>
 	</Energy>
-       
-		<cockpit file="heavy-cockpit.cpt" x="-51.01025" y="-7.52875" z="136.3585"/>
-
-		<Subunit file="cargo" x="0" y="0" z="54.00075"/>
-<Light file="engine1.png" x="0" y="0" z="-63.01675" size="12.5" r="0.698039216" g="0.39215686" b="0.39215686"/>
-
-
-
-
-
+	<cockpit file = "heavy-cockpit.cpt" x = "-51.01025" y = "-7.52875" z = "136.3585"  >
+	</cockpit>
+	<Subunit file = "cargo" x = "0" y = "0" z = "54.00075"  >
+	</Subunit>
+	<Light file = "engine1.png" x = "0" y = "0" z = "-63.01675" size = "12.5" r = "0.698039216" g = "0.39215686" b = "0.39215686"  >
+	</Light>
 </Unit>

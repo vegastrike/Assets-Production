@@ -12,7 +12,7 @@
 		<Hull strength="8000"/>
 	</Defense>
 
-<Stats mass="600" momentofinertia="200" fuel="20000"></Stats>
+<Stats mass="43911050000" momentofinertia="20000000000" fuel="20000"></Stats>
        
 
 <!-- new elements added -->

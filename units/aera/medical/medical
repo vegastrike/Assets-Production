@@ -12,7 +12,7 @@
 		<Hull strength="2000"/>
 	</Defense>
 
-<Stats mass="600" momentofinertia="60" fuel="20000"></Stats>
+<Stats mass="8985900000" momentofinertia="898590000" fuel="20000"></Stats>
 <Dock x="-60" y="69" z="-92" size="12"/>
 <Dock x="-46" y="69" z="-92" size="12"/>
 <Dock x="-32" y="69" z="-92" size="12"/>
