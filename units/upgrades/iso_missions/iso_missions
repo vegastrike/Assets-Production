@@ -20,15 +20,11 @@
 		<Maneuver yaw="000000" pitch="0" roll="0"/>
 	</Thrust>
 	<Hold volume="4">
-	<Category file="missions/Merchant">
+	<Category file="missions/ISO">
 		<import price="1" quantity="-2" quantitystddev="3"/>
 	</Category>
-	<Category file="missions/Neutral">
+	<Category file="missions/Attack_Retro">
 		<import price="1" quantity="-2" quantitystddev="3"/>
 	</Category>
-	<Category file="missions/Attack_Pirate">
-		<import price="1" quantity="-2" quantitystddev="3"/>
-	</Category>
-
 	</Hold>
 </Unit>

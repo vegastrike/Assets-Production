@@ -572,6 +572,217 @@
 		<Category file="Contraband/Aera">
 
 		</Category>
+
+
+
+
+<Category file="missions/Neutral">
+<Cargo file="bounty/bounty.mission" quantity="1"/>
+<Cargo file="patrol/patrol_5_insys.mission" quantity="1"/>
+<Cargo file="patrol/scout_insys.mission" quantity="1"/>
+<Cargo file="patrol/scout_outsys.mission" quantity="1"/>
+<Cargo file="patrol/patrol_6_insys.mission" quantity="1"/>
+<Cargo file="patrol/patrol_10_outsys.mission" quantity="1"/>
+<Cargo file="patrol/patrol_6_outsys.mission" quantity="1"/>
+<Cargo file="patrol/patrol_far.mission" quantity="1"/>
+<Cargo file="patrol/scout_far.mission" quantity="1"/>
+<Cargo file="patrol/patrol.mission" quantity="1"/>
+<Cargo file="patrol/patrol_5_outsys.mission" quantity="1"/>
+<Cargo file="patrol/patrol_10_insys.mission" quantity="1"/>
+</Category>
+
+
+
+<Category file="missions/Confed">
+<Cargo file="escort/confed/outsystem_escort.mission" quantity="1"/>
+<Cargo file="escort/confed/insystem_escort.mission" quantity="1"/>
+<Cargo file="cargo/confed/to_fleet_insystem.mission" quantity="1"/>
+<Cargo file="cargo/confed/to_base_outsystem.mission" quantity="1"/>
+<Cargo file="cargo/confed/to_base_insystem.mission" quantity="1"/>
+<Cargo file="cargo/confed/to_base_extreme_range.mission" quantity="1"/>
+<Cargo file="cargo/confed/to_fleet_extreme_range.mission" quantity="1"/>
+<Cargo file="cargo/confed/to_fleet_outsystem.mission" quantity="1"/>
+</Category>
+<Category file="missions/Confed_Milspec">
+<Cargo file="escort/confed/insystem_critical_escort.mission" quantity="1"/>
+<Cargo file="escort/confed/outsystem_critical_escort.mission" quantity="1"/>
+<Cargo file="cargo/confed/to_fleet_insystem_critical.mission" quantity="1"/>
+<Cargo file="cargo/confed/to_fleet_critical_outsystem.mission" quantity="1"/>
+<Cargo file="cargo/confed/to_base_insystem_critical.mission" quantity="1"/>
+<Cargo file="cargo/confed/to_base_critical_outsystem.mission" quantity="1"/>
+</Category>
+<Category file="missions/Aera">
+<Cargo file="escort/aera/outsystem_escort.mission" quantity="1"/>
+<Cargo file="escort/aera/insystem_escort.mission" quantity="1"/>
+<Cargo file="cargo/aera/to_fleet_insystem.mission" quantity="1"/>
+<Cargo file="cargo/aera/to_base_outsystem.mission" quantity="1"/>
+<Cargo file="cargo/aera/to_base_insystem.mission" quantity="1"/>
+<Cargo file="cargo/aera/to_base_extreme_range.mission" quantity="1"/>
+<Cargo file="cargo/aera/to_fleet_extreme_range.mission" quantity="1"/>
+<Cargo file="cargo/aera/to_fleet_outsystem.mission" quantity="1"/>
+</Category>
+<Category file="missions/Aera_Milspec">
+<Cargo file="escort/aera/insystem_critical_escort.mission" quantity="1"/>
+<Cargo file="escort/aera/outsystem_critical_escort.mission" quantity="1"/>
+<Cargo file="cargo/aera/to_fleet_insystem_critical.mission" quantity="1"/>
+<Cargo file="cargo/aera/to_fleet_critical_outsystem.mission" quantity="1"/>
+<Cargo file="cargo/aera/to_base_critical_outsystem.mission" quantity="1"/>
+<Cargo file="cargo/aera/to_base_insystem_critical.mission" quantity="1"/>
+</Category>
+<Category file="missions/Rlaan">
+<Cargo file="escort/rlaan/outsystem_escort.mission" quantity="1"/>
+<Cargo file="escort/rlaan/insystem_escort.mission" quantity="1"/>
+</Category>
+<Category file="missions/Rlaan_Milspec">
+<Cargo file="escort/rlaan/insystem_critical_escort.mission" quantity="1"/>
+<Cargo file="escort/rlaan/outsystem_critical_escort.mission" quantity="1"/>
+</Category>
+<Category file="missions/Pirate">
+<Cargo file="escort/pirate/insystem_critical_escort.mission" quantity="1"/>
+<Cargo file="escort/pirate/outsystem_critical_escort.mission" quantity="1"/>
+<Cargo file="escort/pirate/outsystem_escort.mission" quantity="1"/>
+<Cargo file="escort/pirate/insystem_escort.mission" quantity="1"/>
+<Cargo file="cargo/pirates/to_fleet_insystem.mission" quantity="1"/>
+<Cargo file="cargo/pirates/to_base_outsystem.mission" quantity="1"/>
+<Cargo file="cargo/pirates/to_base_insystem.mission" quantity="1"/>
+<Cargo file="cargo/pirates/to_base_extreme_range.mission" quantity="1"/>
+<Cargo file="cargo/pirates/to_fleet_extreme_range.mission" quantity="1"/>
+<Cargo file="cargo/pirates/to_fleet_outsystem.mission" quantity="1"/>
+
+</Category>
+<Category file="missions/ISO">
+<Cargo file="escort/iso/insystem_critical_escort.mission" quantity="1"/>
+<Cargo file="escort/iso/outsystem_critical_escort.mission" quantity="1"/>
+<Cargo file="escort/iso/outsystem_escort.mission" quantity="1"/>
+<Cargo file="escort/iso/insystem_escort.mission" quantity="1"/>
+<Cargo file="cargo/iso/to_fleet_insystem_critical.mission" quantity="1"/>
+<Cargo file="cargo/iso/to_fleet_critical_outsystem.mission" quantity="1"/>
+<Cargo file="cargo/iso/to_fleet_insystem.mission" quantity="1"/>
+<Cargo file="cargo/iso/to_base_outsystem.mission" quantity="1"/>
+<Cargo file="cargo/iso/to_base_insystem.mission" quantity="1"/>
+<Cargo file="cargo/iso/to_base_extreme_range.mission" quantity="1"/>
+<Cargo file="cargo/iso/to_fleet_extreme_range.mission" quantity="1"/>
+<Cargo file="cargo/iso/to_base_insystem_critical.mission" quantity="1"/>
+<Cargo file="cargo/iso/to_base_critical_outsystem.mission" quantity="1"/>
+<Cargo file="cargo/iso/to_fleet_outsystem.mission" quantity="1"/>
+</Category>
+<Category file="missions/Merchant">
+<Cargo file="escort/merchant/insystem_critical_escort.mission" quantity="1"/>
+<Cargo file="escort/merchant/outsystem_critical_escort.mission" quantity="1"/>
+<Cargo file="escort/merchant/outsystem_escort.mission" quantity="1"/>
+<Cargo file="escort/merchant/insystem_escort.mission" quantity="1"/>
+<Cargo file="cargo/merchant/to_starship_outsystem.mission" quantity="1"/>
+<Cargo file="cargo/merchant/to_base_outsystem.mission" quantity="1"/>
+<Cargo file="cargo/merchant/to_base_insystem.mission" quantity="1"/>
+<Cargo file="cargo/merchant/to_base_extreme_range.mission" quantity="1"/>
+<Cargo file="cargo/merchant/to_starship_insystem.mission" quantity="1"/>
+<Cargo file="cargo/merchant/to_starship_extreme_range.mission" quantity="1"/>
+
+</Category>
+<Category file="missions/Retro">
+
+</Category>
+
+<Category file="missions/Attack_ISO">
+<Cargo file="defend/iso/defend_small_attack.mission" quantity="1"/>
+<Cargo file="defend/iso/defend_lone_attack.mission" quantity="1"/>
+<Cargo file="defend/iso/defend_medium_attack.mission" quantity="1"/>
+<Cargo file="defend/iso/defend_large_attack.mission" quantity="1"/>
+<Cargo file="bounty/iso/bounty_insystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/iso/bounty_escape_wing.mission" quantity="1"/>
+<Cargo file="bounty/iso/bounty_escape.mission" quantity="1"/>
+<Cargo file="bounty/iso/bounty_outsystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/iso/bounty_escape_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/iso/bounty_insystem.mission" quantity="1"/>
+<Cargo file="bounty/iso/bounty_outsystem.mission" quantity="1"/>
+<Cargo file="bounty/iso/bounty_outsystem_group.mission" quantity="1"/>
+<Cargo file="bounty/iso/bounty_outsystem_wing.mission" quantity="1"/>
+<Cargo file="bounty/iso/bounty_insystem_wing.mission" quantity="1"/>
+</Category>
+<Category file="missions/Attack_Aera">
+<Cargo file="defend/aera/defend_small_attack.mission" quantity="1"/>
+<Cargo file="defend/aera/defend_lone_attack.mission" quantity="1"/>
+<Cargo file="defend/aera/defend_medium_attack.mission" quantity="1"/>
+<Cargo file="defend/aera/defend_large_attack.mission" quantity="1"/>
+<Cargo file="bounty/aera/bounty_insystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/aera/bounty_escape_wing.mission" quantity="1"/>
+<Cargo file="bounty/aera/bounty_escape.mission" quantity="1"/>
+<Cargo file="bounty/aera/bounty_outsystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/aera/bounty_escape_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/aera/bounty_insystem.mission" quantity="1"/>
+<Cargo file="bounty/aera/bounty_outsystem.mission" quantity="1"/>
+<Cargo file="bounty/aera/bounty_outsystem_group.mission" quantity="1"/>
+<Cargo file="bounty/aera/bounty_outsystem_wing.mission" quantity="1"/>
+<Cargo file="bounty/aera/bounty_insystem_wing.mission" quantity="1"/>
+</Category>
+<Category file="missions/Attack_Rlaan">
+<Cargo file="defend/rlaan/defend_small_attack.mission" quantity="1"/>
+<Cargo file="defend/rlaan/defend_lone_attack.mission" quantity="1"/>
+<Cargo file="defend/rlaan/defend_medium_attack.mission" quantity="1"/>
+<Cargo file="defend/rlaan/defend_large_attack.mission" quantity="1"/>
+<Cargo file="bounty/rlaan/bounty_insystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/rlaan/bounty_escape_wing.mission" quantity="1"/>
+<Cargo file="bounty/rlaan/bounty_escape.mission" quantity="1"/>
+<Cargo file="bounty/rlaan/bounty_outsystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/rlaan/bounty_escape_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/rlaan/bounty_insystem.mission" quantity="1"/>
+<Cargo file="bounty/rlaan/bounty_outsystem.mission" quantity="1"/>
+<Cargo file="bounty/rlaan/bounty_outsystem_group.mission" quantity="1"/>
+<Cargo file="bounty/rlaan/bounty_outsystem_wing.mission" quantity="1"/>
+<Cargo file="bounty/rlaan/bounty_insystem_wing.mission" quantity="1"/>
+</Category>
+<Category file="missions/Attack_Pirate">
+<Cargo file="defend/pirates/defend_small_attack.mission" quantity="1"/>
+<Cargo file="defend/pirates/defend_lone_attack.mission" quantity="1"/>
+<Cargo file="defend/pirates/defend_medium_attack.mission" quantity="1"/>
+<Cargo file="defend/pirates/defend_large_attack.mission" quantity="1"/>
+<Cargo file="bounty/pirates/bounty_insystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/pirates/bounty_escape_wing.mission" quantity="1"/>
+<Cargo file="bounty/pirates/bounty_escape.mission" quantity="1"/>
+<Cargo file="bounty/pirates/bounty_outsystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/pirates/bounty_escape_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/pirates/bounty_insystem.mission" quantity="1"/>
+<Cargo file="bounty/pirates/bounty_outsystem.mission" quantity="1"/>
+<Cargo file="bounty/pirates/bounty_outsystem_group.mission" quantity="1"/>
+<Cargo file="bounty/pirates/bounty_outsystem_wing.mission" quantity="1"/>
+<Cargo file="bounty/pirates/bounty_insystem_wing.mission" quantity="1"/>
+</Category>
+<Category file="missions/Attack_Retro">
+<Cargo file="defend/retro/defend_small_attack.mission" quantity="1"/>
+<Cargo file="defend/retro/defend_lone_attack.mission" quantity="1"/>
+<Cargo file="defend/retro/defend_medium_attack.mission" quantity="1"/>
+<Cargo file="defend/retro/defend_large_attack.mission" quantity="1"/>
+<Cargo file="bounty/retro/bounty_insystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/retro/bounty_escape_wing.mission" quantity="1"/>
+<Cargo file="bounty/retro/bounty_escape.mission" quantity="1"/>
+<Cargo file="bounty/retro/bounty_outsystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/retro/bounty_escape_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/retro/bounty_insystem.mission" quantity="1"/>
+<Cargo file="bounty/retro/bounty_outsystem.mission" quantity="1"/>
+<Cargo file="bounty/retro/bounty_outsystem_group.mission" quantity="1"/>
+<Cargo file="bounty/retro/bounty_outsystem_wing.mission" quantity="1"/>
+<Cargo file="bounty/retro/bounty_insystem_wing.mission" quantity="1"/>
+</Category>
+<Category file="missions/Attack_Merchant">
+</Category>
+<Category file="missions/Attack_Confed">
+<Cargo file="defend/confed/defend_small_attack.mission" quantity="1"/>
+<Cargo file="defend/confed/defend_lone_attack.mission" quantity="1"/>
+<Cargo file="defend/confed/defend_medium_attack.mission" quantity="1"/>
+<Cargo file="defend/confed/defend_large_attack.mission" quantity="1"/>
+<Cargo file="bounty/confed/bounty_insystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/confed/bounty_escape_wing.mission" quantity="1"/>
+<Cargo file="bounty/confed/bounty_escape.mission" quantity="1"/>
+<Cargo file="bounty/confed/bounty_outsystem_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/confed/bounty_escape_headhunting.mission" quantity="1"/>
+<Cargo file="bounty/confed/bounty_insystem.mission" quantity="1"/>
+<Cargo file="bounty/confed/bounty_outsystem.mission" quantity="1"/>
+<Cargo file="bounty/confed/bounty_outsystem_group.mission" quantity="1"/>
+<Cargo file="bounty/confed/bounty_outsystem_wing.mission" quantity="1"/>
+<Cargo file="bounty/confed/bounty_insystem_wing.mission" quantity="1"/>
+</Category>
+<Category file="missions/Attack_Hunter">
+</Category>
 	</Hold>
 </Unit>
 

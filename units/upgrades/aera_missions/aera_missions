@@ -20,15 +20,16 @@
 		<Maneuver yaw="000000" pitch="0" roll="0"/>
 	</Thrust>
 	<Hold volume="4">
-	<Category file="missions/Merchant">
+	<Category file="missions/Aera">
 		<import price="1" quantity="-2" quantitystddev="3"/>
 	</Category>
-	<Category file="missions/Neutral">
+	<Category file="missions/Attack_Confed">
 		<import price="1" quantity="-2" quantitystddev="3"/>
 	</Category>
-	<Category file="missions/Attack_Pirate">
+	<Category file="missions/Attack_Rlaan">
 		<import price="1" quantity="-2" quantitystddev="3"/>
 	</Category>
+
 
 	</Hold>
 </Unit>
