@@ -5,24 +5,25 @@
   import faction_ships
 
   def NextPos (un, pos):
-    rad=_unit.getRSize (un)
+    rad=_unit.rSize (un)
     whichcoord = random.random(0,2)
-    x = _olist.at (pos,whichcoord)
+    x = pos[whichcoord]
+    pos = [pos[0],pos[1],pos[2]]
     x=x+3.0*rad
-    _olist.set (pos,whichcoord,x)
+    pos[whichcoord]=x
+    return (pos[0],pos[1],pos[2])
   
   def move_to (un, where):
     un.setPosition(where)
     un.setTarget (VS.Unit())
-    NextPos (un,where)
+    return NextPos (un,where)
   
   def whereTo (radius, launch_around):
     pos = launch_around.getPosition ()    
     rsize = ((launch_around.rSize())*2.0)+radius
-    pos=(pos[0]+rsize*random.randomsign()
-         pos[1]+rsize*random.randomsign()
-         pos[2]+rsize*random.randomsign())
-    return pos
+    return (pos[0]+rsize*random.randomsign()
+            pos[1]+rsize*random.randomsign()
+            pos[2]+rsize*random.randomsign())
   
   def look_for (fg, faction, numships,myunit,  pos, gcd):
     i=0
@@ -42,7 +43,7 @@
 	    if (fac==faction)):
 	      if (numships>0):
 		if (random.random()<0.75):
-		  move_to (un,pos)
+		  pos=move_to (un,pos)
 		  numships-=1
 		  print "TTYmoving %s to current area" % (name)
 	      else:
@@ -50,23 +51,25 @@
 		un.Kill()
 		print "TTYaxing %s" % (name)
       i-=1
-    return numships
+    return (numships,pos)
   
   def LaunchNext (fg, fac, type, ai, pos, logo):
     newship = launch.launch (fg,fac,type,ai,1,1,pos,logo)
-    rad=_unit.getRSize (newship)
+    rad=unit.rSize (newship)
     VS.playAnimation ("warp.ani",pos,(3.0*rad))
-    NextPos (newship,pos)
+    return NextPos (newship,pos)
 
   def launch_wave_around ( fg, faction, ai, nr_ships, capship, radius, myunit, garbage_collection_distance,logo):
     pos = whereTo(radius, myunit)
     nr_ships = look_for (fg,faction,nr_ships,myunit,pos,garbage_collection_distance)
+    pos = nr_ships[1]
+    nr_ships = nr_ships[0]
     while (nr_ships>0):
       type=""
       if (capship):
 	type = faction_ships.getRandomCapitol(faction)
       else:
 	type = faction_ships.getRandomFighter(faction)
-      LaunchNext (fg,faction,type, ai, pos,logo)
+      pos = LaunchNext (fg,faction,type, ai, pos,logo)
       nr_ships-=1
    
