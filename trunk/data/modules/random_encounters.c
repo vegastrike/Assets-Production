@@ -153,11 +153,11 @@ module random_encounters {
       }else {
 	localfaction = faction_ships.get_friend_of(localfaction);
       }
-      object fighter = faction_ships.getRandomFighter (localfaction);
+      //      object fighter = faction_ships.getRandomFighter (localfaction);
 
       int numship= random.randomint (1,gen_num_ships);
       float det_distance = _olist.at (cur,6);
-      launch_recycle.launch_wave_around(localfaction,fighter,"default",numship,generation_distance*_std.Rnd()*0.9,un, 2.0*det_distance);
+      launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,false,generation_distance*_std.Rnd()*0.9,un, 2.0*det_distance);
       float rnd_num = _std.Rnd();
       if (rnd_num<capship_prob) {
 	if (AsteroidNear (un,_olist.at (cur,5))) {
@@ -165,7 +165,7 @@ module random_encounters {
 	}else {
 	  _io.printf ("no asty near");
 	  object capship = faction_ships.getRandomCapitol (localfaction);
-	  object launched=launch.launch_wave_around_unit("Capitol",localfaction,capship,"default",1,200.0,capship_gen_distance*_std.Rnd()*0.9,un);
+	  launch_recycle.launch_wave_around("Capitol",localfaction,"default",1,true,capship_gen_distance*(0.5+(_std.Rnd()*0.4)),un, 8.0*det_distance);
 	}
       }
       _string.delete (localfaction);
