@@ -35,6 +35,8 @@ else:
 		launch.launch_wave_around_unit (fgname,"ISO",type,"default",1,80,300,playa).SetTarget(playa)
 		launch.launch_wave_around_unit (fgname,"ISO",type,"default",1,80,300,playa).SetTarget(playa)
 		launch.launch_wave_around_unit (fgname,"ISO",type,"default",1,80,300,playa).SetTarget(playa)
+	elif (fixers.checkSaveValue (playernum,"iso_mission2",-1) ||fixers.checkSaveValue (playernum,"iso_mission3",-1) ||fixers.checkSaveValue (playernum,"iso_mission4",-1)):
+		Base.Message ("You have failed the ISO.  I should have known not to entrust a self serving mercenary with the key plans of our organization. Go now... make money for yourself--I know you do not care for the peoples future.")
 	else:
 		if (fixers.checkSaveValue (playernum,"iso_mission1",1) and fixers.checkSaveValue(playernum,"iso_mission2",0)):			
 			Base.Message ("Congratulations!")#assign mis 2
