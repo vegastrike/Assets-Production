@@ -1,4 +1,5 @@
 <Unit>
+       	<Jump delay="15" jumpenergy="100"/>
 	<Meshfile file="space_truck-CrewCommand.xmesh" />
 	<Meshfile file="space_truck-EngineExt.xmesh" />
 	<Meshfile file="space_truck-EngineInt.xmesh" />
@@ -32,6 +33,6 @@
 
 
 
-       	<Jump delay="15" jumpenergy="100"/>
+
 
 </Unit>
