@@ -4,13 +4,14 @@ import unit
 import ship_upgrades
 import VS
 import sys
-
+import dj_lib
 def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=True):
   diff=usingDifficulty()
   if useani:
     VS.playAnimation ("warp.ani",vec,300.0)
   if (not diff or (type.find(".blank")==-1)):
     ret = VS.launch (fgname,type,faction,"unit",ai,nr_ships,nr_waves,VS.SafeEntrancePoint (vec,40),logo)
+    dj_lib.PlayMusik(0,dj_lib.HOSTILE_NEWLAUNCH_DISTANCE)
     return ret
   rsize=0.0
   diffic = VS.GetDifficulty()
@@ -24,6 +25,7 @@ def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=Tr
     vec=(vec[0]-rsize,
          vec[1],#-rsize
         vec[2]-rsize)
+  dj_lib.PlayMusik(0,dj_lib.HOSTILE_NEWLAUNCH_DISTANCE)
   return ret
 
 def launch_waves_around_area(fgname,faction,type,ai,nr_ships,nr_waves,r1,r2,pos,logo='',useani=True):
