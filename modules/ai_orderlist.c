@@ -249,6 +249,7 @@ module ai_orderlist {
     float abort_range=_omap.get(my_flyto_map,"abort_range");
 
     order.findAndErase(my_order,my_last_order);
+    my_last_order_index=my_flyto_index;
 
     if(!_string.equal(wp_name,"-none-")){
       // we don't fly to a position, but to a unit
@@ -256,6 +257,7 @@ module ai_orderlist {
 
       if(_std.isNull(my_flyto_unit)){
 	_io.printf("%s: waypoint %s not found\n",my_fgid,wp_name);
+	_std.setNull(my_last_order);
 	return;
       }
       else if(_unit.isJumppoint(my_flyto_unit)){
@@ -286,7 +288,6 @@ module ai_orderlist {
 
     _unit.setTarget(my_unit,null_target);
 
-    my_last_order_index=my_flyto_index;
   };
 
   // -----------------------------------------------------------
@@ -366,6 +367,16 @@ module ai_orderlist {
   // -----------------------------------------------------------
 
   void checkLastModeAbort(){
+    if(_std.isNull(my_last_order)){
+      // due to an error the order could not even be started
+      _olist.set(my_done_list,my_last_order_index,true);
+
+      _std.setNull(my_last_order);
+      my_mode=0-1;
+
+      return;
+    }
+
     object found_order=_order.findOrder(my_order,my_last_order);
 
     if(_std.isNull(found_order)){
