@@ -93,9 +93,13 @@ def formatNameTags(word,names):
 	"""formats a news tag to be the string so desired
 	valid tags include "system_sector", "aggressor_nick"
 	and "defender_homeplanet" """
-	[pre,var,tag] = string.split(word,"_")	
-	global allUsefullVariables
-	var_string = allUsefullVariables[var]
+	try:
+		[pre,var,tag] = string.split(word,"_")	
+		global allUsefullVariables
+		var_string = allUsefullVariables[var]
+	except:
+		print str(word)+" is not a valid dict name"
+		return word
 	if var == "system":
 		if tag == "system":
 			return formatProperTitle(formatName(allUsefullVariables["system"][allUsefullVariables["system"].index("/")+1:]))
