@@ -4,9 +4,11 @@ module total_war {
   import faction_ships;
   import launch;
   import vec3;
+  import unit;
 
   float lasttime;
   float waittime;
+  object unit_list;
 
   void initgame(){
     lasttime=0.0;
@@ -53,5 +55,10 @@ module total_war {
       waittime=random.random(5.0,10.0);
       lasttime=time;
     }
+  };
+
+  void end(){
+    _io.PrintFloats(:s1="endgame";);
+    unit_list=unit.makeUnitList();
   };
 }
