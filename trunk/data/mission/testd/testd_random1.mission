@@ -28,7 +28,7 @@
 			</setvar>
 
 			<setvar name="random_tmp">
-				<call name="Rnd"/>
+				<call module="_std" name="Rnd"/>
 			</setvar>
 			<setvar name="random_count">
 				<fmath math="+">
@@ -43,7 +43,7 @@
 				</fmath>
 			</setvar>
 
-			<call name="PrintFloats" s1="last_random_count,random_count,random_tmp,total_count: ">
+			<call module="_io" name="PrintFloats" s1="last_random_count,random_count,random_tmp,total_count: ">
 				<var name="last_random_count"/>
 				<var name="random_count"/>
 				<var name="random_tmp"/>
@@ -56,16 +56,16 @@
 					<const type="float" value="0.5"/>
 				</test>
 				<block>
-					<call name="PrintFloats" s1="rnd is greater than 0.5"/>
+					<call module="_io" name="PrintFloats" s1="rnd is greater than 0.5"/>
 				</block>
 				<block>
-					<call name="PrintFloats" s1="rnd is smaller than 0.5"/>
+					<call module="_io" name="PrintFloats" s1="rnd is smaller than 0.5"/>
 					<if>
 						<test test="le">
 							<var name="random_tmp"/>
 							<const type="float" value="0.25"/>
 						</test>
-						<call name="PrintFloats" s1="rnd is even smaller than 0.25"/>
+						<call module="_io" name="PrintFloats" s1="rnd is even smaller than 0.25"/>
 						<block>
 						</block>
 					</if>
