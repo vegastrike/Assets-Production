@@ -1,4 +1,7 @@
 <mission>
+	<settings>
+		<origin  planet="earth" x="-30000.0" y="-4000.0" z="-30000.0"/>
+	</settings>
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
