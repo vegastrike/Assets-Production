@@ -50,9 +50,13 @@ def interleave (slist):
 _seed=0	
 def rands(intseed):
 	global RAND_MAX
-	intseed = ( intseed * 1103515245 + 12345);
-	intseed %= RAND_MAX;
-	return intseed;
+	intseed = ( intseed * 1103515245 + 12345)
+	intseed = intseed %RAND_MAX
+	try:
+		intseed=int(intseed)
+	except:
+		return intseed
+	return intseed
 def rand():
 	global _seed
 	_seed = rands (_seed)
