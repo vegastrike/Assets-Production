@@ -21,7 +21,7 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
 
-<!--                <flightgroup name="blue" faction="aera" type="firefly" ainame="default" waves="8" nr_ships="3">
+                <flightgroup name="blue" faction="aera" type="firefly" ainame="default" waves="8" nr_ships="3">
 			<pos x="50000" y="5000.0" z="29000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>

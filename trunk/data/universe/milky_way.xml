@@ -56,6 +56,10 @@
 			<var name="namelist" value="greek.txt"/><!-- Sol Sector uses green names for planets -->			
 
 		</sector>
+		<sector name="aera_sector">
+			<var name="unitlist" value="smallunits1.txt"/>
+			<var name="faction" value="aera"/>
+		</sector>
 		<sector name="vega_sector">
 			<var name="faction" value="confed"/> <!-- if variable is not specified in teh actual system it will check in the sector -->
 			<var name="namelist" value="celtic.txt"/><!-- Vega Sector uses celtic names for planets -->
