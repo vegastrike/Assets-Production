@@ -100,6 +100,7 @@ module ai_orderlist {
   class object my_fgid; // my flightgroup id
   class float my_resolution; 
   class object my_last_order; // the currently executed order
+  class object my_last_order_id; // the index of the order
   class float my_last_time; // for checking time with my_resolution
   class int my_mode; // current order mode
   class object my_flyto_unit; //if flyto: the unit where I flyto
@@ -168,9 +169,9 @@ module ai_orderlist {
   // -----------------------------------------------------------
 
   void executeOrder(){
-    _io.printf("%s: executing order\n",my_fgid);
+    //    _io.printf("%s: executing order\n",my_fgid);
     //my_do_attack=false;
-    _io.printf("%s: attack=%b defend=%b flyto=%b\n",my_fgid,my_do_attack,my_do_defend,my_do_flyto);
+    //    _io.printf("%s: attack=%b defend=%b flyto=%b\n",my_fgid,my_do_attack,my_do_defend,my_do_flyto);
     if(my_do_attack){
       // I should attack
       _io.printf("%s: executing order attack0\n",my_fgid);
@@ -310,7 +311,7 @@ module ai_orderlist {
     
     while((!_std.isNull(unit))){
       if(!_std.equal(my_unit,unit)){
-	_io.printf("%s: checking ship %d\n",my_fgid,ship_nr);
+	//	_io.printf("%s: checking ship %d\n",my_fgid,ship_nr);
 	object unit_pos=_unit.getPosition(unit);
 	float dist=_unit.getMinDis(my_unit,unit_pos);
 	float relation=_unit.getRelation(my_unit,unit);
@@ -361,7 +362,7 @@ module ai_orderlist {
     my_nearest_ship_dist=min_ship_dist;
     my_nearest_ship=min_ship;
 
-    _io.printf("%s: system scanned\n",my_fgid);
+    //        _io.printf("%s: system scanned\n",my_fgid);
   };
 
   // -----------------------------------------------------------
@@ -372,32 +373,63 @@ module ai_orderlist {
     my_do_flyto=false;
     my_do_patrol=false;
 
-    _io.printf("%s: checking modes\n",my_fgid);
+    //    _io.printf("%s: checking modes\n",my_fgid);
     int size=_olist.size(my_order_list);
 
     int i=0;
     while(i<size){
-      object submap=_olist.at(my_order_list,i);
+      bool done_order=_olist.at(my_done_list,i);
+      if(!done_order){
+	object submap=_olist.at(my_order_list,i);
       
-      object order=_omap.get(submap,"order");
-      _io.printf("%s: order[%d]=%s\n",my_fgid,i,order);
+	object order=_omap.get(submap,"order");
+	//      _io.printf("%s: order[%d]=%s\n",my_fgid,i,order);
 
-      if(_string.equal(order,"flyto")){
-	checkFlyto(submap);
-      }
-      else if(_string.equal(order,"defend")){
-	checkDefend(submap);
-      }
-      else if(_string.equal(order,"attack")){
-	checkAttack(submap);
-      }
-      else if(_string.equal(order,"patrol")){
-	checkPatrol(submap);
+	if(_string.equal(order,"flyto")){
+	  checkFlyto(submap);
+	}
+	else if(_string.equal(order,"defend")){
+	  checkDefend(submap);
+	}
+	else if(_string.equal(order,"attack")){
+	  checkAttack(submap);
+	}
+	else if(_string.equal(order,"patrol")){
+	  checkPatrol(submap);
+	}
       }
       i=i+1;
     }
-
+    
     executeOrder();
+  };
+
+  // -----------------------------------------------------------
+
+  void checkLastModeAbort(){
+    object found_order=_order.findOrder(my_order,my_last_order);
+
+    if(_std.isNull(found_order)){
+      // the last issued order has quit
+      _io.printf("%s: order has quit\n",my_fgid);
+      
+      //      _olist.set(my_done_list,my_last_order_id,true);
+    }
+  };
+
+  // -----------------------------------------------------------
+
+  void initDoneList(){
+    my_done_list=_olist.new();
+    int size=_olist.size(my_order_list);
+    bool bval=false;
+
+    int i=0;
+    while(i<size){
+      object submap=_olist.at(my_order_list,i);
+      _olist.push_back(my_done_list,bval);
+      i=i+1;
+    }
   };
 
   // -----------------------------------------------------------
@@ -419,6 +451,8 @@ module ai_orderlist {
     //last_order=_order.newFlyToWaypoint(waypoint,vel,afterburner,abort_range);
     //_order.enqueueOrder(my_order,last_order);
 
+    initDoneList();
+
     scanSystem();
 
     initStdAction();
@@ -436,7 +470,8 @@ module ai_orderlist {
     float new_time=_std.getGameTime();
 
     if((my_last_time+my_resolution)<new_time){
-      _io.printf("CJHECK\n");
+      _io.printf("%s: checking\n",my_fgid);
+      checkLastModeAbort();
       scanSystem();
       checkModes();
       my_last_time=new_time;
