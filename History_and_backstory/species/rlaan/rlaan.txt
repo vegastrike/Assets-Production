@@ -24,12 +24,15 @@ by a network of millions of small extensions of the skeleton, which together
 form a sort of highly porous lattice that the soft internals reside in.  A 
 defender stands about 1.5 meters high at the top of its carapace, and 2 meters 
 high at its knee joint.  The central body is around one meter in diameter, and a 
-third of a meter in thickness.  Suspended below the central body is the “head” 
-portion of the Rlaan, about half a meter in diameter and also about a third of a 
-meter in thickness, with its bottom covered in a particularly thick extrusion of 
-the exoskeleton.  The manipulator appendages sprout from the region connecting 
-the head with the main body, and end in four radially arranged fingerlike 
-structures.  A worker’s dimensions are about 70% that of a defender.
+third of a meter in thickness.  Out of this central body come the four abulatory 
+limbs, going up and out from the body to the knee joint, and then proceeding 
+down where they terminate in a four-splayed gripping foot. Suspended below the 
+central body is the “head” portion of the Rlaan, about half a meter in diameter 
+and also about a third of a meter in thickness, with its bottom covered in a 
+particularly thick extrusion of the exoskeleton.  The manipulator appendages 
+sprout from the region connecting the head with the main body, and end in four 
+radially arranged fingerlike structures.  A worker’s dimensions are about 70% 
+that of a defender.
 
 
 Habitat:
