@@ -117,6 +117,65 @@ capitols = (("corvette","starrunner","cruiser","carrier","fleetcarrier","escortc
             ("truck","cargoship","corvette","destroyer"), #ISO
             ("unknown_active",) #unknown
            )
+stattable={
+	"nova":(.7,.4,2,1),
+	"tian":(.7,.5,1,1),
+	"avenger":(.8,.3,5,2),
+	"wayfarer":(.3,.2,1,1),
+	"longhaul":(.5,.3,1,2),
+	"khanjarli":(.4,.3,3,2),
+	"epeellcat":(.6,.4,3,1),
+	"firefly":(.6,.3,1,2),
+	"butterfly":(.6,.3,4,1),
+	"dryad":(.4,.4,1,2),
+	"destroyer":(.8,.6,6,10),
+	"fleetcarrier":(.4,.8,3,15),
+	"carrier":(.4,.8,3,15),
+	"cruiser":(.9,.7,10,14),
+	"dagger":(.5,.8,2,1),
+	"cargoship":(.5,.3,1,5),
+	"commerce_center":(.2,.4,1,25),
+	"corvette":(.7,.4,4,6),
+	"destiny":(.6,.8,1,2),
+	"drydock":(0,.2,0,2),
+	"hispidus":(.5,.2,5,2),
+	"katar":(.4,.4,2,1),
+	"kira":(.8,.3,4,2),
+	"kyta":(.7,.4,2,1),
+	"lekra":(.6,.5,2,1),
+	"leokat":(.8,.5,1,2),
+	"metron":(.6,.5,1,2),
+	"mongoose":(.8,.4,2,1),
+	"osprey":(.6,.35,2,1),
+	"relay":(.4,.3,1,10),
+	"research":(.4,.2,1,12),
+	"refinery":(.5,.1,1,20),
+	"revoker":(.4,.5,1,20),
+	"skart":(.8,.5,1,1),
+	"starfish":(.9,.2,3,1),
+	"starfortress":(.9,.6,15,30),
+	"starrunner":(.7,.8,12,12),
+	"truck":(.2,.1,1,4),
+	"vark":(.5,.6,8,4),
+	"vitik":(.6,.8,6,18),
+	"yavok":(.9,.8,14,20),
+	"yrilan":(.8,.5,2,12),
+	"rlaan_cruiser":(.9,.5,2,50),
+	"eagle":(.6,.4,3,2),	
+	"fighter_barracks":(.4,.4,2,16),
+	"escortcarrier":(.8,.5,2,12),   
+	"factory":(.6,.1,2,20),
+	"f109vampire":(.7,.3,2,2),
+	"aeon":(.5,.5,3,1),	
+	"aevant":(.5,.4,4,2),
+	"beholder":(.8,.5,5,10)
+   }
+
+def GetStats ( name):
+	try:
+		return stattable[name]
+	except:
+		return (.5,.5,1,1)
 capitals=capitols
 capitaldict={}
 for i in capitols:
