@@ -458,7 +458,7 @@
 </Missile>
 
 <Missile name="AdvTorpedo" mountsize="heavy-missile">
-<Energy rate="0" sbility="6" refire="3.5" locktime="25">
+<Energy rate="0" refire="3.5" locktime="25">
 </Energy>
 <Damage rate="150" phasedamage="350" longrange="1" radius="150" radialspeed="80" >
 </Damage>c
