@@ -4,7 +4,7 @@
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="1" green="1" blue="1" alpha="1"/>
+<specular red="0" green="0" blue="0" alpha="1"/>
 <diffuse red="1" green="1" blue="1" alpha="1"/>
 </material>
 </texture> 
@@ -13,7 +13,7 @@
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="1" green="1" blue="1" alpha="1"/>
+<specular red="0" green="0" blue="0" alpha="1"/>
 <diffuse red="1" green="1" blue="1" alpha="1"/>
 </material>
 </texture> 
@@ -22,7 +22,7 @@
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="1" green="1" blue="1" alpha="1"/>
+<specular red="0" green="0" blue="0" alpha="1"/>
 <diffuse red="1" green="1" blue="1" alpha="1"/>
 </material>
 </texture> 
@@ -31,7 +31,7 @@
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="1" green="1" blue="1" alpha="1"/>
+<specular red="0" green="0" blue="0" alpha="1"/>
 <diffuse red="1" green="1" blue="1" alpha="1"/>
 </material>
 </texture> 
@@ -40,7 +40,7 @@
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="1" green="1" blue="1" alpha="1"/>
+<specular red="0" green="0" blue="0" alpha="1"/>
 <diffuse red="1" green="1" blue="1" alpha="1"/>
 </material>
 </texture> 
@@ -55,7 +55,7 @@
 </texture> 
 
 <texture file="terrain6.bmp" blend="ONE ZERO" color="6">
-<material reflect="false">
+<material reflect="true">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
 <specular red="1" green="1" blue="1" alpha="1"/>
@@ -67,7 +67,7 @@
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="1" green="1" blue="1" alpha="1"/>
+<specular red="0" green="0" blue="0" alpha="1"/>
 <diffuse red="1" green="1" blue="1" alpha="1"/>
 </material>
 </texture> 
@@ -76,13 +76,13 @@
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="1" green="1" blue="1" alpha="1"/>
+<specular red="0" green="0" blue="0" alpha="1"/>
 <diffuse red="1" green="1" blue="1" alpha="1"/>
 </material>
 </texture> 
 
 <texture file="terrain9.bmp" blend="ONE ZERO" color="9">
-<material reflect="false">
+<material reflect="true">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
 <specular red="1" green="1" blue="1" alpha="1"/>
