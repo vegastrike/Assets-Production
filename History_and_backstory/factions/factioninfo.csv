@@ -1,19 +1,19 @@
-,Primary color,Secondary color,Hull,Client of,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Aera,Light Gray,Mustard Yellow,White,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Aera_Bzbr,Light Gray,Powder Blue,White,Aera,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Aera_merchants,Light Gray,Dark Gray,White,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Andolians_Klk'k,Electric blue,Neon Green,Slate (blue-gray),Andolians,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Andolians_purth,Electric blue,Dark Brown,Slate (blue-gray),Andolians,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Andolians,Electric blue,Dark Blue,Slate (blue-gray),,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Confed,Hunter Green,Dark Blue,White,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Confed_Andolians,Hunter Green,Electric blue,White,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Confed_High Born,Hunter Green,Purple,White,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Confed_Mechanists,Hunter Green,Dark Gray,White,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Confed_Merchants,Hunter Green,Orange,White,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Confed_Purists,Hunter Green,Ivory,White,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Confed_Shapers,Hunter Green,Burgundy,White,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Confed_Unadorned,Hunter Green,Pink,White,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Dgn,Burgundy,Brown,Green,Shapers,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,Primary color,Secondary color,Hull,Client of
+Aera,Light Gray,Mustard Yellow,White,
+Aera_Bzbr,Light Gray,Powder Blue,White,Aera
+Aera_merchants,Light Gray,Dark Gray,White,
+Andolians_Klk'k,Electric blue,Neon Green,Slate (blue-gray),Andolians
+Andolians_purth,Electric blue,Dark Brown,Slate (blue-gray),Andolians
+Andolians,Electric blue,Dark Blue,Slate (blue-gray),
+Confed,Hunter Green,Dark Blue,White,
+Confed_Andolians,Hunter Green,Electric blue,White,
+Confed_High Born,Hunter Green,Purple,White,
+Confed_Mechanists,Hunter Green,Dark Gray,White,
+Confed_Merchants,Hunter Green,Orange,White,
+Confed_Purists,Hunter Green,Ivory,White,
+Confed_Shapers,Hunter Green,Burgundy,White,
+Confed_Unadorned,Hunter Green,Pink,White,
+Dgn,Burgundy,Brown,Green,Shapers
 Forsaken,Yellow,White,Dark gray,
 High Born,Purple,Orange,Dark gray,
 Hunters,Dark Blue,Hunter Green,Charcoal,
@@ -32,7 +32,7 @@ Planets,,,,
 powerups,,,,
 privateer,Charcoal,White,Light gray,
 Purists,Ivory,Light Gray,White,
-Purth,Orange,Light Gray,Dark gray,Merchants
+Purth,Orange,Electric blue,Dark gray,Andolians
 Rlaan,Mauve,Crimson,Dark gray,
 Rlaan_hunters,Mauve,Bright Red,Dark gray,
 Rlaan_Lmpl,Mauve,Green,Dark gray,Rlaan
