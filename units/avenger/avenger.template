@@ -19,8 +19,8 @@
 	</Sound>
 
 
-        <Mount weapon="ParticleBeam" size="heavy capship-light" x="-29.815" y="-6.919" z="30.409"/>
-        <Mount weapon="ParticleBeam" size="heavy capship-light" x="29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="ParticleBeam" size="heavy capship-light autotracking" x="-29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="ParticleBeam" size="heavy capship-light autotracking" x="29.815" y="-6.919" z="30.409"/>
 	<Mount weapon="Penetrator" size="capship-light capship-medium" x="-4.0" y="-4.618" z="19.606" />
 	<Mount weapon="Penetrator" size="capship-light capship-medium" x="4.0" y="-4.618" z="19.606" />
 	<Mount weapon="Penetrator" size="special capship-light capship-medium" x="0.0" y="-4.618" z="19.606" volume="2000" />
