@@ -1,0 +1,39 @@
+<mission>
+	<variables>
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="4 versus 4" />
+		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+		<var name="system" value="pluto_hq" />
+		<var name="description" value="4vs4.txt" />
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="8" nr_ships="4">
+			<pos x="10000.0" y="0.0" z="6500.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="green" faction="confed" type="nova" ainame="default" waves="8" nr_ships="4">
+			<pos offset="blue" x="300.0" y="300.0" z="300.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="yellow" faction="confed" type="tian" ainame="default" waves="8" nr_ships="4">
+			<pos offset="blue" x="-300.0" y="-300.0" z="200.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+<!-- bad dudes -->
+
+                <flightgroup name="alpha" faction="aera" type="aevant" ainame="default" waves="8" nr_ships="4">
+			<pos offset="blue" x="1300.0" y="-300.0" z="200.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="beta" faction="aera" type="aeon" ainame="default" waves="8" nr_ships="4">
+			<pos offset="alpha" x="200.0" y="-300.0" z="200.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+
+        </flightgroups>
+</mission>
