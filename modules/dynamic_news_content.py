@@ -156,9 +156,7 @@ def allNews():
 
 						}
 
-				,"draw"   :	{"good"		: [(0.8,"all","draw is good")
-								  ,(0.8,
-								  ]
+				,"draw"   :	{"good"		: [(0.8,"all","draw is good")]#FIXED by hellcatv...sytnax error
 
 						,"bad"		: [(0.8,"all","draw is bad")]
 
