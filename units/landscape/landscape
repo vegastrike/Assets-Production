@@ -1,4 +1,4 @@
-<unit>
+<unit scale="4">
 	<Defense>
 		<Armor front="0" right="00" left="00" back="00"/>
 		<Shields front="0.000000" back="0.000000" recharge="0.000000" leak="100"/>
@@ -22,6 +22,6 @@
 	<bspmesh file="nothin.xmesh" bsp="1" rapid="1"/>
 	<rapidmesh file="nothin.xmesh" bsp="1" rapid="1"/>
 	<Meshfile file="landscape.xmesh"/>
-<!--	<Meshfile file="reflection.xmesh"/>-->
+	<Meshfile file="reflection.xmesh"/>
 	<Meshfile file="grass.xmesh"/>
 </unit>

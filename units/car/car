@@ -1,11 +1,11 @@
-<Unit scale="1">
-	<cockpit file="medium_cockpit.cpt" x="0" y="2.5" z="5"/>
+<Unit scale="5">
+	<cockpit file="medium_cockpit.cpt" x="0" y="1.5" z=".1"/>
 	<Meshfile file="car.xmesh" />
 
-	<Mount weapon="UnknownBolt" size="Light" x=".000000" y="2.500000" z="4.000000"/>
+	<Mount weapon="UnknownBolt" size="Light" x=".000000" y=".700000" z="4.000000"/>
 <!--	<Mount weapon="Laser" size="Light" x="-1.000000" y="0.000000" z="4.000000"/>-->
 	<Thrust>
-		<Engine Afterburner="1600.000000" Forward="448.000000" Retro="392.000000" Left="224.000000" Right="224.000000" Top="224.000000" Bottom="224.000000"/>
+		<Engine Afterburner="1600.000000" Forward="448.000000" Retro="392.000000" Left="224.000000" Right="224.000000" Top="000000" Bottom="000000"/>
 		<Maneuver yaw="5009.400101" pitch="0" roll="0"/>
 	</Thrust>
 	<Sound>
@@ -24,21 +24,33 @@
        	<Jump delay="1" jumpenergy="90"/>       
 
 <!-- new elements added -->
-<Light file="supernova.bmp" x="-4" y="4.8" z="-14.00000" size="2.00000" red="1" green="0" blue="0"/>
-<Light file="supernova.bmp" x="4" y="4.8" z="-14.00000" size="2.00000" red="1" green="0" blue="0"/>
-<Light file="supernova.bmp" x="0" y="4.8" z="-14.00000" size="2.000000" red="0" green="0" blue="0"/>
+<Light file="supernova.bmp" x="-.8" y=".96" z="-2.800000" size=".400000" red="1" green="0" blue="0"/>
+<Light file="supernova.bmp" x=".8" y=".96" z="-2.800000" size=".400000" red="1" green="0" blue="0"/>
+<Light file="supernova.bmp" x="0" y=".96" z="-2.80000" size=".4000000" red="0" green="0" blue="0"/>
 
-<Light file="supernova.bmp" x="-3" y="4.8" z="-14.00000" size=".70000" red="1" green="1" blue="1"/><!-- backup lights-->
-<Light file="supernova.bmp" x="3" y="4.8" z="-14.00000" size=".70000" red="1" green="1" blue="1"/>
+<Light file="supernova.bmp" x="-.6" y=".96" z="-2.800000" size=".350000" red="1" green="1" blue="1"/><!-- backup lights-->
+<Light file="supernova.bmp" x=".6" y=".96" z="-2.800000" size=".350000" red="1" green="1" blue="1"/>
+
+
+
+<!-- left blinken-->
+<Light file="supernova.bmp" x="-.65" y=".04" z="2.80000" size=".150000" red="1" green="1" blue=".5" />
+<Light file="supernova.bmp" x="-.9" y=".85" z="-2.800000" size=".150000" red="1" green="1" blue=".5"/>
+
+
+<!-- right blinken -->
+<Light file="supernova.bmp" x=".65" y=".04" z="2.80000" size=".150000" red="1" green="1" blue=".5"/>
+<Light file="supernova.bmp" x=".9" y=".85" z="-2.800000" size=".150000" red="1" green="1" blue=".5"/>
+
 
 <!-- headlights!-->
-<Light file="supernova.bmp" x="-2.25" y=".6" z="14.50000" size="1.50000" red="1" green="1" blue="1" />
-<Light file="supernova.bmp" x="2.25" y=".6" z="14.50000" size="1.50000" red="1" green="1" blue="1"/>
+<Light file="supernova.bmp" x="-.45" y=".12" z="2.90000" size="1.0000" red="1" green="1" blue="1" />
+<Light file="supernova.bmp" x=".45" y=".12" z="2.90000" size="1.0000" red="1" green="1" blue="1"/>
 <!-- tail lights -->
-<Light file="supernova.bmp" x="-1" y="4.8" z="-14.00000" size="2.00000" red=".8" green="0" blue="0"/>
-<Light file="supernova.bmp" x="1" y="4.8" z="-14.00000" size="2.00000" red=".8" green="0" blue="0"/>
-<Light file="supernova.bmp" x="-3" y="4.8" z="-14.00000" size="2.00000" red=".8" green="0" blue="0"/>
-<Light file="supernova.bmp" x="3" y="4.8" z="-14.00000" size="2.00000" red=".8" green="0" blue="0"/>
+<Light file="supernova.bmp" x="-.2" y=".96" z="-2.90000" size=".500000" red=".8" green="0" blue="0"/>
+<Light file="supernova.bmp" x=".2" y=".96" z="-2.90000" size=".50000" red=".8" green="0" blue="0"/>
+<Light file="supernova.bmp" x="-.6" y=".96" z="-2.90000" size=".500000" red=".8" green="0" blue="0"/>
+<Light file="supernova.bmp" x=".6" y=".96" z="-2.90000" size=".500000" red=".8" green="0" blue="0"/>
 
 	<Hold volume="10">
 	</Hold>
