@@ -36,9 +36,11 @@ module proving_grounds {
 
 
     object player=_unit.getPlayer();
-    object player_pos=_unit.getPosition(player);
+    if (!_std.isNull(player)) {
+      object player_pos=_unit.getPosition(player);
 
-    launch.launch_wave_around_area("fgname",faction_name,typename,"default",nr_ships,2000.0,10000.0,player_pos);
+      launch.launch_wave_around_area("fgname",faction_name,typename,"default",nr_ships,2000.0,10000.0,player_pos);
+    }
   };
 
   void loop(){
