@@ -256,7 +256,7 @@ def GetShipsInFG(fgname,faction):
 	for num in range(ShipListOffset()+2,len(ships),PerShipDataSize()):
 		count+=int(ships[num])
 	launchnum = vsrandom.randrange(1,6)
-	if (launchnum>count)
+	if (launchnum>count):
 		launchnum=count
 	ret = []
 	for num in range(ShipListOffset(),len(ships),PerShipDataSize()):

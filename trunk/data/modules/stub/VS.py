@@ -32,7 +32,18 @@ def addParticle (loc,vel,col):
 def pushSystem(sysname):
    print "pushSystem"
    _sysfile+=[sysname]
-def popSystem(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def systemInMemory(sys):
+    if (sys in _sysfile):
+        print sys+' in memory'
+	return 1
+    ret = vsrandom.randrange(0,2)
+    if (ret):
+        print sys+' maybe in memory'
+    else:
+        print sys + ' maybe not in memory'
+    return ret
+
+def popSystem():
    del _sysfile[-1]
 def getSystemFile():
    print "getSystemFile" 
