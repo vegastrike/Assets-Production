@@ -20,7 +20,7 @@
 	<Defense HudImage="avenger-hud.spr" RepairDroid="6"  ecm=".3">
 		<Armor front="425" right="383" left="383" back="408"/>
 		<Shields front="600.0" right="520" left="520"  back="570.000000" recharge="30.000000"/>
-		<Cloak cloakmin=".25" cloakrate=".1" cloakenergy="79.0"/>
+		<Cloak cloakmin=".25" cloakrate=".1" cloakenergy="79.0"  cloakglass="false"/>
 		<Hull strength="250.000000"/>
 	</Defense>
 
@@ -47,7 +47,7 @@
         <Mount weapon="ParticleBeam" size="heavy capship-light" x="29.815" y="-6.919" z="30.409"/>
 	<Mount weapon="Penetrator" size="capship-light capship-medium" x="-4.0" y="-4.618" z="19.606" />
 	<Mount weapon="Penetrator" size="capship-light capship-medium" x="4.0" y="-4.618" z="19.606" />
-	<Mount weapon="Penetrator" size="capship-light capship-medium" x="0.0" y="-4.618" z="19.606" />
+	<Mount weapon="Penetrator" size="special capship-light capship-medium" x="0.0" y="-4.618" z="19.606" />
 
 	<Mount weapon="CapIFF" size="light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
 	<Mount weapon="CapIFF" size="light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
