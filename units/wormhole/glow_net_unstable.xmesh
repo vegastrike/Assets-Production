@@ -137,5 +137,8 @@
 </Quad>
 </Polygons>
  <material reflect="0">
+  <Diffuse red="1.00000" green="1.00000" blue="1.00000" alpha="1.00000" />
+  <Ambient red="1.00000" green="1.00000" blue="1.00000" alpha="1.00000" />
+  <Specular red="0.00000" green="0.00000" blue="0.00000" alpha="1.00000"/>
  </material>
 </Mesh>
