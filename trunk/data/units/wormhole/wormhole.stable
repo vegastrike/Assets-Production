@@ -1,0 +1,13 @@
+<Unit>
+
+<Meshfile file="glow_stable.xmesh"/>
+
+	<Defense>
+		<Armor front="100000" right="80000" left="80000" back="100000"/>
+		<Hull strength="250000"/>
+	</Defense>
+	<Subunit file = "wormhole.stableglownetsaccessory" x = "0" y = "0" z = "0" ri = "0" rj = "0" rk = "0" />
+	<Subunit file = "wormhole.stableswirlsaccessory" x = "0" y = "0" z = "0" ri = "0" rj = "0" rk = "0" />
+	<Subunit file = "wormhole.stableswirlsaccessory" x = "0" y = "0" z = "0" ri = "0" rj = "0" rk = "-3.141592654" />
+
+</Unit>
