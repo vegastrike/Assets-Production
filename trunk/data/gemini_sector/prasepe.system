@@ -29,6 +29,6 @@
 
         <planet name="JumpToNewCaledonia" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-14500" x="12500" day="240" destination="gemini_sector/newcaledonia"/>
         <planet name="Nav 2" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="5200" x="7500" day="240" />
-        <unit name= "Saratov"  file="asteroidfighterbase" faction="confed" z="-2500" x="-17500"/>
+        <unit name= "Saratov"  file="MiningBase" faction="confed" z="-2500" x="-17500"/>
         <asteroid  name= "Saratov"  file="AFieldBase" faction="neutral"   z="-2500" x="-17500" day="-14000"  difficulty=".25"></asteroid>         
 </system>

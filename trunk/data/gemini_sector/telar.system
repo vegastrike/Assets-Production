@@ -28,7 +28,7 @@
 </Light>	
 
         <planet name="JumpTo17-AR" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="8500" x="-15500" day="240" destination="gemini_sector/17-ar"/>
-        <unit name= "_"  file="asteroidfighterbase" faction="pirate" z="12500" x="16500"/>
+        <unit name= "_"  file="MiningBase" faction="pirate" z="12500" x="16500"/>
         <asteroid  name= "_"  file="AFieldBase" faction="neutral"   z="12500" x="16500" day="-14000" difficulty=".25"></asteroid>         
         <planet name="JumpToValhalla" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="18000"  day="240" destination="gemini_sector/valhalla" />
         <planet name="JumpToJ900" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-16000" x="0" day="240" destination="gemini_sector/j900"/>

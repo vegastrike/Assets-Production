@@ -29,7 +29,7 @@
 
         <planet name="JumpToNewCaledonia" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-10000" x="14500" day="240" destination="gemini_sector/newcaledonia"/>
         <planet name="JumpToRegallis" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="4800"  day="240" destination="gemini_sector/regallis" />
-        <unit name= "_"  file="asteroidfighterbase" faction="pirate" z="9800" x="14500"/>
+        <unit name= "_"  file="MiningBase" faction="pirate" z="9800" x="14500"/>
         <asteroid  name= "_"  file="AFieldBase" faction="neutral"   z="9800" x="14500" day="-14000" difficulty=".25"></asteroid>         
         <planet name="Nav 4" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="-8000" x="-6500" day="240" />
         <planet name="Nav 5" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="8200" x="0" day="240" />

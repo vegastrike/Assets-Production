@@ -29,6 +29,6 @@
 
         <planet name="JumpToSherwood" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="11200" x="18000" day="240" destination="gemini_sector/sherwood"/>
         <planet name="Nav 2" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="7500" x="-5000" day="240" />
-        <unit name= "Remus"  file="privrefinery" faction="confed" z="-15000" x="-18500"/>
+        <unit name= "Remus"  file="refinery" faction="confed" z="-15000" x="-18500"/>
         <asteroid  name= "_"  file="AFieldBase" faction="neutral"   z="0" x="2000" day="-14000" difficulty=".25"></asteroid>         
 </system>

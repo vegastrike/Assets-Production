@@ -29,7 +29,7 @@
 
         <planet name="JumpToNewDetroit" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="15000" day="240" destination="gemini_sector/newdetroit"/>
         <planet name="Nav 2" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="11000" x="4000" day="240" />
-        <planet name="NewReno" file="planets/m-class17.png" radius="300" gravity="20" z="-14500" x="-14000" si="-3000" day="300">
+        <planet name="NewReno" file="planets/carribean1.png" radius="300" gravity="20" z="-14500" x="-14000" si="-3000" day="300">
                 <planet name="NewReno" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet>
 </system>

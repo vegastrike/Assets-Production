@@ -27,7 +27,7 @@
 <attenuated red="0" blue=".0000001"/>
 </Light>	
         
-        <unit name= "Lisacc"  file="asteroidfighterbase" faction="confed" z="-8800" x="-2500"/>
+        <unit name= "Lisacc"  file="MiningBase" faction="confed" z="-8800" x="-2500"/>
         <asteroid  name= "Lisacc"  file="AFieldBase" faction="neutral"   z="-8800" x="-2500" day="-14000"  difficulty=".25"></asteroid>   
         <planet name="JumpToBlockadePointTango" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="11000" x="7500" day="240" destination="gemini_sector/blockadepointtango" />
         <asteroid  name= "JumpToBlockadePointTango"  file="AFieldBase" faction="neutral"   z="11000" x="7500" day="-14000"  difficulty=".25"></asteroid>    

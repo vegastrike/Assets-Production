@@ -27,7 +27,7 @@
 <attenuated red="0" blue=".0000001"/>
 </Light>	
 
-        <unit name= "Thisbury"  file="privrefinery" faction="confed" z="11000" x="11000"/>
+        <unit name= "Thisbury"  file="refinery" faction="confed" z="11000" x="11000"/>
         <planet name="JumpToNewDetroit" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="11000" x="-18000" day="240" destination="gemini_sector/newdetroit" />
-        <unit name= "Wickerton"  file="privrefinery" faction="confed" z="-5500" x="-14000"/>
+        <unit name= "Wickerton"  file="refinery" faction="confed" z="-5500" x="-14000"/>
 </system>
