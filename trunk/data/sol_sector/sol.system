@@ -19,56 +19,67 @@
 </Light>	
 
         <planet name="sun" file="sol/sun.png" radius="25000" gravity="20" z="30000"  Red=".7" Green=".7" Blue=".7" light="0 1l">
-		<planet name="Mercury" file="sol/mercury.png" radius="1020" gravity="20" ri="34000" rj="0" rk="0" si="0" sj="0" sk="34000" velocity="5" position="0.25">
+		<planet name="Mercury" file="sol/mercury.png" radius="1020" gravity="20" ri="34000" rj="0" rk="0" si="0" sj="0" sk="34000" day="300" year="1000" position="0.25">
 		</planet>
 
-<planet name="Venus" file="sol/venus.png" radius="2000" gravity="20" ri="40000" rj="0" rk="0" si="0" sj="0" sk="40000" velocity="8" position="1.5">
-<unit name= "Victory1"  file="drydock" ri="600" rj="0" rk="0" si="0" sj="0" sk="800" velocity="5" position="0">
-</unit>
-
-		</planet>
-
-		<planet name="Mars" file="sol/mars.png" faction="neutral" radius="3800" gravity="20" ri="75000" rj="0" rk="0" si="0" sj="0" sk="75000" velocity="20" position="0.750">
-			<planet name="Phobos" file="sol/phobos.png" faction="neutral" radius="110" sk="5800" ri="2000"/>
-			<planet name="Deimos" file="sol/deimos.png" faction="neutral" radius="60" sk="20000" ri="20000"/>
-		</planet>
-         
-		<planet name="Jupiter" file="sol/jupiter.png" radius="10000" gravity="20" ri="120000" rj="0" rk="0" si="0" sj="0" sk="100000" velocity="15" position="-1.625">
-			<planet name="Io" file="sol/io.png" radius="452" gravity="0" ri="14200" sk="14200" velocity="3"/>
-			<planet name="Europa" file="sol/europa.png" radius="392" gravity="0" ri="16700" sk="16700" velocity="4"/>
-			<planet name="Ganymede" file="sol/ganymede.png" radius="657" gravity="0" ri="20700" sk="20700" velocity="5"/>
-			<planet name="Callisto" file="sol/callisto.png" radius="600" gravity="0" ri="28800" sk="28830" velocity="6"/>
+<planet name="Venus" file="sol/venus.png" radius="2000" gravity="20" ri="40000" rj="0" rk="0" si="0" sj="0" sk="40000" year="1247" day="500" position="1.5">
 
 		</planet>
 
-		<planet name="Saturn" file="sol/saturn.png" radius="9000" gravity="20" ri="160000" rj="0" rk="0" si="0" sj="-0" sk="180000" velocity="15" position="-2.5">
-			<unit name = "SaturnRing" file="planetary-ring"/>	
-			<unit name= "Victory"  file="drydock" faction="confed" ri="15000" rj="-0" rk="0" si="0" sj="0" sk="15000" velocity="5" position="100">
+		<planet name="Mars" file="sol/mars.png" faction="neutral" radius="3800" gravity="20" ri="70000" rj="0" rk="0" si="0" sj="0" sk="70000" year="7000" day="200" position="0">
+			<unit name= "MarsDrydock"  file="drydock" faction="confed" ri="-6000" rj="6000" rk="0" si="0" sj="-6000" sk="6000" year="900" position="100">
 			</unit>
-			<planet name="Prometheus" file="sol/prometheus.png" radius="12" gravity="0" ri="12390" rj="-12000" sj="-12000" sk="12390" velocity="3"/>
-			<planet name="Janus" file="sol/janus.png" radius="88" gravity="0" ri="15100"  rj="-15000" sj="-15000" sk="15100" velocity="4"/>
-			<planet name="Calypso" file="sol/callista.png" radius="44" gravity="0" ri="17960" rj="-15000" sj="-15000" sk="17960" velocity="4"/>
-			<planet name="Dione" file="sol/dione.png" radius="280" gravity="0" rj="-18000" sj="-18000" ri="18770" sk="18770" velocity="4"/>
-			<planet name="Rhea" file="sol/rhea.png" radius="262" gravity="0" ri="20270" rj="-20000" sj="-20000" sk="20270" velocity="5"/>
-			<planet name="Titan" file="sol/titan.png" radius="643" gravity="0" ri="22222"  rj="-20000" sj="-20000" sk="22222" velocity="6"/>
-			<planet name="Hyperion" file="sol/hyperion.png" radius="100" gravity="0" ri="23481" sk="23481"  rj="-23000" sj="-23000" velocity="6"/>
+			<planet name="Phobos" file="sol/phobos.png" faction="neutral" radius="110" sj="5800" rk="5000" year="2000" />
+			<planet name="Deimos" file="sol/deimos.png" faction="neutral" radius="60" year="1900" sj="-15000" rk="15000"/>
 		</planet>
-		<planet name="Uranus" file="sol/uranus.png" radius="1400" gravity="20" ri="220000" rj="0" rk="0" si="0" sj="0" sk="200000" velocity="20" position="0.125">
-		</planet>
-		<planet name="Neptune" file="sol/neptune.png" radius="2200" gravity="20" ri="240000" rj="0" rk="0" si="0" sj="0" sk="280000" velocity="40" position="1.250">
-		</planet>
-		<planet name="Pluto" file="sol/pluto.png" radius="600" gravity="20" ri="300000" rj="0" rk="0" si="0" sj="0" sk="250000" velocity="50" position="2.375">
+		<asteroid  name= "AsteroidBelt"  file="ABelt" faction="neutral"   ri="85000" sk="95000" year="7000" day="7000" position=".08" difficulty=".25"></asteroid>         
+<!--		<asteroid  name= "AsteroidBelt"  file="ABelt" faction="neutral"   ri="85000" sk="95000" velocity="26" position=".04" difficulty=".25"></asteroid>         
+		<asteroid  name= "AsteroidBelt"  file="ABelt" faction="neutral"   ri="85000" sk="95000" velocity="26" position="-.04" difficulty=".25"></asteroid>         
+		<asteroid  name= "AsteroidBelt"  file="ABelt" faction="neutral"   ri="85000" sk="95000" velocity="26" position=".08" difficulty=".25"></asteroid>         
+		<asteroid  name= "AsteroidBelt"  file="ABelt" faction="neutral"   ri="85000" sk="95000" velocity="26" position="-.08" difficulty=".25"></asteroid>         
+		<asteroid  name= "AsteroidBelt"  file="ABelt" faction="neutral"   ri="85000" sk="95000" velocity="26" position=".12" difficulty=".25"></asteroid>         
+		<asteroid  name= "AsteroidBelt"  file="ABelt" faction="neutral"   ri="85000" sk="95000" velocity="26" position="-.12" difficulty=".25"></asteroid>         
+		<asteroid  name= "AsteroidBelt"  file="ABelt" faction="neutral"   ri="85000" sk="95000" velocity="26" position=".16" difficulty=".25"></asteroid>         
+		<asteroid  name= "AsteroidBelt"  file="ABelt" faction="neutral"   ri="85000" sk="95000" velocity="26" position="-.16" difficulty=".25"></asteroid>         
+
+
+-->
+
+		<planet name="Jupiter" file="sol/jupiter.png" radius="10000" gravity="20" ri="140000" rj="0" rk="0" si="0" sj="0" sk="120000" year="7000" day="2000" position="0">
+			<unit name="Confed HQ" file="ConfedHq" year="5000" rj="-21000" sk="20000" faction="confed"/>
+			<planet name="Io" file="sol/io.png" radius="452" gravity="0" ri="14200" sk="14200" year="1000"/>
+			<planet name="Europa" file="sol/europa.png" radius="392" gravity="0" ri="16700" sk="16700" year="1024"/>
+			<planet name="Ganymede" file="sol/ganymede.png" radius="657" gravity="0" ri="20700" sk="20700" year="768"/>
+			<planet name="Callisto" file="sol/callisto.png" radius="600" gravity="0" ri="28800" sk="28830" year="2543"/>
+
 		</planet>
 
-		<planet name="Earth" file="sol/earth.png" radius="3000" gravity="20" ri="57000" rj="0" rk="0" si="0" sj="0" sk="57000" velocity="0" position="0">
-		<planet name="Earth" file="sol/earthcloudmaptrans.png" alpha="true" radius="3200" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" velocity="0" position="0"/>
+		<planet name="Saturn" file="sol/saturn.png" radius="9000" gravity="20" ri="160000" rj="0" rk="0" si="0" sj="-0" sk="180000" year="9800" position="-2.5" day="200">
+			<unit name = "SaturnRing" file="planetary-ring"/>	
+			<planet name="Calypso" file="sol/callista.png" radius="144" gravity="0" ri="17960" rj="-15000" sj="-15000" sk="17960" year="2500"/>
+			<planet name="Dione" file="sol/dione.png" radius="280" gravity="0" rj="-18000" sj="-18000" ri="18770" sk="18770" year="2400"/>
+			<planet name="Rhea" file="sol/rhea.png" radius="262" gravity="0" ri="20270" rj="-20000" sj="-20000" sk="20270" year="2550"/>
+			<planet name="Titan" file="sol/titan.png" radius="643" gravity="0" ri="22222"  rj="-20000" sj="-20000" sk="22222" year="2800"/>
+			<planet name="Hyperion" file="sol/hyperion.png" radius="100" gravity="0" ri="23481" sk="23481"  rj="-23000" sj="-23000" year="2900"/>
+		</planet>
+		<planet name="Uranus" file="sol/uranus.png" radius="1400" gravity="20" ri="220000" rj="0" rk="0" si="0" sj="0" sk="200000" year="20000" day="600" position="0.125">
+		</planet>
+		<planet name="Neptune" file="sol/neptune.png" radius="2200" gravity="20" ri="240000" rj="0" rk="0" si="0" sj="0" sk="280000" year="23000" day="2000" position="1.250">
+		</planet>
+		<planet name="Pluto" file="sol/pluto.png" radius="600" gravity="20" ri="300000" rj="0" rk="0" si="0" sj="0" sk="250000" year="28000" day="500" position="2.375">
+		</planet>
+
+		<planet name="Earth" file="sol/earth.png" radius="3000" gravity="20" ri="57000" rj="0" rk="0" si="0" sj="0" sk="57000" year="6000" day="900" position="0">
+		<planet name="Earth" file="sol/earthcloudmaptrans.png" alpha="true" radius="3200" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
                 <ContinuousTerrain file="demdata/grandcanyon/continuousterrain.txt" mass=".00000100" y="0000" z="30000" qi="0" qj="0" qk="1" ri="0" rj="1" rk="0" scalex="2" numwraps="4"/>
                                 <Atmosphere radius="10000"/>
 
-			<planet name="Moon" file="sol/moon.png" radius="400" gravity="20" ri="333000" rj="0" rk="0" si="0" sj="0" sk="33000" velocity="2" position="0">			
+			<planet name="Moon" file="sol/moon.png" radius="400" gravity="20" rj="33000" ri="0" rk="0" si="0" sj="0" sk="33000" year="500" day="500" position="0">			
 			</planet>
-			<planet name="Jump" file="jump.png" alpha="ONE ONE" radius="300" gravity="20" ri="10000" rj="0" rk="0" si="0" sj="0" sk="10000" velocity="2" position="1.3" destination="sol_sector/sirius">
+			<planet name="JumpToSirius" file="jump.png" alpha="ONE ONE" radius="300" gravity="20" ri="10000" rj="0" rk="0" si="0" sj="0" sk="10000" year="2000" day="-200"  position="1.3" destination="sol_sector/sirius">
 			</planet>
+			<unit name= "EarthFacility"  file="drydock" rk="33000" rj="0" rk="0" si="0" sj="0" sj="33000" year="2400" position="0" faction="confed">
+		</unit>
 
 		</planet>
 

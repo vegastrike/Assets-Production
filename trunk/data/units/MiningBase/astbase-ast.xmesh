@@ -1,4 +1,4 @@
-<Mesh texture="grydirt2.png" scale="4">
+<Mesh texture="Asteroid.bmp" scale="4">
 <Points>
 	<Point>
 		<Location x="53.564018" y="12.170174" z="81.034683"/>
