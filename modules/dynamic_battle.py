@@ -237,21 +237,17 @@ def randomMovement(fg,fac):
 			fg_util.TransferFG( fg,fac,suggestednewsys);
 		else:
 			pass #print "flightgroup "+fg+" in system "+sys + " is stuck"
-def XProductionRate(fac,type):
-	if fac in type:
-		return type[fac]
-	return type["default"]
 
 def AddFighterTo(fgname,fac):
 	sys = VS.getSystemFile()
 	#print 'add fighter'
 	import generate_dyn_universe
 	numsystems = generate_dyn_universe.systemcount[fac]	
-	numfighters = int(XProductionRate(fac,faction_ships.fighterProductionRate)*numsystems)
+	numfighters = int(generate_dyn_universe.XProductionRate(fac,faction_ships.fighterProductionRate)*numsystems)
 	if (numfighters<1):
 		numfighters=1
 	fg_util.AddShipsToFG (fgname,fac,((faction_ships.getRandomFighter(fac),numfighters),),sys)
-	numcapships = XProductionRate(fac,faction_ships.capitalProductionRate)*numsystems
+	numcapships = generate_dyn_universe.XProductionRate(fac,faction_ships.capitalProductionRate)*numsystems
 	if (numcapships<1):
 		if (vsrandom.uniform(0,1)>numcapships):
 			return
@@ -329,7 +325,7 @@ def KillOne (fg,fac,tn,num,enfg,enfac):
 	if (ejectbuildup>=(1-chancetoeject)**numkilled):
 		global rescuelist
 		rescuelist[sys]=(fac,enfg,enfac)
-		print rescuelist[sys]
+		#print rescuelist[sys]
 		ejectbuildup=0
 	else:
 		ejectbuildup+=chancetoeject 

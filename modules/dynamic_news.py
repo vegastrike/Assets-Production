@@ -101,13 +101,17 @@ def formatNameTags(word,names):
 		print str(word)+" is not a valid dict name"
 		return word
 	if var == "system":
-		if tag == "system":
-			return formatProperTitle(formatName(allUsefullVariables["system"][allUsefullVariables["system"].index("/")+1:]))
 		if tag == "sector":
 			return formatProperTitle(formatName(allUsefullVariables["system"][:allUsefullVariables["system"].index("_")]))
+		if tag != "system":
+			print "error "+tag+" not acceptible VAR_system_tag"
+		return formatProperTitle(formatName(allUsefullVariables["system"][allUsefullVariables["system"].index("/")+1:]))
 	elif var == "stardate":
 		if tag == "value":
 			return allUsefullVariables[var]
+		else:
+			print "stardate wrong"
+			return allUsefulVariables[var]
 	elif tag in ["FG","FGtype"] :
 		return allUsefullVariables[var+tag]
 	elif tag in names["alltags"] and validateDictKeys([var_string,tag],dynamic_news_content.allFactionNames()):
