@@ -183,7 +183,7 @@
 		<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
 	     </Category>
 	     <Category file="missions">
-		<Cargo file="mission/cargo.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+		<Cargo file="mission/cargo.mission" price="1000" quantity="3" mass=".1" volume=".1"/>
 		<Cargo file="mission/inc.mission" price="1000" quantity="100" mass=".1" volume=".1"/>
 		<Cargo file="mission/dec.mission" price="1000" quantity="100" mass=".1" volume=".1"/>
 	     </Category>
