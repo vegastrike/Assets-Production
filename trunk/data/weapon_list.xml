@@ -583,11 +583,11 @@
 <Bolt name="Vaporisator" mountsize="capship-heavy"> 
 <Energy rate="300" refire="1.5">
 </Energy>
-<Damage rate="600" longrange=".8">
+<Damage rate="450" longrange=".8">
 </Damage>
-<Distance speed="400" radialspeed=".8" radius="18" length="90" pulsespeed="15" range="9000" >
+<Distance speed="400" radialspeed=".8" radius="18" length="90" pulsespeed="15" range="4000" >
 </Distance>
-<Appearance file="weapons/neutrongun.png" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
+<Appearance file="weapons/neutrongun.png" soundwav="MASS.WAV" r="1" g=".5" b=".5" a="1" >
 </Appearance>
 </Bolt>
 
@@ -641,7 +641,7 @@
 </Energy>
 <Damage rate="5000" phasedamage="500" longrange="1" radius="1000" radialspeed="200" >
 </Damage>
-<Distance speed="20" pulsespeed="15" range="25000" detonationrange="40" volume="900" >
+<Distance speed="200" pulsespeed="15" range="40000" detonationrange="400" volume="900" >
 </Distance>
 <Appearance file="capshipmissile" >
 </Appearance>
@@ -677,9 +677,22 @@
 </Energy>
 <Damage rate="1200" longrange=".9">
 </Damage>
-<Distance speed="3000" radialspeed=".8" radius="200" length="8" pulsespeed="36" range="17000" >
+<Distance speed="3000" radialspeed=".8" radius="200" length="8" pulsespeed="36" range="19000" >
 </Distance>
 <Appearance file="weapons/heavylaserbeam.png" soundwav="beam.wav" r=".6" g=".1" b=".8" a=".6" >
 </Appearance>
 </Beam>
+
+
+<Bolt name="GrandGauss" mountsize="special">
+<Energy rate="0" stability="0" refire="2.5">
+</Energy>
+<Damage rate="75" phasedamage="65" longrange="1">
+</Damage>
+<Distance speed="14400" radialspeed=".8" radius="50" length ="75" pulsespeed="15" range="24000" volume="4" >
+</Distance>
+<Appearance file="weapons/beam.png" soundwav="MASS.WAV" r="0.1" g=".2" b="1" a="1" >
+</Appearance>
+</Bolt>
+
 </Weapons>
