@@ -1,13 +1,10 @@
 <AggressiveAI close=".05">
-  <hull max = ".5" script="++evade.xml">
+  <bshield max = ".05" script="++evade.xml">
    <threat min=".4" script="++afterburnerslide.xml">
    </threat>
-  </hull>
+  </bshield>
 
-  <meterdistance max="60" script="++turnaway.xml">
-    <hull max="1" script="++shelton-slide.xml">
-      <threat min="0" script="++kickstop.xml"/>
-    </hull>
+  <meterdistance max="75" script="++turnaway.xml">
   <!-- distance less than .1-->
   </meterdistance>
   

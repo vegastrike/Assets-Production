@@ -13,10 +13,20 @@ And if you can design some missions it would rock!
 =================================================
  Contents
 =================================================
-1)
-2)
-
-
+1) Running Vegastrike In Windows
+2) Running Vegastrike From the Command Line
+3) Playing Music in Vegastrike in Windows (Experemintal)
+4) Docking to a Planet or a Capship
+ Trading and Accepting Missions
+5) Interstellar Warp Transit (Jump Drive)
+6) Time Compression / Autopilot
+7) ReSpawn
+8) Transfer Command
+9) Pilot turrets
+10) Single-Player Controls
+11) Features
+12) Editing Missions
+13) Editing AI
 
 =================================================
  Running Vegastrike In Windows
@@ -32,18 +42,18 @@ Or you can run the "Mission Launcher" program and select the correct mission.
 =================================================
 Vegastrike takes a single command parameter indicating which mission it should load
 
-    ./vegastrike mission/explore_universe.mission
+	./vegastrike mission/explore_universe.mission
 
 is an example of a valid mission call.
 
 The -j flag (must be flush with the system) will force a player to begin in a star system.
 
-    ./vegastrike -jvega_sector/vega mission/n_vs_n/confed/confed_2v2.mission
+	./vegastrike -jvega_sector/vega mission/n_vs_n/confed/confed_2v2.mission
 
 will force the bomber mission to run in the vega sector.
 
 =================================================
- Playing Music in Vegastrike in Windows
+ Playing Music in Vegastrike in Windows (Experemintal)
 =================================================
 Run setup.exe and select Windows External Music.
 Make sure winamp isn't  "always on top".
@@ -52,11 +62,28 @@ As vegastrike currently does not have music artists, you must choose the playlis
 During better times...songs on the bottom get played more often during worse times.
 
 =================================================
+ Docking to a Planet or a Capship
+=================================================
+If you wish to earn money, you will need to know how to dock.
+If you wish to get clearence to land at the base or planet, you must communicate that you wish to land by pressing the '0' key.
+In order to dock to starships, you must press 'd' and to undock, press 'd' again or press 'u'.
+Once docked at the planet or base, you may press '0' again to leave your starship and enter the base.
+See the next section for more information about the bases.
+
+=================================================
+ Trading and Accepting Missions
+=================================================
+Once inside a base, you will see a computer sstem with many choices:
+- Mission BBS: This section will allow you to accept missions if you want to get money.
+- Buy Mode:    This area will allow you to buy cargo for ship.  In order to buy cargo, you must have enough credits (see the top of the screen).  On
+
+=================================================
  Interstellar Warp Transit (Jump Drive)
 =================================================
 Most starships come equipped with a warp drive.  Unfortunately they can only be used at large singularities in the space-time continuum.  Your computer signals these points by placing glowing blue balls in those areas.  Their relative size indicates how small a starship must be to fit through the jump point.
 To engage a jump drive, position your ship inside and press 'j'.
 Regulations state that starships should be stopped before jumping-- disasters have resulted from starships travelling at any great speed into a jump point.
+You do not come equipped with one at the beginning, so you must do missions to earn enough money to buy one.
 
 =================================================
  Time Compression / Autopilot
@@ -84,10 +111,10 @@ Press ']' to return to cockpit again. Another press of ']' will get you to your 
 Like with Transfer command, the AI will attack your previously targetted object.
 
 =================================================
- Single-Player Controls:
+ Single-Player Controls
 =================================================
 
-Arrow keys   Flight Sim style turning
+Arrow keys   Flight Sim style turning (you can also use the keypad arrows)
 \            full throttle
 backspace    zero throttle
 =,+          accel
@@ -99,7 +126,7 @@ tab          Afterburners
 j            engage interstellar warp drive (use at clear blue balls)
 *,ins        Spin Right
 /,del        Spin Left
-~(hold down) engage shelton slide
+Shift-~      shelton slide while holding key
 y            match speed
 t            target
 p            target nearest to center of screen
@@ -131,7 +158,7 @@ a,d,w,z      pan ghost cam
 Shift-A      autopilot to the target
 Shift-P      target enemies for your turret
 Shift-N      Turret Nearest Target
-h            Turret Threat Target
+h            Turrets target threats
 `            SheltonKey
 -            DecelKey
 +            AccelKey 
@@ -142,7 +169,7 @@ backspace    StopKey
 \            StartKey
 tab          ABKey 
 !            SuicideKey
-|            PauseKey
+|,pause      PauseKey
 page down    Scroll VDUs down
 page up      Scroll VDUs up
 home         Set Velocity Frame of Refrence
@@ -161,8 +188,7 @@ Shift-Z      Eject cargo
 
 -Autopilot (Shift-A)
 -Better Communications (always has eight choices)
-
---*OLD*--
+--
 -Time compression
 -Multiple Systems
 -Entire Sol sector and Vega sector included!
@@ -189,7 +215,7 @@ Shift-Z      Eject cargo
 -the Normal Force which bounces starships off of each other
 
 =================================================
-Editing Missions  
+ Editing Missions
 =================================================
 
 How to make Vegastrike Missions
@@ -229,7 +255,7 @@ continue with any other flightgroups... you can have as many as you want from as
 </mission>
 
 =================================================
-Editing AI
+ Editing AI
 =================================================
 
 The AI is completely scriptable, and I have not spent all that long perfecting it.  There are included instructions about editing the AI scripts yourself.
