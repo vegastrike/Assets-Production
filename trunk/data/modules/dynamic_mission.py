@@ -135,8 +135,13 @@ def generateCargoMission (path, numcargos,category, fac):
 		category='generic'
 	writedescription("We need to deliver some %s cargo to the %s system. The mission is worth %d to us.  You will deliver it to a base owned by the %s"%(category, processSystem(path[-1]),creds,fac))
 	writemissionname("Cargo/Deliver_%s_to_%s"%(changecat(category),processSystem(path[-1])),path)
-def generateRescueMission(parth,fac,enfg,enfac):
-	pass
+def generateRescueMission(path,rescuelist):
+	numships = vsrandom.randrange(0,6)
+	creds = (numships+len(path))*vsrandom.randrange(2041,3140)
+	writemissionsavegame("import rescue\nntemp=rescue.rescue(%d,0,'%s',%d,'%s','%s',%s)\nntemp=0"%(creds,rescuelist[0],numships,rescuelist[2],rescuelist[1],str(path)))
+	writedescription("SOS! This is an ejected %s pilot under attack by %s forces. I request immediate assistance to the %s system and will offer %d credits for a safe return to the local planet where I may recover."%(rescuelist[0],rescuelist[2],processSystem(path[-1]),creds))
+	writemissionname("Rescue/Rescue_%s_from_%s_ships"%(rescuelist[0],rescuelist[2]),path)
+
 def generateBountyMission (path,fg,fac):
 	typ = fg_util.RandomShipIn(fg,fac)
 	cap = faction_ships.isCapital(typ)
@@ -211,6 +216,9 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 	for i in range (minsysaway,maxsysaway+1):
 		for j in getSystemsNAway(cursystem,i,preferredfaction):
 			import dynamic_battle
+			if (i<2):
+				if j[-1] in dynamic_battle.rescuelist:
+					generateRescueMission(j,dynamic_battle.rescuelist[j[-1]])
 			l = dynamic_battle.BattlesInSystem(j[-1])
 			nodefend=1
 			for k in l:

@@ -54,7 +54,7 @@ class rescue (Director.Mission):
 			L.maxradius=15000
 			self.enemy=L.launch(self.adjsys.SignificantUnit())
 			self.enemy.SetTarget(self.eject)
-			self.enemy.setFgDirective("A")
+			self.enemy.setFgDirective("A.")
 			self.you.SetTarget(self.eject)
 			VS.IOmessage(0,"eject",self.mplay,"This is ejector pod 0x4032 requesting immediate rescue and pickup")
 			self.obj=VS.addObjective("Tractor Ejected Pilot")
@@ -64,6 +64,9 @@ class rescue (Director.Mission):
 				self.enemy.SetTarget(self.eject)
 				self.numejectors=self.you.GetCargo("Pilot").GetQuantity()
 			else:
+				if (self.enemy):
+					self.enemy.SetTarget(self.you)
+					self.enemy.setFgDirective("A.")
 				print 'numej '+str(self.numejectors)
 				if (self.numejectors<self.you.GetCargo("Pilot").GetQuantity()):
 					self.you.removeCargo("Pilot",1,1)
