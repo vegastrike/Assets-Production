@@ -1,13 +1,596 @@
 <SCRIPT>
-  <FaceTarget terminate="0">
-  </FaceTarget>
-<EXECUTEFOR time="10">
   <MatchLin afterburn="0" terminate="0" local="1">
-    <Vector x="0" y="0" z="10000"/>
+  <Vector x="0" y="0" z="10000"/>
   </MatchLin>
-</EXECUTEFOR>
-  <MatchLin afterburn="0" terminate="0" local="1">
-    <Vector x="0" y="0" z="0"/>
-  </MatchLin>
- 
+
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+  <ExecuteFor time="16">
+   <CloakFor time="8">
+   </CloakFor> 
+  </ExecuteFor>
+
+
+
+
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+	<ChangeHeading Terminate="1" Accuracy="0">
+		<Vector Velocity="v"/>		
+	</ChangeHeading>
+  </ExecuteFor>
+  <ExecuteFor time="8">
+   <FaceTarget terminate="0">
+   </FaceTarget>
+  </ExecuteFor>
 </SCRIPT>
