@@ -119,12 +119,16 @@ module ship_upgrades {
     int type = getRandomEngine (diff,cat);
     if (type!=0) {
       temp=_unit.upgrade (un,cat,0,0,true,false);    
+      _io.printf ("Upgrading Engine %s percent %f",cat,temp); 
       _string.delete (cat);
       cat = GetRandomShield (2,type);
       temp=_unit.upgrade (un,cat,0,0,true,false);
+      _io.printf ("Upgrading Shield %s percent %f",cat,temp); 
       _string.delete (cat);
       cat = GetRandomShield (4,type);
       temp=_unit.upgrade (un,cat,0,0,true,false);
+      _io.printf ("Upgrading Shield4 %s percent %f",cat,temp); 
+
     }
     _string.delete (cat);
   };
