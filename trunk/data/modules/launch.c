@@ -1,5 +1,5 @@
 module launch {
-
+  import difficulty;
   import random;
   import unit;
   import ship_upgrades;
