@@ -15,11 +15,11 @@ class wc1_mis0:
         self.nav=[]
         self.visited=[0,0,0]
         self.launched=[0,0,0]
-        self.nav+=[launch.launch("nav1","neutral","navpoint","sitting_duck",1,1,Add(self.origin,(50000,40000,10000)))]
-        self.nav+=[launch.launch("nav2","neutral","navpoint","sitting_duck",1,1,Add(self.origin,(10000,100000,10000)))]
-        self.roids = [VS.launch("Asteroids","AFieldSparse","neutral","asteroid","default",1,1,Add(self.origin,(10000,100000,10000)),""),
-                      VS.launch("Asteroids","AFieldThin","neutral","asteroid","default",1,1,Add(self.origin,(50000,40000,10000)),"")]
-        self.nav+=[launch.launch("nav3","neutral","navpoint","sitting_duck",1,1,Add(self.origin,(-40000,40000,10000)))]
+        self.nav+=[launch.launch("nav1","neutral","navpoint","sitting_duck",1,1,Add(self.origin,(100000,0,50000)))]
+        self.nav+=[launch.launch("nav2","neutral","navpoint","sitting_duck",1,1,Add(self.origin,(0000,0,100000)))]
+        self.roids = [VS.launch("Asteroids","AFieldSparse","neutral","asteroid","default",1,1,Add(self.origin,(0000,0,100000)),""),
+                      VS.launch("Asteroids","AFieldThin","neutral","asteroid","default",1,1,Add(self.origin,(-10000,0,50000)),"")]
+        self.nav+=[launch.launch("nav3","neutral","navpoint","sitting_duck",1,1,Add(self.origin,(-100000,0,48000)))]
     def LaunchNav (self,i,playa):
         if (i==0):
             launch.launch_wave_around_unit("BadGuys","aera","lekra","default",3,100,1000,playa)
