@@ -12,7 +12,6 @@ module attack_jumppoint {
   import random;
   import launch;
   import faction_ships;
-  import go_somewhere_significant;
   int ship_check_count;
   bool defend;
   
@@ -43,7 +42,7 @@ module attack_jumppoint {
 	  _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
 	  _string.delete (name);
 	  _io.message (0,"game","all",str);
-	  go_somewhere_significant.init(you,numsystemsaway,defend,distance_from_base);
+	  go_somewhere_significant.init(you,numsystemsaway,defend,false,distance_from_base);
 
 	  _io.sprintf(str,"And there eliminate any %s starships at a point.",faction);
 	  _io.message (2,"game","all",str);

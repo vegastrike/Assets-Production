@@ -36,7 +36,7 @@ module patrol_system {
 	  _io.sprintf(str,"Greetings, %s. You must patrol a system for us:",name);
 	  _string.delete (name);
 	  _io.message (0,"game","all",str);
-	  go_somewhere_significant.init(you,numsystemsaway,false,distance_from_base);
+	  go_somewhere_significant.init(you,numsystemsaway,false,false,distance_from_base);
 	  _string.delete(str);
 	  patrolpoints=_olist.new();
 	};
