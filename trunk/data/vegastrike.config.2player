@@ -79,6 +79,7 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
  		<bind key="y" modifier="none" command="MatchSpeedKey" />
  		<bind key="J" modifier="none" command="JumpKey" />
  		<bind key="A" modifier="none" command="AutoKey" />
+ 		<bind key="a" modifier="none" command="AutoKey" />
  		<bind key="c" modifier="none" command="CloakKey" />
  		<bind key="E" modifier="none" command="EjectKey" />
  		<bind key="Z" modifier="none" command="EjectCargoKey" />
@@ -179,8 +180,8 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 <!--
 		<bind key="q" modifier="none" command="Cockpit::PitchDown"/>
 		<bind key="z" modifier="none" command="Cockpit::PitchUp"/>
-		<bind key="a" modifier="none" command="Cockpit::YawLeft"/>
-		<bind key="s" modifier="none" command="Cockpit::YawRight"/>
+		<bind key="s" modifier="none" command="Cockpit::YawLeft"/>
+		<bind key="e" modifier="none" command="Cockpit::YawRight"/>
 -->
 
 		<bind key="esc" modifier="none" command="Cockpit::Quit"/>
