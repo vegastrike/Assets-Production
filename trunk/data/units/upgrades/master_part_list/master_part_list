@@ -246,7 +246,7 @@
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Light">
 			<Cargo file="afterburner_generic" price="3000" quantity="1" mass=".01" volume="1" description="The generic afterburner dumps reactive fuel into the superheated exhaust." />
-			<Cargo file="thruster_retrofit" price="20000" quantity="1" mass=".01" volume="1" description="Upgrading to more modern thruster units provides an increase in performance without having to alter the inertial compensator." />
+<!--			<Cargo file="thruster_retrofit" price="20000" quantity="1" mass=".01" volume="1" description="Upgrading to more modern thruster units provides an increase in performance without having to alter the inertial compensator." />-->
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Medium">
 			<Cargo file="afterburner" price="16000" quantity="1" mass=".01" volume="1" description="Dumping fuelinto the superheated exhaust, and adding additional heating elements to the exhaust increases thrust." />
@@ -256,8 +256,8 @@
 		<Category file="upgrades/Engines/Engine_Enhancements_Heavy">
 			<Cargo file="mult_maneuver_enhancer" price="200000" quantity="1" mass=".01" volume="1" description="Minor reinforcements and significant upgrades of the inertial compensators allow for more interesting maneuvers." />
 			<Cargo file="mult_speed_enhancer" price="250000" quantity="1" mass=".01" volume="1" description="By improving the tolerances on a vessel's passive particle shielding and autocompensating software, higher speeds can be safely reached." />
-			<Cargo file="thruster_upgrade" price="30000" quantity="1" mass=".01" volume="1" description="By enhancing the inertial compensators, the existing thrusters can work closer to full output." />
-			<Cargo file="replacement_thrusters" price="40000" quantity="1" mass=".01" volume="1" description="When the inertial compensator can take more than the thrusters can give, it's time for new thrusters." />
+<!--			<Cargo file="thruster_upgrade" price="30000" quantity="1" mass=".01" volume="1" description="By enhancing the inertial compensators, the existing thrusters can work closer to full output." />
+			<Cargo file="replacement_thrusters" price="40000" quantity="1" mass=".01" volume="1" description="When the inertial compensator can take more than the thrusters can give, it's time for new thrusters." />-->
 		</Category>
 		<Category file="upgrades/Shield_Systems/Light">
 			<Cargo file="shield_2" price="3500" quantity="1" mass=".01" volume="1" description="Our license for diplaying the requested data has expired. Please contact the nearest GalTech representative in your planetary system.  \ SHOP AS USUAL, AND AVOID PANIC BUYING. \ \ HAVE A NICE DAY." />
