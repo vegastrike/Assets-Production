@@ -77,8 +77,8 @@ def getPlayer(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=N
 def getPlayerX(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
      print "getPlayerX" 
      return Unit()
-def int getNumPlayers ()(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-     print "int getNumPlayers ()" 
+def getNumPlayers (a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+     print "getNumPlayers" 
      return 1
 
 def string ():
@@ -155,7 +155,7 @@ class Unit:
      print "Destroy"
   def LocalCoordinates(self,un): 
      print "LocalCoordinates" 
-     return Vector(0,0,0)
+     return (0,0,0)
   def InRange(self,target,cone,cap): 
      print "InRange" 
      return 0
@@ -168,13 +168,13 @@ class Unit:
      print "RemoveFromSystem"
   def PositionITTS(self,local_posit,speed): 
      print "PositionITTS" 
-     return QVector(0,0,0)
+     return (0,0,0)
   def Position(self):
      print "Position" 
-     return QVector(0,0,0)
+     return (0,0,0)
   def LocalPosition(self):
      print "LocalPosition" 
-     return QVector(0,0,0)
+     return (0,0,0)
 
   def Threat(self):
      print "Threat" 
@@ -263,7 +263,7 @@ class Unit:
      return 0
   def ClampThrust(self,thrust,afterburn): 
      print "ClampThrust" 
-     return Vector(0,0,0)
+     return (0,0,0)
   def Thrust(self,amt,afterburn): 
      print "Thrust"
   def LateralThrust(self,amt): 
@@ -274,33 +274,33 @@ class Unit:
      print "LongitudinalThrust"
   def ClampVelocity(self,velocity,afterburn): 
      print "ClampVelocity" 
-     return Vector(0,0,0)
+     return (0,0,0)
   def ClampAngVel(self,vel): 
      print "ClampAngVel" 
-     return Vector(0,0,0)
+     return (0,0,0)
   def ClampTorque(self,torque): 
      print "ClampTorque" 
-     return Vector(0,0,0)
+     return (0,0,0)
   def SetOrientation(self,q,r): 
      print "SetOrientation"
   def UpCoordinateLevel(self,v): 
      print "UpCoordinateLevel" 
-     return Vector(0,0,0)
+     return (0,0,0)
   def DownCoordinateLevel(self,v): 
      print "DownCoordinateLevel" 
-     return Vector(0,0,0)
+     return (0,0,0)
   def ToLocalCoordinates(self,v): 
      print "ToLocalCoordinates" 
-     return Vector(0,0,0)
+     return (0,0,0)
   def ToWorldCoordinates(self,v): 
      print "ToWorldCoordinates" 
-     return Vector(0,0,0)
+     return (0,0,0)
   def GetAngularVelocity(self):
      print "GetAngularVelocity" 
-     return Vector(0,0,0)
+     return (0,0,0)
   def GetVelocity(self):
      print "GetVelocity" 
-     return Vector(0,0,0)
+     return (0,0,0)
   def SetVelocity(self,v): 
      print "SetVelocity"
   def SetAngularVelocity(self,v): 
