@@ -20,7 +20,7 @@
 </Defense>
 <Stats mass="0.05" momentofinertia="0.06" fuel="200000"></Stats>
 
-<Computer yaw="110" pitch="124" roll="110" afterburner="1240" maxspeed="420"/>
+<Computer yaw="110" pitch="124" roll="110" afterburner="250" maxspeed="250"/>
 <Energy>
 	<Reactor recharge="10"
 		   limit="100"/>

@@ -6,23 +6,23 @@
 
 <!-- new elements added -->
 		<Thrust>
-		<Engine Afterburner="1" Forward=".5" Retro=".5" Left=".5" Right=".5" Top=".5" Bottom=".5"/>
-		<Maneuver yaw="20" pitch="20" roll="20"/>
+		<Engine Afterburner=".5" Forward=".2" Retro=".2" Left=".2" Right=".2" Top=".2" Bottom=".2"/>
+		<Maneuver yaw="15" pitch="15" roll="15"/>
 	</Thrust>
 	<Sound></Sound>
 	<Mount weapon="HandLaser" x="0.584" z=".4" y=".462"/>
 	<Defense>
-		<Armor front="10" right="10" left="10" back="10"/>
+		<Armor front="20" right="20" left="20" back="20"/>
 		<Shields front="0" back="0" recharge="0"/>
 		<Hull strength="30"/>
 	</Defense>
 	<Stats mass=".1" momentofinertia=".1" fuel="10000"></Stats>
    
-	<Computer yaw="50" pitch="50" roll="50" afterburner="20" maxspeed="10">
+	<Computer yaw="30" pitch="30" roll="50" afterburner="10" maxspeed="5">
 	</Computer>
 
 	<Energy>
-		<Reactor recharge=".1" limit="10"/>
+		<Reactor recharge=".25" limit="10"/>
 	</Energy>
 
 

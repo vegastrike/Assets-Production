@@ -18,9 +18,9 @@
 <Defense>
 	<Hull strength="5"/>
 </Defense>
-<Stats mass="0.1" momentofinertia="0.6" fuel="200000"></Stats>
+<Stats mass="0.1" momentofinertia="0.6" fuel="2000000"></Stats>
 
-<Computer yaw="410" pitch="424" roll="410" afterburner="2000" maxspeed="1800"/>
+<Computer yaw="250" pitch="254" roll="250" afterburner="160" maxspeed="160"/>
 <Energy>
 	<Reactor recharge="10"
 		   limit="100"/>
