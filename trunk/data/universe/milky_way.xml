@@ -313,10 +313,10 @@
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="false"/>
 				<var name="num_natural_phenomena" value="0"/>
-				<var name="jumps" value="sol_sector/Luyten enigma_sector/vespus"/>
+				<var name="jumps" value="sol_sector/luyten enigma_sector/vespus sol_sector/beta_canarus"/>
 				<var name="data" value="1742"/>
 			</sector>	
-			<sector name="beta canarus">
+			<sector name="beta_canarus">
 			        <var name="faction" value="confed"/> 
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
@@ -501,8 +501,8 @@
 				<var name="jumps" value="sol_sector/ross_51g"/>
 				<var name="data" value="1156"/>
 			</sector>
-				<sector name="leonis">
-			      <var name="faction" value="confed"/> 
+			<sector name="leonis">
+			        <var name="faction" value="confed"/> 
 				<var name="sun_radius" value="52000"/>
 				<var name="compactness" value="5"/>
 				<var name="num_stars" value="1"/>
@@ -516,8 +516,7 @@
 				<var name="jumps" value="sol_sector/ross_51g sol_sector/bernards_star sol_sector/alpha_tauri"/>
 				<var name="data" value="1348"/>
 			</sector>
-			</sector>
-				<sector name="bernards_star">
+			<sector name="bernards_star">
 			      <var name="faction" value="confed"/> 
 				<var name="sun_radius" value="12000"/>
 				<var name="compactness" value="1.9"/>
@@ -675,7 +674,7 @@
 				<var name="jumps" value="vega_sector/xanadu"/>
 				<var name="data" value="1283"/>
 			</sector>
-
+		</sector>
 
 
 		<sector name="unexplored_space">
