@@ -1,7 +1,7 @@
 <Unit>	
 	<Defense>
 		<Armor front="0" right="00" left="00" back="00"/>
-		<Shields front="400.000000"  back="400.000000" recharge="40.000000" leak="00"/>
+		<Shields front="400.000000"  back="400.000000" recharge="50.000000" leak="00"/>
 		<Hull strength="00.000000"/>
 		<Cloak missing="1" cloakmin="0" cloakrate="0" cloakglass="0" cloakenergy="0"/>
 	</Defense>
