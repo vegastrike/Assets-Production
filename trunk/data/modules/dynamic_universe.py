@@ -12,7 +12,10 @@ class ShipTracker:
 		self.type=typ
 	def Check(self):
 		import fg_util
-		if (not self.un):
+		dead=not self.un
+		if (not dead):
+			dead = self.un.GetHull()<=0
+		if (dead):
 			if (VS.systemInMemory (self.starsystem)):
 				fg_util.RemoveShipFromFG(self.fgname,self.faction,self.type)
 			else:
