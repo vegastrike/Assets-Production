@@ -45,8 +45,8 @@ module testd_relaunch_orderlist1 {
 
     if(step==0){
 
-    launch.launch_around_unit("Kalkos","green","confed","destiny","_ai_stationary",2,4);
-    launch.launch_around_unit("Kalkos","red","confed","nova","_ai_stationary",2,4);
+    bool retval=launch.launch_around_unit("Kalkos","green","confed","destiny","_ai_stationary",2,4);
+    retval=launch.launch_around_unit("Kalkos","red","confed","nova","_ai_stationary",2,4);
 
       orderlist_green=ai_orderlist.newOrderList();
       ai_orderlist.orderFlyTo(orderlist_green,"Arados",null_pos,1.0,true,500.0);

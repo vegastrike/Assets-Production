@@ -15,7 +15,7 @@ module waypoints {
       float y=_olist.at(wp,1);
       float z=_olist.at(wp,2);
 
-      _unit.launch(outstr,"neutral","dagger","_ai_stationary",1,x,y,z);
+      object launched =_unit.launch(outstr,"neutral","dagger","_ai_stationary",1,x,y,z);
       i=i+1;
     }
   };

@@ -96,8 +96,8 @@ module testd_ai_orderlist2 {
   };
 
   void populateMarsSystem(){
-    launch.launch_around_station("mars-station","purple","confed","destiny","_ai_stationary",4,2);
-    launch.launch_around_station("mars-station","pink","confed","nova","_ai_stationary",4,2);
+    bool retval=launch.launch_around_station("mars-station","purple","confed","destiny","_ai_stationary",4,2);
+    retval=launch.launch_around_station("mars-station","pink","confed","nova","_ai_stationary",4,2);
 
     order.spaceSuperiority("purple-");
     order.spaceSuperiority("pink-");
