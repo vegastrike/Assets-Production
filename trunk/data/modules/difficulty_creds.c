@@ -9,7 +9,9 @@ module difficulty {
     return getPlayerCredDifficulty (_unit.getPlayer());
   };
   bool usingDifficulty () {
-    return (_std.getDifficulty()!=1.0);
+    object player=_unit.getPlayer();
+    object temp = _unit.getSaveData (player,"31337ness");
+    return (_olist.size(temp)>0);
   };
   float getPlayerDifficulty (object playa) {
     float ret=0.0;
@@ -80,8 +82,8 @@ module difficulty {
        	  float difficulty = _olist.at (save,0);
 
 	  difficulty=difficulty+((newcreds-oldcreds)/credsToMax);
-	  if (difficulty>.99999){
-	    difficulty=.99999;
+	  if (difficulty>1.0){
+	    difficulty=1.0;
 	  }
 	  _olist.set(save,0,difficulty);
 	  _std.setDifficulty(difficulty);

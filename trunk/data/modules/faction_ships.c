@@ -51,7 +51,7 @@ module faction_ships {
     ship_upgrades.init();
   };
   void init(){
-    bool useblank = (difficulty.getCredDifficulty()!=0.0);
+    bool useblank = (difficulty.usingDifficulty());
     make_factions_list();
     make_ships_list(useblank);
     ship_upgrades.init();
