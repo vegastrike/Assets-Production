@@ -17,6 +17,6 @@
 
 	<Thrust>
 		<Engine Afterburner="0" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
-		<Maneuver yaw="1.18" pitch="1.18" roll="1.18"/>
+		<Maneuver yaw="67.60901" pitch="67.60901" roll="67.60901"/>
 	</Thrust>
 </Unit>
