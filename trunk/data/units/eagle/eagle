@@ -1,4 +1,4 @@
-<Unit scale=".5">
+<Unit scale=".75">
 <Meshfile file="eagle-h-m.xmesh"/>
 <Meshfile file="eagle-h-o.xmesh"/>
 <Meshfile file="eagle-h-w.xmesh"/>
@@ -37,7 +37,7 @@
 
 	<Defense HudImage="eagle-hud.spr">
 		<Armor front="200" right="215" left="215" back="240"/>
-		<Shields front="300.000000" back="280.000000" recharge="18.000000"/>
+		<Shields front="300.000000" back="280.000000" recharge="17.000000"/>
 		<Hull strength="300.000000"/>
 	</Defense>
 
