@@ -1,12 +1,12 @@
 import Director
 def findQuest (playernum,questname,value=1):
-    print 'finding nonperisstent quest'
-    print questname
+#    print 'finding nonperisstent quest'
+#    print questname
     mylen=Director.getSaveDataLength(int(playernum),str(questname))
-    print mylen
+#    print mylen
     if (mylen>0):
         myfloat=Director.getSaveData(int(playernum),str(questname),0)
-        print myfloat
+#        print myfloat
         if (myfloat==value):
             return 1
     return 0
