@@ -9,7 +9,7 @@
 		<var name="mission_name" value="4 versus 4" />
 		<var name="system" value="sol_sector/vega" />
 		<var name="description" value="Explore the universe as a neutral, quick scout!\Enjoy all 200 star systems\in sol and vega sectors!" />
-		<var name="savegame" value="explore_universe" />
+		<var name="savegame" value="explore_universe_neutral" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="neutral" type="tian" ainame="default" waves="1" nr_ships="1">
@@ -20,19 +20,17 @@
 
 	<module name="director">
 
-		<import name="explore_universe"/>
+		<import name="explore_rare_enemies"/>
 
 		<script name="initgame">
-			<exec module="explore_universe" name="initgame"/>
+			<exec module="explore_rare_enemies" name="initgame"/>
 		</script>
 
 		<script name="gameloop">
-			<exec module="explore_universe" name="gameloop"/>
+			<exec module="explore_rare_enemies" name="loop"/>
 		</script>
 
-		<script name="endgame">
-			<exec module="explore_universe" name="endgame"/>
-		</script>
+
 	</module>
 
 </mission>
