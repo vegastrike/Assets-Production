@@ -1,22 +1,52 @@
 # 291 "unit_wrapper.cpp"import random
 
-def pushSystem(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "pushSystem"
-def popSystem(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "popSystem"
-def getSystemFile(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "getSystemFile" ~ return ""
-def getSystemName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "getSystemName" ~ return ""
-def getUnitList(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "getUnitList" ~ return un_iter()
-def getUnit(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "getUnit" ~ return Unit()
-def launchJumppoint(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "launchJumppoint" ~ return Unit()
-def launch(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "launch" ~ return Unit()
-def getRandCargo(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "getRandCargo" ~ return Cargo("","",1,1,1,1)
-def GetFactionName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "GetFactionName" ~ return ""
-def GetFactionIndex(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "GetFactionIndex" ~ return -1
-def GetRelation(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "GetRelation" ~ return 0
-def AdjustRelation(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "AdjustRelation"
-def GetNumFactions(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "GetNumFactions" ~ return 0
-def GetGameTime(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "GetGameTime" ~ return 0
-def SetTimeCompression(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "SetTimeCompression"
-def GetAdjacentSystem(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): ~ print "GetAdjacentSystem" ~ return ""
+def pushSystem(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "pushSystem"
+def popSystem(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "popSystem"
+def getSystemFile(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "getSystemFile" 
+   return ""
+def getSystemName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "getSystemName" 
+   return ""
+def getUnitList(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "getUnitList" 
+   return un_iter()
+def getUnit(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "getUnit" 
+   return Unit()
+def launchJumppoint(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "launchJumppoint" 
+   return Unit()
+def launch(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "launch" 
+   return Unit()
+def getRandCargo(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "getRandCargo" 
+   return Cargo("","",1,1,1,1)
+def GetFactionName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "GetFactionName" 
+   return ""
+def GetFactionIndex(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "GetFactionIndex" 
+   return -1
+def GetRelation(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "GetRelation" 
+   return 0
+def AdjustRelation(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "AdjustRelation"
+def GetNumFactions(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "GetNumFactions" 
+   return 0
+def GetGameTime(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "GetGameTime" 
+   return 0
+def SetTimeCompression(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "SetTimeCompression"
+def GetAdjacentSystem(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "GetAdjacentSystem" 
+   return ""
 def GetGalaxyProperty(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "GetGalaxyProperty" 
    return ""
