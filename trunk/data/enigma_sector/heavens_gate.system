@@ -13,14 +13,14 @@
 			<Ring file="planets/ring.png" innerradius="2259608" outerradius="2460058"  ri="-0.714508" rj="0.436248" rk="0.546960" si="-0.669016" sj="-0.197311" sk="-0.716580" wrapx="180" wrapy="1" year="3081"/>
 			<Ring file="planets/ring.png" innerradius="1966615" outerradius="2177051"  wrapx="220" wrapy="9" year="-3081"/>
 			<Unit name="Inner Rings" file="MiningBase" ri="2059833" rj="-400" rk="0" si="0" sj="-400" sk="2059833" faction="confed"  year="1118260" day="20700" />
-			<planet name="JumpToNovayaKiev"	file="jump.png" ri="2059833" rj="0" rk="-8462" si="-8462" sj="0" sk="2059833" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/novaya_kiev"/>
-			<planet name="JumpToAdams" file="jump.png" ri="2059833" rj="6086" rk="6086" si="6086" sj="6086" sk="2059833" radius="800" year="34154250" day="16020" alpha="ONE ONE" destination="enigma_sector/adams"/>
-			<planet name="JumpToAxis" file="jump.png" ri="2065362" rj="0" rk="14376" si="2065362" sj="0" sk="14376" radius="800" year="2405000" day="18500" alpha="ONE ONE" destination="enigma_sector/axis"/>
-			<planet name="JumpToCallimachius" file="jump.png" ri="2065362" rj="0" rk="6299" si="6299" sj="0" sk="2065362" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/callimachius"/>
+			<planet name="JumpToNovayaKiev"	file="jump.png" ri="2059833" rj="0" rk="-8462" si="-8462" sj="0" sk="2059833" radius="200" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/novaya_kiev"/>
+			<planet name="JumpToAdams" file="jump.png" ri="2059833" rj="6086" rk="6086" si="6086" sj="6086" sk="2059833" radius="200" year="34154250" day="16020" alpha="ONE ONE" destination="enigma_sector/adams"/>
+			<planet name="JumpToAxis" file="jump.png" ri="2065362" rj="0" rk="14376" si="2065362" sj="0" sk="14376" radius="200" year="2405000" day="18500" alpha="ONE ONE" destination="enigma_sector/axis"/>
+			<planet name="JumpToCallimachius" file="jump.png" ri="2065362" rj="0" rk="6299" si="6299" sj="0" sk="2065362" radius="200" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/callimachius"/>
 			<Unit name="Outer Rings" file="MiningBase" ri="2071742" rj="400" rk="0" si="0" sj="400" sk="2071742" faction="confed"  year="1118260" day="16700" />
-			<planet name="JumpToTesla" file="jump.png" ri="2082021" rj="5360" rk="0" si="0" sj="5360" sk="2082021" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/tesla"/>
-			<planet name="JumpToSterling" file="jump.png" ri="2076881" rj="2680" rk="6724" si="2076881" sj="2680" sk="6724" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/sterling"/>
-			<planet name="JumpToVespus" file="jump.png" ri="2071742" rj="0" rk="8247" si="8247" sj="0" sk="2071742" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/vespus"/>
+			<planet name="JumpToTesla" file="jump.png" ri="2082021" rj="5360" rk="0" si="0" sj="5360" sk="2082021" radius="200" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/tesla"/>
+			<planet name="JumpToSterling" file="jump.png" ri="2076881" rj="2680" rk="6724" si="2076881" sj="2680" sk="6724" radius="200" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/sterling"/>
+			<planet name="JumpToVespus" file="jump.png" ri="2071742" rj="0" rk="8247" si="8247" sj="0" sk="2071742" radius="200" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/vespus"/>
 			<planet name="Nief" file="planets/Snow2.png" ri="2553705" rj="-481963" rk="0" si="0" sj="-481963" sk="2553705" radius="416000" gravity="5" year="7161700" day="950" position="0"/>
 		</planet>
 	</planet>
