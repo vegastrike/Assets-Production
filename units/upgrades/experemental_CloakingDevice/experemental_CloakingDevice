@@ -3,7 +3,7 @@
 		<Armor front="0" right="00" left="00" back="00"/>
 		<Shields front="0.000000" back="0.000000" recharge="0.000000" leak="100"/>
 		<Hull strength="00.000000"/>
-		<Cloak cloakmin=".001" cloakrate=".8" cloakglass="0" cloakenergy=".01"/>
+		<Cloak cloakmin=".001" cloakrate=".8" cloakglass="0" cloakenergy="100"/>
 	</Defense>
 	<Stats mass="0" momentofinertia="0" fuel="0"></Stats>
 	<Computer yaw="0" itts="false" pitch="0" roll="0" afterburner="0" maxspeed="0">
