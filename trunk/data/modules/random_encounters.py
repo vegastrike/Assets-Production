@@ -5,34 +5,19 @@ import launch
 import VS
 import unit
 import sys
+import quest
 class random_encounters:
-  sig_distance=0#backup var
-  det_distance=0#backup var
-  generation_distance=0
-  capship_gen_distance=0
-  min_num_ships=1#the number of ships that have to be there or else more will be made
-  gen_num_ships=0#the num ships to be made
-  capship_prob=0#probability a capship will be there
-  fighterprob=0
-  enprob=0
-  players=()
   class playerdata:  
-    #struct playerdata {
-    last_ship=0 #cur[0]
-    curmode=0 #cur[1] #are we in battle mode (1) or cruise mode (0)
-    lastmode=0 #cur[2] #were we in battle mode (1) or cruise mode(0)
-    lastsys="" #cur[3]
-    sig_container=VS.Unit() #cur[4]
-    significant_distance=5000 #cur[5]
-    detection_distance=2500 #cur[6]
-    playernum=0 #cur[8]
-    def __init__(self,sig_distance,det_distance,pnum=None):
-      if (pnum==None):
-        return
+    def __init__(self,sig_distance,det_distance):
+      self.quests=[]
+      self.curquest=0
+      self.last_ship=0
+      self.curmode=0
+      self.lastmode=0
+      self.lastsys=""
+      self.sig_container=VS.Unit()
       self.significant_distance=sig_distance
       self.detection_distance=det_distance
-      self.playernum=pnum
-  cur=playerdata(0,0)
   def __init__(self, sigdis, detectiondis, gendis,  minnships, gennships, unitprob, enemyprob, capprob, capdist):
     self.capship_gen_distance=capdist
     #    player_num=player
@@ -41,19 +26,14 @@ class random_encounters:
 
     self.det_distance = detectiondis
     self.sig_distance = sigdis
-
+    self.players=[]
     self.generation_distance=gendis
     self.min_num_ships=minnships
     self.gen_num_ships=gennships
     self.capship_prob=capprob
-    player_num=0
-    px = VS.getPlayerX(player_num)
-    while (px):
-        print ("init")
-        self.players=self.players+(random_encounters.playerdata(self.sig_distance,self.det_distance,player_num),)
-        player_num+=1
-        px = VS.getPlayerX(player_num)
-  
+    self.cur_player=0
+  def AddPlayer (self):
+    self.players+=[random_encounters.playerdata(self.sig_distance,self.det_distance)]
   def getMinDistFrom(self,sig1):
     sig2=unit.getPlanet (0,0)
     mindist=100000000000000000000000000000000000000000000.0
@@ -83,7 +63,12 @@ class random_encounters:
     if (ave!=0.0):
       mindist = mindist/ave
     return mindist
-
+  def NewSystemHousekeeping(self,oldsystem,newsystem):
+    newquest = quest.newQuest (self.cur_player,oldsystem,newsystem)
+    if (newquest):
+      self.cur.quests+=[newquest]
+    self.CalculateSignificantDistance()
+    
   def CalculateSignificantDistance(self):
     minsig =  self.minimumSigDistApart()
     if (self.sig_distance>minsig*0.15):
@@ -171,14 +156,14 @@ class random_encounters:
     self.cur.last_ship=0
     self.cur.curmode=1
     self.cur.sig_container=significant
-    self.cursys = VS.getSystemFile()
-    oldsys = self.cur.lastsys==self.cursys
-    self.cur.lastsys=self.cursys
+    cursys = VS.getSystemFile()
+    oldsys = self.cur.lastsys==cursys
     if (not oldsys):
-      self.CalculateSignificantDistance()
+      self.NewSystemHousekeeping(self.cur.lastsys,cursys)
+      self.cur.lastsys=cursys
 
   def decideMode(self):
-    myunit=VS.getPlayerX(self.cur.playernum)
+    myunit=VS.getPlayerX(self.cur_player)
     if (myunit.isNull()):
       self.SetModeZero()
       return myunit
@@ -206,21 +191,35 @@ class random_encounters:
           return significant_unit
       else:
         print "different"
+        self.NewSystemHousekeeping(self.cur.lastsys,cursys)
         self.cur.lastsys=cursys
         self.SetModeZero()
         significant_unit.setNull ()
       return significant_unit
 
   def Execute(self):
-    for self.cur in self.players:
-        un = self.decideMode ()
-        if (self.cur.curmode!=self.cur.lastmode):
-          #lastmode=curmode#processed this event don't process again if in critical zone
-          self.cur.lastmode=self.cur.curmode
-          print "curmodechange %d" % (self.cur.curmode)#?
-          if (random.random()<self.fighterprob and un):
-              if (not self.atLeastNInsignificantUnitsNear (un,self.min_num_ships)):
-                #determine whether to launch more ships next to significant thing based on ships in that range  
-                print ("launch near")
-                self.launch_near (VS.getPlayerX(self.cur.playernum))
-
+    if (self.cur_player>=len(self.players)):
+      self.AddPlayer()
+    self.cur=self.players[self.cur_player]
+    if (self.cur.curquest<len(self.cur.quests)):
+      if (self.cur.quests[self.cur.curquest].Execute()):
+        self.cur.curquest+=1
+      else:
+        del self.cur.quests[self.cur.curquest]
+    else:
+      self.cur.curquest=0
+    un = self.decideMode ()
+    if (self.cur.curmode!=self.cur.lastmode):
+      #lastmode=curmode#processed this event don't process again if in critical zone
+      self.cur.lastmode=self.cur.curmode
+      print "curmodechange %d" % (self.cur.curmode)#?
+      if (random.random()<self.fighterprob and un):
+        if (not self.atLeastNInsignificantUnitsNear (un,self.min_num_ships)):
+          #determine whether to launch more ships next to significant thing based on ships in that range  
+          print ("launch near")
+          self.launch_near (VS.getPlayerX(self.cur_player))
+    self.cur_player+=1
+    if (self.cur_player>=VS.getNumPlayers()):
+      self.cur_player=0
+    VS.setMissionOwner(self.cur_player)
+      

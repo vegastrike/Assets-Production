@@ -51,10 +51,10 @@ capitols = (("corvette","starrunner","cruiser","carrier","fleetcarrier","escortc
             ("yrilan",), #aera
             ("rlaan_cruiser",), #rlaan
             ("truck","cargoship"), #merchant
-            ("cruiser_mk2","corvette","destroyer","cruiser","truck"), #retro
+            ("corvette","destroyer","cruiser","truck"), #retro
             ("corvette","destroyer","truck","truck"), #pirates
             ("corvette","destroyer"), #hunter
-            ("escortcarrier","cruiser_mk2","corvette","cruiser","destroyer"), #militia
+            ("escortcarrier","escortcarrier","corvette","cruiser","destroyer"), #militia
             ("truck","cargoship","corvette","destroyer"), #ISO
             ("unknown_active",) #unknown
            )
