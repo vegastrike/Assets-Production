@@ -389,47 +389,48 @@
 		<Category file="upgrades/Experimental">
 		</Category>
 		<Category file="Natural_Products/Food">
-			<Cargo file="Coffee" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Filtered_Water" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Generic_Foods" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Grains" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Coffee" price="1" quantity="90" mass=".01" volume="1"/>
+			<Cargo file="Filtered_Water" price="40" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Generic_Foods" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Grains" price="70" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Livestock" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Luxury_Foods" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Meats" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Produce" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Luxury_Foods" price="120" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Meats" price="110" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Produce" price="80" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Natural_Products/Liquor">
-			<Cargo file="Ale" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Beer" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Red_Wine" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="White_Wine" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Spirits" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Brandy" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Rum" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Ale" price="52" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Beer" price="45" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Red_Wine" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="White_Wine" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Spirits" price="55" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Brandy" price="70" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Rum" price="60" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Natural_Products/Plants">
-			<Cargo file="Marijuana" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Tobacco" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Cocaine" price="420" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Marijuana" price="220" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Tobacco" price="110" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Natural_Products/Natural_Resources">
-			<Cargo file="Potassium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Silicon" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Sodium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Sulfer" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Wood" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Potassium" price="50" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Silicon" price="60" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Sodium" price="45" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Sulfer" price="55" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Wood" price="105" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Crude">
-			<Cargo file="Aluminum" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Copper" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Dilithium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Lead" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Lithium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Iron_Ore" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Nickel" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Tin" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Titanium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Tungston" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Trilithium" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Aluminum" price="75" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Copper" price="45" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Dilithium" price="130" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Lead" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Lithium" price="40" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Iron_Ore" price="52" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Nickel" price="50" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Tin" price="47" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Bronze" price="35" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Tungston" price="110" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Trilithium" price="400" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Precious">
 			<Cargo file="Gold" price="1" quantity="1" mass=".01" volume="1"/>
@@ -438,105 +439,105 @@
 			<Cargo file="Silver" price="1" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Alloys">
+			<Cargo file="Titanium" price="105" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Brass" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Bronze" price="1" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Isometal" price="1" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Plasteel" price="1" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Steel" price="1" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Radioactive">
-			<Cargo file="Cesium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Iridium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Neptunium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Plutonium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Radium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Thorium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Uranium" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Cesium" price="390" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Iridium" price="370" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Neptunium" price="380" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Plutonium" price="1025" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Radium" price="400" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Thorium" price="300" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Uranium" price="540" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Gems/Jewelry">
-			<Cargo file="Diamonds" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Emeralds" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Rubies" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Sapphires" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Tanzanite" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Topaz" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Diamonds" price="1000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Emeralds" price="1130" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Rubies" price="1233" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Sapphires" price="1200" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Tanzanite" price="900" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Topaz" price="800" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Gems/Industrial">
-			<Cargo file="Corundum" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Dilithium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Quartz" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Trilithium" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Corundum" price="1400" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Dilithium" price="1340" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Quartz" price="1000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Trilithium" price="1600" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Stone">
-			<Cargo file="Clay" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Granite" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Jade" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Limestone" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Marble" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Sandstone" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Clay" price="25" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Granite" price="30" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Jade" price="120" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Limestone" price="60" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Marble" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Sandstone" price="40" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Fuels/Crude">
-			<Cargo file="Coal" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Oil" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Petroleum" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Coal" price="20" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Oil" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Petroleum" price="90" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Fuels/Refined">
-			<Cargo file="Butane" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Diesel" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Gasoline" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Methane" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Propane" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Butane" price="120" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Diesel" price="130" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Gasoline" price="150" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Methane" price="125" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Propane" price="140" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Compressed_Gasses">
-			<Cargo file="Argon" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Caesium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Helium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Hydrogen" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Krypton" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Neon" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Nitrogen" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Oxygen" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Radon" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Xenon" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Argon" price="10" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Caesium" price="15" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Helium" price="20" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Hydrogen" price="5" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Krypton" price="25" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Neon" price="22" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Nitrogen" price="6" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Oxygen" price="30" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Radon" price="10" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Xenon" price="28" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Recycled_Products">
-			<Cargo file="Recycled_Electronics" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Recycled_Metals" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Recycled_Oil" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Recycled_Plastics" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Recycled_Electronics" price="190" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Recycled_Metals" price="50" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Recycled_Oil" price="60" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Recycled_Plastics" price="38" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Machinery_Goods">
-			<Cargo file="Gears" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Lubricants" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Spare_Parts" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Gears" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Lubricants" price="85" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Spare_Parts" price="88" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Supplies/Aerospace_Supplies">
-			<Cargo file="Aerospace_Ground_Equipment" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Aerospace_Repair_Equipment" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Welding_Supplies" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Aerospace_Ground_Equipment" price="193" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Aerospace_Repair_Equipment" price="250" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Welding_Supplies" price="180" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Supplies/Agriculteral_Supplies">
-			<Cargo file="Bulk_Seeds" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Herbicides" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Hydroponic_Supplies" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Pesticides" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Synthetic_Fertilizer" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Bulk_Seeds" price="25" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Herbicides" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Hydroponic_Supplies" price="130" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Pesticides" price="110" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Synthetic_Fertilizer" price="140" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Supplies/Mining_Supplies">
-			<Cargo file="Boring_Droids" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Laser_Drills" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Light_Alls" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Boring_Droids" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Laser_Drills" price="95" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Light_Alls" price="88" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Supplies/Construction_Supplies">
-			<Cargo file="Utility_Vehicles" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="PreFab_Buildings" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Utility_Vehicles" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="PreFab_Buildings" price="44" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Supplies/Medical_Supplies">
-			<Cargo file="Cryogenic_Supplies" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="First_Aid_Kits" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Synthetic_Limbs" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Cryogenic_Supplies" price="505" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="First_Aid_Kits" price="480" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Research/Medical">
+			<Cargo file="Synthetic_Limbs" price="70" quantity="1" mass=".01" volume="1"/>
 		<!-- price these at 1/10 their normal price...-->
 		</Category>
 		<Category file="Research/Industrial">
@@ -549,45 +550,45 @@
 		<!-- price these at 1/10 their normal price...-->
 		</Category>
 		<Category file="Electronics">
-			<Cargo file="Computers" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Game_Consoles" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Micro_Processors" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Computers" price="75" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Consoles" price="45" quantity="1" mass=".01" volume="1"/> <!-- note you lose money on the processor -->
+			<Cargo file="Micro_Processors" price="50" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Electronics/Robotics">
-			<Cargo file="Protocol_Droids" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Robo_Workers" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Protocol_Droids" price="270" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Robo_Workers" price="290" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Manufactured_Goods">
-			<Cargo file="Carpets" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Furniture" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Home_Appliances" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Hygiene_Supplies" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Janitorial_Supplies" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Textiles" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Carpets" price="55" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Furniture" price="140" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Home_Appliances" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Hygiene_Supplies" price="110" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Janitorial_Supplies" price="105" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Textiles" price="53" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Clothing" price="60" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Entertainment">
-			<Cargo file="Books" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Clothing" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Games" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Holo_Vids" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Rare_Artwork" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Books" price="50" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="Games" price="52" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Holo_Vids" price="57" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Rare_Artwork" price="105" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband/Medical">
-			<Cargo file="Organs" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Organs" price="450" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband">
-			<Cargo file="Illegal_Weapons" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Pilot" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Slaves" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Illegal_Weapons" price="300" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Pilot" price="760" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Slaves" price="750" quantity="1" mass=".01" volume="1"/>
 		</Category>
 	<!-- cargo below is senselessly banned by 1 race alone -->
 		<Category file="Contraband/Confed">
-			<Cargo file="ISO_Propaganda" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="ISO_Party_Member" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Socialist_Worker_Journal" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Marijuana" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Former_Political_Prisoners" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Immigrants" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="ISO_Propaganda" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="ISO_Party_Member" price="800" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Socialist_Worker_Journal" price="35" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Former_Political_Prisoners" price="920" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Immigrants" price="160" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband/Rlaan">
 		</Category>
