@@ -1,8 +1,8 @@
 <Unit>
-	<Meshfile file="space_truck-Command.xmesh" />
-	<Meshfile file="space_truck-EngineCone.xmesh" />
+	<Meshfile file="space_truck-CrewCommand.xmesh" />
+	<Meshfile file="space_truck-EngineExt.xmesh" />
+	<Meshfile file="space_truck-EngineInt.xmesh" />
 	<Meshfile file="space_truck-Fuel Tanks.xmesh" />
-	<Meshfile file="space_truck-Habitat.xmesh" />
 	<Meshfile file="space_truck-Rod01.xmesh" />
 	<Meshfile file="space_truck-Rod02.xmesh" />
 	<Meshfile file="space_truck-Rod03.xmesh" />
@@ -15,8 +15,8 @@
 	<Sound>
 	</Sound>
 	<Defense>
-		<Armor front="800" right="600" left="600" back="600"/>
-		<Shields front="250.000000" back="250.000000" recharge="60.000000"/>
+		<Armor front="300" right="500" left="500" back="400"/>
+		<Shields front="300.000000" back="250.000000" recharge="60.000000"/>
 		<Hull strength="800.000000"/>
 	</Defense>
 	<Stats mass="60.000000" momentofinertia="30.000000" fuel="20000"></Stats>
@@ -25,8 +25,16 @@
 		<Reactor recharge="100" limit="1000"/>
 	</Energy>
        
-		<cockpit file="hellcat-cockpit.cpt" x="-204.041" y="-30.115" z="545.434"/>
+		<cockpit file="hellcat-cockpit.cpt" x="-1020.205" y="-150.575" z="2727.17"/>
 
-<!--		<Subunit file="truck_cargo01" x="0" y="0" z="216.003"/>
--->
+		<Subunit file="cargo01" x="0" y="0" z="1080.015"/>
+<Light file="engine1.png" x="0" y="0" z="-1260.335" size="250" r="0.698039216" g="0.39215686" b="0.39215686"/>
+
+<!--<Subunit file="turret" x="-1193.345" y="173.295" z="-184.985"/>
+<Subunit file="turret" x="" y="" z="" ri="-1.000000" rj="0.000000" rk="0.000000"/>
+<Subunit file="turret" x="" y="" z="" ri="-1.000000" rj="0.000000" rk="0.000000"/>
+<Subunit file="turret" x="" y="" z="" ri="-1.000000" rj="0.000000" rk="0.000000"/>-->
+
+       	<Jump delay="15" jumpenergy="100"/>
+
 </Unit>
