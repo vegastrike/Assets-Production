@@ -3,6 +3,40 @@ module unit {
 
   float lasttime;
 
+  bool isSignificant(object un) {
+    object unit_fgid = _unit.getFgID(un);
+    if (_unit.isPlanet (un) ||
+	_unit.isJumppoint(un) ||
+	_string.equal (unit_fgid,"Nebula") ||
+	_string.equal (unit_fgid,"Base") ||
+	_string.equal (unit_fgid,"Asteroid")) {
+      _string.delete(fgid);
+      return true;
+    }
+    _string.delete(fgid);
+    return false;
+  };
+  object getSignficiant (int whichsignificant) {
+	object un;
+	int which=0;
+	int signum=0;
+	while (signum<whichsignificant) {
+		un=_unit.getUnit(which);
+		if (_std.isNull(un)) {
+			which=0;
+			if (signum==0){
+				_std.setNull(un);
+				return un;
+			}	
+		}else {
+			if (isSignificant(un)) {
+				signum=signum+1;
+			}
+			which=which+1;			
+		}
+	}
+	return un;
+  };
   object obsolete_getNearestEnemy(object my_unit,float range){
     int ship_nr=0;
     float min_dist=9999999.0;

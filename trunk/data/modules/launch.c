@@ -87,6 +87,19 @@ module launch {
       i=i+1;
     }
   };
-
+  void launch_wave_around_significant (object fgname,object faction,object type,object ai,int nr_ships,float r1,float r2,int significant_number) {
+    object significant_unit=unit.getSignificant(significant_number);
+    object myvec;
+    if (_std.isNull(significant_unit)) {
+      myvec = _olist.new();
+      _olist.push_back(myvec.0);
+      _olist.push_back(myvec.0);
+      _olist.push_back(myvec.0);
+    } else {
+      myvec=_unit.getPosition(signigicant_unit);
+    }
+    launch_wave_around_area (fgname,faction,type,ai,nr_ships,r1,r2,myvec);
+    _olist.delete(myvec);
+ };
 
 }
