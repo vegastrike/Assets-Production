@@ -6,7 +6,7 @@ module privateer {
   bool garbage;
   void init (float sigdis, float detectiondis, float gendis, int minships, int genships, float fighterprob, float enemyprob, float capprob, float credits_to_maximize_difficulty, float garbage_collect_dist, float capdist) {//negative garbage collect dist disables that feature
     difficulty.init (credits_to_maximize_difficulty);
-    random_encounters.init (0,sigdis, detectiondis, gendis, minships,genships,fighterprob,capprob,enemyprob,capdist);
+    random_encounters.init (sigdis, detectiondis, gendis, minships,genships,fighterprob,capprob,enemyprob,capdist);
     garbage=false;
     if (garbage_collect_dist>0.0) {
       garbage_collect.init (garbage_collect_dist);
