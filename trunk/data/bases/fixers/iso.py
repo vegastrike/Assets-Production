@@ -37,10 +37,10 @@ else:
 		if (fixers.checkSaveValue (playernum,"iso_mission1",1) and Director.getSaveDataLength(playernum,"iso_mission2")==0):			
 			Base.Message ("Congratulations!")#assign mis 2
 			AssignMission()
-		elif (fixers.checkSaveValue (playernum,"iso_mission2",1) and Director.getSaveDataLength(playernum,"iso_mission2")==0):			
+		elif (fixers.checkSaveValue (playernum,"iso_mission2",1) and Director.getSaveDataLength(playernum,"iso_mission3")==0):			
 			Base.Message ("Congradulations")#assign mis 3:
 			AssignMission()
-		elif (fixers.checkSaveValue (playernum,"iso_mission3",1) and Director.getSaveDataLength(playernum,"iso_mission3")==0):
+		elif (fixers.checkSaveValue (playernum,"iso_mission3",1) and Director.getSaveDataLength(playernum,"iso_mission4")==0):
 			Base.Message ("Congraduati")#assign mis 4
 			AssignMission()
 		elif (fixers.checkSaveValue(playernum,"iso_mission4",1)):
