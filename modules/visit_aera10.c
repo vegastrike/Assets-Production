@@ -35,9 +35,11 @@ module visit_aera10 {
     null_pos=vec3.new(0.0,0.0,0.0);
     //    fighter_lpos=vec3.new(0.0-2000.0,0.0-2000.0,0.0-7000.0);
     player_unit=_unit.getPlayer();
-    
-    fighter_lpos=_unit.getPosition(player_unit);
-
+    if (!_std.isNull(player_unit)) {
+      fighter_lpos=_unit.getPosition(player_unit);
+    } else {
+      fighter_lpos=vec3.new (0.0,0.0,0.0);
+    }
     jumppoint_mars_unit=unit.getUnitByFgID("jumppoint-mars");
     if(_std.isNull(jumppoint_mars_unit)){
       _io.printf("did not find mars jumppoint\n");

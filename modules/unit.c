@@ -2,7 +2,13 @@ module unit {
   // support for the _unit callback class
 
   float lasttime;
-
+  bool isLandable (object un) {
+    object unit_fgid = _unit.getFgID(un);
+    bool retval = (_unit.isPlanet (un) ||
+		   _string.equal (unit_fgid,"Base"));
+    _string.delete(unit_fgid);
+    return retval;
+  };
   bool isSignificant(object un) {
     object unit_fgid = _unit.getFgID(un);
     if (_unit.isPlanet (un) ||
@@ -16,7 +22,7 @@ module unit {
     _string.delete(unit_fgid);
     return false;
   };
-  object getSignificant (int whichsignificant) {
+  object getSignificant (int whichsignificant, bool capship_only) {
 	object un;
 	int which=0;
 	int signum=0;
@@ -29,10 +35,16 @@ module unit {
 				return un;
 			}	
 		}else {
-			if (isSignificant(un)) {
-				signum=signum+1;
-			}
-			which=which+1;			
+		  if (capship_only) {
+		    if (isLandable (un)) {
+		      signum=signum+1;
+		    }
+		  }else {
+		    if (isSignificant(un)) {
+		      signum=signum+1;
+		    }
+		  }
+		  which=which+1;			
 		}
 	}
 	return un;

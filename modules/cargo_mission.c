@@ -1,5 +1,6 @@
 module cargo_mission {
   import ai_stationary;
+  import universe;
 	object faction;
 	object destination;
 	object basecontainer;
@@ -13,27 +14,8 @@ module cargo_mission {
 	import launch;
 	import faction_ships;
 	bool capship;
-	void sys (object currentsystem, int sysaway, object str) {
-	  if (sysaway<=0) {
-	    destination=currentsystem;
-	    _io.sprintf(str,"Jump from %s to your final destination in %s",currentsystem, destination);
-	    _io.message (1,"game","all",str);
-	  } else {
-	    int max=_std.getNumAdjacentSystems(currentsystem);
-	    if (max>0) {
-	      int nextsysnum=random.randomint(0,max-1);
-	      object nextsystem=_std.getAdjacentSystem(currentsystem,nextsysnum);
-	      _io.sprintf(str,"Jump from %s to %s.",currentsystem,nextsystem);
-	      _io.message (1,"game","all",str);
-	      sys(nextsystem,sysaway-1,str);
-	    } else {
-	      destination="sol_sector/sol";
-	      _io.sprintf(str,"Your final destination is %s.",destination);
-	      _io.message (1,"game","all",str);
-	    }
-	  }
-	};
-	
+
+  
 	void init (int factionname, int numsystemsaway, int cargoquantity, int missiondifficulty, float distance_from_base, float creds, bool launchoncapship) {
 	  capship= launchoncapship;
 	  faction_ships.init();
@@ -52,26 +34,25 @@ module cargo_mission {
 	  object list=_unit.getRandCargo(quantity);
 	  int tempquantity=quantity;
 	  cargoname=_olist.at(list,0);
+	  object str = _string.new();
 	  if (!_std.isNull(you)) {
 	    quantity = _unit.addCargo(you,cargoname        ,_olist.at(list,1),_olist.at(list,2),_olist.at(list,3),_olist.at(list,4),_olist.at(list,5));  //ADD CARGO HERE
-	    if (tempquantity>0) {
-	      cred=cred *_std.Float(quantity)/_std.Float(tempquantity);
-	    }
-	    
-	    object str = _string.new();
 	    object name = _unit.getName (you);
 	    _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
-	    _io.message (0,"game","all",str);
-	    sys(sysfile,numsystemsaway,str);
-	    _io.sprintf(str,"and give the cargo to a %s unit.",faction);
-	    _io.message (2,"game","all",str);
-	    _io.sprintf(str,"You will receive %d of the %s cargo",quantity,cargoname);
-	    _io.message (3,"game","all",str);
-	    _string.delete(str);
-	    _olist.delete(list);
 	  } else {
 	    _std.terminateMission (false);
 	  }
+	  if (tempquantity>0) {
+	    cred=cred *_std.Float(quantity)/_std.Float(tempquantity);
+	  }
+	  _io.message (0,"game","all",str);
+	  destination=universe.getAdjacentSystem(sysfile,numsystemsaway);
+	  _io.sprintf(str,"and give the cargo to a %s unit.",faction);
+	  _io.message (2,"game","all",str);
+	  _io.sprintf(str,"You will receive %d of the %s cargo",quantity,cargoname);
+	  _io.message (3,"game","all",str);
+	  _string.delete(str);
+	  _olist.delete(list);
 	};
 	void takeCargoAndTerminate (object you) {
 	  int removenum=_unit.removeCargo(you,cargoname,quantity,true);
@@ -129,17 +110,9 @@ module cargo_mission {
 	      arrived=true;
 	      object newship=faction_ships.getRandomCapitol(faction);
 	      int randint=random.randomint(0,50);
-	      object significant = unit.getSignificant (randint);
+	      object significant = unit.getSignificant (randint,(!capship));
 	      if (_std.isNull (significant)) {
 		significant =_unit.getPlayer();
-	      }else {
-		object fgname = _unit.getFgName (significant);
-		while (!((_unit.isPlanet(significant))||(_string.equal(fgname,"Base")))&&(randint<1024)) {
-		  _string.delete (fgname);
-		  randint=randint+1;
-		  significant =unit.getSignificant(randint);
-		  fgname = _unit.getFgName (significant);
-		}
 	      }
 	      if (_std.isNull(significant)) {
 		arrived=false;
