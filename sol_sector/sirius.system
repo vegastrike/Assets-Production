@@ -37,7 +37,7 @@
 		<planet name="Nommos" file="planets/desertwater.png" radius="3000" ri="100000" sj="70000" day="1200" year="10000">
 			<planet name="Sagan" file="sol/prometheus.png" radius="600" ri="20000" sk="18000" day="1000" year="1000"/>
 			<planet name="JumpToSol" file="jump.png" radius="400" alpha="ONE ONE" faction="neutral" rk="25000" si="25555" day="100" year="6000" destination="sol_sector/sol"/>
-			<unit name="SiriusHeadquarters" file="ConfedHq" faction="confed" rk="30000" sj="19999" year="3000"/>
+			<unit name="SiriusHeadquarters" file="starfortress" faction="confed" rk="30000" sj="19999" year="3000"/>
 		</planet>
 		<planet name="Isis" file="planets/gas_dwarf.png" radius="9000" ri="150000" sk="150000" sj="150000" day="500" year="4000">
 			<planet  name= "JumpToWeslyn"  file="jump.png" alpha="ONE ONE" radius="100" faction="neutral" ri="30000" sk="30000" year="10000" position=".25" destination="sol_sector/weslyn"/>

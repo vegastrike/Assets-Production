@@ -35,7 +35,7 @@
 		<asteroid  name= "AsteroidBelt"  file="ABelt" faction="neutral"   ri="85000" sk="95000" year="14000" day="-14000" position=".08" difficulty=".25"></asteroid>         
 		<planet name="JumpToPolaris" file="jump.png" alpha="ONE ONE" ri="85000" radius="300" sk="95000" year="14000" position = ".08" destination="sol_sector/polaris"/>
 		<planet name="Jupiter" file="sol/jupiter.png" radius="10000" gravity="20" ri="140000" rj="0" rk="0" si="0" sj="0" sk="150000" year="14000" day="2000" position="0">
-			<unit name="Confed HQ" file="ConfedHq" year="5000" rj="-21000" sk="20000" faction="confed"/>
+			<unit name="Terran HQ" file="starfortress" year="5000" rj="-21000" sk="20000" faction="confed"/>
 			<planet name="JumpToSirius" file="jump.png" alpha="ONE ONE" radius="300" gravity="0" si="-22000" rk="22000" year="1150" day="240" destination="sol_sector/sirius"/>
 			<planet name="Io" file="sol/io.png" radius="452" gravity="0" ri="14200" sk="14200" year="1000" day="1000"/>
 			<planet name="Europa" file="sol/europa.png" radius="392" gravity="0" ri="16700" sk="16700" year="1024" day="700"/>
