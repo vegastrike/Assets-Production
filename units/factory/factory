@@ -5,7 +5,7 @@
 		<Maneuver yaw="0000" pitch="00000" roll="00000"/>
 	</Thrust>
 	<Sound> </Sound>
-	<Defense> <!-- HudImage="factory-hud.spr"-->
+	<Defense HudImage="factory-hud.spr"> <!-- HudImage="factory-hud.spr"-->
 		<Armor front="1000" right="1000" left="1000" back="1000"/>
 		<Shields front="1050" right="1050" left="1050" back="1050" recharge="100"/>
 		<Hull strength="10000"/>
