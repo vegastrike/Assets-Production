@@ -25,7 +25,7 @@
 	</Computer>
 
 	<Energy>
-		<Reactor recharge="6" limit="24"/>
+		<Reactor recharge="20" limit="50"/>
 	</Energy>
 
 

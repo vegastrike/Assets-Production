@@ -18,6 +18,8 @@
 	<Energy>
 		<Reactor recharge="100" limit="300"/>
 	</Energy>
+       	<Jump delay="1" jumpenergy="200"/>       
+
        
 
 <!-- new elements added -->
