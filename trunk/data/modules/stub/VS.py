@@ -45,7 +45,7 @@ def systemInMemory(sys):
     else:
         print sys + ' maybe not in memory'
     return ret
-
+_ownerdict={}
 def popSystem():
    del _sysfile[-1]
 def getSystemFile():
@@ -119,16 +119,20 @@ def SetTimeCompression(val):
 def GetAdjacentSystem(mystr,which):
    import vsrandom
    return 'SYSTEM'+chr (vsrandom.randrange(ord('a'),ord('z')+1))
-def GetGalaxyProperty(sysname,faction):
+def GetGalaxyFaction(sysname):
    import faction_ships
    import vsrandom
-   return faction_ships.factions[vsrandom.randrange(0,len(faction_ships.factions))]
-def GetGalaxyFaction(sysname):
-	return GetGalaxyProperty(sysname,"faction")
+   if sysname in _ownerdict:
+	   return _ownerdict[sysname]
+   has = sysname.__hash__()
+   return faction_ships.factions[has%len(faction_ships.factions)]
+def GetGalaxyProperty(sysname,prop):
+	if (prop=='faction'):
+		return GetGalaxyFaction(sysname)
+	return '<unknown property>'
 def SetGalaxyFaction(sysname,faction):
 	print faction+' took over '+sysname
-	print 'NEWS STORY'
-
+	_ownerdict[sysname]=faction
 def GetNumAdjacentSystems(mystr):
    import vsrandom
    return vsrandom.randrange(1,6)
@@ -221,7 +225,7 @@ class Unit:
   def __init__(self,nam='noname',fg='fgname'):
     self.name=nam
     self.fg=fg
-    print 'Unit constructor called with (self) '+'nam'
+    print 'Unit constructor called with '+nam
   def AutoPilotTo(self,un,ignore_friendlies): 
    print "AutoPilotTo" 
    return 0
@@ -622,7 +626,7 @@ class Unit:
 
 class un_iter:
   def __init__(self):
-    print 'un_iter constructor called with (self)'
+     pass
   def current(self):
     return unorNone()
   def advance(self): 
