@@ -1,40 +1,50 @@
 <comm>
-	<node text="Default Node" relationship="0"><!-- node 0-->
-		<edge index="4"/>
+      <node text="All systems nominal." relationship="0"><!-- node 0-->
+            <edge index="4"/>
 		<edge index="5"/>
 		<edge index="6"/>
 	</node>
 	<node text="All systems are nominal." relationship="0"><!-- node 1-->
-		<edge index="2"/>
-		<edge index="3"/>
+		<edge index="12"/>
+		<edge index="5"/>
+            <edge index="13"/>
 	</node>
 	<node text="Nice to see you." relationship=".1"><!-- node 2-->
 		<edge index="1"/>
             <edge index="5"/>
+            <edge index="6"/>
 	</node>
 	<node text="You're going down!" relationship="-.1"><!-- node 3-->
-		<edge index="1"/>
+            <edge index="92"/>
+		<edge index="48"/>
+            <edge index="8"/>
 		<edge index="3"/>
 	</node>
       <node text="All systems nominal." relationship="0"><!-- node 4-->
 		<edge index="1"/>
-            <edge index="12"/>
+            <edge index="17"/>
+            <edge index="75"/>
 	</node>
 	<node text="I'm in great shape." relationship=".1"><!-- node 5-->
-		<edge index="2"/>
+            <edge index="2"/>
             <edge index="12"/>
+            <edge index="13"/>
+            <edge index="26"/>
 	</node>
 	<node text="Prepare to die!" relationship="-.1"><!-- node 6-->
+		<edge index="48"/>
+            <edge index="92"/>
             <edge index="3"/>
             <edge index="8"/>
 	     	<edge index="16"/>
             <edge index="27"/>
 	</node>
 	<node text="Over my dead body!" relationship="-.1"><!-- node 7-->
+		<edge index="48"/>
 		<edge index="3"/>
             <edge index="19"/>
 	</node>
-      <node text="What do you think you're doing?!" relationship="-.05"><!-- node 8-->
+      <node text="What do you think you're doing?!" relationship="0"><!-- node 8-->
 		<edge index="3"/>
             <edge index="6"/>
             <edge index="24"/>
@@ -46,7 +56,7 @@
             <edge index="7"/>
             <edge index="16"/>
             <edge index="24"/> 
-     </node>   
+      </node>   
       <node text="Permission granted." relationship="0"><!-- node 10-->
             <edge index="11"/>
       </node>
@@ -58,11 +68,13 @@
       </node>
       <node text="I need some help here!" relationship="0"><!-- node 13-->
             <edge index="12"/>
+            <edge index="49"/>
             <edge index="15"/>
             <edge index="29"/>
-     </node>   
+      </node>   
       <node text="Prepare to engage the enemy." relationship="0"><!-- node 14-->
             <edge index="12"/>
+            <edge index="49"/>
       </node>   
       <node text="I'm on my way!" relationship="0"><!-- node 15-->
             <edge index="5"/>
@@ -72,6 +84,8 @@
       </node>   
       <node text="Report your status." relationship="0"><!-- node 17-->
             <edge index="4"/>
+            <edge index="5"/>
+            <edge index="54"/>
             <edge index="13"/>
             <edge index="18"/>
             <edge index="23"/>
@@ -81,6 +95,7 @@
       <node text="Enemy ships detected. Proceed with caution!" relationship="0"><!-- node 18-->
             <edge index="12"/>
             <edge index="13"/>
+            <edge index="38"/>
       </node>   
       <node text="That's exactly what I had in mind!" relationship="-.05"><!-- node 19-->
             <edge index="12"/>
@@ -90,6 +105,7 @@
             <edge index="11"/>
       </node>        
       <node text="I don't think so!" relationship="-.05"><!-- node 21-->
+            <edge index="48"/>
             <edge index="3"/>
             <edge index="6"/>
             <edge index="8"/>
@@ -97,6 +113,7 @@
       </node>
       <node text="Time to head home." relationship="0"><!-- node 22-->
             <edge index="12"/>
+            <edge index="38"/>
       </node>      
       <node text="I'm under heavy fire!" relationship="0"><!-- node 23-->
             <edge index="15"/>
@@ -106,6 +123,7 @@
             <edge index="16"/>
             <edge index="21"/>
             <edge index="7"/>
+      </node>
       <node text="It's good to see you again." relationship=".05"><!-- node 25-->
             <edge index="2"/>
             <edge index="11"/>
@@ -113,13 +131,19 @@
       <node text="I'm getting cooked here, help me out!" relationship="0"><!-- node 26-->
             <edge index="12"/>
             <edge index="15"/>
+            <edge index="29"/>
+            <edge index="50"/>
+            <edge index="49"/>
+      </node>
       <node text="That's the last mistake you'll ever make!" relationship="-.05"><!-- node 27-->
-            <edge index="12"/>
+            <edge index="48"/>
             <edge index="15"/>
       </node>        
       <node text="I'm in trouble, I have to eject!" relationship="0"><!-- node 28-->
             <edge index="12"/>
-            <edge index="29"/>
+            <edge index="31"/>
+            <edge index="38"/>
+      </node>
       <node text="Hold on!" relationship=".025"><!-- node 29-->
             <edge index="12"/>
             <edge index="15"/>
@@ -127,24 +151,280 @@
       <node text="I've been hit hard! I need to return to base!" relationship="0"><!-- node 30-->
             <edge index="12"/>
             <edge index="31"/>
+            <edge index="50"/>
+      </node>
       <node text="Good luck." relationship=".05"><!-- node 31-->
             <edge index="11"/>
             <edge index="12"/>
             <edge index="31"/>
+      </node>
       <node text="Get back to base!" relationship="0"><!-- node 32-->
             <edge index="12"/>
             <edge index="31"/>
             <edge index="34"/>
+            <edge index="37"/>
       </node>
       <node text="Sorry!" relationship=".25"><!-- node 33-->
             <edge index="12"/>
+            <edge index="36"/>
       </node>
       <node text="I copy." relationship="0"><!-- node 34-->
             <edge index="0"/>
       </node>
+      <node text="Sorry! Weapons malfunction." relationship=".01"><!-- node 35-->
+            <edge index="12"/>
+            <edge index="36"/>
+            <edge index="27"/>
+      </node>
+      <node text="Don't let it happen again!" relationship=".01"><!-- node 36-->
+            <edge index="34"/>
+            <edge index="33"/>
+      </node>
+      <node text="Heading back to base..." relationship="0"><!-- node 37-->
+            <edge index="12"/>
+            <edge index="33"/>
+      </node>
+      <node text="Coward!" relationship="-.1"><!-- node 38-->
+            <edge index="39"/>
+            <edge index="88"/>
+      </node>
+      <node text="There are some things you just shouldn't say, hotshot..." relationship="-.05"><!-- node 39-->
+            <edge index="12"/>
+            <edge index="33"/>
+      </node>
+      <node text="I'll turn you into a nice pile of scrap metal!" relationship="-.05"><!-- node 40-->
+            <edge index="48"/>
+            <edge index="7"/>
+            <edge index="88"/>
+      </node>
+      <node text="You're gonna regret that!" relationship="-.05"><!-- node 41-->
+            <edge index="12"/>
+            <edge index="39"/>
+      </node>
+      <node text="This galaxy isn't big enough for the both of us!" relationship="-.05"><!-- node 42-->
+            <edge index="12"/>
+            <edge index="42"/>
+      </node>
+      <node text="We don't have time for this..." relationship=".025"><!-- node 43-->
+            <edge index="12"/>
+            <edge index="33"/>
+      </node>
+      <node text="Break formation and open fire!" relationship=".025"><!-- node 44-->
+            <edge index="34"/>
+            <edge index="55"/>
+            <edge index="54"/>
+            <edge index="45"/>
+            <edge index="46"/>
+      </node>
+      <node text="Time for an old-fashioned barbeque!" relationship=".025"><!-- node 45-->
+            <edge index="34"/>
+            <edge index="46"/>
+      </node>
+      <node text="Yeehaw!" relationship=".025"><!-- node 46-->
+            <edge index="34"/>
+            <edge index="47"/>
+            <edge index="85"/>
+      </node>
+      <node text="Don't get cocky!" relationship="0"><!-- node 47-->
+            <edge index="34"/>
+            <edge index="33"/>
+      </node>
+      <node text="Wait! We can talk about this!" relationship=".1"><!-- node 48-->
+            <edge index="34"/>
+            <edge index="35"/>
+      </node>
+      <node text="Sorry, that's a negative." relationship="-.025"><!-- node 49-->
+            <edge index="12"/>
+            <edge index="3"/>
+            <edge index="6"/>
+      </node>
+      <node text="Sorry, but I've got problems of my own!" relationship="-.05"><!-- node 50-->
+            <edge index="12"/>
+            <edge index="3"/>
+            <edge index="6"/>
+      </node>
+      <node text="You're gonna pay for that!" relationship="-.05"><!-- node 51-->
+            <edge index="12"/>
+            <edge index="48"/>
+            <edge index="3"/>
+            <edge index="6"/>
+      </node>
+      <node text="I'll make you sorry!" relationship="-.05"><!-- node 52-->
+            <edge index="43"/>
+            <edge index="48"/>
+            <edge index="7"/>
+      </node>
+      <node text="Clear the deck, I'm bringin' her in." relationship="0"><!-- node 53-->
+            <edge index="20"/>
+            <edge index="25"/>
+            <edge index="49"/>
+      </node>
+      <node text="Weapons loaded and ready." relationship="0"><!-- node 54-->
+            <edge index="12"/>
+            <edge index="79"/>
+            <edge index="44"/>
+      </node>
+      <node text="Let's get them!" relationship=".05"><!-- node 55-->
+            <edge index="12"/>
+            <edge index="46"/>
+            <edge index="49"/>
+      </node>
+      <node text="Oh, I nailed that one!" relationship=".025"><!-- node 56-->
+            <edge index="57"/>
+            <edge index="47"/>
+      </node>
+      <node text="Nice shot!" relationship=".05"><!-- node 57-->
+            <edge index="46"/>
+            <edge index="11"/>
+      </node>
+      <node text="Eject! Eject!" relationship=".05"><!-- node 58-->
+            <edge index="46"/>
+            <edge index="11"/>
+      </node>
+      <node text="I've been hit--I'm not gonna make it!" relationship="0"><!-- node 59-->
+            <edge index="15"/>
+            <edge index="58"/>
+      </node>
+      <node text="I'm done for! Everything is brea---" relationship="0"><!-- node 60-->
+            <edge index="58"/>
+      </node>
+      <node text="It's an ambush! My radar is covered with red!" relationship="0"><!-- node 61-->
+            <edge index="44"/>
+            <edge index="23"/>
+      </node>
+      <node text="Commander, I need orders!" relationship="0"><!-- node 62-->
+            <edge index="44"/>
+            <edge index="79"/>
+      </node>
+      <node text="It's a trap! My radar is showing all red!" relationship="0"><!-- node 63-->
+            <edge index="44"/>
+            <edge index="64"/> 
+            <edge index="32"/>
+      </node>
+      <node text="Watch your back!" relationship="0"><!-- node 64-->
+            <edge index="13"/>
+      </node>
+      <node text="They're everywhere!" relationship="0"><!-- node 65-->
+            <edge index="26"/>
+            <edge index="64"/>
+      </node>
+      <node text="There's too many of them!" relationship="0"><!-- node 66-->
+            <edge index="232"/>
+            <edge index="67"/>
+      </node>
+      <node text="Looks like they win this round. Return to base!" relationship=".05"><!-- node 67-->
+            <edge index="12"/>
+            <edge index="37"/>
+            <edge index="38"/>
+      </node>
+      <node text="My shields are gone!" relationship="0"><!-- node 68-->
+            <edge index="29"/>
+            <edge index="32"/>
+            <edge index="58"/>
+      </node>
+      <node text="My weapons are fried!" relationship="0"><!-- node 69-->
+            <edge index="29"/>
+            <edge index="32"/>
+            <edge index="58"/>
+      </node>
+      <node text="We scared 'em off! They're retreating!" relationship="0"><!-- node 70-->
+            <edge index="46"/>
+            <edge index="78"/>
+      </node>
+      <node text="Head back to base, you can't do any more good!" relationship=".05"><!-- node 71-->
+            <edge index="12"/>
+            <edge index="49"/>
+      </node>
+      <node text="We've been ordered to return to the ship." relationship="0"><!-- node 72-->
+            <edge index="34"/>
+            <edge index="21"/>
+      </node>
+      <node text="I'll blow them into space dust!" relationship="0"><!-- node 73-->
+            <edge index="47"/>
+      </node>
+      <node text="Nice shooting, Commander!" relationship=".075"><!-- node 74-->
+            <edge index="11"/>
+      </node>
+      <node text="Report. Have you detected enemy ships?" relationship="0"><!-- node 75-->
+            <edge index="76"/>
+            <edge index="77"/>
+      </node>
+      <node text="The only thing I can see out there is stars." relationship="0"><!-- node 76-->
+            <edge index="12"/>
+      </node>
+      <node text="That's a negative." relationship="0"><!-- node 77-->
+            <edge index="12"/>
+      </node>
+      <node text="We're not out of this yet..." relationship="0"><!-- node 78-->
+            <edge index="34"/>
+      </node>
+      <node text="Stand by and await further instructions." relationship="0"><!-- node 79-->
+            <edge index="12"/>
+            <edge index="49"/>
+      </node>
+      <node text="Your pathetic attempts at resistance are no match for me." relationship="-.05"><!-- node 80-->
+            <edge index="81"/>
+            <edge index="82"/>
+      </node>
+      <node text="Your guns are no match for my shields." relationship="-.025"><!-- node 81-->
+            <edge index=""/>
+            <edge index="82"/>
+            <edge index="83"/>
+            <edge index="86"/>
+      </node>
+      <node text="You dishonor your people!" relationship="-.1"><!-- node 82-->
+            <edge index="41"/>
+            <edge index="83"/>
+            <edge index="86"/>
+      </node>
+      <node text="You are gravely mistaken." relationship="-.05"><!-- node 83-->
+            <edge index="21"/>
+      </node>
+      <node text="You are not worth my time in battle." relationship="-.05"><!-- node 84-->
+            <edge index="85"/>
+            <edge index="88"/>
+      </node>
+      <node text="Your overconfidence will seal your fate." relationship="-.05"><!-- node 85-->
+            <edge index="83"/>
+            <edge index="88"/>
+      </node>
+      <node text="And you are a waste of my skills." relationship="-.05"><!-- node 86-->
+            <edge index="41"/>
+            <edge index="88"/>
+      </node>
+      <node text="Where did you dig up that fossil of a ship?" relationship="-.05"><!-- node 87-->
+            <edge index="41"/>
+            <edge index="88"/>
+      </node>
+      <node text="Such words can lead you quickly into the afterlife." relationship="-.05"><!-- node 88-->
+            <edge index="21"/>
+      </node>
+      <node text="Turn around and take your ship back to the junkyard." relationship="-.025"><!-- node 89-->
+            <edge index="41"/>
+            <edge index="88"/>
+      </node>
+      <node text="You might as well just surrender now!" relationship="-.05"><!-- node 90-->
+            <edge index="7"/>
+            <edge index="21"/>
+      </node>
+      <node text="You dare to attack my ship?" relationship="-.05"><!-- node 91-->
+            <edge index="48"/>
+            <edge index="19"/>
+      </node>
+      <node text="Cease your fire! I have no conflict with you!" relationship=".05"><!-- node 92-->
+            <edge index="12"/>
+            <edge index="19"/>
+      </node>
+      <node text="Let me escort you and your ship to the nearest waste dump!" relationship="-.05"><!-- node 93-->
+            <edge index="94"/>
+            <edge index="19"/>
+      </node>
+      <node text="There is no reason for hostilities..." relationship=".025"><!-- node 94-->
+            <edge index="12"/>
+            <edge index="19"/>
+      </node>
       <node text="Prepare To Be Searched. Maintain Speed and Course." relationship="0">
 		<sound file="communications/sounds/contraband.wav" sex="0"/>
-		<edge index="1"/>
 		<edge index="12"/>
 	      <edge index="7"/>
             <edge index="3"/>
@@ -161,22 +441,28 @@
 	</node>
 	<node text="Your course is deviating. Maintain course!" relationship="0">
 		<edge index="12"/>
+            <edge index="49"/>
             <edge index="7"/>
             <edge index="3"/>
             <edge index="21"/>
       </node>	
 	<node text="Request Clearence To Land." relationship="0">
             <edge index="10"/>
+            <edge index="49"/>
             <edge index="20"/>
             <edge index="21"/>
             <edge index="25"/>
       </node>	
 	<node text="*hit*" relationship="-.1">
-            <edge index="3"/>
-	      <edge index="8"/>
+            <edge index="8"/>
+            <edge index="41"/>
+            <edge index="48"/>
+	      <edge index="3"/>
             <edge index="9"/>
  	      <edge index="16"/>
             <edge index="24"/>
             <edge index="27"/>
-       </node>	
+            <edge index="51"/>
+            <edge index="91"/>
+       </node>
 </comm>
