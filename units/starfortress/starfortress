@@ -1,4 +1,4 @@
-<Unit scale="2">
+<Unit scale="1">
 	<Thrust>
 		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
 		<Maneuver yaw="0000" pitch="0000" roll="10"/>
@@ -8,8 +8,24 @@
 		<Armor front="8000" right="8000" left="8000" back="8000"/>
 		<Hull strength="12000"/>
 	</Defense>
-
+	<Stats mass="70" momentofinertia="50" fuel="20000"></Stats>
+	<Computer>
+	 <Radar itts="true" color="true" maxrange="110000"  error="0"/>
+	</Computer>
 <Meshfile file="starfortress.xmesh"/>
+
+<Dock x="0" y="890" z="738" size="200"/>
+<Dock x="0" y="890" z="-738" size="200"/>
+<Dock z="0" y="890" x="-738" size="200"/>
+<Dock z="0" y="890" x="738" size="200"/>
+
+
+<Dock x="0" y="-560" z="747" size="100"/>
+<Dock x="0" y="-560" z="-747" size="100"/>
+<Dock z="0" y="-560" x="-747" size="100"/>
+<Dock z="0" y="-560" x="747" size="100"/>
+
+
        
 <Dock x="-1720" y="500" z="0" size="20"/>
 <Dock x="-1680" y="500" z="0" size="20"/>
