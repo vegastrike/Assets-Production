@@ -59,8 +59,8 @@
 <Subunit file="turret" x="-6.555754" y="-23.548798" z="10.017358" ri="-0.700623" rj="-0.135113" rk="0.700623" qi="-0.055878" qj="0.989282" qk="0.134902"/>
 <Subunit file="turret" x="0.291667" y="23.706247" z="51.763630" ri="-0.091176" rj="0.041608" rk="-0.994965" qi="0.000000" qj="0.999127" qk="0.041782"/>
 <Subunit file="turret" x="-0.998551" y="21.900000" z="46.501038" ri="0.923879" rj="0.000000" rk="0.382684" qi="0.000000" qj="-1.000000" qk="0.000000"/>
-<!--Last Edited by: Vortis-->
-<!--17MAY01-->
+<!--Last Edited by: Daniel-->
+<!--23MAY01-->
 	<Hold volume="100000000000">
 		<Category file="Natural_Products/Food">
 			<import price="1.2" pricestddev=".2" quantity="15" quantitystddev="5"/>
@@ -127,6 +127,10 @@
 		</Category>
 		<Category file="Electronics">
 			<import price=".8" pricestddev=".2" quantity="25" quantitystddev="12"/>
+		</Category>
+		<Category file="Research/Electronics">
+			<import price="10" pricestddev="2" quantity="0" quantitystddev="0"/>
+		<!-- price these at 1/10 their normal price...-->
 		</Category>
 		<Category file="Electronics/Robotics">
 			<import price=".8" pricestddev=".2" quantity="25" quantitystddev="12"/>
