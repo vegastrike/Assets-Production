@@ -2,8 +2,10 @@ import quest
 import quest_drone
 import random
 import quest_racene
+import quest_disappear
 adventures = {"gemini_sector/delta_prime":quest_drone.quest_drone_factory(),
-              "enigma_sector/racene":quest_racene.quest_racene_factory()}
+              "enigma_sector/racene":quest_racene.quest_racene_factory(),
+              "enigma_sector/axis":quest_disappear.quest_disappear_factory()}
 
 persistent_adventures = [quest_drone.quest_drone_factory()]
 
