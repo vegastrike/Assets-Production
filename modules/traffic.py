@@ -3,7 +3,7 @@ import sys
 import random
 from Vector import *
 import car_lib
-maxspeed=80
+maxspeed=45
 
 class TrafficAI(VS.PythonAI):
     def restoreCruisingSpeed(self,speed):
@@ -13,7 +13,7 @@ class TrafficAI(VS.PythonAI):
 	self.GetParent().setSpeed(speed)
     def init(self,un):
 	self.shipiter=0;
-	self.speed = random.uniform (maxspeed/2,maxspeed);
+	self.speed = random.uniform (maxspeed/3,maxspeed);
 	print 'self.speed'
 	print self.speed
 	self.stopping=0
