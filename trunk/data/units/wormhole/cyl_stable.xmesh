@@ -1,4 +1,4 @@
-<Mesh texture="white.png" Scale="0.6" blend="ONE ONE" >
+<Mesh texture="cyl.png" Scale="0.6" blend="ONE ONE" >
 <Points>
 	<Point>
 		<Location x="-0.97091460228" y="0.970914542675" z="-0.0398200340569"/>
@@ -4613,8 +4613,8 @@
 </Line>
 </Polygons>
 <Material reflect="0" LightningOn="1" > 
-  <Diffuse red="0" green=".2" blue="0" alpha="1.00000" /> 
-  <Ambient red="0" green=".5" blue="0" alpha="1.00000" /> 
-  <Specular red="0" green=".5" blue="1" alpha="1.00000" /> 
+  <Diffuse red=".2" green=".2" blue=".2" alpha="1.00000" /> 
+  <Ambient red=".5" green=".5" blue=".5" alpha="1.00000" /> 
+  <Specular red=".5" green=".5" blue=".5" alpha="1.00000" /> 
 </Material>
 </Mesh>
