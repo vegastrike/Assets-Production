@@ -62,7 +62,6 @@ class defend (Director.Mission):
             if (un.getFactionName()==self.faction): 
                 if (un.getSignificantDistance (jp)<self.escdist):
                     if (un.getFlightgroupName()!="Base"):
-                        print un.getName()
                         self.ship_check_count=0
         return 0
 	
