@@ -235,6 +235,8 @@ module contraband_mission {
 					cargonum2=random.randomint(0,10-cargonum);
 					notlist=faction_ships.getRandomFighter("merchant");
 					newfighter=launch.launch_wave_around_unit("Base", "merchant",notlist,"default",1,_std.Rnd()*100000,jump);
+					_unit.setTarget(newfighter,jump);
+					_unit.Jump(newfighter);
 					j=0;
 					while (j<cargonum) {
 						rndint=random.randomint(1,10);
