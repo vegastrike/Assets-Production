@@ -1,10 +1,12 @@
 <mission>
 	<variables>
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="4 versus 4" />
+		<var name="mission_name" value="Defend your Cruiser" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
 		<var name="system" value="mars_station" />
 		<var name="description" value="4vs4.txt" />
+		<var name="author" value="Alexander Rawass" />
+
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="8" nr_ships="1">

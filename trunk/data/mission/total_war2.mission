@@ -1,10 +1,11 @@
 <mission>
    <variables>
       <var name="defaultplayer" value="blue"/>
-      <var name="mission_name" value="Director Test" />
+      <var name="mission_name" value="Total War in Space" />
       <var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
       <var name="system" value="blank" />
       <var name="description" value="4vs4.txt" />
+		<var name="author" value="Alexander Rawass" />
    </variables>
         <flightgroups>
             <flightgroup name="makkarel" faction="confed" type="firefly" ainame="default" waves="2" nr_ships="1">
