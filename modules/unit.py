@@ -45,8 +45,11 @@ def getSignificant (whichsignificant, landable_only, capship_only):
 	if (not un):
 		if (capship_only):
 			return getSignificant(whichsignificant,landable_only,0)
-		else:
+		elif(landable_only):
 			return getSignificant (whichsignificant,0,0)
+		else:
+			print "fatal error, no significants in system "+VS.getSystemFile()
+			return VS.getPlayer()
 	return un
   
   #this one terminates if fewer than so many planets exist with null
