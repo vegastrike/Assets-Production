@@ -9,7 +9,7 @@
 			<import price="1.17" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Natural_Products/Plants">
-			<import price="77" pricestddev=".22" quantity="20" quantitystddev="12"/>
+			<import price=".77" pricestddev=".22" quantity="20" quantitystddev="12"/>
 		</Category>
 		<Category file="Natural_Products/Natural_Resources">
 			<import price=".82" pricestddev=".1" quantity="15" quantitystddev="25"/>
