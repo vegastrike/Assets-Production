@@ -13,7 +13,7 @@
 		<var name="savegame" value="explore_universe" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="neutral" type="firefly" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="neutral" type="tian" ainame="default" waves="1" nr_ships="1">
 			<pos x="90400" y="-35400" z="24700.0"/>
 		</flightgroup>
 

@@ -1,4 +1,4 @@
-module earth_patrol_rnd_attack2 {
+module explore_rare_enemies {
   import random;
   import faction_ships;
   import launch;
@@ -10,7 +10,7 @@ module earth_patrol_rnd_attack2 {
   void initgame(){
     lasttime=0.0;
     drone=0;
-    waittime=random.random(10.0,30.0);
+    waittime=random.random(10.0,30000.0);
     faction_ships.make_ships_list();
   };
 
@@ -26,7 +26,7 @@ module earth_patrol_rnd_attack2 {
     }else if (side>=0.33) {
       ship_list=faction_ships.confed();
       faction_name="confed";      
-    }else if((side>=0.325) && (drone==0)){
+    }else if((side>=0.33) && (drone==0)){
       drone=1;
       ship_list=faction_ships.unknown();
       faction_name="unknown";
@@ -53,7 +53,6 @@ module earth_patrol_rnd_attack2 {
     if((time-lasttime)>waittime){
       launch_new_ships();
 
-      waittime=waittime+random.random(5.0,10.0);
       lasttime=time;
     }
 
