@@ -327,9 +327,9 @@
 <Missile name="Dumbfire" mountsize="light-missile">
 <Energy rate="0" stability="6" refire=".2">
 </Energy>
-<Damage rate="150" longrange="1">
+<Damage rate="180" longrange="1" radius="100" radialspeed="50">
 </Damage>
-<Distance speed="160" radialspeed=".8" radius=".3" pulsespeed="15" range="3000" >
+<Distance speed="250"  pulsespeed="15" range="3000" >
 </Distance>
 <Appearance file="dumbfire" soundwav="missile_3.wav">
 </Appearance>
@@ -338,9 +338,9 @@
 <Missile name="HeatSeeker" mountsize="light-missile">
 <Energy rate="0" stability="6" refire=".4">
 </Energy>
-<Damage rate="100" longrange="1">
+<Damage rate="160" longrange="1" radialspeed="25" radius="50">
 </Damage>
-<Distance speed="140" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
+<Distance speed="220"  pulsespeed="15" range="2000" >
 </Distance>
 <Appearance file="heatseek" soundwav="missile_3.wav">
 </Appearance>
@@ -372,20 +372,20 @@
 <Missile name="Torpedo" mountsize="heavy-missile">
 <Energy rate="0" stability="6" refire="2">
 </Energy>
-<Damage rate="1250" longrange="1">
+<Damage phasedamage="200" longrange="1" radialspeed="50" radius="100" >
 </Damage>
-<Distance speed="40" radialspeed=".8" radius=".7" pulsespeed="15" range="5000" >
+<Distance speed="40" pulsespeed="15" range="5000" >
 </Distance>
-<Appearance file="heatseek" soundwav="missile_3.wav">
+<Appearance file="torp" soundwav="missile_3.wav">
 </Appearance>
 </Missile>
 
 <Missile name="Leech" mountsize="special-missile">
 <Energy rate="0" stability="6" refire=".5">
 </Energy>
-<Damage rate="-.5" longrange="1">
+<Damage rate="-.5" longrange="1" radialspeed="1" radius="20">
 </Damage>
-<Distance speed="100" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
+<Distance speed="100"  pulsespeed="15" range="2000" >
 </Distance>
 <Appearance file="leech" >
 </Appearance>
@@ -394,11 +394,11 @@
 <Missile name="Mace" mountsize="heavy-missile">
 <Energy rate="0" stability="6" refire="1">
 </Energy>
-<Damage rate="600" phasedamage="250" longrange="1">
+<Damage rate="1000" phasedamage="0" longrange="1" radialspeed="110" radius="2000">
 </Damage>
-<Distance speed="80" radialspeed=".8" radius=".3" pulsespeed="15" range="5000" >
+<Distance speed="80" pulsespeed="15" range="10000" >
 </Distance>
-<Appearance file="dumbfire" >
+<Appearance file="torp" >
 </Appearance>
 </Missile>
 
@@ -406,9 +406,9 @@
 <Missile name="PorcupineMine" mountsize="medium-missile">
 <Energy rate="0" stability="6" refire=".2">
 </Energy>
-<Damage rate="45" longrange="1">
+<Damage rate="45" longrange="1" radialspeed="50" radius="100">
 </Damage>
-<Distance speed="1" radialspeed=".8" radius="1.2" pulsespeed="15" range="10000" >
+<Distance speed="1"  pulsespeed="15" range="10000" >
 </Distance>
 <Appearance file="pmine" >
 </Appearance>
@@ -417,11 +417,11 @@
 <Missile name="CapshipMissile" mountsize="light-capship-missile">
 <Energy rate="0" stability="6" refire="5">
 </Energy>
-<Damage rate="2500" longrange="1">
+<Damage rate="2500" longrange="1" radialspeed="100" radius="300" >
 </Damage>
-<Distance speed="10" radialspeed=".8" radius="1.2" pulsespeed="15" range="10000" >
+<Distance speed="20" pulsespeed="15" range="10000" >
 </Distance>
-<Appearance file="dumbfire" >
+<Appearance file="capship" >
 </Appearance>
 </Missile>
 
@@ -429,9 +429,9 @@
 <Missile name="ImageRecognition" mountsize="medium-missile">
 <Energy rate="0" stability="6" refire=".4">
 </Energy>
-<Damage rate="80" longrange="1">
+<Damage rate="130" longrange="1" radius="50" radialspeed="20">
 </Damage>
-<Distance speed="140" radialspeed=".8" radius="1.2" pulsespeed="15" range="2000" >
+<Distance speed="160"  pulsespeed="15" range="8000" >
 </Distance>
 <Appearance file="imrec" >
 </Appearance>
@@ -440,9 +440,9 @@
 <Missile name="FriendOrFoe" mountsize="medium-missile">
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
-<Damage rate="75" longrange="1">
+<Damage rate="120" longrange="1" radius="50" radialspeed="25">
 </Damage>
-<Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
+<Distance speed="150" pulsespeed="15" range="10000" >
 </Distance>
 <Appearance file="friendorfoe" >
 </Appearance>
