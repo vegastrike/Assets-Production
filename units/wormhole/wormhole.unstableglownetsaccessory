@@ -1,0 +1,10 @@
+<Unit>
+
+<Meshfile file="glow_net_unstable.xmesh"/>
+
+	<Defense>
+		<Armor front="100000" right="80000" left="80000" back="100000"/>
+		<Hull strength="250000"/>
+	</Defense>
+		<Computer yaw = "35" pitch = "70" roll = "10" />
+</Unit>
