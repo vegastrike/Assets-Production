@@ -660,7 +660,7 @@
 		</Category>
 		<Category file="Manufactured_Goods">
 			<Cargo file="Carpets" price="55" quantity="1" mass=".01" volume="1" description="Carpets, albeit of far less dust loving varieties, have made their way into space primarily because large slabs of metal are cold to walk on." />
-			<Cargo file="Furniture" price="140" quantity="1" mass=".01" volume="1" description="No matter how their size or shape, all corporeal beings need something to park their butt-equivalent on." />
+			<Cargo file="Furniture" price="140" quantity="1" mass=".01" volume="1" description="No matter what their size or shape, all corporeal beings need something to park their butt-equivalent on." />
 			<Cargo file="Home_Appliances" price="100" quantity="1" mass=".01" volume="1" description="From the esoteric hover-masseuse to the ubiquitous InstaNuker, these are the champions of eternal consumerism." />
 			<Cargo file="Hygiene_Supplies" price="110" quantity="1" mass=".01" volume="1" description="As advanced as the sentient races have become, they have not escaped the need for a good scrubbing up every once and a while. Cremes and balms promise to use the latest advances in nanoscale chemical transport to remove wrinkles and provide superior skin tone, anti-esthers seek out and destroy unpleasant scent particles, and orifice specific probes prevent awkward mucus excretions." />
 			<Cargo file="Janitorial_Supplies" price="105" quantity="1" mass=".01" volume="1" description="While most developed worlds are moving away from using living janitors, the need for chemical cleansers and means to apply them has not changed." />
