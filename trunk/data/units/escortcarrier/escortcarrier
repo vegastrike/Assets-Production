@@ -151,7 +151,7 @@
 			<import price="1" pricestdev=".1" quantity="5" quantitystddev="2" />
 		</Category>
 		<Category file="upgrades/Engines/Confed_Milspec">
-			<import price="1" pricestddev=".1" quantity="2" quantitystddev="2"/>
+			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Light">
 			<import price="1" pricestddev=".1" quantity="10" quantitystddev="5"/>
@@ -160,7 +160,7 @@
 			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Heavy">
-			<import price="1" pricestddev=".1" quantity="2" quantitystddev="1"/>
+			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
 		</Category>
 		<Category file="upgrades/Shield_Systems/Light">
 			<import price="1" pricestdev=".1" quantity="10" quantitystddev="5" />
@@ -169,7 +169,7 @@
 			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
 		</Category>
 		<Category file="upgrades/Shield_Systems/Heavy">
-			<import price="1" pricestddev=".1" quantity="2" quantitystddev="1"/>
+			<import price="1" pricestddev=".1" quantity="0" quantitystddev="3"/>
 		</Category>
 		<Category file="upgrades/Shield_Systems/Confed_Milspec">
 			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="5"/>
@@ -201,29 +201,26 @@
 		<Category file="upgrades/Repair_Systems/Advanced">
 			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
 		</Category>
-		<Category file="upgrades/Radar/Windows">
-			<import price="1" pricestdev=".1" quantity="10" quantitystddev="5" />
-		</Category>
 		<Category file="upgrades/Radar/Linux">
 			<import price="1" pricestddev=".1" quantity="5" quantitystddev="2"/>
-		</Category>
-		<Category file="upgrades/Radar/BSD">
-			<import price="1" pricestddev=".1" quantity="2" quantitystddev="1"/>
 		</Category>
 		<Category file="upgrades/Miscellaneous">
 			<import price="1" pricestddev=".1" quantity="10" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Miscellaneous/Confed_Milspec">
-			<import price="1" pricestddev=".1" quantity="2" quantitystddev="1"/>
+			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="4"/>
 		</Category>
 		<Category file="upgrades/Ammunition">
 			<import price="1" pricestddev=".1" quantity="100" quantitystddev="50"/>
 		</Category>
 		<Category file="upgrades/Experimental">
-			<import price="1.4" pricestddev=".2" quantity="0" quantitystddev="0"/>
+			<import price="1.2" pricestddev=".2" quantity="0" quantitystddev="0"/>
 		</Category>
 
 	</Hold>
+	<Upgrade file="standard_missions"/>
+	<Upgrade file="confed_missions"/>
+	<Upgrade file="confed_mil_missions"/>
 
 <Dock size="48" x="0" y="0" z="36"/>
 <Dock size="48" x="0" y="0" z="72"/>
