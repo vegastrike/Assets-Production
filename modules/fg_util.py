@@ -184,7 +184,7 @@ def DeleteFG(fgname,faction):
 	len = Director.getSaveStringLength (ccp,key)
 	if (len>=ShipListOffset()):
 		starsystem=Director.getSaveString(ccp,key,1)
-		_RemoveFGFromSystem(starsystem)
+		_RemoveFGFromSystem(fgname,faction,starsystem)
 		_RemoveFGFromFactionList(fgname,faction)
 		WriteStringList (ccp,MakeFGKey(fgname,faction),[] )
 def DeleteAllFG (faction):
