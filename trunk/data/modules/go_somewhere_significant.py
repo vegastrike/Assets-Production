@@ -43,7 +43,7 @@ class go_somewhere_significant:
     else:
       self.significantun=significant
       self.obj=VS.addObjective("You must visit the %s" % (significant.getName ()))
-      VS.setOwner(self.obj,self.you)
+      VS.setOwner(self.obj,VS.getPlayer())
 #      self.begsigdis=self.you.getSignificantDistance(self.significantun) #see note below
   
   def Print(self,visitstr,fro,dockstr="\0%s",time=0):
