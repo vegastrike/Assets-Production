@@ -14,10 +14,10 @@
 	<Meshfile file="rescue-hull-i.xmesh"/>
 	<Meshfile file="rescue-cock-c.xmesh"/>
 
-        <Mount weapon="" size="Light Medium Heavy" x="-29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="Laser" size="Light Medium Heavy" x="-29.815" y="-6.919" z="30.409"/>
         <Mount weapon="" size="Light Medium Heavy" x="29.815" y="-6.919" z="30.409"/>
 	
-	<Mount weapon="" size="special-missile light-missile medium-missile" x="11.8108" y="1.757" z="11.8091" ammo="6" volume="901"/>
+	<Mount weapon="Dumbfire" size="special-missile light-missile medium-missile" x="11.8108" y="1.757" z="11.8091" ammo="6" volume="901"/>
 	<Mount weapon="" size="special-missile light-missile medium-missile" x="-11.8108" y="1.757" z="11.8091" ammo="6" volume="901"/>
 	
 	<Mount weapon="" size="special" x="0.002" y="-4.618" z="19.606" />
