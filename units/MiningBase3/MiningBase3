@@ -16,4 +16,5 @@
 	<Energy>
 		<Reactor recharge="0" limit="0"/>
 	</Energy>
+	<Dock x="-184" y="-10" z="79.000000" size="200.000000"/>
 </Unit>
