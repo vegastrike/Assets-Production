@@ -97,7 +97,9 @@ def ReadStringList (cp,key):
 	for i in range (siz):
 		tup += [Director.getSaveString(cp,key,i)]
 	return tup
-
+def AllFlightgroups (faction):
+	key = MakeFactionKey (faction)
+	return ReadStringList(ccp,key)
 def ListToPipe (tup):
 	fina=''
 	if (len(tup)):
