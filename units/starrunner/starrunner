@@ -20,8 +20,6 @@
 	</Energy>
 	<Jump delay="1" jumpenergy="20000"/>              
 
-	<Hold volume="100000000000">
-	</Hold>
 
 <Mount weapon="HeavyFussion" size="capship-heavy" x="265.415009" y="-136.698349" z="-276.000000" ri="-0.000000" rj="0.000000" rk="1.000000" qi="0.809017" qj="0.587785" qk="0.000000"/>
 <Mount weapon="HeavyFussion" size="capship-heavy" x="-265.415009" y="-136.698349" z="-276.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.809017" qj="-0.587785" qk="0.000000"/>
