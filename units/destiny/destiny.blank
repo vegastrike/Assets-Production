@@ -1,0 +1,46 @@
+<Unit>
+	<Defense HudImage="destiny-hud.spr">
+		<Shields front="0.000000" back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<upgrade file="shield_2"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
+	<Energy afterburnenergy="32767">
+	</Energy>
+
+	<Meshfile file="destiny.xmesh" />
+	<BspMesh/>
+	<Thrust>
+		<Engine Afterburner="1200.000000" Forward="400.333344" Retro="354.666676" Left="202.666672" Right="202.666672" Top="202.666672" Bottom="202.666672"/>
+		<Maneuver yaw="3187.800201" pitch="3187.800201" roll="3187.800201"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Cloak cloakmin=".1" cloakrate=".3" cloakenergy="110" cloakglass="true"/>       		
+	</Defense>
+	<Stats mass="3.500000" momentofinertia="3.500000" fuel="40000000"></Stats>
+	<Computer yaw="96.600006" pitch="96.600006" roll="96.600006" afterburner="120.000000" maxspeed="40.666668">
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	</Computer>
+       	<Jump missing="1" delay="1" jumpenergy="200"/>       
+
+       
+
+<!-- new elements added -->
+<Mount weapon="" size="light medium" x="-0.557420" y="-0.127850" z="7.305732"/>
+<Mount weapon="" size="light medium" x="0.542021" y="-0.126382" z="7.221802" />
+<Mount weapon="" size="special medium" x="6.470487" y="-0.182350" z="-1.094219"/>
+<Mount weapon="" size="special medium" x="-6.512798" y="-0.183760" z="-1.121801"/>
+
+<Mount weapon="" size="light-missile medium-missile" x="4.470487" y="-0.182350" z="-1.094219" ammo="2" volume="301"/>
+<Mount weapon="" size="light-missile medium-missile" x="-4.512798" y="-0.183760" z="-1.121801" ammo="2" volume="301"/>
+<Mount weapon="" size="light-missile" x="3.470487" y="-0.182350" z="-1.094219" ammo="1" volume="101"/>
+<Mount weapon="" size="light-missile" x="-3.512798" y="-0.183760" z="-1.121801" ammo="1" volume="101"/>
+
+<Light file="supernova.bmp" x="-1.250000" y="0.000000" z="-4.800000" size="1.000000"/>
+<Light file="supernova.bmp" x="1.250000" y="0.000000" z="-4.800000" size="1.000000"/>
+<Upgrade file="mult_general_downgrade"/>
+
+</Unit>

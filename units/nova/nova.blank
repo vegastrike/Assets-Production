@@ -1,0 +1,40 @@
+<Unit>
+	<Defense HudImage="nova-hud.spr">
+		<Shields front="60.000000" back="40.000000"/>
+	</Defense>
+	<upgrade file="shield_2"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
+	<Energy afterburnenergy="32767">
+	</Energy>
+	<Meshfile file="nova.xmesh" />
+	<BspMesh/>
+	<Mount weapon="" size="Light" x="1.000000" y="0.000000" z="4.000000"/>
+	<Mount weapon="" size="Light" x="-1.000000" y="0.000000" z="4.000000"/>
+	<Mount weapon="" size="Light Medium" x="4.000000" y="0.000000" z="4.500000"/>
+	<Mount weapon="" size="Light Medium" x="-4.000000" y="0.000000" z="4.500000"/>
+	<Mount weapon="" size="light-missile" x="-1.500000" y="-0.200000" z="-1.0000" volume="91"/>
+	<Mount weapon="" size="light-missile" x="1.500000" y="-0.200000" z="-1.00000" volume="91"/>
+	<Mount weapon="" size="light-missile medium-missile" x="-2.500000" y="-0.200000" z="-2.00000" ammo="1" volume="200"/>
+	<Mount weapon="" size="light-missile medium-missile" x="2.500000" y="-0.200000" z="-2.00000" ammo="1" volume="200"/>
+	<Thrust>
+		<Engine Afterburner="1600.000000" Forward="448.000000" Retro="392.000000" Left="224.000000" Right="224.000000" Top="224.000000" Bottom="224.000000"/>
+		<Maneuver yaw="5009.400101" pitch="5009.400101" roll="5009.400101"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+
+	<Stats mass="2.500000" momentofinertia="2.500000" fuel="40000000"></Stats>
+	<Computer yaw="151.800003" pitch="151.800003" roll="151.800003" afterburner="130.000000" maxspeed="43.000000"/>
+       	<Jump missing="1" delay="1" jumpenergy="90"/>       
+
+	<!-- new elements added -->
+	<Light file="supernova.bmp" x="-0.431327" y="-0.039966" z="-4.300000" size="0.600000"/>
+	<Light file="supernova.bmp" x="0.085989" y="-0.067569" z="-4.300000" size="0.700000"/>
+	<Light file="supernova.bmp" x="0.550726" y="-0.043842" z="-4.300000" size="0.620000"/>
+	<Hold volume="10">
+	</Hold>
+	<Upgrade file="mult_general_downgrade"/>
+
+</Unit>

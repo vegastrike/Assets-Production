@@ -1,0 +1,57 @@
+<Unit scale="0.5">	
+	<Defense>
+		<Shields front="000000" right="0.000000" left="0.000000" back="0.000000" />
+	</Defense>
+	<upgrade file="shield_4"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
+	<Energy afterburnenergy="32767">
+	</Energy>
+	<Meshfile file="revoker-Hull.xmesh" />
+	<Meshfile file="revoker-Cone01.xmesh" />
+	<Meshfile file="revoker-Cone02.xmesh" />
+	<Meshfile file="revoker-Cone03.xmesh" />
+	<Meshfile file="revoker-Frame01.xmesh" />
+	<Meshfile file="revoker-Glower01.xmesh" />
+	<Meshfile file="revoker-Glower02.xmesh" />
+	<Meshfile file="revoker-Glower03.xmesh" /> 
+	<Meshfile file="revoker-Side.xmesh" />
+	<Meshfile file="revoker-GunBit01.xmesh" />
+	<Meshfile file="revoker-GunBit02.xmesh" />
+	<Meshfile file="revoker-Guns.xmesh" />
+
+	
+	<cockpit x="0" y="00" z="10"/>
+	<Thrust>
+		<Engine Afterburner="800.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
+		<Maneuver yaw="1415.500000" pitch="1415.500000" roll="1415.500000"/>
+	</Thrust>
+	<Sound> </Sound>
+	<Stats mass="7" momentofinertia="7" fuel="2000000000"></Stats>
+	<Computer yaw="63.500000" pitch="63.500000" roll="63.500000" afterburner="72.000000" maxspeed="32.000000">
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	</Computer>
+
+
+	<Jump missing="1" delay="1" jumpenergy="800"/>
+	<Hold volume="200">
+
+	</Hold>       
+	<Upgrade file="mult_general_downgrade"/>
+<Dock x="0" y="0" z="50" size="25"/>	
+<Mount weapon="" size="Light Medium Heavy" x="127.0566" y="43.7594" z="121.3314" ri="-0.249141" rj="-0.024868" rk="0.968148" qi="-0.395678" qj="-0.909816" qk="-0.125192"/>
+<Mount weapon="" size="Light Medium Heavy" x="119.3102" y="23.8918" z="118.8276" ri="-0.249142" rj="-0.024868" rk="0.968148" qi="-0.395678" qj="-0.909816" qk="-0.125192"/>
+<Mount weapon="" size="Special Light Medium Heavy" x="115.6352" y="60.7088" z="118.8276" ri="-0.249142" rj="-0.024868" rk="0.968148" qi="-0.395678" qj="-0.909816" qk="-0.125192"/>
+<Mount weapon="" size="Light Medium Heavy" x="-127.2548" y="41.7694" z="121.3318" ri="0.249142" rj="-0.024868" rk="0.968148" qi="0.567703" qj="0.813658" qk="-0.125192"/>
+<Mount weapon="" size="Light Medium Heavy" x="-115.7342" y="59.7138" z="118.828" ri="0.249142" rj="-0.024868" rk="0.968148" qi="0.567703" qj="0.813658" qk="-0.125192"/>
+<Mount weapon="" size="Special Light Medium Heavy" x="-119.409" y="22.8968" z="118.828" ri="0.249142" rj="-0.024868" rk="0.968148" qi="0.567704" qj="0.813658" qk="-0.125193"/>
+
+
+
+<!-- Turrets -->
+<Subunit file="empty" x="35.4364" y="-229.1204" z="16.2628" ri="-0.091138" rj="0.293527" rk="0.951596" qi="0.424036" qj="-0.853177" qk="0.303780"/>
+<Subunit file="empty" x="-35.3528" y="-229.3952" z="15.4892" ri="-0.084938" rj="-0.290906" rk="-0.952974" qi="-0.447383" qj="-0.843463" qk="0.297352"/>
+
+
+</Unit>

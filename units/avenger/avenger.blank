@@ -1,0 +1,61 @@
+<Unit>
+<Meshfile file="avenger-hull-e.xmesh"/>
+<Meshfile file="avenger-hull-w.xmesh"/>
+<Meshfile file="avenger-hull-p.xmesh"/>
+<Meshfile file="avenger-hull-h.xmesh"/>
+<Meshfile file="avenger-hull-i.xmesh"/>
+<Meshfile file="avenger-cock-c.xmesh"/>
+	<Defense HudImage="avenger-hud.spr">
+		<Shields front="0.000000" back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<upgrade file="shield_2"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
+	<Light file="supernova.bmp" x="10.24" y="-2.759" z="-18.302" size="6"/>
+	<Light file="supernova.bmp" x="-10.24" y="-2.759" z="-18.302" size="6"/>
+
+	<Thrust>
+		<Engine Afterburner="1066.666718" Forward="205.333344" Retro="254.666676" Left="202.666672" Right="202.666672" Top="202.666672" Bottom="202.666672"/>
+		<Maneuver yaw="2643.200050" pitch="2187.800201" roll="3643.200050"/>
+	</Thrust>
+
+	<Sound>
+	</Sound>
+
+	<Stats mass="16.000000" momentofinertia="16.000000" fuel="170000000">
+	</Stats>
+
+	<Computer yaw="60.400002" pitch="50.600006" roll="70.400002" afterburner="148" maxspeed="65">
+                <Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	</Computer>
+
+	<Jump missing="1" delay="1" jumpenergy="2100"/>       
+
+	<description>
+	</description>
+
+	<Hold volume="30">
+	</Hold>
+
+        <Mount weapon="" size="heavy capship-light" x="-29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="" size="heavy capship-light" x="29.815" y="-6.919" z="30.409"/>
+	<Mount weapon="" size="heavy capship-light capship-medium" x="-4.0" y="-4.618" z="19.606" />
+	<Mount weapon="" size="heavy capship-light capship-medium" x="4.0" y="-4.618" z="19.606" />
+	<Mount weapon="" size="special medium heavy capship-light capship-medium" x="0.0" y="-4.618" z="19.606" />
+
+	<Mount weapon="" size="light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
+	<Mount weapon="" size="light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
+	<Mount weapon="" size="heavy-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>
+	<Mount weapon="" size="heavy-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>
+	<Mount weapon="" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
+	<Mount weapon="" size="heavy-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
+	<Mount weapon="" size="medium-missile heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="700"/>
+	<Mount weapon="" size="medium-missile heavy-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="700"/>
+	<Mount weapon="" size="special-missile" x="-10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
+        <Mount weapon="" size="special-missile" x="10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
+	
+        <subunit file="empty" x="0" y="5.3" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
+        <subunit file="empty" x="0" y="-5.5" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+	<Upgrade file="mult_general_downgrade"/>
+</Unit>

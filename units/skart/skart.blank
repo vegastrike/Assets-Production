@@ -1,0 +1,38 @@
+<Unit>
+<Meshfile file="skart.xmesh"/>
+	<Defense HudImage="skart-hud.spr">
+		<Shields front="000000" right="0.000000" left="0.000000" back="0.000000" />
+	</Defense>
+	<upgrade file="shield_4"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
+
+<Light file="supernova.bmp" x="-0.858347" y="9.587455" z="-27.247974" size="9.939135"/>
+<Light file="supernova.bmp" x="1.950612" y="-4.364558" z="-27.153128" size="11.336900"/>
+<Light file="supernova.bmp" x="5.934807" y="2.472054" z="-26.938000" size="7.941154"/>
+<Light file="supernova.bmp" x="-5.683797" y="1.871521" z="-26.985489" size="9.924137"/>
+<Mount weapon="" size="Light" x="-1.922219" y="12.883912" z="5.532851" />
+<Mount weapon="" size="Light" x="1.297383" y="14.866834" z="4.464215" />
+<Mount weapon="" size="Heavy Medium" x="-3.213775" y="-10.523225" z="12.789357"/>
+<Mount weapon="" size="Heavy Medium" x="3.422477" y="-10.527871" z="12.487250"/>
+
+	<Thrust>
+		<Engine Afterburner="168.000000" Forward="168.000000" Retro="107.000000" Left="104.000000" Right="104.000000" Top="104.000000" Bottom="184.000000"/>
+		<Maneuver yaw="1415.500000" pitch="1415.500000" roll="1415.500000"/>
+	</Thrust>
+	<cockpit x="0" y="0" z="13"/>
+	<Sound> </Sound>
+	
+	<Stats mass="2" momentofinertia="2" fuel="200000000"></Stats>
+	<Computer yaw="123.500000" pitch="153.500000" roll="103.500000" afterburner="160.000000" maxspeed="100.000000">
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	</Computer>
+	<Energy afterburnenergy="32767">
+	</Energy>
+	<Jump missing="1" delay="1" jumpenergy="250"/>
+	<Hold volume="30">
+	</Hold>
+	<Upgrade file="mult_general_downgrade"/>
+
+</Unit>

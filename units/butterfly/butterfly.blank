@@ -3,7 +3,13 @@
 <!-- Faction : Not assigned -->
 
 <Unit>
-
+	<Defense HudImage="f208-hud.spr">
+		<Shields front="0.000000" left="0" right="0" back="0.000000" recharge="0.000000"/>
+	</Defense>
+	<upgrade file="shield_4"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
 <Meshfile file="f208b.xmesh"/>
 <Meshfile file="f208c.xmesh"/>
 
@@ -14,50 +20,38 @@
 
 <!-- changed mount size from Light to Light and Medium...meaning -->
 <!-- it can hold both light and medium guns when purchased from store -->
-<Mount weapon="Ion" size="Light Medium" x="6.612" y="1.305" z="7.355"/>
+<Mount weapon="" size="Light Medium" x="6.612" y="1.305" z="7.355"/>
+<Mount weapon="" size="Light Medium" x="-6.612" y="1.305" z="7.355"/>
 
-<Mount weapon="Ion" size="Light Medium" x="-6.612" y="1.305" z="7.355"/>
+<Mount weapon="" size="Special Medium Heavy" x="3.572" y="1.305" z="7.355"/>
 
-<Mount weapon="Plasma" size="Special Medium Heavy" x="3.572" y="1.305" z="7.355"/>
+<Mount weapon="" size="Special Medium Heavy" x="-3.572" y="1.305" z="7.355"/>
 
-<Mount weapon="Plasma" size="Special Medium Heavy" x="-3.572" y="1.305" z="7.355"/>
+<Mount weapon="" size="Light Medium Heavy" x="3.572" y="-1.305" z="7.355"/>
 
-<Mount weapon="Tachyon" size="Light Medium Heavy" x="3.572" y="-1.305" z="7.355"/>
-
-<Mount weapon="Tachyon" size="Light Medium Heavy" x="-3.572" y="-1.305" z="7.355"/>
-
-
-<Mount weapon="DumbFire" size="light-missile" x="-6,5" y="-1.305" z="7.355" ammo="6" volume="301"/>
-
-<Mount weapon="DumbFire" size="light-missile" x="6.5" y="-1.305" z="7.355" ammo="6" volume="301"/>
-
-<Mount weapon="ImageRecognition" size="special-missile light-missile medium-missile" x="-6,5" y="-1.305" z="7.355" ammo="4" volume="601"/>
-
-<Mount weapon="ImageRecognition" size="special-missile light-missile medium-missile" x="6.5" y="-1.305" z="7.355" ammo="4" volume="601"/>
+<Mount weapon="" size="Light Medium Heavy" x="-3.572" y="-1.305" z="7.355"/>
 
 
-<Defense HudImage="f208-hud.spr">
+<Mount weapon="" size="light-missile" x="-6,5" y="-1.305" z="7.355" ammo="6" volume="301"/>
+<Mount weapon="" size="light-missile" x="6.5" y="-1.305" z="7.355" ammo="6" volume="301"/>
 
-	<Armor front="400" right="280" left="280" back="320"/>
-<!--changed Recharge to sane value -->
-	<Shields front="400.000000" left="375" right="375" back="375.000000" recharge="32.000000"/>
+<Mount weapon="" size="special-missile light-missile medium-missile" x="-6,5" y="-1.305" z="7.355" ammo="4" volume="601"/>
 
-	<Hull strength="600.000000"/>
+<Mount weapon="" size="special-missile light-missile medium-missile" x="6.5" y="-1.305" z="7.355" ammo="4" volume="601"/>
 
-</Defense>
+
 
 
 <Stats mass="5.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
 <!-- changed maxspeed to 124-->
 <Computer yaw="105" pitch="100" roll="95" afterburner="124" maxspeed="50">
-	<Radar itts="true" color="true" error="0"/> <!-- put radar in computer -->
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
 </Computer>
 
 
-<Energy>	
-	<Reactor recharge="65" limit="800"/> <!--less recharge -->
+<Energy afterburnenergy="32767>	
 </Energy>
-<Jump delay="2" jumpenergy="350"/> <!-- reduced jump energy so that it is less than limit -->
+<Jump missing="1" delay="2" jumpenergy="350"/> <!-- reduced jump energy so that it is less than limit -->
 
 
 <!-- Ship are facing Z axis so for light location : X= left/right, y=over/under, 
@@ -84,4 +78,5 @@
 
 <Hold volume="75">
 </Hold>
+<Upgrade file="mult_general_downgrade"/>
 </Unit>

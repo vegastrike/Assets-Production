@@ -1,0 +1,55 @@
+<Unit>
+	<Defense HudImage="kira-hud.spr">
+		<Shields front="000000" right="0.000000" left="0.000000" back="0.000000" />
+	</Defense>
+	<upgrade file="shield_4"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
+	<Energy afterburnenergy="32767">
+	</Energy>
+
+	<Meshfile file="ta7.xmesh" />
+	
+	<Mount weapon="" size="Special Heavy light-capship" x="-1.700000" y="0.100000" z="7.800000"/>
+	<Mount weapon="" size="Special Heavy light-capship" x="1.700000" y="0.100000" z="7.800000"/>
+	<Mount weapon="" size="Heavy" x="-1.400000" y="-2.200000" z="6.000000"/>
+	<Mount weapon="" size="Heavy" x="1.400000" y="-2.200000" z="6.000000"/>
+	<Mount weapon="" size="Light Medium" x="5.761928" y="-0.011904" z="2.949717"/>
+	<Mount weapon="" size="Light Medium" x="-5.760555" y="-0.011972" z="2.988722"/>
+
+	<Mount weapon="" size="heavy-missile" x="-5.800000" y="0.000000" z="-1.500000" ammo="6" volume="1201"/>
+	<Mount weapon="" size="light-missile medium-missile special-missile" x="0.000000" y="2.500000" z="-3.500000" ammo="40" volume="601"/>
+	<Mount weapon="" size="heavy-missile" x="0.0000000" y="0.000000" z="8.000000" ammo="1" volume="601"/>
+	<Mount weapon="" size="light-missile medium-missile special-missile" x="0.000000" y="1.500000" z="-3.500000" ammo="40" volume="601"/>
+	<Mount weapon="" size="heavy-missile" x="5.800000" y="0.000000" z="-1.500000" ammo="6" volume="1201"/>
+
+	<Subunit file="empty" x="1.450000" y="0.000000" z="6.550000" ri="0.701334" rj="0.127515" rk="0.701334" qi="0.707107" qj="0.000000" qk="-0.707107"/>
+	<Subunit file="empty" x="-1.450000" y="-0.000000" z="6.550000" ri="-0.701334" rj="-0.127515" rk="0.701334" qi="-0.707107" qj="0.000000" qk="-0.707107"/>
+	<Subunit file="empty" x="0.000000" y="0.550000" z="-4.000000" ri="1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
+
+	<Light file="supernova.bmp" x="1.500000" y="-0.000000" z="-6.000000" size="1.265019"/>
+	<Light file="supernova.bmp" x="-1.500000" y="-0.000000" z="-6.000000" size="1.297020"/>
+	
+	<Thrust>
+		<Engine Afterburner="293.000031" Forward="142.799988" Retro="129.199989" Left="115.399994" Right="115.399994" Top="116.399994" Bottom="116.399994"/>
+		<Maneuver yaw="241.500000" pitch="241.500000" roll="241.500000"/>
+	</Thrust>
+
+	<Sound>
+	</Sound>
+
+
+	<Stats mass="9.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
+
+	<Computer yaw="93.500000" pitch="93.500000" roll="93.500000" afterburner="119.300003" maxspeed="41.599998"/ >
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+	</Computer>
+
+       
+       	<Jump missing="1" delay="1" jumpenergy="500"/>       
+	<Hold volume="50">
+	</Hold>
+	<Upgrade file="mult_general_downgrade"/>
+
+</Unit>

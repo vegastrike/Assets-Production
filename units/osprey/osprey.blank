@@ -1,0 +1,47 @@
+<Unit scale="1">
+	<Defense HudImage="osprey-hud.spr">
+		<Shields front="0.000000" right="0.000000" left="0.000000" back="0.000000"/>
+	</Defense>
+	<upgrade file="shield_4"/>
+	<upgrade file="engine_level_0"/>
+	<upgrade file="lithium"/>
+	<upgrade file="hull"/>
+
+	<Meshfile file="osprey.xmesh" />
+	<Mount weapon="" size="Medium Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
+	<Mount weapon="" size="Medium Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
+	<Mount weapon="" size="Light Medium" x="000000" y="-.6000000" z="12.000000"/>
+
+	<Mount weapon="" size="heavy-missile" x="-5.000000" y="-.9000000" z="-3.000000" ammo="3" volume="601"/>	
+	<Mount weapon="" size="heavy-missile" x="5.000000" y="-.9000000" z="-3.000000" ammo="3" volume="601"/>	
+	<Mount weapon="" size="medium-missile heavy-missile" x="4.000000" y="-.9000000" z="-2.000000" ammo="1" volume="601"/>	
+	<Mount weapon="" size="medium-missile heavy-missile" x="-4.000000" y="-.9000000" z="-2.000000" ammo="1" volume="601"/>	
+	<Mount weapon="" size="light-missile medium-missile" x="3.000000" y="-.9000000" z="-1.000000" ammo="1" volume="201"/>	
+	<Mount weapon="" size="light-missile medium-missile" x="-3.000000" y="-.9000000" z="-1.000000" ammo="1" volume="201"/>	
+	<Mount weapon="" size="special-missile" x="3.000000" y="-.9000000" z="-0.000000" ammo="30" volume="1500"/>	
+	<Mount weapon="" size="special-missile" x="-3.000000" y="-.9000000" z="-0.000000" ammo="30" volume="1500"/>	
+
+	<Subunit file="empty" x="0.089912" y="0.120528" z="-6.000000" ri="0.994033" rj="-0.109082" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
+
+	<Thrust>
+		<Engine Afterburner="1333.333282" Forward="341.333344" Retro="298.666676" Left="170.666672" Right="170.666672" Top="170.666672" Bottom="170.666672"/>
+		<Maneuver yaw="4554.000000" pitch="4554.000000" roll="4554.000000"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Stats mass="5.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
+	<Cockpit x="0" y="0" z="12"/>
+	<Computer yaw="98.000000" pitch="98.000000" roll="98.000000" afterburner="133.333328" maxspeed="42.666668">
+		<Radar itts="false" range="5000" cone=".25" color="false" error="0"/> 
+	</Computer>
+
+       
+	<Light file="supernova.bmp" x="1.5" y="0.12" z="-5.8" size="0.880000"/>
+	<Light file="supernova.bmp" x="-1.5" y=".12" z="-5.8" size="0.880000"/>
+       	<Jump delay="1" jumpenergy="180"/>       
+	<Hold volume="40">
+	</Hold>
+	<Upgrade file="mult_general_downgrade"/>
+
+
+</Unit>
