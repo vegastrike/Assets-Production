@@ -21,7 +21,7 @@
 			<planet name="JumpToTesla" file="jump.png" ri="2082021" rj="5360" rk="0" si="0" sj="5360" sk="2082021" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/tesla"/>
 			<planet name="JumpToSterling" file="jump.png" ri="2076881" rj="2680" rk="6724" si="2076881" sj="2680" sk="6724" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/sterling"/>
 			<planet name="JumpToVespus" file="jump.png" ri="2071742" rj="0" rk="8247" si="8247" sj="0" sk="2071742" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/vespus"/>
-			<planet name="Nief" file="planets/Snow.png" ri="2553705" rj="-481963" rk="0" si="0" sj="-481963" sk="2553705" radius="416000" gravity="5" year="7161700" day="950" position="0"/>
+			<planet name="Nief" file="planets/Snow2.png" ri="2553705" rj="-481963" rk="0" si="0" sj="-481963" sk="2553705" radius="416000" gravity="5" year="7161700" day="950" position="0"/>
 		</planet>
 	</planet>
 </system>
