@@ -1,0 +1,3 @@
+Faction: Aera_Merchant Marine
+
+The Aera don't really have a civilian sector.  All Aera resources are controlled by the state, and ruled over by the Oligarchy.  The Aera do, however differentiate between combatant and non-combatant forces, and the Merchant Marine, while armed, are designed to transport goods through dangerous space, not to conquer said space.

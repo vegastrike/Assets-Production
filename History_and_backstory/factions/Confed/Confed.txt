@@ -1,0 +1,3 @@
+Faction: Confed
+
+The Confederation is the overarching governing body for most of humanity.  While it is a loosely organized and implemented body, it does hold some sway over its constituent sovereign groups, and coordinates their actions.

@@ -1,0 +1,3 @@
+Faction: Confed_Hunters
+
+The loose nature of the Confederation, along with the events predating its formation, allowed various mercenary groups to continue to exist in the often underpatrolled expanses of an expanding human sprawl.
