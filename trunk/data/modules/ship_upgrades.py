@@ -80,11 +80,11 @@ def GetRandomAfterburner (diff):#get random afterburner from master part list
 
 def getRandomRadar ():
   myint=random.randrange(0,3)
-  item="radar_free_bsd"
+  item="SkyScope_Beta"
   if (myint<=0):
-    item="radar_windows_2k"
+    item="StarScanner_2545"
   elif (myint==1):
-    item="radar_linux_SuSe"
+    item="Hawkeye_ZX-86"
   return item
 
 def UpgradeRadar (un):
