@@ -21,7 +21,7 @@
 	<Mount weapon="CapshipDisruptor" size="Light" x="-0.00000" y="32.000000" z="-86.800003" rk="-1" qj="-1"/>
 	<Mount weapon="CapshipDisruptor" size="Light" x="0.00000" y="1.800000" z="-102.400002" rk="-1" qj="-1"/>
 	<Thrust>
-		<Engine Afterburner="4000.000000" Forward="160.000000" Retro="1400.000000" Left="80.000000" Right="80.000000" Top="80.000000" Bottom="80.000000"/>
+		<Engine Afterburner="40000.000000" Forward="160.000000" Retro="1400.000000" Left="80.000000" Right="80.000000" Top="80.000000" Bottom="80.000000"/>
 		<Maneuver yaw="6732.400101" pitch="8643.200050" roll="4732.400101"/>
 	</Thrust>
 	<Sound>
@@ -32,7 +32,7 @@
 		<Hull strength="4000.000000"/>
 	</Defense>
 	<Stats mass="2500.000000" momentofinertia="2500.000000" fuel="20000"></Stats>
-	<Computer yaw="82.800003" pitch="110.400002" roll="82.800003" afterburner="400.000000" maxspeed="20.000000"/>
+	<Computer yaw="82.800003" pitch="110.400002" roll="82.800003" afterburner="4000.000000" maxspeed="20.000000"/>
 	<Energy>
 		<Reactor recharge="2000" limit="10000"/>
 	</Energy>

@@ -184,7 +184,7 @@
 </Damage>
 <Distance speed="225" radialspeed=".8" radius="1.2" length="5" pulsespeed="15" range="420" >
 </Distance>
-<Appearance file="disruptor.bmp" soundwav="ION.WAV" r=".8" g="1" b=".8" a="1" >
+<Appearance file="disruptor.bmp" soundwav="Particle.wav" r=".8" g="1" b=".8" a="1" >
 </Appearance>
 </Bolt>
 
