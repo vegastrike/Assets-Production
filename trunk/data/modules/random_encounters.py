@@ -123,9 +123,12 @@ class random_encounters:
       fglist=fg_util.FGsInSystem(faction,cursys)
       if not len(fglist):
         continue
-      num=fg_util.len(fglist)
-      avg=float(num)/float(fg_util.MaxNumFlightgroups())/float(numsigs)
+      num=len(fglist)
+      print type(num), type(fg_util.MaxNumFlightgroupsInSystem()),type(numsigs)
+      avg=float(num)/float(fg_util.MaxNumFlightgroupsInSystem())/float(numsigs)
+      print 'Chance for %s ship: %g'%(faction, avg)
       rndnum=vsrandom.random()
+      print 'Random number: %g; will generate ship: '%(rndnum,rndnum<avg)
       if rndnum<avg:
         #now we know that we will generate some ships!
         flightgroup=fglist[vsrandom.randrange(len(fglist))]

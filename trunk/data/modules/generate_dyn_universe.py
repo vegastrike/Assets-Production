@@ -28,11 +28,11 @@ def GenerateAllShips (numflightgroups,maxshipinfg):
 
 def AddSysDict (cursys):
 	#pick random fighter from insysenemies with .3 probability OR pick one from the friendlies list.
-	print 'Addsysdict'
+#	print 'Addsysdict'
 	sysfaction=VS.GetGalaxyProperty(cursys,"faction")
 	global fgnames, fglists
 	i=0
-	for i in range (vsrandom.randrange(fg_util.MaxNumFlightgroups())): #number of fgs in a system.
+	for i in range (vsrandom.randrange(fg_util.MaxNumFlightgroupsInSystem())): #number of fgs in a system.
 		faction=sysfaction
 		if vsrandom.random()<.3 or sysfaction=='unknown':
 			faction=faction_ships.get_insys_enemy_of(sysfaction)

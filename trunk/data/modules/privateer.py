@@ -2,6 +2,7 @@ from trading import trading
 from random_encounters import random_encounters
 #print "done ran"
 from difficulty import difficulty
+import dynamic_universe
 #print "difficulty begin"
 #from garbage_collect import garbage_collect
 import Director
