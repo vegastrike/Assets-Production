@@ -9,8 +9,8 @@
 		<var name="mission_name" value="Duel the drone!" />
 		<var name="author" value="Daniel Horn" />
 		<var name="system" value="unexplored_space/gwriss" />
-		<var name="description" value="Destroy the enemy drone hiding\in an unknown sector." />
-		<var name="briefing" value="retrieve an crashed drone's\weapons to help you defeat\the powerful drone!" />
+		<var name="description" value="You have detected a large object approaching fast...\It looks like an alien drone,\like the one you've been reading about in the news." />
+		<var name="briefing" value="Your weapons are almost ineffective against its shields\Your only hope is to chance upon a relic,\one so powerful that it can assist\in the drone's destruction.\There's something fishy about that asteroid field\Maybe it will present the key to solving this puzzle\and ridding the galaxy of this alien craft." />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="2">
