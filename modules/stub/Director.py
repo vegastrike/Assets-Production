@@ -5,6 +5,9 @@ class Mission:
     def Pickle(self):
         print 'pickling'
         return ''
+    def __init__(self):
+        print 'initinig'
+
     def UnPickle(self,s):
         print 'unpickling'
     def Execute(self):

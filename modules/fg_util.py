@@ -2,7 +2,11 @@ import Director
 import VS
 import vsrandom
 ccp=VS.getCurrentPlayer()
-
+#Aera Plants
+#Rlaan Rocks
+#Hum0n Cities
+#Uln Verbs
+#klkk Adjectives
 def MaxNumFlightgroupsInSystem ():
 	return 10
 def MaxNumBasesInSystem():
@@ -241,6 +245,26 @@ def NumShipsInFG (fgname,faction):
 		except:
 			print 'fatal: flightgroup without size'
 			return 0
+
+def GetDamageInFGPool (fgname,faction):
+	key = MakeFGKey (fgname,faction)
+	len = Director.getSaveStringLength (ccp,key)
+	if (len<3):
+		return 0
+	else:
+		try:
+			return int(Director.getSaveString(ccp,key,2))
+		except:
+			print 'nonfatal: flightgroup without size'
+			return 0
+
+def SetDamageInFGPool (fgname,faction,num):
+	key = MakeFGKey (fgname,faction)
+	len = Director.getSaveStringLength (ccp,key)
+	if (len>2):
+		Director.putSaveString(ccp,key,2,str(num))				   
+
+
 def DeleteFG(fgname,faction):
 	key = MakeFGKey (fgname,faction)
 	len = Director.getSaveStringLength (ccp,key)

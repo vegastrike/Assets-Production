@@ -19,11 +19,24 @@ def move_to (un, where):
   return NextPos (un,where)
 
 def whereTo (radius, launch_around):
-  pos = launch_around.Position ()    
+  if (type(launch_around)==type( (1,2,3))):
+    pos=launch_around
+  else:
+    pos = launch_around.Position ()    
   rsize = ((launch_around.rSize())*5.0)+5.0*radius
   return (pos[0]+rsize*vsrandom.randrange(-1,2,2),
           pos[1]+rsize*vsrandom.randrange(-1,2,2),
           pos[2]+rsize*vsrandom.randrange(-1,2,2))
+
+def unOrTupleDistance(un,unortuple,significantp):
+  if (type(unortuple)==type((1,2,3))):
+    import Vector
+    return Vector.Mag(Vector.Sub(un.Position(),unortuple))-un.rSize()
+  else:
+    if (significantp):
+      return un.getSignificantDistance(unortuple)
+    else:
+      return un.getDistance(unortuple)
 
 def look_for (fg, faction, numships,myunit,  pos, gcd):
   i=0
@@ -35,7 +48,8 @@ def look_for (fg, faction, numships,myunit,  pos, gcd):
   while ((i>=0) and (numships>0)):
     un = VS.getUnit (i)
     if (un):
-      if (un.getSignificantDistance(myunit)>gcd ):
+		
+      if (unOrTupleDistance(un,myunit,True)>gcd ):
         fac = un.getFactionName ()
         fgname = un.getFlightgroupName ()
         name = un.getName ()
@@ -59,6 +73,12 @@ def LaunchNext (fg, fac, type, ai, pos, logo):
   rad=newship.rSize ()
   VS.playAnimation ("warp.ani",pos,(3.0*rad))
   return NextPos (newship,pos)
+def launch_dockable_around_unit (fg,faction,ai,radius,myunit,garbage_collection_distance):
+	import fg_util
+	for i in LandedShipsInFG(fg,faction):
+		if (i[0]=='truck' or i[0]=='cargo_ship' or faction_ships.isCapital(i[0])):
+			return launch_types_around (fg,faction,[i],ai,radius,myunit,garbage_collection_distance,logo)
+	return launch.launch_wave_around_unit(fg,faction,'truck',ai,1,radius,radius*1.5,myunit,logo)
 
 def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_collection_distance,logo):
   pos = whereTo(radius, myunit)
