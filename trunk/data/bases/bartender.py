@@ -77,11 +77,11 @@ def Speak(thingstosay):
     if (rndnum==1 or text==''):
         mylen=len(thingstosay)
         if (mylen>0):
-            Base.Message (thingstosay[random.randrange(0,mylen)])
+            Base.Message (thingstosay[random.randrange(0,mylen)],1)
         else:
-            Base.Message ('Hello!')
+            Base.Message ('Hello!',1)
     else:
-        Base.Message (text)
+        Base.Message (text,1)
         if (sound!=''):
             VS.playSound (sound)
 
