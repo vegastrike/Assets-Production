@@ -3,6 +3,7 @@
 	<Meshfile file="DroneD.3ds-Sphere_7-Material2.xmesh"/>
 	<Meshfile file="DroneD.3ds-Sphere_7-Material3.xmesh"/>
 	<Meshfile file="DroneD.3ds-Sphere_7-Material.xmesh" />
+	<Meshfile file="Hidden.xmesh"/>
 	<Thrust>
 		<Engine Afterburner="0" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
 		<Maneuver yaw="1000.000000" pitch="1000" roll="0"/>
