@@ -22,19 +22,19 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 # retrieves a relevant news item from the dynamic_news_content.allNews()
 # list, and formats it
 	global allUsefullVariables
-	allUsefullVariables =	{"type_event"	: type_event
-				,"stage_event"	: stage_event
-				,"aggressor"	: aggressor
+	allUsefullVariables =	{"type_event"	: type_event		#NOTE: atm none of the used in the content
+				,"stage_event"	: stage_event		#can have punctuation in it :-(
+				,"aggressor"	: aggressor		# -- as of 08/07/03 this is from aggressor down --
 				,"defender"	: defender
 				,"success"	: getSuccessStr(success)
 				,"dockedat"	: getDockFaction(system)
 				,"scale_event"	: scale_event
 				,"system"	: system
 				,"keyword"	: keyword
-				,"aggressor_fg"	: aggressor_flightgroup
-				,"aggressor_type":aggressor_type 
-				,"defender_fg"	: defender_flightgroup
-				,"defender_type": defender_type
+				,"aggressorFG"	: aggressor_flightgroup
+				,"aggressorFGtype":aggressor_type 
+				,"defenderFG"	: defender_flightgroup
+				,"defenderFGtype": defender_type
 				}
 
 	return formatNewsItem (getNewsItem(getDockFaction(system),type_event,stage_event,getSuccessStr(success)
