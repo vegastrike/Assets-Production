@@ -24,6 +24,7 @@
 	<Stats mass = "551" momentofinertia = "3672" fuel = "50000"  >
 	</Stats>
 	<Computer yaw = "1.8" pitch = "1.8" roll = "1.10" afterburner = "2000" maxspeed = "2000"  >
+<Radar itts="true" error="0" range="1200000" maxcone="-1" color="true"/>
 	</Computer>
 	<Energy >
 		<Reactor recharge = "10" limit = "100"  >
