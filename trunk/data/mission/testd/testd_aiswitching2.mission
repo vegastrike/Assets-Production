@@ -7,18 +7,18 @@
       <var name="description" value="4vs4.txt" />
    </variables>
         <flightgroups>
-            <flightgroup name="makkarel" faction="neutral" type="ferret" ainame="default" waves="2" nr_ships="1">
+            <flightgroup name="makkarel" faction="confed" type="ferret" ainame="default" waves="2" nr_ships="1">
          	<pos x="8000.0" y="0.0" z="0.0"/>
          	<rot x="180.0" y="180.0" z="180.0"/>
       	    </flightgroup>
-
-            <flightgroup name="green" faction="confed" type="hornet" ainame="_ai_switching1" waves="2" nr_ships="4">
+<!--
+            <flightgroup name="green" faction="confed" type="hornet" ainame="_ai_switching2" waves="2" nr_ships="4">
          	<pos offset="makkarel" x="-1000.0" y="0.0" z="100.0"/>
          	<rot x="180.0" y="180.0" z="180.0"/>
       	    </flightgroup>
-
-            <flightgroup name="alpha" faction="aera" type="dagger" ainame="_ai_switching1" waves="2" nr_ships="4">
-         	<pos offset="makkarel" x="1000.0" y="0.0" z="100.0"/>
+-->
+            <flightgroup name="alpha" faction="aera" type="dagger" ainame="_ai_switching2" waves="2" nr_ships="1">
+         	<pos offset="makkarel" x="0.0" y="0.0" z="200.0"/>
          	<rot x="180.0" y="180.0" z="180.0"/>
       	    </flightgroup>
 	</flightgroups>
