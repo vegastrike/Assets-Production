@@ -388,7 +388,7 @@
 			<Cargo file="maul_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="cluster_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="capiff_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="catcluster_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="capcluster_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="capshipmissile_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="leech_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="swarm_ammo" price="80" quantity="1" mass=".01" volume="1"/>
