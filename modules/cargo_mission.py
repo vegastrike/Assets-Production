@@ -27,7 +27,7 @@ class cargo_mission (Director.Mission):
 	def endbriefing(self):
 		self.adjsys.endbriefing()
 		del self.briefgametime
-	def SetVar (val):
+	def SetVar (self,val):
 	  if (self.var_to_set!=''):
 	    quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,val)
 	def __init__ (self,factionname, numsystemsaway, cargoquantity, missiondifficulty, creds, launchoncapship, time_to_complete, category,jumps=(),var_to_set=''):
