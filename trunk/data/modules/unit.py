@@ -26,7 +26,7 @@ def getSignificant (whichsignificant, landable_only, capship_only):
 	signum=0
 	while (signum<=whichsignificant):
 		un=VS.getUnit(which)
-		if (un.isNull()):
+		if (not un):
 		  which=0
 		  if (signum==0):
 		    signum=whichsignificant+1
@@ -120,7 +120,7 @@ def obsolete_getNearestEnemy(my_unit,range):
 
 def obsolete_getThreatOrEnemyInRange(un,range):
     threat=un.getThreat()
-    if(threat.isNull()):
+    if(not threat):
       threat=obsolete_getNearestEnemy(un,range)
     return threat
     
@@ -128,7 +128,7 @@ def setPreciseTargetShip (which_fgid, target_unit):
     ship_nr=0
     un=VS.getUnit(ship_nr)
     if (target_unit):
-      while(un.isNull()):
+      while(not un):
         unit_fgid=un.getFgID()
         if(unit_fgid[:len(which_fgid)]==which_fgid):
 	  un.SetTarget(target_unit)
@@ -178,7 +178,7 @@ def getUnitByName (name):
 def getUnitByFgIDFromNumber(fgid, ship_nr):
     unit=VS.getUnit(ship_nr)
     found_unit=VS.Unit()
-    while(unit and found_unit.isNull()):
+    while(unit and not found_unit):
       unit_fgid=unit.getFgID()
       if(unit_fgid==fgid):
 	found_unit=unit
