@@ -16,18 +16,18 @@
 		<Hull strength="250.000000"/>
 		<Cloak rate=".4" cloakmin=".1"/>
 	</Defense>
-	<Stats mass="3.000000" momentofinertia="3.000000" fuel="20000"></Stats>
+	<Stats mass="3.000000" momentofinertia="3.000000" fuel="200000000"></Stats>
 	<Computer yaw="138.000000" pitch="138.000000" roll="138.000000" afterburner="133.333328" maxspeed="42.666668">
 		<Radar itts="false" color="true" error="0"/> </Computer>
 
 
-	<Energy>
-		<Reactor recharge="50" limit="100"/>
+	<Energy afterburnenergy="30">
+		<Reactor recharge="60" limit="200"/>
 	</Energy>
        
 	<Light file="supernova.bmp" x="1.5" y="0.12" z="-5.8" size="0.880000"/>
 	<Light file="supernova.bmp" x="-1.5" y=".12" z="-5.8" size="0.880000"/>
-
+       	<Jump delay="1" jumpenergy="180"/>       
 <!-- new elements added -->
 <Subunit file="turretsmall" x="0.089912" y="0.120528" z="-6.000000" ri="0.994033" rj="-0.109082" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
 </Unit>

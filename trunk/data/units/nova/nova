@@ -14,14 +14,15 @@
 	<Defense>
 		<Armor front="40" right="35" left="35" back="40"/>
 		<Shields front="60.000000" back="40.000000" recharge="24.000000"/>
-		<Hull strength="20000.000000"/>
+		<Hull strength="200.000000"/>
 	</Defense>
-	<Stats mass="2.500000" momentofinertia="2.500000" fuel="20000"></Stats>
+
+	<Stats mass="2.500000" momentofinertia="2.500000" fuel="40000000"></Stats>
 	<Computer yaw="151.800003" pitch="151.800003" roll="151.800003" afterburner="130.000000" maxspeed="43.000000"/>
-	<Energy>
+	<Energy afterburnenergy="0">
 		<Reactor recharge="40" limit="100"/>
 	</Energy>
-       	<Jump delay="1" jumpenergy="10"/>       
+       	<Jump delay="1" jumpenergy="90"/>       
 
 <!-- new elements added -->
 <Light file="supernova.bmp" x="-0.431327" y="-0.039966" z="-4.300000" size="0.600000"/>

@@ -11,9 +11,9 @@
 		<Armor front="100" right="100" left="100" back="100"/>
 		<Shields front="80.000000" back="80.000000" recharge="22.000000"/>
 		<Hull strength="240.000000"/>
-		<Cloak cloakmin=".1" cloakrate=".3" cloakenergy="120" cloakglass="true"/>       		
+		<Cloak cloakmin=".1" cloakrate=".3" cloakenergy="110" cloakglass="true"/>       		
 	</Defense>
-	<Stats mass="3.500000" momentofinertia="3.500000" fuel="20000"></Stats>
+	<Stats mass="3.500000" momentofinertia="3.500000" fuel="40000000"></Stats>
 	<Computer yaw="96.600006" pitch="96.600006" roll="96.600006" afterburner="120.000000" maxspeed="40.666668"/>
 	<Energy>
 		<Reactor recharge="100" limit="300"/>

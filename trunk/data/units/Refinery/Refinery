@@ -1,0 +1,19 @@
+<Unit>
+<Meshfile file="Refinery2.xmesh"/>
+<Meshfile file="Refinery1.xmesh"/>
+	<Thrust>
+		<Engine Afterburner="00.000000" Forward="000000" Retro="000000" Left="00000" Right="000000" Top="000000" Bottom="00000"/>
+		<Maneuver yaw="0000" pitch="00000" roll="00000"/>
+	</Thrust>
+	<Sound> </Sound>
+	<Defense>
+		<Armor front="1000" right="1000" left="1000" back="1000"/>
+		<Shields front="1650" right="1650" left="1650" back="1650" recharge="47"/>
+		<Hull strength="5000"/>
+	</Defense>
+	<Stats mass="70" momentofinertia="70" fuel="20000"></Stats>
+	<Computer yaw="00000" pitch="00000" roll="0000" afterburner="000000" maxspeed="00000"/>
+	<Energy>
+		<Reactor recharge="47" limit="470"/>
+	</Energy>
+</Unit>

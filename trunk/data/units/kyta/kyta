@@ -12,13 +12,13 @@
 		<Shields front="24.000000" right="20.000000" left="20.000000" back="24.000000" recharge="23.000000"/>
 		<Hull strength="250.000000"/>
 	</Defense>
-	<Stats mass="2.000000" momentofinertia="2.000000" fuel="20000"></Stats>
+	<Stats mass="2.000000" momentofinertia="2.000000" fuel="100000000"></Stats>
 	<Computer yaw="103.500000" pitch="243.500000" roll="203.500000" afterburner="149.699997" maxspeed="70.299999">
 		<Radar itts="false" color="true" error="0"/> </Computer>
 
 
-	<Energy>
-		<Reactor recharge="14" limit="100"/>
+	<Energy afterburnenergy="14">
+		<Reactor recharge="24" limit="100"/>
 	</Energy>
        
 
