@@ -109,6 +109,9 @@
 		<Category file="Electronics/Robotics">
 			<import price="1.2" pricestddev=".2" quantity="0" quantitystddev="1"/>
 		</Category>
+		<Category file="Electronics/Bionics">
+			<import price="1.2" pricestddev=".2" quantity="0" quantitystddev="0"/>
+		</Category>
 		<Category file="Manufactured_Goods">
 			<import price="1.1" pricestddev=".1" quantity="4" quantitystddev="2"/>
 		</Category>
