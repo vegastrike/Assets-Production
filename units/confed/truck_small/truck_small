@@ -25,15 +25,12 @@
 		<Reactor recharge="100" limit="1000"/>
 	</Energy>
        
-		<cockpit file="hellcat-cockpit.cpt" x="-1020.205" y="-150.575" z="2727.17"/>
+		<cockpit file="hellcat-cockpit.cpt" x="-510.1025" y="-75.2875" z="1363.585"/>
 
-		<Subunit file="cargo01" x="0" y="0" z="1080.015"/>
-<Light file="engine1.png" x="0" y="0" z="-1260.335" size="250" r="0.698039216" g="0.39215686" b="0.39215686"/>
+		<Subunit file="cargo01" x="0" y="0" z="540.0075"/>
+<Light file="engine1.png" x="0" y="0" z="-630.1675" size="125" r="0.698039216" g="0.39215686" b="0.39215686"/>
 
-<!--<Subunit file="turret" x="-1193.345" y="173.295" z="-184.985"/>
-<Subunit file="turret" x="" y="" z="" ri="-1.000000" rj="0.000000" rk="0.000000"/>
-<Subunit file="turret" x="" y="" z="" ri="-1.000000" rj="0.000000" rk="0.000000"/>
-<Subunit file="turret" x="" y="" z="" ri="-1.000000" rj="0.000000" rk="0.000000"/>-->
+
 
        	<Jump delay="15" jumpenergy="100"/>
 
