@@ -1,7 +1,9 @@
 import quest
 import VS
+import vsrandom
 import Base
 import Director
+import mission_lib
 
 activelinks=[]
 activeobjs=[]
@@ -43,6 +45,11 @@ class Fixer:
 	def drawobjs(self,room,x,y,wid,hei):
 		Base.Texture(room,self.name,self.image,x+(wid/2),y+(hei/2))
 		Base.Python(room,self.name,x,y,wid,hei,self.text,self.choices,True)
+
+class RandFixer (Fixer):
+	def __init__ (self,which):
+		fixer=mission_lib.CreateRandomMission(which)
+		Fixer.__init__(self,fixer[1].split(' ')[-1].lower(),fixer[1],[],fixer[0],"bases/fixers/generic%d.py"%which)
 
 fixers={"enigma_sector/niven":[
 	Fixer("explore","Talk to the Explorer",[("enigma_sector/enigma_nav",0)],"bases/fixers/militia.spr","bases/fixers/explore_enigma.py"),
@@ -89,6 +96,7 @@ fixers={"enigma_sector/niven":[
 	Fixer ("pirate","Talk with the Pirate",[("pirate_mission1",1),("pirate_mission2",1),("pirate_mission3",1),("pirate_mission4",0)],"bases/fixers/pirate.spr","bases/fixers/pirates.py")
 	]}
 
+
 def AppendFixer(name,fixer):
 	fixers[name]=fixer
 
@@ -120,4 +128,19 @@ def CreateFixers (room,locations):
 		for i in range (len(fixerlist)):
 			if (j<len(locations) and fixerlist[i].abletodraw()):
 				fixerlist[i].drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3])
+				j+=1
+	rndnum=vsrandom.random()
+	if rndnum<.1 and j==0:
+		f=RandFixer(0)
+		f.drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3])
+		j+=1
+		img=f.image
+		rndnum=vsrandom.random()
+		if rndnum<.75:
+			i=0
+			while f.image==img and i<10:
+				f=RandFixer(1)
+				i+=1
+			if i<10:
+				f.drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3])
 				j+=1
