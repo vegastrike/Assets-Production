@@ -6,6 +6,7 @@ module random_encounters {
   float significant_distance;
   float detection_distance;
   float generation_distance;
+  float capship_gen_distance;
   int min_num_ships;//the number of ships that have to be there or else more will be made
   int gen_num_ships;//the num ships to be made
   float capship_prob;//probability a capship will be there
@@ -15,7 +16,8 @@ module random_encounters {
   float enprob;
   object sig_container;
   int player_num;
-  void init(int player, float sigdis, float detectiondis, float gendis, int minnships, int gennships, float unitprob, float enemyprob, float capprob){
+  void init(int player, float sigdis, float detectiondis, float gendis, int minnships, int gennships, float unitprob, float enemyprob, float capprob, float capdist){
+    capship_gen_distance=capdist;
     player_num=player;
     enprob = enemyprob;
     fighterprob = unitprob;
@@ -54,7 +56,7 @@ module random_encounters {
       object launched = launch.launch_wave_around_unit("privateer",localfaction,fighter,"default",numship,200.0,generation_distance*_std.Rnd()*0.9,un);
       if ((_std.Rnd())<capship_prob) {
 	object capship = faction_ships.getRandomCapitol (localfaction);
-	launched=launch.launch_wave_around_unit("privateer",localfaction,capship,"default",1,200.0,generation_distance*_std.Rnd()*0.9,un);
+	launched=launch.launch_wave_around_unit("privateer",localfaction,capship,"default",1,200.0,capship_gen_distance*_std.Rnd()*0.9,un);
       }
       _string.delete (localfaction);
       i=i+1;
