@@ -7,7 +7,7 @@ import dynamic_news
 #hashed by system, then contains lists of pairs of (flightgroup,faction) pairs
 cpsal= {} #Current PerSystem AttackList
 persystemattacklist= cpsal #assign this to a pointer to cpsal THE FIRST TIME ONLY
-
+rescuelist={}#hashtable mapping system->(rescuefaction,attackfg,attackfaction)
 attacklist ={}#hashtable mapping (attackfg,attackfaction):(defendfg,defendfaction)
 defendlist={}#hashtable mapping (defendfg,defendfaction):(attackfg,attackfaction)
 lastfac=0
@@ -301,8 +301,20 @@ def TargetEachOther (fgname,faction,enfgname,enfaction):
 		en.setFlightgroupLeader(en)
 		en.SetTarget(al)
 		en.setFgDirective ('h')#help me out here!
-def KillOne (fg,enfac,tn,num):
-	return fg_util.RemoveShipFromFG(fg,enfac,tn[0],num,1)
+ejectbuildup=0
+def KillOne (fg,fac,tn,num,enfg,enfac):
+	sys = fg_util.FGSystem(fg,fac)
+	numkilled= fg_util.RemoveShipFromFG(fg,fac,tn[0],num,1)
+	chancetoeject=.25
+	global ejectbuildup
+	if (ejectbuildup>=(1-chancetoeject)**numkilled):
+		global rescuelist
+		rescuelist[sys]=(fac,enfg,enfac)
+		print rescuelist[sys]
+		ejectbuildup=0
+	else:
+		ejectbuildup+=chancetoeject 
+	return numkilled
 
 stattable={
 	"nova":(.7,.4,2,1),
@@ -370,14 +382,14 @@ def HowMuchDamage (shiptypes):
 		if (vsrandom.uniform(0,1)<stats[0]):
 			dam+=stats[2]*i[1]
 	return dam
-def ApplyDamage (fg,fac,shiptypes,damage):
+def ApplyDamage (fg,fac,shiptypes,damage,enfg,enfac):
 	rnum = vsrandom.randrange(0,len(shiptypes))
 	stats = GetStats (shiptypes[rnum])
 	if (vsrandom.uniform(0,1)>=stats[1]):
 		dampool=fg_util.GetDamageInFGPool(fg,fac)
 		tmpdam=damage+int(dampool/len(shiptypes))
 		numshipstokill=int(tmpdam/stats[3])
-		damage -= KillOne(fg,fac,shiptypes[rnum],numshipstokill)*stats[3]#returns how many ships killed
+		damage -= KillOne(fg,fac,shiptypes[rnum],numshipstokill,enfg,enfac)*stats[3]#returns how many ships killed
 		dampool+=damage
 		
 
@@ -388,8 +400,8 @@ def SimulatedDukeItOut (fgname,faction,enfgname,enfaction):
 	#FIXME!!!
 	if (len(enemy) and len(ally)):
 		endam = HowMuchDamage(enemy)
-		ApplyDamage(enfgname,enfaction,enemy,HowMuchDamage(ally))
-		ApplyDamage(fgname,faction,ally,endam)		
+		ApplyDamage(enfgname,enfaction,enemy,HowMuchDamage(ally),fgname,faction)
+		ApplyDamage(fgname,faction,ally,endam,enfgname,enfaction)		
 def numShips(i):
 	if (faction_ships.isCapital(i[0])):
 		return i[1]*10
