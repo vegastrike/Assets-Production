@@ -48,7 +48,7 @@
 	<Stats mass = "1096" momentofinertia = "1096" fuel = "40000000"  >
 	</Stats>
 	<Computer yaw = "60.400002" pitch = "50.600006" roll = "80.400002" afterburner = "60" maxspeed = "30" >
-		<Radar itts = "false" error = "0" range = "5000" maxcone = ".25" color = "false"  >
+		<Radar itts = "false" error = "0" range = "5000" maxcone = "-1" color = "false"  >
 		</Radar>
 	</Computer>
 	<Energy afterburnenergy = "32767"  >
