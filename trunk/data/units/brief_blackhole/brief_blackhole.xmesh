@@ -1,4 +1,4 @@
-<Mesh texture="planets/blackhole.png" blend="ONE ONE" scale="1000000">
+<Mesh texture="planets/blackhole.png" blend="ONE ONE" scale="4000000000">
 	<Points>
 		<Point>
 			<Location x="1" z="1" y="0"/>
