@@ -137,8 +137,6 @@ class cargo_mission (Director.Mission):
 	    return
 	  if (not self.adjsys.Execute()):
 	    return
-	  print "Won a section; class name:"
-#	  print self.adjsys
 	  if (self.arrived):
 	    self.adjsys.Execute=self.adjsys.HaveArrived
 	    if (self.base.isDocked(self.you)):
