@@ -1,4 +1,4 @@
-<system name="Oranthis" background="backgrounds/plasma_galaxy" nearstars="500" stars="1000" starspread="150">
+<system name="Oranthis" background="backgrounds/plasma_galaxy" nearstars="500" ScaleSystem=".5" stars="1000" starspread="150">
 <Light>
 	<ambient red="00" green="0" blue="0"/>
 	<diffuse  red="0.98" green="1" blue="0.9"/>
@@ -31,12 +31,12 @@
 				<Unit name="Outer Rings" file="MiningBase" ri="7800" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="6400" faction="confed"  year="1670" day="1670" />
 
 			</planet>
+			<planet name="Nief" file="planets/Snow.png" radius="416000" gravity="5" ri="42250000" rj="0" rk="0" si="0" sj="0" sk="52250000" year="7161700" day="950" position="0"/>
 
 		</planet>
 
 		<planet name="TanusGiant" file="planets/gas_giant3.png" gravity="1080" ri="1085500000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="1085500000" radius="32500000" year="85800000" day="38000" position=".5">
 			<planet name="JumpToAxis" file="jump.png" ri="65000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="65000000" radius="800" year="2405000" day="18500" alpha="ONE ONE" destination="enigma_sector/axis"/>
-			<planet name="Nief" file="planets/Snow.png" radius="416000" gravity="5" ri="42250000" rj="0" rk="0" si="0" sj="0" sk="52250000" year="7161700" day="950" position="0"/>
 		</planet>
 
 </planet>

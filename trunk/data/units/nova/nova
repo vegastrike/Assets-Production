@@ -3,8 +3,6 @@
 	</cockpit>
 	<Meshfile file = "nova.xmesh"  >
 	</Meshfile>
-	<BspMesh  >
-	</BspMesh>
 	<Mount weapon = "Laser" size = "Light" x = "1.000000" y = "0.000000" z = "4.000000"  >
 	</Mount>
 	<Mount weapon = "Laser" size = "Light" x = "-1.000000" y = "0.000000" z = "4.000000"  >
