@@ -1,26 +1,33 @@
+## Here are functions that retrieve and format the news from the dictionary
+## returned by the dynamic_news_content.allNews() function
+##
+##	- type_event is a string of the event type (siege, fleetbattle)
+##	- stage_event is a string of the event's stage
+##	  ("start", "middle", "end")
+##	- aggressor is a string of the aggressor faction
+##	  (ie "confed","rlaan")
+##	- defender "   "    "    "   "  defender faction
+##	- success is an int, how much success the attacker is having
+##	  (success = 1, loss = -1, draw = 0)
+##	- scale_event is a float, the "importance" of the event
+##	  (0.0 is highest, 1.0 is lowest)
+##	- system is the system string where the event happened
+##	  (ie "sol_sector/sol")
+##	- keyword is not really important right now, but will allow us
+##	  to call up specific news stories in the future..
+##	  for example we may write a special story for a siege of
+##	  planet earth....just use "all" for now
+
 import string
 import VS
 import vsrandom
 import dynamic_news_content
 
-# Here are functions that retrieve and format the news from the dictionary
-# returned by the dynamic_news_content.allNews() function
-#
-#	- type_event is a string of the event type (siege, fleetbattle)
-#	- stage_event is a string of the event's stage ("start", "middle", "end")
-#	- aggressor is a string of the aggressor faction (ie "confed","rlaan")
-#	- defender "   "    "    "   "  defender faction
-#	- success is an int, how much success the attacker is having (success = 1, loss = -1, draw = 0)
-#	- scale_event is a float, the "importance" of the event (0.0 is highest, 1.0 is lowest)
-#	- system is the system string where the event happened (ie "sol_sector/sol")
-#	- keyword is not really important right now, but will allow us to call up specific news stories in the future.. #	  for example we may write a special story for a siege of planet earth....just use "all" for now
-
-
 
 def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 			,scale_event,system,keyword,aggressor_flightgroup,aggressor_type, defender_flightgroup, defender_type):
-# retrieves a relevant news item from the dynamic_news_content.allNews()
-# list, and formats it
+	"""retrieves a relevant news item from the dynamic_news_content.allNews()
+	list, and formats it"""
 	global allUsefullVariables
 	allUsefullVariables =	{"type_event"	: type_event		#NOTE: atm none of the used in the content
 				,"stage_event"	: stage_event		#can have punctuation in it :-(
@@ -46,8 +53,8 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 # ------------------------------------------------------------------------------
 
 def splitPunWord(word):
-# splits a word into a list containing any prefix punctuation,
-# the word, any suffix punctuation, and any trailing characters
+	"""splits a word into a list containing any prefix punctuation,
+	the word, any suffix punctuation, and any trailing characters"""
 	pre_pun = word[:word.find("VAR_")]
 	word_2 = word[len(pre_pun):]
 	excess_pun = ""
@@ -63,7 +70,7 @@ def splitPunWord(word):
 		return [pre_pun,word_2,"",""]
 
 def formatNewsItem(item):
-# returns the formatted news item built from the relevant data
+	"""returns the formatted news item built from the relevant data"""
 	lines = item.split("\n")
 	for i in range (len(lines)):
 		words = lines[i].split()
@@ -75,8 +82,9 @@ def formatNewsItem(item):
 	return string.join(lines,"\n")
 
 def formatNameTags(word,names):
-# formats a news tag to be the string so desired
-# valid tags include "system_sector", "aggressor_nick", "defender_homeplanet"
+	"""formats a news tag to be the string so desired
+	valid tags include "system_sector", "aggressor_nick"
+	and "defender_homeplanet" """
 	[pre,var,tag] = string.split(word,"_")	
 	global allUsefullVariables
 	var_string = allUsefullVariables[var]
@@ -92,8 +100,8 @@ def formatNameTags(word,names):
 		return word
 
 def formatProperTitle(str):
-# puts capital letters at the start of every word in string
-# while preserving caps for all other letters!!!
+	"""puts capital letters at the start of every word in string
+	while preserving caps for all other letters!!! """
 	words = str.split()
 	for i in range (len(words)):
 		if words[i][0] in string.lowercase:
@@ -101,7 +109,8 @@ def formatProperTitle(str):
 	return string.join(words)
 
 def makeVarList(ls):
-# formats a list of variables to be stored in a save game for later reference
+	"""formats a list of variables to be stored in a save game
+	for later reference"""
 	return string.join(ls,',')
 
 
@@ -110,7 +119,8 @@ def makeVarList(ls):
 # ------------------------------------------------------------------------------
 
 def validateDictKeys(listkeys,dict):
-# checks to see if the keys given are available in the dictionary in the specified order
+	"""checks to see if the keys given are available in the
+	dictionary in the specified order"""
 
 	dicto = dict
 	listo = listkeys
@@ -126,8 +136,9 @@ def validateDictKeys(listkeys,dict):
 		return 0
 
 def validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword):
-# validates that a news item with the specified variables (or a neutral one) exists)
-# returns the faction for which it does exist (if any)
+	"""validates that a news item with the specified variables
+	(or a neutral one) exists) returns the faction for which
+	it does exist (if any)"""
 	neutral_list = 0
 	neutral_keyword = 0
 	specific_list = 0
@@ -154,7 +165,7 @@ def validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword):
 			return "neutral"
 
 def validateNewsKeyword(newslist,keyword):
-# validates that a keyword exists for a specified news list
+	"""validates that a keyword exists for a specified news list"""
 	for i in range (len(newslist)):
 		if newslist[i][1] == keyword:
 			return 1
@@ -164,11 +175,12 @@ def validateNewsKeyword(newslist,keyword):
 # ------------------------------------------------------------------------------
 
 def povCutOff():
-# the "cutoff" value for neutral/good/bad in the getPOV function
+	"""the "cutoff" value for neutral/good/bad in the getPOV function"""
 	return 0.25
 
 def getPOV(facmy,defender,aggressor,success):
-# returns a rough string approximation of the relation between two functions
+	"""returns a rough string approximation of the relation between
+	two functions"""
 	relatdef = VS.GetRelation(facmy,defender)
 	relatagg = VS.GetRelation(facmy,aggressor)
 	print "relatdef =",
@@ -197,7 +209,7 @@ def getPOV(facmy,defender,aggressor,success):
 		return "neutral"
 
 def getDockFaction(system):
-# returns the faction of the place the player is docked at
+	"""returns the faction of the place the player is docked at"""
 #	return "aera" # FIXME -- make the stub functions actually return a useful value!
 	i=0
 	playa=VS.getPlayer()
@@ -217,7 +229,7 @@ def getDockFaction(system):
 
 
 def getSuccessStr(success):
-# returns a string either "success" or "loss" based on the arg success
+	"""returns a string either "success" or "loss" based on the arg success"""
 	if success == 1:
 		return "success"
 	elif success == -1:
@@ -226,7 +238,8 @@ def getSuccessStr(success):
 		return "draw"
 
 def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword):
-# finds a suitable news string from the dynamic_news_content.allNews() dictionary
+	"""finds a suitable news string from
+	the dynamic_news_content.allNews() dictionary"""
 	faction = validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword)
 	if faction == "barf":
 		print "Error: A suitable news story does not exist, returning a neutral siege story so you can still see the base you're at :-)"
@@ -236,7 +249,7 @@ def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword):
 	return getClosestScaleNews(listnews,scale)
 
 def getClosestScaleNews(listof,scale):
-# returns the closest scaled news item from a list of news items
+	"""returns the closest scaled news item from a list of news items"""
 	valtable = []
 	for i in range (len(listof)):
 		valtable.append(listof[i] + (abs(scale - listof[i][0]),))
@@ -249,15 +262,18 @@ def getClosestScaleNews(listof,scale):
 	return finallist[vsrandom.randrange(0,len(finallist), step=1)][2]
 
 def minorNewsTypes():
-#a list of all the minor news types that should be system dependent
+	"""a list of all the minor news types that should be system dependent"""
 	return ["skirmish","destroyed"]
 
 def checkSystemRelevant(system):
+	"""returns 1 if the system in question is within a 1 system radius of
+	the players current system"""
 	if (system in VS.getAllAddjacentSystems(VS.getSystemFile()).append(VS.getSystemFile())):
 		return 1
 
 def checkVarListRelevant(newsstring):
-# returns true only if the newsstring is relevant (major or close to home)
+	"""returns true only if the newsstring is relevant
+	(major or close to home)"""
 	ls = newsstring.split(',')
 	if ls[0] in minorNewsTypes():
 		if checkSystemRelevant(ls[6]):
@@ -265,7 +281,8 @@ def checkVarListRelevant(newsstring):
 	return 0
 
 def filterRelevantStory(story):
-# returns the text to a story only if it is relevant (big or close to home)..otherwise returns an empty string
+	"""returns the text to a story only if it is relevant
+	(big or close to home)..otherwise returns an empty string"""
 	text = story[story.find("@SYSTEM@") + len("@SYSTEM@"):]
 	system = story[story.find("@SYSTEM@")][:len("@SYSTEM@")]
 	if checkSystemRelevant(system):
@@ -273,6 +290,8 @@ def filterRelevantStory(story):
 	return ""
 
 def processNewsTuple(newsstring):
+	"""takes a news variable string and returns the news story with
+	stardate and original system preceeding it"""
 	ls = newsstring.split(',')
 	while (len(ls)<12):
 		ls.append ('unknown')
