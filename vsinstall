@@ -1,0 +1,9 @@
+#!/bin/sh
+CURPWD=$PWD
+mkdir $HOME/.vegastrike
+cd $HOME/.vegastrike
+echo "default"> save.txt
+cp /usr/local/share/vegastrike/data/setup.config .
+cp /usr/local/share/vegastrike/data/vegastrike.config .
+/usr/local/bin/vssetup
+cd $CURPWD
