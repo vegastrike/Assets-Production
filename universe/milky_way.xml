@@ -1748,7 +1748,7 @@
 				<var name="data" value="2751"/>
 			</sector>
 			<sector name="eden">
-				<var name="faction" value="confed"/> 
+				<var name="faction" value="retro"/> 
 				<var name="jumps" value="gemini_sector/valhalla"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
