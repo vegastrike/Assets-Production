@@ -1,0 +1,66 @@
+<Mesh texture="tinfoil.png">
+<Points>
+<Point>
+    <Location x="5.2449951171875" y="2.74321055412292" z="-14.0701580047607"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="14.6479721069336" y="2.63640689849854" z="-2.49265551567078"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.25830078125" y="2.66271114349365" z="-2.49265551567078"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.25830125808716" y="7.47548532485962" z="-2.49265503883362"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="14.6479721069336" y="2.63640689849854" z="-2.49265551567078"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.2449951171875" y="2.74321055412292" z="-14.0701580047607"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.2449951171875" y="2.74321055412292" z="-14.0701580047607"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.25830078125" y="2.66271114349365" z="-2.49265551567078"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.25830125808716" y="7.47548532485962" z="-2.49265503883362"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.25830078125" y="2.66271114349365" z="-2.49265551567078"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+</Points>
+<Polygons>
+<Tri>
+    <Vertex point="0" s="1" t="0"/>
+    <Vertex point="1" s="1" t="1"/>
+    <Vertex point="2" s="0" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="3" s="1" t="1"/>
+    <Vertex point="4" s="0" t="1"/>
+    <Vertex point="5" s="0" t="0"/>
+</Tri>
+<Tri>
+    <Vertex point="6" s="0" t="0"/>
+    <Vertex point="7" s="1" t="0"/>
+    <Vertex point="3" s="1" t="1"/>
+</Tri>
+<Tri>
+    <Vertex point="1" s="1" t="1"/>
+    <Vertex point="8" s="0" t="1"/>
+    <Vertex point="9" s="0" t="0"/>
+</Tri>
+</Polygons>
+</Mesh>
