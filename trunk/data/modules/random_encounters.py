@@ -4,6 +4,7 @@ import launch_recycle
 import launch
 import VS
 import unit
+import sys
 class random_encounters:
   sig_distance=0#backup var
   det_distance=0#backup var
@@ -18,16 +19,18 @@ class random_encounters:
   class playerdata:  
     #struct playerdata {
     last_ship=0 #cur[0]
-    curmode=0 #cur[1] #are we in battle mode (true) or cruise mode (false)
-    lastmode=0 #cur[2] #were we in battle mode (true) or cruise mode(false)
+    curmode=0 #cur[1] #are we in battle mode (1) or cruise mode (0)
+    lastmode=0 #cur[2] #were we in battle mode (1) or cruise mode(0)
     lastsys="" #cur[3]
     sig_container=VS.Unit() #cur[4]
-    significant_distance=sig_distance #cur[5]
-    detection_distance=det_distance #cur[6]
+    significant_distance=5000 #cur[5]
+    detection_distance=2500 #cur[6]
     playernum=0 #cur[8]
     def __init__(self,pnum=None):
       if (pnum==None):
         return
+      self.significant_distance=sig_distance
+      self.detection_distance=det_distance
       self.playernum=pnum
   cur=playerdata()
   def __init__(self, sigdis, detectiondis, gendis,  minnships, gennships, unitprob, enemyprob, capprob, capdist):
@@ -44,7 +47,7 @@ class random_encounters:
     self.gen_num_ships=gennships
     self.capship_prob=capprob
     player_num=0
-    px = _unit.getPlayerX(player_num)
+    px = VS.getPlayerX(player_num)
     while (px):
         print ("init")
         self.players=self.players+(playerdata(player_num))
@@ -52,7 +55,7 @@ class random_encounters:
         px = _unit.getPlayerX(player_num)
   
   def getMinDistFrom(self,sig1):
-    sig2=unit.getPlanet (0,false)
+    sig2=unit.getPlanet (0,0)
     mindist=100000000000000000000000000000000000000000000.0
     i=0
     while (sig2):
@@ -60,11 +63,11 @@ class random_encounters:
       if (tempdist<mindist and tempdist>0.0):
           mindist=tempdist
       i+=1
-      sig2 = unit.getPlanet (i,false)
+      sig2 = unit.getPlanet (i,0)
     return mindist
 
   def minimumSigDistApart(self):
-    sig1=unit.getPlanet (0,false)
+    sig1=unit.getPlanet (0,0)
     i=0
     mindist=100000000000000000000000000000000000000000000.0
     ave=0.0
@@ -76,21 +79,21 @@ class random_encounters:
         mindist += tempdist
       ave+=1.0
       i+=1
-      sig1 = unit.getPlanet (i,false)
+      sig1 = unit.getPlanet (i,0)
     if (ave!=0.0):
       mindist = mindist/ave
     return mindist
 
   def CalculateSignificantDistance(self):
     minsig =  self.minimumSigDistApart()
-    if (sig_distance>minsig*0.15):
+    if (self.sig_distance>minsig*0.15):
       self.cur.significant_distance=minsig*0.15
     else:
-      self.cur.significant_distance=sig_distance
-    if (det_distance>minsig*0.2):
+      self.cur.significant_distance=self.sig_distance
+    if (self.det_distance>minsig*0.2):
       self.cur.detection_distance=minsig*0.2
     else:
-      self.cur.detection_distance=det_distance
+      self.cur.detection_distance=self.det_distance
     
     print "resetting sigdist=%f detdist=%f" % (self.cur.significant_distance,self.cur.detection_distance)
 
@@ -118,17 +121,17 @@ class random_encounters:
     if (numfactions==0):
       sys.stderr.write('warning: no factions\n')
       return
-    sysfile = VS.getSystemFile()
+    sysfile = VS.getFileName()
     for i in range(0,numfactions):
-      localfaction = _std.getGalaxyProperty(sysfile,"faction")
-      if (random.random() < enprob):
+      localfaction = VS.GetGalaxyProperty(sysfile,"faction")
+      if (random.random() < self.enprob):
         localfaction = faction_ships.get_enemy_of (localfaction)
       else:
         localfaction = faction_ships.get_friend_of(localfaction)
       #      fighter = faction_ships.getRandomFighter (localfaction)
-      numship= random.randrange(1,gen_num_ships)
-      det_distance = self.cur.detection_distance
-      launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,false,generation_distance*_std.Rnd()*0.9,un, 2.0*det_distance)
+      numship= random.randrange(1,self.gen_num_ships)
+      self.det_distance = self.cur.detection_distance
+      launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,0,self.generation_distance*random.random()*0.9,un, 2.0*self.det_distance)
       rnd_num = random.random()
       if (rnd_num<capship_prob):
         if (AsteroidNear (un,self.cur.significant_distance)):
@@ -136,7 +139,7 @@ class random_encounters:
         else:
           print "no asty near"
           capship = faction_ships.getRandomCapitol (localfaction)
-          launch_recycle.launch_wave_around("Capitol",localfaction,"default",1,true,capship_gen_distance*(0.5+(_std.Rnd()*0.4)),un, 8.0*det_distance)
+          launch_recycle.launch_wave_around("Capitol",localfaction,"default",1,1,self.capship_gen_distance*(0.5+(random.random()*0.4)),un, 8.0*self.det_distance)
 
   def atLeastNInsignificantUnitsNear (self,uni, n):
     num_ships=0
@@ -147,7 +150,7 @@ class random_encounters:
     while (un):
       if (uni.getSignificantDistance(un)<dd*1.6):
         if ((not un.isSignificant()) and (not un.isSun())):
-          unleadah = un.getFgLeader ()
+          unleadah = un.getFlightgroupLeader ()
           if (leadah!=unleadah):
             num_ships+=1
       count+=1
@@ -163,9 +166,9 @@ class random_encounters:
     self.cur.last_ship=0
     self.cur.curmode=1
     self.cur.sig_container=significant
-    self.cursys = VS.getSystemFile()
-    oldsys = self.cur.lastsys==cursys
-    self.cur.lastsys=cursys
+    self.cursys = VS.getFileName()
+    oldsys = self.cur.lastsys==self.cursys
+    self.cur.lastsys=self.cursys
     if (not oldsys):
       self.CalculateSignificantDistance()
 
