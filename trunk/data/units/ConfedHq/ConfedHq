@@ -207,6 +207,12 @@
 		<Category file="upgrades/Weapons/Mounted_Guns_Confed_Milspec">
 			<import price="1" pricestddev=".1" quantity="5" quantitystddev="20"/>
 		</Category>
+		<Category file="upgrades/Weapons/Turrets">
+			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
+		</Category>
+		<Category file="upgrades/Miscellaneous/SubUnits">
+			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
+		</Category>
 		<Category file="upgrades/Weapons/Beam_Arrays_Light">
 			<import price="1" pricestdev=".1" quantity="10" quantitystddev="50" />
 		</Category>

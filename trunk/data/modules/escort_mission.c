@@ -31,8 +31,10 @@ module escort_mission {
   bool intra_system;
   void AddCargoToUnit (object un, int quantity) {
 	  object list=_unit.getRandCargo(quantity);
-	  cargoname=_olist.at(list,0);
-	  int quantity = _unit.addCargo(un,cargoname,_olist.at(list,1),_olist.at(list,2),_olist.at(list,3),_olist.at(list,4),_olist.at(list,5));  
+          if (_olist.size (list)>0) {
+  	    cargoname=_olist.at(list,0);
+	    int quantity = _unit.addCargo(un,cargoname,_olist.at(list,1),_olist.at(list,2),_olist.at(list,3),_olist.at(list,4),_olist.at(list,5)); 
+          }
 	  _olist.delete(list);
   };
   void ActivateStage1 (object jumppoint) {
@@ -308,3 +310,4 @@ module escort_mission {
 
 	};
 }
+

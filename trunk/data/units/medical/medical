@@ -144,6 +144,9 @@
 		<Category file="upgrades/Miscellaneous">
 			<import price="1" pricestddev=".1" quantity="2" quantitystddev="1"/>
 		</Category>
+		<Category file="upgrades/Miscellaneous/SubUnits">
+			<import price="1" pricestddev=".1" quantity="1" quantitystddev="1"/>
+		</Category>
 		<Category file="upgrades/Ammunition">
 			<import price="1" pricestddev=".1" quantity="52" quantitystddev="28"/>
 		</Category>
