@@ -6,25 +6,25 @@
 <!--	<Meshfile file="Hidden.xmesh"/> -->
 	<Thrust>
 		<Engine Afterburner="0" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
-		<Maneuver yaw="1000.000000" pitch="1000" roll="0"/>
+		<Maneuver yaw="000.000000" pitch="000" roll="0"/>
 	</Thrust>
 	<Sound>
 	</Sound>
 	<Defense hudImage="unknown_derelict-hud.spr">
-		<Armor front="80" right="70" left="70" back="60"/>
-		<Shields front="100000.000000" back="100000.000000" left="100000" right="100000" recharge="10.000000"/>
-		<Hull strength="200.000000"/>
-		<Cloak cloakmin="0" cloakrate=".1" cloakenergy="280"/>
+		<Armor front="0" right="0" left="0" back="0"/>
+		<Shields front="100000.000000" back="100000.000000" left="100000" right="100000" recharge="5.000000"/>
+		<Hull strength="1000.000000"/>
+		<Cloak missing="1" cloakmin="0" cloakrate="0" cloakglass="0" cloakenergy="0"/>
 	</Defense>
 	<Stats mass=".5000000" momentofinertia=".5000000" fuel="20000000"></Stats>
-	<Computer yaw="30.000000" pitch="40.600006" roll="30.200012" afterburner="40" maxspeed="40">
-		<Radar itts="true" color="true" range="800000" error="0"/> </Computer>
+	<Computer yaw="4" pitch="4" itts="false" roll="4" afterburner="4" maxspeed="2">
+		<Radar itts="false" color="false" range="00" error="0" maxcone="1"/> </Computer>
 
-	<Energy afterburnenergy="30">
+	<Energy afterburnenergy="0">
 		<Reactor recharge="40" limit="46"/>
 	</Energy>
        <cockpit x="0" y="8" z="50"/>
-
+       <Jump missing="1" delay="1" jumpenergy="0"/>       
 <!-- new elements added -->
 
 <!-- new elements added -->
