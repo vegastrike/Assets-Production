@@ -62,6 +62,16 @@
 		<stats name="confed" relation="-.3"/>
 		<stats name="aera" relation="-1"/>
 		<stats name="unknown" relation="-.1"/>
+		<stats name="powerups" relation="1"/>
+	</Faction>
+	<Faction name="powerups" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
+		<stats name="rlaan" relation="1"/>
+		<stats name="retro" relation="-1"/>
+		<stats name="militia" relation="0"/>
+		<stats name="merchant" relation="-.3"/>
+		<stats name="confed" relation="-.3"/>
+		<stats name="aera" relation="-1"/>
+		<stats name="unknown" relation="-.1"/>
 	</Faction>
 	<Faction name="unknown" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
 		<stats name="retro" relation="-1"/>
