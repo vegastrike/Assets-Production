@@ -157,7 +157,7 @@ def findLaunchedShipInFGInSystem (fgname,faction):
 def LaunchMoreShips(fgname,faction,landedtn,nums):
 	shiplaunchlist=[]
 	while nums>0 and len(landedtn)>0:
-		index=vsrandom.randrange(0,len(nt))
+		index=vsrandom.randrange(0,len(landedtn))
 		nums-=numShips(landedtn[index])/landedtn[index][1]
 		shiplaunchlist += [(landedtn[index][0],1)]
 		if (landedtn[index][1]>1):
