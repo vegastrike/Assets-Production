@@ -36,6 +36,7 @@ module nvn {
 	}
     while (tmp==0) {
       side=_std.Rnd();
+      _io.printf("sid%f",side);
       if ((side>0.66)&&!(_string.equal(stringi,"aera"))) {
         ship_list=faction_ships.aera();
         faction_name="aera";

@@ -1,9 +1,9 @@
 <Unit>
 	<Meshfile file="aeon.xmesh" />
-	<Mount weapon="DisruptorBeam" size="Light" x="5.600000" y="-1.600000" z="3.200000"/>
-	<Mount weapon="DisruptorBeam" size="Light" x="-5.600000" y="-1.600000" z="3.200000"/>
-	<Mount weapon="Neutron" size="Light" x="2.000000" y="-0.200000" z="5.200000"/>
-	<Mount weapon="Neutron" size="Light" x="-2.000000" y="-0.200000" z="5.200000"/>
+	<Mount weapon="DisruptorBeam" size="light medium" x="5.600000" y="-1.600000" z="3.200000"/>
+	<Mount weapon="DisruptorBeam" size="light medium" x="-5.600000" y="-1.600000" z="3.200000"/>
+	<Mount weapon="Neutron" size="heavy" x="2.000000" y="-0.200000" z="5.200000"/>
+	<Mount weapon="Neutron" size="heavy" x="-2.000000" y="-0.200000" z="5.200000"/>
 	<Thrust>
 		<Engine Afterburner="2066.666718" Forward="586.666687" Retro="513.333351" Left="293.333344" Right="293.333344" Top="293.333344" Bottom="293.333344"/>
 		<Maneuver yaw="4554.000000" pitch="5464.800201" roll="6375.600403"/>
