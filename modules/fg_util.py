@@ -11,6 +11,8 @@ def MakeStarSystemFGKey (starsystem):
 	return 'SS:'+str(starsystem)
 def ShipListOffset ():
 	return 3
+def PerShipDataSize ():
+	return 3
 def AllFactions ():
 	facs =[]
 	for i in range (VS.GetNumFactions()):
@@ -68,7 +70,7 @@ def _MakeFGString (starsystem,typenumlist):
 	strlist=[]
 	for tt in typenumlist:
 		totalships+=int(tt[1])
-		strlist+=[str(tt[0]),str(tt[1])]
+		strlist+=[str(tt[0]),str(tt[1]),str(tt[1])]
 	return [str(totalships),str(starsystem),str(damage)]+strlist
 
 def _AddShiptoKnownFG(key,tn):
@@ -79,18 +81,23 @@ def _AddShiptoKnownFG(key,tn):
 		Director.putSaveString(ccp,key,0,str(numtotships))
 	except:
 		print 'error adding ship to flightgroup'
-	for i in range (ShipListOffset+1,leg,2):
+	for i in range (ShipListOffset+1,leg,PerShipDataSize()):
 		if (Director.getSaveString(ccp,key,i-1)==str(tn[0])):
 			numships=0
+			numactiveships=0
 			try:
 				numships+= int(tn[1])
+				numactiveships+= int(tn[1])
 				numships+= int (Director.getSaveString(ccp,key,i))
+				numactiveships+= int (Director.getSaveString(ccp,key,i+1))
 			except:
 				pass
 			Director.putSaveString(ccp,key,i,str(numships))
+			Director.putSaveString(ccp,key,i+1,str(numactiveships))
 			return
 	Director.pushSaveString(ccp,key,str(tn[0]))
 	Director.pushSaveString(ccp,key,str(tn[1]))
+	Director.pushSaveString(ccp,key,str(tn[1]))#add to number active ships
 
 def _AddFGToSystem (fgname,faction,starsystem):
 	key = MakeStarSystemFGKey (starsystem)
@@ -106,7 +113,7 @@ def _AddFGToSystem (fgname,faction,starsystem):
 			Director.pushSaveString(ccp,key,'')
 		Director.pushSaveString(ccp,key,fgname)
 
-	
+
 def _RemoveFGFromSystem (fgname,faction,starsystem):
 	key = MakeStarSystemFGKey( starsystem)
 	leg = Director.getSaveStringLength(ccp,key)
@@ -140,8 +147,10 @@ def CheckFG (fgname,faction):
 	leg = Director.getSaveStringLength (ccp,key)
 	totalships=0
 	try:
-		for i in range (ShipListOffset+1,leg,2):
-			totalships+=int(Director.getSaveString(ccp,key,i))
+		for i in range (ShipListOffset+1,leg,PerShipDataSize()):
+			shipshere=Director.getSaveString(ccp,key,i)
+			totalships+=int(shipshere)
+			Director.putSaveString(ccp,key,i+1,shipshere)#set num actives to zero
 		if (totalships!=int(Director.getSaveString(ccp,key,0))):
 			print 'mismatch on flightgroup '+fgname+' faction '+faction
 			return 0
@@ -194,7 +203,7 @@ def AddShipsToFG (fgname,faction,typenumbertuple,starsystem):
 def RemoveShipFromFG (fgname,faction,type):
 	key = MakeFGKey (fgname,faction)
 	leg = Director.getSaveStringLength (ccp,key)
-	for i in range (ShipListOffset+1,leg,2):
+	for i in range (ShipListOffset+1,leg,PerShipDataSize()):
 		if (Director.getSaveString(ccp,key,i-1)==str(type)):
 			numships=0
 			try:
@@ -208,4 +217,45 @@ def RemoveShipFromFG (fgname,faction,type):
 				Director.eraseSaveString(ccp,key,i)
 				Director.eraseSaveString(ccp,key,i-1)
 	print 'cannot find ship to delete in '+faction+' fg ' + fgname
-
+def FGsInSystem(faction,system):
+	key = MakeStarSystemFGKey (system)
+	leg = Director.getSaveStringLength (ccp,key)
+	facnum = VS.getFactionIndex (faction)
+	ret=[]
+	if (leg>facnum):
+		st=Director.getSaveString(ccp,key,facnum)
+		if (len(st)>0):
+			ret = st.split('|')
+	return ret
+def CountFactionShipsInSystem(faction,system):
+	count=0
+	for fgs in FGsInSystem (faction,system):
+		ships=ReadStringList (ffp,MakeFGKey (fgs,faction))
+		for num in range(ShipListOffset()+2,len(ships),PerShipDataSize()):
+			try:
+				count+= int(ships[num])
+			except:
+				print 'number ships '+ships[num] + ' not read'
+	return count
+def LaunchLandShip(fgname,faction,typ,numlaunched=1):
+	key = MakeFGKey (fgname,faction)
+	ships=ReadStringList (cpp,key)
+	for num in range (ShipListOffset(),len(ships),PerShipDataSize()):
+		if (typ == ships[num]):
+			try:
+				ntobegin=int(ships[num+1])
+				nactive=int(ships[num+2])
+				nactive-=numlaunched
+				if (nactive<0):
+					nactive=0
+					print 'error more ships launched than in FG '+fgname
+				if (nactive>ntobegin):
+					nactive=ntobegin
+					print 'error ships '+typ+'landed that never launched'
+				Director.putSaveString(ccp,key,num+2,str(nactive))
+			except:
+				print 'error in FG data (str->int)'
+def LaunchShip (fgname,faction,typ,num=1):
+	LaunchLandDestroyShip (fgname,faction,typ,num)
+def LandShip (fgname,faction,typ,num=1):
+	LaunchLandDestroyShip(fgname,faction,typ,-num)
