@@ -2540,4 +2540,5 @@
 	<Ref point="327" weight="2.869998" />
 	<Ref point="323" weight="7.590079" />
 </Logo>
+<LOD meshfile="Ferret_80.xmesh" size="50"/>
 </Mesh>
