@@ -1,4 +1,5 @@
 module starships_jumped_and_killed {
+  int neg1;
   //here is what the my_list var is supposed to represent
   //struct my_list {
   //olist_t olist;
@@ -9,8 +10,9 @@ module starships_jumped_and_killed {
   //};
   //init sets up a new()ed _olist with variables that it will use to track the starships...starship list must also be newed
   void init (object my_list, object starship_list) {
+    neg1=0-1;
     _olist.push_back (my_list,starship_list);
-    int size =_olist.size(starship_list)
+    int size =_olist.size(starship_list);
     _olist.push_back (my_list,size);
     _olist.push_back (my_list,0);
     _olist.push_back (my_list,0);
@@ -30,18 +32,18 @@ module starships_jumped_and_killed {
   };
   int original_num_ships (object my_list) {
     return _olist.at (my_list,1);
-  }
+  };
   int ships_alive (object my_list) {
     object starship_list = _olist.at (my_list,0);
     return _olist.size (starship_list);
   };
   int ships_in_system (object my_list) {
     return _olist.at (my_list,4);
-  }
+  };
   int scan_for (int sys_iterator,object un) {
     object sysunit = _unit.getUnit (sys_iterator);
     if (_std.isNull(sysunit)) {
-      return -1;
+      return 0-1;
     }
     if (_unit.equal (sysunit,un)) {
       return 0;
@@ -71,12 +73,13 @@ module starships_jumped_and_killed {
       if (_std.isNull(unit_to_check)) {
 	ships_insys=ships_insys-1;//one less ship in system... got nailed!
       }else {
-	sys_iterator = scan_for (sys_iterator,unit_to_checkx);
-	if (sys_iterator==-1) {
+	sys_iterator = scan_for (sys_iterator,unit_to_check);
+
+	if (sys_iterator==neg1) {
 	  ships_insys=ships_insys-1;//if we cannot find it, we must decrement num ships insys
 	}
 	//if it's negative one then we couldn't find it... if it's 0 we could
-	if (sys_iterator==0||sys_iterator==-1) {//if we've been through all the starships
+	if ((sys_iterator==0)||(sys_iterator==neg1)) {//if we've been through all the starships
 	  sys_iterator=0;
 	  iterator=iterator+1;
 	}
