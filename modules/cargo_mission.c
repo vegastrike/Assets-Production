@@ -43,6 +43,7 @@ module cargo_mission {
 	    _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
 	  } else {
 	    _std.terminateMission (false);
+	    return;
 	  }
 	  if (tempquantity>0) {
 	    cred=cred *_std.Float(quantity)/_std.Float(tempquantity);
@@ -64,6 +65,7 @@ module cargo_mission {
 	    _io.message (0,"game","all","Your contribution to the war effort will be remembered.");
 	    _unit.addCredits(you,cred);
 	    _std.terminateMission(true);
+	    return;
 	  } else {
 	    _io.message (0,"game","all","You did not follow through on your end of the deal.");
 
@@ -90,7 +92,7 @@ module cargo_mission {
 	      }
 	    }
 	    _std.terminateMission(false);
-
+	    return;
 	  }
 	};
 	void loop () {

@@ -67,6 +67,12 @@ module faction_ships {
     _olist.push_back(rlaan_ships,"f109vampire");
     _olist.push_back(rlaan_ships,"starfish");
     _olist.push_back(rlaan_ships,"hispidus");
+    
+    object merchant_ships=_olist.new();
+    _olist.push_back(fighters,merchant_ships);
+    _olist.push_back (merchant_ships,"tian");
+    _olist.push_back (merchant_ships,"cruiser");
+    _olist.push_back (merchant_ships,"revoker");
 
     unknown_ships=_olist.new();
     _olist.push_back(unknown_ships,"unknown_active");    
