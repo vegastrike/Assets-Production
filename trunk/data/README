@@ -13,11 +13,11 @@ And if you can design some missions it would rock!
 -------------------------------------------------
  Running Vegastrike In Windows
 -------------------------------------------------
+If you 
+
 You can drag the mission on the the program names "Vegastrike"
 
--OR-
-
-You can run the "Mission Launcher" program and select the correct mission.
+Or you can run the "Mission Launcher" program and select the correct mission.
 
 -------------------------------------------------
  Running Vegastrike From the Command Line
@@ -157,7 +157,8 @@ Shift-Z      Eject cargo
  Features:
 =================================================
 
--Autopilot
+-Autopilot (Shift-A)
+-Better Communications (always has eight choices)
 
 --*OLD*--
 -Time compression
@@ -174,7 +175,7 @@ Shift-Z      Eject cargo
 -Cloaking that renders a ship partially/fully invisible
 -All new starships
 -Customizable fully working HUD with targetting displays, etc
-- Customizable Alien Race logos that will change on all starships by editing TerranPriA.bmp and TechPriA.bmp
+-Customizable Alien Race logos that will change on all starships by editing TerranPriA.bmp and TechPriA.bmp
 -Intelligent, Programmable AI
 -Varied weapons on different starships
 -Explosions that literally tear a starship into pieces
