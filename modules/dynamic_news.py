@@ -45,7 +45,7 @@ def makeDynamicNews	(stardate,type_event,stage_event,aggressor,defender,success
 				,"scale_event"	: scale_event
 				,"system"	: system
 				,"keyword"	: keyword
-				,"stardate" : str(stardate)
+				,"stardate" : stardate
 				,"aggressorFG"	: formatName(aggressor_flightgroup)
 				,"aggressorFGtype": formatShipName(aggressor_type)
 				,"defenderFG"	: formatName(defender_flightgroup)
@@ -163,9 +163,21 @@ def makeVarList(ls):
 	for later reference"""
 	return string.join([str(vsrandom.randrange(0,4194304))]+ls,',')
 
-def formatStarDate(stri):
+
+def makeStarDate(stri):
 	"""formats a stardate string for appending to the news story"""
-	return "\\\\\\Story first broadcast:\\StarDate " + stri[:stri.find('.')+3]
+	import stardate
+	global allUsefullVariables
+	return "\\\\\\Story first broadcast: " + formatStarDate(stardate.getFacCal(allUsefullVariables["dockedat"],allUsefullVariables["stardate"]))
+
+def formatStarDate(date):
+	return str(date[1]) + " " + fillWithZeros(date[2],2) + " " + fillWithZeros(date[0],4) + ", " + fillWithZeros(date[3],2) + ":" + fillWithZeros(date[4],2) + ":" + fillWithZeros(date[5],2)
+
+def fillWithZeros(inttofill,numnumbers):
+	num = str(inttofill)
+	while len(num) < numnumbers:
+		num = "0" + num
+	return num
 
 # ------------------------------------------------------------------------------
 # Dictionary and Validation functions
@@ -365,9 +377,9 @@ def processNewsTuple(newsstring,randint):
 #	while (len(ls)<13):
 #		ls.append ('unknown')
 	print 'lsing '+ str(ls)
-	ns = makeDynamicNews(string.atof(ls[0]),ls[1],ls[2],ls[3],ls[4],string.atoi(ls[5]),string.atof(ls[6]),ls[7],ls[8],ls[9],ls[10],ls[11],ls[12],randint)
+	ns = makeDynamicNews(ls[0],ls[1],ls[2],ls[3],ls[4],string.atoi(ls[5]),string.atof(ls[6]),ls[7],ls[8],ls[9],ls[10],ls[11],ls[12],randint)
 	print ns
-	return ns + formatStarDate(ls[0])
+	return ns + makeStarDate(ls[0])
 #Added flightgroups as the last few arguments
 
 
