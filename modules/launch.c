@@ -11,6 +11,9 @@ module launch {
 
      _io.printf("launching %d ships type=%s faction=%s around area [%f,%f,%f]\n",nr_ships,type,faction,x,y,z);
 
+    _io.message("game","all","launching new wave of fighters:");
+    _io.message("game","all",type);
+
     _unit.launch(fgname,faction,type,ai,nr_ships,x,y,z);
   };
 
