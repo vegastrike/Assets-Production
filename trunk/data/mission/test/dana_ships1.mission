@@ -13,7 +13,7 @@
 	</variables>
         <flightgroups>
 
-                <flightgroup name="blue" faction="confed" type="firefly" ainame="_ai_rolling" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="confed" type="truck_small" ainame="_ai_rolling" waves="1" nr_ships="1">
 			<pos x="100.0" y="10000.0" z="100.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
@@ -31,8 +31,8 @@
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
 
-                <flightgroup name="orange" faction="confed" type="rlaan_cruiser" ainame="_ai_rolling" waves="1" nr_ships="3">
-			<pos offset="blue" x="300.0" y="1500.0" z="-10000.0"/>
+                <flightgroup name="orange" faction="confed" type="rlaan_cruiser" ainame="_ai_rolling" waves="1" nr_ships="1">
+			<pos offset="blue" x="300.0" y="15000.0" z="-10000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>

@@ -38,6 +38,10 @@
 
 <!-- helpless cargo ships -->
 
+                <flightgroup name="makkarel" faction="confed" type="truck_small" ainame="_ai_rolling" waves="8" nr_ships="1">
+			<pos offset="blue" x="300.0" y="-2000.0" z="4000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
 
 <!-- bad dudes -->
 

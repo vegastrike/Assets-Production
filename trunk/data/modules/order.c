@@ -9,7 +9,7 @@ module order {
   float gametime;
   bool did_it;
 
-  void patrolFg(int pmode,object patrol_fgid,object around_fgid,float range){
+  void patrolFg(int pmode,object patrol_fgid,object around_fgid,float range,float patrol_speed){
     // sends each flightgroup matching patrol_fgid to either
     // patrol around the first flightgroup matching around_fdid or
     // patrol in the area around fg patrol_fgid
@@ -27,7 +27,7 @@ module order {
 
 	object unit_order=_unit.getOrder(unit);
 	object upos=_unit.getPosition(unit);
-	object new_order=_order.newPatrol(pmode,upos,range,around_unit);
+	object new_order=_order.newPatrol(pmode,upos,range,around_unit,patrol_speed);
 	_order.enqueueOrderFirst(unit_order,new_order);
 	
 	_olist.delete(upos);
@@ -38,7 +38,7 @@ module order {
     }
   };
 
-  void patrolShip(int pmode,object patrol_fgid,object around_fgid,float range){
+  void patrolShip(int pmode,object patrol_fgid,object around_fgid,float range,float patrol_speed){
     // sends a flightgroup patrol_fgid to either
     // patrol around flightgroup around_fdid or
     // patrol in the area around fg patrol_fgid
@@ -50,7 +50,7 @@ module order {
 
     object upos=_unit.getPosition(unit);
 
-    object new_order=_order.newPatrol(pmode,upos,range,around_unit);
+    object new_order=_order.newPatrol(pmode,upos,range,around_unit,patrol_speed);
 
     _order.enqueueOrderFirst(unit_order,new_order);
 

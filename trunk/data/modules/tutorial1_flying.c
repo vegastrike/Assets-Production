@@ -18,9 +18,13 @@ module tutorial1_flying {
   object cruiser_fgid;
 
   int step;
+  float last_step_time;
+  float follow_time;
 
   void initgame(){
     gametime=_std.getGameTime();
+    last_step_time=gametime;
+
     outstr=_string.new();
 
     player_unit=_unit.getPlayer();
@@ -30,9 +34,13 @@ module tutorial1_flying {
     step=0;
     teacher_fgid="teacher-0";
     cruiser_fgid="silver-0";
+
+    _io.printf("init done\n");
   };
 
   void gameloop(){
+
+    //_io.printf("gameloop0\n");
     float newtime=_std.getGameTime();
 
     float angle=_unit.getAngle(player_unit,teacher_unit);
@@ -41,9 +49,18 @@ module tutorial1_flying {
     float dist=_unit.getMinDis(player_unit,teacher_pos);
 
     object players_target=_unit.getTarget(player_unit);
-    object target_fgid=_unit.getFgID(players_target);
+    object target_fgid="none";
 
-    _io.printf("angle to teacher: %f dist=%f\n",angle,dist);
+    //_io.printf("gameloop1\n");
+    if(_std.isNull(players_target)){
+      _io.printf("player has no target\n");
+    }
+    else{
+      target_fgid=_unit.getFgID(players_target);
+    }
+    
+
+    //_io.printf("angle to teacher: %f dist=%f\n",angle,dist);
 
     if(step==0){
       _io.message(0,"game","all","Welcome to the flying tutorial");
@@ -70,7 +87,7 @@ module tutorial1_flying {
     }
 
     if(step==2){
-      if(_string.equal(teacher_fgid,target_fgid)){
+      if( _string.equal(teacher_fgid,target_fgid) ){
 	_io.message(0,"game","all","Fine again! You have now targetted the teacher");
 	_io.message(1,"game","all","you can also see that you've targetted the teacher");
 	_io.message(2,"game","all","by having a look at your radar");
@@ -87,14 +104,52 @@ module tutorial1_flying {
       object cruiser_unit=unit.getUnitByFgID("silver-0");
       float cruiser_angle=_unit.getAngle(player_unit,cruiser_unit);
 
-      if((cruiser_angle<3.0) && (_string.equal(cruiser_fgid,target_fgid))){
+      if((cruiser_angle<10.0) && (_string.equal(cruiser_fgid,target_fgid))){
 	_io.message(0,"game","all","you have now targeted the cruiser");
+	_io.message(1,"game","all","now again turn to face your teacher");
+	_io.message(2,"game","all","and target him again");
 	
 	step=step+1;
       }
     }
 
+    //_io.printf("step=%d\n",step);
+    if(step==4){
+      //_io.printf("checking step 4\n");
+      if(  _string.equal(teacher_fgid,target_fgid) && (angle<5.0)){
+	_io.message(0,"game","all","ok - now your teacher will fly around");
+	_io.message(1,"game","all","follow your teachers ship");
+	_io.message(2,"game","all","keep your teacher in the center");
+	_io.message(2,"game","all","and try to keep a distance of 30-100");
+
+	order.patrolFg(0,"teacher-0","none",300.0,0.2);
+	step=step+1;
+	last_step_time=gametime;
+	follow_time=0.0;
+      }
+
+    }
+
+    if(step==5){
+      if(( angle<20.0) && ((dist>30.0) && (dist<100.0))){
+	// we follow correctly
+	if(follow_time>20.0){
+	  _io.message(0,"game","all","ok - you're fine following the teacher");
+
+	  step=step+1;
+	}
+	else{
+	  follow_time=follow_time+(newtime-gametime);
+	}
+      }
+      else{
+	_io.printf("resetting following time\n");
+	follow_time=0.0;
+      }
+    }
     _olist.delete(teacher_pos);
+
+    gametime=newtime;
   };
 
   void endgame(){

@@ -9,6 +9,7 @@ module ai_patrol {
   class float range;
   class int patrol_mode;
   class object around_unit;
+  class float patrol_speed;
 
   class object waypoint;
   class object last_order;
@@ -52,7 +53,8 @@ module ai_patrol {
   };
 
   void patrolToWaypoint(){
-    object new_order=_order.newFlyToWaypoint(waypoint,0.6,false,100.0);
+    _io.printf("patrol_speed=%f\n",patrol_speed);
+    object new_order=_order.newFlyToWaypoint(waypoint,patrol_speed,false,100.0);
 
     _order.enqueueOrder(my_order,new_order);
 
