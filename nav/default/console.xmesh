@@ -1,4 +1,4 @@
-<Mesh texture="NAV.PNG">
+<Mesh texture="nav.png">
 <Points>
 <Point>
     <Location x="-34.2252197265625" y="31.4459018707275" z="0.00499999988824129"/>
