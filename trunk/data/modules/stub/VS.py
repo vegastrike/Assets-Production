@@ -58,7 +58,6 @@ _ownerdict={}
 def popSystem():
    del _sysfile[-1]
 def getSystemFile():
-   print "getSystemFile" 
    return _sysfile[-1]
 def getPlanetRadiusPercent ():
 	return .75
