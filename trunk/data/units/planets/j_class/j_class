@@ -71,7 +71,7 @@
 		<Category file="Supplies/Medical_Supplies">
 			<import price=".5" pricestddev=".2" quantity="0" quantitystddev="0"/>
 		</Category>
-		<Category file="Supplies/Medical_Supplies">
+		<Category file="Supplies/Aera_Medical_Supplies">
 			<import price="1.95" pricestddev=".2" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Electronics">
