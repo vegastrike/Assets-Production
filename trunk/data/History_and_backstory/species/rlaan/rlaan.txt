@@ -1,7 +1,86 @@
-Species: 
+Species: Rlaan Defender, Rlaan Worker
 
 Physical Characteristics:
 
+Ammonia-blooded, methane breathers from a cool world distantly orbiting a warm 
+star, the Rlaan are a collection of oddities.  Unique among the known space-
+faring groups, the Rlaan are actually two separate species, the defender and 
+worker groups having produced sterile offspring for the past several hundred 
+thousand some years.  Both species are similar in appearance, with the primary 
+differences being size (the defenders are much larger), the degree of fine 
+control in the manipulator appendages (the workers have better fine control), 
+and the structural integrity of the skeleton (defenders are less fragile than 
+workers).  The defenders tend towards darker shades of red and purple, whereas 
+the workers are somewhat pale.  Though the offspring of worker-defender matings 
+are sterile, these hybrids exist as nearly 4% of the population, and have come 
+to play important social roles.
+
+Each Rlaan is radially symmetric with four equivalent segments.  Each of these 
+segments contains one compound eye composed of four segments, one ambulatory 
+appendage, one mouth with four mandibles, one manipulator appendage, various 
+local organs, and portions of the central organs.  The Rlaan skeleton is a 
+supported exoskeleton, that is to say, the exoskeleton is supported internally 
+by a network of millions of small extensions of the skeleton, which together 
+form a sort of highly porous lattice that the soft internals reside in.  A 
+defender stands about 1.5 meters high at the top of its carapace, and 2 meters 
+high at its knee joint.  The central body is around one meter in diameter, and a 
+third of a meter in thickness.  Suspended below the central body is the “head” 
+portion of the Rlaan, about half a meter in diameter and also about a third of a 
+meter in thickness, with its bottom covered in a particularly thick extrusion of 
+the exoskeleton.  The manipulator appendages sprout from the region connecting 
+the head with the main body, and end in four radially arranged fingerlike 
+structures.  A worker’s dimensions are about 70% that of a defender.
+
+
 Habitat:
 
+With equatorial temperatures peaking near 230 K, seas of ammonia, and a methane 
+atmosphere, the Rlaan homeworld is not what most species would consider a prime 
+vacation spot.  Life on this planet progresses at a rather slower pace than that 
+on water worlds, but proceeds nonetheless.  From the point of view of ammonia-
+methane life, the Rlaan planet is actually quite toasty.
+
 Culture:
+
+Rlaan lifespans tend to be between 250-350 years.  This is believed to be a 
+large factor in their cultural homogeneity and the methodical nature of their 
+advances, both through space and as a culture.  Rlaan culture itself is a very 
+dry affair, with social dynamics primarily involved around expository 
+investigations of philosophical debates that have yet to be satisfactorily 
+translated into the language of any other species. Their music, if it can be 
+called such, has been compared to “the set of frequencies one would expect to 
+register if a Myztherian Octpanther were let loose in a campanile.”
+ 
+Rlaan written language appears as a sequence of characters consisting of one to 
+four slashes in each of four quadrants formed by a pair of crossed lines.  It is 
+read in a counterclockwise spiral out from a blank central region that is 
+reserved for the signature glyphs of the author.  The Rlaan have vast stores of 
+written documents going back thousands of years, but attempts to decipher most 
+of them have met with limited success, as the concepts often being discussed 
+seem to have no corollaries in the languages of any other species.
+
+The Rlaan are governed by a body whose name translates to “The Rlaan Assembly” 
+it appears to be some form of representative democracy, but the exact methods of 
+choosing one’s representative seem complex and arcane beyond the tolerance of 
+most observers to bother attempting to figure out.  This body then churns out 
+laws and regulations at a breakneck pace, the enforcement of which is then 
+delegated to the complex Rlaan Bureaucracy.  Attempts to understand the inner 
+workings of the Rlaan Bureaucracy have met only with confusion for all parties 
+involved.  Strangely, the members of the Assembly are disproportionately sterile 
+hybrids, believed by the Rlaan to be more levelheaded than either the aggressive 
+defenders or the timid workers. One thing that did translate clearly, however, 
+was the Rlaan differentiation between civilian and non-civilian.  Given their 
+biological distinction between these two, it is easy to see why the Rlaan have 
+such firm views upon how civilians should be treated.
+
+Rlaan science is more advanced in the fields of chemistry and genetic 
+manipulation than any of the other space-faring races.  The Rlaan are also quite 
+knowledgeable about materials science and the advances in the latter are often 
+related to the former.  Aside from these noted cases though, Rlaan science 
+advances more slowly than that of the Humans or the Aera, and the extent of its 
+advances is more a measure of the age of Rlaan investigations into science than 
+any particular brilliance on the part of the Rlaan.  Though not truly 
+uncreative, the Rlaan seem hard pressed in the department of inventive 
+spontaneity.  In particular, the Rlaan are rather behind humanity in their 
+exploration of both artificial intelligence and integrated biomechanical 
+systems.
