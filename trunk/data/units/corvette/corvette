@@ -57,17 +57,17 @@
 	</Mount>
 	<Mount weapon = "CapshipDisruptor" size = "capship-heavy" x = "21.333334" y = "-9.333333" z = "289.333344"  >
 	</Mount>
-	<Mount weapon = "LR_Beam" size = "capship-medium capship-heavy" x = "-39.333334" y = "-9.733333" z = "289.333344"  >
+	<Mount weapon = "LR_ParticleBeam" size = "capship-medium capship-heavy" x = "-39.333334" y = "-9.733333" z = "289.333344"  >
 	</Mount>
-	<Mount weapon = "LR_Beam" size = "capship-medium capship-heavy" x = "39.333334" y = "-9.733333" z = "289.333344"  >
+	<Mount weapon = "LR_ParticleBeam" size = "capship-medium capship-heavy" x = "39.333334" y = "-9.733333" z = "289.333344"  >
 	</Mount>
 	<Mount weapon = "Capcluster" size = "light-capship-missile" x = "-168.333334" y = "7.733333" z = "-49.333344" ammo = "4" volume = "2400"  >
 	</Mount>
 	<Mount weapon = "Capcluster" size = "light-capship-missile" x = "168.333334" y = "7.733333" z = "-49.333344" ammo = "4" volume = "2400"  >
 	</Mount>
-	<Mount weapon = "Capshipmissile" size = "heavy-capship-missile" x = "-158.333334" y = "7.733333" z = "-49.333344" ammo = "4" volume = "4000"  >
+	<Mount weapon = "Capcluster" size = "light-capship-missile" x = "-158.333334" y = "7.733333" z = "-49.333344" ammo = "4" volume = "4000"  >
 	</Mount>
-	<Mount weapon = "Capshipmissile" size = "heavy-capship-missile" x = "158.333334" y = "7.733333" z = "-49.333344" ammo = "4" volume = "4000"  >
+	<Mount weapon = "Capcluster" size = "light-capship-missile" x = "158.333334" y = "7.733333" z = "-49.333344" ammo = "4" volume = "4000"  >
 	</Mount>
 	<Mount weapon = "AdvTorpedo" size = "heavy-missile" x = "-148.333334" y = "7.733333" z = "-49.333344" ammo = "8" volume = "2000"  >
 	</Mount>
@@ -91,9 +91,9 @@
 	</Subunit>
 	<Subunit file = "turretflak" x = "35.000000" y = "-24.500000" z = "20.000000" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
 	</Subunit>
-	<Subunit file = "turretbeam" x = "0.000000" y = "31.500000" z = "-63.000000" ri = "-1.000000" rj = "0.000000" rk = "0.000000" qi = "0.000000" qj = "1.000000" qk = "0.000000"  >
+	<Subunit file = "turretlauncher" x = "0.000000" y = "31.500000" z = "-63.000000" ri = "-1.000000" rj = "0.000000" rk = "0.000000" qi = "0.000000" qj = "1.000000" qk = "0.000000"  >
 	</Subunit>
-	<Subunit file = "turretbeam" x = "0.000000" y = "-24.500000" z = "-63.000000" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
+	<Subunit file = "turretlauncher" x = "0.000000" y = "-24.500000" z = "-63.000000" ri = "0.000000" rj = "0.000000" rk = "1.000000" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
 	</Subunit>
 	<Subunit file = "turretheavy" x = "-35.000000" y = "31.500000" z = "-73.000000" ri = "-1.000000" rj = "0.000000" rk = "0.000000" qi = "0.000000" qj = "1.000000" qk = "0.000000"  >
 	</Subunit>
