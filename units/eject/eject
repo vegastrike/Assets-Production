@@ -11,7 +11,7 @@
 	</Thrust>
 	<Sound></Sound>
 	<Mount weapon="HandLaser" size="light special" x="0.584" z=".4" y=".462"/>
-	<Defense>
+	<Defense HudImage="eject-hud.spr">
 		<Armor front="20" right="20" left="20" back="20"/>
 		<Shields front="0" back="0" recharge="0"/>
 		<Hull strength="30"/>

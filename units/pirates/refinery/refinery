@@ -1,4 +1,4 @@
-<Unit scale="10">
+<Unit scale="400">
 
 <Meshfile file="piraterefine.xmesh"/>
        
@@ -6,7 +6,7 @@
 		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
 		<Maneuver yaw="0000" pitch="0000" roll="10"/>
 	</Thrust>
-	<Defense HudImage="ConfedHq-hud.spr">
+	<Defense HudImage="refinery-hud.spr">
 		<Shields front="800" right="800" left="800" back="800" recharge="100"/>
 		<Armor front="8000" right="8000" left="8000" back="8000"/>
 		<Hull strength="4000"/>
@@ -22,6 +22,7 @@
 <Dock x="0" y="2.4" z="2.1" size=".24"/>
 <Dock x="0" y="2.4" z="1.9" size=".24"/>
 <Dock x="0" y="2.4" z="1.7" size=".24"/>
+<Dock y="5.5" size="2"/>
 <!--<Dock x="-0.081814" y="2.378788" z="1.542153" size="0.500000" ri="-0.777471" rj="0.604731" rk="-0.172741" qi="0.305280" qj="0.603009" qk="0.737011"/>
 <Dock x="-0.081814" y="2.778788" z="1.542153" size="0.500000" ri="-0.777471" rj="0.604731" rk="-0.172741" qi="0.305280" qj="0.603009" qk="0.737011"/>
 <Dock x="-0.081814" y="3.278788" z="1.542153" size="0.500000" ri="-0.777471" rj="0.604731" rk="-0.172741" qi="0.305280" qj="0.603009" qk="0.737011"/>-->
@@ -107,7 +108,7 @@
 		<Category file="Contraband/Medical">
 			<import price=".8" pricestddev=".3" quantity="34" quantitystddev="12"/>
 		</Category>
-		<Category file="starships/Aera/Heavy">
+<!--		<Category file="starships/Aera/Heavy">
 			<import price="1.2" pricestdev=".1" quantity="-25" quantitystddev="26" />
 		</Category>
 		<Category file="starships/Rlaan/Heavy">
@@ -127,7 +128,7 @@
 		</Category>
 		<Category file="starships/Militia/Heavy">
 			<import price="1.1" pricestdev=".1" quantity="-50" quantitystddev="55" />
-		</Category>
+		</Category>-->
 		<Category file="starships/Merchant/Heavy">
 			<import price="1" pricestdev=".1" quantity="-50" quantitystddev="55" />
 		</Category>

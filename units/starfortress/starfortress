@@ -10,7 +10,7 @@
 	</Defense>
 	<Stats mass="70" momentofinertia="50" fuel="20000"></Stats>
 	<Computer>
-	 <Radar itts="true" color="true" maxrange="110000"  error="0"/>
+	 <Radar itts="true" color="true" range="110000"  error="0"/>
 	</Computer>
 <Meshfile file="starfortress.xmesh"/>
 
@@ -162,6 +162,7 @@
 			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Contraband">
+			<Cargo file="Pilot" price="1040" quantity="0" mass=".01" volume="1"/>
 			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="starships/Confed/Light">

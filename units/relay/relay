@@ -3,7 +3,7 @@
 		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
 		<Maneuver yaw="0000" pitch="0000" roll="10"/>
 	</Thrust>
-	<Defense>
+	<Defense hudImage="relay-hud.spr">
 		<Shields front="800" right="800" left="800" back="800" recharge="50"/>
 		<Armor front="1000" right="1000" left="1000" back="1000"/>
 		<Hull strength="2000"/>

@@ -107,7 +107,7 @@
 		<Category file="starships/Aera/Medium">
 			<import price="1" pricestdev=".1" quantity="-50" quantitystddev="55" />
 		</Category>
-		<Category file="starships/Rlaan/Light">
+<!--		<Category file="starships/Rlaan/Light">
 			<import price="1" pricestdev=".1" quantity="-25" quantitystddev="26" />
 		</Category>
 		<Category file="starships/Rlaan/Medium">
@@ -124,7 +124,7 @@
 		</Category>
 		<Category file="starships/Militia/Medium">
 			<import price="1" pricestdev=".1" quantity="-50" quantitystddev="55" />
-		</Category>
+		</Category>-->
 		<Category file="starships/Merchant/Light">
 			<import price="1" pricestdev=".1" quantity="-25" quantitystddev="26" />
 		</Category>

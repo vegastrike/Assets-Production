@@ -1,0 +1,2 @@
+planets/ring.pngwrapx32wrapy1
+planets/ring.pngwrapx36wrapy2

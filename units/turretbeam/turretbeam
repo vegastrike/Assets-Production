@@ -15,12 +15,12 @@
 	</Defense>
 	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
 	<Computer yaw="8.0" pitch="0" roll="0000" afterburner="000000" maxspeed="00000">
-		<Radar itts="true" range="8500" color="true" error="0"/>
+		<Radar itts="true" range="17000" color="true" error="0"/>
 	</Computer>
 
 	<Energy>
 		<Reactor recharge="70" limit="1500"/>
 	</Energy>
-	<Subunit file="turretbeamgun" y="1" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1" restricted="-.1"/>  
+	<Subunit file="turretbeamgun" y="1" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1" restricted="0"/>  
 
 </Unit>

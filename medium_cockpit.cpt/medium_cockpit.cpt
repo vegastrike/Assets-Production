@@ -18,4 +18,5 @@
 	<VDU  TextRows="15" TextCols="25" type="Comm View TargetManifest Nav Target" file ="rvdu.spr"/>
 	<VDU TextRows="14" TextCols="100" type="Message" file="mvdu.spr"/>
 	<FPS file="radar.spr" xcent=".9" ycent=".8" width=".018" height=".036"/>
+	<VDU TextRows="14" TextCols="30" type="Objectives" file="objvdu.spr"/>
 </Cockpit>

@@ -40,14 +40,14 @@
 
         <Mount weapon="" size="heavy capship-light" x="-29.815" y="-6.919" z="30.409"/>
         <Mount weapon="" size="heavy capship-light" x="29.815" y="-6.919" z="30.409"/>
-	<Mount weapon="" size="heavy capship-light capship-medium" x="-4.0" y="-4.618" z="19.606" />
-	<Mount weapon="" size="heavy capship-light capship-medium" x="4.0" y="-4.618" z="19.606" />
+<!--	<Mount weapon="" size="heavy capship-light capship-medium" x="-4.0" y="-4.618" z="19.606" />
+	<Mount weapon="" size="heavy capship-light capship-medium" x="4.0" y="-4.618" z="19.606" />-->
 	<Mount weapon="" size="special medium heavy capship-light capship-medium" x="0.0" y="-4.618" z="19.606" />
 
 	<Mount weapon="" size="light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
 	<Mount weapon="" size="light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
-	<Mount weapon="" size="heavy-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>
-	<Mount weapon="" size="heavy-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>
+<!--	<Mount weapon="" size="heavy-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>
+	<Mount weapon="" size="heavy-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>-->
 	<Mount weapon="" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
 	<Mount weapon="" size="heavy-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
 	<Mount weapon="" size="medium-missile heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="700"/>

@@ -1,4 +1,4 @@
-<Mesh texture="supernova.bmp" blend="ONE ONE" scale="1">
+<Mesh texture="supernova.bmp" forcetexture="true" blend="ONE ONE" scale="1">
 <Points>
 	<Point>
 		<Location x="0.0000" y="0.000000" z="-10.0000" s=".5" t="0"/>

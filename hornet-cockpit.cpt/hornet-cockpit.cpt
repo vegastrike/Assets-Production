@@ -18,4 +18,5 @@
 	<FPS file="radar.spr" xcent=".8" ycent=".7" width=".018" height=".036"/>
 
 	<VDU TextRows="10" TextCols="100" type="Message" file="mvdu.spr"/>
+	<VDU TextRows="14" TextCols="30" type="Objectives" file="objvdu.spr"/>
 </Cockpit>

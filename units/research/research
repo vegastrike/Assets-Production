@@ -3,7 +3,7 @@
 		<Engine Afterburner="00.000000" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
 		<Maneuver yaw="0000" pitch="0000" roll="10"/>
 	</Thrust>
-	<Defense>
+	<Defense HudImage="research-hud.spr">
 		<Shields front="800" right="800" left="800" back="800" recharge="80"/>
 		<Armor front="8000" right="8000" left="8000" back="8000"/>
 		<Hull strength="4000"/>
@@ -97,7 +97,7 @@
 		</Category>
 		<Category file="Research/Medical">
 		<!-- price these at 1/10 their normal price...-->
-		        <import price="7.5" pricestddev="4" quantity="-40" quantitystddev="80" />
+		        <import price="7.5" pricestddev="3" quantity="-40" quantitystddev="80" />
 		</Category>
 		<Category file="Research/Electronics">
 		<!-- price these at 1/10 their normal price...-->
@@ -108,6 +108,9 @@
 		</Category>
 		<Category file="Electronics/Robotics">
 			<import price="1.2" pricestddev=".2" quantity="0" quantitystddev="1"/>
+		</Category>
+		<Category file="Electronics/Bionics">
+			<import price="1.2" pricestddev=".2" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Manufactured_Goods">
 			<import price="1.1" pricestddev=".1" quantity="4" quantitystddev="2"/>

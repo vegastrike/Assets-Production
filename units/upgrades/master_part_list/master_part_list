@@ -22,73 +22,75 @@
 	</Thrust>
 	<Hold volume="100000000000">
 		<Category file="starships/Neutral">
-			<Cargo file="wayfarer.blank" price="10000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="wayfarer.begin" price="20000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="wayfarer.blank" price="50000" quantity="1" mass=".01" volume="1000"/>
+			<Cargo file="wayfarer.begin" price="60000" quantity="1" mass=".01" volume="1000"/>
 		</Category>
 		<Category file="starships/Aera/Light">
-			<Cargo file="kyta.blank" price="20000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="metron.blank" price="30000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="kyta.blank" price="60000" quantity="1" mass=".01" volume="300"/>
+			<Cargo file="metron.blank" price="70000" quantity="1" mass=".01" volume="500"/>
 		</Category>
 		<Category file="starships/Aera/Medium">
-			<Cargo file="lekra.blank" price="125000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="aeon.blank" price="300000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="lekra.blank" price="165000" quantity="1" mass=".01" volume="600"/>
+			<Cargo file="aeon.blank" price="300000" quantity="1" mass=".01" volume="400"/>
 		</Category>
 		<Category file="starships/Aera/Heavy">
-			<Cargo file="dagger.blank" price="50000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="osprey.blank" price="75000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="aevant.blank" price="150000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="butterfly.blank" price="200000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="kira.blank" price="250000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="dagger.blank" price="100000" quantity="1" mass=".01" volume="500"/>
+			<Cargo file="osprey.blank" price="110000" quantity="1" mass=".01" volume="800"/>
+			<Cargo file="aevant.blank" price="180000" quantity="1" mass=".01" volume="1200"/>
+			<Cargo file="butterfly.blank" price="240000" quantity="1" mass=".01" volume="1400"/>
+			<Cargo file="kira.blank" price="290000" quantity="1" mass=".01" volume="1200"/>
 		</Category>
 		<Category file="starships/Aera/Milspec">
-			<Cargo file="avenger" price="1000000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="metron" price="250000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="lekra" price="300000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="osprey" price="500000" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="metron" price="250000" quantity="1" mass=".01" volume="500"/>
+			<Cargo file="lekra" price="300000" quantity="1" mass=".01" volume="600"/>
+			<Cargo file="osprey" price="500000" quantity="1" mass=".01" volume="800"/>
 		</Category>
 		<Category file="starships/Aera/Light_Capship">
 		</Category>
 		<Category file="starships/Aera/Heavy_Capship">
 		</Category>
 		<Category file="starships/Rlaan/Light">
-			<Cargo file="skart.blank" price="40000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="skart.blank" price="60000" quantity="1" mass=".01" volume="300"/>
+			<Cargo file="leokat.blank" price="80000" quantity="1" mass=".01" volume="400"/>
 		</Category>
 		<Category file="starships/Rlaan/Medium">
-			<Cargo file="f109vampire.blank" price="50000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="f109vampire.blank" price="90000" quantity="1" mass=".01" volume="800"/>
 		</Category>
 		<Category file="starships/Rlaan/Heavy">
-			<Cargo file="starfish.blank" price="60000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="revoker.blank" price="75000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="hispidus.blank" price="100000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="starfish.blank" price="100000" quantity="1" mass=".01" volume="2000"/>
+			<Cargo file="revoker.blank" price="115000" quantity="1" mass=".01" volume="3000"/>
+			<Cargo file="hispidus.blank" price="140000" quantity="1" mass=".01" volume="2500"/>
 		</Category>
 		<Category file="starships/Rlaan/Milspec">
-			<Cargo file="skart" price="290000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="skart" price="290000" quantity="1" mass=".01" volume="300"/>
 		</Category>
 		<Category file="starships/Rlaan/Light_Capship">
 		</Category>
 		<Category file="starships/Rlaan/Heavy_Capship">
 		</Category>
 		<Category file="starships/Confed/Light">
-			<Cargo file="tian.blank" price="30000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="tian.blank" price="60000" quantity="1" mass=".01" volume="200"/>
 		</Category>
 		<Category file="starships/Confed/Medium">
-			<Cargo file="mongoose.blank" price="60000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="nova.blank" price="75000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="mongoose.blank" price="100000" quantity="1" mass=".01" volume="400"/>
+			<Cargo file="nova.blank" price="115000" quantity="1" mass=".01" volume="280"/>
 		</Category>
 		<Category file="starships/Confed/Heavy">
-			<Cargo file="firefly.blank" price="40000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="puma.blank" price="150000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="avenger.blank" price="200000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="firefly.blank" price="80000" quantity="1" mass=".01" volume="500"/>
+			<Cargo file="puma.blank" price="180000" quantity="1" mass=".01" volume="600"/>
+			<Cargo file="avenger.blank" price="240000" quantity="1" mass=".01" volume="1400"/>
 		</Category>
 		<Category file="starships/Confed/Milspec">
-			<Cargo file="destiny.blank" price="300000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="tian" price="190000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="nova" price="300000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="puma" price="450000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="firefly" price="550000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="destiny.blank" price="320000" quantity="1" mass=".01" volume="500"/>
+			<Cargo file="avenger" price="1200000" quantity="1" mass=".01" volume="1400"/>
+			<Cargo file="tian" price="210000" quantity="1" mass=".01" volume="200"/>
+			<Cargo file="nova" price="320000" quantity="1" mass=".01" volume="280"/>
+			<Cargo file="puma" price="470000" quantity="1" mass=".01" volume="600"/>
+			<Cargo file="firefly" price="570000" quantity="1" mass=".01" volume="500"/>
 		</Category>
 		<Category file="starships/Confed/Light_Capship">
-			<Cargo file="cruiser.blank" price="500000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="corvette.blank" price="600000" quantity="1" mass=".01" volume="100000"/>
 		</Category>
 		<Category file="starships/Confed/Heavy_Capship">
 		</Category>
@@ -103,27 +105,28 @@
 		<Category file="starships/Militia/Heavy_Capship">
 		</Category>
 		<Category file="starships/Merchant/Light">
-			<Cargo file="wayfarer.blank" price="10000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="wayfarer.begin" price="20000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="wayfarer.blank" price="50000" quantity="1" mass=".01" volume="1000"/>
+			<Cargo file="wayfarer.begin" price="60000" quantity="1" mass=".01" volume="1000"/>
 		</Category>
 		<Category file="starships/Merchant/Medium">
-			<Cargo file="longhaul.blank" price="150000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="longhaul.blank" price="190000" quantity="1" mass=".01" volume="2000"/>
 		</Category>
 		<Category file="starships/Merchant/Heavy">
-			<Cargo file="cargoship" price="350000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="cargoship" price="380000" quantity="1" mass=".01" volume="4000"/>
 		</Category>
 		<Category file="starships/Merchant/Light_Capship">
 		</Category>
 		<Category file="starships/Merchant/Heavy_Capship">
 		</Category>
 		<Category file="starships/Hunter/Light">
-			<Cargo file="katar.blank" price="55000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="katar.blank" price="65000" quantity="1" mass=".01" volume="500"/>
 		</Category>
 		<Category file="starships/Hunter/Medium">
-			<Cargo file="epeellcat.blank" price="200000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="epeellcat.blank" price="240000" quantity="1" mass=".01" volume="800"/>
 		</Category>
 		<Category file="starships/Hunter/Heavy">
-			<Cargo file="khanjarli.blank" price="75000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="khanjarli.blank" price="120000" quantity="1" mass=".01" volume="500"/>
+			<Cargo file="avenger" price="1200000" quantity="1" mass=".01" volume="1400"/>
 		</Category>
 		<Category file="starships/Hunter/Light_Capship">
 		</Category>
@@ -132,6 +135,7 @@
 		<Category file="starships/ISO/Light">
 		</Category>
 		<Category file="starships/ISO/Medium">
+			<Cargo file="eagle.blank" price="110000" quantity="1" mass=".01" volume="900"/>
 		</Category>
 		<Category file="starships/ISO/Heavy">
 		</Category>
@@ -413,12 +417,24 @@
 			<Cargo file="leech_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="ecm_package_3" price="30000" quantity="1" mass=".01" volume="1"/>
 		</Category>
+
+		<Category file="Natural_Products/Aera_Food">
+			<Cargo file="Aera_Ration" price="40" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Jhurlon" price="140" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Salted_Thok" price="130" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Natural_Products/Rlaan_Food">
+			<Cargo file="Rlaan_Nutripack" price="140" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Rlaan_Luxury_Nutripack" price="150" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Rlaan_Generic_Nutripack" price="40" quantity="1" mass=".01" volume="1"/>
+		</Category>
 		<Category file="Natural_Products/Food">
-			<Cargo file="Coffee" price="140" quantity="90" mass=".01" volume="1"/>
+			<Cargo file="Coffee" price="140" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Filtered_Water" price="40" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Generic_Foods" price="100" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Grains" price="70" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Livestock" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Fish" price="115" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Livestock" price="110" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Luxury_Foods" price="120" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Meats" price="110" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Produce" price="80" quantity="1" mass=".01" volume="1"/>
@@ -433,6 +449,8 @@
 			<Cargo file="Rum" price="60" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Natural_Products/Plants">
+
+			<Cargo file="Khaisalantimin_F62" price="500" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Cocaine" price="420" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Marijuana" price="220" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Tobacco" price="110" quantity="1" mass=".01" volume="1"/>
@@ -458,18 +476,31 @@
 			<Cargo file="Trilithium" price="400" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Precious">
-			<Cargo file="Gold" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Platinum" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Rhodium" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Silver" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Gold" price="160" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Platinum" price="180" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Rhodium" price="156" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Silver" price="149" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Alloys">
 			<Cargo file="Titanium" price="105" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Brass" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Isometal" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Plasteel" price="1" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="Steel" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Brass" price="44" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Isometal" price="130" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Plasteel" price="60" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Steel" price="76" quantity="1" mass=".01" volume="1"/>
 		</Category>
+		<Category file="Raw_Materials/Metals/Aera_Alloys">
+			<Cargo file="Polysteel" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Bipolite" price="78" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Tritanium" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Duranium" price="110" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Neutronium" price="130" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Raw_Materials/Metals/Rlaan_Alloys">
+			<Cargo file="Obsidisteel" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Carbonium" price="40" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Molybdenum" price="70" quantity="1" mass=".01" volume="1"/>
+		</Category>
+
 		<Category file="Raw_Materials/Metals/Radioactive">
 			<Cargo file="Cesium" price="390" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Iridium" price="370" quantity="1" mass=".01" volume="1"/>
@@ -511,7 +542,17 @@
 			<Cargo file="Diesel" price="130" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Gasoline" price="150" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Methane" price="125" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Hexane" price="124" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Propane" price="140" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Fuels/Aera_Refined">
+			<Cargo file="Baakonite" price="70" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="AntiMatter_Pack" price="180" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Fuels/Rlaan_Refined">
+
+			<Cargo file="Biopower_Pack" price="180" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Vibranium" price="40" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Compressed_Gasses">
 			<Cargo file="Argon" price="10" quantity="1" mass=".01" volume="1"/>
@@ -557,9 +598,31 @@
 			<Cargo file="Utility_Vehicles" price="90" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="PreFab_Buildings" price="44" quantity="1" mass=".01" volume="1"/>
 		</Category>
+		<Category file="Supplies/Rlaan_Construction_Supplies">
+			<Cargo file="BioGenerator" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="BioRestructurizer" price="96" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Supplies/Aera_Medical_Supplies">
+			<Cargo file="Aera_First_Aid_Kit" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Pseudotherms" price="90" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Supplies/Rlaan_Medical_Supplies">
+			<Cargo file="DNA_Resequencer" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Rlaan_Aid_Regrower" price="90" quantity="1" mass=".01" volume="1"/>
+		</Category>
+
 		<Category file="Supplies/Medical_Supplies">
 			<Cargo file="Cryogenic_Supplies" price="505" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="First_Aid_Kits" price="480" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Syringes" price="480" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Research/Aera_Medical">
+			<Cargo file="DNA_Fork()" price="300" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="DNA_Thread_Create" price="300" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Research/Rlaan_Medical">
+			<Cargo file="Bio_Adapters" price="200" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Bio_DNA_Splicers" price="300" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Research/Medical">
 			<Cargo file="Synthetic_Limbs" price="200" quantity="1" mass=".01" volume="1"/>
@@ -596,6 +659,10 @@
 			<Cargo file="Protocol_Droids" price="270" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Robo_Workers" price="290" quantity="1" mass=".01" volume="1"/>
 		</Category>
+		<Category file="Electronics/Bionics">
+			<Cargo file="Cyborg_Workers" price="270" quantity="1" mass=".01" volume="1"/>		
+			<Cargo file="Cyborg_Defenders" price="270" quantity="1" mass=".01" volume="1"/>		
+		</Category>
 		<Category file="Manufactured_Goods">
 			<Cargo file="Carpets" price="55" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Furniture" price="140" quantity="1" mass=".01" volume="1"/>
@@ -605,6 +672,13 @@
 			<Cargo file="Textiles" price="53" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Clothing" price="60" quantity="1" mass=".01" volume="1"/>
 		</Category>
+		<Category file="Manufactured_Goods/Perflubrons">
+			<Cargo file="Liquiair" price="40" quantity="1" mass=".01" volume="1"/>		
+		</Category>
+		<Category file="Entertainment/Aera">
+			<Cargo file="IntaTouch" price="50" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="VirtuArea" price="50" quantity="1" mass=".01" volume="1"/>
+		</Category>
 		<Category file="Entertainment">
 			<Cargo file="Books" price="50" quantity="1" mass=".01" volume="1"/>
 
@@ -613,12 +687,16 @@
 			<Cargo file="Rare_Artwork" price="105" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband/Medical">
-			<Cargo file="Organs" price="450" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Black_Market_Organs" price="450" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Biological_Agents" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Virii" price="250" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Resistant_Bacteria" price="90" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband">
 			<Cargo file="Illegal_Weapons" price="300" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Pilot" price="760" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Slaves" price="750" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Clones" price="720" quantity="1" mass=".01" volume="1"/>
 		</Category>
 	<!-- cargo below is senselessly banned by 1 race alone -->
 		<Category file="Contraband/Confed">
@@ -629,8 +707,12 @@
 			<Cargo file="Immigrants" price="160" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband/Rlaan">
+			<Cargo file="Rlaan_Poison" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Zhollus" price="80" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband/Aera">
+			<Cargo file="RetrifiedSalt" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="AeraNerveStimuli" price="80" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Contraband/Retro">
 		</Category>
@@ -838,5 +920,20 @@
 		</Category>
 		<Category file="missions/Attack_Hunter">
 		</Category>
+
+<!-- aera notes
+Aera_Medical_Supplies.... 1.0 -> 1.8   (-.8 elsewhere)
+Aera_Alloys  1.0->0.8  (+.2 elsewhere)
+Entertainment/Aera 1.6 (-.8 everywhere... rlaan no entertainment)
+Aera_Refined 1.0->0.8
+Aera_Food 1.0->1.8  (-.8 elsewhere)
+upgrades/Miscellaneous/Aera_Milspec
+Research/Aera_Medical
+contraband/Aera 1.0->1.2
+Electronics/Bionics (Rlaan equiv)
+Research/Aera_Medical
+Supplies/Rlaan_Construction_Supplies 1.0 -> 1.4
+-->
+
 	</Hold>
 </Unit>

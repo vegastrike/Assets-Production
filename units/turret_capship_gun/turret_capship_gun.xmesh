@@ -1,0 +1,75 @@
+<Mesh texture="Capskn3.bmp" scale=".3000000">
+<Points>
+	<Point>
+		<Location x="0.1250000" y="-0.125000" z="3.000000"/>
+		<Normal i="-0.616396" j="0.380954" k="-0.689152"/>
+	</Point>
+	<Point>
+		<Location x="0.000" y="0.125000" z="3.000000"/>
+		<Normal i="-0.000000" j="-0.666667" k="-0.745356"/>
+	</Point>
+	<Point>
+		<Location x="-0.12500000" y="-0.125000" z="3.000000"/>
+		<Normal i="0.616396" j="0.380954" k="-0.689152"/>
+	</Point>
+	<Point>
+		<Location x="0.1250000" y="-0.125000" z="0.000000"/>
+		<Normal i="-0.616396" j="0.380954" k="0.689152"/>
+	</Point>
+	<Point>
+		<Location x="0.0000" y="0.125000" z="0.000000"/>
+		<Normal i="-0.000000" j="-0.666667" k="0.745356"/>
+	</Point>
+	<Point>
+		<Location x="-0.1250000" y="-0.125000" z="0.000000"/>
+		<Normal i="0.616396" j="0.380954" k="0.689152"/>
+	</Point>
+</Points>
+<Polygons>
+	<Tri>
+		<Vertex point="0" s="0.026982" t="0.822328"/>
+		<Vertex point="1" s="0.205734" t="0.748183"/>
+		<Vertex point="2" s="0.020236" t="0.613376"/>
+	</Tri>
+	<Tri>
+		<Vertex point="5" s="0.010118" t="0.623486"/>
+		<Vertex point="4" s="0.212480" t="0.741443"/>
+		<Vertex point="3" s="0.023609" t="0.842549"/>
+	</Tri>
+	<Tri>
+		<Vertex point="0" s="0.000000" t="0.000000"/>
+		<Vertex point="3" s="0.000000" t="1.000000"/>
+		<Vertex point="4" s="1.000000" t="1.000000"/>
+	</Tri>
+	<Tri>
+		<Vertex point="3" s="0.000000" t="1.000000"/>
+		<Vertex point="4" s="1.000000" t="1.000000"/>
+		<Vertex point="1" s="1.000000" t="0.000000"/>
+	</Tri>
+	<Tri>
+		<Vertex point="1" s="1.000000" t="0.000000"/>
+		<Vertex point="4" s="1.000000" t="1.000000"/>
+		<Vertex point="5" s="0.000000" t="1.000000"/>
+	</Tri>
+	<Tri>
+		<Vertex point="4" s="1.000000" t="1.000000"/>
+		<Vertex point="5" s="0.000000" t="1.000000"/>
+		<Vertex point="2" s="0.000000" t="0.000000"/>
+	</Tri>
+	<Tri>
+		<Vertex point="2" s="0.000000" t="0.000000"/>
+		<Vertex point="5" s="0.000000" t="1.000000"/>
+		<Vertex point="3" s="1.000000" t="1.000000"/>
+	</Tri>
+	<Tri>
+		<Vertex point="5" s="0.000000" t="1.000000"/>
+		<Vertex point="3" s="1.000000" t="1.000000"/>
+		<Vertex point="0" s="1.000000" t="0.000000"/>
+	</Tri>
+</Polygons>
+<Logo type="2" rotate="1.129999" size="0.500000" offset="0.010000">
+	<Ref point="0" weight="1.000000" />
+	<Ref point="1" weight="1.000000" />
+	<Ref point="2" weight="1.000000" />
+</Logo>
+</Mesh>

@@ -84,6 +84,9 @@
 		<Category file="Contraband">
 			<import price="1.4" pricestddev=".3" quantity="0" quantitystddev="0"/>
 		</Category>
+		<Category file="Contraband/Aera">
+			<import price=".96" pricestddev=".15" quantity="12" quantitystddev="16"/>
+		</Category>
 		<Category file="starships/Confed/Light">
  			<import price="1" pricestdev=".1" quantity="12" quantitystddev="5"/>
 		</Category>

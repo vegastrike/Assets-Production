@@ -223,12 +223,16 @@ module random_encounters {
   bool atLeastNInsignificantUnitsNear (object unit, int n) {
     int num_ships=0;
     int count=0;
+    object leadah = _unit.getFgLeader (unit);
     object un = _unit.getUnit (count);
     while (!(_std.isNull(un))) {
       float dd = _olist.at (cur,6);//detection dis
       if (unit.getSignificantDistance(unit,un)<dd*1.6) {
 	if ((!_unit.isSignificant(un))&&(!_unit.isSun(un))) {
-	  num_ships=num_ships+1;
+	  object unleadah = _unit.getFgLeader (un);
+	  if (!_unit.equal (leadah,unleadah)) {
+	    num_ships=num_ships+1;
+	  }
 	}
       }
       count=count+1;

@@ -24,9 +24,16 @@
 	<Hold volume="60">
 
 	</Hold>
+<Mount weapon="Laser" size="Light Medium" x="-1.056411" y="-1.226957" z="3.200000" />
+<Mount weapon="Laser" size="Light Medium" x="1.056411" y="-1.226957" z="3.200000" />
+<Mount weapon="Meson" size="Light Medium Heavy Special Autotracking" x="0" y="0.910165" z="3.662162"/>
+<Mount weapon="" size="Special" x="-1.629525" y="1.044771" z="3.200000" />
+<Mount weapon="" size="Special" x="1.629525" y="1.044771" z="3.200000"/>
 
 
+<!-- old mesh
 <Mount weapon="Laser" size="Light Medium" x="4.066667" y="-2.026667" z="-1.773333"/>
 <Mount weapon="Laser" size="Light Medium" x="-4.066667" y="-2.026667" z="-1.773333" />
 <Mount weapon="meson" size="Light Medium Heavy Special Autotracking" x="0.000000" y="5.333333" z="-1.966667"/>
+-->
 </Unit>
