@@ -1,8 +1,8 @@
 		<Category file="starships/Confed/Light">
-			<import price="1" quantity="2" quantitystddev="1"/>
+			<import price="1" quantity="2" quantitystddev="2"/>
 		</Category>
 		<Category file="starships/Confed/Medium">
-			<import price="1" quantity="2" quantitystddev="1"/>
+			<import price="1" quantity="1" quantitystddev="1"/>
 		</Category>
 		<Category file="starships/Confed/Heavy">
 			<import price="1" quantity="1" quantitystddev="1"/>
@@ -11,16 +11,16 @@
 			<import price="1" quantity="3" quantitystddev="3"/>
 		</Category>
 		<Category file="starships/Merchant/Medium">
-			<import price="1" quantity="3" quantitystddev="2"/>
+			<import price="1" quantity="2" quantitystddev="2"/>
 		</Category>
 		<Category file="starships/Merchant/Heavy">
 			<import price="1" quantity="2" quantitystddev="2"/>
 		</Category>
 		<Category file="starships/Militia/Light">
-			<import price="1" quantity="3" quantitystddev="2"/>
+			<import price="1" quantity="3" quantitystddev="3"/>
 		</Category>
 		<Category file="starships/Militia/Medium">
-			<import price="1" quantity="3" quantitystddev="2"/>
+			<import price="1" quantity="2" quantitystddev="2"/>
 		</Category>
 		<Category file="starships/Militia/Heavy">
 			<import price="1" quantity="2" quantitystddev="2"/>
