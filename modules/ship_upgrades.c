@@ -155,7 +155,7 @@ module ship_upgrades {
       }
       creds =upgradeHelper (un,mylist,curmount,creds,inc<2);
       
-      _olist.delete(mylist);
+
       curmount=curmount+1;
       inc = inc+1;
       i=i+1;
