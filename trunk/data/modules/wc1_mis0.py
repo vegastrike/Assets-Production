@@ -17,8 +17,8 @@ class wc1_mis0:
         self.launched=[0,0,0]
         self.nav+=[launch.launch("nav1","neutral","navpoint","sitting_duck",1,1,Add(self.origin,(50000,40000,10000)))]
         self.nav+=[launch.launch("nav2","neutral","navpoint","sitting_duck",1,1,Add(self.origin,(10000,100000,10000)))]
-        self.roids = [VS.launch("Asteroids","neutral","AFieldSparse","asteroid","default",1,1,Add(self.origin,(10000,100000,10000)),""),
-                      VS.launch("Asteroids","neutral","AFieldThin","asteroid","default",1,1,Add(self.origin,(50000,40000,10000)),"")]
+        self.roids = [VS.launch("Asteroids","AFieldSparse","neutral","asteroid","default",1,1,Add(self.origin,(10000,100000,10000)),""),
+                      VS.launch("Asteroids","AFieldThin","neutral","asteroid","default",1,1,Add(self.origin,(50000,40000,10000)),"")]
         self.nav+=[launch.launch("nav3","neutral","navpoint","sitting_duck",1,1,Add(self.origin,(-40000,40000,10000)))]
     def LaunchNav (self,i,playa):
         if (i==0):
