@@ -7,6 +7,7 @@ class difficulty:
   diff=()
   creds=()
   credsToMax=1
+  i=0 #comment this if you want to check all in 1 frame
   def SetDiff(diff):
     if (diff>VS.GetDifficulty()):
       VS.SetDifficulty(diff)
@@ -36,7 +37,8 @@ class difficulty:
     return self.diff[playa]
   
   def Execute(self):
-    for i in range(len(self.creds)):
+#    for i in range(len(self.creds)): #uncomment this if you want to check all in 1 frame
+      i=self.i #comment this if you want to check all in 1 frame
       un=VS.getPlayerX(i)
       newcreds=un.getCredits()
       if (self.creds[i]!=newcreds):
@@ -45,4 +47,5 @@ class difficulty:
           Director.putSaveData(i,_key,0,newdiff)
           SetDiff(newdiff)
         self.creds[i]=newcreds
+      self.i+=1 #comment this also if you want to check all in 1 frame
   
