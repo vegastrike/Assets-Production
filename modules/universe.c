@@ -1,10 +1,46 @@
 module universe {
 
+  import ai_flyto_jumppoint;
+
   object current_system;
   object last_system;
   object old_system;
   object system_map;
   object outstr;
+
+  object getRandomJumppoint(){
+    object jp_list=getJumppointList();
+
+    int size=_olist.size(jp_list);
+
+    int index=random.randomint(0,size-1);
+
+    object jp=_olist.at(jp_list,index);
+
+    _olist.delete(jp_list);
+
+    return jp;
+  };
+
+  object getJumppointList(){
+    object jp_list=_olist.new();
+
+    int ship_nr=0;
+    object unit=_unit.getUnit(ship_nr);
+
+    while((!_std.isNull(unit))){
+      object unit_fgid=_unit.getFgID(unit);
+      //_io.printf("matching %s with %s\n",unit_fgid,patrol_fgid);
+      if(_unit.isJumppoint(unit)){
+	_olist.push_back(jp_list,unit);
+      }
+      ship_nr=ship_nr+1;
+      unit=_unit.getUnit(ship_nr);
+      _string.delete(unit_fgid);
+    }
+
+    return jp_list;
+  };
 
   void init(){
     outstr=_string.new();
