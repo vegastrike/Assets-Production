@@ -5,6 +5,11 @@
   </bshield>
 
   <meterdistance max="75" script="++turnaway.xml">
+    <bshield max="1.1" script="++evade.xml">
+      <rshield max="1.1" script="++turnaway.xml">
+         <fshield max="1.1" script="++sheltonslide.xml"/>
+      </rshield>
+    </bshield>
   <!-- distance less than .1-->
   </meterdistance>
   
