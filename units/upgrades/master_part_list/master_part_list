@@ -112,7 +112,7 @@
 			<Cargo file="longhaul.blank" price="190000" quantity="1" mass=".01" volume="2000"/>
 		</Category>
 		<Category file="starships/Merchant/Heavy">
-			<Cargo file="cargoship" price="450000" quantity="1" mass=".01" volume="4000"/>
+			<Cargo file="cargoship" price="700000" quantity="1" mass=".01" volume="4000"/>
 		</Category>
 		<Category file="starships/Merchant/Light_Capship">
 		</Category>
@@ -360,9 +360,9 @@
 		</Category>
 		<Category file="upgrades/Weapons/Turrets">
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1"/>
-			<Cargo file="medium_turret" price="10000" quantity="1" mass=".1" volume="1"/>
-			<Cargo file="capship_turret" price="10000" quantity="1" mass=".1" volume="1"/>
-			<Cargo file="capship_turret_heavy" price="10000" quantity="1" mass=".1" volume="1"/>
+			<Cargo file="medium_turret" price="20000" quantity="1" mass=".1" volume="1"/>
+			<Cargo file="capship_turret" price="40000" quantity="1" mass=".1" volume="1"/>
+			<Cargo file="capship_turret_heavy" price="80000" quantity="1" mass=".1" volume="1"/>
 		</Category>
 		<Category file="upgrades/Miscellaneous/SubUnits">
 			<Cargo file="cargo_pod" price="20000" quantity="1" mass=".1" volume="1"/>
