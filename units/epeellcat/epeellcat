@@ -1,4 +1,4 @@
-<Unit>
+<Unit size="10">
 <Meshfile file="Epeellcat-Body.xmesh"/>
 <Meshfile file="Epeellcat-Cockpit.xmesh"/>
 
@@ -8,47 +8,45 @@
 <Mount weapon="Laser" size="Light" x="-0.982843" z="-0.316667" y="0.888562" ri="-0.659975" rj="0.358979" rk="-0.659975" qi="0.253836" qj="0.933346" qk="0.253836"/>
 -->
 
-<Mount weapon="Laser" size="Light" x="-5.240053" z="-0.426834" y="0.726702"/>
-<Mount weapon="Laser" size="Light" x="5.483819" z="-0.151023" y="0.889213" />
+<Mount weapon="Disruptor" size="light medium special" x="-5.240053" z="-0.426834" y="0.726702"/>
+<Mount weapon="Disruptor" size="light medium special" x="5.483819" z="-0.151023" y="0.889213" />
 
 
 
-<Mount weapon="ImageRecognition" size="Light" x="-1.369247" z="1.379604" y="0.005125" />
-<Mount weapon="ImageRecognition" size="Light" x="1.656804" z="1.490848" y="-0.087377" />
+<Mount weapon="HeatSeeker" size="light-missile medium-missile" x="-1.369247" z="1.379604" y="0.005125" ammo="2" volume="181"/>
+<Mount weapon="HeatSeeker" size="light-missile medium-missile" x="1.656804" z="1.490848" y="-0.087377" ammo="2" volume="181"/>
+<Mount weapon="Swarm" size="light-missile special-missile" x="-1.369247" z="2.379604" y="-0.38125" ammo="47" volume="471"/>
+<Mount weapon="Swarm" size="light-missile special-missile" x="1.656804" z="2.490848" y="-0.387377" ammo="47" volume="471"/>
 
 
 
-<Mount weapon="Laser" size="Light" x="0.480426" z="3.783170" y="0.589719" />
-<Mount weapon="Laser" size="Light" x="-0.455556" z="3.666667" y="0.666667"/>
+<Mount weapon="Neutron" size="Medium Heavy" x="0.480426" z="3.783170" y="0.589719" />
+<Mount weapon="Neutron" size="Medium Heavy" x="-0.455556" z="3.666667" y="0.666667"/>
 <Light file="supernova.bmp" x="0.770710" z="-3.150000" y="0.912131" size="1.495000"/>
 <Light file="supernova.bmp" x="-0.841421" z="-3.150000" y="1.124264" size="1.195000"/>
 <Light file="supernova.bmp" x="-1.300000" z="-3.100000" y="-0.200000" size="1.235000"/>
 <Light file="supernova.bmp" x="1.500000" z="-3.100000" y="-0.200000" size="1.135000"/>
 
 	<Thrust>
-		<Engine Afterburner="1600.000000" Forward="448.000000" Retro="392.000000" Left="224.000000" Right="224.000000" Top="224.000000" Bottom="224.000000"/>
-		<Maneuver yaw="5009.400101" pitch="5009.400101" roll="5009.400101"/>
+		<Engine Afterburner="1000.000000" Forward="248.000000" Retro="292.000000" Left="124.000000" Right="124.000000" Top="124.000000" Bottom="124.000000"/>
+		<Maneuver yaw="3009.400101" pitch="3009.400101" roll="3009.400101"/>
 	</Thrust>
 	<Sound>
 	</Sound>
 	<Defense>
-		<Armor front="40" right="35" left="35" back="40"/>
-		<Shields front="150.000000" back="200.000000" recharge="23.000000"/>
-		<Hull strength="200.000000"/>
+		<Armor front="80" right="65" left="65" back="90"/>
+		<Shields front="80.000000" back="100.000000" recharge="23.000000"/>
+		<Hull strength="600.000000"/>
 	</Defense>
 
-	<Stats mass="2.500000" momentofinertia="2.500000" fuel="40000000"></Stats>
-	<Computer yaw="121.800003" pitch="131.800003" roll="151.800003" afterburner="134.000000" maxspeed="41.000000"/>
+	<Stats mass="4.500000" momentofinertia="3.500000" fuel="40000000"></Stats>
+	<Computer yaw="101.800003" pitch="111.800003" roll="121.800003" afterburner="114.000000" maxspeed="36.500000"/>
 	<Energy afterburnenergy="0">
-		<Reactor recharge="40" limit="160"/>
+		<Reactor recharge="55" limit="300"/>
 	</Energy>
        	<Jump delay="1" jumpenergy="90"/>       
 
-<!-- new elements added -->
-<Light file="supernova.bmp" x="-0.431327" y="-0.039966" z="-4.300000" size="0.600000"/>
-<Light file="supernova.bmp" x="0.085989" y="-0.067569" z="-4.300000" size="0.700000"/>
-<Light file="supernova.bmp" x="0.550726" y="-0.043842" z="-4.300000" size="0.620000"/>
-	<Hold volume="10">
+	<Hold volume="65">
 	</Hold>
 
 
