@@ -40,7 +40,7 @@
                 <planet name="Speke" file="textures/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet>       
         <planet name="JumpToPender'sStar" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="50" x="14500" day="240" destination="gemini_sector/pendersstar"/>
-        <planet name="Victoria" file="planets/m_class10.png" radius="300" gravity="20" z="-14500" rj="0" x="7500" day="300">
+        <planet name="Victoria" file="planets/m_class.png" radius="300" gravity="20" z="-14500" rj="0" x="7500" day="300">
                 <planet name="Victoria" file="textures/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet>  
 

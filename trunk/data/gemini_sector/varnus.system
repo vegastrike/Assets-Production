@@ -27,7 +27,7 @@
 <attenuated red="0" blue=".0000001"/>
 </Light>	
 
-        <planet name="Rodin" file="planets/m_class10.png" radius="300" gravity="20" z="-6000" x="-15500" day="300">
+        <planet name="Rodin" file="planets/m_class.png" radius="300" gravity="20" z="-6000" x="-15500" day="300">
                 <planet name="Rodin Atmosphere" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet>
         <planet name="JumpToNewConstantinople" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-6000" x="11500" day="240" destination="gemini_sector/newconstantinople" />

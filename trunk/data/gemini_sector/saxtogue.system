@@ -28,7 +28,7 @@
 </Light>	
 
         <planet name="JumpToNewDetroit" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-5500" x="12000" destination="gemini_sector/newdetroit"/>
-        <planet name="Olympus" file="planets/m_class9.png" radius="300" gravity="20" z="13500"  x="7500" day="300">
+        <planet name="Olympus" file="planets/m_class2.png" radius="300" gravity="20" z="13500"  x="7500" day="300">
                 <planet name="Olympus Atmosphere" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet> 
         <planet name="JumpToOxford" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="5500" x="-6500" destination="gemini_sector/oxford"  />
