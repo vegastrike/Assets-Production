@@ -156,13 +156,13 @@
 		<Category file="upgrades/Repair_Systems">
 			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="4"/>
 		</Category>
-		<Category file="upgrades/Radar/Windows">
+		<Category file="upgrades/Radar/Basic">
 			<import price="1" pricestddev=".1" quantity="20" quantitystddev="6"/>
 		</Category>
-		<Category file="upgrades/Radar/Linux">
+		<Category file="upgrades/Radar/Intermediate">
 			<import price="1" pricestddev=".1" quantity="9" quantitystddev="8"/>
 		</Category>
-		<Category file="upgrades/Radar/BSD">
+		<Category file="upgrades/Radar/Advanced">
 			<import price="1" pricestddev=".1" quantity="-12" quantitystddev="17"/>
 		</Category>
 		<Category file="upgrades/Miscellaneous">

@@ -343,20 +343,20 @@
 			<Cargo file="repair_ai" price="200000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="repair_ai_advanced" price="300000" quantity="1" mass=".01" volume="1"/>
 		</Category>
-		<Category file="upgrades/Radar/Windows">
-			<Cargo file="radar_windows_95" price="5000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="radar_windows_98" price="10000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="radar_windows_2k" price="20000" quantity="1" mass=".01" volume="1"/>
+		<Category file="upgrades/Radar/Basic">
+			<Cargo file="SkyScope_Alpha" price="5000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="SkyScope_AlphaPlus" price="10000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="StarScanner_2530" price="20000" quantity="1" mass=".01" volume="1"/>
 		</Category>
-		<Category file="upgrades/Radar/Linux">
-			<Cargo file="radar_linux_redhat" price="20000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="radar_linux_debian" price="40000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="radar_linux_SuSe" price="80000" quantity="1" mass=".01" volume="1"/>
+		<Category file="upgrades/Radar/Intermediate">
+			<Cargo file="SkyScope_Beta" price="20000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="StarScanner_2545" price="40000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Hawkeye_ZX-16" price="80000" quantity="1" mass=".01" volume="1"/>
 		</Category>
-		<Category file="upgrades/Radar/BSD">
-			<Cargo file="radar_bsdi" price="120000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="radar_open_bsd" price="140000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="radar_free_bsd" price="160000" quantity="1" mass=".01" volume="1"/>
+		<Category file="upgrades/Radar/Advanced">
+			<Cargo file="StarScanner_2600" price="120000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Hawkeye_ZX-50" price="140000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Hawkeye_ZX-86" price="160000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="upgrades/Weapons/Turrets">
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1"/>

@@ -147,7 +147,7 @@
 		<Category file="upgrades/ECM_Systems/Confed_Milspec">
 			<import price="1" pricestddev=".1" quantity="12" quantitystddev="5"/>
 		</Category>
-		<Category file="upgrades/Radar/BSD">
+		<Category file="upgrades/Radar/Advanced">
 			<import price="1" pricestddev=".1" quantity="12" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Miscellaneous/Confed_Milspec">
