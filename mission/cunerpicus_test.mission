@@ -1,0 +1,21 @@
+<mission>
+<!--	<settings>
+		<origin  planet="Cunerpicus" x="2400000" y="0" z="0"/>
+	</settings> -->
+	<variables>
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="4 versus 4" />
+		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+		<var name="system" value="cunerpicus" />
+		<var name="description" value="4vs4.txt" />
+	</variables>
+        <flightgroups>
+                <flightgroup name="green" faction="confed" type="drone" ainame="sitting_duck" waves="8" nr_ships="1">
+<!--			<pos x="40000" y="0" z="50000"/>
+ -->
+			<pos x="1200000" y="0" z="100000"/>
+<!--			<pos x="1200000" y="0" z="0"/> -->
+			<rot x="90.0" y="90.0" z="90.0"/>
+		</flightgroup>
+        </flightgroups>
+</mission>
