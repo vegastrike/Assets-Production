@@ -24,15 +24,15 @@
 
 	<module name="director">
 
-		<import name="launchtest"/>
+		<import name="total_war"/>
 
 		<script name="initgame">
-			<exec module="launchtest" name="initgame"/>
+			<exec module="total_war" name="initgame"/>
 		</script>
 
 		<script name="gameloop">
-			<exec module="launchtest" name="print_unitlist"/>
-			<exec module="launchtest" name="launch_test"/>
+			<exec module="total_war" name="loop"/>
 		</script>
+	</module>
 
 </mission>

@@ -1,0 +1,38 @@
+<mission>
+	<settings>
+		<origin  planet="earth" x="0000" y="100" z="000.0"/>
+	</settings>
+
+	<variables>
+<!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="4 versus 4" />
+		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+		<var name="system" value="sol" />
+		<var name="description" value="4vs4.txt" />
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="confed" type="hellcat" ainame="default" waves="1" nr_ships="1">
+			<pos x="53400" y="4000" z="30000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+	</flightgroups>
+<!--
+	<module name="director">
+
+		<import name="earth_patrol_rnd_attack1"/>
+
+		<script name="initgame">
+			<exec module="earth_patrol_rnd_attack1" name="initgame"/>
+		</script>
+
+		<script name="gameloop">
+			<exec module="earth_patrol_rnd_attack1" name="loop"/>
+		</script>
+	</module>
+-->
+</mission>
