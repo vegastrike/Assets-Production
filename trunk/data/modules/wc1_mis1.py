@@ -9,7 +9,7 @@ class wc1_mis1:
         pass
     def Start(self,carrier):
         self.inflight=0
-        self.jump = findOriginAndMove(carrier,(0,0,-10000));
+        self.jump = findOriginAndMove(carrier,(0,0,-20000));
         self.carrier=carrier
         self.origin = carrier.Position();        
         self.wingman= launch.launch (VS.getPlayer().getFlightgroupName(),"confed","nova","default",1,1,Add((1000,200,0),self.origin))
@@ -18,9 +18,9 @@ class wc1_mis1:
         self.transport.SetTarget(self.jump)
         
         self.launched=[0,0]
-        self.nav=[launch.launch("nav1","neutral","eject","sitting_duck",1,1,Add(self.origin,(40000,000,50000))),
+        self.nav=[launch.launch("nav1","neutral","eject","sitting_duck",1,1,Add(self.origin,(20000,000,10000))),
                   self.jump]
-        self.roids = [VS.launch("Asteroids","AFieldSparse","neutral","asteroid","default",1,1,Add(self.origin,(0000,00000,50000)),"")]
+        self.roids = [VS.launch("Asteroids","AFieldSparse","neutral","asteroid","default",1,1,Add(self.origin,(0000,00000,10000)),"")]
     def moveTrans (self,targ):
         print "moving trans"
         self.transport.SetPosAndCumPos(Add(targ.Position(),(0,0,-1000)))

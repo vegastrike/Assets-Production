@@ -7,11 +7,11 @@ import save_util
 import unit
 import random
 import Vector
-def findOriginAndMove(carrier,carrierloc=(1000,100,100)):
+def findOriginAndMove(carrier,carrierloc=(0000,00,-10000)):
     origin =unit.getJumpPoint(random.randrange(0,99))
     beg=Vector.Add(origin.Position(),Vector.Add (carrierloc,(carrier.rSize(),0,0)))
     carrier.SetPosAndCumPos (beg)
-    VS.getPlayer().SetPosAndCumPos(Vector.Add(beg,(100,0,0)))
+    VS.getPlayer().SetPosAndCumPos(Vector.Add(beg,(00,0,100)))
     return origin
 import wc1_mis0
 import wc1_mis1
