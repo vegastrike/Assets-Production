@@ -109,7 +109,7 @@ module bounty {
 	      enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,4000.0,significant);
 	      enemycontainer=_unit.getContainer(enemy);
 	      _unit.setTarget(enemy,significant);
-	      _unit.Jump(enemy,significant);
+	      _unit.Jump(enemy);
 	      destination=_unit.getName(significant);
 	      arrived=2;
 	    }

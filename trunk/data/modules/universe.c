@@ -33,15 +33,17 @@ module universe {
   
   object getRandomJumppoint(){
     object jp_list=getJumppointList();
-
+    object jp;
     int size=_olist.size(jp_list);
+    if (size>0) {
+      int index=random.randomint(0,size-1);
 
-    int index=random.randomint(0,size-1);
+      jp=_olist.at(jp_list,index);
 
-    object jp=_olist.at(jp_list,index);
-
-    _olist.delete(jp_list);
-
+      _olist.delete(jp_list);
+    }else {
+      _std.SetNull(jp);
+    }
     return jp;
   };
 

@@ -124,12 +124,9 @@ module unit {
 
     return threat;
   };
-
-  void setTargetShip(object which_fgid,object target_fgid){
+  void setPreciseTargetShip (object which_fgid, object target_unit) {
     int ship_nr=0;
-    object unit=_unit.getUnit(ship_nr);
-    object target_unit=unit.getUnitByFgID(target_fgid);
-    
+    object unit=_unit.getUnit(ship_nr);    
     while((!_std.isNull(unit))){
       object unit_fgid=_unit.getFgID(unit);
       //_io.printf("matching %s with %s\n",unit_fgid,which_fgid);
@@ -142,6 +139,10 @@ module unit {
       ship_nr=ship_nr+1;
       unit=_unit.getUnit(ship_nr);
     }
+  };
+  void setTargetShip(object which_fgid,object target_fgid){
+    object target_unit=unit.getUnitByFgID(target_fgid);
+    setPreciseTargetShip(which_fgid,target_unit);
   };
 
 
