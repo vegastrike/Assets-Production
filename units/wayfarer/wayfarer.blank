@@ -15,13 +15,13 @@
 	<Meshfile file="rescue-hull-i.xmesh"/>
 	<Meshfile file="rescue-cock-c.xmesh"/>
 
-        <Mount weapon="" size="Light Medium Heavy" x="-29.815" y="-6.919" z="30.409"/>
-        <Mount weapon="" size="Light Medium Heavy" x="29.815" y="-6.919" z="30.409"/>
-	
-	<Mount weapon="" size="special-missile light-missile medium-missile" x="11.8108" y="1.757" z="11.8091" ammo="6" volume="901"/>
-	<Mount weapon="" size="special-missile light-missile medium-missile" x="-11.8108" y="1.757" z="11.8091" ammo="6" volume="901"/>
-	
-	<Mount weapon="" size="special" x="0.002" y="-4.618" z="19.606" />
+	<Mount weapon="" size="Light Medium Heavy" x="9.8108" y="1.757" z="11.8091" />
+	<Mount weapon="" size="Light Medium Heavy" x="-9.8108" y="1.757" z="11.8091" />
+
+       <Mount weapon="" size="light-missile medium-missile" x="-29.815" y="-6.919" z="30.409" ammo="6" volume="901"/>
+       <Mount weapon="" size="light-missile medium-missile" x="29.815" y="-6.919" z="30.409" ammo="6" volume="901"/>
+        <Mount weapon="" size="Special" x="29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="" size="Special" x="-29.815" y="-6.919" z="30.409"/>
 	
 	<Thrust>
 		<Engine Afterburner="903.666718" Forward="173.333344" Retro="215.666676" Left="171.666672" Right="171.666672" Top="171.666672" Bottom="171.666672"/>
