@@ -10,6 +10,7 @@ class quest_disappear (quest.quest):
         self.significants=1
         self.timer = VS.GetGameTime();
         VS.cacheAnimation ("explosion_wave.ani");
+        self.playlist=VS.musicAddList("galacticbattle.m3u")
     def launchNewDrone (self):
         playa=VS.getPlayer()
         if (not playa.isNull()):
@@ -21,7 +22,10 @@ class quest_disappear (quest.quest):
                 pos=self.drone.Position()
                 size=10*self.drone.rSize()
                 VS.playAnimation("explosion_wave.ani",pos,size)
-                VS.musicPlaySong('../music/galacticbattle.mp3')
+                if (self.playlist != -1):
+                    VS.musicPlayList(self.playlist)
+                    VS.musicLoopList(2)
+#                VS.musicPlaySong('../music/galacticbattle.mp3')
 
     #not currently used
     def setDroneNear (self,playa):
