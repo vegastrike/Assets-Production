@@ -24,8 +24,8 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 				,"keyword"	: keyword
 				}
 
-	return formatNewsItem (getNewsItem(getDockFaction(),type_event,stage_event,success
-					 ,getPOV(getDockFaction(),defender,aggressor,success)
+	return formatNewsItem (getNewsItem(getDockFaction(),type_event,stage_event,getSuccessStr(success)
+					 ,getPOV(getDockFaction(),defender,aggressor,getSuccessStr(success))
 					 ,scale_event,keyword))
 
 # ------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ def formatNameTags(word,names):
 		return names[var_string][tag]
 	else:
 		print "Error. Invalid news tag."
-		return "blah"
+		return word
 
 def formatProperTitle(str):
 # puts capital letters at the start of every word in string
@@ -168,14 +168,18 @@ def getPOV(facmy,defender,aggressor,success):
 	if (relatdef <= -povCutOff() and relatagg <= -povCutOff()) or (relatdef >= povCutOff() and relatagg >= povCutOff()):
 		return "neutral"
 	elif relatdef > relatagg:
-		if success:
+		if success == "success":
 			return "bad"
-		elif not success:
+		elif success == "loss":
+			return "good"
+		elif success == "draw":
 			return "good"
 	elif relatdef < relatagg:
-		if success:
+		if success == "success":
 			return "good"
-		elif not success:
+		elif success == "loss":
+			return "bad"
+		elif success == "draw":
 			return "bad"
 	else:
 		print "Error, one or more values out of range"
@@ -183,30 +187,32 @@ def getPOV(facmy,defender,aggressor,success):
 
 def getDockFaction():
 # returns the faction of the place the player is docked at
-	return "aera" # FIXME -- actually return a useful value!
-#	i=0
-#	playa=VS.GetPlayer()
-#	un=VS.GetUnit(i)
-#	while(un):
-#		i+=1
-#		if (un.isDocked(plr)):
-#			break
-#		un=VS.GetUnit(i)
-#	if un.isPlanet() or (un.getFactionName() == "neutral"):
-#		return VS.GetGalaxyFaction(allUsefullVariables["system"])
-#	else:
-#		return un.getFactionName()
+#	return "aera" # FIXME -- actually return a useful value!
+	i=0
+	playa=VS.GetPlayer()
+	un=VS.GetUnit(i)
+	while(un):
+		i+=1
+		if (un.isDocked(plr)):
+			break
+		un=VS.GetUnit(i)
+	if un.isPlanet() or (un.getFactionName() == "neutral"):
+		return VS.GetGalaxyFaction(allUsefullVariables["system"])
+	else:
+		return un.getFactionName()
 
 def getSuccessStr(success):
 # returns a string either "success" or "loss" based on the arg success
-	if success:
+	if success == 1:
 		return "success"
-	elif not success:
+	elif success == 0:
 		return "loss"
+	elif success == -1:
+		return "draw"
 
 def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword):
 # finds a suitable news string from the dynamic_news_content.allNews() dictionary
-	listnews = dynamic_news_content.allNews()[validateNewsItem(faction_base,type_event,stage_event,getSuccessStr(success),pov,keyword)][type_event][stage_event][getSuccessStr(success)][pov]
+	listnews = dynamic_news_content.allNews()[validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword)][type_event][stage_event][success][pov]
 	return getClosestScaleNews(listnews,scale)
 
 def getClosestScaleNews(listof,scale):
