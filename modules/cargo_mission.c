@@ -15,6 +15,8 @@ module cargo_mission {
 	import launch;
 	import faction_ships;
 	bool capship;
+	float mission_time;
+
 	float begintime;
 	float time;
 	bool done;
@@ -60,14 +62,18 @@ module cargo_mission {
 	void endbriefing() {
 	  _io.printf ("endinging briefing");
 	};
-
-	
-	void init (int factionname, int numsystemsaway, int cargoquantity, int missiondifficulty, float distance_from_base, float creds, bool launchoncapship) {
+	void initrandom (object factionname, int missiondifficulty,float creds_per_jump, bool launchoncapship, int sysmin, int sysmax, float time_to_complete, object category) {
+	  int numsys = random.randomint (sysmin,sysmax);
+	  init(factionname,numsys, random.randomint(4,15), missiondifficulty,400.0,creds_per_jump*_std.Float(1+numsys),launchoncapship, 10.0, category);
+	};
+	void init (object factionname, int numsystemsaway, int cargoquantity, int missiondifficulty, float distance_from_base, float creds, bool launchoncapship, float time_to_complete, object category) {
+	  mission_time=_std.getGameTime()+time_to_complete*_std.Float(1+numsystemsaway);
 	  _std.setNull (youcontainer);
 	  _std.setNull(basecontainer);
 	  capship= launchoncapship;
 	  faction_ships.init();
-	  faction=faction_ships.intToFaction(factionname);
+	  faction=_string.new();
+	  _io.sprintf (faction,"%s",factionname);
 	  arrived=false;
 	  cred=creds;
 	  distfrombase=distance_from_base;
@@ -80,7 +86,11 @@ module cargo_mission {
 	  if (quantity<1){
 	    quantity=1;
 	  }
-	  object list=_unit.getRandCargo(quantity);
+	  object list=_unit.getRandCargo(quantity,category);
+	  while ((_std.Int(_olist.at(list,5))>5)) {
+	    _olist.delete (list);
+	    list = _unit.getRandCargo(quantity);
+	  }
 	  int tempquantity=quantity;
 	  cargoname=_olist.at(list,0);
 	  object str = _string.new();
@@ -116,12 +126,15 @@ module cargo_mission {
 	  _string.delete (destination);
 	  _string.delete (faction);
 	};
-	void takeCargoAndTerminate (object you) {
-	  int removenum=_unit.removeCargo(you,cargoname,quantity,true);
+	void takeCargoAndTerminate (object you, bool remove) {
+	  int removenum=0; //if you terminate without remove, you are SKREWED
+	  if (remove) {
+	    removenum=_unit.removeCargo(you,cargoname,quantity,true);
+	  }
 	  if ((removenum==quantity)||(quantity==0)) {
 	    _io.message (0,"game","all","Excellent work pilot.");
 	    _io.message (0,"game","all","You have been rewarded for your effort as agreed.");
-	    _io.message (0,"game","all","Your contribution to the war effort will be remembered.");
+	    _io.message (0,"game","all","Your excellent work will be remembered.");
 	    _unit.addCredits(you,cred);
 	    destroy();
 	    _std.terminateMission(true);
@@ -145,7 +158,7 @@ module cargo_mission {
 
 		while (i<difficulty) {
 		  un=faction_ships.getRandomFighter(faction);
-		  object newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 200.0,1000.0,you);
+		  object newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 200.0,400.0,you);
 		  _unit.setTarget(newunit,you);
 		  i=i+1;
 		}
@@ -157,6 +170,15 @@ module cargo_mission {
 	  }
 	};
 	void loop () {
+	  if (_std.getGameTime()>mission_time) {
+	    _io.message (0,"game","all","You Have failed to deliver your cargo in a timely manner.");
+	    _io.message (0,"game","all","The cargo is no longer of need to us.");
+	    object you = _unit.getUnitFromContainer (youcontainer);
+	    if (!_std.isNull(you)) {
+	      takeCargoAndTerminate(you,false);
+	    }
+	    return;
+	  }
 	  if (arrived) {
 	    object base=_unit.getUnitFromContainer(basecontainer);
 	    object you=_unit.getUnitFromContainer(youcontainer);
@@ -168,7 +190,7 @@ module cargo_mission {
 	    }
 	    float dist=_unit.getDistance(base,you);
 	    if (dist<=distfrombase) {
-	      takeCargoAndTerminate(you);		
+	      takeCargoAndTerminate(you,true);		
 	      return;
 	    }
 	  } else {
@@ -190,7 +212,7 @@ module cargo_mission {
 		}
 		object str = _string.new();
 		object name = _unit.getName (newun);
-		_io.sprintf(str,"You must drop your cargo off with the %s unit.",name);
+		_io.sprintf(str,"You must drop your cargo off with the %s.",name);
 		_string.delete (name);
 		_io.message (0,"game","all",str);
 		if (capship) {

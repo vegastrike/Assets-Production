@@ -3,7 +3,7 @@ module random {
   float randomsign(){
     float r=_std.Rnd();
     
-    if(r>5.0){
+    if(r>0.5){
       return 1.0;
     }
     else{

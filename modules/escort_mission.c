@@ -96,7 +96,15 @@ module escort_mission {
       _std.setNull(basecontainer);
     }
   };
-  void init (int factionname, int missiondifficulty, float our_dist_from_jump, float dist_from_jump, float distance_from_base, float creds, float enemy_time, bool AllInThisSystem) {
+  void initrandom (object factionname, int missiondifficulty, float creds, float entime, bool insys) {
+    float targetdist = random.random(2000.0,20000.0);
+    if (insys) {
+      targetdist=200.0;
+    }
+    init (factionname,missiondifficulty, 6000.0, random.random(4000.0,8000.0), targetdist, creds,entime,insys);
+  };
+
+  void init (object factionname, int missiondifficulty, float our_dist_from_jump, float dist_from_jump, float distance_from_base, float creds, float enemy_time, bool AllInThisSystem) {
     
 	  faction_ships.init();
 	  piratesstring = _string.new();
@@ -111,7 +119,8 @@ module escort_mission {
 	  _std.setNull (escortee);
 	  _std.setNull (basecontainer);
 	  other_system_comp=0;
-	  faction=faction_ships.intToFaction(factionname);
+	  faction = _string.new();
+	  _io.sprintf(faction,"%s",factionname);
 	  stage=0;
 	  cred=creds;
 	  distfrombase=distance_from_base;

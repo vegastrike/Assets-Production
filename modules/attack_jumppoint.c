@@ -15,12 +15,13 @@ module attack_jumppoint {
   int ship_check_count;
   bool defend;
   
-	void init (int factionname, int numsystemsaway, int enemyquantity, float distance_from_base, float escape_distance, float creds, bool defend_base) {
+	void init (object factionname, int numsystemsaway, int enemyquantity, float distance_from_base, float escape_distance, float creds, bool defend_base) {
 	  ship_check_count=0;
 	  defend = defend_base;
 	  faction_ships.init();
 
-	  faction=faction_ships.intToFaction(factionname);
+	  faction=_string.new();
+	  _io.sprintf (faction,"%s",factionname);
 	  escdist = escape_distance;
 	  cred=creds;
 
