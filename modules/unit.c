@@ -3,24 +3,11 @@ module unit {
 
   float lasttime;
   bool isLandable (object un) {
-    object unit_fgid = _unit.getFgID(un);
+    object unit_fgid = _unit.getFgName(un);
     bool retval = (((_unit.isPlanet (un))&&(!_unit.isJumppoint(un))) ||
 		   _string.equal (unit_fgid,"Base"));
     _string.delete(unit_fgid);
     return retval;
-  };
-  bool isSignificant(object un) {
-    object unit_fgid = _unit.getFgID(un);
-    if (_unit.isPlanet (un) ||
-	_unit.isJumppoint(un) ||
-	_string.equal (unit_fgid,"Nebula") ||
-	_string.equal (unit_fgid,"Base") ||
-	_string.equal (unit_fgid,"Asteroid")) {
-      _string.delete(unit_fgid);
-      return true;
-    }
-    _string.delete(unit_fgid);
-    return false;
   };
   object getSignificant (int whichsignificant, bool capship_only) {
 	object un;
@@ -40,7 +27,7 @@ module unit {
 		      signum=signum+1;
 		    }
 		  }else {
-		    if (isSignificant(un)) {
+		    if (_unit.isSignificant(un)) {
 		      signum=signum+1;
 		    }
 		  }
