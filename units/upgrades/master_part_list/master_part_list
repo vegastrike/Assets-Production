@@ -413,6 +413,12 @@
 			<Cargo file="leech_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="ecm_package_3" price="30000" quantity="1" mass=".01" volume="1"/>
 		</Category>
+
+		<Category file="Natural_Products/Aera_Food">
+		</Category>
+		<Category file="Natural_Products/Rlaan_Food">
+		</Category>
+
 		<Category file="Natural_Products/Food">
 			<Cargo file="Coffee" price="140" quantity="90" mass=".01" volume="1"/>
 			<Cargo file="Filtered_Water" price="40" quantity="1" mass=".01" volume="1"/>
@@ -470,6 +476,11 @@
 			<Cargo file="Plasteel" price="1" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Steel" price="1" quantity="1" mass=".01" volume="1"/>
 		</Category>
+		<Category file="Raw_Materials/Metals/Aera_Alloys">
+		</Category>
+		<Category file="Raw_Materials/Metals/Rlaan_Alloys">
+		</Category>
+
 		<Category file="Raw_Materials/Metals/Radioactive">
 			<Cargo file="Cesium" price="390" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Iridium" price="370" quantity="1" mass=".01" volume="1"/>
@@ -512,6 +523,10 @@
 			<Cargo file="Gasoline" price="150" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Methane" price="125" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Propane" price="140" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Fuels/Aera_Refined">
+		</Category>
+		<Category file="Fuels/Rlaan_Refined">
 		</Category>
 		<Category file="Compressed_Gasses">
 			<Cargo file="Argon" price="10" quantity="1" mass=".01" volume="1"/>
@@ -557,9 +572,20 @@
 			<Cargo file="Utility_Vehicles" price="90" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="PreFab_Buildings" price="44" quantity="1" mass=".01" volume="1"/>
 		</Category>
+		<Category file="Supplies/Rlaan_Construction_Supplies">
+		</Category>
+		<Category file="Supplies/Aera_Medical_Supplies">
+		</Category>
+		<Category file="Supplies/Rlaan_Medical_Supplies">
+		</Category>
+
 		<Category file="Supplies/Medical_Supplies">
 			<Cargo file="Cryogenic_Supplies" price="505" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="First_Aid_Kits" price="480" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Research/Aera_Medical">
+		</Category>
+		<Category file="Research/Rlaan_Medical">
 		</Category>
 		<Category file="Research/Medical">
 			<Cargo file="Synthetic_Limbs" price="200" quantity="1" mass=".01" volume="1"/>
@@ -583,6 +609,8 @@
 		</Category>
 		<Category file="Research/Electronics">
 			<Cargo file="Quantum_Deductor" price="420" quantity="1" mass=".01" volume="1"/>
+		</Category>
+
 			<Cargo file="Biparticle_Transistor" price="1" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Virtual_Tunneling_Terminal" price="240" quantity="1" mass=".01" volume="1"/>
 		<!-- price these at 1/10 their normal price...-->
@@ -596,6 +624,9 @@
 			<Cargo file="Protocol_Droids" price="270" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Robo_Workers" price="290" quantity="1" mass=".01" volume="1"/>
 		</Category>
+		<Category file="Electronics/Bionics">
+
+		</Category>
 		<Category file="Manufactured_Goods">
 			<Cargo file="Carpets" price="55" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Furniture" price="140" quantity="1" mass=".01" volume="1"/>
@@ -604,6 +635,9 @@
 			<Cargo file="Janitorial_Supplies" price="105" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Textiles" price="53" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Clothing" price="60" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="Entertainment/Aera">
+
 		</Category>
 		<Category file="Entertainment">
 			<Cargo file="Books" price="50" quantity="1" mass=".01" volume="1"/>
@@ -838,5 +872,20 @@
 		</Category>
 		<Category file="missions/Attack_Hunter">
 		</Category>
+
+<!-- aera notes
+Aera_Medical_Supplies.... 1.0 -> 1.8   (-.8 elsewhere)
+Aera_Alloys  1.0->0.8  (+.2 elsewhere)
+Entertainment/Aera 1.6 (-.8 everywhere... rlaan no entertainment)
+Aera_Refined 1.0->0.8
+Aera_Food 1.0->1.8  (-.8 elsewhere)
+upgrades/Miscellaneous/Aera_Milspec
+Research/Aera_Medical
+contraband/Aera 1.0->1.2
+Electronics/Bionics (Rlaan equiv)
+Research/Aera_Medical
+Supplies/Rlaan_Construction_Supplies 1.0 -> 1.4
+-->
+
 	</Hold>
 </Unit>
