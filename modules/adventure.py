@@ -4,10 +4,12 @@ import random
 import quest_racene
 import quest_disappear
 import quest_rlaan_spy
+import quest_slaver
 adventures = {"gemini_sector/delta_prime":quest_drone.quest_drone_factory(),
               "enigma_sector/racene":quest_racene.quest_racene_factory(),
               "enigma_sector/axis":quest_disappear.quest_disappear_factory(),
-              "enigma_sector/novaya_kiev":quest_rlaan_spy.quest_rlaan_spy_factory()}
+              "enigma_sector/novaya_kiev":quest_rlaan_spy.quest_rlaan_spy_factory(),
+              "enigma_sector/rigel":quest_slaver.quest_slaver_factory()}
 
 persistent_adventures = [quest_drone.quest_drone_factory()]
 
