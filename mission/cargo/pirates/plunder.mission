@@ -21,7 +21,7 @@
         </flightgroups>
 	<python>
 import plunder
-newmission = plunder.plunder ( 0, 3, 'pirates', 10, 'Contraband', True, 'pirate_mission3')
+newmission = plunder.plunder ( 0, 'pirates', 5, 'Contraband', True, 'pirate_mission3')
 newmission=0
 
 </python>
