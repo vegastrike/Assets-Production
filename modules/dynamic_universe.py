@@ -4,8 +4,8 @@ import vsrandom
 import fg_util
 from universe import getAdjacentSystemList
 
+cp=fg_util.ccp
 
-cp=VS.getCurrentPlayer()
 fgnames=[] #list of lists of flightgroup names for each faction
 fglists=[] #list of lists for each flightgroups to lists of ships for each faction
 origfgnames=[]
@@ -71,6 +71,6 @@ if cp>=0:
 		genUniverse=Makesys(VS.getSystemFile())
 		#now every system has distributed ships in the save data!
 	#TODO: add ships to current system (for both modes)  uru?
-	for i in fg_util.AllFactions()
-		PurgeZeroShips(i)
+	for i in fg_util.AllFactions():
+		fg_util.PurgeZeroShips(i)
 
