@@ -10,6 +10,13 @@ import news
 import universe
 class random_encounters:
   class playerdata:  
+    def GeneratePhaseAndAmplitude(self):
+      self.prob_phase=20*vsrandom.random()
+      self.prob_amplitude = .5+.5*vsrandom.random()
+      self.prob_period = 20*vsrandom.random()+1
+    def UpdatePhaseAndAmplitude(self):
+      self.prob_phase+=1;
+      return self.prob_amplitude*VS.cos ((self.prob_phase*3.1415926536*2)/self.prob_period)
     def __init__(self,sig_distance,det_distance):
       print "init playerdat"
       self.quests=[]
@@ -21,6 +28,7 @@ class random_encounters:
       self.sig_container=VS.Unit()
       self.significant_distance=sig_distance
       self.detection_distance=det_distance
+      self.GeneratePhaseAndAmplitude()
       print "done playerdat"
   def __init__(self, sigdis, detectiondis, gendis,  minnships, gennships, unitprob, enemyprob, capprob, capdist):
     print "init random enc"
@@ -37,7 +45,7 @@ class random_encounters:
     self.gen_num_ships=gennships
     self.capship_prob=capprob
     self.cur_player=0
-    self.sig_distance_table = {"enigma_sector/heavens_gate":(2000,4000)}
+    self.sig_distance_table = {"enigma_sector/heavens_gate":(2000,4000,.4)}
     print "end random enc"
   def AddPlayer (self):
 #    print "begin add player"
@@ -57,9 +65,11 @@ class random_encounters:
       self.cur.quests+=[qdf]
   def CalculateSignificantDistance(self):
     sysfile = VS.getSystemFile()
+    self.cur.GeneratePhaseAndAmplitude()
     if sysfile in self.sig_distance_table:
       self.cur.significant_distance = self.sig_distance_table[sysfile][0]
       self.cur.detection_distance = self.sig_distance_table[sysfile][1]
+      self.cur.prob_amplitude = self.sig_distance_table[sysfile][2]
       return
     minsig =  unit.minimumSigDistApart()
     if (self.sig_distance>minsig*0.15):
@@ -255,7 +265,7 @@ class random_encounters:
       #lastmode=curmode#processed this event don't process again if in critical zone
       self.cur.lastmode=self.cur.curmode
       print "curmodechange %d" % (self.cur.curmode)#?
-      if (vsrandom.random()<self.fighterprob and un):
+      if ((vsrandom.random()<(self.fighterprob*self.cur.UpdatePhaseAndAmplitude())) and un):
         if (not self.atLeastNInsignificantUnitsNear (un,self.min_num_ships)):
           #determine whether to launch more ships next to significant thing based on ships in that range  
           print ("launch near")
