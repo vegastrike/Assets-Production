@@ -158,6 +158,7 @@ module contraband_mission {
 			object bunit=_unit.getUnit(sys_biterator);
 			if (_std.isNull(bunit)) {  //a contraband ship left the system...
 				all_left=all_left-1;
+				_io.printf("_std.isNull(bunit)   //a contraband ship left the system...\n");
 				Terminate(you);
 				return;
 			}
@@ -192,7 +193,7 @@ module contraband_mission {
 				olistun=_unit.getUnitFromContainer(olistcont);
 				if (_std.isNull(olistun)) {
 					bad_left=bad_left-1;
-					all_left=all_left+1;
+					all_left=all_left-1;
 					_unit.deleteContainer(olistcont);
 					_olist.erase(badolist,bad_iterator);
 				}
@@ -200,6 +201,7 @@ module contraband_mission {
 			sys_giterator=sys_giterator+1;
 			sys_biterator=sys_biterator+1;
 			if (all_left==0) {
+				_io.printf("all_left==0\n");
 				Terminate(you);
 				return;
 			}
