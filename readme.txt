@@ -275,7 +275,7 @@ A new starship will be created for you by Bob.
 =================================================
 If you are in a mission with more than 1 ship in your flightgroup you may order them to do certain things.
 Press shift-F to have them form on your wing and follow you through jump points
-Press shift-A to have them attack your target
+Press shift-D to have them attack your target
 press shift-H to have them attack the object attacking you
 Press shift-B to release them from the above orders
 Wingmen are fickle and may not always obey your commands.  They will inform you if they do or not.
@@ -352,6 +352,7 @@ a,d,w,z      pan ghost cam
 [            switch ships in battle (use to control allies)
 ]            switch to a turret onto your ship
 Shift-A      autopilot to the target
+a            autopilot to the target
 Shift-P      target enemies for your turret
 Shift-N      Turret Nearest Target
 Shift-!      Suicide
@@ -411,6 +412,7 @@ space        Fire Guns
 y            Match Speed
 Shift-J      engage interstellar warp drive (use at clear blue balls)
 Shift-A      autopilot to the target
+a            autopilot to the target
 Shift-c      cloak
 Shift-E      Eject
 Shift-Z      Eject Cargo
