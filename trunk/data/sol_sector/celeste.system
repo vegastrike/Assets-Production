@@ -28,8 +28,8 @@
 	<Planet name="Poseidon" file="planets/m_class3.png" ri="-1689267.500000" rj="18288712.000000" rk="-7126605.000000" si="-33693752.000000" sj="330328.593750" sk="8834367.000000" radius="1281005.250000" x="31823828.000000" y="-19413926.000000" z="22706640.000000" year= "643225472.0" day="4280.000000"  >
                 <planet name="Poseidon Atmosphere" file="sol/earthcloudmaptrans.png" alpha="true" radius="1289477" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="6631949" position="0"/>
 
-		<Planet name="Morpheus" file="planets/Dirt.png" citylights="planets/Dirt_lightwrapx64wrapy64.png" ri="-1987450.750000" rj="797110.687500" rk="1454460.875000" si="837468.062500" sj="3863860.000000" sk="-973210.937500" radius="453328.468750" x="-4887528.500000" y="-3180762.750000" z="-6028558.500000" year= "7532217.000000" day="5583.500000"  >
-		<CityLights file="planets/Dirt_lightwrapx64wrapy64.png" wrapx="64" wrapy="64" radius="453328.468750"/>
+		<Planet name="Morpheus" file="planets/Dirt.png" ri="-1987450.750000" rj="797110.687500" rk="1454460.875000" si="837468.062500" sj="3863860.000000" sk="-973210.937500" radius="453328.468750" x="-4887528.500000" y="-3180762.750000" z="-6028558.500000" year= "7532217.000000" day="5583.500000"  >
+		<CityLights file="planets/Dirt_light_repeat.png" wrapx="64" wrapy="64" radius="453328.468750"/>
 		</Planet>
 		<Planet name="Hecate" file="planets/red_rocky.png" ri="-2060346.000000" rj="-2826513.250000" rk="-3634564.000000" si="4993352.000000" sj="1188513.875000" sk="-3754888.750000" radius="294555.031250" x="6625531.000000" y="-4116763.750000" z="-6082743.500000" year= "6286643.000000" day="5583.500000"  >
 		</Planet>
