@@ -1,4 +1,6 @@
-# 291 "unit_wrapper.cpp"import random
+# 299 "unit_wrapper.cpp"
+import random
+import sys
 
 def pushSystem(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "pushSystem"
@@ -96,7 +98,16 @@ def setOwner(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=No
 def getOwner(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "getOwner" 
    return Unit()
-
+def IOmessage(time,fr,to,message):
+   sys.stderr.write("IOmessage [printed in %f seconds; from %s to %s: '%s']\n" % (time,fr,to,message))
+def GetMasterPartList(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "GetMasterPartList" 
+   return Unit()
+def GetContrabandList(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "GetContrabandList" 
+   return Unit()
+def SetAutoStatus(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "SetAutoStatus"
 def string ():
   return ''
 class Unit:
@@ -335,9 +346,6 @@ class Unit:
   def PriceCargo(self,s): 
    print "PriceCargo" 
    return 0
-  def GetCargo(self,i): 
-   print "GetCargo" 
-   return Cargo()
   def numCargo(self):
    print "numCargo" 
    return 0
@@ -435,11 +443,17 @@ class Unit:
    return 0
   def getSignificantDistance(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "getSignificantDistance" 
-   return 0;
+   return 0
   def isPlayerStarship(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "isPlayerStarship" 
-   return -1;
-# 338 "unit_wrapper.cpp" 2
+   return -1
+  def hasCargo(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "hasCargo" 
+   return 0
+  def GetCargo(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   print "GetCargo" 
+   return Cargo("","",1,1,1,1)
+# 351 "unit_wrapper.cpp" 2
 
   def __eq__(self,oth): 
    print "__eq__" 
@@ -535,6 +549,15 @@ class Cargo:
    return "weapons"
   def SetCategory(self,category): 
    print "SetCategory"
+  def GetCategory(self):
+   print "GetCategory" 
+   return "contraband"
+  def SetMissionFlag(self,flag): 
+   print "SetMissionFlag"
+  def GetMissionFlag(self):
+   print "GetMissionFlag" 
+   return 0
+
   def GetCategory(self):
    print "GetCategory" 
    return "contraband"
