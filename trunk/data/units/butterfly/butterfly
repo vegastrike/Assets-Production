@@ -3,7 +3,7 @@
 <!-- Faction : Not assigned -->
 
 <Unit>
-
+<cockpit file="heavy-cockpit.cpt" x="0" y="0" z="0"/>
 <Meshfile file="f208b.xmesh"/>
 <Meshfile file="f208c.xmesh"/>
 

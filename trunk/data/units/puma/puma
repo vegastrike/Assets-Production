@@ -1,4 +1,5 @@
 <Unit>
+	<cockpit file="heavy-cockpit.cpt" x="0" y=".5" z="4"/>
 	<Meshfile file="puma.xmesh" />
 	<Light file="supernova.bmp" x="0.900000" y="0.000000" z="-8.50000" size="1.500000"/>
 	<Light file="supernova.bmp" x="-0.900000" y="0.000000" z="-8.50000" size="1.500000"/>

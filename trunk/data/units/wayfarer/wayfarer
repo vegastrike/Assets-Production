@@ -1,4 +1,5 @@
 <Unit>
+<cockpit file="heavy-cockpit.cpt" x="0" y="0" z="0"/>
 <Meshfile file="rescue-hull-e.xmesh"/>
 <Meshfile file="rescue-hull-w.xmesh"/>
 <Meshfile file="rescue-hull-p.xmesh"/>
