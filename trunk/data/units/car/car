@@ -24,9 +24,9 @@
        	<Jump delay="1" jumpenergy="90"/>       
 
 <!-- new elements added -->
-<Light file="supernova.bmp" x="-.8" y=".96" z="-2.800000" size=".400000" red="1" green="0" blue="0" lighttype="break"/>
-<Light file="supernova.bmp" x=".8" y=".96" z="-2.800000" size=".400000" red="1" green="0" blue="0" lighttype="break"/>
-<Light file="supernova.bmp" x="0" y=".96" z="-2.80000" size=".4000000" red="0" green="0" blue="0" lighttype="break"/>
+<Light file="supernova.bmp" x="-.8" y=".96" z="-2.800000" size=".400000" red="1" green="0" blue="0" lighttype="brake"/>
+<Light file="supernova.bmp" x=".8" y=".96" z="-2.800000" size=".400000" red="1" green="0" blue="0" lighttype="brake"/>
+<Light file="supernova.bmp" x="0" y=".96" z="-2.80000" size=".4000000" red="0" green="0" blue="0" lighttype="brake"/>
 
 <Light file="supernova.bmp" x="-.6" y=".96" z="-2.800000" size=".350000" red="1" green="1" blue="1" lighttype="reverse"/><!-- backup lights-->
 <Light file="supernova.bmp" x=".6" y=".96" z="-2.800000" size=".350000" red="1" green="1" blue="1" lighttype="reverse"/>
