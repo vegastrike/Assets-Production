@@ -7,19 +7,19 @@
 	</variables>
         <flightgroups>
                 <flightgroup name="lilac" faction="aera" type="kira" ainame="default" waves="1" nr_ships="9">
-			<pos x="10000.0" y="0.0" z="3000.0"/>
+			<pos x="10000.0" y="0.0" z="30000000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
                 <flightgroup name="blue" faction="confed" type="cruiser" ainame="default" waves="1" nr_ships="8">
-			<pos x="7000.0" y="0.0" z="3000.0"/>
+			<pos x="7000.0" y="0.0" z="30000000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
-                <flightgroup name="blue" faction="confed" type="tian" ainame="default" waves="1" nr_ships="3">
-			<pos x="7000.0" y="2000.0" z="1000.0"/>
+                <flightgroup name="browne" faction="confed" type="tian" ainame="default" waves="1" nr_ships="3">
+			<pos x="7000.0" y="2000.0" z="30000000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
-                <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="3">
-			<pos x="7000.0" y="-2000.0" z="5000.0"/>
+                <flightgroup name="orange" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="3">
+			<pos x="7000.0" y="-2000.0" z="30000000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
 
