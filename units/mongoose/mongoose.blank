@@ -1,4 +1,4 @@
-<Unit scale="1.5">
+<Unit scale="1">
 	<cockpit file="bomber-cockpit.cpt" x="0" y=".5" z="4"/>
 	<Defense HudImage="mongoose-hud.spr">
 		<Shields front="000000" back="000000" />
