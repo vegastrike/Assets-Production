@@ -25,11 +25,11 @@
 			<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
 			<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
 			<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
-			<Cargo file="cloaking_Device" price="259000" quantity="1" mass="89" volume="1"/>
-			<Cargo file="experemental_UnknownBeam" price="3980000" quantity="1" mass="298" volume="1"/>
-			<Cargo file="experemental_UnknownBolt" price="4860000" quantity="1" mass="274" volume="1"/>
-			<Cargo file="experemental_CloakingDevice" price="1380000" quantity="1" mass="184" volume="1"/>
-			<Cargo file="experemental_ShieldRegenerator" price="5000000" quantity="1" mass="274" volume="1"/>
+			<Cargo file="cloaking_device" price="259000" quantity="1" mass="8.9" volume="1"/>
+			<Cargo file="experemental_UnknownBeam" price="3980000" quantity="1" mass="29.8" volume="1"/>
+			<Cargo file="experemental_UnknownBolt" price="4860000" quantity="1" mass="27.4" volume="1"/>
+			<Cargo file="experemental_CloakingDevice" price="1380000" quantity="1" mass="18.4" volume="1"/>
+			<Cargo file="experemental_ShieldRegenerator" price="5000000" quantity="1" mass="27.4" volume="1"/>
 		</Category>
 		<Category file="arms">
 			<Cargo file="weapons" price="300" quantity="1" mass=".1" volume="1"/>	
@@ -55,8 +55,7 @@
 			<Cargo file="drugs" price="8000" quantity="100" mass=".2" volume="1"/>
 			<Cargo file="bioelectrical_simulators" price="10000" quantity="100" mass="6" volume="1"/>
 			<Cargo file="pleasure_bots" price="400" quantity="5" mass="4" volume="1"/>
-			<Cargo file="slaves" price="1350" quantity="1" mass="1.2" volume="1"/>
-			<Cargo file="slaves" price="1350" quantity="1" mass="1.2" volume="1"/>
+			<Cargo file="slaves" price="1350" quantity="100" mass="1.2" volume="1"/>
 			<Cargo file="military_software" price="500" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="cargo">
@@ -64,8 +63,8 @@
 			<Cargo file="cargo_barrel" price="52000" quantity="50" mass="10" volume="4"/>
 			<Cargo file="scientific_research" price="59000" quantity="5" mass="2" volume="1"/>
 			<Cargo file="scientific_discovery" price="600000" quantity="1" mass="2" volume="1"/>
-			<Cargo file="junk" price="1" quantity="1000" mass="100" volume="10"/>
-			<Cargo file="passengers" price="0" quantity="10000" mass="200" volume="100"/>
+			<Cargo file="junk" price="1" quantity="1000" mass="5.1" volume="10"/>
+			<Cargo file="passengers" price="2000" quantity="1000" mass="2" volume="2"/>
 			<Cargo file="bacteria_samples" price="20390" quantity="5" mass=".1" volume="1"/>
 			<Cargo file="human_organs" price="3000" quantity="50" mass="2" volume="3"/>
 		</Category>
@@ -75,8 +74,8 @@
 			<Cargo file="classified_military_report" price="360000" quantity="4" mass=".05" volume="1"/>
 			<Cargo file="classified_cargo_crate" price="980000" quantity="8" mass="10" volume="4"/>
 			<Cargo file="classified_cargo_barrel" price="980000" quantity="8" mass="10" volume="4"/>
-			<Cargo file="classified_junk" price="91020" quantity="10" mass="100" volume="10"/>
-			<Cargo file="classified_military_junk" price="98364" quantity="2" mass="100" volume="10"/>
+			<Cargo file="classified_junk" price="91020" quantity="10" mass="5.1" volume="10"/>
+			<Cargo file="classified_military_junk" price="98364" quantity="2" mass="5.1" volume="10"/>
 		</Category>
 		<Category file="experemental_weapons">
 		</Category>
