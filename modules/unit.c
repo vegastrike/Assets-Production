@@ -109,7 +109,7 @@ module unit {
       float j=_olist.at(pos,1);
       float k=_olist.at(pos,2);
 
-      _io.printf("%d:%s: r=%f [%f %f %f]\n",ship_nr,fgid,rsize,i,j,k);
+      _io.printf("%d:%s: r=%f + ss=%b pl=%b jp=%b + [%f %f %f]\n",ship_nr,fgid,rsize,_unit.isStarShip(unit),_unit.isPlanet(unit),_unit.isJumppoint(unit),i,j,k);
 
       ship_nr=ship_nr+1;
       unit=_unit.getUnit(ship_nr);

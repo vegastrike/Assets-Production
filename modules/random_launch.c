@@ -125,8 +125,8 @@ module random_launch {
     player_unit=_unit.getPlayer();
     object pos=_unit.getPosition(player_unit);
 
-    object type="truck_small";
-    //object type="cruiser";
+    //object type="truck_small";
+    object type="cruiser";
 
     //    _io.sprintf(fgstring,"rnd%d",rndcounter);
     rndcounter=rndcounter+1;
@@ -135,7 +135,7 @@ module random_launch {
 
     launch.launch_wave_around_area(fgstring,"confed",type,"_ai_stationary",nr_trucks,min_range,max_range,pos);
 
-    launch.launch_wave_around_area(fgstring,"confed","cruiser","_ai_stationary",nr_trucks/2,min_range,max_range,pos);
+    //    launch.launch_wave_around_area(fgstring,"confed","cruiser","_ai_stationary",nr_trucks/2,min_range,max_range,pos);
 
     object waypoint=vec3.random_around_player(min_range*10.0,max_range*30.0);
     order.flyToWaypoint(fgstring,waypoint,1.0,false,100.0);
@@ -150,10 +150,17 @@ module random_launch {
     int max_nr_ships=_omap.get(submap,"max_nr_ships");
     float min_range=_omap.get(submap,"min_range");
     float max_range=_omap.get(submap,"max_range");
+    int launch_mode=_omap.get(submap,"launch_mode");
 
     int nr_fg=random.randomint(min_nr_fg,max_nr_fg);
 
-    object pos=_unit.getPosition(player_unit);
+    object pos;
+    if(launch_mode==0){
+      pos=_unit.getPosition(player_unit);
+    }
+    else if(launch_mode==1){
+      pos=vec3.ahead_of_player(min_range,max_range);
+    }
 
     int f=0;
     while(f<nr_fg){
@@ -163,7 +170,12 @@ module random_launch {
       //_io.sprintf(fgstring,"rnd%d",rndcounter);
       rndcounter=rndcounter+1;
 
-      launch.launch_wave_around_area(fgstring,faction,type,"default",nr_ships,min_range,max_range,pos);
+      if(launch_mode==0){
+	launch.launch_wave_around_area(fgstring,faction,type,"default",nr_ships,min_range,max_range,pos);
+      }
+      else if(launch_mode==1){
+	launch.launch_wave_around_area(fgstring,faction,type,"default",nr_ships,min_range/10.0,max_range/10.0,pos);
+      }
 
       f=f+1;
     }
