@@ -1,9 +1,7 @@
 <Unit>
 	<Meshfile file="dumbfire.xmesh"/>
 	<BspMesh/>
-	<Light file="supernova.bmp" red=".1" green=".7" blue="0" x="-.5" y="-0" z="-2.9" size= ".6"/>
-	<Light file="supernova.bmp" red=".1" green=".7" blue="0" x=".5" y="-0" z="-2.9" size= ".6"/>
-       
+	<Light file="supernova.bmp" x="0" y="0" z="-2" size= ".6"/>
 
 <Thrust> 
 	<Engine Afterburner="2300"
