@@ -1,6 +1,6 @@
 <Unit scale="1.5">
 	<Cockpit file="medium_cockpit.cpt"/>
-	<Meshfile file="tian.xmesh" />
+	<Meshfile file="TigerShark.xmesh" />
 	<Thrust>
 		<Engine Afterburner="1600.000000" Forward="533.333313" Retro="466.666649" Left="266.666656" Right="266.666656" Top="266.666656" Bottom="266.666656"/>
 		<Maneuver yaw="3643.200050" pitch="3643.200050" roll="3643.200050"/>
