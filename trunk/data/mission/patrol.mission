@@ -33,5 +33,19 @@
 		<script name="gameloop">
 			<exec module="patrol_system" name="loop"/>
 		</script>
+
+		<script name="initbriefing">
+			<exec module="patrol_system" name="initbriefing">
+			</exec>
+		</script>
+		<script name="loopbriefing">
+			<exec module="patrol_system" name="loopbriefing">
+			</exec>
+		</script>
+		<script name="endbriefing">
+			<exec module="patrol_system" name="endbriefing">
+			</exec>
+		</script>
+
 	</module>
 </mission>
