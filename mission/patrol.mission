@@ -6,8 +6,8 @@
 	<variables>
 		<var name="defaultplayer" value="blue"/>
 		<var name="system" value="enigma_sector/blake" />
-		<var name="mission_name" value="Cargo Mission" />
-		<var name="description" value="Deliver cargo to a system" />
+		<var name="mission_name" value="Patrol Mission" />
+		<var name="description" value="Patrol 6 locations in this star systems." />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="2">
@@ -23,11 +23,11 @@
 		<import name="patrol_system"/>
 		<script name="initgame">
 			<exec module="patrol_system" name="init">
-			<const type="int" value="1"/> <!--num systems away -->
+			<const type="int" value="0"/> <!--num systems away -->
 
-			<const type="int" value="3"/><!--num patrol points (not zero)-->
-			<const type="float" value="10000"/> <!--the distance from the points you have to be to get credited -->
-			<const type="float" value="40000"/> <!-- how much you arepaid -->
+			<const type="int" value="6"/><!--num patrol points (not zero)-->
+			<const type="float" value="300"/> <!--the distance from the points you have to be to get credited -->
+			<const type="float" value="5800"/> <!-- how much you arepaid -->
 			</exec>
 		</script>
 		<script name="gameloop">

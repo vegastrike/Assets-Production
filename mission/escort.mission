@@ -23,7 +23,7 @@
 		<import name="escort_mission"/>
 		<script name="initgame">
 			<exec module="escort_mission" name="init">
-			<const type="int" value="0"/> <!--faction name 0 confed 1 aera... -->
+			<const type="object" object="string" value="confed"/> <!--faction name 0 confed 1 aera... -->
 			<const type="int" value="2"/> <!--difficulty of mission(do they send peeps after you)-->
 			<const type="float" value="8000"/> <!--our dist from jump point when they come in-->
 			<const type="float" value="5000"/><!-- their distance from jump point -->
