@@ -347,19 +347,19 @@
 			<Cargo file="repair_ai_advanced" price="300000" quantity="1" mass=".01" volume="1" description="Similar to the normal repair ai, but with code optimizations and a better warranty." />
 		</Category>
 		<Category file="upgrades/Radar/Basic">
-			<Cargo file="SkyScope_Alpha" price="5000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: No\    Radar error: 0.5\    Radar Range: 5000\    Cone:\      Lock: 25.7 degrees\      Tracking: 16.2 degrees" />
-			<Cargo file="SkyScope_AlphaPlus" price="10000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: No\    Radar error: 0.25\    Radar Range: 10000\    Cone:\      Lock: 31.6 degrees\      Tracking: 21.4 degrees" />
-			<Cargo file="StarScanner_2530" price="20000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: Yes\    Radar error: 0\    Radar Range: 8000\    Cone:\      Lock: 38.6 degrees\      Tracking: 23.0 degrees" />
+			<Cargo file="SkyScope_Alpha" price="5000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: No\    Radar error: 0.5\    Radar Range: 0.1 Lsec\    Cone:\      Lock: 25.7 degrees\      Tracking: 16.2 degrees" />
+			<Cargo file="SkyScope_AlphaPlus" price="10000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: No\    Radar error: 0.25\    Radar Range: 0.2 Lsec\    Cone:\      Lock: 31.6 degrees\      Tracking: 21.4 degrees" />
+			<Cargo file="StarScanner_2530" price="20000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: Yes\    Radar error: 0\    Radar Range: 0.16 Lsec\    Cone:\      Lock: 38.6 degrees\      Tracking: 23.0 degrees" />
 		</Category>
 		<Category file="upgrades/Radar/Intermediate">
-			<Cargo file="SkyScope_Beta" price="20000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error:0. 25\    Radar Range: 20000\    Cone:\      Lock: 31.6 degrees\      Tracking: 25.7 degrees" />
-			<Cargo file="StarScanner_2545" price="40000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: Yes\    Radar error: 0\    Radar Range: 14000\    Cone:\      Lock: 41.3 degrees\      Tracking: 25.7 degrees" />
-			<Cargo file="Hawkeye_ZX-16" price="80000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error: 0\    Radar Range: 14000\    Cone:\      Lock: 44.7 degrees\      Tracking: 18.0 degees" />
+			<Cargo file="SkyScope_Beta" price="20000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error:0. 25\    Radar Range: 0.4 Lsec\    Cone:\      Lock: 31.6 degrees\      Tracking: 25.7 degrees" />
+			<Cargo file="StarScanner_2545" price="40000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: Yes\    Radar error: 0\    Radar Range: 0.28 Lsec\    Cone:\      Lock: 41.3 degrees\      Tracking: 25.7 degrees" />
+			<Cargo file="Hawkeye_ZX-16" price="80000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error: 0\    Radar Range: 0.28 Lsec\    Cone:\      Lock: 44.7 degrees\      Tracking: 18.0 degees" />
 		</Category>
 		<Category file="upgrades/Radar/Advanced">
-			<Cargo file="StarScanner_2600" price="120000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: Yes\    Radar color: Yes\    Radar error: 0\    Radar Range: 20000\    Cone:\      Lock: 36.77 degrees\      Tracking: 31.6 degrees" />
-			<Cargo file="Hawkeye_ZX-50" price="140000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error: 0\    Radar Range: 40000\    Cone:\      Lock: 38.5 degrees\      Tracking: 33.7 degrees" />
-			<Cargo file="Hawkeye_ZX-86" price="160000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: Yes\    Radar error: 0\    Radar Range: 50000\    Cone:\      Lock: 31.7 degrees\      Tracking: 31.7 degrees" />
+			<Cargo file="StarScanner_2600" price="120000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: Yes\    Radar color: Yes\    Radar error: 0\    Radar Range: 0.4 Lsec\    Cone:\      Lock: 36.77 degrees\      Tracking: 31.6 degrees" />
+			<Cargo file="Hawkeye_ZX-50" price="140000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error: 0\    Radar Range: 0.8 Lsec\    Cone:\      Lock: 38.5 degrees\      Tracking: 33.7 degrees" />
+			<Cargo file="Hawkeye_ZX-86" price="160000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: Yes\    Radar error: 0\    Radar Range: 1.0 Lsec\    Cone:\      Lock: 31.7 degrees\      Tracking: 31.7 degrees" />
 		</Category>
 		<Category file="upgrades/Weapons/Turrets">
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1" description="Given the armament commonly placed in such turrets, the small turret has become affectionately known as 'the machine that goes ping'." />
