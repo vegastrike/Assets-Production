@@ -28,9 +28,9 @@
 </Light>	
 
         <planet name="JumpToPrasepe" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-17500" x="7500" day="240" destination="gemini_sector/prasepe"/>
-        <unit name= "Glasgow"  file="privrefinery" faction="confed" z="8000" x="11500"/>
+        <unit name= "Glasgow"  file="refinery" faction="confed" z="8000" x="11500"/>
         <planet name="JumpTo17-AR" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="17000" x="-6500" day="240" destination="gemini_sector/17-ar"/>
         <planet name="JumpToCrab-12" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="7500" x="-21500" day="240" destination="gemini_sector/crab-12"/>
         <planet name="JumpToSherwood" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="-7000" day="240" destination="gemini_sector/sherwood" />
-        <unit name= "Edingurgh"  file="privrefinery" faction="confed" z="-5500" x="17500"/>
+        <unit name= "Edingurgh"  file="refinery" faction="confed" z="-5500" x="17500"/>
 </system>

@@ -34,5 +34,5 @@
         <planet name="Palan" file="planets/m_class10.png" radius="300" gravity="20" z="-14800" x="5900" day="300">
                 <planet name="Palan" file="sol/earthcloudmaptrans.png" alpha="true" radius="310" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" day="600" position="0"/>
         </planet>
-        <unit name= "Basra"  file="privrefinery" faction="confed" z="13200" x="4200"/>
+        <unit name= "Basra"  file="refinery" faction="confed" z="13200" x="4200"/>
 </system>

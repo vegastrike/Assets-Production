@@ -30,6 +30,6 @@
         <planet name="JumpToBlockadePointCharlie" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="8000" x="15000" day="240" destination="gemini_sector/blockadepointcharlie"/>
         <planet name="Nav 2" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="-7200" day="240" />
         <planet name="JumpToSumn-Kp'ta" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="11000" x="-14000" day="240" destination="gemini_sector/sumn-kpta"/>
-        <unit name= "Charon"  file="asteroidfighterbase" faction="confed" z="-11800" x="7500"/>
+        <unit name= "Charon"  file="MiningBase" faction="confed" z="-11800" x="7500"/>
   
 </system>

@@ -30,10 +30,10 @@
         <planet name="JumpToRagnarok" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-5500" x="17500" day="240" destination="gemini_sector/ragnarok"/>
         <planet name="JumpToNitir" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-17500" x="8000" day="240" destination="gemini_sector/nitir"/>
         <planet name="JumpToMidgard" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-7500" x="-6500" day="240" destination="gemini_sector/midgard"/>
-        <unit name= "Anapolis"  file="privrefinery" faction="confed" z="-14000" x="-17200"/>
+        <unit name= "Anapolis"  file="refinery" faction="confed" z="-14000" x="-17200"/>
         <planet name="JumpToNewDetroit" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="16000" x="4000" day="240" destination="gemini_sector/newdetroit"/>
         <planet name="JumpToNewcastle" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="11000" x="-17200" day="240" destination="gemini_sector/newcastle" />
         <planet name="JumpToSurtur" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="14000" x="0" day="240" destination="gemini_sector/surtur"/>
         <planet name="JumpToTingerhoff" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="5200" x="7500" day="240" destination="gemini_sector/tingerhoff"/>
-        <unit name= "PerryNavalBase"  file="perry" faction="confed" z="14000" x="17500"/>
+        <unit name= "PerryNavalBase"  file="starfortress" faction="confed" z="14000" x="17500"/>
 </system>

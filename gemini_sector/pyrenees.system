@@ -34,6 +34,6 @@
         </planet>
         <planet name="JumpToCM-N1054" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="3000" x="-11500" day="240" destination="gemini_sector/cm-n1054"/>
         <planet name="Nav 5" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="0" day="240" />
-        <unit name= "Basque"  file="asteroidfighterbase" faction="confed" z="-12000" x="0"/>
+        <unit name= "Basque"  file="MiningBase" faction="confed" z="-12000" x="0"/>
         <asteroid  name= "Basque"  file="AFieldBase" faction="neutral"   z="-12000" day="-14000"  difficulty=".25"></asteroid>         
 </system>

@@ -27,6 +27,6 @@
 <attenuated red="0" blue=".0000001"/>
 </Light>	
 
-        <unit name= "Romulus"  file="asteroidfighterbase" faction="confed" z="8500" x="-15500"/>        
+        <unit name= "Romulus"  file="MiningBase" faction="confed" z="8500" x="-15500"/>        
         <planet name="JumpToJunction" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-8500" x="4500" day="240" destination="gemini_sector/junction" />
 </system>
