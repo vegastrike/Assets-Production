@@ -6,7 +6,7 @@
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="0"/>
 				<var name="num_planets" value="1"/>
-				<var name="num_moons" value="1"
+				<var name="num_moons" value="1"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
 				<var name="num_natural_phenomena" value="0"/>
@@ -22,7 +22,7 @@
 				<var name="num_stars" value="2"/>
 				<var name="num_gas_giants" value="3"/>
 				<var name="num_planets" value="10"/>
-				<var name="num_moons" value="10"
+				<var name="num_moons" value="10"/>
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="false"/>
 				<var name="num_natural_phenomena" value="2"/>
@@ -40,7 +40,7 @@
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="2"/>
 				<var name="num_planets" value="4"/>
-				<var name="num_moons" value="5"
+				<var name="num_moons" value="5"/>
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="true"/>
 				<var name="num_natural_phenomena" value="1"/>
@@ -52,4 +52,4 @@
 			</sector>			
 		</sector>	
 	</systems>
-</vegaconfig>
+</galaxy>
