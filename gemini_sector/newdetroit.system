@@ -1,4 +1,4 @@
-<system name="New Detroit" background="backgrounds/blue_galaxy1" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0" scalesystem="1">
+<system name="New Detroit" background="backgrounds/white" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0" scalesystem="1">
 <Light>
 <ambient red="000.0" green="000.0" blue="000.0"/>
 <diffuse red="1" green="0.894427190999916" blue="2.23606797749979"/>

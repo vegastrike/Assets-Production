@@ -1,4 +1,4 @@
-<system name="Tingerhoff" background="backgrounds/blue_galaxy1" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
+<system name="Tingerhoff" background="backgrounds/green" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
 <Light>
 <ambient red="000.0" green="000.0" blue="000.0"/>
 <diffuse red="0.774596669241483" green="0.774596669241483" blue="1"/>
