@@ -32,7 +32,7 @@ fighterProductionRate={"confed":.02
 				,"ISO":.14
 				,"default":.1
 				}
-capitalProductionRate={"confed":.005
+capitalProductionRate={"confed":.002
 				,"aera":.02
 				,"rlaan":.02
 				,"ISO":.03
