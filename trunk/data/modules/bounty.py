@@ -9,24 +9,18 @@ import unit
 import VS
 
 class bounty (Director.Mission):
-	faction=""
-	destination=""
 	enemy=VS.Unit()
 	you=VS.Unit()
 	significant=VS.Unit()
-	newship=""
-	arrived=0
-	curiter=0
-	difficulty=1
-	cred=0
-	istarget=0
-	runaway=0
-	systemlist=()
-	adjsys=0 #this will give an error if it hasn't been __init__ed yet.
-	mplay="all"
-	self.obj=0
+
 	def __init__ (self,minnumsystemsaway, maxnumsystemsaway, creds, run_away, shipdifficulty, tempfaction):
 	  Director.Mission.__init__ ()
+	  self.newship=""
+	  self.mplay="all"
+	  self.istarget=0
+	  self.obj=0
+	  self.curiter=0
+	  self.arrived=0
 	  self.faction = tempfaction	  
 	  self.difficulty = shipdifficulty
 	  self.runaway=run_away
@@ -70,19 +64,19 @@ class bounty (Director.Mission):
 	  if (self.arrived==3):
 	    enemy=self.enemy
 	    if (not self.istarget):
-	      curun=VS.getUnit(curiter)
-	      if (enemy):
+	      curun=VS.getUnit(self.curiter)
+	      if (not enemy.isNull()):
 		if (curun==enemy):
 		  enemy.setTarget(you)
-	      curiter+=1
+	      self.curiter+=1
 	    if (you.isNull()):
-	      Lose(1)
+	      self.Lose(1)
 	      return
 	    if (enemy.isNull()):
-	      Win(you,1)
+	      self.Win(you,1)
 	      return
 	  elif (self.arrived==2):
-	    if (VS.getSystemFile()==destination):
+	    if (VS.getSystemFile()==self.adjsys.DestinationSystem()):
 	      self.arrived=3
 	    else:
 	      VS.ResetTimeCompression()
