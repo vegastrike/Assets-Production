@@ -2,6 +2,37 @@
 <Meshfile file="vitik.xmesh"/>
        
 
+	<Dock x="-5" y="0" z="-.3" size="1.9"/>
+	<Dock x="5" y="0" z="-.3" size="1.9"/>
+	<Dock x="-5" y="0" z="1.7" size="1.9"/>
+	<Dock x="5" y="0" z="1.7" size="1.9"/>
+	<Dock x="-5" y="0" z="3.7" size="1.9"/>
+	<Dock x="-5" y="0" z="3.7" size="1.9"/>
+	<Dock x="5" y="0" z="5.7" size="1.9"/>
+	<Dock x="-5" y="0" z="5.7" size="1.9"/>
+	<Dock x="5" y="0" z="7.7" size="1.9"/>
+	<Dock x="-5" y="0" z="7.7" size="1.9"/>
+	<Dock x="5" y="0" z="9.7" size="1.9"/>
+	<Dock x="-5" y="0" z="9.7" size="1.9"/>
+	<Thrust>
+		<Engine Afterburner="366.666660" Forward="236.666664" Retro="223.333331" Left="213.333332" Right="213.333332" Top="213.333332" Bottom="213.333332"/>
+		<Maneuver yaw="121.800013" pitch="121.800013" roll="221.800013"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage="vitik-hud.spr">
+		<Armor front="3600" right="4000" left="4000" back="3200"/>
+		<Shields front="3600.000000" left="4000" right="4000" back="3400.000000" recharge="70.000000"/>
+		<Hull strength="6000.000000"/>
+	</Defense>
+	<Stats mass="1150.000000" momentofinertia="1018.000000" fuel="20000000"></Stats>
+	<Computer yaw="57.600000" pitch="57.600000" roll="97.600000" afterburner="108.666666" maxspeed="54.333333">
+		<Radar itts="true" color="true" maxrange="90000"  error="0"/>
+	</Computer>
+	<Energy>
+		<Reactor recharge="700" limit="30000"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="20000"/>              
 
 <!-- new elements added -->
 <Subunit file="turret" x="7.496216" y="-0.882353" z="-31.542822" ri="0.719620" rj="0.000000" rk="-0.694368" qi="0.000000" qj="-1.000000" qk="0.000000"/>

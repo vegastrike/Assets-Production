@@ -1,5 +1,42 @@
 <Unit scale="1000">
 <Meshfile file="yavok.xmesh"/>
+	<Dock x="0" y="0" z="-.3" size=".3"/>
+	<Dock x="0" y="0" z="0" size=".3"/>
+	<Dock x="0" y="0" z=".3" size=".3"/>
+	<Dock x="0" y="0" z=".6" size=".3"/>
+	<Dock x="0" y="0" z=".9" size=".3"/>
+	<Dock x="0" y="0" z="1.2" size=".3"/>
+	<Dock x="0" y="0" z="1.5" size=".3"/>
+	<Dock x="0" y="0" z="1.8" size=".3"/>
+	<Dock x="0" y="0" z="2.4" size=".3"/>
+	<Dock x="0" y="0" z="2.7" size=".3"/>
+	<Dock x="0" y="0" z="3.0" size=".3"/>
+	<Dock x="0" y="0" z="3.3" size=".3"/>
+	<Dock x="0" y="0" z="3.6" size=".3"/>
+	<Dock x="0" y="0" z="3.9" size=".3"/>
+	<Dock x="0" y="0" z="4.2" size=".3"/>
+	<Dock x="0" y="0" z="4.5" size=".3"/>
+
+	<Thrust>
+		<Engine Afterburner="66.666660" Forward="36.666664" Retro="23.333331" Left="13.333332" Right="13.333332" Top="13.333332" Bottom="13.333332"/>
+		<Maneuver yaw="21.800013" pitch="21.800013" roll="21.800013"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage="yavok-hud.spr">
+		<Armor front="5000" right="4000" left="4000" back="5000"/>
+		<Shields front="5000.000000" back="4500.000000" recharge="70.000000"/>
+		<Hull strength="5000.000000"/>
+	</Defense>
+	<Stats mass="1350.000000" momentofinertia="1180.000000" fuel="20000000"></Stats>
+	<Computer yaw="17.600000" pitch="17.600000" roll="17.600000" afterburner="58.666666" maxspeed="23.333333">
+		<Radar itts="true" color="true" maxrange="80000"  error="0"/>
+	</Computer>
+	<Energy>
+		<Reactor recharge="340" limit="15000"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="9000"/>              
+
        
 
 
