@@ -4,11 +4,11 @@ import VS
 ccp=VS.getCurrentPlayer()
 
 def MakeFactionKey (faction):
-	return 'FG:'+str(VS.GetFactionIndex(faction))
+	return 'FF:'+str(VS.GetFactionIndex(faction))
 def MakeFGKey (fgname,faction):
 	return 'FG:'+str(fgname)+'|'+str(VS.GetFactionIndex(faction))
 def MakeStarSystemFGKey (starsystem):
-	return 'FG:'+str(starsystem)
+	return 'SS:'+str(starsystem)
 def ShipListOffset ():
 	return 3
 def AllFactions ():
@@ -57,7 +57,7 @@ def ListToPipe (tup):
 	fina=''
 	if (len(tup)):
 		fina=tup[0]
-	for i in range (len(tup)-1):
+	for i in range (1,len(tup)):
 		fina+='|'+tup[i]
 	return fina
 
