@@ -1,5 +1,5 @@
 <!--Last Edited by: Vortis-->
-<!--08MAY01-->
+<!--13MAY01-->
 <Unit>
 	<Defense>
 		<Armor front="0" right="00" left="00" back="00"/>
@@ -395,12 +395,6 @@
 			<Cargo file="gauss_ammo" price="300" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="breeze_ammo" price="300" quantity="1" mass=".01" volume="1"/>
 		</Category>
-		<Category file="upgrades/Ammunition/Bulk">
-			<Cargo file="dumbfire_3pack_ammo" price="60" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="heatseeker_3pack_ammo" price="105" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="friend_or_foe_3pack_ammo" price="300" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="image_recognition_3pack_ammo" price="225" quantity="1" mass=".01" volume="1"/>
-		</Category>
 		<Category file="Natural_Products/Food">
 			<Cargo file="Coffee" price="1" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Filtered_Water" price="1" quantity="1" mass=".01" volume="1"/>
@@ -580,3 +574,4 @@
 		</Category>
 	</Hold>
 </Unit>
+
