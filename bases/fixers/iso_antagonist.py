@@ -20,9 +20,9 @@ else:
 	if (fixers.checkSaveValue(playernum,"iso_mission1",0)):
 		Base.Message("Excellent! You accepted the mission.  I will offer you 38,000 credits to do one thing: destroy that vessel. You should have help from a few of my elite force; however, I expect the ISO to put up a fight, so be wary and beware. I trust you will accept my offer, my young....friend")
 	elif (fixers.checkSaveValue(playernum,"iso_mission1",1) or fixers.checkSaveValue(playernum,"iso_evil2",-1) or fixers.checkSaveValue(playernum,"iso_evil3",-1) or fixers.checkSaveValue(playernum,"iso_evil4",-1)):
-		Base.Message("There is only one thing I despise more than a member of the Interplanetary Socialist Organization: and that is one of their mercenary lapdogs. You are not worth the spit I paid to have...them...destroy your starship. Run now if you dare-- your ship is in peril")
+		Base.Message("There is only one thing I despise more than a member of the Interplanetary Socialist Organization: and that is one of their mercenary lapdogs. You are not worth the breath I have wasted on you. Leave now, if you dare.  My forces will destroy your starship and leave your corpse to boil in vacuum.")
 		type = faction_ships.getRandomFighter ("confed")
-		fgname="AlphaElite"
+		fgname="IntelSecElite"
 		fixers.setSaveValue (playernum,"decided_iso_good",1)
 		launch.launch_wave_around_unit (fgname,"confed",type,"default",1,80,100,playa).SetTarget(playa)
 		launch.launch_wave_around_unit (fgname,"confed",type,"default",1,80,100,playa).SetTarget(playa)
@@ -32,7 +32,7 @@ else:
 	elif (fixers.checkSaveValue(playernum,"iso_mission1",-1) and fixers.checkSaveValue(playernum,"iso_evil2",0)):
 		msg =''
 		if (fixers.checkSaveValue(playernum,"iso_mission1_paid",0)):
-			msg+='Excellent! Excellent! Without him, the ISO cannot stand against us! Soon defiance itself will be in my grasp! Here is your pay. '
+			msg+='Excellent! Excellent! Without him, the ISO cannot stand against us! Soon Defiance itself will be in my grasp! Here is your pay. '
 			playa.addCredits(38000)
 			fixers.setSaveValue(playernum,"iso_mission1_paid",1)
 		if (VS.numActiveMissions()>1):
@@ -43,14 +43,19 @@ else:
 		Base.Message (msg)
 	else:
 		if (VS.numActiveMissions()>1):
-			Base.Message ("your other contracts interfere with me assigning you a new mission. Finish them then talk to me.")			
+			Base.Message ("your other contracts interfere with me assigning you a new mission. Finish them, then talk to me.")			
 		elif (fixers.checkSaveValue(playernum,"iso_mission1",-1) and fixers.checkSaveValue(playernum,"iso_evil2",1) and fixers.checkSaveValue(playernum,"iso_evil3",0)):
-			Base.Message("So far you have served our interests well. If you accept this contract you will go now to the Adams sector and destroy a cargo ship enroute to the Defiance system. It is loaded with political prisoners who have been illegally freed. These felons must not make it to Defiance alive or they will spark the revolutionary fervor there. Crush them for me for a trifle 28000 credits. Will you crush them?")
+			Base.Message("So far you have served our interests well. If you accept this contract you will go now to the Adams sector and destroy a cargo ship enroute to the Defiance system. It is loaded with political prisoners who have been illegally freed. These felons must not make it to Defiance alive or they will spark revolutionary fervor there. Eliminate them for me, and I will grant you 28000 credits. Will you crush them?")
 			AssignMission()
 		elif (fixers.checkSaveValue(playernum,"iso_mission1",-1) and fixers.checkSaveValue(playernum,"iso_evil2",1) and fixers.checkSaveValue(playernum,"iso_evil3",1) and fixers.checkSaveValue(playernum,"iso_evil4",0)):
-			Base.Message("Now the stakes are higher. My elite force had planned to assault a ISO stronghold in the Defiance system, but we cannot account for such numbers. However, we will send in a larger ship that will assist you in destroying the last vestiges of the ISO defense force.  Once this is secured perhaps they will listen to a bit of good old fashioned Confed diplomac--by force... May the elite star be with you. This is worth 40000 credits to us.")
+			Base.Message("Now the stakes are higher. My elite force had planned to assault a ISO stronghold in the Defiance system, but we did not anticipate the number of ISO ships we found to be there. Therefore, we will send in a larger ship that will assist you in destroying the last vestiges of the only truly substantial ISO defense force in any system.  Once this is secured, this system, and all others like it, will be more amenable to control via the more subtle applications of IntelSec diplomacy. Your assistance is worth 40000 credits to us.")
 			AssignMission()
 		elif (fixers.checkSaveValue(playernum,"iso_mission1",-1) and fixers.checkSaveValue(playernum,"iso_evil2",1) and fixers.checkSaveValue(playernum,"iso_evil3",1) and fixers.checkSaveValue(playernum,"iso_evil4",1)):
-			Base.Message ("Excellent, my young hunter--your work has ensured that Confed's clean and sweep program will be a success when it is deployed.  Not only have you removed the key figures from the ISO's leadership but you have crushed their morale and their defenses with a sweeping blow.  Your heroism will be detailed in Confed's darkest memoirs.")
+			Base.Message ("Excellent, my young hunter--your work has ensured that IntelSec's clean and sweep program will be a success when it is deployed.  Not only have you removed the key figures from the ISO's leadership but you have crushed their morale and their defenses with a sweeping blow.  Your heroism will be duly detailed in what must, unfortunately for your fame, remain the classified annals of the Confederacy.")
 		else:
-			Base.Message ("your other contracts interfere with me assigning you a new mission. Finish them then talk to me.")
+			Base.Message ("your other contracts interfere with me assigning you a new mission. Finish them, then talk to me.")
+
+
+
+
+
