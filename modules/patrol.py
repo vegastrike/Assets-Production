@@ -21,7 +21,7 @@ class patrol (Director.Mission):
           self.quantity=num_significants_to_patrol
           name = self.you.getName ()
           self.mplay=universe.getMessagePlayer(self.you)
-	  VS.IOmessage (0,"defend",self.mplay,"Greetings, %s. You must patrol a system for us :" % name)
+	  VS.IOmessage (0,"patrol",self.mplay,"Greetings, %s. You must patrol a system for us :" % name)
           self.adjsys = go_to_adjacent_systems(self.you,numsystemsaway,jumps)
           self.adjsys.Print("From the %s system,","Carefully go to %s.","You should shortly arrive in the %s: patrol it.","patrol",1)
           
