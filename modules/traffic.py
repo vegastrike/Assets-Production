@@ -27,9 +27,11 @@ class TrafficAI(VS.PythonAI):
 			if (isCar (un)):
 				posdiff=SafeNorm(Sub (un.Position(),parent.Position())) 			#look 1 second ahead
 #				distInOneSec = Dot (Sub(parent.GetVelocity(),un.GetVelocity()),posdiff)
-				distInOneSec = Dot (parent.GetVelocity(),posdiff)
-				if (distInOneSec>un.getDistance(parent)):
-					print "%s too close to %s\n" % (parent.getName(),un.getName())
+				distInOneSec = Dot (Sub(parent.GetVelocity(),un.GetVelocity()),posdiff)
+				if (distInOneSec>un.getDistance(parent) and Dot (posdiff,un.GetOrientation()[2])>0):
+					print "%s too close to %s \n" % (parent.getName(),un.getName())
+					print distInOneSec
+					print un.getDistance (parent)
 					self.restoreCruisingSpeed(0)
 					self.stopping=1
 					self.shipiter=-1 #-1 + 1 =0
