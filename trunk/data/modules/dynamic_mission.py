@@ -3,6 +3,82 @@ import Director
 import fg_util
 import vsrandom
 
+
+def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
+	i=getUnitList()
+	un=i.current()
+	while (un):
+		if ((un.getFactionName()==enfaction and un.getFlightgroupName()==enfgname) or
+			(un.getFactionName()==faction and un.getFlightgroupName()==fgname)):
+			un.SetFgDirective ('b')
+		#check to see that its' in this flightgroup or something :-)
+		un=i.next()
+
+def TargetEachOther (fgname,faction,enfgname,enfaction):
+	i=getUnitList()
+	un=i.current()
+	en=None
+	al=None
+	while (un and ((not en) or (not al))):
+		if (un.getFactionName()==enfaction and un.getFlightgroupName()==enfgname):
+			if ((not en) or (vsrandom.randrange(0,3)==0)):
+				en=un
+		if (un.getFactionName()==faction and un.getFlightgroupName()==fgname):
+			al=un
+		un=i.next()
+	if (en and al):
+		al.setFlightgroupLeader(al)
+		al.SetTarget(en)
+		al.setFgDirective ('A.')#attack target, darent change target!
+		en.setFlightgroupLeader(en)
+		en.SetTarget(al)
+		en.setFgDirective ('h')#help me out here!
+
+def SimulatedDukeItOut (fgname,faction,enfgname,enfaction):
+	ally=fg_util.LandedShipsInFG(fgname,faction)
+	enemy=fg_util.LandedShipsInFG(enfgname,enfaction)
+	#roll z'dice
+def countTn (l):
+	count=0
+	for i in l:
+		count+=i[1]
+	return count
+
+def LaunchEqualShips (fgname, faction, enfgname, enfaction):
+	land=LandedShipsInFG(fgname,faction)
+	launch=ShipsInFG(fgname,faction)
+	enland=LandedShipsInFG(enfgname,enfaction)
+	enlaunch=ShipsInFG(enfgname,enfaction)
+	numenland=countTn(enland)
+	numenlaunch=countTn(enlaunch)
+	numland=countTn(land)
+	numlaunch=countTn(launch)
+	if (enland==0 or land==0 or (launch==0 and enlaunch==0) ):
+		return
+	if (numlaunch/numland > numenlaunch/numenland):
+		pass
+	else:
+		pass
+	
+	
+#only works for FG's that are not the base FG...the base FG cannot initiate attacks as far as I know.
+#though eventually we may want to change that
+def attackFlightgroup (fgname, faction, enfgname, enfaction):
+	sys = fg_util.FGSystem (fgname,faction)
+	ensys = fg_util.FGSystem (enfgname,enfaction)
+	if (sys==ensys):
+		if (VS.systemInMemory(sys)):
+			VS.pushStarSystem(sys)
+			LaunchEqualShips (fgname,faction,enfgname,enfaction)
+			TargetEachOther (fgname,faction,enfgname,enfaction)
+			VS.popStarSystem()
+		SimulatedDukeItOut (fgname,faction,enfgname,enfaction)
+	else:
+		#pursue other flightgroup
+		pass
+
+	
+
 def contractMissionsFor(fac,minsysaway,maxsysaway):
 	fac=faction_ships.intToFaction()
 	enemies = list(faction_ships.enemies[fac])
@@ -41,7 +117,7 @@ def getSystemsNAway (start,preferredfaction):
 	if (preferredfaction==None):
 		return l
 	lbak=l
-	elif (preferredfaction==''):
+	if (preferredfaction==''):
 		preferredfaction=VS.GetGalaxyFaction(start)
 	i=0
 	while i <len(l):
