@@ -1,13 +1,12 @@
 <mission>
 	<variables>
 		<var name="defaultplayer" value="orange"/>
-		<var name="mission_name" value="4 versus 4" />
-		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="blank" />
-		<var name="description" value="4vs4.txt" />
+		<var name="mission_name" value="70 versus 70" />
+		<var name="system" value="sol_sector/weslyn" />
+		<var name="description" value="Watch A large battle!" />
 	</variables>
         <flightgroups>
-                <flightgroup name="orange" faction="neutral" type="hornet" ainame="default" waves="8" nr_ships="1">
+                <flightgroup name="orange" faction="neutral" type="tian" ainame="default" waves="8" nr_ships="1">
 			<pos x="12000.0" y="0.0" z="3000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>

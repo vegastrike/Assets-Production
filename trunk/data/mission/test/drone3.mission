@@ -3,11 +3,11 @@
 		<var name="defaultplayer" value="orange"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="blank" />
-		<var name="description" value="4vs4.txt" />
+		<var name="system" value="sol_sector/luyten" />
+		<var name="description" value="Fly your scout and dodge enemies until you prevail!" />
 	</variables>
         <flightgroups>
-                <flightgroup name="orange" faction="confed" type="hornet" ainame="default" waves="8" nr_ships="1">
+                <flightgroup name="orange" faction="confed" type="tian" ainame="default" waves="8" nr_ships="1">
 			<pos x="12000.0" y="0.0" z="3000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
@@ -15,7 +15,7 @@
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
-                <flightgroup name="red" faction="confed" type="rapier" ainame="default" waves="8" nr_ships="70">
+                <flightgroup name="red" faction="confed" type="firefly" ainame="default" waves="8" nr_ships="70">
 			<pos x="12000.0" y="0.0" z="3000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>

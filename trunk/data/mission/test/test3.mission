@@ -3,8 +3,8 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="sol" />
-		<var name="description" value="4vs4.txt" />
+		<var name="system" value="sol_sector/luyten" />
+		<var name="description" value="Defeat the Confed\scum with your\Area space superiority fighter!" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="aera" type="aevant" ainame="default" waves="8" nr_ships="2">

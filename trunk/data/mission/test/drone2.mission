@@ -2,12 +2,11 @@
 	<variables>
 		<var name="defaultplayer" value="orange"/>
 		<var name="mission_name" value="4 versus 4" />
-		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
 		<var name="system" value="blank" />
-		<var name="description" value="4vs4.txt" />
+		<var name="description" value="Lots of drones attack" />
 	</variables>
         <flightgroups>
-                <flightgroup name="orange" faction="confed" type="hellcat" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="orange" faction="rlaan" type="f109vampire" ainame="default" waves="1" nr_ships="1">
 			<pos x="12000.0" y="0.0" z="2800.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
