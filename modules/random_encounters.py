@@ -6,7 +6,7 @@ import VS
 import unit
 import sys
 import adventure
-import quest_drone
+import news
 class random_encounters:
   class playerdata:  
     def __init__(self,sig_distance,det_distance):
@@ -65,6 +65,7 @@ class random_encounters:
       mindist = mindist/ave
     return mindist
   def NewSystemHousekeeping(self,oldsystem,newsystem):
+    news.newNews()
     newquest = adventure.newAdventure (self.cur_player,oldsystem,newsystem)
     if (newquest):
       self.cur.quests+=[newquest]
@@ -157,6 +158,8 @@ class random_encounters:
     self.cur.last_ship=0
     self.cur.curmode=0
     self.cur.sig_container.setNull()
+    for q in self.cur.quests:
+      q.NoSignificantsNear()
 
   def SetModeOne (self,significant):
     self.cur.last_ship=0
@@ -167,6 +170,9 @@ class random_encounters:
     if (not oldsys):
       self.NewSystemHousekeeping(self.cur.lastsys,cursys)
       self.cur.lastsys=cursys
+    for q in self.cur.quests:
+      q.SignificantsNear(self.cur.sig_container)
+    
 
   def decideMode(self):
     myunit=VS.getPlayerX(self.cur_player)

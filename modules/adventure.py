@@ -1,8 +1,9 @@
 import quest
 import quest_drone
 import random
+import quest_racene
 adventures = {"gemini_sector/delta_prime":quest_drone.quest_drone_factory(),
-              "sol_sector/celeste":quest.quest_factory("default_quest",0)}
+              "enigma_sector/racene":quest_racene.quest_racene_factory()}
 
 persistent_adventures = [quest_drone.quest_drone_factory()]
 

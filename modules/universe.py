@@ -8,7 +8,15 @@
 import VS
 import random
 import faction_ships
+import Director
 import launch
+def setFirstSaveData(player,key,val):
+    mylen = Director.getSaveDataLength(player,key)
+    if (mylen>0):
+        Director.putSaveData(player,key,0,val)
+    else:
+        Director.pushSaveData(player,key,val)
+
 def getAdjacentSystems (currentsystem, sysaway, jumps=()):
     """returns a tuple in the format ("[lastsystem]",(system1,system2,system3,...))"""
     max=VS.GetNumAdjacentSystems(currentsystem)
