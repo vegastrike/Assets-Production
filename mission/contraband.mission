@@ -23,13 +23,15 @@
 		<import name="contraband_mission"/>
 		<script name="initgame">
 			<exec module="contraband_mission" name="init">
-			<const type="object" object="string" value="contraband"/> <!--name of the bad cargo -->
+			<const type="object" object="string" value="TetrabionicNuclearPhysicisianiblyCatonisisticAcconicon"/> <!--name of the bad cargo -->
 			<const type="int" value="0"/><!-- the number of systems away the contraband mission is in -->
 			<const type="float" value="5000"/> <!--the distance from the jump point that you have to be at-->
 			<const type="float" value="20480"/> <!-- how much you are paid -->
 			<const type="int" value="5"/> <!--difficulty of mission(do they send peeps after you)-->
 			<const type="int" value="20"/> <!--number of ships (maybe do a random number???) -->
 			<const type="float" value="0.2"/><!--percentage of those ships that will be bad-->
+			<const type="float" value="4000"/> <!-- min distance ship can appear at-->
+			<const type="float" value="10480"/> <!-- maximum distance ship can appear at-->
 			</exec>
 		</script>
 		<script name="gameloop">
