@@ -51,7 +51,7 @@ module ship_upgrades {
   object GetRandomShield (float diff) {
     object cat=GetDiffCargo(diff,"upgrades/Shield_Systems/","upgrades/Shield_Systems");
     object item=getItem(cat,"upgrades/Shield_Systems");
-    _olist.delete(cat);
+    _string.delete(cat);
     return item;
   };
 
@@ -64,7 +64,7 @@ module ship_upgrades {
       cat=GetDiffCargo(diff,"upgrades/Engines/Engine_Enhancements_","upgrades/Engines");
     }
     object item=getItem(cat,"upgrades/Engines");
-    _olist.delete(cat);
+    _string.delete(cat);
     return item;
   };
 
