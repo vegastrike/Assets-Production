@@ -197,6 +197,8 @@
 		<Category file="upgrades/Weapons/Beam_Arrays_Light">
 			<Cargo file="laser_beam" price="1200" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="ion_beam" price="35000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="tractor_beam" price="7500" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="repulsor_beam" price="50000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="upgrades/Weapons/Beam_Arrays_Medium">
 			<Cargo file="disruptor_beam" price="4000" quantity="1" mass=".01" volume="1"/>
@@ -362,8 +364,6 @@
 			<Cargo file="cargo_pod" price="20000" quantity="1" mass=".1" volume="1"/>
 		</Category>
 		<Category file="upgrades/Miscellaneous">
-			<Cargo file="tractor_beam" price="7500" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="repulsor_beam" price="50000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="add_fuel" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="jump_drive" price="10000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="add_cargo_volume" price="10000" quantity="1" mass=".01" volume="1"/>

@@ -1,6 +1,23 @@
 module ship_upgrades {
   import random;
   /// This function makes a string based on the difficulty. In this way it can be restricted to light or medium mounts when the difficulty is low, avoiding unaffordable weapons
+  int GetDiffInt (float diff) {
+    int ch=0;
+    if (diff<=0.1) {
+      ch=0;
+    } else if (diff<=0.3) {
+      ch=1-random.randomint(0,1);
+    } else if (diff<=0.5) {
+      ch=2-random.randomint(0,2);
+    } else if (diff<=0.7) {
+      ch=3-random.randomint(0,3);
+    } else if (diff<=0.9) {
+      ch=4-random.randomint(0,4);
+    } else {
+      ch=5-random.randomint(0,5);
+    }
+    return ch;
+  };
   object GetDiffCargo (float diff, object base_category, object all_category) {
     object cat=_string.new();
     int ch=0;
@@ -47,27 +64,70 @@ module ship_upgrades {
     _string.delete(cat);
     return item;
   };
-
-  object GetRandomShield (float diff) {//gets random shield system from master part list
-    object cat=GetDiffCargo(diff,"upgrades/Shield_Systems/","upgrades/Shield_Systems");
-    object item=getItem(cat,"upgrades/Shield_Systems");
-    _string.delete(cat);
-    return item;
+  int getRandIncDec (int type) {
+    type = type + random.randomint (0-1,1);
+    if (type<0) {
+      type=0;
+    }
+    if (type>5) {
+      type=5;
+    }
+    return type;
+  };
+  object GetRandomShield (int faces,int type) {//gets random shield system from master part list
+    object cat=_string.new();
+    type = getRandIncDec (type);
+    _io.sprintf (cat,"shield_%d_Level%d",faces.type);
+    return cat;
   };
 
-  object getRandomEngine (float diff) {//get random engine from master part list
-    float rndnum=_std.Rnd();
+  object GetRandomAfterburner (float diff) {//get random afterburner from master part list
     object cat;
-    if (rndnum<0.5) {
-      cat=GetDiffCargo(diff,"upgrades/Engines/","upgrades/Engines");
-    } else {
-      cat=GetDiffCargo(diff,"upgrades/Engines/Engine_Enhancements_","upgrades/Engines");
-    }
+    cat=GetDiffCargo(diff,"upgrades/Engines/Engine_Enhancements_","upgrades/Engines");
     object item=getItem(cat,"upgrades/Engines");
     _string.delete(cat);
     return item;
   };
 
+  object getRandomRadar () {
+    int myint=random.randomint(0,2);
+    object item=_string.new();
+    if (myint<=0) {
+      _io.sprintf(item,"radar_windows_2k");
+    } else if (myint==1) {
+      _io.sprintf(item,"radar_linux_SuSe");
+    } else {
+      _io.sprintf(item,"radar_free_bsd");
+    }
+    return item;
+  };
+  void UpgradeRadar (object un) {
+    float temp;
+    object cat = getRandomRadar ();
+    temp=_unit.upgrade (un,cat,0,0,true,false);    
+    _string.delete (cat);
+  };
+  int getRandomEngine (float diff, object cat) { //get random engine from master part list
+    //WARNING: CAT MUST BE NEWED BEFORE PASSING IT IN.
+    int myint=GetDiffInt(diff);
+    _io.sprintf(cat,"engine_level_%d",myint);
+    return myint;
+  };
+  void UpgradeEngine (object un, float diff) {
+    object cat = _string.new();
+    float temp;
+    int type = getRandomEngine (diff,cat);
+    if (type!=0) {
+      temp=_unit.upgrade (un,cat,0,0,true,false);    
+      _string.delete (cat);
+      cat = GetRandomShield (2,type);
+      temp=_unit.upgrade (un,cat,0,0,true,false);
+      _string.delete (cat);
+      cat = GetRandomShield (4,type);
+      temp=_unit.upgrade (un,cat,0,0,true,false);
+    }
+    _string.delete (cat);
+  };
   object GetRandomHull () {
     object item=getItem("upgrades/Hull_Upgrades","upgrades/Hull_Upgrades");
     return item;
@@ -80,13 +140,16 @@ module ship_upgrades {
     object item=getItem("upgrades/Armor_Modification","upgrades/Hull_Upgrades");
     return item;
   };
-
-  object GetRandomUpgrade () {
-    object item=_unit.getRandCargo(1,"upgrades");
+  object GetRandomAmmo () {
+    object item=getItem ("upgrades/Ammunition/3pack","upgrades/Ammunition");
+    return item;
+  };
+  object GetRandomRepairSys () {
+    object item=getItem("upgrades/Repair_Systems/Research","upgrades/Repair_Systems");
     return item;
   };
   //this function sets up a blank unit with some basic upgrades that are really a necessecity for any sort of figthing
-  void basicUnit (object un) {
+  void basicUnit (object un, float diff) {
     int i=0;
     int curmount=0;
     float percent;
@@ -95,6 +158,8 @@ module ship_upgrades {
       curmount=curmount+1;
       i=i+1;
     }
+    UpgradeEngine (un,diff);
+    UpgradeRadar (un);
     //and after some careful review of the code in question, it appears upgrades below are already offered by default on blank ships...only need to give 'em a pair of guns
 
     //some engines
@@ -111,7 +176,7 @@ module ship_upgrades {
 
 
   //this function does the dirty work of the upgrade unit function... Given the list that contains a piece of cargo, it upgrades it, subtracts the price, and slaps it on your ship, and returns the new number of creds the computer player has.  It may well be negative cus we thought that these guys may go in debt or something
-  float upgradeHelper (object un, object mylist, int curmount,float creds, bool cycle) {
+  float upgradeHelper (object un, object mylist, int curmount,float creds, bool force, bool cycle) {
      float newcreds=0.0;
      if (_olist.size(mylist)==0) {//if somehow the cargo isn't there
        _olist.delete (mylist);//deleet list
@@ -119,7 +184,7 @@ module ship_upgrades {
      }else {
        object str=_olist.at(mylist,0);//otherwise our name is the 0th item
        newcreds=_olist.at (mylist,2);//and the price is the 2nd
-        newcreds = newcreds*_unit.upgrade(un,str,curmount,curmount,false,cycle);
+        newcreds = newcreds*_unit.upgrade(un,str,curmount,curmount,force,cycle);
         creds = creds -newcreds;//we added some newcreds and subtracted them from credit ammt
         _olist.delete (mylist);//then we delete the list
 
@@ -134,44 +199,69 @@ module ship_upgrades {
     object str;
     float rndnum;
     int inc=0;
-    int numammos=_std.Int(50.0*diff);//number of ammo is 50 * difficulty (lots)
-    if (numammos>30) {//if it's more tan 30 total, we reduce to 30
-      numammos=30;
-    } else if (numammos<5) {//otherwise we clamp at 5...(too much alreadY0
-      numammos=5;
+    basicUnit(un,diff);
+/*
+    int numammos=_std.Int(10.0*diff);//number of ammo is 50 * difficulty (lots)
+    if (numammos>8) {//if it's more tan 30 total, we reduce to 30
+      numammos=8;
+    } else if (numammos<1) {//otherwise we clamp at 5...(too much alreadY0
+      numammos=1;
     }
     //then we cycle through the ammo
+
     while (inc<numammos) {
-      mylist=_unit.getRandCargo(0,"upgrades/Ammunition");//and get it
+      mylist=_unit.getRandCargo(0,"upgrades/Ammunition/3pack");//and get it
       if (_olist.size(mylist)<=0) {
         inc=numammos;
       } else {
         str=_olist.at(mylist,0);
         float temp=_unit.upgrade(un,str,inc,inc,false,true);//and apply it at no charge
       }
+      _olist.delete(mylist);
       inc=inc+1;
     }
+    */
     mylist = GetRandomHull();//ok now we get some hull upgrades
-    creds =upgradeHelper (un,mylist,0,creds,false);
+    creds =upgradeHelper (un,mylist,0,creds,true,false);
 
     mylist = GetRandomArmor();//and some random armor
-    creds =upgradeHelper (un,mylist,0,creds,false);
+    creds =upgradeHelper (un,mylist,0,creds,true,false);
     inc=0;
     int i=0;
+    rndnum=_std.Rnd()*2;
+    if (rndnum<diff) {
+      mylist = GetRandomRepairSys();//here there is a small chance that you will get a repair system.
+      creds =upgradeHelper (un,mylist,0,creds,true,false);
+    }
+    object turret=un;
+    int turretcount=0;
+    while (!_std.isNull (turret)) {
+      turret = _unit.getTurret (un,turretcount);
+      turretcount = turretcount+1;
+    }
+    turretcount=turretcount-1;
+    while (i<turretcount) {
+      int j=0;
+      while (j<4) {
+        mylist=GetRandomTurret();//turrets as 3rd...
+        creds = upgradeHelper (un,mylist,i,creds,false,false);      
+        j=j+1;
+      }
+      i=i+1;
+    }
+    i=0;
     while ((creds>500.0)&&(i<100)) {
       if (inc<2) {
         mylist=GetRandomWeapon(diff);//weapons go on as first two items of loop
-      }else if (inc==2) {
-        mylist=GetRandomTurret();//turrets as 3rd...
       }else {
-        mylist=GetRandomUpgrade();//and finally we have just random schmear from the whole list
+        mylist=GetRandomAmmo();
       }
-      creds =upgradeHelper (un,mylist,curmount,creds,inc<2);//we pass this in to the credits...and we only loop through all mounts if we're adding a weapon
+      creds =upgradeHelper (un,mylist,curmount,creds,false,true);//we pass this in to the credits...and we only loop through all mounts if we're adding a weapon
       
       curmount=curmount+1;//increase starting mounts hardpoint
       inc = inc+1;
       i=i+1;
-      if (inc>5) {//start over count after 5
+      if (inc>2) {//start over count after 5
 	inc =0;
       }
     }
