@@ -44,6 +44,7 @@ def getItem (cat,parentcat=None):
       print "UpgradeError finding %s using %s instead" % (cat,parentcat)
       list=VS.getRandCargo(1,parentcat)#get it from the parent category
     if (list.GetQuantity()<=0):#otherwise get cargo from upgrades category
+      print "UpgradeError: terrible error lasers instead"
       list=VS.getRandCargo(1,"upgrades")#this always succeeds
   return list
 
@@ -54,7 +55,9 @@ def GetRandomWeapon (diff):#gets random beam or mounted gun from master part lis
     cat=GetDiffCargo(diff,"upgrades/Weapons/Beam_Arrays_","upgrades/Weapons",1)
   else:
     cat=GetDiffCargo(diff,"upgrades/Weapons/Mounted_Guns_","upgrades/Weapons",1)
+  #print "Getting item %s\n" % cat
   item=getItem(cat,"upgrades/Weapons")
+  #print "Got item %s\n" % item
   return item
 
 def getRandIncDec (type):
@@ -207,9 +210,9 @@ def upgradeUnit (un, diff):
         mycargo=GetRandomWeapon(diff)#weapons go on as first two items of loop
       else:
         mycargo=GetRandomAmmo()
-        cont = mycargo.GetContent()
-        if (cont.find('tractor')==-1 and cont.find('repulsor')==-1):
-          creds =upgradeHelper (un,mycargo,curmount,creds,0,1)#we pass this in to the credits...and we only loop through all mounts if we're adding a weapon
-          break
+      cont = mycargo.GetContent()
+      if (cont.find('tractor')==-1 and cont.find('repulsor')==-1):
+        creds =upgradeHelper (un,mycargo,curmount,creds,0,1)#we pass this in to the credits...and we only loop through all mounts if we're adding a weapon
+        break
     curmount+=1#increase starting mounts hardpoint
   
