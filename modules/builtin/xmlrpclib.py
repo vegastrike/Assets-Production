@@ -1,6 +1,6 @@
 #
 # XML-RPC CLIENT LIBRARY
-# $Id$
+# $Id: xmlrpclib.py 4317 2002-08-08 12:23:03Z hellcatv $
 #
 # an XML-RPC client interface for Python.
 #

@@ -1,9 +1,0 @@
-<Unit scale="14">
-<Meshfile file="Planetary-Ring.xmesh"/>
-<Meshfile file="Planetary-RingS.xmesh"/>
-<Meshfile file="Planetary-RingE.xmesh"/>
-<Meshfile file="Planetary-RingW.xmesh"/>
-	<Defense>
-	<Hull strength="1000000000000000000000000000000000000000"/>
-	</Defense>
-</Unit>
