@@ -94,6 +94,7 @@ class escort_mission (Director.Mission):
 			self.adjsys.Print ("You must escort your starship to the %s","defend","docked around the %s", 0)
 		else:
 			self.you.addCredits(self.creds)
+			VS.AdjustRelation(self.you.getFactionName(),self.faction,self.difficulty*.01)
 			VS.IOmessage (0,"escort",self.mplay,"#00ff00Excellent work! You have completed this mission!")
 			self.escortee.setFgDirective('b')
 			self.escortee.setFlightgroupLeader(self.escortee)

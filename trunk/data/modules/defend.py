@@ -50,17 +50,19 @@ class defend (Director.Mission):
             quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,value)
     def SuccessMission (self):
         self.you.addCredits (self.cred)
+        VS.AdjustRelation(self.you.getFactionName(),self.faction,.03)
         self.SetVarValue(1)
         VS.IOmessage(0,"defend",self.mplay,"Excellent work pilot! Your effort has thwarted the foe!")
         VS.IOmessage(0,"defend",self.mplay,"You have been rewarded for your effort as agreed.")
         VS.terminateMission(1)
     def FailMission (self):
         self.you.addCredits (-self.cred)
+        VS.AdjustRelation(self.you.getFactionName(),self.faction,-.02)		
         self.SetVarValue(-1)
         VS.IOmessage (0,"defend",self.mplay,"You Allowed the base you were to protect to be destroyed.")
         VS.IOmessage (0,"defend",self.mplay,"You are a failure to your race!")
         VS.IOmessage (1,"defend",self.mplay,"We have contacted your bank and informed them of your failure to deliver on credit. They have removed a number of your credits for this inconvenience. Let this serve as a lesson.")
-        _std.terminateMission(0)
+        VS.terminateMission(0)
     def NoEnemiesInArea (self,jp):
         if (self.adjsys.DestinationSystem()!=VS.getSystemFile()):
 	    return 0
