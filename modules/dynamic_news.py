@@ -113,8 +113,9 @@ def formatProperTitle(str):
 	while preserving caps for all other letters!!! """
 	words = str.split()
 	for i in range (len(words)):
-		if words[i][0] in string.lowercase:
-			words[i] = words[i][0].capitalize() + words[i][1:]
+		if (len(words[i])):
+			if words[i][0] in string.lowercase:
+				words[i] = words[i][0].capitalize() + words[i][1:]
 	return string.join(words)
 
 def formatShipName(strin):
