@@ -153,12 +153,17 @@ def get_enemy_of (factionname):
 def get_insys_enemy_of (factionname):
   return get_X_of (insysenemies, factionToInt(factionname))
 
+def get_rabble_of (factionname):
+  return get_X_of (rabble, factionToInt(factionname))
+
 def get_friend_of (factionname):
   return get_X_of (friendlies, factionToInt(factionname))
 
 def getRandomShipType(ship_list):
   index=vsrandom.randrange(0,len(ship_list))
   return ship_list[index]
+
+
 
 def getFigher(confed_aera_or_rlaan, fighter):
   fighterlist = fighters[confed_aera_or_rlaan]
