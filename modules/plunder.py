@@ -28,7 +28,7 @@ class plunder (Director.Mission):
 	  self.newship=faction_ships.getRandomFighter('merchant')
 	  self.you=VS.getPlayer()
 	  self.pos=self.you.Position()
-	  self.gosig=go_somewhere_significant(self.you,False,10000.)
+	  self.gosig=go_somewhere_significant(self.you,0,10000.)
 	  self.mplay=universe.getMessagePlayer(self.you)
 	  if (self.you):
 	    VS.IOmessage (0,"plunder mission",self.mplay,"Your mission is to destroy a %s merchant unit." % (self.newship))
@@ -73,8 +73,8 @@ class plunder (Director.Mission):
 	      VS.setCompleteness(self.obj,0.)
 	    elif self.you.isDocked(self.gosig.SignificantUnit()) or self.gosig.SignificantUnit().isDocked(self.you):
 #	      print "du hast gewonnen!"
-	      self.you.removeCargo(self.content,self.quantity,True)
-	      self.Win(self.you,True)
+	      self.you.removeCargo(self.content,self.quantity,1)
+	      self.Win(self.you,1)
 #	    else:
 #	      print 'hihohohiho'
 	  elif (self.arrived==2):
@@ -82,7 +82,7 @@ class plunder (Director.Mission):
 	    VS.setCompleteness(self.obj,float(cargquant)/float(self.quantity))
 	    if cargquant==self.quantity:
 	      self.arrived=3
-	      self.gosig=go_somewhere_significant(self.you,True,3000.,True,"pirates")
+	      self.gosig=go_somewhere_significant(self.you,1,3000.,1,"pirates")
 	      self.gosig.SignificantUnit().SetHull(9999999999.9999999999)
 	      VS.IOmessage(0,"plunder mission",self.mplay,'Give all of your cargo to the %s unit.'%(self.gosig.SignificantUnit().getName()))
 	  elif (self.arrived==1):
@@ -99,7 +99,7 @@ class plunder (Director.Mission):
 	      self.arrived=2
 	      self.enemy=[]
 	      for i in range(self.quantity*2):
-	        launch.launch_wave_around_area("shadow","upgrades","generic_cargo","sitting_duck",1,5.,10.,self.pos,'',False).setName(self.content)
+	        launch.launch_wave_around_area("shadow","upgrades","generic_cargo","sitting_duck",1,5.,10.,self.pos,'',0).setName(self.content)
 	      self.obj=VS.addObjective("Pick up %d %s cargo"%(self.quantity,self.content))
 	      VS.IOmessage(0,"plunder mission",self.mplay,'You must now pick up at least %d of the %s cargo.'%(self.quantity,self.content))
 	  else:

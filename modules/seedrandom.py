@@ -36,14 +36,14 @@ def seedstring (stru):
 		print 'warning'
 	return num
 def interleave (slist):
-	touch=True
+	touch=1
 	index=0
 	rez=''
 	while (touch):
-		touch=False
+		touch=0
 		for s in slist:
 			if len(s)>index:
-				touch=True
+				touch=1
 				rez+=s[index]
 		index+=1
 	return rez

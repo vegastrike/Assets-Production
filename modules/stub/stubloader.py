@@ -6,7 +6,7 @@ def kfac (k):
 	if (k==0):
 		return 1
 	return k*kfac(k-1)
-Director.dontdoprint=True
+Director.dontdoprint=1
 import generate_dyn_universe
 import dynamic_battle
 dynamic_battle.UpdateCombatTurn()
@@ -21,7 +21,7 @@ def doit(n=1000):
 doit(10000)
 print 'hi'
 import dynamic_mission
-Director.dontdoprint=False
+Director.dontdoprint=0
 #VS.pushSystem("SYSTEMvs")
 dynamic_mission.CreateMissions()
 #VS.popSystem()

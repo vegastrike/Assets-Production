@@ -10,7 +10,7 @@ persystemattacklist= cpsal #assign this to a pointer to cpsal THE FIRST TIME ONL
 attacklist ={}#hashtable mapping (attackfg,attackfaction):(defendfg,defendfaction)
 defendlist={}#hashtable mapping (defendfg,defendfaction):(attackfg,attackfaction)
 lastfac=0
-lookorsiege=True
+lookorsiege=1
 def UpdateCombatTurn():
 	global lastfac
 	global lookorsiege
@@ -24,7 +24,7 @@ def UpdateCombatTurn():
 		else:
 			if (not Siege(fac)):
 				lastfac+=1
-				lookorsiege=True
+				lookorsiege=1
 		#first look for trouble, then go ahead and simulate all the battles
 
 siegenumber=0
@@ -47,7 +47,7 @@ def Siege(fac):
 				siegeprob =1
 		if siegenumber>=siegenumtimes:
 			siegenumber=0
-			return False
+			return 0
 		else:
 			if (vsrandom.uniform(0,1)<siegeprob):
 				fg =fg_util.RandomFlightgroup(fac)
@@ -59,9 +59,9 @@ def Siege(fac):
 						print fac + ' took over '+ sys + ' originally owned by '+enfac
 						#ok now we have him... while the siege is going on the allies had better initiate the battle--because we're now defending the place...  so that means if the owners are gone this place is ours at this point in time #FIXME write news story!!!
 			siegenumber+=1
-		return True
+		return 1
 	else:
-		return False
+		return 0
 	
 
 
@@ -79,11 +79,11 @@ def SimulateBattles():
 		if (deadbattlesiter!=-2):
 			if (deadbattlesiter<0):
 				deadbattlesiter=-2
-				return False
+				return 0
 			else:
 				stopAttack(deadbattles[deadbattlesiter][0],deadbattles[deadbattlesiter][1])
 				deadbattlesiter-=1
-				return True
+				return 1
 		else:
 			persystemattacklist=cpsal
 			cpsal = {}
@@ -107,7 +107,7 @@ def SimulateBattles():
 	except:
 		simulateiter=None
 		deadbattlesiter = len(deadbattles)-1
-	return True
+	return 1
 def BattlesInSystem(sys):
 	if sys in cpsal:
 		return cpsal[sys]
@@ -141,22 +141,22 @@ def LookForTrouble (faction):
 	key = fg_util.MakeFactionKey(faction)
 	if (lftiter>=Director.getSaveStringLength(fg_util.ccp,key)):
 		lftiter=0
-		return False
+		return 0
 	i = Director.getSaveString(fg_util.ccp,key,lftiter)
 	lftiter+=1	
 	sys = fg_util.FGSystem (i,faction)
 	if (sys!='nil'):
 		enfac = faction_ships.get_enemy_of(faction)
-		foundanyone=False
+		foundanyone=0
 		l=fg_util.AllFGsInSystem(enfac,sys)
 		j=vsrandom.randrange(0,len(l)+3)
 		if (j<len(l)):
-			foundanyone=True #FIXME include some sort of measure "can I win"
+			foundanyone=1 #FIXME include some sort of measure "can I win"
 			if (vsrandom.randrange(0,5)==0):
 				initiateAttack(i,faction,sys,l[j],enfac)
 		elif (vsrandom.randrange(0,3)==0):
 			randomMovement (i,faction)
-	return True
+	return 1
 
 def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
 	i=VS.getUnitList()

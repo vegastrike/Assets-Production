@@ -1,7 +1,7 @@
 import sys
 _savedata=[{},{},{},{},{},{},{},{},{},{}]
 _savestrs=[{},{},{},{},{},{},{},{},{},{}]
-dontdoprint=False
+dontdoprint=0
 """Can query-replace Hash with nothing to enable printfs comments"""
 class Mission:
     def Pickle(self):
