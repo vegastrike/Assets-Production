@@ -151,7 +151,7 @@ class cargo_mission (Director.Mission):
 	    self.adjsys.Print("You must visit the %%s %s" % (capstr),"cargo mission",", docked around the %s",0)
 	    VS.IOmessage(0,"cargo mission",self.mplay,"Once there, %s and we will transport the cargo off of your ship." % (dockstr))
 	    self.base=self.adjsys.SignificantUnit()
-
+	    self.base.SetHull(10000000000.00)
 def initrandom (factionname, missiondifficulty,creds_per_jump, launchoncapship, sysmin, sysmax, time_to_complete, category,jumps=(),var_to_set=''):
 	numsys=vsrandom.randrange(sysmin,sysmax)
 	return cargo_mission(factionname,numsys, vsrandom.randrange(4,15), missiondifficulty,creds_per_jump*float(1+numsys),launchoncapship, 10.0, category,jumps,var_to_set)

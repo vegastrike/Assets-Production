@@ -62,6 +62,7 @@ class escort_mission (Director.Mission):
 		if (not self.arrived):
 			self.arrived=1
 			self.adjsys=go_somewhere_significant (self.escortee,1,self.distfrombase,self.difficulty<=1,self.faction)
+			self.adjsys.SignificantUnit().SetHull(100000000000.00);
 			self.adjsys.Print ("You must escort your starship to the %s","defend","docked around the %s", 0)
 		else:
 			self.you.addCredits(self.creds)

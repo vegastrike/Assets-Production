@@ -8,7 +8,7 @@ import Director
 import Briefing
 import unit
 import VS
-
+import quest
 class bounty (Director.Mission):
 	def SetVar (self,val):
 	  if (self.var_to_set!=''):
