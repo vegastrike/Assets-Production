@@ -8,9 +8,9 @@
 	</Defense>
 
 <!-- Glowing Net -->
-	<Subunit file = "wormhole.stableglownetsaccessory" x = "0" y = "0" z = "0" />
+<!--	<Subunit file = "wormhole.stableglownetsaccessory" x = "0" y = "0" z = "0" />-->
 	<Subunit file = "wormhole.stableglownetsaccessory" x = "0" y = "0" z = "0" ri = "1" rk = "0" />
-	<Subunit file = "wormhole.stableglownetsaccessory" x = "0" y = "0" z = "0" qi = "1" qj = "0" />
+<!--	<Subunit file = "wormhole.stableglownetsaccessory" x = "0" y = "0" z = "0" qi = "1" qj = "0" />-->
 
 <!-- Swirls -->
 	<Subunit file = "wormhole.stableswirlsaccessory" x = "0" y = "0" z = "0" />
