@@ -1,0 +1,19 @@
+<Unit>
+<Meshfile file="MiningBase3-1.xmesh"/>
+<Meshfile file="MiningBase3-2.xmesh"/>
+<Meshfile file="MiningBase3-3.xmesh"/>
+	<Thrust>
+		<Engine Afterburner="00.000000" Forward="000000" Retro="000000" Left="00000" Right="000000" Top="000000" Bottom="00000"/>
+		<Maneuver yaw="0000" pitch="00000" roll="00000"/>
+	</Thrust>
+	<Sound> </Sound>
+	<Defense>
+		<Armor front="1000" right="8000" left="8000" back="8000"/>
+		<Hull strength="8000"/>
+	</Defense>
+	<Stats mass="7" momentofinertia="7" fuel="20000"></Stats>
+	<Computer yaw="00000" pitch="00000" roll="0000" afterburner="000000" maxspeed="00000"/>
+	<Energy>
+		<Reactor recharge="0" limit="0"/>
+	</Energy>
+</Unit>
