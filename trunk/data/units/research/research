@@ -97,7 +97,7 @@
 		</Category>
 		<Category file="Research/Medical">
 		<!-- price these at 1/10 their normal price...-->
-		        <import price="7.5" pricestddev="4" quantity="-40" quantitystddev="80" />
+		        <import price="7.5" pricestddev="3" quantity="-40" quantitystddev="80" />
 		</Category>
 		<Category file="Research/Electronics">
 		<!-- price these at 1/10 their normal price...-->
