@@ -32,7 +32,7 @@ def AddSysDict (cursys):
 	sysfaction=VS.GetGalaxyProperty(cursys,"faction")
 	global fgnames, fglists
 	i=0
-	for i in range (vsrandom.randrange(10)): #number of fgs in a system.
+	for i in range (vsrandom.randrange(fg_util.MaxNumFlightgroups())): #number of fgs in a system.
 		faction=sysfaction
 		if vsrandom.random()<.3 or sysfaction=='unknown':
 			faction=faction_ships.get_insys_enemy_of(sysfaction)
