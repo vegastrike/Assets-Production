@@ -8,12 +8,17 @@
 	</variables>
         <flightgroups>
                 <flightgroup name="rookie" faction="confed" type="firefly" ainame="default" waves="8" nr_ships="1">
-			<pos x="10000.0" y="0.0" z="3000.0"/>
+			<pos x="8000.0" y="0.0" z="3000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
 
                 <flightgroup name="teacher" faction="confed" type="nova" ainame="_ai_stationary" waves="8" nr_ships="1">
-			<pos offset="rookie" x="100.0" y="100.0" z="100.0"/>
+			<pos offset="rookie" x="10.0" y="10.0" z="50.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		</flightgroup>
+
+                <flightgroup name="silver" faction="confed" type="cruiser" ainame="_ai_stationary" waves="8" nr_ships="1">
+			<pos offset="rookie" x="300.0" y="300.0" z="500.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
 
