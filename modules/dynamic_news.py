@@ -27,7 +27,7 @@ def makeDynamicNews	(type_event,stage_event,aggressor,defender,success
 				,"aggressor"	: aggressor
 				,"defender"	: defender
 				,"success"	: getSuccessStr(success)
-				,"dockedat"	: getDockFaction()
+#				,"dockedat"	: getDockFaction()
 				,"scale_event"	: scale_event
 				,"system"	: system
 				,"keyword"	: keyword
@@ -74,6 +74,7 @@ def formatNameTags(word,names):
 # formats a news tag to be the string so desired
 # valid tags include "system_sector", "aggressor_nick", "defender_homeplanet"
 	[pre,var,tag] = string.split(word,"_")	
+	global allUsefullVariables
 	var_string = allUsefullVariables[var]
 	if var == "system":
 		if tag == "system":
@@ -186,14 +187,15 @@ def getDockFaction():
 # returns the faction of the place the player is docked at
 #	return "aera" # FIXME -- make the stub functions actually return a useful value!
 	i=0
-	playa=VS.GetPlayer()
-	un=VS.GetUnit(i)
+	playa=VS.getPlayer()
+	un=VS.getUnit(i)
 	while(un):
 		i+=1
-		if (un.isDocked(plr)):
+		if (un.isDocked(playa)):
 			break
-		un=VS.GetUnit(i)
+		un=VS.getUnit(i)
 	if un.isPlanet() or (un.getFactionName() == "neutral"):
+		global allUsefullVariables
 		return VS.GetGalaxyFaction(allUsefullVariables["system"])
 	else:
 		return un.getFactionName()
@@ -228,7 +230,13 @@ def getClosestScaleNews(listof,scale):
 
 
 def processNewsTuple(newsstring):
-	return newsstring #FIXME
+	ls = newsstring.split(',')
+	ns = makeDynamicNews(ls[0],ls[1],ls[2],ls[3],string.atoi(ls[4]),string.atof(ls[5]),ls[6],ls[7])
+	print ns
+	return ns
+#	return newsstring #FIXME
+
+
 def pushDynamicNews(player,newsstring):
 	print 'pushing' + newsstring + ' to news savevar'
 	import Director

@@ -9,6 +9,7 @@ import quest_shipyard_bomb
 import quest_abu_dhabi
 import quest_rogue_militia
 import quest_contraband_truck
+import dantestmission
 import quest_teleport
 import quest_surplus
 import VS
@@ -26,6 +27,7 @@ adventures = {"gemini_sector/delta_prime":quest_drone.quest_drone_factory(),
               "sol_sector/alpha_centauri":quest_shipyard_bomb.quest_shipyard_bomb_factory(),
               "enigma_sector/heinlein":quest_rogue_militia.quest_rogue_militia_factory(),
               "enigma_sector/klondike":quest_contraband_truck.quest_contraband_truck_factory(),
+              "enigma_sector/dantestmission":dantestmission.dantestmission_factory(),
               "enigma_sector/enigma":quest_teleport.quest_teleport_factory()}
 
 persistent_adventures = [quest_drone.quest_drone_factory(),
