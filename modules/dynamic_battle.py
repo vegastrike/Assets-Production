@@ -65,13 +65,15 @@ def Siege(fac):
 				fg =fg_util.RandomFlightgroup(fac)
 				sys = fg_util.FGSystem(fg,fac)
 				enfac=VS.GetGalaxyFaction(sys)
+				fg_util.CheckAllShips(fac)
+				fg_util.CheckAllShips(enfac)				
 				if (VS.GetRelation(fac,enfac)<0):#FIXME maybe even less than that
 					if (fg_util.NumFactionFGsInSystem(enfac,sys)==0) and (fg_util.NumFactionFGsInSystem(fac,sys)==0): #If both annihalate each other completely (unlikely but possible)
 						facnum = VS.GetFactionIndex (fac)
-						print "error "+fg+" sys has "+sys+" has " +str(fg_util.NumFactionFGsInSystem(fac,sys))+" String is "+Director.getSaveString(0,fg_util.MakeStarSystemFGKey(sys),facnum)
+						print 'cehcking started'
+						print "DRAW error "+fg+" sys has "+sys+" has " +str(fg_util.NumFactionFGsInSystem(fac,sys))+" String is "+Director.getSaveString(0,fg_util.MakeStarSystemFGKey(sys),facnum)
 						if sys != 'nil':
-							Director.pushSaveString(0,"dynamic_news"
-						,dynamic_news.makeVarList(["siege","end",fac,enfac,"0",str(getImportanceOfSystem(sys)),sys,"all",fg,"unknown","unknown","unknown"]))
+							Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["siege","end",fac,enfac,"0",str(getImportanceOfSystem(sys)),sys,"all",fg,"unknown","unknown","unknown"]))
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 

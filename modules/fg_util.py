@@ -578,6 +578,12 @@ def AllShips (faction,offset=1):
 	for i in AllFlightgroups (faction):
 		ret+=ShipsInFG (i,faction,offset)
 	return ret
+def CheckAllShips(faction):
+	for i in AllFlightgroups(faction):
+		sys = FGSystem(i,faction)
+		fgsin=AllFGsInSystem(faction,sys)
+		if (not i in fgsin):
+			print 'error '+str(fgsin) + i+' not in system '+ sys
 def SortedAllShips (faction,offset=1):
 	ret={}
 	for i in AllFlightgroups (faction):
