@@ -31,7 +31,7 @@
 
 	<Sound> </Sound>
 
-	<Defense>
+	<Defense hudImage="factory-hud.spr">
 
 		<Armor front="6200" right="6200" left="6200" back="6200"/>
 
