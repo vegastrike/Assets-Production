@@ -21,9 +21,11 @@ module earth_patrol_rnd_attack1 {
     int nr_ships=random.randomint(2,4);
 
     object player=_unit.getPlayer();
-    object player_pos=_unit.getPosition(player);
+    if (!_std.isNull (player)) {
+      object player_pos=_unit.getPosition(player);
 
-    launch.launch_wave_around_area("fgname","aera",typename,"default",nr_ships,500.0,2000.0,player_pos);
+      launch.launch_wave_around_area("fgname","aera",typename,"default",nr_ships,500.0,2000.0,player_pos);
+    }
   };
 
   void loop(){
