@@ -77,7 +77,7 @@ module ship_upgrades {
   object GetRandomShield (int faces,int type) {//gets random shield system from master part list
     object cat=_string.new();
     type = getRandIncDec (type);
-    _io.sprintf (cat,"shield_%d_Level%d",faces.type);
+    _io.sprintf (cat,"shield_%d_Level%d",faces,type);
     return cat;
   };
 
