@@ -7,14 +7,25 @@
 <Meshfile file="rescue-hull-i.xmesh"/>
 <Meshfile file="rescue-cock-c.xmesh"/>
 
-        <Mount weapon="Ion" size="Light Medium Heavy" x="-29.815" y="-6.919" z="30.409"/>
+<!--        <Mount weapon="Ion" size="Light Medium Heavy" x="-29.815" y="-6.919" z="30.409"/>
         <Mount weapon="Ion" size="Light Medium Heavy" x="29.815" y="-6.919" z="30.409"/>
 	
 	<Mount weapon="ImageRecognition" size="medium-missile" x="11.8108" y="1.757" z="11.8091" ammo="6" volume="901"/>
 	<Mount weapon="ImageRecognition" size="medium-missile" x="-11.8108" y="1.757" z="11.8091" ammo="6" volume="901"/>
 	
 	<Mount weapon="Tractor" size="special" x="0.002" y="-4.618" z="19.606" />
+	-->
+
+	<Mount weapon="Ion" size="Light Medium Heavy" x="9.8108" y="1.757" z="11.8091" />
+	<Mount weapon="Ion" size="Light Medium Heavy" x="-9.8108" y="1.757" z="11.8091" />
+
+       <Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-29.815" y="-6.919" z="30.409" ammo="6" volume="901"/>
+       <Mount weapon="ImageRecognition" size="light-missile medium-missile" x="29.815" y="-6.919" z="30.409" ammo="6" volume="901"/>
+        <Mount weapon="Tractor" size="Special" x="29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="Tractor" size="Special" x="-29.815" y="-6.919" z="30.409"/>
 	
+
+
 	<Thrust>
 		<Engine Afterburner="1066.666718" Forward="205.333344" Retro="254.666676" Left="202.666672" Right="202.666672" Top="202.666672" Bottom="202.666672"/>
 		<Maneuver yaw="2643.200050" pitch="2187.800201" roll="3643.200050"/>
