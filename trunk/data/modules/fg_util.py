@@ -38,14 +38,14 @@ def WriteStringList(cp,key,tup):
 	siz = Director.getSaveStringLength (cp,key)
 	s_size=siz;
 	lentup= len(tup)
-	if (lentup<size):
+	if (lentup<siz):
 		siz=lentup
 	for i in range(siz):
-		putSaveString(cp,key,i,tup[i])
+		Director.putSaveString(cp,key,i,tup[i])
 	for i in range (s_size,lentup):
-		pushSaveString(cp,key,tup[i])
+		Director.pushSaveString(cp,key,tup[i])
 	for i in range (lentup,s_size):
-		eraseSaveString(cp,key,lentup)
+		Director.eraseSaveString(cp,key,lentup)
 def ReadStringList (cp,key):
 	siz = Director.getSaveStringLength (cp,key)
 	tup =[]
@@ -65,7 +65,8 @@ def _MakeFGString (starsystem,typenumlist):
 	totalships = 0
 	ret = []
 	damage=0
-	for tt in numtypelist:
+	strlist=[]
+	for tt in typenumlist:
 		totalships+=int(tt[1])
 		strlist+=[str(tt[0]),str(tt[1])]
 	return [str(totalships),str(starsystem),str(damage)]+strlist
