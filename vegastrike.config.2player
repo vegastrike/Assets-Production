@@ -14,12 +14,12 @@ When creating a new group, you need only add a new line
 #cat Music windows_ext_music_on music_off linux_int_music_on
 
 These line set the currently used settings. This allows them to show up as selected (currently enclosed in [])
-#set Video GeForce3
+#set Video GeForce2
 #set Sound audio_off
 #set Music music_off
-#set Computer P500MHz
+#set Computer P800MHz
 #set Difficulty easy
-#set Experiment linux_safe
+#set Experiment windows_safe
 A description for the catagories. This is text that appears in the menu
 #desc Software No Acceleration
 #desc TNT Radeon and TNT
@@ -37,6 +37,7 @@ A description for the catagories. This is text that appears in the menu
 #desc music_off No Music
 #desc linux_int_music_on Linux Music
 #desc windows_safe Windows2000 nVidia
+
 #desc linux_safe Standard
 #desc stable Safe Mode
 #desc P200MHz 200MHz
@@ -52,132 +53,154 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 -->
 
         <bindings>
- 		<bind key="1" modifier="none" command="Comm1Key" />
- 		<bind key="2" modifier="none" command="Comm2Key" />
- 		<bind key="3" modifier="none" command="Comm3Key" />
- 		<bind key="4" modifier="none" command="Comm4Key" />
- 		<bind key="5" modifier="none" command="Comm5Key" />
-<!-- 		<bind key="6" modifier="none" command="Comm6Key" />-->
- 		<bind key="7" modifier="none" player="1" command="Comm1Key" />
- 		<bind key="8" modifier="none" player="1" command="Comm2Key" />
- 		<bind key="9" modifier="none" player="1" command="Comm3Key" />
+		<bind key="S" modifier="none" command="Cockpit::SkipMusicTrack" />
+ 		<bind key="F" modifier="none" command="CommFormUp" />
+ 		<bind key="B" modifier="none" command="CommBreakForm" />
+ 		<bind key="H" modifier="none" command="CommHelpMeOut" />
+ 		<bind key="D" modifier="none" command="CommAttackTarget" />
+ 		<bind key="1" player="0" modifier="none" command="Comm1Key" />
+ 		<bind key="2" player="0" modifier="none" command="Comm3Key" />
+ 		<bind key="3" player="0" modifier="none" command="Comm7Key" />
+ 		<bind key="4" player="0" modifier="none" command="DockKey" />
+ 		<bind key="5" player="0" modifier="none" command="RequestClearenceKey" />
+ 		<bind key="6" player="1" modifier="none" command="Comm2Key" />
+ 		<bind key="7" player="1" modifier="none" command="Comm4Key" />
+ 		<bind key="8" player="1" modifier="none" command="Comm8Key" />
+<!-- 		<bind key="9" player="1" modifier="none" command="Comm9Key" />-->
+		<bind key="9" modifier="none" command="DockKey"/>
+<!--		<bind key="u" modifier="none" command="UnDockKey"/>-->
+		<bind key="0" modifier="none" command="RequestClearenceKey"/>
+		<bind key="i" modifier="none" player="1" command="UpKey"/>
+		<bind key="k" modifier="none" player="1" command="DownKey"/>
+		<bind key="l" modifier="none" player="1" command="RightKey"/>
+		<bind key="j" modifier="none" player="1" command="LeftKey"/>
 
  		<bind key="space" modifier="none" command="FireKey" />
+ 		<bind key="y" modifier="none" command="MatchSpeedKey" />
  		<bind key="J" modifier="none" command="JumpKey" />
- 		<bind key="j" modifier="none" player="1" command="JumpKey" />
+ 		<bind key="A" modifier="none" command="AutoKey" />
  		<bind key="c" modifier="none" command="CloakKey" />
- 		<bind key="return" modifier="none" player="1" command="MissileKey" />
- 		<bind key="b" modifier="none" command="MissileKey" />
+ 		<bind key="E" modifier="none" command="EjectKey" />
+ 		<bind key="Z" modifier="none" command="EjectCargoKey" />
+ 		<bind key="return" modifier="none" command="MissileKey" />
 		<bind key="g" modifier="none" command="WeapSelKey"/>
-		<bind key="m" modifier="none" player="1" command="WeapSelKey"/>
-		<bind key=";" modifier="none" player="1" command="Respawn"/>
-		<bind key=":" modifier="none" command="Respawn"/>
+		<bind key=";" modifier="none" command="Respawn"/>
+		<bind key="[" modifier="none" command="SwitchControl"/>
+		<bind key="]" modifier="none" command="TurretControl"/>
 
-		<bind key="[" modifier="none" player="1" command="SwitchControl"/>
-		<bind key="]" modifier="none" player="1" command="TurretControl"/>
-		<bind key="{" modifier="none" command="SwitchControl"/>
-		<bind key="}" modifier="none" command="TurretControl"/>
+		<bind key="." modifier="none" player="1" command="Respawn"/>
+		<bind key="{" modifier="none" player="1" command="SwitchControl"/>
+		<bind key="}" modifier="none" player="1" command="TurretControl"/>
 
 
-		<bind key="e" modifier="none" command="DockKey"/>
-		<bind key="u" player="1" modifier="none" command="DockKey"/>
-
-		<bind key="6" modifier="none"  command="RequestClearenceKey"/>
-		<bind key="0" modifier="none"  player="1" command="RequestClearenceKey"/>
 		<bind key="m" modifier="none" command="MisSelKey"/>
-		<bind key="M" modifier="none" player="1" command="MisSelKey"/>
-
 		<bind key="t" modifier="none" command="TargetKey" />
-		<bind key="r" modifier="none" command="PickTargetKey" />
-		<bind key="o" modifier="none" player="1" command="TargetKey" />
-		<bind key="p" modifier="none" player="1" command="PickTargetKey" />
-		<bind key="T" modifier="none" command="TurretTargetKey" />
-		<bind key="R" modifier="none" command="TurretPickTargetKey" />
-		<bind key="O" modifier="none" player="1" command="TurretTargetKey" />
-		<bind key="P" modifier="none" player="1" command="TurretPickTargetKey" />
-
-                <bind key="`" modifier="none" command="SheltonKey" />
-                <bind key="cursor-home" modifier="none" player="1" command="SheltonKey" />
-
-                <bind key="-" modifier="none" player="1" command="DecelKey"/>
-                <bind key="+" modifier="none" player="1" command="AccelKey" />
-
-
-<!--?-->        <bind key="/" modifier="none" player="1" command="PickTargetKey"/>
-
-
-                <bind key="v" modifier="none" command="DecelKey"/>
-                <bind key="f" modifier="none"  command="AccelKey"/>
-                <bind key="backspace" modifier="none" player="1" command="StopKey"/>
-                <bind key="\" modifier="none" player="1" command="StartKey"/>
-
-
+		<bind key="p" modifier="none" command="PickTargetKey" />
+		<bind key="n" modifier="none" command="NearestTargetKey" />
+		<bind key="h" modifier="none" command="ThreatTargetKey" />
+		<bind key="T" modifier="none" command="ReverseTargetKey" />
+		<bind key="P" modifier="none" command="TurretTargetKey" />
+		<bind key="o" modifier="none" command="TurretAIKey" />
+		<bind key="N" modifier="none" command="TurretNearestTargetKey" />
+		<bind key="H" modifier="none" command="TurretThreatTargetKey" />
+		<bind key="`" modifier="none" command="SheltonKey" />
+		<bind key="-" modifier="none" command="DecelKey"/>
+		<bind key="+" modifier="none" command="AccelKey" />
+		<bind key="=" modifier="none" command="AccelKey"/>
+		<bind key="/" modifier="none" command="RollLeftKey"/>
+		<bind key="*" modifier="none" command="RollRightKey"/>
+		<bind key="backspace" modifier="none" command="StopKey"/>
+		<bind key="\" modifier="none" command="StartKey"/>
 		<bind key="tab" modifier="none" command="ABKey" />
-                <bind key="*" modifier="none" player="1" command="ABKey"/>
 
-                <bind key="cursor-up" modifier="none" player="1" command="UpKey"/>
-                <bind key="cursor-down" modifier="none" player="1" command="DownKey"/>
-                <bind key="cursor-left" modifier="none" player="1" command="RightKey"/>
-                <bind key="cursor-right" modifier="none" player="1" command="LeftKey"/>
-                <bind key="cursor-insert" modifier="none" player="1" command="FireKey"/>
-<!--?-->                <bind key="cursor-delete" modifier="none" command="RollRightKey"/>
+		<bind key="!" modifier="none" command="SuicideKey"/>
+		<bind key="@" modifier="none" player="1" command="SuicideKey"/>
 
-                <bind key="w" modifier="none" command="UpKey"/>
-                <bind key="s" modifier="none" command="DownKey"/>
-                <bind key="a" modifier="none" command="RightKey"/>
-                <bind key="d" modifier="none" command="LeftKey"/>
-                <bind key="z" modifier="none" command="RollLeftKey"/>
-                <bind key="x" modifier="none" command="RollRightKey"/>
+ 		<bind key="keypad-numlock" modifier="none" player="1" command="ReverseTargetKey" />
+ 		<bind key="keypad-insert" modifier="none" player="1" command="ABKey" />
+ 		<bind key="keypad-enter" modifier="none" player="1" command="MissileKey" />
 
-                <bind key="function-1" modifier="none" command="Cockpit::Inside"/>
-                <bind key="function-2" modifier="none" command="Cockpit::InsideLeft"/>
-                <bind key="function-3" modifier="none" command="Cockpit::InsideRight"/>
-                <bind key="function-4" modifier="none" command="Cockpit::InsideBack"/>
-                <bind key="function-5" modifier="none" command="Cockpit::Behind"/>
+ 		<bind key="cursor-insert" modifier="none" player="1" command="FireKey" />
 
-                <bind key="function-6" modifier="none" player="1" command="Cockpit::Inside"/>
-                <bind key="function-7" modifier="none" player="1" command="Cockpit::InsideBack"/>
-                <bind key="function-8" modifier="none" player="1" command="Cockpit::Behind"/>
+		<bind key="cursor-delete" modifier="none" player="1" command="MissileKey"/>
+		<bind key="cursor-home" modifier="none" player="1" command="WeapSelKey"/>
+ 		<bind key="cursor-end" modifier="none" player="1" command="MisSelKey" />
+		<bind key="cursor-pageup" modifier="none" player="1" command="JumpKey"/>
+		<bind key="cursor-pagedown" modifier="none" player="1" command="CloakKey"/>
 
-                <bind key="function-9" modifier="none" command="TimeInc"/>
-                <bind key="|" modifier="none" command="PauseKey"/>
-                <bind key="function-10" modifier="none" command="TimeReset"/>
 
-<!--?-->                <bind key="function-11" modifier="none" command="Cockpit::ZoomIn"/>
-<!--?-->                <bind key="function-12" modifier="none" command="Cockpit::ZoomOut"/>
+		<bind key="keypad-pageup" modifier="none" player="1" command="AutoKey"/>
+		<bind key="keypad-pagedown" modifier="none" player="1" command="TurretAIKey"/>
+ 		<bind key="keypad-delete" modifier="none" player="1" command="SheltonKey" />
 
-                <bind key="Q" modifier="none" command="Cockpit::SwitchLVDU"/>
-                <bind key="q" modifier="none" command="Cockpit::SwitchRVDU"/>
-                <bind key="l" modifier="none" player="1" command="Cockpit::SwitchRVDU"/>
-                <bind key="L" modifier="none" player="1" command="Cockpit::SwitchLVDU"/>
+		<bind key="keypad-minus" modifier="none" player="1" command="DecelKey"/>
+		<bind key="keypad-plus" modifier="none" player="1" command="AccelKey" />
+		<bind key="keypad-divide" modifier="none" player="1" command="TargetKey"/>
+		<bind key="keypad-multiply" modifier="none" player="1" command="PickTargetKey"/>
 
-<!--?                <bind key="cursor-pagedown" modifier="none" command="Cockpit::ScrollDown"/>-->
-<!--?                <bind key="cursor-pageup" modifier="none" command="Cockpit::ScrollUp"/>-->
-<!--?                <bind key="cursor-home" modifier="none" command="SetVelocityRefKey"/>-->
-<!--?                <bind key="cursor-end" modifier="none" command="SetVelocityNullKey"/>-->
+		<bind key="keypad-8" modifier="none" player="1" command="UpKey"/>
+		<bind key="keypad-2" modifier="none" player="1" command="DownKey"/>
+		<bind key="keypad-5" modifier="none" player="1" command="DownKey"/>
+		<bind key="keypad-4" modifier="none" player="1" command="RightKey"/>
+		<bind key="keypad-6" modifier="none" player="1" command="LeftKey"/>
 
-                <bind key="esc" modifier="none" command="Cockpit::Quit"/>
+		<bind key="cursor-up" modifier="none" player="1" command="Cockpit::Inside"/>
+		<bind key="cursor-down" modifier="none" player="1" command="Cockpit::Behind"/>
+		<bind key="cursor-left" modifier="none" player="1" command="Cockpit::SwitchLVDU"/>
+		<bind key="cursor-right" modifier="none" player="1" command="Cockpit::SwitchRVDU"/>
+		<bind key="function-1" modifier="none" command="Cockpit::Inside"/>
+		<bind key="function-2" modifier="none" command="Cockpit::InsideLeft"/>
+		<bind key="function-3" modifier="none" command="Cockpit::InsideRight"/>
+		<bind key="function-4" modifier="none" command="Cockpit::InsideBack"/>
+		<bind key="function-5" modifier="none" command="Cockpit::Behind"/>
+		<bind key="function-6" modifier="none" command="Cockpit::Pan"/>
+		<bind key="function-7" modifier="none" command="Cockpit::OutsideTarget"/>
+		<bind key="function-8" modifier="none" command="Cockpit::PanTarget"/>
+		<bind key="function-9" modifier="none" command="TimeInc"/>
+		<bind key="function-10" modifier="none" command="TimeReset"/>
+		<bind key="function-11" modifier="none" command="Cockpit::ZoomIn"/>
+		<bind key="function-12" modifier="none" command="Cockpit::ZoomOut"/>
 
-		<bind joystick="0" button="0" modifier="none" command="FireKey" />
-		<bind joystick="0" button="1" modifier="none" command="ABKey" />
-		<bind joystick="0" button="2" modifier="none" command="MissileKey" />
+		<bind key="|" modifier="none" command="PauseKey"/>
+		<bind key="pause" modifier="none" command="PauseKey"/>
 
-		<bind joystick="0" button="3" modifier="none" command="TargetKey" />
+		<bind key="w" modifier="none" command="Cockpit::SwitchLVDU"/>
+<!--		<bind key="W" modifier="none" command="Cockpit::SwitchLVDU"/>-->
+
+		<bind key="v" modifier="none" command="Cockpit::SwitchRVDU"/>
+<!--		<bind key="V" modifier="none" command="Cockpit::SwitchRVDU"/>-->
+<!--
+		<bind key="q" modifier="none" command="Cockpit::PitchDown"/>
+		<bind key="z" modifier="none" command="Cockpit::PitchUp"/>
+		<bind key="a" modifier="none" command="Cockpit::YawLeft"/>
+		<bind key="s" modifier="none" command="Cockpit::YawRight"/>
+-->
+
+		<bind key="esc" modifier="none" command="Cockpit::Quit"/>
+
+
+
 		<bind mouse="0" player="1" button="0" modifier="none" command="FireKey" />
 		<bind mouse="0" button="1" modifier="none" command="ABKey" />
 		<bind mouse="0" button="2" modifier="none" command="MissileKey" />
 
-		<bind mouse="0" button="3" modifier="none" command="TargetKey" />
+		<bind mouse="0" button="3" modifier="none" command="PickTargetKey" />
 		<axis name="x" mouse="0" axis="0" inverse="false" />
 		<axis name="y" mouse="0" axis="1" inverse="false" />
+
+		<bind joystick="0" player="0" button="4" modifier="none" command="FireKey" />
+		<bind joystick="0" button="1" modifier="none" command="ABKey" />
+		<bind joystick="0" button="2" modifier="none" command="MissileKey" />
+
+		<bind joystick="0" button="3" modifier="none" command="PickTargetKey" />
+		<axis name="x" joystick="0" axis="0" inverse="false" />
+		<axis name="y" joystick="0" axis="1" inverse="false" />
 
 		<bind joystick="1" button="0" modifier="none" command="FireKey" />
 		<bind joystick="1" button="1" modifier="none" command="ABKey" />
 		<bind joystick="1" button="2" modifier="none" command="MissileKey" />
 
-		<bind joystick="1" button="3" modifier="none" command="TargetKey" />
-		<axis name="x" joystick="0" axis="0" inverse="false" />
-		<axis name="y" joystick="0" axis="1" inverse="false" />
+		<bind joystick="1" button="3" modifier="none" command="PickTargetKey" />
 		<axis name="x" joystick="1" axis="0" inverse="false" />
 		<axis name="y" joystick="1" axis="1" inverse="false" />
 
@@ -199,6 +222,27 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 		</axis>
 
 
+<!--		<bind hatswitch="0" button="0" modifier="none" command="ABKey" />-->
+<!--		<bind hatswitch="0" button="1" modifier="none" command="Cockpit::SwitchRVDU" />
+		<bind hatswitch="0" button="2" modifier="none" command="Cockpit::SwitchLVDU" />
+		<bind hatswitch="0" button="3" modifier="none" command="Cockpit::InsideLeft" />
+-->
+
+<!--
+
+		<bind joystick="0" digital-hatswitch="0" direction="up" command="ABKey"/>
+		<bind joystick="0" digital-hatswitch="0" direction="left" command="TargetKey"/>
+	<bind joystick="0" digital-hatswitch="0" direction="center" command="ABKey"/>
+
+		<bind joystick="0" digital-hatswitch="0" direction="right" command="ABKey"/>
+
+-->
+
+
+		<!-- for the future
+			<axis name="gun_x" joystick="1" axis="0"/>
+			<axis name="gun_y" joystick="1" axis="1"/>
+		-->
 
         </bindings>
         <colors>
@@ -210,6 +254,9 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
                 <color name="yellow"	r="1.0" g="1.0" b="0.0" a="1.0"/>
                 <color name="black"	r="0.0" g="0.0" b="0.0" a="1.0"/>
                 <color name="white"	r="1.0" g="1.0" b="1.0" a="1.0"/>
+                <color name="grey"	r=".5" g=".5" b=".5" a="1.0"/>
+                <color name="light-grey"	r=".8" g=".8" b=".8" a="1.0"/>
+
                 <color name="violet"	r="1.0" g="0.0" b="1.0" a="1.0"/>
                 <color name="light-blue"	r="0.68" g="0.9" b="1.0" a="1.0"/>
                 <color name="pink"	r="1.0" g="0.47" b="0.64" a="1.0"/>
@@ -237,6 +284,8 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 		<color name="targetting_ship"	section="absolute" ref="light-blue"/>
 		<color name="target"		section="absolute" ref="violet"/>
 		<color name="planet"		r="1.0" g="1.0" b="0.6" a="1.0" />
+		<color name="docking_box"	section="absolute" ref="white" />
+		<color name="black_and_white"		section="absolute" ref="light-grey" />
 
 
 		<!-- light to use for planets -->
@@ -246,7 +295,7 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 		<color name="planet_mat_specular" r="0" g="0" b="0" a="1.0"/>
 		<color name="planet_mat_emmissive" r="0" g="0" b="0" a="1.0"/>
 		<!-- set this to dark-blue to get the real spacey feeling -->
-		<color name="space_background" ref="dark-blue" section="absolute"/>
+		<color name="space_background" ref="black" section="absolute"/>
 	    </section>
         </colors>
 	<variables>
@@ -280,18 +329,25 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 			<section name="mesh">
 				<var name="testvar" value="-4"/>
 			</section>
-
+			<var name="shield_texture" value="shield.bmp"/>
+			<var name="star_shine" value="shine.ani flare1.ani flare2.ani flare3.ani flare4.ani flare5.ani flare6.ani"/>
+			<var name="head_lag" value="10"/>
+			<var name="cockpit_shake" value="3"/>
+			<var name="cockpit_shake_max" value="20"/>
+			<var name="shake_reduction" value="8"/>
+			<var name="shake_speed" value="50"/>
 			<var name="star_body_radius" value=".4"/>
-			<var name="star_glow_radius" value="1.3"/>
+			<var name="star_glow_radius" value="1.00"/>
 			<var name="glow_ambient_star_light" value="false"/>
 			<var name="glow_diffuse_star_light" value="false"/>
-
+			<var name="anim_far_percent" value=".8"/>
+			<var name="mesh_far_percent" value=".8"/>
 			<var name="HaloOffset" value=".5"/>
 			<var name="HaloFarDraw" value="false"/> <!--experimental -->
 			<var name="draw_star_glow_halo" value="false"/><!--experimental-->
 
-			<var name="UnitSwitchCockpitChange" value="false"/><!--slow unit switch-->
-			<var name="SwitchCockpitToDefaultOnUnitSwitch" value="false"/><!--slower unit switch-->
+			<var name="UnitSwitchCockpitChange" value="true"/><!--slow unit switch-->
+			<var name="SwitchCockpitToDefaultOnUnitSwitch" value="true"/><!--slower unit switch-->
 			<var name="jumpgatesize" value="17.5"/>
 			<var name="jumpgate" value="warp.ani"/>
 			<var name="LogoOffset" value="-4"/>
@@ -301,18 +357,18 @@ Farther down, you will see "#Software". Currently, it's line 213. You'll find mo
 			<var name="OptimizeVertexCondition" value="1"/>
 			<var name="SharedVertexArrays" value="true"/>
 
-<!-- #windows_safe
+<!-- #windows_safe -->
 			<var name="LockVertexArrays" value="true"/>
 			<var name="OptimizeVertexArrays" value="true"/>
 			<var name="displaylists" value="false"/>
-			<var name="fullscreen" value="true"/>
-#end -->
-<!-- #linux_safe -->
+			<var name="fullscreen" value="false"/>
+<!-- #end -->
+<!-- #linux_safe
 			<var name="OptimizeVertexArrays" value="false"/>
 			<var name="displaylists" value="true"/>
 			<var name="OptimizeVertexArrays" value="true"/>
 			<var name="fullscreen" value="false"/>
-<!-- #end -->
+#end -->
 <!-- #stable
 			<var name="OptimizeVertexArrays" value="false"/>
 			<var name="displaylists" value="false"/>
@@ -360,9 +416,9 @@ This is done many times later in this config file
 			<var name="high_quality_sprites" value="true"/>
 
 #end -->
-<!-- #P800MHz
+<!-- #P800MHz -->
 			<var name="ForceLighting" value="1"/>
-#end -->
+<!-- #end -->
 <!-- #TNT
 			<var name="fog" value="true"/>
 			<var name="ModelDetail" value="1"/>
@@ -371,7 +427,7 @@ This is done many times later in this config file
 			<var name="mipmapdetail" value="2"/>
 			<var name="reflection" value="false"/>
 			<var name="ForceLighting" value="0"/>
-			<var name="high_quality_font" value="true"/>
+			<var name="high_quality_font" value="false"/>
 			<var name="font_antialias" value="false"/>
 			<var name="font_point" value="14"/>
 			<var name="draw_star_body" value="true"/>
@@ -381,21 +437,21 @@ This is done many times later in this config file
 
 
 
-<!-- #GeForce2
+<!-- #GeForce2 -->
 			<var name="fog" value="true"/>
 			<var name="ModelDetail" value="1"/>
 			<var name="x_resolution" value="1024"/>
 			<var name="y_resolution" value="768"/>
-			<var name="mipmapdetail" value="2"/>
+			<var name="mipmapdetail" value="3"/>
 			<var name="reflection" value="true"/>
 			<var name="high_quality_font" value="false"/>
 			<var name="font_antialias" value="false"/>
 			<var name="font_point" value="16"/>
-			<var name="draw_star_body" value="true"/>
-			<var name="draw_star_glow" value="false"/>	
+			<var name="draw_star_body" value="false"/>
+			<var name="draw_star_glow" value="true"/>	
 			<var name="high_quality_sprites" value="false"/>
-#end -->
-<!-- #GeForce3 -->
+<!-- #end -->
+<!-- #GeForce3
 			<var name="fog" value="true"/>
 			<var name="ModelDetail" value="10"/>
 			<var name="x_resolution" value="1240"/>
@@ -408,17 +464,17 @@ This is done many times later in this config file
 			<var name="draw_star_body" value="true"/>
 			<var name="draw_star_glow" value="true"/>	
 			<var name="high_quality_sprites" value="true"/>
-<!-- #end -->
+#end -->
 
 
-<!-- #Software Voodoo TNT GeForce2
+<!-- #Software Voodoo TNT GeForce2 -->
 			<var name="colordepth" value="16"/>
         	       	<var name="zfar" value="60000"/>
-#end -->
-<!-- #GeForce3 -->
+<!-- #end -->
+<!-- #GeForce3
 			<var name="colordepth" value="32"/>
 			<var name="zfar" value="600000"/>
-<!-- #end -->
+#end -->
 
                 	<var name="fov" value="60.0"/>
                 	<var name="aspect" value="1.3"/>
@@ -438,54 +494,54 @@ This is done many times later in this config file
 <!-- #Voodoo TNT GeForce2 GeForce3 -->
 			<var name="background" value="true"/>
 <!-- #end -->
-<!-- #Software Voodoo TNT GeForce2
+<!-- #Software Voodoo TNT GeForce2 -->
 			<var name="cockpit" value="false"/>
-#end -->
-<!-- #GeForce3 -->
-			<var name="cockpit" value="true"/>
 <!-- #end -->
+<!-- #GeForce3
+			<var name="cockpit" value="true"/>
+#end -->
 
 <!-- #Software Voodoo
 			<var name="planet_detail" value="16"/>
 			<var name="jump_detail" value="8"/>
 #end -->
-<!-- #TNT GeForce2
+<!-- #TNT GeForce2 -->
 			<var name="planet_detail" value="20"/>
 			<var name="jump_detail" value="16"/>
-#end -->
-<!-- #GeForce3 -->
+<!-- #end -->
+<!-- #GeForce3
 			<var name="planet_detail" value="32"/>
 			<var name="jump_detail" value="16"/>
-<!-- #end -->
+#end -->
 
 <!-- #Software
 			<var name="lightcutoff" value="0.16"/>
 			<var name="lightoptimalintensity" value="0.16"/>
 #end -->
-<!-- #Voodoo GeForce2
+<!-- #Voodoo GeForce2 -->
 			<var name="lightcutoff" value="0.06"/>
 			<var name="lightoptimalintensity" value="0.06"/>
-#end -->
+<!-- #end -->
 <!-- #TNT
 			<var name="lightcutoff" value="0.06"/>
 			<var name="lightoptimalintensity" value="0.08"/>
 #end -->
-<!-- #GeForce3 -->
+<!-- #GeForce3
 			<var name="lightcutoff" value="0.04"/>
 			<var name="lightoptimalintensity" value="0.06"/>
-<!-- #end -->
+#end -->
 
 			<var name="lightsaturation" value="0.95"/>
-<!-- #Software Voodoo GeForce2
+<!-- #Software Voodoo GeForce2 -->
 			<var name="separatespecularcolor" value="false"/>
-#end -->
-<!-- #TNT GeForce3 -->
-			<var name="separatespecularcolor" value="true"/>
 <!-- #end -->
+<!-- #TNT GeForce3
+			<var name="separatespecularcolor" value="true"/>
+#end -->
 			<var name="numlights"	value="4"/>
 			<section name="hud" >
 				<var name="drawAllTargetBoxes" value="false" />
-				<var name="drawAlwaysITTS" value="true" />
+				<var name="drawAlwaysITTS" value="false" />
 				<var name="radarType" value="WC" />
 				<var name="radarRange" value="20000" />
 				<var name="drawLineToTarget" value="false" />
@@ -507,16 +563,16 @@ This is done many times later in this config file
 			<var name="MaxSingleSounds" value="5"/>
 			<var name="MaxTotalSounds" value="16"/>
 #end -->
-<!-- #P500MHz -->
+<!-- #P500MHz
 			<var name="every_other_mount" value="true"/>
 			<var name="MaxSingleSounds" value="8"/>
 			<var name="MaxTotalSounds" value="24"/>
-<!-- #end -->
-<!-- #P800MHz
+#end -->
+<!-- #P800MHz -->
 			<var name="every_other_mount" value="false"/>
 			<var name="MaxSingleSounds" value="12"/>
 			<var name="MaxTotalSounds" value="32"/>
-#end -->
+<!-- #end -->
 			<var name="frequency" value="22050"/>
 <!-- #audio_on_windows audio_on_linux audio_3d_windows audio_3d_linux
 			<var name="Sound" value="true"/>
@@ -559,16 +615,17 @@ This is done many times later in this config file
 			<var name="explode" value="explosion.wav"/>
 		</section>
 		<section name="joystick">
-
-<var name="warp_mouse" value="true"/>
-<var name="mouse_sensitivity" value="5"/>
+			<var name="warp_mouse" value="false"/>
+			<var name="warp_mouse_zone" value="200"/>
+			<var name="mouse_exponent" value="1"/>
+			<var name="mouse_sensitivity" value=".1"/>
 			<var name="deadband" value="0.05"/>
 			<var name="debug_digital_hatswitch" value="false"/>
 			<var name="force_feedback" value="false" />
 			<var name="ff_device" value="0" />
 		</section>
 		<section name="general">
-			<var name="default_mission" value="mission/exploration/explore_universe_nova.mission"/>
+			<var name="default_mission" value="mission/exploration/explore_universe.mission"/>
 			<var name="galaxy" value="milky_way.xml"/>
 			<var name="yaw" value="0"/>			<var name="pitch" value="0"/>			<var name="roll" value="0"/>
 			<var name="remove_impossible_downgrades" value="true"/>
@@ -577,14 +634,14 @@ This is done many times later in this config file
 			<var name="simulation_atom" value="0.12"/>
 			<var name="numoldsystems" value="4"/>
 #end -->
-<!-- #P500MHz -->
+<!-- #P500MHz
 			<var name="simulation_atom" value="0.09"/>
 			<var name="numoldsystems" value="8"/>
-<!-- #end -->
-<!-- #P800MHz
+#end -->
+<!-- #P800MHz -->
 			<var name="simulation_atom" value="0.06"/>
 			<var name="numoldsystems" value="20"/>
-#end -->
+<!-- #end -->
 			<var name="garbagecollectfrequency" value="20"/>
 <!-- #windows_safe linux_safe -->
 			<var name="deleteoldsystems" value="true"/>
@@ -596,6 +653,8 @@ This is done many times later in this config file
 
         	</section>
 		<section name="AI">
+			<var name="kill_factor" value=".2"/>
+			<var name="friend_factor" value=".1"/>
 			<section name="Targetting">
 				<var name="TargetSwitchReactionTime" value=".8"/>
 				<var name="TargetSwitchProbability" value=".01"/>
@@ -605,8 +664,12 @@ This is done many times later in this config file
 			</section>
 		</section>
 		<section name="physics">
+<!-- for realistic physics			<var name="game_speed" value="1000"/>
+			<var name="game_accel" value=".00002"/>-->
 			<var name="ai_pilot_when_in_turret" value="true"/>
 			<var name="atmosphereheight" value="10"/>
+			<var name="game_speed" value=".5"/>
+			<var name="game_accel" value=".5"/>
 			<!-- the next variable tells what percentage
 			      of normal the shields recharge in a nebule.
 			      Zero means shields do not work in nebulae -->
@@ -615,42 +678,68 @@ This is done many times later in this config file
 			<var name="NumRunningSystems" value="3"/>
 			<var name="InactiveSystemTime" value=".8"/>
 #end -->
-<!-- #P500MHz -->
+<!-- #P500MHz
 			<var name="NumRunningSystems" value="4"/>
 			<var name="InactiveSystemTime" value=".6"/>
-<!-- #end -->
-<!-- #P800MHz
+#end -->
+<!-- #P800MHz -->
 			<var name="NumRunningSystems" value="8"/>
 			<var name="InactiveSystemTime" value=".9"/>
-#end -->
+<!-- #end -->
 <!-- #easy -->
 			<var name="autodist" value="200"/>
-			<var name="YearScale" value="10"/>
-			<var name="AsteroidDifficulty" value=".5"/>
-			<var name="AfterburnerFuelUsage" value="1"/>
+			<var name="hostile_auto_radius" value="1000"/>
+			<var name="neutral_auto_radius" value="-200"/>
+			<var name="friendly_auto_radius" value="0"/>
+			<var name="auto_pilot_termination_distance" value="1800"/>
+			<var name="auto_pilot_planet_radius_percent" value=".6"/>
+			<var name="autotime" value="1"/>
+			<var name="YearScale" value="20"/>
+			<var name="AsteroidDifficulty" value=".05"/>
+			<var name="AfterburnerFuelUsage" value="10"/>
 			<var name="NoFuelThrust" value="1"/>
 			<var name="NoFuelAfterburn" value=".1"/>
 			<var name="nebula_shield_recharge" value=".5"/>
 <!-- #end -->
 <!-- #medium
+			<var name="hostile_auto_radius" value="5000"/>
+			<var name="neutral_auto_radius" value="1000"/>
+			<var name="friendly_auto_radius" value="200"/>
+			<var name="auto_pilot_termination_distance" value="8000"/>
+			<var name="auto_pilot_planet_radius_percent" value=".8"/>
 			<var name="nebula_shield_recharge" value=".25"/>
-			<var name="autodist" value="500"/>
+			<var name="autodist" value="1000"/>
+			<var name="autotime" value="2"/>
 			<var name="YearScale" value="2"/>
-			<var name="AsteroidDifficulty" value=".8"/>
-			<var name="AfterburnerFuelUsage" value="10"/>
+			<var name="AsteroidDifficulty" value=".1"/>
+			<var name="AfterburnerFuelUsage" value="40"/>
 			<var name="NoFuelThrust" value="1"/>
 			<var name="NoFuelAfterburn" value=".1"/>
 #end -->
 <!-- #hard
+			<var name="hostile_auto_radius" value="8000"/>
+			<var name="neutral_auto_radius" value="1500"/>
+			<var name="friendly_auto_radius" value="1000"/>
+			<var name="auto_pilot_termination_distance" value="7000"/>
+			<var name="auto_pilot_planet_radius_percent" value="1"/>
 			<var name="nebula_shield_recharge" value="0"/>
 			<var name="autodist" value="2500"/>
+			<var name="autotime" value="3"/>
 			<var name="YearScale" value=".3"/>
-			<var name="AsteroidDifficulty" value="1.2"/>
-			<var name="AfterburnerFuelUsage" value="40"/>
+			<var name="AsteroidDifficulty" value=".2"/>
+			<var name="AfterburnerFuelUsage" value="100"/>
 			<var name="NoFuelThrust" value=".5"/>
 			<var name="NoFuelAfterburn" value="0"/>
 #end -->
 			<var name="Drone" value="unknown_active"/>
+		</section>
+		<section name="galaxy">
+			<var name="StarRadiusScale" value="1000"/>	
+			<var name="CompactnessScale" value="1.5"/>	
+			<var name="MoonRelativeToPlanet" value=".4"/>	
+			<var name="MoonRelativeToMoon" value=".8"/>	
+			<var name="GasRelativeToPrimary" value=".2"/>	
+			<var name="RockyRelativeToPrimary" value=".05"/>	
 		</section>
 		<section name="interpreter">
 			<var name="debuglevel" value="0"/>
@@ -660,14 +749,7 @@ This is done many times later in this config file
 			<var name="realname" 	value="insert-name-here"/>
 			<var name="email" 	value="email@where-ever.net"/>
 			<var name="homepage"	value="none"/>
-			<var name="callsign" 	value="HellcatV"/>
-			<var name="logo" 	value="unknown.bmp"/>
-		</section>
-		<section name="player2">
-			<var name="realname" 	value="insert-name-here"/>
-			<var name="email" 	value="email@where-ever.net"/>
-			<var name="homepage"	value="none"/>
-			<var name="callsign" 	value="TigerShark"/>
+			<var name="callsign" 	value="Unknown"/>
 			<var name="logo" 	value="unknown.bmp"/>
 		</section>
 	</variables>
