@@ -31,7 +31,6 @@ module bounty {
 	  }
 	};
 	void initrandom (int minns, int maxns, float creds, bool run_away, int shipdifficulty) {
-	  faction_ships.init();
 	  object you=_unit.getPlayer();
 	  object tempfaction;
 	  if (!_std.isNull(you)) {
@@ -49,6 +48,7 @@ module bounty {
 	  }
 	};
 	void init (int minnumsystemsaway, int maxnumsystemsaway, float creds, bool run_away, int shipdifficulty, object tempfaction) {
+	  faction_ships.init();
 	  faction = tempfaction;
 	  
 	  
@@ -213,5 +213,14 @@ module bounty {
 	    }
 	    _string.delete (sysfil);
 	  }
+	};
+	void initbriefing() {
+	  
+	};
+	void loopbriefing() {
+	  
+	};
+	void endbriefing() {
+	  
 	};
 }

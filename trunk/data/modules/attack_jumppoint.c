@@ -14,8 +14,11 @@ module attack_jumppoint {
   import faction_ships;
   int ship_check_count;
   bool defend;
-  
+  object attackers;
+  int targetiter;  
 	void init (object factionname, int numsystemsaway, int enemyquantity, float distance_from_base, float escape_distance, float creds, bool defend_base) {
+	  attackers = _olist.new ();
+	  targetiter = 0;
 	  ship_check_count=0;
 	  defend = defend_base;
 	  faction_ships.init();
@@ -50,6 +53,13 @@ module attack_jumppoint {
 	  _string.delete(str);
 	};
 	void destroy () {
+	  int i=0;
+	  while (i<_olist.size(attackers)) {
+	    object cont = _olist.at (attackers,i);
+	    _unit.deleteContainer (cont);
+	    i=i+1;
+	  }
+	  _olist.delete (attackers);
 	  _unit.deleteContainer (youcontainer);
 	  _std.setNull (youcontainer);
 	  _string.delete (faction);
@@ -113,7 +123,13 @@ module attack_jumppoint {
 	  while (count<quantity) {
 	    object randtype = faction_ships.getRandomFighter(faction);
 	    object launched = launch.launch_wave_around_unit ("Shadow",faction,randtype,"default",1,2000.0,4500.0,jp);
-	    _unit.setTarget (launched,you);//make 'em attack you
+	    if ((defend)&&(!_std.isNull(jp))) {
+	      _unit.setTarget (launched,jp);
+	    }else {
+	      _unit.setTarget (launched,you);//make 'em attack you
+	    }
+	    _unit.setFgDirective(launched,"B");
+	    _olist.push_back (attackers,_unit.getContainer (launched));
 	    count = count+1;
 	  }
 	  quantity=0;
@@ -137,11 +153,33 @@ module attack_jumppoint {
 		if (quantity>0) {
 		  GenerateEnemies (base,you);
 		}
+		if (targetiter>_olist.size(attackers)) {
+		  targetiter=0;
+		}else {
+		  object cont =  _olist.at (attackers,targetiter);
+		  object un = _unit.getUnitFromContainer (cont);
+		  if (!_std.isNull(un)) {
+		    if (defend) {
+		      _unit.setTarget (un,base);
+		    }else {
+		      _unit.setTarget (un,you);
+		    }
+		  }
+		}
 		if (NoEnemiesInArea (base)) {
 		  SuccessMission(you);
 		}
 	      }
 	    }
 	  }
+	};
+	void initbriefing() {
+
+	};
+	void loopbriefing () {
+
+	};
+	void endbriefing() {
+
 	};
 }
