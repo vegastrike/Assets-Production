@@ -70,7 +70,7 @@ def launch_wave_around_unit (fgname, faction, type, ai, nr_ships, minradius, max
   if (my_unit.isNull()):
     un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,minradius,maxradius,myvec,logo)
     return un
-  myvec=my_unit.getPosition()
+  myvec=my_unit.Position()
   rsiz=my_unit.rSize()
   un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,rsiz+minradius,rsiz+maxradius,myvec,logo)
   return un
