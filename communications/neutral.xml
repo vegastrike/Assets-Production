@@ -378,6 +378,16 @@
 		<edge index="39"/>
 		<!--standard taunt-->
 	</node>
+	<node text="UNUSED" relationship="0"><!-- node 37-->
+		<edge index="18"/>
+		<edge index="58"/>
+		<edge index="43"/>
+		<edge index="16"/>
+		<edge index="25"/>
+		<edge index="26"/>
+		<edge index="27"/>
+		<edge index="39"/>
+	</node>
 	<node text="May luck be with you." relationship=".04"><!-- node 38-->
 		<edge index="2"/>
 		<edge index="7"/>
@@ -491,7 +501,7 @@
 		<edge index="17"/>
 	</node>
 	<node text="Is it a smuggler, flown off normal space lanes?  Maybe a BAD smuggler with some nice contraband." relationship="-.02"><!-- node 49-->
-		<edge index=""/>
+		<edge index="48"/>
 		<edge index="34"/>
 		<edge index="50"/>
 		<edge index="23"/>
