@@ -33,6 +33,12 @@ class ShipTracker:
 			dead = self.un.GetHull()<=0
 		if (dead):
 			if (VS.systemInMemory (self.starsystem)):
+				import dynamic_battle
+				if (VS.getPlayerX(0)):
+					if (VS.GetRelation(self.faction,VS.getPlayerX(0).getFactionName())>0):
+						import faction_ships
+						dynamic_battle.rescuelist[self.starsystem]=(self.faction,"Shadow",faction_ships.get_enemy_of(self.faction))
+						print "friend in trouble"
 				fg_util.RemoveShipFromFG(self.fgname,self.faction,self.type)
 				if (fg_util.NumShipsInFG(self.fgname,self.faction)==0): #generate news here fg killed IRL
 					import dynamic_news

@@ -1,7 +1,7 @@
 import VS
 def isLandable (un):
     unit_fgid = un.getFlightgroupName()
-    retval = (((un.isPlanet ()) and (not un.isJumppoint())) or unit_fgid=="Base")
+    retval = (((un.isPlanet ()) and (not un.isSun()) and (not un.isJumppoint())) or unit_fgid=="Base")
     return retval
   
 def isBase (un):
