@@ -7,7 +7,7 @@ import sys
 
 def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo=''):
   diff=usingDifficulty()
-  if (not diff):
+  if (not diff or (type.find(".blank")==-1)):
     ret = VS.launch (fgname,type,faction,"unit",ai,nr_ships,nr_waves,vec,logo)
     return ret
   rsize=0.0
@@ -18,8 +18,7 @@ def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo=''):
     if (i==0):
       ret = mynew
       rsize =mynew.rSize ()*1.75
-    if (rsize<500):
-      ship_upgrades.upgradeUnit ( mynew,diffic)
+    ship_upgrades.upgradeUnit ( mynew,diffic)
     vec=(vec[0]-rsize,
          vec[1],#-rsize
         vec[2]-rsize)

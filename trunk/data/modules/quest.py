@@ -1,6 +1,9 @@
 import Director
 def findQuest (playernum,questname,value=1):
+    print 'finding nonperisstent quest'
+    print questname
     mylen=Director.getSaveDataLength(playernum,questname)
+    print mylen
     if (mylen>0):
         myfloat=Director.getSaveData(playernum,questname,0)
         print myfloat
@@ -12,6 +15,8 @@ def persistentQuest (playernum,questname):
     print questname
     return findQuest (playernum,questname,-1)
 def notLoadedQuest(playernum,questname):
+    print 'finding nonloaded quest'
+    print questname
     return not persistentQuest(playernum,questname) and not findQuest (playernum,questname)
 def removeQuest (playernum,questname,value=1):
     print "removing quest"
@@ -23,6 +28,10 @@ def removeQuest (playernum,questname,value=1):
 
 
 class quest:
+    def NoSignificantsNear(self):
+        pass
+    def SignificantsNear(self,significant):
+        pass        
     def setOwner(self,playernum,questname):
         self.name=questname
         self.playernum=playernum
