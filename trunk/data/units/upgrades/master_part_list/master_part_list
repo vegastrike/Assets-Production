@@ -368,7 +368,7 @@
 		</Category>
 		<Category file="upgrades/Miscellaneous">
 			<Cargo file="add_fuel" price="1000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="jump_drive" price="30000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="jump_drive" price="10000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="add_cargo_volume" price="10000" quantity="1" mass=".01" volume="1"/>
 
 		</Category>
