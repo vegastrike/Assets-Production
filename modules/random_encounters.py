@@ -107,7 +107,7 @@ class random_encounters:
       else:
         localfaction = faction_ships.get_friend_of(localfaction)
       if (len(near_faction)>0):
-        if (i==0 and vsrandom.random()<.9):
+        if (i==0 and vsrandom.random()<(.3+(.4*VS.GetDifficulty()))):
           localfaction=near_faction
           gen_num_ships*=3
       numship= vsrandom.randrange(1,int(gen_num_ships)+1)

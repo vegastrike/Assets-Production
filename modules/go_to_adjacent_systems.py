@@ -16,7 +16,7 @@ class go_to_adjacent_systems:
   def ChangeObjective(self,newind):
       VS.setObjective(self.obj,"Jump to the system named %s" % (self.jumps[newind]))
   
-  def __init__ (self,you, numsystemsaway,jumps=()):
+  def __init__ (self,you, numsystemsaway,jumps=(),preffaction=''):
     self.arrivedsys=0
     self.jumps=()
     self.destination=""
@@ -26,7 +26,7 @@ class go_to_adjacent_systems:
     sys=VS.getSystemFile()
     if len(jumps)>0:
       sys=jumps[-1] 
-    (self.destination,self.jumps)=universe.getAdjacentSystems(sys,numsystemsaway,jumps)
+    (self.destination,self.jumps)=universe.getAdjacentSystems(sys,numsystemsaway,jumps,preffaction)
     if (len(self.jumps)>0):
       self.obj=VS.addObjective("")
       self.com=(1.0/float(len(self.jumps)))

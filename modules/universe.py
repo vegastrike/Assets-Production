@@ -49,19 +49,28 @@ def setFirstSaveData(player,key,val):
     else:
         Director.pushSaveData(player,key,val)
 
-def getAdjacentSystems (currentsystem, sysaway, jumps=()):
+def getAdjacentSystems (currentsystem, sysaway, jumps=(),preferredfaction=''):
     """returns a tuple in the format ("[lastsystem]",(system1,system2,system3,...))"""
+    if preferredfaction=='':
+        preferredfaction=VS.GetGalaxyProperty(currentsystem,"faction")
     max=VS.GetNumAdjacentSystems(currentsystem)
     if ((sysaway<=0) or (max<=0)):
 #      _io.message (1,"game","all","Your final destination is %s" % (currentsystem))
       return (currentsystem,jumps)
     else:
-      for i in range (10):
-        nextsystem=VS.GetAdjacentSystem(currentsystem,vsrandom.randrange(0,max))
-        if (not (nextsystem in jumps) and (not (nextsystem == VS.getSystemFile()))):
-          break
-      else:
+      syslist=[]
+      numadj=VS.GetNumAdjacentSystems(currentsystem)
+      for i in range(numadj):
+        cursys=VS.GetAdjacentSystem(currentsystem,i)
+        if preferredfaction!=None:
+          if VS.GetGalaxyProperty(cursys,"faction")!=preferredfaction:
+            continue
+        if ((cursys in jumps) or (cursys == VS.getSystemFile())):
+          continue
+        syslist.append(cursys)
+      if not len(syslist):
         return getAdjacentSystems(currentsystem,0,jumps)
+      nextsystem=syslist[vsrandom.randrange(0,max)]
 #      _io.message (1,"game","all","Jump from %s to %s." % (currentsystem,nextsystem))
       return getAdjacentSystems(nextsystem,sysaway-1,jumps+(nextsystem,))
   
