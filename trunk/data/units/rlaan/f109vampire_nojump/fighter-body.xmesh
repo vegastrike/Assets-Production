@@ -1,4 +1,4 @@
-<Mesh animation="ship.ani" scale="0.100000">
+<Mesh animation="rlaan.ani" scale="0.100000">
 <Points>
 	<Point>
 		<Location x="-60.000000" y="4.843157" z="70.000000"/>
