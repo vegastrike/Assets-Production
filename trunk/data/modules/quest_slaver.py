@@ -23,7 +23,6 @@ class quest_slaver_factory (quest.quest_factory):
     def __init__ (self):
         quest.quest_factory.__init__ (self,"quest_slaver")
     def precondition(self,playernum):
-        ret= quest.findQuest(playernum,'slaver_guild')
         return 1
     def create (self):
         return quest_slaver()

@@ -5,11 +5,19 @@ import quest_racene
 import quest_disappear
 import quest_rlaan_spy
 import quest_slaver
+import quest_shipyard_bomb
+import quest_abu_dhabi
+import quest_rogue_militia
+import quest_teleport
 adventures = {"gemini_sector/delta_prime":quest_drone.quest_drone_factory(),
               "enigma_sector/racene":quest_racene.quest_racene_factory(),
               "enigma_sector/axis":quest_disappear.quest_disappear_factory(),
               "enigma_sector/novaya_kiev":quest_rlaan_spy.quest_rlaan_spy_factory(),
-              "enigma_sector/rigel":quest_slaver.quest_slaver_factory()}
+              "enigma_sector/rigel":quest_slaver.quest_slaver_factory(),
+              "sol_sector/sirius":quest_abu_dhabi.quest_abu_dhabi_factory(),
+              "sol_sector/alpha_centauri":quest_shipyard_bomb.quest_shipyard_bomb_factory(),
+              "enigma_sector/heinlein":quest_rogue_militia.quest_rogue_militia_factory(),
+              "enigma_sector/enigma":quest_teleport.quest_teleport_factory()}
 
 persistent_adventures = [quest_drone.quest_drone_factory()]
 

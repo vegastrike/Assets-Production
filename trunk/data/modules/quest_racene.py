@@ -44,6 +44,9 @@ class quest_racene (quest.quest):
                 VS.IOmessage (0,"game","all","[Computer] Large energy release detected...")
                 VS.IOmessage (0,"game","all","[Computer] Aera Starbase destroyed!")
                 VS.IOmessage (0,"game","all","[Computer] Star Confederacy Starships detected on far side of planet!")
+                VS.IOmessage (5,"game","all","[Computer] Message from Rescue Fleet")
+                VS.IOmessage (6,"RescueFleet","all","Thank you for your help, privateer...we owe our victory to your cunning kill of those scouts.  We offer you 24,000 credits for this critical act!")
+                playa.addCredits (24000)                
                 self.removeQuest()
                 return 0
         return 1
@@ -53,6 +56,7 @@ class quest_racene_factory (quest.quest_factory):
         quest.quest_factory.__init__ (self,"quest_racene")
     def precondition(self,playernum):
         print 'precondition'
+        return 1
         return quest.findQuest(playernum,'racene_star_intro') and quest.notLoadedQuest(playernum,'racene_star_loss')
     def create (self):
         return quest_racene()

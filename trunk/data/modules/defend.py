@@ -24,6 +24,9 @@ class defend (Director.Mission):
           self.defend_base = defend_base
           self.faction = factionname
 	  self.escdist = escape_distance
+          minsigdist=unit.minimumSigDistApart()
+          if (minsigdist*.5<self.escdist):
+              self.escdist = minsigdist
 	  self.cred=creds
 	  self.quantity=enemyquantity
 	  self.distance_from_base=distance_from_base
