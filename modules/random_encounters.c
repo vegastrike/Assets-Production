@@ -3,14 +3,22 @@ module random_encounters {
   int last_ship;
   float significant_distance;
   float detection_distance;
+  float generation_distance;
+  int min_num_ships;//the number of ships that have to be there or else more will be made
+  int gen_num_ships;//the num ships to be made
+  float capship_prob;//probability a capship will be there
   bool curmode;//are we in battle mode (true) or cruise mode (false)
   bool lastmode;//were we in battle mode (true) or cruise mode(false)
-  void init(float sigdis, float detectiondis){
+  void init(float sigdis, float detectiondis, float gendis, int minnships, int gennships, float capprob){
     detection_distance = detectiondis;
     significant_distance = sigdis;
     last_ship=0;
     curmode=false;
     lastmode=false;
+    generation_distance=gendis;
+    min_num_ships=minnships;
+    gen_num_ships=gennships;
+    capship_prob=capprob;
   };
   void launch_near (object un) {
     
@@ -70,7 +78,7 @@ module random_encounters {
     if (cur_mode!=last_mode) {
       cur_mode=last_mode;//processed this event; don't process again if in critical zone
       if (!std.isNull(un)) {
-	if (!atLeastNInsignificantUnitsNear (unit,2)) {
+	if (!atLeastNInsignificantUnitsNear (unit,min_num_ships)) {
 	  //determine whether to launch more ships next to significant thing based on ships in that range  
 	  launch_near (unit);
 	} 
