@@ -458,11 +458,12 @@ def minIndex (vals,indices):
 	return 0
 
 def launchBaseOrbit(type,faction,loc,orbitradius,orbitspeed,unit):
+	#orbitradius*=2
 	import Vector
 	import dynamic_universe
-	R = Vector.Vector(vsrandom.uniform(.5*orbitradius,orbitradius),
-					  vsrandom.uniform(.5*orbitradius,orbitradius),
-					  vsrandom.uniform(.5*orbitradius,orbitradius))
+	R = Vector.Vector(vsrandom.uniform(1.25*orbitradius,orbitradius),
+					  vsrandom.uniform(1.25*orbitradius,orbitradius),
+					  vsrandom.uniform(1.25*orbitradius,orbitradius))
 	RMag = Vector.Mag(R)
 	T = Vector.Vector(vsrandom.uniform(.5*orbitradius,orbitradius),
 					  vsrandom.uniform(.75*orbitradius,.85*orbitradius),
@@ -470,7 +471,7 @@ def launchBaseOrbit(type,faction,loc,orbitradius,orbitspeed,unit):
 	S = Vector.Cross (T,R)
 	
 	S = Vector.Scale(S,
-					 vsrandom.uniform (.4*orbitradius,orbitradius)
+					 vsrandom.uniform (1.5*orbitradius,orbitradius)
 					 /Vector.Mag(S))
 	SMag = Vector.Mag(S)	
 	bas=VS.launch("Base",type,faction,"unit","default",1,1,Vector.Add(loc,R),'')
