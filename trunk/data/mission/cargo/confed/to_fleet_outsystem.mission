@@ -19,7 +19,13 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
         </flightgroups>
-	<module name="director">
+	<python>
+import cargo_mission
+newmission = cargo_mission.initrandom ('confed', 1, 1950, 1, 1, 3, 1200, '')
+newmission=0
+
+</python>
+	<madule name="director">
 		<import name="cargo_mission"/>
 		<script name="initbriefing">
 			<exec module="cargo_mission" name="initbriefing">
