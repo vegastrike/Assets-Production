@@ -56,11 +56,13 @@ module contraband_mission {
 		object str=_string.new();
 		object name=(_unit.getName(you));
 		_io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
+		_string.delete(name);
 		_io.message (1,"game","all",str);
 		_io.sprintf(str,"We heard that there is a lot of %s cargo being",cargoname);
 		_io.message (2,"game","all",str);
 		name=(_unit.getName(jump));
 		_io.sprintf(str,"transported illegally into the %s system.",name);
+		_string.delete(name);
 		_io.message (3,"game","all",str);
 		_io.message (4,"game","all","Guard that jump point for the cargo and");
 		_io.message (5,"game","all","destroy anyone with the cargo.  Destroying");
