@@ -6,7 +6,7 @@ module escort_mission {
   import random;
   import launch;
 
-
+  object piratesstring;
   object youcontainer;
   object escortee;
   object faction;
@@ -42,6 +42,8 @@ module escort_mission {
     _unit.setName(esc,"Freighter");
     _unit.setTarget (esc,jumppoint);
     _unit.Jump(esc);
+    _io.message (0,"game","all","Freighter to all available craft.");
+    _io.message (0,"game","all","We are under attack and require aid!");
     escortee=_unit.getContainer (esc);
     stage=1;
   };
@@ -51,6 +53,11 @@ module escort_mission {
     object un = launch.launch_wave_around_unit ("base",faction,capname,"default",1,distfrombase,esc);
     basecontainer = _unit.getContainer (un);
     stage=2;
+    object str =_string.new();
+    object nam =_unit.getName(un);
+    _io.sprintf (str,"This is the %s starship, %s.  Your orders are to ensure that our Freighter arrives here in tact!",faction, nam);
+    _io.message (0,"game","all",str);
+    _string.delete (str);
   };
   bool ReadyForStage2() {
     object un =_unit.getUnit(other_system_comp);
@@ -65,6 +72,8 @@ module escort_mission {
   void init (int factionname, int missiondifficulty, float our_dist_from_jump, float dist_from_jump, float distance_from_base, float creds, float enemy_time, bool AllInThisSystem) {
     
 	  faction_ships.init();
+	  piratesstring = _string.new();
+	  _io.sprintf (piratesstring,"pirates");
 	  intra_system=AllInThisSystem;
 	  enemytime=enemy_time;
 	  my_timer=_std.getGameTime()-enemy_time;//will start with enemies;
@@ -97,8 +106,11 @@ module escort_mission {
 	    object jnam=_unit.getName (destpoint);
 	    _io.sprintf(str,"%s jump point. Requires assistance",jnam);
 	    _io.message (2,"game","all",str);
-	    _io.sprintf(str,"You must see her to our capitol starship on the other side.");
-	    _io.message (3,"game","all",str);
+	    if (!intra_system) {
+
+	      _io.sprintf(str,"You must see her to our capitol starship on the other side.");
+	      _io.message (3,"game","all",str);
+	    }
 	    if (missiondifficulty>1) {
 	      _io.message (4,"game","all","Do not falter here. We will not take failure lightly.");
 	    }
@@ -145,10 +157,18 @@ module escort_mission {
 	      object un;
 	      while (i<difficulty) {
 		un=faction_ships.getRandomFighter(faction);
-		object newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 1000.0,play);
+		object newunit=launch.launch_wave_around_unit("Shadow", faction, un, "default", 1, 1000.0,play);
 		_unit.setTarget(newunit,play);
 		i=i+1;
 		
+	      }
+	      if (stage==2) {
+		if (!_std.isNull(basecontainer)) {
+		  object bas = _unit.getUnitFromContainer (basecontainer);
+		  if (!_std.isNull(bas)) {
+		    _unit.setTarget (bas,play);
+		  }
+		}
 	      }
 	    }
 	    _std.terminateMission(false);
@@ -162,12 +182,16 @@ module escort_mission {
 	  }//make sure escort stays on target
 	  float mtime = _std.getGameTime();
 	  if ((mtime-my_timer)>enemytime) {
-	    if (false) {
+	    object launched;
+	    if (_string.equal(piratesstring,faction)) {
 	      object randomtype = faction_ships.getRandomFighter ("confed");
-	      launch.launch_wave_around_unit("Shadow","confed",randomtype,"default",difficulty+1,4000.0,esc);
+	      launched = launch.launch_wave_around_unit("XShadowX","confed",randomtype,"default",difficulty+1,4000.0,esc);
 	    }else {
 	      object randtype = faction_ships.getRandomFighterInt(random.randomint(0,faction_ships.getMaxFactions()-1));
-	      launch.launch_wave_around_unit ("Shadow","pirates",randtype,"default",difficulty+1,4500.0,esc);
+	      launched = launch.launch_wave_around_unit ("XShadowX","pirates",randtype,"default",difficulty+1,4500.0,esc);
+	    }
+	    if (!_std.isNull (launched)) {
+	      _unit.setTarget(launched,esc);
 	    }
 	    my_timer = mtime;	    
 	  }
