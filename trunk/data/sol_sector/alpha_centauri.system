@@ -1,4 +1,4 @@
-<system name="AlphaCentauri" background="backgrounds/lightgreen" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
+<system name="AlphaCentauri" background="backgrounds/lightgreen" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0" scalesystem="100">
 <Light>
 <ambient red=".3" green=".3" blue=".3"/>
 <diffuse red=".7" green=".7" blue=".7"/>
