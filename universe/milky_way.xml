@@ -3,10 +3,10 @@
 		<sector name="unknown_sector">
 			<sector name="min">
 				<var name="sun_radius" value="5000"/>
-				<var name="compactness" value="1.5"/>
+				<var name="compactness" value="1.4"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="0"/>
-				<var name="num_planets" value="1"/>
+				<var name="num_planets" value="0"/>
 				<var name="num_moons" value="0"/>
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="true"/>
@@ -29,7 +29,7 @@
 				<var name="sun_radius" value="50000"/>
 				<var name="compactness" value="2.2"/>
 				<var name="num_stars" value="2"/>
-				<var name="num_gas_giants" value="3"/>
+				<var name="num_gas_giants" value="4"/>
 				<var name="num_planets" value="10"/>
 				<var name="num_moons" value="10"/>
 				<var name="nebulae"   value="true"/>
