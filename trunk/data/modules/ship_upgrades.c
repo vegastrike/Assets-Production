@@ -143,7 +143,8 @@ module ship_upgrades {
     mylist = GetRandomArmor();
     creds =upgradeHelper (un,mylist,0,creds,false);
     inc=0;
-    while (creds>500.0) {
+    int i=0;
+    while ((creds>500.0)&&(i<100)) {
       if (inc<2) {
         mylist=GetRandomWeapon(diff);
       }else if (inc==2) {
@@ -156,6 +157,7 @@ module ship_upgrades {
       _olist.delete(mylist);
       curmount=curmount+1;
       inc = inc+1;
+      i=i+1;
       if (inc>5) {
 	inc =0;
       }
