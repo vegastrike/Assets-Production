@@ -1,0 +1,4 @@
+<ACCOUNTS>
+	<PLAYER name="test1"	password="test1" />
+	<PLAYER name="test2"	password="test2" />
+</ACCOUNTS>
