@@ -5,11 +5,11 @@
 
 <Thrust> 
 	<Engine Afterburner="1976.80"
-		  Forward="19760.60"
-		  Retro="197.40"
-		  Left="197.90"
-		  Right="197.90"
-		  Top="197.90"
+		  Forward="497.60"
+		  Retro="497.40"
+		  Left="497.90"
+		  Right="497.90"
+		  Top="497.90"
 		  Bottom="197.90"/>
 			<Maneuver yaw="120" pitch="120" roll="150"/>
 
@@ -19,9 +19,9 @@
 	<Hull strength="12"/>
 	<Cloak cloakglass="1" cloakmin=".25" cloakrate=".8" cloakenergy="0"/>
 </Defense>
+<!-- Capship missile is _slow_, that's what the cloak is for. And it has weak engine, so you can see it accelerate. Also it's human's strongest missile, not Aera turret ammo :{ -->
 <Stats mass="5.00" momentofinertia="5" fuel="50000"></Stats>
-
-<Computer yaw=".8" pitch=".8" roll=".10" afterburner="2000" maxspeed="2000"/>
+<Computer yaw="1.8" pitch="1.8" roll=".70" afterburner="500" maxspeed="300"/>
 <Energy>
 	<Reactor recharge="10"
 		   limit="100"/>
