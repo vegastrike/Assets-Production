@@ -33,9 +33,10 @@
   Section "Start Menu Shortcuts"
     CreateDirectory "$SMPROGRAMS\Vega Strike\0.2.9"
     CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Vega Strike Launcher.lnk" "$INSTDIR\Launcher.exe" "" "$INSTDIR\Launcher.exe" 0
-    CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Setup.lnk" "$INSTDIR\setup.exe" "" "$INSTDIR\setup.exe" 0
-    CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
-    CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Auto Updater.lnk" "$INSTDIR\AutoUpdate.bat" "" "$INSTDIR\AutoUpdate.bat" 0
+    CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Vega Strike Manual.lnk" "$INSTDIR\readme.url" "" "$INSTDIR\readme.url" 0
+    CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Vega Strike Setup.lnk" "$INSTDIR\setup.exe" "" "$INSTDIR\setup.exe" 0
+    CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Vega Strike Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
+    CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Vega Strike Updater.lnk" "$INSTDIR\AutoUpdate.bat" "" "$INSTDIR\AutoUpdate.bat" 0
   SectionEnd
 
 ;Other Functions - this one is what to do once install is completed
@@ -61,7 +62,7 @@ Section "Uninstall"
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\vegastrike\0.2.9\"
   DeleteRegKey HKLM SOFTWARE\VegaStrike\0.2.9\
   Delete "$SMPROGRAMS\Vega Strike\0.2.9\*.*"
-  RMDir "$SMPROGRAMS\Vega Strike\0.2.9\"
+  RMDir /r "$SMPROGRAMS\Vega Strike\0.2.9\"
   RMDir /r "$INSTDIR"
 SectionEnd
 
