@@ -24,10 +24,12 @@ class TrafficAI(VS.PythonAI):
 	if (parent and un):
 		if (isCar (un)):
 			posdiff=SafeNorm(Sub (un.Position(),parent.Position())) 			#look 1 second ahead
-			distInOneSec = Dot (Sub(parent.GetVelocity(),un.GetVelocity()),posdiff)
-			if (distInOneSec<un.getDistance(parent)):
+#			distInOneSec = Dot (Sub(parent.GetVelocity(),un.GetVelocity()),posdiff)
+			distInOneSec = Dot (parent.GetVelocity(),posdiff)
+			if (distInOneSec>un.getDistance(parent)):
 				self.restoreCruisingSpeed(0)
 				self.stopping=1
+				self.shipiter=-1 #-1 + 1 =0
 				
 		self.shipiter +=1
 	else:
