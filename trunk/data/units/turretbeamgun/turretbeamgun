@@ -2,11 +2,8 @@
 
 <Meshfile file="turretbeamgun.xmesh"/>
 
-       
-
-<!-- new elements added -->
-<Mount weapon="LR_Beam" size="heavy" x="1.875000" y="-0.125000" z="9.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>
-<Mount weapon="LR_Beam" size="heavy" x="-1.875000" y="-0.125000" z="9.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.032845" qj="-0.999460" qk="0.000000"/>
+	<Mount weapon="LR_Beam" size="capship-medium" x="1.875000" y="-0.125000" z="9.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>
+	<Mount weapon="LR_Beam" size="capship-medium" x="-1.875000" y="-0.125000" z="9.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.032845" qj="-0.999460" qk="0.000000"/>
 
 		<Thrust>
 		<Engine Afterburner="000000" Forward="000000" Retro="0000" Left="0000" Right="0000" Top="00000" Bottom="000000"/>
