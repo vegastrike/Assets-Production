@@ -1216,7 +1216,7 @@ stone"/>
 			</sector>
 			<sector name="hawkins">
 				<var name="sun_radius" value="27500"/>
-			      <var name="faction" value="kilrathi"/> 
+			      <var name="faction" value="rlaan"/> 
 				<var name="compactness" value="1.6"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="1"/>
@@ -1230,28 +1230,28 @@ stone"/>
 				<var name="data" value="2354"/>
 			</sector>
 			<sector name="ndele">
-				<var name="faction" value="kilrathi"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="epsilon_sector/khotan mshrak_sector/tproknor"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2068"/>
 			</sector>
 			<sector name="knrek">
-				<var name="faction" value="kilrathi"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="vega_sector/knmeth"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2386"/>
 			</sector>
 			<sector name="knmeth">
-				<var name="faction" value="kilrathi"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="vega_sector/knrek rlaa_sector/hhrass_tgor"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2068"/>
 			</sector>
 			<sector name="gwrikath">
-				<var name="faction" value="kilrathi"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="rlaa_sector/gwriss"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
@@ -1259,7 +1259,7 @@ stone"/>
 			</sector>
 			<sector name="hyperion">
 				<var name="sun_radius" value="4200"/>
-			      <var name="faction" value="kilrathi"/> 
+			      <var name="faction" value="rlaan"/> 
 				<var name="compactness" value="3.7"/>
 				<var name="num_stars" value="2"/>
 				<var name="num_gas_giants" value="1"/>
@@ -1274,7 +1274,7 @@ stone"/>
 			</sector>
 			<sector name="freya">
 				<var name="sun_radius" value="2100"/>
-			      <var name="faction" value="kilrathi"/> 
+			      <var name="faction" value="rlaan"/> 
 				<var name="compactness" value="1.6"/>
 				<var name="num_stars" value="0"/>
 				<var name="num_gas_giants" value="1"/>
@@ -1282,7 +1282,7 @@ stone"/>
 				<var name="num_moons" value="1"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="false"/>
-				<var name="jumps" value="vega_sector/hyperion vega_Sector/alcor vega_sector/tartarus kilrath_sector/ktkhur"/>
+				<var name="jumps" value="vega_sector/hyperion vega_Sector/alcor vega_sector/tartarus rlaa_sector/ktkhur"/>
 				<var name="num_natural_phenomena" value="0"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1351"/>
@@ -1295,14 +1295,14 @@ stone"/>
 				<var name="data" value="2068"/>
 			</sector>
 			<sector name="ardai">
-				<var name="faction" value="kilrathi"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="vega_sector/kirssth"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1382"/>
 			</sector>
 			<sector name="krissth">
-				<var name="faction" value="kilrathi"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="vega_sector/ardai rlaa_sector/knkir"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
@@ -2065,7 +2065,7 @@ stone"/>
 			</sector>
 			<sector name="ghorah_khar">
 				<var name="sun_radius" value="27000"/>
-			      <var name="faction" value="kilrathi"/> 
+			      <var name="faction" value="rlaan"/> 
 				<var name="compactness" value="1.6"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="0"/>
@@ -2173,7 +2173,7 @@ stone"/>
 			</sector>
 			<sector name="ktithrak_mang">
 				<var name="sun_radius" value="43000"/>
-			      <var name="faction" value="kilrathi"/> 
+			      <var name="faction" value="rlaan"/> 
 				<var name="compactness" value="2.5"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="1"/>
@@ -2187,14 +2187,14 @@ stone"/>
 				<var name="data" value="1916"/>
 			</sector>
 			<sector name="karakh">
-				<var name="faction" value="kilrathi"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="enigma_sector/ktithrak_mang epsilon_sector/shariha"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2064"/>
 			</sector>
 			<sector name="trkharna">
-				<var name="faction" value="kilrathi"/> 
+				<var name="faction" value="rlaan"/> 
 				<var name="jumps" value="enigma_sector/tithrak_mang gemini_sector/repleetah epsilon_sector/tvx_aq"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
