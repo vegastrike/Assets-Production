@@ -3,6 +3,7 @@
 		<sector name="unknown_sector">
 			<sector name="min">
 				<var name="sun_radius" value="5000"/>
+				<var name="compactness" value="1.5"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="0"/>
 				<var name="num_planets" value="1"/>
@@ -19,6 +20,7 @@
 			</sector>			
 			<sector name="max">
 				<var name="sun_radius" value="50000"/>
+				<var name="compactness" value="2.2"/>
 				<var name="num_stars" value="2"/>
 				<var name="num_gas_giants" value="3"/>
 				<var name="num_planets" value="10"/>
@@ -37,6 +39,7 @@
 		<sector name="vega_sector">
 			<sector name="proxima">
 				<var name="sun_radius" value="22000"/>
+				<var name="compactness" value="1.6"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="2"/>
 				<var name="num_planets" value="4"/>
