@@ -42,7 +42,7 @@ def PlayMusik():
 		while (target):
 			ftmp = 2*un.getRelation(target)
 			nam=target.getName().lower()
-			if 'afield'==nam[:6] or 'asteroid'==nam[:8]:
+			if un.getSignificantDistance(target)<=2*target.rSize() and ('afield'==nam[:6] or 'asteroid'==nam[:8]):
 				asteroid=True
 			if (ftmp<0 and un.getDistance(target)<HOSTILE_AUTODIST):
 				unlist.append(un.getFactionName())
@@ -50,8 +50,9 @@ def PlayMusik():
 			iter.advance()
 			target=iter.current()
 		if (perfect):
-			if asteroid and asteroidmisic!=-1:
+			if asteroid and asteroidmisic!=-1 and vsrandom.random()<.7:
 				VS.musicPlayList(asteroidmisic)
+				return
 			sys=VS.getSystemFile()
 			fact=VS.GetGalaxyProperty(sys,"faction")
 			if vsrandom.random()<.5:
