@@ -1010,7 +1010,6 @@
 	</Point>
 	<Point>
 		<Location x="-0.183868" y="0.208515" z="0.538098"/>
-		<Normal i="nan" j="nan" k="nan"/>
 	</Point>
 	<Point>
 		<Location x="-0.183998" y="0.208515" z="0.538098"/>
@@ -1018,7 +1017,6 @@
 	</Point>
 	<Point>
 		<Location x="-0.216034" y="0.208515" z="0.538098"/>
-		<Normal i="nan" j="nan" k="nan"/>
 	</Point>
 	<Point>
 		<Location x="-0.216131" y="0.208515" z="0.538098"/>
@@ -1050,7 +1048,6 @@
 	</Point>
 	<Point>
 		<Location x="-0.216131" y="0.391485" z="0.538098"/>
-		<Normal i="nan" j="nan" k="nan"/>
 	</Point>
 	<Point>
 		<Location x="-0.183965" y="0.391485" z="0.538098"/>

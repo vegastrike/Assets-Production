@@ -9,7 +9,7 @@
 	<Sound> </Sound>
 	<Defense>
 		<Armor front="100" right="80" left="80" back="100"/>
-		<Shields front="40" right="30" left="30" back="35" recharge="14.166667"/>
+		<Shields front="40" right="30" left="30" back="35" recharge="34.166667"/>
 		<Hull strength="2500"/>
 	</Defense>
 	<Stats mass="14" momentofinertia="14" fuel="20000"></Stats>
