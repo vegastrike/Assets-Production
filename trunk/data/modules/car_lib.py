@@ -42,7 +42,7 @@ class Environment(Director.Mission):
 		if (playa):
 			if (playa!=un):
 				posdiff = playa.Position()[2]-un.Position()[2]
-				if ((posdiff*(2*(posdiff>0)-1))>2500):
+				if ((posdiff*(2*(posdiff>0)-1))>1500):
 					R = un.GetOrientation ()[2]
 	
 					if (posdiff*R[2]<0):
