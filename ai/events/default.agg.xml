@@ -1,5 +1,5 @@
 <AggressiveAI time="7">
-<distance max=".03" script="++turnaway.xml"/>
+<distance max=".03" script="++shelton-slide.xml"/>
 <!-- distance less than .1-->
 <distance min="0.03" max=".2"> 
   <threat max=".2" script="++afterburnerslide.xml">
