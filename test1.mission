@@ -3,11 +3,11 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="sol" />
+		<var name="system" value="blank" />
 		<var name="description" value="4vs4.txt" />
 	</variables>
         <flightgroups>
-                <flightgroup name="green" faction="confed" type="hornet" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="green" faction="confed" type="aeon" ainame="default" waves="1" nr_ships="1">
 			<pos x="10000.0" y="0.0" z="3000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
@@ -16,7 +16,7 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
 
-                <flightgroup name="blue" faction="confed" type="carrier" ainame="default" waves="2" nr_ships="1">
+                <flightgroup name="blue" faction="confed" type="rapier" ainame="default" waves="2" nr_ships="1">
 			<pos  offset="green" x="100.0" y="0.0" z="0.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
