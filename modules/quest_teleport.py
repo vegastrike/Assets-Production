@@ -34,11 +34,14 @@ class quest_teleport (quest.quest):
         VS.playAnimation("warp.ani",targetpos,size)        
         VS.playSound("cloak.wav",targetpos,(1,0,0))
     def teleportPlayer(self,un):
-        if (random.randrange(0,20)==0):
-            (adj,test) = universe.getAdjacentSystems(self.sysfile,1)
-            un.JumpTo(adj)
+        if (un.DockedOrDocking()):
+            print "YOWWW"
         else:
-            self.teleportNPC (un)
+            if (random.randrange(0,3)==0):
+                (adj,test) = universe.getAdjacentSystems(self.sysfile,1)
+                un.JumpTo(adj)
+            else:
+                self.teleportNPC (un)
     def teleportUnit (self,un):
         nam = un.getName()
         if ((nam.find ("lackhole")!=-1) or  un.isSun()):
@@ -50,7 +53,7 @@ class quest_teleport (quest.quest):
     def Execute (self):
         if (VS.getSystemFile()==self.sysfile):
             mytime = VS.GetGameTime();
-            if (mytime-self.timer>.5):
+            if (mytime-self.timer>10):
                 self.timer=mytime
                 numunits=VS.getNumUnits()
                 if (numunits>0):
