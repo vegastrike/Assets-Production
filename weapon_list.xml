@@ -257,7 +257,7 @@
 <Bolt name="Gauss" mountsize="special">
 <Energy rate="0" stability="0" refire=".1">
 </Energy>
-<Damage rate="1" phasedamage="2" longrange="1">
+<Damage rate="1" phasedamage="1" longrange="1">
 </Damage>
 <Distance speed="1200" radialspeed=".8" radius=".1" pulsespeed="15" range="800" volume="8" >
 </Distance>
@@ -279,9 +279,9 @@
 <Bolt name="HephaestusPointDefenseCannon" mountsize="special">
 <Energy rate="0" stability="0" refire=".05">
 </Energy>
-<Damage rate="2" longrange="1">
+<Damage rate="2" phasedamage = "1" longrange="1">
 </Damage>
-<Distance speed="800" radialspeed=".8" radius=".5" pulsespeed="15" range="390" volume="1" >
+<Distance speed="2600" radialspeed=".8" radius=".5" pulsespeed="15" range="1200" volume="1" >
 </Distance>
 <Appearance file="weapons/graybolt.png" soundwav="MASS.WAV" r=".3" g=".5" b=".95" a="1" >
 </Appearance>
@@ -471,8 +471,8 @@
 <Missile name="AdvTorpedo" mountsize="heavy-missile">
 <Energy rate="0" refire="3.5" locktime="25">
 </Energy>
-<Damage rate="150" phasedamage="350" longrange="1" radius="150" radialspeed="80" >
-</Damage>c
+<Damage rate="350" phasedamage="350" longrange="1" radius="150" radialspeed="80" >
+</Damage>
 <Distance speed="170" radialspeed=".8" radius="1.9" pulsespeed="15" range="6000" detonationrange="5" volume="250">
 </Distance>
 <Appearance file="torpedo" soundwav="missile_3.wav">
@@ -559,7 +559,7 @@
 </Bolt>
 
 <Beam name="LR_Beam" mountsize="capship-medium"> 
-<Energy rate="3" stability="14" refire="8">
+<Energy rate="3" stability="14" refire="3">
 </Energy>
 <Damage rate="350" longrange=".9">
 </Damage>
@@ -570,7 +570,7 @@
 </Beam>
 
 <Beam name="LR_BeamHvy" mountsize="capship-heavy"> 
-<Energy rate="5" stability="16" refire="10">
+<Energy rate="5" stability="16" refire="3">
 </Energy>
 <Damage rate="600" longrange=".7">
 </Damage>
@@ -673,7 +673,7 @@
 
 
 <Beam name="LR_PminusBeam" mountsize="capship-heavy"> 
-<Energy rate="5" stability="16" refire="10">
+<Energy rate="5" stability="16" refire="4">
 </Energy>
 <Damage rate="1200" longrange=".9">
 </Damage>
