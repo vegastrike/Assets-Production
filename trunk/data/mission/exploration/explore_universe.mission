@@ -14,7 +14,7 @@
 <!--		<var name="savegame" value="explore_universe_nova" />-->
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="newdrone" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="1">
 			<pos x="20400" y="-35400" z="24700.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
@@ -32,23 +32,24 @@
 		</flightgroup>
         </flightgroups>
 	<module name="director">
-		<import name="random_encounters"/>
+		<import name="privateer"/>
 		<script name="initgame">
-			<exec module="random_encounters" name="init">
-			<const type="float" value="12000"/><!-- significant distance-->
-			<const type="float" value="12000"/><!-- detection distance-->
-			<const type="float" value="5000"/><!-- generation distance -->
+			<exec module="privateer" name="init">
+			<const type="float" value="1700.0"/><!-- significant distance-->
+			<const type="float" value="8000.0"/><!-- detection distance-->
+			<const type="float" value="500.0"/><!-- generation distance -->
 			<const type="int" value="3"/> <!-- min ships -->
 			<const type="int" value="2"/><!--gen ships-->
+			<const type="float" value="0.6"/><!--fighter prob-->
 			<const type="float" value="0.1"/><!--capship prob-->
-
+			<const type="float" value="20000.0"/><!--garbage collection distance-->
 			</exec>
 		</script>
 		<script name="gameloop">
-			<exec module="random_encounters" name="loop"/>
+			<exec module="privateer" name="loop"/>
 		</script>
 		<script name="initstarsystem">
-			<exec name="initstarsystem" module="random_encounters" />
+			<exec name="initstarsystem" module="privateer" />
 		</script>
 
 	</module>
