@@ -15,7 +15,7 @@
 	</variables>
 
         <flightgroups>
-            <flightgroup name="navajo" faction="confed" type="puma" ainame="borken.py" waves="1" nr_ships="1">
+            <flightgroup name="navajo" faction="confed" type="avenger" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="-1000" y="30000" z="30000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		    </flightgroup>
