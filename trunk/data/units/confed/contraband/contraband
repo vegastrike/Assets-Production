@@ -1,39 +1,12 @@
 <Unit>	
-	<Defense>
-		<Armor front="0" right="00" left="00" back="00"/>
-		<Shields front="0.000000" back="0.000000" recharge="0.000000" leak="100"/>
-		<Hull strength="00.000000"/>
-		<Cloak missing="1" cloakmin="0" cloakrate="0" cloakglass="0" cloakenergy="0"/>
-	</Defense>
-	<Stats mass="0" momentofinertia="0" fuel="0"></Stats>
-	<Computer yaw="0" itts="false" pitch="0" roll="0" afterburner="0" maxspeed="0">
-		<Radar itts="false" color="false" error="0" maxcone="1" range="0"/> 
-	</Computer>
-
-	<Energy afterburnenergy="0">
-		<Reactor recharge="0" limit="0"/>
-	</Energy>
-           	<Jump missing="1" delay="1" jumpenergy="0"/>       
-
-	<Thrust>
-		<Engine Afterburner="0" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
-		<Maneuver yaw="000000" pitch="0" roll="0"/>
-	</Thrust>
 	<Hold volume="100000000000">
 		<Category file="upgrades">
-			<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>	
-			<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
-			<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
-			<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>
+			<Cargo file="experemental_UnknownBeam" price="3980000" quantity="1" mass="29.8" volume="1"/>
+			<Cargo file="experemental_UnknownBolt" price="4860000" quantity="1" mass="27.4" volume="1"/>
+			<Cargo file="experemental_CloakingDevice" price="1380000" quantity="1" mass="18.4" volume="1"/>
+			<Cargo file="experemental_ShieldRegenerator" price="5000000" quantity="1" mass="27.4" volume="1"/>
 		</Category>
-		<Category file="arms">
-			<Cargo file="weapons" price="300" quantity="1" mass=".1" volume="1"/>	
-		</Category>
-		<Category file="food">
-			<Cargo file="foodstuffs" price="200" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="grain" price="100" quantity="1" mass=".01" volume="1"/>
-		</Category>
-		<Category file="ilegal">
+		<Category file="illegal">
 			<Cargo file="tectonic_bomb" price="2450000" quantity="1" mass="250" volume="1"/>
 			<Cargo file="antimater_bomb" price="320000" quantity="1" mass="40" volume="1"/>
 			<Cargo file="cobalt bomb" price="410000" quantity="1" mass="55" volume="1"/>
@@ -41,14 +14,19 @@
 			<Cargo file="bio_weapons" price="860000" quantity="1" mass="4" volume="1"/>
 			<Cargo file="chemical_weapons" price="90000" quantity="1" mass="20" volume="1"/
 			<Cargo file="weather_control" price="140000" quantity="1" mass="120" volume="1"/>
-			<Cargo file="firearms" price="500" quantity="10" mass="2" volume="1"/>>
-			<Cargo file="explosives" price="400" quantity="5" mass=".8" volume="1"/>
-			<Cargo file="weapon_parts" price="9000" quantity="20" mass="10" volume="1"/>
-			<Cargo file="drugs" price="8000" quantity="100" mass=".2" volume="1"/>
-			<Cargo file="bioelectrical_simulators" price="10000" quantity="100" mass="6" volume="1"/>
-			<Cargo file="pleasure_bots" price="400" quantity="5" mass="4" volume="1"/>
+			<Cargo file="firearms" price="500" quantity="1" mass="2" volume="1"/>>
+			<Cargo file="explosives" price="400" quantity="1" mass=".8" volume="1"/>
+			<Cargo file="weapon_parts" price="9000" quantity="1" mass="10" volume="1"/>
+			<Cargo file="drugs" price="8000" quantity="1" mass=".2" volume="1"/>
+			<Cargo file="bioelectrical_simulators" price="10000" quantity="1" mass="6" volume="1"/>
+			<Cargo file="pleasure_bots" price="400" quantity="1" mass="4" volume="1"/>
 			<Cargo file="slaves" price="1350" quantity="1" mass="1.2" volume="1"/>
 			<Cargo file="military_software" price="500" quantity="1" mass=".01" volume="1"/>
+		</Category>
+		<Category file="classified">
+			<Cargo file="classified_military_logs" price="284000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="classified_military_plans" price="598400" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="classified_military_report" price="360000" quantity="1" mass=".05" volume="1"/>
 		</Category>
 	</Hold>
 </Unit>
