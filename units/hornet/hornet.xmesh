@@ -1155,7 +1155,7 @@
 		<Vertex point="49" s="0.475549" t="0.272986"/>
 	</Quadstrip>
 </Polygons>
-<LOD meshfile="hornetLOD.xmesh" size="140"/>
+<LOD meshfile="hornetLOD.xmesh" size="160"/>
 <LOD meshfile="hornetPYR.xmesh" size="40"/>
 
 <Logo type="1" rotate="-3.199997" size="-1.129999" offset="0.010000">
