@@ -84,7 +84,7 @@ module ai_patrol {
     my_order=_std.getCurrentAIOrder();
 
     my_fgid=_unit.getFgID(my_unit);
-    _io.printf("Patrolling ai: %s: mode=%d range=%f Area=",my_fgid,patrol_mode,range);
+    _io.printf("Patrolling ai: %s\n",my_fgid);
     //vec3.print(area);
     //_io.printf("\n");
 

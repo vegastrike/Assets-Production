@@ -256,6 +256,7 @@ module ai_orderlist {
 
       if(_std.isNull(my_flyto_unit)){
 	_io.printf("%s: waypoint %s not found\n",my_fgid,wp_name);
+	return;
       }
       else if(_unit.isJumppoint(my_flyto_unit)){
 	// we have to fly to a jumppoint
@@ -307,79 +308,20 @@ module ai_orderlist {
   // -----------------------------------------------------------
 
   void scanSystem(){
+
+    _unit.scanSystem(my_unit);
+
+    my_nearest_enemy=_unit.scannerNearestEnemy(my_unit);
+    my_nearest_friend=_unit.scannerNearestFriend(my_unit);
+    my_nearest_ship=_unit.scannerNearestShip(my_unit);
+    my_leader=_unit.scannerLeader(my_unit);
+
+    my_nearest_enemy_dist=_unit.scannerNearestEnemyDist(my_unit);
+    my_nearest_friend_dist=_unit.scannerNearestFriendDist(my_unit);
+    my_nearest_ship_dist=_unit.scannerNearestShipDist(my_unit);
+
     my_threat=_unit.getThreat(my_unit);
 
-    int ship_nr=0;
-    float min_enemy_dist=9999999.0;
-    float min_friend_dist=9999999.0;
-    float min_ship_dist=9999999.0;
-    object min_enemy;
-    object min_friend;
-    object min_ship;
-
-    _std.setNull(min_enemy);
-    _std.setNull(min_friend);
-    _std.setNull(min_ship);
-
-    int leader_num=my_fgnum;
-    my_leader=my_unit;
-
-    object unit=_unit.getUnit(ship_nr);
-    
-    while((!_std.isNull(unit))){
-      if(!_std.equal(my_unit,unit)){
-	//	_io.printf("%s: checking ship %d\n",my_fgid,ship_nr);
-	object unit_pos=_unit.getPosition(unit);
-	float dist=_unit.getMinDis(my_unit,unit_pos);
-	float relation=_unit.getRelation(my_unit,unit);
-
-	if(relation<0.0){
-	  //we are enmies
-	  if(dist<min_enemy_dist){
-	    min_enemy_dist=dist;
-	    min_enemy=unit;
-	  }
-	}
-	if(relation>0.0){
-	  //we are friends
-	  if(dist<min_friend_dist){
-	    min_friend_dist=dist;
-	    min_friend=unit;
-	  }
-	  // check for flightgroup leader
-	  object fgname=_unit.getFgName(unit);
-	  if(_string.equal(my_fgname,fgname)){
-	    // it's a ship from our flightgroup
-	    int fgnum=_unit.getFgSubnumber(unit);
-	    if(fgnum<leader_num){
-	      //set this to be our leader
-	      my_leader=unit;
-	      leader_num=fgnum;
-	    }
-	  }
-	}
-	// for all ships
-	if(dist<min_ship_dist){
-	  min_ship_dist=dist;
-	  min_ship=unit;
-	}
-	
-	_olist.delete(unit_pos);
-      }
-      ship_nr=ship_nr+1;
-      unit=_unit.getUnit(ship_nr);
-    }
-
-    my_nearest_enemy_dist=min_enemy_dist;
-    my_nearest_enemy=min_enemy;
-
-    my_nearest_friend_dist=min_friend_dist;
-    my_nearest_friend=min_friend;
-
-    my_nearest_ship_dist=min_ship_dist;
-    my_nearest_ship=min_ship;
-
-    //        _io.printf("%s: system scanned\n",my_fgid);
   };
 
   // -----------------------------------------------------------
