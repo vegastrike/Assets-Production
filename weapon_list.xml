@@ -565,7 +565,7 @@
 </Damage>
 <Distance speed="1100" radialspeed=".8" radius="100" length="8" pulsespeed="18" range="16000" >
 </Distance>
-<Appearance file="weapons/disruptorbeam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a=".6" >
+<Appearance file="weapons/heavylaserbeam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a=".6" >
 </Appearance>
 </Beam>
 
