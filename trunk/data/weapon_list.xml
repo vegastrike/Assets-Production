@@ -638,4 +638,15 @@
 </Appearance>
 </Beam>
 
+<Bolt name="MOUNT_UPGRADE" mountsize="LIGHT"> 
+<Energy rate="1" refire="1">
+</Energy>
+<Damage rate="1" longrange="1">
+</Damage>
+<Distance speed="1" radialspeed="1" radius="1" length="1" pulsespeed="1" range="1" >
+</Distance>
+<Appearance file="weapons/neutrongun.png" r="1" g="1" b="1" a="1" >
+</Appearance>
+</Bolt>
+
 </Weapons>
