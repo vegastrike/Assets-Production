@@ -6,7 +6,7 @@
 </Light>
 
 <Planet name="17-ar" file="sol/sun.png" radius="10000000" x="14594814.00
-0000" y="14594814.000000" z="-14594814.000000"  Red="1" Green="1" Blue="1" ReflectNoLight="true" light="0"/>
+0000" y="00.00" z="-14594814.000000"  Red="1" Green="1" Blue="1" ReflectNoLight="true" light="0"/>
 
 <Light>
 <ambient red=".3" green=".3" blue=".3"/>
