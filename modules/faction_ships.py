@@ -14,6 +14,12 @@ factions = ("confed","aera","rlaan","merchant","retro","pirates","hunter","milit
 factiondict={}
 for i in range(len(factions)):
     factiondict[factions[i]]=i
+siegingfactions={"confed":10,
+				 "aera":10,
+				 "rlaan":10,
+				 "ISO":40,
+				 "retro":100
+				 }
 useBlank = (   0    ,  0   ,   0   ,     1    ,   1   ,   1     ,    1   ,    1    ,  0  ,  0)
 enemies =  ((aera,aera,rlaan,rlaan,retro,pirates,ISO), #confed
             (confed,confed,confed,militia,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,pirates,hunter,merchant,ISO), #aera

@@ -24,6 +24,7 @@ def UpdateCombatTurn():
 			lookorsiege=LookForTrouble (fac)
 		else:
 			if (not Siege(fac)):
+				fg_util.CheckAllShips(fac)		
 				lastfac+=1
 				lookorsiege=1
 		#first look for trouble, then go ahead and simulate all the battles
@@ -42,16 +43,33 @@ def getImportanceOfType (typ):
 	if (faction_ships.isCapital(typ)):
 		return 1
 	return .5
+
+def moveSurroundingCapshipsToSiege(fac,sys):
+	suc=0
+	for i in range (VS.GetNumAdjacentSystems(sys)):
+		asys=VS.GetAdjacentSystem(sys,i)
+		for fg in fg_util.AllFGsInSystem(fac,asys):
+			if fg_util.CapshipInFG(fg,fac):
+				suc=1
+				fg_util.TransferFG(fg,fac,sys)
+	if (not suc):
+		for fg in fg_util.AllFGsInSystem(fac,sys):
+			if (fg_util.CapshipInFG(fg,fac)):
+				suc=1
+	return suc
+
 #returns false if Siege is done going through all its vehicles
 def Siege(fac):
 	global siegenumber
 	global siegenumtimes
 	global siegeprob
-	turns_till_siege_effective=100
+	#	turns_till_siege_effective=100
+	if (not fac in faction_ships.siegingfactions):
+		return 
 	numfg= fg_util.NumAllFlightgroups(fac)
 	if (numfg):
 		if (siegenumber==0):
-			siegeprob = float(numfg)/float(turns_till_siege_effective);
+			siegeprob = float(numfg)/float(faction_ships.siegingfactions[fac]);
 			siegenumtimes = int (siegeprob)
 			if (siegenumtimes==0):
 				siegenumtimes=1
@@ -66,9 +84,12 @@ def Siege(fac):
 				sys = fg_util.FGSystem(fg,fac)
 				enfac=VS.GetGalaxyFaction(sys)
 				fg_util.CheckAllShips(fac)
-				fg_util.CheckAllShips(enfac)				
+				fg_util.CheckAllShips(enfac)
 				if (VS.GetRelation(fac,enfac)<0):#FIXME maybe even less than that
-					if (fg_util.NumFactionFGsInSystem(enfac,sys)==0) and (fg_util.NumFactionFGsInSystem(fac,sys)==0): #If both annihalate each other completely (unlikely but possible)
+					numenemyfg = fg_util.NumFactionFGsInSystem(enfac,sys)
+					numfriendfg = fg_util.NumFactionFGsInSystem(fac,sys)
+					#print 'siegarol enemioes '+str(numenemyfg)+ ' friends '+str(numfriendfg)
+					if (numenemyfg==0 and numfriendfg==0): #If both annihalate each other completely (unlikely but possible)
 						facnum = VS.GetFactionIndex (fac)
 						print 'cehcking started'
 						print "DRAW error "+fg+" sys has "+sys+" has " +str(fg_util.NumFactionFGsInSystem(fac,sys))+" String is "+Director.getSaveString(0,fg_util.MakeStarSystemFGKey(sys),facnum)
@@ -77,11 +98,9 @@ def Siege(fac):
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 
-					elif (fg_util.NumFactionFGsInSystem(enfac,sys)==0):	#If aggressor succeeded
-						VS.SetGalaxyFaction(sys,fac)
+					elif (numenemyfg==0 and (fg_util.CapshipInFG(fg,fac) or moveSurroundingCapshipsToSiege(fac,sys))):	#If aggressor succeeded
 						print fac + ' took over '+ sys + ' originally owned by '+enfac
 						#ok now we have him... while the siege is going on the allies had better initiate the battle--because we're now defending the place...  so that means if the owners are gone this place is ours at this point in time
-
 						fgs = fg_util.FGsInSystem(fac,sys)
 						if (len(fgs)>0):
 							fgs=fgs[0]
@@ -94,10 +113,11 @@ def Siege(fac):
 												#keyword for now Daniel)
 
 						import generate_dyn_universe
-						generate_dyn_universe.AddBasesToSystem(fac,sys)
+						generate_dyn_universe.TakeoverSystem(fac,sys)
 						#HACK, regenerate bases instnatly
 
-					elif (fg_util.NumFactionFGsInSystem(fac,sys)==0):	#If aggressor lost
+					elif (numfriendfg==0):	#If aggressor lost
+						print 'wtf!!'
 						fgs = fg_util.FGsInSystem(enfac,sys)
 						if (len(fgs)>0):
 							fgs=fgs[0]
@@ -181,15 +201,28 @@ def randomMovement(fg,fac):
 	sys=fg_util.FGSystem(fg,fac)
 	if (sys!='nil' and fg!=fg_util.BaseFGInSystemName(sys)):
 		l = universe.getAdjacentSystemList(sys)
+		nthis = fg_util.NumFactionFGsInSystem(fac,sys)
+		suggestednewsys = l[vsrandom.randrange(0,len(l))]
 		if (len(l)):
-			newsys = l[vsrandom.randrange(0,len(l))]
-#			print 'moving '+fg+' from '+sys+' to '+ newsys
-			fg_util.TransferFG( fg,fac,newsys);
+			for i in l:
+				ifac = VS.GetGalaxyFaction(i)
+				if (ifac==fac and nthis > fg_util.NumFactionFGsInSystem(fac,i)):
+					suggestednewsys = i
+				elif (VS.GetRelation(fac,ifac)<0):
+					fg_util.TransferFG(fg,fac,i)
+					return
+			#			print 'moving '+fg+' from '+sys+' to '+ newsys
+			fg_util.TransferFG( fg,fac,suggestednewsys);
 
 def AddFighterTo(fgname,fac):
 	sys = VS.getSystemFile()
+	#print 'add fighter'
 	fg_util.AddShipsToFG (fgname,fac,((faction_ships.getRandomFighter(fac),1),),sys)
-
+	rn = vsrandom.randrange(0,10)
+	sys = fg_util.FGSystem(fgname,fac)
+	if (rn==0 and VS.GetGalaxyFaction(sys)==fac):
+		cap =faction_ships.getRandomCapitol(fac)
+		fg_util.AddShipsToFG(fgname,fac,((cap,1),),sys)
 
 #returns false if done with vehicles
 lftiter=0

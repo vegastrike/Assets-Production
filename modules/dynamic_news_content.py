@@ -108,7 +108,7 @@ all_faction_name_global = {
 		,"dnicks": "Jackboot"
 		,"dnickp": "Fuzz"
 		,"government" : "High Commission"
-		,"possessive" : "police"
+		,"possessive" : "Enforcer's"
 		,"homeworld" : "Earth"
 		,"mstandname" : "Barry Matthews"
 		,"fstandname" : "Jeanette Karoen"

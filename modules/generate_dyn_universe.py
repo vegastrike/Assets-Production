@@ -73,22 +73,42 @@ def AddSysDict (cursys):
 		fg_util.AddShipsToFG (fgname,faction,typenumbertuple,cursys)
 	return i
 
-def Makesys (startingsys):
+
+def ForEachSys (startingsys,functio):
 	systemdict={}
 	global origfgnames
 	origfgnames=fgnames
 	origfglists=fglists
-	systemdict[startingsys]=AddSysDict(startingsys)
+	systemdict[startingsys]=functio(startingsys)
 	todo=getAdjacentSystemList(startingsys)
 	while len(todo):
 		tmptodo=todo.pop(-1)
 		if (not systemdict.has_key(tmptodo)):
 			todo+=getAdjacentSystemList(tmptodo)
-			systemdict[tmptodo]=AddSysDict(tmptodo)
+			systemdict[tmptodo]=functio(tmptodo)
 	return len(systemdict)
+def Makesys (startingsys):
+	ForEachSys(startingsys,AddSysDict)
+
+systemcount={}
+def CountSystems(sys):
+	systemcount[VS.GetGalaxyFaction(sys)]+=1
+def TakeoverSystem(fac,sys):
+	systemcount[VS.GetGalaxyFaction(sys)]-=1
+	VS.SetGalaxyFaction(sys,fac)
+	systemcount[fac]+=1
+	AddBasesToSystem(fac,sys)
 
 genUniverse=-1
 if cp>=0:
+	print 'Purging...'
+	for i in fg_util.AllFactions():
+		fg_util.PurgeZeroShips(i)
+		systemcount[i]=0
+	print 'StartSystemCount'
+	ForEachSys(VS.getSystemFile(),CountSystems)
+	print systemcount
+	print 'EndSystemCount'	
 	genUniverse=0
 	curfaclist = fg_util.AllFactions()
 	if (fg_util.ReadStringList(cp,"FactionRefList")!=curfaclist):
@@ -99,7 +119,5 @@ if cp>=0:
 		genUniverse=Makesys(VS.getSystemFile())
 		#now every system has distributed ships in the save data!
 	#TODO: add ships to current system (for both modes)  uru?
-	print 'Purging...'
-	for i in fg_util.AllFactions():
-		fg_util.PurgeZeroShips(i)
-
+else:
+	print 'fatal error: no cockpit'

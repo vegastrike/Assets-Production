@@ -439,6 +439,15 @@ def ShipsInFG(fgname,faction,offset=1):
 	for num in range (ShipListOffset(),len(ships),PerShipDataSize()):
 		rez+=[(ships[num],int(ships[num+offset]))]
 	return rez
+def CapshipInFG(fg,fac):
+	key = MakeFGKey(fg,fac)
+	for num in range(ShipListOffset(),Director.getSaveStringLength(ccp,key),PerShipDataSize()):
+		import faction_ships
+		if (faction_ships.isCapital(Director.getSaveString(ccp,key,num))):
+			return 1
+		else:
+			return 0 #print Director.getSaveString(ccp,key,num) + " is no capship"
+	return 0
 def RandomShipIn (fg,fac):
 	key = MakeFGKey(fg,fac)
 	len = Director.getSaveStringLength(ccp,key)-ShipListOffset()
