@@ -90,7 +90,7 @@ module random_encounters {
     int count=0;
     object un = _unit.getUnit (count);
     while (!(_std.isNull(un))) {
-      if (unit.getSignficiantDistance(unit,un)<detection_distance) {
+      if (unit.getSignificantDistance(unit,un)<detection_distance) {
 	if ((!_unit.isSignificant(un))&&(!_unit.isSun(un))) {
 	  num_ships=num_ships+1;
 	}
