@@ -1,6 +1,6 @@
 <mission>
 	<settings>
-		<origin  planet="earth" x="0000" y="00" z="000.0"/>
+		<origin  planet="earth" x="0000" y="100" z="000.0"/>
 	</settings>
 
 	<variables>
@@ -8,44 +8,48 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="unexplored_space/gwriss" />
+		<var name="system" value="mission_sector/proving_grounds" />
 		<var name="description" value="4vs4.txt" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="2">
-			<pos x="28654" y="-10826" z="32334.0"/>
+                <flightgroup name="blue" faction="rlaan" type="f109vampire_nojump" ainame="default" waves="1" nr_ships="1">
+			<pos x="20400" y="-25400" z="24700.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
-                <flightgroup name="green" faction="unknown" type="unknown_active" ainame="default" waves="1" nr_ships="1">
-			<pos x="25000" y="-18000" z="32700.0"/>
+                <flightgroup name="blue" faction="rlaan" type="skart" ainame="default" waves="1" nr_ships="3">
+			<pos x="15400" y="-25400" z="24700.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
+            <flightgroup name="blue" faction="rlaan" type="starfish" ainame="default" waves="1" nr_ships="1">
+			<pos x="18400" y="-25400" z="24700.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+
 
 
 
 
 
         </flightgroups>
-
 	<module name="director">
-
-		<import name="drone_duel"/>
-
+		<import name="proving_grounds"/>
 		<script name="initgame">
-			<exec module="drone_duel" name="initgame"/>
+			<exec module="proving_grounds" name="initgame"/>
 		</script>
-
 		<script name="gameloop">
-			<exec module="drone_duel" name="gameloop"/>
+			<exec module="proving_grounds" name="loop"/>
 		</script>
 	</module>
-
 </mission>

@@ -629,5 +629,90 @@
 				<var name="data" value="1525" />
 			</sector>
 		</sector>	
+		<sector name="mission_sector">
+			<sector name="proving_grounds">
+				<var name="sun_radius" value="10000"/>
+				<var name="faction" value="powerups"/> 
+				<var name="compactness" value="1.3"/>
+				<var name="num_stars" value="2"/>
+				<var name="num_gas_giants" value="3"/>
+				<var name="num_planets" value="5"/>
+				<var name="num_moons" value="0"/>
+				<var name="nebulae"   value="true"/>
+				<var name="asteroids"   value="true"/>
+				<var name="jumps" value="mission_sector/proving_grounds mission_sector/proving_grounds mission_sector/proving_grounds mission_sector/proving_grounds"/>
+				<var name="num_natural_phenomena" value="3"/>
+				<var name="num_starbases" value="40"/>
+				<var name="data" value="4700" />
+				<var name="unitlist" value="proving_grounds/units.txt"/>
+				<var name="asteroidlist" value="proving_grounds/asteroids.txt"/>
+				<var name="nebulalist" value="proving_grounds/nebulae.txt"/>
+			</sector>
+			<sector name="proving_grounds_simple">
+				<var name="sun_radius" value="10000"/>
+				<var name="faction" value="powerups"/> 
+				<var name="compactness" value=".5"/>
+				<var name="num_stars" value="2"/>
+				<var name="num_gas_giants" value="3"/>
+				<var name="num_planets" value="4"/>
+				<var name="num_moons" value="2"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="false"/>
+				<var name="jumps" value="mission_sector/proving_grounds_simple mission_sector/proving_grounds_simple mission_sector/proving_grounds_simple mission_sector/proving_grounds_simple"/>
+				<var name="num_natural_phenomena" value="0"/>
+				<var name="num_starbases" value="43"/>
+				<var name="data" value="4700" />
+				<var name="unitlist" value="proving_grounds/units_and_natural.txt"/>
+				<var name="asteroidlist" value="proving_grounds/asteroids.txt"/>
+				<var name="nebulalist" value="proving_grounds/nebulae.txt"/>
+			</sector>
+			<sector name="tag2">
+				<var name="sun_radius" value="2000"/>
+				<var name="faction" value="powerups"/> 
+				<var name="compactness" value=".1"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="3"/>
+				<var name="num_planets" value="10"/>
+				<var name="num_moons" value="0"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="false"/>
+				<var name="jumps" value="mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2 mission_sector/tag2"/>
+				<var name="num_natural_phenomena" value="0"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="4747" />
+			</sector>
+			<sector name="tag">
+				<var name="sun_radius" value="2999"/>
+				<var name="faction" value="powerups"/> 
+				<var name="compactness" value=".1"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="0"/>
+				<var name="num_planets" value="0"/>
+				<var name="num_moons" value="0"/>
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="false"/>
+				<var name="jumps" value="mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag mission_sector/tag"/>
+				<var name="num_natural_phenomena" value="0"/>
+				<var name="num_starbases" value="0"/>
+				<var name="data" value="2470" />
+			</sector>
+			<sector name="nebula_tag">
+				<var name="sun_radius" value="3500"/>
+				<var name="faction" value="powerups"/> 
+				<var name="compactness" value=".5"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="0"/>
+				<var name="num_planets" value="0"/>
+				<var name="num_moons" value="0"/>
+				<var name="nebulae"   value="true"/>
+				<var name="asteroids"   value="false"/>
+				<var name="jumps" value="mission_sector/nebula_tag mission_sector/nebula_tag mission_sector/nebula_tag mission_sector/nebula_tag mission_sector/nebula_tag mission_sector/nebula_tag mission_sector/nebula_tag"/>
+				<var name="num_natural_phenomena" value="1"/>
+				<var name="num_starbases" value="10"/>
+				<var name="data" value="1234"/>
+				<var name="unitlist" value="nebula_tag/units"/>
+				<var name="nebulalist" value="nebula_tag/nebulae.txt"/>
+			</sector>
+		</sector>
 	</systems>
 </galaxy>

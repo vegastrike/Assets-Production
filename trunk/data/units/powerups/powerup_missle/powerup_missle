@@ -1,0 +1,29 @@
+<Unit>
+	<Meshfile file="heatseek.xmesh"/>
+	<BspMesh/>
+	<Light file="supernova.bmp" x="0" y="0" z="-2.00000023841858" size= ".6"/>
+	<Mount weapon="Dumbfire" size="light-missile" x="0" y="0" z="0" ammo="5"/>
+
+<Thrust> 
+	<Engine Afterburner="0"
+		  Forward="0"
+		  Retro="0"
+		  Left="0"
+		  Right="0"
+		  Top="0"
+		  Bottom="0"/>
+			<Maneuver yaw="0" pitch="0" roll="0"/>
+
+</Thrust>
+<Sound></Sound>
+<Defense>
+	<Hull strength="1"/>
+</Defense>
+<Stats mass="2" momentofinertia="6" fuel="20000"></Stats>
+
+<Computer yaw="0" pitch="0" roll="0" afterburner="0" maxspeed="0"/>
+<Energy>
+	<Reactor recharge="10"
+		   limit="50"/>
+</Energy>
+</Unit>

@@ -15,6 +15,7 @@
 		<Shields front="30" back="30" recharge="4.333333"/>
 		<Hull strength="50"/>
 		<Cloak cloakmin=".01" cloakrate=".2" cloakenergy="0"/>
+           	<Jump delay="1" jumpenergy="500"/>
 	</Defense>
 	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
 	<Computer yaw="128" pitch="0" roll="0000" afterburner="000000" maxspeed="00000">

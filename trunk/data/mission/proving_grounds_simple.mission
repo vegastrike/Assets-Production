@@ -1,0 +1,55 @@
+<mission>
+	<settings>
+		<origin  planet="earth" x="0000" y="100" z="000.0"/>
+	</settings>
+
+	<variables>
+<!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="4 versus 4" />
+		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+		<var name="system" value="mission_sector/proving_grounds_simple" />
+		<var name="description" value="4vs4.txt" />
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="rlaan" type="f109vampire_nojump" ainame="default" waves="1" nr_ships="1">
+			<pos x="2727.05" y="-9901.29" z="14036.7"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+                <flightgroup name="blue" faction="rlaan" type="skart" ainame="default" waves="1" nr_ships="3">
+			<pos x="2027.05" y="-9301.29" z="14736.7"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+            <flightgroup name="blue" faction="rlaan" type="starfish" ainame="default" waves="1" nr_ships="1">
+			<pos x="3027.05" y="-10101.29" z="13836.7"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
+			<order priority="0" order="superiority" target="enemy"/>
+			<order priority="1" order="bomber" target="omikron"/>
+			<order priority="2" order="escort" target="blue"/>
+		</flightgroup>
+
+
+
+
+
+
+        </flightgroups>
+	<module name="director">
+		<import name="proving_grounds"/>
+		<script name="initgame">
+			<exec module="proving_grounds" name="initgame"/>
+		</script>
+		<script name="gameloop">
+			<exec module="proving_grounds" name="loop"/>
+		</script>
+	</module>
+</mission>
