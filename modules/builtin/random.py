@@ -72,9 +72,10 @@ used to "move backward in time":
 0.25420336316883324
 """
 # XXX The docstring sucks.
-
-from math import log as _log, exp as _exp, pi as _pi, e as _e
-from math import sqrt as _sqrt, acos as _acos, cos as _cos, sin as _sin
+_pi = 3.1415926536
+_e = 2.7182818284590451
+from VS import log as _log, exp as _exp
+from VS import sqrt as _sqrt, acos as _acos, cos as _cos, sin as _sin
 
 __all__ = ["Random","seed","random","uniform","randint","choice",
            "randrange","shuffle","normalvariate","lognormvariate",
@@ -139,8 +140,8 @@ class Random:
 
         if a is None:
             # Initialize from current time
-            import time
-            a = long(time.time() * 256)
+            import VS
+            a = long(VS.timeofday() * 256)
 
         if type(a) not in (type(3), type(3L)):
             a = hash(a)
@@ -229,8 +230,8 @@ class Random:
             raise ValueError('seeds must be in range(0, 256)')
         if 0 == x == y == z:
             # Initialize from current time
-            import time
-            t = long(time.time() * 256)
+            import VS
+            t = long(VS.timeofday() * 256)
             t = int((t&0xffffff) ^ (t>>24))
             t, x = divmod(t, 256)
             t, y = divmod(t, 256)
@@ -575,21 +576,21 @@ class Random:
 ## -------------------- test program --------------------
 
 def _test_generator(n, funccall):
-    import time
+    import VS
     print n, 'times', funccall
     code = compile(funccall, funccall, 'eval')
     sum = 0.0
     sqsum = 0.0
     smallest = 1e10
     largest = -1e10
-    t0 = time.time()
+    t0 = VS.timeofday()
     for i in range(n):
         x = eval(code)
         sum = sum + x
         sqsum = sqsum + x*x
         smallest = min(x, smallest)
         largest = max(x, largest)
-    t1 = time.time()
+    t1 = VS.timeofday()
     print round(t1-t0, 3), 'sec,',
     avg = sum/n
     stddev = _sqrt(sqsum/n - avg*avg)
