@@ -4,6 +4,7 @@ module ai_orderlist {
 
   import vec3;
   import random;
+  import order;
 
   // ================== module variables ==================
 
