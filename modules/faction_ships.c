@@ -45,10 +45,15 @@ module faction_ships {
   int getMaxFactions () {
     return _olist.size(factions);
   };
-  
-  void init(){
+  void init_no_blank() {
     make_factions_list();
-    make_ships_list();
+    make_ships_list (false);
+    ship_upgrades.init();
+  };
+  void init(){
+    bool useblank = (difficulty.getCredDifficulty()!=0.0);
+    make_factions_list();
+    make_ships_list(useblank);
     ship_upgrades.init();
   };
   object get_enemy_of (object factionname) {
@@ -356,7 +361,7 @@ module faction_ships {
     _olist.push_back (flist,"merchant");
     _olist.push_back (flist,"rlaan");
   };
-void make_ships_list(){
+void make_ships_list(bool use_blank){
     capitols = _olist.new();
     fighters = _olist.new();
     object confed_ships=_olist.new();

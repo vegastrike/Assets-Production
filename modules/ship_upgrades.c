@@ -7,9 +7,9 @@ module ship_upgrades {
     if (diff<=0.1) {
       ch=1;
     } else if (diff<=0.3) {
-      ch=2-random.randomInt(0,1);
+      ch=2-random.randomint(0,1);
     } else if (diff<=0.5) {
-      ch=3-random.randomInt(0,2);
+      ch=3-random.randomint(0,2);
     }
     if (ch==1) {
       _io.sprintf(cat,"%sLight",base_category);
@@ -38,7 +38,7 @@ module ship_upgrades {
   object GetRandomWeapon (float diff) {
     float rndnum=_std.Rnd();
     object cat;
-    float if (rndnum<0.5) {
+    if (rndnum<0.5) {
       cat=GetDiffCargo(diff,"upgrades/Weapons/Beam_Arrays_","upgrades/Weapons");
     } else {
       cat=GetDiffCargo(diff,"upgrades/Weapons/Mounted_Guns_","upgrades/Weapons");
@@ -58,7 +58,7 @@ module ship_upgrades {
   object getRandomEngine (float diff) {
     float rndnum=_std.Rnd();
     object cat;
-    float if (rndnum<0.5) {
+    if (rndnum<0.5) {
       cat=GetDiffCargo(diff,"upgrades/Engines/","upgrades/Engines");
     } else {
       cat=GetDiffCargo(diff,"upgrades/Engines/Engine_Enhancements_","upgrades/Engines");
@@ -89,23 +89,24 @@ module ship_upgrades {
   void basicUnit (object un) {
     int i=0;
     int curmount=0;
+    float percent;
     while (i<2) {
-      _unit.upgrade(un,"laser",curmount,curmount,true,true);
-      curmount=curmount+1
+      percent=_unit.upgrade(un,"laser",curmount,curmount,true,true);
+      curmount=curmount+1;
       i=i+1;
     }
-    _unit.upgrade(un,"engine_level_0",0,0,true,false);
-    _unit.upgrade(un,"shield_2",0,0,true,false);
-    _unit.upgrade(un,"plasteel",0,0,true,false);
-    _unit.upgrade(un,"hull",0,0,true,false);
+    percent=_unit.upgrade(un,"engine_level_0",0,0,true,false);
+    percent=_unit.upgrade(un,"shield_2",0,0,true,false);
+    percent=_unit.upgrade(un,"plasteel",0,0,true,false);
+    percent=_unit.upgrade(un,"hull",0,0,true,false);
   };
-  float upgradeHelper (object un, object mylist, float creds, bool cycle) {
-     float newcreds=0;
+  float upgradeHelper (object un, object mylist, int curmount,float creds, bool cycle) {
+     float newcreds=0.0;
      if (_olist.size(mylist)==0) {
         _olist.delete (mylist);
-        return 0; 
+        return 0.0; 
      }else {
-        str=_olist.at(mylist,0);
+        object str=_olist.at(mylist,0);
         newcreds=_olist.at (mylist,2);
         newcreds = newcreds*_unit.upgrade(un,str,curmount,curmount,true,cycle);
         creds = creds -newcreds;
@@ -115,13 +116,13 @@ module ship_upgrades {
      return creds;
   };
   
-  void upgrageUnit (object un, float creds, float diff) {
+  void upgradeUnit (object un, float creds, float diff) {
     int curmount=0;
     object mylist;
     object str;
     float rndnum;
     int inc=0;
-    int numammos=50*diff;
+    int numammos=_std.Int(50.0*diff);
     if (numammos>30) {
       numammos=30;
     } else if (numammos<5) {
@@ -133,33 +134,36 @@ module ship_upgrades {
         inc=numammos;
       } else {
         str=_olist.at(mylist,0);
-        _unit.upgrade(str,inc,inc,false,true);
+        float temp=_unit.upgrade(un,str,inc,inc,false,true);
       }
     }
     mylist = GetRandomHull();
-    creds =upgradeHelper (un,mylist,creds,false);
+    creds =upgradeHelper (un,mylist,0,creds,false);
 
     mylist = GetRandomArmor();
-    creds =upgradeHelper (un,mylist,creds,false);
+    creds =upgradeHelper (un,mylist,0,creds,false);
     inc=0;
-    while (creds>500) {
+    while (creds>500.0) {
       if (inc<2) {
         mylist=GetRandomWeapon(diff);
       }else if (inc==2) {
-        mylist=GetRandomTurret(diff);
+        mylist=GetRandomTurret();
       }else {
-        mylist=GetRandomUpgrade(diff);
+        mylist=GetRandomUpgrade();
       }
-      creds =upgradeHelper (un,mylist,creds,inc<2);
+      creds =upgradeHelper (un,mylist,curmount,creds,inc<2);
       
       _olist.delete(mylist);
       curmount=curmount+1;
-      inc=(inc+1)%7;
+      inc = inc+1;
+      if (inc>5) {
+	inc =0;
+      }
     }
   };
 
   void init () {
 
   };
-
 }
+
