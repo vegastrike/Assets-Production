@@ -7,7 +7,7 @@ Group: Amusements/Games
 Source: vegastrike-data.tar.gz
 URL: http://vegastrike.sourceforge.net
 Packager: Daniel Horn <hellcatv@hotmail.com>
-BuildRoot: /tmp/vsdata
+BuildRoot: /tmp/data
 Prefix: /usr/local
 Provides: vegastrike-data
 Requires: vegastrike
@@ -22,7 +22,7 @@ this archive contains the data files necessary to play Vegastrike.
 %prep
 rm -rf $RPM_BUILD_ROOT
 
-%setup -n vegastrike-data
+%setup -n data
 
 %build
 echo "nothing to build"
@@ -54,4 +54,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc /usr/local/man/man1/vsinstall.1
 /usr/local/bin/vsinstall
 # Normal files
-/usr/local/share/vegastrike/data
+/usr/local/games/vegastrike/data
