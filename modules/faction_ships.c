@@ -404,12 +404,12 @@ void make_ships_list(){
     object merchant_ships=_olist.new();
     _olist.push_back(fighters,merchant_ships);
     _olist.push_back (merchant_ships,"wayfarer");
-    _olist.push_back(rlaan_capitol,"revoker");
+    _olist.push_back(rlaan_capitol,"longhaul");
 
     object merchant_capitol=_olist.new();
     _olist.push_back(capitols,merchant_capitol);//double referenced
-    _olist.push_back (merchant_capitol,"cargo");
-    _olist.push_back (merchant_capitol,"truck");
+    _olist.push_back (merchant_capitol,"longhaul");
+    _olist.push_back (merchant_capitol,"khanjarli");
 
 
     object Xships=_olist.new();

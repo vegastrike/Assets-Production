@@ -26,7 +26,7 @@ module unit {
 		if (_std.isNull(un)) {
 		  which=0;
 		  if (signum==0){
-		    return un;
+		    signum=whichsignificant+1;
 		  }	
 		}else {
 		  if ((landable_only)||(capship_only)) {
@@ -49,6 +49,34 @@ module unit {
 	}
 	return un;
   };
+  //this one terminates if fewer than so many planets exist with null
+  object getPlanet (int whichsignificant, bool sig) {
+	object un;
+	_std.setNull (un);
+	int which=0;
+	int signum=0;
+	while (signum<=whichsignificant) {
+	  //	  _io.printf ("%d %d %d i",which,signum,whichsignificant);
+		un=_unit.getUnit(which);
+		if (_std.isNull(un)) {
+		  if (signum<=whichsignificant){
+		    signum=whichsignificant+1;
+		  }	
+		}else {
+		  if(sig) {
+		    if (_unit.isSignificant (un)) {
+		      signum=signum+1;
+		    }
+		  }else {
+		    if (_unit.isPlanet (un)) {
+		      signum=signum+1;
+		    }
+		  }
+		  which=which+1;			
+		}
+	}
+	return un;
+  };
   object getJumpPoint (int whichsignificant) {
 	object un;
 	int which=0;
@@ -59,7 +87,7 @@ module unit {
 			which=0;
 			if (signum==0){
 				_std.setNull(un);
-				return un;
+				signum=whichsignificant;
 			}	
 		}else {
 			if (_unit.isJumppoint(un)) {
