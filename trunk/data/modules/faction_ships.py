@@ -20,7 +20,7 @@ enemies =  ((aera,aera,rlaan,rlaan,retro,pirates,ISO), #confed
             (aera,aera,retro,rlaan), #hunter
             (aera,aera,rlaan,rlaan,retro,pirates,ISO), #militia
             (confed,confed,confed,confed,confed,confed,confed,militia,militia,militia,aera,aera,aera,pirates,retro,retro,retro,hunter), #ISO
-            () #unknown
+            (confed,aera,rlaan,merchant,retro,pirates,hunter,militia,ISO) #unknown
            )
 
 friendlies=((confed,confed,confed,militia,militia,militia,militia,merchant,merchant,merchant,merchant), #confed
@@ -32,7 +32,7 @@ friendlies=((confed,confed,confed,militia,militia,militia,militia,merchant,merch
             (ISO,confed,confed,militia,militia,merchant,hunter,hunter,hunter,hunter,hunter), #hunter
             (confed,confed,confed,militia,militia,militia,militia,merchant,merchant,merchant,merchant,hunter), #militia
             (ISO,ISO,ISO,merchant,merchant,rlaan), #ISO
-            () #unknown
+            (unknown,) #unknown
            )
 
 fighters = (("firefly","destiny","tian","nova","puma","mongoose","destiny","tian","nova","puma","mongoose","avenger"), #confed
@@ -72,7 +72,7 @@ def getMaxFactions ():
 def get_X_of (mylist, index):
   enemylist = mylist[index]
   newindex = random.randrange(0,len(enemylist))
-  return enemylist[newindex]
+  return intToFaction(enemylist[newindex])
 
 def get_enemy_of (factionname):
   return get_X_of (enemies, factionToInt(factionname))
