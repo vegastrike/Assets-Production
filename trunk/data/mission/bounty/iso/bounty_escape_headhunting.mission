@@ -7,7 +7,7 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="system" value="enigma_sector/blake" />
 		<var name="mission_name" value="Bounty Mission" />
-		<var name="description" value="A pair of confed ships has been sighted in this system.  They have gotten important information and are attempting to escape our clutches. You must destroy them instead: you will earn 12460 credits." />
+		<var name="description" value="A pair of ISO ships has been sighted in this system.  They have somehow managed to retrieve important prisoners and are attempting to escape. You must destroy them before they return these political prisoners to their ilk: you will earn 12420 credits if successful. These political prisoners must pay the price for this outrage: they must perish." />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="2">
@@ -25,10 +25,10 @@
 			<exec module="bounty" name="init">
 			<const type="int" value="0"/> <!--num systems away the delivery point is -->
 			<const type="int" value="0"/> <!--num systems away the delivery point is -->
-			<const type="float" value="12460"/> <!-- how much you are paid -->
+			<const type="float" value="12420"/> <!-- how much you are paid -->
 			<const type="bool" value="true"/> <!--does he run away -->
 			<const type="int" value="1"/> <!--difficulty-->
-			<const type="object" object="string" value="confed"/>
+			<const type="object" object="string" value="pirates"/>
 			</exec>
 		</script>
 		<script name="gameloop">
