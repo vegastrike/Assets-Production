@@ -10,6 +10,36 @@ import random
 import faction_ships
 import Director
 import launch
+def catInCatList (cat,catlist):
+    for i in catlist:
+        loc =cat.find (i)
+        if (loc==0):
+            return 1
+    return 0
+def adjustUnitCargo(un,cat,pr,qr):
+    numcargo = un.numCargo()
+    carglist =[]
+    for i in range(numcargo):
+        carg = un.GetCargoIndex(i)
+        if (len(cat)==0 or catInCatList(carg.GetCategory(),cat)):
+            carg.SetPrice (pr*carg.GetPrice())
+            carg.SetQuantity (qr*carg.GetQuantity())
+        carglist += [carg]
+    for i in range (numcargo):
+        un.removeCargo (carglist[i].GetCategory(),carglist[i].GetQuantity(),1)
+    for i in range (numcargo):
+        un.addCargo(carglist[i])
+    carglist=0
+
+def systemCargoDemand (category,priceratio,quantratio):
+    i = VS.getUnitList()
+    un = i.current()
+    while (not un.isNull()):
+        if (un.isPlayerStarship()==-1):
+            adjustUnitCargo(un,category,priceratio,quantratio)
+        i.advance()
+        un=i.current()
+        
 def setFirstSaveData(player,key,val):
     mylen = Director.getSaveDataLength(player,key)
     if (mylen>0):
