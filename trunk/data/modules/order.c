@@ -157,5 +157,26 @@ module order {
     }
   };
 
+  void orderList(object which_fgid,object orderlist){
+    int ship_nr=0;
+    object unit=_unit.getUnit(ship_nr);
+
+    while((!_std.isNull(unit))){
+      object unit_fgid=_unit.getFgID(unit);
+      //_io.printf("matching %s with %s\n",unit_fgid,patrol_fgid);
+      if(_string.begins(unit_fgid,which_fgid)){
+	//_io.printf("found match: %s %s\n",unit_fgid,patrol_fgid);
+
+	object unit_order=_unit.getOrder(unit);
+
+	object new_order=_order.newOrderList(orderlist);
+	_order.enqueueOrderFirst(unit_order,new_order);
+      }
+      ship_nr=ship_nr+1;
+      unit=_unit.getUnit(ship_nr);
+      _string.delete(unit_fgid);
+    }
+  };
+
 
 }

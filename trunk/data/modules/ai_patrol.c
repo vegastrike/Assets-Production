@@ -104,8 +104,8 @@ module ai_patrol {
   };
 
   void quitai(){
-    //_io.printf("patrolling ai quitting\n");
-    _string.delete(outstr);
+    _io.printf("patrolling ai quitting\n");
+    //    _string.delete(outstr);
   };
 
 }
