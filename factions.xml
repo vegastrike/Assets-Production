@@ -74,7 +74,7 @@
 		<stats name="rlaan" relation="-.1"/>
 		<stats name="unknown" relation="-.1"/>
 		<stats name="pirates" relation="-.7"/>
-		<stats name="hunter" relation="-.5"/>
+		<stats name="hunter" relation="0"/>
 		<stats name="retro" relation="-1"/>
 		<stats name="privateer" relation="0"/>
 
