@@ -82,6 +82,7 @@ module contraband_mission {
 		int i=0;
 		int siz=_olist.size(goodolist);
 		object cont;
+		_io.printf("THE END IS NEAR!!!");
 		while(i<siz) {
 			cont=_olist.at(goodolist,i);
 			_unit.deleteContainer(cont);
@@ -89,7 +90,6 @@ module contraband_mission {
 		}
 		i=0;
 		siz=_olist.size(badolist);
-		object cont;
 		while(i<siz) {
 			cont=_olist.at(badolist,i);
 			_unit.deleteContainer(cont);
@@ -159,6 +159,7 @@ module contraband_mission {
 			if (_std.isNull(bunit)) {  //a contraband ship left the system...
 				all_left=all_left-1;
 				Terminate(you);
+				return;
 			}
 			object olistcont=_olist.at(goodolist,good_iterator);
 			object olistun=_unit.getUnitFromContainer(olistcont);
@@ -178,6 +179,8 @@ module contraband_mission {
 					_olist.erase(goodolist,good_iterator);
 				}
 			}
+			olistcont=_olist.at(goodolist,good_iterator);
+			olistun=_unit.getUnitFromContainer(olistcont);
 			if ((_std.isNull(bunit))||  //resetting iterators for bad ships
 					(_std.equal(olistun,bunit))) {
 				sys_biterator=0;
@@ -198,6 +201,7 @@ module contraband_mission {
 			sys_biterator=sys_biterator+1;
 			if (all_left==0) {
 				Terminate(you);
+				return;
 			}
 		} else if (stage==0) {
 			if (_unit.getDistance(you,jump)<=dist) {
