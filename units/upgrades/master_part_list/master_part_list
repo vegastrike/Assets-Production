@@ -421,7 +421,12 @@
 			<Cargo file="leech_ammo" price="1000" quantity="1" mass=".01" volume="1" description="\ Stats - \   Rounds/Launcher: \   Refire Delay: \   Max Velocity: \   Damage Rating: \   Range:" />
 			<Cargo file="ecm_package_3" price="30000" quantity="1" mass=".01" volume="1" description="Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\ \ Stats- \    Defense: 0.14" />
 		</Category>
-
+		<Category file="Passengers">	
+			<Cargo file="Passenger" quantity="1" mass=".01" volume="10" description="A passenger."/>
+			<Cargo file="Hitchhiker" quantity="1" mass=".01" volume="4" description="Always brings a towel"/>
+			<Cargo file="First_Class_Passenger" quantity="1" mass=".01" volume="100" description="If you are taking first class passengers around, they had better have all the amenities one expects"/>
+			<Cargo file="Business_Class_Passenger" quantity="1" mass=".01" volume="50" description="With a laptop and a wide rear, the business class passenger enjoys some of the room of the first class passenger"/>
+		</Category>
 		<Category file="Natural_Products/Aera_Food">
 			<Cargo file="Aera_Ration" price="40" quantity="1" mass=".01" volume="1" description="Containing utilitarian dehydrated meal bars with jerky for dessert, the Aera ration is human edible, but prolonged human consumption will result in eventual sickness and death due to alkaloid content." />
 			<Cargo file="Jhurlon" price="140" quantity="1" mass=".01" volume="1" description="A native of the Bzbr world, the Jhurlon most closely resembles a boulder sized land dwelling abalone.  While well protected against native predators, modern technology has made cutting through their shell somewhat easier." />
