@@ -1,5 +1,5 @@
 <!-- Xmesh exported from Wings 3D 0.98.09 -->
-<Mesh texture="world_at_night.jpg" scale="1" sharevertex="0">
+<Mesh texture="sphere.bmp" alphamap="spherealpha.bmp" scale="1" sharevertex="0" blend="SRCALPHA INVSRCALPHA">
 <!-- 482 vertices, 512 faces -->
 <Points>
   <Point>
@@ -4942,9 +4942,10 @@
   </Tri>
 </Polygons>
 <!-- Materialname="1 - Default" -->
-<Material reflect="0.900000" LightningOn="1" >
-  <Diffuse red="0.588235" green="0.588235" blue="0.588235" alpha="1.00000" />
-  <Ambient red="0.588235" green="0.588235" blue="0.588235" alpha="1.00000" />
-  <Specular red="0.898039" green="0.898039" blue="0.898039" alpha="1.00000" />
+<Material reflect="0" LightningOn="1" >
+  <Diffuse red="0" green="0" blue="0" alpha="0" />
+  <Ambient red="0" green="0" blue="0" alpha="0" />
+  <Emissive red="1" green="1" blue="1" alpha="1.00000" />
+  <Specular red="0" green="0" blue="0" alpha="0" />
 </Material>
 </Mesh>
