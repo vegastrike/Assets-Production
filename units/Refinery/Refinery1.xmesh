@@ -32453,17 +32453,17 @@
     <Vertex point="1783" s="0.239794760942459" t="1.78987944126129"/>
 </Tri>
 </Polygons>
-<Logo type="0" rotate="-0.380000" size="301" offset="0.010000">
+<Logo type="0" rotate="-0.380000" size="1.5" offset="0.010000">
 	<Ref point="931" weight="-0.369999" />
 	<Ref point="932" weight="4.710013" />
 	<Ref point="933" weight="5.070022" />
 </Logo>
-<Logo type="1" rotate="-1.599999" size="100" offset="0.010000">
+<Logo type="1" rotate="-1.599999" size=".5" offset="0.010000">
 	<Ref point="33" weight="2.419999" />
 	<Ref point="9" weight="1.000000" />
 	<Ref point="7" weight="1.000000" />
 </Logo>
-<Logo type="0" rotate="-0.800000" size="74.0000" offset="0.010000">
+<Logo type="0" rotate="-0.800000" size=".740000" offset="0.010000">
 	<Ref point="61" weight="1.000000" />
 	<Ref point="59" weight="1.000000" />
 	<Ref point="43" weight="1.000000" />

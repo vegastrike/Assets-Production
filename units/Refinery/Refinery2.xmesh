@@ -2287,12 +2287,12 @@
     <Vertex point="99" s="0.635955035686493" t="1.36520886421204"/>
 </Tri>
 </Polygons>
-<Logo type="0" rotate="-2.429998" size="100.00000" offset="0.010000">
+<Logo type="0" rotate="-2.429998" size=".5000000" offset="0.010000">
 	<Ref point="129" weight="1.000000" />
 	<Ref point="133" weight="1.000000" />
 	<Ref point="134" weight="1.000000" />
 </Logo>
-<Logo type="1" rotate="-1.409999" size="50.0000" offset="0.010000">
+<Logo type="1" rotate="-1.409999" size=".25000" offset="0.010000">
 	<Ref point="2" weight="1.779999" />
 	<Ref point="4" weight="1.000000" />
 	<Ref point="5" weight="1.000000" />
