@@ -42,7 +42,7 @@ module universe {
 
       _olist.delete(jp_list);
     }else {
-      _std.SetNull(jp);
+      _std.setNull(jp);
     }
     return jp;
   };

@@ -70,8 +70,9 @@ module faction_ships {
     
     object merchant_ships=_olist.new();
     _olist.push_back(fighters,merchant_ships);
+    _olist.push_back(capitols,merchant_ships);//double referenced
     _olist.push_back (merchant_ships,"tian");
-    _olist.push_back (merchant_ships,"cruiser");
+    _olist.push_back (merchant_ships,"cruiser_mk2");
     _olist.push_back (merchant_ships,"revoker");
 
     unknown_ships=_olist.new();
@@ -119,6 +120,10 @@ module faction_ships {
       return "aera";
     }else if (fac==2) {
       return "rlaan";
+    }else if (fac==3) {
+      return "merchant";
+    } else {
+      return "unknown";
     }
   };
   int getMaxFactions () {
@@ -136,7 +141,9 @@ module faction_ships {
     else if (_string.equal(faction,"rlaan")){
       type=getRandomFighterInt(2);
     }
-    else {
+    else if (_string.equal (faction,"merchant")) {
+      type = getRandomFighterInt(3);
+    }else {
       type=getRandomShipType(unknown_ships);
     }
 
@@ -153,6 +160,9 @@ module faction_ships {
     }
     else if (_string.equal(faction,"rlaan")){
       type=getRandomCapitolInt(2);
+    }
+    else if (_string.equal(faction,"merchant")){
+      type=getRandomFighterInt(3);
     }
     else {
       type=getRandomShipType(unknown_ships);
