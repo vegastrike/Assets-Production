@@ -2,7 +2,7 @@ module bounty {
 	object faction;
 	object destination;
 	object enemycontainer;
-	bool arrived;
+	int arrived;
 	int difficulty;
 	float cred;
 	import random;
@@ -33,6 +33,7 @@ module bounty {
 	void init (int int numsystemsaway, int missiondifficulty, float creds) {
 	  faction_ships.init();
 	  arrived=false;
+	  isSig=false;
 	  cred=creds;
 	  distfrombase=distance_from_base;
 	  difficulty=missiondifficulty;
@@ -51,7 +52,7 @@ module bounty {
 	    object str = _string.new();
 	    _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
 	    _io.message (0,"game","all",str);
-	    _io.message (1,"game","all","In order to get to your destination, you must:");
+	    _io.message (0,"game","all","In order to get to your destination, you must:");
 	    sys(sysfile,numsystemsaway);
 	    if (quantity<1){
 	      quantity=1;
@@ -60,52 +61,92 @@ module bounty {
 	      cred=cred *_std.Float(quantity)/_std.Float(tempquantity);
 	    }
 	    
-	    _io.sprintf(str,"Kill a %s unit.",faction);
+	    _io.sprintf(str,"Once there, you must destroy a %s unit.",faction);
 	    _io.message (2,"game","all",str);
-	    _io.sprintf(str,"You will receive %d of the %s cargo",quantity,cargoname);
-	    _io.message (3,"game","all",str);
+	    _io.message (3,"game","all","You will then recieve lots of money as your reward");
+	    _io.message (4,"game","all","(if you survive).  Good luck!");
 	    _string.delete(str);
 	  } else {
 	    _std.terminateMission (false);
 	  }
 	};
-	  _std.terminateMission(false);
+
+	void Win (object who, bool terminate) {
+	  _io.message (0,"game","all","Excellent work pilot.");
+	  _io.message (0,"game","all","You have been rewarded for your effort as agreed.");
+	  _io.message (0,"game","all","Your contribution to the war effort will be remembered.");
+	  _unit.addCredits(who,cred);
+	  if (terminate) {
+	    _std.terminateMission(true);
+	  }
+	};
+
+	void Lose (bool terminate) {
+	  _io.message(0,"game","all","You have failed this mission and will not be rewarded.");
+	  if (terminate) {
+	    _std.terminateMission(false);
+	  }
+	};
+
 	void loop () {
-	  if (arrived) {
-	    object base=_unit.getUnitFromContainer(basecontainer);
+	  bool isSig;
+	  object enemy;
+	  if (arrived==2) {
+	    enemy=_unit.getUnitFromContainer(enemycontainer);
 	    object you=_unit.getPlayer();
-	    if (_std.isNull(base)||_std.isNull(you)) {
-	      _std.terminateMission(false);
+	    if (_std.isNull(you)) {
+	      Lose(true);
 	      return;
 	    }
-	    float dist=_unit.getDistance(base,you);
-	    if (dist<=distfrombase) {
-	      takeCargoAndTerminate(you);		
+	    if (_std.isNull(enemy)) {
+	      Win(you,true);
 	      return;
+	    }
+	  } else if (arrived==1) {
+	    object sysfil = _std.getSystemFile();
+	    if (_string.equal (sysfil,destination)) {
+	      object you=_unit.getPlayer();
+	      arrived=2;
+		  enemy=_unit.getUnitFromContainer(enemycontainer);
+	      if (_std.isNull(you)) {
+		Lose(true);
+		return;
+	      }
+	      if (_std.isNull(enemy)) {
+		Win(you,true);
+		return;
+	      }
+		  _unit.setTarget(enemy,you);
+		  _unit.setTarget(you,enemy);
 	    }
 	  } else {
 	    object sysfil = _std.getSystemFile();
 	    if (_string.equal (sysfil,destination)) {
-	      arrived=true;
-	      object newship=faction_ships.getRandomCapitol(faction);
+	      arrived=1;
+	      object newship=faction_ships.getRandomFighter(faction);
 	      int randint=random.randomint(0,50);
-	      object significant = unit.getSignificant (randint);
+	      object significant = unit.getJumppoint (randint);
 	      if (_std.isNull (significant)) {
 		significant =_unit.getPlayer();
-	      }
+		  } else {
+		isSig=true;
+		  }
 	      if (_std.isNull(significant)) {
-		arrived=false;
+		_std.terminateMission (false);
 	      }else {
-		if (capship) {
-		  significant=launch.launch_wave_around_unit("shadow",faction,newship,"default",1,5000.0,significant);
+		enemy=launch.launch_wave_around_unit("shadow",faction,newship,"default",1,10000.0,significant);
+		if (isSig) {
+		  _unit.setTarget(enemy,significant);
+		  destination=_unit.getName(significant);
 		}
 		object str = _string.new();
-		object name = _unit.getName (significant);
-		_io.sprintf(str,"You must drop your cargo off with the %s unit",name);
+		object name = _unit.getName (enemy);
+		_io.sprintf(str,"You must destroy the %s unit in this system.",name);
 		_io.message (0,"game","all",str);
+		_io.message (3,"game","all","oh no... He is running towards the jump point.  Catch him quick!");
 		_string.delete(str);
 		
-		basecontainer=_unit.getContainer(significant);
+		enemycontainer=_unit.getContainer(enemy);
 	      }
 	    }
 	    _string.delete (sysfil);
