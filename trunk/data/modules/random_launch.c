@@ -49,7 +49,7 @@ module random_launch {
 
     float thentime=calc_thentime(min_time,max_time);
 
-    _io.printf("new thentime=%f\n",thentime);
+    //    _io.printf("new thentime=%f\n",thentime);
     _olist.push_back(wait_list,thentime);
   };
 
@@ -75,7 +75,7 @@ module random_launch {
     float thentime=min_time;
       //calc_thentime(min_time,max_time);
 
-    _io.printf("new thentime=%f\n",thentime);
+    //_io.printf("new thentime=%f\n",thentime);
     _olist.push_back(wait_list,thentime);
   };
 
@@ -83,11 +83,11 @@ module random_launch {
     float nowtime=_std.getGameTime();
 
     if(nowtime>(lasttime+resolution)){
-      _io.printf("checking at %f\n",nowtime);
+      //_io.printf("checking at %f\n",nowtime);
       checkLaunch();
       lasttime=nowtime;
 
-      unit.print_unitlist();
+      //unit.print_unitlist();
     }
   };
 
@@ -128,7 +128,7 @@ module random_launch {
     object type="truck_small";
     //object type="cruiser";
 
-    _io.sprintf(fgstring,"rnd%d",rndcounter);
+    //    _io.sprintf(fgstring,"rnd%d",rndcounter);
     rndcounter=rndcounter+1;
 
     _io.message(0,"game","all","Convoy has been detected");
@@ -160,7 +160,7 @@ module random_launch {
       int nr_ships=random.randomint(min_nr_ships,max_nr_ships);
       object type=faction_ships.getRandomFighter(faction);
 
-      _io.sprintf(fgstring,"rnd%d",rndcounter);
+      //_io.sprintf(fgstring,"rnd%d",rndcounter);
       rndcounter=rndcounter+1;
 
       launch.launch_wave_around_area(fgstring,faction,type,"default",nr_ships,min_range,max_range,pos);
@@ -185,7 +185,7 @@ module random_launch {
     float max_time=_omap.get(submap,"max_time");
 
     float thentime=calc_thentime(min_time,max_time);
-    _io.printf("new thentime=%f\n",thentime);
+    //_io.printf("new thentime=%f\n",thentime);
 
     return thentime;
 
