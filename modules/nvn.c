@@ -67,7 +67,7 @@ module nvn {
     numenemy=theirs;
   };
   void initgame(int ours, int theirs){
-    faction_ships.make_ships_list();
+    faction_ships.init_no_blank();
     reset_loop (ours,theirs);
   };
   void loop(){
