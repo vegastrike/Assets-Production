@@ -73,6 +73,15 @@
 		<stats name="aera" relation="-1"/>
 		<stats name="unknown" relation="-.1"/>
 	</Faction>
+	<Faction name="upgrades" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
+		<stats name="rlaan" relation="0"/>
+		<stats name="retro" relation="0"/>
+		<stats name="militia" relation="0"/>
+		<stats name="merchant" relation="0"/>
+		<stats name="confed" relation="0"/>
+		<stats name="aera" relation="0"/>
+		<stats name="unknown" relation="0"/>
+	</Faction>
 	<Faction name="unknown" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
 		<stats name="retro" relation="-1"/>
 		<stats name="rlaan" relation="-1"/>
