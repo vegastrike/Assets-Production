@@ -1,4 +1,4 @@
-<Mesh  texture1="combine4PPL.jpg" texture="combine4.bmp" scale="30.000000">
+<Mesh texture="combine4.bmp" scale="30.000000">
 <Points>
 	<Point>
 		<Location x="0.000000" y="-62.000000" z="0.000000"/>
@@ -11520,19 +11520,28 @@
 	</Tri>
 </Polygons>
 <Logo type="1" rotate="7.360074" size="4.530009" offset="0.010000">
-	<Ref point="184" weight="4.620011" />
+<!--	<Ref point="184" weight="4.620011" />
 	<Ref point="185" weight="2.399999" />
-	<Ref point="186" weight="1.510000" />
+	<Ref point="186" weight="1.510000" />-->
+	<Ref point="184" weight="1" />
+	<Ref point="185" weight="1" />
+	<Ref point="186" weight="1" />
 </Logo>
 <Logo type="0" rotate="-5.230024" size="4.640011" offset="0.010000">
-	<Ref point="192" weight="2.889998" />
+<!--	<Ref point="192" weight="2.889998" />
 	<Ref point="193" weight="2.099999" />
-	<Ref point="194" weight="-0.699999" />
+	<Ref point="194" weight="-0.699999" />-->
+	<Ref point="192" weight="1" />
+	<Ref point="193" weight="1" />
+	<Ref point="194" weight="1" />
 </Logo>
 <Logo type="0" rotate="4.260002" size="4.820015" offset="0.010000">
-	<Ref point="205" weight="4.730014" />
+<!--	<Ref point="205" weight="4.730014" />
 	<Ref point="204" weight="5.220025" />
-	<Ref point="207" weight="0.850000" />
+	<Ref point="207" weight="0.850000" />-->
+	<Ref point="205" weight="1" />
+	<Ref point="204" weight="1" />
+	<Ref point="207" weight="1" />
 </Logo>
 <Logo type="0" rotate="0.990000" size="4.470007" offset="0.010000">
 	<Ref point="212" weight="3.459998" />

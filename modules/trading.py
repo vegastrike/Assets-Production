@@ -19,8 +19,7 @@ class trading:
       self.last_ship=0
     else:
       if (un.isSignificant()):
-	player = VS.getPlayer()
-	if (player!=un):
+	if (un.isPlayerStarship()==-1):
 	  if (vsrandom.random()<.5):
 	    un.incrementCargo(1-(quant*self.price_instability),int(quant))
 	  else:

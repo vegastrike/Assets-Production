@@ -5,7 +5,7 @@
 		<Hull strength="10000000.000000"/>
 		<Cloak missing="1" cloakmin="0" cloakrate="0" cloakglass="0" cloakenergy="0"/>
 	</Defense>
-	<Stats mass="100" momentofinertia="0" fuel="0"></Stats>
+	<Stats mass="0.2" momentofinertia="0.2" fuel="0"></Stats>
 	<Computer yaw="0" itts="false" pitch="0" roll="0" afterburner="0" maxspeed="0">
 		<Radar itts="false" color="false" error=".5" maxcone=".25" LockCone=".901" TrackingCone=".9601" range="5000"/> 
 	</Computer>

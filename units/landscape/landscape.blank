@@ -1,0 +1,42 @@
+<unit scale ="4">
+	<Defense ECM ="0" RepairDroid ="0">
+		<Armor front ="0" right ="00" left ="00" back ="00">
+		</Armor>
+		<Shields front ="0.000000" back ="0.000000" recharge ="0.000000" leak ="0">
+		</Shields>
+		<Hull strength ="10000000.000000">
+		</Hull>
+		<Cloak missing ="1" cloakmin ="0" cloakrate ="0" cloakglass ="0" cloakenergy ="0">
+		</Cloak>
+	</Defense>
+<Upgrade file="shield_2"/>
+	<Stats mass ="0.2" momentofinertia ="0.2" fuel ="0">
+	</Stats>
+	<Computer yaw ="0" itts ="false" pitch ="0" roll ="0" afterburner ="0" maxspeed ="0">
+		<Radar itts="false" error="0" range="30000000" maxcone="-1" color="false">
+		</Radar>
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor>
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" missing ="1" delay ="1" jumpenergy ="0">
+	</Jump>
+	<Thrust>
+		<Engine Afterburner ="0" Forward ="0" Retro ="0" Left ="0" Right ="0" Top ="0" Bottom ="0">
+		</Engine>
+		<Maneuver yaw ="000000" pitch ="0" roll ="0">
+		</Maneuver>
+	</Thrust>
+	<bspmesh file ="nothin.xmesh" bsp ="1" rapid ="1">
+	</bspmesh>
+	<rapidmesh file ="nothin.xmesh" bsp ="1" rapid ="1">
+	</rapidmesh>
+	<Meshfile file ="landscape.xmesh">
+	</Meshfile>
+	<Meshfile file ="grass.xmesh">
+	</Meshfile>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</unit>

@@ -1,40 +1,38 @@
-<Unit scale="2">
-	<Description combatRole="FIGHTER">
-	</Description>
+<Unit scale="1.74716">
+	<description combatrole="INTERCEPTOR"/>
 	<cockpit file="light_cockpit.cpt" x="0" y=".25" z="4.5"/>
-	<Meshfile file="aeon.xmesh" />
-	<Mount weapon="DisruptorBeam" size="light medium" x="5.600000" y="-1.600000" z="3.200000"/>
-	<Mount weapon="DisruptorBeam" size="light medium" x="-5.600000" y="-1.600000" z="3.200000"/>
-	<Mount weapon="HeatSeeker" size="light-missile medium-missile" x="3.600000" y="-1.600000" z="1.200000" ammo="1" volume="161"/>
-	<Mount weapon="HeatSeeker" size="light-missile medium-missile" x="-3.600000" y="-1.600000" z="1.200000" ammo="1" volume="161"/>
-	<Mount weapon="Dumbfire" size="light-missile medium-missile" x="2.900000" y="-1.600000" z="1.200000" ammo="1" volume="151"/>
-	<Mount weapon="Dumbfire" size="light-missile medium-missile" x="-2.900000" y="-1.600000" z="1.200000" ammo="1" volume="151"/>
-	<Mount weapon="Neutron" size="special heavy" x="2.000000" y="-0.200000" z="5.200000"/>
-	<Mount weapon="Neutron" size="special heavy" x="-2.000000" y="-0.200000" z="5.200000"/>
+	<Meshfile file="aeonhi.xmesh" />
+	<Meshfile file="aeonhiglow.xmesh" />
+	<Mount weapon="Photon" size="light medium autotracking" x="5.600000" y="-1.600000" z="3.200000"/>
+	<Mount weapon="Photon" size="light medium autotracking" x="-5.600000" y="-1.600000" z="3.200000"/>
+	<Mount weapon="Photon" size="light medium autotracking" x=".5" y="-1.65" z="8"/>
+	<Mount weapon="Photon" size="light medium autotracking" x="-.5" y="-1.65" z="8"/>
+
+	<Mount weapon="Photonswarm" size="special-missile autotracking" x="3.600000" y="-1.600000" z="1.200000" ammo="200" volume="100"/>
+	<Mount weapon="Photonswarm" size="special-missile autotracking" x="-3.600000" y="-1.600000" z="1.200000" ammo="200" volume="100"/>
 	<Thrust>
-		<Engine Afterburner="25048" Forward="7112" Retro="6223" Left="3556" Right="3556" Top="3556" Bottom="3556"/>
-		<Maneuver yaw="55214" pitch="244135" roll="77292"/>
+		<Engine Afterburner="18200" Forward="10000" Retro="10000" Left="10000" Right="10000" Top="10000" Bottom="10000"/>
+		<Maneuver yaw="10000" pitch="10000" roll="10000"/>
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense HudImage="aeon-hud.spr">
-		<Armor front="45" right="40" left="40" back="40"/>
-		<Shields front="50.000000" back="40.000000" recharge="20.000000"/>
-		<Hull strength="100.000000"/>
-		<Cloak cloakmin=".25" cloakrate=".2" cloakenergy="64"/>
+	<Defense HudImage="aeon-hud.spr" ExplosionAni="explosion_aera.ani">
+		<Armor front="181" right="181" left="181" back="181"/>
+		<Shields front="360.000000" back="360.000000" recharge="90.000000"/>
+		<Hull strength="271.000000"/>
 	</Defense>
-	<Stats mass="36.373" momentofinertia="36.373" fuel="600000000"></Stats>
-	<Computer yaw="138.000000" pitch="165.600006" roll="193.200012" afterburner="134" maxspeed="55">
-		<Radar itts="false" color="true" error="0"/> </Computer>
+	<Stats mass="132.000000" momentofinertia="132" fuel="600000000"></Stats>
+	<Computer yaw="138.000000" pitch="165.600006" roll="193.200012" afterburner="300" maxspeed="270">
+		<Radar itts="true" color="true" error="0"/> </Computer>
 
 	<Energy afterburnenergy="30">
-		<Reactor recharge="64" limit="150"/>
+		<Reactor recharge="160" limit="500" warpenergy="300"/>
 	</Energy>
-           	<Jump delay="1" jumpenergy="90"/>       
+           	<Jump delay="1" jumpenergy="90" insysenergy="45"/>       
 
 <!-- new elements added -->
-<Light file="supernova.bmp" x="-0.5" y="-0.012" z="-5" size="0.880000"/>
-<Light file="supernova.bmp" x="0.5" y="-0.012" z="-5" size="0.880000"/>
-	<Hold volume="7">
+<Light file="aeraburn" x="-0.75" y="-0.086" z="-10" size="8"/>
+<Light file="aeraburn" x="0.75" y="-0.086" z="-10" size="8"/>
+	<Hold volume="10">
 	</Hold>
 </Unit>

@@ -1,0 +1,47 @@
+<Unit scale ="1">
+	<Description combatRole ="BOMB">
+	</Description>
+	<cockpit file ="medium_cockpit.cpt" x ="0" y =".5" z ="4">
+	</cockpit>
+	<Meshfile file ="box.xmesh">
+	</Meshfile>
+	<Thrust>
+		<Engine Afterburner =".01" Forward =".01" Retro =".01" Left =".01" Right =".01" Top ="0.01" Bottom ="0.01">
+		</Engine>
+		<Maneuver yaw ="10" pitch ="10" roll ="10">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="nova-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Armor front ="40" right ="35" left ="35" back ="40">
+		</Armor>
+		<Shields front ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="200.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2_Level1"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+	<Stats mass ="0.1" momentofinertia ="0.1" fuel ="40000000">
+	</Stats>
+	<Computer yaw ="150.800003" pitch =".800003" roll ="151.800003" afterburner ="3000.000000" maxspeed ="3000.000000">
+	</Computer>
+	<Energy>
+		<Reactor>
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_1"/>
+<Upgrade file="mult_gun_cooler"/>
+	<Jump delay ="1" jumpenergy ="90">
+	</Jump>
+	<Hold volume ="12.000000">
+	</Hold>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

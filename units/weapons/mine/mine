@@ -1,0 +1,30 @@
+<Unit scale="0.1">
+	<Description combatRole="MINE">
+	</Description>
+	<Meshfile file="box.xmesh" />
+
+	<Thrust>
+		<Engine Afterburner="5" Forward="5" Retro="5" Left="5" Right="5" Top="5" Bottom="5"/>
+		<Maneuver yaw="5" pitch="5" roll="5"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense hudImage="missile-hud.spr">
+		<Armor front="0" right="0" left="0" back="0"/>
+		<Shields front="0" back="0" recharge="0"/>
+		<Hull strength="1.000000"/>
+	</Defense>
+
+	<Mount weapon="Photon" size="medium autotracking" x="0" y="0" z="0" ammo="100"/>
+
+	<Stats mass="1" momentofinertia="1" fuel="40000000"></Stats>
+	<Computer yaw="150.800003" pitch="150.800003" roll="151.800003" afterburner="300.000000" maxspeed="300.000000"/>
+	<Energy afterburnenergy="1">
+		<Reactor recharge="1" limit="20000"/>
+	</Energy>
+       	<Jump delay="1" jumpenergy="90"/>       
+
+	<Hold volume="10">
+	</Hold>
+
+</Unit>

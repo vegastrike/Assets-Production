@@ -48,6 +48,31 @@ def getSystemsNAway (start,k,preferredfaction):
 
 syscreds=500
 
+
+def getMissionDifficulty ():
+	import difficulty
+	tmp=difficulty.getPlayerUnboundDifficulty(VS.getCurrentPlayer())
+	if (tmp>8):
+		tmp=8
+	return tmp
+
+def getPriceModifier(isUncapped):
+	import difficulty
+	if (not difficulty.usingDifficulty()):
+		return 1.0
+	if (isUncapped):
+		return getMissionDifficulty()/.05
+	return VS.GetDifficulty()/.05
+
+def howMuchHarder(makeharder):
+	import difficulty
+	if  (makeharder==0):
+		return 0
+	udiff = getMissionDifficulty()
+	if (udiff<=1):
+		return 0
+	return int(udiff*2)-1
+
 def processSystem(sys):
 	k= sys.split('/')
 	if (len(k)>1):
@@ -82,6 +107,7 @@ fixerpct=0.1
 def generatePatrolMission (path, numplanets):
 	dist=1000
 	creds = numplanets*500
+	creds*=getPriceModifier(False)
 	addstr=""
 	isFixer=vsrandom.random()<fixerpct
 	if isFixer:
@@ -103,6 +129,7 @@ def generateEscortMission (path,fg,fac):
 	typ = fg_util.RandomShipIn(fg,fac)
 	diff=vsrandom.randrange(0,6)	
 	creds=500*diff+1.2*syscreds*len(path)
+	creds*=getPriceModifier(False)
 	addstr=""
 	isFixer=vsrandom.random()<fixerpct
 	if isFixer:
@@ -127,6 +154,7 @@ def generateCargoMission (path, numcargos,category, fac):
 	creds=250*numcargos+500*diff+syscreds*len(path)+5000*(category=="Contraband")+20000*(category=="starships")
 	addstr=""
 	isFixer=vsrandom.random()<fixerpct
+	creds*=getPriceModifier(False)
 	if isFixer:
 		creds*=2
 		addstr+="#F#bases/fixers/merchant.spr#Talk to the Merchant#Thank you. I entrust you will make the delivery successfully.#\n"
@@ -136,8 +164,10 @@ def generateCargoMission (path, numcargos,category, fac):
 	writedescription("We need to deliver some %s cargo to the %s system. The mission is worth %d to us.  You will deliver it to a base owned by the %s"%(category, processSystem(path[-1]),creds,fac))
 	writemissionname("Cargo/Deliver_%s_to_%s"%(changecat(category),processSystem(path[-1])),path)
 def generateRescueMission(path,rescuelist):
-	numships = vsrandom.randrange(0,6)
+	makemissionharder=vsrandom.randrange(0,2)
+	numships = vsrandom.randrange(1,6)+howMuchHarder(makemissionharder)
 	creds = (numships+len(path))*vsrandom.randrange(2041,3140)
+	creds*=getPriceModifier(makemissionharder)
 	writemissionsavegame("import rescue\nntemp=rescue.rescue(%d,0,'%s',%d,'%s','%s',%s)\nntemp=0"%(creds,rescuelist[0],numships,rescuelist[2],rescuelist[1],str(path)))
 	writedescription("SOS! This is an ejected %s pilot under attack by %s forces. I request immediate assistance to the %s system and will offer %d credits for a safe return to the local planet where I may recover."%(rescuelist[0],rescuelist[2],processSystem(path[-1]),creds))
 	writemissionname("Rescue/Rescue_%s_from_%s_ships"%(rescuelist[0],rescuelist[2]),path)
@@ -145,16 +175,19 @@ def generateRescueMission(path,rescuelist):
 def generateBountyMission (path,fg,fac):
 	typ = fg_util.RandomShipIn(fg,fac)
 	cap = faction_ships.isCapital(typ)
-	diff=vsrandom.randrange(0,6)
+	makemissionharder=vsrandom.randrange(0,2)
+	diff=vsrandom.randrange(0,6)+howMuchHarder(makemissionharder)
 	runaway=(vsrandom.random()>=.75)
 	creds=1000+2000*runaway+500*diff+syscreds*len(path)
 	if (cap):
 		creds*=40
+		
 	finalprice=creds+syscreds*len(path)
+	finalprice*=getPriceModifier(makemissionharder)
 	addstr=""
 	isFixer=vsrandom.random()<fixerpct
 	if isFixer:
-		creds*=2
+		finalprice*=2
 		addstr+="#F#bases/fixers/hunter.spr#Talk with the Bounty Hunter#We will pay you on mission completion.  And as far as anyone knows-- we never met."
 		if (runaway):
 			addstr += '#Also-- we have information that the target may be informed about your attack and may be ready to run. Be quick!'
@@ -178,7 +211,8 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	creds=1000
 	minq = 1
 	maxq = 8
-	quantity = vsrandom.randrange(minq,maxq)
+	makemissionharder=vsrandom.randrange(0,2)
+	quantity = vsrandom.randrange(minq,maxq)+howMuchHarder(makemissionharder)
 	reallydefend = "1"
 	if (vsrandom.randrange(0,4)==0):
 		reallydefend="0"
@@ -187,8 +221,10 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	if isFixer:
 		creds*=2
 		addstr+="#F#bases/fixers/confed.spr#Talk to the Confed Officer#Thank you. Your defense will help confed in the long run.  We appreciate the support of the bounty hunting community.#\n"
+	creds=creds*quantity+syscreds*len(path)
+	creds*=getPriceModifier(makemissionharder)
 	writemissionsavegame(addstr+"import defend\ntemp=defend.defend('%s', %d, %d, 8000.0, 100000.0, %g, %s, %d, '%s', %s, '%s', '%s', '%s', '%s')\ntemp=0\n"%
-	                     (attackfac, 0, quantity, creds*quantity+syscreds*len(path), reallydefend, isbase, defendfac, str(path), attacktyp,attackfg, defendtyp, defendfg))
+	                     (attackfac, 0, quantity, creds, reallydefend, isbase, defendfac, str(path), attacktyp,attackfg, defendtyp, defendfg))
 	iscapitol=""
 	if isbase:
 		iscapitol="capitol "
@@ -219,6 +255,8 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 			if (i<2):
 				if j[-1] in dynamic_battle.rescuelist:
 					generateRescueMission(j,dynamic_battle.rescuelist[j[-1]])
+			if (0 and i==0):
+				generateRescueMission(j,("confed","Shadow","pirates"))
 			l = dynamic_battle.BattlesInSystem(j[-1])
 			nodefend=1
 			for k in l:

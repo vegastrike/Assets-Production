@@ -1,0 +1,72 @@
+<Unit scale ="1.25">
+	<cockpit file ="bomber-cockpit.cpt" x ="0" y =".5" z ="4">
+	</cockpit>
+	<Meshfile file ="mongoose.xmesh">
+	</Meshfile>
+	<Light file ="supernova.bmp" x ="1.500000" y ="0.700000" z ="-8.000000" size ="2.750000">
+	</Light>
+	<Light file ="supernova.bmp" x ="-1.500000" y ="0.700000" z ="-8.000000" size ="2.750000">
+	</Light>
+	<Mount weapon ="meson" size ="light" x ="0.800000" y ="-0.600000" z ="8.000000">
+	</Mount>
+	<Mount weapon ="meson" size ="light" x ="-0.800000" y ="-0.600000" z ="8.000000">
+	</Mount>
+	<Mount weapon ="laserbeam" size ="light" x ="-0.000000" y ="-0.400000" z ="8.200000">
+	</Mount>
+	<Mount weapon ="Swarm" size ="Special Special-Missile" x ="2.000000" y ="0.800000" z ="-4.000000" ammo ="25" volume ="7">
+	</Mount>
+	<Mount weapon ="Swarm" size ="Special Special-Missile" x ="-2.000000" y ="0.800000" z ="-4.000000" ammo ="25" volume ="7">
+	</Mount>
+	<Mount weapon ="Swarm" size ="Special Special-Missile" x ="1.000000" y ="-1.400000" z ="-1.000000" ammo ="25" volume ="7">
+	</Mount>
+	<Mount weapon ="Swarm" size ="Special Special-Missile" x ="-1.000000" y ="-1.400000" z ="-1.000000" ammo ="25" volume ="7">
+	</Mount>
+	<Mount weapon ="FriendOrFoe" size ="Medium-Missile Light-Missile" x ="2.5.000000" y ="-1.400000" z ="-2.000000" ammo ="1" volume ="16">
+	</Mount>
+	<Mount weapon ="FriendOrFoe" size ="Medium-Missile Light-Missile" x ="-2.5.000000" y ="-1.400000" z ="-2.000000" ammo ="1" volume ="16">
+	</Mount>
+	<Thrust>
+		<Engine Afterburner ="8000" Forward ="4000" Retro ="4000" Left ="4000" Right ="4000" Top ="4000" Bottom ="4000">
+		</Engine>
+		<Maneuver yaw ="3000" pitch ="3000" roll ="3000">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Description combatRole ="FIGHTER">
+	</Description>
+	<Defense HudImage ="mongoose-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Armor front ="80" right ="60" left ="60" back ="60">
+		</Armor>
+		<Shields front ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="127.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2_Level2"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+	<Stats mass ="42.1" momentofinertia ="42.1" fuel ="80000000">
+	</Stats>
+	<Computer yaw ="100.000000" pitch ="100.000000" roll ="100.000000" afterburner ="200" maxspeed ="180">
+	</Computer>
+	<Energy>
+		<Reactor warpenergy ="100">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_1"/>
+<Upgrade file="mult_gun_cooler"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<Jump delay ="1" jumpenergy ="80" insysenergy ="20">
+	</Jump>
+	<hold volume ="48.000000">
+	</hold>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

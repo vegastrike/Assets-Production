@@ -1,0 +1,40 @@
+<Unit scale ="1">
+	<Description combatRole ="BOMB">
+	</Description>
+	<cockpit file ="medium_cockpit.cpt" x ="0" y =".5" z ="4">
+	</cockpit>
+	<Meshfile file ="box.xmesh">
+	</Meshfile>
+	<Thrust>
+		<Engine Afterburner =".01" Forward =".01" Retro =".01" Left =".01" Right =".01" Top ="0.01" Bottom ="0.01">
+		</Engine>
+		<Maneuver yaw ="10" pitch ="10" roll ="10">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="nova-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="40" right ="35" left ="35" back ="40">
+		</Armor>
+		<Shields front ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="200.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2"/>
+	<Stats mass ="0.1" momentofinertia ="0.1" fuel ="40000000">
+	</Stats>
+	<Computer yaw ="150.800003" pitch =".800003" roll ="151.800003" afterburner ="3000.000000" maxspeed ="3000.000000">
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor>
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" delay ="1" jumpenergy ="90">
+	</Jump>
+	<Hold volume ="10">
+	</Hold>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

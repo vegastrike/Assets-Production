@@ -1,0 +1,31 @@
+<Unit scale=".69">
+<Meshfile file="thrudhi.xmesh"/>
+<Meshfile file="thrudsails.xmesh"/>
+<ShieldMesh file="shield1.xmesh"/>
+<description combatrole="FIGHTER"/>
+	<cockpit file="rlaan-cockpit.cpt" x="0" y="3" z="23"/>
+	<Thrust>
+		<Engine Afterburner="13000" Forward="5000" Retro="5000" Left="50000" Right="5000" Top="5000" Bottom="5000"/>
+		<Maneuver yaw="3415.500000" pitch="3415.500000" roll="3415.500000"/>
+	</Thrust>
+	<Sound> </Sound>
+	<Defense HudImage="thrud-hud.spr" ExplosionAni="explosion_rlaan.ani">
+		<Armor front="112" right="112" left="112" back="112"/>
+		<Shields front="150" right="125" left="125" back="100" recharge="100"/>
+		<Hull strength="300"/>
+	</Defense>
+	<Stats mass="65" momentofinertia="65" fuel="2000000000"></Stats>
+	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="220" maxspeed="180"/>
+	<Energy>
+		<Reactor recharge="120" limit="800" warpenergy="350"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="350" insysenergy="120"/>
+	<Hold volume="25">
+	</Hold>
+
+<Mount weapon="KtekBeam" size="Light Medium Heavy" x="-7.5" y="-1" z="0"/>
+<Mount weapon="KtekBeam" size="Light Medium Heavy" x="7.5" y="-1" z="0"/>
+<Mount weapon="Ktek" size="Light Medium Heavy" x="-.75" y="-6" z="3.25"/>
+<Mount weapon="Ktek" size="Light Medium Heavy" x=".75" y="-6" z="3.25"/>
+
+</Unit>

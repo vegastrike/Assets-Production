@@ -5,41 +5,55 @@ import fg_util
 from universe import getAdjacentSystemList
 
 cp=fg_util.ccp
-
+maxshipsinfg=20
 fgnames=[] #list of lists of flightgroup names for each faction
-fglists=[] #list of lists for each flightgroups to lists of ships for each faction
 origfgnames=[]
-origfglists=[]
 import faction_ships
 def XProductionRate(fac,type):
 	if fac in type:
 		return type[fac]
 	return type["default"]
 
-def GenerateFgShips (maxshipinfg,factionnr):
+def GenerateFgShips (shipinfg,factionnr):
 	lst=[]
 	capship=()
 	fac = faction_ships.intToFaction(factionnr)
 	if vsrandom.random()<XProductionRate(fac,faction_ships.capitalProductionRate)/XProductionRate(fac,faction_ships.fighterProductionRate):
 		capship=((faction_ships.getRandomCapitolInt(factionnr),1),)
-	return ((faction_ships.getRandomFighterInt(factionnr),maxshipinfg),)+capship
+	return ((faction_ships.getRandomFighterInt(factionnr),shipinfg),)+capship
 
-def GenerateAllShips (numflightgroups,maxshipinfg):
-	for fnr in range(faction_ships.getMaxFactions()-1):
-		fglists.append([])
-		fgnames.append(fg_util.GetRandomFGNames(numflightgroups,faction_ships.factions[fnr]))
-		for i in range(numflightgroups):
-			fglists[-1].append(GenerateFgShips(vsrandom.randrange(maxshipinfg)+1,fnr))
+def GenerateAllShips ():
+	global fgnames,origfgnames
+	for fnr in range(faction_ships.getMaxFactions()):
+		fgnames.append(fg_util.GetRandomFGNames(1,faction_ships.factions[fnr]))
+		origfgnames.append(list(fgnames[-1]))
 
 
-doNotAddBasesTo={"enigma_sector/heavens_gate":1,"sol_sector/celeste":1,"enigma_sector/enigma":1,"enigma_sector/niven":1}
+doNotAddBasesTo={"enigma_sector/heavens_gate":1,"sol_sector/celeste":1,"enigma_sector/enigma":1,"enigma_sector/niven":1,"gemini_sector":1,"Crucible/Cephid_17":1}
 def AddBasesToSystem (faction,sys):
 	if (sys in doNotAddBasesTo):
 		return
+	slash = sys.find("/")
+	if (slash!= -1):
+		if (sys[0:slash] in doNotAddBasesTo):
+			return
 	if faction in faction_ships.factions:
 		fsfac= list(faction_ships.factions).index(faction)
-		numbases =vsrandom.randrange(fg_util.MinNumBasesInSystem(),
-									 fg_util.MaxNumBasesInSystem())
+		numbases=0
+#		numplanets=VS.GetGalaxyProperty(sys,"num_planets");
+		numjumppoints=VS.GetNumAdjacentSystems(sys);
+		if (numjumppoints<4):
+			if (vsrandom.random()>=.25):
+				numbases=1
+		elif (vsrandom.random()>=.005):
+			if (numjumppoints<7):
+				numbases=vsrandom.randrange(1,int(numjumppoints/2)+1)
+			elif numjumppoints==7:
+				numbases=vsrandom.randrange(1,6)
+			else:
+				numbases=vsrandom.randrange(1,numjumppoints+1)
+		if numbases==0:
+			return
 		shiplist=[]
 		nums=[]
 		for i in range(numbases):
@@ -63,27 +77,25 @@ def AddSysDict (cursys):
 	global fgnames, fglists
 	i=0
 	AddBasesToSystem(sysfaction, cursys)
-	for i in range (vsrandom.randrange(fg_util.MaxNumFlightgroupsInSystem())): #number of fgs in a system.
+	for i in range (1+vsrandom.randrange(fg_util.MinNumFlightgroupsInSystem()-1,fg_util.MaxNumFlightgroupsInSystem())): #number of fgs in a system.
 		faction=sysfaction
 		if vsrandom.random()<.3 or sysfaction=='unknown' or sysfaction=='':
 			faction=faction_ships.get_rabble_of(sysfaction)
 		else:
 			faction=faction_ships.get_friend_of(sysfaction)
 		factionnr=faction_ships.factionToInt(faction)
-		typenumbertuple=fglists[factionnr].pop(-1) #pop returns item inside array
+		global maxshipsinfg
+		typenumbertuple=GenerateFgShips(vsrandom.randrange(maxshipsinfg)+1,factionnr)
+		if (not len(fgnames[factionnr])):
+			fgnames[factionnr]=fg_util.TweakFGNames(origfgnames[factionnr])
+		
 		fgname=fgnames[factionnr].pop(-1) #pop returns item inside array
-		if not len(fgnames):
-			fgnames=fg_util.TweakFGNames(origfgnames)
-			fglists=origfglists
 		fg_util.AddShipsToFG (fgname,faction,typenumbertuple,cursys)
 	return i
 
 
 def ForEachSys (startingsys,functio):
 	systemdict={}
-	global origfgnames
-	origfgnames=fgnames
-	origfglists=fglists
 	systemdict[startingsys]=functio(startingsys)
 	todo=getAdjacentSystemList(startingsys)
 	while len(todo):
@@ -97,7 +109,12 @@ def Makesys (startingsys):
 
 systemcount={}
 def CountSystems(sys):
-	systemcount[VS.GetGalaxyFaction(sys)]+=1
+	fac =VS.GetGalaxyFaction(sys)
+	if fac in systemcount:
+		systemcount[fac]+=1
+	else:
+		systemcount[fac]=1
+		print "FATAL ERROR "+fac+" not in list;"
 def TakeoverSystem(fac,sys):
 	systemcount[VS.GetGalaxyFaction(sys)]-=1
 	VS.SetGalaxyFaction(sys,fac)
@@ -123,7 +140,7 @@ if cp>=0:
 		
 		fg_util.WriteStringList(cp,"FactionRefList",curfaclist)
 		print 'generating ships... ... ...'
-		GenerateAllShips (5000,5) ###Insert number of flight groups and max ships per fg
+		GenerateAllShips () ###Insert number of flight groups and max ships per fg
 		print 'placing ships... ... ...'
 		genUniverse=Makesys(VS.getSystemFile())
 		#now every system has distributed ships in the save data!

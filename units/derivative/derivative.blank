@@ -1,0 +1,64 @@
+<Unit scale ="6">
+	<Meshfile file ="aeon.xmesh">
+	</Meshfile>
+	<description combatrole ="FIGHTER">
+	</description>
+	<cockpit file ="light_cockpit.cpt" x ="0" y =".21" z ="1.548">
+	</cockpit>
+	<Mount weapon ="" size ="SPECIAL HEAVY" x ="-2.24600" y ="-0.412000" z ="-0.328000">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL HEAVY" x ="2.24600" y ="-0.422000" z ="-0.328000">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM" x ="-0.382000" y ="-5.80000e-2" z ="3.26400">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM" x ="0.380000" y ="-5.80000e-2" z ="3.26400">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE" x ="-0.898000" y ="-0.108000" z ="-1.29000" ammo ="2" volume ="6">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE" x ="0.904000" y ="-0.108000" z ="-1.29000" ammo ="2" volume ="6">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE" x ="-0.152000" y ="-1.80000e-2" z ="2.67800" ammo ="2" volume ="6">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE" x ="0.158000" y ="-1.80000e-2" z ="2.67800" ammo ="2" volume ="6">
+	</Mount>
+	<Thrust>
+		<Engine Afterburner ="20000" Forward ="10000" Retro ="10000" Left ="10000" Right ="10000" Top ="10000" Bottom ="10000">
+		</Engine>
+		<Maneuver yaw ="10000" pitch ="10000" roll ="10000">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="aeon-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="123" right ="123" left ="123" back ="123">
+		</Armor>
+		<Shields front ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="275.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2"/>
+	<Stats mass ="134" momentofinertia ="134" fuel ="600000000">
+	</Stats>
+	<Computer yaw ="90.000000" pitch ="90.600006" roll ="100.200012" afterburner ="280" maxspeed ="270">
+		<Radar itts="false" error="0" range="30000000" maxcone="-1" color="false">
+		</Radar>
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="180">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" delay ="1" jumpenergy ="90" insysenergy ="40">
+	</Jump>
+	<Light file ="supernova.bmp" x ="0.00000e+0" y ="8.60000e-2" z ="-3.90200" size =".5">
+	</Light>
+	<Light file ="supernova.bmp" x ="-0.386000" y ="8.60000e-2" z ="-3.90200" size =".5">
+	</Light>
+	<Light file ="supernova.bmp" x ="0.386000" y ="8.60000e-2" z ="-3.90200" size =".5">
+	</Light>
+	<Hold volume ="7">
+	</Hold>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

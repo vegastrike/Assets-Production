@@ -9,6 +9,8 @@ ccp=VS.getCurrentPlayer()
 #klkk Adjectives
 def MaxNumFlightgroupsInSystem ():
 	return 10
+def MinNumFlightgroupsInSystem ():
+	return 6
 def MaxNumBasesInSystem():
 	return 10
 def MinNumBasesInSystem():
@@ -70,6 +72,8 @@ def GetRandomFGNames (numflightgroups, faction):
 	if (numflightgroups>len(flightgroupnamelist[faction])):
 		for i in range (numflightgroups-len(flightgroupnamelist)):
 			additional.append(str(i))
+	if (len(additional)+len(flightgroupnamelist[faction])==0):
+		flightgroupnamelist[faction]=ReadBaseNameList(faction)
 	return additional+flightgroupnamelist[faction]
 basecounter=0
 def GetRandomBaseName (n,faction):
@@ -94,7 +98,7 @@ origfgoffset=0
 def TweakFGNames (origfgnames):
 	global origfgoffset
 	tweaker=str(origfgoffset)
-	tweaktuple = ('prime','double_prime','triple_prime','quad_prime','quint_prime')
+	tweaktuple = ('prime','alpha','aleph','arc','beta','quadratis','zeta')
 	if (origfgoffset<len(tweaktuple)):
 		tweaker = tweaktuple[origfgoffset]
 	rez=[]
@@ -262,7 +266,7 @@ def NumShipsInFG (fgname,faction):
 		try:
 			return int(Director.getSaveString(ccp,key,0))
 		except:
-			print 'fatal: flightgroup without size'
+			#print 'fatal: flightgroup without size'
 			return 0
 
 def GetDamageInFGPool (fgname,faction):
@@ -274,7 +278,7 @@ def GetDamageInFGPool (fgname,faction):
 		try:
 			return int(Director.getSaveString(ccp,key,2))
 		except:
-			print 'nonfatal: flightgroup without size'
+			#print 'nonfatal: flightgroup without size'
 			return 0
 
 def SetDamageInFGPool (fgname,faction,num):

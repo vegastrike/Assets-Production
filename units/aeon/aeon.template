@@ -1,36 +1,67 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  left="0" right="0" back="0.000000" recharge="0.000000"/>
-	</Defense>
-	<Upgrade file="shield_4_Level2"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_3"/>
-	<Upgrade file="polymer_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-	<Mount weapon="DisruptorBeam" size="light medium" x="5.600000" y="-1.600000" z="3.200000"/>
-	<Mount weapon="DisruptorBeam" size="light medium" x="-5.600000" y="-1.600000" z="3.200000"/>
-	<Mount weapon="HeatSeeker" size="light-missile medium-missile" x="3.600000" y="-1.600000" z="1.200000" ammo="1" volume="161"/>
-	<Mount weapon="HeatSeeker" size="light-missile medium-missile" x="-3.600000" y="-1.600000" z="1.200000" ammo="1" volume="161"/>
-	<Mount weapon="Dumbfire" size="light-missile medium-missile" x="2.900000" y="-1.600000" z="1.200000" ammo="1" volume="151"/>
-	<Mount weapon="Dumbfire" size="light-missile medium-missile" x="-2.900000" y="-1.600000" z="1.200000" ammo="1" volume="151"/>
-	<Mount weapon="Neutron" size="special medium heavy Autotracking" x="2.000000" y="-0.200000" z="5.200000"/>
-	<Mount weapon="Neutron" size="special medium heavy Autotracking" x="-2.000000" y="-0.200000" z="5.200000"/>
+<Unit scale ="1.74716">
+	<description combatrole ="INTERCEPTOR">
+	</description>
+	<cockpit file ="light_cockpit.cpt" x ="0" y =".25" z ="4.5">
+	</cockpit>
+	<Meshfile file ="aeonhi.xmesh">
+	</Meshfile>
+	<Meshfile file ="aeonhiglow.xmesh">
+	</Meshfile>
+	<Mount weapon ="Photon" size ="light medium autotracking" x ="5.600000" y ="-1.600000" z ="3.200000">
+	</Mount>
+	<Mount weapon ="Photon" size ="light medium autotracking" x ="-5.600000" y ="-1.600000" z ="3.200000">
+	</Mount>
+	<Mount weapon ="Photon" size ="light medium autotracking" x =".5" y ="-1.65" z ="8">
+	</Mount>
+	<Mount weapon ="Photon" size ="light medium autotracking" x ="-.5" y ="-1.65" z ="8">
+	</Mount>
+	<Mount weapon ="Photonswarm" size ="special-missile autotracking" x ="3.600000" y ="-1.600000" z ="1.200000" ammo ="200" volume ="100">
+	</Mount>
+	<Mount weapon ="Photonswarm" size ="special-missile autotracking" x ="-3.600000" y ="-1.600000" z ="1.200000" ammo ="200" volume ="100">
+	</Mount>
 	<Thrust>
-		<Engine Afterburner="27481" Forward="7282" Retro="7432" Left="4768" Right="4768" Top="4768" Bottom="4768"/>
-		<Maneuver yaw="56426" pitch="68672" roll="82142"/>
+		<Engine Afterburner ="18200" Forward ="10000" Retro ="10000" Left ="10000" Right ="10000" Top ="10000" Bottom ="10000">
+		</Engine>
+		<Maneuver yaw ="10000" pitch ="10000" roll ="10000">
+		</Maneuver>
 	</Thrust>
 	<Sound>
 	</Sound>
-
-	<Stats mass="36.373" momentofinertia="36.373" fuel="600000000"></Stats>
-
-	<Computer yaw="148.000000" pitch="170.600006" roll="200.200012" afterburner="144" maxspeed="56">
-</Computer>
-
-           	<Jump delay="1" jumpenergy="90"/>       
-	<Hold volume="18">
+	<Defense HudImage ="aeon-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Armor front ="181" right ="181" left ="181" back ="181">
+		</Armor>
+		<Shields front ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="271.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2_Level4"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+	<Stats mass ="132.000000" momentofinertia ="132" fuel ="600000000">
+	</Stats>
+	<Computer yaw ="138.000000" pitch ="165.600006" roll ="193.200012" afterburner ="300" maxspeed ="270">
+		<Radar itts="true" error="0" range="600000000" maxcone="-1" color="true" >
+		</Radar>
+	</Computer>
+	<Energy>
+		<Reactor warpenergy ="300">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_4"/>
+<Upgrade file="mult_gun_cooler"/>
+	<Jump delay ="1" jumpenergy ="90" insysenergy ="45">
+	</Jump>
+	<Light file ="aeraburn" x ="-0.75" y ="-0.086" z ="-10" size ="8">
+	</Light>
+	<Light file ="aeraburn" x ="0.75" y ="-0.086" z ="-10" size ="8">
+	</Light>
+	<Hold volume ="12.000000">
 	</Hold>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
 </Unit>

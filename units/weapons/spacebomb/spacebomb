@@ -1,0 +1,30 @@
+<Unit >
+	<Description combatRole="BOMB">
+	</Description>
+	<Meshfile file = "spacebomb.xmesh"  >
+	</Meshfile>
+	<BspMesh RAPID = "0"  >
+	</BspMesh>
+	<Light file = "supernova.bmp" x = "0" y = "0" z = "-2" size = ".6"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "14" Forward = "14" Retro = "14" Left = "3" Right = "3" Top = "3" Bottom = "3"  >
+		</Engine>
+		<Maneuver yaw = "3" pitch = "3" roll = "3"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense hudImage="missile-hud.spr">
+		<Hull strength = "5"  >
+		</Hull>
+	</Defense>
+	<Stats mass = "0.0259001" momentofinertia = "0.0310801" fuel = "200000"  >
+	</Stats>
+	<Computer yaw = "1" pitch = "1" roll = "1" afterburner = "42" maxspeed = "40"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "10" limit = "100"  >
+		</Reactor>
+	</Energy>
+</Unit>

@@ -1,0 +1,88 @@
+<Unit scale =".94">
+	<description combatrole ="FIGHTER">
+	</description>
+	<Cockpit file ="medium_cockpit.cpt" x ="0" y =".5" z ="5.5">
+	</Cockpit>
+	<Meshfile file ="destinyhi.xmesh">
+	</Meshfile>
+	<Meshfile file ="destinyhiglow.xmesh">
+	</Meshfile>
+	<Meshfile file ="navlights.xmesh">
+	</Meshfile>
+	<ShieldMesh file ="shield1.xmesh">
+	</ShieldMesh>
+	<Mount weapon ="Razor" size ="light medium" x ="-0.6" y ="-2.8" z ="7">
+	</Mount>
+	<Mount weapon ="Razor" size ="light medium" x ="0.6" y ="-2.8" z ="7">
+	</Mount>
+	<Mount weapon ="Reaper" size ="medium heavy" x ="-2" y ="-0.16" z ="11">
+	</Mount>
+	<Mount weapon ="Reaper" size ="medium heavy" x ="2" y ="-0.16" z ="11">
+	</Mount>
+	<Mount weapon ="ImageRecognition" size ="light-missile medium-missile" x ="4.470487" y ="-0.182350" z ="-1.094219" ammo ="3" volume ="48">
+	</Mount>
+	<Mount weapon ="ImageRecognition" size ="light-missile medium-missile" x ="-4.512798" y ="-0.183760" z ="-1.121801" ammo ="3" volume ="48">
+	</Mount>
+	<Mount weapon ="ImageRecognition" size ="light-missile medium-missile" x ="3.470487" y ="-0.182350" z ="-1.094219" ammo ="3" volume ="48">
+	</Mount>
+	<Mount weapon ="ImageRecognition" size ="light-missile medium-missile" x ="-3.512798" y ="-0.183760" z ="-1.121801" ammo ="3" volume ="48">
+	</Mount>
+	<Thrust>
+		<Engine Afterburner ="25000" Forward ="17000" Retro ="17000" Left ="17000" Right ="17000" Top ="17000" Bottom ="17000">
+		</Engine>
+		<Maneuver yaw ="17000" pitch ="17000" roll ="17000">
+		</Maneuver>
+	</Thrust>
+	<Defense HudImage ="destiny-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Armor front ="360" right ="215" left ="215" back ="100">
+		</Armor>
+		<Shields front ="0" left ="0" right ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="325">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4_Level6"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+	<Stats mass ="171" momentofinertia ="171" fuel ="40000000">
+	</Stats>
+	<Computer yaw ="96" pitch ="96" roll ="96" afterburner ="260" maxspeed ="240">
+	</Computer>
+	<Energy>
+		<Reactor warpenergy ="600">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_5"/>
+<Upgrade file="mult_gun_cooler"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<Jump delay ="1" jumpenergy ="200" insysenergy ="90">
+	</Jump>
+	<Hold volume ="18.000000">
+	</Hold>
+	<Light file ="supernova.bmp" x ="-3.35" y ="1.125" z ="-9.25" size ="8">
+	</Light>
+	<Light file ="supernova.bmp" x ="3.35" y ="1.125" z ="-9.25" size ="8">
+	</Light>
+	<Light file ="supernova.bmp" x ="-3.5" y =".125" z ="-9.25" size ="3">
+	</Light>
+	<Light file ="supernova.bmp" x ="3.5" y =".125" z ="-9.25" size ="3">
+	</Light>
+	<Light file ="supernova.bmp" x ="-3" y =".25" z ="-9.25" size ="3">
+	</Light>
+	<Light file ="supernova.bmp" x ="3" y =".25" z ="-9.25" size ="3">
+	</Light>
+	<Light file ="supernova.bmp" x ="-3.35" y ="-.3" z ="-9.25" size ="3">
+	</Light>
+	<Light file ="supernova.bmp" x ="3.35" y ="-.3" z ="-9.25" size ="3">
+	</Light>
+	<Light file ="supernova.bmp" x ="-2.9" y ="-.16" z ="-9.25" size ="3">
+	</Light>
+	<Light file ="supernova.bmp" x ="2.9" y ="-.16" z ="-9.25" size ="3">
+	</Light>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

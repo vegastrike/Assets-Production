@@ -1,7 +1,7 @@
 <Unit scale = "58" >
 	<Description combatRole="CARRIER">
 	</Description>
-
+	<Bspmesh usebsp="0"/>
 	<Meshfile file = "vitik.xmesh"  >
 	</Meshfile>
 	<Dock x = "-5" y = "0" z = "-.3" size = "1.9"  >
@@ -29,29 +29,30 @@
 	<Dock x = "-5" y = "0" z = "9.7" size = "1.9"  >
 	</Dock>
 	<Thrust >
-		<Engine Afterburner = "13486738" Forward = "8705076" Retro = "8214650" Left = "7846829" Right = "7846829" Top = "7846829" Bottom = "7846829"  >
+		<Engine Afterburner = "2800000000" Forward = "1000000000" Retro = "1000000000" Left = "10000000" Right = "10000000" Top = "10000000" Bottom = "10000000"  >
 		</Engine>
-		<Maneuver yaw = "4480049" pitch = "4480049" roll = "8158251"  >
+		<Maneuver yaw = "10000000" pitch = "10000000" roll = "10000000"  >
 		</Maneuver>
 	</Thrust>
 	<Sound  >
 	</Sound>
-	<Defense HudImage = "vitik-hud.spr" >
-		<Armor front = "8000" right = "9000" left = "9000" back = "8000"  >
+	<Defense HudImage = "vitik-hud.spr"  ExplosionAni="explosion_aera.ani">
+		<Armor front = "28000" right = "29000" left = "29000" back = "28000"  >
 		</Armor>
-		<Shields front = "12000.000000" left = "14000" right = "14000" back = "12000.000000" recharge = "120.000000"  >
+		<Shields front = "50000" left = "50000" right = "50000" back = "50000" recharge = "300"  >
 		</Shields>
-		<Hull strength = "10000.000000"  >
+		<Hull strength = "5000000"  >
 		</Hull>
 	</Defense>
-	<Stats mass = "183910078" momentofinertia = "221354170" fuel = "20000000"  >
+	<Stats mass = "183910070" momentofinertia = "183910070" fuel = "200000000000000"  >
 	</Stats>
-	<Computer yaw = "57.600000" pitch = "57.600000" roll = "97.600000" afterburner = "108.666666" maxspeed = "54.333333" >
-		<Radar itts = "true" color = "true" range = "200000" error = "0"  >
+	<Computer yaw = "57.600000" pitch = "57.600000" roll = "97.600000" afterburner = "200" maxspeed = "200" >
+		<Radar itts = "true" color = "true" range = "200000000" error = "0"  >
 		</Radar>
 	</Computer>
 	<Energy >
-		<Reactor recharge = "700" limit = "30000"  >
+		<Reactor recharge = "7000" limit = "300000"  warpenergy="20000">
+		<Jump jumpenergy="19500" insysenergy="19000"/>
 		</Reactor>
 	</Energy>
 	<Jump delay = "1" jumpenergy = "20000"  >
@@ -68,57 +69,61 @@
 	</Light>
 	<Light file = "supernova.bmp" x = "2.219056" y = "-0.084286" z = "-38.838833" size = "0.660000"  >
 	</Light>
-	<Subunit file = "turret_capship_layered_defense" x = "7.496216" y = "-0.882353" z = "-31.542822" ri = "0.719620" rj = "0.000000" rk = "-0.694368" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
+	
+	<Subunit file = "aeraturretadvtorp" x = "0" y="2" z="0" ri="1" rj="0" rk="0" qi="0" qj="1" qk="0"/>
+	<Subunit file = "aeraturretadvtorp" x = "0" y="-2" z="0" ri="1" rj="0" rk="0" qi="0" qj="-1" qk="0"/>
+	
+	<Subunit file = "aeraturretpd" x = "7.496216" y = "-0.882353" z = "-31.542822" ri = "0.719620" rj = "0.000000" rk = "-0.694368" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "11.620596" y = "-0.424836" z = "-36.033173" ri = "0.956974" rj = "0.000000" rk = "0.290173" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
+	<Subunit file = "aeraturretpd" x = "11.620596" y = "-0.424836" z = "-36.033173" ri = "0.956974" rj = "0.000000" rk = "0.290173" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-12.180243" y = "-0.424836" z = "-36.203918" ri = "-0.747204" rj = "0.000000" rk = "-0.664595" qi = "0.000000" qj = "-1.000000" qk = "-0.000000"  >
+	<Subunit file = "aeraturretpd" x = "-12.180243" y = "-0.424836" z = "-36.203918" ri = "-0.747204" rj = "0.000000" rk = "-0.664595" qi = "0.000000" qj = "-1.000000" qk = "-0.000000"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-10.381495" y = "0.056962" z = "-36.607723" ri = "0.992370" rj = "0.026356" rk = "0.120443" qi = "-0.026549" qj = "0.999647" qk = "-0.000000"  >
+	<Subunit file = "aeraturretpd" x = "-10.381495" y = "0.056962" z = "-36.607723" ri = "0.992370" rj = "0.026356" rk = "0.120443" qi = "-0.026549" qj = "0.999647" qk = "-0.000000"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-7.446818" y = "-0.882353" z = "-31.230015" ri = "-0.823791" rj = "0.000000" rk = "0.566894" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
+	<Subunit file = "aeraturretpd" x = "-7.446818" y = "-0.882353" z = "-31.230015" ri = "-0.823791" rj = "0.000000" rk = "0.566894" qi = "0.000000" qj = "-1.000000" qk = "0.000000"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "7.379731" y = "0.882353" z = "-32.700428" ri = "-0.454126" rj = "0.000000" rk = "-0.890938" qi = "0.000000" qj = "1.000000" qk = "0.000000"  >
+	<Subunit file = "aeraturretpd" x = "7.379731" y = "0.882353" z = "-32.700428" ri = "-0.454126" rj = "0.000000" rk = "-0.890938" qi = "0.000000" qj = "1.000000" qk = "0.000000"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-7.872672" y = "0.882353" z = "-32.359119" ri = "-0.823791" rj = "0.000000" rk = "-0.566894" qi = "0.000000" qj = "1.000000" qk = "0.000000"  >
+	<Subunit file = "aeraturretpd" x = "-7.872672" y = "0.882353" z = "-32.359119" ri = "-0.823791" rj = "0.000000" rk = "-0.566894" qi = "0.000000" qj = "1.000000" qk = "0.000000"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "11.210299" y = "0.034951" z = "-37.066704" ri = "0.746819" rj = "-0.019834" rk = "-0.664732" qi = "0.026549" qj = "0.999647" qk = "0.000000"  >
+	<Subunit file = "aeraturretpd" x = "11.210299" y = "0.034951" z = "-37.066704" ri = "0.746819" rj = "-0.019834" rk = "-0.664732" qi = "0.026549" qj = "0.999647" qk = "0.000000"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "6.354334" y = "1.177035" z = "53.929455" ri = "-0.269661" rj = "0.032344" rk = "0.962412" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "6.354334" y = "1.177035" z = "53.929455" ri = "-0.269661" rj = "0.032344" rk = "0.962412" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "6.414254" y = "1.203444" z = "51.577385" ri = "-0.269661" rj = "0.032344" rk = "0.962412" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "6.414254" y = "1.203444" z = "51.577385" ri = "-0.269661" rj = "0.032344" rk = "0.962412" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "6.004908" y = "1.321698" z = "48.636974" ri = "-0.269661" rj = "0.032344" rk = "0.962412" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "6.004908" y = "1.321698" z = "48.636974" ri = "-0.269661" rj = "0.032344" rk = "0.962412" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-6.372550" y = "1.251889" z = "48.961338" ri = "-0.141752" rj = "-0.040492" rk = "0.989074" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "-6.372550" y = "1.251889" z = "48.961338" ri = "-0.141752" rj = "-0.040492" rk = "0.989074" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-6.354334" y = "1.177035" z = "53.929455" ri = "-0.141752" rj = "-0.040492" rk = "0.989074" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "-6.354334" y = "1.177035" z = "53.929455" ri = "-0.141752" rj = "-0.040492" rk = "0.989074" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-6.722732" y = "1.151747" z = "51.411797" ri = "-0.141752" rj = "-0.040492" rk = "0.989074" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "-6.722732" y = "1.151747" z = "51.411797" ri = "-0.141752" rj = "-0.040492" rk = "0.989074" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-6.014077" y = "1.965492" z = "7.560116" ri = "0.816398" rj = "0.152455" rk = "-0.557003" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "-6.014077" y = "1.965492" z = "7.560116" ri = "0.816398" rj = "0.152455" rk = "-0.557003" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "6.014078" y = "1.965492" z = "7.560116" ri = "-0.001434" rj = "-0.015458" rk = "0.999879" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "6.014078" y = "1.965492" z = "7.560116" ri = "-0.001434" rj = "-0.015458" rk = "0.999879" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-5.969682" y = "-1.079812" z = "53.194912" ri = "0.269661" rj = "-0.032344" rk = "0.962412" qi = "-0.173335" qj = "-0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "-5.969682" y = "-1.079812" z = "53.194912" ri = "0.269661" rj = "-0.032344" rk = "0.962412" qi = "-0.173335" qj = "-0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "5.680499" y = "-1.133594" z = "53.011623" ri = "0.001434" rj = "-0.015458" rk = "-0.999879" qi = "0.173335" qj = "-0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "5.680499" y = "-1.133594" z = "53.011623" ri = "0.001434" rj = "-0.015458" rk = "-0.999879" qi = "0.173335" qj = "-0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "5.364340" y = "1.646316" z = "35.152905" ri = "-0.960982" rj = "0.172550" rk = "-0.216195" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "5.364340" y = "1.646316" z = "35.152905" ri = "-0.960982" rj = "0.172550" rk = "-0.216195" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-5.364340" y = "1.646316" z = "35.152901" ri = "0.001434" rj = "-0.015458" rk = "0.999880" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "-5.364340" y = "1.646316" z = "35.152901" ri = "0.001434" rj = "-0.015458" rk = "0.999880" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "4.263845" y = "-2.345804" z = "-8.268625" ri = "-0.984112" rj = "-0.172568" rk = "0.041760" qi = "0.173335" qj = "-0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "4.263845" y = "-2.345804" z = "-8.268625" ri = "-0.984112" rj = "-0.172568" rk = "0.041760" qi = "0.173335" qj = "-0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-4.263845" y = "-2.345804" z = "-8.268625" ri = "0.196822" rj = "-0.019243" rk = "0.980250" qi = "-0.173335" qj = "-0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "-4.263845" y = "-2.345804" z = "-8.268625" ri = "0.196822" rj = "-0.019243" rk = "0.980250" qi = "-0.173335" qj = "-0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "5.188959" y = "1.844692" z = "24.492077" ri = "-0.174446" rj = "0.015237" rk = "0.984549" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "5.188959" y = "1.844692" z = "24.492077" ri = "-0.174446" rj = "0.015237" rk = "0.984549" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-5.948823" y = "1.710291" z = "24.533401" ri = "0.816398" rj = "0.152455" rk = "-0.557003" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "-5.948823" y = "1.710291" z = "24.533401" ri = "0.816398" rj = "0.152455" rk = "-0.557003" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "1.948965" y = "3.290929" z = "-31.256292" ri = "0.001434" rj = "0.015458" rk = "-0.999879" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "1.948965" y = "3.290929" z = "-31.256292" ri = "0.001434" rj = "0.015458" rk = "-0.999879" qi = "0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
-	<Subunit file = "turret_capship_layered_defense" x = "-1.983347" y = "3.288304" z = "-31.474375" ri = "-0.504496" rj = "-0.102272" rk = "0.857335" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
+	<Subunit file = "aeraturretpd" x = "-1.983347" y = "3.288304" z = "-31.474375" ri = "-0.504496" rj = "-0.102272" rk = "0.857335" qi = "-0.173335" qj = "0.984741" qk = "0.015472"  >
 	</Subunit>
 	<Hold volume = "100000000000" >
 		<Category file = "Natural_Products/Food" >
@@ -283,7 +288,7 @@
 			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "20"  >
 			</import>
 		</Category>
-		<Category file = "upgrades/Weapons/Turrets" >
+		<Category file = "upgrades/Weapons/Turrets/Aera" >
 			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "1"  >
 			</import>
 		</Category>
@@ -311,19 +316,19 @@
 			<import price = "1" pricestddev = ".1" quantity = "10" quantitystddev = "50"  >
 			</import>
 		</Category>
-		<Category file = "upgrades/Engines/Light" >
+		<Category file = "upgrades/Reactors/Light" >
 			<import price = "1" pricestdev = ".1" quantity = "2" quantitystddev = "10"  >
 			</import>
 		</Category>
-		<Category file = "upgrades/Engines/Medium" >
+		<Category file = "upgrades/Reactors/Medium" >
 			<import price = "1" pricestdev = ".1" quantity = "1" quantitystddev = "5"  >
 			</import>
 		</Category>
-		<Category file = "upgrades/Engines/Heavy" >
+		<Category file = "upgrades/Reactors/Heavy" >
 			<import price = "1" pricestdev = ".1" quantity = "5" quantitystddev = "2"  >
 			</import>
 		</Category>
-		<Category file = "upgrades/Engines/Aera_Milspec" >
+		<Category file = "upgrades/Reactors/Aera_Milspec" >
 			<import price = "1" pricestddev = ".1" quantity = "2" quantitystddev = "2"  >
 			</import>
 		</Category>

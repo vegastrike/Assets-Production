@@ -1,0 +1,30 @@
+<Unit scale="1.6" >
+	<Description combatRole="MISSILE">
+	</Description>
+	<Meshfile file = "imrec.xmesh"  >
+	</Meshfile>
+	<BspMesh RAPID = "0"  >
+	</BspMesh>
+	<Light file = "supernova.bmp" x = "0" y = "0" z = "-2" size = ".6"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "380" Forward = "380" Retro = "382" Left = "342" Right = "342" Top = "342" Bottom = "342"  >
+		</Engine>
+		<Maneuver yaw = "348" pitch = "348" roll = "348"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense hudImage="missile-hud.spr">
+		<Hull strength = "5"  >
+		</Hull>
+	</Defense>
+	<Stats mass = "0.32" momentofinertia = "0.32" fuel = "2000000"  >
+	</Stats>
+	<Computer yaw = "100" pitch = "100" roll = "100" afterburner = "240" maxspeed = "240"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "10" limit = "100"  >
+		</Reactor>
+	</Energy>
+</Unit>

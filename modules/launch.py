@@ -144,8 +144,19 @@ class Launch:
     self.Preprocess()
     if (self.dynfg!=''):
       print 'dynamic launch'
+      if (self._nr_ships>0):
+        if (not myunit):
+          print 'launch area'
+          lame= launch_wave_around_area (self.dynfg+self.fgappend,self.faction,self.type,self.ai,self._nr_ships, self.minradius,self.maxradius,self.pos,self.logo,self.useani)
+        else:
+          print 'launch more ships'
+          lame= launch_wave_around_unit (self.dynfg+self.fgappend,self.faction,self.type,self.ai,self._nr_ships,self.minradius,self.maxradius,myunit,self.logo,self.useani)
       import launch_recycle	
-      return launch_recycle.launch_types_around (self.dynfg,self.faction,self._dyn_nr_ships,self.ai,self.minradius*.5+self.maxradius*.5,myunit,20000,self.logo,self.fgappend)
+      ret=  launch_recycle.launch_types_around (self.dynfg,self.faction,self._dyn_nr_ships,self.ai,self.minradius*.5+self.maxradius*.5,myunit,100000+self.maxradius,self.logo,self.fgappend)
+      if (len(self._dyn_nr_ships) or self._nr_ships==0):
+          return ret
+      else:
+          return lame
     else:
       if ((not myunit) and self._nr_ships>0):
         print 'launch area'

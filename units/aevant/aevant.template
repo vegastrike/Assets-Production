@@ -1,53 +1,77 @@
-<Unit>
-	<Upgrade file="godsansshields"/>
-	<Defense>
-		<Shields front="0.000000"  right="0" left="0" back="0.000000" recharge="0.000000"/>
-	</Defense>
-	<Upgrade file="shield_4_Level4"/>
-	<Upgrade file="isometal"/>
-	<Upgrade file="engine_level_5"/>
-	<Upgrade file="micro_shielded_hull"/>
-	<Upgrade file="mult_shield_regenerator"/>
-	<Upgrade file="mult_gun_cooler"/>
-
-	<Meshfile file="aevant.xmesh" />
+<Unit scale ="1.0919">
+	<cockpit file ="light_cockpit.cpt">
+	</cockpit>
+	<Meshfile file ="aevanthi.xmesh">
+	</Meshfile>
+	<Meshfile file ="aevanthiglow.xmesh">
+	</Meshfile>
+	<description combatrole ="BOMBER">
+	</description>
 	<Thrust>
-		<Engine Afterburner="109125" Forward="28137" Retro="24620" Left="15751" Right="15751" Top="15751" Bottom="15751"/>
-		<Maneuver yaw="228449" pitch="228449" roll="228449"/>
+		<Engine Afterburner ="21600" Forward ="10000" Retro ="10000" Left ="10000" Right ="10000" Top ="10000" Bottom ="10000">
+		</Engine>
+		<Maneuver yaw ="12000" pitch ="12000" roll ="25000">
+		</Maneuver>
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Stats mass="841.433" momentofinertia="841.433" fuel="1000000000"></Stats>
-	<Computer yaw="88.500000" pitch="94.500000" roll="88.500000" afterburner="130.699997" maxspeed="39.799999">
-		<Radar itts="true" color="true" error="0"/> </Computer>
-
-	<Energy afterburnenergy="80">
-		<Reactor recharge="240" limit="860"/>
+	<Defense HudImage ="aevant-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Armor front ="300" right ="300" left ="300" back ="250">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="378">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4_Level6"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+	<Stats mass ="216" momentofinertia ="216" fuel ="1000000000">
+	</Stats>
+	<Computer yaw ="80.500000" pitch ="90.500000" roll ="80.500000" afterburner ="220" maxspeed ="200">
+		<Radar itts="true" error="0" range="600000000" maxcone="-1" color="true" >
+		</Radar>
+	</Computer>
+	<Energy>
+		<Reactor warpenergy ="600">
+		</Reactor>
 	</Energy>
-           	<Jump delay="1" jumpenergy="500"/>              
-
-      
-
-<!-- new elements added -->
-<Mount weapon="Ion" size="Light medium heavy" x="8.045031" y="-4.217878" z="0.973509" />
-<Mount weapon="Ion" size="Light medium heavy" x="-8.022359" y="-4.201684" z="0.913285" />
-<Mount weapon="Neutron" size="medium heavy" x="8.082913" y="-0.368988" z="0.747223" />
-<Mount weapon="Neutron" size="medium heavy" x="-8.157103" y="-0.379586" z="1.100964" />
-<Light file="supernova.bmp" x="-0.000000" y="0.000000" z="-9.200000" size="2.064038"/>
-<Mount weapon="LaserBeam" size="Light special autotracking" x="1.871961" y="0.374392" z="12.062358" />
-<Mount weapon="LaserBeam" size="Light special autotracking" x="-1.885182" y="0.377037" z="12.112597"/>
-<Mount weapon="Swarm" size="Special-Missile" x="1.871961" y="0.374392" z="-2.062358" ammo="40"/>
-<Mount weapon="Swarm" size="Special-Missile" x="-1.885182" y="0.377037" z="-2.06112597" ammo="40"/>
-
-<Mount weapon="Torpedo" size="Light-missile medium-missile heavy-missile" x="6.045031" y="-3.217878" z="0.973509" ammo="2" volume="601"/>
-<Mount weapon="Torpedo" size="Light-missile medium-missile heavy-missile" x="-6.022359" y="-3.201684" z="0.913285" ammo="2" volume="601"/>
-<Mount weapon="HeatSeeker" size="light-missile" x="6.082913" y="-.368988" z="0.747223" ammo="2" volume="201"/>
-<Mount weapon="HeatSeeker" size="light-missile" x="-6.157103" y="-.379586" z="1.100964" ammo="2" volume="201"/>
-
-<Mount weapon="ImageRecognition" size="medium-missile" x="5.082913" y=".368988" z="0.747223" ammo="2" volume="301"/>
-<Mount weapon="ImageRecognition" size="medium-missile" x="-5.157103" y=".379586" z="1.100964" ammo="2" volume="301"/>
-	<Hold volume="100">
+<Upgrade file="reactor_level_6"/>
+<Upgrade file="mult_gun_cooler"/>
+	<Jump delay ="1" jumpenergy ="300" insysenergy ="200">
+	</Jump>
+	<Light file ="aeraburn" x ="-1" y ="5.125" z ="-11.25" size ="8">
+	</Light>
+	<Light file ="aeraburn" x ="1" y ="5.125" z ="-11.25" size ="8">
+	</Light>
+	<Light file ="aeraburn" x ="-1" y ="-3" z ="-11.25" size ="8">
+	</Light>
+	<Light file ="aeraburn" x ="1" y ="-3" z ="-11.25" size ="8">
+	</Light>
+	<Mount weapon ="Photon" size ="Light medium autotracking" x ="6" y ="-2.75" z ="-4.75">
+	</Mount>
+	<Mount weapon ="Photon" size ="Light medium autotracking" x ="-6" y ="-2.75" z ="-4.75">
+	</Mount>
+	<Mount weapon ="Photon" size ="Light medium autotracking" x ="6" y ="4.75" z ="-4.75">
+	</Mount>
+	<Mount weapon ="Photon" size ="Light medium autotracking" x ="-6" y ="4.75" z ="-4.75">
+	</Mount>
+	<Mount weapon ="Penetrator" size ="heavy autotracking" x ="0" y ="-3" z ="3">
+	</Mount>
+	<Mount weapon ="Heatseeker" size ="light-missile" x ="6.082913" y ="-.368988" z ="0.747223" ammo ="7" volume ="21">
+	</Mount>
+	<Mount weapon ="HeatSeeker" size ="light-missile" x ="-6.157103" y ="-.379586" z ="1.100964" ammo ="7" volume ="21">
+	</Mount>
+	<Mount weapon ="AdvTorpedo" size ="Light-missile medium-missile heavy-missile" x ="6.045031" y ="-3.217878" z ="0.973509" ammo ="3" volume ="300">
+	</Mount>
+	<Mount weapon ="AdvTorpedo" size ="Light-missile medium-missile heavy-missile" x ="-6.022359" y ="-3.201684" z ="0.913285" ammo ="3" volume ="300">
+	</Mount>
+	<Hold volume ="72.000000">
 	</Hold>
-
-
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
 </Unit>

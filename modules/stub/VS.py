@@ -97,7 +97,7 @@ def getRandCargo(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,
    import vsrandom
    which = vsrandom.randrange(0,len(_cargotypes))
    return Cargo(_cargotypes[which],_cargotypes[which],1,1,1,1)
-_factions=['neutral','confed','aera','merchant','retro','militia','rlaan','powerups','upgrades','unknown','pirates','hunter','privateer','ISO','planets']
+_factions=['neutral','confed','aera','merchant','rlaan','powerups','upgrades','unknown','pirates','hunter','privateer','ISO','planets','shaper','klkk','luddites','andolian','rlaan_briin','LIHW','uln','shmrn','purist','highborn','unadorned','dgn','forsaken','mechanist','homeland-security']
 def GetFactionName(index):
    return _factions[index]
 def GetFactionIndex(name):

@@ -1,0 +1,90 @@
+<Unit scale ="1.31726">
+	<description combatrole ="FIGHTER">
+	</description>
+	<cockpit file ="light_cockpit.cpt" x ="0" y ="-.25" z ="7">
+	</cockpit>
+	<Meshfile file ="aelarhi.xmesh">
+	</Meshfile>
+	<Meshfile file ="aelarhiglow.xmesh">
+	</Meshfile>
+	<Meshfile file ="navlights.xmesh">
+	</Meshfile>
+	<Mount weapon ="" size ="LIGHT MEDIUM " x ="8" y ="-3" z ="10.85">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM " x ="-8" y ="-3" z ="10.85">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM " x ="6" y ="-2.9" z ="10.5">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM " x ="-6" y ="-2.9" z ="10.5">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM " x ="9" y ="-1.65" z ="-1">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM " x ="-9" y ="-1.65" z ="-1">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE " x ="8" y ="-3" z ="10.85" ammo ="64" volume ="64">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE " x ="-8" y ="-3" z ="10.85" ammo ="64" volume ="64">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE " x ="6" y ="-2.9" z ="10.5" ammo ="64" volume ="64">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE " x ="-6" y ="-2.9" z ="10.5" ammo ="64" volume ="64">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE " x ="9" y ="-1.65" z ="-1" ammo ="64" volume ="64">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE " x ="-9" y ="-1.65" z ="-1" ammo ="64" volume ="64">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE " x ="3.6" y ="-1.6" z ="1.2" ammo ="64" volume ="64">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE " x ="-3.6" y ="-1.6" z ="1.2" ammo ="64" volume ="64">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE " x ="3.6" y ="1.6" z ="1.2" ammo ="64" volume ="64">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE " x ="-3.6" y ="1.6" z ="1.2" ammo ="64" volume ="64">
+	</Mount>
+	<Mount weapon ="" size ="MEDIUM-MISSILE " x ="3.6" y ="-1.6" z ="1.200000" ammo ="1" volume ="3">
+	</Mount>
+	<Mount weapon ="" size ="MEDIUM-MISSILE " x ="-3.6" y ="-1.6" z ="1.200000" ammo ="1" volume ="3">
+	</Mount>
+	<Mount weapon ="" size ="MEDIUM-MISSILE " x ="3.6" y ="-1.6" z ="1.200000" ammo ="12" volume ="60">
+	</Mount>
+	<Mount weapon ="" size ="MEDIUM-MISSILE " x ="-3.6" y ="-1.6" z ="1.200000" ammo ="12" volume ="60">
+	</Mount>
+	<Thrust>
+		<Engine Afterburner ="15000" Forward ="10000" Retro ="10000" Left ="10000" Right ="10000" Top ="10000" Bottom ="10000">
+		</Engine>
+		<Maneuver yaw ="15000.000000" pitch ="15000" roll ="15000">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="aeon-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="240" right ="240" left ="240" back ="240">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="323">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4"/>
+	<Stats mass ="200" momentofinertia ="200" fuel ="600000000">
+	</Stats>
+	<Computer yaw ="75.000000" pitch ="75.600006" roll ="100.200012" afterburner ="270" maxspeed ="240">
+		<Radar itts="false" error="0" range="30000000" maxcone="-1" color="false">
+		</Radar>
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="360">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" delay ="1" jumpenergy ="90" insysenergy ="60">
+	</Jump>
+	<Light file ="aeraburn" x ="-2.75" y ="0" z ="-8.75" size ="12" qj ="1">
+	</Light>
+	<Light file ="aeraburn" x ="2.75" y ="0" z ="-8.75" size ="12" qj ="1">
+	</Light>
+	<Hold volume ="12">
+	</Hold>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

@@ -1,0 +1,50 @@
+<Unit>
+	<Description combatRole ="FIGHTER">
+	</Description>
+	<Meshfile file ="s-Cone02-3 - Default.xmesh">
+	</Meshfile>
+	<ShieldMesh file ="s-Cone02-3 - Default.xmesh">
+	</ShieldMesh>
+	<Meshfile file ="s-Cone01-1 - Default.xmesh">
+	</Meshfile>
+	<BSPMesh>
+	</BSPMesh>
+	<Mount weapon ="" size ="LIGHT " x ="0" y ="-0.5" z ="13.0">
+	</Mount>
+	<Light file ="supernova.bmp" x ="0" y ="-0.5" z ="13" size ="0.500000">
+	</Light>
+	<Light file ="supernova.bmp" x ="0" y ="0" z ="-7.20000" size ="3.000000">
+	</Light>
+	<Defense HudImage ="s-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="1000" right ="1000" left ="1000" back ="1000">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="1000.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4"/>
+	<Stats mass ="45.555" momentofinertia ="45.555" fuel ="20000000">
+	</Stats>
+	<Computer yaw ="120" pitch ="120" roll ="120" afterburner ="320" maxspeed ="300">
+		<Radar itts="false" error="0" range="30000000" maxcone="-1" color="false">
+		</Radar>
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="600">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" delay ="1" jumpenergy ="400" insysenergy ="300">
+	</Jump>
+	<Thrust>
+		<Engine Afterburner ="20000" Forward ="15000" Retro ="15000" Left ="15000" Right ="15000" Top ="15000" Bottom ="15000">
+		</Engine>
+		<Maneuver yaw ="16596" pitch ="14522" roll ="16596">
+		</Maneuver>
+	</Thrust>
+	<hold volume ="50">
+	</hold>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

@@ -1,0 +1,55 @@
+<Unit scale="1.31726">
+	<description combatrole="FIGHTER"/>
+	<cockpit file="light_cockpit.cpt" x="0" y="-.25" z="7"/>
+	<Meshfile file="aelarhi.xmesh" />
+	<Meshfile file="aelarhiglow.xmesh" />
+	<Meshfile file="navlights.xmesh" />
+	<Mount weapon="Photon" size="light medium autotracking" x="8" y="-3" z="10.85"/>
+	<Mount weapon="Photon" size="light medium autotracking" x="-8" y="-3" z="10.85"/>
+	<Mount weapon="Photon" size="light medium autotracking" x="6" y="-2.9" z="10.5"/>
+	<Mount weapon="Photon" size="light medium autotracking" x="-6" y="-2.9" z="10.5"/>
+	<Mount weapon="Photon" size="light medium autotracking" x="9" y="-1.65" z="-1"/>
+	<Mount weapon="Photon" size="light medium autotracking" x="-9" y="-1.65" z="-1"/>
+	<Mount weapon="javelin" size="special-missile autotracking" x="8" y="-3" z="10.85" ammo="64" volume="64"/>
+	<Mount weapon="Javelin" size="special-missile autotracking" x="-8" y="-3" z="10.85" ammo="64" volume="64"/>
+	<Mount weapon="Javelin" size="special-missile autotracking" x="6" y="-2.9" z="10.5" ammo="64" volume="64"/>
+	<Mount weapon="Javelin" size="special-missile autotracking" x="-6" y="-2.9" z="10.5" ammo="64" volume="64"/>
+	<Mount weapon="Javelin" size="special-missile autotracking" x="9" y="-1.65" z="-1" ammo="64" volume="64"/>
+	<Mount weapon="Javelin" size="special-missile autotracking" x="-9" y="-1.65" z="-1" ammo="64" volume="64"/>
+	<Mount weapon="Javelin" size="special-missile autotracking" x="3.6" y="-1.6" z="1.2" ammo="64" volume="64"/>
+	<Mount weapon="Javelin" size="special-missile autotracking" x="-3.6" y="-1.6" z="1.2" ammo="64" volume="64"/>
+	<Mount weapon="Javelin" size="special-missile autotracking" x="3.6" y="1.6" z="1.2" ammo="64" volume="64"/>
+	<Mount weapon="Javelin" size="special-missile autotracking" x="-3.6" y="1.6" z="1.2" ammo="64" volume="64"/>
+
+	<Mount weapon="heatseeker" size="medium-missile autotracking" x="3.6" y="-1.6" z="1.200000" ammo="1" volume="3"/>
+	<Mount weapon="heatseeker" size="medium-missile autotracking" x="-3.6" y="-1.6" z="1.200000" ammo="1" volume="3"/>
+	<Mount weapon="porcupinemine" size="medium-missile autotracking" x="3.6" y="-1.6" z="1.200000" ammo="12" volume="60"/>
+	<Mount weapon="porcupinemine" size="medium-missile autotracking" x="-3.6" y="-1.6" z="1.200000" ammo="12" volume="60"/>
+
+
+	<Thrust>
+		<Engine Afterburner="15000" Forward="10000" Retro="10000" Left="10000" Right="10000" Top="10000" Bottom="10000"/>
+		<Maneuver yaw="15000.000000" pitch="15000" roll="15000"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage="aeon-hud.spr" ExplosionAni="explosion_aera.ani">
+		<Armor front="240" right="240" left="240" back="240"/>
+		<Shields front="475" right="475" left="475" back="475" recharge="90.000000"/>
+		<Hull strength="323"/>
+	</Defense>
+	<Stats mass="200" momentofinertia="200" fuel="600000000"></Stats>
+	<Computer yaw="75.000000" pitch="75.600006" roll="100.200012" afterburner="270" maxspeed="240">
+		<Radar itts="true" color="true" error="0"/> </Computer>
+
+	<Energy afterburnenergy="30">
+		<Reactor recharge="248" limit="1492" warpenergy="360"/>
+	</Energy>
+           	<Jump delay="1" jumpenergy="90" insysenergy="60"/>       
+
+<!-- new elements added -->
+<Light file="aeraburn" x="-2.75" y="0" z="-8.75" size="12" qj="1"/>
+<Light file="aeraburn" x="2.75" y="0" z="-8.75" size="12" qj="1"/>
+	<Hold volume="12">
+	</Hold>
+</Unit>

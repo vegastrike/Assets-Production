@@ -1,0 +1,32 @@
+<Unit scale = "0.5">
+<Meshfile file="vidarhi.xmesh"/>
+<Meshfile file="vidarsails.xmesh"/>
+	<description combatrole="BOMBER"/>
+	<cockpit file="rlaan-cockpit.cpt" x="0" y="3" z="23"/>
+	<Thrust>
+		<Engine Afterburner="30000" Forward="20000" Retro="20000" Left="20000" Right="20000" Top="20000" Bottom="20000"/>
+		<Maneuver yaw="20000" pitch="20000" roll="20000"/>
+	</Thrust>
+	<Sound> </Sound>
+	<Defense HudImage="vidar-hud.spr" ExplosionAni="explosion_rlaan.ani">
+		<Armor front="300" right="260" left="260" back="230"/>
+		<Shields front="350" right="300" left="300" back="300" recharge="200"/>
+		<Hull strength="600"/>
+	</Defense>
+	<Stats mass="230" momentofinertia="230" fuel="2000000000"></Stats>
+	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="260.000000" maxspeed="250.000000">
+	<Radar color="true" range="300000000" maxcone="-1" TrackingCone=".95" LockCone=".65"/>
+	</Computer>
+	<Energy>
+		<Reactor recharge="360" limit="1400" warpenergy="600"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="350" insysenergy="200"/>
+	<Hold volume="32">
+	</Hold>
+
+<Mount weapon="KtekBeam" size="Light Medium Heavy autotracking" x="-9" y="-.25" z="-.75"/>
+<Mount weapon="KtekBeam" size="Light Medium Heavy autotracking" x="9" y="-.25" z="-.75"/>
+<Mount weapon="Ktek" size="Light" x="-4.5" y="-.6" z="12.25"/>
+<Mount weapon="Ktek" size="Light" x="4.5" y="-.6" z="12.25"/>
+<Mount weapon="torpedo" size="heavy-missile" x="0" y="-0.5" z="0" ammo="8" volume="800"/> 
+</Unit>

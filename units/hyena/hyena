@@ -1,0 +1,55 @@
+<Unit >
+	<Description combatRole="FIGHTER">
+	</Description>
+	<Meshfile file = "leokat.xmesh"  >
+	</Meshfile>
+	<Thrust >
+		<Engine Afterburner = "10000" Forward = "6557" Retro = "5834" Left = "4311" Right = "4311" Top = "3149" Bottom = "1600"  >
+		</Engine>
+		<Maneuver yaw = "56920" pitch = "60793" roll = "56920"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense HudImage = "leokat-hud.spr" >
+		<Armor front = "88" right = "88" left = "88" back = "88"  >
+		</Armor>
+		<Shields front = "90" left = "60" right = "60" back = "60" recharge = "23.500000"  >
+		</Shields>
+		<Hull strength = "132.000000"  >
+		</Hull>
+	</Defense>
+	<cockpit file = "rlaan-cockpit.cpt" x = "0" y = "0" z = "0"  >
+	</cockpit>
+	<Stats mass = "45.1815" momentofinertia = "45" fuel = "200000000"  >
+	</Stats>
+	<Computer yaw = "111.800003" pitch = "121.800003" roll = "91.800003" afterburner = "180" maxspeed = "150"  >
+	</Computer>
+	<Energy afterburnenergy = "0" >
+		<Reactor recharge = "50" limit = "300" warpenergy="100" >
+		</Reactor>
+	</Energy>
+	<Jump delay = "1" jumpenergy = "100"  insysenergy="30">
+	</Jump>
+	<Hold volume = "35"  >
+	</Hold>
+	<Light file = "supernova.bmp" x = "0.769231" y = "0.875000" z = "-7.505970" size = "1.399999"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-0.706480" y = "0.843911" z = "-7.505970" size = "1.349999"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "1.439378" y = "-1.015805" z = "-7.476228" size = "0.990000"  >
+	</Light>
+	<Light file = "supernova.bmp" x = "-1.439378" y = "-1.015805" z = "-7.476228" size = "1.139999"  >
+	</Light>
+	<Mount weapon = "massdriver" size = "Light Medium" x = "-2.046180" y = "-0.234908" z = "3.363305"  >
+	</Mount>
+	<Mount weapon = "massdriver" size = "Light Medium" x = "2.020314" y = "-0.229934" z = "3.395984"  >
+	</Mount>
+	<Mount weapon = "meson" size = "Light" x = "-12.491931" y = "-1.545735" z = "-1.098580"  >
+	</Mount>
+	<Mount weapon = "meson" size = "Light" x = "12.415822" y = "-1.534798" z = "-1.049985"  >
+	</Mount>
+	<Mount weapon = "friendorfoe" size = "Special light-missile" x = "0" y = "-.23" z = "4" ammo="1" volume="16">
+	</Mount>
+
+</Unit>

@@ -13,7 +13,7 @@
 	</Thrust>
 	<Sound  >
 	</Sound>
-	<Defense >
+	<Defense hudImage="cargo-hud.spr">
 		<Armor front = "100" right = "80" left = "80" back = "100"  >
 		</Armor>
 		<Shields front = "150" back = "150" recharge = "15"  >
@@ -23,7 +23,7 @@
 		<Cloak cloakmin = ".01" cloakrate = ".2" cloakenergy = "0"  >
 		</Cloak>
 	</Defense>
-	<Stats mass = "57960" momentofinertia = "40572" fuel = "0"  >
+	<Stats mass = "57960.625" momentofinertia = "57960.625" fuel = "0"  >
 	</Stats>
 	<Computer yaw = "128" pitch = "0" roll = "0000" afterburner = "000000" maxspeed = "00000" >
 		<Radar itts = "false" range = "4000" color = "true" error = "0"  >

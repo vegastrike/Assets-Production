@@ -1,0 +1,50 @@
+<Unit >
+	<cockpit file="bomber-cockpit.cpt" x="0" y="00" z="10"/>
+
+	<Meshfile file="fireflyhi.xmesh" />	
+	<Meshfile file="fireflyhiglow.xmesh" />
+		
+	<Mount weapon="laserbeam" size="Light" x="1.4" y="0" z=".5"/>
+	<Mount weapon="laserbeam" size="Light" x="-1.4" y="0" z=".5"/>
+	<Mount weapon="laserbeam" size="Light Medium" x="0" y="-2.5" z="10.25"/>
+	<Mount weapon="laserbeam" size="Light" x="0" y="-2.8" z="10.25"/>
+
+	<Mount weapon="Swarm" size="special special-missile medium-missile" x="1.95" y=".45" z="-.75" ammo="60" volume="15"/>
+	<Mount weapon="Swarm" size="Special special-missile medium-missile" x="-1.95" y=".45" z="-.75" ammo="60" volume="15"/>
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="1.95" y=".81" z="-.75" ammo="3" volume="36"/>
+	<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-1.95" y=".81" z="-.75" ammo="3" volume="36"/>
+	<Thrust>
+		<Engine Afterburner="12000" Forward="10000" Retro="8000" Left="8000" Right="8000" Top="8000" Bottom="8000"/>
+		<Maneuver yaw="8000" pitch="8000" roll="8000"/>
+	</Thrust>
+	<Sound JumpWav="warp.wav" EngineWav="humanlevel4.wav" AfterburnWav="humanburn.wav" 	
+	ShieldWav="shieldhit.wav" ArmorWav="armorhit.wav" HullWav="armorhit.wav" />
+	<Defense HudImage="firefly-hud.spr">
+		<Armor front="100" right="80" left="80" back="80"/>
+		<Shields front="250.000000" back="100.000000" recharge="25.000000"/>
+		<Hull strength="125.000000"/>
+	</Defense>
+
+
+	<Stats mass="41.5" momentofinertia="41.5" fuel="40000000">
+	</Stats>
+	<Computer yaw="110" pitch="96" roll="110" afterburner="280" maxspeed="280">
+	<Radar itts = "true" color = "true" range = "30000000" error = "0" TrackingCone = ".9995" lockcone = "0.5"  >
+		</Radar>
+	</Computer>
+	<Energy>
+		<Reactor recharge="40" limit="300" warpenergy="100"/>
+	</Energy>
+	
+	<Jump delay="1" jumpenergy="60" insysenergy="30"/>       
+
+	<description combatrole="INTERCEPTOR">
+	</description>
+	<Hold volume="30">
+	</Hold>
+
+<!-- new elements added -->
+<Light file="supernova.bmp" x="0" y="-.328" z="-9.75" size="8"/>
+<Light file="supernova.bmp" x="0.25" y="-1.1" z="-9.75" size="5"/>
+<Light file="supernova.bmp" x="-0.25" y="-1.1" z="-9.75" size="5"/>
+</Unit>

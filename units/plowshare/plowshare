@@ -1,0 +1,57 @@
+<Unit scale=".7937">
+	<Description combatrole="SHUTTLE"/>
+	<cockpit file="heavy-cockpit.cpt" x="1.5" y="6" z="0"/>
+	<Defense HudImage="wayfarer-hud.spr">
+		<Shields front="220.000000" back="220.000000" recharge="20"/>
+		<Armor front="300" right="300" left="300" back="350"/>
+		<Hull strength="700"/>
+	</Defense>
+
+	<Meshfile file="wayfarerhi.xmesh"/>
+	<Meshfile file="wayfarerhiglow.xmesh"/>
+	<Meshfile file="navlights.xmesh"/>
+	<ShieldMesh file="shield1.xmesh"/>
+	<Mount weapon="Tractor" size="special" x="11.5" y="-2.5" z="24" />
+	<Mount weapon="Tractor" size="special" x="-11.5" y="-2.5" z="24" />
+      	<Mount weapon="Massdriver" size="Light Medium" x="11.5" y="-4.5" z="23"/>
+      	<Mount weapon="Massdriver" size="Light Medium" x="-11.5" y="-4.5" z="23"/>
+
+       <Mount weapon="HeatSeeker" size="light-missile medium-missile" x="-5.3" y="7" z="12" ammo="8" volume="24"/>
+       <Mount weapon="HeatSeeker" size="light-missile medium-missile" x="5.3" y="7" z="12" ammo="8" volume="24"/>
+	
+	<Thrust>
+		<Engine Afterburner="20000" Forward="15000" Retro="10000" Left="10000" Right="10000" Top="10000" Bottom="10000"/>
+		<Maneuver yaw="10000" pitch="10000" roll="10000"/>
+	</Thrust>
+
+	<Sound>
+	</Sound>
+	<Stats mass="530" momentofinertia="530" fuel="40000000"></Stats>
+	<Computer yaw="60.400002" pitch="50.600006" roll="80.400002" afterburner="200" maxspeed="180">
+		<Radar itts="false" error="0" color="false"/>	
+	</Computer>
+	<Energy>
+	<Reactor recharge="100" limit="380" warpenergy="620"/> 
+	</Energy> 
+	<Jump delay="1" jumpenergy="300" insysenergy="160"/>     
+	<Hold volume="4000">   <!-- default cargo in ship -->
+		<Category file="Natural_Products/Natural_Resources">
+			<import price=".8" pricestddev=".2" quantity="0" quantitystddev="5"/>
+		</Category>
+		<Category file="Fuels/Crude">
+			<import price="0.8" pricestddev=".2" quantity="0" quantitystddev="2"/>
+		</Category>
+		<Category file="Entertainment">
+			<import price="1" pricestddev=".1" quantity="0" quantitystddev="1"/>
+		</Category>	
+	</Hold>
+
+<!-- new elements added -->
+
+    <Light file="supernova.bmp" x="6.3" y="8" z="-12.25" size="8"/>
+    <Light file="supernova.bmp" x="-6.3" y="8" z="-12.25" size="8"/>
+    <Light file="supernova.bmp" x="12.75" y="-3.4" z="-14.75" size="8"/>
+    <Light file="supernova.bmp" x="-12.75" y="-3.4" z="-14.75" size="8"/>
+    <Light file="supernova.bmp" x="12.75" y="-9" z="-14.75" size="8"/>
+    <Light file="supernova.bmp" x="-12.75" y="-9" z="-14.75" size="8"/>
+</Unit>

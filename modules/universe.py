@@ -130,9 +130,10 @@ def significantUnits():
 	iter= VS.getUnitList()
 	un = iter.current()
 	ret = []
-	while (un):
-		if (un.isSignificant()):
-			ret+=[un]
+	while (iter.notDone()):
+		if (un):
+			if (un.isSignificant()):
+				ret+=[un]
 		iter.advance()
 		un= iter.current()
 	return ret

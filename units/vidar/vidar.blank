@@ -1,0 +1,54 @@
+<Unit scale ="0.5">
+	<Meshfile file ="vidarhi.xmesh">
+	</Meshfile>
+	<Meshfile file ="vidarsails.xmesh">
+	</Meshfile>
+	<description combatrole ="BOMBER">
+	</description>
+	<cockpit file ="rlaan-cockpit.cpt" x ="0" y ="3" z ="23">
+	</cockpit>
+	<Thrust>
+		<Engine Afterburner ="30000" Forward ="20000" Retro ="20000" Left ="20000" Right ="20000" Top ="20000" Bottom ="20000">
+		</Engine>
+		<Maneuver yaw ="20000" pitch ="20000" roll ="20000">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="vidar-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="300" right ="260" left ="260" back ="230">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="600">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4"/>
+	<Stats mass ="230" momentofinertia ="230" fuel ="2000000000">
+	</Stats>
+	<Computer yaw ="103.500000" pitch ="103.500000" roll ="103.500000" afterburner ="260.000000" maxspeed ="250.000000">
+		<Radar itts="false" error="0" range="30000000" maxcone="-1" color="false">
+		</Radar>
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="600">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" delay ="1" jumpenergy ="350" insysenergy ="200">
+	</Jump>
+	<Hold volume ="32">
+	</Hold>
+	<Mount weapon ="" size ="LIGHT MEDIUM HEAVY " x ="-9" y ="-.25" z ="-.75">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM HEAVY " x ="9" y ="-.25" z ="-.75">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT" x ="-4.5" y ="-.6" z ="12.25">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT" x ="4.5" y ="-.6" z ="12.25">
+	</Mount>
+	<Mount weapon ="" size ="HEAVY-MISSILE" x ="0" y ="-0.5" z ="0" ammo ="8" volume ="800">
+	</Mount>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

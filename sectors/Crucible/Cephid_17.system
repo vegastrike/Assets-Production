@@ -1,0 +1,51 @@
+<system name="Cephid_17" background="backgrounds/emerald" nearstars="500" stars="1000" starspread="150">
+<Light>
+	<ambient red="0.000000" green="0.000000" blue="0.000000"/>
+	<diffuse red="0.866025" green="0.853710" blue="0.667231"/>
+	<specular red="1.000000" green="0.971760" blue="0.593597"/>
+</Light>
+<Light>
+	<ambient red="0.000000" green="0.000000" blue="0.000000"/>
+	<diffuse red="0.866025" green="0.455290" blue="0.345211"/>
+	<specular red="1.000000" green="0.276385" blue="0.158894"/>
+</Light>
+<Asteroid name="" file="AFieldJumpThin" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" x="-81750376.000000" y="-30150176.000000" z="-70781912.000000"  />
+<Planet name="JumpTo17-ar" file="jump.png" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="200.000000" x="-81750376.000000" y="-30150176.000000" z="-70781912.000000" alpha="ONE ONE" destination="Crucible/17-ar" faction="klkk"  >
+</Planet>
+<Planet name="Cephid_17 A" file="stars/white_star.png" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="16600000.000000" x="0" y="0" z="0"  Red="0.750000" Green="0.728820" Blue="0.445198" ReflectNoLight="true" light="0">
+	<Planet name="Dakar" file="planets/m_class1.png" ri="286946720.000000" rj="-84383952.000000" rk="265226256.000000" si="-190438672.000000" sj="-158550224.000000" sk="155590384.000000" radius="435172.312500" x="105354896.000000" y="-72131880.000000" z="133784008.000000" year= "439508832.000000" day="309.300385"  >
+	<Atmosphere file="sol/earthcloudmaptrans.png" alpha="SRCALPHA INVSRCALPHA" radius="436127.481875"/>
+	<Fog>
+		<FogElement file="atmXatm.xmesh" ScaleAtmosphereHeight="1.0"  red="0.900000" blue="0.900000" green="1.000000" alpha="1.000000" dired="0.900000" diblue="0.900000" digreen="1.000000" dialpha="1.000000" concavity=".3" focus=".6" minalpha="0" maxalpha="0.7"/>
+		<FogElement file="atmXhalo.xmesh" ScaleAtmosphereHeight="1.0"  red="0.900000" blue="0.900000" green="1.000000" alpha="1.000000" dired="0.900000" diblue="0.900000" digreen="1.000000" dialpha="1.000000" concavity="1" focus=".6" minalpha="0" maxalpha="0.7"/>
+	</Fog>
+		<Planet name="Phillies" file="sol/deimos.png" ri="-1684348.750000" rj="-661541.875000" rk="2335591.750000" si="-3812172.000000" sj="3004636.500000" sk="-1898163.500000" radius="136198.062500" x="-7321575.500000" y="-6117448.000000" z="-4841613.500000" year= "4890792.500000" day="498.276794"  >
+		</Planet>
+		<Planet name="JumpToEnyo" file="jump.png" ri="234340.000000" rj="103060.007812" rk="920958.875000" si="471364.750000" sj="-517154.250000" sk="-62067.574219" radius="95.771751" x="-1312920.250000" y="-717132.625000" z="1060315.625000" year= "1397630.750000" day="303.621857" alpha="ONE ONE" destination="Crucible/Enyo" faction="klkk"  >
+		</Planet>
+		<Planet name="JumpToCardell" file="jump.png" ri="-254216.593750" rj="-423678.437500" rk="-372411.875000" si="-455824.562500" sj="479803.437500" sk="-234697.656250" radius="130.477371" x="997000.562500" y="-455441.750000" z="753232.687500" year= "4381063.500000" day="761.770081" alpha="ONE ONE" destination="Crucible/Cardell" faction="klkk"  >
+		</Planet>
+		<Unit name="Serenity" file="MiningBase" rj="-254216.593750" ri="-423678.437500" rk="-372411.875000" sj="-455824.562500" sk="479803.437500" si="-234697.656250" radius="130.477371" x="997000.562500" y="-455441.750000" z="753232.687500" year= "4381063.500000" day="761.770081" faction="klkk"  >
+		</Unit>
+	</Planet>
+	<Asteroid name="" file="AFieldBaseSparse" ri="-79724328.000000" rj="-233746992.000000" rk="-163313568.000000" si="-116020696.000000" sj="169026400.000000" sk="-185286128.000000" x="-148581184.000000" y="-218246160.000000" z="84517944.000000" year= "277633856.000000"  />
+	<Unit name="Plainfield" file="MiningBase" ri="-79724328.000000" rj="-233746992.000000" rk="-163313568.000000" si="-116020696.000000" sj="169026400.000000" sk="-185286128.000000" x="-148581184.000000" y="-218246160.000000" z="84517944.000000" year= "277633856.000000" faction="klkk"  />
+	<Planet name="JumpToOldziey" file="jump.png" ri="141807924.000000" rj="43125792.000000" rk="10400903.000000" si="3642116.500000" sj="5128123.000000" sk="-141807924.000000" radius="263.800079" x="-26266182.000000" y="-32933546.000000" z="56518572.000000" year= "70577704.000000" day="536.628845" alpha="ONE ONE" destination="Crucible/Oldziey" faction="klkk"  >
+	</Planet>
+	<Planet name="JumpToEverett" file="jump.png" ri="-20080682.000000" rj="42690276.000000" rk="157634672.000000" si="-72114176.000000" sj="61331199.000000" sk="-96111560.000000" radius="311.738037" x="-61371888.000000" y="-59256896.000000" z="60923568.000000" year= "77785112.000000" day="431.547974" alpha="ONE ONE" destination="Crucible/Everett" faction="klkk"  >
+	</Planet>
+	<Planet name="JumpToStirling" file="jump.png" ri="-182282287.000000" rj="-15947974.000000" rk="-23532624.000000" si="-31423934.000000" sj="94449516.000000" sk="-168381.671875" radius="210.078888" x="77007976.000000" y="-28267140.000000" z="-51236048.000000" year= "36885428.000000" day="212.563385" alpha="ONE ONE" destination="Crucible/Stirling" faction="klkk"  >
+	</Planet>
+	<Planet name="Cephid_17 B" file="stars/red_star.png" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="10262301.000000" x="0" y="0" z="0"  Red="0.750000" Green="0.207289" Blue="0.119170" ReflectNoLight="true" light="1">
+		<Planet name="Wiley" file="planets/m_class2.png" ri="-65226760.000000" rj="19793218.000000" rk="30020006.000000" si="-23492010.000000" sj="-254089232.000000" sk="116486856.000000" radius="356439.250000" x="137667840.000000" y="-228465344.000000" z="266275376.000000" year= "1138671360.000000" day="721.044067"  >
+		<Atmosphere file="sol/earthcloudmaptrans.png" alpha="SRCALPHA INVSRCALPHA" radius="357000.427500"/>
+		<Fog>
+				<FogElement file="atmXatm.xmesh" ScaleAtmosphereHeight="1.001"  red="0.900000" blue="0.900000" green="1.000000" alpha="1.000000" dired="0.900000" diblue="0.900000" digreen="1.000000" dialpha="1.000000" concavity=".3" focus=".6" minalpha="0" maxalpha="0.7"/>
+				<FogElement file="atmXhalo.xmesh" ScaleAtmosphereHeight="1.001"  red="0.900000" blue="0.900000" green="1.000000" alpha="1.000000" dired="0.900000" diblue="0.900000" digreen="1.000000" dialpha="1.000000" concavity="1" focus=".6" minalpha="0" maxalpha="0.7"/>
+		</Fog>
+		</Planet>
+		<Planet name="Broadway" file="sol/ganymede.png" ri="30215382.000000" rj="18258252.000000" rk="-30780302.000000" si="-52761992.000000" sj="-133019048.000000" sk="-130697848.000000" radius="430506.218750" x="-37981648.000000" y="187513920.000000" z="42497932.000000" year= "278625984.000000" day="652.678345"  >
+		</Planet>
+	</Planet>
+</Planet>
+</system>

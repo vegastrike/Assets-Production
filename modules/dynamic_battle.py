@@ -14,25 +14,28 @@ lastfac=0
 lookorsiege=1
 stardatelen = Director.getSaveDataLength(0,"stardate")
 if (stardatelen==0):
-	Director.pushSaveData(0,"stardate",24799.3)
+	Director.pushSaveData(0,"stardate",151.2)
 def UpdateCombatTurn():
-	stardateinc=0.05
+	stardateinc=0.05/24.0
 	Director.putSaveData(0,"stardate",0,Director.getSaveData(0,"stardate",0)+stardateinc)
 	global lastfac
 	global lookorsiege
-	if lastfac>=VS.GetNumFactions():
+	nfac=VS.GetNumFactions()
+	if lastfac>=nfac:
 		if (not SimulateBattles()):
 			lastfac=0
 	else:
-		fac = VS.GetFactionName(lastfac)
-		if (lookorsiege):
-			lookorsiege=LookForTrouble (fac)
-		else:
-			if (not Siege(fac)):
-				#fg_util.CheckAllShips(fac)		
-				lastfac+=1
-				lookorsiege=1
-		#first look for trouble, then go ahead and simulate all the battles
+		for i in range (2):
+			if (lastfac<nfac):
+				fac = VS.GetFactionName(lastfac)
+				if (lookorsiege):
+					lookorsiege=LookForTrouble (fac)
+				else:
+					if (not Siege(fac)):
+						#fg_util.CheckAllShips(fac)		
+						lastfac+=1
+						lookorsiege=1
+				#first look for trouble, then go ahead and simulate all the battles
 
 siegenumber=0
 siegenumtimes=0
@@ -192,6 +195,8 @@ def SimulateBattles():
 		simulateiter = None
 		deadbattlesiter = len(deadbattles)-1
 		godoit=0
+		import sys
+		print str(sys.exc_info()[0])+str(sys.exc_info()[1])
 	if (godoit):
 		enemy = ally[1]
 		ally = ally[0]
@@ -331,33 +336,41 @@ def KillOne (fg,fac,tn,num,enfg,enfac):
 		ejectbuildup+=chancetoeject 
 	return numkilled
 
-def HowMuchDamage (shiptypes):
+def HowMuchDamage (shiptypes,defenseroll):
 	dam=0
 	for i in shiptypes:
 		stats=faction_ships.GetStats(i[0])
-		if (vsrandom.uniform(0,1)<stats[0]):
-			dam+=stats[2]*i[1]
+		#print str(stats[0])+ ' needs above '+str(defenseroll)
+		if (vsrandom.uniform(0,stats[0])>defenseroll):
+			dam+=stats[2]*i[1] #guns
+		if (len(stats)>3):
+			if (vsrandom.uniform(0,.05)>defenseroll):
+				dam+=stats[3]*i[1] #missiles
 	return dam
-def ApplyDamage (fg,fac,shiptypes,damage,enfg,enfac):
-	rnum = vsrandom.randrange(0,len(shiptypes))
-	stats = faction_ships.GetStats (shiptypes[rnum])
-	if (vsrandom.uniform(0,1)>=stats[1]):
-		dampool=fg_util.GetDamageInFGPool(fg,fac)
-		tmpdam=damage+int(dampool/len(shiptypes))
-		numshipstokill=int(tmpdam/stats[3])
+
+def ApplyDamage (fg,fac,shiptypes,rnum,stats,damage,enfg,enfac):
+	dampool=fg_util.GetDamageInFGPool(fg,fac)
+	tmpdam=damage+int(dampool/len(shiptypes))
+	numshipstokill=int(tmpdam/stats[3])
+	if (numshipstokill):
+		#print enfg+'f:'+enfac+' killing '+str(numshipstokill)+ ' from the '+fac+' '+fg
 		damage -= KillOne(fg,fac,shiptypes[rnum],numshipstokill,enfg,enfac)*stats[3]#returns how many ships killed
-		dampool+=damage
-		
+	if (damage!=0):
+		fg_util.SetDamageInFGPool(fg,fac,dampool+damage)	
 
 def SimulatedDukeItOut (fgname,faction,enfgname,enfaction):
 	ally=fg_util.LandedShipsInFG(fgname,faction)
 	enemy=fg_util.LandedShipsInFG(enfgname,enfaction)
-	#roll z'dice
-	#FIXME!!!
 	if (len(enemy) and len(ally)):
-		endam = HowMuchDamage(enemy)
-		ApplyDamage(enfgname,enfaction,enemy,HowMuchDamage(ally),fgname,faction)
-		ApplyDamage(fgname,faction,ally,endam,enfgname,enfaction)		
+		allyvictim = vsrandom.randrange(0,len(ally))
+		allystats = faction_ships.GetStats(ally[allyvictim][0])
+		envictim = vsrandom.randrange(0,len(enemy))
+		enstats = faction_ships.GetStats(enemy[envictim][0])
+		endam = HowMuchDamage(enemy,vsrandom.uniform(0,allystats[1]))
+		if (enfgname==fgname and enfaction==faction):
+			print "FAULT FAULT FAULT"
+		ApplyDamage(enfgname,enfaction,enemy,envictim,enstats,HowMuchDamage(ally,vsrandom.uniform(0,enstats[1])),fgname,faction)
+		ApplyDamage(fgname,faction,ally,allyvictim,allystats,endam,enfgname,enfaction)		
 def numShips(i):
 	if (faction_ships.isCapital(i[0])):
 		return i[1]*10
@@ -370,9 +383,10 @@ def countTn (l):
 def findLaunchedShipInFGInSystem (fgname,faction):
 	uni = VS.getUnitList()
 	un=uni.current()
-	while (un):
-		if (un.getFlightgroupName()==fgname and un.getFactionName()==faction):
-			return un
+	while (uni.notDone()):
+		if un:
+			if (un.getFlightgroupName()==fgname and un.getFactionName()==faction):
+				return un
 		un= uni.next()
 def LaunchMoreShips(fgname,faction,landedtn,nums):
 	shiplaunchlist=[]
@@ -384,14 +398,21 @@ def LaunchMoreShips(fgname,faction,landedtn,nums):
 			landedtn[index]=(landedtn[index][0],landedtn[index][1]-1)
 		else:
 			del landedtn[index]
+	pos=None
 	if len(shiplaunchlist):
-		pos=findLaunchedShipInFGInSystem (fgname,faction).GetPosition()
-	for i in shiplaunchlist:
-		while j in range (i[1]):
-			pos=launch_recycle.LaunchNext(fgname,faction,"default",pos)
+		k = findLaunchedShipInFGInSystem (fgname,faction)
+		if (k):
+			pos=k.GetPosition()
+	if (pos):
+		for i in shiplaunchlist:
+			while j in range (i[1]):
+				pos=launch_recycle.LaunchNext(fgname,faction,"default",pos)
 
 						 
 def LaunchEqualShips (fgname, faction, enfgname, enfaction):
+	print "DYNAMO"
+	print "DYNAMO"
+	print "DYNAMO"
 	land=fg_util.LandedShipsInFG(fgname,faction)
 	launch=fg_util.ShipsInFG(fgname,faction)
 	enland=fg_util.LandedShipsInFG(enfgname,enfaction)
@@ -419,7 +440,7 @@ def stopAttack (fgname,faction):
 		del defendlist[(enemy[0],enemy[1])]
 		del attacklist[ally]
 		
-
+reportbegin=0
 def initiateAttack (fgname,faction,sys,enfgname,enfaction):
 	capitala = fg_util.CapshipInFG(fgname,faction)
 	capitalb = fg_util.CapshipInFG(enfgname,enfaction)
@@ -435,7 +456,11 @@ def initiateAttack (fgname,faction,sys,enfgname,enfaction):
 	#FIXME  can overwrite the attacking groups!!
 	if (not efg in defendlist):
 		if (iscap):
-			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"fleetbattle","start",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,capitala,enfgname,capitalb]))
+			global reportbegin
+			if (reportbegin==0):
+				Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"fleetbattle","start",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,capitala,enfgname,capitalb]))
+			reportbegin+=1
+			reportbegin=reportbegin%10
 		if (fg in attacklist):
 			defender = attacklist[fg]
 			del defendlist[(defender[0],defender[1])]
@@ -455,11 +480,12 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction,iscap):
 	sys = fg_util.FGSystem (fgname,faction)
 	ensys = fg_util.FGSystem (enfgname,enfaction)
 	if (sys==ensys):
-		if (VS.systemInMemory(sys)):
+		if (0 and VS.systemInMemory(sys)):
 			VS.pushSystem(sys)
 			LaunchEqualShips (fgname,faction,enfgname,enfaction)
 			VS.TargetEachOther (fgname,faction,enfgname,enfaction)
 			VS.popSystem()
+		#print 'duke '+fgname + ' '+enfgname
 		SimulatedDukeItOut (fgname,faction,enfgname,enfaction)
 	elif (sys!='nil' and ensys!='nil'):
 		#pursue other flightgroup
@@ -483,12 +509,12 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction,iscap):
 	if (vsrandom.randrange(0,4)==0):
 		#FIXME  if it is advantageous to stop attacking only!!
 		#FIXME add a stop attacking news report?  -- this should now be fixed, as a draw is reported (not heavilly tested)
-		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),battlename,"end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+		#CAUSES TOO MUCH NEWS#Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),battlename,"end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
 		return 0
 	if (vsrandom.randrange(0,4)==0 and enfgname!=fg_util.BaseFGInSystemName(ensys)):
 		#FIXME  if it is advantageous to run away only
 		#FIXME add a retreat news report?  -- this should now be fixed, as a draw is reported (not heavilly tested)
-		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),battlename,"end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+		#CAUSES TOO MUCH NEWS#Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),battlename,"end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
 		num=VS.GetNumAdjacentSystems(ensys)
 		if (num>0):
 			ensys=VS.GetAdjacentSystem(ensys,vsrandom.randrange(0,num))

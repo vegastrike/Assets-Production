@@ -1,0 +1,658 @@
+<Unit scale ="3">
+	<Description combatRole ="BASE">
+	</Description>
+	<Thrust>
+		<Engine Afterburner ="00.000000" Forward ="0" Retro ="0" Left ="0" Right ="0" Top ="0" Bottom ="0">
+		</Engine>
+		<Maneuver yaw ="0" pitch ="0" roll ="0">
+		</Maneuver>
+	</Thrust>
+	<Defense HudImage ="starfortress-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="32000" right ="32000" left ="32000" back ="32000">
+		</Armor>
+		<Shields front ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="95676779">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2"/>
+	<Stats mass ="12866977000" momentofinertia ="12866977000" fuel ="20000">
+	</Stats>
+	<Computer>
+		<Radar itts="false" error="0" range="30000000" maxcone="-1" color="false">
+		</Radar>
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="200">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" jumpenergy ="4200" insysenergy ="4200">
+	</Jump>
+	<Meshfile file ="starfortress.xmesh">
+	</Meshfile>
+	<Dock x ="0" y ="890" z ="738" size ="200">
+	</Dock>
+	<Dock x ="0" y ="890" z ="-738" size ="200">
+	</Dock>
+	<Dock z ="0" y ="890" x ="-738" size ="200">
+	</Dock>
+	<Dock z ="0" y ="890" x ="738" size ="200">
+	</Dock>
+	<Dock x ="0" y ="-560" z ="747" size ="100">
+	</Dock>
+	<Dock x ="0" y ="-560" z ="-747" size ="100">
+	</Dock>
+	<Dock z ="0" y ="-560" x ="-747" size ="100">
+	</Dock>
+	<Dock z ="0" y ="-560" x ="747" size ="100">
+	</Dock>
+	<Dock x ="-1720" y ="500" z ="0" size ="20">
+	</Dock>
+	<Dock x ="-1680" y ="500" z ="0" size ="20">
+	</Dock>
+	<Dock x ="-1640" y ="500" z ="0" size ="20">
+	</Dock>
+	<Dock x ="-1620" y ="500" z ="0" size ="20">
+	</Dock>
+	<Dock x ="1720" y ="500" z ="0" size ="20">
+	</Dock>
+	<Dock x ="1680" y ="500" z ="0" size ="20">
+	</Dock>
+	<Dock x ="1640" y ="500" z ="0" size ="20">
+	</Dock>
+	<Dock x ="1620" y ="500" z ="0" size ="20">
+	</Dock>
+	<Dock z ="1720" y ="500" x ="0" size ="20">
+	</Dock>
+	<Dock z ="1680" y ="500" x ="0" size ="20">
+	</Dock>
+	<Dock z ="1640" y ="500" x ="0" size ="20">
+	</Dock>
+	<Dock z ="1620" y ="500" x ="0" size ="20">
+	</Dock>
+	<Dock z ="-1720" y ="500" x ="0" size ="20">
+	</Dock>
+	<Dock z ="-1680" y ="500" x ="0" size ="20">
+	</Dock>
+	<Dock z ="-1640" y ="500" x ="0" size ="20">
+	</Dock>
+	<Dock z ="-1620" y ="500" x ="0" size ="20">
+	</Dock>
+	<Subunit file ="capship_blank" x ="0" y ="990" z ="742" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="0" y ="990" z ="-742" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="0" y ="990" x ="-742" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="0" y ="990" x ="742" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="0" y ="1050" z ="742" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="0" y ="1050" z ="-742" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="0" y ="1050" x ="-742" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="0" y ="1050" x ="742" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="525" y ="990" z ="525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="525" y ="990" z ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="525" y ="990" x ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-525" y ="990" x ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="525" y ="1050" z ="525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="525" y ="1050" z ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="525" y ="1050" x ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-525" y ="1050" x ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="0" y ="-480" z ="750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="0" y ="-480" z ="-750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="0" y ="-480" x ="-750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="0" y ="-480" x ="750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="0" y ="-420" z ="750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="0" y ="-420" z ="-750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="0" y ="-420" x ="-750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="0" y ="-420" x ="750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="525" y ="-480" z ="525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="525" y ="-480" z ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="525" y ="-480" x ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-525" y ="-480" x ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="525" y ="-420" z ="525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="525" y ="-420" z ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="525" y ="-420" x ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-525" y ="-420" x ="-525" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1700" y ="500" z ="100" ri ="0" rj ="1" rk ="0" qi ="0" qj ="0" qk ="1">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1700" y ="520" z ="0" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1700" y ="500" z ="-100" ri ="0" rj ="1" rk ="0" qi ="0" qj ="0" qk ="-1">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1700" y ="480" z ="0" ri ="0" rj ="0" rk ="1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1700" y ="500" z ="100" ri ="0" rj ="1" rk ="0" qi ="0" qj ="0" qk ="1">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1700" y ="520" z ="0" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1700" y ="500" z ="-100" ri ="0" rj ="1" rk ="0" qi ="0" qj ="0" qk ="-1">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1700" y ="480" z ="0" ri ="0" rj ="0" rk ="1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1700" y ="500" x ="100" ri ="0" rj ="1" rk ="0" qi ="1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1700" y ="520" x ="0" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1700" y ="500" x ="-100" ri ="0" rj ="1" rk ="0" qi ="-1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1700" y ="480" x ="0" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1700" y ="500" x ="100" ri ="0" rj ="1" rk ="0" qi ="1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1700" y ="520" x ="0" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1700" y ="500" x ="-100" ri ="0" rj ="1" rk ="0" qi ="-1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1700" y ="480" x ="0" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1600" y ="500" z ="105" ri ="0" rj ="1" rk ="0" qi ="0" qj ="0" qk ="1">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1600" y ="500" z ="-105" ri ="0" rj ="1" rk ="0" qi ="0" qj ="0" qk ="-1">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1600" y ="500" z ="105" ri ="0" rj ="1" rk ="0" qi ="0" qj ="0" qk ="1">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1600" y ="500" z ="-105" ri ="0" rj ="1" rk ="0" qi ="0" qj ="0" qk ="-1">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1600" y ="500" x ="105" ri ="0" rj ="1" rk ="0" qi ="1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1600" y ="500" x ="-105" ri ="0" rj ="1" rk ="0" qi ="-1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1600" y ="500" x ="105" ri ="0" rj ="1" rk ="0" qi ="1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1600" y ="500" x ="-105" ri ="0" rj ="1" rk ="0" qi ="-1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1600" y ="520" z ="15" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1600" y ="480" z ="15" ri ="0" rj ="0" rk ="1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1600" y ="520" z ="-15" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1600" y ="480" z ="-15" ri ="0" rj ="0" rk ="1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1600" y ="520" z ="15" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1600" y ="480" z ="15" ri ="0" rj ="0" rk ="1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1600" y ="520" z ="-15" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1600" y ="480" z ="-15" ri ="0" rj ="0" rk ="1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1600" y ="520" x ="15" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1600" y ="480" x ="15" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1600" y ="520" x ="-15" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1600" y ="480" x ="-15" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1600" y ="520" x ="15" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1600" y ="480" x ="15" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1600" y ="520" x ="-15" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1600" y ="480" x ="-15" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="heavy_blank" x ="1625" y ="520" z ="0" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="heavy_blank" x ="1625" y ="480" z ="0" ri ="0" rj ="0" rk ="1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="heavy_blank" x ="-1625" y ="520" z ="0" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="heavy_blank" x ="-1625" y ="480" z ="0" ri ="0" rj ="0" rk ="1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="heavy_blank" z ="1625" y ="520" x ="0" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="heavy_blank" z ="1625" y ="480" x ="0" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="heavy_blank" z ="-1625" y ="520" x ="0" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="heavy_blank" z ="-1625" y ="480" x ="0" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="400" y ="390" z ="750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="400" y ="390" z ="-750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-400" y ="390" z ="750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-400" y ="390" z ="-750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="750" y ="390" z ="400" ri ="1" rj ="0" rk ="1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="750" y ="390" z ="-400" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-750" y ="390" z ="400" ri ="1" rj ="0" rk ="1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-750" y ="390" z ="-400" ri ="1" rj ="0" rk ="0" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="400" y ="660" z ="750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="400" y ="660" z ="-750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-400" y ="660" z ="750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-400" y ="660" z ="-750" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="750" y ="660" z ="400" ri ="1" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="750" y ="660" z ="-400" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-750" y ="660" z ="400" ri ="1" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-750" y ="660" z ="-400" ri ="1" rj ="0" rk ="0" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1284" y ="470" z ="-532" ri ="0" rj ="1" rk ="0" qi ="-0.923879" qj ="0" qk ="-0.382683">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-1284" y ="470" z ="532" ri ="0" rj ="1" rk ="0" qi ="-0.923879" qj ="0" qk ="0.382683">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1284" y ="470" z ="-532" ri ="0" rj ="1" rk ="0" qi ="0.923879" qj ="0" qk ="-0.382683">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="1284" y ="470" z ="532" ri ="0" rj ="1" rk ="0" qi ="0.923879" qj ="0" qk ="0.382683">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1284" y ="470" x ="-532" ri ="0" rj ="1" rk ="0" qk ="-0.923879" qj ="0" qi ="-0.382683">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-1284" y ="470" x ="532" ri ="0" rj ="1" rk ="0" qk ="-0.923879" qj ="0" qi ="0.382683">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1284" y ="470" x ="-532" ri ="0" rj ="1" rk ="0" qk ="0.923879" qj ="0" qi ="-0.382683">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="1284" y ="470" x ="532" ri ="0" rj ="1" rk ="0" qk ="0.923879" qj ="0" qi ="0.382683">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-514" y ="335" z ="-200" ri ="0" rj ="-1" rk ="0" qi ="-0.923879" qj ="0" qk ="-0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-514" y ="335" z ="200" ri ="0" rj ="-1" rk ="0" qi ="-0.923879" qj ="0" qk ="0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="514" y ="335" z ="-200" ri ="0" rj ="-1" rk ="0" qi ="0.923879" qj ="0" qk ="-0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="514" y ="335" z ="200" ri ="0" rj ="-1" rk ="0" qi ="0.923879" qj ="0" qk ="0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-514" y ="335" x ="-200" ri ="0" rj ="-1" rk ="0" qk ="-0.923879" qj ="0" qi ="-0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-514" y ="335" x ="200" ri ="0" rj ="-1" rk ="0" qk ="-0.923879" qj ="0" qi ="0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="514" y ="335" x ="-200" ri ="0" rj ="-1" rk ="0" qk ="0.923879" qj ="0" qi ="-0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="514" y ="335" x ="200" ri ="0" rj ="-1" rk ="0" qk ="0.923879" qj ="0" qi ="0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-514" y ="678" z ="-200" ri ="0" rj ="1" rk ="0" qi ="-0.923879" qj ="0" qk ="-0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-514" y ="678" z ="200" ri ="0" rj ="1" rk ="0" qi ="-0.923879" qj ="0" qk ="0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="514" y ="678" z ="-200" ri ="0" rj ="1" rk ="0" qi ="0.923879" qj ="0" qk ="-0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="514" y ="678" z ="200" ri ="0" rj ="1" rk ="0" qi ="0.923879" qj ="0" qk ="0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-514" y ="678" x ="-200" ri ="0" rj ="1" rk ="0" qk ="-0.923879" qj ="0" qi ="-0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="-514" y ="678" x ="200" ri ="0" rj ="1" rk ="0" qk ="-0.923879" qj ="0" qi ="0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="514" y ="678" x ="-200" ri ="0" rj ="1" rk ="0" qk ="0.923879" qj ="0" qi ="-0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" z ="514" y ="678" x ="200" ri ="0" rj ="1" rk ="0" qk ="0.923879" qj ="0" qi ="0.382683" restricted ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="300" y ="-500" z ="300" ri ="0" rj ="0" rk ="-1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="300" y ="-500" z ="-300" ri ="0" rj ="0" rk ="-1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-300" y ="-500" z ="300" ri ="0" rj ="0" rk ="-1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-300" y ="-500" z ="-300" ri ="0" rj ="0" rk ="-1" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="300" y ="1100" z ="-300" ri ="0.707107" rj ="0" rk ="0.707107" qi ="0" qj ="-1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="300" y ="1100" z ="300" ri ="-0.382683" rj ="0" rk ="-0.923879" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-300" y ="1100" z ="300" ri ="-0.923879" rj ="0" rk ="0.382683" qi ="0" qj ="1" qk ="0">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-300" y ="1100" z ="-300" ri ="0.382683" rj ="0" rk ="-0.923880" qi ="-0.145969" qj ="0.987440" qk ="-0.060463">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="300" y ="800" z ="-300" ri ="-0.921076" rj ="0.077847" rk ="-0.381522" qi ="0.382683" qj ="0" qk ="-0.923880">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-300" y ="800" z ="-300" ri ="-0.921076" rj ="0.077847" rk ="0.381522" qi ="-0.382683" qj ="0" qk ="-0.923880">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="-300" y ="800" z ="300" ri ="0.921076" rj ="0.077847" rk ="0.381522" qi ="-0.382683" qj ="0" qk ="0.923880">
+	</Subunit>
+	<Subunit file ="capship_blank" x ="300" y ="800" z ="300" ri ="-0.381522" rj ="0.077847" rk ="-0.921076" qi ="0.923880" qj ="0" qk ="-0.382683">
+	</Subunit>
+	<Hold volume ="100000000000">
+		<Category file ="Natural_Products/Food">
+			<import price ="1.1" pricestddev =".2" quantity ="15" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="Natural_Products/Liquor">
+			<import price ="1.05" pricestddev =".1" quantity ="1" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Natural_Products/Plants">
+			<import price =".9" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Natural_Products/Natural_Resources">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Metals/Crude">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Metals/Precious">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Metals/Alloys">
+			<import price ="1.1" pricestddev =".1" quantity ="2" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Metals/Radioactive">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Gems/Jewelry">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Gems/Industrial">
+			<import price ="1.1" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Stone">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Fuels/Crude">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Fuels/Refined">
+			<import price ="1.1" pricestddev =".3" quantity ="1" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Compressed_Gasses">
+			<import price ="1.1" pricestddev =".1" quantity ="1" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Recycled_Products">
+			<import price ="1.1" pricestddev =".1" quantity ="10" quantitystddev ="7">
+			</import>
+		</Category>
+		<Category file ="Machinery_Goods">
+			<import price ="1.1" pricestddev =".1" quantity ="5" quantitystddev ="3">
+			</import>
+		</Category>
+		<Category file ="Supplies/Aerospace_Supplies">
+			<import price ="1.2" pricestddev =".1" quantity ="3" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Research/Electronics">
+			<import price ="12" pricestddev ="2" quantity ="3" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Supplies/Agriculteral_Supplies">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Supplies/Mining_Supplies">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Supplies/Construction_Supplies">
+			<import price ="1.1" pricestddev =".2" quantity ="1" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Supplies/Medical_Supplies">
+			<import price ="1.1" pricestddev =".1" quantity ="3" quantitystddev ="3">
+			</import>
+		</Category>
+		<Category file ="Electronics">
+			<import price ="1.2" pricestddev =".2" quantity ="5" quantitystddev ="4">
+			</import>
+		</Category>
+		<Category file ="Electronics/Robotics">
+			<import price ="1.1" pricestddev =".2" quantity ="2" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Manufactured_Goods">
+			<import price =".9" pricestddev =".2" quantity ="3" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="Entertainment">
+			<import price ="1.1" pricestddev =".2" quantity ="1" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Contraband/Medical">
+			<import price ="0" pricestddev ="0" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Contraband">
+			<Cargo file ="Pilot" price ="1040" quantity ="0" mass =".01" volume ="1">
+			</Cargo>
+			<import price ="0" pricestddev ="0" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="starships/Confed/Light">
+			<import price ="1" pricestdev =".1" quantity ="20" quantitystddev ="10">
+			</import>
+		</Category>
+		<Category file ="starships/Confed/Medium">
+			<import price ="1" pricestdev =".1" quantity ="15" quantitystddev ="7">
+			</import>
+		</Category>
+		<Category file ="starships/Confed/Heavy">
+			<import price ="1" pricestdev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="starships/Confed/Milspec">
+			<import price ="1" pricestdev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="starships/Militia/Light">
+			<import price ="1" pricestdev =".1" quantity ="15" quantitystddev ="7">
+			</import>
+		</Category>
+		<Category file ="starships/Militia/Medium">
+			<import price ="1" pricestdev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="starships/Militia/Heavy">
+			<import price ="1" pricestdev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Mounted_Guns_Light">
+			<import price ="1" pricestdev =".1" quantity ="20" quantitystddev ="10">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Mounted_Guns_Medium">
+			<import price ="1" pricestdev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Mounted_Guns_Heavy">
+			<import price ="1" pricestddev =".1" quantity ="8" quantitystddev ="3">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Mounted_Guns_Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Beam_Arrays_Light">
+			<import price ="1" pricestdev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Beam_Arrays_Medium">
+			<import price ="1" pricestddev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Beam_Arrays_Heavy">
+			<import price ="1" pricestddev =".1" quantity ="2" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Beam_Arrays_Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="-2" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Mount_Enhancements">
+			<import price ="1" pricestddev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Turrets">
+			<import price ="1" pricestddev =".1" quantity ="1" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Miscellaneous/SubUnits">
+			<import price ="1" pricestddev =".1" quantity ="1" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Reactors/Light">
+			<import price ="1" pricestdev =".1" quantity ="20" quantitystddev ="10">
+			</import>
+		</Category>
+		<Category file ="upgrades/Reactors/Medium">
+			<import price ="1" pricestdev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Reactors/Heavy">
+			<import price ="1" pricestdev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Capacitors/Shields">
+			<import price ="1" pricestddev =".1" quantity ="2" quantitystddev ="10">
+			</import>
+		</Category>
+		<Category file ="upgrades/Capacitors/Reactors">
+			<import price ="1" pricestddev =".1" quantity ="2" quantitystddev ="10">
+			</import>
+		</Category>
+		<Category file ="upgrades/Engines/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="2" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Engines/Engine_Enhancements_Light">
+			<import price ="1" pricestddev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Engines/Engine_Enhancements_Medium">
+			<import price ="1" pricestddev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Engines/Engine_Enhancements_Heavy">
+			<import price ="1" pricestddev =".1" quantity ="2" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Shield_Systems/Light">
+			<import price ="1" pricestdev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Shield_Systems/Medium">
+			<import price ="1" pricestddev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Shield_Systems/Heavy">
+			<import price ="1" pricestddev =".1" quantity ="2" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Shield_Systems/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="-2" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Armor_Modification">
+			<import price ="1" pricestddev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Armor_Modification/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Hull_Upgrades">
+			<import price ="1" pricestddev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Hull_Upgrades/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/ECM_Systems">
+			<import price ="1" pricestddev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/ECM_Systems/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Repair_Systems">
+			<import price ="1" pricestddev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Repair_Systems/Research">
+			<import price ="1.2" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="upgrades/Repair_Systems/Advanced">
+			<import price ="1" pricestddev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Radar/Basic">
+			<import price ="1" pricestdev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Radar/Intermediate">
+			<import price ="1" pricestddev =".1" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Radar/Advanced">
+			<import price ="1" pricestddev =".1" quantity ="2" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Miscellaneous">
+			<import price ="1" pricestddev =".1" quantity ="10" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Miscellaneous/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="2" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Ammunition">
+			<import price ="1" pricestddev =".1" quantity ="100" quantitystddev ="50">
+			</import>
+		</Category>
+		<Category file ="upgrades/Experimental">
+			<import price ="1.4" pricestddev =".2" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+	</Hold>
+	<Upgrade file ="standard_missions">
+	</Upgrade>
+	<Upgrade file ="confed_missions">
+	</Upgrade>
+	<Upgrade file ="confed_mil_missions">
+	</Upgrade>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

@@ -1,4 +1,4 @@
-<Unit scale="120">
+<Unit scale="32">
 	<Description combatRole="BASE">
 	</Description>
 	<Thrust>
@@ -7,9 +7,10 @@
 	</Thrust>
 	<Defense hudImage="relay-hud.spr">
 		<Shields front="800" right="800" left="800" back="800" recharge="50"/>
-		<Armor front="1000" right="1000" left="1000" back="1000"/>
-		<Hull strength="2000"/>
+		<Armor front="30000" right="30000" left="30000" back="30000"/>
+		<Hull strength="3196000"/>
 	</Defense>
+	<Energy limit="2000" recharge="500" />
 <Meshfile file="relay.xmesh"/>
 <Dock x="-30" y="16" z="0" size="5"/>
 <Dock x="-25" y="16" z="0" size="5"/>

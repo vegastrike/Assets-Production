@@ -1,0 +1,45 @@
+<Unit scale = "3" >
+	<Meshfile file = "lekra.xmesh"  >
+	</Meshfile>
+	<BspMesh  >
+	</BspMesh>
+<description combatrole="FIGHTER"/>
+	<Thrust >
+		<Engine Afterburner = "20000" Forward = "10000" Retro = "10000" Left = "10000" Right = "10000" Top = "10000" Bottom = "10000"  >
+		</Engine>
+		<Maneuver yaw = "10000" pitch = "10000" roll = "10000"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense HudImage = "lekra-hud.spr" >
+		<Armor front = "110" right = "55" left = "55" back = "110"  >
+		</Armor>
+		<Shields front = "300" right = "300" left = "300" back = "300" recharge = "45"  >
+		</Shields>
+		<Hull strength = "165"  >
+		</Hull>
+	</Defense>
+	<Stats mass = "62" momentofinertia = "62" fuel = "200000000"  >
+	</Stats>
+	<Computer yaw = "116.600006" pitch = "207.000000" roll = "207.000000" afterburner = "200" maxspeed = "190" >
+		<Radar itts = "true" color = "true" error = "0"  >
+		</Radar>
+	</Computer>
+	<Energy afterburnenergy = "40" >
+		<Reactor recharge = "32" limit = "357"  warpenergy="300">
+		</Reactor>
+	</Energy>
+	<Jump delay = "1" jumpenergy = "90" insysenergy="45" >
+	</Jump>
+	<Mount weapon="Laserbeam" size="Light" x="-2.75800" y="-0.682000" z="0.628000" />
+	<Mount weapon="Laserbeam" size="Light" x="3.94800" y="-1.03200" z="1.21200" />
+	<Mount weapon="DisruptorBeam" size="Medium" x="-4.40000e-2" y="1.22800" z="-0.508000" />
+	<Mount weapon="DisruptorBeam" size="Medium" x="-0.320000" y="-0.352000" z="4.16400" />
+	<Mount weapon="swarm" size="special-missile" x="-3.00944e-2" y="0.757442" z="-1.86303" ammo="20" volume="5"/>
+	<Mount weapon="torpedo" size="Light-missile medium-missile heavy-missile" x="1.65074" y="-0.522844" z="1.34526e-3" ammo="1" volume="100"/>
+	<Light file = "supernova.bmp" x = "-0.506007" y = "2.40000e-2" z = "-5.16000" size = ".6" />
+	<Light file = "supernova.bmp" x = "9.59928e-2" y = "3.20000e-2" z = "-3.67200" size = ".6" />
+	<Hold volume = "15">
+	</Hold>
+</Unit>

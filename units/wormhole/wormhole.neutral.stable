@@ -1,0 +1,20 @@
+<Unit scale="3000">
+
+<!--<Meshfile file="glow_stable.xmesh"/>-->
+<BSPMesh usebsp="0"/>
+<Rapidmesh rapid="0"/>
+	<Defense>
+		<Armor front="100000" right="80000" left="80000" back="100000"/>
+		<Hull strength="250000"/>
+	</Defense>
+
+<!-- Glowing Net -->
+<!--	<Subunit file = "wormhole.stableglownetsaccessory" x = "0" y = "0" z = "0" />
+	<Subunit file = "wormhole.stableglownetsaccessory" x = "0" y = "0" z = "0" ri = "1" rk = "0" />
+	<Subunit file = "wormhole.stableglownetsaccessory" x = "0" y = "0" z = "0" qi = "1" qj = "0" />-->
+
+<!-- Swirls -->
+	<Subunit file = "wormhole.stableswirlsaccessory" x = "0" y = "0" z = "0" />
+	<Subunit file = "wormhole.stableswirlsaccessory" x = "0" y = "0" z = "0" rk = "-1" />
+
+</Unit>

@@ -1,0 +1,40 @@
+<Unit scale="1.25"> 
+<description combatrole="INTERCEPTOR"/>
+	<Cockpit file="medium_cockpit.cpt"/>
+	<Meshfile file="tianhi.xmesh" />
+	<Meshfile file="tianhiglow.xmesh" />
+	<Thrust>
+		<Engine Afterburner="24000" Forward="16000" Retro="16000" Left="16000" Right="16000" Top="16000" Bottom="16000"/>
+		<Maneuver yaw="13643.200050" pitch="13643.200050" roll="13643.200050"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense hudImage="tian-hud.spr">
+	<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="1" cloakglass="false"/>    
+		<Armor front="25" right="25" left="25" back="25"/>
+		<Shields front="360" right="360" left="360" back="360" recharge="100"/>
+		<Hull strength="194.000000"/>
+	</Defense>
+	<Stats mass="80" momentofinertia="80" fuel="50000000"></Stats>
+	<Computer yaw="110.400002" pitch="110.400002" roll="110.400002" afterburner="333" maxspeed="300"/>
+	<Energy>
+		<Reactor recharge="120" limit="720" warpenergy="360"/>
+	</Energy>
+       	<Jump delay="1" jumpenergy="90" insysenergy="40"/>       
+	<Hold volume="15">
+
+	</Hold>
+
+
+<Light file="supernova.bmp" x="0" y="-.5" z="-5.5" size="10"/>
+<Mount weapon="laserbeam" size="Light Autotracking" x="0" y="3" z=".5"/>
+<!--
+<Mount weapon="friendorfoe" size="Light-missile Medium-missile" x="-.75" y="3" z=".5" ammo="1" volume="16"/>
+<Mount weapon="friendorfoe" size="Light-missile Medium-missile" x=".75" y="3" z=".5" ammo="1" volume="16"/>
+-->
+
+
+</Unit>
+
+
+

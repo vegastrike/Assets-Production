@@ -1,0 +1,142 @@
+<Unit scale ="5.00000">
+	<Meshfile file ="goddard_top.xmesh">
+	</Meshfile>
+	<Meshfile file ="goddard_bottom.xmesh">
+	</Meshfile>
+	<Thrust>
+		<Engine Afterburner ="100000" Forward ="80000" Retro ="80000" Left ="75000" Right ="75000" Top ="75000" Bottom ="75000">
+		</Engine>
+		<Maneuver yaw ="75000" pitch ="75000" roll ="75000">
+		</Maneuver>
+	</Thrust>
+	<Computer yaw ="60" pitch ="60" roll ="50" afterburner ="220" maxspeed ="210">
+	</Computer>
+	<subunit file ="turretpdlong" x ="0" y ="2.2" z ="4.5" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0">
+	</subunit>
+	<subunit file ="turretpdlong" x ="0" y ="-4.05" z ="10" ri ="0" rj ="0" rk ="1" qi ="0" qj ="-1" qk ="0">
+	</subunit>
+	<mount weapon ="torpedo" size ="heavy-missile" x ="1" y ="-2" z ="7" ammo ="8" volume ="800">
+	</mount>
+	<mount weapon ="torpedo" size ="heavy-missile" x ="-1" y ="-2" z ="7" ammo ="8" volume ="800">
+	</mount>
+	<mount weapon ="torpedo" size ="heavy-missile" x ="1" y ="-2" z ="-1" ammo ="8" volume ="800">
+	</mount>
+	<mount weapon ="torpedo" size ="heavy-missile" x ="-1" y ="-2" z ="-1" ammo ="8" volume ="800">
+	</mount>
+	<mount weapon ="laserbeam" size ="light autotracking" x ="12.5" y ="0.1" z ="0">
+	</mount>
+	<mount weapon ="laserbeam" size ="light autotracking" x ="-12.5" y ="0.1" z ="0">
+	</mount>
+	<mount weapon ="laserbeam" size ="light autotracking" x ="12.5" y ="-0.1" z ="0">
+	</mount>
+	<mount weapon ="laserbeam" size ="light autotracking" x ="-12.5" y ="-0.1" z ="0">
+	</mount>
+	<mount weapon ="disruptorbeam" size ="light medium autotracking" x ="-2" y ="0" z ="12">
+	</mount>
+	<mount weapon ="disruptorbeam" size ="light medium autotracking" x ="2" y ="-0" z ="12">
+	</mount>
+	<mount weapon ="particlebeam" size ="capship-light autotracking" x ="-0.1" y ="-2" z ="13">
+	</mount>
+	<mount weapon ="particlebeam" size ="capship-light autotracking" x ="0.1" y ="-2" z ="13">
+	</mount>
+	<mount weapon ="friendorfoe" size ="light-missile medium-missile" x ="4.1" y ="0" z ="-3" ammo ="5" volume ="80">
+	</mount>
+	<mount weapon ="friendorfoe" size ="light-missile medium-missile" x ="3.9" y ="0" z ="-3" ammo ="5" volume ="80">
+	</mount>
+	<mount weapon ="friendorfoe" size ="light-missile medium-missile" x ="-4.1" y ="0" z ="-3" ammo ="5" volume ="80">
+	</mount>
+	<mount weapon ="friendorfoe" size ="light-missile medium-missile" x ="-3.9" y ="0" z ="-3" ammo ="5" volume ="80">
+	</mount>
+	<mount weapon ="friendorfoe" size ="light-missile medium-missile" x ="8.1" y ="0" z ="-3" ammo ="5" volume ="80">
+	</mount>
+	<mount weapon ="friendorfoe" size ="light-missile medium-missile" x ="7.9" y ="0" z ="-3" ammo ="5" volume ="80">
+	</mount>
+	<mount weapon ="friendorfoe" size ="light-missile medium-missile" x ="-8.1" y ="0" z ="-3" ammo ="5" volume ="80">
+	</mount>
+	<mount weapon ="friendorfoe" size ="light-missile medium-missile" x ="-7.9" y ="0" z ="-3" ammo ="5" volume ="80">
+	</mount>
+	<light file ="supernova.bmp" x ="0" y ="0" z ="-4.4" size ="1.2">
+	</light>
+	<light file ="supernova.bmp" x ="0.6" y ="0" z ="-4.4" size ="1.2">
+	</light>
+	<light file ="supernova.bmp" x ="-0.6" y ="0" z ="-4.4" size ="1.2">
+	</light>
+	<light file ="supernova.bmp" x ="1.2" y ="0" z ="-4.4" size ="1.2">
+	</light>
+	<light file ="supernova.bmp" x ="-1.2" y ="0" z ="-4.4" size ="1.2">
+	</light>
+	<light file ="supernova.bmp" x ="1.8" y ="0" z ="-4.3" size ="1.2">
+	</light>
+	<light file ="supernova.bmp" x ="-1.8" y ="0" z ="-4.3" size ="1.2">
+	</light>
+	<light file ="supernova.bmp" x ="5" y ="0.275" z ="-2" size ="2">
+	</light>
+	<light file ="supernova.bmp" x ="4" y ="0.275" z ="-2" size ="2">
+	</light>
+	<light file ="supernova.bmp" x ="-5" y ="0.275" z ="-2" size ="2">
+	</light>
+	<light file ="supernova.bmp" x ="-4" y ="0.275" z ="-2" size ="2">
+	</light>
+	<light file ="supernova.bmp" x ="8.75" y ="0.275" z ="-2.75" size ="2">
+	</light>
+	<light file ="supernova.bmp" x ="9.75" y ="0.275" z ="-2.75" size ="2">
+	</light>
+	<light file ="supernova.bmp" x ="-9.75" y ="0.275" z ="-2.75" size ="2">
+	</light>
+	<light file ="supernova.bmp" x ="-8.75" y ="0.275" z ="-2.75" size ="2">
+	</light>
+	<cockpit file ="heavy-cockpit.cpt" x ="0" y ="0" z ="0">
+	</cockpit>
+	<Defense HudImage ="goddard-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Armor front ="1000" right ="800" left ="800" back ="800">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="2100">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4_Level10"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+	<Sound>
+	</Sound>
+	<Stats mass ="2000" momentofinertia ="2000" fuel ="400000000">
+	</Stats>
+	<Energy>
+		<Reactor warpenergy ="450">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_9"/>
+<Upgrade file="mult_gun_cooler"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<Jump delay ="1" jumpenergy ="150" insysenergy ="150">
+	</Jump>
+	<description combatrole ="BOMBER">
+	</description>
+	<Hold volume ="600.000000">
+	</Hold>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

@@ -9,36 +9,40 @@
 	</Meshfile>
 	<BSPMesh  >
 	</BSPMesh>
-	<Mount weapon = "UnknownHeavyBeam" size = "Light" x = "0" y = "-0.5" z = "13.0"  >
+	<Mount weapon = "UnknownHeavyBeam" size = "Light autotracking" x = "0" y = "-0.5" z = "13.0"  >
 	</Mount>
 	<Light file = "supernova.bmp" x = "0" y = "-0.5" z = "13" size = "0.500000"  >
 	</Light>
 	<Light file = "supernova.bmp" x = "0" y = "0" z = "-7.20000" size = "3.000000"  >
 	</Light>
 	<Defense HudImage = "s-hud.spr" >
-		<Armor front = "500" right = "500" left = "500" back = "500"  >
+		<Armor front = "1000" right = "1000" left = "1000" back = "1000"  >
 		</Armor>
-		<Shields front = "500.000000" back = "500.000000" recharge = "180.000000"  >
+		<Shields front = "10000" right="10000" left="10000" back = "10000" recharge = "20000"  >
 		</Shields>
 		<Hull strength = "1000.000000"  >
 		</Hull>
 	</Defense>
-	<Stats mass = "45.555" momentofinertia = "22.7775" fuel = "20000000"  >
+	<Stats mass = "45.555" momentofinertia = "45.555" fuel = "20000000"  >
 	</Stats>
-	<Computer yaw = "120" pitch = "120" roll = "120" afterburner = "204" maxspeed = "75" >
-		<Radar itts = "false" color = "true"  >
+	<Computer yaw = "120" pitch = "120" roll = "120" afterburner = "320" maxspeed = "300" >
+		<Radar itts = "false" color = "true" trackingcone="0.9985" >
 		</Radar>
 	</Computer>
 	<Energy >
-		<Reactor recharge = "120" limit = "1300"  >
+		<Reactor recharge = "26000" limit = "65000"  warpenergy="600">
 		</Reactor>
 	</Energy>
-	<Jump delay = "1" jumpenergy = "400"  >
+	<Jump delay = "1" jumpenergy = "400"  insysenergy="300">
 	</Jump>
 	<Thrust >
-		<Engine Afterburner = "4859" Forward = "935" Retro = "1160" Left = "923" Right = "923" Top = "923" Bottom = "923"  >
+		<Engine Afterburner = "20000" Forward = "15000" Retro = "15000" Left = "15000" Right = "15000" Top = "15000" Bottom = "15000"  >
 		</Engine>
 		<Maneuver yaw = "16596" pitch = "14522" roll = "16596"  >
 		</Maneuver>
 	</Thrust>
+	<hold volume="50">
+		<!-- insert cosmic joke-->
+	</hold>
 </Unit>
+

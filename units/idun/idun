@@ -1,0 +1,30 @@
+<Unit scale=".48">
+<Meshfile file="idunhi.xmesh"/>
+<Meshfile file="idunsails.xmesh"/>
+
+<description combatrole="INTERCEPTOR"/>
+	<cockpit file="rlaan-cockpit.cpt" x="0" y="3" z="23"/>
+	<Thrust>
+		<Engine Afterburner="10000" Forward="5000" Retro="5000" Left="5000" Right="5000" Top="5000" Bottom="5000"/>
+		<Maneuver yaw="6000.500000" pitch="6000.500000" roll="6000.500000"/>
+	</Thrust>
+	<Sound> </Sound>
+	<Defense HudImage="idun-hud.spr" ExplosionAni="explosion_rlaan.ani">
+		<Cloak cloakmin=".3" cloakrate=".1" cloakenergy="60" cloakglass="false"/>       
+		<Armor front="75" right="75" left="75" back="75"/>
+		<Shields front="50" right="50" left="50" back="50" recharge="50"/>
+		<Hull strength="255"/>
+	</Defense>
+	<Stats mass="57" momentofinertia="57" fuel="150000000"></Stats>
+	<Computer yaw="90.500000" pitch="90.500000" roll="90.500000" afterburner="300.000000" maxspeed="270.000000"/>
+	<Energy>
+		<Reactor recharge="60" limit="300" warpenergy="450"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="75" insysenergy="50"/>
+	<Hold volume="10">
+	</Hold>
+
+<Mount weapon="Ktek" size="Light Medium" x="-4.125" y="-4.4" z="0"/>
+<Mount weapon="Ktek" size="Light Medium" x="4.125" y="-4.4" z="0"/>
+
+</Unit>

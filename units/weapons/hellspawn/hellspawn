@@ -1,0 +1,34 @@
+<Unit scale="0.01">
+	<Description combatRole="POINTDEF">
+	</Description>
+	<Meshfile file="box.xmesh" />
+
+	<Thrust>
+		<Engine Afterburner="300" Forward="150" Retro="150" Left="150" Right="150" Top="150" Bottom="150"/>
+		<Maneuver yaw="150" pitch="150" roll="150"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense hudImage="missile-hud.spr">
+		<Armor front="10" right="10" left="10" back="10"/>
+		<Shields front="50" back="50" recharge="50"/>
+		<Hull strength="10"/>
+	</Defense>
+
+
+	<Subunit file="rlaanturretmini" x=".01" y="0" z="0" ri="0" rj="1" rk="0" qi="1" qj="0" qk="0"/>
+
+	<Subunit file="rlaanturretmini" x="-.01" y="0" z="0" ri="0" rj="-1" rk="0" qi="-1" qj="0" qk="0"/>
+	<Stats mass="1" momentofinertia="1" fuel="40000000"></Stats>
+	<Computer yaw="150.800003" pitch="150.800003" roll="151.800003" afterburner="300.000000" maxspeed="300.000000">
+	<radar range="30000000" itts="false" color="false" />
+	</Computer>
+	<Energy afterburnenergy="1">
+		<Reactor recharge="100" limit="200"/>
+	</Energy>
+       	<Jump delay="1" jumpenergy="900"/>       
+
+	<Hold volume="10">
+	</Hold>
+
+</Unit>

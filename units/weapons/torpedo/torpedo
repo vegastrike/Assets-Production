@@ -1,0 +1,30 @@
+<Unit scale="2.4" >
+	<Description combatRole="HEAVYMISSILE">
+	</Description>
+	<Meshfile file = "heatseek.xmesh"  >
+	</Meshfile>
+	<BspMesh RAPID = "0"  >
+	</BspMesh>
+	<Light file = "supernova.bmp" x = "0" y = "0" z = "-2.30000023841858" size = ".8"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "500" Forward = "450.9978" Retro = "450.3479" Left = "7.14879" Right = "7.14879" Top = "7.14879" Bottom = "7.14879"  >
+		</Engine>
+		<Maneuver yaw = "435.2241" pitch = "438.7335" roll = "435.2241"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense hudImage="missile-hud.spr">
+		<Hull strength = "5"  >
+		</Hull>
+	</Defense>
+	<Stats mass = "2.5" momentofinertia = "2.5" fuel = "2000"  >
+	</Stats>
+	<Computer yaw = "18" pitch = "18" roll = "18" afterburner = "200" maxspeed = "200"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "10" limit = "100"  >
+		</Reactor>
+	</Energy>
+</Unit>

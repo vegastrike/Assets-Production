@@ -21,28 +21,38 @@ def isAsteroid (un):
     return retval
 
 def getSignificant (whichsignificant, landable_only, capship_only):
-	un=VS.Unit()
+	import vsrandom
 	which=0
 	signum=0
-	while (signum<=whichsignificant):
+	rez = []
+	un=VS.getUnit(0)
+	#print "is this null "+str(un.isNull())
+	while (not un.isNull()):
+		#print "is this null "+str(un.isNull())
 		un=VS.getUnit(which)
-		if (not un):
+		if (un.isNull()):
 		  which=0
 		  if (signum==0):
 		    signum=whichsignificant+1
 		else:
+		  #print "checking "+un.getName()
 		  if ((landable_only) or (capship_only)):
 		    if(capship_only):
 		      if (isBase (un)):
 			signum=signum+1
+			rez.append(un)
 		    else:
 		      if (isLandable (un)):
 			signum=signum+1
+			rez.append(un)
+		      else:
+		        print "not landable "+un.getName()+" fg "+un.getFlightgroupName()
 		  else:
 		    if (un.isSignificant()):
 		      signum=signum+1
+		      rez.append(un)
 		  which=which+1
-	if (not un):
+	if (len(rez)==0):
 		if (capship_only):
 			return getSignificant(whichsignificant,landable_only,0)
 		elif(landable_only):
@@ -50,18 +60,16 @@ def getSignificant (whichsignificant, landable_only, capship_only):
 		else:
 			print "fatal error, no significants in system "+VS.getSystemFile()
 			return VS.getPlayer()
-	return un
+	return rez[vsrandom.randrange(0,len(rez))]
   
   #this one terminates if fewer than so many planets exist with null
 
 def inSystem (unit):
     i=VS.getUnitList ()
-    un = i.current()
-    while (un):
-        if (un==unit):
+    while (i.notDone()):
+        if (i.current()==unit):
             return 1
         i.advance()
-        un=i.current()
     return 0
 def getPlanet (whichsignificant, sig):
 	un=VS.Unit()
@@ -77,8 +85,10 @@ def getPlanet (whichsignificant, sig):
 		    if (un.isPlanet ()):
 		      signum=signum+1
 		  i.advance()			
-		else:
+		elif (i.isDone()):
                     break
+		else:
+                    i.advance()
 	return un
   
 def getJumpPoint(whichsignificant):
@@ -120,7 +130,7 @@ def obsolete_getNearestEnemy(my_unit,range):
 
 def obsolete_getThreatOrEnemyInRange(un,range):
     threat=un.getThreat()
-    if(not threat):
+    if(threat.isNull()):
       threat=obsolete_getNearestEnemy(un,range)
     return threat
     
@@ -128,7 +138,7 @@ def setPreciseTargetShip (which_fgid, target_unit):
     ship_nr=0
     un=VS.getUnit(ship_nr)
     if (target_unit):
-      while(not un):
+      while(un.isNull()):
         unit_fgid=un.getFgID()
         if(unit_fgid[:len(which_fgid)]==which_fgid):
 	  un.SetTarget(target_unit)

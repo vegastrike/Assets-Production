@@ -23,7 +23,7 @@ class quest_contraband_truck (quest.quest):
 
 	def mission_fail(self):
 		print "mission failed"
-		VS.IOmessage (0,"game","news","AERAN WARP CORE EXPLODES:\\GNN reports the explosion of a warp core in Klondike system today.  The unstable core was apparently being smuggled out of Confederation space by cloaked Aeran ships.  It is understood that the Aeran ships, and an unknown privateer vessel were in the aera.  They are presumed destroyed.  Although Confederate representatives today would neither confirm nor deny it, it is suspected that this was infact not an entirely unexpected event.\\\\GNN --- Your News Network Anywhere")
+		VS.IOmessage (0,"game","news","AERAN WARP CORE EXPLODES: \n GNN reports the explosion of a warp core in Klondike system today.  The unstable core was apparently being smuggled out of Confederation space by cloaked Aeran ships.  It is understood that the Aeran ships, and an unknown privateer vessel were in the aera.  They are presumed destroyed.\n\n  GNN --- Your News Network Anywhere")
 		print "mission terminating"
 
 		print "mission terminated"
@@ -77,7 +77,6 @@ class quest_contraband_truck (quest.quest):
 			self.repeat_end1 = 1
 			self.repeat_end2 = 1
 			self.timer1 = 0
-			self.timer2 = 0
 			self.jumpout = 0
 			self.quest_exit = 0
 			global truck_exit
@@ -97,15 +96,15 @@ class quest_contraband_truck (quest.quest):
 			VS.playSound("electricity.wav",self.cargo_container.Position(),self.cargo_container.GetVelocity())
 
 			print "adding particle"
-			VS.addParticle(self.cargo_container.Position(),self.cargo_container.GetVelocity(),(1,0.2,0.2))
+			VS.addParticle(self.cargo_container.Position(),self.cargo_container.GetVelocity(),(1,.2,.2))
 			print "added particle"
 			unit.setTfgDirective(self.aera_specopp,self.playa,'A')
 
 			print "begin msgs"
 
-			VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aeran -> Standard] Turn your attention <surprise> Entity/self triggered item warp core!")
-			VS.IOmessage (5,"Aera SpecOpp","all","[Translate: Aeran -> Standard] <fear, anxiety, anger> Filthy human procreate entity/self!")
-			VS.IOmessage (12,"Aera SpecOpp","all","[Translate: Aeran -> Standard] Group leave fast danger avo...")
+			VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] Turn your attention <surprise> Entity/self triggered item warp core!")
+			VS.IOmessage (5,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <fear, anxiety, anger> Filthy human procreate entity/self!")
+			VS.IOmessage (12,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] Group leave fast danger avo...")
 			print "ended msgs"
 			self.jumpout = 1
 			self.repeat_end2 = 0
@@ -128,10 +127,10 @@ class quest_contraband_truck (quest.quest):
 
 				self.playa.JumpTo("gemini_sector/pestilence")
 				print "jumped playa"
-				VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aeran -> Standard] ...id")
-				VS.IOmessage (5,"Aera SpecOpp","all","[Translate: Aeran -> Standard] <untranslatable> section of excretement <untranslatable> human <untranslatable> genitalia <untranslatable> fire <untranslatable> nice day.")
+				VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] ...id")
+				VS.IOmessage (5,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <untranslatable> section of excretement <untranslatable> human <untranslatable> genitalia <untranslatable> fire <untranslatable> nice day.")
 
-				VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aeran -> Standard] Flee smart to go entity/self <conditional> life value.")
+				VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] Flee smart to go entity/self <conditional> life value.")
 
 				print "done all but fail"
 				self.mission_fail()
@@ -201,8 +200,8 @@ class quest_contraband_truck (quest.quest):
 					print
 					unit.TfgCloak(0,self.aera_specopp)
 					unit.setTfgDirective(self.aera_specopp,self.playa,'A')
-					VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aeran -> Standard] <surprise> Attention all! <anger> Entity/self valueless takes possession away value.")
-					VS.IOmessage (3,"Aera SpecOpp","all","[Translate: Aeran -> Standard] <anger> Filthy human procreate entity/self!  Death done!")
+					VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <surprise> Attention all! <anger> Entity/self valueless takes possession away value.")
+					VS.IOmessage (3,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <anger> Filthy human procreate entity/self!  Death done!")
 					self.repeat_end2 = 0
 
 
@@ -210,18 +209,11 @@ class quest_contraband_truck (quest.quest):
 			if unit.TfgisNull(self.aera_specopp):
 				self.mission_success()
 
-			if self.truck_pirate.getUnitSystemFile() != VS.getSystemFile():
-				if self.timer2 == 0:
-					self.timer2 = 40 + VS.GetGameTime()
-				if VS.GetGameTime() > self.timer2:
-					self.truck_pirate.Kill()
-					
-
 			if self.jumpout == 1:
 				self.end_destruction()
 
 
-			if self.truck_pirate.getMinDis(self.playa.Position()) < 200 and (not self.truck_pirate.isNull()):
+			if self.truck_pirate.getMinDis(self.playa.Position()) < 200:
 				if self.repeat_end1 == 2:
 					VS.IOmessage (0,"Sonorous E2","all","I am with Confed Special Service.")
 					VS.IOmessage (0,"Sonorous E2","all","You are hampering a priority 0 operation.")
@@ -231,7 +223,7 @@ class quest_contraband_truck (quest.quest):
 					self.confed_epeels2.setFgDirective('A')
 					self.repeat_end1 = 3
 
-			elif self.truck_pirate.getMinDis(self.playa.Position()) < 1000 and (not self.truck_pirate.isNull()):
+			elif self.truck_pirate.getMinDis(self.playa.Position()) < 1000:
 				if self.repeat_end1 == 1:
 					VS.IOmessage (0,"Smuggler:truck","all","Back off mate, if you know what's good for you.")
 					print "My target is..."
@@ -244,7 +236,7 @@ class quest_contraband_truck (quest.quest):
 					self.repeat_less = 0
 					self.repeat_end1 = 2
 
-			elif self.truck_pirate.getMinDis(self.playa.Position()) < 3000 and (not self.truck_pirate.isNull()):
+			elif self.truck_pirate.getMinDis(self.playa.Position()) < 3000:
 				if self.repeat_less == 1:
 					VS.IOmessage (0,"Smuggler:truck","all","Please stay away, we are carrying valuable cargo.")
 					self.repeat_more = 1
@@ -256,13 +248,13 @@ class quest_contraband_truck (quest.quest):
 					self.repeat_more = 0
 					self.repeat_less = 1
 			
-#FIXME: (for 0.4) fix with existing ships
-#FIXME: (final) integrate with existing systems
-#FIXME: cruiser tractor in cargo!
-#FIXME: monetary rewards
-#FIXME: add fixer to bar in new system
-#FIXME: comms from specific ships
-#FIXME: faction relation consequences
+
+
+
+
+
+
+
 
 #			self.makeQuestPersistent()
 			return 1

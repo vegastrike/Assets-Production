@@ -77,10 +77,10 @@ def LaunchNext (fg, fac, type, ai, pos, logo,newshp=[None],fgappend=''):
   return NextPos (newship,pos)
 def launch_dockable_around_unit (fg,faction,ai,radius,myunit,garbage_collection_distance):
 	import fg_util
-	for i in LandedShipsInFG(fg,faction):
-		if (i[0]=='truck' or i[0]=='cargo_ship' or faction_ships.isCapital(i[0])):
+	for i in fg_util.LandedShipsInFG(fg,faction):
+		if (i[0]=='mule.blank' or i[0]=='mule' or faction_ships.isCapital(i[0])):
 			return launch_types_around (fg,faction,[i],ai,radius,myunit,garbage_collection_distance,logo)
-	return launch.launch_wave_around_unit(fg,faction,'truck',ai,1,radius,radius*1.5,myunit,logo)
+	return launch.launch_wave_around_unit(fg,faction,'mule',ai,1,radius,radius*1.5,myunit,logo)
 
 def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_collection_distance,logo,fgappend=''):
   pos = whereTo(radius, myunit)

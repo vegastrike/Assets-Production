@@ -1,0 +1,72 @@
+<Unit scale ="8">
+	<Meshfile file ="osprey.xmesh">
+	</Meshfile>
+	<Mount weapon ="Ion" size ="Light Medium" x ="0.00000e+0" y ="-9.00000e-2" z ="1.67200">
+	</Mount>
+	<Mount weapon ="Neutron" size ="Light Medium Heavy" x ="-0.876000" y ="-0.140000" z ="-0.732000">
+	</Mount>
+	<Mount weapon ="Neutron" size ="Light Medium Heavy" x ="0.886000" y ="-0.140000" z ="-0.732000">
+	</Mount>
+	<Mount weapon ="FriendOrFoe" size ="light-missile medium-missile" x ="-0.276000" y ="-0.182000" z ="0.00000e+0" ammo ="2" volume ="32">
+	</Mount>
+	<Mount weapon ="FriendOrFoe" size ="light-missile medium-missile" x ="0.278000" y ="-0.182000" z ="0.00000e+0" ammo ="2" volume ="32">
+	</Mount>
+	<Mount weapon ="Swarm" size ="Special Special-Missile" x ="-0.582000" y ="-0.182000" z ="0" ammo ="40" volume ="10">
+	</Mount>
+	<Mount weapon ="Swarm" size ="Special Special-Missile" x ="0.584000" y ="-0.182000" z ="0" ammo ="40" volume ="10">
+	</Mount>
+	<Light file ="supernova.bmp" x ="-0.330000" y ="8.00000e-3" z ="-1.32400" size =".25">
+	</Light>
+	<Light file ="supernova.bmp" x ="-0.538000" y ="8.00000e-3" z ="-1.32400" size =".25">
+	</Light>
+	<Light file ="supernova.bmp" x ="0.550000" y ="8.00000e-3" z ="-1.32400" size =".25">
+	</Light>
+	<Light file ="supernova.bmp" x ="0.342000" y ="8.00000e-3" z ="-1.32400" size =".25">
+	</Light>
+	<Thrust>
+		<Engine Afterburner ="5500" Forward ="4000" Retro ="3500" Left ="3500" Right ="3500" Top ="3500" Bottom ="3500">
+		</Engine>
+		<Maneuver yaw ="3900" pitch ="3900" roll ="3900">
+		</Maneuver>
+	</Thrust>
+	<Computer yaw ="64.000000" pitch ="96.000000" roll ="87.000000" afterburner ="180" maxspeed ="180">
+		<Radar itts="true" error="0" range="600000000" maxcone="-1" color="true" >
+		</Radar>
+	</Computer>
+	<Cockpit file ="light_cockpit.cpt" x ="0" y =".25" z ="1">
+	</Cockpit>
+	<Defense HudImage ="osprey-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Armor front ="80" right ="80" left ="80" back ="80">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="120.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4_Level1"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+	<Sound>
+	</Sound>
+	<Stats mass ="39" momentofinertia ="39" fuel ="200000000">
+	</Stats>
+	<Energy>
+		<Reactor warpenergy ="360">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_2"/>
+<Upgrade file="mult_gun_cooler"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<Jump delay ="1" jumpenergy ="180" insysenergy ="120">
+	</Jump>
+	<description combatRole ="FIGHTER">
+	</description>
+	<Hold volume ="48.000000">
+	</Hold>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

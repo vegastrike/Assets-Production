@@ -1,0 +1,55 @@
+<Unit scale ="1.25">
+	<description combatrole ="INTERCEPTOR">
+	</description>
+	<Cockpit file ="medium_cockpit.cpt">
+	</Cockpit>
+	<Meshfile file ="tianhi.xmesh">
+	</Meshfile>
+	<Meshfile file ="tianhiglow.xmesh">
+	</Meshfile>
+	<Thrust>
+		<Engine Afterburner ="24000" Forward ="16000" Retro ="16000" Left ="16000" Right ="16000" Top ="16000" Bottom ="16000">
+		</Engine>
+		<Maneuver yaw ="13643.200050" pitch ="13643.200050" roll ="13643.200050">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense hudImage ="tian-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Cloak cloakmin =".3" cloakrate =".1" cloakenergy ="1" cloakglass ="false">
+		</Cloak>
+		<Armor front ="25" right ="25" left ="25" back ="25">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="194.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4_Level4"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+	<Stats mass ="80" momentofinertia ="80" fuel ="50000000">
+	</Stats>
+	<Computer yaw ="110.400002" pitch ="110.400002" roll ="110.400002" afterburner ="333" maxspeed ="300">
+	</Computer>
+	<Energy>
+		<Reactor warpenergy ="360">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_4"/>
+<Upgrade file="mult_gun_cooler"/>
+	<Jump delay ="1" jumpenergy ="90" insysenergy ="40">
+	</Jump>
+	<Hold volume ="18.000000">
+	</Hold>
+	<Light file ="supernova.bmp" x ="0" y ="-.5" z ="-5.5" size ="10">
+	</Light>
+	<Mount weapon ="laserbeam" size ="Light Autotracking" x ="0" y ="3" z =".5">
+	</Mount>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

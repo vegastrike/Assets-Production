@@ -1,0 +1,70 @@
+<Unit scale ="15.00000">
+	<Meshfile file ="franklin_blink.xmesh">
+	</Meshfile>
+	<Meshfile file ="franklin.xmesh">
+	</Meshfile>
+	<Light file ="supernova.bmp" x ="0.00000e+0" y ="2.40000e-2" z ="-1.03600" size =".5">
+	</Light>
+	<Light file ="supernova.bmp" x ="-0.298000" y ="2.40000e-2" z ="-1.03600" size =".5">
+	</Light>
+	<Light file ="supernova.bmp" x ="0.290000" y ="2.40000e-2" z ="-1.03600" size =".5">
+	</Light>
+	<Mount weapon ="" size ="LIGHT MEDIUM HEAVY" x ="-1.45600" y ="-2.00000e-2" z ="-0.396000">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM HEAVY" x ="1.45800" y ="-2.00000e-2" z ="-0.396000">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE HEAVY-MISSILE" x ="5.00000e-2" y ="-0.102000" z ="2.91600" ammo ="1" volume ="90">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL-MISSILE HEAVY-MISSILE" x ="-4.20000e-2" y ="-0.102000" z ="2.91600" ammo ="1" volume ="90">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL" x ="5.00000e-2" y ="-0.102000" z ="2.91600">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL" x ="-4.20000e-2" y ="-0.102000" z ="2.91600">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM HEAVY" x ="0.160000" y ="-0.102000" z ="2.42200">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM HEAVY" x ="-0.132000" y ="-0.102000" z ="2.42200">
+	</Mount>
+	<subunit file ="franklin_blank" x =".885" y ="0" z ="-.4" ri ="0" rj ="1" rk ="0" qi ="0" qj ="1" qk ="0" restricted ="0">
+	</subunit>
+	<subunit file ="franklin_blank" x ="-0.885" y ="0" z ="-.4" ri ="0" rj ="1" rk ="0" qi ="0" qj ="1" qk ="0" restricted ="0">
+	</subunit>
+	<subunit file ="franklin_blank" x ="0" y ="-.15" z ="1" ri ="0" rj ="-1" rk ="0" qi ="0" qj ="-1" qk ="0" restricted ="0">
+	</subunit>
+	<Thrust>
+		<Engine Afterburner ="180000" Forward ="120000" Retro ="120000" Left ="60000" Right ="60000" Top ="60000" Bottom ="60000">
+		</Engine>
+		<Maneuver yaw ="60000" pitch ="60000" roll ="60000">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Description combatRole ="SHUTTLE">
+	</Description>
+	<Defense HudImage ="franklin-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="500" right ="500" left ="500" back ="640">
+		</Armor>
+		<Shields front ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="800">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2"/>
+	<Stats mass ="575" momentofinertia ="575" fuel ="40000000">
+	</Stats>
+	<Computer yaw ="151.800003" pitch ="151.800003" roll ="151.800003" afterburner ="330" maxspeed ="300">
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="600">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" delay ="1" jumpenergy ="300" insysenergy ="100">
+	</Jump>
+	<cockpit file ="medium_cockpit.cpt" x ="0" y ="0" z ="2.09000">
+	</cockpit>
+	<Hold volume ="1000">
+	</Hold>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

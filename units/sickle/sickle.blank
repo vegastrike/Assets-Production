@@ -1,0 +1,60 @@
+<Unit scale =".8772">
+	<Description combatRole ="FIGHTER">
+	</Description>
+	<Cockpit file ="medium_cockpit.cpt">
+	</Cockpit>
+	<Meshfile file ="TigerShark.xmesh">
+	</Meshfile>
+	<Thrust>
+		<Engine Afterburner ="6000" Forward ="5500" Retro ="5500" Left ="5500" Right ="5500" Top ="5500" Bottom ="5500">
+		</Engine>
+		<Maneuver yaw ="578999" pitch ="578999" roll ="578999">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense hudImage ="tian-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="100" right ="60" left ="60" back ="30">
+		</Armor>
+		<Shields front ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="150.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2"/>
+	<Stats mass ="55" momentofinertia ="55" fuel ="50000000">
+	</Stats>
+	<Computer yaw ="110.400002" pitch ="110.400002" roll ="110.400002" afterburner ="200" maxspeed ="160">
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="180">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" delay ="1" jumpenergy ="90" insysenergy ="60">
+	</Jump>
+	<Hold volume ="15">
+	</Hold>
+	<Light file ="supernova.bmp" x ="0.058558" y ="0.326294" z ="-1.977969" size ="1.780003">
+	</Light>
+	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE" x ="-1.056411" y ="-1.226957" z ="3.200000" ammo ="2" volume ="32">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE" x ="1.056411" y ="-1.226957" z ="3.200000" ammo ="2" volume ="32">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDUIUM" x ="0" y ="0.1" z ="3">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE SPECIAL" x ="-1.629525" y ="1.044771" z ="3.200000" ammo ="2" volume ="32">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE SPECIAL" x ="1.629525" y ="1.044771" z ="3.200000" ammo ="2" volume ="32">
+	</Mount>
+	<Light file ="supernova.bmp" x ="-1.347379" y ="0.958650" z ="-3.000000" size ="0.40000">
+	</Light>
+	<Light file ="supernova.bmp" x ="1.347379" y ="0.958650" z ="-3.000000" size ="0.40000">
+	</Light>
+	<Light file ="supernova.bmp" x ="0.863464" y ="-1.003810" z ="-3.000000" size ="0.40000">
+	</Light>
+	<Light file ="supernova.bmp" x ="-0.863464" y ="-1.003810" z ="-3.000000" size ="0.40000">
+	</Light>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

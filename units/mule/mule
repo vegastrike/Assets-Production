@@ -1,0 +1,77 @@
+<Unit scale = "1.1">
+<description combatrole="SUPPORT"/>
+<cockpit file="heavy-cockpit.cpt" x="0" y="0" z="40"/>
+	<Meshfile file="longhaulhi.xmesh"/>
+	<Meshfile file="longhaulhiglow.xmesh"/>
+	<Meshfile file="navlights.xmesh"/>
+       
+
+	<!-- Weapons -->
+
+	<Mount weapon="tractor" size="special autotracking" x="-4.5" y="3" z="32.5"/>
+	<Mount weapon="tractor" size="special autotracking" x="4.5" y="3" z="32.5" />
+	<Mount weapon="Plasma" size="light medium Heavy autotracking" x="-0" y="2" z="30"/>
+	<Mount weapon="heatseeker" size="Medium-missile light-missile" x="6.5" y="3" z="12.5" ammo ="15" volume= "45"/>
+	<Mount weapon="Heatseeker" size="Medium-missile light-missile" x="-6.5" y="3" z="12.5" ammo="15" volume="45" />
+	<Mount weapon="imagerecognition" size="special-missile Medium-missile" x="0" y="3" z="2.5" ammo = "8" volume="72"/>	
+	
+	<Subunit file="turretbeam" x="0" y="20.65" z="7.75" ri="1.0" rj="0" rk="0" qi="0" qj="1" qk="0"/>
+	<Subunit file="turretbeam" x="0" y="-17" z="80.75" ri="1.0" rj="0" rk="0" qi="0" qj="-1" qk="0"/>
+
+	<!-- Thrusters -->
+<!--	<Dock size="30" x="0" y="-15" z="80"/>-->
+<Dock size="30" x="30" y="0" z="-37"/>
+<Dock size="30" x="-30" y="0" z="-37"/>
+	<Light file="supernova.bmp" x="5" y="8.5" z="-76.75" size="45"/>
+	<Light file="supernova.bmp" x="-5" y="8.5" z="-76.75" size="45"/>
+	<Light file="supernova.bmp" x="2.75" y="-7.375" z="-76" size="20"/>
+	<Light file="supernova.bmp" x="-2.75" y="-7.375" z="-76" size="20"/>
+	<Light file="supernova.bmp" x="0" y="-10.65" z="-74.75" size="20"/>
+	<Light file="supernova.bmp" x="-14.25" y="-15" z="-25.5" size="30"/>
+	<Light file="supernova.bmp" x="14.25" y="-15" z="-25.5" size="30"/>
+
+
+	<Thrust>
+		<Engine Afterburner="600000" Forward="300000" Retro="300000" Left="10000" 			Right="10000" Top="10000" Bottom="10000"/>
+		<Maneuver yaw="30000" pitch="30000" roll="30000"/>
+	</Thrust>	
+
+	<Defense HudImage="longhaul-hud.spr">
+	
+		<Armor front="1800" right="1500" left="1500" back="2500"/>
+		<Shields front="2300" right="2000" left="2000" back="3000" recharge="30"/>
+		<Hull strength="14000"/>
+
+	</Defense>
+
+	<Stats mass="28000" momentofinertia="28000" fuel="200000000000"></Stats>
+	<Computer yaw="70" pitch="70" roll="70" afterburner="150" maxspeed="150">
+		<Radar itts="true" color="true" error="0"/> </Computer>
+
+
+	<Energy afterburnenergy="40">
+		<Reactor recharge="80" limit="5000" warpenergy="1200"/>
+	</Energy>
+           	<Jump delay="1" jumpenergy="400" inysyenergy="300"/>
+	<Hold volume="200000">
+		<Category file="Natural_Products/Food">
+			<import price=".7" pricestddev=".2" quantity="0" quantitystddev="10"/>
+		</Category>
+		<Category file="Machinery_Goods">
+			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="4"/>
+		</Category>
+		<Category file="Supplies/Mining_Supplies">
+			<import price=".6" pricestddev=".1" quantity="0" quantitystddev="1"/>
+		</Category>
+		<Category file="Supplies/Construction_Supplies">
+			<import price="1.2" pricestddev=".1" quantity="0" quantitystddev="5"/>
+		</Category>
+		<Category file="Electronics">
+			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+		</Category>
+		<Category file="Manufactured_Goods">
+			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+		</Category>
+	</Hold>
+
+</Unit>

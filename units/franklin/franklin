@@ -1,0 +1,53 @@
+<Unit scale="15.00000">
+<Meshfile file="franklin_blink.xmesh"/>
+<Meshfile file="franklin.xmesh"/>
+
+<Light file = "supernova.bmp" x = "0.00000e+0" y = "2.40000e-2" z = "-1.03600" size = ".5" />
+<Light file = "supernova.bmp" x = "-0.298000" y = "2.40000e-2" z = "-1.03600" size = ".5" />
+<Light file = "supernova.bmp" x = "0.290000" y = "2.40000e-2" z = "-1.03600" size = ".5" />
+
+<Mount weapon="Disruptor" size="Light Medium Heavy" x="-1.45600" y="-2.00000e-2" z="-0.396000" />
+<Mount weapon="Disruptor" size="Light Medium Heavy" x="1.45800" y="-2.00000e-2" z="-0.396000" />
+<Mount weapon="EMPTorpedo" size="Special-missile Heavy-missile" x="5.00000e-2" y="-0.102000" z="2.91600" ammo="1" volume="90"/>
+<Mount weapon="EMPTorpedo" size="Special-missile Heavy-missile" x="-4.20000e-2" y="-0.102000" z="2.91600" ammo="1" volume="90"/>
+<Mount weapon="leechgun" size="special" x="5.00000e-2" y="-0.102000" z="2.91600" />
+<Mount weapon="leechgun" size="special" x="-4.20000e-2" y="-0.102000" z="2.91600" />
+<Mount weapon="Disruptor" size="Light Medium Heavy" x="0.160000" y="-0.102000" z="2.42200" />
+<Mount weapon="Disruptor" size="Light Medium Heavy" x="-0.132000" y="-0.102000" z="2.42200" />
+
+
+<subunit file="franklinpd" x=".885" y="0" z="-.4" ri="0" rj="1" rk="0" qi="0" qj="1" qk="0" restricted="0"/>
+<subunit file="franklinpd" x="-0.885" y="0" z="-.4" ri="0" rj="1" rk="0" qi="0" qj="1" qk="0" restricted="0"/>
+<subunit file="franklinpd" x="0" y="-.15" z="1" ri="0" rj="-1" rk="0" qi="0" qj="-1" qk="0" restricted="0"/>
+	<Thrust >
+		<Engine Afterburner = "180000" Forward = "120000" Retro = "120000" Left = "60000" Right = "60000" Top = "60000" Bottom = "60000"  >
+		</Engine>
+		<Maneuver yaw = "60000" pitch = "60000" roll = "60000"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Description combatRole="SHUTTLE"/>
+	<Defense HudImage = "franklin-hud.spr" >
+		<Armor front = "500" right = "500" left = "500" back = "640"  >
+		</Armor>
+		<Shields front = "1200" back = "1400" recharge = "20"  >
+		</Shields>
+		<Hull strength = "800"  >
+		</Hull>
+	</Defense>
+	<Stats mass = "575" momentofinertia = "575" fuel = "400000000"  >
+	</Stats>
+	<Computer yaw = "151.800003" pitch = "151.800003" roll = "151.800003" afterburner = "330" maxspeed = "300"  >
+	</Computer>
+	<Energy afterburnenergy = "0" >
+		<Reactor recharge = "40" warpenergy="600" limit = "1600"  >
+		</Reactor>
+	</Energy>
+	<Jump delay = "1" jumpenergy = "300"  insysenergy="100">
+	</Jump>
+
+<cockpit file = "medium_cockpit.cpt" x = "0" y = "0" z = "2.09000" />
+<Hold volume = "1000" >
+</Hold>
+</Unit>

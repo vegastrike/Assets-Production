@@ -1,0 +1,30 @@
+<Unit >
+	<Description combatRole="HEAVYMISSILE">
+	</Description>
+	<Meshfile file = "cluster.xmesh"  >
+	</Meshfile>
+	<BspMesh RAPID = "0"  >
+	</BspMesh>
+	<Light file = "supernova.bmp" x = "0" y = "0" z = "-2" size = ".6"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "30" Forward = "30" Retro = "30" Left = "3" Right = "3" Top = "3" Bottom = "3"  >
+		</Engine>
+		<Maneuver yaw = "4" pitch = "4" roll = "4"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense hudImage="missile-hud.spr">
+		<Hull strength = "5"  >
+		</Hull>
+	</Defense>
+	<Stats mass = "0.0259" momentofinertia = "0.03108" fuel = "200000"  >
+	</Stats>
+	<Computer yaw = "1" pitch = "1" roll = "10" afterburner = "320" maxspeed = "320"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "10" limit = "100"  >
+		</Reactor>
+	</Energy>
+</Unit>

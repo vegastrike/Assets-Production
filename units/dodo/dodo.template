@@ -1,0 +1,104 @@
+<Unit>
+	<cockpit file ="heavy-cockpit.cpt" x ="0" y ="0" z ="0">
+	</cockpit>
+	<Meshfile file ="rescue-hull-e.xmesh">
+	</Meshfile>
+	<Meshfile file ="rescue-hull-w.xmesh">
+	</Meshfile>
+	<Meshfile file ="rescue-hull-p.xmesh">
+	</Meshfile>
+	<Meshfile file ="rescue-hull-h.xmesh">
+	</Meshfile>
+	<Meshfile file ="rescue-hull-i.xmesh">
+	</Meshfile>
+	<Meshfile file ="rescue-cock-c.xmesh">
+	</Meshfile>
+	<Mount weapon ="handlaser" size ="" x ="9.8108" y ="1.757" z ="11.8091">
+	</Mount>
+	<Mount weapon ="handlaser" size ="" x ="-9.8108" y ="1.757" z ="11.8091">
+	</Mount>
+	<Mount weapon ="Heavytractor" size ="Special autotracking" x ="29.815" y ="-6.919" z ="30.409">
+	</Mount>
+	<Mount weapon ="Heavytractor" size ="Special autotracking" x ="-29.815" y ="-6.919" z ="30.409">
+	</Mount>
+	<Mount weapon ="Heavytractor" size ="Special autotracking" x ="29.815" y ="-6.919" z ="30.409">
+	</Mount>
+	<Mount weapon ="Heavytractor" size ="Special autotracking" x ="-29.815" y ="-6.919" z ="30.409">
+	</Mount>
+	<Mount weapon ="Heavytractor" size ="Special autotracking" x ="29.815" y ="-6.919" z ="30.409">
+	</Mount>
+	<Mount weapon ="Heavytractor" size ="Special autotracking" x ="-29.815" y ="-6.919" z ="30.409">
+	</Mount>
+	<Mount weapon ="Heavytractor" size ="Special autotracking" x ="29.815" y ="-6.919" z ="30.409">
+	</Mount>
+	<Mount weapon ="Heavytractor" size ="Special autotracking" x ="-29.815" y ="-6.919" z ="30.409">
+	</Mount>
+	<Thrust>
+		<Engine Afterburner ="30000" Forward ="10000" Retro ="25000" Left ="22231" Right ="22231" Top ="22231" Bottom ="22231">
+		</Engine>
+		<Maneuver yaw ="289943" pitch ="239988" roll ="399637">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="wayfarer-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Armor front ="600" right ="600" left ="600" back ="600">
+		</Armor>
+		<Shields front ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="1240">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2_Level6"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+	<Stats mass ="1096.94125" momentofinertia ="1096.94125" fuel ="40000000">
+	</Stats>
+	<Computer yaw ="60.400002" pitch ="50.600006" roll ="80.400002" afterburner ="165" maxspeed ="150">
+	</Computer>
+	<Energy>
+		<Reactor warpenergy ="150">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_4"/>
+<Upgrade file="mult_gun_cooler"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<Jump delay ="1" jumpenergy ="150" insysenergy ="150">
+	</Jump>
+	<description combatRole ="SHUTTLE">
+	</description>
+	<Hold volume ="1440.000000">
+		<Category file ="Fuels/Crude">
+			<import price ="0.8" pricestddev =".2" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="Compressed_Gasses">
+			<import price =".7" pricestddev =".2" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+	</Hold>
+	<Light file ="supernova.bmp" x ="10.24" y ="-2.759" z ="-18.302" size ="6">
+	</Light>
+	<Light file ="supernova.bmp" x ="-10.24" y ="-2.759" z ="-18.302" size ="6">
+	</Light>
+	<Dock x ="0" y ="-4.7" z ="6" size ="25">
+	</Dock>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

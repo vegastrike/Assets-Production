@@ -1,0 +1,70 @@
+<Unit scale =".94">
+	<Meshfile file ="mongoosehi.xmesh">
+	</Meshfile>
+	<Meshfile file ="mongoosehiglow.xmesh">
+	</Meshfile>
+	<Meshfile file ="navlights.xmesh">
+	</Meshfile>
+	<ShieldMesh file ="shield1.xmesh">
+	</ShieldMesh>
+	<cockpit file ="bomber-cockpit.cpt" x ="0" y =".5" z ="4">
+	</cockpit>
+	<Light file ="supernova.bmp" x ="2.8" y ="2.8" z ="-5" size ="7">
+	</Light>
+	<Light file ="supernova.bmp" x ="-2.8" y ="2.8" z ="-5" size ="7">
+	</Light>
+	<Light file ="supernova.bmp" x ="4" y ="2.335" z ="-5" size ="7">
+	</Light>
+	<Light file ="supernova.bmp" x ="-4" y ="2.335" z ="-5" size ="7">
+	</Light>
+	<description combatrole ="INTERCEPTOR">
+	</description>
+	<Mount weapon ="" size ="LIGHT MEDIUM" x ="0.95" y ="-2.635" z ="12.000000">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM" x ="-0.95" y ="-2.635" z ="12.000000">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL SPECIAL-MISSILE" x ="2.641" y ="-.705" z ="10" ammo ="125" volume ="32">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL SPECIAL-MISSILE" x ="-2.641" y ="-.705" z ="10" ammo ="125" volume ="32">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL SPECIAL-MISSILE" x ="1.355" y ="-.705" z ="10" ammo ="125" volume ="32">
+	</Mount>
+	<Mount weapon ="" size ="SPECIAL SPECIAL-MISSILE" x ="-1.355" y ="-.705" z ="10" ammo ="125" volume ="32">
+	</Mount>
+	<Mount weapon ="" size ="MEDIUM-MISSILE LIGHT-MISSILE" x ="2.5.000000" y ="-1.400000" z ="-2.000000" ammo ="1" volume ="16">
+	</Mount>
+	<Mount weapon ="" size ="MEDIUM-MISSILE LIGHT-MISSILE" x ="-2.5.000000" y ="-1.400000" z ="-2.000000" ammo ="1" volume ="16">
+	</Mount>
+	<Thrust>
+		<Engine Afterburner ="24000" Forward ="20000" Retro ="20000" Left ="20000" Right ="20000" Top ="20000" Bottom ="20000">
+		</Engine>
+		<Maneuver yaw ="16831.000000" pitch ="16831.000000" roll ="16831.000000">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="mongoose-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="150" right ="110" left ="110" back ="70">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="165.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4"/>
+	<Stats mass ="62.000000" momentofinertia ="62.000000" fuel ="80000000">
+	</Stats>
+	<Computer yaw ="107.000000" pitch ="107.000000" roll ="107.000000" afterburner ="260" maxspeed ="200">
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="160">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing ="1" delay ="1" jumpenergy ="80" insysenergy ="20">
+	</Jump>
+	<Hold volume ="10">
+	</Hold>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

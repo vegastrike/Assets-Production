@@ -9,7 +9,7 @@ class quest_abu_dhabi (quest.quest):
     def __init__ (self):
         playa = VS.getPlayer()
         if (playa):
-            launch.launch_wave_around_unit ('AbuDhabi','neutral','corvette','default',1,1000,4000,playa)
+            launch.launch_wave_around_unit ('AbuDhabi','neutral',faction_ships.getRandomCapitolInt(faction_ships.confed),'default',1,1000,4000,playa)
     def Execute (self):
         self.removeQuest()
         return 0

@@ -48,17 +48,18 @@ def PlayMusik(forcechange=1,hostile_dist=0):
 		target = iter.current()
 		unlist=[]
 		asteroid=0
-		while (target):
-			ftmp = 2*target.getRelation(un)
-			nam=target.getName().lower()
-			if un.getSignificantDistance(target)<=2*target.rSize() and ('afield'==nam[:6] or 'asteroid'==nam[:8]):
-				asteroid=1
-			hdis = HOSTILE_AUTODIST
-			if (hostile_dist!=0):
-				hdis = hostile_dist
-			if (target.GetTarget()==un or (ftmp<0 and un.getDistance(target)<hdis)):
-				unlist.append(un.getFactionName())
-				perfect=0
+		while (iter.notDone()):
+			if (target):
+				ftmp = 2*target.getRelation(un)
+				nam=target.getName().lower()
+				if un.getSignificantDistance(target)<=2*target.rSize() and ('afield'==nam[:6] or 'asteroid'==nam[:8]):
+					asteroid=1
+				hdis = HOSTILE_AUTODIST
+				if (hostile_dist!=0):
+					hdis = hostile_dist
+				if (target.GetTarget()==un or (ftmp<0 and un.getDistance(target)<hdis)):
+					unlist.append(un.getFactionName())
+					perfect=0
 			iter.advance()
 			target=iter.current()
 		if (perfect):

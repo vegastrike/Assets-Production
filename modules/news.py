@@ -83,7 +83,11 @@ def eraseNews(plr):
 def processNews(plr):
     eraseNews(plr)
     import Director
-    for i in range (Director.getSaveStringLength(plr,"dynamic_news")):
+    howmuchnews=Director.getSaveStringLength(plr,"dynamic_news")
+    minnews=0
+    if (howmuchnews>4000):
+        minnews=howmuchnews-4000
+    for i in range (minnews,howmuchnews):
         noos=Director.getSaveString(plr,"dynamic_news",i)
         if (len(noos)):
             if (noos.startswith('#')):

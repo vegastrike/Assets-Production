@@ -8,14 +8,15 @@
 		</Maneuver>
 	</Thrust>
 	<Defense HudImage = "refinery-hud.spr" >
-		<Shields front = "800" right = "800" left = "800" back = "800" recharge = "100"  >
+		<Shields front = "8000" right = "8000" left = "8000" back = "8000" recharge = "100"  >
 		</Shields>
-		<Armor front = "8000" right = "8000" left = "8000" back = "8000"  >
+		<Armor front = "28000" right = "28000" left = "28000" back = "28000"  >
 		</Armor>
-		<Hull strength = "4000"  >
+		<Hull strength = "32955372"  >
 		</Hull>
 	</Defense>
-	<Stats mass = "2606059200" momentofinertia = "260605920" fuel = "20000"  >
+	<Energy limit="10000" recharge="120" />
+	<Stats mass = "2606059800" momentofinertia = "2606059800" fuel = "20000"  >
 	</Stats>
 	<Dock x = "0" y = "2.3" z = "1.9" size = ".28"  >
 	</Dock>
@@ -27,13 +28,13 @@
 	</Meshfile>
 	<Dock x = "0" y = "5.5" z = "0" size = "1"  >
 	</Dock>
-	<Subunit file = "turret" x = "-1.493092" y = "4.299827" z = "3.381541" ri = "-0.923320" rj = "0.034797" rk = "-0.382452" qi = "-0.382683" qj = "0.000000" qk = "0.923880"  >
+	<Subunit file = "turretpd" x = "-1.493092" y = "4.299827" z = "3.381541" ri = "-0.923320" rj = "0.034797" rk = "-0.382452" qi = "-0.382683" qj = "0.000000" qk = "0.923880"  >
 	</Subunit>
-	<Subunit file = "turret" x = "1.161451" y = "4.364507" z = "-3.518911" ri = "-0.900633" rj = "-0.222915" rk = "-0.373054" qi = "0.382683" qj = "0.000000" qk = "-0.923880"  >
+	<Subunit file = "turretpd" x = "1.161451" y = "4.364507" z = "-3.518911" ri = "-0.900633" rj = "-0.222915" rk = "-0.373054" qi = "0.382683" qj = "0.000000" qk = "-0.923880"  >
 	</Subunit>
-	<Subunit file = "turret" x = "3.407777" y = "4.289769" z = "1.429752" ri = "-0.373054" rj = "0.222915" rk = "0.900633" qi = "0.923880" qj = "0.000000" qk = "0.382683"  >
+	<Subunit file = "turretpd" x = "3.407777" y = "4.289769" z = "1.429752" ri = "-0.373054" rj = "0.222915" rk = "0.900633" qi = "0.923880" qj = "0.000000" qk = "0.382683"  >
 	</Subunit>
-	<Subunit file = "turret" x = "-3.433109" y = "4.399774" z = "-1.368596" ri = "-0.373054" rj = "-0.222915" rk = "0.900633" qi = "-0.923880" qj = "0.000000" qk = "-0.382683"  >
+	<Subunit file = "turretpd" x = "-3.433109" y = "4.399774" z = "-1.368596" ri = "-0.373054" rj = "-0.222915" rk = "0.900633" qi = "-0.923880" qj = "0.000000" qk = "-0.382683"  >
 	</Subunit>
 	<Hold volume = "100000000000" >
 		<Category file = "Natural_Products/Food" >
@@ -204,11 +205,19 @@
 			<import price = "1" pricestddev = ".1" quantity = "1" quantitystddev = "1"  >
 			</import>
 		</Category>
-		<Category file = "upgrades/Engines/Light" >
+		<Category file = "upgrades/Capacitors/Shields" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "25"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Capacitors/Reactors" >
+			<import price = "1" pricestddev = ".1" quantity = "0" quantitystddev = "25"  >
+			</import>
+		</Category>
+		<Category file = "upgrades/Reactors/Light" >
 			<import price = "1" pricestddev = ".1" quantity = "6" quantitystddev = "3"  >
 			</import>
 		</Category>
-		<Category file = "upgrades/Engines/Medium" >
+		<Category file = "upgrades/Reactors/Medium" >
 			<import price = "1" pricestddev = ".1" quantity = "3" quantitystddev = "1"  >
 			</import>
 		</Category>

@@ -101,12 +101,14 @@ def UpgradeAfterburner (un,diff):
 def getRandomEngine (diff): #get random engine from master part list
   myint=GetDiffInt(diff)
   cat="engine_level_%d" % (myint)
-  return (myint,cat)
+  dog="reactor_level_%d" % (myint)
+  return (myint,cat,dog)
 
 def UpgradeEngine (un, diff):
-  (type,cat) = getRandomEngine (diff)
+  (type,cat,dog) = getRandomEngine (diff)
   if (type!=0):
     temp=un.upgrade (cat,0,0,1,0)    
+    temp=un.upgrade (dog,0,0,1,0)    
     print "Upgrading Engine %s percent %f" % (cat,temp) 
     if (temp>0.0):
       cat = GetRandomShield (2,type)

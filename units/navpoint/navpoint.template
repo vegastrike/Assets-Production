@@ -1,0 +1,17 @@
+<Unit scale ="1000">
+	<Meshfile file ="nav.xmesh">
+	</Meshfile>
+	<Defense ECM ="1.000000" RepairDroid ="6">
+		<Hull strength ="1000000000000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_0"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_0_capacitance"/>
+<Upgrade file="add_shield_0_capacitance"/>
+<Upgrade file="add_shield_0_capacitance"/>
+<Upgrade file="add_shield_0_capacitance"/>
+<Upgrade file="add_shield_0_capacitance"/>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

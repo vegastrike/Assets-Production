@@ -106,10 +106,14 @@ def formatNameTags(word,names,randint):
 		return word
 	if var == "system":
 		if tag == "sector":
-			return formatProperTitle(formatName(allUsefullVariables["system"][:allUsefullVariables["system"].index("_")]))
+			sec=allUsefullVariables["system"][:allUsefullVariables["system"].find("/")]
+			underscor=sec.find("_")
+			if (underscor!=-1):
+				sec=sec[:underscor]
+			return formatProperTitle(formatName(sec))
 		if tag != "system":
 			print "error "+tag+" not acceptible VAR_system_tag"
-		return formatProperTitle(formatName(allUsefullVariables["system"][allUsefullVariables["system"].index("/")+1:]))
+		return formatProperTitle(formatName(allUsefullVariables["system"][allUsefullVariables["system"].find("/")+1:]))
 	elif var == "stardate":
 		if tag == "value":
 			return allUsefullVariables[var]

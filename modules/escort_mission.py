@@ -53,6 +53,7 @@ class escort_mission (Director.Mission):
 		L.minradius = 2.0*self.you.rSize()
 		L.maxradius = 3.0*self.you.rSize()
 		self.escortee=L.launch(self.you)
+		self.escortee.upgrade("jump_drive",0,0,0,1)
 		self.you.SetTarget(self.escortee)
 		print "h"
 		self.escortee.setFlightgroupLeader(self.you)
@@ -86,10 +87,11 @@ class escort_mission (Director.Mission):
 		if (not self.adjsys.Execute()):
 			if (self.arrived):
 				self.adjsys.SignificantUnit().setSpeed(0.0)
+				self.adjsys.SignificantUnit().SetVelocity((0.0,0.0,0.0))
 			return
 		if (not self.arrived):
 			self.arrived=1
-			self.adjsys=go_somewhere_significant (self.escortee,1,self.distfrombase,self.difficulty<=1,self.faction)
+			self.adjsys=go_somewhere_significant (self.escortee,1,self.distfrombase+15*self.escortee.rSize(),self.difficulty<=1,self.faction)
 			self.adjsys.SignificantUnit().SetHull(100000000000.00);
 			self.adjsys.Print ("You must escort your starship to the %s","defend","docked around the %s", 0)
 		else:
@@ -103,4 +105,4 @@ class escort_mission (Director.Mission):
 				quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,1)
 			VS.terminateMission(1)
 def initrandom (factionname,difficulty,creds,entime,numsysaway,jumps=(),var_to_set='',dynfg='',dyntype=''):
-	return escort_mission(factionname,difficulty,6000,vsrandom.randrange(5000,7000),vsrandom.randrange(10,300),creds,entime,numsysaway,jumps,var_to_set,dynfg,dyntype)
+	return escort_mission(factionname,difficulty,20000,vsrandom.randrange(5000,7000),vsrandom.randrange(10,300),creds,entime,numsysaway,jumps,var_to_set,dynfg,dyntype)

@@ -1,0 +1,66 @@
+<Unit scale ="3">
+	<Description combatRole ="SHUTTLE">
+	</Description>
+	<Meshfile file ="Dryad-hull.xmesh">
+	</Meshfile>
+	<Meshfile file ="Dryad-cockpit.xmesh">
+	</Meshfile>
+	<cockpit file ="medium_cockpit.cpt" x ="0.000000" y ="0.000000" z ="0.000000">
+	</cockpit>
+	<Thrust>
+		<Engine Afterburner ="150000" Forward ="100000" Retro ="100000" Left ="40000" Right ="40000" Top ="40000" Bottom ="40000">
+		</Engine>
+		<Maneuver yaw ="40000" pitch ="40000" roll ="40000">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="dryad-hud.spr" RepairDroid ="0" ecm ="0">
+		<Armor front ="800" right ="400" left ="400" back ="800">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Cloak missing ="1" cloakmin =".25" cloakrate =".1" cloakenergy ="79.0" cloakglass ="false">
+		</Cloak>
+		<Hull strength ="2500">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4"/>
+	<Stats mass ="2666" momentofinertia ="2666" fuel ="170000000">
+	</Stats>
+	<Computer yaw ="60.400002" pitch ="50.600006" roll ="70.400002" afterburner ="160" maxspeed ="145" TrackingCone =".99" lockcone ="35">
+		<Radar itts="false" error="0" range="30000000" maxcone="-1" color="false">
+		</Radar>
+	</Computer>
+	<Jump missing = "1" delay ="1" jumpenergy ="380" insysenergy ="200">
+	</Jump>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="380">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<description>
+	</description>
+	<Hold volume ="18000">
+	</Hold>
+	<Mount weapon ="" size ="LIGHT MEDIUM" x ="0.8" y ="0.300300" z ="15.600299" ri ="0.000000" rj ="0.000000" rk ="1.000000" qi ="0.000000" qj ="-1.000000" qk ="0.000000">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM" x ="-0.8" y ="0.300300" z ="15.600299" ri ="0.000000" rj ="0.000000" rk ="1.000000" qi ="0.000000" qj ="-1.000000" qk ="0.000000">
+	</Mount>
+	<Mount weapon ="" size ="MEDIUM SPECIAL " x ="11.6" y ="-2.5" z ="5" ri ="0.000000" rj ="0.000000" rk ="1.000000" qi ="0.000000" qj ="-1.000000" qk ="0.000000">
+	</Mount>
+	<Mount weapon ="" size ="MEDIUM SPECIAL " x ="-11.6" y ="-2.5" z ="5" ri ="0.000000" rj ="0.000000" rk ="1.000000" qi ="0.000000" qj ="-1.000000" qk ="0.000000">
+	</Mount>
+	<Mount size ="LIGHT-MISSILE MEDIUM-MISSILE SPECIAL-MISSILE" weapon ="" ammo ="30" volume ="30" x ="1.9" y ="-1.0" z ="4.2" qi ="0.000000" qj ="-1.000000" qk ="0.000000" ri ="0.000000" rj ="0.000000" rk ="1.000000">
+	</Mount>
+	<Mount size ="LIGHT-MISSILE MEDIUM-MISSILE SPECIAL-MISSILE" weapon ="" ammo ="30" volume ="30" x ="-1.9" y ="-1.0" z ="4.2" qi ="0.000000" qj ="-1.000000" qk ="0.000000" ri ="0.000000" rj ="0.000000" rk ="1.000000">
+	</Mount>
+	<Light file ="supernova.bmp" x ="3.8" y ="1.4" z ="-3.0" size ="1.9">
+	</Light>
+	<Light file ="supernova.bmp" x ="-3.8" y ="1.4" z ="-3.0" size ="1.9">
+	</Light>
+	<Light file ="supernova.bmp" x ="0" y ="1.8" z ="-3.6" size ="1.1">
+	</Light>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

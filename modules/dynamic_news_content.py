@@ -223,7 +223,7 @@ all_faction_name_global = {
 		,"possessive":["Dgn's"]
 		,"homeworld": ["Beckett's Murky Venture"]
 		}
-,"rlaan-briin" :{"full" : ["Rlaan-Briin"]
+,"rlaan_briin" :{"full" : ["Rlaan-Briin"]
 		,"nicks" : ["Briin"]
 		,"nickp" : ["Briin"]
 		,"dnicks" : ["Bucket-Head"]
@@ -233,7 +233,7 @@ all_faction_name_global = {
 		,"homeworld" : ["Bribztkabr"]
 		}
 
-,"klkk" :	{"full" : ["Klk'k "]
+,"klkk" :	{"full" : ["Klk'k"]
 		,"nicks" : ["Klk'k"]
 		,"nickp" : ["Klk'k"]
 		,"dnicks" : ["Wisenheimer"]
@@ -241,6 +241,16 @@ all_faction_name_global = {
 		,"government" : ["Last House"]
 		,"possessive" : ["Klk'k-an"]
 		,"homeworld" : ["Ktah"]
+		}
+
+,"shmrn" :	{"full" : ["Shmrn"]
+		,"nicks" : ["Shmrn"]
+		,"nickp" : ["Shmrn"]
+		,"dnicks" : ["Newt"]
+		,"dnickp" : ["Newts"]
+		,"government" : ["Vigil"]
+		,"possessive" : ["Shmrn's"]
+		,"homeworld" : ["Rememberance"]
 		}
 }
 
@@ -259,41 +269,41 @@ def allNews():
 _all_news_global = {
 "neutral" :
 
-{"siege" :	{"start"	:{"success":	{"good"		: [(0.8,"all","BLOCKADE in VAR_system_system!\\The VAR_aggressor_government has openly reported their intent of invasion with VAR_defender_full in the VAR__system_sector Sector today. The VAR_aggressor_possessive forces have strategically blocked all entrance and exit from VAR_system_system and continue a valiant assault upon the planet.")
+{"siege" :	{"start"	:{"success":	{"good"		: [(0.8,"all","BLOCKADE in VAR_system_system!\\The VAR_aggressor_government has openly reported to VAR_defender_full their intent to invade the VAR_system_system system today. The VAR_aggressor_possessive forces have strategically blocked all entrance and exit from VAR_system_system and continue a valiant assault upon the planet.")
 
 								  ]
 
-						,"bad"		: [(0.3,"all","VAR_aggressor_nickp Invasion Plans in VAR_system_system?\\It is a grave day in VAR_system_system today, as the hordes of the VAR_aggressor_full have senselessly commenced bombardments upon a VAR_defender_possessive planet in VAR_system_sector Sector. The inhabitants were doing nothing that would legally provoke hostile actions, yet VAR_aggressor_possessive troops have already begun their invasion procedures. Can anyone stop these cruel, heartless VAR_aggressor_dnickp?")
+						,"bad"		: [(0.3,"all","VAR_aggressor_nickp Invasion Plans in VAR_system_system?\\It is a grave day in VAR_system_system today, as hordes of VAR_aggressor_full starships have senselessly commenced their bombardment of a VAR_defender_possessive planet in VAR_system_sector Sector. The inhabitants were doing nothing that would legally provoke hostile actions, yet VAR_aggressor_possessive troops have already begun their invasion procedures. Can anyone stop these cruel, heartless VAR_aggressor_dnickp?")
 
 								  ]
 
-						,"neutral"	: [(0.6,"all","VAR_aggressor_possessive on the Offensive in VAR_system_system:\\It seems that the VAR_system_system system has struck a nerve with the VAR_aggressor_government. VAR_aggressor_possessive forces recently launched an attack in the system, and met some resistance from the local regiment of VAR_defender_nickp.  However, this resistance appears to be fading. By all accounts it seems that the VAR_aggressor_possessive forces will, in the long run, win.")
-
-								  ]
-
-						}
-				 ,"loss"   :	{"good"		: [(0.2,"all","VAR_defender_nickp Repel Attack on VAR_system_system:\\Moments after their strike began, the forces of the VAR_aggressor_full were crushed from the VAR_system_system system as the VAR_defender_possessive defence held strong.  The VAR_aggressor_government says they have no intention of retreat. Some ask if this is prudent on the part of the VAR_aggressor_nickp to continue such a hopeless campaign.")
-
-								  ]
-
-						,"bad"		: [(0.3,"all","VAR_aggressor_nickp Beaten By VAR_defender_dnickp?\\One simple ambush was all that it took to demolish the VAR_aggressor_possessive forces today in VAR_system_sector. Given the high esteem VAR_aggressor_possessive forces are held in the VAR_dockedat_government, and the fact that this was apparently the beginnings of a full scale assult, this has been a surprising result to all. The VAR_defender_possessive forces defending VAR_system_system, shocked by their sudden reprieve, have now had time to ready their defensive grid, making another attack by the VAR_aggressor_possessive forces a much greater challenge."),(0.3,"all","startONE"),(0.3,"all","startTWO"),(0.3,"all","startTHREE"),(0.3,"all","startFOUR"),(0.3,"all","startFIVE")
-
-								  ]
-
-						,"neutral"	: [(0.4,"all","VAR_aggressor_nicks and VAR_defender_nicks Sounding-Off:\\Today, the VAR_aggressor_government is quoted \"The VAR_defender_full will feel our full fury in the VAR_system_system system today!\" Ironically, the VAR_aggressor_possessive forces were repelled in their initial attack. The VAR_defender_government has released a statement saying, \"We no longer have any respect for the VAR_aggressor_government, for we cannot bring ourselves to believe that this was their \"full fury\", yet if it was, we give them our full laughter!\"")
+						,"neutral"	: [(0.6,"all","VAR_aggressor_possessive on the Offensive in VAR_system_system:\\It seems that something or someone in the VAR_system_system system has struck a nerve with the VAR_aggressor_government. VAR_aggressor_possessive forces recently launched an attack in the system, and met some resistance from the local regiment of VAR_defender_nickp.  However, this resistance appears to be fading. By all accounts it seems that the VAR_aggressor_possessive forces will, in the long run, win.")
 
 								  ]
 
 						}
-				 ,"draw"   :	{"good"		: [(0.4,"all","The VAR_defender_full have the VAR_aggressor_dnickp Stumped:\\Deep in the heart of VAR_system_sector Sector, VAR_aggressor_possessive forces have shown their hostile objectives towards VAR_defender_possessive forces in VAR_system_system. Even after this act of hostility, no movement from either side has been reported. Though the VAR_aggressor_government assures the conflict will be swiftly decided, no one can clearly see a victor in this struggle.")
+				 ,"loss"   :	{"good"		: [(0.2,"all","VAR_defender_nickp Repel Attack on VAR_system_system:\\Moments after their strike began, the forces of the VAR_aggressor_full in the VAR_system_system system found their numbers fewer and their goals unmet as the VAR_defender_possessive defence held strong.  The VAR_aggressor_government says they have no intention of retreat. Some ask if it is prudent on the part of the VAR_aggressor_nickp to continue such a hopeless campaign.")
 
 								  ]
 
-						,"bad"		: [(0.5,"all","VAR_defender_dnicks Resistance in VAR_system_system!\\After a brutal landing the VAR_aggressor_possessive force entered into a deadlock with the local VAR_defender_possessive peace keepers. Both sides show no sign of retreat or advancement. The VAR_aggressor_government seem to have placed a large amount of resources in the secrecy of their actions. The word \"barbaric\" comes to mind when pondering the siege technique of the VAR_aggressor_possessive forces, yet nothing has happened that may lead to a swift end.")
+						,"bad"		: [(0.3,"all","VAR_aggressor_nickp Beaten By VAR_defender_dnickp?\\One simple ambush was all that it took to demolish the VAR_aggressor_possessive forces today in VAR_system_sector. Given the high esteem VAR_aggressor_possessive forces are held in by the VAR_dockedat_government, and the fact that this was apparently the beginnings of a full scale assult, this has been a surprising result to all. The VAR_defender_possessive forces defending VAR_system_system, though briefly shocked by the magnitude of their success, have now had time to ready their defensive grid, making another attack by the VAR_aggressor_possessive forces a much greater challenge."),(0.3,"all","startONE"),(0.3,"all","startTWO"),(0.3,"all","startTHREE"),(0.3,"all","startFOUR"),(0.3,"all","startFIVE")
 
 								  ]
 
-						,"neutral"	: [(0.6,"all","VAR_system_system Deadlock:\\The makings of a siege seem to be present in VAR_system_sector Sector. Though neither the VAR_aggressor_possessive forces nor the VAR_defender_nickp have shown any mercy, neither has shown any true hostility. Most first-hand accounts suggest that this is the result of some hot-headed and frustrated commanders on both sides, leading their forces into an engagement that seems to be going nowhere fast.")
+						,"neutral"	: [(0.4,"all","VAR_aggressor_nicks and VAR_defender_nicks Sounding-Off:\\Today, a spokesperson for the VAR_aggressor_government was quoted as saying, \"The VAR_defender_full will feel our full fury in the VAR_system_system system today!\" Ironically, the VAR_aggressor_possessive forces were repelled in their initial attack. The VAR_defender_government has released a statement saying, \"We no longer have any respect for the VAR_aggressor_government, for we cannot bring ourselves to believe that this was their \"full fury\", yet if it was, we give them our full laughter!\"")
+
+								  ]
+
+						}
+				 ,"draw"   :	{"good"		: [(0.4,"all","The VAR_defender_full have the VAR_aggressor_dnickp Stumped:\\Deep in the heart of VAR_system_sector Sector, VAR_aggressor_possessive forces have shown their hostile objectives towards VAR_defender_possessive forces in VAR_system_system. However, after the opening acts of hostility, no movement from either side has been reported. Though the VAR_aggressor_government assures the conflict will be swiftly decided, no one can clearly see a victor in this struggle.")
+
+								  ]
+
+						,"bad"		: [(0.5,"all","VAR_defender_dnicks Resistance in VAR_system_system!\\After a brutal landing the VAR_aggressor_possessive force entered into a deadlock with the local VAR_defender_possessive peace keepers. Both sides show no sign of retreat or advancement. The VAR_aggressor_government seem to have devoted a large amount of resources towards maintaining a veil of secrecy around their actions on the ground. Previous occupations by the VAR_aggressor_government have earned them accusations of \"barbaric\" and unnecessarily cruel and brutal methedologies, leading one to believe that similar events are unfolding on the surface of occuped planets in the VAR_system_system system.  As what little data we have so far received does not point to anything having happened that may lead to a swift end to this engagement, one can only hope that some of the VAR_defender_nicks citizens will be alive at its conclusion.")
+
+								  ]
+
+						,"neutral"	: [(0.6,"all","VAR_system_system Deadlock:\\The makings of a siege seem to be present in VAR_system_sector Sector. Though neither the VAR_aggressor_possessive forces nor the VAR_defender_nickp have shown any mercy, neither has shown any true zeal for this system to be their battleground. Most first-hand accounts suggest that this is the result of some hot-headed and frustrated commanders on both sides, leading their forces into an engagement that seems to be going nowhere fast.")
 
 								  ]
 
@@ -402,7 +412,7 @@ _all_news_global = {
 									  ]
 						}
 				,"draw" :	{"bad"		: [(0.8,"all","Fight to the Draw in VAR_system_system\\The skirmish between the VAR_aggressor_possessive VAR_aggressor_FG and the notorious VAR_defender_nicks VAR_defender_FG squadron of VAR_defender_FGtype starships has ended with no decicive victor. Both sides took some blows, and the  VAR_aggressor_FG lost a VAR_aggressor_FGtype before the forces disengaged.\\\\\\GNN -- \"Our Snooze Is Your News\"")
-									  ,(1.0,"all","Privateers Expected to Rape the Dead!\\With the inconclusive result of a battle between VAR_aggressor_FGtype and VAR_defender_FGtype Class vessels, it is unfortunate that neither side were able to hold the battle site. As such, privateers and pirates are expected to rape the remaining hulls and frozen bodies of both forces, with the intention to sell all found on the open markets! GNN – We Support Free Enterprise!")
+									  ,(1.0,"all","Privateers Expected to Loot the Dead!\\With the inconclusive result of a battle between VAR_aggressor_FGtype and VAR_defender_FGtype Class vessels, it is unfortunate that neither side were able to hold the battle site. As such, privateers and pirates are expected to loot the remaining hulls and frozen bodies of both forces, with the intention to sell all found on the open markets! GNN – We Support Free Enterprise!")
 									  ]
 						,"good"		: [(0.8,"all","VAR_aggressor_nicks Repulsed from VAR_system_system but not defeated\\A Battle erupted between the VAR_aggressor_possessive VAR_aggressor_FG squad and the VAR_defender_nicks forces. VAR_defender_mstandname, wing leader of the VAR_defender_nicks squadron, the VAR_defender_FG, said, \"We definitely did not fire the first shot. We were pursued and attacked-- so we defended ourselves and pulverized one of their VAR_aggressor_FGtype craft. We were not outmanned nor outgunned, we just repulsed the enemy, that's all.\" Sources indicate that while both attacker and defender sustained damage, no clear winner emerged from the skirmish, and casualites on both sides were limited.\\\\\\GNN -- \"Interviews while you cruise\"")
 									  ,(1.0,"all","WEALTH FOR THE TAKING!\\Head to VAR_system_system System in VAR_system_sector. VAR_aggressor_FGtype and VAR_defender_FGtype Class hulls are ripe for looting after a battle there today! With an inconclusive result to the battle, neither side was able to hold the location, so ships of both forces are available for the taking! GNN – You Pay for Our Advertising!")
@@ -413,11 +423,11 @@ _all_news_global = {
 						}
 				,"loss" :	{"good"		: [(0.8,"all","VAR_aggressor_dnicks attack repelled by valorous VAR_system_system - based VAR_defender_FG\\The resourceful and potent VAR_defender_nickp squadran was assaulted by the deceitful VAR_aggressor_nicks flightgroup of VAR_aggressor_FGtype starships. Far from running, the VAR_defender_nicks squad made a 180 and turned to engage the VAR_aggressor_dnicks force head on.  Surprised by this bold move, the VAR_aggressor_possessive VAR_aggressor_FG squad broke into disarray until the VAR_defender_FG squad vaporized each of them.  While it was a small battle, it could alter the morale in the VAR_system_system system, and give strength to the VAR_defender_full.\\\\\\GNN -- \"You snews, you lose\"")
 									  ,(0.5,"player","VAR_aggressor_dnicks fails to murder VAR_defender_possessive VAR_defender_FG\\Without a warning VAR_aggressor_dnicks ships from the VAR_aggressor_FG squadron emerged from static and enaged a VAR_defender_nicks.  Our hero in the VAR_defender_FG was able to valiently defeat these monsters with an impressive set of tactical and strategic decisions.  Using mostly close range tactics our VAR_defender_nicks manage to return the favor given by the VAR_aggressor_possessive VAR_aggressor_FGtype. The result: pure success.\\\\\\GNN -- \"Our bias makes you pious.\"")
-									  ,(0.8,"all","VAR_aggressor_FG brutally repulsed at VAR_system_system\\A small skirmish between the VAR_aggressor_nicks squadron and the VAR_defender_nicks VAR_defender_FG pierced the silence of space in VAR_system_system today as the VAR_defender_dnickp gave the VAR_aggressor_nicks a run for their money. Unforunately for the VAR_aggressor_FG squad, the weapons and manpower did not last through the fight, and no ships were left functional.  Many of the VAR_aggressor_nicks pilots involved in the battle will not be returning home after space was scorched. The VAR_aggressor_government was not directly available for comment, but as usual, Funeral arrangements will be subsidized by their directive.\\\\\\GNN -- \"All for one, one for all.\"")
 									  ,(1.0,"all","Play Shoot a VAR_aggressor_dnicks!\\VAR_defender_nickp utterly destroyed the VAR_aggressor_FGtype Class flightgroup VAR_aggressor_FG yesterday. As of right now, their bodies are floating in the void of space. Show your opinion of them now – play Shoot a VAR_aggressor_dnicks and sharpen your skills with some target practice!")
 									  ]
 						,"bad"		: [(0.4,"all","VAR_system_system Skirmish ends in defeat for VAR_aggressor_nicks\\With hositilities rising in the VAR_system_sector, the VAR_aggressor_nicks flightgroup VAR_aggressor_FG initiated combat with the VAR_defender_nickp squadron of VAR_defender_FGtype, the VAR_defender_FG s.  Initially the battle went well for the VAR_aggressor_nicks; however, the tides rapidly turned when both sides got close enough for beam weapons to become effective.  The VAR_defender_FG had newly retrofitted their ships with new auto targetting and tracking system, leaving the VAR_aggressor_FG squad without a chance to evade.  Desparately a number of SOS signals were triggered, but by the time local authorities arrived to assist, only debris remained from the bloody battle.\\\\\\GNN -- \"We report bad things to death\"")
 									  ,(0.5,"player","Tragic skirmish in VAR_system_system\\A small skirmish in VAR_system_system resulted in the defeat of the VAR_aggressor_nickp starship, type VAR_aggressor_FGtype.  Authorities viewed the small skirmish as a sad but isolated case and state that this skirmish in no way should indicate that the VAR_system_sector is any less safe than other sectors.\"Some people are just reckless--there's nothing you can do. Stay out of dark allies and dark nebulae--stick to flight lanes. These are the only ways to get around out here.\" said a local who asked to remain unnamed.\\\\\\GNN -- \"We Care rhymes with Go Bare\"")
+									  ,(0.8,"all","VAR_aggressor_FG brutally repulsed at VAR_system_system\\A small skirmish between the VAR_aggressor_nicks squadron and the VAR_defender_nicks VAR_defender_FG pierced the silence of space in VAR_system_system today as the VAR_defender_dnickp gave the VAR_aggressor_nicks a run for their money. Unforunately for the VAR_aggressor_FG squad, the weapons and manpower did not last through the fight, and no ships were left functional.  Many of the VAR_aggressor_nicks pilots involved in the battle will not be returning home after space was scorched. The VAR_aggressor_government was not directly available for comment, but as usual, Funeral arrangements will be subsidized by their directive.\\\\\\GNN -- \"All for one, one for all.\"")
 									  ,(1.0,"all","Stop these Vile Actions!\\Our noble warriors, slain in cruel circumstances by VAR_defender_possessive forces, are now being subject to the ultimate indignity! VAR_defender_possessive privateers and pilots are being encouraged to shoot the bodies of our dead – in the name of target practice!\\We call on all peoples, help stop this hideous practice!")
 									  ]
 						,"neutral"		: [(0.8,"all","Attempted VAR_aggressor_nicks attack in VAR_system_system backfires\\The VAR_aggressor_nicks VAR_aggressor_FG squadron engaged VAR_defender_nicks forces today. Utterly without a plan, their attack backfired as the VAR_defender_FG squad of VAR_defender_FGtype ships looped around and closed for the kill.  What is seen as a miscalculation on the part of the VAR_aggressor_nickp, this attack will probably change the aggressivity of the tactics in the VAR_system_system. Whether or not things cool down in the VAR_system_sector sector remains to be seen.\\\\\\GNN -- \"We're manic, yet don't panic.\"")
@@ -440,9 +450,9 @@ _all_news_global = {
 								}
 
 
-				,"draw" :		{"good" :		[(0.3,"all","Flagship Damaged, Strike Fleet to Continue Pursuit in VAR_system_system !\\In a brief encounter yesterday, the VAR_aggressor_FGtype Class VAR_aggressor_FG suffered minor damage after inflicting heavy casualties on a VAR_defender_possessive raiding party. While the flagship has heaved to for repairs, the remainder of the strike fleet will continue to prosecute the VAR_defender_possessive raiding party, now with extreme prejudice.")]
+				,"draw" :		{"bad" :		[(0.3,"all","Flagship Damaged, Strike Fleet to Continue Pursuit in VAR_system_system !\\In a brief encounter yesterday, the VAR_aggressor_FGtype Class VAR_aggressor_FG suffered minor damage after inflicting heavy casualties on a VAR_defender_possessive raiding party. While the flagship has heaved to for repairs, the remainder of the strike fleet will continue to prosecute the VAR_defender_possessive raiding party, now with extreme prejudice.")]
 
-							,"bad" :		[(0.3,"all","VAR_aggressor_dnicks Strike Fleet Repulsed in VAR_system_system!\\A VAR_defender_possessive trade convoy came under fire from a VAR_aggressor_dnicks Strike Fleet yesterday. News just received reports that while suffering minor damage, the convoy managed to disable the VAR_aggressor_FGtype Class VAR_aggressor_FG, flagship of the strike fleet.\\Will the convoy manage to escape the strike fleet, and flee into the protective arms of its defence force? Will the strike fleet be sent ahead of the crippled flagship? Stay online.")]
+							,"good" :		[(0.3,"all","VAR_aggressor_dnicks Strike Fleet Repulsed in VAR_system_system!\\A VAR_defender_possessive trade convoy came under fire from a VAR_aggressor_dnicks Strike Fleet yesterday. News just received reports that while suffering minor damage, the convoy managed to disable the VAR_aggressor_FGtype Class VAR_aggressor_FG, flagship of the strike fleet.\\Will the convoy manage to escape the strike fleet, and flee into the protective arms of its defence force? Will the strike fleet be sent ahead of the crippled flagship? Stay online.")]
 
 							,"neutral" :		[(0.3,"all","Battle in the VAR_system_system System!\\While in pursuit of a VAR_defender_possessive raiding party, the flagship of the VAR_aggressor_possessive Strike Fleet, the VAR_aggressor_FGtype Class VAR_aggressor_FG sustained damage to its engines. In exchange, the strike fleet inflicted serious damage on the raiding party. The raiding party is currently attempting to reach a friendly system, where it expects a VAR_defender_possessive Defence Force will provide support in repulsing the pursuing strike fleet.\\\\Updates to follow.")]
 								}
@@ -464,9 +474,9 @@ _all_news_global = {
 							}
 
 
-				,"draw" :		{"good" :		[(0.3,"all","Destruction of VAR_defender_possessive Raiding Party.\\Our reporters in the field were able to release the following report. The VAR_aggressor_possessive Strike Fleet, currently in VAR_system_system System, engaged and crushed its prey, a VAR_defender_possessive Raiding Party. It is now, however, playing cat and mouse with the remaining VAR_defender_possessive defensive forces in that system as it seeks a jump point back to friendlier space.")]
+				,"draw" :		{"bad" :		[(0.3,"all","Destruction of VAR_defender_possessive Raiding Party.\\Our reporters in the field were able to release the following report. The VAR_aggressor_possessive Strike Fleet, currently in VAR_system_system System, engaged and crushed its prey, a VAR_defender_possessive Raiding Party. It is now, however, playing cat and mouse with the remaining VAR_defender_possessive defensive forces in that system as it seeks a jump point back to friendlier space.")]
 
-							,"bad" :		[(0.3,"all","Another Trade Convoy Massacred!\\It has been independently verified that a VAR_aggressor_dnicks Strike Fleet in VAR_system_system System massacred the trade convoy VAR_defender_FG. The VAR_defender_government has sent a strong protest to the VAR_aggressor_government about this terrorist act, and has proposed the reinforcement of defence forces already in the system. It is believed that those VAR_defender_possessive ships currently in the system will attempt to blockade the strike fleet, until sufficient forces have been raised to annihilate it. Stay online for more updates.")]
+							,"good" :		[(0.3,"all","Another Trade Convoy Massacred!\\It has been independently verified that a VAR_aggressor_dnicks Strike Fleet in VAR_system_system System massacred the trade convoy VAR_defender_FG. The VAR_defender_government has sent a strong protest to the VAR_aggressor_government about this terrorist act, and has proposed the reinforcement of defence forces already in the system. It is believed that those VAR_defender_possessive ships currently in the system will attempt to blockade the strike fleet, until sufficient forces have been raised to annihilate it. Stay online for more updates.")]
 
 							,"neutral" :		[(0.3,"all","Contact Escalates into Full Scale Battle!\\Following previous reports of a VAR_aggressor_possessive strike fleet entering VAR_system_system System, our reporters in the field have confirmed the decimation of a VAR_defender_possessive VAR_defender_FGtype raiding party. Meanwhile, additional VAR_defender_possessive forces, having rushed to the battle site, are now engaging the strike fleet as we report. VAR_dockedat_FGtype Class ships will remain at high readiness until this current crisis is over.\\\\GNN – only the ridiculous is newsworthy!")]
 							}
@@ -733,6 +743,8 @@ _all_news_global["shaper"]=_all_news_global["confed"]
 #_all_news_global["homeland-security"]=_all_news_global["militia"]
 _all_news_global["unadorned"]=_all_news_global["confed"]
 _all_news_global["purist"]=_all_news_global["confed"]
+_all_news_global["mechanist"]=_all_news_global["confed"]
+_all_news_global["rlaan_brinn"]=_all_news_global["confed"]
 _all_news_global["forsaken"]=_all_news_global["confed"]
 _all_news_global["LIHW"]=_all_news_global["confed"]#for now we want same stories for these guys
 

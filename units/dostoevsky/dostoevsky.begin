@@ -1,0 +1,46 @@
+<Unit scale ="1.58489">
+	<Light x ="0" y ="0" z ="-6.36800" file ="supernova.bmp" size ="4">
+	</Light>
+	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE HEAVY-MISSILE" x ="0" y ="-.13" z ="2" ammo ="1" volume ="90">
+	</Mount>
+	<Mount x ="3.1" y ="-0.13" z ="2.35" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0" weapon ="laser" size ="LIGHT MEDIUM HEAVY SPECIAL " >
+	</Mount>
+	<Mount x ="-3.1" y ="-0.13" z ="2.35" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0" weapon ="" size ="LIGHT MEDIUM HEAVY SPECIAL " >
+	</Mount>
+	<Meshfile file ="mat_hunter_hull.xmesh">
+	</Meshfile>
+	<Thrust>
+		<Engine Afterburner ="12000" Forward ="8000" Retro ="8000" Left ="8000" Right ="8000" Top ="8000" Bottom ="8000">
+		</Engine>
+		<Maneuver yaw ="8000" pitch ="8000" roll ="8000">
+		</Maneuver>
+	</Thrust>
+	<Computer yaw ="120" pitch ="120" roll ="120" afterburner ="260" maxspeed ="250">
+		<Radar itts="false" error="0" range="30000000" maxcone="-1" color="false">
+		</Radar>
+	</Computer>
+	<Defense HudImage ="dostoevsky-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="75" right ="75" left ="75" back ="75">
+		</Armor>
+		<Shields front ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="125">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2"/>
+	<Stats mass ="42" momentofinertia ="42" fuel ="40000000">
+	</Stats>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="450">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" delay ="1" jumpenergy ="250" insysenergy ="150">
+	</Jump>
+	<description combatrole ="FIGHTER">
+	</description>
+	<Hold volume ="25">
+	</Hold>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

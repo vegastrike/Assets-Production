@@ -1,0 +1,70 @@
+<Unit scale = "1.62">
+<description combatrole="CAPITAL"/>
+<Meshfile file="Lodurextra.xmesh"/>
+<Meshfile file="Lodurhi.xmesh"/>
+<Meshfile file="lodursails.xmesh"/>
+<Meshfile file="lodurlights.xmesh"/>
+<Dock size="80" x="0" z="-220" y="-100"/>
+	<Thrust>
+		<Engine Afterburner="800000000" Forward="600000000" Retro="600000000" Left="5000000" Right="5000000" Top="5000000" Bottom="5000000"/>
+		<Maneuver yaw="5000000" pitch="5000000" roll="5000000"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage="lodur-hud.spr" ExplosionAni="explosion_rlaan.ani">
+		<Armor front="24000" right="24000" left="24000" back="24000"/>
+		<Shields front="2400" left="2400" right="2400" back="2400" recharge="350"/>
+		<Hull strength="1988553"/>
+	</Defense>
+	<Stats mass="40000000" momentofinertia="40000000" fuel="200000000"></Stats>
+	<Computer yaw="50" pitch="40" roll="70" afterburner="200" maxspeed="180">
+		<Radar itts="true" color="true" range="90000000"  error="0" TrackingCone=".995" lockcone="0.1" />
+	</Computer>
+	<Energy>
+		<Reactor recharge="12000" limit="300000" warpenergy="20000"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="19000" insysenergy="19000"/>  
+            
+<Subunit file="rlaanturret" x="108.5" y="31.25" z="234.5" 
+ri="0" rj="1" rk="0" qi="1" qj=".325" qk="0"/>
+<Subunit file="rlaanturret" x="-108.5" y="31.25" z="234.5" 
+ri="0" rj="1" rk="0" qi="-1" qj=".325" qk="0"/>
+
+<Subunit file="rlaanturret" x="108" y="82.25" z="93" 
+ri="0" rj="1" rk="0" qi="1" qj=".375" qk="0"/>
+<Subunit file="rlaanturret" x="-108" y="82.25" z="93" 
+ri="0" rj="1" rk="0" qi="-1" qj=".375" qk="0"/>
+
+<Subunit file="rlaanturret" x="66" y="179" z="47.75" 
+ri="0" rj="0" rk="1" qi="1" qj=".5" qk="0"/>
+<Subunit file="rlaanturret" x="-66" y="179" z="47.75" 
+ri="0" rj="0" rk="1" qi="-1" qj=".5" qk="0"/>
+
+<Subunit file="rlaanturret" x="0" y="-177.5" z="266.5" 
+ri="0" rj="0" rk="-1" qi="0" qj="-1" qk="0"/>
+
+<Subunit file="rlaanturretpd" x="108.5" y="31.25" z="225.5" 
+ri="0" rj="1" rk="0" qi="1" qj=".325" qk="0"/>
+<Subunit file="rlaanturretpd" x="-108.5" y="31.25" z="225.5" 
+ri="0" rj="1" rk="0" qi="-1" qj=".325" qk="0"/>
+
+<Subunit file="rlaanturretpd" x="108" y="82.25" z="85" 
+ri="0" rj="1" rk="0" qi="1" qj=".375" qk="0"/>
+<Subunit file="rlaanturretpd" x="-108" y="82.25" z="85" 
+ri="0" rj="1" rk="0" qi="-1" qj=".375" qk="0"/>
+
+<Subunit file="rlaanturretmini" x="66" y="179" z="40.75" 
+ri="0" rj="0" rk="1" qi="1" qj=".5" qk="0"/>
+<Subunit file="rlaanturretmini" x="-66" y="179" z="40.75" 
+ri="0" rj="0" rk="1" qi="-1" qj=".5" qk="0"/>
+
+<Subunit file="rlaanturretpd" x="0" y="-177.5" z="258.5" 
+ri="0" rj="0" rk="-1" qi="0" qj="-1" qk="0"/>
+
+<mount weapon="icepick" size="capship-heavy autotracking" x="10" y="-165" z="270"/>
+<mount weapon="icepick" size="capship-heavy autotracking" x="0" y="-170" z="270"/>
+<mount weapon="icepick" size="capship-heavy autotracking" x="-10" y="-165" z="270"/>
+<mount weapon="hellspawn" size="heavy-capship-missile" x="0" y="-170" z="270" ammo="12"/>
+
+
+</Unit>

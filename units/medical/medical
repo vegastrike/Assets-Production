@@ -10,12 +10,15 @@
 	<Defense HudImage = "medical-hud.spr" >
 		<Shields front = "800" right = "800" left = "800" back = "800" recharge = "100"  >
 		</Shields>
-		<Armor front = "8000" right = "8000" left = "8000" back = "8000"  >
+		<Armor front = "20000" right = "20000" left = "20000" back = "20000"  >
 		</Armor>
-		<Hull strength = "4000"  >
+		<Hull strength = "22000000"  >
 		</Hull>
 	</Defense>
-	<Stats mass = "45625080" momentofinertia = "45625080" fuel = "20000"  >
+
+	<Energy limit="10000" recharge="2000" />
+
+	<Stats mass = "45625101.5" momentofinertia = "45625101.5" fuel = "20000"  >
 	</Stats>
 	<Dock x = "0" y = "7.6" z = "-7.8" size = "1"  >
 	</Dock>

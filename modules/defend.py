@@ -66,19 +66,17 @@ class defend (Director.Mission):
     def NoEnemiesInArea (self,jp):
         if (self.adjsys.DestinationSystem()!=VS.getSystemFile()):
 	    return 0
-        un= VS.getUnit (self.ship_check_count)
-        self.ship_check_count+=1
-        if (un.isNull ()):
+        if (self.ship_check_count>=len(self.attackers)):
             VS.setCompleteness(self.objective,1.0)
 	    return 1
-        
-        if (un!=self.you):
-            if (un.getFactionName()==self.faction): 
-#                if (un.getSignificantDistance (jp)<self.escdist):
-                if 1:
-                    if (un.getFlightgroupName()!="Base"):
-                        VS.setObjective(self.objective,"Destroy the %s"%un.getName())
-                        self.ship_check_count=0
+
+        un= self.attackers[self.ship_check_count]
+        self.ship_check_count+=1
+        if (un.isNull()):
+            return 0
+        else:
+            VS.setObjective(self.objective,"Destroy the %s"%un.getName())
+            self.ship_check_count=0
         return 0
 	
     def GenerateEnemies (self,jp,you):
@@ -89,7 +87,7 @@ class defend (Director.Mission):
         VS.addObjective ("Protect %s from %s" % (jp.getName(),self.faction))
         self.objective = VS.addObjective ("Destroy All %s Hostiles" % self.faction)
         VS.setCompleteness(self.objective,-1.0)
-
+        print "quantity "+str(self.quantity)
         while (count<self.quantity):
 	    L = launch.Launch()
 	    L.fg="Shadow";L.dynfg=self.dynatkfg;
@@ -107,7 +105,8 @@ class defend (Director.Mission):
                 launched.SetTarget (jp)
 	    else:
                 launched.SetTarget (you)
-	    launched.setFgDirective('B')
+            if (self.dedicatedattack):
+  	        launched.setFgDirective('B')
             self.attackers += [ launched ]
 	    count+=1
         self.quantity=0
@@ -145,8 +144,14 @@ class defend (Director.Mission):
                     else:
                         un =  self.attackers[self.targetiter]
                         if (not un.isNull()):
-                            if (self.defend):#		  if (not un.isNull())
-                                un.SetTarget (self.defendee)
+                            if (self.defend):#		  if (not un.isNull()
+                                if (un.getName() in faction_ships.isBomber):
+                                    if (self.quantity >= faction_ships.isBomber[un.getName()]):
+                                        un.SetTarget (self.defendee)
+                                    else:
+                                        un.setFgDirective('b')
+                                else:
+                                    un.setFgDirective('b')
                             else:
                                 un.SetTarget (self.you)
                         self.targetiter=self.targetiter+1

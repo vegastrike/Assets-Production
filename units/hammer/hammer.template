@@ -1,0 +1,76 @@
+<Unit scale =".69336">
+	<Description combatRole ="FIGHTER">
+	</Description>
+	<Meshfile file ="f404p.xmesh">
+	</Meshfile>
+	<Meshfile file ="f404c.xmesh">
+	</Meshfile>
+	<Meshfile file ="f404b.xmesh">
+	</Meshfile>
+	<Sound>
+	</Sound>
+	<cockpit file ="light_cockpit.cpt" x ="0" y =".5" z ="10">
+	</cockpit>
+	<Mount weapon ="ionbeam" size ="Light" x ="3.76500" y ="0.15400" z ="19.31000">
+	</Mount>
+	<Mount weapon ="ionbeam" size ="Light" x ="2.80800" y ="0.15400" z ="19.98000">
+	</Mount>
+	<Mount weapon ="ionbeam" size ="Light" x ="3.76500" y ="-0.15400" z ="19.31000">
+	</Mount>
+	<Mount weapon ="ionbeam" size ="Light" x ="2.80800" y ="-0.15400" z ="19.98000">
+	</Mount>
+	<Mount weapon ="torpedo" size ="heavy-missile" x ="-12" y ="0" z ="6.5" ammo ="1" volume ="100">
+	</Mount>
+	<Mount weapon ="friendorfoe" size ="medium-missile" x ="-12" y ="0.05" z ="6.55" ammo ="1" volume ="16">
+	</Mount>
+	<Mount weapon ="friendorfoe" size ="medium-missile" x ="-12" y ="-0.05" z ="6.55" ammo ="1" volume ="16">
+	</Mount>
+	<Mount weapon ="friendorfoe" size ="medium-missile" x ="-12" y ="-0.05" z ="6.45" ammo ="1" volume ="16">
+	</Mount>
+	<Mount weapon ="friendorfoe" size ="medium-missile" x ="-12" y ="0.05" z ="6.45" ammo ="1" volume ="16">
+	</Mount>
+	<Defense HudImage ="f404-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Armor front ="240" right ="160" left ="160" back ="120">
+		</Armor>
+		<Shields front ="0" left ="0" right ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="246.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4_Level2"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+	<Stats mass ="115" momentofinertia ="115" fuel ="900000000">
+	</Stats>
+	<Computer yaw ="60" pitch ="60" roll ="60" afterburner ="182" maxspeed ="160">
+		<Radar itts="true" error="0" range="600000000" maxcone="-1" color="true" >
+		</Radar>
+	</Computer>
+	<Energy>
+		<Reactor warpenergy ="200">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_3"/>
+<Upgrade file="mult_gun_cooler"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<Jump delay ="1" jumpenergy ="200" insysenergy ="100">
+	</Jump>
+	<Light file ="supernova.bmp" x ="0.086" y ="-0.269" z ="-14.620000" size ="2.000000">
+	</Light>
+	<Thrust>
+		<Engine Afterburner ="10000" Forward ="4000" Retro ="4000" Left ="4000" Right ="4000" Top ="4000" Bottom ="4000">
+		</Engine>
+		<Maneuver yaw ="3500" pitch ="3500" roll ="3500">
+		</Maneuver>
+	</Thrust>
+	<Hold volume ="24.000000">
+	</Hold>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

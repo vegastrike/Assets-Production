@@ -1,0 +1,739 @@
+<Unit scale ="9.44">
+	<description combatrole ="CAPITAL">
+	</description>
+	<Meshfile file ="cruiserhi1.xmesh">
+	</Meshfile>
+	<Meshfile file ="cruiserhi2.xmesh">
+	</Meshfile>
+	<Meshfile file ="cruiserhi3.xmesh">
+	</Meshfile>
+	<Meshfile file ="cruiserhiglow.xmesh">
+	</Meshfile>
+	<Thrust>
+		<Engine Afterburner ="300000000" Forward ="200000000" Retro ="200000000" Left ="1000000" Right ="1000000" Top ="1000000" Bottom ="1000000">
+		</Engine>
+		<Maneuver yaw ="10000000" pitch ="10000000" roll ="10000000">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="cruiser-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Armor front ="22000" right ="24000" left ="24000" back ="22000">
+		</Armor>
+		<Shields front ="0" left ="0" right ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="1646000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4_Level10"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+<Upgrade file="add_shield_4_capacitance"/>
+	<Stats mass ="29559158" momentofinertia ="29559158" fuel ="20000000">
+	</Stats>
+	<Computer yaw ="57.600000" pitch ="57.600000" roll ="97.600000" afterburner ="180" maxspeed ="180">
+		<Radar itts="true" error="0" range="600000000" maxcone="-1" color="true" >
+		</Radar>
+	</Computer>
+	<Energy>
+		<Reactor>
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_10"/>
+<Upgrade file="mult_gun_cooler"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<Jump delay ="1" jumpenergy ="20000">
+	</Jump>
+	<Light file ="supernova.bmp" x ="-8" y ="-12" z ="-115" size ="40">
+	</Light>
+	<Light file ="supernova.bmp" x ="-8" y ="-5" z ="-115" size ="40">
+	</Light>
+	<Light file ="supernova.bmp" x ="-8" y ="2" z ="-115" size ="40">
+	</Light>
+	<Light file ="supernova.bmp" x ="-12" y ="-1" z ="-115" size ="20">
+	</Light>
+	<Light file ="supernova.bmp" x ="-14" y ="1.75" z ="-115" size ="20">
+	</Light>
+	<Light file ="supernova.bmp" x ="-13" y ="4.75" z ="-115" size ="20">
+	</Light>
+	<Light file ="supernova.bmp" x ="8" y ="-12" z ="-115" size ="40">
+	</Light>
+	<Light file ="supernova.bmp" x ="8" y ="-5" z ="-115" size ="40">
+	</Light>
+	<Light file ="supernova.bmp" x ="8" y ="2" z ="-115" size ="40">
+	</Light>
+	<Light file ="supernova.bmp" x ="12" y ="-1" z ="-115" size ="20">
+	</Light>
+	<Light file ="supernova.bmp" x ="14" y ="1.75" z ="-115" size ="20">
+	</Light>
+	<Light file ="supernova.bmp" x ="13" y ="4.75" z ="-115" size ="20">
+	</Light>
+	<Light file ="supernova.bmp" x ="-8.5" y ="15.75" z ="-115" size ="50">
+	</Light>
+	<Light file ="supernova.bmp" x ="-15.125" y ="13.5" z ="-115" size ="30">
+	</Light>
+	<Light file ="supernova.bmp" x ="-15.125" y ="17.75" z ="-115" size ="30">
+	</Light>
+	<Light file ="supernova.bmp" x ="-22.25" y ="12.5" z ="-115" size ="10">
+	</Light>
+	<Light file ="supernova.bmp" x ="-19.125" y ="16.5" z ="-115" size ="10">
+	</Light>
+	<Light file ="supernova.bmp" x ="-18.25" y ="18.5" z ="-115" size ="10">
+	</Light>
+	<Light file ="supernova.bmp" x ="8.5" y ="15.75" z ="-115" size ="50">
+	</Light>
+	<Light file ="supernova.bmp" x ="15.125" y ="13.5" z ="-115" size ="30">
+	</Light>
+	<Light file ="supernova.bmp" x ="15.125" y ="17.75" z ="-115" size ="30">
+	</Light>
+	<Light file ="supernova.bmp" x ="22.25" y ="12.5" z ="-115" size ="10">
+	</Light>
+	<Light file ="supernova.bmp" x ="19.125" y ="16.5" z ="-115" size ="10">
+	</Light>
+	<Light file ="supernova.bmp" x ="18.25" y ="18.5" z ="-115" size ="10">
+	</Light>
+	<mount weapon ="torpedo" x ="0.64" y ="-40" z ="120" ammo ="4">
+	</mount>
+	<mount weapon ="torpedo" x ="-0.64" y ="-40" z ="120" ammo ="4">
+	</mount>
+	<mount weapon ="torpedo" x ="1" y ="-35" z ="123" ammo ="4">
+	</mount>
+	<mount weapon ="torpedo" x ="-1" y ="-35" z ="123" ammo ="4">
+	</mount>
+	<Dock size ="40" x ="0" y ="-55" z ="120">
+	</Dock>
+	<Dock size ="30" x ="0" y ="-30" z ="0">
+	</Dock>
+	<Subunit file ="turretbeamheavy" x ="0" y ="-21.2" z ="-18" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="-1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretbeamheavy" x ="0" y ="-21.2" z ="58" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="-1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretbeamheavy" x ="0" y ="-21.2" z ="95" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="-1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretbeamheavy" x ="0" y ="26.5" z ="47" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretbeamheavy" x ="0.64" y ="55.5" z ="-103" ri ="0" rj ="1" rk ="0" qi ="1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="turretbeamheavy" x ="-0.64" y ="55.5" z ="-103" ri ="0" rj ="-1" rk ="0" qi ="-1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="turretbeamheavy" x ="0.64" y ="-55.5" z ="-88" ri ="0" rj ="1" rk ="0" qi ="1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="turretbeamheavy" x ="-0.64" y ="-55.5" z ="-88" ri ="0" rj ="-1" rk ="0" qi ="-1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="turretbeamheavy" x ="0.64" y ="-47.5" z ="123.75" ri ="0" rj ="1" rk ="0" qi ="1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="turretbeamheavy" x ="-0.64" y ="-47.5" z ="123.75" ri ="0" rj ="-1" rk ="0" qi ="-1" qj ="0" qk ="0">
+	</Subunit>
+	<Subunit file ="turretbeam" x ="4.5" y ="26.35" z ="91.75" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretbeam" x ="-4.5" y ="26.35" z ="91.75" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretpd" x ="4.5" y ="26.35" z ="54" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretpd" x ="-4.5" y ="26.35" z ="54" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretpd" x ="4.5" y ="26.35" z ="40" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretpd" x ="-4.5" y ="26.35" z ="40" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretbeam" x ="4.5" y ="26.35" z ="-18" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretbeam" x ="-4.5" y ="26.35" z ="-18" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretpd" x ="4.5" y ="-21.15" z ="-15" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="-1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretpd" x ="-4.5" y ="-21.15" z ="-15" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="-1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretbeam" x ="4.5" y ="-21.15" z ="58" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="-1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretbeam" x ="-4.5" y ="-21.15" z ="58" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="-1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretpd" x ="4.5" y ="-21.15" z ="92" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="-1.000000" qk ="0.000000">
+	</Subunit>
+	<Subunit file ="turretpd" x ="-4.5" y ="-21.15" z ="92" ri ="-1.000000" rj ="0.000000" rk ="0.000000" qi ="-0.000000" qj ="-1.000000" qk ="0.000000">
+	</Subunit>
+	<Hold volume ="120000000000.000000">
+		<Category file ="Natural_Products/Food">
+			<import price ="1.2" pricestddev =".2" quantity ="5" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="Natural_Products/Liquor">
+			<import price ="1.05" pricestddev =".1" quantity ="0" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Natural_Products/Plants">
+			<import price =".9" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Natural_Products/Natural_Resources">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Metals/Crude">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Metals/Precious">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Metals/Alloys">
+			<import price ="1.1" pricestddev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Metals/Radioactive">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Gems/Jewelry">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Gems/Industrial">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Raw_Materials/Stone">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Fuels/Crude">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Fuels/Refined">
+			<import price ="1.1" pricestddev =".3" quantity ="1" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Compressed_Gasses">
+			<import price ="1.1" pricestddev =".1" quantity ="1" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Recycled_Products">
+			<import price =".78" pricestddev =".2" quantity ="10" quantitystddev ="15">
+			</import>
+		</Category>
+		<Category file ="Machinery_Goods">
+			<import price =".8" pricestddev =".1" quantity ="1" quantitystddev ="3">
+			</import>
+		</Category>
+		<Category file ="Supplies/Aerospace_Supplies">
+			<import price ="1.2" pricestddev =".1" quantity ="3" quantitystddev ="4">
+			</import>
+		</Category>
+		<Category file ="Supplies/Agriculteral_Supplies">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Supplies/Mining_Supplies">
+			<import price =".8" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Supplies/Construction_Supplies">
+			<import price =".8" pricestddev =".2" quantity ="0" quantitystddev ="3">
+			</import>
+		</Category>
+		<Category file ="Supplies/Medical_Supplies">
+			<import price ="1.1" pricestddev =".1" quantity ="0" quantitystddev ="3">
+			</import>
+		</Category>
+		<Category file ="Electronics">
+			<import price ="1.2" pricestddev =".2" quantity ="1" quantitystddev ="4">
+			</import>
+		</Category>
+		<Category file ="Electronics/Robotics">
+			<import price =".8" pricestddev =".2" quantity ="0" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="Manufactured_Goods">
+			<import price =".9" pricestddev =".2" quantity ="1" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="Entertainment">
+			<import price ="1.1" pricestddev =".2" quantity ="0" quantitystddev ="4">
+			</import>
+		</Category>
+		<Category file ="Contraband/Medical">
+			<import price ="0" pricestddev ="0" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="Contraband">
+			<import price ="0" pricestddev ="0" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="starships/Confed/Light">
+			<import price ="1" pricestdev =".1" quantity ="0" quantitystddev ="3">
+			</import>
+		</Category>
+		<Category file ="starships/Confed/Medium">
+			<import price ="1" pricestdev =".1" quantity ="-3" quantitystddev ="9">
+			</import>
+		</Category>
+		<Category file ="starships/Confed/Heavy">
+			<import price ="1" pricestdev =".1" quantity ="-2" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="starships/Confed/Milspec">
+			<import price ="1" pricestdev =".1" quantity ="-3" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="starships/Militia/Light">
+			<import price ="1" pricestdev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="starships/Militia/Medium">
+			<import price ="1" pricestdev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="starships/Militia/Heavy">
+			<import price ="1" pricestdev =".1" quantity ="-2" quantitystddev ="3">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Mounted_Guns_Light">
+			<import price ="1" pricestdev =".1" quantity ="0" quantitystddev ="10">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Mounted_Guns_Medium">
+			<import price ="1" pricestdev =".1" quantity ="0" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Mounted_Guns_Heavy">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="3">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Mounted_Guns_Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Beam_Arrays_Light">
+			<import price ="1" pricestdev =".1" quantity ="0" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Beam_Arrays_Medium">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Beam_Arrays_Heavy">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Beam_Arrays_Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Mount_Enhancements">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Weapons/Turrets">
+			<import price ="1" pricestddev =".1" quantity ="1" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Miscellaneous/SubUnits">
+			<import price ="1" pricestddev =".1" quantity ="1" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Reactors/Light">
+			<import price ="1" pricestdev =".1" quantity ="00" quantitystddev ="10">
+			</import>
+		</Category>
+		<Category file ="upgrades/Reactors/Medium">
+			<import price ="1" pricestdev =".1" quantity ="0" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Reactors/Heavy">
+			<import price ="1" pricestdev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Capacitors/Shields">
+			<import price ="1" pricestddev =".1" quantity ="2" quantitystddev ="10">
+			</import>
+		</Category>
+		<Category file ="upgrades/Capacitors/Reactors">
+			<import price ="1" pricestddev =".1" quantity ="2" quantitystddev ="10">
+			</import>
+		</Category>
+		<Category file ="upgrades/Engines/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Engines/Engine_Enhancements_Light">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Engines/Engine_Enhancements_Medium">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Engines/Engine_Enhancements_Heavy">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Shield_Systems/Light">
+			<import price ="1" pricestdev =".1" quantity ="00" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Shield_Systems/Medium">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Shield_Systems/Heavy">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Shield_Systems/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="-2" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Armor_Modification">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Armor_Modification/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Hull_Upgrades">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Hull_Upgrades/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/ECM_Systems">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/ECM_Systems/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Repair_Systems">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Repair_Systems/Research">
+			<import price ="1.2" pricestddev =".1" quantity ="0" quantitystddev ="0">
+			</import>
+		</Category>
+		<Category file ="upgrades/Repair_Systems/Advanced">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Radar/Windows">
+			<import price ="1" pricestdev =".1" quantity ="00" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Radar/Linux">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="2">
+			</import>
+		</Category>
+		<Category file ="upgrades/Radar/BSD">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Miscellaneous">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="5">
+			</import>
+		</Category>
+		<Category file ="upgrades/Miscellaneous/Confed_Milspec">
+			<import price ="1" pricestddev =".1" quantity ="0" quantitystddev ="1">
+			</import>
+		</Category>
+		<Category file ="upgrades/Ammunition">
+			<import price ="1" pricestddev =".1" quantity ="-20" quantitystddev ="50">
+			</import>
+		</Category>
+		<Category file ="upgrades/Experimental">
+			<import price ="1.4" pricestddev =".2" quantity ="-20" quantitystddev ="23">
+			</import>
+		</Category>
+	</Hold>
+	<Upgrade file ="standard_missions">
+	</Upgrade>
+	<Upgrade file ="confed_missions">
+	</Upgrade>
+	<Upgrade file ="confed_mil_missions">
+	</Upgrade>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

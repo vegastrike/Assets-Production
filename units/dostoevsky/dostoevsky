@@ -1,0 +1,48 @@
+<Unit scale="1.58489">
+
+<!--<Dock    x="0" y="-1.33800" z="0" size='10' />-->
+<Light   x="0" y="0" z="-6.36800" file='supernova.bmp' size='4' />
+<Mount weapon="EMPTorpedo" size="light-missile medium-missile heavy-missile" x="0" y="-.13" z="2" ammo="1" volume="90"/>
+<Mount   x="3.1" y="-0.13" z="2.35" ri="0" rj="0" rk="1" qi="0" qj="1" qk="0" weapon="Hephaestus-mini" size="Light Medium Heavy Special autotracking" ammo="10000"/>
+<Mount   x="-3.1" y="-0.13" z="2.35" ri="0" rj="0" rk="1" qi="0" qj="1" qk="0" weapon="Hephaestus-mini" size="Light Medium Heavy Special autotracking" ammo="10000" />
+
+<Meshfile   file="mat_hunter_hull.xmesh" />
+
+<Thrust >
+  <Engine Afterburner="12000" Forward="8000" Retro="8000" Left="8000" Right="8000" Top="8000" Bottom="8000" />
+  <Maneuver yaw="8000" pitch="8000" roll="8000" />
+</Thrust>
+
+<Computer yaw="120" pitch="120" roll="120" afterburner="260" maxspeed="250" >
+	<Radar itts = "true" color = "true" range = "30000000" error = "0" TrackingCone = ".9985" lockcone = "0"  >
+	</Radar>
+</Computer>
+
+<Defense HudImage="dostoevsky-hud.spr">
+  <Armor front="75" right="75" left="75" back="75" />
+  <Shields front="300" back="300" recharge="30"  />
+  <Hull strength="125" />
+</Defense>
+
+<Stats mass="42" momentofinertia="42" fuel="40000000" />
+
+<Energy>
+  <Reactor recharge="60" limit="720" warpenergy="450"/>
+
+</Energy>
+
+  <Jump delay="1" jumpenergy="250" insysenergy="150"/>
+
+
+<description combatrole="FIGHTER"/>
+
+<!--
+<CockpitDamage damage="float damage between 0 and 1 of cockpit component" />
+-->
+<Hold volume="25" >
+</Hold>
+
+<!--
+<Upgrade file="file to upgrade this unit with" /> 
+-->
+</Unit>

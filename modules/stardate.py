@@ -67,9 +67,9 @@ def getStarToDay(monthsystem):
 
 def getZeroYear(faction):
 	if faction == "confed":
-		return 2403
+		return 3141
 	else:
-		return 2403
+		return 3141
 
 def getLeap(year,faction):
 	if faction == "confed":

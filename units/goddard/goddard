@@ -1,0 +1,101 @@
+<!-- XUnit exported from Wings 3D 0.98.10c -->
+<Unit scale="5.00000">
+
+<Meshfile file="goddard_top.xmesh"/>
+<Meshfile file="goddard_bottom.xmesh"/>
+
+<!-- BEGIN TEMPLATES the following entries are templates (mostly from wayfarer)
+NONE of this values are created dynamically by the script
+edit it to fit the stats of your ship-->
+
+<!-- <ShieldMesh file="name of xmesh to load instead of sphere as shield" /> -->
+
+<!-- <RapidMesh file="name of xmesh (not drawn) to load and use for collisions instead of the model meshfiles" /> -->
+
+<!-- <BspMesh file="name of xmesh to use for beam and bolt collisions" /> -->
+
+<Thrust >
+  <Engine Afterburner = "100000" Forward = "80000" Retro = "80000" Left = "75000" Right = "75000" Top = "75000" Bottom = "75000" />
+  <Maneuver yaw = "75000" pitch = "75000" roll = "75000" />
+</Thrust>
+
+<Computer yaw = "60" pitch = "60" roll = "50" afterburner = "220" maxspeed = "210" >
+</Computer>
+
+<subunit file="turretpdlong" x="0" y="2.2" z="4.5" ri="0" rj="0" rk="1" qi="0" qj="1" qk="0"/>
+<subunit file="turretpdlong" x="0" y="-4.05" z="10" ri="0" rj="0" rk="1" qi="0" qj="-1" qk="0"/>
+
+<mount weapon="torpedo" size="heavy-missile" x="1" y="-2" z="7" ammo="8" volume="800"/>
+<mount weapon="torpedo" size="heavy-missile" x="-1" y="-2" z="7" ammo="8" volume="800"/>
+<mount weapon="torpedo" size="heavy-missile" x="1" y="-2" z="-1" ammo="8" volume="800"/>
+<mount weapon="torpedo" size="heavy-missile" x="-1" y="-2" z="-1" ammo="8" volume="800"/>
+<mount weapon="laserbeam" size="light autotracking" x="12.5" y="0.1" z="0"/>
+<mount weapon="laserbeam" size="light autotracking" x="-12.5" y="0.1" z="0"/>
+<mount weapon="laserbeam" size="light autotracking" x="12.5" y="-0.1" z="0"/>
+<mount weapon="laserbeam" size="light autotracking" x="-12.5" y="-0.1" z="0"/>
+<mount weapon="disruptorbeam" size="light medium autotracking" x="-2" y="0" z="12"/>
+<mount weapon="disruptorbeam" size="light medium autotracking" x="2" y="-0" z="12"/>
+<mount weapon="particlebeam" size="capship-light autotracking" x="-0.1" y="-2" z="13"/>
+<mount weapon="particlebeam" size="capship-light autotracking" x="0.1" y="-2" z="13"/>
+<mount weapon="friendorfoe" size="light-missile medium-missile" x="4.1" y="0" z="-3" ammo="5" volume="80"/>
+<mount weapon="friendorfoe" size="light-missile medium-missile" x="3.9" y="0" z="-3" ammo="5" volume="80"/>
+<mount weapon="friendorfoe" size="light-missile medium-missile" x="-4.1" y="0" z="-3" ammo="5" volume="80"/>
+<mount weapon="friendorfoe" size="light-missile medium-missile" x="-3.9" y="0" z="-3" ammo="5" volume="80"/>
+<mount weapon="friendorfoe" size="light-missile medium-missile" x="8.1" y="0" z="-3" ammo="5" volume="80"/>
+<mount weapon="friendorfoe" size="light-missile medium-missile" x="7.9" y="0" z="-3" ammo="5" volume="80"/>
+<mount weapon="friendorfoe" size="light-missile medium-missile" x="-8.1" y="0" z="-3" ammo="5" volume="80"/>
+<mount weapon="friendorfoe" size="light-missile medium-missile" x="-7.9" y="0" z="-3" ammo="5" volume="80"/>
+
+<light file="supernova.bmp" x="0" y="0" z="-4.4" size="1.2"/>
+<light file="supernova.bmp" x="0.6" y="0" z="-4.4" size="1.2"/>
+<light file="supernova.bmp" x="-0.6" y="0" z="-4.4" size="1.2"/>
+<light file="supernova.bmp" x="1.2" y="0" z="-4.4" size="1.2"/>
+<light file="supernova.bmp" x="-1.2" y="0" z="-4.4" size="1.2"/>
+<light file="supernova.bmp" x="1.8" y="0" z="-4.3" size="1.2"/>
+<light file="supernova.bmp" x="-1.8" y="0" z="-4.3" size="1.2"/>
+
+<light file="supernova.bmp" x="5" y="0.275" z="-2" size="2"/>
+<light file="supernova.bmp" x="4" y="0.275" z="-2" size="2"/>
+<light file="supernova.bmp" x="-5" y="0.275" z="-2" size="2"/>
+<light file="supernova.bmp" x="-4" y="0.275" z="-2" size="2"/>
+
+<light file="supernova.bmp" x="8.75" y="0.275" z="-2.75" size="2"/>
+<light file="supernova.bmp" x="9.75" y="0.275" z="-2.75" size="2"/>
+<light file="supernova.bmp" x="-9.75" y="0.275" z="-2.75" size="2"/>
+<light file="supernova.bmp" x="-8.75" y="0.275" z="-2.75" size="2"/>
+
+<cockpit file = "heavy-cockpit.cpt" x = "0" y = "0" z = "0" />
+
+<Defense HudImage = "goddard-hud.spr" >
+  <Armor front = "1000" right = "800" left = "800" back = "800"  />
+  <Shields front = "1600" right="1400" left="1400" back = "1400" recharge = "200"  />
+  <Hull strength = "2100"  />
+</Defense>
+
+<Sound> </Sound>
+
+<Stats mass = "2000" momentofinertia = "2000" fuel = "400000000" />
+
+<Energy>
+  <Reactor recharge = "500" limit = "4000" warpenergy="450"/>
+</Energy>
+
+<Jump delay="1" jumpenergy="150" insysenergy="150"/>
+
+<!-- add a description of your ship here -->
+<description combatrole="BOMBER"/>
+
+
+<!--
+<CockpitDamage damage="float damage between 0 and 1 of cockpit component" />
+-->
+
+<Hold volume = "500" >
+</Hold>
+
+<!--
+<Upgrade file="file to upgrade this unit with" /> 
+-->
+
+<!-- END   TEMPLATES -->
+</Unit>

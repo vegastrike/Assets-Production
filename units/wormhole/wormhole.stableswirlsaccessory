@@ -1,4 +1,4 @@
-<Unit scale="800">
+<Unit scale="5000">
 
 <Meshfile file="wormhole_stable.xmesh"/>
 
@@ -7,4 +7,5 @@
 		<Hull strength="250000"/>
 	</Defense>
 		<Computer yaw = "0" pitch = "0" roll = "100" />
+	<Description NumAnimationStages="1"/>
 </Unit>

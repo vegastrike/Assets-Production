@@ -4,18 +4,19 @@
 	<Thrust >
 		<Engine Afterburner = "0" Forward = "0" Retro = "0" Left = "0" Right = "0" Top = "0" Bottom = "0"  >
 		</Engine>
-		<Maneuver yaw = "0" pitch = "0" roll = "2925899"  >
+		<Maneuver yaw = "0" pitch = "0" roll = "0"  >
 		</Maneuver>
 	</Thrust>
 	<Defense HudImage = "research-hud.spr" >
-		<Shields front = "800" right = "800" left = "800" back = "800" recharge = "80"  >
+		<Shields front = "12800" right = "12800" left = "12800" back = "12800" recharge = "300"  >
 		</Shields>
-		<Armor front = "8000" right = "8000" left = "8000" back = "8000"  >
+		<Armor front = "30000" right = "30000" left = "30000" back = "30000"  >
 		</Armor>
-		<Hull strength = "4000"  >
+		<Hull strength = "5430000"  >
 		</Hull>
 	</Defense>
-	<Stats mass = "175553962" momentofinertia = "17555396" fuel = "20000"  >
+	<Energy limit="4000" recharge="500"/>
+	<Stats mass = "175553975" momentofinertia = "175553975" fuel = "20000"  >
 	</Stats>
 	<Meshfile file = "research.xmesh"  >
 	</Meshfile>
@@ -43,9 +44,9 @@
 	</Dock>
 	<Subunit file = "turretbeamheavy" x = "0.028281" y = "6.402340" z = "0.175269" ri = "-0.999981" rj = "-0.006110" rk = "0.000000" qi = "-0.006090" qj = "0.996711" qk = "0.080805"  >
 	</Subunit>
-	<Subunit file = "turretheavy" x = "0.533589" y = "-4.742596" z = "2.104627" ri = "0.969332" rj = "0.000000" rk = "-0.245756" qi = "0.245751" qj = "0.006602" qk = "0.969311"  >
+	<Subunit file = "turretbeamheavy" x = "0.533589" y = "-4.742596" z = "2.104627" ri = "0.969332" rj = "0.000000" rk = "-0.245756" qi = "0.245751" qj = "0.006602" qk = "0.969311"  >
 	</Subunit>
-	<Subunit file = "turretheavy" x = "0.444161" y = "-4.742596" z = "-2.141020" ri = "-0.979152" rj = "0.000000" rk = "-0.203128" qi = "0.203124" qj = "0.006649" qk = "-0.979131"  >
+	<Subunit file = "turretbeamheavy" x = "0.444161" y = "-4.742596" z = "-2.141020" ri = "-0.979152" rj = "0.000000" rk = "-0.203128" qi = "0.203124" qj = "0.006649" qk = "-0.979131"  >
 	</Subunit>
 	<Subunit file = "turretbeamheavy" x = "-2.148306" y = "-4.860644" z = "-0.115608" ri = "-0.000971" rj = "0.000000" rk = "0.999999" qi = "-0.999978" qj = "0.006531" qk = "-0.000971"  >
 	</Subunit>

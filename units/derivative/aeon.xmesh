@@ -1,0 +1,1057 @@
+<!-- Xmesh exported from Wings 3D 0.98.08b -->
+<Mesh texture="aeon.jpg" texture1="aeon-light.jpg" scale="1.00000" sharevertex="0">
+<!-- 100 vertices, 106 faces -->
+<Points>
+  <Point>
+    <Location x="-0.537148" y="3.72149e-3" z="-0.785284"/>
+    <Normal   i="-0.394947" j="-0.850094" k="0.348363"/>
+  </Point>
+  <Point>
+    <Location x="-0.537148" y="0.186886" z="-0.785284"/>
+    <Normal   i="-0.602908" j="0.760788" k="0.240217"/>
+  </Point>
+  <Point>
+    <Location x="0.537496" y="0.186886" z="-0.785284"/>
+    <Normal   i="0.702378" j="0.709495" k="-5.72946e-2"/>
+  </Point>
+  <Point>
+    <Location x="0.537496" y="3.72149e-3" z="-0.785284"/>
+    <Normal   i="0.403121" j="-0.908985" k="-0.106017"/>
+  </Point>
+  <Point>
+    <Location x="-0.831594" y="-1.11449e-2" z="-3.88484"/>
+    <Normal   i="-6.13264e-2" j="-0.928268" k="-0.366822"/>
+  </Point>
+  <Point>
+    <Location x="-0.831594" y="0.201753" z="-3.88484"/>
+    <Normal   i="-0.470825" j="0.535925" k="-0.700791"/>
+  </Point>
+  <Point>
+    <Location x="0.831941" y="0.201753" z="-3.88484"/>
+    <Normal   i="0.511124" j="0.682695" k="-0.522187"/>
+  </Point>
+  <Point>
+    <Location x="0.831941" y="-1.11449e-2" z="-3.88484"/>
+    <Normal   i="0.406384" j="-0.719866" k="-0.562712"/>
+  </Point>
+  <Point>
+    <Location x="1.73649e-4" y="-0.230034" z="-0.785284"/>
+    <Normal   i="2.09433e-2" j="-0.998658" k="4.73593e-2"/>
+  </Point>
+  <Point>
+    <Location x="1.73649e-4" y="-0.285505" z="-3.88484"/>
+    <Normal   i="3.17808e-2" j="-0.691149" k="-0.722013"/>
+  </Point>
+  <Point>
+    <Location x="1.73649e-4" y="0.476113" z="-3.88484"/>
+    <Normal   i="-3.91009e-2" j="0.685281" k="-0.727229"/>
+  </Point>
+  <Point>
+    <Location x="-2.22350e-3" y="-7.38552e-3" z="3.97074"/>
+    <Normal   i="-1.53967e-3" j="-0.991203" k="0.132340"/>
+  </Point>
+  <Point>
+    <Location x="0.226255" y="6.92142e-2" z="2.08800"/>
+    <Normal   i="-7.04754e-2" j="-0.874270" k="-0.480297"/>
+  </Point>
+  <Point>
+    <Location x="0.226255" y="0.109394" z="2.08800"/>
+    <Normal   i="0.349736" j="0.927038" k="-0.135223"/>
+  </Point>
+  <Point>
+    <Location x="-2.22350e-3" y="3.39934e-2" z="3.97074"/>
+    <Normal   i="-6.29234e-2" j="0.980166" k="0.187924"/>
+  </Point>
+  <Point>
+    <Location x="-0.225908" y="0.109394" z="2.08800"/>
+    <Normal   i="-0.622554" j="0.737049" k="0.263033"/>
+  </Point>
+  <Point>
+    <Location x="-0.225908" y="6.92142e-2" z="2.08800"/>
+    <Normal   i="-0.249423" j="-0.963026" k="0.101824"/>
+  </Point>
+  <Point>
+    <Location x="2.57940" y="-0.343138" z="-0.280775"/>
+    <Normal   i="0.889412" j="0.122388" k="-0.440417"/>
+  </Point>
+  <Point>
+    <Location x="2.57940" y="-0.398254" z="-0.280775"/>
+    <Normal   i="0.383380" j="-0.873331" k="-0.300521"/>
+  </Point>
+  <Point>
+    <Location x="2.57309" y="-0.403041" z="-0.770504"/>
+    <Normal   i="0.836180" j="-0.488460" k="-0.249418"/>
+  </Point>
+  <Point>
+    <Location x="2.57309" y="-0.338351" z="-0.770504"/>
+    <Normal   i="0.890021" j="0.406013" k="-0.207405"/>
+  </Point>
+  <Point>
+    <Location x="-2.57905" y="-0.398254" z="-0.280775"/>
+    <Normal   i="-0.368839" j="-0.663751" k="0.650686"/>
+  </Point>
+  <Point>
+    <Location x="-2.57905" y="-0.343138" z="-0.280775"/>
+    <Normal   i="-0.610409" j="0.558434" k="0.561741"/>
+  </Point>
+  <Point>
+    <Location x="-2.57274" y="-0.338351" z="-0.770504"/>
+    <Normal   i="-0.990917" j="-1.75923e-2" k="-0.133318"/>
+  </Point>
+  <Point>
+    <Location x="-2.57274" y="-0.403041" z="-0.770504"/>
+    <Normal   i="-0.397582" j="-0.913306" k="-8.83247e-2"/>
+  </Point>
+  <Point>
+    <Location x="0.931030" y="-9.47858e-2" z="1.72232"/>
+    <Normal   i="0.150062" j="-0.881569" k="-0.447568"/>
+  </Point>
+  <Point>
+    <Location x="0.931030" y="-5.46063e-2" z="1.72232"/>
+    <Normal   i="0.552992" j="0.780014" k="-0.292881"/>
+  </Point>
+  <Point>
+    <Location x="-0.930682" y="-5.46063e-2" z="1.72232"/>
+    <Normal   i="-0.684595" j="0.411313" k="0.601790"/>
+  </Point>
+  <Point>
+    <Location x="-0.930682" y="-9.47858e-2" z="1.72232"/>
+    <Normal   i="-0.560127" j="-0.496639" k="0.663029"/>
+  </Point>
+  <Point>
+    <Location x="0.192757" y="0.215018" z="1.21136"/>
+    <Normal   i="0.675575" j="0.731031" k="9.58758e-2"/>
+  </Point>
+  <Point>
+    <Location x="-0.192531" y="0.215018" z="1.21136"/>
+    <Normal   i="-0.739174" j="0.665187" k="0.105586"/>
+  </Point>
+  <Point>
+    <Location x="-0.121046" y="0.412065" z="0.967705"/>
+    <Normal   i="-0.482029" j="0.874071" k="6.04073e-2"/>
+  </Point>
+  <Point>
+    <Location x="0.121393" y="0.412065" z="0.967705"/>
+    <Normal   i="0.482710" j="0.873917" k="5.70927e-2"/>
+  </Point>
+  <Point>
+    <Location x="0.267760" y="0.304231" z="-0.785284"/>
+    <Normal   i="0.377514" j="0.925953" k="-9.72973e-3"/>
+  </Point>
+  <Point>
+    <Location x="1.73649e-4" y="0.427770" z="-0.783621"/>
+    <Normal   i="-2.26736e-2" j="0.999743" k="-8.12249e-4"/>
+  </Point>
+  <Point>
+    <Location x="-0.267413" y="0.304231" z="-0.785284"/>
+    <Normal   i="-0.412408" j="0.910945" k="-9.93554e-3"/>
+  </Point>
+  <Point>
+    <Location x="-6.49354e-2" y="0.139244" z="2.43186"/>
+    <Normal   i="-0.412786" j="0.899229" k="0.144897"/>
+  </Point>
+  <Point>
+    <Location x="6.34558e-2" y="0.139244" z="2.43196"/>
+    <Normal   i="0.326126" j="0.935961" k="0.132737"/>
+  </Point>
+  <Point>
+    <Location x="-0.173441" y="0.139131" z="1.66961"/>
+    <Normal   i="-0.760371" j="0.641364" k="0.102408"/>
+  </Point>
+  <Point>
+    <Location x="-9.29907e-2" y="0.335655" z="1.62978"/>
+    <Normal   i="-0.542703" j="0.821630" k="0.174348"/>
+  </Point>
+  <Point>
+    <Location x="0.172996" y="0.139131" z="1.66966"/>
+    <Normal   i="0.634331" j="0.768513" k="8.37391e-2"/>
+  </Point>
+  <Point>
+    <Location x="9.24246e-2" y="0.335655" z="1.62983"/>
+    <Normal   i="0.543791" j="0.821931" k="0.169472"/>
+  </Point>
+  <Point>
+    <Location x="-0.303718" y="0.128767" z="1.36968"/>
+    <Normal   i="-0.871621" j="0.478288" k="0.107316"/>
+  </Point>
+  <Point>
+    <Location x="-0.303718" y="5.28410e-2" z="1.36968"/>
+    <Normal   i="-0.847080" j="-0.521929" k="0.100226"/>
+  </Point>
+  <Point>
+    <Location x="0.304065" y="5.28410e-2" z="1.36968"/>
+    <Normal   i="0.845549" j="-0.524580" k="9.93104e-2"/>
+  </Point>
+  <Point>
+    <Location x="0.304065" y="0.128767" z="1.36968"/>
+    <Normal   i="0.825183" j="0.555141" k="0.104358"/>
+  </Point>
+  <Point>
+    <Location x="-1.25190e-3" y="-5.24328e-2" z="2.04304"/>
+    <Normal   i="-1.85353e-3" j="-0.998877" k="4.73455e-2"/>
+  </Point>
+  <Point>
+    <Location x="-7.97958e-4" y="-0.108986" z="1.14241"/>
+    <Normal   i="-3.02244e-3" j="-0.997562" k="6.97228e-2"/>
+  </Point>
+  <Point>
+    <Location x="0.345254" y="-1.30857e-2" z="2.84653"/>
+    <Normal   i="-0.277345" j="2.40153e-2" k="0.960470"/>
+  </Point>
+  <Point>
+    <Location x="0.345254" y="2.76936e-2" z="2.84653"/>
+    <Normal   i="0.739155" j="0.612044" k="0.281163"/>
+  </Point>
+  <Point>
+    <Location x="-0.347303" y="2.76936e-2" z="2.84653"/>
+    <Normal   i="-0.739497" j="0.612288" k="0.279729"/>
+  </Point>
+  <Point>
+    <Location x="-0.347303" y="-1.30857e-2" z="2.84653"/>
+    <Normal   i="0.274227" j="2.37544e-2" k="0.961372"/>
+  </Point>
+  <Point>
+    <Location x="-0.578295" y="-1.07858e-2" z="1.90516"/>
+    <Normal   i="0.103137" j="-0.990499" k="-9.09619e-2"/>
+  </Point>
+  <Point>
+    <Location x="-0.638993" y="-5.19357e-2" z="2.28442"/>
+    <Normal   i="-0.643645" j="-0.717131" k="0.267291"/>
+  </Point>
+  <Point>
+    <Location x="0.638142" y="-5.19357e-2" z="2.28442"/>
+    <Normal   i="0.643142" j="-0.717173" k="0.268387"/>
+  </Point>
+  <Point>
+    <Location x="0.578642" y="-1.07858e-2" z="1.90516"/>
+    <Normal   i="-0.389385" j="-0.720988" k="-0.573198"/>
+  </Point>
+  <Point>
+    <Location x="-0.225908" y="-2.27858e-2" z="2.08800"/>
+    <Normal   i="0.681042" j="-0.669214" k="-0.297213"/>
+  </Point>
+  <Point>
+    <Location x="-0.347303" y="-0.105086" z="2.84653"/>
+    <Normal   i="0.772876" j="-0.633815" k="3.06718e-2"/>
+  </Point>
+  <Point>
+    <Location x="0.345254" y="-0.105086" z="2.84653"/>
+    <Normal   i="-0.772951" j="-0.633782" k="2.94432e-2"/>
+  </Point>
+  <Point>
+    <Location x="0.226255" y="-2.27858e-2" z="2.08800"/>
+    <Normal   i="-0.735218" j="-0.590455" k="-0.332893"/>
+  </Point>
+  <Point>
+    <Location x="-0.493148" y="-3.35107e-2" z="2.56548"/>
+    <Normal   i="-0.887608" j="0.00000e+0" k="0.460601"/>
+  </Point>
+  <Point>
+    <Location x="-0.493148" y="-0.125511" z="2.56548"/>
+    <Normal   i="-0.644520" j="-0.716603" k="0.266596"/>
+  </Point>
+  <Point>
+    <Location x="0.491698" y="-3.35107e-2" z="2.56548"/>
+    <Normal   i="0.886833" j="0.00000e+0" k="0.462090"/>
+  </Point>
+  <Point>
+    <Location x="0.491698" y="-0.125511" z="2.56548"/>
+    <Normal   i="0.615635" j="-0.750599" k="0.239989"/>
+  </Point>
+  <Point>
+    <Location x="-0.420226" y="-2.32982e-2" z="2.70600"/>
+    <Normal   i="-0.907050" j="0.308274" k="0.286754"/>
+  </Point>
+  <Point>
+    <Location x="-0.420226" y="-0.115298" z="2.70600"/>
+    <Normal   i="-0.387346" j="-0.915967" k="0.104725"/>
+  </Point>
+  <Point>
+    <Location x="0.418476" y="-0.115298" z="2.70600"/>
+    <Normal   i="0.328304" j="-0.942474" k="6.29265e-2"/>
+  </Point>
+  <Point>
+    <Location x="0.418476" y="-2.32982e-2" z="2.70600"/>
+    <Normal   i="0.906685" j="0.308398" k="0.287773"/>
+  </Point>
+  <Point>
+    <Location x="-0.420226" y="-2.32982e-2" z="3.27000"/>
+    <Normal   i="-0.649378" j="0.535632" k="0.539820"/>
+  </Point>
+  <Point>
+    <Location x="-0.420226" y="-0.115298" z="3.27000"/>
+    <Normal   i="-0.548884" j="-0.588763" k="0.593367"/>
+  </Point>
+  <Point>
+    <Location x="-0.347303" y="-0.105086" z="3.27453"/>
+    <Normal   i="0.608000" j="-0.559208" k="0.563581"/>
+  </Point>
+  <Point>
+    <Location x="-0.347303" y="-1.30857e-2" z="3.27453"/>
+    <Normal   i="0.494232" j="0.612311" k="0.617099"/>
+  </Point>
+  <Point>
+    <Location x="0.418476" y="-0.115298" z="3.27000"/>
+    <Normal   i="0.548992" j="-0.588732" k="0.593298"/>
+  </Point>
+  <Point>
+    <Location x="0.418476" y="-2.32982e-2" z="3.27000"/>
+    <Normal   i="0.649108" j="0.535812" k="0.539968"/>
+  </Point>
+  <Point>
+    <Location x="0.345254" y="-1.30857e-2" z="3.27453"/>
+    <Normal   i="-0.494592" j="0.612186" k="0.616934"/>
+  </Point>
+  <Point>
+    <Location x="0.345254" y="-0.105086" z="3.27453"/>
+    <Normal   i="-0.607873" j="-0.559294" k="0.563632"/>
+  </Point>
+  <Point>
+    <Location x="-1.55810" y="-0.197266" z="-0.533030"/>
+    <Normal   i="0.353811" j="-0.661400" k="0.661338"/>
+  </Point>
+  <Point>
+    <Location x="-1.70217" y="-0.207093" z="-2.32767"/>
+    <Normal   i="-0.132268" j="-0.964365" k="-0.229141"/>
+  </Point>
+  <Point>
+    <Location x="1.55845" y="-0.197266" z="-0.533030"/>
+    <Normal   i="-0.283502" j="-0.951652" k="0.118256"/>
+  </Point>
+  <Point>
+    <Location x="1.70251" y="-0.207093" z="-2.32767"/>
+    <Normal   i="0.484600" j="-0.774140" k="-0.407271"/>
+  </Point>
+  <Point>
+    <Location x="-2.06857" y="-0.377760" z="-0.406902"/>
+    <Normal   i="0.497614" j="-0.580341" k="0.644659"/>
+  </Point>
+  <Point>
+    <Location x="-2.13745" y="-0.385067" z="-1.54909"/>
+    <Normal   i="-0.356543" j="-0.802669" k="-0.478120"/>
+  </Point>
+  <Point>
+    <Location x="2.06892" y="-0.377760" z="-0.406902"/>
+    <Normal   i="-0.506701" j="-0.573702" k="0.643521"/>
+  </Point>
+  <Point>
+    <Location x="2.13780" y="-0.385067" z="-1.54909"/>
+    <Normal   i="0.349861" j="-0.799877" k="-0.487641"/>
+  </Point>
+  <Point>
+    <Location x="-2.32381" y="-0.348007" z="-0.343839"/>
+    <Normal   i="-0.135541" j="-0.438271" k="0.888565"/>
+  </Point>
+  <Point>
+    <Location x="-2.35510" y="-0.354054" z="-1.15980"/>
+    <Normal   i="-0.642707" j="-0.729709" k="-0.233351"/>
+  </Point>
+  <Point>
+    <Location x="2.32416" y="-0.348007" z="-0.343839"/>
+    <Normal   i="0.284018" j="-0.934472" k="0.214697"/>
+  </Point>
+  <Point>
+    <Location x="2.35544" y="-0.354054" z="-1.15980"/>
+    <Normal   i="0.882886" j="-0.339467" k="-0.324460"/>
+  </Point>
+  <Point>
+    <Location x="2.35544" y="-0.514054" z="-1.15980"/>
+    <Normal   i="0.840965" j="-0.491304" k="-0.226713"/>
+  </Point>
+  <Point>
+    <Location x="2.32416" y="-0.508007" z="-0.343839"/>
+    <Normal   i="0.374157" j="-0.647560" k="0.663832"/>
+  </Point>
+  <Point>
+    <Location x="-2.32381" y="-0.508007" z="-0.343839"/>
+    <Normal   i="-0.363530" j="-0.649443" k="0.667884"/>
+  </Point>
+  <Point>
+    <Location x="-2.35510" y="-0.514054" z="-1.15980"/>
+    <Normal   i="-0.838759" j="-0.493832" k="-0.229377"/>
+  </Point>
+  <Point>
+    <Location x="-2.19619" y="-0.322883" z="-0.375371"/>
+    <Normal   i="0.239865" j="-2.30933e-16" k="0.970806"/>
+  </Point>
+  <Point>
+    <Location x="-2.19619" y="-0.482883" z="-0.375371"/>
+    <Normal   i="0.454804" j="-0.601947" k="0.656363"/>
+  </Point>
+  <Point>
+    <Location x="2.19654" y="-0.322883" z="-0.375371"/>
+    <Normal   i="-0.291109" j="-0.312675" k="0.904151"/>
+  </Point>
+  <Point>
+    <Location x="2.19654" y="-0.482883" z="-0.375371"/>
+    <Normal   i="-0.460814" j="-0.595429" k="0.658115"/>
+  </Point>
+  <Point>
+    <Location x="-2.24627" y="-0.329560" z="-1.35444"/>
+    <Normal   i="-0.815101" j="-0.297703" k="-0.496975"/>
+  </Point>
+  <Point>
+    <Location x="2.24662" y="-0.329560" z="-1.35444"/>
+    <Normal   i="0.872850" j="5.05636e-16" k="-0.487988"/>
+  </Point>
+  <Point>
+    <Location x="2.24662" y="-0.489560" z="-1.35444"/>
+    <Normal   i="0.405898" j="-0.789374" k="-0.460582"/>
+  </Point>
+  <Point>
+    <Location x="-2.24627" y="-0.489560" z="-1.35444"/>
+    <Normal   i="-0.407467" j="-0.791716" k="-0.455145"/>
+  </Point>
+</Points>
+<Polygons>
+  <Quad>
+    <Vertex point="0" s="0.403063" t="0.830910" />
+    <Vertex point="4" s="3.30213e-2" t="0.794843" />
+    <Vertex point="9" s="3.16388e-2" t="0.894208" />
+    <Vertex point="8" s="0.401935" t="0.895099" />
+  </Quad>
+  <Quad>
+    <Vertex point="0" s="0.979605" t="0.643723" />
+    <Vertex point="43" s="0.684169" t="0.675966" />
+    <Vertex point="42" s="0.685033" t="0.686354" />
+    <Vertex point="1" s="0.981763" t="0.668737" />
+  </Quad>
+  <Quad>
+    <Vertex point="0" s="0.329623" t="0.381811" />
+    <Vertex point="76" s="0.344467" t="0.279420" />
+    <Vertex point="77" s="0.170506" t="0.281889" />
+    <Vertex point="4" s="2.87571e-2" t="0.381811" />
+  </Quad>
+  <Trifan>
+    <Vertex point="1" s="0.237073" t="0.728213" />
+    <Vertex point="22" s="1.22408e-2" t="0.782432" />
+    <Vertex point="21" s="1.21826e-2" t="0.788307" />
+    <Vertex point="84" s="4.02669e-2" t="0.783238" />
+    <Vertex point="92" s="5.43104e-2" t="0.780702" />
+    <Vertex point="76" s="0.124527" t="0.768025" />
+    <Vertex point="0" s="0.236874" t="0.747742" />
+  </Trifan>
+  <Tri>
+    <Vertex point="1" s="0.981763" t="0.668737" />
+    <Vertex point="31" s="0.741282" t="0.732932" />
+    <Vertex point="35" s="0.981692" t="0.709061" />
+  </Tri>
+  <Quad>
+    <Vertex point="2" s="0.362416" t="0.728213" />
+    <Vertex point="17" s="0.587248" t="0.782433" />
+    <Vertex point="20" s="0.586570" t="0.730222" />
+    <Vertex point="6" s="0.393058" t="0.397645" />
+  </Quad>
+  <Tri>
+    <Vertex point="2" s="0.981822" t="0.830186" />
+    <Vertex point="29" s="0.706514" t="0.793208" />
+    <Vertex point="45" s="0.685079" t="0.812792" />
+  </Tri>
+  <Quad>
+    <Vertex point="2" s="0.981822" t="0.830186" />
+    <Vertex point="45" s="0.685079" t="0.812792" />
+    <Vertex point="44" s="0.684223" t="0.823181" />
+    <Vertex point="3" s="0.979683" t="0.855202" />
+  </Quad>
+  <Quad>
+    <Vertex point="3" s="0.402754" t="0.959293" />
+    <Vertex point="8" s="0.401935" t="0.895099" />
+    <Vertex point="9" s="3.16388e-2" t="0.894208" />
+    <Vertex point="7" s="3.25431e-2" t="0.993578" />
+  </Quad>
+  <Quad>
+    <Vertex point="3" s="0.402754" t="0.959293" />
+    <Vertex point="44" s="0.660313" t="0.932025" />
+    <Vertex point="47" s="0.632593" t="0.895538" />
+    <Vertex point="8" s="0.401935" t="0.895099" />
+  </Quad>
+  <Trifan>
+    <Vertex point="3" s="0.362615" t="0.747742" />
+    <Vertex point="78" s="0.474962" t="0.768025" />
+    <Vertex point="94" s="0.545179" t="0.780702" />
+    <Vertex point="86" s="0.559222" t="0.783238" />
+    <Vertex point="18" s="0.587307" t="0.788307" />
+    <Vertex point="17" s="0.587248" t="0.782433" />
+    <Vertex point="2" s="0.362416" t="0.728213" />
+  </Trifan>
+  <Trifan>
+    <Vertex point="4" s="0.185334" t="0.389287" />
+    <Vertex point="77" s="9.59059e-2" t="0.558491" />
+    <Vertex point="96" s="4.00334e-2" t="0.664235" />
+    <Vertex point="85" s="2.88630e-2" t="0.685381" />
+    <Vertex point="24" s="6.49469e-3" t="0.727690" />
+    <Vertex point="23" s="1.29196e-2" t="0.730221" />
+    <Vertex point="5" s="0.206431" t="0.397645" />
+  </Trifan>
+  <Quad>
+    <Vertex point="5" s="0.764596" t="0.405772" />
+    <Vertex point="10" s="0.632220" t="0.361452" />
+    <Vertex point="9" s="0.631679" t="0.482842" />
+    <Vertex point="4" s="0.764444" t="0.439704" />
+  </Quad>
+  <Quad>
+    <Vertex point="5" s="0.206431" t="0.397645" />
+    <Vertex point="23" s="1.29196e-2" t="0.730221" />
+    <Vertex point="22" s="1.22408e-2" t="0.782432" />
+    <Vertex point="1" s="0.237073" t="0.728213" />
+  </Quad>
+  <Trifan>
+    <Vertex point="6" s="0.393058" t="0.397645" />
+    <Vertex point="10" s="0.299745" t="0.397235" />
+    <Vertex point="34" s="0.299745" t="0.727943" />
+    <Vertex point="33" s="0.331090" t="0.727999" />
+    <Vertex point="2" s="0.362416" t="0.728213" />
+  </Trifan>
+  <Trifan>
+    <Vertex point="6" s="0.393058" t="0.397645" />
+    <Vertex point="20" s="0.586570" t="0.730222" />
+    <Vertex point="19" s="0.592995" t="0.727691" />
+    <Vertex point="87" s="0.570626" t="0.685381" />
+    <Vertex point="97" s="0.559456" t="0.664236" />
+    <Vertex point="79" s="0.503584" t="0.558491" />
+    <Vertex point="7" s="0.414155" t="0.389287" />
+  </Trifan>
+  <Quad>
+    <Vertex point="7" s="0.499303" t="0.438523" />
+    <Vertex point="9" s="0.631679" t="0.482842" />
+    <Vertex point="10" s="0.632220" t="0.361452" />
+    <Vertex point="6" s="0.499454" t="0.404590" />
+  </Quad>
+  <Quad>
+    <Vertex point="7" s="0.351345" t="0.192163" />
+    <Vertex point="79" s="0.209597" t="9.22414e-2" />
+    <Vertex point="78" s="3.56351e-2" t="8.97714e-2" />
+    <Vertex point="3" s="5.04791e-2" t="0.192162" />
+  </Quad>
+  <Quad>
+    <Vertex point="8" s="0.401935" t="0.895099" />
+    <Vertex point="47" s="0.632593" t="0.895538" />
+    <Vertex point="43" s="0.660488" t="0.859416" />
+    <Vertex point="0" s="0.403063" t="0.830910" />
+  </Quad>
+  <Tri>
+    <Vertex point="11" s="0.970699" t="0.896181" />
+    <Vertex point="46" s="0.740357" t="0.895743" />
+    <Vertex point="12" s="0.746166" t="0.922936" />
+  </Tri>
+  <Quad>
+    <Vertex point="11" s="0.743465" t="3.22135e-2" />
+    <Vertex point="48" s="0.832355" t="3.36717e-2" />
+    <Vertex point="49" s="0.832355" t="2.32397e-2" />
+    <Vertex point="14" s="0.743465" t="2.16281e-2" />
+  </Quad>
+  <Tri>
+    <Vertex point="11" s="0.970699" t="0.896181" />
+    <Vertex point="51" s="0.836552" t="0.854633" />
+    <Vertex point="16" s="0.746296" t="0.868918" />
+  </Tri>
+  <Quad>
+    <Vertex point="12" s="0.585105" t="0.813730" />
+    <Vertex point="44" s="0.684223" t="0.823181" />
+    <Vertex point="45" s="0.685079" t="0.812792" />
+    <Vertex point="13" s="0.585505" t="0.808209" />
+  </Quad>
+  <Quad>
+    <Vertex point="12" s="0.746166" t="0.922936" />
+    <Vertex point="46" s="0.740357" t="0.895743" />
+    <Vertex point="47" s="0.632593" t="0.895538" />
+    <Vertex point="44" s="0.660313" t="0.932025" />
+  </Quad>
+  <Tri>
+    <Vertex point="12" s="0.746166" t="0.922936" />
+    <Vertex point="48" s="0.836353" t="0.937369" />
+    <Vertex point="11" s="0.970699" t="0.896181" />
+  </Tri>
+  <Quad>
+    <Vertex point="12" s="0.472800" t="7.10884e-2" />
+    <Vertex point="59" s="0.474923" t="9.20539e-2" />
+    <Vertex point="58" s="0.651794" t="9.30948e-2" />
+    <Vertex point="48" s="0.649672" t="7.21294e-2" />
+  </Quad>
+  <Trifan>
+    <Vertex point="13" s="0.801914" t="2.33950e-3" />
+    <Vertex point="26" s="0.982206" t="4.42933e-2" />
+    <Vertex point="25" s="0.982206" t="5.45718e-2" />
+    <Vertex point="55" s="0.892060" t="3.30833e-2" />
+    <Vertex point="12" s="0.801914" t="1.26181e-2" />
+  </Trifan>
+  <Quad>
+    <Vertex point="13" s="0.890403" t="0.229295" />
+    <Vertex point="40" s="0.883075" t="0.171410" />
+    <Vertex point="37" s="0.866985" t="0.276530" />
+    <Vertex point="14" s="0.859451" t="0.489602" />
+  </Quad>
+  <Tri>
+    <Vertex point="13" s="0.890403" t="0.229295" />
+    <Vertex point="49" s="0.907928" t="0.334496" />
+    <Vertex point="26" s="0.990919" t="0.179883" />
+  </Tri>
+  <Quad>
+    <Vertex point="14" s="0.859451" t="0.489602" />
+    <Vertex point="36" s="0.849252" t="0.276646" />
+    <Vertex point="38" s="0.831779" t="0.171778" />
+    <Vertex point="15" s="0.825397" t="0.229764" />
+  </Quad>
+  <Tri>
+    <Vertex point="14" s="0.859451" t="0.489602" />
+    <Vertex point="49" s="0.907928" t="0.334496" />
+    <Vertex point="13" s="0.890403" t="0.229295" />
+  </Tri>
+  <Quad>
+    <Vertex point="14" s="0.743465" t="2.16281e-2" />
+    <Vertex point="50" s="0.655188" t="2.32397e-2" />
+    <Vertex point="51" s="0.655188" t="3.36717e-2" />
+    <Vertex point="11" s="0.743465" t="3.22135e-2" />
+  </Quad>
+  <Quad>
+    <Vertex point="15" s="0.585470" t="0.691024" />
+    <Vertex point="42" s="0.685033" t="0.686354" />
+    <Vertex point="43" s="0.684169" t="0.675966" />
+    <Vertex point="16" s="0.585065" t="0.685504" />
+  </Quad>
+  <Tri>
+    <Vertex point="15" s="0.825397" t="0.229764" />
+    <Vertex point="50" s="0.809064" t="0.335191" />
+    <Vertex point="14" s="0.859451" t="0.489602" />
+  </Tri>
+  <Tri>
+    <Vertex point="16" s="0.746296" t="0.868918" />
+    <Vertex point="46" s="0.740357" t="0.895743" />
+    <Vertex point="11" s="0.970699" t="0.896181" />
+  </Tri>
+  <Trifan>
+    <Vertex point="16" s="0.686243" t="1.26181e-2" />
+    <Vertex point="52" s="0.596097" t="3.30833e-2" />
+    <Vertex point="28" s="0.505951" t="5.45718e-2" />
+    <Vertex point="27" s="0.505951" t="4.42933e-2" />
+    <Vertex point="15" s="0.686243" t="2.33950e-3" />
+  </Trifan>
+  <Tri>
+    <Vertex point="16" s="0.378441" t="2.95471e-2" />
+    <Vertex point="56" s="0.358363" t="3.58692e-2" />
+    <Vertex point="52" s="0.388262" t="0.121686" />
+  </Tri>
+  <Quad>
+    <Vertex point="18" s="0.593126" t="0.782414" />
+    <Vertex point="19" s="0.593463" t="0.730194" />
+    <Vertex point="20" s="0.586570" t="0.730222" />
+    <Vertex point="17" s="0.587248" t="0.782433" />
+  </Quad>
+  <Quad>
+    <Vertex point="18" s="0.879667" t="0.616108" />
+    <Vertex point="86" s="0.872425" t="0.579313" />
+    <Vertex point="87" s="0.758011" t="0.578789" />
+    <Vertex point="19" s="0.811142" t="0.612393" />
+  </Quad>
+  <Quad>
+    <Vertex point="22" s="1.22408e-2" t="0.782432" />
+    <Vertex point="23" s="1.29196e-2" t="0.730221" />
+    <Vertex point="24" s="6.02674e-3" t="0.730194" />
+    <Vertex point="21" s="6.36339e-3" t="0.782414" />
+  </Quad>
+  <Quad>
+    <Vertex point="24" s="0.741833" t="0.544220" />
+    <Vertex point="85" s="0.795541" t="0.511549" />
+    <Vertex point="84" s="0.681136" t="0.510076" />
+    <Vertex point="21" s="0.673253" t="0.546739" />
+  </Quad>
+  <Trifan>
+    <Vertex point="25" s="0.982206" t="5.45718e-2" />
+    <Vertex point="26" s="0.982206" t="4.42933e-2" />
+    <Vertex point="49" s="0.832355" t="2.32397e-2" />
+    <Vertex point="48" s="0.832355" t="3.36717e-2" />
+    <Vertex point="67" s="0.851087" t="3.62842e-2" />
+    <Vertex point="62" s="0.869818" t="3.88967e-2" />
+    <Vertex point="54" s="0.907281" t="4.36101e-2" />
+  </Trifan>
+  <Trifan>
+    <Vertex point="27" s="0.505951" t="4.42933e-2" />
+    <Vertex point="28" s="0.505951" t="5.45718e-2" />
+    <Vertex point="53" s="0.580570" t="4.36101e-2" />
+    <Vertex point="60" s="0.617879" t="3.88967e-2" />
+    <Vertex point="64" s="0.636534" t="3.62842e-2" />
+    <Vertex point="51" s="0.655188" t="3.36717e-2" />
+    <Vertex point="50" s="0.655188" t="2.32397e-2" />
+  </Trifan>
+  <Tri>
+    <Vertex point="29" s="0.706514" t="0.793208" />
+    <Vertex point="2" s="0.981822" t="0.830186" />
+    <Vertex point="32" s="0.741294" t="0.766167" />
+  </Tri>
+  <Quad>
+    <Vertex point="30" s="0.613791" t="0.152519" />
+    <Vertex point="38" s="0.615263" t="0.226887" />
+    <Vertex point="39" s="0.646310" t="0.214033" />
+    <Vertex point="31" s="0.641552" t="0.110193" />
+  </Quad>
+  <Quad>
+    <Vertex point="30" s="0.706484" t="0.705908" />
+    <Vertex point="42" s="0.685033" t="0.686354" />
+    <Vertex point="15" s="0.585470" t="0.691024" />
+    <Vertex point="38" s="0.642611" t="0.701876" />
+  </Quad>
+  <Tri>
+    <Vertex point="31" s="0.741282" t="0.732932" />
+    <Vertex point="1" s="0.981763" t="0.668737" />
+    <Vertex point="30" s="0.706484" t="0.705908" />
+  </Tri>
+  <Tri>
+    <Vertex point="32" s="0.741294" t="0.766167" />
+    <Vertex point="34" s="0.981374" t="0.749462" />
+    <Vertex point="31" s="0.741282" t="0.732932" />
+  </Tri>
+  <Quad>
+    <Vertex point="32" s="0.679813" t="0.110175" />
+    <Vertex point="41" s="0.674887" t="0.214046" />
+    <Vertex point="40" s="0.705927" t="0.226938" />
+    <Vertex point="29" s="0.707530" t="0.152542" />
+  </Quad>
+  <Tri>
+    <Vertex point="33" s="0.981722" t="0.789863" />
+    <Vertex point="32" s="0.741294" t="0.766167" />
+    <Vertex point="2" s="0.981822" t="0.830186" />
+  </Tri>
+  <Tri>
+    <Vertex point="34" s="0.981374" t="0.749462" />
+    <Vertex point="32" s="0.741294" t="0.766167" />
+    <Vertex point="33" s="0.981722" t="0.789863" />
+  </Tri>
+  <Tri>
+    <Vertex point="35" s="0.981692" t="0.709061" />
+    <Vertex point="31" s="0.741282" t="0.732932" />
+    <Vertex point="34" s="0.981374" t="0.749462" />
+  </Tri>
+  <Trifan>
+    <Vertex point="35" s="0.268399" t="0.727999" />
+    <Vertex point="34" s="0.299745" t="0.727943" />
+    <Vertex point="10" s="0.299745" t="0.397235" />
+    <Vertex point="5" s="0.206431" t="0.397645" />
+    <Vertex point="1" s="0.237073" t="0.728213" />
+  </Trifan>
+  <Tri>
+    <Vertex point="36" s="0.849252" t="0.276646" />
+    <Vertex point="14" s="0.859451" t="0.489602" />
+    <Vertex point="37" s="0.866985" t="0.276530" />
+  </Tri>
+  <Tri>
+    <Vertex point="36" s="0.650404" t="0.342591" />
+    <Vertex point="39" s="0.646310" t="0.214033" />
+    <Vertex point="38" s="0.615263" t="0.226887" />
+  </Tri>
+  <Tri>
+    <Vertex point="37" s="0.670565" t="0.342602" />
+    <Vertex point="40" s="0.705927" t="0.226938" />
+    <Vertex point="41" s="0.674887" t="0.214046" />
+  </Tri>
+  <Quad>
+    <Vertex point="39" s="0.646310" t="0.214033" />
+    <Vertex point="41" s="0.674887" t="0.214046" />
+    <Vertex point="32" s="0.679813" t="0.110175" />
+    <Vertex point="31" s="0.641552" t="0.110193" />
+  </Quad>
+  <Quad>
+    <Vertex point="40" s="0.642626" t="0.797200" />
+    <Vertex point="13" s="0.585505" t="0.808209" />
+    <Vertex point="45" s="0.685079" t="0.812792" />
+    <Vertex point="29" s="0.706514" t="0.793208" />
+  </Quad>
+  <Quad>
+    <Vertex point="41" s="0.674887" t="0.214046" />
+    <Vertex point="39" s="0.646310" t="0.214033" />
+    <Vertex point="36" s="0.650404" t="0.342591" />
+    <Vertex point="37" s="0.670565" t="0.342602" />
+  </Quad>
+  <Tri>
+    <Vertex point="42" s="0.685033" t="0.686354" />
+    <Vertex point="30" s="0.706484" t="0.705908" />
+    <Vertex point="1" s="0.981763" t="0.668737" />
+  </Tri>
+  <Quad>
+    <Vertex point="46" s="0.740357" t="0.895743" />
+    <Vertex point="16" s="0.746296" t="0.868918" />
+    <Vertex point="43" s="0.660488" t="0.859416" />
+    <Vertex point="47" s="0.632593" t="0.895538" />
+  </Quad>
+  <Quad>
+    <Vertex point="48" s="0.499232" t="0.319241" />
+    <Vertex point="74" s="0.402911" t="0.320603" />
+    <Vertex point="73" s="0.404165" t="0.337227" />
+    <Vertex point="67" s="0.531092" t="0.335432" />
+  </Quad>
+  <Tri>
+    <Vertex point="50" s="0.809064" t="0.335191" />
+    <Vertex point="15" s="0.825397" t="0.229764" />
+    <Vertex point="27" s="0.724238" t="0.181815" />
+  </Tri>
+  <Quad>
+    <Vertex point="51" s="0.183499" t="1.61890e-2" />
+    <Vertex point="57" s="0.181407" t="3.71575e-2" />
+    <Vertex point="56" s="0.358363" t="3.58692e-2" />
+    <Vertex point="16" s="0.360455" t="1.49007e-2" />
+  </Quad>
+  <Quad>
+    <Vertex point="51" s="0.849322" t="9.22621e-2" />
+    <Vertex point="71" s="0.945643" t="9.36239e-2" />
+    <Vertex point="70" s="0.945936" t="7.29194e-2" />
+    <Vertex point="57" s="0.849615" t="7.15576e-2" />
+  </Quad>
+  <Tri>
+    <Vertex point="52" s="0.388262" t="0.121686" />
+    <Vertex point="53" s="0.299806" t="0.123863" />
+    <Vertex point="28" s="0.416833" t="0.210135" />
+  </Tri>
+  <Tri>
+    <Vertex point="52" s="0.388262" t="0.121686" />
+    <Vertex point="61" s="0.238978" t="8.09154e-2" />
+    <Vertex point="53" s="0.299806" t="0.123863" />
+  </Tri>
+  <Tri>
+    <Vertex point="54" s="0.533295" t="0.179875" />
+    <Vertex point="55" s="0.444878" t="0.177820" />
+    <Vertex point="25" s="0.416167" t="0.266224" />
+  </Tri>
+  <Tri>
+    <Vertex point="54" s="0.533295" t="0.179875" />
+    <Vertex point="63" s="0.594175" t="0.136893" />
+    <Vertex point="55" s="0.444878" t="0.177820" />
+  </Tri>
+  <Tri>
+    <Vertex point="55" s="0.444878" t="0.177820" />
+    <Vertex point="59" s="0.474923" t="9.20539e-2" />
+    <Vertex point="12" s="0.454855" t="8.56979e-2" />
+  </Tri>
+  <Quad>
+    <Vertex point="55" s="0.444878" t="0.177820" />
+    <Vertex point="63" s="0.594175" t="0.136893" />
+    <Vertex point="66" s="0.622880" t="0.115158" />
+    <Vertex point="59" s="0.474923" t="9.20539e-2" />
+  </Quad>
+  <Quad>
+    <Vertex point="56" s="0.358363" t="3.58692e-2" />
+    <Vertex point="65" s="0.210297" t="5.92002e-2" />
+    <Vertex point="61" s="0.238978" t="8.09154e-2" />
+    <Vertex point="52" s="0.388262" t="0.121686" />
+  </Quad>
+  <Tri>
+    <Vertex point="57" s="0.181407" t="3.71575e-2" />
+    <Vertex point="65" s="0.210297" t="5.92002e-2" />
+    <Vertex point="56" s="0.358363" t="3.58692e-2" />
+  </Tri>
+  <Quad>
+    <Vertex point="57" s="0.849615" t="7.15576e-2" />
+    <Vertex point="70" s="0.945936" t="7.29194e-2" />
+    <Vertex point="69" s="0.945151" t="5.63337e-2" />
+    <Vertex point="65" s="0.818224" t="5.45393e-2" />
+  </Quad>
+  <Tri>
+    <Vertex point="58" s="0.651794" t="9.30948e-2" />
+    <Vertex point="59" s="0.474923" t="9.20539e-2" />
+    <Vertex point="66" s="0.622880" t="0.115158" />
+  </Tri>
+  <Quad>
+    <Vertex point="58" s="0.498939" t="0.298537" />
+    <Vertex point="75" s="0.402618" t="0.299899" />
+    <Vertex point="74" s="0.402911" t="0.320603" />
+    <Vertex point="48" s="0.499232" t="0.319241" />
+  </Quad>
+  <Tri>
+    <Vertex point="61" s="0.781508" t="0.130885" />
+    <Vertex point="60" s="0.781801" t="0.110181" />
+    <Vertex point="53" s="0.710482" t="0.113320" />
+  </Tri>
+  <Tri>
+    <Vertex point="62" s="0.566785" t="0.337227" />
+    <Vertex point="63" s="0.567078" t="0.357931" />
+    <Vertex point="54" s="0.638166" t="0.340365" />
+  </Tri>
+  <Quad>
+    <Vertex point="64" s="0.817463" t="0.108386" />
+    <Vertex point="68" s="0.944390" t="0.110181" />
+    <Vertex point="71" s="0.945643" t="9.36239e-2" />
+    <Vertex point="51" s="0.849322" t="9.22621e-2" />
+  </Quad>
+  <Quad>
+    <Vertex point="65" s="0.817170" t="0.129091" />
+    <Vertex point="64" s="0.817463" t="0.108386" />
+    <Vertex point="60" s="0.781801" t="0.110181" />
+    <Vertex point="61" s="0.781508" t="0.130885" />
+  </Quad>
+  <Quad>
+    <Vertex point="65" s="0.817170" t="0.129091" />
+    <Vertex point="69" s="0.944098" t="0.130885" />
+    <Vertex point="68" s="0.944390" t="0.110181" />
+    <Vertex point="64" s="0.817463" t="0.108386" />
+  </Quad>
+  <Quad>
+    <Vertex point="66" s="0.530329" t="0.281452" />
+    <Vertex point="72" s="0.403402" t="0.283246" />
+    <Vertex point="75" s="0.402618" t="0.299899" />
+    <Vertex point="58" s="0.498939" t="0.298537" />
+  </Quad>
+  <Quad>
+    <Vertex point="67" s="0.531092" t="0.335432" />
+    <Vertex point="66" s="0.531385" t="0.356137" />
+    <Vertex point="63" s="0.567078" t="0.357931" />
+    <Vertex point="62" s="0.566785" t="0.337227" />
+  </Quad>
+  <Quad>
+    <Vertex point="67" s="0.531092" t="0.335432" />
+    <Vertex point="73" s="0.404165" t="0.337227" />
+    <Vertex point="72" s="0.404457" t="0.357931" />
+    <Vertex point="66" s="0.531385" t="0.356137" />
+  </Quad>
+  <Quad>
+    <Vertex point="69" s="0.945151" t="5.63337e-2" />
+    <Vertex point="70" s="0.945936" t="7.29194e-2" />
+    <Vertex point="71" s="0.966556" t="7.48139e-2" />
+    <Vertex point="68" s="0.965771" t="5.82283e-2" />
+  </Quad>
+  <Quad>
+    <Vertex point="73" s="0.382781" t="0.285134" />
+    <Vertex point="74" s="0.381998" t="0.301787" />
+    <Vertex point="75" s="0.402618" t="0.299899" />
+    <Vertex point="72" s="0.403402" t="0.283246" />
+  </Quad>
+  <Tri>
+    <Vertex point="76" s="0.570216" t="0.528951" />
+    <Vertex point="92" s="0.662649" t="0.513222" />
+    <Vertex point="80" s="0.644390" t="0.505161" />
+  </Tri>
+  <Quad>
+    <Vertex point="78" s="3.56351e-2" t="8.97714e-2" />
+    <Vertex point="79" s="0.209597" t="9.22414e-2" />
+    <Vertex point="83" s="0.138796" t="4.01598e-2" />
+    <Vertex point="82" s="2.82820e-2" t="3.65578e-2" />
+  </Quad>
+  <Tri>
+    <Vertex point="79" s="0.570596" t="0.599911" />
+    <Vertex point="97" s="0.726776" t="0.582309" />
+    <Vertex point="83" s="0.695508" t="0.574621" />
+  </Tri>
+  <Quad>
+    <Vertex point="80" s="0.351820" t="0.226206" />
+    <Vertex point="81" s="0.241306" t="0.229808" />
+    <Vertex point="77" s="0.170506" t="0.281889" />
+    <Vertex point="76" s="0.344467" t="0.279420" />
+  </Quad>
+  <Quad>
+    <Vertex point="80" s="0.351820" t="0.226206" />
+    <Vertex point="93" s="0.353530" t="0.210034" />
+    <Vertex point="99" s="0.258869" t="0.213753" />
+    <Vertex point="81" s="0.241306" t="0.229808" />
+  </Quad>
+  <Tri>
+    <Vertex point="81" s="0.858108" t="0.508471" />
+    <Vertex point="96" s="0.826711" t="0.515613" />
+    <Vertex point="77" s="0.982559" t="0.535937" />
+  </Tri>
+  <Tri>
+    <Vertex point="81" s="0.858108" t="0.508471" />
+    <Vertex point="99" s="0.827166" t="0.493200" />
+    <Vertex point="96" s="0.826711" t="0.515613" />
+  </Tri>
+  <Tri>
+    <Vertex point="82" s="0.909251" t="0.575040" />
+    <Vertex point="94" s="0.890854" t="0.582781" />
+    <Vertex point="78" s="0.982999" t="0.600121" />
+  </Tri>
+  <Tri>
+    <Vertex point="82" s="0.909251" t="0.575040" />
+    <Vertex point="95" s="0.890791" t="0.560363" />
+    <Vertex point="94" s="0.890854" t="0.582781" />
+  </Tri>
+  <Quad>
+    <Vertex point="83" s="0.138796" t="4.01598e-2" />
+    <Vertex point="98" s="0.121234" t="2.41047e-2" />
+    <Vertex point="95" s="2.65728e-2" t="2.03860e-2" />
+    <Vertex point="82" s="2.82820e-2" t="3.65578e-2" />
+  </Quad>
+  <Quad>
+    <Vertex point="85" s="0.795541" t="0.511549" />
+    <Vertex point="91" s="0.795996" t="0.489135" />
+    <Vertex point="90" s="0.681591" t="0.487662" />
+    <Vertex point="84" s="0.681136" t="0.510076" />
+  </Quad>
+  <Quad>
+    <Vertex point="85" s="0.795541" t="0.511549" />
+    <Vertex point="96" s="0.826711" t="0.515613" />
+    <Vertex point="99" s="0.827166" t="0.493200" />
+    <Vertex point="91" s="0.795996" t="0.489135" />
+  </Quad>
+  <Quad>
+    <Vertex point="86" s="0.872425" t="0.579313" />
+    <Vertex point="89" s="0.872362" t="0.556895" />
+    <Vertex point="88" s="0.757948" t="0.556371" />
+    <Vertex point="87" s="0.758011" t="0.578789" />
+  </Quad>
+  <Quad>
+    <Vertex point="86" s="0.872425" t="0.579313" />
+    <Vertex point="94" s="0.890854" t="0.582781" />
+    <Vertex point="95" s="0.890791" t="0.560363" />
+    <Vertex point="89" s="0.872362" t="0.556895" />
+  </Quad>
+  <Quad>
+    <Vertex point="88" s="0.757948" t="0.556371" />
+    <Vertex point="98" s="0.726712" t="0.559891" />
+    <Vertex point="97" s="0.726776" t="0.582309" />
+    <Vertex point="87" s="0.758011" t="0.578789" />
+  </Quad>
+  <Quad>
+    <Vertex point="89" s="2.46769e-2" t="7.59386e-3" />
+    <Vertex point="95" s="2.65728e-2" t="2.03860e-2" />
+    <Vertex point="98" s="0.121234" t="2.41047e-2" />
+    <Vertex point="88" s="0.103478" t="1.16685e-2" />
+  </Quad>
+  <Quad>
+    <Vertex point="90" s="0.681591" t="0.487662" />
+    <Vertex point="93" s="0.663104" t="0.490808" />
+    <Vertex point="92" s="0.662649" t="0.513222" />
+    <Vertex point="84" s="0.681136" t="0.510076" />
+  </Quad>
+  <Quad>
+    <Vertex point="91" s="0.276625" t="0.201317" />
+    <Vertex point="99" s="0.258869" t="0.213753" />
+    <Vertex point="93" s="0.353530" t="0.210034" />
+    <Vertex point="90" s="0.355426" t="0.197242" />
+  </Quad>
+  <Tri>
+    <Vertex point="92" s="0.662649" t="0.513222" />
+    <Vertex point="93" s="0.663104" t="0.490808" />
+    <Vertex point="80" s="0.644390" t="0.505161" />
+  </Tri>
+  <Tri>
+    <Vertex point="97" s="0.726776" t="0.582309" />
+    <Vertex point="98" s="0.726712" t="0.559891" />
+    <Vertex point="83" s="0.695508" t="0.574621" />
+  </Tri>
+</Polygons>
+<!-- Materialname="cube5_auv" -->
+<Material reflect="1" LightningOn="1" >
+  <Diffuse red="1.00000" green="1.00000" blue="1.00000" alpha="1.00000" />
+  <Ambient red="1.00000" green="1.00000" blue="1.00000" alpha="1.00000" />
+  <Specular red="1.00000" green="1.00000" blue="1.00000" alpha="1.00000" />
+</Material>
+<Logo type="0" rotate="0" size=".5" offset="0.001000">
+	<Ref point="23" weight="3"/>
+	<Ref point="22" weight="3"/>
+	<Ref point="5" weight="3"/>
+	<Ref point="1" weight="5"/>
+</Logo>
+<Logo type="0" rotate="0" size=".5" offset="0.001000">
+	<Ref point="20" weight="5"/>
+	<Ref point="6" weight="3"/>
+	<Ref point="2" weight="3"/>
+</Logo>
+<Logo type="1" rotate="0" size=".5" offset="0.001000">
+	<Ref point="2" weight="3"/>
+	<Ref point="6" weight="5"/>
+	<Ref point="10" weight="5"/>
+	<Ref point="34" weight="3"/>
+</Logo>
+<Logo type="1" rotate="0" size=".5" offset="0.001000">
+	<Ref point="34" weight="3"/>
+	<Ref point="10" weight="5"/>
+	<Ref point="5" weight="5"/>
+	<Ref point="1" weight="3"/>
+</Logo>
+</Mesh>

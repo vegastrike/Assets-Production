@@ -1,0 +1,14 @@
+<Unit>
+	<Hold volume ="120000000000.000000">
+		<Category file ="Contraband/Medical">
+			<Import quantity ="1">
+			</Import>
+		</Category>
+		<Category file ="Contraband">
+			<Import quantity ="1">
+			</Import>
+		</Category>
+	</Hold>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

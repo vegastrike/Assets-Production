@@ -1,0 +1,48 @@
+<Unit scale =".48">
+	<Meshfile file ="idunhi.xmesh">
+	</Meshfile>
+	<Meshfile file ="idunsails.xmesh">
+	</Meshfile>
+	<description combatrole ="INTERCEPTOR">
+	</description>
+	<cockpit file ="rlaan-cockpit.cpt" x ="0" y ="3" z ="23">
+	</cockpit>
+	<Thrust>
+		<Engine Afterburner ="10000" Forward ="5000" Retro ="5000" Left ="5000" Right ="5000" Top ="5000" Bottom ="5000">
+		</Engine>
+		<Maneuver yaw ="6000.500000" pitch ="6000.500000" roll ="6000.500000">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="idun-hud.spr" ECM ="0" RepairDroid ="0">
+		<Cloak cloakmin =".3" cloakrate =".1" cloakenergy ="60" cloakglass ="false">
+		</Cloak>
+		<Armor front ="75" right ="75" left ="75" back ="75">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="255">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4"/>
+	<Stats mass ="57" momentofinertia ="57" fuel ="150000000">
+	</Stats>
+	<Computer yaw ="90.500000" pitch ="90.500000" roll ="90.500000" afterburner ="300.000000" maxspeed ="270.000000">
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="450">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" delay ="1" jumpenergy ="75" insysenergy ="50">
+	</Jump>
+	<Hold volume ="10">
+	</Hold>
+	<Mount weapon ="" size ="LIGHT MEDIUM" x ="-4.125" y ="-4.4" z ="0">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM" x ="4.125" y ="-4.4" z ="0">
+	</Mount>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+</Unit>

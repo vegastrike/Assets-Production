@@ -1,0 +1,30 @@
+<Unit scale="0.8">
+	<Description combatRole="MISSILE">
+	</Description>
+	<Meshfile file = "friendorfoe.xmesh"  >
+	</Meshfile>
+	<BspMesh RAPID = "0"  >
+	</BspMesh>
+	<Light file = "supernova.bmp" x = "0" y = "0" z = "-2" size = ".6"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "400" Forward = "300" Retro = "311" Left = "311" Right = "311" Top = "311" Bottom = "311"  >
+		</Engine>
+		<Maneuver yaw = "311" pitch = "311" roll = "311"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense hudImage="missile-hud.spr">
+		<Hull strength = "5"  >
+		</Hull>
+	</Defense>
+	<Stats mass = "0.39" momentofinertia = ".39" fuel = "2000000"  >
+	</Stats>
+	<Computer yaw = "100" pitch = "100" roll = "100" afterburner = "230" maxspeed = "230"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "10" limit = "100"  >
+		</Reactor>
+	</Energy>
+</Unit>

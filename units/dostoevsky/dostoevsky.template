@@ -1,0 +1,57 @@
+<Unit scale ="1.58489">
+	<Light x ="0" y ="0" z ="-6.36800" file ="supernova.bmp" size ="4">
+	</Light>
+	<Mount weapon ="EMPTorpedo" size ="light-missile medium-missile heavy-missile" x ="0" y ="-.13" z ="2" ammo ="1" volume ="90">
+	</Mount>
+	<Mount x ="3.1" y ="-0.13" z ="2.35" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0" weapon ="Hephaestus-mini" size ="Light Medium Heavy Special autotracking" >
+	</Mount>
+	<Mount x ="-3.1" y ="-0.13" z ="2.35" ri ="0" rj ="0" rk ="1" qi ="0" qj ="1" qk ="0" weapon ="Hephaestus-mini" size ="Light Medium Heavy Special autotracking" >
+	</Mount>
+	<Meshfile file ="mat_hunter_hull.xmesh">
+	</Meshfile>
+	<Thrust>
+		<Engine Afterburner ="12000" Forward ="8000" Retro ="8000" Left ="8000" Right ="8000" Top ="8000" Bottom ="8000">
+		</Engine>
+		<Maneuver yaw ="8000" pitch ="8000" roll ="8000">
+		</Maneuver>
+	</Thrust>
+	<Computer yaw ="120" pitch ="120" roll ="120" afterburner ="260" maxspeed ="250">
+		<Radar itts="true" error="0" range="600000000" maxcone="-1" color="true" >
+		</Radar>
+	</Computer>
+	<Defense HudImage ="dostoevsky-hud.spr" ECM ="1.000000" RepairDroid ="6">
+		<Armor front ="75" right ="75" left ="75" back ="75">
+		</Armor>
+		<Shields front ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="125">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_2_Level4"/>
+<Upgrade file="mult_shield_regenerator"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+<Upgrade file="add_shield_2_capacitance"/>
+	<Stats mass ="42" momentofinertia ="42" fuel ="40000000">
+	</Stats>
+	<Energy>
+		<Reactor warpenergy ="450">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_2"/>
+<Upgrade file="mult_gun_cooler"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<upgrade file="add_reactor_capacitance"/>
+	<Jump delay ="1" jumpenergy ="250" insysenergy ="150">
+	</Jump>
+	<description combatrole ="FIGHTER">
+	</description>
+	<Hold volume ="30.000000">
+	</Hold>
+<Upgrade file="mult_general_upgrade"/>
+<Upgrade file="add_general_upgrade"/>
+</Unit>

@@ -1,3 +1,0 @@
-Faction: Rlaan
-
-The Rlaan faction governs all that is ruled by the Rlaan Assembly.  Homogeneous and slow to change, angering any Rlaan faction will result in angering all of them.

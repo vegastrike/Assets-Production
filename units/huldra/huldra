@@ -1,0 +1,59 @@
+<Unit scale = "4.3">
+<Meshfile file="huldrahi.xmesh"/>
+<Meshfile file="huldrasails.xmesh"/>
+<Meshfile file="huldralights.xmesh"/>
+<Meshfile file="huldraextra.xmesh"/>
+
+	<description combatrole="ESCORTCAP"/>
+       
+	<Thrust>
+		<Engine Afterburner="200000000" Forward="100000000" Retro="100000000" Left="10000000" Right="10000000" Top="10000000" Bottom="10000000"/>
+		<Maneuver yaw="10000000" pitch="10000000" roll="10000000"/>
+	</Thrust>
+
+	<Sound>
+	</Sound>
+	<Defense HudImage="huldra-hud.spr" ExplosionAni="explosion_rlaan.ani">
+		<Armor front="30000" right="20000" left="20000" back="20000"/>
+		<Shields front="1600" left="1600" right="1600" back="1600" recharge="320"/>
+		<Hull strength="1400000"/>
+	</Defense>
+	<Stats mass="22839916" momentofinertia="22839916" fuel="200000000000"></Stats>
+	<Computer yaw="60" pitch="60" roll="100" afterburner="250" maxspeed="200">
+		<Radar itts="true" color="true" range="90000000"  error="0" TrackingCone=".91" lockcone="0.1" />
+	</Computer>
+	<Energy>
+		<Reactor recharge="1500" limit="30000"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="20000"/>  
+            
+<Subunit file="rlaanturret" x="0" y="44.75" z="53.25" 
+ri="0" rj="-.65" rk="1" qi="0" qj="1" qk="0"/>
+
+<Subunit file="rlaanturret" x="27.5" y="36.5" z="-1.5" 
+ri="0" rj="1" rk="0" qi="1" qj=".375" qk="0"/>
+
+<Subunit file="rlaanturret" x="-27.5" y="36.5" z="-1.5" 
+ri="0" rj="-1" rk="0" qi="-1" qj=".375" qk="0"/>
+
+<Subunit file="rlaanturret" x="0" y="-48.5" z="38.625" 
+ri="0" rj="0" rk="-1" qi="0" qj="-1" qk="0"/>
+
+
+<Subunit file="rlaanturretpd" x="0" y="44.75" z="49.25" 
+ri="0" rj="-.65" rk="1" qi="0" qj="1" qk="0"/>
+
+<Subunit file="rlaanturretpd" x="27.5" y="36.5" z="-5.5" 
+ri="0" rj="1" rk="0" qi="1" qj=".375" qk="0"/>
+
+<Subunit file="rlaanturretpd" x="-27.5" y="36.5" z="-5.5" 
+ri="0" rj="-1" rk="0" qi="-1" qj=".375" qk="0"/>
+
+<Subunit file="rlaanturretpd" x="0" y="-48.5" z="34.625" 
+ri="0" rj="0" rk="-1" qi="0" qj="-1" qk="0"/>
+
+<mount weapon="hellspawn" x="0" y="-46" z="34" ri="0" rj="-1" rk="0" ammo="4"/>
+<mount weapon="icepick" x="0" y="-40" z="40"/>
+<dock size="30" x="0" y="-45" z="-120" />
+
+</Unit>
