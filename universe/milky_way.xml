@@ -2200,7 +2200,7 @@ stone"/>
 				<var name="num_moons" value="3"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="enigma_sector/callimachius enigma_sector/niven enigma_sector/tesla enigma_sector/ghorah_khar enigma_sector/zelanzny enigma_sector/ktithrak_mang enigma_sector/bradbury enigma_sector/mccaffrey enigma_sector/arraman gemini_sector/blake gemini_sector/heinlein"/>
+				<var name="jumps" value="enigma_sector/callimachius enigma_sector/niven enigma_sector/tesla enigma_sector/ghorah_khar enigma_sector/zelanzny enigma_sector/ktithrak_mang enigma_sector/bradbury enigma_sector/mccaffrey enigma_sector/arraman enigma_sector/blake gemini_sector/heinlein"/>
 				<var name="num_natural_phenomena" value="3"/>
 				<var name="num_starbases" value="2"/>
 				<var name="data" value="2681"/>
@@ -2462,7 +2462,7 @@ stone"/>
 				<var name="num_moons" value="4"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="false"/>
-				<var name="jumps" value="gemini_sector/niven gemini_sector/adams gemini_sector/dyson gemini_sector/gibson gemini_sector/brin gemini_sector/crichton"/>
+				<var name="jumps" value="gemini_sector/niven enigma_sector/adams gemini_sector/dyson gemini_sector/gibson gemini_sector/brin gemini_sector/crichton"/>
 				<var name="num_natural_phenomena" value="2"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1197"/>
