@@ -19,7 +19,7 @@
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
 </Distance>
-<Appearance file="dumbfire" soundwav="sfx00.wav">
+<Appearance file="dumbfire" soundwav="missile_3.wav">
 </Appearance>
 </Missile>
 
@@ -32,7 +32,7 @@
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
 </Distance>
-<Appearance file="dumbfire" >
+<Appearance file="dumbfire" soundwav="missile_3.wav">
 </Appearance>
 </Missile>
 
