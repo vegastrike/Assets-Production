@@ -10,7 +10,7 @@ module explore_rare_enemies {
   void initgame(){
     lasttime=0.0;
     drone=0;
-    waittime=random.random(10.0,30000.0);
+    waittime=random.random(10.0,35000.0);
     faction_ships.make_ships_list();
   };
 
