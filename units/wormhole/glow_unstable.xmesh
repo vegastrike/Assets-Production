@@ -240,6 +240,14 @@
 		<Location x="-1.50942412347e-07" y="-1" z="-1"/>
 		<Normal i="-1.0" j="0.0" k="0.0"/>
 	</Point>
+	<Point>
+		<Location x="2" y="2" z="2"/>
+		<Normal i="2.0" j="2.0" k="2.0"/>
+	</Point>
+	<Point>
+		<Location x="-2" y="-2" z="-2"/>
+		<Normal i="2.0" j="2.0" k="2.0"/>
+	</Point>
 </Points>
 
 <Polygons>
@@ -333,6 +341,17 @@
 	<Vertex point="58" s="1.0" t="1"/>
 	<Vertex point="59" s="1.0" t="0"/>
 </Quad>
+<Tri>
+	<Vertex point="60" s="0.0" t="0"/>
+	<Vertex point="60" s="0.0" t="1"/>
+	<Vertex point="60" s="1.0" t="1"/>
+</Tri>
+<Tri>
+	<Vertex point="61" s="1.0" t="0"/>
+	<Vertex point="61" s="1.0" t="0"/>
+	<Vertex point="61" s="1.0" t="0"/>
+</Tri>
+
 </Polygons>
  <material reflect="0">
  </material>
