@@ -1,4 +1,12 @@
 all_faction_name_global = {
+
+#nicks -> singular
+#nickp -> plural
+#dnicks -> derogatory nick singular
+#dnickp -> derogatory nick plural
+#mstandname -> standard male name
+#fstandname -> standard female name
+
 "alltags" :
 ["full","nicks","nickp","dnicks","dnickp","government","possessive","homeworld","mstandname","fstandname"]
 
@@ -18,64 +26,74 @@ all_faction_name_global = {
 		,"nickp" : "Andolians"
 		,"dnicks": "Link-Junky"
 		,"dnickp": "Link-Junkies"
-		,"government" : "Andolian Senate"
+		,"government" : "Andolian Forum"
 		,"possessive" : "Andolian"
+		,"homeworld" : "Regulus"
 		,"mstandname": "Aarron Kester"
 		,"fstandname": "Amy Jalarki"
 		}
 ,"highborn":	{"full" : "Highborn"
 		,"nicks": "Highborn"
 		,"nickp": "Highborn"
-		,"dnicks":"Lowborn"
-		,"dnickp":"Lowborn"
-		,"government":"Highborn Electors"
+		,"dnicks":"Creditblood"
+		,"dnickp":"Creditbloods"
+		,"government":"Highborn Board of Exectives"
 		,"possessive":"Highborn's"
-		,"mstandname":"Fredrick Kennedy"
-		,"fstandname":"Isabella Miranda"
+		,"homeworld" : "Rand"
+		,"mstandname":"Fredrick Vanderbildt"
+		,"fstandname":"Isabella Iacocca"
 		}
 ,"shaper":	{"full": "Shaper"
 		,"nicks": "Shaper"
 		,"nickp":"Shapers"
-		,"dnicks":"Control Freak"
-		,"dnickp":"Control Freaks"
+		,"dnicks":"FrankenGenie"
+		,"dnickp":"FrankenGenies"
 		,"government":"Shaper Directorate"
 		,"possessive":"Shaper's"
+		,"homeworld" :"Bifröst"
+		,"mstandname":"Gunther Mueller"
+		,"fstandname":"Heather Madsen"
 		}
 ,"unadorned":	{"full" : "Unadorned"
 		,"nicks": "Unadorned"
 		,"nickp": "Unadorned"
-		,"dnicks":"Unheard of"
-		,"dnickp":"Unworthy"
+		,"dnicks":"Schitz-Vulcan"
+		,"dnickp":"Schitz-Vulcans"
 		,"government":"Unadorned Representatives"
 		,"possessive":"Unadorned's"
+		,"homeworld" : "Logos"
+		,"mstandname" : "Beta-Andro Pi-e-Phi"
+		,"fstandname" : "Alpha-Gyn Kappa-i-Phi"
 		}
 ,"purist":	{"full" : "Purist"
 		,"nicks" : "Purist"
 		,"nickp" : "Purists"
-		,"dnicks" : "Unpure"
-		,"dnickp" : "Unpures"
+		,"dnicks" : "Nostalgist"
+		,"dnickp" : "Nostalgists"
 		,"government": "Purist Regents"
 		,"possessive":"Purists'"
+		,"homeworld" : "Earth"
 		}
-,"forsaken":	{"full" : "The Union of Lost Settlers"
+,"forsaken":	{"full" : "The Union of Dispossessed Settlers"
 		,"nicks":"Forsaken"
 		,"nickp":"Forsaken"
-		,"dnicks":"Lost Soul"
-		,"dnickp":"Lost Souls"
-		,"government": "Lost Settlers Council"
+		,"dnicks":"Frost Baby"
+		,"dnickp":"Frost Babies"
+		,"government": "Dispossessed Settlers Council"
 		,"possessive":"Forsaken"
+		,"homeworld" : "Gehenna"
 		}
-,"LIHW":	{"full" : "League Of Independent Worlds"
+,"LIHW":	{"full" : "League Of Independent Human Worlds"
 		,"nicks":"LIHW"
 		,"nickp":"LIHW"
-		,"dnicks":"Indep"
-		,"dnickp":"Indeps"
+		,"dnicks":"Patchworker"
+		,"dnickp":"Patchworkers"
 		,"government":"League Of Independent Worlds Council"
 		,"possessive":"LIHW"
 		}
-,"merchant" :	{"full" : "Merchant Union"
-		,"nicks" : "trader"
-		,"nickp" : "traders"
+,"merchant" :	{"full" : "Merchant's Union"
+		,"nicks" : "Merchie"
+		,"nickp" : "Merchies"
 		,"dnicks" : "pill popper"
 		,"dnickp" : "pill poppers"
 		,"government" : "Merchant Union Council"
@@ -85,15 +103,15 @@ all_faction_name_global = {
 		,"fstandname" : "Amanda Barnard"
 		}
 ,"homeland-security" : {"full" : "Homeland Security Force"
-		,"nicks" : "police"
-		,"nickp" : "police"
-		,"dnicks": "po'"
-		,"dnickp": "fuzz"
+		,"nicks" : "Enforcer"
+		,"nickp" : "Enforcers"
+		,"dnicks": "Jackboot"
+		,"dnickp": "Fuzz"
 		,"government" : "High Commission"
 		,"possessive" : "police"
 		,"homeworld" : "Earth"
 		,"mstandname" : "Barry Matthews"
-		,"fstandname" : "Jannette Karoen"
+		,"fstandname" : "Jeanette Karoen"
 		}
 ,"militia" :	{"full" : "Confederate Police Force"
 		,"nicks" : "police"
@@ -104,7 +122,7 @@ all_faction_name_global = {
 		,"possessive" : "militia"
 		,"homeworld" : "Earth"
 		,"mstandname" : "Barry Mathews"
-		,"fstandname" : "Jannette Karoen"
+		,"fstandname" : "Janet Karoen"
 		}
 
 ,"aera" :	{"full" : "Aeran Ascendency"
@@ -125,14 +143,15 @@ all_faction_name_global = {
 		,"possessive" : "Retro's"
 		,"homeworld" : "Eden"
 		}
-,"luddites":	{"full" : "Anti-Technologist Front"
-		,"nicks": "Anti-Technologist"
-		,"nickp": "Anti-Technologists"
+,"luddites":	{"full" : "Interstellar Church of True Form's Return"
+		,"nicks": "True-Former"
+		,"nickp": "True-Formers"
 		,"dnicks": "Luddite"
 		,"dnickp": "Luddites"
 		,"government" : "Clergy"
 		,"possessive" : "Luddite's"
-		,"homeworld" : "Eden"
+		,"mstandname" : "Brother Maynard"
+		,"fstandname" : "Sister Keyes"
 		}
 ,"rlaan" :	{"full" : "Rlaan Sovereignty"
 		,"nicks" : "Rlaan"
@@ -158,8 +177,8 @@ all_faction_name_global = {
 ,"hunter" :	{"full" : "Bounty Hunter's Guild"
 		,"nicks" : "Bounty Hunter"
 		,"nickp" : "Bounty Hunters"
-		,"dnicks" : "Slime Slinger"
-		,"dnickp" : "Rat Wringers"
+		,"dnicks" : "Vulture"
+		,"dnickp" : "Vultures"
 		,"government" : "Hunter's Guild Council"
 		,"possessive" : "Hunter's"
 		,"homeworld" : "Earth"
@@ -188,20 +207,20 @@ all_faction_name_global = {
 ,"uln":		{"full":"Uln"
 		,"nicks":"Uln"
 		,"nickp":"Uln"
-		,"dnicks":"Less than brilliant one"
-		,"dnickp":"Less than clever ones"
-		,"government":"Uln Representative Democracy"
+		,"dnicks":"Blockhead"
+		,"dnickp":"Blockheads"
+		,"government":"Sul-gatwa Lordship"
 		,"possessive":"Uln's"
-		,"homeworld": "Ulnia"
+		,"homeworld": "Ingatwa"
 		}
 ,"dgn":		{"full":"Dgn"
 		,"nicks":"Dgn"
 		,"nickp":"Dgn"
-		,"dnicks":"Needed One"
-		,"dnickp":"Needed Ones"
-		,"government":"Dgn Representative Democracy"
+		,"dnicks":"Salamander"
+		,"dnickp":"Salamanders"
+		,"government":"Dgn "
 		,"possessive":"Dgn's"
-		,"homeworld": "Dgnia"
+		,"homeworld": "Beckett's Murky Venture"
 		}
 ,"rlaan-briin" :{"full" : "Rlaan-Briin"
 		,"nicks" : "Briin"
@@ -226,12 +245,7 @@ all_faction_name_global = {
 
 def allFactionNames():
 # returns a dictionary containing all the variations on faction names known to man
-#nicks -> singular
-#nickp -> plural
-#dnicks -> derogatory nick singular
-#dnickp -> derogatory nick plural
-#mstandname -> standard male name
-#fstandname -> standard female name
+
 	return all_faction_name_global
 
 
