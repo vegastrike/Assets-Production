@@ -235,7 +235,7 @@
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Light">
 			<Cargo file="afterburner_generic" price="3000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="thruster_retrofit" price="40000" quantity="1" mass=".01" volume="1"/>
+<!--			<Cargo file="thruster_retrofit" price="40000" quantity="1" mass=".01" volume="1"/>-->
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Medium">
 			<Cargo file="afterburner" price="16000" quantity="1" mass=".01" volume="1"/>
@@ -245,8 +245,8 @@
 		<Category file="upgrades/Engines/Engine_Enhancements_Heavy">
 			<Cargo file="mult_maneuver_enhancer" price="200000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="mult_speed_enhancer" price="250000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="thruster_upgrade" price="400000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="replacement_thrusters" price="300000" quantity="1" mass=".01" volume="1"/>
+<!--			<Cargo file="thruster_upgrade" price="400000" quantity="1" mass=".01" volume="1"/>-->
+<!--			<Cargo file="replacement_thrusters" price="300000" quantity="1" mass=".01" volume="1"/>-->
 		</Category>
 		<Category file="upgrades/Shield_Systems/Light">
 			<Cargo file="shield_2" price="3500" quantity="1" mass=".01" volume="1"/>
