@@ -10,38 +10,43 @@
 <!--<diffuse red="1" green=".7" blue="0"/>-->
 <!--<attenuated red=".00000001" blue=".00000015"/>-->
 <attenuated red="0" blue=".0000001"/>
-</Light>
+</Light>	
+<Light>
+<ambient red="1" green=".1" blue="0"/>
+<!--<diffuse red="1" green=".7" blue="0"/>-->
+<!--<attenuated red=".00000001" blue=".00000015"/>-->
+<attenuated red="0" blue=".0000001"/>
+</Light>	
 
-        <planet name="sun" file="sun.bmp" radius="2200" gravity="20" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" velocity="0" position="0" Red=".7" Green=".7" Blue=".7" light="0 1l">
-		<planet name="Mercury" file="mercury.bmp" radius="220" gravity="20" ri="8000" rj="0" rk="0" si="0" sj="0" sk="12000" velocity="5" position="0.25">
+        <planet name="sun" file="sun.bmp" radius="25000" gravity="20" x="30000"  Red=".7" Green=".7" Blue=".7" light="0 1l">
+		<planet name="Mercury" file="mercury.bmp" radius="1020" gravity="20" ri="34000" rj="0" rk="0" si="0" sj="0" sk="34000" velocity="5" position="0.25">
 		</planet>
-<unit name= "Victory"  file="drydock" faction="confed" ri="6000" rj="0" rk="0" si="0" sj="0" sk="8000" velocity="5" position="0">
+<unit name= "Victory"  file="drydock" faction="confed" ri="28000" rj="0" rk="0" si="0" sj="0" sk="28000" velocity="5" position="100">
 </unit>
 
-<planet name="Venus" file="venus.bmp" radius="250" gravity="20" ri="10000" rj="0" rk="0" si="0" sj="0" sk="12000" velocity="8" position="1.5">
+<planet name="Venus" file="venus.bmp" radius="2000" gravity="20" ri="40000" rj="0" rk="0" si="0" sj="0" sk="40000" velocity="8" position="1.5">
 <unit name= "Victory1"  file="drydock" ri="600" rj="0" rk="0" si="0" sj="0" sk="800" velocity="5" position="0">
 </unit>
 
 		</planet>
-		<planet name="Earth" file="earth.bmp" radius="300" gravity="20" ri="14000" rj="0" rk="0" si="0" sj="0" sk="16000" velocity="10" position="2.875">
-			<planet name="Moon" file="moon.bmp" radius="80" gravity="20" ri="600" rj="0" rk="0" si="0" sj="0" sk="1200" velocity="2" position="0">
+		<planet name="Earth" file="earth.bmp" radius="3000" gravity="20" ri="57000" rj="0" rk="0" si="0" sj="0" sk="57000" velocity="10" position="2.875">
+			<planet name="Moon" file="moon.bmp" radius="800" gravity="20" ri="10000" rj="0" rk="0" si="0" sj="0" sk="10000" velocity="2" position="0">
 			</planet>
 
 		</planet>
-		<planet name="Mars" file="mars.bmp" faction="neutral" radius="380" gravity="20" ri="12000" rj="0" rk="0" si="0" sj="0" sk="12000" velocity="20" position="0.750">
+		<planet name="Mars" file="mars.bmp" faction="neutral" radius="3800" gravity="20" ri="75000" rj="0" rk="0" si="0" sj="0" sk="75000" velocity="20" position="0.750">
 		</planet>
          
-		<planet name="Jupiter" file="jupiter.bmp" radius="1700" gravity="20" ri="25000" rj="0" rk="0" si="0" sj="0" sk="30000" velocity="15" position="-1.625">
+		<planet name="Jupiter" file="jupiter.bmp" radius="10000" gravity="20" ri="120000" rj="0" rk="0" si="0" sj="0" sk="100000" velocity="15" position="-1.625">
 		</planet>
-		<planet name="Saturn" file="saturn.bmp" radius="1300" gravity="20" ri="28000" rj="0" rk="0" si="0" sj="0" sk="34000" velocity="15" position="-2.5">
+		<planet name="Saturn" file="saturn.bmp" radius="9000" gravity="20" ri="160000" rj="0" rk="0" si="0" sj="0" sk="180000" velocity="15" position="-2.5">
 			<unit name = "SaturnRing" file="planetary-ring"/>
 		</planet>
-		<planet name="Uranus" file="uranus.bmp" radius="550" gravity="20" ri="40000" rj="0" rk="0" si="0" sj="0" sk="40000" velocity="20" position="0.125">
+		<planet name="Uranus" file="uranus.bmp" radius="1400" gravity="20" ri="220000" rj="0" rk="0" si="0" sj="0" sk="200000" velocity="20" position="0.125">
 		</planet>
-		<planet name="Neptune" file="neptune.bmp" radius="600" gravity="20" ri="50000" rj="0" rk="0" si="0" sj="0" sk="50000" velocity="40" position="1.250">
+		<planet name="Neptune" file="neptune.bmp" radius="2200" gravity="20" ri="240000" rj="0" rk="0" si="0" sj="0" sk="280000" velocity="40" position="1.250">
 		</planet>
-		<planet name="Pluto" file="pluto.bmp" radius="200" gravity="20" ri="40000" rj="0" rk="0" si="0" sj="0" sk="60000" velocity="50" position="2.375">
+		<planet name="Pluto" file="pluto.bmp" radius="600" gravity="20" ri="300000" rj="0" rk="0" si="0" sj="0" sk="250000" velocity="50" position="2.375">
 		</planet>
 	</planet>
-
 </system>
