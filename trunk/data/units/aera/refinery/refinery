@@ -26,30 +26,33 @@
 <Subunit file="turret" x="-7.333333" y="20.000000" z="-23.333334" ri="0.581238" rj="0.000000" rk="0.813733" qi="-0.000000" qj="1.000000" qk="0.000000"/>
 <Subunit file="turret" x="23.333334" y="20.000000" z="-7.333333" ri="-0.813733" rj="0.000000" rk="0.581238" qi="0.000000" qj="1.000000" qk="-0.000000"/>
 <Subunit file="turret" x="23.333334" y="20.000000" z="7.333333" ri="0.813733" rj="0.000000" rk="0.581238" qi="-0.000000" qj="1.000000" qk="0.000000"/>
-<!-- TEMPORARY ASSINAGE ONLY!!!!!!!!! copy confed ref -->
-<!--Last Edited by: Vortis-->
-<!--17MAY01-->
 	<Hold volume="100000000000">
 		<Category file="Natural_Products/Food">
-			<import price="1.2" pricestddev=".1" quantity="1" quantitystddev="1"/>
+			<import price=".2" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Natural_Products/Aera_Food">
+			<import price="2.0" pricestddev=".1" quantity="10" quantitystddev="2"/>
 		</Category>
 		<Category file="Natural_Products/Liquor">
-			<import price="1.3" pricestddev=".1" quantity="3" quantitystddev="2"/>
+			<import price=".2" pricestddev=".1" quantity="3" quantitystddev="2"/>
 		</Category>
 		<Category file="Natural_Products/Plants">
-			<import price=".7" pricestddev=".1" quantity="0" quantitystddev="0"/>
+			<import price=".2" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Natural_Products/Natural_Resources">
-			<import price=".9" pricestddev=".1" quantity="0" quantitystddev="0"/>
+			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Crude">
 			<import price="1.2" pricestddev=".1" quantity="12" quantitystddev="5"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Precious">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+			<import price=".2" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Alloys">
 			<import price=".8" pricestddev=".2" quantity="38" quantitystddev="12"/>
+		</Category>
+		<Category file="Raw_Materials/Metals/Aera_Alloys">
+			<import price=".6" pricestddev=".6" quantity="38" quantitystddev="12"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Radioactive">
 			<import price=".8" pricestddev=".1" quantity="25" quantitystddev="10"/>
@@ -61,13 +64,16 @@
 			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Raw_Materials/Stone">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+			<import price=".4" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Fuels/Crude">
-			<import price="1.3" pricestddev=".3" quantity="4" quantitystddev="2"/>
+			<import price="1.4" pricestddev=".3" quantity="4" quantitystddev="2"/>
 		</Category>
 		<Category file="Fuels/Refined">
 			<import price=".7" pricestddev=".2" quantity="28" quantitystddev="25"/>
+		</Category>
+		<Category file="Fuels/Aera_Refined">
+			<import price=".5" pricestddev=".2" quantity="28" quantitystddev="25"/>
 		</Category>
 		<Category file="Compressed_Gasses">
 			<import price="1.1" pricestddev=".1" quantity="10" quantitystddev="5"/>
@@ -79,19 +85,22 @@
 			<import price="1.1" pricestddev=".1" quantity="10" quantitystddev="4"/>
 		</Category>
 		<Category file="Supplies/Aerospace_Supplies">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+			<import price=".6" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Supplies/Agriculteral_Supplies">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+			<import price=".6" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Supplies/Mining_Supplies">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+			<import price=".6" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Supplies/Construction_Supplies">
-			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+			<import price=".6" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Supplies/Medical_Supplies">
-			<import price="1.1" pricestddev=".1" quantity="5" quantitystddev="3"/>
+			<import price=".4" pricestddev=".1" quantity="5" quantitystddev="3"/>
+		</Category>
+		<Category file="Supplies/Aera_Medical_Supplies">
+			<import price="2" pricestddev=".1" quantity="5" quantitystddev="3"/>
 		</Category>
 		<Category file="Electronics">
 			<import price=".9" pricestddev=".1" quantity="1" quantitystddev="1"/>
@@ -103,10 +112,16 @@
 			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Entertainment">
-			<import price=".9" pricestddev=".1" quantity="0" quantitystddev="0"/>
+			<import price=".7" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Entertainment/Aera">
+			<import price="1.5" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Contraband">
 			<import price="0.8" pricestddev=".1" quantity="0" quantitystddev="0"/>
+		</Category>
+		<Category file="Contraband/Aera">
+			<import price="1.0" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="starships/Aera/Light">
 			<import price="1" pricestdev=".1" quantity="12" quantitystddev="6" />

@@ -66,13 +66,16 @@
 <Subunit file="turret" x="-60" y="-100.000000" z="-60" ri="0.707107" rj="0.000000" rk="-0.707107" qi="0.000000" qj="-1.000000" qk="0.000000"/>
 	<Hold volume="100000000000">
 		<Category file="Natural_Products/Food">
-			<import price="1.1" pricestddev=".2" quantity="0" quantitystddev="2"/>
+			<import price=".5" pricestddev=".2" quantity="0" quantitystddev="2"/>
+		</Category>
+		<Category file="Natural_Products/Aera_Food">
+			<import price="1.9" pricestddev=".2" quantity="0" quantitystddev="2"/>
 		</Category>
 		<Category file="Natural_Products/Liquor">
-			<import price="1.05" pricestddev=".1" quantity="0" quantitystddev="1"/>
+			<import price=".4" pricestddev=".1" quantity="0" quantitystddev="1"/>
 		</Category>
 		<Category file="Natural_Products/Plants">
-			<import price=".9" pricestddev=".1" quantity="0" quantitystddev="0"/>
+			<import price=".4" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Natural_Products/Natural_Resources">
 			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
@@ -84,7 +87,10 @@
 			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Alloys">
-			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="2"/>
+			<import price="1.05" pricestddev=".1" quantity="0" quantitystddev="2"/>
+		</Category>
+		<Category file="Raw_Materials/Metals/Aera_Alloys">
+			<import price="1.07" pricestddev=".05" quantity="0" quantitystddev="2"/>
 		</Category>
 		<Category file="Raw_Materials/Metals/Radioactive">
 			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
@@ -102,7 +108,10 @@
 			<import price=".8" pricestddev=".1" quantity="0" quantitystddev="0"/>
 		</Category>
 		<Category file="Fuels/Refined">
-			<import price="1.1" pricestddev=".3" quantity="0" quantitystddev="1"/>
+			<import price="1" pricestddev=".3" quantity="0" quantitystddev="1"/>
+		</Category>
+		<Category file="Fuels/Aera_Refined">
+			<import price="1" pricestddev=".3" quantity="0" quantitystddev="1"/>
 		</Category>
 		<Category file="Compressed_Gasses">
 			<import price="1.1" pricestddev=".1" quantity="0" quantitystddev="1"/>
@@ -150,25 +159,16 @@
 		<Category file="Contraband">
 			<import price="0" pricestddev="0" quantity="0" quantitystddev="0"/>
 		</Category>
-		<Category file="starships/Confed/Light">
+		<Category file="starships/Aera/Light">
 			<import price="1" pricestdev=".1" quantity="0" quantitystddev="10" />
 		</Category>
-		<Category file="starships/Confed/Medium">
+		<Category file="starships/Aera/Medium">
 			<import price="1" pricestdev=".1" quantity="0" quantitystddev="7" />
 		</Category>
-		<Category file="starships/Confed/Heavy">
+		<Category file="starships/Aera/Heavy">
 			<import price="1" pricestdev=".1" quantity="0" quantitystddev="5" />
 		</Category>
-		<Category file="starships/Confed/Milspec">
-			<import price="1" pricestdev=".1" quantity="0" quantitystddev="2" />
-		</Category>
-		<Category file="starships/Militia/Light">
-			<import price="1" pricestdev=".1" quantity="0" quantitystddev="7" />
-		</Category>
-		<Category file="starships/Militia/Medium">
-			<import price="1" pricestdev=".1" quantity="0" quantitystddev="5" />
-		</Category>
-		<Category file="starships/Militia/Heavy">
+		<Category file="starships/Aera/Milspec">
 			<import price="1" pricestdev=".1" quantity="0" quantitystddev="2" />
 		</Category>
 		<Category file="upgrades/Weapons/Mounted_Guns_Light">
@@ -180,7 +180,7 @@
 		<Category file="upgrades/Weapons/Mounted_Guns_Heavy">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="3"/>
 		</Category>
-		<Category file="upgrades/Weapons/Mounted_Guns_Confed_Milspec">
+		<Category file="upgrades/Weapons/Mounted_Guns_Aera_Milspec">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
 		</Category>
 		<Category file="upgrades/Weapons/Beam_Arrays_Light">
@@ -192,7 +192,7 @@
 		<Category file="upgrades/Weapons/Beam_Arrays_Heavy">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="1"/>
 		</Category>
-		<Category file="upgrades/Weapons/Beam_Arrays_Confed_Milspec">
+		<Category file="upgrades/Weapons/Beam_Arrays_Aera_Milspec">
 			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Weapons/Mount_Enhancements">
@@ -213,7 +213,7 @@
 		<Category file="upgrades/Engines/Heavy">
 			<import price="1" pricestdev=".1" quantity="0" quantitystddev="2" />
 		</Category>
-		<Category file="upgrades/Engines/Confed_Milspec">
+		<Category file="upgrades/Engines/Aera_Milspec">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Light">
@@ -234,7 +234,7 @@
 		<Category file="upgrades/Shield_Systems/Heavy">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="1"/>
 		</Category>
-		<Category file="upgrades/Shield_Systems/Confed_Milspec">
+		<Category file="upgrades/Shield_Systems/Aera_Milspec">
 			<import price="1" pricestddev=".1" quantity="-2" quantitystddev="5"/>
 		</Category>
 		<Category file="upgrades/Armor_Modification">
@@ -246,7 +246,7 @@
 		<Category file="upgrades/Hull_Upgrades">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="5"/>
 		</Category>
-		<Category file="upgrades/Hull_Upgrades/Confed_Milspec">
+		<Category file="upgrades/Hull_Upgrades/Aera_Milspec">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="2"/>
 		</Category>
 		<Category file="upgrades/ECM_Systems">
@@ -276,7 +276,7 @@
 		<Category file="upgrades/Miscellaneous">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="5"/>
 		</Category>
-		<Category file="upgrades/Miscellaneous/Confed_Milspec">
+		<Category file="upgrades/Miscellaneous/Aera_Milspec">
 			<import price="1" pricestddev=".1" quantity="0" quantitystddev="1"/>
 		</Category>
 		<Category file="upgrades/Ammunition">
@@ -286,8 +286,8 @@
 			<import price="1.4" pricestddev=".2" quantity="0" quantitystddev="0"/>
 		</Category>
 	</Hold>
-	<Upgrade file="standard_missions"/>
-	<Upgrade file="confed_missions"/>
+	<Upgrade file="aera_mil_missions"/>
+	<Upgrade file="aera_missions"/>
 
 
 </Unit>
