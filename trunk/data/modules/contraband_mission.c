@@ -24,6 +24,11 @@ module contraband_mission {
 	int good_dest;
 
 	void init (object cargo, float distance, float creds, int diff, int ships, float bad_pct) {
+		object you=_unit.getPlayer();
+		if (_std.isNull(you)) {
+			_std.terminateMission (false);
+			return;
+		}
 		faction_ships.init();
 		nr_ships=ships;
 		sys_giterator=0;
@@ -47,12 +52,7 @@ module contraband_mission {
 		cred=creds;
 		dist=distance;
 		cargoname=cargo;
-		object you=_unit.getPlayer();
 		youcontainer=_unit.getContainer (you);
-		if (_std.isNull(you)) {
-			_std.terminateMission (false);
-			return;
-		}
 		object str=_string.new();
 		object name=(_unit.getName(you));
 		_io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
@@ -76,6 +76,25 @@ module contraband_mission {
 		_string.delete(str);
 	};
 	void Terminate (object you) {
+		object jump=_unit.getUnitFromContainer(jumpcontainer);
+		_unit.deleteContainer(jumpcontainer);
+		_unit.deleteContainer(youcontainer);
+		int i=0;
+		int siz=_olist.size(goodolist);
+		object cont;
+		while(i<siz) {
+			cont=_olist.at(goodolist,i);
+			_unit.deleteContainer(cont);
+			i=i+1;
+		}
+		i=0;
+		siz=_olist.size(badolist);
+		object cont;
+		while(i<siz) {
+			cont=_olist.at(badolist,i);
+			_unit.deleteContainer(cont);
+			i=i+1;
+		}
 		_olist.delete(goodolist);
 		_olist.delete(badolist);
 		if (_std.isNull(you)) {
@@ -101,14 +120,13 @@ module contraband_mission {
 				if (difficulty>=2) {
 					_io.message (0,"game","all","And your idiocy will be punished.");
 					_io.message (0,"game","all","You had better run for what little life you have left.");
-					int i=0;
+					i=0;
 					object un;
 					if ((bad_left+good_dest)>nr_waves) {
 						difficulty=difficulty*((bad_left+good_dest)/nr_waves);
 					}
 					object faction;
 					object youfaction=_unit.getFaction(you);
-					object jump=_unit.getUnitFromContainer(jumpcontainer);
 					if (_std.isNull(jump)) {
 						jump=you;
 					}
@@ -156,6 +174,7 @@ module contraband_mission {
 				if (_std.isNull(olistun)) {
 					good_dest=good_dest+1;
 					all_left=all_left-1;
+					_unit.deleteContainer(olistcont);
 					_olist.erase(goodolist,good_iterator);
 				}
 			}
@@ -171,6 +190,7 @@ module contraband_mission {
 				if (_std.isNull(olistun)) {
 					bad_left=bad_left-1;
 					all_left=all_left+1;
+					_unit.deleteContainer(olistcont);
 					_olist.erase(badolist,bad_iterator);
 				}
 			}
