@@ -1,4 +1,4 @@
-<Unit scale="2">
+<Unit>
 <Meshfile file="avenger-hull-e.xmesh"/>
 <Meshfile file="avenger-hull-w.xmesh"/>
 <Meshfile file="avenger-hull-p.xmesh"/>
@@ -18,16 +18,16 @@
 	</Sound>
 
 	<Defense HudImage="avenger-hud.spr" RepairDroid="6"  ecm=".3">
-		<Armor front="390" right="350" left="350" back="300"/>
-		<Shields front="400.0" right="370" left="370"  back="350.000000" recharge="30.000000"/>
+		<Armor front="425" right="383" left="383" back="408"/>
+		<Shields front="600.0" right="520" left="520"  back="570.000000" recharge="30.000000"/>
 		<Cloak cloakmin=".25" cloakrate=".1" cloakenergy="79.0"/>
-		<Hull strength="200.000000"/>
+		<Hull strength="250.000000"/>
 	</Defense>
 
 	<Stats mass="16.000000" momentofinertia="16.000000" fuel="170000000">
 	</Stats>
 
-	<Computer yaw="70.400002" pitch="60.600006" roll="80.400002" afterburner="148" maxspeed="65">
+	<Computer yaw="60.400002" pitch="50.600006" roll="70.400002" afterburner="148" maxspeed="65">
                 <Radar itts="true" error="0" range="75000" maxcone="-1" color="true"/>
 	</Computer>
 
@@ -40,26 +40,27 @@
 	<description>
 	</description>
 
+	<Hold volume="30">
+	</Hold>
 
-        <Mount weapon="ParticleBeam" size="light medium heavy capship-light" x="-29.815" y="-6.919" z="30.409"/>
-        <Mount weapon="ParticleBeam" size="light medium heavy capship-light" x="29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="ParticleBeam" size="heavy capship-light" x="-29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="ParticleBeam" size="heavy capship-light" x="29.815" y="-6.919" z="30.409"/>
 	<Mount weapon="Penetrator" size="capship-light capship-medium" x="-4.0" y="-4.618" z="19.606" />
 	<Mount weapon="Penetrator" size="capship-light capship-medium" x="4.0" y="-4.618" z="19.606" />
-	<Mount weapon="Penetrator" size="light medium heavy special capship-light capship-medium" x="0.0" y="-4.618" z="19.606" />
+	<Mount weapon="Penetrator" size="capship-light capship-medium" x="0.0" y="-4.618" z="19.606" />
 
-	<Mount weapon="CapIFF" size="heavy-missile light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
-	<Mount weapon="CapIFF" size="heavy-missile light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
-	<Mount weapon="CapshipMissile" size="heavy-missile light-capship-missile heavy-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="100"/>
-	<Mount weapon="CapshipMissile" size="heavy-missile light-capship-missile heavy-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="100"/>
-	<Mount weapon="Mace" size="medium-missile heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
-	<Mount weapon="Mace" size="medium-missile heavy-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
-	<Mount weapon="Torpedo" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="700"/>
-	<Mount weapon="Torpedo" size="heavy-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="700"/>
-	<Mount weapon="Hail" size="special special-missile" x="-10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
-        <Mount weapon="Hail" size="special special-missile" x="10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
+	<Mount weapon="CapIFF" size="light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
+	<Mount weapon="CapIFF" size="light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
+	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>
+	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>
+	<Mount weapon="Maul" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
+	<Mount weapon="Maul" size="heavy-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
+	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="700"/>
+	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="700"/>
+	<Mount weapon="Hail" size="special-missile" x="-10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
+        <Mount weapon="Hail" size="special-missile" x="10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
 	
-        <subunit file="turret" x="0" y="4.6" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
-        <subunit file="turret" x="0" y="-4.7" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
-	<Hold volume="150">
-	</Hold>
+        <subunit file="turret" x="0" y="5.3" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
+        <subunit file="turret" x="0" y="-5.5" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+
 </Unit>
