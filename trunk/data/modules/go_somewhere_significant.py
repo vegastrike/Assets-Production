@@ -35,7 +35,7 @@ class go_somewhere_significant:
         self.capship=1
         print "orbitee %s " % self.orbitee
         if (dyn_fg==""):
-          significant=launch.launch_wave_around_unit("Base",capshipfaction,newship,"sitting_duck",1,2000.0,5000.0,significant,10000,"")
+          significant=launch.launch_wave_around_unit("Base",capshipfaction,newship,"sitting_duck",1,2000.0,5000.0,significant,"")
         else:
           significant=launch_recycle.launch_dockable_around_unit(dyn_fg,capshipfaction,"sitting_duck",1,2500,significant,"")
     else:

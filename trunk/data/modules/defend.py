@@ -97,6 +97,8 @@ class defend (Director.Mission):
 	    L.ai="default";L.num=1;L.minradius=2000.0;L.maxradius=4500.0
 	    L.faction=self.faction
 	    launched=L.launch(you)
+	    if (count==0):		
+	        self.you.SetTarget(launched)		
 
             if (self.defend):
                 launched.SetTarget (jp)
@@ -157,7 +159,5 @@ class defend (Director.Mission):
 		
 def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base,p_faction='',jumps=(),var_to_set=''):
     enq=minenquant
-    if(minenquant<maxenquant):
-        print "error minquant "+minenquant+" max quant "+ maxenquant
-        enq=vsrandom.randrange(minenquant,maxenquant)	
+    enq=vsrandom.uniform(minenquant,maxenquant)	
     return defend(factionname,numsysaway,enq,8000.0,100000.0,enq*credperen,defendit,defend_base,p_faction,jumps,var_to_set)

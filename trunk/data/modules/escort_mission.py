@@ -16,7 +16,7 @@ class escort_mission (Director.Mission):
 	adjsys=0
 	arrived=0
         mplay="all"
-	def __init__ (self,factionname, missiondifficulty, our_dist_from_jump, dist_from_jump, distance_from_base, creds, enemy_time, numsysaway,jumps=(),var_to_set=''):
+	def __init__ (self,factionname, missiondifficulty, our_dist_from_jump, dist_from_jump, distance_from_base, creds, enemy_time, numsysaway,jumps=(),var_to_set='',dynfg='', dyntype=''):
 		Director.Mission.__init__(self);
 		self.you = VS.getPlayer();
 		self.gametime=VS.GetGameTime()
@@ -30,15 +30,29 @@ class escort_mission (Director.Mission):
 		self.faction=factionname
 		global escort_num
 		escort_num+=1
-		self.escortee = launch.launch_wave_around_unit("Escort"+str(escort_num),
-							       self.faction,
-							       faction_ships.getRandomFighter("merchant"),
-							       "default",
-							       1,
-							       self.you.rSize(),
-							       2.0*self.you.rSize(),
-							       self.you,
-							       "")
+		#self.escortee = launch.launch_wave_around_unit("Escort"+str(escort_num),
+		#					       self.faction,
+		#					       faction_ships.getRandomFighter("merchant"),
+		#					       "default",
+		#					       1,
+		#					       self.you.rSize(),
+		#					       2.0*self.you.rSize(),
+		#					       self.you,
+		#					       "")
+		L=launch.Launch()
+		L.fg ="Escort"+str(escort_num)
+		L.faction=self.faction
+		if (dynfg=='' and dyntype==''):
+			L.type = faction_ships.getRandomFighter("merchant")
+		else:
+			L.type = dyntype
+		L.dynfg = dynfg
+		L.ai = "default"
+		L.num=1
+		L.minradius = 2.0*self.you.rSize()
+		L.maxradius = 3.0*self.you.rSize()
+		self.escortee=L.launch(self.you)
+		self.you.SetTarget(self.escortee)
 		print "h"
 		self.escortee.setFlightgroupLeader(self.you)
 		print "dd"
