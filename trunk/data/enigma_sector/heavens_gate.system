@@ -1,42 +1,27 @@
-<system name="Oranthis" background="backgrounds/plasma_galaxy" nearstars="500" ScaleSystem=".5" stars="1000" starspread="150">
-<Light>
-	<ambient red="00" green="0" blue="0"/>
-	<diffuse  red="0.98" green="1" blue="0.9"/>
-	<specular  red="0.98" green="1" blue="0.9"/>
-</Light>
+<system name="Heavens Gate" background="backgrounds/plasma_galaxy" nearstars="500" ScaleSystem="1" stars="1000" starspread="150">
+	<Light>
+		<ambient red="00" green="0" blue="0"/>
+		<diffuse  red="0.98" green="1" blue="0.9"/>
+		<specular  red="0.98" green="1" blue="0.9"/>
+	</Light>
 
-<planet name="Heavens Gate A" file="stars/white_star.png" radius="91000000" gravity="2000" z="30000" Red="0.92" Green="0.99" Blue="1.000000" ReflectNoLight="true" light="0">
-
-
-		<planet name="Heavens Gate B" file="stars/orange_star.png" radius="43333333" gravity="2000" ri="1560000000" rj="0" rk="0" si="0" sj="0" sk="1677000000" day="85800000" year="85800000" position="0.5" Red="1" Green="0.44" Blue="0.13" ReflectNoLight="true" light="0">
-			<planet name="JumpToCallimachius" file="jump.png" ri="45500000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="45500000" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/callimachius"/>
-			<planet name="JumpToSterling" file="jump.png" ri="44850000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="46800000" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/sterling" position="0.37"/>
-			<planet name="JumpToNovayaKiev" file="jump.png" ri="54850000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="47800000" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/novaya_kiev" position="0.37"/>
-			<planet name="JumpToVespus" file="jump.png" ri="44850000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="56800000" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/vespus" position="0.37"/>
-
+	<planet name="Heavens Gate A" file="stars/white_star.png" radius="91000000" x="260000000" y="0" z="0" gravity="2000" Red="0.92" Green="0.99" Blue="1" ReflectNoLight="true" light="0">
+		<planet name="Heavens Gate B" file="stars/orange_star.png" radius="43333333" gravity="2000" ri="1560000000" rj="0" rk="0" si="0" sj="0" sk="1677000000" day="85800000" year="85800000" Red="1" Green="0.44" Blue="0.13" ReflectNoLight="true" light="0">
 		</planet>
-
-
-			<planet name="JumpToAdams" file="jump.png" ri="158600000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="158600000" radius="800" year="34154250" day="16020" alpha="ONE ONE" destination="enigma_sector/adams"/>
-
-		<planet name="Barnoose" file="planets/m_class3.png" radius="1281005" gravity="18" ri="260000000.0" rj="0" rk="0" si="0" sj="0" sk="260000000.0" year="13661700" day="950" position="0">
-<!--			<CityLights file="planets/Dirt_light_repeat.png" wrapx="64" wrapy="64"/> -->
+	<!--	<planet name="JumpToCallimachius" file="jump.png" ri="4550" rj="0" rk="0" si="0" sj="0" sk="4550" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/callimachius"/>
+		<planet name="JumpToSterling" file="jump.png" ri="4485" rj="0" rk="0" si="0" sj="0" sk="4485" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/sterling"/>
+		<planet name="JumpToVespus" file="jump.png" ri="4485" rj="0" rk="0" si="0" sj="0" sk="4485" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/vespus"/>-->
+		<planet name="Barnoose"	file="planets/m_class3.png" radius="1281005" gravity="18" ri="-260000000.0" rj="0" rk="0" si="0" sj="0" sk="-260000000.0" year="13661700" day="950" position="0">
 			<Atmosphere file="sol/earthcloudmaptrans.png" alpha="SRCALPHA INVSRCALPHA" radius="1335830"/>
-			<Ring file="planets/ring.png" innerradius="1556129" outerradius="1566564"  wrapx="180" wrapy="1" year="3081"/>
-			<Ring file="planets/ring.png" innerradius="1566564" outerradius="1977000"  wrapx="220" wrapy="9" year="-3081"/>
-
-			<Unit name="Inner Rings" file="MiningBase" ri="1557129" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="1457129" faction="confed"  year="56660"/>
-
-			<planet name="JumpToTesla" file="jump.png" ri="1576000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="1576000" radius="800" year="60826" day="16020" alpha="ONE ONE" destination="enigma_sector/tesla">
-				<Unit name="Outer Rings" file="MiningBase" ri="7800" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="6400" faction="confed"  year="1670" day="1670" />
-
-			</planet>
-			<planet name="Nief" file="planets/Snow.png" radius="416000" gravity="5" ri="42250000" rj="0" rk="0" si="0" sj="0" sk="52250000" year="7161700" day="950" position="0"/>
-
+			<Ring file="planets/ring.png" innerradius="2059608" outerradius="2060058"  wrapx="180" wrapy="1" year="3081"/>
+			<Ring file="planets/ring.png" innerradius="1866615" outerradius="2277051"  wrapx="220" wrapy="9" year="-3081"/>
+			<Unit name="Inner Rings" file="MiningBase" ri="2059833" rj="0" rk="0" si="0" sj="0" sk="2059833" faction="confed"  year="1118260" day="20700" />
+			<planet name="JumpToNovayaKiev"	file="jump.png" ri="2059833" rj="0" rk="-8462" si="-8462" sj="0" sk="2059833" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/novaya_kiev"/>
+			<planet name="JumpToAdams" file="jump.png" ri="2059833" rj="6086" rk="6086" si="6086" sj="6086" sk="2059833" radius="800" year="34154250" day="16020" alpha="ONE ONE" destination="enigma_sector/adams"/>
+			<planet name="JumpToAxis" file="jump.png" ri="2065362" rj="0" rk="6299" si="2065362" sj="0" sk="6299" radius="800" year="2405000" day="18500" alpha="ONE ONE" destination="enigma_sector/axis"/>-->
+			<Unit name="Outer Rings" file="MiningBase" ri="2071742" rj="0" rk="0" si="0" sj="0" sk="2071742" faction="confed"  year="1118260" day="16700" />
+			<planet name="JumpToTesla" file="jump.png" ri="2082021" rj="5360" rk="0" si="0" sj="5360" sk="2082021" radius="800" year="1118260" day="16020" alpha="ONE ONE" destination="enigma_sector/tesla"/>
+			<planet name="Nief" file="planets/Snow.png" ri="2553705" rj="-481963" rk="0" si="0" sj="-481963" sk="2553705" radius="416000" gravity="5" year="7161700" day="950" position="0"/>
 		</planet>
-
-		<planet name="TanusGiant" file="planets/gas_giant3.png" gravity="1080" ri="1085500000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="1085500000" radius="32500000" year="85800000" day="38000" position=".5">
-			<planet name="JumpToAxis" file="jump.png" ri="65000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="65000000" radius="800" year="2405000" day="18500" alpha="ONE ONE" destination="enigma_sector/axis"/>
-		</planet>
-
-</planet>
+	</planet>
+</system>
