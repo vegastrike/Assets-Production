@@ -2,9 +2,11 @@
 <!-- How to edit this file: http://www.joeredcloud.com/kandarwiki/index.php?VsHowtoEditUnitFiles -->
 <Unit scale=".50000">
 
-<Light   x="-0.249996" y="0.00000e+0" z="-1.83758" file='supernova.bmp' size='1.5' />
-<Light   x="0.250004" y="0.00000e+0" z="-1.83758" file='supernova.bmp' size='1.5' />
+<Light   x="-0.249996" y="0.00000e+0" z="-1.83758" file='supernova.bmp' size='.75' />
+<Light   x="0.250004" y="0.00000e+0" z="-1.83758" file='supernova.bmp' size='.75' />
 <Meshfile   file="eject_pod.xmesh" />
+<RapidMesh rapid="0"/>
+<BSPMesh usebsp="0"/>
 <Mount   x="-4.07186e-6" y="-0.150000" z="1.99709" ri="-1.06144e-5" rj="0.00000e+0" rk="2.00000" qi="0.00000e+0" qj="1.00000" qk="0.00000e+0" weapon='HandLaser' size='light special' />
 <!-- BEGIN content of config file -->
 <Description combatRole="CARGO"></Description>
