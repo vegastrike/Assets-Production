@@ -221,7 +221,7 @@ module cargo_mission {
 	      _std.terminateMission(false);
 	      return;
 	    }
-	    float dist=_unit.getSignificantDistance(you,base);
+	    float dist=unit.getSignificantDistance(you,base);
 	    if (dist<=distfrombase) {
 	      takeCargoAndTerminate(you,true);		
 	      return;
