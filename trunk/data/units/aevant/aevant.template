@@ -12,12 +12,12 @@
 
 	<Meshfile file="aevant.xmesh" />
 	<Thrust>
-		<Engine Afterburner="1296.999969" Forward="334.399994" Retro="292.599995" Left="187.199997" Right="180.199997" Top="187.199997" Bottom="187.199997"/>
-		<Maneuver yaw="2715.500000" pitch="2715.500000" roll="2715.500000"/>
+		<Engine Afterburner="109125" Forward="28137" Retro="24620" Left="15751" Right="15751" Top="15751" Bottom="15751"/>
+		<Maneuver yaw="228449" pitch="228449" roll="228449"/>
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Stats mass="10.000000" momentofinertia="10.000000" fuel="1000000000"></Stats>
+	<Stats mass="841.433" momentofinertia="841.433" fuel="1000000000"></Stats>
 	<Computer yaw="88.500000" pitch="94.500000" roll="88.500000" afterburner="130.699997" maxspeed="39.799999">
 		<Radar itts="true" color="true" error="0"/> </Computer>
 

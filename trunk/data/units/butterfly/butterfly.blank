@@ -1,83 +1,47 @@
-<!-- Name : F-208 -->
-<!-- Type : Space Superiority/Heavy Fighter -->
-<!-- Faction : Not assigned -->
-
-<Unit>
-	<cockpit file="heavy-cockpit.cpt" x="0" y="0" z="0"/>
-	<Defense HudImage="f208-hud.spr">
-		<Shields front="0.000000" left="0" right="0" back="0.000000" recharge="0.000000"/>
+<Unit >
+	<cockpit file = "heavy-cockpit.cpt" x = "0" y = "0" z = "0"  >
+	</cockpit>
+	<Defense HudImage = "f208-hud.spr" >
+		<Shields front = "0.000000" left = "0" right = "0" back = "0.000000" recharge = "0.000000"  >
+		</Shields>
 	</Defense>
-	<upgrade file="shield_4"/>
-	<upgrade file="engine_level_0"/>
-	<upgrade file="lithium"/>
-	<upgrade file="hull"/>
-<Meshfile file="f208b.xmesh"/>
-<Meshfile file="f208c.xmesh"/>
-
-<Sound>	</Sound>
-
-<!-- Ship are facing Z axis so for weapon location : X= left/right, y=over/under, 
-								Z=front/back -->
-
-<!-- changed mount size from Light to Light and Medium...meaning -->
-<!-- it can hold both light and medium guns when purchased from store -->
-<Mount weapon="" size="Light Medium" x="6.612" y="1.305" z="7.355"/>
-<Mount weapon="" size="Light Medium" x="-6.612" y="1.305" z="7.355"/>
-
-<Mount weapon="" size="Special Medium Heavy" x="3.572" y="1.305" z="7.355"/>
-
-<Mount weapon="" size="Special Medium Heavy" x="-3.572" y="1.305" z="7.355"/>
-
-<Mount weapon="" size="Light Medium Heavy" x="3.572" y="-1.305" z="7.355"/>
-
-<Mount weapon="" size="Light Medium Heavy" x="-3.572" y="-1.305" z="7.355"/>
-
-
-<Mount weapon="" size="light-missile" x="-6,5" y="-1.305" z="7.355" ammo="6" volume="301"/>
-<Mount weapon="" size="light-missile" x="6.5" y="-1.305" z="7.355" ammo="6" volume="301"/>
-
-<Mount weapon="" size="special-missile light-missile medium-missile" x="-6,5" y="-1.305" z="7.355" ammo="4" volume="601"/>
-
-<Mount weapon="" size="special-missile light-missile medium-missile" x="6.5" y="-1.305" z="7.355" ammo="4" volume="601"/>
-
-
-
-
-<Stats mass="5.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
-<!-- changed maxspeed to 124-->
-<Computer yaw="105" pitch="100" roll="95" afterburner="124" maxspeed="50">
-		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
-</Computer>
-
-
-<Energy afterburnenergy="32767>	
-</Energy>
-<Jump missing="1" delay="2" jumpenergy="350"/> <!-- reduced jump energy so that it is less than limit -->
-
-
-<!-- Ship are facing Z axis so for light location : X= left/right, y=over/under, 
-								Z=front/back -->
-
-<Light file="supernova.bmp" x="5.094" y="-4.21" z="-12.273" size="1.680000"/>
-<Light file="supernova.bmp" x="5.094" y="0.002" z="-12.273" size="2"/>
-<Light file="supernova.bmp" x="5.094" y="4.253" z="-12.273" size="1.680000"/>
-
-<Light file="supernova.bmp" x="-0.173" y="-0,011" z="-13,168" size="3"/>
-
-<Light file="supernova.bmp" x="-5.094" y="-4.21" z="-12.273" size="1.680000"/>
-<Light file="supernova.bmp" x="-5.094" y="0.002" z="-12.273" size="2"/>
-<Light file="supernova.bmp" x="-5.094" y="4.253" z="-12.273" size="1.680000"/>
-
-
-<Thrust>
-
-	<Engine Afterburner="466.666718" Forward="100.333344" Retro="154.666676" 			Left="152.666672" Right="152.666672" Top="152.666672" Bottom="152.666672"/>
-<!-- less maneuver and engine thrust -->
-	<Maneuver yaw="1043.200050" pitch="1887.800201" roll="1643.200050"/>
-
-</Thrust>
-
-<Hold volume="75">
-</Hold>
-<Upgrade file="mult_general_downgrade"/>
-</Unit>
+	<upgrade file = "shield_4"  >
+	</upgrade>
+	<upgrade file = "engine_level_0"  >
+	</upgrade>
+	<upgrade file = "lithium"  >
+	</upgrade>
+	<upgrade file = "hull"  >
+	</upgrade>
+	<Meshfile file = "f208b.xmesh"  >
+	</Meshfile>
+	<Meshfile file = "f208c.xmesh"  >
+	</Meshfile>
+	<Sound  >
+	</Sound>
+	<Mount weapon = "" size = "Light Medium" x = "6.612" y = "1.305" z = "7.355"  >
+	</Mount>
+	<Mount weapon = "" size = "Light Medium" x = "-6.612" y = "1.305" z = "7.355"  >
+	</Mount>
+	<Mount weapon = "" size = "Special Medium Heavy" x = "3.572" y = "1.305" z = "7.355"  >
+	</Mount>
+	<Mount weapon = "" size = "Special Medium Heavy" x = "-3.572" y = "1.305" z = "7.355"  >
+	</Mount>
+	<Mount weapon = "" size = "Light Medium Heavy" x = "3.572" y = "-1.305" z = "7.355"  >
+	</Mount>
+	<Mount weapon = "" size = "Light Medium Heavy" x = "-3.572" y = "-1.305" z = "7.355"  >
+	</Mount>
+	<Mount weapon = "" size = "light-missile" x = "-6,5" y = "-1.305" z = "7.355" ammo = "6" volume = "301"  >
+	</Mount>
+	<Mount weapon = "" size = "light-missile" x = "6.5" y = "-1.305" z = "7.355" ammo = "6" volume = "301"  >
+	</Mount>
+	<Mount weapon = "" size = "special-missile light-missile medium-missile" x = "-6,5" y = "-1.305" z = "7.355" ammo = "4" volume = "601"  >
+	</Mount>
+	<Mount weapon = "" size = "special-missile light-missile medium-missile" x = "6.5" y = "-1.305" z = "7.355" ammo = "4" volume = "601"  >
+	</Mount>
+	<Stats mass = "419" momentofinertia = "419" fuel = "20000000"  >
+	</Stats>
+	<Computer yaw = "105" pitch = "100" roll = "95" afterburner = "124" maxspeed = "50" >
+		<Radar itts = "false" error = "0" range = "5000" maxcone = ".25" color = "false"  >
+		</Radar>
+	</Computer>

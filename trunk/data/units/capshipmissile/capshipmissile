@@ -1,29 +1,30 @@
-<Unit>
-	<Meshfile file="capshipmissile.xmesh"/>
-	<BspMesh/>
-	<Light file="supernova.bmp" x="0" y="0" z="-5.90000023841858" size= "2.3"/>
-
-<Thrust> 
-	<Engine Afterburner="1976.80"
-		  Forward="497.60"
-		  Retro="497.40"
-		  Left="497.90"
-		  Right="497.90"
-		  Top="497.90"
-		  Bottom="197.90"/>
-			<Maneuver yaw="120" pitch="120" roll="150"/>
-
-</Thrust>
-<Sound></Sound>
-<Defense explosionAni="explosion_wave.ani">
-	<Hull strength="12"/>
-	<Cloak cloakglass="1" cloakmin=".25" cloakrate=".8" cloakenergy="0"/>
-</Defense>
-<!-- Capship missile is _slow_, that's what the cloak is for. And it has weak engine, so you can see it accelerate. Also it's human's strongest missile, not Aera turret ammo :{ -->
-<Stats mass="5.00" momentofinertia="5" fuel="50000"></Stats>
-<Computer yaw="1.8" pitch="1.8" roll=".70" afterburner="500" maxspeed="300"/>
-<Energy>
-	<Reactor recharge="10"
-		   limit="100"/>
-</Energy>
+<Unit >
+	<Meshfile file = "capshipmissile.xmesh"  >
+	</Meshfile>
+	<BspMesh  >
+	</BspMesh>
+	<Light file = "supernova.bmp" x = "0" y = "0" z = "-5.90000023841858" size = "2.3"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "1010" Forward = "254" Retro = "254" Left = "254" Right = "254" Top = "254" Bottom = "101"  >
+		</Engine>
+		<Maneuver yaw = "61.3308" pitch = "61.3308" roll = "76.6635"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense explosionAni = "explosion_wave.ani" >
+		<Hull strength = "12"  >
+		</Hull>
+		<Cloak cloakglass = "1" cloakmin = ".25" cloakrate = ".8" cloakenergy = "0"  >
+		</Cloak>
+	</Defense>
+	<Stats mass = "2.55545" momentofinertia = "2.55545" fuel = "50000"  >
+	</Stats>
+	<Computer yaw = "1.8" pitch = "1.8" roll = ".70" afterburner = "1000" maxspeed = "1000"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "10" limit = "100"  >
+		</Reactor>
+	</Energy>
 </Unit>

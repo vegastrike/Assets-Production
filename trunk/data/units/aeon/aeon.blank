@@ -18,16 +18,16 @@
 	<Mount weapon="" size="light-missile medium-missile" x="-2.900000" y="-1.600000" z="1.200000" ammo="1" volume="151"/>
 	<Mount weapon="" size="special heavy" x="2.000000" y="-0.200000" z="5.200000"/>
 	<Mount weapon="" size="special heavy" x="-2.000000" y="-0.200000" z="5.200000"/>
-	<Thrust>
-		<Engine Afterburner="2066.666718" Forward="586.666687" Retro="513.333351" Left="293.333344" Right="293.333344" Top="293.333344" Bottom="293.333344"/>
-		<Maneuver yaw="4554.000000" pitch="5464.800201" roll="6375.600403"/>
+		<Thrust>
+		<Engine Afterburner="25048" Forward="7112" Retro="6223" Left="3556" Right="3556" Top="3556" Bottom="3556"/>
+		<Maneuver yaw="55214" pitch="244135" roll="77292"/>
 	</Thrust>
 	<Sound>
 	</Sound>
 	<Defense>
 		<Cloak cloakmin=".25" cloakrate=".2" cloakenergy="64"/>
 	</Defense>
-	<Stats mass="3.000000" momentofinertia="3.000000" fuel="600000000"></Stats>
+	<Stats mass="36.373" momentofinertia="36.373" fuel="600000000"></Stats>
 	<Computer yaw="138.000000" pitch="165.600006" roll="193.200012" afterburner="134" maxspeed="55">
 		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
 	</Computer>

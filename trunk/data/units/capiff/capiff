@@ -1,28 +1,28 @@
-<Unit>
-	<Meshfile file="capiff.xmesh"/>
-	<BspMesh RAPID="0"/>
-	<Light file="supernova.bmp" x="0" y="0" z="-4.1" size= "1.2"/>
-
-<Thrust> 
-	<Engine Afterburner=".28"
-		  Forward=".20"
-		  Retro=".18"
-		  Left=".14"
-		  Right=".14"
-		  Top=".14"
-		  Bottom=".14"/>
-			<Maneuver yaw="200.200050" pitch="200.600151" roll="200.200050"/>
-
-</Thrust>
-<Sound></Sound>
-<Defense>
-	<Hull strength="5"/>
-</Defense>
-<Stats mass="0.001" momentofinertia="0.0006" fuel="2000000"></Stats>
-
-<Computer yaw="90" pitch="90" roll="90" afterburner="390" maxspeed="300"/>
-<Energy>
-	<Reactor recharge="10"
-		   limit="100"/>
-</Energy>
+<Unit >
+	<Meshfile file = "capiff.xmesh"  >
+	</Meshfile>
+	<BspMesh RAPID = "0"  >
+	</BspMesh>
+	<Light file = "supernova.bmp" x = "0" y = "0" z = "-4.1" size = "1.2"  >
+	</Light>
+	<Thrust >
+		<Engine Afterburner = "174" Forward = "124" Retro = "112" Left = "87.4105" Right = "87.4105" Top = "87.4105" Bottom = "87.4105"  >
+		</Engine>
+		<Maneuver yaw = "124997" pitch = "125246" roll = "124997"  >
+		</Maneuver>
+	</Thrust>
+	<Sound  >
+	</Sound>
+	<Defense >
+		<Hull strength = "5"  >
+		</Hull>
+	</Defense>
+	<Stats mass = "0.624361" momentofinertia = "0.374617" fuel = "2000000"  >
+	</Stats>
+	<Computer yaw = "90" pitch = "90" roll = "90" afterburner = "390" maxspeed = "300"  >
+	</Computer>
+	<Energy >
+		<Reactor recharge = "10" limit = "100"  >
+		</Reactor>
+	</Energy>
 </Unit>
