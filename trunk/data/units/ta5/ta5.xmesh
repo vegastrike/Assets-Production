@@ -1,4 +1,4 @@
-<Mesh texture="ta5.bmp">
+<Mesh texture="ta5.bmp" scale="3">
 <Points>
 	<Point>
 		<Location x="20.000000" y="-13.000000" z="420.000000"/>
