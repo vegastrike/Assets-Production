@@ -16,7 +16,7 @@
 
 	<Defense HudImage="destroyer-hud.spr">
 		<Armor front="1200" right="1200" left="1200" back="1200"/>
-		<Shields front="2500.000000" left="2500" right="2500" back="2300.000000" recharge="60.000000"/>
+		<Shields front="2500.000000" left="2500" right="2500" back="2300.000000" recharge="50.000000"/>
 		<Hull strength="3000.000000"/>
 	</Defense>
 
@@ -51,8 +51,8 @@
 <Subunit file="turretlauncher" x="1.692602" y="-0.199246" z="1.45650" ri="0.953583" rj="-0.301131" rk="-0.000000" qi="0.301131" qj="0.953583" qk="0.000000"/>
 <Subunit file="turretlauncherswarm" x="1.692602" y="-0.199246" z="-1.0437" ri="0.953583" rj="-0.301131" rk="-0.000000" qi="0.301131" qj="0.953583" qk="0.000000"/>
 <Subunit file="turretlauncherswarm" x="-1.692602" y="-0.199246" z="8.756250" ri="0.000000" rj="0.000000" rk="-1.000000" qi="-0.301131" qj="0.953583" qk="0.000000"/>
-<Subunit file="turretlaunchercapmissile" x="-1.692602" y="-0.199246" z="11.256249" ri="0.000000" rj="0.000000" rk="-1.000000" qi="-0.301131" qj="0.953583" qk="0.000000"/>
-<Subunit file="turretlaunchercapmissile" x="1.692602" y="-0.199246" z="11.256249" ri="0.953583" rj="-0.301131" rk="-0.000000" qi="0.301131" qj="0.953583" qk="0.000000"/>
+<Subunit file="turret_capship_torplauncher" x="-1.692602" y="-0.199246" z="11.256249" ri="0.000000" rj="0.000000" rk="-1.000000" qi="-0.301131" qj="0.953583" qk="0.000000"/>
+<Subunit file="turret_capship_torplauncher" x="1.692602" y="-0.199246" z="11.256249" ri="0.953583" rj="-0.301131" rk="-0.000000" qi="0.301131" qj="0.953583" qk="0.000000"/>
 <Mount weapon="HeavyFussion" size="capship-heavy" x="-1.168113" y="-0.534334" z="14.594150" ri="0.003878" rj="-0.009696" rk="0.999945" qi="0.371370" qj="-0.928426" qk="0.010442"/>
 <Mount weapon="HeavyFussion" size="capship-heavy" x="1.168113" y="-0.534334" z="14.594150" ri="-0.003878" rj="-0.009696" rk="0.999945" qi="0.928477" qj="-0.371391" qk="0.000000"/>
 <Subunit file="turretbeamheavy" x="0.141392" y="-1.400000" z="-2.960143" ri="-0.171720" rj="0.000000" rk="-0.985146" qi="0.000000" qj="-1.000000" qk="0.000000"/>
