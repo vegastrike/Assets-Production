@@ -21,7 +21,7 @@
 	</Thrust>
 	<Hold volume="0">
 	<Category file="missions/Merchant">
-		<import price="1" quantity="-2" quantitystddev="10"/>
+		<import price="1" quantity="-2" quantitystddev="3"/>
 	</Category>
 	<Category file="missions/Neutral">
 		<import price="1" quantity="-2" quantitystddev="3"/>
