@@ -18,7 +18,7 @@ Base.LaunchPython (relax, 'Launch','bases/launch_music.py', -0.1, 0.25, 0.2, 0.2
 bar = Base.Room ('Bar')
 Base.Texture (bar, 'tex', 'bases/carribean/bar.spr', 0, 0)
 Base.Texture (bar,'bartender','bases/generic/big_bartender%d.spr' % (vsrandom.randrange(0,4)), -0.469922, 0.080208)
-Base.Python (bar, 'talk', -0.669922, -0.119792, 0.4, 0.4, 'Talk to the Bartender', 'bases/bartender_carribean.py',False)
+Base.Python (bar, 'talk', -0.669922, -0.119792, 0.4, 0.4, 'Talk to the Bartender', 'bases/bartender_carribean.py',0)
 concourse = Base.Room ('Concourse')
 Base.Texture (concourse, 'tex', 'bases/carribean/concourse.spr', 0, 0)
 Base.Comp (concourse, 'cargcomp', -0.755859, -0.450521, 0.253906, 0.471354,  'Hardware Purchases/Sales', 'BuyMode SellMode ShipMode UpgradeMode DowngradeMode')

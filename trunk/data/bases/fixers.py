@@ -24,7 +24,7 @@ class Choice:
 		self.actions=actions
 	def Draw(self,room,x,y,wid,hei):
 		Base.Texture(room,self.name,self.pics,x+(wid/2),y+(wid/2))
-		Base.Python(room,self.name,x,y,wid,hei,self.name,self.actions,True)
+		Base.Python(room,self.name,x,y,wid,hei,self.name,self.actions,1)
 		activelinks.append((room,self.name))
 		activeobjs.append((room,self.name))
 class Fixer:
@@ -39,12 +39,12 @@ class Fixer:
 			var= cond[0]
 			value = cond[1]
 			if not checkSaveValue(VS.getCurrentPlayer(),var,value):
-				return False
+				return 0
 			
-		return True
+		return 1
 	def drawobjs(self,room,x,y,wid,hei):
 		Base.Texture(room,self.name,self.image,x+(wid/2),y+(hei/2))
-		Base.Python(room,self.name,x,y,wid,hei,self.text,self.choices,True)
+		Base.Python(room,self.name,x,y,wid,hei,self.text,self.choices,1)
 
 class RandFixer (Fixer):
 	def __init__ (self,which):
@@ -105,7 +105,7 @@ def DestroyActiveButtons ():
 		Base.EraseLink(button[0],button[1])
 	for button in activeobjs:
 		Base.EraseObj(button[0],button[1])
-def CreateChoiceButtons (room,buttonlist,vert=False,spacing=.025,wid=.2,hei=.2):
+def CreateChoiceButtons (room,buttonlist,vert=0,spacing=.025,wid=.2,hei=.2):
 	x=0
 	if (vert):
 		x=-(wid/2)
