@@ -10,22 +10,22 @@
 
 		<Thrust>
 		<Engine Afterburner="000000" Forward="000000" Retro="0000" Left="0000" Right="0000" Top="00000" Bottom="000000"/>
-		<Maneuver yaw="0" pitch="15.0" roll="0000"/>
+		<Maneuver yaw="0" pitch="210.1" roll="0000"/>
 	</Thrust>
 	<Sound></Sound>
 	<Defense>
-		<Armor front="30" right="30" left="30" back="30"/>
-		<Shields front="30" back="30" recharge="4.333333"/>
-		<Hull strength="50"/>
+		<Armor front="50" right="50" left="50" back="50"/>
+		<Shields front="90" back="90" recharge="4.333333"/>
+		<Hull strength="90"/>
 		<Cloak cloakmin=".01" cloakrate=".2" cloakenergy="0"/>
 	</Defense>
 	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
-	<Computer yaw="000" pitch="13.0" roll="0000" afterburner="000000" maxspeed="00000">
-		<Radar itts="true" range="4000" color="true" error="0"/>
+	<Computer yaw="000" pitch="64.0" roll="0000" afterburner="000000" maxspeed="00000">
+		<Radar itts="true" range="1000" color="true" error="0"/>
 	</Computer>
 
 	<Energy>
-		<Reactor recharge="70" limit="200"/>
+		<Reactor recharge="66" limit="10"/>
 	</Energy>
 
 

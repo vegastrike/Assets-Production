@@ -11,9 +11,9 @@
 	</Thrust>
 	<Sound></Sound>
 	<Defense>
-		<Armor front="30" right="30" left="30" back="30"/>
-		<Shields front="30" back="30" recharge="4.333333"/>
-		<Hull strength="50"/>
+		<Armor front="200" right="200" left="200" back="200"/>
+		<Shields front="300" back="300" recharge="11.333333"/>
+		<Hull strength="150"/>
 		<Cloak cloakmin=".01" cloakrate=".2" cloakenergy="0"/>
 	</Defense>
 	<Stats mass="1" momentofinertia="1" fuel="20000"></Stats>
@@ -22,7 +22,7 @@
 	</Computer>
 
 	<Energy>
-		<Reactor recharge="100" limit="150"/>
+		<Reactor recharge="75" limit="150"/>
 	</Energy>
 	<Subunit file="turretmaingun" y="1" ri="0" rj="1" rk="0" qi="0" qj="0" qk="-1" restricted="-.1"/>  
 
