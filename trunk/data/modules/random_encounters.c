@@ -52,8 +52,9 @@ module random_encounters {
       _olist.push_back (cur,0);
       _olist.push_back (cur,0);
       _olist.push_back (cur,0);
-      object lastsys = _std.getSystemFile();
+      object lastsys = _string.new();
       _olist.push_back (cur,lastsys);
+
       object sig_container;
       _std.setNull(sig_container);
       _olist.push_back (cur,sig_container);
@@ -255,11 +256,11 @@ module random_encounters {
     _olist.set (cur,4,sig_container);
     object cursys = _std.getSystemFile();
     object lastsys = _olist.at (cur,3);
-    //bool oldsys = _string.equal (lastsys,cursys);
+    bool oldsys = _string.equal (lastsys,cursys);
     _io.sprintf (lastsys,"%s",cursys);
-    //if (!oldsys) {
+    if (!oldsys) {
       CalculateSignificantDistance();
-      //}
+    }
     _string.delete (cursys);
   };
   object HaveWeSignificant () {

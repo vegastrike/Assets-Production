@@ -120,14 +120,16 @@ module ship_upgrades {
     if (type!=0) {
       temp=_unit.upgrade (un,cat,0,0,true,false);    
       _io.printf ("Upgrading Engine %s percent %f",cat,temp); 
-      _string.delete (cat);
-      cat = GetRandomShield (2,type);
-      temp=_unit.upgrade (un,cat,0,0,true,false);
-      _io.printf ("Upgrading Shield %s percent %f",cat,temp); 
-      _string.delete (cat);
-      cat = GetRandomShield (4,type);
-      temp=_unit.upgrade (un,cat,0,0,true,false);
-      _io.printf ("Upgrading Shield4 %s percent %f",cat,temp); 
+      if (temp>0.0) {
+	_string.delete (cat);
+	cat = GetRandomShield (2,type);
+	temp=_unit.upgrade (un,cat,0,0,true,false);
+	_io.printf ("Upgrading Shield %s percent %f",cat,temp); 
+	_string.delete (cat);
+	cat = GetRandomShield (4,type);
+	temp=_unit.upgrade (un,cat,0,0,true,false);
+	_io.printf ("Upgrading Shield4 %s percent %f",cat,temp); 
+      }
 
     }
     _string.delete (cat);
@@ -187,7 +189,6 @@ module ship_upgrades {
      }else {
        object str=_olist.at(mylist,0);//otherwise our name is the 0th item
        newcreds=_olist.at (mylist,2);//and the price is the 2nd
-       _io.printf ("soft upgrading %s\n",str);
         newcreds = newcreds*_unit.upgrade(un,str,curmount,curmount,force,cycle);
         creds = creds -newcreds;//we added some newcreds and subtracted them from credit ammt
         _olist.delete (mylist);//then we delete the list
@@ -235,17 +236,14 @@ module ship_upgrades {
       i=i+1;
     }
     turretcount=_std.Int(diff*50.0);
-    _io.printf("\nupgrading %d times...\n",turretcount);
     if (turretcount>24) {
       turretcount=24;
     } else if (turretcount<3) {
       turretcount=3;
     }
-    _io.printf("clipping at %d times...\n",turretcount);
     i=0;
 
     while (i<turretcount) {
-      _io.printf("loop %d..\n",i);
       if (_std.Rnd()<0.66) {
         mylist=GetRandomWeapon(diff);//weapons go on as first two items of loop
       }else {
