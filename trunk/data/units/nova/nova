@@ -19,7 +19,7 @@
 	<Defense HudImage="nova-hud.spr">
 		<Armor front="40" right="35" left="35" back="40"/>
 		<Shields front="60.000000" back="40.000000" recharge="24.000000"/>
-		<Hull strength="200.000000"/>
+		<Hull strength="2000.000000"/>
 	</Defense>
 
 	<Stats mass="2.500000" momentofinertia="2.500000" fuel="40000000"></Stats>
