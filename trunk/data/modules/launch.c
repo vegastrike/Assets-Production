@@ -65,30 +65,31 @@ module launch {
       i=i+1;
     }
   };
-  object launch_wave_around_unit (object fgname, object faction, object type, object ai, int nr_ships, float radius, object my_unit) {
+  object launch_wave_around_unit (object fgname, object faction, object type, object ai, int nr_ships, float minradius, float maxradius, object my_unit) {
     object myvec;
     if (_std.isNull(my_unit)) {
       myvec = _olist.new();
       _olist.push_back(myvec,0);
       _olist.push_back(myvec,0);
       _olist.push_back(myvec,0);
-      object un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,0.0,radius,myvec);
+      object un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,minradius,maxradius,myvec);
       _olist.delete(myvec);
       return un;
     }
     myvec=_unit.getPosition(my_unit);
-    float rsiz=_unit.getRSize(my_unit)*2;
-    radius = rsiz+radius;
-    object un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,rsiz,radius,myvec);
+    float rsiz=_unit.getRSize(my_unit);
+    object un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,rsiz+minradius,rsiz+maxradius,myvec);
+    _olist.delete (myvec);
     return un;
   };
-  object launch_wave_around_significant (object fgname,object faction,object type,object ai,int nr_ships,float radius,int significant_number) {
+  object launch_wave_around_significant (object fgname,object faction,object type,object ai,int nr_ships,float minradius, float maxradius,int significant_number) {
     object significant_unit=unit.getSignificant(significant_number,false);
     if (_std.isNull(significant_unit)) {
       significant_unit = _unit.getPlayer();
     }
-    object launched = launch_wave_around_unit(fgname,faction,type,ai,nr_ships,radius,significant_unit);
+    object launched = launch_wave_around_unit(fgname,faction,type,ai,nr_ships,minradius,maxradius,significant_unit);
     return launched;
- };
+
+  };
 
 }

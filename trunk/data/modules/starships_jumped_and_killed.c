@@ -72,6 +72,7 @@ module starships_jumped_and_killed {
       object unit_to_check=GetCurListShip(starship_list,iterator);
       if (_std.isNull(unit_to_check)) {
 	ships_insys=ships_insys-1;//one less ship in system... got nailed!
+	sys_iterator=0;
       }else {
 	sys_iterator = scan_for (sys_iterator,unit_to_check);
 

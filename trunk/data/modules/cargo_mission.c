@@ -100,7 +100,7 @@ module cargo_mission {
 
 		while (i<difficulty) {
 		  un=faction_ships.getRandomFighter(faction);
-		  object newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 1000.0,you);
+		  object newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 200.0,1000.0,you);
 		  _unit.setTarget(newunit,you);
 		  i=i+1;
 		}
@@ -141,7 +141,7 @@ module cargo_mission {
 	      }else {
 		object newun=significant;
 		if (capship) {
-		  newun=launch.launch_wave_around_unit("Base",faction,newship,"_ai_stationary",1,5000.0,significant);
+		  newun=launch.launch_wave_around_unit("Base",faction,newship,"_ai_stationary",1,2000.0,5000.0,significant);
 		}
 		object str = _string.new();
 		object name = _unit.getName (newun);

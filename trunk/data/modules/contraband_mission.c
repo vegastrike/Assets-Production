@@ -17,15 +17,25 @@ module contraband_mission {
 	object goodolist;
 	object badolist;
 	float badchance;
-
-	void init (object cargo, int num_systems_away, float distance, float creds, int diff, int ships, float bad_pct) {
+	float min_distance;
+	float max_distance;
+	//DEBUG
+	int gonumship;
+	int bonumship;
+	int baship;
+	int gaship;
+	int binsys;
+	int ginsys;
+	//END DEBUG
+	void init (object cargo, int num_systems_away, float distance, float creds, int diff, int ships, float bad_pct, float mindistance, float maxdistance) {
 		object you=_unit.getPlayer();
 		if (_std.isNull(you)) {
 			_std.terminateMission (false);
 			return;
 		}
 		faction_ships.init();
-
+		min_distance = mindistance;
+		max_distance = maxdistance;
 		nr_ships=ships;
 		nr_waves=0;
 		badchance=bad_pct;
@@ -121,7 +131,7 @@ module contraband_mission {
 							faction=faction_ships.intToFaction(random.randomint(0,2));
 						}
 						un=faction_ships.getRandomFighter(faction);
-						object newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 1000.0,jump);
+						object newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 800.0, 1000.0,jump);
 						_unit.setTarget(newunit,you);
 						i=i+1;
 					}
@@ -143,6 +153,25 @@ module contraband_mission {
 			object jump=go_somewhere_significant.SignificantUnit();
 			starships_jumped_and_killed.loop (badolist);
 			starships_jumped_and_killed.loop (goodolist);
+			//BEGIN DEBUG
+			if (binsys!=starships_jumped_and_killed.ships_in_system(badolist)) {			
+			  binsys=starships_jumped_and_killed.ships_in_system(badolist);
+			  _io.printf ("bad ships in system now %d",binsys);
+			}
+			if (ginsys!=starships_jumped_and_killed.ships_in_system(goodolist)) {			
+			  ginsys=starships_jumped_and_killed.ships_in_system(goodolist);
+			  _io.printf ("good ships in system now %d",ginsys);
+			}
+			if (baship!=starships_jumped_and_killed.ships_alive(badolist)) {			
+			  baship=starships_jumped_and_killed.ships_alive(badolist);
+			  _io.printf ("bad ships alive now %d",baship);
+			}
+			if (gaship!=starships_jumped_and_killed.ships_alive(goodolist)) {			
+			  gaship=starships_jumped_and_killed.ships_alive(goodolist);
+			  _io.printf ("good ships alive now %d",gaship);
+			}
+			
+			//END DEBUG
 			if (starships_jumped_and_killed.ships_alive(badolist)!=
 			    starships_jumped_and_killed.ships_in_system(badolist)) {  //a contraband ship left the system...
 				Terminate(you);
@@ -175,12 +204,7 @@ module contraband_mission {
 				} else {
 					mass=_std.Rnd()*10;
 				}
-				float volume=_std.Rnd();
-				if (volume<=0.8) {
-					volume=1.0;
-				} else {
-					volume=_std.Rnd()*100;
-				}
+				float volume=1.0;
 				int rndint;
 				object starships_bad =_olist.new();
 				object starships_good =_olist.new();
@@ -188,16 +212,13 @@ module contraband_mission {
 					cargonum=random.randomint(0,8);
 					cargonum2=random.randomint(0,10-cargonum);
 					notlist=faction_ships.getRandomFighter("merchant");
-					newfighter=launch.launch_wave_around_unit("Base", "merchant",notlist,"default",1,_std.Rnd()*100000,jump);
+					
+					newfighter=launch.launch_wave_around_unit ("Base","merchant",notlist,"default",1,min_distance,max_distance,jump);
+					
 					_unit.setTarget(newfighter,jump);
-					_unit.Jump(newfighter);
+     					_unit.Jump(newfighter);
 					j=0;
-					while (j<cargonum) {
-						rndint=random.randomint(1,10);
-						randcargo=_unit.getRandCargo(rndint);
-						rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
-						j=j+1;
-					}
+
 					if ((_std.Rnd())<badchance) {
 						cargonum2=cargonum2-1;
 						_olist.push_back(starships_bad,_unit.getContainer(newfighter));
@@ -205,6 +226,12 @@ module contraband_mission {
 						rndint=_unit.addCargo(newfighter,cargoname,"illegal",price,random.randomint(1,10),mass,volume);
 					} else {
 						_olist.push_back(starships_good,_unit.getContainer(newfighter));
+					}
+					while (j<cargonum) {
+						rndint=random.randomint(1,10);
+						randcargo=_unit.getRandCargo(rndint);
+						rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
+						j=j+1;
 					}
 					j=0;
 					while (j<cargonum2) {

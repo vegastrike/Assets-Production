@@ -111,7 +111,7 @@ module attack_jumppoint {
 	  
 	  while (count<quantity) {
 	    object randtype = faction_ships.getRandomFighter(faction);
-	    object launched = launch.launch_wave_around_unit ("Shadow",faction,randtype,"default",1,4500.0,jp);
+	    object launched = launch.launch_wave_around_unit ("Shadow",faction,randtype,"default",1,2000.0,4500.0,jp);
 	    _unit.setTarget (launched,you);//make 'em attack you
 	    count = count+1;
 	  }
