@@ -1,0 +1,48 @@
+<Unit >
+	<Meshfile file="revoker-Hull.xmesh" />
+	<Meshfile file="revoker-Cone01.xmesh" />
+	<Meshfile file="revoker-Cone02.xmesh" />
+	<Meshfile file="revoker-Cone03.xmesh" />
+	<Meshfile file="revoker-Frame01.xmesh" />
+	<Meshfile file="revoker-Glower01.xmesh" />
+	<Meshfile file="revoker-Glower02.xmesh" />
+	<Meshfile file="revoker-Glower03.xmesh" /> 
+	<Meshfile file="revoker-Side.xmesh" />
+	<Meshfile file="revoker-GunBit01.xmesh" />
+	<Meshfile file="revoker-GunBit02.xmesh" />
+	<Meshfile file="revoker-Guns.xmesh" />
+
+	
+<cockpit file="hellcat-cockpit.cpt" x="0" y="00" z="10"/>
+	<Thrust>
+		<Engine Afterburner="800.000000" Forward="268.000000" Retro="147.000000" Left="184.000000" Right="184.000000" Top="184.000000" Bottom="184.000000"/>
+		<Maneuver yaw="3415.500000" pitch="3415.500000" roll="3415.500000"/>
+	</Thrust>
+	<Sound> </Sound>
+	<Defense>
+		<Armor front="100" right="80" left="80" back="100"/>
+		<Shields front="250" right="250" left="250" back="250" recharge="4.166667"/>
+		<Hull strength="250"/>
+	</Defense>
+	<Stats mass="7" momentofinertia="7" fuel="20000"></Stats>
+	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="120.000000" maxspeed="42.000000"/>
+	<Energy>
+		<Reactor recharge="47" limit="470"/>
+	</Energy>
+       
+
+<Mount weapon="Laser" size="Light" x="127.0566" y="43.7594" z="121.3314" ri="-0.249141" rj="-0.024868" rk="0.968148" qi="-0.395678" qj="-0.909816" qk="-0.125192"/>
+<Mount weapon="Laser" size="Light" x="119.3102" y="23.8918" z="118.8276" ri="-0.249142" rj="-0.024868" rk="0.968148" qi="-0.395678" qj="-0.909816" qk="-0.125192"/>
+<Mount weapon="Laser" size="Light" x="115.6352" y="60.7088" z="118.8276" ri="-0.249142" rj="-0.024868" rk="0.968148" qi="-0.395678" qj="-0.909816" qk="-0.125192"/>
+<Mount weapon="Laser" size="Light" x="-127.2548" y="41.7694" z="121.3318" ri="0.249142" rj="-0.024868" rk="0.968148" qi="0.567703" qj="0.813658" qk="-0.125192"/>
+<Mount weapon="Laser" size="Light" x="-115.7342" y="59.7138" z="118.828" ri="0.249142" rj="-0.024868" rk="0.968148" qi="0.567703" qj="0.813658" qk="-0.125192"/>
+<Mount weapon="Laser" size="Light" x="-119.409" y="22.8968" z="118.828" ri="0.249142" rj="-0.024868" rk="0.968148" qi="0.567704" qj="0.813658" qk="-0.125193"/>
+
+
+<!--
+<!-- Turrets -->
+<Subunit file="rlaantur1_a" x="35.4364" y="-229.1204" z="16.2628" ri="-0.091138" rj="0.293527" rk="0.951596" qi="0.424036" qj="-0.853177" qk="0.303780"/>
+<Subunit file="rlaantur1_b" x="-35.3528" y="-229.3952" z="15.4892" ri="-0.084938" rj="-0.290906" rk="-0.952974" qi="-0.447383" qj="-0.843463" qk="0.297352"/>
+-->
+
+</Unit>
