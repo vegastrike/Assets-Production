@@ -31,5 +31,5 @@ Base.Link (room2, 'mall', -0.6675, -0.623333, 0.2375, 0.28, 'Shopping Mall', roo
 Base.Link (room2, 'mission', -0.8925, -0.34, 1.89, 0.446667, 'Mission Room', room1)
 
 Base.Link (room3, 'Conc', -0.7025, -0.756667, 0.3375, 1.75667, 'Main Concourse', room2)
-Base.Comp (room3, 'upg', -0.3625, -0.726667, 0.2925, 1.72, 'Upgrade Ship', 'UPGRADEMODE DOWNGRADEMODE')
+Base.Comp (room3, 'upg', -0.3625, -0.726667, 0.2925, 1.72, 'Upgrade Ship', 'UPGRADEMODE DOWNGRADEMODE INFOMODE')
 Base.Comp (room3, 'shd', 0.06, -0.68, 0.345, 0.74, 'Ship Dealer', 'SHIPMODE')
