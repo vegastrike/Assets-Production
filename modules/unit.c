@@ -103,12 +103,13 @@ module unit {
 
       object pos=_unit.getPosition(unit);
       object fgid=_unit.getFgId(unit);
+      float rsize=_unit.getRSize(unit);
 
       float i=_olist.at(pos,0);
       float j=_olist.at(pos,1);
       float k=_olist.at(pos,2);
 
-      _io.printf("fgid=%s  ship_nr=%d pos: %f %f %f\n",fgid,ship_nr,i,j,k);
+      _io.printf("%d:%s: r=%f [%f %f %f]\n",ship_nr,fgid,rsize,i,j,k);
 
       ship_nr=ship_nr+1;
       unit=_unit.getUnit(ship_nr);
