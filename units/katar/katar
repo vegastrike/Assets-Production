@@ -5,7 +5,7 @@
 
 	<!-- Weapons -->
 
-	<Mount weapon="Tachyon" size="mediem" x="2.15" y="-1.1" z="2.5" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.406736" qj="0.913546" qk="0.000000"/>
+	<Mount weapon="Tachyon" size="medium" x="2.15" y="-1.1" z="2.5" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.406736" qj="0.913546" qk="0.000000"/>
 	<Mount weapon="Tachyon" size="medium" x="-2.15" y="-1.1" z="2.5" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.406736" qj="-0.913546" qk="0.000000"/>
 	<Mount weapon="ImageRecognition" size="medium-missile"  x="6.5" y="-2" z="1" ammo="4"/>
 	<Mount weapon="ImageRecognition" size="medium-missile" x="-6.5" y="-2" z="1" ammo="4"/>
@@ -22,16 +22,16 @@
 		<Maneuver yaw="2000" pitch="2000" roll="2000"/>
 	</Thrust>
 	
-	<Defense HudImage="">
+	<Defense HudImage="katar-hud.spr">
 		<Armor front="200" right="200" left="200" back="200"/>
 		<Shields front="75.000000" back="75.000000" recharge="25.000000"/>
 		<Hull strength="250.000000"/>
 	</Defense>
 		
-	<Stats mass="12.000000" momentofinertia="12.000000" fuel="30000000">
+	<Stats mass="2.000000" momentofinertia="2.000000" fuel="30000000">
 	</Stats>
 	
-	<Computer yaw="120" pitch="120" roll="150" afterburner="140" maxspeed="50"/>
+	<Computer yaw="120" pitch="120" roll="150" afterburner="169.5" maxspeed="59.5"/>
 
 	<Energy>
 		<Reactor recharge="80" limit="800"/>
@@ -43,7 +43,7 @@
 	<description>
 	The katar is a light bounty hunter ship. It's exceptionnal thrust leave most unwanted 
 combatants far behind. It diverst most power to it's engines and guns thus the shields are 
-somewhat weaker. The designers compenstaed for this by re-enforcing the armour. 
+somewhat weaker. The designers compensated for this by re-enforcing the armour. 
 Common rolls: Long range bounty hunter ship. Recon/Scouts. Light escort. Quick strikes. 
 	</description>
 
