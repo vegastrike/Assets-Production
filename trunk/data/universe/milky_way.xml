@@ -234,6 +234,11 @@
 
 			
 		</sector>
+		<sector name="unexplored_space">
+			<var name="num_natural_phenomena" value="1"/>
+			<var name="asteroidlist" value="unexp_asteroids.txt"/>
+			<var name="nebulalist" value="unexp_nebulae.txt"/>
+		</sector>
 		<sector name="vega_sector">
 			<var name="faction" value="confed"/> <!-- if variable is not specified in teh actual system it will check in the sector -->
 			<var name="namelist" value="celtic.txt"/><!-- Vega Sector uses celtic names for planets -->
