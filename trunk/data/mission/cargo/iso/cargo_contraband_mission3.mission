@@ -21,7 +21,7 @@
         </flightgroups>
 	<python>
 import cargo_mission
-newmission = cargo_mission.cargo_mission ('ISO', 0, 8, 0,  20000, 0, 1200,'Contraband/Confed',('enigma_sector/blake','enigma_sector/defiance'))
+newmission = cargo_mission.cargo_mission ('ISO', 0, 8, 0,  20000, 0, 1200,'Contraband/Confed',('enigma_sector/blake','enigma_sector/defiance','iso_mission3'))
 newmission=0
 
 </python>
