@@ -40,6 +40,7 @@ module attack_jumppoint {
 	  }
 	  object str = _string.new();
 	  _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
+	  _string.delete (name);
 	  _io.message (0,"game","all",str);
 	  go_somewhere_significant.init(you,numsystemsaway,true,distance_from_base);
 
@@ -53,7 +54,7 @@ module attack_jumppoint {
 	  _string.delete (faction);
 	  _std.setNull (faction);
 	  go_somewhere_significant.destroy();
-	}
+	};
 	void SuccessMission(object you) {
 	  _unit.addCredits (you, cred);
 	  _io.message (0,"game","all","Excellent work pilot.");
