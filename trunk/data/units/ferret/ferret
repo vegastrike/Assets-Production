@@ -1,0 +1,24 @@
+<Unit>
+	<Meshfile file="Ferret.xmesh" />
+		<Thrust>
+		<Engine Afterburner="1400.000000" Forward="536.000000" Retro="194.000000" Left="138.000000" Right="138.000000" Top="138.000000" Bottom="138.000000"/>
+		<Maneuver yaw="3643.200050" pitch="3643.600151" roll="3643.200050"/>
+	</Thrust>
+	<Sound></Sound>
+	<Defense>
+		<Armor front="40" right="30" left="30" back="40"/>
+		<Shields front="60" back="60" recharge="30"/>
+		<Hull strength="50"/>
+	</Defense>
+	<Stats mass="6" momentofinertia="6" fuel="20000"></Stats>
+	<Computer yaw="110.400002" pitch="110.200005" roll="110.400002" afterburner="120.000000" maxspeed="42.000000"/>
+	<Energy>
+		<Reactor recharge="24" limit="80"/>
+	</Energy>
+       
+
+<!-- new elements added -->
+<Mount weapon="MassDriver" size="Medium" x="2.174657" y="-0.366897" z="9.247024" />
+<Mount weapon="MassDriver" size="Medium" x="-2.165169" y="-0.346998" z="9.269119" />
+<Light file="supernova.bmp" x="-0.026344" y="0.269020" z="-6.748356" size="4.000000"/>
+</Unit>
