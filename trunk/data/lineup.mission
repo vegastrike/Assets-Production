@@ -21,6 +21,13 @@
 		    </flightgroup>
 
 
+                    <flightgroup name="daroids" faction="neutral" type="asteroids" ainame="borken.py" waves="666" nr_ships="1">
+                        <pos x="-4500" y="30000" z="30000.0"/>
+			<rot x="180.0" y="180.0" z="180.0"/>
+		    </flightgroup>
+
+
+
 		    <flightgroup name="nova" faction="confed" type="nova" ainame="borken.py" waves="1" nr_ships="1">
                         <pos x="0" y="30000" z="30000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
