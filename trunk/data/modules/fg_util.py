@@ -3,6 +3,9 @@ import VS
 
 ccp=VS.getCurrentPlayer()
 
+def MaxNumFlightgroupsInSystem ():
+	return 10
+
 def MakeFactionKey (faction):
 	return 'FF:'+str(VS.GetFactionIndex(faction))
 def MakeFGKey (fgname,faction):

@@ -8,6 +8,7 @@ import sys
 import adventure
 import news
 import universe
+import fg_util
 class random_encounters:
   class playerdata:  
     def GeneratePhaseAndAmplitude(self):
@@ -110,75 +111,27 @@ class random_encounters:
       nam-=1
     print 1-ret
     return 1-ret;
-    
-  def launch_near_stage2 (self,un,near_faction,cap_prob):
-    numfactions=vsrandom.randrange(0,4)
-    if (numfactions<=0):
-      numfactions=1
-    sysfile = VS.getSystemFile()
-    gen_num_ships=self.gen_num_ships
-    for i in range(0,numfactions):
-      localfaction = VS.GetGalaxyProperty(sysfile,"faction")
-      if (vsrandom.random() < self.TrueEnProb(self.enprob)):
-        localfaction = faction_ships.get_insys_enemy_of (localfaction)
-      else:
-        localfaction = faction_ships.get_friend_of(localfaction)
-      if (len(near_faction)>0):
-        if (i==0 and vsrandom.random()<(.3+(.4*VS.GetDifficulty()))):
-          localfaction=near_faction
-          gen_num_ships*=3
-      else:
-	cap_prob/=3;#1/3 chance of capships within a nation border
-      numship= vsrandom.randrange(1,int(gen_num_ships)+1)
-      self.det_distance = self.cur.detection_distance
-      launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,0,self.generation_distance*vsrandom.random()*0.9,un, 2.0*self.det_distance,"")
-      if (vsrandom.random()<cap_prob):
-        if (self.AsteroidNear (un,self.cur.significant_distance)):
-          print "ast near, no cap"
-        else:
-          print "no asty near"
-          cap_prob=.7
-          capship = faction_ships.getRandomCapitol (localfaction)
-          launch_recycle.launch_wave_around("Capitol",localfaction,"default",1,1,self.capship_gen_distance*(0.5+(vsrandom.random()*0.4)),un, 8.0*self.det_distance,"")
 
   def launch_near(self,un):
     if (VS.GetGameTime()<10):
       print "hola!"
       return
-    randomnum=vsrandom.random()
-    system=cursys=VS.getSystemFile()
-    faction=curfac=VS.GetGalaxyProperty(system,"faction")
-    cap_prob=self.capship_prob
-##    systemlist=universe.getAdjacentSystems(system,5)[1]
-##    systemlist=(system,)+systemlist
-##    i=0
-##    cap_prob=self.capship_prob
-##    for system in systemlist:
-##      i+=1
-##      faction=VS.GetGalaxyProperty(system,"faction")
-##      if vsrandom.random()<.5:
-##        cap_prob/=3
-##        break
-##      if faction!=curfac:
-##        cap_prob/=i
-##        break
-##    if (faction==curfac):
-##      faction=''
-    otherfactions=[]
-    i=0
-    for i in range(VS.GetNumAdjacentSystems(cursys)):
-      system=VS.GetAdjacentSystem(cursys,i)
-      faction=VS.GetGalaxyProperty(system,"faction")
-      if faction!=curfac:
-        otherfactions.append(faction)
-    if len(otherfactions)==0:
-      faction=''
-      cap_prob/=3
-    else:
-      if len(otherfactions)==1:
-        cap_prob/=2
-      faction=otherfactions[vsrandom.randrange(0,len(otherfactions))]
-    self.launch_near_stage2 (un,faction,cap_prob)
+    cursys=VS.getSystemFile()
+    numsigs=universe.GetNumSignificantsForSystem(cursys)
+    for factionnum in range(faction_ships.getMaxFactions()):
+      faction=faction_ships.intToFaction(factionnum)
+      fglist=fg_util.FGsInSystem(faction,cursys)
+      if not len(fglist):
+        continue
+      num=fg_util.len(fglist)
+      avg=float(num)/float(fg_util.MaxNumFlightgroups())/float(numsigs)
+      rndnum=vsrandom.random()
+      if rndnum<avg:
+        #now we know that we will generate some ships!
+        flightgroup=fglist[vsrandom.randrange(len(fglist))]
+        typenumbers=fg_util.GetShipsInFG(faction,flightgroup)
+        for tn in typenumbers:
+          launch.launch_wave_around(flightgroup,faction,tn[0],'default',tn[1],self.generation_distance*vsrandom.random()*0.9,un,self.generation_distance*vsrandom.random()*2,un,'')
   def atLeastNInsignificantUnitsNear (self,uni, n):
     num_ships=0
     count=0
