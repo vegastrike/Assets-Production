@@ -7,6 +7,7 @@
  '(pc-select-meta-moves-sexps t)
  '(pc-select-selection-keys-only t)
  '(pc-selection-mode t nil (pc-select))
+ '(standard-indent 4)
  '(tab-stop-list (quote (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120)))
  '(tool-bar-mode nil nil (tool-bar))
  '(tooltip-mode nil nil (tooltip))
@@ -63,7 +64,7 @@
     (c-comment-only-line-offset . 4)
     )
   "My C Programming Style")
-
+(setq tab-width 4)
 (defun my-c-mode-common-hook ()
   (c-add-style "PERSONAL" my-c-style t)
   (c-set-offset 'member-init-intro '++)
@@ -79,3 +80,24 @@
   )
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+
+(setq fundamental-mode-hook
+      '(lambda () (progn
+		    (setq tab-width 4
+				  indent-tabs-mode t))))
+
+(setq python-mode-hook
+      '(lambda () (progn
+		    (set-variable 'py-indent-offset 4)
+		    (set-variable 'py-smart-indentation nil)
+		    (set-variable 'indent-tabs-mode t) 
+		    (setq tab-width 4
+				  indent-tabs-mode t))))
+
+
+(global-set-key "\C-c e" 'My-Compile)
+(defun My-Compile()
+ "Save all unsaved buffers, and runs 'compile'."
+ (interactive)
+ (save-some-buffers t)
+ (compile compile-command))
