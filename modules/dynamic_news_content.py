@@ -10,237 +10,237 @@ all_faction_name_global = {
 "alltags" :
 ["full","nicks","nickp","dnicks","dnickp","government","possessive","homeworld","mstandname","fstandname"]
 
-,"confed" :	{"full" : "Confederation of Inhabited Worlds"
-		,"nicks" : "Confed"
-		,"nickp" : "Confeds"
-		,"dnicks" : "Origami"
-		,"dnickp" : "Origamis"
-		,"government" : "Confederate Senate"
-		,"possessive" : "Confederate"
-		,"homeworld" : "Earth"
-		,"mstandname" : "Bruce Johnson"
-		,"fstandname" : "Michelle Petridge"
+,"confed" :	{"full" : ["Confederation of Inhabited Worlds"]
+		,"nicks" : ["Confed"]
+		,"nickp" : ["Confeds"]
+		,"dnicks" : ["Origami"]
+		,"dnickp" : ["Origamis"]
+		,"government" : ["Confederate Senate"]
+		,"possessive" : ["Confederate"]
+		,"homeworld" : ["Earth"]
+		,"mstandname" : ["Bruce Johnson"]
+		,"fstandname" : ["Michelle Petridge"]
 		}
-,"andolian":	{"full" : "Andolian"
-		,"nicks" : "Andolian"
-		,"nickp" : "Andolians"
-		,"dnicks": "Link-Junky"
-		,"dnickp": "Link-Junkies"
-		,"government" : "Andolian Forum"
-		,"possessive" : "Andolian"
-		,"homeworld" : "Regulus"
-		,"mstandname": "Aarron Kester"
-		,"fstandname": "Amy Jalarki"
+,"andolian":	{"full" : ["Andolian"]
+		,"nicks" : ["Andolian"]
+		,"nickp" : ["Andolians"]
+		,"dnicks": ["Link-Junky"]
+		,"dnickp": ["Link-Junkies"]
+		,"government" : ["Andolian Forum"]
+		,"possessive" : ["Andolian"]
+		,"homeworld" : ["Regulus"]
+		,"mstandname": ["Aarron Kester"]
+		,"fstandname": ["Amy Jalarki"]
 		}
-,"highborn":	{"full" : "Highborn"
-		,"nicks": "Highborn"
-		,"nickp": "Highborn"
-		,"dnicks":"Creditblood"
-		,"dnickp":"Creditbloods"
-		,"government":"Highborn Board of Exectives"
-		,"possessive":"Highborn's"
-		,"homeworld" : "Rand"
-		,"mstandname":"Fredrick Vanderbildt"
-		,"fstandname":"Isabella Iacocca"
+,"highborn":	{"full" : ["Highborn"]
+		,"nicks": ["Highborn"]
+		,"nickp": ["Highborn"]
+		,"dnicks":["Creditblood"]
+		,"dnickp":["Creditbloods"]
+		,"government":["Highborn Board of Exectives"]
+		,"possessive":["Highborn's"]
+		,"homeworld" : ["Rand"]
+		,"mstandname":["Fredrick Vanderbildt"]
+		,"fstandname":["Isabella Iacocca"]
 		}
-,"shaper":	{"full": "Shaper"
-		,"nicks": "Shaper"
-		,"nickp":"Shapers"
-		,"dnicks":"FrankenGenie"
-		,"dnickp":"FrankenGenies"
-		,"government":"Shaper Directorate"
-		,"possessive":"Shaper's"
-		,"homeworld" :"Bifröst"
-		,"mstandname":"Gunther Mueller"
-		,"fstandname":"Heather Madsen"
+,"shaper":	{"full": ["Shaper"]
+		,"nicks": ["Shaper"]
+		,"nickp":["Shapers"]
+		,"dnicks":["FrankenGenie"]
+		,"dnickp":["FrankenGenies"]
+		,"government":["Shaper Directorate"]
+		,"possessive":["Shaper's"]
+		,"homeworld" :["Bifröst"]
+		,"mstandname":["Gunther Mueller"]
+		,"fstandname":["Heather Madsen"]
 		}
-,"unadorned":	{"full" : "Unadorned"
-		,"nicks": "Unadorned"
-		,"nickp": "Unadorned"
-		,"dnicks":"Schitz-Vulcan"
-		,"dnickp":"Schitz-Vulcans"
-		,"government":"Unadorned Representatives"
-		,"possessive":"Unadorned's"
-		,"homeworld" : "Logos"
-		,"mstandname" : "Beta-Andro Pi-e-Phi"
-		,"fstandname" : "Alpha-Gyn Kappa-i-Phi"
+,"unadorned":	{"full" : ["Unadorned"]
+		,"nicks": ["Unadorned"]
+		,"nickp": ["Unadorned"]
+		,"dnicks":["Schitz-Vulcan"]
+		,"dnickp":["Schitz-Vulcans"]
+		,"government":["Unadorned Representatives"]
+		,"possessive":["Unadorned's"]
+		,"homeworld" : ["Logos"]
+		,"mstandname" : ["Beta-Andro Pi-e-Phi"]
+		,"fstandname" : ["Alpha-Gyn Kappa-i-Phi"]
 		}
-,"purist":	{"full" : "Purist"
-		,"nicks" : "Purist"
-		,"nickp" : "Purists"
-		,"dnicks" : "Nostalgist"
-		,"dnickp" : "Nostalgists"
-		,"government": "Purist Regents"
-		,"possessive":"Purists'"
-		,"homeworld" : "Earth"
+,"purist":	{"full" : ["Purist"]
+		,"nicks" : ["Purist"]
+		,"nickp" : ["Purists"]
+		,"dnicks" : ["Nostalgist"]
+		,"dnickp" : ["Nostalgists"]
+		,"government": ["Purist Regents"]
+		,"possessive":["Purists'"]
+		,"homeworld" : ["Earth"]
 		}
-,"forsaken":	{"full" : "The Union of Dispossessed Settlers"
-		,"nicks":"Forsaken"
-		,"nickp":"Forsaken"
-		,"dnicks":"Frost Baby"
-		,"dnickp":"Frost Babies"
-		,"government": "Dispossessed Settlers Council"
-		,"possessive":"Forsaken"
-		,"homeworld" : "Gehenna"
+,"forsaken":	{"full" : ["The Union of Dispossessed Settlers"]
+		,"nicks":["Forsaken"]
+		,"nickp":["Forsaken"]
+		,"dnicks":["Frost Baby"]
+		,"dnickp":["Frost Babies"]
+		,"government": ["Dispossessed Settlers Council"]
+		,"possessive":["Forsaken"]
+		,"homeworld" : ["Gehenna"]
 		}
-,"LIHW":	{"full" : "League Of Independent Human Worlds"
-		,"nicks":"LIHW"
-		,"nickp":"LIHW"
-		,"dnicks":"Patchworker"
-		,"dnickp":"Patchworkers"
-		,"government":"League Of Independent Worlds Council"
-		,"possessive":"LIHW"
+,"LIHW":	{"full" : ["League Of Independent Human Worlds"]
+		,"nicks":["LIHW"]
+		,"nickp":["LIHW"]
+		,"dnicks":["Patchworker"]
+		,"dnickp":["Patchworkers"]
+		,"government":["League Of Independent Worlds Council"]
+		,"possessive":["LIHW"]
 		}
-,"merchant" :	{"full" : "Merchant's Union"
-		,"nicks" : "Merchie"
-		,"nickp" : "Merchies"
-		,"dnicks" : "Pill Popper"
-		,"dnickp" : "Pill Poppers"
-		,"government" : "Merchant Union Council"
-		,"possessive" : "Merchant"
-		,"homeworld" : "Earth"
-		,"mstandname" : "James Stroffs"
-		,"fstandname" : "Amanda Barnard"
+,"merchant" :	{"full" : ["Merchant's Union"]
+		,"nicks" : ["Merchie"]
+		,"nickp" : ["Merchies"]
+		,"dnicks" : ["Pill Popper"]
+		,"dnickp" : ["Pill Poppers"]
+		,"government" : ["Merchant Union Council"]
+		,"possessive" : ["Merchant"]
+		,"homeworld" : ["Earth"]
+		,"mstandname" : ["James Stroffs"]
+		,"fstandname" : ["Amanda Barnard"]
 		}
-,"homeland-security" : {"full" : "Homeland Security Force"
-		,"nicks" : "Enforcer"
-		,"nickp" : "Enforcers"
-		,"dnicks": "Jackboot"
-		,"dnickp": "Fuzz"
-		,"government" : "High Commission"
-		,"possessive" : "Enforcer's"
-		,"homeworld" : "Earth"
-		,"mstandname" : "Barry Matthews"
-		,"fstandname" : "Jeanette Karoen"
-		}
-
-,"militia" :	{"full" : "Confederate Police Force"
-		,"nicks" : "police"
-		,"nickp" : "police"
-		,"dnicks" : "space copper"
-		,"dnickp" : "space coppers"
-		,"government" : "High Commission"
-		,"possessive" : "militia"
-		,"homeworld" : "Earth"
-		,"mstandname" : "Barry Mathews"
-		,"fstandname" : "Janet Karoen"
+,"homeland-security" : {"full" : ["Homeland Security Force"]
+		,"nicks" : ["Enforcer"]
+		,"nickp" : ["Enforcers"]
+		,"dnicks": ["Jackboot"]
+		,"dnickp": ["Fuzz"]
+		,"government" : ["High Commission"]
+		,"possessive" : ["Enforcer's"]
+		,"homeworld" : ["Earth"]
+		,"mstandname" : ["Barry Matthews"]
+		,"fstandname" : ["Jeanette Karoen"]
 		}
 
-,"aera" :	{"full" : "Aeran Ascendency"
-		,"nicks" : "Aera"
-		,"nickp" : "Aera"
-		,"dnicks" : "Jingo"
-		,"dnickp" : "Jingos"
-		,"government" : "Aera Oligarchy"
-		,"possessive" : "Aeran"
-		,"homeworld" : "Aeneth"
-		}
-,"retro":	{"full" : "Retro Religious Advocacy"
-		,"nicks": "Retro"
-		,"nickp": "Retros"
-		,"dnicks": "Fanatic"
-		,"dnickp": "Fanatics"
-		,"government" : "Clergy"
-		,"possessive" : "Retro's"
-		,"homeworld" : "Eden"
-		}
-,"luddites":	{"full" : "Interstellar Church of True Form's Return"
-		,"nicks": "True-Former"
-		,"nickp": "True-Formers"
-		,"dnicks": "Luddite"
-		,"dnickp": "Luddites"
-		,"government" : "Clergy"
-		,"possessive" : "Luddite's"
-		,"mstandname" : "Brother Maynard"
-		,"fstandname" : "Sister Keyes"
-		}
-,"rlaan" :	{"full" : "Rlaan Sovereignty"
-		,"nicks" : "Rlaan"
-		,"nickp" : "Rlaan"
-		,"dnicks" : "Four-Facer"
-		,"dnickp" : "Four-Facers"
-		,"government" : "Rlaan Assembly"
-		,"possessive" : "Rlaan"
-		,"homeworld" : "Aantlbzz"
+,"militia" :	{"full" : ["Confederate Police Force"]
+		,"nicks" : ["police"]
+		,"nickp" : ["police"]
+		,"dnicks" : ["space copper"]
+		,"dnickp" : ["space coppers"]
+		,"government" : ["High Commission"]
+		,"possessive" : ["militia"]
+		,"homeworld" : ["Earth"]
+		,"mstandname" : ["Barry Mathews"]
+		,"fstandname" : ["Janet Karoen"]
 		}
 
-,"pirates" :	{"full" : "Various Pirate Factions"
-		,"nicks" : "Pirate"
-		,"nickp" : "Pirates"
-		,"dnicks" : "Space Hyena"
-		,"dnickp" : "Space Hyenas"
-		,"government" : "Pirate Factions"
-		,"possessive" : "Pirate's"
-		,"homeworld" : "the pirates' homeworld"
-		,"mstandname" : "Butch Austin"
-		,"fstandname" : "Judy \'One Eye\' McGill"
+,"aera" :	{"full" : ["Aeran Ascendency"]
+		,"nicks" : ["Aera"]
+		,"nickp" : ["Aera"]
+		,"dnicks" :["Jingo"]
+		,"dnickp" : ["Jingos"]
+		,"government" : ["Aera Oligarchy"]
+		,"possessive" : ["Aeran"]
+		,"homeworld" : ["Aeneth"]
 		}
-,"hunter" :	{"full" : "Bounty Hunter's Guild"
-		,"nicks" : "Bounty Hunter"
-		,"nickp" : "Bounty Hunters"
-		,"dnicks" : "Vulture"
-		,"dnickp" : "Vultures"
-		,"government" : "Hunter's Guild Council"
-		,"possessive" : "Hunter's"
-		,"homeworld" : "Earth"
-		,"mstandname" : "Vart Nemkis"
-		,"fstandname" : "Mir Karok"
+,"retro":	{"full" : ["Retro Religious Advocacy"]
+		,"nicks": ["Retro"]
+		,"nickp": ["Retros"]
+		,"dnicks": ["Fanatic"]
+		,"dnickp": ["Fanatics"]
+		,"government" : ["Clergy"]
+		,"possessive" : ["Retro's"]
+		,"homeworld" : ["Eden"]
 		}
-
-,"ISO" :	{"full" : "Interstellar Socialist Organization"
-		,"nicks" : "ISO"
-		,"nickp" : "ISO"
-		,"dnicks" : "Pinko-Terrorist"
-		,"dnickp" : "Pinko-Terrorists"
-		,"government" : "Polit Convention"
-		,"possessive" : "ISO's"
-		,"homeworld" : "Trotsky"
+,"luddites":	{"full" : ["Interstellar Church of True Form's Return"]
+		,"nicks": ["True-Former"]
+		,"nickp": ["True-Formers"]
+		,"dnicks": ["Luddite"]
+		,"dnickp": ["Luddites"]
+		,"government" : ["Clergy"]
+		,"possessive" : ["Luddite's"]
+		,"mstandname" : ["Brother Maynard"]
+		,"fstandname" : ["Sister Keyes"]
 		}
-,"unknown":	{"full" : "unknown forces"
-		,"nicks" : "unmarked ship"
-		,"nickp" : "unidentified force"
-		,"dnicks" : "bandit"
-		,"dnickp" : "bandits"
-		,"government" : "unknown organization"
-		,"possesive": "bandit's"
-		,"homeworld" : "Plural"
-		}
-,"uln":		{"full":"Uln"
-		,"nicks":"Uln"
-		,"nickp":"Uln"
-		,"dnicks":"Blockhead"
-		,"dnickp":"Blockheads"
-		,"government":"Sul-gatwa Lordship"
-		,"possessive":"Uln's"
-		,"homeworld": "Ingatwa"
-		}
-,"dgn":		{"full":"Dgn"
-		,"nicks":"Dgn"
-		,"nickp":"Dgn"
-		,"dnicks":"Salamander"
-		,"dnickp":"Salamanders"
-		,"government":"Dgn "
-		,"possessive":"Dgn's"
-		,"homeworld": "Beckett's Murky Venture"
-		}
-,"rlaan-briin" :{"full" : "Rlaan-Briin"
-		,"nicks" : "Briin"
-		,"nickp" : "Briin"
-		,"dnicks" : "Bucket-Head"
-		,"dnickp" : "Bucket-Heads"
-		,"government" : "Briin Subordinate Assembly"
-		,"possessive" : "Briin"
-		,"homeworld" : "Bribztkabr"
+,"rlaan" :	{"full" : ["Rlaan Sovereignty"]
+		,"nicks" : ["Rlaan"]
+		,"nickp" : ["Rlaan"]
+		,"dnicks" : ["Four-Facer"]
+		,"dnickp" : ["Four-Facers"]
+		,"government" : ["Rlaan Assembly"]
+		,"possessive" : ["Rlaan"]
+		,"homeworld" : ["Aantlbzz"]
 		}
 
-,"klkk" :	{"full" : "Klk'k "
-		,"nicks" : "Klk'k"
-		,"nickp" : "Klk'k"
-		,"dnicks" : "Wisenheimer"
-		,"dnickp" : "Wisenheimers"
-		,"government" : "Last House"
-		,"possessive" : "Klk'k-an"
-		,"homeworld" : "Ktah"
+,"pirates" :	{"full" : ["Various Pirate Factions"]
+		,"nicks" : ["Pirate"]
+		,"nickp" : ["Pirates"]
+		,"dnicks" : ["Space Hyena"]
+		,"dnickp" : ["Space Hyenas"]
+		,"government" : ["Pirate Factions"]
+		,"possessive" : ["Pirate's"]
+		,"homeworld" : ["the pirates' homeworld"]
+		,"mstandname" : ["Butch Austin"]
+		,"fstandname" : ["Judy \'One Eye\' McGill"]
+		}
+,"hunter" :	{"full" : ["Bounty Hunter's Guild"]
+		,"nicks" : ["Bounty Hunter"]
+		,"nickp" : ["Bounty Hunters"]
+		,"dnicks" : ["Vulture"]
+		,"dnickp" : ["Vultures"]
+		,"government" : ["Hunter's Guild Council"]
+		,"possessive" : ["Hunter's"]
+		,"homeworld" :["Earth"]
+		,"mstandname" : ["Vart Nemkis"]
+		,"fstandname" : ["Mir Karok"]
+		}
+
+,"ISO" :	{"full" : ["Interstellar Socialist Organization"]
+		,"nicks" : ["ISO"]
+		,"nickp" : ["ISO"]
+		,"dnicks" : ["Pinko-Terrorist"]
+		,"dnickp" : ["Pinko-Terrorists"]
+		,"government" : ["Polit Convention"]
+		,"possessive" : ["ISO's"]
+		,"homeworld" : ["Trotsky"]
+		}
+,"unknown":	{"full" : ["unknown forces"]
+		,"nicks" : ["unmarked ship"]
+		,"nickp" : ["unidentified force"]
+		,"dnicks" : ["bandit"]
+		,"dnickp" : ["bandits"]
+		,"government" : ["unknown organization"]
+		,"possesive": ["bandit's"]
+		,"homeworld" : ["Plural"]
+		}
+,"uln":		{"full":["Uln"]
+		,"nicks":["Uln"]
+		,"nickp":["Uln"]
+		,"dnicks":["Blockhead"]
+		,"dnickp":["Blockheads"]
+		,"government":["Sul-gatwa Lordship"]
+		,"possessive":["Uln's"]
+		,"homeworld": ["Ingatwa"]
+		}
+,"dgn":		{"full":["Dgn"]
+		,"nicks":["Dgn"]
+		,"nickp":["Dgn"]
+		,"dnicks":["Salamander"]
+		,"dnickp":["Salamanders"]
+		,"government":["Dgn "]
+		,"possessive":["Dgn's"]
+		,"homeworld": ["Beckett's Murky Venture"]
+		}
+,"rlaan-briin" :{"full" : ["Rlaan-Briin"]
+		,"nicks" : ["Briin"]
+		,"nickp" : ["Briin"]
+		,"dnicks" : ["Bucket-Head"]
+		,"dnickp" : ["Bucket-Heads"]
+		,"government" : ["Briin Subordinate Assembly"]
+		,"possessive" : ["Briin"]
+		,"homeworld" : ["Bribztkabr"]
+		}
+
+,"klkk" :	{"full" : ["Klk'k "]
+		,"nicks" : ["Klk'k"]
+		,"nickp" : ["Klk'k"]
+		,"dnicks" : ["Wisenheimer"]
+		,"dnickp" : ["Wisenheimers"]
+		,"government" : ["Last House"]
+		,"possessive" : ["Klk'k-an"]
+		,"homeworld" : ["Ktah"]
 		}
 }
 

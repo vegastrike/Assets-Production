@@ -115,7 +115,7 @@ def formatNameTags(word,names):
 	elif tag in ["FG","FGtype"] :
 		return allUsefullVariables[var+tag]
 	elif tag in names["alltags"] and validateDictKeys([var_string,tag],dynamic_news_content.allFactionNames()):
-		return names[var_string][tag]
+		return names[var_string][tag][0]
 	else:
 		print "Error. Invalid news tag, not found in dictionary."
 		return word
