@@ -4,7 +4,7 @@
    </threat>
   </bshield>
 
-  <meterdistance max="75" script="++turnaway.xml">
+  <meterdistance max="30" script="++turnaway.xml">
     <bshield max="1.1" script="++evade.xml">
       <rshield max="1.1" script="++turnaway.xml">
          <fshield max="1.1" script="++shelton-slide.xml"/>
