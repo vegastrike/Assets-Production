@@ -24,7 +24,7 @@
 <!-- new elements added -->
 <Light file="supernova.bmp" x="0.574761" y="-0.023331" z="-10.736850" size="0.822411"/>
 <Light file="supernova.bmp" x="1.386666" y="0.000000" z="-10.986665" size="0.564805"/>
-<Mount weapon="Tachyon" size="Special Heavy" x="-6.118179" y="0.000000" z="2.773746" />
+<Mount weapon="Tachyon" size="Special Heavy Autotracking" x="-6.118179" y="0.000000" z="2.773746" />
 <Mount weapon="DisruptorBeam" size="Light Medium" x="-1.301772" y="-0.130177" z="8.584977" />
 	<Hold volume="8">
 	</Hold>

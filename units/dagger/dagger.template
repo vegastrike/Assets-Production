@@ -27,5 +27,5 @@
 <Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="2.500000" y="-.270000" z="-1.400000" ammo="1" volume="151"/>
 <Mount weapon="FriendOrFoe" size="light-missile medium-missile" x="-2.500000" y="-.270000" z="-1.400000" ammo="1" volume="151"/>
 
-<Mount weapon="Plasma" size="special medium heavy" x="0.000000" y="-0.270000" z="2.400000"/>
+<Mount weapon="Plasma" size="special medium heavy Autotracking" x="0.000000" y="-0.270000" z="2.400000"/>
 </Unit>

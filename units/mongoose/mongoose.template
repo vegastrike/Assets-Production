@@ -8,8 +8,8 @@
 	<Upgrade file="engine_level_2"/>
 	<Upgrade file="reinforced_hull"/>
 
-	<Mount weapon="Photon" size="light medium heavy" x="0.800000" y="-0.600000" z="8.000000"/>
-	<Mount weapon="Photon" size="light medium heavy" x="-0.800000" y="-0.600000" z="8.000000"/>
+	<Mount weapon="Photon" size="light medium heavy Autotracking" x="0.800000" y="-0.600000" z="8.000000"/>
+	<Mount weapon="Photon" size="light medium heavy Autotracking" x="-0.800000" y="-0.600000" z="8.000000"/>
 	<Mount weapon="Swarm" size="Special Special-Missile" x="2.000000" y="0.800000" z="-4.000000" ammo="75" volume="1000" />
 	<Mount weapon="Swarm" size="Special Special-Missile" x="-2.000000" y="0.800000" z="-4.000000" ammo="75" volume="1000"/>
 	<Mount weapon="Swarm" size="Special Special-Missile" x="1.000000" y="-1.400000" z="-1.000000" ammo="75" volume="1000"/>

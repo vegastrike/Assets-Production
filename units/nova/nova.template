@@ -8,10 +8,10 @@
 	<Upgrade file="engine_level_4"/>
 	<Upgrade file="double_plated_hull"/>
 
-	<Mount weapon="Laser" size="Light" x="1.000000" y="0.000000" z="4.000000"/>
-	<Mount weapon="Laser" size="Light" x="-1.000000" y="0.000000" z="4.000000"/>
-	<Mount weapon="Meson" size="Light Medium" x="4.000000" y="0.000000" z="4.500000"/>
-	<Mount weapon="Meson" size="Light Medium" x="-4.000000" y="0.000000" z="4.500000"/>
+	<Mount weapon="Laser" size="Light Special Autotracking" x="1.000000" y="0.000000" z="4.000000"/>
+	<Mount weapon="Laser" size="Light Special Autotracking" x="-1.000000" y="0.000000" z="4.000000"/>
+	<Mount weapon="Meson" size="Light Medium Heavy" x="4.000000" y="0.000000" z="4.500000"/>
+	<Mount weapon="Meson" size="Light Medium Heavy" x="-4.000000" y="0.000000" z="4.500000"/>
 	<Mount weapon="Dumbfire" size="light-missile" x="-1.500000" y="-0.200000" z="-1.0000" volume="240"/>
 	<Mount weapon="Dumbfire" size="light-missile" x="1.500000" y="-0.200000" z="-1.00000" volume="240"/>
 

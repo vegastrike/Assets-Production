@@ -49,7 +49,7 @@
 
 <Stats mass="5.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
 <!-- changed maxspeed to 124-->
-<Computer yaw="105" pitch="100" roll="95" afterburner="124" maxspeed="50">
+<Computer yaw="65" pitch="70" roll="55" afterburner="124" maxspeed="50">
 	<Radar itts="true" color="true" error="0"/> <!-- put radar in computer -->
 </Computer>
 
@@ -78,7 +78,7 @@
 
 	<Engine Afterburner="466.666718" Forward="100.333344" Retro="154.666676" 			Left="152.666672" Right="152.666672" Top="152.666672" Bottom="152.666672"/>
 <!-- less maneuver and engine thrust -->
-	<Maneuver yaw="1043.200050" pitch="1887.800201" roll="1643.200050"/>
+	<Maneuver yaw="243.200050" pitch="487.800201" roll="543.200050"/>
 
 </Thrust>
 

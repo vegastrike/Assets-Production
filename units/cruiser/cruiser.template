@@ -35,8 +35,8 @@
 	</Hold>
 
 <!-- new elements added -->
-<Mount weapon="HeavyFlak" size="capship-medium" x="-39.333334" y="-9.733333" z="289.333344"/>
-<Mount weapon="HeavyFlak" size="capship-medium" x="39.333334" y="-9.733333" z="289.333344"/>
+<Mount weapon="HeavyFlak" size="capship-medium Autotracking" x="-39.333334" y="-9.733333" z="289.333344"/>
+<Mount weapon="HeavyFlak" size="capship-medium Autotracking" x="39.333334" y="-9.733333" z="289.333344"/>
 
 <Mount weapon="Capcluster" size="light-capship-missile" x="-168.333334" y="7.733333" z="-49.333344" ammo="12" volume="7200" />
 <Mount weapon="Capcluster" size="light-capship-missile" x="168.333334" y="7.733333" z="-49.333344" ammo="12" volume="7200" />

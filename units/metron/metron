@@ -13,9 +13,9 @@
 <!-- Ship are facing Z axis so for weapon location : X= left/right, y=over/under, 
 								Z=front/back -->
 <!-- made into pretty blue gatling bolt -->
-<Mount weapon="Photon" size="Special Light Medium Heavy" x="2.80800" y="0.15400" z="19.98000"/>
+<Mount weapon="Photon" size="Special Light Medium Heavy Autotracking" x="2.80800" y="0.15400" z="19.98000"/>
 
-<Mount weapon="Laser" size="Light" x="3.76500" y="0.15400" z="19.31000"/>
+<Mount weapon="Laser" size="Light Autotracking" x="3.76500" y="0.15400" z="19.31000"/>
 <Mount weapon="Swarm" size="Special special-missile" x="-12" y="0" z="6.5" ammo="80" volume="801"/>
 <Mount weapon="Dumbfire" size="light-missile" x="-12" y="0" z="6.5" ammo="6" volume="361"/>
 

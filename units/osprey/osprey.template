@@ -9,7 +9,7 @@
 	<Upgrade file="double_plated_hull"/>
 	<Mount weapon="Particle" size="Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
 	<Mount weapon="Particle" size="Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
-	<Mount weapon="Ion" size="Medium" x="000000" y="-.6000000" z="12.000000"/>
+	<Mount weapon="Ion" size="Medium AUTOTRACKING" x="000000" y="-.6000000" z="12.000000"/>
 	<Mount weapon="Torpedo" size="heavy-missile" x="-5.000000" y="-.9000000" z="-3.000000" volume="1201"/>	
 	<Mount weapon="Torpedo" size="heavy-missile" x="5.000000" y="-.9000000" z="-3.000000"  volume="1201"/>	
 	<Mount weapon="Mace" size="medium-missile heavy-missile" x="4.000000" y="-.9000000" z="-2.000000" volume="1201"/>	
