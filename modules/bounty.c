@@ -38,10 +38,10 @@ module bounty {
 	  object tempfaction;
 	  if (!_std.isNull(you)) {
 	    object name = _unit.getFaction (you);
-	    int factionname=random.randomint(0,faction_ships.getMaxFactions());
+	    int factionname=random.randomint(0,faction_ships.getMaxFactions()-1);
 	    tempfaction=faction_ships.intToFaction(factionname);
 	    while (_string.equal(name,tempfaction)) {
-	      int factionname=random.randomint(0,faction_ships.getMaxFactions());
+	      int factionname=random.randomint(0,faction_ships.getMaxFactions()-1);
 	      tempfaction=faction_ships.intToFaction(factionname);
 	    }
 	    int sd = random.randomint (minshipdifficulty,maxshipdifficulty);
