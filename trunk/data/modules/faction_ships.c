@@ -106,6 +106,9 @@ module faction_ships {
     object lst = _olist.at (capitols,confed_aera_or_rlaan);
     return getRandomShipType(lst);
   };
+  int getMaxFactions () {
+    return _olist.size(fighters);
+  };
   object getRandomFighter(object faction){
     object type;
 
@@ -118,7 +121,25 @@ module faction_ships {
     else if (_string.equal(faction,"rlaan")){
       type=getRandomFighterInt(2);
     }
-    else if (_string.equal(faction,"unknown")){
+    else {
+      type=getRandomShipType(unknown_ships);
+    }
+
+    return type;
+  };
+  object getRandomCapitol(object faction){
+    object type;
+
+    if(_string.equal(faction,"confed")){
+      type=getRandomCapitolInt(0);
+    }
+    else if(_string.equal(faction,"aera")){
+      type=getRandomCapitolInt(1);
+    }
+    else if (_string.equal(faction,"rlaan")){
+      type=getRandomCapitolInt(2);
+    }
+    else {
       type=getRandomShipType(unknown_ships);
     }
 
