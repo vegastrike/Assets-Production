@@ -106,6 +106,15 @@ module faction_ships {
     object lst = _olist.at (capitols,confed_aera_or_rlaan);
     return getRandomShipType(lst);
   };
+  object intToFaction(int fac) {
+    if (fac==0) {
+      return "confed";
+    }else if (fac==1) {
+      return "aera";
+    }else if (fac==2) {
+      return "rlaan";
+    }
+  };
   int getMaxFactions () {
     return _olist.size(fighters);
   };
