@@ -1,16 +1,12 @@
 module ai_stationary {
-
-  class object outstr;
-  class float gametime;
-  class object my_unit;
+  import vec3;
   class object my_order;
 
   void initai(){
-    outstr=_string.new();
-    gametime=_std.getGameTime();
-
-    my_unit=_std.getCurrentAIUnit();
+    object forward=vec3.new(0.0,0.0,0.0);
     my_order=_std.getCurrentAIOrder();
+    _order.enqueueOrder(my_order,_order.newMatchLinearVelocity(forward,true,false,false));
+    _olist.delete(forward);
   };
 
   void executeai(){
