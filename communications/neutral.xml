@@ -1,0 +1,16 @@
+<comm>
+	<node text="HI!!! Nice day!" relationship="0">
+		<edge index="1"/>
+	</node>
+	<node text="Welcome!" relationship="0">
+		<edge index="2"/>
+		<edge index="3"/>
+	</node>
+	<node text="You've Got Mail!" relationship=".1">
+		<edge index="3"/>
+	</node>
+	<node text="Goodbye!" relationship="-.1">
+		<edge index="1"/>
+		<edge index="3"/>
+	</node>
+</comm>
