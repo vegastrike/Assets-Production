@@ -1,5 +1,8 @@
 import Base
 import random
+import VS
+plist=VS.musicAddList('carribean.m3u')
+VS.musicPlayList(plist)    
 
 time_of_day='_day'
 
