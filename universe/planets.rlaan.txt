@@ -1,1 +1,1 @@
-desert1.png desert2.png desert3.png desert.png frigid_mud.png Lava10.png Lava11.png Lava12.png Lava1.png Lava2.png Lava9.png Lava.png purple.png red_rocky.png toxic_disaster.png tundra1.png tundra2.png tundra.png
+planets/desert1.png planets/desert2.png planets/desert3.png planets/desert.png planets/frigid_mud.png planets/Lava10.png planets/Lava11.png planets/Lava12.png planets/Lava1.png planets/Lava2.png planets/Lava9.png planets/Lava.png planets/purple.png planets/red_rocky.png planets/toxic_disaster.png planets/tundra1.png planets/tundra2.png planets/tundra.png
