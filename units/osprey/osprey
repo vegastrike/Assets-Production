@@ -14,6 +14,7 @@
 		<Armor front="100" right="100" left="100" back="100"/>
 		<Shields front="80.000000" right="70.000000" left="70.000000" back="60.000000" recharge="20.000000"/>
 		<Hull strength="250.000000"/>
+		<Cloak rate=".4" cloakmin=".1"/>
 	</Defense>
 	<Stats mass="3.000000" momentofinertia="3.000000" fuel="20000"></Stats>
 	<Computer yaw="138.000000" pitch="138.000000" roll="138.000000" afterburner="133.333328" maxspeed="42.666668">
