@@ -1,0 +1,50 @@
+<Mesh texture="material1.bmp">
+<Points>
+<Point>
+		<Location x="-1.15195214748383" y="0.873321115970612" z="1.92218852043152"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+		<Location x="-1.15143477916718" y="0.577992916107178" z="2.028977394104"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+		<Location x="-1.15139758586884" y="0.700906157493591" z="2.04726409912109"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+		<Location x="-1.15194094181061" y="0.595237910747528" z="1.90462911128998"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+		<Location x="-1.15224885940552" y="0.828388929367065" z="1.8451372385025"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+		<Location x="-1.15250515937805" y="0.770525991916656" z="1.77746796607971"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+</Points>
+<Polygons>
+<Tri>
+    <Vertex point="0" s="0" t="-1"/>
+    <Vertex point="1" s="0" t="-1"/>
+    <Vertex point="2" s="0" t="-1"/>
+</Tri>
+<Tri>
+    <Vertex point="1" s="0" t="-1"/>
+    <Vertex point="0" s="0" t="-1"/>
+    <Vertex point="3" s="0" t="-1"/>
+</Tri>
+<Tri>
+    <Vertex point="4" s="0" t="-1"/>
+    <Vertex point="3" s="0" t="-1"/>
+    <Vertex point="0" s="0" t="-1"/>
+</Tri>
+<Tri>
+    <Vertex point="5" s="0" t="-1"/>
+    <Vertex point="3" s="0" t="-1"/>
+    <Vertex point="4" s="0" t="-1"/>
+</Tri>
+</Polygons>
+</Mesh>

@@ -1,0 +1,210 @@
+<Unit scale="5">
+	<cockpit file="disabled-cockpit.cpt" x="0" y="2" z="6"/>
+
+	
+<Meshfile file="porsche-NoName_150-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_149-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_148-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_147-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_146-Material9.xmesh"/>
+<Meshfile file="porsche-NoName_145-Material9.xmesh"/>
+<Meshfile file="porsche-NoName_144-Material9.xmesh"/>
+<Meshfile file="porsche-NoName_143-Material9.xmesh"/>
+<Meshfile file="porsche-NoName_142-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_141-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_140-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_139-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_138-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_137-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_136-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_135-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_134-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_133-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_132-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_131-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_130-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_129-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_128-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_127-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_126-Material6.xmesh"/>
+<Meshfile file="porsche-NoName_125-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_124-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_123-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_122-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_121-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_120-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_119-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_118-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_117-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_116-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_115-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_114-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_113-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_112-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_111-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_110-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_109-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_108-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_107-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_106-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_105-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_104-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_103-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_102-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_101-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_100-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_99-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_98-Material8.xmesh"/>
+<Meshfile file="porsche-NoName_97-Material4.xmesh"/>
+<Meshfile file="porsche-NoName_96-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_95-Material4.xmesh"/>
+<Meshfile file="porsche-NoName_94-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_93-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_92-Material6.xmesh"/>
+<Meshfile file="porsche-NoName_91-Material4.xmesh"/>
+<Meshfile file="porsche-NoName_90-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_89-Material6.xmesh"/>
+<Meshfile file="porsche-NoName_88-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_87-Material4.xmesh"/>
+<Meshfile file="porsche-NoName_86-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_85-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_84-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_83-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_82-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_81-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_80-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_79-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_78-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_77-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_76-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_75-Material4.xmesh"/>
+<Meshfile file="porsche-NoName_74-Material4.xmesh"/>
+<Meshfile file="porsche-NoName_73-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_72-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_71-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_70-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_69-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_68-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_67-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_66-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_65-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_64-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_63-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_62-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_61-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_60-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_59-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_58-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_57-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_56-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_55-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_54-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_53-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_52-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_51-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_50-Material3.xmesh"/>
+<Meshfile file="porsche-NoName_49-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_48-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_47-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_46-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_45-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_44-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_43-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_42-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_41-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_40-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_39-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_38-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_37-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_36-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_35-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_34-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_33-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_32-Material7.xmesh"/>
+<Meshfile file="porsche-NoName_31-Material7.xmesh"/>
+<Meshfile file="porsche-NoName_30-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_29-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_28-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_27-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_26-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_25-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_24-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_23-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_22-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_21-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_20-Material4.xmesh"/>
+<Meshfile file="porsche-NoName_19-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_18-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_18-Material7.xmesh"/>
+<Meshfile file="porsche-NoName_17-Material5.xmesh"/>
+<Meshfile file="porsche-NoName_16-Material6.xmesh"/>
+<Meshfile file="porsche-NoName_15-Material5.xmesh"/>
+<Meshfile file="porsche-NoName_14-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_13-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_12-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_11-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_10-Material2.xmesh"/>
+<Meshfile file="porsche-NoName_9-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_8-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_7-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_6-Material4.xmesh"/>
+<Meshfile file="porsche-NoName_5-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_4-Material3.xmesh"/>
+<Meshfile file="porsche-NoName_3-Material1.xmesh"/>
+<Meshfile file="porsche-NoName_2-Material2.xmesh"/>
+<Meshfile file="porsche-NoName-Material.xmesh"/>
+<Meshfile file="porsche-porsche-Material6.xmesh"/>
+	<BspMesh/>
+
+
+	<Thrust>
+		<Engine Afterburner="1600.000000" Forward="440.000000" Retro="600.000000" Left="10.000000" Right="10.000000" Top="000000" Bottom="000000"/>
+		<Maneuver yaw="5009.400101" pitch="0" roll="0"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage="car-hud.spr" ECM=".01">
+		<Armor front="40" right="35" left="35" back="40"/>
+		<Shields front="60.000000" back="40.000000" recharge="24.000000"/>
+		<Hull strength="200.000000"/>
+	</Defense>
+
+	<Stats mass="2.500000" momentofinertia="2.500000" fuel="40000000"></Stats>
+	<Computer yaw="151.800003" pitch="0" roll="0" afterburner="160.000000" maxspeed="160.000000"/>
+	<Energy afterburnenergy="0">
+		<Reactor recharge="30" limit="140"/>
+	</Energy>
+       	<Jump delay="1" jumpenergy="90"/>       
+
+<!-- new elements added -->
+<Light file="supernova.bmp" x="-.8" y=".96" z="-4.00000" size=".400000" red="1" green="0" blue="0" lighttype="brake"/>
+<Light file="supernova.bmp" x=".8" y=".96" z="-4.00000" size=".400000" red="1" green="0" blue="0" lighttype="brake"/>
+<Light file="supernova.bmp" x="0" y=".96" z="-4.0000" size=".4000000" red="0" green="0" blue="0" lighttype="brake"/>
+
+<Light file="supernova.bmp" x="-.6" y=".96" z="-4.00000" size=".350000" red="1" green="1" blue="1" lighttype="reverse"/><!-- backup lights-->
+<Light file="supernova.bmp" x=".6" y=".96" z="-4.00000" size=".350000" red="1" green="1" blue="1" lighttype="reverse"/>
+
+
+
+<!-- left blinken-->
+<Light file="supernova.bmp" x="-1" y=".96" z="4.0000" size=".150000" red="1" green="1" blue=".5" lighttype="rightblink"/>
+<Light file="supernova.bmp" x="-.9" y=".96" z="-4.00000" size=".150000" red="1" green="1" blue=".5" lighttype="rightblink"/>
+
+
+<!-- right blinken -->
+<Light file="supernova.bmp" x="1" y=".96" z="4.0000" size=".150000" red="1" green="1" blue=".5" lighttype="leftblink"/>
+<Light file="supernova.bmp" x=".9" y=".96" z="-4.00000" size=".150000" red="1" green="1" blue=".5" lighttype="leftblink"/>
+
+
+<!-- headlights!-->
+<Light file="supernova.bmp" x="-1" y=".96" z="4.0000" size="1.0000" red="1" green="1" blue="1" lighttype="headlights"/>
+<Light file="supernova.bmp" x="1" y=".96" z="4.0000" size="1.0000" red="1" green="1" blue="1" lighttype="headlights"/>
+<!-- tail lights -->
+<Light file="supernova.bmp" x="-.2" y=".96" z="-4.0000" size=".500000" red=".8" green="0" blue="0" lighttype="headlights"/>
+<Light file="supernova.bmp" x=".2" y=".96" z="-4.80000" size=".50000" red=".8" green="0" blue="0" lighttype="headlights"/>
+<Light file="supernova.bmp" x="-.6" y=".96" z="-4.0000" size=".500000" red=".8" green="0" blue="0" lighttype="headlights"/>
+<Light file="supernova.bmp" x=".6" y=".96" z="-4.0000" size=".500000" red=".8" green="0" blue="0" lighttype="headlights"/>
+
+	<Hold volume="10">
+	</Hold>
+</Unit>

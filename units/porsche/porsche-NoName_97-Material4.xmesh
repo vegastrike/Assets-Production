@@ -1,0 +1,32 @@
+<Mesh texture="material4.bmp">
+<Points>
+<Point>
+		<Location x="1.26705586910248" y="1.59951865673065" z="0.549118518829346"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+		<Location x="1.26089012622833" y="1.59485650062561" z="0.165039345622063"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+		<Location x="1.05769848823547" y="2.10676288604736" z="0.0601000972092152"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+		<Location x="1.04093182086945" y="2.13127374649048" z="-0.0485644899308681"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+</Points>
+<Polygons>
+<Tri>
+    <Vertex point="0" s="0" t="-1"/>
+    <Vertex point="1" s="0" t="-1"/>
+    <Vertex point="2" s="0" t="-1"/>
+</Tri>
+<Tri>
+    <Vertex point="1" s="0" t="-1"/>
+    <Vertex point="3" s="0" t="-1"/>
+    <Vertex point="2" s="0" t="-1"/>
+</Tri>
+</Polygons>
+</Mesh>
