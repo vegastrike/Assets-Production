@@ -3,7 +3,9 @@ module faction_ships {
   object capitols;
   object fighters;
   object unknown_ships;
-  
+  object factions;
+  object enemies;
+  object friendlies;
   object confed(){
     object cf = _olist.at (fighters,0);
     return cf;
@@ -19,83 +21,340 @@ module faction_ships {
     object rl = _olist.at (fighters,2);
     return rl;
   };
+  object intToFaction(int fac) {
+    if (fac>(_olist.size (factions))) {
+      return "unknown";
+    }
+    object ret = _olist.at (factions,fac);
+    return ret;
+  };
+  int factionToInt (object faction) {
+    int whichfaction=0;
+    int rez=0;
+    while (whichfaction<(_olist.size(factions))) {
+      object fac = _olist.at (factions,whichfaction);
+      if (_string.equal (fac,faction)) {
+	rez = whichfaction;
+	whichfaction=_olist.size (factions);//stop loop
+      }
+      whichfaction=whichfaction+1;
+    }
+    return rez;
+  };
+  int getMaxFactions () {
+    return _olist.size(factions);
+  };
   
   void init(){
+    make_factions_list();
     make_ships_list();
   };
   object get_enemy_of (object factionname) {
-    object piratesstring = _string.new();
-    float r = _std.Rnd();
-    if (_string.equal (factionname,"merchant")) {
-      _io.sprintf (piratesstring,"pirates");
-    } else if (_string.equal (factionname,"confed")) {
-      if (r<0.3) {
-	_io.sprintf (piratesstring,"aera");
-      }else if (r<0.6) {
-	_io.sprintf (piratesstring,"rlaan");
-      }else if (r<0.7) {
-	_io.sprintf (piratesstring,"retro");
-      }else if (r<0.8 ){
-	_io.sprintf (piratesstring,"ISO");
-      }else {
-	_io.sprintf (piratesstring,"pirates");
-      }
-    } else if (_string.equal (factionname,"aera")) {
-      
-      if (r<0.4) {
-	_io.sprintf (piratesstring,"confed");
-      }else if (r<0.8) {
-	_io.sprintf (piratesstring,"rlaan");
-      }else {
-	_io.sprintf (piratesstring,"pirates");
-      }	    
-    }else if (_string.equal (factionname,"rlaan")) {
-      if (r<0.4) {
-	_io.sprintf (piratesstring,"confed");
-      }else if (r<0.8) {
-	_io.sprintf (piratesstring,"aera");
-      }else {
-	_io.sprintf (piratesstring,"retro");
-      }	    
-    }else if (_string.equal (factionname,"pirates")) {
-      
-      if (r<0.4) {
-	_io.sprintf (piratesstring,"confed");
-      }else if (r<0.8) {
-	_io.sprintf (piratesstring,"aera");
-      }else {
-	_io.sprintf (piratesstring,"retro");
-      }	    
-    }else if (_string.equal (factionname,"ISO")) {
-      
-      if (r<0.4) {
-	_io.sprintf (piratesstring,"confed");
-      }else if (r<0.8) {
-	_io.sprintf (piratesstring,"retro");
-      }else {
-	_io.sprintf (piratesstring,"aera");
-      }	
-    }else if (_string.equal (factionname,"retro")) {
-      if (r<0.4) {
-	_io.sprintf (piratesstring,"confed");
-      }else if (r<0.8) {
-	_io.sprintf (piratesstring,"ISO");
-      }else {
-	_io.sprintf (piratesstring,"rlaan");
-      }
-    } else {
-      if (r<0.4) {
-	_io.sprintf (piratesstring,"confed");
-      }else if (r<0.8) {
-	_io.sprintf (piratesstring,"aera");
-      }else {
-	_io.sprintf (piratesstring,"rlaan");
-      }	    
-    }
-    //_io.printf ("Enemy of type %s is %s",factionname,piratesstring);
-    return piratesstring;
+    return get_X_of (enemies, factionToInt (factionname));
   };
-  void make_ships_list(){
+  object get_friend_of (object factionname) {
+    return get_X_of (friendlies, factionToInt (factionname));
+  };
+  object get_X_of (object mylist, int index) {
+    object enemylist = _olist.at (mylist,index);
+    index = random.randomint (0,(_olist.size (enemylist))-1);
+    object piratestring = _string.new();
+    object factionname = _olist.at (enemylist,index);
+    _io.sprintf (piratestring,"%s",factionname);
+    return piratestring;
+  };
+  void make_factions_list () {
+    factions= _olist.new();
+    enemies = _olist.new();
+    friendlies = _olist.new();
+    _olist.push_back (factions,"confed");
+    object curlist = _olist.new();
+    _olist.push_back (enemies,curlist);
+    object flist = _olist.new();
+    _olist.push_back (friendlies,flist);
+
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"ISO");
+
+    _olist.push_back (flist,"confed");
+    _olist.push_back (flist,"confed");
+    _olist.push_back (flist,"confed");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"hunter");
+
+    _olist.push_back (factions,"aera");
+    object curlist = _olist.new();
+    _olist.push_back (enemies,curlist);
+    object flist = _olist.new();
+    _olist.push_back (friendlies,flist);
+    
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"militia");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"hunter");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"ISO");
+
+
+    _olist.push_back (flist,"aera");
+    _olist.push_back (flist,"aera");
+    _olist.push_back (flist,"aera");
+    _olist.push_back (flist,"aera");
+    _olist.push_back (flist,"aera");
+    _olist.push_back (flist,"aera");
+    _olist.push_back (flist,"aera");
+    _olist.push_back (flist,"retro");
+
+
+
+    _olist.push_back (factions,"rlaan");
+    object curlist = _olist.new();
+    _olist.push_back (enemies,curlist);
+    object flist = _olist.new();
+    _olist.push_back (friendlies,flist);
+
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"militia");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"hunter");
+
+    _olist.push_back (flist,"ISO");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"rlaan");
+    _olist.push_back (flist,"rlaan");
+    _olist.push_back (flist,"rlaan");
+    _olist.push_back (flist,"rlaan");
+
+
+    _olist.push_back ( factions, "merchant");
+    object curlist = _olist.new();
+    _olist.push_back (enemies,curlist);
+    object flist = _olist.new();
+    _olist.push_back (friendlies,flist);
+
+
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"pirates");
+
+    _olist.push_back (flist,"ISO");
+    _olist.push_back (flist,"confed");
+    _olist.push_back (flist,"confed");
+    _olist.push_back (flist,"confed");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"hunter");
+    _olist.push_back (flist,"rlaan");
+
+    _olist.push_back ( factions, "retro");
+    object curlist = _olist.new();
+    _olist.push_back (enemies,curlist);
+    object flist = _olist.new();
+    _olist.push_back (friendlies,flist);
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"militia");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"hunter");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"ISO");
+    _olist.push_back (curlist,"ISO");
+    _olist.push_back (curlist,"ISO");
+    _olist.push_back (curlist,"ISO");
+
+    _olist.push_back (flist,"aera");
+    _olist.push_back (flist,"retro");
+    _olist.push_back (flist,"retro");
+    _olist.push_back (flist,"retro");
+
+
+    _olist.push_back (factions, "pirates");
+    object curlist = _olist.new();
+    _olist.push_back (enemies,curlist);
+    object flist = _olist.new();
+    _olist.push_back (friendlies,flist);
+
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"militia");
+    _olist.push_back (curlist,"militia");
+    _olist.push_back (curlist,"militia");
+    _olist.push_back (curlist,"militia");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"merchant");
+    _olist.push_back (curlist,"ISO");
+
+
+    _olist.push_back (flist,"hunter");
+    _olist.push_back (flist,"merchant");//too odd?
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"pirates");
+    _olist.push_back (flist,"pirates");
+    _olist.push_back (flist,"pirates");
+    _olist.push_back (flist,"pirates");
+    _olist.push_back (flist,"pirates");
+
+
+
+    _olist.push_back (factions,"hunter");
+    object curlist = _olist.new();
+    _olist.push_back (enemies,curlist);
+    object flist = _olist.new();
+    _olist.push_back (friendlies,flist);
+
+
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"rlaan");
+
+    _olist.push_back (flist,"ISO");
+    _olist.push_back (flist,"confed");
+    _olist.push_back (flist,"confed");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"hunter");
+    _olist.push_back (flist,"hunter");
+    _olist.push_back (flist,"hunter");
+    _olist.push_back (flist,"hunter");
+    _olist.push_back (flist,"hunter");
+
+
+    _olist.push_back (factions,"militia");
+    object curlist = _olist.new();
+    _olist.push_back (enemies,curlist);
+    object flist = _olist.new();
+    _olist.push_back (friendlies,flist);
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"rlaan");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"ISO");
+
+    _olist.push_back (flist,"confed");
+    _olist.push_back (flist,"confed");
+    _olist.push_back (flist,"confed");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"militia");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"hunter");
+
+    _olist.push_back (factions,"ISO"); 
+    object curlist = _olist.new();
+    _olist.push_back (enemies,curlist);
+    object flist = _olist.new();
+    _olist.push_back (friendlies,flist);
+
+
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"militia");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"militia");
+    _olist.push_back (curlist,"militia");
+    _olist.push_back (curlist,"confed");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"aera");
+    _olist.push_back (curlist,"pirates");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"retro");
+    _olist.push_back (curlist,"hunter");
+
+    _olist.push_back (flist,"ISO");
+    _olist.push_back (flist,"ISO");
+    _olist.push_back (flist,"ISO");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"merchant");
+    _olist.push_back (flist,"rlaan");
+  };
+void make_ships_list(){
     capitols = _olist.new();
     fighters = _olist.new();
     object confed_ships=_olist.new();
@@ -103,15 +362,18 @@ module faction_ships {
     object confed_capitol=_olist.new();
     _olist.push_back(capitols,confed_capitol);
     _olist.push_back(confed_capitol,"cruiser");
+    _olist.push_back(confed_capitol,"starrunner");
     _olist.push_back(confed_capitol,"cruiser_mk2");
     _olist.push_back(confed_capitol,"carrier");
     _olist.push_back(confed_capitol,"fleetcarrier");
+    _olist.push_back(confed_capitol,"escortcarrier");
     _olist.push_back(confed_ships,"firefly");
     _olist.push_back(confed_ships,"destiny");
     _olist.push_back(confed_ships,"tian");
     _olist.push_back(confed_ships,"nova");
     _olist.push_back(confed_ships,"puma");
     _olist.push_back(confed_ships,"mongoose");
+    _olist.push_back(confed_ships,"avenger");
 
     object aera_ships=_olist.new();
     object aera_capitol=_olist.new();
@@ -133,7 +395,7 @@ module faction_ships {
     object rlaan_capitol=_olist.new();
     _olist.push_back(capitols,rlaan_capitol);
     _olist.push_back(rlaan_capitol,"rlaan_cruiser");
-    _olist.push_back(rlaan_capitol,"revoker");
+
     _olist.push_back(rlaan_ships,"skart");
     _olist.push_back(rlaan_ships,"f109vampire");
     _olist.push_back(rlaan_ships,"starfish");
@@ -141,8 +403,97 @@ module faction_ships {
     
     object merchant_ships=_olist.new();
     _olist.push_back(fighters,merchant_ships);
-    _olist.push_back(capitols,merchant_ships);//double referenced
-    _olist.push_back (merchant_ships,"tian");
+    _olist.push_back (merchant_ships,"wayfarer");
+    _olist.push_back(rlaan_capitol,"revoker");
+
+    object merchant_capitol=_olist.new();
+    _olist.push_back(capitols,merchant_capitol);//double referenced
+    _olist.push_back (merchant_capitol,"cargo");
+    _olist.push_back (merchant_capitol,"truck");
+
+
+    object Xships=_olist.new();
+    _olist.push_back(fighters,Xships);
+    object Xcapitol=_olist.new();
+    _olist.push_back(capitols,Xcapitol);
+    //    retro
+    _olist.push_back (Xships,"firefly");
+    _olist.push_back (Xships,"firefly");
+    _olist.push_back (Xships,"wayfarer");
+    _olist.push_back (Xships,"wayfarer");
+    _olist.push_back (Xships,"avenger");
+    _olist.push_back (Xships,"tian");
+    _olist.push_back (Xships,"tian");
+
+    _olist.push_back (Xcapitol,"cruiser_mk2");
+    _olist.push_back (Xcapitol,"cruiser");
+    _olist.push_back (Xcapitol,"cruiser");
+    _olist.push_back (Xcapitol,"truck");
+
+
+    object Xships=_olist.new();
+    _olist.push_back(fighters,Xships);
+    object Xcapitol=_olist.new();
+    _olist.push_back(capitols,Xcapitol);
+    //    pirates
+    _olist.push_back (Xships,"revoker");
+    _olist.push_back (Xships,"firefly");
+    _olist.push_back (Xships,"firefly");
+    _olist.push_back (Xships,"firefly");
+    _olist.push_back (Xships,"wayfarer");
+    _olist.push_back (Xships,"wayfarer");
+    _olist.push_back (Xships,"tian");
+    _olist.push_back (Xcapitol,"cruiser_mk2");
+    _olist.push_back (Xcapitol,"cruiser");
+    _olist.push_back (Xcapitol,"cruiser");
+    _olist.push_back (Xcapitol,"cargo");
+    _olist.push_back (Xcapitol,"truck");
+    _olist.push_back (Xcapitol,"cargo");
+    _olist.push_back (Xcapitol,"truck");
+
+   
+
+
+    object Xships=_olist.new();
+    _olist.push_back(fighters,Xships);
+    object Xcapitol=_olist.new();
+    _olist.push_back(capitols,Xcapitol);
+    //    hunters
+    _olist.push_back (Xships,"revoker");
+    _olist.push_back (Xships,"puma");
+    _olist.push_back (Xships,"avenger");
+    _olist.push_back (Xcapitol,"cruiser_mk2");
+    _olist.push_back (Xcapitol,"cruiser");
+    _olist.push_back (Xcapitol,"cruiser");
+
+
+
+    object Xships=_olist.new();
+    _olist.push_back(fighters,Xships);
+    object Xcapitol=_olist.new();
+    _olist.push_back(capitols,Xcapitol);
+    //    militia
+    _olist.push_back (Xships,"mongoose");
+    _olist.push_back (Xships,"firefly");
+    _olist.push_back (Xships,"tian");
+    _olist.push_back (Xcapitol,"cruiser_mk2");
+    _olist.push_back (Xcapitol,"cruiser");
+    _olist.push_back (Xcapitol,"escortcarrier");
+    _olist.push_back (Xcapitol,"cruiser");
+
+
+    object Xships=_olist.new();
+    _olist.push_back(fighters,Xships);
+    object Xcapitol=_olist.new();
+    _olist.push_back(capitols,Xcapitol);
+    //    iso
+    _olist.push_back (Xships,"mongoose");
+    _olist.push_back (Xships,"nova");
+    _olist.push_back (Xships,"tian");
+    _olist.push_back (Xcapitol,"cargo");
+    _olist.push_back (Xcapitol,"cruiser");
+    _olist.push_back (Xcapitol,"truck");
+
 
     unknown_ships=_olist.new();
     _olist.push_back(unknown_ships,"unknown_active");    
@@ -182,62 +533,11 @@ module faction_ships {
     object lst = _olist.at (capitols,confed_aera_or_rlaan);
     return getRandomShipType(lst);
   };
-  object intToFaction(int fac) {
-    if (fac==0) {
-      return "confed";
-    }else if (fac==1) {
-      return "aera";
-    }else if (fac==2) {
-      return "rlaan";
-    }else if (fac==3) {
-      return "merchant";
-    } else {
-      return "unknown";
-    }
-  };
-  int getMaxFactions () {
-    return _olist.size(fighters);
-  };
   object getRandomFighter(object faction){
-    object type;
-
-    if(_string.equal(faction,"confed")){
-      type=getRandomFighterInt(0);
-    }
-    else if(_string.equal(faction,"aera")){
-      type=getRandomFighterInt(1);
-    }
-    else if (_string.equal(faction,"rlaan")){
-      type=getRandomFighterInt(2);
-    }
-    else if (_string.equal (faction,"merchant")) {
-      type = getRandomFighterInt(3);
-    }else {
-      type=getRandomShipType(unknown_ships);
-    }
-
-    return type;
+    return getRandomFighterInt (factionToInt(faction));
   };
-  object getRandomCapitol(object faction){
-    object type;
-
-    if(_string.equal(faction,"confed")){
-      type=getRandomCapitolInt(0);
-    }
-    else if(_string.equal(faction,"aera")){
-      type=getRandomCapitolInt(1);
-    }
-    else if (_string.equal(faction,"rlaan")){
-      type=getRandomCapitolInt(2);
-    }
-    else if (_string.equal(faction,"merchant")){
-      type=getRandomFighterInt(3);
-    }
-    else {
-      type=getRandomShipType(unknown_ships);
-    }
-
-    return type;
+  object getRandomCapitol (object faction) {
+    return getRandomCapitolInt (factionToInt (faction));
   };
   
 }
