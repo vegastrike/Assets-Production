@@ -20,8 +20,8 @@
 		<Maneuver yaw="000000" pitch="0" roll="0"/>
 	</Thrust>
 <bspmesh file="nothin.xmesh" bsp="1" rapid="1"/>
-	<subunit file="city.turret" x="0" y="0" z="0"/>
-	<subunit file="city.turret" x="-4800" y="0" z="0"/>
-	<subunit file="city.turret" x="0" y="0" z="-4800"/>
-	<subunit file="city.turret" x="-4800" y="00" z="-4800"/>
+	<subunit file="city.turret" pi="0" pj="1" pk="0" ri="0" rj="0" rk="1" qj="0" qk="0" qi="1"  x="0" y="0" z="0"/>
+	<subunit file="city.turret"  pi="0" pj="1" pk="0" ri="0" rj="0" rk="1" qj="0" qk="0" qi="1"  y="4800" x="0" z="0"/>
+	<subunit file="city.turret"  pi="0" pj="1" pk="0" ri="0" rj="0" rk="1" qj="0" qk="0" qi="1"   y="0" z="-4800" x="-00"/>
+	<subunit file="city.turret" pi="0" pj="1" pk="0" ri="0" rj="0" rk="1" qj="0" qk="0" qi="1"   y="4800" z="-4800" x="-00"/>
 </unit>
