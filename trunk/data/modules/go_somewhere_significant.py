@@ -37,7 +37,7 @@ class go_somewhere_significant:
         if (dyn_fg==""):
           significant=launch.launch_wave_around_unit("Base",capshipfaction,newship,"sitting_duck",1,2000.0,5000.0,significant,"")
         else:
-          significant=launch_recycle.launch_dockable_around_unit(dyn_fg,capshipfaction,"sitting_duck",1,2500,significant,"")
+          significant=launch_recycle.launch_dockable_around_unit(dyn_fg,capshipfaction,"sitting_duck",5000,significant,20000)
     else:
       significant = universe.getRandomJumppoint ()
     if (significant.isNull()):
