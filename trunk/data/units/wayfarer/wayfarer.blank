@@ -39,7 +39,18 @@
 
 	</description>
 	<Hold volume="125">
-	    
+		<Category file="Natural_Products/Food">
+			<import price=".7" pricestddev=".2" quantity="0" quantitystddev="10"/>
+		</Category>    
+		<Category file="Natural_Products/Natural_Resources">
+			<import price=".8" pricestddev=".2" quantity="0" quantitystddev="5"/>
+		</Category>
+		<Category file="Fuels/Crude">
+			<import price="0.8" pricestddev=".2" quantity="0" quantitystddev="2"/>
+		</Category>
+		<Category file="Supplies/Construction_Supplies">
+			<import price=".6" pricestddev=".1" quantity="0" quantitystddev="1"/>
+		</Category>	    
 	</Hold>
 
 <!-- new elements added -->
