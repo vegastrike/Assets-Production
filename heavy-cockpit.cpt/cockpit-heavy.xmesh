@@ -1,4 +1,4 @@
-<Mesh texture="metal47.png" scale="100"> 
+<Mesh texture="metal47.png" scale="24"> 
 <Points>
 	<Point>
 		<Location x="-8.38347148895264" y="7.5722131729126" z="-4.12088060379028"/>
@@ -145,11 +145,11 @@
 		<Normal i="0.05153817683458328" j="-0.01030763518065214" k="0.9986178278923035"/>
 	</Point>
 	<Point>
-		<Location x="-15" y="-6" z="10.8968152999878"/>
+		<Location x="-20" y="-6" z="10.8968152999878"/>
 		<Normal i="0" j="8.881784197001252e-016" k="1"/>
 	</Point>
 	<Point>
-		<Location x="-15" y="-12" z="10.8968152999878"/>
+		<Location x="-20" y="-18" z="10.8968152999878"/>
 		<Normal i="0" j="0" k="1"/>
 	</Point>
 	<Point>
@@ -165,7 +165,7 @@
 		<Normal i="0" j="0" k="1"/>
 	</Point>
 	<Point>
-		<Location x="15" y="-12" z="10.8968152999878"/>
+		<Location x="20" y="-18" z="10.8968152999878"/>
 		<Normal i="0" j="0" k="1"/>
 	</Point>
 	<Point>
@@ -173,7 +173,7 @@
 		<Normal i="0" j="0" k="1"/>
 	</Point>
 	<Point>
-		<Location x="15" y="-6" z="10.8968152999878"/>
+		<Location x="20" y="-6" z="10.8968152999878"/>
 		<Normal i="0" j="8.881784197001252e-016" k="1"/>
 	</Point>
 	<Point>
