@@ -22,26 +22,26 @@
 	</Thrust>
 	<Hold volume="100000000000">
 		<Category file="starships/Neutral">
-			<Cargo file="wayfarer.blank" price="10000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="wayfarer.begin" price="20000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="wayfarer.blank" price="50000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="wayfarer.begin" price="60000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Aera/Light">
-			<Cargo file="kyta.blank" price="20000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="metron.blank" price="30000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="kyta.blank" price="60000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="metron.blank" price="70000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Aera/Medium">
-			<Cargo file="lekra.blank" price="125000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="lekra.blank" price="165000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="aeon.blank" price="300000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Aera/Heavy">
-			<Cargo file="dagger.blank" price="50000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="osprey.blank" price="75000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="aevant.blank" price="150000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="butterfly.blank" price="200000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="kira.blank" price="250000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="dagger.blank" price="100000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="osprey.blank" price="110000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="aevant.blank" price="180000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="butterfly.blank" price="240000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="kira.blank" price="290000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Aera/Milspec">
-			<Cargo file="avenger" price="1000000" quantity="1" mass=".01" volume="1"/>
+
 			<Cargo file="metron" price="250000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="lekra" price="300000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="osprey" price="500000" quantity="1" mass=".01" volume="1"/>
@@ -51,15 +51,16 @@
 		<Category file="starships/Aera/Heavy_Capship">
 		</Category>
 		<Category file="starships/Rlaan/Light">
-			<Cargo file="skart.blank" price="40000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="skart.blank" price="60000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="leokat.blank" price="80000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Rlaan/Medium">
-			<Cargo file="f109vampire.blank" price="50000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="f109vampire.blank" price="90000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Rlaan/Heavy">
-			<Cargo file="starfish.blank" price="60000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="revoker.blank" price="75000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="hispidus.blank" price="100000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="starfish.blank" price="100000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="revoker.blank" price="115000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="hispidus.blank" price="140000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Rlaan/Milspec">
 			<Cargo file="skart" price="290000" quantity="1" mass=".01" volume="1"/>
@@ -69,26 +70,27 @@
 		<Category file="starships/Rlaan/Heavy_Capship">
 		</Category>
 		<Category file="starships/Confed/Light">
-			<Cargo file="tian.blank" price="30000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="tian.blank" price="60000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Confed/Medium">
-			<Cargo file="mongoose.blank" price="60000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="nova.blank" price="75000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="mongoose.blank" price="100000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="nova.blank" price="115000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Confed/Heavy">
-			<Cargo file="firefly.blank" price="40000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="puma.blank" price="150000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="avenger.blank" price="200000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="firefly.blank" price="80000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="puma.blank" price="180000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="avenger.blank" price="240000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Confed/Milspec">
-			<Cargo file="destiny.blank" price="300000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="tian" price="190000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="nova" price="300000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="puma" price="450000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="firefly" price="550000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="destiny.blank" price="320000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="avenger" price="1200000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="tian" price="210000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="nova" price="320000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="puma" price="470000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="firefly" price="570000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Confed/Light_Capship">
-			<Cargo file="cruiser.blank" price="500000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="corvette.blank" price="600000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Confed/Heavy_Capship">
 		</Category>
@@ -103,27 +105,27 @@
 		<Category file="starships/Militia/Heavy_Capship">
 		</Category>
 		<Category file="starships/Merchant/Light">
-			<Cargo file="wayfarer.blank" price="10000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="wayfarer.begin" price="20000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="wayfarer.blank" price="50000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="wayfarer.begin" price="60000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Merchant/Medium">
-			<Cargo file="longhaul.blank" price="150000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="longhaul.blank" price="190000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Merchant/Heavy">
-			<Cargo file="cargoship" price="350000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="cargoship" price="380000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Merchant/Light_Capship">
 		</Category>
 		<Category file="starships/Merchant/Heavy_Capship">
 		</Category>
 		<Category file="starships/Hunter/Light">
-			<Cargo file="katar.blank" price="55000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="katar.blank" price="65000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Hunter/Medium">
-			<Cargo file="epeellcat.blank" price="200000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="epeellcat.blank" price="240000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Hunter/Heavy">
-			<Cargo file="khanjarli.blank" price="75000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="avenger" price="1200000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/Hunter/Light_Capship">
 		</Category>
@@ -132,6 +134,7 @@
 		<Category file="starships/ISO/Light">
 		</Category>
 		<Category file="starships/ISO/Medium">
+			<Cargo file="eagle.blank" price="110000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="starships/ISO/Heavy">
 		</Category>
