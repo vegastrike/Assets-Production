@@ -10,6 +10,7 @@ import news
 class random_encounters:
   class playerdata:  
     def __init__(self,sig_distance,det_distance):
+      print "init playerdat"
       self.quests=[]
       self.curquest=0
       self.last_ship=0
@@ -19,7 +20,9 @@ class random_encounters:
       self.sig_container=VS.Unit()
       self.significant_distance=sig_distance
       self.detection_distance=det_distance
+      print "done playerdat"
   def __init__(self, sigdis, detectiondis, gendis,  minnships, gennships, unitprob, enemyprob, capprob, capdist):
+    print "init random enc"
     self.capship_gen_distance=capdist
     #    player_num=player
     self.enprob = enemyprob
@@ -33,8 +36,11 @@ class random_encounters:
     self.gen_num_ships=gennships
     self.capship_prob=capprob
     self.cur_player=0
+    print "end random enc"
   def AddPlayer (self):
+    print "begin add player"
     self.players+=[random_encounters.playerdata(self.sig_distance,self.det_distance)]
+    print "add player"
   def NewSystemHousekeeping(self,oldsystem,newsystem):
     news.newNews()
     newquest = adventure.newAdventure (self.cur_player,oldsystem,newsystem)
