@@ -10,7 +10,7 @@
         <flightgroups>
 
                 <flightgroup name="blue" faction="confed" type="drone" ainame="_ai_rolling" waves="1" nr_ships="1">
-			<pos x="0" y="60000.0" z="0"/>
+			<pos x="66000" y="0.0" z="0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
