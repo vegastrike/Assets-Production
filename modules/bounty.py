@@ -15,6 +15,7 @@ class bounty (Director.Mission):
 	    quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,val)
 	def __init__ (self,minnumsystemsaway, maxnumsystemsaway, creds, run_away, shipdifficulty, tempfaction,jumps=(),var_to_set=''):
 	  Director.Mission.__init__ (self)
+	  self.run_away=0
 	  self.newship=""
 	  self.mplay="all"
 	  self.var_to_set = var_to_set
