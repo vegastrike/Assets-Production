@@ -8,25 +8,47 @@ persystemattacklist= {}
 
 attacklist ={}#hashtable mapping (attackfg,attackfaction):(defendfg,defendfaction)
 defendlist={}#hashtable mapping (defendfg,defendfaction):(attackfg,attackfaction)
+lastfac=0
+lookorsiege=True
 def UpdateCombatTurn():
-	numfac=VS.GetNumFactions()
-	for i in range (numfac):
-		fac = VS.GetFactionName(i)
-		LookForTrouble (fac)
-		Siege(fac)
-	SimulateBattles();
+	global lastfac
+	global lookorsiege
+	if lastfac>=VS.GetNumFactions():
+		if (not SimulateBattles()):
+			lastfac=0
+	else:
+		fac = VS.GetFactionName(lastfac)
+		if (lookorsiege):
+			lookorsiege=LookForTrouble (fac)
+		else:
+			if (not Siege(fac)):
+				lastfac+=1
+				lookorsiege=True
+		#first look for trouble, then go ahead and simulate all the battles
+
+siegenumber=0
+siegenumtimes=0
+siegeprob=0
+#returns false if Siege is done going through all its vehicles
 def Siege(fac):
+	global siegenumber
+	global siegenumtimes
+	global siegeprob
 	turns_till_siege_effective=100
 	numfg= fg_util.NumAllFlightgroups(fac)
 	if (numfg):
-		prob = float(numfg)/float(turns_till_siege_effective);
-		numtimes = int (prob)
-		if (numtimes==0):
-			numtimes=1
+		if (siegenumber==0):
+			siegeprob = float(numfg)/float(turns_till_siege_effective);
+			siegenumtimes = int (siegeprob)
+			if (siegenumtimes==0):
+				siegenumtimes=1
+			else:
+				siegeprob =1
+		if siegenumber>=siegenumtimes:
+			siegenumber=0
+			return False
 		else:
-			prob =1
-		for i in range(numtimes):
-			if (vsrandom.uniform(0,1)<prob):
+			if (vsrandom.uniform(0,1)<siegeprob):
 				fg =fg_util.RandomFlightgroup(fac)
 				sys = fg_util.FGSystem(fg,fac)
 				enfac=VS.GetGalaxyFaction(sys)
@@ -35,29 +57,54 @@ def Siege(fac):
 						VS.SetGalaxyFaction(sys,fac)
 						print fac + ' took over '+ sys + ' originally owned by '+enfac
 						#ok now we have him... while the siege is going on the allies had better initiate the battle--because we're now defending the place...  so that means if the owners are gone this place is ours at this point in time #FIXME write news story!!!
-					
-					
-					
-				
+			siegenumber+=1
+		return True
+	else:
+		return False
 	
-	
+
+
+#returns false if SimulateBattles gets through all its vehicles
+simulateiter=None
+deadbattles=[]
+deadbattlesiter=-2
 def SimulateBattles():
-	deadbattles=[]
+	global deadbattles
 	global persystemattacklist
 	global attacklist
-	persystemattacklist = {}
-	for ally in attacklist:
-		enemy = attacklist[ally]		
-		if (not attackFlightgroup (ally[0],ally[1],enemy[0],enemy[1])):
-			deadbattles+=[ally]
+	global simulateiter
+	global deadbattlesiter
+	if not simulateiter:
+		if (deadbattlesiter!=-2):
+			if (deadbattlesiter<0):
+				deadbattlesiter=-2
+				return False
+			else:
+				stopAttack(deadbattles[deadbattlesiter][0],deadbattles[deadbattlesiter][1])
+				deadbattlesiter-=1
+				return True
 		else:
-			sys = fg_util.FGSystem(ally[0],ally[1])
-			if not (sys in persystemattacklist):
-				persystemattacklist[sys]=[]
-			persystemattacklist[sys]+=[(ally,enemy)]#continue the battle
-	for i in deadbattles:
-		stopAttack(i[0],i[1])
-def BattlesInSystem():
+			persystemattacklist = {}
+			simulateiter= attacklist.iteritems()
+	try:
+		ally = simulateiter.next()
+		try:
+			enemy = ally[1]
+			ally = ally[0]
+			if (not attackFlightgroup (ally[0],ally[1],enemy[0],enemy[1])):
+				deadbattles+=[ally]
+			else:
+				sys = fg_util.FGSystem(ally[0],ally[1])
+				if not (sys in persystemattacklist):
+					persystemattacklist[sys]=[]
+				persystemattacklist[sys]+=[(ally,enemy)]#continue the battle
+		except:
+			print 'horrible error line 102 dynamic_battle.py'
+	except:
+		simulateiter=None
+		deadbattlesiter = len(deadbattles)-1
+	return True
+def BattlesInSystem(sys):
 	if sys in persystemattacklist:
 		return persystemattacklist[sys]
 	#return {}  #used to be  a hash table
@@ -82,18 +129,28 @@ def randomMovement(fg,fac):
 #			print 'moving '+fg+' from '+sys+' to '+ newsys
 			fg_util.TransferFG( fg,fac,newsys);
 
+#returns false if done with vehicles
+lftiter=0
+import Director
 def LookForTrouble (faction):
-	for i in fg_util.AllFlightgroups (faction):
-		sys = fg_util.FGSystem (i,faction)
-		enfac = faction_ships.get_enemy_of(faction)
-		foundanyone=False
-		for j in fg_util.AllFGsInSystem(enfac,sys):
-			foundanyone=True
-			#FIXME include some sort of measure "can I win"
-			if (vsrandom.randrange(0,5)==0):
-				initiateAttack(i,faction,sys,j,enfac)
-		if (foundanyone==False and vsrandom.randrange(0,3)==0):
-			randomMovement (i,faction)
+	global lftiter
+	key = fg_util.MakeFactionKey(faction)
+	if (lftiter>=Director.getSaveStringLength(fg_util.ccp,key)):
+		lftiter=0
+		return False
+	i = Director.getSaveString(fg_util.ccp,key,lftiter)
+	lftiter+=1	
+	sys = fg_util.FGSystem (i,faction)
+	enfac = faction_ships.get_enemy_of(faction)
+	foundanyone=False
+	for j in fg_util.AllFGsInSystem(enfac,sys):
+		foundanyone=True
+		#FIXME include some sort of measure "can I win"
+		if (vsrandom.randrange(0,5)==0):
+			initiateAttack(i,faction,sys,j,enfac)
+	if (foundanyone==False and vsrandom.randrange(0,3)==0):
+		randomMovement (i,faction)
+	return True
 
 def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
 	i=VS.getUnitList()
@@ -271,7 +328,7 @@ def stopAttack (fgname,faction):
 		sys = fg_util.FGSystem (fgname,faction)
 		if (VS.systemInMemory(sys)):
 			VS.pushSystem(sys)
-			StopTargettingEachOther(fgname,faction,enemy[0],enemy[1])
+			VS.StopTargettingEachOther(fgname,faction,enemy[0],enemy[1])
 			VS.popSystem()
 		del defendlist[enemy]
 		del attacklist[ally]
@@ -300,7 +357,7 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction):
 		if (VS.systemInMemory(sys)):
 			VS.pushSystem(sys)
 			LaunchEqualShips (fgname,faction,enfgname,enfaction)
-			TargetEachOther (fgname,faction,enfgname,enfaction)
+			VS.TargetEachOther (fgname,faction,enfgname,enfaction)
 			VS.popSystem()
 		SimulatedDukeItOut (fgname,faction,enfgname,enfaction)
 	else:

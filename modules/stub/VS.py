@@ -30,20 +30,29 @@ def micro_sleep (n):
 def addParticle (loc,vel,col):
    print 'added particle ' + loc + ' vel '+vel+' col '+col
 def pushSystem(sysname):
-   print "pushSystem"
+   #print "pushSystem"
    global _sysfile
    _sysfile+=[sysname]
+def StopTargettingEachOther (fg,fac,enfg,enfac):
+	#print "detarget"
+	pass
+def TargetEachOther (fg,fac,enfg,enfac):
+	#print "target"
+	pass
 def systemInMemory(sys):
     if (sys=='no_sector/no_system'):
       return 0
     import vsrandom
     ret = vsrandom.randrange(0,2)	
     if (sys in _sysfile):
-        print sys+' in memory'
+        #print sys+' in memory'
+		pass
     if (ret):
-        print sys+' maybe in memory'
+        #print sys+' maybe in memory'
+		pass
     else:
-        print sys + ' maybe not in memory'
+        #print sys + ' maybe not in memory'
+		pass
     return ret
 _ownerdict={}
 def popSystem():
@@ -118,7 +127,7 @@ def SetTimeCompression(val):
    print "SetTimeCompression"
 def GetAdjacentSystem(mystr,which):
    import vsrandom
-   return 'SYSTEM'+chr (vsrandom.randrange(ord('a'),ord('z')+1))
+   return 'SYSTEM'+chr (vsrandom.randrange(ord('a'),ord('z')+1))+chr (vsrandom.randrange(ord('a'),ord('z')+1))
 def GetGalaxyFaction(sysname):
    import faction_ships
    import vsrandom
