@@ -41,11 +41,11 @@ module nvn {
         ship_list=faction_ships.aera();
         faction_name="aera";
         tmp=tmp+1;
-      }else if ((side>0.33)&&!(_string.equal(stringi,"confed"))) {
+      }else if (((side>0.33)&&(side<0.67))&&!(_string.equal(stringi,"confed"))) {
         ship_list=faction_ships.confed();
          faction_name="confed";
          tmp=tmp+1;
-      }else if (!(_string.equal(stringi,"rlaan"))){
+      }else if ((side<0.34)&&!(_string.equal(stringi,"rlaan"))){
         ship_list=faction_ships.rlaan();
         faction_name="rlaan";
         tmp=tmp+1;
