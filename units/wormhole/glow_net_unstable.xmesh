@@ -1,4 +1,4 @@
-<Mesh texture="wh_net_unstable.png" blend="ONE ONE" Scale="105">
+<Mesh texture="wh_net_unstable.png" blend="ONE ONE" Scale="1.75">
 <Points>
 	<Point>
 		<Location x="1" y="0.999999940395" z="2.60540177147e-15"/>
