@@ -6,11 +6,14 @@
 		<Comp Text="You found a secret" x="-0.699219" y="0.635417" wid="0.0175781" hei="0.0260416" BuyMode="" SellMode=""/>
 		<Launch Text="Go to the sun" x="-0.998047" y="0.945313" wid="0.0703125" hei="0.0390625"/>
 		<Comp Text="This is text" x="-0.972656" y="-0.984375" wid="0.392578" hei="0.0442708" BuyMode="" SellMode="" MissionMode="" BriefingMode="" NewsMode="" ShipMode="" UpgradeMode=""/>
-		<Ship x="0" y="0" z="0" ri="0" rj="0" rk="1" qi="0" qj="1" qk="0"/>
+		<Texture File="jump-hud.spr" x="-0.205078" y="0.375"/>
+		<Ship x="0" y="0" z="50" ri="0" rj="0" rk="1" qi="0" qj="1" qk="0"/>
+		<Texture File="bar.spr" x="0" y="0"/>
 		<Texture File="launch.spr" x="-1" y="1"/>
-		<Texture File="mouseover.spr" x="-0.699219" y="0.635417"/>
-		<Texture File="mouse.spr" x="-0.634766" y="0.169271"/>
-		<Texture File="mouseover.spr" x="-0.408203" y="0.453125"/>
+		<Texture File="mouseover.spr" x="-0.40625" y="0.453125"/>
+		<Texture File="mouseover.spr" x="-0.703125" y="0.643229"/>
+		<Texture File="mouse.spr" x="-0.638672" y="0.174479"/>
+		<Texture File="launch.spr" x="-1" y="0.997396"/>
 	</Room>
 	<Room Text="Welcome to the Bar">
 		<Link Text="Back to the Launch pad" x="-0.25" y="-0.25" wid="0.5" hei="0.5" index="0"/>
