@@ -8,6 +8,7 @@
   CRCCheck on			; YAY!
 
 ;default install dir, and registry entry
+  AutoCloseWindow true
   InstallDir "C:\Program Files\VegaStrike\0.2.9\"
   InstallDirRegKey HKLM SOFTWARE\Vegastrike\0.2.9\ "Install_Dir"
 
@@ -40,9 +41,18 @@
 ;Other Functions - this one is what to do once install is completed
 Function .onInstSuccess
 	ExecWait $INSTDIR/OpenALwEAX.exe
-      Exec $INSTDIR/SETUP.EXE 
+      ExecWait $INSTDIR/SETUP.EXE 
+      MessageBox MB_YESNO "Installation Successful. View readme?" IDNO NoReadme
+         Exec "notepad.exe $INSTDIR\README"
+         NoReadme:
+      MessageBox MB_YESNO "Would you like to veiw the story behind VegaStrike 0.2.9?" IDNO NoStory
+         Exec "notepad.exe $INSTDIR\CelesteStory.txt"
+         NoStory:
   FunctionEnd
 
+ Function .onInstFailed
+        MessageBox MB_OK "Installation Cancelled or Data corrupt."  
+ FunctionEnd
 
 ;uninstaller stuff
 UninstallText "This will uninstall Vega Strike 0.2.9 and remove all saved games. Hit next to continue."
@@ -60,3 +70,4 @@ SectionEnd
 ; they're uninstalling. :)
 
 ; eof
+
