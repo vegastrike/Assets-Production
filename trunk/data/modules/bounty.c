@@ -15,6 +15,7 @@ module bounty {
 	import launch;
 	import faction_ships;
 	bool istarget;
+	bool runaway;
 	void destroy () {
 	  _string.delete (faction);
 	  _string.delete (destination);
@@ -28,12 +29,12 @@ module bounty {
 	    _unit.deleteContainer (enemycontainer);
 	  }
 	};
-	void init (int numsystemsaway, float creds) {
+	void init (int numsystemsaway, float creds, bool run_away) {
 	  _std.setNull(newship);
 	  _std.setNull(sigcont);
 	  _std.setNull(enemycontainer);
 	  _std.setNull(youcontainer);
-
+	  runaway=run_away;
 	  faction_ships.init();
 	  arrived=0;
 	  curiter=0;
@@ -118,9 +119,9 @@ module bounty {
 	    }
 	  } else if (arrived==2) {
 	    object sysfil = _std.getSystemFile();
-	    if (_string.equal (sysfil,destination)) {
+	    if (!_string.equal (sysfil,destination)) {
 	      arrived=3;
-		  enemy=_unit.getUnitFromContainer(enemycontainer);
+	      enemy=_unit.getUnitFromContainer(enemycontainer);
 	      if (_std.isNull(you)) {
 		Lose(true);
 		return;
@@ -134,18 +135,22 @@ module bounty {
 	    }
 	  } else if (arrived==1) {
 	    object significant=_unit.getUnitFromContainer(sigcont);
-		if (_unit.getDistance(you,significant)<5000.0) {
-		  if (_std.isNull(newship)) {
-		    newship=faction_ships.getRandomFighter(faction);
-		  }
+	    if (_unit.getDistance(you,significant)<5000.0) {
+	      if (_std.isNull(newship)) {
+		newship=faction_ships.getRandomFighter(faction);
+	      }
 	      enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,4000.0,significant);
 	      enemycontainer=_unit.getContainer(enemy);
 	      if (!_std.isNull(enemy)) {
-		_unit.setTarget(enemy,significant);
-		_unit.Jump(enemy);
+		if (runaway) {
+		  _unit.setTarget(enemy,significant);
+		  _unit.Jump(enemy);
+		  arrived=2;
+		} else {
+		  arrived=3;
+		}
 	      }
-	      destination=_unit.getName(significant);
-	      arrived=2;
+
 	    }
 	  } else {
 	    object sysfil = _std.getSystemFile();
@@ -155,17 +160,16 @@ module bounty {
 	      object newship=faction_ships.getRandomFighter(faction);
 	      int randint=random.randomint(0,50);
 	      object significant = unit.getJumpPoint (randint);
-	      _string.delete (destination);
-	      destination=_unit.getName(significant);
+	      object localdestination=_unit.getName(significant);
 	      if (_std.isNull (significant)) {
 		significant =_unit.getPlayer();
 	      } else {
 		sigcont=_unit.getContainer(significant);
 		isSig=true;
-		  }
+	      }
 	      if (_std.isNull(significant)) {
 		_std.terminateMission (false);
-		  } else {
+	      } else {
 		if (isSig) {	//ADD OTHER JUMPING IF STATEMENT CODE HERE
 		} else {
 		  enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,1000.0,significant);
@@ -177,9 +181,14 @@ module bounty {
 		_io.sprintf(str,"You must destroy the %s unit in this system.",newship);
 		_io.message (0,"game","all",str);
 		if (isSig) {	//ADD OTHER JUMPING IF STATEMENT CODE HERE ALS0
-		  _io.message (3,"game","all","oh no... He is running towards the jump point.  Catch him quick!");
-	      _io.sprintf(str,"he is going to %s",destination);
-	      _io.message (4,"game","all",str);
+		  if (runaway) {
+		    _io.message (3,"game","all","oh no... He is running towards the jump point.  Catch him quick!");
+		    _io.sprintf(str,"he is going to %s",localdestination);
+		  }else {
+		    _io.message (3,"game","all","Scanners are picking up a metallic object!");
+		    _io.sprintf(str,"Coordinates appear near %s",localdestination);
+		  }
+		  _io.message (4,"game","all",str);
 		}
 		_string.delete(str);
 		
