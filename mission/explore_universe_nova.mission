@@ -7,10 +7,10 @@
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
-		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+
 		<var name="system" value="vega_sector/hellespont" />
 		<var name="description" value="4vs4.txt" />
-		<var name="savegame" value="explore_universe" />
+		<var name="savegame" value="explore_universe_nova" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="1">
