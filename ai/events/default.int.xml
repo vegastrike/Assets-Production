@@ -5,6 +5,9 @@
   </hull>
 
   <meterdistance max="60" script="++turnaway.xml">
+    <hull max="1" script="++shelton-slide.xml">
+      <threat min="0" script="++kickstop.xml"/>
+    </hull>
   <!-- distance less than .1-->
   </meterdistance>
   
