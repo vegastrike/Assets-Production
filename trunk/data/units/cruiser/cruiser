@@ -1,7 +1,29 @@
 <Unit scale="100">
 <Meshfile file="cruiser.xmesh"/>
        
+<Dock x=".50" y=".45" z="9" size=".3"/> 
+<Dock x="-.50" y=".45" z="9" size=".3"/> 
 
+
+	<Thrust>
+		<Engine Afterburner="366.666660" Forward="236.666664" Retro="223.333331" Left="213.333332" Right="213.333332" Top="213.333332" Bottom="213.333332"/>
+		<Maneuver yaw="121.800013" pitch="121.800013" roll="221.800013"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage="cruiser-hud.spr">
+		<Armor front="1800" right="2000" left="2000" back="1700"/>
+		<Shields front="3600.000000" left="4000" right="4000" back="3400.000000" recharge="70.000000"/>
+		<Hull strength="3000.000000"/>
+	</Defense>
+	<Stats mass="1150.000000" momentofinertia="1018.000000" fuel="20000000"></Stats>
+	<Computer yaw="57.600000" pitch="57.600000" roll="97.600000" afterburner="88.666666" maxspeed="34.333333">
+		<Radar itts="true" color="true" maxrange="90000"  error="0"/>
+	</Computer>
+	<Energy>
+		<Reactor recharge="700" limit="30000"/>
+	</Energy>
+	<Jump delay="1" jumpenergy="20000"/>              
 
 <!-- new elements added -->
 <Light file="supernova.bmp" x="-0.007512" y="0.108995" z="-13.162303" size="0.420000"/>
