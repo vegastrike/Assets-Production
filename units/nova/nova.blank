@@ -27,7 +27,9 @@
 	</Sound>
 
 	<Stats mass="2.500000" momentofinertia="2.500000" fuel="40000000"></Stats>
-	<Computer yaw="151.800003" pitch="151.800003" roll="151.800003" afterburner="130.000000" maxspeed="43.000000"/>
+	<Computer yaw="151.800003" pitch="151.800003" roll="151.800003" afterburner="130.000000" maxspeed="43.000000">
+		<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>		
+	</Computer>
        	<Jump missing="1" delay="1" jumpenergy="90"/>       
 
 	<!-- new elements added -->

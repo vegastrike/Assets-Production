@@ -37,8 +37,8 @@
 <Stats mass="7.000000" momentofinertia="6.000000" fuel="2000000"></Stats>
 <!-- changed maxspeed to 124-->
 <Computer yaw="90" pitch="105" roll="105" afterburner="110" maxspeed="40">
-	
-</Computer>
+			<Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>		
+	</Computer>
 
 <Jump missing="1" delay="2" jumpenergy="350"/> <!-- reduced jump energy so that it is less than limit -->
 
