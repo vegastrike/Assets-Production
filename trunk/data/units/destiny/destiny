@@ -1,4 +1,5 @@
 <Unit>
+	<Cockpit file="light_cockpit.cpt"/>
 	<Meshfile file="destiny.xmesh" />
 	<BspMesh/>
 	<Thrust>
