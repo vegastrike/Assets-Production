@@ -50,10 +50,10 @@
 
 	<Mount weapon="Mace" size="light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="600"/>
 	<Mount weapon="Mace" size="light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="600"/>
-	<Mount weapon="Maul" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
-	<Mount weapon="Maul" size="heavy-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="700"/>
-	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="4" volume="700"/>
-	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="10.0" y="1.757" z="3.5" ammo="4" volume="700"/>
+	<Mount weapon="Maul" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="800"/>
+	<Mount weapon="Maul" size="heavy-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="800"/>
+	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="4" volume="1000"/>
+	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="10.0" y="1.757" z="3.5" ammo="4" volume="1000"/>
 	<Mount weapon="Hail" size="special-missile" x="-10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
       <Mount weapon="Hail" size="special-missile" x="10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
 	
