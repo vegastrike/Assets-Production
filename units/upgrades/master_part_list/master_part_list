@@ -165,7 +165,7 @@
 			<Cargo file="mass_driver" price="1500" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="disruptor" price="30000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="ion" price="40000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="rasor" price="40000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="rasor_gun" price="40000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="upgrades/Weapons/Mounted_Guns_Heavy">
 			<Cargo file="neutron_gun" price="5000" quantity="1" mass=".01" volume="1"/>
