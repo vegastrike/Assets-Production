@@ -1,0 +1,47 @@
+<system name="vega" background="backgrounds/turquoise" nearstars="500" stars="1000" starspread="150">
+<Light>
+	<ambient red="0.201209" green="0.201209" blue="0.201209"/>
+	<diffuse red="0.716997" green="0.948907" blue="1.000000"/>
+	<specular red="0.514084" green="0.900424" blue="1.000000"/>
+</Light>
+<Asteroid name="AFieldJumpThin" file="AFieldJumpThin" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" x="71560.023438" y="-68572.195312" z="45729.152344"  />
+<Planet name="vega_sector/trimble" file="jump.png" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="200.000000" x="71560.023438" y="-68572.195312" z="45729.152344" alpha="ONE ONE" destination="vega_sector/trimble"  >
+</Planet>
+<Planet name="vega A" file="stars/white_star.png" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="44000.000000" x="0" y="0" z="0"  Red="0.514084" Green="0.900424" Blue="1.000000" ReflectNoLight="true" light="0">
+	<Planet name="Eriu" file="planets/gas_midget.png" ri="72818.281250" rj="-7718.399414" rk="33676.593750" si="-48697.046875" sj="-9548.721680" sk="103108.242188" radius="9192.661133" x="-106842.429688" y="-141967.234375" z="-124255.523438" year= "264753.437500" day="197715.140625"  >
+		<Planet name="vega_sector/alcor" file="jump.png" ri="-17069.171875" rj="-2102.242432" rk="3846.040283" si="2473.675781" sj="-9749.677734" sk="5649.294434" radius="1273.917847" x="14059.583008" y="-16987.044922" z="17204.345703" year= "20589.927734" day="14197.032227" alpha="ONE ONE" destination="vega_sector/alcor"  >
+		</Planet>
+	</Planet>
+	<Planet name="Tarvos Trigaranos" file="planets/gas_medium.png" ri="-80732.640625" rj="31374.378906" rk="-82158.218750" si="66351.820312" sj="142370.062500" sk="-10832.571289" radius="10968.260742" x="-77590.367188" y="87631.765625" z="109064.601562" year= "1523360.000000" day="876408.062500"  >
+		<Planet name="vega_sector/hellskitchen" file="jump.png" ri="18585.968750" rj="15688.511719" rk="3989.125244" si="10665.051758" sj="-12406.258789" sk="-898.589966" radius="1616.704346" x="17926.380859" y="17874.371094" z="15397.804688" year= "26226.160156" day="19809.763672" alpha="ONE ONE" destination="vega_sector/hellskitchen"  >
+		</Planet>
+	</Planet>
+	<Planet name="Coventina" file="planets/toxic_disaster.png" ri="-110814.398438" rj="-55688.046875" rk="-80095.820312" si="83057.484375" sj="5644.276855" sk="-118836.226562" radius="12601.105469" x="-100979.390625" y="-90020.234375" z="-138496.890625" year= "360628.281250" day="79832.445312"  >
+		<Planet name="vega_sector/proxima" file="jump.png" ri="9815.870117" rj="-7174.811523" rk="-12208.717773" si="11310.337891" sj="10239.469727" sk="3076.043213" radius="2442.283203" x="-26127.273438" y="-18703.238281" z="24150.841797" year= "86686.765625" day="35983.062500" alpha="ONE ONE" destination="vega_sector/proxima"  >
+		</Planet>
+	</Planet>
+	<Planet name="Shoney" file="planets/gas_dwarf.png" ri="-17524.847656" rj="-58593.777344" rk="-65368.136719" si="-60774.933594" sj="-45326.843750" sk="56922.878906" radius="9261.278320" x="-115083.414062" y="-133454.687500" z="-136007.593750" year= "139345.609375" day="100148.859375"  >
+		<Unit name="station" file="station" ri="9665.814453" rj="3284.332764" rk="-11501.392578" si="11391.498047" sj="-5889.027832" sk="7891.789551" x="-17907.798828" y="-10095.365234" z="15062.500977" year= "32723.498047" faction="confed"  />
+		<Planet name="Bodb Dearg" file="sol/janus.png" ri="-11022.694336" rj="-7130.571289" rk="11047.528320" si="12298.665039" sj="-6118.941895" sk="8321.578125" radius="3063.512695" x="-19820.013672" y="20584.535156" z="-25142.738281" year= "61969.625000" day="56849.687500"  >
+		</Planet>
+		<Planet name="vega_sector/brimstone" file="jump.png" ri="3322.296143" rj="-14971.493164" rk="14934.041992" si="15778.167969" sj="-8264.740234" sk="-11795.549805" radius="1182.532471" x="13619.966797" y="17630.119141" z="-20107.496094" year= "33379.238281" day="32067.847656" alpha="ONE ONE" destination="vega_sector/brimstone"  >
+		</Planet>
+	</Planet>
+	<Planet name="Teutates" file="planets/gas_giant.png" ri="-12756.881836" rj="-81695.531250" rk="-117384.031250" si="48874.949219" sj="-99865.367188" sk="64191.550781" radius="8238.145508" x="112729.093750" y="80893.320312" z="-76036.421875" year= "461204.250000" day="432375.156250"  >
+		<Planet name="vega_sector/hubbles_star" file="jump.png" ri="6754.365234" rj="12973.300781" rk="-7129.625000" si="12493.648438" sj="1105.194092" sk="13847.106445" radius="1214.595825" x="-12719.182617" y="-12676.936523" z="-10633.193359" year= "15220.430664" day="2312.024170" alpha="ONE ONE" destination="vega_sector/hubbles_star"  >
+		</Planet>
+	</Planet>
+	<Planet name="Cocidius" file="planets/molton_iron.png" ri="-78933.593750" rj="99937.312500" rk="29429.097656" si="12249.919922" sj="42974.089844" sk="-113078.054688" radius="11437.239258" x="-141774.109375" y="138635.843750" z="-79981.257812" year= "1340820.750000" day="1133508.125000"  >
+	</Planet>
+	<Planet name="Cernunnos" file="planets/Snow9.png" ri="113999.054688" rj="40335.488281" rk="-111375.882812" si="-75037.492188" sj="-36639.179688" sk="-90073.914062" radius="19941.679688" x="132345.343750" y="117457.914062" z="116910.562500" year= "138640.312500" day="70058.101562"  >
+		<Unit name="station" file="station" ri="35206.425781" rj="-26935.316406" rk="14433.452148" si="-1178.491821" sj="-16312.199219" sk="-27566.779297" x="40130.820312" y="49942.074219" z="-51033.851562" year= "104946.250000" faction="confed"  />
+		<Planet name="Badb" file="planets/Lava1.png" ri="37151.457031" rj="-52773.226562" rk="-12507.058594" si="-7391.002441" sj="4658.082031" sk="-41609.187500" radius="4513.292969" x="-53386.808594" y="34063.082031" z="34118.214844" year= "335745.968750" day="175435.328125"  >
+		</Planet>
+	</Planet>
+	<Planet name="Sequana" file="planets/Lava9.png" ri="43754.351562" rj="51534.355469" rk="-64404.925781" si="75014.875000" sj="78358.429688" sk="113661.781250" radius="21591.980469" x="-102062.156250" y="-97045.492188" z="177611.531250" year= "141233.578125" day="79114.414062"  >
+		<Unit name="ConfedHq" file="ConfedHq" ri="-18063.439453" rj="48824.113281" rk="23732.679688" si="-8424.296875" sj="-21024.103516" sk="36839.980469" x="61329.527344" y="-55538.410156" z="57147.355469" year= "886219.125000" faction="confed"  />
+		<Planet name="Artio" file="planets/gas_dwarf.png" ri="-47856.054688" rj="34284.441406" rk="19394.638672" si="-22958.449219" sj="-36044.218750" sk="7066.650391" radius="6704.118164" x="45973.300781" y="43464.453125" z="-37994.007812" year= "55546.964844" day="9347.608398"  >
+		</Planet>
+	</Planet>
+</Planet>
+</system>
