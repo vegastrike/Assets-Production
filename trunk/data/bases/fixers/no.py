@@ -1,0 +1,3 @@
+import fixers
+
+fixers.DestroyActiveButtons ()
