@@ -8,7 +8,6 @@ A8500^AFieldBaseSparse
 A8480^AFieldBaseSparse&U400^MiningBase 
 A8480^AFieldBaseSparse&U440^AsteroidFighterBase 
 A8480^AFieldBaseSparse&U100^HiddenAsteroid 
-A7919^AFieldBaseThin 
 A7919^AFieldBaseThin&U400^MiningBase 
 A7919^AFieldBaseThin&U400^MiningBase 
 A7919^AFieldBaseThin&U440^AsteroidFighterBase 
@@ -66,5 +65,3 @@ A7919^AFieldBaseThin&U440^AsteroidFighterBase
 A5600^AFieldJump&jump100 
 A8480^AFieldJumpSparse&jump200 
 A7919^AFieldJumpThin&jump200 
-A8480^AFieldSparse 
-A7919^AFieldThin 
