@@ -1,86 +1,61 @@
-<!-- Name : F-208 -->
-<!-- Type : Space Superiority/Heavy Fighter -->
+<!-- Name : F-404 -->
+<!-- Type : Scout/Light Fighter -->
 <!-- Faction : Not assigned -->
 
 <Unit>
 
-<Meshfile file="f208b.xmesh"/>
-<Meshfile file="f208c.xmesh"/>
+<Meshfile file="f404p.xmesh"/>
+<Meshfile file="f404c.xmesh"/>
+<Meshfile file="f404b.xmesh"/>
 
 <Sound>	</Sound>
 
 <!-- Ship are facing Z axis so for weapon location : X= left/right, y=over/under, 
 								Z=front/back -->
+<!-- made into pretty blue gatling bolt -->
+<Mount weapon="Ktek" size="Light Medium Heavy" x="2.80800" y="0.15400" z="19.98000"/>
 
-<!-- changed mount size from Light to Light and Medium...meaning -->
-<!-- it can hold both light and medium guns when purchased from store -->
-<Mount weapon="Ion" size="Light Medium" x="6.612" y="1.305" z="7.355"/>
-
-<Mount weapon="Ion" size="Light Medium" x="-6.612" y="1.305" z="7.355"/>
-
-<Mount weapon="Plasma" size="Heavy" x="3.572" y="1.305" z="7.355"/>
-
-<Mount weapon="Plasma" size="Heavy" x="-3.572" y="1.305" z="7.355"/>
-
-<Mount weapon="Tachyon" size="Medium Heavy" x="3.572" y="-1.305" z="7.355"/>
-
-<Mount weapon="Tachyon" size="Medium Heavy" x="-3.572" y="-1.305" z="7.355"/>
+<Mount weapon="Laser" size="Light" x="3.76500" y="0.15400" z="19.31000"/>
+<Mount weapon="Swarm" size="special-missile" x="-12" y="0" z="6.5" ammo="80"/>
+<Mount weapon="Dumbfire" size="light-missile" x="-12" y="0" z="6.5" ammo="6"/>
 
 
-<Mount weapon="DumbFire" size="light-missile" x="-6,5" y="-1.305" z="7.355" ammo="6"/>
+<Defense HudImage="f404-hud.spr">
+	<Armor front="75" right="60" left="60" back="60"/>
 
-<Mount weapon="DumbFire" size="light-missile" x="6.5" y="-1.305" z="7.355" ammo="6"/>
+	<Shields front="70.000000" back="60.000000" recharge="22.000000"/>
 
-<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="-6,5" y="-1.305" z="7.355" ammo="4"/>
-
-<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="6.5" y="-1.305" z="7.355" ammo="4"/>
-
-
-<Defense HudImage="f208-hud.spr">
-
-	<Armor front="400" right="280" left="280" back="320"/>
-<!--changed Recharge to sane value -->
-	<Shields front="400.000000" back="375.000000" recharge="32.000000"/>
-
-	<Hull strength="600.000000"/>
+	<Hull strength="125.000000"/>
 
 </Defense>
 
+<Stats mass="4.000000" momentofinertia="5.000000" fuel="900000000"></Stats>
 
-<Stats mass="5.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
-<!-- changed maxspeed to 124-->
-<Computer yaw="105" pitch="100" roll="95" afterburner="124" maxspeed="50">
-	<Radar itts="true" color="true" error="0"/> <!-- put radar in computer -->
+<Computer yaw="110.400002" pitch="96.600006" roll="110.400002" afterburner="182" maxspeed="65">
+	<Radar itts="true" color="true" error="0"/> <!-- shifted radar-->
 </Computer>
-
-
 <Energy>	
-	<Reactor recharge="65" limit="400"/> <!--less recharge -->
+	<Reactor recharge="42" limit="100"/>
 </Energy>
-<Jump delay="2" jumpenergy="350"/> <!-- reduced jump energy so that it is less than limit -->
+<!-- added jump-->
+<Jump delay="2" jumpenergy="60"/>	
 
 
-<!-- Ship are facing Z axis so for light location : X= left/right, y=over/under, 
-								Z=front/back -->
 
-<Light file="supernova.bmp" x="5.094" y="-4.21" z="-12.273" size="1.680000"/>
-<Light file="supernova.bmp" x="5.094" y="0.002" z="-12.273" size="2"/>
-<Light file="supernova.bmp" x="5.094" y="4.253" z="-12.273" size="1.680000"/>
+<Light file="supernova.bmp" x="0.086" y="-0.269" z="-14.620000" size="2.000000"/>
 
-<Light file="supernova.bmp" x="-0.173" y="-0,011" z="-13,168" size="3"/>
-
-<Light file="supernova.bmp" x="-5.094" y="-4.21" z="-12.273" size="1.680000"/>
-<Light file="supernova.bmp" x="-5.094" y="0.002" z="-12.273" size="2"/>
-<Light file="supernova.bmp" x="-5.094" y="4.253" z="-12.273" size="1.680000"/>
 
 
 <Thrust>
 
-	<Engine Afterburner="466.666718" Forward="100.333344" Retro="154.666676" 			Left="152.666672" Right="152.666672" Top="152.666672" Bottom="152.666672"/>
-<!-- less maneuver and engine thrust -->
-	<Maneuver yaw="1043.200050" pitch="1887.800201" roll="1643.200050"/>
+	<Engine Afterburner="1066.666718" Forward="205.333344" Retro="254.666676" 			Left="202.666672" Right="202.666672" Top="202.666672" Bottom="202.666672"/>
+
+	<Maneuver yaw="3643.200050" pitch="3187.800201" roll="3643.200050"/>
 
 </Thrust>
+
+
+
 
 
 </Unit>
