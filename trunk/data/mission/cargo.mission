@@ -21,6 +21,18 @@
         </flightgroups>
 	<module name="director">
 		<import name="cargo_mission"/>
+		<script name="initbriefing">
+			<exec module="cargo_mission" name="initbriefing">
+			</exec>
+		</script>
+		<script name="loopbriefing">
+			<exec module="cargo_mission" name="loopbriefing">
+			</exec>
+		</script>
+		<script name="endbriefing">
+			<exec module="cargo_mission" name="endbriefing">
+			</exec>
+		</script>
 		<script name="initgame">
 			<exec module="cargo_mission" name="init">
 			<const type="int" value="0"/> <!--faction name 0 confed 1 aera... -->
