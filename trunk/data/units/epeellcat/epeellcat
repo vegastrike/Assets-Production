@@ -8,8 +8,8 @@
 <Mount weapon="Laser" size="Light" x="-0.982843" z="-0.316667" y="0.888562" ri="-0.659975" rj="0.358979" rk="-0.659975" qi="0.253836" qj="0.933346" qk="0.253836"/>
 -->
 
-<Mount weapon="Disruptor" size="light medium special" x="-5.240053" z="-0.426834" y="0.726702"/>
-<Mount weapon="Disruptor" size="light medium special" x="5.483819" z="-0.151023" y="0.889213" />
+<Mount weapon="MassDriver" size="light medium special" x="-3.240053" z="-0.426834" y="0.726702"/>
+<Mount weapon="MassDriver" size="light medium special" x="3.483819" z="-0.151023" y="0.889213" />
 
 
 
@@ -20,8 +20,8 @@
 
 
 
-<Mount weapon="Neutron" size="Medium Heavy" x="0.480426" z="3.783170" y="0.589719" />
-<Mount weapon="Neutron" size="Medium Heavy" x="-0.455556" z="3.666667" y="0.666667"/>
+<Mount weapon="Meson" size="Medium Heavy" x="1.480426" z="2.783170" y="0.589719" />
+<Mount weapon="Meson" size="Medium Heavy" x="-1.455556" z="2.666667" y="0.666667"/>
 <Light file="supernova.bmp" x="0.770710" z="-3.150000" y="0.912131" size="1.495000"/>
 <Light file="supernova.bmp" x="-0.841421" z="-3.150000" y="1.124264" size="1.195000"/>
 <Light file="supernova.bmp" x="-1.300000" z="-3.100000" y="-0.200000" size="1.235000"/>
@@ -33,14 +33,14 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense>
+	<Defense hudimage="epeellcat.spr">
 		<Armor front="80" right="65" left="65" back="90"/>
 		<Shields front="80.000000" back="100.000000" recharge="23.000000"/>
 		<Hull strength="600.000000"/>
 	</Defense>
 
 	<Stats mass="4.500000" momentofinertia="3.500000" fuel="40000000"></Stats>
-	<Computer yaw="101.800003" pitch="111.800003" roll="121.800003" afterburner="114.000000" maxspeed="36.500000"/>
+	<Computer yaw="101.800003" pitch="111.800003" roll="121.800003" afterburner="114.000000" maxspeed="40.000000"/>
 	<Energy afterburnenergy="0">
 		<Reactor recharge="55" limit="300"/>
 	</Energy>

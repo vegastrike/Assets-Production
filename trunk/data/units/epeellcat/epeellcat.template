@@ -38,7 +38,7 @@
 <Light file="supernova.bmp" x="1.500000" z="-3.100000" y="-0.200000" size="1.135000"/>
 
 	<Thrust>
-		<Engine Afterburner="1100.000000" Forward="348.000000" Retro="392.000000" Left="224.000000" Right="224.000000" Top="224.000000" Bottom="224.000000"/>
+		<Engine Afterburner="1300.000000" Forward="448.000000" Retro="392.000000" Left="224.000000" Right="224.000000" Top="224.000000" Bottom="224.000000"/>
 		<Maneuver yaw="4009.400101" pitch="4009.400101" roll="4009.400101"/>
 	</Thrust>
 	<Sound>
