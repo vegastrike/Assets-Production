@@ -25,25 +25,28 @@
 (put 'upcase-region 'disabled nil)
 (set-background-color "black")
 (global-font-lock-mode 1)
-(set-foreground-color "turquoise")
-(set-foreground-color "white")
+;(set-foreground-color "turquoise")
+(set-foreground-color "green")
 (set-cursor-color "dark green")
 (set-face-background 'region "dark green")
 (set-face-foreground 'region "white")
 (make-face 'paren-match-face)
-(set-face-foreground 'paren-match-face "White")
+(set-face-foreground 'paren-match-face "green")
 (set-face-background 'paren-match-face "Black")
 (setq auto-save-default nil)
 (setq show-paren-face 'paren-match-face)
 (setq auto-mode-alist
-      (cons '("\\.h$" . c++-mode) (cons '("\\.py$" . python-mode) auto-mode-alist)))
+      (cons '("\\.dot$" . graphviz-dot-mode) (cons '("\\.h$" . c++-mode) (cons '("\\.py$" . python-mode) auto-mode-alist))))
 (setq interpreter-mode-alist
       (cons '("python" . python-mode)
             interpreter-mode-alist))
 (setq load-path (cons "C:\Program Files\emacs-20.7\lisp" load-path))
 (autoload 'python-mode "python-mode" "Python editing mode." t)
+(autoload 'graphviz-dot-mode "graphviz-dot-mode" "Dot editing mode." t)
 (defun mouse-wheel-backward nil (interactive) (scroll-down 10))
 (defun mouse-wheel-forward nil (interactive) (scroll-up 10))
+
+(define-key global-map "\M-t" 'query-replace)
 
 (global-set-key [(mouse-4)] 'mouse-wheel-backward)
 (global-set-key [(mouse-5)] 'mouse-wheel-forward)
@@ -52,25 +55,29 @@
 (global-set-key "\C-xd" 'lisp-eval-defun)
 (global-set-key "\C-x\C-d" 'lisp-eval-defun-and-go)
 (global-set-key "\M-g" 'goto-line)
-(font-lock-mode)
+(global-set-key "\C-x\C-a" 'compile)
+(global-set-key "\C-h" 'call-last-kbd-macro)
+;(global-set-key "\C-x\C-8" 'start-kbd-macro)
+;(global-set-key "\C-x\C-9" 'end-kbd-macro)
+;(font-lock-mode)
 
 
 (setq c-indent-level 4)
-(setq c-basic-offset 4)
+(setq c-basic-offset c-indent-level)
 
 
 (defconst my-c-style
   '((c-tab-always-indent        . t)
-    (c-comment-only-line-offset . 4)
+    (c-comment-only-line-offset . 0)
     )
   "My C Programming Style")
-(setq tab-width 4)
+(setq tab-width c-indent-level)
 (defun my-c-mode-common-hook ()
   (c-add-style "PERSONAL" my-c-style t)
   (c-set-offset 'member-init-intro '++)
   ;; other customizations
-  (setq tab-width 4
-        indent-tabs-mode t)
+  (setq tab-width c-indent-level
+        indent-tabs-mode 0)
   ;; we like auto-newline and hungry-delete
   ;(c-toggle-auto-hungry-state 1)
   ;; keybindings for all supported languages.  We can put these in
