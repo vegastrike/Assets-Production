@@ -137,7 +137,7 @@
 		<stats name="privateer" relation="-.1"/>
 
 	</Faction>
-	<Faction name="hunter" logoRGB="logos/HunterPri.png" secLogoRGB="HunterSec.png">
+	<Faction name="hunter" logoRGB="logos/HunterPri.png" secLogoRGB="logos/HunterSec.png">
 		<stats name="ISO" relation="0"/>
 		<stats name="confed" relation="0"/>
 		<stats name="aera" relation="-.1"/>
