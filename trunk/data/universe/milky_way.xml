@@ -1,0 +1,55 @@
+<galaxy>
+	<systems>
+		<sector name="unknown_sector">
+			<sector name="min">
+				<var name="sun_radius" value="5000"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="0"/>
+				<var name="num_planets" value="1"/>
+				<var name="num_moons" value="1"
+				<var name="nebulae"   value="false"/>
+				<var name="asteroids"   value="true"/>
+				<var name="num_natural_phenomena" value="0"/>
+				<var name="num_starbases" value="0"/>
+				<var name="faction" value="unknown"/>
+				<var name="namelist" value="names.txt"/>
+				<var name="data" value="0" />
+				<var name="num_jump" value="2"/>
+				
+			</sector>			
+			<sector name="max">
+				<var name="sun_radius" value="50000"/>
+				<var name="num_stars" value="2"/>
+				<var name="num_gas_giants" value="3"/>
+				<var name="num_planets" value="10"/>
+				<var name="num_moons" value="10"
+				<var name="nebulae"   value="true"/>
+				<var name="asteroids"   value="false"/>
+				<var name="num_natural_phenomena" value="2"/>
+				<var name="num_starbases" value="3"/>
+				<var name="num_jump" value="6"/>
+				<var name="faction" value="unknown"/>
+				<var name="namelist" value="names.txt"/>
+				<var name="data" value="0" />
+				
+			</sector>			
+		</sector>
+		<sector name="vega_sector">
+			<sector name="proxima">
+				<var name="sun_radius" value="22000"/>
+				<var name="num_stars" value="1"/>
+				<var name="num_gas_giants" value="2"/>
+				<var name="num_planets" value="4"/>
+				<var name="num_moons" value="5"
+				<var name="nebulae"   value="true"/>
+				<var name="asteroids"   value="true"/>
+				<var name="num_natural_phenomena" value="1"/>
+				<var name="num_starbases" value="2"/>
+				<var name="faction" value="confed"/>
+				<var name="namelist" value="celtic.txt"/>
+				<var name="jumps" value="sol_sector/sirius vega_sector/vega vega_sector/blackmane vega_sector/krieger"/>
+				<var name="data" value="1502 15309 35982035 8032958 23958 23059823058239 8168396 8193 6136890123 61396103618036 1830 6130 68109 68391086 1093 681936091 86391 6091 609381 61806 39168 013986209319 836981 368 103462163 18613 61036 84196 810396 81306 1396 103 6139 68109368 1306136 1086013 618036 130691 6018396  13601 36 1368 01368 31068 3 61039 6381 36098 31608 13680193689318931860 13601 6 31986 1036 31806 89136 0136 813096 1036 813068 1306813 06 1036 831068 1306013 60136 89106 103609138 60913 6013 609138 6013 60918 6018306831096831096801368 138 613 0681306810360" />
+			</sector>			
+		</sector>	
+	</systems>
+</vegaconfig>
