@@ -1,6 +1,6 @@
 <!--29Jan03-->
 
-<!--Last Edited by: Laurent-->
+<!--Last Edited by: JackS-->
 <!--6APR03-->
 <Unit>
 	<Defense>
@@ -24,8 +24,8 @@
 	</Thrust>
 	<Hold volume="100000000000">
 		<Category file="starships/Neutral">
-			<Cargo file="wayfarer.blank" price="6000" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
-			<Cargo file="wayfarer.begin" price="600" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
+			<Cargo file="wayfarer.blank" price="6000" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: Unknown \ Model: Wayfarer 3106 (stock)\ Crew Capacity: Unknown \ \ Stats - \  Mass: 1096 mTons \  Accelerations - \  Fore: 20.55 m/s^2 \  Aft: 25.48 m/s^2\  Port: 20.28 m/s^2 \  Starboard: 20.28 m/s^2 \  Up: 20.28 m/s^2 \  Down: 20.28 m/s^2 \  Max. Velocity For \   Manual Control: 864 km/h \  Hold Volume: 125 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
+			<Cargo file="wayfarer.begin" price="600" quantity="1" mass=".01" volume="1000" description="\ Manufacturer: Unknown \ Model: Wayfarer 3105 (resale)\ Crew Capacity: Unknown \ \ Stats - \  Mass: 1096 mTons \  Accelerations - \  Fore: 20.55 m/s^2 \  Aft: 25.48 m/s^2 \  Port: 20.28 m/s^2 \  Starboard: 20.28 m/s^2 \  Up: 20.28 m/s^2 \  Down: 20.28 m/s^2 \  Max. Velocity For \   Manual Control: 864 km/h \  Hold Volume: 125 \ \ Hardpoints - \ \ Max. Engine: Unknown \ Max. Shield: Unknown " />
 		</Category>
 		<Category file="starships/Aera/Light">
 			<Cargo file="kyta.blank" price="40000" quantity="1" mass=".01" volume="300" description="\ Manufacturer: \ Model: \ Crew Capacity: \ \ Stats - \  Mass: \  Accelerations - \  Fore: \  Aft: \  Port: \  Starboard: \  Up: \  Down: \  Max. Velocity For \   Manual Control: \  Hold Volume: \ \ Hardpoints - \ \ Max. Engine: \ Max. Shield: " />
@@ -227,16 +227,16 @@
 			<Cargo file="autotracking" price="100000" quantity="1" mass=".01" volume="1" description="While all mounted weapons have inherent auto-tracking capabilities, these defaults are limited in civilian mounts.  A full-powered military auto-tracker like this greatly enhances weapon accuracy." />
 		</Category>
 		<Category file="upgrades/Engines/Light">
-			<Cargo file="engine_level_0" price="4000" quantity="1" mass=".01" volume="1" description="Standard light engine (level 0).\ \ Stat - \    Reactor recharge: 20\    Limit: 140" />
-			<Cargo file="engine_level_1" price="10000" quantity="1" mass=".01" volume="1" description="Standard light engine (level 1).\ \ Stat - \    Reactor recharge: 80\    Limit: 260" />
+			<Cargo file="engine_level_0" price="4000" quantity="1" mass=".01" volume="1" description="Standard light engine (level 0).\ \ Stats- \    Reactor output: 108MW\    Capacitor limit: 756MJ" />
+			<Cargo file="engine_level_1" price="10000" quantity="1" mass=".01" volume="1" description="Standard light engine (level 1).\ \ Stats- \    Reactor output: 432MW\    Capacitor limit: 1404MJ" />
 		</Category>
 		<Category file="upgrades/Engines/Medium">
-			<Cargo file="engine_level_2" price="30000" quantity="1" mass=".01" volume="1" description="Standard medium engine (level 2).\ \ Stat - \    Reactor recharge: 140\    Limit: 400" />
-			<Cargo file="engine_level_3" price="60000" quantity="1" mass=".01" volume="1" description="Standard medium engine (level 3).\ \ Stat - \    Reactor recharge: 180\    Limit: 500" />
+			<Cargo file="engine_level_2" price="30000" quantity="1" mass=".01" volume="1" description="Standard medium engine (level 2).\ \ Stats- \    Reactor output: 756MW\    Capacitor limit: 2160MJ" />
+			<Cargo file="engine_level_3" price="60000" quantity="1" mass=".01" volume="1" description="Standard medium engine (level 3).\ \ Stats- \    Reactor output: 972MW\    Capacitor limit: 2700MJ" />
 		</Category>
 		<Category file="upgrades/Engines/Heavy">
-			<Cargo file="engine_level_4" price="100000" quantity="1" mass=".01" volume="1" description="Standard heavy engine (level 4).\ \ Stat - \    Reactor recharge: 210\    Limit: 580" />
-			<Cargo file="engine_level_5" price="150000" quantity="1" mass=".01" volume="1" description="Standard heavy engine (level 5).\ \ Stat - \    Reactor recharge: 260\    Limit: 760" />
+			<Cargo file="engine_level_4" price="100000" quantity="1" mass=".01" volume="1" description="Standard heavy engine (level 4).\ \ Stats- \    Reactor output: 1134MW\    Capacitor limit: 3132MJ" />
+			<Cargo file="engine_level_5" price="150000" quantity="1" mass=".01" volume="1" description="Standard heavy engine (level 5).\ \ Stats- \    Reactor output: 1404MW\    Capacitor limit: 4104MJ" />
 		</Category>
 		<Category file="upgrades/Engines/Aera_Milspec">
 		</Category>
@@ -251,7 +251,7 @@
 			<Cargo file="thruster_retrofit" price="20000" quantity="1" mass=".01" volume="1" description="Upgrading to more modern thruster units provides an increase in performance without having to alter the inertial compensator." />
 		</Category>
 		<Category file="upgrades/Engines/Engine_Enhancements_Medium">
-			<Cargo file="afterburner" price="16000" quantity="1" mass=".01" volume="1" description="Dumping fuelinto the superheated exhaust, and adding additional heating elements to the exhaust increases thrust." />
+			<Cargo file="afterburner" price="16000" quantity="1" mass=".01" volume="1" description="Dumping fuelinto the superheated exhaust and adding additional heating elements to the exhaust increases thrust." />
 			<Cargo file="mult_turn_jet_enhancer" price="40000" quantity="1" mass=".01" volume="1" description="The addition of more vectored thrusting units in the extremes of the ship enhance turning." />
 			<Cargo file="mult_thrust_enhancer" price="60000" quantity="1" mass=".01" volume="1" description="Playing out the tolerances on the inertial compensator allows for improved acceleration." />
 		</Category>
@@ -262,23 +262,23 @@
 			<Cargo file="replacement_thrusters" price="40000" quantity="1" mass=".01" volume="1" description="When the inertial compensator can take more than the thrusters can give, it's time for new thrusters." />
 		</Category>
 		<Category file="upgrades/Shield_Systems/Light">
-			<Cargo file="shield_2" price="3500" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 40\    Back: 40\    Left: 0\    Right: 0\    Recharge rate: 15" />
-			<Cargo file="shield_2_Level1" price="9000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 100\    Back: 100\    Left: 0\    Right: 0\    Rrecharge rate: 20" />
-			<Cargo file="shield_4" price="4000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 40\    Back: 40\    Left: 40\    Right: 40\    Recharge rate: 15" />
-			<Cargo file="shield_4_Level1" price="10000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 100\    Back: 100\    Left: 100\    Rright: 100\    Recharge rate: 20" />
+			<Cargo file="shield_2" price="3500" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 2 emitter model.\ \ Stats- \    Fore: 216 MJ\    Aft: 216 MJ\    Port: 0\    Starboard: 0\    Recharge rate: 81 MW" />
+			<Cargo file="shield_2_Level1" price="9000" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 2 emitter model.\ \ Stats- \    Fore: 540 MJ\    Aft: 540 MJ\    Port: 0\    Starboard: 0\    Recharge rate: 108 MW" />
+			<Cargo file="shield_4" price="4000" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 4 emitter model.\ \ Stats- \    Fore: 216 MJ\    Aft: 216 MJ\    Port: 216 MJ\    Starboard: 216 MJ\    Recharge rate: 81 MW" />
+			<Cargo file="shield_4_Level1" price="10000" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 4 emitter model.\ \ Stats- \    Fore: 540 MJ\    Aft: 540 MJ\    Port: 540 MJ\    Starboard: 540 MJ\    Recharge rate: 108 MW" />
 		</Category>
 		<Category file="upgrades/Shield_Systems/Medium">
-			<Cargo file="shield_2_Level2" price="25000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 200\    Back: 200\    Left: 0\    Right: 0\    Recharge rate: 25" />
-			<Cargo file="shield_2_Level3" price="40000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 300\    Back: 300\    Left: 0\    right: 0\    Recharge rate: 30" />
-			<Cargo file="shield_4_Level2" price="30000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 200\    Back: 200\    Left: 200\    Right: 200\    Recharge rate: 25" />
-			<Cargo file="shield_4_Level3" price="50000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 300\    Back: 300\    Left: 300\    Right: 300\    Recharge rate: 30" />
+			<Cargo file="shield_2_Level2" price="25000" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 2 emitter model.\ \ Stats- \    Fore: 1080 MJ\    Aft: 1080 MJ\    Port: 0\    Starboard: 0\    Recharge rate: 135 MW" />
+			<Cargo file="shield_2_Level3" price="40000" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 2 emitter model.\ \ Stats- \    Fore: 1620 MJ\    Aft: 1620 MJ\    Port: 0\    Starboard: 0\    Recharge rate: 162 MW" />
+			<Cargo file="shield_4_Level2" price="30000" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 4 emitter model.\ \ Stats- \    Fore: 1080 MJ\    Aft: 1080 MJ\    Port: 1080 MJ\    Starboard: 1080 MJ\    Recharge rate: 135 MW" />
+			<Cargo file="shield_4_Level3" price="50000" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 4 emitter model.\ \ Stats- \    Fore: 1620 MJ\    Aft: 1620 MJ\    Port: 1620 MJ\    Starboard: 1620 MJ\    Recharge rate: 162 MW" />
 		</Category>
 		<Category file="upgrades/Shield_Systems/Heavy">
-			<Cargo file="shield_2_Level4" price="90000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 400\    Back: 400\    Left: 0\    Right: 0\    Recharge rate: 35" />
-			<Cargo file="shield_2_Level5" price="140000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 500\    Back: 500\    Left: 0\    Right: 0\    Recharge rate: 40" />
-			<Cargo file="shield_4_Level4" price="100000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 400\    Back: 400\    Left: 400\    Right: 400\    Recharge rate: 35" />
-			<Cargo file="shield_4_Level5" price="150000" quantity="1" mass=".01" volume="1" description="Magnetic shield protecting the hull.\ \ Stat - \    Front: 500\    Back: 500\    Left: 500\    Right: 500\    Recharge rate: 40" />
-			<Cargo file="mult_shield_regenerator" price="170000" quantity="1" mass=".01" volume="1" description="Increase the recharge rate of all the shield.\ \ Stat - \    Recharge rate: +25%" />
+			<Cargo file="shield_2_Level4" price="90000" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 2 emitter model.\ \ Stats- \    Fore: 2160 MJ\    Aft: 2160 MJ\    Port: 0\    Starboard: 0\    Recharge rate: 189 MW" />
+			<Cargo file="shield_2_Level5" price="140000" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 2 emitter model.\ \ Stats- \    Fore: 2700 MJ\    Aft: 2700 MJ\    Port: 0\    Starboard: 0\    Recharge rate: 216 MW" />
+			<Cargo file="shield_4_Level4" price="100000" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 4 emitter model.\ \ Stats- \    Fore: 2160 MJ\    Aft: 2160 MJ\    Port: 2160 MJ\    Starboard: 2160 MJ\    Recharge rate: 189 MW" />
+			<Cargo file="shield_4_Level5" price="150000" quantity="1" mass=".01" volume="1" description="A combination of magnetic and gavitic protective shields. 4 emitter model\ \ Stats- \    Fore: 2700 MJ\    Aft: 2700 MJ\    Port: 2700 MJ\    Starboard: 2700 MJ\    Recharge rate: 216 MW" />
+			<Cargo file="mult_shield_regenerator" price="170000" quantity="1" mass=".01" volume="1" description="Increases the recharge rate of shields.\ \ Stats- \    Recharge rate: +25%" />
 		</Category>
 		<Category file="upgrades/Shield_Systems/Aera_Milspec">
 		</Category>
@@ -289,11 +289,11 @@
 		<Category file="upgrades/Shield_Systems/ISO_Milspecs">
 		</Category>
 		<Category file="upgrades/Armor_Modification">
-			<Cargo file="plasteel" price="1000" quantity="1" mass=".01" volume="1" description="In some senses closer to an extending of the hull than an actual armoring, plasteel is nonetheless cheap and cost-effective.\ \ Stat - \    Armor: 100" />
-			<Cargo file="tungsten" price="1500" quantity="1" mass=".01" volume="1" description="Dense, and with a high melting temperature, tungsten based armor is crude, but not ineffective.\ \ Stat - \    Armor: 200" />
+			<Cargo file="plasteel" price="1000" quantity="1" mass=".01" volume="1" description="In some senses closer to an extending of the hull than an actual armoring, plasteel is nonetheless cheap and cost-effective.\ \ Stats- \    Armor: 100" />
+			<Cargo file="tungsten" price="1500" quantity="1" mass=".01" volume="1" description="Dense, and with a high melting temperature, tungsten based armor is crude, but not ineffective.\ \ Stats- \    Armor: 200" />
 		</Category>
 		<Category file="upgrades/Armor_Modification/Aera_Milspec">
-			<Cargo file="TantalumCarbide" price="500" quantity="1" mass=".01" volume="1" description="Though possessed of a very high melting point, it is, however, not a particularly good armor by itself.  It is, however, cheap for the Aera to produce." />
+			<Cargo file="TantalumCarbide" price="500" quantity="1" mass=".01" volume="1" description="Though possessed of a very high melting point, it is, however, not a particularly good armor by itself.  What it is though is cheap for the Aera to produce." />
 			<Cargo file="Polysteel" price="1600" quantity="1" mass=".01" volume="1" description="More expensive than plasteel, but simultaneously more effective. " />
 			<Cargo file="PolyDuranium" price="10000" quantity="1" mass=".01" volume="1" description="A multitude of layers of duranium and polysteel, topped off with bipolite and an array of conductors and ablatives." />
 		</Category>
@@ -305,25 +305,25 @@
 		<Category file="upgrades/Armor_Modification/ISO_Milspecs">
 		</Category>
 		<Category file="upgrades/Hull_Upgrades">
-			<Cargo file="hull" price="1000" quantity="1" mass=".01" volume="1" description="Basic metal hull.\ \ Stat - \    Hull strength: 200" />
-			<Cargo file="plated_hull" price="12000" quantity="1" mass=".01" volume="1" description="Electro-plating of dense and then conductive metals to a ships hull tend to greatly improve its usefulness.\ \ Stat - \    Hull strength: 1000" />
-			<Cargo file="double_plated_hull" price="15000" quantity="1" mass=".01" volume="1" description="Making use of vacuum's excellent insulating properties, those not worried about extra mass and extra expense can add a two layer dent and radiator plate to their vessels.\ \ Stat - \    Hull strength: 1500" />
+			<Cargo file="hull" price="1000" quantity="1" mass=".01" volume="1" description="Basic metal hull.\ \ Stats- \    Hull strength: 200" />
+			<Cargo file="plated_hull" price="12000" quantity="1" mass=".01" volume="1" description="Electro-plating of dense and then conductive metals to a ships hull tend to greatly improve its usefulness.\ \ Stats- \    Hull strength: 1000" />
+			<Cargo file="double_plated_hull" price="15000" quantity="1" mass=".01" volume="1" description="Making use of vacuum's excellent insulating properties, those not worried about extra mass and extra expense can add a two layer dent and radiator plate to their vessels.\ \ Stats- \    Hull strength: 1500" />
 		</Category>
 		<Category file="upgrades/Hull_Upgrades/Aera_Milspec">
-			<Cargo file="coated_hull" price="5000" quantity="1" mass=".01" volume="1" description="By lining the hull in radiator vanes embedded in high temperature ablatives sitting on a kinetic distributor, energy is spread over a broader region of the hull, allowing the hull to take more damage before any one part collapses.\ \ Stat - \    Hull strength: 400" />
+			<Cargo file="coated_hull" price="5000" quantity="1" mass=".01" volume="1" description="By lining the hull in radiator vanes embedded in high temperature ablatives sitting on a kinetic distributor, energy is spread over a broader region of the hull, allowing the hull to take more damage before any one part collapses.\ \ Stats- \    Hull strength: 400" />
 		</Category>
 		<Category file="upgrades/Hull_Upgrades/Rlaan_Milspec">
-			<Cargo file="micro_shielded_hull" price="30000" quantity="1" mass=".01" volume="1" description="By embedding scores of miniaturized shield units in the hull, the ability of the hull to absorb damage is massively increased, at the cost of significant energy draw.\ \ Stat - \    Hull strength: 4000" />
+			<Cargo file="micro_shielded_hull" price="30000" quantity="1" mass=".01" volume="1" description="By embedding scores of miniaturized shield units in the hull, the ability of the hull to absorb damage is massively increased, at the cost of significant energy draw.\ \ Stats- \    Hull strength: 4000" />
 		</Category>
 		<Category file="upgrades/Hull_Upgrades/Confed_Milspec">
-			<Cargo file="polymer_hull" price="10000" quantity="1" mass=".01" volume="1" description="Optimized for minimal mass, this hull is constructed out of crossweaved long carbon nanotubules embedded in a hard epoxy and covered with a thin layer of UV protectant.\ \ Stat - \    Hull strength: 750" />
-			<Cargo file="reinforced_hull" price="25000" quantity="1" mass=".01" volume="1" description="The base hull design is modified with additional buttresses and honycomb regions to increase resiliency to damage.\ \ Stat - \    Hull strength: 2000" />
+			<Cargo file="polymer_hull" price="10000" quantity="1" mass=".01" volume="1" description="Optimized for minimal mass, this hull is constructed out of crossweaved long carbon nanotubules embedded in a hard epoxy and covered with a thin layer of UV protectant.\ \ Stats- \    Hull strength: 750" />
+			<Cargo file="reinforced_hull" price="25000" quantity="1" mass=".01" volume="1" description="The base hull design is modified with additional buttresses and honycomb regions to increase resiliency to damage.\ \ Stats- \    Hull strength: 2000" />
 		</Category>
 		<Category file="upgrades/Hull_Upgrades/ISO_Milspecs">
 		</Category>
 		<Category file="upgrades/ECM_Systems">
-			<Cargo file="ecm_package_1" price="5000" quantity="1" mass=".01" volume="1" description="Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\ \ Stat - \    Defense: 0.02" />
-			<Cargo file="ecm_package_2" price="15000" quantity="1" mass=".01" volume="1" description="Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\ \ Stat - \    Defense: 0.07" />
+			<Cargo file="ecm_package_1" price="5000" quantity="1" mass=".01" volume="1" description="Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\ \ Stats- \    Defense: 0.02" />
+			<Cargo file="ecm_package_2" price="15000" quantity="1" mass=".01" volume="1" description="Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\ \ Stats- \    Defense: 0.07" />
 		</Category>
 		<Category file="upgrades/ECM_Systems/Aera_Milspec">
 		</Category>
@@ -347,19 +347,19 @@
 			<Cargo file="repair_ai_advanced" price="300000" quantity="1" mass=".01" volume="1" description="Similar to the normal repair ai, but with code optimizations and a better warranty." />
 		</Category>
 		<Category file="upgrades/Radar/Basic">
-			<Cargo file="SkyScope_Alpha" price="5000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : No\    Radar ITTS: No\    Radar color: No\    Radar error: 0.5\    Radar Range: 5000\    Cone:\      Lock: 0.901\      Tracking: 0.9601" />
-			<Cargo file="SkyScope_AlphaPlus" price="10000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : No\    Radar ITTS: No\    Radar color: No\    Radar error: 0.25\    Radar Range: 10000\    Cone:\      Lock: 0.851\      Tracking: 0.931" />
-			<Cargo file="StarScanner_2530" price="20000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : No\    Radar ITTS: No\    Radar color: Yes\    Radar error: 0\    Radar Range: 8000\    Cone:\      Lock: 0.781\      Tracking: 0.92" />
+			<Cargo file="SkyScope_Alpha" price="5000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: No\    Radar error: 0.5\    Radar Range: 5000\    Cone:\      Lock: 25.7 degrees\      Tracking: 16.2 degrees" />
+			<Cargo file="SkyScope_AlphaPlus" price="10000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: No\    Radar error: 0.25\    Radar Range: 10000\    Cone:\      Lock: 31.6 degrees\      Tracking: 21.4 degrees" />
+			<Cargo file="StarScanner_2530" price="20000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: Yes\    Radar error: 0\    Radar Range: 8000\    Cone:\      Lock: 38.6 degrees\      Tracking: 23.0 degrees" />
 		</Category>
 		<Category file="upgrades/Radar/Intermediate">
-			<Cargo file="SkyScope_Beta" price="20000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error:0. 25\    Radar Range: 20000\    Cone:\      Lock: 0.851\      Tracking: 0.901" />
-			<Cargo file="StarScanner_2545" price="40000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : No\    Radar ITTS: No\    Radar color: Yes\    Radar error: 0\    Radar Range: 14000\    Cone:\      Lock: 0.751\      Tracking: 0.901" />
-			<Cargo file="Hawkeye_ZX-16" price="80000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error: 0\    Radar Range: 14000\    Cone:\      Lock: 0.71\      Tracking: 0.951" />
+			<Cargo file="SkyScope_Beta" price="20000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error:0. 25\    Radar Range: 20000\    Cone:\      Lock: 31.6 degrees\      Tracking: 25.7 degrees" />
+			<Cargo file="StarScanner_2545" price="40000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: No\    Radar color: Yes\    Radar error: 0\    Radar Range: 14000\    Cone:\      Lock: 41.3 degrees\      Tracking: 25.7 degrees" />
+			<Cargo file="Hawkeye_ZX-16" price="80000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error: 0\    Radar Range: 14000\    Cone:\      Lock: 44.7 degrees\      Tracking: 18.0 degees" />
 		</Category>
 		<Category file="upgrades/Radar/Advanced">
-			<Cargo file="StarScanner_2600" price="120000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : No\    Radar ITTS: Yes\    Radar color: Yes\    Radar error: 0\    Radar Range: 20000\    Cone:\      Lock:0.801\      Tracking: 0.851" />
-			<Cargo file="Hawkeye_ZX-50" price="140000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error: 0\    Radar Range: 40000\    Cone:\      Lock: 0.782\      Tracking: 0.831" />
-			<Cargo file="Hawkeye_ZX-86" price="160000" quantity="1" mass=".01" volume="1" description="\ Stat - \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: Yes\    Radar error: 0\    Radar Range: 50000\    Cone:\      Lock: 0.85\      Tracking: 0.85" />
+			<Cargo file="StarScanner_2600" price="120000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : No\    Radar ITTS: Yes\    Radar color: Yes\    Radar error: 0\    Radar Range: 20000\    Cone:\      Lock: 36.77 degrees\      Tracking: 31.6 degrees" />
+			<Cargo file="Hawkeye_ZX-50" price="140000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: No\    Radar error: 0\    Radar Range: 40000\    Cone:\      Lock: 38.5 degrees\      Tracking: 33.7 degrees" />
+			<Cargo file="Hawkeye_ZX-86" price="160000" quantity="1" mass=".01" volume="1" description="\ Stats- \    Computer ITTS : Yes\    Radar ITTS: Yes\    Radar color: Yes\    Radar error: 0\    Radar Range: 50000\    Cone:\      Lock: 31.7 degrees\      Tracking: 31.7 degrees" />
 		</Category>
 		<Category file="upgrades/Weapons/Turrets">
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1" description="Given the armament commonly placed in such turrets, the small turret has become affectionately known as 'the machine that goes ping'." />
@@ -371,9 +371,9 @@
 			<Cargo file="cargo_pod" price="20000" quantity="1" mass=".1" volume="1" description="Some pieces of cargo won't fit in many ships, especially, many ships." />
 		</Category>
 		<Category file="upgrades/Miscellaneous">
-			<Cargo file="add_fuel" price="1000" quantity="1" mass=".01" volume="1" description="Every action requires a reaction.\ \ Stat : \    Add 10000000 fuel" />
+			<Cargo file="add_fuel" price="1000" quantity="1" mass=".01" volume="1" description="Every action requires a reaction.\ \ Stats: \    Add 10000000 fuel" />
 			<Cargo file="jump_drive" price="10000" quantity="1" mass=".01" volume="1" description="Though only usable at weak points in space, this device allows for tunneling through these points." />
-			<Cargo file="add_cargo_volume" price="10000" quantity="1" mass=".01" volume="1" description="It is truly amazing to find out how much extra space one has if one slightly alters safety specs.\ \ Stat - \    Add 50 cargo volume" />
+			<Cargo file="add_cargo_volume" price="10000" quantity="1" mass=".01" volume="1" description="It is truly amazing to find out how much extra space one has if one slightly alters safety specs.\ \ Stats- \    Add 50 cargo volume" />
 
 		</Category>
 		<Category file="upgrades/Miscellaneous/Aera_Milspec">
@@ -419,11 +419,11 @@
 			<Cargo file="advtorpedo_ammo" price="2000" quantity="1" mass=".01" volume="1" description="\ Stats - \   Rounds/Launcher: \   Refire Delay: \   Max Velocity: \   Damage Rating: \   Range:" />
 			<Cargo file="hail_3pack_ammo" price="90" quantity="1" mass=".01" volume="1" description="\ Stats - \   Rounds/Launcher: \   Refire Delay: \   Max Velocity: \   Damage Rating: \   Range:" />
 			<Cargo file="leech_ammo" price="1000" quantity="1" mass=".01" volume="1" description="\ Stats - \   Rounds/Launcher: \   Refire Delay: \   Max Velocity: \   Damage Rating: \   Range:" />
-			<Cargo file="ecm_package_3" price="30000" quantity="1" mass=".01" volume="1" description="Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\ \ Stat - \    Defense: 0.14" />
+			<Cargo file="ecm_package_3" price="30000" quantity="1" mass=".01" volume="1" description="Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\ \ Stats- \    Defense: 0.14" />
 		</Category>
 
 		<Category file="Natural_Products/Aera_Food">
-			<Cargo file="Aera_Ration" price="40" quantity="1" mass=".01" volume="1" description="Containing utilitarian dehydrated meal bars with jerky for dessert, the Aera ration is human edible, but prolonged human consumption will result in eventual sickness and death do alkaloid content." />
+			<Cargo file="Aera_Ration" price="40" quantity="1" mass=".01" volume="1" description="Containing utilitarian dehydrated meal bars with jerky for dessert, the Aera ration is human edible, but prolonged human consumption will result in eventual sickness and death due to alkaloid content." />
 			<Cargo file="Jhurlon" price="140" quantity="1" mass=".01" volume="1" description="A native of the Bzbr world, the Jhurlon most closely resembles a boulder sized land dwelling abalone.  While well protected against native predators, modern technology has made cutting through their shell somewhat easier." />
 			<Cargo file="Salted_Thok" price="130" quantity="1" mass=".01" volume="1" description="Though the Aera destroyed their jungle forests, the seas fared better, and continue to produce this tasty fish-like creature." />
 		</Category>
