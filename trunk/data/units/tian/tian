@@ -1,6 +1,6 @@
 <Unit scale="1.5"> 
 	<Cockpit file="medium_cockpit.cpt"/>
-	<Meshfile file="tian.xmesh" />
+	<Meshfile file="TigerShark.xmesh" />
 	<Thrust>
 		<Engine Afterburner="1600.000000" Forward="533.333313" Retro="466.666649" Left="266.666656" Right="266.666656" Top="266.666656" Bottom="266.666656"/>
 		<Maneuver yaw="3643.200050" pitch="3643.200050" roll="3643.200050"/>
@@ -23,7 +23,19 @@
 	</Hold>
 
 
-<!-- new elements added -->
+<Light file="supernova.bmp" x="0.058558" y="0.326294" z="-1.977969" size="1.780003"/>
+<Mount weapon="Laser" size="Light Medium" x="-1.056411" y="-1.226957" z="3.200000"/>
+<Mount weapon="Laser" size="Light Medium" x="1.056411" y="-1.226957" z="3.200000"/>
+<Mount weapon="Meson" size="Light Medium Heavy" x="0" y="0.910165" z="3.662162"/>
+<Mount weapon="" size="Special" x="-1.629525" y="1.044771" z="3.200000" />
+<Mount weapon="" size="Special" x="1.629525" y="1.044771" z="3.200000" />
+<Light file="supernova.bmp" x="-1.347379" y="0.958650" z="-3.000000" size="0.40000"/>
+<Light file="supernova.bmp" x="1.347379" y="0.958650" z="-3.000000" size="0.40000"/>
+<Light file="supernova.bmp" x="0.863464" y="-1.003810" z="-3.000000" size="0.40000"/>
+<Light file="supernova.bmp" x="-0.863464" y="-1.003810" z="-3.000000" size="0.40000"/>
+
+
+<!-- Old mesh
 <Light file="supernova.bmp" x="0.000000" y="0.533333" z="-4.133333" size="1.799999"/>
 <Light file="supernova.bmp" x="0.000000" y="5.333333" z="-6.400000" size="0.640000"/>
 <Light file="supernova.bmp" x="-4.066667" y="-2.026667" z="-5.773333" size="0.580000"/>
@@ -31,4 +43,5 @@
 <Mount weapon="Laser" size="Light Medium" x="4.066667" y="-2.026667" z="-1.773333"/>
 <Mount weapon="Laser" size="Light Medium" x="-4.066667" y="-2.026667" z="-1.773333" />
 <Mount weapon="meson" size="Light Medium Heavy Special" x="0.000000" y="5.333333" z="-1.966667"/>
+-->
 </Unit>
