@@ -14,7 +14,7 @@
 		<Shields front="650" right="650" left="650" back="650" recharge="47"/>
 		<Hull strength="2500"/>
 	</Defense>
-	<Stats mass="7" momentofinertia="7" fuel="20000"></Stats>
+	<Stats mass="25479610" momentofinertia="25479610" fuel="20000"></Stats>
 	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="120.000000" maxspeed="42.000000"/>
 	<Energy>
 		<Reactor recharge="47" limit="470"/>

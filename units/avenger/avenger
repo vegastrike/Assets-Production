@@ -11,21 +11,21 @@
 	<Light file="supernova.bmp" x="-10.24" y="-2.759" z="-18.302" size="6"/>
 
 	<Thrust>
-		<Engine Afterburner="1066.666718" Forward="205.333344" Retro="254.666676" Left="202.666672" Right="202.666672" Top="202.666672" Bottom="202.666672"/>
-		<Maneuver yaw="2643.200050" pitch="2187.800201" roll="3643.200050"/>
+		<Engine Afterburner="72870" Forward="14013" Retro="17363" Left="13808" Right="13808" Top="13808" Bottom="13808"/>
+		<Maneuver yaw="180671" pitch="149500" roll="249030"/>
 	</Thrust>
 
 	<Sound>
 	</Sound>
 
 	<Defense HudImage="avenger-hud.spr" RepairDroid="6"  ecm=".3">
-		<Armor front="425" right="383" left="383" back="408"/>
+		<Armor front="200" right="200" left="200" back="200"/>
 		<Shields front="600.0" right="520" left="520"  back="570.000000" recharge="30.000000"/>
 		<Cloak cloakmin=".25" cloakrate=".1" cloakenergy="79.0"  cloakglass="false"/>
-		<Hull strength="250.000000"/>
+		<Hull strength="1213.000000"/>
 	</Defense>
 
-	<Stats mass="16.000000" momentofinertia="16.000000" fuel="170000000">
+	<Stats mass="1096.941" momentofinertia="1096.941" fuel="170000000">
 	</Stats>
 
 	<Computer yaw="60.400002" pitch="50.600006" roll="70.400002" afterburner="148" maxspeed="65" TrackingCone="20" lockcone="35">
@@ -48,8 +48,8 @@
       <Mount weapon="ParticleBeam" size="heavy capship-light autotracking" x="29.815" y="-6.919" z="30.409"/>
 	<Mount weapon="Penetrator" size="special capship-light capship-medium" x="0.0" y="-4.618" z="19.606" />
 
-	<Mount weapon="Mace" size="light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="600"/>
-	<Mount weapon="Mace" size="light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="600"/>
+	<Mount weapon="KineticMissile" size="heavy-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="100" volume="600"/>
+	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="10.0" y="1.757" z="3.5" ammo="100" volume="600"/>
 	<Mount weapon="Maul" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="800"/>
 	<Mount weapon="Maul" size="heavy-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="800"/>
 	<Mount weapon="Torpedo" size="medium-missile heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="4" volume="1000"/>
