@@ -77,6 +77,7 @@ class quest_contraband_truck (quest.quest):
 			self.repeat_end1 = 1
 			self.repeat_end2 = 1
 			self.timer1 = 0
+			self.timer2 = 0
 			self.jumpout = 0
 			self.quest_exit = 0
 			global truck_exit
@@ -102,9 +103,9 @@ class quest_contraband_truck (quest.quest):
 
 			print "begin msgs"
 
-			VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] Turn your attention <surprise> Entity/self triggered item warp core!")
-			VS.IOmessage (5,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <fear, anxiety, anger> Filthy human procreate entity/self!")
-			VS.IOmessage (12,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] Group leave fast danger avo...")
+			VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aeran -> Standard] Turn your attention <surprise> Entity/self triggered item warp core!")
+			VS.IOmessage (5,"Aera SpecOpp","all","[Translate: Aeran -> Standard] <fear, anxiety, anger> Filthy human procreate entity/self!")
+			VS.IOmessage (12,"Aera SpecOpp","all","[Translate: Aeran -> Standard] Group leave fast danger avo...")
 			print "ended msgs"
 			self.jumpout = 1
 			self.repeat_end2 = 0
@@ -127,10 +128,10 @@ class quest_contraband_truck (quest.quest):
 
 				self.playa.JumpTo("gemini_sector/pestilence")
 				print "jumped playa"
-				VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] ...id")
-				VS.IOmessage (5,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <untranslatable> section of excretement <untranslatable> human <untranslatable> genitalia <untranslatable> fire <untranslatable> nice day.")
+				VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aeran -> Standard] ...id")
+				VS.IOmessage (5,"Aera SpecOpp","all","[Translate: Aeran -> Standard] <untranslatable> section of excretement <untranslatable> human <untranslatable> genitalia <untranslatable> fire <untranslatable> nice day.")
 
-				VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] Flee smart to go entity/self <conditional> life value.")
+				VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aeran -> Standard] Flee smart to go entity/self <conditional> life value.")
 
 				print "done all but fail"
 				self.mission_fail()
@@ -200,14 +201,21 @@ class quest_contraband_truck (quest.quest):
 					print
 					unit.TfgCloak(0,self.aera_specopp)
 					unit.setTfgDirective(self.aera_specopp,self.playa,'A')
-					VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <surprise> Attention all! <anger> Entity/self valueless takes possession away value.")
-					VS.IOmessage (3,"Aera SpecOpp","all","[Translate: Aernoss -> Englysh] <anger> Filthy human procreate entity/self!  Death done!")
+					VS.IOmessage (0,"Aera SpecOpp","all","[Translate: Aeran -> Standard] <surprise> Attention all! <anger> Entity/self valueless takes possession away value.")
+					VS.IOmessage (3,"Aera SpecOpp","all","[Translate: Aeran -> Standard] <anger> Filthy human procreate entity/self!  Death done!")
 					self.repeat_end2 = 0
 
 
 
 			if unit.TfgisNull(self.aera_specopp):
 				self.mission_success()
+
+#			if self.truck_pirate.getSystemFile() /= self.playa.getSystemFile():
+#				if self.timer2 == 0:
+#					self.timer2 = 40 + VS.GetGameTime()
+#				if VS.GetGameTime() > self.timer2:
+#					#FIXME: remove truck from game cleanly
+					
 
 			if self.jumpout == 1:
 				self.end_destruction()
