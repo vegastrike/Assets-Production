@@ -6,9 +6,20 @@
 <Beam name="UnknownBeam" mountsize=""> 
 <Energy rate="80" stability="14" refire="2">
 </Energy>
-<Damage rate="40" phasedamage="50" longrange=".5">
+<Damage rate="200" phasedamage="50" longrange=".5">
 </Damage>
 <Distance speed="440" radialspeed="8" radius="8" length="1.5" pulsespeed="2" range="650" >
+</Distance>
+<Appearance file="weapons/unknown_beam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a="1" >
+</Appearance>
+</Beam>
+
+<Beam name="UnknownHeavyBeam" mountsize=""> 
+<Energy rate="160" stability="20" refire="4">
+</Energy>
+<Damage rate="280" phasedamage="80" longrange=".5">
+</Damage>
+<Distance speed="440" radialspeed="8" radius="6" length="1.5" pulsespeed="3" range="1050" >
 </Distance>
 <Appearance file="weapons/unknown_beam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a="1" >
 </Appearance>
@@ -18,7 +29,7 @@
 <Bolt name="UnknownBolt" mountsize=""> 
 <Energy rate="40" stability="6" refire=".7">
 </Energy>
-<Damage rate="0" phasedamage="50" longrange=".8">
+<Damage rate="25" phasedamage="50" longrange=".8">
 </Damage>
 <Distance speed="250" radialspeed=".8" radius="8.2" length="20" pulsespeed="15" range="620" >
 </Distance>
@@ -53,7 +64,7 @@
 <Beam name="LaserBeam" mountsize="light"> 
 <Energy rate="12" stability="4" refire=".2">
 </Energy>
-<Damage rate="72" longrange="1">
+<Damage rate="144" longrange="1">
 </Damage>
 <Distance speed="140" radialspeed="1" radius=".5" length="1.5" pulsespeed="15" range="476" >
 </Distance>
@@ -64,7 +75,7 @@
 <Beam name="IonBeam" mountsize="light">
 <Energy rate="30" stability="10" refire=".4">
 </Energy>
-<Damage rate="90" longrange=".4">
+<Damage rate="180" longrange=".4">
 </Damage>
 <Distance speed="140" radialspeed="1" radius=".8" length="1.5" pulsespeed="15" range="200">
 </Distance>
@@ -75,7 +86,7 @@
 <Beam name="KtekBeam" mountsize="heavy"> 
 <Energy rate="50" stability="8" refire=".5">
 </Energy>
-<Damage rate="100" longrange=".5">
+<Damage rate="200" longrange=".5">
 </Damage>
 <Distance speed="240" radialspeed="1" radius="2" length="1.5" pulsespeed="20" range="400" >
 </Distance>
@@ -86,7 +97,7 @@
 <Beam name="DisruptorBeam" mountsize="heavy"> 
 <Energy rate="14" stability="6" refire=".6">
 </Energy>
-<Damage rate="84" longrange=".5">
+<Damage rate="168" longrange=".5">
 </Damage>
 <Distance speed="260" radialspeed=".8" radius="1" length="4" pulsespeed="15" range="400" >
 </Distance>
@@ -97,7 +108,7 @@
 <Beam name="HvyIonBeam" mountsize="Heavy">
 <Energy rate="80" stability="5" refire=".2">
 </Energy>
-<Damage rate="140" longrange=".1">
+<Damage rate="480" longrange=".1">
 </Damage>
 <Distance speed="200" radialspeed="2" radius=".6" length="1.5" pulsespeed="20" range="100">
 </Distance>
@@ -371,7 +382,7 @@
 <Missile name="Dumbfire" mountsize="light-missile">
 <Energy rate="0" stability="6" refire=".9">
 </Energy>
-<Damage rate="250" longrange="1" radius="20" radialspeed="60">
+<Damage rate="400" longrange="1" radius="20" radialspeed="100">
 </Damage>
 <Distance speed="260" radialspeed=".8" radius=".3" pulsespeed="15" range="3000" detonationrange="10"  volume="45" >
 </Distance>
@@ -382,7 +393,7 @@
 <Missile name="HeatSeeker" mountsize="light-missile">
 <Energy rate="0" stability="6" refire=".9" locktime="6">
 </Energy>
-<Damage rate="190" longrange="1" radius="15" radialspeed="40">
+<Damage rate="380" longrange="1" radius="15" radialspeed="80">
 </Damage>
 <Distance speed="260"  pulsespeed="15" range="2000" detonationrange="5" volume="90" >
 </Distance>
@@ -393,7 +404,7 @@
 <Missile name="ImageRecognition" mountsize="medium-missile">
 <Energy rate="0" stability="6" refire="1.2" locktime="4">
 </Energy>
-<Damage rate="180" longrange="1" radius="15" radialspeed="60">
+<Damage rate="260" longrange="1" radius="15" radialspeed="120">
 </Damage>
 <Distance speed="160"  pulsespeed="15" range="3700" detonationrange="10" volume="150">
 </Distance>
@@ -404,7 +415,7 @@
 <Missile name="FriendOrFoe" mountsize="medium-missile">
 <Energy rate="0" stability="6" refire="1.3" locktime=".5">
 </Energy>
-<Damage rate="120" longrange="1" radius="14" radialspeed="40">
+<Damage rate="240" longrange="1" radius="14" radialspeed="80">
 </Damage>
 <Distance speed="150" pulsespeed="15" range="3500" detonationrange="8" volume="160">
 </Distance>
@@ -449,7 +460,7 @@
 <Missile name="Mace" mountsize="heavy-missile">
 <Energy rate="0" stability="6" refire="5">
 </Energy>
-<Damage rate="900" phasedamage="0" longrange="1" radius="800" radialspeed="160" >
+<Damage rate="1400" phasedamage="0" longrange="1" radius="800" radialspeed="200" >
 </Damage>
 <Distance speed="40" pulsespeed="15" range="10000" detonationrange="30" volume="600">
 </Distance>
