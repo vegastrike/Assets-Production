@@ -1,4 +1,4 @@
-<Cockpit red="0" green="1" blue="1">
+<Cockpit r="0" g="1" b="1">
 	<Crosshairs file="crosshairs.spr" xcent="0" ycent="0"/>
 	<Radar file="radar.spr"/>
 	<Speed file="radar.spr" xcent="-.3" ycent="-.65" width=".018" height=".036"/>
