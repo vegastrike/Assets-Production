@@ -19,7 +19,7 @@
 	<Mount weapon="" size="Light-missile medium-missile heavy-missile" x= "2.85" y="-2" z="-1" ammo="6"/>
 	<Mount weapon="" size="Light-missile medium-missile heavy-missile special" x= "5.5" y="-3" z="-3" ammo ="6"/>
 	<Mount weapon="" size="Light-missile medium-missile heavy-missile special" x="-5.5" y="-3" z="-3" ammo ="6"/>
-	<Subunit file="" x="0" y="0" z="-19" qi="0" qj="0" qk="-1"/>
+	<Subunit file="medium_blank" x="0" y="0" z="-19" qi="0" qj="0" qk="-1"/>
 
 
 	

@@ -8,7 +8,8 @@
 	<Meshfile file="space_truck-Rod02.xmesh" />
 	<Meshfile file="space_truck-Rod03.xmesh" />
 	<Meshfile file="space_truck-Rod04.xmesh" />
-
+	<Hold volume="8">
+	</Hold>
 	<Thrust>
 		<Engine Afterburner="700.000000" Forward="250" Retro="130" Left="75" Right="75" Top="75" Bottom="75"/>
 		<Maneuver yaw="366.200050" pitch="421.600025" roll="366.200050"/>
