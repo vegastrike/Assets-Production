@@ -1,4 +1,7 @@
-module ai_test {
+module ai_test4 {
+
+  // moves every 5 secs the ship to another location
+  // the moves are queued
 
   import random;
   import vec3;
@@ -27,7 +30,7 @@ module ai_test {
     object outstr=_string.new();
 
     _io.printf("moving %s to random %f %f %f\n",fgid,x,y,z);
-    _io.sprintf(outstr,"moving %s to random %f %f %f\n",fgid,x,y,z);
+    _io.sprintf(outstr,"moving %s to random %f %f %f",fgid,x,y,z);
     _io.message("game","all",outstr);
 
     object pos=_unit.getPosition(my_unit);
@@ -59,7 +62,7 @@ module ai_test {
   void initai(){
     rnd_num=_std.Rnd();
 
-    wait_time=random.random(5.0,20.0);
+    wait_time=5.0;
     gametime=_std.getGameTime();
     _io.printf("ai init: rnd_num=%f  wait=%f\n",rnd_num,wait_time);
     did_it=false;
@@ -78,7 +81,7 @@ module ai_test {
     if((newgametime-gametime) > wait_time){
       randomMoveTo();
       gametime=newgametime;
-      did_it=true;
+      //      did_it=true;
     }
     
   };

@@ -1,4 +1,4 @@
-module ai_test {
+module ai_test3 {
 
   import random;
   import vec3;
@@ -18,16 +18,16 @@ module ai_test {
     float r1=500.0;
     float r2=2000.0;
 
-    float x=_olist.at(ppos,0)+(random.random(r1,r2)*random.randomsign());
-    float y=_olist.at(ppos,1)+(random.random(r1,r2)*random.randomsign());
-    float z=_olist.at(ppos,2)+(random.random(r1,r2)*random.randomsign());
+    float x=9000.0;
+    float y=3000.0;
+    float z=1000.0;
 
     object myvec=vec3.new(x,y,z);
     object fgid=_unit.getFgId(my_unit);
     object outstr=_string.new();
 
     _io.printf("moving %s to random %f %f %f\n",fgid,x,y,z);
-    _io.sprintf(outstr,"moving %s to random %f %f %f\n",fgid,x,y,z);
+    _io.sprintf(outstr,"moving %s to random %f %f %f",fgid,x,y,z);
     _io.message("game","all",outstr);
 
     object pos=_unit.getPosition(my_unit);
