@@ -47,7 +47,7 @@ def AddSysDict (cursys):
 	return i
 
 def FilterAddList(todo):
-	newtodo=getAdjacentSystemList()
+	newtodo=universe.getAdjacentSystemList()
 	cur=0
 	while cur<len(newtodo):
 		if (newtodo[cur] in todo) or systemdict.has_key(newtodo[cur]):
