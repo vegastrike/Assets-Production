@@ -9,7 +9,7 @@
 		<Maneuver yaw="0000" pitch="00000" roll="00000"/>
 	</Thrust>
 	<Sound> </Sound>
-	<Defense HudImage="MiningBase3-hud.spr">
+	<Defense HudImage="aera-mine-hud.spr">
 		<Shield front="500" back="500" left="500" right="500" recharge="20"/>
 		<Armor front="1000" right="8000" left="8000" back="8000"/>
 		<Hull strength="1000"/>
