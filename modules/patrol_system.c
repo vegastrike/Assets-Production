@@ -1,4 +1,4 @@
-module attack_jumppoint {
+module patrol_system {
   import ai_stationary;
   import universe;
   import go_somewhere_significant;
@@ -45,13 +45,15 @@ module attack_jumppoint {
 	  go_somewhere_significant.destroy();
 	  _unit.deleteContainer (youcontainer);
 	  while (i<_olist.size(patrolpoints)) {
-	    _unit.deleteContainer (_olist.at (patrolpoints,i));
+	    object cont = _olist.at (patrolpoints,i);
+	    _unit.deleteContainer (cont);
+	    i=i+1;
 	  }
 	  _olist.delete (patrolpoints);
-	}
+	};
 	void SuccessMission(object you) {
 	  _unit.addCredits (you, cred);
-	  _io.message (0,"game","all","Thank you.");
+	  _io.message (0,"game","all","Thank you! Patrol Complete.");
 	  _io.message (0,"game","all","We have credited your account.");
 	  _std.terminateMission(true);
 	};
@@ -69,7 +71,7 @@ module attack_jumppoint {
 	      _string.delete (fac);
 	      _string.delete (nam);
 	      _io.message (0,"game","all",str);
-	      object cont = _unit.getContainer ();
+	      object cont = _unit.getContainer (sig);
 	      _olist.push_back (patrolpoints,cont);
 	    }
 	    quantity=quantity-1;
@@ -78,15 +80,23 @@ module attack_jumppoint {
     	};
 	bool FinishedPatrol (object you) {
 	  if (jnum<_olist.size(patrolpoints)) {
-	    object jpoint = _unit.getContainer (_olist.at (patrolpoints,jnum));
+	    object tmp =_olist.at (patrolpoints,jnum);
+	    object jpoint = _unit.getUnitFromContainer (tmp);
 	    bool visited = _std.isNull(jpoint);
 	    if (!_std.isNull(jpoint)) {
 	      if (_unit.getDistance (you,jpoint)<distance) {
+		object str = _string.new();
+		object nam = _unit.getName(jpoint);
+		_io.sprintf (str,"[Computer] %s scanned, data saved...",nam);
+		_io.message (0,"game","all",str);
+		_string.delete (nam);
+		_string.delete (str);
 		visited =true;
 	      }
 	    } 
 	    if (visited) {
-	      _unit.deleteContainer (_olist.at (patropoints,jnum));
+	      object tmp2=_olist.at (patrolpoints,jnum);
+	      _unit.deleteContainer (tmp2);
 	      _olist.erase (patrolpoints,jnum);
 	    }
 	    jnum=jnum+1;
@@ -94,7 +104,7 @@ module attack_jumppoint {
 	    jnum=0;
 	  }
 	  return (_olist.size(patrolpoints)==0);
-	}
+	};
 	void loop () {
 	  if (go_somewhere_significant.InSystem()) {
 	    object you=_unit.getUnitFromContainer(youcontainer);
