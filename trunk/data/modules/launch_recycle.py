@@ -36,7 +36,7 @@ def look_for (fg, faction, numships,myunit,  pos, gcd):
     un = VS.getUnit (i)
     if (un):
       if (un.getSignificantDistance(myunit)>gcd ):
-        fac = un.getFaction ()
+        fac = un.getFactionName ()
         fgname = un.getFlightgroupName ()
         name = un.getName ()
         if ((fg==fgname) and (fac==faction)):
@@ -60,9 +60,9 @@ def LaunchNext (fg, fac, type, ai, pos, logo):
 
 def launch_wave_around ( fg, faction, ai, nr_ships, capship, radius, myunit, garbage_collection_distance,logo):
   pos = whereTo(radius, myunit)
-  nr_ships = look_for (fg,faction,nr_ships,myunit,pos,garbage_collection_distance)
-  pos = nr_ships[1]
-  nr_ships = nr_ships[0]
+  print "before"+str(nr_ships)
+  (nr_ships,pos) = look_for (fg,faction,nr_ships,myunit,pos,garbage_collection_distance)
+  print "after "+str(nr_ships)
   while (nr_ships>0):
     type=""
     if (capship):

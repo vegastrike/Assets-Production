@@ -40,6 +40,7 @@ def getItem (cat,parentcat=None):
   list=VS.getRandCargo(1,cat)#try to get a cargo from said category
   if (list.GetQuantity()<=0):#if no such cargo exists in this cateogry
     if (parentcat!=None):
+      print "UpgradeError finding %s using %s instead" % (cat,parentcat)
       list=VS.getRandCargo(1,parentcat)#get it from the parent category
     if (list.GetQuantity()<=0):#otherwise get cargo from upgrades category
       list=VS.getRandCargo(1,"upgrades")#this always succeeds
@@ -142,9 +143,9 @@ def basicUnit (un, diff):
   if ((random.random()<0.9) and (random.random()<(diff*5.0))):
     UpgradeAfterburner(un,diff)
     if ((random.random()<0.9) and (random.random()<(diff*5.0))):     
-      percent=un.upgrade(un,"jump_drive",i,i,0,1)
+      percent=un.upgrade("jump_drive",i,i,0,1)
   else:
-    percent=un.upgrade(un,"jump_drive",i,i,0,1)
+    percent=un.upgrade("jump_drive",i,i,0,1)
   #and after some careful review of the code in question, it appears upgrades below are already offered by default on blank ships...only need to give 'em a pair of guns
   #some engines
   #    percent=un.upgrade("engine_level_0",0,0,0,0)
@@ -184,10 +185,10 @@ def upgradeUnit (un, diff):
   if (rndnum<diff):
     mycargo = GetRandomRepairSys()#here there is a small chance that you will get a repair system.
     creds =upgradeHelper (un,mycargo,0,creds,1,0)
-  turret=un
+  turretz=un.getSubUnits()
   turretcount=0
-  while (turret):
-    turret = un.getTurret (turretcount)
+  while (turretz.current()):
+    turretz.advance()
     turretcount += 1
   turretcount-=1
   for i in range(turretcount):

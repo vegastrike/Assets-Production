@@ -25,6 +25,6 @@ class trading:
 	  if (random.random()<.5):
 	    un.incrementCargo(1-(quant*self.price_instability),quant)
 	  else:
-	    un.decrementCargo(1+(quant*self.price_instability),quant)
+	    un.decrementCargo(1+(self.price_instability))
       self.last_ship+=1
   
