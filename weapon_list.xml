@@ -313,7 +313,7 @@
 <Beam name="Tractor" mountsize="special"> 
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
-<Damage rate="6" longrange="1">
+<Damage rate="-600" phasedamage="300" longrange="1"><!-- picks it up in 200 meters... 600 newtons of negative force-->
 </Damage>
 <Distance speed="150" radialspeed=".8" radius="1.2" pulsespeed="15" range="800" >
 </Distance>
