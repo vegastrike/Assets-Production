@@ -8,21 +8,21 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="sol_sector/alpha_centauri" />
+		<var name="system" value="sol_sector/wolf359" />
 		<var name="description" value="4vs4.txt" />
-		<var name="savegame" value="test3save" />
+
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="6">
-			<pos x="90400" y="-35400" z="24700.0"/>
+			<pos x="50400" y="-35400" z="24700.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
-                <flightgroup name="blue" faction="unknown" type="unknown_active" ainame="default" waves="1" nr_ships="2">
-			<pos x="90400" y="4000" z="30000.0"/>
+                <flightgroup name="blue" faction="confed" type="AsteroidFighterBase" ainame="default" waves="1" nr_ships="2">
+			<pos x="48400" y="-34000" z="24000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
