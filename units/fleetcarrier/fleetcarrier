@@ -1,7 +1,5 @@
 <Unit>
-	<Upgrade file="master_part_list"/>
-	<Upgrade file="master_part_list"/>
-	<Upgrade file="master_part_list"/>
+
 	<Meshfile file="carrier.xmesh" />
 	<Thrust>
 		<Engine Afterburner="66.666660" Forward="36.666664" Retro="23.333331" Left="13.333332" Right="13.333332" Top="13.333332" Bottom="13.333332"/>

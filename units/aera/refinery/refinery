@@ -9,7 +9,7 @@
 		<Hull strength="4000"/>
 	</Defense>
 
-<Stats mass="60" momentofinertia="60" fuel="20000"></Stats>
+<Stats mass="600" momentofinertia="60" fuel="20000"></Stats>
        
 <Meshfile file="refine-Default-AeraHull2.xmesh"/>
 <Dock x="33" y="18.5" z="0" size="2"/>       
