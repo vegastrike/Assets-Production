@@ -23,17 +23,17 @@ def getNumFromChar(c):
 				charnum = charnum-Uhun+26+26
 	return charnum
 def seedstring (stru):
-	num=0
+	num=long(0)
 	l=len (stru)
 	for i in range(l):
 		global totalnormchar,RAND_MAX
-		num+=getNumFromChar(stru[l-i-1])
-		num*=totalnormchar;
-		num = num % RAND_MAX
-		try:
-			num = int(num)
-		except:
-			print 'warning'
+		num+=long(getNumFromChar(stru[l-i-1]))
+		num*=long(totalnormchar);
+		num = (num % long(RAND_MAX))
+	try:
+		num = int(num)
+	except:
+		print 'warning'
 	return num
 def interleave (slist):
 	touch=True
