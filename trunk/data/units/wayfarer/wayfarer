@@ -6,13 +6,13 @@
 <Meshfile file="rescue-hull-i.xmesh"/>
 <Meshfile file="rescue-cock-c.xmesh"/>
 
-        <Mount weapon="Ion" size="Light Medium Heavy" x="-29,815" y="-6,919" z="30,409"/>
-        <Mount weapon="Ion" size="Light Medium Heavy" x="29,815" y="-6,919" z="30,409"/>
+        <Mount weapon="Ion" size="Light Medium Heavy" x="-29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="Ion" size="Light Medium Heavy" x="29.815" y="-6.919" z="30.409"/>
 	
-	<Mount weapon="ImageRecognition" size="medium-missile" x="11,8108" y="1,757" z="11,8091" ammo="6"/>
-	<Mount weapon="ImageRecognition" size="medium-missile" x="-11,8108" y="1,757" z="11,8091" ammo="6"/>
+	<Mount weapon="ImageRecognition" size="medium-missile" x="11.8108" y="1.757" z="11.8091" ammo="6" volume="901"/>
+	<Mount weapon="ImageRecognition" size="medium-missile" x="-11.8108" y="1.757" z="11.8091" ammo="6" volume="901"/>
 	
-	<Mount weapon="Tractor" size="special" x="0,002" y="-4,618" z="19,606" />
+	<Mount weapon="Tractor" size="special" x="0.002" y="-4.618" z="19.606" />
 	
 	<Thrust>
 		<Engine Afterburner="1066.666718" Forward="205.333344" Retro="254.666676" Left="202.666672" Right="202.666672" Top="202.666672" Bottom="202.666672"/>
@@ -44,8 +44,8 @@
 
 <!-- new elements added -->
 
-    <Light file="supernova.bmp" x="10,24" y="-2,759" z="-18,302" size="6"/>
-    <Light file="supernova.bmp" x="-10,24" y="-2,759" z="-18,302" size="6"/>
+    <Light file="supernova.bmp" x="10.24" y="-2.759" z="-18.302" size="6"/>
+    <Light file="supernova.bmp" x="-10.24" y="-2.759" z="-18.302" size="6"/>
 
         <Dock x="0" y="4.6" z="6" size="10"/>
         <Dock x="0" y="-4.7" z="6" size="10"/>
