@@ -15,7 +15,7 @@ module ai_test2 {
   void randomMoveTo(){
     float x=9000.0;
     float y=2000.0;
-    float z=100.0; // set z to values >1000.0 to see the bug
+    float z=10000.0; // set z to values >1000.0 to see the bug
 
     object myvec=vec3.new(x,y,z);
     object fgid=_unit.getFgId(my_unit);
@@ -25,7 +25,7 @@ module ai_test2 {
     _io.sprintf(outstr,"moving %s to %f %f %f",fgid,x,y,z);
     _io.message("game","all",outstr);
 
-    object new_order=_order.newMoveTo(myvec,true,1);
+    object new_order=_order.newMoveTo(myvec,true,4);
 
     _order.enqueueOrder(my_order,new_order);
   };
