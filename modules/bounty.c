@@ -158,7 +158,7 @@ module bounty {
 	    }
 	  } else if (arrived==1) {
 	    object significant=_unit.getUnitFromContainer(sigcont);
-	    if (_unit.getDistance(you,significant)<5000.0) {
+	    if (unit.getSignificantDistance(you,significant)<10000.0) {
 	      if (_std.isNull(newship)) {
 		newship=faction_ships.getRandomFighter(faction);
 	      }

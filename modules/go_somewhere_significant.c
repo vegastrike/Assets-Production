@@ -68,7 +68,7 @@ module go_somewhere_significant {
 	    if (_std.isNull(base)||_std.isNull(you)) {
 	      return;
 	    }
-	    float dist=_unit.getDistance(base,you);
+	    float dist=unit.getSignificantDistance(you,base);
 	    if (dist<=distfrombase) {
 	      arrivedarea=true;
 	    }

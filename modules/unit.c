@@ -70,6 +70,16 @@ module unit {
 	}
 	return un;
   };
+  float getSignificantDistance (object un, object sig) {
+    float dist = _unit.getDistance (un,sig);
+    if (_unit.isPlanet (sig)) {
+      dist = dist - (_unit.getRSize(sig)*0.75);
+    }
+    if (_unit.isPlanet (un)) {
+      dist = dist - (_unit.getRSize(un)*0.75);
+    }
+    return dist;
+  };
   object obsolete_getNearestEnemy(object my_unit,float range){
     int ship_nr=0;
     float min_dist=9999999.0;
