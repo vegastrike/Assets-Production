@@ -1,8 +1,6 @@
 <Unit scale="15.00000">
 	<Description combatRole="FIGHTER">
 	</Description>
-	<cockpit file = "medium_cockpit.cpt" x = "0" y = ".5" z = "4"  >
-	</cockpit>
 	<Defense HudImage = "nova-hud.spr" >
 		<Shields front = "0.000000" back = "0.000000"  >
 		</Shields>
@@ -49,7 +47,7 @@
 		<Radar itts = "false" error = "0" range = "5000" maxcone = ".25" color = "false"  >
 		</Radar>
 	</Computer>
-<cockpit file = "medium-cockpit.cpt" x = "0.00000e+0" y = "8.40000e-2" z = "2.09000" />
+<cockpit file = "medium_cockpit.cpt" x = "0.00000e+0" y = "8.40000e-2" z = "2.09000" />
 
 	<Jump missing = "1" delay = "1" jumpenergy = "90"  >
 	</Jump>
