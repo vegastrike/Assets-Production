@@ -6,10 +6,11 @@
 	<variables>
 <!--		<var name="continuousterrain" value="continuousterrain.txt"/>-->
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="4 versus 4" />
+		<var name="mission_name" value="Earth Patrol Random Attack" />
 
 		<var name="system" value="sol_sector/sol_earth" />
-		<var name="description" value="4vs4.txt" />
+		<var name="description" value="Defend the Sol system against the enemies!\Fly with your fighter once round earth\and dive low to fly over the terrain.\Friendly and enemy ships will jump in\from time to time" />
+		<var name="author" value="Alexander Rawass" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="1">

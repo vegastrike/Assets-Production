@@ -87,7 +87,7 @@ module random_launch {
       checkLaunch();
       lasttime=nowtime;
 
-      //unit.print_unitlist();
+      unit.print_unitlist();
     }
   };
 

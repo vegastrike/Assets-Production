@@ -1,9 +1,10 @@
 <mission>
 	<variables>
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="4 versus 4" />
+		<var name="mission_name" value="Tutorial Part 1: Flying" />
 		<var name="system" value="mars_station" />
-		<var name="description" value="4vs4.txt" />
+		<var name="description" value="This is a tutorial lesson on flying\Follow the orders of your teacher\and you'll soon learn to fly and target" />
+		<var name="author" value="Alexander Rawass" />
 	</variables>
         <flightgroups>
                 <flightgroup name="rookie" faction="confed" type="firefly" ainame="default" waves="8" nr_ships="1">
