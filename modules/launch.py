@@ -113,7 +113,7 @@ class Launch:
       tn=fg_util.ShipsInFG(self.dynfg,self.faction)
       print 'dynamic launching from '+str(tn)+' from flightgroup '+self.dynfg + ' faction '+ self.faction
       knum=0
-      if (self.type!=''):
+      if (tn!=[] and self.type!=''):
         for i in range (len(tn)):
           if (tn[i][0]==self.type):
             knum=tn[i][1]
