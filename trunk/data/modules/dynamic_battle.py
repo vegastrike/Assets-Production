@@ -8,8 +8,8 @@ import dynamic_news
 cpsal= {} #Current PerSystem AttackList
 persystemattacklist= cpsal #assign this to a pointer to cpsal THE FIRST TIME ONLY
 rescuelist={}#hashtable mapping system->(rescuefaction,attackfg,attackfaction)
-attacklist ={}#hashtable mapping (attackfg,attackfaction):(defendfg,defendfaction)
-defendlist={}#hashtable mapping (defendfg,defendfaction):(attackfg,attackfaction)
+attacklist ={}#hashtable mapping (attackfg,attackfaction):(defendfg,defendfaction,iscapbattle)
+defendlist={}#hashtable mapping (defendfg,defendfaction):(attackfg,attackfaction,iscapbattle)
 lastfac=0
 lookorsiege=1
 stardatelen = Director.getSaveDataLength(0,"stardate")
@@ -195,13 +195,13 @@ def SimulateBattles():
 	if (godoit):
 		enemy = ally[1]
 		ally = ally[0]
-		if (not attackFlightgroup (ally[0],ally[1],enemy[0],enemy[1])):
-			deadbattles+=[ally]
+		if (not attackFlightgroup (ally[0],ally[1],enemy[0],enemy[1],enemy[2])):
+			deadbattles+=[(ally[0],ally[1])]
 		else:
 			sys = fg_util.FGSystem(ally[0],ally[1])
 			if not (sys in cpsal):
 				cpsal[sys]=[]
-			cpsal[sys]+=[(ally,enemy)]#continue the battle
+			cpsal[sys]+=[((ally[0],ally[1]),(enemy[0],enemy[1]))]#continue the battle
 	return 1
 def BattlesInSystem(sys):
 	if sys in cpsal:
@@ -479,13 +479,14 @@ def stopAttack (fgname,faction):
 			VS.pushSystem(sys)
 			VS.StopTargettingEachOther(fgname,faction,enemy[0],enemy[1])
 			VS.popSystem()
-		del defendlist[enemy]
+		del defendlist[(enemy[0],enemy[1])]
 		del attacklist[ally]
 		
 
 def initiateAttack (fgname,faction,sys,enfgname,enfaction):
-# FIXME This should only occur for fleet battles, so is commented out for now
-#	Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","start",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,"unknown",enfgname,"unknown"]))
+	capitala = fg_util.CapshipInFG(fgname,faction)
+	capitalb = fg_util.CapshipInFG(enfgname,enfaction)
+	iscap = capitala and capitalb
 	if (fg_util.BaseFGInSystemName(sys)==fgname):
 		fg=(enfgname,enfaction)#this is for a base... self defence
 		efg=(fgname,faction)
@@ -494,14 +495,20 @@ def initiateAttack (fgname,faction,sys,enfgname,enfaction):
 		efg = (enfgname,enfaction)
 	#FIXME  can overwrite the attacking groups!!
 	if (not efg in defendlist):
+		if (iscap):
+			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"fleetbattle","start",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,capitala,enfgname,capitalb]))
 		if (fg in attacklist):
-			del defendlist[attacklist[fg]]
-		attacklist[fg]=efg
-		defendlist[efg]=fg
+			defender = attacklist[fg]
+			del defendlist[(defender[0],defender[1])]
+		attacklist[fg]=(efg[0],efg[1],iscap)
+		defendlist[efg]=(fg[0],fg[1],iscap)
 
 #only works for FG's that are not the base FG...the base FG cannot initiate attacks as far as I know.
 #though initiateAttack switches them around appropriately
-def attackFlightgroup (fgname, faction, enfgname, enfaction):
+def attackFlightgroup (fgname, faction, enfgname, enfaction,iscap):
+	battlename = "battle"
+	if (iscap):
+		battlename="fleetbattle"
 	leader = fg_util.getFgLeaderType(fgname,faction)
 	enleader = fg_util.getFgLeaderType(enfgname,enfaction)
 	sys = fg_util.FGSystem (fgname,faction)
@@ -525,22 +532,22 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction):
 		return 0 #print 'nil DRAW error'
 	if (fg_util.NumShipsInFG(fgname,faction)==0):
 		if (fg_util.NumShipsInFG(enfgname,enfaction)==0):
-			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),battlename,"end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
 		else:
-			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),battlename,"end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
 		return 0
 	elif (fg_util.NumShipsInFG(enfgname,enfaction)==0):
-		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","end",faction,enfaction,"1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))	
+		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),battlename,"end",faction,enfaction,"1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))	
 		return 0
 	if (vsrandom.randrange(0,4)==0):
 		#FIXME  if it is advantageous to stop attacking only!!
 		#FIXME add a stop attacking news report?  -- this should now be fixed, as a draw is reported (not heavilly tested)
-		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),battlename,"end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
 		return 0
 	if (vsrandom.randrange(0,4)==0 and enfgname!=fg_util.BaseFGInSystemName(ensys)):
 		#FIXME  if it is advantageous to run away only
 		#FIXME add a retreat news report?  -- this should now be fixed, as a draw is reported (not heavilly tested)
-		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),battlename,"end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
 		num=VS.GetNumAdjacentSystems(ensys)
 		if (num>0):
 			ensys=VS.GetAdjacentSystem(ensys,vsrandom.randrange(0,num))
