@@ -23,7 +23,7 @@
 		<stats name="rlaan" relation="-1"/>
 	</Faction>
 
-	<Faction name="merchant" logoRGB="KilrathiPriRGB.bmp" logoA="KilrathiPriA.bmp">
+	<Faction name="merchant" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
 		<stats name="aera" relation="-.9"/>
 		<stats name="confed" relation="-.8"/>
 		<stats name="retro" relation=".2"/>
@@ -31,7 +31,7 @@
 		<stats name="rlaan" relation=".5"/>
 	</Faction>
 
-	<Faction name="retro" logoRGB="KilrathiPriRGB.bmp" logoA="KilrathiPriA.bmp">
+	<Faction name="retro" logoRGB="TechPriRGB.bmp" logoA="TechPriA.bmp">
 		<stats name="aera" relation="-.9"/>
 		<stats name="confed" relation="-1"/>
 		<stats name="retro" relation=".2"/>
