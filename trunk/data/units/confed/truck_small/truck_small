@@ -29,7 +29,7 @@
 		<cockpit file="heavy-cockpit.cpt" x="-51.01025" y="-7.52875" z="136.3585"/>
 
 		<Subunit file="cargo" x="0" y="0" z="54.00075"/>
-<Light file="engine1.png" x="0" y="0" z="-63.01675" size="12.5" r="0.698039216" g="0.39215686" b="0.39215686"/>
+<Light file="supernova.bmp" x="0" y="0" z="-63.01675" size="12.5" r="0.698039216" g="0.39215686" b="0.39215686"/>
 
 
 
