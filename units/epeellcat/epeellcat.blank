@@ -2,9 +2,9 @@
 
 	<cockpit file="light_cockpit.cpt" x="0" y=".5" z="4"/>
 	<Defense>
-		<Shields front="0.000000" back="0.000000" recharge="0.000000"/>
+		<Shields front="0.000000" back="0.000000" left="0" right="0" recharge="0.000000"/>
 	</Defense>
-	<upgrade file="shield_2"/>
+	<upgrade file="shield_4"/>
 	<upgrade file="engine_level_0"/>
 	<upgrade file="lithium"/>
 	<upgrade file="hull"/>
