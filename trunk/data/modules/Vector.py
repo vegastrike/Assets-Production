@@ -21,6 +21,12 @@ def Mag(a):
     return math.sqrt(Dot(a,a))
 def Norm (a):
     return Scale(a,1.0/Mag(a))
+def SafeNorm (a):
+    mag = Mag(a)
+    if (mag):
+        return Scale(a,1.0/mag)
+    else:
+        return Vector(0,0,0)
 def ScaledCross (a,b):
     return Norm(Cross(a,b))
 def Max(a,b):
