@@ -190,6 +190,22 @@ def DeleteFG(fgname,faction):
 def DeleteAllFG (faction):
 	for fgname in ReadStringList (ccp,MakeFactionKey (faction)):
 		DeleteFG (fgname,faction)
+def FGSystem (fgname,faction):
+	key = MakeFGKey(fgname,faction)
+	len = Director.getSaveStringLength(ccp,key)
+	if (len>1):
+		return Director.getSaveString(ccp,key,1)
+	else:
+		print 'error retrieving system for '+fgname
+		return VS.getSystemFile()
+def TransferFG (fgname,faction,tosys):
+	key = MakeFGKey(fgname,faction)
+	len = Director.getSaveStringLength(ccp,key)
+	if (len>1):
+		starsystem=Director.getSaveString(ccp,key,1)
+		_RemoveFGFromSystem(fgname,faction,starsystem)
+		_AddFGToSystem(fgname,faction,tosys)
+		Director.putSaveString(ccp,key,1,tosys)
 
 def AddShipsToFG (fgname,faction,typenumbertuple,starsystem):
 	key = MakeFGKey(fgname,faction)	
@@ -202,22 +218,30 @@ def AddShipsToFG (fgname,faction,typenumbertuple,starsystem):
 		for tn in typenumbertuple:
 			_AddShipToKnownFG(key,tn)
 	
-def RemoveShipFromFG (fgname,faction,type):
+def RemoveShipFromFG (fgname,faction,type,landed=0):
 	key = MakeFGKey (fgname,faction)
 	leg = Director.getSaveStringLength (ccp,key)
 	for i in range (ShipListOffset()+1,leg,PerShipDataSize()):
 		if (Director.getSaveString(ccp,key,i-1)==str(type)):
 			numships=0
+			numlandedships=0
 			try:
 				numships = int (Director.getSaveString (ccp,key,i))
+				numlandedships=int (Director.getSaveString (ccp,key,i+1))
 			except:
 				pass
-			if (numships>0):
+			if (numships>1):
 				numships-=1
+				if (numships<numlandedships):
+					landed=1
+					print 'trying to remove launched ship '+type+' but all are landed'
 				Director.putSaveString (ccp,key,i,str(numships))
+				if (landed and numlandedships>0):
+					Director.putSaveString(ccp,key,i+1,str(numlandedships-1))
 			else:
-				Director.eraseSaveString(ccp,key,i)
-				Director.eraseSaveString(ccp,key,i-1)
+				for j in range (i-1,i+PerShipDataSize()-1):
+					Director.eraseSaveString(ccp,key,i-1)
+			return
 	print 'cannot find ship to delete in '+faction+' fg ' + fgname
 def FGsInSystem(faction,system):
 	key = MakeStarSystemFGKey (system)
@@ -251,12 +275,24 @@ def _prob_round(curnum):
 			ret-=1
 	return ret
 
+def LandedShipsInFG(fgname,faction):
+	return ShipsInFG(fgname,faction,2)
+def ShipsInFG(fgname,faction,offset=1):
+	ships = ReadStringList (ccp,MakeFGKey(fgname,faction))
+	rez=[]
+	for num in range (ShipListOffset(),len(ships),PerShipDataSize()):
+		rez+=[(ships[num],int(ships[num+offset]))]
+	return rez
+
 def GetShipsInFG(fgname,faction):
 	import vsrandom
 	ships = ReadStringList (ccp,MakeFGKey(fgname,faction))
-	count=0
-	for num in range(ShipListOffset()+2,len(ships),PerShipDataSize()):
-		count+=int(ships[num])
+	if (len(ships)<=ShipListOffset()):
+		return
+	try:
+		count=int(ships[0])
+	except:
+		print 'bad flightgroup record '+ships
 	launchnum = vsrandom.randrange(1,6)
 	if (launchnum>count):
 		launchnum=count
@@ -270,7 +306,7 @@ def GetShipsInFG(fgname,faction):
 
 def LaunchLandShip(fgname,faction,typ,numlaunched=1):
 	key = MakeFGKey (fgname,faction)
-	ships=ReadStringList (cpp,key)
+	ships=ReadStringList (ccp,key)
 	for num in range (ShipListOffset(),len(ships),PerShipDataSize()):
 		if (typ == ships[num]):
 			try:
@@ -287,6 +323,6 @@ def LaunchLandShip(fgname,faction,typ,numlaunched=1):
 			except:
 				print 'error in FG data (str->int)'
 def LaunchShip (fgname,faction,typ,num=1):
-	LaunchLandDestroyShip (fgname,faction,typ,num)
+	LaunchLandShip (fgname,faction,typ,num)
 def LandShip (fgname,faction,typ,num=1):
-	LaunchLandDestroyShip(fgname,faction,typ,-num)
+	LaunchLandShip(fgname,faction,typ,-num)
