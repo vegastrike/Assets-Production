@@ -5857,11 +5857,6 @@
 	<Ref point="501" weight="2.889998" />
 	<Ref point="502" weight="9.760129" />
 </Logo>
-<Logo type="0" rotate="0.000000" size="36.219929" offset="0.010000">
-	<Ref point="-1" weight="1.000000" />
-	<Ref point="-1" weight="1.000000" />
-	<Ref point="-1" weight="1.000000" />
-</Logo>
 <Logo type="0" rotate="-0.540000" size="2.669998" offset="0.010000">
 	<Ref point="595" weight="1.000000" />
 	<Ref point="593" weight="1.000000" />
