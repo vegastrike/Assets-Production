@@ -14,8 +14,7 @@ module patrol_system {
   object patrolpoints;
   int jnum;//to check for jump point closeness
   bool anything;
-  
-	void init (int numsystemsaway, int num_significants_to_patrol, float distance_from_base, float creds) {
+  void init (int numsystemsaway, int num_significants_to_patrol, float distance_from_base, float creds) {
 	  jnum=0;
 	  anything=true;
 	  distance = distance_from_base;

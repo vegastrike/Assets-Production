@@ -24,11 +24,16 @@ module launch {
   };
 
   object launch_waves_around_area(object fgname,object faction,object type,object ai,int nr_ships,int nr_waves,float r1,float r2,object pos){
-    float x=_olist.at(pos,0)+(random.random(r1,r2)*random.randomsign());
-    float y=_olist.at(pos,1)+(random.random(r1,r2)*random.randomsign());
-    float z=_olist.at(pos,2)+(random.random(r1,r2)*random.randomsign());
+    float x=(random.random(r1,r2)*random.randomsign());
+    float y=(random.random(r1,r2)*random.randomsign());
+    float z=(random.random(r1,r2)*random.randomsign());
+    _io.printf ("launch %f %f %f\n",x,y,z);
+    x = _olist.at(pos,0)+x;
+    y = _olist.at(pos,1)+y;
+    z = _olist.at(pos,2)+z;
 
     // _io.printf("launching %d ships type=%s faction=%s around area [%f,%f,%f]\n",nr_ships,type,faction,x,y,z);
+    _std.playAnimation ("warp.ani",x,y,z,300.0);
     return _unit.launch(fgname,faction,type,ai,nr_ships,nr_waves,x,y,z);
   };
   object launch_wave_around_area(object fgname,object faction,object type,object ai,int nr_ships,float r1,float r2,object pos){
@@ -43,6 +48,7 @@ module launch {
     float x=_olist.at(pos,0)+random.random((0.0-radius)/2.0,radius/2.0);
     float y=_olist.at(pos,1)+random.random((0.0-radius)/2.0,radius/2.0);
     float z=_olist.at(pos,2)+random.random((0.0-radius)/2.0,radius/2.0);
+    _std.playAnimation ("warp.ani",x,y,z,300.0);
     object un = _unit.launch(fgname,faction,type,ai,nr_ships,nr_waves,x,y,z);
   };
   void launch_wave_in_area(object fgname,object faction,object type,object ai,int nr_ships,float radius,object pos){
@@ -60,7 +66,7 @@ module launch {
       float x=_olist.at(wp,0);
       float y=_olist.at(wp,1);
       float z=_olist.at(wp,2);
-
+      _std.playAnimation ("warp.ani",x,y,z,300.0);
       object leader =_unit.launch(outstr,faction,type,ainame,nr,1,x,y,z);
       i=i+1;
     }
