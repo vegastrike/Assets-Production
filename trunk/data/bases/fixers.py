@@ -132,7 +132,8 @@ def CreateFixers (room,locations):
 	rndnum=vsrandom.random()
 	if rndnum<.1 and j==0:
 		f=RandFixer(0)
-		f.drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3])
+		if (j<len(locations)):
+			f.drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3])
 		j+=1
 		img=f.image
 		rndnum=vsrandom.random()
@@ -141,6 +142,6 @@ def CreateFixers (room,locations):
 			while f.image==img and i<10:
 				f=RandFixer(1)
 				i+=1
-			if i<10:
+			if i<10 and j<len(locations):
 				f.drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3])
 				j+=1
