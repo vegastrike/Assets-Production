@@ -459,8 +459,8 @@ void make_ships_list(){
     object Xcapitol=_olist.new();
     _olist.push_back(capitols,Xcapitol);
     //    hunters
-    _olist.push_back (Xships,"revoker");
     _olist.push_back (Xships,"puma");
+    _olist.push_back (Xships,"eagle");
     _olist.push_back (Xships,"avenger");
     _olist.push_back (Xcapitol,"cruiser_mk2");
     _olist.push_back (Xcapitol,"cruiser");
@@ -487,7 +487,7 @@ void make_ships_list(){
     object Xcapitol=_olist.new();
     _olist.push_back(capitols,Xcapitol);
     //    iso
-    _olist.push_back (Xships,"mongoose");
+    _olist.push_back (Xships,"eagle");
     _olist.push_back (Xships,"nova");
     _olist.push_back (Xships,"tian");
     _olist.push_back (Xcapitol,"cargo");
