@@ -2200,7 +2200,7 @@ stone"/>
 				<var name="num_moons" value="3"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="enigma_sector/callimachius enigma_sector/niven enigma_sector/tesla enigma_sector/ghorah_khar enigma_sector/zelanzny enigma_sector/ktithrak_mang enigma_sector/bradbury enigma_sector/mccaffrey enigma_sector/arraman enigma_sector/blake gemini_sector/heinlein"/>
+				<var name="jumps" value="enigma_sector/callimachius enigma_sector/niven enigma_sector/tesla enigma_sector/ghorah_khar enigma_sector/zelanzny enigma_sector/ktithrak_mang enigma_sector/bradbury enigma_sector/mccaffrey enigma_sector/arraman enigma_sector/blake enigma_sector/heinlein"/>
 				<var name="num_natural_phenomena" value="3"/>
 				<var name="num_starbases" value="2"/>
 				<var name="data" value="2681"/>
@@ -2270,7 +2270,7 @@ stone"/>
 				<var name="num_moons" value="2"/>
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/harrison gemini_sector/repleetah gemini_sector/mccaffrey gemini_sector/wetland"/>
+				<var name="jumps" value="enigma_sector/harrison enigma_sector/repleetah enigma_sector/mccaffrey enigma_sector/wetland"/>
 				<var name="num_natural_phenomena" value="2"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1039"/>
@@ -2286,7 +2286,7 @@ stone"/>
 				<var name="num_moons" value="4"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/racene gemini_sector/harrison gemini_sector/enigma enigma_sector/repleetah gemini_sector/trkharna gemini_sector/karakh epsilon_sector/khar_sa epsilon_sector/shariha"/>
+				<var name="jumps" value="enigma_sector/racene enigma_sector/harrison enigma_sector/enigma enigma_sector/repleetah enigma_sector/trkharna enigma_sector/karakh epsilon_sector/khar_sa epsilon_sector/shariha"/>
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="3"/>
 				<var name="data" value="1916"/>
@@ -2302,7 +2302,7 @@ stone"/>
 			<sector name="trkharna">
 				<var name="faction" value="rlaan"/>
 				<var name="planetlist" value="planets.rlaan.txt"/> 
-				<var name="jumps" value="enigma_sector/tithrak_mang gemini_sector/repleetah epsilon_sector/tvx_aq"/>
+				<var name="jumps" value="enigma_sector/tithrak_mang enigma_sector/repleetah epsilon_sector/tvx_aq"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2724"/>
@@ -2325,7 +2325,7 @@ stone"/>
 			</sector>
 			<sector name="lucas">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="enigma_sector/mccaffrey gemini_sector/exile gemini_sector/mustakas gemini_sector/dyson gemini_sector/heinlein"/>
+				<var name="jumps" value="enigma_sector/mccaffrey enigma_sector/exile enigma_sector/mustakas enigma_sector/dyson enigma_sector/heinlein"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="2652"/>
@@ -2346,7 +2346,7 @@ stone"/>
 			</sector>
 			<sector name="heinlein">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="enigma_sector/stirling enigma_sector/lucas enigma_sector/enigma gemini_sector/drake"/>
+				<var name="jumps" value="enigma_sector/stirling enigma_sector/lucas enigma_sector/enigma enigma_sector/drake"/>
 				<var name="nebulae"   value="true"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="2687"/>
@@ -2390,7 +2390,7 @@ stone"/>
 				<var name="num_moons" value="1"/>
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/lucas gemini_sector/drake gemini_sector/gerrold gemini_sector/haldeman gemini_sector/vannegut"/>
+				<var name="jumps" value="enigma_sector/lucas enigma_sector/drake enigma_sector/gerrold enigma_sector/haldeman enigma_sector/vannegut"/>
 				<var name="num_natural_phenomena" value="2"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2384"/>
@@ -2419,7 +2419,7 @@ stone"/>
 				<var name="num_moons" value="12"/>
 				<var name="nebulae"   value="true"/>
 				<var name="asteroids"   value="false"/>
-				<var name="jumps" value="gemini_sector/dyson gemini_sector/heinlein gemini_sector/spielberg gemini_sector/herbert argent_sector/portilla"/>
+				<var name="jumps" value="enigma_sector/dyson enigma_sector/heinlein enigma_sector/spielberg enigma_sector/herbert argent_sector/portilla"/>
 				<var name="num_natural_phenomena" value="2"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="2384"/>
@@ -2462,7 +2462,7 @@ stone"/>
 				<var name="num_moons" value="4"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="false"/>
-				<var name="jumps" value="gemini_sector/niven enigma_sector/adams gemini_sector/dyson gemini_sector/gibson gemini_sector/brin gemini_sector/crichton"/>
+				<var name="jumps" value="enigma_sector/niven enigma_sector/adams enigma_sector/dyson enigma_sector/gibson enigma_sector/brin enigma_sector/crichton"/>
 				<var name="num_natural_phenomena" value="2"/>
 				<var name="num_starbases" value="1"/>
 				<var name="data" value="1197"/>
@@ -2498,7 +2498,7 @@ stone"/>
 				<var name="num_moons" value="5"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/brin gemini_sector/blish gemini_sector/clarke gemini_sector/salayna"/>
+				<var name="jumps" value="enigma_sector/brin enigma_sector/blish enigma_sector/clarke enigma_sector/salayna"/>
 				<var name="num_natural_phenomena" value="0"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1766"/>
@@ -2519,7 +2519,7 @@ stone"/>
 			</sector>
 			<sector name="vannegut">
 				<var name="faction" value="confed"/> 
-				<var name="jumps" value="enigma_sectorclarke gemini_sector/card gemini_sector/dyson"/>
+				<var name="jumps" value="enigma_sectorclarke enigma_sector/card enigma_sector/dyson"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1981"/>
@@ -2555,7 +2555,7 @@ stone"/>
 				<var name="num_moons" value="4"/>
 				<var name="nebulae"   value="false"/>
 				<var name="asteroids"   value="true"/>
-				<var name="jumps" value="gemini_sector/piper gemini_sector/kalvan gemini_sector/foster gemini_sector/pohl"/>
+				<var name="jumps" value="enigma_sector/piper enigma_sector/kalvan enigma_sector/foster enigma_sector/pohl"/>
 				<var name="num_natural_phenomena" value="2"/>
 				<var name="num_starbases" value="0"/>
 				<var name="data" value="1634"/>
