@@ -10,9 +10,19 @@
 </Appearance>
 </Bolt>
 
+<Beam name="LaserBeam" mountsize="light"> 
+<Energy rate=".1" stability="4" refire=".2">
+</Energy>
+<Damage rate="36" damage="36" longrange="1">
+</Damage>
+<Distance speed="140" radialspeed="1" radius=".5" length="1.5" pulsespeed="15" range="800" >
+</Distance>
+<Appearance file="beam.bmp" soundwav="beam.wav" r="1" g="0" b="0" a=".6" >
+</Appearance>
+</Beam>
+
+
 <Missile name="Dumbfire" mountsize="light-missile">
-<Locktime time="3">
-</Locktime>
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
 <Damage rate="80" longrange="1">
@@ -24,8 +34,6 @@
 </Missile>
 
 <Missile name="HeatSeeker" mountsize="Medium-Missile">
-<Locktime time= "3">
-</Locktime>
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
 <Damage rate="80" longrange="1">
@@ -36,84 +44,96 @@
 </Appearance>
 </Missile>
 
-<Beam name="Particle" mountsize="medium"> 
+<Bolt name="Particle" mountsize="medium"> 
 <Energy rate="4" stability="2" refire=".2">
 </Energy>
 <Damage rate="42" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".5" pulsespeed="15" range="600" >
 </Distance>
-<Appearance file="particletexture.bmp" r="1" g=".5" b=".5" a="1" >
+<Appearance file="particletexture.bmp" soundwav="Particle.wav" r="1" g=".5" b=".5" a="1" >
 </Appearance>
-</Beam>
+</Bolt>
 
-<Beam name="Flak" mountsize="light"> 
+<Ball name="Flak" mountsize="light"> 
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
 <Damage rate="6" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="400" >
 </Distance>
-<Appearance file="beamtexture.bmp" r="1" g=".5" b=".5" a="1" >
+<Appearance file="explosion_orange.ani" soundwav="MASS.WAV" r="1" g=".5" b=".5" a="1" >
 </Appearance>
-</Beam>
+</Ball>
 
-<Beam name="MassDriver" mountsize="light"> 
+<Bolt name="MassDriver" mountsize="light"> 
 <Energy rate="1.5" stability="6" refire=".3">
 </Energy>
 <Damage rate="28" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="400" >
 </Distance>
-<Appearance file="massdrivertexture.bmp" r="1" g="1" b="1" a="1" >
+<Appearance file="massdrivertexture.bmp" soundwav="MASS.WAV" r="1" g="1" b="1" a="1" >
 </Appearance>
-</Beam>
+</Bolt>
 
-<Beam name="Meson" mountsize="light"> 
+<Bolt name="Meson" mountsize="light"> 
 <Energy rate="2" stability="6" refire=".3">
 </Energy>
 <Damage rate="25" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="500" >
 </Distance>
-<Appearance file="beamtexture.bmp" r="1" g=".5" b=".5" a="1" >
+<Appearance file="beamtexture.bmp" soundwav="Tachyon.wav" r="1" g=".5" b=".5" a="1" >
 </Appearance>
-</Beam>
+</Bolt>
 
-<Beam name="Neutron" mountsize="heavy"> 
+<Bolt name="Neutron" mountsize="heavy"> 
 <Energy rate="4" stability="3" refire=".5">
 </Energy>
 <Damage rate="40" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="250" >
 </Distance>
-<Appearance file="neutrontexture.bmp" r=".5" g=".5" b="1" a="1" >
+<Appearance file="neutrontexture.bmp" soundwav="Neutron.wav" r=".5" g=".5" b="1" a="1" >
 </Appearance>
-</Beam>
+</Bolt>
 
-<Beam name="Ion" mountsize="light"> 
+<Bolt name="Ion" mountsize="light"> 
 <Energy rate="4" stability="6" refire=".3">
 </Energy>
 <Damage rate="28" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="400" >
 </Distance>
-<Appearance file="beamtexture.bmp" r=".7" g=".4" b="1" a="1" >
+<Appearance file="beamtexture.bmp" soundwav="ION.WAV" r=".7" g=".4" b="1" a="1" >
+</Appearance>
+</Bolt>
+
+<Beam name="Disruptor" mountsize="light"> 
+<Energy rate="4" stability="6" refire=".3">
+</Energy>
+<Damage rate="28" longrange="1">
+</Damage>
+<Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="400" >
+</Distance>
+<Appearance file="beamtexture.bmp" soundwav="beam.wav" r="0" g="1" b=".3" a=".6" >
 </Appearance>
 </Beam>
 
-<Beam name="Tachyon" mountsize="light"> 
+
+<Bolt name="Tachyon" mountsize="light"> 
 <Energy rate="10" stability="6" refire=".3">
 </Energy>
 <Damage rate="20" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="700" >
 </Distance>
-<Appearance file="beamtexture.bmp" r="1" g=".5" b=".5" a="1" >
+<Appearance file="beamtexture.bmp" soundwav="Tachyon.wav" r="1" g=".5" b=".5" a="1" >
 </Appearance>
-</Beam>
+</Bolt>
 
-<Beam name="Plasma" mountsize="light"> 
+<Bolt name="Plasma" mountsize="light"> 
 <Energy rate="15" stability="6" refire=".3">
 </Energy>
 <Damage rate="6" longrange="1">
@@ -122,9 +142,9 @@
 </Distance>
 <Appearance file="beamtexture.bmp" r="1" g=".5" b=".5" a="1" >
 </Appearance>
-</Beam>
+</Bolt>
 
-<Beam name="Reaper" mountsize="light"> 
+<Bolt name="Reaper" mountsize="light"> 
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
 <Damage rate="6" longrange="1">
@@ -133,9 +153,9 @@
 </Distance>
 <Appearance file="beamtexture.bmp" r="1" g=".5" b=".5" a="1" >
 </Appearance>
-</Beam>
+</Bolt>
 
-<Beam name="Photon" mountsize="light"> 
+<Bolt name="Photon" mountsize="light"> 
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
 <Damage rate="6" longrange="1">
@@ -144,9 +164,9 @@
 </Distance>
 <Appearance file="beamtexture.bmp" r="1" g=".5" b=".5" a="1" >
 </Appearance>
-</Beam>
+</Bolt>
 
-<Beam name="Antimatter" mountsize="light"> 
+<Bolt name="Antimatter" mountsize="light"> 
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
 <Damage rate="6" longrange="1">
@@ -155,7 +175,7 @@
 </Distance>
 <Appearance file="beamtexture.bmp" r="1" g=".5" b=".5" a="1" >
 </Appearance>
-</Beam>
+</Bolt>
 
 <Beam name="Stormfire" mountsize="light"> 
 <Energy rate="1" stability="6" refire=".3">
@@ -164,11 +184,11 @@
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="800" >
 </Distance>
-<Appearance file="beamtexture.bmp" r="1" g=".5" b=".5" a="1" >
+<Appearance file="beamtexture.bmp" soundwav="MASS.WAV" r="1" g=".5" b=".5" a="1" >
 </Appearance>
 </Beam>
 
-<Beam name="Leach" mountsize="light"> 
+<Beam name="Leech" mountsize="light"> 
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
 <Damage rate="6" longrange="1">
@@ -179,7 +199,7 @@
 </Appearance>
 </Beam>
 
-<Beam name="Tractor" mountsize="light"> 
+<Beam name="Tractor" mountsize="special"> 
 <Energy rate="1" stability="6" refire=".3">
 </Energy>
 <Damage rate="6" longrange="1">
@@ -191,21 +211,17 @@
 </Beam>
 
 <Missile name="Porcupine Mine">
-<Locktime time= "3">
-</Locktime>
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
 <Damage rate="80" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
 </Distance>
-<Appearance file="Porcupine.xmesh" >
+<Appearance file="porcupine" >
 </Appearance>
 </Missile>
 
 <Missile name="Capship Missile">
-<Locktime time= "3">
-</Locktime>
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
 <Damage rate="80" longrange="1">
@@ -218,8 +234,6 @@
 
 
 <Missile name="ImageRecognition">
-<Locktime time= "3">
-</Locktime>
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
 <Damage rate="80" longrange="1">
@@ -231,8 +245,6 @@
 </Missile>
 
 <Missile name="FriendOrFoe">
-<Locktime time= "3">
-</Locktime>
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
 <Damage rate="80" longrange="1">
@@ -244,40 +256,34 @@
 </Missile>
 
 <Missile name="Torpedo">
-<Locktime= "3">
-</Locktime>
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
 <Damage rate="80" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
 </Distance>
-<Appearance file="Torpedo.xmesh" >
+<Appearance file="torpedo" >
 </Appearance>
 </Missile>
 
 <Missile name="Leech">
-<Locktime time= "3">
-</Locktime>
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
 <Damage rate="80" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
 </Distance>
-<Appearance file="Leech.xmesh" >
+<Appearance file="leech" >
 </Appearance>
 </Missile>
 
 <Missile name="Mace">
-<Locktime time= "3">
-</Locktime>
 <Energy rate="0" stability="6" refire=".3">
 </Energy>
 <Damage rate="80" longrange="1">
 </Damage>
 <Distance speed="150" radialspeed=".8" radius=".3" pulsespeed="15" range="2000" >
 </Distance>
-<Appearance file="Mace.xmesh" >
+<Appearance file="mace" >
 </Appearance>
 </Missile>
