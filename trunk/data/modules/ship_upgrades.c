@@ -72,7 +72,10 @@ module ship_upgrades {
     object item=getItem("upgrades/Hull_Upgrades","upgrades/Hull_Upgrades");
     return item;
   };
-
+  object GetRandomTurret () {
+    object item=getItem("upgrades/Weapons/Turrets","upgrades/Weapons");
+    return item;
+  };
   object GetRandomArmor () {
     object item=getItem("upgrades/Armor_Modification","upgrades/Hull_Upgrades");
     return item;
@@ -81,6 +84,78 @@ module ship_upgrades {
   object GetRandomUpgrade () {
     object item=_unit.getRandCargo(1,"upgrades");
     return item;
+  };
+
+  void basicUnit (object un) {
+    int i=0;
+    int curmount=0;
+    while (i<2) {
+      _unit.upgrade(un,"laser",curmount,curmount,true,true);
+      curmount=curmount+1
+      i=i+1;
+    }
+    _unit.upgrade(un,"engine_level_0",0,0,true,false);
+    _unit.upgrade(un,"shield_2",0,0,true,false);
+    _unit.upgrade(un,"plasteel",0,0,true,false);
+    _unit.upgrade(un,"hull",0,0,true,false);
+  };
+  float upgradeHelper (object un, object mylist, float creds, bool cycle) {
+     float newcreds=0;
+     if (_olist.size(mylist)==0) {
+        _olist.delete (mylist);
+        return 0; 
+     }else {
+        str=_olist.at(mylist,0);
+        newcreds=_olist.at (mylist,2);
+        newcreds = newcreds*_unit.upgrade(un,str,curmount,curmount,true,cycle);
+        creds = creds -newcreds;
+        _olist.delete (mylist);
+
+     }
+     return creds;
+  };
+  
+  void upgrageUnit (object un, float creds, float diff) {
+    int curmount=0;
+    object mylist;
+    object str;
+    float rndnum;
+    int inc=0;
+    int numammos=50*diff;
+    if (numammos>30) {
+      numammos=30;
+    } else if (numammos<5) {
+      numammos=5;
+    }
+    while (inc<numammos) {
+      mylist=_unit.getRandCargo(0,"upgrades/Ammunition");
+      if (_olist.size(mylist)<=0) {
+        inc=numammos;
+      } else {
+        str=_olist.at(mylist,0);
+        _unit.upgrade(str,inc,inc,false,true);
+      }
+    }
+    mylist = GetRandomHull();
+    creds =upgradeHelper (un,mylist,creds,false);
+
+    mylist = GetRandomArmor();
+    creds =upgradeHelper (un,mylist,creds,false);
+    inc=0;
+    while (creds>500) {
+      if (inc<2) {
+        mylist=GetRandomWeapon(diff);
+      }else if (inc==2) {
+        mylist=GetRandomTurret(diff);
+      }else {
+        mylist=GetRandomUpgrade(diff);
+      }
+      creds =upgradeHelper (un,mylist,creds,inc<2);
+      
+      _olist.delete(mylist);
+      curmount=curmount+1;
+      inc=(inc+1)%7;
+    }
   };
 
   void init () {
