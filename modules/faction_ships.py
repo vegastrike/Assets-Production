@@ -23,7 +23,17 @@ enemies =  ((aera,aera,rlaan,rlaan,retro,pirates,ISO), #confed
             (confed,confed,confed,confed,confed,confed,confed,militia,militia,militia,aera,aera,aera,pirates,retro,retro,retro,hunter), #ISO
             (confed,aera,rlaan,merchant,retro,pirates,hunter,militia,ISO) #unknown
            )
-
+insysenemies =  ((aera,rlaan,retro,pirates,ISO,retro,pirates,ISO,retro,pirates,ISO,retro,pirates,ISO), #confed
+            (confed,confed,confed,militia,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,rlaan,pirates,hunter,merchant,ISO), #aera
+            (confed,confed,militia,aera,aera,aera,aera,aera,aera,aera,aera,pirates,retro,retro,retro,retro,retro,hunter),#rlaan
+            (aera,aera,retro,pirates,pirates,pirates,pirates,pirates,pirates,pirates,pirates,pirates), #merchant
+            (confed,confed,confed,militia,rlaan,pirates,hunter,merchant,merchant,merchant,merchant,merchant,merchant,merchant,merchant,ISO,ISO,ISO,ISO), #retro
+            (confed,confed,confed,militia,militia,militia,militia,rlaan,rlaan,retro,aera,aera,aera,merchant,merchant,merchant,merchant,merchant,merchant,ISO), #pirates
+            (aera,aera,retro,rlaan), #hunter
+            (aera,aera,rlaan,rlaan,retro,pirates,ISO,retro,pirates,ISO,retro,pirates,ISO), #militia
+            (confed,confed,confed,confed,confed,confed,confed,militia,militia,militia,aera,aera,pirates,retro,retro,retro,hunter), #ISO
+            (confed,aera,rlaan,merchant,retro,pirates,hunter,militia,ISO) #unknown
+           )
 friendlies=((confed,confed,confed,militia,militia,militia,militia,merchant,merchant,merchant,merchant), #confed
             (aera,aera,aera,aera,aera,aera,aera,retro), #aera
             (ISO,merchant,rlaan,rlaan,rlaan,rlaan), #rlaan
@@ -32,7 +42,7 @@ friendlies=((confed,confed,confed,militia,militia,militia,militia,merchant,merch
             (hunter,merchant,merchant,merchant,pirates,pirates,pirates,pirates,pirates), #pirates
             (ISO,confed,confed,militia,militia,merchant,hunter,hunter,hunter,hunter,hunter), #hunter
             (confed,confed,confed,militia,militia,militia,militia,merchant,merchant,merchant,merchant,hunter), #militia
-            (ISO,ISO,ISO,merchant,merchant,rlaan), #ISO
+            (ISO,ISO,ISO,merchant,merchant,ISO,ISO,ISO,merchant,merchant,ISO,ISO,ISO,merchant,merchant,rlaan), #ISO
             (unknown,) #unknown
            )
 
@@ -85,6 +95,9 @@ def get_X_of (mylist, index):
 
 def get_enemy_of (factionname):
   return get_X_of (enemies, factionToInt(factionname))
+
+def get_insys_enemy_of (factionname):
+  return get_X_of (insysenemies, factionToInt(factionname))
 
 def get_friend_of (factionname):
   return get_X_of (friendlies, factionToInt(factionname))

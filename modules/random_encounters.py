@@ -109,7 +109,7 @@ class random_encounters:
     for i in range(0,numfactions):
       localfaction = VS.GetGalaxyProperty(sysfile,"faction")
       if (vsrandom.random() < self.TrueEnProb(self.enprob)):
-        localfaction = faction_ships.get_enemy_of (localfaction)
+        localfaction = faction_ships.get_insys_enemy_of (localfaction)
       else:
         localfaction = faction_ships.get_friend_of(localfaction)
       if (len(near_faction)>0):
