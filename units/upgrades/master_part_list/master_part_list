@@ -179,7 +179,6 @@
 		</Category>
 		<Category file="upgrades/Weapons/Mounted_Guns_Aera_Milspec">
 			<Cargo file="photon_gun" price="15000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="reaper_gun" price="1200000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="anihilator_gun" price="90000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="penetrator_gun" price="110000" quantity="1" mass=".01" volume="1"/>
 		</Category>
@@ -318,7 +317,6 @@
 		<Category file="upgrades/ECM_Systems">
 			<Cargo file="ecm_package_1" price="5000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="ecm_package_2" price="15000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="ecm_package_3" price="30000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="upgrades/ECM_Systems/Aera_Milspec">
 		</Category>
@@ -385,13 +383,11 @@
 			<Cargo file="image_recognition_ammo" price="75" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="friend_or_foe_ammo" price="100" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="torpedo_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="advtorpedo_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="maul_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="cluster_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="capiff_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="capcluster_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="capshipmissile_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="leech_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="swarm_ammo" price="80" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="killerbee_ammo" price="85" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="hail_ammo" price="90" quantity="1" mass=".01" volume="1"/>
@@ -406,11 +402,16 @@
 			<Cargo file="leech_3pack_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="swarm_3pack_ammo" price="80" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="killerbee_3pack_ammo" price="85" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="hail_3pack_ammo" price="90" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="gauss_3pack_ammo" price="300" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="breeze_3pack_ammo" price="300" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="upgrades/Experimental">
+			<Cargo file="reaper_gun" price="1200000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="cloaking_device" price="259000" quantity="1" mass="8.9" volume="1"/>
+			<Cargo file="advtorpedo_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="hail_3pack_ammo" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="leech_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="ecm_package_3" price="30000" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Natural_Products/Food">
 			<Cargo file="Coffee" price="140" quantity="90" mass=".01" volume="1"/>
@@ -561,16 +562,29 @@
 			<Cargo file="First_Aid_Kits" price="480" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Research/Medical">
-			<Cargo file="Synthetic_Limbs" price="70" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Synthetic_Limbs" price="200" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Self_Healing_Skin" price="230" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Veriscan_Device" price="600" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Recardiator" price="540" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Surgeon_Droid" price="800" quantity="1" mass=".01" volume="1"/>
+
 		<!-- price these at 1/10 their normal price...-->
 		</Category>
 		<Category file="Research/Industrial">
 		<!-- price these at 1/10 their normal price...-->
+			<Cargo file="Nano_Constructors" price="250" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Self_Repairing_Metal" price="220" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Research/Environmental">
 		<!-- price these at 1/10 their normal price...-->
+			<Cargo file="Atmospheric_Rejuvinator" price="400" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Ozone_Healer" price="330" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Forest_Regenerator" price="520" quantity="1" mass=".01" volume="1"/>
 		</Category>
 		<Category file="Research/Electronics">
+			<Cargo file="Quantum_Deductor" price="420" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Biparticle_Transistor" price="1" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="Virtual_Tunneling_Terminal" price="240" quantity="1" mass=".01" volume="1"/>
 		<!-- price these at 1/10 their normal price...-->
 		</Category>
 		<Category file="Electronics">
