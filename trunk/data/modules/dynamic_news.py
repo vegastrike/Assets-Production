@@ -111,7 +111,7 @@ def formatProperTitle(str):
 def makeVarList(ls):
 	"""formats a list of variables to be stored in a save game
 	for later reference"""
-	return string.join(ls,',')
+	return string.join([str(vsrandom.randrange(0,4194304))]+ls,',')
 
 
 # ------------------------------------------------------------------------------
@@ -243,7 +243,7 @@ def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword,ra
 	faction = validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword)
 	if faction == "barf":
 		print "Error: A suitable news story does not exist, returning a warning string."
-		return getClosestScaleNews([(scale,"all","ERROR!\\Invalid news variables:\\(" + makeVarList([faction_base,type_event,stage_event,success,pov,str(scale),keyword]) + ")\\A suitable news story for this event could not be found.\\This is a placeholder error message.\\\\Contact the help-desk for any queries:\\dandandaman@users.sourceforge.net ;-)\\\\\\ -- The Vegastrike Community:\\Struggling with lack of hands to go around since 1998")],scale,randint)
+		return getClosestScaleNews([(scale,"all","ERROR!\\Invalid news variables:\\(" + string.join([faction_base,type_event,stage_event,success,pov,str(scale),keyword],',') + ")\\A suitable news story for this event could not be found.\\This is a placeholder error message.\\\\Contact the help-desk for any queries:\\dandandaman@users.sourceforge.net ;-)\\\\\\ -- The Vegastrike Community:\\Struggling with lack of hands to go around since 1998")],scale,randint)
 	listnews = dynamic_news_content.allNews()[faction][type_event][stage_event][success][pov]
 	return getClosestScaleNews(listnews,scale,randint)
 
@@ -258,12 +258,14 @@ def getClosestScaleNews(listof,scale,randint):
 			finallist = [valtable[i]]
 		elif finallist[len(finallist) - 1][3] == valtable[i][3]:
 			finallist.append(valtable[i])
+	if (len(finallist)==0):
+		return "br0ken"
 	if randint == -1:
 		global news_random_int
 		news_random_int = vsrandom.randrange(0,len(finallist), step=1)
 		return finallist[news_random_int][2]
 	else:
-		return finallist[randint][2]
+		return finallist[randint%len(finallist)][2]
 
 def minorNewsTypes():
 	"""a list of all the minor news types that should be system dependent"""
@@ -275,7 +277,7 @@ def checkSystemRelevant(system):
 	if (system in VS.getAllAddjacentSystems(VS.getSystemFile()).append(VS.getSystemFile())):
 		return 1
 
-def checkVarListRelevant(newslist):
+def checkVarListRelevant(newslist,randint):
 	"""returns true only if the newslist is relevant
 	(major or close to home)"""
 	if (not (newslist[0] in minorNewsTypes())):
@@ -290,6 +292,7 @@ def processNewsTuple(newsstring,randint):
 	ls = newsstring.split(',')
 	while (len(ls)<12):
 		ls.append ('unknown')
+	print 'lsing '+ str(ls)
 	ns = makeDynamicNews(ls[0],ls[1],ls[2],ls[3],string.atoi(ls[4]),string.atof(ls[5]),ls[6],ls[7],ls[8],ls[9],ls[10],ls[11],randint)
 	print ns
 	return ns
@@ -300,39 +303,15 @@ def manageDynamicNews(player,newsstring):
 	""" manages the dynamic news item passed to it"""
 	print "against its ferrocious struggling I am"
 	print "pushing " + newsstring + " through the generator"
-	ls = newsstring.split(',')
-	dockedat = getDockFaction()
-	isdone = 0
-	for word in ls:
-		if word.find("%RAND" + dockedat) != -1:
-			isdone = 1
-			randint = string.atoi(string.join(word.split("%RAND" + dockedat),""))
-			print "Previous generation of new event found, randint is",
-			print randint			
-			break
-		else:
-			print "No previous generation of event found"
-	varlist = list()
-	for word in ls:
-		if word.find("%RAND") == -1:
-			varlist.append(word)
-	if checkVarListRelevant(varlist):
+	varlist = newsstring.split(',')
+	varlist.reverse()
+	randint = int(varlist.pop())
+	varlist.reverse()
+	if checkVarListRelevant(varlist,randint):
 		print "news is relevant"
 		varstring = string.join(varlist,",")
 		import Director
-		if isdone == 0:
-			Director.pushSaveString(player,"news",processNewsTuple(varstring,-1))
-			global news_random_int
-			newnewsstring = "%RAND" + dockedat + str(news_random_int) + "," + newsstring
-			Director.pushSaveString(player,"dynamic_news",newnewsstring)
-			print newnewsstring + " added to \"dynamic_news\""
-					#FIXME: delete old dynamic_news string!
-			import news	#This should do it?:
-			news.eraseNewsItem(player,newsstring)
-			print "but he resisted and I had to produce a demi-clone"
-		else:
-			Director.pushSaveString(player,"news",processNewsTuple(varstring,randint))
-			print "and he fried.....FRIED!!!....mwahahahahahaaa"
+		Director.pushSaveString(player,"news",processNewsTuple(varstring,randint))
 	else:
 		print "news " + newsstring + " ignored...not relevant"
 
