@@ -17,7 +17,9 @@ module bounty {
 	import faction_ships;
 	bool istarget;
 	bool runaway;
+	object systemlist;
 	void destroy () {
+	  _olist.delete (systemlist);
 	  _string.delete (faction);
 	  _string.delete (destination);
 	  if (!_std.isNull(sigcont)) {
@@ -55,6 +57,7 @@ module bounty {
 	};
 	void initstage2 (int minnumsystemsaway, int maxnumsystemsaway, float creds, bool run_away, int shipdifficulty, object tempfaction) {
 
+	  systemlist = _olist.new();
 	  faction = tempfaction;	  
 	  _std.setNull(newship);
 	  _std.setNull(sigcont);
@@ -74,13 +77,13 @@ module bounty {
 	  if (!_std.isNull(you)) {
 
 	    object name=_unit.getName(you);
-
+	   
 	    object str = _string.new();
 	    _io.sprintf(str,"Good Day, %s. Your mission is as follows:",name);
 	    _string.delete (name);
 	    _io.message (0,"game","all",str);
 	    _io.message (0,"game","all","In order to get to your destination, you must:");
-	    destination=universe.getAdjacentSystem (sysfile,random.randomint (minnumsystemsaway,maxnumsystemsaway));
+	    destination=universe.getAdjacentSystem (sysfile,random.randomint (minnumsystemsaway,maxnumsystemsaway),systemlist);
 	    _io.sprintf(str,"Once there, you must destroy a %s unit.",faction);
 	    _io.message (2,"game","all",str);
 	    _io.message (3,"game","all","You will then recieve credits as your reward");
