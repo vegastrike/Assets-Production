@@ -1,8 +1,11 @@
-import AI
+import VS
 import sys
-class MyAI(AI.PythonAI):
+class MyAI(VS.PythonAI):
+    def init(self,un):
+        self.XMLScript ("++turntowards.xml")
+        self.AddReplaceLastOrder(1)
     def Execute(self):
-        AI.PythonAI.Execute(self);
+        VS.PythonAI.Execute(self);
         sys.stdout.write('h')
         return ''
 hi1 = MyAI()
