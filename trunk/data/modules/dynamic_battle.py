@@ -2,12 +2,19 @@ import VS
 import Director
 import fg_util
 import vsrandom
-
+import faction_ships
 #hashed by system, then contains lists of pairs of (flightgroup,faction) pairs
 persystemattacklis= {}
 
 attacklist ={}#hashtable mapping (attackfg,attackfaction):(defendfg,defendfaction)
 defendlist={}#hashtable mapping (defendfg,defendfaction):(attackfg,attackfaction)
+def UpdateCombatTurn():
+	numfac=VS.GetNumFactions()
+	for i in range (numfac):
+		fac = VS.GetFactionName(i)
+		LookForTrouble (fac)
+	SimulateBattles();
+
 def SimulateBattles():
 	deadbattles=[]
 	global persystemattacklist
@@ -19,10 +26,9 @@ def SimulateBattles():
 			deadbattles+=[ally]
 		else:
 			sys = fg_util.FGSystem(ally[0],ally[1])
-			#if not (sys in persystemattacklist):
-			#	persystemattacklist[sys]={}#used to be a haash table in BattlesInSystem
-			#(persystemattacklist[sys])[ally]=enemy
-			persystemattacklist[sys]+=[(ally,enemy)]
+			if not (sys in persystemattacklist):
+				persystemattacklist[sys]=[]
+			persystemattacklist[sys]+=[(ally,enemy)]#continue the battle
 	for i in deadbattles:
 		stopAttack(i[0],i[1])
 def BattlesInSystem():
@@ -37,18 +43,34 @@ def LookForSystemWideTrouble(faction,sys):
 		efg = fg_util.AllFGsInSystem(enemy,sys)
 		if (len(efg)):
 			index=vsrandom.randrange(0,len(efg))#FIXME include some sort of measure "can I win"
-			initiateAttack(fg,faction,efg[index],enemyfac)
+			initiateAttack(fg,faction,sys,efg[index],enemyfac)
+
+def randomMovement(fg,fac):
+	import universe
+	import fg_util
+	sys=fg_util.FGSystem(fg,fac)
+	if (sys!='no_sector/no_system' and fg!=fg_util.BaseFGInSystemName(sys)):
+		l = universe.getAdjacentSystemList(sys)
+		if (len(l)):
+			newsys = l[vsrandom.randrange(0,len(l))]
+#			print 'moving '+fg+' from '+sys+' to '+ newsys
+			fg_util.TransferFG( fg,fac,newsys);
+
 def LookForTrouble (faction):
 	for i in fg_util.AllFlightgroups (faction):
 		sys = fg_util.FGSystem (i,faction)
 		enfac = faction_ships.get_enemy_of(faction)
+		foundanyone=False
 		for j in fg_util.AllFGsInSystem(enfac,sys):
+			foundanyone=True
 			#FIXME include some sort of measure "can I win"
 			if (vsrandom.randrange(0,5)==0):
-				initiateAttack(i,faction,j,enfac)
+				initiateAttack(i,faction,sys,j,enfac)
+		if (foundanyone==False and vsrandom.randrange(0,3)==0):
+			randomMovement (i,faction)
 
 def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
-	i=getUnitList()
+	i=VS.getUnitList()
 	un=i.current()
 	while (un):
 		if ((un.getFactionName()==enfaction and un.getFlightgroupName()==enfgname) or
@@ -58,7 +80,7 @@ def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
 		un=i.next()
 
 def TargetEachOther (fgname,faction,enfgname,enfaction):
-	i=getUnitList()
+	i=VS.getUnitList()
 	un=i.current()
 	en=None
 	al=None
@@ -93,6 +115,7 @@ def SimulatedDukeItOut (fgname,faction,enfgname,enfaction):
 def numShips(i):
 	if (faction_ships.isCapital(i[0])):
 		return i[1]*10
+	return i[1]
 def countTn (l):
 	count=0
 	for i in l:
@@ -115,7 +138,7 @@ def LaunchMoreShips(fgname,faction,landedtn,nums):
 			landedtn[index]=(landedtn[index][0],landedtn[index][1]-1)
 		else:
 			del landedtn[index]
-	if len(shiplaunchlis):
+	if len(shiplaunchlist):
 		pos=findLaunchedShipInFGInSystem (fgname,faction).GetPosition()
 	for i in shiplaunchlist:
 		while j in range (i[1]):
@@ -123,15 +146,15 @@ def LaunchMoreShips(fgname,faction,landedtn,nums):
 
 						 
 def LaunchEqualShips (fgname, faction, enfgname, enfaction):
-	land=LandedShipsInFG(fgname,faction)
-	launch=ShipsInFG(fgname,faction)
-	enland=LandedShipsInFG(enfgname,enfaction)
-	enlaunch=ShipsInFG(enfgname,enfaction)
+	land=fg_util.LandedShipsInFG(fgname,faction)
+	launch=fg_util.ShipsInFG(fgname,faction)
+	enland=fg_util.LandedShipsInFG(enfgname,enfaction)
+	enlaunch=fg_util.ShipsInFG(enfgname,enfaction)
 	numenland=countTn(enland)
 	numenlaunch=countTn(enlaunch)
 	numland=countTn(land)
 	numlaunch=countTn(launch)
-	if (enland==0 or land==0 or (launch==0 and enlaunch==0) ):
+	if (numenland==0 or numland==0 or (numlaunch==0 and numenlaunch==0) ):
 		return
 	if (numlaunch/numland > numenlaunch/numenland):
 		LaunchMoreShips (fgname,faction,land,int((numland*numenlaunch/numenland)-numlaunch))
@@ -146,36 +169,54 @@ def stopAttack (fgname,faction):
 		if (VS.systemInMemory(sys)):
 			VS.pushSystem(sys)
 			StopTargettingEachOther(fgname,faction,enemy[0],enemy[1])
-			VS.popSystem(sys)
+			VS.popSystem()
 		del defendlist[enemy]
 		del attacklist[ally]
 		
 
-def initiateAttack (fgname,faction,enfgname,enfaction):
-	fg = (fgname,faction)
-	efg = (enfgname,enfaction)
-	attacklist[fg]=efg
-	defendlist[efg]=fg
+def initiateAttack (fgname,faction,sys,enfgname,enfaction):
+	if (fg_util.BaseFGInSystemName(sys)==fgname):
+		fg=(enfgname,enfaction)#this is for a base... self defence
+		efg=(fgname,faction)
+	else:
+		fg = (fgname,faction)
+		efg = (enfgname,enfaction)
+	#FIXME  can overwrite the attacking groups!!
+	if (not efg in defendlist):
+		if (fg in attacklist):
+			del defendlist[attacklist[fg]]
+		attacklist[fg]=efg
+		defendlist[efg]=fg
 
 #only works for FG's that are not the base FG...the base FG cannot initiate attacks as far as I know.
-#though eventually we may want to change that
+#though initiateAttack switches them around appropriately
 def attackFlightgroup (fgname, faction, enfgname, enfaction):
 	sys = fg_util.FGSystem (fgname,faction)
 	ensys = fg_util.FGSystem (enfgname,enfaction)
 	if (sys==ensys):
 		if (VS.systemInMemory(sys)):
-			VS.pushStarSystem(sys)
+			VS.pushSystem(sys)
 			LaunchEqualShips (fgname,faction,enfgname,enfaction)
 			TargetEachOther (fgname,faction,enfgname,enfaction)
-			VS.popStarSystem()
+			VS.popSystem()
 		SimulatedDukeItOut (fgname,faction,enfgname,enfaction)
 	else:
 		#pursue other flightgroup
-		adjSystemList=VS.getAdjacentSystemList(sys)
+		import universe
+		adjSystemList=universe.getAdjacentSystemList(sys)
 		if ensys in adjSystemList:
-			TransferFG (fgname,faction,ensys)
+			fg_util.TransferFG (fgname,faction,ensys)
 		else:
 			return 0
+	if (vsrandom.randrange(0,4)==0):
+		#FIXME  if it is advantageous to stop attacking only!!
+		return 0
+	if (vsrandom.randrange(0,4)==0 and enfgname!=fg_util.BaseFGInSystemName(ensys)):
+		#FIXME  if it is advantageous to run away only
+		num=VS.GetNumAdjacentSystems(ensys)
+		if (num>0):
+			ensys=VS.GetAdjacentSystem(ensys,vsrandom.randrange(0,num))
+			fg_util.TransferFG (fgname,faction,ensys)
 	return 1
 		
 

@@ -31,12 +31,15 @@ def addParticle (loc,vel,col):
    print 'added particle ' + loc + ' vel '+vel+' col '+col
 def pushSystem(sysname):
    print "pushSystem"
+   global _sysfile
    _sysfile+=[sysname]
 def systemInMemory(sys):
+    if (sys=='no_sector/no_system'):
+      return 0
+    import vsrandom
+    ret = vsrandom.randrange(0,2)	
     if (sys in _sysfile):
         print sys+' in memory'
-	return 1
-    ret = vsrandom.randrange(0,2)
     if (ret):
         print sys+' maybe in memory'
     else:
@@ -53,7 +56,7 @@ def getSystemName():
    return _sysfile[-1]+' system'
 def getUnitList():
    print "getUnitList" 
-   return un_iter(0)
+   return un_iter()
 def getUnit(which):
    print "getUnit" 
    return _unitlist[which]
@@ -65,13 +68,13 @@ def cacheAnimation(ani):
 def launchJumppoint(name,faction,type,unittype,ai,nr,nrwaves,pos,squadlogo,destinations):
    print "launchJumppoint" 
    for i in range (nr):
-      _unitlist+=[Unit(name)]
+      _unitlist+=[Unit(type,name)]
    return _unitlist[len(_unitlist)-nr]
 
 def launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
    print "launch" 
    for i in range (nr):
-      _unitlist+=[Unit(type)]
+      _unitlist+=[Unit(type,name)]
    return _unitlist[len(_unitlist)-nr]
 _cargotypes = ['boxes','plastic','metal','junk','food']
 def getRandCargo(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
@@ -81,10 +84,8 @@ def getRandCargo(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,
    return Cargo(_cargotypes[which],_cargotypes[which],1,1,1,1)
 _factions=['neutral','confed','aera','merchant','retro','militia','rlaan','powerups','upgrades','unknown','pirates','hunter','privateer','ISO','planets']
 def GetFactionName(index):
-   print "GetFactionName"
    return _factions[index]
 def GetFactionIndex(name):
-   print "GetFactionIndex" 
    if (name in _factions):
       return _factions.index(name)
    return 0
@@ -105,7 +106,6 @@ def GetGameTime():
 def SetTimeCompression(val):
    print "SetTimeCompression"
 def GetAdjacentSystem(mystr,which):
-   print "GetAdjacentSystem" 
    import vsrandom
    return 'SYSTEM'+chr (vsrandom.randrange(ord('a'),ord('z')+1))
 def GetGalaxyProperty(sysname,faction):
@@ -113,7 +113,6 @@ def GetGalaxyProperty(sysname,faction):
    import vsrandom
    return faction_ships.factions[vsrandom.randrange(0,len(faction_ships.factions))]
 def GetNumAdjacentSystems(mystr):
-   print "GetNumAdjacentSystems" 
    import vsrandom
    return vsrandom.randrange(1,6)
 def musicAddList(mystr):
@@ -188,7 +187,7 @@ def GetMasterPartList():
    return Unit("master_part_list")
 def GetContrabandList(faction):
    print "GetContrabandList" 
-   return Unit("master_part_list")
+   return Unit("master_part_list","updates")
 def SetAutoStatus(glob,playa):
    print "SetAutoStatus"
 def string ():
@@ -200,8 +199,9 @@ def unorNone():
   else:
     return None
 class Unit:
-  def __init__(self,nam='noname'):
+  def __init__(self,nam='noname',fg='fgname'):
     self.name=nam
+    self.fg=fg
     print 'Unit constructor called with (self) '+'nam'
   def AutoPilotTo(self,un,ignore_friendlies): 
    print "AutoPilotTo" 
@@ -461,12 +461,10 @@ class Unit:
    print "JumpTo" 
    return 0
   def getFactionName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "getFactionName" 
    import faction_ships
    import vsrandom
    return faction_ships.factions[vsrandom.randrange(0,len(faction_ships.factions)-1)]
   def getFactionIndex(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "getFactionIndex" 
    return 0
   def setFactionName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "setFactionName"
@@ -475,16 +473,23 @@ class Unit:
   def getName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "getName" 
    return self.name
-  def getFlightgroupName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+  def getFlightgroupName(self):
    print "getFlightgroupName" 
-   return 'EfGe'+self.name
+   return self.fg
   def getFgDirective(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "getFgDirective" 
    return ''
-  def getFlightgroupLeader(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "getFlightgroupLeader" 
+  def getFlightgroupLeader(self):
+   print "getFlightgroupLeader"
+   names=[]
+   for i in _unitlist:
+      if i.fg==self.fg:
+          names+=[i]
    import vsrandom
-   return _unitlist[vsrandom.randrange(0,len(_unitlist))]
+   leng=len(names)
+   if (leng):
+     return names[vsrandom.randrange(0,leng)]
+   return self
   def addCredits(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "addCredits"
   def switchFg(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
@@ -556,11 +561,11 @@ class Unit:
   def setNull(self): 
    print "setNull";
   def __nonzero__(self):
-   print "__nonzero__" 
-   return random.randrange(0,2);
+   import vsrandom
+   return vsrandom.randrange(0,2);
   def isNull(self):
-   print "isNull" 
-   return random.randrange(0,2);
+   import vsrandom
+   return vsrandom.randrange(0,2);
   def SetTarget(self,un): 
    print "SetTarget";
   def GetTarget(self):
@@ -600,10 +605,12 @@ class un_iter:
   def __init__(self):
     print 'un_iter constructor called with (self)'
   def current(self):
-   print "current" 
-   return unorNone()
+    return unorNone()
   def advance(self): 
-   print "advance"
+    pass
+  def next(self):
+    self.advance()
+    return self.current()
   def remove(self): 
    print "remove"
   def preinsert(self,un): 
@@ -698,4 +705,4 @@ class PythonAI:
   def LastPythonScript(self): 
    print "LastPythonScript"
 
-_unitlist = [Unit("me"),Unit("him")]
+_unitlist = [Unit("me","blue"),Unit("him","gold")]
