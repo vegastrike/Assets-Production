@@ -169,7 +169,7 @@
 
 	<Hold volume="100000000000">
 	    <Category file="food">
-		<Import price="3" quantity="24"/>
+		<Import price="3" pricestddev="1.4" quantity="24" quantitystddev="10"/>
 	    </Category>
 	    <Category file="upgrades">
 		<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>
