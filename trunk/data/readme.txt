@@ -32,8 +32,8 @@ Here you can explore star systes, engage in trade, make cash and meet your desti
 20) Transfer Command
 21) Pilot turrets
 22) Single-Player Controls
-23) Multiplayer Controles
-24) Features
+23) Multiplayer Controls
+24) Changing Controls
 25) Editing Missions
 26) Editing AI
 27) Troubleshooting
@@ -470,36 +470,30 @@ left arrow   switch left targetting cpu
 right arrow  switch targetting computer mode to navigation mode and then view mode
 
 =================================================
-24) Features
+24) Changing Controls
 =================================================
-*--ADD STUFF HERE--*
--Autopilot (Shift-A)
--Better Communications (always has eight choices)
---
--Time compression
--Multiple Systems
--Entire Sol sector and Vega sector included!
--Fly through huge multilayered asteroid fields
--Explore nebulae where your radar fritzes out
--Jump to other systems at blue jump points with the 'j' key
--Respawn with the ';' key (shift and semicolon)
--Switch Ships with the '[' key
--Joystick support for a full featured joystick
--Sound effects that make starships roar as they pass and zap as they die
--Bolt weapons with glowing lighting effects
--Cloaking that renders a ship partially/fully invisible
--All new starships
--Customizable fully working HUD with targetting displays, etc
--Customizable Alien Race logos that will change on all starships by editing TerranPriA.bmp and TechPriA.bmp
--Intelligent, Programmable AI
--Varied weapons on different starships
--Explosions that literally tear a starship into pieces
--Shields That Glow upon hit (in the location hit)
--Customizable missions
--Stars that fly past as you explore the system
--RAPID collision system that allows no problems with collisions
--BSP Trees that allow one to fly close to a starship, and in the runway of (well formed) models...unlike the victory from WC3. 
--the Normal Force which bounces starships off of each other
+If you wold like to change the controls of Vegastrike, open either vegastrike.config or vegastrike.config.2player
+They will both have a section at the very top called "bindings": 
+        <bindings>
+		<bind key="S" player="0" modifier="none" command="Cockpit::SkipMusicTrack" />
+The above will start the bindings section and then bind the "S" key to SkipMusicTrack for player 0.
+The player defaults to and should only be 1 in multiplayer.
+
+		<bind mouse="0" player="0" button="0" modifier="none" command="FireKey" />
+This line will bind the FireKey command to the mouse button #0 (the left button) for player 0.  Button 1 and 2 will be the midle and right buttons.  After that, buttons are experimental... 
+
+		<axis name="x" mouse="0" axis="0" inverse="false" />
+		<axis name="y" mouse="0" axis="1" inverse="false" />
+This binds the axes of the mouse... should you wish the mouse to drag in opposite direction set inverse to true.
+
+		<bind joystick="0" player="0" button="0" modifier="none" command="FireKey" />
+The previous line will bind the FireKey command to the joystick button #0 for player 0.  You can add as many buttons as you want, as long as your joystick has them.
+
+		<axis name="x" joystick="0" axis="0" inverse="false" />
+		<axis name="y" joystick="0" axis="1" inverse="false" />
+This binds the axes of the joystick... should you wish the joystick to move in opposite direction set inverse to true.
+
+		</bindings>
 
 =================================================
 25) Editing Missions

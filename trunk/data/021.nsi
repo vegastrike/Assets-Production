@@ -22,7 +22,7 @@
 ;entries
   Section "Vega Strike files (Required)"
   SetOutPath $INSTDIR
-  File /r "C:\temp\data\newdir\*.*"
+  File /r "C:\TEMP\ananyomous\data\*.*"
   WriteRegStr HKLM SOFTWARE\VegaStrike\0.2.9\ "Install_Dir" "$INSTDIR"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\VegaStrike\0.2.9\" "DisplayName" "VegaStrike 0.2.9"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\VegaStrike\0.2.9\" "UninstallString" '"$INSTDIR\uninstall.exe"'
@@ -35,7 +35,7 @@
     CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Vega Strike Launcher.lnk" "$INSTDIR\Launcher.exe" "" "$INSTDIR\Launcher.exe" 0
     CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Setup.lnk" "$INSTDIR\setup.exe" "" "$INSTDIR\setup.exe" 0
     CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
-    CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Auto Updater.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\AutoUpdate.bat" 0
+    CreateShortCut "$SMPROGRAMS\Vega Strike\0.2.9\Auto Updater.lnk" "$INSTDIR\AutoUpdate.bat" "" "$INSTDIR\AutoUpdate.bat" 0
   SectionEnd
 
 ;Other Functions - this one is what to do once install is completed
@@ -43,7 +43,7 @@ Function .onInstSuccess
 	ExecWait $INSTDIR/OpenALwEAX.exe
       ExecWait $INSTDIR/SETUP.EXE 
       MessageBox MB_YESNO "Installation Successful. View readme?" IDNO NoReadme
-         ExecShell "open" $INSTDIR\README
+         ExecShell "open" $INSTDIR\readme.txt
          NoReadme:
       MessageBox MB_YESNO "Would you like to veiw the story behind VegaStrike 0.2.9?" IDNO NoStory
          ExecShell "open" $INSTDIR\CelesteStory.txt
