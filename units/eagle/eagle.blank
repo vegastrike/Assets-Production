@@ -1,4 +1,4 @@
-<Unit scale=".5">
+<Unit scale=".75">
 	<cockpit file="heavy-cockpit.cpt" x="0" y=".5" z="4"/>
 	<Defense HudImage="eagle-hud.spr">
 		<Shields front="0.000000" back="0.000000"/>
