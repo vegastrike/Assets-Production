@@ -2566,6 +2566,7 @@ stone"/>
 			<sector name="orsini">
 				<var name="sun_radius" value="8000"/>
 			      <var name="faction" value="confed"/> 
+				<var name="planetlist" value="planets.txt"/>
 				<var name="compactness" value="1.9"/>
 				<var name="num_stars" value="2"/>
 				<var name="num_gas_giants" value="0"/>
@@ -2629,6 +2630,7 @@ stone"/>
 			<sector name="morpheus">
 				<var name="sun_radius" value="48000"/>
 			      <var name="faction" value="confed"/> 
+				<var name="planetlist" value="planets.txt"/>
 				<var name="compactness" value="5.2"/>
 				<var name="num_stars" value="2"/>
 				<var name="num_gas_giants" value="7"/>
@@ -2643,6 +2645,7 @@ stone"/>
 			</sector>
 			<sector name="goddard">
 				<var name="faction" value="confed"/> 
+				<var name="planetlist" value="planets.txt"/>
 				<var name="jumps" value="vega_sector/gateway epsilon_sector/canewdon epsilon_sector/ross_34f epsilon_sector/epsilon_prima epsilon_sector/morpheus"/>
 				<var name="nebulae"   value="false"/>
 				<var name="num_starbases" value="2"/>
@@ -2997,6 +3000,7 @@ stone"/>
 			<sector name="firekka">
 				<var name="sun_radius" value="32000"/>
 			      <var name="faction" value="confed"/> 
+				<var name="planetlist" value="planets.txt"/>
 				<var name="compactness" value="4.2"/>
 				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="1"/>
