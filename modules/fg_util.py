@@ -8,8 +8,12 @@ def MakeStarSystemFGKey (starsystem):
 	return 'FG:'+str(starsystem)
 def ShipListOffset ():
 	return 3
-
-def GetRandomFGNames (numflightgroups):
+def AllFactions ():
+	facs =[]
+	for i in range (VS.GetNumFactions()):
+		facs+= [VS.getFactionName(i)]
+	return facs
+def GetRandomFGNames (numflightgroups, faction):
 	rez=[]
 	for i in range (numflightgroups):
 		rez.append(str(i))
@@ -168,6 +172,10 @@ def ListToPipe (tup):
 			_RemoveFGFromSystem(starsystem)
 			_RemoveFGFromFactionList(fgname,faction)
 			WriteStringList (dynamic_universe.cp,MakeFGKey(fgname,faction),[] )
+	def DeleteAllFG (faction):
+		for fgname in ReadStringList (dynamic_universe.cp,MakeFactionKey (faction)):
+			DeleteFG (fgname,faction)
+	
 	def AddShipsToFG (fgname,faction,typenumbertuple,starsystem):
 		key = MakeFGKey(fgname,faction)	
 		len = Director.getSaveStringLength (dynamic_universe.cp,key)

@@ -4,7 +4,6 @@ import vsrandom
 import fg_util
 from universe import getAdjacentSystemList
 
-#SEE LINES 27, 46, 70, 87 FOR CURRENT BUGS!!!!!!!
 
 cp=VS.getCurrentPlayer()
 fgnames=[] #list of lists of flightgroup names for each faction
@@ -23,7 +22,7 @@ def GenerateFgShips (maxshipinfg,factionnr):
 def GenerateAllShips (numflightgroups,maxshipinfg):
 	for fnr in range(faction_ships.getMaxFactions()-1):
 		fglists.append([])
-		fgnames.append(fg_util.GetRandomFGNames(numflightgroups))
+		fgnames.append(fg_util.GetRandomFGNames(numflightgroups,faction_ships.factions[fnr]))
 		for i in range(numflightgroups):
 			fglists[-1].append(GenerateFgShips(vsrandom.randrange(maxshipinfg)+1,fnr))
 
@@ -47,7 +46,7 @@ def AddSysDict (cursys):
 	return i
 
 def Makesys (startingsys):
-	global systemdict
+	systemdict={}
 	global origfgnames
 	origfgnames=fgnames
 	origfglists=fglists
@@ -62,39 +61,16 @@ def Makesys (startingsys):
 
 genUniverse=-1
 if cp>=0:
-	genUniverse=Director.getSaveDataLength(cp,"FactionRefList")
-	if (genuniverse==0):
-		Director.pushSaveData (cp,"FactionRefList",1)
+	genUniverse=0
+	curfaclist = fg_util.AllFactions()
+	if (fg_util.ReadStringList(cp,"FactionRefList")==curfaclist):
+		fg_util.WriteStringList(cp,"FactionRefList",curfaclist)
+		print 'generating ships... ... ...'
 		GenerateAllShips (5000,5) ###Insert number of flight groups and max ships per fg
-		systemdict={}
+		print 'placing ships... ... ...'
 		genUniverse=Makesys(VS.getSystemFile())
-		del systemdict
 		#now every system has distributed ships in the save data!
 	#TODO: add ships to current system (for both modes)  uru?
-	for i in range(VS.GetNumFactions):
-		PurgeZeroShips(VS.getFactionName(i))
+	for i in fg_util.AllFactions()
+		PurgeZeroShips(i)
 
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-#not needed!
-#def FilterAddList(todo,oursys):
-#	newtodo=universe.getAdjacentSystemList(oursys)
-#	cur=0
-#	while cur<len(newtodo):
-#		if (newtodo[cur] in todo) or systemdict.has_key(newtodo[cur]):
-#			newtodo.pop(cur)
-#		else:
-#			cur+=1
-#	return newtodo
