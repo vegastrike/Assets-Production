@@ -1,0 +1,2546 @@
+<Mesh texture="engine1.png" scale="70">
+<Points>
+<Point>
+    <Location x="2.07475018501282" y="13.12087059021" z="-23.6682643890381"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-3.09529995918274" y="12.9498119354248" z="-23.9340305328369"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-1.88586711883545" y="12.6863536834717" z="0.905138373374939"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="1.10574877262115" y="12.7728481292725" z="0.526870131492615"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.9077525138855" y="12.5290899276733" z="-8.03627872467041"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="7.77904462814331" y="12.1867761611938" z="-22.6825866699219"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="3.75227880477905" y="12.2718563079834" z="-34.070442199707"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-3.43891215324402" y="12.1976041793823" z="-33.8701324462891"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-7.10665369033813" y="12.1999406814575" z="-23.8801498413086"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-6.60256862640381" y="12.1049137115479" z="-3.93443632125854"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="10.8405447006226" y="11.0890378952026" z="-26.6685447692871"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.35231113433838" y="11.0915079116821" z="-40.6431465148926"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-1.98682379722595" y="11.0349397659302" z="-42.8046417236328"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-7.72457551956177" y="10.1292495727539" z="-41.7115249633789"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-10.3446683883667" y="11.0870494842529" z="-26.1596813201904"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-8.99279975891113" y="10.9508438110352" z="8.60555839538574"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-4.77974319458008" y="12.2060422897339" z="2.3726646900177"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="12.5199213027954" y="10.1461248397827" z="-1.79396450519562"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="15.7867870330811" y="8.45128345489502" z="-23.1747417449951"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="14.0090141296387" y="8.42695045471191" z="-35.5515441894531"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="9.04255104064941" y="9.41207981109619" z="-43.3366584777832"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.71618556976318" y="9.31285095214844" z="-47.6763916015625"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="3.1691370010376" y="8.85109329223633" z="-50.6816177368164"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-1.04999566078186" y="9.40930557250977" z="-49.7739028930664"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.15731287002563" y="9.28939342498779" z="-47.7364616394043"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-13.5319967269897" y="8.43383312225342" z="-35.1314315795898"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-15.2440223693848" y="8.44526767730713" z="-22.754373550415"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-12.8964567184448" y="9.42091751098633" z="1.45140373706818"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="12.8287487030029" y="6.25269746780396" z="-46.562629699707"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="9.00333976745605" y="7.46647787094116" z="-49.6451187133789"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="7.61707067489624" y="8.67706394195557" z="-47.463752746582"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="4.66880178451538" y="9.3032054901123" z="-48.3925857543945"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="1.45609652996063" y="7.46647644042969" z="-54.8854331970215"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.285178065299988" y="7.46647644042969" z="-55.1353034973145"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-0.888804972171783" y="7.46647644042969" z="-54.8847732543945"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-2.59728360176086" y="8.85708904266357" z="-50.6653175354004"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-7.51878690719604" y="8.39600086212158" z="-47.7962226867676"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-8.46858596801758" y="7.46647691726685" z="-49.6038856506348"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-12.2990789413452" y="6.27374982833862" z="-46.4194793701172"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-16.9241790771484" y="6.26422786712646" z="-1.75432360172272"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-14.1091995239258" y="7.25560665130615" z="19.380443572998"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="14.211615562439" y="7.82339811325073" z="18.2264175415039"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="11.2693099975586" y="9.94271278381348" z="11.1484889984131"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="17.3740234375" y="5.92784976959229" z="6.23395156860352"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="16.481258392334" y="5.30438041687012" z="-38.4338722229004"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="18.5974578857422" y="5.31266736984253" z="-23.8651657104492"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="9.90845203399658" y="5.25855207443237" z="-53.0951805114746"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.581210672855377" y="5.2585506439209" z="-59.0584487915039"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-9.34730339050293" y="5.2585506439209" z="-53.0845108032227"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-9.93399620056152" y="5.2585506439209" z="-52.4050559997559"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-15.9777965545654" y="5.30165147781372" z="-38.1709136962891"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-18.0575103759766" y="5.28435707092285" z="-23.6176090240479"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-15.4753847122192" y="5.33327007293701" z="24.1105422973633"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="17.4995708465576" y="2.8913311958313" z="-39.6339149475098"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="19.7494029998779" y="2.90528392791748" z="-24.1328983306885"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="14.0928497314453" y="2.8628146648407" z="-49.1845207214355"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="9.47712898254395" y="2.8628134727478" z="-56.3647193908691"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="1.05482769012451" y="2.86281251907349" z="-61.4121437072754"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.285177558660507" y="2.86281228065491" z="-61.5763854980469"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-8.92772102355957" y="2.86281228065491" z="-56.3404579162598"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-13.5224914550781" y="2.86281299591064" z="-49.184513092041"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-16.9689788818359" y="2.88987708091736" z="-39.4748191833496"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-19.1971015930176" y="2.87015151977539" z="-23.9877967834473"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-18.1159648895264" y="2.93505215644836" z="10.2282314300537"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="16.8890495300293" y="3.59018087387085" z="25.6698341369629"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="18.7645168304443" y="2.85028696060181" z="9.35605144500732"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="20.0553722381592" y="0.372106432914734" z="-27.5755176544189"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="15.830379486084" y="0.371725708246231" z="-46.5352210998535"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="11.3463335037231" y="0.371329069137573" z="-55.1353073120117"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="7.90423345565796" y="0.371328413486481" z="-59.1216239929199"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="7.86560201644897" y="1.02878105640411" z="-58.9195518493652"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="4.27520513534546" y="0.371327728033066" z="-61.5068054199219"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="4.16933822631836" y="0.371327728033066" z="-61.5763893127441"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="4.16840171813965" y="0.402597039937973" z="-61.5661849975586"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-7.2960844039917" y="1.01451230049133" z="-58.9239349365234"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.80329465866089" y="0.371327370405197" z="-60.1276016235352"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-7.33387804031372" y="0.371327370405197" z="-59.1216201782227"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-10.7759771347046" y="0.371327698230743" z="-55.1352996826172"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-17.1126651763916" y="0.371595352888107" z="-40.6231956481934"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-19.8152370452881" y="0.372063487768173" z="-21.5801467895508"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-16.8147277832031" y="0.371337115764618" z="27.3478488922119"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="17.3850975036621" y="0.371339321136475" z="27.3478450775146"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="19.6128635406494" y="0.371335864067078" z="0.0881490856409073"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="10.9912996292114" y="0.371332556009293" z="-24.1452312469482"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="7.68731784820557" y="0.371330857276917" z="-36.7007064819336"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.174940794706345" y="0.371329367160797" z="-46.9712524414062"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-2.69106078147888" y="0.371327370405197" z="-61.7701377868652"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-1.24206578731537" y="0.371328920125961" z="-49.5951499938965"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-3.50047183036804" y="0.37132927775383" z="-44.4352607727051"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-7.11737203598022" y="0.37133002281189" z="-36.7019729614258"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-10.421046257019" y="0.371331363916397" z="-24.145149230957"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-13.3039293289185" y="0.37133315205574" z="-7.24805784225464"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="13.8743162155151" y="0.371334791183472" z="-7.24750137329102"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.34779167175293" y="12.2070398330688" z="2.35150647163391"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="8.0317268371582" y="11.4425067901611" z="5.69282245635986"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-3.92457294464111" y="0.371327310800552" z="-61.0907707214355"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-3.8254075050354" y="0.37132728099823" z="-61.4275703430176"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-4.44273042678833" y="0.371327579021454" z="-59.3309593200684"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-12.4848079681396" y="8.85575675964355" z="15.4819803237915"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-16.433967590332" y="3.16321468353271" z="25.7819881439209"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.285187691450119" y="17.3566818237305" z="88.8367233276367"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="3.67189645767212" y="17.1119041442871" z="94.4821701049805"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="2.71826815605164" y="16.784273147583" z="66.9805374145508"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-2.30506825447083" y="16.8240547180176" z="67.9531936645508"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-2.45627498626709" y="17.1114196777344" z="96.6317443847656"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="6.00814723968506" y="15.7394723892212" z="54.4884910583496"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="7.92825126647949" y="16.1023750305176" z="91.0764465332031"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.866206705570221" y="15.6269445419312" z="36.2700653076172"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.49827909469604" y="15.8473606109619" z="55.7466316223145"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-7.22781276702881" y="16.0910053253174" z="92.8264846801758"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-4.4872932434082" y="16.0999088287354" z="105.338111877441"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-0.462096184492111" y="15.3626899719238" z="114.998001098633"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="4.64332485198975" y="16.1363658905029" z="106.188255310059"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="11.1850786209106" y="14.5604782104492" z="94.4284591674805"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="9.74191856384277" y="14.2603216171265" z="51.5635681152344"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="2.87014818191528" y="14.1893758773804" z="15.9922466278076"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-4.6598105430603" y="14.1183214187622" z="21.1803016662598"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-9.77231884002686" y="14.2695159912109" z="59.9478912353516"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-10.5769033432007" y="14.5636024475098" z="94.9181518554688"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-6.58449029922485" y="14.6255359649658" z="112.629364013672"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="4.60112285614014" y="14.5533390045166" z="116.750144958496"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="8.8798713684082" y="14.5131282806396" z="107.931228637695"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="12.9641847610474" y="12.2345991134644" z="52.0729331970215"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="14.3132066726685" y="12.4244661331177" z="92.5569152832031"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="8.87147426605225" y="11.9728889465332" z="14.9207582473755"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-10.2052211761475" y="12.0032510757446" z="28.1754760742188"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-14.2936944961548" y="10.9496269226074" z="58.0110549926758"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-13.7264337539673" y="12.4298915863037" z="92.8722839355469"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-12.0934371948242" y="12.4210786819458" z="107.270889282227"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-8.54109477996826" y="12.4240083694458" z="118.843940734863"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-3.67076969146729" y="12.4276399612427" z="125.760070800781"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.34935861825943" y="10.9673194885254" z="131.651641845703"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="4.41945600509644" y="12.4248418807983" z="125.621994018555"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="9.23923492431641" y="12.4207725524902" z="118.571441650391"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="12.7330074310303" y="12.4193019866943" z="106.92985534668"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="15.7855014801025" y="9.69841194152832" z="56.3609085083008"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="16.7878112792969" y="9.85921859741211" z="93.4327926635742"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-16.1965789794922" y="9.87346458435059" z="93.7161178588867"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-14.2762136459351" y="9.86337566375732" z="110.547271728516"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-10.0731573104858" y="9.86827373504639" z="124.204444885254"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-4.32909870147705" y="9.87892150878906" z="132.302978515625"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.09433794021606" y="9.87152481079102" z="132.158447265625"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="10.7690896987915" y="9.86210823059082" z="123.940536499023"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="14.9097080230713" y="9.86076259613037" z="110.236991882324"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="18.1341571807861" y="5.68883895874023" z="52.3763046264648"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="18.6367473602295" y="6.9153904914856" z="94.1189270019531"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-18.046838760376" y="6.93977212905884" z="94.3349151611328"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-16.9350280761719" y="6.66206645965576" z="50.6935119628906"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-15.9093799591064" y="6.92695140838623" z="113.008850097656"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-11.2028856277466" y="6.93096399307251" z="128.264801025391"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-4.77315616607666" y="6.9520378112793" z="137.247573852539"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.285194277763367" y="6.87135791778564" z="139.05241394043"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="3.87369084358215" y="6.8713583946228" z="138.087524414062"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="8.84592723846436" y="6.92564535140991" z="133.466232299805"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="13.8631267547607" y="5.24897813796997" z="125.763214111328"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="16.528450012207" y="6.92455720901489" z="112.767036437988"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="19.7794780731201" y="3.70357275009155" z="94.5765075683594"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-18.5267753601074" y="3.62621855735779" z="62.8367156982422"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-19.1972732543945" y="3.73600387573242" z="94.6939086914062"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-16.9256820678711" y="3.71958875656128" z="114.521484375"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-11.8995590209961" y="3.71937227249146" z="130.79557800293"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-7.18746280670166" y="3.6850254535675" z="138.087539672852"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-3.52433347702026" y="3.68502616882324" z="141.121109008789"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.285194754600525" y="3.6850266456604" z="142.145416259766"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="4.09472227096558" y="3.6850266456604" z="141.12109375"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="7.75785160064697" y="3.6850266456604" z="138.087524414062"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="11.1338109970093" y="3.68502616882324" z="133.161285400391"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="17.5225734710693" y="3.71865224838257" z="114.387382507324"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="18.8002853393555" y="0.371342062950134" z="49.5819931030273"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="20.1144485473633" y="0.371608287096024" z="95.6751098632812"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-19.8518257141113" y="0.37204048037529" z="89.4271697998047"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-17.4354591369629" y="0.371731609106064" z="114.157592773438"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-12.4126691818237" y="0.371992081403732" z="131.028915405273"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-5.47515058517456" y="0.372733443975449" z="141.10578918457"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.285195022821426" y="0.371351778507233" z="143.189804077148"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.38369941711426" y="0.372552275657654" z="141.586303710938"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="12.4536867141724" y="0.371922999620438" z="132.141311645508"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="17.6737689971924" y="0.371711254119873" z="115.789535522461"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-0.255115300416946" y="0.371344268321991" z="79.6740036010742"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.285187631845474" y="0.371344238519669" z="79.947883605957"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="1.63947808742523" y="0.371344268321991" z="79.2613906860352"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-13.3999891281128" y="0.371340334415436" z="50.8876266479492"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-3.41017365455627" y="0.3713438808918" z="78.0746917724609"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-1.82324981689453" y="0.371344059705734" z="78.8791122436523"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-0.599652886390686" y="0.371344268321991" z="79.4993591308594"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="4.04547357559204" y="0.371344387531281" z="78.0417785644531"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="11.0129299163818" y="0.371343195438385" z="63.2279167175293"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="7.66533613204956" y="0.3713438808918" z="72.3961486816406"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-3.4749801158905" y="0.3713438808918" z="78.0411529541016"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-10.4417715072632" y="0.37134176492691" z="63.2262649536133"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-7.09456777572632" y="0.371343046426773" z="72.3948974609375"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-0.0172844007611275" y="5.2585506439209" z="-59.0570831298828"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-0.0156902279704809" y="5.24592351913452" z="-59.0703620910645"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-0.487462610006332" y="2.86281228065491" z="-61.411506652832"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="-1.23665404319763" y="1.79563736915588" z="-61.6066627502441"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.285177528858185" y="1.53999185562134" z="-62.0164642333984"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.25352048873901" y="0.371328145265579" z="-59.3309555053711"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="5.74917411804199" y="0.371328145265579" z="-58.8981742858887"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="6.18612623214722" y="0.371327966451645" z="-60.2508506774902"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="4.0708589553833" y="0.371329784393311" z="-44.4334526062012"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="1.91203665733337" y="1.20013046264648" z="-61.7823638916016"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="3.21658253669739" y="0.371327787637711" z="-61.7797050476074"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="0.509040236473083" y="0.371329337358475" z="-46.8927993774414"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="1.60498750209808" y="0.371329218149185" z="-48.9921722412109"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+<Point>
+    <Location x="2.29746294021606" y="0.371328681707382" z="-53.1079292297363"/>
+<!--  <Normal i="0" j="1" k="0"/> -->
+</Point>
+</Points>
+<Polygons>
+<Tri>
+    <Vertex point="0" s="" t=""/>
+    <Vertex point="1" s="" t=""/>
+    <Vertex point="2" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="0" s="" t=""/>
+    <Vertex point="2" s="" t=""/>
+    <Vertex point="3" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="0" s="" t=""/>
+    <Vertex point="3" s="" t=""/>
+    <Vertex point="4" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="0" s="" t=""/>
+    <Vertex point="5" s="" t=""/>
+    <Vertex point="6" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="7" s="" t=""/>
+    <Vertex point="1" s="" t=""/>
+    <Vertex point="0" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="0" s="" t=""/>
+    <Vertex point="6" s="" t=""/>
+    <Vertex point="7" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="1" s="" t=""/>
+    <Vertex point="7" s="" t=""/>
+    <Vertex point="8" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="1" s="" t=""/>
+    <Vertex point="8" s="" t=""/>
+    <Vertex point="9" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="9" s="" t=""/>
+    <Vertex point="2" s="" t=""/>
+    <Vertex point="1" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="5" s="" t=""/>
+    <Vertex point="0" s="" t=""/>
+    <Vertex point="4" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="10" s="" t=""/>
+    <Vertex point="6" s="" t=""/>
+    <Vertex point="5" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="6" s="" t=""/>
+    <Vertex point="10" s="" t=""/>
+    <Vertex point="11" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="6" s="" t=""/>
+    <Vertex point="11" s="" t=""/>
+    <Vertex point="12" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="12" s="" t=""/>
+    <Vertex point="7" s="" t=""/>
+    <Vertex point="6" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="7" s="" t=""/>
+    <Vertex point="12" s="" t=""/>
+    <Vertex point="13" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="14" s="" t=""/>
+    <Vertex point="8" s="" t=""/>
+    <Vertex point="7" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="7" s="" t=""/>
+    <Vertex point="13" s="" t=""/>
+    <Vertex point="14" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="15" s="" t=""/>
+    <Vertex point="9" s="" t=""/>
+    <Vertex point="8" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="8" s="" t=""/>
+    <Vertex point="14" s="" t=""/>
+    <Vertex point="15" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="16" s="" t=""/>
+    <Vertex point="9" s="" t=""/>
+    <Vertex point="15" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="10" s="" t=""/>
+    <Vertex point="5" s="" t=""/>
+    <Vertex point="4" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="4" s="" t=""/>
+    <Vertex point="17" s="" t=""/>
+    <Vertex point="10" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="10" s="" t=""/>
+    <Vertex point="18" s="" t=""/>
+    <Vertex point="19" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="20" s="" t=""/>
+    <Vertex point="11" s="" t=""/>
+    <Vertex point="10" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="10" s="" t=""/>
+    <Vertex point="19" s="" t=""/>
+    <Vertex point="20" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="11" s="" t=""/>
+    <Vertex point="20" s="" t=""/>
+    <Vertex point="21" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="11" s="" t=""/>
+    <Vertex point="21" s="" t=""/>
+    <Vertex point="22" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="23" s="" t=""/>
+    <Vertex point="12" s="" t=""/>
+    <Vertex point="11" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="11" s="" t=""/>
+    <Vertex point="22" s="" t=""/>
+    <Vertex point="23" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="12" s="" t=""/>
+    <Vertex point="23" s="" t=""/>
+    <Vertex point="24" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="12" s="" t=""/>
+    <Vertex point="24" s="" t=""/>
+    <Vertex point="13" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="25" s="" t=""/>
+    <Vertex point="14" s="" t=""/>
+    <Vertex point="13" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="14" s="" t=""/>
+    <Vertex point="25" s="" t=""/>
+    <Vertex point="26" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="27" s="" t=""/>
+    <Vertex point="15" s="" t=""/>
+    <Vertex point="14" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="14" s="" t=""/>
+    <Vertex point="26" s="" t=""/>
+    <Vertex point="27" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="18" s="" t=""/>
+    <Vertex point="10" s="" t=""/>
+    <Vertex point="17" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="28" s="" t=""/>
+    <Vertex point="20" s="" t=""/>
+    <Vertex point="19" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="20" s="" t=""/>
+    <Vertex point="28" s="" t=""/>
+    <Vertex point="29" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="30" s="" t=""/>
+    <Vertex point="21" s="" t=""/>
+    <Vertex point="20" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="29" s="" t=""/>
+    <Vertex point="30" s="" t=""/>
+    <Vertex point="20" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="21" s="" t=""/>
+    <Vertex point="31" s="" t=""/>
+    <Vertex point="22" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="22" s="" t=""/>
+    <Vertex point="32" s="" t=""/>
+    <Vertex point="33" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="22" s="" t=""/>
+    <Vertex point="33" s="" t=""/>
+    <Vertex point="23" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="23" s="" t=""/>
+    <Vertex point="33" s="" t=""/>
+    <Vertex point="34" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="34" s="" t=""/>
+    <Vertex point="35" s="" t=""/>
+    <Vertex point="23" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="35" s="" t=""/>
+    <Vertex point="24" s="" t=""/>
+    <Vertex point="23" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="36" s="" t=""/>
+    <Vertex point="37" s="" t=""/>
+    <Vertex point="13" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="24" s="" t=""/>
+    <Vertex point="36" s="" t=""/>
+    <Vertex point="13" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="13" s="" t=""/>
+    <Vertex point="37" s="" t=""/>
+    <Vertex point="38" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="13" s="" t=""/>
+    <Vertex point="38" s="" t=""/>
+    <Vertex point="25" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="39" s="" t=""/>
+    <Vertex point="27" s="" t=""/>
+    <Vertex point="26" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="27" s="" t=""/>
+    <Vertex point="39" s="" t=""/>
+    <Vertex point="40" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="41" s="" t=""/>
+    <Vertex point="17" s="" t=""/>
+    <Vertex point="42" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="17" s="" t=""/>
+    <Vertex point="41" s="" t=""/>
+    <Vertex point="43" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="17" s="" t=""/>
+    <Vertex point="43" s="" t=""/>
+    <Vertex point="18" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="44" s="" t=""/>
+    <Vertex point="19" s="" t=""/>
+    <Vertex point="18" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="18" s="" t=""/>
+    <Vertex point="45" s="" t=""/>
+    <Vertex point="44" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="19" s="" t=""/>
+    <Vertex point="44" s="" t=""/>
+    <Vertex point="28" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="46" s="" t=""/>
+    <Vertex point="29" s="" t=""/>
+    <Vertex point="28" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="32" s="" t=""/>
+    <Vertex point="47" s="" t=""/>
+    <Vertex point="33" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="47" s="" t=""/>
+    <Vertex point="34" s="" t=""/>
+    <Vertex point="33" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="37" s="" t=""/>
+    <Vertex point="48" s="" t=""/>
+    <Vertex point="49" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="37" s="" t=""/>
+    <Vertex point="49" s="" t=""/>
+    <Vertex point="38" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="50" s="" t=""/>
+    <Vertex point="25" s="" t=""/>
+    <Vertex point="38" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="51" s="" t=""/>
+    <Vertex point="26" s="" t=""/>
+    <Vertex point="25" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="25" s="" t=""/>
+    <Vertex point="50" s="" t=""/>
+    <Vertex point="51" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="26" s="" t=""/>
+    <Vertex point="51" s="" t=""/>
+    <Vertex point="39" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="52" s="" t=""/>
+    <Vertex point="40" s="" t=""/>
+    <Vertex point="39" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="45" s="" t=""/>
+    <Vertex point="18" s="" t=""/>
+    <Vertex point="43" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="53" s="" t=""/>
+    <Vertex point="44" s="" t=""/>
+    <Vertex point="45" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="45" s="" t=""/>
+    <Vertex point="54" s="" t=""/>
+    <Vertex point="53" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="55" s="" t=""/>
+    <Vertex point="28" s="" t=""/>
+    <Vertex point="44" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="44" s="" t=""/>
+    <Vertex point="53" s="" t=""/>
+    <Vertex point="55" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="56" s="" t=""/>
+    <Vertex point="46" s="" t=""/>
+    <Vertex point="28" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="28" s="" t=""/>
+    <Vertex point="55" s="" t=""/>
+    <Vertex point="56" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="47" s="" t=""/>
+    <Vertex point="57" s="" t=""/>
+    <Vertex point="58" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="48" s="" t=""/>
+    <Vertex point="59" s="" t=""/>
+    <Vertex point="49" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="60" s="" t=""/>
+    <Vertex point="38" s="" t=""/>
+    <Vertex point="49" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="49" s="" t=""/>
+    <Vertex point="59" s="" t=""/>
+    <Vertex point="60" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="61" s="" t=""/>
+    <Vertex point="50" s="" t=""/>
+    <Vertex point="38" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="38" s="" t=""/>
+    <Vertex point="60" s="" t=""/>
+    <Vertex point="61" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="62" s="" t=""/>
+    <Vertex point="51" s="" t=""/>
+    <Vertex point="50" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="50" s="" t=""/>
+    <Vertex point="61" s="" t=""/>
+    <Vertex point="62" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="63" s="" t=""/>
+    <Vertex point="39" s="" t=""/>
+    <Vertex point="51" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="51" s="" t=""/>
+    <Vertex point="62" s="" t=""/>
+    <Vertex point="63" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="63" s="" t=""/>
+    <Vertex point="52" s="" t=""/>
+    <Vertex point="39" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="64" s="" t=""/>
+    <Vertex point="65" s="" t=""/>
+    <Vertex point="43" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="54" s="" t=""/>
+    <Vertex point="45" s="" t=""/>
+    <Vertex point="43" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="43" s="" t=""/>
+    <Vertex point="65" s="" t=""/>
+    <Vertex point="54" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="66" s="" t=""/>
+    <Vertex point="53" s="" t=""/>
+    <Vertex point="54" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="53" s="" t=""/>
+    <Vertex point="66" s="" t=""/>
+    <Vertex point="67" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="67" s="" t=""/>
+    <Vertex point="55" s="" t=""/>
+    <Vertex point="53" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="68" s="" t=""/>
+    <Vertex point="56" s="" t=""/>
+    <Vertex point="55" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="55" s="" t=""/>
+    <Vertex point="67" s="" t=""/>
+    <Vertex point="68" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="68" s="" t=""/>
+    <Vertex point="69" s="" t=""/>
+    <Vertex point="70" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="56" s="" t=""/>
+    <Vertex point="68" s="" t=""/>
+    <Vertex point="70" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="71" s="" t=""/>
+    <Vertex point="72" s="" t=""/>
+    <Vertex point="73" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="74" s="" t=""/>
+    <Vertex point="75" s="" t=""/>
+    <Vertex point="76" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="59" s="" t=""/>
+    <Vertex point="74" s="" t=""/>
+    <Vertex point="76" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="59" s="" t=""/>
+    <Vertex point="76" s="" t=""/>
+    <Vertex point="77" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="77" s="" t=""/>
+    <Vertex point="60" s="" t=""/>
+    <Vertex point="59" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="78" s="" t=""/>
+    <Vertex point="61" s="" t=""/>
+    <Vertex point="60" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="60" s="" t=""/>
+    <Vertex point="77" s="" t=""/>
+    <Vertex point="78" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="79" s="" t=""/>
+    <Vertex point="62" s="" t=""/>
+    <Vertex point="61" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="61" s="" t=""/>
+    <Vertex point="78" s="" t=""/>
+    <Vertex point="79" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="79" s="" t=""/>
+    <Vertex point="63" s="" t=""/>
+    <Vertex point="62" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="63" s="" t=""/>
+    <Vertex point="79" s="" t=""/>
+    <Vertex point="80" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="81" s="" t=""/>
+    <Vertex point="65" s="" t=""/>
+    <Vertex point="64" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="65" s="" t=""/>
+    <Vertex point="81" s="" t=""/>
+    <Vertex point="82" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="66" s="" t=""/>
+    <Vertex point="54" s="" t=""/>
+    <Vertex point="65" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="65" s="" t=""/>
+    <Vertex point="82" s="" t=""/>
+    <Vertex point="66" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="67" s="" t=""/>
+    <Vertex point="66" s="" t=""/>
+    <Vertex point="83" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="83" s="" t=""/>
+    <Vertex point="84" s="" t=""/>
+    <Vertex point="67" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="84" s="" t=""/>
+    <Vertex point="69" s="" t=""/>
+    <Vertex point="68" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="85" s="" t=""/>
+    <Vertex point="86" s="" t=""/>
+    <Vertex point="87" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="86" s="" t=""/>
+    <Vertex point="85" s="" t=""/>
+    <Vertex point="88" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="77" s="" t=""/>
+    <Vertex point="76" s="" t=""/>
+    <Vertex point="88" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="88" s="" t=""/>
+    <Vertex point="89" s="" t=""/>
+    <Vertex point="77" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="78" s="" t=""/>
+    <Vertex point="77" s="" t=""/>
+    <Vertex point="89" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="90" s="" t=""/>
+    <Vertex point="78" s="" t=""/>
+    <Vertex point="89" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="90" s="" t=""/>
+    <Vertex point="91" s="" t=""/>
+    <Vertex point="79" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="80" s="" t=""/>
+    <Vertex point="79" s="" t=""/>
+    <Vertex point="91" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="92" s="" t=""/>
+    <Vertex point="66" s="" t=""/>
+    <Vertex point="82" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="68" s="" t=""/>
+    <Vertex point="67" s="" t=""/>
+    <Vertex point="84" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="93" s="" t=""/>
+    <Vertex point="94" s="" t=""/>
+    <Vertex point="4" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="95" s="" t=""/>
+    <Vertex point="96" s="" t=""/>
+    <Vertex point="86" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="97" s="" t=""/>
+    <Vertex point="95" s="" t=""/>
+    <Vertex point="86" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="97" s="" t=""/>
+    <Vertex point="86" s="" t=""/>
+    <Vertex point="88" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="88" s="" t=""/>
+    <Vertex point="76" s="" t=""/>
+    <Vertex point="75" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="97" s="" t=""/>
+    <Vertex point="88" s="" t=""/>
+    <Vertex point="75" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="79" s="" t=""/>
+    <Vertex point="78" s="" t=""/>
+    <Vertex point="90" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="81" s="" t=""/>
+    <Vertex point="92" s="" t=""/>
+    <Vertex point="82" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="92" s="" t=""/>
+    <Vertex point="83" s="" t=""/>
+    <Vertex point="66" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="2" s="" t=""/>
+    <Vertex point="9" s="" t=""/>
+    <Vertex point="16" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="43" s="" t=""/>
+    <Vertex point="41" s="" t=""/>
+    <Vertex point="64" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="27" s="" t=""/>
+    <Vertex point="98" s="" t=""/>
+    <Vertex point="15" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="3" s="" t=""/>
+    <Vertex point="93" s="" t=""/>
+    <Vertex point="4" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="17" s="" t=""/>
+    <Vertex point="4" s="" t=""/>
+    <Vertex point="94" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="94" s="" t=""/>
+    <Vertex point="42" s="" t=""/>
+    <Vertex point="17" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="98" s="" t=""/>
+    <Vertex point="27" s="" t=""/>
+    <Vertex point="40" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="52" s="" t=""/>
+    <Vertex point="63" s="" t=""/>
+    <Vertex point="99" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="80" s="" t=""/>
+    <Vertex point="99" s="" t=""/>
+    <Vertex point="63" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="100" s="" t=""/>
+    <Vertex point="101" s="" t=""/>
+    <Vertex point="102" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="100" s="" t=""/>
+    <Vertex point="102" s="" t=""/>
+    <Vertex point="103" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="100" s="" t=""/>
+    <Vertex point="103" s="" t=""/>
+    <Vertex point="104" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="100" s="" t=""/>
+    <Vertex point="104" s="" t=""/>
+    <Vertex point="101" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="105" s="" t=""/>
+    <Vertex point="102" s="" t=""/>
+    <Vertex point="101" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="101" s="" t=""/>
+    <Vertex point="106" s="" t=""/>
+    <Vertex point="105" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="102" s="" t=""/>
+    <Vertex point="105" s="" t=""/>
+    <Vertex point="107" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="107" s="" t=""/>
+    <Vertex point="103" s="" t=""/>
+    <Vertex point="102" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="103" s="" t=""/>
+    <Vertex point="107" s="" t=""/>
+    <Vertex point="108" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="109" s="" t=""/>
+    <Vertex point="104" s="" t=""/>
+    <Vertex point="103" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="103" s="" t=""/>
+    <Vertex point="108" s="" t=""/>
+    <Vertex point="109" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="104" s="" t=""/>
+    <Vertex point="109" s="" t=""/>
+    <Vertex point="110" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="104" s="" t=""/>
+    <Vertex point="110" s="" t=""/>
+    <Vertex point="111" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="112" s="" t=""/>
+    <Vertex point="101" s="" t=""/>
+    <Vertex point="104" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="104" s="" t=""/>
+    <Vertex point="111" s="" t=""/>
+    <Vertex point="112" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="101" s="" t=""/>
+    <Vertex point="112" s="" t=""/>
+    <Vertex point="106" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="106" s="" t=""/>
+    <Vertex point="113" s="" t=""/>
+    <Vertex point="114" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="114" s="" t=""/>
+    <Vertex point="105" s="" t=""/>
+    <Vertex point="106" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="105" s="" t=""/>
+    <Vertex point="114" s="" t=""/>
+    <Vertex point="115" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="115" s="" t=""/>
+    <Vertex point="107" s="" t=""/>
+    <Vertex point="105" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="107" s="" t=""/>
+    <Vertex point="115" s="" t=""/>
+    <Vertex point="116" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="116" s="" t=""/>
+    <Vertex point="108" s="" t=""/>
+    <Vertex point="107" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="108" s="" t=""/>
+    <Vertex point="116" s="" t=""/>
+    <Vertex point="117" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="118" s="" t=""/>
+    <Vertex point="109" s="" t=""/>
+    <Vertex point="108" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="108" s="" t=""/>
+    <Vertex point="117" s="" t=""/>
+    <Vertex point="118" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="119" s="" t=""/>
+    <Vertex point="110" s="" t=""/>
+    <Vertex point="109" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="109" s="" t=""/>
+    <Vertex point="118" s="" t=""/>
+    <Vertex point="119" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="110" s="" t=""/>
+    <Vertex point="119" s="" t=""/>
+    <Vertex point="111" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="120" s="" t=""/>
+    <Vertex point="112" s="" t=""/>
+    <Vertex point="111" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="112" s="" t=""/>
+    <Vertex point="120" s="" t=""/>
+    <Vertex point="121" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="113" s="" t=""/>
+    <Vertex point="106" s="" t=""/>
+    <Vertex point="112" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="112" s="" t=""/>
+    <Vertex point="121" s="" t=""/>
+    <Vertex point="113" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="122" s="" t=""/>
+    <Vertex point="114" s="" t=""/>
+    <Vertex point="113" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="113" s="" t=""/>
+    <Vertex point="123" s="" t=""/>
+    <Vertex point="122" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="114" s="" t=""/>
+    <Vertex point="122" s="" t=""/>
+    <Vertex point="124" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="124" s="" t=""/>
+    <Vertex point="115" s="" t=""/>
+    <Vertex point="114" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="116" s="" t=""/>
+    <Vertex point="16" s="" t=""/>
+    <Vertex point="125" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="125" s="" t=""/>
+    <Vertex point="117" s="" t=""/>
+    <Vertex point="116" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="117" s="" t=""/>
+    <Vertex point="125" s="" t=""/>
+    <Vertex point="126" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="127" s="" t=""/>
+    <Vertex point="118" s="" t=""/>
+    <Vertex point="117" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="117" s="" t=""/>
+    <Vertex point="126" s="" t=""/>
+    <Vertex point="127" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="118" s="" t=""/>
+    <Vertex point="127" s="" t=""/>
+    <Vertex point="128" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="128" s="" t=""/>
+    <Vertex point="119" s="" t=""/>
+    <Vertex point="118" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="119" s="" t=""/>
+    <Vertex point="128" s="" t=""/>
+    <Vertex point="129" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="119" s="" t=""/>
+    <Vertex point="129" s="" t=""/>
+    <Vertex point="130" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="130" s="" t=""/>
+    <Vertex point="111" s="" t=""/>
+    <Vertex point="119" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="111" s="" t=""/>
+    <Vertex point="130" s="" t=""/>
+    <Vertex point="131" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="132" s="" t=""/>
+    <Vertex point="120" s="" t=""/>
+    <Vertex point="111" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="111" s="" t=""/>
+    <Vertex point="131" s="" t=""/>
+    <Vertex point="132" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="120" s="" t=""/>
+    <Vertex point="132" s="" t=""/>
+    <Vertex point="133" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="133" s="" t=""/>
+    <Vertex point="121" s="" t=""/>
+    <Vertex point="120" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="121" s="" t=""/>
+    <Vertex point="133" s="" t=""/>
+    <Vertex point="134" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="134" s="" t=""/>
+    <Vertex point="113" s="" t=""/>
+    <Vertex point="121" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="113" s="" t=""/>
+    <Vertex point="134" s="" t=""/>
+    <Vertex point="123" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="135" s="" t=""/>
+    <Vertex point="122" s="" t=""/>
+    <Vertex point="123" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="123" s="" t=""/>
+    <Vertex point="136" s="" t=""/>
+    <Vertex point="135" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="122" s="" t=""/>
+    <Vertex point="135" s="" t=""/>
+    <Vertex point="41" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="124" s="" t=""/>
+    <Vertex point="122" s="" t=""/>
+    <Vertex point="41" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="124" s="" t=""/>
+    <Vertex point="41" s="" t=""/>
+    <Vertex point="42" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="125" s="" t=""/>
+    <Vertex point="16" s="" t=""/>
+    <Vertex point="15" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="125" s="" t=""/>
+    <Vertex point="98" s="" t=""/>
+    <Vertex point="126" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="137" s="" t=""/>
+    <Vertex point="127" s="" t=""/>
+    <Vertex point="126" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="138" s="" t=""/>
+    <Vertex point="128" s="" t=""/>
+    <Vertex point="127" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="127" s="" t=""/>
+    <Vertex point="137" s="" t=""/>
+    <Vertex point="138" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="139" s="" t=""/>
+    <Vertex point="129" s="" t=""/>
+    <Vertex point="128" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="128" s="" t=""/>
+    <Vertex point="138" s="" t=""/>
+    <Vertex point="139" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="140" s="" t=""/>
+    <Vertex point="130" s="" t=""/>
+    <Vertex point="129" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="129" s="" t=""/>
+    <Vertex point="139" s="" t=""/>
+    <Vertex point="140" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="130" s="" t=""/>
+    <Vertex point="140" s="" t=""/>
+    <Vertex point="131" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="141" s="" t=""/>
+    <Vertex point="132" s="" t=""/>
+    <Vertex point="131" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="142" s="" t=""/>
+    <Vertex point="133" s="" t=""/>
+    <Vertex point="132" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="132" s="" t=""/>
+    <Vertex point="141" s="" t=""/>
+    <Vertex point="142" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="143" s="" t=""/>
+    <Vertex point="134" s="" t=""/>
+    <Vertex point="133" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="133" s="" t=""/>
+    <Vertex point="142" s="" t=""/>
+    <Vertex point="143" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="136" s="" t=""/>
+    <Vertex point="123" s="" t=""/>
+    <Vertex point="134" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="134" s="" t=""/>
+    <Vertex point="143" s="" t=""/>
+    <Vertex point="136" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="144" s="" t=""/>
+    <Vertex point="135" s="" t=""/>
+    <Vertex point="136" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="136" s="" t=""/>
+    <Vertex point="145" s="" t=""/>
+    <Vertex point="144" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="41" s="" t=""/>
+    <Vertex point="135" s="" t=""/>
+    <Vertex point="144" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="146" s="" t=""/>
+    <Vertex point="137" s="" t=""/>
+    <Vertex point="126" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="126" s="" t=""/>
+    <Vertex point="147" s="" t=""/>
+    <Vertex point="146" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="148" s="" t=""/>
+    <Vertex point="138" s="" t=""/>
+    <Vertex point="137" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="137" s="" t=""/>
+    <Vertex point="146" s="" t=""/>
+    <Vertex point="148" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="149" s="" t=""/>
+    <Vertex point="139" s="" t=""/>
+    <Vertex point="138" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="138" s="" t=""/>
+    <Vertex point="148" s="" t=""/>
+    <Vertex point="149" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="150" s="" t=""/>
+    <Vertex point="140" s="" t=""/>
+    <Vertex point="139" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="139" s="" t=""/>
+    <Vertex point="149" s="" t=""/>
+    <Vertex point="150" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="151" s="" t=""/>
+    <Vertex point="131" s="" t=""/>
+    <Vertex point="140" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="140" s="" t=""/>
+    <Vertex point="150" s="" t=""/>
+    <Vertex point="151" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="152" s="" t=""/>
+    <Vertex point="141" s="" t=""/>
+    <Vertex point="131" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="131" s="" t=""/>
+    <Vertex point="151" s="" t=""/>
+    <Vertex point="152" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="141" s="" t=""/>
+    <Vertex point="152" s="" t=""/>
+    <Vertex point="153" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="153" s="" t=""/>
+    <Vertex point="142" s="" t=""/>
+    <Vertex point="141" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="142" s="" t=""/>
+    <Vertex point="153" s="" t=""/>
+    <Vertex point="154" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="155" s="" t=""/>
+    <Vertex point="143" s="" t=""/>
+    <Vertex point="142" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="142" s="" t=""/>
+    <Vertex point="154" s="" t=""/>
+    <Vertex point="155" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="145" s="" t=""/>
+    <Vertex point="136" s="" t=""/>
+    <Vertex point="143" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="143" s="" t=""/>
+    <Vertex point="155" s="" t=""/>
+    <Vertex point="145" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="145" s="" t=""/>
+    <Vertex point="156" s="" t=""/>
+    <Vertex point="144" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="147" s="" t=""/>
+    <Vertex point="99" s="" t=""/>
+    <Vertex point="157" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="158" s="" t=""/>
+    <Vertex point="146" s="" t=""/>
+    <Vertex point="147" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="147" s="" t=""/>
+    <Vertex point="157" s="" t=""/>
+    <Vertex point="158" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="159" s="" t=""/>
+    <Vertex point="148" s="" t=""/>
+    <Vertex point="146" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="146" s="" t=""/>
+    <Vertex point="158" s="" t=""/>
+    <Vertex point="159" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="160" s="" t=""/>
+    <Vertex point="149" s="" t=""/>
+    <Vertex point="148" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="148" s="" t=""/>
+    <Vertex point="159" s="" t=""/>
+    <Vertex point="160" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="161" s="" t=""/>
+    <Vertex point="150" s="" t=""/>
+    <Vertex point="149" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="149" s="" t=""/>
+    <Vertex point="160" s="" t=""/>
+    <Vertex point="161" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="150" s="" t=""/>
+    <Vertex point="161" s="" t=""/>
+    <Vertex point="162" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="163" s="" t=""/>
+    <Vertex point="151" s="" t=""/>
+    <Vertex point="150" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="150" s="" t=""/>
+    <Vertex point="162" s="" t=""/>
+    <Vertex point="163" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="164" s="" t=""/>
+    <Vertex point="152" s="" t=""/>
+    <Vertex point="151" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="151" s="" t=""/>
+    <Vertex point="163" s="" t=""/>
+    <Vertex point="164" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="165" s="" t=""/>
+    <Vertex point="153" s="" t=""/>
+    <Vertex point="152" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="152" s="" t=""/>
+    <Vertex point="164" s="" t=""/>
+    <Vertex point="165" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="153" s="" t=""/>
+    <Vertex point="165" s="" t=""/>
+    <Vertex point="166" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="153" s="" t=""/>
+    <Vertex point="166" s="" t=""/>
+    <Vertex point="154" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="167" s="" t=""/>
+    <Vertex point="155" s="" t=""/>
+    <Vertex point="154" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="156" s="" t=""/>
+    <Vertex point="145" s="" t=""/>
+    <Vertex point="155" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="155" s="" t=""/>
+    <Vertex point="167" s="" t=""/>
+    <Vertex point="156" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="168" s="" t=""/>
+    <Vertex point="144" s="" t=""/>
+    <Vertex point="156" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="156" s="" t=""/>
+    <Vertex point="169" s="" t=""/>
+    <Vertex point="168" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="168" s="" t=""/>
+    <Vertex point="64" s="" t=""/>
+    <Vertex point="144" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="170" s="" t=""/>
+    <Vertex point="157" s="" t=""/>
+    <Vertex point="99" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="99" s="" t=""/>
+    <Vertex point="80" s="" t=""/>
+    <Vertex point="170" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="170" s="" t=""/>
+    <Vertex point="158" s="" t=""/>
+    <Vertex point="157" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="171" s="" t=""/>
+    <Vertex point="159" s="" t=""/>
+    <Vertex point="158" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="158" s="" t=""/>
+    <Vertex point="170" s="" t=""/>
+    <Vertex point="171" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="172" s="" t=""/>
+    <Vertex point="160" s="" t=""/>
+    <Vertex point="159" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="159" s="" t=""/>
+    <Vertex point="171" s="" t=""/>
+    <Vertex point="172" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="173" s="" t=""/>
+    <Vertex point="161" s="" t=""/>
+    <Vertex point="160" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="160" s="" t=""/>
+    <Vertex point="172" s="" t=""/>
+    <Vertex point="173" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="173" s="" t=""/>
+    <Vertex point="162" s="" t=""/>
+    <Vertex point="161" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="174" s="" t=""/>
+    <Vertex point="163" s="" t=""/>
+    <Vertex point="162" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="162" s="" t=""/>
+    <Vertex point="173" s="" t=""/>
+    <Vertex point="174" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="175" s="" t=""/>
+    <Vertex point="164" s="" t=""/>
+    <Vertex point="163" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="163" s="" t=""/>
+    <Vertex point="174" s="" t=""/>
+    <Vertex point="175" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="175" s="" t=""/>
+    <Vertex point="165" s="" t=""/>
+    <Vertex point="164" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="176" s="" t=""/>
+    <Vertex point="166" s="" t=""/>
+    <Vertex point="165" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="165" s="" t=""/>
+    <Vertex point="175" s="" t=""/>
+    <Vertex point="176" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="176" s="" t=""/>
+    <Vertex point="154" s="" t=""/>
+    <Vertex point="166" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="177" s="" t=""/>
+    <Vertex point="167" s="" t=""/>
+    <Vertex point="154" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="154" s="" t=""/>
+    <Vertex point="176" s="" t=""/>
+    <Vertex point="177" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="169" s="" t=""/>
+    <Vertex point="156" s="" t=""/>
+    <Vertex point="167" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="167" s="" t=""/>
+    <Vertex point="177" s="" t=""/>
+    <Vertex point="169" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="168" s="" t=""/>
+    <Vertex point="169" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="179" s="" t=""/>
+    <Vertex point="180" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="181" s="" t=""/>
+    <Vertex point="170" s="" t=""/>
+    <Vertex point="80" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="171" s="" t=""/>
+    <Vertex point="170" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="172" s="" t=""/>
+    <Vertex point="171" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="173" s="" t=""/>
+    <Vertex point="172" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="174" s="" t=""/>
+    <Vertex point="173" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="175" s="" t=""/>
+    <Vertex point="174" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="176" s="" t=""/>
+    <Vertex point="175" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="177" s="" t=""/>
+    <Vertex point="176" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="169" s="" t=""/>
+    <Vertex point="177" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="182" s="" t=""/>
+    <Vertex point="183" s="" t=""/>
+    <Vertex point="178" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="184" s="" t=""/>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="183" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="185" s="" t=""/>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="180" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="115" s="" t=""/>
+    <Vertex point="124" s="" t=""/>
+    <Vertex point="93" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="115" s="" t=""/>
+    <Vertex point="93" s="" t=""/>
+    <Vertex point="3" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="3" s="" t=""/>
+    <Vertex point="2" s="" t=""/>
+    <Vertex point="116" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="116" s="" t=""/>
+    <Vertex point="115" s="" t=""/>
+    <Vertex point="3" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="16" s="" t=""/>
+    <Vertex point="116" s="" t=""/>
+    <Vertex point="2" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="42" s="" t=""/>
+    <Vertex point="94" s="" t=""/>
+    <Vertex point="124" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="94" s="" t=""/>
+    <Vertex point="93" s="" t=""/>
+    <Vertex point="124" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="15" s="" t=""/>
+    <Vertex point="98" s="" t=""/>
+    <Vertex point="125" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="186" s="" t=""/>
+    <Vertex point="81" s="" t=""/>
+    <Vertex point="168" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="185" s="" t=""/>
+    <Vertex point="187" s="" t=""/>
+    <Vertex point="168" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="168" s="" t=""/>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="185" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="187" s="" t=""/>
+    <Vertex point="186" s="" t=""/>
+    <Vertex point="168" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="188" s="" t=""/>
+    <Vertex point="182" s="" t=""/>
+    <Vertex point="178" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="181" s="" t=""/>
+    <Vertex point="189" s="" t=""/>
+    <Vertex point="170" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="189" s="" t=""/>
+    <Vertex point="190" s="" t=""/>
+    <Vertex point="170" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="178" s="" t=""/>
+    <Vertex point="170" s="" t=""/>
+    <Vertex point="190" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="190" s="" t=""/>
+    <Vertex point="188" s="" t=""/>
+    <Vertex point="178" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="64" s="" t=""/>
+    <Vertex point="41" s="" t=""/>
+    <Vertex point="144" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="64" s="" t=""/>
+    <Vertex point="168" s="" t=""/>
+    <Vertex point="81" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="147" s="" t=""/>
+    <Vertex point="126" s="" t=""/>
+    <Vertex point="98" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="147" s="" t=""/>
+    <Vertex point="98" s="" t=""/>
+    <Vertex point="40" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="147" s="" t=""/>
+    <Vertex point="40" s="" t=""/>
+    <Vertex point="52" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="99" s="" t=""/>
+    <Vertex point="147" s="" t=""/>
+    <Vertex point="52" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="191" s="" t=""/>
+    <Vertex point="47" s="" t=""/>
+    <Vertex point="58" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="192" s="" t=""/>
+    <Vertex point="191" s="" t=""/>
+    <Vertex point="58" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="193" s="" t=""/>
+    <Vertex point="192" s="" t=""/>
+    <Vertex point="58" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="194" s="" t=""/>
+    <Vertex point="193" s="" t=""/>
+    <Vertex point="58" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="195" s="" t=""/>
+    <Vertex point="86" s="" t=""/>
+    <Vertex point="194" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="58" s="" t=""/>
+    <Vertex point="195" s="" t=""/>
+    <Vertex point="194" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="72" s="" t=""/>
+    <Vertex point="71" s="" t=""/>
+    <Vertex point="196" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="197" s="" t=""/>
+    <Vertex point="198" s="" t=""/>
+    <Vertex point="69" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="197" s="" t=""/>
+    <Vertex point="69" s="" t=""/>
+    <Vertex point="84" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="197" s="" t=""/>
+    <Vertex point="84" s="" t=""/>
+    <Vertex point="199" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="196" s="" t=""/>
+    <Vertex point="197" s="" t=""/>
+    <Vertex point="199" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="72" s="" t=""/>
+    <Vertex point="196" s="" t=""/>
+    <Vertex point="199" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="70" s="" t=""/>
+    <Vertex point="69" s="" t=""/>
+    <Vertex point="198" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="195" s="" t=""/>
+    <Vertex point="58" s="" t=""/>
+    <Vertex point="57" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="200" s="" t=""/>
+    <Vertex point="195" s="" t=""/>
+    <Vertex point="57" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="72" s="" t=""/>
+    <Vertex point="201" s="" t=""/>
+    <Vertex point="73" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="199" s="" t=""/>
+    <Vertex point="202" s="" t=""/>
+    <Vertex point="203" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="72" s="" t=""/>
+    <Vertex point="199" s="" t=""/>
+    <Vertex point="203" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="72" s="" t=""/>
+    <Vertex point="203" s="" t=""/>
+    <Vertex point="204" s="" t=""/>
+</Tri>
+<Tri>
+    <Vertex point="201" s="" t=""/>
+    <Vertex point="72" s="" t=""/>
+    <Vertex point="204" s="" t=""/>
+</Tri>
+</Polygons>
+</Mesh>
