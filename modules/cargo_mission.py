@@ -28,7 +28,7 @@ class cargo_mission (Director.Mission):
 		self.adjsys.endbriefing()
 		del self.briefgametime
 	
-	def __init__ (self,factionname, numsystemsaway, cargoquantity, missiondifficulty, creds, launchoncapship, time_to_complete, category):
+	def __init__ (self,factionname, numsystemsaway, cargoquantity, missiondifficulty, creds, launchoncapship, time_to_complete, category,jumps=()):
 	  Director.Mission.__init__(self);
 	  self.you=VS.Unit()
 	  self.base=VS.Unit()
@@ -40,7 +40,7 @@ class cargo_mission (Director.Mission):
 	  self.cred=creds
 	  self.difficulty=missiondifficulty
 	  self.you=VS.getPlayer()
-	  self.adjsys=go_to_adjacent_systems(self.you,numsystemsaway)
+	  self.adjsys=go_to_adjacent_systems(self.you,numsystemsaway,jumps)
 	  self.quantity=cargoquantity
 	  self.mplay=universe.getMessagePlayer(self.you)
 	  if (self.quantity<1):
@@ -148,7 +148,7 @@ class cargo_mission (Director.Mission):
 	    VS.IOmessage(0,"cargo mission",self.mplay,"Once there, %s and we will transport the cargo off of your ship." % (dockstr))
 	    self.base=self.adjsys.SignificantUnit()
 
-def initrandom (factionname, missiondifficulty,creds_per_jump, launchoncapship, sysmin, sysmax, time_to_complete, category):
+def initrandom (factionname, missiondifficulty,creds_per_jump, launchoncapship, sysmin, sysmax, time_to_complete, category,jumps=()):
 	numsys=vsrandom.randrange(sysmin,sysmax)
-	return cargo_mission(factionname,numsys, vsrandom.randrange(4,15), missiondifficulty,creds_per_jump*float(1+numsys),launchoncapship, 10.0, category)
+	return cargo_mission(factionname,numsys, vsrandom.randrange(4,15), missiondifficulty,creds_per_jump*float(1+numsys),launchoncapship, 10.0, category,jumps)
 
