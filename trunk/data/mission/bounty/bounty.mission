@@ -7,7 +7,7 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="system" value="enigma_sector/blake" />
 		<var name="mission_name" value="Bounty Mission" />
-		<var name="description" value="One of our rivals has been bothering us too much recently and we deem it necessary to eliminate him.  He is loved between 1 and 4 star systems away, and we will offer 17025 for his destruction. More than that we cannot disclose at this stage." />
+		<var name="description" value="One of our rivals has been bothering us too much recently and we deem it necessary to eliminate him.  He is believed to be between 1 and 4 star systems away, and we will offer a significant ammount of cash for his destruction. More than that we cannot disclose at this stage." />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="2">
@@ -25,9 +25,12 @@
 			<exec module="bounty" name="initrandom">
 			<const type="int" value="0"/> <!--num systems away the delivery point is -->
 			<const type="int" value="4"/> <!--num systems away the delivery point is -->
-			<const type="float" value="17025"/> <!-- how much you are paid -->
+			<const type="float" value="8025"/> <!-- how much you are paid -->
+			<const type="float" value="12025"/> <!-- how much you are paid -->
+
 			<const type="bool" value="true"/> <!--does he run away -->
-			<const type="int" value="1"/> <!--difficulty-->
+			<const type="int" value="0"/> <!--difficulty-->
+			<const type="int" value="3"/> <!--difficulty-->
 			</exec>
 		</script>
 		<script name="gameloop">

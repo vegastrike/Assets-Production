@@ -27,7 +27,7 @@
 
 			<const type="int" value="6"/><!--num patrol points (not zero)-->
 			<const type="float" value="300"/> <!--the distance from the points you have to be to get credited -->
-			<const type="float" value="5800"/> <!-- how much you arepaid -->
+			<const type="float" value="8240"/> <!-- how much you arepaid -->
 			</exec>
 		</script>
 		<script name="gameloop">
