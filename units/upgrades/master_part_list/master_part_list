@@ -20,6 +20,49 @@
 		<Maneuver yaw="000000" pitch="0" roll="0"/>
 	</Thrust>
 	<Hold volume="100000000000">
+		<Category file="starships">
+			<Cargo file="wayfarer.blank" price="10000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="wayfarer.begin" price="20000" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="tian.blank" price="30000" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="firefly.blank" price="40000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="mongoose.blank" price="60000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="nova.blank" price="75000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="puma.blank" price="150000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="avenger.blank" price="200000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="wayfarer" price="140000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="tian" price="190000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="nova" price="300000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="destiny.blank" price="300000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="puma" price="450000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="firefly" price="550000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="cruiser.blank" price="500000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="avenger" price="1000000" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="kyta.blank" price="20000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="metron.blank" price="30000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="dagger.blank" price="50000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="osprey.blank" price="75000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="lekra.blank" price="125000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="aevant.blank" price="150000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="butterfly.blank" price="200000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="kira.blank" price="250000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="aeon.blank" price="300000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="metron" price="250000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="lekra" price="300000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="osprey" price="500000" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="skart.blank" price="40000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="f109vampire.blank" price="50000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="starfish.blank" price="60000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="revoker.blank" price="75000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="hispidus.blank" price="100000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="skart" price="290000" quantity="1" mass=".01" volume="1"/>
+
+
+
+		</Category>
 		<Category file="upgrades">
 			<Cargo file="laser" price="1000" quantity="1" mass=".01" volume="1"/>	
 			<Cargo file="laser_beam" price="1200" quantity="1" mass=".01" volume="1"/>	
@@ -44,46 +87,61 @@
 			<Cargo file="penetrator_gun" price="110000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="fusion_gun" price="1000000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="ktek_beam" price="120000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="dumbfire_3pack_ammo" price="60" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="dumbfire_ammo" price="200" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="heatseeker_3pack_ammo" price="105" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="heatseeker_ammo" price="350" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="image_recognition_3pack_ammo" price="225" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="image_recognition_ammo" price="750" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="friend_or_foe_3pack_ammo" price="300" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="friend_or_foe_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="torpedo_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="advtorpedo_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="maul_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="cluster_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="capiff_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="catcluster_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="capshipmissile_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="leech_ammo" price="4000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="swarm_ammo" price="800" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="killerbee_ammo" price="850" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="hail_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="gaus_ammo" price="300" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="breeze_ammo" price="300" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="afterburner" price="3000" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="afterburner" price="16000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="afterburner_generic" price="3000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="add_fuel" price="1000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="jump_drive" price="10000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="add_cargo_volume" price="10000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="mult_turn_jet_enhancer" price="40000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="mult_maneuver_enhancer" price="200000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="mult_speed_enhancer" price="250000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="mult_thrust_enhancer" price="60000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="mult_shield_regenerator" price="170000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="mult_gun_cooler" price="300000" quantity="1" mass=".01" volume="1"/>
+
 			<Cargo file="plasteel" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="lithium" price="500" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="tungsten" price="1500" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="dilithium" price="1600" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="isometal" price="2000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="trilithium" price="10000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="afterburner" price="3000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="add_cargo_volume" price="10000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="shield_4" price="10000" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="hull" price="1000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="coated_hull" price="5000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="polymer_hull" price="10000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="plated_hull" price="12000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="double_plated_hull" price="15000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="reinforced_hull" price="25000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="micro_shielded_hull" price="30000" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="shield_4" price="4000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_4_Level1" price="10000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_4_Level2" price="30000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_4_Level3" price="50000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_4_Level4" price="100000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_4_Level5" price="150000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="shield_2" price="8000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_2" price="3500" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="shield_2_Level1" price="9000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_2_Level2" price="25000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_2_Level3" price="40000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_2_Level4" price="90000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_2_Level5" price="140000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="engine_level_0" price="4000" quantity="1" mass=".01" volume="1"/>			
+			<Cargo file="engine_level_1" price="10000" quantity="1" mass=".01" volume="1"/>			
+			<Cargo file="engine_level_2" price="30000" quantity="1" mass=".01" volume="1"/>			
+			<Cargo file="engine_level_3" price="60000" quantity="1" mass=".01" volume="1"/>			
+			<Cargo file="engine_level_4" price="100000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="engine_level_5" price="150000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="ecm_package_1" price="5000" quantity="1" mass=".01" volume="1"/>			
+			<Cargo file="ecm_package_2" price="15000" quantity="1" mass=".01" volume="1"/>			
+			<Cargo file="ecm_package_3" price="30000" quantity="1" mass=".01" volume="1"/>			
+			<Cargo file="repair_system" price="10000" quantity="1" mass=".01" volume="1"/>		
+			<Cargo file="repair_system_advanced" price="20000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="repair_droid" price="30000" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="repair_droid_advanced" price="90000" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="repair_ai" price="200000" quantity="1" mass=".01" volume="1"/>	
+			<Cargo file="repair_ai_advanced" price="300000" quantity="1" mass=".01" volume="1"/>	
 			<Cargo file="radar_windows_95" price="5000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="radar_windows_98" price="10000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="radar_windows_2k" price="20000" quantity="1" mass=".01" volume="1"/>
@@ -95,6 +153,34 @@
 			<Cargo file="radar_free_bsd" price="160000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1"/>
 			<Cargo file="cloaking_device" price="259000" quantity="1" mass="8.9" volume="1"/>
+
+			<Cargo file="thruster_retrofit" price="40000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="thruster_upgrade" price="400000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="replacement_thrusters" price="300000" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="dumbfire_ammo" price="20" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="heatseeker_ammo" price="35" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="image_recognition_ammo" price="75" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="friend_or_foe_ammo" price="100" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="torpedo_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="advtorpedo_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="maul_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="cluster_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="capiff_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="catcluster_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="capshipmissile_ammo" price="2000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="leech_ammo" price="1000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="swarm_ammo" price="80" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="killerbee_ammo" price="85" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="hail_ammo" price="90" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="gauss_ammo" price="300" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="breeze_ammo" price="300" quantity="1" mass=".01" volume="1"/>
+
+			<Cargo file="dumbfire_3pack_ammo" price="60" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="heatseeker_3pack_ammo" price="105" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="friend_or_foe_3pack_ammo" price="300" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="image_recognition_3pack_ammo" price="225" quantity="1" mass=".01" volume="1"/>
+
 		</Category>
 		<Category file="Food">
 			<Cargo file="Foodstuffs" price="9" quantity="1" mass="0.02" volume="1"/>
@@ -125,7 +211,7 @@
 			<Cargo file="Redwood" price="31" quantity="1" mass="0.25" volume="10"/>
 			<Cargo file="Interrus Vorium" price="31" quantity="1" mass="0.25" volume="10"/>
 	        </Category>
-		<Category file="Medical goods">
+		<Category file="Medical goods">			<Cargo file="double_plated_hull" price="1000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="Synaptic_Stimulator" price="23" quantity="1" mass="0.02" volume="1"/>
 			<Cargo file="Blood" price="12" quantity="1" mass="0.02" volume="1"/>
 			<Cargo file="Skin" price="12" quantity="1" mass="0.02" volume="1"/>

@@ -14,7 +14,7 @@
 		<Reactor recharge="0" limit="0"/>
 	</Energy>
            	<Jump missing="1" delay="1" jumpenergy="0"/>       
-	<mount weapon="Dumbfire" ammo="10"/>
+	<mount weapon="Dumbfire" ammo="1"/>
 	<Thrust>
 		<Engine Afterburner="0" Forward="0" Retro="0" Left="0" Right="0" Top="0" Bottom="0"/>
 		<Maneuver yaw="000000" pitch="0" roll="0"/>
