@@ -1,4 +1,4 @@
-<system name="Mars" background="backgrounds/fiery_galaxy" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
+<system name="Mars1" background="backgrounds/fiery_galaxy" nearstars="500" stars="1000" starspread="150"  x="0" y="0" z="0">
 <Light>
 <ambient red=".3" green=".3" blue=".3"/>
 <diffuse red="1" green=".8" blue=".8"/>
@@ -20,7 +20,8 @@
 		</planet>
 	</planet>
 
-	<planet name="jumppoint-mars" file="jump.png" alpha="ONE ONE" radius="100" gravity="20"  x="8000" y="100" z="2000"  velocity="0" position="0" destination="blank_x">
+	<planet name="jumppoint-mars" file="jump.png" alpha="ONE ONE" radius="100" gravity="20"  x="8000" y="100" z="2000"  velocity="0" position="0" destination="blank_q">
+	<planet name="jumppoint-mars" file="jump.png" alpha="ONE ONE" radius="1000" gravity="20"  x="9000" y="100" z="2000"  velocity="0" position="0" destination="blank_y">
 	</planet>
 
 

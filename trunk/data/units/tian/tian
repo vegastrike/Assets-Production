@@ -17,7 +17,9 @@
 		<Reactor recharge="10" limit="100"/>
 	</Energy>
        	<Jump delay="1" jumpenergy="90"/>       
+	<Hold volume="15">
 
+	</Hold>
 
 
 <!-- new elements added -->
