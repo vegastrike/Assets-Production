@@ -1,1 +1,1 @@
-planets/ocean.png~ planets/ocean.png^Snow_lightwrapx4wrapy2 planets/desert.png planets/Snow2.png^Snow_lightwrapx6wrapy3.png planets/Dirt1^planets/Dirt_light.png planets/university2.png^planets/university2_light.png planets/university.png^planets/university_light.png
+planets/m_class.png~ planets/ocean.png^Snow_lightwrapx4wrapy2 planets/desert.png planets/Snow2.png^Snow_lightwrapx6wrapy3.png planets/Dirt1.png^planets/Dirt_light.png planets/university2.png^planets/university2_light.png planets/university.png^planets/university_light.png
