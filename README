@@ -180,7 +180,55 @@ When you have completed them, your credits will immediately be added to your acc
 =================================================
  Trading Cargo
 =================================================
-If you wish, you may buy cargo at your base.
+You may buy cargo at the base that you are docked to.
+To find the list of cargo, use the Buy Mode button.  When you click on it, you will most likely find a list of categories. (If you don't, then the planet or capship that you are docked at doesn't sell cargo.)
+After browsing through the categories, you should select the Cargo that you want to buy.
+The selected item will be blue, with the name and the quantity in the base in parentheses.
+		Jade (3)
+On the right side of the screen, there will be the item, the price, the mass and the volume.
+		Jade
+		Price: 124.83
+		Mass: 0.01
+		Cargo Volume: 1.00
+To buy it, simply click the "Buy Cargo" button at the bottom.
+Different planets or bases will have different prices and quantities for groups of items.  For example, Mining Bases will have cheaper minerals.
+
+After buying cargo, you may want to go to a planet that is in need of that cargo.  When you are done docking at that planet, you may go the Sell Cargo screen.
+In the sell mode, you will see the same categories, except only those of the items that you bought.  Find your item again and click on it.  Notice that the price has changed, but everything else has stayed the same.
+Click The "Sell Cargo" button if you wish to sell it, and you will immediately be rewarded with your credits.
+Note: you should NOT go the "upgrades" or "starships" categories if you want to buy a ship or upgrade it UNLESS you wish to have a starship or upgrade in your cargo hold.
+
+=================================================
+ Upgrading and Downgrading your Ship
+=================================================
+If you want your ship to get better (so you can do more missions and kill harder enemies), you will have to eventually upgrade your junky ship.
+You must click on the "Upgrade Ship" button to get a list of possible upgrade categories.  Browse through them until you find a good Upgrade that you need.
+The screen will look similar to the cargo section, with the name and the quantity in parentheses.  If you click "Buy", you may see one of many things:
+
+If the computer says that the ship may not entirely fit on your ship, it is saying that not all of the upgrade may be used.  For example, if you add fuel to your ship and you have only used up half of a fuel item, it will say that the fuel may not fit.  You usually should just click Yes.
+
+It may also ask you which mount to place the gun, missle or turret on.  Mounts with brackets [] on are empty mounts.  Select which mount to put it on.
+		Laser
+		[LIGHT MEDIUM HEAVY ]
+		ImageRecognition
+Here you could put another laser or beam in the LIGHT MEDIUM HEAVY mount because it can hold those categories.
+
+Downgrading works the same way.  If you need to earn more money, just click the Downgrade button.  It will give you a list of caregories of items on your ship.
+When you have the item that you wish to sell, make sure that you have selected the best item in that category. For example, you may have an "engine_level_0" and an "engine_level_1" in the list you should downgrade the engine_level_1 if you want to get more money out of the item.
+
+=================================================
+ Buying a new ship
+=================================================
+Buying a ship is simple, if you have enough money.  Just go to the Ship dealer and select the ship that you want.
+The ships ending with ".blank" are blank ships.  You will have to buy upgrades to put on them before they are flyable.
+The wayfarer.begin may also be listed; it is the same ship that you started with.
+There are a very few ships without these endings that come pre-equipped without those endings.  You can buy those ships and then you will not have to put upgrades on.
+You should sell all of your upgrades and/or cargo before buying a new ship; they will get trashed if you don't.
+
+=================================================
+ Briefings and News
+=================================================
+Briefings and news have not been added yet.  They will come in next release.
 
 =================================================
  Interstellar Warp Transit (Jump Drive)
