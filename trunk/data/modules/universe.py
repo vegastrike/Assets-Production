@@ -31,12 +31,14 @@ def adjustUnitCargo(un,cat,pr,qr):
         un.addCargo(carglist[i])
     carglist=0
 #universe.systemCargoDemand (("Natural_Products","starships",),.0001,1000)
-def systemCargoDemand (category,priceratio,quantratio):
+def systemCargoDemand (category,priceratio,quantratio,ships=1,planets=1):
     i = VS.getUnitList()
     un = i.current()
     while (not un.isNull()):
         if (un.isPlayerStarship()==-1):
-            adjustUnitCargo(un,category,priceratio,quantratio)
+            isplanet = un.isPlanet()
+            if ( (isplanet and planets) or ((not isplanet) and ships)):
+                adjustUnitCargo(un,category,priceratio,quantratio)
         i.advance()
         un=i.current()
         
