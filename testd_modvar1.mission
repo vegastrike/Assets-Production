@@ -17,7 +17,7 @@
 	<module name="director">
 		<defvar name="total_count" type="float" init="0.032"/>
 		<defvar name="random_count" type="float" init="0.0"/>
-		<script name="loop">
+		<script name="gameloop">
 			<defvar name="random_tmp" type="float"/>
 			<defvar name="counter" type="float"/>
 
