@@ -35,17 +35,17 @@ else:
 		launch.launch_wave_around_unit (fgname,"ISO",type,"default",1,80,300,playa).SetTarget(playa)
 		launch.launch_wave_around_unit (fgname,"ISO",type,"default",1,80,300,playa).SetTarget(playa)
 		launch.launch_wave_around_unit (fgname,"ISO",type,"default",1,80,300,playa).SetTarget(playa)
-	elif (fixers.checkSaveValue (playernum,"iso_mission2",-1) ||fixers.checkSaveValue (playernum,"iso_mission3",-1) ||fixers.checkSaveValue (playernum,"iso_mission4",-1)):
+	elif (fixers.checkSaveValue (playernum,"iso_mission2",-1) or fixers.checkSaveValue (playernum,"iso_mission3",-1) or fixers.checkSaveValue (playernum,"iso_mission4",-1)):
 		Base.Message ("You have failed the ISO.  I should have known not to entrust a self serving mercenary with the key plans of our organization. Go now... make money for yourself--I know you do not care for the peoples future.")
 	else:
 		if (fixers.checkSaveValue (playernum,"iso_mission1",1) and fixers.checkSaveValue(playernum,"iso_mission2",0)):			
-			Base.Message ("Congratulations!")#assign mis 2
+			Base.Message ("Thank you for your help in defending our starship.  We had no idea that confed was on to us there.  I do believe it is not safe so far away from the defiance sector.  We have a starship in urgent need of escort.  It is a small, speedy merchant vessel that hopefully will slip past confeds defenses.  We have programmed its flight computer to follow you through jump points and to autopilot to your destination when you press the 'a' key.  Its final destination is the Adams sector; however, be wary that such a small ship will have trouble navigating throug the black hole in Enigma sector, so I have suggested an alternate route that will take you trhough a few backwater systems to adams.  Will you assist us?")#assign mis 2
 			AssignMission()
 		elif (fixers.checkSaveValue (playernum,"iso_mission2",1) and fixers.checkSaveValue(playernum,"iso_mission3",0)):			
-			Base.Message ("Congradulations")#assign mis 3:
+			Base.Message ("Thank you for the escort kind comrade. I was personally aboard that starship, and I am quite relieved to be here in one piece.  However we have another job we'd like you to help us with.  This time the reward is quite sizable.  We have some rather...shady... cargo that needs transportation to our home system in Defiance.  We will offer you 20000 for this milk run. Will you do it?  If so I shall meet you there myself.")#assign mis 3:
 			AssignMission()
 		elif (fixers.checkSaveValue (playernum,"iso_mission3",1) and fixers.checkSaveValue(playernum,"iso_mission4",0)):
-			Base.Message ("Congraduati")#assign mis 4
+			Base.Message ("Thank you for a hasty delivery of the cargo.  However, we have an urgent problem here--there is a large confed assault on one of our assets here in Defiance. Can you help us stave them off? The revolution is getting quite out of hand, yet Confed thinks it still owns defiance even though not a living comrade here would raise arms for them.  With rulers like this how can Confed claim itself a democracy! It's outrageous! Will you help us?")#assign mis 4
 			AssignMission()
 		elif (fixers.checkSaveValue(playernum,"iso_mission4",1)):
 			Base.Message ("You have helped the ISO when we have needed it. Your talent and dedication shall not be forgotten. They will be sung of in revolution and written in epics.  Thank you kind Socialist. You have earned your name as a man of the people.")
