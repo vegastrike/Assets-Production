@@ -10,6 +10,17 @@ module vec3 {
     _io.printf("[ %f , %f , %f ]",x,y,z);
   };
 
+  object string(object v3){
+    float x=_olist.at(v3,0);
+    float y=_olist.at(v3,1);
+    float z=_olist.at(v3,2);
+    
+    object my_out=_string.new();
+    _io.sprintf(my_out,"[ %f , %f , %f ]",x,y,z);
+    return my_out;
+  };
+
+
   object new(float x,float y,float z){
     object v3=_olist.new();
 
@@ -78,6 +89,16 @@ module vec3 {
     z=z*factor;
 
     set(vec,x,y,z);
+  };
+
+  object clone(object vec){
+    float x=_olist.at(vec,0);
+    float y=_olist.at(vec,1);
+    float z=_olist.at(vec,2);
+
+    object ret=new(x,y,z);
+
+    return ret;
   };
 
   void add(object vec1,object vec2){

@@ -1,5 +1,7 @@
 module ai_patrol {
 
+  // mem/ref bug free
+
   import vec3;
   import random;
   import unit;
@@ -10,6 +12,9 @@ module ai_patrol {
   class int patrol_mode;
   class object around_unit;
   class float patrol_speed;
+
+  class object my_area;
+  class object around_unit_container;
 
   class object waypoint;
   class object last_order;
@@ -65,7 +70,7 @@ module ai_patrol {
   void getNextWaypoint(){
     if(patrol_mode==0){
       // random waypoints around area
-      waypoint=vec3.random_around_area(area,range-(range/0.3),range);
+      waypoint=vec3.random_around_area(my_area,range-(range/0.3),range);
     }
     else if(patrol_mode==1){
       // waypoints around unit
@@ -85,8 +90,12 @@ module ai_patrol {
 
     my_fgid=_unit.getFgID(my_unit);
     _io.printf("Patrolling ai: %s\n",my_fgid);
-    //vec3.print(area);
-    //_io.printf("\n");
+
+    my_area=vec3.clone(area);
+   
+    around_unit_container=_unit.getContainer(around_unit);
+
+    around_unit=_unit.getUnitFromContainer(around_unit_container);
 
     waypoint_index=random.randomint(0,5);
 
@@ -107,7 +116,11 @@ module ai_patrol {
 
   void quitai(){
     _io.printf("%s: patrolling ai quitting\n",my_fgid);
-    //    _string.delete(outstr);
+    //_string.delete(outstr);
+    //_string.delete(my_fgid);
+    //_olist.delete(my_area);
+    //_unit.deleteContainer(around_unit_container);
+    //_olist.delete(waypoint);
   };
 
 }

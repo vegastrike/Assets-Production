@@ -39,10 +39,15 @@ module visit_aera10 {
     fighter_lpos=_unit.getPosition(player_unit);
 
     jumppoint_mars_unit=unit.getUnitByFgID("jumppoint-mars");
+    if(_std.isNull(jumppoint_mars_unit)){
+      _io.printf("did not find mars jumppoint\n");
+    }
     jumppoint_mars=_unit.getPosition(jumppoint_mars_unit);
   };
 
   void gameloop(){
+    player_unit=_unit.getPlayer();
+
     if(step==0){
       _io.message(0,"game","all","we have an emergency call from mars");
       _io.message(1,"game","all","our station is under attack");
