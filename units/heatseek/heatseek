@@ -1,6 +1,6 @@
 <Unit>
 	<Meshfile file="heatseek.xmesh"/>
-	<BspMesh/>
+	<BspMesh RAPID="0"/>
 	<Light file="supernova.bmp" x="0" y="0" z="-2.00000023841858" size= ".6"/>
 
 <Thrust> 
