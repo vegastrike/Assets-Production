@@ -10,7 +10,7 @@
 		<var name="mission_name" value="Explore Universe With Little Opposition" />
 
 		<var name="system" value="vega_sector/hubble" />
-		<var name="description" value="Explore the Vega quadrant,\where there is little hostile activity. Enjoy the expansive nebulae or dense asterid clusters.\See if you can explore some unexplored space!\Treasures might lie out there!" />
+		<var name="description" value="Explore the Vega quadrant,\where there is little hostile activity.\Enjoy the expansive nebulae or\dense asterid clusters.\See if you can explore some unexplored space!\Treasures might lie out there!" />
 		<var name="savegame" value="explore_universe_few_enemies" />
 	</variables>
         <flightgroups>

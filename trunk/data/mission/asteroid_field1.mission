@@ -9,7 +9,7 @@
 		<var name="mission_name" value="Fly the asteroid field" />
 
 		<var name="system" value="sol_sector/sirius" />
-		<var name="description" value="4vs4.txt" />
+		<var name="description" value="Fly the asteroid field and try to survive!" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="neutral" type="firefly" ainame="default" waves="1" nr_ships="1">
