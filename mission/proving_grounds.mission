@@ -13,7 +13,7 @@
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="rlaan" type="f109vampire_nojump" ainame="default" waves="1" nr_ships="1">
-			<pos x="20400" y="-25400" z="24700.0"/>
+			<pos x="20400" y="-25400" z="2470000"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
@@ -21,7 +21,7 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
                 <flightgroup name="blue" faction="rlaan" type="skart" ainame="default" waves="1" nr_ships="3">
-			<pos x="15400" y="-25400" z="24700.0"/>
+			<pos x="15400" y="-25400" z="2470000"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
@@ -29,7 +29,7 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
             <flightgroup name="blue" faction="rlaan" type="starfish" ainame="default" waves="1" nr_ships="1">
-			<pos x="18400" y="-25400" z="24700.0"/>
+			<pos x="18400" y="-25400" z="2470000"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
