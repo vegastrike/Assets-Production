@@ -87,8 +87,10 @@ def SimulateBattles():
 			persystemattacklist = {}
 			simulateiter= attacklist.iteritems()
 	try:
+	#if (1):
 		ally = simulateiter.next()
 		try:
+		#if (1):
 			enemy = ally[1]
 			ally = ally[0]
 			if (not attackFlightgroup (ally[0],ally[1],enemy[0],enemy[1])):
@@ -122,7 +124,7 @@ def randomMovement(fg,fac):
 	import universe
 	import fg_util
 	sys=fg_util.FGSystem(fg,fac)
-	if (sys!='no_sector/no_system' and fg!=fg_util.BaseFGInSystemName(sys)):
+	if (sys!='nil' and fg!=fg_util.BaseFGInSystemName(sys)):
 		l = universe.getAdjacentSystemList(sys)
 		if (len(l)):
 			newsys = l[vsrandom.randrange(0,len(l))]
@@ -141,15 +143,17 @@ def LookForTrouble (faction):
 	i = Director.getSaveString(fg_util.ccp,key,lftiter)
 	lftiter+=1	
 	sys = fg_util.FGSystem (i,faction)
-	enfac = faction_ships.get_enemy_of(faction)
-	foundanyone=False
-	for j in fg_util.AllFGsInSystem(enfac,sys):
-		foundanyone=True
-		#FIXME include some sort of measure "can I win"
-		if (vsrandom.randrange(0,5)==0):
-			initiateAttack(i,faction,sys,j,enfac)
-	if (foundanyone==False and vsrandom.randrange(0,3)==0):
-		randomMovement (i,faction)
+	if (sys!='nil'):
+		enfac = faction_ships.get_enemy_of(faction)
+		foundanyone=False
+		l=fg_util.AllFGsInSystem(enfac,sys)
+		j=vsrandom.randrange(0,len(l)+3)
+		if (j<len(l)):
+			foundanyone=True #FIXME include some sort of measure "can I win"
+			if (vsrandom.randrange(0,5)==0):
+				initiateAttack(i,faction,sys,l[j],enfac)
+		elif (vsrandom.randrange(0,3)==0):
+			randomMovement (i,faction)
 	return True
 
 def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
@@ -181,8 +185,8 @@ def TargetEachOther (fgname,faction,enfgname,enfaction):
 		en.setFlightgroupLeader(en)
 		en.SetTarget(al)
 		en.setFgDirective ('h')#help me out here!
-def KillOne (fg,enfac,tn):
-	fg_util.RemoveShipFromFG(fg,enfac,tn[0],1)
+def KillOne (fg,enfac,tn,num):
+	return fg_util.RemoveShipFromFG(fg,enfac,tn[0],num,1)
 
 stattable={
 	"nova":(.7,.4,2,1),
@@ -256,10 +260,8 @@ def ApplyDamage (fg,fac,shiptypes,damage):
 	if (vsrandom.uniform(0,1)>=stats[1]):
 		dampool=fg_util.GetDamageInFGPool(fg,fac)
 		tmpdam=damage+int(dampool/len(shiptypes))
-		while(tmpdam>=stats[3]):
-			KillOne(fg,fac,shiptypes[rnum])
-			tmpdam-=stats[3]
-			dampool-=stats[3]
+		numshipstokill=int(tmpdam/stats[3])
+		damage -= KillOne(fg,fac,shiptypes[rnum],numshipstokill)*stats[3]#returns how many ships killed
 		dampool+=damage
 		
 
