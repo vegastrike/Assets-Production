@@ -19,6 +19,7 @@ class escort_mission (Director.Mission):
 	def __init__ (self,factionname, missiondifficulty, our_dist_from_jump, dist_from_jump, distance_from_base, creds, enemy_time, numsysaway,jumps=(),var_to_set=''):
 		Director.Mission.__init__(self);
 		self.you = VS.getPlayer();
+		self.gametime=VS.GetGameTime()
 		self.adjsys=go_to_adjacent_systems(self.you, numsysaway,jumps)
 		self.var_to_set = var_to_set;
 		print "e"
@@ -51,12 +52,15 @@ class escort_mission (Director.Mission):
 	def endbriefing(self):
 		print "ending briefing"        
 	def Execute (self):
-		self.escortee.setFgDirective('F')
+		if (VS.GetGameTime()-self.gametime>10):
+			self.escortee.setFgDirective('F')
 		if self.you.isNull():
 			VS.IOmessage (0,"escort",self.mplay,"#ff0000You were to protect your escort. Mission failed.")
 			VS.terminateMission(0)
 			return
 		self.escortee.setFlightgroupLeader(self.you)
+		#print 'name: '+self.escortee.getFlightgroupLeader().getName()
+		#self.escortee.SetVelocity(self.you.GetVelocity())
 		if (self.escortee.isNull()):
 			VS.IOmessage (0,"escort",self.mplay,"#ff0000You were to protect your escort. Mission failed.")
 			universe.punish(self.you,self.faction,self.difficulty)
