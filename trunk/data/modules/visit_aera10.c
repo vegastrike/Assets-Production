@@ -103,20 +103,27 @@ module visit_aera10 {
 
   void populateMarsSystem(){
     // the confed defenders
-    launch.launch_around_station("mars-station","purple","confed","destiny","_ai_stationary",4,2);
-    launch.launch_around_station("mars-station","pink","confed","nova","_ai_stationary",4,2);
+    bool purple_ok=launch.launch_around_station("mars-station","purple","confed","destiny","_ai_stationary",4,2);
+    bool pink_ok=launch.launch_around_station("mars-station","pink","confed","nova","_ai_stationary",4,2);
 
-    orderlist_purple=ai_orderlist.newOrderList();
-    ai_orderlist.orderAttack(orderlist_purple,5000.0);
-    order.orderList("purple",orderlist_purple);
+    if(purple_ok){
+      orderlist_purple=ai_orderlist.newOrderList();
+      ai_orderlist.orderAttack(orderlist_purple,5000.0);
+      order.orderList("purple",orderlist_purple);
+    }
 
-    orderlist_pink=ai_orderlist.newOrderList();
-    ai_orderlist.orderAttack(orderlist_pink,5000.0);
-    order.orderList("pink",orderlist_pink);
-
+    if(pink_ok){
+      orderlist_pink=ai_orderlist.newOrderList();
+      ai_orderlist.orderAttack(orderlist_pink,5000.0);
+      order.orderList("pink",orderlist_pink);
+    }
     // the pirate attackers
 
     jumppoint_nebula=unit.getUnitByFgID("jumppoint-nebula");
+    if(_std.isNull(jumppoint_nebula)){
+      _io.printf("nebula jumppoint not found\n");
+      return;
+    }
     jp_neb_pos=_unit.getPosition(jumppoint_nebula);
 
     launch.launch_waves_in_area("herring","pirates","mongoose","_ai_stationary",6,4,300.0,jp_neb_pos);

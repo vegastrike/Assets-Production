@@ -3,7 +3,7 @@ module unit {
 
   float lasttime;
 
-  object getNearestEnemy(object my_unit,float range){
+  object obsolete_getNearestEnemy(object my_unit,float range){
     int ship_nr=0;
     float min_dist=9999999.0;
     object min_enemy;
@@ -41,7 +41,7 @@ module unit {
     return min_enemy;
   };
 
-  object getThreatOrEnemyInRange(object unit,float range){
+  object obsolete_getThreatOrEnemyInRange(object unit,float range){
     //_io.printf("check1\n");
     object threat=_unit.getThreat(unit);
     //        return threat;
@@ -49,7 +49,7 @@ module unit {
     //_io.printf("check2\n");
     if(_std.isNull(threat)){
       //_io.printf("check3\n");
-      threat=getNearestEnemy(unit,range);
+      threat=obsolete_getNearestEnemy(unit,range);
       //_io.printf("check4\n");
       //threat=threat2;
       //_io.printf("check5\n");

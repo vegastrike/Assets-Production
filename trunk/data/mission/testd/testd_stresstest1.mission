@@ -1,0 +1,56 @@
+<mission>
+	<variables>
+		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="Pirate Attack on Mars Station" />
+		<var name="system" value="mission_sector/test_stresstest" />
+		<var name="description" value="still in development" />
+		<var name="author" value="Alexander Rawass" />
+	</variables>
+        <flightgroups>
+                <flightgroup name="blue" faction="neutral" type="firefly" ainame="default" waves="8" nr_ships="1">
+			<pos x="00.0" y="0.0" z="-2000.0"/>
+		</flightgroup>
+
+                <flightgroup name="pink" faction="confed" type="firefly" ainame="default" waves="8" nr_ships="4">
+			<pos x="3000.0" y="3000.0" z="0"/>
+		</flightgroup>
+
+                <flightgroup name="purple" faction="confed" type="nova" ainame="default" waves="8" nr_ships="4">
+			<pos offset="pink" x="00.0" y="0.0" z="-1000.0"/>
+		</flightgroup>
+
+                <flightgroup name="alpha" faction="aera" type="aeon" ainame="default" waves="8" nr_ships="4">
+			<pos offset="pink" x="00.0" y="0.0" z="1000.0"/>
+		</flightgroup>
+
+                <flightgroup name="beta" faction="aera" type="dagger" ainame="default" waves="8" nr_ships="4">
+			<pos offset="pink" x="1000.0" y="0.0" z="-1000.0"/>
+		</flightgroup>
+
+	</flightgroups>
+
+	<module name="director">
+
+		<import name="testd_stresstest1" />
+
+		<script name="initgame">
+			<exec name="initgame" module="testd_stresstest1" />
+		</script>
+
+		<script name="gameloop">
+			<exec name="gameloop" module="testd_stresstest1" />
+
+		</script>
+
+		<script name="endgame">
+			<exec name="endgame" module="testd_stresstest1" />
+
+		</script>
+
+		<script name="initstarsystem">
+			<exec name="initstarsystem" module="testd_stresstest1" />
+		</script>
+	</module>
+
+
+</mission>

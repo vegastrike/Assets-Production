@@ -30,14 +30,14 @@ module universe {
     object unit=_unit.getUnit(ship_nr);
 
     while((!_std.isNull(unit))){
-      object unit_fgid=_unit.getFgID(unit);
+      //      object unit_fgid=_unit.getFgID(unit);
       //_io.printf("matching %s with %s\n",unit_fgid,patrol_fgid);
       if(_unit.isJumppoint(unit)){
 	_olist.push_back(jp_list,unit);
       }
       ship_nr=ship_nr+1;
       unit=_unit.getUnit(ship_nr);
-      _string.delete(unit_fgid);
+      //_string.delete(unit_fgid);
     }
 
     return jp_list;

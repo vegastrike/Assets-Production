@@ -46,8 +46,14 @@ module vec3 {
 
   object random_around_player(float r1,float r2){
     object player_unit=_unit.getPlayer();
-    object ppos=_unit.getPosition(player_unit);
-
+    object ppos;
+    if(_std.isNull(player_unit)){
+      _io.printf("vec3.c:random_around_player Player is NULL\n");
+      ppos=new(0.0,0.0,0.0); // we should give something back?
+    }
+    else{
+      ppos=_unit.getPosition(player_unit);
+    }
     object ret=random_around_area(ppos,r1,r2);
 
     _olist.delete(ppos);
@@ -56,6 +62,11 @@ module vec3 {
 
   object ahead_of_player(float r1,float r2){
     object player_unit=_unit.getPlayer();
+
+    if(_std.isNull(player_unit)){
+      _io.printf("vec3.c:ahead_of_player Player is NULL\n");
+      return new(0.0,0.0,0.0);
+    }
     object ppos=_unit.getPosition(player_unit);
 
     object vel=_unit.getVelocity(player_unit);

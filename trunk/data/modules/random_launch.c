@@ -113,6 +113,11 @@ module random_launch {
 
     if(nowtime>(lasttime+resolution)){
       //_io.printf("checking at %f\n",nowtime);
+      player_unit=_unit.getPlayer();
+      if(_std.isNull(player_unit)){
+	// so we avoid problems later on
+	return;
+      }
       checkLaunch();
       lasttime=nowtime;
 
@@ -151,7 +156,7 @@ module random_launch {
     float max_range=_omap.get(submap,"max_range");
 
     int nr_trucks=random.randomint(min_nr_trucks,max_nr_trucks);
-    player_unit=_unit.getPlayer();
+    player_unit=_unit.getPlayer(); //player_unit can't get NULL - that's catched before
     object pos=_unit.getPosition(player_unit);
 
     //object type="truck_small";
