@@ -40,7 +40,6 @@ module explore_rare_enemies {
     object typename=faction_ships.getRandomShipType(ship_list);
 
 
-
     object player=_unit.getPlayer();
     object player_pos=_unit.getPosition(player);
 
@@ -52,7 +51,7 @@ module explore_rare_enemies {
 
     if((time-lasttime)>waittime){
       launch_new_ships();
-
+      waittime=random.random(10.0,35000.0);
       lasttime=time;
     }
 
