@@ -131,6 +131,7 @@ class cargo_mission (Director.Mission):
 ##	    return
 	  if (self.you.isNull() or (self.arrived and self.base.isNull())):
 	    VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000You were unable to deliver cargo. Mission failed.")
+	    self.SetVar(-1)
 	    VS.terminateMission(0)
 	    return
 	  if (not self.adjsys.Execute()):
