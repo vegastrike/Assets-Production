@@ -187,6 +187,7 @@ def NumShipsInFG (fgname,faction):
 			return int(Director.getSaveString(ccp,key,0))
 		except:
 			print 'fatal: flightgroup without size'
+			return 0
 def DeleteFG(fgname,faction):
 	key = MakeFGKey (fgname,faction)
 	len = Director.getSaveStringLength (ccp,key)
