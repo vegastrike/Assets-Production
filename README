@@ -12,6 +12,8 @@ And if you can design some missions it would rock!
  Contents
 =================================================
 *--ADD STUFF HERE--*
+) Contents
+) The Update Utility
 ) Saving and Loading
 ) Running Vegastrike In Windows
 ) Running Vegastrike From the Command Line
@@ -38,20 +40,36 @@ The "Get Recent Update" program will allow you to get the most recent data for v
 It will first ask you whether you wish to update the update list.  This will allow you to get the most recent working code if you click "Update".
 After choosing that option, you will be presented with a checkbox and a number of buttons.
 The check box labeled "Restore Factory Defaults" will allow you to revert all of your modified files to the "factory defaults".
-The next button says "Update to recent experimental data" and will update to the most recent code.  When using this button, you may get better code, but it will be experimental.
-The rest of the buttons will update to previous (or more recent, if you updated your update list) releases.
+The next button says "Update to recent experimental data" and will update to the most recent developmental data.  When using this button, you may get a better game, but it will be experimental.
+The rest of the buttons will update to previous or more recent releases.
 
 =================================================
  Saving and Loading
 =================================================
-Y
+There should be a program named "Launcher" in the vegastrike directory.  This will give you a list of choices:
+
+Select mission button - This allows you to select which mission vegastrike will start the next time you press one of the keys below it.  Most missions do not involve save games and will ignore those options, however the default, in the mission/exploration folder will indeed ustilize the save games you specify.  If you ignore this option you begin in the standard trading/bounty hunting mission.
+
+Start a new game button - Start a new game in the Vegastrike universe.  You start with a dinged up old wayfarer and head from the vega sector with the hope of finding profit and adventure on the frontier.  To begin afresh you must choose a new saved game.
+
+Load game button - This opens up a saved game you had finished playing before.  To save you must dock at the base and click on the save/load button and choose the save option.
+
+Recover autosave button - This button allows a player to recover their most recently played game into the selected save game upon next run.  If the player quits or the player docks, and then dies, it will restore to the last saved position.
+
+Launch last savegame button - Use this button to launch Vegastrike with from a saved game or mission.  If you do not choose a mission, you will start in the standard trading/bounty hunting mission.
+
+Launch no savegame button - This button allows you to launch the selected mission without using a saved game.
+
+Help button - This will print tis on a help window.
+
+Exit launcher button - exits the launcher.
 
 =================================================
  Running Vegastrike In Windows
 =================================================
 You can run the "Mission Launcher" program and select the correct mission.
-Or, if you wish to play the default privateer mission, you may use the Saved Game Selector utility.
-You can also use this
+Or, if you wish to play the default privateer mission, you may use the Launcher utility.
+You can also use this for any other mission that uses a saved game (like the 2-player privateer mission.)
 
 =================================================
  Running Vegastrike From the Command Line
@@ -137,7 +155,7 @@ Like with Transfer command, the AI will attack your previously targetted object.
 =================================================
  Single-Player Controls
 =================================================
-
+esc          Quit
 Arrow keys   Flight Sim style turning (you can also use the keypad arrows)
 \            full throttle
 backspace    zero throttle
@@ -150,11 +168,12 @@ tab          Afterburners
 j            engage interstellar warp drive (use at clear blue balls)
 *,ins        Spin Right
 /,del        Spin Left
-Shift-~      shelton slide while holding key
+~            shelton slide while holding key
 y            match speed
 t            target
 p            target nearest to center of screen
-n            target enemy targetting you
+h            target enemy targetting you
+n            target nearest target
 Shift-T      reverse cycle through targets
 m            change active missile
 g            change active gun
@@ -163,10 +182,10 @@ w            switch left targetting cpu
 c            cloak
 Shift-W      shift weapons computer mode to damage mode
 Shift-S      next music track
-F1           toggle cockpit/background display
-F2           left
-F3           right
-F4           back
+F1           toggle cockpit
+F2           left cockpit
+F3           right cockpit
+F4           back cockpit
 F5           Chasecam
 F6           Panning Cam (s,a,w,z pan)
 F7           Target Cam
@@ -182,18 +201,8 @@ a,d,w,z      pan ghost cam
 Shift-A      autopilot to the target
 Shift-P      target enemies for your turret
 Shift-N      Turret Nearest Target
-h            Turrets target threats
-`            SheltonKey
--            DecelKey
-+            AccelKey 
-=            AccelKey
-/            RollLeftKey
-*            RollRightKey
-backspace    StopKey
-\            StartKey
-tab          ABKey 
-!            SuicideKey
-|,pause      PauseKey
+Shift-!      Suicide
+Shift-|      Pause
 page down    Scroll VDUs down
 page up      Scroll VDUs up
 home         Set Velocity Frame of Refrence
@@ -203,6 +212,7 @@ Shift-B      Tell wingmen to stop forming up
 Shift-H      Tell wingmen to help you out
 Shift-D      Tell wingmen to attack targetted starship
 1-9          Communicate to your allies
+0            Request clearence to land
 Shift-E      Eject
 Shift-Z      Eject cargo
 
@@ -210,174 +220,101 @@ Shift-Z      Eject cargo
  Multiplayer Controls
 =================================================
 --------------------
-Player 1
+Both Players
 --------------------
-S            Cockpit::SkipMusicTrack
-F            CommFormUp
-B            CommBreakForm
-H            CommHelpMeOut
-D            CommAttackTarget
-1            Comm1Key
-2            Comm3Key
-3            Comm7Key
-4            DockKey
-5            RequestClearenceKey
-6 player="1" Comm2Key
-7 player="1" Comm4Key
-8 player="1" Comm8Key
-0            RequestClearenceKey
-i,j,k,l      Flight Sim style turning (you can also use the keypad arrows)
-space        FireKey
-y            MatchSpeedKey
-J            JumpKey
-A            AutoKey
-c            CloakKey
-E            EjectKey
-Z            EjectCargoKey
-return       MissileKey
-g            WeapSelKey
-;            Respawn
-[            SwitchControl
-]            TurretControl
-. player="1" Respawn
-{ player="1" SwitchControl
-} player="1" TurretControl
-m            MisSelKey
-t            TargetKey
-p            PickTargetKey
-n            NearestTargetKey
-h            ThreatTargetKey
-T            ReverseTargetKey
-P            TurretTargetKey
-o            TurretAIKey
-N            TurretNearestTargetKey
-H            TurretThreatTargetKey
-`            SheltonKey
--            DecelKey
-+            AccelKey
-=            AccelKey
-/            RollLeftKey
-*            RollRightKey
-backspace    StopKey
-\            StartKey
-tab          ABKey
-!            SuicideKey
-@ player="1" SuicideKey
-keypad-numlock" modifier="none" player="1" command="StopKey
-keypad-0" modifier="none" player="1" command="ABKey
-keypad-enter" modifier="none" player="1" command="MissileKey
-cursor-insert" modifier="none" player="1" command="FireKey
-cursor-delete" modifier="none" player="1" command="SheltonKey
-cursor-home" modifier="none" player="1" command="WeapSelKey
-cursor-end" modifier="none" player="1" command="MisSelKey
-cursor-pageup" modifier="none" player="1" command="JumpKey
-cursor-pagedown" modifier="none" player="1" command="CloakKey
-keypad-9" modifier="none" player="1" command="AutoKey
-keypad-3" modifier="none" player="1" command="TurretAIKey
-keypad-7" modifier="none" player="1" command="SetVelocityRefKey
-keypad-1" modifier="none" player="1" command="SetVelocityNullKey
-keypad-delete" modifier="none" player="1" command="NearestTargetKey
-keypad-minus" modifier="none" player="1" command="DecelKey
-keypad-plus" modifier="none" player="1" command="AccelKey
-keypad-divide" modifier="none" player="1" command="TargetKey
-keypad-multiply" modifier="none" player="1" command="PickTargetKey
-keypad-8" modifier="none" player="1" command="UpKey
-keypad-2" modifier="none" player="1" command="DownKey
-keypad-5" modifier="none" player="1" command="DownKey
-keypad-4" modifier="none" player="1" command="RightKey
-keypad-6" modifier="none" player="1" command="LeftKey
-cursor-up" modifier="none" player="1" command="Cockpit::Inside
-cursor-down" modifier="none" player="1" command="Cockpit::Behind
-cursor-left" modifier="none" player="1" command="Cockpit::SwitchLVDU
-cursor-right" modifier="none" player="1" command="Cockpit::SwitchRVDU
-function-1" Cockpit::Inside
-function-2" Cockpit::InsideLeft
-function-3" Cockpit::InsideRight
-function-4" Cockpit::InsideBack
-function-5" Cockpit::Behind
-function-6" Cockpit::Pan
-function-7" Cockpit::OutsideTarget
-function-8" Cockpit::PanTarget
-function-9" TimeInc
-function-10" TimeReset
-function-11" Cockpit::ZoomIn
-function-12" Cockpit::ZoomOut
-|" PauseKey
-w" Cockpit::SwitchLVDU
-v" Cockpit::SwitchRVDU
-q" SetVelocityRefKey
-z" SetVelocityNullKey
-esc" Cockpit::Quit
---------------------
-Player 2
---------------------
-Arrow keys   Flight Sim style turning (you can also use the keypad arrows)
-\            full throttle
-backspace    zero throttle
-=,+          accel
--            decel
-enter        fire missile
-space        Fire Guns
-backspace    stop
-tab          Afterburners
-j            engage interstellar warp drive (use at clear blue balls)
-*,ins        Spin Right
-/,del        Spin Left
-Shift-~      shelton slide while holding key
-y            match speed
-t            target
-p            target nearest to center of screen
-n            target enemy targetting you
-Shift-T      reverse cycle through targets
-m            change active missile
-g            change active gun
-v            switch targetting computer mode to navigation mode and then view mode
-w            switch left targetting cpu
-c            cloak
-Shift-W      shift weapons computer mode to damage mode
-Shift-S      next music track
-F1           toggle cockpit/background display
-F2           left
-F3           right
-F4           back
-F5           Chasecam
-F6           Panning Cam (s,a,w,z pan)
-F7           Target Cam
-F8           Strange Cam
 F9           Increase Time Compression
 F10          Reset Time Compression
 F11          Zoom in
 F12          Zoom out
-a,d,w,z      pan ghost cam
-;            respawn -- use after death to recreate your starship
-[            switch ships in battle (use to control allies)
-]            switch to a turret onto your ship
-Shift-A      autopilot to the target
-Shift-P      target enemies for your turret
-Shift-N      Turret Nearest Target
-h            Turrets target threats
-`            SheltonKey
--            DecelKey
-+            AccelKey 
-=            AccelKey
-/            RollLeftKey
-*            RollRightKey
-backspace    StopKey
-\            StartKey
-tab          ABKey 
-!            SuicideKey
-|,pause      PauseKey
-page down    Scroll VDUs down
-page up      Scroll VDUs up
-home         Set Velocity Frame of Refrence
-end          Reset Velocity Frame of Refrence
+Shift-|      Pause
+esc          Quit
+--------------------
+Player 1
+--------------------
+Shift-S      next music track
+F1           toggle cockpit
+F2           left cockpit
+F3           right cockpit
+F4           back cockpit
+F5           Chasecam
+F6           Angle Cam
+F7           Target Cam
+F8           Strange Cam
+v            switch targetting computer mode to navigation mode and then view mode
+w            switch left targetting cpu
+q            Set Velocity Frame of Refrence
+z            Reset Velocity Frame of Refrence
 Shift-F      Tell wingmen to form up
 Shift-B      Tell wingmen to stop forming up
 Shift-H      Tell wingmen to help you out
 Shift-D      Tell wingmen to attack targetted starship
-1-9          Communicate to your allies
+1            Say somthing nice to your target
+2            Say neutral things to your target
+3            Taunt the enemy
+4            Dock/Undock
+5            Request clearence to land
+i,j,k,l      Flight Sim style turning
+space        Fire Guns
+y            Match Speed
+Shift-J      engage interstellar warp drive (use at clear blue balls)
+Shift-A      autopilot to the target
+Shift-c      cloak
 Shift-E      Eject
-Shift-Z      Eject cargo
+Shift-Z      Eject Cargo
+return       fire missile
+g            change active gun
+;            respawn -- use after death to recreate your starship
+[            switch ships in battle (use to control allies)
+]            switch to a turret onto your ship
+m            change active missile
+t            target
+p            target nearest to center of screen
+n            target nearest target
+h            target enemy targetting you
+Shift-T      reverse cycle through targets
+Shift-P      target enemies for your turret
+Shift-N      Turret Nearest Target
+Shift-H      Tell wingmen to help you out
+~            shelton slide while holding key
+=,+          accel
+-            decel
+backspace    zero throttle
+\            full throttle
+tab          Afterburners
+Shift-!      Suicide
+--------------------
+Player 2
+--------------------
+Keypad Arrow Flight Sim style turning
+6            Say somthing nice to your target
+7            Say neutral things to your target
+8            Taunt the enemy
+9            Dock/Undock
+0            Request clearence to land
+Shift-@      SuicideKey
+. (period)   respawn -- use after death to recreate your starship
+Num lock     zero throttle
+Keypad 0     Afterburners
+Keypad enter fire missile
+insert       Fire Guns
+delete       shelton slide while holding key
+home         change active gun
+end          change active missile
+pageup       engage interstellar warp drive (use at clear blue balls)
+pagedown     cloak
+Keypad 9     autopilot to the target
+Keypad 3     target enemies for your turret
+Keypad 7     Set Velocity Frame of Refrence
+Keypad 1     Reset Velocity Frame of Refrence
+Keypad del   target nearest target
+Keypad -     Decel
+Keypad +     Accel
+Keypad /     target
+Keypad *     target nearest to center of screen
+up arrow     toggle cockpit
+down arrow   Chasecam
+left arrow   switch left targetting cpu
+right arrow  switch targetting computer mode to navigation mode and then view mode
 
 =================================================
  Features
