@@ -766,6 +766,12 @@
 			<Cargo file="mission/bounty/rlaan/bounty_outsystem_group.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/bounty/rlaan/bounty_outsystem_wing.mission" mass=".0000001" quantity="1"/>
 			<Cargo file="mission/bounty/rlaan/bounty_insystem_wing.mission" mass=".0000001" quantity="1"/>
+
+			<Cargo file="mission/contraband/contraband.mission" mass=".0000001" quantity="1"/>
+			<Cargo file="mission/contraband/contraband_small_scan.mission" mass=".0000001" quantity="1"/>
+			<Cargo file="mission/contraband/contraband_medium_scan.mission" mass=".0000001" quantity="1"/>
+			<Cargo file="mission/contraband/contraband_large_scan.mission" mass=".0000001" quantity="1"/>
+
 		</Category>
 		<Category file="missions/Attack_Pirate">
 			<Cargo file="mission/defend/pirates/defend_small_attack.mission" mass=".0000001" quantity="1"/>
