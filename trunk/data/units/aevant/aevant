@@ -32,7 +32,17 @@
 <Light file="supernova.bmp" x="-0.000000" y="0.000000" z="-9.200000" size="2.064038"/>
 <Mount weapon="LaserBeam" size="Light" x="1.871961" y="0.374392" z="12.062358" />
 <Mount weapon="LaserBeam" size="Light" x="-1.885182" y="0.377037" z="12.112597"/>
-<Mount weapon="Swarm" size="Special-Missile" x="1.871961" y="0.374392" z="12.062358" ammo="60"/>
-<Mount weapon="Swarm" size="Special-Missile" x="-1.885182" y="0.377037" z="12.112597" ammo="60"/>
+<Mount weapon="Swarm" size="Special-Missile" x="1.871961" y="0.374392" z="12.062358" ammo="40"/>
+<Mount weapon="Swarm" size="Special-Missile" x="-1.885182" y="0.377037" z="12.112597" ammo="40"/>
+
+<Mount weapon="Torpedo" size="Light-missile medium-missile heavy-missile" x="6.045031" y="-3.217878" z="0.973509" ammo="2"/>
+<Mount weapon="Torpedo" size="Light-missile medium-missile heavy-missile" x="-6.022359" y="-3.201684" z="0.913285" ammo="2"/>
+<Mount weapon="HeatSeeker" size="light-missile" x="6.082913" y="-.368988" z="0.747223" ammo="2"/>
+<Mount weapon="HeatSeeker" size="light-missile" x="-6.157103" y="-.379586" z="1.100964" ammo="2"/>
+
+<Mount weapon="ImageRecognition" size="medium-missile" x="5.082913" y=".368988" z="0.747223" ammo="2"/>
+<Mount weapon="ImageRecognition" size="medium-missile" x="-5.157103" y=".379586" z="1.100964" ammo="2"/>
+
+
 
 </Unit>
