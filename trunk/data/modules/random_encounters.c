@@ -9,10 +9,12 @@ module random_encounters {
   int min_num_ships;//the number of ships that have to be there or else more will be made
   int gen_num_ships;//the num ships to be made
   float capship_prob;//probability a capship will be there
+  float fighterprob;
   int curmode;//are we in battle mode (true) or cruise mode (false)
   int lastmode;//were we in battle mode (true) or cruise mode(false)
   object sig_container;
-  void init(float sigdis, float detectiondis, float gendis, int minnships, int gennships, float capprob){
+  void init(float sigdis, float detectiondis, float gendis, int minnships, int gennships, float unitprob, float capprob){
+    fighterprob = unitprob;
     _std.setNull(sig_container);
     faction_ships.init();
     detection_distance = detectiondis;
@@ -142,12 +144,14 @@ module random_encounters {
     if (curmode!=lastmode) {
       _io.printf ("curmodechange %d %d",curmode,lastmode);
       lastmode=curmode;//processed this event; don't process again if in critical zone
-      if (!_std.isNull(un)) {
-	if (!atLeastNInsignificantUnitsNear (un,min_num_ships)) {
-	  //determine whether to launch more ships next to significant thing based on ships in that range  
-      	  _io.printf ("launch near");
-	  launch_near (un);
-	} 
+      if (_std.Rnd()<fighterprob) {
+	if (!_std.isNull(un)) {
+	  if (!atLeastNInsignificantUnitsNear (un,min_num_ships)) {
+	    //determine whether to launch more ships next to significant thing based on ships in that range  
+	    _io.printf ("launch near");
+	    launch_near (un);
+	  } 
+	}
       }
     }
   };
