@@ -8,11 +8,14 @@ import Briefing
 import universe
 import unit
 import Director
+import quest
 class defend (Director.Mission):
-    def __init__ (self,factionname,numsystemsaway, enemyquantity, distance_from_base, escape_distance, creds, defendthis, defend_base):
+    def __init__ (self,factionname,numsystemsaway, enemyquantity, distance_from_base, escape_distance, creds, defendthis, defend_base,protectivefactionname='',var_to_set=''):
           Director.Mission.__init__(self)
           self.dedicatedattack=vsrandom.randrange(0,2)
           self.arrived=0
+          self.protectivefaction = protectivefactionname
+          self.var_to_set=var_to_set
           self.quantity=0
           self.mplay="all"
 	  self.defendbase = defend_base	  
@@ -39,13 +42,18 @@ class defend (Director.Mission):
 	  VS.IOmessage (0,"defend",self.mplay,"Good Day, %s. Your mission is as follows:" % name)
           self.adjsys.Print("You are in the %s system,","Proceed swiftly to %s.","Your arrival point is %s.","defend",1)
 	  VS.IOmessage (2,"defend",self.mplay,"And there eliminate any %s starships at a point."  % self.faction)
+    def SetVarValue (self,value):
+        if (self.var_to_set!=''):
+            quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,value)
     def SuccessMission (self):
         self.you.addCredits (self.cred)
+        self.SetVarValue(1)
         VS.IOmessage(0,"defend",self.mplay,"Excellent work pilot! Your effort has thwarted the foe!")
         VS.IOmessage(0,"defend",self.mplay,"You have been rewarded for your effort as agreed.")
         VS.terminateMission(1)
     def FailMission (self):
         self.you.addCredits (-self.cred)
+        self.SetVarValue(-1)
         VS.IOmessage (0,"defend",self.mplay,"You Allowed the base you were to protect to be destroyed.")
         VS.IOmessage (0,"defend",self.mplay,"You are a failure to your race!")
         VS.IOmessage (1,"defend",self.mplay,"We have contacted your bank and informed them of your failure to deliver on credit. They have removed a number of your credits for this inconvenience. Let this serve as a lesson.")
@@ -89,15 +97,18 @@ class defend (Director.Mission):
     def Execute (self):
         if (self.you.isNull() or (self.arrived and self.defendee.isNull())):
             VS.IOmessage (0,"defend",self.mplay,"#ff0000You were unable to arrive in time to help. Mission failed.")
+            self.SetVarValue(-1)
             VS.terminateMission(0)
             return   
         if (not self.adjsys.Execute()):
             return
         if (not self.arrived):
             self.arrived=1
-            tempfaction=""
+            tempfaction=''
             if (self.defend_base):
-                tempfaction = faction_ships.get_enemy_of(self.faction)
+                tempfaction=self.protectivefaction
+                if (tempfaction==''):
+                    tempfaction = faction_ships.get_enemy_of(self.faction)
             self.adjsys=go_somewhere_significant (self.you,self.defend,self.distance_from_base,self.defend,tempfaction)
             self.adjsys.Print ("You must visit the %s","defend","docked around the %s", 0)
             self.defendee=self.adjsys.SignificantUnit()
@@ -132,6 +143,6 @@ class defend (Director.Mission):
     def endbriefing(self):
         print "ending briefing"        
 		
-def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base):
+def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base,p_faction='',var_to_set=''):
     enq=vsrandom.randrange(minenquant,maxenquant)
-    return defend(factionname,numsysaway,enq,8000.0,100000.0,enq*credperen,defendit,defend_base)
+    return defend(factionname,numsysaway,enq,8000.0,100000.0,enq*credperen,defendit,defend_base,p_faction,var_to_set)
