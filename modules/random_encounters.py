@@ -44,9 +44,9 @@ def init(sigdis, detectiondis, gendis,  minnships, gennships, unitprob, enemypro
   playerdata = ()
   while (px):
     print ("init")
-    playerdata=playerdata+(cur)
-    cur=cur+(0,0,0,"",VS.Unit(),sigdis,detectiondis)
+    cur=(0,0,0,"",VS.Unit(),sigdis,detectiondis)
     player_num=player_num+1
+    playerdata=playerdata+(cur)
     px = _unit.getPlayerX(player_num)
   
 
