@@ -1,4 +1,4 @@
-<Mesh texture="saturn-ring.bmp" alphamap="saturn-ring.alp" scale="4411" blend="SRCALPHA INVSRCALPHA">
+<Mesh texture="saturn-ring.png" alphamap="true" scale="4411" blend="SRCALPHA INVSRCALPHA">
 <Points>
 	<Point>
 		<Location x="3.729561" y="0.010164" z="3.729561"/>
@@ -1796,7 +1796,7 @@
 	</Quad>
 
 </Polygons>
- <material reflect="0">
+ <material reflect="1">
  <specular red="0" green="0" blue="0" alpha="0"/>
  <ambient red="1" green="1" blue="1" alpha="1"/>
  <diffuse red="1" green="1" blue="1" alpha="1"/>
