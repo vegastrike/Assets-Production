@@ -7508,4 +7508,28 @@
 	<Ref point="693" weight="3.299998" />
 
 </Logo>
+<Logo type="1" rotate="3.149997" size="35.110115" offset="0.010000">
+	<Ref point="545" weight="1.000000" />
+	<Ref point="546" weight="1.000000" />
+	<Ref point="547" weight="1.000000" />
+	<Ref point="548" weight="1.000000" />
+</Logo>
+<Logo type="1" rotate="4.770014" size="36.319912" offset="0.010000">
+	<Ref point="623" weight="1.000000" />
+	<Ref point="624" weight="1.000000" />
+	<Ref point="622" weight="1.000000" />
+	<Ref point="625" weight="1.000000" />
+</Logo>
+<Logo type="0" rotate="0.000000" size="35.370071" offset="0.010000">
+	<Ref point="629" weight="1.000000" />
+	<Ref point="627" weight="1.000000" />
+	<Ref point="628" weight="1.000000" />
+	<Ref point="626" weight="1.000000" />
+</Logo>
+<Logo type="0" rotate="0.000000" size="38.349571" offset="0.010000">
+	<Ref point="551" weight="1.000000" />
+	<Ref point="552" weight="1.000000" />
+	<Ref point="549" weight="1.000000" />
+	<Ref point="550" weight="1.000000" />
+</Logo>
 </Mesh>

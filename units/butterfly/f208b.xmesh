@@ -6883,4 +6883,30 @@
     <Vertex point="6" s="0" t="0"/>
 </Tri>
 </Polygons>
+<Logo type="0" rotate="1.619999" size="4.560009" offset="0.010000">
+	<Ref point="871" weight="2.169999" />
+	<Ref point="856" weight="1.000000" />
+	<Ref point="872" weight="2.589998" />
+</Logo>
+<Logo type="0" rotate="-1.569999" size="3.959997" offset="0.010000">
+	<Ref point="897" weight="1.789999" />
+	<Ref point="898" weight="1.000000" />
+	<Ref point="899" weight="2.049999" />
+</Logo>
+<Logo type="1" rotate="1.609999" size="4.140000" offset="0.010000">
+	<Ref point="903" weight="1.569999" />
+	<Ref point="888" weight="1.000000" />
+	<Ref point="904" weight="1.749999" />
+</Logo>
+<Logo type="0" rotate="0.000000" size="0.500000" offset="0.010000">
+	<Ref point="855" weight="1.000000" />
+	<Ref point="856" weight="1.000000" />
+	<Ref point="857" weight="1.000000" />
+</Logo>
+<Logo type="1" rotate="-1.719999" size="3.549997" offset="0.010000">
+	<Ref point="865" weight="2.529999" />
+	<Ref point="866" weight="1.579999" />
+	<Ref point="867" weight="2.739998" />
+</Logo>
+
 </Mesh>
