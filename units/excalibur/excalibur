@@ -1,0 +1,32 @@
+<Unit>
+<Meshfile file="Excalibur1.xmesh"/>
+<Meshfile file="Excalibur2.xmesh"/>
+<Meshfile file="Excalibur.xmesh"/>
+<Light file="supernova.bmp" x="0.2500000" y="0.00000" z="-2.0500000" size="0.400000"/>
+	<Light file="supernova.bmp" x="-0.2500000" y="0.00000" z="-2.050000" size="0.4000000"/>
+	<Mount weapon="Reaper" size="Light" x="0.100000" y="-0.600000" z="6.000000"/>
+	<Mount weapon="Reaper" size="Light" x="-0.100000" y="-0.600000" z="6.000000"/>
+	<Mount weapon="Tachyon" size="Light" x="1.200000" y="-0.300000" z="6.000000"/>
+	<Mount weapon="Tachyon" size="Light" x="-1.200000" y="-0.300000" z="6.000000"/>
+	<Mount weapon="Tachyon" size="Light" x="1.200000" y="0.300000" z="6.000000"/>
+	<Mount weapon="Tachyon" size="Light" x="-1.200000" y="0.300000" z="6.000000"/>
+	<Mount weapon="Dumbfire" size="Light-Missile" x="1.200000" y="-1.200000" z="-5.000000"/>
+	<Mount weapon="Dumbfire" size="Light-Missile" x="-1.200000" y="-1.200000" z="-5.000000"/>
+	<Mount weapon="HeatSeeker" size="Medium-Missile" x="4.600000" y="-5.000000" z="-6.500000"/>
+	<Mount weapon="HeatSeeker" size="Medium-Missile" x="-4.600000" y="-5.000000" z="-6.500000"/>
+	<Thrust>
+		<Engine Afterburner="1650.000" Forward="500.000000" Retro="500.000000" Left="192.000000" Right="192.000000" Top="192.000000" Bottom="192.000000"/>
+		<Maneuver yaw="1455.000000" pitch="1455.000000" roll="1455.000000"/>
+	</Thrust>
+	<Defense>
+		<Armor front="47" right="47" left="40" back="40"/>
+		<Shields front="60" back="60" recharge="7.833333"/>
+		<Hull strength="20"/>
+		<Cloak cloakmin=".25" cloakrate=".2" cloakenergy="64"/>
+	</Defense>
+	<Stats mass="2" momentofinertia="2" fuel="20000"></Stats>
+	<Computer yaw="320.000000" pitch="330.000000" roll="330.000000" afterburner="165.0" maxspeed="82.5000"/>
+	<Energy>
+		<Reactor recharge="80" limit="1000"/>
+	</Energy>
+</Unit>
