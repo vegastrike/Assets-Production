@@ -71,7 +71,15 @@
 			<Cargo file="shield_2_Level3" price="40000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_2_Level4" price="90000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="shield_2_Level5" price="140000" quantity="1" mass=".01" volume="1"/>
-
+			<Cargo file="radar_windows_95" price="5000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="radar_windows_98" price="10000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="radar_windows_2k" price="20000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="radar_linux_redhat" price="20000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="radar_linux_debian" price="40000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="radar_linux_SuSe" price="80000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="radar_bsdi" price="120000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="radar_open_bsd" price="140000" quantity="1" mass=".01" volume="1"/>
+			<Cargo file="radar_free_bsd" price="160000" quantity="1" mass=".01" volume="1"/>
 			<Cargo file="small_turret" price="10000" quantity="1" mass=".1" volume="1"/>
 			<Cargo file="cloaking_device" price="259000" quantity="1" mass="8.9" volume="1"/>
 		</Category>
