@@ -1,4 +1,4 @@
-<Cockpit front="hornet-cockpit.spr" ViewOffset=".2857" CockpitOffset=".45">
+<Cockpit front="hornet-cockpit.spr" red="0" green="1" blue="0" ViewOffset=".2857" CockpitOffset=".45">
 	<Crosshairs file="crosshairs.spr" height=".55"/>
 	<Radar file="" xcent="0" ycent="-.465" width=".23" height=".33"/>
 	<ShieldF file="shieldf.spr" xcent="-.277" ycent="-.417" width=".197" height=".044"/>
