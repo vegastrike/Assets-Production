@@ -21,10 +21,9 @@ def GenerateFgShips (maxshipinfg,factionnr):
 
 def GenerateAllShips (numflightgroups,maxshipinfg):
 	for fnr in range(faction_ships.getMaxFactions()-1):
-		fgnames.append([])
 		fglists.append([])
+		fgnames.append(fg_util.GetRandomFGNames(numflightgroups))
 		for i in range(numflightgroups):
-			fgnames[-1].append(???.GetRandomFlightgroupName(fglists[-1])) #TODO: make a function in module ??? that attempts to get a faction name that is not in the inputted list (only if possible; if it isn't possible then make a random name anyway.
 			fglists[-1].append(GenerateFgShips(vsrandom.randrange(maxshipinfg)+1,fnr))
 
 def AddSysDict (cursys):
@@ -41,50 +40,62 @@ def AddSysDict (cursys):
 		typenumbertuple=fglists[factionnr].pop(-1) #pop returns item inside array
 		fgname=fgnames[factionnr].pop(-1) #pop returns item inside array
 		if not len(fgnames):
-			fgnames=origfgnames
-			fglists=origfglists#reset fgnames and lists if run out (there will be two identical flightgroups then but most likely on the opposite side of the universe so the user hopefully won't notice.
+			fgnames=fg_util.TweakFGNames(origfgnames)
+			fglists=origfglists
 		???.AddShipsToFG (fgname,faction,typenumbertuple,cursys) #TODO: generate a class of type dynamicuniverse OR make all of these functions members of that class.
 	return i
 
-def FilterAddList(todo):
-	newtodo=universe.getAdjacentSystemList()
-	cur=0
-	while cur<len(newtodo):
-		if (newtodo[cur] in todo) or systemdict.has_key(newtodo[cur]):
-			newtodo.pop(cur)
-		else:
-			cur+=1
-	return newtodo
-
-def Makesys ():
+def Makesys (startingsys):
 	global systemdict
 	global origfgnames
 	origfgnames=fgnames
 	origfglists=fglists
-	if True: #don't want to get mixed up with cursys; will go out of scope
-		cursys=VS.getSystemFile()
-		systemdict[cursys]=AddSysDict(cursys)
-	todo=getAdjacentSystemList()
+	systemdict[startingsys]=AddSysDict(cursys)
+	todo=getAdjacentSystemList(startingsys)
 	while len(todo):
 		tmptodo=todo.pop(-1)
-		VS.pushSystem(tmptodo) #WARNING: DO NOT WANT TO LOAD ACTUAL SYSTEM (SIMPLE REASON: COULD TAKE HOURS OF TIME IF NOT DAYS)... IS THERE A FIX FOR THIS?
-		todo+=FilterAddList(todo)
-		systemdict[tmptodo]=AddSysDict(tmptodo)
-		VS.popSystem()
+		if (not systemdict.has_key(tmptodo)):
+			todo+=universe.getAdjacentSystemList(tmptodo)
+			systemdict[tmptodo]=AddSysDict(tmptodo)
 	return len(systemdict)
+
+def generateNewUniverseP ():
 
 genUniverse=-1
 if cp>=0:
 	genUniverse=Director.getSaveDataLength(cp,"FactionRefList")
-	if (genuniverse>0):
-		genUniverse=Director.getSaveData(cp,"FactionRefList",0)
-	else:
+	if (genuniverse==0):
+		Director.putSaveData (cp,"FactionRefList",0,1)
 		GenerateAllShips (5000,5) ###Insert number of flight groups and max ships per fg
 		systemdict={}
-		genUniverse=Makesys()
+		genUniverse=Makesys(VS.getSystemFile())
 		del systemdict
 		#now every system has distributed ships in the save data!
-	#TODO: add ships to current system (for both modes
+	#TODO: add ships to current system (for both modes)  uru?
+	for i in range(VS.GetNumFactions):
+		PurgeZeroShips(VS.getFactionName(i))
+
 	
 
 
+
+
+
+
+
+
+
+
+
+
+
+#not needed!
+#def FilterAddList(todo,oursys):
+#	newtodo=universe.getAdjacentSystemList(oursys)
+#	cur=0
+#	while cur<len(newtodo):
+#		if (newtodo[cur] in todo) or systemdict.has_key(newtodo[cur]):
+#			newtodo.pop(cur)
+#		else:
+#			cur+=1
+#	return newtodo
