@@ -8,6 +8,7 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 
+		<var name="credits" value="3500"/>
 		<var name="system" value="vega_sector/alcor" />
 		<var name="description" value="4vs4.txt" />
 		<var name="savegame" value="explore_universe_dagger" />

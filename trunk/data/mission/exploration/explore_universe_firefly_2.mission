@@ -10,7 +10,8 @@
 
 		<var name="system" value="sol_sector/alpha_centauri" />
 		<var name="description" value="4vs4.txt" />
-		<var name="savegame" value="explore_universe" />
+		<var name="credits" value="3500"/>
+		<var name="savegame" value="explore_universe_firefly" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="1">
