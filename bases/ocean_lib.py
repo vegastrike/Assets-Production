@@ -12,7 +12,7 @@ def MakeLandingAndConcourse (time_of_day='_day'):
         new_time_of_day='_storm'
     room1 = Base.Room ('Landing Platform')
     room2 = Base.Room ('Main Concourse')
-    Base.Launch (room1, 'launch', -0.666016, -0.361979, 0.791016, 0.205729, 'Launch Your Ship')
+    Base.LaunchPython (room1, 'launch','bases/launch_music.py', -0.666016, -0.361979, 0.791016, 0.205729, 'Launch Your Ship')
     Base.Link (room1, 'Main Concourse', -0.611111, -0.0634573, 1.25278, 0.354486, 'Go To The Main Concourse', room2)
     Base.Texture (room1, 'tex', 'bases/ocean/landing'+new_time_of_day+'.spr', 0, 0)
     Base.Ship (room1, 'ship', (0*2,-.1*2,40),(0,.93,-.34) ,(-1,0,0))

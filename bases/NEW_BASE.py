@@ -1,7 +1,7 @@
 import Base
 
 room = Base.Room ('Pool')
-Base.Launch (room, 'Launch', -0.1, 0.25, 0.2, 0.268229, 'Launch')
+Base.LaunchPython (room, 'Launch','bases/launch_music.py', -0.1, 0.25, 0.2, 0.268229, 'Launch')
 Base.Link (room, 'Concourse', -0.310547, -0.078125, 0.638672, 0.273438, 'Concourse', 2)
 Base.Texture (room, 'tex', 'bases/carribean/relax.spr', 0, 0)
 Base.Ship (room, 'ship', (0,0.194,8), (1, 0, 0), (0, 0.9, -0.15))

@@ -11,7 +11,7 @@ time_of_day='_day'
 relax = Base.Room ('Pool')
 Base.Texture (relax, 'tex', 'bases/carribean/relax.spr', 0, 0)
 Base.Ship (relax, 'ship', (0,.388,8), (0,.9,-.15), (1,0,0))
-Base.Launch (relax, 'Launch', -0.1, 0.25, 0.2, 0.268229, 'Launch')
+Base.LaunchPython (relax, 'Launch','bases/launch_music.py', -0.1, 0.25, 0.2, 0.268229, 'Launch')
 bar = Base.Room ('Bar')
 Base.Texture (bar, 'tex', 'bases/carribean/bar.spr', 0, 0)
 Base.Texture (bar,'bartender','bases/generic/bartender%d.spr' % (random.randrange(0,4)), -0.469922, 0.080208)
