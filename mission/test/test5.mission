@@ -1,10 +1,9 @@
 <mission>
 	<variables>
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="4 versus 4" />
-		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="sol" />
-		<var name="description" value="4vs4.txt" />
+		<var name="mission_name" value="Use the Cloak" />
+		<var name="system" value="sol_sector/cygnus" />
+		<var name="description" value="Cloaking devices are powerful! Use them to your advantage when dueling your foe." />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="destiny" ainame="default" waves="8" nr_ships="3">

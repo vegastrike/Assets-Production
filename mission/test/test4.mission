@@ -1,10 +1,10 @@
 <mission>
 	<variables>
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="4 versus 4" />
+		<var name="mission_name" value="2 versus 4" />
 		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
-		<var name="system" value="blank" />
-		<var name="description" value="4vs4.txt" />
+		<var name="system" value="mission_sector/proving_grounds_simple" />
+		<var name="description" value="PowerUpYourCraft with weapons\Scattered in this small system." />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="aera" type="lekra" ainame="default" waves="8" nr_ships="3">
