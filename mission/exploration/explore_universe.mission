@@ -45,7 +45,6 @@
 			<const type="float" value="0.25"/><!--enemy prob-->
 			<const type="float" value="0.02"/><!--capship prob-->
 			<const type="float" value="400000.0"/><!--credits to maximize difficulty-->
-			<const type="float" value="-20000.0"/><!--garbage collection distance: negative disables-->
 			<const type="float" value="2000.0"/><!--capship generation distance-->
 			</exec>
 		</script>
