@@ -1,8 +1,8 @@
 <comm>
 	<node text="Default Node" relationship="0">
-		<edge index="1"/>
-		<edge index="2"/>
-		<edge index="3"/>
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
 	</node>
 	<node text="All is Fine" relationship="0">
 		<edge index="2"/>
@@ -15,6 +15,17 @@
 		<edge index="1"/>
 		<edge index="3"/>
 	</node>
+
+	<node text="BeginNeutralHere" relationship="0">
+		<edge index="1"/>
+	</node>
+	<node text="BeginHappy." relationship=".1">
+		<edge index="2"/>
+	</node>
+	<node text="BeginMad" relationship="-.1">
+		<edge index="3"/>
+	</node>
+
 	<node text="Prepare To Be Searched. Maintain Speed and Course." relationship="0">
 		<edge index="1"/>
 		<edge index="3"/>
@@ -31,7 +42,7 @@
 		<edge index="1"/>
 		<edge index="3"/>
 	</node>	
-	<node text="Request Clearence To Dock" relationship="0">
+	<node text="Request Clearence To Land." relationship="0">
 		<edge index="1"/>
 		<edge index="3"/>
 	</node>	
