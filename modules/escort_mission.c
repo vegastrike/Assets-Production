@@ -41,6 +41,7 @@ module escort_mission {
     object esc =launch.launch_wave_around_unit("Base",faction,escname,"flyto",1,distfromjump*0.5,distfromjump,jumppoint);
     AddCargoToUnit(esc,100);
     _unit.setName(esc,"Freighter");
+    _unit.setFgDirective(esc,"B");
     _unit.setTarget (esc,jumppoint);
     _unit.Jump(esc);
     _io.message (0,"game","all","Freighter to all available craft.");
@@ -343,5 +344,14 @@ module escort_mission {
 	      CheckForCompletion(play,esc);
 	    }
 	  }
+	};
+	void initbriefing() {
+
+	};
+	void loopbriefing() {
+
+	};
+	void endbriefing() {
+
 	};
 }

@@ -278,5 +278,13 @@ module contraband_mission {
 	  _string.delete (str);
 	  _string.delete (jname);
 	};
+	void initbriefing() {
 
+	};
+	void loopbriefing() {
+
+	};
+	void endbriefing() {
+	  
+	};
 }
