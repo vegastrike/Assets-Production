@@ -32,5 +32,5 @@
         <planet name="JumpToTroy" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="14000" x="-6500" day="240" destination="gemini_sector/troy"/>
         <planet name="JumpToSherwood" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="10" x="-15000" day="240" destination="gemini_sector/sherwood"/>
         <unit name= "Kronecker"  file="MiningBase" faction="confed" z="-12000" x="-10500"/>
-        <asteroid  name= "Kronecker"  file="AFieldBase" faction="neutral"   z="-12000" x="-10500" day="-14000"  difficulty=".25"></asteroid>         
+        <asteroid  name= "Kronecker"  file="AFieldBaseSparse" faction="neutral"   z="-12000" x="-10500" day="-14000"  difficulty=".25"></asteroid>         
 </system>

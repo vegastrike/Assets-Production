@@ -28,5 +28,5 @@
 </Light>	
 
         <planet name="JumpToPyrenees" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="1500" day="240" destination="gemini_sector/pyrenees" />
-        <asteroid  name= "JumpToPyrenees"  file="AFieldBase" faction="neutral"   z="1500" day="-14000"  difficulty=".25"></asteroid>         
+        <asteroid  name= "JumpToPyrenees"  file="AFieldBaseThin" faction="neutral"   z="1500" day="-14000"  difficulty=".25"></asteroid>         
 </system>

@@ -30,5 +30,5 @@
         <planet name="JumpToNewCaledonia" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-3000" x="11000" day="240" destination="gemini_sector/newcaledonia"/>
         <planet name="Nav2" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="5100" x="-5000" day="240" />
         <planet name="JumpToCapella" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-6000" x="-17000"  day="240" destination="gemini_sector/capella"/>
-        <asteroid  name= "_"  file="AFieldBase" faction="neutral"   z="-4500" x="-4500" day="-14000" difficulty=".25"></asteroid>         
+        <asteroid  name=""  file="AFieldBaseThin" faction="neutral"   z="-4500" x="-4500" day="-14000" difficulty=".25"></asteroid>         
 </system>

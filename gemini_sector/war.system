@@ -28,8 +28,8 @@
 </Light>	
 
         <planet name="JumpToPestilence" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="-17000" day="240" destination="gemini_sector/pestilence"/>
-        <asteroid  name= "JumpToPestilence"  file="AFieldBase" faction="neutral"   z="0" x="-17000" day="-14000"  difficulty=".25"></asteroid>         
+        <asteroid  name= "JumpToPestilence"  file="AFieldBaseSparse" faction="neutral"   z="0" x="-17000" day="-14000"  difficulty=".25"></asteroid>         
         <planet name="Nav2" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="0" day="240" />
         <planet name="JumpToTroy" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="17500"  day="240" destination="gemini_sector/troy"/>
-        <asteroid  name= "JumpToTroy"  file="AFieldBase" faction="neutral"   z="0" x="17500" day="-14000"  difficulty=".25"></asteroid>         
+        <asteroid  name= "JumpToTroy"  file="AFieldBaseSparse" faction="neutral"   z="0" x="17500" day="-14000"  difficulty=".25"></asteroid>         
 </system>

@@ -29,6 +29,6 @@
 
         <planet name="JumpToJunction" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="-6200" x="-11000" day="240" destination="gemini_sector/junction"/>
         <planet name="Nav2" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="0" x="250" day="240" />
-        <asteroid  name= "Nav2"  file="AFieldBase" faction="neutral"   z="0" x="250" day="-14000"  difficulty=".25"></asteroid>         
+        <asteroid  name= "Nav2"  file="AFieldBaseSparse" faction="neutral"   z="0" x="250" day="-14000"  difficulty=".25"></asteroid>         
         <planet name="JumpToTroy" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" z="5100" x="14800"  day="240" destination="gemini_sector/troy"/>
 </system>

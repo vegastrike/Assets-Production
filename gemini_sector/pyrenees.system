@@ -36,5 +36,5 @@
         <planet name="Nav 5" file="invisible.png" alpha="ONE ONE" radius="100" gravity="0" z="0" day="240" />
         <planet name="JumpToCallisto" file="jump.png" alpha="ONE ONE" radius="100" gravity="0" y="14000" x="00" day="240" destination="avalon_sector/callisto"/>
         <unit name= "Basque"  file="MiningBase" faction="confed" z="-12000" x="0"/>
-        <asteroid  name= "Basque"  file="AFieldBase" faction="neutral"   z="-12000" day="-14000"  difficulty=".25"></asteroid>         
+        <asteroid  name= "Basque"  file="AFieldBaseSparse" faction="neutral"   z="-12000" day="-14000"  difficulty=".25"></asteroid>         
 </system>
