@@ -15,7 +15,7 @@
 </distance>
 <!-- distance midrange .1-->
 <distance min=".1" max=".6">
-  <threat max=".8" script="++turntowards.xml">
+  <threat max=".8" script="++turntowardsitts.xml">
   </threat>
 </distance>
 <distance min=".1" max=".6">
@@ -25,11 +25,11 @@
 
 <!-- distance far out-->
 <distance min=".6">
-  <threat max=".8" script="++afterburn-turntowards.xml">
+  <threat max=".8" script="++afterburn-turntowards-itts.xml">
   </threat>
 </distance>
 <distance min=".6" script="++evade.xml">
-  <threat min=".8"  script="++afterburn-turntowards.xml">
+  <threat min=".8"  script="++afterburn-turntowards-itts.xml">
   </threat>
 </distance>
 

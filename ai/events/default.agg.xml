@@ -1,12 +1,16 @@
 <AggressiveAI time="7">
 <meterdistance max="60" script="++shelton-slide.xml"/>
 <!-- meterdistance less than .1-->
-<meterdistance min="60" max="200" script="++turntowards.xml"> 
+<meterdistance min="60" max="200" script="veer away itts"> 
   <threat min=".2" max=".7" script="++afterburnerslide.xml">
+    <fshield max="1.1" script="++skilledabslide.xml">
+    </fshield>
   </threat>
 </meterdistance>
 <meterdistance min="60" max="200" script="++afterburnerslide.xml">
   <threat max=".2" script="++shelton-slide.xml">
+    <fshield min=".25" script="++turntowardsitts.xml">
+    </fshield>
   </threat>
 </meterdistance>
 <meterdistance min="60" max="200" script="++cloak.xml"> 
@@ -14,8 +18,8 @@
   </threat>
 </meterdistance>
 <!-- meterdistance midrange .1-->
-<meterdistance min="100" max="600" script="++afterburn-turntowards.xml">
-  <threat max=".8" script="++turntowards.xml">
+<meterdistance min="100" max="600" script="++afterburn-turntowards-itts.xml">
+  <threat max=".8" script="++turntowardsitts.xml">
   </threat>
 </meterdistance>
 <meterdistance min="100" max="600" script="++shelton-slide.xml">
@@ -24,12 +28,12 @@
 </meterdistance>
 
 <!-- meterdistance far out-->
-<meterdistance min="600" script="++turntowards.xml">
-  <threat max=".8" script="++afterburn-turntowards.xml">
+<meterdistance min="600" script="++turntowardsitts.xml">
+  <threat max=".8" script="++afterburn-turntowards-itts.xml">
   </threat>
 </meterdistance>
 <meterdistance min="600" script="++evade.xml">
-  <threat min=".8"  script="++afterburn-turntowards.xml">
+  <threat min=".8"  script="++afterburn-turntowards-itts.xml">
   </threat>
 </meterdistance>
 
