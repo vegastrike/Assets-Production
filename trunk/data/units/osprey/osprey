@@ -24,7 +24,7 @@
 	<Defense HudImage="osprey-hud.spr">
 		<Armor front="100" right="100" left="100" back="100"/>
 		<Shields front="80.000000" right="70.000000" left="70.000000" back="60.000000" recharge="20.000000"/>
-		<Hull strength="2500000.000000"/>
+		<Hull strength="250.000000"/>
 		<Cloak rate=".4" cloakmin=".1"/>
 	</Defense>
 	<Stats mass="5.000000" momentofinertia="5.000000" fuel="200000000"></Stats>
