@@ -134,6 +134,11 @@ def SetTimeCompression(val):
 def GetAdjacentSystem(mystr,which):
    import vsrandom
    return 'SYSTEM'+chr (vsrandom.randrange(ord('a'),ord('z')+1))+chr (vsrandom.randrange(ord('a'),ord('z')+1))
+def GetAllAdjacentSystems(mystr):
+	syslist = list()
+	for i in range(VS.GetNumAdjacentSystems(mystr)):
+		syslist.append(VS.GetAdjacentSystem(mystr,i))
+	return syslist
 def GetGalaxyFaction(sysname):
    import faction_ships
    import vsrandom

@@ -227,7 +227,12 @@ def getSuccessStr(success):
 
 def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword):
 # finds a suitable news string from the dynamic_news_content.allNews() dictionary
-	listnews = dynamic_news_content.allNews()[validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword)][type_event][stage_event][success][pov]
+	faction = validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword)
+	if faction == "barf":
+		print "Error: A suitable news story does not exist, returning a neutral siege story so you can still see the base you're at :-)"
+		listnews = dynamic_news_content.allNews()["neutral"]["siege"][stage_event][success][pov]
+		return getClosestScaleNews(listnews,scale)
+	listnews = dynamic_news_content.allNews()[faction][type_event][stage_event][success][pov]
 	return getClosestScaleNews(listnews,scale)
 
 def getClosestScaleNews(listof,scale):
@@ -243,7 +248,29 @@ def getClosestScaleNews(listof,scale):
 			finallist.append(valtable[i])
 	return finallist[vsrandom.randrange(0,len(finallist), step=1)][2]
 
+def minorNewsTypes():
+#a list of all the minor news types that should be system dependent
+	return ["skirmish","destroyed"]
 
+def checkSystemRelevant(system):
+	if (system in VS.getAllAddjacentSystems(VS.getSystemFile()).append(VS.getSystemFile())):
+		return 1
+
+def checkVarListRelevant(newsstring):
+# returns true only if the newsstring is relevant (major or close to home)
+	ls = newsstring.split(',')
+	if ls[0] in minorNewsTypes():
+		if checkSystemRelevant(ls[6]):
+			return 1
+	return 0
+
+def filterRelevantStory(story):
+# returns the text to a story only if it is relevant (big or close to home)..otherwise returns an empty string
+	text = story[story.find("@SYSTEM@") + len("@SYSTEM@"):]
+	system = story[story.find("@SYSTEM@")][:len("@SYSTEM@")]
+	if checkSystemRelevant(system):
+		return text
+	return ""
 
 def processNewsTuple(newsstring):
 	ls = newsstring.split(',')
@@ -251,12 +278,28 @@ def processNewsTuple(newsstring):
 		ls.append ('unknown')
 	ns = makeDynamicNews(ls[0],ls[1],ls[2],ls[3],string.atoi(ls[4]),string.atof(ls[5]),ls[6],ls[7],ls[8],ls[9],ls[10],ls[11])
 #Added flightgroups as the last few arguments
-	print ns
-	return ns
-#	return newsstring #FIXME
+	fs = "1234.0" + "@TIME@" + ls[6] + "@SYSTEM@" + ns
+#FIXME: add real time from the newsstring..FIXME: add support for time in newsstring! :-P
+	print fs
+	return fs
 
-
-def pushDynamicNews(player,newsstring):
-	print 'pushing' + newsstring + ' to news savevar'
+def manageDynamicNews(player,newsstring):
+	print 'pushing' + newsstring + ' to faction specific news savevar'
 	import Director
-	Director.pushSaveString(player,"news",processNewsTuple(newsstring))
+	global allUsefullVariables
+	if checkVarListRelevant(newsstring):
+		Director.pushSaveString(player,"news_" + allUsefullVariables["dockedat"],processNewsTuple(newsstring))
+		Director.pushSaveString(player,"dynamic_news_posted",newsstring + ",FACTIONLIST," + allUsefullVariables["dockedat"])
+# FIXME..erase the original newsstring
+
+def managePostedNews(player,item):
+	itemvars = item[:item.find(",FACTIONLIST,")]
+	if not (checkFactionDone(item)) and checkVarListRelevant(itemvars):
+# FIXME..erase the original item
+		import Director
+		global allUsefullVariables
+		Director.pushSaveString(player,"news_" + allUsefullVariables["dockedat"],processNewsTuple(itemvars))
+		Director.pushSaveString(player,"dynamic_news_posted",item + "," + allUsefullVariables["dockedat"])
+
+
+
