@@ -17,6 +17,11 @@
 		<stats name="rlaan" relation="-0.1"/>
 		<stats name="unknown" relation="-.1"/>
 		<stats name="pirates" relation="-.5"/>
+		<CommAnimation>
+<!--			<MoodAnimation name="explosion_orange.ani" sex="0"/>-->
+			<MoodAnimation name="contraband.ani" sex="0"/>
+<!--			<MoodAnimation name="warp.ani" sex="0"/>-->
+		</CommAnimation>
 	</Faction>
 
 	<Faction name="aera" logoRGB="TechPriRGB.bmp" logoA="TechPriA.bmp">
