@@ -1,58 +1,82 @@
 import Director
-def findAndAddQuest(playernum,questname):
+def findQuest (playernum,questname,value=1):
     mylen=Director.getSaveDataLength(playernum,questname)
     if (mylen>0):
         myfloat=Director.getSaveData(playernum,questname,0)
         print myfloat
-        print "there she is"
-        if (myfloat<1.01 and myfloat >.99):
+        if (myfloat==value):
             return 1
-        Director.putSaveData(playernum,questname,0,1)
-    else:
-        Director.pushSaveData(playernum,questname,1)
     return 0
+def persistentQuest (playernum,questname):
+    print "finding quest"
+    print questname
+    return findQuest (playernum,questname,-1)
+def notLoadedQuest(playernum,questname):
+    return not persistentQuest(playernum,questname) and not findQuest (playernum,questname)
+def removeQuest (playernum,questname,value=1):
+    print "removing quest"
+    mylen=Director.getSaveDataLength(playernum,questname)
+    if (mylen>0):
+        Director.putSaveData(playernum,questname,0,value)
+    else:
+        Director.pushSaveData(playernum,questname,value)
+
 
 class quest:
+    def setOwner(self,playernum,questname):
+        self.name=questname
+        self.playernum=playernum
+    def removeQuest(self,value=1):
+        removeQuest(self.playernum,self.name,value)
+    def makeQuestPersistant(self):
+        self.removeQuest(-1)
     def Execute(self):
         print "default"
         return 1
 class quest_factory:
-    def __init__(self):
-        self.name="quest"
+    def __init__(self,questname,remove_quest_on_run=0):
+        self.removequest=remove_quest_on_run
+        self.name=questname
+    def __eq__(self,oth):
+        return self.name==oth.name
     def create (self ):
         return quest()
-    def factory (self,playernum):
-        if (not findAndAddQuest (playernum,self.name)):
-            return self.create()
+    def precondition (self):
+        return 1
+    def persistent_factory(self,playernum):
+        if (persistentQuest(playernum,self.name)):
+            print "persistant_factory"
+            return self.private_create(playernum)            
         return
-
-
+    def private_create (self,playernum):
+        newquest=self.create()
+        newquest.setOwner(playernum,self.name)
+        if (self.removequest):
+            removeQuest(playernum,self.name)
+        return newquest        
+    def factory (self,playernum):
+        if (self.precondition()):
+            if (notLoadedQuest (playernum,self.name)):
+                print "nonpfact"            
+                return self.private_create(playernum)
+        return
             
-class drone_quest (quest):
+class test_quest (quest):
     def __init__ (self):
         self.i=0
     def Execute (self):
         print self.i
         self.i+=1
-        if (self.i>1000):
+        if (self.i>100):
+            self.removeQuest()
             return 0
         return 1
 
-class drone_quest_factory (quest_factory):
+class test_quest_factory (quest_factory):
     def __init__ (self):
-        self.name="drone_quest";
+        quest_factory.__init__ (self,"drone_quest")
     def create (self):
-        return drone_quest()
+        return test_quest()
 
 
-quests = {"gemini_sector/delta_prime":drone_quest_factory(),
-          "sol_sector/celeste":quest_factory()}
 
-
-def newQuest(playernum,oldsys,newsys):
-    newq=quests.get (newsys)
-    if (newq):
-        newq = newq.factory(playernum)
-        if (newq):#only remove it if that player hasn't done it before
-            del quests[newsys]
-    return newq

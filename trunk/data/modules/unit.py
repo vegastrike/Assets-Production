@@ -114,7 +114,16 @@ def setPreciseTargetShip (which_fgid, target_unit):
         un=VS.getUnit(ship_nr)
     
   
-  
+def getUnitByName (name):
+    ship_nr=0
+    unit = VS.getUnit(0)
+    while (unit):
+        if (unit.getName()==name):
+            return unit
+        ship_nr+=1
+        unit=VS.getUnit(ship_nr)
+    return unit
+
 def getUnitByFgIDFromNumber(fgid, ship_nr):
     unit=VS.getUnit(ship_nr)
     found_unit=VS.Unit()

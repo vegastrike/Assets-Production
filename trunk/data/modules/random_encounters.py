@@ -5,7 +5,8 @@ import launch
 import VS
 import unit
 import sys
-import quest
+import adventure
+import quest_drone
 class random_encounters:
   class playerdata:  
     def __init__(self,sig_distance,det_distance):
@@ -64,11 +65,16 @@ class random_encounters:
       mindist = mindist/ave
     return mindist
   def NewSystemHousekeeping(self,oldsystem,newsystem):
-    newquest = quest.newQuest (self.cur_player,oldsystem,newsystem)
+    newquest = adventure.newAdventure (self.cur_player,oldsystem,newsystem)
     if (newquest):
       self.cur.quests+=[newquest]
+    else:
+      self.RestoreDroneMission()
     self.CalculateSignificantDistance()
-    
+  def RestoreDroneMission(self):
+    qdf=adventure.persistentAdventure (self.cur_player)
+    if (qdf):
+      self.cur.quests+=[qdf]
   def CalculateSignificantDistance(self):
     minsig =  self.minimumSigDistApart()
     if (self.sig_distance>minsig*0.15):

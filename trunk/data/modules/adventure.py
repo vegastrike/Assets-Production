@@ -1,0 +1,34 @@
+import quest
+import quest_drone
+import random
+adventures = {"gemini_sector/delta_prime":quest_drone.quest_drone_factory(),
+              "sol_sector/celeste":quest.quest_factory("default_quest",0)}
+
+persistent_adventures = [quest_drone.quest_drone_factory()]
+
+def removePersistentAdventure(newq):
+    mylen = len(persistent_adventures)
+    if (mylen):
+        for x in range (mylen):
+            if (persistent_adventures[x]==newq):
+                del persistent_adventures[x]
+                return
+            
+def newAdventure(playernum,oldsys,newsys):
+    newfac=adventures.get (newsys)
+    if (newfac):
+        newq = newfac.factory(playernum)
+        if (newq):#only remove it if that player hasn't done it before
+            del adventures[newsys]
+            removePersistentAdventure(newfac)
+        return newq
+    return
+#that returns false
+
+def persistentAdventure(playernum):
+    for index in range (len(persistent_adventures)):
+        ret = persistent_adventures[index].persistent_factory(playernum)
+        if (ret):
+            del persistent_adventures[index]            
+            return ret
+    return
