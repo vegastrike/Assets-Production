@@ -1,4 +1,3 @@
-import VS
 def Vector (x,y,z):
     return (x,y,z)
 def Add (a,b):
@@ -18,6 +17,7 @@ def Transform (a,p,q,r):
             Dot (a,q),
             Dot (a,r))
 def Mag(a):
+    import VS
     return VS.sqrt(Dot(a,a))
 def Norm (a):
     return Scale(a,1.0/Mag(a))

@@ -15,43 +15,43 @@ class difficulty:
       VS.SetDifficulty(diff)
 
   def __init__(self,credsMax):
-    print "init diff"
+#    print "init diff"
     self.diff=[]
     self.creds=[]
     self.credsToMax=credsMax
-    print "unlogical start"
+#    print "unlogical start"
     un=VS.getPlayerX(0)
-    print "unlogical end"
+#    print "unlogical end"
     self.i=0
     while (not un.isNull()):
       newdiff=0
-      print "get save data length"
-      (open ("/tmp/vswroteship","w")).close()
+#      print "get save data length"
+#      (open ("/tmp/vswroteship","w")).close()
       if (Director.getSaveDataLength(self.i,_key)):
-        (open ("/tmp/vsgotdata","w")).close()
-        print "get save dat"
+#        (open ("/tmp/vsgotdata","w")).close()
+#        print "get save dat"
         newdiff=Director.getSaveData(self.i,_key,0)
-        print "get save end"
+#        print "get save end"
       else:
-        (open ("/tmp/vsmakedata","w")).close()
-        print "get difficulty start"
+#        (open ("/tmp/vsmakedata","w")).close()
+#        print "get difficulty start"
         newdiff=VS.GetDifficulty()
-        print "get diff done"
+#        print "get diff done"
         Director.pushSaveData(self.i,_key,newdiff)
-        print "done director"
-        (open ("/tmp/vsdonedir","w")).close()
-      (open ("/tmp/vssetdifficulty","w")).close()
+#        print "done director"
+#        (open ("/tmp/vsdonedir","w")).close()
+#      (open ("/tmp/vssetdifficulty","w")).close()
       self.diff+=[newdiff]
-      print "set diff start"        
+#      print "set diff start"        
       SetDiff(newdiff)
-      print "set diff end"
+#      print "set diff end"
       self.creds+=[un.getCredits()]
       self.i+=1
-      print "save unit"
+#      print "save unit"
       un=VS.getPlayerX(self.i)
-      print "done init diff"
-    (open ("/tmp/vsdoneinitdiff","w")).close()
-    print "done init diff FINAL"
+#      print "done init diff"
+#    (open ("/tmp/vsdoneinitdiff","w")).close()
+#    print "done init diff FINAL"
   def usingDifficulty (self):
     return (VS.GetDifficulty()!=1.0)
   
