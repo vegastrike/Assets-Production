@@ -386,7 +386,7 @@
 </Damage>
 <Distance speed="80" pulsespeed="15" range="10000" >
 </Distance>
-<Appearance file="capshipmissile" >
+<Appearance file="torp" >
 </Appearance>
 </Missile>
 
