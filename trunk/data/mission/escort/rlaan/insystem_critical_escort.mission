@@ -19,7 +19,13 @@
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
         </flightgroups>
-	<module name="director">
+	<python>
+import escort_mission
+newmission = escort_mission.initrandom ('rlaan', 3, 10000, 60, 0)
+newmission=0
+
+</python>
+	<madule name="director">
 		<import name="escort_mission"/>
 		<script name="initgame">
 			<exec module="escort_mission" name="initrandom">
@@ -27,7 +33,7 @@
 			<const type="int" value="3"/> <!--difficulty of mission(do they send peeps after you)-->
 			<const type="float" value="10000"/> <!-- how much you are paid -->
 			<const type="float" value="60"/> <!-- how much you are paid -->
-			<const type="bool" value="true"/> <!-- will this occur in merely the system you are in (no jump drive required)-->
+			<const type="int" value="0"/> <!-- will this occur in merely the system you are in (no jump drive required)-->
 
 			</exec>
 		</script>
