@@ -493,8 +493,7 @@ class Unit:
    print "setFactionName"
   def setFactionIndex(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "setFactionIndex"
-  def getName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "getName" 
+  def getName(self):
    return self.name
   def getFlightgroupName(self):
    print "getFlightgroupName" 

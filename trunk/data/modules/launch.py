@@ -5,6 +5,7 @@ import ship_upgrades
 import VS
 import sys
 import dj_lib
+True=1
 def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=True):
   diff=usingDifficulty()
   if useani:
@@ -83,3 +84,53 @@ def launch_wave_around_significant (fgname,faction,type,ai,nr_ships,minradius, m
   launched = launch_wave_around_unit(fgname,faction,type,ai,nr_ships,minradius,maxradius,significant_unit,logo,useani)
   return launched
 
+class Launch:
+  def __init__ (self):
+    self.fg='Shadow'
+    self.dynfg=''
+    self.type='nova'
+    self.num=1
+    self.minradius=100.0
+    self.maxradius=200.0
+    self.useani=True
+    self.logo=''
+    self.faction='neutral'
+    self.ai='default'
+    self.numwaves=1
+    self._preprocess=False
+    self._nr_ships=0
+    self.pos=(0,0,0)
+    self.capitalp=False
+  def Preprocess (self):
+    self._preprocess=True
+    self._dyn_nr_ships=[]
+    self._nr_ships=self.num
+    import faction_ships
+    if self.dynfg!='':
+      import fg_util
+      tn=fg_util.ShipsInFG(self.dynfg,self.faction)
+      for i in range (len(tn)):
+        if (tn[i][0]==self.type):
+          knum=tn[i][1]
+          if (knum>self.num):
+            knum=self.num
+          self._dyn_nr_ships=[(self.type,knum)]
+          del tn[i]
+          break
+      for i in tn:
+        if (knum>=self.num):
+          break
+        if (self.capitalp or (not faction_ships.isCapital(i[0])) ):
+          if (i[1]>self.num-knum):
+            i = (i[0],self.num-knum)
+          self._dyn_nr_ships+=[i]
+          knum+=i[1]
+      self._nr_ships=self.num-knum
+  def launch(self,myunit):
+    self.Preprocess()
+    un = launch_types_around (self.dynfg,self.faction,self._dyn_nr_ships,self.minradius*.5+self.maxradius*.5,myunit,20000,self.logo)
+    if (myunit==None and self._nr_ships>0):
+      launch_wave_around_area (self.fg,self.faction,self.type,self.ai,self._nr_ships, self.minradius,self.maxradius,self.pos,self.logo,self.useani)
+    elif (self._nr_ships>0):
+      launch_wave_around_unit (self.fg,self.faction,self.type,self.ai,self._nr_ships,self.minradius,self.maxradius,myunit,self.logo,self.useani)
+    return un

@@ -5,6 +5,7 @@ import faction_ships
 import vsrandom
 import launch
 import Briefing
+import launch_recycle
 class go_somewhere_significant:
 #  frameoffset=0 #see note at bottom
 #  begsigdis=1.0 #same note
@@ -14,7 +15,7 @@ class go_somewhere_significant:
   def SignificantUnit(self):
     return self.significantun
   
-  def __init__ (self,you, landable_only, distance_away_to_trigger,base_only=0,capshipfaction=""):
+  def __init__ (self,you, landable_only, distance_away_to_trigger,base_only=0,capshipfaction="", dyn_fg=""):
     self.obj=0
     self.orbitee=""
     self.capship=0
@@ -33,7 +34,10 @@ class go_somewhere_significant:
         self.orbitee="%s" % (significant.getName())
         self.capship=1
         print "orbitee %s " % self.orbitee
-        significant=launch.launch_wave_around_unit("Base",capshipfaction,newship,"sitting_duck",1,2000.0,5000.0,significant,"")
+        if (dyn_fg==""):
+          significant=launch.launch_wave_around_unit("Base",capshipfaction,newship,"sitting_duck",1,2000.0,5000.0,significant,10000,"")
+        else:
+          significant=launch_recycle.launch_dockable_around_unit(dyn_fg,capshipfaction,"sitting_duck",1,2500,significant,"")
     else:
       significant = universe.getRandomJumppoint ()
     if (significant.isNull()):
