@@ -11,7 +11,7 @@ def MakeCorisc(time_of_day='day',mybartender='bases/bartender_default.py'):
     plist=VS.musicAddList(playlist)
     VS.musicPlayList(plist)    
 
-	dynamic_mission.CreateMissions()
+    dynamic_mission.CreateMissions()
     room1 = Base.Room ('Landing Platform')
     Base.Texture (room1, 'tex', 'bases/industrial/landing'+time_of_day+'.spr', 0, 0)
     bar = Base.Room ('Bar')
