@@ -10,6 +10,7 @@
                 <flightgroup name="green" faction="rebels" type="hornet" ainame="default" waves="2" nr_ships="2">
 			<pos x="8000.0" y="0.0" z="3000.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
 			<order priority="0" order="superiority" target="enemy"/>
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
@@ -17,10 +18,12 @@
                 <flightgroup name="blue" faction="rebels" type="jalthi" ainame="default" waves="2" nr_ships="2">
 			<pos  offset="green" x="1000.0" y="0.0" z="0.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
+			<order order="tmptarget" target="omikron"/>
 		</flightgroup>
                 <flightgroup name="omikron" faction="empire" type="rapier" ainame="default" waves="2" nr_ships="4">
 			<pos offset="green" x="0.0" y="1000.0" z="0.0"/>
 			<rot x="90.0" y="90.0" z="180.0"/>
+			<order order="tmptarget" target="blue"/>
 		</flightgroup>
         </flightgroups>
 </mission>
