@@ -18,7 +18,7 @@
 	<Energy afterburnenergy="80">
 		<Reactor recharge="120" limit="600"/>
 	</Energy>
-       
+           	<Jump delay="1" jumpenergy="500"/>              
 
       
 

@@ -32,6 +32,38 @@
 </Appearance>
 </Beam>
 
+<Beam name="UnknownBeam" mountsize="heavy"> 
+<Energy rate="80" stability="14" refire="2">
+</Energy>
+<Damage rate="40" phasedamage="50" longrange=".5">
+</Damage>
+<Distance speed="440" radialspeed="8" radius="8" length="1.5" pulsespeed="2" range="650" >
+</Distance>
+<Appearance file="weapons/unknown_beam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a="1" >
+</Appearance>
+</Beam>
+<Bolt name="UnknownBolt" mountsize="heavy"> 
+<Energy rate="40" stability="6" refire=".7">
+</Energy>
+<Damage rate="0" phasedamage="50" longrange=".8">
+</Damage>
+<Distance speed="250" radialspeed=".8" radius="8.2" length="20" pulsespeed="15" range="620" >
+</Distance>
+<Appearance file="weapons/unknown_bolt.png" soundwav="Neutron.wav" r=".5" g="1" b=".5" a=".8" >
+</Appearance>
+</Bolt>
+<Bolt name="Unknown" mountsize="heavy"> 
+<Energy rate="45" stability="6" refire=".7">
+</Energy>
+<Damage rate="200" longrange=".5">
+</Damage>
+<Distance speed="250" radialspeed=".8" radius="8.2" length="20" pulsespeed="15" range="620" >
+</Distance>
+<Appearance file="weapons/unknown_bolt.png" soundwav="Neutron.wav" r=".5" g="1" b=".5" a=".8" >
+</Appearance>
+</Bolt>
+
+
 <Bolt name="Ktek" mountsize="heavy"> 
 <Energy rate="20" stability="8" refire=".15">
 </Energy>
@@ -210,6 +242,7 @@
 <Appearance file="weapons/tachyon.png" soundwav="Tachyon.wav" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Bolt>
+
 
 <Bolt name="Photon" mountsize="medium"> 
 <Energy rate="21.5" stability="6" refire=".66">
