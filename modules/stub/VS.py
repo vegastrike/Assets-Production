@@ -2,7 +2,7 @@
 import sys
 import math
 import time
-_sysfile = ['enigma_sector/heavens_gate']
+_sysfile = ['SYSTEMa']
 _unitlist=[]
 
 def timeofday():
@@ -96,7 +96,7 @@ def SetTimeCompression(val):
 def GetAdjacentSystem(mystr,which):
    print "GetAdjacentSystem" 
    import vsrandom
-   return chr (vsrandom.randrange(ord('a'),ord('z')))
+   return 'SYSTEM'+chr (vsrandom.randrange(ord('a'),ord('z')))
 def GetGalaxyProperty(sysname,faction):
    import faction_ships
    import vsrandom
