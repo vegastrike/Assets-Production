@@ -67,4 +67,10 @@
     <Vertex point="10" s="1" t="1"/>
 </Tri>
 </Polygons>
+<Logo type="0" rotate="-1.259999" size="4.039997" offset="0.010000">
+	<Ref point="0" weight="1.000000" />
+	<Ref point="1" weight="1.000000" />
+	<Ref point="2" weight="1.000000" />
+</Logo>
+
 </Mesh>

@@ -3499,4 +3499,25 @@
     <Vertex point="430" s="-0.867871165275574" t="1.5031965970993"/>
 </Tri>
 </Polygons>
+<Logo type="0" rotate="0.000000" size="6.900063" offset="0.010000">
+	<Ref point="44" weight="2.209999" />
+	<Ref point="45" weight="1.300000" />
+	<Ref point="2" weight="1.759999" />
+</Logo>
+<Logo type="1" rotate="0.000000" size="7.400074" offset="0.010000">
+	<Ref point="3" weight="0.640000" />
+	<Ref point="0" weight="2.509999" />
+	<Ref point="2" weight="1.739999" />
+</Logo>
+<Logo type="666" rotate="-1.589999" size="3.929997" offset="0.010000">
+	<Ref point="9" weight="47.068108" />
+	<Ref point="10" weight="2.729999" />
+	<Ref point="11" weight="35.370071" />
+</Logo>
+<Logo type="667" rotate="2.719998" size="4.720013" offset="0.010000">
+	<Ref point="49" weight="2.459999" />
+	<Ref point="50" weight="-1.429998" />
+	<Ref point="47" weight="3.639997" />
+</Logo>
+
 </Mesh>
