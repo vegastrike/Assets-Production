@@ -25,10 +25,11 @@ class ShipTracker:
 def TrackLaunchedShip(fgname,fac,typ,un):
 	import fg_util
 	fg_util.LaunchShip(fgname,fac,typ)
+	global _ships
 	_ships+= [ShipTracker(fgname,fac,typ,un)]
 curiter=0
 def Execute():
-	global curiter
+	global curiter, _ships
 	if (len(_ships)>curiter):
 		if (not _ships[curiter].Check()):
 			del (_ships[curiter])

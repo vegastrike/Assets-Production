@@ -126,19 +126,8 @@ def _tmpint(str,default):
     except:
         return default
 def GetNumSignificantsForSystem (cursys):
-    numjmp=0
-    try:
-     numjmp=int(VS.GetGalaxyProperty(cursys,"num_jump"))
-    except:
-     tmpnumjmp=VS.GetGalaxyProperty(cursys,"jumps")
-     if len(tmpnumjmp):
-      numjmp=len(tmpnumjmp.split(' '))
-     else:
-      numjmp=4
-    try:
-     numsig=_tmpint(VS.GetGalaxyProperty(cursys,"num_planets"),3)+_tmpint(VS.GetGalaxyProperty(cursys,"num_moons"),4)+_tmpint(VS.GetGalaxyProperty(cursys,"num_gas_giants"),2)+_tmpint(VS.GetGalaxyProperty(cursys,"num_starbases"),1)+numjmp
-    except:
-      return 10+numjmp
+    numjmp=VS.GetNumAdjacentSystems(cursys)
+    return _tmpint(VS.GetGalaxyProperty(cursys,"num_planets"),3)+_tmpint(VS.GetGalaxyProperty(cursys,"num_moons"),4)+_tmpint(VS.GetGalaxyProperty(cursys,"num_gas_giants"),2)+_tmpint(VS.GetGalaxyProperty(cursys,"num_starbases"),1)+numjmp
 #use go_somewhere_significant instead:
 ##def __init__(): #(?)
 ##    outstr=_string.new()
