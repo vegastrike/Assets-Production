@@ -1,6 +1,10 @@
-<mission name="4 versus 4" system="solar-system.xml">
+<mission>
 	<variables>
 		<var name="defaultplayer" value="blue"/>
+		<var name="mission_name" value="4 versus 4" />
+		<var name="splashscreen" value="bad_guys_vs_good_guys.bmp" />
+		<var name="system" value="solar-system.xml" />
+		<var name="description" value="4vs4.txt" />
 	</variables>
         <flightgroups>
                 <flightgroup name="green" faction="rebels" type="hornet" ainame="default" waves="2" nr_ships="2">
