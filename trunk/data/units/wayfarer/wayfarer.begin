@@ -50,7 +50,7 @@
 	<Stats mass = "1095" momentofinertia = "1095" fuel = "40000000"  >
 	</Stats>
 	<Computer yaw = "60.400002" itts = "false" pitch = "50.600006" roll = "80.400002" afterburner = "60" maxspeed = "30" >
-		<Radar itts = "false" error = "0" range = "5000" maxcone = ".25" color = "false"  >
+		<Radar itts = "false" error = "0" range = "5000" maxcone = "-1" color = "false"  >
 		</Radar>
 	</Computer>
 	<upgrade file = "SkyScope_AlphaPlus"  >
