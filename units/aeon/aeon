@@ -2,6 +2,10 @@
 	<Meshfile file="aeon.xmesh" />
 	<Mount weapon="DisruptorBeam" size="light medium" x="5.600000" y="-1.600000" z="3.200000"/>
 	<Mount weapon="DisruptorBeam" size="light medium" x="-5.600000" y="-1.600000" z="3.200000"/>
+	<Mount weapon="HeatSeeker" size="light-missile medium-missile" x="3.600000" y="-1.600000" z="1.200000" ammo="1"/>
+	<Mount weapon="HeatSeeker" size="light-missile medium-missile" x="-3.600000" y="-1.600000" z="1.200000" ammo="1"/>
+	<Mount weapon="Dumbfire" size="light-missile medium-missile" x="2.900000" y="-1.600000" z="1.200000" ammo="1"/>
+	<Mount weapon="Dumbfire" size="light-missile medium-missile" x="-2.900000" y="-1.600000" z="1.200000" ammo="1"/>
 	<Mount weapon="Neutron" size="heavy" x="2.000000" y="-0.200000" z="5.200000"/>
 	<Mount weapon="Neutron" size="heavy" x="-2.000000" y="-0.200000" z="5.200000"/>
 	<Thrust>
