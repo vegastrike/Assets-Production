@@ -8,9 +8,9 @@ touch save.txt;
 else
 echo "default"> save.txt ;
 fi
-cp /usr/local/share/vegastrike/data/setup.config .
-cp /usr/local/share/vegastrike/data/.vegastrike/*.m3u .
-cp /usr/local/share/vegastrike/data/vegastrike.config .
+cp /usr/local/games/vegastrike/data/setup.config .
+cp /usr/local/games/vegastrike/data/.vegastrike/*.m3u .
+cp /usr/local/games/vegastrike/data/vegastrike.config .
 /usr/local/bin/vssetup
 echo "Download http://aslp.gallaudet.edu/jjg/wcrm/Vault_Room/vault_room.html the WC2 Collection and the Privateer-RF Collection to ~/music/  directory that you make."
 echo "If you wish to have your own music edit ~/.vegastrike/*.m3u  Each playlist represents a place or situation in Vega Strike"
