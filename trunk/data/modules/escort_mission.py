@@ -97,5 +97,5 @@ class escort_mission (Director.Mission):
 			if (self.var_to_set!=''):
 				quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,1)
 			VS.terminateMission(1)
-def initrandom (factionname,difficulty,creds,entime,numsysaway,jumps=(),var_to_set=''):
-	return escort_mission(factionname,difficulty,6000,vsrandom.randrange(5000,7000),vsrandom.randrange(10,300),creds,entime,numsysaway,jumps,var_to_set)
+def initrandom (factionname,difficulty,creds,entime,numsysaway,jumps=(),var_to_set='',dynfg='',dyntype=''):
+	return escort_mission(factionname,difficulty,6000,vsrandom.randrange(5000,7000),vsrandom.randrange(10,300),creds,entime,numsysaway,jumps,var_to_set,dynfg,dyntype)

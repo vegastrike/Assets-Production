@@ -3,7 +3,6 @@ import Director
 import fg_util
 import vsrandom
 
-
 #Credit to Peter Trethewey, master of python and all things nefarious
 def getSystemsKAwayNoFaction( start, k ):
 	set = [start]#set of systems that have been visited
@@ -44,13 +43,30 @@ def getSystemsNAway (start,k,preferredfaction):
 
 syscreds=500
 
+def processSystem(sys):
+	k= sys.split('/')
+	if (len(k)>1):
+		k=k[1]
+	else:
+		k=k[0]
+	return k.capitalize()
+
 def generatePatrolMission (path, numplanets):
-	###
-	pass
+	dist=1000
+	creds = numplanets*500
+	writemissionsavegame ("import patrol\ntemp=patrol.patrol(0, %d, %d, %d, %s)\ntemp=0\n"%(numplanets, dist, creds, str(path)))
+	writedescription("Insystem authorities would like a detailed scan of the %s system. We require %d nav locations be visited on the scanning route.  The pay for this mission is %d."%(processSystem(path[-1]),numplanets,creds))
+	writemissionname("Patrol_%d_Points_in_%s"%(numplanets,processSystem(path[-1])))	
+
 
 def generateEscortMission (path,fg,fac):
 	###
-	pass
+	typ = fg_util.RandomShipIn(fg,fac)
+	diff=vsrandom.randrange(0,6)	
+	creds=500*diff+1.2*syscreds*len(path)
+	writemissionsavegame ("import escort_mission\ntemp=escort_mission.escort_mission('%s', %d, %d, %g, 0, %s, '','%s','%s')\ntemp=0\n"%(fac, diff, creds, str(path),fg,typ))
+	writedescription("The %s %s in the %s flightgroup requres an escort to %s. The reward for a successful escort is is %d."%(fac,typ,fg, processSystem(path[-1]),creds))
+	writemissionname("Escort_%s_to_%s"%(fac,processSystem(path[-1])))	
 
 def generateCargoMission (path, category, fac):
 	numcargos=vsrandom.randrange(1,15)
@@ -59,23 +75,37 @@ def generateCargoMission (path, category, fac):
 	diff=vsrandom.randrange(0,6)
 	launchcap=(vsrandom.random()>=.75)
 	creds=250*numcargos+500*diff+syscreds*len(path)+1000*(category.lower()=="contraband")
-	writemissionsavegame ("import cargo_mission\ntemp=cargo_mission.cargo_mission('%s', 0, %d, %d, %g, %d, 0, '%s', %s, '')\ntemp=0\n"%(fac, numcargos, diff, creds, launchcap, category, path))
+	writemissionsavegame ("import cargo_mission\ntemp=cargo_mission.cargo_mission('%s', 0, %d, %d, %g, %d, 0, '%s', %s, '')\ntemp=0\n"%(fac, numcargos, diff, creds, launchcap, category, str(path)))
+	writedescription("We need to deliver some %s cargo to the %s system. The mission is worth %d to us.  You will deliver it to a base owned by the %s"%(category, processSystem(path[-1]),creds,fac))
+	writemissionname("Deliver_%s_to_%s"%(category,processSystem(path[-1])))
 
 def generateBountyMission (path,fg,fac):
+	typ = fg_util.RandomShipIn(fg,fac)	
 	diff=vsrandom.randrange(0,6)
 	runaway=(vsrandom.random()>=.75)
 	creds=1000+2000*runaway+500*diff+syscreds*len(path)
-	writemissionsavegame("import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %g, '%s', %s, '%s')\ntemp=0\n"%(creds+syscreds*len(path), runaway, diff, fac, path, fg))
+	finalprice=creds+syscreds*len(path)
+	writemissionsavegame("import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %d, '%s', %s, '%s','%s')\ntemp=0\n"%(finalprice, runaway, diff, fac, str(path), fg,typ))
+	writedescription("A %s starship in the %s flightgroup has been harassing operations in the %s system. Reward for the termination of said ship is %d credits."%(typ,fg, processSystem(path[-1]), finalprice))
+	writemissionname ("Bounty_on_%s_starship"%fac)
 
 def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
+	defendtyp = fg_util.RandomShipIn(defendfg,defendfac)
+	attacktyp = fg_util.RandomShipIn(attackfg,attackfac)			
 	isbase=fg_util.BaseFGInSystemName(path[-1])==defendfg
 	creds=1000
-	writemissionsavegame("import defend\ntemp=defend.defend('%s', %d, %d, 8000.0, 100000.0, %g, True, %d, '%s', %s, '', '%s', '', '%s')\ntemp=0\n"%
-	                     (attackfac, 0, quantity, creds*quantity+syscreds*len(path), isbase, defendfac, str(path), attackfg, defendfg))
+	minq = 1
+	maxq = 8
+	quantity = vsrandom.randrange(minq,maxq)
+	reallydefend = "True"
+	if (vsrandom.randrange(0,4)==0):
+		reallydefend="False"
+	writemissionsavegame("import defend\ntemp=defend.defend('%s', %d, %d, 8000.0, 100000.0, %g, %s, %d, '%s', %s, '%s', '%s', '%s', '%s')\ntemp=0\n"%
+	                     (attackfac, 0, quantity, creds*quantity+syscreds*len(path), reallydefend, isbase, defendfac, str(path), attacktyp,attackfg, defendtyp, defendfg))
 	iscapitol=""
 	if isbase:
 		iscapitol="capitol "
-	writedescription("A %s assault wing has jumped in and is moving for an attack on one of our %sstarships in %s.\nYour task is to eliminate them before they eliminate our starship.\nYour reward is %d credits per fighter."%(attackfac, iscapitol, path[-1], creds))
+	writedescription("A %s assault wing named %s has jumped in and is moving for an attack on one of our %sstarships, a %s, in the %s system.\nYour task is to eradicate them before they eliminate our starship.\nIntelligence shows that they have starships of type %s. Your reward is %d credits per fighter."%(attackfac, attackfg, iscapitol, defendtyp, processSystem(path[-1]), attacktyp,creds))
 	writemissionname("Defend_%s_from_%s"%(defendfac, attackfac))
 
 def contractMissionsFor(fac,minsysaway,maxsysaway):
