@@ -78,7 +78,7 @@ class cargo_mission (Director.Mission):
 	  VS.IOmessage (3,"cargo mission",self.mplay,"You will receive %d of the %s cargo" % (self.quantity,self.cargoname))
 #	  VS.IOmessage (4,"cargo mission",self.mplay,"We will deduct %.2f credits from your account for the cargo needed." % (creds_deducted))
 	  VS.IOmessage (4,"cargo mission",self.mplay,"You will earn %.2f credits when you deliver our cargo." % (creds))
-	  VS.IOmessage (4,"game","all","#00ff00Good luck!")
+	  VS.IOmessage (4,"cargo mission",self.mplay,"#00ff00Good luck!")
 #	  self.you.addCredits (-creds_deducted)
 	
 	def takeCargoAndTerminate (self,you, remove):
