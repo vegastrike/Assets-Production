@@ -1,0 +1,33 @@
+<Unit>
+<Meshfile file="astbase-ast.xmesh"/>
+<Meshfile file="astbase-base.xmesh"/>
+<Meshfile file="astbase-shield.xmesh"/>
+<Meshfile file="astbase-tower.xmesh"/>
+	<cockpit file="centurion-cockpit.cpt" x="0" y="00" z="10"/>
+	<Thrust>
+		<Engine Afterburner="00.000000" Forward="000000" Retro="000000" Left="00000" Right="000000" Top="000000" Bottom="00000"/>
+		<Maneuver yaw="0000" pitch="00000" roll="00000"/>
+	</Thrust>
+	<Sound> </Sound>
+	<Defense>
+		<Armor front="1000" right="8000" left="8000" back="8000"/>
+		<Shields front="650" right="650" left="650" back="650" recharge="47"/>
+		<Hull strength="2500"/>
+	</Defense>
+	<Stats mass="7" momentofinertia="7" fuel="20000"></Stats>
+	<Computer yaw="103.500000" pitch="103.500000" roll="103.500000" afterburner="120.000000" maxspeed="42.000000"/>
+	<Energy>
+		<Reactor recharge="47" limit="470"/>
+	</Energy>
+<Subunit file="turret" x="-32.944168" y="-491.429596" z="197.868958" ri="0.885800" rj="0.329537" rk="0.326747" qi="-0.364430" qj="0.058041" qk="0.929420"/>
+<Subunit file="turret" x="135.730392" y="-445.411469" z="168.149841" ri="0.364430" rj="-0.058040" rk="-0.929420" qi="0.885800" qj="0.329537" qk="0.326748"/>
+<Subunit file="turret" x="73.568298" y="-347.112823" z="119.040550" ri="0.885800" rj="0.329537" rk="0.326748" qi="0.364430" qj="-0.058040" qk="-0.929420"/>
+<Subunit file="turret" x="-132.550735" y="-405.387939" z="144.141251" ri="0.364430" rj="-0.058040" rk="-0.929420" qi="-0.885800" qj="-0.329537" qk="-0.326748"/>
+<Subunit file="turret" x="154.561462" y="-218.831894" z="-409.640717" ri="0.885800" rj="0.329537" rk="0.326747" qi="0.143851" qj="0.474431" qk="-0.868459"/>
+<Subunit file="turret" x="149.909805" y="-263.717987" z="-310.728058" ri="0.817918" rj="0.334559" rk="0.468059" qi="0.287314" qj="-0.942357" qk="0.171505"/>
+<Subunit file="turret" x="54.849968" y="-381.896423" z="56.530106" ri="-0.285551" rj="0.942875" rk="-0.171600" qi="0.364631" qj="-0.058700" qk="-0.929300"/>
+<Subunit file="turret" x="151.091690" y="-617.626282" z="211.323120" ri="-0.364431" rj="0.058039" rk="0.929420" qi="0.287315" qj="-0.942357" qk="0.171504"/>
+<Subunit file="turret" x="-3.236062" y="-675.039612" z="154.395813" ri="-0.364430" rj="0.058038" rk="0.929420" qi="0.287313" qj="-0.942358" qk="0.171503"/>
+<Dock x="-66.541031" y="-205.428879" z="102.928276" size="119.402351" ri="-0.364430" rj="0.058041" rk="0.929420" qi="0.287314" qj="-0.942357" qk="0.171506"/>
+<Subunit file="turret" x="29.109716" y="-253.613358" z="-203.929703" ri="0.287314" rj="-0.942357" rk="0.171506" qi="-0.855269" qj="-0.333016" qk="-0.397009"/>
+</Unit>
