@@ -5,8 +5,7 @@ import ship_upgrades
 import VS
 import sys
 import dj_lib
-True=1
-def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=True):
+def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=1):
 #  print 'log'+ str( logo) + ' useani '+ str(useani)
   diff=usingDifficulty()
   if useani:
@@ -30,17 +29,17 @@ def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=Tr
   dj_lib.PlayMusik(0,dj_lib.HOSTILE_NEWLAUNCH_DISTANCE)
   return ret
 
-def launch_waves_around_area(fgname,faction,type,ai,nr_ships,nr_waves,r1,r2,pos,logo='',useani=True):
+def launch_waves_around_area(fgname,faction,type,ai,nr_ships,nr_waves,r1,r2,pos,logo='',useani=1):
   pos=((pos[0]+vsrandom.uniform(r1,r2)*vsrandom.randrange(-1,2,2)),
        (pos[1]+vsrandom.uniform(r1,r2)*vsrandom.randrange(-1,2,2)),
        (pos[2]+vsrandom.uniform(r1,r2)*vsrandom.randrange(-1,2,2)))
   return launch(fgname,faction,type,ai,nr_ships,nr_waves,pos,logo,useani)
 
-def launch_wave_around_area(fgname,faction,type,ai,nr_ships,r1,r2,pos,logo='',useani=True):
+def launch_wave_around_area(fgname,faction,type,ai,nr_ships,r1,r2,pos,logo='',useani=1):
 #  print 'log' + str(logo)
   return launch_waves_around_area (fgname,faction,type,ai,nr_ships,1,r1,r2,pos,logo,useani)
 
-def launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves,logo='',useani=True):
+def launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves,logo='',useani=1):
   station_unit=unit.getUnitByFgID(station_name)
   if(station_unit.isNull()):
     sys.stderr.write("launch.py:launch_around_station did not find unit %s\n" % (station_name))
@@ -52,23 +51,23 @@ def launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves,
 
 launch_around_unit=launch_around_station
 
-def launch_waves_in_area(fgname,faction,type,ai,nr_ships,nr_waves,radius,pos,logo='',useani=True):
+def launch_waves_in_area(fgname,faction,type,ai,nr_ships,nr_waves,radius,pos,logo='',useani=1):
   pos=(pos[0]+vsrandom.uniform((-radius)/2,radius/2.0),
        pos[1]+vsrandom.uniform((-radius)/2,radius/2.0),
        pos[2]+vsrandom.uniform((-radius)/2,radius/2.0))
   un = launch(fgname,faction,type,ai,nr_ships,nr_waves,pos,logo,useani)
 
-def launch_wave_in_area(fgname,faction,type,ai,nr_ships,radius,pos,logo='',useani=True):
+def launch_wave_in_area(fgname,faction,type,ai,nr_ships,radius,pos,logo='',useani=1):
   launch_waves_in_area(fgname,faction,type,ai,nr_ships,1,radius,pos,logo,useani)
 
-def launchShipsAtWaypoints(waypoints,faction,type,ainame,nr,logo='',useani=True):
+def launchShipsAtWaypoints(waypoints,faction,type,ainame,nr,logo='',useani=1):
   i=0
   for wp in waypoints:
     outstr="wp%d" % (i)
     launch(outstr,faction,type,ainame,nr,1,wp,logo,useani)
     i+=1
 
-def launch_wave_around_unit (fgname, faction, type, ai, nr_ships, minradius, maxradius, my_unit,logo='',useani=True):
+def launch_wave_around_unit (fgname, faction, type, ai, nr_ships, minradius, maxradius, my_unit,logo='',useani=1):
   myvec = (0,0,0)
   if (my_unit.isNull()):
     un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,minradius,maxradius,myvec,logo,useani)
@@ -79,7 +78,7 @@ def launch_wave_around_unit (fgname, faction, type, ai, nr_ships, minradius, max
   un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,rsiz+minradius,rsiz+maxradius,myvec,logo,useani)
   return un
 
-def launch_wave_around_significant (fgname,faction,type,ai,nr_ships,minradius, maxradius,significant_number,logo='',useani=True):
+def launch_wave_around_significant (fgname,faction,type,ai,nr_ships,minradius, maxradius,significant_number,logo='',useani=1):
   significant_unit=unit.getSignificant(significant_number,0,0)
   if (significant_unit.isNull()):
     significant_unit = VS.getPlayer()
@@ -94,18 +93,18 @@ class Launch:
     self.num=1
     self.minradius=100.0
     self.maxradius=200.0
-    self.useani=True
+    self.useani=1
     self.logo=''
     self.faction='neutral'
     self.ai='default'
     self.numwaves=1
-    self._preprocess=False
+    self._preprocess=0
     self._nr_ships=0
     self.pos=(0,0,0)
     self.fgappend=''
-    self.capitalp=False
+    self.capitalp=0
   def Preprocess (self):
-    self._preprocess=True
+    self._preprocess=1
     self._dyn_nr_ships=[]
     self._nr_ships=self.num
     import faction_ships

@@ -138,9 +138,9 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	minq = 1
 	maxq = 8
 	quantity = vsrandom.randrange(minq,maxq)
-	reallydefend = "True"
+	reallydefend = "1"
 	if (vsrandom.randrange(0,4)==0):
-		reallydefend="False"
+		reallydefend="0"
 	writemissionsavegame("import defend\ntemp=defend.defend('%s', %d, %d, 8000.0, 100000.0, %g, %s, %d, '%s', %s, '%s', '%s', '%s', '%s')\ntemp=0\n"%
 	                     (attackfac, 0, quantity, creds*quantity+syscreds*len(path), reallydefend, isbase, defendfac, str(path), attacktyp,attackfg, defendtyp, defendfg))
 	iscapitol=""
@@ -172,11 +172,11 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 			import dynamic_battle
 			l = dynamic_battle.BattlesInSystem(j[-1])
 #			print l
-			nodefend=True
+			nodefend=1
 			#THERE IS OFTEN 2-4 OF THE AME BATTLE!!!!!!!!! YTHOIS IS RIDICULOUS AND <B>MUST</B> BE FIXED
 			for k in l:
 				if (VS.GetRelation(fac,k[1][1])>=0):
-					nodefend=False
+					nodefend=0
 					generateDefendMission(j,k[1][0],k[1][1],k[0][0],k[0][1])
 #			print 'PREFERREDfacTiON-Is- '+str(preferredfaction)
 			if preferredfaction:
@@ -195,7 +195,7 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 									if rnd>=numthisfac:
 										def_fac = fac
 									generateDefendMission(j,def_fg,def_fac,mm,k)
-								nodefend=False
+								nodefend=0
 							elif vsrandom.random()<.5:
 								generateBountyMission(j,mm,k)
 				numescort = vsrandom.randrange(0,2)

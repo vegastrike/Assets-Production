@@ -29,9 +29,9 @@ class quest_explore (quest.quest):
     def setsystem(self,sys):
         self.newsys=sys
         if quest.findQuest(self.playernum,(self.sysfile+"_nav"),2):
-            self.createjumppoint(False)
+            self.createjumppoint(0)
         elif quest.findQuest(self.playernum,(self.sysfile+"_nav"),3):
-            self.createjumppoint(True)
+            self.createjumppoint(1)
     def Execute (self):
         sys=VS.getSystemFile()
         plyr=VS.getPlayerX(self.playernum)
@@ -44,7 +44,7 @@ class quest_explore (quest.quest):
                     self.notcreatedyet=1
                 elif self.notcreatedyet==1 and self.navpoint and VS.getPlayerX(self.playernum).getDistance(self.navpoint)<=2000:
                     VS.IOmessage(0,'game','all','[Computer] Energy source identified as a jump point, destination: unknown')
-                    self.createjumppoint(False)
+                    self.createjumppoint(0)
                     self.navpoint.Kill()
                     Director.putSaveData(self.playernum,(self.sysfile+"_nav"),0,2)
         elif (sys==self.newsys):

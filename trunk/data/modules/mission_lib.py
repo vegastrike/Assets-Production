@@ -52,7 +52,7 @@ an array as the which element. Returns the sprite file and text"""
 	elif (missiontype <.23): # 4%
 		last_constructor[which] = plunder.plunder
 		creds=vsrandom.randrange(15,25)*1000
-		last_args[which] = (creds,'pirates',5,'Contraband',True)
+		last_args[which] = (creds,'pirates',5,'Contraband',1)
 		last_briefing[0][which] = 'Arr Matey. We have a target in this system that needs a lil roughin up. We need you to bag a merchant and deliver her cargo into our hands.  It\'s worth '+str(creds)+ ' to us. Up to you, ya space pirate.'
 		last_briefing[1][which] = 'Ahoy! We\'ll be lookin for that cargo mighty soon!'
 		return ("bases/fixers/pirate.spr","Talk with the Pirate")

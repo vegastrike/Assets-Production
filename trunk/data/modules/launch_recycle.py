@@ -49,7 +49,7 @@ def look_for (fg, faction, numships,myunit,  pos, gcd,newship=[None]):
     un = VS.getUnit (i)
     if (un):
 		
-      if (unOrTupleDistance(un,myunit,True)>gcd ):
+      if (unOrTupleDistance(un,myunit,1)>gcd ):
         fac = un.getFactionName ()
         fgname = un.getFlightgroupName ()
         name = un.getName ()
