@@ -1,39 +1,37 @@
-<Unit scale="40">
-<Meshfile file="factory_820.xmesh"/>
+<Unit scale="80">
+<Meshfile file="aera_factory.xmesh"/>
+
+       
+
+
+
+
+<!-- new elements added -->
+<Subunit file="turretLR_PminusBeam" x="10.914954" y="1.393833" z="14.236430" ri="-0.963072" rj="0.000000" rk="-0.269246" qi="-0.002823" qj="-0.999945" qk="0.010097"/>
+<Subunit file="turretbeamheavy" x="-4.947228" y="0.000000" z="1.142730" ri="-0.989412" rj="0.000000" rk="0.145131" qi="0.000000" qj="-1.000000" qk="-0.000000"/>
+<Subunit file="turretbeam" x="-18.666697" y="1.000000" z="15.117655" ri="0.853282" rj="0.000000" rk="-0.521450" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+<Subunit file="turretheavy" x="6.403213" y="1.000000" z="12.397188" ri="0.099504" rj="0.000000" rk="0.995037" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+<Subunit file="turretheavy" x="-13.405356" y="0.000000" z="8.513393" ri="-0.124035" rj="0.000000" rk="-0.992278" qi="0.000000" qj="-1.000000" qk="-0.000000"/>
+<Subunit file="turretLR_PminusBeam" x="9.531636" y="2.000000" z="-21.408375" ri="-0.337865" rj="0.000000" rk="0.941195" qi="0.000000" qj="1.000000" qk="-0.000000"/>
+<Subunit file="turretmain" x="-3.262426" y="3.929282" z="17.394470" ri="0.774850" rj="-0.044277" rk="0.630593" qi="0.057050" qj="0.998371" qk="-0.000000"/>
+<Dock x="-2.178137" y="8.000000" z="-3.510120" size="2.229998" ri="-0.645942" rj="0.000000" rk="0.763386" qi="0.000000" qj="1.000000" qk="0.000000"/>
+<Dock x="0.435495" y="8.000000" z="-3.537666" size="2.199998" ri="-0.645942" rj="0.000000" rk="0.763386" qi="0.000000" qj="1.000000" qk="0.000000"/>
+<Dock x="2.825176" y="8.000000" z="-3.906713" size="2.299998" ri="-0.645942" rj="0.000000" rk="0.763386" qi="0.000000" qj="1.000000" qk="0.000000"/>
 	<Thrust>
 		<Engine Afterburner="00.000000" Forward="000000" Retro="000000" Left="00000" Right="000000" Top="000000" Bottom="00000"/>
 		<Maneuver yaw="0000" pitch="00000" roll="00000"/>
 	</Thrust>
 	<Sound> </Sound>
-	<Defense> <!-- HudImage="factory-hud.spr"-->
-		<Armor front="1000" right="1000" left="1000" back="1000"/>
+	<Defense HudImage="factory-hud.spr">
+		<Armor front="1200" right="1200" left="1200" back="1200"/>
 		<Shields front="1050" right="1050" left="1050" back="1050" recharge="100"/>
-		<Hull strength="7000"/>
+		<Hull strength="2000"/>
 	</Defense>
 	<Stats mass="700" momentofinertia="70" fuel="20000"></Stats>
 	<Computer yaw="00000" pitch="00000" roll="0000" afterburner="000000" maxspeed="00000"/>
 	<Energy>
 		<Reactor recharge="50" limit="470"/>
-	</Energy>
-	<Dock x="14" y="-39" z="0" size="8"/>
-	<Dock x="38" y="-39" z="0" size="8"/>
-	<Dock x="22" y="-39" z="0" size="8"/>
-	<Dock x="26" y="-39" z="0" size="8"/>
-	<Dock x="30" y="-39" z="0" size="8"/>
-
-	<Dock x="-15" y="4.5" z="7.5" size="4"/>
-	<Dock x="-15" y="4.5" z="10" size="4"/>
-	<Dock x="-15" y="4.5" z="12.5" size="4"/>
-	<Dock x="-15" y="4.5" z="14.5" size="4"/>
-	<Dock x="6.5" y="-5.5" z="-13" size="4"/>
-	<Dock x="10.5" y="-5.5" z="-13" size="4"/>
-	<Dock x="14.5" y="-5.5" z="-13" size="4"/>
-
-<!-- new elements added -->
-<Subunit file="turretheavy" x="14.756778" y="-23.000000" z="14.756778" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="turretbeamheavy" x="-15.333606" y="-23.000000" z="-15.333608" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
-<Subunit file="turretLR_PminusBeam" x="21.756910" y="-44.000000" z="2.007913" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
-<!--Last Edited by: Daniel-->
+	</Energy><!--Last Edited by: Daniel-->
 <!--23MAY01-->
 	<Hold volume="100000000000">
 		<Category file="Natural_Products/Food">
