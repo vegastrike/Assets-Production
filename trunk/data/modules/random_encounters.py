@@ -129,7 +129,7 @@ class random_encounters:
       else:
         localfaction = faction_ships.get_friend_of(localfaction)
       #      fighter = faction_ships.getRandomFighter (localfaction)
-      numship= random.randrange(1,self.gen_num_ships)
+      numship= random.randrange(1,self.gen_num_ships+1)
       self.det_distance = self.cur.detection_distance
       launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,0,self.generation_distance*random.random()*0.9,un, 2.0*self.det_distance)
       rnd_num = random.random()
@@ -206,7 +206,7 @@ class random_encounters:
         significant_unit.setNull ()
       return significant_unit
 
-  def loop(self):
+  def Execute(self):
     for self.cur in self.players:
         un = self.decideMode ()
         if (self.cur.curmode!=self.cur.lastmode):

@@ -5,15 +5,15 @@ def GetDiffInt (diff):
   if (diff<=0.1):
     ch=0
   elif (diff<=0.3):
-    ch=1-random.randrange(0,1)
+    ch=1-random.randrange(0,2)
   elif (diff<=0.5):
-    ch=2-random.randrange(0,2)
+    ch=2-random.randrange(0,3)
   elif (diff<=0.7):
-    ch=3-random.randrange(0,3)
+    ch=3-random.randrange(0,4)
   elif (diff<=0.9):
-    ch=4-random.randrange(0,4)
+    ch=4-random.randrange(0,5)
   else:
-    ch=5-random.randrange(0,5)
+    ch=5-random.randrange(0,6)
   return ch
 
 # This function makes a string based on the difficulty. In this way it can be restricted to light or medium mounts when the difficulty is low, avoiding unaffordable weapons
@@ -23,9 +23,9 @@ def GetDiffCargo (diff, base_category, all_category, use_all):
   if (diff<=0.2):
     ch=1
   elif (diff<=0.4):
-    ch=2-random.randrange(0,2)
+    ch=2-random.randrange(0,3)
   elif ((diff<=0.7) or use_all):
-    ch=3-random.randrange(0,3)
+    ch=3-random.randrange(0,4)
   #ch is 0 if it is any upgrades/Weapon  otherwise it coudl be light, medium or heavy or some random set between Light and X (l,med,or heavy)
   if (ch==1):
     cat = "%sLight" % (base_category)
@@ -56,7 +56,7 @@ def GetRandomWeapon (diff):#gets random beam or mounted gun from master part lis
   return item
 
 def getRandIncDec (type):
-  type += random.randrange (-1,2)
+  type += random.randrange (-1,2,2)
   if (type<0):
     type=0
   elif (type>5):
