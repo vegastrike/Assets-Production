@@ -120,7 +120,11 @@ def formatProperTitle(str):
 def formatShipName(string):
 	"""formats a standard ship name (ie firefly.blank) to
 	something more natural (ie basic Firefly)"""
-	(ship,extension) = string.split('.')
+	shipext = string.split('.')
+	extension = "millspec";
+	if len(shipext)>0:
+		extension = shipext[1];
+	ship = shipext[0];
 	if extension == "blank":
 		return "basic" + formatProperTitle(ship)
 	elif extension == "millspec":
