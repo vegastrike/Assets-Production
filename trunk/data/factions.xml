@@ -1,5 +1,5 @@
 <Factions>
-	<Faction name="neutral" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+	<Faction name="neutral" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
 		<stats name="retro" relation="0"/>
 		<stats name="militia" relation="0"/>
 		<stats name="merchant" relation ="0"/>
@@ -69,7 +69,7 @@
 		<stats name="pirates" relation="-.5"/>
 	</Faction>
 
-	<Faction name="rlaan" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+	<Faction name="rlaan" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
 <!--		<Explosion name="explosion_wave.ani"/>
 		<Explosion name="static_round.ani"/>-->
 
@@ -82,7 +82,7 @@
 		<stats name="powerups" relation="1"/>
 		<stats name="pirates" relation="0"/>
 	</Faction>
-	<Faction name="powerups" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+	<Faction name="powerups" logoRGB="NeutalPri.png" secLogoRGB="NeutralSec.png">
 		<stats name="rlaan" relation="1"/>
 		<stats name="retro" relation="-1"/>
 		<stats name="militia" relation="0"/>
@@ -92,7 +92,7 @@
 		<stats name="unknown" relation="-.1"/>
 		<stats name="pirates" relation="0"/>
 	</Faction>
-	<Faction name="upgrades" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+	<Faction name="upgrades" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
 		<stats name="rlaan" relation="0"/>
 		<stats name="retro" relation="0"/>
 		<stats name="militia" relation="0"/>
@@ -123,7 +123,7 @@
 		<stats name="unknown" relation="-.1"/>
 		<stats name="pirates" relation="0"/>
 	</Faction>
-	<Faction name="planets" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+	<Faction name="planets" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
 	</Faction>
 
 </Factions>
