@@ -6,7 +6,7 @@
 	</Thrust>
 	<Sound>
 	</Sound>
-	<Defense HudImage="starrunner.spr">
+	<Defense HudImage="starrunner-hud.spr">
 		<Armor front="3600" right="4000" left="4000" back="3200"/>
 		<Shields front="3600.000000" left="4000" right="4000" back="3400.000000" recharge="70.000000"/>
 		<Hull strength="6000.000000"/>
