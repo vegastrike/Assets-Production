@@ -33,20 +33,20 @@ Things must start with <Unit scale="scalefactor"> scale factor affects the size
 		-itts: if the unit has ability to target track with lead
 		-color: if unit has color radar
 		-range: maximum range of radar
-		-error: currently unused	
+		-error*: currently unused	
 		-trackingCone: cosine of cone at which guns may track
-		-lockcone: cosine of ocne at which missiles gain locking time
+		-lockcone: cosine of cone at which missiles gain locking time
 		-mintargetsize: unused...but supposedly minimum target this can do
 	-Afterburner: [Computer] Max safe speed with afterburners in meters per second
 	-maxspeed: Max safe speed without ab in m/s
 	-Yaw: max yaw in degrees per second
 	-Pitch: max pitch in dps
 	-Roll: max roll in dps
-	-SlideStart: number of tenths of seconds before fully reacting to keyboard (smoothing)
-	-SlideEnd: (number of tenths of seconds to stop)
+	-SlideStart*: number of tenths of seconds before fully reacting to keyboard (smoothing)
+	-SlideEnd*: (number of tenths of seconds to stop)
 +Cockpit
 	-file: file ot load cockpit from
-	-x: location of cockpit in metters
+	-x: location of cockpit in meters
 	-y
 	-z
 
@@ -132,7 +132,7 @@ Things must start with <Unit scale="scalefactor"> scale factor affects the size
 	-green: dye of engine
 	-size: size of engine (radius, meters)
 	-file: meshfile (sans .xmesh) for this engine model
-+Dock
++Dock**
 	-dockinternal*: whether the dock port makes the ship disappeared (unused)
 	-x: location of dock in meters
 	-y
