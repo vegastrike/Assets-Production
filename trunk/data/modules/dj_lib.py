@@ -6,6 +6,7 @@ PANICLIST=2
 VICTORYLIST=3
 LOSSLIST=4
 HOSTILE_AUTODIST=10000
+HOSTILE_NEWLAUNCH_DISTANCE=20000
 peacelist={"aera":VS.musicAddList('aera.m3u'),
             "confed":VS.musicAddList('terran.m3u'),
             "iso":VS.musicAddList('iso.m3u'),
@@ -27,11 +28,19 @@ def LookupTable(list,faction):
 			return list[None]
 	else:
 		return list[None]
+situation=PEACELIST
 
-def PlayMusik():
+def mpl (list,newsituation,forcechange):
+	global situation
+	print "SITUATION IS "+str( situation)+"force change "+str(forcechange) + " bool "+ str(forcechange or newsituation!=situation)
+	if (forcechange or newsituation!=situation):
+		print "SITUATION IS RESET TO "+str( newsituation)
+		situation=newsituation
+		VS.musicPlayList(list) 
+def PlayMusik(forcechange=1,hostile_dist=0):
 	un = VS.getPlayer()
-	if (not un):
-		VS.musicPlayList (PEACELIST)
+	if (not un):		
+		mpl (PEACELIST,PEACELIST,forcechange)
 		print "peace"
 	else:
 		perfect=1
@@ -44,20 +53,23 @@ def PlayMusik():
 			nam=target.getName().lower()
 			if un.getSignificantDistance(target)<=2*target.rSize() and ('afield'==nam[:6] or 'asteroid'==nam[:8]):
 				asteroid=True
-			if (ftmp<0 and un.getDistance(target)<HOSTILE_AUTODIST):
+			hdis = HOSTILE_AUTODIST
+			if (hostile_dist!=0):
+				hdis = hostile_dist
+			if (ftmp<0 and (target.GetTarget()==un or un.getDistance(target)<hdis)):
 				unlist.append(un.getFactionName())
 				perfect=0
 			iter.advance()
 			target=iter.current()
 		if (perfect):
 			if asteroid and asteroidmisic!=-1 and vsrandom.random()<.7:
-				VS.musicPlayList(asteroidmisic)
+				mpl(asteroidmisic,PEACELIST,forcechange)
 				return
 			sys=VS.getSystemFile()
 			fact=VS.GetGalaxyProperty(sys,"faction")
 			if vsrandom.random()<.5:
 				fact=None
-			VS.musicPlayList(LookupTable(peacelist,fact))
+			mpl(LookupTable(peacelist,fact),PEACELIST,forcechange)
 			print "peace"
 		else:
 			ftmp = (un.FShieldData()+2*un.GetHullPercent()+un.RShieldData()-2.8)*10
@@ -65,9 +77,9 @@ def PlayMusik():
 			if len(unlist) and vsrandom.random()<.5:
 				fact=unlist[vsrandom.randrange(0,len(unlist))]
 			if (ftmp<-.5):
-				VS.musicPlayList(LookupTable(paniclist,fact))
+				mpl(LookupTable(paniclist,fact),BATTLELIST,forcechange)
 				print "panic"
 			else:
-				VS.musicPlayList(LookupTable(battlelist,fact))
+				mpl(LookupTable(battlelist,fact),BATTLELIST,forcechange)
 				print "battle"
 
