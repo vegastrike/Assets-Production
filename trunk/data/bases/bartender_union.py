@@ -1,3 +1,3 @@
 import bartender
-bartender.Speak (bartender.GetDefaultBartenderText())
+bartender.Speak (bartender.GetBartenderText('iso'))
 

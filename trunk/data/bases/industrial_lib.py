@@ -2,14 +2,14 @@ import Base
 import weapons_lib
 import random
 
-def MakeCorisc(time_of_day='day'):
+def MakeCorisc(time_of_day='day',mybartender='bases/bartender_default.py'):
     room1 = Base.Room ('Landing Platform')
     Base.Texture (room1, 'tex', 'bases/industrial/landing'+time_of_day+'.spr', 0, 0)
     bar = Base.Room ('Bar')
     Base.Texture (bar, 'tex', 'bases/industrial/bar'+time_of_day+'.spr', 0, 0)
     Base.Link (bar, 'Exlink1', -1, -1, 0.466797, 2, 'Exit The Bar', 0)
     Base.Link (bar, 'Exlink2', -1, -0.200521, 1, 1.200521, 'Exit The Bar', 0)
-    Base.Python (bar, 'talk', 0.46875, -0.151042, 0.4, 0.4, 'Talk to the Bartender', 'bases/bartender_union.py')
+    Base.Python (bar, 'talk', 0.46875, -0.151042, 0.4, 0.4, 'Talk to the Bartender', mybartender)
     Base.Texture(bar,'bartender','bases/industrial/bartender%d.spr' % (random.randrange(0,4)),0.66875, 0.048958)
     weap = weapons_lib.MakeWeapon (room1,time_of_day)
     if (time_of_day=='_day'):
