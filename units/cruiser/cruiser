@@ -16,6 +16,7 @@
 	<Energy>
 		<Reactor recharge="100" limit="1000"/>
 	</Energy>
+	<Jump delay="1" jumpenergy="900"/>       
 <Dock x="-110" y="28" z="-97" size="60"/>
 <Dock x="110" y="28" z="-97" size="60"/>
 <Dock x="-110" y="-11" z="-38" size="60"/>
@@ -28,6 +29,9 @@
 <Dock x="110" y="28" z="-38" size="60"/>
 <Dock x="-110" y="-11" z="90" size="60"/>
 <Dock x="110" y="-11" z="90" size="60"/>
+	<Hold volume="400">
+
+	</Hold>
        
 
 <!-- new elements added -->

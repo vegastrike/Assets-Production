@@ -24,6 +24,7 @@
 	<Energy>
 		<Reactor recharge="3000" limit="36000"/>
 	</Energy>
+	<Jump delay="1" jumpenergy="33000"/>
 <Mount weapon="Vaporisator" size="Heavy" x="000" y="-0.825000" z="5769.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>
 <Mount weapon="Vaporisator" size="Heavy" x="000" y="0.825000" z="5769.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>
 <Mount weapon="Vaporisator" size="Heavy" y="000" x="-0.825000" z="5769.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>

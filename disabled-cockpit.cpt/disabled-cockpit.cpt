@@ -15,6 +15,6 @@
 	<Eject file="eject.spr"/>
 	<LeftVDU TextRows="15" TextCols="25" file="lvdu.spr" />
 	<VDU  TextRows="15" TextCols="25" type="Comm View TargetManifest Nav Target" file ="rvdu.spr"/>
-	<VDU TextRows="10" TextCols="100" type="Message" file="mvdu.spr"/>
+	<VDU TextRows="14" TextCols="100" type="Message" file="mvdu.spr"/>
 	<FPS file="radar.spr" xcent=".9" ycent=".8" width=".018" height=".036"/>
 </Cockpit>
