@@ -16,7 +16,7 @@
 		<Radar itts="true" color="true" maxrange="80000"  error="0"/>
 	</Computer>
 	<Energy>
-		<Reactor recharge="340" limit="10000"/>
+		<Reactor recharge="340" limit="15000"/>
 	</Energy>
 	<Jump delay="1" jumpenergy="9000"/>              
 <Dock x="265" y="0" z="-1400" size="100"/>
@@ -172,6 +172,7 @@
 		<Import price="3" pricestddev="1.4" quantity="24" quantitystddev="10"/>
 	    </Category>
 	    <Category file="upgrades">
+		<Import price="1" quantity="1"/>
 		<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>
 		<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
 		<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>

@@ -23,7 +23,7 @@
 	</Computer>
 
 	<Energy>
-		<Reactor recharge="10" limit="100"/>
+		<Reactor recharge="10" limit="140"/>
 	</Energy>
 
 </Unit>

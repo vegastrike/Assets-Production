@@ -22,7 +22,7 @@
 	<Stats mass="1000.000000" momentofinertia="1080.000000" fuel="2000000"></Stats>
 	<Computer yaw="41.400002" pitch="45.200001" roll="41.400002" afterburner="20.000000" maxspeed="14.666666"/>
 	<Energy>
-		<Reactor recharge="3000" limit="36000"/>
+		<Reactor recharge="3000" limit="39500"/>
 	</Energy>
 	<Jump delay="1" jumpenergy="33000"/>
 <Mount weapon="Vaporisator" size="Heavy" x="000" y="-0.825000" z="5769.000000" ri="0.000000" rj="0.000000" rk="1.000000" qi="0.022849" qj="-0.999739" qk="0.000000"/>

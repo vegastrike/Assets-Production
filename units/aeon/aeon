@@ -25,7 +25,7 @@
 		<Radar itts="false" color="true" error="0"/> </Computer>
 
 	<Energy afterburnenergy="30">
-		<Reactor recharge="64" limit="100"/>
+		<Reactor recharge="64" limit="150"/>
 	</Energy>
            	<Jump delay="1" jumpenergy="90"/>       
 
