@@ -4,7 +4,7 @@ import fg_util
 import vsrandom
 
 def contractMissionsFor(fac,minsysaway,maxsysaway):
-	fac=faction_ships.intToFaction()
+	fac=faction_ships.intToFaction(fac)
 	enemies = list(faction_ships.enemies[fac])
 	script=''
 	while len(enemies):
@@ -28,7 +28,7 @@ def getSystemsKAwayNoFaction( start, k ):
 		pathtor=[]
 		for iind in range(len(set)):
 			i = set[iind]
-			l = universe.getAdjacentSystemList(i)
+generateEscortMission			l = universe.getAdjacentSystemList(i)
 			for jind in range(len(l)):
 				j=l[jind]
 				if not (j in set or j in r):
@@ -36,7 +36,7 @@ def getSystemsKAwayNoFaction( start, k ):
 					pathtor.append(pathset[iind]+[j])
 	return pathtor
 
-def getSystemsNAway (start,preferredfaction):
+def getSystemsNAway (start,k,preferredfaction):
 	l = getSystemsKAwayNoFaction(start,k)
 	if (preferredfaction==None):
 		return l
@@ -53,16 +53,56 @@ def getSystemsNAway (start,preferredfaction):
 		return l
 	return lbak
 
+def generatePatrolMission (path, numplanets):
+	###
+
+def generateEscortMission (path):
+	###
+
+def generateCargoMission (path, contraband):
+	###
+
+def generateBountyMission (path):
+	###
+
+def generateDefendMission (path):
+	###
+
 def contractMissionForTo (fac,enemy,minsysaway,maxsysaway):
+	"""Creates a mission for faction `fac' and against `enemy'"""
 	script=''
 	cursystem = VS.getSystemFile()
 	thisfaction = VS.GetGalaxyFaction (cursystem)
 	preferredfaction=None
 	if (VS.GetRelation (fac,thisfaction)>0):
 		preferredfaction=fac#try to stay in this territory
+	l=[]
 	for i in range (minsysaway,maxsysaway+1):
-		for j in getSystemsNAway(cursystem,i,preferredfaction):
-			pass
+		l.append(getSystemsNAway(cursystem,i,preferredfaction)):
+	maxmissions=vsrandom.randrange(1,30) ###FIXME: choose a better number than 30.
+	#Note: not all maxmissions missions will be created: sometimes, conditions may not allow certain types missions to be created.
+	for cur in range(0,maxmissions):
+		rnd=vsrandom.random()
+		if (rnd<.5):
+			dist=0
+			path=[]
+		else:
+			dist=vsrandom.randrange(maxsysaway+1-minsysaway)
+			path=l[dist][len(l[dist])]
+		if (rnd<.18):    # 18% - Patrol mission
+			generatePatrolMission(maxsysaway, minsysaway,vsrandom.randrange(4,10)):
+		elif (rnd<.41):  # 23% - Cargo mission
+			generateCargoMission(path,true)
+		elif (rnd<.59):  # 18% - Bounty mission
+			generateBountyMission(path)
+		elif (rnd<.77):  # 18% - Defend mission
+			generateDefendMission(path)
+		if (rnd<.95):    # 18% - Escort mission
+			generateEscortMission(path):
+		elif (fac=='pirates'): # 5% - Contraband mission (cargo contraband)
+			generateCargoMission(path,false)
+		else:            #  5% - Scout mission (patrol one planet)
+			generatePatrolMission(path,1)
 	return script
 
 def CreateMissions(minsys=1,maxsys=4):
