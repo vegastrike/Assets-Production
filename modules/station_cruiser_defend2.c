@@ -26,8 +26,8 @@ module station_cruiser_defend2 {
     outstr=_string.new();
 
     order.flyToOtherShip("gold-0","silver-0",0.5,false,1000.0);
-    order.patrolFg(0,"green-","-nothing-",1000.0);
-    order.patrolFg(1,"yellow-","gold-0",300.0);
+    order.patrolFg(0,"green-","-nothing-",1000.0,0.6);
+    order.patrolFg(1,"yellow-","gold-0",300.0,0.6);
 
 
     _io.message(0,"confed","confed","It's another nice day lad");

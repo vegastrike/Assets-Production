@@ -18,7 +18,7 @@
 		</flightgroup>
 
                 <flightgroup name="silver" faction="confed" type="cruiser" ainame="_ai_stationary" waves="8" nr_ships="1">
-			<pos offset="rookie" x="300.0" y="300.0" z="500.0"/>
+			<pos offset="rookie" x="300.0" y="300.0" z="-900.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
 

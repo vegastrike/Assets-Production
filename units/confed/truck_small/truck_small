@@ -27,7 +27,7 @@
        
 		<cockpit file="hellcat-cockpit.cpt" x="-510.1025" y="-75.2875" z="1363.585"/>
 
-		<Subunit file="cargo01" x="0" y="0" z="540.0075"/>
+		<Subunit file="cargo" x="0" y="0" z="540.0075"/>
 <Light file="engine1.png" x="0" y="0" z="-630.1675" size="125" r="0.698039216" g="0.39215686" b="0.39215686"/>
 
 
