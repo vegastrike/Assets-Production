@@ -1,6 +1,7 @@
 module launch {
 
   import random;
+  import unit;
 
   void launch_around_station(object station_name,object fgname,object faction,object type,object ai,int nr_ships,int nr_waves){
     object station_unit=unit.getUnitByFgID(station_name);
