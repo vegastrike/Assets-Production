@@ -4,13 +4,13 @@
 	<Light file="supernova.bmp" x="0" y="0" z="-2.00000023841858" size= ".6"/>
 
 <Thrust> 
-	<Engine Afterburner="2300"
-		  Forward="800"
-		  Retro="500"
-		  Left="560"
-		  Right="560"
-		  Top="560"
-		  Bottom="560"/>
+	<Engine Afterburner="300"
+		  Forward="200"
+		  Retro="100"
+		  Left="100"
+		  Right="100"
+		  Top="100"
+		  Bottom="100"/>
 			<Maneuver yaw="64.200050" pitch="69.600151" roll="64.200050"/>
 
 </Thrust>
@@ -18,7 +18,7 @@
 <Defense>
 	<Hull strength="5"/>
 </Defense>
-<Stats mass="10" momentofinertia="6" fuel="200000"></Stats>
+<Stats mass="10" momentofinertia="6" fuel="2000000000000"></Stats>
 
 <Computer yaw="40" pitch="40" roll="40" afterburner="540" maxspeed="320"/>
 <Energy>
