@@ -74,13 +74,15 @@ module nvn {
     if (begin==0) {
 		begin=1;
 	  	object player = _unit.getPlayer();
-		object faction = _unit.getFaction(player);
-		launch_new_ships(faction,numfriend,true,"Linux");
-		launch_new_ships(faction,numenemy,false,"XP");
-		_io.message(0,"game","all","use the '[' key to begin and");
-		_io.message(1,"game","all","to switch control of your ships");
-		_io.message(2,"game","all","or you can have fun flying");
-		_io.message(3,"game","all","in a dumbfire ;)");
+		if (!_std.isNull(player)) {
+		  object faction = _unit.getFaction(player);
+		  launch_new_ships(faction,numfriend,true,"Halo");
+		  launch_new_ships(faction,numenemy,false,"Shadow");
+		  _io.message(0,"game","all","use the '[' key to begin and");
+		  _io.message(1,"game","all","to switch control of your ships");
+		  _io.message(2,"game","all","or you can have fun flying");
+		  _io.message(3,"game","all","in a dumbfire ;)");
+		}
 	}
   };
 }
