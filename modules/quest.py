@@ -28,7 +28,7 @@ class quest:
         self.playernum=playernum
     def removeQuest(self,value=1):
         removeQuest(self.playernum,self.name,value)
-    def makeQuestPersistant(self):
+    def makeQuestPersistent(self):
         self.removeQuest(-1)
     def Execute(self):
         print "default"
@@ -41,11 +41,11 @@ class quest_factory:
         return self.name==oth.name
     def create (self ):
         return quest()
-    def precondition (self):
+    def precondition (self,playernum):
         return 1
     def persistent_factory(self,playernum):
         if (persistentQuest(playernum,self.name)):
-            print "persistant_factory"
+            print "persistent_factory"
             return self.private_create(playernum)            
         return
     def private_create (self,playernum):
@@ -55,7 +55,7 @@ class quest_factory:
             removeQuest(playernum,self.name)
         return newquest        
     def factory (self,playernum):
-        if (self.precondition()):
+        if (self.precondition(playernum)):
             if (notLoadedQuest (playernum,self.name)):
                 print "nonpfact"            
                 return self.private_create(playernum)

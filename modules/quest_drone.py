@@ -13,7 +13,7 @@ class quest_drone (quest.quest):
     def launchNewDrone (self):
         playa=VS.getPlayer()
         if (not playa.isNull()):
-            self.makeQuestPersistant()
+            self.makeQuestPersistent()
             vec = playa.Position()
             vec = Vector.Add(vec,(3000,0,0))
             self.drone=VS.launch("IO47","unknown_active","unknown","unit","default",1,1,vec,'')
