@@ -39,6 +39,7 @@ module launch {
 	ret = mynew;
 	rsize =_unit.getRSize (mynew)*1.75;
       }
+      ship_upgrades.basicUnit(mynew);
       ship_upgrades.upgradeUnit ( mynew,creds,difficulty);
       x=x-rsize;
       //	y=y-rsize;
