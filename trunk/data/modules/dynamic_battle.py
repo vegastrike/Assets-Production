@@ -103,20 +103,20 @@ def Siege(fac):
 					#print 'siegarol enemioes '+str(numenemyfg)+ ' friends '+str(numfriendfg)
 					if exploration:
 						if sys != 'nil':
+							import generate_dyn_universe
+							generate_dyn_universe.TakeoverSystem(fac,sys)
+							#HACK, regenerate bases instnatly
 							Director.pushSaveString(0,"dynamic_news"
 						,dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"exploration","end",fac,enfac,"1",str(getImportanceOfSystem(sys)),sys,"all",fg,fgleader,"unknown","unknown"]))
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 
-						import generate_dyn_universe
-						generate_dyn_universe.TakeoverSystem(fac,sys)
-						#HACK, regenerate bases instnatly
 					elif (numenemyfg==0 and numfriendfg==0): #If both annihalate each other completely (unlikely but possible)
 						facnum = VS.GetFactionIndex (fac)
 						print 'cehcking started'
 						print "DRAW error "+fg+" sys has "+sys+" has " +str(fg_util.NumFactionFGsInSystem(fac,sys))+" String is "+Director.getSaveString(0,fg_util.MakeStarSystemFGKey(sys),facnum)
 						if sys != 'nil':
-							Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"siege","end",fac,enfac,"0",str(getImportanceOfSystem(sys)),sys,"all",fg,"unknown","unknown","unknown"]))
+							Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList([str(Director.getSaveData(0,"stardate",0)),"siege","end",fac,enfac,"1",str(getImportanceOfSystem(sys)),sys,"all",fg,"unknown","unknown","unknown"]))
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 
