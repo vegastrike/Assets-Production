@@ -3,7 +3,7 @@
 # Attempt to automatically update this directory and build a RPM file
 # Must be root
 
-#cvs -z3 up -d
+cvs -z3 up -d
 rm -f *.exe *.dll
 
 cp vegastrike-data.spec /usr/src/RPM/SPECS/
