@@ -1,5 +1,6 @@
 <Unit>
 	<Meshfile file="kyta.xmesh" />
+	<BspMesh/>
 	<Thrust>
 		<Engine Afterburner="1196.999969" Forward="334.399994" Retro="292.599995" Left="167.199997" Right="167.199997" Top="167.199997" Bottom="167.199997"/>
 		<Maneuver yaw="2415.500000" pitch="3415.500000" roll="3415.500000"/>

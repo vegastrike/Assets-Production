@@ -1,5 +1,7 @@
 <Unit>
+
 	<Meshfile file="lekra.xmesh" />
+	<BspMesh/>
 	<Thrust>
 		<Engine Afterburner="1333.333282" Forward="533.333313" Retro="466.666649" Left="266.666656" Right="266.666656" Top="266.666656" Bottom="266.666656"/>
 		<Maneuver yaw="2187.800201" pitch="6831.000000" roll="6831.000000"/>
@@ -8,8 +10,8 @@
 	</Sound>
 	<Defense>
 		<Armor front="200" right="200" left="200" back="100"/>
-		<Shields front="30.000000" right="20.000000" left="20.000000" back="20.000000" recharge="22.000000"/>
-		<Hull strength="200.000000"/>
+		<Shields front="30.000000" right="20.000000" left="20.000000" back="20.000000" recharge="23.000000"/>
+		<Hull strength="400.000000"/>
 	</Defense>
 	<Stats mass="2.250000" momentofinertia="2.250000" fuel="20000"></Stats>
 	<Computer yaw="116.600006" pitch="207.000000" roll="207.000000" afterburner="133.333328" maxspeed="66.666664">

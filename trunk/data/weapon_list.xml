@@ -89,7 +89,7 @@
 </Bolt>
 
 <Bolt name="Disruptor" mountsize="light"> 
-<Energy rate="12" stability="6" refire=".3">
+<Energy rate="10" stability="6" refire=".3">
 </Energy>
 <Damage rate="30" longrange="1">
 </Damage>
@@ -124,7 +124,7 @@
 <Beam name="DisruptorBeam" mountsize="medium"> 
 <Energy rate="14" stability="6" refire=".6">
 </Energy>
-<Damage rate="48" longrange="1">
+<Damage rate="84" longrange=".5">
 </Damage>
 <Distance speed="260" radialspeed=".8" radius="1" length="4" pulsespeed="15" range="400" >
 </Distance>

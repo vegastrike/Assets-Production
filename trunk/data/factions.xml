@@ -1,4 +1,13 @@
 <Factions>
+	<Faction name="neutral" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
+		<stats name="kilrathi" relation="0"/>
+		<stats name="retro" relation="0"/>
+		<stats name="militia" relation="0"/>
+		<stats name="merchant" relation ="0"/>
+		<stats name="aera" relation="0"/>
+
+	</Faction>
+
 	<Faction name="confed" logoRGB="TerranPriRGB.bmp" logoA="TerranPriA.bmp">
 		<stats name="kilrathi" relation="-1"/>
 		<stats name="retro" relation="-.4"/>
@@ -41,4 +50,5 @@
 		<stats name="militia" relation="1"/>
 		<stats name="merchant" relation =".3"/>
 	</Faction>
+
 </Factions>
