@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="2.5">
 	<cockpit file="heavy-cockpit.cpt"/>
 	<Meshfile file="aevant.xmesh" />
 	<Thrust>

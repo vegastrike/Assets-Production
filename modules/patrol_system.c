@@ -14,8 +14,15 @@ module patrol_system {
   object patrolpoints;
   int jnum;//to check for jump point closeness
   bool anything;
-  
-	void init (int numsystemsaway, int num_significants_to_patrol, float distance_from_base, float creds) {
+  void initrandom (int minsysaway, int maxsysaway, int minsigtopatrol, int maxsigtopatrol, float mincred, float maxcred) {
+    int nsys = random.randomint (minsysaway, maxsysaway);
+    int nsig = random.randomint (minsigtopatrol, maxsigtopatrol);
+    init (nsys,
+	  nsig,
+	  random.random(100.0,300.0),
+	  (1+(_std.Float (nsys)*0.5))*_std.Float(nsig)*random.random (mincred,maxcred));
+  };
+  void init (int numsystemsaway, int num_significants_to_patrol, float distance_from_base, float creds) {
 	  jnum=0;
 	  anything=true;
 	  distance = distance_from_base;
@@ -37,6 +44,9 @@ module patrol_system {
 	  _string.delete (name);
 	  _io.message (0,"game","all",str);
 	  go_somewhere_significant.init(you,numsystemsaway,false,false,distance_from_base);
+
+	  _io.sprintf(str,"When you complete this mission we will reward you %f credits.",creds);
+	  _io.message (0,"game","all",str);
 	  _string.delete(str);
 	  patrolpoints=_olist.new();
 	};
@@ -53,6 +63,7 @@ module patrol_system {
 	};
 	void SuccessMission(object you) {
 	  _unit.addCredits (you, cred);
+	  _io.message (0,"game","all","[Computer] Transmitting data...");
 	  _io.message (0,"game","all","Thank you! Patrol Complete.");
 	  _io.message (0,"game","all","We have credited your account.");
 	  destroy();
@@ -64,7 +75,7 @@ module patrol_system {
 	  _io.message (0,"game","all",str);
 	  while (quantity>0) {
 	    int signum = random.randomint (0,64);
-	    object sig = unit.getSignificant (signum,false);
+	    object sig = unit.getSignificant (signum,false,false);
 	    if (!_std.isNull(sig)) {
 	      object fac =_unit.getFaction(sig);
 	      object nam =_unit.getName (sig);
@@ -85,7 +96,7 @@ module patrol_system {
 	    object jpoint = _unit.getUnitFromContainer (tmp);
 	    bool visited = _std.isNull(jpoint);
 	    if (!_std.isNull(jpoint)) {
-	      if (_unit.getDistance (you,jpoint)<distance) {
+	      if (unit.getSignificantDistance (you,jpoint)<distance) {
 		object str = _string.new();
 		object nam = _unit.getName(jpoint);
 		_io.sprintf (str,"[Computer] %s scanned, data saved...",nam);
@@ -124,5 +135,15 @@ module patrol_system {
 	  }else {
 	    go_somewhere_significant.loop();//only bother looping if we're not there yet
 	  }
+	};
+
+	void initbriefing() {
+
+	};
+	void loopbriefing() {
+
+	};
+	void endbriefing() {
+	  
 	};
 }

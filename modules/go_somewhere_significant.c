@@ -3,6 +3,8 @@ module go_somewhere_significant {
   import universe;
   object destination;
   object significantun;
+  object jumps;
+  bool baseonly;
   bool capship;
   bool jumppoint;
   bool arrivedsys;
@@ -25,14 +27,24 @@ module go_somewhere_significant {
   object DestinationSystem () {
     return destination;
   };
+  object JumpPoints () {
+	  return jumps;
+  };
+  void init_base_only (object you, int numsystemsaway, float distance_away_to_trigger) {
+    init (you,numsystemsaway,true,false,distance_away_to_trigger);
+    baseonly = true;
+  };
   void init (object you, int numsystemsaway, bool capship_only, bool jumppoint_only,  float distance_away_to_trigger) {
     _std.setNull ( significantun);
+	jumps=_olist.new();
     youcontainer = _unit.getContainer (you);
     capship = capship_only;
     jumppoint = jumppoint_only;
+    baseonly=false;
     distfrombase=distance_away_to_trigger;
     object sysfile = _std.getSystemFile();
-    destination=universe.getAdjacentSystem(sysfile,numsystemsaway);
+    destination=universe.getAdjacentSystem(sysfile,numsystemsaway,jumps);
+    _string.delete (sysfile);
     arrivedsys=false;
     arrivedarea=false;
   };
@@ -40,6 +52,7 @@ module go_somewhere_significant {
     _unit.deleteContainer (youcontainer);
     _std.setNull(youcontainer);
     _string.delete (destination);
+	_olist.delete(jumps);
     _std.setNull(destination);
     if (arrivedsys) {
       if (!_std.isNull(significantun)) {
@@ -55,18 +68,24 @@ module go_somewhere_significant {
 	    if (_std.isNull(base)||_std.isNull(you)) {
 	      return;
 	    }
-	    float dist=_unit.getDistance(base,you);
+	    float dist=unit.getSignificantDistance(you,base);
 	    if (dist<=distfrombase) {
 	      arrivedarea=true;
 	    }
 	  } else if (!arrivedsys) {
+//		  _io.printf("ff");
+
 	    object sysfil = _std.getSystemFile();
-	    if (_string.equal (sysfil,destination)) {
-	      arrivedsys=true;
+//		  _io.printf("ee");
+
+		if (_string.equal (sysfil,destination)) {
+//		  _io.printf("gg");
+
+			arrivedsys=true;
 	      object significant;
 	      if (capship) {
 		int randint=random.randomint(0,128);
-		significant = unit.getSignificant (randint,capship);
+		significant = unit.getSignificant (randint,capship,baseonly);
 	      }else {
 		significant = universe.getRandomJumppoint ();
 	      }
@@ -87,7 +106,11 @@ module go_somewhere_significant {
 	      }
 	    }
 	    _string.delete (sysfil);
+//		  _io.printf("vv");
+
 	  }    
+//		  _io.printf("ww");
+
 
   };
 }

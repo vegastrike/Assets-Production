@@ -11,7 +11,7 @@ module earth_patrol_rnd_attack2 {
     lasttime=0.0;
     drone=0;
     waittime=50.0;
-    faction_ships.make_ships_list();
+    faction_ships.init_no_blank();
   };
 
   void launch_new_ships(){

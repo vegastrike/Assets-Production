@@ -9,11 +9,11 @@
    </SCALE>
    <Vector Dup="200*(v - u)"/>
  </MatchLin>
- <ExecuteFor time="2">
+<!-- <ExecuteFor time="2">-->
   <ChangeHead>
    <ADD>
     <Vector TargetPos="u"/>
    </ADD>
   </ChangeHead>
- </ExecuteFor>
+<!-- </ExecuteFor>-->
 </SCRIPT>

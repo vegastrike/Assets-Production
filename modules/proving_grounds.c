@@ -11,7 +11,7 @@ module proving_grounds {
     lasttime=0.0;
     drone=0;
     waittime=random.random(110.0,130.0);
-    faction_ships.make_ships_list();
+    faction_ships.init_no_blank();
   };
 
   void launch_new_ships(){
@@ -36,9 +36,11 @@ module proving_grounds {
 
 
     object player=_unit.getPlayer();
-    object player_pos=_unit.getPosition(player);
+    if (!_std.isNull(player)) {
+      object player_pos=_unit.getPosition(player);
 
-    launch.launch_wave_around_area("fgname",faction_name,typename,"default",nr_ships,2000.0,10000.0,player_pos);
+      launch.launch_wave_around_area("fgname",faction_name,typename,"default",nr_ships,2000.0,10000.0,player_pos);
+    }
   };
 
   void loop(){

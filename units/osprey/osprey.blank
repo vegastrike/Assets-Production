@@ -1,4 +1,4 @@
-<Unit scale="1">
+<Unit scale="4">
 	<Defense HudImage="osprey-hud.spr">
 		<Shields front="0.000000" right="0.000000" left="0.000000" back="0.000000"/>
 	</Defense>
@@ -21,7 +21,7 @@
 	<Mount weapon="" size="special-missile" x="3.000000" y="-.9000000" z="-0.000000" ammo="30" volume="1500"/>	
 	<Mount weapon="" size="special-missile" x="-3.000000" y="-.9000000" z="-0.000000" ammo="30" volume="1500"/>	
 
-	<Subunit file="empty" x="0.089912" y="0.120528" z="-6.000000" ri="0.994033" rj="-0.109082" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
+	<Subunit file="small_blank" x="0.089912" y="0.120528" z="-6.000000" ri="0.994033" rj="-0.109082" rk="0.000000" qi="0.000000" qj="0.000000" qk="-1.000000"/>
 
 	<Thrust>
 		<Engine Afterburner="1333.333282" Forward="341.333344" Retro="298.666676" Left="170.666672" Right="170.666672" Top="170.666672" Bottom="170.666672"/>

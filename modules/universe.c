@@ -8,24 +8,28 @@ module universe {
   object system_map;
   object outstr;
 
-  object nearsys (object currentsystem, int sysaway, object str) {
+  object nearsys (object currentsystem, int sysaway, object str, object jumps) {
     int max=_std.getNumAdjacentSystems(currentsystem);
     if ((sysaway<=0)||(max<=0)) {
       _io.sprintf(str,"Your final destination is %s",currentsystem);
       _io.message (1,"game","all",str);
-      return currentsystem;
+	  object ret = _string.new();
+	  _io.sprintf (ret,"%s",currentsystem);
+      return ret;
     } else {
       int nextsysnum=random.randomint(0,max-1);
       object nextsystem=_std.getAdjacentSystem(currentsystem,nextsysnum);
       _io.sprintf(str,"Jump from %s to %s.",currentsystem,nextsystem);
       _io.message (1,"game","all",str);
-      return nearsys(nextsystem,sysaway-1,str);
+      _olist.push_back(jumps,nextsystem);
+      object ret=nearsys(nextsystem,sysaway-1,str,jumps);
+	  return ret;
     }
   };
   
-  object getAdjacentSystem (object currentsystem, int num_systems_away) {
+  object getAdjacentSystem (object currentsystem, int num_systems_away,object jumps) {
     object str = _string.new();
-    object temp=nearsys (currentsystem,num_systems_away,str);
+    object temp=nearsys (currentsystem,num_systems_away,str,jumps);
     _string.delete(str);
     return temp;
   };

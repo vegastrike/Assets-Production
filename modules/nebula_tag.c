@@ -28,7 +28,7 @@ module nebula_tag {
 		int i=0;
 		lasttime=0.0;
 		waittime=random.random(50.0,130.0);
-		faction_ships.make_ships_list();
+		faction_ships.init_no_blank();
 		while(i<3) {
 			launch_new_ships();
 			i=i+1;

@@ -31,8 +31,10 @@ module escort_mission {
   bool intra_system;
   void AddCargoToUnit (object un, int quantity) {
 	  object list=_unit.getRandCargo(quantity);
-	  cargoname=_olist.at(list,0);
-	  int quantity = _unit.addCargo(un,cargoname,_olist.at(list,1),_olist.at(list,2),_olist.at(list,3),_olist.at(list,4),_olist.at(list,5));  
+          if (_olist.size (list)>0) {
+  	    cargoname=_olist.at(list,0);
+	    int quantity = _unit.addCargo(un,cargoname,_olist.at(list,1),_olist.at(list,2),_olist.at(list,3),_olist.at(list,4),_olist.at(list,5)); 
+          }
 	  _olist.delete(list);
   };
   void ActivateStage1 (object jumppoint) {
@@ -41,6 +43,7 @@ module escort_mission {
     object esc =launch.launch_wave_around_unit("Base",faction,escname,"flyto",1,distfromjump*0.5,distfromjump,jumppoint);
     AddCargoToUnit(esc,100);
     _unit.setName(esc,"Freighter");
+    _unit.setFgDirective(esc,"B");
     _unit.setTarget (esc,jumppoint);
     _unit.Jump(esc);
     _io.message (0,"game","all","Freighter to all available craft.");
@@ -52,7 +55,7 @@ module escort_mission {
     //esc is not null when we are here
     //    _std.playSound ("happy.wav",0.0,0.0,0.0);
     object capname = faction_ships.getRandomCapitol(faction);
-    object un = launch.launch_wave_around_unit ("base",faction,capname,"default",1,distfrombase,distfrombase,esc);
+    object un = launch.launch_wave_around_unit ("Base",faction,capname,"default",1,distfrombase,distfrombase,esc);
     basecontainer = _unit.getContainer (un);
     stage=2;
     object str =_string.new();
@@ -96,22 +99,29 @@ module escort_mission {
       _std.setNull(basecontainer);
     }
   };
-  void init (int factionname, int missiondifficulty, float our_dist_from_jump, float dist_from_jump, float distance_from_base, float creds, float enemy_time, bool AllInThisSystem) {
+  void initrandom (object factionname, int missiondifficulty, float creds, float entime, bool insys) {
+    float targetdist = random.random(5000.0,7000.0);
+    init (factionname,missiondifficulty, 6000.0, random.random(5000.0,7000.0), targetdist, creds,entime,insys);
+  };
+
+  void init (object factionname, int missiondifficulty, float our_dist_from_jump, float dist_from_jump, float distance_from_base, float creds, float enemy_time, bool AllInThisSystem) {
     
 	  faction_ships.init();
-	  piratesstring = _string.new();
+
 	  _std.setNull(youcontainer);
 	  _std.setNull(escortee);
 	  _std.setNull(destination);
 	  _std.setNull(basecontainer);
-	  _io.sprintf (piratesstring,"pirates");
+	  piratesstring = faction_ships.get_enemy_of (factionname);
+
 	  intra_system=AllInThisSystem;
 	  enemytime=enemy_time;
 	  my_timer=_std.getGameTime()-enemy_time;//will start with enemies;
 	  _std.setNull (escortee);
 	  _std.setNull (basecontainer);
 	  other_system_comp=0;
-	  faction=faction_ships.intToFaction(factionname);
+	  faction = _string.new();
+	  _io.sprintf(faction,"%s",factionname);
 	  stage=0;
 	  cred=creds;
 	  distfrombase=distance_from_base;
@@ -195,6 +205,7 @@ module escort_mission {
 		un=faction_ships.getRandomFighter(faction);
 		object newunit=launch.launch_wave_around_unit("Shadow", faction, un, "default", 1,1000.0, 1000.0,play);
 		_unit.setTarget(newunit,play);
+		_unit.setFgDirective (newunit,"B");
 		i=i+1;
 		
 	      }
@@ -202,7 +213,7 @@ module escort_mission {
 		if (!_std.isNull(basecontainer)) {
 		  object bas = _unit.getUnitFromContainer (basecontainer);
 		  if (!_std.isNull(bas)) {
-		    _unit.setTarget (bas,play);
+		    //		    _unit.setTarget (bas,play);
 		  }
 		}
 	      }
@@ -224,12 +235,13 @@ module escort_mission {
 	      object randomtype = faction_ships.getRandomFighter ("confed");
 	      launched = launch.launch_wave_around_unit("XShadowX","confed",randomtype,"default",difficulty+1,200.0,4000.0,esc);
 	    }else {
-	      object randtype = faction_ships.getRandomFighterInt(random.randomint(0,faction_ships.getMaxFactions()-1));
-	      launched = launch.launch_wave_around_unit ("XShadowX","pirates",randtype,"default",difficulty+1,200.0,4500.0,esc);
+	      object randtype = faction_ships.getRandomFighter(piratesstring);
+	      launched = launch.launch_wave_around_unit ("XShadowX",piratesstring,randtype,"default",difficulty+1,200.0,4500.0,esc);
 	      //launched = launch.launch_wave_around_unit ("XShadowX","pirates","revoker","default",difficulty+1,4500.0,esc);
 	    }
 	    if (!_std.isNull (launched)) {
 	      _unit.setTarget(launched,esc);
+	      _unit.setFgDirective (launched,"B");
 	      //	      _std.playSound ("happy.wav",0.0,0.0,0.0);
 	    }
 	    my_timer = mtime;	    
@@ -262,7 +274,7 @@ module escort_mission {
 	  if (stage==0) {
 	    object jumppoint = _unit.getUnitFromContainer (destination);
 	    if (!_std.isNull(jumppoint)) {
-	      if (_unit.getDistance (jumppoint,play)<ourdistfromjump) {
+	      if (unit.getSignificantDistance (play,jumppoint)<ourdistfromjump) {
 		ActivateStage1(jumppoint);
 	      }
 	    }else {
@@ -288,4 +300,14 @@ module escort_mission {
 	    }
 	  }
 	};
+	void initbriefing() {
+
+	};
+	void loopbriefing() {
+
+	};
+	void endbriefing() {
+
+	};
 }
+

@@ -1,4 +1,5 @@
 <Unit>
+<cockpit file="heavy-cockpit.cpt" x="0" y="0" z="0"/>
 <Meshfile file="avenger-hull-e.xmesh"/>
 <Meshfile file="avenger-hull-w.xmesh"/>
 <Meshfile file="avenger-hull-p.xmesh"/>
@@ -27,7 +28,7 @@
 	<Stats mass="16.000000" momentofinertia="16.000000" fuel="170000000">
 	</Stats>
 
-	<Computer yaw="60.400002" pitch="50.600006" roll="70.400002" afterburner="148" maxspeed="65">
+	<Computer yaw="60.400002" pitch="50.600006" roll="70.400002" afterburner="148" maxspeed="65" TrackingCone="20" lockcone="35">
                 <Radar itts="true" error="0" range="75000" maxcone="-1" color="true"/>
 	</Computer>
 
@@ -43,14 +44,14 @@
 	<Hold volume="30">
 	</Hold>
 
-        <Mount weapon="ParticleBeam" size="heavy capship-light" x="-29.815" y="-6.919" z="30.409"/>
-        <Mount weapon="ParticleBeam" size="heavy capship-light" x="29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="ParticleBeam" size="heavy capship-light autotrack" x="-29.815" y="-6.919" z="30.409"/>
+        <Mount weapon="ParticleBeam" size="heavy capship-light autotrack" x="29.815" y="-6.919" z="30.409"/>
 	<Mount weapon="Penetrator" size="capship-light capship-medium" x="-4.0" y="-4.618" z="19.606" />
 	<Mount weapon="Penetrator" size="capship-light capship-medium" x="4.0" y="-4.618" z="19.606" />
 	<Mount weapon="Penetrator" size="special capship-light capship-medium" x="0.0" y="-4.618" z="19.606" />
 
-	<Mount weapon="CapIFF" size="light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
-	<Mount weapon="CapIFF" size="light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="3" volume="600"/>
+	<Mount weapon="Mace" size="light-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="30" volume="600"/>
+	<Mount weapon="Mace" size="light-capship-missile" x="10.0" y="1.757" z="3.5" ammo="30" volume="600"/>
 	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>
 	<Mount weapon="CapshipMissile" size="heavy-capship-missile" x="10.0" y="1.757" z="3.5" ammo="1" volume="1000"/>
 	<Mount weapon="Maul" size="heavy-missile" x="-10.0" y="1.757" z="3.5" ammo="1" volume="700"/>

@@ -7,6 +7,8 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_2"/>
 	<Upgrade file="polymer_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
 
 <!-- new elements added -->
 <Mount weapon="KtekBeam" size="Special Medium Heavy" x="0.730882" y="0.293518" z="23.003031" />
@@ -19,9 +21,6 @@
 		<Maneuver yaw="3815.500000" pitch="3815.500000" roll="3815.500000"/>
 	</Thrust>
 	<Sound> </Sound>
-	<Defense>
-		<Shields front="200" right="200" left="200" back="200"/>
-	</Defense>
 	<Stats mass="7" momentofinertia="7" fuel="2000000000"></Stats>
 	<Computer yaw="133.500000" pitch="133.500000" roll="133.500000" afterburner="150.000000" maxspeed="88.800000"/>
 

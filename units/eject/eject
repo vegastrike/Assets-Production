@@ -10,7 +10,7 @@
 		<Maneuver yaw="15" pitch="15" roll="15"/>
 	</Thrust>
 	<Sound></Sound>
-	<Mount weapon="HandLaser" x="0.584" z=".4" y=".462"/>
+	<Mount weapon="HandLaser" size="light special" x="0.584" z=".4" y=".462"/>
 	<Defense>
 		<Armor front="20" right="20" left="20" back="20"/>
 		<Shields front="0" back="0" recharge="0"/>
@@ -20,7 +20,7 @@
    
 	<Computer yaw="30" pitch="30" roll="50" afterburner="10" maxspeed="5">
 	</Computer>
-
+	<Upgrade file="radar_windows_95"/>
 	<Energy>
 		<Reactor recharge=".25" limit="10"/>
 	</Energy>

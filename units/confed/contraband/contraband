@@ -1,32 +1,13 @@
 <Unit>	
 	<Hold volume="100000000000">
-		<Category file="upgrades">
-			<Cargo file="experemental_UnknownBeam" price="3980000" quantity="1" mass="29.8" volume="1"/>
-			<Cargo file="experemental_UnknownBolt" price="4860000" quantity="1" mass="27.4" volume="1"/>
-			<Cargo file="experemental_CloakingDevice" price="1380000" quantity="1" mass="18.4" volume="1"/>
-			<Cargo file="experemental_ShieldRegenerator" price="5000000" quantity="1" mass="27.4" volume="1"/>
+		<Category file="Contraband/Medical">
+			<Import quantity="1"/>
 		</Category>
-		<Category file="illegal">
-			<Cargo file="tectonic_bomb" price="2450000" quantity="1" mass="250" volume="1"/>
-			<Cargo file="antimater_bomb" price="320000" quantity="1" mass="40" volume="1"/>
-			<Cargo file="cobalt bomb" price="410000" quantity="1" mass="55" volume="1"/>
-			<Cargo file="neutron_bomb" price="400000" quantity="1" mass="30" volume="1"/>
-			<Cargo file="bio_weapons" price="860000" quantity="1" mass="4" volume="1"/>
-			<Cargo file="chemical_weapons" price="90000" quantity="1" mass="20" volume="1"/
-			<Cargo file="weather_control" price="140000" quantity="1" mass="120" volume="1"/>
-			<Cargo file="firearms" price="500" quantity="1" mass="2" volume="1"/>>
-			<Cargo file="explosives" price="400" quantity="1" mass=".8" volume="1"/>
-			<Cargo file="weapon_parts" price="9000" quantity="1" mass="10" volume="1"/>
-			<Cargo file="drugs" price="8000" quantity="1" mass=".2" volume="1"/>
-			<Cargo file="bioelectrical_simulators" price="10000" quantity="1" mass="6" volume="1"/>
-			<Cargo file="pleasure_bots" price="400" quantity="1" mass="4" volume="1"/>
-			<Cargo file="slaves" price="1350" quantity="1" mass="1.2" volume="1"/>
-			<Cargo file="military_software" price="500" quantity="1" mass=".01" volume="1"/>
+		<Category file="Contraband">
+			<Import quantity="1"/>
 		</Category>
-		<Category file="classified">
-			<Cargo file="classified_military_logs" price="284000" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="classified_military_plans" price="598400" quantity="1" mass=".01" volume="1"/>
-			<Cargo file="classified_military_report" price="360000" quantity="1" mass=".05" volume="1"/>
+		<Category file="Contraband/Confed">
+			<Import quantity="1"/>
 		</Category>
 	</Hold>
 </Unit>

@@ -11,7 +11,7 @@
 		  Right="20"
 		  Top="20"
 		  Bottom="20"/>
-			<Maneuver yaw="43.200050" pitch="98.600151" roll="43.200050"/>
+			<Maneuver yaw=".43200050" pitch=".98600151" roll=".43200050"/>
 
 </Thrust>
 <Sound></Sound>
@@ -20,7 +20,7 @@
 </Defense>
 <Stats mass="0.08" momentofinertia="0.09" fuel="200000"></Stats>
 
-<Computer yaw="20" pitch="124" roll="20" afterburner="80" maxspeed="80"/>
+<Computer yaw="2" pitch="2" roll="2" afterburner="80" maxspeed="80"/>
 <Energy>
 	<Reactor recharge="0"
 		   limit="00"/>

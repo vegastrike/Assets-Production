@@ -55,7 +55,7 @@
 	<Mount weapon="" size="special-missile" x="-10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
         <Mount weapon="" size="special-missile" x="10.0" y="-3.5" z="11.8091" ammo="110" volume="2400"/>
 	
-        <subunit file="empty" x="0" y="5.3" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
-        <subunit file="empty" x="0" y="-5.5" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
+        <subunit file="small_blank" x="0" y="5.3" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="1.000000" qk="0.000000"/>
+        <subunit file="small_blank" x="0" y="-5.5" z="6" ri="-1.000000" rj="0.000000" rk="0.000000" qi="0.000000" qj="-1.000000" qk="0.000000"/>
 	<Upgrade file="mult_general_downgrade"/>
 </Unit>

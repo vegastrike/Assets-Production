@@ -1,8 +1,8 @@
 module launch {
-
+  import difficulty;
   import random;
   import unit;
-
+  import ship_upgrades;
   bool launch_around_station(object station_name,object fgname,object faction,object type,object ai,int nr_ships,int nr_waves){
     object station_unit=unit.getUnitByFgID(station_name);
     if(_std.isNull(station_unit)){
@@ -22,14 +22,44 @@ module launch {
   bool launch_around_unit(object station_name,object fgname,object faction,object type,object ai,int nr_ships,int nr_waves){
     return launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves);
   };
-
+  object launch (object fgname, object faction, object type,object ai, int nr_ships, int nr_waves, float x, float y, float z){
+    bool diff=difficulty.usingDifficulty();
+    if (!diff) {
+      object ret = _unit.launch (fgname,faction,type,ai,nr_ships,nr_waves,x,y,z);
+      return ret;
+    }
+    float rsize=0.0;
+    float difficulty = _std.getDifficulty();
+    object ret;
+    _std.setNull(ret);
+    int i=0;
+    while (i<nr_ships) {
+      object mynew=_unit.launch(fgname,faction,type,ai,1,nr_waves,x,y,z);
+      if (i==0) {
+	ret = mynew;
+	rsize =_unit.getRSize (mynew)*1.75;
+      }
+      if (rsize<500.0) {
+	ship_upgrades.upgradeUnit ( mynew,difficulty);
+      }
+      x=x-rsize;
+      //	y=y-rsize;
+      z=z-rsize;
+      i=i+1;
+    }
+    return ret;
+  };
   object launch_waves_around_area(object fgname,object faction,object type,object ai,int nr_ships,int nr_waves,float r1,float r2,object pos){
-    float x=_olist.at(pos,0)+(random.random(r1,r2)*random.randomsign());
-    float y=_olist.at(pos,1)+(random.random(r1,r2)*random.randomsign());
-    float z=_olist.at(pos,2)+(random.random(r1,r2)*random.randomsign());
+    float x=(random.random(r1,r2)*random.randomsign());
+    float y=(random.random(r1,r2)*random.randomsign());
+    float z=(random.random(r1,r2)*random.randomsign());
+    x = _olist.at(pos,0)+x;
+    y = _olist.at(pos,1)+y;
+    z = _olist.at(pos,2)+z;
 
     // _io.printf("launching %d ships type=%s faction=%s around area [%f,%f,%f]\n",nr_ships,type,faction,x,y,z);
-    return _unit.launch(fgname,faction,type,ai,nr_ships,nr_waves,x,y,z);
+    _std.playAnimation ("warp.ani",x,y,z,300.0);
+    return launch(fgname,faction,type,ai,nr_ships,nr_waves,x,y,z);
   };
   object launch_wave_around_area(object fgname,object faction,object type,object ai,int nr_ships,float r1,float r2,object pos){
     return launch_waves_around_area (fgname,faction,type,ai,nr_ships,1,r1,r2,pos);
@@ -43,7 +73,8 @@ module launch {
     float x=_olist.at(pos,0)+random.random((0.0-radius)/2.0,radius/2.0);
     float y=_olist.at(pos,1)+random.random((0.0-radius)/2.0,radius/2.0);
     float z=_olist.at(pos,2)+random.random((0.0-radius)/2.0,radius/2.0);
-    object un = _unit.launch(fgname,faction,type,ai,nr_ships,nr_waves,x,y,z);
+    _std.playAnimation ("warp.ani",x,y,z,300.0);
+    object un = launch(fgname,faction,type,ai,nr_ships,nr_waves,x,y,z);
   };
   void launch_wave_in_area(object fgname,object faction,object type,object ai,int nr_ships,float radius,object pos){
     launch_waves_in_area(fgname,faction,type,ai,nr_ships,1,radius,pos);
@@ -60,8 +91,8 @@ module launch {
       float x=_olist.at(wp,0);
       float y=_olist.at(wp,1);
       float z=_olist.at(wp,2);
-
-      object leader =_unit.launch(outstr,faction,type,ainame,nr,1,x,y,z);
+      _std.playAnimation ("warp.ani",x,y,z,300.0);
+      object leader =launch(outstr,faction,type,ainame,nr,1,x,y,z);
       i=i+1;
     }
   };
@@ -83,7 +114,7 @@ module launch {
     return un;
   };
   object launch_wave_around_significant (object fgname,object faction,object type,object ai,int nr_ships,float minradius, float maxradius,int significant_number) {
-    object significant_unit=unit.getSignificant(significant_number,false);
+    object significant_unit=unit.getSignificant(significant_number,false,false);
     if (_std.isNull(significant_unit)) {
       significant_unit = _unit.getPlayer();
     }

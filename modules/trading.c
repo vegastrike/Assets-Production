@@ -21,12 +21,14 @@ module trading {
     if (_std.isNull(un)) {
       last_ship=0;
     } else {
-      object player = _unit.getPlayer();
-      if (!_unit.equal(player,un)) {
-	if (incdec_ships==1) {
-	  _unit.incrementCargo(un,1-(quant*price_instability),quant);
-	}else {
-	  _unit.decrementCargo(un,1+(quant*price_instability),quant);
+      if (_unit.isSignificant(un)) {
+	object player = _unit.getPlayer();
+	if (!_unit.equal(player,un)) {
+	  if (incdec_ships==1) {
+	    _unit.incrementCargo(un,1-(quant*price_instability),quant);
+	  }else {
+	    _unit.decrementCargo(un,1+(quant*price_instability),quant);
+	  }
 	}
       }
       last_ship=last_ship+1;

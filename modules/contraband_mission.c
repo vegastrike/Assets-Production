@@ -27,6 +27,18 @@ module contraband_mission {
 	int binsys;
 	int ginsys;
 	//END DEBUG
+	void initrandom (object category, int num_systems_away, float distance, float creds, int diff, int ships, float bad_pct, float mindistance, float maxdistance) {
+	  object list = _unit.getRandCargo (1,category);
+          object carg;
+          if (_olist.size (list)>0) {
+	    carg= _olist.at (list,0);
+          }else {
+            carg = _string.new();
+            _io.sprintf (carg,"Slaves");
+          }
+	  _olist.delete (list);
+	  init (carg, num_systems_away,distance,creds,diff,ships, bad_pct, mindistance,maxdistance);
+	};
 	void init (object cargo, int num_systems_away, float distance, float creds, int diff, int ships, float bad_pct, float mindistance, float maxdistance) {
 		object you=_unit.getPlayer();
 		if (_std.isNull(you)) {
@@ -126,13 +138,14 @@ module contraband_mission {
 						jump=you;
 					}
 					while (i<difficulty) {
-						faction=faction_ships.intToFaction(random.randomint(0,2));
+						faction=faction_ships.intToFaction(random.randomint(0,(faction_ships.getMaxFactions()-1)));
 						while (!_string.equal(faction,youfaction)) {
-							faction=faction_ships.intToFaction(random.randomint(0,2));
+							faction=faction_ships.intToFaction(random.randomint(0,(faction_ships.getMaxFactions()-1)));
 						}
 						un=faction_ships.getRandomFighter(faction);
 						object newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 800.0, 1000.0,jump);
 						_unit.setTarget(newunit,you);
+						_unit.setFgDirective(newunit,"B");
 						i=i+1;
 					}
 				}
@@ -213,8 +226,9 @@ module contraband_mission {
 					cargonum2=random.randomint(0,10-cargonum);
 					notlist=faction_ships.getRandomFighter("merchant");
 					
-					newfighter=launch.launch_wave_around_unit ("Base","merchant",notlist,"default",1,min_distance,max_distance,jump);
+					newfighter=launch.launch_wave_around_unit ("Smuggler","pirates",notlist,"default",1,min_distance,max_distance,jump);
 					
+					_unit.setFgDirective(newfighter,"B");
 					_unit.setTarget(newfighter,jump);
      					_unit.Jump(newfighter);
 					j=0;
@@ -223,22 +237,39 @@ module contraband_mission {
 						cargonum2=cargonum2-1;
 						_olist.push_back(starships_bad,_unit.getContainer(newfighter));
 						nr_waves=nr_waves+1;
-						rndint=_unit.addCargo(newfighter,cargoname,"illegal",price,random.randomint(1,10),mass,volume);
+						rndint=_unit.addCargo(newfighter,cargoname,"Contraband",price,random.randomint(1,10),mass,volume);
 					} else {
 						_olist.push_back(starships_good,_unit.getContainer(newfighter));
 					}
 					while (j<cargonum) {
 						rndint=random.randomint(1,10);
 						randcargo=_unit.getRandCargo(rndint);
-						rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
+                                                if (_olist.size(randcargo)>0) {
+						  object cname=_olist.at (randcargo,0);
+  						  if (!_string.equal (cargoname,cname)) {
+						    //						    _io.printf ("adding good cargo %s",cname);
+						    rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
+						  }
+                                                }
+                                                _olist.delete (randcargo);
+
 						j=j+1;
 					}
 					j=0;
 					while (j<cargonum2) {
 						rndint=random.randomint(1,10);
+
 						randcargo=_unit.getRandCargo(rndint);
-						rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
-						j=j+1;
+                                                if (_olist.size (randcargo)>0) {
+						  object cname=_olist.at (randcargo,0);
+						  if (!_string.equal (cargoname,cname)) {
+						    //						    _io.printf ("adding good cargo %s",cname);
+						    rndint=_unit.addCargo(newfighter,_olist.at(randcargo,0),_olist.at(randcargo,1),_olist.at(randcargo,2),_olist.at(randcargo,3),_olist.at(randcargo,4),_olist.at(randcargo,5));  //ADD CARGO HERE
+						  }
+						  j=j+1;
+                                                }
+                                                _olist.delete (randcargo);
+
 					}
 					i=i+1;
 				}
@@ -265,5 +296,13 @@ module contraband_mission {
 	  _string.delete (str);
 	  _string.delete (jname);
 	};
+	void initbriefing() {
 
+	};
+	void loopbriefing() {
+
+	};
+	void endbriefing() {
+	  
+	};
 }

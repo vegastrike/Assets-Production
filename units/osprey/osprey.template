@@ -7,6 +7,9 @@
 	<Upgrade file="isometal"/>
 	<Upgrade file="engine_level_2"/>
 	<Upgrade file="double_plated_hull"/>
+	<Upgrade file="mult_shield_regenerator"/>
+	<Upgrade file="mult_gun_cooler"/>
+
 	<Mount weapon="Particle" size="Heavy" x="6.000000" y="-.9000000" z="-3.000000"/>
 	<Mount weapon="Particle" size="Heavy" x="-6.000000" y="-.9000000" z="-3.000000"/>	
 	<Mount weapon="Ion" size="Medium AUTOTRACKING" x="000000" y="-.6000000" z="12.000000"/>
