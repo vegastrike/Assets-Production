@@ -83,7 +83,7 @@
 		</Category>
 		<Category file="starships/Confed/Milspec">
 			<Cargo file="destiny.blank" price="320000" quantity="1" mass=".01" volume="500"/>
-			<Cargo file="avenger" price="1200000" quantity="1" mass=".01" volume="1400"/>
+			<Cargo file="avenger" price="2200000" quantity="1" mass=".01" volume="1400"/>
 			<Cargo file="tian" price="210000" quantity="1" mass=".01" volume="200"/>
 			<Cargo file="nova" price="320000" quantity="1" mass=".01" volume="280"/>
 			<Cargo file="puma" price="470000" quantity="1" mass=".01" volume="600"/>
@@ -112,7 +112,7 @@
 			<Cargo file="longhaul.blank" price="190000" quantity="1" mass=".01" volume="2000"/>
 		</Category>
 		<Category file="starships/Merchant/Heavy">
-			<Cargo file="cargoship" price="380000" quantity="1" mass=".01" volume="4000"/>
+			<Cargo file="cargoship" price="450000" quantity="1" mass=".01" volume="4000"/>
 		</Category>
 		<Category file="starships/Merchant/Light_Capship">
 		</Category>
