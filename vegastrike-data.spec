@@ -1,7 +1,7 @@
 Name: vegastrike-data
 Summary: Vegastrike - a free 3D space fight simulator (data files)
-Version: 0.3
-Release: 1
+Version: 0.3.1
+Release: common
 Copyright: GPL
 Group: Amusements/Games
 Source: vegastrike-data.tar.gz
@@ -29,29 +29,22 @@ echo "nothing to build"
 
 %install
 echo "Installing"
-mkdir -p $RPM_BUILD_ROOT/usr/local/doc/vegastrike/
-mkdir -p $RPM_BUILD_ROOT/usr/local/man/man1/
 mkdir -p $RPM_BUILD_ROOT/usr/local/games/vegastrike/data
 mkdir -p $RPM_BUILD_ROOT/usr/local/bin/
-cp vegastrike.1 $RPM_BUILD_ROOT/usr/local/man/man1/
-cp vsinstall.1 $RPM_BUILD_ROOT/usr/local/man/man1/
-cp vssetup.1 $RPM_BUILD_ROOT/usr/local/man/man1/
-cp vslauncher.1 $RPM_BUILD_ROOT/usr/local/man/man1/
-cp readme.txt $RPM_BUILD_ROOT/usr/local/doc/vegastrike/
+mkdir -p $RPM_BUILD_ROOT/usr/local/man/man1/
+cp vslauncher $RPM_BUILD_ROOT/usr/local/bin/
 cp vsinstall $RPM_BUILD_ROOT/usr/local/bin/
+cp vsinstall.1 $RPM_BUILD_ROOT/usr/local/man/man1/
+cp vslauncher.1 $RPM_BUILD_ROOT/usr/local/man/man1/
 cp -R . $RPM_BUILD_ROOT/usr/local/games/vegastrike/data
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%docdir /usr/local/doc/vegastrike
-/usr/local/doc/vegastrike/readme.txt
-%doc /usr/local/man/man1/vegastrike.1
-%doc /usr/local/man/man1/vssetup.1
 %doc /usr/local/man/man1/vslauncher.1
 %doc /usr/local/man/man1/vsinstall.1
-/usr/local/bin/vsinstall
 # Normal files
 /usr/local/games/vegastrike/data
+/usr/local/bin/vslauncher
+/usr/local/bin/vsinstall
