@@ -96,7 +96,7 @@ def SetTimeCompression(val):
 def GetAdjacentSystem(mystr,which):
    print "GetAdjacentSystem" 
    import vsrandom
-   return 'SYSTEM'+chr (vsrandom.randrange(ord('a'),ord('z')))
+   return 'SYSTEM'+chr (vsrandom.randrange(ord('a'),ord('z')+1))
 def GetGalaxyProperty(sysname,faction):
    import faction_ships
    import vsrandom
@@ -104,7 +104,7 @@ def GetGalaxyProperty(sysname,faction):
 def GetNumAdjacentSystems(mystr):
    print "GetNumAdjacentSystems" 
    import vsrandom
-   return vsrandom.randrange(0,5)
+   return vsrandom.randrange(1,6)
 def musicAddList(mystr):
    print "musicAddList" 
    return 0
