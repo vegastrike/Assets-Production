@@ -5,9 +5,9 @@
 	<specular red="0.998421" green="0.987420" blue="1.000000"/>
 </Light>
 <Planet name="gwriss A" file="sol/sun.png" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="24076.466797" x="0" y="0" z="0"  Red="0.998421" Green="0.987420" Blue="1.000000" ReflectNoLight="true" light="0">
-	<Asteroid name="AFieldBase" file="AFieldBase" ri="37277.734375" rj="7621.489258" rk="10281.821289" si="6866.265625" sj="44481.765625" sk="-57866.800781" x="57430.019531" y="-36693.605469" z="-68401.078125" year= "10776214.000000"  />
+	<Asteroid name="AFieldBase" file="AFieldBase" ri="37277.734375" rj="7621.489258" rk="10281.821289" si="6866.265625" sj="44481.765625" sk="-57866.800781" x="57430.019531" y="-36693.605469" z="-68401.078125" year= "386964.500000" />
 	<Asteroid name="HiddenAsteroid" file="HiddenAsteroid" ri="37277.734375" rj="7621.489258" rk="10281.821289" si="6866.265625" sj="44481.765625" sk="-57866.800781" x="57430.019531" y="-36693.605469" z="-68401.078125" year= "386964.500000" faction="unknown"  />
-	<Enhancement name="unknown_derelict" file="unknown_derelict" ri="37277.734375" rj="7621.489258" rk="10281.821289" si="6866.265625" sj="44481.765625" sk="-57866.800781" x="57430.019531" y="-36693.605469" z="-68401.078125" year= "125682.023438" faction="unknown"  />
+	<Enhancement name="unknown_derelict" file="unknown_derelict" ri="37277.734375" rj="7621.489258" rk="10281.821289" si="6866.265625" sj="44481.765625" sk="-57866.800781" x="57430.019531" y="-36693.605469" z="-68401.078125" year= "386964.500000" faction="unknown"  />
 	<Planet name="unexplored_space/alpha" file="jump.png" ri="-38833.589844" rj="59202.242188" rk="57352.410156" si="61855.894531" sj="52970.460938" sk="-12796.034180" radius="188.482651" x="-75882.640625" y="42390.382813" z="70152.125000" year= "418180.062500" day="399572.718750" alpha="ONE ONE" destination="unexplored_space/alpha"  >
 	</Planet>
 	<Planet name="unexplored_space/gamma" file="jump.png" ri="-18475.939453" rj="-30359.728516" rk="33716.714844" si="38688.851563" sj="-15738.067383" sk="7029.435059" radius="127.639397" x="43473.644531" y="-63925.492188" z="-68385.781250" year= "129519.843750" day="74374.992188" alpha="ONE ONE" destination="unexplored_space/gamma"  >
