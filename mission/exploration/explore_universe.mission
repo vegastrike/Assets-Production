@@ -9,7 +9,7 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
 		<var name="difficulty" value=".05"/><!--good starting difficulty here-->
-		<var name="system" value="sol_sector/celeste" />
+		<var name="system" value="enigma_sector/niven" />
 		<var name="description" value="Enjoy troy in a nova." />
 		<var name="savegame" value="explore_universe_difficulty" />
 	</variables>
