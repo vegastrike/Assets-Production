@@ -21,7 +21,7 @@
 		<Hull strength="800.000000"/>
 	</Defense>
 	<Stats mass="40" momentofinertia="10" fuel="4000000000"></Stats>
-	<Computer yaw="40" pitch="40" roll="40" afterburner="80" maxspeed="50"/>
+	<Computer yaw="40" pitch="40" roll="40" afterburner="500" maxspeed="80"/>
 	<Energy>
 		<Reactor recharge="100" limit="1000"/>
 	</Energy>
@@ -29,7 +29,7 @@
 		<cockpit file="heavy-cockpit.cpt" x="-51.01025" y="-7.52875" z="136.3585"/>
 
 		<Subunit file="cargo" x="0" y="0" z="54.00075"/>
-<Light file="supernova.bmp" x="0" y="0" z="-63.01675" size="12.5" r="0.698039216" g="0.39215686" b="0.39215686"/>
+<Light file="engine1.png" x="0" y="0" z="-63.01675" size="12.5" r="0.698039216" g="0.39215686" b="0.39215686"/>
 
 
 
