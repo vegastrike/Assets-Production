@@ -31,6 +31,13 @@ def UpdateCombatTurn():
 siegenumber=0
 siegenumtimes=0
 siegeprob=0
+#fixme
+def getImportanceOfSystem(sys):
+	if (VS.getGalaxyProperty(sys,"faction")==VS.getGalaxyFaction(sys)):
+		return .5
+	else:
+		return .1
+
 #returns false if Siege is done going through all its vehicles
 def Siege(fac):
 	global siegenumber
@@ -57,8 +64,7 @@ def Siege(fac):
 				if (VS.GetRelation(fac,enfac)<0):#FIXME maybe even less than that
 					if (fg_util.NumFactionFGsInSystem(enfac,sys)==0) and (fg_util.NumFactionFGsInSystem(fac,sys)==0): #If both annihalate each other completely (unlikely but possible)
 						Director.pushSaveString(0,"dynamic_news"
-						,dynamic_news.makeVarList(["siege","end",fac,enfac,"0","0.0",sys,"all"]))
-												#FIXME get proper scale
+						,dynamic_news.makeVarList(["siege","end",fac,enfac,"0",str(getImportanceOfSystem(sys)),sys,"all"]))
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 
@@ -67,8 +73,7 @@ def Siege(fac):
 						print fac + ' took over '+ sys + ' originally owned by '+enfac
 						#ok now we have him... while the siege is going on the allies had better initiate the battle--because we're now defending the place...  so that means if the owners are gone this place is ours at this point in time
 						Director.pushSaveString(0,"dynamic_news"
-						,dynamic_news.makeVarList(["siege","end",fac,enfac,"1","0.8",sys,"all"]))
-												#FIXME get proper scale
+						,dynamic_news.makeVarList(["siege","end",fac,enfac,"1",str(getImportanceOfSystem(sys)),sys,"all"]))
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)
 
@@ -78,7 +83,7 @@ def Siege(fac):
 
 					elif (fg_util.NumFactionFGsInSystem(fac,sys)==0):	#If aggressor lost
 						Director.pushSaveString(0,"dynamic_news"
-						,dynamic_news.makeVarList(["siege","end",fac,enfac,"-1","0.8",sys,"all"]))
+						,dynamic_news.makeVarList(["siege","end",fac,enfac,"-1",getImportanceOfSystem(sys),sys,"all"]))
 												#FIXME get proper scale
 												#FIXME use keyword (ignore
 												#keyword for now Daniel)

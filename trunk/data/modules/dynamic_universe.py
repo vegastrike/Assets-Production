@@ -18,6 +18,10 @@ class ShipTracker:
 		if (dead):
 			if (VS.systemInMemory (self.starsystem)):
 				fg_util.RemoveShipFromFG(self.fgname,self.faction,self.type)
+				if (fg_util.NumShipsInFG(self.fgname,self.faction)==0):
+					import dynamic_news
+					import dynamic_battle
+					Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["destroyed","end","unknown",self.faction,"1",str(dynamic_battle.getImportanceOfType(self.type)),self.starsystem,"all"]))
 			else:
 				fg_util.LandShip(self.fgname,self.faction,self.type)
 			return 0
