@@ -179,6 +179,8 @@
 	     </Category>
 	     <Category file="missions">
 		<Cargo file="mission/cargo.mission" price="1000" quantity="2" mass=".1" volume=".1"/>
+		<Cargo file="mission/inc.mission" price="1000" quantity="100" mass=".1" volume=".1"/>
+		<Cargo file="mission/dec.mission" price="1000" quantity="100" mass=".1" volume=".1"/>
 	     </Category>
 	     <Category file="weapons">
 		<Cargo file="weapons" price="200" quantity="100" mass=".1" volume=".1"/>
