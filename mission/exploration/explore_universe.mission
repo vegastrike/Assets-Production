@@ -8,13 +8,13 @@
 		<var name="credits" value="3500"/>
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="4 versus 4" />
-
+		<var name="difficulty" value=".2"/><!--good starting difficulty here-->
 		<var name="system" value="gemini_sector/troy" />
 		<var name="description" value="Enjoy troy in a nova." />
-<!--		<var name="savegame" value="explore_universe_nova" />-->
+		<var name="savegame" value="explore_universe_difficulty" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="confed" type="wayfarer.begin" ainame="default" waves="1" nr_ships="1">
 			<pos x="20400" y="-35400" z="24700.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
@@ -42,7 +42,8 @@
 			<const type="int" value="2"/><!--gen ships-->
 			<const type="float" value="0.6"/><!--fighter prob-->
 			<const type="float" value="0.1"/><!--capship prob-->
-			<const type="float" value="20000.0"/><!--garbage collection distance-->
+			<const type="float" value="400000.0"/><!--credits to maximize difficulty-->
+			<const type="float" value="-20000.0"/><!--garbage collection distance: negative disables-->
 			</exec>
 		</script>
 		<script name="gameloop">
