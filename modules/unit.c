@@ -98,9 +98,10 @@ module unit {
     }
  
   };
-
-  object getUnitByFgID(object fgid){
-    int ship_nr=0;
+  object getUnitByFgID(object fgid) {
+    return getUnitByFgIDFromNumber(fgid,0);
+  };
+  object getUnitByFgIDFromNumber(object fgid, int ship_nr){
     object unit=_unit.getUnit(ship_nr);
     object found_unit;
     _std.setNull(found_unit);
