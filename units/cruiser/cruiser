@@ -1,4 +1,4 @@
-<Unit scale="100">
+<Unit scale="175">
 <Meshfile file="cruiser.xmesh"/>
        
 <Dock x=".50" y=".45" z="9" size=".3"/> 
