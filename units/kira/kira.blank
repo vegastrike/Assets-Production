@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="3">
 	<Defense HudImage="kira-hud.spr">
 		<Shields front="000000" right="0.000000" left="0.000000" back="0.000000" />
 	</Defense>

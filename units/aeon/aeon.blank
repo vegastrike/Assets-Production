@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="4">
 	<cockpit file="light_cockpit.cpt" x="0" y=".25" z="4.5"/>
 	<Defense HudImage="aeon-hud.spr">
 		<Shields front="000000" right="0.000000" left="0.000000" back="0.000000" />

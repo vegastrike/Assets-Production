@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="1.5">
 	<Cockpit file="medium_cockpit.cpt"/>
 	<Meshfile file="tian.xmesh" />
 	<Thrust>

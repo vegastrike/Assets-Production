@@ -11,7 +11,7 @@
 	<Energy afterburnenergy="32767">
 	</Energy>
 
-<Meshfile file="Katar-Katar-Material #26.xmesh"/>
+<Meshfile file="Katar-Katar-Material26.xmesh"/>
 <Meshfile file="Katar-Katar-Body.xmesh"/>
 
 	<Mount weapon="" size="light medium heavy" x="2.15" y="-1.1" z="2.5" ri="0.000000" rj="0.000000" rk="1.000000" qi="-0.406736" qj="0.913546" qk="0.000000"/>

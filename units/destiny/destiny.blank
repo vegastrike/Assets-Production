@@ -1,4 +1,4 @@
-<Unit>
+<Unit scale="8">
 	<Cockpit file="medium_cockpit.cpt"/>
 	<Defense HudImage="destiny-hud.spr">
 		<Shields front="0.000000" back="0.000000" recharge="0.000000"/>
