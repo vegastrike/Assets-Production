@@ -1,6 +1,6 @@
-<terrain level="15" detail="128" staticdetail="12" scales=".0000152587890625" scalet = ".0000152587890625" radius="10000">
+<terrain level="14" detail="128" staticdetail="12" scales=".000030517578125" scalet = ".000030517578125" radius="10000">
 
-<texture file="gctexcolored.bmp" blend="ONE ZERO" color="0">
+<texture file="demdata/grandcanyon/gctexcoloredll.png" blend="ONE ZERO" color="0">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -9,7 +9,7 @@
 </material>
 </texture> 
 
-<texture file="terrain1.bmp" blend="ONE ZERO" color="1">
+<texture file="demdata/terrain1.bmp" blend="ONE ZERO" color="1">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -18,7 +18,7 @@
 </material>
 </texture> 
 
-<texture file="terrain2.bmp" blend="ONE ZERO" color="2">
+<texture file="demdata/terrain2.bmp" blend="ONE ZERO" color="2">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -27,7 +27,7 @@
 </material>
 </texture> 
 
-<texture file="terrain3.bmp" blend="ONE ZERO" color="3">
+<texture file="demdata/terrain3.bmp" blend="ONE ZERO" color="3">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -36,7 +36,7 @@
 </material>
 </texture> 
 
-<texture file="terrain4.bmp" blend="ONE ZERO" color="4">
+<texture file="demdata/terrain4.bmp" blend="ONE ZERO" color="4">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -45,7 +45,7 @@
 </material>
 </texture> 
 
-<texture file="terrain5.bmp" blend="ONE ZERO" color="5">
+<texture file="demdata/terrain5.bmp" blend="ONE ZERO" color="5">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -54,7 +54,7 @@
 </material>
 </texture> 
 
-<texture file="terrain6.bmp" blend="ONE ZERO" color="6">
+<texture file="demdata/terrain6.bmp" blend="ONE ZERO" color="6">
 <material reflect="true">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -63,7 +63,7 @@
 </material>
 </texture> 
 
-<texture file="terrain7.bmp" blend="ONE ZERO" color="7">
+<texture file="demdata/terrain7.bmp" blend="ONE ZERO" color="7">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -72,7 +72,7 @@
 </material>
 </texture> 
 
-<texture file="terrain8.bmp" blend="ONE ZERO" color="8">
+<texture file="demdata/terrain8.bmp" blend="ONE ZERO" color="8">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -81,7 +81,7 @@
 </material>
 </texture> 
 
-<texture file="terrain9.bmp" blend="ONE ZERO" color="9">
+<texture file="demdata/terrain9.bmp" blend="ONE ZERO" color="9">
 <material reflect="true">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -89,8 +89,7 @@
 <diffuse red="1" green="1" blue="1" alpha="1"/>
 </material>
 </texture> 
-<!--<data terrainfile="tiny.png" file="tiny.png" scale="14" originX="0" originy="0"  />-->
-<data terrainfile="blank.png" file="demdata/gc16at128.png" scale="7" originX="0" originy="0"  />
-<data terrainfile="blank.png" file="demdata/gc16at64.png" scale="6" originX="16384" originy="16384"  />
- <data terrainfile="blank.png" file="demdata/gc16at32.png" scale="5" originX="24576" originy="24576"  />
+<data terrainfile="blank256.png" file="demdata/grandcanyon/gc16at128ll.png" scale="7" originX="0" originy="0"  />
+<data terrainfile="blank256.png" file="demdata/grandcanyon/gc16at64ll.png" scale="6" originX="16384" originy="0"  />
+ <data terrainfile="blank256.png" file="demdata/grandcanyon/gc16at32ll.png" scale="5" originX="24576" originy="0"  />
 </terrain>

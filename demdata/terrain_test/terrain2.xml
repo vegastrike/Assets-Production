@@ -1,51 +1,6 @@
-<terrain level="14" detail="128" staticdetail="12" scales=".000030517578125" scalet = ".000030517578125" radius="10000">
+<terrain level="15" detail="128" staticdetail="12" scales=".0005" scalet = ".0005">
 
-<texture file="gctexcoloredll.png" blend="ONE ZERO" color="0">
-<material reflect="false">
-<emmissive red="0" green="0" blue="0" alpha="1"/>
-<ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="0" green="0" blue="0" alpha="1"/>
-<diffuse red="1" green="1" blue="1" alpha="1"/>
-</material>
-</texture> 
-
-<texture file="terrain1.bmp" blend="ONE ZERO" color="1">
-<material reflect="false">
-<emmissive red="0" green="0" blue="0" alpha="1"/>
-<ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="0" green="0" blue="0" alpha="1"/>
-<diffuse red="1" green="1" blue="1" alpha="1"/>
-</material>
-</texture> 
-
-<texture file="terrain2.bmp" blend="ONE ZERO" color="2">
-<material reflect="false">
-<emmissive red="0" green="0" blue="0" alpha="1"/>
-<ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="0" green="0" blue="0" alpha="1"/>
-<diffuse red="1" green="1" blue="1" alpha="1"/>
-</material>
-</texture> 
-
-<texture file="terrain3.bmp" blend="ONE ZERO" color="3">
-<material reflect="false">
-<emmissive red="0" green="0" blue="0" alpha="1"/>
-<ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="0" green="0" blue="0" alpha="1"/>
-<diffuse red="1" green="1" blue="1" alpha="1"/>
-</material>
-</texture> 
-
-<texture file="terrain4.bmp" blend="ONE ZERO" color="4">
-<material reflect="false">
-<emmissive red="0" green="0" blue="0" alpha="1"/>
-<ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="0" green="0" blue="0" alpha="1"/>
-<diffuse red="1" green="1" blue="1" alpha="1"/>
-</material>
-</texture> 
-
-<texture file="terrain5.bmp" blend="ONE ZERO" color="5">
+<texture file="demdata/terrain0.bmp" blend="ONE ZERO" color="0">
 <material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
@@ -54,8 +9,8 @@
 </material>
 </texture> 
 
-<texture file="terrain6.bmp" blend="ONE ZERO" color="6">
-<material reflect="true">
+<texture file="demdata/terrain1.bmp" blend="ONE ZERO" color="1">
+<material reflect="false">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
 <specular red="1" green="1" blue="1" alpha="1"/>
@@ -63,33 +18,77 @@
 </material>
 </texture> 
 
-<texture file="terrain7.bmp" blend="ONE ZERO" color="7">
+<texture file="demdata/terrain2.bmp" blend="ONE ZERO" color="2">
 <material reflect="false">
-<emmissive red="0" green="0" blue="0" alpha="1"/>
-<ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="0" green="0" blue="0" alpha="1"/>
-<diffuse red="1" green="1" blue="1" alpha="1"/>
-</material>
-</texture> 
-
-<texture file="terrain8.bmp" blend="ONE ZERO" color="8">
-<material reflect="false">
-<emmissive red="0" green="0" blue="0" alpha="1"/>
-<ambient red="1" green="1" blue="1" alpha="1"/>
-<specular red="0" green="0" blue="0" alpha="1"/>
-<diffuse red="1" green="1" blue="1" alpha="1"/>
-</material>
-</texture> 
-
-<texture file="terrain9.bmp" blend="ONE ZERO" color="9">
-<material reflect="true">
 <emmissive red="0" green="0" blue="0" alpha="1"/>
 <ambient red="1" green="1" blue="1" alpha="1"/>
 <specular red="1" green="1" blue="1" alpha="1"/>
 <diffuse red="1" green="1" blue="1" alpha="1"/>
 </material>
 </texture> 
-<data terrainfile="blank256.png" file="demdata/gc16at128ll.png" scale="7" originX="0" originy="0"  />
-<data terrainfile="blank256.png" file="demdata/gc16at64ll.png" scale="6" originX="16384" originy="0"  />
- <data terrainfile="blank256.png" file="demdata/gc16at32ll.png" scale="5" originX="24576" originy="0"  />
+
+<texture file="demdata/terrain3.bmp" blend="ONE ZERO" color="3">
+<material reflect="false">
+<emmissive red="0" green="0" blue="0" alpha="1"/>
+<ambient red="1" green="1" blue="1" alpha="1"/>
+<specular red="1" green="1" blue="1" alpha="1"/>
+<diffuse red="1" green="1" blue="1" alpha="1"/>
+</material>
+</texture> 
+
+<texture file="demdata/terrain4.bmp" blend="ONE ZERO" color="4">
+<material reflect="false">
+<emmissive red="0" green="0" blue="0" alpha="1"/>
+<ambient red="1" green="1" blue="1" alpha="1"/>
+<specular red="1" green="1" blue="1" alpha="1"/>
+<diffuse red="1" green="1" blue="1" alpha="1"/>
+</material>
+</texture> 
+
+<texture file="demdata/terrain5.bmp" blend="ONE ZERO" color="5">
+<material reflect="false">
+<emmissive red="0" green="0" blue="0" alpha="1"/>
+<ambient red="1" green="1" blue="1" alpha="1"/>
+<specular red="1" green="1" blue="1" alpha="1"/>
+<diffuse red="1" green="1" blue="1" alpha="1"/>
+</material>
+</texture> 
+
+<texture file="demdata/terrain6.bmp" blend="ONE ZERO" color="6">
+<material reflect="false">
+<emmissive red="0" green="0" blue="0" alpha="1"/>
+<ambient red="1" green="1" blue="1" alpha="1"/>
+<specular red="1" green="1" blue="1" alpha="1"/>
+<diffuse red="1" green="1" blue="1" alpha="1"/>
+</material>
+</texture> 
+
+<texture file="demdata/terrain7.bmp" blend="ONE ZERO" color="7">
+<material reflect="false">
+<emmissive red="0" green="0" blue="0" alpha="1"/>
+<ambient red="1" green="1" blue="1" alpha="1"/>
+<specular red="1" green="1" blue="1" alpha="1"/>
+<diffuse red="1" green="1" blue="1" alpha="1"/>
+</material>
+</texture> 
+
+<texture file="demdata/terrain8.bmp" blend="ONE ZERO" color="8">
+<material reflect="false">
+<emmissive red="0" green="0" blue="0" alpha="1"/>
+<ambient red="1" green="1" blue="1" alpha="1"/>
+<specular red="1" green="1" blue="1" alpha="1"/>
+<diffuse red="1" green="1" blue="1" alpha="1"/>
+</material>
+</texture> 
+
+<texture file="demdata/terrain9.bmp" blend="ONE ZERO" color="9">
+<material reflect="false">
+<emmissive red="0" green="0" blue="0" alpha="1"/>
+<ambient red="1" green="1" blue="1" alpha="1"/>
+<specular red="1" green="1" blue="1" alpha="1"/>
+<diffuse red="1" green="1" blue="1" alpha="1"/>
+</material>
+</texture> 
+
+<data terrainfile="demdata/terrain_test/terraindebra.png" file="demdata/terrain_test/terrainhappy.png" scale="7" originX="0" originy="0"  />
 </terrain>
