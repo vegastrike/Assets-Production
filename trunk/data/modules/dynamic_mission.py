@@ -154,7 +154,10 @@ def generateBountyMission (path,fg,fac):
 			addstr += '\nAlso-- we have information that the target may be informed about your attack and may be ready to run. Be quick!'
 		addstr+="#\n"
 	writemissionsavegame(addstr+"import bounty\ntemp=bounty.bounty(0, 0, %g, %d, %d, '%s', %s, '', '%s','%s')\ntemp=0\n"%(finalprice, runaway, diff, fac, str(path), fg,typ))
-	writedescription("A %s starship in the %s flightgroup has been harassing operations in the %s system. Reward for the termination of said ship is %d credits."%(typ,fg, processSystem(path[-1]), finalprice))
+	diffstr = ""
+	if (diff>0):
+		diffstr="  The ship in question is thought to have %d starships for protection."%diff
+	writedescription("A %s starship in the %s flightgroup has been harassing operations in the %s system. Reward for the termination of said ship is %d credits.%s"%(typ,fg, processSystem(path[-1]), finalprice,diffstr))
 	if (cap):
 		writemissionname ("Bounty/Bounty_on_%s_Capital_Vessel_in_%s"%(fac,processSystem(path[-1])),path)
 	else:
@@ -183,7 +186,7 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
 	iscapitol=""
 	if isbase:
 		iscapitol="capitol "
-	writedescription("A %s assault wing named %s has jumped in and is moving for an attack on one of our %sstarships, a %s, in the %s system.\nYour task is to eradicate them before they eliminate our starship.\nIntelligence shows that they have starships of type %s. Your reward is %d credits per fighter."%(attackfac, attackfg, iscapitol, defendtyp, processSystem(path[-1]), attacktyp,creds))
+	writedescription("A %s assault wing named %s has jumped in and is moving for an attack on one of our %sstarships, a %s, in the %s system.\nYour task is to eradicate them before they eliminate our starship.\nIntelligence shows that they have %d starships of type %s. Your reward is %d credits per fighter."%(attackfac, attackfg, iscapitol, defendtyp, processSystem(path[-1]),quantity, attacktyp,creds))
 	writemissionname("Defend/Defend_%s_from_%s"%(defendfac, attackfac),path)
 
 def GetFactionToDefend(thisfaction, fac, cursys):
@@ -230,14 +233,18 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 										def_fac = fac
 									generateDefendMission(j,def_fg,def_fac,mm,k)
 								nodefend=0
-							elif vsrandom.random()<.5:
+							elif (i==0 or vsrandom.random()<.5):
 								generateBountyMission(j,mm,k)
 				numescort = vsrandom.randrange(0,2)
 				if (numescort>len(m)):
 					numescort=len(m)
 				count=0
 				for k in m:
-					if vsrandom.random()<.97:
+					if (i==0):
+						if vsrandom.random()<.92:
+							count+=1
+							continue
+					elif vsrandom.random()<.97:
 						count+=1
 						continue
 					f = "merchant"

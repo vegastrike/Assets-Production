@@ -50,14 +50,14 @@ class defend (Director.Mission):
             quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,value)
     def SuccessMission (self):
         self.you.addCredits (self.cred)
-        VS.AdjustRelation(self.you.getFactionName(),self.faction,.03)
+        VS.AdjustRelation(self.you.getFactionName(),self.faction,.03,1)
         self.SetVarValue(1)
         VS.IOmessage(0,"defend",self.mplay,"Excellent work pilot! Your effort has thwarted the foe!")
         VS.IOmessage(0,"defend",self.mplay,"You have been rewarded for your effort as agreed.")
         VS.terminateMission(1)
     def FailMission (self):
         self.you.addCredits (-self.cred)
-        VS.AdjustRelation(self.you.getFactionName(),self.faction,-.02)		
+        VS.AdjustRelation(self.you.getFactionName(),self.faction,-.02,1)		
         self.SetVarValue(-1)
         VS.IOmessage (0,"defend",self.mplay,"You Allowed the base you were to protect to be destroyed.")
         VS.IOmessage (0,"defend",self.mplay,"You are a failure to your race!")
