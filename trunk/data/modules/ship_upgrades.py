@@ -17,15 +17,16 @@ def GetDiffInt (diff):
   return ch
 
 # This function makes a string based on the difficulty. In this way it can be restricted to light or medium mounts when the difficulty is low, avoiding unaffordable weapons
-def GetDiffCargo (diff, base_category, all_category, use_all):
+def GetDiffCargo (diff, base_category, all_category, use_all, dont_use_all=0):
   cat=all_category
-  ch=0
+  ch=dont_use_all
+  #this makes ch only 1
   if (diff<=0.2):
     ch=1
   elif (diff<=0.4):
-    ch=2-random.randrange(0,3)
+    ch=2-random.randrange(dont_use_all,3)
   elif ((diff<=0.7) or use_all):
-    ch=3-random.randrange(0,4)
+    ch=3-random.randrange(dont_use_all,4)
   #ch is 0 if it is any upgrades/Weapon  otherwise it coudl be light, medium or heavy or some random set between Light and X (l,med,or heavy)
   if (ch==1):
     cat = "%sLight" % (base_category)
@@ -70,7 +71,7 @@ def GetRandomShield (faces,type):#gets random shield system from master part lis
   return cat
 
 def GetRandomAfterburner (diff):#get random afterburner from master part list
-  cat=GetDiffCargo(diff,"upgrades/Engines/Engine_Enhancements_","upgrades/Engines",0)
+  cat=GetDiffCargo(diff,"upgrades/Engines/Engine_Enhancements_","upgrades/Engines",0,1)
   item=getItem(cat,"upgrades/Engines")
   return item
 

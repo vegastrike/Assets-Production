@@ -9,17 +9,11 @@ import universe
 import unit
 import Director
 class defend (Director.Mission):
-    you=VS.Unit()
-    faction=""
-    defendee=VS.Unit()
-    difficulty=1
-    quantity=0
-    arrived=0
-    adjsys=0
-    mplay="all"
-    
     def __init__ (self,factionname,numsystemsaway, enemyquantity, distance_from_base, escape_distance, creds, defendthis, defend_base):
           Director.Mission.__init__(self)
+          self.arrived=0
+          self.quantity=0
+          self.mplay="all"
 	  self.defendbase = defend_base	  
 	  self.attackers = []
 	  self.targetiter = 0
@@ -31,12 +25,13 @@ class defend (Director.Mission):
 	  self.cred=creds
 	  self.quantity=enemyquantity
 	  self.distance_from_base=distance_from_base
+          self.defendee=VS.Unit()
+          self.difficulty=1
 	  self.you=VS.getPlayer()
-
           name = self.you.getName ()
           self.mplay=universe.getMessagePlayer(self.you)
+          self.adjsys = go_to_adjacent_systems(self.you,numsystemsaway)  
 	  VS.IOmessage (0,"defend",self.mplay,"Good Day, %s. Your mission is as follows:" % name)
-          self.adjsys = go_to_adjacent_systems(self.you,numsystemsaway)
           self.adjsys.Print("You are in the %s system,","Proceed swiftly to %s.","Your arrival point is %s.","defend",1)
 	  VS.IOmessage (2,"defend",self.mplay,"And there eliminate any %s starships at a point."  % self.faction)
     def SuccessMission (self):

@@ -6,17 +6,8 @@ import random
 import launch
 
 class go_somewhere_significant:
-  significantun=VS.Unit()
-  arrivedarea=0
-  distfrombase=500
-  you=VS.Unit()
 #  frameoffset=0 #see note at bottom
 #  begsigdis=1.0 #same note
-  capship=0
-  sysfil=""
-  obj=0
-  orbitee=""
-  
   def HaveArrived (self):
     return self.arrivedarea
   
@@ -24,7 +15,11 @@ class go_somewhere_significant:
     return self.significantun
   
   def __init__ (self,you, landable_only, distance_away_to_trigger,base_only=0,capshipfaction=""):
+    self.obj=0
+    self.orbitee=""
+    self.capship=0
     self.you = you
+    self.arrivedarea=0
     self.distfrombase=distance_away_to_trigger
     significant=VS.Unit()
     self.sysfil=VS.getSystemFile()
