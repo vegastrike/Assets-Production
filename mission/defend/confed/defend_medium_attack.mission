@@ -25,8 +25,8 @@
 			<exec module="attack_jumppoint" name="initrandom">
 			<const type="object" object="string" value="aera"/> <!--faction name of thing you should attack 0 confed 1 aera... -->
 			<const type="int" value="0"/> <!--num systems away the delivery point is -->
-			<const type="int" value="3"/><!--ammt of enemies guaranteed -->
-			<const type="int" value="6"/><!--ammt of enemies guaranteed -->
+			<const type="int" value="2"/><!--ammt of enemies guaranteed -->
+			<const type="int" value="4"/><!--ammt of enemies guaranteed -->
 			<const type="float" value="3550"/> <!-- how much you are  paid -->
 			<const type="bool" value="true"/> <!--do you need to defend a base or capship here-->
 			<const type="bool" value="false"/> <!--do you need to defend a base here-->

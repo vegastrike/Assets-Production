@@ -26,7 +26,7 @@
 			<const type="object" object="string" value="pirates"/> <!--faction name of thing you should attack 0 confed 1 pirates... -->
 			<const type="int" value="0"/> <!--num systems away the delivery point is -->
 			<const type="int" value="3"/><!--ammt of enemies guaranteed -->
-			<const type="int" value="19"/><!--ammt of enemies guaranteed -->
+			<const type="int" value="7"/><!--ammt of enemies guaranteed -->
 			<const type="float" value="810"/> <!-- how much you are  paid -->
 			<const type="bool" value="true"/> <!--do you need to defend a base or capship here-->
 			<const type="bool" value="true"/> <!--do you need to defend a base here-->
