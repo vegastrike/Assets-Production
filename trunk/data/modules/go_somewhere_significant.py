@@ -54,7 +54,8 @@ class go_somewhere_significant:
     if (self.capship):
       visitstr+=(dockstr % (self.orbitee))
     VS.IOmessage(time,fro,universe.getMessagePlayer(self.you),visitstr % (self.significantun.getName()))
-  
+  def DestinationSystem(self):
+    return self.sysfil
   def Execute(self):
     if (self.significantun.isNull() or self.you.isNull() or VS.getSystemFile()!=self.sysfil):
       return 0
