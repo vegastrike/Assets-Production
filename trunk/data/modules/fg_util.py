@@ -288,7 +288,7 @@ def GetShipsInFG(fgname,faction):
 	import vsrandom
 	ships = ReadStringList (ccp,MakeFGKey(fgname,faction))
 	if (len(ships)<=ShipListOffset()):
-		return
+		return []
 	try:
 		count=int(ships[0])
 	except:
