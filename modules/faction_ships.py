@@ -106,6 +106,8 @@ fighters = (("firefly","destiny","tian","nova","puma","mongoose","destiny","tian
             ("beholder",) #unknown
            )
 
+isBomber = {"eagle":10,"beholder":1,"avenger":1,"butterfly":2,"khanjarli":6}
+
 capitols = (("corvette","starrunner","cruiser","carrier","fleetcarrier","escortcarrier"), #confed
             ("yrilan",), #aera
             ("rlaan_cruiser",), #rlaan
