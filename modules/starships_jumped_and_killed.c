@@ -5,7 +5,7 @@ module starships_jumped_and_killed {
   //int begin_num_ships
   //int iterator;
   //int sys_iterator;
-  //int new_num_ships;
+  //int ships_insys;
   //};
   //init sets up a new()ed _olist with variables that it will use to track the starships...starship list must also be newed
   void init (object my_list, object starship_list) {
@@ -28,37 +28,53 @@ module starships_jumped_and_killed {
     _olist.delete (starship_list);
     _olist.delete (my_list);
   };
-
-  int scan_for (int sys_iterator,object starship_list,int iterator) {
-    //
+  int original_num_ships (object my_list) {
+    return _olist.at (my_list,1);
   }
-  bool UnitIsNull (object starship_list,int iterator) {
+  int ships_alive (object my_list) {
+    object starship_list = _olist.at (my_list,0);
+    return _olist.size (starship_list);
+  };
+  int ships_in_system (object my_list) {
+    return _olist.at (my_list,4);
+  }
+  int scan_for (int sys_iterator,object un) {
+    object sysunit = _unit.getUnit (sys_iterator);
+    if (_std.isNull(sysunit)) {
+      return -1;
+    }
+    if (_unit.equal (sysunit,un)) {
+      return 0;
+    }
+    return sys_iterator+1;
+  };
+  object GetCurListShip (object starship_list,int iterator) {
     object sshipcont=_olist.at(starship_list,iterator);
     object sship=_unit.getUnitFromContainer(sshipcont);
     if (_std.isNull(sship)) {
-	  _olist.erase(starship_list,iterator);
-      return true;
-    } else {
-      return false;
-    }
-  }
-
+      _olist.erase(starship_list,iterator);
+    } 
+    return sship;
+  };
   void loop (object my_list) {
     object starship_list = _olist.at (my_list,0);//pointer
     int begin_num_ships = _olist.at (my_list,1);//constant
     int iterator = _olist.at (my_list,2);
     int sys_iterator = _olist.at (my_list,3);
-    int new_num_ships = _olist.at (my_list,4);
+    int ships_insys = _olist.at (my_list,4);
     _olist.pop_back (my_list);
     _olist.pop_back (my_list);
     _olist.pop_back (my_list);
     //don't pop begin_num_ships...taht doesn't change
     if (iterator<_olist.size(starship_list)) {
-      
-      if (UnitIsNull (starship_list,iterator)) {
-	new_num_ships=new_num_ships-1;
+      object unit_to_check=GetCurListShip(starship_list,iterator);
+      if (_std.isNull(unit_to_check)) {
+	ships_insys=ships_insys-1;//one less ship in system... got nailed!
       }else {
-	sys_iterator = scan_for (sys_iterator,starship_list,iterator);
+	sys_iterator = scan_for (sys_iterator,unit_to_checkx);
+	if (sys_iterator==-1) {
+	  ships_insys=ships_insys-1;//if we cannot find it, we must decrement num ships insys
+	}
 	//if it's negative one then we couldn't find it... if it's 0 we could
 	if (sys_iterator==0||sys_iterator==-1) {//if we've been through all the starships
 	  sys_iterator=0;
@@ -71,7 +87,7 @@ module starships_jumped_and_killed {
     //don't push begin_num_ships...that wasn't popped
     _olist.push_back (my_list,iterator);
     _olist.push_back (my_list,sys_iterator);
-    _olist.push_back (my_list,new_num_ships);
+    _olist.push_back (my_list,ships_insys);
 
   };
 }
