@@ -8,62 +8,45 @@ import save_util
 import faction_ships
 import universe
 import launch
-import tuples_fg
 import quest_contraband_truck
 
 
 class waitjump(VS.PythonAI):
 
-
-
-	def getJumppoint(self,target,ship):
-		if (target.isJumppoint()):
-			ship.SetTarget(target)
-		else:
-			target = VS.getUnit(self.count)
-			self.count = self.count + 1
-			self.getJumppoint(target,ship)
-
-
-
-
-
 	def init(self,un):
 		self.XMLScript ("++flystraight.xml")
 		self.AddReplaceLastOrder(1)
 		self.timer = 0
-#		global ai_qct_waitjump.truck_exit
-#		ai_qct_waitjump.truck_exit = 0
+		self.got_target = 0
 
 
 	def Execute(self):
 		VS.PythonAI.Execute(self);
 		if quest_contraband_truck.truck_exit == 1:
-			self.trucktarget = ((self.GetParent()).GetTarget())
-			self.count = 0
-#			self.getJumppoint(self.trucktarget,self.GetParent())
-#			if (self.trucktarget.isNull()):
-#				print "flagrant system error"
-			self.GetParent().SetTarget(universe.getRandomJumppoint())
-			self.trucktarget = ((self.GetParent()).GetTarget())
+			if self.got_target == 0:
+				self.trucktarget = ((self.GetParent()).GetTarget())
+				self.GetParent().SetTarget(universe.getRandomJumppoint())
+				self.trucktarget = (self.GetParent()).GetTarget()
+				self.got_target = 1
 			self.trucktarget_locat = self.trucktarget.Position()
 # starts him afterburning to target
-			self.MoveTo(self.trucktarget_locat,1)
+			self.FaceTarget(1)
 			self.AddReplaceLastOrder(1)
+
 			if self.timer == 0:
 				self.timer = VS.GetGameTime()
 				print "Timer Set"
-			elif self.timer + 20 < VS.GetGameTime():
+			elif self.timer + 5 < VS.GetGameTime():
+				self.MoveTo(self.trucktarget_locat,1)
+				self.AddReplaceLastOrder(1)
+				self.GetParent().ActivateJumpDrive(1)
+#			elif self.timer + 60 < VS.GetGameTime():
 # gets him to auto to the jump and jump out
-				self.GetParent().ActivateJumpDrive(0)
-#				self.GetParent().AddReplaceLastOrder(1)
-				print "should be go for good!................now!!!"
-#			print "should be go................now!!!"
-#			sys.stdout.write('Should be working...')
-#			sys.stdout.write('h')
+#				self.GetParent().ActivateJumpDrive(1)
 			return 1
+
 		return 1
 hi1 = waitjump()
 print 'AI creation successful'
 hi1 = 0
-#: 1.7; previous revision: 1.6
+
