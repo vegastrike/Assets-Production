@@ -17,10 +17,10 @@ elif (fixers.checkSaveValue(playernum,"pirate_mission3",0) and fixers.checkSaveV
 	Base.Message("We have uploaded the coordinates to where we have last seen the merchant docked. Your nav computer will automatically autopilot to those coordinates around the planet.  Once he is destroyed, tractor in all of the cargo and bring it to a base that will jump into this system soon.")
 	VS.LoadMission ("mission/cargo/pirates/plunder.mission")
 	#load mission 3
-elif (fixers.checkSaveValue(playernum,"pirate_mission4",0) and fixers.checkSaveValue (playernum,"pirate_mission3",1)):
+elif (fixers.checkSaveValue(playernum,"pirate_mission4",0) and (fixers.checkSaveValue (playernum,"pirate_mission3",1) or fixers.checkSaveValue (playernum,"pirate_mission3",2))):
 	fixers.setSaveValue (playernum,"pirate_mission4",0)
 	Base.Message("Destroy all of the enemies attacking this base and come back to me when the battle is over. After that, I will give you all of your long deserved money")
-	VS.LoadMission ("mission/defend/defend_pirates.mission")
+	VS.LoadMission ("mission/defend/pirates/pirate_msision4.mission")
 	#load mission 4
 else:
 	Base.message ("Yes about what?")
