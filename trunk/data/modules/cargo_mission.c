@@ -200,7 +200,7 @@ module cargo_mission {
 	      arrived=true;
 	      object newship=faction_ships.getRandomCapitol(faction);
 	      int randint=random.randomint(0,50);
-	      object significant = unit.getSignificant (randint,(!capship));
+	      object significant = unit.getSignificant (randint,(!capship),false);
 	      if (_std.isNull (significant)) {
 		significant =_unit.getPlayer();
 	      }

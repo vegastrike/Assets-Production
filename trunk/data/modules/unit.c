@@ -9,7 +9,14 @@ module unit {
     _string.delete(unit_fgid);
     return retval;
   };
-  object getSignificant (int whichsignificant, bool capship_only) {
+  bool isBase (object un) {
+    object unit_fgid = _unit.getFgName(un);
+    bool retval = _string.equal (unit_fgid,"Base");
+    _string.delete(unit_fgid);
+    return retval;
+
+  }; 
+  object getSignificant (int whichsignificant, bool landable_only, bool capship_only) {
 	object un;
 	_std.setNull (un);
 	int which=0;
@@ -22,9 +29,15 @@ module unit {
 		    return un;
 		  }	
 		}else {
-		  if (capship_only) {
-		    if (isLandable (un)) {
-		      signum=signum+1;
+		  if ((landable_only)||(capship_only)) {
+		    if(capship_only) {
+		      if (isBase (un)) {
+			signum=signum+1;
+		      }
+		    }else {
+		      if (isLandable (un)) {
+			signum=signum+1;
+		      }
 		    }
 		  }else {
 		    if (_unit.isSignificant(un)) {
