@@ -1,81 +1,78 @@
+import sys
+import VS
+import pickle
 class difficulty:
-  creds
-  playeriterator
-  credsToMax
-  cred_ratio
-  def usingDifficulty ():
-    return (VS.getDifficulty()!=1.0)
+  class pickil:
+    diff=0
+    def __init__(self,val=0):
+      self.diff=val
   
-  def getPlayerDifficulty (playa):
+  creds=(0,)
+  playeriterator=0
+  credsToMax=1
+  diffcls=pickil(0)
+  
+  def SetDiff(self,val):
+    self.diffcls.diff=val
+    VS.SetDifficulty(val)
+  
+  def Pickle (self):
+    return pickle.dumps(self.pickil)
+  
+  def UnPickle (self):
+    return pickle.loads(self.pickil)
+  
+  def usingDifficulty (self):
+    return (VS.GetDifficulty()!=1.0)
+  
+  def getPlayerDifficulty (self,playa):
     ret=0.0
     if (playa):
       temp =  VS.getSaveData (playa,"31337ness") #???
       if (len(temp)>0):
-	ret = _olist.at (temp,0)
-      
-    
+	ret = temp[0]
     return ret
   
-  def init(creditsToMaximizeDifficulty):
-    credsToMax = creditsToMaximizeDifficulty
+  def __init__(self,creditsToMaximizeDifficulty):
+    self.credsToMax = creditsToMaximizeDifficulty
     whichplayer=0
-    player=_unit.getPlayerX(0)
+    player=VS.getPlayerX(0)
     i=0
-    playeriterator=0
-    creds=_olist.new()
-    diff = _std.getDifficulty()
-    while (!_std.isNull(player)):
-      temp = _unit.getSaveData (player,"31337ness")
-      mycred = _unit.getCredits (player)
-      _olist.push_back(creds,mycred)
-      if (_olist.size(temp)==0):
-	//	_io.printf ("pushing_bakc new diff %f",diff)
-	_olist.push_back(temp,diff)
-       else:
-	saveddiff = _olist.at (temp,0)
-	//	_io.printf ("getting diff %f",saveddiff)
+    self.creds=()
+    diff = VS.GetDifficulty()
+    while (player):
+      temp = VS.getSaveData (player,"31337ness") #???
+      mycred = player.getCredits ()
+      self.creds=creds+(mycred,)
+      if (len(temp)==0):
+	temp=(diff,)
+      else:
+	saveddiff = temp[0]
 	if (saveddiff>diff):
 	  diff = saveddiff
-	
-      
-      i=i+1
-      player=_unit.getPlayerX(i)
-    
-    _std.setDifficulty(diff)    
+      i+=1
+      player=VS.getPlayerX(i)
+    VS.SetDifficulty(diff)    
   
-  def loop ():
+  def Execute (self):
     player = _unit.getPlayerX(playeriterator)
-    if (!_std.isNull(player)):
-      oldcreds = _olist.at(creds,playeriterator)
+    if (player):
+      oldcreds = creds[playeriterator]
       newcreds = _unit.getCredits (player)
       if (newcreds!=oldcreds):
 	if (newcreds>oldcreds):
-	  difficulty
-	  save = _unit.getSaveData (player,"31337ness")
-	  if (_olist.size(save)>0):
-	    difficulty = _olist.at (save,0)
+	  save = VS.getSaveData (player,"31337ness") #???
+	  if (len(save)>0):
+	    difficulty = save[0]
 	  else:
-	    difficulty = _std.getDifficulty()
-	  
-
-	  difficulty=difficulty+((newcreds-oldcreds)/credsToMax)
+	    difficulty = VS.GetDifficulty()
+	  difficulty+=((newcreds-oldcreds)/credsToMax)
 	  if (difficulty>0.99999):
 	    difficulty=0.99999
-	  
-	  if (_olist.size(save)>0):
-	    _olist.set(save,0,difficulty)
-	  else:
-	    _io.printf ("WARNING ERROR DETECTED IN CREDITS MODULE. PLEASE REPORT")
-	    _olist.push_back (save,difficulty)
-	  
-	  _std.setDifficulty(difficulty)
-	
-	_olist.set(creds,playeriterator,newcreds)
-           
-      playeriterator=playeriterator+1
+          SetDiff(difficulty)
+          SetDiff(difficulty)
+	creds[playeriterator]=newcreds
+      playeriterator+=1
     else:
       playeriterator=0
-    
-  
-
 
