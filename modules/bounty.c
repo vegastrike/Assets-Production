@@ -2,6 +2,7 @@ module bounty {
 	object faction;
 	object destination;
 	object enemycontainer;
+	object youcontainer;
 	object sigcont;
 	object newship;
 	int arrived;
@@ -14,8 +15,24 @@ module bounty {
 	import launch;
 	import faction_ships;
 	bool istarget;
-	
+	void destroy () {
+	  _string.delete (faction);
+	  //DO NOT DELETE...internal member of unit	  _string.delete (destination);
+	  if (!_std.isNull(sigcont)) {
+	    _unit.deleteContainer (sigcont);
+	  }
+	  if (!_std.isNull(youcontainer)) {
+	     _unit.deleteContainer (youcontainer);
+	  }
+	  if (!_std.isNull(enemycontainer)) {
+	    _unit.deleteContainer (enemycontainer);
+	  }
+	};
 	void init (int numsystemsaway, float creds) {
+	  _std.setNull(sigcont);
+	  _std.setNull(enemycontainer);
+	  _std.setNull(youcontainer);
+
 	  faction_ships.init();
 	  arrived=0;
 	  curiter=0;
@@ -24,6 +41,7 @@ module bounty {
 	  object mysys=_std.getSystemFile();
 	  object sysfile = _std.getSystemFile();
 	  object you=_unit.getPlayer();
+	  youcontainer = _unit.getContainer (you);
 	  if (!_std.isNull(you)) {
 	    object name = _unit.getFaction (you);
 	    int factionname=random.randomint(0,faction_ships.getMaxFactions());
@@ -54,6 +72,7 @@ module bounty {
 	  _io.message (0,"game","all","Your contribution to the war effort will be remembered.");
 	  _unit.addCredits(un,cred);
 	  if (terminate) {
+	    destroy();
 	    _std.terminateMission(true);
 	  }
 	};
@@ -61,6 +80,7 @@ module bounty {
 	void Lose (bool terminate) {
 	  _io.message(0,"game","all","You have failed this mission and will not be rewarded.");
 	  if (terminate) {
+	    destroy();
 	    _std.terminateMission(false);
 	  }
 	};
@@ -68,13 +88,19 @@ module bounty {
 	void loop () {
 	  bool isSig;
 	  object enemy;
-	  object you=_unit.getPlayer();
+	  object you=_unit.getUnitFromContainer(youcontainer);
+	  if (_std.isNull(you)) {
+	    Lose (true);
+	    return;
+	  }
 	  if (arrived==3) {
 	    enemy=_unit.getUnitFromContainer(enemycontainer);
 	    if (!istarget) {
 	      object curun=_unit.getUnit(curiter);
-	      if (_std.equal(curun,enemy)) {
-		_unit.setTarget(enemy,you);
+	      if (!_std.isNull (enemy)) {
+		if (_std.equal(curun,enemy)) {
+		  _unit.setTarget(enemy,you);
+		}
 	      }
 	      curiter=curiter+1;
 	    }
@@ -108,8 +134,10 @@ module bounty {
 	      newship=faction_ships.getRandomFighter(faction);
 	      enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,4000.0,significant);
 	      enemycontainer=_unit.getContainer(enemy);
-	      _unit.setTarget(enemy,significant);
-	      _unit.Jump(enemy);
+	      if (!_std.isNull(enemy)) {
+		_unit.setTarget(enemy,significant);
+		_unit.Jump(enemy);
+	      }
 	      destination=_unit.getName(significant);
 	      arrived=2;
 	    }
@@ -121,6 +149,7 @@ module bounty {
 	      object newship=faction_ships.getRandomFighter(faction);
 	      int randint=random.randomint(0,50);
 	      object significant = unit.getJumpPoint (randint);
+	      _string.delete (destination);
 	      destination=_unit.getName(significant);
 	      if (_std.isNull (significant)) {
 		significant =_unit.getPlayer();
