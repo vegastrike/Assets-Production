@@ -2138,10 +2138,10 @@ stone"/>
 				<var name="data" value="2151"/>
 			</sector>
 			<sector name="enigma">
-				<var name="sun_radius" value="15000"/>
+				<var name="sun_radius" value="2998"/>
 			      <var name="faction" value="confed"/> 
 				<var name="compactness" value="1.6"/>
-				<var name="num_stars" value="0"/>
+				<var name="num_stars" value="1"/>
 				<var name="num_gas_giants" value="0"/>
 				<var name="num_planets" value="0"/>
 				<var name="num_moons" value="3"/>
