@@ -25,7 +25,12 @@ def GenerateAllShips (numflightgroups,maxshipinfg):
 		fgnames.append(fg_util.GetRandomFGNames(numflightgroups,faction_ships.factions[fnr]))
 		for i in range(numflightgroups):
 			fglists[-1].append(GenerateFgShips(vsrandom.randrange(maxshipinfg)+1,fnr))
+
+
+doNotAddBasesTo={"enigma_sector/heavens_gate":1,"sol_sector/celeste":1,"enigma_sector/enigma":1,"enigma_sector/niven":1}
 def AddBasesToSystem (faction,sys):
+	if (sys in doNotAddBasesTo):
+		return
 	if faction in faction_ships.factions:
 		fsfac= list(faction_ships.factions).index(faction)
 		numbases =vsrandom.randrange(fg_util.MinNumBasesInSystem(),
