@@ -1,4 +1,6 @@
 <Unit scale="2.5">
+	<Description combatRole="FIGHTER">
+	</Description>
 	<cockpit file="heavy-cockpit.cpt"/>
 	<Meshfile file="aevant.xmesh" />
 	<Thrust>

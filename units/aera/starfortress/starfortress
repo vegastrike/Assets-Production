@@ -1,4 +1,6 @@
 <Unit scale="3">
+<Description combatRole="BASE">
+</Description>
 <Meshfile file="starfortress1.xmesh"/>
 
 <Meshfile file="starfortress2.xmesh"/>

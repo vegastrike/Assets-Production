@@ -1,4 +1,4 @@
-<Mesh texture="combine4.bmp" scale="0.250000">
+<Mesh  texture1="combine4PPL.jpg" texture="combine4.bmp" scale="0.250000">
 <Points>
 	<Point>
 		<Location x="58.218750" y="7.593750" z="16.000000"/> <!-- "0" -->

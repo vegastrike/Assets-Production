@@ -1,4 +1,6 @@
 <Unit scale="10">
+<Description combatRole="BASE">
+</Description>
 
 <Meshfile file="aera_medium_base.xmesh"/>
 

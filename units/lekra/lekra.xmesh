@@ -1,4 +1,4 @@
-<Mesh texture="asymmetric.bmp" scale="2.000000">
+<Mesh  texture1="asymmetricPPL.jpg" texture="asymmetric.bmp" scale="2.000000">
 <Points>
 	<Point>
 		<Location x="-0.000000" y="0.330000" z="1.500000"/>

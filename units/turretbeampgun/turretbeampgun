@@ -1,4 +1,6 @@
 <Unit scale ="3">
+	<Description combatRole="TMASSIVE">
+	</Description>
 
 <Meshfile file="turretbeampgun.xmesh"/>
 

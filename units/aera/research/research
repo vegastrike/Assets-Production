@@ -1,4 +1,6 @@
 <Unit scale = "150" >
+<Description combatRole="BASE">
+</Description>
 	<Thrust >
 		<Engine Afterburner = "0" Forward = "0" Retro = "0" Left = "0" Right = "0" Top = "0" Bottom = "0"  >
 		</Engine>

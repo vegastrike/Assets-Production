@@ -51,7 +51,7 @@
 	</Energy>
 	<Jump delay = "2" jumpenergy = "150"  >
 	</Jump>
-	<description  >
+	<description combatRole="SHUTTLE" >
 	</description>
 	<Hold volume = "125" >
 		<Category file = "Natural_Products/Natural_Resources" >

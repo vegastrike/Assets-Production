@@ -1,4 +1,6 @@
 <Unit scale = "3" >
+	<Description combatRole="BOMBER">
+	</Description>
 	<Meshfile file = "ta7.xmesh"  >
 	</Meshfile>
 	<Mount weapon = "Anihilator" size = "Special Heavy light-capship" x = "-1.700000" y = "0.100000" z = "7.800000"  >

@@ -2,7 +2,7 @@
 
 <Meshfile file="box.xmesh"/>
 
-       
+       <Description combatRole="CARGO"></Description>
 
 <!-- new elements added -->
 		<Thrust>

@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="SUPPORT">
+	</Description>
 	<Defense HudImage = "cargoship.spr" >
 		<Shields front = "000.0" right = "0" left = "0" back = "0.000000"  >
 		</Shields>

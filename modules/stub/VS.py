@@ -1,122 +1,249 @@
 # 299 "unit_wrapper.cpp"
-import random
 import sys
+import math
+import time
+_sysfile = ['SYSTEMaa']
+_unitlist=[]
 
-def pushSystem(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "pushSystem"
-def popSystem(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "popSystem"
-def getSystemFile(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def timeofday():
+   return time.time()
+def sqrt (s):
+   return math.sqrt(s)
+def log (s):
+   return math.log(s)
+def exp (s):
+   return math.exp(s)
+def cos (s):
+   return math.cos(s)
+def sin (s):
+   return math.sin(s)
+def asin (s):
+   return math.asin(s)
+def acos (s):
+   return math.acos(s)
+def atan (s):
+   return math.atan(s)
+def tan (s):
+   return math.tan(s)
+def micro_sleep (n):
+   pass
+def addParticle (loc,vel,col):
+   print 'added particle ' + loc + ' vel '+vel+' col '+col
+def pushSystem(sysname):
+   #print "pushSystem"
+   global _sysfile
+   _sysfile+=[sysname]
+def StopTargettingEachOther (fg,fac,enfg,enfac):
+	#print "detarget"
+	pass
+def TargetEachOther (fg,fac,enfg,enfac):
+	#print "target"
+	pass
+def systemInMemory(sys):
+    if (sys=='no_sector/no_system'):
+      return 0
+    import vsrandom
+    ret = vsrandom.randrange(0,2)	
+    if (sys in _sysfile):
+        #print sys+' in memory'
+		pass
+    if (ret):
+        #print sys+' maybe in memory'
+		pass
+    else:
+        #print sys + ' maybe not in memory'
+		pass
+    return ret
+_ownerdict={}
+def popSystem():
+   del _sysfile[-1]
+def getSystemFile():
    print "getSystemFile" 
-   return ""
-def getSystemName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   return _sysfile[-1]
+def getPlanetRadiusPercent ():
+	return .75
+
+def getSystemName():
    print "getSystemName" 
-   return ""
-def getUnitList(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   return _sysfile[-1]+' system'
+def getUnitList():
    print "getUnitList" 
    return un_iter()
-def getUnit(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "getUnit" 
-   return Unit()
-def launchJumppoint(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def getUnit(which):
+   print "getUnit"
+   if (len(_unitlist)>which):
+      return _unitlist[which]
+   else:
+      return 0
+def getNumUnits():
+   return len(_unitlist)
+def cacheAnimation(ani):
+   print 'cache '+str(ani)
+
+def launchJumppoint(name,faction,type,unittype,ai,nr,nrwaves,pos,squadlogo,destinations):
    print "launchJumppoint" 
-   return Unit()
-def launch(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "launch" 
-   return Unit()
+   for i in range (nr):
+      _unitlist+=[Unit(type,name)]
+   return _unitlist[len(_unitlist)-nr]
+
+def launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
+   print "launch"
+   global _unitlist
+   for i in range (nr):
+      _unitlist+=[Unit(type,name)]
+   return _unitlist[len(_unitlist)-nr]
+_cargotypes = ['boxes','plastic','metal','junk','food']
 def getRandCargo(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "getRandCargo" 
-   return Cargo("","",1,1,1,1)
-def GetFactionName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "GetFactionName" 
-   return ""
-def GetFactionIndex(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "GetFactionIndex" 
-   return -1
-def GetRelation(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "GetRelation" 
+   print "getRandCargo"
+   import vsrandom
+   which = vsrandom.randrange(0,len(_cargotypes))
+   return Cargo(_cargotypes[which],_cargotypes[which],1,1,1,1)
+_factions=['neutral','confed','aera','merchant','retro','militia','rlaan','powerups','upgrades','unknown','pirates','hunter','privateer','ISO','planets']
+def GetFactionName(index):
+   return _factions[index]
+def GetFactionIndex(name):
+   if (name in _factions):
+      return _factions.index(name)
    return 0
-def AdjustRelation(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def GetRelation(myfac,theirfac):
+	import faction_ships
+	try:
+		myn=faction_ships.factionToInt(myfac)
+		enn=faction_ships.factionToInt(theirfac)
+		if enn in faction_ships.enemies[myn]:
+			return -1
+		if enn in faction_ships.friendlies[myn]:
+			return 1
+		return 0
+	except:
+		print 'bad faction'+myfac + theirfac 
+		import vsrandom
+		return vsrandom.uniform(-1,1)
+def AdjustRelation(myfac,theirfac,val):
    print "AdjustRelation"
-def GetNumFactions(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "GetNumFactions" 
+def GetNumFactions():
+   return len(_factions) 
    return 0
-def GetGameTime(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "GetGameTime" 
-   return 0
-def SetTimeCompression(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+_gametime=0
+def GetGameTime():
+   global _gametime
+   _gametime+=.1
+   return _gametime
+def SetTimeCompression(val):
    print "SetTimeCompression"
-def GetAdjacentSystem(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "GetAdjacentSystem" 
-   return ""
-def GetGalaxyProperty(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "GetGalaxyProperty" 
-   return ""
-def GetNumAdjacentSystems(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "GetNumAdjacentSystems" 
-   return 0
-def musicAddList(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def GetAdjacentSystem(mystr,which):
+   import vsrandom
+   return 'SYSTEM'+chr (vsrandom.randrange(ord('a'),ord('z')+1))+chr (vsrandom.randrange(ord('a'),ord('z')+1))
+def GetGalaxyFaction(sysname):
+   import faction_ships
+   import vsrandom
+   if sysname in _ownerdict:
+	   return _ownerdict[sysname]
+   has = sysname.__hash__()
+   return faction_ships.factions[has%len(faction_ships.factions)]
+def GetGalaxyProperty(sysname,prop):
+	if (prop=='faction'):
+		return GetGalaxyFaction(sysname)
+	return '<unknown property>'
+def SetGalaxyFaction(sysname,faction):
+	print faction+' took over '+sysname
+	_ownerdict[sysname]=faction
+def GetNumAdjacentSystems(mystr):
+   import vsrandom
+   return vsrandom.randrange(1,6)
+def musicAddList(mystr):
    print "musicAddList" 
    return 0
-
-def musicPlaySong(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def musicSkip ():
+   pass
+def getCurrentPlayer ():
+   import vsrandom
+   return vsrandom.randrange(0,2)
+def musicLoopList (numloops):
+   pass
+def musicPlaySong(mysong):
    print "musicPlaySong"
-def musicPlayList(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def musicPlayList(mylist):
+   bleh = int (mylist)
    print "musicPlayList"
-def GetDifficulty(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "GetDifficulty" 
-   return .88
-def SetDifficulty(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+_difficulty=.88
+def LoadMission (whichmission):
+   temp = str(whichmission)
+def LoadMissionScript (whichmission):
+   temp = str(whichmission)
+def GetDifficulty():
+   return _difficulty
+def SetDifficulty(diff):
    print "SetDifficulty"
-def playSound(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   global _difficulty
+   _difficulty=diff
+def playSound(soundName,loc,speed):
    print "playSound"
-def playAnimation(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def playAnimation(aniName,loc,size):
    print "playAnimation"
-def terminateMission(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def playAnimationGrow(aniName,loc,size,growth):
+   print "playAnimationGrow"
+def terminateMission(success):
    print "terminateMission"
-def getPlayer(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def getPlayer():
    print "getPlayer" 
-   return Unit()
-def getPlayerX(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   return _unitlist[0]
+def getPlayerX(which):
    print "getPlayerX" 
-   return Unit()
-def getNumPlayers(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   return _unitlist[which]
+def getNumPlayers():
    print "getNumPlayers" 
    return 2
-def addObjective(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+_objectives=[]
+def addObjective(name):
    print "addObjective" 
-   return 0
-def setObjective(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   _objectives+=[name]
+   return len(_objectives)-1
+def setObjective(which,name):
    print "setObjective"
-def setCompleteness(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   _objectives[which]=name
+def SafeEntrancePoint(vec,dist):
+   return vec
+def setCompleteness(which, compl):
+   bleh = float(compl)
    print "setCompleteness"
-def getCompleteness(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   setObjective (which,_objectives[which])
+def getCompleteness(which):
+   setObjective (which,_objectives[which])
    print "getCompleteness" 
-   return 0
-def setOwner(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   import vsrandom
+   return vsrandom.randrange(0,3)*.5
+def setOwner(which,un):
    print "setOwner"
-def getOwner(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def getOwner(which):
    print "getOwner" 
-   return Unit()
+   return _unitlist[0]
 def IOmessage(time,fr,to,message):
    sys.stderr.write("IOmessage [printed in %f seconds; from %s to %s: '%s']\n" % (time,fr,to,message))
-def GetMasterPartList(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+def numActiveMissions():
+   import vsrandom
+   return vsrandom.randrange(1,3)
+def GetMasterPartList():
    print "GetMasterPartList" 
-   return Unit()
-def GetContrabandList(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   return Unit("master_part_list")
+def GetContrabandList(faction):
    print "GetContrabandList" 
-   return Unit()
-def SetAutoStatus(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+   return Unit("master_part_list","updates")
+def SetAutoStatus(glob,playa):
    print "SetAutoStatus"
 def string ():
   return ''
+def unorNone():
+  import vsrandom
+  if (vsrandom.randrange(0,6)):
+    return _unitlist[vsrandom.randrange(0,len(_unitlist))]
+  else:
+    return None
 class Unit:
-  def __init__(self):
-    print 'Unit constructor called with (self)'
-
-# 1 "python_unit_wrap.h" 1
-
-
+  def __init__(self,nam='noname',fg='fgname'):
+    self.name=nam
+    self.fg=fg
+    print 'Unit constructor called with '+nam
   def AutoPilotTo(self,un,ignore_friendlies): 
    print "AutoPilotTo" 
    return 0
@@ -131,15 +258,15 @@ class Unit:
    return -1
   def getFgID(self):
    print "getFgID" 
-   return string()
+   return self.name
   def setFullname(self,name): 
    print "setFullname"
   def getFullname(self):
    print "getFullname" 
-   return string()
+   return self.name+'_hi'
   def getFullAIDescription(self):
    print "getFullAIDescription" 
-   return string()
+   return 'default'
   def setTargetFg(self,primary,secondary,tertiary): 
    print "setTargetFg"
   def ReTargetFg(self,which_target): 
@@ -193,7 +320,7 @@ class Unit:
    print "Cloak"
   def RemoveFromSystem(self): 
    print "RemoveFromSystem"
-  def PositionITTS(self,local_posit,speed): 
+  def PositionITTS(self,local_posit,vel,speed): 
    print "PositionITTS" 
    return (0,0,0)
   def Position(self):
@@ -205,7 +332,8 @@ class Unit:
 
   def Threat(self):
    print "Threat" 
-   return Unit()
+   import vsrandom
+   return _unitlist[vsrandom.randrange(0,len(_unitlist))]
   def TargetTurret(self,targ): 
    print "TargetTurret"
   def getSubUnits(self):
@@ -374,27 +502,34 @@ class Unit:
    print "JumpTo" 
    return 0
   def getFactionName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "getFactionName" 
-   return ''
+   import faction_ships
+   import vsrandom
+   return faction_ships.factions[vsrandom.randrange(0,len(faction_ships.factions)-1)]
   def getFactionIndex(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "getFactionIndex" 
    return 0
   def setFactionName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "setFactionName"
   def setFactionIndex(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "setFactionIndex"
-  def getName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "getName" 
-   return ''
-  def getFlightgroupName(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
+  def getName(self):
+   return self.name
+  def getFlightgroupName(self):
    print "getFlightgroupName" 
-   return ''
+   return self.fg
   def getFgDirective(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "getFgDirective" 
    return ''
-  def getFlightgroupLeader(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
-   print "getFlightgroupLeader" 
-   return Unit()
+  def getFlightgroupLeader(self):
+   print "getFlightgroupLeader"
+   names=[]
+   for i in _unitlist:
+      if i.fg==self.fg:
+          names+=[i]
+   import vsrandom
+   leng=len(names)
+   if (leng):
+     return names[vsrandom.randrange(0,leng)]
+   return self
   def addCredits(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
    print "addCredits"
   def switchFg(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,j=None): 
@@ -466,19 +601,19 @@ class Unit:
   def setNull(self): 
    print "setNull";
   def __nonzero__(self):
-   print "__nonzero__" 
-   return random.randrange(0,2);
+   import vsrandom
+   return vsrandom.randrange(0,2);
   def isNull(self):
-   print "isNull" 
-   return random.randrange(0,2);
+   import vsrandom
+   return vsrandom.randrange(0,2);
   def SetTarget(self,un): 
    print "SetTarget";
   def GetTarget(self):
-   print "GetTarget" 
-   return Unit();
+   print "GetTarget"
+   return unorNone()
   def GetVelocityReference(self):
    print "GetVelocityReference" 
-   return Unit()
+   return unorNone()
   def SetVelocityReference(self,un): 
    print "SetVelocityReference";
   def GetOrientation(self):
@@ -504,16 +639,18 @@ class Unit:
    return ((0,0,0),(0,0,1),(0,0,0),(0,1,0))
   def getSubUnit(self,which): 
    print "getSubUnit" 
-   return Unit()
+   return unorNone()
 
 class un_iter:
   def __init__(self):
-    print 'un_iter constructor called with (self)'
+     pass
   def current(self):
-   print "current" 
-   return Unit()
+    return unorNone()
   def advance(self): 
-   print "advance"
+    pass
+  def next(self):
+    self.advance()
+    return self.current()
   def remove(self): 
    print "remove"
   def preinsert(self,un): 
@@ -551,7 +688,10 @@ class Cargo:
    print "SetCategory"
   def GetCategory(self):
    print "GetCategory" 
-   return "contraband"
+   import vsrandom
+   if vsrandom.randrange(0,2)==0:
+    return "Contraband"
+   return "Medical"
   def SetMissionFlag(self,flag): 
    print "SetMissionFlag"
   def GetMissionFlag(self):
@@ -566,16 +706,17 @@ class Cargo:
    return ""
 
 class PythonAI:
-  def init(self,un): 
+  def init(self,un):
    print "init"
   def Execute(self): 
    print "Execute"
   def GetParent(self):
    print "GetParent" 
-   return Unit()
+   import vsrandom
+   return _unitlist[vsrandom.randrange(0,len(_unitlist))]
   def __init__(self):
     print 'PythonAI constructor called with (self)'
-    self.init(Unit())
+    self.init(Unit('noname'))
   def AddReplaceLastOrder(self,replace): 
    print "AddReplaceLastOrder"
   def ExecuteLastScriptFor(self,time): 
@@ -606,3 +747,5 @@ class PythonAI:
    print "XMLScript"
   def LastPythonScript(self): 
    print "LastPythonScript"
+
+_unitlist = [Unit("me","blue"),Unit("him","gold")]

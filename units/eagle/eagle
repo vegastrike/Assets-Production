@@ -1,4 +1,6 @@
 <Unit scale = ".75" >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<Meshfile file = "eagle-h-m.xmesh"  >
 	</Meshfile>
 	<Meshfile file = "eagle-h-o.xmesh"  >

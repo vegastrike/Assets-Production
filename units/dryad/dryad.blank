@@ -1,4 +1,6 @@
 <Unit>
+	<Description combatRole="SHUTTLE">
+	</Description>
 	<Defense HudImage="dryad-hud.spr" RepairDroid="0"  ecm="0">
 		<Shields front="0" right="0" left="0"  back="0.000000" recharge="000000"/>
 	</Defense>
@@ -26,7 +28,7 @@
 	</Stats>
 
 	<Computer yaw="45.400002" pitch="40.600006" roll="50.400002" afterburner="128" maxspeed="45" TrackingCone="20" lockcone="35">
-                <Radar itts="false" error="0" range="5000" maxcone=".25" color="false"/>
+                <Radar itts="false" error="0" range="300000" maxcone="-1" color="false"/>
 	</Computer>
 
 	<Jump missing="1" delay="1" jumpenergy="380"/>       
@@ -51,8 +53,6 @@
 	<Light file="supernova.bmp" x="-3.8" y="1.4" z="-3.0" size="1.9"/>
 	<Light file="supernova.bmp" x="0" y="1.8" z="-3.6" size="1.1"/>
 
-	<Hold volume="15">
-	</Hold>
 
 	<description>
 The Dryad is heavy supermacy fighter. It's main purpose is to tie in dogfight enemy escorts, forcing as many of them as possible to leave bombers and capital ships without cover. It has powerful shield and excellent maneurability, but only average speed.

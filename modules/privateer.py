@@ -2,6 +2,7 @@ from trading import trading
 from random_encounters import random_encounters
 #print "done ran"
 from difficulty import difficulty
+import dynamic_universe
 #print "difficulty begin"
 #from garbage_collect import garbage_collect
 import Director
@@ -17,7 +18,9 @@ class privateer (Director.Mission):
     self.loops=(difficulty (credits_to_maximize_difficulty),
           random_encounters (sigdis, detectiondis, gendis, minships,genships,fighterprob,enemyprob,capprob,capdist),
           trading (),
+          dynamic_universe
 #          garbage_collect (),
+
           )
 
   def Execute(self): #this execute function should not need to be changed...

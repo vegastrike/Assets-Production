@@ -1,4 +1,6 @@
 <Unit>
+	<Description combatRole="ESCORTCAP">
+	</Description>
 	<Energy afterburnenergy="32767">
 	</Energy>
 	<upgrade file="engine_level_0"/>

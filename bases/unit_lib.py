@@ -1,8 +1,10 @@
 import Base
 import bar_lib
 import weapons_lib
+import dynamic_mission
 
 def MakeUnit (bartendername='bases/bartender_default.py'):
+    dynamic_mission.CreateMissions()
     room1 = Base.Room ('Landing Platform')
     room2 = Base.Room ('Main Concourse')
     Base.Texture (room1, 'tex', 'bases/generic/base_entrance.spr', 0, 0)

@@ -1,4 +1,4 @@
-<Mesh texture="greypanel.png">
+<Mesh  texture1="greypanelPPL.jpg" texture="greypanel.png">
 <Points>
 	<Point>
 		<Location x="2.998999" y="-1.499001" z="-6.999001"/>
@@ -3806,3 +3806,4 @@
 	<Ref point="400" weight="2.029999" />
 </Logo>
 </Mesh>
+Y

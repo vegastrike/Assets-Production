@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="INTERCEPTOR">
+	</Description>
 	<cockpit file = "light_cockpit.cpt" x = "0" y = ".5" z = "10"  >
 	</cockpit>
 	<Defense HudImage = "f404-hud.spr" >

@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="HEAVYMISSILE">
+	</Description>
 	<Meshfile file = "capshipmissile.xmesh"  >
 	</Meshfile>
 	<BspMesh  >

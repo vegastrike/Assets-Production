@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="CAPITAL">
+	</Description>
 	<Meshfile file = "cruiser-EngineCone.xmesh"  >
 	</Meshfile>
 	<Meshfile file = "cruiser-EngineCon0.xmesh"  >

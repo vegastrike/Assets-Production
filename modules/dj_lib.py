@@ -47,12 +47,12 @@ def PlayMusik(forcechange=1,hostile_dist=0):
 		iter = VS.getUnitList()
 		target = iter.current()
 		unlist=[]
-		asteroid=False
+		asteroid=0
 		while (target):
 			ftmp = 2*target.getRelation(un)
 			nam=target.getName().lower()
 			if un.getSignificantDistance(target)<=2*target.rSize() and ('afield'==nam[:6] or 'asteroid'==nam[:8]):
-				asteroid=True
+				asteroid=1
 			hdis = HOSTILE_AUTODIST
 			if (hostile_dist!=0):
 				hdis = hostile_dist

@@ -75,8 +75,15 @@ def getAdjacentSystems (currentsystem, sysaway, jumps=(),preferredfaction=''):
       return getAdjacentSystems(nextsystem,sysaway-1,jumps+(nextsystem,))
   
 #def getAdjacentSystems (currentsystem, num_systems_away):
-#    return nearsys (currentsystem,num_systems_away,()) 
-  
+#    return nearsys (currentsystem,num_systems_away,())
+
+def getAdjacentSystemList (tothissystem):
+    list=[]
+    max=VS.GetNumAdjacentSystems(tothissystem);
+    for i in range(max):
+        list.append(VS.GetAdjacentSystem(tothissystem,i))
+    return list
+
 def getRandomJumppoint():
     jp_list=getJumppointList()
     size=len(jp_list)
@@ -113,7 +120,25 @@ def punish (you,faction,difficulty):
             newunit.setFgDirective("B")
             newunit.SetTarget(you)
 
-
+def _tmpint(str,default):
+    try:
+        return int(str)
+    except:
+        return default
+def significantUnits():
+	iter= VS.getUnitList()
+	un = iter.current()
+	ret = []
+	while (un):
+		if (un.isSignificant()):
+			ret+=[un]
+		iter.advance()
+		un= iter.current()
+	return ret
+	
+def GetNumSignificantsForSystem (cursys):
+    numjmp=VS.GetNumAdjacentSystems(cursys)
+    return _tmpint(VS.GetGalaxyProperty(cursys,"num_planets"),3)+_tmpint(VS.GetGalaxyProperty(cursys,"num_moons"),4)+_tmpint(VS.GetGalaxyProperty(cursys,"num_gas_giants"),2)+_tmpint(VS.GetGalaxyProperty(cursys,"num_starbases"),1)+numjmp
 #use go_somewhere_significant instead:
 ##def __init__(): #(?)
 ##    outstr=_string.new()

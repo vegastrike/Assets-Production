@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<Meshfile file = "khanjarli.xmesh"  >
 	</Meshfile>
 	<Meshfile file = "khanjarli-1.xmesh"  >

@@ -10,7 +10,7 @@ import unit
 import Director
 import quest
 class defend (Director.Mission):
-    def __init__ (self,factionname,numsystemsaway, enemyquantity, distance_from_base, escape_distance, creds, defendthis, defend_base,protectivefactionname='',jumps=(),var_to_set=''):
+    def __init__ (self,factionname,numsystemsaway, enemyquantity, distance_from_base, escape_distance, creds, defendthis, defend_base,protectivefactionname='',jumps=(),var_to_set='',dynamic_flightgroup='',dynamic_type='', dynamic_defend_fg=''):
           Director.Mission.__init__(self)
           self.dedicatedattack=vsrandom.randrange(0,2)
           self.arrived=0
@@ -19,6 +19,9 @@ class defend (Director.Mission):
           self.quantity=0
           self.mplay="all"
 	  self.defendbase = defend_base	  
+	  self.dynatkfg = dynamic_flightgroup	  
+	  self.dynatktype = dynamic_type
+	  self.dyndeffg = dynamic_defend_fg
 	  self.attackers = []
           self.objective= 0
 	  self.targetiter = 0
@@ -69,7 +72,8 @@ class defend (Director.Mission):
         
         if (un!=self.you):
             if (un.getFactionName()==self.faction): 
-                if (un.getSignificantDistance (jp)<self.escdist):
+#                if (un.getSignificantDistance (jp)<self.escdist):
+                if 1:
                     if (un.getFlightgroupName()!="Base"):
                         VS.setObjective(self.objective,"Destroy the %s"%un.getName())
                         self.ship_check_count=0
@@ -85,7 +89,18 @@ class defend (Director.Mission):
         VS.setCompleteness(self.objective,-1.0)
 
         while (count<self.quantity):
-	    launched = launch.launch_wave_around_unit ("Shadow",self.faction,faction_ships.getRandomFighter(self.faction),"default",1,2000.0,4500.0,you,'')
+	    L = launch.Launch()
+	    L.fg="Shadow";L.dynfg=self.dynatkfg;
+	    if (self.dynatktype==''):
+	      L.type=faction_ships.getRandomFighter(self.faction)
+	    else:
+	      L.type=self.dynatktype
+	    L.ai="default";L.num=1;L.minradius=2000.0;L.maxradius=4500.0
+	    L.faction=self.faction
+	    launched=L.launch(you)
+	    if (count==0):		
+	        self.you.SetTarget(launched)		
+
             if (self.defend):
                 launched.SetTarget (jp)
 	    else:
@@ -109,7 +124,7 @@ class defend (Director.Mission):
                 tempfaction=self.protectivefaction
                 if (tempfaction==''):
                     tempfaction = faction_ships.get_enemy_of(self.faction)
-            self.adjsys=go_somewhere_significant (self.you,self.defend,self.distance_from_base,self.defend or self.defend_base,tempfaction)
+            self.adjsys=go_somewhere_significant (self.you,self.defend,self.distance_from_base,self.defend or self.defend_base,tempfaction,self.dyndeffg)
             self.adjsys.Print ("You must visit the %s","defend","docked around the %s", 0)
             self.defendee=self.adjsys.SignificantUnit()
         else:
@@ -144,5 +159,6 @@ class defend (Director.Mission):
         print "ending briefing"        
 		
 def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base,p_faction='',jumps=(),var_to_set=''):
-    enq=vsrandom.randrange(minenquant,maxenquant)
+    enq=minenquant
+    enq=vsrandom.uniform(minenquant,maxenquant)	
     return defend(factionname,numsysaway,enq,8000.0,100000.0,enq*credperen,defendit,defend_base,p_faction,jumps,var_to_set)

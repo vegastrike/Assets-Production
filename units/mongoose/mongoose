@@ -33,6 +33,7 @@
 	</Thrust>
 	<Sound  >
 	</Sound>
+	<Description combatRole="INTERCEPTOR"/>
 	<Defense HudImage = "mongoose-hud.spr" >
 		<Armor front = "60" right = "60" left = "60" back = "60"  >
 		</Armor>

@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<Meshfile file = "s-Cone02-3 - Default.xmesh"  >
 	</Meshfile>
 	<ShieldMesh file = "s-Cone02-3 - Default.xmesh"  >

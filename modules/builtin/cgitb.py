@@ -17,7 +17,7 @@ for you, call cgitb.handler().  The optional argument to handler() is a 3-item
 tuple (etype, evalue, etb) just like the value of sys.exc_info()."""
 
 __author__ = 'Ka-Ping Yee'
-__version__ = '$Revision$'
+__version__ = '$Revision: 4317 $'
 
 import sys
 

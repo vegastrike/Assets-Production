@@ -1,4 +1,7 @@
 <Unit scale = "6" >
+	<Description combatRole="INTERCEPTOR">
+	</Description>
+
 	<cockpit file = "bomber-cockpit.cpt" x = "0" y = ".25" z = "2.5"  >
 	</cockpit>
 	<Meshfile file = "dagger.xmesh"  >

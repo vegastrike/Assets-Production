@@ -2,7 +2,11 @@ import Base
 import VS
 import bar_lib
 import weapons_lib
+import dynamic_mission
 
+list=VS.musicAddList ('unit.m3u')
+VS.musicPlayList(list)
+dynamic_mission.CreateMissions()
 room1 = Base.Room ('Landing Platform')
 room2 = Base.Room ('Main Concourse')
 Base.Texture (room1, 'tex', 'bases/generic/base_entrance.spr', 0, 0)
@@ -19,5 +23,3 @@ Base.Link (room2, 'WeaponsRoom', 0.382813, -0.731771, 0.326172, 0.427083, 'Weapo
 Base.Link (room2, 'LandingLink', -0.142578, -0.244792, 0.341797, 0.338542, 'Landing Platform', room1)
 Base.Comp (room2, 'MissionComputer', -0.425781, -0.307292, 0.183594, 0.200521, 'Mission Computer', 'NEWSMODE MISSIONMODE BRIEFINGMODE')
 Base.Comp (room2, 'CargoComputer', 0.289063, -0.283854, 0.146484, 0.179688, 'Cargo Computer', 'BUYMODE SELLMODE')
-list=VS.musicAddList ('unit.m3u')
-VS.musicPlayList(list)

@@ -1,4 +1,6 @@
 <Unit scale = "4" >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<Meshfile file = "adronew1.xmesh"  >
 	</Meshfile>
 	<Meshfile file = "adronew2.xmesh"  >

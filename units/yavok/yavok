@@ -1,4 +1,6 @@
 <Unit scale = "225" >
+	<Description combatRole="CAPITAL">
+	</Description>
 	<Meshfile file = "yavok.xmesh"  >
 	</Meshfile>
 	<Dock x = "0" y = "0" z = "-.3" size = ".3"  >

@@ -1,4 +1,6 @@
 <Unit scale="200">
+<Description combatRole="BASE">
+</Description>
 <Meshfile file="star6.xmesh"/>
 <!--<Mount size="capship-light capship-medium capship-heavy autotracking" type="capshipdisruptor" x="1" y="0" z="0" ri="1" rj="0" rk="0" qi="0" qj="1" qk="0"/>
 <Mount size="capship-light capship-medium capship-heavy autotracking" type="capshipdisruptor" x="-1" y="0" z="0" ri="-1" rj="0" rk="0" qi="0" qj="1" qk="0"/>

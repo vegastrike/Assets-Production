@@ -1,4 +1,6 @@
 <Unit size = "40" >
+	<Description combatRole="INTERCEPTOR">
+	</Description>
 	<Meshfile file = "Epeellcat-Body.xmesh"  >
 	</Meshfile>
 	<Meshfile file = "Epeellcat-Cockpit.xmesh"  >

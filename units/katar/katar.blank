@@ -1,4 +1,6 @@
 <Unit size = "3" >
+	<Description combatRole="SHUTTLE">
+	</Description>
 	<cockpit file = "light_cockpit.cpt" x = "0" y = ".5" z = "4"  >
 	</cockpit>
 	<Defense HudImage = "katar-hud.spr" >

@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<cockpit file = "heavy-cockpit.cpt" x = "0" y = "0" z = "0"  >
 	</cockpit>
 	<Defense HudImage = "khanjarli.spr" >

@@ -1,4 +1,6 @@
 <Unit scale = "1" >
+	<Description combatRole="CAPITAL">
+	</Description>
 	<Meshfile file = "starrunner.xmesh"  >
 	</Meshfile>
 	<Thrust >

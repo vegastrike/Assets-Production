@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="CARGO">
+	</Description>
 	<Meshfile file = "cargo01-Frame.xmesh"  >
 	</Meshfile>
 	<Meshfile file = "cargo01-Sides.xmesh"  >

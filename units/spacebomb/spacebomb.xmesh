@@ -1,4 +1,4 @@
-<Mesh texture="hull1.bmp">
+<Mesh  texture1="hull1PPL.jpg" texture="hull1.bmp">
 <Points>
 <Point>
     <Location x="0.0883883461356163" y="0.0883883461356163" z="2"/>
@@ -1457,4 +1457,4 @@
     <Vertex point="159" s="0.982322335243225" t="0.706250011920929"/>
 </Tri>
 </Polygons>
-</Mesh>
+</Mesh> 

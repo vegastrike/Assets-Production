@@ -2,7 +2,7 @@
 	<Faction name="neutral" logoRGB="logos/NeutralPri.png" secLogoRGB="logos/NeutralSec.png">
 	</Faction>
 
-	<Faction name="confed" logoRGB="TerranPri.png" secLogoRGB="logos/TerranSec.png" contraband="contraband">
+	<Faction name="confed" logoRGB="TerranPri.png" secLogoRGB="logos/TerranSec.png" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue="1" >  
 		<stats name="retro" relation="-.4"/>
 		<stats name="ISO" relation="-1"/>
 		<stats name="militia" relation=".9"/>
@@ -22,7 +22,7 @@
 <!--		</CommAnimation>-->
 	</Faction>
 
-	<Faction name="aera" logoRGB="logos/AeraPri.png" secLogoRGB="logos/AeraSec.png" contraband="contraband">
+	<Faction name="aera" logoRGB="logos/AeraPri.png" secLogoRGB="logos/AeraSec.png" contraband="contraband" sparkred="0" sparkgreen="1" sparkblue="0">
 <!--		<Explosion name="explosion_wave.ani"/>
 		<Explosion name="static_round.ani"/>-->
 		<stats name="ISO" relation="-.4"/>
@@ -52,7 +52,7 @@
 		<stats name="privateer" relation="0"/>
 	</Faction>
 
-	<Faction name="retro" logoRGB="logos/RetroPri.png" secLogoRGB="logos/RetroPri.png" contraband="contraband">
+	<Faction name="retro" logoRGB="logos/RetroPri.png" secLogoRGB="logos/RetroPri.png" contraband="contraband" sparkred=".75" sparkgreen=".5" sparkblue=".25">
 		<stats name="ISO" relation="-1"/>
 		<stats name="confed" relation="-.8"/>
 		<stats name="militia" relation="-.3"/>
@@ -66,7 +66,7 @@
 
 	</Faction>
 
-	<Faction name="militia" logoRGB="logos/MilitiaPri.png" secLogoRGB="logos/TerranPri.png" contraband="contraband">
+	<Faction name="militia" logoRGB="logos/MilitiaPri.png" secLogoRGB="logos/TerranPri.png" contraband="contraband" sparkred="0" sparkgreen=".5" sparkblue="1">
 		<stats name="ISO" relation="-.4"/>
 		<stats name="confed" relation=".6"/>
 		<stats name="aera" relation="-.7"/>
@@ -80,7 +80,7 @@
 
 	</Faction>
 
-	<Faction name="rlaan" logoRGB="logos/RlaanPri.png" secLogoRGB="logos/RlaanSec.png">
+	<Faction name="rlaan" logoRGB="logos/RlaanPri.png" secLogoRGB="logos/RlaanSec.png" sparkred=".5" sparkgreen="0" sparkblue="1">
 <!--		<Explosion name="explosion_wave.ani"/>
 		<Explosion name="static_round.ani"/>-->
 		<stats name="ISO" relation=".1"/>
@@ -111,7 +111,7 @@
 
 
 	</Faction>
-	<Faction name="unknown" logoRGB="logos/HunterPri.png" secLogoRGB="logos/HunterSec.png">
+	<Faction name="unknown" logoRGB="logos/HunterPri.png" secLogoRGB="logos/HunterSec.png" sparkred="1" sparkgreen=".5" sparkblue="0">
 		<stats name="confed" relation="-.1"/>
 		<stats name="aera" relation="-.1"/>
 		<stats name="merchant" relation ="-.1"/>
@@ -124,7 +124,7 @@
 		<stats name="ISO" relation="-.1"/>
 	</Faction>
 
-	<Faction name="pirates" logoRGB="PiratesPri.png" secLogoRGB="PiratesSec.png">
+	<Faction name="pirates" logoRGB="PiratesPri.png" secLogoRGB="PiratesSec.png" sparkred=".4" sparkgreen=".2" sparkblue=".7">
 		<stats name="ISO" relation="-.1"/>
 		<stats name="confed" relation="-.5"/>
 		<stats name="aera" relation="-.4"/>
@@ -137,7 +137,7 @@
 		<stats name="privateer" relation="-.1"/>
 
 	</Faction>
-	<Faction name="hunter" logoRGB="logos/HunterPri.png" secLogoRGB="logos/HunterSec.png">
+	<Faction name="hunter" logoRGB="logos/HunterPri.png" secLogoRGB="logos/HunterSec.png" sparkred="1" sparkgreen="1" sparkblue="1">
 		<stats name="ISO" relation="0"/>
 		<stats name="confed" relation="0"/>
 		<stats name="aera" relation="-.1"/>
@@ -163,7 +163,7 @@
 		<stats name="rlaan" relation="-.1"/>
 
 	</Faction>
-	<Faction name="ISO" logoRGB="ISOPri.png" secLogoRGB="ISOSec.png" contraband="contraband">
+	<Faction name="ISO" logoRGB="ISOPri.png" secLogoRGB="ISOSec.png" contraband="contraband" sparkred="1" sparkgreen="0" sparkblue="0">
 
 		<stats name="rlaan" relation="0"/>
 		<stats name="confed" relation="-.9"/>

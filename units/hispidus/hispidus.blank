@@ -1,4 +1,6 @@
 <Unit scale = "4" >
+	<Description combatRole="FIGHTER">
+	</Description>
 	<cockpit file = "rlaan-cockpit.cpt" x = "0" y = ".23" z = "8"  >
 	</cockpit>
 	<Meshfile file = "adronew1.xmesh"  >

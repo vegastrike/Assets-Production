@@ -1,4 +1,6 @@
 <Unit scale = "40" >
+	<Description combatRole="BASE">
+	</Description>
 	<Meshfile file = "factory.xmesh"  >
 	</Meshfile>
 	<Thrust >

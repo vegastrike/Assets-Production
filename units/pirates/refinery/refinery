@@ -1,4 +1,6 @@
 <Unit scale = "400" >
+<Description combatRole="BASE">
+</Description>
 	<Meshfile file = "piraterefine.xmesh"  >
 	</Meshfile>
 	<Thrust >

@@ -15,6 +15,9 @@
 	</Thrust>
 	<Sound  >
 	</Sound>
+	<Description combatRole="INERT">
+	</Description>
+
 	<Defense hudImage = "unknown_derelict-hud.spr" >
 		<Armor front = "0" right = "0" left = "0" back = "0"  >
 		</Armor>

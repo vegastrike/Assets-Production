@@ -59,8 +59,8 @@
 	</Jump>
 	<Energy afterburnenergy = "32767"  >
 	</Energy>
-	<description  >
-	</description>
+	<Description combatRole="SHUTTLE">
+	</Description>
 	<Hold volume = "125"  >
 	</Hold>
 	<Light file = "supernova.bmp" x = "10.24" y = "-2.759" z = "-18.302" size = "6"  >

@@ -1,4 +1,6 @@
 <Unit scale = "1" >
+	<Description combatRole="INTERCEPTOR">
+	</Description>
 	<cockpit file = "bomber-cockpit.cpt" x = "0" y = ".5" z = "4"  >
 	</cockpit>
 	<Defense HudImage = "mongoose-hud.spr" >

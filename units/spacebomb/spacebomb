@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="BOMB">
+	</Description>
 	<Meshfile file = "spacebomb.xmesh"  >
 	</Meshfile>
 	<BspMesh RAPID = "0"  >

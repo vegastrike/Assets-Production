@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="MISSILE">
+	</Description>
 	<Meshfile file = "capiff.xmesh"  >
 	</Meshfile>
 	<BspMesh RAPID = "0"  >

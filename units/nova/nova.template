@@ -1,6 +1,5 @@
 <Unit >
-	<cockpit file = "light_cockpit.cpt" x = "0" y = ".5" z = "4"  >
-	</cockpit>
+	<cockpit file = "medium-cockpit.cpt" x = "0.00000e+0" y = "8.40000e-2" z = "2.09000" />
 	<Upgrade file = "godsansshields"  >
 	</Upgrade>
 	<Defense >
@@ -19,22 +18,21 @@
 	</Upgrade>
 	<Upgrade file = "mult_gun_cooler"  >
 	</Upgrade>
-	<Mount weapon = "Laser" size = "Light Special Autotracking" x = "1.000000" y = "0.000000" z = "4.000000"  >
-	</Mount>
-	<Mount weapon = "Laser" size = "Light Special Autotracking" x = "-1.000000" y = "0.000000" z = "4.000000"  >
-	</Mount>
-	<Mount weapon = "Meson" size = "Light Medium Heavy" x = "4.000000" y = "0.000000" z = "4.500000"  >
-	</Mount>
-	<Mount weapon = "Meson" size = "Light Medium Heavy" x = "-4.000000" y = "0.000000" z = "4.500000"  >
-	</Mount>
-	<Mount weapon = "Dumbfire" size = "light-missile" x = "-1.500000" y = "-0.200000" z = "-1.0000" volume = "240"  >
-	</Mount>
-	<Mount weapon = "Dumbfire" size = "light-missile" x = "1.500000" y = "-0.200000" z = "-1.00000" volume = "240"  >
-	</Mount>
-	<Mount weapon = "ImageRecognition" size = "light-missile medium-missile" x = "-2.500000" y = "-0.200000" z = "-2.00000" volume = "340"  >
-	</Mount>
-	<Mount weapon = "ImageRecognition" size = "light-missile medium-missile" x = "2.500000" y = "-0.200000" z = "-2.00000" volume = "340"  >
-	</Mount>
+	
+
+<Light file = "supernova.bmp" x = "0.00000e+0" y = "2.40000e-2" z = "-1.03600" size = ".5" />
+<Light file = "supernova.bmp" x = "-0.298000" y = "2.40000e-2" z = "-1.03600" size = ".5" />
+<Light file = "supernova.bmp" x = "0.290000" y = "2.40000e-2" z = "-1.03600" size = ".5" />
+
+<Mount weapon="Laser" size="Light Medium Autotracking" x="-1.45600" y="-2.00000e-2" z="-0.396000" />
+<Mount weapon="Laser" size="Light Medium Autotracking" x="1.45800" y="-2.00000e-2" z="-0.396000" />
+<Mount weapon="Dumbfire" size="light-missile" x="5.00000e-2" y="-0.102000" z="2.91600" />
+<Mount weapon="Dumbfire" size="light-missile" x="-4.20000e-2" y="-0.102000" z="2.91600" />
+<Mount weapon="ImageRecognition" size="light-missile medium-missile" x="5.00000e-2" y="-0.102000" z="2.91600" />
+<Mount weapon="ImageRecognition" size="light-missilemedium-missile" x="-4.20000e-2" y="-0.102000" z="2.91600" />
+<Mount weapon="Meson" size="Light Medium Heavy Special" x="0.160000" y="-0.102000" z="2.42200" />
+<Mount weapon="Meson" size="Light Medium Heavy Special" x="-0.132000" y="-0.102000" z="2.42200" />
+
 	<Thrust >
 		<Engine Afterburner = "73019" Forward = "19129" Retro = "12631" Left = "11389" Right = "11389" Top = "11389" Bottom = "11389"  >
 		</Engine>

@@ -8,6 +8,8 @@ import sys
 import adventure
 import news
 import universe
+import fg_util
+import dynamic_battle
 class random_encounters:
   class playerdata:  
     def GeneratePhaseAndAmplitude(self):
@@ -53,6 +55,7 @@ class random_encounters:
     self.players+=[random_encounters.playerdata(self.sig_distance,self.det_distance)]
 #    print "add player"
   def NewSystemHousekeeping(self,oldsystem,newsystem):
+    fg_util.launchBases(newsystem)
     news.newNews()
     newquest = adventure.newAdventure (self.cur_player,oldsystem,newsystem)
     if (newquest):
@@ -110,75 +113,31 @@ class random_encounters:
       nam-=1
     print 1-ret
     return 1-ret;
-    
-  def launch_near_stage2 (self,un,near_faction,cap_prob):
-    numfactions=vsrandom.randrange(0,4)
-    if (numfactions<=0):
-      numfactions=1
-    sysfile = VS.getSystemFile()
-    gen_num_ships=self.gen_num_ships
-    for i in range(0,numfactions):
-      localfaction = VS.GetGalaxyProperty(sysfile,"faction")
-      if (vsrandom.random() < self.TrueEnProb(self.enprob)):
-        localfaction = faction_ships.get_insys_enemy_of (localfaction)
-      else:
-        localfaction = faction_ships.get_friend_of(localfaction)
-      if (len(near_faction)>0):
-        if (i==0 and vsrandom.random()<(.3+(.4*VS.GetDifficulty()))):
-          localfaction=near_faction
-          gen_num_ships*=3
-      else:
-	cap_prob/=3;#1/3 chance of capships within a nation border
-      numship= vsrandom.randrange(1,int(gen_num_ships)+1)
-      self.det_distance = self.cur.detection_distance
-      launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,0,self.generation_distance*vsrandom.random()*0.9,un, 2.0*self.det_distance,"")
-      if (vsrandom.random()<cap_prob):
-        if (self.AsteroidNear (un,self.cur.significant_distance)):
-          print "ast near, no cap"
-        else:
-          print "no asty near"
-          cap_prob=.7
-          capship = faction_ships.getRandomCapitol (localfaction)
-          launch_recycle.launch_wave_around("Capitol",localfaction,"default",1,1,self.capship_gen_distance*(0.5+(vsrandom.random()*0.4)),un, 8.0*self.det_distance,"")
 
   def launch_near(self,un):
     if (VS.GetGameTime()<10):
       print "hola!"
       return
-    randomnum=vsrandom.random()
-    system=cursys=VS.getSystemFile()
-    faction=curfac=VS.GetGalaxyProperty(system,"faction")
-    cap_prob=self.capship_prob
-##    systemlist=universe.getAdjacentSystems(system,5)[1]
-##    systemlist=(system,)+systemlist
-##    i=0
-##    cap_prob=self.capship_prob
-##    for system in systemlist:
-##      i+=1
-##      faction=VS.GetGalaxyProperty(system,"faction")
-##      if vsrandom.random()<.5:
-##        cap_prob/=3
-##        break
-##      if faction!=curfac:
-##        cap_prob/=i
-##        break
-##    if (faction==curfac):
-##      faction=''
-    otherfactions=[]
-    i=0
-    for i in range(VS.GetNumAdjacentSystems(cursys)):
-      system=VS.GetAdjacentSystem(cursys,i)
-      faction=VS.GetGalaxyProperty(system,"faction")
-      if faction!=curfac:
-        otherfactions.append(faction)
-    if len(otherfactions)==0:
-      faction=''
-      cap_prob/=3
-    else:
-      if len(otherfactions)==1:
-        cap_prob/=2
-      faction=otherfactions[vsrandom.randrange(0,len(otherfactions))]
-    self.launch_near_stage2 (un,faction,cap_prob)
+    cursys=VS.getSystemFile()
+#    numsigs=universe.GetNumSignificantsForSystem(cursys)
+    for factionnum in range(faction_ships.getMaxFactions()-1):
+      faction=faction_ships.intToFaction(factionnum)
+      fglist=fg_util.FGsInSystem(faction,cursys)
+      if not len(fglist):
+        print 'no flight group for faction: '+faction+' in system '+cursys+'.'
+        continue
+      num=len(fglist)
+      print 'Probability numbers: ',num, fg_util.MaxNumFlightgroupsInSystem()#,numsigs
+      avg=float(num)/float(fg_util.MaxNumFlightgroupsInSystem())#/float(numsigs)
+      print 'Chance for %s ship: %g'%(faction, avg)
+      rndnum=vsrandom.random()
+      print 'Random number: %g; will generate ship: %d'%(rndnum,rndnum<avg)
+      if rndnum<avg:
+        #now we know that we will generate some ships!
+        flightgroup=fglist[vsrandom.randrange(len(fglist))]
+        typenumbers=fg_util.GetShipsInFG(flightgroup,faction)
+        print 'FG Name: "%s", ShipTypes: %s'%(flightgroup,str(typenumbers))
+        launch_recycle.launch_types_around(flightgroup,faction,typenumbers,'default',self.generation_distance*vsrandom.random()*0.9,un,self.generation_distance*vsrandom.random()*2,'')
   def atLeastNInsignificantUnitsNear (self,uni, n):
     num_ships=0
     count=0
@@ -213,17 +172,27 @@ class random_encounters:
       self.cur.lastsys=cursys
     for q in self.cur.quests:
       q.SignificantsNear(self.cur.sig_container)
-    
+#    import dynamic_battle
+#    dynamic_battle.UpdateCombatTurn()
 
   def decideMode(self):
     myunit=VS.getPlayerX(self.cur_player)
-    if (myunit.isNull()):
+    if (not myunit):
       self.SetModeZero()
       return myunit
     significant_unit = self.cur.sig_container
-    if (significant_unit.isNull()):
+#        un=VS.getUnit(0);
+#        i=0
+#        while (un):
+#            print un.getName()
+#            i+=1
+#            un=  VS.getUnit(i)
+	
+    if (not significant_unit):
       un=VS.getUnit(self.cur.last_ship)
-      if (un.isNull ()):
+      if (self.DifferentSystemP()):
+        un.setNull()
+      if (not un):
         self.SetModeZero()
       else:
         sd = self.cur.significant_distance
@@ -235,22 +204,27 @@ class random_encounters:
     else:
       #significant_unit is something.... lets see what it is
       cursys = VS.getSystemFile()
-      if (cursys== self.cur.lastsys):
+      if (self.DifferentSystemP()):
+        print "different"
+        self.SetModeZero()
+        significant_unit.setNull ()
+      else:
         dd = self.cur.detection_distance
         if (myunit.getSignificantDistance (significant_unit)>dd):
           self.SetModeZero ()
           return VS.Unit()
         else:
           return significant_unit
-      else:
-        print "different"
-        self.NewSystemHousekeeping(self.cur.lastsys,cursys)
-        self.cur.lastsys=cursys
-        self.SetModeZero()
-        significant_unit.setNull ()
       return significant_unit
-
+  def DifferentSystemP(self):
+    cursys=VS.getSystemFile()
+    if (cursys==self.cur.lastsys):
+      return 0
+    self.NewSystemHousekeeping(self.cur.lastsys,cursys)
+    self.cur.lastsys=cursys
+    return 1
   def Execute(self):
+    dynamic_battle.UpdateCombatTurn()
     if (self.cur_player>=len(self.players)):
       self.AddPlayer()
     self.cur=self.players[self.cur_player]
@@ -266,7 +240,8 @@ class random_encounters:
       #lastmode=curmode#processed this event don't process again if in critical zone
       self.cur.lastmode=self.cur.curmode
       print "curmodechange %d" % (self.cur.curmode)#?
-      if ((vsrandom.random()<(self.fighterprob*self.cur.UpdatePhaseAndAmplitude())) and un):
+      if un:
+#      if ((vsrandom.random()<(self.fighterprob*self.cur.UpdatePhaseAndAmplitude())) and un):
         if (not self.atLeastNInsignificantUnitsNear (un,self.min_num_ships)):
           #determine whether to launch more ships next to significant thing based on ships in that range  
           print ("launch near")

@@ -1,4 +1,6 @@
 <Unit scale = "8" >
+	<Description combatRole="INTERCEPTOR">
+	</Description>
 	<Cockpit file = "medium_cockpit.cpt"  >
 	</Cockpit>
 	<Defense HudImage = "destiny-hud.spr" >

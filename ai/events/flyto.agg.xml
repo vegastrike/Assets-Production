@@ -1,16 +1,16 @@
 <AggressiveAI time="7">
-<distance min="0" script="++turntowards.xml">
-  <threat max=".8" script="++afterburn-turntowards.xml">
+<distance min="0" script="++turntowardsitts.xml">
+  <threat max=".8" script="++afterburn-turntowards-itts.xml">
   </threat>
 </distance>
-<distance min=".6" script="++afterburn-turntowards.xml">
-  <threat min=".8"  script="++afterburn-turntowards.xml">
+<distance min=".6" script="++afterburn-turntowards-itts.xml">
+  <threat min=".8"  script="++afterburn-turntowards-itts.xml">
   </threat>
-  <threat min=".8"  script="++afterburn-turntowards.xml">
+  <threat min=".8"  script="++afterburn-turntowards-itts.xml">
   </threat>
-  <threat min=".8"  script="++afterburn-turntowards.xml">
+  <threat min=".8"  script="++afterburn-turntowards-itts.xml">
   </threat>
-  <threat min=".8"  script="++afterburn-turntowards.xml">
+  <threat min=".8"  script="++afterburn-turntowards-itts.xml">
   </threat>
   <threat min=".8"  script="++evade.xml">
   </threat>

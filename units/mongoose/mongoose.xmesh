@@ -1,4 +1,4 @@
-<Mesh texture="mongoose.png" scale="0.100000" >
+<Mesh  texture1="mongoosePPL.jpg" texture="mongoose.png" scale="0.100000" >
 <Points>
 	<Point> <!-- 0 -->
 		<Location x="0.000000" y="-5.000000" z="130.000000"/>

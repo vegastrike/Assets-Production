@@ -1,4 +1,4 @@
-<Mesh texture="leokat.png">
+<Mesh  texture1="leokatPPL.jpg" texture="leokat.png">
 <Points>
 	<Point>
 		<Location x="-1.835542" y="-0.194403" z="3.629424"/> <!-- "0" -->

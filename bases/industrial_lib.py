@@ -1,6 +1,7 @@
 import Base
 import weapons_lib
 import vsrandom
+import dynamic_mission
 import VS
 import fixers
 def MakeCorisc(time_of_day='day',mybartender='bases/bartender_default.py'):
@@ -10,13 +11,14 @@ def MakeCorisc(time_of_day='day',mybartender='bases/bartender_default.py'):
     plist=VS.musicAddList(playlist)
     VS.musicPlayList(plist)    
 
+    dynamic_mission.CreateMissions()
     room1 = Base.Room ('Landing Platform')
     Base.Texture (room1, 'tex', 'bases/industrial/landing'+time_of_day+'.spr', 0, 0)
     bar = Base.Room ('Bar')
     Base.Texture (bar, 'tex', 'bases/industrial/bar'+time_of_day+'.spr', 0, 0)
     Base.Link (bar, 'Exlink1', -1, -1, 0.466797, 2, 'Exit The Bar', 0)
     Base.Link (bar, 'Exlink2', -1, -0.200521, 1, 1.200521, 'Exit The Bar', 0)
-    Base.Python (bar, 'talk', 0.46875, -0.151042, 0.4, 0.4, 'Talk to the Bartender', mybartender,False)
+    Base.Python (bar, 'talk', 0.46875, -0.151042, 0.4, 0.4, 'Talk to the Bartender', mybartender,0)
     Base.Texture(bar,'bartender','bases/industrial/bartender%d.spr' % (vsrandom.randrange(0,4)),0.66875, 0.05)
     fixers.CreateFixers(bar,[(.1,-0.15,.4,.4),])
     

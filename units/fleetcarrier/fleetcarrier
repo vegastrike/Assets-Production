@@ -1,4 +1,6 @@
 <Unit >
+	<Description combatRole="CARRIER">
+	</Description>
 	<Meshfile file = "carrier.xmesh"  >
 	</Meshfile>
 	<Thrust >
