@@ -1,0 +1,29 @@
+<Unit>
+	<Meshfile file="tian.xmesh" />
+	<Thrust>
+		<Engine Afterburner="1600.000000" Forward="533.333313" Retro="466.666649" Left="266.666656" Right="266.666656" Top="266.666656" Bottom="266.666656"/>
+		<Maneuver yaw="3643.200050" pitch="3643.200050" roll="3643.200050"/>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense>
+		<Armor front="20" right="20" left="20" back="20"/>
+		<Shields front="30.000000" back="70.000000" recharge="20.000000"/>
+		<Hull strength="100.000000"/>
+	</Defense>
+	<Stats mass="1.750000" momentofinertia="1.750000" fuel="20000"></Stats>
+	<Computer yaw="110.400002" pitch="110.400002" roll="110.400002" afterburner="160.000000" maxspeed="66.666664"/>
+	<Energy>
+		<Reactor recharge="10" limit="100"/>
+	</Energy>
+       
+
+<!-- new elements added -->
+<Light file="supernova.bmp" x="0.000000" y="0.533333" z="-4.133333" size="1.799999"/>
+<Light file="supernova.bmp" x="0.000000" y="5.333333" z="-6.400000" size="0.640000"/>
+<Light file="supernova.bmp" x="-4.066667" y="-2.026667" z="-5.773333" size="0.580000"/>
+<Light file="supernova.bmp" x="4.066667" y="-2.026667" z="-5.773333" size="0.680000"/>
+<Mount weapon="Laser" size="Light" x="4.066667" y="-2.026667" z="-1.773333"/>
+<Mount weapon="Laser" size="Light" x="-4.066667" y="-2.026667" z="-1.773333" />
+<Mount weapon="meson" size="Light" x="0.000000" y="5.333333" z="-1.966667"/>
+</Unit>

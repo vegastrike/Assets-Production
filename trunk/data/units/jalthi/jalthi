@@ -20,7 +20,7 @@
 	<Defense>
 		<Cloak/>
 		<Armor front="20" right="17" left="17" back="10"/>
-		<Shields front="160" back="160" recharge="2.500000"/>
+		<Shields front="160" back="160" recharge="15.00000"/>
 		<Hull strength="200"/>
 	</Defense>
 	<Stats mass="11" momentofinertia="11" fuel="20000"></Stats>

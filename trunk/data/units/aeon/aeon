@@ -1,9 +1,9 @@
 <Unit>
 	<Meshfile file="aeon.xmesh" />
-	<Mount weapon="Laser" size="Light" x="5.600000" y="-1.600000" z="3.200000"/>
-	<Mount weapon="Laser" size="Light" x="-5.600000" y="-1.600000" z="3.200000"/>
-	<Mount weapon="Laser" size="Light" x="2.000000" y="-0.200000" z="5.200000"/>
-	<Mount weapon="Laser" size="Light" x="-2.000000" y="-0.200000" z="5.200000"/>
+	<Mount weapon="DisruptorBeam" size="Light" x="5.600000" y="-1.600000" z="3.200000"/>
+	<Mount weapon="DisruptorBeam" size="Light" x="-5.600000" y="-1.600000" z="3.200000"/>
+	<Mount weapon="Neutron" size="Light" x="2.000000" y="-0.200000" z="5.200000"/>
+	<Mount weapon="Neutron" size="Light" x="-2.000000" y="-0.200000" z="5.200000"/>
 	<Thrust>
 		<Engine Afterburner="2066.666718" Forward="586.666687" Retro="513.333351" Left="293.333344" Right="293.333344" Top="293.333344" Bottom="293.333344"/>
 		<Maneuver yaw="4554.000000" pitch="5464.800201" roll="6375.600403"/>
@@ -12,13 +12,14 @@
 	</Sound>
 	<Defense>
 		<Armor front="45" right="40" left="40" back="40"/>
-		<Shields front="50.000000" back="40.000000" recharge="0.000000"/>
+		<Shields front="50.000000" back="40.000000" recharge="20.000000"/>
 		<Hull strength="100.000000"/>
+		<Cloak cloakmin=".25" cloakrate=".2" cloakenergy="64"/>
 	</Defense>
 	<Stats mass="3.000000" momentofinertia="3.000000" fuel="20000"></Stats>
-	<Computer yaw="138.000000" pitch="165.600006" roll="193.200012" afterburner="206.666672" maxspeed="73.333336"/>
+	<Computer yaw="138.000000" pitch="165.600006" roll="193.200012" afterburner="134" maxspeed="55"/>
 	<Energy>
-		<Reactor recharge="10" limit="100"/>
+		<Reactor recharge="64" limit="100"/>
 	</Energy>
        
 
