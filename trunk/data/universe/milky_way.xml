@@ -16,7 +16,14 @@
 				<var name="namelist" value="names.txt"/>
 				<var name="data" value="0" />
 				<var name="num_jump" value="2"/>
-				
+				<var name="starlist" value="stars.txt"/>
+				<var name="gasgiantlist" value="gas_giants.txt"/>
+				<var name="planetlist" value="planets.txt"/>
+				<var name="moonlist" value="moons.txt"/>
+				<var name="unitlist" value="smallunits.txt"/>
+				<var name="asteroidlist" value="asteroids.txt"/>
+				<var name="nebulalist" value="nebulae.txt"/>
+				<var name="backgroundlist" value="background.txt"/>
 			</sector>			
 			<sector name="max">
 				<var name="sun_radius" value="50000"/>
@@ -33,10 +40,25 @@
 				<var name="faction" value="unknown"/>
 				<var name="namelist" value="names.txt"/>
 				<var name="data" value="0" />
+				<var name="starlist" value="stars.txt"/>
+				<var name="gasgiantlist" value="gas_giants.txt"/>
+				<var name="planetlist" value="planets.txt"/>
+				<var name="moonlist" value="moons.txt"/>
+				<var name="unitlist" value="smallunits.txt"/>
+				<var name="asteroidlist" value="asteroids.txt"/>
+				<var name="nebulalist" value="nebulae.txt"/>
+				<var name="backgroundlist" value="background.txt"/>
 				
 			</sector>			
 		</sector>
+		<sector name="sol_sector">
+			<var name="faction" value="confed"/><!-- the default faction for systems in the sol sector -->		
+			<var name="namelist" value="greek.txt"/><!-- Sol Sector uses green names for planets -->			
+
+		</sector>
 		<sector name="vega_sector">
+			<var name="faction" value="confed"/> <!-- if variable is not specified in teh actual system it will check in the sector -->
+			<var name="namelist" value="celtic.txt"/><!-- Vega Sector uses celtic names for planets -->
 			<sector name="proxima">
 				<var name="sun_radius" value="22000"/>
 				<var name="compactness" value="1.6"/>
@@ -49,9 +71,9 @@
 				<var name="num_natural_phenomena" value="1"/>
 				<var name="num_starbases" value="2"/>
 				<var name="faction" value="confed"/>
-				<var name="namelist" value="celtic.txt"/>
+
 				<var name="jumps" value="sol_sector/sirius vega_sector/vega vega_sector/blackmane vega_sector/krieger"/>
-				<var name="data" value="1502 15309 35982035 8032958 23958 23059823058239 8168396 8193 6136890123 61396103618036 1830 6130 68109 68391086 1093 681936091 86391 6091 609381 61806 39168 013986209319 836981 368 103462163 18613 61036 84196 810396 81306 1396 103 6139 68109368 1306136 1086013 618036 130691 6018396  13601 36 1368 01368 31068 3 61039 6381 36098 31608 13680193689318931860 13601 6 31986 1036 31806 89136 0136 813096 1036 813068 1306813 06 1036 831068 1306013 60136 89106 103609138 60913 6013 609138 6013 60918 6018306831096831096801368 138 613 0681306810360" />
+				<var name="data" value="1502" />
 			</sector>			
 		</sector>	
 	</systems>
