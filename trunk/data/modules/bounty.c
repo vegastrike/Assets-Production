@@ -2,6 +2,8 @@ module bounty {
 	object faction;
 	object destination;
 	object enemycontainer;
+	object sigcont;
+	object newship;
 	int arrived;
 	int difficulty;
 	int curiter;
@@ -46,11 +48,11 @@ module bounty {
 	  }
 	};
 
-	void Win (bool terminate) {
+	void Win (object un,bool terminate) {
 	  _io.message (0,"game","all","Excellent work pilot.");
 	  _io.message (0,"game","all","You have been rewarded for your effort as agreed.");
 	  _io.message (0,"game","all","Your contribution to the war effort will be remembered.");
-	  _unit.addCredits(cred);
+	  _unit.addCredits(un,cred);
 	  if (terminate) {
 	    _std.terminateMission(true);
 	  }
@@ -67,7 +69,7 @@ module bounty {
 	  bool isSig;
 	  object enemy;
 	  object you=_unit.getPlayer();
-	  if (arrived==2) {
+	  if (arrived==3) {
 	    enemy=_unit.getUnitFromContainer(enemycontainer);
 	    if (!istarget) {
 	      object curun=_unit.getUnit(curiter);
@@ -81,22 +83,35 @@ module bounty {
 	      return;
 	    }
 	    if (_std.isNull(enemy)) {
-	      Win(true);
+	      Win(you,true);
 	      return;
 	    }
-	  } else if (arrived==1) {
+	  } else if (arrived==2) {
 	    object sysfil = _std.getSystemFile();
 	    if (_string.equal (sysfil,destination)) {
-	      arrived=2;
+	      arrived=3;
 		  enemy=_unit.getUnitFromContainer(enemycontainer);
 	      if (_std.isNull(you)) {
 		Lose(true);
 		return;
 	      }
 	      if (_std.isNull(enemy)) {
-		Win(true);
+		Win(you,true);
 		return;
 	      }
+	    } else {
+	      _std.ResetTimeCompression();
+	    }
+	  } else if (arrived==1) {
+	    object significant=_unit.getUnitFromContainer(sigcont);
+		if (_unit.getDistance(you,significant)<5000.0) {
+	      newship=faction_ships.getRandomFighter(faction);
+	      enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,4000.0,significant);
+	      enemycontainer=_unit.getContainer(enemy);
+	      _unit.setTarget(enemy,significant);
+	      _unit.Jump(enemy,significant);
+	      destination=_unit.getName(significant);
+	      arrived=2;
 	    }
 	  } else {
 	    object sysfil = _std.getSystemFile();
@@ -106,31 +121,33 @@ module bounty {
 	      object newship=faction_ships.getRandomFighter(faction);
 	      int randint=random.randomint(0,50);
 	      object significant = unit.getJumpPoint (randint);
+	      destination=_unit.getName(significant);
 	      if (_std.isNull (significant)) {
 		significant =_unit.getPlayer();
-		  } else {
+	      } else {
+		sigcont=_unit.getContainer(significant);
 		isSig=true;
 		  }
 	      if (_std.isNull(significant)) {
 		_std.terminateMission (false);
-	      }else {
-		enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,1000.0,significant);
-		if (isSig) {
-		  _unit.setTarget(enemy,significant);
-		  _unit.Jump(enemy,significant);
-		  destination=_unit.getName(significant);
+		  } else {
+		if (isSig) {	//ADD OTHER JUMPING IF STATEMENT CODE HERE
+		} else {
+		  enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1,1000.0,significant);
+		  enemycontainer=_unit.getContainer(enemy);
+		  _unit.setTarget(you,enemy);
+		  arrived=2;
 		}
 		object str = _string.new();
-		object name = _unit.getName (enemy);
-		_io.sprintf(str,"You must destroy the %s unit in this system.",name);
+		_io.sprintf(str,"You must destroy the %s unit in this system.",newship);
 		_io.message (0,"game","all",str);
-		_io.message (3,"game","all","oh no... He is running towards the jump point.  Catch him quick!");
-		_unit.setTarget(you,enemy);
-	    _io.sprintf(str,"he is going to %s",destination);
-	    _io.message (4,"game","all",str);
+		if (isSig) {	//ADD OTHER JUMPING IF STATEMENT CODE HERE ALS0
+		  _io.message (3,"game","all","oh no... He is running towards the jump point.  Catch him quick!");
+	      _io.sprintf(str,"he is going to %s",destination);
+	      _io.message (4,"game","all",str);
+		}
 		_string.delete(str);
 		
-		enemycontainer=_unit.getContainer(enemy);
 	      }
 	    }
 	    _string.delete (sysfil);
