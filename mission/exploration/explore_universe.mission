@@ -23,14 +23,6 @@
 			<order priority="1" order="bomber" target="omikron"/>
 			<order priority="2" order="escort" target="blue"/>
 		</flightgroup>
-                <flightgroup name="green" faction="confed" type="firefly" ainame="default" waves="1" nr_ships="2">
-			<pos x="954000" y="340000" z="30000000.0"/>
-			<rot x="180.0" y="180.0" z="180.0"/>
-			<order order="tmptarget" target="omikron"/>
-			<order priority="0" order="superiority" target="enemy"/>
-			<order priority="1" order="bomber" target="omikron"/>
-			<order priority="2" order="escort" target="blue"/>
-		</flightgroup>
         </flightgroups>
 	<python>
 from privateer import privateer
