@@ -8,7 +8,7 @@
 		<var name="credits" value="00000"/>
 		<var name="system" value="enigma_sector/blake" />
 		<var name="mission_name" value="HireWingman" />
-		<var name="description" value="Two Ex-Star Confederate soldiers are looking for work and are willing to escort your cargo vessel and protect it for a low cost of 50000 for a days work. Cash required in advance-- no questions, exceptions or bargains!" />
+		<var name="description" value="Two Ex-Star Confederate soldiers are looking for work and are willing to escort your cargo vessel and protect it for a low cost of 13000 for a days work. Cash required in advance-- no questions, exceptions or bargains!" />
 	</variables>
         <flightgroups>
                 <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="1">
@@ -22,7 +22,7 @@
         </flightgroups>
 	<python>
 import wingman
-newmission = wingman.wingman (50000, 'confed', 2,1)
+newmission = wingman.wingman (13000, 'confed', 2,1)
 newmission=0
 
 </python>
