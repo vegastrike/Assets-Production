@@ -429,7 +429,7 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction):
 			VS.TargetEachOther (fgname,faction,enfgname,enfaction)
 			VS.popSystem()
 		SimulatedDukeItOut (fgname,faction,enfgname,enfaction)
-	else:
+	elif (sys!='nil' and ensys!='nil'):
 		#pursue other flightgroup
 		import universe
 		adjSystemList=universe.getAdjacentSystemList(sys)
@@ -437,6 +437,15 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction):
 			fg_util.TransferFG (fgname,faction,ensys)
 		else:
 			return 0
+	else:
+		print 'nil DRAW error'
+	if (fg_util.NumShipsInFG(fgname,faction)==0):
+		if (fg_util.NumShipsInFG(enfgname,enfaction)==0):
+			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
+		else:
+			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))			
+	elif (fg_util.NumShipsInFG(enfgname,enfaction)==0):
+		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))			
 	if (vsrandom.randrange(0,4)==0):
 		#FIXME  if it is advantageous to stop attacking only!!
 		#FIXME add a stop attacking news report?  -- this should now be fixed, as a draw is reported (not heavilly tested)
@@ -450,13 +459,6 @@ def attackFlightgroup (fgname, faction, enfgname, enfaction):
 		if (num>0):
 			ensys=VS.GetAdjacentSystem(ensys,vsrandom.randrange(0,num))
 			fg_util.TransferFG (fgname,faction,ensys)
-	if (fg_util.NumShipsInFG(fgname,faction)==0):
-		if (fg_util.NumShipsInFG(enfgname,enfaction)==0):
-			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"0",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))
-		else:
-			Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"-1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))			
-	elif (fg_util.NumShipsInFG(enfgname,enfaction)==0):
-		Director.pushSaveString(0,"dynamic_news",dynamic_news.makeVarList(["battle","end",faction,enfaction,"1",str(getImportanceOfSystem(sys)),sys,"all",fgname,leader,enfgname,enleader]))			
 	return 1
 		
 ##for i in range(10000):
