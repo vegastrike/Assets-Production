@@ -24,7 +24,7 @@ module visit_aera {
     bool jumped=universe.loop();
     if(jumped){
       // we have jumped
-      object sysname=_std.GetSystemName();
+      //      object sysname=_std.GetSystemName();
     }
   };
 

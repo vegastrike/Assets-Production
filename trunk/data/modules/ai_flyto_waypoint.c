@@ -1,5 +1,7 @@
 module ai_flyto_waypoint {
 
+  // memory/unitC bug free
+
   import vec3;
   import random;
 
@@ -22,6 +24,7 @@ module ai_flyto_waypoint {
   class object my_fgid;
   class float my_resolution;
   class float my_last_time;
+  class object my_waypoint;
 
   void flyStraight(){
     object forward=vec3.new(0.0,0.0,vel);
@@ -53,20 +56,29 @@ module ai_flyto_waypoint {
     my_fgid=_unit.getFgID(my_unit);
    
     my_resolution=random.random(0.0,6.0);
+
+    //    _io.printf("Waypoint0: \n");
+    my_waypoint=vec3.clone(waypoint); // so that waypoint can be deleted by the caller
     //_io.printf("Waypoint: ");
     //vec3.print(waypoint);
     //_io.printf(" vel=%f  range=%f\n",vel,abort_range);
-    
+
+    object vstr=vec3.string(my_waypoint);
+    _io.sprintf(outstr,"fly to %s",vstr);
+    _string.delete(vstr);
+
+    _order.setActionString(my_order,outstr);
+
     vel=vel*100.0;
 
-    flyTo(waypoint);
+    flyTo(my_waypoint);
 
     my_last_time=_std.getGameTime();
   };
 
 
   void executeai(){
-    float dist=_unit.getMinDis(my_unit,waypoint);
+    float dist=_unit.getMinDis(my_unit,my_waypoint);
 
     //        _io.printf("distance=%f\n",dist);
 
@@ -85,13 +97,13 @@ module ai_flyto_waypoint {
       
       if(_std.isNull(lhorder)){
 	// the changeheading has terminated
-	float angle=_unit.getAngleToPos(my_unit,waypoint);
+	float angle=_unit.getAngleToPos(my_unit,my_waypoint);
 	if(angle>20.0){
 	  // are we still flying to our waypoint?
 	  object lmorder=_order.findOrder(my_order,last_move_order);
 	  _order.eraseOrder(my_order,last_move_order);
 	  //_io.printf("%s: correcting flying to wp, angle=%f\n",my_fgid,angle);
-	  flyTo(waypoint);
+	  flyTo(my_waypoint);
 	}
       }
       
@@ -101,7 +113,8 @@ module ai_flyto_waypoint {
 
   void quitai(){
     _io.printf("ai_flyto_waypoints1 quitting\n");
-    _string.delete(outstr);
+    //_string.delete(outstr);
+    //_olist.delete(my_waypoint);
   };
 
 }

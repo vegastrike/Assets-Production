@@ -1,5 +1,7 @@
 module ai_orderlist {
 
+  // mem/ref bug free
+
   import vec3;
   import random;
 
@@ -303,6 +305,8 @@ module ai_orderlist {
     _order.enqueueOrder(my_order,my_last_order);
 
     my_last_order_index=my_patrol_index;
+
+    _olist.delete(pos);
   };
 
 
@@ -454,7 +458,11 @@ module ai_orderlist {
 
   void quitai(){
     _io.printf("ai_orderlist quitting\n");
-    _string.delete(my_outstr);
+    //_string.delete(my_outstr);
+    //_olist.delete(my_flyto_pos);
+    //_string.delete(my_fgid);
+    //_string.delete(my_fgname);
+    //_olist.delete(my_done_list);
   };
 
 }

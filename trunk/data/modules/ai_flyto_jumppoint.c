@@ -1,5 +1,7 @@
 module ai_flyto_jumppoint {
 
+  // should be mem clean and ref clean
+
   import vec3;
   import random;
 
@@ -24,6 +26,7 @@ module ai_flyto_jumppoint {
   class object flyto_order;
   class object start_system;
   class object fgid;
+  class object jumppoint_container;
 
   void initai(){
     _done=false;
@@ -36,14 +39,24 @@ module ai_flyto_jumppoint {
 
     start_system=_std.GetSystemName();
 
-    destpos=_unit.getPosition(jumppoint_unit);
+    jumppoint_container=_unit.getContainer(jumppoint_unit);
 
-    jumppoint_rsize=_unit.getRSize(jumppoint_unit);
-    range=jumppoint_rsize/2.0;
+    jumppoint_unit=_unit.getUnitFromContainer(jumppoint_container);
 
-    flyto_order=_order.newFlyToWaypoint(destpos,fly_speed,afterburner,range);
+    if(!_std.isNull(jumppoint_unit)){
+      destpos=_unit.getPosition(jumppoint_unit);
 
-    _order.enqueueOrder(my_order,flyto_order);
+      jumppoint_rsize=_unit.getRSize(jumppoint_unit);
+      range=jumppoint_rsize/2.0;
+      
+      flyto_order=_order.newFlyToWaypoint(destpos,fly_speed,afterburner,range);
+
+      _order.enqueueOrder(my_order,flyto_order);
+    }
+    else{
+      _io.printf("%s: flyto_jumpoint, can't find jumpoint\n",fgid);
+      _done=true;
+    }
   };
 
 
@@ -54,9 +67,11 @@ module ai_flyto_jumppoint {
       // we have jumped
       _done=true;
       _io.printf("ai_flyto_jumppoint %s has jumped\n",fgid);
+      _string.delete(this_system);
       return;
     }
-
+    _string.delete(this_system);
+  
     float dist=_unit.getMinDis(my_unit,destpos);
 
     object last_flyto=_order.findOrder(my_order,flyto_order);
@@ -77,8 +92,15 @@ module ai_flyto_jumppoint {
    };
 
   void quitai(){
-    //_io.printf("ai_flyto_jumppoints1 quitting: %s\n",fgid);
-    _string.delete(outstr);
+    _io.printf("ai_flyto_jumppoints1 quitting: %s\n",fgid);
+    //_string.delete(outstr);
+    //_string.delete(fgid);
+    //_unit.deleteContainer(jumppoint_container);
+    //_string.delete(start_system);
+    if(_std.isNull(destpos)){
+      _io.printf("POSSIBLE UNDEF MEM DELETING AI_FLYTO_JP\n");
+    }
+    //_olist.delete(destpos);
   };
 
 }
