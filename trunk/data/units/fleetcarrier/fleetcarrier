@@ -1,4 +1,7 @@
 <Unit>
+	<Upgrade file="master_part_list"/>
+	<Upgrade file="master_part_list"/>
+	<Upgrade file="master_part_list"/>
 	<Meshfile file="carrier.xmesh" />
 	<Thrust>
 		<Engine Afterburner="66.666660" Forward="36.666664" Retro="23.333331" Left="13.333332" Right="13.333332" Top="13.333332" Bottom="13.333332"/>
@@ -174,6 +177,7 @@
 	    <Category file="upgrades">
 		<Import price="1" quantity="1"/>
 		<Cargo file="laser" price="1200" quantity="1" mass=".1" volume=".1"/>
+		<Cargo file="autotracking" price="1200" quantity="100" mass=".1" volume=".1"/>
 		<Cargo file="ion" price="5200" quantity="1" mass=".1" volume=".1"/>
 		<Cargo file="shield_4" price="15200" quantity="1" mass=".1" volume=".5"/>
 		<Cargo file="small_turret" price="15200" quantity="1" mass=".1" volume=".1"/>

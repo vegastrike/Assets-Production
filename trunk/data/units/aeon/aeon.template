@@ -14,8 +14,8 @@
 	<Mount weapon="HeatSeeker" size="light-missile medium-missile" x="-3.600000" y="-1.600000" z="1.200000" ammo="1" volume="161"/>
 	<Mount weapon="Dumbfire" size="light-missile medium-missile" x="2.900000" y="-1.600000" z="1.200000" ammo="1" volume="151"/>
 	<Mount weapon="Dumbfire" size="light-missile medium-missile" x="-2.900000" y="-1.600000" z="1.200000" ammo="1" volume="151"/>
-	<Mount weapon="Neutron" size="special heavy" x="2.000000" y="-0.200000" z="5.200000"/>
-	<Mount weapon="Neutron" size="special heavy" x="-2.000000" y="-0.200000" z="5.200000"/>
+	<Mount weapon="Neutron" size="special medium heavy Autotracking" x="2.000000" y="-0.200000" z="5.200000"/>
+	<Mount weapon="Neutron" size="special medium heavy Autotracking" x="-2.000000" y="-0.200000" z="5.200000"/>
 	<Thrust>
 		<Engine Afterburner="2266.666718" Forward="600.666687" Retro="613.333351" Left="393.333344" Right="393.333344" Top="393.333344" Bottom="393.333344"/>
 		<Maneuver yaw="4654.000000" pitch="5664.800201" roll="6775.600403"/>

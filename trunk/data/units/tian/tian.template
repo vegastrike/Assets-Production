@@ -25,5 +25,5 @@
 
 <Mount weapon="Laser" size="Light Medium" x="4.066667" y="-2.026667" z="-1.773333"/>
 <Mount weapon="Laser" size="Light Medium" x="-4.066667" y="-2.026667" z="-1.773333" />
-<Mount weapon="meson" size="Light Medium Heavy Special" x="0.000000" y="5.333333" z="-1.966667"/>
+<Mount weapon="meson" size="Light Medium Heavy Special Autotracking" x="0.000000" y="5.333333" z="-1.966667"/>
 </Unit>

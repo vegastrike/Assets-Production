@@ -22,8 +22,8 @@
 
 	</Energy>
        	<Jump delay="1" jumpenergy="90"/>
-<Mount weapon="Tachyon" size="Special Heavy" x="-6.118179" y="0.000000" z="2.773746" />
-<Mount weapon="DisruptorBeam" size="Light Medium" x="-1.301772" y="-0.130177" z="8.584977" />
+<Mount weapon="Tachyon" size="Special Heavy Autotracking" x="-6.118179" y="0.000000" z="2.773746" />
+<Mount weapon="DisruptorBeam" size="Light Medium Autotracking" x="-1.301772" y="-0.130177" z="8.584977" />
 	<Hold volume="18">
 	</Hold>
 

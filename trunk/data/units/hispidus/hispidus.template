@@ -10,13 +10,13 @@
 	<Upgrade file="micro_shielded_hull"/>
 
 
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="-5.277" y="2.683" z="21.963"/>
+<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special Autotracking" x="-5.277" y="2.683" z="21.963"/>
 
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="5.277" y="2.683" z="21.963"/>
+<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special Autotracking" x="5.277" y="2.683" z="21.963"/>
 
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="3,027" y="-3,899" z="18,562"/>
+<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special Autotracking" x="3,027" y="-3,899" z="18,562"/>
 
-<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special" x="-3,021" y="-3,924" z="18,562"/>
+<Mount weapon="HvyIonBeam" size="Light Medium Heavy Special Autotracking" x="-3,021" y="-3,924" z="18,562"/>
 
 
 <Stats mass="10.000000" momentofinertia="5.000000" fuel="20000000"></Stats>
