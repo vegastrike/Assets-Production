@@ -135,15 +135,42 @@ module cargo_mission {
 	    _std.terminateMission (false);
 	    return;
 	  }
+          float creds_deducted = _olist.at(list,2);
+          creds_deducted = creds_deducted * _std.Float(quantity)*(_std.Rnd()+1.0);
+          cred = cred + creds_deducted;
 	  if (tempquantity>0) {
 	    cred=cred *_std.Float(quantity)/_std.Float(tempquantity);
-	  }
+          }else {
+            _io.sprintf (str,"You do not have space to add our cargo to the mission. Mission failed.");
+	    _io.message (2,"game","all",str);
+            _std.terminateMission(false);
+	  _string.delete(str);
+	  _olist.delete(list);
+            return;
+          }
+          if (quantity==0) {
+            _io.sprintf (str,"You do not have space to add our cargo to the mission. Mission failed.");
+	    _io.message (2,"game","all",str);
+            _std.terminateMission(false);
+	  _string.delete(str);
+	  _olist.delete(list);
+            return;
+          }
 	  _io.message (0,"game","all",str);
 	  destination=universe.getAdjacentSystem(sysfile,numsystemsaway,jumps);
 	  _io.sprintf(str,"and give the cargo to a %s unit.",faction);
 	  _io.message (2,"game","all",str);
 	  _io.sprintf(str,"You will receive %d of the %s cargo",quantity,cargoname);
 	  _io.message (3,"game","all",str);
+          int tempo = _std.Int (creds_deducted);
+	  _io.sprintf(str,"We will deduct %d credits from your account for the cargo needed.",tempo);
+	  _io.message (4,"game","all",str);
+          tempo= _std.Int (creds);
+	  _io.sprintf(str,"You will earn %d more credits when you deliver our cargo.",tempo);
+	  _io.message (5,"game","all",str);
+          creds_deducted= 0.0-creds_deducted;
+          _unit.addCredits (you,creds_deducted);
+
 	  _string.delete(str);
 	  _olist.delete(list);
 	};
