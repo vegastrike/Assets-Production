@@ -1,0 +1,14 @@
+<Base>
+	<Room Text="Welcome to the Launch Pad"> <!--room 0-->
+		<Texture file="launch.spr" x="-1" y="1" />
+		<Link x="-.25" y="-.5" wid=".2" hei=".5" text="Bar" index="1" />
+		<Launch x="-.75" y="-.75" wid=".5" hei=".5" text="Launch" />
+		<Comp x="0" y="0" wid=".25" hei=".25" text="Cargo Hold" SellMode="" BuyMode="" />
+	</Room>
+	<Room Text="Welcome to the Bar"> <!--room 1-->
+		<Texture file="bar.spr" x="-.5" y=".25" />
+		<Link x="-.25" y="-.25" wid=".5"  hei=".55" text="Back to Launch Pad" index="0" />
+	</Room>
+</Base>
+
+
