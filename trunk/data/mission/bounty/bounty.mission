@@ -21,7 +21,7 @@
         </flightgroups>
 	<python>
 import bounty
-newmission = bounty.bounty (0, 4, 8025,14995, 1,0 , 3)
+newmission = bounty.initrandom (0, 4, 8025,14995, 1,0 , 3)
 newmission=0
 </python>
 	<madule name="director">
