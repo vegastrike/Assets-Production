@@ -158,22 +158,25 @@ module bounty {
 	    }
 	  } else if (arrived==1) {
 	    object significant=_unit.getUnitFromContainer(sigcont);
-	    if (unit.getSignificantDistance(you,significant)<10000.0) {
-	      if (_std.isNull(newship)) {
-		newship=faction_ships.getRandomFighter(faction);
-	      }
-	      enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1+difficulty,3000.0,4000.0,significant);
-	      enemycontainer=_unit.getContainer(enemy);
-	      if (!_std.isNull(enemy)) {
-		if (runaway) {
-		  _unit.setTarget(enemy,significant);
-		  _unit.Jump(enemy);
-		  arrived=2;
-		} else {
-		  arrived=3;
+	    if (_std.isNull (significant)) {
+	      _std.terminateMission(false);
+	    }else {
+	      if (unit.getSignificantDistance(you,significant)<10000.0) {
+		if (_std.isNull(newship)) {
+		  newship=faction_ships.getRandomFighter(faction);
+		}
+		enemy=launch.launch_wave_around_unit("Base",faction,newship,"default",1+difficulty,3000.0,4000.0,significant);
+		enemycontainer=_unit.getContainer(enemy);
+		if (!_std.isNull(enemy)) {
+		  if (runaway) {
+		    _unit.setTarget(enemy,significant);
+		    _unit.Jump(enemy);
+		    arrived=2;
+		  } else {
+		    arrived=3;
+		  }
 		}
 	      }
-
 	    }
 	  } else {
 	    object sysfil = _std.getSystemFile();
@@ -191,7 +194,7 @@ module bounty {
 		isSig=true;
 	      }
 	      if (_std.isNull(significant)) {
-		_std.terminateMission (false);
+		a_std.terminateMission (false);
 	      } else {
 		object localdestination=_unit.getName(significant);
 		if (isSig) {	//ADD OTHER JUMPING IF STATEMENT CODE HERE
