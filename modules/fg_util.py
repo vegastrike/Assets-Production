@@ -152,6 +152,9 @@ def CheckFG (fgname,faction):
 		for i in range (ShipListOffset()+1,leg,PerShipDataSize()):
 			shipshere=Director.getSaveString(ccp,key,i)
 			totalships+=int(shipshere)
+			temp=Director.getSaveString(ccp,key,i+1)
+			if (temp!=shipshere):
+				print 'correcting flightgroup '+fgname+' to have right landed ships'
 			Director.putSaveString(ccp,key,i+1,shipshere)#set num actives to zero
 		if (totalships!=int(Director.getSaveString(ccp,key,0))):
 			print 'mismatch on flightgroup '+fgname+' faction '+faction
@@ -162,12 +165,17 @@ def CheckFG (fgname,faction):
 	return 1
 def PurgeZeroShips (faction):
 	key=MakeFactionKey(faction)
-	for i in range (Director.getSaveStringLength (ccp,key)):
+	len=Director.getSaveStringLength (ccp,key)
+	i=0
+	while i<len:
 		curfg=Director.getSaveString(ccp,key,i)
 		CheckFG (curfg,faction)
 		numships=NumShipsInFG(curfg,faction)
 		if (numships==0):
 			DeleteFG(curfg,faction)
+			i-=1
+			len-=1
+		i+=1
 		
 def NumShipsInFG (fgname,faction):
 	key = MakeFGKey (fgname,faction)
@@ -239,8 +247,19 @@ def RemoveShipFromFG (fgname,faction,type,landed=0):
 				if (landed and numlandedships>0):
 					Director.putSaveString(ccp,key,i+1,str(numlandedships-1))
 			else:
+				numships-=1
 				for j in range (i-1,i+PerShipDataSize()-1):
 					Director.eraseSaveString(ccp,key,i-1)
+			if (numships>=0):
+				try:
+					totalnumships = int(Director.getSaveString(ccp,key,0))
+					totalnumships -=1
+					if (totalnumships>=0):
+						Director.putSaveString(ccp,key,0,str(totalnumships))
+					else:
+						print 'error...removing too many ships'
+				except:
+					print 'error, flight record '+fgname+' corrupt'
 			return
 	print 'cannot find ship to delete in '+faction+' fg ' + fgname
 def FGsInSystem(faction,system):
