@@ -94,13 +94,10 @@ def generateEscortMission (path,fg,fac):
 	writedescription("The %s %s in the %s flightgroup requres an escort to %s. The reward for a successful escort is is %d."%(fac,typ,fg, processSystem(path[-1]),creds))
 	writemissionname("Escort_%s_to_%s"%(fac,processSystem(path[-1])),path[-1])	
 
-def generateCargoMission (path, category, fac):
-	numcargos=vsrandom.randrange(1,15)
-	if numcargos>10:
-		numcargos=10
+def generateCargoMission (path, numcargos,category, fac):
 	diff=vsrandom.randrange(0,6)
 	launchcap=(vsrandom.random()>=.75)
-	creds=250*numcargos+500*diff+syscreds*len(path)+1000*(category.lower()=="contraband")
+	creds=250*numcargos+500*diff+syscreds*len(path)+5000*(category=="Contraband")+20000*(category=="starships")
 	writemissionsavegame ("import cargo_mission\ntemp=cargo_mission.cargo_mission('%s', 0, %d, %d, %g, %d, 0, '%s', %s, '')\ntemp=0\n"%(fac, numcargos, diff, creds, launchcap, category, str(path)))
 	if (category==''):
 		category='generic'
@@ -187,12 +184,15 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
 				rnd=vsrandom.random()
 				if (rnd<.45):    # 45% - Patrol mission
 					generatePatrolMission(j,vsrandom.randrange(4,10))
-				elif (rnd<.9):   # 45% - Cargo mission
-					generateCargoMission(j,'',basefac)
-				elif (fac=='pirates'): # 10% - Contraband mission (cargo contraband)
-					generateCargoMission(j,'Contraband',basefac)
-				else:            # 10% - Scout mission (patrol one planet)
-					generatePatrolMission(j,1)
+				else:   # 45% - Cargo mission
+					numcargos=vsrandom.randrange(1,25)
+					if numcargos>20:
+						numcargos=20
+					category=''
+					if (rnd>.87 and basefac!='confed' and basefac != "ISO"):
+						category='Contraband'
+					carg=VS.getRandCargo(numcargos,category)
+					generateCargoMission(j,numcargos,carg.GetCategory(),basefac)
 
 def CreateMissions(minsys=0,maxsys=4):
 	eraseExtras()

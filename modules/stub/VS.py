@@ -680,8 +680,11 @@ class Cargo:
   def SetCategory(self,category): 
    print "SetCategory"
   def GetCategory(self):
-   print "GetCategory" 
-   return "contraband"
+   print "GetCategory"
+   import vsrandom
+   if vsrandom.randrange(0,2)==0:
+      return "Contraband"
+   return "Medical"
   def SetMissionFlag(self,flag): 
    print "SetMissionFlag"
   def GetMissionFlag(self):
