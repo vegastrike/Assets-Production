@@ -1,3 +1,9 @@
+For updated information, view:
+http://www.joeredcloud.com/kandarwiki/index.php?VegastrikeWiki
+
+The Vega Strike homepage can be found at:
+http://vegastrike.sourceforge.net
+
 * 1) Contents*
 
    1. Contents <#i1>
