@@ -9,7 +9,7 @@
 		<var name="description" value="An even battle" />
 	</variables>
         <flightgroups>
-                <flightgroup name="blue" faction="confed" type="dumbfire" ainame="default" waves="1" nr_ships="2">
+                <flightgroup name="blue" faction="confed" type="nova" ainame="default" waves="1" nr_ships="2">
 			<pos x="0400" y="-35400" z="24700.0"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 			<order order="tmptarget" target="omikron"/>
