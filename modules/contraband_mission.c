@@ -179,6 +179,12 @@ module contraband_mission {
 					_unit.deleteContainer(olistcont);
 					_olist.erase(goodolist,good_iterator);
 				}
+				if (good_iterator>=_olist.size(goodolist)) {
+					good_iterator=0;
+				}
+				if (_olist.size(goodolist)<=0) {
+					_olist.push_back(goodolist,youcontainer);
+				}
 			}
 			olistcont=_olist.at(badolist,bad_iterator);
 			olistun=_unit.getUnitFromContainer(olistcont);
@@ -196,6 +202,12 @@ module contraband_mission {
 					all_left=all_left-1;
 					_unit.deleteContainer(olistcont);
 					_olist.erase(badolist,bad_iterator);
+				}
+				if (bad_iterator>=_olist.size(badolist)) {
+					bad_iterator=0;
+				}
+				if (_olist.size(badolist)<=0) {
+					_olist.push_back(badolist,youcontainer);
 				}
 			}
 			sys_giterator=sys_giterator+1;
