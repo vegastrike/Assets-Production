@@ -1,4 +1,14 @@
 <Unit>
+	<Upgrade file="godsansshields"/>
+	<Defense>
+		<Shields front="0.000000" right="0.000000" left="0.000000" back="0.000000" recharge="0.000000"/>
+		<Hull strength="1250.000000"/>
+	</Defense>
+	<Upgrade file="shield_4_Level3"/>
+	<Upgrade file="isometal"/>
+	<Upgrade file="engine_level_2"/>
+	<Upgrade file="micro_shielded_hull"/>
+
 	<cockpit file="centurion-cockpit.cpt" x="0" y="00" z="00"/>
 	<Thrust>
 		<Engine Afterburner="580.000000" Forward="468.000000" Retro="247.000000" Left="284.000000" Right="284.000000" Top="284.000000" Bottom="284.000000"/>
