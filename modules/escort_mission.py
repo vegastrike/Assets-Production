@@ -84,6 +84,8 @@ class escort_mission (Director.Mission):
 			VS.terminateMission(0)
 			return   
 		if (not self.adjsys.Execute()):
+			if (self.arrived):
+				self.adjsys.SignificantUnit().setSpeed(0.0)
 			return
 		if (not self.arrived):
 			self.arrived=1
@@ -95,6 +97,7 @@ class escort_mission (Director.Mission):
 			VS.IOmessage (0,"escort",self.mplay,"#00ff00Excellent work! You have completed this mission!")
 			self.escortee.setFgDirective('b')
 			self.escortee.setFlightgroupLeader(self.escortee)
+			self.escortee.performDockingOperations(self.adjsys.SignificantUnit())
 			if (self.var_to_set!=''):
 				quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,1)
 			VS.terminateMission(1)

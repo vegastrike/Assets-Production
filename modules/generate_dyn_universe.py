@@ -56,7 +56,7 @@ def AddSysDict (cursys):
 	for i in range (vsrandom.randrange(fg_util.MaxNumFlightgroupsInSystem())): #number of fgs in a system.
 		faction=sysfaction
 		if vsrandom.random()<.3 or sysfaction=='unknown' or sysfaction=='':
-			faction=faction_ships.get_insys_enemy_of(sysfaction)
+			faction=faction_ships.get_rabble_of(sysfaction)
 		else:
 			faction=faction_ships.get_friend_of(sysfaction)
 		factionnr=faction_ships.factionToInt(faction)
