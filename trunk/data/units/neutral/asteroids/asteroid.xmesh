@@ -18183,7 +18183,7 @@
 <Vertex point="1850" s="1.000000" t="0.666667"/>
 </Tri>
 </Polygons>
-<LOD meshfile="asteroid.lod1.xmesh" size="10000"/>
+<LOD meshfile="asteroid.lod1.xmesh" size="40000"/>
 <LOD meshfile="asteroid.lod2.xmesh" size="5000"/>
 
 <Material reflect="0">
