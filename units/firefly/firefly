@@ -34,7 +34,6 @@
 The FireFly is a light attack figher, used by the confed alliance in their struggle against the aera.
 The FireFly bla bla bla
 	</description>
-
 <!-- new elements added -->
 <Light file="supernova.bmp" x="-0.35" y="1.1" z="-8.000000" size="1.680000"/>
 <Light file="supernova.bmp" x="0.35" y="1.1" z="-8.000000" size="1.680000"/>

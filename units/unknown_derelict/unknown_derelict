@@ -28,10 +28,11 @@
 <!-- new elements added -->
 
 <!-- new elements added -->
-<!--<Mount weapon="UnknownBeam" size="Heavy" x="-15.833333" y="3.575820" z="58.726788"/>
+<!--<Mount weapon="UnknownBeam" size="" x="-15.833333" y="3.575820" z="58.726788"/>
 <Mount weapon="UnknownBeam" size="Heavy" x="15.318306" y="3.931693" z="58.726788" />
 <Light file="supernova.bmp" x="-14.558598" y="4.705065" z="-59.838497" size="18.400000"/>
 <Light file="supernova.bmp" x="12.919494" y="3.609854" z="-59.238785" size="18.000000"/>
 <Mount weapon="UnknownBolt" size="Heavy" x="-9.442946" y="-4.617121" z="54.150455" />-->
 <Mount weapon="UnknownBolt" size="Heavy" x="9.643875" y="-4.753923" z="54.455894" />
+
 </Unit>
