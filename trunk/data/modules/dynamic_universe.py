@@ -1,6 +1,7 @@
 import VS
 import Director
 import vsrandom
+import fg_util
 from universe import getAdjacentSystemList
 
 #SEE LINES 27, 46, 70, 87 FOR CURRENT BUGS!!!!!!!
@@ -42,7 +43,7 @@ def AddSysDict (cursys):
 		if not len(fgnames):
 			fgnames=fg_util.TweakFGNames(origfgnames)
 			fglists=origfglists
-		???.AddShipsToFG (fgname,faction,typenumbertuple,cursys) #TODO: generate a class of type dynamicuniverse OR make all of these functions members of that class.
+		fg_util.AddShipsToFG (fgname,faction,typenumbertuple,cursys)
 	return i
 
 def Makesys (startingsys):
@@ -59,13 +60,11 @@ def Makesys (startingsys):
 			systemdict[tmptodo]=AddSysDict(tmptodo)
 	return len(systemdict)
 
-def generateNewUniverseP ():
-
 genUniverse=-1
 if cp>=0:
 	genUniverse=Director.getSaveDataLength(cp,"FactionRefList")
 	if (genuniverse==0):
-		Director.putSaveData (cp,"FactionRefList",0,1)
+		Director.pushSaveData (cp,"FactionRefList",1)
 		GenerateAllShips (5000,5) ###Insert number of flight groups and max ships per fg
 		systemdict={}
 		genUniverse=Makesys(VS.getSystemFile())
