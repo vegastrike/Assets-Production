@@ -1,5 +1,5 @@
 import random
-import VS
+from difficulty import usingDifficulty
 confed=0
 aera=1
 rlaan=2
@@ -58,6 +58,12 @@ capitols = (("cruiser","starrunner","cruiser_mk2","carrier","fleetcarrier","esco
             ("truck","cargo","cruiser"), #ISO
             ("unknown_active",) #unknown
            )
+def appendName():
+  if (usingDifficulty()):
+      return ".blank"
+  else:
+      return ""
+  
 def factionToInt  (faction):
   for i in range(len(factions)):
     if (factions[i]==faction):
@@ -84,13 +90,13 @@ def getRandomShipType(ship_list):
   index=random.randrange(0,len(ship_list))
   return ship_list[index]
 
-def getFigther(confed_aera_or_rlaan, fighter):
+def getFigher(confed_aera_or_rlaan, fighter):
   fighterlist = fighters[confed_aera_or_rlaan]
   fighterlist = fighterlist[fighter]
-  return fighterlist
+  return fighterlist+appendName()
 
 def getRandomFighterInt(confed_aera_or_rlaan):
-  return getRandomShipType(fighters[confed_aera_or_rlaan])
+  return getRandomShipType(fighters[confed_aera_or_rlaan])+appendName()
 
 def getNumCapitol (confed_aera_or_rlaan):
   return len(capitols[confed_aera_or_rlaan])

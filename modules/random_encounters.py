@@ -26,13 +26,13 @@ class random_encounters:
     significant_distance=5000 #cur[5]
     detection_distance=2500 #cur[6]
     playernum=0 #cur[8]
-    def __init__(self,pnum=None):
+    def __init__(self,sig_distance,det_distance,pnum=None):
       if (pnum==None):
         return
       self.significant_distance=sig_distance
       self.detection_distance=det_distance
       self.playernum=pnum
-  cur=playerdata()
+  cur=playerdata(0,0)
   def __init__(self, sigdis, detectiondis, gendis,  minnships, gennships, unitprob, enemyprob, capprob, capdist):
     self.capship_gen_distance=capdist
     #    player_num=player
@@ -50,9 +50,9 @@ class random_encounters:
     px = VS.getPlayerX(player_num)
     while (px):
         print ("init")
-        self.players=self.players+(playerdata(player_num))
+        self.players=self.players+(random_encounters.playerdata(self.sig_distance,self.det_distance,player_num),)
         player_num+=1
-        px = _unit.getPlayerX(player_num)
+        px = VS.getPlayerX(player_num)
   
   def getMinDistFrom(self,sig1):
     sig2=unit.getPlanet (0,0)
@@ -101,13 +101,13 @@ class random_encounters:
     self.enprob = enp
 
 
-  def AsteroidNear (self,unit, how):
+  def AsteroidNear (self,uni, how):
     num_ships=0
     count=0
     un = VS.getUnit (count)
     while (un):
       dd = self.cur.detection_distance
-      if (unit.getSignificantDistance(un,unit)<how):
+      if (uni.getSignificantDistance(un)<how):
         if (unit.isAsteroid (un)):
           print "asty near"
           return 1
@@ -117,34 +117,31 @@ class random_encounters:
     return 0
 
   def launch_near (self,un):
-    numfactions=VS.GetNumFactions()
-    if (numfactions==0):
-      sys.stderr.write('warning: no factions\n')
-      return
-    sysfile = VS.getFileName()
+    numfactions=random.randrange(0,4)
+    if (numfactions<=0):
+      numfactions=1
+    sysfile = VS.getSystemFile()
     for i in range(0,numfactions):
       localfaction = VS.GetGalaxyProperty(sysfile,"faction")
       if (random.random() < self.enprob):
         localfaction = faction_ships.get_enemy_of (localfaction)
       else:
         localfaction = faction_ships.get_friend_of(localfaction)
-      #      fighter = faction_ships.getRandomFighter (localfaction)
       numship= random.randrange(1,self.gen_num_ships+1)
       self.det_distance = self.cur.detection_distance
-      launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,0,self.generation_distance*random.random()*0.9,un, 2.0*self.det_distance)
-      rnd_num = random.random()
-      if (rnd_num<capship_prob):
-        if (AsteroidNear (un,self.cur.significant_distance)):
+      launch_recycle.launch_wave_around(localfaction,localfaction,"default",numship,0,self.generation_distance*random.random()*0.9,un, 2.0*self.det_distance,"")
+      if (random.random()<self.capship_prob):
+        if (self.AsteroidNear (un,self.cur.significant_distance)):
           print "ast near, no cap"
         else:
           print "no asty near"
           capship = faction_ships.getRandomCapitol (localfaction)
-          launch_recycle.launch_wave_around("Capitol",localfaction,"default",1,1,self.capship_gen_distance*(0.5+(random.random()*0.4)),un, 8.0*self.det_distance)
+          launch_recycle.launch_wave_around("Capitol",localfaction,"default",1,1,self.capship_gen_distance*(0.5+(random.random()*0.4)),un, 8.0*self.det_distance,"")
 
   def atLeastNInsignificantUnitsNear (self,uni, n):
     num_ships=0
     count=0
-    leadah = uni.getFgLeader ()
+    leadah = uni.getFlightgroupLeader ()
     un = VS.getUnit (count)
     dd = self.cur.detection_distance
     while (un):
@@ -166,7 +163,7 @@ class random_encounters:
     self.cur.last_ship=0
     self.cur.curmode=1
     self.cur.sig_container=significant
-    self.cursys = VS.getFileName()
+    self.cursys = VS.getSystemFile()
     oldsys = self.cur.lastsys==self.cursys
     self.cur.lastsys=self.cursys
     if (not oldsys):
@@ -175,17 +172,17 @@ class random_encounters:
   def decideMode(self):
     myunit=VS.getPlayerX(self.cur.playernum)
     if (myunit.isNull()):
-      SetModeZero()
+      self.SetModeZero()
       return myunit
-    significant_unit = self.cur.sig_container()
+    significant_unit = self.cur.sig_container
     if (significant_unit.isNull()):
       un=VS.getUnit(self.cur.last_ship)
       if (un.isNull ()):
-        SetModeZero()
+        self.SetModeZero()
       else:
         sd = self.cur.significant_distance
         if ((un.getSignificantDistance(myunit)<sd) and (un.isSignificant())):
-          SetModeOne (un)
+          self.SetModeOne (un)
           return un
         self.cur.last_ship+=1
       return VS.Unit()
@@ -194,7 +191,7 @@ class random_encounters:
       cursys = VS.getSystemFile()
       if (cursys== self.cur.lastsys):
         dd = self.cur.detection_distance
-        if (self.cur.myunit.getSignificantDistance (significant_unit)>dd):
+        if (myunit.getSignificantDistance (significant_unit)>dd):
           self.SetModeZero ()
           return VS.Unit()
         else:
@@ -212,10 +209,10 @@ class random_encounters:
         if (self.cur.curmode!=self.cur.lastmode):
           #lastmode=curmode#processed this event don't process again if in critical zone
           self.cur.lastmode=self.cur.curmode
-          print "curmodechange %d" % (curmode)#?
+          print "curmodechange %d" % (self.cur.curmode)#?
           if (random.random()<self.fighterprob and un):
               if (not self.atLeastNInsignificantUnitsNear (un,self.min_num_ships)):
                 #determine whether to launch more ships next to significant thing based on ships in that range  
                 print ("launch near")
-                self.launch_near (player_unit)
+                self.launch_near (VS.getPlayerX(self.cur.playernum))
 

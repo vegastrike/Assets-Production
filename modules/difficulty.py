@@ -22,20 +22,20 @@ class difficulty:
   def __init__(self,credsMax):
     self.credsToMax=credsMax
     un=VS.getPlayerX(0)
-    i=0
+    self.i=0
     while (un):
       newdiff=0
-      if (Director.getSaveDataLength(i,_key)):
-        newdiff=Director.getSaveData(i,_key,0)
+      if (Director.getSaveDataLength(self.i,_key)):
+        newdiff=Director.getSaveData(self.i,_key,0)
         self.diff+=[newdiff]
       else:
         newdiff=VS.GetDifficulty()
         self.diff+=[newdiff]
-        Director.pushSaveData(i,_key,newdiff)
+        Director.pushSaveData(self.i,_key,newdiff)
       SetDiff(newdiff)
       self.creds+=[un.getCredits()]
-      i+=1
-      un=VS.getPlayerX(i)
+      self.i+=1
+      un=VS.getPlayerX(self.i)
       
   def usingDifficulty (self):
     return (VS.GetDifficulty()!=1.0)
@@ -50,16 +50,15 @@ class difficulty:
           self.i=-1
           raise IndexError("Empty creds and diff arrays in difficulty module\nUnable to find any players...")
         return
-      if (i>=len(self.creds)):
-        i=0
-      i=self.i #comment this if you want to check all in 1 frame
-      un=VS.getPlayerX(i)
+      if (self.i>=len(self.creds)):
+        self.i=0
+      un=VS.getPlayerX(self.i)
       newcreds=un.getCredits()
-      if (self.creds[i]!=newcreds):
-        if (self.creds[i]>newcreds):
-          newdiff=((newcreds-self.creds[i])/self.credsToMax)
-          Director.putSaveData(i,_key,0,newdiff)
+      if (self.creds[self.i]!=newcreds):
+        if (self.creds[self.i]>newcreds):
+          newdiff=((newcreds-self.creds[self.i])/self.credsToMax)
+          Director.putSaveData(self.i,_key,0,newdiff)
           SetDiff(newdiff)
-        self.creds[i]=newcreds
+        self.creds[self.i]=newcreds
       self.i+=1 #comment this also if you want to check all in 1 frame
   

@@ -8,13 +8,13 @@ import sys
 def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo):
   diff=usingDifficulty()
   if (not diff):
-    ret = VS.launch (fgname,"unit",faction,type,ai,nr_ships,nr_waves,vec,logo)
+    ret = VS.launch (fgname,type,faction,"unit",ai,nr_ships,nr_waves,vec,logo)
     return ret
   rsize=0.0
   diffic = VS.GetDifficulty()
   ret=VS.Unit()
   for i in range(nr_ships):
-    mynew=VS.launch(fgname,"unit",faction,type,ai,1,nr_waves,x,y,z)
+    mynew=VS.launch(fgname,type,faction,"unit",ai,1,nr_waves,vec,logo)
     if (i==0):
       ret = mynew
       rsize =mynew.rSize ()*1.75

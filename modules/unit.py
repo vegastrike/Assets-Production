@@ -53,7 +53,7 @@ def getPlanet (whichsignificant, sig):
 		    if (un.isSignificant ()):
 		      signum=signum+1
 		  else:
-		    if (un.isPlanet (un)):
+		    if (un.isPlanet ()):
 		      signum=signum+1
 		  which=which+1			
 		else:
