@@ -1,5 +1,5 @@
 ----------------------------------------------
-Readme for VegaStrike version 0.2.0 Beta2
+Readme for VegaStrike version 0.2.1 Beta
 ----------------------------------------------
 Vegastrike has finally reached the state of being multisystem!
 This means that many user requests have been accomplished including sound, joystick support, cloaking, bolt weapons, Target viewscreen, nebulae, asteroids, multiple systems, ingame-respawn... the list goes on
@@ -96,6 +96,7 @@ g change active gun
 v switch targetting computer mode to navigation mode and then view mode
 w switch left targetting cpu
 Shift-W shift weapons computer mode to damage mode
+Shift-S next music track
 
 F1 toggle cockpit/background display
 F2 left
@@ -112,8 +113,9 @@ F12 Zoom out
 
 a,d,w,z pan ghost cam
 
-: respawn -- use after death to recreate your starship
+; respawn -- use after death to recreate your starship
 [ switch ships in battle (use to control allies)
+] switch to a turret onto your ship
 
 -----------
  Features:
@@ -124,7 +126,7 @@ a,d,w,z pan ghost cam
 -Fly through huge multilayered asteroid fields
 -Explore nebulae where your radar fritzes out
 -Jump to other systems at blue jump points with the 'j' key
--Respawn with the ':' key (shift and semicolon)
+-Respawn with the ';' key (shift and semicolon)
 -Switch Ships with the '[' key
 -Joystick support for a full featured joystick
 -Sound effects that make starships roar as they pass and zap as they die
@@ -159,7 +161,7 @@ A mission must begin with the headers:
 		<var name="description" value="4vs4.txt" />
 	</variables>
 
-Currently all of these options are ignored except for the "system".  it loads sol.system  as the star system (which is in XML and stores all present planets)
+it loads sol.system  as the star system (which is in XML and stores all present planets)
 The only other system included in this beta release is the blank.mission
 which has 1 planet, 1 sun and 2 starbases.
 After this, comes the actors in the mission, the flightgroups of fighters.
