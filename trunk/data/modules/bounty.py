@@ -126,13 +126,12 @@ class bounty (Director.Mission):
 	        VS.IOmessage (4,"bounty mission",self.mplay,"Coordinates appear near %s" % (localdestination))
 	
 	def initbriefing():
-	  
-	
+		print "ending briefing"                
 	def loopbriefing():
-	  
-	
+		print "loop briefing"
+		Briefing.terminate();
 	def endbriefing():
-	  
+		print "ending briefing"        	  
 	
 
 def initrandom (minns, maxns, credsmin, credsmax, run_away, minshipdifficulty, maxshipdifficulty):

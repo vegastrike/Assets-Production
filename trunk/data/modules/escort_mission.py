@@ -37,6 +37,13 @@ class escort_mission (Director.Mission):
 		self.escortee.setFactionName(factionname)
 		self.difficulty=missiondifficulty
 		self.creds = creds
+	def initbriefing(self):
+		print "ending briefing"                
+	def loopbriefing(self):
+		print "loop briefing"
+		Briefing.terminate();
+	def endbriefing(self):
+		print "ending briefing"        
 	def Execute (self):
 		self.you.setFgDirective('F')
 		self.you.setFlightgroupLeader(self.you)
