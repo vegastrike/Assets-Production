@@ -176,9 +176,9 @@ module ship_upgrades {
     }
     UpgradeEngine (un,diff);
     UpgradeRadar (un);
-    // if ((_std.Rnd()<0.9) &&(_std.Rnd()<(diff*4.0))) {
+    if ((_std.Rnd()<0.9) &&(_std.Rnd()<(diff*5.0))) {
       UpgradeAfterburner(un,diff);
-      // }
+    }
     //and after some careful review of the code in question, it appears upgrades below are already offered by default on blank ships...only need to give 'em a pair of guns
 
     //some engines
