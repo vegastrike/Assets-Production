@@ -69,7 +69,27 @@ def newNews():
         if (not conditional):
             return
     universe.setFirstSaveData(player,newsitem[0],1)
-    VS.IOmessage(0,"game","news",newsitem[2])
+    import Director
+    Director.pushSaveString(player,"dynamic_news",'#'+newsitem[2])
+#    VS.IOmessage(0,"game","news",newsitem[2])
     
+
+def eraseNews(plr):
+    import Director
+    len = Director.getSaveStringLength(plr,"news")
+    for i in range(len):
+        Director.eraseSaveString(plr,"news",len-i-1)
+
+def processNews(plr):
+    eraseNews(plr)
+    import Director
+    for i in range (Director.getSaveStringLength(plr,"dynamic_news")):
+        noos=Director.getSaveString(plr,"dynamic_news",i)
+        if (len(noos)):
+            if (noos.startswith('#')):
+                Director.pushSaveString(plr,"news",noos[1:])
+            else:
+                import dynamic_news
+                dynamic_news.pushDynamicNews(plr,noos)
 
     
