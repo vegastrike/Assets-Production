@@ -27,15 +27,14 @@ class bounty (Director.Mission):
 	  sysfile = VS.getSystemFile()
 	  self.you=VS.getPlayer()
 	  self.enemy=VS.Unit()
-	  self.significant=VS.Unit()
 	  self.adjsys=go_to_adjacent_systems (self.you,random.randrange(minnumsystemsaway,maxnumsystemsaway+1))
 	  self.mplay=universe.getMessagePlayer(self.you)
 	  if (self.you):
 	    VS.IOmessage (0,"bounty mission",self.mplay,"Good Day, %s. Your mission is as follows:" % (self.you.getName()))
 	    self.adjsys.Print("You should start in the system named %s","Then jump to %s","Finally, jump to %s, your final destination","bounty mission",1)
-	    VS.IOmessage (2,"bounty mission",self.mplay,"Once there, you must destroy a %s unit." % (self.faction))
-	    VS.IOmessage (3,"bounty mission",self.mplay,"You will then %.2f credits as your reward (if you survive)." % (self.cred))
-	    VS.IOmessage (4,"bounty mission",self.mplay,"#00ff00Good luck!")
+	    VS.IOmessage (1,"bounty mission",self.mplay,"Once there, you must destroy a %s unit." % (self.faction))
+	    VS.IOmessage (2,"bounty mission",self.mplay,"You will then %.2f credits as your reward (if you survive)." % (self.cred))
+	    VS.IOmessage (3,"bounty mission",self.mplay,"#00ff00Good luck!")
 	  else:
 	    print "aboritng bounty constructor..."
 	    VS.terminateMission (0)
@@ -60,58 +59,52 @@ class bounty (Director.Mission):
 	  if (self.you.isNull()):
 	    self.Lose (1)
 	    return
-	  if (self.arrived==3):
-	    if (not self.istarget):
-	      curun=VS.getUnit(self.curiter)
-	      if (self.enemy):
-		if (curun==self.enemy):
-		  self.enemy.setTarget(self.you)
-	      self.curiter+=1
-	    if (self.enemy.isNull()):
-	      self.Win(self.you,1)
-	      return
-	  elif (self.arrived==2):
-	    if (VS.getSystemFile()==self.adjsys.DestinationSystem()):
-	      self.arrived=3
-	    else:
-	      VS.ResetTimeCompression()
-	    if (self.you.isNull()):
-	      self.Lose(1)
-	      return
+	  if (self.arrived==2):
+	    if (not self.runaway):
+	      if (not self.istarget):
+		if (self.enemy):
+		  curun=VS.getUnit(self.curiter)
+		  self.curiter+=1
+		  if (curun==self.enemy):
+		    self.enemy.SetTarget(self.you)
+		  elif (curun.isNull()):
+		    self.curiter=0
 	    if (self.enemy.isNull()):
 	      self.Win(self.you,1)
 	      return
 	  elif (self.arrived==1):
-	    significant=self.significant
+	    significant=self.adjsys.SignificantUnit()
 	    if (significant.isNull ()):
 	      print "sig null"
 	      VS.terminateMission(0)
+	      return
 	    else:
 	      if (self.you.getSignificantDistance(significant)<10000.0):
 		if (self.newship==""):
-		  self.newship=faction_ships.getRandomFighter(faction)
-		self.enemy=launch.launch_wave_around_unit("Base",self.faction,self.newship,"default",1+self.difficulty,3000.0,4000.0,self.significant)
+		  self.newship=faction_ships.getRandomFighter(self.faction)
+		self.enemy=launch.launch_wave_around_unit("Base",self.faction,self.newship,"default",1+self.difficulty,3000.0,4000.0,significant)
 		if (self.enemy):
 		  if (self.runaway):
-		    self.enemy.SetTarget(significant)
-		    self.enemy.Jump()
-		    self.arrived=2
-		  else:
-		    self.arrived=3
+		    self.enemy.SetTarget(significant) #CHANGE TO SetTarget ==>NOT setTarget<==
+		    self.enemy.ActivateJumpDrive(0)
+		  self.arrived=2
+		else:
+		  print "enemy null"
+		  VS.terminateMission(0)
+		  return
 	  else:
 	    if (self.adjsys.Execute()):
 	      self.arrived=1
 	      self.newship=faction_ships.getRandomFighter(self.faction)
-	      localdestination=self.significant.getName()
 	      self.adjsys=go_somewhere_significant(self.you,0,500)
-	      VS.IOmessage (0,"bounty mission",self.mplay,"You must destroy the %s unit in this system." % (self.newship))
-	      self.obj=VS.addObjective("Destroy the %s unit" % (self.newship))
+	      localdestination=self.adjsys.SignificantUnit().getName()
+	      VS.IOmessage (3,"bounty mission",self.mplay,"You must destroy the %s unit in this system." % (self.newship))
 	      if (self.runaway):	#ADD OTHER JUMPING IF STATEMENT CODE HERE
-	        VS.IOmessage (3,"bounty mission",self.mplay,"He is running towards the jump point.  Catch him!")
-	        VS.IOmessage (4,"bounty mission",self.mplay,"he is going to %s" % (localdestination))
+	        VS.IOmessage (4,"bounty mission",self.mplay,"He is running towards the jump point.  Catch him!")
+	        VS.IOmessage (5,"bounty mission",self.mplay,"he is going to %s" % (localdestination))
 	      else:
-	        VS.IOmessage (3,"bounty mission",self.mplay,"Scanners are picking up a metallic object!")
-	        VS.IOmessage (4,"bounty mission",self.mplay,"Coordinates appear near %s" % (localdestination))
+	        VS.IOmessage (4,"bounty mission",self.mplay,"Scanners are picking up a metallic object!")
+	        VS.IOmessage (5,"bounty mission",self.mplay,"Coordinates appear near %s" % (localdestination))
 	
 	def initbriefing():
 		print "ending briefing"                
