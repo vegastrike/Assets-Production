@@ -1,22 +1,19 @@
 <Factions>
 	<Faction name="neutral" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
-		<stats name="retro" relation="0"/>
-		<stats name="militia" relation="0"/>
-		<stats name="merchant" relation ="0"/>
-		<stats name="aera" relation="0"/>
-		<stats name="rlaan" relation="0"/>
-		<stats name="unknown" relation="0"/>
-		<stats name="pirates" relation="0"/>
 	</Faction>
 
 	<Faction name="confed" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
 		<stats name="retro" relation="-.4"/>
+		<stats name="ISO" relation="-1"/>
 		<stats name="militia" relation=".9"/>
 		<stats name="merchant" relation =".3"/>
 		<stats name="aera" relation="-.9"/>
 		<stats name="rlaan" relation="-0.1"/>
 		<stats name="unknown" relation="-.1"/>
 		<stats name="pirates" relation="-.5"/>
+		<stats name="hunter" relation=".2"/>
+		<stats name="retro" relation="-.6"/>
+		<stats name="privateer" relation="0"/>
 		<Explosion name="explosion_orange.ani"/>
 <!--		<CommAnimation> -->
 <!--			<MoodAnimation name="explosion_orange.ani" sex="0"/>-->
@@ -28,101 +25,160 @@
 	<Faction name="aera" logoRGB="AeraPri.png" secLogoRGB="AeraSec.png">
 <!--		<Explosion name="explosion_wave.ani"/>
 		<Explosion name="static_round.ani"/>-->
+		<stats name="ISO" relation="-.4"/>
+		<stats name="retro" relation="0"/>
+		<stats name="militia" relation="-.6"/>
+		<stats name="merchant" relation ="-.3"/>
 		<stats name="confed" relation="-.9"/>
-		<stats name="retro" relation="-1"/>
-		<stats name="militia" relation="-.9"/>
-		<stats name="merchant" relation ="-.8"/>
 		<stats name="rlaan" relation="-1"/>
-		<stats name="pirates" relation="-.5"/>
 		<stats name="unknown" relation="-.1"/>
+		<stats name="pirates" relation="-.1"/>
+		<stats name="hunter" relation="-.2"/>
+		<stats name="privateer" relation="-.4"/>
+
+
 	</Faction>
 
 	<Faction name="merchant" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
-		<stats name="aera" relation="-.9"/>
-		<stats name="confed" relation="-.8"/>
-		<stats name="retro" relation=".2"/>
-		<stats name="militia" relation="-.6"/>
-		<stats name="rlaan" relation=".5"/>
+		<stats name="ISO" relation=".25"/>
+		<stats name="militia" relation=".9"/>
+		<stats name="confed" relation =".95"/>
+		<stats name="aera" relation="-.5"/>
+		<stats name="rlaan" relation="-0.5"/>
 		<stats name="unknown" relation="-.1"/>
-		<stats name="pirates" relation="-.5"/>
+		<stats name="pirates" relation="-.8"/>
+		<stats name="hunter" relation="0"/>
+		<stats name="retro" relation="-.9"/>
+		<stats name="privateer" relation="0"/>
 	</Faction>
 
 	<Faction name="retro" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
-		<stats name="aera" relation="-.9"/>
-		<stats name="confed" relation="-1"/>
-		<stats name="retro" relation=".2"/>
-		<stats name="militia" relation="-.6"/>
-		<stats name="merchant" relation =".3"/>
+		<stats name="ISO" relation="-1"/>
+		<stats name="confed" relation="-.8"/>
+		<stats name="militia" relation="-.3"/>
+		<stats name="merchant" relation ="-.9"/>
+		<stats name="aera" relation="-.5"/>
 		<stats name="rlaan" relation="-1"/>
 		<stats name="unknown" relation="-.1"/>
-		<stats name="pirates" relation="0"/>
+		<stats name="pirates" relation="-.7"/>
+		<stats name="hunter" relation="-.5"/>
+		<stats name="privateer" relation="-1"/>
+
 	</Faction>
 
 	<Faction name="militia" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
-		<stats name="aera" relation="-.9"/>
-		<stats name="confed" relation="1"/>
-		<stats name="retro" relation=".2"/>
-		<stats name="militia" relation="1"/>
-		<stats name="merchant" relation =".3"/>
-		<stats name="rlaan" relation="-.4"/>
+		<stats name="ISO" relation="-.4"/>
+		<stats name="confed" relation=".6"/>
+		<stats name="aera" relation="-.7"/>
+		<stats name="merchant" relation =".9"/>
+		<stats name="rlaan" relation="-.1"/>
 		<stats name="unknown" relation="-.1"/>
-		<stats name="pirates" relation="-.5"/>
+		<stats name="pirates" relation="-.7"/>
+		<stats name="hunter" relation="-.5"/>
+		<stats name="retro" relation="-1"/>
+		<stats name="privateer" relation="0"/>
+
 	</Faction>
 
 	<Faction name="rlaan" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
 <!--		<Explosion name="explosion_wave.ani"/>
 		<Explosion name="static_round.ani"/>-->
-
-		<stats name="retro" relation="-1"/>
-		<stats name="militia" relation="0"/>
-		<stats name="merchant" relation="-.3"/>
-		<stats name="confed" relation="-.3"/>
+		<stats name="ISO" relation=".1"/>
+		<stats name="confed" relation="-.1"/>
 		<stats name="aera" relation="-1"/>
+		<stats name="merchant" relation ="0"/>
+		<stats name="militia" relation="-.1"/>
 		<stats name="unknown" relation="-.1"/>
-		<stats name="powerups" relation="1"/>
-		<stats name="pirates" relation="0"/>
+		<stats name="pirates" relation="-.2"/>
+		<stats name="hunter" relation="-.1"/>
+		<stats name="retro" relation="-1"/>
+		<stats name="privateer" relation="-.1"/>
 	</Faction>
 	<Faction name="powerups" logoRGB="NeutalPri.png" secLogoRGB="NeutralSec.png">
-		<stats name="rlaan" relation="1"/>
-		<stats name="retro" relation="-1"/>
-		<stats name="militia" relation="0"/>
-		<stats name="merchant" relation="-.3"/>
-		<stats name="confed" relation="-.3"/>
+		<stats name="ISO" relation="-.1"/>
+		<stats name="confed" relation="-.1"/>
 		<stats name="aera" relation="-1"/>
+		<stats name="merchant" relation ="0"/>
+		<stats name="militia" relation="-.1"/>
 		<stats name="unknown" relation="-.1"/>
-		<stats name="pirates" relation="0"/>
+		<stats name="pirates" relation="-.2"/>
+		<stats name="hunter" relation="-.1"/>
+		<stats name="retro" relation="-1"/>
+		<stats name="privateer" relation="-.1"/>
+		<stats name="rlaan" relation="1"/>
 	</Faction>
 	<Faction name="upgrades" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
-		<stats name="rlaan" relation="0"/>
-		<stats name="retro" relation="0"/>
-		<stats name="militia" relation="0"/>
-		<stats name="merchant" relation="0"/>
-		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="0"/>
-		<stats name="unknown" relation="0"/>
-		<stats name="pirates" relation="0"/>
+
+
 	</Faction>
 	<Faction name="unknown" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+		<stats name="confed" relation="-.1"/>
+		<stats name="aera" relation="-.1"/>
+		<stats name="merchant" relation ="-.1"/>
+		<stats name="militia" relation="-.1"/>
+		<stats name="unknown" relation="-.1"/>
+		<stats name="pirates" relation="-.1"/>
+		<stats name="hunter" relation="-.1"/>
 		<stats name="retro" relation="-1"/>
-		<stats name="rlaan" relation="-1"/>
-		<stats name="militia" relation="-1"/>
-		<stats name="merchant" relation="-1"/>
-		<stats name="confed" relation="-1"/>
-		<stats name="aera" relation="-1"/>
-		<stats name="unknown" relation="0"/>
-		<stats name="pirates" relation="-1"/>
+		<stats name="privateer" relation="-.1"/>
+		<stats name="ISO" relation="-.1"/>
 	</Faction>
 
 	<Faction name="pirates" logoRGB="PiratesPri.png" secLogoRGB="PiratesSec.png">
+		<stats name="ISO" relation="-.1"/>
 		<stats name="confed" relation="-.5"/>
-		<stats name="retro" relation="-.1"/>
-		<stats name="militia" relation="-.5"/>
-		<stats name="merchant" relation ="-.3"/>
-		<stats name="aera" relation="-.9"/>
-		<stats name="rlaan" relation="-0.1"/>
+		<stats name="aera" relation="-.4"/>
+		<stats name="merchant" relation ="-1"/>
+		<stats name="militia" relation="-.4"/>
 		<stats name="unknown" relation="-.1"/>
-		<stats name="pirates" relation="0"/>
+		<stats name="rlaan" relation="-1"/>
+		<stats name="hunter" relation="0"/>
+		<stats name="retro" relation="-1"/>
+		<stats name="privateer" relation="-.1"/>
+
 	</Faction>
+	<Faction name="hunter" logoRGB="PiratesPri.png" secLogoRGB="PiratesSec.png">
+		<stats name="ISO" relation="0"/>
+		<stats name="confed" relation="0"/>
+		<stats name="aera" relation="-.1"/>
+		<stats name="merchant" relation ="0"/>
+		<stats name="militia" relation="0"/>
+		<stats name="unknown" relation="-.1"/>
+		<stats name="pirates" relation="-.1"/>
+		<stats name="rlaan" relation="0"/>
+		<stats name="retro" relation="-.1"/>
+		<stats name="privateer" relation="0"/>
+
+	</Faction>
+	<Faction name="privateer" logoRGB="TerranPri.png" secLogoRGB="TerranSec.png">
+		<stats name="ISO" relation="0"/>
+		<stats name="confed" relation="0"/>
+		<stats name="aera" relation="-.2"/>
+		<stats name="merchant" relation ="0"/>
+		<stats name="militia" relation="0"/>
+		<stats name="unknown" relation="-.1"/>
+		<stats name="pirates" relation="-.1"/>
+		<stats name="hunter" relation="0"/>
+		<stats name="retro" relation="-1"/>
+		<stats name="rlaan" relation="-.1"/>
+
+	</Faction>
+	<Faction name="ISO" logoRGB="ISOPri.png" secLogoRGB="ISOSec.png">
+
+		<stats name="rlaan" relation="0"/>
+		<stats name="confed" relation="-.9"/>
+		<stats name="aera" relation="-.5"/>
+		<stats name="merchant" relation =".1"/>
+		<stats name="militia" relation="-.9"/>
+		<stats name="unknown" relation="-.1"/>
+		<stats name="pirates" relation="-.9"/>
+		<stats name="hunter" relation="0"/>
+		<stats name="retro" relation="-1"/>
+		<stats name="privateer" relation="0"/>
+	</Faction>
+
+
+
 	<Faction name="planets" logoRGB="NeutralPri.png" secLogoRGB="NeutralSec.png">
 	</Faction>
 
