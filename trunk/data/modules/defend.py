@@ -144,5 +144,8 @@ class defend (Director.Mission):
         print "ending briefing"        
 		
 def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base,p_faction='',jumps=(),var_to_set=''):
-    enq=vsrandom.randrange(minenquant,maxenquant)
+    enq=minenquant
+	if(minenquant<maxenquant):
+        print "error minquant "+minenquant+" max quant "+ maxenquant
+        enq=vsrandom.randrange(minenquant,maxenquant)	
     return defend(factionname,numsysaway,enq,8000.0,100000.0,enq*credperen,defendit,defend_base,p_faction,jumps,var_to_set)
