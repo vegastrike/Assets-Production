@@ -2,13 +2,23 @@ import Director
 def findQuest (playernum,questname,value=1):
     print 'finding nonperisstent quest'
     print questname
+    mylen=Director.getSaveDataLength(int(playernum),str(questname))
+    print mylen
+    if (mylen>0):
+        myfloat=Director.getSaveData(int(playernum),str(questname),0)
+        print myfloat
+        if (myfloat==value):
+            return 1
+    return 0
+def checkSaveValue(playernum,questname,value=1):
     mylen=Director.getSaveDataLength(playernum,questname)
     print mylen
     if (mylen>0):
         myfloat=Director.getSaveData(playernum,questname,0)
-        print myfloat
-        if (myfloat==value):
-            return 1
+    else:
+	myfloat=0
+    if (myfloat==value):
+        return 1
     return 0
 def persistentQuest (playernum,questname):
     print "finding quest"
@@ -20,11 +30,11 @@ def notLoadedQuest(playernum,questname):
     return not persistentQuest(playernum,questname) and not findQuest (playernum,questname)
 def removeQuest (playernum,questname,value=1):
     print "removing quest"
-    mylen=Director.getSaveDataLength(playernum,questname)
+    mylen=Director.getSaveDataLength(int(playernum),str(questname))
     if (mylen>0):
-        Director.putSaveData(playernum,questname,0,value)
+        Director.putSaveData(int(playernum),str(questname),0,float(value))
     else:
-        Director.pushSaveData(playernum,questname,value)
+        Director.pushSaveData(int(playernum),str(questname),float(value))
 
 
 class quest:
