@@ -1,4 +1,0 @@
-<AggressiveAI close=".05">
-  <distance max="2000" script="kick stop">
-  </distance>
-</AggressiveAI>
