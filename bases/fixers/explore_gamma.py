@@ -11,7 +11,7 @@ if VS.numActiveMissions()<=1:
 Based on the data that you have collected, it appears that the other jump point should go
 to a system that we have named #55ffffgamma#000000. Again, collect info
 on six objects there and report back to me with your info.  You will earn 15000 credits.''')
-	VS.LoadMission('mission/patrol/explore_gamma.mission')
+	VS.LoadMission('patrol/explore_gamma.mission')
 else:
 	Base.Message('''Hi. Our records indicate that you are already completing another mission.  Finish
 that and then come back to me.''')

@@ -92,6 +92,3 @@ class quest_disappear_factory (quest.quest_factory):
         quest.quest_factory.__init__ (self,"quest_disappear")
     def create (self):
         return quest_disappear()
-
-
-

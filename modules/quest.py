@@ -1,8 +1,10 @@
 import Director
+def getQuestLength(playernum,questname):
+    return Director.getSaveDataLength(int(playernum),str(questname))
 def findQuest (playernum,questname,value=1):
 #    print 'finding nonperisstent quest'
 #    print questname
-    mylen=Director.getSaveDataLength(int(playernum),str(questname))
+    mylen=getQuestLength(playernum,questname)
 #    print mylen
     if (mylen>0):
         myfloat=Director.getSaveData(int(playernum),str(questname),0)
@@ -12,11 +14,11 @@ def findQuest (playernum,questname,value=1):
     return 0
 def checkSaveValue(playernum,questname,value=1):
     mylen=Director.getSaveDataLength(playernum,questname)
-    print mylen
+#    print mylen
     if (mylen>0):
         myfloat=Director.getSaveData(playernum,questname,0)
     else:
-	myfloat=0
+        myfloat=0
     if (myfloat==value):
         return 1
     return 0
@@ -41,7 +43,7 @@ class quest:
     def NoSignificantsNear(self):
         pass
     def SignificantsNear(self,significant):
-        pass        
+        pass
     def setOwner(self,playernum,questname):
         self.name=questname
         self.playernum=playernum
@@ -67,21 +69,21 @@ class quest_factory:
     def persistent_factory(self,playernum):
         if (persistentQuest(playernum,self.name)):
             print "persistent_factory"
-            return self.private_create(playernum)            
+            return self.private_create(playernum)
         return
     def private_create (self,playernum):
         newquest=self.create()
         newquest.setOwner(playernum,self.name)
         if (self.removequest):
             removeQuest(playernum,self.name)
-        return newquest        
+        return newquest
     def factory (self,playernum):
         if (self.precondition(playernum)):
             if (notLoadedQuest (playernum,self.name)):
-                print "nonpfact"            
+                print "nonpfact"
                 return self.private_create(playernum)
         return
-            
+
 class test_quest (quest):
     def __init__ (self):
         self.i=0
@@ -98,6 +100,3 @@ class test_quest_factory (quest_factory):
         quest_factory.__init__ (self,"drone_quest")
     def create (self):
         return test_quest()
-
-
-

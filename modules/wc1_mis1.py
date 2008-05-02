@@ -11,12 +11,12 @@ class wc1_mis1:
         self.inflight=0
         self.jump = findOriginAndMove(carrier,(0,0,-20000));
         self.carrier=carrier
-        self.origin = carrier.Position();        
+        self.origin = carrier.Position();
         self.wingman= launch.launch (VS.getPlayer().getFlightgroupName(),"confed","nova","default",1,1,Add((1000,200,0),self.origin))
         self.transport= launch.launch ("Transport","confed","cargoship","default",1,1,Add((-1000,200,0),self.origin))
         self.transport.ActivateJumpDrive(0)
         self.transport.SetTarget(self.jump)
-        
+
         self.launched=[0,0]
         self.nav=[launch.launch("nav1","neutral","eject","sitting_duck",1,1,Add(self.origin,(20000,000,10000))),
                   self.jump]
@@ -24,7 +24,7 @@ class wc1_mis1:
     def moveTrans (self,targ):
         print "moving trans"
         self.transport.SetPosAndCumPos(Add(targ.Position(),(0,0,-1000)))
-        
+
     def LaunchNav (self,i,playa):
         print "launching %d" % i
         if (i==0):
@@ -46,14 +46,14 @@ class wc1_mis1:
             if (not unit.inSystem(self.transport)):
                 print "success"
                 return ("vega_sector/vega",0)
-            #success (change debrief maybe?)    
-        return ("vega_sector/hellskitchen",0) 
+            #success (change debrief maybe?)
+        return ("vega_sector/hellskitchen",0)
     def Execute(self):
         playa= VS.getPlayer()
         if (playa):
             for i in range (len(self.nav)):
                 if (self.nav[i]):
-                    if (not self.launched[i]):                    
+                    if (not self.launched[i]):
                         if (playa.getDistance (self.nav[i])<1000):
                             self.LaunchNav(i,playa)
                             self.launched[i]=1

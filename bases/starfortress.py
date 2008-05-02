@@ -1,5 +1,5 @@
-import unit_lib
 import VS
 plist=VS.musicAddList('starfortress.m3u')
 VS.musicPlayList(plist)    
-(room1, room2, bar, weap) = unit_lib.MakeUnit ('bases/bartender_military.py')
+import military_lib
+(room1, room2, bar, weap) = military_lib.MakeMilitaryBase('bases/bartender_military.py')

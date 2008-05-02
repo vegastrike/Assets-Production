@@ -41,7 +41,7 @@
 <!-- vector is already duped, and change heading already subtracts local position anyhow-->
   <ADD>
     <VECTOR Position=""/>
-  <ADD>
+  </ADD>
  </ChangeHead>
  </ExecuteFor>
  <FaceTarget terminate="0">

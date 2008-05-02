@@ -15,11 +15,11 @@
 	</variables>
         <flightgroups>
 
-                <flightgroup name="blue" faction="aera" type="aeon" ainame="default" waves="1" nr_ships="1">
+                <flightgroup name="blue" faction="aera" type="Nicander" ainame="default" waves="1" nr_ships="1">
 			<pos x="254000000" y="-1000" z="14000"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>
-            <flightgroup name="green" faction="aera" type="aevant" ainame="default" waves="1" nr_ships="1">
+            <flightgroup name="green" faction="aera" type="Areus" ainame="default" waves="1" nr_ships="1">
 			<pos x="254000100" y="1000" z="14000"/>
 			<rot x="180.0" y="180.0" z="180.0"/>
 		</flightgroup>

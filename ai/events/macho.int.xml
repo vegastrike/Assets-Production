@@ -1,4 +1,4 @@
 <AggressiveAI close=".05">
-  <distance max="2000" script="kick stop">
-  </distance>
+  <meterdistance max="1000" script="veer away" time="20" timetointerrupt="15">
+  </meterdistance>
 </AggressiveAI>

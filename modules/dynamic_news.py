@@ -1,402 +1,405 @@
-## Here are functions that retrieve and format the news from the dictionary
-## returned by the dynamic_news_content.allNews() function
-##
-##	- type_event is a string of the event type (siege, fleetbattle)
-##	- stage_event is a string of the event's stage
-##	  ("start", "middle", "end")
-##	- aggressor is a string of the aggressor faction
-##	  (ie "confed","rlaan")
-##	- defender "   "    "    "   "  defender faction
-##	- success is an int, how much success the attacker is having
-##	  (success = 1, loss = -1, draw = 0)
-##	- scale_event is a float, the "importance" of the event
-##	  (0.0 is highest, 1.0 is lowest)
-##	- system is the system string where the event happened
-##	  (ie "sol_sector/sol")
-##	- keyword is not really important right now, but will allow us
-##	  to call up specific news stories in the future..
-##	  for example we may write a special story for a siege of
-##	  planet earth....just use "all" for now
 
-import string
 import VS
 import vsrandom
-import dynamic_news_content
+import string
+import stardate
+import debug
+
+class SystemInformation:
+    """A class the provides a query mechanism, for each
+    instance, that will return the specified system's
+    faction, name, or parent sector."""
+    SECTOR_SYSTEM = 1
+    SECTOR = 2
+    SYSTEM = 3
+    FACTION = 4
+
+    def __init__(self, system=VS.getSystemFile()):
+        self.system = system
+        self.faction = VS.GetGalaxyFaction(self.system)
+
+    def getInfo(self, inf_type=False):
+        """Returns the information corresponding to the
+        given class variable."""
+        try:
+            [sec, sys] = self.system.split('/')
+        except:
+            sec = self.system
+            sys = self.system
+        if not inf_type:
+            return self.system
+        elif inf_type == self.SECTOR:
+            return sec
+        elif inf_type == self.SECTOR_SYSTEM:
+            return self.system
+        elif inf_type == self.SYSTEM:
+            return sys
+        elif inf_type == self.FACTION:
+            return self.faction
+        else:
+            raise ValueError("Invalid information type specified")
+def LookupRealName(oldname,faction):
+    import VS
+    newname=VS.LookupUnitStat(oldname,faction,"Name")
+    if len(newname)==0:
+        return oldname
+    return newname
 
 
-def makeDynamicNews	(stardate,type_event,stage_event,aggressor,defender,success
-			,scale_event,system,keyword,aggressor_flightgroup,aggressor_type, defender_flightgroup, defender_type,randint):
-	"""retrieves a relevant news item from the dynamic_news_content.allNews()
-	list, and formats it"""
+class NewsTranslator:
+    """Provides functions that handle the translation of a
+    news item using a relevant event tuple."""
+    STARDATE_TEXT = "\\\\\\\This story first broadcast on: "
 
-	if aggressor_flightgroup == "blue": #if the player was the attacker
-		aggressor_flightgroup = "Huntington" #FIXME: make it the players callsign (or even fleetname)!
-		if keyword == "all":
-			keyword = "player"
-		
+    def __init__(self, dynamic_data):
+        self.dynamic_data = dynamic_data
+        self.item = None
+        self.vars = None
+        self.rand_int = None
 
-	global allUsefullVariables
-	allUsefullVariables =	{"type_event"	: type_event		#NOTE: atm none of the used in the content
-				,"stage_event"	: stage_event		#can have punctuation in it :-(
-				,"aggressor"	: aggressor		# -- as of 08/07/03 this is from aggressor down --
-				,"defender"	: defender
-				,"success"	: getSuccessStr(success)
-				,"dockedat"	: getDockFaction()
-				,"scale_event"	: scale_event
-				,"system"	: system
-				,"keyword"	: keyword
-				,"stardate" : stardate
-				,"aggressorFG"	: formatName(aggressor_flightgroup)
-				,"aggressorFGtype": formatShipName(aggressor_type)
-				,"defenderFG"	: formatName(defender_flightgroup)
-				,"defenderFGtype": formatShipName(defender_type)
-				}
+    def lookupInfo(self, var, tag):
+        """Returns the information corresponding to the
+        given var and tag pair."""
+        try:
+            return self.vars[var][tag]
+        except:
+            try:
+                results = self.dynamic_data.getFactionData(self.vars[var]['faction'], tag)
+            except:
+                st = 'ERROR_%s_%s'%(var,tag)#this is in case there is a typo like 'docketat'
+                debug.error(st)
+                results=['ERROR_%s_%s'%(var,tag)]
+            return results[self.rand_int % len(results)]
 
-	return formatNewsItem (getNewsItem(getDockFaction(),type_event,stage_event,getSuccessStr(success)
-					 ,getPOV(getDockFaction(),defender,aggressor,getSuccessStr(success))
-					 ,scale_event,keyword,randint),randint)
+    def translateWord(self, word):
+        """Determines if the word given is a variable set,
+        and if so returns the substitute information."""
+        if word.find('VAR_') == -1:
+            return word
+        try:
+            [pre,var,tag] = word.split("_")
+        except:
+            return word
+        pre = pre[:pre.find('VAR')]
+        tagnopun = str()
+        for letter in tag:
+            if letter not in string.punctuation:
+                tagnopun+=letter
+            else:
+                break
+        return pre + self.formatText(self.lookupInfo(var, tagnopun)) + tag[len(tagnopun):]
 
-# ------------------------------------------------------------------------------
-# String Formatting functions
-# ------------------------------------------------------------------------------
+    def translateItem(self, item, news_tuple, docked_faction):
+        """Using the given item and information, returns a
+        fully translated version of the item."""
+        self.rand_int = news_tuple[NewsManager.RANDOM_INTEGER_INDEX]
+        self.item = item[2].split()
+        self.vars = dict()
+        stardat_ = dict()
+        stardat_['value'] = news_tuple[NewsManager.STARDATE_INDEX]
+        self.vars['stardate'] = stardat_
+        aggressor = dict()
+        aggressor['faction'] = news_tuple[NewsManager.AGGRESSOR_INDEX]
+        aggressor['FG'] = news_tuple[NewsManager.AGGRESSOR_FLIGHTGROUP_INDEX]
+        aggressor['FGtype'] = LookupRealName(news_tuple[NewsManager.AGGRESSOR_SHIPTYPE_INDEX],aggressor['faction'])
+        self.vars['aggressor'] = aggressor
+        defender = dict()
+        defender['faction'] = news_tuple[NewsManager.DEFENDER_INDEX]
+        defender['FG'] = news_tuple[NewsManager.DEFENDER_FLIGHTGROUP_INDEX]
+        defender['FGtype'] = LookupRealName(news_tuple[NewsManager.DEFENDER_SHIPTYPE_INDEX],defender['faction'])
+        self.vars['defender'] = defender
+        dockeda_ = dict()
+        dockeda_['faction'] = docked_faction
+        self.vars['dockedat'] = dockeda_
+        system = SystemInformation(news_tuple[NewsManager.EVENT_SYSTEM_INDEX])
+        syste_ = dict()
+        syste_['system'] = system.getInfo(system.SYSTEM)
+        syste_['sector'] = system.getInfo(system.SECTOR)
+        self.vars['system'] = syste_
+        for i in range(len(self.item)):
+            self.item[i] = self.translateWord(self.item[i])
+        return string.join(self.item) + self.STARDATE_TEXT + stardate.formatStarDate(self.vars['dockedat']['faction'],self.vars['stardate']['value'])
 
-def splitPunWord(word):
-	"""splits a word into a list containing any prefix punctuation,
-	the word, any suffix punctuation, and any trailing characters"""
-	pre_pun = word[:word.find("VAR_")]
-	word_2 = word[len(pre_pun):]
-	excess_pun = ""
-	for i in range(len(word_2)):
-		if word_2[i] in string.punctuation and word_2[i] != "_":
-			excess_pun+=word_2[i]
-	if len(excess_pun) > 0:
-		middle = word_2[:word_2.find(excess_pun[0])]
-		end_pun = word_2[word_2.find(excess_pun[0]):word_2.find(excess_pun[len(excess_pun)-1])+1]
-		end_alpha = word_2[word_2.find(excess_pun[len(excess_pun)-1])+1:]
-		return [pre_pun,middle,end_pun,end_alpha]
-	else:
-		return [pre_pun,word_2,"",""]
+    def formatText(self, text, punc=[' ' , '_' , '.'], capitalise=True):
+        """Runs a quick formatting algorithm over the
+        provided text, using the punc list as a guide to
+        the markup."""
+        for pun in punc:
+            tex = text.split(pun)
+            for i in range(len(tex)):
+                if len(tex[i]) > 1:
+                    tex[i] = tex[i][0].capitalize() + tex[i][1:]
+                else:
+                    tex[i] = tex[i].capitalize()
+            text = string.join(tex)
+        return text
 
-def formatNewsItem(item,rint):
-	import seedrandom
-	randint = seedrandom.rands(rint)
-	"""returns the formatted news item built from the relevant data"""
-	lines = item.split("\n")
-	for i in range (len(lines)):
-		words = lines[i].split()
-		for j in range (len(words)):
-			if words[j].find("VAR_") != -1:
-				word = splitPunWord(words[j])
-				words[j] = word[0] + formatNameTags(word[1],dynamic_news_content.allFactionNames(),randint) + word[2] + word[3]
-				randint = seedrandom.rands(randint)
-				
-		lines[i] = string.join(words)
-	return string.join(lines,"\n")
+class DynamicNewsData:
+    """Each instance of this class acts as an accessor to
+    the faction specific information stored for the purpose
+    of translating news stories."""
+    def __init__(self):
+        import dynamic_news_content
+        self.faction_dict = dynamic_news_content.allFactionNames()
+        self.news_dict = dynamic_news_content.allNews()
 
-def formatNameTags(word,names,randint):
-	"""formats a news tag to be the string so desired
-	valid tags include "system_sector", "aggressor_nick"
-	and "defender_homeplanet" """
-	try:
-		[pre,var,tag] = string.split(word,"_")	
-		global allUsefullVariables
-		var_string = allUsefullVariables[var]
-	except:
-		print str(word)+" is not a valid dict name"
-		return word
-	if var == "system":
-		if tag == "sector":
-			return formatProperTitle(formatName(allUsefullVariables["system"][:allUsefullVariables["system"].index("_")]))
-		if tag != "system":
-			print "error "+tag+" not acceptible VAR_system_tag"
-		return formatProperTitle(formatName(allUsefullVariables["system"][allUsefullVariables["system"].index("/")+1:]))
-	elif var == "stardate":
-		if tag == "value":
-			return allUsefullVariables[var]
-		else:
-			print "stardate wrong"
-			return allUsefulVariables[var]
-	elif tag in ["FG","FGtype"] :
-		return allUsefullVariables[var+tag]
-	elif tag in names["alltags"] and validateDictKeys([var_string,tag],dynamic_news_content.allFactionNames()):
-		tmp = names[var_string][tag]
-		return tmp[randint%len(tmp)]
-	else:
-		print "Error. Invalid news tag, not found in dictionary."
-		return word
+    def getFactionData(self, faction, variable):
+        """Return the variable information stored for this
+        faction."""
+        if variable in self.faction_dict["alltags"]:
+            try:
+                return self.faction_dict[faction][variable]
+            except:
+#                raise ValueError("Invalid Faction Specified")
+                debug.error("ERROR: FACTION LOOKUP ERROR faction %s variable %s" % (faction, variable))
+                return self.faction_dict['unknown'][variable]
+        else:
+            debug.error("ERROR: VARIABLE LOOKUP ERROR faction %s variable %s" % (faction, variable))
+            return "VARIABLE LOOKUP ERROR"
 
-def formatProperTitle(str):
-	"""puts capital letters at the start of every word in string
-	while preserving caps for all other letters!!! """
-	words = str.split()
-	for i in range (len(words)):
-		if (len(words[i])):
-			if words[i][0] in string.lowercase:
-				words[i] = words[i][0].capitalize() + words[i][1:]
-	return string.join(words)
+    def translateKeyToDictionary(self, variable):
+        """Translates the information from the stored
+        values to those used to lookup items in the item
+        dictionary."""
+        replace = ""
+        if variable == NewsManager.KEYWORD_DEFAULT:
+            replace = "all"
+        elif variable == NewsManager.TYPE_SIEGE:
+            replace = "siege"
+        elif variable == NewsManager.TYPE_EXPLORATION:
+            replace = "exploration"
+        elif variable == NewsManager.TYPE_BATTLE:
+            replace = "battle"
+        elif variable == NewsManager.TYPE_FLEETBATTLE:
+            replace = "fleetbattle"
+        elif variable == NewsManager.TYPE_DESTROYED:
+            replace = "destroyed"
+        elif variable == NewsManager.STAGE_BEGIN:
+            replace = "start"
+        elif variable == NewsManager.STAGE_MIDDLE:
+            replace = "middle"
+        elif variable == NewsManager.STAGE_END:
+            replace = "end"
+        elif variable == NewsManager.SUCCESS_WIN:
+            replace = "success"
+        elif variable == NewsManager.SUCCESS_DRAW:
+            replace = "draw"
+        elif variable == NewsManager.SUCCESS_LOSS:
+            replace = "loss"
+        elif variable == NewsManager.POV_GOOD:
+            replace = "good"
+        elif variable == NewsManager.POV_BAD:
+            replace = "bad"
+        elif variable == NewsManager.POV_NEUTRAL:
+            replace = "neutral"
+        else:
+            raise TypeError("Unrecognised variable")
+        return replace
 
-def formatName(strin):
-	"""removes any underscores or dots and replaces them with spaces"""
-	return string.join(string.join(strin.split('.')).split('_'))
+    def makeNewsKeyList(self, news_list, news_faction, pov):
+        """Creates a list of the structure used to store
+        each news event."""
+        key_list = list()
+        key_list.append(news_faction)
+        key_list.append(news_list[NewsManager.EVENT_TYPE_INDEX])
+        key_list.append(news_list[NewsManager.EVENT_STAGE_INDEX])
+        key_list.append(self.translateKeyToDictionary(news_list[NewsManager.AGGRESSOR_SUCCESS_INDEX]))
+        key_list.append(self.translateKeyToDictionary(pov))
+        return key_list
 
-def formatShipName(strin):
-	"""formats a standard ship name (ie firefly.blank) to
-	something more natural (ie basic Firefly)"""
-	lis = strin.split('.')
-	if len(lis) > 1:
-		extension = lis[len(lis)-1]
-		if extension == "blank":
-			ship = string.join(string.join(lis[:len(lis)-1]," ").split('_'),' ')
-			return "basic " + formatProperTitle(ship)
-		elif extension == "millspec":
-			ship = string.join(string.join(lis[:len(lis)-1]," ").split('_'),' ')
-			return "modified " + formatProperTitle(ship)
-		else:
-			ship = string.join(string.join(lis," ").split('_'),' ')
-			return formatProperTitle(ship)
-	else:
-		return formatProperTitle(string.join(lis[0].split('_'),' '))
-		
+    def getNewsList(self, key_list, get_neutral=False):
+        """Searches the item dictionary to find matching
+        items for this given event."""
+        story_list = self.news_dict
+        try:
+            if get_neutral:
+                key_list[0] = "neutral"
+            for key in key_list:
+                story_list = story_list[key]
+        except:
+            return list()
+        return story_list
 
-def makeVarList(ls):
-	"""formats a list of variables to be stored in a save game
-	for later reference"""
-	return string.join([str(vsrandom.randrange(0,4194304))]+ls,',')
-
-
-def makeStarDate(stri):
-	"""formats a stardate string for appending to the news story"""
-	import stardate
-	global allUsefullVariables
-	return "\\\\\\Story first broadcast: " + formatStarDate(stardate.getFacCal(allUsefullVariables["dockedat"],allUsefullVariables["stardate"]))
-
-def formatStarDate(date):
-	return str(date[1]) + " " + fillWithZeros(date[2],2) + " " + fillWithZeros(date[0],4) + ", " + fillWithZeros(date[3],2) + ":" + fillWithZeros(date[4],2) + ":" + fillWithZeros(date[5],2)
-
-def fillWithZeros(inttofill,numnumbers):
-	num = str(inttofill)
-	while len(num) < numnumbers:
-		num = "0" + num
-	return num
-
-# ------------------------------------------------------------------------------
-# Dictionary and Validation functions
-# ------------------------------------------------------------------------------
-
-def validateDictKeys(listkeys,dict):
-	"""checks to see if the keys given are available in the
-	dictionary in the specified order"""
-
-	dicto = dict
-	listo = listkeys
-	count_true = 0
-	for i in range (len(listkeys)):
-		if type(dicto) == type(dict):
-			if dicto.has_key(listkeys[i]):
-				dicto = dicto[listkeys[i]]
-				count_true = count_true + 1
-	if count_true == len(listkeys):
-		return 1
-	else:
-		return 0
-
-def validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword):
-	"""validates that a news item with the specified variables
-	(or a neutral one) exists) returns the faction for which
-	it does exist (if any)"""
-	neutral_list = 0
-	neutral_keyword = 0
-	specific_list = 0
-	specific_keyword = 0
-	if validateDictKeys(["neutral",type_event,stage_event,success,pov],dynamic_news_content.allNews()):
-		neutral_list = 1
-		if validateNewsKeyword(dynamic_news_content.allNews()["neutral"][type_event][stage_event][success][pov],keyword):
-			neutral_keyword = 1
-
-	if validateDictKeys([faction_base,type_event,stage_event,success,pov],dynamic_news_content.allNews()):
-		specific_list = 1
-		if validateNewsKeyword(dynamic_news_content.allNews()[faction_base][type_event][stage_event][success][pov],keyword):
-			specific_keyword = 1
-	if (not neutral_list) and (not specific_list):
-		print "Error.  Specified news variables do not match news dictionary. Returning barf."
-		return "barf"
-	if (not neutral_keyword) and (not specific_keyword):
-		print "Error.  Specified news keyword do not exist. Returning lots of barf."
-		return "barfbarfbarfbarfbarfbarfbarfbarf"
-	else:
-		if specific_keyword:
-			return faction_base
-		else:
-			return "neutral"
-
-def validateNewsKeyword(newslist,keyword):
-	"""validates that a keyword exists for a specified news list"""
-	for i in range (len(newslist)):
-		if newslist[i][1] == keyword:
-			return 1
-
-# ------------------------------------------------------------------------------
-# Miscellaneous functions
-# ------------------------------------------------------------------------------
-
-def povCutOff():
-	"""the "cutoff" value for neutral/good/bad in the getPOV function"""
-	return 0.25
-
-def getPOV(facmy,defender,aggressor,success):
-	"""returns a rough string approximation of the relation between
-	two functions"""
-	relatdef = VS.GetRelation(facmy,defender)
-	relatagg = VS.GetRelation(facmy,aggressor)
-#	print "relatdef =",
-#	print relatdef
-#	print "relatagg =",
-#	print relatagg
-
-	if (relatdef <= -povCutOff() and relatagg <= -povCutOff()) or (relatdef >= povCutOff() and relatagg >= povCutOff()):
-		return "neutral"
-	elif relatdef > relatagg:
-		if success == "success":
-			return "bad"
-		elif success == "loss":
-			return "good"
-		elif success == "draw":
-			return "good"
-	elif relatdef < relatagg:
-		if success == "success":
-			return "good"
-		elif success == "loss":
-			return "bad"
-		elif success == "draw":
-			return "bad"
-	else:
-		print "Error, one or more values out of range"
-		return "neutral"
-
-def getDockFaction():
-	"""returns the faction of the place the player is docked at"""
-	i=0
-	playa=VS.getPlayer()
-	un=VS.getUnit(i)
-	while(un):
-		i+=1
-		if (un.isDocked(playa) or playa.isDocked(un)):
-			if not (un.isPlanet() or (un.getFactionName() == "neutral")):
-				fac = un.getFactionName()
-				print 'returning '+un.getName()+' s faction as '+fac+' from flightgroup '+un.getFlightgroupName()
-				return fac
-			break
-		un=VS.getUnit(i)
-	retfac = VS.GetGalaxyFaction(VS.getSystemFile())
-	print "Returning " + retfac + " as the systems faction"
-	return retfac
-	
+    def getBestMatch(self, stories, varlist):
+        """From the provided list of stories, return the
+        item who's \"scale\" most closely matches that of
+        the given event (minimise variance)."""
+        kw_stories = list()
+        for story in stories:
+            if story[1] == varlist[NewsManager.EVENT_KEYWORD_INDEX]:
+                kw_stories.append(story)
+        if not len(kw_stories):
+            debug.error("ERROR: NO KEYWORD STORIES AVAILABLE FOR "+str(varlist))
+            return False
+        if len(kw_stories) == 1:
+            return kw_stories[0]
+        scale_stories = list()
+        scale_stories.append(kw_stories[0])
+        diff = abs(int(1000*scale_stories[0][0]) - int(1000*varlist[NewsManager.EVENT_SCALE_INDEX]))
+        kw_stories.pop(0)
+        for story in kw_stories:
+            if abs(int(1000*scale_stories[0][0]) - int(1000*varlist[NewsManager.EVENT_SCALE_INDEX])) < diff:
+                scale_stories = list()
+                scale_stories.append(story)
+            elif abs(int(1000*scale_stories[0][0]) - int(1000*varlist[NewsManager.EVENT_SCALE_INDEX])) == diff:
+                scale_stories.append(story)
+        return scale_stories[varlist[NewsManager.RANDOM_INTEGER_INDEX] % len(scale_stories)]
 
 
-def getSuccessStr(success):
-	"""returns a string either "success" or "loss" based on the arg success"""
-	if success == 1:
-		return "success"
-	elif success == -1:
-		return "loss"
-	elif success == 0:
-		return "draw"
+class NewsManager:
+    """This class is used to manage dynamic news, it is
+    designed to be used as a global object, but can be used
+    otherwise."""
 
-def getNewsItem(faction_base,type_event,stage_event,success,pov,scale,keyword,randint):
-	"""finds a suitable news string from
-	the dynamic_news_content.allNews() dictionary"""
-	faction = validateNewsItem(faction_base,type_event,stage_event,success,pov,keyword)
-	if faction == "barf":
-		print "Error: A suitable news story does not exist, returning a warning string."
-		return getClosestScaleNews([(scale,"all","ERROR!\\Invalid news variables:\\(" + string.join([faction_base,type_event,stage_event,success,pov,str(scale),keyword],',') + ")\\A suitable news story for this event could not be found.\\@hellcatv: don't worry, flightgroup info is available, it just doesn't get passed down this far (it's stored in the global instead) but you know it's there so don't worry ;-)\\This is a placeholder error message.\\\\Contact the help-desk for any queries:\\dandandaman@users.sourceforge.net ;-)\\\\\\ -- The Vegastrike Community:\\Struggling with lack of hands to go around since 1998")],scale,randint)
-	elif faction == "barfbarfbarfbarfbarfbarfbarfbarf":
-		print "Error: News variables correct.  Content not available."
-		return getClosestScaleNews([(scale,"all","ERROR!\\No content available:\\(" + string.join([faction_base,type_event,stage_event,success,pov,str(scale),keyword],',') + ")\\A suitable news story for this event could not be found.  Content must not be completed for this section.\\@hellcatv: don't worry, flightgroup info is available, it just doesn't get passed down this far (it's stored in the global instead) but you know it's there so don't worry ;-)\\This is a placeholder error message.\\\\Contact the help-desk for any queries:\\dandandaman@users.sourceforge.net ;-)\\\\\\ -- The Vegastrike Community:\\Struggling with lack of hands to go around since 1998")],scale,randint)
-		
-	listnews = filterForKeyword(dynamic_news_content.allNews()[faction][type_event][stage_event][success][pov],keyword)
-	return getClosestScaleNews(listnews,scale,randint)
+    RANDOM_INTEGER_INDEX = 0
+    STARDATE_INDEX = 1
+    EVENT_TYPE_INDEX = 2
+    EVENT_STAGE_INDEX = 3
+    AGGRESSOR_INDEX = 4
+    DEFENDER_INDEX = 5
+    AGGRESSOR_SUCCESS_INDEX = 6
+    EVENT_SCALE_INDEX = 7
+    EVENT_SYSTEM_INDEX = 8
+    EVENT_KEYWORD_INDEX = 9
+    AGGRESSOR_FLIGHTGROUP_INDEX = 10
+    AGGRESSOR_SHIPTYPE_INDEX = 11
+    DEFENDER_FLIGHTGROUP_INDEX = 12
+    DEFENDER_SHIPTYPE_INDEX = 13
 
-def filterForKeyword(listnews,keyword):
-	"""filters a list of news items to return a list of only those
-	matching the specified keyword"""
-	kwlist = list()
-	for item in listnews:
-		if item[1] == keyword:
-			kwlist.append(item)
-	return kwlist
+    KEYWORD_DEFAULT = "all"
 
-def getClosestScaleNews(listof,scale,randint):
-	"""returns the closest scaled news item from a list of news items"""
-	valtable = []
-	for i in range (len(listof)):
-		valtable.append(listof[i] + (abs(scale - listof[i][0]),))
-	finallist = [valtable[0]]
-	for i in range (1,len(valtable)):
-		if finallist[0][3] > valtable[i][3]:
-			finallist = [valtable[i]]
-		elif finallist[len(finallist) - 1][3] == valtable[i][3]:
-			finallist.append(valtable[i])
-	if (len(finallist)==0):
-		return "br0ken"
-	else:
-		return finallist[randint%len(finallist)][2]
+    TYPE_SIEGE = "siege"
+    TYPE_EXPLORATION = "exploration"
+    TYPE_BATTLE = "battle"
+    TYPE_FLEETBATTLE = "fleetbattle"
+    TYPE_DESTROYED = "destroyed"
 
-def minorNewsTypes():
-	"""a list of all the minor news types that should be system dependent"""
-	return ["battle","destroyed"]
+    STAGE_BEGIN = "start"
+    STAGE_MIDDLE = "middle"
+    STAGE_END = "end"
 
-def checkSystemRelevant(system):
-	"""returns 1 if the system in question is within a 1 system radius of
-	the players current system"""
-	mysys = VS.getSystemFile()
-	if mysys == system:
-		return 1
-	for i in range(VS.GetNumAdjacentSystems(mysys)):
-		if (VS.GetAdjacentSystem(mysys,i)==system):
-			return 1
+    SUCCESS_WIN = '1'
+    SUCCESS_DRAW = '0'
+    SUCCESS_LOSS = '-1'
 
-def GetAllAdjacentSystems(mystr):
-	syslist = list()
-	for i in range(VS.GetNumAdjacentSystems(mystr)):
-		syslist.append(VS.GetAdjacentSystem(mystr,i))
-	return syslist
+    POV_GOOD = 5
+    POV_BAD = 6
+    POV_NEUTRAL = 7
 
-def checkVarListRelevant(newslist,randint):
-	"""returns true only if the newslist is relevant
-	(major or close to home)"""
-	if (not (newslist[1] in minorNewsTypes())):
-		return 1
-	if (checkSystemRelevant(newslist[7])):
-		return 1
+    POV_CUTOFF = 0.25
 
-def processNewsTuple(newsstring,randint):
-	"""takes a news variable string and returns the news story taking
-	or not taking into account the random int given/not given"""
+    def __init__(self):
+        self.dockedat_faction = None
+        self.updateDockedAtFaction()
+        self.data = DynamicNewsData()
+        self.translator = NewsTranslator(self.data)
 
-	ls = newsstring.split(',')
-#	while (len(ls)<13):
-#		ls.append ('unknown')
-	print 'lsing '+ str(ls)
-	ns = makeDynamicNews(ls[0],ls[1],ls[2],ls[3],ls[4],string.atoi(ls[5]),string.atof(ls[6]),ls[7],ls[8],ls[9],ls[10],ls[11],ls[12],randint)
-	print ns
-	return ns + makeStarDate(ls[0])
-#Added flightgroups as the last few arguments
+    def translateDynamicString(self, strin):
+        """Takes an argument, of type str (this is not checked),
+        that is of the same format as that stored by
+        self.writeDynamicString(varlist)"""
+        varlist = self.sTovarlist(strin)
+        if varlist[self.AGGRESSOR_FLIGHTGROUP_INDEX] == VS.getPlayer().getFlightgroupName():
+            varlist[self.EVENT_KEYWORD_INDEX] = "player"
+        keys = self.data.makeNewsKeyList(varlist, self.dockedat_faction, self.getPOV(varlist))
+        stories = self.data.getNewsList(keys)
+        if not len(stories):
+            stories = self.data.getNewsList(keys, True)
+        if not len(stories):
+            return False
+        item = self.data.getBestMatch(stories, varlist)
+        if item:
+            return self.translator.translateItem(item, varlist, self.dockedat_faction)
+        else:
+            return False
 
+    def getPOV(self, varlist):
+        """Returns the corresponding POV_* class variable
+        for the reaction of the dockedat faction to the status
+        of the event."""
+        relatdef = VS.GetRelation(self.dockedat_faction,varlist[self.DEFENDER_INDEX])
+        relatagg = VS.GetRelation(self.dockedat_faction,varlist[self.AGGRESSOR_INDEX])
+        success = varlist[NewsManager.AGGRESSOR_SUCCESS_INDEX]
+        if (relatdef <= -self.POV_CUTOFF and relatagg <= -self.POV_CUTOFF) or (relatdef >= self.POV_CUTOFF and relatagg >= self.POV_CUTOFF):
+            return self.POV_NEUTRAL
+        elif relatdef > relatagg:
+            if success == self.SUCCESS_WIN:
+                return self.POV_BAD
+            elif success == self.SUCCESS_LOSS:
+                return self.POV_GOOD
+            elif success == self.SUCCESS_DRAW:
+                return self.POV_GOOD
+        elif relatdef < relatagg:
+            if success == self.SUCCESS_WIN:
+                return self.POV_GOOD
+            elif success == self.SUCCESS_LOSS:
+                return self.POV_BAD
+            elif success == self.SUCCESS_DRAW:
+                return self.POV_BAD
+        else:
+            debug.error("ERROR:  VS is returning -0 for relationship relatagg number")
+            return self.POV_NEUTRAL
 
-def manageDynamicNews(player,newsstring):
-	""" manages the dynamic news item passed to it"""
-#	print "against its ferrocious struggling I am"
-#	print "pushing " + newsstring + " through the generator"
-	varlist = newsstring.split(',')
-	varlist.reverse()
-	randint = int(varlist.pop())
-	varlist.reverse()
-	if checkVarListRelevant(varlist,randint):
-#		print "news is relevant"
-		varstring = string.join(varlist,",")
-		import Director
-		Director.pushSaveString(player,"news",processNewsTuple(varstring,randint))
-	else:
-#		print "news " + newsstring + " ignored...not relevant"
-		print ".",
+    def sTovarlist(self, s):
+        """Converts a stored dynamic news string into a
+        variable list usable by other methods and classes."""
+        varlist = s.split(',')
+        varlist[self.RANDOM_INTEGER_INDEX] = int(varlist[self.RANDOM_INTEGER_INDEX])
+        varlist[self.STARDATE_INDEX] = float(varlist[self.STARDATE_INDEX])
+        varlist[self.EVENT_SCALE_INDEX] = float(varlist[self.EVENT_SCALE_INDEX])
+        return varlist
+
+    def updateDockedAtFaction(self):
+        """Updates the current self.dockedat_faction to its
+        current value.  Should be called before translating
+        a batch of stores."""
+        i = VS.getUnitList()
+        playa=VS.getPlayer()
+        while i.notDone():
+            un = i.current()
+            i.advance()
+            if (un.isDocked(playa) or playa.isDocked(un)):
+                if not (un.isPlanet() or (un.getFactionName() == "neutral")):
+                    fac = un.getFactionName()
+#                    debug.debug('returning '+un.getName()+' s faction as '+fac+' from flightgroup '+un.getFlightgroupName())
+                    self.dockedat_faction = fac
+                break
+        retfac = VS.GetGalaxyFaction(VS.getSystemFile())
+#        debug.debug("Returning " + retfac + " as the systems faction")
+        self.dockedat_faction = retfac
+
+    def isStoryRelevant(self, strin):
+        """Is the event in this string relevant to the current
+        system and dockedat faction?"""
+        varlist = self.sTovarlist(strin)
+        limit = False
+        if varlist[self.EVENT_TYPE_INDEX] in [self.TYPE_BATTLE, self.TYPE_DESTROYED]:
+            limit = 1
+        else:
+            return True
+        event_sys = varlist[self.EVENT_SYSTEM_INDEX]
+        syslist = [VS.getSystemFile()]
+        done_syslist = list()
+        while limit >= 0:
+            if event_sys in syslist:
+                return True
+            else:
+                done_syslist+=syslist
+                new_syslist = list()
+                for syst in syslist:
+                    for i in range(VS.GetNumAdjacentSystems(syst)):
+                        sy = VS.GetAdjacentSystem(syst,i)
+                        if sy not in done_syslist:
+                            new_syslist.append(sy)
+                syslist = new_syslist
+                limit-=1
+        return False
+
+    def writeDynamicString(self, varlist):
+        """Stores a news story list into the \"dynamic news\"
+        key in the save game."""
+#        debug.debug('Dynamic news Event')
+        varlist = string.join([str(vsrandom.randrange(0,4194304))]+varlist,',')
+        import Director        
+        Director.pushSaveString(0,"dynamic_news",varlist)
 

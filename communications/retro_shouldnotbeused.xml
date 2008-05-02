@@ -1,0 +1,275 @@
+<comm>
+	<node text="startingNode" relationship="0"><!-- node 0 (starting node: Don't link here)-->
+		<edge index="1"/>
+		<edge index="2"/>
+		<edge index="3"/>
+	</node>
+
+<!-- Starting Points -->
+	<node text="Die by the very weapons you adore!" relationship=".1"><!-- node 2-->
+	<sound file="communications/retro/male/01.wav" sex="0"/>
+	<sound file="communications/retro/female/01.wav" sex="1"/>
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
+		<edge index="7"/>
+	</node>
+	<node text="Traitor to humanity, feel our wrath!" relationship="0"><!-- node 2-->
+	<sound file="communications/retro/male/02.wav" sex="0"/>
+	<sound file="communications/retro/female/02.wav" sex="1"/>
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
+		<edge index="7"/>
+	</node>
+	<node text="Heathen, taste the purifying fire of the Lord!" relationship="-.2"><!-- node 3-->
+	<sound file="communications/retro/male/07.wav" sex="0"/>
+	<sound file="communications/retro/female/07.wav" sex="1"/>
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>
+<!-- End of Starting Points -->
+
+<!-- Other Nodes -->
+	<node text="Piety has prevailed again. Die devil!" relationship="-.046875"><!-- node 4-->
+	<sound file="communications/retro/male/09.wav" sex="0"/>
+	<sound file="communications/retro/female/09.wav" sex="1"/>
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
+		<edge index="7"/>
+	</node>
+	<node text="Death to heathens! Glory be unto the Most High." relationship="-.0625"><!-- node 5-->
+	<sound file="communications/retro/male/08.wav" sex="0"/>
+	<sound file="communications/retro/female/08.wav" sex="1"/>
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
+		<edge index="7"/>
+	</node>
+	<node text="Your destruction is the will of God!" relationship="-0.078125"><!-- node 6-->
+	<sound file="communications/retro/male/06.wav" sex="0"/>
+	<sound file="communications/retro/female/06.wav" sex="1"/>
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
+		<edge index="7"/>
+	</node>
+	<node text="Heathen, taste the purifying fire of the Lord." relationship="-.125"><!-- node 7-->
+	<sound file="communications/retro/male/07.wav" sex="0"/>
+	<sound file="communications/retro/female/07.wav" sex="1"/>
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
+		<edge index="7"/>
+	</node>
+	<node text="Die by the very weapons you adore!" relationship="-.03125"><!-- node 8-->
+	<sound file="communications/retro/male/01.wav" sex="0"/>
+	<sound file="communications/retro/female/01.wav" sex="1"/>
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>
+	<node text="Traitor to humanity, feel our wrath!" relationship="-.03125"><!-- node 9-->
+	<sound file="communications/retro/male/02.wav" sex="0"/>
+	<sound file="communications/retro/female/02.wav" sex="1"/>
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>
+	<node text="Repent, and accept our righteous judgement!" relationship="-.0625"><!-- node 10-->
+	<sound file="communications/retro/male/03.wav" sex="0"/>
+	<sound file="communications/retro/female/03.wav" sex="1"/>
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>
+	<node text="Sinner! Ready thyself for righteous retribution!" relationship="-.125"><!-- node 11-->
+	<sound file="communications/retro/male/10.wav" sex="0"/>
+	<sound file="communications/retro/female/10.wav" sex="1"/>
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>
+	<node text="Die by the very weapons you adore!" relationship="-.0625"><!-- node 12-->
+	<sound file="communications/retro/male/01.wav" sex="0"/>
+	<sound file="communications/retro/female/01.wav" sex="1"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="Traitor to humanity, feel our wrath!" relationship="-.0625"><!-- node 13-->
+	<sound file="communications/retro/male/02.wav" sex="0"/>
+	<sound file="communications/retro/female/02.wav" sex="1"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="Repent, and accept our righteous judgement!" relationship="-.0625"><!-- node 14-->
+	<sound file="communications/retro/male/03.wav" sex="0"/>
+	<sound file="communications/retro/female/03.wav" sex="1"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="Sinner! Ready thyself for righteous retribution!" relationship="-.125"><!-- node 15-->
+	<sound file="communications/retro/male/10.wav" sex="0"/>
+	<sound file="communications/retro/female/10.wav" sex="1"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="Die by the very weapons you adore!" relationship="-.03125"><!-- node 16-->
+	<sound file="communications/retro/male/01.wav" sex="0"/>
+	<sound file="communications/retro/female/01.wav" sex="1"/>
+		<edge index="16"/>
+		<edge index="17"/>
+		<edge index="18"/>
+		<edge index="19"/>
+	</node>
+	<node text="Traitor to humanity, feel our wrath!" relationship="-.0625"><!-- node 17-->
+	<sound file="communications/retro/male/02.wav" sex="0"/>
+	<sound file="communications/retro/female/02.wav" sex="1"/>
+		<edge index="16"/>
+		<edge index="17"/>
+		<edge index="18"/>
+		<edge index="19"/>
+	</node>
+	<node text="Death to heathens! Glory be unto the Most High!" relationship="-.0625"><!-- node 18-->
+	<sound file="communications/retro/male/08.wav" sex="0"/>
+	<sound file="communications/retro/female/08.wav" sex="1"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="Sinner! Ready thyself for righteous retribution!" relationship="-.125"><!-- node 19-->
+	<sound file="communications/retro/male/10.wav" sex="0"/>
+	<sound file="communications/retro/female/10.wav" sex="1"/>
+		<edge index="16"/>
+		<edge index="17"/>
+		<edge index="18"/>
+		<edge index="19"/>
+	</node>
+	<node text="Docking operation complete. You're free of the docking clamps." relationship="-0.01">
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
+		<edge index="7"/>
+	</node>
+	<node text="You are not in docking clamps. Move into one of the green guide boxes and try to dock again." relationship="-.005">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>
+	<node text="Docking Operation begun; press 0 to step into airlock." relationship="-0">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>		
+	<node text="Docking denied. You are not authorized to land here!" relationship="-0">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>		
+	<node text="Your exultance may humbly enter our domain." relationship="-0">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>		
+	<node text="Negatory." relationship="-0">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>		
+	<node text="Affirmative." relationship="-0">
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
+		<edge index="7"/>
+	</node>		
+	<node text="We will scan you for technologies of damnable intent!" relationship="-0">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>
+	<node text="A pious hold is an empty hold." relationship="-0">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>
+	<node text="We know you posses high-level alien devices...machines of damnable intent! For adding to the technological burden of mankind...the Church of Man condemns you." relationship="-.1">
+	<sound file="communications/retro/male/contraband01.wav" sex="0"/>
+	<sound file="communications/retro/male/contraband02.wav" sex="0"/>
+	<sound file="communications/retro/male/contraband03.wav" sex="0"/>
+	<sound file="communications/retro/male/contraband04.wav" sex="0"/>
+	<sound file="communications/retro/female/contraband01.wav" sex="1"/>
+	<sound file="communications/retro/female/contraband02.wav" sex="1"/>
+	<sound file="communications/retro/female/contraband03.wav" sex="1"/>
+	<sound file="communications/retro/female/contraband04.wav" sex="1"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="In the moments left to you...repent!" relationship="-0">
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>	
+	<node text="Request Clearance To Land." relationship="-0">
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>	
+	<node text="Piety has prevailed again. Die devil!" relationship="-.046875"><!-- node 4-->
+	<sound file="communications/retro/male/09.wav" sex="0"/>
+	<sound file="communications/retro/female/09.wav" sex="1"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="Heathen, taste the purifying fire of the Lord!" relationship="-.2"><!-- node 3-->
+	<sound file="communications/retro/male/07.wav" sex="0"/>
+	<sound file="communications/retro/female/07.wav" sex="1"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="Deliver us, Oh Lord, for we are in need!" relationship="-.0625"><!-- node 16-->
+	<sound file="communications/retro/male/05.wav" sex="0"/>
+	<sound file="communications/retro/female/05.wav" sex="1"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="*hit*" relationship="-.01">
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+<!-- End of Built-in Conversations --> 
+</comm>

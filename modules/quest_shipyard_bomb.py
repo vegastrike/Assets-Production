@@ -45,6 +45,3 @@ class quest_shipyard_bomb_factory (quest.quest_factory):
         return 1
     def create (self):
         return quest_shipyard_bomb()
-
-
-

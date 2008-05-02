@@ -107,11 +107,11 @@ class quest_isowing (quest.quest):
             self.won=1
             self.names = self.recoverShipTypes ()
             VS.IOmessage (0,"game","all","Establishing link communication.")
-            VS.IOmessage (0,"game","all","[%s Wing] We're back at your service." % self.faction)            
+            VS.IOmessage (0,"game","all","[%s Wing] We're back at your service." % self.faction)
         else:
-            VS.SetAutoStatus (0,-1)            
+            VS.SetAutoStatus (0,-1)
             self.names = self.genShipTypes (self.num)
-            self.makeAdversary(self.enfaction,self.ennum)            
+            self.makeAdversary(self.enfaction,self.ennum)
             self.Intro()
                 #vsrandom.randrange (1,self.num+1))
         self.SpawnShips ()
@@ -127,15 +127,15 @@ class quest_isowing (quest.quest):
         VS.IOmessage (0,"game","all","We owe our lives to you...")
         VS.IOmessage (0,"game","all","So therefore we will go with you and follow your orders where they may take us")
         VS.IOmessage (0,"game","all","Together we can succeed!")
-        VS.IOmessage (0,"game","news",'TERRORIST FLIGHTGROUP ESCAPES   Recently a long sought for %s wing confronted and destroyed %s special forces. "After learning of a recent assembly by these millitants, we had to move at once; it is sad that these militants preemtively struck our forces before retreating like cowards!" said SubCommander Ret in a recent interview with GNN, "We need to warn our citizens of the presence of roaming %s starships...Any sighting of these starships must be reported to %s authorities immediately."  Will such slips in confed security cause further problems in the frontier, or will they finally meet their end after a deadly manhunt? The future remains to be seen.  The SubCommanders parting words were: "But See to it I will, I can promise you that!"'%(self.faction,self.enfaction,self.faction,self.enfaction))                
+        VS.IOmessage (0,"game","news",'TERRORIST FLIGHTGROUP ESCAPES   Recently a long sought for %s wing confronted and destroyed %s special forces. "After learning of a recent assembly by these millitants, we had to move at once; it is sad that these militants preemtively struck our forces before retreating like cowards!" said SubCommander Ret in a recent interview with GNN, "We need to warn our citizens of the presence of roaming %s starships...Any sighting of these starships must be reported to %s authorities immediately."  Will such slips in confed security cause further problems in the frontier, or will they finally meet their end after a deadly manhunt? The future remains to be seen.  The SubCommanders parting words were: "But See to it I will, I can promise you that!"'%(self.faction,self.enfaction,self.faction,self.enfaction))
     def doLose(self):
         VS.SetAutoStatus (0,0)
         self.removeQuest()
         VS.IOmessage (0,"game","all","Terrorists eliminated! Looks like we have another success to report for %s."%self.enfaction)
-        VS.IOmessage (0,"game","news",'TERRORIST CELL DESTROYED   Recently a %s wing was eliminated by %s special forces. "After learning of a recent assembly by these millitants, we had to move at once!" said SubCommander Ret in a recent interview with GNN, "It is good to see such justice served on our frontiers!" Hopefully this will reduce the recent rash of violence in the frontier sectors of our society!'%(self.faction,self.enfaction))        
+        VS.IOmessage (0,"game","news",'TERRORIST CELL DESTROYED   Recently a %s wing was eliminated by %s special forces. "After learning of a recent assembly by these millitants, we had to move at once!" said SubCommander Ret in a recent interview with GNN, "It is good to see such justice served on our frontiers!" Hopefully this will reduce the recent rash of violence in the frontier sectors of our society!'%(self.faction,self.enfaction))
         if (self.won==0):
-            VS.SetAutoStatus (0,0)                
-        
+            VS.SetAutoStatus (0,0)
+
     def NothingHere(self):
         for i in self.winglist:
             if (i):
@@ -175,6 +175,3 @@ class quest_isowing_factory (quest.quest_factory):
         quest.quest_factory.__init__ (self,"quest_isowing")
     def create (self):
         return quest_isowing("ISO",2,"confed",10)
-
-
-

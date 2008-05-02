@@ -12,33 +12,33 @@ class total_jump:
         self.lasttime=-1000
         self.waittime=5.0
     def launch_new_wave(self):
-	un = VS.getPlayer()
-	if (vsrandom.randrange(0,4)==0):
-		if (un):
-			currentsystem = VS.getSystemFile()
-			numadj=VS.GetNumAdjacentSystems(currentsystem)
-			if (numadj):
-				cursys=VS.GetAdjacentSystem(currentsystem,vsrandom.randrange(0,numadj))
-			else:
-				cursys = 'enigma_sector/heavens_gate'
-			print "TJ: jumping to "+cursys
-			un.JumpTo(cursys)
-		else:
-			print "TJ: jumping to [ERROR: you are null]"
-		return
-	else:
-		siglist=universe.significantUnits()
-		if len(siglist)==0:
-		    print "TJ: siglist empty"
-		    return
-		sig=siglist[vsrandom.randrange(0,len(siglist))]
-		if (not sig):
-		    print "TJ: sig null"
-		    return
-		print "TJ: autopiloting to "+sig.getName()
-		un.AutoPilotTo(sig,True)
-		un.SetTarget(sig)
-                
+        un = VS.getPlayer()
+        if (vsrandom.randrange(0,4)==0):
+            if (un):
+                currentsystem = VS.getSystemFile()
+                numadj=VS.GetNumAdjacentSystems(currentsystem)
+                if (numadj):
+                    cursys=VS.GetAdjacentSystem(currentsystem,vsrandom.randrange(0,numadj))
+                else:
+                    cursys = 'enigma_sector/heavens_gate'
+                print "TJ: jumping to "+cursys
+                un.JumpTo(cursys)
+            else:
+                print "TJ: jumping to [ERROR: you are null]"
+            return
+        else:
+            siglist=universe.significantUnits()
+            if len(siglist)==0:
+                print "TJ: siglist empty"
+                return
+            sig=siglist[vsrandom.randrange(0,len(siglist))]
+            if (not sig):
+                print "TJ: sig null"
+                return
+            print "TJ: autopiloting to "+sig.getName()
+            un.AutoPilotTo(sig,True)
+            un.SetTarget(sig)
+
 ##        side = vsrandom.randrange(0,2)
 ##        faction="confed"
 ##        ai = vsrandom.randrange(0,2)
@@ -66,9 +66,9 @@ class total_jump:
             self.waittime=vsrandom.randrange(10.0,30.0)
             self.lasttime=time
     def initbriefing(self):
-        print "ending briefing"                
+        print "ending briefing"
     def loopbriefing(self):
         print "loop briefing"
         Briefing.terminate();
     def endbriefing(self):
-        print "ending briefing"        
+        print "ending briefing"

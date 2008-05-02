@@ -2,9 +2,79 @@
 import sys
 import math
 import time
-_sysfile = ['SYSTEMaa']
-_unitlist=[]
+import xml
+import xml.dom
+import xml.dom.minidom
+import math
+#########For dynamic universe simulation
+def getParentVal(node,val):
+	i = node.parentNode
+	while(i):
+		j = i.firstChild
+		while (j):
+			try:
+				if (j.tagName!='var'):
+					return None
+				if (j.getAttribute('name')==val):
+					return j.getAttribute('value')
+			except:
+				pass
+			j = j.nextSibling		
+		i = node.parentNode
+	return getParentVal(node,val)
+def toPair (s):
+	if (not s):
+		return None
+	k=s.split(' ')
+	return (float(k[0]),float(k[1]),float(k[2]))
+def getVal(node,val):
+	for i in node.getElementsByTagName('var'):
+		if (i.getAttribute('name')==val):
+			return i.getAttribute('value')
+	return getParentVal(node,val)
+def getValND(node,val):
+	for i in node.getElementsByTagName('var'):
+		if (i.getAttribute('name')==val):
+			return i.getAttribute('value')
+	return None
+def removeVal(node,val):
+	for i in node.getElementsByTagName('var'):
+		if (i.getAttribute('name')==val):
+			node.removeChild(i)
 
+try:
+	import cached_universe
+	universe=cached_universe.universe
+except:
+	#end dynamic universe sim
+	try:
+		fil = open("../universe/wcuniverse.xml","r")
+	except:
+		fil = open("../universe/milky_way.xml","r")
+	g = xml.dom.minidom.parseString(fil.read());
+	fil.close()
+	systems = g.getElementsByTagName('system')
+	universe={}
+	for s in systems:
+		name=s.parentNode.getAttribute('name')+"/"+s.getAttribute('name')
+		properties={}
+		for i in s.getElementsByTagName('var'):
+			properties[i.getAttribute('name')]=i.getAttribute('value')
+		properties["faction"]=getVal(s,"faction")
+		jumps=[]
+		if "jumps" in properties:
+			jumps=properties["jumps"].split(" ")
+		properties["jumps"]=jumps
+		universe[name]=properties
+	try:
+		fil = open("cached_universe.py","w")
+		fil.write("universe=")
+		fil.write(str(universe))
+		fil.close()
+	except:
+		pass
+_sysfile = ['Gemini/Troy']
+_unitlist=[]
 def timeofday():
    return time.time()
 def sqrt (s):
@@ -27,6 +97,8 @@ def tan (s):
    return math.tan(s)
 def micro_sleep (n):
    pass
+def vsConfig(section, var, value):
+   print 'returned save variable '+section+' \"'+var+'\" as \"'+value+'\"'
 def addParticle (loc,vel,col):
    print 'added particle ' + loc + ' vel '+vel+' col '+col
 def pushSystem(sysname):
@@ -54,7 +126,7 @@ def systemInMemory(sys):
         #print sys + ' maybe not in memory'
 		pass
     return ret
-_ownerdict={}
+
 def popSystem():
    del _sysfile[-1]
 def getSystemFile():
@@ -97,7 +169,67 @@ def getRandCargo(a=None,b=None,c=None,d=None,e=None,f=None,g=None,h=None,i=None,
    import vsrandom
    which = vsrandom.randrange(0,len(_cargotypes))
    return Cargo(_cargotypes[which],_cargotypes[which],1,1,1,1)
-_factions=['neutral','confed','aera','merchant','retro','militia','rlaan','powerups','upgrades','unknown','pirates','hunter','privateer','ISO','planets']
+_factions=['neutral','confed','kilrathi','retro','steltek','militia','landreich','border_worlds','firekkan','aera','merchant','rlaan','powerups','upgrades','unknown','pirates','hunter','privateer','ISO','planets','shaper','klkk','luddites','andolian','rlaan_briin','LIHW','uln','shmrn','purist','highborn','unadorned','dgn','forsaken','mechanist','homeland-security','AWACS']
+def fgsInSector(sector,factions=_factions,printout=False):
+   import fg_util
+   ret={}
+   for sys in universe:
+      if sys.find(sector)==0:
+         ret[sys[len(sector)+1:]]=[]
+         if printout:
+             print sys[len(sector)+1:]+": "
+         for f in factions:
+            if (not (type(f)==type(()) or type(f)==type([]))):
+               f=(f,)
+            numcaps=0
+            numfighters=0
+
+            for fac in f:
+               fgs=fg_util.AllFGsInSystem(fac,sys)
+               if (len(fgs)):
+                  for fg in fgs:
+                      for ship in fg_util.ShipsInFG(fg,fac):
+                          import faction_ships
+                          if faction_ships.isCapital(ship[0]):
+                              numcaps+=ship[1]
+                          else:
+                              numfighters+=ship[1]
+            if (numcaps or numfighters):
+                ret[sys[len(sector)+1:]]+=[(f[0][0].upper(),numcaps,numfighters)]
+            if (numcaps and printout):
+               print str(f[0][0].upper())+": cap:"+str(numcaps)+" f: "+str(numfighters)
+            elif (numfighters and printout):
+               print str(f[0][0].upper())+":       f: "+str(numfighters)
+   return ret
+def InvertSector(inp):
+    ret={}
+    for sec in inp:
+        for k in inp[sec]:
+           if k[0] in ret:
+              ret[k[0]][0]+=k[1]
+              ret[k[0]][1]+=k[2]
+           else:
+              ret[k[0]]=[k[1],k[2]]
+    return ret
+def InvertSystem(inp):
+    ret={}
+    for sec in inp:
+        for k in inp[sec]:
+           if k[0] in ret:
+              ret[k[0]].append(sec)
+           else:
+              ret[k[0]]=[sec]
+    return ret
+def Simulate(turns, increment):
+    fac=[["confed","militia","hunter"],["merchant"],["kilrathi"],["pirates"],["retro"]]
+    ret=[fgsInSector("Gemini",fac)]
+    for i in range (turns):
+        import dynamic_battle
+        for j in range(int(increment*72000)):#20 simulation atoms per second
+            dynamic_battle.UpdateCombatTurn()
+        ret.append(fgsInSector("Gemini",fac))
+    return ret
+
 def GetFactionName(index):
    return _factions[index]
 def GetFactionIndex(name):
@@ -131,30 +263,32 @@ def GetGameTime():
 def SetTimeCompression(val):
    print "SetTimeCompression"
 def GetAdjacentSystem(mystr,which):
-   import vsrandom
-   return 'SYSTEM'+chr (vsrandom.randrange(ord('a'),ord('z')+1))+chr (vsrandom.randrange(ord('a'),ord('z')+1))
-def GetAllAdjacentSystems(mystr):
-	syslist = list()
-	for i in range(VS.GetNumAdjacentSystems(mystr)):
-		syslist.append(VS.GetAdjacentSystem(mystr,i))
-	return syslist
+   return universe[mystr]["jumps"][which]
+
 def GetGalaxyFaction(sysname):
    import faction_ships
    import vsrandom
-   if sysname in _ownerdict:
-	   return _ownerdict[sysname]
-   has = sysname.__hash__()
-   return faction_ships.factions[has%len(faction_ships.factions)]
+   if sysname in universe:
+       return universe[sysname]["faction"]
+   return "confed"
 def GetGalaxyProperty(sysname,prop):
 	if (prop=='faction'):
 		return GetGalaxyFaction(sysname)
-	return '<unknown property>'
+	if sysname in universe:
+		if prop in universe[sysname]:
+			return universe[sysname][prop]
+	print "error property "+prop+" not in universe "+sysname
+	return ""
 def SetGalaxyFaction(sysname,faction):
 	print faction+' took over '+sysname
-	_ownerdict[sysname]=faction
+	if sysname in universe:
+		universe[sysname]["faction"]=faction
+	else:
+		print "error "+sysname+" does not exist"
 def GetNumAdjacentSystems(mystr):
-   import vsrandom
-   return vsrandom.randrange(1,6)
+	if mystr in universe:
+		return len(universe[mystr]["jumps"])
+	return 0
 def musicAddList(mystr):
    print "musicAddList" 
    return 0
@@ -248,6 +382,9 @@ class Unit:
     self.name=nam
     self.fg=fg
     print 'Unit constructor called with '+nam
+  def getUnitSystemFile(self):
+    print "getUnitSystemFile"
+    return getSystemFile()
   def AutoPilotTo(self,un,ignore_friendlies): 
    print "AutoPilotTo" 
    return 0

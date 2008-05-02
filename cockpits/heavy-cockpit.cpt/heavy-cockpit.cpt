@@ -1,0 +1,33 @@
+<Cockpit mesh="cockpit-heavy.bfxm" r=".8" g=".8" b=".8" soundfile="vdu_c.wav" >
+	<Crosshairs file="crosshairs.spr" xcent="0" ycent="0"/>
+	<Radar file="radar.spr" />
+	<RearRadar file="radarr.spr" />
+	<Speed file="radar.spr" xcent="-.23" ycent="-.52" width=".018" height=".036"/>
+	<SetSpeed file="radar.spr" xcent=".23" ycent="-.52" width=".018" height=".036"/>
+	<WARPFIELDSTRENGTH file="radar.spr" xcent="-.23" ycent="-.58" width=".018" height=".036"/>
+	<Fuel file="fuelstat.spr" GaugeRight="1" xcent="0" ycent="-.6"/>
+	<Energy file="blasterpower.spr" GaugeRight="1"/>
+	<WarpEnergy file="jumppower.spr" GaugeRight="1" xcent="0" ycent="-.55"/>
+	<Lock file="locklight.spr" xcent="0" ycent="-.82"/>
+	<MissileLock file="missilelocklight.spr" xcent="0" ycent="-.76"/>
+	<ECM file="ecmlight.spr" xcent="0" ycent="-.7"/>
+	<Auto file="auto.spr"/>
+	<Jump file="canjump.spr"/>
+	<Eject file="eject.spr"/>
+
+   <ShieldF file="shieldf.spr" GaugeDown="1"/>
+   <ShieldB file="shieldf.spr" xcent="-.765" ycent="-.567"/>
+   <ShieldR file="shieldr.spr" GaugeLeft="1"/>
+   <ShieldL file="shieldr.spr" xcent="-.665" ycent="-.700" GaugeRight="1"/>
+   <ArmorF file="armorf.spr" GaugeDown="1"/>
+   <ArmorB file="armorf.spr" xcent="-.765" ycent="-.632" />
+   <ArmorL file="armorr.spr" GaugeLeft="1"/>
+   <ArmorR file="armorr.spr" xcent="-.714" ycent="-.700" GaugeRight="1"/>
+ 
+   <VDU TextRows="30" TextCols="25" type="Weapon Manifest Damage" file="wvdu.spr" xcent="-.8" ycent=".2"/>	
+	<VDU  TextRows="15" TextCols="25" type="Target Comm View TargetManifest Nav" file ="rvdu.spr" xcent=".775" ycent="-.75"/>
+	<VDU TextRows="15" TextCols="25" type="Shield  Manifest" file="lvdu.spr"/>
+	<VDU TextRows="14" TextCols="100" type="Message" file="mvdu.spr"/>
+	<VDU TextRows="30" TextCols="30" type="Objectives" file="objvdu.spr"/>
+	<FPS file="radar.spr" xcent=".9" ycent=".8" width=".018" height=".036"/>
+</Cockpit>
