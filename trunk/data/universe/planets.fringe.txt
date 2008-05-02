@@ -1,0 +1,1 @@
+planets/ocean.png~ planets/ocean.png^Snow_light.pngwrapx4wrapy2 planets/desert.png planets/Snow2.png^Snow_light.pngwrapx6wrapy3 planets/Dirt1.png^planets/Dirt_light.png planets/forest.png planets/forest1.png

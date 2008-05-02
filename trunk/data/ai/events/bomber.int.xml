@@ -1,0 +1,4 @@
+<AggressiveAI close=".05">
+  <meterdistance max="1000" script="match velocity" time="15" timetointerrupt="15">
+  </meterdistance>
+</AggressiveAI>

@@ -1,0 +1,203 @@
+<comm>
+	<node text="startingNode" relationship="0"><!-- node 0 (starting node: Don't link here)-->
+		<edge index="1"/>
+		<edge index="2"/>
+		<edge index="3"/>
+	</node>
+
+<!-- Starting Points -->
+	<node text="Running like clockwork." relationship="0.2"><!-- node 1 (very happy)-->
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
+	</node>
+	<node text="Keep clear, I don't brake for flesh puddles." relationship="0"><!-- node 2 (neutral)-->
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+	</node>
+	<node text="Suck vaccum and die within your boiling prison of flesh!" relationship="-.2"><!-- node 3 (very mad)-->
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+	</node>
+<!-- End of Starting Points -->
+
+<!-- Other Nodes -->
+
+	<node text="Keep your distance, real pilot coming through!" relationship=".03125"><!-- node 4(random good chatter)-->
+		<edge index="4"/>
+		<edge index="5"/>
+	</node>
+	<node text="My body was built to fly on days like this." relationship=".0625"><!-- node 5 (random good chatter)-->
+		<edge index="4"/>
+		<edge index="6"/>
+	</node>
+	<node text="You ever consider getting upgrades? You should." relationship=".0625"><!-- node 6 (best node)-->
+		<edge index="5"/>
+		<edge index="6"/>
+	</node>
+	<node text="If you didn't have a trigger finger, it wouldn't misfire like that, now would it. " relationship="-.03125"><!-- node 7 (hit while happy)-->
+		<edge index="4"/>
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+	</node>
+	<node text="Better a dull day than a deadly one." relationship=".03125"><!-- node 8 (random neutral chatter)-->
+		<edge index="9"/>
+		<edge index="10"/>
+	</node>
+	<node text="This system's not safe for fragile, little flesh puddles. Leave the real work for the real spacers." relationship=".04125"><!-- node 9 (neutral node after he has decided to be nicer after conflict)-->
+		<edge index="8"/>
+		<edge index="10"/>
+	</node>
+	<node text="Tick, tock. Move along!" relationship=".03125"><!-- node 10 (good node in neutral) -->
+		<edge index="8"/>
+		<edge index="9"/>
+	</node>
+	<node text="There's no use running. I don't get tired." relationship="-.125"><!-- node 11 (got hit when neutral)-->
+		<edge index="9"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+	</node>
+	<node text="Even for a flesh puddle, you're disgusting!" relationship="-.0625"><!-- node 12 (taunt)-->
+		<edge index="13"/>
+		<edge index="15"/>
+		<edge index="19"/>
+	</node>
+	<node text="Die, you quivering mass of proteins!" relationship="-.125"><!-- node 13 (taunt)-->
+		<edge index="12"/>
+		<edge index="15"/>
+		<edge index="19"/>
+	</node>
+	<node text="Just because my brain is still carbon, you think you can fool me so easily?" relationship="-.0625"><!-- node 14 (trying to appease him, but failing)-->
+		<edge index="8"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+	</node>
+	<node text="I'm going to retrofit you in unspeakable ways!" relationship="-.0625"><!-- node 15 hit while mad node-->
+		<edge index="11"/>
+		<edge index="13"/>
+		<edge index="12"/>
+		<edge index="19"/>
+	</node>
+	<node text="Surrender now and maybe I can save enough of you for a trial!" relationship="-.0625"><!-- node 16 kill-->
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="17"/>
+		<edge index="19"/>
+	</node>
+	<node text="Die quickly, I'm late for an oil change." relationship="-.0625"><!-- node 17 kill-->
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="16"/>
+		<edge index="19"/>
+	</node>
+	<node text="I'd rather forgive flesh for being fallible." relationship="-.03125"><!-- node 18 (trying to appease, but failing)-->
+		<edge index="9"/>
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+	</node>	
+	<node text="You sure picked an expensive way to kill yourself!" relationship="-.0625"><!-- node 19 (taunt)-->
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+	</node>
+
+<!-- Built-in Conversations --> 
+	<node text="Docking operation complete. You're free of the docking clamps." relationship="0.01">
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
+		<edge index="7"/>
+	</node>
+	<node text="You are not in docking clamps. Move into one of the green guide boxes and try to dock again." relationship="0">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>
+	<node text="Docking operation begun; press 0 to step into our starship." relationship="0">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>		
+	<node text="You are not authorized to land here!" relationship="0">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>		
+	<node text="Clearance code acknowledged; move into landing pattern and dock at the white indicators." relationship="0">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>		
+	<node text="Unable to comply." relationship="0">
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+		<edge index="11"/>
+	</node>		
+	<node text="Acknowledged." relationship="0">
+		<edge index="4"/>
+		<edge index="5"/>
+		<edge index="6"/>
+		<edge index="7"/>
+	</node>		
+	<node text="Maintain speed and course for contraband search!" relationship="0"> <!-- maintain speed and course -->
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+	</node>
+	<node text="No contraband detected, you may proceed." relationship="0"> <!-- no contraband detected you may proceed -->
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+	</node>
+	<node text="Contraband detected, target offender and fire at will!" relationship="-.125"> <!-- contraband detected! all units close and engage -->
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+	</node>
+	<node text="Your course is deviating. Maintain course!" relationship="0"> <!-- maintain your speed and course...DO NOT deviate -->
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+	</node>	
+	<node text="Request Clearance To Land." relationship="0"> 
+		<edge index="8"/>
+		<edge index="9"/>
+		<edge index="10"/>
+	</node>	
+	<node text="It goes the way of all flesh!" text1="One less fragile fool." relationship="-.0625"><!-- dealt critical damage -->
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="It's over. It ends now, as all flesh must." relationship="-.0625"><!-- dealt critical damage -->
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="Mayday, attempting to eject, will go dormant awaiting pickup." text1="I can't feel the ship! I can't feel my ship!" relationship="-.125">
+		<edge index="12"/>
+		<edge index="13"/>
+		<edge index="14"/>
+		<edge index="15"/>
+	</node>
+	<node text="*hit*" relationship="-.01">
+		<edge index="7"/>
+		<edge index="11"/>
+		<edge index="15"/>
+	</node>
+
+<!-- End of Built-in Conversations --> 
+</comm>

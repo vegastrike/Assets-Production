@@ -1,0 +1,53 @@
+<Unit scale ="4">
+	<Meshfile file ="derivative.bfxm">
+	</Meshfile>
+	<BspMesh>
+	</BspMesh>
+	<description combatrole ="FIGHTER">
+	</description>
+	<Thrust>
+		<Engine Afterburner ="15000" Forward ="10000" Retro ="10000" Left ="10000" Right ="10000" Top ="10000" Bottom ="10000">
+		</Engine>
+		<Maneuver yaw ="20587" pitch ="29110" roll ="29110">
+		</Maneuver>
+	</Thrust>
+	<Sound>
+	</Sound>
+	<Defense HudImage ="kyta-hud.spr" ECM ="0" RepairDroid ="0">
+		<Armor front ="100" right ="80" left ="80" back ="80">
+		</Armor>
+		<Shields front ="0" right ="0" left ="0" back ="0" recharge ="0">
+		</Shields>
+		<Hull strength ="150.000000">
+		</Hull>
+	</Defense>
+<Upgrade file="shield_4"/>
+	<Stats mass ="54" momentofinertia ="54" fuel ="100000000">
+	</Stats>
+	<Computer yaw ="80" pitch ="80" roll ="203.500000" afterburner ="200" maxspeed ="180">
+		<Radar itts="false" error="0" range="30000000" maxcone="-1" color="false">
+		</Radar>
+	</Computer>
+	<Energy afterburnenergy = "32767">
+		<Reactor warpenergy ="300">
+		</Reactor>
+	</Energy>
+<Upgrade file="reactor_level_0"/>
+	<Jump missing = "1" delay ="1" jumpenergy ="90" insysenergy ="45">
+	</Jump>
+	<Mount weapon ="" size ="LIGHT" x ="-0.598000" y ="3.19962e-2" z ="2.87600">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT MEDIUM HEAVY" x ="0.270000" y ="-0.418006" z ="3.63600">
+	</Mount>
+	<Mount weapon ="" size ="LIGHT-MISSILE MEDIUM-MISSILE" x ="-1.50600" y ="-0.154000" z ="-1.83200" ammo ="5" volume ="80">
+	</Mount>
+	<Light file ="supernova.bmp.bfxm" x ="0.158000" y ="2.80064e-2" z ="-4.83800" size ="1">
+	</Light>
+	<Light file ="supernova.bmp.bfxm" x ="0.786000" y ="3.40064e-2" z ="-4.83800" size ="1">
+	</Light>
+	<Hold volume ="20">
+	</Hold>
+<Upgrade file="mult_general_downgrade"/>
+<Upgrade file="add_general_downgrade"/>
+	<Upgrade file="mult_turn_balancer" /> <!-- Added by REpL aCEf iLE (TM) -->
+</Unit>

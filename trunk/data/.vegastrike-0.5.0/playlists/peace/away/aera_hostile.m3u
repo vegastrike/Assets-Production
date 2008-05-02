@@ -1,0 +1,16 @@
+#EXTM3U
+#aeran-specific
+../music/aerapeace.ogg
+../music/AyMambo.ogg
+../music/SonOfSandFleaRemix.ogg
+#common hostile-space files, not very aerish
+#../music/battle3electro.ogg
+#../music/battle4showdown.ogg
+#../music/battel5_p.ogg
+#fix weights
+../music/AyMambo.ogg
+../music/AyMambo.ogg
+../music/AyMambo.ogg
+../music/AyMambo.ogg
+../music/SonOfSandFleaRemix.ogg
+../music/SonOfSandFleaRemix.ogg

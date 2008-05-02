@@ -1,0 +1,188 @@
+<system name="Sandbox" background="backgrounds/blue" nearstars="1" stars="1" starspread="1000"  x="0" y="0" z="0" scalesystem="1">
+<Light>
+<ambient red=".01" green=".09" blue=".09"/>
+<diffuse red="1" green="1" blue="1"/>
+<specular red="1" green="1" blue="1"/>
+</Light>
+
+<Light>
+<ambient red="1" green=".1" blue="0"/>
+<!--<diffuse red="1" green=".7" blue="0"/>-->
+<!--<attenuated red=".00000001" blue=".00000015"/>-->
+<attenuated red="0" blue=".000000002"/>
+</Light>	
+<Light>
+<ambient red="1" green=".1" blue="0"/>
+<!--<diffuse red="1" green=".7" blue="0"/>-->
+<!--<attenuated red=".00000001" blue=".00000015"/>-->
+<attenuated red="0" blue=".0000001"/>
+</Light>	
+
+
+	<Planet name="Die Stern" file="sol/sun.png" ri="0" rj="0" rk="0" si="0" sj="0" sk="0" radius="10000" x="0" y="0" z="0" year= "28090314.000000" day="14282713.000000"  Red="0.750000" Green="0.693103" Blue="0.700932" ReflectNoLight="true" light="0 1l">
+
+<Planet name="Gassy" file="planets/gas_giant.png" ri="100000" rj="0" rk="0" si="0" sj="100000" sk="0" radius="5000" x="0" y="10000" z="0" year= "8000000000" day="80000"  >
+   <Ring file="rings/planet_ring1.texture" innerradius="7500.0" outerradius="10500.0"  wrapx="2" wrapy="2" />
+</Planet>
+
+<Planet name="Aridish" file="planets/desert.png" ri="100000" rj="-8436.0" rk="-110000000" si="1000000" sj="0" sk="0" radius="5000.00312500" x="0" y="100000" z="0" year= "8000000000" day="80000"  >
+</Planet>
+
+<Planet name="Bionic" file="planets/m_class.png" ri="200000" rj="-8436.0" rk="-110000000" si="2000000" sj="0" sk="0" radius="5000.00312500" x="100000" y="10000" z="0" year= "8000000000" day="80000"  >
+</Planet>
+
+<Planet name="College" file="planets/university2.png" ri="300000" rj="-8436.0" rk="-110000000" si="3000000" sj="0" sk="0" radius="5000.00312500" x="200000" y="10000" z="0" year= "8000000000" day="80000"  >
+   <Citylights file="planets/university2_light.png" />
+</Planet>
+
+<!-- ice -->
+
+<Planet name="Tropicana" file="planets/carribean3.png" ri="500000" rj="-8436.0" rk="-110000000" si="5000000" sj="0" sk="0" radius="5000.00312500" x="400000" y="10000" z="0" year= "8000000000" day="80000"  >
+</Planet>
+
+ <Planet name="Motion" file="planets/ocean.png" ri="600000" rj="-8436.0" rk="-110000000" si="6000000" sj="0" sk="0" radius="5000.00312500" x="500000" y="10000" z="0" year= "8000000000" day="80000"  >
+</Planet>
+
+<Planet name="Volcano" file="planets/Lava.jpg" ri="100000" rj="0" rk="0" si="0" sj="100000" sk="100000" radius="5000" x="0" y="10000" z="0" year= "8000000000" day="80000" >
+<Citylights file="planets/Lava_light.jpg" />
+</Planet>
+
+<!--Planet name="Froth" file="planets/Snow.png" ri="100000" rj="0" rk="0" si="0" sj="100000" sk="200000" radius="5000" x="0" y="10000" z="0" year= "8000000000" day="80000"  >
+</Planet-->
+
+<Planet name="Jackal" file="planets/tkirsa.png" ri="100000" rj="0" rk="0" si="0" sj="100000" sk="200000" radius="5000" x="0" y="10000" z="0" year= "8000000000" day="80000"  >
+</Planet>
+
+<Planet name="Tor" file="planets/tundra.png" ri="100000" rj="0" rk="0" si="0" sj="100000" sk="200000" radius="5000" x="0" y="10000" z="0" year= "8000000000" day="80000"  >
+</Planet>
+
+<Planet name="Test1" file="planets/rock.png" ri="100000" rj="0" rk="0" si="0" sj="100000" sk="200000" radius="5000" x="0" y="10000" z="0" year= "8000000000" day="80000"  >
+</Planet>
+<Planet name="Test2" file="planets/molten.png" ri="100000" rj="0" rk="0" si="0" sj="100000" sk="200000" radius="5000" x="0" y="10000" z="0" year= "8000000000" day="80000"  >
+</Planet>
+<Planet name="Test3" file="planets/forest.png" ri="100000" rj="0" rk="0" si="0" sj="100000" sk="200000" radius="5000" x="0" y="10000" z="0" year= "8000000000" day="80000"  >
+</Planet>
+<Planet name="Test4" file="planets/forest_methane.png" ri="100000" rj="0" rk="0" si="0" sj="100000" sk="200000" radius="5000" x="0" y="10000" z="0" year= "8000000000" day="80000"  >
+</Planet>
+
+<Planet name="Earth" file="sol/earth.png" ri="100000" rj="0" rk="0" si="0" sj="100000" sk="200000" radius="5000" x="0" y="10000" z="0" year= "8000000000" day="80000"  >
+</Planet>
+
+<!--
+<planet name="Trantor_Class">
+       <var name="texture" value="planets/Dirt"/>
+       <var name="texture_max" value="1"/>
+       <var name="initial" value="i"/>
+       <var name="lights" value="Dirt_light.png Dirt_light_repeat.pngwrapx64wrapy64"/>
+   </planet>
+   <planet name="Human_Homeworld:Earth">
+       <var name="texture" value="sol2/Earth"/>
+       <var name="initial" value="earth"/>
+       <var name="lights" value="earthlights.jpg "/>
+   </planet>
+   <planet name="Mars">
+       <var name="texture" value="sol2/mars"/>
+       <var name="initial" value="mars"/>
+       <var name="lights" value="marslights.jpg"/>
+   </planet>
+   <planet name="Luna">
+       <var name="texture" value="sol2/moon"/>
+       <var name="initial" value="moon"/>
+   </planet>
+
+   <planet name="Arid_Methane">
+       <var name="texture" value="planets/frigid_mud"/>
+       <var name="initial" value="am"/>
+       
+   </planet>
+   <planet name="Oceanic_Ammonia">
+       <var name="texture" value="planets/ocean_ammonia"/>
+       <var name="initial" value="oa"/>
+       <var name="atmosphere" value="true"/>
+   </planet>
+   <planet name="Aera_Trantor">
+       <var name="texture" value="planets/n_class"/>
+       <var name="texture_max" value="1"/>
+       <var name="initial" value="ai"/>
+       
+   </planet>
+   <planet name="Rlaan_Trantor">
+       <var name="texture" value="planets/tkirsa"/>
+       <var name="texture_max" value="1"/>
+       <var name="initial" value="at"/>
+       
+   </planet>
+   <planet name="Aera_Ice">
+       <var name="texture" value="planets/j_class"/>
+       <var name="texture_max" value="2"/>
+       <var name="initial" value="afr"/>
+       <var name="atmosphere" value="true"/>
+       
+   </planet>
+   <planet name="Bio_Simple">
+       <var name="texture" value="planets/k_class"/>
+       <var name="texture_max" value="4"/>
+       <var name="initial" value="bs"/>
+       <var name="atmosphere" value="true"/>
+       
+   </planet>
+   <planet name="Frozen_Ammonia">
+       <var name="texture" value="planets/tundra"/>
+       <var name="texture_max" value="2"/>
+       <var name="initial" value="fa"/>
+       
+   </planet>
+   <planet name="Bio_Diverse_Methane">
+       <var name="texture" value="planets/red_rocky"/>
+       <var name="initial" value="bdm"/>
+       
+   </planet>
+   <planet name="Bio_Simple_Methane">
+       <var name="texture" value="planets/toxic_disaster"/>
+       <var name="initial" value="bsm"/>
+       
+   </planet>
+   <planet name="Rocky">
+       <var name="texture" value="planets/rock"/>
+       <var name="texture_max" value="4"/>
+       <var name="initial" value="r"/>
+       <var name="inhabitable" value="false"/>
+   </planet>
+   <planet name="Molten">
+       <var name="texture" value="planets/molten"/>
+       <var name="initial" value="mol"/>
+       <var name="inhabitable" value="false"/>
+   </planet>
+   <planet name="Overgrown">
+       <var name="texture" value="planets/forest"/>
+       <var name="texture_max" value="1"/>
+       <var name="initial" value="f"/>
+       <var name="inhabitable" value="false"/>
+   </planet>
+   <planet name="Overgrown_Methane">
+       <var name="texture" value="planets/forest_methane"/>
+       <var name="initial" value="fm"/>
+       <var name="inhabitable" value="false"/>
+   </planet> 
+   <planet name="Uninhabitable_Gas_Giant">
+     <var name="texture" value="planets/gas_giant"/>
+     <var name="texture_max" value="5"/>
+     <var name="initial" value="gg"/>
+     <var name="inhabitable" value="false"/>
+   <planet name="Uninhabitable_Medium_Gas_Giant">
+       <var name="texture" value="planets/gas_medium"/>
+       <var name="initial" value="gm"/>
+       <var name="inhabitable" value="false"/>
+   </planet>
+   <planet name="Uninhabitable_Dwarf_Gas_Giant">
+       <var name="texture" value="planets/gas_midget"/>
+       <var name="initial" value="gd"/>
+       <var name="inhabitable" value="false"/>
+       
+   </planet> -->
+
+</planet>
+
+
+</system>
+
