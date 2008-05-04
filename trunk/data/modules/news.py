@@ -3,6 +3,8 @@ import vsrandom
 import universe
 import Director
 import dynamic_news
+import stardate
+
 global dnewsman_
 dnewsman_ = dynamic_news.NewsManager()
 def saveVal(str):
@@ -77,7 +79,6 @@ def newNews():
     Director.pushSaveString(player,"dynamic_news",'#'+newsitem[2])
 #    VS.IOmessage(0,"game","news",newsitem[2])
 
-
 def eraseNews(plr):
     import Director
     len = Director.getSaveStringLength(plr,"news")
@@ -114,3 +115,11 @@ def eraseNewsItem(plr,item):
         if noos == item:
             Director.eraseSaveString(plr,"dynamic_news",i)
             return
+
+def publishNews(text):
+# publishes the news text with star date
+    player = VS.getPlayer().isPlayerStarship()
+    STARDATE_TEXT = "\\\\\This story was first broadcast on: "
+    datetext = stardate.formatStarDate("confed",Director.getSaveData(0,"stardate",0))
+    newstext = "#" + text + STARDATE_TEXT + datetext + "\\GINA - Galactic Independent News Association"
+    Director.pushSaveString(player,"dynamic_news",newstext)

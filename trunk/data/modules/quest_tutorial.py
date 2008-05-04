@@ -10,24 +10,31 @@
 # of the License, or (at your option) any later version.
 #
 # Author: pyramid
-# Version: 2008-04-12
+# Version: 2008-04-24
 #
 #---------------------------------------------------------------------------------
 
 # This script is a start to a turorial mission (quest/adventure)
-# Currently, it only works with a new campaign when launching from Atlantis
-# The only implemented features is launching a drone, making it say a few words,
-# and following the player ship
+# Currently, there is a small navigation tutorial available
+# You can decline the offer after Oswald says hello by simply not stopping your ship
+# It is possible to break off the tutorial. The last completed stage is saved
+# in your savegame and resumes from there.
+
+# things that can be imroved
+# (a) include other tutorial parts: targetting, weapons, ...
+# (b) publish news on available flight refresher
+# (c) synchronize talk and animation
+# (d) change the mission name that appears on the hud
 
 # import used libraries
 import quest
-import Vector
+import Director
 import VS
+import Vector
+import universe
 import unit
 import vsrandom
 import launch
-import Director
-import universe
 
 # predefine stages
 SAVE_KEY = "quest_tutorial"
@@ -59,14 +66,17 @@ class quest_tutorial (quest.quest):
         self.objectives = []        # list of objectives
         self.objective = 0          # current objective
         self.startobjectname = ""
+
     def putSaveValue(self,value, key=SAVE_KEY):
         Director.eraseSaveData(self.player.isPlayerStarship(),key,0)
         Director.pushSaveData(self.player.isPlayerStarship(),key,value)
         return 1
+
     def getSaveValue(self,key=SAVE_KEY):
         if Director.getSaveDataLength(self.player.isPlayerStarship(),key) > 0:
             return Director.getSaveData(self.player.isPlayerStarship(),key,0)
         return 0
+
     # checks if the player has undocked from Atlantis. If so sets next stage.
     # Has been replaced by the more generic function playerIsUndocked
     def hasUndockedFromAtlantis(self):
@@ -80,6 +90,7 @@ class quest_tutorial (quest.quest):
         # if the player is not docked and at least 5km away then set next stage number
         if (not self.startobject.isDocked(self.player) and self.startobject.getDistance(self.player)>(self.dockeddistance+5000)):
             self.stage = STAGE_AWAY
+
     # checks if the player has undocked. if so sets next stage
     def playerIsUndocked(self):
         # dockedobject and dockeddistance must be global, i.e prefixed with self
@@ -98,6 +109,26 @@ class quest_tutorial (quest.quest):
         if (name=="" or ((not self.startobjectname=="") and (not self.startobjectname=="Atlantis") and self.dockedobject.getDistance(self.player)>(self.dockeddistance+1000))):
             self.stage = STAGE_AWAY
             self.timer = VS.GetGameTime()+5
+
+    def LightMinuteToMeter(self,lightminute):
+        meter = 17987547500 * lightminute
+        return meter
+
+    # returns the facing angle between unit 1 and unit 2
+    # when unit 1 is facing unit 2 the return value is 0
+    # when unit 1 is completely turned away from unit 2 the return value is pi (~3.14)
+    def facingAngleToUnit(self,unit1,unit2):
+        vec = Vector.Sub(unit2.Position(),unit1.Position())
+        dot = Vector.Dot(Vector.SafeNorm(unit1.GetOrientation()[2]),Vector.SafeNorm(vec))
+        angle = VS.acos(dot)
+        return angle
+
+    # signed velocity is negative when the thrust is reverse
+    # otherwise velocity is positive
+    def getSignedVelocity(self,unit):
+        velocity = Vector.Dot(Vector.SafeNorm(unit.GetOrientation()[2]),unit.GetVelocity())
+        return velocity
+
     # launches a unit aka the drone
     def launchNewDrone (self):
         if (not self.player.isNull()):
@@ -124,12 +155,9 @@ class quest_tutorial (quest.quest):
             self.drone.PrimeOrders()
             # display the drone on HUD
             self.player.SetTarget(self.drone)
+            self.stage = STAGE_ORBIT
             self.timer = VS.GetGameTime()+20
-            complete = self.getSaveValue()
-            if (complete>0):
-                self.stage = complete
-            else:
-                self.stage = STAGE_ORBIT
+
     # keeps the drone near the player
     def orbitMe (self):
     # the drone doesn't quite orbit
@@ -149,38 +177,24 @@ class quest_tutorial (quest.quest):
             self.drone.SetVelocity((0,0,0))
             # this is also needed to stop rotation of the drone
             self.drone.SetAngularVelocity((0,0,0))
-    def LightMinuteToMeter(self,lightminute):
-        meter = 17987547500 * lightminute
-        return meter
-    # returns the facing angle between unit 1 and unit 2
-    # when unit 1 is facing unit 2 the return value is 0
-    # when unit 1 is completely turned away from unit 2 the return value is pi (~3.14)
-    def facingAngleToUnit(self,unit1,unit2):
-        vec = Vector.Sub(unit2.Position(),unit1.Position())
-        dot = Vector.Dot(Vector.SafeNorm(unit1.GetOrientation()[2]),Vector.SafeNorm(vec))
-        angle = VS.acos(dot)
-        return angle
-    # signed velocity is negative when the thrust is reverse
-    # otherwise velocity is positive
-    def getSignedVelocity(self,unit):
-        velocity = Vector.Dot(Vector.SafeNorm(unit.GetOrientation()[2]),unit.GetVelocity())
-        return velocity
+
     # check if player stays put close to the drone to accept tutorial
     def acceptTutorial (self):
-        #print "--acceptTutorial?--"
         velocity = Vector.Mag(self.player.GetVelocity())
         # if the offer has been placed, and player is put for 10s and drone is near
         if (VS.GetGameTime()>self.timer and self.drone.getDistance(self.player)<600 and velocity<=10):
-            #print "-set STAGE_ACCEPT-!!!!!!!!!!!!!!!!!!!!"
             self.player.SetTarget(self.drone)
             self.timer = VS.GetGameTime()
-            self.stage = STAGE_ACCEPT
+            complete = self.getSaveValue()
+            if (complete>0):
+                self.stage = complete
+            else:
+                self.stage = STAGE_ACCEPT
         if (VS.GetGameTime()>self.timer and velocity>=10):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Have a nice journey and come back for a space faring refresher anytime here in Cephid 17.")
             self.stage = STAGE_DECLINE
-            #print "-set STAGE_DECLINE-!!!!!!!!!!!!!!!!!!!!"
             self.timer = VS.GetGameTime()
-            self.stage = STAGE_DECLINE
+
     ## play the first part of the tutorial
     def tutorialComm (self):
         if (self.practice==0):
@@ -206,6 +220,7 @@ class quest_tutorial (quest.quest):
             self.timer = VS.GetGameTime()+0
             self.stage = COMPLETE_TUTORIAL1
             self.putSaveValue(self.stage)
+
     def tutorialNav (self):
         VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Now, let's review the navigation information on your HUD. Theory first, then some practice.")
         VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"In the lower left corner you will find your ship's shield (blue) and armor (orange) status.")
@@ -228,6 +243,7 @@ class quest_tutorial (quest.quest):
         self.timer = VS.GetGameTime()+160
         self.stage = COMPLETE_TUTORIAL2
         self.putSaveValue(self.stage)
+
     def practiceNav (self):
         # practice intro
         if (self.practice==0):
@@ -346,7 +362,6 @@ class quest_tutorial (quest.quest):
             VS.IOmessage (45,"Oswald","Privateer",self.msgColor+"In the lower left corner, just above your ship staus you will notice two indicators.")
             VS.IOmessage (50,"Oswald","Privateer",self.msgColor+"SPEC shows you if your SPEC drive is enabled.")
             VS.IOmessage (55,"Oswald","Privateer",self.msgColor+"AUTO tells you if auto pilot is engaged.")
-            #self.player.commAnimation("com_tutorial_oswald.ani")
             name = unit.getUnitFullName(self.jump)
             self.objective = VS.addObjective("Approach %s" % name)
             self.objectives+=[int(self.objective)]
@@ -421,7 +436,7 @@ class quest_tutorial (quest.quest):
         if (self.practice==10):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Now dock to the planet, go to the mission computer, and save your game.")
             VS.IOmessage (7,"Oswald","Privateer",self.msgColor+"Then get yourself a Jump Drive and an Overdrive and come back for more tutoring if you wish.")
-            VS.IOmessage (15,"Oswald","Privateer",self.msgColor+"Turn towards the planet and press the docking clearance request key #9999FFD"+self.msgColor+". A green docking frame will appear.")
+            VS.IOmessage (15,"Oswald","Privateer",self.msgColor+"To dock, turn towards the planet and press the docking clearance request key #9999FFD"+self.msgColor+". A green docking frame will appear.")
             VS.IOmessage (25,"Oswald","Privateer",self.msgColor+"You may still enable the SPEC drive until you close up on the planet and your velocity matches the set velocity.")
             VS.IOmessage (35,"Oswald","Privateer",self.msgColor+"Press again the #9999FFD"+self.msgColor+" key to dock. The docking distance will depend on the planet or station size that you are docking to.")
             VS.IOmessage (45,"Oswald","Privateer",self.msgColor+"The larger the object the further away you can dock.")
@@ -454,7 +469,6 @@ class quest_tutorial (quest.quest):
         if (not self.player.isNull() and not self.drone.isNull()):
             # when drone is launched, then follow player
             if (self.stage==STAGE_ORBIT):
-                print "---STAGE_ORBIT---"
                 if (VS.GetGameTime()>self.timer):
                     self.player.commAnimation("com_tutorial_oswald.ani")
                 self.orbitMe()
@@ -484,16 +498,19 @@ class quest_tutorial (quest.quest):
                 self.drone.SetVelocity((2000,0,0))
                 self.timer = VS.GetGameTime()+10
                 self.stage = 99
-            # if th eturorial was declines
+            # if the turorial was declined
             if (self.stage==98 and VS.GetGameTime()>self.timer):
-                self.stage += 1
+                self.drone.SetVelocity((2000,0,0))
+                self.timer = VS.GetGameTime()+10
+                self.stage = 99
             # let the drone disappear
             if (self.stage==99 and VS.GetGameTime()>self.timer):
                 self.drone.PrimeOrders()
                 self.playernum = -1
                 self.name = "quest_tutorial"
                 self.removeQuest()
-                self.stage += 1
+                self.stage += 1 # don't enter this loop anymore
+                return 0
         ## keep the script alive for execution
         return 1
 
