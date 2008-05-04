@@ -1,12 +1,33 @@
-import quest
-import Vector
+#---------------------------------------------------------------------------------
+# Vega Strike script for a quest
+# Copyright (C) 2008 Vega Strike team
+# Contact: hellcatv@sourceforge.net
+# Internet: http://vegastrike.sourceforge.net/
+#.
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# Description: Jump point blockade to an aera system
+#              adapted from original script by hellcatv
+# Author: pyramid
+# Version: 2008-04-24
+#
+#---------------------------------------------------------------------------------
+
 import VS
+import quest
+import Director
+import Vector
 import unit
 import vsrandom
 import launch
 import faction_ships
+
 class quest_slaver (quest.quest):
     def __init__ (self):
+        self.system = VS.getSystemName()
         playa = VS.getPlayer()
         if (playa):
             confed = faction_ships.factions[faction_ships.confed]
@@ -16,10 +37,13 @@ class quest_slaver (quest.quest):
             launch.launch_wave_around_unit ('Illustrious',confed,faction_ships.getRandomFighter(confed),'default',4,100,200,illustrious)
             launch.launch_wave_around_unit ('SlaverGuild',pirates,faction_ships.getRandomFighter(pirates),'default',4,100,200,illustrious)
             launch.launch_wave_around_unit ('SlaverGuild',pirates,faction_ships.getRandomCapitol(pirates),'default',2,100,200,illustrious)
-            VS.IOmessage (3,"game","all","[Computer] Scans show the remnants of the Slaver Guild being cleaned up by Special Forces.")
+            VS.IOmessage (3,"[Computer]","all","Scans show the remnants of the Slaver Guild being cleaned up by Special Forces.")
     def Execute (self):
-        self.removeQuest()
-        return 0
+        if (not VS.getSystemName()==self.system):
+            self.playernum = -1
+            self.name = "quest_slaver"
+            self.removeQuest()
+            return 0
 
 class quest_slaver_factory (quest.quest_factory):
     def __init__ (self):
@@ -28,3 +52,12 @@ class quest_slaver_factory (quest.quest_factory):
         return 1
     def create (self):
         return quest_slaver()
+
+class MissionExecutor(Director.Mission):
+# call this class from the mission file
+   def __init__(self, classesToExecute):
+      Director.Mission.__init__(self)
+      self.classes = classesToExecute
+   def Execute(self):
+      for c in self.classes:
+         c.Execute()

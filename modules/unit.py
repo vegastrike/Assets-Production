@@ -1,5 +1,6 @@
 import VS
 import debug
+import Vector
 
 #statistics - for profiling (disabled in release version)
 try:
@@ -105,6 +106,7 @@ def inSystem (unit):
             return 1
         i.advance()
     return 0
+
 def getPlanet (whichsignificant, sig):
     i = VS.getUnitList()
     if sig:
@@ -210,9 +212,9 @@ def getUnitByFgIDFromNumber(fgid, ship_nr):
     found_unit = VS.Unit()
     while i.notDone() and not found_unit:
         un = i.current()
-        unit_fgid=unit.getFgID()
+        unit_fgid=un.getFgID()
         if(unit_fgid==fgid):
-            found_unit=unit
+            found_unit=un
         i.advance()
     return found_unit
 
@@ -291,3 +293,55 @@ def getUnitSequenceBackwards():
        rez2.append(rez1[i])
        i-=1
     return rez2
+
+# the ship will approach the station until 500 meters and then dock
+def approachAndDock (ship,station):
+    # if ship is more than 500m away it will set
+    distance = ship.getDistance(station) #+station.rSize()
+    if (distance>=500):
+        # orientate the nose of the ship towards the station
+        vec = Vector.Sub(station.Position(),ship.Position())
+        ship.SetOrientation((1,0,0),vec)
+        # set velocity proportional to distance from player
+        vec = max(10,Vector.Scale(Vector.SafeNorm(vec),distance/10))
+        ship.SetVelocity(vec)
+    # if ship has approached the station until 500m then stop it
+    if (distance<500):
+        ship.SetVelocity((0,0,0))
+        # this is also needed to stop rotation of the ship
+        ship.SetAngularVelocity((0,0,0))
+        # request clearance and dock seems to have no effect
+        station.RequestClearance(ship)
+        ship.Dock(station)
+        # emulate docking by making the ship disappear
+        ship.Kill()
+        ship.setNull()
+    return 1
+
+# orientate the nose of the ship towards the station
+def faceTaget (ship,target):
+    vec = Vector.Sub(target.Position(),ship.Position())
+    ship.SetOrientation((1,0,0),vec)
+
+# returns the facing angle between unit 1 and unit 2
+# when unit 1 is facing unit 2 the return value is 0
+# when unit 1 is completely turned away from unit 2 the return value is pi (~3.14)
+def facingAngleToUnit(unit1,unit2):
+    vec = Vector.Sub(unit2.Position(),unit1.Position())
+    dot = Vector.Dot(Vector.SafeNorm(unit1.GetOrientation()[2]),Vector.SafeNorm(vec))
+    angle = VS.acos(dot)
+    return angle
+
+# signed velocity is negative when the thrust is reverse
+# otherwise velocity is positive
+def getSignedVelocity(unit):
+    velocity = Vector.Dot(Vector.SafeNorm(unit.GetOrientation()[2]),unit.GetVelocity())
+    return velocity
+
+# change the direction and thrust forward at the same time
+def changeDirectionAndThrust(unit, angular, thrust):
+    import Vector
+    import vsrandom
+    unit.SetAngularVelocity(angular)
+    unit.LongitudinalThrust(thrust)
+    return 1

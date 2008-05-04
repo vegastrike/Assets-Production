@@ -250,7 +250,7 @@ def GetRelation(myfac,theirfac):
 		print 'bad faction'+myfac + theirfac 
 		import vsrandom
 		return vsrandom.uniform(-1,1)
-def AdjustRelation(myfac,theirfac,val):
+def AdjustRelation(myfac,theirfac,factor,rank):
    print "AdjustRelation"
 def GetNumFactions():
    return len(_factions) 
@@ -629,6 +629,9 @@ class Unit:
   def isDocked(self,dockingUnit): 
    print "isDocked" 
    return 0
+  #def isCloseEnoughToDock(self,unitToDockWith):
+  # print "isCloseEnoughToDock"
+  # return 0
   def Dock(self,unitToDockWith): 
    print "Dock" 
    return 0
@@ -874,7 +877,7 @@ class PythonAI:
    print "ChangeHeading"
   def ChangeLocalDirection(self,vec): 
    print "ChangeLocalDirection"
-  def MoveTo(self,Targ,afterburn): 
+  def MoveTo(self,vec,afterburn): 
    print "MoveTo"
   def MatchVelocity(self,terminate,vec,angvel,afterburn,local): 
    print "MatchVelocity"
