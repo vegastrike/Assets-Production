@@ -15,6 +15,7 @@ dnewsman_ = dynamic_news.NewsManager()
 
 plr=0
 basefac='neutral'
+
 def formatShip(ship):
     where=ship.find(".blank")
     if (where!=-1):
@@ -65,7 +66,7 @@ def getSystemsNAway (start,k,preferredfaction):
         return l
     return lbak
 
-syscreds=750
+syscreds = 3000 #750
 
 def GetRandomCompanyName():
     bnl=[]
@@ -82,7 +83,7 @@ def GetRandomCompanyName():
     import vsrandom
     idx = vsrandom.randint(0,len(bnl)-1)
     return bnl[idx]
-    
+
 def GetRandomCargoBrief():
     bnl=[]
     brief=''
@@ -100,7 +101,7 @@ def GetRandomCargoBrief():
     idx = vsrandom.randint(0,len(bnl)-1)
     brief = bnl[idx]
     return brief
-    
+
 def getCargoName(category):
     l=category.split('/')
     if len(l)>1:
@@ -109,7 +110,6 @@ def getCargoName(category):
         cargo = category
     cargo = cargo.replace('_',' ')
     return cargo
-
 
 def getMissionDifficulty ():
     import difficulty
@@ -142,24 +142,29 @@ def processSystem(sys):
     else:
         k=k[0]
     return k
+
 totalMissionNumber=0
 insysMissionNumber=0
+
 def checkInsysNum():
     global insysMissionNumber
     if insysMissionNumber:
         insysMissionNumber=0
         return True
     return False
+
 def checkMissionNum():
     global totalMissionNumber
     if totalMissionNumber:
         totalMissionNumber=0
         return True
     return False
+
 def checkCreatedMission():
     if (checkMissionNum()+checkInsysNum()>0):
         return True
     return False
+
 def isFixerString(s):
     k=str(s)
     if (len(k)<2):
@@ -180,13 +185,16 @@ def writemissionname(name,path,isfixer):
             totalMissionNumber+=1
     Director.pushSaveString(plr, "mission_names", name)
 
-    
+
 def writedescription(name):
     Director.pushSaveString(plr, "mission_descriptions", name.replace("_"," "))
+
 def writemissionsavegame (name):
     Director.pushSaveString(plr, "mission_scripts", name)
+
 def writemissionvars (vars):
     Director.pushSaveString(plr, "mission_vars", PickleTools.encodeMap(vars))
+
 def eraseExtras():
 	Director.clearSaveString(plr, "mission_scripts")
 	Director.clearSaveString(plr, "mission_names")
@@ -207,11 +215,13 @@ def eraseExtrasOld():
 
 fixerpct=0.02
 guildpct=0.4
+
 def restoreFixerPct():
     global fixerpct
     global guildpct
     fixerpct=.0625
     guildpct=.4
+
 def mungeFixerPct():
     global fixerpct
     global guildpct
@@ -226,13 +236,13 @@ def generateCleansweepMission(path,numplanets,enemy):
     forceattack=vsrandom.randrange(0,2)
     cleansweep=vsrandom.randrange(0,2)
     minships=maxships=vsrandom.randrange(1,4)
-    creds = 6*(cleansweep*4+1+capshipprob*4+.25*forceattack)*800*minships*fighterprob+1.2*syscreds*len(path)
+    creds = 20*(cleansweep*4+1+capshipprob*4+.25*forceattack)*800*minships*fighterprob+1.2*syscreds*len(path)
     creds*=getPriceModifier(False)
     addstr=""
     isFixer=vsrandom.random()
     if isFixer<fixerpct:
         creds*=2
-        addstr+="#F#bases/fixers/confed.spr#Talk to the Confed Officer#Thank you.  Your help makes space a safer place.#\n"
+        addstr+="#F#bases/fixers/confed.spr#Talk to the Confed Officer#Thank you. Your help makes space a safer place.#\n"
     elif isFixer<guildpct:
         creds*=1.5
         if (cleansweep):
@@ -254,7 +264,7 @@ def generateCleansweepMission(path,numplanets,enemy):
         additionalinstructions+="  Capital ships possibly in the area."
 
     writemissionsavegame (addstr+"import %s\ntemp=%s.%s(0, %d, %d, %d, %s,'',%d,%d,%f,%f,'%s',%d%s)\ntemp=0\n"%(missiontype,missiontype,missiontype,numplanets, dist, creds, str(path),minships,maxships,fighterprob,capshipprob,enemy,forceattack,additional))
-    writedescription("Authorities would like a detailed scan of the %s system. We require %d nav locations be visited on the scanning route.  The pay for this mission is %d. Encounters with %s forces likely.%s"%(processSystem(path[-1]),numplanets,creds,enemy,additionalinstructions))
+    writedescription("Authorities would like a detailed scan of the %s system. We require %d nav locations be visited on the scanning route. The pay for this mission is %d. Encounters with %s forces likely.%s"%(processSystem(path[-1]),numplanets,creds,enemy,additionalinstructions))
     ispoint="s"
     if numplanets==1:
         ispoint=""
@@ -291,6 +301,7 @@ def generatePatrolMission (path, numplanets):
 
 def isNotWorthy(fac):
     return VS.GetRelation(fac,VS.getPlayer().getFactionName())<0
+
 def generateEscortLocal(path,fg,fac):
     if (isNotWorthy(fac)):
         return
@@ -302,7 +313,7 @@ def generateEscortLocal(path,fg,fac):
     waves=vsrandom.randrange(0,5-diff)
     incoming=vsrandom.randrange(0,2)
     enfg =fg_util.AllFGsInSystem(enfac,path[-1])
-    creds=3500.0*diff*(1+waves);
+    creds=5500*diff*(1+waves);
     if (len(enfg)):
       enfg=enfg[vsrandom.randrange(0,len(enfg))]
     else:
@@ -335,7 +346,7 @@ def generateEscortMission (path,fg,fac):
     if typ in faction_ships.unescortable:
         typ = faction_ships.unescortable[typ]
     diff=vsrandom.randrange(0,6)    
-    creds=500*diff+1.2*syscreds*len(path)
+    creds=500*diff+0.5*syscreds*len(path)
     creds*=getPriceModifier(False)
     addstr=""
     isFixer=vsrandom.random()
@@ -386,8 +397,10 @@ def pathWarning(path,isFixer):
                 elif jj<len(factions):
                     message+=" and "
     return message
+
 def adjustQuantityDifficulty(max):
    return 3+int((max-3)*VS.GetDifficulty())
+
 def isHabitable (system):
     planetlist=VS.GetGalaxyProperty(system,"planets")
     if (len(planetlist)==0):
@@ -398,6 +411,7 @@ def isHabitable (system):
             return True
     debug.debug(str(planets)+ " Not in Habitable List")
     return False
+
 def generateCargoMission (path, numcargos,category, fac):
     #if (isNotWorthy(fac)):
     #    return  
@@ -405,7 +419,7 @@ def generateCargoMission (path, numcargos,category, fac):
     if (not launchcap) and not isHabitable(path[-1]):
         return
     diff=vsrandom.randrange(0,adjustQuantityDifficulty(6))
-    creds=250*numcargos+500*diff+syscreds*len(path)+5000*(category[:10]=="Contraband")+20000*(category[:9]=="starships")
+    creds=250*numcargos+500*diff+0.2*syscreds*len(path)+5000*(category[:10]=="Contraband")+20000*(category[:9]=="starships")
     addstr=""
     creds*=getPriceModifier(False)
     isFixer=vsrandom.random()
@@ -444,7 +458,7 @@ def generateCargoMission (path, numcargos,category, fac):
 def generateRescueMission(path,rescuelist):
     makemissionharder=vsrandom.randrange(0,2)
     numships = vsrandom.randrange(1,adjustQuantityDifficulty(6))+howMuchHarder(makemissionharder)
-    creds = (numships+len(path))*vsrandom.randrange(1041,1640)
+    creds = (numships+len(path))*vsrandom.randrange(4041,8640)
     creds*=getPriceModifier(makemissionharder!=0)
     if (creds>20000):
         creds=21000
@@ -463,7 +477,7 @@ def generateBountyMission (path,fg,fac):
     makemissionharder=vsrandom.randrange(0,2)
     diff=vsrandom.randrange(0,adjustQuantityDifficulty(7))+howMuchHarder(makemissionharder)
     runaway=(vsrandom.random()>=.75)
-    creds=1200+1000*runaway+450*diff+syscreds*len(path)
+    creds=20000+5000*runaway+450*diff+syscreds*len(path)
     if (cap):
         creds*=4
 
@@ -501,7 +515,7 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
     #defendtyp = fg_util.RandomShipIn(defendfg,defendfac)
     attacktyp = fg_util.RandomShipIn(attackfg,attackfac)                    
     isbase=fg_util.BaseFGInSystemName(path[-1])==defendfg
-    creds=1200
+    creds=5000
     minq = 1
     maxq = adjustQuantityDifficulty(5)
     makemissionharder=vsrandom.randrange(0,2)
@@ -532,7 +546,6 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
     writemissionname("Defend/Defend_%s_from_%s"%(defendfac, attackfac),path,isFixerString(addstr))
     writemissionvars( { 'MISSION_TYPE' : mistype } )
 
-
 def generateWingmanMission(fg, faction):
     numships=vsrandom.randrange(1,4)
     creds=10000+15000*numships
@@ -547,8 +560,7 @@ def generateWingmanMission(fg, faction):
     writedescription(s+" in the %s faction %s willing to help you out and fight with you as long as you pay %d credits."%(faction, are, creds))
     writemissionname("Wingmen/Hire_%d_%s_Wingm%sn"%(numships,faction,EorA),[VS.getSystemFile()],0)
     writemissionvars( { 'MISSION_TYPE' : 'WINGMAN' } )
-    
-    
+
 def GetFactionToDefend(thisfaction, fac, cursys):
     m = fg_util.FGsInSystem ("merchant",cursys)
     nummerchant=len(m)
@@ -677,7 +689,7 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
                         num_ipatrol-=1
                     if checkMissionNum():
                         num_patrol-=1
-                        
+
                 else:   # 50% - Cargo mission
                     numcargos=vsrandom.randrange(1,25)
                     if numcargos>20:
@@ -724,14 +736,14 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
                                 mungeFixerPct()
                             generateEscortLocal(j,k,f)
                             restoreFixerPct()
-                            if checkCreatedMission():                    
+                            if checkCreatedMission():
                                 num_iescort-=1
                     else:
                         if num_escort<=0:
                             mungeFixerPct()
                         generateEscortMission(j,k,f)
                         restoreFixerPct()
-                        if checkCreatedMission():                    
+                        if checkCreatedMission():
                             num_escort-=1
 
                     count+=1
