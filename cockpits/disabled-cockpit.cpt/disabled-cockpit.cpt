@@ -27,7 +27,7 @@
    <Speed xcent="-.125" ycent="-.895" width=".018" height=".036"/> 
    <SetSpeed xcent=".005" ycent="-.895" width=".018" height=".036"/>
    <WARPFIELDSTRENGTH xcent="-.125" ycent="-.945" width=".018" height=".036"/>
-   <FPS xcent=".9" ycent=".9" width=".018" height=".036"/>
+   <FPS xcent="0.94" ycent="0.96" width=".018" height=".036"/>
 
    <MissileLock file="light_missilelock.sprite" />
    <Jump file="light_jump.sprite" />
