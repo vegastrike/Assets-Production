@@ -18,7 +18,6 @@ def catInCatList (cat,catlist):
         if (loc==0):
             return 1
     return 0
-
 def adjustUnitCargo(un,cat,pr,qr):
     numcargo = un.numCargo()
     carglist =[]
@@ -33,7 +32,6 @@ def adjustUnitCargo(un,cat,pr,qr):
     for carg in carglist:
         un.addCargo(carg)
     carglist=0
-
 #universe.systemCargoDemand (("Natural_Products","starships",),.0001,1000)
 def systemCargoDemand (category,priceratio,quantratio,ships=1,planets=1):
     i = VS.getUnitList()
@@ -128,7 +126,6 @@ def _tmpint(str,default):
         return int(str)
     except:
         return default
-
 def significantUnits():
     ret=[]
     iter= VS.getUnitList()
@@ -199,7 +196,6 @@ def getDockedBase():
             return iter.current()
         iter.advance()
     return iter.current()
-
 def getDockedBaseName():
     un = getDockedBase()
     if (un):
