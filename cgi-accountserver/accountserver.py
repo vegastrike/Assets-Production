@@ -101,11 +101,14 @@ def getSystem(savegame):
 def getLoginInfo(conn, user, passwd, dologin):
 	p = Packet(conn)
 	result = conn.get_login_info(user, passwd)
-	if result:
+	error=result and result.get('error',None);
+	warning=result and result.get('warning','');
+	if result and not error:
 		if False and dologin and result['logged_in_server']:
 			#server doesn't support LOGIN_ALREADY very well.
 			p.addChar(ACCT_LOGIN_ALREADY)
 			p.addStringField('username', user)
+			p.addStringField('warning', warning)
 			print p
 			return
 		if not (result['savegame'] and result['csv']):
@@ -119,7 +122,7 @@ def getLoginInfo(conn, user, passwd, dologin):
 			conn.set_connected(user,True)
 			p.addChar(ACCT_LOGIN_ACCEPT)
 			p.addStringField('username',user)
-			p.addStringField('unused','') # Used to display password for some reason.
+			p.addStringField('warning',warning) # Used to display password for some reason.
 			p.addStringField('serverip',serverstrings[0])
 			p.addStringField('serverport',serverstrings[1])
 			p.addStringField('savegame', result['savegame'])
@@ -127,7 +130,8 @@ def getLoginInfo(conn, user, passwd, dologin):
 		else:
 			p.addChar(ACCT_LOGIN_DATA)
 			p.addStringField('username',user)
-			p.addStringField('unused','')
+			#warning='The accountserver will shut down tomorrow between apple and pear.'
+			p.addStringField('warning',warning)
 			p.addStringField('serverip',serverstrings[0])
 			p.addStringField('serverport',serverstrings[1])
 		print p
@@ -135,6 +139,9 @@ def getLoginInfo(conn, user, passwd, dologin):
 	else:
 		p.addChar(ACCT_LOGIN_ERROR)
 		p.addStringField('username', user)
+		if not error:
+			error=''
+		p.addStringField('error', error)
 		print p
 		return
 
@@ -224,9 +231,16 @@ def execute(conn,get,post):
 		print "\n<!-- UNKNOWN COMMAND -->"
 	
 if __name__=='__main__':
+	get_args = os.environ.get('QUERY_STRING','')
+	if False and get_args=='redirect':
+		sys.stdout.write("Status: 301 Moved Permanently\r\n")
+		sys.stdout.write("Location: http://localhost:6032/test_url/something?args\r\n")
+		sys.stdout.write("Content-Type: text/html\r\n")
+		sys.stdout.write("\r\n")
+		sys.stdout.write("Server has moved here: http://localhost:6032/test_url/something?args\r\n")
+		sys.exit(0)
 	sys.stdout.write("Content-Type: text/html\r\n");
 	cgitb.enable()
-	get_args = os.environ.get('QUERY_STRING','')
 	try:
 		conn = db.connect(settings.dbconfig, get_args)
 		post_args = ''
