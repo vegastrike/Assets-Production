@@ -22,11 +22,16 @@ vec4 name(in vec4 vertex) \
   rv.xyz    = lpos.xyz*vertex.w - vertex.xyz*lpos.w; \
   rv.w      = length(rv.xyz); \
   rv.xyz   /= rv.w; \
+  rv.w = 2.0; \
+  return rv; \
+}
+/*   \
   rv.w      = dot( vec3(1,rv.w,rv.w*rv.w), vec3(gl_LightSource[lightno].constantAttenuation, \
                                                 gl_LightSource[lightno].linearAttenuation, \
                                                 gl_LightSource[lightno].quadraticAttenuation) ); \
   return rv; \
 }
+*/
 
 lightPosAndAttenuation(lightPosAndAttenuation0, 0)
 lightPosAndAttenuation(lightPosAndAttenuation1, 1)
