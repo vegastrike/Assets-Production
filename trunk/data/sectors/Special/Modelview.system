@@ -9,6 +9,6 @@
 	<diffuse red="0.866025" green="0.455290" blue="0.345211"/>
 	<specular red="1.000000" green="0.276385" blue="0.158894"/>
 </Light>
-<Planet name="Cephid_17 A" file="stars/white_star.png" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="746000.000000" x="0" y="0" z="0"  Red="0.950000" Green="0.928820" Blue="0.645198" ReflectNoLight="true" light="0">
+<Planet name="Cephid_17 A" file="stars/white_star.texture" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="746000.000000" x="0" y="0" z="0"  Red="0.950000" Green="0.928820" Blue="0.645198" ReflectNoLight="true" light="0">
 </Planet>
 </system>

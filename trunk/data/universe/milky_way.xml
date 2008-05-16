@@ -4,7 +4,7 @@
    <var name="texture" value="white"/>
    <var name="texture_min" value="0"/>
    <var name="texture_max" value="0"/>
-   <var name="texture_ext" value="png"/>
+   <var name="texture_ext" value="texture"/>
    <var name="atmosphere" value="false"/>
    <var name="lights" value=""/>
    <var name="initial" value=""/>
@@ -13,17 +13,17 @@
        <var name="texture" value="planets/Dirt"/>
        <var name="texture_max" value="1"/>
        <var name="initial" value="i"/>
-       <var name="lights" value="Dirt_light.png Dirt_light_repeat.pngwrapx64wrapy64"/>
+       <var name="lights" value="Dirt_light.texture Dirt_light_repeat.pngwrapx64wrapy64"/>
    </planet>
    <planet name="Human_Homeworld:Earth">
        <var name="texture" value="sol/earth"/>
        <var name="initial" value="earth"/>
-       <var name="lights" value="earthlights.jpg "/>
+       <var name="lights" value="earthlights.texture "/>
    </planet>
    <planet name="Mars">
        <var name="texture" value="sol/mars"/>
        <var name="initial" value="mars"/>
-       <var name="lights" value="marslights.jpg"/>
+       <var name="lights" value="marslights.texture"/>
    </planet>
    <planet name="Luna">
        <var name="texture" value="sol/moon"/>
@@ -48,14 +48,14 @@
    <planet name="University">
        <var name="texture" value="planets/university"/>
        <var name="initial" value="u"/>
-       <var name="lights" value="university*_light.png"/>
+       <var name="lights" value="university*_light.texture"/>
        
    </planet>
    <planet name="Ice">
        <var name="texture" value="planets/Snow"/>
        <var name="texture_max" value="2"/>
        <var name="initial" value="fr"/>
-       <var name="lights" value="Snow_light.pngwrapx6wrapy3 Dirt_light_repeat.pngwrapx64wrapy64"/>
+       <var name="lights" value="Snow_light.texturewrapx6wrapy3 Dirt_light_repeat.texturewrapx64wrapy64"/>
    </planet>
    <planet name="Tropical">
        <var name="texture" value="planets/carribean"/>
