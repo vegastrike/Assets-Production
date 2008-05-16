@@ -43,14 +43,14 @@
    <ShieldL file="shieldr.sprite" xcent="-.665" ycent="-.700" GaugeRight="1"/>
 
    <!-- Octet Armor -->
-   <ArmorFRT file="armorf.sprite" width="0.204"  height="0.136" GaugeDown="1" />
-   <ArmorFLT file="armorf.sprite" width="-0.204" height="0.136" GaugeDown="1" />
-   <ArmorBRT file="armorf.sprite" width="0.204"  height="0.136" xcent="-0.765" ycent="-0.632" />
-   <ArmorBLT file="armorf.sprite" width="-0.204" height="0.136" xcent="-0.765" ycent="-0.632" />
-   <ArmorFRB file="armorr.sprite" width="0.102"  height="0.272" GaugeRight="1" />
-   <ArmorBRB file="armorr.sprite" width="0.102" height="-0.272" GaugeRight="1" />
-   <ArmorFLB file="armorr.sprite" width="0.102"  height="0.272" xcent="-0.714" ycent="-0.700" GaugeLeft="1" />
-   <ArmorBLB file="armorr.sprite" width="0.102" height="-0.272" xcent="-0.714" ycent="-0.700" GaugeLeft="1" />
+   <ArmorFRT file="armort.sprite" width="0.204"  height="0.136" GaugeDown="1" />
+   <ArmorFLT file="armort.sprite" width="-0.204" height="0.136" GaugeDown="1" />
+   <ArmorBRT file="armort.sprite" width="0.204"  height="0.136" xcent="-0.765" ycent="-0.632" />
+   <ArmorBLT file="armort.sprite" width="-0.204" height="0.136" xcent="-0.765" ycent="-0.632" />
+   <ArmorFRB file="armorb.sprite" width="0.102"  height="0.272" GaugeRight="1" />
+   <ArmorBRB file="armorb.sprite" width="0.102" height="-0.272" GaugeRight="1" />
+   <ArmorFLB file="armorb.sprite" width="0.102"  height="0.272" xcent="-0.714" ycent="-0.700" GaugeLeft="1" />
+   <ArmorBLB file="armorb.sprite" width="0.102" height="-0.272" xcent="-0.714" ycent="-0.700" GaugeLeft="1" />
 
    <VDU TextRows="30" TextCols="25" type="Weapon Manifest Damage" file="wvdu.sprite" />	
    <VDU TextRows="15" TextCols="25" type="Target View TargetManifest Nav" file ="rvdu.sprite" />
