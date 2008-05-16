@@ -9,10 +9,10 @@
 # as published by the Free Software Foundation; either version 2
 # of the License, or (at your option) any later version.
 #
-# Description: Jump point blockade to an aera system
+# Description: SlaverGuild fight with Confed flight group
 #              adapted from original script by hellcatv
 # Author: pyramid
-# Version: 2008-04-24
+# Version: 2008-05-12
 #
 #---------------------------------------------------------------------------------
 
@@ -29,6 +29,7 @@ class quest_slaver (quest.quest):
     def __init__ (self):
         self.system = VS.getSystemName()
         playa = VS.getPlayer()
+        self.msgColor = ("#9999FF","#FF9999")
         if (playa):
             confed = faction_ships.factions[faction_ships.confed]
             pirates = faction_ships.factions[faction_ships.pirates]
@@ -37,7 +38,11 @@ class quest_slaver (quest.quest):
             launch.launch_wave_around_unit ('Illustrious',confed,faction_ships.getRandomFighter(confed),'default',4,100,200,illustrious)
             launch.launch_wave_around_unit ('SlaverGuild',pirates,faction_ships.getRandomFighter(pirates),'default',4,100,200,illustrious)
             launch.launch_wave_around_unit ('SlaverGuild',pirates,faction_ships.getRandomCapitol(pirates),'default',2,100,200,illustrious)
-            VS.IOmessage (3,"[Computer]","all","Scans show the remnants of the Slaver Guild being cleaned up by Special Forces.")
+            VS.IOmessage (3,"[Computer]","privateer",self.msgColor[0]+"Scans show the remnants of the Slaver Guild being cleaned up by Special Forces.")
+
+    # things that could be added/improved
+    # (a) some comm chatter
+    # (b) reward for killing either one fg or the other
     def Execute (self):
         if (not VS.getSystemName()==self.system):
             self.playernum = -1

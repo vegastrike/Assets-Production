@@ -10,7 +10,7 @@
 # of the License, or (at your option) any later version.
 #
 # Author: pyramid
-# Version: 2008-04-24
+# Version: 2008-05-15
 #
 #---------------------------------------------------------------------------------
 
@@ -25,6 +25,13 @@
 # (b) publish news on available flight refresher
 # (c) synchronize talk and animation
 # (d) change the mission name that appears on the hud
+# (e) make tutorial repeatable after some time
+# (f) oswald should become very aggressive if damaged twice and mouthy when attacked
+# 'so you want to learn how to dodge lasers eh?', 'you aren't the first newbie i've had to put down, and you wont be the last'
+# maybe he can have sympathy and make it a lesson if he beats you
+# like stop before you destroy the player's ship and mouth off about how he hopes you learned
+# something, 'pirates won't be so forgiving'
+# (g) fix mission name and delete mission targets after each stage
 
 # import used libraries
 import quest
@@ -35,18 +42,19 @@ import universe
 import unit
 import vsrandom
 import launch
+import news
 
 # predefine stages
 SAVE_KEY = "quest_tutorial"
 STAGE_DOCKED = 0
 STAGE_AWAY = 1
 STAGE_ORBIT = 2
-STAGE_ACCEPT = 3
-COMPLETE_TUTORIAL1 = 4
-COMPLETE_TUTORIAL2 = 5
-COMPLETE_TUTORIAL3 = 6
-COMPLETE_TUTORIAL4 = 7
-COMPLETE_TUTORIAL5 = 8
+STAGE_ACCEPT = 4
+COMPLETE_TUTORIAL1 = 5
+COMPLETE_TUTORIAL2 = 6
+COMPLETE_TUTORIAL3 = 7
+COMPLETE_TUTORIAL4 = 8
+COMPLETE_TUTORIAL5 = 9
 STAGE_DECLINE = 98
 
 # the class that will be executed
@@ -59,13 +67,21 @@ class quest_tutorial (quest.quest):
         self.drone = VS.Unit()
         self.stage = STAGE_DOCKED
         self.dockeddistance = 0
-        self.timer = VS.GetGameTime()
+        self.timer = VS.GetGameTime() # controls the stage timing
+        self.talktime = VS.GetGameTime() #controls individual talk time within animation
+        self.anitime = VS.GetGameTime() # controls the animation time
         self.stayputtime = 0
-        self.practice = 0
+        self.practice = 0 #sequence within a practice function
         self.msgColor = "#FFFF99"
         self.objectives = []        # list of objectives
         self.objective = 0          # current objective
         self.startobjectname = ""
+        self.animations = [["com_tutorial_oswald.ani",2]] # the actors and ani duration
+        # publish news
+        text = "CEPHID SECURITY INITIATIVE GIVES TRINING FOR FLIGHT SAFETY\\\The Cephid Security Initiative (CSI) is offering training for pilots with the purpose to enhance flight safety in and out of the system. "
+        text += "A representative said, this training is sponsored by volunteer contributors and open for all pilots. "
+        text += "If you are a greenhorn in space faring or a long-time pilot you may meet one of the volunteers when leaving from a planet or station into space and participate in the training or refresher."
+        news.publishNews(text)
 
     def putSaveValue(self,value, key=SAVE_KEY):
         Director.eraseSaveData(self.player.isPlayerStarship(),key,0)
@@ -140,11 +156,17 @@ class quest_tutorial (quest.quest):
             #VS.launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
             self.drone = VS.launch("Oswald","Robin","neutral","unit","default",1,1,vec,'')
             # when launching give the player some text and ask him to decide if he wants to participate
-            #self.player.commAnimation("com_tutorial_oswald_01.ani")
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Hello traveler.")
             VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"My name is Oswald and I am offering flight assistance.")
             VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"Would you like to refresh your space faring skills?")
             VS.IOmessage (15,"Oswald","Privateer",self.msgColor+"To participate in my tutorial mission, cut down your engines with the #9999FFBACKSPACE"+self.msgColor+" key, let me approach you, and stay put until I contact you again.")
+            # set comm animation parameters
+            # list [ani file, duration]
+            #self.animations = [["com_tutorial_oswald.ani",2]]
+            # list [start,duration,anilist_entry]
+            self.sequence = [[0,2,0],[5,4,0],[10,4,0],[15,4,0]]
+            #set talktime start
+            self.talktime = VS.GetGameTime()
             # on launching the drone, set its position near the player
             vec = self.player.Position()
             vec = Vector.Add (vec,(vsrandom.uniform(-1000,1000),
@@ -155,8 +177,9 @@ class quest_tutorial (quest.quest):
             self.drone.PrimeOrders()
             # display the drone on HUD
             self.player.SetTarget(self.drone)
-            self.stage = STAGE_ORBIT
-            self.timer = VS.GetGameTime()+20
+            self.stage += 1
+            # duration of this part until end of animation
+            self.timer = VS.GetGameTime() + 20
 
     # keeps the drone near the player
     def orbitMe (self):
@@ -206,15 +229,35 @@ class quest_tutorial (quest.quest):
             VS.IOmessage (25,"Oswald","Privateer",self.msgColor+"To scroll the messages back and forth use the #9999FFPage Up"+self.msgColor+" and #9999FFPage Down"+self.msgColor+" keys. Try it out now.")
             VS.IOmessage (35,"Oswald","Privateer",self.msgColor+"Good.")
             VS.IOmessage (40,"Oswald","Privateer",self.msgColor+"Now you can send me a message by pressing the #9999FFF1"+self.msgColor+" key.")
+            # set comm animation parameters
+            self.sequence = [[0,2,0],[5,4,0],[10,4,0],[15,2,0],[20,4,0],[25,4,0],[35,2,0],[40,4,0]]
+            self.talktime = VS.GetGameTime()
             self.timer = VS.GetGameTime()+50
             self.practice = 1
-        if (self.practice==1 and VS.GetGameTime()>self.timer):
+        if (self.practice==1 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==1 and VS.GetGameTime()>=self.timer):
+            self.practice = 2
+        if (self.practice==2 and VS.GetGameTime()>self.timer):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Usually, messages assigned to keys #9999FFF1"+self.msgColor+" and #9999FFF2"+self.msgColor+" are friendly messages which slightly increase you relation with a faction, while the other keys #9999FFF3"+self.msgColor+" and #9999FFF4"+self.msgColor+" decrease your relationship.")
             VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"Sometimes it can be very useful to send multiple friendly messages to improve your relation with a hostile faction.")
             VS.IOmessage (20,"Oswald","Privateer",self.msgColor+"That's about it on the messages display.")
+            # set comm animation parameters
+            self.sequence = [[0,10,0],[10,4,0],[20,2,0]]
+            self.talktime = VS.GetGameTime()
             self.timer = VS.GetGameTime()+30
-            self.practice = 2
-        if (self.practice==2 and VS.GetGameTime()>self.timer):
+            self.practice = 3
+        if (self.practice==3 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==3 and VS.GetGameTime()>=self.timer):
+            self.practice = 4
+        if (self.practice==4 and VS.GetGameTime()>self.timer):
             # make sure to reset the counter for the next practice loops
             self.practice = 0
             self.timer = VS.GetGameTime()+0
@@ -222,54 +265,96 @@ class quest_tutorial (quest.quest):
             self.putSaveValue(self.stage)
 
     def tutorialNav (self):
-        VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Now, let's review the navigation information on your HUD. Theory first, then some practice.")
-        VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"In the lower left corner you will find your ship's shield (blue) and armor (orange) status.")
-        VS.IOmessage (15,"Oswald","Privateer",self.msgColor+"We will come to the text indicators later.")
-        VS.IOmessage (20,"Oswald","Privateer",self.msgColor+"In the middle of the bottom part you have your dashboard with the front radar on the left side and the rear radar on the right side.")
-        VS.IOmessage (30,"Oswald","Privateer",self.msgColor+"The active target will display as a small cross on your radar. The other targets will be dots with their colors representing your relation to them.")
-        VS.IOmessage (40,"Oswald","Privateer",self.msgColor+"Green is friendly, blue/yellow/red is hostile. Neutral and significant objects like planets, stations, wormholes, or suns are white.")
-        VS.IOmessage (50,"Oswald","Privateer",self.msgColor+"The center part of the dashboard has four round indicators which begin flashing when:")
-        VS.IOmessage (60,"Oswald","Privateer",self.msgColor+" (L) a hostile is having missile lock on you")
-        VS.IOmessage (70,"Oswald","Privateer",self.msgColor+" (J) you are in jump point reach and your jump drive is ready")
-        VS.IOmessage (80,"Oswald","Privateer",self.msgColor+" (S) your SPEC drive, needed for faster-than-light (FTL) travel, is activated")
-        VS.IOmessage (90,"Oswald","Privateer",self.msgColor+" (E) your electronic counter measures (ECM) are active")
-        VS.IOmessage (100,"Oswald","Privateer",self.msgColor+"Further below are three colored bars indicating")
-        VS.IOmessage (105,"Oswald","Privateer",self.msgColor+" (CAPACITOR) your weapons capacitor charge")
-        VS.IOmessage (115,"Oswald","Privateer",self.msgColor+" (DRIVES) your SPEC and jump drives energy charge")
-        VS.IOmessage (125,"Oswald","Privateer",self.msgColor+" (FUEL) status for in-system travel and overdrive propulsion")
-        VS.IOmessage (135,"Oswald","Privateer",self.msgColor+"The numbers below are your current speed to the left and your set speed to the right.")
-        VS.IOmessage (145,"Oswald","Privateer",self.msgColor+"Further below there is the effective SPEC velocity to the left and the flight computer (FCMP) mode.")
-        VS.IOmessage (155,"Oswald","Privateer",self.msgColor+"So much for theory. Let's do some practice now.")
-        self.timer = VS.GetGameTime()+160
-        self.stage = COMPLETE_TUTORIAL2
-        self.putSaveValue(self.stage)
+        if (self.practice==0):
+            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Now, let's review the navigation information on your HUD. Theory first, then some practice.")
+            VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"In the lower left corner you will find your ship's shield (blue) and armor (orange) status.")
+            VS.IOmessage (15,"Oswald","Privateer",self.msgColor+"We will come to the text indicators later.")
+            VS.IOmessage (20,"Oswald","Privateer",self.msgColor+"In the middle of the bottom part you have your dashboard with the front radar on the left side and the rear radar on the right side.")
+            VS.IOmessage (30,"Oswald","Privateer",self.msgColor+"The active target will display as a small cross on your radar. The other targets will be dots with their colors representing your relation to them.")
+            VS.IOmessage (40,"Oswald","Privateer",self.msgColor+"Green is friendly, red is hostile, yellow is neutral. Attacking ship is blue, targetting_ship is light blue, locking ship is violet. Neutral and significant objects like planets, stations, wormholes, or suns are white.")
+            VS.IOmessage (50,"Oswald","Privateer",self.msgColor+"The center part of the dashboard has four round indicators which begin flashing when:")
+            VS.IOmessage (60,"Oswald","Privateer",self.msgColor+" (L) a hostile is having missile lock on you")
+            VS.IOmessage (70,"Oswald","Privateer",self.msgColor+" (J) you are in jump point reach and your jump drive is ready")
+            VS.IOmessage (80,"Oswald","Privateer",self.msgColor+" (S) your SPEC drive, needed for faster-than-light (FTL) travel, is activated")
+            VS.IOmessage (90,"Oswald","Privateer",self.msgColor+" (E) your electronic counter measures (ECM) are active")
+            VS.IOmessage (100,"Oswald","Privateer",self.msgColor+"Further below are three colored bars indicating")
+            VS.IOmessage (105,"Oswald","Privateer",self.msgColor+" (CAPACITOR) your weapons capacitor charge")
+            VS.IOmessage (115,"Oswald","Privateer",self.msgColor+" (DRIVES) your SPEC and jump drives energy charge")
+            VS.IOmessage (125,"Oswald","Privateer",self.msgColor+" (FUEL) status for in-system travel and overdrive propulsion")
+            VS.IOmessage (135,"Oswald","Privateer",self.msgColor+"The numbers below are your current speed to the left and your set speed to the right.")
+            VS.IOmessage (145,"Oswald","Privateer",self.msgColor+"Further below there is the effective SPEC velocity to the left and the flight computer (FCMP) mode.")
+            VS.IOmessage (155,"Oswald","Privateer",self.msgColor+"So much for theory. Let's do some practice now.")
+            # set comm animation parameters
+            self.sequence = [[0,6,0],[10,6,0],[15,4,0],[20,6,0],[30,6,0],[40,6,0],[50,4,0],[60,3,0],[70,4,0],[80,4,0],[90,4,0],[100,3,0],[105,4,0],[115,4,0],[125,4,0],[135,4,0],[145,5,0],[155,4,0]]
+            self.talktime = VS.GetGameTime()
+            self.timer = VS.GetGameTime()+160
+            self.practice = 1
+        if (self.practice==1 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==1 and VS.GetGameTime()>=self.timer):
+            self.practice = 2
+        if (self.practice==2 and VS.GetGameTime()>self.timer):
+            # make sure to reset the counter for the next practice loops
+            self.practice = 0
+            self.timer = VS.GetGameTime()+0
+            self.stage = COMPLETE_TUTORIAL2
+            self.putSaveValue(self.stage)
 
     def practiceNav (self):
         # practice intro
         if (self.practice==0):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"First some basic navigation and targetting.")
+            self.player.commAnimation("com_tutorial_oswald.ani")
             self.timer = VS.GetGameTime()+5
             self.practice = 1
-        # make the drone the players target
         if (self.practice==1):
-            # explain basic targetting if dron is not already target
+            # explain basic targetting if drone is not already target
             if (unit.getUnitFullName(self.player.GetTarget()) != unit.getUnitFullName(self.drone)):
-                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"In the lower right corner you can see the target video display unit (VDU) where you can see you current target.")
-                VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"Target me by repeatedly toggling the #9999FFT"+self.msgColor+" key until you see my ship on the right VDU.")
-                VS.IOmessage (7,"Oswald","Privateer",self.msgColor+"Should you pass me, you may reverse the target selection sequence by pressing the #9999FFShift+T"+self.msgColor+" keys.")
-            self.timer = VS.GetGameTime()+7
-            self.practice = 2
-        if (self.practice==2 and unit.getUnitFullName(self.player.GetTarget())==unit.getUnitFullName(self.drone)):
+                nam = unit.getUnitFullName(self.drone)
+                self.objective = VS.addObjective("Target %s" % nam)
+                self.objectives+=[int(self.objective)]
+                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"In the lower right corner you can see the target video display unit (VDU) where you can see your current target.")
+                VS.IOmessage (8,"Oswald","Privateer",self.msgColor+"Target me by repeatedly toggling the #9999FFT"+self.msgColor+" key until you see my ship on the right VDU.")
+                VS.IOmessage (14,"Oswald","Privateer",self.msgColor+"Should you pass me, you may reverse the target selection sequence by pressing the #9999FFShift+T"+self.msgColor+" keys.")
+                # set comm animation parameters
+                self.sequence = [[0,6,0],[8,4,0],[14,4,0]]
+                self.talktime = VS.GetGameTime()
+                self.timer = VS.GetGameTime()+18
+                self.practice = 2
+            else:
+                self.practice = 3
+        if (self.practice==2 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==2 and VS.GetGameTime()>=self.timer):
+            self.practice = 3
+        # make the drone the players target
+        if (self.practice==3 and unit.getUnitFullName(self.player.GetTarget())==unit.getUnitFullName(self.drone)):
             nam = unit.getUnitFullName(self.drone)
-            self.objective = VS.addObjective("Target %s" % nam)
+            self.objective = VS.addObjective("Face %s" % nam)
             self.objectives+=[int(self.objective)]
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"OK. Now, orient your ship so that your targetting reticule (cross) points directly at me.")
             VS.IOmessage (3,"Oswald","Privateer",self.msgColor+"To get my ship into your visual range just turn in the direction of the white target arrow at the edge of your HUD.")
-            VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"When my ship is in your visual range you will notice that it is framed by a target box.")
-            VS.IOmessage (7,"Oswald","Privateer",self.msgColor+"Align your targetting reticule with my ship.")
-            self.timer = VS.GetGameTime()+7
-            self.practice = 3
-        if (self.practice==3):
+            VS.IOmessage (8,"Oswald","Privateer",self.msgColor+"When my ship is in your visual range you will notice that it is framed by a target box.")
+            VS.IOmessage (12,"Oswald","Privateer",self.msgColor+"Align your targetting reticule with my ship.")
+            # set comm animation parameters
+            self.sequence = [[0,3,0],[3,5,0],[8,4,0],[12,2,0]]
+            self.talktime = VS.GetGameTime()
+            self.timer = VS.GetGameTime()+14
+            self.practice = 4
+        if (self.practice==4 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==4 and VS.GetGameTime()>=self.timer):
+            self.practice = 5
+        if (self.practice==5):
             # check if the player is facing the drone
             angle = self.facingAngleToUnit(self.player,self.drone)
             #print "facing: " + str(angle)
@@ -277,11 +362,12 @@ class quest_tutorial (quest.quest):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Well done.")
                 VS.IOmessage (2,"Oswald","Privateer",self.msgColor+"Now, turn your ship away from my ship and accelerate to full speed using the #9999FF\\"+self.msgColor+" key.")
+                self.player.commAnimation("com_tutorial_oswald.ani")
                 self.objective = VS.addObjective("Set max velocity")
                 self.objectives+=[int(self.objective)]
                 self.timer = VS.GetGameTime()+10
-                self.practice = 4
-        if (self.practice==4):
+                self.practice = 6
+        if (self.practice==6):
             # check if the player is facing away
             angle = self.facingAngleToUnit(self.player,self.drone)
             velocity = Vector.Mag(self.player.GetVelocity())
@@ -289,41 +375,46 @@ class quest_tutorial (quest.quest):
             if (angle>=0.20 and velocity>=295):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"And now set your velocity reference to zero by pressing the #9999FFBACKSPACE"+self.msgColor+" key and come to a complete stop.")
+                self.player.commAnimation("com_tutorial_oswald.ani")
+                self.player.commAnimation("com_tutorial_oswald.ani")
                 self.objective = VS.addObjective("Set full stop")
                 self.objectives+=[int(self.objective)]
                 self.timer = VS.GetGameTime()+0
-                self.practice = 5
-        if (self.practice==5):
+                self.practice = 7
+        if (self.practice==7):
             # check if the player is stopped
             velocity = Vector.Mag(self.player.GetVelocity())
             if (velocity<=2):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"You can also increment your velocity gradually with the #9999FF+"+self.msgColor+" key. Accelerate to 100 m/s now.")
+                self.player.commAnimation("com_tutorial_oswald.ani")
                 self.objective = VS.addObjective("Set velocity reference to 100m/s")
                 self.objectives+=[int(self.objective)]
                 self.timer = VS.GetGameTime()+0
-                self.practice = 6
-        if (self.practice==6):
+                self.practice = 8
+        if (self.practice==8):
             # check if the player has velocity >100
             velocity = Vector.Mag(self.player.GetVelocity())
             if (velocity>=98 and velocity<=110):
                 VS.setCompleteness(self.objectives[3],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"In the same way you can reduce your velocity gradually with the #9999FF-"+self.msgColor+" key. Deccelerate to 50 m/s.")
+                self.player.commAnimation("com_tutorial_oswald.ani")
                 self.objective = VS.addObjective("Set velocity reference to 50m/s")
                 self.objectives+=[int(self.objective)]
                 self.timer = VS.GetGameTime()+0
-                self.practice = 7
-        if (self.practice==7):
+                self.practice = 9
+        if (self.practice==9):
             # check if the player has velocity <50
             velocity = Vector.Mag(self.player.GetVelocity())
             if (velocity<=55 and velocity>=40):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Great. If you further deccelerate your velocity with the #9999FF-"+self.msgColor+" key you can actually reverse your thrust. Deccelerate now to -20 m/s.")
+                self.player.commAnimation("com_tutorial_oswald.ani")
                 self.objective = VS.addObjective("Set velocity reference to -20m/s")
                 self.objectives+=[int(self.objective)]
                 self.timer = VS.GetGameTime()+0
-                self.practice = 8
-        if (self.practice==8):
+                self.practice = 10
+        if (self.practice==10):
             # check if the player has velocity <=-20m/s
             velocity = self.getSignedVelocity(self.player)
             if (velocity<=-18):
@@ -331,15 +422,26 @@ class quest_tutorial (quest.quest):
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Excellent.")
                 VS.IOmessage (1,"Oswald","Privateer",self.msgColor+"You have learned how to target, orient your ship, accellerate, decellerate, and bring your ship to a stop.")
                 VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"I'm sure this will come in handy during your future endeavors.")
-                self.timer = VS.GetGameTime()+0
-                self.practice = 9
-        if (self.practice==9):
+                # set comm animation parameters
+                self.sequence = [[0,1,0],[1,4,0],[5,4,0]]
+                self.talktime = VS.GetGameTime()
+                self.timer = VS.GetGameTime()+10
+                self.practice = 11
+        if (self.practice==11 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==11 and VS.GetGameTime()>=self.timer):
+            self.practice = 12
+        if (self.practice==12):
             # make sure to reset the counter for the next practice loops
             self.practice = 0
             self.timer = VS.GetGameTime()+10
             self.stage = COMPLETE_TUTORIAL3
             self.putSaveValue(self.stage)
             #print "NAV - save: " + str(self.getSaveValue())
+
     def practiceSpec (self):
         # practice intro
         if (self.practice==0):
@@ -350,37 +452,68 @@ class quest_tutorial (quest.quest):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Let's practice some faster than light (FTL) travel now.")
             VS.IOmessage (2,"Oswald","Privateer",self.msgColor+"Target "+unit.getUnitFullName(self.jump)+" using the #9999FFN"+self.msgColor+" or the #9999FFShift+N"+self.msgColor+" keys.")
             self.player.commAnimation("com_tutorial_oswald.ani")
-            self.timer = VS.GetGameTime()+3
+            self.player.commAnimation("com_tutorial_oswald.ani")
+            self.timer = VS.GetGameTime()+4
             self.practice = 1
         if (self.practice==1 and self.player.GetTarget()==self.jump):
             VS.setCompleteness(self.objectives[self.objective],1.0)
-            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Set your velocity to maximum with the #9999FF\\"+self.msgColor+" key and activate the SPEC auto pilot with the #9999FFA"+self.msgColor+" key to get there. Hold on, as this might take a while if you are close to massive objects.")
-            VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"You will notice that your SPEC drive indicator (S) is flashing, which indicates that it is active.")
+            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Set your velocity to maximum with the #9999FF\\"+self.msgColor+" key and activate the SPEC auto pilot with the #9999FFA"+self.msgColor+" key to get there. Hang on for a while, as this might take a while if you are close to massive objects.")
+            VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"You will notice that your SPEC drive indicator (S) is flashing, which indicates that it is active.")
             VS.IOmessage (15,"Oswald","Privateer",self.msgColor+"During FTL travel your shields become inactive, as you can see below on your ship VDU.")
-            VS.IOmessage (25,"Oswald","Privateer",self.msgColor+"You will also notice that your steering has no effect on your vessel since the auto pilot has taken over the controls.")
-            VS.IOmessage (35,"Oswald","Privateer",self.msgColor+"You can always interrupt and resume the auto pilot toggling the #9999FFA"+self.msgColor+" key. You may try that, if you wish.")
-            VS.IOmessage (45,"Oswald","Privateer",self.msgColor+"In the lower left corner, just above your ship staus you will notice two indicators.")
-            VS.IOmessage (50,"Oswald","Privateer",self.msgColor+"SPEC shows you if your SPEC drive is enabled.")
-            VS.IOmessage (55,"Oswald","Privateer",self.msgColor+"AUTO tells you if auto pilot is engaged.")
+            VS.IOmessage (20,"Oswald","Privateer",self.msgColor+"You will also notice that your steering has no effect on your vessel since the auto pilot has taken over the controls.")
+            VS.IOmessage (26,"Oswald","Privateer",self.msgColor+"You can always interrupt and resume the auto pilot toggling the #9999FFA"+self.msgColor+" key. You may try that, if you wish.")
+            VS.IOmessage (35,"Oswald","Privateer",self.msgColor+"In the lower left corner, just above your ship staus you will notice two indicators.")
+            VS.IOmessage (40,"Oswald","Privateer",self.msgColor+"SPEC shows you if your SPEC drive is enabled.")
+            VS.IOmessage (45,"Oswald","Privateer",self.msgColor+"AUTO tells you if auto pilot is engaged.")
             name = unit.getUnitFullName(self.jump)
             self.objective = VS.addObjective("Approach %s" % name)
             self.objectives+=[int(self.objective)]
-            self.timer = VS.GetGameTime()+55
+            # set comm animation parameters
+            self.sequence = [[0,10,0],[10,4,0],[15,4,0],[20,5,0],[26,6,0],[35,4,0],[40,3,0],[45,2,0]]
+            self.talktime = VS.GetGameTime()
+            self.timer = VS.GetGameTime()+47
             self.practice = 2
-        if (self.practice==2 and self.player.getDistance(self.jump)<=10000):
+        if (self.practice==2 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==2 and VS.GetGameTime()>=self.timer):
+            self.practice = 3
+        if (self.practice==3 and self.player.getDistance(self.jump)<=10000):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Almost there.")
             VS.IOmessage (2,"Oswald","Privateer",self.msgColor+"The auto pilot only gives back control only some time after the SPEC auto pilot light stopped flashing.")
             VS.IOmessage (8,"Oswald","Privateer",self.msgColor+"Notice also how your shields start recharing when leaving FTL travel mode.")
-            self.timer = VS.GetGameTime()+8
-            self.practice = 3
-        if (self.practice==3 and self.player.getDistance(self.jump)<=3000):
+            # set comm animation parameters
+            self.sequence = [[0,1,0],[2,4,0],[8,4,0]]
+            self.talktime = VS.GetGameTime()
+            self.timer = VS.GetGameTime()+12
+            self.practice = 4
+        if (self.practice==4 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==4 and VS.GetGameTime()>=self.timer):
+            self.practice = 5
+        if (self.practice==5 and self.player.getDistance(self.jump)<=3000):
             VS.setCompleteness(self.objectives[self.objective],1.0)
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Here we are.")
             VS.IOmessage (2,"Oswald","Privateer",self.msgColor+"You may try out manual FTL travel at this point in time.")
-            VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"Target planet Atlantis using your significant objects targetting keys #9999FFN"+self.msgColor+" and #9999FFShift+N"+self.msgColor+".")
-            self.timer = VS.GetGameTime()+10
+            VS.IOmessage (8,"Oswald","Privateer",self.msgColor+"Target planet Atlantis using your significant objects targetting keys #9999FFN"+self.msgColor+" and #9999FFShift+N"+self.msgColor+".")
+            # set comm animation parameters
+            self.sequence = [[0,1,0],[2,4,0],[8,4,0]]
+            self.talktime = VS.GetGameTime()
+            self.timer = VS.GetGameTime()+12
             self.practice += 1
-        if (self.practice==4 and VS.GetGameTime()>self.timer):
+        if (self.practice==6 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==6 and VS.GetGameTime()>=self.timer):
+            self.practice = 7
+        if (self.practice==7 and VS.GetGameTime()>self.timer):
             self.destination = unit.getUnitByName('Atlantis')
             self.distance = self.player.getDistance(self.destination)
             name = unit.getUnitFullName(self.destination)
@@ -388,16 +521,26 @@ class quest_tutorial (quest.quest):
             self.objectives+=[int(self.objective)]
             self.timer = VS.GetGameTime()
             self.practice += 1
-        if (self.practice==5 and self.player.GetTarget()==self.destination):
+        if (self.practice==8 and self.player.GetTarget()==self.destination):
             VS.setCompleteness(self.objectives[self.objective],1.0)
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Roger that. Turn towards the planet, set your velocity to maximum with the #9999FF\\"+self.msgColor+" key, and enable the manual SPEC with the #9999FFShift+A"+self.msgColor+" key to approach the planet.")
-            VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"Make sure that the planet is fairly well centered in your targetting reticule.")
-            VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"Notice how your speed starts increasing gradually after leaving the jump point range.")
+            VS.IOmessage (8,"Oswald","Privateer",self.msgColor+"Make sure that the planet is fairly well centered in your targetting reticule.")
+            VS.IOmessage (12,"Oswald","Privateer",self.msgColor+"Notice how your speed starts increasing gradually after leaving the jump point range.")
             self.objective = VS.addObjective("Enable manual SPEC")
             self.objectives+=[int(self.objective)]
-            self.timer = VS.GetGameTime()+10
+            # set comm animation parameters
+            self.sequence = [[0,8,0],[8,4,0],[12,3,0]]
+            self.talktime = VS.GetGameTime()
+            self.timer = VS.GetGameTime()+15
             self.practice += 1
-        if (self.practice==6 and self.player.GetTarget()==self.destination):
+        if (self.practice==9 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==9 and VS.GetGameTime()>=self.timer):
+            self.practice = 10
+        if (self.practice==10 and self.player.GetTarget()==self.destination):
             #disabled for now, since max velocity does not return the spec values
             #velocity = Vector.Mag(self.player.GetVelocity())
             #print "velocity=" + str(self.player.GetVelocity())
@@ -406,45 +549,70 @@ class quest_tutorial (quest.quest):
             if (self.player.getDistance(self.destination)<=(self.distance*0.97)):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"If your are getting too much off course, stop the SPEC drive toggling the #9999FFShift+A"+self.msgColor+" key, recenter your target, and then re-enable the manual SPEC drive again with the same keys.")
-                VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"When you have approched Atlantis to 10000km please disble the SPEC drive toggling the #9999FFShift+A"+self.msgColor+" key again and then stop your ship.")
+                VS.IOmessage (8,"Oswald","Privateer",self.msgColor+"When you have approched Atlantis to 10000km please disble the SPEC drive toggling the #9999FFShift+A"+self.msgColor+" key again and then stop your ship.")
                 name = unit.getUnitFullName(self.destination)
                 self.objective = VS.addObjective("Approach %s" % name)
                 self.objectives+=[int(self.objective)]
-                self.timer = VS.GetGameTime()+15
+                # set comm animation parameters
+                self.sequence = [[0,6,0],[8,6,0]]
+                self.talktime = VS.GetGameTime()
+                self.timer = VS.GetGameTime()+14
                 self.practice += 1
-        if (self.practice==7 and self.player.getDistance(self.destination)<=10000000):
+            else:
+                self.practice += 2
+        if (self.practice==11 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==11 and VS.GetGameTime()>=self.timer):
+            self.practice = 12
+        if (self.practice==12 and self.player.getDistance(self.destination)<=10000000):
             VS.setCompleteness(self.objectives[self.objective],1.0)
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"All right.")
             VS.IOmessage (2,"Oswald","Privateer",self.msgColor+"You have learned how to conveniently travel within the system.")
+            self.player.commAnimation("com_tutorial_oswald.ani")
             self.timer = VS.GetGameTime()+2
             self.practice += 1
-        if (self.practice==8):
+        if (self.practice==13):
             velocity = Vector.Mag(self.player.GetVelocity())
             if (velocity>=10 and self.player.getDistance(self.destination)<=2000000):
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Bring your ship to full stop before crashing into the planet.")
+                self.player.commAnimation("com_tutorial_oswald.ani")
                 self.objective = VS.addObjective("Stop your ship")
                 self.objectives+=[int(self.objective)]
                 self.timer = VS.GetGameTime()+10
                 self.practice += 1
             else:
                 self.practice += 2
-        if (self.practice==9):
+        if (self.practice==14):
             velocity = Vector.Mag(self.player.GetVelocity())
             if (velocity<=10):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 self.practice += 1
-        if (self.practice==10):
+        if (self.practice==15):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Now dock to the planet, go to the mission computer, and save your game.")
             VS.IOmessage (7,"Oswald","Privateer",self.msgColor+"Then get yourself a Jump Drive and an Overdrive and come back for more tutoring if you wish.")
             VS.IOmessage (15,"Oswald","Privateer",self.msgColor+"To dock, turn towards the planet and press the docking clearance request key #9999FFD"+self.msgColor+". A green docking frame will appear.")
             VS.IOmessage (25,"Oswald","Privateer",self.msgColor+"You may still enable the SPEC drive until you close up on the planet and your velocity matches the set velocity.")
             VS.IOmessage (35,"Oswald","Privateer",self.msgColor+"Press again the #9999FFD"+self.msgColor+" key to dock. The docking distance will depend on the planet or station size that you are docking to.")
-            VS.IOmessage (45,"Oswald","Privateer",self.msgColor+"The larger the object the further away you can dock.")
-            VS.IOmessage (50,"Oswald","Privateer",self.msgColor+"For Atlantis the docking distance is roughly about 990 kilometers.")
-            self.timer = VS.GetGameTime()+50
+            VS.IOmessage (42,"Oswald","Privateer",self.msgColor+"The larger the object the further away you can dock.")
+            VS.IOmessage (45,"Oswald","Privateer",self.msgColor+"For Atlantis the docking distance is roughly about 990 kilometers.")
+            # set comm animation parameters
+            self.sequence = [[0,4,0],[7,4,0],[15,6,0],[25,4,0],[35,6,0],[42,2,0],[45,4,0]]
+            self.talktime = VS.GetGameTime()
+            self.timer = VS.GetGameTime()+49
             self.practice += 1
-        if (self.practice==11 and self.destination.isDocked(self.player)):
+        if (self.practice==16 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==16 and VS.GetGameTime()>=self.timer):
+            self.practice += 1
+        if (self.practice==17 and self.destination.isDocked(self.player)):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"That concludes the navigation part of the tutorial.")
+            self.player.commAnimation("com_tutorial_oswald.ani")
             self.timer = VS.GetGameTime()+0
             self.practice = 99
         if (self.practice>=99):
@@ -463,37 +631,38 @@ class quest_tutorial (quest.quest):
             # when in space, launch the drone
             if (self.stage==STAGE_AWAY and VS.GetGameTime()>self.timer):
                 # a nice way to make the tutor talk only during the intended time
-                if (VS.GetGameTime()>self.timer):
-                    self.player.commAnimation("com_tutorial_oswald.ani")
+                #if (VS.GetGameTime()>self.timer):
+                    #self.player.commAnimation("com_tutorial_oswald.ani")
                 self.launchNewDrone()
+            # play the talk animation
+            if (self.stage==2 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+                for index in range (len(self.sequence)):
+                    if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                        self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                        self.anitime = VS.GetGameTime()+2
+            if (self.stage==2 and VS.GetGameTime()>=self.timer):
+                self.stage = 3
+
         if (not self.player.isNull() and not self.drone.isNull()):
             # when drone is launched, then follow player
-            if (self.stage==STAGE_ORBIT):
-                if (VS.GetGameTime()>self.timer):
-                    self.player.commAnimation("com_tutorial_oswald.ani")
+            if (self.stage==3):
                 self.orbitMe()
                 self.acceptTutorial()
-            if (self.stage==STAGE_ACCEPT and VS.GetGameTime()>self.timer):
-                if (VS.GetGameTime()>self.timer):
-                    self.player.commAnimation("com_tutorial_oswald.ani")
+            if (self.stage==STAGE_ACCEPT):
                 self.tutorialComm()
-            if (self.stage==COMPLETE_TUTORIAL1 and VS.GetGameTime()>self.timer):
-                if (VS.GetGameTime()>self.timer):
-                    self.player.commAnimation("com_tutorial_oswald.ani")
+            if (self.stage==COMPLETE_TUTORIAL1):
                 self.tutorialNav()
-            if (self.stage==COMPLETE_TUTORIAL2 and VS.GetGameTime()>self.timer):
-                if (VS.GetGameTime()>self.timer):
-                    self.player.commAnimation("com_tutorial_oswald.ani")
+            if (self.stage==COMPLETE_TUTORIAL2):
                 self.practiceNav()
-            if (self.stage==COMPLETE_TUTORIAL3 and VS.GetGameTime()>self.timer):
-                if (VS.GetGameTime()>self.timer):
-                    self.player.commAnimation("com_tutorial_oswald.ani")
+            if (self.stage==COMPLETE_TUTORIAL3):
                 self.orbitMe()
                 self.practiceSpec()
             # tutorial is incomplete, so a nice excuse is required
             if (self.stage==COMPLETE_TUTORIAL4 and VS.GetGameTime()>self.timer):
                 VS.IOmessage (0,"Oswald","player",self.msgColor+"Oops. Sorry, pal. My boss at the Cephid Safety Initiative has an emergency situation I must handle now.")
                 VS.IOmessage (5,"Oswald","player",self.msgColor+"I apologize. Have a safe journey. And come back for more.")
+                self.player.commAnimation("com_tutorial_oswald.ani")
+                self.player.commAnimation("com_tutorial_oswald.ani")
                 self.player.commAnimation("com_tutorial_oswald.ani")
                 self.drone.SetVelocity((2000,0,0))
                 self.timer = VS.GetGameTime()+10
