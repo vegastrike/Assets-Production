@@ -1,6 +1,6 @@
 <Factions>
-	<Faction name="neutral" citizen="false" logoRGB="logos/confedPri.png" logoSec="logos/confedSec.png"/>
-	<Faction name="confed" citizen="false" logoRGB="logos/confedPri.png" secLogoRGB="logos/confedSec.png" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue="1">
+	<Faction name="neutral" citizen="false" logoRGB="logos/confedPri.texture" logoSec="logos/confedSec.texture"/>
+	<Faction name="confed" citizen="false" logoRGB="logos/confedPri.texture" secLogoRGB="logos/confedSec.texture" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue="1">
 		<stats name="privateer" relation=".2"/>
 		<stats name="confed" relation="1" />
 		<stats name="aera" relation="-1" />
@@ -46,7 +46,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="aera" citizen="false" logoRGB="logos/aeraPri.png" secLogoRGB="logos/aeraSec.png" contraband="contraband" sparkred="0" sparkgreen="1" sparkblue="0">
+	<Faction name="aera" citizen="false" logoRGB="logos/aeraPri.texture" secLogoRGB="logos/aeraSec.texture" contraband="contraband" sparkred="0" sparkgreen="1" sparkblue="0">
 		<stats name="privateer" relation="-.5"/>
 		<stats name="confed" relation="-1"/>
 		<stats name="aera" relation="1"/>
@@ -92,7 +92,7 @@
 			<MoodAnimation name="explosion_aera.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="rlaan" citizen="false" logoRGB="logos/rlaanPri.png" secLogoRGB="logos/rlaanSec.png" contraband="contraband" sparkred=".5" sparkgreen="0" sparkblue="1">
+	<Faction name="rlaan" citizen="false" logoRGB="logos/rlaanPri.texture" secLogoRGB="logos/rlaanSec.texture" contraband="contraband" sparkred=".5" sparkgreen="0" sparkblue="1">
 		<stats name="privateer" relation=".05"/>
 		<stats name="confed" relation=".15"/>
 		<stats name="aera" relation="-.8"/>
@@ -138,7 +138,7 @@
 			<MoodAnimation name="explosion_rlaan.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="merchant_guild" citizen="false" logoRGB="logos/merchant_guildPri.png" secLogoRGB="logos/merchant_guildSec.png" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue="1">
+	<Faction name="merchant_guild" citizen="false" logoRGB="logos/merchant_guildPri.texture" secLogoRGB="logos/merchant_guildSec.texture" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue="1">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".3"/>
 		<stats name="aera" relation="-1"/>
@@ -184,7 +184,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="luddites" citizen="false" logoRGB="logos/ludditesPri.png" secLogoRGB="logos/ludditesSec.png" contraband="contraband" sparkred="1" sparkgreen=".3" sparkblue="0">
+	<Faction name="luddites" citizen="false" logoRGB="logos/ludditesPri.texture" secLogoRGB="logos/ludditesSec.texture" contraband="contraband" sparkred="1" sparkgreen=".3" sparkblue="0">
 		<stats name="privateer" relation="-.5"/>
 		<stats name="confed" relation="-1"/>
 		<stats name="aera" relation="-1"/>
@@ -230,7 +230,7 @@
 			<MoodAnimation name="explosion_wave.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="pirates" citizen="false" logoRGB="logos/piratesPri.png" secLogoRGB="logos/piratesSec.png" contraband="contraband" sparkred=".4" sparkgreen=".2" sparkblue=".7">
+	<Faction name="pirates" citizen="false" logoRGB="logos/piratesPri.texture" secLogoRGB="logos/piratesSec.texture" contraband="contraband" sparkred=".4" sparkgreen=".2" sparkblue=".7">
 		<stats name="privateer" relation="-.6"/>
 		<stats name="confed" relation="-1"/>
 		<stats name="aera" relation="-1"/>
@@ -276,7 +276,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="hunter" citizen="false" logoRGB="logos/hunterPri.png" secLogoRGB="logos/hunterSec.png" contraband="contraband" sparkred=".6" sparkgreen=".6" sparkblue=".6">
+	<Faction name="hunter" citizen="false" logoRGB="logos/hunterPri.texture" secLogoRGB="logos/hunterSec.texture" contraband="contraband" sparkred=".6" sparkgreen=".6" sparkblue=".6">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".6"/>
 		<stats name="aera" relation="-1"/>
@@ -322,7 +322,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="homeland-security" citizen="false" logoRGB="logos/homeland-securityPri.png" secLogoRGB="logos/homeland-securitySec.png" contraband="contraband" sparkred="0" sparkgreen=".5" sparkblue="1">
+	<Faction name="homeland-security" citizen="false" logoRGB="logos/homeland-securityPri.texture" secLogoRGB="logos/homeland-securitySec.texture" contraband="contraband" sparkred="0" sparkgreen=".5" sparkblue="1">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -368,7 +368,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="ISO" citizen="false" logoRGB="logos/ISOPri.png" secLogoRGB="logos/ISOSec.png" contraband="contraband" sparkred="1" sparkgreen="0" sparkblue="0">
+	<Faction name="ISO" citizen="false" logoRGB="logos/ISOPri.texture" secLogoRGB="logos/ISOSec.texture" contraband="contraband" sparkred="1" sparkgreen="0" sparkblue="0">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="-1"/>
 		<stats name="aera" relation="-1"/>
@@ -414,7 +414,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="unknown" citizen="false" logoRGB="logos/unknownPri.png" secLogoRGB="logos/unknownSec.png" contraband="contraband">
+	<Faction name="unknown" citizen="false" logoRGB="logos/unknownPri.texture" secLogoRGB="logos/unknownSec.texture" contraband="contraband">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="-1"/>
 		<stats name="aera" relation="-1"/>
@@ -460,7 +460,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="andolian" citizen="false" logoRGB="logos/andolianPri.png" secLogoRGB="logos/andolianSec.png" contraband="contraband" sparkred="0" sparkgreen=".2" sparkblue=".8">
+	<Faction name="andolian" citizen="false" logoRGB="logos/andolianPri.texture" secLogoRGB="logos/andolianSec.texture" contraband="contraband" sparkred="0" sparkgreen=".2" sparkblue=".8">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".9"/>
 		<stats name="aera" relation="-1"/>
@@ -507,7 +507,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="highborn" citizen="false" logoRGB="logos/highbornPri.png" secLogoRGB="logos/highbornSec.png" contraband="contraband" sparkred=".2" sparkgreen="0" sparkblue=".8">
+	<Faction name="highborn" citizen="false" logoRGB="logos/highbornPri.texture" secLogoRGB="logos/highbornSec.texture" contraband="contraband" sparkred=".2" sparkgreen="0" sparkblue=".8">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -553,7 +553,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="shaper" citizen="false" logoRGB="logos/shaperPri.png" secLogoRGB="logos/shaperSec.png" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue=".8">
+	<Faction name="shaper" citizen="false" logoRGB="logos/shaperPri.texture" secLogoRGB="logos/shaperSec.texture" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue=".8">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -599,7 +599,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="unadorned" citizen="false" logoRGB="logos/unadornedPri.png" secLogoRGB="logos/unadornedSec.png" contraband="contraband" sparkred=".4" sparkgreen=".4" sparkblue="1">
+	<Faction name="unadorned" citizen="false" logoRGB="logos/unadornedPri.texture" secLogoRGB="logos/unadornedSec.texture" contraband="contraband" sparkred=".4" sparkgreen=".4" sparkblue="1">
 		<stats name="privateer" relation=".3"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -645,7 +645,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="purist" citizen="false" logoRGB="logos/puristPri.png" secLogoRGB="logos/puristSec.png" contraband="contraband" sparkred="1" sparkgreen="1" sparkblue="0">
+	<Faction name="purist" citizen="false" logoRGB="logos/puristPri.texture" secLogoRGB="logos/puristSec.texture" contraband="contraband" sparkred="1" sparkgreen="1" sparkblue="0">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -691,7 +691,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="forsaken" citizen="false" logoRGB="logos/forsakenPri.png" secLogoRGB="logos/forsakenSec.png" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue=".5">
+	<Faction name="forsaken" citizen="false" logoRGB="logos/forsakenPri.texture" secLogoRGB="logos/forsakenSec.texture" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue=".5">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation="0.05"/>
 		<stats name="aera" relation="-1"/>
@@ -737,7 +737,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="LIHW" citizen="false" logoRGB="logos/LIHWPri.png" secLogoRGB="logos/LIHWSec.png" contraband="contraband" sparkred="0" sparkgreen="1" sparkblue="1">
+	<Faction name="LIHW" citizen="false" logoRGB="logos/LIHWPri.texture" secLogoRGB="logos/LIHWSec.texture" contraband="contraband" sparkred="0" sparkgreen="1" sparkblue="1">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".2"/>
 		<stats name="aera" relation="-1"/>
@@ -783,7 +783,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="uln" citizen="false" logoRGB="logos/ulnPri.png" secLogoRGB="logos/ulnSec.png" contraband="contraband" sparkred=".6" sparkgreen=".6" sparkblue=".1">
+	<Faction name="uln" citizen="false" logoRGB="logos/ulnPri.texture" secLogoRGB="logos/ulnSec.texture" contraband="contraband" sparkred=".6" sparkgreen=".6" sparkblue=".1">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation="0.05"/>
 		<stats name="aera" relation="0.05"/>
@@ -829,7 +829,7 @@
 			<MoodAnimation name="explosion_aera.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="dgn" citizen="false" logoRGB="logos/dgnPri.png" secLogoRGB="logos/dgnSec.png" contraband="contraband" sparkred="0" sparkgreen=".6" sparkblue="0">
+	<Faction name="dgn" citizen="false" logoRGB="logos/dgnPri.texture" secLogoRGB="logos/dgnSec.texture" contraband="contraband" sparkred="0" sparkgreen=".6" sparkblue="0">
 		<stats name="privateer" relation=".1"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -875,7 +875,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="klkk" citizen="false" logoRGB="logos/klkkPri.png" secLogoRGB="logos/klkkSec.png" contraband="contraband" sparkred="0" sparkgreen=".4" sparkblue=".8">
+	<Faction name="klkk" citizen="false" logoRGB="logos/klkkPri.texture" secLogoRGB="logos/klkkSec.texture" contraband="contraband" sparkred="0" sparkgreen=".4" sparkblue=".8">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".9"/>
 		<stats name="aera" relation="-1"/>
@@ -921,7 +921,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="mechanist" citizen="false" logoRGB="logos/mechanistPri.png" secLogoRGB="logos/mechanistSec.png" contraband="contraband" sparkred=".7" sparkgreen=".7" sparkblue=".7">
+	<Faction name="mechanist" citizen="false" logoRGB="logos/mechanistPri.texture" secLogoRGB="logos/mechanistSec.texture" contraband="contraband" sparkred=".7" sparkgreen=".7" sparkblue=".7">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -967,7 +967,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="shmrn" citizen="false" logoRGB="logos/shmrnPri.png" secLogoRGB="logos/shmrnSec.png" contraband="contraband">
+	<Faction name="shmrn" citizen="false" logoRGB="logos/shmrnPri.texture" secLogoRGB="logos/shmrnSec.texture" contraband="contraband">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".3"/>
 		<stats name="aera" relation="-1"/>
@@ -1013,7 +1013,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="rlaan_briin" citizen="true" logoRGB="logos/rlaan_briinPri.png" secLogoRGB="logos/rlaan_briinSec.png" contraband="contraband" sparkred="1" sparkgreen="0" sparkblue=".8">
+	<Faction name="rlaan_briin" citizen="true" logoRGB="logos/rlaan_briinPri.texture" secLogoRGB="logos/rlaan_briinSec.texture" contraband="contraband" sparkred="1" sparkgreen="0" sparkblue=".8">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".7"/>
 		<stats name="aera" relation="-1"/>
@@ -1058,7 +1058,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="privateer" citizen="false" logoRGB="logos/privateerPri.png" secLogoRGB="logos/privateerSec.png" contraband="contraband" sparkred=".4" sparkgreen=".4" sparkblue="1">
+	<Faction name="privateer" citizen="false" logoRGB="logos/privateerPri.texture" secLogoRGB="logos/privateerSec.texture" contraband="contraband" sparkred=".4" sparkgreen=".4" sparkblue="1">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation=".2"/>
 		<stats name="aera" relation="-.5"/>
@@ -1104,7 +1104,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="aeran_merchant_marine" citizen="true" logoRGB="logos/aeraPri.png" secLogoRGB="logos/aeraSec.png" contraband="contraband" sparkred="0" sparkgreen="1" sparkblue="0">
+	<Faction name="aeran_merchant_marine" citizen="true" logoRGB="logos/aeraPri.texture" secLogoRGB="logos/aeraSec.texture" contraband="contraband" sparkred="0" sparkgreen="1" sparkblue="0">
 		<stats name="privateer" relation="-.5"/>
 		<stats name="confed" relation="-1"/>
 		<stats name="aera" relation="1"/>
@@ -1150,7 +1150,7 @@
 			<MoodAnimation name="explosion_aera.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="rlaan_citizen" citizen="true" logoRGB="logos/rlaanPri.png" secLogoRGB="logos/rlaanSec.png" contraband="contraband" sparkred=".5" sparkgreen="0" sparkblue="1">
+	<Faction name="rlaan_citizen" citizen="true" logoRGB="logos/rlaanPri.texture" secLogoRGB="logos/rlaanSec.texture" contraband="contraband" sparkred=".5" sparkgreen="0" sparkblue="1">
 		<stats name="privateer" relation=".05"/>
 		<stats name="confed" relation=".15"/>
 		<stats name="aera" relation="-.8"/>
@@ -1196,7 +1196,7 @@
 			<MoodAnimation name="explosion_rlaan.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="merchant_guild_citizen" citizen="true" logoRGB="logos/merchant_guildPri.png" secLogoRGB="logos/merchant_guildSec.png" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue="1">
+	<Faction name="merchant_guild_citizen" citizen="true" logoRGB="logos/merchant_guildPri.texture" secLogoRGB="logos/merchant_guildSec.texture" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue="1">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".1"/>
 		<stats name="aera" relation="-1"/>
@@ -1242,7 +1242,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="andolian_citizen" citizen="true" logoRGB="logos/andolianPri.png" secLogoRGB="logos/andolianSec.png" contraband="contraband" sparkred="0" sparkgreen=".2" sparkblue=".8">
+	<Faction name="andolian_citizen" citizen="true" logoRGB="logos/andolianPri.texture" secLogoRGB="logos/andolianSec.texture" contraband="contraband" sparkred="0" sparkgreen=".2" sparkblue=".8">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".9"/>
 		<stats name="aera" relation="-1"/>
@@ -1289,7 +1289,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="highborn_citizen" citizen="true" logoRGB="logos/highbornPri.png" secLogoRGB="logos/highbornSec.png" contraband="contraband" sparkred=".2" sparkgreen="0" sparkblue=".8">
+	<Faction name="highborn_citizen" citizen="true" logoRGB="logos/highbornPri.texture" secLogoRGB="logos/highbornSec.texture" contraband="contraband" sparkred=".2" sparkgreen="0" sparkblue=".8">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -1335,7 +1335,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="shaper_citizen" citizen="true" logoRGB="logos/shaperPri.png" secLogoRGB="logos/shaperSec.png" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue=".8">
+	<Faction name="shaper_citizen" citizen="true" logoRGB="logos/shaperPri.texture" secLogoRGB="logos/shaperSec.texture" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue=".8">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -1381,7 +1381,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="unadorned_citizen" citizen="true" logoRGB="logos/unadornedPri.png" secLogoRGB="logos/unadornedSec.png" contraband="contraband" sparkred=".4" sparkgreen=".4" sparkblue="1">
+	<Faction name="unadorned_citizen" citizen="true" logoRGB="logos/unadornedPri.texture" secLogoRGB="logos/unadornedSec.texture" contraband="contraband" sparkred=".4" sparkgreen=".4" sparkblue="1">
 		<stats name="privateer" relation=".3"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -1427,7 +1427,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="purist_citizen" citizen="true" logoRGB="logos/puristPri.png" secLogoRGB="logos/puristSec.png" contraband="contraband" sparkred="1" sparkgreen="1" sparkblue="0">
+	<Faction name="purist_citizen" citizen="true" logoRGB="logos/puristPri.texture" secLogoRGB="logos/puristSec.texture" contraband="contraband" sparkred="1" sparkgreen="1" sparkblue="0">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -1473,7 +1473,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="forsaken_citizen" citizen="true" logoRGB="logos/forsakenPri.png" secLogoRGB="logos/forsakenSec.png" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue=".5">
+	<Faction name="forsaken_citizen" citizen="true" logoRGB="logos/forsakenPri.texture" secLogoRGB="logos/forsakenSec.texture" contraband="contraband" sparkred="0" sparkgreen="0" sparkblue=".5">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0.05"/>
 		<stats name="aera" relation="-1"/>
@@ -1519,7 +1519,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="LIHW_citizen" citizen="true" logoRGB="logos/LIHWPri.png" secLogoRGB="logos/LIHWSec.png" contraband="contraband" sparkred="0" sparkgreen="1" sparkblue="1">
+	<Faction name="LIHW_citizen" citizen="true" logoRGB="logos/LIHWPri.texture" secLogoRGB="logos/LIHWSec.texture" contraband="contraband" sparkred="0" sparkgreen="1" sparkblue="1">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".2"/>
 		<stats name="aera" relation="-1"/>
@@ -1565,7 +1565,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="uln_citizen" citizen="true" logoRGB="logos/ulnPri.png" secLogoRGB="logos/ulnSec.png" contraband="contraband" sparkred=".6" sparkgreen=".6" sparkblue=".1">
+	<Faction name="uln_citizen" citizen="true" logoRGB="logos/ulnPri.texture" secLogoRGB="logos/ulnSec.texture" contraband="contraband" sparkred=".6" sparkgreen=".6" sparkblue=".1">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0"/>
 		<stats name="aera" relation="0"/>
@@ -1611,7 +1611,7 @@
 			<MoodAnimation name="explosion_aera.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="dgn_citizen" citizen="true" logoRGB="logos/dgnPri.png" secLogoRGB="logos/dgnSec.png" contraband="contraband" sparkred="0" sparkgreen=".6" sparkblue="0">
+	<Faction name="dgn_citizen" citizen="true" logoRGB="logos/dgnPri.texture" secLogoRGB="logos/dgnSec.texture" contraband="contraband" sparkred="0" sparkgreen=".6" sparkblue="0">
 		<stats name="privateer" relation=".1"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -1657,7 +1657,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="klkk_citizen" citizen="true" logoRGB="logos/klkkPri.png" secLogoRGB="logos/klkkSec.png" contraband="contraband" sparkred="0" sparkgreen=".4" sparkblue=".8">
+	<Faction name="klkk_citizen" citizen="true" logoRGB="logos/klkkPri.texture" secLogoRGB="logos/klkkSec.texture" contraband="contraband" sparkred="0" sparkgreen=".4" sparkblue=".8">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".9"/>
 		<stats name="aera" relation="-1"/>
@@ -1703,7 +1703,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="mechanist_citizen" citizen="true" logoRGB="logos/mechanistPri.png" secLogoRGB="logos/mechanistSec.png" contraband="contraband" sparkred=".7" sparkgreen=".7" sparkblue=".7">
+	<Faction name="mechanist_citizen" citizen="true" logoRGB="logos/mechanistPri.texture" secLogoRGB="logos/mechanistSec.texture" contraband="contraband" sparkred=".7" sparkgreen=".7" sparkblue=".7">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="1"/>
 		<stats name="aera" relation="-1"/>
@@ -1749,7 +1749,7 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="shmrn_citizen" citizen="true" logoRGB="logos/shmrnPri.png" secLogoRGB="logos/shmrnSec.png" contraband="contraband">
+	<Faction name="shmrn_citizen" citizen="true" logoRGB="logos/shmrnPri.texture" secLogoRGB="logos/shmrnSec.texture" contraband="contraband">
 		<stats name="privateer" relation="0.05"/>
 		<stats name="confed" relation=".3"/>
 		<stats name="aera" relation="-1"/>
@@ -1795,8 +1795,8 @@
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
-	<Faction name="upgrades" citizen="false" logoRGB="logos/confedPri.png" logoSec="logos/confedSec.png"/>
-	<Faction name="planets" citizen="false" logoRGB="logos/confedPri.png" logoSec="logos/confedSec.png"/>
+	<Faction name="upgrades" citizen="false" logoRGB="logos/confedPri.texture" logoSec="logos/confedSec.texture"/>
+	<Faction name="planets" citizen="false" logoRGB="logos/confedPri.texture" logoSec="logos/confedSec.texture"/>
 </Factions>
 
 
