@@ -10,7 +10,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="8" radius="8" length="1.5" pulsespeed="2" range="3250" >
 </Distance>
-<Appearance file="weapons/unknown_beam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a="1" >
+<Appearance file="weapons/unknown_beam.texture" soundwav="beam.wav" r=".7" g="1" b=".7" a="1" >
 </Appearance>
 </Beam>
 
@@ -21,7 +21,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="8" radius="6" length="1.5" pulsespeed="3" range="65536" >
 </Distance>
-<Appearance file="weapons/unknown_beam.png" soundwav="beam.wav" r=".7" g="1" b=".7" a="1" >
+<Appearance file="weapons/unknown_beam.texture" soundwav="beam.wav" r=".7" g="1" b=".7" a="1" >
 </Appearance>
 </Beam>
 
@@ -32,7 +32,7 @@
 </Damage>
 <Distance speed="1250" radialspeed=".8" radius="8.2" length="40" pulsespeed="15" range="3100" >
 </Distance>
-<Appearance file="weapons/unknown_bolt.png" soundwav="Neutron.wav" r=".5" g="1" b=".5" a=".8" >
+<Appearance file="weapons/unknown_bolt.texture" soundwav="Neutron.wav" r=".5" g="1" b=".5" a=".8" >
 </Appearance>
 </Bolt>
 
@@ -43,7 +43,7 @@
 </Damage>
 <Distance speed="6250" radialspeed=".8" radius="8.2" length="40" pulsespeed="15" range="3100" >
 </Distance>
-<Appearance file="weapons/unknown_bolt.png" soundwav="Neutron.wav" r=".5" g="1" b=".5" a=".8" >
+<Appearance file="weapons/unknown_bolt.texture" soundwav="Neutron.wav" r=".5" g="1" b=".5" a=".8" >
 </Appearance>
 </Bolt>
 
@@ -54,7 +54,7 @@
 </Damage>
 <Distance speed="10000" radialspeed=".8" radius="7" length="56" pulsespeed="15" range="4750" volume=".001">
 </Distance>
-<Appearance file="weapons/swarm.png" soundwav="missile_3.wav" r="0.5" g="1" b="0.5" a="1" >
+<Appearance file="weapons/swarm.texture" soundwav="missile_3.wav" r="0.5" g="1" b="0.5" a="1" >
 </Appearance>
 </Bolt>
 
@@ -68,7 +68,7 @@
 </Damage>
 <Distance speed="400" radialspeed="1" radius="12" length="15" pulsespeed="20" range="800" volume="25">
 </Distance>
-<Appearance file="weapons/graybolt.png" soundwav="Tachyon.wav" r=".12" g="0" b=".7" a=".9" >
+<Appearance file="weapons/graybolt.texture" soundwav="Tachyon.wav" r=".12" g="0" b=".7" a=".9" >
 </Appearance>
 </Bolt>
 
@@ -82,7 +82,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="50" radius=".5" length="1.5" pulsespeed="15" range="10000" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".2" b=".2" a=".4" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r="1" g=".2" b=".2" a=".4" >
 </Appearance>
 </Beam>
 
@@ -93,7 +93,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="50" radius=".5" length="1.5" pulsespeed="15" range="10000" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".2" b=".2" a=".3" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r="1" g=".2" b=".2" a=".3" >
 </Appearance>
 </Beam>
 
@@ -104,7 +104,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="50" radius=".5" length="1.5" pulsespeed="15" range="20000" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".2" b=".2" a=".4" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r="1" g=".2" b=".2" a=".4" >
 </Appearance>
 </Beam>
 
@@ -115,7 +115,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="50" radius=".5" length="1.5" pulsespeed="15" range="20000" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".1" b=".1" a=".4" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r="1" g=".1" b=".1" a=".4" >
 </Appearance>
 </Beam>
 
@@ -126,7 +126,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="50" radius=".5" length="1.5" pulsespeed="15" range="20000" volume="0.1">
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".2" b=".1" a=".6" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r="1" g=".2" b=".1" a=".6" >
 </Appearance>
 </Beam>
 
@@ -137,7 +137,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="50" radius=".5" length="1.5" pulsespeed="15" range="30000" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r="0" g=".1" b=".8" a=".4" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r="0" g=".1" b=".8" a=".4" >
 </Appearance>
 </Beam>
 
@@ -148,7 +148,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="50" radius=".5" length="1.5" pulsespeed="15" range="30000" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r="0" g=".1" b=".8" a=".4" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r="0" g=".1" b=".8" a=".4" >
 </Appearance>
 </Beam>
 
@@ -159,7 +159,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="50" radius=".5" length="1.5" pulsespeed="15" range="100000" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r=".8" g=".9" b="1" a=".2" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r=".8" g=".9" b="1" a=".2" >
 </Appearance>
 </Beam>
 
@@ -170,7 +170,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="50" radius=".5" length="1.5" pulsespeed="15" range="100000" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r=".8" g=".9" b="1" a=".2" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r=".8" g=".9" b="1" a=".2" >
 </Appearance>
 </Beam>
 
@@ -181,7 +181,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="2" radius=".01" length="2" pulsespeed="4096" range="1000000" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".2" b=".2" a=".8" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r="1" g=".2" b=".2" a=".8" >
 </Appearance>
 </Beam>
 
@@ -192,7 +192,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="500" radius=".25" length="1.5" pulsespeed="15" range="350000" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".8" b=".8" a=".9" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r="1" g=".8" b=".8" a=".9" >
 </Appearance>
 </Beam>
 
@@ -205,7 +205,7 @@
 </Damage>
 <Distance speed="30000000" radialspeed="5" radius=".25" length="1.5" pulsespeed="15" range="2200">
 </Distance>
-<Appearance file="weapons/pulsebeam.png" soundwav="beam.wav" r="1" g="1" b=".1" a=".9">
+<Appearance file="weapons/pulsebeam.texture" soundwav="beam.wav" r="1" g="1" b=".1" a=".9">
 </Appearance>
 </Beam>
 
@@ -216,7 +216,7 @@
 </Damage>
 <Distance speed="3000000" radialspeed="5" radius=".25" length="1.5" pulsespeed="15" range="4500">
 </Distance>
-<Appearance file="weapons/pulsebeam.png" soundwav="beam.wav" r="0" g=".5" b=".9" a=".9">
+<Appearance file="weapons/pulsebeam.texture" soundwav="beam.wav" r="0" g=".5" b=".9" a=".9">
 </Appearance>
 </Beam>
 
@@ -227,7 +227,7 @@
 </Damage>
 <Distance speed="300000" radialspeed="4" radius=".6" length="1.5" pulsespeed="20" range="5000">
 </Distance>
-<Appearance file="weapons/hvyionbeam.png" soundwav="beam.wav" r=".2" g=".4" b=".6" a=".5">
+<Appearance file="weapons/hvyionbeam.texture" soundwav="beam.wav" r=".2" g=".4" b=".6" a=".5">
 </Appearance>
 </Beam>
 
@@ -240,7 +240,7 @@
 </Damage>
 <Distance speed="30000" radialspeed=".8" radius="1.2" length="10" pulsespeed="15" range="3500" volume="0.0005" >
 </Distance>
-<Appearance file="weapons/ion.png" soundwav="ION.WAV" r=".7" g=".4" b="1" a="1" >
+<Appearance file="weapons/ion.texture" soundwav="ION.WAV" r=".7" g=".4" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -253,7 +253,7 @@
 </Damage>
 <Distance speed="300000" radialspeed="16" radius="1" length="4" pulsespeed="15" range="3800" >
 </Distance>
-<Appearance file="weapons/disruptorbeam.png" soundwav="beam1.wav" r=".7" g="1" b=".7" a=".6" >
+<Appearance file="weapons/disruptorbeam.texture" soundwav="beam1.wav" r=".7" g="1" b=".7" a=".6" >
 </Appearance>
 </Beam>
 
@@ -264,7 +264,7 @@
 </Damage>
 <Distance speed="300000" radialspeed="16" radius="1" length="4" pulsespeed="15" range="6000" >
 </Distance>
-<Appearance file="weapons/disruptorbeam.png" soundwav="beam1.wav" r=".5" g="1" b=".7" a=".5" >
+<Appearance file="weapons/disruptorbeam.texture" soundwav="beam1.wav" r=".5" g="1" b=".7" a=".5" >
 </Appearance>
 </Beam>
 
@@ -275,7 +275,7 @@
 </Damage>
 <Distance speed="300000" radialspeed="400" radius="1" length="4" pulsespeed="1" range="26000" >
 </Distance>
-<Appearance file="weapons/disruptorbeam.png" soundwav="beam1.wav" r=".7" g="1" b=".7" a=".6" >
+<Appearance file="weapons/disruptorbeam.texture" soundwav="beam1.wav" r=".7" g="1" b=".7" a=".6" >
 </Appearance>
 </Beam>
 
@@ -286,7 +286,7 @@
 </Damage>
 <Distance speed="30000000" radialspeed="12" radius="1" length="1.5" pulsespeed="20" range="6500" >
 </Distance>
-<Appearance file="weapons/pulsebeam.png" soundwav="beam1.wav" r=".12" g="0" b=".7" a=".9" >
+<Appearance file="weapons/pulsebeam.texture" soundwav="beam1.wav" r=".12" g="0" b=".7" a=".9" >
 </Appearance>
 </Beam>
 
@@ -297,7 +297,7 @@
 </Damage>
 <Distance speed="30000000" radialspeed="1.2" radius=".2" length="1.5" pulsespeed="20" range="18000" >
 </Distance>
-<Appearance file="weapons/pulsebeam.png" soundwav="beam1.wav" r=".12" g="0" b=".7" a=".9" >
+<Appearance file="weapons/pulsebeam.texture" soundwav="beam1.wav" r=".12" g="0" b=".7" a=".9" >
 </Appearance>
 </Beam>
 
@@ -308,7 +308,7 @@
 </Damage>
 <Distance speed="1200" radialspeed=".8" radius=".8" length="8" pulsespeed="15" range="4210" >
 </Distance>
-<Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
+<Appearance file="weapons/disruptor.texture" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
 </Appearance>
 </Bolt>
 
@@ -319,7 +319,7 @@
 </Damage>
 <Distance speed="2000" radialspeed=".8" radius=".8" length="8" pulsespeed="15" range="2000" >
 </Distance>
-<Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
+<Appearance file="weapons/disruptor.texture" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
 </Appearance>
 </Bolt>
 
@@ -330,7 +330,7 @@
 </Damage>
 <Distance speed="1200" radialspeed=".8" radius=".8" length="8" pulsespeed="15" range="5000" >
 </Distance>
-<Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
+<Appearance file="weapons/disruptor.texture" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
 </Appearance>
 </Bolt>
 
@@ -341,7 +341,7 @@
 </Damage>
 <Distance speed="3600" radialspeed=".8" radius=".8" length="8" pulsespeed="15" range="8210" >
 </Distance>
-<Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r=".8" g="1" b=".8" a=".9" >
+<Appearance file="weapons/disruptor.texture" soundwav="Particle.wav" r=".8" g="1" b=".8" a=".9" >
 </Appearance>
 </Bolt>
 
@@ -352,7 +352,7 @@
 </Damage>
 <Distance speed="1500" radialspeed="1" radius="2" length="5" pulsespeed="20" range="2500" >
 </Distance>
-<Appearance file="weapons/graybolt.png" soundwav="Tachyon.wav" r=".12" g="0" b=".7" a=".9" >
+<Appearance file="weapons/graybolt.texture" soundwav="Tachyon.wav" r=".12" g="0" b=".7" a=".9" >
 </Appearance>
 </Bolt>
 
@@ -391,7 +391,7 @@
 </Damage>
 <Distance speed="8000" radialspeed=".8" radius="1" pulsespeed="15" range="7600" volume=".005" >
 </Distance>
-<Appearance file="weapons/graybolt.png" soundwav="MASS.WAV" r=".3" g=".5" b=".95" a="1" >
+<Appearance file="weapons/graybolt.texture" soundwav="MASS.WAV" r=".3" g=".5" b=".95" a="1" >
 </Appearance>
 </Bolt>
 
@@ -402,7 +402,7 @@
 </Damage>
 <Distance speed="8000" radialspeed=".8" radius="1" pulsespeed="15" range="4000" volume=".001" >
 </Distance>
-<Appearance file="weapons/graybolt.png" soundwav="MASS.WAV" r=".3" g=".5" b=".95" a="1" >
+<Appearance file="weapons/graybolt.texture" soundwav="MASS.WAV" r=".3" g=".5" b=".95" a="1" >
 </Appearance>
 </Bolt>
 
@@ -415,7 +415,7 @@
 </Damage>
 <Distance speed="2500" radialspeed="1" radius="1.2" length="10" pulsespeed="15" range="2880" >
 </Distance>
-<Appearance file="weapons/laserred.png" soundwav="Laser.wav" r="1" g=".3" b=".3" a="1" >
+<Appearance file="weapons/laserred.texture" soundwav="Laser.wav" r="1" g=".3" b=".3" a="1" >
 </Appearance>
 </Bolt>
 
@@ -426,7 +426,7 @@
 </Damage>
 <Distance speed="100" radialspeed="30" radius="10" length="10" pulsespeed="15" range="250" >
 </Distance>
-<Appearance file="weapons/photon.png" soundwav="Particle.wav" r="1" g=".85" b=".25" a=".7" >
+<Appearance file="weapons/photon.texture" soundwav="Particle.wav" r="1" g=".85" b=".25" a=".7" >
 </Appearance>
 </Beam>
 
@@ -439,7 +439,7 @@
 </Damage>
 <Distance speed="4000" radialspeed=".8" radius="1.2" length="10" pulsespeed="15" range="3600" volume="0.002" >
 </Distance>
-<Appearance file="weapons/photon.png" soundwav="Particle.wav" r=".8" g="1" b=".8" a="1" >
+<Appearance file="weapons/photon.texture" soundwav="Particle.wav" r=".8" g="1" b=".8" a="1" >
 </Appearance>
 </Bolt>
 
@@ -450,7 +450,7 @@
 </Damage>
 <Distance speed="3000" radialspeed=".8" radius="1.5" length="12" pulsespeed="15" range="2000" volume="0.005">
 </Distance>
-<Appearance file="weapons/ion.png" soundwav="Tachyon.wav" r="1" g=".8" b="1" a="1" >
+<Appearance file="weapons/ion.texture" soundwav="Tachyon.wav" r="1" g=".8" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -461,7 +461,7 @@
 </Damage>
 <Distance speed="5000" radialspeed=".8" radius="1.2" length="10" pulsespeed="15" range="4500" volume="0.005">
 </Distance>
-<Appearance file="weapons/ion.png" soundwav="Tachyon.wav" r="1" g=".8" b="1" a="1" >
+<Appearance file="weapons/ion.texture" soundwav="Tachyon.wav" r="1" g=".8" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -472,7 +472,7 @@
 </Damage>
 <Distance speed="3600" radialspeed="1" radius="1.4" length="3" pulsespeed="15" range="8000" volume="0.02" >
 </Distance>
-<Appearance file="weapons/rasor.png" soundwav="sfx07c.wav" r="1" g=".8" b=".8" a=".9" >
+<Appearance file="weapons/rasor.texture" soundwav="sfx07c.wav" r="1" g=".8" b=".8" a=".9" >
 </Appearance>
 </Bolt>
 
@@ -483,7 +483,7 @@
 </Damage>
 <Distance speed="6000" radialspeed=".8" radius="1.2" length="10" pulsespeed="15" range="7500" volume="0.01" >
 </Distance>
-<Appearance file="weapons/tachyon.png" soundwav="Tachyon.wav" r="1" g="1" b="1" a="1" >
+<Appearance file="weapons/tachyon.texture" soundwav="Tachyon.wav" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -496,7 +496,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="50" radius=".5" length="1.5" pulsespeed="15" range="1500" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".2" b=".2" a=".4" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r="1" g=".2" b=".2" a=".4" >
 </Appearance>
 </Beam>
 
@@ -507,7 +507,7 @@
 </Damage>
 <Distance speed="750" radialspeed=".8" radius="2" pulsespeed="15" range="4000" volume="2" >
 </Distance>
-<Appearance file="weapons/ion.png" r="1" g=".8" b="1" a="1" >
+<Appearance file="weapons/ion.texture" r="1" g=".8" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -518,7 +518,7 @@
 </Damage>
 <Distance speed="750" radialspeed=".8" radius="2" pulsespeed="15" range="4000" volume="20" >
 </Distance>
-<Appearance file="weapons/ion.png" r="1" g=".8" b="1" a="1" >
+<Appearance file="weapons/ion.texture" r="1" g=".8" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -529,7 +529,7 @@
 </Damage>
 <Distance speed="150" radialspeed="5" radius="5" pulsespeed="-5" range="4000" >
 </Distance>
-<Appearance file="weapons/tractorbeam.png" r="0" g=".5" b="1" a="1" >
+<Appearance file="weapons/tractorbeam.texture" r="0" g=".5" b="1" a="1" >
 </Appearance>
 </Beam>
 
@@ -540,7 +540,7 @@
 </Damage>
 <Distance speed="150" radialspeed="5" radius="5" pulsespeed="5" range="4000" >
 </Distance>
-<Appearance file="weapons/tractorbeam.png" r="0" g=".9" b=".5" a="1" >
+<Appearance file="weapons/tractorbeam.texture" r="0" g=".9" b=".5" a="1" >
 </Appearance>
 </Beam>
 
@@ -551,7 +551,7 @@
 </Damage>
 <Distance speed="150" radialspeed="5" radius="5" pulsespeed="-5" range="4000" >
 </Distance>
-<Appearance file="weapons/tractorbeam.png" r="0" g=".5" b="1" a="1" >
+<Appearance file="weapons/tractorbeam.texture" r="0" g=".5" b="1" a="1" >
 </Appearance>
 </Beam>
 
@@ -564,7 +564,7 @@
 </Damage>
 <Distance speed="4000" radialspeed=".8" radius="5" length="40" pulsespeed="15" range="3750" volume=".25">
 </Distance>
-<Appearance file="weapons/swarm.png" soundwav="missile_3.wav" r="1" g="1" b="1" a="1" >
+<Appearance file="weapons/swarm.texture" soundwav="missile_3.wav" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -575,7 +575,7 @@
 </Damage>
 <Distance speed="4000" radialspeed=".8" radius="5" length="40" pulsespeed="15" range="3750" volume=".5">
 </Distance>
-<Appearance file="weapons/swarm.png" soundwav="missile_3.wav" r="0" g="1" b=".1" a="1" >
+<Appearance file="weapons/swarm.texture" soundwav="missile_3.wav" r="0" g="1" b=".1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -586,7 +586,7 @@
 </Damage>
 <Distance speed="3000" radialspeed=".8" radius="5" length="40" pulsespeed="15" range="2000" volume="1">
 </Distance>
-<Appearance file="weapons/swarm.png" soundwav="missile_3.wav" r=".3" g="1" b=".1" a="1" >
+<Appearance file="weapons/swarm.texture" soundwav="missile_3.wav" r=".3" g="1" b=".1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -597,7 +597,7 @@
 </Damage>
 <Distance speed="3050" radialspeed=".8" radius="7" length="56" pulsespeed="15" range="4750" volume=".25">
 </Distance>
-<Appearance file="weapons/swarm.png" soundwav="missile_3.wav" r="0.9" g="0.8" b="1" a="1" >
+<Appearance file="weapons/swarm.texture" soundwav="missile_3.wav" r="0.9" g="0.8" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -608,7 +608,7 @@
 </Damage>
 <Distance speed="3150" radialspeed=".8" radius="9" length="70" pulsespeed="15" range="5500" volume=".25">
 </Distance>
-<Appearance file="weapons/swarm.png" soundwav="missile_3.wav" r="1" g="0.9" b="0.8" a="1" >
+<Appearance file="weapons/swarm.texture" soundwav="missile_3.wav" r="1" g="0.9" b="0.8" a="1" >
 </Appearance>
 </Bolt>
 
@@ -619,7 +619,7 @@
 </Damage>
 <Distance speed="1000" radialspeed=".8" radius="9" length="70" pulsespeed="15" range="8000" volume="25">
 </Distance>
-<Appearance file="weapons/swarm.png" soundwav="missile_3.wav" r="1" g="0.9" b="0.8" a="1" >
+<Appearance file="weapons/swarm.texture" soundwav="missile_3.wav" r="1" g="0.9" b="0.8" a="1" >
 </Appearance>
 </Bolt>
 
@@ -630,7 +630,7 @@
 </Damage>
 <Distance speed="4500" radialspeed=".8" radius="1" pulsespeed="15" range="2500" volume=".25" >
 </Distance>
-<Appearance file="weapons/graybolt.png" soundwav="MASS.WAV" r="1" g=".5" b=".5" a="1" >
+<Appearance file="weapons/graybolt.texture" soundwav="MASS.WAV" r="1" g=".5" b=".5" a="1" >
 </Appearance>
 </Bolt>
 
@@ -778,7 +778,7 @@
 </Damage>
 <Distance speed="2500" radialspeed=".8" radius="1.2" length="10" pulsespeed="15" range="4000" >
 </Distance>
-<Appearance file="weapons/neutrongun.png" r=".8" g=".8" b="1" a="1" >
+<Appearance file="weapons/neutrongun.texture" r=".8" g=".8" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -789,7 +789,7 @@
 </Damage>
 <Distance speed="3000" radialspeed=".8" radius="1.2" length="10" pulsespeed="15" range="10000" >
 </Distance>
-<Appearance file="weapons/neutrongun.png" soundwav="ION.WAV" r="1" g="1" b="1" a="1" >
+<Appearance file="weapons/neutrongun.texture" soundwav="ION.WAV" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -800,7 +800,7 @@
 </Damage>
 <Distance speed="300000" radialspeed="24" radius="8" pulsespeed="15" range="20000" >
 </Distance>
-<Appearance file="weapons/beamtexture.png" soundwav="beam.WAV" r=".84" g=".5" b=".9" a="1" >
+<Appearance file="weapons/beamtexture.texture" soundwav="beam.WAV" r=".84" g=".5" b=".9" a="1" >
 </Appearance>
 </Beam>
 
@@ -833,7 +833,7 @@
 </Damage>
 <Distance speed="2200" radialspeed="1" radius="7" length="20" pulsespeed="15" range="12000" volume="0.0005">
 </Distance>
-<Appearance file="weapons/penetrator.png" soundwav="sfx07c.wav" r=".9" g=".7" b="1" a=".7" >
+<Appearance file="weapons/penetrator.texture" soundwav="sfx07c.wav" r=".9" g=".7" b="1" a=".7" >
 </Appearance>
 </Bolt>
 
@@ -844,7 +844,7 @@
 </Damage>
 <Distance speed="4000" radialspeed=".8" radius="10" length="40" pulsespeed="15" range="42100" >
 </Distance>
-<Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
+<Appearance file="weapons/disruptor.texture" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
 </Appearance>
 </Bolt>
 
@@ -855,7 +855,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="16" radius="20" length="8" pulsespeed="18" range="80000" >
 </Distance>
-<Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".7" g="1" b=".7" a=".6" >
+<Appearance file="weapons/heavylaserbeam.texture" soundwav="beam1.wav" r=".7" g="1" b=".7" a=".6" >
 </Appearance>
 </Beam>
 
@@ -866,7 +866,7 @@
 </Damage>
 <Distance speed="300000" radialspeed="24" radius="8" pulsespeed="15" range="60000" >
 </Distance>
-<Appearance file="weapons/beamtexture.png" soundwav="beam.WAV" r=".84" g=".5" b=".9" a="1" >
+<Appearance file="weapons/beamtexture.texture" soundwav="beam.WAV" r=".84" g=".5" b=".9" a="1" >
 </Appearance>
 </Beam>
 
@@ -877,7 +877,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="200" radius="30" length="8" pulsespeed="18" range="80000" >
 </Distance>
-<Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".7" g="1" b=".7" a=".6" >
+<Appearance file="weapons/heavylaserbeam.texture" soundwav="beam1.wav" r=".7" g="1" b=".7" a=".6" >
 </Appearance>
 </Beam>
 
@@ -936,7 +936,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="50" radius=".05" length="1.5" pulsespeed="15" range="240" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="beam.wav" r="1" g=".8" b=".8" a=".9" >
+<Appearance file="weapons/beam.texture" soundwav="beam.wav" r="1" g=".8" b=".8" a=".9" >
 </Appearance>
 </Beam>
 
@@ -947,7 +947,7 @@
 </Damage>
 <Distance speed="1" radialspeed="1" radius="1" length="1" pulsespeed="1" range="1" >
 </Distance>
-<Appearance file="weapons/neutrongun.png" r="1" g="1" b="1" a="1" >
+<Appearance file="weapons/neutrongun.texture" r="1" g="1" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -959,7 +959,7 @@
 </Damage>
 <Distance speed="300000" radialspeed="250" radius="30" length="8" pulsespeed="36" range="95000" >
 </Distance>
-<Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".6" g=".1" b=".8" a=".6" >
+<Appearance file="weapons/heavylaserbeam.texture" soundwav="beam1.wav" r=".6" g=".1" b=".8" a=".6" >
 </Appearance>
 </Beam>
 
@@ -970,7 +970,7 @@
 </Damage>
 <Distance speed="300000" radialspeed="1000" radius="100" length="8" pulsespeed="36" range="195000" >
 </Distance>
-<Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".6" g=".1" b=".8" a=".6" >
+<Appearance file="weapons/heavylaserbeam.texture" soundwav="beam1.wav" r=".6" g=".1" b=".8" a=".6" >
 </Appearance>
 </Beam>
 
@@ -981,7 +981,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="1500" radius="15" length="8" pulsespeed="36" range="70000" >
 </Distance>
-<Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".12" g="0" b=".7" a=".9" >
+<Appearance file="weapons/heavylaserbeam.texture" soundwav="beam1.wav" r=".12" g="0" b=".7" a=".9" >
 </Appearance>
 </Beam>
 
@@ -992,7 +992,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="7.5" radius="15" length="8" pulsespeed="36" range="4000" >
 </Distance>
-<Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".12" g=".8" b=".12" a=".85" >
+<Appearance file="weapons/heavylaserbeam.texture" soundwav="beam1.wav" r=".12" g=".8" b=".12" a=".85" >
 </Appearance>
 </Beam>
 
@@ -1003,7 +1003,7 @@
 </Damage>
 <Distance speed="20000" radialspeed=".8" radius="50" length ="100" pulsespeed="15" range="160000" volume="4" >
 </Distance>
-<Appearance file="weapons/beam.png" soundwav="MASS.WAV" r="0.1" g=".2" b="1" a="1" >
+<Appearance file="weapons/beam.texture" soundwav="MASS.WAV" r="0.1" g=".2" b="1" a="1" >
 </Appearance>
 </Bolt>
 
@@ -1102,7 +1102,7 @@
 </Damage>
 <Distance speed="8000" radialspeed="1" radius="11" length="23" pulsespeed="15" range="16000" >
 </Distance>
-<Appearance file="weapons/penetrator.png" soundwav="sfx07c.wav" r=".9" g=".6" b="1" a=".2" >
+<Appearance file="weapons/penetrator.texture" soundwav="sfx07c.wav" r=".9" g=".6" b="1" a=".2" >
 </Appearance>
 </Bolt>
 
@@ -1113,7 +1113,7 @@
 </Damage>
 <Distance speed="10000" radialspeed=".8" radius="13" length="37" pulsespeed="15" range="50000" >
 </Distance>
-<Appearance file="weapons/photon.png" soundwav="Particle.wav" r=".8" g="1" b=".8" a="1" >
+<Appearance file="weapons/photon.texture" soundwav="Particle.wav" r=".8" g="1" b=".8" a="1" >
 </Appearance>
 </Bolt>
 
@@ -1124,7 +1124,7 @@
 </Damage>
 <Distance speed="300000" radialspeed="60" radius="60" length="8" pulsespeed="36" range="150000" >
 </Distance>
-<Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".6" g=".1" b=".8" a=".6" >
+<Appearance file="weapons/heavylaserbeam.texture" soundwav="beam1.wav" r=".6" g=".1" b=".8" a=".6" >
 </Appearance>
 </Beam>
 
@@ -1135,7 +1135,7 @@
 </Damage>
 <Distance speed="300000000" radialspeed="1200" radius="60" length="8" pulsespeed="36" range="600000" >
 </Distance>
-<Appearance file="weapons/heavylaserbeam.png" soundwav="beam1.wav" r=".1" g=".1" b=".4" a=".2" >
+<Appearance file="weapons/heavylaserbeam.texture" soundwav="beam1.wav" r=".1" g=".1" b=".4" a=".2" >
 </Appearance>
 </Beam>
 
@@ -1146,7 +1146,7 @@
 </Damage>
 <Distance speed="8000" radialspeed=".8" radius="15" length="45" pulsespeed="15" range="160000" >
 </Distance>
-<Appearance file="weapons/disruptor.png" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
+<Appearance file="weapons/disruptor.texture" soundwav="Particle.wav" r="1" g="1" b="1" a=".8" >
 </Appearance>
 </Bolt>
 
