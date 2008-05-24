@@ -10,7 +10,7 @@
 # of the License, or (at your option) any later version.
 #
 # Author: pyramid
-# Version: 2008-05-15
+# Version: 2008-05-23
 #
 #---------------------------------------------------------------------------------
 
@@ -20,18 +20,12 @@
 # It is possible to break off the tutorial. The last completed stage is saved
 # in your savegame and resumes from there.
 
-# things that can be imroved
+# things that can be improved
 # (a) include other tutorial parts: targetting, weapons, ...
-# (b) publish news on available flight refresher
-# (c) synchronize talk and animation
-# (d) change the mission name that appears on the hud
-# (e) make tutorial repeatable after some time
-# (f) oswald should become very aggressive if damaged twice and mouthy when attacked
-# 'so you want to learn how to dodge lasers eh?', 'you aren't the first newbie i've had to put down, and you wont be the last'
-# maybe he can have sympathy and make it a lesson if he beats you
-# like stop before you destroy the player's ship and mouth off about how he hopes you learned
-# something, 'pirates won't be so forgiving'
-# (g) fix mission name and delete mission targets after each stage
+# (b) change the mission name that appears on the hud - not possible currently
+# (c) make tutorial repeatable after some time
+# (d) there should be negative relation adjustment when oswald gets destroyed
+# (e) fix mission name and delete mission targets after each stage
 
 # import used libraries
 import quest
@@ -61,17 +55,20 @@ STAGE_DECLINE = 98
 class quest_tutorial (quest.quest):
     # initialize quest variables
     def __init__ (self):
-        #print "--- Tutorial mission loaded ---"
         # initialize variables
+        self.stage = STAGE_DOCKED # tutorial stage
+        self.practice = 0 #sequence within a practice function
+        self.system = VS.getSystemName() # starting system
         self.player = VS.getPlayer()
+        self.playerhull = VS.getPlayer().GetHull()
         self.drone = VS.Unit()
-        self.stage = STAGE_DOCKED
+        self.droneshield = 1 # shield before fight
+        self.fight = 0 # how many fight rounds
         self.dockeddistance = 0
         self.timer = VS.GetGameTime() # controls the stage timing
         self.talktime = VS.GetGameTime() #controls individual talk time within animation
         self.anitime = VS.GetGameTime() # controls the animation time
         self.stayputtime = 0
-        self.practice = 0 #sequence within a practice function
         self.msgColor = "#FFFF99"
         self.objectives = []        # list of objectives
         self.objective = 0          # current objective
@@ -106,6 +103,7 @@ class quest_tutorial (quest.quest):
         # if the player is not docked and at least 5km away then set next stage number
         if (not self.startobject.isDocked(self.player) and self.startobject.getDistance(self.player)>(self.dockeddistance+5000)):
             self.stage = STAGE_AWAY
+        return 0
 
     # checks if the player has undocked. if so sets next stage
     def playerIsUndocked(self):
@@ -125,25 +123,11 @@ class quest_tutorial (quest.quest):
         if (name=="" or ((not self.startobjectname=="") and (not self.startobjectname=="Atlantis") and self.dockedobject.getDistance(self.player)>(self.dockeddistance+1000))):
             self.stage = STAGE_AWAY
             self.timer = VS.GetGameTime()+5
+        return 0
 
     def LightMinuteToMeter(self,lightminute):
         meter = 17987547500 * lightminute
         return meter
-
-    # returns the facing angle between unit 1 and unit 2
-    # when unit 1 is facing unit 2 the return value is 0
-    # when unit 1 is completely turned away from unit 2 the return value is pi (~3.14)
-    def facingAngleToUnit(self,unit1,unit2):
-        vec = Vector.Sub(unit2.Position(),unit1.Position())
-        dot = Vector.Dot(Vector.SafeNorm(unit1.GetOrientation()[2]),Vector.SafeNorm(vec))
-        angle = VS.acos(dot)
-        return angle
-
-    # signed velocity is negative when the thrust is reverse
-    # otherwise velocity is positive
-    def getSignedVelocity(self,unit):
-        velocity = Vector.Dot(Vector.SafeNorm(unit.GetOrientation()[2]),unit.GetVelocity())
-        return velocity
 
     # launches a unit aka the drone
     def launchNewDrone (self):
@@ -155,6 +139,9 @@ class quest_tutorial (quest.quest):
             # launch the tutorial drone.
             #VS.launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
             self.drone = VS.launch("Oswald","Robin","neutral","unit","default",1,1,vec,'')
+            # upgrade drone
+            self.drone.upgrade("quadshield15",0,0,1,0)
+            self.drone.upgrade("armor06",0,0,1,0)
             # when launching give the player some text and ask him to decide if he wants to participate
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Hello traveler.")
             VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"My name is Oswald and I am offering flight assistance.")
@@ -177,14 +164,42 @@ class quest_tutorial (quest.quest):
             self.drone.PrimeOrders()
             # display the drone on HUD
             self.player.SetTarget(self.drone)
+            # remember the initial shield strength
+            self.droneshield = unit.getShieldPercent(self.drone)
+            self.fight = 0
             self.stage += 1
+            #self.stage = COMPLETE_TUTORIAL3 # debug
             # duration of this part until end of animation
             self.timer = VS.GetGameTime() + 20
+        return 0
+
+    # check if drone has been attacked
+    # if so branch off to attack lesson
+    def checkDroneHealth (self):
+        if (unit.getShieldPercent(self.drone)<self.droneshield*0.90):
+            self.drone.PrimeOrders()
+            self.drone.SetTarget(self.player)
+            self.drone.LoadAIScript("fighter.ace")
+            self.drone.setFgDirective("a.")
+            self.savestage = self.stage
+            self.practice = 0
+            #if (self.fight<2):
+            self.fight += 1
+            self.stage = 96
+        return 0
+
+    # checks distance to drone
+    # if player is too far, the tutorial breaks off
+    def checkDistance (self):
+        if (self.drone.getDistance(self.player)>20000):
+            self.practice = 0
+            self.stage = 97
+        return 0
 
     # keeps the drone near the player
-    def orbitMe (self):
     # the drone doesn't quite orbit
     # it will approach the player until 500 meters and then stop
+    def orbitMe (self):
         #self.player.SetTarget(self.drone)
         # if the drone is more than 500m away it will set
         if (self.drone.getDistance(self.player)>=500):
@@ -200,6 +215,7 @@ class quest_tutorial (quest.quest):
             self.drone.SetVelocity((0,0,0))
             # this is also needed to stop rotation of the drone
             self.drone.SetAngularVelocity((0,0,0))
+        return 0
 
     # check if player stays put close to the drone to accept tutorial
     def acceptTutorial (self):
@@ -217,6 +233,7 @@ class quest_tutorial (quest.quest):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Have a nice journey and come back for a space faring refresher anytime here in Cephid 17.")
             self.stage = STAGE_DECLINE
             self.timer = VS.GetGameTime()
+        return 0
 
     ## play the first part of the tutorial
     def tutorialComm (self):
@@ -263,6 +280,7 @@ class quest_tutorial (quest.quest):
             self.timer = VS.GetGameTime()+0
             self.stage = COMPLETE_TUTORIAL1
             self.putSaveValue(self.stage)
+        return 0
 
     def tutorialNav (self):
         if (self.practice==0):
@@ -302,6 +320,7 @@ class quest_tutorial (quest.quest):
             self.timer = VS.GetGameTime()+0
             self.stage = COMPLETE_TUTORIAL2
             self.putSaveValue(self.stage)
+        return 0
 
     def practiceNav (self):
         # practice intro
@@ -356,7 +375,7 @@ class quest_tutorial (quest.quest):
             self.practice = 5
         if (self.practice==5):
             # check if the player is facing the drone
-            angle = self.facingAngleToUnit(self.player,self.drone)
+            angle = unit.facingAngleToUnit(self.player,self.drone)
             #print "facing: " + str(angle)
             if (angle<=0.05):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
@@ -369,7 +388,7 @@ class quest_tutorial (quest.quest):
                 self.practice = 6
         if (self.practice==6):
             # check if the player is facing away
-            angle = self.facingAngleToUnit(self.player,self.drone)
+            angle = unit.facingAngleToUnit(self.player,self.drone)
             velocity = Vector.Mag(self.player.GetVelocity())
             #check if angle to drone is at least 22 degrees (0.20 radians)
             if (angle>=0.20 and velocity>=295):
@@ -416,7 +435,7 @@ class quest_tutorial (quest.quest):
                 self.practice = 10
         if (self.practice==10):
             # check if the player has velocity <=-20m/s
-            velocity = self.getSignedVelocity(self.player)
+            velocity = unit.getSignedVelocity(self.player)
             if (velocity<=-18):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Excellent.")
@@ -441,6 +460,7 @@ class quest_tutorial (quest.quest):
             self.stage = COMPLETE_TUTORIAL3
             self.putSaveValue(self.stage)
             #print "NAV - save: " + str(self.getSaveValue())
+        return 0
 
     def practiceSpec (self):
         # practice intro
@@ -558,8 +578,8 @@ class quest_tutorial (quest.quest):
                 self.talktime = VS.GetGameTime()
                 self.timer = VS.GetGameTime()+14
                 self.practice += 1
-            else:
-                self.practice += 2
+            #else:
+            #    self.practice += 2
         if (self.practice==11 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
             for index in range (len(self.sequence)):
                 if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
@@ -620,6 +640,72 @@ class quest_tutorial (quest.quest):
             self.practice = 0
             self.stage = COMPLETE_TUTORIAL4
             self.putSaveValue(self.stage)
+        return 0
+
+    ## play the intermezzo when attacked
+    def tutorialIntermezzo (self):
+        # maybe he can have sympathy and make it a lesson if he beats you
+        # like stop before you destroy the player's ship and mouth off about how he hopes you learned
+        # something, 'pirates won't be so forgiving'
+        if (self.practice==0 and self.fight==1):
+            VS.IOmessage (0,"Oswald","Privateer","#FF0000"+"So you want to learn how to dodge lasers, eh?")
+            VS.IOmessage (4,"Oswald","Privateer","#FF0000"+"You aren't the first newbie I've had to put down, and you won't be the last!")
+            # set comm animation parameters
+            self.sequence = [[0,3,0],[4,5,0]]
+            self.talktime = VS.GetGameTime()
+            self.timer = VS.GetGameTime()+10
+            self.practice = 1
+        if (self.practice==0 and self.fight==2):
+            VS.IOmessage (0,"Oswald","Privateer","#FF0000"+"That's over the border, boy!")
+            VS.IOmessage (2,"Oswald","Privateer","#FF0000"+"May God have mercy upon my enemies, because I won't!")
+            # set comm animation parameters
+            self.sequence = [[0,2,0],[4,3,0]]
+            self.talktime = VS.GetGameTime()
+            self.timer = VS.GetGameTime()+5
+            self.practice = 1
+        if (self.practice==1 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==1 and VS.GetGameTime()>=self.timer):
+            self.practice = 4
+        if (self.practice==4 and self.player.GetHull()<=self.playerhull*0.90 and self.fight<2):
+            self.drone.SetTarget(VS.Unit())
+            VS.AdjustRelation(self.drone.getFactionName(),self.player.getFactionName(),99,10)
+            VS.AdjustRelation(self.player.getFactionName(),self.drone.getFactionName(),99,10)
+            self.drone.LoadAIScript("sitting_duck")
+            self.drone.PrimeOrders()
+            self.practice = 5
+        if (self.practice==5):
+            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Enough of this!")
+            VS.IOmessage (1,"Oswald","Privateer",self.msgColor+"I hope you've learned something.")
+            VS.IOmessage (2,"Oswald","Privateer",self.msgColor+"Pirates won't be so forgiving.")
+            VS.IOmessage (4,"Oswald","Privateer",self.msgColor+"And neither will I if you ever play tricks on me again!")
+            # set comm animation parameters
+            self.sequence = [[0,2,0],[4,2,0]]
+            self.talktime = VS.GetGameTime()
+            self.timer = VS.GetGameTime()+7
+            self.practice = 6
+        if (self.practice==6 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                    self.anitime = VS.GetGameTime()+2
+        if (self.practice==6 and VS.GetGameTime()>=self.timer):
+            self.practice = 7
+        if (self.practice==7 and VS.GetGameTime()>=self.timer):
+            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Now let's get back to business, hotshot.")
+            self.timer = VS.GetGameTime()+2
+            self.practice = 8
+        if (self.practice==8 and VS.GetGameTime()>=self.timer):
+            self.practice = 99
+        if (self.practice>=99):
+            self.droneshield = unit.getShieldPercent(self.drone)
+            # make sure to reset the counter for the next practice loops
+            self.practice = 0
+            self.stage = self.savestage
+        return 0
 
     # the execute loop for (nearly) each frame
     def Execute (self):
@@ -644,6 +730,15 @@ class quest_tutorial (quest.quest):
                 self.stage = 3
 
         if (not self.player.isNull() and not self.drone.isNull()):
+            # check if player is attacking drone 
+            if (self.stage<90):
+                self.checkDroneHealth()
+            # check if player is still in system
+            if (self.stage<90 and not VS.getSystemName()==self.system):
+                self.stage = 97
+            # check if player is flying off
+            if (self.stage<90 and not self.stage==COMPLETE_TUTORIAL3):
+                self.checkDistance()
             # when drone is launched, then follow player
             if (self.stage==3):
                 self.orbitMe()
@@ -664,9 +759,20 @@ class quest_tutorial (quest.quest):
                 self.player.commAnimation("com_tutorial_oswald.ani")
                 self.player.commAnimation("com_tutorial_oswald.ani")
                 self.player.commAnimation("com_tutorial_oswald.ani")
-                self.drone.SetVelocity((2000,0,0))
-                self.timer = VS.GetGameTime()+10
-                self.stage = 99
+                self.timer = VS.GetGameTime()+6
+                self.stage = 98
+            # drone was attacked, give him a lesson!
+            if (self.stage==96):
+                self.tutorialIntermezzo()
+            # player run off during tutorial, let's break it off then
+            if (self.stage==97 and VS.GetGameTime()>self.timer):
+                VS.IOmessage (0,"Oswald","player",self.msgColor+"Hey! Where are you heading? Come back for more anytime.")
+                VS.IOmessage (4,"Oswald","player",self.msgColor+"Have a good flight and don't break your hull.")
+                self.player.commAnimation("com_tutorial_oswald.ani")
+                self.player.commAnimation("com_tutorial_oswald.ani")
+                self.player.commAnimation("com_tutorial_oswald.ani")
+                self.timer = VS.GetGameTime()+6
+                self.stage = 98
             # if the turorial was declined
             if (self.stage==98 and VS.GetGameTime()>self.timer):
                 self.drone.SetVelocity((2000,0,0))
