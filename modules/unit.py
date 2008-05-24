@@ -345,3 +345,9 @@ def changeDirectionAndThrust(unit, angular, thrust):
     unit.SetAngularVelocity(angular)
     unit.LongitudinalThrust(thrust)
     return 1
+
+# returns the shield percent for a ship
+# ships with dual shields will return 0.5 with full shields
+def getShieldPercent(unit):
+    shield = (unit.FShieldData() + unit.RShieldData() + unit.LShieldData() + unit.BShieldData()) / 4
+    return shield
