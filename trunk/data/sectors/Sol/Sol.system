@@ -8,7 +8,7 @@
 <!-- Do what you will with this file but do not charge money for it. -->
 
 
-<system name="Sol" background="backgrounds/blue_galaxy1" nearstars="1" stars="1" starspread="1"  x="0" y="0" z="0" scalesystem="1000">
+<system name="Sol" background="backgrounds/milkyway" nearstars="1" stars="1" starspread="1"  x="0" y="0" z="0" scalesystem="1000">
 <Light>
 	<ambient red=".03" green="0.03" blue="0.03"/>
 	<diffuse  red="1" green="1" blue="1"/>
