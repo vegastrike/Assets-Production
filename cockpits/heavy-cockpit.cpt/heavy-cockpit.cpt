@@ -28,7 +28,12 @@
    <ArmorBRB file="armorr.sprite" width="0.102" height="-0.272" GaugeRight="1" />
    <ArmorFLB file="armorr.sprite" width="0.102"  height="0.272" xcent="-0.714" ycent="-0.700" GaugeLeft="1" />
    <ArmorBLB file="armorr.sprite" width="0.102" height="-0.272" xcent="-0.714" ycent="-0.700" GaugeLeft="1" />
- 
+
+   <TargetShieldF file="targetshieldf.sprite" GaugeDown="1"/>
+   <TargetShieldB file="targetshieldf.sprite" xcent="0.765" ycent="-.567"/>
+   <TargetShieldR file="targetshieldr.sprite" GaugeLeft="1"/>
+   <TargetShieldL file="targetshieldr.sprite" xcent="0.865" ycent="-.700" GaugeRight="1"/>
+
    <VDU TextRows="30" TextCols="25" type="Weapon Manifest Damage" file="wvdu.sprite" xcent="-.8" ycent=".2"/>	
    <VDU  TextRows="15" TextCols="25" type="Target View TargetManifest Nav" file ="rvdu.sprite" xcent=".775" ycent="-.75"/>
    <VDU TextRows="15" TextCols="25" type="Shield  Manifest" file="lvdu.sprite"/>
