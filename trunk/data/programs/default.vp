@@ -19,10 +19,8 @@ vec4 name(in vec4 vertex) \
 { \
   vec4 lpos = gl_LightSource[lightno].position; \
   vec4 rv; \
-  rv.xyz    = lpos.xyz*vertex.w - vertex.xyz*lpos.w; \
-  rv.w      = length(rv.xyz); \
-  rv.xyz   /= rv.w; \
-  rv.w = 2.0; \
+  rv.xyz    = normalize(lpos.xyz*vertex.w - vertex.xyz*lpos.w); \
+  rv.w      = 1.0; \
   return rv; \
 }
 
@@ -46,10 +44,10 @@ void name(in vec4 vertex, in vec3 eye, in vec3 normal, inout vec4 pc, inout vec4
   float NdotL = dot( lpatt.xyz, normal ); \
   float RdotL = dot( lpatt.xyz, refl ); \
   \
-  pc += lpatt.w*(  gl_FrontMaterial.emission + gl_FrontMaterial.ambient * gl_LightSource[lightno].ambient \
+  pc += lpatt.w*(  gl_FrontMaterial.ambient * gl_LightSource[lightno].ambient \
                  + max(0.0, NdotL) * gl_LightSource[lightno].diffuse * gl_FrontMaterial.diffuse );  \
-  sc += lpatt.w*(  pow( max(0.0, RdotL) , gl_FrontMaterial.shininess ) * selfshadowStep(NdotL) \
-		     * gl_LightSource[lightno].specular * gl_FrontMaterial.specular );  \
+  sc += lpatt.w*(  pow( max(0.0, RdotL) , max(1.0,gl_FrontMaterial.shininess) ) * selfshadowStep(NdotL) \
+                 * gl_LightSource[lightno].specular * gl_FrontMaterial.specular );  \
 }
 
 
@@ -67,12 +65,9 @@ void main()
   vec4 position = gl_ModelViewMatrix * gl_Vertex;
   vec3 eyetopos = normalize(position.xyz);
   vec3 normal   = normalize(gl_NormalMatrix * gl_Normal);
-
-  // Compute tangentspace
-  vec3 ref = normalize(gl_NormalMatrix*vec3(-1.0243,.0214,0.1324));//cheat use forward of ship to compute tangent
-  vec3 binormal = normalize(ref - normal * dot(ref,normal));//gramm schmitt orthonormalization process
-  vec3 tangent = normalize(cross(binormal,normal));
-
+  vec3 tangent  = normalize(gl_NormalMatrix * gl_MultiTexCoord2.xyz);
+  vec3 binormal = cross(tangent, normal) * sign(gl_MultiTexCoord2.w);
+  
   // Load varyings
   gl_TexCoord[0] = gl_MultiTexCoord0;
   gl_TexCoord[1].xyz = normal;
@@ -89,6 +84,7 @@ void main()
   // set primary color to the front light[0] ambient and light model ambient + emissive material properties
 
   vec4 pc = gl_FrontLightProduct[0].ambient 
+          + gl_FrontMaterial.emission
           + gl_FrontLightModelProduct.sceneColor
           + float(light_enabled[1]) * gl_FrontLightProduct[1].ambient;
 
@@ -103,7 +99,8 @@ void main()
     //if (light_enabled[7] != 0) lighting7(position, eyetopos, normal, pc, sc);
   }
 
-  gl_Position = gl_ModelViewProjectionMatrix*gl_Vertex;
+  // Need this instead of ftransform() for invariance
+  gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
   gl_FrontColor = gl_BackColor = pc;
-  gl_FrontSecondaryColor = sc;
+  gl_FrontSecondaryColor = gl_BackSecondaryColor = sc;
 }
