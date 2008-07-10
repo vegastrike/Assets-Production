@@ -174,7 +174,7 @@
 "tractor_beam","upgrades/Weapons/Beam_Arrays_Light",7500,0.01,1,"@cargo/tractor_beam.image@Gravitic technology can be used in a wide variety of ways: arguably, the most popular is keeping your soup in its bowl. A tractor beam, on the other hand, is good at putting somebody else's soup in your bowl. "
 "repulsor_beam","upgrades/Weapons/Beam_Arrays_Light",50000,0.01,1,"@cargo/repulsor_beam.image@Repulsor beams, relatively new items on the market, have seen considerable use in large-scale construction projects ever since it was discovered how to keep them from mangling the point of contact; some creative combatants have found different uses for them."
 "tractor_heavy","upgrades/Weapons/Beam_Arrays_Confed_Milspec",27500,0.01,1,"@cargo/tractor_heavy.image@Animal magnetism is overrated.  This is just over-engineered. Capable of producing a g-forces that would turn people, elephants, and any appropriately hued fruits into raspberry colored toast topping, heavy tractor beams are rarely seen outside of deepspace construction yards and piracy organizations."
-"tractor_capability","upgrades/Weapons/Mount_Enhancements",50000,0.01,1,"@cargo/cargo-hud.image@Traditionally, most weapon mounts aren't constructed to handle the strains associated with tractor beam usage. Fortunately, this is usually a cost-cutting measure, and installing the necessary reinforcements doesn't tend to interfere with the weapon mount, although it may void certain warranties. "
+"tractor_capability","upgrades/Weapons/Mount_Enhancements",50000,0.01,1,"@cargo/cargo_hud.image@Traditionally, most weapon mounts aren't constructed to handle the strains associated with tractor beam usage. Fortunately, this is usually a cost-cutting measure, and installing the necessary reinforcements doesn't tend to interfere with the weapon mount, although it may void certain warranties. "
 "autotracking","upgrades/Weapons/Mount_Enhancements",100000,0.01,1,"@upgrades/circuit1.image@While all mounted weapons have inherent auto-tracking capabilities, these defaults are limited in civilian mounts. A full-powered military auto-tracker like this greatly enhances weapon accuracy."
 ,,,,,
 "rlaan_turret_pd","upgrades/Weapons/Turrets/Rlaan",100000,0.1,1,"@upgrades/beam1.image@The Rlaan are well known for their disdain of missiles, especially those fired at them."
@@ -308,7 +308,7 @@
 "Uranium","Refined_Materials/Radioactive_Metals",540,19,1,"@cargo/uranium.image@A rather common radioactive used primarily in fission piles. The depleted isotopes are used in kinetic impact weapons."
 ,,,,,
 "Anti_Corrosives","Refined_Materials/Precious_Metals",180,18,1,"@cargo/anti_corrosives.image@Exemplified by such metals as Platinum, prized for its luster and resistance to corrosion, the rarity of these metals leads to their value."
-"Gold","Refined_Materials/Precious_Metals",160,19,1,"@cargo/precious.image@An exceptionally ductile metal, gold has long been used for the manufacture of useless, albeit pretty, constructions. It's conductive properties have, over the last millenium, given it roles in more useful applications."
+"Gold","Refined_Materials/Precious_Metals",160,19,1,"@cargo/gold.image@An exceptionally ductile metal, gold has long been used for the manufacture of useless, albeit pretty, constructions. It's conductive properties have, over the last millenium, given it roles in more useful applications."
 "Rare_Earths","Refined_Materials/Precious_Metals",156,18,1,"@cargo/rare_earths.image@Otherwise known as lanthanoids or the lanthanide series of metals that are highly reactive in air. Rare Earths are used in almost all advanced product manufacturing, particularly lighting and nuclear applications."
 ,,,,,
 "Chemical_Mix","Refined_Materials/Chemicals",100,1,1,"@cargo/chemical_mix.image@Original sources of chemicals used in the creation of gases, liquids and solids that form chemical fuel."
@@ -354,8 +354,8 @@
 "Factory_Equipment","Industrially_Manufactured_Goods/Manufacturing",9600,10,2,"@cargo/factory_equipment.image@All hardwired equipment needed for a factory to commence operations. Whether food processing or product manufacture, all you need is supplied in a do it yourself construction kit. Press Start to continue."
 "Robot_Workers","Industrially_Manufactured_Goods/Manufacturing",2900,25,4,"@cargo/robot_workers.image@Tireless laborers that will attempt to do nearly any task you can require of them. Unfortunately, in order to keep costs down, their ability to comprehend instructions is somewhat limited."
 "Assembly_Tools","Industrially_Manufactured_Goods/Manufacturing",96,1,0.5,"@cargo/assembly_tools.image@To do any job where something needs to be put together, ripped apart or combined with other things, you need the right tools. This packaged set contains everything the happy worker needs to perform their duties. Buy now and receive a free set of socket wrenches."
-"BioApplicator","Industrially_Manufactured_Goods/Manufacturing",90,4,5,"@cargo/cargo-hud.image@Essentially a vat full of genetically engineered organisms or their biowaste, with some valves and a spray nozzle. This device is used to create and apply the complex proteins that the Rlaan use as a basic construction material. When the goop sprayed out of the nozzle reacts with the methane atmosphere present on nearly all Rlaan worlds, the required building material denatures into the desired solid form."
-"BioRemodeler","Industrially_Manufactured_Goods/Manufacturing",96,0.6,0.5,"@cargo/cargo-hud.image@This device applies a set of enzymes that sufficiently liquify the organics used in most Rlaan construction. The organics become gel-like, and can be remodelled into the desired forms with little effort."
+"BioApplicator","Industrially_Manufactured_Goods/Manufacturing",90,4,5,"@cargo/cargo_hud.image@Essentially a vat full of genetically engineered organisms or their biowaste, with some valves and a spray nozzle. This device is used to create and apply the complex proteins that the Rlaan use as a basic construction material. When the goop sprayed out of the nozzle reacts with the methane atmosphere present on nearly all Rlaan worlds, the required building material denatures into the desired solid form."
+"BioRemodeler","Industrially_Manufactured_Goods/Manufacturing",96,0.6,0.5,"@cargo/bio_remodeler.image@This device applies a set of enzymes that sufficiently liquify the organics used in most Rlaan construction. The organics become gel-like, and can be remodelled into the desired forms with little effort."
 ,,,,,
 "Atmospheric_Scrubbers","Industrially_Manufactured_Goods/Mining",27000,4,8,"@cargo/atmospheric_scrubbers.image@Atmostpheric scrubbers consist of a series of screens, containers and filters to remove toxic wastes from an artificial atmosphere. As few if any spaceborn craft have an effective contained ecology, they require such artificial means of providing a sustained breathable atmosphere.."
 "Boring_Droids","Industrially_Manufactured_Goods/Mining",90,150,25,"@cargo/boring_droids.image@Construction of mine shafts has never been so easy. Just feed your tunnel plans to these babies, and come back a few days later to find huge mounds of debris and delightfully polished passageways."
@@ -391,7 +391,7 @@
 "Personal_Transport","Consumer_and_Commercial_Goods/Domestic",1896,69,42,"@cargo/personal_transport.image@Whether dropping down to the local dispensary, or travelling around the planet to visit friends, these wheeled, hover and flight conveyances serve every requirement of the average traveler."
 ,,,,,
 "Standard_PADs","Consumer_and_Commercial_Goods/Electronics",45,1,1,"@cargo/standard_PAD.image@Personal Assistant Devices incorporate functions such as planetary communications, data storage and retrieval, and electronic diary, all in one small, usually hand sized and hand held package."
-"Premium_PADs","Consumer_and_Commercial_Goods/Electronics",45,1,1,"@cargo/standard_PAD.image@While costly, advanced developments in electronics now permit PADs that can be strapped to a wrist or similar appendage, rather than be carried in hand. A holographic projection provides the interface device, rather than hard wiring in the PAD itself."
+"Premium_PADs","Consumer_and_Commercial_Goods/Electronics",45,1,1,"@cargo/premium_pad.image@While costly, advanced developments in electronics now permit PADs that can be strapped to a wrist or similar appendage, rather than be carried in hand. A holographic projection provides the interface device, rather than hard wiring in the PAD itself."
 "Consoles","Consumer_and_Commercial_Goods/Electronics",45,1,1,"@cargo/consoles.image@Popular descriptive name for a Central Entertainment System. These systems include wall mounted 2D video screens, holographic projectors, recording and playback devices for audio and visual, planetary communications and the ability to play games over virtual networks."
 ,,,,,
 "Classical_Instruments","Consumer_and_Commercial_Goods/Luxury",1200,0.05,1,"@cargo/classical_instruments.image@Typically, those musical instruments designed and built before the age of industrialization. Usually percussion and acoustic instruments, most of which were built by those regarded as masters in their musical fields."
@@ -411,7 +411,7 @@
 "Hyposyringes","Specialty_Goods/Medical",480,1,1,"@cargo/hyposyringes.image@After the medical lawsuits of last century, something was needed to stop certain segments of the medical community from gaining some perverse pleasure by jamming large hollow needles into their fellow beings. The hyposyringe uses an explosive blast of air to insert the required dosage, and vacuum to extract bodily tissue."
 "First_Aid_Kits","Specialty_Goods/Medical",480,7,10,"@cargo/first_aid_kits.image@While the contents have changed countless times, these kits can be found in every public transport and in every overprotective mother's travel bags. Typically containing everything to required to heal a papercut to amputating a limb, use of the advanced items is recommended only by those with a medical license or suffering psychopathy."
 "Medical_Kit","Specialty_Goods/Medical",90,12,10,"@cargo/medical_kit.image@Given their somewhat similar chemical makeup, the Aera medical kit contains many items similar or analogous to those found in human first aid.\nOf noteworthy exception, however, is the standard issue in all Aera packs of a suicide pill marked 'Treatment for Terminal Trauma'."
-"Pseudotherms","Specialty_Goods/Medical",90,16,10,"@cargo/cargo-hud.image@The Aera originated on a warm world, and are subject to episodes of reduced functionality if caught unprepared in a frigid environment. These coveralls are packed with shielded isotopes and spectral converters that are guaranteed to warm an Aera back up to body temperature within a few minutes."
+"Pseudotherms","Specialty_Goods/Medical",90,16,10,"@cargo/cargo_hud.image@The Aera originated on a warm world, and are subject to episodes of reduced functionality if caught unprepared in a frigid environment. These coveralls are packed with shielded isotopes and spectral converters that are guaranteed to warm an Aera back up to body temperature within a few minutes."
 "DNA_Resequencer","Specialty_Goods/Medical",90,0.3,1,"@cargo/dna_resequencer.image@This portable device can take any DNA sample and transcribe it into the more familiar Rlaan analogs so that it may be more conveniently analyzed."
 "Cellular_Accelerant","Specialty_Goods/Medical",90,0.01,1,"@cargo/cellular_accelerant.image@A gel pack of complex organic muck that when applied to the site of an injury, will greatly increase the rate of a Rlaan's healing process."
 ,,,,,
@@ -569,20 +569,20 @@
 "hawkeye2","upgrades/Sensors/Advanced",64000,0.01,17,"@upgrades/hawkeye_zx50.image@"
 "hawkeye3","upgrades/Sensors/Advanced",128000,0.01,21,"@upgrades/hawkeye_zx86.image@"
 ,,,,,
-"add_cargo_expansion","upgrades/Cargo",16000,1,20,"@cargo/cargo-hud.image@Trades upgrade space and support systems for cargo volume"
+"add_cargo_expansion","upgrades/Cargo",16000,1,20,"@cargo/cargo_expansion.image@Trades upgrade space and support systems for cargo volume"
 ,,,,,
-"mult_shady_moreupgrade","upgrades/Shady_Mechanic",32000,10,50,"@cargo/cargo-hud.image@Trades cargo space for upgrade room."
+"mult_shady_moreupgrade","upgrades/Shady_Mechanic",32000,10,50,"@cargo/cargo_hud.image@Trades cargo space for upgrade room."
 "mult_shady_morethrust","upgrades/Shady_Mechanic",64000,4,8,"@weapons/beamtexture2.image@More thruster nodes, less engine shielding."
 "mult_shady_moreshields","upgrades/Shady_Mechanic",128000,0.1,1,"@weapons/beamtexture.image@Increased shield capacity at the expense of weakened main-hull structural integrity."
 "mult_shady_moregunrecharge","upgrades/Shady_Mechanic",256000,0.1,0.25,"@upgrades/circuit1.image@Trades energy capacity for recharge rate."
 "mult_shady_moreshieldrecharge","upgrades/Shady_Mechanic",512000,1.1,5,"@upgrades/mult_shield_regenerator.image@Increases effective ship mass, increases shield recharge."
 "mult_shady_moreturning","upgrades/Shady_Mechanic",1024000,3.7,8,"@upgrades/mult_turn_jet_enhancer.image@Violates safety specifications to increase maneuvering performance."
 ,,,,,
-"repair_droid01","upgrades/Repair_Systems",32000,0.01,2,"@cargo/cargo-hud.image@Repairs ship upgrades in-flight"
-"repair_droid02","upgrades/Repair_Systems",64000,0.01,4,"@cargo/cargo-hud.image@Repairs ship upgrades in-flight"
-"repair_droid03","upgrades/Repair_Systems",128000,0.01,8,"@cargo/cargo-hud.image@Repairs ship upgrades in-flight"
-"repair_droid04","upgrades/Repair_Systems",256000,0.01,16,"@cargo/cargo-hud.image@Repairs ship upgrades in-flight"
-"repair_droid05","upgrades/Repair_Systems",512000,0.01,32,"@cargo/cargo-hud.image@Repairs ship upgrades in-flight"
+"repair_droid01","upgrades/Repair_Systems",32000,0.01,2,"@cargo/repair_droid01.image@Repairs ship upgrades in-flight"
+"repair_droid02","upgrades/Repair_Systems",64000,0.01,4,"@cargo/repair_droid01.image@Repairs ship upgrades in-flight"
+"repair_droid03","upgrades/Repair_Systems",128000,0.01,8,"@cargo/repair_droid01.image@Repairs ship upgrades in-flight"
+"repair_droid04","upgrades/Repair_Systems",256000,0.01,16,"@cargo/repair_droid01.image@Repairs ship upgrades in-flight"
+"repair_droid05","upgrades/Repair_Systems",512000,0.01,32,"@cargo/repair_droid01.image@Repairs ship upgrades in-flight"
 ,,,,,
 "ecm_package01","upgrades/ECM_Systems",5000,0.01,1,"@upgrades/ecm1.image@Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications."
 "ecm_package02","upgrades/ECM_Systems",15000,0.01,1,"@upgrades/ecm2.image@Electronic CounterMeasures\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications."
