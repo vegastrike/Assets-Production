@@ -42,7 +42,7 @@ vec4  lerp(float f, vec4 a, vec4 b) { return (1.0-f)*a+f*b; }
 
 float shininessMap(float shininess, vec4 specmap) // luma-based shininess modulation
 {
-  float3 temp = specmap.rgb;
+  vec3 temp = specmap.rgb;
   temp *= specmap.rgb;
   temp *= temp;
   return clamp( dot(temp.rg,vec2(0.5))*shininess, 1.0, 255.0 );
@@ -50,9 +50,9 @@ float shininessMap(float shininess, vec4 specmap) // luma-based shininess modula
 
 float shininess2Lod(float shininess) { return max(0.0,7.0-log2(shininess+1.0)); }
 
-float limited_shininessMap(float shininess, float specmap)
+float limited_shininessMap(float shininess, vec4 specmap)
 {
-  float limit = 50; //50^2 is 2500. 2500*0.001 = 2.5 --enough risk of saturation!
+  float limit = 50.0; //50^2 is 2500. 2500*0.001 = 2.5 --enough risk of saturation!
   float shine = shininessMap(shininess,specmap);
   return (shine*limit)/(shine+limit);
 }
@@ -62,7 +62,7 @@ float shininess_to_brightness(float shininess)
   return 0.001 * shininess * shininess;
 }
 
-float lightspot_brightness( float shininess, float specmap )
+float lightspot_brightness( float shininess, vec4 specmap )
 {
   return limited_shininessMap( shininess, specmap ) * shininess_to_brightness( shininess );
 }
