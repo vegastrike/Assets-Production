@@ -42,7 +42,7 @@ vec4  lerp(float f, vec4 a, vec4 b) { return (1.0-f)*a+f*b; }
 
 float shininessMap(float shininess, vec4 specmap) // luma-based shininess modulation
 {
-  float2 temp = specmap.rg;
+  vec2 temp = specmap.rg;
   temp *= temp;
   temp *= specmap.rg;
   return clamp( 0.5*dot(temp.rg,shininess.xx), 1.0, 255.0 );
@@ -59,14 +59,14 @@ vec3 envMapping(in vec3 reflection, in float gloss, in vec3 specmap)
    return texture2DLod(envMap, EnvMapGen(reflection), envLod).rgb * specmap * envColor.rgb * 2.0;
 }
 
-float limited_shininessMap(float shininess, float specmap)
+float limited_shininessMap(float shininess, vec4 specmap)
 {
-  float limit = 50; //50^2 is 2500. 2500*0.001 = 2.5 --enough risk of saturation!
+  float limit = 50.0; //50^2 is 2500. 2500*0.001 = 2.5 --enough risk of saturation!
   float shine = shininessMap(shininess,specmap);
   return (shine*limit)/(shine+limit);
 }
 
-vec3 specularNormalize(vec3 spec, float shininess)
+float specularNormalize(float spec, float shininess)
 {
    return spec * pow(1.7/(1.0+shininess/10.0),-1.7);
 }
