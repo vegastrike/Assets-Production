@@ -1,22 +1,22 @@
-<mission>
+<?xml version="1.0" ?><mission>
 	<settings>
-		<origin  planet="earth" x="0000" y="100" z="000.0"/>
+		<origin planet="earth" x="0000" y="100" z="000.0"/>
 	</settings>
 
 	<variables>
 		<var name="credits" value="1350000"/>
 		<var name="defaultplayer" value="blue"/>
-		<var name="mission_name" value="Vega Strike Model viewer" />
+		<var name="mission_name" value="Vega Strike Model viewer"/>
 		<var name="difficulty" value=".25"/><!--good starting difficulty here-->
-		<var name="system" value="Special/Modelview" />
-		<var name="description" value="Welcome to Vega Strike: Upon the Cold Sea." />
-		<var name="savegame" value="modelview" />
+		<var name="system" value="Special/Modelview"/>
+		<var name="description" value="Welcome to Vega Strike: Upon the Cold Sea."/>
+		<var name="savegame" value="modelview"/>
 	</variables>
 	
     <flightgroups>
 		<!-- need at least one, to avoid messing with the engine -->
-                <flightgroup name="Shlimazel" faction="privateer" type="Tridacna" ainame="default" waves="1" nr_ships="1">
-			<pos x="119990000" y="-9000000" z="-1099900000"/>
+                <flightgroup ainame="default" faction="privateer" name="Shlimazel" nr_ships="2" type="Archimedes" waves="1">
+			<pos x="1199900000" y="-9000000" z="-10999000000"/>
 		</flightgroup>
     </flightgroups>
 	
