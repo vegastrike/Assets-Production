@@ -129,7 +129,7 @@ void distribute_gloss
     linear_glosses.x = is_metal * gloss_in;
     linear_glosses.y = lerp( is_metal, gloss_in, sqrt(1.0-is_dielectric) );
 }
-vec2 lin_gloss_2_LOD( in vec2 lin_gloss )
+vec2 lin_gloss_2_LOD( in vec2 lin_gloss, in float spec_occlusion )
 {
     //The following is an approximation of the true formula. It avoids
     //using a logarithm, plus it makes better use of env-map mipmaps.
@@ -138,7 +138,7 @@ vec2 lin_gloss_2_LOD( in vec2 lin_gloss )
     //we do it for 2 shininesses simultaneously, using vec2 in and out.
     vec2 temp1 = lin_gloss * lin_gloss * lin_gloss + vec2( 1.07 );
     vec2 temp2 = vec2( 0.92 ) - lin_gloss;
-    return temp1 * temp2 * 15.2 + lin_gloss * 8.5 - vec2( 6.0 );
+    return temp1 * temp2 * 15.2 + lin_gloss * 8.5 - vec2(2.222) -vec2(3.777) * clamp( sqrt(spec_occlusion+0.2), 0.0, 1.0 );
 }
 vec2 lin_gloss_2_exp( in vec2 lin_gloss )
 {
@@ -173,7 +173,7 @@ vec2 lin_gloss_2_exp( in vec2 lin_gloss )
     255/256 29791.000  0.39 7.69% */
     /* limit to 1 degree radius (shininess of 4500) by product over sum; so
     that point source lights don't become single pixels on reflections */
-    vec2 temp3 = vec2( 7777.0 );
+    vec2 temp3 = vec2( 477.0 );
     return temp1 * temp3 / (temp1+temp3);
 }
 
@@ -223,29 +223,28 @@ vec3 prt_aexpand( in vec3 sin )
 }*/
 
 void prt_decode( in vec4 PRTin, in float eqd_ao,
-  out vec3 diffPRTPout, out vec3 diffPRTNout, out vec3 specPRTPout, out vec3 specPRTNout )
+  out vec3 diffPRTPout, out vec3 diffPRTNout, out vec3 specPRTPout, out vec3 specPRTNout, out vec4 prt )
 {
     vec3 supplement, p_suppl, n_suppl;
     vec3 first_decode_prtp = prt_pexpand( PRTin.rgb );
     vec3 first_decode_prtn = prt_nexpand( PRTin.rgb );
     vec3 PRTacc =
-      first_decode_prtp*first_decode_prtp + first_decode_prtn*first_decode_prtn;
-    float PRTenergy = sqrt( PRTacc.r + PRTacc.g + PRTacc.b );
+      first_decode_prtp + first_decode_prtn;
+    float PRTenergy = ( PRTacc.r + PRTacc.g + PRTacc.b );
     //diffuse prt's
     supplement = (vec3(1.0)-PRTacc) * (PRTin.a - PRTenergy) * 0.333;
     p_suppl = (vec3(1.0)-first_decode_prtp)*supplement;
     n_suppl = (vec3(1.0)-first_decode_prtn)*supplement;
-    diffPRTPout = first_decode_prtp+p_suppl;
-    diffPRTNout = first_decode_prtn+n_suppl;
+    diffPRTPout = clamp( first_decode_prtp+p_suppl, 0.01, 0.99 );
+    diffPRTNout = clamp( first_decode_prtn+n_suppl, 0.01, 0.99 );
     //specular prt's
-    supplement = (vec3(1.0)-PRTacc) * (eqd_ao - PRTenergy) * 0.333;
-    p_suppl = (vec3(1.0)-first_decode_prtp)*supplement;
-    n_suppl = (vec3(1.0)-first_decode_prtn)*supplement;
-    specPRTPout = clamp( first_decode_prtp+p_suppl, 0.01, 0.99 );
-    specPRTNout = clamp( first_decode_prtn+n_suppl, 0.01, 0.99 );
-    //overdo it:
-/*    specPRTPout = clamp( (3.0*specPRTPout)-(2.0*diffPRTPout), 0.01, 0.99 );
-    specPRTNout = clamp( (3.0*specPRTNout)-(2.0*diffPRTNout), 0.01, 0.99 );*/
+//    supplement = (vec3(1.0)-PRTacc) * (eqd_ao - PRTenergy) * 0.333;
+//    p_suppl = (vec3(1.0)-first_decode_prtp)*supplement;
+//    n_suppl = (vec3(1.0)-first_decode_prtn)*supplement;
+    specPRTPout = diffPRTPout;//clamp( first_decode_prtp+p_suppl, 0.01, 0.99 );
+    specPRTNout = diffPRTNout;//clamp( first_decode_prtn+n_suppl, 0.01, 0.99 );
+    prt.rgb = diffPRTPout-diffPRTNout;
+    prt.a = PRTin.a;
 }
 
 float prt_sample( in vec3 dir, in vec3 prtp, in vec3 prtn )
@@ -255,23 +254,54 @@ float prt_sample( in vec3 dir, in vec3 prtp, in vec3 prtn )
     vec3 n = clamp(-dir, 0.0, 1.0);
     return dot(p,prtp) + dot(n,prtn);
 }
-
-float prt_diff_shadow( in vec3 dir, in vec3 prtp, in vec3 prtn, in float hardness, in float biasfactor )
+/*
+//float prt_diff_shadow( in vec3 dir, in vec3 prtp, in vec3 prtn, in float hardness, in float biasfactor )
+float prt_diff_shadow( in vec3 dir, in vec3 nor, in vec3 prtp, in vec3 prtn, in float ao )
 {
-    float ihardness = 1.0 + 4.0*hardness;
-    hardness = 0.125 * hardness * biasfactor;
-    return clamp( (prt_sample( dir, prtp, prtn ) - hardness) * ihardness, 0.0, 1.0 );
+    
+    //float ihardness = 1.0 + 4.0*hardness;
+    //hardness = 0.125 * hardness * biasfactor;
+    //return clamp( (prt_sample( dir, prtp, prtn ) - hardness) * ihardness, 0.0, 1.0 );
+    
+    vec3 VUT = normalize( dir );
+    vec3 PRT = prtp - prtn;
+    vec3 NPRT = normalize( PRT );
+    vec3 temp1 = normalize( cross( VUT, normalize(nor) ) );
+    vec3 temp2 = normalize( cross( NPRT, normalize(nor) ));
+    float coplanarity = dot( temp1, temp2 ); //, NPRT );
+    coplanarity *= coplanarity;
+    float noncoplanarity = 1.0-coplanarity;
+    float vutocclusion = clamp(dot(PRT,VUT)+ao,0.0,1.0);
+    vutocclusion *= vutocclusion;
+    lerp( coplanarity, ao, vutocclusion );
+    return vutocclusion;
 }
-float prt_spec_shadow( in vec3 dir, in vec3 prtp, in vec3 prtn, in float hardness, in float biasfactor )
-{
-    float ihardness = 1.0 + 4.0*hardness;
-    hardness = 0.125 * hardness * biasfactor;
-    return clamp( (prt_sample( dir, prtp, prtn ) - hardness) * ihardness, 0.01, 0.99 );
-}
-
+*/
 float prt_ao( in vec3 prtp, in vec3 prtn )
 {
     return dot(prtp + prtn, vec3(1.0));
+}
+
+//float prt_spec_shadow( in vec3 dir, in vec3 nor, in vec3 prtp, in vec3 prtn, in float ao )
+float prt_spec_shadow( in vec3 dir, in vec3 nor, in vec4 prt )
+{
+    vec3 VUT = normalize( dir );
+    vec3 NOR = normalize( nor );
+    vec3 PRT = prt.rgb;
+    float ao = prt.a;
+    vec3 NPRT = normalize( PRT );
+    vec3 temp1 = cross( VUT, NOR );
+    vec3 temp2 = cross( NPRT, NOR );
+    float coplanarity_relevance = dot( temp1, temp1 ) * dot(temp2,temp2) * ao*sqrt(ao);
+    float coplanarity = dot( normalize(temp1), normalize(temp2) );
+    coplanarity *= coplanarity;
+    float noncoplanarity = 1.0-coplanarity;
+    noncoplanarity *= noncoplanarity; //less than full squaring makes weird things
+    noncoplanarity *= sqrt(coplanarity_relevance);
+    noncoplanarity += (0.1*(1.0-sqrt(dot(temp2,temp2))));
+    float vutocclusion = 0.6366*asin(dot(PRT,VUT));
+    vutocclusion += (sqrt(ao)+noncoplanarity-0.5);
+    return clamp( vutocclusion, 0.0, 1.0 );
 }
 
 vec3 prt_gi( in vec3 prtp, in vec3 prtn )
@@ -284,13 +314,6 @@ vec3 prt_gi( in vec3 prtp, in vec3 prtn )
          + envMappingLOD(-gl_ModelViewMatrixTranspose[1].xyz, LOD) * prtn.y
          + envMappingLOD(-gl_ModelViewMatrixTranspose[2].xyz, LOD) * prtn.z;
 }
-/*vec3 prt_gi( in vec3 prtp, in vec3 prtn )
-{
-    float ao = prt_ao(prtp,prtn);
-    float LOD = 8.0 * sqrt( ao );
-    vec3 PRT = normalize(prtp-prtn);
-    return ao * envMappingLOD( -PRT, LOD);
-}*/
 
 vec3 world_to_object( in vec3 world )
 {
@@ -298,6 +321,7 @@ vec3 world_to_object( in vec3 world )
                 gl_ModelViewMatrixInverse[1].xyz,
                 gl_ModelViewMatrixInverse[2].xyz) * world;
 }
+
 //Per-light called subroutines and macros:
 
 float selfshadow_step( in float cosa )
@@ -321,7 +345,7 @@ void soft_penumbra_NdotL
     result *= ( 0.97 * ss );
     vNdotL = clamp( result.y, 0.0, 1.0 );
     selfshadow = ss;
-    NdotL = clamp( result.x, 0.0, 2.0*(vNdotL) );
+    NdotL = clamp( result.x, 0.0, 4.0*(vNdotL) );
 }
 float fresnel( in float cosa, in float k )
 {
@@ -338,7 +362,8 @@ void perlite
   in vec3 lightDiffuse, in float lightAtt,
   in float fresnel_blend, in float k, in vec2 ltd_glosses,
   inout vec3 DLacc, inout vec3 MSacc, inout vec3 FSacc,
-  in vec3 diffprtp, in vec3 diffprtn
+  //in vec3 diffprtp, in vec3 diffprtn
+  in vec4 prt
 )
 {
 	float selfshadow, NdotL, vNdotL;
@@ -346,32 +371,41 @@ void perlite
 	//cos of reflection to light angle
 	float RdotL = clamp( dot( reflection, light), 0.0, 4.0*vNdotL );
     //  precalculate some factors used more than once
-    vec3 incident_light = lightDiffuse.rgb * lightAtt * selfshadow * prt_diff_shadow(world_to_object(light), diffprtp, diffprtn, 1.0, 1.0);
+//    vec3 incident_light = lightDiffuse.rgb * lightAtt/* * selfshadow*/ * prt_spec_shadow(world_to_object(light), world_to_object(vnormal), diffprtp, diffprtn, prt_ao(diffprtp, diffprtn));
+    float prt_occlusion = prt_spec_shadow( world_to_object(light), world_to_object(vnormal), prt );
+    prt_occlusion = clamp( pow( prt_occlusion+0.47, 77.7 ), 0.0, 1.0 );
+    vec3 incident_light = lightDiffuse.rgb * lightAtt/* * selfshadow*/ * prt_occlusion;
     float fresnel_refl = fresnel_blend * fresnel( NdotL, k );
-//    vec3 reflected_light = incident_light * fresnel_refl;
     vec3 refracted_light = incident_light * (1.0-fresnel_refl);
+    vec3 reflected_light = incident_light * fresnel_refl;
     float ltd_Mgloss = ltd_glosses.x;
     float ltd_Fgloss = ltd_glosses.y;
+    float gloss_mul_lim = 477.7 * prt_occlusion * prt_occlusion;
     //  * DL - diffuse light: Needs to be multiplied by
     //  (1-fresnel_blend*fresnel reflection), from light vector
     DLacc += ( NdotL * refracted_light );
+    //NOTE: Here we would multiply metallic and fresnel accumulations by
+    //the refraction and reflection factors; but since specular lighting
+    //only counts around where the light aligns with the reflection vector,
+    //there's really no point in doing these multiplications for each light;
+    //we will do them with the accumulators in the final_blend() routine.
     //  * MS - metallic specularity: Modulated by
     //  (1-fresnel_blend*fresnel reflection), also, and
     //  metallic shininess phong. And we also multiply by the
     //  shininess, as smaller spots get more light concentration
-    MSacc += ( pow( NdotL, ltd_Mgloss ) * sqrt(ltd_Mgloss) * refracted_light ); 
+    MSacc += ( pow(RdotL,ltd_Mgloss) * clamp( ltd_Mgloss, 0.0, gloss_mul_lim ) ); 
     //  * FS - fresnel specularity: Doesn't need fresnel, really,
     //  as the only fresnel applicable is view-vector-dependent,
     //  which can be applied afterwards, to the accumulated value;
     //  so, we'll multiply the accumulator by view fresnel after...
-    FSacc += ( pow( NdotL, ltd_Fgloss ) * sqrt(ltd_Fgloss) ); //*reflected_light);
+    FSacc += ( pow(RdotL,ltd_Fgloss) * clamp( ltd_Fgloss, 0.0, gloss_mul_lim ) );
 }
 #define lighting(name, lightno_gl, lightno_tex) \
 void name( \
    in vec3 normal, in vec3 vnormal, in  vec3 reflection, \
    in float k_blend, in float k_const, in vec2 limited_glosses, \
    inout vec3 DL_acc, inout vec3 MS_acc, inout vec3 FS_acc, \
-   in vec3 prtp, in vec3 prtn \
+   in vec4 prt \
 ) \
 { \
     perlite( normalize(gl_TexCoord[lightno_tex].xyz), \
@@ -380,23 +414,24 @@ void name( \
       gl_TexCoord[lightno_tex].w, \
       k_blend, k_const, limited_glosses, \
       DL_acc, MS_acc, FS_acc, \
-      prtp, prtn); \
+      prt); \
 }
 lighting(lite0, 0, 5)
 lighting(lite1, 1, 6)
 
 //final blend subroutines:
 
-vec3 multibounce_color( in vec3 color, in float refl_factor, in float blend )
+vec3 multibounce_color( in vec3 color, in float refl_factor )
 {
     /* After light's penetrated the outer dielectric & is about to hit the inner, opaque
     layer below, instead of *= color, use this to account for multiple inner bouncings
     The formula is: *= (c-refL*c)/(1-refL*c), where refL is the fresnel reflectivity and
     c is the color of the material under the dielectric coating. But blended materials,
     such as plastics, are only partially covered by a specular dielectric layer, so we do
-    have to allow some pure color reflectivity; thus the "blend" thing... */
+    have to allow some pure color reflectivity; thus the "blend" thing... 
+    Update: blend factor can just be pre-multiplied with the refl_factor; blend removed.*/
     vec3 temp = color * refl_factor;
-    return lerp( blend, (color-temp)/(vec3(1.0)-temp), color );
+    return (color-temp)/(vec3(1.0)-temp);
 }
 vec3 final_blend
 (
@@ -406,7 +441,7 @@ vec3 final_blend
  in vec3 diff_color, in vec3 spec_color,
  in float dielectric_blend, in float dielectric_k, /*in float AO,*/
  in float spec_LoD,
- /*in vec3 prtp, in vec3 prtn,*/ in float specAOfactor, in vec3 prt_ambient, in float ao
+ /*in vec3 prtp, in vec3 prtn,*/ in float specular_occlusion, in vec3 prt_ambient, in float ao
 )
 {
 /*    float NdotV = clamp( dot( norm_vec, view_vec ), 0.0, 1.0 );
@@ -432,30 +467,29 @@ vec3 final_blend
     //reflectivity from view angle --remember we didn't in perlite():
     final_acc += ( (FSacc+FSenv) * dielectric_blend * reflections * FspecAOfactor );
     return final_acc + glow; */
-    
+    //return DLacc;
+//    return specAOfactor;
     float NdotV = clamp( dot( norm_vec, view_vec ), 0.0, 1.0 );
     float AO_fresnel_reflection = (1.0-dielectric_k)/(1.0+dielectric_k );
     AO_fresnel_reflection *= (AO_fresnel_reflection*dielectric_blend);
-    float reflections = fresnel( NdotV, dielectric_k );
-//    float specAOfactor = prt_shadow(world_to_object(refl_vec), prtp, prtn, 1.0/* - clamp(spec_LoD / 8.0, 0.0, 1.0)*/, 2.0);
-    float MspecAOfactor = lerp(specAOfactor, ao*sqrt(ao), 1.0);
-    float FspecAOfactor = MspecAOfactor;
-    
-    //Begin with the accumulated direct light (diffuse lighting)
-    vec3 final_acc = DLacc;
-    //Add ambient light minus fresnel-reflected (note that amb reflections IS the envmapping)
-    final_acc += ( prt_ambient * (1.0-AO_fresnel_reflection) );
-    //multiply by the diffuse color (filetered by fresnel multiple bounces, if any)
-    final_acc *= multibounce_color( diff_color, reflections, dielectric_blend );
-    //MSenv is multiplied by 1-fresnel to account for partial reflection on entering dielectric
-    final_acc += (  ( MSacc + (MSenv*(1.0-reflections)) ) *
-         multibounce_color( spec_color, reflections, dielectric_blend ) * MspecAOfactor  );
+    float Freflection = fresnel( NdotV, dielectric_k )*dielectric_blend;
+    float Frefraction = 1.0-Freflection;
     //Both diffuse and metallic spec have to exit the dielectric. So, we'd multiply by the
     //refraction, here. However, multibounce_color() already took care of it, so, nought to do.
-    //We just add fresnel specularity and... By the way, NOW we will multiply by fresnel
-    //reflectivity from view angle --remember we didn't in perlite():
-    final_acc += ( (FSacc+FSenv) * dielectric_blend * reflections * FspecAOfactor );
-    return final_acc + glow;
+    vec3 diffuse_acc, specular_acc, fresnel_acc;
+    //Begin with ambient light minus fresnel-reflected
+    // (note that ambient specular reflections ARE the envmapping, so ignore here)
+    diffuse_acc = ( prt_ambient * (1.0-AO_fresnel_reflection) );
+    //Add the accumulated direct light (diffuse lighting)
+    diffuse_acc += DLacc; //refraction is already accounted for in per-light
+    //multiply by the diffuse color (filetered by fresnel multiple bounces, if any)
+    diffuse_acc *= multibounce_color( diff_color, Freflection );
+    //For specular, NOW we will multiply by fresnel refractivity from view angle --remember
+    //we didn't in perlite(), because we can simply use the view vector for all specularities ;-)
+    //MSenv is multiplied by 1-fresnel to account for partial reflection on entering dielectric
+    specular_acc = clamp( (MSacc+MSenv)*Frefraction*multibounce_color(spec_color,Freflection), 0.0, 1.0);
+    fresnel_acc = clamp( (FSacc+FSenv)*Freflection, 0.0, 1.0 );
+    return diffuse_acc + (specular_acc+fresnel_acc)*specular_occlusion + glow;
 }
 
 //main:
@@ -478,6 +512,10 @@ void main()
     vec4 COL_in4 = texture2D( diffMap,texcoords2 );
     vec4 GLO_in4 = texture2D( glowMap,texcoords2 );
     vec4 PRT_in4 = texture2D( prtMap,texcoords2 );
+    //COL_in4 = vec4(0.5,0.5,0.5,1.0);
+    //SPC_in4 = vec4(0.0);
+    SPC_in4.a += (0.25*SPC_in4.r);
+    SPC_in4.r = (0.8*SPC_in4.r+0.1);
     
     //UNPACK:
     //we use a macro table to ease possible future changes to the texture packing:
@@ -531,7 +569,7 @@ void main()
     dUdV_in2 += ( dUdV_first_decode(_damage_dUdV_) * damage );
     dUdV_in2 += ( dUdV_first_decode(_detail_dUdV_) * bump_det_fac1 );
     // to diff/spec balance and glow:
-    float diffuse_jitter = diffuse_detail * make_signed(_detail_wild_);
+    float diffuse_jitter = diffuse_detail * make_signed(_detail_wild_) * 3.77;
     float specdiffbal_in1 = _specdiffbal_ + diffuse_jitter;
     vec3 glow_in3 = _glowcolorin_*0.5 + vec3( diffuse_jitter );
     // to shininess:
@@ -549,7 +587,9 @@ void main()
     vec3 glow_mat3 = glow_in3 * glow_in3 * inv_damage; //de-gamma & damage fade
     // PRT
     vec3 diff_prtp, diff_prtn, spec_prtp, spec_prtn;
-    prt_decode( _prtpncompin_, _ambientoccl_, diff_prtp, diff_prtn, spec_prtp, spec_prtn );
+    vec4 prt;
+//    prt_decode( _prtpncompin_, _ambientoccl_, diff_prtp, diff_prtn, spec_prtp, spec_prtn );
+    prt_decode( _prtpncompin_, _ambientoccl_, diff_prtp, diff_prtn, spec_prtp, spec_prtn, prt );
     // compute final normal
     vec3 tmp3 = dUdV_final_decode( dUdV_in2 );
     vec3 normal_v3 = imatmul( tangent_v3, cotangent_v3, vnormal_v3, tmp3 );
@@ -558,15 +598,20 @@ void main()
     // we'll modulate shininess by prt shadow of reflection vector; reason being we don't want
     // specular self-occlusion to darken too much (what it reflects instead of the envmap is not
     // guaranteed to be black; but fading to some arbitrary shade of grey won't wor; I tried it...
-    float specAOfactor = prt_spec_shadow(world_to_object(reflection_v3), spec_prtp, spec_prtn, 1.0, 2.0);
-    shininess_in *= sqrt(specAOfactor);
+//    float specAOfactor = prt_spec_shadow( world_to_object(reflection_v3), world_to_object(vnormal_v3), spec_prtp, spec_prtn, /*_ambientoccl_*/PRT_in4.a );
+//    float specAOfactor = prt_spec_shadow( world_to_object(reflection_v3), world_to_object(vnormal_v3), prt );
+//    specAOfactor = clamp( pow( specAOfactor+0.25, 3.3 ), 0.0, 1.0 );
+    //float env_shininess = shininess_in * sqrt(specAOfactor);
     // shininess CTRL goes to metallic spec for metals; dielectric gloss for non-metals;
     // and the defaults are min for both; except when dielectric k is 0/trivial we want to
     // max out shininess for fgloss, as it will be used for dual specularity metals
     vec2 lin_gloss2, gloss_lod2, glosses2;
 
     distribute_gloss( ismetal_ch1, nonzerok_ch1, shininess_in, lin_gloss2 );
-    gloss_lod2 = lin_gloss_2_LOD( lin_gloss2 );
+    float specAOfactor = prt_spec_shadow( world_to_object(reflection_v3), world_to_object(vnormal_v3), prt );
+    gloss_lod2 = lin_gloss_2_LOD( lin_gloss2, specAOfactor );
+    specAOfactor = clamp( specAOfactor+0.25, 0.0, 1.0 );
+    specAOfactor *= specAOfactor;
     glosses2 = lin_gloss_2_exp( lin_gloss2 );
     //
     // dielectric stuff:
@@ -591,7 +636,8 @@ void main()
         normal_v3,vnormal_v3,reflection_v3,
         dielec_blend_mat1,dielectric_k_mat1,glosses2,
         DL_acc3,MS_acc3,FS_acc3,
-        spec_prtp, spec_prtn
+        prt
+        //spec_prtp, spec_prtn
       );
     if( light_enabled[1] != 0 )
       lite1
@@ -599,7 +645,8 @@ void main()
         normal_v3,vnormal_v3,reflection_v3,
         dielec_blend_mat1,dielectric_k_mat1,glosses2,
         DL_acc3,MS_acc3,FS_acc3,
-        spec_prtp, spec_prtn
+        prt
+        //spec_prtp, spec_prtn
       );
     //FINAL BLEND
     //////vec3 reflection_v3 = -reflect(eye_v3,vnormal_v3);
