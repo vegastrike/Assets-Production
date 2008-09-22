@@ -243,7 +243,7 @@ void prt_decode( in vec4 PRTin, in float eqd_ao,
 //    n_suppl = (vec3(1.0)-first_decode_prtn)*supplement;
     specPRTPout = diffPRTPout;//clamp( first_decode_prtp+p_suppl, 0.01, 0.99 );
     specPRTNout = diffPRTNout;//clamp( first_decode_prtn+n_suppl, 0.01, 0.99 );
-    prt.rgb = diffPRTPout-diffPRTNout;
+    prt.rgb = first_decode_prtp-first_decode_prtn;// diffPRTPout-diffPRTNout;
     prt.a = PRTin.a;
 }
 
@@ -517,6 +517,21 @@ void main()
     SPC_in4.a += (0.25*SPC_in4.r);
     SPC_in4.r = (0.8*SPC_in4.r+0.1);
     
+    //static light bake specular experiment
+    float ts = 1.0/777.7; //ts = "texture stride"
+    vec2 Uplus = texcoords2+vec2(ts,0.0);
+    vec2 Uminu = texcoords2+vec2(-ts,0.0);
+    vec2 Vplus = texcoords2+vec2(0.0,ts);
+    vec2 Vminu = texcoords2+vec2(0.0,-ts);
+    vec3 Glo_dU = texture2DLod( glowMap, Uplus, 2.345 ).rgb - texture2DLod( glowMap, Uminu, 2.345 ).rgb;
+    vec3 Glo_dV = -texture2DLod( glowMap, Vplus, 2.345 ).rgb + texture2DLod( glowMap, Vminu, 2.345 ).rgb;
+    Glo_dU *= 17.7;
+    Glo_dV *= 17.7;
+    vec3 redlite_dir = normalize( vec3( Glo_dU.r, Glo_dV.r, GLO_in4.r ));
+    vec3 grnlite_dir = normalize( vec3( Glo_dU.g, Glo_dV.g, GLO_in4.g ));
+    vec3 blulite_dir = normalize( vec3( Glo_dU.b, Glo_dV.b, GLO_in4.b ));
+    
+    
     //UNPACK:
     //we use a macro table to ease possible future changes to the texture packing:
     #define _matcolor_in_ ((COL_in4.rgb))
@@ -584,7 +599,7 @@ void main()
     // diffuse, alpha and specular:
     vec3 spec_mat3 = _matcolor_in_ * _specdiffbal_;
     vec3 diff_mat3 = _matcolor_in_ - spec_mat3;
-    vec3 glow_mat3 = glow_in3 * glow_in3 * inv_damage; //de-gamma & damage fade
+    vec3 glow_mat3 = glow_in3 /** glow_in3*/ * inv_damage; //de-gamma & damage fade
     // PRT
     vec3 diff_prtp, diff_prtn, spec_prtp, spec_prtn;
     vec4 prt;
@@ -613,6 +628,7 @@ void main()
     specAOfactor = clamp( specAOfactor+0.25, 0.0, 1.0 );
     specAOfactor *= specAOfactor;
     glosses2 = lin_gloss_2_exp( lin_gloss2 );
+
     //
     // dielectric stuff:
     float dielec_blend_mat1 = dielectricblend_decode( dielectricblend_in1 );
@@ -649,6 +665,24 @@ void main()
         //spec_prtp, spec_prtn
       );
     //FINAL BLEND
+    ////////////////////////////////////////////
+    //static light bake specular experiment
+    redlite_dir = imatmul( tangent_v3, cotangent_v3, vnormal_v3, redlite_dir );
+    grnlite_dir = imatmul( tangent_v3, cotangent_v3, vnormal_v3, grnlite_dir );
+    blulite_dir = imatmul( tangent_v3, cotangent_v3, vnormal_v3, blulite_dir );
+    vec3 static_fresnel;
+    static_fresnel.r = clamp(dot(redlite_dir,reflection_v3),0.0,1.0);
+    static_fresnel.g = clamp(dot(grnlite_dir,reflection_v3),0.0,1.0);
+    static_fresnel.b = clamp(dot(blulite_dir,reflection_v3),0.0,1.0);
+    static_fresnel *= static_fresnel;
+    static_fresnel *= static_fresnel;
+    static_fresnel *= 2.77;
+    float Freflection = clamp(fresnel(clamp(dot(normal_v3,eye_v3),0.0,1.0),dielectric_k_mat1)*dielec_blend_mat1,0.0,1.0);
+    Freflection *= sqrt(Freflection);
+    //static_fresnel *= (Freflection*(Freflection));
+    static_fresnel *= glow_mat3;
+    glow_mat3 *= ( diff_mat3*(1.0-Freflection) + clamp(static_fresnel*2.777,0.0,1.0) );
+    ////////////////////////////////////////////
     //////vec3 reflection_v3 = -reflect(eye_v3,vnormal_v3);
     vec3 prt_ambient = prt_gi(diff_prtp, diff_prtn);
     vec4 result4;
