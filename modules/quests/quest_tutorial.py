@@ -10,7 +10,7 @@
 # of the License, or (at your option) any later version.
 #
 # Author: pyramid
-# Version: 2008-05-23
+# Version: 2008-09-28
 #
 #---------------------------------------------------------------------------------
 
@@ -138,7 +138,7 @@ class quest_tutorial (quest.quest):
             vec = Vector.Add(vec,(1000,0,0))
             # launch the tutorial drone.
             #VS.launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
-            self.drone = VS.launch("Oswald","Robin","neutral","unit","default",1,1,vec,'')
+            self.drone = VS.launch("Oswald","Pacifier","neutral","unit","default",1,1,vec,'')
             # upgrade drone
             self.drone.upgrade("quadshield15",0,0,1,0)
             self.drone.upgrade("armor06",0,0,1,0)
@@ -156,9 +156,9 @@ class quest_tutorial (quest.quest):
             self.talktime = VS.GetGameTime()
             # on launching the drone, set its position near the player
             vec = self.player.Position()
-            vec = Vector.Add (vec,(vsrandom.uniform(-1000,1000),
-                                   vsrandom.uniform(-1000,1000),
-                                   vsrandom.uniform(-1000,1000)))
+            vec = Vector.Add (vec,(vsrandom.uniform(-2000,2000),
+                                   vsrandom.uniform(-2000,2000),
+                                   vsrandom.uniform(-2000,2000)))
             self.drone.SetPosition(vec)
             # get rid of all orders, so that strange maneouvers don't happen
             self.drone.PrimeOrders()
@@ -198,11 +198,11 @@ class quest_tutorial (quest.quest):
 
     # keeps the drone near the player
     # the drone doesn't quite orbit
-    # it will approach the player until 500 meters and then stop
+    # it will approach the player until 1000 meters and then stop
     def orbitMe (self):
         #self.player.SetTarget(self.drone)
-        # if the drone is more than 500m away it will set
-        if (self.drone.getDistance(self.player)>=500):
+        # if the drone is more than 1000m away it will start instructions
+        if (self.drone.getDistance(self.player)>=1100):
             # orientate the nose of the drone towards the player ship
             vec = Vector.Sub(self.player.Position(),self.drone.Position())
             self.drone.SetOrientation((1,0,0),vec)
@@ -210,8 +210,8 @@ class quest_tutorial (quest.quest):
             vec = Vector.Scale(Vector.SafeNorm(vec),self.drone.getDistance(self.player)/10)
             self.drone.SetVelocity(vec)
             #self.stayputtime = VS.GetGameTime()
-        # if drone has approached player until 500m then stop it
-        if (self.drone.getDistance(self.player)<500):
+        # if drone has approached player until 1000m then stop it
+        if (self.drone.getDistance(self.player)<1100):
             self.drone.SetVelocity((0,0,0))
             # this is also needed to stop rotation of the drone
             self.drone.SetAngularVelocity((0,0,0))
@@ -221,7 +221,7 @@ class quest_tutorial (quest.quest):
     def acceptTutorial (self):
         velocity = Vector.Mag(self.player.GetVelocity())
         # if the offer has been placed, and player is put for 10s and drone is near
-        if (VS.GetGameTime()>self.timer and self.drone.getDistance(self.player)<600 and velocity<=10):
+        if (VS.GetGameTime()>self.timer and self.drone.getDistance(self.player)<1100 and velocity<=10):
             self.player.SetTarget(self.drone)
             self.timer = VS.GetGameTime()
             complete = self.getSaveValue()
@@ -230,9 +230,15 @@ class quest_tutorial (quest.quest):
             else:
                 self.stage = STAGE_ACCEPT
         if (VS.GetGameTime()>self.timer and velocity>=10):
+          # allow some time for slowing down and approach if ships were moving
+          if (self.stayputtime>60):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Have a nice journey and come back for a space faring refresher anytime here in Cephid 17.")
             self.stage = STAGE_DECLINE
             self.timer = VS.GetGameTime()
+          else:
+            self.stayputtime += 10
+            self.timer = VS.GetGameTime() + 10
+            print "Stayput = ", str(self.stayputtime)
         return 0
 
     ## play the first part of the tutorial
