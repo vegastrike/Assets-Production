@@ -11,7 +11,7 @@ class balancer (Director.Mission):
         for i in range(len(ships)):
             launch.launch(you.getFlightgroupName(), you.getFactionName(), ships[i], "ai_sitting_duck.py", num_ships, num_waves, Add(you.Position(),((i+1)*500,0,0)), '', False)
             print(" ++ Balancer mission launching %s unit..."%ships[i])
-        launch.launch(you.getFlightgroupName(), you.getFactionName(), "archimedes", "ai_sitting_duck.py", num_ships, num_waves, Add(you.Position(),(0,0,8000)), '', False)
+        launch.launch(you.getFlightgroupName(), you.getFactionName(), "Archimedes", "ai_sitting_duck.py", num_ships, num_waves, Add(you.Position(),(0,0,8000)), '', False)
         print(" ++ Balancer mission launching the playground")
 
     def Execute(self):
