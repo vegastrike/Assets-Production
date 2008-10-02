@@ -41,7 +41,7 @@
             <Planet name="Hart" file="sol/asteroid.texture" radius="300" ri="15000" sj="18000" day="1000" year="1000"/> 
         </lanet>
         <Planet name="Warsaw" file="planets/Lava.texture" ri="-6677787136.000000" rj="-19842785280.000000" rk="17548781568.000000" si="36838596608.000000" sj="-18521729024.000000" sk="-6924834304.000000" radius="4289471.000000" x="-39994597376.000000" y="-21584564224.000000" z="16331857920.000000" year= "2153952051200.000000" day="568.798523" >
-            <unit name="AlphaCentauriHq" file="starfortress" ri="-30000" sk="28000" year="1000"/>
+            <unit name="AlphaCentauriHq" file="Starfortress" ri="-30000" sk="28000" year="1000"/>
             <Jump name="Jump_To_Alpha_Canis_Minor" file="jump.texture" ri="245918320.000000" rj="-119120760.000000" rk="42769960.000000" si="-3008036.250000" sj="46667056.000000" sk="147270336.000000" radius="278.554718" x="-348752032.000000" y="142612640.000000" z="-165407344.000000" year= "259997344.000000" day="597.037170" alpha="ONE ONE" destination="Sol/Alpha_Canis_Minor" faction="confed" />
         </Planet>
         <Planet name="Allison" file="planets/gas_midget.texture" ri="39018676224.000000" rj="-3225205248.000000" rk="8391810048.000000" si="-5961138688.000000" sj="33367562240.000000" sk="40541069312.000000" radius="4568478.500000" x="2750336256.000000" y="-44261711872.000000" z="-12046258176.000000" year= "76152242176.000000" day="269.506836" >

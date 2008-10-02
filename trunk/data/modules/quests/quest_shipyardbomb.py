@@ -1,7 +1,7 @@
 #---------------------------------------------------------------------------------
 # Vega Strike script for a quest
 # Copyright (C) 2008 Vega Strike team
-# Contact: hellcatv@sourceforge.net
+# Contact: hellcatv@users.sourceforge.net
 # Internet: http://vegastrike.sourceforge.net/
 #.
 # This program is free software; you can redistribute it and/or
@@ -33,7 +33,6 @@ class quest_shipyardbomb (quest.quest):
         self.msgColor = ("#FF9999","#FF99FF")
         self.system = VS.getSystemName()
         self.shipyard = unit.getUnitByName('Shipyard')
-#        self.shipyard=launch.launch_wave_around_significant ('NavalShipyard','confed','factory','default',1,10000,40000,8)
 
     # things to add:
     # (a) the ship being built and debris
