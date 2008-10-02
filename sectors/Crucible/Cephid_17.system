@@ -28,12 +28,12 @@
 	</Planet>
 	<Planet name="JumpToCardell" file="jump.texture" ri="-254216.593750" rj="-423678.437500" rk="-372411.875000" si="-455824.562500" sj="479803.437500" sk="-234697.656250" radius="1.30477371" x="997000.562500" y="-455441.750000" z="753232.687500" year= "80000000.5" day="761.770081" alpha="ONE ONE" destination="Crucible/Cardell" faction="klkk"  >
 	</Planet>
-	<Unit name="Ataraxia" file="fighter_barracks" rj="-40000.593750" ri="-42.437500" rk="-47000.875000" sj="40000.562500" sk="47000" si="42" radius="130.477371"  x="-42" y="-40000" z="-47000" year= "4381063.5" day="761" faction="klkk"  >
+	<Unit name="Ataraxia" file="Fighter_Barracks" rj="-40000.593750" ri="-42.437500" rk="-47000.875000" sj="40000.562500" sk="47000" si="42" radius="130.477371"  x="-42" y="-40000" z="-47000" year= "4381063.5" day="761" faction="klkk"  >
 	</Unit>
 	</Planet>
 
     <Planet name="JumpToOldziey" file="jump.texture" ri="141807924.0" rj="43125792.0" rk="10400903.0" si="-3642116.5" sj="-5128123.0" sk="-141807924.0" radius="2.63800079"  year= "7057770400.0" day="536.628845" alpha="ONE ONE" destination="Crucible/Oldziey" faction="klkk"  >
-		<Unit name="Plainfield" file="relay" ri="25000" rj="25000" rk="0.0" si="-26000" sj="-24000" sk="0.00" x="25000" y="25000" z="0.0" year= "8000000" faction="klkk">
+		<Unit name="Plainfield" file="Relay" ri="25000" rj="25000" rk="0.0" si="-26000" sj="-24000" sk="0.00" x="25000" y="25000" z="0.0" year= "8000000" faction="klkk">
 		</Unit>
 	</Planet>
 
