@@ -550,6 +550,7 @@ stattableexp={
         "AsteroidFighterBase":(0.52,0,200,1512400,3210),
         "Commerce_Center":(1,0,10,21841060,0),
         "Factory":(.02,0.02,10,13987040,0),
+        "Flower_Station":(0.12,0,10,9050760,3210),
         "Fighter_Barracks":(0.12,0,100,9050760,3210),
         "Gasmine":(.02,0.02,10,13987040,0), #dupe of Factory FIXME
         "Medical":(1,0,0,2230130,0),
@@ -591,6 +592,7 @@ generic_bases = ("Starfortress","Starfortress",
                                  "Commerce_Center","Commerce_Center","Commerce_Center",
                                  "Agricultural_Station","Agricultural_Station","Agricultural_Station","Agricultural_Station",
                                  "Factory","Factory","Factory",
+                                 "Flower_Station","Flower_Station",
                                  "Shipyard","Shipyard",
                                  "Gasmine","Gasmine",
                                  "AsteroidFighterBase",
@@ -610,14 +612,14 @@ bases = (generic_bases,
                  generic_bases, #homeland_security
                  generic_bases, #ISO
                  generic_bases, #unknown
-                 generic_bases,#andolian
-                 generic_bases,#highborn
-                 generic_bases,#shaper
-                 generic_bases,#unadorned
-                 generic_bases,#purist
-                 generic_bases,#forsaken
-                 generic_bases,#LIHW
-                 generic_bases,#uln
+                 generic_bases, #andolian
+                 generic_bases, #highborn
+                 generic_bases, #shaper
+                 generic_bases, #unadorned
+                 generic_bases, #purist
+                 generic_bases, #forsaken
+                 generic_bases, #LIHW
+                 generic_bases, #uln
                  generic_bases, #dgn
                  generic_bases, #klkk
                  generic_bases, #mechanist
@@ -626,14 +628,14 @@ bases = (generic_bases,
                  generic_bases, #aeran_merchant_marine
                  generic_bases, #rlaan_citizen
                  generic_bases, #merchant_guild_citizen
-                 generic_bases,#andolian_citizen
-                 generic_bases,#highborn_citizen
-                 generic_bases,#shaper_citizen
-                 generic_bases,#unadorned_citizen
-                 generic_bases,#purist_citizen
-                 generic_bases,#forsaken_citizen
-                 generic_bases,#LIHW_citizen
-                 generic_bases,#uln_citizen
+                 generic_bases, #andolian_citizen
+                 generic_bases, #highborn_citizen
+                 generic_bases, #shaper_citizen
+                 generic_bases, #unadorned_citizen
+                 generic_bases, #purist_citizen
+                 generic_bases, #forsaken_citizen
+                 generic_bases, #LIHW_citizen
+                 generic_bases, #uln_citizen
                  generic_bases, #dgn_citizen
                  generic_bases, #klkk_citizen
                  generic_bases, #mechanist_citizen
