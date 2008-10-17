@@ -547,7 +547,8 @@ stattableexp={
         "Zhuangzong":(0.52,0.5,440,450,0),
         "Shizong":(0.52,0.5,440,450,0),
         "Agricultural_Station":(1,0,10,21841060,0), #dupe of Commerce_Center FIXME
-        "AsteroidFighterBase":(0.52,0,200,1512400,3210),
+        "AsteroidFighterBase":(0.52,0,200,1512400,3210), #dupe of Refinery FIXME
+        "Asteroid_Refinery":(0.4,0,10,33071210,0),
         "Commerce_Center":(1,0,10,21841060,0),
         "Factory":(.02,0.02,10,13987040,0),
         "Shaper_Bio_Adaptation":(0.12,0,10,9050760,3210),
