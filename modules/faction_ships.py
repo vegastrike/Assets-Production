@@ -549,7 +549,9 @@ stattableexp={
         "Agricultural_Station":(1,0,10,21841060,0), #dupe of Commerce_Center FIXME
         "AsteroidFighterBase":(0.52,0,200,1512400,3210), #dupe of Refinery FIXME
         "Asteroid_Refinery":(0.4,0,10,33071210,0),
+        "Asteroid_Shipyard":(0.4,0,10,33071210,0), #dupe of Asteroid_Refinery FIXME
         "Commerce_Center":(1,0,10,21841060,0),
+        "Diplomatic_Center":(1,0,10,21841060,0), #dupe of Commerce_Center FIXME
         "Factory":(.02,0.02,10,13987040,0),
         "Shaper_Bio_Adaptation":(0.12,0,10,9050760,3210),
         "Fighter_Barracks":(0.12,0,100,9050760,3210),
@@ -588,20 +590,21 @@ def isCapital(type):
     return type in capitaldict
 
 generic_bases = ("Starfortress","Starfortress",
-                                 "Research","Research",
-                                 "Medical","Medical","Medical",
-                                 "Commerce_Center","Commerce_Center","Commerce_Center",
-                                 "Agricultural_Station","Agricultural_Station","Agricultural_Station","Agricultural_Station",
-                                 "Factory","Factory","Factory",
-                                 "Shaper_Bio_Adaptation","Shaper_Bio_Adaptation",
-                                 "Shipyard","Shipyard",
-                                 "Gasmine","Gasmine",
-                                 "AsteroidFighterBase",
-                                 "Outpost","Outpost","Outpost","Outpost",
-                                 "Fighter_Barracks","Fighter_Barracks","Fighter_Barracks","Fighter_Barracks",
-                                 "Relay","Relay","Relay","Relay","Relay",
-                                 "Refinery","Refinery","Refinery","Refinery","Refinery",
-                                 "MiningBase","MiningBase","MiningBase","MiningBase","MiningBase","MiningBase")
+                 "Research","Research",
+                 "Medical","Medical","Medical",
+                 "Commerce_Center","Commerce_Center","Commerce_Center",
+                 "Diplomatic_Center","Diplomatic_Center"
+                 "Agricultural_Station","Agricultural_Station","Agricultural_Station","Agricultural_Station",
+                 "Factory","Factory","Factory",
+                 "Shaper_Bio_Adaptation","Shaper_Bio_Adaptation",
+                 "Shipyard","Shipyard",
+                 "Gasmine","Gasmine",
+                 "AsteroidFighterBase",
+                 "Outpost","Outpost","Outpost","Outpost",
+                 "Fighter_Barracks","Fighter_Barracks","Fighter_Barracks","Fighter_Barracks",
+                 "Relay","Relay","Relay","Relay","Relay",
+                 "Refinery","Refinery","Refinery","Refinery","Refinery",
+                 "MiningBase","MiningBase","MiningBase","MiningBase","MiningBase","MiningBase")
 
 bases = (generic_bases,
                  generic_bases, #aera
