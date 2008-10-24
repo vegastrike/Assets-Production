@@ -596,7 +596,6 @@ generic_bases = ("Starfortress","Starfortress",
                  "Diplomatic_Center","Diplomatic_Center"
                  "Agricultural_Station","Agricultural_Station","Agricultural_Station","Agricultural_Station",
                  "Factory","Factory","Factory",
-                 "Shaper_Bio_Adaptation","Shaper_Bio_Adaptation",
                  "Shipyard","Shipyard",
                  "Gasmine","Gasmine",
                  "AsteroidFighterBase",
@@ -618,12 +617,12 @@ bases = (generic_bases,
                  generic_bases, #unknown
                  generic_bases, #andolian
                  generic_bases, #highborn
-                 generic_bases, #shaper
+                 generic_bases+("Shaper_Bio_Adaptation","Shaper_Bio_Adaptation"), #shaper
                  generic_bases, #unadorned
                  generic_bases, #purist
                  generic_bases, #forsaken
                  generic_bases, #LIHW
-                 generic_bases, #uln
+                 generic_bases+("Asteroid_Refinery","Asteroid_Refinery"), #uln
                  generic_bases, #dgn
                  generic_bases, #klkk
                  generic_bases, #mechanist
