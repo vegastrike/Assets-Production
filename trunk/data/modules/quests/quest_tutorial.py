@@ -1,16 +1,16 @@
 #---------------------------------------------------------------------------------
-# Vega Strike script for a quest
+# Vega Strike script for the tutorial quest
 # Copyright (C) 2008 Vega Strike team
-# Contact: hellcatv@sourceforge.net
+# Contact: hellcatv@users.sourceforge.net
 # Internet: http://vegastrike.sourceforge.net/
-#.
+#
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
 # as published by the Free Software Foundation; either version 2
 # of the License, or (at your option) any later version.
 #
 # Author: pyramid
-# Version: 2008-09-28
+# Version: 2008-11-17
 #
 #---------------------------------------------------------------------------------
 
@@ -48,7 +48,7 @@ COMPLETE_TUTORIAL1 = 5
 COMPLETE_TUTORIAL2 = 6
 COMPLETE_TUTORIAL3 = 7
 COMPLETE_TUTORIAL4 = 8
-COMPLETE_TUTORIAL5 = 9
+COMPLETE_TUTORIAL5 = 10
 STAGE_DECLINE = 98
 
 # the class that will be executed
@@ -74,6 +74,7 @@ class quest_tutorial (quest.quest):
         self.objective = 0          # current objective
         self.startobjectname = ""
         self.animations = [["com_tutorial_oswald.ani",2]] # the actors and ani duration
+        self.speech = []            # has a list of current sound files for speech
         # publish news
         text = "CEPHID SECURITY INITIATIVE GIVES TRINING FOR FLIGHT SAFETY\\\The Cephid Security Initiative (CSI) is offering training for pilots with the purpose to enhance flight safety in and out of the system. "
         text += "A representative said, this training is sponsored by volunteer contributors and open for all pilots. "
@@ -138,20 +139,22 @@ class quest_tutorial (quest.quest):
             vec = Vector.Add(vec,(1000,0,0))
             # launch the tutorial drone.
             #VS.launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
-            self.drone = VS.launch("Oswald","Pacifier","neutral","unit","default",1,1,vec,'')
+            self.drone = VS.launch("Oswald","Robin","klkk_citizen","unit","default",1,1,vec,'')
             # upgrade drone
             self.drone.upgrade("quadshield15",0,0,1,0)
             self.drone.upgrade("armor06",0,0,1,0)
             # when launching give the player some text and ask him to decide if he wants to participate
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Hello traveler.")
-            VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"My name is Oswald and I am offering flight assistance.")
-            VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"Would you like to refresh your space faring skills?")
-            VS.IOmessage (15,"Oswald","Privateer",self.msgColor+"To participate in my tutorial mission, cut down your engines with the #9999FFBACKSPACE"+self.msgColor+" key, let me approach you, and stay put until I contact you again.")
+            VS.IOmessage (3,"Oswald","Privateer",self.msgColor+"My name is Oswald and I am offering flight assistance.")
+            VS.IOmessage (8,"Oswald","Privateer",self.msgColor+"Would you like to refresh your space faring skills?")
+            VS.IOmessage (12,"Oswald","Privateer",self.msgColor+"To participate in my tutorial mission, cut your engines with the #9999FFBACKSPACE"+self.msgColor+" key, let me approach you, and stay put until I contact you again.")
+            #VS.playSound("com_tutorial_oswald/oswald_greet.ogg", self.player.Position(), (10000,10000,10000))
+            #VS.musicPlaySong("com_tutorial_oswald/oswald_greet.ogg")
             # set comm animation parameters
-            # list [ani file, duration]
-            #self.animations = [["com_tutorial_oswald.ani",2]]
             # list [start,duration,anilist_entry]
-            self.sequence = [[0,2,0],[5,4,0],[10,4,0],[15,4,0]]
+            self.sequence = [[0,1,0],[3,3,0],[8,2,0],[12,7,0]]
+            # set speech files
+            self.speech = ["com_tutorial_oswald/oswald_greet_01.ogg", "com_tutorial_oswald/oswald_greet_02.ogg", "com_tutorial_oswald/oswald_greet_03.ogg", "com_tutorial_oswald/oswald_greet_04.ogg"]
             #set talktime start
             self.talktime = VS.GetGameTime()
             # on launching the drone, set its position near the player
@@ -225,6 +228,7 @@ class quest_tutorial (quest.quest):
             self.player.SetTarget(self.drone)
             self.timer = VS.GetGameTime()
             complete = self.getSaveValue()
+            #print "Previous tutorial stage=", complete
             if (complete>0):
                 self.stage = complete
             else:
@@ -238,7 +242,6 @@ class quest_tutorial (quest.quest):
           else:
             self.stayputtime += 10
             self.timer = VS.GetGameTime() + 10
-            print "Stayput = ", str(self.stayputtime)
         return 0
 
     ## play the first part of the tutorial
@@ -251,33 +254,43 @@ class quest_tutorial (quest.quest):
             VS.IOmessage (20,"Oswald","Privateer",self.msgColor+"Each communication message shows the sender, the game time of the sending, and the message itself, like this one.")
             VS.IOmessage (25,"Oswald","Privateer",self.msgColor+"To scroll the messages back and forth use the #9999FFPage Up"+self.msgColor+" and #9999FFPage Down"+self.msgColor+" keys. Try it out now.")
             VS.IOmessage (35,"Oswald","Privateer",self.msgColor+"Good.")
-            VS.IOmessage (40,"Oswald","Privateer",self.msgColor+"Now you can send me a message by pressing the #9999FFF1"+self.msgColor+" key.")
+            VS.IOmessage (37,"Oswald","Privateer",self.msgColor+"Now you can send me a message by pressing the #9999FFF1"+self.msgColor+" key.")
             # set comm animation parameters
-            self.sequence = [[0,2,0],[5,4,0],[10,4,0],[15,2,0],[20,4,0],[25,4,0],[35,2,0],[40,4,0]]
+            self.sequence = [[0,1,0],[5,4,0],[10,4,0],[15,4,0],[20,4,0],[25,5,0],[35,1,0],[37,4,0]]
+            # set speech files
+            self.speech = ["com_tutorial_oswald/oswald_comm_01.ogg", "com_tutorial_oswald/oswald_comm_02.ogg", "com_tutorial_oswald/oswald_comm_03.ogg", "com_tutorial_oswald/oswald_comm_04.ogg", "com_tutorial_oswald/oswald_comm_05.ogg", "com_tutorial_oswald/oswald_comm_06.ogg", "com_tutorial_oswald/oswald_comm_07.ogg", "com_tutorial_oswald/oswald_comm_08.ogg"]
             self.talktime = VS.GetGameTime()
-            self.timer = VS.GetGameTime()+50
+            self.timer = VS.GetGameTime()+45
             self.practice = 1
         if (self.practice==1 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
-            for index in range (len(self.sequence)):
-                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
-                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
-                    self.anitime = VS.GetGameTime()+2
+          for index in range (len(self.sequence)):
+            if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+              self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+              # play each soundfile once
+              if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
+                VS.playSound(self.speech[index], self.player.Position(), (10000,10000,10000))
+              self.anitime = VS.GetGameTime()+2
         if (self.practice==1 and VS.GetGameTime()>=self.timer):
             self.practice = 2
         if (self.practice==2 and VS.GetGameTime()>self.timer):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Usually, messages assigned to keys #9999FFF1"+self.msgColor+" and #9999FFF2"+self.msgColor+" are friendly messages which slightly increase you relation with a faction, while the other keys #9999FFF3"+self.msgColor+" and #9999FFF4"+self.msgColor+" decrease your relationship.")
-            VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"Sometimes it can be very useful to send multiple friendly messages to improve your relation with a hostile faction.")
-            VS.IOmessage (20,"Oswald","Privateer",self.msgColor+"That's about it on the messages display.")
+            VS.IOmessage (14,"Oswald","Privateer",self.msgColor+"Sometimes it can be very useful to send multiple friendly messages to improve your relation with a hostile faction or taunt an enemy into attacking you instead of a ship you are protecting.")
+            VS.IOmessage (26,"Oswald","Privateer",self.msgColor+"That's about it on the messages display.")
             # set comm animation parameters
-            self.sequence = [[0,10,0],[10,4,0],[20,2,0]]
+            self.sequence = [[0,12,0],[14,12,0],[26,2,0]]
+            # set speech files
+            self.speech = ["com_tutorial_oswald/oswald_comm_09.ogg", "com_tutorial_oswald/oswald_comm_10.ogg", "com_tutorial_oswald/oswald_comm_11.ogg"]
             self.talktime = VS.GetGameTime()
             self.timer = VS.GetGameTime()+30
             self.practice = 3
         if (self.practice==3 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
-            for index in range (len(self.sequence)):
-                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
-                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
-                    self.anitime = VS.GetGameTime()+2
+          for index in range (len(self.sequence)):
+            if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+              self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+              # play each soundfile once
+              if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
+                VS.playSound(self.speech[index], self.player.Position(), (10000,10000,10000))
+              self.anitime = VS.GetGameTime()+2
         if (self.practice==3 and VS.GetGameTime()>=self.timer):
             self.practice = 4
         if (self.practice==4 and VS.GetGameTime()>self.timer):
@@ -290,34 +303,38 @@ class quest_tutorial (quest.quest):
 
     def tutorialNav (self):
         if (self.practice==0):
-            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Now, let's review the navigation information on your HUD. Theory first, then some practice.")
-            VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"In the lower left corner you will find your ship's shield (blue) and armor (orange) status.")
-            VS.IOmessage (15,"Oswald","Privateer",self.msgColor+"We will come to the text indicators later.")
-            VS.IOmessage (20,"Oswald","Privateer",self.msgColor+"In the middle of the bottom part you have your dashboard with the front radar on the left side and the rear radar on the right side.")
-            VS.IOmessage (30,"Oswald","Privateer",self.msgColor+"The active target will display as a small cross on your radar. The other targets will be dots with their colors representing your relation to them.")
-            VS.IOmessage (40,"Oswald","Privateer",self.msgColor+"Green is friendly, red is hostile, yellow is neutral. Attacking ship is blue, targetting_ship is light blue, locking ship is violet. Neutral and significant objects like planets, stations, wormholes, or suns are white.")
-            VS.IOmessage (50,"Oswald","Privateer",self.msgColor+"The center part of the dashboard has four round indicators which begin flashing when:")
-            VS.IOmessage (60,"Oswald","Privateer",self.msgColor+" (L) a hostile is having missile lock on you")
-            VS.IOmessage (70,"Oswald","Privateer",self.msgColor+" (J) you are in jump point reach and your jump drive is ready")
-            VS.IOmessage (80,"Oswald","Privateer",self.msgColor+" (S) your SPEC drive, needed for faster-than-light (FTL) travel, is activated")
-            VS.IOmessage (90,"Oswald","Privateer",self.msgColor+" (E) your electronic counter measures (ECM) are active")
-            VS.IOmessage (100,"Oswald","Privateer",self.msgColor+"Further below are three colored bars indicating")
-            VS.IOmessage (105,"Oswald","Privateer",self.msgColor+" (CAPACITOR) your weapons capacitor charge")
-            VS.IOmessage (115,"Oswald","Privateer",self.msgColor+" (DRIVES) your SPEC and jump drives energy charge")
-            VS.IOmessage (125,"Oswald","Privateer",self.msgColor+" (FUEL) status for in-system travel and overdrive propulsion")
-            VS.IOmessage (135,"Oswald","Privateer",self.msgColor+"The numbers below are your current speed to the left and your set speed to the right.")
-            VS.IOmessage (145,"Oswald","Privateer",self.msgColor+"Further below there is the effective SPEC velocity to the left and the flight computer (FCMP) mode.")
-            VS.IOmessage (155,"Oswald","Privateer",self.msgColor+"So much for theory. Let's do some practice now.")
-            # set comm animation parameters
-            self.sequence = [[0,6,0],[10,6,0],[15,4,0],[20,6,0],[30,6,0],[40,6,0],[50,4,0],[60,3,0],[70,4,0],[80,4,0],[90,4,0],[100,3,0],[105,4,0],[115,4,0],[125,4,0],[135,4,0],[145,5,0],[155,4,0]]
+            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Now, let's review the navigation information on your HUD. We'll do theory first, then some practice.")
+            VS.IOmessage (9,"Oswald","Privateer",self.msgColor+"In the lower left corner you will find your ship's shield status in blue, and armor status in orange.")
+            VS.IOmessage (16,"Oswald","Privateer",self.msgColor+"We will come to the text indicators later.")
+            VS.IOmessage (19,"Oswald","Privateer",self.msgColor+"In the middle of the bottom part you have your dashboard with the front radar on the left side and the rear radar on the right side.")
+            VS.IOmessage (28,"Oswald","Privateer",self.msgColor+"The active target will display as a small cross on your radar. Other targets will be dots with their colors representing your relation to them.")
+            VS.IOmessage (37,"Oswald","Privateer",self.msgColor+"Green is friendly, red is hostile, and yellow is neutral. An attacking ship is blue, a targetting ship is light blue, and a locking ship is violet. Neutral and significant objects like planets, stations, wormholes, or suns are white.")
+            VS.IOmessage (52,"Oswald","Privateer",self.msgColor+"The top center part of the dashboard has four round indicators which begin flashing when the following events occur:")
+            VS.IOmessage (58,"Oswald","Privateer",self.msgColor+" (L) means a hostile has missile lock on you")
+            VS.IOmessage (62,"Oswald","Privateer",self.msgColor+" (J) means you are in range of a jump point and your jump drive is ready")
+            VS.IOmessage (66,"Oswald","Privateer",self.msgColor+" (S) means your SPEC drive, needed for faster-than-light (FTL) travel, is activated")
+            VS.IOmessage (72,"Oswald","Privateer",self.msgColor+" (E) means your electronic counter measures (ECM) are active")
+            VS.IOmessage (76,"Oswald","Privateer",self.msgColor+"Below the round indicators are three colored bars")
+            VS.IOmessage (80,"Oswald","Privateer",self.msgColor+" (CAPACITOR) shows your weapons capacitor charge")
+            VS.IOmessage (85,"Oswald","Privateer",self.msgColor+" (DRIVES) shows your SPEC and jump drives energy charge")
+            VS.IOmessage (90,"Oswald","Privateer",self.msgColor+" (FUEL) shows you capacity for in-system travel and overdrive propulsion")
+            VS.IOmessage (96,"Oswald","Privateer",self.msgColor+"The numbers below the bars are your current speed to the left and your set speed to the right.")
+            VS.IOmessage (104,"Oswald","Privateer",self.msgColor+"Below that is the effective SPEC velocity to the left and the flight computer (FCMP) mode to the right.")
+            VS.IOmessage (111,"Oswald","Privateer",self.msgColor+"So much for theory. Let's do some practice now.")
+            # set comm animation parameters                                                #8                                            #13
+            self.sequence = [[0,8,0],[9,6,0],[16,2,0],[19,8,0],[28,8,0],[37,14,0],[52,6,0],[58,3,0],[62,4,0],[66,6,0],[72,4,0],[76,4,0],[80,4,0],[85,4,0],[90,5,0],[96,6,0],[104,6,0],[111,6,0]]
+            self.speech = ["com_tutorial_oswald/oswald_nav_01.ogg", "com_tutorial_oswald/oswald_nav_02.ogg", "com_tutorial_oswald/oswald_nav_03.ogg", "com_tutorial_oswald/oswald_nav_04.ogg", "com_tutorial_oswald/oswald_nav_05.ogg", "com_tutorial_oswald/oswald_nav_06.ogg", "com_tutorial_oswald/oswald_nav_07.ogg", "com_tutorial_oswald/oswald_nav_08.ogg", "com_tutorial_oswald/oswald_nav_09.ogg", "com_tutorial_oswald/oswald_nav_10.ogg", "com_tutorial_oswald/oswald_nav_11.ogg", "com_tutorial_oswald/oswald_nav_12.ogg", "com_tutorial_oswald/oswald_nav_13.ogg", "com_tutorial_oswald/oswald_nav_14.ogg", "com_tutorial_oswald/oswald_nav_15.ogg", "com_tutorial_oswald/oswald_nav_16.ogg", "com_tutorial_oswald/oswald_nav_17.ogg", ""]
             self.talktime = VS.GetGameTime()
-            self.timer = VS.GetGameTime()+160
+            self.timer = VS.GetGameTime()+120
             self.practice = 1
         if (self.practice==1 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
-            for index in range (len(self.sequence)):
-                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
-                    self.player.commAnimation(self.animations[self.sequence[index][2]][0])
-                    self.anitime = VS.GetGameTime()+2
+          for index in range (len(self.sequence)):
+            if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+              self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+              # play each soundfile once
+              if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
+                VS.playSound(self.speech[index], self.player.Position(), (10000,10000,10000))
+              self.anitime = VS.GetGameTime()+2
         if (self.practice==1 and VS.GetGameTime()>=self.timer):
             self.practice = 2
         if (self.practice==2 and VS.GetGameTime()>self.timer):
@@ -346,6 +363,7 @@ class quest_tutorial (quest.quest):
                 VS.IOmessage (14,"Oswald","Privateer",self.msgColor+"Should you pass me, you may reverse the target selection sequence by pressing the #9999FFShift+T"+self.msgColor+" keys.")
                 # set comm animation parameters
                 self.sequence = [[0,6,0],[8,4,0],[14,4,0]]
+                self.speech = ["","",""]
                 self.talktime = VS.GetGameTime()
                 self.timer = VS.GetGameTime()+18
                 self.practice = 2
@@ -717,23 +735,28 @@ class quest_tutorial (quest.quest):
     def Execute (self):
         # do not do anything before the player undocks
         if (self.stage==STAGE_DOCKED):
-              self.playerIsUndocked()
+          complete = self.getSaveValue()
+          #print "Previous tutorial stage=", complete
+          self.stage = complete
+          if (complete<=98):
+            self.playerIsUndocked()
         # if the player did not die
         if (not self.player.isNull()):
-            # when in space, launch the drone
-            if (self.stage==STAGE_AWAY and VS.GetGameTime()>self.timer):
-                # a nice way to make the tutor talk only during the intended time
-                #if (VS.GetGameTime()>self.timer):
-                    #self.player.commAnimation("com_tutorial_oswald.ani")
-                self.launchNewDrone()
-            # play the talk animation
-            if (self.stage==2 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
-                for index in range (len(self.sequence)):
-                    if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
-                        self.player.commAnimation(self.animations[self.sequence[index][2]][0])
-                        self.anitime = VS.GetGameTime()+2
-            if (self.stage==2 and VS.GetGameTime()>=self.timer):
-                self.stage = 3
+          # when in space, launch the drone
+          if (self.stage==STAGE_AWAY and VS.GetGameTime()>self.timer):
+            self.launchNewDrone()
+            #self.stage = 8 #debug
+          # play the talk animation
+          if (self.stage==2 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+            for index in range (len(self.sequence)):
+              if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                # play each soundfile once
+                if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
+                  VS.playSound(self.speech[index], self.player.Position(), (10000,10000,10000))
+                self.anitime = VS.GetGameTime()+2
+          if (self.stage==2 and VS.GetGameTime()>=self.timer):
+            self.stage = 3
 
         if (not self.player.isNull() and not self.drone.isNull()):
             # check if player is attacking drone 
@@ -760,13 +783,27 @@ class quest_tutorial (quest.quest):
                 self.practiceSpec()
             # tutorial is incomplete, so a nice excuse is required
             if (self.stage==COMPLETE_TUTORIAL4 and VS.GetGameTime()>self.timer):
-                VS.IOmessage (0,"Oswald","player",self.msgColor+"Oops. Sorry, pal. My boss at the Cephid Safety Initiative has an emergency situation I must handle now.")
-                VS.IOmessage (5,"Oswald","player",self.msgColor+"I apologize. Have a safe journey. And come back for more.")
-                self.player.commAnimation("com_tutorial_oswald.ani")
-                self.player.commAnimation("com_tutorial_oswald.ani")
-                self.player.commAnimation("com_tutorial_oswald.ani")
-                self.timer = VS.GetGameTime()+6
-                self.stage = 98
+              VS.IOmessage (0,"Oswald","player",self.msgColor+"Oops. Sorry, pal. My boss at the Cephid Safety Initiative has an emergency situation I must handle now.")
+              VS.IOmessage (6,"Oswald","player",self.msgColor+"Have a nice journey. And come back for a space faring refresher anytime here in Cephid 17.")
+              self.sequence = [[0,6,0],[6,6,0]]
+              self.speech = ["","com_tutorial_oswald/oswald_bye.ogg"]
+              #self.player.commAnimation("com_tutorial_oswald.ani")
+              #self.player.commAnimation("com_tutorial_oswald.ani")
+              #self.player.commAnimation("com_tutorial_oswald.ani")
+              self.talktime = VS.GetGameTime()
+              self.timer = VS.GetGameTime()+12
+              self.stage = 9
+            # play the talk animation
+            if (self.stage==9 and VS.GetGameTime()<self.timer and VS.GetGameTime()>=self.anitime):
+              for index in range (len(self.sequence)):
+                if (VS.GetGameTime()-self.talktime>=self.sequence[index][0] and VS.GetGameTime()-self.talktime<=self.sequence[index][0]+self.sequence[index][1]):
+                  self.player.commAnimation(self.animations[self.sequence[index][2]][0])
+                  # play each soundfile once
+                  if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
+                    VS.playSound(self.speech[index], self.player.Position(), (10000,10000,10000))
+                  self.anitime = VS.GetGameTime()+2
+            if (self.stage==9 and VS.GetGameTime()>=self.timer):
+              self.stage = 98
             # drone was attacked, give him a lesson!
             if (self.stage==96):
                 self.tutorialIntermezzo()
@@ -783,6 +820,8 @@ class quest_tutorial (quest.quest):
             if (self.stage==98 and VS.GetGameTime()>self.timer):
                 self.drone.SetVelocity((2000,0,0))
                 self.timer = VS.GetGameTime()+10
+                self.putSaveValue(self.stage)
+                print "Saved quest finish"
                 self.stage = 99
             # let the drone disappear
             if (self.stage==99 and VS.GetGameTime()>self.timer):
