@@ -1,6 +1,9 @@
 import Director
+import VS
+
 def getQuestLength(playernum,questname):
     return Director.getSaveDataLength(int(playernum),str(questname))
+
 def findQuest (playernum,questname,value=1):
 #    print 'finding nonperisstent quest'
 #    print questname
@@ -12,6 +15,7 @@ def findQuest (playernum,questname,value=1):
         if (myfloat==value):
             return 1
     return 0
+
 def checkSaveValue(playernum,questname,value=1):
     mylen=Director.getSaveDataLength(playernum,questname)
 #    print mylen
@@ -22,14 +26,17 @@ def checkSaveValue(playernum,questname,value=1):
     if (myfloat==value):
         return 1
     return 0
+
 def persistentQuest (playernum,questname):
     print "finding quest"
     print questname
     return findQuest (playernum,questname,-1)
+
 def notLoadedQuest(playernum,questname):
     print 'finding nonloaded quest'
     print questname
     return not persistentQuest(playernum,questname) and not findQuest (playernum,questname)
+
 def removeQuest (playernum,questname,value=1):
     print "removing quest"
     mylen=Director.getSaveDataLength(int(playernum),str(questname))
@@ -38,6 +45,11 @@ def removeQuest (playernum,questname,value=1):
     else:
         Director.pushSaveData(int(playernum),str(questname),float(value))
 
+def playSoundCockpit(soundfile):
+  try:
+    VS.playSoundCockpit(soundfile)
+  except AttributeError:
+    VS.playSound(soundfile, VS.getPlayer().Position(), (0,0,0))
 
 class quest:
     def NoSignificantsNear(self):
