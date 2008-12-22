@@ -1116,7 +1116,7 @@ class CampaignNode:
 			debug.debug('*** create fixer'+ str(self.spritelink))
 			tmpscript="#\nimport campaign_lib\n"
 			if self.talkinghead and doTalkingHeads():
-				tmpscript+="campaign_lib.AddConversationStoppingSprite('Talking',"+repr(self.talkinghead)+",(.582,-.2716),(3.104,2.4832),'Return_To_Bar').__call__("+str(room)+",None)\n"
+				tmpscript+="campaign_lib.AddConversationStoppingSprite('Talking',"+repr(self.talkinghead)+",(0,0),(3.2,2.0),'Return_To_Bar').__call__("+str(room)+",None)\n"
 			return fixers.Fixer(self.spritelink[1].split(' ')[-1].lower(),self.spritelink[1],[],
 				self.spritelink[0],tmpscript+"campaign_lib.clickFixer("+str(room)+")\n")
 			debug.debug('*** no sprite. You lose.')

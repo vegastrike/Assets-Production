@@ -8,33 +8,32 @@ import stardate
 global dnewsman_
 dnewsman_ = dynamic_news.NewsManager()
 def saveVal(str):
-    return Director.getSaveData(VS.getMissionOwner(),str,0)
+  return Director.getSaveData(VS.getMissionOwner(),str,0)
 
 class NotZero:
-    def __init__ (self,str):
-        self.str = str
-    def __nonzero__ (self):
-        print 'nonzeroing'
-        return saveVal(self.str)!=0
+  def __init__ (self,str):
+    self.str = str
+  def __nonzero__ (self):
+    print 'nonzeroing'
+    return saveVal(self.str)!=0
 class IsZero:
-    def __init__ (self,str):
-        self.str = str
-    def __nonzero__ (self):
-        print 'nonzeroing'
-        return saveVal(self.str)==0
+  def __init__ (self,str):
+    self.str = str
+  def __nonzero__ (self):
+    print 'nonzeroing'
+    return saveVal(self.str)==0
 class GreaterZero:
-    def __init__ (self,str):
-        self.str = str
-    def __nonzero__ (self):
-        print 'nonzeroing'
-        return saveVal(self.str)>0
+  def __init__ (self,str):
+    self.str = str
+  def __nonzero__ (self):
+    print 'nonzeroing'
+    return saveVal(self.str)>0
 class LessZero:
-    def __init__ (self,str):
-        self.str = str
-    def __nonzero__ (self):
-        print 'nonzeroing'
-        return saveVal(self.str)<0
-
+  def __init__ (self,str):
+    self.str = str
+  def __nonzero__ (self):
+    print 'nonzeroing'
+    return saveVal(self.str)<0
 
 news =( ( 'kinneas',(IsZero('kinneas'),),"TEENAGE BOY OUTSMARTS SYSTEM:  A teenager from the Draul Bisa Habitat was caught redhanded on New Poona Mining Base last week, as he was trying to sneak past security without proper identification. The young human male, identified as Kinneas Pinman, somehow managed to make it past spaceport security on Draul Bisa and stow away on a passanger transport bound for the mining base in the Celeste System. While the motives behind Pinman's actions remain unknown, redfaced spaceport officials are hard-pressed to explain how the cheeky computer whizkid managed to elude all their security precautions. Pinman was detained by police on New Poona and will be returned to Draul Bisa within the week."),
         ('congress_convenes',(IsZero('congress_convenes'),),"CONFEDERATION SENATE CONVENES TO PONDER BORDER SECURITY:  The Senate of the Confederation of Inhabited Worlds convened earlier today at the Confederation Center on Mars. On their agenda, possible military intervention to protect human interests in Uln space because of the increased number of pirate raids launched from behind Uln borders. No decisions were made in the heated debate that followed, with the representatives from several LIHW worlds leaving the Confederation Center in disgust."),#
@@ -64,62 +63,66 @@ news =( ( 'kinneas',(IsZero('kinneas'),),"TEENAGE BOY OUTSMARTS SYSTEM:  A teena
         ('man_bites_droid',(IsZero('man_bites_droid'),),"ROBOT ATTACKS HUMANS:   An experimental Robot Maintenance Unit went rogue after it became self-aware near the University of Polusand on the planet of Feldham earlier today. The robot attacked several unsuspecting pedestrians on the street by ramming them with its 500 kg heavy frame before it was destroyed by local authorities. Two women were severly injured and had to be taken to a nearby hospital for treatment, but their condition is now reported as stable. Computer technicians are hard at work trying to determine what made the unit disregard from the fail-safe programming designed to prevent it from ever harming a human being, and subsequently all units of the series have been shut down until the investigation is finished."),#
         ('beagle_exploration',(IsZero('beagle_exploration'),),"THE BEAGLE RETURNS:   The HCS Beagle returned to a human port this afternoon after having finished its six-year exploration mission in an unknown region of space. The Beagle's 68 crewmembers expressed great relief at being back in human space, and it will be some time before the ship leaves on another mission to map unexplored systems. The Department of Space Exploration revealed that the Beagle had not made contact with any new sentient races, but that it had gathered an 'impressive' amount of data, mostly regarding habitable planets and the locations of new jump-points. "),
         )
+
 def newNews():
-    if (vsrandom.randrange(0,2)!=0):
-        return
-    newsitem = vsrandom.randrange (0,len(news))
-    newsitem = news[newsitem]
-    player = VS.getMissionOwner()
-    for conditional in newsitem[1]:
-        print 'conditioning'
-        if (not conditional):
-            return
-    universe.setFirstSaveData(player,newsitem[0],1)
-    import Director
-    Director.pushSaveString(player,"dynamic_news",'#'+newsitem[2])
-#    VS.IOmessage(0,"game","news",newsitem[2])
+  print "Adding news"
+  if (vsrandom.randrange(0,2)!=0):
+      return
+  newsitem = vsrandom.randrange (0,len(news))
+  newsitem = news[newsitem]
+  player = VS.getMissionOwner()
+  for conditional in newsitem[1]:
+      print 'conditioning'
+      if (not conditional):
+          return
+  universe.setFirstSaveData(player,newsitem[0],1)
+  import Director
+  newsfooter = "\\\\\This story was first broadcast on: "
+  newsfooter += stardate.formatStarDate("confed",VS.GetGameTime())
+  newsfooter += "\\GNN - Galactic News Network"
+  Director.pushSaveString(player,"dynamic_news",'#'+newsitem[2]+newsfooter)
 
 def eraseNews(plr):
-    import Director
-    len = Director.getSaveStringLength(plr,"news")
-    for i in range(len):
-        Director.eraseSaveString(plr,"news",len-i-1)
+  import Director
+  len = Director.getSaveStringLength(plr,"news")
+  for i in range(len):
+      Director.eraseSaveString(plr,"news",len-i-1)
 
 def processNews(plr):
-    eraseNews(plr)
-    import Director
-    howmuchnews=Director.getSaveStringLength(plr,"dynamic_news")
-    minnews=0
-    print "Processing News"
-    global dnewsman_
-    dnewsman_.updateDockedAtFaction()
-    if (howmuchnews>4000):
-        minnews=howmuchnews-4000
-    for i in range (minnews,howmuchnews):
-        noos=Director.getSaveString(plr,"dynamic_news",i)
-        if (len(noos)):
-            if (noos.startswith('#')):
-                Director.pushSaveString(plr,"news",noos[1:])
-            elif dnewsman_.isStoryRelevant(noos):
-                noos = dnewsman_.translateDynamicString(noos)
-                if noos:
-                    Director.pushSaveString(plr,"news",noos)
+  eraseNews(plr)
+  import Director
+  howmuchnews=Director.getSaveStringLength(plr,"dynamic_news")
+  minnews=0
+  print "Processing News"
+  global dnewsman_
+  dnewsman_.updateDockedAtFaction()
+  if (howmuchnews>4000):
+      minnews=howmuchnews-4000
+  for i in range (minnews,howmuchnews):
+      noos=Director.getSaveString(plr,"dynamic_news",i)
+      if (len(noos)):
+          if (noos.startswith('#')):
+              Director.pushSaveString(plr,"news",noos[1:])
+          elif dnewsman_.isStoryRelevant(noos):
+              noos = dnewsman_.translateDynamicString(noos)
+              if noos:
+                  Director.pushSaveString(plr,"news",noos)
 
 def eraseNewsItem(plr,item):
-    """removes the first news item matching the given item from
-    plr's "dynamic_news" save variable"""
+  """removes the first news item matching the given item from
+  plr's "dynamic_news" save variable"""
 #    print "FIXME: someone please write a function to this spec! Every thing I try seems to produce some random result :-/"
-    import Director
-    for i in range (Director.getSaveStringLength(plr,"dynamic_news")):
-        noos=Director.getSaveString(plr,"dynamic_news",i)
-        if noos == item:
-            Director.eraseSaveString(plr,"dynamic_news",i)
-            return
+  import Director
+  for i in range (Director.getSaveStringLength(plr,"dynamic_news")):
+      noos=Director.getSaveString(plr,"dynamic_news",i)
+      if noos == item:
+          Director.eraseSaveString(plr,"dynamic_news",i)
+          return
 
 def publishNews(text):
 # publishes the news text with star date
-    player = VS.getPlayer().isPlayerStarship()
-    STARDATE_TEXT = "\\\\\This story was first broadcast on: "
-    datetext = stardate.formatStarDate("confed",Director.getSaveData(0,"stardate",0))
-    newstext = "#" + text + STARDATE_TEXT + datetext + "\\GINA - Galactic Independent News Association"
-    Director.pushSaveString(player,"dynamic_news",newstext)
+  player = VS.getPlayer().isPlayerStarship()
+  STARDATE_TEXT = "\\\\\This story was first broadcast on: "
+  datetext = stardate.formatStarDate("confed",VS.GetGameTime())
+  newstext = "#" + text + STARDATE_TEXT + datetext + "\\GINA - Galactic Independent News Association"
+  Director.pushSaveString(player,"dynamic_news",newstext)

@@ -10,7 +10,7 @@
 # of the License, or (at your option) any later version.
 #
 # Author: pyramid
-# Version: 2008-12-19
+# Version: 2008-12-22
 #
 #---------------------------------------------------------------------------------
 
@@ -87,6 +87,12 @@ class quest_tutorial (quest.quest):
       #print "----getSaveValue---", int(Director.getSaveData(self.player.isPlayerStarship(),key,0))
       return int(Director.getSaveData(self.player.isPlayerStarship(),key,0))
     return 0
+
+  def playSoundCockpit(self,soundfile):
+    try:
+      VS.playSoundCockpit(soundfile)
+    except AttributeError:
+      VS.playSound(soundfile, self.player.Position(), (0,0,0))
 
   # checks if the player has undocked from Atlantis. If so sets next stage.
   # Has been replaced by the more generic function playerIsUndocked
@@ -234,7 +240,7 @@ class quest_tutorial (quest.quest):
       if (self.stayputtime>60):
         VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Have a nice journey and come back for a space faring refresher anytime here in Cephid 17.")
         self.speech = ["com_tutorial_oswald/oswald_bye.ogg"]
-        VS.playSoundCockpit(self.speech[0])
+        self.playSoundCockpit(self.speech[0])
         self.player.commAnimation("com_tutorial_oswald.ani")
         self.stage = STAGE_DECLINE
         self.timer = VS.GetGameTime()
@@ -267,7 +273,7 @@ class quest_tutorial (quest.quest):
           self.player.commAnimation(self.animations[self.sequence[index][2]][0])
           # play each soundfile once
           if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-            VS.playSoundCockpit(self.speech[index])
+            self.playSoundCockpit(self.speech[index])
           self.anitime = VS.GetGameTime()+2
     if (self.practice==1 and VS.GetGameTime()>=self.timer):
       self.practice = 2
@@ -288,7 +294,7 @@ class quest_tutorial (quest.quest):
           self.player.commAnimation(self.animations[self.sequence[index][2]][0])
           # play each soundfile once
           if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-            VS.playSoundCockpit(self.speech[index])
+            self.playSoundCockpit(self.speech[index])
           self.anitime = VS.GetGameTime()+2
     if (self.practice==3 and VS.GetGameTime()>=self.timer):
       self.practice = 4
@@ -331,7 +337,7 @@ class quest_tutorial (quest.quest):
           self.player.commAnimation(self.animations[self.sequence[index][2]][0])
           # play each soundfile once
           if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-            VS.playSoundCockpit(self.speech[index])
+            self.playSoundCockpit(self.speech[index])
           self.anitime = VS.GetGameTime()+2
     if (self.practice==1 and VS.GetGameTime()>=self.timer):
       self.practice = 2
@@ -359,7 +365,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==1 and VS.GetGameTime()>=self.timer):
           self.practice = 3
@@ -386,7 +392,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==4 and VS.GetGameTime()>=self.timer):
           self.practice = 5
@@ -411,7 +417,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==6 and VS.GetGameTime()>=self.timer):
         self.practice = 7
@@ -437,7 +443,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==8 and VS.GetGameTime()>=self.timer):
         self.practice = 9
@@ -451,7 +457,7 @@ class quest_tutorial (quest.quest):
           VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"And now set your velocity reference to zero by pressing the #9999FFBACKSPACE"+self.msgColor+" key and come to a complete stop.")
           self.player.commAnimation("com_tutorial_oswald.ani")
           self.player.commAnimation("com_tutorial_oswald.ani")
-          VS.playSoundCockpit("com_tutorial_oswald/oswald_nav_23.ogg")
+          self.playSoundCockpit("com_tutorial_oswald/oswald_nav_23.ogg")
           self.objective = VS.addObjective("Set full stop")
           self.objectives+=[int(self.objective)]
           self.timer = VS.GetGameTime()+9
@@ -463,7 +469,7 @@ class quest_tutorial (quest.quest):
           VS.setCompleteness(self.objectives[self.objective],1.0)
           VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"You can also increment your velocity gradually with the #9999FF+"+self.msgColor+" key. Accelerate to 100 m/s now.")
           self.player.commAnimation("com_tutorial_oswald.ani")
-          VS.playSoundCockpit("com_tutorial_oswald/oswald_nav_24.ogg")
+          self.playSoundCockpit("com_tutorial_oswald/oswald_nav_24.ogg")
           self.objective = VS.addObjective("Set velocity reference to 100m/s")
           self.objectives+=[int(self.objective)]
           self.timer = VS.GetGameTime()+9
@@ -475,7 +481,7 @@ class quest_tutorial (quest.quest):
           VS.setCompleteness(self.objectives[3],1.0)
           VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"In the same way you can reduce your velocity gradually with the #9999FF-"+self.msgColor+" key. Deccelerate to 50 m/s.")
           self.player.commAnimation("com_tutorial_oswald.ani")
-          VS.playSoundCockpit("com_tutorial_oswald/oswald_nav_25.ogg")
+          self.playSoundCockpit("com_tutorial_oswald/oswald_nav_25.ogg")
           self.objective = VS.addObjective("Set velocity reference to 50m/s")
           self.objectives+=[int(self.objective)]
           self.timer = VS.GetGameTime()+9
@@ -487,7 +493,7 @@ class quest_tutorial (quest.quest):
           VS.setCompleteness(self.objectives[self.objective],1.0)
           VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Great. If you further deccelerate your velocity with the #9999FF-"+self.msgColor+" key you can actually reverse your thrust. Deccelerate now to -20 m/s.")
           self.player.commAnimation("com_tutorial_oswald.ani")
-          VS.playSoundCockpit("com_tutorial_oswald/oswald_nav_26.ogg")
+          self.playSoundCockpit("com_tutorial_oswald/oswald_nav_26.ogg")
           self.objective = VS.addObjective("Set velocity reference to -20m/s")
           self.objectives+=[int(self.objective)]
           self.timer = VS.GetGameTime()+12
@@ -512,7 +518,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==14 and VS.GetGameTime()>=self.timer):
         self.practice = 15
@@ -546,7 +552,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==1 and VS.GetGameTime()>=self.timer):
         self.practice = 2
@@ -575,7 +581,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==3 and VS.GetGameTime()>=self.timer):
         self.practice = 4
@@ -595,7 +601,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==5 and VS.GetGameTime()>=self.timer):
         self.practice = 6
@@ -616,7 +622,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==7 and VS.GetGameTime()>=self.timer):
         self.practice = 8
@@ -647,7 +653,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==10 and VS.GetGameTime()>=self.timer):
           self.practice = 11
@@ -678,7 +684,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==12 and VS.GetGameTime()>=self.timer):
           self.practice = 13
@@ -687,7 +693,7 @@ class quest_tutorial (quest.quest):
         VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"All right.")
         VS.IOmessage (2,"Oswald","Privateer",self.msgColor+"You have learned how to conveniently travel within the system.")
         self.speech = ["com_tutorial_oswald/oswald_spec_09.ogg", ""]
-        VS.playSoundCockpit(self.speech[0])
+        self.playSoundCockpit(self.speech[0])
         self.player.commAnimation("com_tutorial_oswald.ani")
         self.timer = VS.GetGameTime()+7
         self.practice += 1
@@ -697,7 +703,7 @@ class quest_tutorial (quest.quest):
           VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Bring your ship to full stop before crashing into the planet.")
           self.speech = ["com_tutorial_oswald/oswald_spec_10.ogg", ""]
           self.player.commAnimation("com_tutorial_oswald.ani")
-          VS.playSoundCockpit(self.speech[0])
+          self.playSoundCockpit(self.speech[0])
           self.objective = VS.addObjective("Stop your ship")
           self.objectives+=[int(self.objective)]
           self.timer = VS.GetGameTime()+10
@@ -729,7 +735,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==17 and VS.GetGameTime()>=self.timer):
           self.practice += 1
@@ -737,7 +743,7 @@ class quest_tutorial (quest.quest):
         VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"That concludes the navigation part of the tutorial.")
         self.speech = ["com_tutorial_oswald/oswald_spec_13.ogg"]
         self.player.commAnimation("com_tutorial_oswald.ani")
-        VS.playSoundCockpit(self.speech[0])
+        self.playSoundCockpit(self.speech[0])
         self.timer = VS.GetGameTime()+3
         self.practice = 99
       if (self.practice>=99):
@@ -776,7 +782,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==1 and VS.GetGameTime()>=self.timer):
           self.practice = 4
@@ -804,7 +810,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.practice==6 and VS.GetGameTime()>=self.timer):
           self.practice = 7
@@ -812,7 +818,7 @@ class quest_tutorial (quest.quest):
         VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Now let's get back to business, hotshot.")
         self.speech = ["com_tutorial_oswald/oswald_intermezzo_04.ogg"]
         self.player.commAnimation("com_tutorial_oswald.ani")
-        VS.playSoundCockpit(self.speech[0])
+        self.playSoundCockpit(self.speech[0])
         self.timer = VS.GetGameTime()+3
         self.practice = 8
       if (self.practice==8 and VS.GetGameTime()>=self.timer):
@@ -820,7 +826,6 @@ class quest_tutorial (quest.quest):
       if (self.practice>=99):
         self.droneshield = unit.getShieldPercent(self.drone)
         # make sure to reset the counter for the next practice loops
-        self.orbitMe()
         self.practice = 0
         self.stage = self.savestage
       return 0
@@ -855,7 +860,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.stage==2 and VS.GetGameTime()>=self.timer):
         self.stage = 3
@@ -899,7 +904,7 @@ class quest_tutorial (quest.quest):
             self.player.commAnimation(self.animations[self.sequence[index][2]][0])
             # play each soundfile once
             if (VS.GetGameTime()-self.talktime<=self.sequence[index][0]+1):
-              VS.playSoundCockpit(self.speech[index])
+              self.playSoundCockpit(self.speech[index])
             self.anitime = VS.GetGameTime()+2
       if (self.stage==9 and VS.GetGameTime()>=self.timer):
         self.stage = 98
@@ -911,7 +916,7 @@ class quest_tutorial (quest.quest):
         VS.IOmessage (0,"Oswald","player",self.msgColor+"Hey! Where are you heading? Come back for more anytime.")
         VS.IOmessage (4,"Oswald","player",self.msgColor+"Have a good flight and don't break the hull.")
         self.speech = ["com_tutorial_oswald/oswald_runoff_01.ogg"]
-        VS.playSoundCockpit(self.speech[0])
+        self.playSoundCockpit(self.speech[0])
         self.player.commAnimation("com_tutorial_oswald.ani")
         self.player.commAnimation("com_tutorial_oswald.ani")
         self.player.commAnimation("com_tutorial_oswald.ani")
