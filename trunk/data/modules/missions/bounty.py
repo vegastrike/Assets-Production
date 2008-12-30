@@ -123,8 +123,8 @@ class bounty (Director.Mission):
           self.you.SetTarget(self.enemy)
           import universe
           universe.greet(self.greetingText,self.enemy,self.you)
-          if self.faction=='aera' or self.faction== 'aera_citizen' or self.faction== 'aeran_merchant_marine':
-            quest.playSoundCockpit("sounds/missions/aera_it-appears-we-have.ogg")
+          str_faction = self.faction.split('_')[0]
+          quest.playSoundCockpit('sounds/missions/' + str_faction + '_it-appears-we-have.ogg')
           self.obj=VS.addObjective("Destroy %s." % (unit.getUnitFullName(self.enemy)))
           if (self.enemy):
             if (self.runaway):
