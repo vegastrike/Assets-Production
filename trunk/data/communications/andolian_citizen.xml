@@ -129,7 +129,6 @@
 <!-- Built-in Conversations --> 
 	<node text="Docking operation complete. You're free of the docking clamps." relationship="0.01">
     <sound file="communications/sounds/andolian/andolian_dock-complete.ogg" sex="0"/>
-    <sound file="communications/sounds/aera/" sex="0"/>
 		<edge index="4"/>
 		<edge index="5"/>
 		<edge index="6"/>
