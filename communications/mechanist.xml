@@ -18,7 +18,7 @@
 		<edge index="9"/>
 		<edge index="10"/>
 	</node>
-	<node text="Suck vaccum and die within your boiling prison of flesh!" relationship="-.2"><!-- node 3 (very mad)-->
+	<node text="Suck vacuum and die within your boiling prison of flesh!" relationship="-.2"><!-- node 3 (very mad)-->
     <sound file="communications/sounds/mechanist/mechanist_suck-vacuum.ogg" sex="0"/>
 		<edge index="12"/>
 		<edge index="13"/>
