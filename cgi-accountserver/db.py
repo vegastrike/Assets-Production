@@ -66,8 +66,12 @@ class DBBase:
 	def get_login_info(self, user, password):
 		pass
 	def hash_password(self, password):
-		import md5
-		return md5.md5(password).hexdigest()
+		if settings.password_hash_methode == 'md5':
+			import md5
+			return md5.md5(password).hexdigest()
+		elif settings.password_hash_methode == 'sha':
+			import sha
+			return sha.new(password).hexdigest()
 	
 	def compare_password(self, hash, password):
 		phash = self.hash_password(password)
