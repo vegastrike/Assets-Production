@@ -593,7 +593,7 @@ generic_bases = ("Starfortress","Starfortress",
                  "Research","Research",
                  "Medical","Medical","Medical",
                  "Commerce_Center","Commerce_Center","Commerce_Center",
-                 "Diplomatic_Center","Diplomatic_Center"
+                 "Diplomatic_Center","Diplomatic_Center",
                  "Agricultural_Station","Agricultural_Station","Agricultural_Station",
                  "Factory","Factory","Factory",
                  "Shipyard","Shipyard",
