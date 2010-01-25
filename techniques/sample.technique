@@ -12,7 +12,7 @@
         <texture_unit src="decal:1" target="1" default="file:white.bmp"/>
         <texture_unit src="decal:2" target="2" default="decal:0"/>
         <texture_unit src="decal:3" target="3" default="file:black.bmp"/>
-        <texture_unit src="decal:4" target="4" default="file:blue.bmp"/>
+        <texture_unit src="decal:4" target="4" default="file:gray.bmp"/>
         <texture_unit src="file:noise.bmp" target="5"/>
         <texture_unit src="env" target="6"/>
         
@@ -21,7 +21,7 @@
         <auto_param name="detailPlane2" semantic="DetailPlane2"/>
         <auto_param name="envColor" semantic="EnvColor"/>
     </pass>
-    <pass type="shader> zwrite="false" cwrite="true" iteration="once" blend="add" >
+    <pass type="shader"> zwrite="false" cwrite="true" iteration="once" blend="add" >
         <vertex_program src="highend.vp"/>
         <fragment_program src="highend_hdr.fp"/>
         
