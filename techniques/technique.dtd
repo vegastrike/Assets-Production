@@ -115,6 +115,21 @@
     name: A shader parameter name used to bind a program with its texture unit.
         Required for shader passes, ignored for fixed-function passes.
     
+    kind: a texture kind, unused for "environment", sice it has an implied kind.
+        2d: a normal 2-d texture (the default for file and decal)
+        3d: <unimplemented> a 3-d texture. 
+            Currently, only the DDS format supports this kind.
+        cube: <unimplemented> a 6-side cubemap.
+            Whatever the kind of the first side is, this kind expects 6
+            faces concatenated to a single file, in the order
+            <unspecified>
+        separatedCube: <unimplemented> a 6-side cubemap.
+            This kind expects its sides to be found with name suffixes:
+                up/down/left/right/front/back
+        default: a context-dependant default value. For decal and file
+            sources, this usually means 2d. For environment, dependant on
+            build flags, it means either 2d (spheremap) or cube.
+    
  -->
 <!ELEMENT texture_unit EMPTY>
 <!ATTLIST texture_unit
@@ -122,6 +137,7 @@
     src                     CDATA   #REQUIRED
     default                 CDATA   #IMPLIED
     name                    CDATA   #IMPLIED
+    kind                    CDATA   (default|2d|3d|cube|separatedCube) #IMPLIED
     >
 
 <!--
