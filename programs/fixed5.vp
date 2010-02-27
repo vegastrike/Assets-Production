@@ -54,12 +54,6 @@ lighting(lighting2, lightPosAndAttenuation2, 2)
 lighting(lighting3, lightPosAndAttenuation3, 3)
 lighting(lighting4, lightPosAndAttenuation4, 4)
 
-vec2 EnvMapGen(vec3 f) {
-   float fzp1=f.z+1.0;
-   float m=2.0*sqrt(f.x*f.x+f.y*f.y+(fzp1)*(fzp1));
-   return vec2(f.x/m+.5,f.y/m+.5);
-}
-
 void main() 
 {
   // Compute position, eye-to-object direction and normalized world-space normal
@@ -69,9 +63,8 @@ void main()
 
   // Load varyings
   gl_TexCoord[0] = gl_MultiTexCoord0;
-  gl_TexCoord[1].xy = EnvMapGen(reflect(eyetopos, normal));
-  gl_TexCoord[1].zw = EnvMapGen(normal);
-  gl_TexCoord[2].xyz = normal;
+//  gl_TexCoord[1].xyz = reflect(eyetopos, normal);
+//  gl_TexCoord[2].xyz = normal;
 
   // init accumulators
 
