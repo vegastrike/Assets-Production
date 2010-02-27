@@ -20,48 +20,164 @@ uniform vec4 detail1Plane;
  *    7 - un-normalized vertex position
  **/
 
-#define lightPosAndSize(name, lightno) \
-vec4 name(in vec4 vertex) \
-{ \
-  vec4 lpos = gl_LightSource[lightno].position; \
-  vec4 rv; \
-  rv.xyz    = lpos.xyz - vertex.xyz*lpos.w; \
-  rv.w      = SUNS_SOLID_ANGLE; \
-  return rv; \
-}
-
-
-lightPosAndSize(lightPosAndSize0, 0)
-lightPosAndSize(lightPosAndSize1, 1)
-lightPosAndSize(lightPosAndSize2, 2)
-lightPosAndSize(lightPosAndSize3, 3)
-lightPosAndSize(lightPosAndSize4, 4)
-lightPosAndSize(lightPosAndSize5, 5)
-lightPosAndSize(lightPosAndSize6, 6)
-lightPosAndSize(lightPosAndSize7, 7)
-
 //float selfshadowStep(float VNdotL) { return step(0.0,VNdotL); } // fast but hard selfshadow function
 float selfshadowStep(float VNdotL) { return smoothstep(0.0,0.25,VNdotL); } // costly but soft and nice selfshadow function
 
-#define lighting(name, lpattname, lightno) \
-void name(in vec4 vertex, in vec3 refl, in vec3 normal, inout vec4 pc, inout vec4 sc) \
-{ \
-  vec4  lpatt  = lpattname(vertex); \
-  float NdotL = dot( lpatt.xyz, normal ); \
-  float RdotL = dot( lpatt.xyz, refl ); \
-  \
-  pc += lpatt.w*(  gl_FrontMaterial.ambient * gl_LightSource[lightno].ambient \
-                 + max(0.0, NdotL) * gl_LightSource[lightno].diffuse * gl_FrontMaterial.diffuse );  \
-  sc += lpatt.w*(  pow( max(0.0, RdotL) , max(1.0,gl_FrontMaterial.shininess) ) * selfshadowStep(NdotL) \
-                 * gl_LightSource[lightno].specular * gl_FrontMaterial.specular );  \
+vec4 lightPosAndSize0(in vec4 vertex)
+{
+  vec4 lpos = gl_LightSource[0].position;
+  vec4 rv;
+  rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
+  rv.w      = SUNS_SOLID_ANGLE;
+  return rv;
+}
+vec4 lightPosAndSize1(in vec4 vertex)
+{
+  vec4 lpos = gl_LightSource[1].position;
+  vec4 rv;
+  rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
+  rv.w      = SUNS_SOLID_ANGLE;
+  return rv;
+}
+vec4 lightPosAndAttenuation2(in vec4 vertex)
+{
+  vec4 lpos = gl_LightSource[2].position;
+  vec4 rv;
+  rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
+  float t   = length(rv.xyz);
+  rv.xyz   *= (1.0/t);
+  rv.w      = 1.0 / dot( vec3(1,t,t*t),
+                         vec3(gl_LightSource[2].constantAttenuation,
+                              gl_LightSource[2].linearAttenuation,
+                              gl_LightSource[2].quadraticAttenuation) );
+  return rv;
+}
+vec4 lightPosAndAttenuation3(in vec4 vertex)
+{
+  vec4 lpos = gl_LightSource[3].position;
+  vec4 rv;
+  rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
+  float t   = length(rv.xyz);
+  rv.xyz   *= (1.0/t);
+  rv.w      = 1.0 / dot( vec3(1,t,t*t),
+                         vec3(gl_LightSource[3].constantAttenuation,
+                              gl_LightSource[3].linearAttenuation,
+                              gl_LightSource[3].quadraticAttenuation) );
+  return rv;
+}
+vec4 lightPosAndAttenuation4(in vec4 vertex)
+{
+  vec4 lpos = gl_LightSource[4].position;
+  vec4 rv;
+  rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
+  float t   = length(rv.xyz);
+  rv.xyz   *= (1.0/t);
+  rv.w      = 1.0 / dot( vec3(1,t,t*t),
+                         vec3(gl_LightSource[4].constantAttenuation,
+                              gl_LightSource[4].linearAttenuation,
+                              gl_LightSource[4].quadraticAttenuation) );
+  return rv;
+}
+vec4 lightPosAndAttenuation5(in vec4 vertex)
+{
+  vec4 lpos = gl_LightSource[5].position;
+  vec4 rv;
+  rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
+  float t   = length(rv.xyz);
+  rv.xyz   *= (1.0/t);
+  rv.w      = 1.0 / dot( vec3(1,t,t*t),
+                         vec3(gl_LightSource[5].constantAttenuation,
+                              gl_LightSource[5].linearAttenuation,
+                              gl_LightSource[5].quadraticAttenuation) );
+  return rv;
+}
+vec4 lightPosAndAttenuation6(in vec4 vertex)
+{
+  vec4 lpos = gl_LightSource[6].position;
+  vec4 rv;
+  rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
+  float t   = length(rv.xyz);
+  rv.xyz   *= (1.0/t);
+  rv.w      = 1.0 / dot( vec3(1,t,t*t),
+                         vec3(gl_LightSource[6].constantAttenuation,
+                              gl_LightSource[6].linearAttenuation,
+                              gl_LightSource[6].quadraticAttenuation) );
+  return rv;
+}
+vec4 lightPosAndAttenuation7(in vec4 vertex)
+{
+  vec4 lpos = gl_LightSource[7].position;
+  vec4 rv;
+  rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
+  float t   = length(rv.xyz);
+  rv.xyz   *= (1.0/t);
+  rv.w      = 1.0 / dot( vec3(1,t,t*t),
+                         vec3(gl_LightSource[7].constantAttenuation,
+                              gl_LightSource[7].linearAttenuation,
+                              gl_LightSource[7].quadraticAttenuation) );
+  return rv;
 }
 
-lighting(lighting2, lightPosAndSize2, 2)
-lighting(lighting3, lightPosAndSize3, 3)
-lighting(lighting4, lightPosAndSize4, 4)
-lighting(lighting5, lightPosAndSize5, 5)
-lighting(lighting6, lightPosAndSize6, 6)
-lighting(lighting7, lightPosAndSize7, 7)
+void lighting2(in vec4 vertex, in vec3 refl, in vec3 normal, inout vec4 pc, inout vec4 sc)
+{
+  vec4  lpatt  = lightPosAndAttenuation2(vertex);
+  float NdotL = dot( lpatt.xyz, normal );
+  float RdotL = dot( lpatt.xyz, refl );
+  pc += lpatt.w*(  gl_FrontMaterial.ambient * gl_LightSource[2].ambient
+                 + max(0.0, NdotL) * gl_LightSource[2].diffuse * gl_FrontMaterial.diffuse ); 
+  sc += lpatt.w*(  pow( max(0.0, RdotL) , max(1.0,gl_FrontMaterial.shininess) ) * selfshadowStep(NdotL)
+                 * gl_LightSource[2].specular * gl_FrontMaterial.specular );
+}
+void lighting3(in vec4 vertex, in vec3 refl, in vec3 normal, inout vec4 pc, inout vec4 sc)
+{
+  vec4  lpatt  = lightPosAndAttenuation3(vertex);
+  float NdotL = dot( lpatt.xyz, normal );
+  float RdotL = dot( lpatt.xyz, refl );
+  pc += lpatt.w*(  gl_FrontMaterial.ambient * gl_LightSource[3].ambient
+                 + max(0.0, NdotL) * gl_LightSource[3].diffuse * gl_FrontMaterial.diffuse ); 
+  sc += lpatt.w*(  pow( max(0.0, RdotL) , max(1.0,gl_FrontMaterial.shininess) ) * selfshadowStep(NdotL)
+                 * gl_LightSource[3].specular * gl_FrontMaterial.specular );
+}
+void lighting4(in vec4 vertex, in vec3 refl, in vec3 normal, inout vec4 pc, inout vec4 sc)
+{
+  vec4  lpatt  = lightPosAndAttenuation4(vertex);
+  float NdotL = dot( lpatt.xyz, normal );
+  float RdotL = dot( lpatt.xyz, refl );
+  pc += lpatt.w*(  gl_FrontMaterial.ambient * gl_LightSource[4].ambient
+                 + max(0.0, NdotL) * gl_LightSource[4].diffuse * gl_FrontMaterial.diffuse ); 
+  sc += lpatt.w*(  pow( max(0.0, RdotL) , max(1.0,gl_FrontMaterial.shininess) ) * selfshadowStep(NdotL)
+                 * gl_LightSource[4].specular * gl_FrontMaterial.specular );
+}
+void lighting5(in vec4 vertex, in vec3 refl, in vec3 normal, inout vec4 pc, inout vec4 sc)
+{
+  vec4  lpatt  = lightPosAndAttenuation5(vertex);
+  float NdotL = dot( lpatt.xyz, normal );
+  float RdotL = dot( lpatt.xyz, refl );
+  pc += lpatt.w*(  gl_FrontMaterial.ambient * gl_LightSource[5].ambient
+                 + max(0.0, NdotL) * gl_LightSource[5].diffuse * gl_FrontMaterial.diffuse ); 
+  sc += lpatt.w*(  pow( max(0.0, RdotL) , max(1.0,gl_FrontMaterial.shininess) ) * selfshadowStep(NdotL)
+                 * gl_LightSource[5].specular * gl_FrontMaterial.specular );
+}
+void lighting6(in vec4 vertex, in vec3 refl, in vec3 normal, inout vec4 pc, inout vec4 sc)
+{
+  vec4  lpatt  = lightPosAndAttenuation6(vertex);
+  float NdotL = dot( lpatt.xyz, normal );
+  float RdotL = dot( lpatt.xyz, refl );
+  pc += lpatt.w*(  gl_FrontMaterial.ambient * gl_LightSource[6].ambient
+                 + max(0.0, NdotL) * gl_LightSource[6].diffuse * gl_FrontMaterial.diffuse ); 
+  sc += lpatt.w*(  pow( max(0.0, RdotL) , max(1.0,gl_FrontMaterial.shininess) ) * selfshadowStep(NdotL)
+                 * gl_LightSource[6].specular * gl_FrontMaterial.specular );
+}
+void lighting7(in vec4 vertex, in vec3 refl, in vec3 normal, inout vec4 pc, inout vec4 sc)
+{
+  vec4  lpatt  = lightPosAndAttenuation7(vertex);
+  float NdotL = dot( lpatt.xyz, normal );
+  float RdotL = dot( lpatt.xyz, refl );
+  pc += lpatt.w*(  gl_FrontMaterial.ambient * gl_LightSource[7].ambient
+                 + max(0.0, NdotL) * gl_LightSource[7].diffuse * gl_FrontMaterial.diffuse ); 
+  sc += lpatt.w*(  pow( max(0.0, RdotL) , max(1.0,gl_FrontMaterial.shininess) ) * selfshadowStep(NdotL)
+                 * gl_LightSource[7].specular * gl_FrontMaterial.specular );
+}
 
 void main() 
 {
@@ -71,7 +187,6 @@ void main()
   vec3 normal   = normalize(gl_NormalMatrix * gl_Normal);
   vec3 tangent  = normalize(gl_NormalMatrix * gl_MultiTexCoord2.xyz);
   vec3 binormal = cross(tangent, normal) * sign(gl_MultiTexCoord2.w);
-  
   // Load varyings
   gl_TexCoord[0] = gl_MultiTexCoord0;
   gl_TexCoord[1].xyz = normal;
@@ -84,25 +199,13 @@ void main()
   gl_TexCoord[2].w =
   gl_TexCoord[3].w =
   gl_TexCoord[4].w = 0.0;
-  
-#if 0
-  // set texcoord 7 to the front light[0] ambient and light model ambient, for simple GI modulation.
-  gl_TexCoord[7] = 
-            gl_FrontLightProduct[0].ambient 
-          + gl_FrontLightModelProduct.sceneColor
-          + float(light_enabled[1]) * gl_FrontLightProduct[1].ambient;
-#else
-  // set texcoord 7 to the actual position, un-normalized, unadultered, virgin and wild, for use in
-  // face normal computations in the fragment shader
   gl_TexCoord[7] = position;
-#endif
-
   // set primary color to the emissive material properties
   vec4 pc = gl_FrontMaterial.emission;
   vec4 sc = vec4(0.0);
-
   vec3 refl     = reflect( eyetopos, normal );
-  if (max_light_enabled >= 2) {
+  if (max_light_enabled >= 2)
+  {
     if (light_enabled[2] != 0) lighting2(position, refl, normal, pc, sc);
     if (light_enabled[3] != 0) lighting3(position, refl, normal, pc, sc);
     if (light_enabled[4] != 0) lighting4(position, refl, normal, pc, sc);
@@ -110,7 +213,6 @@ void main()
     if (light_enabled[6] != 0) lighting6(position, refl, normal, pc, sc);
     if (light_enabled[7] != 0) lighting7(position, refl, normal, pc, sc);
   }
-
   // Need this instead of ftransform() for invariance
   gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
   gl_FrontColor = gl_BackColor = pc;

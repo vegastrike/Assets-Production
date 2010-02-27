@@ -60,11 +60,11 @@ lighting(lighting5, lightPosAndAttenuation5, 5)
 lighting(lighting6, lightPosAndAttenuation6, 6)
 lighting(lighting7, lightPosAndAttenuation7, 7)
 
-vec2 EnvMapGen(vec3 f) {
+/*vec2 EnvMapGen(vec3 f) {
    float fzp1=f.z+1.0;
    float m=2.0*sqrt(f.x*f.x+f.y*f.y+(fzp1)*(fzp1));
    return vec2(f.x/m+.5,f.y/m+.5);
-}
+}*/
 
 void main() 
 {
@@ -75,8 +75,9 @@ void main()
 
   // Load varyings
   gl_TexCoord[0] = gl_MultiTexCoord0;
-  gl_TexCoord[1].xy = EnvMapGen(reflect(eyetopos, normal));
-  gl_TexCoord[1].zw = EnvMapGen(normal);
+/*  gl_TexCoord[1].xy = EnvMapGen(reflect(eyetopos, normal));
+  gl_TexCoord[1].zw = EnvMapGen(normal); */
+  gl_TexCoord[1].xyz = reflect(eyetopos, normal);
   gl_TexCoord[2].xyz = normal;
 
   // init accumulators
