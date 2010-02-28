@@ -63,8 +63,8 @@ void main()
 
   // Load varyings
   gl_TexCoord[0] = gl_MultiTexCoord0;
-//  gl_TexCoord[1].xyz = reflect(eyetopos, normal);
-//  gl_TexCoord[2].xyz = normal;
+  gl_TexCoord[1].xyz = reflect(eyetopos, normal);
+  gl_TexCoord[2].xyz = normal;
 
   // init accumulators
 

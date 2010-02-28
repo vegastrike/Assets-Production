@@ -66,11 +66,15 @@ void main()
   vec4 position = gl_ModelViewMatrix * gl_Vertex;
   vec3 eyetopos = normalize(position.xyz);
   vec3 normal   = normalize(gl_NormalMatrix * gl_Normal);
+  vec3 tangent  = normalize(gl_NormalMatrix * gl_MultiTexCoord2.xyz);
+  vec3 binormal = cross(tangent, normal) * sign(gl_MultiTexCoord2.w);
 
   // Load varyings
   gl_TexCoord[0] = gl_MultiTexCoord0;
-//  gl_TexCoord[1].xyz = reflect(eyetopos, normal);
+  gl_TexCoord[1].xyz = reflect(eyetopos, normal);
   gl_TexCoord[2].xyz = normal;
+  //gl_TexCoord[3].xyz = tangent;
+  //gl_TexCoord[4].xyz = binormal;
 
   // init accumulators
 
