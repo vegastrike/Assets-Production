@@ -1,5 +1,5 @@
 uniform sampler2D diffuseMap;
-uniform sampler2D envMap;
+uniform samplerCube envMap;
 uniform sampler2D specMap;
 uniform sampler2D glowMap;
 uniform sampler2D damageMap;
@@ -19,7 +19,7 @@ void main()
   vec4 diffusecolor= texture2D(diffuseMap, gl_TexCoord[0].xy);
   vec4 speccolor   = texture2D(specMap   , gl_TexCoord[0].xy);
   vec4 glowcolor   = texture2D(glowMap   , gl_TexCoord[0].xy);
-  vec4 env         = texture2D(envMap    , gl_TexCoord[1].xy);
+  vec4 env         = textureCube(envMap    , gl_TexCoord[1].xyz);
   vec4 diffusemap  = lerp(damage.x, diffusecolor, damagecolor);
   vec4 specmap     = speccolor;
   
