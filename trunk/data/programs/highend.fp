@@ -30,6 +30,7 @@ uniform vec4 envColor;
 #define DEGAMMA_GLOW_MAP     1
 #define DEGAMMA_LIGHTS       1
 #define DEGAMMA_ENVIRONMENT  1
+#define DEGAMMA_TEXTURES     1
 #define SANITIZE             0
 /**********************************/
 
@@ -118,6 +119,48 @@ vec2  saturate( in vec2  a ){ return clamp( a, vec2(0.0), vec2(1.0) ); }
 vec3  saturate( in vec3  a ){ return clamp( a, vec3(0.0), vec3(1.0) ); }
 vec4  saturate( in vec4  a ){ return clamp( a, vec4(0.0), vec4(1.0) ); }
 
+#if DEGAMMA
+vec4  degamma( in vec4 a ) { return a*a; }
+vec3  degamma( in vec3 a ) { return a*a; }
+vec4  regamma( in vec4 a ) { return sqrt(a); }
+vec3  regamma( in vec3 a ) { return sqrt(a); }
+#else
+vec4  degamma( in vec4 a ) { return a; }
+vec3  degamma( in vec3 a ) { return a; }
+vec4  regamma( in vec4 a ) { return a; }
+vec3  regamma( in vec3 a ) { return a; }
+#endif
+
+#if DEGAMMA_ENVIRONMENT
+    #define degamma_env degamma
+#else
+    #define degamma_env 
+#endif
+
+#if DEGAMMA_SPECULAR
+    #define degamma_spec degamma
+#else
+    #define degamma_spec
+#endif
+
+#if DEGAMMA_GLOW_MAP
+    #define degamma_glow degamma
+#else
+    #define degamma_glow
+#endif
+
+#if DEGAMMA_LIGHTS
+    #define degamma_light degamma
+#else
+    #define degamma_light
+#endif
+
+#if DEGAMMA_TEXTURES
+    #define degamma_tex degamma
+#else
+    #define degamma_tex
+#endif
+
 #if NORMALMAP_TYPE == CINEMUT_NM
 vec2 dUdV_first_decode( in vec4 nmfetch )
 {
@@ -169,11 +212,7 @@ vec3 GLOSS_env_reflection( in vec4 mat_gloss, in vec3 direction ) //const
 {
   //ENV MAP FETCH:
   vec3 result = textureCubeLod( envMap, direction, mat_gloss.y ).rgb;
-#if DEGAMMA_ENVIRONMENT
-  return result * result;
-#else
-  return result;
-#endif
+  return degamma_env(result);
 }
 #endif
 float GLOSS_phong_reflection( in float mat_gloss_sa, in float RdotL, in float light_solid_angle ) //const
@@ -202,11 +241,7 @@ vec3 ambMapping(in vec3 bent_normal, in float ao )
   //is one solid color due to bugs with CubeMapGen's edge fix-up; I'll
   //put it to 8.0 after I hack CMG and make it make better cubemaps
   vec3 amb = textureCubeLod(envMap, bent_normal, bias).rgb;
-#if DEGAMMA_ENVIRONMENT
-  return amb * amb;
-#else
-  return amb;
-#endif
+  return degamma_env(amb);
 }
 #endif
 
@@ -218,12 +253,8 @@ void lightingLight(
    inout vec3 light_acc, inout vec3 diffuse_acc, inout vec3 specular_acc)
 {
    vec3  light_pos = normalize(lightinfo.xyz);
-   float light_sa = lightinfo.w;
-#if DEGAMMA_LIGHTS
-   vec3 light_col = raw_light_col * raw_light_col;
-#else
-   vec3 light_col = raw_light_col;
-#endif
+   float light_sa  = lightinfo.w;
+   vec3  light_col = degamma_light(raw_light_col);
    float VNdotL= saturate( dot(vnormal,light_pos) );
    float NdotL = clamp( dot(normal,light_pos), 0.0, VNdotL*4.0 );
    float RdotL = clamp( dot(reflection,light_pos), 0.0, VNdotL*4.0 );
@@ -305,6 +336,12 @@ void main()
   vec4 diffcolor   = texture2D(diffuseMap, tex_coord);
   vec4 speccolor   = texture2D(specMap   , tex_coord);
   vec4 glowcolor   = texture2D(glowMap   , tex_coord);
+  
+  // De-gamma input textures
+  damagecolor.rgb  = degamma_tex(damagecolor.rgb);
+  diffcolor.rgb    = degamma_tex(diffcolor.rgb);
+  speccolor.rgb    = degamma_spec(speccolor.rgb);
+  glowcolor.rgb    = degamma_glow(glowcolor.rgb);
 
   //better apply damage lerps before de-gamma-ing
   diffcolor.rgb  = lerp(damage.x, diffcolor, damagecolor).rgb;
@@ -319,18 +356,10 @@ void main()
   alpha = diffcolor.a;
   UAO = glowcolor.a;
   float rootUAO = sqrt(UAO);
-  //de-gamma diff and spec
-  diff_col = (diffcolor*diffcolor).rgb;
-#if DEGAMMA_SPECULAR
-  mspec_col = (speccolor*speccolor).rgb;
-#else
+
+  diff_col = diffcolor.rgb;
   mspec_col = speccolor.rgb;
-#endif
-#if DEGAMMA_GLOW_MAP
-  glow_col = (glowcolor*glowcolor).rgb;
-#else
   glow_col = glowcolor.rgb;
-#endif
 
 #if SANITIZE
   //sanity
@@ -342,7 +371,7 @@ void main()
   //compute gloss-related stuff
 #if SHININESS_FROM == AD_HOC_SHININESS
   float crapgloss = 0.3333*dot(mspec_col,mspec_col);
-  GLOSS_init( mtl_gloss, crapgloss*crapgloss );
+  GLOSS_init( mtl_gloss, (0.1).xxx + 0.9*crapgloss*crapgloss );
 #endif
 #if SHININESS_FROM == GLOSS_IN_SPEC_ALPHA
   GLOSS_init( mtl_gloss, speccolor.a );
@@ -351,7 +380,7 @@ void main()
   //reflection
   vec3 reflection;
 #if SUPRESS_GAREFLECT == 0
-  GAR( eye, normal, mtl_gloss.z, reflection );
+  GAR( normalize(eye), normal, mtl_gloss.z, reflection );
 #else
   reflection = normalize(-reflect(eye,normal));
 #endif
@@ -422,6 +451,7 @@ void main()
   final_reflected += glow_col;
 #endif
 
-  gl_FragColor = vec4( sqrt(final_reflected), alpha ) * cloaking.rrrg;
+  gl_FragColor.rgb = regamma(final_reflected * cloaking.rrr);
+  gl_FragColor.a   = alpha * cloaking.g;
   //Finitto!
 }
