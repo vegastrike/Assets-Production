@@ -1,4 +1,5 @@
 uniform int light_enabled[gl_MaxLights];
+uniform vec4 light_size[gl_MaxLights];
 uniform int max_light_enabled;
 uniform vec4 detail0Plane;
 uniform vec4 detail1Plane;
@@ -28,7 +29,7 @@ vec4 lightPosAndSize0(in vec4 vertex)
   vec4 lpos = gl_LightSource[0].position;
   vec4 rv;
   rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
-  rv.w      = SUNS_SOLID_ANGLE;
+  rv.w      = light_size[0].z;
   return rv;
 }
 vec4 lightPosAndSize1(in vec4 vertex)
@@ -36,7 +37,7 @@ vec4 lightPosAndSize1(in vec4 vertex)
   vec4 lpos = gl_LightSource[1].position;
   vec4 rv;
   rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
-  rv.w      = SUNS_SOLID_ANGLE;
+  rv.w      = light_size[1].z;
   return rv;
 }
 vec4 lightPosAndAttenuation2(in vec4 vertex)
