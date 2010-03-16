@@ -29,6 +29,10 @@ vec3 lerp( in float f, in vec3 a, in vec3 b)
 {
     return (1.0-f)*a + f*b;
 }
+float saturate( in float a ){ return clamp( a, 0.0, 1.0 ); }
+vec2  saturate( in vec2  a ){ return clamp( a, vec2(0.0), vec2(1.0) ); }
+vec3  saturate( in vec3  a ){ return clamp( a, vec3(0.0), vec3(1.0) ); }
+vec4  saturate( in vec4  a ){ return clamp( a, vec4(0.0), vec4(1.0) ); }
 /*
 vec3 fastnormalize( in vec3 v ) //less accurate than normalize() but should use less instructions
 {
@@ -330,6 +334,7 @@ float selfshadow_step( in float cosa )
     float temp2 = temp1 * temp1;
     return 0.5 * temp1 / sqrt( 1.0 + temp2 ) + 0.5;
 }
+
 void soft_penumbra_NdotL
 (
   in vec3 normal, in vec3 vnormal, in vec3 light,
@@ -347,6 +352,7 @@ void soft_penumbra_NdotL
     selfshadow = ss;
     NdotL = clamp( result.x, 0.0, 4.0*(vNdotL) );
 }
+
 float fresnel( in float cosa, in float k )
 {
    float tmp1 = sqrt(1.0-(1.0-cosa*cosa)/(k*k));
@@ -356,6 +362,14 @@ float fresnel( in float cosa, in float k )
    tmp1 = (cosa-tmp3)/(cosa+tmp3+0.0001);
    return 0.5*(tmp1*tmp1+tmp4*tmp4);
 }
+
+float diffuse_soft_dot(in vec3 normal, in vec3 light, in float light_sa)
+{
+    float NdotL = dot(normal, light);
+    float normalized_sa = light_sa / TWO_PI;
+    return (NdotL + normalized_sa) / (1.0 + normalized_sa);
+}
+
 void perlite
 (
   in vec3 light, in vec3 normal, in vec3 vnormal, in vec3 reflection,

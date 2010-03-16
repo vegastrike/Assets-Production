@@ -4,11 +4,6 @@ uniform int max_light_enabled;
 uniform vec4 detail0Plane;
 uniform vec4 detail1Plane;
 
-//temporarily using the Sun's solid angle, as seen from Earth, for the solid
-//angle of all light sources, until this parameter can be passed as a uniform
-//for each light.
-#define SUNS_SOLID_ANGLE (0.000263759)
-
 /* varyings:
  *   gl_TexCoord[...]
  *    0 - tex coord
@@ -219,3 +214,4 @@ void main()
   gl_FrontColor = gl_BackColor = pc;
   gl_FrontSecondaryColor = gl_BackSecondaryColor = sc;
 }
+

@@ -102,6 +102,7 @@
        
         <auto_param name="envColor" semantic="EnvColor" optional="true"/>
         <auto_param name="light_enabled" semantic="ActiveLightsArray" optional="true"/>
+        <auto_param name="light_size" semantic="ApparentLightSizeArray" optional="true"/>
         <auto_param name="max_light_enabled" semantic="NumLights" optional="true"/>
         <auto_param name="detail0plane" semantic="DetailPlane0" optional="true"/>
         <auto_param name="detail1plane" semantic="DetailPlane1" optional="true"/>
@@ -128,6 +129,7 @@
        
         <auto_param name="envColor" semantic="EnvColor" optional="true"/>
         <auto_param name="light_enabled" semantic="ActiveLightsArray" optional="true"/>
+        <auto_param name="light_size" semantic="ApparentLightSizeArray" optional="true"/>
         <auto_param name="max_light_enabled" semantic="NumLights" optional="true"/>
         <auto_param name="detail0plane" semantic="DetailPlane0" optional="true"/>
         <auto_param name="detail1plane" semantic="DetailPlane1" optional="true"/>
