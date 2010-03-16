@@ -1,4 +1,3 @@
-
 uniform int light_enabled[gl_MaxLights];
 uniform int max_light_enabled;
 uniform vec4 detail0Plane;

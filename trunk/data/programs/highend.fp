@@ -91,7 +91,6 @@ uniform vec4 envColor;
 /**********************************/
 
 //      CONSTANTS
-#define FOUR_PI    (12.566370614359172)
 #define TWO_PI     (6.2831853071795862)
 #define HALF_PI    (1.5707963267948966)
 #define PI_OVER_3  (1.0471975511965976)
@@ -250,7 +249,7 @@ float diffuse_soft_dot(in vec3 normal, in vec3 light, in float light_sa)
 {
     float NdotL = dot(normal, light);
     float normalized_sa = light_sa / TWO_PI;
-    return saturate((NdotL + normalized_sa) / (1.0 + normalized_sa));
+    return (NdotL + normalized_sa) / (1.0 + normalized_sa);
 }
 
 //PER-LIGHT STUFF
@@ -263,10 +262,10 @@ void lightingLight(
    vec3  light_pos = normalize(lightinfo.xyz);
    float light_sa  = lightinfo.w;
    vec3  light_col = degamma_light(raw_light_col);
-   float VNdotL= saturate( diffuse_soft_dot(vnormal,light_pos,light_sa) );
-   float NdotL = clamp( diffuse_soft_dot(normal,light_pos,light_sa), 0.0, VNdotL*4.0 );
-   float RdotL = clamp( dot(reflection,light_pos), 0.0, VNdotL*4.0 );
-   float VRdotL= clamp( dot(vreflection,light_pos), 0.0, VNdotL*4.0 );
+   float VNdotLx4= saturate( 4.0 * diffuse_soft_dot(vnormal,light_pos,light_sa) );
+   float NdotL = clamp( diffuse_soft_dot(normal,light_pos,light_sa), 0.0, VNdotLx4 );
+   float RdotL = clamp( dot(reflection,light_pos), 0.0, VNdotLx4 );
+   float VRdotL= clamp( dot(vreflection,light_pos), 0.0, VNdotLx4 );
    light_acc += light_col;
    float phong  = GLOSS_phong_reflection(mat_gloss_sa,RdotL,light_sa);
 #if SUPRESS_NMRELEV == 0

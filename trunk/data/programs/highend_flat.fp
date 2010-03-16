@@ -210,6 +210,13 @@ vec3 ambMapping(in vec3 bent_normal, in float ao )
 }
 #endif
 
+float diffuse_soft_dot(in vec3 normal, in vec3 light, in float light_sa)
+{
+    float NdotL = dot(normal, light);
+    float normalized_sa = light_sa / TWO_PI;
+    return (NdotL + normalized_sa) / (1.0 + normalized_sa);
+}
+
 //PER-LIGHT STUFF
 void lightingLight(
    in vec4 lightinfo, in vec3 normal, in vec3 vnormal, in vec3 reflection, in vec3 vreflection,
@@ -224,10 +231,10 @@ void lightingLight(
 #else
    vec3 light_col = raw_light_col;
 #endif
-   float VNdotL= saturate( dot(vnormal,light_pos) );
-   float NdotL = clamp( dot(normal,light_pos), 0.0, VNdotL*4.0 );
-   float RdotL = clamp( dot(reflection,light_pos), 0.0, VNdotL*4.0 );
-   float VRdotL= clamp( dot(vreflection,light_pos), 0.0, VNdotL*4.0 );
+   float VNdotLx4= saturate( 4.0 * diffuse_soft_dot(vnormal,light_pos,light_sa) );
+   float NdotL = clamp( diffuse_soft_dot(normal,light_pos,light_sa), 0.0, VNdotLx4 );
+   float RdotL = clamp( dot(reflection,light_pos), 0.0, VNdotLx4 );
+   float VRdotL= clamp( dot(vreflection,light_pos), 0.0, VNdotLx4 );
    light_acc += light_col;
    float phong  = GLOSS_phong_reflection(mat_gloss_sa,RdotL,light_sa);
 #if SUPRESS_NMRELEV == 0

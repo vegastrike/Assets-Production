@@ -98,6 +98,10 @@ float lerp(float f, float a, float b){return (1.0-f)*a+f*b; }
 vec2  lerp(float f, vec2 a, vec2 b) { return (1.0-f)*a+f*b; }
 vec3  lerp(float f, vec3 a, vec3 b) { return (1.0-f)*a+f*b; }
 vec4  lerp(float f, vec4 a, vec4 b) { return (1.0-f)*a+f*b; }
+float saturate( in float a ){ return clamp( a, 0.0, 1.0 ); }
+vec2  saturate( in vec2  a ){ return clamp( a, vec2(0.0), vec2(1.0) ); }
+vec3  saturate( in vec3  a ){ return clamp( a, vec3(0.0), vec3(1.0) ); }
+vec4  saturate( in vec4  a ){ return clamp( a, vec4(0.0), vec4(1.0) ); }
 
 #if NORMALMAP_TYPE == CINEMUT_NM
 vec2 dUdV_first_decode( in vec4 nmfetch )
@@ -357,6 +361,13 @@ vec3 ambMapping(in vec3 bent_normal, in float ao )
 #endif
 
 
+float diffuse_soft_dot(in vec3 normal, in vec3 light, in float light_sa)
+{
+    float NdotL = dot(normal, light);
+    float normalized_sa = light_sa / TWO_PI;
+    return (NdotL + normalized_sa) / (1.0 + normalized_sa);
+}
+
 //PER-LIGHT STUFF
 #if SUPRESS_LIGHTS == 0
 void lightingLight(
@@ -366,14 +377,14 @@ void lightingLight(
    inout vec3 light_acc, inout vec3 diffuse_acc, inout vec3 specular_acc)
 {
    vec3  light_pos = normalize(lightinfo.xyz);
-   float light_size = lightinfo.w;
+   float light_sa = lightinfo.w;
 #if DEGAMMA_LIGHTS
    vec3 light_col = raw_light_col * raw_light_col;
 #else
    vec3 light_col = raw_light_col;
 #endif
-   float VNdotLx4= clamp( 4.0 * dot(vnormal,light), 0.0, 1.0 );
-   float NdotL = clamp( dot(normal,light_pos), 0.0, VNdotLx4 );
+   float VNdotLx4= saturate( 4.0 * diffuse_soft_dot(vnormal,light_pos,light_sa) );
+   float NdotL = clamp( diffuse_soft_dot(normal,light_pos,light_sa), 0.0, VNdotLx4 );
    float RdotL = clamp( dot(reflection,light_pos), 0.0, VNdotLx4 );
    light_acc += light_col;
    specular_acc += ( GLOSS_phong_reflection(mat_gloss_sa,RdotL,light_size) * light_col );
