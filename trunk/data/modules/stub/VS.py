@@ -763,8 +763,8 @@ class Unit:
   def GetOrientation(self):
    print "GetOrientation" 
    return ((1,0,0),(0,1,0),(0,0,1))
-  def queryBSP(self,start,end): 
-   print "queryBSP" 
+  def rbCollide(self,start,end): 
+   print "rbCollide" 
    return (un,(0,0,1),0)
   def cosAngleToITTS(self,un,speed,range): 
    print "cosAngleToITTS" 
