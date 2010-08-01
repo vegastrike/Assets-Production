@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import Base
 import VS
 import GUI
@@ -9,15 +10,23 @@ import dj_lib
 # No good reason to disable it...
 # dj_lib.disable()
 
-def StartNewGame(self,params):
+def DoStartNewGame(self,params):
 	ShowProgress.activateProgressScreen('loading',3)
 	VS.loadGame(VS.getNewGameSaveName())
+	enterMainMenu(self,params)
+
+def StartNewGame(self,params):
+    Base.SetCurRoom(introroom.getIndex())
+    Base.SetDJEnabled(0)
+
+#Comment the following line if using intro movies
+StartNewGame = DoStartNewGame
 
 def QuitGame(self,params):
 	Base.ExitGame()
 
 # this uses the original coordinate system of Privateer
-GUI.GUIInit(320,200)
+GUI.GUIInit()
 
 time_of_day=''
 
@@ -153,9 +162,44 @@ if intro_file:
 else:
 	intro_text=["Find the IntroMonologue inside the documentation folder"]
 
-# Create menu room
+# Create rooms (intro, menu)
+#Uncomment the following lines to use intro movies
+#room_preintro = Base.Room ('XXXPreIntro')
+#room_intro = Base.Room ('XXXIntro')
 room_menu = Base.Room ('XXXMain_Menu')
+
+# Set up menu room
 guiroom  = GUI.GUIRoom(room_menu)
+
+# Set up preintro room
+class PreIntroRoom(GUI.GUIMovieRoom):
+    def onSkip(self, button, params):
+        GUI.GUIMovieRoom.onSkip(self, button, params)
+        Base.SetDJEnabled(1)
+
+#Uncomment the following lines to use intro movies
+#preintroroom = PreIntroRoom(room_preintro, 
+#    ( 'preintro.ogv',
+#      GUI.GUIRect(0, 0, 1, 1, "normalized")), 
+#    guiroom)
+#preintroroom.setAspectRatio(16.0/9.0)
+#Base.SetDJEnabled(0)
+
+# Set up intro room
+class IntroRoom(PreIntroRoom):
+    def onSkip(self, button, params):
+        PreIntroRoom.onSkip(self, button, params)
+        DoStartNewGame(self, params)
+
+#Uncomment the following lines to use intro movies
+#introroom = IntroRoom(room_intro, 
+#    ( 'intro.ogv',
+#      GUI.GUIRect(0, 0, 1, 1, "normalized")), 
+#    guiroom)
+#introroom.setAspectRatio(16.0/9.0)
+#Base.SetDJEnabled(0)
+
+
 
 # Create credits room
 credits_guiroom = GUI.GUIRoom(Base.Room('XXXCredits'))
@@ -267,7 +311,6 @@ btn = GUI.GUIButton(guiroom, 'XXXQuit Game','Quit_Game',sprite,sprite_loc,'enabl
 # Draw everything
 GUI.GUIRootSingleton.broadcastMessage('draw',None)
 
-# Base music
-VS.musicPlayList(plist_menu)
+# Main menu room environment setup (music and stuff - comment out if you're using an intro movie)
+enterMainMenu(None,None)
 
-#Base.VideoStream(room_menu, 'themovie', 'PGG-Intro-with-Credits.avi', 0, 0, 2, -2)
