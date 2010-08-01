@@ -1,13 +1,8 @@
-<system name="Modelview" background="backgrounds/starfield3" nearstars="500" stars="1000" starspread="150" scalesystem="1000">
+<system name="Modelview" background="backgrounds/blue" nearstars="500" stars="1000" starspread="150" scalesystem="1000">
 <Light>
-	<ambient red="0.9" green="0.9" blue="0.9"/>
-	<diffuse red="1" green="2" blue="1"/>
-	<specular red="0.1" green="0.1" blue="0.1"/>
-</Light>
-<Light>
-	<ambient red="0.9" green="0.9" blue="0.9"/>
-	<diffuse red="0.9" green="0.9" blue="0.9"/>
-	<specular red="0" green="0" blue="0"/>
+	<ambient red="0.000000" green="0.000000" blue="0.000000"/>
+	<diffuse red="1.0" green="1.0" blue="1.0"/>
+	<specular red="1.0" green="1.0" blue="1.0"/>
 </Light>
 <Planet name="Cephid_17 A" file="stars/white_star.texture" ri="0.000000" rj="0.000000" rk="0.000000" si="0.000000" sj="0.000000" sk="0.000000" radius="746000.000000" x="0" y="0" z="0"  Red="0.9" Green="0.9" Blue="0.9" ReflectNoLight="true" light="0">
     <Planet name="Landing Paradise" file="planets/university.texture" radius="1281005" gravity="18" ri="26000000.0" rj="0" rk="26000000" si="26000000.0" sj="0" sk="-26000000.0" year="13661700" day="950" position="0">

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import Base
 import VS
 from XGUIDebug import *
@@ -16,10 +17,18 @@ _GUITraceLevel = TRACE_VERBOSE
 
 class GUIRoot:
 	"""global GUI setup"""
-	def __init__(self,screenX,screenY,marginX=None,marginY=None):
+	def __init__(self,screenX=None,screenY=None,marginX=None,marginY=None,aspect=None):
 		self.deregisterAllObjects()
 		self.deregisterAllRooms()
+		if not screenX or not screenY:
+			# Get screen dimensions from config
+			screenX = int(VS.vsConfig("graphics","base_max_width",
+				VS.vsConfig("graphics","x_resolution","0")))
+			screenY = int(VS.vsConfig("graphics","base_max_height",
+				VS.vsConfig("graphics","y_resolution","0")))
+			aspect = float(VS.vsConfig("graphics","aspect","0"))
 		self.setScreenDimensions(screenX,screenY)
+		self.aspect = aspect or (screenX * 1.0 / screenY)
 		if (marginX == None):
 			marginX = 0.00
 		if (marginY == None):
@@ -28,7 +37,7 @@ class GUIRoot:
 		self.needRedraw = {}
 		self.modalElement = None
 		self.keyTarget = None
-		Base.GlobalKeyPython('#\nfrom GUI import GUIRoot\nGUIRootSingleton.keyEvent()\n')
+		Base.GlobalKeyPython('#\nfrom GUI import GUIRootSingleton\nGUIRootSingleton.keyEvent()\n')
 
 	def setScreenDimensions(self,screenX,screenY):
 		self.screenX=screenX
@@ -42,6 +51,12 @@ class GUIRoot:
 		self.marginX=marginX
 		self.marginY=marginY
 		self.broadcastMessage('changedScreenMargins', {'marginX':marginX,'marginY':marginY} )
+
+	def getScreenAspectRatio(self):
+		return self.aspect
+
+	def setScreenAspectRatio(self, aspect):
+		self.aspect = aspect
 
 	def getScreenMargins(self):
 		return (self.marginX,self.marginY)
@@ -73,10 +88,14 @@ class GUIRoot:
 	def keyEvent(self):
 		eventdata = Base.GetEventData();
 		if self.keyTarget is not None:
-			if eventdata['type'] == 'keyup' and 'keyUp' in dir(self.keyTarget):
-				self.keyTarget.keyUp(eventdata['key'])
-			if eventdata['type'] == 'keydown' and 'keyDown' in dir(self.keyTarget):
-				self.keyTarget.keyDown(eventdata['key'])
+			eventTarget = self.keyTarget
+		else:
+			eventTarget = self.rooms.get(Base.GetCurRoom())
+		if eventTarget is not None:
+			if eventdata['type'] == 'keyup' and hasattr(eventTarget,'keyUp'):
+				eventTarget.keyUp(eventdata['key'])
+			if eventdata['type'] == 'keydown' and hasattr(eventTarget,'keyDown'):
+				eventTarget.keyDown(eventdata['key'])
 
 	def registerRoom(self,room):
 		self.rooms[room.getIndex()] = room
@@ -100,10 +119,10 @@ class GUIRoot:
 		return self.rooms.get(id,None)
 
 
-def GUIInit(screenX,screenY,marginX=None,marginY=None):
+def GUIInit(screenX=None,screenY=None,marginX=None,marginY=None,**kwargs):
 	""" GUIInit sets up the GUIRootSingleton variable, which is used to store the state """
 	global GUIRootSingleton
-	GUIRootSingleton = GUIRoot(screenX,screenY,marginX,marginY)
+	GUIRootSingleton = GUIRoot(screenX,screenY,marginX,marginY,**kwargs)
 
 
 """----------------------------------------------------------------"""
@@ -1323,3 +1342,183 @@ class GUISimpleListPicker(GUIElement):
 		self.notifyNeedRedraw()
 		self._recheck()
 	
+
+
+"""----------------------------------------------------------------"""
+"""                                                                """
+""" GUIVideoTexture - a non-interactive video texture              """
+"""                     (no audio)                                 """
+"""                                                                """
+"""----------------------------------------------------------------"""
+
+class GUIVideoTexture(GUIStaticImage):
+    def __init__(self,room,index,sprite,**kwarg):
+        """ Sprite must be a tuple of the form:     """
+        """     ( path , location )                 """
+        """     with 'location' being a GUIRect     """
+        """ NOTE: It is legal to set sprite to None """
+        """     This allows subclassing to create   """
+        """     non-static elements                 """
+
+        GUIStaticImage.__init__(self,room,index,sprite,**kwarg)
+        
+        # it does not for this subclass
+        self.redrawPreservesZ=0
+        
+    def draw(self):
+        """ Creates the element """
+        if (self.visible == 1) and (self.spritestate==0) and self.spriteIsValid():
+            (x,y,w,h) = self.sprite[1].getSpriteRect()
+            Base.Video(self.room.getIndex(),self.index,self.sprite[0],"",x,y)
+            Base.SetTextureSize(self.room.getIndex(),self.index,w,h) # override spr file data... it's hideously unmantainable...
+            self.spritestate=1
+    
+    def redraw(self):
+        """ Sets a new image """
+        if self.spritestate==1:
+            self.undraw()
+            self.draw()
+
+
+
+"""----------------------------------------------------------------"""
+"""                                                                """
+""" GUIVideoStream - a non-interactive video stream                """
+"""                   (with audio)                                 """
+"""                                                                """
+"""----------------------------------------------------------------"""
+
+class GUIVideoStream(GUIStaticImage):
+    def __init__(self,room,index,sprite,**kwarg):
+        """ Sprite must be a tuple of the form:     """
+        """     ( path , location )                 """
+        """     with 'location' being a GUIRect     """
+        """ NOTE: It is legal to set sprite to None """
+        """     This allows subclassing to create   """
+        """     non-static elements                 """
+        self.eosHandler = kwarg.pop('eosHandler',None)
+
+        GUIStaticImage.__init__(self,room,index,sprite,**kwarg)
+        
+        # it does not for this subclass
+        self.redrawPreservesZ=0
+        
+        self.nextRoom = None
+        self.aspect = None
+        
+    def draw(self):
+        """ Creates the element """
+        if (self.visible == 1) and (self.spritestate==0) and self.spriteIsValid():
+            pythoncallback = \
+                  "# <-- this disables precompiled python objects\n" \
+                 +"from GUI import GUIRootSingleton\n" \
+                 +"GUIRootSingleton.dispatchMessage("+str(self.id)+",'eos',None)\n" \
+                 +"GUIRootSingleton.redrawIfNeeded()\n"
+            
+            (x,y,w,h) = self.sprite[1].getSpriteRect()
+            Base.VideoStream(self.room.getIndex(),self.index,self.sprite[0],x,y,w,h)
+            Base.SetVideoCallback(self.room.getIndex(),self.index,pythoncallback)
+            self.spritestate=1
+            self.setAspectRatio(self.aspect)
+    
+    def undraw(self):
+        """ Hides the element """
+        self.stopPlaying()
+        GUIStaticImage.undraw(self)
+
+    def redraw(self):
+        """ Sets a new image """
+        if self.spritestate==1:
+            self.undraw()
+            self.draw()
+
+    def stopPlaying(self):
+        if self.spritestate==1:
+            Base.StopVideo(self.room.getIndex(), self.index)
+
+    def startPlaying(self):
+        if self.spritestate==1:
+            Base.PlayVideo(self.room.getIndex(), self.index)
+
+    def setNextRoom(self, nextRoom):
+        self.nextRoom = nextRoom
+
+    def setAspectRatio(self, aspect):
+        self.aspect = aspect
+        if self.spritestate==1:
+            (x,y,w,h) = self.sprite[1].getSpriteRect()
+            screenAspect = GUIRootSingleton.getScreenAspectRatio()
+            
+            xf = yf = 1.0
+            if aspect is not None:
+                if screenAspect < aspect:
+                    # horizontal bars needed
+                    yf = screenAspect / aspect
+                elif aspect < screenAspect:
+                    # vertical bars needed
+                    xf = aspect / screenAspect
+            
+            Base.SetTextureSize(self.room.getIndex(), self.index, w * xf, h * yf)
+
+    def onMessage(self, message, params):
+        if not GUIStaticImage.onMessage(self, message, params):
+            if message == 'eos':
+                self.onEOS(params)
+            else:
+                return False
+            return True
+        else:
+            return True
+
+    def onEOS(self, params):
+        """
+        Callback for End-Of-Stream.
+        """
+        if self.eosHandler:
+            self.eosHandler(self, params)
+
+
+"""----------------------------------------------------------------"""
+"""                                                                """
+""" GUIMovieRoom - implements a cutscene movie as a room with just """
+"""     the movie playing, it will transition to another room      """
+"""     when the movie ends, or a "skip" key is pressed, or        """
+"""     the mouse clicked anywhere on the screen                   """
+"""                                                                """
+"""----------------------------------------------------------------"""
+
+class GUIMovieRoom(GUIRoom):
+    def __init__(self, index, moviesprite, nextroom):
+        GUIRoom.__init__(self, index)
+        
+        sx, sw = GUIRootSingleton.getScreenDimensions()
+        self.aspect = sw * 1.0 / sx
+        
+        self.video = GUIVideoStream(self, "movie", moviesprite, eosHandler=self.onSkip)
+        self.video.setNextRoom(nextroom)
+        self.video.setAspectRatio(self.aspect)
+        
+        self.skipzone = GUIRoomButton(self, nextroom, 
+            "XXXskip", "skipmovie", 
+            {'*':None},
+            GUIRect(0,0,1,1,"normalized"),
+            clickHandler = self.onSkip )
+
+    def __repr__(self):
+        return "<movie room %r - %r>" % (self.index, self.moviepath)
+    
+    def __str__(self):
+        return "MovieRoom %s %s" % (self.index, self.moviepath)
+
+    def keyDown(self,key):
+        if key in (13, 10, 27): # return, return, escape
+            self.skipzone.onClick({})
+
+    def onSkip(self, button, params):
+        self.video.stopPlaying()
+        if self.video.nextRoom:
+            Base.SetCurRoom(self.video.nextRoom.getIndex())
+
+    def setAspectRatio(self, ratio):
+        self.aspect = ratio
+        self.video.setAspectRatio(self.aspect)
