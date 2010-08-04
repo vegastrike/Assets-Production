@@ -1,9 +1,13 @@
+# -*- coding: utf-8 -*-
 import VS
 import Director
 import vsrandom
 import generate_dyn_universe
 import dynamic_news
 import debug
+import fg_util
+import dynamic_battle
+import faction_ships
 
 global dnewsman_
 dnewsman_ = dynamic_news.NewsManager()
@@ -12,13 +16,13 @@ player_kill_list=[]
 def updatePlayerKillList(playernum,faction):
     fac = VS.GetFactionIndex(faction)
     ret=0
-    for i in range (VS.getNumPlayers()-len(player_kill_list)):
+    for i in xrange(VS.getNumPlayers()-len(player_kill_list)):
         player_kill_list.append([]);
-    for i in range(VS.getNumPlayers()):
+    for i in xrange(VS.getNumPlayers()):
         numfac=Director.getSaveDataLength(i,"kills")
-        for j in range (numfac-len(player_kill_list[i])):
+        for j in xrange(numfac-len(player_kill_list[i])):
             player_kill_list[i].append(0)
-        for j in range (numfac):
+        for j in xrange(numfac):
             if (i==playernum and j==fac):
                 ret = Director.getSaveData(i,"kills",j)-player_kill_list[i][j];
             player_kill_list[i][j]=Director.getSaveData(i,"kills",j)
@@ -32,23 +36,19 @@ class ShipTracker:
         self.starsystem = VS.getSystemFile()
         self.type=typ
     def Check(self):
-        import fg_util
         dead=not self.un
         if (not dead):
             dead = self.un.GetHull()<=0
         if (dead):
             debug.debug("Uunit died")
             if (VS.systemInMemory (self.starsystem)):
-                import dynamic_battle
                 if fg_util.RemoveShipFromFG(self.fgname,self.faction,self.type)!=0:
                   if (VS.getPlayerX(0)):
                       debug.debug('unit died for real')
                       if (VS.GetRelation(self.faction,VS.getPlayerX(0).getFactionName())>0):
-                          import faction_ships
                           dynamic_battle.rescuelist[self.starsystem]=(self.faction,"Shadow",faction_ships.get_enemy_of(self.faction))
                           debug.debug("friend in trouble")
                   global dnewsman_
-                  import dynamic_battle
                   numships = updatePlayerKillList(0,self.faction)
                   debug.debug("num ships killed ")
                   debug.debug(numships)
@@ -67,17 +67,17 @@ class ShipTracker:
                 self.starsystem=sys
         return 1
 def TrackLaunchedShip(fgname,fac,typ,un):
-    import fg_util
     fg_util.LaunchShip(fgname,fac,typ)
     global _ships
-    _ships+= [ShipTracker(fgname,fac,typ,un)]
+    _ships.append( ShipTracker(fgname,fac,typ,un) )
 curiter=0
 def Execute():
     generate_dyn_universe.KeepUniverseGenerated()
     global curiter, _ships
     if (len(_ships)>curiter):
         if (not _ships[curiter].Check()):
-            del (_ships[curiter])
+	    _ships[curiter] = _ships[-1]
+	    del _ships[-1]
         else:
             curiter+=1
     else:
