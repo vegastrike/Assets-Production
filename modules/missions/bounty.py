@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import universe
 from go_to_adjacent_systems import go_to_adjacent_systems
 from go_somewhere_significant import go_somewhere_significant
@@ -121,7 +122,6 @@ class bounty (Director.Mission):
           self.enemy.SetTarget(self.you)
           self.enemy.setFgDirective('B.')
           self.you.SetTarget(self.enemy)
-          import universe
           universe.greet(self.greetingText,self.enemy,self.you)
           str_faction = self.faction.split('_')[0]
           quest.playSoundCockpit('sounds/missions/' + str_faction + '_it-appears-we-have.ogg')
