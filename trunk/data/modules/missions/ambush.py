@@ -1,6 +1,10 @@
+# -*- coding: utf-8 -*-
 import VS
 import Director
 import directions_mission
+import launch
+import faction_ships
+import universe
 
 class ambush(directions_mission.directions_mission):
 	def privateSetupPlayer(self):
@@ -38,10 +42,10 @@ class ambush(directions_mission.directions_mission):
 				self.dynfg=(self.dynfg,)
 			if (type(self.AdjustFaction)!=type( () ) and type (self.AdjustFaction)!=type([])):
 				self.AdjustFaction=(self.AdjustFaction,)
-			for i in range (len(self.faction)):
+			for i in xrange(len(self.faction)):
 				numenemies=self.numenemies[i]
 				faction=self.faction[i]
-				for z in range(numenemies):
+				for z in xrange(numenemies):
 					AdjustFaction=self.AdjustFaction[-1]
 					if (i<len(self.AdjustFaction)):
 						AdjustFaction=self.AdjustFaction[i]
@@ -53,11 +57,9 @@ class ambush(directions_mission.directions_mission):
 						dyntype=self.dyntype[i]
 					print 'Ambush: Launch ships!'
 					self.havelaunched=1
-					import launch
 					L=launch.Launch()
 					L.fg="Shadow"
 					if (dyntype==""):
-						import faction_ships
 						dyntype=faction_ships.getRandomFighter(faction)
 					L.dynfg=dynfg
 					L.type=dyntype
@@ -66,13 +68,11 @@ class ambush(directions_mission.directions_mission):
 					L.minradius=6000
 					L.maxradius=8000
 					try:
-						import faction_ships
 						L.minradius*=faction_ships.launch_distance_factor
 						L.maxradius*=faction_ships.launch_distance_factor
 					except:
 						pass
 					L.faction=faction
-					import universe		
 					enemy=L.launch(you)
 					lead=enemy.getFlightgroupLeader()
 					enemy.SetTarget(you)
