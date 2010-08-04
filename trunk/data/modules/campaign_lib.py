@@ -1,6 +1,10 @@
+# -*- coding: utf-8 -*-
 import VS
 import debug
 import custom
+import Director
+import Base
+import quest
 
 class Condition:
 	def __init__(self):
@@ -11,13 +15,10 @@ class Condition:
 	
 
 def checkSaveValue (playernum,questname, value):
-	import quest
 	return quest.checkSaveValue(playernum,questname,value)
 def setSaveValue (playernum,name,value):
-	import quest
 	quest.removeQuest(playernum,name,value);
 def incSaveValue(playernum,name):
-	import Director
 	mylen = Director.getSaveDataLength(int(playernum),str(name))
 	val=0
 	if (mylen>0):
@@ -31,7 +32,6 @@ class SaveVariableCondition(Condition):
 		self.value=int(varvalue)
 	
 	def __call__(self):
-		import VS
 		debug.debug("*** Checking \'%s : %d\'"%(self.name,self.value))
 		checked=checkSaveValue(VS.getCurrentPlayer(),self.name,self.value)
 		debug.debug("*** Returning: " + str(checked))
@@ -41,7 +41,6 @@ class HaveCredits(Condition):
 		Condition.__init__(self)
 		self.creds=numcreds
 	def __call__(self):
-		import VS
 		un=VS.getPlayer()
 		if not un.isNull():			
 			cc=un.getCredits()
@@ -62,7 +61,6 @@ class InSystemCondition(Condition):
 			self.dockedshipname=shipname.replace(' ','_').lower()
 	
 	def __call__(self):
-		import VS
 		if self.system:
 			sys=VS.getSystemFile().split('/')
 			debug.debug('System: '+str(sys)+'==?=='+str(self.system))
@@ -124,7 +122,6 @@ class CargoSpaceCondition(Condition):
 		self.num=num
 	
 	def __call__(self):
-		import VS
 		you=VS.getPlayer()
 		mpart=VS.GetMasterPartList()
 		carg=mpart.GetCargo(self.type)
@@ -145,7 +142,6 @@ class AtMostActiveMissionsCondition(Condition):
 		self.num=num
 	
 	def __call__(self):
-		import VS
 		debug.debug('*** have active missions <= ?')
 		debug.debug('*** '+str(VS.numActiveMissions()-1)+' <= '+str(self.num))
 		isactive=((VS.numActiveMissions()-1)<=self.num)
@@ -159,7 +155,6 @@ class AtLeastActiveMissionsCondition(Condition):
 		self.num=num
 	
 	def __call__(self):
-		import VS
 		debug.debug('*** U half active mishuns >= ?')
 		debug.debug('*** '+str(VS.numActiveMissions()-1)+' >= '+str(self.num))
 		isactive=((VS.numActiveMissions()-1)>=self.num)
@@ -253,7 +248,6 @@ def textline(strs):
 				sound=strs[1]
 				ret1=False
 			if sound and sound!='':
-				import VS
 				VS.StopAllSounds()
 				debug.debug("playing sound "+str(sound))
 				VS.playSound (sound, (0.,0.,0.), (0.,0.,0.))
@@ -270,7 +264,6 @@ def displayText(room,textlist,enqueue=False):
 		return
 	if room==-1:
 		debug.error("Room is -1!!!")
-	import Base
 	room=Base.GetCurRoom()
 	func=Base.MessageToRoom
 	if enqueue:
@@ -321,7 +314,6 @@ class RemoveCargo(Script):
 		self.missionflag=missionflag
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		you=VS.getPlayer()
@@ -355,7 +347,6 @@ class AddCargo(Script):
 		self.missionflag=missionflag
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		if True or CargoSpaceCondition(self.cargname,self.cargnum)():
@@ -415,7 +406,6 @@ class SetSaveVariable(Script):
 	
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		debug.debug("*** Setting \'%s : %d\'"%(self.name,self.value))
@@ -430,7 +420,6 @@ class IncSaveVariable(Script):
 	
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		debug.debug("*** Incrementing \'%s \'"%self.name)
@@ -443,7 +432,6 @@ class AddTechnology(Script):
 		self.tech=technology
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		import universe
@@ -457,7 +445,6 @@ class AdjustRelation(Script):
 		self.change=change
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		VS.AdjustRelation(self.us,self.them,self.change,1.0)
 		return True
 class ClearFactionRecord(Script):
@@ -467,7 +454,6 @@ class ClearFactionRecord(Script):
 		self.newval=newrelation
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		rel=VS.GetRelation(self.faction,"privateer")
 		VS.AdjustRelation(self.faction,"privateer",self.newval-rel,1.0)
 		rel=VS.GetRelation("privateer",self.faction)
@@ -491,8 +477,6 @@ class PushRelation(Script):
 		self.faction=faction
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import Director
-		import VS
 		cp=VS.getCurrentPlayer()
 		key=self.faction+"_relation_stack"
 		Director.pushSaveData(cp,key,VS.GetRelation(self.faction,"privateer"))
@@ -502,8 +486,6 @@ class PopRelation(Script):
 		self.faction=faction
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import Director
-		import VS
 		cp=VS.getCurrentPlayer()
 		key=self.faction+"_relation_stack"
 		length=Director.getSaveDataLength(cp,key)
@@ -518,7 +500,6 @@ class LaunchWingmen(Script):
 		self.num=num
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		you=VS.getPlayer()
@@ -541,7 +522,6 @@ class ChangeSystemOwner(Script):
 		self.system=system
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		VS.SetGalaxyFaction(self.system,self.faction);
 class ChangeShipOwners(Script):
 	def __init__(self,oldfaction,faction,nextscript=None):
@@ -550,7 +530,6 @@ class ChangeShipOwners(Script):
 		self.oldfaction=oldfaction
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		i = VS.getUnitList()
 		while i.notDone():
 			un = i.current()
@@ -564,7 +543,6 @@ class AddCredits(Script):
 		self.added=False
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		un=VS.getPlayer()
@@ -583,9 +561,7 @@ class SaveVariableGreaterScript(Script):
 		self.val=val
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		playernum=VS.getCurrentPlayer()
-		import Director
 		mylen=Director.getSaveDataLength(playernum,self.var)
 
 		if (mylen>0):
@@ -615,7 +591,6 @@ class RemoveCredits(Script):
 		self.creds=numcreds
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		un=VS.getPlayer()
@@ -629,7 +604,6 @@ class SetCredits(Script):
 		self.creds=numcreds
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		un=VS.getPlayer()
@@ -642,8 +616,6 @@ class PushCredits(Script):
 		Script.__init__(self,nextscript)
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import Director
-		import VS
 		if VS.networked():
 			return True
 		cp=VS.getCurrentPlayer()
@@ -659,8 +631,6 @@ class PopCredits(Script):
 		Script.__init__(self,nextscript)
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import Director
-		import VS
 		if VS.networked():
 			return True
 		cp=VS.getCurrentPlayer()
@@ -678,8 +648,6 @@ class PushNews(Script):
 		self.story=story
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import Director
-		import VS
 		if VS.networked():
 			return True
 		cp=VS.getCurrentPlayer()
@@ -699,7 +667,6 @@ class LoadMission(Script):
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
 		import mission_lib
-		import VS
 		if VS.networked():
 			return True
 		mission_lib.AddNewMission(self.name,self.args,self.mname,self.briefing0,self.briefing1,self.vars0,self.vars1)
@@ -725,7 +692,6 @@ class AddSprite(Script):
 		Script.__call__(self,room,subnodes)
 		if VS.isserver():
 			return True
-		import Base
 		debug.debug('*** AddSprite: Base.Texture'+str((room,self.name,self.sprite,self.pos[0],self.pos[1])))
 		Base.Texture(room,self.name,self.sprite,self.pos[0],self.pos[1])
 		return True
@@ -740,7 +706,6 @@ class AddPythonSprite(AddSprite):
 		AddSprite.__call__(self,room,subnodes)
 		if VS.isserver():
 			return True
-		import Base
 		debug.debug("Creating a new python in room %d, %s (%f,%f), %fx%f"%(room,self.sprite,self.pos[0],self.pos[1],self.widthheight[0],self.widthheight[1]))
 		Base.Python(room,self.name,self.pos[0]-(self.widthheight[0]/2.), self.pos[1]-(self.widthheight[1]/2.),
 			self.widthheight[0], self.widthheight[1], self.text, self.python, True)
@@ -773,8 +738,6 @@ class Cutscene(AddPythonSprite):
 		self.enqueue=True
 		return self
 	def __call__(self,room,subnodes):	
-		import Base
-		import VS
 		if not VS.isserver():
 			Base.Texture(0, self.name+"_black", "black.spr", 0, 0);
 		AddPythonSprite.__call__(self,0,subnodes)
@@ -795,7 +758,6 @@ class GoToSubnodeIfTrue(Script):
 		self.iffalse=iffalse
 	def __call__(self,room,subnodes):
 		ret=False
-		import VS
 		if VS.networked():
 			return True
 		if self.nextscript:
@@ -813,7 +775,6 @@ class TrueSubnode(Script):
 		Script.__init__(self,nextscript)
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		for i in range(len(subnodes)):
@@ -825,7 +786,6 @@ class TrueBackwardsSubnode(Script):
 		Script.__init__(self,nextscript)
 	def __call__(self,room,subnodes):
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		for i in range(len(subnodes)-1,-1,-1):
@@ -842,7 +802,6 @@ class GoToSubnode(Script):
 	def __call__(self,room,subnodes):
 		debug.debug('************* Goto before script call')
 		Script.__call__(self,room,subnodes)
-		import VS
 		if VS.networked():
 			return True
 		debug.debug('************* Goto after script call')
@@ -884,7 +843,6 @@ class Campaign:
 
 	def handle_server_cmd(self, current_room, cmd, args):
 		if current_room == -1 and not VS.isserver():
-			import Base
 			current_room = Base.GetCurRoom()
 		if cmd=='goto':
 			if VS.isserver():
@@ -903,8 +861,6 @@ class Campaign:
 	#depends on Base... should remove dependencies?
 	def setCurrentNode(self,room,newnodenum):
 		debug.warn('*** Going to branch number '+str(newnodenum))
-		import VS
-		import Director
 		plr = VS.getCurrentPlayer()
 		if not self.checkPlayer(plr):
 			return ["failure","player %d not initialized yet!"%plr]
@@ -974,9 +930,6 @@ class Campaign:
 	
 	
 	def readPositionFromSavegame(self, savegamelist=None):
-		import VS
-		import Director
-		
 		plr=VS.getCurrentPlayer()
 		self.InitPlayer(plr)
 		player = self.players[plr]
@@ -1036,8 +989,6 @@ class Campaign:
 	#depends on Base... should remove dependencies?
 	def getCurrentNode(self,room):
 		debug.debug('*** getting current node')
-		import VS
-		import Director
 		plr=VS.getCurrentPlayer()
 		if not self.checkPlayer(plr):
 			self.InitPlayer(plr)
@@ -1579,7 +1530,6 @@ def clickChoice(room,choicenum):
 	debug.debug('*** Clicked a choice!')
 	cnodelist=getActiveCampaignNodes(-1)
 	# Should only evaluate first one?
-	import VS
 	VS.StopAllSounds()
 	for c in cnodelist:
 		debug.debug('*** clicked on choice +'+str(choicenum)+': '+cnodelist[0].campaign.name)
@@ -1618,7 +1568,6 @@ def handle_campaign_message(local, cmd, args, id):
 		queued_cmds.append((campaign,args[1],args[2:]))
 		if VS.isserver():
 			return handle_queued_cmds(-1)
-		import Base
 		if Base.GetNumRoom()>0:
 			return handle_queued_cmds(default_room)
 
