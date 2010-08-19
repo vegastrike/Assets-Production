@@ -42,7 +42,7 @@ vec4 lightPosAndAttenuation2(in vec4 vertex)
   rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
   float t   = length(rv.xyz);
   rv.xyz   *= (1.0/t);
-  rv.w      = 1.0 / dot( vec3(1,t,t*t),
+  rv.w      = 1.0 / dot( vec3(1.0,t,t*t),
                          vec3(gl_LightSource[2].constantAttenuation,
                               gl_LightSource[2].linearAttenuation,
                               gl_LightSource[2].quadraticAttenuation) );
