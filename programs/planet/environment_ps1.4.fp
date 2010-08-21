@@ -136,7 +136,7 @@ void main()
   vec3 specular    = fresnel(fNDotV) * speccol * specmap.rgb;
   
   // Make citymap night-only
-  float trigger    = cityLightTrigger(-fNDotL) * fvCityLightColor.rgb * cityLightFactor;
+  float trigger    = cityLightTrigger(fNDotL) * fvCityLightColor.rgb * cityLightFactor;
   gcitymap.rgb    *= trigger;
 
   // Do lighting
