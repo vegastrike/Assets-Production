@@ -26,7 +26,7 @@
     </pass>
     
     <!-- first and only lighting pass -->
-    <pass type="shader" sequence="15" cull="back" >
+    <pass type="shader" sequence="15" cull="back" zwrite="false">
         <vertex_program src="highend"/>
         <fragment_program src="highend_flat"/>
         

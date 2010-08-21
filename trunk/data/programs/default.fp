@@ -38,10 +38,10 @@ uniform vec4 envColor;
 /**********************************/
 // Light source switches:
 #define SUPRESS_LIGHTS       0
-#define SUPRESS_ENVIRONMENT  1
-#define SUPRESS_GLOWMAP      1
+#define SUPRESS_ENVIRONMENT  0
+#define SUPRESS_GLOWMAP      0
 // Material switches:
-#define SUPRESS_DIFFUSE      1
+#define SUPRESS_DIFFUSE      0
 #define USE_DIFF_AS_METAL    0
 #define SUPRESS_SPECULAR     0
 #define SUPRESS_DIELECTRIC   0

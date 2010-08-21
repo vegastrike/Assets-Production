@@ -12,7 +12,7 @@
 <Light>
 	<ambient red=".03" green="0.03" blue="0.03"/>
 	<diffuse  red="1" green="1" blue="1"/>
-	<specular  red="0.2" green="0.2" blue="0.2"/>
+	<specular  red="1" green="1" blue="1"/>
 </Light>
 
 <planet name="Sol" file="sol/sun.texture" radius="695500" gravity="20" x="0" y="0" z="0"  Red=".9" Green=".9" Blue=".9" ReflectNoLight="true" light="0">
@@ -26,13 +26,16 @@
     </fog>
 </planet> <!-- End Venus -->
 
-<planet name="Earth" file="sol/earth.texture" radius="6378.0" gravity="20" ri="147.1e6" rj="0" rk="0" si="0" sj="0" sk="-152.1e6" day="86.400" Year="31471954." position="0" Red=".15" Green=".15" Blue=".15">  
-<Atmosphere file="sol/earthcloudmaptrans.texture" alpha="SRCALPHA INVSRCALPHA" radius="6383.0"/>
-    <CityLights file="sol/earthlights.texture" wrapx="1" wrapy="1" radius = "6378.1"/>
-    <Fog>
-        <FogElement file="atmXatm.bfxm" ScaleAtmosphereHeight="1.000" red=".8" blue="1" green=".85" alpha="0.5" dired="1" diblue="1" digreen="1" dialpha=".5" concavity=".3" focus=".6" minalpha="0" maxalpha=".25"/>
-        <FogElement file="atmXhalo.bfxm" ScaleAtmosphereHeight="1.000" red=".8" blue="1" green=".85" alpha=".5" dired="1" diblue="1" digreen="1" dialpha=".5" concavity=".3" focus=".6" minalpha="0" maxalpha=".25"/>
-    </Fog>
+<planet name="Earth" 
+        file="planets/earth/earth_diffuse.texture|planets/earth/earth_specular.texture|planets/earth/earth_clouds.texture|planets/earth/earth_night.texture|planets/earth/earth_normal.texture" 
+        unit="earth"
+        technique="earth" 
+        radius="6378.0" gravity="20" 
+        ri="147.1e6" rj="0" rk="0" si="0" sj="0" sk="-152.1e6" 
+        day="86.400" Year="31471954." position="0" 
+        Red="0" Green="0" Blue="0" 
+        DRed="0.87" DGreen="0.87" DBlue="0.87" 
+        SRed="0.85" SGreen="0.85" SBlue="0.85" >  
     <planet name="Earth: Luna" file="sol/moon.texture" radius="1913.4" gravity="20" ri="0.363e6" rj="0" rk="0" sk="0.406e6" sj="0" si="0" day="2360.440" Year="2360440.0" position=".39"/>
 <unit name= "Solar Defense:Earth SF 1" file="Starfortress" ri="0.28e5" rj="0" rk="0" sk="0.28e5" sj="0" si="" year="2400000.0" position="0" faction="purist"></unit>
 <unit name= "Solar Defense:Earth SF 2" file="Starfortress" ri="0.28e5" rj="0" rk="0" sk="0.28e5" sj="0" si="" year="2400000.0" position="0.25" faction="purist"></unit>

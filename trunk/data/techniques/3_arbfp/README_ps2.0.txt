@@ -1,5 +1,5 @@
-Techniques in this folder specify shaders compatible with ps2.0 gpu's, a pixel shader specification
-that came with the original DirectX 9.0 specification.
+Techniques in this folder specify shaders compatible with arbfp1 gpu's, a pixel shader specification
+that came similar in features to ps2.0 but wiht lower minimum requirements.
 
 From http://www.gpureview.com/pixel-shader-version-article-390.html:
 "
@@ -10,7 +10,7 @@ This 2.0_lo folder techniques should run on early ps2.0 gpu's with acceptable fr
 
 
 Targeted PixelShader standards:
-  ps2.0
+  ps2.0 arbfp1
   
 Targeted GPU's:
   NVidia:   GeForce 4

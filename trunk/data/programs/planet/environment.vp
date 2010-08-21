@@ -1,0 +1,74 @@
+/* varyings:
+ *   gl_TexCoord[...]
+ *    0 - tex coord
+ *    1 - ws normal
+ *    2 - ws tangent
+ *    3 - ws binormal
+ *    4 - vertex-to-eye direction
+ *    5 - vertex-to-light0@xyz, light_size@z
+ *    6 - vertex-to-light1@xyz, light_size@z
+ *    7 - un-normalized vertex position
+ **/
+
+uniform vec4 envColor;
+uniform float fTime;
+uniform vec4 fAtmosphereExtrusion;
+uniform vec4 fvCloudLayerDrift_ShadowRelHeight;
+
+
+float soffs(float lim, float x)
+{
+   return x + ((x>=0.0)?lim:-lim);
+}
+
+vec2 shadowExtrude(in vec2 texcoord, in vec3 direction)
+{
+   return texcoord - direction.xy * fAtmosphereExtrusion.x * fvCloudLayerDrift_ShadowRelHeight.w / soffs(0.01,direction.z);
+}
+
+vec4 lightPos0(in vec4 vertex)
+{
+  vec4 lpos = gl_LightSource[0].position;
+  vec4 rv;
+  rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
+  rv.w      = 0.0;
+  return rv;
+}
+
+void main() 
+{
+  // Compute position, eye-to-object direction and normalized world-space normal
+  vec4 position = gl_ModelViewMatrix * gl_Vertex;
+  vec3 eyetopos = normalize(position.xyz);
+  vec3 normal   = normalize(gl_NormalMatrix * gl_Normal);
+  vec3 tangent  = normalize(gl_NormalMatrix * gl_MultiTexCoord2.xyz);
+  vec3 binormal = cross(tangent, normal) * sign(gl_MultiTexCoord2.w);
+  vec3 reflection  = normalize(reflect(eyetopos,normal));
+  
+  // Compute tangentspace reflection vector
+  vec3 tsreflection;
+  tsreflection.x = dot(reflection, tangent);
+  tsreflection.y = dot(reflection, binormal);
+  tsreflection.z = dot(reflection, normal);
+  
+  // Load varyings
+  gl_TexCoord[0] = gl_MultiTexCoord0;
+  gl_TexCoord[1].xyz = normal;
+  gl_TexCoord[1].w = 0.0;
+  gl_TexCoord[2] = lightPos0(position);
+  gl_TexCoord[3].xyz = -eyetopos;
+  gl_TexCoord[3].w = 0.0;
+  gl_TexCoord[4].zw = gl_MultiTexCoord0.xy + fTime*fvCloudLayerDrift_ShadowRelHeight.xy;
+  gl_TexCoord[4].xy = shadowExtrude(gl_TexCoord[4].zw, tsreflection);
+  gl_TexCoord[5].xy = shadowExtrude(gl_MultiTexCoord0.xy, tsreflection);
+  
+  // set primary color to the emissive material properties
+  vec4 pc = gl_FrontMaterial.diffuse;
+  vec4 sc = gl_FrontMaterial.specular;
+
+  // Need this instead of ftransform() for invariance
+  gl_Position = gl_ModelViewProjectionMatrix * gl_Vertex;
+  gl_FrontColor = gl_BackColor = pc;
+  gl_FrontSecondaryColor = gl_BackSecondaryColor = sc;
+}
+
