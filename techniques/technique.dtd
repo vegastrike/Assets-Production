@@ -62,7 +62,7 @@
     zwrite                  CDATA   (true|false|auto)   "auto"
     iteration               CDATA   (once|0|1|2|3|4|5|6|7|8)    "once"
     maxiterations           NMTOKEN "0"
-    blend                   CDATA   (default|add|multiply|alpha_blend|decal)    "default"
+    blend                   CDATA   (default|add|multiply|alpha_blend|decal|premult_alpha|multi_alpha_blend)    "default"
     sequence                NMTOKEN #IMPLIED
     depth_function          CDATA   (less|lequal|greater|gequal|equal|always|never) "lequal"
     cull                    CDATA   (none|back|front|both|default)  "default"

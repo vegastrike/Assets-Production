@@ -16,12 +16,16 @@
 </Planet>
 
 <Planet name="Cephid_17 A" file="stars/white_star.texture" ri="0.000000" rj="0.0" rk="0.0" si="0.0" sj="0.0" sk="0.0" radius="746000.0" x="0" y="0" z="0"  Red="0.95" Green="0.93" Blue="0.64" ReflectNoLight="true" light="0">
-	<Planet name="Atlantis" file="planets/oceanBase.texture|planets/ocean.texture" ri="120000000" rj="-8436.0" rk="-110000000" si="-120000000.0" sj="-150000.0" sk="110000000.0" radius="5000.0" x="120000000" y="-10000" z="-110000000" year= "8000000000" day="80000"  >
-	<Atmosphere file="sol/earthcloudmaptrans2.texture" alpha="SRCALPHA INVSRCALPHA" radius="5020.0"/>
-    <Fog>
-        <FogElement file="atmXatm.bfxm" ScaleAtmosphereHeight="1.0" red=".5" blue="1" green=".7" alpha="0.5" dired="1" diblue="1" digreen="1" dialpha=".5" concavity=".99" focus=".01" minalpha="0" maxalpha="0.5"/>
-        <FogElement file="atmXhalo.bfxm" ScaleAtmosphereHeight="1.0" red=".5" blue="1" green=".7" alpha="0.5" dired="1" diblue="1" digreen="1" dialpha=".5" concavity=".99" focus=".01" minalpha="0" maxalpha="1"/>
-    </Fog>
+	<Planet name="Atlantis" 
+            file="planets/ocean.texture|planets/ocean_specular.texture|planets/earth/earth_clouds.texture" 
+            technique="earth"
+            unit="ocean"
+            ri="120000000" rj="-8436.0" rk="-110000000" si="-120000000.0" sj="-150000.0" sk="110000000.0" 
+            radius="5000.0" 
+            x="120000000" y="-10000" z="-110000000" year= "8000000000" day="80000"
+            Red="0" Green="0" Blue="0" 
+            DRed="0.87" DGreen="0.87" DBlue="0.87" 
+            SRed="0.85" SGreen="0.85" SBlue="0.85" >
 	<Planet name="Phillies" file="planets/rock.texture" ri="-468434.7" rj="-361541" rk="433559.750000" si="-412172.000000" sj="300463.5" sk="-498163.5" radius="1661.98062500" x="-468434" y="-361541" z="433559" year="80000000" day="498000.276794"  >
 	</Planet>
 	<Planet name="JumpToEnyo" file="jump.texture" ri="234340.000000" rj="103060.007812" rk="920958.875000" si="471364.750000" sj="-517154.250000" sk="-62067.574219" radius="0.95771751" x="-1312920.250000" y="-717132.625000" z="1060315.625000" year= "80000000.750000" day="303.621857" alpha="ONE ONE" destination="Crucible/Enyo" faction="klkk"  >

@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
-<technique fallback="default">
+<technique fallback="fixed">
     <!-- Full-blown shader technique, with Z-write prepass to avoid
          shading overhead for occluded fragments.
+         
+         This is a slight simplification of the highend version, simplifying
+         environment filtering, light attenuation and some other minor stuff 
+         to get a lighter version of the same effects. The quality decreases 
+         a bit, but it is far more compatible with older hardware.
          
          This technique implements normal-mapping, specmaps with intensity-derived
          shininess modulation, variable-kernel filtered environmental reflections
@@ -13,16 +18,16 @@
     -->
 
     <!-- Z-write prepasses go at sequence 10 -->
-    <pass type="shader" sequence="10" cull="back" cwrite="false">
+    <pass type="shader" sequence="10" cwrite="false">
         <vertex_program src="zwrite"/>
         <fragment_program src="zwrite"/>
         <texture_unit src="decal:0" default="file:white.bmp" name="diffuseMap"/>
     </pass>
     
     <!-- first and only lighting pass -->
-    <pass type="shader" sequence="15" cull="back" >
-        <vertex_program src="highend"/>
-        <fragment_program src="highend"/>
+    <pass type="shader" sequence="15" zwrite="false">
+        <vertex_program src="default"/>
+        <fragment_program src="default"/>
         
         <texture_unit src="decal:0" default="file:white.bmp" name="diffuseMap"/>
         <texture_unit src="environment" name="envMap"/>
@@ -42,6 +47,5 @@
         <auto_param name="cloaking" semantic="CloakingPhase" optional="true"/>
         <auto_param name="damage" semantic="Damage" optional="true"/>
         <auto_param name="gameTime" semantic="GameTime" optional="true"/>
-        
     </pass>
 </technique>
