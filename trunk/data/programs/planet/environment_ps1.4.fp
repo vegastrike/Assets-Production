@@ -128,6 +128,7 @@ void main()
   diffusemap.rgb   = degamma_tex(diffusemap.rgb);
   specmap.rgb      = degamma_tex(specmap.rgb);
   gcitymap.rgb     = degamma_tex(gcitymap.rgb);
+  gcitymap.rgb     = degamma_tex(gcitymap.rgb); // degamma twice, it's  glowmap and we need a lot of precision near darkness
   
   // Compute specular factor
   float shininess  = fShininess.r * specmap.a;
