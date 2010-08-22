@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<technique fallback="0_fixedgl/planet">
+<technique fallback="0_fixed_gl/planet">
     <!-- Full-blown shader technique, with Z-write prepass to avoid
          shading overhead for occluded fragments.
          
