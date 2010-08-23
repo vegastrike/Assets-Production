@@ -49,7 +49,7 @@
     <!-- main lighting pass -->
     <pass type="shader" sequence="17" cull="back" 
             zwrite="false" 
-            iteration="1" maxiterations="2"
+            iteration="1" maxiterations="1"
             blend="multi_alpha_blend">
         <vertex_program src="planet/ground_vs1.1"/>
         <fragment_program src="planet/ground_ps2.0"/>
@@ -125,7 +125,7 @@
     <!-- clouds pass -->
     <pass type="shader" sequence="20" cull="back" 
             zwrite="false" 
-            iteration="1" maxiterations="2"
+            iteration="1" maxiterations="1"
             blend="multi_alpha_blend">
         <vertex_program src="planet/cloud_vs1.1"/>
         <fragment_program src="planet/cloud_ps2.0"/>
