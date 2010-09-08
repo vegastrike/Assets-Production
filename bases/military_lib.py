@@ -36,7 +36,7 @@ def MakeMilitaryBase(bartendername='bases/bartender_default.py',time_of_day=''):
 	Base.Comp (room1, 'my_comp_id', -0.974609, 0.0286458, 0.607422, 0.388021, 'Mission_Computer', 'Missions News Info ')
 	Base.Link (room1, 'my_link_id', -0.261719, -0.0651042, 0.335938, 0.223958, 'Bridge', room3)
 	import bar
-	bar = bar.MakeMiningBar (room1,'bases/mining/mining_bar'+time_of_day,bartendername)
+	bar = bar.MakeMiningBar (room1,'Main_Concourse','bases/mining/mining_bar'+time_of_day,bartendername)
 	Base.Link (room1, 'bar', 0.125, -0.119792, 0.208984, 0.320312, 'Bar', bar)
 	Base.Link (room1, 'my_link_id', 0.451172, -0.169271, 0.242188, 0.445312, 'Hangar', room0)
 	Base.Link (room1, 'my_link_id', -0.505859, -0.304688, 0.179688, 0.455729, 'Weapon_Surplus_Stores', room6)

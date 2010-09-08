@@ -25,7 +25,7 @@ def MakeMining(repairbay,shipbay,bartendertext='bases/bartender_default.py',time
 	room4 = room
 	Base.Texture (room, 'background', 'bases/mining/mining_concourse'+time_of_day+'.spr', 0, 0)
 	import bar
-	room5 = bar.MakeMiningBar(room4, 'bases/mining/mining_bar'+time_of_day,bartendertext)
+	room5 = bar.MakeMiningBar(room4, 'Main_Concourse', 'bases/mining/mining_bar'+time_of_day,bartendertext)
 	#Base.Texture (room5, 'background', 'bases/mining/mining_bar'+time_of_day+'.spr', 0, 0)
 	
 	room = Base.Room ('Shipyards')
@@ -60,7 +60,6 @@ def MakeMining(repairbay,shipbay,bartendertext='bases/bartender_default.py',time
 	Base.Comp (room4, 'my_comp_id', -0.976562, 0.0416667, 0.597656, 0.479167, 'Mission_Computer', 'Missions News Info ')
 	Base.Link (room4, 'my_link_id', -0.208984, -0.0286458, 0.199219, 0.174479, 'Trade_Center', room1)
 	Base.Link (room4, 'my_link_id', 0.117188, -0.106771, 0.195312, 0.302083, 'Bar', room5)
-	Base.Link (room5, 'my_link_id', -0.998047, -0.994792, 1.99414, 0.140625, 'Main_Concourse', room4)
 	Base.Comp (room6, 'my_comp_id', -0.849609, 0.179688, 0.970703, 0.492188, 'Ship_Dealer', 'ShipDealer Info ')
 	Base.Comp (room6, 'my_comp_id', 0.335938, 0.328125, 0.630859, 0.575521, 'Ship_Dealer', 'ShipDealer Info ')
 	Base.Link (room6, 'my_link_id', 0.0546875, -0.0807292, 0.566406, 0.276042, 'Trade_Center', room1)

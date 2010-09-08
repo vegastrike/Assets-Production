@@ -15,7 +15,7 @@ def MakeLandingAndConcourse(time_of_day):
 	room1 = room
 	Base.Texture (room, 'background', 'bases/ocean/ocean_concourse'+time_of_day+'.spr', 0, 0)
 	import bar
-	room2 = bar.MakeOceanBar(room1,'bases/ocean/ocean_bar'+time_of_day,'bases/bartender_default.py')
+	room2 = bar.MakeOceanBar(room1,'Main_Concourse','bases/ocean/ocean_bar'+time_of_day,'bases/bartender_default.py')
 	
 	room = Base.Room ('Tube_To_Trade_Room')
 	room3 = room
@@ -40,7 +40,6 @@ def MakeLandingAndConcourse(time_of_day):
 	Base.Comp (room1, 'my_comp_id', -0.998047, -0.03125, 0.550391, 0.681771, 'Mission_Computer', 'Missions News Info ')
 	Base.Link (room1, 'my_link_id', -0.292969, -0.0963542, 0.404297, 0.296875, 'Tube_To_Trade_Center', room3)
 	Base.Link (room1, 'my_link_id', -0.450234, -0.1875, 0.154297, 0.377604, 'Tube_To_Shipyards', room5)
-	Base.Link (room2, 'my_link_id', -0.998047, -0.997396, 1.99414, 0.119792, 'Main_Concourse', room1)
 	Base.Link (room3, 'my_link_id', -0.681641, 0.507812, 0.234375, 0.479167, 'Continue_To_Trade_Facilities', room4)
 	Base.Link (room3, 'my_link_id', -0.851562, -0.973958, 0.847656, 0.817708, 'Return_To_Concourse', room1)
 	Base.Link (room3, 'my_link_id', -0.216797, 0.684896, 0.179688, 0.294271, 'Divert_To_Shipyards', room5)
