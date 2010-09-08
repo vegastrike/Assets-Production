@@ -28,7 +28,7 @@ def MakeIndustrial(time_of_day='day',mybartender='bases/bartender_default.py'):
     Base.Texture (room, 'background', 'bases/industrial/industrial_mining_ocean_weaponroom'+time_of_day+'.spr', 0, 0)
     
     import  bar
-    room5 = bar.MakeAgriculturalBar(room3,"bases/industrial/industrial_bar","bases/bartender_default.py")
+    room5 = bar.MakeAgriculturalBar(room3,'Main_Concourse',"bases/industrial/industrial_bar","bases/bartender_default.py")
     
     room = Base.Room ('Factory_Production_Facility')
     room6 = room

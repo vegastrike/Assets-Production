@@ -23,7 +23,7 @@ room = Base.Room ('Main_Concourse')
 room2 = room
 Base.Texture (room, 'background', 'bases/agriculture/agricultural_concourse'+time_of_day+'.spr', 0, 0)
 import bar
-room = bar.MakeAgriculturalBar(room2,"bases/agriculture/agricultural_bar"+time_of_day,"bases/bartender_agricultural.py")
+room = bar.MakeAgriculturalBar(room2,'Main_Concourse',"bases/agriculture/agricultural_bar"+time_of_day,"bases/bartender_agricultural.py")
 room3 = room
 #Base.Texture (room, 'background', 'bases/agriculture/agricultural_bar'+time_of_day+'.spr', 0, 0)
 

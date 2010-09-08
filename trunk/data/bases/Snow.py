@@ -18,7 +18,7 @@ room1 = room
 Base.Texture (room, 'background', 'bases/Snow/concourse.spr', 0, 0)
 
 import bar
-room2 = bar.MakeMiningBar(room1,'bases/Snow/bar', 'bases/bartender_default.py')
+room2 = bar.MakeMiningBar(room1,'Main_Concourse','bases/Snow/bar', 'bases/bartender_default.py')
 
 room = Base.Room ('Weapons Room')
 room3 = room
