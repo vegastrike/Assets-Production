@@ -11,7 +11,7 @@
         <texture_unit src="decal:1" target="1" name="specMap"/>
     </pass>
 
-    <pass type="fixed" sequence="16" blend="alpha_blend">
+    <pass type="fixed" sequence="16" blend="alpha_blend" polygon_offset_units="-1">
         <texture_unit src="decal:2" target="0" name="cloudMap"/>
     </pass>
 </technique>
