@@ -52,6 +52,10 @@
     
     line_width: A floating point number that specifies, when in "line" polygon
         mode, thewidth of the rendered lines.
+    
+    srgb_aware: If true, shaders are aware of SRGB frambuffers, so everything should be set up
+        for sRGB blending if sRGB framebuffers are available. Shaders will be compiled
+        with SRGB_FRAMEBUFFER set to 0 (not supported) or 1 (supported).
 
  -->
 
@@ -60,6 +64,7 @@
     type                    CDATA   #REQUIRED
     cwrite                  CDATA   (true|false)        "true"
     zwrite                  CDATA   (true|false|auto)   "auto"
+    srgb_aware              CDATA   (true|false)        "false"
     iteration               CDATA   (once|0|1|2|3|4|5|6|7|8)    "once"
     maxiterations           NMTOKEN "0"
     blend                   CDATA   (default|add|multiply|alpha_blend|decal|premult_alpha|multi_alpha_blend)    "default"
