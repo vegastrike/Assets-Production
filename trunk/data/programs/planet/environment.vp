@@ -1,19 +1,7 @@
-/* varyings:
- *   gl_TexCoord[...]
- *    0 - tex coord
- *    1 - ws normal
- *    2 - ws tangent
- *    3 - ws binormal
- *    4 - vertex-to-eye direction
- *    5 - vertex-to-light0@xyz, light_size@z
- *    6 - vertex-to-light1@xyz, light_size@z
- *    7 - un-normalized vertex position
- **/
+#include "earth_params.h"
+#include "../stdlib_vp.h"
 
-uniform vec4 envColor;
 uniform float fTime;
-uniform vec4 fAtmosphereExtrusion;
-uniform vec4 fvCloudLayerDrift_ShadowRelHeight;
 
 
 float soffs(float lim, float x)
@@ -24,15 +12,6 @@ float soffs(float lim, float x)
 vec2 shadowExtrude(in vec2 texcoord, in vec3 direction)
 {
    return texcoord - direction.xy * fAtmosphereExtrusion.x * fvCloudLayerDrift_ShadowRelHeight.w / soffs(0.01,direction.z);
-}
-
-vec4 lightPos0(in vec4 vertex)
-{
-  vec4 lpos = gl_LightSource[0].position;
-  vec4 rv;
-  rv.xyz    = lpos.xyz - vertex.xyz*lpos.w;
-  rv.w      = 0.0;
-  return rv;
 }
 
 void main() 
@@ -55,7 +34,7 @@ void main()
   gl_TexCoord[0] = gl_MultiTexCoord0;
   gl_TexCoord[1].xyz = normal;
   gl_TexCoord[1].w = 0.0;
-  gl_TexCoord[2] = lightPos0(position);
+  gl_TexCoord[2] = lightPosAndSize0(position);
   gl_TexCoord[3].xyz = -eyetopos;
   gl_TexCoord[3].w = 0.0;
   gl_TexCoord[4].zw = gl_MultiTexCoord0.xy + fTime*fvCloudLayerDrift_ShadowRelHeight.xy;

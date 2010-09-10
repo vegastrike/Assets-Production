@@ -1,4 +1,4 @@
-#include "earth_params.h"
+#include "gas_giants_params.h"
 #include "../config.h"
 #include "../stdlib.h"
 
@@ -6,10 +6,9 @@ varying vec3 varTSLight;
 varying vec3 varTSView;
 varying vec3 varWSNormal;
 
+uniform sampler2D baseMap;
 uniform sampler2D cosAngleToDepth_20;
 uniform samplerCube envMap;
-
-float  cityLightTrigger(float fNDotLB) { return saturatef(4.0*fNDotLB); }
 
 float expandPrecision(vec4 src)
 {
@@ -34,12 +33,12 @@ float cosAngleToAlpha(float fNDotV)
 
 float cosAngleToLDepth(float fNDotV)
 {
-   return (1.0-cosAngleToAlpha(fNDotV))*2.0*saturatef(fNDotV)*fAtmosphereHaloThickness;
+   return (1.0-cosAngleToAlpha(fNDotV))*2.0*saturatef(fNDotV)*fAtmosphereExtrusionThickness;
 }
 
 float cosAngleToADepth(float fNDotV)
 {
-   return cosAngleToAlpha(fNDotV)*2.0*saturatef(fNDotV)*fAtmosphereHaloThickness;
+   return cosAngleToAlpha(fNDotV)*2.0*saturatef(fNDotV)*fAtmosphereExtrusionThickness;
 }
 
 float  atmosphereLighting(float fNDotL) { return saturatef(soft_min(1.0,2.0*fAtmosphereHaloContrast*fNDotL)); }
@@ -47,13 +46,9 @@ float  groundLighting(float fNDotL) { return saturatef(soft_min(1.0,2.0*fGroundC
 
 vec3 reyleigh(float fVDotL, float ldepth)
 {
-    if (ldepth > 0.0 && fVDotL < 0.0) {
-        vec3 scatter = pow(vec3(1.0) - fAtmosphereScatterColor.a*fAtmosphereScatterColor.rgb, vec3(fReyleighRate*ldepth));
-        float rfactor = pow(saturatef(-fVDotL),64.0/(fReyleighAmount*fReyleighRate*ldepth));
-        return degamma(fReyleighAmount*rfactor*scatter);
-    } else {
-        return vec3(0.0);
-    }
+   vec3 scatter = pow(vec3(1.0) - fAtmosphereScatterColor.a*fAtmosphereScatterColor.rgb, vec3(fReyleighRate*ldepth));
+   float rfactor = ((fReyleighRate*ldepth > 0.0)?pow(saturatef(-fVDotL),64.0/(fReyleighAmount*fReyleighRate*ldepth)):0.0);
+   return degamma(fReyleighAmount*rfactor*scatter);
 }
 
 float scaleAndOffset(float v)
@@ -61,28 +56,27 @@ float scaleAndOffset(float v)
    return saturatef( dot(vec2(v,1.0), fAtmosphereExtrusionNDLScaleOffs) );
 }
 
-vec4 atmosphericScatter(vec3 ambient, float fNDotV, float fNDotL, float fLDotV)
+vec4 atmosphericScatter(vec3 ambient, vec3 dif, float fNDotV, float fNDotL, float fLDotV)
 {
    float vadepth    = cosAngleToDepth(fNDotV)*2.0;
    float vdepth     = cosAngleToADepth(fNDotV);
    float rdepth     = vdepth;
-   float ldepth     = cosAngleToLDepth(scaleAndOffset(fNDotL));
+   float ldepth     = cosAngleToLDepth(fNDotL);
    float ralpha     = cosAngleToAlpha(fNDotV);
    ralpha           = saturatef(pow(ralpha,fAtmosphereExtrusionSteepness));
    
    vec3 labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth*0.5));
    vec3 vabsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*vadepth));
    vec3 lscatter    = gl_LightSource[0].diffuse.rgb 
-                       * fAtmosphereScatterColor.rgb 
+                       * dif 
                        * pow(labsorption,vec3(fSelfShadowFactor)) 
-                       * (fMinScatterFactor+soft_min(fMaxScatterFactor*4.0-fMinScatterFactor,4.0*vdepth*ralpha));
+                       * (fMinScatterFactor+soft_min(fMaxScatterFactor-fMinScatterFactor,vdepth*ralpha));
    
    vec4 rv;
-   rv.rgb = regamma( ambient
+   rv.rgb = regamma( ambient * dif * 0.5
                   + atmosphereLighting(scaleAndOffset(fNDotL))
-                    *(lscatter+reyleigh(fLDotV,rdepth*ralpha)*ralpha) );
+                    *(lscatter+reyleigh(fLDotV,rdepth)*ralpha) );
    rv.a = ralpha;
-   //rv.rgb = vec3(ldepth);
    return rv;
 }
 
@@ -96,9 +90,9 @@ void main()
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
    
-   vec4 rv = atmosphericScatter( ambientMapping(varWSNormal), V.z, L.z, dot(L,V) );
-   gl_FragColor.rgb = (rv.rgb);
-   gl_FragColor.a = rv.a;
+   vec3 diffuse = texture2D(baseMap, gl_TexCoord[0].xy, 4.0);
+   
+   gl_FragColor = atmosphericScatter( ambientMapping(varWSNormal), diffuse, V.z, L.z, dot(L,V) );
 }
 
 
