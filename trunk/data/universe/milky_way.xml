@@ -10,155 +10,165 @@
    <var name="initial" value=""/>
    <var name="inhabitable" value="true"/>
    <planet name="Trantor_Class">
-       <var name="texture" value="planets/Dirt"/>
+       <var name="texture" value="planets/Dirt#num#.texture"/>
        <var name="texture_max" value="1"/>
        <var name="initial" value="i"/>
        <var name="lights" value="Dirt_light.texture Dirt_light_repeat.pngwrapx64wrapy64"/>
    </planet>
    <planet name="Human_Homeworld:Earth">
-       <var name="texture" value="sol/earth"/>
+       <var name="texture" value="sol/earth.texture"/>
        <var name="initial" value="earth"/>
-       <var name="lights" value="earthlights.texture "/>
+       <var name="lights" value="earthlights.texture"/>
    </planet>
    <planet name="Mars">
-       <var name="texture" value="sol/mars"/>
+       <var name="texture" value="sol/mars.texture"/>
        <var name="initial" value="mars"/>
        <var name="lights" value="marslights.texture"/>
    </planet>
    <planet name="Luna">
-       <var name="texture" value="sol/moon"/>
+       <var name="texture" value="sol/moon.texture"/>
        <var name="initial" value="moon"/>
    </planet>
    <planet name="Arid">
-       <var name="texture" value="planets/desert"/>
+       <var name="texture" value="planets/desert.texture"/>
        <var name="initial" value="a"/>
        
    </planet>
    <planet name="Arid_Methane">
-       <var name="texture" value="planets/frigid_mud"/>
+       <var name="texture" value="planets/frigid_mud.texture"/>
        <var name="initial" value="am"/>
        
    </planet>
    <planet name="Bio_Diverse">
-       <var name="texture" value="planets/m_class"/>
+       <var name="texture" value="planets/m_class#num#.texture|planets/m_class#num#_specular.texture|planets/earth/earth_clouds.texture"/>
        <var name="texture_max" value="4"/>
+       <var name="unit" value="m_class"/>
+       <var name="technique" value="earth"/>
        <var name="initial" value="bd"/>
-       <var name="atmosphere" value="true"/>
    </planet>
    <planet name="University">
-       <var name="texture" value="planets/university"/>
+       <var name="texture" value="planets/university.texture"/>
        <var name="initial" value="u"/>
        <var name="lights" value="university*_light.texture"/>
        
    </planet>
    <planet name="Ice">
-       <var name="texture" value="planets/Snow"/>
+       <var name="texture" value="planets/Snow#num#.texture"/>
        <var name="texture_max" value="2"/>
        <var name="initial" value="fr"/>
        <var name="lights" value="Snow_light.texturewrapx6wrapy3 Dirt_light_repeat.texturewrapx64wrapy64"/>
    </planet>
    <planet name="Tropical">
-       <var name="texture" value="planets/carribean"/>
+       <var name="texture" value="planets/carribean#num#.texture|planets/carribean#num#_spec.texture|planets/carribean#num#_cloud.texture|carribean#num#_light.texture"/>
        <var name="texture_max" value="3"/>
+       <var name="unit" value="carribean"/>
+       <var name="technique" value="earth"/>
        <var name="initial" value="t"/>
-       <var name="atmosphere" value="true"/>
    </planet>
    <planet name="Oceanic">
-       <var name="texture" value="planets/ocean"/>
+       <var name="texture" value="planets/ocean.texture|planets/ocean_specular.texture|planets/earth/earth_clouds.texture"/>
        <var name="initial" value="o"/>
-       <var name="atmosphere" value="true"/>
+       <var name="unit" value="ocean"/>
+       <var name="technique" value="earth"/>
    </planet>
    <planet name="Oceanic_Ammonia">
-       <var name="texture" value="planets/ocean_ammonia"/>
+       <var name="texture" value="planets/ocean_ammonia.texture|planets/ocean_ammonia_specular.texture|sol/marscloudmaptrans.texture"/>
        <var name="initial" value="oa"/>
-       <var name="atmosphere" value="true"/>
+       <var name="unit" value="ocean_ammonia"/>
+       <var name="technique" value="earth"/>
    </planet>
    <planet name="Aera_Trantor">
-       <var name="texture" value="planets/n_class"/>
+       <var name="texture" value="planets/n_class#num#.texture"/>
        <var name="texture_max" value="1"/>
        <var name="initial" value="ai"/>
        
    </planet>
    <planet name="Rlaan_Trantor">
-       <var name="texture" value="planets/tkirsa"/>
+       <var name="texture" value="planets/tkirsa#num#.texture"/>
        <var name="texture_max" value="1"/>
        <var name="initial" value="at"/>
        
    </planet>
    <planet name="Aera_Ice">
-       <var name="texture" value="planets/j_class"/>
+       <var name="texture" value="planets/j_class#num#.texture"/>
        <var name="texture_max" value="2"/>
        <var name="initial" value="afr"/>
        <var name="atmosphere" value="true"/>
        
    </planet>
    <planet name="Bio_Simple">
-       <var name="texture" value="planets/k_class"/>
+       <var name="texture" value="planets/k_class#num#.texture|planets/k_class#num#_specular.texture|planets/earth/earth_clouds.texture"/>
        <var name="texture_max" value="4"/>
        <var name="initial" value="bs"/>
-       <var name="atmosphere" value="true"/>
+       <var name="unit" value="k_class"/>
+       <var name="technique" value="earth"/>
        
    </planet>
    <planet name="Frozen_Ammonia">
-       <var name="texture" value="planets/tundra"/>
+       <var name="texture" value="planets/tundra#num#.texture"/>
        <var name="texture_max" value="2"/>
        <var name="initial" value="fa"/>
        
    </planet>
    <planet name="Volcanic">
-       <var name="texture" value="planets/Lava"/>
+       <var name="texture" value="planets/Lava.texture"/>
        <var name="initial" value="v"/>
        
    </planet>
    <planet name="Bio_Diverse_Methane">
-       <var name="texture" value="planets/red_rocky"/>
+       <var name="texture" value="planets/red_rocky.texture"/>
        <var name="initial" value="bdm"/>
        
    </planet>
    <planet name="Bio_Simple_Methane">
-       <var name="texture" value="planets/toxic_disaster"/>
+       <var name="texture" value="planets/toxic_disaster.texture"/>
        <var name="initial" value="bsm"/>
        
    </planet>
    <planet name="Rocky">
-       <var name="texture" value="planets/rock"/>
+       <var name="texture" value="planets/rock#num#.texture"/>
        <var name="texture_max" value="4"/>
        <var name="initial" value="r"/>
        <var name="inhabitable" value="false"/>
    </planet>
    <planet name="Molten">
-       <var name="texture" value="planets/molten"/>
+       <var name="texture" value="planets/molten.texture"/>
        <var name="initial" value="mol"/>
        <var name="inhabitable" value="false"/>
    </planet>
    <planet name="Overgrown">
-       <var name="texture" value="planets/forest"/>
+       <var name="texture" value="planets/forest#num#.texture|planets/forest#num#_specular.texture|planets/earth/earth_clouds.texture"/>
+       <var name="unit" value="forest"/>
+       <var name="technique" value="earth"/>
        <var name="texture_max" value="1"/>
        <var name="initial" value="f"/>
        <var name="inhabitable" value="false"/>
    </planet>
    <planet name="Overgrown_Methane">
-       <var name="texture" value="planets/forest_methane"/>
+       <var name="texture" value="planets/forest_methane.texture|planets/forest_methane_specular.texture|planets/earth/earth_clouds.texture"/>
+       <var name="unit" value="forest_methane"/>
+       <var name="technique" value="earth"/>
        <var name="initial" value="fm"/>
        <var name="inhabitable" value="false"/>
    </planet>
    <planet name="Uninhabitable_Gas_Giant">
-       <var name="texture" value="planets/gas_giant"/>
+       <var name="texture" value="planets/gas_giant#num#.texture"/>
        <var name="texture_max" value="5"/>
+       <var name="unit" value="gas_giant"/>
        <var name="initial" value="gg"/>
        <var name="inhabitable" value="false"/>
-       
    </planet>
    <planet name="Uninhabitable_Medium_Gas_Giant">
-       <var name="texture" value="planets/gas_medium"/>
+       <var name="texture" value="planets/gas_medium.texture"/>
+       <var name="unit" value="gas_medium"/>
        <var name="initial" value="gm"/>
        <var name="inhabitable" value="false"/>
    </planet>
    <planet name="Uninhabitable_Dwarf_Gas_Giant">
-       <var name="texture" value="planets/gas_midget"/>
+       <var name="texture" value="planets/gas_midget.texture"/>
+       <var name="unit" value="gas_midget"/>
        <var name="initial" value="gd"/>
        <var name="inhabitable" value="false"/>
-       
    </planet>
 
    
