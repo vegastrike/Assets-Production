@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<technique fallback="fixed_simple">
+<technique fallback="../2_ps1.4/default_simple">
     <!-- Pseudo fixed-function shader pass. Does in one pass what
          the fixed function does in many. Higher performance on
          capable systems. Only caveat is that light attenuation
