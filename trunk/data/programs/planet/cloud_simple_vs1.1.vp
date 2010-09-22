@@ -1,5 +1,6 @@
 #include "earth_params.h"
 #include "../stdlib_vp.h"
+#include "../stdlib.h"
 
 #define outCloudCoord gl_TexCoord[0]
 #define outGroundCoord gl_TexCoord[1]
@@ -10,6 +11,8 @@
 varying vec3 varTSLight;
 varying vec3 varTSView;
 varying vec3 varWSNormal;
+varying vec3 varScatter;
+varying vec3 varCloudLayerDensitySVC;
 
 uniform float fTime;
 
@@ -20,8 +23,11 @@ float soffs(float lim, float x)
 
 vec2 shadowExtrude(in vec2 texcoord, in vec3 direction, float mult)
 {
-  return texcoord + direction.xy * fAtmosphereExtrusion.x * fShadowRelHeight.x / soffs(0.1,direction.z) * mult;
+  return texcoord + direction.xy * fAtmosphereExtrusion.x * fShadowRelHeight.x / soffs(0.2,direction.z) * mult;
 }
+
+float  atmosphereLighting(float fNDotL) { return saturatef(min(1.0,2.0*fAtmosphereContrast*fNDotL)); }
+float  groundLighting(float fNDotL) { return saturatef(min(1.0,2.0*fGroundContrast*fNDotL)); }
 
 void main()
 {
@@ -59,6 +65,13 @@ void main()
    outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView, 1.0).xyxy;
    outShadowCoord      = shadowExtrude(outGroundCoord.xy, varTSLight, -1.0).xyxy;
    
+   float  fCloudLayerDensityL = fCloudLayerDensity / (abs(varTSLight.z)+0.01);
+   float  fCloudLayerDensityV = fCloudLayerDensity / (abs(varTSView.z)+0.01);
+   varCloudLayerDensitySVC.x  = fCloudLayerDensityL * fCloudSelfShadowFactor;
+   varCloudLayerDensitySVC.y  = fCloudLayerDensityV;
+   varCloudLayerDensitySVC.z  = fCloudLayerDensity * fCloudSelfShadowFactor;
+   
+   
    // set primary color to the emissive material properties
    vec4 pc = gl_FrontMaterial.emission;
    vec4 sc = vec4(0.0);
@@ -66,7 +79,26 @@ void main()
    
    pc.rgb += fvCloudColor.rgb * gl_LightSource[0].diffuse.rgb * lightatt;
    sc.rgb += fvCloudColor.rgb * gl_LightSource[0].specular.rgb * lightatt;
+
+   float fNDotV = saturatef( varTSView.z );
+   float fNDotL = saturatef( varTSLight.z );
+
+   // self shadowing
+   pc.rgb *= self_shadow(fNDotL);
    
+   // atmospheric absorption
+   vec3 absorption = lerp(fAtmosphereAbsorptionColor.rgb,vec3(1.0),saturatef(sqr(fNDotV*fNDotL*4.0)));
+   pc.rgb *= absorption;
+   
+   // atmospheric scatter
+   float scattermuch = sqr(sqr(saturatef(1.0-fNDotV)));
+   varScatter = atmosphereLighting(fNDotL)
+                 *lerp(fMinScatterFactor, fMaxScatterFactor, scattermuch)
+                 *fAtmosphereScatterColor.rgb;
+
+   // ambient
+   pc.rgb += gl_LightSource[0].ambient.rgb;
+
    // Need this instead of ftransform() for invariance
    gl_Position = gl_ModelViewProjectionMatrix * extrudedPosition;
    gl_FrontColor = gl_BackColor = pc;

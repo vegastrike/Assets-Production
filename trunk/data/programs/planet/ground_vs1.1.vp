@@ -14,7 +14,7 @@ float soffs(float lim, float x)
 
 vec2 shadowExtrude(in vec2 texcoord, in vec3 direction)
 {
-  return texcoord - direction.xy * fAtmosphereExtrusion.x * fvCloudLayerDrift_ShadowRelHeight.w / soffs(0.01,direction.z);
+  return texcoord - direction.xy * fAtmosphereExtrusion.x * fvCloudLayerDrift_ShadowRelHeight.w / soffs(0.1,direction.z);
 }
 
 void main() 

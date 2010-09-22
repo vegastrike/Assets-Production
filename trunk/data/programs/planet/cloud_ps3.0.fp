@@ -69,17 +69,26 @@ vec4 atmosphericScatter(vec3 amb, vec4 dif, float fNDotV, float fNDotL, float fV
    float  ldepth     = cosAngleToDepth(fNDotL+fAtmosphereAbsorptionOffset) * sqr(saturatef(1.0-fShadowRelHeight.x));
    float  alpha      = cosAngleToAlpha(fNDotV);
    
+   #if SCATTER
    vec3  labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth));
    vec3  vabsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*vdepth*2.0));
    vec3  lscatter    = gl_LightSource[0].diffuse.rgb 
                        * fAtmosphereScatterColor.rgb 
                        * pow(labsorption,vec3(fSelfShadowFactor)) 
-                       * (fMinScatterFactor+soft_min(fMaxScatterFactor-fMinScatterFactor,vdepth*2.0));
+                       * (fMinScatterFactor+soft_min(fMaxScatterFactor-fMinScatterFactor,vdepth*2.0))
+                     + reyleigh(fVDotL,ldepth*alpha);
+   
+   #else
+   const vec3 labsorption = vec3(1.0);
+   const vec3 vabsorption = vec3(1.0);
+   const vec3 lscatter    = vec3(0.0);
+   #endif
+   
    
    vec4 rv;
    rv.rgb = regamma( amb + dif.rgb*(labsorption*vabsorption)
                   + atmosphereLighting(fNDotL)
-                    *(lscatter+reyleigh(fVDotL,ldepth*alpha)) );
+                    *lscatter );
    rv.a = dif.a * alpha;
    return rv;
 }
@@ -97,7 +106,7 @@ void main()
    vec2 ShadowCoord = inShadowCoord.xy;
    vec2 NoiseCoord = inNoiseCoord.xy;
    vec2 CityCoord = inCityCoord.xy;
-
+   
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
    vec3 N = varWSNormal;

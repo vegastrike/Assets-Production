@@ -20,6 +20,7 @@
 #define DEGAMMA_TEXTURES     1
 #define SANITIZE             0
 #define PARALLAX             1
+#define SCATTER              1
 /**********************************/
 
 /**********************************/

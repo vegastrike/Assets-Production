@@ -49,9 +49,13 @@ vec4 atmosphericScatter(vec4 dif, float fNDotV, float fNDotL, float fVDotL, vec3
    float  alpha = saturatef(2.0 * (cosAngleToAlpha(fNDotV) - 0.5));
    
    vec4 rv;
-   rv.rgb = regamma( dif.rgb*lerp(fAtmosphereAbsorptionColor.rgb,vec3(1.0),fNDotV*fNDotL)*fvShadow 
+   
+   vec3 absorption = lerp(sqr(fAtmosphereAbsorptionColor.rgb),vec3(1.0),saturatef(sqr(fNDotV*fNDotL*2.0)));
+   float scattermuch = sqr(sqr(saturatef(1.0-fNDotV)));
+   
+   rv.rgb = regamma( dif.rgb*absorption*fvShadow 
                   + atmosphereLighting(fNDotL)
-                    *(fMinScatterFactor + saturatef(2.0*sqr(1.0-fNDotV)) * (fMaxScatterFactor-fMinScatterFactor))
+                    *lerp(fMinScatterFactor, fMaxScatterFactor, scattermuch)
                     *fAtmosphereScatterColor.rgb*fvAShadow );
    rv.a = dif.a * alpha;
    return rv;
@@ -83,6 +87,7 @@ void main()
    fGShadow                = saturatef(fGShadow*fCloudLayerDensity);
    
    vec3 fvGShadow          = lerp( vec3(1.0), fvShadowColor.rgb, fGShadow );
+   vec3 fvAShadow          = lerp( vec3(1.0), fvShadowColor.rgb, fGShadow*0.1 );
    
    vec4 fvSpecular         = degamma_tex(texture2D( specularMap_20, texcoord ));
    fvSpecular.rgb         *= fresnel(fNDotV);
@@ -96,7 +101,7 @@ void main()
    vec4 dif                = fvBaseColor * fvTexColor;
    vec4 spec               = 4.0*fvSpecular*self_shadow_smooth_ex(fNDotLs);
 
-   gl_FragColor = atmosphericScatter( dif+spec, fNDotVs, fNDotLs, fVDotL, fvGShadow, fvGShadow*0.1 );
+   gl_FragColor = atmosphericScatter( dif+spec, fNDotVs, fNDotLs, fVDotL, fvGShadow, fvAShadow );
 }
 
 
