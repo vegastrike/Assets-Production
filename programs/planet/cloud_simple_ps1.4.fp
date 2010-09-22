@@ -10,6 +10,8 @@
 varying vec3 varTSLight;
 varying vec3 varTSView;
 varying vec3 varWSNormal;
+varying vec3 varScatter;
+varying vec3 varCloudLayerDensitySVC;
 
 uniform sampler2D cosAngleToDepth_20;
 uniform sampler2D cloudMap_20;
@@ -17,57 +19,16 @@ uniform sampler2D noiseMap_20;
 uniform sampler2D cityLights_20;
 uniform samplerCube envMap;
 
-float  cityLightTrigger(float fNDotLB) { return saturatef(4.0*fNDotLB); }
-
-float fresnel(float fNDotV)
-{
-   return fresnel(fNDotV,fFresnelEffect.x);
-}
-
-float expandPrecision(vec4 src)
-{
-   return dot(src,(vec4(1.0,256.0,65536.0,0.0)/131072.0));
-}
-
-float cosAngleToDepth(float fNDotV)
-{
-   vec2 res = vec2(1.0) / vec2(1024.0,128.0);
-   vec2 mn = res * 0.5;
-   vec2 mx = vec2(1.0)-res * 0.5;
-   return expandPrecision(texture2DLod(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereType),mn,mx),0.0)) * fAtmosphereThickness;
-}
-
-float cosAngleToAlpha(float fNDotV)
-{
-   vec2 res = vec2(1.0) / vec2(1024.0,128.0);
-   vec2 mn = res * 0.5;
-   vec2 mx = vec2(1.0)-res * 0.5;
-   return texture2D(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereType),mn,mx)).a;
-}
 
 float  atmosphereLighting(float fNDotL) { return saturatef(min(1.0,2.0*fAtmosphereContrast*fNDotL)); }
 float  groundLighting(float fNDotL) { return saturatef(min(1.0,2.0*fGroundContrast*fNDotL)); }
 
-vec4 atmosphericScatter(vec3 amb, vec4 dif, float fNDotV, float fNDotL, float fVDotL)
+vec4 atmosphericScatter(vec4 dif, float fNDotV, float fNDotL, float fVDotL)
 {
-   float  alpha      = cosAngleToAlpha(fNDotV);
-   
    vec4 rv;
-   
-   vec3 absorption = lerp(fAtmosphereAbsorptionColor.rgb,vec3(1.0),saturatef(sqr(fNDotV*fNDotL*4.0)));
-   float scattermuch = sqr(sqr(saturatef(1.0-fNDotV)));
-   
-   rv.rgb = regamma( amb + dif.rgb*absorption 
-                  + atmosphereLighting(fNDotL)
-                    *lerp(fMinScatterFactor, fMaxScatterFactor, scattermuch)
-                    *fAtmosphereScatterColor.rgb );
-   rv.a = dif.a * alpha;
+   rv.rgb = regamma( dif.rgb + varScatter );
+   rv.a = dif.a;
    return rv;
-}
-
-vec3 ambientMapping( in vec3 direction )
-{
-   return gl_LightSource[0].ambient;
 }
 
 
@@ -87,12 +48,7 @@ void main()
    float  fVDotL           = dot(L, V);
 
    // Attack angle density adjustment   
-   vec3 CloudLayerDensitySVC;
-   float  fCloudLayerDensityL = fCloudLayerDensity / (abs(L.z)+0.01);
-   float  fCloudLayerDensityV = fCloudLayerDensity / (abs(V.z)+0.01);
-   CloudLayerDensitySVC.x     = fCloudLayerDensityL * fCloudSelfShadowFactor;
-   CloudLayerDensitySVC.y     = fCloudLayerDensityV;
-   CloudLayerDensitySVC.z     = fCloudLayerDensity * fCloudSelfShadowFactor;
+   vec3 CloudLayerDensitySVC  = varCloudLayerDensitySVC;
   
    // Sample cloudmap
    vec2 gc1              =      CloudCoord                                         ;
@@ -112,16 +68,16 @@ void main()
    fCloudShadow4          = saturatef( (fCloudShadow4 - shadowStep4) * 0.75 );
    
    // Compute self-shadowed cloud color
-   vec3 fvAmbient         = gl_Color.rgb * ambientMapping(N) * 0.5;
-   vec4 fvBaseColor       = vec4(gl_Color.rgb * atmosphereLighting(fNDotL), gl_Color.a);
+   vec4 fvBaseColor        = gl_Color;
    vec3 fvCloud1s,fvCloud4s;
    vec4 fvCloud;
    fvCloud1s               = fvCloud1.rgb;
    fvCloud4s               = fvCloud4.rgb*lerp(vec3(1.0),fvCloudSelfShadowColor.rgb,saturatef(fCloudShadow4*CloudLayerDensitySVC.x));
    fvCloud.a               = fvBaseColor.a*dot(fvCloudLayerMix,vec4(fvCloud1.a,fvCloud1.a,fvCloud4.a,fvCloud4.a));
-   fvCloud.rgb             = fvCloud4s*fvBaseColor.rgb;
-   fvCloud.rgb             = lerp(fvCloud.rgb,fvCloud1s*fvBaseColor.rgb,saturatef(fvCloud1.a*CloudLayerDensitySVC.y));
+   fvCloud.rgb             = fvCloud4s;
+   fvCloud.rgb             = lerp(fvCloud.rgb,fvCloud1s,saturatef(fvCloud1.a*CloudLayerDensitySVC.y));
+   fvCloud.rgb            *= fvBaseColor.rgb;
 
-   gl_FragColor = atmosphericScatter( fvAmbient, fvCloud, fNDotV, fNDotL, fVDotL );
+   gl_FragColor = atmosphericScatter( fvCloud, fNDotV, fNDotL, fVDotL );
 }
 

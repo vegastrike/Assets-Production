@@ -75,17 +75,24 @@ vec4 atmosphericScatter(vec4 dif, float fNDotV, float fNDotL, float fVDotL, vec3
    float  ldepth     = cosAngleToDepth(fNDotL+fAtmosphereAbsorptionOffset);
    float  alpha      = saturatef(2.0 * (cosAngleToAlpha(fNDotV) - 0.5));
    
+   #if SCATTER
    vec3  labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth));
    vec3  vabsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*vdepth));
    vec3  lscatter    = gl_LightSource[0].diffuse.rgb 
                        * fAtmosphereScatterColor.rgb 
                        * pow(labsorption,vec3(fSelfShadowFactor)) 
-                       * (fMinScatterFactor+soft_min(fMaxScatterFactor-fMinScatterFactor,vdepth));
+                       * (fMinScatterFactor+soft_min(fMaxScatterFactor-fMinScatterFactor,vdepth))
+                     + reyleigh(fVDotL, ldepth);
+   #else
+   const vec3 labsorption = vec3(1.0);
+   const vec3 vabsorption = vec3(1.0);
+   const vec3 lscatter    = vec3(0.0);
+   #endif
    
    vec4 rv;
    rv.rgb = regamma( (dif.rgb*labsorption*fvShadow)*vabsorption 
                   + atmosphereLighting(fNDotL)
-                    *(lscatter+reyleigh(fVDotL,ldepth))
+                    *lscatter
                     *lerp(vec3(1.0),fvAtmShadow,fAtmosphereShadowInfluence.x) );
    rv.a = dif.a * alpha;
    return rv;
