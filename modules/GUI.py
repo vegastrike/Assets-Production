@@ -1,4 +1,320 @@
 # -*- coding: utf-8 -*-
+""" """ # dummy docstring - do not remove
+
+"""
+
+VegaStrik GUI abstraction layer
+
+This framework provides a set of classes that allow easy construction
+of complex user interfaces based on the rather primitive base API
+of the engine.
+
+The framework operates with a GUIRoot singleton, responsible of all
+general bookkeeping an a portal for accessing most operations, a
+set of GUIRoom objects contained within this singleton (only one
+base can be active at any moment in the engine, so this GUIRoot
+singleton needs not handle multiple concurrent bases), and several
+GUIElement objects within each room.
+
+Hot spots, sprite locations and screen coordinates in general are
+specified in a rather complex way through GUIRect. The complexity
+is there for several reasons.
+
+ * Vega Strike's base API has several coordinate systems for various
+   applications, where hot spots use one convention, sprites another,
+   etc... GUIRect provides a unified coordinate system which is far
+   easier to work with.
+ * Several uses of this framework involve careful placement of elements
+   overlaid on top of fixed-resolution bitmaps. When this is the case,
+   normalized coordinates tend to be a poor choice, being a lot easier
+   to work instead with integral pixel coordinates. GUIRect provides
+   an interface to specify coordinates in such a way, providing a
+   reference resolution (the underlying bitmap's resolution), and thus
+   resulting in pixel-perfect placement.
+ * Bases have configurable margins in VS, but some applications of the
+   base interface (ie: as a cutscene player) are better off disregarding
+   those margins. GUIRect thus provides all the math necessary to leave
+   those margins (by default), or to disregard them (only explicitly)
+   as easily as possible.
+ * Sometimes you'll want non-power-of-two bitmaps, but you won't want
+   to store them with npot dimensions because of compatibility reasons.
+   At those times, there's a handy specialization of GUIRect, 
+   GUINPOTRect, which does the required math to properly render those
+   images by just specifying their actual dimensions. GUIRect is thus
+   a convenient interface for several alternatve (perhaps user-defined)
+   coordinate systems.
+
+See the module for details on each class, following is an overview of
+the framework's usage:
+
+1. Initialization
+=================
+
+The first step to take is the initialization of the framwork and the
+GUIRoot singleton.
+
+	import GUI
+	GUI.GUIInit()
+
+You can call it just like that (which will take screen dimensions,
+margins and aspect ratio from the engine), or you can specify
+those explicitly (see GUIInit's signature and inline documentation)
+
+2. Creating rooms
+=================
+
+The second first thing to do, is create rooms. The first room you
+create will be the initial room, so be attentive and be sure to
+create them in the right order.
+
+GUIRoom **does not** create the underlying room. Since creation order
+matters that much, room creation is the one thing that is usually
+done by hand, using the raw base API. But GUIRoom does *administer* it.
+
+	# Create rooms (intro, menu)
+	# Their order matter, here "preintro" is the initial room
+	room_preintro = Base.Room ('XXXPreIntro')
+	room_intro = Base.Room ('XXXIntro')
+	room_menu = Base.Room ('XXXMain_Menu')
+
+	# Create GUIRoom wrappers
+	# Their order doesn't matter
+	guiroom_menu = GUI.GUIRoom(room_menu)
+	guiroom_intro = GUI.GUIRoom(room_intro)
+	guiroom_preintro = GUI.GUIRoom(room_preintro)
+
+Pay attention to the room's title, the "XXX" prefix makes the title
+invisible, while omitting the prefix will render the room's title 
+on the status bar (usually the bottom edge). 
+
+Sometimes you want this, sometimes you don't.
+
+2.1. Special rooms
+==================
+
+In the example above, we have to rooms, intro and preintro.
+
+Preintro would be a short movie or animation clip to show when the
+game launches (e.g: "Vega Strike" logo). Intro would be the story's
+intro cutscene to display when starting a new campaign.
+
+It is clear that rendering a complex cutscene with such basic elements
+at our disposal (as given by the Base API) would be... cumbersome. So
+instead of doing a CGI clip, we go for a theora movie.
+
+How would we play it? 
+
+We could add a movie stream element in guiroom_preintro, but there's
+already a specialized room type that handles such a common task (and
+lets the user skip the movie, an hides the mouse, all the detail
+usually forgotten at first glance).
+
+So scratch the above GUI.GUIRoom initialization for intro/preintro, 
+and better use the followin:
+
+	# Set up preintro room
+	class PreIntroRoom(GUI.GUIMovieRoom):
+	    def onSkip(self, button, params):
+	        GUI.GUIMovieRoom.onSkip(self, button, params)
+	        Base.SetDJEnabled(1)
+
+	preintroroom = PreIntroRoom(room_preintro, 
+	    ( 'preintro.ogv',
+	      GUI.GUIRect(0, 0, 1, 1, "normalized")), 
+	    guiroom)
+	preintroroom.setAspectRatio(16.0/9.0)
+	Base.SetDJEnabled(0)
+
+	# Set up intro room
+	class IntroRoom(PreIntroRoom):
+	    def onSkip(self, button, params):
+	        PreIntroRoom.onSkip(self, button, params)
+	        DoStartNewGame(self, params)
+
+	introroom = IntroRoom(room_intro, 
+	    ( 'intro.ogv',
+	      GUI.GUIRect(0, 0, 1, 1, "normalized")), 
+	    guiroom_menu)
+	introroom.setAspectRatio(16.0/9.0)
+	Base.SetDJEnabled(0)
+
+Here we have a lot of new stuff.
+
+First, we don't use the plain GUIMovieRoom, we create a derived
+class to add behavior to the onSkip event. That's called "decorating"
+the class. In the case of the preintro, we have to enable the
+music DJ after the movie clip has finished, so we can hear music
+in the main menu. In the case of the intro room, after the intro
+is done playing we must... er... actually start the campaign.
+
+Then we create such a room. The first argumen tells it which
+room number to bind with (room_preintro). The second one is
+a "sprite definition" (a tuple) containing the movie's path
+and the GUIRect where we want the movie - we give it fullscreen
+with (0,0) for top-left an (1,1) for width-height (in normalized
+screen coodinates). The third and last argument is the next room.
+Since movie clips are usually transitions, GUIMovieRoom accepts
+a "next room" and it will automatically switch to that room
+when the movie's done playing.
+
+So the initial room will be the preintro room, the preintro will
+start playing immediately, and when done "onSkip" will be called,
+which will call the base implementation (that switches to the next
+room) and then re-enable the music DJ which we disabled with SetDJEnabled(0).
+
+Lets leave the intro room as an excercise to the reader ;-)
+
+But notice the aspect ratio stuff. Movies have an aspect ratio,
+and GUIMovieRoom knows about that, and will adjust the location we've
+given it so that aspect ratio is preserved. Ain't it cool?
+
+3. Adding elements
+==================
+
+We have a menu, so we need stuff on it. We have tons of prebuilt
+elements, or widgets, at our disposal.
+
+All elements are constructed by giving their constructors both
+a room and an element id. The element will automatically register
+with the given room and from then on you can find the element by
+its id if you need to.
+
+Most elements take more parameters, but those two are universal.
+
+3.1. Adding pictures
+====================
+
+We want pretty menues. We want a background. Which is to say,
+a static image on the screen. Straigforward task:
+
+	# Create background
+	GUI.GUIStaticImage(guiroom, 'background', 
+		( 'interfaces/main_menu/menu.spr', 
+		  GUI.GUIRect(0, 0, 1024, 768, "pixel", (1024,768)) ))
+
+GUIStaticImage takes, again, a sprite efinition. This time, we use
+a "pixel" coordinate system, giving it (0,0) top-left and (1024x768)
+dimensions to our sprite. The last (1024,768) tuple is the "reference"
+dimensions, which is the "virtual screen resolution".
+
+So (0,0,1024,768,"pixel",(1024,768)) 
+is equivalent to (0,0,1,1,"normalized").
+
+We could have used that. But when coordinates have to match a
+specific background image to look right, this "pixel" coordinate system
+is preferred, since it always aligns right.
+
+3.2. Adding text
+================
+
+Now we want some text in the credits room (which we didn't show).
+
+	text_loc = GUI.GUIRect(408,8,300,50,"pixel",(1024,768))
+	GUI.GUIStaticText(credits_guiroom, 'mytitle', credits_title, text_loc, GUI.GUIColor.white())
+
+Now you can see the usefulness of GUIRect and its "pixel" mode.
+We give the text line a very precise location (so that it matches the room's background).
+
+Text elements can be given a color, we use white, but we could have specified an RGB value or even
+an RGBA (with transparency) one. We can even specify a font size (not sure it works right all the time,
+but it eventually should be fixed) and a background color (again, potentially with transparency).
+
+Don't think for a moment this maps directly to Base.TextBox, the base API is rather picky (and buggy),
+and GUIStaticText handles all the tricks needed to get this flexibility.
+
+3.3. Linking rooms
+==================
+
+Ok, we have a main menu, we have an "intro" room that ends up starting a campaign.
+
+Now we need a "new game" button. Right?
+
+	# New game
+	sprite_loc = GUI.GUIRect(48,224,128,32,"pixel",(1280,1024))
+	sprite = {
+		'*':None,
+		'down' : ( 'interfaces/main_menu/new_button_pressed.spr', sprite_loc ) }
+	btn = GUI.GUIButton(guiroom, 'XXXNew Game','New_Game',sprite,sprite_loc,'enabled',StartNewGame)
+
+Ok, buttons are more complex, aren't they?
+
+Lets start with the sprite. It's gone from a simple tuple, to a dictionary. Why?
+
+Well, buttons change states. They can be neutral, disabled, hot (mouse over), down (pressed).
+The given mapping here maps those states to a sprite definition (like we've seen with GUIStaticText),
+with the special state "*", which applies to any state not explicitly given. If the sprite definition
+assigned to a state is None, then the button is transparent there.
+
+Why would we wan it transparent? Well, in our case, the background picture already has the button
+pre-rendered in. No need to render anything on top. When the button is pressed, we want to overlay
+a highlighted version of the button, so we specify that sprite for 'down'.
+
+Confusingly enough, GUIButton takes the button's "tooltip" or "title" before its element ID.
+Again, the "XXX" prefix makes the tooltip invisible (it's still required though by the engine).
+it also takes the initial state ('enabled'), and a callable, an action to be performed when clicked.
+
+	# Base music
+	plist_menu=VS.musicAddList('maintitle.m3u')
+	
+	def DoStartNewGame(self,params):
+		ShowProgress.activateProgressScreen('loading',3)
+		VS.loadGame(VS.getNewGameSaveName())
+		enterMainMenu(self,params)
+
+	def StartNewGame(self,params):
+		Base.SetCurRoom(introroom.getIndex())
+		Base.SetDJEnabled(0)
+
+	def enterMainMenu(self,params):
+		global plist_menu
+		VS.musicPlayList(plist_menu)
+
+The callable must take two arguments, "self", which will be the element clicked, and "params", which
+will have other info, like which button was used and exact mouse coordinates, modifier keys and whatnot.
+
+See, when the button is pressed, StartNewGame sends the user to the intro and disables the music DJ
+(we only want the movie's music playing). Then when the movie is done playing, remember, DoStartNewGame
+will do some stuff, among which is loading the new campaign.
+
+There's also a very straightforward way of linking rooms with GUIRoomButton(from,to,title,id,...):
+
+	sprite_loc = GUI.GUIRect(48,510,92,32,"pixel",(1280,1024))
+	sprite = {
+		'*':None,
+		'down' : ( 'interfaces/main_menu/credits_button_pressed.spr', sprite_loc ) }
+	GUI.GUIRoomButton(guiroom, credits_guiroom, 'XXXShow Credits','Show_Credits',sprite,sprite_loc,clickHandler=enterCredits)
+
+See how you can even do extra stuff in a "clickHandler"
+
+	plist_credits=VS.musicAddList('maincredits.m3u')
+	
+	def enterCredits(self,params):
+		global plist_credits
+		VS.musicPlayList(plist_credits)
+
+
+4. Advanced widgets
+===================
+
+There are even more advanced widgets than images an push buttons.
+
+There's GUICheckButton s, which toggle between "checked" and "unchecked"
+states when clicked, and its cousin the GUIRadioButton, which when checked
+also uncheck all other radio buttons within their "radio group".
+
+There's a GUISimpleListPicker, used for instance to build the
+game loading interface in the main menu, and a lifesaver in many
+situations. You manipulate its content by adding/removing
+GUISimpleListPicker.listitem instances to its "items" attribute,
+as easy as that.
+
+If you want scrolling buttons for the list picker. you must code
+them yourself (using GUIButton), but it's certainly not difficult
+since you can easily manipulate the list with its 
+viewMove and pageMove member functions.
+
+"""
+
 import Base
 import VS
 from XGUIDebug import *
