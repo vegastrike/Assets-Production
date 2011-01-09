@@ -560,22 +560,22 @@
 ,,,,,
 "Reinforced_Cockpit","upgrades/DEPRICATED",4000,2,3,"@cargo/plasteel.image@Sometimes, that extra layer of protection is the difference between escape pod launch and inescapable coffin."
 ,,,,,
-"skyscope1","upgrades/Sensors/Common",500,0.01,1,"@upgrades/skyscope_alpha.image@"
-"skyscope2","upgrades/Sensors/Common",1000,0.01,2,"@upgrades/skyscope_alphaplus.image@"
-"skyscope3","upgrades/Sensors/Common",2000,0.01,3,"@upgrades/skyscope_beta.image@"
-"starscanner1","upgrades/Sensors/Common",4000,0.01,5,"@upgrades/starscanner_2530.image@"
-"starscanner2","upgrades/Sensors/Common",8000,0.01,7,"@upgrades/starscanner_2545.image@"
-"starscanner3","upgrades/Sensors/Common",16000,0.01,9,"@upgrades/starscanner_2600.image@"
-“starscanner4”,"upgrades/Sensors/Common",24000,0.01,9,"@upgrades/starscanner_2600.image@”
-"hawkeye1","upgrades/Sensors/Confed",32000,0.01,13,"@upgrades/hawkeye_zx16.image@"
-"hawkeye2","upgrades/Sensors/Confed",64000,0.01,17,"@upgrades/hawkeye_zx50.image@"
-"hawkeye3","upgrades/Sensors/Confed",128000,0.01,21,"@upgrades/hawkeye_zx86.image@"
-"hawkeye4","upgrades/Sensors/Confed",160000,0.01,21,"@upgrades/hawkeye_zx86.image@"
+"skyscope1","upgrades/Sensors/Common",500,0.01,1,"@upgrades/skyscope_alpha.image@With its light weight, the SkyScope is particularly well-suited for the peaceful merchant."
+"skyscope2","upgrades/Sensors/Common",1000,0.01,2,"@upgrades/skyscope_alphaplus.image@With its light weight, the SkyScope is particularly well-suited for the peaceful merchant."
+"skyscope3","upgrades/Sensors/Common",2000,0.01,3,"@upgrades/skyscope_beta.image@With its light weight, the SkyScope is particularly well-suited for the peaceful merchant."
+"starscanner1","upgrades/Sensors/Common",4000,0.01,5,"@upgrades/starscanner_2530.image@StarScanner is the most widely used radar in Confed space."
+"starscanner2","upgrades/Sensors/Common",8000,0.01,7,"@upgrades/starscanner_2545.image@StarScanner is the most widely used radar in Confed space."
+"starscanner3","upgrades/Sensors/Common",16000,0.01,9,"@upgrades/starscanner_2600.image@StarScanner is the most widely used radar in Confed space."
+“starscanner4”,"upgrades/Sensors/Common",24000,0.01,9,"@upgrades/starscanner_2600.image@This is a mid-life upgrade of the StarScanner 2600 that includes threat assessment, which makes it the natural choice for bounty hunters.”
+"hawkeye1","upgrades/Sensors/Confed",32000,0.01,13,"@upgrades/hawkeye_zx16.image@Hawkeye is the preferred radar for Confed military operations."
+"hawkeye2","upgrades/Sensors/Confed",64000,0.01,17,"@upgrades/hawkeye_zx50.image@Hawkeye is the preferred radar for Confed military operations."
+"hawkeye3","upgrades/Sensors/Confed",128000,0.01,21,"@upgrades/hawkeye_zx86.image@Hawkeye is the preferred radar for Confed military operations."
+"hawkeye4","upgrades/Sensors/Confed",160000,0.01,21,"@upgrades/hawkeye_zx86.image@Hawkeye ZX-87 is an upgrade of Hawkeye ZX-86 designed for capital ships."
 ,,,,,
-“surveyor1”,“upgrades/Sensors/Highborn”,700000,0.01,15,""
-“surveyor2”,“upgrades/Sensors/Highborn”,900000,0.01,16,""
+“surveyor1”,“upgrades/Sensors/Highborn”,700000,0.01,15,"The award-winning H-line is another quality product of Highborn craftsmanship. Designed for tactical superiority, the radar models space at close and distant ranges."
+“surveyor2”,“upgrades/Sensors/Highborn”,900000,0.01,16,"The award-winning H-line is another quality product of Highborn craftsmanship. Designed for tactical superiority, the radar models space at close and distant ranges. High-lights attacking missiles and ships with high firepower."
 ,,,,,
-“rlaantracker1”,“upgrades/Sensors/Rlaan”,240000,0.01,""
+“rlaantracker1”,“upgrades/Sensors/Rlaan”,240000,0.01,7,"The Tracker is a great all-rounder, popular in both the Rlaan Enforcer and Merchant fleets, because of its unique ability to easily distinguish between ships and celestrial bodies. It is robust towards ECM. The Rlaan eye only perceives depth when it moves, and this trait is found again in this radar."
 ,,,,,
 "add_cargo_expansion","upgrades/Cargo",16000,1,20,"@cargo/cargo_expansion.image@Trades upgrade space and support systems for cargo volume"
 ,,,,,
