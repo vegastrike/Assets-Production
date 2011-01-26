@@ -31,7 +31,7 @@ vec4 atmosphericScatter(vec4 ambient, float fNDotV, float fNDotL, float fLDotV)
 {
    float ralpha = cosAngleToAlpha(fNDotV);
    vec4 rv;
-   rv.rgb = regamma(ambient + atmosphereLighting(scaleAndOffset(fNDotL))*1.414*fAtmosphereScatterColor.rgb );
+   rv.rgb = regamma(ambient.rgb + atmosphereLighting(scaleAndOffset(fNDotL))*1.414*fAtmosphereScatterColor.rgb );
    rv.a = sqr(ralpha);
    return rv;
 }
