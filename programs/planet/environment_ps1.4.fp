@@ -11,7 +11,7 @@ uniform sampler2D cosAngleToDepth_20;
 
 vec3 ambientMapping( in vec3 direction, in float cloudmap )
 {
-   return gl_LightSource[0].ambient * (1.0 - cloudmap);
+   return gl_LightSource[0].ambient.rgb * (1.0 - cloudmap);
 }
 
 vec3 specEnvMapping( in float shininess, in vec3 direction, in float cloudmap ) //const

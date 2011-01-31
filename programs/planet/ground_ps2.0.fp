@@ -98,7 +98,7 @@ void main()
    shadowcoord            += fvDrift.xyxy;
    
    vec2 fGAShadow          = texture2D( cloudMap_20, shadowcoord.xy ).aa;
-   fGAShadow               = saturatef(fGAShadow*fvDrift.zz*fCloudLayerDensity);
+   fGAShadow               = saturate(fGAShadow*fvDrift.zz*fCloudLayerDensity);
    fGAShadow.y            *= 0.1;
    
    vec3 fvGShadow          = lerp( vec3(1.0), fvShadowColor.rgb, fGAShadow.x );
