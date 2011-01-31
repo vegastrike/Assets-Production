@@ -74,7 +74,7 @@ void main()
   vec3 specular    = fresnel(fNDotV) * speccol * specmap.rgb;
   
   // Make citymap night-only
-  float trigger    = cityLightTrigger(fNDotL) * fvCityLightColor.rgb * cityLightFactor;
+  vec3 trigger     = cityLightTrigger(fNDotL) * fvCityLightColor.rgb * cityLightFactor;
   citymap.rgb     *= trigger;
   gcitymap.rgb    *= trigger;
 
@@ -82,7 +82,7 @@ void main()
   vec3 result;
   result = diffusecol * diffusemap.rgb * ambientMapping(normal, cloudmap.a) 
          + specEnvMapping(shininess, reflection, citymap.rgb * cloudmap.rgb, cloudmap.a) * specular
-         + gcitymap;
+         + gcitymap.rgb;
   
   // Do silhouette alpha
   float  alpha     = saturatef(2.0 * (cosAngleToAlpha(fNDotV) - 0.5));
