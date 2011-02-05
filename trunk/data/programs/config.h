@@ -11,7 +11,11 @@
 //  CUSTOMIZATION  (EDITABLE)
 /**********************************/
 #define SHININESS_FROM       GLOSS_IN_SPEC_ALPHA
+#define SHININESS_FROM_GLASS AD_HOC_SHININESS
 #define NORMALMAP_TYPE       CINEMUT_NM
+#define NM_FREQ_SCALING      5.777
+#define NM_Z_SCALING         0.015625
+#define CORNER_TRIMMING_POW  177.77
 #define DEGAMMA              1
 #define DEGAMMA_SPECULAR     1
 #define DEGAMMA_GLOW_MAP     1
@@ -21,6 +25,7 @@
 #define SANITIZE             0
 #define PARALLAX             1
 #define SCATTER              1
+#define DIM_SHALLOW_REFLECT  0
 /**********************************/
 
 /**********************************/
