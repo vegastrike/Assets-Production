@@ -1,3 +1,5 @@
+#include "fplod.h"
+
 uniform sampler2D diffuseMap;
 uniform samplerCube envMap;
 uniform vec4 cloaking;

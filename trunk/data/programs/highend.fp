@@ -1,3 +1,7 @@
+#include "config.h"
+#include "stdlib.h"
+#include "fplod.h"
+
 uniform int light_enabled[gl_MaxLights];
 uniform int max_light_enabled;
 uniform sampler2D diffuseMap;
@@ -12,154 +16,12 @@ uniform vec4 cloaking;
 uniform vec4 damage;
 uniform vec4 envColor;
 
-//      Normalmap types:
-#define CINEMUT_NM           1
-#define RED_IN_ALPHA_NM      2
-#define TRADITIONAL_NM       3
-
-//      Shininess sources
-#define AD_HOC_SHININESS     1
-#define GLOSS_IN_SPEC_ALPHA  2
-
-/**********************************/
-//  CUSTOMIZATION  (EDITABLE)
-/**********************************/
-#define SHININESS_FROM       GLOSS_IN_SPEC_ALPHA
-#define NORMALMAP_TYPE       CINEMUT_NM
-#define DEGAMMA_SPECULAR     1
-#define DEGAMMA_GLOW_MAP     1
-#define DEGAMMA_LIGHTS       1
-#define DEGAMMA_ENVIRONMENT  1
-#define DEGAMMA_TEXTURES     1
-#define SANITIZE             0
-/**********************************/
-
-/**********************************/
-//  DEBUGGING SWITCHES (EDITABLE) (all should be zero for normal operation)
-/**********************************/
-// Light source switches:
-#define SUPRESS_LIGHTS       0
-#define SUPRESS_ENVIRONMENT  0
-#define SUPRESS_GLOWMAP      0
-// Material switches:
-#define SUPRESS_DIFFUSE      0
-#define USE_DIFF_AS_METAL    0
-#define SUPRESS_SPECULAR     0
-#define SUPRESS_DIELECTRIC   0
-#define FORCE_FULL_REFLECT   0
-#define SUPRESS_NORMALMAP    0
-// Hack switches:
-#define SUPRESS_CORNER_TRIM  0
-#define SHOW_FLAT_SHADED     0
-#define SUPRESS_HI_Q_VNORM   0
-#define SUPRESS_GAREFLECT    0
-#define SUPRESS_NMRELEV      1
-/**********************************/
-
-//  SPECIALS:
-//      Special showings for debugging (do not edit)
-#define SHOW_NO_SPECIAL      0
-#define SHOW_MAT             1
-#define SHOW_NORMAL          2
-#define SHOW_TANGENTX        3
-#define SHOW_TANGENTY        4
-#define SHOW_TANGENTZ        5
-#define SHOW_BINORMX         6
-#define SHOW_BINORMY         7
-#define SHOW_BINORMZ         8
-#define SHOW_NOR_DOT_VIEW    9
-#define SHOW_TAN_DOT_VIEW   10
-#define SHOW_BIN_DOT_VIEW   11
-#define SHOW_NOR_DOT_LIGHT0 12
-#define SHOW_TAN_DOT_LIGHT0 13
-#define SHOW_BIN_DOT_LIGHT0 14
-#define SHOW_NOR_DOT_LIGHT1 15
-#define SHOW_TAN_DOT_LIGHT1 16
-#define SHOW_BIN_DOT_LIGHT1 17
-#define SHOW_NOR_DOT_VNORM  18
-#define SHOW_IS_PERIPHERY   19
-#define SHOW_IS_NEAR_VERT   20
-#define SHOW_IS_UGLY_CORNER 21
-#define SHOW_MA_NO_CORNERS  22
-#define SHOW_VNOR_DOT_FNOR  23
-
-/**********************************/
-//  DEBUGGING SWITCHES (EDITABLE)
-// (set to SHOW_NO_SPECIAL for normal operation)
-/**********************************/
-#define SHOW_SPECIAL SHOW_NO_SPECIAL
-/**********************************/
-
-//      CONSTANTS
-#define TWO_PI     (6.2831853071795862)
-#define HALF_PI    (1.5707963267948966)
-#define PI_OVER_3  (1.0471975511965976)
-
 vec3 matmul(vec3 tangent, vec3 binormal, vec3 normal,vec3 lightVec) {
   return normalize(vec3(dot(lightVec,tangent),dot(lightVec,binormal),dot(lightVec,normal)));
 }
 vec3 imatmul(vec3 tangent, vec3 binormal, vec3 normal,vec3 lightVec) {
   return normalize(lightVec.xxx*tangent+lightVec.yyy*binormal+lightVec.zzz*normal);
 }
-
-float bias(float f){ return f*0.5+0.5; }
-vec2  bias(vec2 f) { return f*0.5+vec2(0.5); }
-vec3  bias(vec3 f) { return f*0.5+vec3(0.5); }
-vec4  bias(vec4 f) { return f*0.5+vec4(0.5); }
-float expand(float f){ return f*2.0-1.0; }
-vec2  expand(vec2 f) { return f*2.0-vec2(1.0); }
-vec3  expand(vec3 f) { return f*2.0-vec3(1.0); }
-vec4  expand(vec4 f) { return f*2.0-vec4(1.0); }
-float lerp(float f, float a, float b){return (1.0-f)*a+f*b; }
-vec2  lerp(float f, vec2 a, vec2 b) { return (1.0-f)*a+f*b; }
-vec3  lerp(float f, vec3 a, vec3 b) { return (1.0-f)*a+f*b; }
-vec4  lerp(float f, vec4 a, vec4 b) { return (1.0-f)*a+f*b; }
-float saturate( in float a ){ return clamp( a, 0.0, 1.0 ); }
-vec2  saturate( in vec2  a ){ return clamp( a, vec2(0.0), vec2(1.0) ); }
-vec3  saturate( in vec3  a ){ return clamp( a, vec3(0.0), vec3(1.0) ); }
-vec4  saturate( in vec4  a ){ return clamp( a, vec4(0.0), vec4(1.0) ); }
-
-#if DEGAMMA
-vec4  degamma( in vec4 a ) { return a*a; }
-vec3  degamma( in vec3 a ) { return a*a; }
-vec4  regamma( in vec4 a ) { return sqrt(a); }
-vec3  regamma( in vec3 a ) { return sqrt(a); }
-#else
-vec4  degamma( in vec4 a ) { return a; }
-vec3  degamma( in vec3 a ) { return a; }
-vec4  regamma( in vec4 a ) { return a; }
-vec3  regamma( in vec3 a ) { return a; }
-#endif
-
-#if DEGAMMA_ENVIRONMENT
-    #define degamma_env degamma
-#else
-    #define degamma_env 
-#endif
-
-#if DEGAMMA_SPECULAR
-    #define degamma_spec degamma
-#else
-    #define degamma_spec
-#endif
-
-#if DEGAMMA_GLOW_MAP
-    #define degamma_glow degamma
-#else
-    #define degamma_glow
-#endif
-
-#if DEGAMMA_LIGHTS
-    #define degamma_light degamma
-#else
-    #define degamma_light
-#endif
-
-#if DEGAMMA_TEXTURES
-    #define degamma_tex degamma
-#else
-    #define degamma_tex
-#endif
 
 #if NORMALMAP_TYPE == CINEMUT_NM
 vec2 dUdV_first_decode( in vec4 nmfetch )
@@ -262,7 +124,7 @@ void lightingLight(
    vec3  light_pos = normalize(lightinfo.xyz);
    float light_sa  = lightinfo.w;
    vec3  light_col = degamma_light(raw_light_col);
-   float VNdotLx4= saturate( 4.0 * diffuse_soft_dot(vnormal,light_pos,light_sa) );
+   float VNdotLx4= saturatef( 4.0 * diffuse_soft_dot(vnormal,light_pos,light_sa) );
    float NdotL = clamp( diffuse_soft_dot(normal,light_pos,light_sa), 0.0, VNdotLx4 );
    float RdotL = clamp( dot(reflection,light_pos), 0.0, VNdotLx4 );
    float VRdotL= clamp( dot(vreflection,light_pos), 0.0, VNdotLx4 );
@@ -270,8 +132,8 @@ void lightingLight(
    float phong  = GLOSS_phong_reflection(mat_gloss_sa,RdotL,light_sa);
 #if SUPRESS_NMRELEV == 0
    float vphong = GLOSS_phong_reflection(mat_gloss_sa,VRdotL,light_sa);
-   specular_acc += ( lerp( relevance, vphong, phong ) * light_col );
-   diffuse_acc  += ( lerp( relevance, VNdotL, NdotL ) * light_col );
+   specular_acc += ( lerp( vphong, phong, relevance ) * light_col );
+   diffuse_acc  += ( lerp( VNdotLx4, NdotL, relevance ) * light_col );
 #else
    specular_acc += ( phong * light_col );
    diffuse_acc += ( NdotL * light_col );
@@ -351,7 +213,7 @@ void main()
   glowcolor.rgb    = degamma_glow(glowcolor.rgb);
 
   //better apply damage lerps before de-gamma-ing
-  diffcolor.rgb  = lerp(damage.x, diffcolor, damagecolor).rgb;
+  diffcolor.rgb  = lerp(diffcolor, damagecolor, damage.x).rgb;
   speccolor     *= (1.0-damage.x);
   glowcolor.rgb *= (1.0-damage.x);
   
@@ -397,8 +259,8 @@ void main()
   //normalmap feature relevance adjustments
   //(Just a way of getting a hint of paralax on the very cheap. Basic idea is to make shading effects on bump
   //features facing you a bit exaggerated in the shading; and make their shading fade away as they face away.)
-  float r =  saturate(dot(  normal, eye )); //normalmap modulated: 0 when view is tangential; 1 when viewing surface face on
-  float vr = saturate(dot( vnormal, eye )); //raw face normal:  0 when view is tangential; 1 when viewing surface face on
+  float r =  saturatef(dot(  normal, eye )); //normalmap modulated: 0 when view is tangential; 1 when viewing surface face on
+  float vr = saturatef(dot( vnormal, eye )); //raw face normal:  0 when view is tangential; 1 when viewing surface face on
   float rel = clamp( (r+0.5)/(vr+0.5), 0.125, 1.875 );
 #else
   float rel = 1.0;
