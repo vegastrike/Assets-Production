@@ -1,6 +1,7 @@
 #include "gas_giants_params.h"
 #include "../config.h"
 #include "../stdlib.h"
+#include "../fplod.h"
 
 varying vec3 varTSLight;
 varying vec3 varTSView;

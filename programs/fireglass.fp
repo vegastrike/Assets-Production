@@ -1,3 +1,7 @@
+#include "config.h"
+#include "stdlib.h"
+#include "fplod.h"
+
 uniform int light_enabled[gl_MaxLights];
 uniform int max_light_enabled;
 uniform sampler2D diffuseMap;
@@ -13,87 +17,11 @@ uniform vec4 damage;
 uniform vec4 envColor;
 uniform vec4 pass_num;
 
-//      Normalmap types:
-#define CINEMUT_NM           1
-#define RED_IN_ALPHA_NM      2
-#define TRADITIONAL_NM       3
-
-//      Shininess sources
-#define AD_HOC_SHININESS     1
-#define GLOSS_IN_SPEC_ALPHA  2
-
-/**********************************/
-//  CUSTOMIZATION  (EDITABLE)
-/**********************************/
-#define SHININESS_FROM       AD_HOC_SHININESS
-#define NORMALMAP_TYPE       CINEMUT_NM
-#define NM_FREQ_SCALING      5.777
-#define NM_Z_SCALING         0.015625
-#define CORNER_TRIMMING_POW  177.77
-#define DEGAMMA_GLOW_MAP     1
-#define DEGAMMA_LIGHTS       0
-#define DEGAMMA_ENVIRONMENT  1
-#define DIM_SHALLOW_REFLECT  0
-/**********************************/
-
 /**********************************/
 //  DEBUGGING SWITCHES (EDITABLE) (all should be zero for normal operation)
 /**********************************/
-// Light source switches:
-#define SUPRESS_LIGHTS       0
-#define SUPRESS_ENVIRONMENT  0
+#undef SUPRESS_GLOWMAP
 #define SUPRESS_GLOWMAP      1
-// Material switches:
-#define SUPRESS_DIFFUSE      1
-#define USE_DIFF_AS_METAL    0
-#define SUPRESS_SPECULAR     0
-#define SUPRESS_DIELECTRIC   0
-#define FORCE_FULL_REFLECT   0
-#define SUPRESS_NORMALMAP    0
-// Hack switches:
-#define SUPRESS_CORNER_TRIM  0
-#define SHOW_FLAT_SHADED     0
-#define SUPRESS_HI_Q_VNORM   0
-/**********************************/
-
-//  SPECIALS:
-//      Special showings for debugging (do not edit)
-#define SHOW_NO_SPECIAL      0
-#define SHOW_MAT             1
-#define SHOW_NORMAL          2
-#define SHOW_TANGENTX        3
-#define SHOW_TANGENTY        4
-#define SHOW_TANGENTZ        5
-#define SHOW_BINORMX         6
-#define SHOW_BINORMY         7
-#define SHOW_BINORMZ         8
-#define SHOW_NOR_DOT_VIEW    9
-#define SHOW_TAN_DOT_VIEW   10
-#define SHOW_BIN_DOT_VIEW   11
-#define SHOW_NOR_DOT_LIGHT0 12
-#define SHOW_TAN_DOT_LIGHT0 13
-#define SHOW_BIN_DOT_LIGHT0 14
-#define SHOW_NOR_DOT_LIGHT1 15
-#define SHOW_TAN_DOT_LIGHT1 16
-#define SHOW_BIN_DOT_LIGHT1 17
-#define SHOW_NOR_DOT_VNORM  18
-#define SHOW_IS_PERIPHERY   19
-#define SHOW_IS_NEAR_VERT   20
-#define SHOW_IS_UGLY_CORNER 21
-#define SHOW_MA_NO_CORNERS  22
-#define SHOW_VNOR_DOT_FNOR  23
-
-/**********************************/
-//  DEBUGGING SWITCHES (EDITABLE)
-// (set to SHOW_NO_SPECIAL for normal operation)
-/**********************************/
-#define SHOW_SPECIAL SHOW_NO_SPECIAL
-/**********************************/
-
-//      CONSTANTS
-#define TWO_PI     (6.2831853071795862)
-#define HALF_PI    (1.5707963267948966)
-#define PI_OVER_3  (1.0471975511965976)
 
 //UTILS
 vec3 matmul(vec3 tangent, vec3 binormal, vec3 normal,vec3 lightVec) {
@@ -102,22 +30,6 @@ vec3 matmul(vec3 tangent, vec3 binormal, vec3 normal,vec3 lightVec) {
 vec3 imatmul(vec3 tangent, vec3 binormal, vec3 normal,vec3 lightVec) {
   return normalize(lightVec.xxx*tangent+lightVec.yyy*binormal+lightVec.zzz*normal);
 }
-float bias(float f){ return f*0.5+0.5; }
-vec2  bias(vec2 f) { return f*0.5+vec2(0.5); }
-vec3  bias(vec3 f) { return f*0.5+vec3(0.5); }
-vec4  bias(vec4 f) { return f*0.5+vec4(0.5); }
-float expand(float f){ return f*2.0-1.0; }
-vec2  expand(vec2 f) { return f*2.0-vec2(1.0); }
-vec3  expand(vec3 f) { return f*2.0-vec3(1.0); }
-vec4  expand(vec4 f) { return f*2.0-vec4(1.0); }
-float lerp(float f, float a, float b){return (1.0-f)*a+f*b; }
-vec2  lerp(float f, vec2 a, vec2 b) { return (1.0-f)*a+f*b; }
-vec3  lerp(float f, vec3 a, vec3 b) { return (1.0-f)*a+f*b; }
-vec4  lerp(float f, vec4 a, vec4 b) { return (1.0-f)*a+f*b; }
-float saturate( in float a ){ return clamp( a, 0.0, 1.0 ); }
-vec2  saturate( in vec2  a ){ return clamp( a, vec2(0.0), vec2(1.0) ); }
-vec3  saturate( in vec3  a ){ return clamp( a, vec3(0.0), vec3(1.0) ); }
-vec4  saturate( in vec4  a ){ return clamp( a, vec4(0.0), vec4(1.0) ); }
 
 #if NORMALMAP_TYPE == CINEMUT_NM
 vec2 dUdV_first_decode( in vec4 nmfetch )
@@ -170,25 +82,6 @@ float outline_smoothing_alpha( in vec3 view, in vec3 rawvnorm, in float is_perim
 {
   float temp = 1.0 - is_near_vert_on_periphery( view, rawvnorm, is_perimeter );
   return temp * temp * temp;
-}
-
-//FRESNEL
-float fresnel( in float cosa, in float k )
-{
-   float tmp1 = sqrt(1.0-(1.0-cosa*cosa)/(k*k));
-   float tmp2 = k*cosa;
-   float tmp3 = k*tmp1;
-   float tmp4 = (tmp1-tmp2)/(tmp1+tmp2+0.0001);
-   tmp1 = (cosa-tmp3)/(cosa+tmp3+0.0001);
-   tmp2 = 0.5*(tmp1*tmp1+tmp4*tmp4);
-   //That'd ne the final Fresnel value, in tmp2. But we got two surfaces to
-   //a glass pane: outer and inner. And the inner reflection is equally as
-   //strong as the outer. I'll look for a multi-bounce solution; but for now
-   //we'll square the refractivity, and convert back to reflectivity; then
-   //average the two for a rough multi-bounce approximation.
-   tmp3 = 1.0 - tmp2;
-   tmp4 = 1.0 - tmp3*tmp3;
-   return 0.5 * (tmp4+tmp2);
 }
 
 
@@ -255,7 +148,7 @@ void lightingLight(
 #else
    vec3 light_col = raw_light_col.rgb;
 #endif
-   float VNdotLx4= saturate( 4.0 * diffuse_soft_dot(vnormal,light_pos,light_sa) );
+   float VNdotLx4= saturatef( 4.0 * diffuse_soft_dot(vnormal,light_pos,light_sa) );
    float RdotL = clamp( dot(reflection,light_pos), 0.0, VNdotLx4 );
    light_acc += light_col;
    specular_acc += ( GLOSS_phong_reflection(mat_gloss_sa,RdotL,light_sa) * light_col );
@@ -364,7 +257,7 @@ void main()
   
   //DIELECTRIC REFLECTION
 #if SUPRESS_DIELECTRIC == 0
-  float fresnel_refl = fresnel( dot( reflection, normal), nD );
+  float fresnel_refl = full_fresnel( dot( reflection, normal), nD );
 #else
   float fresnel_refl = 0.0;
 #endif

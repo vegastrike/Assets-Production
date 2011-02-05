@@ -5,12 +5,14 @@
 
 #if DEGAMMA
 vec4  degammac( in vec4 a ) { a.rgb *= a.rgb; return a; }
+vec3  degammac( in vec3 a ) { a.rgb *= a.rgb; return a; }
 vec4  degamma( in vec4 a ) { return a*a; }
 vec3  degamma( in vec3 a ) { return a*a; }
 vec2  degamma( in vec2 a ) { return a*a; }
 float degamma( in float a) { return a*a; }
 #else
 vec4  degammac( in vec4 a ) { return a; }
+vec3  degammac( in vec3 a ) { return a; }
 vec4  degamma( in vec4 a ) { return a; }
 vec3  degamma( in vec3 a ) { return a; }
 vec2  degamma( in vec2 a ) { return a; }
@@ -19,12 +21,14 @@ float degamma( in float a) { return a; }
 
 #if REGAMMA
 vec4  regammac( in vec4 a ) { a.rgb = sqrt(a.rgb+vec3(GAMMA_OFFSET2))-vec3(GAMMA_OFFSET); return a; }
+vec3  regammac( in vec3 a ) { a.rgb = sqrt(a.rgb+vec3(GAMMA_OFFSET2))-vec3(GAMMA_OFFSET); return a; }
 vec4  regamma( in vec4 a ) { return sqrt(a+vec4(GAMMA_OFFSET2))-vec4(GAMMA_OFFSET); }
 vec3  regamma( in vec3 a ) { return sqrt(a+vec3(GAMMA_OFFSET2))-vec3(GAMMA_OFFSET); }
 vec2  regamma( in vec2 a ) { return sqrt(a+vec2(GAMMA_OFFSET2))-vec2(GAMMA_OFFSET); }
 float regamma( in float a) { return sqrt(a+GAMMA_OFFSET2)-GAMMA_OFFSET; }
 #else
 vec4  regammac( in vec4 a ) { return a; }
+vec3  regammac( in vec3 a ) { return a; }
 vec4  regamma( in vec4 a ) { return a; }
 vec3  regamma( in vec3 a ) { return a; }
 vec2  regamma( in vec2 a ) { return a; }
@@ -80,6 +84,24 @@ vec4   saturate(vec4 x) { return clamp(x,0.0,1.0); }
 float fresnel(float fNDotV, float fresnelEffect)
 {
    return sqr(1.0-lerp(0.0,fNDotV,fresnelEffect));
+}
+
+float full_fresnel( in float cosa, in float k )
+{
+   float tmp1 = sqrt(1.0-(1.0-cosa*cosa)/(k*k));
+   float tmp2 = k*cosa;
+   float tmp3 = k*tmp1;
+   float tmp4 = (tmp1-tmp2)/(tmp1+tmp2+0.0001);
+   tmp1 = (cosa-tmp3)/(cosa+tmp3+0.0001);
+   tmp2 = 0.5*(tmp1*tmp1+tmp4*tmp4);
+   //That'd ne the final Fresnel value, in tmp2. But we got two surfaces to
+   //a glass pane: outer and inner. And the inner reflection is equally as
+   //strong as the outer. I'll look for a multi-bounce solution; but for now
+   //we'll square the refractivity, and convert back to reflectivity; then
+   //average the two for a rough multi-bounce approximation.
+   tmp3 = 1.0 - tmp2;
+   tmp4 = 1.0 - tmp3*tmp3;
+   return 0.5 * (tmp4+tmp2);
 }
 
 float  luma(vec3 color) { return dot( color, vec3(1.0/3.0, 1.0/3.0, 1.0/3.0) ); }
