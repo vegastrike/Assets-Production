@@ -31,7 +31,7 @@ vec3 imatmul(vec3 tangent, vec3 binormal, vec3 normal,vec3 lightVec) {
   return normalize(lightVec.xxx*tangent+lightVec.yyy*binormal+lightVec.zzz*normal);
 }
 
-#if NORMALMAP_TYPE == CINEMUT_NM
+#if (NORMALMAP_TYPE == CINEMUT_NM)
 vec2 dUdV_first_decode( in vec4 nmfetch )
 {
   return vec2( NM_Z_SCALING*(0.3333*(nmfetch.r+nmfetch.g+nmfetch.b)-0.5), NM_Z_SCALING*(nmfetch.a-0.5) );
@@ -45,13 +45,13 @@ vec3 normalmap_decode(vec4 nm)
   return dUdV_final_decode( dUdV_first_decode( nm ) );
 }
 #endif
-#if NORMALMAP_TYPE == RED_IN_ALPHA_NM
+#if (NORMALMAP_TYPE == RED_IN_ALPHA_NM)
 vec3 normalmap_decode(vec4 nm)
 {
   return normalize( vec3(NM_Z_SCALING*(nm.wy*vec2(2.0,2.0)-vec2(1.0,1.0)),nm.z) );
 }
 #endif
-#if NORMALMAP_TYPE == TRADITIONAL_NM
+#if (NORMALMAP_TYPE == TRADITIONAL_NM)
 vec3 normalmap_decode(vec4 nm)
 {
   return normalize( vec3(NM_Z_SCALING*(nm.xy*vec2(2.0,2.0)-vec2(1.0,1.0)),nm.z) );
@@ -104,12 +104,12 @@ float GLOSS_power( in float mat_gloss_sa, in float light_solid_angle ) //const
   return ( HALF_PI / (mat_gloss_sa + light_solid_angle) ) - MAGIC_TERM;
 }
 //public:
-#if SUPRESS_ENVIRONMENT == 0
+#if (SUPRESS_ENVIRONMENT == 0)
 vec3 GLOSS_env_reflection( in vec4 mat_gloss, in vec3 direction ) //const
 {
   //ENV MAP FETCH:
   vec3 result = textureCubeLod( envMap, direction, mat_gloss.y ).rgb;
-#if DEGAMMA_ENVIRONMENT
+#if (DEGAMMA_ENVIRONMENT != 0)
   return result * result;
 #else
   return result;
@@ -133,7 +133,7 @@ float diffuse_soft_dot(in vec3 normal, in vec3 light, in float light_sa)
     return (NdotL + normalized_sa) / (1.0 + normalized_sa);
 }
 
-#if SUPRESS_LIGHTS == 0
+#if (SUPRESS_LIGHTS == 0)
 //PER-LIGHT STUFF
 void lightingLight(
    in vec4 lightinfo, in vec3 normal, in vec3 vnormal, in vec3 reflection, 
@@ -143,7 +143,7 @@ void lightingLight(
 {
    vec3  light_pos = normalize(lightinfo.xyz);
    float light_sa = lightinfo.w;
-#if DEGAMMA_LIGHTS
+#if (DEGAMMA_LIGHTS != 0)
    vec3 light_col = raw_light_col.rgb * raw_light_col.rgb;
 #else
    vec3 light_col = raw_light_col.rgb;
@@ -199,7 +199,7 @@ void main()
   vec3 iBinormal=gl_TexCoord[3].xyz;
   vec3 position = gl_TexCoord[7].xyz;
   vec3 face_normal = normalize( cross( dFdx(position), dFdy(position) ) );
-#if SUPRESS_HI_Q_VNORM == 0
+#if (SUPRESS_HI_Q_VNORM == 0)
   //supplement the vnormal with face normal before normalizing
   float supplemental_fraction=(1.0-length(iNormal));
   vec3 vnormal = normalize( iNormal + supplemental_fraction*face_normal );
@@ -207,7 +207,7 @@ void main()
   vec3 vnormal = normalize( iNormal );
 #endif
   vec3 normal=imatmul(iTangent,iBinormal,iNormal,normalmap_decode(texture2D(normalMap,nm_tex_coord)));
-#if SUPRESS_NORMALMAP
+#if (SUPRESS_NORMALMAP != 0)
   normal = vnormal;
 #endif
 
@@ -235,28 +235,28 @@ void main()
   vec4 mtl_gloss;
 //  vec3 diff_col, glow_col;
   float alpha, nD, UAO;
-#if SHOW_SPECIAL == SHOW_NO_SPECIAL
+#if (SHOW_SPECIAL == SHOW_NO_SPECIAL)
   const float GLASS_REFRACTIVE_CONSTANT = 1.48567;
   nD = GLASS_REFRACTIVE_CONSTANT;
   //grab alpha channels  
   alpha = diffcolor.a;
   UAO = glowcolor.a;
   GLOSS_init( mtl_gloss, speccolor.a );
-//#if DEGAMMA_GLOW_MAP
+//#if (DEGAMMA_GLOW_MAP != 0)
 //  glow_col = (glowcolor*glowcolor).rgb;
 //#else
 // glow_col = glowcolor.rgb;
 //#endif
 
   vec3 reflection;
-#if SHOW_FLAT_SHADED
+#if (SHOW_FLAT_SHADED != 0)
   normal = face_normal;
 #endif
   //GAR( eye, normal, mtl_gloss.z, reflection );
   reflection = -reflect( eye, normal );
   
   //DIELECTRIC REFLECTION
-#if SUPRESS_DIELECTRIC == 0
+#if (SUPRESS_DIELECTRIC == 0)
   float fresnel_refl = full_fresnel( dot( reflection, normal), nD );
 #else
   float fresnel_refl = 0.0;
@@ -266,7 +266,7 @@ void main()
   // Init lighting accumulators
   vec3 light_acc    = vec3(0.0);
   vec3 specular_acc = vec3(0.0);
-#if SUPRESS_LIGHTS == 0
+#if (SUPRESS_LIGHTS == 0)
   // Do lighting for every active light
   float mtl_gloss_sa = mtl_gloss.w;
   if (light_enabled[0] != 0)
@@ -285,12 +285,12 @@ void main()
   //portions expected to reflect specularly and/or diffusely, as per angle and shininess; --but not yet
   //modulated as per fresnel reflectivity or material colors. So I put them in quotes in the comments.
   //"Incoming specular":
-#if SUPRESS_ENVIRONMENT == 0
+#if (SUPRESS_ENVIRONMENT == 0)
   vec3 incoming_specular_light = GLOSS_env_reflection(mtl_gloss,reflection);
 #else
   vec3 incoming_specular_light = vec3(0.0);
 #endif
-#if SUPRESS_LIGHTS == 0
+#if (SUPRESS_LIGHTS == 0)
   incoming_specular_light += specular_acc;
 #endif
   
@@ -306,7 +306,7 @@ void main()
   //FINAL PIXEL WRITE:
   //Restore gamma, add alpha, and Commit:
   float final_alpha = sqrt(fresnel_refl);
-#if FORCE_FULL_REFLECT
+#if (FORCE_FULL_REFLECT != 0)
   final_alpha = 1.0;
 #endif
   //trim the corners around the outline
@@ -315,39 +315,39 @@ void main()
   gl_FragColor = vec4( sqrt(final_reflected)*final_alpha, final_alpha );// * cloaking.rrrg;
   //Finitto!
 #endif
-#if SHOW_SPECIAL == SHOW_MAT
+#if (SHOW_SPECIAL == SHOW_MAT)
   //  * material AI detections (red = matte; green = metal; blue = dielectric )
   gl_FragColor = vec4( mattype.rgb, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_NORMAL
+#if (SHOW_SPECIAL == SHOW_NORMAL)
   //  * RGB = normal.xyz * 0.5 + 0.5
   gl_FragColor = vec4( vnormal.xyz * 0.5 + vec3(0.5), 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TANGENTX
+#if (SHOW_SPECIAL == SHOW_TANGENTX)
   //  * RGB = tangent.xyz * 0.5 + 0.5
   gl_FragColor = vec4( normalize(iTangent.x) * 0.5 + 0.5, 0.5, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TANGENTY
+#if (SHOW_SPECIAL == SHOW_TANGENTY)
   //  * RGB = tangent.xyz * 0.5 + 0.5
   gl_FragColor = vec4( 0.5, normalize(iTangent.y) * 0.5 + 0.5, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TANGENTZ
+#if (SHOW_SPECIAL == SHOW_TANGENTZ)
   //  * RGB = tangent.xyz * 0.5 + 0.5
   gl_FragColor = vec4( 0.5, 0.5, normalize(iTangent.z) * 0.5 + 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BINORMX
+#if (SHOW_SPECIAL == SHOW_BINORMX)
   //  * RGB = binormal.xyz * 0.5 + 0.5
   gl_FragColor = vec4( normalize(iBinormal.x) * 0.5 + 0.5, 0.5, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BINORMY
+#if (SHOW_SPECIAL == SHOW_BINORMY)
   //  * RGB = binormal.xyz * 0.5 + 0.5
   gl_FragColor = vec4( 0.5, normalize(iBinormal.y) * 0.5 + 0.5, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BINORMZ
+#if (SHOW_SPECIAL == SHOW_BINORMZ)
   //  * RGB = binormal.xyz * 0.5 + 0.5
   gl_FragColor = vec4( 0.5, 0.5, normalize(iBinormal.z) * 0.5 + 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_NOR_DOT_VIEW
+#if (SHOW_SPECIAL == SHOW_NOR_DOT_VIEW)
   //  * R = dot(normal, view)
   vec3 eyevec = normalize( eye );
   vec3 temp;
@@ -356,7 +356,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TAN_DOT_VIEW
+#if (SHOW_SPECIAL == SHOW_TAN_DOT_VIEW)
   //  * G = dot(tangent, view)
   vec3 eyevec = normalize( eye );
   vec3 temp;
@@ -365,7 +365,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BIN_DOT_VIEW
+#if (SHOW_SPECIAL == SHOW_BIN_DOT_VIEW)
   //  * B = dot(binormal, view)
   vec3 eyevec = normalize( eye );
   vec3 temp;
@@ -374,7 +374,7 @@ void main()
   temp.b = dot( normalize(iBinormal.xyz), eyevec ) * 0.5 + 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_NOR_DOT_LIGHT0
+#if (SHOW_SPECIAL == SHOW_NOR_DOT_LIGHT0)
   //  * R = dot(normal, light)
   vec3 lightvec = normalize( gl_TexCoord[5].xyz );
   vec3 temp;
@@ -383,7 +383,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TAN_DOT_LIGHT0
+#if (SHOW_SPECIAL == SHOW_TAN_DOT_LIGHT0)
   //  * G = dot(tangent, light)
   vec3 lightvec = normalize( gl_TexCoord[5].xyz );
   vec3 temp;
@@ -392,7 +392,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BIN_DOT_LIGHT0
+#if (SHOW_SPECIAL == SHOW_BIN_DOT_LIGHT0)
   //  * B = dot(binormal, light)
   vec3 lightvec = normalize( gl_TexCoord[5].xyz );
   vec3 temp;
@@ -401,7 +401,7 @@ void main()
   temp.b = dot( normalize(iBinormal.xyz), lightvec ) * 0.5 + 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_NOR_DOT_LIGHT1
+#if (SHOW_SPECIAL == SHOW_NOR_DOT_LIGHT1)
   //  * R = dot(normal, light)
   vec3 lightvec = normalize( gl_TexCoord[6].xyz );
   vec3 temp;
@@ -410,7 +410,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TAN_DOT_LIGHT1
+#if (SHOW_SPECIAL == SHOW_TAN_DOT_LIGHT1)
   //  * G = dot(tangent, light)
   vec3 lightvec = normalize( gl_TexCoord[6].xyz );
   vec3 temp;
@@ -419,7 +419,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BIN_DOT_LIGHT1
+#if (SHOW_SPECIAL == SHOW_BIN_DOT_LIGHT1)
   //  * B = dot(binormal, light)
   vec3 lightvec = normalize( gl_TexCoord[6].xyz );
   vec3 temp;
@@ -428,28 +428,28 @@ void main()
   temp.b = dot( normalize(iBinormal.xyz), lightvec ) * 0.5 + 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_NOR_DOT_VNORM
+#if (SHOW_SPECIAL == SHOW_NOR_DOT_VNORM)
   float shade = dot(normal,vnormal) * 0.5 + 0.5;
   gl_FragColor = vec4( shade, shade, shade, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_IS_PERIPHERY
+#if (SHOW_SPECIAL == SHOW_IS_PERIPHERY)
 //float is_periphery( in vec3 view, in vec3 rawvnorm, in float is_perimeter )
   float temp = pow( is_periphery( eye, iNormal, is_perimeter ), CORNER_TRIMMING_POW );
   gl_FragColor = vec4( temp, temp, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_IS_NEAR_VERT
+#if (SHOW_SPECIAL == SHOW_IS_NEAR_VERT)
   float temp = pow( is_near_vert( iNormal ), CORNER_TRIMMING_POW );
   gl_FragColor = vec4( temp, temp, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_IS_UGLY_CORNER
+#if (SHOW_SPECIAL == SHOW_IS_UGLY_CORNER)
   float temp = is_near_vert_on_periphery( eye, iNormal, is_perimeter );
   gl_FragColor = vec4( temp, temp, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_MA_NO_CORNERS
+#if (SHOW_SPECIAL == SHOW_MA_NO_CORNERS)
   float temp = outline_smoothing_alpha( eye, iNormal, is_perimeter );
   gl_FragColor = vec4( temp, temp, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_VNOR_DOT_FNOR
+#if (SHOW_SPECIAL == SHOW_VNOR_DOT_FNOR)
   float temp = dot(face_normal,normalize(iNormal.xyz) * 0.5 + 0.5;
   //must exaggerate it greatly to be able to see...
   temp = 1.0-temp;

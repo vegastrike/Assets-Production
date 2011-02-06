@@ -23,7 +23,7 @@ vec3 imatmul(vec3 tangent, vec3 binormal, vec3 normal,vec3 lightVec) {
   return normalize(lightVec.xxx*tangent+lightVec.yyy*binormal+lightVec.zzz*normal);
 }
 
-#if NORMALMAP_TYPE == CINEMUT_NM
+#if (NORMALMAP_TYPE == CINEMUT_NM)
 vec2 dUdV_first_decode( in vec4 nmfetch )
 {
   return vec2( 0.3333*(nmfetch.r+nmfetch.g+nmfetch.b)-0.5, nmfetch.a-0.5 );
@@ -37,13 +37,13 @@ vec3 normalmap_decode(vec4 nm)
   return dUdV_final_decode( dUdV_first_decode( nm ) );
 }
 #endif
-#if NORMALMAP_TYPE == RED_IN_ALPHA_NM
+#if (NORMALMAP_TYPE == RED_IN_ALPHA_NM)
 vec3 normalmap_decode(vec4 nm)
 {
   return normalize( vec3(nm.wy*vec2(2.0,2.0)-vec2(1.0,1.0),nm.z) );
 }
 #endif
-#if NORMALMAP_TYPE == TRADITIONAL_NM
+#if (NORMALMAP_TYPE == TRADITIONAL_NM)
 vec3 normalmap_decode(vec4 nm)
 {
   return normalize( vec3(nm.xy*vec2(2.0,2.0)-vec2(1.0,1.0),nm.z) );
@@ -69,7 +69,7 @@ float GLOSS_power( in float mat_gloss_sa, in float light_solid_angle ) //const
   return ( HALF_PI / (mat_gloss_sa + light_solid_angle) ) - MAGIC_TERM;
 }
 //public:
-#if SUPRESS_ENVIRONMENT == 0
+#if (SUPRESS_ENVIRONMENT == 0)
 vec3 GLOSS_env_reflection( in vec4 mat_gloss, in vec3 direction ) //const
 {
   //ENV MAP FETCH:
@@ -88,7 +88,7 @@ float GLOSS_phong_reflection( in float mat_gloss_sa, in float RdotL, in float li
 
 
 //AMBIENT
-#if SUPRESS_AMBIENT==0
+#if (SUPRESS_AMBIENT==0)
 vec3 ambMapping(in vec3 bent_normal, in float ao )
 {
   //compute lod bias from ao. The full math would go:
@@ -130,7 +130,7 @@ void lightingLight(
    float VRdotL= clamp( dot(vreflection,light_pos), 0.0, VNdotLx4 );
    light_acc += light_col;
    float phong  = GLOSS_phong_reflection(mat_gloss_sa,RdotL,light_sa);
-#if SUPRESS_NMRELEV == 0
+#if (SUPRESS_NMRELEV == 0)
    float vphong = GLOSS_phong_reflection(mat_gloss_sa,VRdotL,light_sa);
    specular_acc += ( lerp( vphong, phong, relevance ) * light_col );
    diffuse_acc  += ( lerp( VNdotLx4, NdotL, relevance ) * light_col );
@@ -185,7 +185,7 @@ void main()
   vec3 position = gl_TexCoord[7].xyz;
   vec3 fnormal = normalize( cross( dFdx(position), dFdy(position) ) );
   fnormal *= sign(dot(fnormal,iNormal)+0.1);
-#if SUPRESS_HI_Q_VNORM == 0
+#if (SUPRESS_HI_Q_VNORM == 0)
   //supplement the vnormal with face normal before normalizing
   float supplemental_fraction=(1.0-length(iNormal));
   vec3 vnormal = normalize( iNormal + supplemental_fraction*fnormal );
@@ -193,7 +193,7 @@ void main()
   vec3 vnormal = normalize( iNormal );
 #endif
   vec3 normal=imatmul(iTangent,iBinormal,iNormal,normalmap_decode(texture2D(normalMap,tex_coord)));
-#if SUPRESS_NORMALMAP
+#if (SUPRESS_NORMALMAP != 0)
   normal = vnormal;
 #endif
   
@@ -230,7 +230,7 @@ void main()
   mspec_col = speccolor.rgb;
   glow_col = glowcolor.rgb;
 
-#if SANITIZE
+#if (SANITIZE != 0)
   //sanity
   vec3 inverse_insanity = vec3(1.0) / clamp( mspec_col+diff_col, vec3(1.0), vec3(2.0) );
   diff_col *= inverse_insanity;
@@ -238,24 +238,24 @@ void main()
 #endif
   
   //compute gloss-related stuff
-#if SHININESS_FROM == AD_HOC_SHININESS
+#if (SHININESS_FROM == AD_HOC_SHININESS)
   float crapgloss = 0.3333*dot(mspec_col,mspec_col);
   GLOSS_init( mtl_gloss, (0.1).xxx + 0.9*crapgloss*crapgloss );
 #endif
-#if SHININESS_FROM == GLOSS_IN_SPEC_ALPHA
+#if (SHININESS_FROM == GLOSS_IN_SPEC_ALPHA)
   GLOSS_init( mtl_gloss, speccolor.a );
 #endif
 
   //reflection
   vec3 reflection;
-#if SUPRESS_GAREFLECT == 0
+#if (SUPRESS_GAREFLECT == 0)
   GAR( normalize(eye), normal, mtl_gloss.z, reflection );
 #else
   reflection = normalize(-reflect(eye,normal));
 #endif
   vec3 vreflection = normalize(-reflect(eye,vnormal));
   
-#if SUPRESS_NMRELEV == 0
+#if (SUPRESS_NMRELEV == 0)
   //normalmap feature relevance adjustments
   //(Just a way of getting a hint of paralax on the very cheap. Basic idea is to make shading effects on bump
   //features facing you a bit exaggerated in the shading; and make their shading fade away as they face away.)
@@ -288,34 +288,34 @@ void main()
   //portions expected to reflect specularly and/or diffusely, as per angle and shininess; --but not yet
   //modulated as per fresnel reflectivity or material colors. So I put them in quotes in the comments.
   //"Incoming specular":
-#if SUPRESS_ENVIRONMENT == 0
+#if (SUPRESS_ENVIRONMENT == 0)
   vec3 incoming_specular_light = GLOSS_env_reflection(mtl_gloss,reflection);
 #else
   vec3 incoming_specular_light = vec3(0.0);
 #endif
-#if SUPRESS_LIGHTS == 0
+#if (SUPRESS_LIGHTS == 0)
   incoming_specular_light += specular_acc;
 #endif
   //"Incoming diffuse":
-#if SUPRESS_GLOWMAP == 0
+#if (SUPRESS_GLOWMAP == 0)
   vec3 incoming_diffuse_light = glow_col;
 #else
   vec3 incoming_diffuse_light = vec3(0.0);
 #endif
-#if SUPRESS_LIGHTS == 0
+#if (SUPRESS_LIGHTS == 0)
   incoming_diffuse_light += diffuse_acc;
 #endif
-#if SUPRESS_AMBIENT == 0
+#if (SUPRESS_AMBIENT == 0)
   incoming_diffuse_light += ( ambMapping( normal, UAO ) * UAO );
 #endif
   
   //Multiply and Add:
   vec3 final_reflected = incoming_specular_light * mspec_col * UAO * rootUAO;
-#if SUPRESS_DIFFUSE == 0
+#if (SUPRESS_DIFFUSE == 0)
   final_reflected += ( incoming_diffuse_light * diff_col * rootUAO );
 #endif
 
-#if 1
+#if (1 == 1)
   //temporarily
   final_reflected += glow_col;
 #endif

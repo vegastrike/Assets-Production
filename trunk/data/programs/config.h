@@ -32,6 +32,7 @@
 //  DEBUGGING SWITCHES (EDITABLE) (all should be zero for normal operation)
 /**********************************/
 // Light source switches:
+#define SUPRESS_AMBIENT      0
 #define SUPRESS_LIGHTS       0
 #define SUPRESS_ENVIRONMENT  0
 #define SUPRESS_GLOWMAP      0
@@ -96,7 +97,7 @@
 //  (externally controlled)
 /**********************************/
 
-#if defined(SRGB_FRAMEBUFFER) && (SRGB_FRAMEBUFFER != 0)
+#if (defined(SRGB_FRAMEBUFFER) && (SRGB_FRAMEBUFFER != 0))
 #define REGAMMA 0
 #else
 #define REGAMMA 1
