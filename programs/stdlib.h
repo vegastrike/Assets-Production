@@ -3,7 +3,7 @@
 #define GAMMA_OFFSET 0.0
 #define GAMMA_OFFSET2 (GAMMA_OFFSET*GAMMA_OFFSET)
 
-#if DEGAMMA
+#if (DEGAMMA != 0)
 vec4  degammac( in vec4 a ) { a.rgb *= a.rgb; return a; }
 vec3  degammac( in vec3 a ) { a.rgb *= a.rgb; return a; }
 vec4  degamma( in vec4 a ) { return a*a; }
@@ -19,7 +19,7 @@ vec2  degamma( in vec2 a ) { return a; }
 float degamma( in float a) { return a; }
 #endif
 
-#if REGAMMA
+#if (REGAMMA != 0)
 vec4  regammac( in vec4 a ) { a.rgb = sqrt(a.rgb+vec3(GAMMA_OFFSET2))-vec3(GAMMA_OFFSET); return a; }
 vec3  regammac( in vec3 a ) { a.rgb = sqrt(a.rgb+vec3(GAMMA_OFFSET2))-vec3(GAMMA_OFFSET); return a; }
 vec4  regamma( in vec4 a ) { return sqrt(a+vec4(GAMMA_OFFSET2))-vec4(GAMMA_OFFSET); }
@@ -35,31 +35,31 @@ vec2  regamma( in vec2 a ) { return a; }
 float regamma( in float a) { return a; }
 #endif
 
-#if DEGAMMA_ENVIRONMENT
+#if (DEGAMMA_ENVIRONMENT != 0)
     #define degamma_env degammac
 #else
     #define degamma_env 
 #endif
 
-#if DEGAMMA_SPECULAR
+#if (DEGAMMA_SPECULAR != 0)
     #define degamma_spec degamma
 #else
     #define degamma_spec
 #endif
 
-#if DEGAMMA_GLOW_MAP
+#if (DEGAMMA_GLOW_MAP != 0)
     #define degamma_glow degammac
 #else
     #define degamma_glow
 #endif
 
-#if DEGAMMA_LIGHTS
+#if (DEGAMMA_LIGHTS != 0)
     #define degamma_light degammac
 #else
     #define degamma_light
 #endif
 
-#if DEGAMMA_TEXTURES
+#if (DEGAMMA_TEXTURES != 0)
     #define degamma_tex degamma
 #else
     #define degamma_tex
@@ -86,7 +86,7 @@ float fresnel(float fNDotV, float fresnelEffect)
    return sqr(1.0-lerp(0.0,fNDotV,fresnelEffect));
 }
 
-float full_fresnel( in float cosa, in float k )
+float twosided_fresnel( in float cosa, in float k, in float two_sided )
 {
    float tmp1 = sqrt(1.0-(1.0-cosa*cosa)/(k*k));
    float tmp2 = k*cosa;
@@ -101,8 +101,14 @@ float full_fresnel( in float cosa, in float k )
    //average the two for a rough multi-bounce approximation.
    tmp3 = 1.0 - tmp2;
    tmp4 = 1.0 - tmp3*tmp3;
-   return 0.5 * (tmp4+tmp2);
+   return lerp(tmp2, tmp4, 0.5 * two_sided);
 }
+
+float full_fresnel( in float cosa, in float k )
+{
+   return twosided_fresnel( cosa, k, 1.0 );
+}
+
 
 float  luma(vec3 color) { return dot( color, vec3(1.0/3.0, 1.0/3.0, 1.0/3.0) ); }
 

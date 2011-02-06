@@ -1,3 +1,6 @@
+#include "config.h"
+#include "stdlib.h"
+
 uniform int light_enabled[gl_MaxLights];
 uniform int max_light_enabled;
 uniform sampler2D diffuseMap;
@@ -12,73 +15,6 @@ uniform vec4 cloaking;
 uniform vec4 damage;
 uniform vec4 envColor;
 
-//      Normalmap types:
-#define CINEMUT_NM           1
-#define RED_IN_ALPHA_NM      2
-#define TRADITIONAL_NM       3
-
-//      Shininess comes from...
-#define AD_HOC_SHININESS     1
-#define GLOSS_IN_SPEC_ALPHA  1
-
-/**********************************/
-//  CUSTOMIZATION  (EDITABLE)
-/**********************************/
-#define SHININESS_FROM       AD_HOC_SHININESS
-#define NORMALMAP_TYPE       CINEMUT_NM
-#define DEGAMMA_GLOW_MAP     0
-#define DEGAMMA_LIGHTS       0
-#define DEGAMMA_ENVIRONMENT  0
-#define ALLOW_GRAY_PAINT     0
-/**********************************/
-
-/**********************************/
-//  DEBUGGING SWITCHES (EDITABLE) (all should be zero for normal operation)
-/**********************************/
-// Light source switches:
-#define SUPRESS_AMBIENT      0
-#define SUPRESS_LIGHTS       0
-#define SUPRESS_ENVIRONMENT  0
-#define SUPRESS_GLOWMAP      0
-// Material switches:
-#define SUPRESS_DIFFUSE      0
-#define SUPRESS_SPECULAR     0
-#define SUPRESS_DIELECTRIC   0
-/**********************************/
-
-//      Special showings for debugging
-#define SHOW_NO_SPECIAL      0
-#define SHOW_MAT             1
-#define SHOW_NORMAL          2
-#define SHOW_TANGENTX        3
-#define SHOW_TANGENTY        4
-#define SHOW_TANGENTZ        5
-#define SHOW_BINORMX         6
-#define SHOW_BINORMY         7
-#define SHOW_BINORMZ         8
-#define SHOW_NOR_DOT_VIEW    9
-#define SHOW_TAN_DOT_VIEW   10
-#define SHOW_BIN_DOT_VIEW   11
-#define SHOW_NOR_DOT_LIGHT0 12
-#define SHOW_TAN_DOT_LIGHT0 13
-#define SHOW_BIN_DOT_LIGHT0 14
-#define SHOW_NOR_DOT_LIGHT1 15
-#define SHOW_TAN_DOT_LIGHT1 16
-#define SHOW_BIN_DOT_LIGHT1 17
-#define SHOW_NOR_DOT_VNORM  18
-
-/**********************************/
-//  DEBUGGING SWITCHES (EDITABLE)
-/**********************************/
-#define FORCE_GLASS          0
-#define SHOW_SPECIAL         SHOW_NO_SPECIAL
-/**********************************/
-
-//      CONSTANTS
-#define TWO_PI     (6.2831853071795862)
-#define HALF_PI    (1.5707963267948966)
-#define PI_OVER_3  (1.0471975511965976)
-
 //UTILS
 vec3 matmul(vec3 tangent, vec3 binormal, vec3 normal,vec3 lightVec) {
   return normalize(vec3(dot(lightVec,tangent),dot(lightVec,binormal),dot(lightVec,normal)));
@@ -86,24 +22,8 @@ vec3 matmul(vec3 tangent, vec3 binormal, vec3 normal,vec3 lightVec) {
 vec3 imatmul(vec3 tangent, vec3 binormal, vec3 normal,vec3 lightVec) {
   return normalize(lightVec.xxx*tangent+lightVec.yyy*binormal+lightVec.zzz*normal);
 }
-float bias(float f){ return f*0.5+0.5; }
-vec2  bias(vec2 f) { return f*0.5+vec2(0.5); }
-vec3  bias(vec3 f) { return f*0.5+vec3(0.5); }
-vec4  bias(vec4 f) { return f*0.5+vec4(0.5); }
-float expand(float f){ return f*2.0-1.0; }
-vec2  expand(vec2 f) { return f*2.0-vec2(1.0); }
-vec3  expand(vec3 f) { return f*2.0-vec3(1.0); }
-vec4  expand(vec4 f) { return f*2.0-vec4(1.0); }
-float lerp(float f, float a, float b){return (1.0-f)*a+f*b; }
-vec2  lerp(float f, vec2 a, vec2 b) { return (1.0-f)*a+f*b; }
-vec3  lerp(float f, vec3 a, vec3 b) { return (1.0-f)*a+f*b; }
-vec4  lerp(float f, vec4 a, vec4 b) { return (1.0-f)*a+f*b; }
-float saturate( in float a ){ return clamp( a, 0.0, 1.0 ); }
-vec2  saturate( in vec2  a ){ return clamp( a, vec2(0.0), vec2(1.0) ); }
-vec3  saturate( in vec3  a ){ return clamp( a, vec3(0.0), vec3(1.0) ); }
-vec4  saturate( in vec4  a ){ return clamp( a, vec4(0.0), vec4(1.0) ); }
 
-#if NORMALMAP_TYPE == CINEMUT_NM
+#if (NORMALMAP_TYPE == CINEMUT_NM)
 vec2 dUdV_first_decode( in vec4 nmfetch )
 {
   return vec2( NM_Z_SCALING*(0.3333*(nmfetch.r+nmfetch.g+nmfetch.b)-0.5), NM_Z_SCALING*(nmfetch.a-0.5) );
@@ -117,38 +37,18 @@ vec3 normalmap_decode(vec4 nm)
   return dUdV_final_decode( dUdV_first_decode( nm ) );
 }
 #endif
-#if NORMALMAP_TYPE == RED_IN_ALPHA_NM
+#if (NORMALMAP_TYPE == RED_IN_ALPHA_NM)
 vec3 normalmap_decode(vec4 nm)
 {
   return normalize( vec3(NM_Z_SCALING*(nm.wy*vec2(2.0,2.0)-vec2(1.0,1.0)),nm.z) );
 }
 #endif
-#if NORMALMAP_TYPE == TRADITIONAL_NM
+#if (NORMALMAP_TYPE == TRADITIONAL_NM)
 vec3 normalmap_decode(vec4 nm)
 {
   return normalize( vec3(NM_Z_SCALING*(nm.xy*vec2(2.0,2.0)-vec2(1.0,1.0)),nm.z) );
 }
 #endif
-
-//FRESNEL
-float fresnel( in float cosa, in float k, in float two_sided )
-{
-   float tmp1 = sqrt(1.0-(1.0-cosa*cosa)/(k*k));
-   float tmp2 = k*cosa;
-   float tmp3 = k*tmp1;
-   float tmp4 = (tmp1-tmp2)/(tmp1+tmp2+0.0001);
-   tmp1 = (cosa-tmp3)/(cosa+tmp3+0.0001);
-   tmp2 = 0.5*(tmp1*tmp1+tmp4*tmp4);
-   //that's the final Fresnel value, in tmp2. For glass, we got two surfaces to
-   //a glass pane: outer and inner. And the inner reflection is is equally as
-   //strong as the outer. I'll look for a multi-bounce solution; but for now
-   //we'll square the refractivity, and convert back to reflectivity; then
-   //average the two for a rough multi-bounce approximation.
-   tmp3 = 1.0 - tmp2;
-   tmp4 = 1.0 - tmp3*tmp3;
-   //So, for glass, we would return 0.5 * (tmp4+tmp2); but in the general case,
-   return lerp( 0.5 * two_sided, tmp2, tmp4 );
-}
 
 
 //GLOSS class
@@ -170,7 +70,7 @@ float GLOSS_power( in float mat_gloss_sa, in float light_solid_angle ) //const
   return ( HALF_PI / (mat_gloss_sa + light_solid_angle) ) - MAGIC_TERM;
 }
 //public:
-#if SUPRESS_ENVIRONMENT == 0
+#if (SUPRESS_ENVIRONMENT == 0)
 vec3 GLOSS_env_reflection( in vec4 mat_gloss, in vec3 direction ) //const
 {
   //ENV MAP FETCH:
@@ -183,8 +83,8 @@ vec3 GLOSS_env_reflection( in vec4 mat_gloss, in vec3 direction ) //const
   vec3 col_gra = textureGrad( envMap, direction, dFdx(direction), dFdy(direction) ).rgb;
   temp *= temp;
   temp *= temp;
-  vec3 result = lerp( temp*temp, col_lod, col_gra );
-#if DEGAMMA_ENVIRONMENT
+  vec3 result = lerp( col_lod, col_gra, temp*temp );
+#if (DEGAMMA_ENVIRONMENT != 0)
   return result * result;
 #else
   return result;
@@ -225,17 +125,11 @@ void mattype_init
   AO = glow.a;
   //*********************************************
   alpha = clamp( diff.a * 1.2 - 0.1, 0.0, 1.0 );
-#if FORCE_GLASS
-  alpha = 0.0;
-#endif
   //*********************************************
   //MATERIAL AI'S BASIC INITIALIZATIONS:
   //add a fraction of diff to spec, & viceversa, to avoid chroma inprecision when either is black
   vec3 diff_ = ( diff + 0.05 * spec ).rgb;
   vec3 spec_ = ( spec + 0.05 * diff ).rgb;
-#if FORCE_GLASS
-  spec_ = vec3(1.0);
-#endif
   //extract lumas (lumas-squared, rather; but you'll see...)
   float diffluma = dot( diff_, diff_ );
   float specluma = dot( spec_, spec_ );
@@ -273,7 +167,7 @@ void mattype_init
   //SPECIAL CASES:
   //If it so far appears to be a gray metal, but specluma == diffluma, make it gray paint.
   //Also, if alpha is not 1.0, it's glass or plexiglass --i.e. a dielectric.
-#if ALLOW_GRAY_PAINT
+#if (ALLOW_GRAY_PAINT != 0)
   float isreallydielectric = clamp( 1.0 - 2.0*( satdiff + abs(tempf) ), 2.0*sqrt(1.0-alpha), 1.0 );
   isreallydielectric *= isreallydielectric;
   isreallydielectric *= isreallydielectric;
@@ -293,7 +187,7 @@ void mattype_init
   mattype.rgb = tempv/tempf;
   //AI FINISHED!!
   //Now we finish de-gammaing and fixing the diff and spec colors:
-#if DEGAMMA_GLOW_MAP
+#if (DEGAMMA_GLOW_MAP != 0)
   glow_col = (glow*glow).rgb;
 #else
   glow_col = glow.rgb;
@@ -318,16 +212,16 @@ void mattype_init
   //but metal oxides have refractive constants too; so default to chromium
   const float CHROMIUM_OXIDE_REFRACTIVE_CONSTANT = 2.5;
   const float RCND = sqrt( CHROMIUM_OXIDE_REFRACTIVE_CONSTANT );
-  tempf = lerp( is_dielk, RCND, 1.0+specluma );
+  tempf = lerp( RCND, 1.0+specluma, is_dielk );
   //but in the special case of glass, we go to the average nD for pyrex, lucite and plexiglass
   const float GLASS_REFRACTIVE_CONSTANT = 1.48567;
-  nD = lerp( is_glass, tempf*tempf, GLASS_REFRACTIVE_CONSTANT );
+  nD = lerp( tempf*tempf, GLASS_REFRACTIVE_CONSTANT, is_glass );
   //and combine the diffuse colors
-  diff_col = lerp( is_metal, diff_col, mdiff_col );
+  diff_col = lerp( diff_col, mdiff_col, is_metal );
   //*********************************************
   //Temporary hack to get shininess
   //Eventually it should read shininess from spec alpha
-#if SHININESS_FROM == AD_HOC_SHININESS
+#if (SHININESS_FROM == AD_HOC_SHININESS)
   tempf = 0.333*dot(spec.rgb,spec.rgb);// + 0.2*is_dielk;
   GLOSS_init( mat_gloss, tempf*sqrt(tempf) );
 #else
@@ -337,7 +231,7 @@ void mattype_init
 
 
 //AMBIENT
-#if SUPRESS_AMBIENT==0
+#if (SUPRESS_AMBIENT==0)
 vec3 ambMapping(in vec3 bent_normal, in float ao )
 {
   //compute lod bias from ao. The full math would go:
@@ -352,7 +246,7 @@ vec3 ambMapping(in vec3 bent_normal, in float ao )
   //is one solid color due to bugs with CubeMapGen's edge fix-up; I'll
   //remove it after I hack CMG and make better cubemaps
   vec3 amb = textureLod(envMap, bent_normal, bias-0.5).rgb;
-#if DEGAMMA_ENVIRONMENT
+#if (DEGAMMA_ENVIRONMENT != 0)
   return amb * amb;
 #else
   return amb;
@@ -369,7 +263,7 @@ float diffuse_soft_dot(in vec3 normal, in vec3 light, in float light_sa)
 }
 
 //PER-LIGHT STUFF
-#if SUPRESS_LIGHTS == 0
+#if (SUPRESS_LIGHTS == 0)
 void lightingLight(
    in vec4 lightinfo, in vec3 normal, in vec3 vnormal, in vec3 eye, in vec3 reflection, 
    in vec3 raw_light_col,
@@ -378,12 +272,12 @@ void lightingLight(
 {
    vec3  light_pos = normalize(lightinfo.xyz);
    float light_sa = lightinfo.w;
-#if DEGAMMA_LIGHTS
+#if (DEGAMMA_LIGHTS != 0)
    vec3 light_col = raw_light_col * raw_light_col;
 #else
    vec3 light_col = raw_light_col;
 #endif
-   float VNdotLx4= saturate( 4.0 * diffuse_soft_dot(vnormal,light_pos,light_sa) );
+   float VNdotLx4= saturatef( 4.0 * diffuse_soft_dot(vnormal,light_pos,light_sa) );
    float NdotL = clamp( diffuse_soft_dot(normal,light_pos,light_sa), 0.0, VNdotLx4 );
    float RdotL = clamp( dot(reflection,light_pos), 0.0, VNdotLx4 );
    light_acc += light_col;
@@ -440,14 +334,14 @@ void main()
   vec3 iBinormal=gl_TexCoord[3].xyz;
   vec3 position = gl_TexCoord[7].xyz;
   vec3 face_normal = normalize( cross( dFdx(position), dFdy(position) ) );
-#if SUPRESS_HI_Q_VNORM == 0
+#if (SUPRESS_HI_Q_VNORM == 0)
   //supplement the vnormal with face normal before normalizing
   float supplemental_fraction=(1.0-length(iNormal));///dot(face_normal,iNormal);
   vec3 vnormal = normalize( iNormal + supplemental_fraction*face_normal );
 #else
   vec3 vnormal = normalize( iNormal );
 #endif
-#if NORMALMAP_TYPE == CINEMUT_NM
+#if (NORMALMAP_TYPE == CINEMUT_NM)
   vec2 raw_dUdV = dUdV_first_decode( texture2D(normalMap,tex_coord) );
   //mix-in detail normals, then...
   vec3 normal = normalize(dUdV_final_decode( raw_dUdV ));
@@ -455,7 +349,7 @@ void main()
 #else
   vec3 normal=imatmul(iTangent,iBinormal,iNormal,normalmap_decode(texture2D(normalMap,tex_coord)));
 #endif
-#if SUPRESS_NORMALMAP
+#if (SUPRESS_NORMALMAP != 0)
   normal = vnormal;
 #endif
   
@@ -469,7 +363,7 @@ void main()
   vec4 glowcolor   = texture2D(glowMap   , tex_coord);
   
   //better apply damage lerps before de-gamma-ing
-  diffcolor.rgb  = lerp(damage.x, diffcolor, damagecolor).rgb;
+  diffcolor.rgb  = lerp(diffcolor, damagecolor, damage.x).rgb;
   speccolor  *= (1.0-damage.x);
   glowcolor  *= (1.0-damage.x);
   
@@ -485,20 +379,20 @@ void main()
     alpha, nD, UAO
   );
   
-#if SHOW_SPECIAL == SHOW_NO_SPECIAL
+#if (SHOW_SPECIAL == SHOW_NO_SPECIAL)
   float rdim;
   vec3 reflection;
   GAR( eye, normal, vnormal, mtl_gloss.z, reflection, rdim );
   
   //DIELECTRIC REFLECTION
-#if SUPRESS_DIELECTRIC == 0
-  float fresnel_refl = is_dielk * fresnel( dot( reflection, normal), nD, is_glass );
+#if (SUPRESS_DIELECTRIC == 0)
+  float fresnel_refl = is_dielk * twosided_fresnel( dot( reflection, normal), nD, is_glass );
 #else
   float fresnel_refl = 0.0;
 #endif
   float fresnel_refr = 1.0 - fresnel_refl;
 
-#if SUPRESS_LIGHTS == 0
+#if (SUPRESS_LIGHTS == 0)
   // Init lighting accumulators
   vec3 light_acc    = vec3(0.0);
   vec3 diffuse_acc  = vec3(0.0);
@@ -522,42 +416,42 @@ void main()
   //portions expected to reflect specularly and/or diffusely, as per angle and shininess; --but not yet
   //modulated as per fresnel reflectivity or material colors. So I put them in quotes in the comments.
   //"Incoming specular":
-#if SUPRESS_ENVIRONMENT == 0
+#if (SUPRESS_ENVIRONMENT == 0)
   vec3 incoming_specular_light = GLOSS_env_reflection(mtl_gloss,reflection);
 #else
   vec3 incoming_specular_light = vec3(0.0);
 #endif
-#if SUPRESS_LIGHTS == 0
+#if (SUPRESS_LIGHTS == 0)
   incoming_specular_light += specular_acc;
 #endif
   //"Incoming diffuse":
-#if SUPRESS_GLOWMAP == 0
+#if (SUPRESS_GLOWMAP == 0)
   vec3 incoming_diffuse_light = glow_col;
 #else
   vec3 incoming_diffuse_light = vec3(0.0);
 #endif
-#if SUPRESS_LIGHTS == 0
+#if (SUPRESS_LIGHTS == 0)
   incoming_diffuse_light += diffuse_acc;
 #endif
-#if SUPRESS_AMBIENT == 0
+#if (SUPRESS_AMBIENT == 0)
   incoming_diffuse_light += ( ambMapping( normal, UAO ) * UAO );
 #endif
   
   //Gather the reflectivities:
   vec3 dielectric_specularity = vec3( fresnel_refl );
-#if SUPRESS_SPECULAR == 0
+#if (SUPRESS_SPECULAR == 0)
   vec3 metallic_specularity = mspec_col * ( is_metal * fresnel_refr * alpha );
 #else
   vec3 metallic_specularity = vec3(0.0);
 #endif
   vec3 total_specularity = dielectric_specularity + metallic_specularity;
-#if SUPRESS_DIFFUSE == 0
+#if (SUPRESS_DIFFUSE == 0)
   vec3 diffuse_reflectivity = diff_col * ( fresnel_refr * alpha );
 #endif
   
   //Multiply and Add:
   vec3 final_reflected = incoming_specular_light * total_specularity;
-#if SUPRESS_DIFFUSE == 0
+#if (SUPRESS_DIFFUSE == 0)
   final_reflected += ( incoming_diffuse_light * diffuse_reflectivity );
 #endif
   
@@ -566,39 +460,39 @@ void main()
   gl_FragColor = vec4( sqrt(final_reflected), max(fresnel_refl,alpha) ) * cloaking.rrrg;
   //Finitto!
 #endif
-#if SHOW_SPECIAL == SHOW_MAT
+#if (SHOW_SPECIAL == SHOW_MAT)
   //  * material AI detections (red = matte; green = metal; blue = dielectric )
   gl_FragColor = vec4( mattype.rgb, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_NORMAL
+#if (SHOW_SPECIAL == SHOW_NORMAL)
   //  * RGB = normal.xyz * 0.5 + 0.5
   gl_FragColor = vec4( vnormal.xyz * 0.5 + vec3(0.5), 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TANGENTX
+#if (SHOW_SPECIAL == SHOW_TANGENTX)
   //  * RGB = tangent.xyz * 0.5 + 0.5
   gl_FragColor = vec4( normalize(iTangent.x) * 0.5 + 0.5, 0.5, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TANGENTY
+#if (SHOW_SPECIAL == SHOW_TANGENTY)
   //  * RGB = tangent.xyz * 0.5 + 0.5
   gl_FragColor = vec4( 0.5, normalize(iTangent.y) * 0.5 + 0.5, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TANGENTZ
+#if (SHOW_SPECIAL == SHOW_TANGENTZ)
   //  * RGB = tangent.xyz * 0.5 + 0.5
   gl_FragColor = vec4( 0.5, 0.5, normalize(iTangent.z) * 0.5 + 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BINORMX
+#if (SHOW_SPECIAL == SHOW_BINORMX)
   //  * RGB = binormal.xyz * 0.5 + 0.5
   gl_FragColor = vec4( normalize(iBinormal.x) * 0.5 + 0.5, 0.5, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BINORMY
+#if (SHOW_SPECIAL == SHOW_BINORMY)
   //  * RGB = binormal.xyz * 0.5 + 0.5
   gl_FragColor = vec4( 0.5, normalize(iBinormal.y) * 0.5 + 0.5, 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BINORMZ
+#if (SHOW_SPECIAL == SHOW_BINORMZ)
   //  * RGB = binormal.xyz * 0.5 + 0.5
   gl_FragColor = vec4( 0.5, 0.5, normalize(iBinormal.z) * 0.5 + 0.5, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_NOR_DOT_VIEW
+#if (SHOW_SPECIAL == SHOW_NOR_DOT_VIEW)
   //  * R = dot(normal, view)
   vec3 eyevec = normalize( eye );
   vec3 temp;
@@ -607,7 +501,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TAN_DOT_VIEW
+#if (SHOW_SPECIAL == SHOW_TAN_DOT_VIEW)
   //  * G = dot(tangent, view)
   vec3 eyevec = normalize( eye );
   vec3 temp;
@@ -616,7 +510,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BIN_DOT_VIEW
+#if (SHOW_SPECIAL == SHOW_BIN_DOT_VIEW)
   //  * B = dot(binormal, view)
   vec3 eyevec = normalize( eye );
   vec3 temp;
@@ -625,7 +519,7 @@ void main()
   temp.b = dot( normalize(iBinormal.xyz), eyevec ) * 0.5 + 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_NOR_DOT_LIGHT0
+#if (SHOW_SPECIAL == SHOW_NOR_DOT_LIGHT0)
   //  * R = dot(normal, light)
   vec3 lightvec = normalize( gl_TexCoord[5].xyz );
   vec3 temp;
@@ -634,7 +528,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TAN_DOT_LIGHT0
+#if (SHOW_SPECIAL == SHOW_TAN_DOT_LIGHT0)
   //  * G = dot(tangent, light)
   vec3 lightvec = normalize( gl_TexCoord[5].xyz );
   vec3 temp;
@@ -643,7 +537,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BIN_DOT_LIGHT0
+#if (SHOW_SPECIAL == SHOW_BIN_DOT_LIGHT0)
   //  * B = dot(binormal, light)
   vec3 lightvec = normalize( gl_TexCoord[5].xyz );
   vec3 temp;
@@ -652,7 +546,7 @@ void main()
   temp.b = dot( normalize(iBinormal.xyz), lightvec ) * 0.5 + 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_NOR_DOT_LIGHT1
+#if (SHOW_SPECIAL == SHOW_NOR_DOT_LIGHT1)
   //  * R = dot(normal, light)
   vec3 lightvec = normalize( gl_TexCoord[6].xyz );
   vec3 temp;
@@ -661,7 +555,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_TAN_DOT_LIGHT1
+#if (SHOW_SPECIAL == SHOW_TAN_DOT_LIGHT1)
   //  * G = dot(tangent, light)
   vec3 lightvec = normalize( gl_TexCoord[6].xyz );
   vec3 temp;
@@ -670,7 +564,7 @@ void main()
   temp.b = 0.5;
   gl_FragColor = vec4( temp, 1.0 );
 #endif
-#if SHOW_SPECIAL == SHOW_BIN_DOT_LIGHT1
+#if (SHOW_SPECIAL == SHOW_BIN_DOT_LIGHT1)
   //  * B = dot(binormal, light)
   vec3 lightvec = normalize( gl_TexCoord[6].xyz );
   vec3 temp;
