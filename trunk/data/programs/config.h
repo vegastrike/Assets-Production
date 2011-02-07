@@ -97,7 +97,11 @@
 //  (externally controlled)
 /**********************************/
 
-#if (defined(SRGB_FRAMEBUFFER) && (SRGB_FRAMEBUFFER != 0))
+#ifndef SRGB_FRAMEBUFFER
+#define SRGB_FRAMEBUFFER 0
+#endif
+
+#if (SRGB_FRAMEBUFFER != 0)
 #define REGAMMA 0
 #else
 #define REGAMMA 1
