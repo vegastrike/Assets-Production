@@ -7,7 +7,7 @@
 #extension GL_ATI_shader_texture_lod : enable
 
 #ifndef GL_ATI_shader_texture_lod
-#define NO_TEXTURE_LOD
+#define NO_TEXTURE_LOD 1
 #endif
 
 #endif
