@@ -4,9 +4,17 @@
 #extension GL_ARB_shader_texture_lod : enable
 
 #ifndef GL_ARB_shader_texture_lod
+#define GL_ARB_shader_texture_lod 0
+#endif
+
+#if (GL_ARB_shader_texture_lod == 0)
 #extension GL_ATI_shader_texture_lod : enable
 
 #ifndef GL_ATI_shader_texture_lod
+#define GL_ATI_shader_texture_lod 0
+#endif
+
+#if (GL_ATI_shader_texture_lod == 0)
 #define NO_TEXTURE_LOD 1
 #endif
 
