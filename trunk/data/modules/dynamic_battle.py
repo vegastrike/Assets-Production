@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import VS
 import Director
 import fg_util
@@ -33,7 +34,7 @@ def UpdateCombatTurn():
         if (not SimulateBattles()):
             lastfac=0
     else:
-        for i in range (10):
+        for i in xrange(10):
             if (lastfac<nfac):
                 fac = VS.GetFactionName(lastfac)
                 if (lookorsiege):
@@ -62,7 +63,7 @@ def getImportanceOfType (typ):
 
 def moveSurroundingCapshipsToSiege(fac,sys):
     suc=0
-    for i in range (VS.GetNumAdjacentSystems(sys)):
+    for i in xrange(VS.GetNumAdjacentSystems(sys)):
         asys=VS.GetAdjacentSystem(sys,i)
         for fg in fg_util.AllFGsInSystem(fac,asys):
             if fg_util.CapshipInFG(fg,fac):
@@ -75,7 +76,7 @@ def moveSurroundingCapshipsToSiege(fac,sys):
     return suc
 
 def neighborFaction(sys,fac):
-    for i in range (VS.GetNumAdjacentSystems(sys)):
+    for i in xrange(VS.GetNumAdjacentSystems(sys)):
         asys=VS.GetAdjacentSystem(sys,i)
         if (VS.GetGalaxyFaction(asys)==fac):
             return True
@@ -480,7 +481,7 @@ def LaunchMoreShips(fgname,faction,landedtn,nums):
             pos=k.GetPosition()
     if (pos):
         for i in shiplaunchlist:
-            while j in range (i[1]):
+            while j in xrange(i[1]):
                 pos=launch_recycle.LaunchNext(fgname,faction,"default",pos)
 
 
