@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import VS
 import Director
 import vsrandom
@@ -74,7 +75,7 @@ def GenerateFgShips (shipinfg,factionnr,friendly):
 
 def GenerateAllShips ():
     global fgnames,origfgnames,fgoffset
-    for fnr in range(faction_ships.getMaxFactions()):
+    for fnr in xrange(faction_ships.getMaxFactions()):
         fgnames.append(fg_util.GetRandomFGNames(-1,faction_ships.factions[fnr]))
         fgoffset.append(0)
         origfgnames.append(list(fgnames[-1]))
@@ -107,7 +108,7 @@ def AddBasesToSystem (faction,sys):
             return
         shiplist=[]
         nums=[]
-        for i in range(numbases):
+        for i in xrange(numbases):
             whichbase = faction_ships.bases[fsfac][vsrandom.randrange(0,len(faction_ships.bases[fsfac]))]
             if whichbase in shiplist:
                 nums[shiplist.index(whichbase)]+=1
@@ -115,7 +116,7 @@ def AddBasesToSystem (faction,sys):
                 shiplist.append(whichbase)
                 nums.append(1)
         tn =[]
-        for i in range (len(shiplist)):
+        for i in xrange(len(shiplist)):
             tn+=[ (shiplist[i],nums[i])]
         fg_util.AddShipsToFG(fg_util.BaseFGInSystemName (sys),faction,tn,sys)
 
@@ -161,7 +162,7 @@ def AddSysDict (cursys):
     i=0
     AddBasesToSystem(sysfaction, cursys)
     adjsystems=getAdjacentSystemList(cursys)
-    for i in range(len(faction_ships.factions)):
+    for i in xrange(len(faction_ships.factions)):
        thisfac=faction_ships.factions[i]
        thisfactionnr=faction_ships.factionToInt(thisfac)
        rel=VS.GetRelation(sysfaction,thisfac)
@@ -190,10 +191,10 @@ def AddSysDict (cursys):
     if cursys in faction_ships.fortress_systems:
         friendlychance=faction_ships.fortress_systems[cursys]
         #debug.debug('enemy chance for '+cursys +'= '+str(friendlychance))
-    for i in range (numflightgroups): #number of fgs in a system.
+    for i in xrange (numflightgroups): #number of fgs in a system.
         faction=sysfaction
         friendly=0
-        if vsrandom.random()>friendlychance or sysfaction=='unknown' or sysfaction=='':
+        if not sysfaction or sysfaction=='unknown' or vsrandom.random()>friendlychance:
             faction=faction_ships.get_rabble_of_no_citizen(sysfaction)#why even have citizens on the list then
         else:            
             faction=faction_ships.get_friend_of_no_citizen(sysfaction)#likewise--- maybe this should be a faction_ships fix
@@ -279,7 +280,7 @@ def ReloadUniverse():
     else:
         GenerateAllShips()
         debug.debug("Second Load")
-        for i in range(len(fgnames)):
+        for i in xrange(len(fgnames)):
             fg_util.origfgoffset=fgoffset[i]
             fgnames[i]=fg_util.TweakFGNames(origfgnames[i])
             fgoffset[i]+=1
