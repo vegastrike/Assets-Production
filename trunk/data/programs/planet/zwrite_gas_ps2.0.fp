@@ -1,6 +1,7 @@
 #include "gas_giants_params.h"
 #include "../config.h"
 #include "../stdlib.h"
+#include "../fplod.h"
 
 #define inCloudCoord gl_TexCoord[0]
 #define inGroundCoord gl_TexCoord[1]
@@ -74,13 +75,11 @@ void main()
    vec2 gc1              =      CloudCoord                                         ;
    vec2 gc2              = lerp(CloudCoord,GroundCoord,0.25 * fCloudLayerThickness);
    vec2 gc3              = lerp(CloudCoord,GroundCoord,0.50 * fCloudLayerThickness);
-   vec2 gc4              = lerp(CloudCoord,GroundCoord,0.75 * fCloudLayerThickness);
-   vec2 gc5              = lerp(CloudCoord,GroundCoord,       fCloudLayerThickness);
-   vec4 fvCloudA;
+   vec2 gc4              = lerp(CloudCoord,GroundCoord,       fCloudLayerThickness);
+   vec3 fvCloudA;
    fvCloudA.x            = texture2D( cloudMap_20, gc1 ).a;
    fvCloudA.y            = texture2D( cloudMap_20, gc2 ).a;
    fvCloudA.z            = texture2D( cloudMap_20, gc3 ).a;
-   fvCloudA.w            = texture2D( cloudMap_20, gc4 ).a;
    
    // Mask heights
    fvCloudA              = saturate((fvCloudA*fvDrift.z-fvCloudLayers)*fvCloudLayerScales);
@@ -90,20 +89,18 @@ void main()
    gc1                   = lerp(gc2,gc1,fvCloudA.x);
    gc2                   = lerp(gc3,gc2,fvCloudA.y);
    gc3                   = lerp(gc4,gc3,fvCloudA.z);
-   gc4                   = lerp(gc5,gc4,fvCloudA.w);
    fvCloudA.x            = texture2D( cloudMap_20, gc1 ).a;
    fvCloudA.y            = texture2D( cloudMap_20, gc2 ).a;
    fvCloudA.z            = texture2D( cloudMap_20, gc3 ).a;
-   fvCloudA.w            = texture2D( cloudMap_20, gc4 ).a;
    
    // Re-Mask heights
    fvCloudA              = saturate((fvCloudA*fvDrift.z-fvCloudLayers)*fvCloudLayerScales);
    #endif
    
-   if (fvCloudA.w < 0.01) discard;
+   if (fvCloudA.z < 0.01) discard;
    
    // Compute self-shadowed cloud color
-   float fvCloud         = dot(fvCloudLayerMix,fvCloudA);
+   float fvCloud         = dot(fvCloudLayerMix.xyz,fvCloudA);
    gl_FragColor = atmosphericScatter( fvCloud, fNDotV );
 }
 
