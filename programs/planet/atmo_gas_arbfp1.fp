@@ -42,8 +42,8 @@ float cosAngleToADepth(float fNDotV)
    return cosAngleToAlpha(fNDotV)*2.0*saturatef(fNDotV)*fAtmosphereExtrusionThickness;
 }
 
-float  atmosphereLighting(float fNDotL) { return saturatef(soft_min(1.0,2.0*fAtmosphereHaloContrast*sqr(fNDotL))); }
-float  groundLighting(float fNDotL) { return saturatef(soft_min(1.0,2.0*fGroundContrast*fNDotL)); }
+float  atmosphereLighting(float fNDotL) { return saturatef(min(1.0,fAtmosphereHaloContrast*sqr(fNDotL))); }
+float  groundLighting(float fNDotL) { return saturatef(min(1.0,fGroundContrast*fNDotL)); }
 
 vec3 reyleigh(float fVDotL, float ldepth, vec3 fAtmosphereScatterColor, float saturation)
 {
@@ -75,10 +75,10 @@ vec4 atmosphericScatter(vec3 ambient, vec3 dif, float fNDotV, float fNDotL, floa
    ralpha           = saturatef(pow(ralpha,fAtmosphereExtrusionSteepness));
    
    vec3 labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth*0.5*fSelfShadowFactor));
-
+   
    vec3 lscatter    = gl_LightSource[0].diffuse.rgb 
-                       * dif * labsorption
-                       * (fMinScatterFactor+soft_min(fMaxScatterFactor-fMinScatterFactor,vdepth*ralpha));
+                       * dif * labsorption 
+                       * (fMinScatterFactor+min(fMaxScatterFactor*2.0-fMinScatterFactor,2.0*vdepth*ralpha));
    
    vec4 rv;
    rv.rgb = regamma( ambient * dif * 0.5
