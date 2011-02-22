@@ -129,7 +129,9 @@ float  self_shadow_smooth_ex(float x) { return saturatef(4.0*x); }
 float soft_min(float m, float x)
 {
    const float hpi_i = 0.63661977236758134307553505349006;
-   return min(m,m*1.25*hpi_i*atan(x/m));
+   float xm = x/m;
+   float softx = min(m,m*1.25*hpi_i*atan(xm));
+   return lerp(x, softx, saturatef(xm));
 }
 
 
