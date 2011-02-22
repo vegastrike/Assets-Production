@@ -71,11 +71,11 @@ vec4 atmosphericScatter(vec3 ambient, float fNDotV, float fNDotL, float fLDotV)
    float ralpha     = cosAngleToAlpha(fNDotV);
    ralpha           = saturatef(pow(ralpha,fAtmosphereExtrusionSteepness));
    
-   vec3 labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth*0.5));
+   vec3 labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth*0.5*fSelfShadowFactor));
    vec3 vabsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*vadepth));
    vec3 lscatter    = gl_LightSource[0].diffuse.rgb 
                        * fAtmosphereScatterColor.rgb 
-                       * pow(labsorption,vec3(fSelfShadowFactor)) 
+                       * labsorption 
                        * (fMinScatterFactor+soft_min(fMaxScatterFactor*4.0-fMinScatterFactor,4.0*vdepth*ralpha));
    
    vec4 rv;

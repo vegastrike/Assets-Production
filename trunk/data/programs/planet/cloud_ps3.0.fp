@@ -3,6 +3,7 @@
 #include "earth_params.h"
 #include "../config.h"
 #include "../stdlib.h"
+#include "../fplod.h"
 
 #define inCloudCoord gl_TexCoord[0]
 #define inGroundCoord gl_TexCoord[1]
@@ -158,7 +159,7 @@ void main()
    fvCloud4.a            = saturatef((fvCloud4.a*fvDrift.z       )*8.0); // 0.0000 - 0.1250
    
    // Parallax - offset coords by relative displacement and resample
-   #if PARALLAX
+   #if (PARALLAX != 0)
    gc1                   = lerp(gc2,gc1,fvCloud1.a);
    gc2                   = lerp(gc3,gc2,fvCloud2.a);
    gc3                   = lerp(gc4,gc3,fvCloud3.a);
