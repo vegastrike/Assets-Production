@@ -22,11 +22,11 @@ factionmap={
     "aera":"aera",
     "rlaan":"rlaan",
     "merchant":"terran",
-    "luddites":"terran",
-    "pirates":"terran",
-    "hunter":"terran",
+    "luddites":"iso",
+    "pirates":"iso",
+    "hunter":"iso",
     "homeland-security":"terran",
-    "ISO":"terran",
+    "ISO":"iso",
     "unknown":"unknown",
     "andolian":"terran",
     "highborn":"terran",
@@ -34,8 +34,8 @@ factionmap={
     "unadorned":"terran",
     "purist":"terran",
     "forsaken":"terran",
-    "LIHW":"terran",
-    "uln":"terran",
+    "LIHW":"iso",
+    "uln":"rlaan",
     "dgn":"terran",
     "klkk":"terran",
     "mechanist":"terran",
@@ -52,7 +52,6 @@ peaceawayfriendlylist={
     "rlaan":VS.musicAddList('playlists/peace/away/rlaan_friend.m3u'),
     "terran":VS.musicAddList('playlists/peace/away/terran_friend.m3u'),
     "iso":VS.musicAddList('playlists/peace/away/iso_friend.m3u'),
-    "AWACS":VS.musicAddList('playlists/peace/away/AWACS_friend.m3u'),
     None:PEACELIST
     }
 peaceawayhostilelist={
@@ -60,7 +59,6 @@ peaceawayhostilelist={
     "rlaan":VS.musicAddList('playlists/peace/away/rlaan_hostile.m3u'),
     "terran":VS.musicAddList('playlists/peace/away/terran_hostile.m3u'),
     "iso":VS.musicAddList('playlists/peace/away/iso_hostile.m3u'),
-    "AWACS":VS.musicAddList('playlists/peace/away/AWACS_hostile.m3u'),
     None:PEACELIST
     }
 peacearoundsiglist={
@@ -68,7 +66,6 @@ peacearoundsiglist={
     "rlaan":VS.musicAddList('playlists/peace/around_sig/rlaan.m3u'),
     "terran":VS.musicAddList('playlists/peace/around_sig/terran.m3u'),
     "iso":VS.musicAddList('playlists/peace/around_sig/iso.m3u'),
-    "AWACS":VS.musicAddList('playlists/peace/around_sig/AWACS.m3u'),
     None:PEACELIST
     }
 threatlist={
@@ -76,7 +73,6 @@ threatlist={
     "rlaan":VS.musicAddList('playlists/threat/rlaan.m3u'),
     "terran":VS.musicAddList('playlists/threat/terran.m3u'),
     "iso":VS.musicAddList('playlists/threat/iso.m3u'),
-    "AWACS":VS.musicAddList('playlists/threat/AWACS.m3u'),
     None:THREATLIST
     }
 battlelist={
@@ -84,7 +80,6 @@ battlelist={
     "rlaan":VS.musicAddList('playlists/battle/rlaan.m3u'),
     "terran":VS.musicAddList('playlists/battle/terran.m3u'),
     "iso":VS.musicAddList('playlists/battle/iso.m3u'),
-    "AWACS":VS.musicAddList('playlists/battle/AWACS.m3u'),
     None:BATTLELIST
     }
 paniclist={
@@ -92,7 +87,6 @@ paniclist={
     "rlaan":VS.musicAddList('playlists/battle/rlaan.m3u'),
     "terran":VS.musicAddList('playlists/battle/terran.m3u'),
     "iso":VS.musicAddList('playlists/battle/iso.m3u'),
-    "AWACS":VS.musicAddList('playlists/battle/AWACS.m3u'),
     None:PANICLIST
     }
 asteroidlist=VS.musicAddList('asteroids.m3u')
