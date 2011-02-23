@@ -1,7 +1,6 @@
 #include "earth_params.h"
 #include "../config.h"
 #include "../stdlib.h"
-#include "../fplod.h"
 
 #define inCloudCoord gl_TexCoord[0]
 #define inGroundCoord gl_TexCoord[1]
@@ -57,11 +56,11 @@ vec4 atmosphericScatter(vec3 amb, vec4 dif, float fNDotV, float fNDotL, float fV
    float  ldepth     = cosAngleToDepth(fNDotL+fAtmosphereAbsorptionOffset) * sqr(saturatef(1.0-fShadowRelHeight.x));
    float  alpha      = cosAngleToAlpha(fNDotV);
    
-   vec3  labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth*fSelfShadowFactor));
-
+   vec3  labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth));
+   vec3  vabsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*vdepth*2.0));
    vec3  lscatter    = gl_LightSource[0].diffuse.rgb 
                        * fAtmosphereScatterColor.rgb 
-                       * labsorption
+                       * pow(labsorption,vec3(fSelfShadowFactor)) 
                        * (fMinScatterFactor+min(fMaxScatterFactor-fMinScatterFactor,vdepth*2.0));
    
    vec4 rv;
