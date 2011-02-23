@@ -1,6 +1,6 @@
 #EXTM3U
 #aera-specific
-#../music/aerapeace.ogg#AyMambo and mission are long enough, reserve this for around_sig
+#../music/aerapeace.ogg #AyMambo and mission are long enough, reserve this for around_sig
 ../music/AyMambo.ogg
 #this is to outweight other tracks
 ../music/AyMambo.ogg
