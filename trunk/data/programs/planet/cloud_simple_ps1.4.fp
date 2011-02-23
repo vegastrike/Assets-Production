@@ -59,13 +59,12 @@ void main()
    vec2 sc4              = lerp(gc4,ShadowCoord,0.75 * fCloudLayerThickness);
    float  fCloudShadow4  = texture2D( cloudMap_20, sc4, 1.5 ).a;
    
+   // Simplified for ps2.a
+   fCloudShadow          = saturatef( (fCloudShadow4 - fvCloud1.a) * 0.75 );
+   
    // Mask heights
    fvCloud1.a            = saturatef((fvCloud1.a-0.5000)*1.0); // 0.5000 - 1.0000
    fvCloud4.a            = saturatef((fvCloud4.a       )*2.0); // 0.0000 - 0.5000
-   
-   // Simplified for ps2.a
-   const vec2 shadowStep4 = vec2(0.125, 0.708);
-   fCloudShadow4          = saturatef( (fCloudShadow4 - shadowStep4) * 0.75 );
    
    // Compute self-shadowed cloud color
    vec4 fvBaseColor        = gl_Color;
