@@ -60,7 +60,7 @@ void main()
    float  fCloudShadow4  = texture2D( cloudMap_20, sc4, 1.5 ).a;
    
    // Simplified for ps2.a
-   fCloudShadow          = saturatef( (fCloudShadow4 - fvCloud1.a) * 0.75 );
+   fCloudShadow4         = saturatef( (fCloudShadow4 - fvCloud1.a) * 0.75 );
    
    // Mask heights
    fvCloud1.a            = saturatef((fvCloud1.a-0.5000)*1.0); // 0.5000 - 1.0000
