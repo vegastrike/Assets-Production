@@ -283,7 +283,7 @@ def CheckFG (fgname,faction):
             totalships+=int(shipshere)
             temp=Director.getSaveString(ccp,key,i+1)
             if (temp!=shipshere):
-                #debug.debug('correcting flightgroup '+fgname+' to have right landed ships')
+                debug.debug('correcting flightgroup '+fgname+' to have right landed ships')
                 Director.putSaveString(ccp,key,i+1,shipshere)#set num actives to zero
         #DEBUG ONLY if (totalships!=int(Director.getSaveString(ccp,key,0))):
         #    debug.debug('mismatch on flightgroup '+fgname+' faction '+faction)
@@ -298,7 +298,7 @@ def PurgeZeroShips (faction):
     key=MakeFactionKey(faction)
     len=Director.getSaveStringLength (ccp,key)
     i=0
-    #print "purging 0 ships start"
+    debug.debug("purging 0 ships start")
     while i<len:
         curfg=Director.getSaveString(ccp,key,i)
         CheckFG (curfg,faction)
@@ -309,7 +309,7 @@ def PurgeZeroShips (faction):
         #    i-=1
         #    len-=1
         i+=1
-    #print "purging 0 ships end"        
+    debug.debug("purging 0 ships end")        
 
 def NumShipsInFG (fgname,faction):
     key = MakeFGKey (fgname,faction)
@@ -320,7 +320,7 @@ def NumShipsInFG (fgname,faction):
         try:
             return int(Director.getSaveString(ccp,key,0))
         except:
-            #print 'fatal: flightgroup without size'
+            debug.debug("fatal: flightgroup without size")
             return 0
 
 def GetDamageInFGPool (fgname,faction):
@@ -332,7 +332,7 @@ def GetDamageInFGPool (fgname,faction):
         try:
             return int(Director.getSaveString(ccp,key,2))
         except:
-            #print 'nonfatal: flightgroup without size'
+            debug.debug("nonfatal: flightgroup without size")
             return 0
 
 def SetDamageInFGPool (fgname,faction,num):
@@ -415,7 +415,7 @@ def FGSystem (fgname,faction):
     if (len>1):
         return Director.getSaveString(ccp,key,1)
     else:
-        #print fgname+' for '+faction+' already died, in no system'
+        debug.debug(fgname+' for '+faction+' already died, in no system')
         return 'nil'
 def TransferFG (fgname,faction,tosys):
     key = MakeFGKey(fgname,faction)
@@ -430,7 +430,7 @@ def AddShipsToFG (fgname,faction,typenumbertuple,starsystem):
     key = MakeFGKey(fgname,faction) 
     len = Director.getSaveStringLength (ccp,key)
     if (len<ShipListOffset()):
-        #print 'adding new fg '+fgname+" of "+str(typenumbertuple)+" to "+starsystem
+        debug.debug('adding new fg '+fgname+" of "+str(typenumbertuple)+" to "+starsystem)
         WriteStringList(ccp,key,_MakeFGString( starsystem,typenumbertuple) )
         _AddFGToSystem (fgname,faction,starsystem)
         _AddFGToFactionList (fgname,faction)
@@ -445,7 +445,7 @@ def RemoveShipFromFG (fgname,faction,type,numkill=1,landed=0):
     debug.debug("Scanning %d units..." % leg)
     for i in range (ShipListOffset()+1,leg,PerShipDataSize()):
         if (Director.getSaveString(ccp,key,i-1)==str(type)):
-            #debug.debug("Removing unit "+str(type))
+            debug.debug("Removing unit "+str(type))
             numships=0
             numlandedships=0
             try:
@@ -457,7 +457,7 @@ def RemoveShipFromFG (fgname,faction,type,numkill=1,landed=0):
                 numships-=numkill
                 if (numships<numlandedships):
                     if (landed==0):
-                       #debug.debug('trying to remove launched ship '+type+' but all are landed')
+                       debug.debug('trying to remove launched ship '+type+' but all are landed')
                        landed=1
                        return 0#failur
                 Director.putSaveString (ccp,key,i,str(numships))
@@ -482,8 +482,9 @@ def RemoveShipFromFG (fgname,faction,type,numkill=1,landed=0):
                 except:
                     debug.error('error, flight record '+fgname+' corrupt')
             return numkill
-    #debug.debug('cannot find ship to delete in '+faction+' fg ' + fgname)
+    debug.debug('cannot find ship to delete in '+faction+' fg ' + fgname)
     return 0
+
 def BaseFGInSystemName (system):
     return 'Base_'+system
 
@@ -609,7 +610,7 @@ def launchSingleBase (type,faction,sig):
     if radpct<200000000.+sigrsize:
         radpct=200000000.+sigrsize
     speed = vsrandom.uniform (0,50)
-    #debug.debug('Lauching '+str(faction)+' base '+str(type)+' by sig '+sig.getName()+' ('+sig.getFullname()+')')
+    debug.debug('Lauching '+str(faction)+' base '+str(type)+' by sig '+sig.getName()+' ('+sig.getFullname()+')')
     launchBaseOrbit (type,faction,sig.Position(),radpct,speed,sig)
 
 def launchBaseStuck (type,faction):
@@ -622,10 +623,10 @@ def launchBaseStuck (type,faction):
 
 def launchBase (type,num,faction,system,sig_units,numfighters):
     import seedrandom
-    #debug.debug('launching base '+ type)
+    debug.debug('launching base '+ type)
     seedrandom.seed(seedrandom.seedstring(seedrandom.interleave(['type',
-                                                                                                                             'faction',
-                                                                                                                             'system'])))
+                                                                'faction',
+                                                                'system'])))
     if (len(sig_units)):
         for i in range (num):
             one=seedrandom.rand()
@@ -669,7 +670,7 @@ def randDirection():
    return (X/leng,Y/leng,Z/leng)
 
 def incr_by_abs(num,val):
-   #print "A: "+str(num+val)+" or "+str(num-val)
+   debug.debug("A: "+str(num+val)+" or "+str(num-val))
    if (num>0):
       return num+val
    return num-val
@@ -744,8 +745,8 @@ def launchUnits(sys):
             Y=incr_by_abs(vsrandom.uniform(-1.0,1.0),1)*farlen
             Z=incr_by_abs(vsrandom.uniform(-1.0,1.0),1)*farlen
             typenumbers=ShipsInFG(flightgroup,faction)
-            #print "Really Far Apart around "+"  "+str(X)+"  "+str(Y)+"  "+str(Z)+" and 10000"
-            #debug.debug(" launching "+str(typenumbers) +" for "+faction+" at "+str((X,Y,Z)))
+            debug.debug("Really Far Apart around "+"  "+str(X)+"  "+str(Y)+"  "+str(Z)+" and 10000")
+            debug.debug(" launching "+str(typenumbers) +" for "+faction+" at "+str((X,Y,Z)))
             launch_recycle.launch_types_around(flightgroup,faction,typenumbers,'default',1,(X,Y,Z),0,'','',1,10000)
       else:
          for flightgroup in fglist:
@@ -753,7 +754,7 @@ def launchUnits(sys):
             #if sig.isPlanet() or not isForeign:
             sig = sig_units[vsrandom.randrange(0,len(sig_units))]
             typenumbers=ShipsInFG(flightgroup,faction)
-            #debug.debug(" XXlaunching "+str(typenumbers) +" for "+faction)
+            debug.debug(" XXlaunching "+str(typenumbers) +" for "+faction)
 
             launch_recycle.launch_types_around(flightgroup,faction,typenumbers,'default',sig.rSize()*vsrandom.randrange(10,100),sig,0,'','',1,10000)
              
@@ -804,12 +805,12 @@ def GetShipsInFG(fgname,faction):
 def LaunchLandShip(fgname,faction,typ,numlaunched=1):
     key = MakeFGKey (fgname,faction)
     ships=ReadStringList (ccp,key)
-    #debug.debug('LaunchLandShip: '+str((fgname, faction, typ, numlaunched)))
+    debug.debug('LaunchLandShip: '+str((fgname, faction, typ, numlaunched)))
     for num in range (ShipListOffset(),len(ships),PerShipDataSize()):
         if (typ == ships[num]):
             try:
-                #debug.debug("attempting launch for ship"+str(typ)+', begin '+
-                #            str(ships[num+1])+', act '+str(ships[num+2]))
+                debug.debug("attempting launch for ship"+str(typ)+', begin '+
+                            str(ships[num+1])+', act '+str(ships[num+2]))
                 ntobegin=int(ships[num+1])
                 nactive=int(ships[num+2])
                 nactive-=numlaunched
