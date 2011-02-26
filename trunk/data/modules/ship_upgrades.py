@@ -51,7 +51,8 @@ def shieldBuildCategory(faces,level):
         2:"upgrades/Shield_Systems/Standard_Dual_Shields",
         4:"upgrades/Shield_Systems/Standard_Quad_Shields" 
         }
-    return facestring[faces]
+    #return facestring[faces]
+    return "upgrades"
 
 # Engine enhancements (afterburners):
 afterburnerMaxLevel = 5
@@ -62,7 +63,8 @@ def afterburnerBuildName(level):
     return "mult_overdrive%02d" % level
 
 def afterburnerBuildCategory(level):
-    return "upgrades/Overdrive"    
+    #return "upgrades/Overdrive"    
+    return "upgrades"
 
 
 # Sensors category construction:
@@ -80,7 +82,8 @@ def reactorBuildName(level):
     return "reactor%02d" % level
 
 def reactorBuildCategory(level):
-    return "upgrades/Reactors/Standard"    
+    #return "upgrades/Reactors/Standard"    
+    return "upgrades"
 
 # Engines
 engineMaxLevel = 0
@@ -91,7 +94,8 @@ def engineBuildName(level):
     return "engine%02d" % level
 
 def engineBuildCategory(level):
-    return "upgrades/Engines/Standard"    
+    #return "upgrades/Engines/Standard"    
+    return "upgrades"
 
 # Hull upgrades
 upgrades_hull_category = None
@@ -171,10 +175,10 @@ def getItem (cat,parentcat=None):
     list=VS.getRandCargo(1,cat)#try to get a cargo from said category
     if (list.GetQuantity()<=0):#if no such cargo exists in this cateogry
         if (parentcat!=None):
-            print "UpgradeError finding %s using %s instead" % (cat,parentcat)
+            print "Python Upgrade Error: finding %s using %s instead" % (cat,parentcat)
             list=VS.getRandCargo(1,parentcat)#get it from the parent category
         if (list.GetQuantity()<=0):#otherwise get cargo from upgrades category
-            print "UpgradeError: category %s -- getting random instead" % (cat)
+            print "Python UpgradeError: category %s -- getting random instead" % (cat)
             list=VS.getRandCargo(1,"upgrades")#this always succeeds
     return list
 
@@ -235,21 +239,21 @@ def UpgradeEngine (un, diff):
     if (type!=0):
         temp=un.upgrade (cat,0,0,1,0)
         temp=un.upgrade (dog,0,0,1,0)
-        print "Upgrading Engine %s percent %f" % (cat,temp)
+        #print "Upgrading Engine %s percent %f" % (cat,temp)
         if (temp>0.0):
             cat = GetRandomShield (2,type)
             temp=un.upgrade (cat,0,0,1,0)
-            print "Upgrading Shield %s percent %f" % (cat,temp)
+            #print "Upgrading Shield %s percent %f" % (cat,temp)
             cat = GetRandomShield (4,type)
             temp=un.upgrade (cat,0,0,1,0)
-            print "Upgrading Shield4 %s percent %f" % (cat,temp)
+            #print "Upgrading Shield4 %s percent %f" % (cat,temp)
             return True
     cat=GetShieldLevelZero(2)
     temp = un.upgrade(cat,0,0,1,0)
-    print "Upgrading Shield2 level 0... percent="+str(temp)
+    #print "Upgrading Shield2 level 0... percent="+str(temp)
     cat=GetShieldLevelZero(4)
     temp = un.upgrade(cat,0,0,1,0)
-    print "Upgrading Shield4 level 0... percent="+str(temp)
+    #print "Upgrading Shield4 level 0... percent="+str(temp)
     return False
 
 def GetRandomHull ():
