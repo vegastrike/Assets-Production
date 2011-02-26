@@ -12,7 +12,7 @@ def NextPos (un, pos, FarApart=1):
     x = pos[whichcoord]
     pos = list(pos)
     x=x+3.0*rad*FarApart
-    #print "next coord is "+str(3.0*rad*FarApart)+" awa"
+    debug.debug("next coord is "+str(3.0*rad*FarApart)+" awa")
     pos[whichcoord]=x
     return tuple(pos)
   
@@ -63,11 +63,11 @@ def look_for (fg, faction, numships,myunit,  pos, gcd,newship=[None]):
                     pos=move_to (un,pos)
                     numships-=1
                     newship[0]=un
-                    #debug.debug("TTYmoving %s to current area" % (name))
+                    debug.debug("TTYmoving %s to current area" % (name))
     return (numships,pos)
   
 def LaunchNext (fg, fac, type, ai, pos, logo,newshp=[None],fgappend='',FarApart=1):
-    #debug.debug("Launch nexting "+str(type))
+    debug.debug("Launch nexting "+str(type))
     combofg=fg+fgappend
     if (fgappend=='Base'):
         combofg=fgappend
@@ -97,18 +97,18 @@ def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_
     nr_ships=0
     for t in typenumbers:
         nr_ships+=t[1]
-    #debug.debug("before"+str(nr_ships))
+    debug.debug("before"+str(nr_ships))
     retcontainer=[None]
     if (fgappend=='' and nr_ships>1):
         (nr_ships,pos) = look_for (fg,faction,nr_ships-1,myunit,pos,garbage_collection_distance,retcontainer)
         nr_ships+=1
-    #debug.debug("after "+str(nr_ships)+ str(retcontainer))
+    debug.debug("after "+str(nr_ships)+ str(retcontainer))
     count=0
     ret=retcontainer[0]
     found=0
     for tn in typenumbers:
         num = tn[1]
-        #print "Python launched "+str(faction)+" "+str(tn[0])+" FG "+str(fg)+" with "+str(num)+" ships"
+        debug.debug("Python launched "+str(faction)+" "+str(tn[0])+" FG "+str(fg)+" with "+str(num)+" ships")
         if num>nr_ships:
             num=nr_ships
         for i in range(num):
@@ -130,9 +130,9 @@ def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_
   
 def launch_wave_around ( fg, faction, ai, nr_ships, capship, radius, myunit, garbage_collection_distance,logo,skipdj=0):
     pos = whereTo(radius, myunit)
-    #debug.debug("before"+str(nr_ships))
+    debug.debug("before"+str(nr_ships))
     (nr_ships,pos) = look_for (fg,faction,nr_ships,myunit,pos,garbage_collection_distance)
-    #debug.debug("after "+str(nr_ships))
+    debug.debug("after "+str(nr_ships))
     while (nr_ships>0):
         type=""
         if (capship):
