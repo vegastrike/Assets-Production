@@ -42,17 +42,17 @@ shieldMaxLevel = { 2:14 , 4:14 } # key is number of faces
 
 def shieldBuildName(faces,level):
     facestring = { 2:"dual",4:"quad" }
-    maxlevel   = shieldMaxLevel[faces]
+    maxlevel   = shieldMaxLevel.get(faces,14)
     if (level > maxlevel):
         level = maxlevel
-    return "%sshield%02d" % (facestring[faces],level+1)
+    return "%sshield%02d" % (facestring.get(faces,""),level+1)
 
 def shieldBuildCategory(faces,level):
     facestring = { 
         2:"upgrades/Shield_Systems/Standard_Dual_Shields",
         4:"upgrades/Shield_Systems/Standard_Quad_Shields" 
         }
-    return facestring[faces]
+    return facestring.get(faces, "upgrades/Shield_Systems")
 
 # Engine enhancements (afterburners):
 afterburnerMaxLevel = 5
