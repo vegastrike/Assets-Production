@@ -9,17 +9,19 @@ import quest_dispute
 import quest_blockade
 import quest_shipyardbomb
 import quest_slaver
-#import quest_racene
-#import quest_disappear
-#import quest_rlaan_spy
-#import quest_rogue_militia
-#import quest_contraband_truck
-#import quest_isowing
+import quest_debug
+#import quest_racene #need rewrite
+#import quest_disappear #need rewrite
+#import quest_rlaan_spy #need rewrite
+#import quest_rogue_militia #need rewrite
+#import quest_contraband_truck #need rewrite
+#import quest_isowing #need rewrite
 
 adventures = {}
 persistent_adventures = list()
 
 adventures = {
+    #"Crucible/Cephid_17":quest_debug.quest_debug_factory(), # enable for debugging only
     "Crucible/Cephid_17":quest_tutorial.quest_tutorial_factory(),
     "Sol/Regallis":quest_dispute.quest_dispute_factory(),
     "Crucible/Elohim":quest_blockade.quest_blockade_factory(),
@@ -38,9 +40,10 @@ adventures = {
     }
 
 persistent_adventures = [
-#   quest_tutorial.quest_tutorial_factory(),
-#	quest_drone.quest_drone_factory(),
-#	quest_isowing.quest_isowing_factory()]
+    #quest_debug.quest_debug_factory(), # for debugging
+    #quest_tutorial.quest_tutorial_factory(),
+    #quest_drone.quest_drone_factory(),
+    #quest_isowing.quest_isowing_factory()]
 	]
 
 def removePersistentAdventure(newq):

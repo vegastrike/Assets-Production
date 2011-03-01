@@ -97,7 +97,10 @@ class NewsTranslator:
     self.item = item[2].split()
     self.vars = dict()
     stardat_ = dict()
-    stardat_['value'] = VS.GetGameTime() #news_tuple[NewsManager.STARDATE_INDEX]
+    if news_tuple[NewsManager.STARDATE_INDEX] == 0:
+      stardat_['value'] = VS.getStarTime()
+    else:
+      stardat_['value'] = news_tuple[NewsManager.STARDATE_INDEX]
     self.vars['stardate'] = stardat_
     aggressor = dict()
     aggressor['faction'] = news_tuple[NewsManager.AGGRESSOR_INDEX]
@@ -337,7 +340,7 @@ class NewsManager:
       elif success == self.SUCCESS_DRAW:
         return self.POV_BAD
     else:
-      debug.error("ERROR:  VS is returning -0 for relationship relatagg number")
+      debug.debug("ERROR:  VS is returning -0 for relationship relatagg number")
       return self.POV_NEUTRAL
 
   def sTovarlist(self, s):
