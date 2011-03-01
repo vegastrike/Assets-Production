@@ -10,12 +10,14 @@
 # of the License, or (at your option) any later version.
 #
 # Author: pyramid
-# Version: 2011-02-28
+# Version: 2011-03-01
 #
 #---------------------------------------------------------------------------------
 
 # This script is used for testing the game
 # and or displaying test variables available through python
+# It is called through the quest_debug.mission and shouldn't
+# be activated in the game release
 
 # things that can be improved
 
@@ -39,10 +41,11 @@ SAVE_KEY = "quest_debug"
 class quest_debug (quest.quest):
   # initialize quest variables
   def __init__ (self):
-    self.msgColor = "#FF6666"
+    self.msgColor = "#FFFF00"
     self.timer = VS.GetGameTime()     # controls the interval timing
     self.player = VS.getPlayer()
-    print "###debug: quest_debug initialized"
+    # show if quest was initialized
+    #print "###debug: quest_debug initialized"
 
   def LightMinuteToMeter(self,lightminute):
     meter = 17987547500 * lightminute
@@ -74,8 +77,11 @@ class quest_debug (quest.quest):
     if ( not self.player.isNull() ):
       # execute every N seconds
       if (VS.GetGameTime()>self.timer):
+        # print something on the stdout console
+        #print "startime: ", VS.getStarTime(), VS.getStarDate(), stardate.formatStarDate("confed",VS.getStarTime())
+        # print something to the ingame messages
         VS.IOmessage (0, self.msgColor+"debug"+"#FFFFFF", "Privateer", self.msgColor+"stardate: " + stardate.formatStarDate("confed",VS.getStarTime()) )
-        self.timer = VS.GetGameTime()+10
+        self.timer = VS.GetGameTime()+20
     # keep the script alive for execution
     return 1
 

@@ -78,7 +78,7 @@ def newNews():
   universe.setFirstSaveData(player,newsitem[0],1)
   import Director
   newsfooter = "\\\\\This story was first broadcast on: "
-  newsfooter += stardate.formatStarDate("confed",VS.GetGameTime())
+  newsfooter += stardate.formatStarDate("confed",VS.getStarTime())
   newsfooter += "\\GNN - Galactic News Network"
   Director.pushSaveString(player,"dynamic_news",'#'+newsitem[2]+newsfooter)
 
@@ -123,6 +123,6 @@ def publishNews(text):
 # publishes the news text with star date
   player = VS.getPlayer().isPlayerStarship()
   STARDATE_TEXT = "\\\\\This story was first broadcast on: "
-  datetext = stardate.formatStarDate("confed",VS.GetGameTime())
+  datetext = stardate.formatStarDate("confed",VS.getStarTime())
   newstext = "#" + text + STARDATE_TEXT + datetext + "\\GINA - Galactic Independent News Association"
   Director.pushSaveString(player,"dynamic_news",newstext)
