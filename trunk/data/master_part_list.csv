@@ -566,16 +566,16 @@
 "starscanner1","upgrades/Sensors/Intermediate",4000,0.01,5,"@upgrades/starscanner_2530.image@StarScanner is the most widely used radar in Confed space."
 "starscanner2","upgrades/Sensors/Intermediate",8000,0.01,7,"@upgrades/starscanner_2545.image@StarScanner is the most widely used radar in Confed space."
 "starscanner3","upgrades/Sensors/Intermediate",16000,0.01,9,"@upgrades/starscanner_2600.image@StarScanner is the most widely used radar in Confed space."
-“starscanner4”,"upgrades/Sensors/Intermediate",24000,0.01,9,"@upgrades/starscanner_2600.image@This is a mid-life upgrade of the StarScanner 2600 that includes threat assessment, which makes it the natural choice for bounty hunters.”
+"starscanner4","upgrades/Sensors/Intermediate",24000,0.01,9,"@upgrades/starscanner_2600.image@This is a mid-life upgrade of the StarScanner 2600 that includes threat assessment, which makes it the natural choice for bounty hunters."
 "hawkeye1","upgrades/Sensors/Advanced",32000,0.01,13,"@upgrades/hawkeye_zx16.image@Hawkeye is the preferred radar for Confed military operations."
 "hawkeye2","upgrades/Sensors/Advanced",64000,0.01,17,"@upgrades/hawkeye_zx50.image@Hawkeye is the preferred radar for Confed military operations."
 "hawkeye3","upgrades/Sensors/Advanced",128000,0.01,21,"@upgrades/hawkeye_zx86.image@Hawkeye is the preferred radar for Confed military operations."
 "hawkeye4","upgrades/Sensors/Advanced",160000,0.01,21,"@upgrades/hawkeye_zx86.image@Hawkeye ZX-87 is an upgrade of Hawkeye ZX-86 designed for capital ships."
 ,,,,,
-“surveyor1”,“upgrades/Sensors/Highborn”,700000,0.01,15,"The award-winning H-line is another quality product of Highborn craftsmanship. Designed for tactical superiority, the radar models space at close and distant ranges."
-“surveyor2”,“upgrades/Sensors/Highborn”,900000,0.01,16,"The award-winning H-line is another quality product of Highborn craftsmanship. Designed for tactical superiority, the radar models space at close and distant ranges. High-lights attacking missiles and ships with high firepower."
+"surveyor1","upgrades/Sensors/Highborn",700000,0.01,15,"The award-winning H-line is another quality product of Highborn craftsmanship. Designed for tactical superiority, the radar models space at close and distant ranges."
+"surveyor2","upgrades/Sensors/Highborn",900000,0.01,16,"The award-winning H-line is another quality product of Highborn craftsmanship. Designed for tactical superiority, the radar models space at close and distant ranges. High-lights attacking missiles and ships with high firepower."
 ,,,,,
-“rlaantracker1”,“upgrades/Sensors/Rlaan”,240000,0.01,7,"The Tracker is a great all-rounder, popular in both the Rlaan Enforcer and Merchant fleets, because of its unique ability to easily distinguish between ships and celestrial bodies. It is robust towards ECM. The Rlaan eye only perceives depth when it moves, and this trait is found again in this radar."
+"rlaantracker1","upgrades/Sensors/Rlaan",240000,0.01,7,"The Tracker is a great all-rounder, popular in both the Rlaan Enforcer and Merchant fleets, because of its unique ability to easily distinguish between ships and celestrial bodies. It is robust towards ECM. The Rlaan eye only perceives depth when it moves, and this trait is found again in this radar."
 ,,,,,
 "add_cargo_expansion","upgrades/Cargo",16000,1,20,"@cargo/cargo_expansion.image@Trades upgrade space and support systems for cargo volume"
 ,,,,,
