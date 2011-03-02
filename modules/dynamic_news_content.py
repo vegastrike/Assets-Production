@@ -99,7 +99,7 @@ all_faction_name_global = {
                 ,"mstandname" : ["John Doe"]
                 ,"fstandname" : ["Jane Doe"]
                 }
-,"merchant" :   {"full" : ["Interstellar Shipping and Mercantile Guild"]
+,"merchant_guild" :   {"full" : ["Interstellar Shipping and Mercantile Guild"]
                 ,"nicks" : ["Merchie"]
                 ,"nickp" : ["Merchies"]
                 ,"dnicks" : ["Pill Popper"]
