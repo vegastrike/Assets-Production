@@ -83,7 +83,7 @@ float GLOSS_phong_reflection( in float mat_gloss_sa, in float RdotL, in float li
   //Below, multiplying by 3.621 would be correct; but the brightness is ridiculous in practice...
   //Well, no; correct only if we assume a chalk sphere and a chrome sphere throw the same total
   //ammount of light into your eye...
-  return max( 0.0, pow( RdotL, shininess ) * shininess );
+  return max( 0.0, pow( RdotL, shininess ) * 0.27 * shininess );
 }
 
 
@@ -239,8 +239,8 @@ void main()
   
   //compute gloss-related stuff
 #if (SHININESS_FROM == AD_HOC_SHININESS)
-  float crapgloss = 0.3333*dot(mspec_col,mspec_col);
-  GLOSS_init( mtl_gloss, (0.1).xxx + 0.9*crapgloss*crapgloss );
+  float crapgloss = saturatef(0.5*dot(mspec_col,vec3(0.3,1.0,0.7)));
+  GLOSS_init( mtl_gloss, vec3(0.1 + 0.4 * pow(crapgloss,4.0)) );
 #endif
 #if (SHININESS_FROM == GLOSS_IN_SPEC_ALPHA)
   GLOSS_init( mtl_gloss, speccolor.a );
