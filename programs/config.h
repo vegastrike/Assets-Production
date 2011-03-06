@@ -10,9 +10,15 @@
 /**********************************/
 //  CUSTOMIZATION  (EDITABLE)
 /**********************************/
-#define SHININESS_FROM       GLOSS_IN_SPEC_ALPHA
+#ifndef SHININESS_FROM
+#define SHININESS_FROM       AD_HOC_SHININESS
+#endif
+#ifndef SHININESS_FROM_GLASS
 #define SHININESS_FROM_GLASS AD_HOC_SHININESS
+#endif
+#ifndef NORMALMAP_TYPE
 #define NORMALMAP_TYPE       CINEMUT_NM
+#endif
 #define NM_FREQ_SCALING      5.777
 #define NM_Z_SCALING         0.015625
 #define CORNER_TRIMMING_POW  177.77
