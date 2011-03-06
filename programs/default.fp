@@ -172,7 +172,13 @@ void main()
   alpha = diffcolor.a;
   UAO = glowcolor.a;
   //compute gloss-related stuff
+#if (SHININESS_FROM == AD_HOC_SHININESS)
+  float crapgloss = saturatef(0.5*dot(mspec_col,vec3(0.3,1.0,0.7)));
+  GLOSS_init( mtl_gloss, vec3(0.1 + 0.4 * crapgloss*sqr(crapgloss)) );
+#endif
+#if (SHININESS_FROM == GLOSS_IN_SPEC_ALPHA)
   GLOSS_init( mtl_gloss, speccolor.a );
+#endif
   //de-gamma diff and spec
   diff_col = (diffcolor*diffcolor).rgb;
 #if (DEGAMMA_SPECULAR != 0)
