@@ -1725,17 +1725,24 @@ class GUIVideoStream(GUIStaticImage):
     def draw(self):
         """ Creates the element """
         if (self.visible == 1) and (self.spritestate==0) and self.spriteIsValid():
-            pythoncallback = \
-                  "# <-- this disables precompiled python objects\n" \
-                 +"from GUI import GUIRootSingleton\n" \
-                 +"GUIRootSingleton.dispatchMessage("+str(self.id)+",'eos',None)\n" \
-                 +"GUIRootSingleton.redrawIfNeeded()\n"
+            pythoncallback = lambda id,event : (
+                  "# <-- this disables precompiled python objects\n" 
+                 +"from GUI import GUIRootSingleton\n" 
+                 +"GUIRootSingleton.dispatchMessage(%r,%r,None)\n" 
+                 +"GUIRootSingleton.redrawIfNeeded()\n" ) % (id,event)
             
             (x,y,w,h) = self.sprite[1].getSpriteRect()
-            Base.VideoStream(self.room.getIndex(),self.index,self.sprite[0],x,y,w,h)
-            Base.SetVideoCallback(self.room.getIndex(),self.index,pythoncallback)
-            self.spritestate=1
-            self.setAspectRatio(self.aspect)
+            self.spritestate = Base.VideoStream(self.room.getIndex(),self.index,self.sprite[0],x,y,w,h)
+            if self.spritestate is None:
+                self.spritestate = 1
+            if self.spritestate:
+                Base.SetVideoCallback(self.room.getIndex(),self.index,pythoncallback(self.id, "eos"))
+                self.setAspectRatio(self.aspect)
+                Base.RunScript(self.room.getIndex(),self.index+"PLAY",pythoncallback(self.id, "play"),0.0)
+            else:
+                # Movies are optional, so don't break - skip (immediate EOS) instead
+                # Enqueue it to happen as soon as the movie screen is shown 
+                Base.RunScript(self.room.getIndex(),self.index+"EOS",pythoncallback(self.id, "eos"),0.0)
     
     def undraw(self):
         """ Hides the element """
@@ -1761,7 +1768,7 @@ class GUIVideoStream(GUIStaticImage):
 
     def setAspectRatio(self, aspect):
         self.aspect = aspect
-        if self.spritestate==1:
+        if self.spritestate:
             (x,y,w,h) = self.sprite[1].getSpriteRect()
             screenAspect = GUIRootSingleton.getScreenAspectRatio()
             
@@ -1780,6 +1787,10 @@ class GUIVideoStream(GUIStaticImage):
         if not GUIStaticImage.onMessage(self, message, params):
             if message == 'eos':
                 self.onEOS(params)
+            elif message == 'play':
+                self.startPlaying()
+            elif message == 'stop':
+                self.stopPlaying()
             else:
                 return False
             return True
