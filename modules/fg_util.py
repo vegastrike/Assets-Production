@@ -699,7 +699,8 @@ def filterLaunchedFGs(fglist):
     return rv
 
 def launchUnits(sys):
-    print "Launching units for "+sys
+    debug.info("Launching units for ", sys)
+    
     import faction_ships
     import launch_recycle
     import universe
@@ -744,22 +745,23 @@ def launchUnits(sys):
             X=incr_by_abs(vsrandom.uniform(-1.0,1.0),1)*farlen
             Y=incr_by_abs(vsrandom.uniform(-1.0,1.0),1)*farlen
             Z=incr_by_abs(vsrandom.uniform(-1.0,1.0),1)*farlen
+            XYZ = (X,Y,Z)
             typenumbers=ShipsInFG(flightgroup,faction)
-            debug.debug("Really Far Apart around "+"  "+str(X)+"  "+str(Y)+"  "+str(Z)+" and 10000")
-            debug.debug(" launching "+str(typenumbers) +" for "+faction+" at "+str((X,Y,Z)))
-            launch_recycle.launch_types_around(flightgroup,faction,typenumbers,'default',1,(X,Y,Z),0,'','',1,10000)
+            debug.debug("Really Far Apart around   %s and 10000",XYZ)
+            debug.debug(" launching %s for %s at %s", typenumbers, faction, XYZ)
+            launch_recycle.launch_types_around(flightgroup,faction,typenumbers,'default',1,XYZ,0,'','',1,10000)
       else:
          for flightgroup in fglist:
             #jp = sig.isJumppoint()
             #if sig.isPlanet() or not isForeign:
             sig = sig_units[vsrandom.randrange(0,len(sig_units))]
             typenumbers=ShipsInFG(flightgroup,faction)
-            debug.debug(" XXlaunching "+str(typenumbers) +" for "+faction)
+            debug.debug(" launching %s for %s", typenumbers, faction)
 
             launch_recycle.launch_types_around(flightgroup,faction,typenumbers,'default',sig.rSize()*vsrandom.randrange(10,100),sig,0,'','',1,10000)
-             
-             
-             
+
+
+
 def DefaultNumShips():
     import vsrandom
     diff=VS.GetDifficulty()
@@ -780,7 +782,7 @@ def GetShipsInFG(fgname,faction):
     try:
         count=int(ships[0])
     except:
-        debug.error('bad flightgroup record '+ships)
+        debug.error('bad flightgroup record %s', ships)
     launchnum = DefaultNumShips()
     if (launchnum>count):
         launchnum=count
@@ -805,25 +807,29 @@ def GetShipsInFG(fgname,faction):
 def LaunchLandShip(fgname,faction,typ,numlaunched=1):
     key = MakeFGKey (fgname,faction)
     ships=ReadStringList (ccp,key)
-    debug.debug('LaunchLandShip: '+str((fgname, faction, typ, numlaunched)))
+    debug.debug('LaunchLandShip: fg:%s fac:%s typ:%s, num:%s', fgname, faction, typ, numlaunched)
     for num in range (ShipListOffset(),len(ships),PerShipDataSize()):
         if (typ == ships[num]):
             try:
-                debug.debug("attempting launch for ship"+str(typ)+', begin '+
-                            str(ships[num+1])+', act '+str(ships[num+2]))
                 ntobegin=int(ships[num+1])
                 nactive=int(ships[num+2])
+                
+                debug.debug("attempting launch for ship %s, begin %s, act %s)",
+                    typ, ntobegin, nactive)
+                
                 nactive-=numlaunched
-		# Happens regularly -Patrick
-		# In the first system, nactive seems to always be 0 for all ships.
-		# In other systems, this isn't always true.
-		# This doesn't really seem to matter, though.
+                # Happens regularly -Patrick
+                # In the first system, nactive seems to always be 0 for all ships.
+                # In other systems, this isn't always true.
+                # This doesn't really seem to matter, though.
+                # Klauss: turned debug.error into debug.debug if it happens so often
+                #   to clean up non-debug logs
                 if (nactive<0):
                     nactive=0
-                    debug.error('error more ships launched than in FG '+fgname)
+                    debug.debug('error more ships launched than in FG %s', fgname)
                 if (nactive>ntobegin):
                     nactive=ntobegin
-                    debug.error('error ships '+typ+'landed that never launched')
+                    debug.debug('error ships %s landed that never launched', typ)
                 Director.putSaveString(ccp,key,num+2,str(nactive))
             except:
                 debug.error('error in FG data (str->int)')
