@@ -17,10 +17,9 @@ def DoStartNewGame(self,params):
 
 def StartNewGame(self,params):
     Base.SetCurRoom(introroom.getIndex())
-    Base.SetDJEnabled(0)
 
 #Comment the following line if using intro movies
-StartNewGame = DoStartNewGame
+#StartNewGame = DoStartNewGame
 
 def QuitGame(self,params):
 	Base.ExitGame()
@@ -164,8 +163,8 @@ else:
 
 # Create rooms (intro, menu)
 #Uncomment the following lines to use intro movies
-#room_preintro = Base.Room ('XXXPreIntro')
-#room_intro = Base.Room ('XXXIntro')
+room_preintro = Base.Room ('XXXPreIntro')
+room_intro = Base.Room ('XXXIntro')
 room_menu = Base.Room ('XXXMain_Menu')
 
 # Set up menu room
@@ -173,31 +172,35 @@ guiroom  = GUI.GUIRoom(room_menu)
 
 # Set up preintro room
 class PreIntroRoom(GUI.GUIMovieRoom):
+    def startPlaying(self):
+        Base.SetDJEnabled(0)
+        GUI.GUIMovieRoom.startPlaying(self)
     def onSkip(self, button, params):
         GUI.GUIMovieRoom.onSkip(self, button, params)
         Base.SetDJEnabled(1)
 
 #Uncomment the following lines to use intro movies
-#preintroroom = PreIntroRoom(room_preintro, 
-#    ( 'preintro.ogv',
-#      GUI.GUIRect(0, 0, 1, 1, "normalized")), 
-#    guiroom)
-#preintroroom.setAspectRatio(16.0/9.0)
-#Base.SetDJEnabled(0)
+preintroroom = PreIntroRoom(room_preintro, 
+    ( 'preintro.ogv',
+      GUI.GUIRect(0, 0, 1, 1, "normalized")), 
+    guiroom)
+preintroroom.setAspectRatio(16.0/9.0)
 
 # Set up intro room
 class IntroRoom(PreIntroRoom):
+    def startPlaying(self):
+        Base.SetDJEnabled(0)
+        GUI.GUIMovieRoom.startPlaying(self)
     def onSkip(self, button, params):
         PreIntroRoom.onSkip(self, button, params)
         DoStartNewGame(self, params)
 
 #Uncomment the following lines to use intro movies
-#introroom = IntroRoom(room_intro, 
-#    ( 'intro.ogv',
-#      GUI.GUIRect(0, 0, 1, 1, "normalized")), 
-#    guiroom)
-#introroom.setAspectRatio(16.0/9.0)
-#Base.SetDJEnabled(0)
+introroom = IntroRoom(room_intro, 
+    ( 'intro.ogv',
+      GUI.GUIRect(0, 0, 1, 1, "normalized")), 
+    guiroom)
+introroom.setAspectRatio(16.0/9.0)
 
 
 
