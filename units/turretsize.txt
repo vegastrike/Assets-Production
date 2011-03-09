@@ -48,7 +48,7 @@ turretmainheavy,capship
 turretpd,capshippd
 turretpdgun,capshippd
 turretpdlong,capship
-turretpdlonggun,capshop
+turretpdlonggun,capship
 turretpunisher,capship
 turretpunishergun,capship
 turretsmall,small

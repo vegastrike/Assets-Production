@@ -29,7 +29,7 @@
 		<edge index="4"/>
 		<edge index="5"/>
 	</node>
-	<node text="I like to look on the bright side - ould always be worse, you could be Dgn." relationship=".0625"><!-- node 5 (random good chatter)-->
+	<node text="I like to look on the bright side - could always be worse, you could be Dgn." relationship=".0625"><!-- node 5 (random good chatter)-->
 		<edge index="4"/>
 		<edge index="6"/>
 	</node>

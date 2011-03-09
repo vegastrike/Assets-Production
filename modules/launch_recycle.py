@@ -12,7 +12,7 @@ def NextPos (un, pos, FarApart=1):
     x = pos[whichcoord]
     pos = list(pos)
     x=x+3.0*rad*FarApart
-    #print "next coord is "+str(3.0*rad*FarApart)+" awa"
+    debug.debug("next coord is "+str(3.0*rad*FarApart)+" awa")
     pos[whichcoord]=x
     return tuple(pos)
   
@@ -108,7 +108,7 @@ def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_
     found=0
     for tn in typenumbers:
         num = tn[1]
-        print "Python launched "+str(faction)+" "+str(tn[0])+" FG "+str(fg)+" with "+str(num)+" ships"
+        debug.debug("Python launched "+str(faction)+" "+str(tn[0])+" FG "+str(fg)+" with "+str(num)+" ships")
         if num>nr_ships:
             num=nr_ships
         for i in range(num):

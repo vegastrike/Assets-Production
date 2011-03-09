@@ -954,8 +954,8 @@ class Unit:
    print "GetOrientation" 
    return ((1,0,0),(0,1,0),(0,0,1))
  #is the beam inside this ship
-  def queryBSP(self,start,end): 
-   print "queryBSP" 
+  def rbCollide(self,start,end): 
+   print "rbCollide" 
    return (un,(0,0,1),0)
  #how far off is this unit to another unit with guns that have speed and range) (returns a tuple
  #with a cosine and a range normalized between 0 and 1)

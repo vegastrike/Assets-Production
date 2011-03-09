@@ -41,4 +41,6 @@ mysql_dbconfig = {
 
 dbconfig = file_dbconfig
 
+password_hash_methode = 'md5' #password can use sha or md5 hash metode
+
 http_port = 8080 # Port number for httpserver.py

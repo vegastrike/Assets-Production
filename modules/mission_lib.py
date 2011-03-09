@@ -10,6 +10,7 @@ import universe
 import faction_ships
 import VS
 import PickleTools
+import adventure
 
 players=[]
 

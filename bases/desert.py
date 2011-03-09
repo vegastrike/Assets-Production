@@ -17,7 +17,7 @@ room = Base.Room ('Main_Tent')
 room1 = room
 Base.Texture (room, 'background', 'bases/desert/desert_concourse'+time_of_day+'.spr', 0, 0)
 import bar
-room2 = bar.MakeMiningBar(room1,'bases/desert/desert_bar'+time_of_day,'bases/bartender_default.py')
+room2 = bar.MakeMiningBar(room1,'Main_Tent','bases/desert/desert_bar'+time_of_day,'bases/bartender_default.py')
 
 room = Base.Room ('Weapon_Room')
 room3 = room
@@ -48,7 +48,6 @@ Base.Comp (room1, 'my_comp_id', -0.966797, -0.00260417, 0.5, 0.481771, 'Mission_
 Base.Link (room1, 'my_link_id', -0.46875, -0.164062, 0.142578, 0.351562, 'Weapon_Room', room3)
 Base.Link (room1, 'my_link_id', 0.150391, -0.0416667, 0.232422, 0.273438, 'Bar', room2)
 Base.Link (room1, 'my_link_id', -0.279297, -0.104167, 0.349609, 0.286458, 'Trade_Center', room4)
-Base.Link (room2, 'my_link_id', -0.998047, -0.994792, 1.99023, 0.106771, 'Return_To_Main_Tent', room1)
 Base.Comp (room3, 'my_comp_id', 0.283203, -0.528646, 0.390625, 0.596354, 'Upgrade_Starship', 'Upgrade Info ')
 Base.Comp (room3, 'my_comp_id', -0.962891, -0.838542, 1.09766, 0.945312, 'Ship_Dealer', 'ShipDealer Info ')
 Base.Link (room3, 'my_link_id', -0.998047, -0.997396, 1.99414, 0.174479, 'Main_Tent', room1)

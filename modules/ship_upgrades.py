@@ -1,5 +1,6 @@
 import vsrandom
 import VS
+import debug
 
 #
 # IMPORTANT NOTE: Right now, there are no engines in the upgrades list.
@@ -41,17 +42,17 @@ shieldMaxLevel = { 2:14 , 4:14 } # key is number of faces
 
 def shieldBuildName(faces,level):
     facestring = { 2:"dual",4:"quad" }
-    maxlevel   = shieldMaxLevel[faces]
+    maxlevel   = shieldMaxLevel.get(faces,14)
     if (level > maxlevel):
         level = maxlevel
-    return "%sshield%02d" % (facestring[faces],level+1)
+    return "%sshield%02d" % (facestring.get(faces,""),level+1)
 
 def shieldBuildCategory(faces,level):
     facestring = { 
         2:"upgrades/Shield_Systems/Standard_Dual_Shields",
         4:"upgrades/Shield_Systems/Standard_Quad_Shields" 
         }
-    return facestring[faces]
+    return facestring.get(faces, "upgrades/Shield_Systems")
 
 # Engine enhancements (afterburners):
 afterburnerMaxLevel = 5
@@ -64,12 +65,11 @@ def afterburnerBuildName(level):
 def afterburnerBuildCategory(level):
     return "upgrades/Overdrive"    
 
-
 # Sensors category construction:
 #    Similar to weapons category construction
 upgrades_sensors_category             = "upgrades/Sensors"
 upgrades_sensors_prefixes             = [""]
-upgrades_sensors_postfixes            = ["Basic","Intermediate","Advanced"]
+upgrades_sensors_postfixes            = ["Basic","Intermediate","Advanced","Highborn","Rlaan"]
 
 # Reactors
 reactorMaxLevel = 14
@@ -122,8 +122,6 @@ upgrades_repair_category_sec="upgrades/Repair_Systems"
 
 
 
-
-
 ###########################################################
 #                                                         #
 #                      IMPLEMENTATION                     #
@@ -132,8 +130,6 @@ upgrades_repair_category_sec="upgrades/Repair_Systems"
 #      implementation changes. In the following section   #
 #                                                         #
 ###########################################################
-
-
 
 def GetDiffInt (diff):
     ch=0
@@ -171,10 +167,10 @@ def getItem (cat,parentcat=None):
     list=VS.getRandCargo(1,cat)#try to get a cargo from said category
     if (list.GetQuantity()<=0):#if no such cargo exists in this cateogry
         if (parentcat!=None):
-            print "UpgradeError finding %s using %s instead" % (cat,parentcat)
+            print "Python Upgrade Error: finding %s using %s instead" % (cat,parentcat)
             list=VS.getRandCargo(1,parentcat)#get it from the parent category
         if (list.GetQuantity()<=0):#otherwise get cargo from upgrades category
-            print "UpgradeError: category %s -- getting random instead" % (cat)
+            print "Python UpgradeError: category %s -- getting random instead" % (cat)
             list=VS.getRandCargo(1,"upgrades")#this always succeeds
     return list
 
@@ -183,9 +179,9 @@ def BuildDiffCat (diff,basecat,prefixes,postfixes,use_all=1,dont_use_all=0):#get
 
 def GetRandomWeapon (diff):#gets random beam or mounted gun from master part list
     cat=BuildDiffCat(diff,upgrades_weapons_category,upgrades_weapons_prefixes,upgrades_weapons_postfixes,1,0)
-    #print "Getting weapon from %s... " % cat
+    debug.debug("Getting weapon from %s... " % cat)
     item=getItem(cat,upgrades_weapons_category)
-    #print "Got %s\n" % item
+    debug.debug("Got %s\n" % item)
     return item
 
 def getRandIncDec (type):
@@ -208,9 +204,9 @@ def GetRandomAfterburner (diff):#get random afterburner from master part list (r
 
 def getRandomRadar (diff):
     cat=BuildDiffCat(diff,upgrades_sensors_category,upgrades_sensors_prefixes,upgrades_sensors_postfixes,1,0)
-    #print "Getting sensors from %s... " % cat
+    debug.debug("Getting sensors from %s... " % cat)
     item=getItem(cat,upgrades_sensors_category)
-    #print "Got %s\n" % item
+    debug.debug("Got %s\n" % item)
     return item
 
 def UpgradeRadar (un,diff):
@@ -235,21 +231,21 @@ def UpgradeEngine (un, diff):
     if (type!=0):
         temp=un.upgrade (cat,0,0,1,0)
         temp=un.upgrade (dog,0,0,1,0)
-        print "Upgrading Engine %s percent %f" % (cat,temp)
+        debug.debug("Upgrading Engine %s percent %f" % (cat,temp))
         if (temp>0.0):
             cat = GetRandomShield (2,type)
             temp=un.upgrade (cat,0,0,1,0)
-            print "Upgrading Shield %s percent %f" % (cat,temp)
+            debug.debug("Upgrading Shield %s percent %f" % (cat,temp))
             cat = GetRandomShield (4,type)
             temp=un.upgrade (cat,0,0,1,0)
-            print "Upgrading Shield4 %s percent %f" % (cat,temp)
+            debug.debug("Upgrading Shield4 %s percent %f" % (cat,temp))
             return True
     cat=GetShieldLevelZero(2)
     temp = un.upgrade(cat,0,0,1,0)
-    print "Upgrading Shield2 level 0... percent="+str(temp)
+    debug.debug("Upgrading Shield2 level 0... percent="+str(temp))
     cat=GetShieldLevelZero(4)
     temp = un.upgrade(cat,0,0,1,0)
-    print "Upgrading Shield4 level 0... percent="+str(temp)
+    debug.debug("Upgrading Shield4 level 0... percent="+str(temp))
     return False
 
 def GetRandomHull ():
@@ -295,7 +291,7 @@ def upgradeHelper (un, mycargo, curmount,creds, force, cycle):
         newcreds=mycargo.GetPrice() #and the price is the GetPrice() function
         newcreds = newcreds*un.upgrade(str,curmount,curmount,force,cycle)
         creds = creds -newcreds #we added some newcreds and subtracted them from credit ammt
-    return creds#return new creds
+    return creds #return new creds
 
 def upgradeUnit (un, diff):
     creds=0.0
@@ -303,14 +299,14 @@ def upgradeUnit (un, diff):
     mycargo=VS.Cargo("","",0,0,0,0)
     str=""
     basicUnit(un,diff)
-    mycargo = GetRandomHull()#ok now we get some hull upgrades
+    mycargo = GetRandomHull() #ok now we get some hull upgrades
     creds =upgradeHelper (un,mycargo,0,creds,1,0)
-    mycargo = GetRandomArmor(diff)#and some random armor
+    mycargo = GetRandomArmor(diff) #and some random armor
     creds =upgradeHelper (un,mycargo,0,creds,1,0)
     inc=0
     rndnum=vsrandom.random()*2
     if (rndnum<diff):
-        mycargo = GetRandomRepairSys()#here there is a small chance that you will get a repair system.
+        mycargo = GetRandomRepairSys() #here there is a small chance that you will get a repair system.
         creds =upgradeHelper (un,mycargo,0,creds,1,0)
     turretz=un.getSubUnits()
     turretcount=0

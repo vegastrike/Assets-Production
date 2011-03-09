@@ -1,1 +1,1 @@
-planets/desert.png planets/frigid_mud.png planets/toxic_disaster.png planets/tundra1.png planets/tundra2.png planets/tundra.png planets/Lava1.png planets/Lava2.png planets/Lava.png
+planets/desert.texture planets/frigid_mud.texture planets/toxic_disaster.texture planets/tundra1.texture planets/tundra2.texture planets/tundra.texture planets/Lava1.texture planets/Lava2.texture planets/Lava.texture

@@ -1,60 +1,76 @@
+# -*- coding: utf-8 -*-
 from types import *
 
+def _bytehex2(num, ord=ord, chr=chr, ord_0=ord('0'), ord_a=ord('a')):
+	if num<10:
+		return chr(num+ord_0)
+	else:
+		return chr(num+ord_a-10)
+
+def _bytehex(num, int=int, divmod=divmod, bytehex2=_bytehex2):
+	q,r=divmod(int(num),16)		
+	return bytehex2(q%16)+bytehex2(r)		
+
+bytehex = map(_bytehex, xrange(256))
+
 # '\\' is always forbidden
-def addSlashes(m,forbidden="#!|\\?\"\'\r\n",extended_forbidden=1):
-	def bytehex(num):
-		def bytehex2(num):
-			num = int(num)%256
-			if num<10:
-				return chr(num+ord('0'))
-			else:
-				return chr(num+ord('a')-10)
-		return bytehex2(num/16)+bytehex2(num%16)		
-
-	rv = ""
-	for i in range(len(m)):
-		quote =    (extended_forbidden and ord(m[i])>=128) \
-		        or (m[i] in forbidden) \
-		        or (m[i] == '\\')
+def addSlashes(m,forbidden="#!|\\?\"\'\r\n",extended_forbidden=1, bytehex=bytehex):
+	rv = []
+	rva = rv.append
+	for i, m_i in enumerate(m):
+		quote =    (extended_forbidden and ord(m_i)>=128) \
+		        or (m_i == '\\') \
+		        or (m_i in forbidden)
 		if quote:
-			rv += "\\"+bytehex(ord(m[i]))
-		else:
-			rv += m[i]
-	return rv
+			if not rv and i: rva( m[:i] )
+			rva( "\\" ) 
+			rva( bytehex[ord(m_i)%256] )
+		elif rv:
+			rva( m_i )
+	return rv and "".join(rv) or m
 
-def stripSlashes(m):
-	def hexbyte(s):
-		def hexbyte2(c):
-			if ( ord(c)>=ord('0') and ord(c)<=ord('9') ):
-				return ord(c) - ord('0')
-			else:
-				return 10 + ord(c) - ord('a')
-		return ( hexbyte2(s[0])*16+hexbyte2(s[1]) ) % 256
-	rv = "";
+def _hexbyte2(c, ord=ord, ord_0=ord('0'), ord_9=ord('9'), ord_a=ord('a')):
+	ord_c = ord(c)
+	if ( ord_c>=ord_0 and ord_c<=ord_9 ):
+		return ord_c - ord_0
+	else:
+		return 10 + ord_c - ord_a
+
+def _hexbyte(s, hexbyte2=_hexbyte2):
+	return ( hexbyte2(s[0])*16+hexbyte2(s[1]) ) % 256
+
+def stripSlashes(m, hexbyte=_hexbyte, chr=chr):
+	if '\\' not in m:
+		return m
+	rv = []
+	rva = rv.append
 	i = 0
 	l = len(m)
 	while (i<l):
 		if (m[i]=='\\') and (i+2<l):
-			rv += chr( hexbyte(m[i+1:i+3]) )
+			rva( chr( hexbyte(m[i+1:i+3]) ) )
 			i += 3
 		else:
-			rv += m[i]
+			rva( m[i] )
 			i += 1
-	return rv
+	return "".join(rv)
 
-def encodeMap(m):
+def encodeMap(m, str=str):
 	if type(m) is DictionaryType:
-		rv = ""
-		for item in m.iteritems():
-			if len(rv)>0:
-				rv += "|"
+		rv = []
+		rva = rv.append
+		_addSlashes = addSlashes
+		_encodeMap = encodeMap
+		for k,v in m.iteritems():
 			#recursive, in case there are nested maps
-			rv += addSlashes(str(item[0])) + "#" + encodeMap(item[1])
+			rva( _addSlashes(str(k)) + "#" + _encodeMap(v) )
+		rv = "|".join(rv)
+		del rva
 	else:
 		rv = addSlashes(str(m))
 	return addSlashes(rv)
 
-def decodeMap(m):
+def decodeMap(m, len=len):
 	m = stripSlashes(m)
 	ilist = m.split('|')
 	if len(ilist)==1:
@@ -67,8 +83,10 @@ def decodeMap(m):
 			return ''
 	else:
 		rv = {}
+		_stripSlashes = stripSlashes
+		_decodeMap = decodeMap
 		for ipair in ilist:
 			ipair = ipair.split('#')
 			if len(ipair)>=2:
-				rv[stripSlashes(ipair[0])] = decodeMap(ipair[1])
+				rv[_stripSlashes(ipair[0])] = decodeMap(ipair[1])
 		return rv

@@ -1,5 +1,3 @@
-rings/ring.pngwrapx32wrapy1
-rings/ring.pngwrapx36wrapy2
 rings/planet_ring.texturewrapx1wrapy1
 rings/planet_ring1.texturewrapx1wrapy1
 rings/planet_ring2.texturewrapx1wrapy1

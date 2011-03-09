@@ -4,7 +4,7 @@ import vsrandom
 
 bartenders=['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19']
 		
-def MakeBar(concourse,  bartext, BaseTexture, createCampaignFixers=True,  defaultbtr=None, forcedefbtr=False, bartenderprefix="", bartenderloc=(.89725,.0813), patrons=[],fixerlocations=[(-0.80025, -1.0088, 0.776, 1.2416),(-0.0725, -0.4058125, 0.1758125, 0.5385)]):
+def MakeBar(concourse, concoursetext, bartext, BaseTexture, createCampaignFixers=True,  defaultbtr=None, forcedefbtr=False, bartenderprefix="", bartenderloc=(.89725,.0813), patrons=[],fixerlocations=[(-0.80025, -1.0088, 0.776, 1.2416),(-0.0725, -0.4058125, 0.1758125, 0.5385)]):
 	if vsrandom.random()<.6:
 		forcedefbtr=True # remove me if you want random bartenders at random bars
 	import bartender
@@ -24,7 +24,7 @@ def MakeBar(concourse,  bartext, BaseTexture, createCampaignFixers=True,  defaul
 		Base.Python (room0, 'newscomp', -1, .7, .3, .3, 'Public Terminal', '#\nimport custom\ncustom.run("computer",[],None)',True)
 	else:
 		Base.Comp (room0, 'newscomp', -1, .7, .3, .3, 'Public Terminal', 'News')
-	Base.Link (room0, 'my_link_id', -0.998047, -0.997396, 1.99414, 0.119792, 'Main_Concourse',concourse)
+	Base.Link (room0, 'my_link_id', -0.998047, -0.997396, 1.99414, 0.119792, concoursetext ,concourse)
 	Base.Python (room0, 'talk', bartenderloc[0]-.16, bartenderloc[1]-.15,.3,.3,'Talk to the Bartender',bartext,0)
 	import fixers
 	func=fixers.CreateFixers
@@ -34,9 +34,10 @@ def MakeBar(concourse,  bartext, BaseTexture, createCampaignFixers=True,  defaul
 	return room0;
 
 
-def MakeMiningBar(concourse,background,bartext):
+def MakeMiningBar(concourse,concoursetext,background,bartext):
 	import bar
 	return bar.MakeBar(concourse,
+		concoursetext,
 		bartext,
 		background,
 		True,
@@ -51,9 +52,10 @@ def MakeMiningBar(concourse,background,bartext):
 		#(-0.0325, -0.3558125, 0.1758125, 0.5385),
 		])
 		
-def MakeAgriculturalBar(concourse,background,bartext):
+def MakeAgriculturalBar(concourse,concoursetext,background,bartext):
 	import bar
 	room= bar.MakeBar(concourse,
+		concoursetext,
 		bartext,
 		background,
 		True,
@@ -66,9 +68,10 @@ def MakeAgriculturalBar(concourse,background,bartext):
 	import Base
 	Base.Texture(room,'counter',background+'_counter.spr',-.665,-.137)
 	return room
-def MakeOceanBar(concourse,background,bartext):
+def MakeOceanBar(concourse,concoursetext,background,bartext):
 	import bar
 	return bar.MakeBar(concourse,
+		concoursetext,
 		bartext,
 		background,
 		True,

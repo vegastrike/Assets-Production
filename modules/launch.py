@@ -47,13 +47,13 @@ def launch_wave_around_area(fgname,faction,type,ai,nr_ships,r1,r2,pos,logo='',us
     return launch_waves_around_area (fgname,faction,type,ai,nr_ships,1,r1,r2,pos,logo,useani,skipdj)
   
 def launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves,logo='',useani=1,skipdj=0):
-    station_unit=unit.getUnitByFgID(station_name)
+    station_unit = unit.getUnitByFgID(station_name)
     if(station_unit.isNull()):
         sys.stderr.write("launch.py:launch_around_station did not find unit %s\n" % (station_name))
         return VS.Unit()
-    station_pos=station_unit.Position()
-    rsize=station_unit.rSize()
-    launched =launch_waves_around_area(fgname,faction,type,ai,nr_ships,nr_waves,rsize,rsize*2.0,station_pos,logo,useani,skipdj)
+    station_pos = station_unit.Position()
+    rsize = station_unit.rSize()
+    launched = launch_waves_around_area(fgname,faction,type,ai,nr_ships,nr_waves,rsize,rsize*2.0,station_pos,logo,useani,skipdj)
     return launched
   
 launch_around_unit=launch_around_station

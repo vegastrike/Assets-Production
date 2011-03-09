@@ -2,9 +2,10 @@ import string
 
 # Independent of the date system used, this will scale how fast time progresses
 # in VS.
-#  1 will mean 1000 (real) seconds == 1 (VS) year
-#  2 will mean 500 (real) seconds == 1 (VS) year ... ie time is twice as fast
-SCALEFACTOR=1
+#  0.1 will mean 10000 (real) seconds (~3h) = 1 (VS) year
+#  1 will mean 1000 (real) seconds (~17min) = 1 (VS) year
+#  2 will mean  500 (real) seconds (~ 8min) = 1 (VS) year ... ie time is twice as fast
+SCALEFACTOR = 0.02 # ~14h gameplay = 1 VS year
 
 def formatStarDate(fac,stdt):
     """Formats the stardate for news"""
@@ -129,9 +130,7 @@ def facDateSystems():
     a list of the names for the time divisions, and the last is the number of
     cycles (years) per standard kilostardate."""
     return {
-
-    "standard" :
-    ([("January",31),("February",28),("March",31),("April",30),("May",31),("June",30),("July",31),("August",31),("September",30),("October",31),("November",30),("December",31)],(24,60,60),["year","month","week","day","hour","minute","second"],1)
-
+        "standard" :
+        ([("January",31),("February",28),("March",31),("April",30),("May",31),("June",30),("July",31),("August",31),("September",30),("October",31),("November",30),("December",31)],(24,60,60),["year","month","week","day","hour","minute","second"],1)
     }
 

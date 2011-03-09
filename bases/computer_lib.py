@@ -188,10 +188,10 @@ class QuineComputer:
 	
 	
 		# Exit button, returns us to concourse
-		rect = GUI.GUIRect(227, 165, 35, 14)
+		rect = GUI.GUIRect(227, 165, 35, 14, "pixel", (320,200))
 		x, y, w, h = rect.getHotRect()
 #		Base.Link (room_start, 'exit', x, y, w, h, 'Exit', room_exit_to)
-		Base.LinkPython (room_start, 'exit', "#\nimport GUI\nGUI.GUIRootSingleton.getRoomById(%s).owner.reset()\n" %(guiroom.getIndex()), x, y, w, h, 'XXXExit', room_exit_to)
+		Base.LinkPython (room_start, 'exit', "#\nimport GUI\nGUI.GUIRootSingleton.getRoomById(%r).owner.reset()\n" %(guiroom.getIndex()), x, y, w, h, 'XXXExit', room_exit_to)
 
 	def reset(self):
 		trace(TRACE_DEBUG,"::: QuineComputer.reset()")

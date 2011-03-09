@@ -14,7 +14,7 @@ def MakeUnit (bartendername='bases/bartender_default.py',time_of_day=''):
 	room1 = room
 	Base.Texture (room, 'background', 'bases/civilian/civilian_concourse'+time_of_day+'.spr', 0, 0)
 	import bar
-	room=bar.MakeMiningBar(room1,'bases/mining/mining_bar'+time_of_day,bartendername)
+	room=bar.MakeMiningBar(room1,'Main_Concourse','bases/mining/mining_bar'+time_of_day,bartendername)
 	room2 = room
 
 	room = Base.Room ('Upgrade_Facilities/Ship_Dealer')
@@ -35,8 +35,6 @@ def MakeUnit (bartendername='bases/bartender_default.py',time_of_day=''):
 	Base.Link (room1, 'my_link_id', 0.417969, -0.460938, 0.158203, 0.263021, 'Bar', room2)
 	Base.Link (room1, 'my_link_id', -0.806641, -0.473958, 0.201172, 0.289062, 'Upgrade_Facilities/Ship_Dealer', room3)
 	Base.Link (room1, 'my_link_id', -0.337891, -0.539062, 0.357422, 1.51562, 'Trade_Room', room6)
-	Base.Link (room2, 'my_link_id', -1, -0.994792, 1.99414, 0.0911459, 'Main_Concourse', room2)
-	Base.Link (room2, 'my_link_id', -0.998047, -0.997396, 1.99414, 0.138021, 'Main_Concourse', room1)
 	Base.Comp (room3, 'my_comp_id', -0.236328, -0.513021, 0.5, 0.53125, 'Upgrade_Computer', 'Upgrade ShipDealer Info ')
 	Base.Link (room3, 'my_link_id', -1, -0.997396, 1.99805, 0.117188, 'Main_Concourse', room1)
 	Base.Link (room6, 'my_link_id', -1, -0.994792, 1.99609, 0.101562, 'Main_Concourse', room1)
