@@ -11,6 +11,7 @@ import faction_ships
 import VS
 import PickleTools
 import adventure
+import debug
 
 players=[]
 
@@ -80,10 +81,10 @@ custom.add('mission_lib', mission_lib_custom)
 class missionhook:
     def __init__(self,amentry):
         self.amentry_id = AddActiveMissionEntry(amentry)
-        print "New Mission entry: %s (%s)" % (self.amentry_id,amentry.get('MISSION_SHORTDESC',''))
+        debug.debug("New Mission entry: %s (%s)" % (self.amentry_id,amentry.get('MISSION_SHORTDESC','')))
     def __del__(self):
         RemoveActiveMissionEntry(self.amentry_id)
-        print "Mission entry %s destroyed." % self.amentry_id
+        debug.debug("Mission entry %s destroyed." % self.amentry_id)
 
 def SetMissionHookArgs(args):
     players[getMissionPlayer()].hookargs = args
@@ -97,15 +98,15 @@ def AddMissionHooks(director):
                 doMissionHooks=False
     except:
         import sys
-        print sys.exc_info()[0]
-        print sys.exc_info()[1]
-        print "CARGO MISSION ABORTING done"
+        debug.debug(sys.exc_info()[0])
+        debug.debug(sys.exc_info()[1])
+        debug.debug("CARGO MISSION ABORTING done")
     if doMissionHooks:
         director.mission_hooks___ = missionhook(hookargs)
     
 def SetLastMission(which):
     players[getMissionPlayer()].lastMission=str(which)
-    print 'set last mission to "'+str(which)+'"'
+    debug.debug('set last mission to "'+str(which)+'"')
 
 def LoadLastMission(which=None):
     plr = getMissionPlayer()
@@ -157,18 +158,18 @@ mission_lib.SetMissionHookArgs(%(amentry)r)
                     ('ACCEPT_MESSAGE',last_briefing[1].get(which,'')) 
                     ])
             except:
-                print "TRACING BACK"
+                debug.error("TRACING BACK")
                 import sys
-                print sys.exc_info()[0]
-                print sys.exc_info()[1]
-                print "BACKTRACE done"
+                debug.error(sys.exc_info()[0])
+                debug.error(sys.exc_info()[1])
+                debug.error("BACKTRACE done")
                 ret = False
             vars = dict(amentry=amentry,postscript=script)
             script = prescript % vars
-        print "Loading mission:\n%s" % script
-        VS.LoadMissionScript(script)
+        debug.debug("Loading mission:\n%s" % script)
+        VS.LoadNamedMissionScript(which, script)
     else:
-        print 'No last mission with name "'+str(which)+'"'
+        debug.debug('No last mission with name "'+str(which)+'"')
         ret = False
     RemoveLastMission(which)
     return ret
@@ -327,8 +328,8 @@ def MakeContraband(which):
     return ("bases/fixers/pirate.spr","Talk with the Pirate",which)
 
 def CreateRandomMission(whichnum):
-    """This function gets a random mission and saves the infomation in
-an array as the which element. Returns the sprite file and text"""
+    '''This function gets a random mission and saves the infomation in
+    an array as the which element. Returns the sprite file and text'''
     which=str(whichnum)
     missiontype = vsrandom.random();
     fac = VS.GetGalaxyFaction(VS.getSystemFile())
