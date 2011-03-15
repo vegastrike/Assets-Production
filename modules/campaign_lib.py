@@ -252,12 +252,12 @@ def textline(strs):
 
 #depends on Base
 def displayText(room,textlist,enqueue=False):
-    print "displayText()"
-    debug.warn("Displaying campaign text "+str(textlist))
+    debug.debug("displayText()")
+    debug.debug("Displaying campaign text "+str(textlist))
     if VS.isserver():
         return
     if room==-1:
-        debug.error("Room is -1!!!")
+        debug.debug("Room is -1!!!")
     room=Base.GetCurRoom()
     func=Base.MessageToRoom
     if enqueue:
@@ -416,7 +416,7 @@ class IncSaveVariable(Script):
         debug.debug("*** Incrementing \'%s \'"%self.name)
         incSaveValue(VS.getCurrentPlayer(),self.name)
         return True
-    
+
 class AddTechnology(Script):
     def __init__(self,technology,nextscript=None):
         Script.__init__(self,nextscript)
@@ -517,6 +517,7 @@ class ChangeSystemOwner(Script):
     def __call__(self,room,subnodes):
         Script.__call__(self,room,subnodes)
         VS.SetGalaxyFaction(self.system,self.faction);
+
 class ChangeShipOwners(Script):
     def __init__(self,oldfaction,faction,nextscript=None):
         Script.__init__(self,nextscript)
@@ -838,21 +839,21 @@ class Campaign:
             current_room = Base.GetCurRoom()
         if cmd=='goto':
             if VS.isserver():
-                print self.clickNextNode(-1, int(args[0]))
-                print self.getCurrentNode(-1) # calculates next node.
+                debug.debug(self.clickNextNode(-1, int(args[0])))
+                debug.debug(self.getCurrentNode(-1)) # calculates next node.
             else:
-                print self.clickNextNode(current_room, int(args[0]), True)
-                print self.getCurrentNode(current_room) # calculates next node.
+                debug.debug(self.clickNextNode(current_room, int(args[0]), True))
+                debug.debug(self.getCurrentNode(current_room)) # calculates next node.
                 
         if cmd=='setsavegame':
-            print "settingsavegame"
+            debug.debug("settingsavegame")
             if VS.networked():
                 self.readPositionFromSavegame(args)
-                print self.getCurrentNode(current_room)
+                debug.debug(self.getCurrentNode(current_room))
     
     #depends on Base... should remove dependencies?
     def setCurrentNode(self,room,newnodenum):
-        debug.warn('*** Going to branch number '+str(newnodenum))
+        debug.debug('*** Going to branch number '+str(newnodenum))
         plr = VS.getCurrentPlayer()
         if not self.checkPlayer(plr):
             return ["failure","player %d not initialized yet!"%plr]
@@ -920,7 +921,6 @@ class Campaign:
             else:
                 return curr.gotoChoice(room,choicenum)
     
-    
     def readPositionFromSavegame(self, savegamelist=None):
         plr=VS.getCurrentPlayer()
         self.InitPlayer(plr)
@@ -937,16 +937,16 @@ class Campaign:
             else:
                 newnodenum=int(Director.getSaveData(plr,self.name,i))
             if newnodenum>=0:
-                print 'curr: '+str(player.current)
-                print player.current.subnodes
+                debug.debug('curr: '+str(player.current))
+                debug.debug(player.current.subnodes)
                 if newnodenum>=len(player.current.subnodes):
-                    debug.debug('Error: save game index out of bounds: '+str(newnodenum))
+                    debug.error('Error: save game index out of bounds: '+str(newnodenum))
                     return
                 debug.debug(player.current)
                 player.current=player.current.subnodes[newnodenum]
             elif newnodenum==-2:
                 if not player.current.contingency:
-                    debug.debug('Error: save game moves to invalid contengency node!')
+                    debug.error('Error: save game moves to invalid contengency node!')
                     return
                 debug.debug(player.current)
                 player.current=player.current.contingency
@@ -1009,9 +1009,9 @@ class Campaign:
                 return player.current
             if not player.current.contingency:
                 debug.debug('*** no contingency!')
-                print player.current
-                print player.current.text
-                print '*** still no contingency'
+                debug.debug(player.current)
+                debug.debug(player.current.text)
+                debug.debug('*** still no contingency')
                 return None
             debug.debug('*** cur contingency!!')
             if VS.networked():
@@ -1535,25 +1535,25 @@ def clickChoice(room,choicenum):
 default_room = -1
 def handle_campaign_message(local, cmd, args, id):
     global queued_cmds, default_room
-    print "handle1"
+    debug.debug("handle1")
     plr = VS.getCurrentPlayer()
     if VS.isserver():
         import server
         if not server.getDocked(VS.getPlayer()):
             return ["failure", 'Not currently docked']
-    print "handle2"
+    debug.debug("handle2")
     clist = getCampaignList()
     campaign=None
     for c in clist:
-        print "Checking campaign "+str(c.name)
+        debug.debug("Checking campaign "+str(c.name))
         if c.name == args[0]:
             campaign = c
-    print "handle3"
+    debug.debug("handle3")
     if not campaign:
-        print "handle4"
+        debug.debug("handle4")
         return ["failure", 'Campaign '+str(args[0])+' does not exit'];
     else:
-        print "handle5"
+        debug.debug("handle5")
         queued_cmds.append((campaign,args[1],args[2:]))
         if VS.isserver():
             return handle_queued_cmds(-1)
