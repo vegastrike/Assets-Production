@@ -1,3 +1,5 @@
+""" This module provides different mission types. """
+
 import VS
 import PickleTools
 import Director
@@ -259,9 +261,9 @@ def generateCleansweepMission(path,numplanets,enemy):
         additional=",1"
         patrolorclean="Clean_Sweep"
         missiontype="cleansweep"
-        additionalinstructions+="  Eliminate all such forces encountered to receive payment."
+        additionalinstructions+=" Eliminate all such forces encountered to receive payment."
     if (capshipprob):
-        additionalinstructions+="  Capital ships possibly in the area."
+        additionalinstructions+=" Capital ships are possibly in the area."
 
     writemissionsavegame (addstr+"import %s\ntemp=%s.%s(0, %d, %d, %d, %s,'',%d,%d,%f,%f,'%s',%d%s)\ntemp=0\n"%(missiontype,missiontype,missiontype,numplanets, dist, creds, str(path),minships,maxships,fighterprob,capshipprob,enemy,forceattack,additional))
     writedescription("Authorities would like a detailed scan of the %s system. We require %d nav locations be visited on the scanning route. The pay for this mission is %d. Encounters with %s forces likely.%s"%(processSystem(path[-1]),numplanets,creds,enemy,additionalinstructions))
@@ -283,12 +285,12 @@ def generatePatrolMission (path, numplanets):
     isFixer=vsrandom.random()
     if isFixer<fixerpct:
         creds*=2
-        addstr+="#F#bases/fixers/confed.spr#Talk to the Confed Officer#Thank you.  Your help makes space a safer place.#\n"
+        addstr+="#F#bases/fixers/confed.spr#Talk to the Confed Officer#Thank you. Your help makes space a safer place.#\n"
     elif isFixer<guildpct:
         creds*=1.5
         addstr+="#G#Patrol#\n"
     writemissionsavegame (addstr+"import patrol\ntemp=patrol.patrol(0, %d, %d, %d, %s)\ntemp=0\n"%(numplanets, dist, creds, str(path)))
-    writedescription("Insystem authorities would like a detailed scan of the %s system. We require %d nav locations be visited on the scanning route.  The pay for this mission is %d."%(processSystem(path[-1]),numplanets,creds))
+    writedescription("Insystem authorities would like a detailed scan of the %s system. We require %d nav locations be visited on the scanning route. The pay for this mission is %d."%(processSystem(path[-1]),numplanets,creds))
     ispoint="s"
     if numplanets==1:
         ispoint=""
@@ -377,13 +379,13 @@ def pathWarning(path,isFixer):
     message = str()
     factions = list()
     if isFixer:
-        message+="\nPrecautions taken to ensure the success of this mission should be taken at your expense."
+        message+="\nPrecautions to ensure the success of this mission should be taken at your expense."
     else:
         for system in path:
             sysfac = VS.GetGalaxyFaction(system)
             if sysfac not in factions:
                 factions.append(sysfac)
-        message+="\n\nYou are responsible for the success of this mission.  Precautions taken to ensure this outcome will be taken at your expense.  With that in mind, I will advise you that you will be travalling through systems dominated by the "
+        message+="\n\nYou are responsible for the success of this mission. Precautions taken to ensure this outcome will be at your expense. With that in mind, I will advise you that you will be travelling through systems dominated by the "
         if len(factions) == 1:
             message+=dnewsman_.data.getFactionData(factions[0],'full')[0]+"."
         else:
@@ -415,7 +417,7 @@ def isHabitable (system):
 def generateCargoMission (path, numcargos,category, fac):
     #if (isNotWorthy(fac)):
     #    return  
-    launchcap=0#(vsrandom.random()>=.97)#currently no delivering to capships, maybe only from
+    launchcap=0 #(vsrandom.random()>=.97) #currently no delivering to capships, maybe only from
     if (not launchcap) and not isHabitable(path[-1]):
         return
     diff=vsrandom.randrange(0,adjustQuantityDifficulty(6))
@@ -446,7 +448,7 @@ def generateCargoMission (path, numcargos,category, fac):
         composedBrief = composedBrief.replace('$PY',str(int(creds)))
         writedescription(composedBrief)
     else:
-        writedescription(strStart+"%s cargo to the %s system. The mission is worth %d credits to us.  You will deliver it to a base owned by the %s.%s"%(formatCargoCategory(category), processSystem(path[-1]),creds,fac,pathWarning(path,isFixer<guildpct)))
+        writedescription(strStart+"%s cargo to the %s system. The mission is worth %d credits to us. You will deliver it to a base owned by the %s.%s"%(formatCargoCategory(category), processSystem(path[-1]),creds,fac,pathWarning(path,isFixer<guildpct)))
     writemissionname("Cargo/Deliver_%s_to_%s"%(changecat(category),processSystem(path[-1])),path,isFixerString(addstr))
 
     if len(path)==1:
@@ -487,7 +489,7 @@ def generateBountyMission (path,fg,fac):
     isFixer=vsrandom.random()
     if isFixer<fixerpct:
         finalprice*=2
-        addstr+="#F#bases/fixers/hunter.spr#Talk with the Bounty Hunter#We will pay you on mission completion.  And as far as anyone knows-- we never met."
+        addstr+="#F#bases/fixers/hunter.spr#Talk with the Bounty Hunter#We will pay you on mission completion. And as far as anyone knows - we never met."
         if (runaway):
             addstr += '#Also-- we have information that the target may be informed about your attack and may be ready to run. Be quick!'
         addstr+="#\n"
@@ -506,7 +508,7 @@ def generateBountyMission (path,fg,fac):
     if (cap):
         writemissionname ("Bounty/on_%s_Capital_Vessel_in_%s"%(fac,processSystem(path[-1])),path,isFixerString(addstr))
     else:
-        writemissionname ("Bounty/on_%s_starship_in_%s"%(fac,processSystem(path[-1])),path,isFixerString(addstr))
+        writemissionname ("Bounty/Bounty_on_%s_starship_in_%s"%(fac,processSystem(path[-1])),path,isFixerString(addstr))
     writemissionvars( { 'MISSION_TYPE' : mistype } )
 
 def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
@@ -529,7 +531,7 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
     isFixer=vsrandom.random()
     if isFixer<fixerpct:
         creds*=2
-        addstr+="#F#bases/fixers/confed.spr#Talk to the Confed Officer#Thank you. Your defense will help confed in the long run.  We appreciate the support of the bounty hunting community.#\n"
+        addstr+="#F#bases/fixers/confed.spr#Talk to the Confed Officer#Thank you. Your defense will help confed in the long run. We appreciate the support of the bounty hunting community.#\n"
     elif isFixer<guildpct:
         creds*=1.5
         addstr+="#G#Defend#\n"

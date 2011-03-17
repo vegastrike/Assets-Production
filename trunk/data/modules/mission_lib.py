@@ -1,3 +1,7 @@
+""" This moduleprovides functions for creating, storing and activating
+campaign, guild, and fixer missions.
+"""
+
 import Director
 import patrol
 import cargo_mission
@@ -109,6 +113,7 @@ def SetLastMission(which):
     debug.debug('set last mission to "'+str(which)+'"')
 
 def LoadLastMission(which=None):
+    """ Makes a mission an active mission. """
     plr = getMissionPlayer()
     if which is None:
         which=players[plr].lastMission
@@ -215,12 +220,14 @@ def CountMissions(first,prefix):
             nummissions = nummissions + 1
     return nummissions
 
-def BriefLastMission(which,first,textbox=None,template='#DESCRIPTION#'):
+def BriefLastMission(whichid,first,textbox=None,template='#DESCRIPTION#'):
+    """ Outputs the briefing from fixer missions on the base screen. """
     plr = getMissionPlayer()
     last_briefing = players[plr].last_briefing
     last_briefing_vars = players[plr].last_briefing_vars
-    
-    which=str(which)
+    missionlist = GetMissionList(activelist=False)
+    which = missionlist[whichid]['MISSION_SHORTDESC'].split("/")[1]
+
     if first<0 or first>=len(last_briefing):
         return
     if (which in last_briefing[first]):
@@ -228,17 +235,19 @@ def BriefLastMission(which,first,textbox=None,template='#DESCRIPTION#'):
         s_which = str(which).split('/')
         w_prefix = ''
         curmission = s_which[len(s_which)-1]
-        if str(int(curmission)) == curmission:
-            # allow non-numeric mission identifiers ( 'Disc_1', anyone? )
+        if curmission.isdigit():
             # But for numeric identifiers, convert base-0 to base-1 indices
             curmission = str(int(curmission)+1)
+        else:
+            # allow non-numeric mission identifiers ( 'Disc_1', anyone? )
+            currmission = str(whichid)
         for i in s_which[:len(s_which)-1]:
             w_prefix += str(i) + '/'
         nummissions = CountMissions(first,w_prefix)
 
         # replace variables in template
         template = template.replace('#MISSION_NUMBER#',str(curmission))
-        template = template.replace('#MISSION_ID#',which)
+        template = template.replace('#MISSION_ID#',str(whichid))
         template = template.replace('#GUILD_NAME#',s_which[0])
         template = template.replace('#NUM_MISSIONS#',str(nummissions))
         template = template.replace('#DESCRIPTION#',str(last_briefing[first][which]))
@@ -254,8 +263,10 @@ def BriefLastMission(which,first,textbox=None,template='#DESCRIPTION#'):
             Base.SetTextBoxText(Base.GetCurRoom(),textbox, template)
         else:
             Base.Message (template)
+        SetLastMission(which)
 
 def AddNewMission(which,args,constructor=None,briefing0='',briefing1='',vars0=None,vars1=None):
+    """ Adds a mission to the list of missions stored in playerInfo. """
     if not isinstance(vars0,dict):
         vars0=dict()
         vars1=vars0
@@ -280,6 +291,10 @@ def AddNewMission(which,args,constructor=None,briefing0='',briefing1='',vars0=No
     playerInfo.last_briefing_vars[1][which]=vars1
 
 def GetMissionList(activelist=True):
+    """ Returns a list of missions that were already generated.
+    With the activelist parameter, one can filter the active or
+    all missions.
+    """
     plr = getMissionPlayer()
     active_missions = players[plr].active_missions
     last_briefing_vars = players[plr].last_briefing_vars
@@ -310,7 +325,8 @@ def MakePlunder(which):
     briefing1 = 'Ahoy! We\'ll be lookin for that cargo mighty soon!'
     vars = { 'MISSION_TYPE' : 'PIRACY',
              'MISSION_SHORTDESC' : 'Plunder merchant target for %s' % creds }
-    AddNewMission(which,args,constructor,briefing0,briefing1,vars,vars)
+    description = vars['MISSION_SHORTDESC'].split("/")[1]
+    AddNewMission(description,args,constructor,briefing0,briefing1,vars,vars)
     return ("bases/fixers/pirate.spr","Talk with the Pirate",which)
 
 def MakeContraband(which):
@@ -324,12 +340,13 @@ def MakeContraband(which):
     briefing1 = 'Thanks pal; keep it on the d&l if you know my meanin.'
     vars = { 'MISSION_TYPE' : 'CONTRABAND',
              'MISSION_SHORTDESC' : 'Deliver contraband to %s for %s' % (Jumplist(jumps),creds) }
-    AddNewMission(which,args,constructor,briefing0,briefing1,vars,vars)
+    description = vars['MISSION_SHORTDESC'].split("/")[1]
+    AddNewMission(description,args,constructor,briefing0,briefing1,vars,vars)
     return ("bases/fixers/pirate.spr","Talk with the Pirate",which)
 
 def CreateRandomMission(whichnum):
-    '''This function gets a random mission and saves the infomation in
-    an array as the which element. Returns the sprite file and text'''
+    """ This function gets a random mission and saves the information in
+    an array as the which element. Returns the sprite file and text."""
     which=str(whichnum)
     missiontype = vsrandom.random();
     fac = VS.GetGalaxyFaction(VS.getSystemFile())
@@ -363,13 +380,17 @@ def CreateRandomMission(whichnum):
             Director.eraseSaveString(plr,"misson_names",i)
             Director.eraseSaveString(plr,"misson_vars",i)
             mylist=script.split("#")  ###Skip the first two because first is always '' and second is always 'F'
-            AddNewMission(which,script,None,desc,mylist[4],vars,vars)
+            description = vars['MISSION_SHORTDESC'].split("/")[1]
+            AddNewMission(description,script,None,desc,mylist[4],vars,vars)
             return (mylist[2],mylist[3],which)
         else:
             # It should only get here if no fixer missions were found
             return None  # Fixer code will generate a NoFixer hopefully.
 
 def CreateFixerMissions():
+    """ This function creates a set of missions for use with the fixers
+    on bases.
+    """
     rndnum=vsrandom.random()
     fixers=[]
     if rndnum<.7:
