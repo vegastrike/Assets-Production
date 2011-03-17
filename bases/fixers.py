@@ -264,7 +264,8 @@ def CreateMissionFixers_real(room,locations,j,fixerinfo):
     for miss in fixerinfo:
         if j==len(locations):
             return j
-        f=MakeFixer(miss,room)
+        f = MakeFixer(miss,room)
+        mission_lib.SetLastMission(miss[3])
         append=''
         if len(locations[j])>4:
             append=locations[j][4]

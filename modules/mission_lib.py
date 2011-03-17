@@ -225,8 +225,7 @@ def BriefLastMission(whichid,first,textbox=None,template='#DESCRIPTION#'):
     plr = getMissionPlayer()
     last_briefing = players[plr].last_briefing
     last_briefing_vars = players[plr].last_briefing_vars
-    missionlist = GetMissionList(activelist=False)
-    which = missionlist[whichid]['MISSION_SHORTDESC'].split("/")[1]
+    which = players[plr].lastMission
 
     if first<0 or first>=len(last_briefing):
         return
@@ -263,7 +262,6 @@ def BriefLastMission(whichid,first,textbox=None,template='#DESCRIPTION#'):
             Base.SetTextBoxText(Base.GetCurRoom(),textbox, template)
         else:
             Base.Message (template)
-        SetLastMission(which)
 
 def AddNewMission(which,args,constructor=None,briefing0='',briefing1='',vars0=None,vars1=None):
     """ Adds a mission to the list of missions stored in playerInfo. """
@@ -362,7 +360,7 @@ def CreateRandomMission(whichnum):
     elif (missiontype<.1):####CONTRABAND
         return MakeContraband(which)
     else:
-        goodlist=[]
+        goodlist = []
         for indx in range(Director.getSaveStringLength(plr, "mission_scripts")):
             script=Director.getSaveString(plr,"mission_scripts",indx)
             if script.find("#F#")!=-1:
@@ -370,19 +368,19 @@ def CreateRandomMission(whichnum):
         goodlist.sort()
         goodlist.reverse()
         if len(goodlist):
-            i=goodlist[vsrandom.randrange(len(goodlist))]
-            script=Director.getSaveString(plr,"mission_scripts",i)
-            desc=Director.getSaveString(plr,"mission_descriptions",i)
-            vars=PickleTools.decodeMap( Director.getSaveString(plr,"mission_vars",i) )
+            i = goodlist[vsrandom.randrange(len(goodlist))]
+            script = Director.getSaveString(plr,"mission_scripts",i)
+            desc = Director.getSaveString(plr,"mission_descriptions",i)
+            vars = PickleTools.decodeMap( Director.getSaveString(plr,"mission_vars",i) )
             vars.setdefault('MISSION_SHORTDESC',Director.getSaveString(plr, "mission_names",i))
             Director.eraseSaveString(plr,"misson_scripts",i)
             Director.eraseSaveString(plr,"misson_descriptions",i)
             Director.eraseSaveString(plr,"misson_names",i)
             Director.eraseSaveString(plr,"misson_vars",i)
-            mylist=script.split("#")  ###Skip the first two because first is always '' and second is always 'F'
+            mylist = script.split("#")  ###Skip the first two because first is always '' and second is always 'F'
             description = vars['MISSION_SHORTDESC'].split("/")[1]
             AddNewMission(description,script,None,desc,mylist[4],vars,vars)
-            return (mylist[2],mylist[3],which)
+            return (mylist[2],mylist[3],which, description)
         else:
             # It should only get here if no fixer missions were found
             return None  # Fixer code will generate a NoFixer hopefully.
@@ -391,23 +389,23 @@ def CreateFixerMissions():
     """ This function creates a set of missions for use with the fixers
     on bases.
     """
-    rndnum=vsrandom.random()
-    fixers=[]
-    if rndnum<.7:
-        f=CreateRandomMission(0)
+    rndnum = vsrandom.random()
+    fixers = []
+    if rndnum<0.9: #0.7
+        f = CreateRandomMission(0)
         fixers.append(f)
-        img=None
+        img = None
         if f:
-            img=f[0]
-        rndnum=vsrandom.random()
-        if rndnum<.6:
-            i=0
-            newimg=img
+            img = f[0]
+        rndnum = vsrandom.random()
+        if rndnum<0.9: #0.6
+            i = 0
+            newimg = img
             while newimg==img and i<10:
-                f=CreateRandomMission(1)
+                f = CreateRandomMission(1)
                 if f:
-                    newimg=f[0]
-                i+=1
+                    newimg = f[0]
+                i += 1
             if i<10:
                 fixers.append(f)
     return fixers
