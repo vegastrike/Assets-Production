@@ -391,14 +391,14 @@ def CreateFixerMissions():
     """
     rndnum = vsrandom.random()
     fixers = []
-    if rndnum<0.9: #0.7
+    if rndnum<0.7
         f = CreateRandomMission(0)
         fixers.append(f)
         img = None
         if f:
             img = f[0]
         rndnum = vsrandom.random()
-        if rndnum<0.9: #0.6
+        if rndnum<0.6
             i = 0
             newimg = img
             while newimg==img and i<10:
