@@ -109,14 +109,16 @@ def AddMissionHooks(director):
         director.mission_hooks___ = missionhook(hookargs)
     
 def SetLastMission(which):
-    players[getMissionPlayer()].lastMission=str(which)
+    players[getMissionPlayer()].lastMission = str(which)
     debug.debug('set last mission to "'+str(which)+'"')
 
 def LoadLastMission(which=None):
     """ Makes a mission an active mission. """
+    print "#given mission argument: ", which
     plr = getMissionPlayer()
     if which is None:
-        which=players[plr].lastMission
+        which = str(players[plr].lastMission)
+        print "#loading mission: ", which
     if VS.networked():
         custom.run('mission_lib', ['LoadLastMission',which], None)
         return
@@ -158,7 +160,7 @@ mission_lib.SetMissionHookArgs(%(amentry)r)
             try:
                 amentry.update(last_briefing_vars[1].get(which,dict()).iteritems())
                 amentry.update([
-                    ('MISSION_NAME',which),
+                    #('MISSION_NAME',which),
                     ('DESCRIPTION',last_briefing[0].get(which,'')),
                     ('ACCEPT_MESSAGE',last_briefing[1].get(which,'')) 
                     ])
@@ -225,8 +227,19 @@ def BriefLastMission(whichid,first,textbox=None,template='#DESCRIPTION#'):
     plr = getMissionPlayer()
     last_briefing = players[plr].last_briefing
     last_briefing_vars = players[plr].last_briefing_vars
-    which = players[plr].lastMission
 
+    # Compare the given mission id with the id stored in the briefing vars
+    # If match is found, retrieve the mission name, which is also the mission key
+    which = None
+    for name in last_briefing_vars[0]:
+        if last_briefing_vars[0][name]['MISSION_ID'] == str(whichid):
+            which = name
+    # Should not happen anymore, but sometimes missions have all the same id,
+    # e.g. 1, and then no missions for id 0 will e found.
+    if which == None:
+        which = last_briefing_vars[0].keys()[0]
+        debug.warn("mission_lib.BriefLastMission couldn't find mission id"+ str(whichid))
+        
     if first<0 or first>=len(last_briefing):
         return
     if (which in last_briefing[first]):
@@ -262,12 +275,14 @@ def BriefLastMission(whichid,first,textbox=None,template='#DESCRIPTION#'):
             Base.SetTextBoxText(Base.GetCurRoom(),textbox, template)
         else:
             Base.Message (template)
+        # Remember this mission as the last one being processed.
+        SetLastMission(which)
 
 def AddNewMission(which,args,constructor=None,briefing0='',briefing1='',vars0=None,vars1=None):
     """ Adds a mission to the list of missions stored in playerInfo. """
     if not isinstance(vars0,dict):
-        vars0=dict()
-        vars1=vars0
+        vars0 = dict()
+        vars1 = vars0
     if VS.isserver():
         lenvars0=len(vars0)
         sendargs = ["AddNewMission", which, briefing0, briefing1,lenvars0]
@@ -280,13 +295,13 @@ def AddNewMission(which,args,constructor=None,briefing0='',briefing1='',vars0=No
     addPlayer(plr, False)
     playerInfo = players[plr]
     
-    which=str(which)
-    playerInfo.last_constructor[which]=constructor
-    playerInfo.last_args[which]=args
-    playerInfo.last_briefing[0][which]=briefing0
-    playerInfo.last_briefing[1][which]=briefing1
-    playerInfo.last_briefing_vars[0][which]=vars0
-    playerInfo.last_briefing_vars[1][which]=vars1
+    which = str(which)
+    playerInfo.last_constructor[which] = constructor
+    playerInfo.last_args[which] = args
+    playerInfo.last_briefing[0][which] = briefing0
+    playerInfo.last_briefing[1][which] = briefing1
+    playerInfo.last_briefing_vars[0][which] = vars0
+    playerInfo.last_briefing_vars[1][which] = vars1
 
 def GetMissionList(activelist=True):
     """ Returns a list of missions that were already generated.
@@ -345,7 +360,7 @@ def MakeContraband(which):
 def CreateRandomMission(whichnum):
     """ This function gets a random mission and saves the information in
     an array as the which element. Returns the sprite file and text."""
-    which=str(whichnum)
+    which = str(whichnum)
     missiontype = vsrandom.random();
     fac = VS.GetGalaxyFaction(VS.getSystemFile())
     if fac=="pirates":
@@ -353,11 +368,11 @@ def CreateRandomMission(whichnum):
             return None
         missiontype*=.2;
     elif (VS.GetRelation(fac,"pirates")<-.8 and missiontype<.1):
-        missiontype=.1+.9*missiontype
-    plr=getMissionPlayer()
+        missiontype = 0.1 + 0.9 * missiontype
+    plr = getMissionPlayer()
     if (missiontype<.05):
         return MakePlunder(which)
-    elif (missiontype<.1):####CONTRABAND
+    elif (missiontype<.1):
         return MakeContraband(which)
     else:
         goodlist = []
@@ -378,9 +393,14 @@ def CreateRandomMission(whichnum):
             Director.eraseSaveString(plr,"misson_names",i)
             Director.eraseSaveString(plr,"misson_vars",i)
             mylist = script.split("#")  ###Skip the first two because first is always '' and second is always 'F'
+            try:
+                vars['MISSION_ID'] = vars['MISSION_ID']
+            except:
+                vars['MISSION_ID'] = which
             description = vars['MISSION_SHORTDESC'].split("/")[1]
+            vars['MISSION_NAME'] = description
             AddNewMission(description,script,None,desc,mylist[4],vars,vars)
-            return (mylist[2],mylist[3],which, description)
+            return (mylist[2], mylist[3], which, description)
         else:
             # It should only get here if no fixer missions were found
             return None  # Fixer code will generate a NoFixer hopefully.
@@ -402,7 +422,7 @@ def CreateFixerMissions():
             i = 0
             newimg = img
             while newimg==img and i<10:
-                f = CreateRandomMission(1)
+                f = CreateRandomMission(i+1)
                 if f:
                     newimg = f[0]
                 i += 1
