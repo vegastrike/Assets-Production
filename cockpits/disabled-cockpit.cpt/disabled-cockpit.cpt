@@ -13,16 +13,16 @@
    <Panel file="text_drives.sprite"/>
    <Panel file="text_fuel.sprite"/>
 
-   <MASSEFFECT xcent="-0.755" ycent="0.180" width=".018" height=".036"/> 
+   <MASSEFFECT xcent="-0.760" ycent="0.180" width=".018" height=".036"/> 
    <MTURRET xcent="-0.675" ycent="0.140" width=".018" height=".036"/> 
    <MTRAVEL xcent="-0.125" ycent="-0.985" width=".018" height=".036"/>
    <MFLIGHTCOMP xcent="0.005" ycent="-.945" width=".018" height=".036"/>  
    <MJUMP xcent="-0.155" ycent="-0.595" width=".018" height=".036"/> 
-   <MDOCK xcent="0.542" ycent="-0.925" width=".018" height=".036"/> 
-   <MSPEC xcent="-0.95" ycent="-0.46" width=".018" height=".036"/> 
-   <MECM xcent="-0.7" ycent="-0.965" width=".018" height=".036"/> 
-   <MCLOAK xcent="-0.95" ycent="-0.965" width=".018" height=".036"/> 
-   <MAUTO xcent="-0.7" ycent="-0.46" width=".018" height=".036"/> 
+   <MDOCK xcent="0.548" ycent="-0.925" width=".018" height=".036"/> 
+   <MSPEC xcent="-0.960" ycent="-0.46" width=".018" height=".036"/> 
+   <MECM xcent="-0.720" ycent="-0.965" width=".018" height=".036"/> 
+   <MCLOAK xcent="-0.960" ycent="-0.965" width=".018" height=".036"/> 
+   <MAUTO xcent="-0.720" ycent="-0.46" width=".018" height=".036"/> 
 
    <Speed xcent="-.125" ycent="-.895" width=".018" height=".036"/> 
    <SetSpeed xcent=".005" ycent="-.895" width=".018" height=".036"/>
