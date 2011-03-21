@@ -1,5 +1,9 @@
 #version 130
 
+// Default precision qualifier - make pedantic drivers happy,
+// since OpenGL specs clearly specify they have no meaning except in OpenGL ES
+precision mediump float;
+
 #include "gas_giants_params.h"
 #include "../config.h"
 #include "../stdlib.h"
