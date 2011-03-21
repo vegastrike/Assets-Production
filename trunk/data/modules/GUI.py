@@ -1266,7 +1266,7 @@ class GUIButton(GUIStaticImage):
 		return self.state
 
 	def hasState(self,state):
-		return (state in self.sprites)
+		return self.sprites and (state in self.sprites)
 
 	def isEnabled(self):
 		return self.enabled
