@@ -1713,6 +1713,8 @@ class GUIVideoStream(GUIStaticImage):
         """     This allows subclassing to create   """
         """     non-static elements                 """
         self.eosHandler = kwarg.pop('eosHandler',None)
+        self.startHandler = kwarg.pop('startHandler',None)
+        self.stopHandler = kwarg.pop('stopHandler',None)
 
         GUIStaticImage.__init__(self,room,index,sprite,**kwarg)
         
@@ -1758,10 +1760,14 @@ class GUIVideoStream(GUIStaticImage):
     def stopPlaying(self):
         if self.spritestate==1:
             Base.StopVideo(self.room.getIndex(), self.index)
+            if self.stopHandler:
+                self.stopHandler(self)
 
     def startPlaying(self):
         if self.spritestate==1:
             Base.PlayVideo(self.room.getIndex(), self.index)
+            if self.startHandler:
+                self.startHandler(self)
 
     def setNextRoom(self, nextRoom):
         self.nextRoom = nextRoom
@@ -1821,7 +1827,10 @@ class GUIMovieRoom(GUIRoom):
         sx, sw = GUIRootSingleton.getScreenDimensions()
         self.aspect = sw * 1.0 / sx
         
-        self.video = GUIVideoStream(self, "movie", moviesprite, eosHandler=self.onSkip)
+        self.video = GUIVideoStream(self, "movie", moviesprite, 
+            eosHandler=self.onSkip,
+            startHandler=self.onStart,
+            stopHandler=self.onStop)
         self.video.setNextRoom(nextroom)
         self.video.setAspectRatio(self.aspect)
         
@@ -1845,6 +1854,12 @@ class GUIMovieRoom(GUIRoom):
         self.video.stopPlaying()
         if self.video.nextRoom:
             Base.SetCurRoom(self.video.nextRoom.getIndex())
+
+    def onStart(self, video):
+        pass
+
+    def onStop(self, video):
+        pass
 
     def setAspectRatio(self, ratio):
         self.aspect = ratio
