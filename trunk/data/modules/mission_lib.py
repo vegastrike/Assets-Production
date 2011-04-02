@@ -422,7 +422,7 @@ def CreateFixerMissions():
             i = 0
             newimg = img
             while newimg==img and i<10:
-                f = CreateRandomMission(i+1)
+                f = CreateRandomMission(i)
                 if f:
                     newimg = f[0]
                 i += 1
