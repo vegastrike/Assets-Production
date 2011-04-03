@@ -338,7 +338,11 @@ def MakePlunder(which):
     briefing1 = 'Ahoy! We\'ll be lookin for that cargo mighty soon!'
     vars = { 'MISSION_TYPE' : 'PIRACY',
              'MISSION_SHORTDESC' : 'Plunder merchant target for %s' % creds }
-    description = vars['MISSION_SHORTDESC'].split("/")[1]
+    try:
+        vars['MISSION_ID'] = vars['MISSION_ID']
+    except:
+        vars['MISSION_ID'] = which
+    description = vars['MISSION_SHORTDESC']
     AddNewMission(description,args,constructor,briefing0,briefing1,vars,vars)
     return ("bases/fixers/pirate.spr","Talk with the Pirate",which)
 
@@ -353,7 +357,11 @@ def MakeContraband(which):
     briefing1 = 'Thanks pal; keep it on the d&l if you know my meanin.'
     vars = { 'MISSION_TYPE' : 'CONTRABAND',
              'MISSION_SHORTDESC' : 'Deliver contraband to %s for %s' % (Jumplist(jumps),creds) }
-    description = vars['MISSION_SHORTDESC'].split("/")[1]
+    try:
+        vars['MISSION_ID'] = vars['MISSION_ID']
+    except:
+        vars['MISSION_ID'] = which
+    description = vars['MISSION_SHORTDESC']
     AddNewMission(description,args,constructor,briefing0,briefing1,vars,vars)
     return ("bases/fixers/pirate.spr","Talk with the Pirate",which)
 
@@ -406,7 +414,7 @@ def CreateRandomMission(whichnum):
             return None  # Fixer code will generate a NoFixer hopefully.
 
 def CreateFixerMissions():
-    """ This function creates a set of missions for use with the fixers
+    """ This function creates missions with ids "0" and "1" for use with the fixers
     on bases.
     """
     rndnum = vsrandom.random()
@@ -422,7 +430,7 @@ def CreateFixerMissions():
             i = 0
             newimg = img
             while newimg==img and i<10:
-                f = CreateRandomMission(i)
+                f = CreateRandomMission(1)
                 if f:
                     newimg = f[0]
                 i += 1
