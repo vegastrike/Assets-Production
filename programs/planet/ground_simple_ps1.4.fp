@@ -13,7 +13,8 @@ uniform samplerCube envMap;
 
 varying vec3 varTSLight;
 varying vec3 varTSView;
-varying vec3 varScatter;
+
+#define varScatter gl_TexCoord[3].rgb
 
 float  cityLightTrigger(float fNDotLB) { return clamp(4.0*fNDotLB, 0.0, 1.0); }
 float  atmosphereLighting(float fNDotL) { return saturatef(min(1.0,2.0*fAtmosphereContrast*fNDotL)); }

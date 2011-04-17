@@ -1,6 +1,7 @@
 #include "earth_params.h"
 #include "../config.h"
 #include "../stdlib.h"
+#include "../fplod.h"
 
 uniform sampler2D specularMap_20;
 uniform sampler2D baseMap_20;
