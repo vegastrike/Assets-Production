@@ -546,10 +546,10 @@
 "jump_drive","upgrades/Jump_Drives",8000,16,2,"@upgrades/jump_drive.image@A jump drive is required for rapid interstellar travel via the jump network."
 ,,,,,
 "add_spec_capacitor01","upgrades/SPEC_Capacitors",6000,5,4,"@upgrades/reactor_capacitance.image@Capacitor for storing energy for FTL travel"
-"add_spec_capacitor02","upgrades/SPEC_Capacitors",12000,10,12,"@upgrades/reactor_capacitance.image@Capacitor for storing energy for FTL travel"
-"add_spec_capacitor03","upgrades/SPEC_Capacitors",24000,20,24,"@upgrades/reactor_capacitance.image@Capacitor for storing energy for FTL travel"
-"add_spec_capacitor04","upgrades/SPEC_Capacitors",48000,40,36,"@upgrades/reactor_capacitance.image@Capacitor for storing energy for FTL travel"
-"add_spec_capacitor05","upgrades/SPEC_Capacitors",96000,60,48,"@upgrades/reactor_capacitance.image@Capacitor for storing energy for FTL travel"
+"add_spec_capacitor02","upgrades/SPEC_Capacitors",18000,10,6,"@upgrades/reactor_capacitance.image@Capacitor for storing energy for FTL travel"
+"add_spec_capacitor03","upgrades/SPEC_Capacitors",32000,20,12,"@upgrades/reactor_capacitance.image@Capacitor for storing energy for FTL travel"
+"add_spec_capacitor04","upgrades/SPEC_Capacitors",96000,40,18,"@upgrades/reactor_capacitance.image@Capacitor for storing energy for FTL travel"
+"add_spec_capacitor05","upgrades/SPEC_Capacitors",150000,60,24,"@upgrades/reactor_capacitance.image@Capacitor for storing energy for FTL travel"
 ,,,,,
 "armor01","upgrades/Armor",4000,20,0,"@cargo/plasteel.image@Armor takes up no upgrade volume, but does add to the mass of your ship, affecting maneuverability"
 "armor02","upgrades/Armor",8000,25,0,"@cargo/isometal.image@Armor takes up no upgrade volume, but does add to the mass of your ship, affecting maneuverability"
