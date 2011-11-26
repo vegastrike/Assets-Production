@@ -54,8 +54,8 @@ vec4 atmosphericScatter(vec4 dif, float fNDotV, float fNDotL, float fVDotL, vec3
    float scattermuch = sqr(sqr(saturatef(1.0-fNDotV)));
    
    rv.rgb = regamma( dif.rgb*absorption*fvShadow 
-                  + atmosphereLighting(fNDotL)
-                    *lerp(fMinScatterFactor, fMaxScatterFactor, scattermuch)
+                  +  atmosphereLighting(fNDotL)
+                     *lerp(fMinScatterFactor, fMaxScatterFactor, scattermuch) 
                     *fAtmosphereScatterColor.rgb*fvAShadow );
    rv.a = dif.a * alpha;
    return rv;
