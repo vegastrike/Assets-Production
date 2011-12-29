@@ -60,7 +60,7 @@ def PerShipDataSize ():
 
 def AllFactions ():
     facs =[]
-    for i in range (VS.GetNumFactions()):
+    for i in xrange (VS.GetNumFactions()):
         facs.append(VS.GetFactionName(i))
     return facs
 
@@ -70,7 +70,7 @@ genericalphabet=['Alpha','Beta','Gamma','Delta','Epsilon','Zeta','Phi','Omega']
 
 def ReadBaseNameList(faction):
     bnl=[]
-    debug.debug('reading base names '+str(faction))
+    debug.debug('reading base names %s', faction)
     filename = 'universe/fgnames/'+faction+'.txt'
     try:
         f = open (filename,'r')
@@ -94,7 +94,7 @@ def ReadBaseNameList(faction):
                 except:
                     global genericalphabet
                     bnl=genericalphabet
-    for i in range(len(bnl)):
+    for i in xrange(len(bnl)):
         bnl[i]=bnl[i].rstrip()#.decode('utf8','ignore')
     import vsrandom
     vsrandom.shuffle(bnl)
@@ -108,7 +108,7 @@ def GetRandomFGNames (numflightgroups, faction):
         numflightgroups = len(flightgroupnamelist[faction])
     additional=[]
     if (numflightgroups>len(flightgroupnamelist[faction])):
-        for i in range (numflightgroups-len(flightgroupnamelist)):
+        for i in xrange (numflightgroups-len(flightgroupnamelist)):
             additional.append(str(i))
     if (len(additional)+len(flightgroupnamelist[faction])==0):
         flightgroupnamelist[faction]=ReadBaseNameList(faction)
@@ -131,7 +131,7 @@ def GetRandomBaseName (n,faction):
     except:
         debug.error('uhoh base lsit wrong')
         retval=[]
-        for i in range (n):
+        for i in xrange (n):
             retval+=[str(n)]
             n+=1
     return retval
@@ -157,9 +157,9 @@ def WriteStringList(cp,key,tup):
     lentup= len(tup)
     if (lentup<siz):
         siz=lentup
-    for i in range(siz):
+    for i in xrange(siz):
         Director.putSaveString(cp,key,i,tup[i])
-    for i in range (s_size,lentup):
+    for i in xrange (s_size,lentup):
         Director.pushSaveString(cp,key,tup[i])
     while s_size > lentup:
         Director.eraseSaveString(cp,key,s_size-1)
@@ -168,7 +168,7 @@ def WriteStringList(cp,key,tup):
 def ReadStringList (cp,key):
     siz = Director.getSaveStringLength (cp,key)
     tup =[]
-    for i in range (siz):
+    for i in xrange (siz):
         tup.append(Director.getSaveString(cp,key,i))
     return tup
 
@@ -192,7 +192,7 @@ def ListToPipe (tup):
     fina=''
     if (len(tup)):
         fina=tup[0]
-    for i in range (1,len(tup)):
+    for i in xrange (1,len(tup)):
         fina+='|'+tup[i]
     return fina
 
@@ -211,7 +211,7 @@ def _AddShipsToKnownFG(key,tnlist):
     
     numtotships = int(Director.getSaveString(ccp,key,0))
     fgentry = {}
-    for i in range(ShipListOffset(),leg,PerShipDataSize()):
+    for i in xrange(ShipListOffset(),leg,PerShipDataSize()):
 	fgentry[Director.getSaveString(ccp,key,i)] = \
 	    ( int(Director.getSaveString(ccp,key,i+1)) , \
 	      int(Director.getSaveString(ccp,key,i+2)) , \
@@ -247,7 +247,7 @@ def _AddFGToSystem (fgname,faction,starsystem):
 def _RemoveFGFromSystem (fgname,faction,starsystem):
     key = MakeStarSystemFactionFGKey(starsystem,faction)
     leg = Director.getSaveStringLength(ccp,key)
-    for index in range(leg):
+    for index in xrange(leg):
 	if Director.getSaveString(ccp,key,index) == fgname:
 	    Director.eraseSaveString(ccp,key,index)
 	    break
@@ -263,7 +263,7 @@ def _AddFGToFactionList(fgname,faction):
 def _RemoveFGFromFactionList (fgname,faction):
     key = MakeFactionKey(faction)
     leg=Director.getSaveStringLength(ccp,key)
-    for index in range(leg):
+    for index in xrange(leg):
 	if Director.getSaveString(ccp,key,index) == fgname:
 	    Director.eraseSaveString(ccp,key,index)
 	    return 1
@@ -278,18 +278,18 @@ def CheckFG (fgname,faction):
     totalships=0
     try:
 	# Check ship counts
-        for i in range (ShipListOffset()+1,leg,PerShipDataSize()):
+        for i in xrange (ShipListOffset()+1,leg,PerShipDataSize()):
             shipshere=Director.getSaveString(ccp,key,i)
             totalships+=int(shipshere)
             temp=Director.getSaveString(ccp,key,i+1)
             if (temp!=shipshere):
-                debug.debug('correcting flightgroup '+fgname+' to have right landed ships')
+                debug.debug('correcting flightgroup %r to have right landed ships', fgname)
                 Director.putSaveString(ccp,key,i+1,shipshere)#set num actives to zero
         #DEBUG ONLY if (totalships!=int(Director.getSaveString(ccp,key,0))):
         #    debug.debug('mismatch on flightgroup '+fgname+' faction '+faction)
         #    return 0
     except:
-        debug.debug('nonint readingo n flightgroup '+fgname+'faction '+faction)
+        debug.debug('nonint reading on flightgroup %r faction %r', fgname, faction)
         return 0
     return 1
 
@@ -365,7 +365,7 @@ def SystemsWithFactionFGs(faction):
 
 def DeleteAllFG (faction):
     # Watch the ordering of operations! (won't work in most other permutations)
-    debug.debug("DeleteAllFG from %s" % faction)
+    debug.debug("DeleteAllFG from %s", faction)
     sysspan = SystemsWithFactionFGs(faction)
     for fgname in AllFG(faction):
 	DeleteFG(fgname,faction,1)
@@ -380,7 +380,7 @@ def DeleteAllFGFromAllSystems():
 def DeleteLegacyFGs(sys):
     key = MakeStarSystemFGKey(sys)
     factionfglists = ReadStringList(ccp,key)
-    for i in range(len(factionfglists)):
+    for i in xrange(len(factionfglists)):
         faction = VS.GetFactionName(i)
         fglist = factionfglists[i].split('|')
         for fg in fglist:
@@ -415,7 +415,7 @@ def FGSystem (fgname,faction):
     if (len>1):
         return Director.getSaveString(ccp,key,1)
     else:
-        debug.debug(fgname+' for '+faction+' already died, in no system')
+        debug.debug('%r for %r already died, in no system', fgname, faction)
         return 'nil'
 def TransferFG (fgname,faction,tosys):
     key = MakeFGKey(fgname,faction)
@@ -430,34 +430,34 @@ def AddShipsToFG (fgname,faction,typenumbertuple,starsystem):
     key = MakeFGKey(fgname,faction) 
     len = Director.getSaveStringLength (ccp,key)
     if (len<ShipListOffset()):
-        debug.debug('adding new fg '+fgname+" of "+str(typenumbertuple)+" to "+starsystem)
+        debug.debug('adding new fg %r of %s to %s', fgname, typenumbertuple, starsystem)
         WriteStringList(ccp,key,_MakeFGString( starsystem,typenumbertuple) )
         _AddFGToSystem (fgname,faction,starsystem)
         _AddFGToFactionList (fgname,faction)
-        debug.info('adding new fg '+fgname+" of "+str(typenumbertuple)+" to "+starsystem)
+        debug.info('adding new fg %r of %s to %s', fgname, typenumbertuple, starsystem)
     else:
-        debug.info('adding old fg '+fgname+" of "+str(typenumbertuple)+" to "+FGSystem(fgname,faction))
+        debug.info('adding old fg %r of %s to %s', fgname, typenumbertuple, FGSystem(fgname,faction))
         _AddShipsToKnownFG(key,typenumbertuple)
 
 def RemoveShipFromFG (fgname,faction,type,numkill=1,landed=0):
     key = MakeFGKey (fgname,faction)
     leg = Director.getSaveStringLength (ccp,key)
-    debug.debug("Scanning %d units..." % leg)
-    for i in range (ShipListOffset()+1,leg,PerShipDataSize()):
+    debug.debug("Scanning %d units...", leg)
+    for i in xrange (ShipListOffset()+1,leg,PerShipDataSize()):
         if (Director.getSaveString(ccp,key,i-1)==str(type)):
-            debug.debug("Removing unit "+str(type))
+            debug.debug("Removing unit %s", type)
             numships=0
             numlandedships=0
             try:
                 numships = int (Director.getSaveString (ccp,key,i))
                 numlandedships=int (Director.getSaveString (ccp,key,i+1))
             except:
-                debug.error("unable to get savestring "+i+" from FG "+fgname +" "+faction+ " "+type)
+                debug.error("unable to get savestring %s from FG %s %s %s", i, fgname, faction, type)
             if (numships>numkill):
                 numships-=numkill
                 if (numships<numlandedships):
                     if (landed==0):
-                       debug.debug('trying to remove launched ship '+type+' but all are landed')
+                       debug.debug('trying to remove launched ship %s but all are landed', type)
                        landed=1
                        return 0#failur
                 Director.putSaveString (ccp,key,i,str(numships))
@@ -466,7 +466,7 @@ def RemoveShipFromFG (fgname,faction,type,numkill=1,landed=0):
             else:
                 numkill=numships
                 numships=0
-                for j in range (i-1,i+PerShipDataSize()-1):
+                for j in xrange (i-1,i+PerShipDataSize()-1):
                     Director.eraseSaveString(ccp,key,i-1)
             if (numships>=0):
                 try:
@@ -475,14 +475,14 @@ def RemoveShipFromFG (fgname,faction,type,numkill=1,landed=0):
                     if (totalnumships>=0):
                         Director.putSaveString(ccp,key,0,str(totalnumships))
                         if(totalnumships==0):
-			    debug.debug("Removing "+str(faction)+" FG"+str(fgname))
+			    debug.debug("Removing %s FG %r", faction, fgname)
                             DeleteFG(fgname,faction)
                     else:
                         debug.error('error...removing too many ships')
                 except:
-                    debug.error('error, flight record '+fgname+' corrupt')
+                    debug.error('error, flight record %r corrupt', fgname)
             return numkill
-    debug.debug('cannot find ship to delete in '+faction+' fg ' + fgname)
+    debug.debug('cannot find ship to delete in %s fg %r', faction, fgname)
     return 0
 
 def BaseFGInSystemName (system):
@@ -521,12 +521,12 @@ def CountFactionShipsInSystem(faction,system):
     for fgs in FGsInSystem (faction,system):
         st+=fgs+' '
         ships=ReadStringList (ccp,MakeFGKey (fgs,faction))
-        for num in range(ShipListOffset()+2,len(ships),PerShipDataSize()):
+        for num in xrange(ShipListOffset()+2,len(ships),PerShipDataSize()):
             try:
                 count+= int(ships[num])
             except:
                 debug.error('number ships '+ships[num] + ' not read')
-    debug.debug('OFFICIALCOUNT '+str(st)+' is '+str(count))
+    debug.debug('OFFICIALCOUNT %s is %s', st, count)
     return count
 
 def _prob_round(curnum):
@@ -546,12 +546,12 @@ def LandedShipsInFG(fgname,faction):
 def ShipsInFG(fgname,faction,offset=1):
     ships = ReadStringList (ccp,MakeFGKey(fgname,faction))
     rez=[]
-    for num in range (ShipListOffset(),len(ships),PerShipDataSize()):
+    for num in xrange (ShipListOffset(),len(ships),PerShipDataSize()):
         rez.append((ships[num],int(ships[num+offset])))
     return rez
 def CapshipInFG(fg,fac):
     key = MakeFGKey(fg,fac)
-    for num in range(ShipListOffset(),Director.getSaveStringLength(ccp,key),PerShipDataSize()):
+    for num in xrange(ShipListOffset(),Director.getSaveStringLength(ccp,key),PerShipDataSize()):
         import faction_ships
         shipinquestion=Director.getSaveString(ccp,key,num)
         if (faction_ships.isCapital(shipinquestion)):
@@ -610,7 +610,7 @@ def launchSingleBase (type,faction,sig):
     if radpct<200000000.+sigrsize:
         radpct=200000000.+sigrsize
     speed = vsrandom.uniform (0,50)
-    debug.debug('Lauching '+str(faction)+' base '+str(type)+' by sig '+sig.getName()+' ('+sig.getFullname()+')')
+    debug.debug('Lauching %s base %s by sig %s (%s)', faction, type, sig.getName(), sig.getFullname())
     launchBaseOrbit (type,faction,sig.Position(),radpct,speed,sig)
 
 def launchBaseStuck (type,faction):
@@ -623,12 +623,12 @@ def launchBaseStuck (type,faction):
 
 def launchBase (type,num,faction,system,sig_units,numfighters):
     import seedrandom
-    debug.debug('launching base '+ type)
+    debug.debug('launching base %s', type)
     seedrandom.seed(seedrandom.seedstring(seedrandom.interleave(['type',
                                                                 'faction',
                                                                 'system'])))
     if (len(sig_units)):
-        for i in range (num):
+        for i in xrange (num):
             one=seedrandom.rand()
             two=seedrandom.rand()
             three=seedrandom.rand()
@@ -642,11 +642,11 @@ def launchBase (type,num,faction,system,sig_units,numfighters):
                 numfighters[which]+=1
             launchSingleBase (type,faction,sig_units[which])
     else:
-        for i in range(num):
+        for i in xrange(num):
             launchBaseStuck(type,faction)
 
 def zeros (le):
-    return [0 for i in range(le)]
+    return [0 for i in xrange(le)]
 
 def launchBases(sys):
     import universe
@@ -670,7 +670,7 @@ def randDirection():
    return (X/leng,Y/leng,Z/leng)
 
 def incr_by_abs(num,val):
-   debug.debug("A: "+str(num+val)+" or "+str(num-val))
+   debug.debug("A: %s or %s", num+val, num-val)
    if (num>0):
       return num+val
    return num-val
@@ -699,7 +699,7 @@ def filterLaunchedFGs(fglist):
     return rv
 
 def launchUnits(sys):
-    debug.info("Launching units for ", sys)
+    debug.info("Launching units for %s", sys)
     
     import faction_ships
     import launch_recycle
@@ -724,7 +724,7 @@ def launchUnits(sys):
       if tmplen>farlen:
           farlen=tmplen
 
-    for factionnum in range(0,faction_ships.getMaxFactions()-1):
+    for factionnum in xrange(0,faction_ships.getMaxFactions()-1):
       faction=faction_ships.intToFaction(factionnum)
       fglist=filterLaunchedFGs(FGsInSystem(faction,sys))
       isHostile=VS.GetRelation(ownerfac,faction)<0
@@ -789,16 +789,16 @@ def GetShipsInFG(fgname,faction):
 	
     nent = (len(ships) - ShipListOffset()) / PerShipDataSize()
     retn = [0] * nent
-    for i in range(_prob_round(launchnum*(0.7+vsrandom.random()+0.3))):
+    for i in xrange(_prob_round(launchnum*(0.7+vsrandom.random()+0.3))):
 	which = vsrandom.randrange(count)
-	for j in range(nent):
+	for j in xrange(nent):
 	    pos = j*PerShipDataSize()+ShipListOffset()
 	    which -= int(ships[pos+2])
 	    if which <= 0:
 		retn[j] += 1
 		break
     ret = []
-    for i in range(nent):
+    for i in xrange(nent):
 	if retn[i]:
 	    pos = i*PerShipDataSize()+ShipListOffset()
 	    ret.append((ships[pos],retn[i]))
@@ -808,7 +808,7 @@ def LaunchLandShip(fgname,faction,typ,numlaunched=1):
     key = MakeFGKey (fgname,faction)
     ships=ReadStringList (ccp,key)
     debug.debug('LaunchLandShip: fg:%s fac:%s typ:%s, num:%s', fgname, faction, typ, numlaunched)
-    for num in range (ShipListOffset(),len(ships),PerShipDataSize()):
+    for num in xrange (ShipListOffset(),len(ships),PerShipDataSize()):
         if (typ == ships[num]):
             try:
                 ntobegin=int(ships[num+1])
