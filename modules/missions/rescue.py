@@ -60,8 +60,8 @@ class rescue (Director.Mission):
             L.type = faction_ships.getRandomFighter(self.enfaction)
             L.ai="default"
             L.num=self.numenemy
-            L.minradius=5000
-            L.maxradius=15000
+            L.minradius=float(VS.vsConfig("dynamic_universe","missions.rescue.enemy.minradius","5000"))
+            L.maxradius=float(VS.vsConfig("dynamic_universe","missions.rescue.enemy.maxradius","15000"))
             try:
                 L.minradius*=faction_ships.launch_distance_factor
                 L.maxradius*=faction_ships.launch_distance_factor
