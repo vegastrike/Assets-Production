@@ -1,4 +1,4 @@
-""" This module provides different mission types. """
+#""" This module provides different mission types. """
 
 import VS
 import PickleTools
@@ -68,7 +68,8 @@ def getSystemsNAway (start,k,preferredfaction):
         return l
     return lbak
 
-syscreds = 3000 #750
+syscreds = int(VS.vsConfig("dynamic_universe","missions.defaults.jumpprice","3000"))
+
 
 def GetRandomCompanyName():
     bnl=[]
@@ -230,7 +231,13 @@ def mungeFixerPct():
     fixerpct=.0375
     guildpct=1
 
-def generateCleansweepMission(path,numplanets,enemy):
+def generateCleansweepMission(path,numplanets,enemy,
+        pricescale = float(VS.vsConfig("dynamic_universe","missions.cleansweep.pricescale","16000")),
+        jumpscale  = float(VS.vsConfig("dynamic_universe","missions.cleansweep.jumpscale","1.2")),
+        sweepmod = float(VS.vsConfig("dynamic_universe","missions.cleansweep.pricemod.sweep","4")),
+        capshipmod = float(VS.vsConfig("dynamic_universe","missions.cleansweep.pricemod.capship","4")),
+        forceattackmod = float(VS.vsConfig("dynamic_universe","missions.cleansweep.pricemod.forceattack","0.25"))
+        ):
     fighterprob=vsrandom.random()*.75+.25;
     capshipprob=0.0
     if (vsrandom.random()<.2):
@@ -238,7 +245,13 @@ def generateCleansweepMission(path,numplanets,enemy):
     forceattack=vsrandom.randrange(0,2)
     cleansweep=vsrandom.randrange(0,2)
     minships=maxships=vsrandom.randrange(1,4)
-    creds = 20*(cleansweep*4+1+capshipprob*4+.25*forceattack)*800*minships*fighterprob+1.2*syscreds*len(path)
+    creds = ( pricescale * (
+            1+
+            cleansweep*sweepmod+
+            capshipprob*capshipmod+
+            forceattack*forceattackmod
+        ) * minships * fighterprob
+        + jumpscale * syscreds * len(path) )
     creds*=getPriceModifier(False)
     addstr=""
     isFixer=vsrandom.random()
@@ -277,9 +290,13 @@ def generateCleansweepMission(path,numplanets,enemy):
     writemissionname("%s/%s_%d_Point%s_in_%s"%(patrolorclean,patrolorclean,numplanets,ispoint, processSystem(path[-1])),path,isFixerString(addstr))   
     writemissionvars( { 'MISSION_TYPE' : mistype } )
 
-def generatePatrolMission (path, numplanets):
+def generatePatrolMission (path, numplanets,
+        planetprice = float(VS.vsConfig("dynamic_universe","missions.patrol.planetprice","100")),
+        baseprice = float(VS.vsConfig("dynamic_universe","missions.patrol.baseprice","2400")),
+        jumpscale = float(VS.vsConfig("dynamic_universe","missions.patrol.jumpscale","1"))
+        ):
     dist=400
-    creds = numplanets*100+3*800+syscreds*len(path)
+    creds = numplanets*planetprice+baseprice+jumpscale*syscreds*len(path)
     creds*=getPriceModifier(False)
     addstr=""
     isFixer=vsrandom.random()
@@ -304,7 +321,9 @@ def generatePatrolMission (path, numplanets):
 def isNotWorthy(fac):
     return VS.GetRelation(fac,VS.getPlayer().getFactionName())<0
 
-def generateEscortLocal(path,fg,fac):
+def generateEscortLocal(path,fg,fac,
+        waveprice = float(VS.vsConfig("dynamic_universe","missions.escort.local.waveprice","5500"))
+        ):
     if (isNotWorthy(fac)):
         return
     typ = fg_util.RandomShipIn(fg,fac)
@@ -315,7 +334,7 @@ def generateEscortLocal(path,fg,fac):
     waves=vsrandom.randrange(0,5-diff)
     incoming=vsrandom.randrange(0,2)
     enfg =fg_util.AllFGsInSystem(enfac,path[-1])
-    creds=5500*diff*(1+waves);
+    creds=waveprice*diff*(1+waves);
     if (len(enfg)):
       enfg=enfg[vsrandom.randrange(0,len(enfg))]
     else:
@@ -340,7 +359,10 @@ def generateEscortLocal(path,fg,fac):
     writemissionname("Escort/Escort_%s_%s"%(fac,fg),[path[-1]],isFixerString(addstr))
     writemissionvars( { 'MISSION_TYPE' : mistype } )
 
-def generateEscortMission (path,fg,fac):
+def generateEscortMission (path,fg,fac,
+        baseprice = float(VS.vsConfig("dynamic_universe","missions.escort.waveprice","500")),
+        jumpscale = float(VS.vsConfig("dynamic_universe","missions.escort.jumpscale","0.5"))
+        ):
     ###
     if (isNotWorthy(fac)):
         return
@@ -348,7 +370,7 @@ def generateEscortMission (path,fg,fac):
     if typ in faction_ships.unescortable:
         typ = faction_ships.unescortable[typ]
     diff=vsrandom.randrange(0,6)    
-    creds=500*diff+0.5*syscreds*len(path)
+    creds=baseprice*diff+jumpscale*syscreds*len(path)
     creds*=getPriceModifier(False)
     addstr=""
     isFixer=vsrandom.random()
@@ -414,14 +436,26 @@ def isHabitable (system):
     debug.debug(str(planets)+ " Not in Habitable List")
     return False
 
-def generateCargoMission (path, numcargos,category, fac):
+def generateCargoMission (path, numcargos,category, fac,
+        baseprice = float(VS.vsConfig("dynamic_universe","missions.cargo.waveprice","500")),
+        jumpscale = float(VS.vsConfig("dynamic_universe","missions.cargo.jumpscale","0.2")),
+        cargoprice = float(VS.vsConfig("dynamic_universe","missions.cargo.cargoprice","250")),
+        contrabandprice = float(VS.vsConfig("dynamic_universe","missions.cargo.contrabandprice","5000")),
+        starshipprice = float(VS.vsConfig("dynamic_universe","missions.cargo.starshipprice","20000"))
+        ):
     #if (isNotWorthy(fac)):
     #    return  
     launchcap=0 #(vsrandom.random()>=.97) #currently no delivering to capships, maybe only from
     if (not launchcap) and not isHabitable(path[-1]):
         return
     diff=vsrandom.randrange(0,adjustQuantityDifficulty(6))
-    creds=250*numcargos+500*diff+0.2*syscreds*len(path)+5000*(category[:10]=="Contraband")+20000*(category[:9]=="starships")
+    creds = (
+        cargoprice*numcargos
+        +baseprice*diff
+        +jumpscale*syscreds*len(path)
+        +contrabandprice*(category[:10]=="Contraband")
+        +starshipprice*(category[:9]=="starships")
+    )
     addstr=""
     creds*=getPriceModifier(False)
     isFixer=vsrandom.random()
@@ -457,13 +491,19 @@ def generateCargoMission (path, numcargos,category, fac):
         mistype = 'CARGO'
     writemissionvars( { 'MISSION_TYPE' : mistype } )
 
-def generateRescueMission(path,rescuelist):
+def generateRescueMission(path,rescuelist,
+        totmaxprice = int(VS.vsConfig("dynamic_universe","missions.rescue.totmaxprice","21000")),
+        shipminprice = int(VS.vsConfig("dynamic_universe","missions.rescue.pership.minprice","4041")),
+        shipmaxprice = int(VS.vsConfig("dynamic_universe","missions.rescue.pership.maxprice","8640")),
+        jumpminprice = int(VS.vsConfig("dynamic_universe","missions.rescue.perjump.minprice","4041")),
+        jumpmaxprice = int(VS.vsConfig("dynamic_universe","missions.rescue.perjump.maxprice","8640"))
+        ):
     makemissionharder=vsrandom.randrange(0,2)
     numships = vsrandom.randrange(1,adjustQuantityDifficulty(6))+howMuchHarder(makemissionharder)
-    creds = (numships+len(path))*vsrandom.randrange(4041,8640)
-    creds*=getPriceModifier(makemissionharder!=0)
-    if (creds>20000):
-        creds=21000
+    creds  = numships*vsrandom.randrange(shipminprice,shipmaxprice)
+    creds += len(path)*vsrandom.randrange(jumpminprice,jumpmaxprice)
+    creds  = min(totmaxprice, creds)
+    creds *= getPriceModifier(makemissionharder!=0)
     if len(path)==1:
         mistype = 'IN-SYSTEM RESCUE'
     else:
@@ -473,18 +513,28 @@ def generateRescueMission(path,rescuelist):
     writemissionname("Rescue/Rescue_%s_from_%s_ships"%(rescuelist[0],rescuelist[2]),path,0)
     writemissionvars( { 'MISSION_TYPE' : mistype } )
 
-def generateBountyMission (path,fg,fac):
+def generateBountyMission (path,fg,fac,
+        baseprice = float(VS.vsConfig("dynamic_universe","missions.bounty.baseprice","20000")),
+        runawayprice = float(VS.vsConfig("dynamic_universe","missions.bounty.runaway","5000")),
+        diffprice = float(VS.vsConfig("dynamic_universe","missions.bounty.diffprice","500")),
+        jumpscale = float(VS.vsConfig("dynamic_universe","missions.bounty.jumpscale","1")),
+        capscale = float(VS.vsConfig("dynamic_universe","missions.bounty.capscale","4"))
+        ):
     typ = fg_util.RandomShipIn(fg,fac)
     cap = faction_ships.isCapital(typ)
     makemissionharder=vsrandom.randrange(0,2)
     diff=vsrandom.randrange(0,adjustQuantityDifficulty(7))+howMuchHarder(makemissionharder)
     runaway=(vsrandom.random()>=.75)
-    creds=20000+5000*runaway+450*diff+syscreds*len(path)
+    creds = (
+        baseprice
+        +runawayprice*runaway
+        +diffprice*diff
+        +jumpscale*syscreds*len(path)
+    )
     if (cap):
-        creds*=4
+        creds *= capscale
 
-    finalprice=creds+syscreds*len(path)
-    finalprice*=getPriceModifier(False)
+    finalprice=creds*getPriceModifier(False)
     addstr=""
     isFixer=vsrandom.random()
     if isFixer<fixerpct:
@@ -511,13 +561,16 @@ def generateBountyMission (path,fg,fac):
         writemissionname ("Bounty/Bounty_on_%s_starship_in_%s"%(fac,processSystem(path[-1])),path,isFixerString(addstr))
     writemissionvars( { 'MISSION_TYPE' : mistype } )
 
-def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
+def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac,
+        baseprice = float(VS.vsConfig("dynamic_universe","missions.defend.baseprice","5000")),
+        jumpscale = float(VS.vsConfig("dynamic_universe","missions.defend.jumpscale","1"))
+        ):
     if (isNotWorthy(defendfac)):
         return
     #defendtyp = fg_util.RandomShipIn(defendfg,defendfac)
     attacktyp = fg_util.RandomShipIn(attackfg,attackfac)                    
     isbase=fg_util.BaseFGInSystemName(path[-1])==defendfg
-    creds=5000
+    creds=baseprice
     minq = 1
     maxq = adjustQuantityDifficulty(5)
     makemissionharder=vsrandom.randrange(0,2)
@@ -526,7 +579,7 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
     if (vsrandom.randrange(0,4)==0):
         reallydefend="0"
     addstr=""
-    creds=creds*quantity+syscreds*len(path)
+    creds=creds*quantity+jumpscale*syscreds*len(path)
     creds*=getPriceModifier(makemissionharder)
     isFixer=vsrandom.random()
     if isFixer<fixerpct:
@@ -548,9 +601,12 @@ def generateDefendMission (path,defendfg,defendfac, attackfg,attackfac):
     writemissionname("Defend/Defend_%s_from_%s"%(defendfac, attackfac),path,isFixerString(addstr))
     writemissionvars( { 'MISSION_TYPE' : mistype } )
 
-def generateWingmanMission(fg, faction):
+def generateWingmanMission(fg, faction,
+        baseprice = float(VS.vsConfig("dynamic_universe","missions.wingman.baseprice","10000")),
+        shipprice = float(VS.vsConfig("dynamic_universe","missions.wingman.shipprice","15000"))
+        ):
     numships=vsrandom.randrange(1,4)
-    creds=10000+15000*numships
+    creds=baseprice+shipprice*numships
     writemissionsavegame("import wingman\newmission = wingman.wingman (%f, '%s', %d, 0)\newmission=0"%(creds, faction, numships))
     s="A pilot"
     EorA="a"
