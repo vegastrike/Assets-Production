@@ -16,7 +16,7 @@
 	
     <flightgroups>
 		<!-- need at least one, to avoid messing with the engine -->
-                <flightgroup ainame="default" faction="privateer" name="Shlimazel" nr_ships="1" type="Llama" waves="1">
+                <flightgroup ainame="default" faction="privateer" name="Shlimazel" nr_ships="1" type="Jackal" waves="1">
 			<pos x="28059865101" y="-387060" z="25999999829"/>
 		</flightgroup>
     </flightgroups>
