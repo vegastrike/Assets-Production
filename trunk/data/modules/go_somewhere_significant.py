@@ -44,7 +44,7 @@ class go_somewhere_significant:
             lim=1
             if landable_only and not base_only:
                 lim=10
-            for i in range(lim):
+            for i in xrange(lim):
                 significant = unit.getSignificant (randint,landable_only,base_only)
                 
                 if significant.isPlanet():
