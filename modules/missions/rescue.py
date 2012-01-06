@@ -94,7 +94,7 @@ class rescue (Director.Mission):
                         self.arrived=3
                         self.cargname=carg.GetContent()
                         print 'adding '+self.cargname
-                        self.adjsys = go_somewhere_significant.go_somewhere_significant(self.you,1,25000)
+                        self.adjsys = go_somewhere_significant.go_somewhere_significant(self.you,1,25000,base_only=1)
                         VS.IOmessage(0,"Passenger",self.mplay,"Please take me to my home base: %s so I may begin to recover. Thank you!"%self.adjsys.SignificantUnit().getName())
                 else:
                     VS.IOmessage(0,"rescue_mission",self.mplay,"#ff0000You Lost the Pilot before you could drop the Pilot at the base.  The Pilot's oxygen is currently empty. You fail.")
