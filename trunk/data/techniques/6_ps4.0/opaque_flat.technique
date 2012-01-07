@@ -45,7 +45,7 @@
         <auto_param name="detail0plane" semantic="DetailPlane0" optional="true"/>
         <auto_param name="detail1plane" semantic="DetailPlane1" optional="true"/>
         <auto_param name="cloaking" semantic="CloakingPhase" optional="true"/>
-        <auto_param name="damage" semantic="Damage" optional="true"/>
+        <auto_param name="damage" semantic="Damage4" optional="true"/>
         <auto_param name="gameTime" semantic="GameTime" optional="true"/>
         
     </pass>
