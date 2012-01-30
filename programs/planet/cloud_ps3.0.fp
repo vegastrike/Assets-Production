@@ -1,5 +1,9 @@
 #version 130
 
+// Default precision qualifier - make pedantic drivers happy,
+// since OpenGL specs clearly specify they have no meaning except in OpenGL ES
+precision highp float;
+
 #include "earth_params.h"
 #include "../config.h"
 #include "../stdlib.h"

@@ -91,7 +91,7 @@ Complete - possible proofreading and submission...
 <!-- Experiemental Attempted to see if The directional face things work. Move out of main guns range! 
 	Appears to work - Goddards lack the speed to do it - Pacifiers - ok -->
 
-<Target_Faces_You min=".5" script="FacePerpendicularFast" time="10" timetointerrupt="7" priority="6">
+<Target_Faces_You min=".5" script="face perpendicular fast" time="10" timetointerrupt="7" priority="6">
 </Target_Faces_You>
 
 	<!-- Attack runs -->
@@ -124,7 +124,7 @@ with threat, they will be overly eager with RAND-->
 <meterdistance max="700" script="afterburner slide" time="10" timetointerrupt="5" priority="5">
 </meterdistance>
 
-<meterdistance max="600" script="FacePerpendicular" time="10" timetointerrupt="5" priority="5">
+<meterdistance max="600" script="face perpendicular" time="10" timetointerrupt="5" priority="5">
 	<threat min=".85" script="afterburn evade up down" time="3" priority="5">
 	</threat>
 </meterdistance>

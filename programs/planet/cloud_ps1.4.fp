@@ -34,7 +34,7 @@ float cosAngleToDepth(float fNDotV)
    vec2 res = vec2(1.0) / vec2(1024.0,128.0);
    vec2 mn = res * 0.5;
    vec2 mx = vec2(1.0)-res * 0.5;
-   return expandPrecision(texture2DLod(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereType),mn,mx),0.0)) * fAtmosphereThickness;
+   return expandPrecision(texture2D(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereType),mn,mx),-8.0)) * fAtmosphereThickness;
 }
 
 float cosAngleToAlpha(float fNDotV)
@@ -67,7 +67,7 @@ vec4 atmosphericScatter(vec3 amb, vec4 dif, float fNDotV, float fNDotL, float fV
 
 vec3 ambientMapping( in vec3 direction )
 {
-   return gl_LightSource[0].ambient;
+   return gl_LightSource[0].ambient.rgb;
 }
 
 

@@ -2,6 +2,7 @@
 #define CINEMUT_NM           1
 #define RED_IN_ALPHA_NM      2
 #define TRADITIONAL_NM       3
+#define DXT5_NM              4
 
 //      Shininess sources
 #define AD_HOC_SHININESS     1
@@ -17,7 +18,7 @@
 #define SHININESS_FROM_GLASS AD_HOC_SHININESS
 #endif
 #ifndef NORMALMAP_TYPE
-#define NORMALMAP_TYPE       CINEMUT_NM
+#define NORMALMAP_TYPE       DXT5_NM
 #endif
 #define NM_FREQ_SCALING      5.777
 #define NM_Z_SCALING         0.015625

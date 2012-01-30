@@ -1,20 +1,24 @@
 #include "config.h"
 
-#ifndef GL_NV_fragment_program2
-#extension GL_ARB_shader_texture_lod : enable
+#ifndef VGL_NV_fragment_program2
 
 #ifndef GL_ARB_shader_texture_lod
-#define GL_ARB_shader_texture_lod 0
+#define VGL_ARB_shader_texture_lod 0
+#else
+#define VGL_ARB_shader_texture_lod GL_ARB_shader_texture_lod
+#extension GL_ARB_shader_texture_lod : enable
 #endif
 
-#if (GL_ARB_shader_texture_lod == 0)
-#extension GL_ATI_shader_texture_lod : enable
+#if (VGL_ARB_shader_texture_lod == 0)
 
 #ifndef GL_ATI_shader_texture_lod
-#define GL_ATI_shader_texture_lod 0
+#define VGL_ATI_shader_texture_lod 0
+#else
+#define VGL_ATI_shader_texture_lod GL_ATI_shader_texture_lod
+#extension GL_ATI_shader_texture_lod : enable
 #endif
 
-#if (GL_ATI_shader_texture_lod == 0)
+#if (VGL_ATI_shader_texture_lod == 0)
 #define NO_TEXTURE_LOD 1
 #endif
 
@@ -28,25 +32,25 @@
 vec4 texture1DLod(sampler1D sampler, float P, float lod)
 {
     // Turn into bias
-    return texture1D(sampler, P, lod);
+    return texture1D(sampler, P, lod-8.0);
 }
 
 vec4 texture2DLod(sampler2D sampler, vec2 P, float lod)
 {
     // Turn into bias
-    return texture2D(sampler, P, lod);
+    return texture2D(sampler, P, lod-8.0);
 }
 
 vec4 texture3DLod(sampler3D sampler, vec3 P, float lod)
 {
     // Turn into bias
-    return texture3D(sampler, P, lod);
+    return texture3D(sampler, P, lod-8.0);
 }
 
 vec4 textureCubeLod(samplerCube sampler, vec3 P, float lod)
 {
     // Turn into bias
-    return textureCube(sampler, P, lod);
+    return textureCube(sampler, P, lod-8.0);
 }
 
 vec4 texture1DGradARB(sampler1D sampler, float P, float dPdx, float dPdy)

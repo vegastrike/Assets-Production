@@ -43,9 +43,10 @@ error = _warn  # Different name for the same thing.
 
 # Less important messages that happen a lot.
 debug = _withlineno # Useful messages for hunting down bugs, or loading status.
-info = _devnull   # I don't think this is useful, but why not?
+info = _warn
 
 # For release, we can disable unimportant messages:
+info = _devnull
 debug = _devnull
 
 

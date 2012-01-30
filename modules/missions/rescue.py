@@ -60,8 +60,8 @@ class rescue (Director.Mission):
             L.type = faction_ships.getRandomFighter(self.enfaction)
             L.ai="default"
             L.num=self.numenemy
-            L.minradius=5000
-            L.maxradius=15000
+            L.minradius=float(VS.vsConfig("dynamic_universe","missions.rescue.enemy.minradius","5000"))
+            L.maxradius=float(VS.vsConfig("dynamic_universe","missions.rescue.enemy.maxradius","15000"))
             try:
                 L.minradius*=faction_ships.launch_distance_factor
                 L.maxradius*=faction_ships.launch_distance_factor
@@ -94,7 +94,7 @@ class rescue (Director.Mission):
                         self.arrived=3
                         self.cargname=carg.GetContent()
                         print 'adding '+self.cargname
-                        self.adjsys = go_somewhere_significant.go_somewhere_significant(self.you,1,25000)
+                        self.adjsys = go_somewhere_significant.go_somewhere_significant(self.you,1,25000,base_only=1)
                         VS.IOmessage(0,"Passenger",self.mplay,"Please take me to my home base: %s so I may begin to recover. Thank you!"%self.adjsys.SignificantUnit().getName())
                 else:
                     VS.IOmessage(0,"rescue_mission",self.mplay,"#ff0000You Lost the Pilot before you could drop the Pilot at the base.  The Pilot's oxygen is currently empty. You fail.")

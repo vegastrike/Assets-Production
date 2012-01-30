@@ -300,7 +300,7 @@ def AddFighterTo(fgname,fac,isNew=False):
             numfighters=1
     #debug.debug("Generating "+str(numfighters)+ " fighters for "+fac+" at "+sys)
     if isNew:
-        fgk=fg_util.AllFGsInSystem(fac,sys)        
+        fgk=fg_util.FGsInSystem(fac,sys)        
         if len(fgk):
             fgname=fgk[vsrandom.randrange(0,len(fgk))]
             stat=6

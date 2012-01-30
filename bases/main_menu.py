@@ -172,9 +172,9 @@ guiroom  = GUI.GUIRoom(room_menu)
 
 # Set up preintro room
 class PreIntroRoom(GUI.GUIMovieRoom):
-    def startPlaying(self):
+    def onStart(self, video):
         Base.SetDJEnabled(0)
-        GUI.GUIMovieRoom.startPlaying(self)
+        GUI.GUIMovieRoom.onStart(self, video)
     def onSkip(self, button, params):
         GUI.GUIMovieRoom.onSkip(self, button, params)
         Base.SetDJEnabled(1)
@@ -188,9 +188,9 @@ preintroroom.setAspectRatio(16.0/9.0)
 
 # Set up intro room
 class IntroRoom(PreIntroRoom):
-    def startPlaying(self):
+    def onStart(self, video):
         Base.SetDJEnabled(0)
-        GUI.GUIMovieRoom.startPlaying(self)
+        GUI.GUIMovieRoom.onStart(self, video)
     def onSkip(self, button, params):
         PreIntroRoom.onSkip(self, button, params)
         DoStartNewGame(self, params)

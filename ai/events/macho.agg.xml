@@ -33,7 +33,7 @@ is gonna want to do some sort of circle around the target while keeping main gun
 <meterdistance max="10000" script="turn towards" time="20" timetotinterrupt="10" priority="5">
 </meterdistance>
 
-<meterdistance max="5000" script="FacePerpendicular" time="30" timetointerrupt="20" priority="5">
+<meterdistance max="5000" script="face perpendicular" time="30" timetointerrupt="20" priority="5">
 </meterdistance>
 
 <meterdistance max="7000" script="loop around" time="30" timetointerupt="12" priority="5">

@@ -30,7 +30,7 @@ float cosAngleToDepth(float fNDotV)
    vec2 res = vec2(1.0) / vec2(1024.0,128.0);
    vec2 mn = res * 0.5;
    vec2 mx = vec2(1.0)-res * 0.5;
-   return expandPrecision(texture2DLod(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereType),mn,mx),0.0)) * fAtmosphereThickness;
+   return expandPrecision(texture2D(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereType),mn,mx),-8.0)) * fAtmosphereThickness;
 }
 
 float cosAngleToAlpha(float fNDotV)
@@ -41,8 +41,8 @@ float cosAngleToAlpha(float fNDotV)
    return texture2D(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereType),mn,mx)).a;
 }
 
-float  atmosphereLighting(float fNDotL) { return saturatef(min(1.0,2.0*fAtmosphereContrast*fNDotL)); }
-float  groundLighting(float fNDotL) { return saturatef(min(1.0,2.0*fGroundContrast*fNDotL)); }
+float  atmosphereLighting(float fNDotL) { return saturatef(2.0*fAtmosphereContrast*fNDotL); }
+float  groundLighting(float fNDotL) { return saturatef(2.0*fGroundContrast*fNDotL); }
 
 vec4 atmosphericScatter(vec4 dif, float fNDotV, float fNDotL, float fVDotL, vec3 fvShadow, vec3 fvAShadow)
 {
@@ -54,8 +54,8 @@ vec4 atmosphericScatter(vec4 dif, float fNDotV, float fNDotL, float fVDotL, vec3
    float scattermuch = sqr(sqr(saturatef(1.0-fNDotV)));
    
    rv.rgb = regamma( dif.rgb*absorption*fvShadow 
-                  + atmosphereLighting(fNDotL)
-                    *lerp(fMinScatterFactor, fMaxScatterFactor, scattermuch)
+                  +  atmosphereLighting(fNDotL)
+                     *lerp(fMinScatterFactor, fMaxScatterFactor, scattermuch) 
                     *fAtmosphereScatterColor.rgb*fvAShadow );
    rv.a = dif.a * alpha;
    return rv;

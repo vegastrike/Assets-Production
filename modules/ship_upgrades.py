@@ -69,7 +69,7 @@ def afterburnerBuildCategory(level):
 #    Similar to weapons category construction
 upgrades_sensors_category             = "upgrades/Sensors"
 upgrades_sensors_prefixes             = [""]
-upgrades_sensors_postfixes            = ["Basic","Intermediate","Advanced","Highborn","Rlaan"]
+upgrades_sensors_postfixes            = ["Common","Confed","Highborn","Rlaan"]
 
 # Reactors
 reactorMaxLevel = 14

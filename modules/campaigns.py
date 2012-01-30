@@ -1,31 +1,28 @@
 import universe
+import campaign_lib
+from campaign_lib import *
+
 campaignsloaders=[lambda:LoadMainCampaign()]
 campaigns=[]
 
 _loaded=False
 
 def loadAll(cockpit):
-	global _loaded
-	_loaded=True
-	for x in campaignsloaders:
-		ret=x()
-		if ret:
-			campaigns.append(ret)
+    global _loaded
+    _loaded=True
+    for x in campaignsloaders:
+        ret=x()
+        if ret:
+            campaigns.append(ret)
 
 def getCampaigns():
-	if not _loaded:
-		# Loading happens in generate_dyn_universe.py
-		# But sometimes, e.g. multiplayer, this is not loaded.
-		loadAll(VS.getCurrentPlayer())
-	return campaigns
+    if not _loaded:
+        # Loading happens in generate_dyn_universe.py
+        # But sometimes, e.g. multiplayer, this is not loaded.
+        loadAll(VS.getCurrentPlayer())
+    return campaigns
 
-import campaign_lib
-from campaign_lib import *
-
-# TODO
-#
-# Get phrase for "Good Luck!"
-
+### The Main Campaign
 
 haulerdeal1={"intro":[("Hauler", "That was lucky, I thought I might have missed you!"),
                     ("Deucalion", "I think you've mistaken me for someone else."),
@@ -60,11 +57,11 @@ haulerdeal2={"intro":[("Jenek", "Thanks for that, you really helped me out."),
             "reject1":[("Jenek", "Oh ... Okay.")],
             "reconsider":[("Jenek", "Please, don't toy with me, goodwill seems to be in rather short supply these days.  If you want to help me just say, otherwise it might be safer for you if you hadn't met me.")],
             "reject2":[("Deucalion", "No."),
-                        ("Jenek", "I can't really blame you, I probably would have made the same decision.  Space isn't as friendly around these parts since the war arrived.  But even though you don't want my shipment, take my advice ...  the choices you make today will forever affect your future.  Oh, and watch out for Luviccio.")],
-            "reminder":[("Jenek", "Just follow the directions I gave you, and sign over the shipment to Luvicco.")],
+                        ("Jenek", "I can't really blame you, I probably would have made the same decision.  Space isn't as friendly around these parts since the war arrived.  But even though you don't want my shipment, take my advice ...  the choices you make today will forever affect your future. Oh, and watch out for Luviccio.")],
+            "reminder":[("Jenek", "Just follow the directions I gave you, and sign over the shipment to Luviccio.")],
             "accept":[("Jenek", "Thank you so much.  I was beginning to think I wouldn't be able to get anyone to help.  You have no idea how much this means to me!"),
                         ("Deucalion","Where am I taking the shipment?"),
-                        ("Jenek","I've managed to organise another merchant to finish shipping to all the individual recipients, so you just have to take it all to him.  His name is Luvicco, and you'll have to get him to sign off on the delivery personally.  You should be able to contact him on Serenity Mining Base.")]
+                        ("Jenek","I've managed to organise another merchant to finish shipping to all the individual recipients, so you just have to take it all to him.  His name is Luviccio, and you'll have to get him to sign off on the delivery personally.  You should be able to contact him on Serenity Mining Base.")]
         }
 
 haulerreward=[("Jenek","Thank you so much for finishing that.  You have helped me more than you know."),
@@ -142,9 +139,9 @@ confed_tail_insider["intro"]=[("Investigator","Ah, Deucalion isn't it?  Yes, you
 
 tailreward=[("Investigator","Well done, the mission was a complete success!  Luviccio has been arrested, his while organisation has been shut down, and the creditors are now legally compelled to repay those who have been subject to his credit fraud.  Although you wont get public recognition, my director thanks you for your help."),
             ("Deucalion","As much as I appreciate the gratitude, that's not why I did the mission."),
-            ("Investigator","Yes, I know.  You didn't really have much of a choice did you?  To make up for it, I have, as I said I would, arranged a little financial assistance for losses incurred during your assistance.  It has already been transferred to your account.  Good luck for the future.")]
+            ("Investigator","Yes, I know. You didn't really have much of a choice did you?  To make up for it, I have, as I said I would, arranged a little financial assistance for losses incurred during your assistance.  It has already been transferred to your account.  Good luck for the future.")]
 
-gangstersellout=[("Patron","Good day sir.  I think we have some business to discuss."),
+gangstersellout=[("Patron","Good day sir. I think we have some business to discuss."),
                 ("Deucalion","No we don't, I have nothing I want to talk to you about."),
                 ("Patron","Nevertheless, you are still here!"),
                 "As he speaks, several people get up from nearby tables, and surround Deucalion.",
@@ -155,22 +152,22 @@ gangstersellout=[("Patron","Good day sir.  I think we have some business to disc
                 ("Patron","This same little bird has also told me that my most recent \"business assiciate\" has been dealing with the head of the investigation.  Fortunately, this act of blatant disregard for the power structure in this corner of the galaxy has put no-one jeopardy, save my associate.  With the current confederate presence in this system however, any such action against said associate has been put on hold ... but it most certainly has not been suspended."),
                 "With that, the patron closed his eyes and leaned back in his chair, and the men surrounding Deucalion walk back to the tables they rose from."]
 
-gangsterhit1={"intro":[("Patron", "Deucalion!  So good of you to come all the way out here to see me!"),
+gangsterhit1={"intro":[("Patron", "Deucalion! So good of you to come all the way out here to see me!"),
                     ("Deucalion", "Do I know you?"),
-                    ("Patron", "No, certainly not.  But you know a hauler named Jenek, who was unable to fulfill a contract with me."),
+                    ("Patron", "No, certainly not. But you know a hauler named Jenek, who was unable to fulfill a contract with me."),
                     "This conversation was starting to sound like one Deucalion didn't want to be part of.",
                     ("Deucalion", "I'm sorry, I've really got to ..."),
                     "As he speaks, several people get up from nearby tables, and surround Deucalion",
-                    ("Patron", "As I understand it, you were in a position to fulfill this contract, but did not.  This hurts me greatly, to see a man not willing to help another in distress.  But don't worry, you have a chance to make it up to me.  Now it is up to you, do you wish to make up for this last mistake of yours?")],
+                    ("Patron", "As I understand it, you were in a position to fulfill this contract, but did not.  This hurts me greatly, to see a man not willing to help another in distress. But don't worry, you have a chance to make it up to me.  Now it is up to you, do you wish to make up for this last mistake of yours?")],
             "reject1":[("Deucalion","I don't think I want to get involved in this."),
                     ("Patron", "I understand.  You are lucky I am a generous man, I will give you the chance to reconsider."),
                     "With that, the patron closed his eyes and leaned back in his chair, and the men surrounding Deucalion walk back to the tables they rose from."],
             "reconsider":[("Patron", "Welcome back, I knew you would see what must be done.  Are you ready to begin?")],
             "reject2":[("Deucalion", "No."),
-                        ("Patron", "That is unfortunate.  I would advise you to wait in this system until I have dealt with this matter."),
-                        "The men surrounding Deucalion move just enough to allow him to exit.  As he leaves the table, every pair of eyes in the bar follow him.  It was, to say the least, not Deucalion's finest hour."],
+                        ("Patron", "That is unfortunate. I would advise you to wait in this system until I have dealt with this matter."),
+                        "The men surrounding Deucalion move just enough to allow him to exit.  As he leaves the table, every pair of eyes in the bar follow him. It was, to say the least, not Deucalion's finest hour."],
             "failure":[("Patron", "You never arrived with the package, and yet you do not have it with you.  You will not leave the system until I have decided what to do with you.")],
-            "reminder":[("Patron", "My men are waiting.  You should not keep them waiting much longer.")],
+            "reminder":[("Patron", "My men are waiting. You should not keep them waiting much longer.")],
             "accept":[("Deucalion", "What does it involve?"),
                     ("Patron","Just a simple cargo run, a special package, to the hauler."),
                     "As much as Deucalion did not like the sound of this, he got the feeling he no longer had any choice in the matter.",
@@ -182,17 +179,17 @@ gangsterhit2["intro"]=[("Patron", "Deucalion!  So good of you to come all the wa
                     ("Deucalion","Luviccio?"),
                     ("Patron","Some call me that..."),
                     ("Deucalion", "Well, I got your message ... how do you know my name?"),
-                    ("Patron", "Never mind that.  All that matters is that you are here.  First of all, my thanks for completing that incompetant's cargo delivery.  It is much appreciated."),
+                    ("Patron", "Never mind that.  All that matters is that you are here. First of all, my thanks for completing that incompetent's cargo delivery. It is much appreciated."),
                     ("Deucalion","You're welcome."),
-                    ("Patron","But now, I have another business proposition for you.  You seem like a man who, like me, appreciates the value of a contract.  Jenek broke his contract with me when he failed to make the delivery on time ..."),
+                    ("Patron","But now, I have another business proposition for you. You seem like a man who, like me, appreciates the value of a contract. Jenek broke his contract with me when he failed to make the delivery on time ..."),
                     "This conversation was starting to sound like one Deucalion didn't want to be part of.",
                     ("Deucalion", "I'm sorry, I've really got to ..."),
-                    "As he speaks, several people get up from nearby tables, and surround Deucalion.  The patron continues as if Deucalion hadn't spoken.",
-                    ("Patron", "... and as a result some compensation is in order.  I ask you, as a fellow businessman, if you would like to help me extract this compensation.")]
+                    "As he speaks, several people get up from nearby tables, and surround Deucalion. The patron continues as if Deucalion hadn't spoken.",
+                    ("Patron", "... and as a result some compensation is in order. I ask you, as a fellow businessman, if you would like to help me extract this compensation.")]
 
-gangsterbounty={"intro":[("Patron","Well done Deucalion.  You have won my confidence.  But I am just one man, and you do not get far in life with the confidence of just one."),
+gangsterbounty={"intro":[("Patron","Well done Deucalion. You have won my confidence.  But I am just one man, and you do not get far in life with the confidence of just one."),
                         ("Deucalion","You have other plans for me then?"),
-                        ("Patron","Plans?  Who is talking about plans?  I was merely stating my satisfaction of a job well done."),
+                        ("Patron","Plans?  Who is talking about plans? I was merely stating my satisfaction of a job well done."),
                         ("Deucalion","I--"),
                         ("Patron","But now that you mention it, I do have an opportunity for you.  This opportunity can provide you a way out of this backwater, and give you the lifestyle everyone dreams of."),
                         ("Deucalion","This opportunity, can it be refused?"),
@@ -268,14 +265,14 @@ def LoadMainCampaign():
     vs=Campaign("vega_strike_campaign") # Name of the save game variable for the entire campaign. Can't contain spaces
     vs.Init(HaulerMission1) # the first node.
     
+    description = "Jenek:_Deliver_First_Cargo"
     MakeCargoMission(vs, # Creates a cargo mission
         HAULER_SPRITE, # Campaign, sprite
         [InSystemCondition(HAULER_LOCATION[0],HAULER_LOCATION[1])], # Where fixer meets you to start the mission
         [InSystemCondition("Redemption/Bernards_star","Jacobs")], # Where the mission ends. Usually the same as starting point for next fixer.
         None, # Script to be run as you click on the fixer. A common use is to AddCredits() for the previous mission.
-        LoadMission("directions_mission","directions_mission",(vs.name+"_mission",['Crucible/Stirling','Redemption/Bernards_star'], 'Jacobs')),#Script to be run to start the mission (usually None if you don't have a script, but ambush is also common.)
+        LoadMission(description,"directions_mission",(vs.name+"_mission",['Crucible/Stirling','Redemption/Bernards_star'], 'Jacobs')),#Script to be run to start the mission (usually None if you don't have a script, but ambush is also common.)
         ("Syringes",2,False), # Mission arguments.
-		#[['Gemini/newconstantinople', 'Gemini/newcastle'], 'Liverpool'], # directions
         vs.name+"_mission", # Script to be set on completion. -1=Failure, 0=Not Accepted, 1=Succeed, 2=In progress
         haulerdeal1, # Dictionary containing what the fixer says.
         None, # If you reject the mission twice. "None" means that he continues asking you forever until you accept
@@ -283,12 +280,13 @@ def LoadMainCampaign():
         HaulerMission2, # If you win the mission. Usually points to the next mission
         HaulerMission1) # The current mission node.
     
+    description = "Jenek:_Deliver_Second_Cargo"
     MakeNoFailureCargoMission(vs, # Creates a cargo mission
         HAULER2_SPRITE, # Campaign, sprite
         [InSystemCondition(HAULER_LOCATION[0],HAULER_LOCATION[1])], # Where fixer meets you to start the mission
         [InSystemCondition(GANGSTER_LOCATION[0],GANGSTER_LOCATION[1])], # Where the mission ends. Usually the same as starting point for next fixer.
         ClearFactionRecord('merchant',0.7,PushRelation('merchant')), # Script to be run as you click on the fixer. A common use is to AddCredits() for the previous mission.
-        LoadMission("directions_mission","directions_mission",(vs.name+"_mission",[], GANGSTER_LOCATION[1])), # Script to be run to start the mission (usually None if you don't have a script, but ambush is also common.) (having no destination will call significant unit.. oakham should be the only dockable significant in that system
+        LoadMission(description,"directions_mission",(vs.name+"_mission",[], GANGSTER_LOCATION[1])), # Script to be run to start the mission (usually None if you don't have a script, but ambush is also common.) (having no destination will call significant unit.. oakham should be the only dockable significant in that system
         ("Recycled_Plastics",50,False), #FIXME: varied cargo, and lots of it! Mission arguments.
         vs.name+"_mission", # Script to be set on completion. -1=Failure, 0=Not Accepted, 1=Succeed, 2=In progress
         haulerdeal2, # Dictionary containing what the fixer says.
@@ -385,14 +383,14 @@ def LoadMainCampaign():
         None,
         [GangsterFight])
     
+    description = "Luviccio:_Deliver_Cargo_To_Jenek"
     MakeCargoMission(vs, # Creates a cargo mission
         GANGSTER_SPRITE, # Campaign, sprite
         [InSystemCondition(GANGSTER_LOCATION[0],GANGSTER_LOCATION[1])], # Where fixer meets you to start the mission
         [InSystemCondition(HAULER_LOCATION[0],HAULER_LOCATION[1])], # Where the mission ends. Usually the same as starting point for next fixer.
         None, # Script to be run as you click on the fixer. A common use is to AddCredits() for the previous mission.
-        LoadMission("directions_mission","directions_mission",(vs.name+"_mission",[], HAULER_LOCATION[1])),# Script to be run to start the mission (usually None if you don't have a script, but ambush is also common.)
+        LoadMission(description,"directions_mission",(vs.name+"_mission",[], HAULER_LOCATION[1])),# Script to be run to start the mission (usually None if you don't have a script, but ambush is also common.)
         ("Low_Yield_Explosives",1), # Mission arguments.
-		#[['Gemini/newconstantinople', 'Gemini/newcastle'], 'Liverpool'], # directions
         vs.name+"_mission", # Script to be set on completion. -1=Failure, 0=Not Accepted, 1=Succeed, 2=In progress
         gangsterhit1, # Dictionary containing what the fixer says.
         TailMission2, # If you reject the mission twice. "None" means that he continues asking you forever until you accept
@@ -400,14 +398,14 @@ def LoadMainCampaign():
         GangsterBounty, # If you win the mission. Usually points to the next mission
         GangsterHit1) # The current mission node.
     
+    description = "Luviccio:_Deliver_Cargo_To_Jenek"
     MakeCargoMission(vs, # Creates a cargo mission
         GANGSTER_SPRITE, # Campaign, sprite
         [InSystemCondition(GANGSTER_LOCATION[0],GANGSTER_LOCATION[1])], # Where fixer meets you to start the mission
         [InSystemCondition(HAULER_LOCATION[0],HAULER_LOCATION[1])], # Where the mission ends. Usually the same as starting point for next fixer.
         None, # Script to be run as you click on the fixer. A common use is to AddCredits() for the previous mission.
-        LoadMission("directions_mission","directions_mission",(vs.name+"_mission",[], HAULER_LOCATION[1])),# Script to be run to start the mission (usually None if you don't have a script, but ambush is also common.)
+        LoadMission(description,"directions_mission",(vs.name+"_mission",[], HAULER_LOCATION[1])),# Script to be run to start the mission (usually None if you don't have a script, but ambush is also common.)
         ("Low_Yield_Explosives",1), # Mission arguments.
-		#[['Gemini/newconstantinople', 'Gemini/newcastle'], 'Liverpool'], # directions
         vs.name+"_mission", # Script to be set on completion. -1=Failure, 0=Not Accepted, 1=Succeed, 2=In progress
         gangsterhit2, # Dictionary containing what the fixer says.
         TailMission2, # If you reject the mission twice. "None" means that he continues asking you forever until you accept
@@ -419,15 +417,15 @@ def LoadMainCampaign():
         GANGSTER_SPRITE, # Campaign, sprite
         [InSystemCondition(GANGSTER_LOCATION[0],GANGSTER_LOCATION[1])], # Where fixer meets you to start the mission
         [], # Where the mission ends. Usually the same as starting point for next fixer.
-		AdjustRelation('privateer','pirates',0.2,AdjustRelation('privateer','merchant',-0.1,PushNews(hitsuccess))),
-		None, # Script to be run to start the mission (usually None if you don't have a script. Do NOT load an ambush mission here.)
-		'bounty',(0,0,0,False,0,'confed',(),vs.name+"_mission",'','',True,[]), #Mission arguments.
-		vs.name+"_mission", # Script to be set on completion. -1=Failure, 0=Not Accepted, 1=Succeed, 2=In progress
-		gangsterbounty, # Dictionary containing what the fixer says.
-		GangsterFight, # If you reject the mission twice. "None" means that he continues asking you forever until you accept
-		GangsterFight, # If you lose the mission
-		GangsterReward,
-		GangsterBounty)
+        AdjustRelation('privateer','pirates',0.2,AdjustRelation('privateer','merchant',-0.1,PushNews(hitsuccess))),
+        None, # Script to be run to start the mission (usually None if you don't have a script. Do NOT load an ambush mission here.)
+        'bounty',(0,0,0,False,0,'confed',(),vs.name+"_mission",'','',True,[]), #Mission arguments.
+        vs.name+"_mission", # Script to be set on completion. -1=Failure, 0=Not Accepted, 1=Succeed, 2=In progress
+        gangsterbounty, # Dictionary containing what the fixer says.
+        GangsterFight, # If you reject the mission twice. "None" means that he continues asking you forever until you accept
+        GangsterFight, # If you lose the mission
+        GangsterReward,
+        GangsterBounty)
     
     GangsterReward.Init(vs,
         [InSystemCondition(GANGSTER_LOCATION[0],GANGSTER_LOCATION[1])],
@@ -453,12 +451,13 @@ def LoadMainCampaign():
         None,
         [CampaignEndNode(vs)])
     
-    WrapUpGangster.Init(vs,
-        [],
-        [],
-        None,
-        GoToSubnode(0,(PushNews(piratewin))),
-        None,
-        [CampaignEndNode(vs)])
+    WrapUpGangster.Init(vs, # savegame variable
+        [], #start location
+        [], #dialog
+        None, # fixer sprite
+        GoToSubnode(0,(PushNews(piratewin))), # subnode script
+        None, # completion script
+        #campaign_pirates.Mission1) #[CampaignEndNode(vs)]) # continue with next mission
+        [CampaignEndNode(vs)]) # continue with next mission
     
     return vs
