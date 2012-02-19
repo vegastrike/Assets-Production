@@ -24,7 +24,7 @@
             srgb_aware="true"
             iteration="1" maxiterations="1"
             blend="multi_alpha_blend">
-        <vertex_program src="planet/atmo_vs1.1"/>
+        <vertex_program src="planet/atmo_vs1.1.nonvar"/>
         <fragment_program src="planet/atmo_gas_ps1.4"/>
 
         <texture_unit src="decal:0" default="file:white.bmp" name="baseMap"/>
