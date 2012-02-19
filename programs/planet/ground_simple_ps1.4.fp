@@ -11,10 +11,9 @@ uniform sampler2D noiseMap_20;
 uniform sampler2D normalMap_20;
 uniform samplerCube envMap;
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-
-#define varScatter gl_TexCoord[3].rgb
+#define varTSView (gl_TexCoord[3].xyz)
+#define varTSLight (gl_TexCoord[4].xyz)
+#define varScatter (gl_TexCoord[5].rgb)
 
 float  cityLightTrigger(float fNDotLB) { return clamp(4.0*fNDotLB, 0.0, 1.0); }
 float  atmosphereLighting(float fNDotL) { return saturatef(min(1.0,2.0*fAtmosphereContrast*fNDotL)); }

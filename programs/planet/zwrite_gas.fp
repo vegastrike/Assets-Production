@@ -6,7 +6,7 @@
 #define inGroundCoord gl_TexCoord[1]
 #define inNoiseCoord gl_TexCoord[2]
 
-varying vec3 varTSView;
+#define varTSView gl_TexCoord[3].xyz
 
 uniform sampler2D cosAngleToDepth_20;
 uniform sampler2D cloudMap_20;
