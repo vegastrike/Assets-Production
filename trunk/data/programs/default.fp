@@ -49,11 +49,7 @@ vec3 GLOSS_env_reflection( in vec3 direction ) //const
 {
   //ENV MAP FETCH:
   vec3 result = textureCube( envMap, direction ).rgb;
-#if (DEGAMMA_ENVIRONMENT != 0)
-  return result * result;
-#else
-  return result;
-#endif
+  return degamma_env(result);
 }
 #endif
 float GLOSS_phong_reflection( in float mat_gloss_sa, in float RdotL, in float light_solid_angle ) //const
@@ -81,11 +77,8 @@ void lightingLight(
 {
    vec3  light_pos = normalize(lightinfo.xyz);
    float light_sa = lightinfo.w;
-#if (DEGAMMA_LIGHTS != 0)
-   vec3 light_col = raw_light_col * raw_light_col;
-#else
-   vec3 light_col = raw_light_col;
-#endif
+   vec3  light_col = degamma_light(raw_light_col);
+
    float VNdotLx4= saturatef( 4.0 * diffuse_soft_dot(vnormal,light_pos,light_sa) );
    float NdotL = clamp( diffuse_soft_dot(normal,light_pos,light_sa), 0.0, VNdotLx4 );
    float RdotL = clamp( dot(reflection,light_pos), 0.0, VNdotLx4 );
@@ -134,7 +127,13 @@ void main()
   vec4 speccolor   = texture2D(specMap   , tex_coord);
   vec4 glowcolor   = texture2D(glowMap   , tex_coord);
   
-  //better apply damage lerps before de-gamma-ing
+  // De-gamma input textures
+  damagecolor.rgb  = degamma_tex(damagecolor.rgb);
+  diffcolor.rgb    = degamma_tex(diffcolor.rgb);
+  speccolor.rgb    = degamma_spec(speccolor.rgb);
+  glowcolor.rgb    = degamma_glow(glowcolor.rgb);
+
+  //better apply damage lerps after de-gamma-ing
   diffcolor.rgb  = lerp(diffcolor, damagecolor, damage.x).rgb;
   speccolor     *= (1.0-damage.x);
   glowcolor.rgb *= (1.0-damage.x);
@@ -146,25 +145,18 @@ void main()
   //grab alpha channels  
   alpha = diffcolor.a;
   UAO = glowcolor.a;
+
+  diff_col = diffcolor.rgb;
+  mspec_col = speccolor.rgb;
+  glow_col = glowcolor.rgb;
+  
   //compute gloss-related stuff
 #if (SHININESS_FROM == AD_HOC_SHININESS)
   float crapgloss = saturatef(0.5*dot(mspec_col,vec3(0.3,1.0,0.7)));
-  GLOSS_init( mtl_gloss, 0.1 + 0.4 * crapgloss*sqr(crapgloss) );
+  GLOSS_init( mtl_gloss, 0.1 + 0.4 * sqr(crapgloss) );
 #endif
 #if (SHININESS_FROM == GLOSS_IN_SPEC_ALPHA)
   GLOSS_init( mtl_gloss, speccolor.a );
-#endif
-  //de-gamma diff and spec
-  diff_col = (diffcolor*diffcolor).rgb;
-#if (DEGAMMA_SPECULAR != 0)
-  mspec_col = (speccolor*speccolor).rgb;
-#else
-  mspec_col = speccolor.rgb;
-#endif
-#if (DEGAMMA_GLOW_MAP != 0)
-  glow_col = (glowcolor*glowcolor).rgb;
-#else
-  glow_col = glowcolor.rgb;
 #endif
   
   //reflection
@@ -222,6 +214,7 @@ void main()
   final_reflected += glow_col;
 #endif
 
-  gl_FragColor = vec4( sqrt(final_reflected), alpha ) * cloaking.rrrg;
+  gl_FragColor.rgb = regamma(final_reflected * cloaking.rrr);
+  gl_FragColor.a   = alpha * cloaking.g;
   //Finitto!
 }

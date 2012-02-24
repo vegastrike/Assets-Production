@@ -157,9 +157,10 @@ void main()
   vec3 iTangent=gl_TexCoord[2].xyz;
   vec3 iBinormal=gl_TexCoord[3].xyz;
   vec3 position = gl_TexCoord[7].xyz;
+#if (SUPRESS_HI_Q_VNORM == 0)
   vec3 fnormal = normalize( cross( dFdx(position), dFdy(position) ) );
   fnormal *= sign(dot(fnormal,iNormal)+0.1);
-#if (SUPRESS_HI_Q_VNORM == 0)
+  
   //supplement the vnormal with face normal before normalizing
   float supplemental_fraction=(1.0-length(iNormal));
   vec3 vnormal = normalize( iNormal + supplemental_fraction*fnormal );
@@ -186,7 +187,7 @@ void main()
   speccolor.rgb    = degamma_spec(speccolor.rgb);
   glowcolor.rgb    = degamma_glow(glowcolor.rgb);
 
-  //better apply damage lerps before de-gamma-ing
+  //better apply damage lerps after de-gamma-ing
   diffcolor.rgb  = lerp(diffcolor, damagecolor, damage.x).rgb;
   speccolor     *= (1.0-damage.x);
   glowcolor.rgb *= (1.0-damage.x);
@@ -214,7 +215,7 @@ void main()
   //compute gloss-related stuff
 #if (SHININESS_FROM == AD_HOC_SHININESS)
   float crapgloss = saturatef(0.5*dot(mspec_col,vec3(0.3,1.0,0.7)));
-  GLOSS_init( mtl_gloss, 0.1 + 0.4 * pow(crapgloss,3.0) );
+  GLOSS_init( mtl_gloss, 0.1 + 0.4 * sqr(crapgloss) );
 #endif
 #if (SHININESS_FROM == GLOSS_IN_SPEC_ALPHA)
   GLOSS_init( mtl_gloss, speccolor.a );
