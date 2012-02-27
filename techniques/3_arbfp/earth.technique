@@ -24,7 +24,7 @@
             srgb_aware="true"
             iteration="once"
             blend="alpha_blend">
-        <vertex_program src="planet/atmo_vs1.1"/>
+        <vertex_program src="planet/atmo_vs1.1.nonvar"/>
         <fragment_program src="planet/atmo_arbfp1"/>
 
         <texture_unit src="environment" name="envMap"/>
@@ -53,7 +53,7 @@
             srgb_aware="true"
             iteration="1" maxiterations="1"
             blend="multi_alpha_blend">
-        <vertex_program src="planet/ground_vs1.1"/>
+        <vertex_program src="planet/ground_vs1.1.nonvar"/>
         <fragment_program src="planet/ground_arbfp1"/>
         
         <texture_unit src="decal:0" default="file:white.bmp" name="baseMap_20"/>
@@ -131,7 +131,7 @@
             srgb_aware="true"
             iteration="1" maxiterations="1"
             blend="multi_alpha_blend">
-        <vertex_program src="planet/cloud_vs1.1"/>
+        <vertex_program src="planet/cloud_vs1.1.nonvar"/>
         <fragment_program src="planet/cloud_arbfp1"/>
 
         <texture_unit src="environment" name="envMap"/>

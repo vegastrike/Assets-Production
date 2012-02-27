@@ -1,5 +1,7 @@
 #version 130
 
+#include "../fplod.h"
+
 // Default precision qualifier - make pedantic drivers happy,
 // since OpenGL specs clearly specify they have no meaning except in OpenGL ES
 precision highp float;
@@ -7,7 +9,6 @@ precision highp float;
 #include "gas_giants_params.h"
 #include "../config.h"
 #include "../stdlib.h"
-#include "../fplod.h"
 
 #define inCloudCoord gl_TexCoord[0]
 #define inGroundCoord gl_TexCoord[1]

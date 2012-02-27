@@ -1,7 +1,8 @@
+#include "../fplod.h"
+
 #include "earth_params.h"
 #include "../config.h"
 #include "../stdlib.h"
-#include "../fplod.h"
 
 #define inCloudCoord gl_TexCoord[0]
 #define inGroundCoord gl_TexCoord[1]
@@ -9,9 +10,9 @@
 #define inNoiseCoord gl_TexCoord[3]
 #define inCityCoord gl_TexCoord[4]
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-varying vec3 varWSNormal;
+#define varTSView (gl_TexCoord[5].xyz)
+#define varTSLight (gl_TexCoord[6].xyz)
+#define varWSNormal (gl_TexCoord[7].xyz)
 
 uniform sampler2D cosAngleToDepth_20;
 uniform sampler2D cloudMap_20;
