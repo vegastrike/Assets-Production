@@ -1,7 +1,8 @@
+#include "../fplod.h"
+
 #include "earth_params.h"
 #include "../config.h"
 #include "../stdlib.h"
-#include "../fplod.h"
 
 uniform sampler2D diffuseMap;
 uniform samplerCube envMap;

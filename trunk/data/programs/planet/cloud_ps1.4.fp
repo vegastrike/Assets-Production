@@ -7,9 +7,9 @@
 #define inShadowCoord gl_TexCoord[2]
 #define inNoiseCoord gl_TexCoord[3]
 
-#define varTSView (gl_TexCoord[4].xyz)
-#define varTSLight (gl_TexCoord[5].xyz)
-#define varWSNormal (gl_TexCoord[6].xyz)
+#define varTSView (gl_TexCoord[5].xyz)
+#define varTSLight (gl_TexCoord[6].xyz)
+#define varWSNormal (gl_TexCoord[7].xyz)
 
 uniform sampler2D cosAngleToDepth_20;
 uniform sampler2D cloudMap_20;

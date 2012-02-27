@@ -24,7 +24,7 @@
             srgb_aware="true"
             iteration="1" maxiterations="4"
             blend="multi_alpha_blend">
-        <vertex_program src="planet/atmo_vs1.1"/>
+        <vertex_program src="planet/atmo_vs1.1.nonvar"/>
         <fragment_program src="planet/atmo_ps2.0"/>
 
         <texture_unit src="environment" name="envMap"/>

@@ -5,10 +5,11 @@
 #define outGroundCoord gl_TexCoord[1]
 #define outShadowCoord gl_TexCoord[2]
 #define outNoiseCoord gl_TexCoord[3]
+#define outCityCoord gl_TexCoord[4]
 
-#define varTSView gl_TexCoord[4]
-#define varTSLight gl_TexCoord[5]
-#define varWSNormal gl_TexCoord[6]
+#define varTSView gl_TexCoord[5]
+#define varTSLight gl_TexCoord[6]
+#define varWSNormal gl_TexCoord[7]
 
 uniform float fTime;
 
@@ -54,6 +55,7 @@ void main()
    // Load varyings
    outCloudCoord       = gl_MultiTexCoord0 + fTime*fvCloudLayerDrift.xyxy;
    outNoiseCoord       = gl_MultiTexCoord0 - fTime*fvCloudLayerDrift.xyxy;
+   outCityCoord        = gl_MultiTexCoord0;
    outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView.xyz, 1.0).xyxy;
    outShadowCoord      = shadowExtrude(outGroundCoord.xy, varTSLight.xyz, -1.0).xyxy;
    

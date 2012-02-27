@@ -1,5 +1,7 @@
 #version 130
 
+#include "../fplod.h"
+
 // Default precision qualifier - make pedantic drivers happy,
 // since OpenGL specs clearly specify they have no meaning except in OpenGL ES
 precision highp float;
@@ -7,7 +9,6 @@ precision highp float;
 #include "earth_params.h"
 #include "../config.h"
 #include "../stdlib.h"
-#include "../fplod.h"
 
 uniform sampler2D specularMap_20;
 uniform sampler2D baseMap_20;

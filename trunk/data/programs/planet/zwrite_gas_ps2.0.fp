@@ -1,7 +1,8 @@
+#include "../fplod.h"
+
 #include "gas_giants_params.h"
 #include "../config.h"
 #include "../stdlib.h"
-#include "../fplod.h"
 
 #define inCloudCoord gl_TexCoord[0]
 #define inGroundCoord gl_TexCoord[1]
