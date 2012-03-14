@@ -2,9 +2,9 @@
 #include "../config.h"
 #include "../stdlib.h"
 
-#define varTSView (gl_TexCoord[4].xyz)
-#define varTSLight (gl_TexCoord[5].xyz)
-#define varWSNormal (gl_TexCoord[6].xyz)
+#define varTSView (gl_TexCoord[1].xyz)
+#define varTSLight (gl_TexCoord[2].xyz)
+#define varWSNormal (gl_TexCoord[3].xyz)
 
 uniform sampler2D baseMap;
 uniform sampler2D cosAngleToDepth_20;
@@ -57,7 +57,7 @@ vec4 atmosphericScatter(vec3 ambient, vec3 dif, float fNDotV, float fNDotL, floa
    rv.rgb = regamma( ambient * dif * 0.5
                   + atmosphereLighting(scaleAndOffset(fNDotL))
                     *reyleighShadow(fNDotV)
-                    *reyleigh(fLDotV,rdepth*ralpha,dif) );
+                    *(dif+reyleigh(fLDotV,rdepth*ralpha,dif)) );
    rv.a = ralpha;
    return rv;
 }

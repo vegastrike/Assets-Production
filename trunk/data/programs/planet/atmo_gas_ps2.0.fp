@@ -4,9 +4,9 @@
 #include "../config.h"
 #include "../stdlib.h"
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-varying vec3 varWSNormal;
+#define varTSView (gl_TexCoord[1].xyz)
+#define varTSLight (gl_TexCoord[2].xyz)
+#define varWSNormal (gl_TexCoord[3].xyz)
 
 uniform sampler2D baseMap;
 uniform sampler2D cosAngleToDepth_20;

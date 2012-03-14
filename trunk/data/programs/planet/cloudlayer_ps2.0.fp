@@ -4,14 +4,15 @@
 #include "../config.h"
 #include "../stdlib.h"
 
-#define inCloudCoord gl_TexCoord[0]
-#define inGroundCoord gl_TexCoord[1]
-#define inShadowCoord gl_TexCoord[2]
-#define inNoiseCoord gl_TexCoord[3]
+#define inCloudCoord gl_TexCoord[0].xy
+#define inGroundCoord gl_TexCoord[0].zw
+#define inShadowCoord gl_TexCoord[1].xy
+#define inNoiseCoord gl_TexCoord[1].zw
+#define inExtraShadowCoord2 gl_TexCoord[3].xy
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-varying vec3 varWSNormal;
+#define varTSLight gl_TexCoord[4].xyz
+#define varTSView gl_TexCoord[5].xyz
+#define varWSNormal gl_TexCoord[6].xyz
 
 uniform sampler2D cosAngleToDepth_20;
 uniform sampler2D cloudMap_20;
@@ -70,7 +71,7 @@ vec4 atmosphericScatter(vec3 atmo, vec3 amb, vec4 dif, float fNDotV, float fNDot
    rv.rgb = regamma( amb + dif.rgb*lvabsorption
                   + atmosphereLighting(fNDotL)
                     *reyleigh(fNDotV, fVDotL, ldepth*alpha, atmo, 0.2) );
-   rv.a = saturatef(dif.a) * alpha;
+   rv.a = saturatef(clamp(dif.a,0.0,2.0) * alpha);
    return rv;
 }
 
@@ -147,37 +148,45 @@ void main()
    fvCloud3.rgb          = degamma_tex(fvCloud3.rgb);
    
    vec2 sc1              =      gc1;
-   vec2 sc2              = lerp(gc2,ShadowCoord,0.10 * fCloudLayerThickness);
-   vec2 sc3              = lerp(gc3,ShadowCoord,0.20 * fCloudLayerThickness);
-   vec3 scbias           = (vec3(1.0) - fvCloudLayers.xyz) * 3.0;
+   vec2 sc2              = lerp(gc2,ShadowCoord,0.20 * fCloudLayerThickness);
+   vec2 sc3              = lerp(gc3,ShadowCoord,0.50 * fCloudLayerThickness);
+   vec2 sc4              = inExtraShadowCoord2;
+   vec4 scbias;
+   scbias.xyz            = (vec3(1.0) - fvCloudLayers.xyz) * 3.0;
+   scbias.w              = (1.0 - fvExtraCloudLayers.x) * 3.0;
    
-   float  fCloudShadow1  = texture2D( cloudMap_20, sc1, scbias.z+0.5).a;
-   float  fCloudShadow2  = texture2D( cloudMap_20, sc2, scbias.y+0.5).a;
-   float  fCloudShadow3  = texture2D( cloudMap_20, sc3, scbias.x+0.5).a;
+   float  fCloudShadow1  = min(texture2D( cloudMap_20, sc1, scbias.z+0.5).a, fvExtraCloudLayers.x);
+   float  fCloudShadow2  = min(texture2D( cloudMap_20, sc2, scbias.y+0.5).a, fvExtraCloudLayers.x);
+   float  fCloudShadow3  = min(texture2D( cloudMap_20, sc3, scbias.x+0.5).a, fvExtraCloudLayers.x);
+   float  fCloudShadow4  = texture2D( cloudMap_20, sc4, scbias.w+0.5).a;
    
    
    // Simplified for ps2.a
-   vec3 shadowStep1 = vec3(fvCloudLayers.x) + vec3(0.000, 0.25, 0.70) * vec3(1.0 - fvCloudLayers.x);
-   vec3 shadowStep2 = vec3(fvCloudLayers.y) + vec3(0.000, 0.25, 0.70) * vec3(1.0 - fvCloudLayers.y);
-   vec3 shadowStep3 = vec3(fvCloudLayers.z) + vec3(0.000, 0.25, 0.70) * vec3(1.0 - fvCloudLayers.z);
+   const vec3 shadowStairs = vec3(0.000, 0.25, 0.70);
+   vec3 shadowStep1 = vec3(fvCloudLayers.x) + shadowStairs * vec3(1.0 - fvCloudLayers.x);
+   vec3 shadowStep2 = vec3(fvCloudLayers.y) + shadowStairs * vec3(1.0 - fvCloudLayers.y);
+   vec3 shadowStep3 = vec3(fvCloudLayers.z) + shadowStairs * vec3(1.0 - fvCloudLayers.z);
    vec3 fvCloudShadow    = vec3(fCloudShadow1,fCloudShadow2,fCloudShadow3) * fvDrift.zzz;
-   fCloudShadow1         = dot(saturate(fvCloudShadow - shadowStep1), vec3(0.5));
-   fCloudShadow2         = dot(saturate(fvCloudShadow - shadowStep2), vec3(0.5));
-   fCloudShadow3         = dot(saturate(fvCloudShadow - shadowStep3), vec3(0.5));
+   fCloudShadow1         = dot(saturatef(fvCloudShadow - shadowStep1), vec3(0.33));
+   fCloudShadow2         = dot(saturatef(fvCloudShadow - shadowStep2), vec3(0.33));
+   fCloudShadow3         = dot(saturatef(fvCloudShadow - shadowStep3), vec3(0.33));
    fvCloudShadow         = vec3(fCloudShadow1,fCloudShadow2,fCloudShadow3);
+   
+   float shadowStep4     = fvExtraCloudLayers.x + shadowStairs.x * (1.0 - fvExtraCloudLayers.x);
+   fCloudShadow4         = saturatef(fCloudShadow4 - shadowStep4) * fvExtraCloudLayerScales.x;
    
    // Attack angle density adjustment   
    vec2 CloudLayerDensitySVC;
-   float  fCloudLayerDensityL = fCloudLayerDensity / (abs(L.z)+0.01);
-   float  fCloudLayerDensityV = fCloudLayerDensity / (abs(V.z)+0.01);
+   float  fCloudLayerDensityL = fCloudLayerDensity / (abs(L.z)+fShadowRelHeight.x);
+   float  fCloudLayerDensityV = fCloudLayerDensity / (abs(V.z)+fShadowRelHeight.x);
    CloudLayerDensitySVC.x     = fCloudLayerDensityL * fCloudSelfShadowFactor;
    CloudLayerDensitySVC.y     = fCloudLayerDensityV;
   
    // Compute self-shadowed cloud color
    vec3 fvAmbient         = gl_Color.rgb * fvCloud1.rgb * ambientMapping(varWSNormal) * 0.5;
    vec4 fvBaseColor       = vec4(gl_Color.rgb * atmosphereLighting(fNDotL), gl_Color.a);
-   vec3 fvCloud1s,fvCloud2s,fvCloud3s,fvCloud4s;
-   vec4 fvCloud, fvCloudE;
+   vec3 fvCloud1s,fvCloud2s,fvCloud3s;
+   vec4 fvCloud;
    fvCloudShadow           = saturate(fvCloudShadow * CloudLayerDensitySVC.xxx);
    fvCloud1s               = fvCloud1.rgb*lerp(vec3(1.0),fvCloudSelfShadowColor.rgb,fvCloudShadow.x);
    fvCloud2s               = fvCloud2.rgb*lerp(vec3(1.0),fvCloudSelfShadowColor.rgb,fvCloudShadow.y);
@@ -187,6 +196,7 @@ void main()
    fvCloud.rgb             = lerp(fvCloud.rgb,fvCloud2s,saturatef(fvCloud2.a*CloudLayerDensitySVC.y));
    fvCloud.rgb             = lerp(fvCloud.rgb,fvCloud1s,saturatef(fvCloud1.a*CloudLayerDensitySVC.y));
    fvCloud.rgb            *= fvBaseColor.rgb;
+   fvCloud.rgb            *= lerp(vec3(1.0), fvCloudSelfShadowColor.rgb, saturatef(fCloudShadow4 * CloudLayerDensitySVC.x));
 
    gl_FragColor = atmosphericScatter( fvCloud1.rgb, fvAmbient, fvCloud, fNDotV, fNDotL, fVDotL );
 }

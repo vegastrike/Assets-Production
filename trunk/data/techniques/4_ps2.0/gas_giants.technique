@@ -32,10 +32,10 @@
         <param name="fCloud_Dens_Thick_CLF_SSF" value="1.0,0.5,1.0,0.45" optional="true"/>
         <param name="fvCloudLayerDrift_ShadowRelHeight" value="0.0002,0.000,0.0025,0.1" optional="true"/>
         <param name="fvCloudLayerDrift" value="0.0002,0.000,0.002,0.2" optional="true"/>
-        <param name="fvCloudLayerMix" value="0.34,0.34,0.34" optional="true"/>
+        <param name="fvCloudLayerMix" value="0.34,0.50,0.50" optional="true"/>
         <param name="fShadowRelHeight" value="0.1" optional="true"/>
-        <param name="fvCloudLayers" value="0.950,0.900,0.800" optional="true"/>
-        <param name="fvCloudLayerScales" value="20.0,20.0,10.0" optional="true"/>
+        <param name="fvCloudLayers" value="0.900,0.800,0.600,0.600" optional="true"/>
+        <param name="fvCloudLayerScales" value="10.0,10.0,5.0,5.0" optional="true"/>
 
         <auto_param name="fTime" semantic="GameTime" optional="true"/>
     </pass>
@@ -46,7 +46,7 @@
             srgb_aware="true"
             iteration="1" maxiterations="2"
             blend="multi_alpha_blend">
-        <vertex_program src="planet/atmo_vs1.1"/>
+        <vertex_program src="planet/atmo_vs1.1.nonvar"/>
         <fragment_program src="planet/atmo_gas_ps2.0"/>
 
         <texture_unit src="decal:0" default="file:white.bmp" name="baseMap"/>
@@ -77,7 +77,7 @@
             iteration="1" maxiterations="1"
             blend="multi_alpha_blend"
             polygon_offset_units="-1">
-        <vertex_program src="planet/cloudlayer_vs1.1"/>
+        <vertex_program src="planet/cloudlayer_vs1.1.nonvar"/>
         <fragment_program src="planet/cloudlayer_ps2.0"/>
 
         <texture_unit src="environment" name="envMap"/>
@@ -96,15 +96,19 @@
         <param name="fvCityLightCloudDiffusion" value="3.0,5.0" optional="true"/>
         <param name="fvCityLightColor" value="1.0,1.0,1.0,1.0" optional="true"/>
         <param name="fvCloudLayerDrift_ShadowRelHeight" value="0.0003,0.000,0.002,0.1" optional="true"/>
-        <param name="fvCloudLayerDrift" value="0.0002,0.000,0.002,0.2" optional="true"/>
+        <param name="fvCloudLayerDrift" value="0.0003,0.000,0.002,0.2" optional="true"/>
+        <param name="fvCloudLayerDrift_Layer2" value="0.0002,0.000,0.002,0.2" optional="true"/>
+        <param name="fvCloudLayerDrift_Layer3" value="0.0002,0.000,0.002,0.2" optional="true"/>
         <param name="fvCloudLayerMix" value="0.35,0.35,10.0" optional="true"/>
         <param name="fvCloudSelfShadowColor" value="0.0,0.0,0.0,1.000000" optional="true"/>
         <param name="fvCloudColor" value="1.0,1.0,1.0,1.0" optional="true"/>
         <param name="fShadowRelHeight" value="0.1" optional="true"/>
         <param name="fAtmosphereAbsorptionColor" value="1.0,1.0,1.0,1.000000" optional="true"/> <!-- rgb color, a=rate -->
         <param name="fAtmosphereScatterColor" value="0.0,0.0,0.0,0.900000" optional="true"/>
-        <param name="fvCloudLayers" value="0.600,0.200,-0.100" optional="true"/>
-        <param name="fvCloudLayerScales" value="5.0,2.5,3.3" optional="true"/>
+        <param name="fvCloudLayers" value="0.400,0.200,-0.100" optional="true"/>
+        <param name="fvCloudLayerScales" value="5.0,5.0,3.3" optional="true"/>
+        <param name="fvExtraCloudLayers" value="0.800,1.000" optional="true"/>
+        <param name="fvExtraCloudLayerScales" value="5.0,0.0" optional="true"/>
 
         <auto_param name="fTime" semantic="GameTime" optional="true"/>
         <auto_param name="envColor" semantic="EnvColor" optional="true"/>
@@ -121,7 +125,7 @@
             iteration="1" maxiterations="1"
             blend="multi_alpha_blend"
             polygon_offset_units="-2">
-        <vertex_program src="planet/cloudlayer_vs1.1"/>
+        <vertex_program src="planet/cloudlayer_vs1.1.nonvar"/>
         <fragment_program src="planet/cloudlayer_ps2.0"/>
 
         <texture_unit src="environment" name="envMap"/>
@@ -141,14 +145,18 @@
         <param name="fvCityLightColor" value="1.0,1.0,1.0,1.0" optional="true"/>
         <param name="fvCloudLayerDrift_ShadowRelHeight" value="0.0002,0.000,0.0025,0.1" optional="true"/>
         <param name="fvCloudLayerDrift" value="0.0002,0.000,0.002,0.2" optional="true"/>
-        <param name="fvCloudLayerMix" value="0.34,0.34,0.34" optional="true"/>
+        <param name="fvCloudLayerDrift_Layer2" value="0.0002,0.000,0.002,0.2" optional="true"/>
+        <param name="fvCloudLayerDrift_Layer3" value="0.0002,0.000,0.002,0.2" optional="true"/>
+        <param name="fvCloudLayerMix" value="0.34,0.50,0.50" optional="true"/>
         <param name="fvCloudSelfShadowColor" value="0.0,0.0,0.0,1.000000" optional="true"/>
         <param name="fvCloudColor" value="1.0,1.0,1.0,1.0" optional="true"/>
         <param name="fShadowRelHeight" value="0.1" optional="true"/>
         <param name="fAtmosphereAbsorptionColor" value="1.0,1.0,1.0,1.000000" optional="true"/> <!-- rgb color, a=rate -->
         <param name="fAtmosphereScatterColor" value="0.0,0.0,0.0,0.900000" optional="true"/>
-        <param name="fvCloudLayers" value="0.950,0.900,0.800" optional="true"/>
-        <param name="fvCloudLayerScales" value="20.0,20.0,10.0" optional="true"/>
+        <param name="fvCloudLayers" value="0.900,0.800,0.600,0.600" optional="true"/>
+        <param name="fvCloudLayerScales" value="10.0,10.0,5.0,5.0" optional="true"/>
+        <param name="fvExtraCloudLayers" value="1.000,1.000" optional="true"/>
+        <param name="fvExtraCloudLayerScales" value="100.0,0.0" optional="true"/>
 
         <auto_param name="fTime" semantic="GameTime" optional="true"/>
         <auto_param name="envColor" semantic="EnvColor" optional="true"/>

@@ -2,14 +2,14 @@
 #include "../config.h"
 #include "../stdlib.h"
 
-#define inCloudCoord gl_TexCoord[0]
-#define inGroundCoord gl_TexCoord[1]
-#define inShadowCoord gl_TexCoord[2]
-#define inNoiseCoord gl_TexCoord[3]
+#define inCloudCoord gl_TexCoord[0].xy
+#define inGroundCoord gl_TexCoord[0].zw
+#define inShadowCoord gl_TexCoord[1].xy
+#define inNoiseCoord gl_TexCoord[1].zw
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-varying vec3 varWSNormal;
+#define varTSLight (gl_TexCoord[4].xyz)
+#define varTSView (gl_TexCoord[5].xyz)
+#define varWSNormal (gl_TexCoord[6].xyz)
 
 uniform sampler2D cosAngleToDepth_20;
 uniform sampler2D cloudMap_20;
@@ -63,10 +63,10 @@ vec3 ambientMapping( in vec3 direction )
 
 void main()
 {    
-   vec2 CloudCoord = inCloudCoord.xy;
-   vec2 GroundCoord = inGroundCoord.xy;
-   vec2 ShadowCoord = inShadowCoord.xy;
-   vec2 NoiseCoord = inNoiseCoord.xy;
+   vec2 CloudCoord = inCloudCoord;
+   vec2 GroundCoord = inGroundCoord;
+   vec2 ShadowCoord = inShadowCoord;
+   vec2 NoiseCoord = inNoiseCoord;
 
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
@@ -86,7 +86,8 @@ void main()
    // Mask heights
    H                     = (H - fvCloudLayers.xy)*fvCloudLayerScales.xy;
    
-   if (H.y < 0.01) discard;
+   // 1.4 doesn't have multiple layer passes, so useless
+   // if (H.y < 0.01) discard;
    
    // degamma cloud colors
    fvCloud1.rgb          = degamma_tex(fvCloud1.rgb);
@@ -104,8 +105,8 @@ void main()
    vec2 shadowStep1 = vec2(fvCloudLayers.x) + vec2(0.00, 0.70) * vec2(1.0 - fvCloudLayers.x);
    vec2 shadowStep2 = vec2(fvCloudLayers.y) + vec2(0.00, 0.70) * vec2(1.0 - fvCloudLayers.y);
    vec2 fvCloudShadow    = vec2(fCloudShadow1,fCloudShadow2);
-   fCloudShadow1         = dot(saturate(fvCloudShadow - shadowStep1), vec2(0.7));
-   fCloudShadow2         = dot(saturate(fvCloudShadow - shadowStep2), vec2(0.7));
+   fCloudShadow1         = dot(saturate(fvCloudShadow - shadowStep1), vec2(0.5));
+   fCloudShadow2         = dot(saturate(fvCloudShadow - shadowStep2), vec2(0.5));
    fvCloudShadow         = vec2(fCloudShadow1,fCloudShadow2);
    
    // Attack angle density adjustment   
