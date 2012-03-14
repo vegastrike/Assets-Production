@@ -152,21 +152,24 @@
        <var name="inhabitable" value="false"/>
    </planet>
    <planet name="Uninhabitable_Gas_Giant">
-       <var name="texture" value="planets/gas_giant#num#.texture"/>
+       <var name="texture" value="planets/gas_giant#num#.texture|black.png|planets/gas_giant#num#.texture"/>
        <var name="texture_max" value="5"/>
        <var name="unit" value="gas_giant"/>
+       <var name="technique" value="gas_giants"/>
        <var name="initial" value="gg"/>
        <var name="inhabitable" value="false"/>
    </planet>
    <planet name="Uninhabitable_Medium_Gas_Giant">
-       <var name="texture" value="planets/gas_medium.texture"/>
+       <var name="texture" value="planets/gas_medium.texture|black.png|planets/gas_medium.texture"/>
        <var name="unit" value="gas_medium"/>
+       <var name="technique" value="gas_giants"/>
        <var name="initial" value="gm"/>
        <var name="inhabitable" value="false"/>
    </planet>
    <planet name="Uninhabitable_Dwarf_Gas_Giant">
-       <var name="texture" value="planets/gas_midget.texture"/>
+       <var name="texture" value="planets/gas_midget.texture|black.png|planets/gas_midget.texture"/>
        <var name="unit" value="gas_midget"/>
+       <var name="technique" value="gas_giants"/>
        <var name="initial" value="gd"/>
        <var name="inhabitable" value="false"/>
    </planet>
