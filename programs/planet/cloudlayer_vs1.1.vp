@@ -2,11 +2,13 @@
 #include "../config.h"
 #include "../stdlib_vp.h"
 
-#define outCloudCoord gl_TexCoord[0]
-#define outGroundCoord gl_TexCoord[1]
-#define outShadowCoord gl_TexCoord[2]
-#define outNoiseCoord gl_TexCoord[3]
-#define outCityCoord gl_TexCoord[4]
+#define outCloudCoord gl_TexCoord[0].xy
+#define outGroundCoord gl_TexCoord[0].zw
+#define outShadowCoord gl_TexCoord[1].xy
+#define outNoiseCoord gl_TexCoord[1].zw
+#define outCityCoord gl_TexCoord[2].xy
+#define outExtraShadowCoord2 gl_TexCoord[3].xy
+#define outExtraShadowCoord3 gl_TexCoord[3].zw
 
 varying vec3 varTSLight;
 varying vec3 varTSView;
@@ -54,12 +56,31 @@ void main()
    varWSNormal = normal;
    
    // Load varyings
-   float layerThickness = fvCloudLayers.w / max(0.001,fvCloudLayers.x + 1.0 / fvCloudLayerScales.x);
-   outCloudCoord       = gl_MultiTexCoord0 + fTime*fvCloudLayerDrift.xyxy;
-   outNoiseCoord       = gl_MultiTexCoord0 - fTime*fvCloudLayerDrift.xyxy;
-   outCityCoord        = gl_MultiTexCoord0;
-   outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView, layerThickness).xyxy;
-   outShadowCoord      = shadowExtrude(outGroundCoord.xy, varTSLight, -1.0).xyxy;
+   float layerThickness = fvCloudLayers.x + 1.0 / fvCloudLayerScales.x - fvCloudLayers.w;
+   outCloudCoord       = gl_MultiTexCoord0.xy + fTime*fvCloudLayerDrift.xy;
+   outNoiseCoord       = gl_MultiTexCoord0.xy - fTime*fvCloudLayerDrift.xy;
+   outCityCoord        = gl_MultiTexCoord0.xy;
+   outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView, layerThickness).xy;
+   outShadowCoord      = shadowExtrude(outGroundCoord.xy, varTSLight, -1.0).xy;
+   
+   vec2 extraCloudCoord;
+   vec2 extraGroundCoord;
+   
+   if (fvExtraCloudLayers.x < 1.0) {
+        extraCloudCoord = gl_MultiTexCoord0 + fTime*fvCloudLayerDrift_Layer2.xy;
+        extraGroundCoord = shadowExtrude(extraCloudCoord.xy, varTSView, layerThickness).xy;
+        outExtraShadowCoord2 = lerp(extraGroundCoord, shadowExtrude(extraGroundCoord.xy, varTSLight, -fShadowRelHeight.x).xy, fCloudLayerThickness);
+   } else {
+        outExtraShadowCoord2 = outShadowCoord.xy;
+   }
+   
+   if (fvExtraCloudLayers.y < 1.0) {
+        extraCloudCoord = gl_MultiTexCoord0 + fTime*fvCloudLayerDrift_Layer3.xy;
+        extraGroundCoord = shadowExtrude(extraCloudCoord.xy, varTSView, layerThickness).xy;
+        outExtraShadowCoord3 = lerp(extraGroundCoord, shadowExtrude(extraGroundCoord.xy, varTSLight, -2.0*fShadowRelHeight.x).xy, fCloudLayerThickness);
+   } else {
+        outExtraShadowCoord3 = outShadowCoord.xy;
+   }
    
    // set primary color to the emissive material properties
    vec4 pc = gl_FrontMaterial.emission;

@@ -43,6 +43,8 @@ uniform vec4  fReyleighRate_Amount;
 
 uniform vec4 fAtmosphereExtrusion;
 uniform vec4 fvCloudLayerDrift_ShadowRelHeight;
+uniform vec4 fvCloudLayerDrift_Layer2;
+uniform vec4 fvCloudLayerDrift_Layer3;
 uniform vec4 fCloud_Dens_Thick_CLF_SSF;
 
 #define fCloudLayerDensity      fCloud_Dens_Thick_CLF_SSF.x
@@ -61,6 +63,8 @@ uniform vec4 fvCloudLayerMix;
 uniform vec4 fvCityLightCloudDiffusion;
 uniform vec4 fvCloudLayers;
 uniform vec4 fvCloudLayerScales;
+uniform vec4 fvExtraCloudLayers;
+uniform vec4 fvExtraCloudLayerScales;
 
 uniform vec4 fAtmosphereExtrusionNDLScaleOffsSteepThick;
 

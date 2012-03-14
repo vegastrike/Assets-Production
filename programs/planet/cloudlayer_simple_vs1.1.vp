@@ -3,16 +3,16 @@
 #include "../stdlib_vp.h"
 #include "../stdlib.h"
 
-#define outCloudCoord gl_TexCoord[0]
-#define outGroundCoord gl_TexCoord[1]
-#define outShadowCoord gl_TexCoord[2]
-#define outNoiseCoord gl_TexCoord[3]
-#define outCityCoord gl_TexCoord[4]
+#define outCloudCoord gl_TexCoord[0].xy
+#define outGroundCoord gl_TexCoord[0].zw
+#define outShadowCoord gl_TexCoord[1].xy
+#define outNoiseCoord gl_TexCoord[1].zw
+#define outCityCoord gl_TexCoord[2].xy
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-varying vec3 varWSNormal;
-varying vec3 varCloudLayerDensitySVC;
+#define varTSLight gl_TexCoord[3]
+#define varTSView gl_TexCoord[4]
+#define varWSNormal gl_TexCoord[5]
+#define varCloudLayerDensitySVC gl_TexCoord[6]
 
 uniform float fTime;
 
@@ -56,18 +56,18 @@ void main()
    varTSLight.z = dot( normal, lightpos.xyz );
    
    // WS normal
-   varWSNormal = normal;
+   varWSNormal.xyz = normal;
    
    // Load varyings
-   float layerThickness = fvCloudLayers.w / max(0.001,fvCloudLayers.x + 1.0 / fvCloudLayerScales.x);
+   float layerThickness = fvCloudLayers.x + 1.0 / fvCloudLayerScales.x - fvCloudLayers.w;
    outCloudCoord       = gl_MultiTexCoord0 + fTime*fvCloudLayerDrift.xyxy;
    outNoiseCoord       = gl_MultiTexCoord0 - fTime*fvCloudLayerDrift.xyxy;
    outCityCoord        = gl_MultiTexCoord0;
-   outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView, layerThickness).xyxy;
-   outShadowCoord      = shadowExtrude(outGroundCoord.xy, varTSLight, -1.0).xyxy;
+   outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView.xyz, layerThickness).xyxy;
+   outShadowCoord      = shadowExtrude(outGroundCoord.xy, varTSLight.xyz, -1.0).xyxy;
 
-   float  fCloudLayerDensityL = fCloudLayerDensity / (abs(varTSLight.z)+0.01);
-   float  fCloudLayerDensityV = fCloudLayerDensity / (abs(varTSView.z)+0.01);
+   float  fCloudLayerDensityL = fCloudLayerDensity / (abs(varTSLight.z)+fShadowRelHeight.x);
+   float  fCloudLayerDensityV = fCloudLayerDensity / (abs(varTSView.z)+fShadowRelHeight.x);
    varCloudLayerDensitySVC.x  = fCloudLayerDensityL * fCloudSelfShadowFactor;
    varCloudLayerDensitySVC.y  = fCloudLayerDensityV;
    varCloudLayerDensitySVC.z  = fCloudLayerDensity * fCloudSelfShadowFactor;
@@ -77,8 +77,7 @@ void main()
    vec4 sc = vec4(0.0);
    pc.a = fvCloudColor.a * fCloudLayerDensity;
    
-   pc.rgb += degamma(fvCloudColor.rgb * gl_LightSource[0].diffuse.rgb) * lightatt;
-   sc.rgb += degamma(fvCloudColor.rgb * gl_LightSource[0].specular.rgb) * lightatt;
+   pc.rgb += fvCloudColor.rgb * gl_LightSource[0].diffuse.rgb * lightatt;
 
    float fNDotV = saturatef( varTSView.z );
    float fNDotL = saturatef( varTSLight.z );
@@ -91,7 +90,7 @@ void main()
    pc.rgb *= absorption;
    
    // ambient
-   pc.rgb += degamma(gl_LightSource[0].ambient.rgb);
+   sc.rgb += gl_LightSource[0].ambient.rgb;
 
    
    // Need this instead of ftransform() for invariance
