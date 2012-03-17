@@ -145,9 +145,9 @@ void main()
    vec3 shadowStep2 = vec3(fvCloudLayers.y) + shadowStairs * vec3(1.0 - fvCloudLayers.y);
    vec3 shadowStep3 = vec3(fvCloudLayers.z) + shadowStairs * vec3(1.0 - fvCloudLayers.z);
    vec3 fvCloudShadow    = vec3(fCloudShadow1,fCloudShadow2,fCloudShadow3) * fvDrift.zzz;
-   fCloudShadow1         = dot(saturatef(fvCloudShadow - shadowStep1), vec3(0.33));
-   fCloudShadow2         = dot(saturatef(fvCloudShadow - shadowStep2), vec3(0.33));
-   fCloudShadow3         = dot(saturatef(fvCloudShadow - shadowStep3), vec3(0.33));
+   fCloudShadow1         = dot(saturate(fvCloudShadow - shadowStep1), vec3(0.33));
+   fCloudShadow2         = dot(saturate(fvCloudShadow - shadowStep2), vec3(0.33));
+   fCloudShadow3         = dot(saturate(fvCloudShadow - shadowStep3), vec3(0.33));
    fvCloudShadow         = vec3(fCloudShadow1,fCloudShadow2,fCloudShadow3);
    
    // Attack angle density adjustment   

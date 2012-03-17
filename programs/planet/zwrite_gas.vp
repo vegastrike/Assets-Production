@@ -41,7 +41,7 @@ void main()
    float layerThickness = fvCloudLayers.w / max(0.001,fvCloudLayers.x + 1.0 / fvCloudLayerScales.x);
    outCloudCoord       = gl_MultiTexCoord0 + fTime*fvCloudLayerDrift.xyxy;
    outNoiseCoord       = gl_MultiTexCoord0 - fTime*fvCloudLayerDrift.xyxy;
-   outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView, layerThickness).xyxy;
+   outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView.xyz, layerThickness).xyxy;
    
    // set primary color to the emissive material properties
    vec4 pc;

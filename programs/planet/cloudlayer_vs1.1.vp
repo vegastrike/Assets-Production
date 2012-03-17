@@ -1,6 +1,7 @@
 #include "gas_giants_params.h"
 #include "../config.h"
 #include "../stdlib_vp.h"
+#include "../stdlib.h"
 
 #define outCloudCoord gl_TexCoord[0].xy
 #define outGroundCoord gl_TexCoord[0].zw
@@ -67,7 +68,7 @@ void main()
    vec2 extraGroundCoord;
    
    if (fvExtraCloudLayers.x < 1.0) {
-        extraCloudCoord = gl_MultiTexCoord0 + fTime*fvCloudLayerDrift_Layer2.xy;
+        extraCloudCoord = gl_MultiTexCoord0.xy + fTime*fvCloudLayerDrift_Layer2.xy;
         extraGroundCoord = shadowExtrude(extraCloudCoord.xy, varTSView, layerThickness).xy;
         outExtraShadowCoord2 = lerp(extraGroundCoord, shadowExtrude(extraGroundCoord.xy, varTSLight, -fShadowRelHeight.x).xy, fCloudLayerThickness);
    } else {
@@ -75,7 +76,7 @@ void main()
    }
    
    if (fvExtraCloudLayers.y < 1.0) {
-        extraCloudCoord = gl_MultiTexCoord0 + fTime*fvCloudLayerDrift_Layer3.xy;
+        extraCloudCoord = gl_MultiTexCoord0.xy + fTime*fvCloudLayerDrift_Layer3.xy;
         extraGroundCoord = shadowExtrude(extraCloudCoord.xy, varTSView, layerThickness).xy;
         outExtraShadowCoord3 = lerp(extraGroundCoord, shadowExtrude(extraGroundCoord.xy, varTSLight, -2.0*fShadowRelHeight.x).xy, fCloudLayerThickness);
    } else {
