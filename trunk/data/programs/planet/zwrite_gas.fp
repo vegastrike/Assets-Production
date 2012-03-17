@@ -55,7 +55,7 @@ void main()
    vec2 GroundCoord = inGroundCoord.xy;
    vec2 NoiseCoord = inNoiseCoord.xy;
 
-   vec3 V = normalize(varTSView);
+   vec3 V = normalize(varTSView.xyz);
    
    float  fNDotV           = saturatef( V.z );
 

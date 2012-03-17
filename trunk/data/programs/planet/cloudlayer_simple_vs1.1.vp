@@ -60,11 +60,11 @@ void main()
    
    // Load varyings
    float layerThickness = fvCloudLayers.x + 1.0 / fvCloudLayerScales.x - fvCloudLayers.w;
-   outCloudCoord       = gl_MultiTexCoord0 + fTime*fvCloudLayerDrift.xyxy;
-   outNoiseCoord       = gl_MultiTexCoord0 - fTime*fvCloudLayerDrift.xyxy;
-   outCityCoord        = gl_MultiTexCoord0;
-   outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView.xyz, layerThickness).xyxy;
-   outShadowCoord      = shadowExtrude(outGroundCoord.xy, varTSLight.xyz, -1.0).xyxy;
+   outCloudCoord       = gl_MultiTexCoord0.xy + fTime*fvCloudLayerDrift.xy;
+   outNoiseCoord       = gl_MultiTexCoord0.xy - fTime*fvCloudLayerDrift.xy;
+   outCityCoord        = gl_MultiTexCoord0.xy;
+   outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView.xyz, layerThickness).xy;
+   outShadowCoord      = shadowExtrude(outGroundCoord.xy, varTSLight.xyz, -1.0).xy;
 
    float  fCloudLayerDensityL = fCloudLayerDensity / (abs(varTSLight.z)+fShadowRelHeight.x);
    float  fCloudLayerDensityV = fCloudLayerDensity / (abs(varTSView.z)+fShadowRelHeight.x);

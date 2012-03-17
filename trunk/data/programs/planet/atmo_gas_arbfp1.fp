@@ -100,9 +100,9 @@ void main()
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
    
-   vec3 diffuse = texture2D(baseMap, gl_TexCoord[0].xy, 4.0);
+   vec3 dif = texture2D(baseMap, gl_TexCoord[0].xy, 4.0).rgb;
    
-   gl_FragColor = atmosphericScatter( ambientMapping(varWSNormal), diffuse, V.z, L.z, dot(L,V) );
+   gl_FragColor = atmosphericScatter( ambientMapping(varWSNormal), dif, V.z, L.z, dot(L,V) );
 }
 
 

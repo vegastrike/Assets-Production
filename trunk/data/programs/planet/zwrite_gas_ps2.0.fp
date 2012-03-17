@@ -57,7 +57,7 @@ void main()
    vec2 GroundCoord = inGroundCoord.xy;
    vec2 NoiseCoord = inNoiseCoord.xy;
 
-   vec3 V = normalize(varTSView);
+   vec3 V = normalize(varTSView.xyz);
    
    float  fNDotV           = saturatef( V.z );
 
@@ -83,7 +83,7 @@ void main()
    fvCloudA.z            = texture2D( cloudMap_20, gc3 ).a;
    
    // Mask heights
-   fvCloudA              = saturate((fvCloudA*fvDrift.z-fvCloudLayers)*fvCloudLayerScales);
+   fvCloudA              = saturate((fvCloudA*fvDrift.z-fvCloudLayers.xyz)*fvCloudLayerScales.xyz);
    
    // Parallax - offset coords by relative displacement and resample
    #if (PARALLAX != 0)
@@ -95,7 +95,7 @@ void main()
    fvCloudA.z            = texture2D( cloudMap_20, gc3 ).a;
    
    // Re-Mask heights
-   fvCloudA              = saturate((fvCloudA*fvDrift.z-fvCloudLayers)*fvCloudLayerScales);
+   fvCloudA              = saturate((fvCloudA*fvDrift.z-fvCloudLayers.xyz)*fvCloudLayerScales.xyz);
    #endif
    
    if (fvCloudA.z < 0.01) discard;
