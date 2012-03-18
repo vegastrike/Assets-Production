@@ -82,7 +82,9 @@
 
             <!-- End belt objects -->
 
-<planet name="Jupiter" file="sol/jupiter.texture" radius="71492.0" gravity="20" ri="740.5e6" rj="0" rk="0" sk="-816.6e6" sj="0" si="0" day="35.640" Year="373313713.686" position="0">
+<planet name="Jupiter" file="sol/jupiter.texture|black.png|sol/jupiter.texture" 
+        unit="jupiter" technique="gas_giants" 
+        radius="71492.0" gravity="20" ri="740.5e6" rj="0" rk="0" sk="-816.6e6" sj="0" si="0" day="35.640" Year="373313713.686" position="0">
 
     <!-- Main ring -->
     <Ring file="rings/ring.texture" innerradius="122800" outerradius="129200" wrapx="200" wrapy="10" year="1e12"/>
@@ -97,11 +99,9 @@
     <unit name="Jupiter: HE3 installation" file="Refinery" gravity="0" ri="1470000" sk="-1470000" year="768000000.0" position="0.52" />
 </planet> <!-- End Jupiter -->
 
-<planet name="Saturn" file="sol/saturn.texture" radius="60268.0" gravity="20" ri="1352.6e6" rj="0" rk="0" sk="-1514.5e6" sj="0" si="0" day="38.5200" Year="927058497.2" position="0">
-    <fog>
-        <FogElement file="atmXatm.bfxm" ScaleAtmosphereHeight="1.000" red="1" blue=".8" green="1" alpha="1.0" dired="1" diblue="1" digreen="1" dialpha="1" concavity=".3" focus=".6" minalpha="0" maxalpha=".5"/>
-        <FogElement file="atmXhalo.bfxm" ScaleAtmosphereHeight="1.000" red="1" blue=".8" green="1" alpha="1.0" dired="1" diblue="1" digreen="1" dialpha="1" concavity=".3" focus=".6" minalpha="0" maxalpha=".5"/>
-    </fog>
+<planet name="Saturn" file="sol/saturn.texture|black.png|sol/saturn.texture" 
+        unit="saturn" technique="gas_giants"
+        radius="60268.0" gravity="20" ri="1352.6e6" rj="0" rk="0" sk="-1514.5e6" sj="0" si="0" day="38.5200" Year="927058497.2" position="0">
     <Ring file="sol/saturn-ring.texture" innerradius="74500" outerradius="136800" wrapx="1" wrapy="1" year="1e12"/>
     <planet name="Saturn: Mimas" file="sol/mimas-cel.texture" radius="196" gravity="0" ri="186000" sk="-186000" year="8116.6" position="0.23" />
     <planet name="Saturn: Enceladus" file="sol/enceladus.texture" radius="260" gravity="0" ri="238000" sk="-238000" year="118044.0" position="0.7" />
