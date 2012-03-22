@@ -114,11 +114,9 @@
         <planet name="Saturn: Phoebe" file="sol/asteroid.texture" radius="110" gravity="0" ri="12952000" sk="-12952000" year="2900000.0" position="-0.6"/>
         </planet> <!-- End Saturn -->
 
-        <planet name="Uranus" file="sol/uranus.texture" radius="25559.0" gravity="20" ri="2741.3e6" rj="0" rk="0" sk="-3003.6e6" sj="0" si="0" day="61.9200" Year="40193946000.0" position="0">
-            <fog>
-                <FogElement file="atmXatm.bfxm" ScaleAtmosphereHeight="1.000" red=".7" blue=".9" green=".8" alpha="1.0" dired="1" diblue="1" digreen="1" dialpha="1" concavity=".3" focus=".6" minalpha="0" maxalpha=".5"/>
-                <FogElement file="atmXhalo.bfxm" ScaleAtmosphereHeight="1.000" red=".7" blue=".9" green=".8" alpha="1.0" dired="1" diblue="1" digreen="1" dialpha="1" concavity=".3" focus=".6" minalpha="0" maxalpha=".5"/>
-            </fog>
+        <planet name="Uranus" file="sol/uranus.texture|black.png|sol/uranus.texture" 
+                unit="uranus" technique="gas_giants"
+                radius="25559.0" gravity="20" ri="2741.3e6" rj="0" rk="0" sk="-3003.6e6" sj="0" si="0" day="61.9200" Year="40193946000.0" position="0">
             <!-- Epsilon ring -->
             <Ring file="sol/uranus_rings.texture" innerradius="41900" outerradius="51300" wrapx="1" wrapy="1" year="1e12"/>
 
@@ -129,11 +127,9 @@
             <planet name="Uranus: Oberon" file="sol/oberon-cel.texture" radius="761" gravity="0" ri="583000" sk="-583000" year="1160027.0" position="0.9" />
         </planet> <!-- End Uranus -->
 
-        <planet name="Neptune" file="sol/neptune.texture" radius="24764.0" gravity="20" ri="4444.5e6" rj="0" rk="0" sk="-4545.7e6" sj="0" si="0" day="57.9600" Year="78577200000.0" position="0">
-            <fog>
-                <FogElement file="atmXatm.bfxm" ScaleAtmosphereHeight="1.000" red=".5" blue=".9" green=".9" alpha="1.0" dired="1" diblue="1" digreen="1" dialpha="1" concavity=".3" focus=".6" minalpha="0" maxalpha=".5"/>
-                <FogElement file="atmXhalo.bfxm" ScaleAtmosphereHeight="1.000" red=".5" blue=".9" green=".9" alpha="1.0" dired="1" diblue="1" digreen="1" dialpha="1" concavity=".3" focus=".6" minalpha="0" maxalpha=".5"/>
-            </fog>
+        <planet name="Neptune" file="sol/neptune.texture|black.png|sol/neptune.texture" 
+                unit="neptune" technique="gas_giants"
+                radius="24764.0" gravity="20" ri="4444.5e6" rj="0" rk="0" sk="-4545.7e6" sj="0" si="0" day="57.9600" Year="78577200000.0" position="0">
 
 		<planet name="Neptune: Proteus" file="sol/proteus.texture" radius="209" gravity="0" ri="118000" sk="-118000" year="400000.0" position="0.1" /><!-- FIXME year is wrong -->
 		<planet name="Neptune: Triton" file="sol/triton.texture" radius="1350" gravity="0" ri="355000" sk="-355000" year="506386.0" position="0.8" />
