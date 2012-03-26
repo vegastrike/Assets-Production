@@ -43,14 +43,9 @@
 <unit name= "Solar Defense:Earth SF 4" file="Starfortress" ri="0.28e5" rj="0" rk="0" sk="0.28e5" sj="0" si="" year="2400000.0" position="0.75" faction="purist"></unit>
 </planet> <!-- End Earth -->
 
-<planet name="Mars" file="sol/mars.texture" radius="3397.0" gravity="20" ri="206.6e6" rj="0" rk="0" sk="-249.2e6" sj="0" si="0" day="88.920" Year="59193012.7" position=".62"  Red=".2" Green=".2" Blue=".2">
-	<Atmosphere file="sol/marscloudmaptrans.texture" alpha="SRCALPHA INVSRCALPHA" radius="3400"/>
-    <CityLights file="sol/marslights.texture" wrapx="1" wrapy="1" radius = "3397.1"/>
-    <Fog>
-        <FogElement file="atmXatm.bfxm" ScaleAtmosphereHeight="1.000" red="1" blue=".8" green=".7" alpha="1.0" dired="1" diblue="1" digreen="1" dialpha="1" concavity=".3" focus=".6" minalpha="0" maxalpha=".5"/>
-        <FogElement file="atmXhalo.bfxm" ScaleAtmosphereHeight="1.000" red="1" blue=".8" green=".7" alpha="1.0" dired="1" diblue="1" digreen="1" dialpha="1" concavity=".3" focus=".6" minalpha="0" maxalpha=".5"/>
-    </Fog>
-
+<planet name="Mars" file="planets/mars/mars_diffuse.texture|black.png|planets/mars/mars_clouds.texture|sol/marslights.texture|planets/mars/mars_normal.texture" 
+		unit="mars" technique="mars"
+		radius="3397.0" gravity="20" ri="206.6e6" rj="0" rk="0" sk="-249.2e6" sj="0" si="0" day="88.920" Year="59193012.7" position=".62"  Red=".2" Green=".2" Blue=".2">
     <planet name="Mars: Phobos" file="sol/phobos.texture" faction="neutral" radius="11" sj="9000" rk="0" year="27477.0"/>
     <planet name="Mars: Deimos" file="sol/deimos.texture" faction="neutral" radius="6" year="108739.0" sj="-23000" rk="15000"/>
 	<unit name= "Mars: Mars Centre" file="commerce_center" ri="0.25e5" rj="0" rk="0" sk="0.25e5" sj="0" si="" year="240000.0" position="0.3" faction="confed"></unit>
