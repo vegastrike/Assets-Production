@@ -134,5 +134,11 @@ float soft_min(float m, float x)
    return lerp(x, softx, saturatef(xm));
 }
 
+float maxof(vec2 x) { return max(x.x, x.y); }
+float maxof(vec3 x) { return max(x.x, max(x.y, x.z)); }
+float maxof(vec4 x) { return maxof(max(x.xy, x.zw)); }
 
+float minof(vec2 x) { return min(x.x, x.y); }
+float minof(vec3 x) { return min(x.x, min(x.y, x.z)); }
+float minof(vec4 x) { return minof(min(x.xy, x.zw)); }
 

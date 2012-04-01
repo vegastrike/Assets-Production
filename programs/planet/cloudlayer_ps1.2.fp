@@ -2,15 +2,15 @@
 #include "../config.h"
 #include "../stdlib.h"
 
-#define inCloudCoord gl_TexCoord[0]
-#define inGroundCoord gl_TexCoord[1]
-#define inShadowCoord gl_TexCoord[2]
-#define inNoiseCoord gl_TexCoord[3]
+#define inCloudCoord gl_TexCoord[0].xy
+#define inGroundCoord gl_TexCoord[0].zw
+#define inShadowCoord gl_TexCoord[1].xy
+#define inNoiseCoord gl_TexCoord[1].zw
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-varying vec3 varWSNormal;
-varying vec3 varCloudLayerDensitySVC;
+#define varTSLight (gl_TexCoord[3].xyz)
+#define varTSView (gl_TexCoord[4].xyz)
+#define varWSNormal (gl_TexCoord[5].xyz)
+#define varCloudLayerDensitySVC (gl_TexCoord[6].xyz)
 
 uniform sampler2D cosAngleToDepth_20;
 uniform sampler2D cloudMap_20;
@@ -39,11 +39,11 @@ float cosAngleToAlpha(float fNDotV)
    return texture2D(cosAngleToDepth_20,tc,-8.0).a;
 }
 
-vec4 atmosphericScatter(vec4 dif, float fNDotV, float fNDotL, float fVDotL)
+vec4 atmosphericScatter(vec4 dif, vec3 ambient, float fNDotV, float fNDotL, float fVDotL)
 {
    float alpha = cosAngleToAlpha(saturatef(fNDotV * 0.95 - 0.05));
    vec4 rv;
-   rv.rgb = regamma( dif.rgb );
+   rv.rgb = regamma( dif.rgb + ambient );
    rv.a = saturatef(dif.a) * alpha;
    return rv;
 }
@@ -51,10 +51,10 @@ vec4 atmosphericScatter(vec4 dif, float fNDotV, float fNDotL, float fVDotL)
 
 void main()
 {    
-   vec2 CloudCoord = inCloudCoord.xy;
-   vec2 GroundCoord = inGroundCoord.xy;
-   vec2 ShadowCoord = inShadowCoord.xy;
-   vec2 NoiseCoord = inNoiseCoord.xy;
+   vec2 CloudCoord = inCloudCoord;
+   vec2 GroundCoord = inGroundCoord;
+   vec2 ShadowCoord = inShadowCoord;
+   vec2 NoiseCoord = inNoiseCoord;
 
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
@@ -72,9 +72,10 @@ void main()
    vec2 H                = vec2(fvCloud1.a, fvCloud2.a);
    
    // Mask heights
-   H                     = (H - fvCloudLayers.xy)*fvCloudLayerScales.xy;
+   H                     = saturate((H - fvCloudLayers.xy)*fvCloudLayerScales.xy);
    
-   if (H.y < 0.01) discard;
+   // 1.2 doesn't have multiple layer passes... so useless
+   //if (H.y < 0.01) discard;
    
    // degamma cloud colors
    fvCloud1.rgb          = degamma_tex(fvCloud1.rgb);
@@ -94,6 +95,7 @@ void main()
    vec3 CloudLayerDensitySVC = varCloudLayerDensitySVC;
   
    // Compute self-shadowed cloud color
+   vec3 fvAmbient         = gl_SecondaryColor.rgb * fvCloud1.rgb;
    vec4 fvBaseColor       = degamma(gl_Color);
    vec3 fvCloud1s,fvCloud2s;
    vec4 fvCloud;
@@ -105,6 +107,6 @@ void main()
    fvCloud.rgb             = lerp(fvCloud.rgb,fvCloud1s,saturatef(H.x*CloudLayerDensitySVC.y));
    fvCloud.rgb            *= fvBaseColor.rgb;
 
-   gl_FragColor = atmosphericScatter( fvCloud, fNDotV, fNDotL, fVDotL );
+   gl_FragColor = atmosphericScatter( fvCloud, fvAmbient, fNDotV, fNDotL, fVDotL );
 }
 

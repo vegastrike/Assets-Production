@@ -2,9 +2,9 @@
 #include "../config.h"
 #include "../stdlib.h"
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-varying vec3 varWSNormal;
+#define varTSView (gl_TexCoord[1].xyz)
+#define varTSLight (gl_TexCoord[2].xyz)
+#define varWSNormal (gl_TexCoord[3].xyz)
 
 uniform sampler2D baseMap;
 uniform sampler2D cosAngleToDepth_20;
@@ -57,7 +57,7 @@ vec4 atmosphericScatter(vec3 ambient, vec3 dif, float fNDotV, float fNDotL, floa
    rv.rgb = regamma( ambient * dif * 0.5
                   + atmosphereLighting(scaleAndOffset(fNDotL))
                     *reyleighShadow(fNDotV)
-                    *reyleigh(fLDotV,rdepth*ralpha,dif) );
+                    *(dif+reyleigh(fLDotV,rdepth*ralpha,dif)) );
    rv.a = ralpha;
    return rv;
 }
@@ -72,9 +72,9 @@ void main()
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
    
-   vec3 diffuse = texture2D(baseMap, gl_TexCoord[0].xy, 4.0);
+   vec3 dif = texture2D(baseMap, gl_TexCoord[0].xy, 4.0).rgb;
    
-   gl_FragColor = atmosphericScatter( ambientMapping(varWSNormal), diffuse, V.z, L.z, dot(L,V) );
+   gl_FragColor = atmosphericScatter( ambientMapping(varWSNormal), dif, V.z, L.z, dot(L,V) );
 }
 
 

@@ -1,11 +1,12 @@
+#include "../fplod.h"
+
 #include "gas_giants_params.h"
 #include "../config.h"
 #include "../stdlib.h"
-#include "../fplod.h"
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-varying vec3 varWSNormal;
+#define varTSView (gl_TexCoord[1].xyz)
+#define varTSLight (gl_TexCoord[2].xyz)
+#define varWSNormal (gl_TexCoord[3].xyz)
 
 uniform sampler2D baseMap;
 uniform sampler2D cosAngleToDepth_20;
@@ -99,9 +100,9 @@ void main()
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
    
-   vec3 diffuse = texture2D(baseMap, gl_TexCoord[0].xy, 4.0);
+   vec3 dif = texture2D(baseMap, gl_TexCoord[0].xy, 4.0).rgb;
    
-   gl_FragColor = atmosphericScatter( ambientMapping(varWSNormal), diffuse, V.z, L.z, dot(L,V) );
+   gl_FragColor = atmosphericScatter( ambientMapping(varWSNormal), dif, V.z, L.z, dot(L,V) );
 }
 
 

@@ -6,13 +6,14 @@
 #define outGroundCoord gl_TexCoord[1]
 #define outShadowCoord gl_TexCoord[2]
 #define outNoiseCoord gl_TexCoord[3]
-#define outCityCoord gl_TexCoord[4]
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-varying vec3 varWSNormal;
-varying vec3 varScatter;
-varying vec3 varCloudLayerDensitySVC;
+#define varTSView gl_TexCoord[4]
+#define varTSLight gl_TexCoord[5]
+#define varWSNormal gl_TexCoord[6]
+#define varScatter gl_TexCoord[7].rgb
+#define varCloudLayerDensitySVCx gl_TexCoord[4].w
+#define varCloudLayerDensitySVCy gl_TexCoord[5].w
+#define varCloudLayerDensitySVCz gl_TexCoord[6].w
 
 uniform float fTime;
 
@@ -56,20 +57,19 @@ void main()
    varTSLight.z = dot( normal, lightpos.xyz );
    
    // WS normal
-   varWSNormal = normal;
+   varWSNormal.xyz = normal;
    
    // Load varyings
    outCloudCoord       = gl_MultiTexCoord0 + fTime*fvCloudLayerDrift.xyxy;
    outNoiseCoord       = gl_MultiTexCoord0 - fTime*fvCloudLayerDrift.xyxy;
-   outCityCoord        = gl_MultiTexCoord0;
-   outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView, 1.0).xyxy;
-   outShadowCoord      = shadowExtrude(outGroundCoord.xy, varTSLight, -1.0).xyxy;
+   outGroundCoord      = shadowExtrude(outCloudCoord.xy, varTSView.xyz, 1.0).xyxy;
+   outShadowCoord      = shadowExtrude(outGroundCoord.xy, varTSLight.xyz, -1.0).xyxy;
    
    float  fCloudLayerDensityL = fCloudLayerDensity / (abs(varTSLight.z)+0.01);
    float  fCloudLayerDensityV = fCloudLayerDensity / (abs(varTSView.z)+0.01);
-   varCloudLayerDensitySVC.x  = fCloudLayerDensityL * fCloudSelfShadowFactor;
-   varCloudLayerDensitySVC.y  = fCloudLayerDensityV;
-   varCloudLayerDensitySVC.z  = fCloudLayerDensity * fCloudSelfShadowFactor;
+   varCloudLayerDensitySVCx   = fCloudLayerDensityL * fCloudSelfShadowFactor;
+   varCloudLayerDensitySVCy   = fCloudLayerDensityV;
+   varCloudLayerDensitySVCz   = fCloudLayerDensity * fCloudSelfShadowFactor;
    
    
    // set primary color to the emissive material properties

@@ -1,13 +1,14 @@
+#include "../fplod.h"
+
 #include "gas_giants_params.h"
 #include "../config.h"
 #include "../stdlib.h"
-#include "../fplod.h"
 
 #define inCloudCoord gl_TexCoord[0]
 #define inGroundCoord gl_TexCoord[1]
 #define inNoiseCoord gl_TexCoord[2]
 
-varying vec3 varTSView;
+#define varTSView gl_TexCoord[3]
 
 uniform sampler2D cosAngleToDepth_20;
 uniform sampler2D cloudMap_20;
@@ -56,7 +57,7 @@ void main()
    vec2 GroundCoord = inGroundCoord.xy;
    vec2 NoiseCoord = inNoiseCoord.xy;
 
-   vec3 V = normalize(varTSView);
+   vec3 V = normalize(varTSView.xyz);
    
    float  fNDotV           = saturatef( V.z );
 
@@ -82,7 +83,7 @@ void main()
    fvCloudA.z            = texture2D( cloudMap_20, gc3 ).a;
    
    // Mask heights
-   fvCloudA              = saturate((fvCloudA*fvDrift.z-fvCloudLayers)*fvCloudLayerScales);
+   fvCloudA              = saturate((fvCloudA*fvDrift.z-fvCloudLayers.xyz)*fvCloudLayerScales.xyz);
    
    // Parallax - offset coords by relative displacement and resample
    #if (PARALLAX != 0)
@@ -94,7 +95,7 @@ void main()
    fvCloudA.z            = texture2D( cloudMap_20, gc3 ).a;
    
    // Re-Mask heights
-   fvCloudA              = saturate((fvCloudA*fvDrift.z-fvCloudLayers)*fvCloudLayerScales);
+   fvCloudA              = saturate((fvCloudA*fvDrift.z-fvCloudLayers.xyz)*fvCloudLayerScales.xyz);
    #endif
    
    if (fvCloudA.z < 0.01) discard;

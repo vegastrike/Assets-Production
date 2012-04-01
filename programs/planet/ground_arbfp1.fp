@@ -1,7 +1,8 @@
+#include "../fplod.h"
+
 #include "earth_params.h"
 #include "../config.h"
 #include "../stdlib.h"
-#include "../fplod.h"
 
 uniform sampler2D specularMap_20;
 uniform sampler2D baseMap_20;
@@ -11,8 +12,8 @@ uniform sampler2D cloudMap_20;
 uniform sampler2D noiseMap_20;
 uniform sampler2D normalMap_20;
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
+#define varTSView (gl_TexCoord[3].xyz)
+#define varTSLight (gl_TexCoord[4].xyz)
 
 float  cityLightTrigger(float fNDotLB) { return saturatef(4.0*fNDotLB); }
 

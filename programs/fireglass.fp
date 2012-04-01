@@ -1,7 +1,8 @@
+#include "fplod.h"
+
 #include "config.h"
 #include "stdlib.h"
 #include "normalmap.h"
-#include "fplod.h"
 
 uniform int light_enabled[gl_MaxLights];
 uniform int max_light_enabled;

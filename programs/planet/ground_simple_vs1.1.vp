@@ -4,10 +4,9 @@
 
 uniform float fTime;
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-
-#define varScatter gl_TexCoord[3].rgb
+#define varTSView gl_TexCoord[3]
+#define varTSLight gl_TexCoord[4]
+#define varScatter gl_TexCoord[5].rgb
 
 
 float soffs(float lim, float x)
@@ -58,8 +57,8 @@ void main()
   vec2 cloudcoord = gl_MultiTexCoord0.xy + fTime*fvCloudLayerDrift_ShadowRelHeight.xy;
   vec2 clouddetail= gl_MultiTexCoord0.xy - fTime*fvCloudLayerDrift_ShadowRelHeight.xy;
   gl_TexCoord[1].zw = cloudcoord;
-  gl_TexCoord[1].xy = shadowExtrude(cloudcoord, varTSLight);
-  gl_TexCoord[2].xy = shadowExtrude(clouddetail, varTSLight);
+  gl_TexCoord[1].xy = shadowExtrude(cloudcoord, varTSLight.xyz);
+  gl_TexCoord[2].xy = shadowExtrude(clouddetail, varTSLight.xyz);
   gl_TexCoord[2].zw = vec2(0.0);
   
 

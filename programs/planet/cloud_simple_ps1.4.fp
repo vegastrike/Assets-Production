@@ -7,11 +7,11 @@
 #define inShadowCoord gl_TexCoord[2]
 #define inNoiseCoord gl_TexCoord[3]
 
-varying vec3 varTSLight;
-varying vec3 varTSView;
-varying vec3 varWSNormal;
-varying vec3 varScatter;
-varying vec3 varCloudLayerDensitySVC;
+#define varTSView (gl_TexCoord[4].xyz)
+#define varTSLight (gl_TexCoord[5].xyz)
+#define varWSNormal (gl_TexCoord[6].xyz)
+#define varScatter (gl_TexCoord[7].xyz)
+#define varCloudLayerDensitySVC vec3(gl_TexCoord[4].w, gl_TexCoord[5].w, gl_TexCoord[6].w)
 
 uniform sampler2D cosAngleToDepth_20;
 uniform sampler2D cloudMap_20;
