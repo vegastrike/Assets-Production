@@ -2,7 +2,7 @@ NOTICE: This readme file is very likely to be out of date.
 For the latest manual, please check the Vega Strike Wiki:
 http://vegastrike.sourceforge.net/wiki/Manual
 
-=== VEGA STRIKE 0.5.0 Upon the Coldest Sea README ===
+=== VEGA STRIKE 0.5.2 alpha Upon the Coldest Sea README ===
 
 * 0) New Features*
 
@@ -527,7 +527,7 @@ You can use the following keys to switch between different views:
 
      toggles between cockpit and HUD only mode, with/without
      background You may have to press F1 several times to get back to
-     the cockpit. For the 0.5.0 release, only Rlaan and Aeran fighters
+     the cockpit. For the 0.5.1 release, only Rlaan and Aeran fighters
      currently have cockpit art.
     
     * 2   left view
