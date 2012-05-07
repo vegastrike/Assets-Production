@@ -795,3 +795,17 @@ def make_stattable(stattableexp):
     return stattable
 
 stattable = make_stattable(stattableexp)
+
+if __name__ == '__main__':
+    ok = True
+    for name in generic_bases:
+        if name not in stattable:
+            print "%s not in stattableexp" % name
+            ok = False
+    for names in list(capitals) + list(fighters):
+        for name in names:
+            if name not in stattable:
+                print "%s not in stattableexp" % name
+                ok = False
+    if not ok:
+        raise AssertionError, "Errors in stattables"
