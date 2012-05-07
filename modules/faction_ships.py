@@ -488,9 +488,11 @@ stattableexp={
         "Convolution":(0.54,0.7,500,620,50000),
         "Thales":(0.32,0.02,1000,10000,10000),
         "Clydesdale":(1,0.14,40000,1683740,300000),
+        "Vigilance":(1,0.2,4000,168374,30000), # variant of Clydesdale FIXME
         "Cultivator":(0.68,0.16,300,286770,0),
         "Derivative":(0.5,0.46,500,1030,400),
         "Determinant":(0.5,0.62,300,590,400),
+        "Regret":(0.5,0.62,300,590,400), # dupe of Determinant FIXME
         "Diligence":(0.52,0.14,200,18720,400), # dupe of Mule FIXME
         "Dirge":(0.38,0.38,180,290,200),
         "Dodo":(0.4,0.16,10,2500,0),
@@ -501,6 +503,7 @@ stattableexp={
         "Gleaner":(0.52,0.14,200,18720,400), #dupe of Mule FIXME
         "Goddard":(0.86,0.24,800,5200,500000),
         "GTIO":(0.4,0.16,10,2500,0),
+        "Entourage":(0.4,0.16,10,2500,0), #dupe of GTIO FIXME
         "H496":(0.4,0.16,10,2500,0),
         "Hammer":(0.36,0.28,600,550,50000),
         "Hawking":(1,0.2,80000,1887640,0),
@@ -531,14 +534,15 @@ stattableexp={
         "Seaxbane":(0.44,0.48,300,350,200), # dupe of Robin FIXME
         "Shenzong":(0.52,0.52,40,320,0),
         "Shizu":(0.52,0.52,40,320,0),
-        "Shizu.civvie":(0.52,0.52,40,320,0),
         "Shundi":(1,0.18,50000,2017640,3210),        
         "Sickle":(0.34,0.34,480,390,800),
         "Taizong":(0.78,0.42,440,1150,100000),
         "Tesla":(1,0.22,100000,1887640,0),
         "Tridacna":(0.68,0.16,300,286770,0), #dupe of Ox FIXME
         "Agasicles":(1,0.22,20000,1366420,600000),
+        "Charillus":(1,0.3,2000,136642,60000), # variant of Agasicles FIXME
         "Vendetta":(0.52,0.5,440,450,0), #dupe of Zhuangzong FIXME
+        "Vendetta.hunter":(0.52,0.5,440,450,0), #dupe of Zhuangzong FIXME
         "Agesipolis":(1,0.16,50000,5738710,3210),
         "Watson":(1,0.16,2000,269400,3210),
         "Leonidas":(1,0.12,300000,8138400,2000000),
