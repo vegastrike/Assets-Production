@@ -1,3 +1,18 @@
+<!-- Sol II System for VegaStrike.  Copyright 2003 Coridon Henshaw   -->
+<!-- Freely available to the VegaStrike community for all uses not   -->
+<!-- not involving the exchange of funds or the creation of profit   -->
+<!-- provided that this notice remains intact.                       -->
+<!--                                                                 -->
+<!-- No liability is assumed or implied.  Use at own risk.           -->
+<!--                                                                 -->
+<!-- Do what you will with this file but do not charge money for it. -->
+
+
+<!-- Extensive refactoring by Vega Strike Team under the terms of the-->
+<!-- General Public License version 2 or (at your option) any later  -->
+<!-- version.                                                        -->
+
+
 <system name="Sol" background="backgrounds/milkyway" nearstars="1" stars="1" starspread="1"  x="0" y="0" z="0" scalesystem="1000">
 <Light>
 	<ambient red=".03" green="0.03" blue="0.03"/>
