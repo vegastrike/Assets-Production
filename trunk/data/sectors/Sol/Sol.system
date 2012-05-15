@@ -59,22 +59,11 @@
 
 
 <!-- Belt objects -->
-<!--
-			<unit name="Belt: Central Command" file="Starfortress" year="284546700000.0" ri="473e6" sk="-473e6" faction="confed"/>
-            <asteroid name="Virtual Rocks" file="AFieldBase" year="2845467000000.0" ri="473e6" sk="-473e6" difficulty="1"/>
-
-			<planet name="Belt: JumpToSirius" file="jump.texture" alpha="ONE ONE" radius="30" rk="413900000" si="-413900000" day="19584000" Year="14516496000.0" position=".162" destination="sol_sector/sirius">
-                <unit name="Belt: Sirius Border Control" file="Fighter_Barracks" faction="confed" ri="500" sk="-500"/>
-            </planet>
--->
 <planet name="Belt: 1 Ceres" file="sol/asteroid.texture" radius="466" gravity="20" rk="413900000" si="-413900000" day="1958400" Year="145164960000.0" position=".62"/>
 
 <planet name="Belt: 2 Pallas" file="sol/asteroid.texture" radius="261" gravity="20" rk="414500000" si="-414500000" day="1958400" Year="145164960000.0" position=".2"/>
-<!--
-    <unit name="Belt: 2 Pallas" file="miningbase" radius="261" gravity="20" rk="414500000" si="-414500000" day="1958400" Year="145164960000.0" position=".2" faction="confed"/>
--->
+
 <planet name="Belt: 4 Vesta" file="sol/asteroid.texture" radius="265" gravity="20" rk="353400000" si="-353400000" day="1958400" Year="145164960000.0" position=".8"/>
-<!--            <unit name="Belt: 4 Vesta" file="miningbase" gravity="20" rk="353400000" si="-353400000" day="1958400" Year="145164960000.0" position=".8" faction="confed"/> -->
 
 <planet name="Belt: 10 Hygiea" file="sol/asteroid.texture" radius="215" gravity="20" rk="470300000" si="-470300000" day="1958400" Year="145164960000.0" position=".8"> <!-- FIXME not checked -->
     <asteroid name="The Rockpile" file="AFieldBaseSparse" rk="1000" si="1000" year="1e15" difficulty="0"/>
