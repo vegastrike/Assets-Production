@@ -159,7 +159,7 @@ class random_encounters:
 	    debug.debug('Probability numbers:')
 	    psum = 0
 	    probs = []
-	    for factionnum in range(faction_ships.getMaxFactions()):
+	    for factionnum in xrange(faction_ships.getMaxFactions()):
         	faction=faction_ships.intToFaction(factionnum)
         	num=fg_util.NumFactionFGsInSystem(faction,cursys) # will count bases... but... much quicker.
 		if num==1:
@@ -181,13 +181,13 @@ class random_encounters:
 	# Launch a single random flightgroup in the bunch
 	rnd = vsrandom.random() * self.probability_cache[3]
 	p = 0
-	for factionnum in range(len(self.probability_cache[2])):
+	for factionnum in xrange(len(self.probability_cache[2])):
 	    p += self.probability_cache[2][factionnum]
 	    if (p>=rnd):
                 #now we know that we will generate some ships!
 		faction=faction_ships.intToFaction(factionnum)
 		fglist=fg_util.FGsInSystem(faction,cursys)
-		for k in range(10): #try 10 times
+		for k in xrange(10): #try 10 times
 		    flightgroup=fglist[vsrandom.randrange(len(fglist))]
 		    typenumbers=fg_util.GetShipsInFG(flightgroup,faction)
 		    if not len(typenumbers):

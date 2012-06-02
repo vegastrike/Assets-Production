@@ -269,7 +269,7 @@ def GetRandomRepairSys ():
 #this function sets up a blank unit with some basic upgrades that are really a necessecity for any sort of figthing
 def basicUnit (un, diff):
     i=0
-    for i in range(upgrades_weapons_default_weapon_count): #no unarmed ships, please
+    for i in xrange(upgrades_weapons_default_weapon_count): #no unarmed ships, please
         percent=un.upgrade(upgrades_weapons_default_weapon,i,0,0,1)
     UpgradeEngine (un,diff)
     UpgradeRadar (un,diff)
@@ -314,8 +314,8 @@ def upgradeUnit (un, diff):
         turretz.advance()
         turretcount += 1
     turretcount-=1
-    for i in range(turretcount):
-        for j in range(4):
+    for i in xrange(turretcount):
+        for j in xrange(4):
             mycargo=GetRandomTurret()#turrets as 3rd...
             creds = upgradeHelper (un,mycargo,i,creds,0,0)
     turretcount=diff*50
@@ -323,8 +323,8 @@ def upgradeUnit (un, diff):
         turretcount=24
     elif (turretcount<3):
         turretcount=3
-    for i in range(int(turretcount)):
-        for j in range (10):
+    for i in xrange(int(turretcount)):
+        for j in xrange (10):
             if (vsrandom.random()<0.66):
                 mycargo=GetRandomWeapon(diff)#weapons go on as first two items of loop
             else:

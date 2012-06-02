@@ -584,7 +584,7 @@ def _test_generator(n, funccall):
     smallest = 1e10
     largest = -1e10
     t0 = VS.timeofday()
-    for i in range(n):
+    for i in xrange(n):
         x = eval(code)
         sum = sum + x
         sqsum = sqsum + x*x
@@ -625,7 +625,7 @@ def _test(N=200):
     r1 = random()
     # now do it the slow way
     setstate(s)
-    for i in range(N):
+    for i in xrange(N):
         random()
     r2 = random()
     if r1 != r2:

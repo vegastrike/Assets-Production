@@ -29,7 +29,7 @@ def fillZeros(fac,tim):
     tim=str(tim)
     if fac == "confed":
         zer=2
-    for i in range(zer):
+    for i in xrange(zer):
         if len(tim) < i+1:
             tim='0'+tim
     return tim
@@ -55,7 +55,7 @@ def daysinYear(monthsystem):
     return count
 
 def addMonthDays(monthsys,leap):
-    for i in range(len(monthsys)):
+    for i in xrange(len(monthsys)):
         for lmon in leap:
             if monthsys[i][0] == lmon[0]:
                 monthsys[i] = (monthsys[i][0],monthsys[i][1] + lmon[1])
@@ -67,7 +67,7 @@ def getMDDHMS(frac,system,year,fac):
     remdays = numdays
     countdays = 0
     mon = monthsystem[0][0]
-    for i in range(len(monthsystem)):
+    for i in xrange(len(monthsystem)):
         countdays+=monthsystem[i][1]
         if countdays >= numdays:
             mon = monthsystem[i][0]

@@ -61,7 +61,7 @@ def IsSuperimposition(node):
 		return False
 	subnodes=node.subnodes
 	snp=[]
-	for i in range(len(subnodes)):
+	for i in xrange(len(subnodes)):
 		snp=snp+subnodes[i].preconditions
 	subnodesys=[]
 	subnodeship=[]
@@ -72,7 +72,7 @@ def IsSuperimposition(node):
 	if len(subnodesys)<1:
 		return False
 	valid=True
-	for i in range(len(subnodesys)):
+	for i in xrange(len(subnodesys)):
 		if subnodesys[i] != currnodesys[0]:
 			valid=False
 			break
@@ -165,7 +165,7 @@ class Traverser:
 		return cond.vars;
 def IsFinished():
 	global traverser
-	for i in range(len(traverser)-1,-1,-1):
+	for i in xrange(len(traverser)-1,-1,-1):
 
 		if IsEnd(traverser[i].node):
 			del traverser[i]
@@ -180,7 +180,7 @@ while len(traverser):
 	IsFinished()
 	progress=False
 	variables=[]
-	for i in range(len(traverser)):
+	for i in xrange(len(traverser)):
 		var=traverser[i].Update(variables)
 		if (type(var)==type([])):
 			variables=var

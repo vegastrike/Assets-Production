@@ -391,7 +391,7 @@ class MissionVerifier:
         if len(newargs) > len(self.args):
             raise RuntimeError("More arguments given than this object supports")
         if givenargs:
-            for i in range(len(newargs)):
+            for i in xrange(len(newargs)):
                 self.args[i].set(newargs[i])
 
     def isValid(self):
