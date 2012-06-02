@@ -98,7 +98,7 @@ class plunder (Director.Mission):
                 VS.setCompleteness(self.obj,1.)
                 self.arrived=2
                 self.enemy=[]
-                for i in range(self.quantity*2):
+                for i in xrange(self.quantity*2):
                     launch.launch_wave_around_area("shadow","upgrades","generic_cargo","sitting_duck",1,5.,10.,self.pos,'',0).setName(self.content)
                 self.obj=VS.addObjective("Pick up %d %s cargo"%(self.quantity,self.content))
                 VS.IOmessage(0,"plunder mission",self.mplay,'You must now pick up at least %d of the %s cargo.'%(self.quantity,self.content))

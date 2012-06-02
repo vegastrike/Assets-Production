@@ -78,7 +78,7 @@ class directions_mission (Director.Mission):
         return VS.getUnit(0)
     def getCargo(self,un):
         lis=[]
-        for i in range(un.numCargo()):
+        for i in xrange(un.numCargo()):
             if (un.GetCargoIndex(i).GetMissionFlag()):
                 lis.append(un.GetCargoIndex(i).GetContent())
         return tuple(lis)

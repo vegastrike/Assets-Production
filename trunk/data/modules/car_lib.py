@@ -16,9 +16,9 @@ class Environment(Director.Mission):
         print 'initing'
         self.iter=0
         self.num_un=0
-        for i in range(numcar):
+        for i in xrange(numcar):
             self.CreateUnit ("porsche")
-        for i in range(numspec):
+        for i in xrange(numspec):
             self.CreateUnit ("car")
     def Execute(self):
         un = VS.getUnit (self.iter)

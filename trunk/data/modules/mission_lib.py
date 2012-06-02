@@ -64,7 +64,7 @@ def mission_lib_custom(local, cmd, args, id):
         brief1 = args[3]
         num_briefing_vars = int(args[4])
         briefing_vars = {}
-        for i in range(num_briefing_vars):
+        for i in xrange(num_briefing_vars):
             briefing_vars[args[i*2+5]] = args[i*2+6]
         AddNewMission(which, None, None, brief0, brief1, briefing_vars, briefing_vars)
     elif args[0] == 'LoadLastMission':
@@ -384,7 +384,7 @@ def CreateRandomMission(whichnum):
         return MakeContraband(which)
     else:
         goodlist = []
-        for indx in range(Director.getSaveStringLength(plr, "mission_scripts")):
+        for indx in xrange(Director.getSaveStringLength(plr, "mission_scripts")):
             script=Director.getSaveString(plr,"mission_scripts",indx)
             if script.find("#F#")!=-1:
                 goodlist.append(indx)
@@ -458,7 +458,7 @@ def PickRandomMission(goodlist):
         bounds = bounds + mis[1]
     if bounds:
         pos = vsrandom.randrange(bounds)
-        for midx in range(len(goodlist)):
+        for midx in xrange(len(goodlist)):
             if pos>=goodlist[midx][1]:
                 pos = pos - goodlist[midx][1]
             else:
@@ -477,7 +477,7 @@ def CreateGuildMissions(guildname,nummissions,accepttypes,prefix="#G#",acceptmsg
     addPlayer(plr, False)
     
     goodlist=[]
-    for indx in range(Director.getSaveStringLength(plr, "mission_scripts")):
+    for indx in xrange(Director.getSaveStringLength(plr, "mission_scripts")):
         script=Director.getSaveString(plr,"mission_scripts",indx)
         if (script.find(prefix)!=-1):
             missiontype=script[3:script.find('#',3)]
@@ -493,7 +493,7 @@ def CreateGuildMissions(guildname,nummissions,accepttypes,prefix="#G#",acceptmsg
     if len(goodlist)<nummissions:
         nummissions=len(goodlist)
     delit=[]
-    for missionnum in range(0,nummissions):
+    for missionnum in xrange(0,nummissions):
         goodi=PickRandomMission(goodlist)
         if goodi == None:
             break

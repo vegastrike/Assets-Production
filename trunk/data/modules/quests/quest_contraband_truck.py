@@ -64,7 +64,7 @@ class quest_contraband_truck (quest.quest):
 
         self.numaera = 4
         self.aera_specopp = ()
-        for i in range(self.numaera):
+        for i in xrange(self.numaera):
             self.aera_specopp = self.aera_specopp + (launch.launch_wave_around_unit("Aera/SpecOpp","aera","dagger","default",1,2000,4000,self.playa),)
 
         print

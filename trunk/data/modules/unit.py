@@ -245,7 +245,7 @@ def removeFg(which_fgid):
 # Cloaks or uncloaks (1 or 0) a flightgroup tuple (tup).
 def TfgCloak(state,tup):
     num = len(tup)
-    for i in range(num):
+    for i in xrange(num):
         tup[i].Cloak(state)
         num = num + 1
 
@@ -271,14 +271,14 @@ def TfgHeadCount(tup):
 # Sets a whole tupled flightgroup on a target.
 def setTfgDirective(tup,tgt,dir):
     num = len(tup)
-    for i in range(num):
+    for i in xrange(num):
         tup[i].SetTarget(tgt)
         tup[i].setFgDirective(dir)
 
 # Jumps a whole fg tuple using the JumpTo command.
 def TfgJumpTo(tup,system):
     num = len(tup)
-    for i in range(num):
+    for i in xrange(num):
         tup[i].JumpTo(system)
 
 def getUnitSequenceBackwards():

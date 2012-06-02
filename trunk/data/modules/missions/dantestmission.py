@@ -33,7 +33,7 @@ class dantestmission (quest.quest):
 
             self.numguard = 4
             self.guard = ()
-            for i in range(self.numguard):
+            for i in xrange(self.numguard):
                 self.guard = self.guard + (launch.launch_wave_around_unit("Guardians","neutral","drone","default",1,1,4000,self.playa),)
 
             self.triggkey = [1,1,1,1]

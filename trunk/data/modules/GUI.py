@@ -1605,7 +1605,7 @@ class GUISimpleListPicker(GUIElement):
 			return
 		hotx,hoty,hotw,hoth = self.hotspot.getNormalXYWH()
 		theight = hoth / nlines 
-		for i in range(nlines):
+		for i in xrange(nlines):
 			hot = GUIRect(hotx,hoty-i*hoth/float(nlines),hotw,theight,'normalized_biased_scaled')
 			self._listitems.append( GUIRadioButton(self.room,self.linkdesc,"%s[%s]" % (self.index,i),spr,hot,self._radiogroup(),i,onChange=self._notifySelectionChange,owner=self) )
 			i += 1
@@ -1618,7 +1618,7 @@ class GUISimpleListPicker(GUIElement):
 		return txt
 		
 	def _updateListItemText(self):
-		for i in range(len(self._listitems)):
+		for i in xrange(len(self._listitems)):
 			txt = self._visItemText(i)
 			self._listitems[i].sprites = { 
 				'checked':(None,None,txt,self.selectedattrs), 

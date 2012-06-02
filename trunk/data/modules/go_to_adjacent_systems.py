@@ -56,7 +56,7 @@ class go_to_adjacent_systems:
         msgply=universe.getMessagePlayer(self.you)
         if (len(self.jumps)>0):
             VS.IOmessage(wait,fro,msgply,beginstr % (formatSystemName(VS.getSystemFile())))
-            for i in range(len(self.jumps)-1):
+            for i in xrange(len(self.jumps)-1):
                 VS.IOmessage(wait,fro,msgply,midstr % (formatSystemName(self.jumps[i])))
             VS.IOmessage(wait,fro,msgply,endstr % (formatSystemName(self.jumps[len(self.jumps)-1])))
     def HaveArrived(self):

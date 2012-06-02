@@ -73,7 +73,7 @@ class cargo_mission (Director.Mission):
                 #    category = ''
                 carg = self.GetSomeCargo(category)
                 found=False
-                for i in range(self.you.numCargo()):
+                for i in xrange(self.you.numCargo()):
                     tmpcarg=self.you.GetCargoIndex(i)
                     if (tmpcarg.GetCategory()==category and tmpcarg.GetMissionFlag()) or self.cargoname==tmpcarg.GetContent():
                         print category, tmpcarg.GetCategory()

@@ -133,7 +133,7 @@ class tail (Director.Mission):
             uni_=uni
         sys=uni_.getUnitSystemFile()
         nextsys=False
-        for i in range(len(self.directions)-1):
+        for i in xrange(len(self.directions)-1):
             where=sys.find(self.directions[i])
             if (where>0):
                 if (sys[where-1]=='/'):
@@ -160,11 +160,11 @@ class tail (Director.Mission):
         approx=list()
         approx.append(Vector.Scale(unitrel, self.tracking[1]))
         approx.append(Vector.Scale(relpos, (VS.GetGameTime() - self.tracking[0] + self.WAITTIME)/self.WAITTIME))
-        for i in range(len(approx)):
+        for i in xrange(len(approx)):
             if approx[i] < self.mindist or approx[i] > Vector.Mag(relpos):
                 approx[i] = False
         biggest=(0,0,0)
-        for i in range(len(approx)):
+        for i in xrange(len(approx)):
             if approx[i]:
                 if Vector.Mag(approx[i]) > Vector.Mag(biggest):
                     biggest=approx[i]
@@ -201,7 +201,7 @@ class tail (Director.Mission):
             VS.setCompleteness(self.objref, 1.00)
             self.success=2
             VS.IOmessage (0,"[Mission Computer]","all","Broadcast intercepted.")
-            for i in range(len(self.succeed1)):
+            for i in xrange(len(self.succeed1)):
                 VS.IOmessage (i+1,"[Mission Command]","all",self.succeed1[i])
             self.SetVar(1)
             self.tracking=(VS.GetGameTime()+self.DELAYTIME, VS.getPlayerX(self.cp).getDistance(self.enemy))
@@ -218,7 +218,7 @@ class tail (Director.Mission):
     def outOfRange (self):
         print "tail: Out of range"
         i=0
-        for j in range(len(self.fail2)):
+        for j in xrange(len(self.fail2)):
             VS.IOmessage (j,"[Mission Command]","all",self.fail2[j])
             i+=1
         VS.IOmessage(i,"[Mission Computer]","all","You are not able to detect the target.")
@@ -229,7 +229,7 @@ class tail (Director.Mission):
         print "tail: Too close"
         VS.IOmessage (0,"[Mission Computer]","all","You have been detected by the target %s "%self.enemy.getFullname())
         VS.IOmessage (1,"[Mission Computer]","all","Mission Failed.")
-        for i in range(len(self.fail1)):
+        for i in xrange(len(self.fail1)):
             VS.IOmessage (i+2,"Target","all",self.fail1[i])
         self.enemy.SetTarget(VS.getPlayerX(self.cp))
         self.enemy.setFgDirective('A')
