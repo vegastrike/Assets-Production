@@ -63,4 +63,11 @@
    <VDU TextRows="14" TextCols="100" type="Message" file="mvdu.sprite" />	
    <VDU TextRows="30" TextCols="30" type="Objectives" file="objvdu.sprite"/>
    <VDU TextRows="15" TextCols="30" type="Comm" file ="commvdu.sprite" />
+
+   <!-- Sounds -->
+   <Event event="JumpAvailable" soundfile="electricity.wav" />
+   <Event event="ASAPEngaged" soundfile="asap.wav" />
+   <Event event="ASAPDisengaged" soundfile="lockingbak.wav" />
+   <Event event="Lock" soundfile="lockwarning.wav" looping="true" />
+   <Event event="MissileLock" soundfile="missilelockwarning.wav" looping="true" />
 </Cockpit>
