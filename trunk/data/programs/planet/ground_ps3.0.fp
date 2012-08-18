@@ -12,7 +12,6 @@ precision highp float;
 
 uniform sampler2D specularMap_20;
 uniform sampler2D baseMap_20;
-uniform sampler2D cityLights_20;
 uniform sampler2D cosAngleToDepth_20;
 uniform sampler2D cloudMap_20;
 uniform sampler2D noiseMap_20;

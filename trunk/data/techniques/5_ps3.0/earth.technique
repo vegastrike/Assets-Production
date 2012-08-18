@@ -60,7 +60,6 @@
         <texture_unit src="environment" name="envMap"/>
         <texture_unit src="decal:1" default="file:black.png" name="specularMap_20"/>
         <texture_unit src="decal:2" name="cloudMap_20"/>
-        <texture_unit src="decal:3" default="file:black.png" name="cityLights_20"/>
         <texture_unit src="decal:4" default="file:blue.png" name="normalMap_20"/>
         <texture_unit src="file:cosAngleToDepth_1024.png" name="cosAngleToDepth_20"/>
         <texture_unit src="file:noise.png" name="noiseMap_20"/>
@@ -146,7 +145,7 @@
         <param name="fBumpScale" value="0.001,24.0,0.1,0.0" optional="true"/>
         <param name="fGroundContrast_SelfShadowFactor_MinMaxScatterFactor" value="3.0,0.2,0.05,2.24" optional="true"/>
         <param name="fCityLightTriggerBias" value="0.2" optional="true"/>
-        <param name="fCloud_Dens_Thick_CLF_SSF" value="1.0,0.5,1.0,0.3" optional="true"/>
+        <param name="fCloud_Dens_Thick_CLF_SSF" value="1.0,0.5,2.0,0.3" optional="true"/>
         <param name="fReyleighRate_Amount" value="4.0,8.0" optional="true"/>
         <param name="fvCityLightCloudDiffusion" value="3.0,5.0" optional="true"/>
         <param name="fvCityLightColor" value="1.0,1.0,1.0,1.0" optional="true"/>
