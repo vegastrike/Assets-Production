@@ -69,7 +69,7 @@ vec3 reyleigh(float fVDotL, float ldepth)
     }
 }
 
-vec4 atmosphericScatter(vec3 amb, vec4 dif, float fNDotV, float fNDotL, float fVDotL)
+vec4 atmosphericScatter(vec3 amb, vec4 dif, vec3 emis, float fNDotV, float fNDotL, float fVDotL)
 {
    float  vdepth     = cosAngleToDepth(fNDotV) * sqr(saturatef(1.0-fShadowRelHeight.x));
    float  ldepth     = cosAngleToDepth(fNDotL+fAtmosphereAbsorptionOffset) * sqr(saturatef(1.0-fShadowRelHeight.x));
@@ -92,7 +92,7 @@ vec4 atmosphericScatter(vec3 amb, vec4 dif, float fNDotV, float fNDotL, float fV
    
    
    vec4 rv;
-   rv.rgb = regamma( amb + dif.rgb*(labsorption*vabsorption)
+   rv.rgb = regamma( amb + ((dif.rgb*labsorption+emis)*vabsorption)
                   + atmosphereLighting(fNDotL)
                     *lscatter );
    rv.a = dif.a * alpha;
@@ -142,9 +142,11 @@ void main()
    GroundCoord      += fvDrift.xy;
    ShadowCoord      += fvDrift.xy;
    
-   vec4 fvCityLightBase   = cityLightTrigger(fNDotLB) * fvCityLightColor * fCityLightFactor;
-   vec4 fvCityLights1     = texture2D( cityLights_20, CityCoord, fvCityLightCloudDiffusion.x ) * fvCityLightBase;
-   vec4 fvCityLights4     = texture2D( cityLights_20, CityCoord, fvCityLightCloudDiffusion.y ) * fvCityLightBase;
+   vec3 fvCityLightBase   = cityLightTrigger(fNDotLB) * fvCityLightColor.rgb * fCityLightFactor;
+   vec4 fvCityLights1     = sqr(degamma_glow(texture2D( cityLights_20, CityCoord, fvCityLightCloudDiffusion.x )));
+   vec4 fvCityLights4     = sqr(degamma_glow(texture2D( cityLights_20, CityCoord, fvCityLightCloudDiffusion.y )));
+   fvCityLights1.rgb     *= fvCityLightBase * fvCityLightCloudDiffusion.z;
+   fvCityLights4.rgb     *= fvCityLightBase * fvCityLightCloudDiffusion.w;
 
    // Sample cloudmap
    vec2 gc1              =      CloudCoord                                         ;
@@ -210,22 +212,24 @@ void main()
    vec3 fvAmbient         = gl_Color.rgb * ambientMapping(varWSNormal) * 0.5;
    vec4 fvBaseColor       = vec4(gl_Color.rgb * atmosphereLighting(fNDotL), gl_Color.a);
    vec3 fvCloud1s,fvCloud2s,fvCloud3s,fvCloud4s;
-   vec3 fvCloud1c,fvCloud2c,fvCloud3c,fvCloud4c;
    vec4 fvCloud, fvCloudE;
    fvCloud1s               = fvCloud1.rgb;
    fvCloud2s               = fvCloud2.rgb*lerp(vec3(1.0),fvCloudSelfShadowColor.rgb,saturatef(fCloudShadow2*CloudLayerDensitySVC.x));
    fvCloud3s               = fvCloud3.rgb*lerp(vec3(1.0),fvCloudSelfShadowColor.rgb,saturatef(fCloudShadow3*CloudLayerDensitySVC.x));
    fvCloud4s               = fvCloud4.rgb*lerp(vec3(1.0),fvCloudSelfShadowColor.rgb,saturatef(fCloudShadow4*CloudLayerDensitySVC.x));
-   fvCloud1c               = fvCloud1.rgb*lerp(fvCityLights1,fvCityLights4,1.00).rgb*lerp(vec3(1.0),fvCloudSelfShadowColor.rgb,saturatef(3.0*CloudLayerDensitySVC.z));
-   fvCloud2c               = fvCloud2.rgb*lerp(fvCityLights1,fvCityLights4,0.50).rgb*lerp(vec3(1.0),fvCloudSelfShadowColor.rgb,saturatef(2.0*CloudLayerDensitySVC.z));
-   fvCloud3c               = fvCloud3.rgb*lerp(fvCityLights1,fvCityLights4,0.25).rgb*lerp(vec3(1.0),fvCloudSelfShadowColor.rgb,saturatef(1.0*CloudLayerDensitySVC.z));
-   fvCloud4c               = fvCloud4.rgb*     fvCityLights1                    .rgb;
    fvCloud.a               = fvBaseColor.a*dot(fvCloudLayerMix,vec4(fvCloud1.a,fvCloud2.a,fvCloud3.a,fvCloud4.a));
-   fvCloud.rgb             = fvCloud4s*fvBaseColor.rgb+fvCloud4c;
-   fvCloud.rgb             = lerp(fvCloud.rgb,fvCloud3s*fvBaseColor.rgb+fvCloud3c,saturatef(fvCloud3.a*CloudLayerDensitySVC.y));
-   fvCloud.rgb             = lerp(fvCloud.rgb,fvCloud2s*fvBaseColor.rgb+fvCloud2c,saturatef(fvCloud2.a*CloudLayerDensitySVC.y));
-   fvCloud.rgb             = lerp(fvCloud.rgb,fvCloud1s*fvBaseColor.rgb+fvCloud1c,saturatef(fvCloud1.a*CloudLayerDensitySVC.y));
+   fvCloud.rgb             = fvCloud4s*fvBaseColor.rgb;
+   fvCloud.rgb             = lerp(fvCloud.rgb,fvCloud3s*fvBaseColor.rgb,saturatef(fvCloud3.a*CloudLayerDensitySVC.y));
+   fvCloud.rgb             = lerp(fvCloud.rgb,fvCloud2s*fvBaseColor.rgb,saturatef(fvCloud2.a*CloudLayerDensitySVC.y));
+   fvCloud.rgb             = lerp(fvCloud.rgb,fvCloud1s*fvBaseColor.rgb,saturatef(fvCloud1.a*CloudLayerDensitySVC.y));
+   
+   float clH = 2.0 - 2.0*sqr(1.0-fvCloud.a);
+   clH += 0.25 * maxof(vec4(fvCloud1.a,fvCloud2.a,fvCloud3.a,fvCloud4.a));
+   
+   vec3 fvCloudc;
+   fvCloudc.rgb = lerp(fvCityLights1.rgb, fvCityLights4.rgb, saturatef(clH*2.0));
+   fvCloudc.rgb *= lerp(vec3(1.0), fvCloudSelfShadowColor.rgb, saturatef(CloudLayerDensitySVC.z*clH*2.0));
 
-   gl_FragColor = atmosphericScatter( fvAmbient, fvCloud, fNDotV, fNDotL, fVDotL );
+   gl_FragColor = atmosphericScatter( fvAmbient, fvCloud, fvCloudc, fNDotV, fNDotL, fVDotL );
 }
 
