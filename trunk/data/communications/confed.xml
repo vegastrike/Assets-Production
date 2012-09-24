@@ -6,17 +6,20 @@
 	</node>
 
 <!-- Starting Points -->
-	<node text="Just another lazy day in these parts, friend." relationship="0.2"><!-- node 1 (very happy)-->
+	<node text="The confederation approves of your efforts." relationship="0.2"><!-- node 1 (very happy)-->
+		<sound file="communications/sounds/confed/confed_approves-efforts.ogg" sex="0"/>
 		<edge index="4"/>
 		<edge index="5"/>
 		<edge index="6"/>
 	</node>
-	<node text="Keep clear, I don't brake for civvies." relationship="0"><!-- node 2 (neutral)-->
+	<node text="Go bother someone else." relationship="0"><!-- node 2 (neutral)-->
+		<sound file="communications/sounds/confed/confed_go-bother.ogg" sex="0"/>
 		<edge index="8"/>
 		<edge index="9"/>
 		<edge index="10"/>
 	</node>
-	<node text="You can run, but you'll still die!" relationship="-.2"><!-- node 3 (very mad)-->
+	<node text="Nobody messes with the confederation and lives!" relationship="-.2"><!-- node 3 (very mad)-->
+		<sound file="communications/sounds/confed/confed_mess-with.ogg" sex="0"/>
 		<edge index="12"/>
 		<edge index="13"/>
 		<edge index="14"/>
@@ -25,83 +28,99 @@
 
 <!-- Other Nodes -->
 
-	<node text="Keep your distance civvie, the cavalry is trotting through!" relationship=".03125"><!-- node 4(random good chatter)-->
+	<node text="Have you read the latest issue of big guns?" relationship=".03125"><!-- node 4(random good chatter)-->
+		<sound file="communications/sounds/confed/confed_big-guns.ogg" sex="0"/>
 		<edge index="4"/>
 		<edge index="5"/>
 	</node>
-	<node text="Days like these, I don't mind the war." relationship=".0625"><!-- node 5 (random good chatter)-->
+	<node text="I can't believe I'm talking to Deucalion himself" relationship=".0625"><!-- node 5 (random good chatter)-->
+		<sound file="communications/sounds/confed/confed_cant-believe.ogg" sex="0"/>
 		<edge index="4"/>
 		<edge index="6"/>
 	</node>
-	<node text="Friendly is as friendly does." relationship=".0625"><!-- node 6 (best node)-->
+	<node text="Join me in our onboard bar sometime, when you're not busy." relationship=".0625"><!-- node 6 (best node)-->
+		<sound file="communications/sounds/confed/confed_onboard-bar.ogg" sex="0"/>
 		<edge index="5"/>
 		<edge index="6"/>
 	</node>
-	<node text="Don't make me return fire, I hate the paperwork on collateral damage!" relationship="-.03125"><!-- node 7 (hit while happy)-->
+	<node text="Stirring up trouble around this vessel could prove hazardous to your health." relationship="-.03125"><!-- node 7 (hit while happy)-->
+		<sound file="communications/sounds/confed/confed_hazardous.ogg" sex="0"/>
 		<edge index="4"/>
 		<edge index="8"/>
 		<edge index="9"/>
 		<edge index="10"/>
 	</node>
-	<node text="Another day, another long patrol - don't make it longer, capisce?" relationship=".03125"><!-- node 8 (random neutral chatter)-->
+	<node text="Don't cause problems." relationship=".03125"><!-- node 8 (random neutral chatter)-->
+		<sound file="communications/sounds/confed/confed_dont-cause.ogg" sex="0"/>
 		<edge index="9"/>
 		<edge index="10"/>
 	</node>
-	<node text="This system's not so pretty these days - you holler if you catch some flak." relationship=".04125"><!-- node 9 (neutral node after he has decided to be nicer after conflict)-->
+	<node text="My missiles are locked on, so don't tempt me." relationship=".04125"><!-- node 9 (neutral node after he has decided to be nicer after conflict)-->
+		<sound file="communications/sounds/confed/confed_missiles-locked.ogg" sex="0"/>
 		<edge index="8"/>
 		<edge index="10"/>
 	</node>
-	<node text="Saw you, heard you, logged it down - now move along!" relationship=".03125"><!-- node 10 (good node in neutral) -->
+	<node text="Please try to keep my day uneventful." relationship=".03125"><!-- node 10 (good node in neutral) -->
+		<sound file="communications/sounds/confed/confed_keep-uneventful.ogg" sex="0"/>
 		<edge index="8"/>
 		<edge index="9"/>
 	</node>
-	<node text="Nothing friendly about your fire, and nothing friendly about mine!" relationship="-.125"><!-- node 11 (got hit when neutral)-->
+	<node text="I'm legally obligated to teach you the meaning of pain!" relationship="-.125"><!-- node 11 (got hit when neutral)-->
+		<sound file="communications/sounds/confed/confed_legally.ogg" sex="0"/>
 		<edge index="9"/>
 		<edge index="12"/>
 		<edge index="13"/>
 		<edge index="14"/>
 	</node>
-	<node text="I've brought up your file subversive, you make me want to vomit!" relationship="-.0625"><!-- node 12 (taunt)-->
+	<node text="Obey the law, and we will not have an issue" relationship="-.0625"><!-- node 12 (taunt)-->
+		<sound file="communications/sounds/confed/confed_obey-law.ogg" sex="0"/>
 		<edge index="13"/>
 		<edge index="15"/>
 		<edge index="19"/>
 	</node>
-	<node text="Die, disobedient scum!" relationship="-.125"><!-- node 13 (taunt)-->
+	<node text="Surrender, or we will vaporize your puny craft." relationship="-.125"><!-- node 13 (taunt)-->
+		<sound file="communications/sounds/confed/confed_vaporize.ogg" sex="0"/>
 		<edge index="12"/>
 		<edge index="15"/>
 		<edge index="19"/>
 	</node>
-	<node text="What kind of idiot do you think I am, a SuSim, or something!?" relationship="-.0625"><!-- node 14 (trying to appease him, but failing)-->
+	<node text="Surrender now, and I just might go easy on you." relationship="-.0625"><!-- node 14 (trying to appease him, but failing)-->
+		<sound file="communications/sounds/confed/confed_surrender-easy.ogg" sex="0"/>
 		<edge index="8"/>
 		<edge index="12"/>
 		<edge index="13"/>
 		<edge index="14"/>
 	</node>
-	<node text="I'm going to tear you one a mind wipe won't erase!" relationship="-.0625"><!-- node 15 hit while mad node-->
+	<node text="Alright punk, I've had it!" relationship="-.0625"><!-- node 15 hit while mad node-->
+		<sound file="communications/sounds/confed/confed_alright-punk.ogg" sex="0"/>
 		<edge index="11"/>
 		<edge index="13"/>
 		<edge index="12"/>
 		<edge index="19"/>
 	</node>
-	<node text="Surrender now and save me some ammo!" relationship="-.0625"><!-- node 16 kill-->
+	<node text="I don't need an excuse to waste ammunition." relationship="-.0625"><!-- node 16 kill-->
+		<sound file="communications/sounds/confed/confed_waste-ammo.ogg" sex="0"/>
 		<edge index="12"/>
 		<edge index="13"/>
 		<edge index="17"/>
 		<edge index="19"/>
 	</node>
-	<node text="Just die already, I'm late for chow!" relationship="-.0625"><!-- node 17 kill-->
+	<node text="Get out of MY system!" relationship="-.0625"><!-- node 17 kill-->
+		<sound file="communications/sounds/confed/confed_my-system.ogg" sex="0"/>
 		<edge index="12"/>
 		<edge index="13"/>
 		<edge index="16"/>
 		<edge index="19"/>
 	</node>
-	<node text="A pickled PAI wouldn't believe your apologies now, scum!" relationship="-.03125"><!-- node 18 (trying to appease, but failing)-->
+	<node text="Nobody messes with the confederation and lives!" relationship="-.03125"><!-- node 18 (trying to appease, but failing)-->
+		<sound file="communications/sounds/confed/confed_mess-with.ogg" sex="0"/>
 		<edge index="9"/>
 		<edge index="12"/>
 		<edge index="13"/>
 		<edge index="14"/>
 	</node>	
-	<node text="You sure picked an expensive way to kill yourself!" relationship="-.0625"><!-- node 19 (taunt)-->
+	<node text="Stop causing problems, or my subordinates will fire upon you." relationship="-.0625"><!-- node 19 (taunt)-->
+		<sound file="communications/sounds/confed/confed_subordinates.ogg" sex="0"/>
 		<edge index="12"/>
 		<edge index="13"/>
 		<edge index="14"/>
