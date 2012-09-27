@@ -68,6 +68,6 @@
    <Event event="JumpAvailable" soundfile="electricity.wav" />
    <Event event="ASAPEngaged" soundfile="asap.wav" />
    <Event event="ASAPDisengaged" soundfile="lockingbak.wav" />
-   <Event event="Lock" soundfile="lockwarning.wav" looping="true" />
-   <Event event="MissileLock" soundfile="missilelockwarning.wav" looping="true" />
+   <Event event="Lock" soundfile="lockwarning.wav" gain="3.0" looping="true" />
+   <Event event="MissileLock" soundfile="missilelockwarning.wav" gain="3.0" looping="true" />
 </Cockpit>
