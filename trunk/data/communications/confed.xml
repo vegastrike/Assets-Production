@@ -215,64 +215,101 @@
 	</node>
 
 <!-- Built-in Conversations --> 
-	<node text="Docking operation complete. You're free of the docking clamps." relationship="0.01">
+	<node text="Docking operation complete. You're free of the docking clamps."
+              text1="Docking clamps disengaged, docking operation complete."
+              relationship="0.01">
+                <sound file="communications/sounds/confed/confed_docking-operation.ogg" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_docking-operation2.ogg" sex="0" gain="6.0"/>
 		<edge index="4"/>
 		<edge index="5"/>
 		<edge index="6"/>
 		<edge index="7"/>
 	</node>
-	<node text="You are not in docking clamps. Move into one of the green guide boxes and try to dock again." relationship="0">
+	<node text="You are not in range of our docking clamps. Move into one of the green guide boxes and try again." relationship="0">
+                <sound file="communications/sounds/confed/confed_not-range.ogg" sex="0" gain="6.0"/>
 		<edge index="8"/>
 		<edge index="9"/>
 		<edge index="10"/>
 		<edge index="11"/>
 	</node>
-	<node text="Docking operation begun; press 0 to step into our starship." relationship="0">
+	<node text="Docking operation initiated" relationship="0">
+                <sound file="communications/sounds/confed/confed_docking-initiated.ogg" sex="0" gain="6.0"/>
 		<edge index="8"/>
 		<edge index="9"/>
 		<edge index="10"/>
 		<edge index="11"/>
 	</node>		
-	<node text="You are not authorized to land here!" relationship="0">
+	<node text="You are not authorized to land here!" 
+              text1="You are not authorized to land!"
+              relationship="0">
+                <sound file="communications/sounds/confed/confed_not-landing.ogg" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_not-landing2.ogg" sex="0" gain="6.0"/>
 		<edge index="8"/>
 		<edge index="9"/>
 		<edge index="10"/>
 		<edge index="11"/>
 	</node>		
-	<node text="Clearance code acknowledged; move into landing pattern and dock at the white indicators." relationship="0">
+	<node text="Clearance code acknowledged; move into landing position and dock at the white indicators." relationship="0">
+                <sound file="communications/sounds/confed/confed_clearance-code.ogg" sex="0" gain="6.0"/>
 		<edge index="8"/>
 		<edge index="9"/>
 		<edge index="10"/>
 		<edge index="11"/>
 	</node>		
-	<node text="Unable to comply." relationship="0">
+	<node text="Unable to comply." 
+              text1="Cannot comply."
+              relationship="0">
+                <sound file="communications/sounds/confed/confed_unable-comply.ogg" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_unable-comply2.ogg" sex="0" gain="6.0"/>
 		<edge index="8"/>
 		<edge index="9"/>
 		<edge index="10"/>
 		<edge index="11"/>
 	</node>		
-	<node text="Acknowledged." relationship="0">
+	<node text="Acknowledged." 
+              text1="Acknowledged."
+              text2="Roger."
+              text3="A-firm."
+              text4="Afirmative."
+              relationship="0">
+                <sound file="communications/sounds/confed/confed_acknowledged.ogg" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_acknowledged.ogg2" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_acknowledged.ogg3" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_acknowledged.ogg4" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_acknowledged.ogg5" sex="0" gain="6.0"/>
 		<edge index="4"/>
 		<edge index="5"/>
 		<edge index="6"/>
 		<edge index="7"/>
 	</node>		
 	<node text="Maintain speed and course for contraband search!" relationship="0"> <!-- maintain speed and course -->
+                <sound file="communications/sounds/confed/confed_contra-search.ogg" sex="0" gain="6.0"/>
 		<edge index="8"/>
 		<edge index="9"/>
 		<edge index="10"/>
 	</node>
 	<node text="No contraband detected, you may proceed." relationship="0"> <!-- no contraband detected you may proceed -->
+                <sound file="communications/sounds/confed/confed_no-contra.ogg" sex="0" gain="6.0"/>
 		<edge index="8"/>
 		<edge index="9"/>
 		<edge index="10"/>
 	</node>
-	<node text="Contraband detected, target offender and fire at will!" relationship="-.125"> <!-- contraband detected! all units close and engage -->
+	<node text="Contraband detected, target offender and fire at will!" 
+              text1="This guy is loaded! Open fire!"
+              text2="Contraband detected. Open fire."
+              relationship="-.125"> <!-- contraband detected! all units close and engage -->
+                <sound file="communications/sounds/confed/confed_contra-detect.ogg" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_contra-detect2.ogg" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_contra-detect3.ogg" sex="0" gain="6.0"/>
 		<edge index="12"/>
 		<edge index="13"/>
 		<edge index="14"/>
 	</node>
-	<node text="Your course is deviating. Maintain course!" relationship="0"> <!-- maintain your speed and course...DO NOT deviate -->
+	<node text="You're deviating from course!" 
+              text1="Your course is deviating. Maintain course!"
+              relationship="0"> <!-- maintain your speed and course...DO NOT deviate -->
+                <sound file="communications/sounds/confed/confed_deviating-course.ogg" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_deviating-course2.ogg" sex="0" gain="6.0"/>
 		<edge index="8"/>
 		<edge index="9"/>
 		<edge index="10"/>
@@ -304,7 +341,17 @@
 		<edge index="14"/>
 		<edge index="15"/>
 	</node>
-        <node text="Bueller! Bueller! Where the hell is my backup, I'm sucking void here!" text1="Mayday! Mayday! Aww, heck, I think I needed those parts..." relationship="-.125"> <!-- received critical damage -->
+        <node text="Mayday! Mayday! Aww, I needed those parts..." 
+              text1="My ship's been hit! Need some help here!" 
+              text2="Life support is going offline... where's my backup..."
+              text3="Arrgh... Ow! I felt that one..."
+              text4="I needed those subsystems..."
+              relationship="-.125"> <!-- received critical damage -->
+                <sound file="communications/sounds/confed/confed_mayday.ogg" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_mayday2.ogg" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_mayday3.ogg" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_mayday4.ogg" sex="0" gain="6.0"/>
+                <sound file="communications/sounds/confed/confed_mayday5.ogg" sex="0" gain="6.0"/>
 		<edge index="12"/>
 		<edge index="13"/>
 		<edge index="14"/>
