@@ -192,7 +192,8 @@ class cargo_mission (Director.Mission):
             tempfac=self.faction
             if vsrandom.random()<=.5:
                 tempfac=''
-            self.adjsys=go_somewhere_significant(self.you,1,100,not self.capship,tempfac)
+            baseonly = not self.capship
+            self.adjsys=go_somewhere_significant(self.you,1,100,baseonly,tempfac)
             capstr="planet"
             dockstr="land"
             if tempfac=='':
