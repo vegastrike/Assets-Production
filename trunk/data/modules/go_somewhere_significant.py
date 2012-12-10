@@ -11,8 +11,10 @@ def moveUnitTo(un,place,radius):
     print "moving "+un.getName() +" to "+place.getName()
     prsize=place.rSize();
     prp = VS.getPlanetRadiusPercent()
+    pps = float(VS.vsConfig("physics","planet_port_size","0")) - 1.0
+    pmargin = 1.5
     if (place.isPlanet()):
-        prsize*=1+prp
+        prsize*=1+max(prp,pps)*pmargin
     where=(where[0]+un.rSize()+prsize+radius,where[1],where[2]);
     un.SetPosition(VS.SafeEntrancePoint(where,un.rSize()))
     return un
