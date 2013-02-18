@@ -48,7 +48,7 @@ void name(in vec4 vertex, in vec3 eye, in vec3 normal, inout vec4 pc, inout vec4
   pc += lpatt.w*(  gl_FrontMaterial.ambient * gl_LightSource[lightno].ambient \
                  + max(0.0, NdotL) * gl_LightSource[lightno].diffuse * gl_FrontMaterial.diffuse );  \
   sc += lpatt.w*(  pow( max(0.0, RdotL) , max(1.0,gl_FrontMaterial.shininess) ) * selfshadowStep(NdotL) \
-                 * gl_LightSource[lightno].specular * gl_FrontMaterial.specular );  \
+                 * gl_LightSource[lightno].specular * gl_FrontMaterial.specular ); \
 }
 
 lighting(lighting0, lightPosAndAttenuation0, 0)
@@ -78,10 +78,7 @@ void main()
 
   // init accumulators
 
-  vec4 pc = gl_FrontLightProduct[0].ambient 
-          + gl_FrontMaterial.emission
-          + gl_FrontLightModelProduct.sceneColor
-          + float(light_enabled[1]) * gl_FrontLightProduct[1].ambient;
+  vec4 pc = gl_FrontMaterial.emission;
   vec4 sc = vec4(0.0);
 
   if (light_enabled[0] != 0) lighting0(position, eyetopos, normal, pc, sc);
