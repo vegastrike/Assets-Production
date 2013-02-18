@@ -16,7 +16,7 @@ void main()
   // Sample textures
   vec4 diffusemap  = texture2D(diffuseMap, gl_TexCoord[0].xy);
   vec3 diffusecol = gl_Color.rgb;
-  diffusecol += ambientMapping();
+  diffusecol += envColor.rgb * ambientMapping();
   vec4 result;
   result.rgb = diffusemap.rgb * diffusecol;
   result.rgb += gl_SecondaryColor.rgb;
