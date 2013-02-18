@@ -21,5 +21,6 @@
         <auto_param name="light_enabled" semantic="ActiveLightsArray" optional="true"/>
         <auto_param name="max_light_enabled" semantic="NumLights" optional="true"/>
         <auto_param name="cloaking" semantic="CloakingPhase" optional="true"/>
+        <auto_param name="envColor" semantic="EnvColor" optional="true"/>
     </pass>
 </technique>
