@@ -56,8 +56,8 @@ class quest_disappear (quest.quest):
         size=4*un.rSize()
         if (size<1000):
             size=1000
-        print "kill"
-        print un.getName()
+        print("kill")
+        print(un.getName())
         un.Kill()
         VS.playAnimation("explosion_wave.ani",pos,size)
         VS.playSound("cloak.wav",pos,(1,0,0))

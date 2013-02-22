@@ -197,7 +197,7 @@ class XGUITypesTupleFactory(XGUITypesFactory):
 						pos = nc
 						s = pos+1
 					else:
-						print "Premature EOS"
+						print("Premature EOS")
 						pos = -1
 
 			if arraysize == 0:
@@ -236,11 +236,11 @@ def XGUITypesTest():
 	XGUITypesTupleFactory("(int,int,float,float)",["i2f2"],"i2f2 Tuple Factory").registerSelf()
 
 	for t in XGUITypesRootSingleton.enumFactories():
-		print t.getDesc()
+		print(t.getDesc())
 	
-	print XGUITypesRootSingleton.getFactory("int4").parse("int4","(3.3,3.4,4,4.6)")
-	print XGUITypesRootSingleton.getFactory("float4").parse("float4","(3.3,3.4,4,4.6)")
-	print XGUITypesRootSingleton.getFactory("int[4]").parse("int[4]","(3.3,3.4,4,4.6)")
-	print XGUITypesRootSingleton.getFactory("float[4]").parse("float[4]","(3.3,3.4,4,4.6)")
-	print XGUITypesRootSingleton.getFactory("i2f2").parse("i2f2","(3.3,3.4,4,4.6)")
+	print(XGUITypesRootSingleton.getFactory("int4").parse("int4","(3.3,3.4,4,4.6)"))
+	print(XGUITypesRootSingleton.getFactory("float4").parse("float4","(3.3,3.4,4,4.6)"))
+	print(XGUITypesRootSingleton.getFactory("int[4]").parse("int[4]","(3.3,3.4,4,4.6)"))
+	print(XGUITypesRootSingleton.getFactory("float[4]").parse("float[4]","(3.3,3.4,4,4.6)"))
+	print(XGUITypesRootSingleton.getFactory("i2f2").parse("i2f2","(3.3,3.4,4,4.6)"))
 

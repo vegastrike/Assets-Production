@@ -13,26 +13,26 @@ def saveVal(str):
 class NotZero:
   def __init__ (self,str):
     self.str = str
-  def __nonzero__ (self):
-    print 'nonzeroing'
+  def __bool__ (self):
+    print('nonzeroing')
     return saveVal(self.str)!=0
 class IsZero:
   def __init__ (self,str):
     self.str = str
-  def __nonzero__ (self):
-    print 'nonzeroing'
+  def __bool__ (self):
+    print('nonzeroing')
     return saveVal(self.str)==0
 class GreaterZero:
   def __init__ (self,str):
     self.str = str
-  def __nonzero__ (self):
-    print 'nonzeroing'
+  def __bool__ (self):
+    print('nonzeroing')
     return saveVal(self.str)>0
 class LessZero:
   def __init__ (self,str):
     self.str = str
-  def __nonzero__ (self):
-    print 'nonzeroing'
+  def __bool__ (self):
+    print('nonzeroing')
     return saveVal(self.str)<0
 
 news =( ( 'kinneas',(IsZero('kinneas'),),"TEENAGE BOY OUTSMARTS SYSTEM:  A teenager from the Draul Bisa Habitat was caught redhanded on New Poona Mining Base last week, as he was trying to sneak past security without proper identification. The young human male, identified as Kinneas Pinman, somehow managed to make it past spaceport security on Draul Bisa and stow away on a passanger transport bound for the mining base in the Celeste System. While the motives behind Pinman's actions remain unknown, redfaced spaceport officials are hard-pressed to explain how the cheeky computer whizkid managed to elude all their security precautions. Pinman was detained by police on New Poona and will be returned to Draul Bisa within the week."),
@@ -65,14 +65,14 @@ news =( ( 'kinneas',(IsZero('kinneas'),),"TEENAGE BOY OUTSMARTS SYSTEM:  A teena
         )
 
 def newNews():
-  print "Adding news"
+  print("Adding news")
   if (vsrandom.randrange(0,2)!=0):
       return
   newsitem = vsrandom.randrange (0,len(news))
   newsitem = news[newsitem]
   player = VS.getMissionOwner()
   for conditional in newsitem[1]:
-      print 'conditioning'
+      print('conditioning')
       if (not conditional):
           return
   universe.setFirstSaveData(player,newsitem[0],1)
@@ -93,7 +93,7 @@ def processNews(plr):
   import Director
   howmuchnews=Director.getSaveStringLength(plr,"dynamic_news")
   minnews=0
-  print "Processing News"
+  print("Processing News")
   global dnewsman_
   dnewsman_.updateDockedAtFaction()
   if (howmuchnews>4000):

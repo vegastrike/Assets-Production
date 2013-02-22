@@ -37,7 +37,7 @@ class waitjump(VS.PythonAI):
 
             if self.timer == 0:
                 self.timer = VS.GetGameTime()
-                print "Timer Set"
+                print("Timer Set")
             elif self.timer + 30 < VS.GetGameTime() and self.autoed == 0:
                 self.GetParent().ActivateJumpDrive(1)
                 self.GetParent().AutoPilotTo(self.trucktarget,1)
@@ -48,9 +48,9 @@ class waitjump(VS.PythonAI):
 #                       elif self.timer + 60 < VS.GetGameTime():
 # gets him to auto to the jump and jump out
 #                               self.GetParent().ActivateJumpDrive(1)
-            print self.GetParent().getMinDis(self.trucktarget.Position())
+            print(self.GetParent().getMinDis(self.trucktarget.Position()))
 
         return 1
 hi1 = waitjump()
-print 'AI creation successful'
+print('AI creation successful')
 hi1 = 0

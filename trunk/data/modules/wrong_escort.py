@@ -17,7 +17,7 @@ class wrong_escort (escort_mission.escort_mission):
 		escort_mission.escort_mission.Execute(self)
 		sys = self.escortee.getUnitSystemFile()
 		if sys in self.alternatesystems:
-			for i in xrange(len(self.alternatesystems)):
+			for i in range(len(self.alternatesystems)):
 				if sys==self.alternatesystems[i]:
 					import quest
 					quest.removeQuest(self.cp,self.alternatevariable,i)
