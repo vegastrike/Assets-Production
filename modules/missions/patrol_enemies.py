@@ -25,7 +25,7 @@ class patrol_enemies(patrol.patrol):
 			allfg=fg_util.AllFGsInSystem(fac,VS.getSystemFile())
 			if (len(allfg)):
 				dynfg = allfg[vsrandom.randrange(0,len(allfg))]
-			for i in xrange(vsrandom.randrange(self.minships,self.maxships+1)):
+			for i in range(vsrandom.randrange(self.minships,self.maxships+1)):
 				import launch
 				L=launch.Launch()
 				L.fg="Shadow"

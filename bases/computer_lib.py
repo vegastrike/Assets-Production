@@ -414,7 +414,7 @@ def get_manifest_text(player):
 			int_total_quantity += quantity
 
 	int_space_left = int_hold_volume - int_total_quantity
-	keys = cargo_dict.keys()
+	keys = list(cargo_dict.keys())
 	if len(keys) > 0:
 		str_manifest = "Space left: %s\n\n" %(int_space_left)
 		keys.sort()

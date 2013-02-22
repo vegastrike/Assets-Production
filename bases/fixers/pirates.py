@@ -14,7 +14,7 @@ if (VS.numActiveMissions()>1):
 	Base.Message("I can't give your cargo and money until your current mission is complete.");
 else:
 	if (fixers.checkSaveValue (playernum,"pirate_mission1",0)):
-		print "START1"
+		print("START1")
 		AssignMission()
 		Base.Message("We are in need of a pilot who can safely transport this cargo to one of our bases in the #55ffffrigel#000000 system. It is highly important that no confed or militia know of these goods. Will you accept this unavoidable offer?")
 #And then if you fail.......

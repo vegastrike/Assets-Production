@@ -14,7 +14,7 @@ class quest_rogue_militia (quest.quest):
         self.mark=VS.GetGameTime()
         self.gametime = VS.GetGameTime()
         self.militia = []
-        for i in xrange(difficulty):
+        for i in range(difficulty):
             self.militia += [launch.launch_wave_around_unit("Extortionist","pirates",faction_ships.getRandomFighterInt(faction_ships.homeland_security),"default",1,100,150,playa)]
         #        self.distractMilitia()
         VS.IOmessage (0,"Extortionist","all","This is the milita: You must pay toll to pass through these parts")

@@ -90,7 +90,7 @@ class defend (Director.Mission):
         VS.addObjective ("Protect %s from the %s" % (unit.getUnitFullName(jp),self.faction.capitalize().replace("_"," ")))
         self.objective = VS.addObjective ("Destroy All %s Hostiles" % self.faction)
         VS.setCompleteness(self.objective,0.0)
-        print "quantity "+str(self.quantity)
+        print("quantity "+str(self.quantity))
         while (count<self.quantity):
             L = launch.Launch()
             L.fg="Shadow";L.dynfg=self.dynatkfg;
@@ -176,12 +176,12 @@ class defend (Director.Mission):
                     else:
                         self.SuccessMission()
     def initbriefing(self):
-        print "ending briefing"                
+        print("ending briefing")                
     def loopbriefing(self):
-        print "loop briefing"
+        print("loop briefing")
         Briefing.terminate();
     def endbriefing(self):
-        print "ending briefing"        
+        print("ending briefing")        
                 
 def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base,p_faction='',jumps=(),var_to_set=''):
     enq=minenquant

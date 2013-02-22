@@ -3,6 +3,7 @@ import GUI
 import custom
 import Base
 import debug
+from functools import reduce
 
 text_height=0.1
 
@@ -169,7 +170,7 @@ class DialogBox:
 	class Text(Item):
 		def __init__(self,text,wid=0.):
 			self.text=text
-			print text
+			print(text)
 			self.wid=wid
 			DialogBox.Item.__init__(self)
 		def height(self):
@@ -242,7 +243,7 @@ class DialogBox:
 			for el in self.items:
 				el.getValues(values)
 		def height(self):
-			return reduce(max,map(lambda x:x.height(),self.items))
+			return reduce(max,[x.height() for x in self.items])
 		def create(self,owner,room,x,y,wid,hei):
 			screen_loc=makeRect(x,y,wid,hei)
 			self.gui_element=GUI.GUIGroup(room)
@@ -345,7 +346,7 @@ class DialogBox:
 			self.bg.undraw()
 			self.bglink.hide()
 			self.bglink.undraw()
-			map(lambda x:x.undraw(), self.elements)
+			list(map(lambda x:x.undraw(), self.elements))
 	
 	def draw(self):
 		if not VS.isserver():
@@ -356,7 +357,7 @@ class DialogBox:
 			self.bg.draw()
 			self.bglink.show()
 			self.bglink.draw()
-			map(lambda x:x.draw(), self.elements)
+			list(map(lambda x:x.draw(), self.elements))
 	
 
 def fromValues(data):

@@ -111,7 +111,7 @@ def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_
         debug.debug("Python launched "+str(faction)+" "+str(tn[0])+" FG "+str(fg)+" with "+str(num)+" ships")
         if num>nr_ships:
             num=nr_ships
-        for i in xrange(num):
+        for i in range(num):
             newship=[None]
             debug.debug(pos)
             pos = LaunchNext (fg,faction,tn[0], ai, pos,logo,newship,fgappend,FarApart)

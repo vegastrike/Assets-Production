@@ -16,13 +16,13 @@ player_kill_list=[]
 def updatePlayerKillList(playernum,faction):
     fac = VS.GetFactionIndex(faction)
     ret=0
-    for i in xrange(VS.getNumPlayers()-len(player_kill_list)):
+    for i in range(VS.getNumPlayers()-len(player_kill_list)):
         player_kill_list.append([]);
-    for i in xrange(VS.getNumPlayers()):
+    for i in range(VS.getNumPlayers()):
         numfac=Director.getSaveDataLength(i,"kills")
-        for j in xrange(numfac-len(player_kill_list[i])):
+        for j in range(numfac-len(player_kill_list[i])):
             player_kill_list[i].append(0)
-        for j in xrange(numfac):
+        for j in range(numfac):
             if (i==playernum and j==fac):
                 ret = Director.getSaveData(i,"kills",j)-player_kill_list[i][j];
             player_kill_list[i][j]=Director.getSaveData(i,"kills",j)

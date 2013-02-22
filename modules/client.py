@@ -10,7 +10,7 @@ class PlayerInfo:
 plr = None
 
 def getTargetShipInfo(plr):
-	print 'running getTargetShipInfo'
+	print('running getTargetShipInfo')
 	newTarget = plr.myTarget
 	fg = newTarget.getFlightgroupName()
 	def targetResponse(args):
@@ -35,6 +35,6 @@ def Execute():
 		return
 	if plr.myUnit.GetTarget() != plr.myTarget:
 		plr.myTarget = plr.myUnit.GetTarget()
-		print 'plr.myUnit.GetTarget() changed!'
+		print('plr.myUnit.GetTarget() changed!')
 		getTargetShipInfo(plr)
 

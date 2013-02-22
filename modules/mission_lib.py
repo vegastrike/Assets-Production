@@ -64,7 +64,7 @@ def mission_lib_custom(local, cmd, args, id):
         brief1 = args[3]
         num_briefing_vars = int(args[4])
         briefing_vars = {}
-        for i in xrange(num_briefing_vars):
+        for i in range(num_briefing_vars):
             briefing_vars[args[i*2+5]] = args[i*2+6]
         AddNewMission(which, None, None, brief0, brief1, briefing_vars, briefing_vars)
     elif args[0] == 'LoadLastMission':
@@ -114,11 +114,11 @@ def SetLastMission(which):
 
 def LoadLastMission(which=None):
     """ Makes a mission an active mission. """
-    print "#given mission argument: ", which
+    print("#given mission argument: ", which)
     plr = getMissionPlayer()
     if which is None:
         which = str(players[plr].lastMission)
-        print "#loading mission: ", which
+        print("#loading mission: ", which)
     if VS.networked():
         custom.run('mission_lib', ['LoadLastMission',which], None)
         return
@@ -158,7 +158,7 @@ mission_lib.SetMissionHookArgs(%(amentry)r)
 %(postscript)s'''
             amentry = last_briefing_vars[0].get(which,dict())
             try:
-                amentry.update(last_briefing_vars[1].get(which,dict()).iteritems())
+                amentry.update(iter(last_briefing_vars[1].get(which,dict()).items()))
                 amentry.update([
                     #('MISSION_NAME',which),
                     ('DESCRIPTION',last_briefing[0].get(which,'')),
@@ -209,8 +209,7 @@ def AddActiveMissionEntry(entry):
 
 def RemoveActiveMissionEntry(entry_id):
     plr = getMissionPlayer()
-    players[plr].active_missions = filter(lambda x:x.get('ENTRY_ID',None)!=entry_id,
-                    players[plr].active_missions)
+    players[plr].active_missions = [x for x in players[plr].active_missions if x.get('ENTRY_ID',None)!=entry_id]
 
 def CountMissions(first,prefix):
     plr = getMissionPlayer()
@@ -237,7 +236,7 @@ def BriefLastMission(whichid,first,textbox=None,template='#DESCRIPTION#'):
     # Should not happen anymore, but sometimes missions have all the same id,
     # e.g. 1, and then no missions for id 0 will e found.
     if which == None:
-        which = last_briefing_vars[0].keys()[0]
+        which = list(last_briefing_vars[0].keys())[0]
         debug.warn("mission_lib.BriefLastMission couldn't find mission id"+ str(whichid))
         
     if first<0 or first>=len(last_briefing):
@@ -316,7 +315,7 @@ def GetMissionList(activelist=True):
     if activelist:
         return active_missions
     else:
-        return list( dict( list(last_briefing_vars[0][index].iteritems())+
+        return list( dict( list(last_briefing_vars[0][index].items())+
             [('DESCRIPTION',last_briefing[0][index]),
                 ('ACCEPT_MESSAGE',last_briefing[1][index]),
                 ('MISSION_NAME',index)] )
@@ -384,7 +383,7 @@ def CreateRandomMission(whichnum):
         return MakeContraband(which)
     else:
         goodlist = []
-        for indx in xrange(Director.getSaveStringLength(plr, "mission_scripts")):
+        for indx in range(Director.getSaveStringLength(plr, "mission_scripts")):
             script=Director.getSaveString(plr,"mission_scripts",indx)
             if script.find("#F#")!=-1:
                 goodlist.append(indx)
@@ -458,7 +457,7 @@ def PickRandomMission(goodlist):
         bounds = bounds + mis[1]
     if bounds:
         pos = vsrandom.randrange(bounds)
-        for midx in xrange(len(goodlist)):
+        for midx in range(len(goodlist)):
             if pos>=goodlist[midx][1]:
                 pos = pos - goodlist[midx][1]
             else:
@@ -477,7 +476,7 @@ def CreateGuildMissions(guildname,nummissions,accepttypes,prefix="#G#",acceptmsg
     addPlayer(plr, False)
     
     goodlist=[]
-    for indx in xrange(Director.getSaveStringLength(plr, "mission_scripts")):
+    for indx in range(Director.getSaveStringLength(plr, "mission_scripts")):
         script=Director.getSaveString(plr,"mission_scripts",indx)
         if (script.find(prefix)!=-1):
             missiontype=script[3:script.find('#',3)]
@@ -493,7 +492,7 @@ def CreateGuildMissions(guildname,nummissions,accepttypes,prefix="#G#",acceptmsg
     if len(goodlist)<nummissions:
         nummissions=len(goodlist)
     delit=[]
-    for missionnum in xrange(0,nummissions):
+    for missionnum in range(0,nummissions):
         goodi=PickRandomMission(goodlist)
         if goodi == None:
             break

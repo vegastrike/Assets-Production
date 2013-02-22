@@ -13,7 +13,7 @@ def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=1,
 #    if useani:
 #        VS.playAnimation ("warp.ani",vec,300.0)
     if (not diff or (type.find(".blank")==-1 and -1==type.find(".stock"))):
-        for i in xrange(nr_ships):
+        for i in range(nr_ships):
             ret = VS.launch (fgname,type,faction,"unit",ai,1,nr_waves,VS.SafeEntrancePoint (vec,40),logo)
             unit.moveOutOfPlayerPath(ret)
         if (not skipdj):
@@ -22,7 +22,7 @@ def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=1,
     rsize=0.0
     diffic = VS.GetDifficulty()
     ret=VS.Unit()
-    for i in xrange(nr_ships):
+    for i in range(nr_ships):
         mynew=VS.launch(fgname,type,faction,"unit",ai,1,nr_waves,VS.SafeEntrancePoint (vec,40),logo)
         unit.moveOutOfPlayerPath(mynew)
         if (i==0):

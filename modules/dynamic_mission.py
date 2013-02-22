@@ -36,15 +36,15 @@ def getSystemsKAwayNoFaction( start, k ):
     pathset = [[start]]#parallel data structure to set, but with paths
     pathtor = [[start]]#parallel data structure to raw return systems with path
     r = [start] #raw data structure containing systems n away where n<=k
-    for n in xrange(0,k):
+    for n in range(0,k):
         set.extend(r)
         pathset.extend(pathtor)
         r=[]
         pathtor=[]
-        for iind in xrange(len(set)):
+        for iind in range(len(set)):
             i = set[iind]
             l = universe.getAdjacentSystemList(i)
-            for jind in xrange(len(l)):
+            for jind in range(len(l)):
                 j=l[jind]
                 if not (j in set or j in r):
                     r.append(j)
@@ -81,7 +81,7 @@ def GetRandomCompanyName():
         f.close()
     except:
         return ''
-    for i in xrange(len(bnl)):
+    for i in range(len(bnl)):
         bnl[i]=bnl[i].rstrip()
     import vsrandom
     idx = vsrandom.randint(0,len(bnl)-1)
@@ -98,7 +98,7 @@ def GetRandomCargoBrief():
         f.close()
     except:
         return ''
-    for i in xrange(len(bnl)):
+    for i in range(len(bnl)):
         bnl[i]=bnl[i].rstrip()
     import vsrandom
     idx = vsrandom.randint(0,len(bnl)-1)
@@ -210,7 +210,7 @@ def eraseExtrasOld():
     if (len!=Director.getSaveStringLength(plr, "mission_names") or len!=Director.getSaveStringLength(plr, "mission_descriptions")):
         sys.stdout.write("Warning: Number of mission descs., names and scripts are unequal.\n")
     if len>0:
-        for i in xrange(len-1,-1,-1):
+        for i in range(len-1,-1,-1):
             Director.eraseSaveString(plr, "mission_scripts", i)
             Director.eraseSaveString(plr, "mission_names", i)
             Director.eraseSaveString(plr, "mission_descriptions", i)
@@ -474,7 +474,7 @@ def generateCargoMission (path, numcargos,category, fac,
     else:
     	  strStart = randCompany+" seeks delivery of "
     brief = GetRandomCargoBrief()
-    if (brief<>''):
+    if (brief!=''):
         composedBrief = brief.replace('$CL',randCompany)
         composedBrief = composedBrief.replace('$CG',formatCargoCategory(category))
         composedBrief = composedBrief.replace(' $DB','')
@@ -655,7 +655,7 @@ def contractMissionsFor(fac,minsysaway,maxsysaway):
     usedcats={}
     plr=VS.getPlayer()
     if plr:
-        for i in xrange(plr.numCargo()):
+        for i in range(plr.numCargo()):
             usedcats[plr.GetCargoIndex(i).GetCategory()]=1
     for i in range (minsysaway,maxsysaway+1):
         for j in getSystemsNAway(cursystem,i,preferredfaction):
