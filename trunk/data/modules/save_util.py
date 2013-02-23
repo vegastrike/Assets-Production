@@ -8,7 +8,7 @@ def loadStringList (playernum,mykey):
     curstr = []
     curstr_append = curstr.append
     lengt = Director.getSaveData(playernum,mykey,0)
-    for i in range (1,lengt+1):
+    for i in xrange (1,lengt+1):
         myint=Director.getSaveData (playernum,mykey,i)
         if myint:
             curstr_append(myint)
@@ -21,13 +21,13 @@ def saveStringList (playernum,mykey,names):
     length = Director.getSaveDataLength (playernum,mykey)
     k=1
     tot=0
-    for i in range (len (names)):
+    for i in xrange (len (names)):
         tot += len (names[i])+1
     if (length==0):
         Director.pushSaveData(playernum,mykey,tot)
     else:
         Director.putSaveData(playernum,mykey,0,tot)
-    for i in range (len (names)):
+    for i in xrange (len (names)):
         for j,c in enumerate (names[i]):
             if (k < length):
                 Director.putSaveData(playernum,mykey,k,ord_(c))

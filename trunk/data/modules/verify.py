@@ -5,7 +5,7 @@ campaigns.loadAll(0)
 global traverser
 traverser=[]
 def isType(a,typ):
-    return a.__init__.__func__==typ.__init__.__func__
+    return a.__init__.im_func==typ.__init__.im_func
 exnonescript=None
 
 class MyCondition:
@@ -32,11 +32,11 @@ def IsEnd(node):
 		if (len(node.preconditions)!=1):
 			return False
 	except:
-		print(node)
-		print(dir(node))
-		print(node.preconditions)
+		print node
+		print dir(node)
+		print node.preconditions
 # Ignore this, don't try and replace it with isinstance because it won't work!
-	if (node.preconditions[0].__init__.__func__!=precond.__init__.__func__):
+	if (node.preconditions[0].__init__.im_func!=precond.__init__.im_func):
 		return False
 	return node.preconditions[0].system==precond.system and  node.preconditions[0].dockedshipname==precond.dockedshipname
 def IsSuperimposition(node):
@@ -50,7 +50,7 @@ def IsSuperimposition(node):
 	if not len(currnodesys):
 		return False
 	if len(currnodesys)>1:
-		print("Two system checks for the same node.  Impossible to evaluate as True.")
+		print "Two system checks for the same node.  Impossible to evaluate as True."
 		return True
 	selector=node.script
 	if selector is None:
@@ -61,7 +61,7 @@ def IsSuperimposition(node):
 		return False
 	subnodes=node.subnodes
 	snp=[]
-	for i in range(len(subnodes)):
+	for i in xrange(len(subnodes)):
 		snp=snp+subnodes[i].preconditions
 	subnodesys=[]
 	subnodeship=[]
@@ -72,7 +72,7 @@ def IsSuperimposition(node):
 	if len(subnodesys)<1:
 		return False
 	valid=True
-	for i in range(len(subnodesys)):
+	for i in xrange(len(subnodesys)):
 		if subnodesys[i] != currnodesys[0]:
 			valid=False
 			break
@@ -82,8 +82,8 @@ def IsSuperimposition(node):
 	if valid:
 		return False
 	else:
-		print(currnodesys+currnodeship)
-		print(subnodesys+subnodeship)
+		print currnodesys+currnodeship
+		print subnodesys+subnodeship
 		return True
 def ValidMissions(node):
 	missions=[]
@@ -99,7 +99,7 @@ def ValidMissions(node):
 	valid = True
 	for m in missions:
 #		print m.mname + " :: " + str(m.args) + " :: " + m.name
-		print(" ++ Mission '%s'"%m.mname)
+		print " ++ Mission '%s'"%m.mname
 		if not verify_missions.verifyMission(m.mname,m.args):
 			valid = False
 	return valid
@@ -115,7 +115,7 @@ class Traverser:
 		tmp.visitednodes=self.visitednodes
 		return tmp
 	def warn(self,strin):
-		print(strin)
+		print strin
 	def cont(self,newnode):
 		if newnode in self.visitednodes:
 			self.node=EndNode(self.node)
@@ -165,7 +165,7 @@ class Traverser:
 		return cond.vars;
 def IsFinished():
 	global traverser
-	for i in range(len(traverser)-1,-1,-1):
+	for i in xrange(len(traverser)-1,-1,-1):
 
 		if IsEnd(traverser[i].node):
 			del traverser[i]
@@ -175,16 +175,16 @@ for iter in campaigns.campaigns:
 	import verify_missions
 	verify_missions.campaign_name[iter.name]=1
 	traverser.append(Traverser(iter))
-print(len(traverser))
+print len(traverser)
 while len(traverser):
 	IsFinished()
 	progress=False
 	variables=[]
-	for i in range(len(traverser)):
+	for i in xrange(len(traverser)):
 		var=traverser[i].Update(variables)
 		if (type(var)==type([])):
 			variables=var
 			progress=True
 	if not progress and len(traverser):
-		print("Deadlock ")
+		print "Deadlock "
 		break

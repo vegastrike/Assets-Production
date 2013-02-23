@@ -18,25 +18,18 @@ available mechanisms for setting the properties which formatter objects
 manage and inserting data into the output.
 """
 
+import string
 import sys
+from types import StringType
 
 
 AS_IS = None
 
 
 class NullFormatter:
-    """A formatter which does nothing.
-
-    If the writer parameter is omitted, a NullWriter instance is created.
-    No methods of the writer are called by NullFormatter instances.
-
-    Implementations should inherit from this class if implementing a writer
-    interface but don't need to inherit any implementation.
-
-    """
 
     def __init__(self, writer=None):
-        if writer is None:
+        if not writer:
             writer = NullWriter()
         self.writer = writer
     def end_paragraph(self, blankline): pass
@@ -59,13 +52,6 @@ class NullFormatter:
 
 
 class AbstractFormatter:
-    """The standard formatter.
-
-    This implementation has demonstrated wide applicability to many writers,
-    and may be used directly in most circumstances.  It has been used to
-    implement a full-featured World Wide Web browser.
-
-    """
 
     #  Space handling policy:  blank spaces at the boundary between elements
     #  are handled by the outermost context.  "Literal" data is not checked
@@ -108,7 +94,7 @@ class AbstractFormatter:
     def add_hor_rule(self, *args, **kw):
         if not self.hard_break:
             self.writer.send_line_break()
-        self.writer.send_hor_rule(*args, **kw)
+        apply(self.writer.send_hor_rule, args, kw)
         self.hard_break = self.nospace = 1
         self.have_label = self.para_end = self.softspace = self.parskip = 0
 
@@ -117,7 +103,7 @@ class AbstractFormatter:
             self.writer.send_line_break()
         if not self.para_end:
             self.writer.send_paragraph((blankline and 1) or 0)
-        if isinstance(format, str):
+        if type(format) is StringType:
             self.writer.send_label_data(self.format_counter(format, counter))
         else:
             self.writer.send_label_data(format)
@@ -174,11 +160,16 @@ class AbstractFormatter:
             return label.upper()
         return label
 
-    def add_flowing_data(self, data):
+    def add_flowing_data(self, data,
+                         # These are only here to load them into locals:
+                         whitespace = string.whitespace,
+                         join = string.join, split = string.split):
         if not data: return
-        prespace = data[:1].isspace()
-        postspace = data[-1:].isspace()
-        data = " ".join(data.split())
+        # The following looks a bit convoluted but is a great improvement over
+        # data = regsub.gsub('[' + string.whitespace + ']+', ' ', data)
+        prespace = data[:1] in whitespace
+        postspace = data[-1:] in whitespace
+        data = join(split(data))
         if self.nospace and not data:
             return
         elif prespace or self.softspace:
@@ -228,8 +219,7 @@ class AbstractFormatter:
             self.align = None
             self.writer.new_alignment(None)
 
-    def push_font(self, font):
-        size, i, b, tt = font
+    def push_font(self, (size, i, b, tt)):
         if self.softspace:
             self.hard_break = self.para_end = self.softspace = 0
             self.nospace = 1
@@ -255,7 +245,7 @@ class AbstractFormatter:
 
     def push_margin(self, margin):
         self.margin_stack.append(margin)
-        fstack = [m for m in self.margin_stack if m]
+        fstack = filter(None, self.margin_stack)
         if not margin and fstack:
             margin = fstack[-1]
         self.writer.new_margin(margin, len(fstack))
@@ -263,7 +253,7 @@ class AbstractFormatter:
     def pop_margin(self):
         if self.margin_stack:
             del self.margin_stack[-1]
-        fstack = [m for m in self.margin_stack if m]
+        fstack = filter(None, self.margin_stack)
         if fstack:
             margin = fstack[-1]
         else:
@@ -293,13 +283,7 @@ class AbstractFormatter:
 
 
 class NullWriter:
-    """Minimal writer interface to use in testing & inheritance.
-
-    A writer which only provides the interface definition; no actions are
-    taken on any methods.  This should be the base class for all writers
-    which do not need to inherit any implementation methods.
-
-    """
+    """Minimal writer interface to use in testing & inheritance."""
     def __init__(self): pass
     def flush(self): pass
     def new_alignment(self, align): pass
@@ -316,55 +300,42 @@ class NullWriter:
 
 
 class AbstractWriter(NullWriter):
-    """A writer which can be used in debugging formatters, but not much else.
-
-    Each method simply announces itself by printing its name and
-    arguments on standard output.
-
-    """
 
     def new_alignment(self, align):
-        print("new_alignment(%r)" % (align,))
+        print "new_alignment(%s)" % `align`
 
     def new_font(self, font):
-        print("new_font(%r)" % (font,))
+        print "new_font(%s)" % `font`
 
     def new_margin(self, margin, level):
-        print("new_margin(%r, %d)" % (margin, level))
+        print "new_margin(%s, %d)" % (`margin`, level)
 
     def new_spacing(self, spacing):
-        print("new_spacing(%r)" % (spacing,))
+        print "new_spacing(%s)" % `spacing`
 
     def new_styles(self, styles):
-        print("new_styles(%r)" % (styles,))
+        print "new_styles(%s)" % `styles`
 
     def send_paragraph(self, blankline):
-        print("send_paragraph(%r)" % (blankline,))
+        print "send_paragraph(%s)" % `blankline`
 
     def send_line_break(self):
-        print("send_line_break()")
+        print "send_line_break()"
 
     def send_hor_rule(self, *args, **kw):
-        print("send_hor_rule()")
+        print "send_hor_rule()"
 
     def send_label_data(self, data):
-        print("send_label_data(%r)" % (data,))
+        print "send_label_data(%s)" % `data`
 
     def send_flowing_data(self, data):
-        print("send_flowing_data(%r)" % (data,))
+        print "send_flowing_data(%s)" % `data`
 
     def send_literal_data(self, data):
-        print("send_literal_data(%r)" % (data,))
+        print "send_literal_data(%s)" % `data`
 
 
 class DumbWriter(NullWriter):
-    """Simple writer class which writes output on the file object passed in
-    as the file parameter or, if file is omitted, on standard output.  The
-    output is simply word-wrapped to the number of columns specified by
-    the maxcol parameter.  This class is suitable for reflowing a sequence
-    of paragraphs.
-
-    """
 
     def __init__(self, file=None, maxcol=72):
         self.file = file or sys.stdout
@@ -405,7 +376,7 @@ class DumbWriter(NullWriter):
 
     def send_flowing_data(self, data):
         if not data: return
-        atbreak = self.atbreak or data[0].isspace()
+        atbreak = self.atbreak or data[0] in string.whitespace
         col = self.col
         maxcol = self.maxcol
         write = self.file.write
@@ -421,19 +392,22 @@ class DumbWriter(NullWriter):
             col = col + len(word)
             atbreak = 1
         self.col = col
-        self.atbreak = data[-1].isspace()
+        self.atbreak = data[-1] in string.whitespace
 
 
 def test(file = None):
     w = DumbWriter()
     f = AbstractFormatter(w)
-    if file is not None:
+    if file:
         fp = open(file)
     elif sys.argv[1:]:
         fp = open(sys.argv[1])
     else:
         fp = sys.stdin
-    for line in fp:
+    while 1:
+        line = fp.readline()
+        if not line:
+            break
         if line == '\n':
             f.end_paragraph(1)
         else:

@@ -20,7 +20,7 @@ playa = VS.getPlayer()
 def putSaveValue(value, key=SAVE_KEY):
     Director.eraseSaveData(playa.isPlayerStarship(),key,0)
     Director.pushSaveData(playa.isPlayerStarship(),key,value)
-    print("Changing Save Value for key " + SAVE_KEY)
+    print "Changing Save Value for key " + SAVE_KEY
     return 1
 
 def getSaveValue(key=SAVE_KEY):

@@ -25,4 +25,4 @@ def sameending (s):
 for arg in sys.argv[1:]:
 	str=""
 	if sameending(arg):	
-		print(arg)
+		print arg

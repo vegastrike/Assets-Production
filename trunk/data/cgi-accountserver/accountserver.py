@@ -109,7 +109,7 @@ def getLoginInfo(conn, user, passwd, dologin):
 			p.addChar(ACCT_LOGIN_ALREADY)
 			p.addStringField('username', user)
 			p.addStringField('warning', warning)
-			print(p)
+			print p
 			return
 		if not (result['savegame'] and result['csv']):
 			defsavegame=getDefaultSave(conn)
@@ -134,7 +134,7 @@ def getLoginInfo(conn, user, passwd, dologin):
 			p.addStringField('warning',warning)
 			p.addStringField('serverip',serverstrings[0])
 			p.addStringField('serverport',serverstrings[1])
-		print(p)
+		print p
 		return
 	else:
 		p.addChar(ACCT_LOGIN_ERROR)
@@ -142,7 +142,7 @@ def getLoginInfo(conn, user, passwd, dologin):
 		if not error:
 			error=''
 		p.addStringField('error', error)
-		print(p)
+		print p
 		return
 
 # Common environment variables:
@@ -167,22 +167,22 @@ def printACCT_SUCCESS(conn, username, save=''):
 		serverstrings=('','')
 	p.addStringField('serverip',serverstrings[0])
 	p.addStringField('serverport',serverstrings[1])
-	print(p)
+	print p
 
 def execute(conn,get,post):
-	print('\r')
+	print '\r'
     # Can't write to stderr since on IIS it is concatenated with stdout.
 	#sys.stderr.write('Executing post query: '+post+'\n')
 	try:
 		packet = Packet(conn, post) #if it crashes we dont care..this is python
 		command = packet.getChar()
 	except:
-		print("<!-- There was an error in your account request.")
-		print("  If you are running a VegaServer, please report this.\n")
-		print("EXCEPTION: "+str(get)+"\n"+str(post));
-		print("\nIf you are running this in a browser, then: -->")
-		print(" You probably want to <a href=\"register.py?"+get+"\">");
-		print("register or update</a> your account.")
+		print "<!-- There was an error in your account request."
+		print "  If you are running a VegaServer, please report this.\n"
+		print "EXCEPTION: "+str(get)+"\n"+str(post);
+		print "\nIf you are running this in a browser, then: -->"
+		print " You probably want to <a href=\"register.py?"+get+"\">";
+		print "register or update</a> your account."
 		command='UNKNOWN'
 		packet = Packet(conn, '')
 	if command==ACCT_LOGIN:
@@ -228,7 +228,7 @@ def execute(conn,get,post):
 	else:
 		if command==ACCT_NEWCHAR:
 			pass
-		print("\n<!-- UNKNOWN COMMAND -->")
+		print "\n<!-- UNKNOWN COMMAND -->"
 	
 if __name__=='__main__':
 	get_args = os.environ.get('QUERY_STRING','')
@@ -249,16 +249,16 @@ if __name__=='__main__':
 			post_args = sys.stdin.read(int(leng))
 		#get_args = db.urlDecode(get_args)
 		execute(conn, get_args, post_args)
-	except db.DBInputError as errmessage:
+	except db.DBInputError, errmessage:
 		p = Packet(conn)
 		p.addChar(ACCT_LOGIN_ERROR)
 		#p.addStringField('username', '')
 		p.addStringField('message', str(errmessage))
-		print(p)
-	except db.DBError as message:
-		print('<h1>Database error!</h1>')
-		print('GET query: '+str(get_args))
-		print('<p>You sent me:</p><pre>')
-		print(str(post_args))
-		print('</pre>')
+		print p
+	except db.DBError, message:
+		print '<h1>Database error!</h1>'
+		print 'GET query: '+str(get_args)
+		print '<p>You sent me:</p><pre>'
+		print str(post_args)
+		print '</pre>'
 	

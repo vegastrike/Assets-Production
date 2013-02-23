@@ -56,7 +56,7 @@ class go_to_adjacent_systems:
         msgply=universe.getMessagePlayer(self.you)
         if (len(self.jumps)>0):
             VS.IOmessage(wait,fro,msgply,beginstr % (formatSystemName(VS.getSystemFile())))
-            for i in range(len(self.jumps)-1):
+            for i in xrange(len(self.jumps)-1):
                 VS.IOmessage(wait,fro,msgply,midstr % (formatSystemName(self.jumps[i])))
             VS.IOmessage(wait,fro,msgply,endstr % (formatSystemName(self.jumps[len(self.jumps)-1])))
     def HaveArrived(self):
@@ -83,7 +83,7 @@ class go_to_adjacent_systems:
         self.added_warp=1
         self.brief_stage=0
         self.begintime= VS.GetGameTime()-6.0
-        print("starting briefing")
+        print "starting briefing"
         if (self.you.isNull()):
             Briefing.terminate()
             return
@@ -120,7 +120,7 @@ class go_to_adjacent_systems:
             self.brief_stage+=1
         return -1
     def endbriefing(self):
-        print("endinging briefing")
+        print "endinging briefing"
         del self.jump_ani
         del self.rnd_y
         del self.added_warp

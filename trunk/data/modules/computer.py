@@ -9,7 +9,7 @@ def runBountyMenu(cp=-1):
 	id=None
 	
 	def callback(dialog,result):
-		print('id is: ',id)
+		print 'id is: ',id
 		action,inputs = dialog_box.fromValues(result)
 		if action=='Cancel':
 			dialog.undraw()
@@ -23,8 +23,8 @@ def runBountyMenu(cp=-1):
 			if callsign=='' or callsign=='OR, Type in a user:':
 				callsign = inputs['callsign']
 
-			print('I would now place a bounty on '+str(callsign)+' for '+str(float(inputs['credits']))+' credits.')
-			print('User value IS: '+str(inputs['logged_in_users']))
+			print 'I would now place a bounty on '+str(callsign)+' for '+str(float(inputs['credits']))+' credits.'
+			print 'User value IS: '+str(inputs['logged_in_users'])
 			server_lib.placeBounty(callsign,float(inputs['credits']))
 			return False
 		return True
@@ -68,12 +68,12 @@ def runComputer(local,cmd,args,id,cp=-1):
 	#dialog_box.alert("TEST\nALERT\nBox",callback=a)
 	
 	def callback(dialog,result):
-		print('id is: ',id)
+		print 'id is: ',id
 		action,inputs = dialog_box.fromValues(result)
 		if action=='Test':
-			print('test clicked!!!!')
+			print 'test clicked!!!!'
 		if action=='Bounty Hunt':
-			print('hunting bounty')
+			print 'hunting bounty'
 			runBountyMenu(cp)
 		if action=='OK' or action=="Exit Menu" or action=="Cancel":
 			dialog.undraw()
@@ -89,7 +89,7 @@ def runComputer(local,cmd,args,id,cp=-1):
 		'button', 'Bounty Hunt',
 		'button', 'Exit Menu']
 	id = dialog_box.dialog(items,callback)
-	print('id is set to: ',id)
+	print 'id is set to: ',id
 
 custom.add("computer",runComputer)
 

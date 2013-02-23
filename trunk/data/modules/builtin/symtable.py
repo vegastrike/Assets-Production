@@ -1,20 +1,19 @@
 """Interface to the compiler's internal symbol tables"""
 
 import _symtable
-from _symtable import (USE, DEF_GLOBAL, DEF_LOCAL, DEF_PARAM,
-     DEF_IMPORT, DEF_BOUND, OPT_IMPORT_STAR, SCOPE_OFF, SCOPE_MASK, FREE,
-     LOCAL, GLOBAL_IMPLICIT, GLOBAL_EXPLICIT, CELL)
+from _symtable import USE, DEF_GLOBAL, DEF_LOCAL, DEF_PARAM, \
+     DEF_STAR, DEF_DOUBLESTAR, DEF_INTUPLE, DEF_FREE, \
+     DEF_FREE_GLOBAL, DEF_FREE_CLASS, DEF_IMPORT, DEF_BOUND, \
+     OPT_IMPORT_STAR, OPT_EXEC, OPT_BARE_EXEC
 
 import weakref
 
-__all__ = ["symtable", "SymbolTable", "Class", "Function", "Symbol"]
+__all__ = ["symtable", "SymbolTable", "newSymbolTable", "Class",
+           "Function", "Symbol"]
 
 def symtable(code, filename, compile_type):
     raw = _symtable.symtable(code, filename, compile_type)
-    for top in raw.values():
-        if top.name == 'top':
-            break
-    return _newSymbolTable(top, filename)
+    return newSymbolTable(raw[0], filename)
 
 class SymbolTableFactory:
     def __init__(self):
@@ -34,11 +33,23 @@ class SymbolTableFactory:
             obj = self.__memo[key] = self.new(table, filename)
         return obj
 
-_newSymbolTable = SymbolTableFactory()
+newSymbolTable = SymbolTableFactory()
 
+def bool(x):
+    """Helper to force boolean result to 1 or 0"""
+    if x:
+        return 1
+    return 0
 
-class SymbolTable(object):
+def is_free(flags):
+    if (flags & (USE | DEF_FREE)) \
+       and (flags & (DEF_LOCAL | DEF_PARAM | DEF_GLOBAL)):
+        return 1
+    if flags & DEF_FREE_CLASS:
+        return 1
+    return 0
 
+class SymbolTable:
     def __init__(self, raw_table, filename):
         self._table = raw_table
         self._filename = filename
@@ -51,11 +62,10 @@ class SymbolTable(object):
             kind = "%s " % self.__class__.__name__
 
         if self._table.name == "global":
-            return "<{0}SymbolTable for module {1}>".format(kind, self._filename)
+            return "<%sSymbolTable for module %s>" % (kind, self._filename)
         else:
-            return "<{0}SymbolTable for {1} in {2}>".format(kind,
-                                                            self._table.name,
-                                                            self._filename)
+            return "<%sSymbolTable for %s in %s>" % (kind, self._table.name,
+                                                     self._filename)
 
     def get_type(self):
         if self._table.type == _symtable.TYPE_MODULE:
@@ -65,7 +75,7 @@ class SymbolTable(object):
         if self._table.type == _symtable.TYPE_CLASS:
             return "class"
         assert self._table.type in (1, 2, 3), \
-               "unexpected type: {0}".format(self._table.type)
+               "unexpected type: %s" % self._table.type
 
     def get_id(self):
         return self._table.id
@@ -87,8 +97,8 @@ class SymbolTable(object):
         return bool(self._table.children)
 
     def has_exec(self):
-        """Return true if the scope uses exec.  Deprecated method."""
-        return False
+        """Return true if the scope uses exec"""
+        return bool(self._table.optimized & (OPT_EXEC | OPT_BARE_EXEC))
 
     def has_import_star(self):
         """Return true if the scope uses import *"""
@@ -109,14 +119,13 @@ class SymbolTable(object):
         return [self.lookup(ident) for ident in self.get_identifiers()]
 
     def __check_children(self, name):
-        return [_newSymbolTable(st, self._filename)
+        return [newSymbolTable(st, self._filename)
                 for st in self._table.children
                 if st.name == name]
 
     def get_children(self):
-        return [_newSymbolTable(st, self._filename)
+        return [newSymbolTable(st, self._filename)
                 for st in self._table.children]
-
 
 class Function(SymbolTable):
 
@@ -137,24 +146,19 @@ class Function(SymbolTable):
 
     def get_locals(self):
         if self.__locals is None:
-            locs = (LOCAL, CELL)
-            test = lambda x: ((x >> SCOPE_OFF) & SCOPE_MASK) in locs
-            self.__locals = self.__idents_matching(test)
+            self.__locals = self.__idents_matching(lambda x:x & DEF_BOUND)
         return self.__locals
 
     def get_globals(self):
         if self.__globals is None:
-            glob = (GLOBAL_IMPLICIT, GLOBAL_EXPLICIT)
-            test = lambda x:((x >> SCOPE_OFF) & SCOPE_MASK) in glob
-            self.__globals = self.__idents_matching(test)
+            glob = DEF_GLOBAL | DEF_FREE_GLOBAL
+            self.__globals = self.__idents_matching(lambda x:x & glob)
         return self.__globals
 
     def get_frees(self):
         if self.__frees is None:
-            is_free = lambda x:((x >> SCOPE_OFF) & SCOPE_MASK) == FREE
             self.__frees = self.__idents_matching(is_free)
         return self.__frees
-
 
 class Class(SymbolTable):
 
@@ -165,20 +169,17 @@ class Class(SymbolTable):
             d = {}
             for st in self._table.children:
                 d[st.name] = 1
-            self.__methods = tuple(d)
+            self.__methods = tuple(d.keys())
         return self.__methods
 
-
-class Symbol(object):
-
+class Symbol:
     def __init__(self, name, flags, namespaces=None):
         self.__name = name
         self.__flags = flags
-        self.__scope = (flags >> SCOPE_OFF) & SCOPE_MASK # like PyST_GetScope()
         self.__namespaces = namespaces or ()
 
     def __repr__(self):
-        return "<symbol {0!r}>".format(self.__name)
+        return "<symbol '%s'>" % self.__name
 
     def get_name(self):
         return self.__name
@@ -190,22 +191,34 @@ class Symbol(object):
         return bool(self.__flags & DEF_PARAM)
 
     def is_global(self):
-        return bool(self.__scope in (GLOBAL_IMPLICIT, GLOBAL_EXPLICIT))
+        return bool((self.__flags & DEF_GLOBAL)
+                    or (self.__flags & DEF_FREE_GLOBAL))
 
-    def is_declared_global(self):
-        return bool(self.__scope == GLOBAL_EXPLICIT)
+    def is_vararg(self):
+        return bool(self.__flags & DEF_STAR)
+
+    def is_keywordarg(self):
+        return bool(self.__flags & DEF_DOUBLESTAR)
 
     def is_local(self):
         return bool(self.__flags & DEF_BOUND)
 
     def is_free(self):
-        return bool(self.__scope == FREE)
+        if (self.__flags & (USE | DEF_FREE)) \
+            and (self.__flags & (DEF_LOCAL | DEF_PARAM | DEF_GLOBAL)):
+            return 1
+        if self.__flags & DEF_FREE_CLASS:
+            return 1
+        return 0
 
     def is_imported(self):
         return bool(self.__flags & DEF_IMPORT)
 
     def is_assigned(self):
         return bool(self.__flags & DEF_LOCAL)
+
+    def is_in_tuple(self):
+        return bool(self.__flags & DEF_INTUPLE)
 
     def is_namespace(self):
         """Returns true if name binding introduces new namespace.
@@ -230,7 +243,7 @@ class Symbol(object):
         Raises ValueError if the name is bound to multiple namespaces.
         """
         if len(self.__namespaces) != 1:
-            raise ValueError("name is bound to multiple namespaces")
+            raise ValueError, "name is bound to multiple namespaces"
         return self.__namespaces[0]
 
 if __name__ == "__main__":
@@ -239,4 +252,4 @@ if __name__ == "__main__":
     mod = symtable(src, os.path.split(sys.argv[0])[1], "exec")
     for ident in mod.get_identifiers():
         info = mod.lookup(ident)
-        print(info, info.is_local(), info.is_namespace())
+        print info, info.is_local(), info.is_namespace()

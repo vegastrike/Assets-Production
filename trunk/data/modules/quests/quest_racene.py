@@ -15,7 +15,7 @@ class quest_racene (quest.quest):
         self.aera = []
         aer=faction_ships.factions[faction_ships.aera]
         conf=faction_ships.factions[faction_ships.confed]
-        for i in range(difficulty):
+        for i in xrange(difficulty):
             self.aera += [launch.launch_wave_around_unit("Recon_Lead",aer,faction_ships.getRandomFighterInt(faction_ships.aera),"default",1,500,2000,playa)]
         self.devil=launch.launch_wave_around_significant ('Devils_Fort',aer,'starfortress','default',1,50000,100000,4)
         launch.launch_wave_around_significant ('terran_rescue_fleet',conf,faction_ships.getRandomCapitolInt(faction_ships.confed),'default',1,10000,100000,4)
@@ -58,7 +58,7 @@ class quest_racene_factory (quest.quest_factory):
     def __init__ (self):
         quest.quest_factory.__init__ (self,"quest_racene")
     def precondition(self,playernum):
-        print('precondition')
+        print 'precondition'
         return 1
         return quest.findQuest(playernum,'racene_star_intro') and quest.notLoadedQuest(playernum,'racene_star_loss')
     def create (self):

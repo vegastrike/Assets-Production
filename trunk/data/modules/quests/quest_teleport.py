@@ -29,8 +29,8 @@ class quest_teleport (quest.quest):
         targetpos = VS.SafeEntrancePoint (targetpos,rsiz)
         if (size<1000):
             size=1000
-        print("kill")
-        print(un.getName())
+        print "kill"
+        print un.getName()
         un.SetCurPosition(targetpos)
         VS.playAnimation("warp.ani",pos,size)
         VS.playSound("cloak.wav",pos,(1,0,0))
@@ -38,7 +38,7 @@ class quest_teleport (quest.quest):
         VS.playSound("cloak.wav",targetpos,(1,0,0))
     def teleportPlayer(self,un):
         if (un.DockedOrDocking()):
-            print("YOWWW")
+            print "YOWWW"
         else:
             if (vsrandom.randrange(0,3)==0):
                 (adj,test) = universe.getAdjacentSystems(self.sysfile,1)

@@ -50,16 +50,16 @@ def execute(filedb, form, post_args):
 	s=myreplace (s,"default_mission","net.mission")
 	
 	# Make browser treat this as an XML file:
-	print("Content-Type: text/xml")
-	if (not ("action" in form and form["action"]=="view")):
-		print("Content-Disposition: attachment; filename=vegastrike.config")
-	print("")
+	print "Content-Type: text/xml"
+	if (not (form.has_key("action") and form["action"]=="view")):
+		print "Content-Disposition: attachment; filename=vegastrike.config"
+	print ""
 	
-	print(s)
+	print s
 
 if __name__=='__main__':
 	form = db.urlDecode(os.environ.get('QUERY_STRING',''))
-	if "mod" in form:
+	if form.has_key("mod"):
 		mod = form["mod"]
 	else:
 		mod = ''

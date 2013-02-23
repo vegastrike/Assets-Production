@@ -19,7 +19,7 @@ def getNumFromChar(c):
 def seedstring (stru):
     num=0
     l=len (stru)
-    for i in range(l):
+    for i in xrange(l):
         global totalnormchar,RAND_MAX
         num+=getNumFromChar(stru[l-i-1])
         num*=totalnormchar

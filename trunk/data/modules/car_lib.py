@@ -13,12 +13,12 @@ class Environment(Director.Mission):
         self.num_un+=1
     def __init__ (self,numcar, numspec):
         Director.Mission.__init__(self)
-        print('initing')
+        print 'initing'
         self.iter=0
         self.num_un=0
-        for i in range(numcar):
+        for i in xrange(numcar):
             self.CreateUnit ("porsche")
-        for i in range(numspec):
+        for i in xrange(numspec):
             self.CreateUnit ("car")
     def Execute(self):
         un = VS.getUnit (self.iter)
@@ -48,7 +48,7 @@ class Environment(Director.Mission):
                     if (posdiff*R[2]<0):
                         pos=(un.Position()[0],0,playa.Position()[2]+4000*(2*(R[2]<0)-1),)
                         un.SetCurPosition (pos)
-                        print("repositioning")
+                        print "repositioning"
 #       def ApplyPerFrameEnvironment (self,un,playa):
         pos = un.Position()
         vel = un.GetVelocity()

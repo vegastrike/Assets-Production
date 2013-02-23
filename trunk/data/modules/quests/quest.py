@@ -28,17 +28,17 @@ def checkSaveValue(playernum,questname,value=1):
     return 0
 
 def persistentQuest (playernum,questname):
-    print("finding quest")
-    print(questname)
+    print "finding quest"
+    print questname
     return findQuest (playernum,questname,-1)
 
 def notLoadedQuest(playernum,questname):
-    print('finding nonloaded quest')
-    print(questname)
+    print 'finding nonloaded quest'
+    print questname
     return not persistentQuest(playernum,questname) and not findQuest (playernum,questname)
 
 def removeQuest (playernum,questname,value=1):
-    print("removing quest")
+    print "removing quest"
     mylen=Director.getSaveDataLength(int(playernum),str(questname))
     if (mylen>0):
         Director.putSaveData(int(playernum),str(questname),0,float(value))
@@ -66,7 +66,7 @@ class quest:
     def isPersistent (self):
         return persistentQuest (self.playernum,self.name)
     def Execute(self):
-        print("default")
+        print "default"
         return 1
 class quest_factory:
     def __init__(self,questname,remove_quest_on_run=0):
@@ -80,7 +80,7 @@ class quest_factory:
         return 1
     def persistent_factory(self,playernum):
         if (persistentQuest(playernum,self.name)):
-            print("persistent_factory")
+            print "persistent_factory"
             return self.private_create(playernum)
         return
     def private_create (self,playernum):
@@ -92,7 +92,7 @@ class quest_factory:
     def factory (self,playernum):
         if (self.precondition(playernum)):
             if (notLoadedQuest (playernum,self.name)):
-                print("nonpfact")
+                print "nonpfact"
                 return self.private_create(playernum)
         return
 
@@ -100,7 +100,7 @@ class test_quest (quest):
     def __init__ (self):
         self.i=0
     def Execute (self):
-        print(self.i)
+        print self.i
         self.i+=1
         if (self.i>100):
             self.removeQuest()

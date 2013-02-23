@@ -182,7 +182,7 @@ def PlayMusik(forcechange=1,hostile_dist=0):
             ftmp = un.FShieldData()+2*un.GetHullPercent()+un.RShieldData()-2+0.5
             mfname=None
             mfcount=0
-            for (fname,fcount) in unfcount.items():
+            for (fname,fcount) in unfcount.iteritems():
                 if fcount>mfcount:
                     mfname=fname
                     mfcount=fcount            

@@ -82,7 +82,7 @@ def buyDrive():
         VS.getPlayer().upgrade("jump_drive",0,0,1,0)
 #adds the jumpdrive to cargo, making it a permenant upgrade
         VS.getPlayer().addCargo(VS.GetMasterPartList().GetCargo("jump_drive"))
-        print("TEST: Bought Jump Drive")
+        print "TEST: Bought Jump Drive"
         Director.eraseSaveData(VS.getPlayer().isPlayerStarship(),TRIGGER_SAVE,0)
         Director.pushSaveData(VS.getPlayer().isPlayerStarship(),TRIGGER_SAVE,DONE_VALUE)
         return DRV_SUCCESS
@@ -92,7 +92,7 @@ def haveDrive():
     """Does the player already have a jumpdrive?"""
     if VS.getPlayer().GetJumpStatus()>-2:
 # when -2 is returned by GetJumpStatus, the player doesn't have a jumpdrive
-        print("TEST: You have a jump drive already!")
+        print "TEST: You have a jump drive already!"
         return 1
     return 0
 

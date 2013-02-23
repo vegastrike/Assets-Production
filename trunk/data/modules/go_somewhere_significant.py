@@ -8,7 +8,7 @@ import Briefing
 import launch_recycle
 def moveUnitTo(un,place,radius):
     where=place.LocalPosition()
-    print("moving "+un.getName() +" to "+place.getName())
+    print "moving "+un.getName() +" to "+place.getName()
     prsize=place.rSize();
     prp = VS.getPlanetRadiusPercent()
     pps = float(VS.vsConfig("physics","planet_port_size","0")) - 1.0
@@ -46,7 +46,7 @@ class go_somewhere_significant:
             lim=1
             if landable_only and not base_only:
                 lim=10
-            for i in range(lim):
+            for i in xrange(lim):
                 significant = unit.getSignificant (randint,landable_only,base_only)
                 
                 if significant.isPlanet():
@@ -62,7 +62,7 @@ class go_somewhere_significant:
                     significant=you
                 self.orbitee="%s" % (significant.getName())
                 self.capship=1
-                print("orbitee %s " % self.orbitee)
+                print "orbitee %s " % self.orbitee
                 if (dyn_fg==""):
                     newship=faction_ships.getRandomCapitol(capshipfaction)
                     found=False
@@ -106,7 +106,7 @@ class go_somewhere_significant:
         else:
             significant = universe.getRandomJumppoint ()
         if (significant.isNull()):
-            print("ERROR: no significants found in starsystem %s" % (self.sysfil))
+            print "ERROR: no significants found in starsystem %s" % (self.sysfil)
             self.significantun=VS.getPlayer()
         else:
             self.significantun=significant

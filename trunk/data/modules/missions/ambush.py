@@ -15,7 +15,7 @@ class ambush(directions_mission.directions_mission):
 
 	def __init__(self,savevar,systems,delay,faction,numenemies,dyntype='',dynfg='',greetingText=["Hello there, smuggler. Prepare to die!", "The price on your head is big enough that I missed my lunch"], directions=[], destination='',AdjustFaction=True):
 		directions_mission.directions_mission.__init__ (self,savevar,directions,destination)
-		print('Ambush: Starting')
+		print 'Ambush: Starting'
 		self.faction=faction
 		self.systems=systems
 		if type(systems)!=tuple and type(systems)!=list :
@@ -29,7 +29,7 @@ class ambush(directions_mission.directions_mission):
 		self.privateSetupPlayer()
 		self.AdjustFaction=AdjustFaction
 	def setupPlayer(self,cp):
-		print("ambush setting player up")
+		print "ambush setting player up"
 		directions_mission.directions_mission.setupPlayer(self,cp)
 		self.privateSetupPlayer()
 
@@ -42,10 +42,10 @@ class ambush(directions_mission.directions_mission):
 				self.dynfg=(self.dynfg,)
 			if (type(self.AdjustFaction)!=type( () ) and type (self.AdjustFaction)!=type([])):
 				self.AdjustFaction=(self.AdjustFaction,)
-			for i in range(len(self.faction)):
+			for i in xrange(len(self.faction)):
 				numenemies=self.numenemies[i]
 				faction=self.faction[i]
-				for z in range(numenemies):
+				for z in xrange(numenemies):
 					AdjustFaction=self.AdjustFaction[-1]
 					if (i<len(self.AdjustFaction)):
 						AdjustFaction=self.AdjustFaction[i]
@@ -55,7 +55,7 @@ class ambush(directions_mission.directions_mission):
 					dyntype=""
 					if (len(self.dyntype)>i):
 						dyntype=self.dyntype[i]
-					print('Ambush: Launch ships!')
+					print 'Ambush: Launch ships!'
 					self.havelaunched=1
 					L=launch.Launch()
 					L.fg="Shadow"
@@ -90,7 +90,7 @@ class ambush(directions_mission.directions_mission):
 					if (i==len(self.faction)-1 and z==0):
 						universe.greet(self.greetingText,enemy,you)
 					#print "launchin"
-					print('Ambush: Ships have been launched. Exiting...')
+					print 'Ambush: Ships have been launched. Exiting...'
 	def terminate(self):
 		self.terminated=1#VS.terminateMission(0)
 	def Execute(self):

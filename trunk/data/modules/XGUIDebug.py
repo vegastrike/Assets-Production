@@ -11,5 +11,5 @@ __xgui_trace_level = TRACE_NORMAL
 def trace(level,msg):
 	global __xgui_trace_level
 	if __xgui_trace_level>=level:
-		print(msg)
+		print msg
 
