@@ -141,9 +141,9 @@ class Random:
         if a is None:
             # Initialize from current time
             import VS
-            a = int(VS.timeofday() * 256)
+            a = long(VS.timeofday() * 256)
 
-        if type(a) not in (type(3), type(3)):
+        if type(a) not in (type(3), type(3L)):
             a = hash(a)
 
         a, x = divmod(a, 30268)
@@ -231,7 +231,7 @@ class Random:
         if 0 == x == y == z:
             # Initialize from current time
             import VS
-            t = int(VS.timeofday() * 256)
+            t = long(VS.timeofday() * 256)
             t = int((t&0xffffff) ^ (t>>24))
             t, x = divmod(t, 256)
             t, y = divmod(t, 256)
@@ -287,31 +287,31 @@ class Random:
         # common case while still doing adequate error checking
         istart = int(start)
         if istart != start:
-            raise ValueError("non-integer arg 1 for randrange()")
+            raise ValueError, "non-integer arg 1 for randrange()"
         if stop is default:
             if istart > 0:
                 return int(self.random() * istart)
-            raise ValueError("empty range for randrange()")
+            raise ValueError, "empty range for randrange()"
         istop = int(stop)
         if istop != stop:
-            raise ValueError("non-integer stop for randrange()")
+            raise ValueError, "non-integer stop for randrange()"
         if step == 1:
             if istart < istop:
                 return istart + int(self.random() *
                                    (istop - istart))
-            raise ValueError("empty range for randrange()")
+            raise ValueError, "empty range for randrange()"
         istep = int(step)
         if istep != step:
-            raise ValueError("non-integer step for randrange()")
+            raise ValueError, "non-integer step for randrange()"
         if istep > 0:
             n = (istop - istart + istep - 1) / istep
         elif istep < 0:
             n = (istop - istart + istep + 1) / istep
         else:
-            raise ValueError("zero step for randrange()")
+            raise ValueError, "zero step for randrange()"
 
         if n <= 0:
-            raise ValueError("empty range for randrange()")
+            raise ValueError, "empty range for randrange()"
         return istart + istep*int(self.random() * n)
 
     def randint(self, a, b):
@@ -342,7 +342,7 @@ class Random:
 
         if random is None:
             random = self.random
-        for i in range(len(x)-1, 0, -1):
+        for i in xrange(len(x)-1, 0, -1):
             # pick an element in x[:i+1] with which to exchange x[i]
             j = int(random() * (i+1))
             x[i], x[j] = x[j], x[i]
@@ -456,7 +456,7 @@ class Random:
 
         random = self.random
         if alpha <= 0.0:
-            raise ValueError('stdgamma: alpha must be > 0.0')
+            raise ValueError, 'stdgamma: alpha must be > 0.0'
 
         if alpha > 1.0:
 
@@ -577,31 +577,31 @@ class Random:
 
 def _test_generator(n, funccall):
     import VS
-    print(n, 'times', funccall)
+    print n, 'times', funccall
     code = compile(funccall, funccall, 'eval')
     sum = 0.0
     sqsum = 0.0
     smallest = 1e10
     largest = -1e10
     t0 = VS.timeofday()
-    for i in range(n):
+    for i in xrange(n):
         x = eval(code)
         sum = sum + x
         sqsum = sqsum + x*x
         smallest = min(x, smallest)
         largest = max(x, largest)
     t1 = VS.timeofday()
-    print(round(t1-t0, 3), 'sec,', end=' ')
+    print round(t1-t0, 3), 'sec,',
     avg = sum/n
     stddev = _sqrt(sqsum/n - avg*avg)
-    print('avg %g, stddev %g, min %g, max %g' % \
-              (avg, stddev, smallest, largest))
+    print 'avg %g, stddev %g, min %g, max %g' % \
+              (avg, stddev, smallest, largest)
 
 def _test(N=200):
-    print('TWOPI         =', TWOPI)
-    print('LOG4          =', LOG4)
-    print('NV_MAGICCONST =', NV_MAGICCONST)
-    print('SG_MAGICCONST =', SG_MAGICCONST)
+    print 'TWOPI         =', TWOPI
+    print 'LOG4          =', LOG4
+    print 'NV_MAGICCONST =', NV_MAGICCONST
+    print 'SG_MAGICCONST =', SG_MAGICCONST
     _test_generator(N, 'random()')
     _test_generator(N, 'normalvariate(0.0, 1.0)')
     _test_generator(N, 'lognormvariate(0.0, 1.0)')
@@ -625,11 +625,11 @@ def _test(N=200):
     r1 = random()
     # now do it the slow way
     setstate(s)
-    for i in range(N):
+    for i in xrange(N):
         random()
     r2 = random()
     if r1 != r2:
-        raise ValueError("jumpahead test failed " + repr((N, r1, r2)))
+        raise ValueError("jumpahead test failed " + `(N, r1, r2)`)
 
 # Create one instance, seeded from current time, and export its methods
 # as module-level functions.  The functions are not threadsafe, and state

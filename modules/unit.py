@@ -36,7 +36,7 @@ def moveOutOfPlayerPath(un):
         if vel[0]==0 and vel[1]==0 and vel[2]==0:
            vel=(1,0,0)
         dir=Vector.Scale(Vector.ScaledCross(ex,vel),min_distance)
-        print("offsetting you a few meters to the "+str(dir))
+        print "offsetting you a few meters to the "+str(dir)
         un.SetPosition(Vector.Add(playa.Position(),dir))
     import faction_ships
     playa=VS.getPlayer()
@@ -46,7 +46,7 @@ def moveOutOfPlayerPath(un):
        min_distance=faction_ships.min_distance
        min_forward_distance=faction_ships.min_forward_distance
     except:
-       print("badness no faction_ships.min_distance")
+       print "badness no faction_ships.min_distance"
     dis=un.getDistance(playa)
     import Vector
     vel=playa.GetVelocity()
@@ -245,7 +245,7 @@ def removeFg(which_fgid):
 # Cloaks or uncloaks (1 or 0) a flightgroup tuple (tup).
 def TfgCloak(state,tup):
     num = len(tup)
-    for i in range(num):
+    for i in xrange(num):
         tup[i].Cloak(state)
         num = num + 1
 
@@ -271,14 +271,14 @@ def TfgHeadCount(tup):
 # Sets a whole tupled flightgroup on a target.
 def setTfgDirective(tup,tgt,dir):
     num = len(tup)
-    for i in range(num):
+    for i in xrange(num):
         tup[i].SetTarget(tgt)
         tup[i].setFgDirective(dir)
 
 # Jumps a whole fg tuple using the JumpTo command.
 def TfgJumpTo(tup,system):
     num = len(tup)
-    for i in range(num):
+    for i in xrange(num):
         tup[i].JumpTo(system)
 
 def getUnitSequenceBackwards():

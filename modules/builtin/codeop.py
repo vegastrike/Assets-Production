@@ -1,10 +1,10 @@
 r"""Utilities to compile possibly incomplete Python source code.
 
 This module provides two interfaces, broadly similar to the builtin
-function compile(), which take program text, a filename and a 'mode'
+function compile(), that take progam text, a filename and a 'mode'
 and:
 
-- Return code object if the command is complete and valid
+- Return a code object if the command is complete and valid
 - Return None if the command is incomplete
 - Raise SyntaxError, ValueError or OverflowError if the command is a
   syntax error (OverflowError and ValueError can be produced by
@@ -63,8 +63,6 @@ _features = [getattr(__future__, fname)
 
 __all__ = ["compile_command", "Compile", "CommandCompiler"]
 
-PyCF_DONT_IMPLY_DEDENT = 0x200          # Matches pythonrun.h
-
 def _maybe_compile(compiler, source, filename, symbol):
     # Check for source consisting of only blank lines and comments
     for line in source.split("\n"):
@@ -72,34 +70,38 @@ def _maybe_compile(compiler, source, filename, symbol):
         if line and line[0] != '#':
             break               # Leave it alone
     else:
-        if symbol != "eval":
-            source = "pass"     # Replace it with a 'pass' statement
+        source = "pass"         # Replace it with a 'pass' statement
 
     err = err1 = err2 = None
     code = code1 = code2 = None
 
     try:
         code = compiler(source, filename, symbol)
-    except SyntaxError as err:
+    except SyntaxError, err:
         pass
 
     try:
         code1 = compiler(source + "\n", filename, symbol)
-    except SyntaxError as e:
-        err1 = e
+    except SyntaxError, err1:
+        pass
 
     try:
         code2 = compiler(source + "\n\n", filename, symbol)
-    except SyntaxError as e:
-        err2 = e
+    except SyntaxError, err2:
+        pass
 
     if code:
         return code
-    if not code1 and repr(err1) == repr(err2):
-        raise err1
-
-def _compile(source, filename, symbol):
-    return compile(source, filename, symbol, PyCF_DONT_IMPLY_DEDENT)
+    try:
+        e1 = err1.__dict__
+    except AttributeError:
+        e1 = err1
+    try:
+        e2 = err2.__dict__
+    except AttributeError:
+        e2 = err2
+    if not code1 and e1 == e2:
+        raise SyntaxError, err1
 
 def compile_command(source, filename="<input>", symbol="single"):
     r"""Compile a command and determine whether it is incomplete.
@@ -119,7 +121,7 @@ def compile_command(source, filename="<input>", symbol="single"):
       syntax error (OverflowError and ValueError can be produced by
       malformed literals).
     """
-    return _maybe_compile(_compile, source, filename, symbol)
+    return _maybe_compile(compile, source, filename, symbol)
 
 class Compile:
     """Instances of this class behave much like the built-in compile
@@ -127,7 +129,7 @@ class Compile:
     statement, it "remembers" and compiles all subsequent program texts
     with the statement in force."""
     def __init__(self):
-        self.flags = PyCF_DONT_IMPLY_DEDENT
+        self.flags = 0
 
     def __call__(self, source, filename, symbol):
         codeob = compile(source, filename, symbol, self.flags, 1)

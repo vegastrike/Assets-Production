@@ -18,27 +18,27 @@ footer = """
 """
 
 def print_heading():
-    print('<h1>Create Username/password</h1>')
+    print '<h1>Create Username/password</h1>'
 
 def print_form(filedb, mod):
     
     modstr=''
     if mod:
         modstr='?'+mod
-    print('<form name="type" action="register_submit.py'+modstr+'" method="post">')
-    print('<table>')
+    print '<form name="type" action="register_submit.py'+modstr+'" method="post">'
+    print '<table>'
     type_select(filedb)
     faction_select(filedb)
     field('Handle','username')
     field('Password','password')
     submit_button()
-    print('</table>')
-    print('</form>')
+    print '</table>'
+    print '</form>'
 
 def type_select(filedb):
-    print('<tr>')
-    print('<td align= "right">Which type?</td>')
-    print('<td><select name="type" size="1">')
+    print '<tr>'
+    print '<td align= "right">Which type?</td>'
+    print '<td><select name="type" size="1">'
     type_dat = filedb.get_default_csv(None)
     units = type_dat[2:]
     units.sort()
@@ -57,15 +57,15 @@ def type_select(filedb):
                if endl!=-1:
                    name=line[:endl]
            if (len(name) and name.find("__")==-1 and name.find(".blank")==-1 and name!="beholder"):
-              print('<option>'+name+'</option>')
-    print('</select></td>')
-    print('</tr>')
+              print '<option>'+name+'</option>'
+    print '</select></td>'
+    print '</tr>'
 
 
 def faction_select(filedb):
-    print('<tr>')
-    print('<td align= "right">Which faction?</td>')
-    print('<td><select name="faction" size="1">')
+    print '<tr>'
+    print '<td align= "right">Which faction?</td>'
+    print '<td><select name="faction" size="1">'
     f = filedb.open_default_file("factions.xml")
     type_dat = f.readlines()
     f.close()
@@ -80,31 +80,31 @@ def faction_select(filedb):
                break
            name=subline[:where2]
            if (len(name) and name!="upgrades" and name!="neutral" and name!="planets"):
-              print('<option>'+name+'</option>')
-    print('</select></td>')
-    print('</tr>')
+              print '<option>'+name+'</option>'
+    print '</select></td>'
+    print '</tr>'
 
 
 def field(title, name):
-    print('<tr>')
-    print('<td align="right">'+title+':</td>')
-    print('<td><input name="'+name+'" type="text" size="20"></td>')
-    print('</tr>')
+    print '<tr>'
+    print '<td align="right">'+title+':</td>'
+    print '<td><input name="'+name+'" type="text" size="20"></td>'
+    print '</tr>'
 
 def submit_button():
-    print('<tr><td colspan=2 align="center">')
-    print('<input value="Submit" type="submit">')
-    print('</td></tr>')
+    print '<tr><td colspan=2 align="center">'
+    print '<input value="Submit" type="submit">'
+    print '</td></tr>'
 
 get_form=False
 post_form=False
 def execute(filedb, mod, post):
-	print("Content-Type: text/html")
-	print("")
-	print(header)
+	print "Content-Type: text/html"
+	print ""
+	print header
 	print_heading()
 	print_form(filedb, mod)
-	print(footer)
+	print footer
 
 if __name__ == '__main__':
     mod = os.environ.get('QUERY_STRING','')

@@ -67,7 +67,7 @@ class InSystemCondition(Condition):
         if self.system:
             sys=VS.getSystemFile().split('/')
             debug.debug('System: '+str(sys)+'==?=='+str(self.system))
-            for i in range(-1,-min(len(self.system),len(sys))-1,-1):
+            for i in xrange(-1,-min(len(self.system),len(sys))-1,-1):
                 if sys[i].lower()!=self.system[i]:
                     debug.debug(str(sys[i])+'!='+str(self.system[i]))
                     debug.debug('*** insystem return false: not in system!!')
@@ -357,7 +357,7 @@ class AddCargo(Script):
             debug.debug("Successfully added "+str(numsofar))
             numadded=0
             if (numsofar<self.cargnum):
-                rang=list(range(you.numCargo()))
+                rang=range (you.numCargo())
                 rang.reverse()
                 for i in rang:
                     karg=you.GetCargoIndex(i)
@@ -771,7 +771,7 @@ class TrueSubnode(Script):
         Script.__call__(self,room,subnodes)
         if VS.networked():
             return True
-        for i in range(len(subnodes)):
+        for i in xrange(len(subnodes)):
             if subnodes[i].checkPreconditions():
                 return i
         return -1
@@ -783,7 +783,7 @@ class TrueBackwardsSubnode(Script):
         Script.__call__(self,room,subnodes)
         if VS.networked():
             return True
-        for i in range(len(subnodes)-1,-1,-1):
+        for i in xrange(len(subnodes)-1,-1,-1):
             if subnodes[i].checkPreconditions():
                 return i
         return -1
@@ -931,7 +931,7 @@ class Campaign:
             length=len(savegamelist)
         else:
             length=Director.getSaveDataLength(plr,self.name)
-        for i in range(length):
+        for i in xrange(length):
             if savegamelist:
                 newnodenum=int(savegamelist[i])
             else:
@@ -994,7 +994,7 @@ class Campaign:
             self.readPositionFromSavegame()
         else:
             debug.debug('*** read stuff from savegame')
-            for i in range(len(player.savegame)):
+            for i in xrange(len(player.savegame)):
                 if int(Director.getSaveData(plr,self.name,i))!=player.savegame[i]:
                     self.readPositionFromSavegame()
                     break
@@ -1133,7 +1133,7 @@ class CampaignChoiceNode(CampaignNode):
         import fixers
         arr=[]
         debug.debug('*** create buttons +'+str(self.choices))
-        for x in range(len(self.choices)):
+        for x in xrange(len(self.choices)):
             arr.append(fixers.Choice(self.choices[x][0],"#\nimport campaign_lib\ncampaign_lib.clickChoice("+str(room)+","+str(x)+")\n",self.choices[x][1]))
         fixers.DestroyActiveButtons()
         fixers.CreateChoiceButtons(room,arr)
@@ -1458,7 +1458,7 @@ def getActiveCampaignNodes(room):
     else:
         debug.debug('*** No node')
 
-    for index in range(len(clist)):
+    for index in xrange(len(clist)):
         if (clist[index].spritelink):
             if (index!=0):
                 tmp = clist[index]

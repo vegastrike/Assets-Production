@@ -36,8 +36,8 @@ class wc1 (Director.Mission):
         self.StartMission(VS.getSystemFile(),self.sector,self.mission)
 
     def StartMission (self,lastsector, cursector,mission):
-        print((cursector,))
-        print(cursector)
+        print (cursector,)
+        print cursector
         save_util.saveStringList(0,"wc1sector",(cursector,))
         if (Director.getSaveDataLength (0,"wc1mission")>0):
             Director.putSaveData(0,"wc1mission",0,mission)
@@ -67,12 +67,12 @@ class wc1 (Director.Mission):
                 if (curmission!=self.mission or cursector!= self.sector):
                     self.StartMission (cursector,self.sector,self.mission)
     def initbriefing(self):
-        print("ending briefing")
+        print "ending briefing"
     def loopbriefing(self):
-        print("loop briefing")
+        print "loop briefing"
         Briefing.terminate();
     def endbriefing(self):
-        print("ending briefing")
+        print "ending briefing"
 
 #def initstarsystem():
 #  random_encounters.initstarsystem() #??? that isn't there

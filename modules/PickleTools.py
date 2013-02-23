@@ -11,7 +11,7 @@ def _bytehex(num, int=int, divmod=divmod, bytehex2=_bytehex2):
 	q,r=divmod(int(num),16)		
 	return bytehex2(q%16)+bytehex2(r)		
 
-bytehex = list(map(_bytehex, range(256)))
+bytehex = map(_bytehex, xrange(256))
 
 # '\\' is always forbidden
 def addSlashes(m,forbidden="#!|\\?\"\'\r\n",extended_forbidden=1, bytehex=bytehex):
@@ -61,7 +61,7 @@ def encodeMap(m, str=str):
 		rva = rv.append
 		_addSlashes = addSlashes
 		_encodeMap = encodeMap
-		for k,v in m.items():
+		for k,v in m.iteritems():
 			#recursive, in case there are nested maps
 			rva( _addSlashes(str(k)) + "#" + _encodeMap(v) )
 		rv = "|".join(rv)

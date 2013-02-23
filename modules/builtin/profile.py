@@ -1,36 +1,46 @@
-#! /usr/bin/python3.2
+#! /usr/bin/env python
 #
 # Class for profiling python code. rev 1.0  6/2/94
 #
-# Written by James Roskind
 # Based on prior profile module by Sjoerd Mullender...
 #   which was hacked somewhat by: Guido van Rossum
+#
+# See profile.doc for more information
 
 """Class for profiling Python code."""
 
-# Copyright Disney Enterprises, Inc.  All Rights Reserved.
-# Licensed to PSF under a Contributor Agreement
+# Copyright 1994, by InfoSeek Corporation, all rights reserved.
+# Written by James Roskind
 #
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
+# Permission to use, copy, modify, and distribute this Python software
+# and its associated documentation for any purpose (subject to the
+# restriction in the following sentence) without fee is hereby granted,
+# provided that the above copyright notice appears in all copies, and
+# that both that copyright notice and this permission notice appear in
+# supporting documentation, and that the name of InfoSeek not be used in
+# advertising or publicity pertaining to distribution of the software
+# without specific, written prior permission.  This permission is
+# explicitly restricted to the copying and modification of the software
+# to remain in Python, compiled Python, or other languages (such as C)
+# wherein the modified or derived code is exclusively imported into a
+# Python module.
 #
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
-# either express or implied.  See the License for the specific language
-# governing permissions and limitations under the License.
+# INFOSEEK CORPORATION DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS
+# SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND
+# FITNESS. IN NO EVENT SHALL INFOSEEK CORPORATION BE LIABLE FOR ANY
+# SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER
+# RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF
+# CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
+# CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
 
 
 import sys
 import os
 import time
 import marshal
-from optparse import OptionParser
 
-__all__ = ["run", "runctx", "Profile"]
+__all__ = ["run","help","Profile"]
 
 # Sample timer for use with
 #i_count = 0
@@ -45,7 +55,7 @@ __all__ = ["run", "runctx", "Profile"]
 # Note that an instance of Profile() is *not* needed to call them.
 #**************************************************************************
 
-def run(statement, filename=None, sort=-1):
+def run(statement, filename=None):
     """Run statement under profiler optionally saving results in filename
 
     This function takes a single argument that can be passed to the
@@ -64,44 +74,31 @@ def run(statement, filename=None, sort=-1):
     if filename is not None:
         prof.dump_stats(filename)
     else:
-        return prof.print_stats(sort)
+        return prof.print_stats()
 
-def runctx(statement, globals, locals, filename=None, sort=-1):
-    """Run statement under profiler, supplying your own globals and locals,
-    optionally saving results in filename.
-
-    statement and filename have the same semantics as profile.run
-    """
-    prof = Profile()
-    try:
-        prof = prof.runctx(statement, globals, locals)
-    except SystemExit:
-        pass
-
-    if filename is not None:
-        prof.dump_stats(filename)
+# print help
+def help():
+    for dirname in sys.path:
+        fullname = os.path.join(dirname, 'profile.doc')
+        if os.path.exists(fullname):
+            sts = os.system('${PAGER-more} ' + fullname)
+            if sts: print '*** Pager exit status:', sts
+            break
     else:
-        return prof.print_stats(sort)
+        print 'Sorry, can\'t find the help file "profile.doc"',
+        print 'along the Python search path.'
+
+
+if os.name == "mac":
+    import MacOS
+    def _get_time_mac(timer=MacOS.GetTicks):
+        return timer() / 60.0
 
 if hasattr(os, "times"):
     def _get_time_times(timer=os.times):
         t = timer()
         return t[0] + t[1]
 
-# Using getrusage(3) is better than clock(3) if available:
-# on some systems (e.g. FreeBSD), getrusage has a higher resolution
-# Furthermore, on a POSIX system, returns microseconds, which
-# wrap around after 36min.
-_has_res = 0
-try:
-    import resource
-    resgetrusage = lambda: resource.getrusage(resource.RUSAGE_SELF)
-    def _get_time_resource(timer=resgetrusage):
-        t = timer()
-        return t[0] + t[1]
-    _has_res = 1
-except ImportError:
-    pass
 
 class Profile:
     """Profiler class.
@@ -148,17 +145,16 @@ class Profile:
         self.timings = {}
         self.cur = None
         self.cmd = ""
-        self.c_func_name = ""
 
         if bias is None:
             bias = self.bias
         self.bias = bias     # Materialize in local dict for lookup speed.
 
         if not timer:
-            if _has_res:
-                self.timer = resgetrusage
-                self.dispatcher = self.trace_dispatch
-                self.get_time = _get_time_resource
+            if os.name == 'mac':
+                self.timer = MacOS.GetTicks
+                self.dispatcher = self.trace_dispatch_mac
+                self.get_time = _get_time_mac
             elif hasattr(time, 'clock'):
                 self.timer = self.get_time = time.clock
                 self.dispatcher = self.trace_dispatch_i
@@ -187,8 +183,10 @@ class Profile:
                 # list (for performance).  Note that we can't assume
                 # the timer() result contains two values in all
                 # cases.
-                def get_time_timer(timer=timer, sum=sum):
-                    return sum(timer())
+                import operator
+                def get_time_timer(timer=timer,
+                                   reduce=reduce, reducer=operator.add):
+                    return reduce(reducer, timer(), 0)
                 self.get_time = get_time_timer
         self.t = self.get_time()
         self.simulate_call('profiler')
@@ -199,9 +197,6 @@ class Profile:
         timer = self.timer
         t = timer()
         t = t[0] + t[1] - self.t - self.bias
-
-        if event == "c_call":
-            self.c_func_name = arg.__name__
 
         if self.dispatch[event](self, frame,t):
             t = timer()
@@ -216,11 +211,7 @@ class Profile:
     def trace_dispatch_i(self, frame, event, arg):
         timer = self.timer
         t = timer() - self.t - self.bias
-
-        if event == "c_call":
-            self.c_func_name = arg.__name__
-
-        if self.dispatch[event](self, frame, t):
+        if self.dispatch[event](self, frame,t):
             self.t = timer()
         else:
             self.t = timer() - t  # put back unrecorded delta
@@ -231,10 +222,6 @@ class Profile:
     def trace_dispatch_mac(self, frame, event, arg):
         timer = self.timer
         t = timer()/60.0 - self.t - self.bias
-
-        if event == "c_call":
-            self.c_func_name = arg.__name__
-
         if self.dispatch[event](self, frame, t):
             self.t = timer()/60.0
         else:
@@ -245,9 +232,6 @@ class Profile:
     def trace_dispatch_l(self, frame, event, arg):
         get_time = self.get_time
         t = get_time() - self.t - self.bias
-
-        if event == "c_call":
-            self.c_func_name = arg.__name__
 
         if self.dispatch[event](self, frame, t):
             self.t = get_time()
@@ -284,20 +268,9 @@ class Profile:
         fn = (fcode.co_filename, fcode.co_firstlineno, fcode.co_name)
         self.cur = (t, 0, 0, fn, frame, self.cur)
         timings = self.timings
-        if fn in timings:
+        if timings.has_key(fn):
             cc, ns, tt, ct, callers = timings[fn]
             timings[fn] = cc, ns + 1, tt, ct, callers
-        else:
-            timings[fn] = 0, 0, 0, 0, {}
-        return 1
-
-    def trace_dispatch_c_call (self, frame, t):
-        fn = ("", 0, self.c_func_name)
-        self.cur = (t, 0, 0, fn, frame, self.cur)
-        timings = self.timings
-        if fn in timings:
-            cc, ns, tt, ct, callers = timings[fn]
-            timings[fn] = cc, ns+1, tt, ct, callers
         else:
             timings[fn] = 0, 0, 0, 0, {}
         return 1
@@ -327,7 +300,7 @@ class Profile:
             ct = ct + frame_total
             cc = cc + 1
 
-        if pfn in callers:
+        if callers.has_key(pfn):
             callers[pfn] = callers[pfn] + 1  # hack: gather more
             # stats such as the amount of time added to ct courtesy
             # of this specific call, and the contribution to cc
@@ -344,9 +317,6 @@ class Profile:
         "call": trace_dispatch_call,
         "exception": trace_dispatch_exception,
         "return": trace_dispatch_return,
-        "c_call": trace_dispatch_c_call,
-        "c_exception": trace_dispatch_return,  # the C function returned
-        "c_return": trace_dispatch_return,
         }
 
 
@@ -399,9 +369,9 @@ class Profile:
         self.t = get_time() - t
 
 
-    def print_stats(self, sort=-1):
+    def print_stats(self):
         import pstats
-        pstats.Stats(self).strip_dirs().sort_stats(sort). \
+        pstats.Stats(self).strip_dirs().sort_stats(-1). \
                   print_stats()
 
     def dump_stats(self, file):
@@ -416,11 +386,12 @@ class Profile:
 
     def snapshot_stats(self):
         self.stats = {}
-        for func, (cc, ns, tt, ct, callers) in self.timings.items():
+        for func in self.timings.keys():
+            cc, ns, tt, ct, callers = self.timings[func]
             callers = callers.copy()
             nc = 0
-            for callcnt in callers.values():
-                nc += callcnt
+            for func_caller in callers.keys():
+                nc = nc + callers[func_caller]
             self.stats[func] = cc, nc, tt, ct, callers
 
 
@@ -436,17 +407,17 @@ class Profile:
         self.set_cmd(cmd)
         sys.setprofile(self.dispatcher)
         try:
-            exec(cmd, globals, locals)
+            exec cmd in globals, locals
         finally:
             sys.setprofile(None)
         return self
 
     # This method is more useful to profile a single function call.
     def runcall(self, func, *args, **kw):
-        self.set_cmd(repr(func))
+        self.set_cmd(`func`)
         sys.setprofile(self.dispatcher)
         try:
-            return func(*args, **kw)
+            return apply(func, args, kw)
         finally:
             sys.setprofile(None)
 
@@ -527,7 +498,7 @@ class Profile:
         t1 = get_time()
         elapsed_noprofile = t1 - t0
         if verbose:
-            print("elapsed time without profiling =", elapsed_noprofile)
+            print "elapsed time without profiling =", elapsed_noprofile
 
         # elapsed_profile <- time f(m) takes with profiling.  The difference
         # is profiling overhead, only some of which the profiler subtracts
@@ -538,7 +509,7 @@ class Profile:
         t1 = get_time()
         elapsed_profile = t1 - t0
         if verbose:
-            print("elapsed time with profiling =", elapsed_profile)
+            print "elapsed time with profiling =", elapsed_profile
 
         # reported_time <- "CPU seconds" the profiler charged to f and f1.
         total_calls = 0.0
@@ -550,8 +521,8 @@ class Profile:
                 reported_time += tt
 
         if verbose:
-            print("'CPU seconds' profiler reported =", reported_time)
-            print("total # calls =", total_calls)
+            print "'CPU seconds' profiler reported =", reported_time
+            print "total # calls =", total_calls
         if total_calls != m + 1:
             raise ValueError("internal error: total calls = %d" % total_calls)
 
@@ -561,44 +532,25 @@ class Profile:
         # overhead per event.
         mean = (reported_time - elapsed_noprofile) / 2.0 / total_calls
         if verbose:
-            print("mean stopwatch overhead per profile event =", mean)
+            print "mean stopwatch overhead per profile event =", mean
         return mean
 
 #****************************************************************************
+def Stats(*args):
+    print 'Report generating functions are in the "pstats" module\a'
 
-def main():
-    usage = "profile.py [-o output_file_path] [-s sort] scriptfile [arg] ..."
-    parser = OptionParser(usage=usage)
-    parser.allow_interspersed_args = False
-    parser.add_option('-o', '--outfile', dest="outfile",
-        help="Save stats to <outfile>", default=None)
-    parser.add_option('-s', '--sort', dest="sort",
-        help="Sort order when printing to stdout, based on pstats.Stats class",
-        default=-1)
-
-    if not sys.argv[1:]:
-        parser.print_usage()
-        sys.exit(2)
-
-    (options, args) = parser.parse_args()
-    sys.argv[:] = args
-
-    if len(args) > 0:
-        progname = args[0]
-        sys.path.insert(0, os.path.dirname(progname))
-        with open(progname, 'rb') as fp:
-            code = compile(fp.read(), progname, 'exec')
-        globs = {
-            '__file__': progname,
-            '__name__': '__main__',
-            '__package__': None,
-            '__cached__': None,
-        }
-        runctx(code, globs, None, options.outfile, options.sort)
-    else:
-        parser.print_usage()
-    return parser
 
 # When invoked as main program, invoke the profiler on a script
 if __name__ == '__main__':
-    main()
+    if not sys.argv[1:]:
+        print "usage: profile.py scriptfile [arg] ..."
+        sys.exit(2)
+
+    filename = sys.argv[1]  # Get script filename
+
+    del sys.argv[0]         # Hide "profile.py" from argument list
+
+    # Insert script directory in front of module search path
+    sys.path.insert(0, os.path.dirname(filename))
+
+    run('execfile(' + `filename` + ')')

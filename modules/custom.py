@@ -75,7 +75,7 @@ def putFunction(continuation, id, cp):
 
 def getFunction(id, cp):
 	key = str(cp)+","+id
-	if key in running_cmds:
+	if running_cmds.has_key(key):
 		func = running_cmds[key]
 		del running_cmds[key]
 		return func
@@ -91,7 +91,7 @@ def run(cmd, args, continuation, id=None, cp=-1):
 		id = putFunction(continuation, id, cp)
 	if not isinstance(id,str):
 		id = "null"
-	print("running: "+cmd+", "+str(args)+"; id: "+id)
+	print "running: "+cmd+", "+str(args)+"; id: "+id
 	VS.sendCustom(cp, cmd, joinArgs(args), id)
 	return id
 
@@ -116,12 +116,12 @@ class IOmessageWriter:
 def processMessage(local, cmd, argstr, id):
 	cp = VS.getCurrentPlayer();
 	cmd = cmd.lower()
-	print("======= Processing message "+str(id)+" =======")
+	print "======= Processing message "+str(id)+" ======="
 	try:
 		args = splitArgs(argstr)
-		print("Command: "+cmd)
+		print "Command: "+cmd
 		for arg in args:
-			print(arg)
+			print arg
 		if cmd=='reloadlib' and local and len(args)>=1:
 			reload(__import__(args[0]))
 			VS.IOmessage(0, "game", "p"+str(cp), "Reloaded "+str(args[0]))
@@ -143,7 +143,7 @@ def processMessage(local, cmd, argstr, id):
 					putFunction(func, id, cp)
 				elif ret:
 					respond(ret, None, id, cp)
-		elif cmd in procedures:
+		elif procedures.has_key(cmd):
 			ret = procedures[cmd](local, cmd, args, id)
 			if ret and isinstance(ret, tuple) and len(ret)==2:
 				respond(ret[0], ret[1], id, cp)
@@ -153,8 +153,8 @@ def processMessage(local, cmd, argstr, id):
 			import server
 			server.processMessage(cp, local, cmd, args, id)
 		else:
-			print("Command "+repr(cmd)+" does not exist. Available functions:")
-			print(list(procedures.keys()))
+			print "Command "+repr(cmd)+" does not exist. Available functions:"
+			print procedures.keys()
 	except:
 		if id or cp<0:
 			writer = sys.stderr
@@ -163,5 +163,5 @@ def processMessage(local, cmd, argstr, id):
 		writer.write("An error occurred when processing custom command: \n"
 			+ str(cmd)+" "+argstr + "\n")
 		traceback.print_exc(file=writer)
-	print("-------------------------- " +str(id)+" -------")
+	print "-------------------------- " +str(id)+" -------"
 

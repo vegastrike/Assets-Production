@@ -56,9 +56,9 @@ class wingman (Director.Mission):
             self.GenerateWingmen()
             VS.terminateMission(1)
     def initbriefing(self):
-        print("ending briefing")
+        print "ending briefing"
     def loopbriefing(self):
-        print("loop briefing")
+        print "loop briefing"
         Briefing.terminate();
     def endbriefing(self):
-        print("ending briefing")
+        print "ending briefing"

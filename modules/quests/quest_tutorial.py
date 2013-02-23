@@ -927,7 +927,7 @@ class quest_tutorial (quest.quest):
         self.drone.SetVelocity((2000,0,0))
         self.timer = VS.GetGameTime()+10
         self.putSaveValue(self.stage)
-        print("Tutorial quest finished")
+        print "Tutorial quest finished"
         self.stage = 99
       # let the drone disappear
       if (self.stage==99 and VS.GetGameTime()>self.timer):

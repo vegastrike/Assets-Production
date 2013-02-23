@@ -41,7 +41,7 @@ class XGUIPythonScript:
 		self.code = compile(code,filename,'exec')
 
 	def execute(self,context):
-		exec(self.code, context)
+		exec self.code in context
 		return context
 
 

@@ -1,16 +1,6 @@
-#! /usr/bin/python3.2
+#! /usr/bin/env python
 
-"""The Tab Nanny despises ambiguous indentation.  She knows no mercy.
-
-tabnanny -- Detection of ambiguous indentation
-
-For the time being this module is intended to be called as a script.
-However it is possible to import it into an IDE and use the function
-check() described below.
-
-Warning: The API provided by this module is likely to change in future
-releases; such changes may not be backward compatible.
-"""
+"""The Tab Nanny despises ambiguous indentation.  She knows no mercy."""
 
 # Released to the public domain, by Tim Peters, 15 April 1998.
 
@@ -43,7 +33,7 @@ def main():
     global verbose, filename_only
     try:
         opts, args = getopt.getopt(sys.argv[1:], "qv")
-    except getopt.error as msg:
+    except getopt.error, msg:
         errprint(msg)
         return
     for o, a in opts:
@@ -57,11 +47,7 @@ def main():
     for arg in args:
         check(arg)
 
-class NannyNag(Exception):
-    """
-    Raised by tokeneater() if detecting an ambiguous indent.
-    Captured and handled in check().
-    """
+class NannyNag:
     def __init__(self, lineno, msg, line):
         self.lineno, self.msg, self.line = lineno, msg, line
     def get_lineno(self):
@@ -72,18 +58,9 @@ class NannyNag(Exception):
         return self.line
 
 def check(file):
-    """check(file_or_dir)
-
-    If file_or_dir is a directory and not a symbolic link, then recursively
-    descend the directory tree named by file_or_dir, checking all .py files
-    along the way. If file_or_dir is an ordinary Python source file, it is
-    checked for whitespace related problems. The diagnostic messages are
-    written to standard output using the print statement.
-    """
-
     if os.path.isdir(file) and not os.path.islink(file):
         if verbose:
-            print("%r: listing directory" % (file,))
+            print "%s: listing directory" % `file`
         names = os.listdir(file)
         for name in names:
             fullname = os.path.join(file, name)
@@ -94,40 +71,37 @@ def check(file):
         return
 
     try:
-        f = tokenize.open(file)
-    except IOError as msg:
-        errprint("%r: I/O Error: %s" % (file, msg))
+        f = open(file)
+    except IOError, msg:
+        errprint("%s: I/O Error: %s" % (`file`, str(msg)))
         return
 
     if verbose > 1:
-        print("checking %r ..." % file)
+        print "checking", `file`, "..."
 
     try:
         process_tokens(tokenize.generate_tokens(f.readline))
 
-    except tokenize.TokenError as msg:
-        errprint("%r: Token Error: %s" % (file, msg))
+    except tokenize.TokenError, msg:
+        errprint("%s: Token Error: %s" % (`file`, str(msg)))
         return
 
-    except IndentationError as msg:
-        errprint("%r: Indentation Error: %s" % (file, msg))
-        return
-
-    except NannyNag as nag:
+    except NannyNag, nag:
         badline = nag.get_lineno()
         line = nag.get_line()
         if verbose:
-            print("%r: *** Line %d: trouble in tab city! ***" % (file, badline))
-            print("offending line: %r" % (line,))
-            print(nag.get_msg())
+            print "%s: *** Line %d: trouble in tab city! ***" % (
+                `file`, badline)
+            print "offending line:", `line`
+            print nag.get_msg()
         else:
             if ' ' in file: file = '"' + file + '"'
-            if filename_only: print(file)
-            else: print(file, badline, repr(line))
+            if filename_only: print file
+            else: print file, badline, `line`
         return
 
     if verbose:
-        print("%r: Clean bill of health." % (file,))
+        print "%s: Clean bill of health." % `file`
 
 class Whitespace:
     # the characters used for space and tab
@@ -222,7 +196,7 @@ class Whitespace:
                            other.indent_level(ts)) )
         return a
 
-    # Return True iff self.indent_level(t) < other.indent_level(t)
+    # Return true iff self.indent_level(t) < other.indent_level(t)
     # for all t >= 1.
     # The algorithm is due to Vincent Broman.
     # Easy to prove it's correct.
@@ -237,7 +211,7 @@ class Whitespace:
     # Note that M is of the form (T*)(S*) iff len(M.norm[0]) <= 1.
     def less(self, other):
         if self.n >= other.n:
-            return False
+            return 0
         if self.is_simple and other.is_simple:
             return self.nt <= other.nt
         n = max(self.longest_run_of_spaces(),
@@ -245,8 +219,8 @@ class Whitespace:
         # the self.n >= other.n test already did it for ts=1
         for ts in range(2, n+1):
             if self.indent_level(ts) >= other.indent_level(ts):
-                return False
-        return True
+                return 0
+        return 1
 
     # return a list of tuples (ts, i1, i2) such that
     # i1 == self.indent_level(ts) >= other.indent_level(ts) == i2.
@@ -264,11 +238,12 @@ class Whitespace:
         return a
 
 def format_witnesses(w):
-    firsts = (str(tup[0]) for tup in w)
+    import string
+    firsts = map(lambda tup: str(tup[0]), w)
     prefix = "at tab size"
     if len(w) > 1:
         prefix = prefix + "s"
-    return prefix + " " + ', '.join(firsts)
+    return prefix + " " + string.join(firsts, ', ')
 
 def process_tokens(tokens):
     INDENT = tokenize.INDENT

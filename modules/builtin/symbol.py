@@ -1,4 +1,4 @@
-#! /usr/bin/python3.2
+#! /usr/bin/env python
 
 """Non-terminal symbols of Python grammar (from "graminit.h")."""
 
@@ -7,94 +7,79 @@
 #  To update the symbols in this file, 'cd' to the top directory of
 #  the python source tree after building the interpreter and run:
 #
-#    ./python Lib/symbol.py
+#    python Lib/symbol.py
 
 #--start constants--
 single_input = 256
 file_input = 257
 eval_input = 258
-decorator = 259
-decorators = 260
-decorated = 261
-funcdef = 262
-parameters = 263
-typedargslist = 264
-tfpdef = 265
-varargslist = 266
-vfpdef = 267
-stmt = 268
-simple_stmt = 269
-small_stmt = 270
-expr_stmt = 271
-testlist_star_expr = 272
-augassign = 273
-del_stmt = 274
-pass_stmt = 275
-flow_stmt = 276
-break_stmt = 277
-continue_stmt = 278
-return_stmt = 279
-yield_stmt = 280
-raise_stmt = 281
-import_stmt = 282
-import_name = 283
-import_from = 284
-import_as_name = 285
-dotted_as_name = 286
-import_as_names = 287
-dotted_as_names = 288
-dotted_name = 289
-global_stmt = 290
-nonlocal_stmt = 291
-assert_stmt = 292
-compound_stmt = 293
-if_stmt = 294
-while_stmt = 295
-for_stmt = 296
-try_stmt = 297
-with_stmt = 298
-with_item = 299
-except_clause = 300
-suite = 301
-test = 302
-test_nocond = 303
-lambdef = 304
-lambdef_nocond = 305
-or_test = 306
-and_test = 307
-not_test = 308
-comparison = 309
-comp_op = 310
-star_expr = 311
-expr = 312
-xor_expr = 313
-and_expr = 314
-shift_expr = 315
-arith_expr = 316
-term = 317
-factor = 318
-power = 319
-atom = 320
-testlist_comp = 321
-trailer = 322
-subscriptlist = 323
-subscript = 324
-sliceop = 325
-exprlist = 326
-testlist = 327
-dictorsetmaker = 328
-classdef = 329
-arglist = 330
-argument = 331
-comp_iter = 332
-comp_for = 333
-comp_if = 334
-encoding_decl = 335
-yield_expr = 336
+funcdef = 259
+parameters = 260
+varargslist = 261
+fpdef = 262
+fplist = 263
+stmt = 264
+simple_stmt = 265
+small_stmt = 266
+expr_stmt = 267
+augassign = 268
+print_stmt = 269
+del_stmt = 270
+pass_stmt = 271
+flow_stmt = 272
+break_stmt = 273
+continue_stmt = 274
+return_stmt = 275
+yield_stmt = 276
+raise_stmt = 277
+import_stmt = 278
+import_as_name = 279
+dotted_as_name = 280
+dotted_name = 281
+global_stmt = 282
+exec_stmt = 283
+assert_stmt = 284
+compound_stmt = 285
+if_stmt = 286
+while_stmt = 287
+for_stmt = 288
+try_stmt = 289
+except_clause = 290
+suite = 291
+test = 292
+and_test = 293
+not_test = 294
+comparison = 295
+comp_op = 296
+expr = 297
+xor_expr = 298
+and_expr = 299
+shift_expr = 300
+arith_expr = 301
+term = 302
+factor = 303
+power = 304
+atom = 305
+listmaker = 306
+lambdef = 307
+trailer = 308
+subscriptlist = 309
+subscript = 310
+sliceop = 311
+exprlist = 312
+testlist = 313
+testlist_safe = 314
+dictmaker = 315
+classdef = 316
+arglist = 317
+argument = 318
+list_iter = 319
+list_for = 320
+list_if = 321
 #--end constants--
 
 sym_name = {}
-for _name, _value in list(globals().items()):
+for _name, _value in globals().items():
     if type(_value) is type(0):
         sym_name[_value] = _name
 

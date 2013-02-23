@@ -7,11 +7,11 @@
 import os
 import sys
 if __name__=='__main__' and 'REQUEST_METHOD' in os.environ:
-	print("HTTP/1.1 500 Internal Server Error")
-	print("Content-Type: text/html\n\nThis is not a CGI script.")
+	print "HTTP/1.1 500 Internal Server Error"
+	print "Content-Type: text/html\n\nThis is not a CGI script."
 	sys.exit(1)
 
-from http.server import HTTPServer, BaseHTTPRequestHandler
+from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
 
 import traceback
 import db
@@ -38,10 +38,10 @@ def connect_db():
 class VSHTTPHandler(BaseHTTPRequestHandler):
 	def handle_error(self,type):
 		sys.stdout = self.oldstdout
-		err = traceback.format_exception(sys.exc_info()[0], sys.exc_info()[1], sys.exc_info()[2])
+		err = traceback.format_exception(sys.exc_type, sys.exc_value, sys.exc_traceback)
 		textformat = ''.join(err)
 		htmlformat = textformat.replace('\n','<br>\n').replace(' ','&nbsp;')
-		print(textformat)
+		print textformat
 		self.wfile.write('\n<h1>Python error occurred in '+type+' request.</h1>'+htmlformat)
 	
 	def do_request(self, postargs=''):
@@ -52,7 +52,7 @@ class VSHTTPHandler(BaseHTTPRequestHandler):
 		if (querystart!=-1):
 			getargs = self.path[querystart+1:]
 			path = self.path[:querystart]
-		print(path)
+		print path
 		pathlist = path.split('/')
 		if len(pathlist)>2 and pathlist[0]=='' and pathlist[1]=='cgi-bin':
 			command = pathlist[2]
@@ -64,7 +64,7 @@ class VSHTTPHandler(BaseHTTPRequestHandler):
 		elif len(pathlist)==2:
 			indexname = pathlist[1]
 			extension = indexname.find('.')
-			print(pathlist)
+			print pathlist
 			if extension!=-1:
 				indexname=indexname[:extension]
 			if indexname=='index':
@@ -119,7 +119,7 @@ class VSHTTPHandler(BaseHTTPRequestHandler):
 	
 
 def httpServer(port=8080, host=''):
-	print("Starting HTTP server on port %d..." % (port,))
+	print "Starting HTTP server on port %d..." % (port,)
 	server_address = (host, port)
 	httpd = HTTPServer(server_address, VSHTTPHandler)
 	httpd.serve_forever()

@@ -3,27 +3,9 @@
 import sys
 import types
 
-from opcode import *
-from opcode import __all__ as _opcodes_all
-
-__all__ = ["code_info", "dis", "disassemble", "distb", "disco",
-           "findlinestarts", "findlabels", "show_code"] + _opcodes_all
-del _opcodes_all
-
-_have_code = (types.MethodType, types.FunctionType, types.CodeType, type)
-
-def _try_compile(source, name):
-    """Attempts to compile the given source, first as an expression and
-       then as a statement if the first approach fails.
-
-       Utility function to accept strings in functions that otherwise
-       expect code objects
-    """
-    try:
-        c = compile(source, name, 'eval')
-    except SyntaxError:
-        c = compile(source, name, 'exec')
-    return c
+__all__ = ["dis","disassemble","distb","disco","opname","cmp_op",
+           "hasconst","hasname","hasjrel","hasjabs","haslocal",
+           "hascompare", "hasfree"]
 
 def dis(x=None):
     """Disassemble classes, methods, functions, or code.
@@ -31,209 +13,86 @@ def dis(x=None):
     With no argument, disassemble the last traceback.
 
     """
-    if x is None:
+    if not x:
         distb()
         return
-    if hasattr(x, '__func__'):  # Method
-        x = x.__func__
-    if hasattr(x, '__code__'):  # Function
-        x = x.__code__
-    if hasattr(x, '__dict__'):  # Class or module
-        items = sorted(x.__dict__.items())
+    if type(x) is types.InstanceType:
+        x = x.__class__
+    if hasattr(x, 'im_func'):
+        x = x.im_func
+    if hasattr(x, 'func_code'):
+        x = x.func_code
+    if hasattr(x, '__dict__'):
+        items = x.__dict__.items()
+        items.sort()
         for name, x1 in items:
-            if isinstance(x1, _have_code):
-                print("Disassembly of %s:" % name)
+            if type(x1) in (types.MethodType,
+                            types.FunctionType,
+                            types.CodeType):
+                print "Disassembly of %s:" % name
                 try:
                     dis(x1)
-                except TypeError as msg:
-                    print("Sorry:", msg)
-                print()
-    elif hasattr(x, 'co_code'): # Code object
+                except TypeError, msg:
+                    print "Sorry:", msg
+                print
+    elif hasattr(x, 'co_code'):
         disassemble(x)
-    elif isinstance(x, (bytes, bytearray)): # Raw bytecode
-        _disassemble_bytes(x)
-    elif isinstance(x, str):    # Source code
-        _disassemble_str(x)
     else:
-        raise TypeError("don't know how to disassemble %s objects" %
-                        type(x).__name__)
+        raise TypeError, \
+              "don't know how to disassemble %s objects" % \
+              type(x).__name__
 
 def distb(tb=None):
     """Disassemble a traceback (default: last traceback)."""
-    if tb is None:
+    if not tb:
         try:
             tb = sys.last_traceback
         except AttributeError:
-            raise RuntimeError("no last traceback to disassemble")
+            raise RuntimeError, "no last traceback to disassemble"
         while tb.tb_next: tb = tb.tb_next
     disassemble(tb.tb_frame.f_code, tb.tb_lasti)
-
-# The inspect module interrogates this dictionary to build its
-# list of CO_* constants. It is also used by pretty_flags to
-# turn the co_flags field into a human readable list.
-COMPILER_FLAG_NAMES = {
-     1: "OPTIMIZED",
-     2: "NEWLOCALS",
-     4: "VARARGS",
-     8: "VARKEYWORDS",
-    16: "NESTED",
-    32: "GENERATOR",
-    64: "NOFREE",
-}
-
-def pretty_flags(flags):
-    """Return pretty representation of code flags."""
-    names = []
-    for i in range(32):
-        flag = 1<<i
-        if flags & flag:
-            names.append(COMPILER_FLAG_NAMES.get(flag, hex(flag)))
-            flags ^= flag
-            if not flags:
-                break
-    else:
-        names.append(hex(flags))
-    return ", ".join(names)
-
-def code_info(x):
-    """Formatted details of methods, functions, or code."""
-    if hasattr(x, '__func__'): # Method
-        x = x.__func__
-    if hasattr(x, '__code__'): # Function
-        x = x.__code__
-    if isinstance(x, str):     # Source code
-        x = _try_compile(x, "<code_info>")
-    if hasattr(x, 'co_code'):  # Code object
-        return _format_code_info(x)
-    else:
-        raise TypeError("don't know how to disassemble %s objects" %
-                        type(x).__name__)
-
-def _format_code_info(co):
-    lines = []
-    lines.append("Name:              %s" % co.co_name)
-    lines.append("Filename:          %s" % co.co_filename)
-    lines.append("Argument count:    %s" % co.co_argcount)
-    lines.append("Kw-only arguments: %s" % co.co_kwonlyargcount)
-    lines.append("Number of locals:  %s" % co.co_nlocals)
-    lines.append("Stack size:        %s" % co.co_stacksize)
-    lines.append("Flags:             %s" % pretty_flags(co.co_flags))
-    if co.co_consts:
-        lines.append("Constants:")
-        for i_c in enumerate(co.co_consts):
-            lines.append("%4d: %r" % i_c)
-    if co.co_names:
-        lines.append("Names:")
-        for i_n in enumerate(co.co_names):
-            lines.append("%4d: %s" % i_n)
-    if co.co_varnames:
-        lines.append("Variable names:")
-        for i_n in enumerate(co.co_varnames):
-            lines.append("%4d: %s" % i_n)
-    if co.co_freevars:
-        lines.append("Free variables:")
-        for i_n in enumerate(co.co_freevars):
-            lines.append("%4d: %s" % i_n)
-    if co.co_cellvars:
-        lines.append("Cell variables:")
-        for i_n in enumerate(co.co_cellvars):
-            lines.append("%4d: %s" % i_n)
-    return "\n".join(lines)
-
-def show_code(co):
-    """Print details of methods, functions, or code to stdout."""
-    print(code_info(co))
 
 def disassemble(co, lasti=-1):
     """Disassemble a code object."""
     code = co.co_code
     labels = findlabels(code)
-    linestarts = dict(findlinestarts(co))
     n = len(code)
     i = 0
     extended_arg = 0
     free = None
     while i < n:
-        op = code[i]
-        if i in linestarts:
-            if i > 0:
-                print()
-            print("%3d" % linestarts[i], end=' ')
-        else:
-            print('   ', end=' ')
-
-        if i == lasti: print('-->', end=' ')
-        else: print('   ', end=' ')
-        if i in labels: print('>>', end=' ')
-        else: print('  ', end=' ')
-        print(repr(i).rjust(4), end=' ')
-        print(opname[op].ljust(20), end=' ')
+        c = code[i]
+        op = ord(c)
+        if op == SET_LINENO and i > 0: print # Extra blank line
+        if i == lasti: print '-->',
+        else: print '   ',
+        if i in labels: print '>>',
+        else: print '  ',
+        print `i`.rjust(4),
+        print opname[op].ljust(20),
         i = i+1
         if op >= HAVE_ARGUMENT:
-            oparg = code[i] + code[i+1]*256 + extended_arg
+            oparg = ord(code[i]) + ord(code[i+1])*256 + extended_arg
             extended_arg = 0
             i = i+2
             if op == EXTENDED_ARG:
-                extended_arg = oparg*65536
-            print(repr(oparg).rjust(5), end=' ')
+                extended_arg = oparg*65536L
+            print `oparg`.rjust(5),
             if op in hasconst:
-                print('(' + repr(co.co_consts[oparg]) + ')', end=' ')
+                print '(' + `co.co_consts[oparg]` + ')',
             elif op in hasname:
-                print('(' + co.co_names[oparg] + ')', end=' ')
+                print '(' + co.co_names[oparg] + ')',
             elif op in hasjrel:
-                print('(to ' + repr(i + oparg) + ')', end=' ')
+                print '(to ' + `i + oparg` + ')',
             elif op in haslocal:
-                print('(' + co.co_varnames[oparg] + ')', end=' ')
+                print '(' + co.co_varnames[oparg] + ')',
             elif op in hascompare:
-                print('(' + cmp_op[oparg] + ')', end=' ')
+                print '(' + cmp_op[oparg] + ')',
             elif op in hasfree:
                 if free is None:
                     free = co.co_cellvars + co.co_freevars
-                print('(' + free[oparg] + ')', end=' ')
-        print()
-
-def _disassemble_bytes(code, lasti=-1, varnames=None, names=None,
-                       constants=None):
-    labels = findlabels(code)
-    n = len(code)
-    i = 0
-    while i < n:
-        op = code[i]
-        if i == lasti: print('-->', end=' ')
-        else: print('   ', end=' ')
-        if i in labels: print('>>', end=' ')
-        else: print('  ', end=' ')
-        print(repr(i).rjust(4), end=' ')
-        print(opname[op].ljust(15), end=' ')
-        i = i+1
-        if op >= HAVE_ARGUMENT:
-            oparg = code[i] + code[i+1]*256
-            i = i+2
-            print(repr(oparg).rjust(5), end=' ')
-            if op in hasconst:
-                if constants:
-                    print('(' + repr(constants[oparg]) + ')', end=' ')
-                else:
-                    print('(%d)'%oparg, end=' ')
-            elif op in hasname:
-                if names is not None:
-                    print('(' + names[oparg] + ')', end=' ')
-                else:
-                    print('(%d)'%oparg, end=' ')
-            elif op in hasjrel:
-                print('(to ' + repr(i + oparg) + ')', end=' ')
-            elif op in haslocal:
-                if varnames:
-                    print('(' + varnames[oparg] + ')', end=' ')
-                else:
-                    print('(%d)' % oparg, end=' ')
-            elif op in hascompare:
-                print('(' + cmp_op[oparg] + ')', end=' ')
-        print()
-
-def _disassemble_str(source):
-    """Compile the source string, then disassemble the code object."""
-    disassemble(_try_compile(source, '<dis>'))
+                print '(' + free[oparg] + ')',
+        print
 
 disco = disassemble                     # XXX For backwards compatibility
 
@@ -247,10 +106,11 @@ def findlabels(code):
     n = len(code)
     i = 0
     while i < n:
-        op = code[i]
+        c = code[i]
+        op = ord(c)
         i = i+1
         if op >= HAVE_ARGUMENT:
-            oparg = code[i] + code[i+1]*256
+            oparg = ord(code[i]) + ord(code[i+1])*256
             i = i+2
             label = -1
             if op in hasjrel:
@@ -262,27 +122,183 @@ def findlabels(code):
                     labels.append(label)
     return labels
 
-def findlinestarts(code):
-    """Find the offsets in a byte code which are start of lines in the source.
+cmp_op = ('<', '<=', '==', '!=', '>', '>=', 'in', 'not in', 'is',
+        'is not', 'exception match', 'BAD')
 
-    Generate pairs (offset, lineno) as described in Python/compile.c.
+hasconst = []
+hasname = []
+hasjrel = []
+hasjabs = []
+haslocal = []
+hascompare = []
+hasfree = []
 
-    """
-    byte_increments = list(code.co_lnotab[0::2])
-    line_increments = list(code.co_lnotab[1::2])
+opname = [''] * 256
+for op in range(256): opname[op] = '<' + `op` + '>'
 
-    lastlineno = None
-    lineno = code.co_firstlineno
-    addr = 0
-    for byte_incr, line_incr in zip(byte_increments, line_increments):
-        if byte_incr:
-            if lineno != lastlineno:
-                yield (addr, lineno)
-                lastlineno = lineno
-            addr += byte_incr
-        lineno += line_incr
-    if lineno != lastlineno:
-        yield (addr, lineno)
+def def_op(name, op):
+    opname[op] = name
+
+def name_op(name, op):
+    opname[op] = name
+    hasname.append(op)
+
+def jrel_op(name, op):
+    opname[op] = name
+    hasjrel.append(op)
+
+def jabs_op(name, op):
+    opname[op] = name
+    hasjabs.append(op)
+
+# Instruction opcodes for compiled code
+
+def_op('STOP_CODE', 0)
+def_op('POP_TOP', 1)
+def_op('ROT_TWO', 2)
+def_op('ROT_THREE', 3)
+def_op('DUP_TOP', 4)
+def_op('ROT_FOUR', 5)
+
+def_op('UNARY_POSITIVE', 10)
+def_op('UNARY_NEGATIVE', 11)
+def_op('UNARY_NOT', 12)
+def_op('UNARY_CONVERT', 13)
+
+def_op('UNARY_INVERT', 15)
+
+def_op('BINARY_POWER', 19)
+
+def_op('BINARY_MULTIPLY', 20)
+def_op('BINARY_DIVIDE', 21)
+def_op('BINARY_MODULO', 22)
+def_op('BINARY_ADD', 23)
+def_op('BINARY_SUBTRACT', 24)
+def_op('BINARY_SUBSCR', 25)
+def_op('BINARY_FLOOR_DIVIDE', 26)
+def_op('BINARY_TRUE_DIVIDE', 27)
+def_op('INPLACE_FLOOR_DIVIDE', 28)
+def_op('INPLACE_TRUE_DIVIDE', 29)
+
+def_op('SLICE+0', 30)
+def_op('SLICE+1', 31)
+def_op('SLICE+2', 32)
+def_op('SLICE+3', 33)
+
+def_op('STORE_SLICE+0', 40)
+def_op('STORE_SLICE+1', 41)
+def_op('STORE_SLICE+2', 42)
+def_op('STORE_SLICE+3', 43)
+
+def_op('DELETE_SLICE+0', 50)
+def_op('DELETE_SLICE+1', 51)
+def_op('DELETE_SLICE+2', 52)
+def_op('DELETE_SLICE+3', 53)
+
+def_op('INPLACE_ADD', 55)
+def_op('INPLACE_SUBTRACT', 56)
+def_op('INPLACE_MULTIPLY', 57)
+def_op('INPLACE_DIVIDE', 58)
+def_op('INPLACE_MODULO', 59)
+def_op('STORE_SUBSCR', 60)
+def_op('DELETE_SUBSCR', 61)
+
+def_op('BINARY_LSHIFT', 62)
+def_op('BINARY_RSHIFT', 63)
+def_op('BINARY_AND', 64)
+def_op('BINARY_XOR', 65)
+def_op('BINARY_OR', 66)
+def_op('INPLACE_POWER', 67)
+def_op('GET_ITER', 68)
+
+def_op('PRINT_EXPR', 70)
+def_op('PRINT_ITEM', 71)
+def_op('PRINT_NEWLINE', 72)
+def_op('PRINT_ITEM_TO', 73)
+def_op('PRINT_NEWLINE_TO', 74)
+def_op('INPLACE_LSHIFT', 75)
+def_op('INPLACE_RSHIFT', 76)
+def_op('INPLACE_AND', 77)
+def_op('INPLACE_XOR', 78)
+def_op('INPLACE_OR', 79)
+def_op('BREAK_LOOP', 80)
+
+def_op('LOAD_LOCALS', 82)
+def_op('RETURN_VALUE', 83)
+def_op('IMPORT_STAR', 84)
+def_op('EXEC_STMT', 85)
+def_op('YIELD_STMT', 86)
+
+def_op('POP_BLOCK', 87)
+def_op('END_FINALLY', 88)
+def_op('BUILD_CLASS', 89)
+
+HAVE_ARGUMENT = 90              # Opcodes from here have an argument:
+
+name_op('STORE_NAME', 90)       # Index in name list
+name_op('DELETE_NAME', 91)      # ""
+def_op('UNPACK_SEQUENCE', 92)   # Number of tuple items
+jrel_op('FOR_ITER', 93)
+
+name_op('STORE_ATTR', 95)       # Index in name list
+name_op('DELETE_ATTR', 96)      # ""
+name_op('STORE_GLOBAL', 97)     # ""
+name_op('DELETE_GLOBAL', 98)    # ""
+def_op('DUP_TOPX', 99)          # number of items to duplicate
+def_op('LOAD_CONST', 100)       # Index in const list
+hasconst.append(100)
+name_op('LOAD_NAME', 101)       # Index in name list
+def_op('BUILD_TUPLE', 102)      # Number of tuple items
+def_op('BUILD_LIST', 103)       # Number of list items
+def_op('BUILD_MAP', 104)        # Always zero for now
+name_op('LOAD_ATTR', 105)       # Index in name list
+def_op('COMPARE_OP', 106)       # Comparison operator
+hascompare.append(106)
+name_op('IMPORT_NAME', 107)     # Index in name list
+name_op('IMPORT_FROM', 108)     # Index in name list
+
+jrel_op('JUMP_FORWARD', 110)    # Number of bytes to skip
+jrel_op('JUMP_IF_FALSE', 111)   # ""
+jrel_op('JUMP_IF_TRUE', 112)    # ""
+jabs_op('JUMP_ABSOLUTE', 113)   # Target byte offset from beginning of code
+jrel_op('FOR_LOOP', 114)        # Number of bytes to skip
+
+name_op('LOAD_GLOBAL', 116)     # Index in name list
+
+jabs_op('CONTINUE_LOOP', 119)   # Target address
+jrel_op('SETUP_LOOP', 120)      # Distance to target address
+jrel_op('SETUP_EXCEPT', 121)    # ""
+jrel_op('SETUP_FINALLY', 122)   # ""
+
+def_op('LOAD_FAST', 124)        # Local variable number
+haslocal.append(124)
+def_op('STORE_FAST', 125)       # Local variable number
+haslocal.append(125)
+def_op('DELETE_FAST', 126)      # Local variable number
+haslocal.append(126)
+
+def_op('SET_LINENO', 127)       # Current line number
+SET_LINENO = 127
+
+def_op('RAISE_VARARGS', 130)    # Number of raise arguments (1, 2, or 3)
+def_op('CALL_FUNCTION', 131)    # #args + (#kwargs << 8)
+def_op('MAKE_FUNCTION', 132)    # Number of args with default values
+def_op('BUILD_SLICE', 133)      # Number of items
+
+def_op('MAKE_CLOSURE', 134)
+def_op('LOAD_CLOSURE', 135)
+hasfree.append(135)
+def_op('LOAD_DEREF', 136)
+hasfree.append(136)
+def_op('STORE_DEREF', 137)
+hasfree.append(137)
+
+def_op('CALL_FUNCTION_VAR', 140)     # #args + (#kwargs << 8)
+def_op('CALL_FUNCTION_KW', 141)      # #args + (#kwargs << 8)
+def_op('CALL_FUNCTION_VAR_KW', 142)  # #args + (#kwargs << 8)
+
+def_op('EXTENDED_ARG', 143)
+EXTENDED_ARG = 143
 
 def _test():
     """Simple test program to disassemble a file."""
@@ -295,12 +311,12 @@ def _test():
             fn = None
     else:
         fn = None
-    if fn is None:
+    if not fn:
         f = sys.stdin
     else:
         f = open(fn)
     source = f.read()
-    if fn is not None:
+    if fn:
         f.close()
     else:
         fn = "<stdin>"

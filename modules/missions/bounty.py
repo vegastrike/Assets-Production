@@ -46,11 +46,11 @@ class bounty (Director.Mission):
       self.adjsys.Print("From %s system","Procede to %s","Search for target at %s, your final destination","bounty mission",1)
       VS.IOmessage (1,"bounty mission",self.mplay,"Target is a %s unit." % (self.faction))
     else:
-      print("aboritng bounty constructor...")
+      print "aboritng bounty constructor..."
       VS.terminateMission (0)
 
   def AdjLocation(self):
-    print("ADJUSTING LOC")
+    print "ADJUSTING LOC"
     self.enemy.SetPosition(Vector.Add(self.enemy.LocalPosition(),Vector.Scale(self.enemy.GetVelocity(),-40))) #eta 20 sec
 
   def Win (self,un,terminate):
@@ -58,14 +58,14 @@ class bounty (Director.Mission):
     VS.IOmessage (0,"bounty mission",self.mplay,"[Computer] #00ff00Bounty Mission Accomplished!")
     un.addCredits(self.cred)
     if (terminate):
-      print("you win bounty mission!")
+      print "you win bounty mission!"
       VS.terminateMission(1)
         
   def Lose (self,terminate):
     VS.IOmessage(0,"bounty mission",self.mplay,"[Computer] #ff0000Bounty Mission Failed.")
     self.SetVar(-1)
     if (terminate):
-      print("lose bounty mission")
+      print "lose bounty mission"
       VS.terminateMission(0)
 
   def LaunchedEnemies(self,significant):
@@ -96,7 +96,7 @@ class bounty (Director.Mission):
     elif (self.arrived==1):
       significant=self.adjsys.SignificantUnit()
       if (significant.isNull ()):
-        print("sig null")
+        print "sig null"
         VS.terminateMission(0)
         return
       else:
@@ -135,7 +135,7 @@ class bounty (Director.Mission):
             self.LaunchedEnemies(significant)
             self.arrived=2
           else:
-            print("enemy null")
+            print "enemy null"
             VS.terminateMission(0)
             return
     else:
@@ -158,18 +158,18 @@ class bounty (Director.Mission):
           VS.IOmessage (4,"bounty mission",self.mplay,"Scanners detect bounty target!")
           VS.IOmessage (5,"bounty mission",self.mplay,"Coordinates appear near %s" % (localdestination))
         else:            
-          print("Location "+str(self.displayLocation))
+          print "Location "+str(self.displayLocation)
           VS.IOmessage (4,"bounty mission",self.mplay,"[Computer] Mission description indicates bounty target may be in this system.")
 
   def initbriefing(self):
-    print("ending briefing")                
+    print "ending briefing"                
 
   def loopbriefing(self):
-    print("loop briefing")
+    print "loop briefing"
     Briefing.terminate();
 
   def endbriefing(self):
-    print("ending briefing")           
+    print "ending briefing"           
 
 def initrandom (minns, maxns, credsmin, credsmax, run_away, minshipdifficulty, maxshipdifficulty,jumps=(),var_to_set=''):
   you=VS.getPlayer()
@@ -186,5 +186,5 @@ def initrandom (minns, maxns, credsmin, credsmax, run_away, minshipdifficulty, m
     sd = vsrandom.random()*(maxshipdifficulty-minshipdifficulty)+minshipdifficulty
     return bounty (minns,maxns,(1.0+(sd*0.5))*(vsrandom.random ()*(credsmax-credsmin)+credsmin),run_away,sd,tempfaction,jumps,var_to_set)
   else:
-    print("aborting bounty initrandom")
+    print "aborting bounty initrandom"
     VS.terminateMission(0)

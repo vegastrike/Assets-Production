@@ -9,12 +9,12 @@ expression.  They cache the compiled regular expressions for speed.
 The function translate(PATTERN) returns a regular expression
 corresponding to PATTERN.  (It does not compile it.)
 """
-import os
-import posixpath
-import re
-import functools
 
-__all__ = ["filter", "fnmatch", "fnmatchcase", "translate"]
+import re
+
+__all__ = ["fnmatch","fnmatchcase","translate"]
+
+_cache = {}
 
 def fnmatch(name, pat):
     """Test whether FILENAME matches PATTERN.
@@ -31,25 +31,21 @@ def fnmatch(name, pat):
     if the operating system requires it.
     If you don't want this, use fnmatchcase(FILENAME, PATTERN).
     """
+
+    import os
     name = os.path.normcase(name)
     pat = os.path.normcase(pat)
     return fnmatchcase(name, pat)
 
-@functools.lru_cache(maxsize=250)
-def _compile_pattern(pat, is_bytes=False):
-    if is_bytes:
-        pat_str = str(pat, 'ISO-8859-1')
-        res_str = translate(pat_str)
-        res = bytes(res_str, 'ISO-8859-1')
-    else:
-        res = translate(pat)
-    return re.compile(res).match
-
 def filter(names, pat):
-    """Return the subset of the list NAMES that match PAT."""
-    result = []
-    pat = os.path.normcase(pat)
-    match = _compile_pattern(pat, isinstance(pat, bytes))
+    """Return the subset of the list NAMES that match PAT"""
+    import os,posixpath
+    result=[]
+    pat=os.path.normcase(pat)
+    if not _cache.has_key(pat):
+        res = translate(pat)
+        _cache[pat] = re.compile(res)
+    match=_cache[pat].match
     if os.path is posixpath:
         # normcase on posix is NOP. Optimize it away from the loop.
         for name in names:
@@ -67,9 +63,11 @@ def fnmatchcase(name, pat):
     This is a version of fnmatch() which doesn't case-normalize
     its arguments.
     """
-    match = _compile_pattern(pat, isinstance(pat, bytes))
-    return match(name) is not None
 
+    if not _cache.has_key(pat):
+        res = translate(pat)
+        _cache[pat] = re.compile(res)
+    return _cache[pat].match(name) is not None
 
 def translate(pat):
     """Translate a shell PATTERN to a regular expression.
@@ -106,4 +104,4 @@ def translate(pat):
                 res = '%s[%s]' % (res, stuff)
         else:
             res = res + re.escape(c)
-    return res + '\Z(?ms)'
+    return res + "$"

@@ -8,7 +8,7 @@ import unit
 import Director
 class total_war (Director.Mission):
     def __init__(self):
-        print("init1INITNITNITNTINTINTINTINTITNINTINTINTINTINT\nININTINTINTITNITNITNTINTINTINTINTITNITNITNITNITNITNITNITNITNIT")
+        print "init1INITNITNITNTINTINTINTINTITNINTINTINTINTINT\nININTINTINTITNITNITNTINTINTINTINTITNITNITNITNITNITNITNITNITNIT"
         VS.SetDifficulty(.9)
         Director.Mission.__init__(self)
         self.lasttime=-1000
@@ -40,9 +40,9 @@ class total_war (Director.Mission):
             self.waittime=vsrandom.randrange(4.0,6.0)
             self.lasttime=time
     def initbriefing(self):
-        print("ending briefing")
+        print "ending briefing"
     def loopbriefing(self):
-        print("loop briefing")
+        print "loop briefing"
         Briefing.terminate();
     def endbriefing(self):
-        print("ending briefing")
+        print "ending briefing"

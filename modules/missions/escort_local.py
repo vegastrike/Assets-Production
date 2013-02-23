@@ -115,7 +115,7 @@ class escort_local (Director.Mission):
 		self.objectivezero=VS.addObjective ("Protect %s from %s" % (unit.getUnitFullName(jp),self.faction))
 		self.objective = VS.addObjective ("Destroy All %s Hostiles" % self.faction)
 		VS.setCompleteness(self.objective,0.0)
-		print("quantity "+str(self.quantity))
+		print "quantity "+str(self.quantity)
 		while (count<self.quantity):
 			L = launch.Launch()
 			L.fg="Shadow";L.dynfg=self.dynatkfg;
@@ -226,10 +226,10 @@ class escort_local (Director.Mission):
 					else:
 						self.SuccessMission()
 	def initbriefing(self):
-		print("ending briefing")				
+		print "ending briefing"				
 	def loopbriefing(self):
-		print("loop briefing")
+		print "loop briefing"
 		Briefing.terminate();
 	def endbriefing(self):
-		print("ending briefing")		
+		print "ending briefing"		
 

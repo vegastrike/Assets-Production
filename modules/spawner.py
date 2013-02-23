@@ -17,7 +17,7 @@ class spawner (Director.Mission):
         self.fac=[]
         self.facnames=["confed","homeland-security","merchant","hunter","pirates","luddites","aera","rlaan","ISO","andolian","highborn","shaper","unadorned","purist","forsaken","LIHW","klkk","mechanist","shmrn","rlaan_briin"]
         self.facnames=self.facnames+self.facnames
-        for i in range(len(self.facnames)):
+        for i in xrange(len(self.facnames)):
             nam=self.facnames[i]+"_SPAWN"
             if (i>=len(self.facnames)/2): 
                nam+="_CAPSHIP"

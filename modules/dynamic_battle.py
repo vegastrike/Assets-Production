@@ -34,7 +34,7 @@ def UpdateCombatTurn():
         if (not SimulateBattles()):
             lastfac=0
     else:
-        for i in range(10):
+        for i in xrange(10):
             if (lastfac<nfac):
                 fac = VS.GetFactionName(lastfac)
                 if (lookorsiege):
@@ -63,7 +63,7 @@ def getImportanceOfType (typ):
 
 def moveSurroundingCapshipsToSiege(fac,sys):
     suc=0
-    for i in range(VS.GetNumAdjacentSystems(sys)):
+    for i in xrange(VS.GetNumAdjacentSystems(sys)):
         asys=VS.GetAdjacentSystem(sys,i)
         for fg in fg_util.AllFGsInSystem(fac,asys):
             if fg_util.CapshipInFG(fg,fac):
@@ -76,7 +76,7 @@ def moveSurroundingCapshipsToSiege(fac,sys):
     return suc
 
 def neighborFaction(sys,fac):
-    for i in range(VS.GetNumAdjacentSystems(sys)):
+    for i in xrange(VS.GetNumAdjacentSystems(sys)):
         asys=VS.GetAdjacentSystem(sys,i)
         if (VS.GetGalaxyFaction(asys)==fac):
             return True
@@ -198,10 +198,10 @@ def SimulateBattles():
         else:
             persystemattacklist=cpsal
             cpsal = {}
-            simulateiter= iter(attacklist.items())
+            simulateiter= attacklist.iteritems()
 
     try:
-        ally = next(simulateiter)
+        ally = simulateiter.next()
         godoit=1
     except StopIteration:
         simulateiter = None
@@ -376,7 +376,7 @@ def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
                 (un.getFactionName()==faction and un.getFlightgroupName()==fgname)):
             un.setFgDirective ('b')
         #check to see that its' in this flightgroup or something :-)
-        un=next(i)
+        un=i.next()
 
 def TargetEachOther (fgname,faction,enfgname,enfaction):
     i=VS.getUnitList()
@@ -389,7 +389,7 @@ def TargetEachOther (fgname,faction,enfgname,enfaction):
                 en=un
         if (un.getFactionName()==faction and un.getFlightgroupName()==fgname):
             al=un
-        un=next(i)
+        un=i.next()
     if (en and al):
         al.setFlightgroupLeader(al)
         al.SetTarget(en)
@@ -463,7 +463,7 @@ def findLaunchedShipInFGInSystem (fgname,faction):
         if un:
             if (un.getFlightgroupName()==fgname and un.getFactionName()==faction):
                 return un
-        un= next(uni)
+        un= uni.next()
 def LaunchMoreShips(fgname,faction,landedtn,nums):
     shiplaunchlist=[]
     while nums>0 and len(landedtn)>0:
@@ -481,7 +481,7 @@ def LaunchMoreShips(fgname,faction,landedtn,nums):
             pos=k.GetPosition()
     if (pos):
         for i in shiplaunchlist:
-            while j in range(i[1]):
+            while j in xrange(i[1]):
                 pos=launch_recycle.LaunchNext(fgname,faction,"default",pos)
 
 

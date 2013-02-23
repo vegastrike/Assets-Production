@@ -318,7 +318,6 @@ viewMove and pageMove member functions.
 import Base
 import VS
 from XGUIDebug import *
-import collections
 
 GUIRootSingleton = None
 _doWhiteHack = 0
@@ -387,12 +386,12 @@ class GUIRoot:
 
 	def broadcastMessage(self,message,params):
 		trace(_GUITraceLevel, "::: calling GUI.GUIRoot.broadcastMessage(%s,%s)" %(message,params) )
-		for i in list(self.objects.keys()):
+		for i in self.objects.keys():
 			self.objects[i][1].onMessage(message,params)
 
 	def broadcastRoomMessage(self,roomindex,message,params):
 		trace(_GUITraceLevel, "::: calling GUI.GUIRoot.broadcastRoomMessage(%s,%s,%s)" %(roomindex,message,params) )
-		for i in list(self.objects.keys()):
+		for i in self.objects.keys():
 			if self.objects[i][0]==roomindex:
 				self.objects[i][1].onMessage(message,params)
 
@@ -729,7 +728,7 @@ class GUIElement:
 		for key in dir(self):
 			try:
 				value = getattr(self, key)
-				if isinstance(value, collections.Callable):
+				if callable(value):
 					value = ''
 			except:
 				value = ''
@@ -997,7 +996,7 @@ class GUIStaticText(GUIElement):
 class GUILineEdit(GUIGroup):
 
 	def focus_text(self,button,params):
-		print('focusing',self.index)
+		print 'focusing',self.index
 		self.focus(True)
 	def __init__(self,action,room,index,text,location,color,fontsize=1.0,bgcolor=None,focusbutton=None,**kwarg):
 		GUIGroup.__init__(self,room,**kwarg)
@@ -1038,7 +1037,7 @@ class GUILineEdit(GUIGroup):
 		GUIGroup.undraw(self)
 
 	def keyDown(self,key):
-		print("got key: %i" % key) 
+		print "got key: %i" % key 
 		if key == 13 or key == 10: #should be some kind of return
 			self.action(self)
 		elif key == 27: #escape is always 27, isn't it?
@@ -1050,7 +1049,7 @@ class GUILineEdit(GUIGroup):
 			try:
 				self.text.setText(' '+self.getText() + ('%c' % key) + '-');
 			except:
-				print("Character value too high "+str(key))
+				print "Character value too high "+str(key)
 		#self.notifyNeedRedraw()
 
 """------------------------------------------------------------------"""
@@ -1575,7 +1574,7 @@ class GUISimpleListPicker(GUIElement):
 		
 	@staticmethod
 	def _notifySelectionChange(group,newval,caller):
-		print("New selection: %s" % newval)
+		print "New selection: %s" % newval
 		caller.owner.selection = newval + caller.owner.firstVisible
 		
 	def _radiogroup(self):
@@ -1606,7 +1605,7 @@ class GUISimpleListPicker(GUIElement):
 			return
 		hotx,hoty,hotw,hoth = self.hotspot.getNormalXYWH()
 		theight = hoth / nlines 
-		for i in range(nlines):
+		for i in xrange(nlines):
 			hot = GUIRect(hotx,hoty-i*hoth/float(nlines),hotw,theight,'normalized_biased_scaled')
 			self._listitems.append( GUIRadioButton(self.room,self.linkdesc,"%s[%s]" % (self.index,i),spr,hot,self._radiogroup(),i,onChange=self._notifySelectionChange,owner=self) )
 			i += 1
@@ -1619,7 +1618,7 @@ class GUISimpleListPicker(GUIElement):
 		return txt
 		
 	def _updateListItemText(self):
-		for i in range(len(self._listitems)):
+		for i in xrange(len(self._listitems)):
 			txt = self._visItemText(i)
 			self._listitems[i].sprites = { 
 				'checked':(None,None,txt,self.selectedattrs), 

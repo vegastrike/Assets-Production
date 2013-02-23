@@ -1,18 +1,17 @@
-r"""OS routines for Mac, NT, or Posix depending on what system we're on.
+r"""OS routines for Mac, DOS, NT, or Posix depending on what system we're on.
 
 This exports:
-  - all functions from posix, nt, os2, or ce, e.g. unlink, stat, etc.
-  - os.path is either posixpath or ntpath
-  - os.name is either 'posix', 'nt', 'os2' or 'ce'.
+  - all functions from posix, nt, dos, os2, mac, or ce, e.g. unlink, stat, etc.
+  - os.path is one of the modules posixpath, ntpath, macpath, or dospath
+  - os.name is 'posix', 'nt', 'dos', 'os2', 'mac', 'ce' or 'riscos'
   - os.curdir is a string representing the current directory ('.' or ':')
   - os.pardir is a string representing the parent directory ('..' or '::')
   - os.sep is the (or a most common) pathname separator ('/' or ':' or '\\')
-  - os.extsep is the extension separator (always '.')
+  - os.extsep is the extension separator ('.' or '/')
   - os.altsep is the alternate pathname separator (None or '/')
   - os.pathsep is the component separator used in $PATH etc
   - os.linesep is the line separator in text files ('\r' or '\n' or '\r\n')
   - os.defpath is the default search path for executables
-  - os.devnull is the file path of the null device ('/dev/null', etc.)
 
 Programs that import and use 'os' stand a better chance of being
 portable between different platforms.  Of course, they must then
@@ -23,14 +22,14 @@ and opendir), and leave all pathname manipulation to os.path
 
 #'
 
-import sys, errno
+import sys
 
 _names = sys.builtin_module_names
 
-# Note:  more names are added to __all__ later.
+altsep = None
+
 __all__ = ["altsep", "curdir", "pardir", "sep", "pathsep", "linesep",
-           "defpath", "name", "path", "devnull",
-           "SEEK_SET", "SEEK_CUR", "SEEK_END"]
+           "defpath", "name"]
 
 def _get_exports_list(module):
     try:
@@ -41,12 +40,16 @@ def _get_exports_list(module):
 if 'posix' in _names:
     name = 'posix'
     linesep = '\n'
+    curdir = '.'; pardir = '..'; sep = '/'; pathsep = ':'
+    defpath = ':/bin:/usr/bin'
     from posix import *
     try:
         from posix import _exit
     except ImportError:
         pass
-    import posixpath as path
+    import posixpath
+    path = posixpath
+    del posixpath
 
     import posix
     __all__.extend(_get_exports_list(posix))
@@ -55,123 +58,157 @@ if 'posix' in _names:
 elif 'nt' in _names:
     name = 'nt'
     linesep = '\r\n'
+    curdir = '.'; pardir = '..'; sep = '\\'; pathsep = ';'
+    defpath = '.;C:\\bin'
     from nt import *
-    try:
-        from nt import _exit
-    except ImportError:
-        pass
-    import ntpath as path
+    for i in ['_exit']:
+        try:
+            exec "from nt import " + i
+        except ImportError:
+            pass
+    import ntpath
+    path = ntpath
+    del ntpath
 
     import nt
     __all__.extend(_get_exports_list(nt))
     del nt
 
+elif 'dos' in _names:
+    name = 'dos'
+    linesep = '\r\n'
+    curdir = '.'; pardir = '..'; sep = '\\'; pathsep = ';'
+    defpath = '.;C:\\bin'
+    from dos import *
+    try:
+        from dos import _exit
+    except ImportError:
+        pass
+    import dospath
+    path = dospath
+    del dospath
+
+    import dos
+    __all__.extend(_get_exports_list(dos))
+    del dos
+
 elif 'os2' in _names:
     name = 'os2'
     linesep = '\r\n'
+    curdir = '.'; pardir = '..'; sep = '\\'; pathsep = ';'
+    defpath = '.;C:\\bin'
     from os2 import *
     try:
         from os2 import _exit
     except ImportError:
         pass
-    if sys.version.find('EMX GCC') == -1:
-        import ntpath as path
-    else:
-        import os2emxpath as path
-        from _emx_link import link
+    import ntpath
+    path = ntpath
+    del ntpath
 
     import os2
     __all__.extend(_get_exports_list(os2))
     del os2
 
+elif 'mac' in _names:
+    name = 'mac'
+    linesep = '\r'
+    curdir = ':'; pardir = '::'; sep = ':'; pathsep = '\n'
+    defpath = ':'
+    from mac import *
+    try:
+        from mac import _exit
+    except ImportError:
+        pass
+    import macpath
+    path = macpath
+    del macpath
+
+    import mac
+    __all__.extend(_get_exports_list(mac))
+    del mac
+
 elif 'ce' in _names:
     name = 'ce'
     linesep = '\r\n'
+    curdir = '.'; pardir = '..'; sep = '\\'; pathsep = ';'
+    defpath = '\\Windows'
     from ce import *
-    try:
-        from ce import _exit
-    except ImportError:
-        pass
+    for i in ['_exit']:
+        try:
+            exec "from ce import " + i
+        except ImportError:
+            pass
     # We can use the standard Windows path.
-    import ntpath as path
+    import ntpath
+    path = ntpath
+    del ntpath
 
     import ce
     __all__.extend(_get_exports_list(ce))
     del ce
 
-else:
-    raise ImportError('no os specific module found')
+elif 'riscos' in _names:
+    name = 'riscos'
+    linesep = '\n'
+    curdir = '@'; pardir = '^'; sep = '.'; pathsep = ','
+    defpath = '<Run$Dir>'
+    from riscos import *
+    try:
+        from riscos import _exit
+    except ImportError:
+        pass
+    import riscospath
+    path = riscospath
+    del riscospath
 
-sys.modules['os.path'] = path
-from os.path import (curdir, pardir, sep, pathsep, defpath, extsep, altsep,
-    devnull)
+    import riscos
+    __all__.extend(_get_exports_list(riscos))
+    del riscos
+
+else:
+    raise ImportError, 'no os specific module found'
+
+
+if sep=='.':
+    extsep = '/'
+else:
+    extsep = '.'
+
+__all__.append("path")
 
 del _names
 
-# Python uses fixed values for the SEEK_ constants; they are mapped
-# to native constants if necessary in posixmodule.c
-SEEK_SET = 0
-SEEK_CUR = 1
-SEEK_END = 2
-
-
-def _get_masked_mode(mode):
-    mask = umask(0)
-    umask(mask)
-    return mode & ~mask
+sys.modules['os.path'] = path
 
 #'
 
 # Super directory utilities.
 # (Inspired by Eric Raymond; the doc strings are mostly his)
 
-def makedirs(name, mode=0o777, exist_ok=False):
-    """makedirs(path [, mode=0o777][, exist_ok=False])
+def makedirs(name, mode=0777):
+    """makedirs(path [, mode=0777]) -> None
 
     Super-mkdir; create a leaf directory and all intermediate ones.
     Works like mkdir, except that any intermediate path segment (not
-    just the rightmost) will be created if it does not exist. If the
-    target directory with the same mode as we specified already exists,
-    raises an OSError if exist_ok is False, otherwise no exception is
-    raised.  This is recursive.
+    just the rightmost) will be created if it does not exist.  This is
+    recursive.
 
     """
     head, tail = path.split(name)
     if not tail:
         head, tail = path.split(head)
     if head and tail and not path.exists(head):
-        try:
-            makedirs(head, mode, exist_ok)
-        except OSError as e:
-            # be happy if someone already created the path
-            if e.errno != errno.EEXIST:
-                raise
-        if tail == curdir:           # xxx/newdir/. exists if xxx/newdir exists
-            return
-    try:
-        mkdir(name, mode)
-    except OSError as e:
-        import stat as st
-        dir_exists = path.isdir(name)
-        expected_mode = _get_masked_mode(mode)
-        if dir_exists:
-            # S_ISGID is automatically copied by the OS from parent to child
-            # directories on mkdir.  Don't consider it being set to be a mode
-            # mismatch as mkdir does not unset it when not specified in mode.
-            actual_mode = st.S_IMODE(lstat(name).st_mode) & ~st.S_ISGID
-        else:
-            actual_mode = -1
-        if not (e.errno == errno.EEXIST and exist_ok and dir_exists and
-                actual_mode == expected_mode):
-            raise
+        makedirs(head, mode)
+    mkdir(name, mode)
 
 def removedirs(name):
-    """removedirs(path)
+    """removedirs(path) -> None
 
-    Super-rmdir; remove a leaf directory and all empty intermediate
+    Super-rmdir; remove a leaf directory and empty all intermediate
     ones.  Works like rmdir except that, if the leaf directory is
     successfully removed, directories corresponding to rightmost path
-    segments will be pruned away until either the whole path is
+    segments will be pruned way until either the whole path is
     consumed or an error occurs.  Errors during this latter phase are
     ignored -- they generally mean that a directory was not empty.
 
@@ -188,7 +225,7 @@ def removedirs(name):
         head, tail = path.split(head)
 
 def renames(old, new):
-    """renames(old, new)
+    """renames(old, new) -> None
 
     Super-rename; create directories as necessary and delete any left
     empty.  Works like rename, except creation of any intermediate
@@ -214,98 +251,6 @@ def renames(old, new):
             pass
 
 __all__.extend(["makedirs", "removedirs", "renames"])
-
-def walk(top, topdown=True, onerror=None, followlinks=False):
-    """Directory tree generator.
-
-    For each directory in the directory tree rooted at top (including top
-    itself, but excluding '.' and '..'), yields a 3-tuple
-
-        dirpath, dirnames, filenames
-
-    dirpath is a string, the path to the directory.  dirnames is a list of
-    the names of the subdirectories in dirpath (excluding '.' and '..').
-    filenames is a list of the names of the non-directory files in dirpath.
-    Note that the names in the lists are just names, with no path components.
-    To get a full path (which begins with top) to a file or directory in
-    dirpath, do os.path.join(dirpath, name).
-
-    If optional arg 'topdown' is true or not specified, the triple for a
-    directory is generated before the triples for any of its subdirectories
-    (directories are generated top down).  If topdown is false, the triple
-    for a directory is generated after the triples for all of its
-    subdirectories (directories are generated bottom up).
-
-    When topdown is true, the caller can modify the dirnames list in-place
-    (e.g., via del or slice assignment), and walk will only recurse into the
-    subdirectories whose names remain in dirnames; this can be used to prune
-    the search, or to impose a specific order of visiting.  Modifying
-    dirnames when topdown is false is ineffective, since the directories in
-    dirnames have already been generated by the time dirnames itself is
-    generated.
-
-    By default errors from the os.listdir() call are ignored.  If
-    optional arg 'onerror' is specified, it should be a function; it
-    will be called with one argument, an os.error instance.  It can
-    report the error to continue with the walk, or raise the exception
-    to abort the walk.  Note that the filename is available as the
-    filename attribute of the exception object.
-
-    By default, os.walk does not follow symbolic links to subdirectories on
-    systems that support them.  In order to get this functionality, set the
-    optional argument 'followlinks' to true.
-
-    Caution:  if you pass a relative pathname for top, don't change the
-    current working directory between resumptions of walk.  walk never
-    changes the current directory, and assumes that the client doesn't
-    either.
-
-    Example:
-
-    import os
-    from os.path import join, getsize
-    for root, dirs, files in os.walk('python/Lib/email'):
-        print(root, "consumes", end="")
-        print(sum([getsize(join(root, name)) for name in files]), end="")
-        print("bytes in", len(files), "non-directory files")
-        if 'CVS' in dirs:
-            dirs.remove('CVS')  # don't visit CVS directories
-    """
-
-    islink, join, isdir = path.islink, path.join, path.isdir
-
-    # We may not have read permission for top, in which case we can't
-    # get a list of the files the directory contains.  os.walk
-    # always suppressed the exception then, rather than blow up for a
-    # minor reason when (say) a thousand readable directories are still
-    # left to visit.  That logic is copied here.
-    try:
-        # Note that listdir and error are globals in this module due
-        # to earlier import-*.
-        names = listdir(top)
-    except error as err:
-        if onerror is not None:
-            onerror(err)
-        return
-
-    dirs, nondirs = [], []
-    for name in names:
-        if isdir(join(top, name)):
-            dirs.append(name)
-        else:
-            nondirs.append(name)
-
-    if topdown:
-        yield top, dirs, nondirs
-    for name in dirs:
-        new_path = join(top, name)
-        if followlinks or not islink(new_path):
-            for x in walk(new_path, topdown, onerror, followlinks):
-                yield x
-    if not topdown:
-        yield top, dirs, nondirs
-
-__all__.append("walk")
 
 # Make sure os.environ exists, at least
 try:
@@ -345,7 +290,7 @@ def execlpe(file, *args):
     execvpe(file, args[:-1], env)
 
 def execvp(file, args):
-    """execvp(file, args)
+    """execp(file, args)
 
     Execute the executable file (which is searched for along $PATH)
     with argument list args, replacing the current process.
@@ -353,7 +298,7 @@ def execvp(file, args):
     _execvpe(file, args)
 
 def execvpe(file, args, env):
-    """execvpe(file, args, env)
+    """execv(file, args, env)
 
     Execute the executable file (which is searched for along $PATH)
     with argument list args and environment env , replacing the
@@ -363,252 +308,135 @@ def execvpe(file, args, env):
 
 __all__.extend(["execl","execle","execlp","execlpe","execvp","execvpe"])
 
+_notfound = None
 def _execvpe(file, args, env=None):
     if env is not None:
-        exec_func = execve
+        func = execve
         argrest = (args, env)
     else:
-        exec_func = execv
+        func = execv
         argrest = (args,)
         env = environ
-
+    global _notfound
     head, tail = path.split(file)
     if head:
-        exec_func(file, *argrest)
+        apply(func, (file,) + argrest)
         return
-    last_exc = saved_exc = None
-    saved_tb = None
-    path_list = get_exec_path(env)
-    if name != 'nt':
-        file = fsencode(file)
-        path_list = map(fsencode, path_list)
-    for dir in path_list:
+    if env.has_key('PATH'):
+        envpath = env['PATH']
+    else:
+        envpath = defpath
+    PATH = envpath.split(pathsep)
+    if not _notfound:
+        if sys.platform[:4] == 'beos':
+            #  Process handling (fork, wait) under BeOS (up to 5.0)
+            #  doesn't interoperate reliably with the thread interlocking
+            #  that happens during an import.  The actual error we need
+            #  is the same on BeOS for posix.open() et al., ENOENT.
+            try: unlink('/_#.# ## #.#')
+            except error, _notfound: pass
+        else:
+            import tempfile
+            t = tempfile.mktemp()
+            # Exec a file that is guaranteed not to exist
+            try: execv(t, ('blah',))
+            except error, _notfound: pass
+    exc, arg = error, _notfound
+    for dir in PATH:
         fullname = path.join(dir, file)
         try:
-            exec_func(fullname, *argrest)
-        except error as e:
-            last_exc = e
-            tb = sys.exc_info()[2]
-            if (e.errno != errno.ENOENT and e.errno != errno.ENOTDIR
-                and saved_exc is None):
-                saved_exc = e
-                saved_tb = tb
-    if saved_exc:
-        raise saved_exc.with_traceback(saved_tb)
-    raise last_exc.with_traceback(tb)
+            apply(func, (fullname,) + argrest)
+        except error, (errno, msg):
+            if errno != arg[0]:
+                exc, arg = error, (errno, msg)
+    raise exc, arg
 
 
-def get_exec_path(env=None):
-    """Returns the sequence of directories that will be searched for the
-    named executable (similar to a shell) when launching a process.
+# Change environ to automatically call putenv() if it exists
+try:
+    # This will fail if there's no putenv
+    putenv
+except NameError:
+    pass
+else:
+    import UserDict
 
-    *env* must be an environment variable dict or None.  If *env* is None,
-    os.environ will be used.
-    """
-    # Use a local import instead of a global import to limit the number of
-    # modules loaded at startup: the os module is always loaded at startup by
-    # Python. It may also avoid a bootstrap issue.
-    import warnings
+    # Fake unsetenv() for Windows
+    # not sure about os2 and dos here but
+    # I'm guessing they are the same.
 
-    if env is None:
-        env = environ
+    if name in ('os2', 'nt', 'dos'):
+        def unsetenv(key):
+            putenv(key, "")
 
-    # {b'PATH': ...}.get('PATH') and {'PATH': ...}.get(b'PATH') emit a
-    # BytesWarning when using python -b or python -bb: ignore the warning
-    with warnings.catch_warnings():
-        warnings.simplefilter("ignore", BytesWarning)
-
-        try:
-            path_list = env.get('PATH')
-        except TypeError:
-            path_list = None
-
-        if supports_bytes_environ:
+    if name == "riscos":
+        # On RISC OS, all env access goes through getenv and putenv
+        from riscosenviron import _Environ
+    elif name in ('os2', 'nt', 'dos'):  # Where Env Var Names Must Be UPPERCASE
+        # But we store them as upper case
+        class _Environ(UserDict.UserDict):
+            def __init__(self, environ):
+                UserDict.UserDict.__init__(self)
+                data = self.data
+                for k, v in environ.items():
+                    data[k.upper()] = v
+            def __setitem__(self, key, item):
+                putenv(key, item)
+                self.data[key.upper()] = item
+            def __getitem__(self, key):
+                return self.data[key.upper()]
             try:
-                path_listb = env[b'PATH']
-            except (KeyError, TypeError):
+                unsetenv
+            except NameError:
+                def __delitem__(self, key):
+                    del self.data[key.upper()]
+            else:
+                def __delitem__(self, key):
+                    unsetenv(key)
+                    del self.data[key.upper()]
+            def has_key(self, key):
+                return self.data.has_key(key.upper())
+            def get(self, key, failobj=None):
+                return self.data.get(key.upper(), failobj)
+            def update(self, dict):
+                for k, v in dict.items():
+                    self[k] = v
+
+    else:  # Where Env Var Names Can Be Mixed Case
+        class _Environ(UserDict.UserDict):
+            def __init__(self, environ):
+                UserDict.UserDict.__init__(self)
+                self.data = environ
+            def __setitem__(self, key, item):
+                putenv(key, item)
+                self.data[key] = item
+            def update(self, dict):
+                for k, v in dict.items():
+                    self[k] = v
+            try:
+                unsetenv
+            except NameError:
                 pass
             else:
-                if path_list is not None:
-                    raise ValueError(
-                        "env cannot contain 'PATH' and b'PATH' keys")
-                path_list = path_listb
-
-            if path_list is not None and isinstance(path_list, bytes):
-                path_list = fsdecode(path_list)
-
-    if path_list is None:
-        path_list = defpath
-    return path_list.split(pathsep)
+                def __delitem__(self, key):
+                    unsetenv(key)
+                    del self.data[key]
 
 
-# Change environ to automatically call putenv(), unsetenv if they exist.
-from _abcoll import MutableMapping  # Can't use collections (bootstrap)
+    environ = _Environ(environ)
 
-class _Environ(MutableMapping):
-    def __init__(self, data, encodekey, decodekey, encodevalue, decodevalue, putenv, unsetenv):
-        self.encodekey = encodekey
-        self.decodekey = decodekey
-        self.encodevalue = encodevalue
-        self.decodevalue = decodevalue
-        self.putenv = putenv
-        self.unsetenv = unsetenv
-        self._data = data
-
-    def __getitem__(self, key):
-        value = self._data[self.encodekey(key)]
-        return self.decodevalue(value)
-
-    def __setitem__(self, key, value):
-        key = self.encodekey(key)
-        value = self.encodevalue(value)
-        self.putenv(key, value)
-        self._data[key] = value
-
-    def __delitem__(self, key):
-        key = self.encodekey(key)
-        self.unsetenv(key)
-        del self._data[key]
-
-    def __iter__(self):
-        for key in self._data:
-            yield self.decodekey(key)
-
-    def __len__(self):
-        return len(self._data)
-
-    def __repr__(self):
-        return 'environ({{{}}})'.format(', '.join(
-            ('{!r}: {!r}'.format(self.decodekey(key), self.decodevalue(value))
-            for key, value in self._data.items())))
-
-    def copy(self):
-        return dict(self)
-
-    def setdefault(self, key, value):
-        if key not in self:
-            self[key] = value
-        return self[key]
-
-try:
-    _putenv = putenv
-except NameError:
-    _putenv = lambda key, value: None
-else:
-    __all__.append("putenv")
-
-try:
-    _unsetenv = unsetenv
-except NameError:
-    _unsetenv = lambda key: _putenv(key, "")
-else:
-    __all__.append("unsetenv")
-
-def _createenviron():
-    if name in ('os2', 'nt'):
-        # Where Env Var Names Must Be UPPERCASE
-        def check_str(value):
-            if not isinstance(value, str):
-                raise TypeError("str expected, not %s" % type(value).__name__)
-            return value
-        encode = check_str
-        decode = str
-        def encodekey(key):
-            return encode(key).upper()
-        data = {}
-        for key, value in environ.items():
-            data[encodekey(key)] = value
-    else:
-        # Where Env Var Names Can Be Mixed Case
-        encoding = sys.getfilesystemencoding()
-        def encode(value):
-            if not isinstance(value, str):
-                raise TypeError("str expected, not %s" % type(value).__name__)
-            return value.encode(encoding, 'surrogateescape')
-        def decode(value):
-            return value.decode(encoding, 'surrogateescape')
-        encodekey = encode
-        data = environ
-    return _Environ(data,
-        encodekey, decode,
-        encode, decode,
-        _putenv, _unsetenv)
-
-# unicode environ
-environ = _createenviron()
-del _createenviron
-
-
-def getenv(key, default=None):
-    """Get an environment variable, return None if it doesn't exist.
-    The optional second argument can specify an alternate default.
-    key, default and the result are str."""
-    return environ.get(key, default)
-
-supports_bytes_environ = name not in ('os2', 'nt')
-__all__.extend(("getenv", "supports_bytes_environ"))
-
-if supports_bytes_environ:
-    def _check_bytes(value):
-        if not isinstance(value, bytes):
-            raise TypeError("bytes expected, not %s" % type(value).__name__)
-        return value
-
-    # bytes environ
-    environb = _Environ(environ._data,
-        _check_bytes, bytes,
-        _check_bytes, bytes,
-        _putenv, _unsetenv)
-    del _check_bytes
-
-    def getenvb(key, default=None):
+    def getenv(key, default=None):
         """Get an environment variable, return None if it doesn't exist.
-        The optional second argument can specify an alternate default.
-        key, default and the result are bytes."""
-        return environb.get(key, default)
-
-    __all__.extend(("environb", "getenvb"))
-
-def _fscodec():
-    encoding = sys.getfilesystemencoding()
-    if encoding == 'mbcs':
-        errors = 'strict'
-    else:
-        errors = 'surrogateescape'
-
-    def fsencode(filename):
-        """
-        Encode filename to the filesystem encoding with 'surrogateescape' error
-        handler, return bytes unchanged. On Windows, use 'strict' error handler if
-        the file system encoding is 'mbcs' (which is the default encoding).
-        """
-        if isinstance(filename, bytes):
-            return filename
-        elif isinstance(filename, str):
-            return filename.encode(encoding, errors)
-        else:
-            raise TypeError("expect bytes or str, not %s" % type(filename).__name__)
-
-    def fsdecode(filename):
-        """
-        Decode filename from the filesystem encoding with 'surrogateescape' error
-        handler, return str unchanged. On Windows, use 'strict' error handler if
-        the file system encoding is 'mbcs' (which is the default encoding).
-        """
-        if isinstance(filename, str):
-            return filename
-        elif isinstance(filename, bytes):
-            return filename.decode(encoding, errors)
-        else:
-            raise TypeError("expect bytes or str, not %s" % type(filename).__name__)
-
-    return fsencode, fsdecode
-
-fsencode, fsdecode = _fscodec()
-del _fscodec
+        The optional second argument can specify an alternate default."""
+        return environ.get(key, default)
+    __all__.append("getenv")
 
 def _exists(name):
-    return name in globals()
+    try:
+        eval(name)
+        return 1
+    except NameError:
+        return 0
 
 # Supply spawn*() (probably only for Unix)
 if _exists("fork") and not _exists("spawnv") and _exists("execv"):
@@ -645,7 +473,7 @@ if _exists("fork") and not _exists("spawnv") and _exists("execv"):
                 elif WIFEXITED(sts):
                     return WEXITSTATUS(sts)
                 else:
-                    raise error("Not stopped, signaled or exited???")
+                    raise error, "Not stopped, signaled or exited???"
 
     def spawnv(mode, file, args):
         """spawnv(mode, file, args) -> integer
@@ -712,15 +540,11 @@ otherwise return -SIG, where SIG is the signal that killed it. """
         env = args[-1]
         return spawnve(mode, file, args[:-1], env)
 
-
-    __all__.extend(["spawnv", "spawnve", "spawnl", "spawnle",])
-
-
 if _exists("spawnvp"):
     # At the moment, Windows doesn't implement spawnvp[e],
     # so it won't have spawnlp[e] either.
     def spawnlp(mode, file, *args):
-        """spawnlp(mode, file, *args) -> integer
+        """spawnlp(mode, file, *args, env) -> integer
 
 Execute file (which is looked for along $PATH) with arguments from
 args in a subprocess with the supplied environment.
@@ -741,9 +565,34 @@ otherwise return -SIG, where SIG is the signal that killed it. """
         return spawnvpe(mode, file, args[:-1], env)
 
 
-    __all__.extend(["spawnvp", "spawnvpe", "spawnlp", "spawnlpe",])
+    __all__.extend(["spawnlp","spawnlpe","spawnv", "spawnve","spawnvp",
+                    "spawnvpe","spawnl","spawnle",])
 
-import copyreg as _copyreg
+
+# Supply popen2 etc. (for Unix)
+if _exists("fork"):
+    if not _exists("popen2"):
+        def popen2(cmd, mode="t", bufsize=-1):
+            import popen2
+            stdout, stdin = popen2.popen2(cmd, bufsize)
+            return stdin, stdout
+        __all__.append("popen2")
+
+    if not _exists("popen3"):
+        def popen3(cmd, mode="t", bufsize=-1):
+            import popen2
+            stdout, stdin, stderr = popen2.popen3(cmd, bufsize)
+            return stdin, stdout, stderr
+        __all__.append("popen3")
+
+    if not _exists("popen4"):
+        def popen4(cmd, mode="t", bufsize=-1):
+            import popen2
+            stdout, stdin = popen2.popen4(cmd, bufsize)
+            return stdin, stdout
+        __all__.append("popen4")
+
+import copy_reg as _copy_reg
 
 def _make_stat_result(tup, dict):
     return stat_result(tup, dict)
@@ -753,7 +602,7 @@ def _pickle_stat_result(sr):
     return (_make_stat_result, args)
 
 try:
-    _copyreg.pickle(stat_result, _pickle_stat_result, _make_stat_result)
+    _copy_reg.pickle(stat_result, _pickle_stat_result, _make_stat_result)
 except NameError: # stat_result may not exist
     pass
 
@@ -765,59 +614,7 @@ def _pickle_statvfs_result(sr):
     return (_make_statvfs_result, args)
 
 try:
-    _copyreg.pickle(statvfs_result, _pickle_statvfs_result,
+    _copy_reg.pickle(statvfs_result, _pickle_statvfs_result,
                      _make_statvfs_result)
 except NameError: # statvfs_result may not exist
     pass
-
-# Supply os.popen()
-def popen(cmd, mode="r", buffering=-1):
-    if not isinstance(cmd, str):
-        raise TypeError("invalid cmd type (%s, expected string)" % type(cmd))
-    if mode not in ("r", "w"):
-        raise ValueError("invalid mode %r" % mode)
-    if buffering == 0 or buffering == None:
-        raise ValueError("popen() does not support unbuffered streams")
-    import subprocess, io
-    if mode == "r":
-        proc = subprocess.Popen(cmd,
-                                shell=True,
-                                stdout=subprocess.PIPE,
-                                bufsize=buffering)
-        return _wrap_close(io.TextIOWrapper(proc.stdout), proc)
-    else:
-        proc = subprocess.Popen(cmd,
-                                shell=True,
-                                stdin=subprocess.PIPE,
-                                bufsize=buffering)
-        return _wrap_close(io.TextIOWrapper(proc.stdin), proc)
-
-# Helper for popen() -- a proxy for a file whose close waits for the process
-class _wrap_close:
-    def __init__(self, stream, proc):
-        self._stream = stream
-        self._proc = proc
-    def close(self):
-        self._stream.close()
-        returncode = self._proc.wait()
-        if returncode == 0:
-            return None
-        if name == 'nt':
-            return returncode
-        else:
-            return returncode << 8  # Shift left to match old behavior
-    def __enter__(self):
-        return self
-    def __exit__(self, *args):
-        self.close()
-    def __getattr__(self, name):
-        return getattr(self._stream, name)
-    def __iter__(self):
-        return iter(self._stream)
-
-# Supply os.fdopen()
-def fdopen(fd, *args, **kwargs):
-    if not isinstance(fd, int):
-        raise TypeError("invalid fd type (%s, expected integer)" % type(fd))
-    import io
-    return io.open(fd, *args, **kwargs)

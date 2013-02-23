@@ -22,7 +22,7 @@ def catInCatList (cat,catlist):
 def adjustUnitCargo(un,cat,pr,qr):
     numcargo = un.numCargo()
     carglist =[]
-    for i in range(numcargo):
+    for i in xrange(numcargo):
         carg = un.GetCargoIndex(i)
         if (len(cat)==0 or catInCatList(carg.GetCategory(),cat)):
             carg.SetPrice (pr*carg.GetPrice())
@@ -64,7 +64,7 @@ def getAdjacentSystems (currentsystem, sysaway, jumps=(),preferredfaction=''):
     else:
         syslist=[]
         numadj=VS.GetNumAdjacentSystems(currentsystem)
-        for i in range(numadj):
+        for i in xrange(numadj):
             cursys=VS.GetAdjacentSystem(currentsystem,i)
             if preferredfaction!=None:
                 if VS.GetGalaxyProperty(cursys,"faction")!=preferredfaction:
@@ -84,7 +84,7 @@ def getAdjacentSystems (currentsystem, sysaway, jumps=(),preferredfaction=''):
 def getAdjacentSystemList (tothissystem):
     list=[]
     max=VS.GetNumAdjacentSystems(tothissystem);
-    for i in range(max):
+    for i in xrange(max):
         list.append(VS.GetAdjacentSystem(tothissystem,i))
     return list
 
@@ -117,7 +117,7 @@ def punish (you,faction,difficulty):
     if (difficulty>=2):
         VS.IOmessage (0,"mission",getMessagePlayer(you),"#ff0000Your idiocy will be punished.")
         VS.IOmessage (0,"mission",getMessagePlayer(you),"#ff0000You had better run for what little life you have left.")
-        for i in range(difficulty):
+        for i in xrange(difficulty):
             un=faction_ships.getRandomFighter(faction)
             newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 200.0,400.0,you)
             newunit.setFgDirective("B")
@@ -167,7 +167,7 @@ def GetNumSignificantsForSystem (cursys):
 ##    return jumped
 
 def greet(greetingText,enemy=None,you=None):
-    for i in range(len(greetingText)):
+    for i in xrange(len(greetingText)):
         color="#ff0000"
         text=greetingText[i]
         if type(greetingText[i])==tuple:
@@ -242,7 +242,7 @@ def addTechLevel(level, addToBase=True):
 	for upgrade in upgrades:
 		if (len(upgrade)<5):
 			debug.debug("Upgrade list not big enough to add to tech")
-			print(upgrade)
+			print upgrade
 			continue
 		import Director
 		import VS
@@ -254,7 +254,7 @@ def addTechLevel(level, addToBase=True):
 				doIt=False
 		if (doIt):
 			debug.debug("added UPGRADE AS FOLLOWS to tech level ")
-			print(upgrade)
+			print upgrade
 			Director.pushSaveString(cp,"master_part_list_content",str(upgrade[0]))
 			Director.pushSaveString(cp,"master_part_list_category",str(upgrade[1]))
 			Director.pushSaveString(cp,"master_part_list_price",str(upgrade[2]))

@@ -11,4 +11,4 @@ for i in faction_ships.stattableexp:
     stattable[i+'.stock']=(tuple[0],tuple[1]*.5,lg(tuple[2])*.5,lg(tuple[3])*.5,lg(tuple[4])*.5)
     stattable[i+'.blank']=(tuple[0],tuple[1]*.1,lg(tuple[2])*.1,lg(tuple[3])*.1,lg(tuple[4])*.1)
     stattable[i+'.civvie']=(tuple[0],tuple[1]*.2,lg(tuple[2])*.2,lg(tuple[3])*.2,lg(tuple[4])*.2)
-print(stattable)
+print stattable

@@ -7,7 +7,6 @@ Based on the J. Myers POP3 draft, Jan. 96
 #         [heavily stealing from nntplib.py]
 # Updated: Piers Lauder <piers@cs.su.oz.au> [Jul '97]
 # String method conversion and test jig improvements by ESR, February 2001.
-# Added the POP3_SSL class. Methods loosely based on IMAP_SSL. Hector Urtubia <urtubia@mrbook.org> Aug 2003
 
 # Example (see the test function at the end of this file)
 
@@ -24,12 +23,9 @@ class error_proto(Exception): pass
 # Standard Port
 POP3_PORT = 110
 
-# POP SSL PORT
-POP3_SSL_PORT = 995
-
 # Line terminators (we always output CRLF, but accept any of CRLF, LFCR, LF)
-CR = b'\r'
-LF = b'\n'
+CR = '\r'
+LF = '\n'
 CRLF = CR+LF
 
 
@@ -75,30 +71,39 @@ class POP3:
             above.
     """
 
-    encoding = 'UTF-8'
 
-    def __init__(self, host, port=POP3_PORT,
-                 timeout=socket._GLOBAL_DEFAULT_TIMEOUT):
+    def __init__(self, host, port = POP3_PORT):
         self.host = host
         self.port = port
-        self.sock = self._create_socket(timeout)
+        msg = "getaddrinfo returns an empty list"
+        self.sock = None
+        for res in socket.getaddrinfo(self.host, self.port, 0, socket.SOCK_STREAM):
+            af, socktype, proto, canonname, sa = res
+            try:
+                self.sock = socket.socket(af, socktype, proto)
+                self.sock.connect(sa)
+            except socket.error, msg:
+                if self.sock:
+                    self.sock.close()
+                self.sock = None
+                continue
+            break
+        if not self.sock:
+            raise socket.error, msg
         self.file = self.sock.makefile('rb')
         self._debugging = 0
         self.welcome = self._getresp()
 
-    def _create_socket(self, timeout):
-        return socket.create_connection((self.host, self.port), timeout)
 
     def _putline(self, line):
-        if self._debugging > 1: print('*put*', repr(line))
-        self.sock.sendall(line + CRLF)
+        if self._debugging > 1: print '*put*', `line`
+        self.sock.sendall('%s%s' % (line, CRLF))
 
 
     # Internal: send one command to the server (through _putline())
 
     def _putcmd(self, line):
-        if self._debugging: print('*cmd*', repr(line))
-        line = bytes(line, self.encoding)
+        if self._debugging: print '*cmd*', `line`
         self._putline(line)
 
 
@@ -108,7 +113,7 @@ class POP3:
 
     def _getline(self):
         line = self.file.readline()
-        if self._debugging > 1: print('*get*', repr(line))
+        if self._debugging > 1: print '*get*', `line`
         if not line: raise error_proto('-ERR EOF')
         octets = len(line)
         # server can send any combination of CR & LF
@@ -126,8 +131,9 @@ class POP3:
 
     def _getresp(self):
         resp, o = self._getline()
-        if self._debugging > 1: print('*resp*', repr(resp))
-        if not resp.startswith(b'+'):
+        if self._debugging > 1: print '*resp*', `resp`
+        c = resp[:1]
+        if c != '+':
             raise error_proto(resp)
         return resp
 
@@ -138,8 +144,8 @@ class POP3:
         resp = self._getresp()
         list = []; octets = 0
         line, o = self._getline()
-        while line != b'.':
-            if line.startswith(b'..'):
+        while line != '.':
+            if line[:2] == '..':
                 o = o-1
                 line = line[1:]
             octets = octets + o
@@ -199,7 +205,7 @@ class POP3:
         """
         retval = self._shortcmd('STAT')
         rets = retval.split()
-        if self._debugging: print('*stat*', repr(rets))
+        if self._debugging: print '*stat*', `rets`
         numMessages = int(rets[1])
         sizeMessages = int(rets[2])
         return (numMessages, sizeMessages)
@@ -209,12 +215,12 @@ class POP3:
         """Request listing, return result.
 
         Result without a message number argument is in form
-        ['response', ['mesg_num octets', ...], octets].
+        ['response', ['mesg_num octets', ...]].
 
         Result when a message number argument is given is a
         single response: the "scan listing" for that message.
         """
-        if which is not None:
+        if which:
             return self._shortcmd('LIST %s' % which)
         return self._longcmd('LIST')
 
@@ -244,7 +250,7 @@ class POP3:
 
 
     def rset(self):
-        """Unmark all messages marked for deletion."""
+        """Not sure what this does."""
         return self._shortcmd('RSET')
 
 
@@ -252,7 +258,7 @@ class POP3:
         """Signoff: commit changes on server, unlock mailbox, close connection."""
         try:
             resp = self._shortcmd('QUIT')
-        except error_proto as val:
+        except error_proto, val:
             resp = val
         self.file.close()
         self.sock.close()
@@ -269,26 +275,25 @@ class POP3:
         return self._shortcmd('RPOP %s' % user)
 
 
-    timestamp = re.compile(br'\+OK.*(<[^>]+>)')
+    timestamp = re.compile(r'\+OK.*(<[^>]+>)')
 
-    def apop(self, user, password):
+    def apop(self, user, secret):
         """Authorisation
 
         - only possible if server has supplied a timestamp in initial greeting.
 
         Args:
-                user     - mailbox user;
-                password - mailbox password.
+                user    - mailbox user;
+                secret  - secret shared between client and server.
 
         NB: mailbox is locked by server from here to 'quit()'
         """
-        secret = bytes(password, self.encoding)
         m = self.timestamp.match(self.welcome)
         if not m:
             raise error_proto('-ERR APOP not supported by server')
-        import hashlib
-        digest = m.group(1)+secret
-        digest = hashlib.md5(digest).hexdigest()
+        import md5
+        digest = md5.new(m.group(1)+secret).digest()
+        digest = ''.join(map(lambda x:'%02x'%ord(x), digest))
         return self._shortcmd('APOP %s %s' % (user, digest))
 
 
@@ -308,64 +313,23 @@ class POP3:
         in the form 'response mesgnum uid', otherwise result is
         the list ['response', ['mesgnum uid', ...], octets]
         """
-        if which is not None:
+        if which:
             return self._shortcmd('UIDL %s' % which)
         return self._longcmd('UIDL')
 
-try:
-    import ssl
-except ImportError:
-    pass
-else:
-
-    class POP3_SSL(POP3):
-        """POP3 client class over SSL connection
-
-        Instantiate with: POP3_SSL(hostname, port=995, keyfile=None, certfile=None)
-
-               hostname - the hostname of the pop3 over ssl server
-               port - port number
-               keyfile - PEM formatted file that countains your private key
-               certfile - PEM formatted certificate chain file
-
-        See the methods of the parent class POP3 for more documentation.
-        """
-
-        def __init__(self, host, port=POP3_SSL_PORT, keyfile=None, certfile=None,
-                     timeout=socket._GLOBAL_DEFAULT_TIMEOUT, context=None):
-            if context is not None and keyfile is not None:
-                raise ValueError("context and keyfile arguments are mutually "
-                                 "exclusive")
-            if context is not None and certfile is not None:
-                raise ValueError("context and certfile arguments are mutually "
-                                 "exclusive")
-            self.keyfile = keyfile
-            self.certfile = certfile
-            self.context = context
-            POP3.__init__(self, host, port, timeout)
-
-        def _create_socket(self, timeout):
-            sock = POP3._create_socket(self, timeout)
-            if self.context is not None:
-                sock = self.context.wrap_socket(sock)
-            else:
-                sock = ssl.wrap_socket(sock, self.keyfile, self.certfile)
-            return sock
-
-    __all__.append("POP3_SSL")
 
 if __name__ == "__main__":
     import sys
     a = POP3(sys.argv[1])
-    print(a.getwelcome())
+    print a.getwelcome()
     a.user(sys.argv[2])
     a.pass_(sys.argv[3])
     a.list()
     (numMsgs, totalSize) = a.stat()
     for i in range(1, numMsgs + 1):
         (header, msg, octets) = a.retr(i)
-        print("Message %d:" % i)
+        print "Message ", `i`, ':'
         for line in msg:
-            print('   ' + line)
-        print('-----------------------')
+            print '   ' + line
+        print '-----------------------'
     a.quit()

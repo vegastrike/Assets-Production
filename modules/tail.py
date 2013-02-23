@@ -12,7 +12,7 @@ class tail (Director.Mission):
     
     def __init__ (self,var_to_set,creds,direct,sdist,mdist,efaction,ffaction,efg,ffg,fnum=3,edyntype='',fdyntype='',edynfg='',fdynfg='',tooclose=["Thought you could hide from me?", "Try hiding from this!"],toofar=["We have lost the lock on the target vessel."],justright=["Thankyou.  You help in tracking this criminal has been appreciated."]):
         Director.Mission.__init__ (self)
-        print('tail: Starting')
+        print 'tail: Starting'
         
         self.fail1 = tooclose
         self.fail2 = toofar
@@ -46,12 +46,12 @@ class tail (Director.Mission):
         self.mindist = mdist
         self.startdist = sdist
         VS.getPlayerX(self.cp).upgrade("jump_drive",0,0,0,1)
-        print('tail: Started')
+        print 'tail: Started'
     
     def setupEnemy (self):
         if not self.started:
-            print('Tail Error checking: '+self.directions[0])
-            print('Tail Error checking: '+self.directions[0].lower())
+            print 'Tail Error checking: '+self.directions[0]
+            print 'Tail Error checking: '+self.directions[0].lower()
         if self.started:
             return True
         elif self.directions[0].lower().find(VS.getPlayerX(self.cp).getUnitSystemFile().lower())!=-1:
@@ -80,7 +80,7 @@ class tail (Director.Mission):
                 self.objref=VS.addObjective("Follow the %s until it broadcasts the signal"%self.enemy.getFullname())
                 self.started=True
                 return True
-        print("now NOT set up!")
+        print "now NOT set up!"
         return False
     
     def setupFriendly (self, around):
@@ -117,12 +117,12 @@ class tail (Director.Mission):
                 raise RuntimeError("Jumppoint going to %s cannot be found."%j)
             self.enemy.SetTarget(targ)
             self.enemy.ActivateJumpDrive(0)
-            print("tail: Enemy running to "+targ.getName())
+            print "tail: Enemy running to "+targ.getName()
 #            self.enemy.setFlightgroupLeader(targ)
 #            self.enemy.setFgDirective('B')
 #            self.enemy.setFgDirective('F')
 #            self.enemy.AutoPilotTo(targ,True)
-            print('enemy objective updated '+j)
+            print 'enemy objective updated '+j
             return targ
         return None
     
@@ -133,7 +133,7 @@ class tail (Director.Mission):
             uni_=uni
         sys=uni_.getUnitSystemFile()
         nextsys=False
-        for i in range(len(self.directions)-1):
+        for i in xrange(len(self.directions)-1):
             where=sys.find(self.directions[i])
             if (where>0):
                 if (sys[where-1]=='/'):
@@ -160,18 +160,18 @@ class tail (Director.Mission):
         approx=list()
         approx.append(Vector.Scale(unitrel, self.tracking[1]))
         approx.append(Vector.Scale(relpos, (VS.GetGameTime() - self.tracking[0] + self.WAITTIME)/self.WAITTIME))
-        for i in range(len(approx)):
+        for i in xrange(len(approx)):
             if approx[i] < self.mindist or approx[i] > Vector.Mag(relpos):
                 approx[i] = False
         biggest=(0,0,0)
-        for i in range(len(approx)):
+        for i in xrange(len(approx)):
             if approx[i]:
                 if Vector.Mag(approx[i]) > Vector.Mag(biggest):
                     biggest=approx[i]
         if Vector.Mag(biggest) < 1:#arbitrary check to see if we've got a valid result
 #            raise RuntimeError("Could not find a suitable approximation for unit placement.")
 #            Runtime errors are ... less than optimal.  Lets pick a vector and hope.
-            print('tail: Pick a vector and hope')
+            print 'tail: Pick a vector and hope'
             unitrel = (1,0,0)
             biggest = (self.startdist,0,0)
         return unitrel, biggest
@@ -201,7 +201,7 @@ class tail (Director.Mission):
             VS.setCompleteness(self.objref, 1.00)
             self.success=2
             VS.IOmessage (0,"[Mission Computer]","all","Broadcast intercepted.")
-            for i in range(len(self.succeed1)):
+            for i in xrange(len(self.succeed1)):
                 VS.IOmessage (i+1,"[Mission Command]","all",self.succeed1[i])
             self.SetVar(1)
             self.tracking=(VS.GetGameTime()+self.DELAYTIME, VS.getPlayerX(self.cp).getDistance(self.enemy))
@@ -211,14 +211,14 @@ class tail (Director.Mission):
         """Does the enemy feel different about the player?  If yes, the player
            must have talked to, or shot at the enemy."""
         if abs(self.enemy.getRelation(VS.getPlayerX(self.cp)) - self.relation) >= 0.003:
-            print("tail: the relation between the player and target has changed")
+            print "tail: the relation between the player and target has changed"
             return True
         return False
     
     def outOfRange (self):
-        print("tail: Out of range")
+        print "tail: Out of range"
         i=0
-        for j in range(len(self.fail2)):
+        for j in xrange(len(self.fail2)):
             VS.IOmessage (j,"[Mission Command]","all",self.fail2[j])
             i+=1
         VS.IOmessage(i,"[Mission Computer]","all","You are not able to detect the target.")
@@ -226,17 +226,17 @@ class tail (Director.Mission):
         self.fail()
     
     def tooClose (self):
-        print("tail: Too close")
+        print "tail: Too close"
         VS.IOmessage (0,"[Mission Computer]","all","You have been detected by the target %s "%self.enemy.getFullname())
         VS.IOmessage (1,"[Mission Computer]","all","Mission Failed.")
-        for i in range(len(self.fail1)):
+        for i in xrange(len(self.fail1)):
             VS.IOmessage (i+2,"Target","all",self.fail1[i])
         self.enemy.SetTarget(VS.getPlayerX(self.cp))
         self.enemy.setFgDirective('A')
         self.fail()
     
     def tooDead (self):
-        print("tail: Too dead")
+        print "tail: Too dead"
         VS.IOmessage (0,"[Mission Computer]","all","The target %s has been destroyed."%self.enemy.getFullname())
         VS.IOmessage (1,"[Mission Computer]","all","Mission Failed.")
         self.fail()
@@ -250,7 +250,7 @@ class tail (Director.Mission):
     def Execute (self):
         you=VS.getPlayerX(self.cp)
         if you.isNull():
-            print('you is null')
+            print 'you is null'
             self.fail()
         elif self.success:
             self.initSuccess()
