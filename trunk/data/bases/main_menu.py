@@ -11,8 +11,10 @@ import dj_lib
 # dj_lib.disable()
 
 def DoStartNewGame(self,params):
+	global starting_new_game
 	ShowProgress.activateProgressScreen('loading',3)
 	VS.loadGame(VS.getNewGameSaveName())
+	starting_new_game = False
 	enterMainMenu(self,params)
 
 def StartNewGame(self,params):
@@ -32,10 +34,15 @@ time_of_day=''
 # Base music
 plist_menu=VS.musicAddList('maintitle.m3u')
 plist_credits=VS.musicAddList('maincredits.m3u')
+plist_monologue=VS.musicAddList('intromonologue.m3u')
+starting_new_game=False
 
 def enterMainMenu(self,params):
-	global plist_menu
-	VS.musicPlayList(plist_menu)
+	global plist_menu, starting_new_game
+	if starting_new_game:
+		DoStartNewGame(self,params)
+	else:
+		VS.musicPlayList(plist_menu)
 
 def enterCredits(self,params):
 	global plist_credits
@@ -152,6 +159,7 @@ intro_title = """\t=== Vega Strike 0.5.2 alpha ===
 """
 
 try:
+	intro_file=__file__.rsplit('/',2)[0].rsplit('\\',2)[0] + "/documentation/IntroMonologue.txt"
 	intro_file=open("documentation/IntroMonologue.txt","rt")
 except:
 	intro_file=None
@@ -192,8 +200,12 @@ class IntroRoom(PreIntroRoom):
         Base.SetDJEnabled(0)
         GUI.GUIMovieRoom.onStart(self, video)
     def onSkip(self, button, params):
+	global starting_new_game, plist_monologue
         PreIntroRoom.onSkip(self, button, params)
-        DoStartNewGame(self, params)
+        #DoStartNewGame(self, params)
+	starting_new_game = True
+	VS.musicPlayList(plist_monologue)
+	Base.SetCurRoom(intro_guiroom.getIndex())
 
 #Uncomment the following lines to use intro movies
 introroom = IntroRoom(room_intro, 
@@ -219,10 +231,7 @@ GUI.GUIStaticText(credits_guiroom, 'mytext_col3', credits_text_col3, text_loc, G
 
 # Button to go back to the main menu (from the credits)
 sprite_loc = GUI.GUIRect(8,697,420,47,"pixel",(1024,768))
-sprite = {
-	'*':None,
-	'down' : ( 'interfaces/main_menu/credits_resume_button_pressed.spr', sprite_loc ) }
-GUI.GUIRoomButton (credits_guiroom, guiroom, 'XXXMain Menu','Main_Menu',sprite,sprite_loc,clickHandler=enterMainMenu)
+GUI.GUIRoomButton (credits_guiroom, guiroom, 'XXXMain Menu','Main_Menu',None,sprite_loc,clickHandler=enterMainMenu)
 
 
 # Create intro room
@@ -231,7 +240,7 @@ GUI.GUIStaticImage(intro_guiroom, 'background', ( 'interfaces/main_menu/credits.
 
 text_loc = GUI.GUIRect(408,8,300,50,"pixel",(1024,768))
 GUI.GUIStaticText(intro_guiroom, 'mytitle', intro_title, text_loc, GUI.GUIColor.white())
-text_loc = GUI.GUIRect(58,50,850,640,"pixel",(1024,768))
+text_loc = GUI.GUIRect(58,50,850,600,"pixel",(1024,768))
 # GUI.GUIStaticText(intro_guiroom, 'mytext', intro_text, text_loc, GUI.GUIColor.white())
 
 GUI.GUIStaticText(intro_guiroom,'bg','',text_loc,GUI.GUIColor(0,0,0,.3))
