@@ -10,34 +10,34 @@ def MakeIndustrial(time_of_day='day',mybartender='bases/bartender_default.py'):
     room0 = room
     Base.Texture (room, 'background', 'bases/industrial/industrial_landing'+time_of_day+'.spr', 0, 0)
     Base.Ship (room, 'my_ship', (0.409863,-0.50531,4), (0, 0.93, -0.34), (-1, 0, 0))
-    
+
     room = Base.Room ('Industrial_Planet_Surface')
     room1 = room
     Base.Texture (room, 'background', 'bases/industrial/industrial_exterior2'+time_of_day+'.spr', 0, 0)
-    
+
     room = Base.Room ('Trade_Center')
     room2 = room
     Base.Texture (room, 'background', 'bases/industrial/industrial_exterior4'+time_of_day+'.spr', 0, 0)
-    
+
     room = Base.Room ('Main_Concourse')
     room3 = room
     Base.Texture (room, 'background', 'bases/industrial/industrial_concourse'+time_of_day+'.spr', 0, 0)
-    
+
     room = Base.Room ('Upgrade_Starship')
     room4 = room
     Base.Texture (room, 'background', 'bases/industrial/industrial_mining_ocean_weaponroom'+time_of_day+'.spr', 0, 0)
-    
+
     import  bar
     room5 = bar.MakeAgriculturalBar(room3,'Main_Concourse',"bases/industrial/industrial_bar","bases/bartender_default.py")
-    
+
     room = Base.Room ('Factory_Production_Facility')
     room6 = room
     Base.Texture (room, 'background', 'bases/industrial/industrial_exterior3'+time_of_day+'.spr', 0, 0)
-    
+
     room = Base.Room ('Industrial_Planet_Hills')
     room7 = room
     Base.Texture (room, 'background', 'bases/industrial/industrial_exterior1'+time_of_day+'.spr', 0, 0)
-    
+
     Base.LaunchPython (room0, 'my_launch_id', 'bases/launch_music.py', -0.0820312, -0.653646, 0.632812, 0.413542, 'Launch')
     Base.Link (room0, 'my_link_id', -0.242188, -0.143229, 0.398438, 0.393229, 'Industrial_Planet_Surface', room1)
     Base.Link (room0, 'my_link_id', -1, -0.994792, 1.99805, 0.192708, 'Main_Concourse', room3)
@@ -75,7 +75,7 @@ def MakeCorisc(time_of_day='day',mybartender='bases/bartender_default.py'):
     if (mybartender=='bases/bartender_union.py'):
         playlist='university.m3u'
     plist=VS.musicAddList(playlist)
-    VS.musicPlayList(plist)    
+    VS.musicPlayList(plist)
 
     dynamic_mission.CreateMissions()
     room1 = Base.Room ('Landing Platform')

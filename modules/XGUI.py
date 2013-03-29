@@ -16,33 +16,33 @@ XGUIPythonScriptAPISingleton = None
 
 
 class XGUIRoot:
-	def __init__(self):
-		self.templates = {}
+    def __init__(self):
+        self.templates = {}
 
-	def getTemplate(self,type,name):
-		if type in self.templates and name in sefl.templates[type]:
-			return self.templates[type][name]
-		else:
-			return None
+    def getTemplate(self,type,name):
+        if type in self.templates and name in sefl.templates[type]:
+            return self.templates[type][name]
+        else:
+            return None
 
-	def addTemplate(self,tpl):
-		type = tpl.getType()
-		name = tpl.getName()
-		if not type in self.templates:
-			XGUIDebug.trace(1,"XGUI: Initializing template category \"" + str(type) + "\"\n")
-			self.templates[type] = {}
-		XGUIDebug.trace(2,"XGUI: Loading template \"" + str(name) + "\" into category \"" + str(type) + "\"\n")
-		self.templates[type][name] = tpl
+    def addTemplate(self,tpl):
+        type = tpl.getType()
+        name = tpl.getName()
+        if not type in self.templates:
+            XGUIDebug.trace(1,"XGUI: Initializing template category \"" + str(type) + "\"\n")
+            self.templates[type] = {}
+        XGUIDebug.trace(2,"XGUI: Loading template \"" + str(name) + "\" into category \"" + str(type) + "\"\n")
+        self.templates[type][name] = tpl
 
 class XGUIPythonScript:
-	def __init__(self,code,filename):
-		code = code.replace("\r\n","\n")
-		code += "\n"
-		self.code = compile(code,filename,'exec')
+    def __init__(self,code,filename):
+        code = code.replace("\r\n","\n")
+        code += "\n"
+        self.code = compile(code,filename,'exec')
 
-	def execute(self,context):
-		exec(self.code, context)
-		return context
+    def execute(self,context):
+        exec(self.code, context)
+        return context
 
 
 """----------------------------------------------------------------"""
@@ -53,9 +53,9 @@ class XGUIPythonScript:
 """----------------------------------------------------------------"""
 
 class XGUIPythonScriptAPI:
-	def __init__(self,layout,room):
-		self.layout = layout
-		self.room = room
+    def __init__(self,layout,room):
+        self.layout = layout
+        self.room = room
 
 
 
@@ -66,5 +66,4 @@ class XGUIPythonScriptAPI:
 """----------------------------------------------------------------"""
 
 def XGUIInit():
-	XGUIRootSingleton = XGUIRoot()
-
+    XGUIRootSingleton = XGUIRoot()

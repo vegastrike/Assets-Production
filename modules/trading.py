@@ -48,27 +48,27 @@ def getImports(name,faction):
         debug.error("GetImportFailure\n"+str(sys.exc_info()[0])+str(sys.exc_info()[1]))
     return []
 def getExports(name,faction, twice=1000000):
-	prodlist=getImports(name,faction)
-	for i in range(len(prodlist)-1,-1,-1):
-		if prodlist[i][3]==0 and prodlist[i][4]<=3:
-			del prodlist[i]
-		elif prodlist[i][3]>twice:
-			prodlist.append(prodlist[i])
-	debug.debug("trading.getExports(%s,%s,%s)" %(name,faction,twice))
-	debug.debug("prodlist ="+str(prodlist))
+    prodlist=getImports(name,faction)
+    for i in list[range(len(prodlist)-1,-1,-1)]:
+        if prodlist[i][3]==0 and prodlist[i][4]<=3:
+            del prodlist[i]
+        elif prodlist[i][3]>twice:
+            prodlist.append(prodlist[i])
+    debug.debug("trading.getExports(%s,%s,%s)" %(name,faction,twice))
+    debug.debug("prodlist ="+str(prodlist))
 
-	return prodlist
+    return prodlist
 def getNoStarshipExports(name,faction,twice=10000):
-	prodlist=getExports(name,faction,twice)
-	for i in range(len(prodlist)-1,-1,-1):
-		if prodlist[i][0].find('upgrades')==0:
-			del prodlist[i]
-		elif prodlist[i][0].find('starships')==0:
-			del prodlist[i]
-	debug.debug("trading.getNoStarshipExports(%s,%s,%s)" %(name,faction,twice))
-	debug.debug("prodlist ="+str(prodlist))
+    prodlist=getExports(name,faction,twice)
+    for i in list[range(len(prodlist)-1,-1,-1)]:
+        if prodlist[i][0].find('upgrades')==0:
+            del prodlist[i]
+        elif prodlist[i][0].find('starships')==0:
+            del prodlist[i]
+    debug.debug("trading.getNoStarshipExports(%s,%s,%s)" %(name,faction,twice))
+    debug.debug("prodlist ="+str(prodlist))
 
-	return prodlist
+    return prodlist
 class trading:
     def __init__(self):
         self.last_ship=0
@@ -77,10 +77,10 @@ class trading:
         self.count=0
     def SetPriceInstability(self, inst):
         self.price_instability=inst
-      
+
     def SetMaxQuantity (self,quant):
         self.quantity=quant
-      
+
     def Execute(self):
         self.count+=1
         if (self.count<3):
@@ -115,7 +115,7 @@ class trading:
                                 #    debug.debug("Mining "+str(quant)+" from "+str(prod[3])+" to "+str(prod[4]))
                                 if (quant<prod[3]-prod[4] or quant==0):
                                     quant=int(prod[3]+vsrandom.uniform(-1,1)*prod[4])
-                                    #if un.getName()=="mining_base" and (cargo.GetContent()=="Tungsten" or cargo.GetContent()=="Space_Salvage"):                                   
+                                    #if un.getName()=="mining_base" and (cargo.GetContent()=="Tungsten" or cargo.GetContent()=="Space_Salvage"):
                                     #    debug.debug("Will add quant "+str(quant))
                                     if (quant>0):
                                         cargo.SetQuantity(quant)
@@ -126,14 +126,13 @@ class trading:
                                     else:
                                         removeCargo=True
                                 elif quant>prod[3]+prod[4]:
-                                   removeCargo=True
+                                    removeCargo=True
                             else:
                                 removeCargo=True
                             if removeCargo:
                                 ownedcargo=un.GetCargo(cargo.GetContent())
                                 if (ownedcargo.GetQuantity()):
                                     debug.debug("Removing one "+ownedcargo.GetContent())
-                                    
-                                    un.removeCargo(ownedcargo.GetContent(),ownedcargo.GetQuantity()/3+1,0)
+
+                                    un.removeCargo(ownedcargo.GetContent(),ownedcargo.GetQuantity()//3+1,bool(0))
             self.last_ship+=1
-        

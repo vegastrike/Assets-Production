@@ -10,22 +10,22 @@ def formatSystemName(ship):
         ship=ship[where+1:]
     return ship.capitalize()
 
-class go_to_adjacent_systems:  
+class go_to_adjacent_systems:
     def InSystem(self):
         return self.arrivedsys
-      
+
     def DestinationSystem (self):
         return self.destination
-      
+
     def JumpPoints (self):
         return self.jumps
-      
+
     def ChangeObjective(self,newind):
         if (self.jumps[-1]!=self.jumps[newind]):
             VS.setObjective(self.obj,"Jump to %s enroute to %s." % (formatSystemName(self.jumps[newind]),formatSystemName(self.jumps[-1])))
         else:
             VS.setObjective(self.obj,"Jump to final system: %s." % (formatSystemName(self.jumps[-1])))
-    
+
     def __init__ (self,you, numsystemsaway,jumps=(),preffaction=''):
         self.arrivedsys=0
         self.jumps=()
@@ -35,7 +35,7 @@ class go_to_adjacent_systems:
         self.you = you
         sys=VS.getSystemFile()
         if len(jumps)>0:
-            sys=jumps[-1] 
+            sys=jumps[-1]
         (self.destination,self.jumps)=universe.getAdjacentSystems(sys,numsystemsaway,jumps,preffaction)
         for i in self.jumps:
             key = "visited_"+i
@@ -51,7 +51,7 @@ class go_to_adjacent_systems:
             self.ChangeObjective(0)
         else:
             self.arrivedsys=1
-        
+
     def Print(self,beginstr,midstr,endstr,fro,wait=0):
         msgply=universe.getMessagePlayer(self.you)
         if (len(self.jumps)>0):
@@ -60,7 +60,7 @@ class go_to_adjacent_systems:
                 VS.IOmessage(wait,fro,msgply,midstr % (formatSystemName(self.jumps[i])))
             VS.IOmessage(wait,fro,msgply,endstr % (formatSystemName(self.jumps[len(self.jumps)-1])))
     def HaveArrived(self):
-        return self.arrivedsys       
+        return self.arrivedsys
     def Execute (self):
         cursys=VS.getSystemFile()
         if (cursys in self.jumps):
@@ -76,7 +76,7 @@ class go_to_adjacent_systems:
             else:
                 VS.setCompleteness(self.obj,self.com*curind)
         return self.arrivedsys
-    
+
     def initbriefing(self):
         self.jump_ani=0
         self.rnd_y=0.0
@@ -91,7 +91,7 @@ class go_to_adjacent_systems:
         name=self.you.getName()
         self.brief_you=Briefing.addShip(name,self.faction,(0.0,0.0,80.0))
         VS.IOmessage (0,"go_to_adjacent_system","briefing","You must go to the %s system. In order to get there, you must follow this route that we have planned out for you." % self.DestinationSystem())
-            
+
     def loopbriefing(self):
         size=len(self.JumpPoints())
         time = VS.GetGameTime()

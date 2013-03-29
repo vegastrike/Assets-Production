@@ -10,6 +10,7 @@ import debug
 def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=1,skipdj=0):
 #  print 'log'+ str( logo) + ' useani '+ str(useani)
     diff=usingDifficulty()
+    ret=VS.Unit()
 #    if useani:
 #        VS.playAnimation ("warp.ani",vec,300.0)
     if (not diff or (type.find(".blank")==-1 and -1==type.find(".stock"))):
@@ -21,7 +22,6 @@ def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=1,
         return ret
     rsize=0.0
     diffic = VS.GetDifficulty()
-    ret=VS.Unit()
     for i in range(nr_ships):
         mynew=VS.launch(fgname,type,faction,"unit",ai,1,nr_waves,VS.SafeEntrancePoint (vec,40),logo)
         unit.moveOutOfPlayerPath(mynew)
@@ -35,17 +35,17 @@ def launch (fgname, faction, type,ai, nr_ships, nr_waves, vec, logo='',useani=1,
     if (not skipdj):
         dj_lib.PlayMusik(0,dj_lib.HOSTILE_NEWLAUNCH_DISTANCE)
     return ret
-  
+
 def launch_waves_around_area(fgname,faction,type,ai,nr_ships,nr_waves,r1,r2,pos,logo='',useani=1,skipdj=0):
     pos=((pos[0]+vsrandom.uniform(r1,r2)*vsrandom.randrange(-1,2,2)),
          (pos[1]+vsrandom.uniform(r1,r2)*vsrandom.randrange(-1,2,2)),
          (pos[2]+vsrandom.uniform(r1,r2)*vsrandom.randrange(-1,2,2)))
     return launch(fgname,faction,type,ai,nr_ships,nr_waves,pos,logo,useani,skipdj)
-  
+
 def launch_wave_around_area(fgname,faction,type,ai,nr_ships,r1,r2,pos,logo='',useani=1,skipdj=0):
 #  print 'log' + str(logo)
     return launch_waves_around_area (fgname,faction,type,ai,nr_ships,1,r1,r2,pos,logo,useani,skipdj)
-  
+
 def launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves,logo='',useani=1,skipdj=0):
     station_unit = unit.getUnitByFgID(station_name)
     if(station_unit.isNull()):
@@ -55,18 +55,18 @@ def launch_around_station(station_name,fgname,faction,type,ai,nr_ships,nr_waves,
     rsize = station_unit.rSize()
     launched = launch_waves_around_area(fgname,faction,type,ai,nr_ships,nr_waves,rsize,rsize*2.0,station_pos,logo,useani,skipdj)
     return launched
-  
+
 launch_around_unit=launch_around_station
 
 def launch_waves_in_area(fgname,faction,type,ai,nr_ships,nr_waves,radius,pos,logo='',useani=1,skipdj=0):
-    pos=(pos[0]+vsrandom.uniform((-radius)/2,radius/2.0),
-         pos[1]+vsrandom.uniform((-radius)/2,radius/2.0),
-         pos[2]+vsrandom.uniform((-radius)/2,radius/2.0))
+    pos=(pos[0]+vsrandom.uniform((-radius)//2,radius/2.0),
+         pos[1]+vsrandom.uniform((-radius)//2,radius/2.0),
+         pos[2]+vsrandom.uniform((-radius)//2,radius/2.0))
     un = launch(fgname,faction,type,ai,nr_ships,nr_waves,pos,logo,useani,skipdj)
-  
+
 def launch_wave_in_area(fgname,faction,type,ai,nr_ships,radius,pos,logo='',useani=1,skipdj=0):
     launch_waves_in_area(fgname,faction,type,ai,nr_ships,1,radius,pos,logo,useani,skipdj)
-  
+
 def launchShipsAtWaypoints(waypoints,faction,type,ainame,nr,logo='',useani=1,skipdj=0):
     i=0
     c=length(waypoints)-1
@@ -74,7 +74,7 @@ def launchShipsAtWaypoints(waypoints,faction,type,ainame,nr,logo='',useani=1,ski
         outstr="wp%d" % (i)
         launch(outstr,faction,type,ainame,nr,1,wp,logo,useani,(skipdj or (i==c)))
         i+=1
-    
+
 def launch_wave_around_unit (fgname, faction, type, ai, nr_ships, minradius, maxradius, my_unit,logo='',useani=1,skipdj=0):
     import faction_ships
     myvec = (0,0,0)
@@ -90,14 +90,14 @@ def launch_wave_around_unit (fgname, faction, type, ai, nr_ships, minradius, max
         minradius=faction_ships.max_radius
     un=launch_wave_around_area (fgname,faction,type,ai,nr_ships,rsiz+minradius,rsiz+maxradius,myvec,logo,useani,skipdj)
     return un
-  
+
 def launch_wave_around_significant (fgname,faction,type,ai,nr_ships,minradius, maxradius,significant_number,logo='',useani=1,skipdj=0):
     significant_unit=unit.getSignificant(significant_number,0,0)
     if (significant_unit.isNull()):
         significant_unit = VS.getPlayer()
     launched = launch_wave_around_unit(fgname,faction,type,ai,nr_ships,minradius,maxradius,significant_unit,logo,useani,skipdj)
     return launched
-  
+
 class Launch:
     def __init__ (self):
         self.fg='Shadow'
@@ -139,11 +139,11 @@ class Launch:
 ##        if (tn==[]):
 ##          print 'Dyn-Launch: tn==[]'
 ##          self.dynfg=''
-          
+
             elif (tn==[]):
                 debug.error("Dyn-Launch: tn==[], dynfg==\'\' Error 47")
                 self.type=faction_ships.getRandomFighterInt(faction_ships.factionToInt(self.faction))
-                self.fg = self.dynfg        
+                self.fg = self.dynfg
                 self.dynfg=''
             if self.forcetype and len(self._dyn_nr_ships)==0 and self.type!='':
                 self._dyn_nr_ships=[(self.type,1)]
@@ -168,7 +168,7 @@ class Launch:
                 else:
                     debug.debug('launch more ships')
                     lame= launch_wave_around_unit (self.dynfg+self.fgappend,self.faction,self.type,self.ai,self._nr_ships,self.minradius,self.maxradius,myunit,self.logo,self.useani,skipdj)
-            import launch_recycle     
+            import launch_recycle
             ret=  launch_recycle.launch_types_around (self.dynfg,self.faction,self._dyn_nr_ships,self.ai,self.minradius*.5+self.maxradius*.5,myunit,100000+self.maxradius,self.logo,self.fgappend,skipdj)
             if (len(self._dyn_nr_ships) or self._nr_ships==0):
                 return ret

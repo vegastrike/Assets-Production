@@ -61,7 +61,7 @@ class patrol (Director.Mission):
                 if (sig.isPlanet()):
                     nam =unit.getUnitFullName(sig)
                     if (sig.isJumppoint()):
-                                obj=VS.addObjective ("Scan Jumppoint %s" % nam)
+                        obj=VS.addObjective ("Scan Jumppoint %s" % nam)
                     else:
                         obj=VS.addObjective ("Scan %s" % nam)
                 else:

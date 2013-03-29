@@ -22,8 +22,8 @@
 	
 	<python>
 
-import Base 
-import Director 
+import Base
+import Director
 
 Base.LoadBaseInterface("main_menu")
 

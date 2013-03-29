@@ -113,7 +113,7 @@ def sampleCon():
 #Root Node:
 # + Conversation preconditions
 # + Text contains strin reference to possible starting nodes
-# + 
+# +
 #Root|pirate.spr|"A Pirate"^preconditions^n1|n2|n3^
 #
 #
@@ -138,7 +138,7 @@ def sampleCon():
 #class Conversation:
 #    """Takes a string of the content making up a fixer converstion, and
 #    provides various methods to access and display the interaction."""
-#    
+#
 #    def __init__(self, content):
 #do error check for type 'content' etc
 #        self.content = content.split()

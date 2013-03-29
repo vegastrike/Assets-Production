@@ -46,10 +46,10 @@ def removeQuest (playernum,questname,value=1):
         Director.pushSaveData(int(playernum),str(questname),float(value))
 
 def playSoundCockpit(soundfile):
-  try:
-    VS.playSoundCockpit(soundfile)
-  except AttributeError:
-    VS.playSound(soundfile, VS.getPlayer().Position(), (0,0,0))
+    try:
+        VS.playSoundCockpit(soundfile)
+    except AttributeError:
+        VS.playSound(soundfile, VS.getPlayer().Position(), (0,0,0))
 
 class quest:
     def NoSignificantsNear(self):

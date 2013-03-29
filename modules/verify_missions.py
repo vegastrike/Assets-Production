@@ -215,7 +215,7 @@ class SaveVar(Argument):
         global campaign_name
         campvar=self.value.find("_mission")
         if campvar!=-1 and self.value[0:campvar] in campaign_name:
-             return True
+            return True
         elif self.value.find("visited_") == 0:
             temparg=System(None,self.value[8:])#FIXME hellcatv added
             if temparg.isValid():

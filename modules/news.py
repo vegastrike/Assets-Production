@@ -8,32 +8,32 @@ import stardate
 global dnewsman_
 dnewsman_ = dynamic_news.NewsManager()
 def saveVal(str):
-  return Director.getSaveData(VS.getMissionOwner(),str,0)
+    return Director.getSaveData(VS.getMissionOwner(),str,0)
 
 class NotZero:
-  def __init__ (self,str):
-    self.str = str
-  def __bool__ (self):
-    print('nonzeroing')
-    return saveVal(self.str)!=0
+    def __init__ (self,str):
+        self.str = str
+    def __bool__ (self):
+        print('nonzeroing')
+        return saveVal(self.str)!=0
 class IsZero:
-  def __init__ (self,str):
-    self.str = str
-  def __bool__ (self):
-    print('nonzeroing')
-    return saveVal(self.str)==0
+    def __init__ (self,str):
+        self.str = str
+    def __bool__ (self):
+        print('nonzeroing')
+        return saveVal(self.str)==0
 class GreaterZero:
-  def __init__ (self,str):
-    self.str = str
-  def __bool__ (self):
-    print('nonzeroing')
-    return saveVal(self.str)>0
+    def __init__ (self,str):
+        self.str = str
+    def __bool__ (self):
+        print('nonzeroing')
+        return saveVal(self.str)>0
 class LessZero:
-  def __init__ (self,str):
-    self.str = str
-  def __bool__ (self):
-    print('nonzeroing')
-    return saveVal(self.str)<0
+    def __init__ (self,str):
+        self.str = str
+    def __bool__ (self):
+        print('nonzeroing')
+        return saveVal(self.str)<0
 
 news =( ( 'kinneas',(IsZero('kinneas'),),"TEENAGE BOY OUTSMARTS SYSTEM:  A teenager from the Draul Bisa Habitat was caught redhanded on New Poona Mining Base last week, as he was trying to sneak past security without proper identification. The young human male, identified as Kinneas Pinman, somehow managed to make it past spaceport security on Draul Bisa and stow away on a passanger transport bound for the mining base in the Celeste System. While the motives behind Pinman's actions remain unknown, redfaced spaceport officials are hard-pressed to explain how the cheeky computer whizkid managed to elude all their security precautions. Pinman was detained by police on New Poona and will be returned to Draul Bisa within the week."),
         ('congress_convenes',(IsZero('congress_convenes'),),"CONFEDERATION SENATE CONVENES TO PONDER BORDER SECURITY:  The Senate of the Confederation of Inhabited Worlds convened earlier today at the Confederation Center on Mars. On their agenda, possible military intervention to protect human interests in Uln space because of the increased number of pirate raids launched from behind Uln borders. No decisions were made in the heated debate that followed, with the representatives from several LIHW worlds leaving the Confederation Center in disgust."),#
@@ -65,64 +65,64 @@ news =( ( 'kinneas',(IsZero('kinneas'),),"TEENAGE BOY OUTSMARTS SYSTEM:  A teena
         )
 
 def newNews():
-  print("Adding news")
-  if (vsrandom.randrange(0,2)!=0):
-      return
-  newsitem = vsrandom.randrange (0,len(news))
-  newsitem = news[newsitem]
-  player = VS.getMissionOwner()
-  for conditional in newsitem[1]:
-      print('conditioning')
-      if (not conditional):
-          return
-  universe.setFirstSaveData(player,newsitem[0],1)
-  import Director
-  newsfooter = "\\\\\This story was first broadcast on: "
-  newsfooter += stardate.formatStarDate("confed",VS.getStarTime())
-  newsfooter += "\\GNN - Galactic News Network"
-  Director.pushSaveString(player,"dynamic_news",'#'+newsitem[2]+newsfooter)
+    print("Adding news")
+    if (vsrandom.randrange(0,2)!=0):
+        return
+    newsitem = vsrandom.randrange (0,len(news))
+    newsitem = news[newsitem]
+    player = VS.getMissionOwner()
+    for conditional in newsitem[1]:
+        print('conditioning')
+        if (not conditional):
+            return
+    universe.setFirstSaveData(player,newsitem[0],1)
+    import Director
+    newsfooter = "\\\\\This story was first broadcast on: "
+    newsfooter += stardate.formatStarDate("confed",VS.getStarTime())
+    newsfooter += "\\GNN - Galactic News Network"
+    Director.pushSaveString(player,"dynamic_news",'#'+newsitem[2]+newsfooter)
 
 def eraseNews(plr):
-  import Director
-  len = Director.getSaveStringLength(plr,"news")
-  for i in range(len):
-      Director.eraseSaveString(plr,"news",len-i-1)
+    import Director
+    len = Director.getSaveStringLength(plr,"news")
+    for i in range(len):
+        Director.eraseSaveString(plr,"news",len-i-1)
 
 def processNews(plr):
-  eraseNews(plr)
-  import Director
-  howmuchnews=Director.getSaveStringLength(plr,"dynamic_news")
-  minnews=0
-  print("Processing News")
-  global dnewsman_
-  dnewsman_.updateDockedAtFaction()
-  if (howmuchnews>4000):
-      minnews=howmuchnews-4000
-  for i in range (minnews,howmuchnews):
-      noos=Director.getSaveString(plr,"dynamic_news",i)
-      if (len(noos)):
-          if (noos.startswith('#')):
-              Director.pushSaveString(plr,"news",noos[1:])
-          elif dnewsman_.isStoryRelevant(noos):
-              noos = dnewsman_.translateDynamicString(noos)
-              if noos:
-                  Director.pushSaveString(plr,"news",noos)
+    eraseNews(plr)
+    import Director
+    howmuchnews=Director.getSaveStringLength(plr,"dynamic_news")
+    minnews=0
+    print("Processing News")
+    global dnewsman_
+    dnewsman_.updateDockedAtFaction()
+    if (howmuchnews>4000):
+        minnews=howmuchnews-4000
+    for i in range (minnews,howmuchnews):
+        noos=Director.getSaveString(plr,"dynamic_news",i)
+        if (len(noos)):
+            if (noos.startswith('#')):
+                Director.pushSaveString(plr,"news",noos[1:])
+            elif dnewsman_.isStoryRelevant(noos):
+                noos = dnewsman_.translateDynamicString(noos)
+                if noos:
+                    Director.pushSaveString(plr,"news",noos)
 
 def eraseNewsItem(plr,item):
-  """removes the first news item matching the given item from
-  plr's "dynamic_news" save variable"""
+    """removes the first news item matching the given item from
+    plr's "dynamic_news" save variable"""
 #    print "FIXME: someone please write a function to this spec! Every thing I try seems to produce some random result :-/"
-  import Director
-  for i in range (Director.getSaveStringLength(plr,"dynamic_news")):
-      noos=Director.getSaveString(plr,"dynamic_news",i)
-      if noos == item:
-          Director.eraseSaveString(plr,"dynamic_news",i)
-          return
+    import Director
+    for i in range (Director.getSaveStringLength(plr,"dynamic_news")):
+        noos=Director.getSaveString(plr,"dynamic_news",i)
+        if noos == item:
+            Director.eraseSaveString(plr,"dynamic_news",i)
+            return
 
 def publishNews(text):
 # publishes the news text with star date
-  player = VS.getPlayer().isPlayerStarship()
-  STARDATE_TEXT = "\\\\\This story was first broadcast on: "
-  datetext = stardate.formatStarDate("confed",VS.getStarTime())
-  newstext = "#" + text + STARDATE_TEXT + datetext + "\\GINA - Galactic Independent News Association"
-  Director.pushSaveString(player,"dynamic_news",newstext)
+    player = VS.getPlayer().isPlayerStarship()
+    STARDATE_TEXT = "\\\\\This story was first broadcast on: "
+    datetext = stardate.formatStarDate("confed",VS.getStarTime())
+    newstext = "#" + text + STARDATE_TEXT + datetext + "\\GINA - Galactic Independent News Association"
+    Director.pushSaveString(player,"dynamic_news",newstext)

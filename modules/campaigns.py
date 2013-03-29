@@ -106,24 +106,24 @@ confed_tail_finance={"intro":[("Investigator","I thought you might want to talk 
         "accept":[("Investigator","Sorry, I almost forgot ... my identification ..."),
                   ("Deucalion","Don't worry about that.  I don't know whether I'm the right man, but I'm willing to see."),
                   "Although the response wasn't really an accurate representation of how he felt about all of this, it was the only course of action, Deucalion could see, that had a chance of ending well.",
-		          ("Investigator","Good.  What you have to do is not hard, it's actually really straight forward.  But it needs to be done well, or all of this is for nothing.  Your target is a message runner for the criminal organisation.  He is not of any interest, it is the message he is delivering.  You are to follow this target until he broadcasts this message.  Once the message has been recorded by your computer, you are done.  We'll take it from there."),
-		          ("Deucalion", "Sounds easy enough."),
-		          ("Investigator","It isn't.  You have to stay far enough away from the target so that he does not pick you up as a threat, and so that you do not noticably dampen his SPEC multiple.  Yet at the same time you must be close enough so that he doesn't lose you jumping from system to system.  If he notices you, or you lose him, the mission is failed, and the deal is off.  The target will be leaving this system fairly shortly, you'd better go now."),
-		          ("Deucalion","What abo-"),
-		          ("Investigator","Payment?  Come and see me after you complete the mission.")],
-		"reject1":["Deucalion reconsiders this man.  He is certainly not the uncomfortable beurocrat he initially appeared.",
-		          ("Deucalion","I think I'll sit this one out.")],
-		"reconsider":[("Deucalion","If you're still interested, I may be willing to help."),
+                          ("Investigator","Good.  What you have to do is not hard, it's actually really straight forward.  But it needs to be done well, or all of this is for nothing.  Your target is a message runner for the criminal organisation.  He is not of any interest, it is the message he is delivering.  You are to follow this target until he broadcasts this message.  Once the message has been recorded by your computer, you are done.  We'll take it from there."),
+                          ("Deucalion", "Sounds easy enough."),
+                          ("Investigator","It isn't.  You have to stay far enough away from the target so that he does not pick you up as a threat, and so that you do not noticably dampen his SPEC multiple.  Yet at the same time you must be close enough so that he doesn't lose you jumping from system to system.  If he notices you, or you lose him, the mission is failed, and the deal is off.  The target will be leaving this system fairly shortly, you'd better go now."),
+                          ("Deucalion","What abo-"),
+                          ("Investigator","Payment?  Come and see me after you complete the mission.")],
+                "reject1":["Deucalion reconsiders this man.  He is certainly not the uncomfortable beurocrat he initially appeared.",
+                          ("Deucalion","I think I'll sit this one out.")],
+                "reconsider":[("Deucalion","If you're still interested, I may be willing to help."),
                         ("Investigator","Good.  If it helps make your decision, I can guarantee 50,000 credits as a reward if successful.  But you're going to have to decide now, as I do have another candidate who seems more enthusiastic.  What'll it be, will you help?")],
-		"reject2":[("Deucalion","No, I think I'll let the other guy handle this one."),
+                "reject2":[("Deucalion","No, I think I'll let the other guy handle this one."),
                     ("Investigator","I'm sorry to see you go.")],
-		"reminder":[("Investigator","You want to see my identification again?"),
+                "reminder":[("Investigator","You want to see my identification again?"),
                     ("Deucalion","What?  No!  Put that thing away."),
                     ("Investigator","Then you'd better get moving.  After all, the target isn't going to wait for you.")],
-		"failure":[("Investigator","I made a mistake, I thought you were up to this."),
-		          ("Deucalion","Things wer-"),
-		          ("Investigator","Complicated?  Yes, I heard about what you were up to before we met.  If I'd known beforehand things may have turned out differently.  As it is, I'd advise you to leave this system and try and keep a low profile.")]
-		}
+                "failure":[("Investigator","I made a mistake, I thought you were up to this."),
+                          ("Deucalion","Things wer-"),
+                          ("Investigator","Complicated?  Yes, I heard about what you were up to before we met.  If I'd known beforehand things may have turned out differently.  As it is, I'd advise you to leave this system and try and keep a low profile.")]
+                }
 
 confed_tail_insider=dict(confed_tail_finance)
 confed_tail_insider["intro"]=[("Investigator","Ah, Deucalion isn't it?  Yes, you're the mysterious pilot I've been hearing so much about.  I need to talk to you about something, I believe you've recently had some dealings with the local criminal element?  The one headed by a man named Luviccio?"),
@@ -223,23 +223,23 @@ confedwin="IntelSEC Investigation Completed:\\\\IntelSEC has today completed the
 piratewin="IntelSEC Investigation Cancelled:\\\\IntelSEC has today cancelled their investigation into alledged criminal organisations operating out of Crucible Sector.  Citing the murder of an investigating operative, as well as the general lack of anyone willing to provide testimonies, the agent leading the probe expressed his disappointment at the result.  \"Such an outcome will only serve to strengthen the grip of these organisations on the outer systems.  Every system with a pirate infestation is one that is lost to the Confederacy.\"\\\\The share markets in the involved systems took a battering today, with the only winners the smaller financial institutions.  Faced with claims of credit fraud, many have been quite lacklustre in their attempts to reimburse victims.  Some victims, 12 months later, still have their claims being assessed.\\\\GNN -- Local news, for a galactic audience."
 
 def LoadMainCampaign():
-    
+
     HAULER_SPRITE   = ("campaign/hauler.spr","Talk_To_The_Hauler") #sprite file for the fixer
     HAULER2_SPRITE  = ("campaign/hauler.spr","Talk_To_Jenek") #sprite file for the fixer
     HAULER_LOCATION = ("Crucible/Cephid_17","Atlantis")
     HaulerMission1  = CampaignClickNode() # Initialize each node
     HaulerMission2  = CampaignClickNode() # Initialize each node
-    
+
     GANGSTER_SPRITE     = ("campaign/gangster.spr","Talk_To_The_Patron")
     GANGSTER_LOCATION   = ("Crucible/Cephid_17","Serenity")
     GangsterSwindled    = CampaignClickNode()
-    
+
     Hauler2Consequence  = CampaignNode()
     HaulerReward        = CampaignClickNode()
-    
+
     AngryHauler     = CampaignClickNode()
     AngryGangster   = CampaignClickNode()
-    
+
     SPY_SPRITE      = ("campaign/investigator.spr","Talk_To_The_Investigator")
     SPY_LOCATION    = ("Crucible/Cephid_17","Ataraxia")
     INVESTIGATORID_SPRITE = "campaign/investigatorID.spr"
@@ -249,22 +249,22 @@ def LoadMainCampaign():
     TailMission2    = CampaignClickNode()
     TailReward      = CampaignClickNode()
     TailRewardPop   = CampaignClickNode()
-        
+
     GangsterSellout = CampaignClickNode()
     GangsterFight   = CampaignNode()
-    
+
     GangsterHit1    = CampaignClickNode()
     GangsterHit2    = CampaignClickNode()
     GangsterBounty  = CampaignClickNode()
-    
+
     GangsterReward  = CampaignClickNode()
-    
+
     WrapUpSpy       = CampaignNode()
     WrapUpGangster  = CampaignNode()
-        
+
     vs=Campaign("vega_strike_campaign") # Name of the save game variable for the entire campaign. Can't contain spaces
     vs.Init(HaulerMission1) # the first node.
-    
+
     description = "Jenek:_Deliver_First_Cargo"
     MakeCargoMission(vs, # Creates a cargo mission
         HAULER_SPRITE, # Campaign, sprite
@@ -279,7 +279,7 @@ def LoadMainCampaign():
         GangsterSwindled, # If you lose the mission
         HaulerMission2, # If you win the mission. Usually points to the next mission
         HaulerMission1) # The current mission node.
-    
+
     description = "Jenek:_Deliver_Second_Cargo"
     MakeNoFailureCargoMission(vs, # Creates a cargo mission
         HAULER2_SPRITE, # Campaign, sprite
@@ -294,7 +294,7 @@ def LoadMainCampaign():
         Hauler2Consequence, # If you lose the mission
         HaulerReward, # If you win the mission. Usually points to the next mission
         HaulerMission2) # The current mission node.
-    
+
     HaulerReward.Init(vs,
         [InSystemCondition(HAULER_LOCATION[0],HAULER_LOCATION[1])],
         haulerreward,
@@ -302,7 +302,7 @@ def LoadMainCampaign():
         GoToSubnode(0,AddCredits(2000,ClearFactionRecord('merchant',1.0))),
         None,
         [GangsterHit2])
-    
+
     GangsterSwindled.Init(vs,
         [InSystemCondition(GANGSTER_LOCATION[0],GANGSTER_LOCATION[1])],
         gangsterswindled,
@@ -310,9 +310,9 @@ def LoadMainCampaign():
         GoToSubnode(0,SetCredits(0)),
         None,
         [TailMission1])
-    
+
     Hauler2Consequence.Init(vs,[],None,None,TrueSubnode(),Hauler2Consequence,[AngryHauler,AngryGangster])
-    
+
     AngryHauler.Init(vs,
         [InSystemCondition(HAULER_LOCATION[0],HAULER_LOCATION[1])],
         angryhauler,
@@ -320,7 +320,7 @@ def LoadMainCampaign():
         GoToSubnode(0,AdjustRelation('privateer','pirates',-0.05,AdjustRelation('privateer','merchant',-0.1,PopRelation('merchant')))),
         None,
         [GangsterFight])
-    
+
     AngryGangster.Init(vs,
         [InSystemCondition(GANGSTER_LOCATION[0],GANGSTER_LOCATION[1])],
         angrygangster,
@@ -328,7 +328,7 @@ def LoadMainCampaign():
         GoToSubnode(0,AdjustRelation('privateer','pirates',-0.05,AdjustRelation('privateer','merchant',-0.1,PopRelation('merchant')))),
         None,
         [GangsterFight])
-    
+
     MakeMission(vs, # Creates any type of mission
         SPY_SPRITE, # Campaign, sprite
         [InSystemCondition(SPY_LOCATION[0],SPY_LOCATION[1])], # Where fixer meets you to start the mission
@@ -343,7 +343,7 @@ def LoadMainCampaign():
         GangsterFight, # If you lose the mission
         TailRewardPop, # Win mission
         TailMission1)
-    
+
     MakeMission(vs, # Creates any type of mission
         SPY_SPRITE, # Campaign, sprite
         [InSystemCondition(SPY_LOCATION[0],SPY_LOCATION[1])], # Where fixer meets you to start the mission
@@ -358,7 +358,7 @@ def LoadMainCampaign():
         GangsterFight, # If you lose the mission
         TailReward, # Win mission
         TailMission2)
-    
+
     TailRewardPop.Init(vs,
         [InSystemCondition(SPY_LOCATION[0],SPY_LOCATION[1])],
         tailreward,
@@ -366,7 +366,7 @@ def LoadMainCampaign():
         GoToSubnode(0,AddCredits(50000,PopCredits(AdjustRelation('privateer','pirates',-0.55,AdjustRelation('privateer','confed',0.2))))),
         None,
         [WrapUpSpy])
-    
+
     TailReward.Init(vs,
         [InSystemCondition(SPY_LOCATION[0],SPY_LOCATION[1])],
         tailreward,
@@ -374,7 +374,7 @@ def LoadMainCampaign():
         GoToSubnode(0,AddCredits(50000,AdjustRelation('privateer','pirates',-0.55,AdjustRelation('privateer','confed',0.2)))),
         None,
         [WrapUpSpy])
-    
+
     GangsterSellout.Init(vs,
         [InSystemCondition(GANGSTER_LOCATION[0],GANGSTER_LOCATION[1])],
         gangstersellout,
@@ -382,7 +382,7 @@ def LoadMainCampaign():
         GoToSubnode(0,AdjustRelation('privateer','pirates',-0.35)),
         None,
         [GangsterFight])
-    
+
     description = "Luviccio:_Deliver_Cargo_To_Jenek"
     MakeCargoMission(vs, # Creates a cargo mission
         GANGSTER_SPRITE, # Campaign, sprite
@@ -397,7 +397,7 @@ def LoadMainCampaign():
         GangsterFight, # If you lose the mission
         GangsterBounty, # If you win the mission. Usually points to the next mission
         GangsterHit1) # The current mission node.
-    
+
     description = "Luviccio:_Deliver_Cargo_To_Jenek"
     MakeCargoMission(vs, # Creates a cargo mission
         GANGSTER_SPRITE, # Campaign, sprite
@@ -412,7 +412,7 @@ def LoadMainCampaign():
         GangsterFight, # If you lose the mission
         GangsterBounty, # If you win the mission. Usually points to the next mission
         GangsterHit2) # The current mission node.
-    
+
     MakeMission(vs, # Creates any type of mission
         GANGSTER_SPRITE, # Campaign, sprite
         [InSystemCondition(GANGSTER_LOCATION[0],GANGSTER_LOCATION[1])], # Where fixer meets you to start the mission
@@ -426,7 +426,7 @@ def LoadMainCampaign():
         GangsterFight, # If you lose the mission
         GangsterReward,
         GangsterBounty)
-    
+
     GangsterReward.Init(vs,
         [InSystemCondition(GANGSTER_LOCATION[0],GANGSTER_LOCATION[1])],
         gangsterreward,
@@ -434,7 +434,7 @@ def LoadMainCampaign():
         GoToSubnode(0,AddCredits(10000,AdjustRelation('privateer','pirates',0.2,AdjustRelation('privateer','confed',-0.5)))),
         None,
         [WrapUpGangster])
-    
+
     GangsterFight.Init(vs,
         [],
         [],
@@ -442,7 +442,7 @@ def LoadMainCampaign():
         GoToSubnode(0,(LoadMission("ambush","ambush",(vs.name+"_mission",universe.getAdjacentSystemList(GANGSTER_LOCATION[0]),0,'pirates',4,'','',["You shouldn't have left that system, Luviccio hadn't finished with you.", "No matter, we'll finish you for him!"])))),
         None,
         [WrapUpSpy])
-    
+
     WrapUpSpy.Init(vs,
         [],
         [],
@@ -450,7 +450,7 @@ def LoadMainCampaign():
         GoToSubnode(0,(PushNews(confedwin))),
         None,
         [CampaignEndNode(vs)])
-    
+
     WrapUpGangster.Init(vs, # savegame variable
         [], #start location
         [], #dialog
@@ -459,5 +459,5 @@ def LoadMainCampaign():
         None, # completion script
         #campaign_pirates.Mission1) #[CampaignEndNode(vs)]) # continue with next mission
         [CampaignEndNode(vs)]) # continue with next mission
-    
+
     return vs

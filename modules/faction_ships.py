@@ -1,11 +1,11 @@
 
 #use this to allow more interesting weightings than are feasible to manually enter
 def weightedlist(tuples):
-  rettuple=[]
-  for i in range(0,len(tuples)):
-    for j in range(tuples[i][1]):
-      rettuple.append(tuples[i][0])
-  return tuple(rettuple)
+    rettuple=[]
+    for i in range(0,len(tuples)):
+        for j in range(tuples[i][1]):
+            rettuple.append(tuples[i][0])
+    return tuple(rettuple)
 
 confed=0
 aera=1
@@ -258,7 +258,7 @@ production_centers={"confed":["Sol/Sol"]
 earnable_upgrades={} #tech tree (new)
 
 def Precache():
-	pass#fixme
+    pass#fixme
 
 useStock = (   0    ,  0   ,   0   ,     1    ,   0   ,       0     ,    0   ,         0    ,      0  ,    0,         0    ,    0     ,   0   ,     0      ,   0   ,     1     ,    1 ,  1  ,  0  ,   0 , 0 ,  1 , 1  ,      0,0,0,0,0,0,0,0,0,0,0,0,0,0,0   )#close ones are all civvies
 
@@ -427,14 +427,14 @@ fighters = (("Lancelot","Lancelot","Gawain","Lancelot","Gawain","Progeny","Proge
            )
 isBomber = {"Areus":6,"Taizong":8,"Pacifier":5,"Goddard":4,"Kierkegaard":5,"Hammer":16,"Admonisher":10,"Areus.blank":6,"Taizong.blank":8,"Pacifier.blank":5,"Goddard.blank":4,"Hammer.blank":16,"Admonisher.blank":10}
 unescortable = {"Tesla":"Ox",
-	"Kahan":"Mule",
-	"Clydesdale":"Ox",
-	"Shundi":"Zhuangzong",
-	"Ruizong":"Taizong",
-	"Agesipolis":"Agasicles",
-	"Watson":"Mule",
-	"Leonidas":"Agasicles",
-	"Anaxidamus":"Agasicles"}
+        "Kahan":"Mule",
+        "Clydesdale":"Ox",
+        "Shundi":"Zhuangzong",
+        "Ruizong":"Taizong",
+        "Agesipolis":"Agasicles",
+        "Watson":"Mule",
+        "Leonidas":"Agasicles",
+        "Anaxidamus":"Agasicles"}
 
 capitals = (("Clydesdale","Watson","Archimedes","Kahan","Hawking"), #confed
             ("Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agesipolis","Leonidas","Anaxidamus","Anaxidamus","Anaxidamus","Anaxidamus","Anaxidamus",), #aera
@@ -498,7 +498,7 @@ stattableexp={
         "Dodo":(0.4,0.16,10,2500,0),
         "Dostoevsky":(0.6,0.68,200,540,2000),
         "Franklin":(0.76,0.78,200,2590,2000),
-        "Gaozong":(0,0.9,0,40,0), 
+        "Gaozong":(0,0.9,0,40,0),
         "Gawain":(0.67,0.7,500,400,400),
         "Gleaner":(0.52,0.14,200,18720,400), #dupe of Mule FIXME
         "Goddard":(0.86,0.24,800,5200,500000),
@@ -534,7 +534,7 @@ stattableexp={
         "Seaxbane":(0.44,0.48,300,350,200), # dupe of Robin FIXME
         "Shenzong":(0.52,0.52,40,320,0),
         "Shizu":(0.52,0.52,40,320,0),
-        "Shundi":(1,0.18,50000,2017640,3210),        
+        "Shundi":(1,0.18,50000,2017640,3210),
         "Sickle":(0.34,0.34,480,390,800),
         "Taizong":(0.78,0.42,440,1150,100000),
         "Tesla":(1,0.22,100000,1887640,0),
@@ -658,7 +658,7 @@ for i in bases:
 def appendName(faction):
     from difficulty import usingDifficulty
     if (useStock[faction] and usingDifficulty()):
-	# DON'T USE .blanks directly if possible-- preserve as templates. Use .stock where possible
+        # DON'T USE .blanks directly if possible-- preserve as templates. Use .stock where possible
         return ".stock"
     else:
         return ""
@@ -684,15 +684,15 @@ def get_non_citizen_X_of (mylist, index):
     rez=intToFaction(enemylist[newindex])
     if VS.isCitizen(rez):
         while (newindex>0):
-          newindex-=1
-          rez=intToFaction(enemylist[newindex])
-          if not VS.isCitizen(rez):
-              return rez
+            newindex-=1
+            rez=intToFaction(enemylist[newindex])
+            if not VS.isCitizen(rez):
+                return rez
         while (newindex+1<len(enemylist)):
-          newindex+=1
-          rez=intToFaction(enemylist[newindex])
-          if not VS.isCitizen(rez):
-              return rez
+            newindex+=1
+            rez=intToFaction(enemylist[newindex])
+            if not VS.isCitizen(rez):
+                return rez
     return rez
 
 def get_X_of (mylist, index):
@@ -767,8 +767,8 @@ def getRandomCapitol (faction):
 
 launch_distance_factor=1
 max_radius=10000
-min_forward_distance=100000 
-min_distance=10000 
+min_forward_distance=100000
+min_distance=10000
 #print len(fightersPerFG)
 #print len (fighterProductionRate)
 #print len(capitalProductionRate)
@@ -795,7 +795,7 @@ def make_stattable(stattableexp):
         stattable[i+'.stock']=(t[0],t[1]*.5,lg(t[2])*.5,lg(t[3])*.5,lg(t[4])*.5)
         stattable[i+'.blank']=(t[0],t[1]*.1,lg(t[2])*.1,lg(t[3])*.1,lg(t[4])*.1)
         stattable[i+'.civvie']=(t[0],t[1]*.2,lg(t[2])*.2,lg(t[3])*.2,lg(t[4])*.2)
-    
+
     return stattable
 
 stattable = make_stattable(stattableexp)

@@ -9,15 +9,14 @@ except:
     profiling_level = 0
 
 def isLandable (un):
-    if (un):
-        return un.isDockableUnit()
+    return un.isDockableUnit()
 
 def isBase (un):
     unit_fgid = un.getFlightgroupName()
     retval = unit_fgid=="Base"
     return retval and not un.isSun()
 
-def findPlayerNum (un):
+def findPlayerNum ():
     for i in range (VS.getNumPlayers()):
         if (VS.getPlayerX(i)==VS.getPlayer()):
             return i
@@ -34,7 +33,7 @@ def moveOutOfPlayerPath(un):
         import vsrandom
         ex=(vsrandom.uniform(-1,1),vsrandom.uniform(-1,1),vsrandom.uniform(-1,1))
         if vel[0]==0 and vel[1]==0 and vel[2]==0:
-           vel=(1,0,0)
+            vel=(1,0,0)
         dir=Vector.Scale(Vector.ScaledCross(ex,vel),min_distance)
         print("offsetting you a few meters to the "+str(dir))
         un.SetPosition(Vector.Add(playa.Position(),dir))
@@ -43,50 +42,48 @@ def moveOutOfPlayerPath(un):
     min_distance=100
     min_forward_distance=1300
     try:
-       min_distance=faction_ships.min_distance
-       min_forward_distance=faction_ships.min_forward_distance
+        min_distance=faction_ships.min_distance
+        min_forward_distance=faction_ships.min_forward_distance
     except:
-       print("badness no faction_ships.min_distance")
+        print("badness no faction_ships.min_distance")
     dis=un.getDistance(playa)
     import Vector
     vel=playa.GetVelocity()
     vel=Vector.SafeNorm(vel)
     if (dis<min_distance):
-       reposition(un,playa,min_distance,vel)
+        reposition(un,playa,min_distance,vel)
     dir=Vector.SafeNorm(Vector.Sub(playa.Position(),un.Position()))
     if (dis<min_forward_distance and Vector.Dot(dir,vel)>.8):
-       reposition(un,playa,min_distance,vel)
+        reposition(un,playa,min_distance,vel)
 
 def getUnitFullName(un,inenglish=False):
     thename=(un.getFullname())#.replace("_"," ")
     snumber=str(un.getFgSubnumber())
     fg=un.getFlightgroupName()#.replace("_"," ")
     if un.isPlanet():
-	thename=un.getName()
+        thename=un.getName()
     elif fg=='Base':
         if un.getFullname().capitalize()==un.getName().capitalize():
-             thename=thename+" "+snumber        
+            thename=thename+" "+snumber
     elif fg!='Shadow' and fg!='':
         if inenglish:
-           thename=un.getFactionName().replace("_"," ")+" "+thename+ " "+snumber +' in the '+fg+' flightgroup'
+            thename=un.getFactionName().replace("_"," ")+" "+thename+ " "+snumber +' in the '+fg+' flightgroup'
         else:
-           thename=thename+":"+fg+' <'+snumber+'>'
+            thename=thename+":"+fg+' <'+snumber+'>'
     else:
         thename=thename+":"+fg+' <'+snumber+'>'
     return thename
 
 def getSignificant (whichsignificant, landable_only, capship_only):
     import vsrandom
+    rez = []
     if not (landable_only or capship_only):
         rez = getPlanetList(True) #Gets all significants
     else:
-        rez = []
-        i = VS.getUnitList()
-        while i.notDone():
-            un = i.current()
+        rez2 = getPlanetList(True)
+        for un in rez2 :
             if (capship_only and isBase(un)) or (not capship_only and isLandable(un)):
                 rez.append(un)
-            i.advance()
     if (len(rez)==0):
         if (capship_only):
             return getSignificant(whichsignificant,landable_only,0)
@@ -100,11 +97,12 @@ def getSignificant (whichsignificant, landable_only, capship_only):
   #this one terminates if fewer than so many planets exist with null
 
 def inSystem (unit):
-    i=VS.getUnitList ()
-    while (i.notDone()):
-        if (i.current()==unit):
+    i=VS.viewUnitList ()
+    un = i.current()
+    while (not i.isDone()):
+        if (un==unit):
             return 1
-        i.advance()
+        un = i.next()
     return 0
 
 def getPlanet (whichsignificant, sig):
@@ -112,26 +110,24 @@ def getPlanet (whichsignificant, sig):
     if sig:
         i.advanceNSignificant(whichsignificant)
     else:
-        i.advanceNPlanet(whichshignificant)   
+        i.advanceNPlanet(whichshignificant)
     if i.isDone():
         return VS.Unit()
-    else:
-        return i.current()
+    return i.current()
 
 def getPlanetList (sig):
     res = []
     i = VS.getUnitList()
-    if i.notDone():
-        if sig:
-            i.advanceNSignificant(0)
-        else:
-            i.advanceNPlanet(0)
-    while i.notDone():
-        res.append(i.current())
-        if sig:
+    if sig: 
+        i.advanceNSignfificant(0)
+        while (not i.isDone()):
+            res.append(i.current())
             i.advanceSignificant()
-        else:
-            i.advancePlanet()   
+    else:
+        i.advanceNPlanet(0)
+        while (not i.isDone()):
+            res.append(i.current())
+            i.advancePlanet()
     return res
 
 def getJumpPoint(whichsignificant):
@@ -144,39 +140,39 @@ def getJumpPoint(whichsignificant):
     else:
         return i.current()
 
-def obsolete_getNearestEnemy(my_unit,range):
+def obsolete_getNearestEnemy(my_unit,my_range):
     i = VS.getUnitList()
     min_dist=9999999.0
     min_enemy=VS.Unit()
-    while(i.notDone()):
-        un=i.current()
+    un=i.current()
+    while(not i.isDone()):
         unit_pos=un.Position()
         dist=my_unit.getMinDis(unit_pos)
         relation=my_unit.getRelation(unit)
         if(relation<0.0):
-            if((my_unit==unit) and (dist<range) and (dist<min_dist)):
+            if((my_unit==unit) and (dist<my_range) and (dist<min_dist)):
                 min_dist=dist
                 min_enemy=unit
-        i.advance()
+        un = i.next()
     if(min_enemy):
         other_fgid=min_enemy.getFgID()
     return min_enemy
 
-def obsolete_getThreatOrEnemyInRange(un,range):
+def obsolete_getThreatOrEnemyInRange(un,my_range):
     threat=un.getThreat()
     if(threat.isNull()):
-        threat=obsolete_getNearestEnemy(un,range)
+        threat=obsolete_getNearestEnemy(un,my_range)
     return threat
 
 def setPreciseTargetShip (which_fgid, target_unit):
     if (target_unit):
         i = VS.getUnitList()
-        while i.notDone():
-            un = i.current()
+        un = i.current()
+        while (not i.isDone()):
             unit_fgid=un.getFgID()
             if(unit_fgid[:len(which_fgid)]==which_fgid):
                 un.SetTarget(target_unit)
-            i.advance()
+            un = i.next()
 
 def getMinDistFrom(sig1,siglist=None):
     siglist=siglist or getPlanetList(0)
@@ -210,12 +206,13 @@ def getUnitByFgIDFromNumber(fgid, ship_nr):
     i = VS.getUnitList()
     i.advanceN(ship_nr)
     found_unit = VS.Unit()
-    while i.notDone() and not found_unit:
-        un = i.current()
+    un = i.current()
+    while (not i.isDone()):
         unit_fgid=un.getFgID()
         if(unit_fgid==fgid):
             found_unit=un
-        i.advance()
+            break
+        un = i.next()
     return found_unit
 
 def getUnitByFgID(fgid):
@@ -227,15 +224,12 @@ def setTargetShip(which_fgid,target_fgid):
 
 def removeFg(which_fgid):
     i = VS.getUnitList()
-    klist = []
-    while i.notDone():
-        un = i.current()
+    un = i.current()
+    while (not i.isDone()):
         unit_fgid=un.getFgID()
         if(unit_fgid[:len(which_fgid)]==which_fgid):
-            klist.append(un)
-        i.advance()
-    for un in klist:
-        un.Kill()
+            un.Kill()
+        un = i.next()
 
 # A collection of functions useful for dealing with flightgroup tuples.
 # Added as used.
@@ -285,13 +279,13 @@ def getUnitSequenceBackwards():
     rez1 = []
     rez2 = []
     i = VS.getUnitList()
-    while i.notDone():
-       rez1.append(i.current())
-       i.advance()
+    while (not i.isDone()):
+        rez1.append(i.current())
+        i.advance()
     i = len(rez1)-1
     while (i>=0):
-       rez2.append(rez1[i])
-       i-=1
+        rez2.append(rez1[i])
+        i-=1
     return rez2
 
 # the ship will approach the station until 500 meters and then dock

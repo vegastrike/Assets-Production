@@ -45,7 +45,7 @@ class random_encounters:
     def __init__(self, sigdis, detectiondis, gendis,  minnships, gennships, unitprob, enemyprob, capprob, capdist):
         unitprob=1
         debug.debug("init random enc")
-        
+
         self.capship_gen_distance=capdist
         #    player_num=player
         self.enprob = enemyprob
@@ -117,13 +117,13 @@ class random_encounters:
     def AsteroidNear (self,uni, how):
         i = VS.getUnitList()
         dd = self.cur.detection_distance
-        while i.notDone():
-            un = i.current()            
+        un = i.current()
+        while (not i.isDone()):
             if (uni.getSignificantDistance(un)<how):
                 if (unit.isAsteroid (un)):
                     debug.debug("asty near")
                     return 1
-            i.advance()
+            un = i.next()
         return 0
     def TrueEnProb(self,enprob):
         ret=1
@@ -139,79 +139,82 @@ class random_encounters:
             debug.debug("hola!")
             return
         cursys=VS.getSystemFile()
-	cursysfaction=VS.GetGalaxyFaction(cursys)
-	
-	#   Computing probability numbers is relatively expensive,
-	# accessing multiple times FG/Galaxy/Universe API.
-	#   Although with some optimization it becomes acceptable on
-	# a director loop, this is still much better: we compute
-	# probabilities roughly once per system entry, and then just
-	# launch a single flightgroup per director execution (to spread
-	# launch load in time and make it less intrusive on gameplay -
-	# ie, stutter less noticeably). Outside code will take care
-	# of ceasing to call this function when no more flightgroups
-	# are needed.
-	
-	# Validate probability cache
-	if    (cursysfaction != self.probability_cache[0]) \
-	   or (cursys != self.probability_cache[1]) \
-	   or (faction_ships.getMaxFactions() != len(self.probability_cache[2])):
-	    debug.debug('Probability numbers:')
-	    psum = 0
-	    probs = []
-	    for factionnum in range(faction_ships.getMaxFactions()):
-        	faction=faction_ships.intToFaction(factionnum)
-        	num=fg_util.NumFactionFGsInSystem(faction,cursys) # will count bases... but... much quicker.
-		if num==1:
-		    #cannot accept counting bases in this case...
-		    num=len(fg_util.FGsInSystem(faction,cursys))
-	
-        	avg=float(num)/float(fg_util.MaxNumFlightgroupsInSystem(cursys))#/float(numsigs)
-        	fortress_level=0
-        	if cursys in faction_ships.fortress_systems:
-		    foretress_level=faction_ships.fortress_systems[cursys]
-		    avg*=(not (VS.GetRelation(cursysfaction,faction)<0 and cursys in faction_ships.fortress_systems))*fortress_level+(1-fortress_level)
-        	debug.debug('Chance for %s ship: %g'%(faction, avg))
-		probs.append(avg)
-		psum += avg
-	    self.probability_cache = (cursysfaction,cursys,probs,psum)
-	else:
-	    debug.debug('Probability numbers cached.')
-	
-	# Launch a single random flightgroup in the bunch
-	rnd = vsrandom.random() * self.probability_cache[3]
-	p = 0
-	for factionnum in range(len(self.probability_cache[2])):
-	    p += self.probability_cache[2][factionnum]
-	    if (p>=rnd):
+        cursysfaction=VS.GetGalaxyFaction(cursys)
+
+        #   Computing probability numbers is relatively expensive,
+        # accessing multiple times FG/Galaxy/Universe API.
+        #   Although with some optimization it becomes acceptable on
+        # a director loop, this is still much better: we compute
+        # probabilities roughly once per system entry, and then just
+        # launch a single flightgroup per director execution (to spread
+        # launch load in time and make it less intrusive on gameplay -
+        # ie, stutter less noticeably). Outside code will take care
+        # of ceasing to call this function when no more flightgroups
+        # are needed.
+
+        # Validate probability cache
+        if    (cursysfaction != self.probability_cache[0]) \
+           or (cursys != self.probability_cache[1]) \
+           or (faction_ships.getMaxFactions() != len(self.probability_cache[2])):
+            debug.debug('Probability numbers:')
+            psum = 0
+            probs = []
+            for factionnum in range(faction_ships.getMaxFactions()):
+                faction=faction_ships.intToFaction(factionnum)
+                num=fg_util.NumFactionFGsInSystem(faction,cursys) # will count bases... but... much quicker.
+                if num==1:
+                    #cannot accept counting bases in this case...
+                    num=len(fg_util.FGsInSystem(faction,cursys))
+
+                avg=float(num)/float(fg_util.MaxNumFlightgroupsInSystem(cursys))#/float(numsigs)
+                fortress_level=0
+                if cursys in faction_ships.fortress_systems:
+                    foretress_level=faction_ships.fortress_systems[cursys]
+                    avg*=(not (VS.GetRelation(cursysfaction,faction)<0 and cursys in faction_ships.fortress_systems))*fortress_level+(1-fortress_level)
+                debug.debug('Chance for %s ship: %g'%(faction, avg))
+                probs.append(avg)
+                psum += avg
+            self.probability_cache = (cursysfaction,cursys,probs,psum)
+        else:
+            debug.debug('Probability numbers cached.')
+
+        # Launch a single random flightgroup in the bunch
+        rnd = vsrandom.random() * self.probability_cache[3]
+        p = 0
+        for factionnum in range(len(self.probability_cache[2])):
+            p += self.probability_cache[2][factionnum]
+            if (p>=rnd):
                 #now we know that we will generate some ships!
-		faction=faction_ships.intToFaction(factionnum)
-		fglist=fg_util.FGsInSystem(faction,cursys)
-		for k in range(10): #try 10 times
-		    flightgroup=fglist[vsrandom.randrange(len(fglist))]
-		    typenumbers=fg_util.GetShipsInFG(flightgroup,faction)
-		    if not len(typenumbers):
-			continue
-		    debug.debug('FG Name: "%s", ShipTypes: %s'%(flightgroup,str(typenumbers)))
-		    launch_recycle.launch_types_around(flightgroup,faction,typenumbers,'default',self.generation_distance*vsrandom.random()*0.9,un,self.generation_distance*vsrandom.random()*2,'','',100)
-		break
-	
-	# Update DJ
+                faction=faction_ships.intToFaction(factionnum)
+                fglist=fg_util.FGsInSystem(faction,cursys)
+                for k in range(10): #try 10 times
+                    flightgroup=fglist[vsrandom.randrange(len(fglist))]
+                    typenumbers=fg_util.GetShipsInFG(flightgroup,faction)
+                    if not len(typenumbers):
+                        continue
+                    debug.debug('FG Name: "%s", ShipTypes: %s'%(flightgroup,str(typenumbers)))
+                    launch_recycle.launch_types_around(flightgroup,faction,typenumbers,'default',self.generation_distance*vsrandom.random()*0.9,un,self.generation_distance*vsrandom.random()*2,'','',100)
+                    break
+                # assume after 10 tries we launched a flightgroup, we're done here
+                break
+
+        # Update DJ
         dj_lib.PlayMusik(0,dj_lib.HOSTILE_NEWLAUNCH_DISTANCE)
-	
+
     def atLeastNInsignificantUnitsNear (self,uni, n):
         num_ships=0
         leadah = uni.getFlightgroupLeader ()
         i = VS.getUnitList()
         dd = self.cur.detection_distance
-        while i.notDone():
+        i.advanceNInsignificant(0)
+        while (not i.isDone()):
             un = i.current()
             if (uni.getSignificantDistance(un)<dd*1.6):
-                if ((not un.isSignificant()) and (not un.isSun())):
+                if (not un.isSun()):
                     unleadah = un.getFlightgroupLeader ()
                     if (leadah!=unleadah):
                         num_ships+=1
-            i.advance()
+            i.advanceInsignificant()
         return num_ships>=n
 
     def SetModeZero(self):

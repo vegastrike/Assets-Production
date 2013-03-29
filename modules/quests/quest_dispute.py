@@ -266,12 +266,12 @@ class quest_dispute_factory (quest.quest_factory):
         quest.quest_factory.__init__ (self,"quest_dispute")
     def create (self):
         return quest_dispute()
- 
+
 class Executor(Director.Mission):
 # call this class from the mission file
-   def __init__(self, classesToExecute):
-      Director.Mission.__init__(self)
-      self.classes = classesToExecute
-   def Execute(self):
-      for c in self.classes:
-         c.Execute()
+    def __init__(self, classesToExecute):
+        Director.Mission.__init__(self)
+        self.classes = classesToExecute
+    def Execute(self):
+        for c in self.classes:
+            c.Execute()

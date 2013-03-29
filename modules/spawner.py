@@ -13,21 +13,21 @@ import quest
 class spawner (Director.Mission):
     def __init__ (self):
         Director.Mission.__init__(self)
-        
+
         self.fac=[]
         self.facnames=["confed","homeland-security","merchant","hunter","pirates","luddites","aera","rlaan","ISO","andolian","highborn","shaper","unadorned","purist","forsaken","LIHW","klkk","mechanist","shmrn","rlaan_briin"]
         self.facnames=self.facnames+self.facnames
         for i in range(len(self.facnames)):
             nam=self.facnames[i]+"_SPAWN"
-            if (i>=len(self.facnames)/2): 
-               nam+="_CAPSHIP"
+            if (i>=len(self.facnames)/2):
+                nam+="_CAPSHIP"
             self.fac.append(VS.launchJumppoint(nam,"neutral","75 jump.png %s (ONE ONE)"%nam,"planet","sitting_duck",1,1,Vector.Add((0.,-1000.+i*200.,1000.),VS.getPlayer().Position()),"",""))
         self.delay=VS.GetGameTime()
     def Execute (self):
         if (VS.getPlayer()):
             iter=0
             for base in self.fac:
-                
+
                 if (base.getDistance(VS.getPlayer())<0):
                     if (VS.GetGameTime()-self.delay>10):
                         self.delay=VS.GetGameTime()

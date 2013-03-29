@@ -54,10 +54,11 @@ def isAt(sysstring):
         return 0
     if un:
         iter = VS.getUnitList()
-        while iter.notDone():
-            if (playa.isDocked(iter.current()) or iter.current().isDocked(playa)):
-                return iter.current().getName() == un
-            iter.advance()
+        testun = iter.current()
+        while (not iter.isDone()):
+            if (playa.isDocked(testun) or testun.isDocked(playa)):
+                return (testun.getName() == un)
+            testun = iter.next()
         return 0
     return 1
 
@@ -68,7 +69,7 @@ def cargoIterate(ref="Root"):
     elif ref == "reject":
         putSaveValue(REJECTED)
     getCargoCon().iterate(ref)
-        
+
 
 def getCargoCon():
     con = Conversation( SAVE_KEY,

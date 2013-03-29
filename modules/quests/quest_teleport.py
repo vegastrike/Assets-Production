@@ -34,7 +34,7 @@ class quest_teleport (quest.quest):
         un.SetCurPosition(targetpos)
         VS.playAnimation("warp.ani",pos,size)
         VS.playSound("cloak.wav",pos,(1,0,0))
-        VS.playAnimation("warp.ani",targetpos,size)        
+        VS.playAnimation("warp.ani",targetpos,size)
         VS.playSound("cloak.wav",targetpos,(1,0,0))
     def teleportPlayer(self,un):
         if (un.DockedOrDocking()):
@@ -69,6 +69,3 @@ class quest_teleport_factory (quest.quest_factory):
         quest.quest_factory.__init__ (self,"quest_teleport")
     def create (self):
         return quest_teleport()
-
-
-

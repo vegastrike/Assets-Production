@@ -33,8 +33,8 @@ import debug
 upgrades_weapons_category             = "upgrades/Weapons"
 upgrades_weapons_prefixes             = ["Beam_Arrays_","Mounted_Guns_"]
 upgrades_weapons_postfixes            = ["Light","Medium","Heavy"]
-upgrades_weapons_default_weapon       = "laser" #the default weapon, used by basic ships
-upgrades_weapons_default_weapon_count = 2 #number of deafault weapons to (try to) install
+upgrades_weapons_default_weapon       = "laser"
+upgrades_weapons_default_weapon_count = 2
 
 
 # Shield names - what's the shield with 'faces' faces and of level 'level'?
@@ -48,9 +48,9 @@ def shieldBuildName(faces,level):
     return "%sshield%02d" % (facestring.get(faces,""),level+1)
 
 def shieldBuildCategory(faces,level):
-    facestring = { 
+    facestring = {
         2:"upgrades/Shield_Systems/Standard_Dual_Shields",
-        4:"upgrades/Shield_Systems/Standard_Quad_Shields" 
+        4:"upgrades/Shield_Systems/Standard_Quad_Shields"
         }
     return facestring.get(faces, "upgrades/Shield_Systems")
 
@@ -63,7 +63,7 @@ def afterburnerBuildName(level):
     return "mult_overdrive%02d" % level
 
 def afterburnerBuildCategory(level):
-    return "upgrades/Overdrive"    
+    return "upgrades/Overdrive"
 
 # Sensors category construction:
 #    Similar to weapons category construction
@@ -80,7 +80,7 @@ def reactorBuildName(level):
     return "reactor%02d" % level
 
 def reactorBuildCategory(level):
-    return "upgrades/Reactors/Standard"    
+    return "upgrades/Reactors/Standard"
 
 # Engines
 engineMaxLevel = 0
@@ -91,7 +91,7 @@ def engineBuildName(level):
     return "engine%02d" % level
 
 def engineBuildCategory(level):
-    return "upgrades/Engines/Standard"    
+    return "upgrades/Engines/Standard"
 
 # Hull upgrades
 upgrades_hull_category = None
@@ -109,7 +109,7 @@ def armorBuildName(level):
     return "armor%02d" % level
 
 def armorBuildCategory(level):
-    return "upgrades/Armor"    
+    return "upgrades/Armor"
 
 
 # Ammo - try primary, then secondary
@@ -158,7 +158,7 @@ def GetDiffCargo (diff, base_category, all_category, use_all, postfixes, dont_us
         ch=2-vsrandom.randrange(dont_use_all,3)
     elif ((diff<=0.7) or use_all):
         ch=3-vsrandom.randrange(dont_use_all,4)
-    return base_category + postfixes[(ch-1)*len(postfixes)/3]
+    return base_category + postfixes[(ch-1)*len(postfixes)//3]
 
 #this gets a random cargo listed on the master part list.
 def getItem (cat,parentcat=None):
@@ -200,7 +200,7 @@ def GetRandomShield (faces,type):#gets random shield system from master part lis
     return shieldBuildName(faces,type)
 
 def GetRandomAfterburner (diff):#get random afterburner from master part list (returns filename)
-    return afterburnerBuildName(1+diff*(GetDiffInt(diff)*(afterburnerMaxLevel-1)/5))
+    return afterburnerBuildName(1+diff*(GetDiffInt(diff)*(afterburnerMaxLevel-1)//5))
 
 def getRandomRadar (diff):
     cat=BuildDiffCat(diff,upgrades_sensors_category,upgrades_sensors_prefixes,upgrades_sensors_postfixes,1,0)
@@ -222,8 +222,8 @@ def UpgradeAfterburner (un,diff):
 
 def getRandomEngine (diff): #get random engine from master part list
     myint=GetDiffInt(diff)
-    cat=engineBuildName(myint*engineMaxLevel/5)
-    dog=reactorBuildName(myint*reactorMaxLevel/5)
+    cat=engineBuildName(myint*engineMaxLevel//5)
+    dog=reactorBuildName(myint*reactorMaxLevel//5)
     return (myint,cat,dog)
 
 def UpgradeEngine (un, diff):
@@ -255,7 +255,7 @@ def GetRandomTurret ():
     return getItem(upgrades_turrets_category,None) # No fallback
 
 def GetRandomArmor (diff):
-    return VS.GetMasterPartList().GetCargo(armorBuildName(1+diff*(GetDiffInt(diff)*(armorMaxLevel-1)/5)))
+    return VS.GetMasterPartList().GetCargo(armorBuildName(1+diff*(GetDiffInt(diff)*(armorMaxLevel-1)//5)))
 
 def UpgradeArmor (un, diff):
     return un.upgrade(GetRandomArmor(diff).GetContent(),0,0,1,0)
@@ -297,7 +297,7 @@ def upgradeUnit (un, diff):
     creds=0.0
     curmount=0
     mycargo=VS.Cargo("","",0,0,0,0)
-    str=""
+    mystr=""
     basicUnit(un,diff)
     mycargo = GetRandomHull() #ok now we get some hull upgrades
     creds =upgradeHelper (un,mycargo,0,creds,1,0)
@@ -308,12 +308,7 @@ def upgradeUnit (un, diff):
     if (rndnum<diff):
         mycargo = GetRandomRepairSys() #here there is a small chance that you will get a repair system.
         creds =upgradeHelper (un,mycargo,0,creds,1,0)
-    turretz=un.getSubUnits()
-    turretcount=0
-    while (turretz.current()):
-        turretz.advance()
-        turretcount += 1
-    turretcount-=1
+    turretcount = un.getSubUnits().size() - 1
     for i in range(turretcount):
         for j in range(4):
             mycargo=GetRandomTurret()#turrets as 3rd...
