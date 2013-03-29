@@ -16,7 +16,7 @@ def getPlayerUnboundDifficulty (playa):
     global unbounddiff
 #  print 'unbound diff '+str(unbounddiff)+' player '+str(playa)
     if (playa>=len(unbounddiff)):
-        print 'error no difficulty set'
+        print('error no difficulty set')
         return 0
     return unbounddiff[playa]
 

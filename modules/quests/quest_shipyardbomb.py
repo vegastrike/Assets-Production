@@ -42,11 +42,11 @@ class quest_shipyardbomb (quest.quest):
         if (VS.getSystemName()==self.system and self.player and self.shipyard):
             if (self.stage==1 and VS.GetGameTime()>=self.timer):
                 if (self.shipyard.getSignificantDistance(self.player) > 20000):
-                    print 'shipy ret'
-                    print "distance" + str(self.shipyard.getSignificantDistance(self.player))
+                    print('shipy ret')
+                    print("distance" + str(self.shipyard.getSignificantDistance(self.player)))
                     return 1
                 else:
-                    print 'killing'
+                    print('killing')
                     pos = self.shipyard.Position()
                     size = 10*self.shipyard.rSize()
                     VS.playAnimation("explosion_orange.ani",pos,size)

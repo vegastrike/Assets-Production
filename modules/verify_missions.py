@@ -47,7 +47,7 @@ def verifyMission(name,args,campaign=None):
     elif name=='ambush_scan':
         mission=AmbushScan(args)
     if mission is None:
-        print 'Unsupported mission type'
+        print('Unsupported mission type')
         return False
     else:
         return mission.isValid()
@@ -96,14 +96,14 @@ class Argument:
 
     def printwarnings(self):
         for warning in self.warnings:
-            print "\'%s\' Argument Warning: "%self.NAME + warning
+            print("\'%s\' Argument Warning: "%self.NAME + warning)
 
 class PositiveInt(Argument):
 
     NAME="PositiveInt"
 
     def checkValidity(self):
-        if isinstance(self.value,long) or isinstance(self.value,int):
+        if isinstance(self.value,int) or isinstance(self.value,int):
             if self.value < 0:
                 self.warn("Value %s is not a positive integer"%str(self.value))
                 return False
@@ -119,7 +119,7 @@ class PositiveIntList(Argument):
     def checkValidity(self):
         if isinstance(self.value,list):
             for val in self.value:
-                if isinstance(val,long) or isinstance(val,int):
+                if isinstance(val,int) or isinstance(val,int):
                     if self.value < 0:
                         self.warn("Value %s is not a positive integer"%str(val))
                         return False
@@ -168,7 +168,7 @@ class ZeroInt(Argument):
     NAME="ZeroInt"
 
     def checkValidity(self):
-        if isinstance(self.value,long) or isinstance(self.value,int):
+        if isinstance(self.value,int) or isinstance(self.value,int):
             if self.value != 0:
                 self.warn("Value %s is not 0"%str(self.value))
                 return False
@@ -181,7 +181,7 @@ class System(Argument):
     NAME="System"
 
     def checkValidity(self):
-        v = ( VS.universe.has_key(self.value) )
+        v = ( self.value in VS.universe )
         if not v:
             self.warn("System %s does not exist in universe"%self.value)
             return False
@@ -193,7 +193,7 @@ class SystemTuple(Argument):
 
     def checkValidity(self):
         for sys in self.value:
-            v = ( VS.universe.has_key(sys) )
+            v = ( sys in VS.universe )
             if not v:
                 self.warn("System %s does not exist in universe"%sys)
                 return False
@@ -270,7 +270,7 @@ class ShipFactionPair(Argument):
         if len(self.value) != 2:
             self.warn("%s does not have a length of 2")
             return False
-        if self.value[0] not in faction_ships.stattable.keys():
+        if self.value[0] not in list(faction_ships.stattable.keys()):
             self.warn("%s is not a valid shiptype")%str(self.value[0])
             return False
         if self.value[1] not in VS._factions:
@@ -296,7 +296,7 @@ class ShipType(Argument):
     NAME="ShipType"
 
     def checkValidity(self):
-        if self.value not in faction_ships.stattable.keys():
+        if self.value not in list(faction_ships.stattable.keys()):
             self.warn(str(self.value)+" ship type unknown")
             return False
         return True
@@ -309,7 +309,7 @@ class ShipTypeList(Argument):
         if type(self.value)==type(""):
             self.value=[self.value]
         for val in self.value:
-            if val not in faction_ships.stattable.keys():
+            if val not in list(faction_ships.stattable.keys()):
                 self.warn("%s is not a valid shiptype"%val)
                 return False
         return True
@@ -391,18 +391,18 @@ class MissionVerifier:
         if len(newargs) > len(self.args):
             raise RuntimeError("More arguments given than this object supports")
         if givenargs:
-            for i in xrange(len(newargs)):
+            for i in range(len(newargs)):
                 self.args[i].set(newargs[i])
 
     def isValid(self):
         for a in self.args:
             if not a.isValid():
-                print self.origargs
+                print(self.origargs)
                 return False
         return True
 
     def warn(self, text):
-        print "Mission Warning: " + text
+        print("Mission Warning: " + text)
 
 class AmbushVerifier(MissionVerifier):
     MISSION_ARGS=[SaveVar(),SystemTuple(System()),PositiveNumber(),FactionList(),PositiveInt(PositiveIntList()),ShipType(ShipTypeList(Empty()),Default()),DynFG(None,Default()),TextList(None,Default()),SystemTuple(None,Default()),Destination(None,Default()),Boolean(None,Default())]

@@ -4,21 +4,21 @@ Classes:
     dircmp
 
 Functions:
-    cmp(f1, f2, shallow=1, use_statcache=0) -> int
+    cmp(f1, f2, shallow=True) -> int
     cmpfiles(a, b, common) -> ([], [], [])
 
 """
 
 import os
 import stat
-import statcache
+from itertools import filterfalse
 
-__all__ = ["cmp","dircmp","cmpfiles"]
+__all__ = ["cmp", "dircmp", "cmpfiles"]
 
 _cache = {}
-BUFSIZE=8*1024
+BUFSIZE = 8*1024
 
-def cmp(f1, f2, shallow=1, use_statcache=0):
+def cmp(f1, f2, shallow=True):
     """Compare two files.
 
     Arguments:
@@ -30,62 +30,54 @@ def cmp(f1, f2, shallow=1, use_statcache=0):
     shallow -- Just check stat signature (do not read the files).
                defaults to 1.
 
-    use_statcache -- Do not stat() each file directly: go through
-                     the statcache module for more efficiency.
-
     Return value:
 
-    integer -- 1 if the files are the same, 0 otherwise.
+    True if the files are the same, False otherwise.
 
     This function uses a cache for past comparisons and the results,
     with a cache invalidation mechanism relying on stale signatures.
-    Of course, if 'use_statcache' is true, this mechanism is defeated,
-    and the cache will never grow stale.
 
     """
-    if use_statcache:
-        stat_function = statcache.stat
-    else:
-        stat_function = os.stat
-    s1 = _sig(stat_function(f1))
-    s2 = _sig(stat_function(f2))
-    if s1[0] != stat.S_IFREG or s2[0] != stat.S_IFREG:
-        return 0
-    if shallow and s1 == s2:
-        return 1
-    if s1[1] != s2[1]:
-        return 0
 
-    result = _cache.get((f1, f2))
-    if result and (s1, s2) == result[:2]:
-        return result[2]
-    outcome = _do_cmp(f1, f2)
-    _cache[f1, f2] = s1, s2, outcome
+    s1 = _sig(os.stat(f1))
+    s2 = _sig(os.stat(f2))
+    if s1[0] != stat.S_IFREG or s2[0] != stat.S_IFREG:
+        return False
+    if shallow and s1 == s2:
+        return True
+    if s1[1] != s2[1]:
+        return False
+
+    outcome = _cache.get((f1, f2, s1, s2))
+    if outcome is None:
+        outcome = _do_cmp(f1, f2)
+        if len(_cache) > 100:      # limit the maximum size of the cache
+            _cache.clear()
+        _cache[f1, f2, s1, s2] = outcome
     return outcome
 
 def _sig(st):
-    return (stat.S_IFMT(st[stat.ST_MODE]),
-            st[stat.ST_SIZE],
-            st[stat.ST_MTIME])
+    return (stat.S_IFMT(st.st_mode),
+            st.st_size,
+            st.st_mtime)
 
 def _do_cmp(f1, f2):
     bufsize = BUFSIZE
-    fp1 = open(f1, 'rb')
-    fp2 = open(f2, 'rb')
-    while 1:
-        b1 = fp1.read(bufsize)
-        b2 = fp2.read(bufsize)
-        if b1 != b2:
-            return 0
-        if not b1:
-            return 1
+    with open(f1, 'rb') as fp1, open(f2, 'rb') as fp2:
+        while True:
+            b1 = fp1.read(bufsize)
+            b2 = fp2.read(bufsize)
+            if b1 != b2:
+                return False
+            if not b1:
+                return True
 
 # Directory comparison class.
 #
 class dircmp:
     """A class that manages the comparison of 2 directories.
 
-    dircmp(a,b,ignore=None,hide=None)
+    dircmp(a, b, ignore=None, hide=None)
       A and B are directories.
       IGNORE is a list of names to ignore,
         defaults to ['RCS', 'CVS', 'tags'].
@@ -136,46 +128,12 @@ class dircmp:
         self.left_list.sort()
         self.right_list.sort()
 
-    __p4_attrs = ('subdirs',)
-    __p3_attrs = ('same_files', 'diff_files', 'funny_files')
-    __p2_attrs = ('common_dirs', 'common_files', 'common_funny')
-    __p1_attrs = ('common', 'left_only', 'right_only')
-    __p0_attrs = ('left_list', 'right_list')
-
-    def __getattr__(self, attr):
-        if attr in self.__p4_attrs:
-            self.phase4()
-        elif attr in self.__p3_attrs:
-            self.phase3()
-        elif attr in self.__p2_attrs:
-            self.phase2()
-        elif attr in self.__p1_attrs:
-            self.phase1()
-        elif attr in self.__p0_attrs:
-            self.phase0()
-        else:
-            raise AttributeError, attr
-        return getattr(self, attr)
-
     def phase1(self): # Compute common names
-        a_only, b_only = [], []
-        common = {}
-        b = {}
-        for fnm in self.right_list:
-            b[fnm] = 1
-        for x in self.left_list:
-            if b.get(x, 0):
-                common[x] = 1
-            else:
-                a_only.append(x)
-        for x in self.right_list:
-            if common.get(x, 0):
-                pass
-            else:
-                b_only.append(x)
-        self.common = common.keys()
-        self.left_only = a_only
-        self.right_only = b_only
+        a = dict(zip(map(os.path.normcase, self.left_list), self.left_list))
+        b = dict(zip(map(os.path.normcase, self.right_list), self.right_list))
+        self.common = list(map(a.__getitem__, filter(b.__contains__, a)))
+        self.left_only = list(map(a.__getitem__, filterfalse(b.__contains__, a)))
+        self.right_only = list(map(b.__getitem__, filterfalse(a.__contains__, b)))
 
     def phase2(self): # Distinguish files, directories, funnies
         self.common_dirs = []
@@ -188,19 +146,19 @@ class dircmp:
 
             ok = 1
             try:
-                a_stat = statcache.stat(a_path)
-            except os.error, why:
-                # print 'Can\'t stat', a_path, ':', why[1]
+                a_stat = os.stat(a_path)
+            except os.error as why:
+                # print('Can\'t stat', a_path, ':', why.args[1])
                 ok = 0
             try:
-                b_stat = statcache.stat(b_path)
-            except os.error, why:
-                # print 'Can\'t stat', b_path, ':', why[1]
+                b_stat = os.stat(b_path)
+            except os.error as why:
+                # print('Can\'t stat', b_path, ':', why.args[1])
                 ok = 0
 
             if ok:
-                a_type = stat.S_IFMT(a_stat[stat.ST_MODE])
-                b_type = stat.S_IFMT(b_stat[stat.ST_MODE])
+                a_type = stat.S_IFMT(a_stat.st_mode)
+                b_type = stat.S_IFMT(b_stat.st_mode)
                 if a_type != b_type:
                     self.common_funny.append(x)
                 elif stat.S_ISDIR(a_type):
@@ -228,54 +186,64 @@ class dircmp:
 
     def phase4_closure(self): # Recursively call phase4() on subdirectories
         self.phase4()
-        for x in self.subdirs.keys():
-            self.subdirs[x].phase4_closure()
+        for sd in self.subdirs.values():
+            sd.phase4_closure()
 
     def report(self): # Print a report on the differences between a and b
         # Output format is purposely lousy
-        print 'diff', self.left, self.right
+        print('diff', self.left, self.right)
         if self.left_only:
             self.left_only.sort()
-            print 'Only in', self.left, ':', self.left_only
+            print('Only in', self.left, ':', self.left_only)
         if self.right_only:
             self.right_only.sort()
-            print 'Only in', self.right, ':', self.right_only
+            print('Only in', self.right, ':', self.right_only)
         if self.same_files:
             self.same_files.sort()
-            print 'Identical files :', self.same_files
+            print('Identical files :', self.same_files)
         if self.diff_files:
             self.diff_files.sort()
-            print 'Differing files :', self.diff_files
+            print('Differing files :', self.diff_files)
         if self.funny_files:
             self.funny_files.sort()
-            print 'Trouble with common files :', self.funny_files
+            print('Trouble with common files :', self.funny_files)
         if self.common_dirs:
             self.common_dirs.sort()
-            print 'Common subdirectories :', self.common_dirs
+            print('Common subdirectories :', self.common_dirs)
         if self.common_funny:
             self.common_funny.sort()
-            print 'Common funny cases :', self.common_funny
+            print('Common funny cases :', self.common_funny)
 
     def report_partial_closure(self): # Print reports on self and on subdirs
         self.report()
-        for x in self.subdirs.keys():
-            print
-            self.subdirs[x].report()
+        for sd in self.subdirs.values():
+            print()
+            sd.report()
 
     def report_full_closure(self): # Report on self and subdirs recursively
         self.report()
-        for x in self.subdirs.keys():
-            print
-            self.subdirs[x].report_full_closure()
+        for sd in self.subdirs.values():
+            print()
+            sd.report_full_closure()
 
+    methodmap = dict(subdirs=phase4,
+                     same_files=phase3, diff_files=phase3, funny_files=phase3,
+                     common_dirs = phase2, common_files=phase2, common_funny=phase2,
+                     common=phase1, left_only=phase1, right_only=phase1,
+                     left_list=phase0, right_list=phase0)
 
-def cmpfiles(a, b, common, shallow=1, use_statcache=0):
+    def __getattr__(self, attr):
+        if attr not in self.methodmap:
+            raise AttributeError(attr)
+        self.methodmap[attr](self)
+        return getattr(self, attr)
+
+def cmpfiles(a, b, common, shallow=True):
     """Compare common files in two directories.
 
     a, b -- directory names
     common -- list of file names found in both directories
     shallow -- if true, do comparison based solely on stat() information
-    use_statcache -- if true, use statcache.stat() instead of os.stat()
 
     Returns a tuple of three lists:
       files that compare equal
@@ -287,7 +255,7 @@ def cmpfiles(a, b, common, shallow=1, use_statcache=0):
     for x in common:
         ax = os.path.join(a, x)
         bx = os.path.join(b, x)
-        res[_cmp(ax, bx, shallow, use_statcache)].append(x)
+        res[_cmp(ax, bx, shallow)].append(x)
     return res
 
 
@@ -297,20 +265,17 @@ def cmpfiles(a, b, common, shallow=1, use_statcache=0):
 #       1 for different
 #       2 for funny cases (can't stat, etc.)
 #
-def _cmp(a, b, sh, st):
+def _cmp(a, b, sh, abs=abs, cmp=cmp):
     try:
-        return not abs(cmp(a, b, sh, st))
+        return not abs(cmp(a, b, sh))
     except os.error:
         return 2
 
 
 # Return a copy with items that occur in skip removed.
 #
-def _filter(list, skip):
-    result = []
-    for item in list:
-        if item not in skip: result.append(item)
-    return result
+def _filter(flist, skip):
+    return list(filterfalse(skip.__contains__, flist))
 
 
 # Demonstration and testing.
@@ -320,7 +285,7 @@ def demo():
     import getopt
     options, args = getopt.getopt(sys.argv[1:], 'r')
     if len(args) != 2:
-        raise getopt.error, 'need exactly two args'
+        raise getopt.GetoptError('need exactly two args', None)
     dd = dircmp(args[0], args[1])
     if ('-r', '') in options:
         dd.report_full_closure()

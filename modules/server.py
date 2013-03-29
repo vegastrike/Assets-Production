@@ -178,7 +178,7 @@ def processMessage(cp, localhost, command, arglist=None, id=''):
 			mod=server_lib
 			reload(mod)
 			VS.IOmessage(0,"game","all","The server python script has been reloaded!")
-			print mod.__name__+' has been reloaded!'
+			print(mod.__name__+' has been reloaded!')
 		else:
 			server_lib.processMessage(pl, authlevel, cmd, args, id)
 	except:

@@ -12,19 +12,6 @@ from codeop import CommandCompiler, compile_command
 __all__ = ["InteractiveInterpreter", "InteractiveConsole", "interact",
            "compile_command"]
 
-def softspace(file, newvalue):
-    oldvalue = 0
-    try:
-        oldvalue = file.softspace
-    except AttributeError:
-        pass
-    try:
-        file.softspace = newvalue
-    except (AttributeError, TypeError):
-        # "attribute-less object" or "read-only attributes"
-        pass
-    return oldvalue
-
 class InteractiveInterpreter:
     """Base class for InteractiveConsole.
 
@@ -66,7 +53,7 @@ class InteractiveInterpreter:
         object.  The code is executed by calling self.runcode() (which
         also handles run-time exceptions, except for SystemExit).
 
-        The return value is 1 in case 2, 0 in the other cases (unless
+        The return value is True in case 2, False in the other cases (unless
         an exception is raised).  The return value can be used to
         decide whether to use sys.ps1 or sys.ps2 to prompt the next
         line.
@@ -77,15 +64,15 @@ class InteractiveInterpreter:
         except (OverflowError, SyntaxError, ValueError):
             # Case 1
             self.showsyntaxerror(filename)
-            return 0
+            return False
 
         if code is None:
             # Case 2
-            return 1
+            return True
 
         # Case 3
         self.runcode(code)
-        return 0
+        return False
 
     def runcode(self, code):
         """Execute a code object.
@@ -100,14 +87,11 @@ class InteractiveInterpreter:
 
         """
         try:
-            exec code in self.locals
+            exec(code, self.locals)
         except SystemExit:
             raise
         except:
             self.showtraceback()
-        else:
-            if softspace(sys.stdout, 0):
-                print
 
     def showsyntaxerror(self, filename=None):
         """Display the syntax error that just occurred.
@@ -127,21 +111,16 @@ class InteractiveInterpreter:
         if filename and type is SyntaxError:
             # Work hard to stuff the correct filename in the exception
             try:
-                msg, (dummy_filename, lineno, offset, line) = value
-            except:
+                msg, (dummy_filename, lineno, offset, line) = value.args
+            except ValueError:
                 # Not the format we expect; leave it alone
                 pass
             else:
                 # Stuff in the right filename
-                try:
-                    # Assume SyntaxError is a class exception
-                    value = SyntaxError(msg, (filename, lineno, offset, line))
-                except:
-                    # If that failed, assume SyntaxError is a string
-                    value = msg, (filename, lineno, offset, line)
+                value = SyntaxError(msg, (filename, lineno, offset, line))
                 sys.last_value = value
-        list = traceback.format_exception_only(type, value)
-        map(self.write, list)
+        lines = traceback.format_exception_only(type, value)
+        self.write(''.join(lines))
 
     def showtraceback(self):
         """Display the exception that just occurred.
@@ -158,13 +137,13 @@ class InteractiveInterpreter:
             sys.last_traceback = tb
             tblist = traceback.extract_tb(tb)
             del tblist[:1]
-            list = traceback.format_list(tblist)
-            if list:
-                list.insert(0, "Traceback (most recent call last):\n")
-            list[len(list):] = traceback.format_exception_only(type, value)
+            lines = traceback.format_list(tblist)
+            if lines:
+                lines.insert(0, "Traceback (most recent call last):\n")
+            lines.extend(traceback.format_exception_only(type, value))
         finally:
             tblist = tb = None
-        map(self.write, list)
+        self.write(''.join(lines))
 
     def write(self, data):
         """Write a string.
@@ -205,7 +184,7 @@ class InteractiveConsole(InteractiveInterpreter):
     def interact(self, banner=None):
         """Closely emulate the interactive Python console.
 
-        The optional banner argument specify the banner to print
+        The optional banner argument specifies the banner to print
         before the first interaction; by default it prints a banner
         similar to the one printed by the real Python interpreter,
         followed by the current class name in parentheses (so as not
@@ -221,7 +200,7 @@ class InteractiveConsole(InteractiveInterpreter):
             sys.ps2
         except AttributeError:
             sys.ps2 = "... "
-        cprt = 'Type "copyright", "credits" or "license" for more information.'
+        cprt = 'Type "help", "copyright", "credits" or "license" for more information.'
         if banner is None:
             self.write("Python %s on %s\n%s\n(%s)\n" %
                        (sys.version, sys.platform, cprt,
@@ -275,11 +254,12 @@ class InteractiveConsole(InteractiveInterpreter):
         When the user enters the EOF key sequence, EOFError is raised.
 
         The base implementation uses the built-in function
-        raw_input(); a subclass may replace this with a different
+        input(); a subclass may replace this with a different
         implementation.
 
         """
-        return raw_input(prompt)
+        return input(prompt)
+
 
 
 def interact(banner=None, readfunc=None, local=None):
@@ -302,10 +282,10 @@ def interact(banner=None, readfunc=None, local=None):
     else:
         try:
             import readline
-        except:
+        except ImportError:
             pass
     console.interact(banner)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     interact()

@@ -8,17 +8,6 @@
 
 from select import select
 import os
-
-# Absurd:  import termios and then delete it.  This is to force an attempt
-# to import pty to raise an ImportError on platforms that lack termios.
-# Without this explicit import of termios here, some other module may
-# import tty first, which in turn imports termios and dies with an
-# ImportError then.  But since tty *does* exist across platforms, that
-# leaves a damaged module object for tty in sys.modules, and the import
-# of tty here then appears to work despite that the tty imported is junk.
-import termios
-del termios
-
 import tty
 
 __all__ = ["openpty","fork","spawn"]
@@ -66,9 +55,9 @@ def _open_terminal():
         pass
     else:
         try:
-            tty_name, master_fd = sgi._getpty(os.O_RDWR, 0666, 0)
-        except IOError, msg:
-            raise os.error, msg
+            tty_name, master_fd = sgi._getpty(os.O_RDWR, 0o666, 0)
+        except IOError as msg:
+            raise os.error(msg)
         return master_fd, tty_name
     for x in 'pqrstuvwxyzPQRST':
         for y in '0123456789abcdef':
@@ -78,7 +67,7 @@ def _open_terminal():
             except os.error:
                 continue
             return (fd, '/dev/tty' + x + y)
-    raise os.error, 'out of pty devices'
+    raise os.error('out of pty devices')
 
 def slave_open(tty_name):
     """slave_open(tty_name) -> slave_fd
@@ -86,7 +75,17 @@ def slave_open(tty_name):
     opened filedescriptor.
     Deprecated, use openpty() instead."""
 
-    return os.open(tty_name, os.O_RDWR)
+    result = os.open(tty_name, os.O_RDWR)
+    try:
+        from fcntl import ioctl, I_PUSH
+    except ImportError:
+        return result
+    try:
+        ioctl(result, I_PUSH, "ptem")
+        ioctl(result, I_PUSH, "ldterm")
+    except IOError:
+        pass
+    return result
 
 def fork():
     """fork() -> (pid, master_fd)
@@ -119,12 +118,18 @@ def fork():
         if (slave_fd > STDERR_FILENO):
             os.close (slave_fd)
 
+        # Explicitly open the tty to make it become a controlling tty.
+        tmp_fd = os.open(os.ttyname(STDOUT_FILENO), os.O_RDWR)
+        os.close(tmp_fd)
+    else:
+        os.close(slave_fd)
+
     # Parent and child process.
     return pid, master_fd
 
 def _writen(fd, data):
     """Write all the data to a descriptor."""
-    while data != '':
+    while data:
         n = os.write(fd, data)
         data = data[n:]
 
@@ -137,15 +142,21 @@ def _copy(master_fd, master_read=_read, stdin_read=_read):
     Copies
             pty master -> standard output   (master_read)
             standard input -> pty master    (stdin_read)"""
-    while 1:
-        rfds, wfds, xfds = select(
-                [master_fd, STDIN_FILENO], [], [])
+    fds = [master_fd, STDIN_FILENO]
+    while True:
+        rfds, wfds, xfds = select(fds, [], [])
         if master_fd in rfds:
             data = master_read(master_fd)
-            os.write(STDOUT_FILENO, data)
+            if not data:  # Reached EOF.
+                fds.remove(master_fd)
+            else:
+                os.write(STDOUT_FILENO, data)
         if STDIN_FILENO in rfds:
             data = stdin_read(STDIN_FILENO)
-            _writen(master_fd, data)
+            if not data:
+                fds.remove(STDIN_FILENO)
+            else:
+                _writen(master_fd, data)
 
 def spawn(argv, master_read=_read, stdin_read=_read):
     """Create a spawned process."""
@@ -153,10 +164,17 @@ def spawn(argv, master_read=_read, stdin_read=_read):
         argv = (argv,)
     pid, master_fd = fork()
     if pid == CHILD:
-        apply(os.execlp, (argv[0],) + argv)
-    mode = tty.tcgetattr(STDIN_FILENO)
-    tty.setraw(STDIN_FILENO)
+        os.execlp(argv[0], *argv)
+    try:
+        mode = tty.tcgetattr(STDIN_FILENO)
+        tty.setraw(STDIN_FILENO)
+        restore = 1
+    except tty.error:    # This is the same as termios.error
+        restore = 0
     try:
         _copy(master_fd, master_read, stdin_read)
-    except IOError:
-        tty.tcsetattr(STDIN_FILENO, tty.TCSAFLUSH, mode)
+    except (IOError, OSError):
+        if restore:
+            tty.tcsetattr(STDIN_FILENO, tty.TCSAFLUSH, mode)
+
+    os.close(master_fd)

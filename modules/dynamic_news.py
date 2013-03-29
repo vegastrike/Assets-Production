@@ -120,7 +120,7 @@ class NewsTranslator:
     syste_['system'] = system.getInfo(system.SYSTEM)
     syste_['sector'] = system.getInfo(system.SECTOR)
     self.vars['system'] = syste_
-    for i in xrange(len(self.item)):
+    for i in range(len(self.item)):
       self.item[i] = self.translateWord(self.item[i])
     return string.join(self.item) + self.STARDATE_TEXT + stardate.formatStarDate(self.vars['dockedat']['faction'],self.vars['stardate']['value']) + "\\INDY - Independent Daily Yarn"
 
@@ -130,7 +130,7 @@ class NewsTranslator:
     the markup."""
     for pun in punc:
       tex = text.split(pun)
-      for i in xrange(len(tex)):
+      for i in range(len(tex)):
         if len(tex[i]) > 1:
           tex[i] = tex[i][0].capitalize() + tex[i][1:]
         else:
@@ -390,7 +390,7 @@ class NewsManager:
         done_syslist+=syslist
         new_syslist = list()
         for syst in syslist:
-          for i in xrange(VS.GetNumAdjacentSystems(syst)):
+          for i in range(VS.GetNumAdjacentSystems(syst)):
             sy = VS.GetAdjacentSystem(syst,i)
             if sy not in done_syslist:
               new_syslist.append(sy)

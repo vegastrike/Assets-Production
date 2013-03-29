@@ -4,8 +4,8 @@
 import sys
 
 if len(sys.argv) <= 1:
-    print "Usage: process_includes.py <file1> .. <filen>"
-    print "Will create <file1>.pp .. <filen>.pp"
+    print("Usage: process_includes.py <file1> .. <filen>")
+    print("Will create <file1>.pp .. <filen>.pp")
     sys.exit(0)
 
 def process(path, outfile, processed):
@@ -20,7 +20,7 @@ def process(path, outfile, processed):
             incpath = dirname + "/" + line[10:line.find('"',10)]
             if incpath not in processed:
                 outfile.write("#line 1\n")
-                print "  including", incpath
+                print("  including", incpath)
                 process(incpath, outfile, processed)
                 outfile.write("\n#line %d\n" % (lineno+1))
             else:
@@ -29,7 +29,7 @@ def process(path, outfile, processed):
             outfile.write(line)
 
 for path in sys.argv[1:]:
-    print "Processing", path
+    print("Processing", path)
     outfile = open(path+".pp","w")
     process(path, outfile, set())
     

@@ -63,7 +63,7 @@ class quest_blockade (quest.quest):
                                        vsrandom.uniform(-10000,10000),
                                        vsrandom.uniform(-10000,10000)))
                 offset = (vsrandom.uniform(1000,2000),vsrandom.uniform(1000,2000),vsrandom.uniform(1000,2000))
-                for i in xrange(number):
+                for i in range(number):
                     #self.capital += [launch.launch_wave_around_unit(names[self.stage-1],'confed',shiptype,'sitting_duck',1,5000,20000,self.object)]
                     # launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo)
                     pos = Vector.Add (location,Vector.Scale(offset,i))
@@ -74,7 +74,7 @@ class quest_blockade (quest.quest):
                 shiptype = faction_ships.getRandomFighterInt(faction_ships.confed)
                 #print ">fighters/type: " + str(number) + "/" + shiptype
                 ship = self.capital[0]
-                for i in xrange(number):
+                for i in range(number):
                     self.fighter += [launch.launch_wave_around_unit(self.names[self.stage-1],'confed',shiptype,'sitting_duck',1,1000,2000,ship)]
                 # change orders for capital ships
                 for ship in self.capital:

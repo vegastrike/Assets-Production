@@ -44,11 +44,11 @@ class Environment(Director.Mission):
                     if (TwoDdis(uvec,u)<rad):
                         tweakHeight(un,u)
             if (isNull):
-                for i in xrange(len(self.subs)):
+                for i in range(len(self.subs)):
                     if (not self.subs[i]):
                         del self.subs[i]
                         return
-                for j in xrange(len(self.flags)):
+                for j in range(len(self.flags)):
                     if (not self.flags[j]):
                         del self.flags[j]
                         return
@@ -103,19 +103,19 @@ class Environment(Director.Mission):
         self.flags=[]
         self.obstacles=[]
         self.subs=[]
-        print 'initing'
+        print('initing')
         self.iter=0
         self.num_un=0
-        for i in xrange(numobst):
+        for i in range(numobst):
             self.CreateObstacle("box")
-        for i in xrange(numflag):
+        for i in range(numflag):
             self.CreateFlag("flag")
         import vsrandom
-        for i in xrange(numspec):
+        for i in range(numspec):
             self.CreateUnit ("spectre",vsrandom.randrange(0,2))
-        for i in xrange(numseek):
+        for i in range(numseek):
             self.CreateUnit ("skart",0)
-        for i in xrange (numsubs):
+        for i in range (numsubs):
             self.CreateSubs("subs");
     def Execute(self):
         un = VS.getUnit (self.iter)
