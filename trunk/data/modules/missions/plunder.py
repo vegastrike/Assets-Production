@@ -73,7 +73,7 @@ class plunder (Director.Mission):
                 VS.setCompleteness(self.obj,0.)
             elif self.you.isDocked(self.gosig.SignificantUnit()) or self.gosig.SignificantUnit().isDocked(self.you):
 #             print "du hast gewonnen!"
-                self.you.removeCargo(self.content,self.quantity,1)
+                self.you.removeCargo(self.content,self.quantity,bool(1))
                 self.Win(self.you,1)
 #           else:
 #             print 'hihohohiho'

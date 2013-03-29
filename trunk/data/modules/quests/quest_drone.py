@@ -14,7 +14,7 @@ class quest_drone (quest.quest):
         self.derelict=VS.Unit()
         self.jumping=0
     def launchNewDrone (self):
-	global drone
+        global drone
         playa=VS.getPlayer()
         if (not playa.isNull()):
             self.makeQuestPersistent()
@@ -29,9 +29,9 @@ class quest_drone (quest.quest):
             drone=VS.Unit()
     def generateBase (self):
         self.derelict=VS.launch("base","derelict","neutral","unit","sitting_duck",1,1,(-1000000,-1000000,-1000000),'')
-        
+
     def setDroneNear (self,playa):
-	global drone
+        global drone
         vec = playa.Position()
         vec = Vector.Add (vec,(vsrandom.uniform(-1000,1000),
                                vsrandom.uniform(-1000,1000),
@@ -39,7 +39,7 @@ class quest_drone (quest.quest):
         drone.SetCurPosition(vec)
         drone.SetTarget(playa)
     def Execute (self):
-	global drone
+        global drone
         playa=VS.getPlayer()
         if (playa.isNull()):
             return 1

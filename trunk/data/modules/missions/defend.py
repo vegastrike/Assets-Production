@@ -20,8 +20,8 @@ class defend (Director.Mission):
         self.var_to_set=var_to_set
         self.quantity=0
         self.mplay="all"
-        self.defendbase = defend_base   
-        self.dynatkfg = dynamic_flightgroup     
+        self.defendbase = defend_base
+        self.dynatkfg = dynamic_flightgroup
         self.dynatktype = dynamic_type
         self.dyndeffg = dynamic_defend_fg
         self.attackers = []
@@ -45,7 +45,7 @@ class defend (Director.Mission):
         self.you=VS.getPlayer()
         name = self.you.getName ()
         self.mplay=universe.getMessagePlayer(self.you)
-        self.adjsys = go_to_adjacent_systems(self.you,numsystemsaway,jumps)  
+        self.adjsys = go_to_adjacent_systems(self.you,numsystemsaway,jumps)
         self.adjsys.Print("You are in the %s system,","Proceed swiftly to %s.","Your arrival point is %s.","defend",1)
         VS.IOmessage (2,"defend",self.mplay,"And there eliminate any %s starships."  % self.faction)
     def SetVarValue (self,value):
@@ -61,7 +61,7 @@ class defend (Director.Mission):
         VS.terminateMission(1)
     def FailMission (self):
         self.you.addCredits (-self.cred)
-        VS.AdjustRelation(self.you.getFactionName(),self.faction,-.02,1)                
+        VS.AdjustRelation(self.you.getFactionName(),self.faction,-.02,1)
         self.SetVarValue(-1)
         VS.IOmessage (0,"defend",self.mplay,"[Computer] Detected failure to protect mission asset.")
         VS.IOmessage (0,"defend",self.mplay,"[Computer] Mission failed!")
@@ -82,7 +82,7 @@ class defend (Director.Mission):
             VS.setObjective(self.objective,"Destroy the %s"%unit.getUnitFullName(un))
             self.ship_check_count=0
         return 0
-        
+
     def GenerateEnemies (self,jp,you):
         VS.IOmessage (0,"escort mission",self.mplay,"You must protect %s." % unit.getUnitFullName(jp,True))
         count=0
@@ -106,8 +106,8 @@ class defend (Director.Mission):
                 pass
             L.faction=self.faction
             launched=L.launch(you)
-            if (count==0):              
-                self.you.SetTarget(launched)            
+            if (count==0):
+                self.you.SetTarget(launched)
             if (self.defend):
                 launched.SetTarget (jp)
             else:
@@ -129,7 +129,7 @@ class defend (Director.Mission):
             VS.IOmessage (0,"defend",self.mplay,"#ff0000You were unable to arrive in time to help. Mission failed.")
             self.SetVarValue(-1)
             VS.terminateMission(0)
-            return   
+            return
         if (not self.adjsys.Execute()):
             return
         if (not self.arrived):
@@ -176,14 +176,14 @@ class defend (Director.Mission):
                     else:
                         self.SuccessMission()
     def initbriefing(self):
-        print("ending briefing")                
+        print("ending briefing")
     def loopbriefing(self):
         print("loop briefing")
         Briefing.terminate();
     def endbriefing(self):
-        print("ending briefing")        
-                
+        print("ending briefing")
+
 def initrandom(factionname,numsysaway,minenquant,maxenquant,credperen,defendit,defend_base,p_faction='',jumps=(),var_to_set=''):
     enq=minenquant
-    enq=vsrandom.uniform(minenquant,maxenquant) 
+    enq=vsrandom.uniform(minenquant,maxenquant)
     return defend(factionname,numsysaway,enq,8000.0,100000.0,enq*credperen,defendit,defend_base,p_faction,jumps,var_to_set)

@@ -31,7 +31,7 @@ class cargo_mission (Director.Mission):
     def SetVar (self,val):
         if (self.var_to_set!=''):
             quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,val)
-    
+
     def GetSomeCargo(self,category):
         carg=VS.getRandCargo(self.quantity,category)
         if (carg.GetQuantity()==0 or category==''):
@@ -44,7 +44,7 @@ class cargo_mission (Director.Mission):
         self.cargoname=carg.GetContent()
         carg.SetMissionFlag(1)
         return carg
-    
+
     def __init__ (self,factionname, numsystemsaway, cargoquantity, missiondifficulty, creds, launchoncapship, time_to_complete, category,jumps=(),var_to_set=''):
         Director.Mission.__init__(self);
         self.you=VS.Unit()
@@ -93,7 +93,7 @@ class cargo_mission (Director.Mission):
                     break
                 # Else, let's look for another cargo of this kind
                 print(("already have "+str(int(tmpcarg.GetQuantity()))+" non-mission cargo of this kind "+self.cargoname))
-                
+
                 j+=1
             else: # While loop's condition failed... i.e. j got too big.
                 if not category:
@@ -132,7 +132,7 @@ class cargo_mission (Director.Mission):
         removenum=0 #if you terminate without remove, you are SKREWED
         self.base.setCombatRole(self.role)
         if (remove):
-            removenum=you.removeCargo(self.cargoname,self.quantity,1)
+            removenum=you.removeCargo(self.cargoname,self.quantity,bool(1))
             debug.debug("removed %d" % removenum)
             mpart=VS.GetMasterPartList()
             newcarg=mpart.GetCargo(self.cargoname)
@@ -140,7 +140,7 @@ class cargo_mission (Director.Mission):
             #self.base.addCargo(newcarg)#not for resale
             has=self.you.hasCargo(self.cargoname)
             if (has):
-                has=self.you.removeCargo(self.cargoname,has,1)
+                has=self.you.removeCargo(self.cargoname,has,bool(1))
                 newcarg.SetMissionFlag(0)
                 newcarg.SetQuantity(has)
                 self.you.addCargo(newcarg) #It seems that removing and then adding it again is the only way...
@@ -207,12 +207,3 @@ class cargo_mission (Director.Mission):
 def initrandom (factionname, missiondifficulty,creds_per_jump, launchoncapship, sysmin, sysmax, time_to_complete, category,jumps=(),var_to_set=''):
     numsys=vsrandom.randrange(sysmin,sysmax)
     return cargo_mission(factionname,numsys, 15, missiondifficulty,creds_per_jump*float(1+numsys),launchoncapship, 10.0, category,jumps,var_to_set)
-
-
-
-
-
-
-
-
-

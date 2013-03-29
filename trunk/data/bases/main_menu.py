@@ -11,11 +11,11 @@ import dj_lib
 # dj_lib.disable()
 
 def DoStartNewGame(self,params):
-	global starting_new_game
-	ShowProgress.activateProgressScreen('loading',3)
-	VS.loadGame(VS.getNewGameSaveName())
-	starting_new_game = False
-	enterMainMenu(self,params)
+    global starting_new_game
+    ShowProgress.activateProgressScreen('loading',3)
+    VS.loadGame(VS.getNewGameSaveName())
+    starting_new_game = False
+    enterMainMenu(self,params)
 
 def StartNewGame(self,params):
     Base.SetCurRoom(introroom.getIndex())
@@ -24,7 +24,7 @@ def StartNewGame(self,params):
 #StartNewGame = DoStartNewGame
 
 def QuitGame(self,params):
-	Base.ExitGame()
+    Base.ExitGame()
 
 # this uses the original coordinate system of Privateer
 GUI.GUIInit()
@@ -38,15 +38,15 @@ plist_monologue=VS.musicAddList('intromonologue.m3u')
 starting_new_game=False
 
 def enterMainMenu(self,params):
-	global plist_menu, starting_new_game
-	if starting_new_game:
-		DoStartNewGame(self,params)
-	else:
-		VS.musicPlayList(plist_menu)
+    global plist_menu, starting_new_game
+    if starting_new_game:
+        DoStartNewGame(self,params)
+    else:
+        VS.musicPlayList(plist_menu)
 
 def enterCredits(self,params):
-	global plist_credits
-	VS.musicPlayList(plist_credits)
+    global plist_credits
+    VS.musicPlayList(plist_credits)
 
 credits_title = """\t=== Vega Strike 0.5.2 alpha ===
 \t        ---Credits---"""
@@ -159,15 +159,15 @@ intro_title = """\t=== Vega Strike 0.5.2 alpha ===
 """
 
 try:
-	intro_file=__file__.rsplit('/',2)[0].rsplit('\\',2)[0] + "/documentation/IntroMonologue.txt"
-	intro_file=open("documentation/IntroMonologue.txt","rt")
+    intro_file=__file__.rsplit('/',2)[0].rsplit('\\',2)[0] + "/documentation/IntroMonologue.txt"
+    intro_file=open("documentation/IntroMonologue.txt","rt")
 except:
-	intro_file=None
+    intro_file=None
 if intro_file:
-	intro_text=intro_file.readlines()
-	intro_file.close()
+    intro_text=intro_file.readlines()
+    intro_file.close()
 else:
-	intro_text=["Find the IntroMonologue inside the documentation folder"]
+    intro_text=["Find the IntroMonologue inside the documentation folder"]
 
 # Create rooms (intro, menu)
 #Uncomment the following lines to use intro movies
@@ -188,9 +188,9 @@ class PreIntroRoom(GUI.GUIMovieRoom):
         Base.SetDJEnabled(1)
 
 #Uncomment the following lines to use intro movies
-preintroroom = PreIntroRoom(room_preintro, 
+preintroroom = PreIntroRoom(room_preintro,
     ( 'preintro.ogv',
-      GUI.GUIRect(0, 0, 1, 1, "normalized")), 
+      GUI.GUIRect(0, 0, 1, 1, "normalized")),
     guiroom)
 preintroroom.setAspectRatio(16.0/9.0)
 
@@ -208,9 +208,9 @@ class IntroRoom(PreIntroRoom):
 	Base.SetCurRoom(intro_guiroom.getIndex())
 
 #Uncomment the following lines to use intro movies
-introroom = IntroRoom(room_intro, 
+introroom = IntroRoom(room_intro,
     ( 'intro.ogv',
-      GUI.GUIRect(0, 0, 1, 1, "normalized")), 
+      GUI.GUIRect(0, 0, 1, 1, "normalized")),
     guiroom)
 introroom.setAspectRatio(16.0/9.0)
 
@@ -245,24 +245,24 @@ text_loc = GUI.GUIRect(58,50,850,600,"pixel",(1024,768))
 
 GUI.GUIStaticText(intro_guiroom,'bg','',text_loc,GUI.GUIColor(0,0,0,.3))
 intro_picker=GUI.GUISimpleListPicker(intro_guiroom,'XXXIntroduction','introp',text_loc,
-	textcolor=GUI.GUIColor.white(), textbgcolor = GUI.GUIColor.clear(),
-	selectedbgcolor=GUI.GUIColor.clear(),selectedcolor=GUI.GUIColor.white())
+        textcolor=GUI.GUIColor.white(), textbgcolor = GUI.GUIColor.clear(),
+        selectedbgcolor=GUI.GUIColor.clear(),selectedcolor=GUI.GUIColor.white())
 intro_picker.items=[ GUI.GUISimpleListPicker.listitem(el,el) for el in intro_text ]
 
 screen_loc = GUI.GUIRect(960, 50, 50, 40,"pixel",(1024,768))
 scroll_up=GUI.GUIButton(intro_guiroom,'Scroll Up','introu',{'*':None},screen_loc,
-		clickHandler=lambda b,p:intro_picker.viewMove(-10),textbgcolor=GUI.GUIColor(0.6,0.3,0.,.5))
+                clickHandler=lambda b,p:intro_picker.viewMove(-10),textbgcolor=GUI.GUIColor(0.6,0.3,0.,.5))
 scroll_up.setCaption("\n /\\ \n")
 screen_loc = GUI.GUIRect(960, 650, 50, 40,"pixel",(1024,768))
 scroll_down=GUI.GUIButton(intro_guiroom,'Scroll Down','introu',{'*':None},screen_loc,
-		clickHandler=lambda b,p:intro_picker.viewMove(10),textbgcolor=GUI.GUIColor(0.,0.6,0.,.5))
+                clickHandler=lambda b,p:intro_picker.viewMove(10),textbgcolor=GUI.GUIColor(0.,0.6,0.,.5))
 scroll_down.setCaption("\n \\/ \n")
 
 # Button to go back to the main menu (from the credits)
 sprite_loc = GUI.GUIRect(8,697,420,47,"pixel",(1024,768))
 sprite = {
-	'*':None,
-	'down' : ( 'interfaces/main_menu/credits_resume_button_pressed.spr', sprite_loc ) }
+        '*':None,
+        'down' : ( 'interfaces/main_menu/credits_resume_button_pressed.spr', sprite_loc ) }
 GUI.GUIRoomButton (intro_guiroom, guiroom, 'XXXMain Menu','Main_Menu',sprite,sprite_loc,clickHandler=enterMainMenu)
 
 
@@ -271,53 +271,53 @@ GUI.GUIStaticImage(guiroom, 'background', ( 'interfaces/main_menu/menu.spr', GUI
 
 # Create the Quine 4000 screens
 rooms_quine = computer_lib.MakePersonalComputer(room_menu, room_menu,
-	0, # do not make links
-	0, 0, 0, # no missions, finances or manifest
-	1, # do enable load
-	0, # but disable save
-	1) # and return room map, rather than only root room
+        0, # do not make links
+        0, 0, 0, # no missions, finances or manifest
+        1, # do enable load
+        0, # but disable save
+        1) # and return room map, rather than only root room
 rooms_quine['computer'].setMode('load')
 
-# Link 
+# Link
 sprite_loc = GUI.GUIRect(48,300,150,32,"pixel",(1280,1024))
 sprite = {
-	'*':None,
-	'down' : ( 'interfaces/main_menu/load_button_pressed.spr', sprite_loc ) }
+        '*':None,
+        'down' : ( 'interfaces/main_menu/load_button_pressed.spr', sprite_loc ) }
 GUI.GUIRoomButton(guiroom, rooms_quine['load'], 'XXXLoad Game','Load_Game',sprite,sprite_loc)
 
 # New game
 sprite_loc = GUI.GUIRect(48,370,128,32,"pixel",(1280,1024))
 sprite = {
-	'*':None,
-	'down' : ( 'interfaces/main_menu/net_button_pressed.spr', sprite_loc ) }
+        '*':None,
+        'down' : ( 'interfaces/main_menu/net_button_pressed.spr', sprite_loc ) }
 GUI.GUICompButton(guiroom, 'Network', 'XXXNetwork Game','Network_Game',sprite,sprite_loc)
 
-# Link 
+# Link
 sprite_loc = GUI.GUIRect(48,510,92,32,"pixel",(1280,1024))
 sprite = {
-	'*':None,
-	'down' : ( 'interfaces/main_menu/credits_button_pressed.spr', sprite_loc ) }
+        '*':None,
+        'down' : ( 'interfaces/main_menu/credits_button_pressed.spr', sprite_loc ) }
 GUI.GUIRoomButton(guiroom, credits_guiroom, 'XXXShow Credits','Show_Credits',sprite,sprite_loc,clickHandler=enterCredits)
 
-# Link 
+# Link
 sprite_loc = GUI.GUIRect(48,440,150,32,"pixel",(1280,1024))
 sprite = {
-	'*':None,
-	'down' : ( 'interfaces/main_menu/intro_button_pressed.spr', sprite_loc ) }
+        '*':None,
+        'down' : ( 'interfaces/main_menu/intro_button_pressed.spr', sprite_loc ) }
 GUI.GUIRoomButton(guiroom, intro_guiroom, 'XXXShow Introduction','Show_Introduction',sprite,sprite_loc,clickHandler=enterCredits)
 
 # New game
 sprite_loc = GUI.GUIRect(48,224,128,32,"pixel",(1280,1024))
 sprite = {
-	'*':None,
-	'down' : ( 'interfaces/main_menu/new_button_pressed.spr', sprite_loc ) }
+        '*':None,
+        'down' : ( 'interfaces/main_menu/new_button_pressed.spr', sprite_loc ) }
 btn = GUI.GUIButton(guiroom, 'XXXNew Game','New_Game',sprite,sprite_loc,'enabled',StartNewGame)
 
 # Quit game
 sprite_loc = GUI.GUIRect(48,580,58,32,"pixel",(1280,1024))
 sprite = {
-	'*':None,
-	'down' : ( 'interfaces/main_menu/quit_button_pressed.spr', sprite_loc ) }
+        '*':None,
+        'down' : ( 'interfaces/main_menu/quit_button_pressed.spr', sprite_loc ) }
 btn = GUI.GUIButton(guiroom, 'XXXQuit Game','Quit_Game',sprite,sprite_loc,'enabled',QuitGame)
 
 # Draw everything
@@ -325,4 +325,3 @@ GUI.GUIRootSingleton.broadcastMessage('draw',None)
 
 # Main menu room environment setup (music and stuff - comment out if you're using an intro movie)
 enterMainMenu(None,None)
-

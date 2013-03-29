@@ -61,20 +61,20 @@ class directions_mission (Director.Mission):
             del isambushrunning[(self.var,self.savedCargo)]
         VS.terminateMission(1)
         return
-        
+
     def findUnit(self, name):
         i = VS.getUnitList()
-        while i.notDone():
-            testun=i.current()
-            i.advance()
+        un = i.current()
+        while (not i.isDone()):
             if testun.getName().lower()==name.lower() or testun.getFullname().lower()==name.lower():
                 return testun
+            testun = i.next()
         i = VS.getUnitList()
-        while i.notDone():
-            testun=i.current()
-            i.advance()
+        un = i.current()
+        while (not i.isDone()):
             if testun.isDockableUnit():
                 return testun
+            testun = i.next()
         return VS.getUnit(0)
     def getCargo(self,un):
         lis=[]
@@ -118,9 +118,3 @@ class directions_mission (Director.Mission):
             self.obj=VS.addObjective("Deliver cargo to %s." % self.destination);
             VS.setOwner(self.obj,self.you)
             VS.setCompleteness(self.obj,0)
-
-
-
-
-
-

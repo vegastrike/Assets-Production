@@ -71,6 +71,8 @@ used to "move backward in time":
 >>> g.random()
 0.25420336316883324
 """
+from __future__ import print_function
+
 # XXX The docstring sucks.
 _pi = 3.1415926536
 _e = 2.7182818284590451
@@ -304,9 +306,9 @@ class Random:
         if istep != step:
             raise ValueError("non-integer step for randrange()")
         if istep > 0:
-            n = (istop - istart + istep - 1) / istep
+            n = (istop - istart + istep - 1) // istep
         elif istep < 0:
-            n = (istop - istart + istep + 1) / istep
+            n = (istop - istart + istep + 1) // istep
         else:
             raise ValueError("zero step for randrange()")
 

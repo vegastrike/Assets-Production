@@ -32,4 +32,3 @@ for path in sys.argv[1:]:
     print("Processing", path)
     outfile = open(path+".pp","w")
     process(path, outfile, set())
-    

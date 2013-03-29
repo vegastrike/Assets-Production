@@ -10,24 +10,24 @@ dynamic_mission.CreateMissions()
 time_of_day='_day'
 
 # ROOMS
-landing = Base.Room ('Landing Pad')    
+landing = Base.Room ('Landing Pad')
 if (VS.getPlayer().rSize()<=100):
     Base.Texture (landing, 'tex', 'bases/frigid_mud/AridLandingSmall2.sprite', 0, 0)
 else:
     Base.Texture (landing, 'tex', 'bases/frigid_mud/AridLandingCapship.sprite', 0, 0)
-fuelbay = Base.Room ('Fuel Bay')    
+fuelbay = Base.Room ('Fuel Bay')
 Base.Texture (fuelbay, 'tex', 'bases/frigid_mud/AridFuelBay.sprite', 0, 0)
-panorama = Base.Room ('Panorama')    
+panorama = Base.Room ('Panorama')
 Base.Texture (panorama, 'tex', 'bases/frigid_mud/AridPanorama.sprite', 0, 0)
-entrance = Base.Room ('Concourse')    
+entrance = Base.Room ('Concourse')
 Base.Texture (entrance, 'tex', 'bases/frigid_mud/AridConcourse2.sprite', 0, 0)
-exit = Base.Room ('Concourse')    
+exit = Base.Room ('Concourse')
 Base.Texture (exit, 'tex', 'bases/frigid_mud/AridConcourse.sprite', 0, 0)
-bar1 = Base.Room ('Bar')    
+bar1 = Base.Room ('Bar')
 Base.Texture (bar1, 'tex', 'bases/frigid_mud/AridBar2.sprite', 0, 0)
-bar2 = Base.Room ('Bar')    
+bar2 = Base.Room ('Bar')
 Base.Texture (bar2, 'tex', 'bases/frigid_mud/AridBar1.sprite', 0, 0)
-balcony = Base.Room ('Balcony')    
+balcony = Base.Room ('Balcony')
 Base.Texture (balcony, 'tex', 'bases/frigid_mud/AridBalcony.sprite', 0, 0)
 
 # INTERLINKS

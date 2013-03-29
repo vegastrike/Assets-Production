@@ -64,12 +64,12 @@ class escort_mission (Director.Mission):
         self.difficulty=missiondifficulty
         self.creds = creds
     def initbriefing(self):
-        print("ending briefing")                
+        print("ending briefing")
     def loopbriefing(self):
         print("loop briefing")
         Briefing.terminate();
     def endbriefing(self):
-        print("ending briefing")        
+        print("ending briefing")
     def Execute (self):
         if (VS.GetGameTime()-self.gametime>10):
             self.escortee.setFgDirective('F')
@@ -86,7 +86,7 @@ class escort_mission (Director.Mission):
             if (self.var_to_set!=''):
                 quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,-1)
             VS.terminateMission(0)
-            return   
+            return
         if (not self.adjsys.Execute()):
             if (self.arrived):
                 self.adjsys.SignificantUnit().setSpeed(0.0)

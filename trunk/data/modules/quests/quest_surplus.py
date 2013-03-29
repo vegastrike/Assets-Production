@@ -44,4 +44,3 @@ def makeSurplusShortage():
     else:
         news = "DEMAND FOR %s in %s:  Citizens in the %s system have been frusterated by the expensive prices and low quantities of %s goods.  Privateers are currently banding together to try to bring supply to meet the demand.  But while prices are still high, some big traders could certainly capitalize on this shortage." % (" AND ".join(cats),sys,sys," and ".join(cats))
     return (sys,quest_surplus_factory(cats,1+adj,1-adj,1,1),news)
-

@@ -81,7 +81,7 @@ def neighborFaction(sys,fac):
         if (VS.GetGalaxyFaction(asys)==fac):
             return True
     return False
- 
+
 #returns false if Siege is done going through all its vehicles
 def Siege(fac):
     global siegenumber
@@ -242,7 +242,7 @@ def randomMovement(fg,fac):
     convoywhere=fg.find("->")
     if (convoywhere!=-1):
         endpoints=[fg[0:convoywhere],fg[convoywhere+2:]]
-        
+
     if fg.find("Insys")!=-1:
         return#can't go about moving insys fgs away
     if (sys!='nil' and fg!=fg_util.BaseFGInSystemName(sys)):
@@ -252,7 +252,7 @@ def randomMovement(fg,fac):
             suggestednewsys = l[vsrandom.randrange(0,len(l))]
             sugfac=VS.GetGalaxyFaction(suggestednewsys)
             sugrel=VS.GetRelation(fac,sugfac)
-            
+
             if convoywhere==-1 and (((fac.find(sugfac)!=-1 or sugrel>.5) and citizen) or not citizen):
                 fg_util.TransferFG( fg,fac,suggestednewsys);
                 #debug.debug('moving '+fg+' from '+sys+' to '+ suggestednewsys)
@@ -300,7 +300,7 @@ def AddFighterTo(fgname,fac,isNew=False):
             numfighters=1
     #debug.debug("Generating "+str(numfighters)+ " fighters for "+fac+" at "+sys)
     if isNew:
-        fgk=fg_util.FGsInSystem(fac,sys)        
+        fgk=fg_util.FGsInSystem(fac,sys)
         if len(fgk):
             fgname=fgk[vsrandom.randrange(0,len(fgk))]
             stat=6
@@ -459,7 +459,7 @@ def countTn (l):
 def findLaunchedShipInFGInSystem (fgname,faction):
     uni = VS.getUnitList()
     un=uni.current()
-    while (uni.notDone()):
+    while (not uni.isDone()):
         if un:
             if (un.getFlightgroupName()==fgname and un.getFactionName()==faction):
                 return un
@@ -500,7 +500,7 @@ def LaunchEqualShips (fgname, faction, enfgname, enfaction):
     if (numlaunch/numland > numenlaunch/numenland):
         LaunchMoreShips (fgname,faction,land,int((numland*numenlaunch/numenland)-numlaunch))
     else:
-        LaunchMoreShips (enfgname,enfaction,enland,int((numenland*numlaunch/numland)-numenlaunch))
+        LaunchMoreShips (enfgname,enfaction,enland,int((numenland*numlaunch//numland)-numenlaunch))
 
 def stopAttack (fgname,faction):
     ally=(fgname,faction)

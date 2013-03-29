@@ -26,10 +26,10 @@ class go_somewhere_significant:
 
     def SignificantUnit(self):
         return self.significantun
-    
+
     def getSignificantFullName(self):
         return unit.getUnitFullName(self.significantun,False)
-    
+
     def __init__ (self,you, landable_only, distance_away_to_trigger,base_only=0,capshipfaction="", dyn_fg="", showObjective=1, forcestarship=0):
         self.obj=0
         self.showObjective=showObjective
@@ -48,7 +48,7 @@ class go_somewhere_significant:
                 lim=10
             for i in range(lim):
                 significant = unit.getSignificant (randint,landable_only,base_only)
-                
+
                 if significant.isPlanet():
                     break
                 else:
@@ -75,13 +75,13 @@ class go_somewhere_significant:
                         pass
 
                     i=VS.getUnitList()
-                    while i.notDone():
-                        testun = i.current()
-                        i.advance()
+                    testun = i.current()
+                    while (not i.isDone()):
                         if testun.getFactionName()==capshipfaction and faction_ships.isCapital(testun.getName()):
-                           significant=moveUnitTo(testun,significant,near)
-                           found=True
-                           break
+                            significant=moveUnitTo(testun,significant,near)
+                            found=True
+                            break
+                        testun = i.next()
                     if (not found):
                         significant=launch.launch_wave_around_unit("Base",capshipfaction,newship,"sitting_duck",1,near,far,significant,"")
                 else:
@@ -93,13 +93,13 @@ class go_somewhere_significant:
                     found=False
                     aroundthe=" near "+unit.getUnitFullName(significant,True);
                     i = VS.getUnitList()
-                    while i.notDone():
-                        testun = i.current()
-                        i.advance()
+                    testun = i.current()
+                    while (not i.isDone()):
                         if testun.getFactionName()==capshipfaction and faction_ships.isCapital(testun.getName()):
-                           significant=moveUnitTo(testun,significant,near)
-                           found=True
-                           break
+                            significant=moveUnitTo(testun,significant,near)
+                            found=True
+                            break
+                        testun = i.next()
                     if (not found):
                         significant=launch_recycle.launch_dockable_around_unit(dyn_fg,capshipfaction,"sitting_duck",near,significant,4*near,'','Base')
                     significant.setFullname(dyn_fg)

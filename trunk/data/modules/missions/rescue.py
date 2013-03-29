@@ -47,7 +47,7 @@ class rescue (Director.Mission):
 #                mymin*=faction_ships.launch_distance_factor
 #                mymax*=faction_ships.launch_distance_factor
 #            except:
-#                pass            
+#                pass
             self.eject = launch.launch_wave_around_unit("Rescue Pilot",self.faction,"eject","printhello.py",1,mymin,mymax,self.adjsys.SignificantUnit())
             self.eject.setMissionRelevant()
             self.arrived=2
@@ -84,7 +84,7 @@ class rescue (Director.Mission):
                     self.enemy.setFgDirective("A.")
                 print('numej '+str(self.numejectors))
                 if (self.numejectors<self.you.GetCargo("Pilot").GetQuantity()):
-                    self.you.removeCargo("Pilot",1,1)
+                    self.you.removeCargo("Pilot",1,bool(1))
                     carg=VS.getRandCargo(1,"Passengers/Economy")
                     carg.SetMissionFlag(1)
                     VS.setCompleteness(self.obj,1)
@@ -104,7 +104,7 @@ class rescue (Director.Mission):
             if (self.you.GetCargo(self.cargname).GetQuantity()==0):
                 self.Lose(1)
             elif (self.adjsys.SignificantUnit().isDocked(self.you) or self.you.isDocked(self.adjsys.SignificantUnit()) or self.adjsys.SignificantUnit().getDistance(self.you)<10):
-                if (self.you.removeCargo(self.cargname,1,1)):
+                if (self.you.removeCargo(self.cargname,1,bool(1))):
                     self.Win(self.you,1)
                 else:
                     self.Lose(1)

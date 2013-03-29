@@ -21,7 +21,7 @@ def print_heading():
     print('<h1>Create Username/password</h1>')
 
 def print_form(filedb, mod):
-    
+
     modstr=''
     if mod:
         modstr='?'+mod
@@ -43,21 +43,21 @@ def type_select(filedb):
     units = type_dat[2:]
     units.sort()
     for line in units:
-        
+
         if (len(line) and line.find("turret")==-1):
-           name=""
-           if line.find("./weapons")!=-1:
-               break
-           if line[0]=='"':
-               endl=line[1:].find('"')
-               if endl!=-1:
-                  name=line[1:1+endl] 
-           else:
-               endl=line.find(",")
-               if endl!=-1:
-                   name=line[:endl]
-           if (len(name) and name.find("__")==-1 and name.find(".blank")==-1 and name!="beholder"):
-              print('<option>'+name+'</option>')
+            name=""
+            if line.find("./weapons")!=-1:
+                break
+            if line[0]=='"':
+                endl=line[1:].find('"')
+                if endl!=-1:
+                    name=line[1:1+endl]
+            else:
+                endl=line.find(",")
+                if endl!=-1:
+                    name=line[:endl]
+            if (len(name) and name.find("__")==-1 and name.find(".blank")==-1 and name!="beholder"):
+                print('<option>'+name+'</option>')
     print('</select></td>')
     print('</tr>')
 
@@ -73,14 +73,14 @@ def faction_select(filedb):
         factionnamestr='action name="'
         where=line.find(factionnamestr)
         if (len(line) and where!=-1):
-           name=""           
-           subline=line[where+len(factionnamestr):]
-           where2=subline.find('"')
-           if where2==-1:
-               break
-           name=subline[:where2]
-           if (len(name) and name!="upgrades" and name!="neutral" and name!="planets"):
-              print('<option>'+name+'</option>')
+            name=""
+            subline=line[where+len(factionnamestr):]
+            where2=subline.find('"')
+            if where2==-1:
+                break
+            name=subline[:where2]
+            if (len(name) and name!="upgrades" and name!="neutral" and name!="planets"):
+                print('<option>'+name+'</option>')
     print('</select></td>')
     print('</tr>')
 
@@ -99,15 +99,14 @@ def submit_button():
 get_form=False
 post_form=False
 def execute(filedb, mod, post):
-	print("Content-Type: text/html")
-	print("")
-	print(header)
-	print_heading()
-	print_form(filedb, mod)
-	print(footer)
+    print("Content-Type: text/html")
+    print("")
+    print(header)
+    print_heading()
+    print_form(filedb, mod)
+    print(footer)
 
 if __name__ == '__main__':
     mod = os.environ.get('QUERY_STRING','')
     filedb = db.DBBase(mod)
     execute(filedb, mod, '')
-

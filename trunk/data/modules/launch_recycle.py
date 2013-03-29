@@ -15,29 +15,29 @@ def NextPos (un, pos, FarApart=1):
     debug.debug("next coord is "+str(3.0*rad*FarApart)+" awa")
     pos[whichcoord]=x
     return tuple(pos)
-  
+
 def move_to (un, where):
     un.SetPosition(where)
     unit.moveOutOfPlayerPath(un)
     un.SetTarget (VS.Unit())
     return NextPos (un,where)
-  
+
 def whereTo (radius, launch_around):
     if (type(launch_around)==type( (1,2,3))):
         pos=launch_around
         rsize = faction_ships.max_radius
     else:
-        pos = launch_around.Position ()    
+        pos = launch_around.Position ()
         rsize = ((launch_around.rSize())*5.0)
     if (rsize > faction_ships.max_radius):
-	    rsize=faction_ships.max_radius
+        rsize=faction_ships.max_radius
     rsize+=radius;
     import fg_util
     dir = fg_util.randDirection()
     return (pos[0]+rsize*dir[0],
             pos[1]+rsize*dir[1],
             pos[2]+rsize*dir[2])
-  
+
 def unOrTupleDistance(un,unortuple,significantp):
     if (type(unortuple)==type((1,2,3))):
         import Vector
@@ -65,7 +65,7 @@ def look_for (fg, faction, numships,myunit,  pos, gcd,newship=[None]):
                     newship[0]=un
                     debug.debug("TTYmoving %s to current area" % (name))
     return (numships,pos)
-  
+
 def LaunchNext (fg, fac, type, ai, pos, logo,newshp=[None],fgappend='',FarApart=1):
     debug.debug("Launch nexting "+str(type))
     combofg=fg+fgappend
@@ -126,8 +126,8 @@ def launch_types_around ( fg, faction, typenumbers, ai, radius, myunit, garbage_
     if (not skipdj):
         dj_lib.PlayMusik(0,dj_lib.HOSTILE_NEWLAUNCH_DISTANCE)
     return ret
-    
-  
+
+
 def launch_wave_around ( fg, faction, ai, nr_ships, capship, radius, myunit, garbage_collection_distance,logo,skipdj=0):
     pos = whereTo(radius, myunit)
     debug.debug("before"+str(nr_ships))
@@ -143,4 +143,3 @@ def launch_wave_around ( fg, faction, ai, nr_ships, capship, radius, myunit, gar
         nr_ships-=1
     if (not skipdj):
         dj_lib.PlayMusik(0,dj_lib.HOSTILE_NEWLAUNCH_DISTANCE)
-     

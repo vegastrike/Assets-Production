@@ -124,7 +124,7 @@ def mpl (list,newsituation,forcechange):
     if (forcechange or newsituation!=situation):
         debug.debug("SITUATION IS RESET TO "+str( newsituation))
         situation=newsituation
-        VS.musicPlayList(list) 
+        VS.musicPlayList(list)
 
 def PlayMusik(forcechange=1,hostile_dist=0):
     un = VS.getPlayer()
@@ -142,7 +142,7 @@ def PlayMusik(forcechange=1,hostile_dist=0):
         unfcount={}
         siglist=[]
         asteroid=0
-        while (iter.notDone()):
+        while (not iter.isDone()):
             if (target):
                 ftmp = 2*target.getRelation(un)
                 nam=target.getName().lower()
@@ -159,8 +159,7 @@ def PlayMusik(forcechange=1,hostile_dist=0):
                         threat=1
                 if (target.isSignificant() and (un.getSignificantDistance(target)<(SIGNIFICANT_DISTANCE_OFFSET+SIGNIFICANT_DISTANCE_MULTIPLY*target.rSize()))):
                     around_sig=1
-            iter.advance()
-            target=iter.current()
+            target = iter.next()
         if (perfect):
             if asteroid and asteroidlist!=-1 and vsrandom.random()<.7:
                 mpl(asteroidlist,PEACELIST,forcechange)
@@ -185,7 +184,7 @@ def PlayMusik(forcechange=1,hostile_dist=0):
             for (fname,fcount) in unfcount.items():
                 if fcount>mfcount:
                     mfname=fname
-                    mfcount=fcount            
+                    mfcount=fcount
             if (threat):
                 if (ftmp<0):
                     mpl(LookupTable(paniclist,mfname),PANICSITUATION,forcechange)
@@ -196,7 +195,7 @@ def PlayMusik(forcechange=1,hostile_dist=0):
             else:
                 mpl(LookupTable(threatlist,mfname),THREATSITUATION,forcechange)
                 debug.debug("threat " + mfname)
-                
+
 class DJ:
     def __init__(self, check_frequency, hostile_dist=0):
         self.hostile_dist = hostile_dist

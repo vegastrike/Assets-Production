@@ -27,7 +27,7 @@ class quest_introduction_factory(quest.quest_factory):
         quest.quest_factory.__init__ (self,"quest_introduction")
     def create (self):
         return quest_introduction()
-        
+
 class quest_introduction(quest.quest):
 
     def __init__(self):
@@ -44,11 +44,11 @@ class quest_introduction(quest.quest):
         self.jps = list()
 #This is how to use the unit iterator.  *Very useful*
         iter = VS.getUnitList()
-        while iter.notDone():
-            if iter.current().isJumppoint():
-                self.jps.append(iter.current())
-            iter.advance()
-    
+        iter.advanceNJumppoint(0)
+        while (not iter.isDone()):
+            self.jps.append(iter.current())
+            iter.advanceJumppoint()
+
     def checkDistances(self):
         """Determines whether \'self.playa\' (the player) is close enough to
         a jumppoint to trigger the IOMessage."""
@@ -57,7 +57,7 @@ class quest_introduction(quest.quest):
             if self.playa.getDistance(jp) <= JP_DISTANCE:
                 return 1
         return 0
-    
+
     def Execute(self):
         if self.checkDistances() and quest.checkSaveValue(self.playa.isPlayerStarship(),TRIGGER_SAVE,DEFAULT_VALUE):
             VS.IOmessage (0,TRIGGER_MESSAGE[0],"all",TRIGGER_MESSAGE[1])
@@ -100,11 +100,12 @@ def okayDrawJenek():
     """Checks if the player is docked to the right planet, and the fixer is still \'around\'."""
     if not quest.checkSaveValue(VS.getPlayer().isPlayerStarship(),TRIGGER_SAVE,DONE_VALUE):
         iter = VS.getUnitList()
-        while iter.notDone():
-            if iter.current().isPlanet() and (VS.getPlayer().isDocked(iter.current()) or iter.current().isDocked(VS.getPlayer())):
+        testun = iter.current()
+        while (not iter.isDone()):
+            if (testun.isPlanet() and (VS.getPlayer().isDocked(testun) or testun.isDocked(VS.getPlayer()))):
 #Not sure why both have to be checked, it seems to second gives a more consistantly correct response
-                return iter.current().getName() == 'Wiley'
-            iter.advance()
+                return (testun.getName() == 'Wiley')
+            testun = iter.next()
     return 0
 
 def getJenekConversation():

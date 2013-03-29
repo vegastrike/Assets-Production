@@ -76,8 +76,7 @@ class quest_disappear (quest.quest):
                 if (self.unitRipe(playa,un)):
                     self.killUnit(un)
                     return
-                i.advance()
-                un=i.current()
+                un = i.next()
     def Execute (self):
         if (VS.getSystemFile()==self.sysfile):
             mytime = VS.GetGameTime();

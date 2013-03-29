@@ -40,7 +40,7 @@ class dantestmission (quest.quest):
 
             print("Sending News")
 
-            Director.pushSaveString(0,"dynamic_news","#TEST STORY!\\Will this thing ever work!\\	Dan.a")
+            Director.pushSaveString(0,"dynamic_news","#TEST STORY!\\Will this thing ever work!\\        Dan.a")
 
             Director.pushSaveString(0,"dynamic_news","siege,start,rlaan,aera,-1,0.8,enigma_sector/boondoggles,all")
             Director.pushSaveString(0,"dynamic_news","siege,end,rlaan,aera,1,0.8,enigma_sector/boondoggles,all")
