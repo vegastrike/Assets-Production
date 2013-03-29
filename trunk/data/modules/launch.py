@@ -1,3 +1,4 @@
+from __future__ import division
 from difficulty import usingDifficulty
 import vsrandom
 import unit

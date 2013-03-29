@@ -1,3 +1,4 @@
+from __future__ import division
 import string
 
 # Independent of the date system used, this will scale how fast time progresses

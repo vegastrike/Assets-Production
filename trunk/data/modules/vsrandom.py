@@ -71,7 +71,7 @@ used to "move backward in time":
 >>> g.random()
 0.25420336316883324
 """
-from __future__ import print_function
+from __future__ import print_function, division
 
 # XXX The docstring sucks.
 _pi = 3.1415926536
