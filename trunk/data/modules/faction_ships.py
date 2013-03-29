@@ -2,8 +2,8 @@
 #use this to allow more interesting weightings than are feasible to manually enter
 def weightedlist(tuples):
   rettuple=[]
-  for i in xrange(0,len(tuples)):
-    for j in xrange(tuples[i][1]):
+  for i in range(0,len(tuples)):
+    for j in range(tuples[i][1]):
       rettuple.append(tuples[i][0])
   return tuple(rettuple)
 
@@ -57,7 +57,7 @@ min_flightgroups={"Gemini/Troy":22,"Gemini/Penders_Star":10,"Gemini/Junction":4,
 
 factions = ("confed","aera","rlaan","merchant_guild","luddites","pirates","hunter","homeland-security","ISO","unknown","andolian","highborn","shaper","unadorned","purist","forsaken","LIHW","uln","dgn","klkk","mechanist","shmrn","rlaan_briin","aeran_merchant_marine","rlaan_citizen","merchant_guild_citizen","andolian_citizen","highborn_citizen","shaper_citizen","unadorned_citizen","purist_citizen","forsaken_citizen","LIHW_citizen","uln_citizen","dgn_citizen","klkk_citizen","mechanist_citizen","shmrn_citizen")
 factiondict={}
-for i in xrange(len(factions)):
+for i in range(len(factions)):
     factiondict[factions[i]]=i
 factiondict["retro"]=luddites
 factiondict["militia"]=homeland_security
@@ -788,7 +788,7 @@ def make_stattable(stattableexp):
     def lg (num, log=math.log, ilog2=1.0/math.log(2)):
         return log(1+num)*ilog2
 
-    for i,t in stattableexp.iteritems():
+    for i,t in stattableexp.items():
         stattable[i]=(t[0],t[1],lg(t[2]),lg(t[3]),lg(t[4]))
         stattable[i+'.rgspec']=(t[0],t[1]*.8,lg(t[2])*.8,lg(t[3])*.8,lg(t[4])*.8)
         stattable[i+'.milspec']=(t[0],t[1]*.65,lg(t[2])*.65,lg(t[3])*.65,lg(t[4])*.65)
@@ -805,14 +805,14 @@ if __name__ == '__main__':
     reported = set()
     for name in generic_bases:
         if name not in reported and name not in stattable:
-            print "%s not in stattableexp" % name
+            print("%s not in stattableexp" % name)
             ok = False
             reported.add(name)
     for names in list(capitals) + list(fighters):
         for name in names:
             if name not in reported and name not in stattable:
-                print "%s not in stattableexp" % name
+                print("%s not in stattableexp" % name)
                 ok = False
                 reported.add(name)
     if not ok:
-        raise AssertionError, "Errors in stattables"
+        raise AssertionError("Errors in stattables")

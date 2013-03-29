@@ -2,24 +2,25 @@
 
 Do not import directly; use urllib instead."""
 
-import urllib
+import urllib.parse
 import os
 
 __all__ = ["url2pathname","pathname2url"]
 
 def url2pathname(pathname):
-    "Convert /-delimited pathname to mac pathname"
+    """OS-specific conversion from a relative URL of the 'file' scheme
+    to a file system path; not recommended for general use."""
     #
     # XXXX The .. handling should be fixed...
     #
-    tp = urllib.splittype(pathname)[0]
+    tp = urllib.parse.splittype(pathname)[0]
     if tp and tp != 'file':
-        raise RuntimeError, 'Cannot convert non-local URL to pathname'
+        raise RuntimeError('Cannot convert non-local URL to pathname')
     # Turn starting /// into /, an empty hostname means current host
     if pathname[:3] == '///':
         pathname = pathname[2:]
     elif pathname[:2] == '//':
-        raise RuntimeError, 'Cannot convert non-local URL to pathname'
+        raise RuntimeError('Cannot convert non-local URL to pathname')
     components = pathname.split('/')
     # Remove . and embedded ..
     i = 0
@@ -46,12 +47,13 @@ def url2pathname(pathname):
             i = i + 1
         rv = ':' + ':'.join(components)
     # and finally unquote slashes and other funny characters
-    return urllib.unquote(rv)
+    return urllib.parse.unquote(rv)
 
 def pathname2url(pathname):
-    "convert mac pathname to /-delimited pathname"
+    """OS-specific conversion from a file system path to a relative URL
+    of the 'file' scheme; not recommended for general use."""
     if '/' in pathname:
-        raise RuntimeError, "Cannot convert pathname containing slashes"
+        raise RuntimeError("Cannot convert pathname containing slashes")
     components = pathname.split(':')
     # Remove empty first and/or last component
     if components[0] == '':
@@ -71,8 +73,8 @@ def pathname2url(pathname):
         return '/'.join(components)
 
 def _pncomp2url(component):
-    component = urllib.quote(component[:31], safe='')  # We want to quote slashes
-    return component
+    # We want to quote slashes
+    return urllib.parse.quote(component[:31], safe='')
 
 def test():
     for url in ["index.html",
@@ -80,7 +82,7 @@ def test():
                 "/foo/bar/index.html",
                 "/foo/bar/",
                 "/"]:
-        print `url`, '->', `url2pathname(url)`
+        print('%r -> %r' % (url, url2pathname(url)))
     for path in ["drive:",
                  "drive:dir:",
                  "drive:dir:file",
@@ -89,7 +91,7 @@ def test():
                  ":file",
                  ":dir:",
                  ":dir:file"]:
-        print `path`, '->', `pathname2url(path)`
+        print('%r -> %r' % (path, pathname2url(path)))
 
 if __name__ == '__main__':
     test()

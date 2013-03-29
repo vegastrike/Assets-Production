@@ -147,10 +147,10 @@ class Button:
 		if self.state==0:
 			Base.Python(self.room,self.index,self.x,self.y,self.wid,self.hei,self.linkdesc,self.pythonstr,True)
 			if self.sprite and type(self.sprite)==tuple and len(self.sprite)>2:
-				print 'Drawing sprite!'
+				print('Drawing sprite!')
 				Base.Texture(self.room,self.index,self.sprite[0],self.sprite[1],self.sprite[2])
 			else:
-				print "no sprite!"
+				print("no sprite!")
 			self.state=1
 	
 	def removeobjs(self):
@@ -284,7 +284,7 @@ class GuildRoom:
 		for a in self.buttons:
 			self.buttons[a].drawobjs()
 		self.missionnum=int(missionnum)
-		print str(self.missionnum)
+		print(str(self.missionnum))
 		if self.missionnum>=0:
 			self.buttons[self.missionnum].select()
 
@@ -312,14 +312,14 @@ class GuildRoom:
 					self.buttons['last'].removeobjs()
 	
 	def drawobjs(self):
-		print 'len buttons'
-		print len(self.buttons)
-		print 'num missions'
-		print self.guild.nummissions
-		print 'button list'
-		print self.buttons
+		print('len buttons')
+		print(len(self.buttons))
+		print('num missions')
+		print(self.guild.nummissions)
+		print('button list')
+		print(self.buttons)
 		for m in self.buttons:
-			print 'draw button'
+			print('draw button')
 			if not isinstance(m,type(int())) or m < self.guild.nummissions:
 				self.buttons[m].drawobjs()
 
@@ -346,11 +346,11 @@ def SetCurrentMission(room,guildname,missionnum):
 def JoinGuild(guildname):
 	guilds[guildname].RequestJoin()
 	fixers.DestroyActiveButtons()
-	print 'Creahte it ' + guildname
+	print('Creahte it ' + guildname)
 	if guildname in guildrooms:
-		print 'Create it ' + str(guildrooms[guildname])
+		print('Create it ' + str(guildrooms[guildname]))
 		for guildroom in guildrooms[guildname]:
-			print "drawing"
+			print("drawing")
 			CreateJoinedGuild(guildname, guildroom)
 
 def TalkToReceptionist(guildname,introtext):
@@ -358,7 +358,7 @@ def TalkToReceptionist(guildname,introtext):
 	import campaign_lib
 	if campaign_lib.doTalkingHeads():
 		campaign_lib.AddConversationStoppingSprite("Receptionist","bases/heads/"+guildname.lower()+".spr",(.582,-.2716),(3.104,2.4832),"Return_To_Guild").__call__(Base.GetCurRoom(),None)
-	print 'start ('+str(guildname)+','+str(introtext)+')'
+	print('start ('+str(guildname)+','+str(introtext)+')')
 	if guildname in guilds:
 		guild=guilds[guildname]
 		if not guild.HasJoined():
@@ -380,9 +380,9 @@ def TalkToReceptionist(guildname,introtext):
 		return
 
 def CreateJoinedGuild(guildname,guildroom):
-	print 'has joined.'
+	print('has joined.')
 	if not VS.networked():
-		print 'make missions'
+		print('make missions')
 		guildroom.guild.MakeMissions()
 		guildroom.drawobjs()
 	else:
@@ -391,18 +391,18 @@ def CreateJoinedGuild(guildname,guildroom):
 				guildroom.guild.nummissions = int(args[1])
 				guildroom.drawobjs()
 			else:
-				print "MakeMissions call returned "+str(args)
+				print("MakeMissions call returned "+str(args))
 		custom.run('guilds',[guildname,'MakeMissions'], MakeStatus)
 
 def CreateGuild(guildroom):
 	guildname=guildroom.guild.name
-	print 'Create it ' + guildname
+	print('Create it ' + guildname)
 #	if guildname in guildrooms:
 #		guildrooms[guildname].append(guildroom)
 #	else:
 	if True:
 		guildrooms[guildname]=[guildroom]
-		print 'true'
+		print('true')
 		if guildroom.guild.HasJoined():
 			CreateJoinedGuild(guildname,guildroom)
 

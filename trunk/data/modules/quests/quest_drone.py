@@ -65,7 +65,7 @@ class quest_drone (quest.quest):
 #                self.setDroneNear(playa)
                 self.lastdist=10000
                 self.jumping=1
-                print "jumping"
+                print("jumping")
             else:
                 if (self.jumping):
                     if (playa.getUnitSystemFile()==drone.getUnitSystemFile()):

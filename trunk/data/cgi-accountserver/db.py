@@ -1,22 +1,22 @@
 import random
 import os
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import sys
 
 try:
 	import settings
 except(ImportError):
 	sys.stdout.write("Content-Type: text/html\r\n\r\n")
-	print "UNKNOWN Error&trade;:"
-	print "Failed to import settings module.  <br>"
-	print "You probably just checked out the server and have not customized it yet. <br>"
-	print ""
-	print "Copy settings.sample.py to settings.py and edit it to your liking."
-	print "Also, make sure that you have created a units/ folder that contains these four"
-	print "files: default.save, factions.xml, units.csv and vegastrike.config."
-	print "For each 'mod', make a folder inside the units/ folder containing a copy of"
-	print "those four files, with custom mod settings."
-	print ""
+	print("UNKNOWN Error&trade;:")
+	print("Failed to import settings module.  <br>")
+	print("You probably just checked out the server and have not customized it yet. <br>")
+	print("")
+	print("Copy settings.sample.py to settings.py and edit it to your liking.")
+	print("Also, make sure that you have created a units/ folder that contains these four")
+	print("files: default.save, factions.xml, units.csv and vegastrike.config.")
+	print("For each 'mod', make a folder inside the units/ folder containing a copy of")
+	print("those four files, with custom mod settings.")
+	print("")
 	sys.exit(0)
 
 
@@ -28,9 +28,9 @@ def urlDecode(args):
 		if not arg:
 			continue
 		argsp= arg.split('=')
-		name = urllib.unquote(argsp[0])
+		name = urllib.parse.unquote(argsp[0])
 		if len(argsp)>1:
-			value = urllib.unquote(argsp[1].replace('+',' '))
+			value = urllib.parse.unquote(argsp[1].replace('+',' '))
 		else:
 			value = ''
 		arglist[name] = value
@@ -48,7 +48,7 @@ class DBInputError(DBError):
 class DBBase:
 	def __init__(self, mod):
 		if mod not in settings.mods:
-			raise DBInputError,"Invalid mod '"+mod+"'"
+			raise DBInputError("Invalid mod '"+mod+"'")
 		self.moddata = settings.mods[mod]
 		self.mod = self.moddata['path']
 		self.modkey = mod
@@ -86,7 +86,7 @@ class DBBase:
 		for c in s:
 			oc = ord(c)
 			if oc < 32 or oc >= 127:
-				raise DBInputError, "Invalid character "+str(oc)+" in field."
+				raise DBInputError("Invalid character "+str(oc)+" in field.")
 		return s
 	
 	def get_server(self, system):
@@ -110,7 +110,7 @@ class DBBase:
 		   try:
 		    f=self.open_default_file("default.save")
 		   except:
-		    raise DBError, "Not able to open the default saved game."
+		    raise DBError("Not able to open the default saved game.")
 		s = f.read()
 		f.close()
 		if not shiptype:
@@ -135,7 +135,7 @@ class DBBase:
 			try:
 				unfp=self.open_default_file('units/units.csv')
 			except:
-				raise DBError, "Not able to open units.csv"
+				raise DBError("Not able to open units.csv")
 		type_dat = unfp.readlines()
 		unfp.close()
 		if not shiptype:
@@ -163,7 +163,7 @@ class DBBase:
 				if name==shiptype:
 					s += line
 					return s;
-		raise DBError, "Can not find information for unit '"+shiptype+"'"
+		raise DBError("Can not find information for unit '"+shiptype+"'")
 
 class FileDB(DBBase):
 	def __init__(self, config, mod):
@@ -208,14 +208,14 @@ class FileDB(DBBase):
 	# Checks a string for valid username characters.
 	def check_string(self, s):
 		if not s:
-			raise DBInputError, "You must fill out all fields"
+			raise DBInputError("You must fill out all fields")
 		
 		for c in s:
 			if not (c.isalnum() or c=='_' or c=='-' or c=='.' or c=='$'):
-				raise DBInputError, "Invalid character "+c+" in input "+s
+				raise DBInputError("Invalid character "+c+" in input "+s)
 		
 		if s.find("..")!=-1 or s.find(".xml")!= -1 or s.find(".save")!=-1 or s.find("accounts")!=-1 or s.find("default")!=-1:
-			raise DBInputError, "Invalid character . in input "+s
+			raise DBInputError("Invalid character . in input "+s)
 		
 		return s
 	

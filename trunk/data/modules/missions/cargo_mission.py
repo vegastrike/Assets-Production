@@ -73,26 +73,26 @@ class cargo_mission (Director.Mission):
                 #    category = ''
                 carg = self.GetSomeCargo(category)
                 found=False
-                for i in xrange(self.you.numCargo()):
+                for i in range(self.you.numCargo()):
                     tmpcarg=self.you.GetCargoIndex(i)
                     if (tmpcarg.GetCategory()==category and tmpcarg.GetMissionFlag()) or self.cargoname==tmpcarg.GetContent():
-                        print category, tmpcarg.GetCategory()
+                        print(category, tmpcarg.GetCategory())
                         found=True
                         break
                 if not found:
                     newquantity = self.you.addCargo(carg)  #I add some cargo
                     if newquantity>0:
-                        print "It wasnt found %s"%self.cargoname
+                        print("It wasnt found %s"%self.cargoname)
                         self.quantity=newquantity
                         break
                 if found and tmpcarg.GetMissionFlag(): #self.cargoname==tmpcarg.GetContent():
                     self.cargoname=tmpcarg.GetContent()
                     self.quantity=int(tmpcarg.GetQuantity())
                     tempquantity=self.quantity
-                    print ("already have "+str(self.quantity)+" cargo of this kind "+self.cargoname)
+                    print(("already have "+str(self.quantity)+" cargo of this kind "+self.cargoname))
                     break
                 # Else, let's look for another cargo of this kind
-                print ("already have "+str(int(tmpcarg.GetQuantity()))+" non-mission cargo of this kind "+self.cargoname)
+                print(("already have "+str(int(tmpcarg.GetQuantity()))+" non-mission cargo of this kind "+self.cargoname))
                 
                 j+=1
             else: # While loop's condition failed... i.e. j got too big.

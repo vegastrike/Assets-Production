@@ -6,12 +6,76 @@ module as os.path.
 """
 
 import os
+import sys
 import stat
+import genericpath
+from genericpath import *
 
 __all__ = ["normcase","isabs","join","splitdrive","split","splitext",
            "basename","dirname","commonprefix","getsize","getmtime",
-           "getatime","islink","exists","isdir","isfile","ismount",
-           "walk","expanduser","expandvars","normpath","abspath","splitunc"]
+           "getatime","getctime", "islink","exists","lexists","isdir","isfile",
+           "ismount", "expanduser","expandvars","normpath","abspath",
+           "splitunc","curdir","pardir","sep","pathsep","defpath","altsep",
+           "extsep","devnull","realpath","supports_unicode_filenames","relpath",
+           "samefile", "sameopenfile",]
+
+# strings representing various path-related bits and pieces
+# These are primarily for export; internally, they are hardcoded.
+curdir = '.'
+pardir = '..'
+extsep = '.'
+sep = '\\'
+pathsep = ';'
+altsep = '/'
+defpath = '.;C:\\bin'
+if 'ce' in sys.builtin_module_names:
+    defpath = '\\Windows'
+elif 'os2' in sys.builtin_module_names:
+    # OS/2 w/ VACPP
+    altsep = '/'
+devnull = 'nul'
+
+def _get_empty(path):
+    if isinstance(path, bytes):
+        return b''
+    else:
+        return ''
+
+def _get_sep(path):
+    if isinstance(path, bytes):
+        return b'\\'
+    else:
+        return '\\'
+
+def _get_altsep(path):
+    if isinstance(path, bytes):
+        return b'/'
+    else:
+        return '/'
+
+def _get_bothseps(path):
+    if isinstance(path, bytes):
+        return b'\\/'
+    else:
+        return '\\/'
+
+def _get_dot(path):
+    if isinstance(path, bytes):
+        return b'.'
+    else:
+        return '.'
+
+def _get_colon(path):
+    if isinstance(path, bytes):
+        return b':'
+    else:
+        return ':'
+
+def _get_special(path):
+    if isinstance(path, bytes):
+        return (b'\\\\.\\', b'\\\\?\\')
+    else:
+        return ('\\\\.\\', '\\\\?\\')
 
 # Normalize the case of a pathname and map slashes to backslashes.
 # Other normalizations (such as optimizing '../' away) are not done
@@ -21,73 +85,99 @@ def normcase(s):
     """Normalize case of pathname.
 
     Makes all characters lowercase and all slashes into backslashes."""
-    return s.replace("/", "\\").lower()
+    if not isinstance(s, (bytes, str)):
+        raise TypeError("normcase() argument must be str or bytes, "
+                        "not '{}'".format(s.__class__.__name__))
+    return s.replace(_get_altsep(s), _get_sep(s)).lower()
 
 
 # Return whether a path is absolute.
-# Trivial in Posix, harder on the Mac or MS-DOS.
-# For DOS it is absolute if it starts with a slash or backslash (current
-# volume), or if a pathname after the volume letter and colon / UNC resource
+# Trivial in Posix, harder on Windows.
+# For Windows it is absolute if it starts with a slash or backslash (current
+# volume), or if a pathname after the volume-letter-and-colon or UNC-resource
 # starts with a slash or backslash.
 
 def isabs(s):
     """Test whether a path is absolute"""
     s = splitdrive(s)[1]
-    return s != '' and s[:1] in '/\\'
+    return len(s) > 0 and s[:1] in _get_bothseps(s)
 
 
 # Join two (or more) paths.
 
 def join(a, *p):
-    """Join two or more pathname components, inserting "\\" as needed"""
+    """Join two or more pathname components, inserting "\\" as needed.
+    If any component is an absolute path, all previous path components
+    will be discarded."""
+    sep = _get_sep(a)
+    seps = _get_bothseps(a)
+    colon = _get_colon(a)
     path = a
     for b in p:
         b_wins = 0  # set to 1 iff b makes path irrelevant
-        if path == "":
+        if not path:
             b_wins = 1
 
         elif isabs(b):
             # This probably wipes out path so far.  However, it's more
-            # complicated if path begins with a drive letter:
+            # complicated if path begins with a drive letter.  You get a+b
+            # (minus redundant slashes) in these four cases:
             #     1. join('c:', '/a') == 'c:/a'
-            #     2. join('c:/', '/a') == 'c:/a'
-            # But
-            #     3. join('c:/a', '/b') == '/b'
-            #     4. join('c:', 'd:/') = 'd:/'
-            #     5. join('c:/', 'd:/') = 'd:/'
-            if path[1:2] != ":" or b[1:2] == ":":
-                # Path doesn't start with a drive letter, or cases 4 and 5.
-                b_wins = 1
+            #     2. join('//computer/share', '/a') == '//computer/share/a'
+            #     3. join('c:/', '/a') == 'c:/a'
+            #     4. join('//computer/share/', '/a') == '//computer/share/a'
+            # But b wins in all of these cases:
+            #     5. join('c:/a', '/b') == '/b'
+            #     6. join('//computer/share/a', '/b') == '/b'
+            #     7. join('c:', 'd:/') == 'd:/'
+            #     8. join('c:', '//computer/share/') == '//computer/share/'
+            #     9. join('//computer/share', 'd:/') == 'd:/'
+            #    10. join('//computer/share', '//computer/share/') == '//computer/share/'
+            #    11. join('c:/', 'd:/') == 'd:/'
+            #    12. join('c:/', '//computer/share/') == '//computer/share/'
+            #    13. join('//computer/share/', 'd:/') == 'd:/'
+            #    14. join('//computer/share/', '//computer/share/') == '//computer/share/'
+            b_prefix, b_rest = splitdrive(b)
 
-            # Else path has a drive letter, and b doesn't but is absolute.
-            elif len(path) > 3 or (len(path) == 3 and
-                                   path[-1] not in "/\\"):
-                # case 3
+            # if b has a prefix, it always wins.
+            if b_prefix:
                 b_wins = 1
+            else:
+                # b doesn't have a prefix.
+                # but isabs(b) returned true.
+                # and therefore b_rest[0] must be a slash.
+                # (but let's check that.)
+                assert(b_rest and b_rest[0] in seps)
+
+                # so, b still wins if path has a rest that's more than a sep.
+                # you get a+b if path_rest is empty or only has a sep.
+                # (see cases 1-4 for times when b loses.)
+                path_rest = splitdrive(path)[1]
+                b_wins = path_rest and path_rest not in seps
 
         if b_wins:
             path = b
         else:
             # Join, and ensure there's a separator.
             assert len(path) > 0
-            if path[-1] in "/\\":
-                if b and b[0] in "/\\":
+            if path[-1:] in seps:
+                if b and b[:1] in seps:
                     path += b[1:]
                 else:
                     path += b
-            elif path[-1] == ":":
+            elif path[-1:] == colon:
                 path += b
             elif b:
-                if b[0] in "/\\":
+                if b[:1] in seps:
                     path += b
                 else:
-                    path += "\\" + b
+                    path += sep + b
             else:
                 # path is not empty and does not end with a backslash,
                 # but b is empty; since, e.g., split('a/') produces
                 # ('a', ''), it's best if join() adds a backslash in
                 # this case.
-                path += '\\'
+                path += sep
 
     return path
 
@@ -96,40 +186,83 @@ def join(a, *p):
 # colon) and the path specification.
 # It is always true that drivespec + pathspec == p
 def splitdrive(p):
-    """Split a pathname into drive and path specifiers. Returns a 2-tuple
-"(drive,path)";  either part may be empty"""
-    if p[1:2] == ':':
-        return p[0:2], p[2:]
-    return '', p
+    """Split a pathname into drive/UNC sharepoint and relative path specifiers.
+    Returns a 2-tuple (drive_or_unc, path); either part may be empty.
+
+    If you assign
+        result = splitdrive(p)
+    It is always true that:
+        result[0] + result[1] == p
+
+    If the path contained a drive letter, drive_or_unc will contain everything
+    up to and including the colon.  e.g. splitdrive("c:/dir") returns ("c:", "/dir")
+
+    If the path contained a UNC path, the drive_or_unc will contain the host name
+    and share up to but not including the fourth directory separator character.
+    e.g. splitdrive("//host/computer/dir") returns ("//host/computer", "/dir")
+
+    Paths cannot contain both a drive letter and a UNC path.
+
+    """
+    empty = _get_empty(p)
+    if len(p) > 1:
+        sep = _get_sep(p)
+        normp = normcase(p)
+        if (normp[0:2] == sep*2) and (normp[2:3] != sep):
+            # is a UNC path:
+            # vvvvvvvvvvvvvvvvvvvv drive letter or UNC path
+            # \\machine\mountpoint\directory\etc\...
+            #           directory ^^^^^^^^^^^^^^^
+            index = normp.find(sep, 2)
+            if index == -1:
+                return empty, p
+            index2 = normp.find(sep, index + 1)
+            # a UNC path can't have two slashes in a row
+            # (after the initial two)
+            if index2 == index + 1:
+                return empty, p
+            if index2 == -1:
+                index2 = len(p)
+            return p[:index2], p[index2:]
+        if normp[1:2] == _get_colon(p):
+            return p[:2], p[2:]
+    return empty, p
 
 
 # Parse UNC paths
 def splitunc(p):
-    """Split a pathname into UNC mount point and relative path specifiers.
+    """Deprecated since Python 3.1.  Please use splitdrive() instead;
+    it now handles UNC paths.
+
+    Split a pathname into UNC mount point and relative path specifiers.
 
     Return a 2-tuple (unc, rest); either part may be empty.
     If unc is not empty, it has the form '//host/mount' (or similar
     using backslashes).  unc+rest is always the input path.
     Paths containing drive letters never have an UNC part.
     """
-    if p[1:2] == ':':
-        return '', p # Drive letter present
+    import warnings
+    warnings.warn("ntpath.splitunc is deprecated, use ntpath.splitdrive instead",
+                  DeprecationWarning)
+    sep = _get_sep(p)
+    if not p[1:2]:
+        return p[:0], p # Drive letter present
     firstTwo = p[0:2]
-    if firstTwo == '//' or firstTwo == '\\\\':
+    if normcase(firstTwo) == sep + sep:
         # is a UNC path:
         # vvvvvvvvvvvvvvvvvvvv equivalent to drive letter
         # \\machine\mountpoint\directories...
         #           directory ^^^^^^^^^^^^^^^
         normp = normcase(p)
-        index = normp.find('\\', 2)
+        index = normp.find(sep, 2)
         if index == -1:
             ##raise RuntimeError, 'illegal UNC path: "' + p + '"'
-            return ("", p)
-        index = normp.find('\\', index + 1)
+            return (p[:0], p)
+        index = normp.find(sep, index + 1)
         if index == -1:
             index = len(p)
         return p[:index], p[index:]
-    return '', p
+    return p[:0], p
 
 
 # Split a path in head (everything up to the last '/') and tail (the
@@ -143,15 +276,16 @@ def split(p):
     Return tuple (head, tail) where tail is everything after the final slash.
     Either part may be empty."""
 
+    seps = _get_bothseps(p)
     d, p = splitdrive(p)
     # set i to index beyond p's last slash
     i = len(p)
-    while i and p[i-1] not in '/\\':
-        i = i - 1
+    while i and p[i-1] not in seps:
+        i -= 1
     head, tail = p[:i], p[i:]  # now tail has no slashes
     # remove trailing slashes from head, unless it's all slashes
     head2 = head
-    while head2 and head2[-1] in '/\\':
+    while head2 and head2[-1:] in seps:
         head2 = head2[:-1]
     head = head2 or head
     return d + head, tail
@@ -163,24 +297,9 @@ def split(p):
 # It is always true that root + ext == p.
 
 def splitext(p):
-    """Split the extension from a pathname.
-
-    Extension is everything from the last dot to the end.
-    Return (root, ext), either part may be empty."""
-    root, ext = '', ''
-    for c in p:
-        if c in ['/','\\']:
-            root, ext = root + ext + c, ''
-        elif c == '.':
-            if ext:
-                root, ext = root + ext, c
-            else:
-                ext = c
-        elif ext:
-            ext = ext + c
-        else:
-            root = root + c
-    return root, ext
+    return genericpath._splitext(p, _get_sep(p), _get_altsep(p),
+                                 _get_dot(p))
+splitext.__doc__ = genericpath._splitext.__doc__
 
 
 # Return the tail (basename) part of a path.
@@ -196,132 +315,40 @@ def dirname(p):
     """Returns the directory component of a pathname"""
     return split(p)[0]
 
-
-# Return the longest prefix of all list elements.
-
-def commonprefix(m):
-    "Given a list of pathnames, returns the longest common leading component"
-    if not m: return ''
-    prefix = m[0]
-    for item in m:
-        for i in range(len(prefix)):
-            if prefix[:i+1] != item[:i+1]:
-                prefix = prefix[:i]
-                if i == 0: return ''
-                break
-    return prefix
-
-
-# Get size, mtime, atime of files.
-
-def getsize(filename):
-    """Return the size of a file, reported by os.stat()"""
-    st = os.stat(filename)
-    return st[stat.ST_SIZE]
-
-def getmtime(filename):
-    """Return the last modification time of a file, reported by os.stat()"""
-    st = os.stat(filename)
-    return st[stat.ST_MTIME]
-
-def getatime(filename):
-    """Return the last access time of a file, reported by os.stat()"""
-    st = os.stat(filename)
-    return st[stat.ST_ATIME]
-
-
 # Is a path a symbolic link?
-# This will always return false on systems where posix.lstat doesn't exist.
+# This will always return false on systems where os.lstat doesn't exist.
 
 def islink(path):
-    """Test for symbolic link.  On WindowsNT/95 always returns false"""
-    return 0
-
-
-# Does a path exist?
-# This is false for dangling symbolic links.
-
-def exists(path):
-    """Test whether a path exists"""
+    """Test whether a path is a symbolic link.
+    This will always return false for Windows prior to 6.0
+    and for OS/2.
+    """
     try:
-        st = os.stat(path)
-    except os.error:
-        return 0
-    return 1
+        st = os.lstat(path)
+    except (os.error, AttributeError):
+        return False
+    return stat.S_ISLNK(st.st_mode)
 
+# Being true for dangling symbolic links is also useful.
 
-# Is a path a dos directory?
-# This follows symbolic links, so both islink() and isdir() can be true
-# for the same path.
-
-def isdir(path):
-    """Test whether a path is a directory"""
+def lexists(path):
+    """Test whether a path exists.  Returns True for broken symbolic links"""
     try:
-        st = os.stat(path)
-    except os.error:
-        return 0
-    return stat.S_ISDIR(st[stat.ST_MODE])
-
-
-# Is a path a regular file?
-# This follows symbolic links, so both islink() and isdir() can be true
-# for the same path.
-
-def isfile(path):
-    """Test whether a path is a regular file"""
-    try:
-        st = os.stat(path)
-    except os.error:
-        return 0
-    return stat.S_ISREG(st[stat.ST_MODE])
-
+        st = os.lstat(path)
+    except (os.error, WindowsError):
+        return False
+    return True
 
 # Is a path a mount point?  Either a root (with or without drive letter)
 # or an UNC path with at most a / or \ after the mount point.
 
 def ismount(path):
     """Test whether a path is a mount point (defined as root of drive)"""
-    unc, rest = splitunc(path)
-    if unc:
-        return rest in ("", "/", "\\")
-    p = splitdrive(path)[1]
-    return len(p) == 1 and p[0] in '/\\'
-
-
-# Directory tree walk.
-# For each directory under top (including top itself, but excluding
-# '.' and '..'), func(arg, dirname, filenames) is called, where
-# dirname is the name of the directory and filenames is the list
-# files files (and subdirectories etc.) in the directory.
-# The func may modify the filenames list, to implement a filter,
-# or to impose a different order of visiting.
-
-def walk(top, func, arg):
-    """Directory tree walk with callback function.
-
-    For each directory in the directory tree rooted at top (including top
-    itself, but excluding '.' and '..'), call func(arg, dirname, fnames).
-    dirname is the name of the directory, and fnames a list of the names of
-    the files and subdirectories in dirname (excluding '.' and '..').  func
-    may modify the fnames list in-place (e.g. via del or slice assignment),
-    and walk will only recurse into the subdirectories whose names remain in
-    fnames; this can be used to implement a filter, or to impose a specific
-    order of visiting.  No semantics are defined for, or required of, arg,
-    beyond that arg is always passed to func.  It can be used, e.g., to pass
-    a filename pattern, or a mutable object designed to accumulate
-    statistics.  Passing None for arg is common."""
-
-    try:
-        names = os.listdir(top)
-    except os.error:
-        return
-    func(arg, top, names)
-    exceptions = ('.', '..')
-    for name in names:
-        if name not in exceptions:
-            name = join(top, name)
-            if isdir(name):
-                walk(name, func, arg)
+    seps = _get_bothseps(path)
+    root, rest = splitdrive(path)
+    if root and root[0] in seps:
+        return (not rest) or (rest in seps)
+    return rest in seps
 
 
 # Expand paths beginning with '~' or '~user'.
@@ -337,88 +364,161 @@ def expanduser(path):
     """Expand ~ and ~user constructs.
 
     If user or $HOME is unknown, do nothing."""
-    if path[:1] != '~':
+    if isinstance(path, bytes):
+        tilde = b'~'
+    else:
+        tilde = '~'
+    if not path.startswith(tilde):
         return path
     i, n = 1, len(path)
-    while i < n and path[i] not in '/\\':
-        i = i + 1
-    if i == 1:
-        if os.environ.has_key('HOME'):
-            userhome = os.environ['HOME']
-        elif not os.environ.has_key('HOMEPATH'):
-            return path
-        else:
-            try:
-                drive = os.environ['HOMEDRIVE']
-            except KeyError:
-                drive = ''
-            userhome = join(drive, os.environ['HOMEPATH'])
-    else:
+    while i < n and path[i] not in _get_bothseps(path):
+        i += 1
+
+    if 'HOME' in os.environ:
+        userhome = os.environ['HOME']
+    elif 'USERPROFILE' in os.environ:
+        userhome = os.environ['USERPROFILE']
+    elif not 'HOMEPATH' in os.environ:
         return path
+    else:
+        try:
+            drive = os.environ['HOMEDRIVE']
+        except KeyError:
+            drive = ''
+        userhome = join(drive, os.environ['HOMEPATH'])
+
+    if isinstance(path, bytes):
+        userhome = userhome.encode(sys.getfilesystemencoding())
+
+    if i != 1: #~user
+        userhome = join(dirname(userhome), path[1:i])
+
     return userhome + path[i:]
 
 
 # Expand paths containing shell variable substitutions.
 # The following rules apply:
 #       - no expansion within single quotes
-#       - no escape character, except for '$$' which is translated into '$'
+#       - '$$' is translated into '$'
+#       - '%%' is translated into '%' if '%%' are not seen in %var1%%var2%
 #       - ${varname} is accepted.
-#       - varnames can be made out of letters, digits and the character '_'
+#       - $varname is accepted.
+#       - %varname% is accepted.
+#       - varnames can be made out of letters, digits and the characters '_-'
+#         (though is not verified in the ${varname} and %varname% cases)
 # XXX With COMMAND.COM you can use any characters in a variable name,
 # XXX except '^|<>='.
 
 def expandvars(path):
-    """Expand shell variables of form $var and ${var}.
+    """Expand shell variables of the forms $var, ${var} and %var%.
 
     Unknown variables are left unchanged."""
-    if '$' not in path:
-        return path
-    import string
-    varchars = string.ascii_letters + string.digits + '_-'
-    res = ''
+    if isinstance(path, bytes):
+        if ord('$') not in path and ord('%') not in path:
+            return path
+        import string
+        varchars = bytes(string.ascii_letters + string.digits + '_-', 'ascii')
+        quote = b'\''
+        percent = b'%'
+        brace = b'{'
+        dollar = b'$'
+    else:
+        if '$' not in path and '%' not in path:
+            return path
+        import string
+        varchars = string.ascii_letters + string.digits + '_-'
+        quote = '\''
+        percent = '%'
+        brace = '{'
+        dollar = '$'
+    res = path[:0]
     index = 0
     pathlen = len(path)
     while index < pathlen:
-        c = path[index]
-        if c == '\'':   # no expansion within single quotes
+        c = path[index:index+1]
+        if c == quote:   # no expansion within single quotes
             path = path[index + 1:]
             pathlen = len(path)
             try:
-                index = path.index('\'')
-                res = res + '\'' + path[:index + 1]
+                index = path.index(c)
+                res += c + path[:index + 1]
             except ValueError:
-                res = res + path
+                res += path
                 index = pathlen - 1
-        elif c == '$':  # variable or '$$'
-            if path[index + 1:index + 2] == '$':
-                res = res + c
-                index = index + 1
-            elif path[index + 1:index + 2] == '{':
+        elif c == percent:  # variable or '%'
+            if path[index + 1:index + 2] == percent:
+                res += c
+                index += 1
+            else:
+                path = path[index+1:]
+                pathlen = len(path)
+                try:
+                    index = path.index(percent)
+                except ValueError:
+                    res += percent + path
+                    index = pathlen - 1
+                else:
+                    var = path[:index]
+                    if isinstance(path, bytes):
+                        var = var.decode('ascii')
+                    if var in os.environ:
+                        value = os.environ[var]
+                    else:
+                        value = '%' + var + '%'
+                    if isinstance(path, bytes):
+                        value = value.encode('ascii')
+                    res += value
+        elif c == dollar:  # variable or '$$'
+            if path[index + 1:index + 2] == dollar:
+                res += c
+                index += 1
+            elif path[index + 1:index + 2] == brace:
                 path = path[index+2:]
                 pathlen = len(path)
                 try:
-                    index = path.index('}')
+                    if isinstance(path, bytes):
+                        index = path.index(b'}')
+                    else:
+                        index = path.index('}')
                     var = path[:index]
-                    if os.environ.has_key(var):
-                        res = res + os.environ[var]
+                    if isinstance(path, bytes):
+                        var = var.decode('ascii')
+                    if var in os.environ:
+                        value = os.environ[var]
+                    else:
+                        value = '${' + var + '}'
+                    if isinstance(path, bytes):
+                        value = value.encode('ascii')
+                    res += value
                 except ValueError:
-                    res = res + path
+                    if isinstance(path, bytes):
+                        res += b'${' + path
+                    else:
+                        res += '${' + path
                     index = pathlen - 1
             else:
                 var = ''
-                index = index + 1
+                index += 1
                 c = path[index:index + 1]
-                while c != '' and c in varchars:
-                    var = var + c
-                    index = index + 1
+                while c and c in varchars:
+                    if isinstance(path, bytes):
+                        var += c.decode('ascii')
+                    else:
+                        var += c
+                    index += 1
                     c = path[index:index + 1]
-                if os.environ.has_key(var):
-                    res = res + os.environ[var]
-                if c != '':
-                    res = res + c
+                if var in os.environ:
+                    value = os.environ[var]
+                else:
+                    value = '$' + var
+                if isinstance(path, bytes):
+                    value = value.encode('ascii')
+                res += value
+                if c:
+                    index -= 1
         else:
-            res = res + c
-        index = index + 1
+            res += c
+        index += 1
     return res
 
 
@@ -428,21 +528,33 @@ def expandvars(path):
 
 def normpath(path):
     """Normalize path, eliminating double slashes, etc."""
-    path = path.replace("/", "\\")
+    sep = _get_sep(path)
+    dotdot = _get_dot(path) * 2
+    special_prefixes = _get_special(path)
+    if path.startswith(special_prefixes):
+        # in the case of paths with these prefixes:
+        # \\.\ -> device names
+        # \\?\ -> literal paths
+        # do not do any normalization, but return the path unchanged
+        return path
+    path = path.replace(_get_altsep(path), sep)
     prefix, path = splitdrive(path)
-    while path[:1] == "\\":
-        prefix = prefix + "\\"
-        path = path[1:]
-    comps = path.split("\\")
+
+    # collapse initial backslashes
+    if path.startswith(sep):
+        prefix += sep
+        path = path.lstrip(sep)
+
+    comps = path.split(sep)
     i = 0
     while i < len(comps):
-        if comps[i] in ('.', ''):
+        if not comps[i] or comps[i] == _get_dot(path):
             del comps[i]
-        elif comps[i] == '..':
-            if i > 0 and comps[i-1] != '..':
+        elif comps[i] == dotdot:
+            if i > 0 and comps[i-1] != dotdot:
                 del comps[i-1:i+1]
                 i -= 1
-            elif i == 0 and prefix.endswith("\\"):
+            elif i == 0 and prefix.endswith(_get_sep(path)):
                 del comps[i]
             else:
                 i += 1
@@ -450,22 +562,124 @@ def normpath(path):
             i += 1
     # If the path is now empty, substitute '.'
     if not prefix and not comps:
-        comps.append('.')
-    return prefix + "\\".join(comps)
+        comps.append(_get_dot(path))
+    return prefix + sep.join(comps)
 
 
 # Return an absolute path.
-def abspath(path):
-    """Return the absolute version of a path"""
-    if path: # Empty path must return current working directory.
-        from nt import _getfullpathname
-        try:
-            path = _getfullpathname(path)
-        except WindowsError:
-            pass # Bad path - return unchanged.
-    else:
-        path = os.getcwd()
-    return normpath(path)
+try:
+    from nt import _getfullpathname
+
+except ImportError: # not running on Windows - mock up something sensible
+    def abspath(path):
+        """Return the absolute version of a path."""
+        if not isabs(path):
+            if isinstance(path, bytes):
+                cwd = os.getcwdb()
+            else:
+                cwd = os.getcwd()
+            path = join(cwd, path)
+        return normpath(path)
+
+else:  # use native Windows method on Windows
+    def abspath(path):
+        """Return the absolute version of a path."""
+
+        if path: # Empty path must return current working directory.
+            try:
+                path = _getfullpathname(path)
+            except WindowsError:
+                pass # Bad path - return unchanged.
+        elif isinstance(path, bytes):
+            path = os.getcwdb()
+        else:
+            path = os.getcwd()
+        return normpath(path)
 
 # realpath is a no-op on systems without islink support
 realpath = abspath
+# Win9x family and earlier have no Unicode filename support.
+supports_unicode_filenames = (hasattr(sys, "getwindowsversion") and
+                              sys.getwindowsversion()[3] >= 2)
+
+def relpath(path, start=curdir):
+    """Return a relative version of a path"""
+    sep = _get_sep(path)
+
+    if start is curdir:
+        start = _get_dot(path)
+
+    if not path:
+        raise ValueError("no path specified")
+
+    start_abs = abspath(normpath(start))
+    path_abs = abspath(normpath(path))
+    start_drive, start_rest = splitdrive(start_abs)
+    path_drive, path_rest = splitdrive(path_abs)
+    if normcase(start_drive) != normcase(path_drive):
+        error = "path is on mount '{0}', start on mount '{1}'".format(
+            path_drive, start_drive)
+        raise ValueError(error)
+
+    start_list = [x for x in start_rest.split(sep) if x]
+    path_list = [x for x in path_rest.split(sep) if x]
+    # Work out how much of the filepath is shared by start and path.
+    i = 0
+    for e1, e2 in zip(start_list, path_list):
+        if normcase(e1) != normcase(e2):
+            break
+        i += 1
+
+    if isinstance(path, bytes):
+        pardir = b'..'
+    else:
+        pardir = '..'
+    rel_list = [pardir] * (len(start_list)-i) + path_list[i:]
+    if not rel_list:
+        return _get_dot(path)
+    return join(*rel_list)
+
+
+# determine if two files are in fact the same file
+try:
+    # GetFinalPathNameByHandle is available starting with Windows 6.0.
+    # Windows XP and non-Windows OS'es will mock _getfinalpathname.
+    if sys.getwindowsversion()[:2] >= (6, 0):
+        from nt import _getfinalpathname
+    else:
+        raise ImportError
+except (AttributeError, ImportError):
+    # On Windows XP and earlier, two files are the same if their absolute
+    # pathnames are the same.
+    # Non-Windows operating systems fake this method with an XP
+    # approximation.
+    def _getfinalpathname(f):
+        return normcase(abspath(f))
+
+def samefile(f1, f2):
+    "Test whether two pathnames reference the same actual file"
+    return _getfinalpathname(f1) == _getfinalpathname(f2)
+
+
+try:
+    from nt import _getfileinformation
+except ImportError:
+    # On other operating systems, just return the fd and see that
+    # it compares equal in sameopenfile.
+    def _getfileinformation(fd):
+        return fd
+
+def sameopenfile(f1, f2):
+    """Test whether two file objects reference the same file"""
+    return _getfileinformation(f1) == _getfileinformation(f2)
+
+
+try:
+    # The genericpath.isdir implementation uses os.stat and checks the mode
+    # attribute to tell whether or not the path is a directory.
+    # This is overkill on Windows - just pass the path to GetFileAttributes
+    # and check the attribute from there.
+    from nt import _isdir as isdir
+except ImportError:
+    # Use genericpath.isdir as imported above.
+    pass

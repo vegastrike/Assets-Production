@@ -14,8 +14,8 @@ class TrafficAI(VS.PythonAI):
     def init(self,un):
         self.shipiter=0;
         self.speed = vsrandom.uniform (maxspeed/3,maxspeed);
-        print 'self.speed'
-        print self.speed
+        print('self.speed')
+        print(self.speed)
         self.stopping=0
         self.begin=1
         self.restoreCruisingSpeed(self.speed)
@@ -49,6 +49,6 @@ class TrafficAI(VS.PythonAI):
             self.shipiter=0
         return
 hi1 = TrafficAI()
-print 'AI creation successful'
+print('AI creation successful')
 hi1 = 0
 #: 1.7; previous revision: 1.6

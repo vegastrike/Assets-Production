@@ -17,13 +17,13 @@ def prettyfile(fil):
 
 def _withlineno(msg, *fmtargs): # Simple line number
 	laststack = traceback.extract_stack()[-2]
-	print ' +++ %s:%s %s' % (prettyfile(laststack[0]),laststack[1],str(msg) % fmtargs)
+	print(' +++ %s:%s %s' % (prettyfile(laststack[0]),laststack[1],str(msg) % fmtargs))
 
 
 def _warn(msg, *fmtargs): # Traceback without killing the script
 	global debugnum
 	debugnum+=1
-	print " *** Python Warning %s!" % (debugnum,)
+	print(" *** Python Warning %s!" % (debugnum,))
 	sys.stderr.write('Warning Traceback %s:\n' % (debugnum,))
 	for frame in traceback.extract_stack()[:-1]:
 		sys.stderr.write('  File "%s", line %s' % (prettyfile(frame[0]), frame[1]))
@@ -33,7 +33,7 @@ def _warn(msg, *fmtargs): # Traceback without killing the script
 def _fatal(msg, *fmtargs): # Kill the script!
 	global debugnum
 	debugnum+=1
-	print "Python VSException %s!" % (debugnum,)
+	print("Python VSException %s!" % (debugnum,))
 	raise VSException(msg)
 
 fatal = _fatal # Really bad error... Kill the script.  Same as a call to raise()

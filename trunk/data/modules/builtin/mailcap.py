@@ -24,21 +24,21 @@ def getcaps():
             continue
         morecaps = readmailcapfile(fp)
         fp.close()
-        for key in morecaps.keys():
-            if not caps.has_key(key):
-                caps[key] = morecaps[key]
+        for key, value in morecaps.items():
+            if not key in caps:
+                caps[key] = value
             else:
-                caps[key] = caps[key] + morecaps[key]
+                caps[key] = caps[key] + value
     return caps
 
 def listmailcapfiles():
     """Return a list of all mailcap files found on the system."""
     # XXX Actually, this is Unix-specific
-    if os.environ.has_key('MAILCAPS'):
+    if 'MAILCAPS' in os.environ:
         str = os.environ['MAILCAPS']
         mailcaps = str.split(':')
     else:
-        if os.environ.has_key('HOME'):
+        if 'HOME' in os.environ:
             home = os.environ['HOME']
         else:
             # Don't bother with getpwuid()
@@ -82,7 +82,7 @@ def readmailcapfile(fp):
             types[j] = types[j].strip()
         key = '/'.join(types).lower()
         # Update the database
-        if caps.has_key(key):
+        if key in caps:
             caps[key].append(fields)
         else:
             caps[key] = [fields]
@@ -112,7 +112,7 @@ def parseline(line):
         else:
             fkey = field[:i].strip()
             fvalue = field[i+1:].strip()
-        if fields.has_key(fkey):
+        if fkey in fields:
             # Ignore it
             pass
         else:
@@ -147,7 +147,7 @@ def findmatch(caps, MIMEtype, key='view', filename="/dev/null", plist=[]):
     entries = lookup(caps, MIMEtype, key)
     # XXX This code should somehow check for the needsterminal flag.
     for e in entries:
-        if e.has_key('test'):
+        if 'test' in e:
             test = subst(e['test'], filename, plist)
             if test and os.system(test) != 0:
                 continue
@@ -157,14 +157,14 @@ def findmatch(caps, MIMEtype, key='view', filename="/dev/null", plist=[]):
 
 def lookup(caps, MIMEtype, key=None):
     entries = []
-    if caps.has_key(MIMEtype):
+    if MIMEtype in caps:
         entries = entries + caps[MIMEtype]
     MIMEtypes = MIMEtype.split('/')
     MIMEtype = MIMEtypes[0] + '/*'
-    if caps.has_key(MIMEtype):
+    if MIMEtype in caps:
         entries = entries + caps[MIMEtype]
     if key is not None:
-        entries = filter(lambda e, key=key: e.has_key(key), entries)
+        entries = [e for e in entries if key in e]
     return entries
 
 def subst(field, MIMEtype, filename, plist=[]):
@@ -219,37 +219,35 @@ def test():
     for i in range(1, len(sys.argv), 2):
         args = sys.argv[i:i+2]
         if len(args) < 2:
-            print "usage: mailcap [MIMEtype file] ..."
+            print("usage: mailcap [MIMEtype file] ...")
             return
         MIMEtype = args[0]
         file = args[1]
         command, e = findmatch(caps, MIMEtype, 'view', file)
         if not command:
-            print "No viewer found for", type
+            print("No viewer found for", type)
         else:
-            print "Executing:", command
+            print("Executing:", command)
             sts = os.system(command)
             if sts:
-                print "Exit status:", sts
+                print("Exit status:", sts)
 
 def show(caps):
-    print "Mailcap files:"
-    for fn in listmailcapfiles(): print "\t" + fn
-    print
+    print("Mailcap files:")
+    for fn in listmailcapfiles(): print("\t" + fn)
+    print()
     if not caps: caps = getcaps()
-    print "Mailcap entries:"
-    print
-    ckeys = caps.keys()
-    ckeys.sort()
+    print("Mailcap entries:")
+    print()
+    ckeys = sorted(caps)
     for type in ckeys:
-        print type
+        print(type)
         entries = caps[type]
         for e in entries:
-            keys = e.keys()
-            keys.sort()
+            keys = sorted(e)
             for k in keys:
-                print "  %-15s" % k, e[k]
-            print
+                print("  %-15s" % k, e[k])
+            print()
 
 if __name__ == '__main__':
     test()

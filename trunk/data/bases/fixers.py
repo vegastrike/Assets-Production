@@ -180,7 +180,7 @@ def getCFixers(playernum):
     cfixers = list()
     for fxr in fixerlist:
         tempd = dict()
-        exec fxr[1] in tempd
+        exec(fxr[1], tempd)
         cfixers.append(CFixer(tempd["conversation"]))
     return cfixers
 
@@ -305,7 +305,7 @@ class Conversation:
         name = str(nam)
         if name == str():
             name = self.ROOT_KEY
-        if self.nodes.has_key(name):
+        if name in self.nodes:
             return self.nodes[name]
         debug.error("Error: Node with name \'%s\' does not exist."%name)
 
