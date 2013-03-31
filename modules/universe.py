@@ -43,7 +43,7 @@ def systemCargoDemand (category,priceratio,quantratio,ships=1,planets=1):
             isplanet = un.isPlanet()
             if ( (isplanet and planets) or ((not isplanet) and ships)):
                 adjustUnitCargo(un,category,priceratio,quantratio)
-    un = i.next()
+        un = i.next()
 
 def setFirstSaveData(player,key,val):
     mylen = Director.getSaveDataLength(player,key)
