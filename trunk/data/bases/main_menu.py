@@ -200,12 +200,12 @@ class IntroRoom(PreIntroRoom):
         Base.SetDJEnabled(0)
         GUI.GUIMovieRoom.onStart(self, video)
     def onSkip(self, button, params):
-    global starting_new_game, plist_monologue
+        global starting_new_game, plist_monologue
         PreIntroRoom.onSkip(self, button, params)
         #DoStartNewGame(self, params)
-    starting_new_game = True
-    VS.musicPlayList(plist_monologue)
-    Base.SetCurRoom(intro_guiroom.getIndex())
+        starting_new_game = True
+        VS.musicPlayList(plist_monologue)
+        Base.SetCurRoom(intro_guiroom.getIndex())
 
 #Uncomment the following lines to use intro movies
 introroom = IntroRoom(room_intro,
