@@ -5,40 +5,40 @@
 		<stats name="confed" relation="1" />
 		<stats name="aera" relation="-1" />
 		<stats name="rlaan" relation="0"/>
-		<stats name="merchant_guild" relation="1" />
-		<stats name="luddites" relation="-1" />
-		<stats name="pirates" relation="-1" />
+		<stats name="merchant_guild" relation="0" />
+		<stats name="luddites" relation="-0.1" />
+		<stats name="pirates" relation="-0.1" />
 		<stats name="hunter" relation="0" />
-		<stats name="homeland-security" relation="1" />
-		<stats name="ISO" relation="-1" />
+		<stats name="homeland-security" relation="0" />
+		<stats name="ISO" relation="-0.1" />
 		<stats name="unknown" relation="0"/>
-		<stats name="andolian" relation="1" />
-		<stats name="highborn" relation="1"/>
-		<stats name="shaper" relation="1"/>
-		<stats name="unadorned" relation="1"/>
-		<stats name="purist" relation="1"/>
+		<stats name="andolian" relation="0" />
+		<stats name="highborn" relation="0"/>
+		<stats name="shaper" relation="0"/>
+		<stats name="unadorned" relation="0"/>
+		<stats name="purist" relation="0"/>
 		<stats name="forsaken" relation="0"/>
-		<stats name="LIHW" relation="1"/>
+		<stats name="LIHW" relation="0"/>
 		<stats name="uln" relation="0"/>
 		<stats name="dgn" relation="0"/>
 		<stats name="klkk" relation="0" />
-		<stats name="mechanist" relation="1"/>
+		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
 		<stats name="aeran_merchant_marine" relation="-1" />
 		<stats name="rlaan_citizen" relation="0"/>
-		<stats name="merchant_guild_citizen" relation="1" />
-		<stats name="andolian_citizen" relation="1" />
-		<stats name="highborn_citizen" relation="1"/>
-		<stats name="shaper_citizen" relation="1"/>
-		<stats name="unadorned_citizen" relation="1"/>
-		<stats name="purist_citizen" relation="1"/>
+		<stats name="merchant_guild_citizen" relation="0" />
+		<stats name="andolian_citizen" relation="0" />
+		<stats name="highborn_citizen" relation="0"/>
+		<stats name="shaper_citizen" relation="0"/>
+		<stats name="unadorned_citizen" relation="0"/>
+		<stats name="purist_citizen" relation="0"/>
 		<stats name="forsaken_citizen" relation="0"/>
-		<stats name="LIHW_citizen" relation="1"/>
+		<stats name="LIHW_citizen" relation="0"/>
 		<stats name="uln_citizen" relation="0"/>
 		<stats name="dgn_citizen" relation="0"/>
 		<stats name="klkk_citizen" relation="0" />
-		<stats name="mechanist_citizen" relation="1"/>
+		<stats name="mechanist_citizen" relation="0"/>
 		<stats name="shmrn_citizen" relation="0"/>
 		<Explosion name="explosion_orange.ani"/>
 <!--		<CommAnimation>  
@@ -52,40 +52,39 @@
       <stats name="rlaan" relation="0"/>
       <stats name="merchant_guild" relation="0"/>
       <stats name="luddites" relation="-1"/>
-      <stats name="pirates" relation="-1"/>
+      <stats name="pirates" relation="-0.5"/>
       <stats name="hunter" relation="0"/>
       <stats name="homeland-security" relation="0"/>
       <stats name="ISO" relation="0"/>
       <stats name="unknown" relation="0"/>
       <stats name="andolian" relation="1"/>
       <stats name="highborn" relation="0"/>
-      <stats name="shaper" relation="-.1"/>
-      <stats name="unadorned" relation=".8"/>
-      <stats name="purist" relation="-.1"/>
+      <stats name="shaper" relation="-0.1"/>
+      <stats name="unadorned" relation="0.1"/>
+      <stats name="purist" relation="-0.1"/>
       <stats name="forsaken" relation="0"/>
       <stats name="LIHW" relation="0"/>
       <stats name="uln" relation="0"/>
       <stats name="dgn" relation="0"/>
-      <stats name="klkk" relation="1"/>
-      <stats name="mechanist" relation="-.1"/>
-      <stats name="shmrn" relation="1"/>
+      <stats name="klkk" relation="0.1"/>
+      <stats name="mechanist" relation="-0.1"/>
+      <stats name="shmrn" relation="0.1"/>
       <stats name="rlaan_briin" relation="0"/>
-
       <stats name="aeran_merchant_marine" relation="-1"/>
       <stats name="rlaan_citizen" relation="0"/>
       <stats name="merchant_guild_citizen" relation="0"/>
       <stats name="andolian_citizen" relation="1"/>
       <stats name="highborn_citizen" relation="0"/>
       <stats name="shaper_citizen" relation="0"/>
-      <stats name="unadorned_citizen" relation=".8"/>
+      <stats name="unadorned_citizen" relation="0.1"/>
       <stats name="purist_citizen" relation="0"/>
       <stats name="forsaken_citizen" relation="0"/>
       <stats name="LIHW_citizen" relation="0"/>
       <stats name="uln_citizen" relation="0"/>
       <stats name="dgn_citizen" relation="0"/>
-      <stats name="klkk_citizen" relation="1"/>
+      <stats name="klkk_citizen" relation="0.1"/>
       <stats name="mechanist_citizen" relation="0"/>
-      <stats name="shmrn_citizen" relation="1"/>
+      <stats name="shmrn_citizen" relation="0.1"/>
       <Explosion name="explosion_orange.ani"/>
       <!--        <CommAnimation>  
         <MoodAnimation name="explosion_orange.ani" sex="0"/>  
@@ -97,16 +96,16 @@
       <stats name="aera" relation="-1"/>
       <stats name="rlaan" relation="0"/>
       <stats name="merchant_guild" relation="0"/>
-      <stats name="luddites" relation="-1"/>
-      <stats name="pirates" relation="-1"/>
+      <stats name="luddites" relation="0"/>
+      <stats name="pirates" relation="-0.5"/>
       <stats name="hunter" relation="0"/>
       <stats name="homeland-security" relation="0"/>
       <stats name="ISO" relation="0"/>
       <stats name="unknown" relation="0"/>
-      <stats name="andolian" relation="1"/>
+      <stats name="andolian" relation="0"/>
       <stats name="highborn" relation="0"/>
       <stats name="shaper" relation="0"/>
-      <stats name="unadorned" relation=".8"/>
+      <stats name="unadorned" relation="0"/>
       <stats name="purist" relation="0"/>
       <stats name="forsaken" relation="0"/>
       <stats name="LIHW" relation="0"/>
@@ -114,15 +113,15 @@
       <stats name="dgn" relation="0"/>
       <stats name="klkk" relation="1"/>
       <stats name="mechanist" relation="0"/>
-      <stats name="shmrn" relation=".8"/>
+      <stats name="shmrn" relation="0"/>
       <stats name="rlaan_briin" relation="0"/>
       <stats name="aeran_merchant_marine" relation="-1"/>
       <stats name="rlaan_citizen" relation="0"/>
       <stats name="merchant_guild_citizen" relation="0"/>
-      <stats name="andolian_citizen" relation="1"/>
+      <stats name="andolian_citizen" relation="0"/>
       <stats name="highborn_citizen" relation="0"/>
       <stats name="shaper_citizen" relation="0"/>
-      <stats name="unadorned_citizen" relation=".8"/>
+      <stats name="unadorned_citizen" relation="0"/>
       <stats name="purist_citizen" relation="0"/>
       <stats name="forsaken_citizen" relation="0"/>
       <stats name="LIHW_citizen" relation="0"/>
@@ -130,7 +129,7 @@
       <stats name="dgn_citizen" relation="0"/>
       <stats name="klkk_citizen" relation="1"/>
       <stats name="mechanist_citizen" relation="0"/>
-      <stats name="shmrn_citizen" relation=".8"/>
+      <stats name="shmrn_citizen" relation="0"/>
       <Explosion name="explosion_orange.ani"/>
       <!--        <CommAnimation>  
         <MoodAnimation name="explosion_orange.ani" sex="0"/>  
@@ -141,7 +140,7 @@
       <stats name="confed" relation="0"/>
       <stats name="aera" relation="-1"/>
       <stats name="rlaan" relation="0"/>
-      <stats name="merchant_guild" relation="1"/>
+      <stats name="merchant_guild" relation="0"/>
       <stats name="luddites" relation="0"/>
       <stats name="pirates" relation="-1"/>
       <stats name="hunter" relation="0"/>
@@ -152,7 +151,7 @@
       <stats name="highborn" relation="1"/>
       <stats name="shaper" relation="0"/>
       <stats name="unadorned" relation="0"/>
-      <stats name="purist" relation=".8"/>
+      <stats name="purist" relation="0.1"/>
       <stats name="forsaken" relation="0"/>
       <stats name="LIHW" relation="0"/>
       <stats name="uln" relation="0"/>
@@ -163,12 +162,12 @@
       <stats name="rlaan_briin" relation="0"/>
       <stats name="aeran_merchant_marine" relation="-1"/>
       <stats name="rlaan_citizen" relation="0"/>
-      <stats name="merchant_guild_citizen" relation="1"/>
+      <stats name="merchant_guild_citizen" relation="0"/>
       <stats name="andolian_citizen" relation="0"/>
       <stats name="highborn_citizen" relation="1"/>
       <stats name="shaper_citizen" relation="0"/>
       <stats name="unadorned_citizen" relation="0"/>
-      <stats name="purist_citizen" relation=".8"/>
+      <stats name="purist_citizen" relation="0.1"/>
       <stats name="forsaken_citizen" relation="0"/>
       <stats name="LIHW_citizen" relation="0"/>
       <stats name="uln_citizen" relation="0"/>
@@ -183,8 +182,8 @@
     </Faction>
     <Faction name="homeland-security" citizen="false" logoRGB="logos/homeland-securityPri.texture" secLogoRGB="logos/homeland-securitySec.texture" contraband="contraband" sparkred="0" sparkgreen=".3" sparkblue="0.6">
       <stats name="privateer" relation="0"/>
-      <stats name="confed" relation="1"/>
-      <stats name="aera" relation="-1"/>
+      <stats name="confed" relation="0"/>
+      <stats name="aera" relation="-0.1"/>
       <stats name="rlaan" relation="0"/>
       <stats name="merchant_guild" relation="1"/>
       <stats name="luddites" relation="-1"/>
@@ -193,33 +192,33 @@
       <stats name="homeland-security" relation="1"/>
       <stats name="ISO" relation="-1"/>
       <stats name="unknown" relation="0"/>
-      <stats name="andolian" relation="1"/>
-      <stats name="highborn" relation="1"/>
-      <stats name="shaper" relation="1"/>
-      <stats name="unadorned" relation="1"/>
-      <stats name="purist" relation="1"/>
+      <stats name="andolian" relation="0.1"/>
+      <stats name="highborn" relation="0.1"/>
+      <stats name="shaper" relation="0.1"/>
+      <stats name="unadorned" relation="0.1"/>
+      <stats name="purist" relation="0.1"/>
       <stats name="forsaken" relation="0"/>
-      <stats name="LIHW" relation=".1"/>
+      <stats name="LIHW" relation="0.1"/>
       <stats name="uln" relation="0"/>
       <stats name="dgn" relation="0"/>
       <stats name="klkk" relation="0"/>
-      <stats name="mechanist" relation="1"/>
+      <stats name="mechanist" relation="0.1"/>
       <stats name="shmrn" relation="0"/>
       <stats name="rlaan_briin" relation="0"/>
-      <stats name="aeran_merchant_marine" relation="-1"/>
+      <stats name="aeran_merchant_marine" relation="-0.1"/>
       <stats name="rlaan_citizen" relation="0"/>
       <stats name="merchant_guild_citizen" relation="1"/>
-      <stats name="andolian_citizen" relation="1"/>
-      <stats name="highborn_citizen" relation="1"/>
-      <stats name="shaper_citizen" relation="1"/>
-      <stats name="unadorned_citizen" relation="1"/>
-      <stats name="purist_citizen" relation="1"/>
+      <stats name="andolian_citizen" relation="0.1"/>
+      <stats name="highborn_citizen" relation="0.1"/>
+      <stats name="shaper_citizen" relation="0.1"/>
+      <stats name="unadorned_citizen" relation="0.1"/>
+      <stats name="purist_citizen" relation="0.1"/>
       <stats name="forsaken_citizen" relation="0"/>
-      <stats name="LIHW_citizen" relation=".1"/>
+      <stats name="LIHW_citizen" relation="0.1"/>
       <stats name="uln_citizen" relation="0"/>
       <stats name="dgn_citizen" relation="0"/>
       <stats name="klkk_citizen" relation="0"/>
-      <stats name="mechanist_citizen" relation="1"/>
+      <stats name="mechanist_citizen" relation="0.1"/>
       <stats name="shmrn_citizen" relation="0"/>
       <Explosion name="explosion_orange.ani"/>
       <!--        <CommAnimation>  
@@ -229,18 +228,18 @@
     <Faction name="hunter" citizen="false" logoRGB="logos/hunterPri.texture" secLogoRGB="logos/hunterSec.texture" contraband="contraband" sparkred="0" sparkgreen=".309" sparkblue=".442">
       <stats name="privateer" relation="0"/>
       <stats name="confed" relation="0"/>
-      <stats name="aera" relation="-1"/>
+      <stats name="aera" relation="-0.1"/>
       <stats name="rlaan" relation="0"/>
       <stats name="merchant_guild" relation="1"/>
       <stats name="luddites" relation="-1"/>
       <stats name="pirates" relation="-1"/>
-      <stats name="hunter" relation=".1"/>
+      <stats name="hunter" relation="0.1"/>
       <stats name="homeland-security" relation="0"/>
       <stats name="ISO" relation="-1"/>
       <stats name="unknown" relation="0"/>
-      <stats name="andolian" relation="1"/>
-      <stats name="highborn" relation="1"/>
-      <stats name="shaper" relation="1"/>
+      <stats name="andolian" relation="0"/>
+      <stats name="highborn" relation="0"/>
+      <stats name="shaper" relation="0"/>
       <stats name="unadorned" relation="0"/>
       <stats name="purist" relation="0"/>
       <stats name="forsaken" relation="0"/>
@@ -248,15 +247,15 @@
       <stats name="uln" relation="0"/>
       <stats name="dgn" relation="0"/>
       <stats name="klkk" relation="0"/>
-      <stats name="mechanist" relation="1"/>
+      <stats name="mechanist" relation="0"/>
       <stats name="shmrn" relation="0"/>
-      <stats name="rlaan_briin" relation="1"/>
-      <stats name="aeran_merchant_marine" relation="-1"/>
+      <stats name="rlaan_briin" relation="0.1"/>
+      <stats name="aeran_merchant_marine" relation="-0.1"/>
       <stats name="rlaan_citizen" relation="0"/>
-      <stats name="merchant_guild_citizen" relation="1"/>
-      <stats name="andolian_citizen" relation="1"/>
-      <stats name="highborn_citizen" relation="1"/>
-      <stats name="shaper_citizen" relation="1"/>
+      <stats name="merchant_guild_citizen" relation="0"/>
+      <stats name="andolian_citizen" relation="0"/>
+      <stats name="highborn_citizen" relation="0"/>
+      <stats name="shaper_citizen" relation="0"/>
       <stats name="unadorned_citizen" relation="0"/>
       <stats name="purist_citizen" relation="0"/>
       <stats name="forsaken_citizen" relation="0"/>
@@ -264,7 +263,7 @@
       <stats name="uln_citizen" relation="0"/>
       <stats name="dgn_citizen" relation="0"/>
       <stats name="klkk_citizen" relation="0"/>
-      <stats name="mechanist_citizen" relation="1"/>
+      <stats name="mechanist_citizen" relation="0"/>
       <stats name="shmrn_citizen" relation="0"/>
       <Explosion name="explosion_orange.ani"/>
       <!--        <CommAnimation>  
@@ -272,7 +271,7 @@
       </CommAnimation>  -->
     </Faction>
     <Faction name="LIHW" citizen="false" logoRGB="logos/LIHWPri.texture" secLogoRGB="logos/LIHWSec.texture" contraband="contraband" sparkred="0.150" sparkgreen="0.250" sparkblue="0.450">
-      <stats name="privateer" relation=".2"/>
+      <stats name="privateer" relation="0.1"/>
       <stats name="confed" relation="0"/>
       <stats name="aera" relation="-1"/>
       <stats name="rlaan" relation="0"/>
@@ -289,7 +288,7 @@
       <stats name="unadorned" relation="0"/>
       <stats name="purist" relation="0"/>
       <stats name="forsaken" relation="0"/>
-      <stats name="LIHW" relation=".2"/>
+      <stats name="LIHW" relation="0.1"/>
       <stats name="uln" relation="0"/>
       <stats name="dgn" relation="0"/>
       <stats name="klkk" relation="0"/>
@@ -305,7 +304,7 @@
       <stats name="unadorned_citizen" relation="0"/>
       <stats name="purist_citizen" relation="0"/>
       <stats name="forsaken_citizen" relation="0"/>
-      <stats name="LIHW_citizen" relation=".2"/>
+      <stats name="LIHW_citizen" relation="0.1"/>
       <stats name="uln_citizen" relation="0"/>
       <stats name="dgn_citizen" relation="0"/>
       <stats name="klkk_citizen" relation="0"/>
@@ -321,18 +320,18 @@
       <stats name="confed" relation="0"/>
       <stats name="aera" relation="-1"/>
       <stats name="rlaan" relation="0"/>
-      <stats name="merchant_guild" relation="1"/>
+      <stats name="merchant_guild" relation="0"/>
       <stats name="luddites" relation="-1"/>
-      <stats name="pirates" relation="-1"/>
+      <stats name="pirates" relation="-0.5"/>
       <stats name="hunter" relation="0"/>
       <stats name="homeland-security" relation="0"/>
       <stats name="ISO" relation="0"/>
       <stats name="unknown" relation="0"/>
-      <stats name="andolian" relation="-.1"/>
+      <stats name="andolian" relation="-0.1"/>
       <stats name="highborn" relation="0"/>
-      <stats name="shaper" relation="-.2"/>
+      <stats name="shaper" relation="-0.2"/>
       <stats name="unadorned" relation="0"/>
-      <stats name="purist" relation="-.2"/>
+      <stats name="purist" relation="-0.2"/>
       <stats name="forsaken" relation="0"/>
       <stats name="LIHW" relation="0"/>
       <stats name="uln" relation="0"/>
@@ -343,7 +342,7 @@
       <stats name="rlaan_briin" relation="0"/>
       <stats name="aeran_merchant_marine" relation="-1"/>
       <stats name="rlaan_citizen" relation="0"/>
-      <stats name="merchant_guild_citizen" relation="1"/>
+      <stats name="merchant_guild_citizen" relation="0"/>
       <stats name="andolian_citizen" relation="0"/>
       <stats name="highborn_citizen" relation="0"/>
       <stats name="shaper_citizen" relation="0"/>
@@ -371,7 +370,7 @@
       <stats name="pirates" relation="-1"/>
       <stats name="hunter" relation="0"/>
       <stats name="homeland-security" relation="0"/>
-      <stats name="ISO" relation="0"/>
+      <stats name="ISO" relation="-1"/>
       <stats name="unknown" relation="0"/>
       <stats name="andolian" relation="0"/>
       <stats name="highborn" relation="0"/>
@@ -387,18 +386,18 @@
       <stats name="shmrn" relation="0"/>
       <stats name="rlaan_briin" relation="0"/>
       <stats name="aeran_merchant_marine" relation="-1"/>
-      <stats name="rlaan_citizen" relation="-.5"/>
+      <stats name="rlaan_citizen" relation="0"/>
       <stats name="merchant_guild_citizen" relation="1"/>
-      <stats name="andolian_citizen" relation="-.5"/>
+      <stats name="andolian_citizen" relation="-0.1"/>
       <stats name="highborn_citizen" relation="0"/>
       <stats name="shaper_citizen" relation="0"/>
       <stats name="unadorned_citizen" relation="0"/>
-      <stats name="purist_citizen" relation="-.5"/>
+      <stats name="purist_citizen" relation="0"/>
       <stats name="forsaken_citizen" relation="0"/>
-      <stats name="LIHW_citizen" relation="-.5"/>
+      <stats name="LIHW_citizen" relation="0"/>
       <stats name="uln_citizen" relation="0"/>
       <stats name="dgn_citizen" relation="0"/>
-      <stats name="klkk_citizen" relation="-.5"/>
+      <stats name="klkk_citizen" relation="0"/>
       <stats name="mechanist_citizen" relation="0"/>
       <stats name="shmrn_citizen" relation="0"/>
       <Explosion name="explosion_orange.ani"/>
@@ -416,11 +415,11 @@
       <stats name="pirates" relation="-1"/>
       <stats name="hunter" relation="0"/>
       <stats name="homeland-security" relation="0"/>
-      <stats name="ISO" relation="-.5"/>
+      <stats name="ISO" relation="-0.1"/>
       <stats name="unknown" relation="0"/>
-      <stats name="andolian" relation="-.2"/>
-      <stats name="highborn" relation=".8"/>
-      <stats name="shaper" relation="-.2"/>
+      <stats name="andolian" relation="-0.2"/>
+      <stats name="highborn" relation="0.1"/>
+      <stats name="shaper" relation="-0.2"/>
       <stats name="unadorned" relation="0"/>
       <stats name="purist" relation="1"/>
       <stats name="forsaken" relation="0"/>
@@ -428,15 +427,15 @@
       <stats name="uln" relation="0"/>
       <stats name="dgn" relation="0"/>
       <stats name="klkk" relation="0"/>
-      <stats name="mechanist" relation="-.2"/>
+      <stats name="mechanist" relation="-0.2"/>
       <stats name="shmrn" relation="0"/>
       <stats name="rlaan_briin" relation="0"/>
       <stats name="aeran_merchant_marine" relation="-1"/>
       <stats name="rlaan_citizen" relation="0"/>
       <stats name="merchant_guild_citizen" relation="0"/>
-      <stats name="andolian_citizen" relation="-.2"/>
-      <stats name="highborn_citizen" relation=".8"/>
-      <stats name="shaper_citizen" relation="-.2"/>
+      <stats name="andolian_citizen" relation="-0.2"/>
+      <stats name="highborn_citizen" relation="0.1"/>
+      <stats name="shaper_citizen" relation="-0.2"/>
       <stats name="unadorned_citizen" relation="0"/>
       <stats name="purist_citizen" relation="1"/>
       <stats name="forsaken_citizen" relation="0"/>
@@ -444,7 +443,7 @@
       <stats name="uln_citizen" relation="0"/>
       <stats name="dgn_citizen" relation="0"/>
       <stats name="klkk_citizen" relation="0"/>
-      <stats name="mechanist_citizen" relation="-.2"/>
+      <stats name="mechanist_citizen" relation="-0.2"/>
       <stats name="shmrn_citizen" relation="0"/>
       <Explosion name="explosion_orange.ani"/>
       <!--        <CommAnimation>  
@@ -456,40 +455,40 @@
       <stats name="confed" relation="0"/>
       <stats name="aera" relation="-1"/>
       <stats name="rlaan" relation="0"/>
-      <stats name="merchant_guild" relation="1"/>
+      <stats name="merchant_guild" relation="0"/>
       <stats name="luddites" relation="-1"/>
-      <stats name="pirates" relation="-1"/>
+      <stats name="pirates" relation="-0.5"/>
       <stats name="hunter" relation="0"/>
       <stats name="homeland-security" relation="0"/>
       <stats name="ISO" relation="0"/>
       <stats name="unknown" relation="0"/>
-      <stats name="andolian" relation="-.2"/>
+      <stats name="andolian" relation="-0.2"/>
       <stats name="highborn" relation="0"/>
       <stats name="shaper" relation="1"/>
       <stats name="unadorned" relation="0"/>
-      <stats name="purist" relation="-.2"/>
+      <stats name="purist" relation="-0.2"/>
       <stats name="forsaken" relation="0"/>
       <stats name="LIHW" relation="0"/>
       <stats name="uln" relation="0"/>
-      <stats name="dgn" relation="1"/>
+      <stats name="dgn" relation="0.1"/>
       <stats name="klkk" relation="0"/>
-      <stats name="mechanist" relation="-.2"/>
+      <stats name="mechanist" relation="-0.2"/>
       <stats name="shmrn" relation="0"/>
-      <stats name="rlaan_briin" relation=".1"/>
+      <stats name="rlaan_briin" relation="0.1"/>
       <stats name="aeran_merchant_marine" relation="0"/>
       <stats name="rlaan_citizen" relation="0"/>
-      <stats name="merchant_guild_citizen" relation="1"/>
-      <stats name="andolian_citizen" relation="-.1"/>
+      <stats name="merchant_guild_citizen" relation="0"/>
+      <stats name="andolian_citizen" relation="-0.2"/>
       <stats name="highborn_citizen" relation="0"/>
       <stats name="shaper_citizen" relation="1"/>
       <stats name="unadorned_citizen" relation="0"/>
-      <stats name="purist_citizen" relation="-.2"/>
+      <stats name="purist_citizen" relation="-0.2"/>
       <stats name="forsaken_citizen" relation="0"/>
       <stats name="LIHW_citizen" relation="0"/>
       <stats name="uln_citizen" relation="0"/>
-      <stats name="dgn_citizen" relation="1"/>
+      <stats name="dgn_citizen" relation="0.1"/>
       <stats name="klkk_citizen" relation="0"/>
-      <stats name="mechanist_citizen" relation="-.2"/>
+      <stats name="mechanist_citizen" relation="-0.2"/>
       <stats name="shmrn_citizen" relation="0"/>
       <Explosion name="explosion_orange.ani"/>
       <!--        <CommAnimation>  
@@ -502,15 +501,15 @@
       <stats name="aera" relation="-1"/>
       <stats name="rlaan" relation="0"/>
       <stats name="merchant_guild" relation="0"/>
-      <stats name="luddites" relation="-1"/>
-      <stats name="pirates" relation="-1"/>
+      <stats name="luddites" relation="-0.1"/>
+      <stats name="pirates" relation="-0.5"/>
       <stats name="hunter" relation="0"/>
       <stats name="homeland-security" relation="0"/>
       <stats name="ISO" relation="0"/>
       <stats name="unknown" relation="0"/>
       <stats name="andolian" relation="0"/>
       <stats name="highborn" relation="0"/>
-      <stats name="shaper" relation="1"/>
+      <stats name="shaper" relation="0"/>
       <stats name="unadorned" relation="0"/>
       <stats name="purist" relation="0"/>
       <stats name="forsaken" relation="0"/>
@@ -526,7 +525,7 @@
       <stats name="merchant_guild_citizen" relation="0"/>
       <stats name="andolian_citizen" relation="0"/>
       <stats name="highborn_citizen" relation="0"/>
-      <stats name="shaper_citizen" relation="1"/>
+      <stats name="shaper_citizen" relation="0"/>
       <stats name="unadorned_citizen" relation="0"/>
       <stats name="purist_citizen" relation="0"/>
       <stats name="forsaken_citizen" relation="0"/>
@@ -547,13 +546,13 @@
       <stats name="aera" relation="-1"/>
       <stats name="rlaan" relation="0"/>
       <stats name="merchant_guild" relation="0"/>
-      <stats name="luddites" relation="-.1"/>
-      <stats name="pirates" relation="-1"/>
+      <stats name="luddites" relation="0"/>
+      <stats name="pirates" relation="-0.1"/>
       <stats name="hunter" relation="0"/>
       <stats name="homeland-security" relation="0"/>
       <stats name="ISO" relation="0"/>
       <stats name="unknown" relation="0"/>
-      <stats name="andolian" relation=".8"/>
+      <stats name="andolian" relation="0"/>
       <stats name="highborn" relation="0"/>
       <stats name="shaper" relation="0"/>
       <stats name="unadorned" relation="1"/>
@@ -569,7 +568,7 @@
       <stats name="aeran_merchant_marine" relation="-1"/>
       <stats name="rlaan_citizen" relation="0"/>
       <stats name="merchant_guild_citizen" relation="0"/>
-      <stats name="andolian_citizen" relation=".8"/>
+      <stats name="andolian_citizen" relation="0"/>
       <stats name="highborn_citizen" relation="0"/>
       <stats name="shaper_citizen" relation="0"/>
       <stats name="unadorned_citizen" relation="1"/>
@@ -636,13 +635,13 @@
       <stats name="aera" relation="-1"/>
       <stats name="rlaan" relation="0"/>
       <stats name="merchant_guild" relation="0"/>
-      <stats name="luddites" relation="-.1"/>
-      <stats name="pirates" relation="-.1"/>
+      <stats name="luddites" relation="0"/>
+      <stats name="pirates" relation="-0.5"/>
       <stats name="hunter" relation="0"/>
       <stats name="homeland-security" relation="0"/>
       <stats name="ISO" relation="0"/>
       <stats name="unknown" relation="0"/>
-      <stats name="andolian" relation=".2"/>
+      <stats name="andolian" relation="0"/>
       <stats name="highborn" relation="0"/>
       <stats name="shaper" relation="0"/>
       <stats name="unadorned" relation="0"/>
@@ -651,14 +650,14 @@
       <stats name="LIHW" relation="0"/>
       <stats name="uln" relation="0"/>
       <stats name="dgn" relation="0"/>
-      <stats name="klkk" relation=".1"/>
+      <stats name="klkk" relation="0"/>
       <stats name="mechanist" relation="0"/>
       <stats name="shmrn" relation="1"/>
       <stats name="rlaan_briin" relation="0"/>
       <stats name="aeran_merchant_marine" relation="-1"/>
       <stats name="rlaan_citizen" relation="0"/>
       <stats name="merchant_guild_citizen" relation="0"/>
-      <stats name="andolian_citizen" relation=".2"/>
+      <stats name="andolian_citizen" relation="0"/>
       <stats name="highborn_citizen" relation="0"/>
       <stats name="shaper_citizen" relation="0"/>
       <stats name="unadorned_citizen" relation="0"/>
@@ -667,7 +666,7 @@
       <stats name="LIHW_citizen" relation="0"/>
       <stats name="uln_citizen" relation="0"/>
       <stats name="dgn_citizen" relation="0"/>
-      <stats name="klkk_citizen" relation=".1"/>
+      <stats name="klkk_citizen" relation="0"/>
       <stats name="mechanist_citizen" relation="0"/>
       <stats name="shmrn_citizen" relation="0"/>
       <Explosion name="explosion_orange.ani"/>
@@ -724,7 +723,7 @@
 		<stats name="privateer" relation="-1"/>
 		<stats name="confed" relation="-1"/>
 		<stats name="aera" relation="1"/>
-		<stats name="rlaan" relation="-.8"/>
+		<stats name="rlaan" relation="-0.5"/>
 		<stats name="merchant_guild" relation="-1"/>
 		<stats name="luddites" relation="-.1"/>
 		<stats name="pirates" relation="-1"/>
@@ -740,14 +739,13 @@
 		<stats name="forsaken" relation="-1"/>
 		<stats name="LIHW" relation="-1"/>
 		<stats name="uln" relation="0"/>
-		<stats name="dgn" relation="-.9"/>
-		<stats name="klkk" relation="-.9"/>
+		<stats name="dgn" relation="-1"/>
+		<stats name="klkk" relation="-1"/>
 		<stats name="mechanist" relation="-1"/>
 		<stats name="shmrn" relation="-1"/>
-		<stats name="rlaan_briin" relation="-1"/>
-
+		<stats name="rlaan_briin" relation="-0.5"/>
 		<stats name="aeran_merchant_marine" relation="1"/>
-		<stats name="rlaan_citizen" relation="-.6"/>
+		<stats name="rlaan_citizen" relation="-0.5"/>
 		<stats name="merchant_guild_citizen" relation="-1"/>
 		<stats name="andolian_citizen" relation="-1"/>
 		<stats name="highborn_citizen" relation="-1"/>
@@ -757,55 +755,55 @@
 		<stats name="forsaken_citizen" relation="-1"/>
 		<stats name="LIHW_citizen" relation="-1"/>
 		<stats name="uln_citizen" relation="0"/>
-		<stats name="dgn_citizen" relation="-.9"/>
-		<stats name="klkk_citizen" relation="-.9"/>
+		<stats name="dgn_citizen" relation="-1"/>
+		<stats name="klkk_citizen" relation="-1"/>
 		<stats name="mechanist_citizen" relation="-1"/>
-		<stats name="shmrn_citizen" relation="-.9"/>
+		<stats name="shmrn_citizen" relation="-1"/>
 		<Explosion name="explosion_aera.ani"/>
 <!--		<CommAnimation>  
 			<MoodAnimation name="explosion_aera.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
     <Faction name="aeran_merchant_marine" citizen="true" logoRGB="logos/aeraPri.texture" secLogoRGB="logos/aeraSec.texture" contraband="contraband" sparkred="0.392" sparkgreen="0.727" sparkblue="0.075">
-      <stats name="privateer" relation="-1"/>
-      <stats name="confed" relation="-1"/>
-      <stats name="aera" relation="1"/>
-      <stats name="rlaan" relation="-.8"/>
-      <stats name="merchant_guild" relation="-1"/>
-      <stats name="luddites" relation="-.1"/>
-      <stats name="pirates" relation="-1"/>
-      <stats name="hunter" relation="-1"/>
-      <stats name="homeland-security" relation="-1"/>
-      <stats name="ISO" relation="-1"/>
+      <stats name="privateer" relation="0"/>
+      <stats name="confed" relation="0"/>
+      <stats name="aera" relation="0"/>
+      <stats name="rlaan" relation="0"/>
+      <stats name="merchant_guild" relation="0"/>
+      <stats name="luddites" relation="0"/>
+      <stats name="pirates" relation="0"/>
+      <stats name="hunter" relation="0"/>
+      <stats name="homeland-security" relation="0"/>
+      <stats name="ISO" relation="0"/>
       <stats name="unknown" relation="0"/>
-      <stats name="andolian" relation="-1"/>
-      <stats name="highborn" relation="-1"/>
-      <stats name="shaper" relation="-1"/>
-      <stats name="unadorned" relation="-1"/>
-      <stats name="purist" relation="-1"/>
-      <stats name="forsaken" relation="-1"/>
-      <stats name="LIHW" relation="-1"/>
+      <stats name="andolian" relation="0"/>
+      <stats name="highborn" relation="0"/>
+      <stats name="shaper" relation="0"/>
+      <stats name="unadorned" relation="0"/>
+      <stats name="purist" relation="0"/>
+      <stats name="forsaken" relation="0"/>
+      <stats name="LIHW" relation="0"/>
       <stats name="uln" relation="0"/>
-      <stats name="dgn" relation="-.9"/>
-      <stats name="klkk" relation="-.9"/>
-      <stats name="mechanist" relation="-1"/>
-      <stats name="shmrn" relation="-1"/>
-      <stats name="rlaan_briin" relation="-1"/>
+      <stats name="dgn" relation="0"/>
+      <stats name="klkk" relation="0"/>
+      <stats name="mechanist" relation="0"/>
+      <stats name="shmrn" relation="0"/>
+      <stats name="rlaan_briin" relation="0"/>
       <stats name="aeran_merchant_marine" relation="1"/>
-      <stats name="rlaan_citizen" relation="-.6"/>
-      <stats name="merchant_guild_citizen" relation="-1"/>
-      <stats name="andolian_citizen" relation="-1"/>
-      <stats name="highborn_citizen" relation="-1"/>
-      <stats name="shaper_citizen" relation="-1"/>
-      <stats name="unadorned_citizen" relation="-1"/>
-      <stats name="purist_citizen" relation="-1"/>
-      <stats name="forsaken_citizen" relation="-1"/>
-      <stats name="LIHW_citizen" relation="-1"/>
+      <stats name="rlaan_citizen" relation="0"/>
+      <stats name="merchant_guild_citizen" relation="0"/>
+      <stats name="andolian_citizen" relation="0"/>
+      <stats name="highborn_citizen" relation="0"/>
+      <stats name="shaper_citizen" relation="0"/>
+      <stats name="unadorned_citizen" relation="0"/>
+      <stats name="purist_citizen" relation="0"/>
+      <stats name="forsaken_citizen" relation="0"/>
+      <stats name="LIHW_citizen" relation="0"/>
       <stats name="uln_citizen" relation="0"/>
-      <stats name="dgn_citizen" relation="-.9"/>
-      <stats name="klkk_citizen" relation="-.9"/>
-      <stats name="mechanist_citizen" relation="-1"/>
-      <stats name="shmrn_citizen" relation="-1"/>
+      <stats name="dgn_citizen" relation="0"/>
+      <stats name="klkk_citizen" relation="0"/>
+      <stats name="mechanist_citizen" relation="0"/>
+      <stats name="shmrn_citizen" relation="0"/>
       <Explosion name="explosion_aera.ani"/>
       <!--        <CommAnimation>  
         <MoodAnimation name="explosion_aera.ani" sex="0"/>  
@@ -814,11 +812,11 @@
 	<Faction name="rlaan" citizen="false" logoRGB="logos/rlaanPri.texture" secLogoRGB="logos/rlaanSec.texture" contraband="contraband" sparkred="0.4" sparkgreen="0" sparkblue="0.6">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-.8"/>
+		<stats name="aera" relation="-0.5"/>
 		<stats name="rlaan" relation="1"/>
 		<stats name="merchant_guild" relation="0"/>
 		<stats name="luddites" relation="0"/>
-		<stats name="pirates" relation="-1"/>
+		<stats name="pirates" relation="-0.1"/>
 		<stats name="hunter" relation="0"/>
 		<stats name="homeland-security" relation="0"/>
 		<stats name="ISO" relation="0"/>
@@ -836,8 +834,7 @@
 		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-
-		<stats name="aeran_merchant_marine" relation="-.8"/>
+		<stats name="aeran_merchant_marine" relation="-0.5"/>
 		<stats name="rlaan_citizen" relation="1"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
 		<stats name="andolian_citizen" relation="0"/>
@@ -860,7 +857,7 @@
     <Faction name="rlaan_briin" citizen="true" logoRGB="logos/rlaan_briinPri.texture" secLogoRGB="logos/rlaan_briinSec.texture" contraband="contraband" sparkred="0.588" sparkgreen="0.137" sparkblue=".453">
       <stats name="privateer" relation="0"/>
       <stats name="confed" relation="0"/>
-      <stats name="aera" relation="-1"/>
+      <stats name="aera" relation="-0.1"/>
       <stats name="rlaan" relation="0"/>
       <stats name="merchant_guild" relation="0"/>
       <stats name="luddites" relation="0"/>
@@ -881,9 +878,8 @@
       <stats name="klkk" relation="0"/>
       <stats name="mechanist" relation="0"/>
       <stats name="shmrn" relation="0"/>
-      <stats name="rlaan_briin" relation="1"/>
-
-      <stats name="aeran_merchant_marine" relation="-1"/>
+      <stats name="rlaan_briin" relation="0"/>
+      <stats name="aeran_merchant_marine" relation="-0.1"/>
       <stats name="rlaan_citizen" relation="0"/>
       <stats name="merchant_guild_citizen" relation="0"/>
       <stats name="andolian_citizen" relation="0"/>
@@ -904,73 +900,73 @@
     </Faction>
 	<Faction name="luddites" citizen="false" logoRGB="logos/ludditesPri.texture" secLogoRGB="logos/ludditesSec.texture" contraband="contraband" sparkred="1" sparkgreen="0.498" sparkblue="0">
 		<stats name="privateer" relation="0"/>
-		<stats name="confed" relation="-1"/>
-		<stats name="aera" relation="-1"/>
-		<stats name="rlaan" relation="-.1"/>
+		<stats name="confed" relation="0"/>
+		<stats name="aera" relation="-0.1"/>
+		<stats name="rlaan" relation="0"/>
 		<stats name="merchant_guild" relation="0"/>
-		<stats name="luddites" relation="1"/>
+		<stats name="luddites" relation="0.1"/>
 		<stats name="pirates" relation="0"/>
-		<stats name="hunter" relation="-1"/>
-		<stats name="homeland-security" relation="-1"/>
+		<stats name="hunter" relation="-0.1"/>
+		<stats name="homeland-security" relation="-0.1"/>
 		<stats name="ISO" relation="0"/>
 		<stats name="unknown" relation="0"/>
 		<stats name="andolian" relation="-1"/>
 		<stats name="highborn" relation="0"/>
 		<stats name="shaper" relation="-1"/>
-		<stats name="unadorned" relation="-.5"/>
+		<stats name="unadorned" relation="0"/>
 		<stats name="purist" relation="1"/>
 		<stats name="forsaken" relation="0"/>
 		<stats name="LIHW" relation="0"/>
 		<stats name="uln" relation="0"/>
-		<stats name="dgn" relation="-.5"/>
-		<stats name="klkk" relation="-.5"/>
+		<stats name="dgn" relation="0"/>
+		<stats name="klkk" relation="0"/>
 		<stats name="mechanist" relation="-1"/>
-		<stats name="shmrn" relation="-.5"/>
-		<stats name="rlaan_briin" relation="-.2"/>
-		<stats name="aeran_merchant_marine" relation="-1"/>
-		<stats name="rlaan_citizen" relation="-.1"/>
+		<stats name="shmrn" relation="0"/>
+		<stats name="rlaan_briin" relation="0"/>
+		<stats name="aeran_merchant_marine" relation="-0.1"/>
+		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
 		<stats name="andolian_citizen" relation="-1"/>
 		<stats name="highborn_citizen" relation="0"/>
 		<stats name="shaper_citizen" relation="-1"/>
-		<stats name="unadorned_citizen" relation="-.5"/>
+		<stats name="unadorned_citizen" relation="0"/>
 		<stats name="purist_citizen" relation="1"/>
 		<stats name="forsaken_citizen" relation="0"/>
 		<stats name="LIHW_citizen" relation="0"/>
 		<stats name="uln_citizen" relation="0"/>
-		<stats name="dgn_citizen" relation="-.5"/>
-		<stats name="klkk_citizen" relation="-.5"/>
+		<stats name="dgn_citizen" relation="0"/>
+		<stats name="klkk_citizen" relation="0"/>
 		<stats name="mechanist_citizen" relation="-1"/>
-		<stats name="shmrn_citizen" relation="-.5"/>
+		<stats name="shmrn_citizen" relation="0"/>
 <!--		<CommAnimation>  
 			<MoodAnimation name="explosion_wave.ani" sex="0"/>  
 		</CommAnimation>  -->
 	</Faction>
 	<Faction name="pirates" citizen="false" logoRGB="logos/piratesPri.texture" secLogoRGB="logos/piratesSec.texture" contraband="contraband" sparkred="1" sparkgreen="0" sparkblue="0">
-		<stats name="privateer" relation="-.5"/>
-		<stats name="confed" relation="-1"/>
-		<stats name="aera" relation="-1"/>
-		<stats name="rlaan" relation="-1"/>
+		<stats name="privateer" relation="-1"/>
+		<stats name="confed" relation="0"/>
+		<stats name="aera" relation="-0.1"/>
+		<stats name="rlaan" relation="0"/>
 		<stats name="merchant_guild" relation="-1"/>
 		<stats name="luddites" relation="0"/>
-		<stats name="pirates" relation=".1"/>
+		<stats name="pirates" relation="0.1"/>
 		<stats name="hunter" relation="-1"/>
 		<stats name="homeland-security" relation="-1"/>
 		<stats name="ISO" relation="0"/>
 		<stats name="unknown" relation="0"/>
-		<stats name="andolian" relation="-1"/>
-		<stats name="highborn" relation="-1"/>
-		<stats name="shaper" relation="-1"/>
-		<stats name="unadorned" relation="-1"/>
-		<stats name="purist" relation="-1"/>
+		<stats name="andolian" relation="-0.1"/>
+		<stats name="highborn" relation="-0.1"/>
+		<stats name="shaper" relation="-0.1"/>
+		<stats name="unadorned" relation="-0.1"/>
+		<stats name="purist" relation="-0.1"/>
 		<stats name="forsaken" relation="0"/>
 		<stats name="LIHW" relation="0"/>
 		<stats name="uln" relation="0"/>
-		<stats name="dgn" relation="-1"/>
-		<stats name="klkk" relation="-1"/>
-		<stats name="mechanist" relation="-1"/>
-		<stats name="shmrn" relation="-1"/>
-		<stats name="rlaan_briin" relation="-1"/>
+		<stats name="dgn" relation="-0.1"/>
+		<stats name="klkk" relation="-0.1"/>
+		<stats name="mechanist" relation="-0.1"/>
+		<stats name="shmrn" relation="-0.1"/>
+		<stats name="rlaan_briin" relation="-0.1"/>
 		<stats name="aeran_merchant_marine" relation="-1"/>
 		<stats name="rlaan_citizen" relation="-1"/>
 		<stats name="merchant_guild_citizen" relation="-1"/>
@@ -993,8 +989,8 @@
 	</Faction>
 	<Faction name="ISO" citizen="false" logoRGB="logos/ISOPri.texture" secLogoRGB="logos/ISOSec.texture" contraband="contraband" sparkred="1" sparkgreen="0.1" sparkblue="1">
 		<stats name="privateer" relation="0"/>
-		<stats name="confed" relation="-1"/>
-		<stats name="aera" relation="-1"/>
+		<stats name="confed" relation="0"/>
+		<stats name="aera" relation="-0.1"/>
 		<stats name="rlaan" relation="0"/>
 		<stats name="merchant_guild" relation="-1"/>
 		<stats name="luddites" relation="0"/>
@@ -1005,9 +1001,9 @@
 		<stats name="unknown" relation="0"/>
 		<stats name="andolian" relation="0"/>
 		<stats name="highborn" relation="-1"/>
-		<stats name="shaper" relation="-.5"/>
+		<stats name="shaper" relation="0"/>
 		<stats name="unadorned" relation="0"/>
-		<stats name="purist" relation="-.5"/>
+		<stats name="purist" relation="0"/>
 		<stats name="forsaken" relation="1"/>
 		<stats name="LIHW" relation="0"/>
 		<stats name="uln" relation="0"/>
@@ -1016,7 +1012,7 @@
 		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-		<stats name="aeran_merchant_marine" relation="-1"/>
+		<stats name="aeran_merchant_marine" relation="-0.1"/>
 		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="-1"/>
 		<stats name="andolian_citizen" relation="0"/>
@@ -1057,11 +1053,11 @@
 		<stats name="LIHW" relation="-1"/>
 		<stats name="uln" relation="-1"/>
 		<stats name="dgn" relation="-1"/>
-		<stats name="klkk" relation="0"/>
-		<stats name="mechanist" relation="0"/>
-		<stats name="shmrn" relation="0"/>
+		<stats name="klkk" relation="-1"/>
+		<stats name="mechanist" relation="-1"/>
+		<stats name="shmrn" relation="-1"/>
 		<stats name="rlaan_briin" relation="0"/>
-		<stats name="aeran_merchant_marine" relation="-1"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
 		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
 		<stats name="andolian_citizen" relation="0"/>
@@ -1083,11 +1079,11 @@
 	<Faction name="privateer" citizen="false" logoRGB="logos/privateerPri.texture" secLogoRGB="logos/privateerSec.texture" contraband="contraband" sparkred="1" sparkgreen="1" sparkblue="1">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-.5"/>
+		<stats name="aera" relation="-1"/>
 		<stats name="rlaan" relation="0"/>
 		<stats name="merchant_guild" relation="0"/>
-		<stats name="luddites" relation="-.5"/>
-		<stats name="pirates" relation="-.5"/>
+		<stats name="luddites" relation="0"/>
+		<stats name="pirates" relation="-1"/>
 		<stats name="hunter" relation="0"/>
 		<stats name="homeland-security" relation="0"/>
 		<stats name="ISO" relation="0"/>
@@ -1105,7 +1101,7 @@
 		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-		<stats name="aeran_merchant_marine" relation="-.5"/>
+		<stats name="aeran_merchant_marine" relation="-0.1"/>
 		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
 		<stats name="andolian_citizen" relation="0"/>
@@ -1146,12 +1142,12 @@
 		<stats name="LIHW" relation="0"/>
 		<stats name="uln" relation="0"/>
 		<stats name="dgn" relation="0"/>
-		<stats name="klkk" relation="00"/>
+		<stats name="klkk" relation="0"/>
 		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
 		<stats name="aeran_merchant_marine" relation="0"/>
-		<stats name="rlaan_citizen" relation="1"/>
+		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
 		<stats name="andolian_citizen" relation="0"/>
 		<stats name="highborn_citizen" relation="0"/>
@@ -1173,14 +1169,14 @@
 	<Faction name="merchant_guild_citizen" citizen="true" logoRGB="logos/merchant_guildPri.texture" secLogoRGB="logos/merchant_guildSec.texture" contraband="contraband" sparkred="0.2" sparkgreen="0.2" sparkblue="0.55">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-1"/>
+		<stats name="aera" relation="0"/>
 		<stats name="rlaan" relation="0"/>
-		<stats name="merchant_guild" relation="1"/>
+		<stats name="merchant_guild" relation="0"/>
 		<stats name="luddites" relation="0"/>
-		<stats name="pirates" relation="-1"/>
+		<stats name="pirates" relation="0"/>
 		<stats name="hunter" relation="0"/>
 		<stats name="homeland-security" relation="0"/>
-		<stats name="ISO" relation="-1"/>
+		<stats name="ISO" relation="0"/>
 		<stats name="unknown" relation="0"/>
 		<stats name="andolian" relation="0"/>
 		<stats name="highborn" relation="0"/>
@@ -1195,20 +1191,19 @@
 		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-
-		<stats name="aeran_merchant_marine" relation="-1"/>
-		<stats name="rlaan_citizen" relation="-.5"/>
-		<stats name="merchant_guild_citizen" relation="1"/>
-		<stats name="andolian_citizen" relation="-.5"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
+		<stats name="rlaan_citizen" relation="0"/>
+		<stats name="merchant_guild_citizen" relation="0"/>
+		<stats name="andolian_citizen" relation="0"/>
 		<stats name="highborn_citizen" relation="0"/>
 		<stats name="shaper_citizen" relation="0"/>
 		<stats name="unadorned_citizen" relation="0"/>
-		<stats name="purist_citizen" relation="-.5"/>
+		<stats name="purist_citizen" relation="0"/>
 		<stats name="forsaken_citizen" relation="0"/>
-		<stats name="LIHW_citizen" relation="-.5"/>
+		<stats name="LIHW_citizen" relation="0"/>
 		<stats name="uln_citizen" relation="0"/>
 		<stats name="dgn_citizen" relation="0"/>
-		<stats name="klkk_citizen" relation="-.5"/>
+		<stats name="klkk_citizen" relation="0"/>
 		<stats name="mechanist_citizen" relation="0"/>
 		<stats name="shmrn_citizen" relation="0"/>
 		<Explosion name="explosion_orange.ani"/>
@@ -1219,44 +1214,43 @@
 	<Faction name="andolian_citizen" citizen="true" logoRGB="logos/andolianPri.texture" secLogoRGB="logos/andolianSec.texture" contraband="contraband" sparkred="0" sparkgreen=".119" sparkblue=".723">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-1"/>
+		<stats name="aera" relation="0"/>
 		<stats name="rlaan" relation="0"/>
 		<stats name="merchant_guild" relation="0"/>
-		<stats name="luddites" relation="-1"/>
-		<stats name="pirates" relation="-1"/>
+		<stats name="luddites" relation="0"/>
+		<stats name="pirates" relation="0"/>
 		<stats name="hunter" relation="0"/>
 		<stats name="homeland-security" relation="0"/>
 		<stats name="ISO" relation="0"/>
 		<stats name="unknown" relation="0"/>
-		<stats name="andolian" relation="1"/>
+		<stats name="andolian" relation="0"/>
 		<stats name="highborn" relation="0"/>
-		<stats name="shaper" relation="-.1"/>
-		<stats name="unadorned" relation=".8"/>
-		<stats name="purist" relation="-.1"/>
+		<stats name="shaper" relation="0"/>
+		<stats name="unadorned" relation="0"/>
+		<stats name="purist" relation="0"/>
 		<stats name="forsaken" relation="0"/>
 		<stats name="LIHW" relation="0"/>
 		<stats name="uln" relation="0"/>
 		<stats name="dgn" relation="0"/>
-		<stats name="klkk" relation="1"/>
-		<stats name="mechanist" relation="-.1"/>
-		<stats name="shmrn" relation=".8"/>
+		<stats name="klkk" relation="0"/>
+		<stats name="mechanist" relation="0"/>
+		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-
-		<stats name="aeran_merchant_marine" relation="-1"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
 		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
-		<stats name="andolian_citizen" relation="1"/>
+		<stats name="andolian_citizen" relation="0"/>
 		<stats name="highborn_citizen" relation="0"/>
 		<stats name="shaper_citizen" relation="0"/>
-		<stats name="unadorned_citizen" relation=".8"/>
+		<stats name="unadorned_citizen" relation="0"/>
 		<stats name="purist_citizen" relation="0"/>
 		<stats name="forsaken_citizen" relation="0"/>
 		<stats name="LIHW_citizen" relation="0"/>
 		<stats name="uln_citizen" relation="0"/>
 		<stats name="dgn_citizen" relation="0"/>
-		<stats name="klkk_citizen" relation="1"/>
+		<stats name="klkk_citizen" relation="0"/>
 		<stats name="mechanist_citizen" relation="0"/>
-		<stats name="shmrn_citizen" relation=".8"/>
+		<stats name="shmrn_citizen" relation="0"/>
 
 		<Explosion name="explosion_orange.ani"/>
 <!--		<CommAnimation>  
@@ -1268,7 +1262,7 @@
 		<stats name="confed" relation="0"/>
 		<stats name="aera" relation="-1"/>
 		<stats name="rlaan" relation="0"/>
-		<stats name="merchant_guild" relation=".8"/>
+		<stats name="merchant_guild" relation="0"/>
 		<stats name="luddites" relation="0"/>
 		<stats name="pirates" relation="-1"/>
 		<stats name="hunter" relation="0"/>
@@ -1279,7 +1273,7 @@
 		<stats name="highborn" relation="1"/>
 		<stats name="shaper" relation="0"/>
 		<stats name="unadorned" relation="0"/>
-		<stats name="purist" relation=".8"/>
+		<stats name="purist" relation="0"/>
 		<stats name="forsaken" relation="0"/>
 		<stats name="LIHW" relation="0"/>
 		<stats name="uln" relation="0"/>
@@ -1288,15 +1282,14 @@
 		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-
 		<stats name="aeran_merchant_marine" relation="-1"/>
 		<stats name="rlaan_citizen" relation="0"/>
-		<stats name="merchant_guild_citizen" relation=".8"/>
+		<stats name="merchant_guild_citizen" relation="0"/>
 		<stats name="andolian_citizen" relation="0"/>
 		<stats name="highborn_citizen" relation="1"/>
 		<stats name="shaper_citizen" relation="0"/>
 		<stats name="unadorned_citizen" relation="0"/>
-		<stats name="purist_citizen" relation=".8"/>
+		<stats name="purist_citizen" relation="0"/>
 		<stats name="forsaken_citizen" relation="0"/>
 		<stats name="LIHW_citizen" relation="0"/>
 		<stats name="uln_citizen" relation="0"/>
@@ -1312,65 +1305,19 @@
 	<Faction name="shaper_citizen" citizen="true" logoRGB="logos/shaperPri.texture" secLogoRGB="logos/shaperSec.texture" contraband="contraband" sparkred="0.2" sparkgreen="0" sparkblue="0">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-1"/>
-		<stats name="rlaan" relation="0"/>
-		<stats name="merchant_guild" relation=".8"/>
-		<stats name="luddites" relation="-1"/>
-		<stats name="pirates" relation="-1"/>
-		<stats name="hunter" relation="0"/>
-		<stats name="homeland-security" relation="0"/>
-		<stats name="ISO" relation="-.5"/>
-		<stats name="unknown" relation="0"/>
-		<stats name="andolian" relation="-.2"/>
-		<stats name="highborn" relation="0"/>
-		<stats name="shaper" relation="1"/>
-		<stats name="unadorned" relation="0"/>
-		<stats name="purist" relation="-.2"/>
-		<stats name="forsaken" relation="0"/>
-		<stats name="LIHW" relation="0"/>
-		<stats name="uln" relation="0"/>
-		<stats name="dgn" relation="1"/>
-		<stats name="klkk" relation="0"/>
-		<stats name="mechanist" relation="-.2"/>
-		<stats name="shmrn" relation="0"/>
-		<stats name="rlaan_briin" relation=".1"/>
-
-		<stats name="aeran_merchant_marine" relation="-1"/>
-		<stats name="rlaan_citizen" relation="0"/>
-		<stats name="merchant_guild_citizen" relation=".8"/>
-		<stats name="andolian_citizen" relation="-.1"/>
-		<stats name="highborn_citizen" relation="0"/>
-		<stats name="shaper_citizen" relation="1"/>
-		<stats name="unadorned_citizen" relation="0"/>
-		<stats name="purist_citizen" relation="-.2"/>
-		<stats name="forsaken_citizen" relation="0"/>
-		<stats name="LIHW_citizen" relation="0"/>
-		<stats name="uln_citizen" relation="0"/>
-		<stats name="dgn_citizen" relation="1"/>
-		<stats name="klkk_citizen" relation="0"/>
-		<stats name="mechanist_citizen" relation="-.2"/>
-		<stats name="shmrn_citizen" relation="0"/>
-		<Explosion name="explosion_orange.ani"/>
-<!--		<CommAnimation>  
-			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
-		</CommAnimation>  -->
-	</Faction>
-	<Faction name="unadorned_citizen" citizen="true" logoRGB="logos/unadornedPri.texture" secLogoRGB="logos/unadornedSec.texture" contraband="contraband" sparkred=".164" sparkgreen=".034" sparkblue="0.071">
-		<stats name="privateer" relation="0"/>
-		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-1"/>
+		<stats name="aera" relation="0"/>
 		<stats name="rlaan" relation="0"/>
 		<stats name="merchant_guild" relation="0"/>
-		<stats name="luddites" relation="-.1"/>
-		<stats name="pirates" relation="-1"/>
+		<stats name="luddites" relation="0"/>
+		<stats name="pirates" relation="0"/>
 		<stats name="hunter" relation="0"/>
 		<stats name="homeland-security" relation="0"/>
 		<stats name="ISO" relation="0"/>
 		<stats name="unknown" relation="0"/>
-		<stats name="andolian" relation=".8"/>
+		<stats name="andolian" relation="0"/>
 		<stats name="highborn" relation="0"/>
 		<stats name="shaper" relation="0"/>
-		<stats name="unadorned" relation="1"/>
+		<stats name="unadorned" relation="0"/>
 		<stats name="purist" relation="0"/>
 		<stats name="forsaken" relation="0"/>
 		<stats name="LIHW" relation="0"/>
@@ -1380,14 +1327,58 @@
 		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-
-		<stats name="aeran_merchant_marine" relation="-1"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
 		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
-		<stats name="andolian_citizen" relation=".8"/>
+		<stats name="andolian_citizen" relation="0"/>
 		<stats name="highborn_citizen" relation="0"/>
 		<stats name="shaper_citizen" relation="0"/>
-		<stats name="unadorned_citizen" relation="1"/>
+		<stats name="unadorned_citizen" relation="0"/>
+		<stats name="purist_citizen" relation="0"/>
+		<stats name="forsaken_citizen" relation="0"/>
+		<stats name="LIHW_citizen" relation="0"/>
+		<stats name="uln_citizen" relation="0"/>
+		<stats name="dgn_citizen" relation="0"/>
+		<stats name="klkk_citizen" relation="0"/>
+		<stats name="mechanist_citizen" relation="0"/>
+		<stats name="shmrn_citizen" relation="0"/>
+		<Explosion name="explosion_orange.ani"/>
+<!--		<CommAnimation>  
+			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
+		</CommAnimation>  -->
+	</Faction>
+	<Faction name="unadorned_citizen" citizen="true" logoRGB="logos/unadornedPri.texture" secLogoRGB="logos/unadornedSec.texture" contraband="contraband" sparkred=".164" sparkgreen=".034" sparkblue="0.071">
+		<stats name="privateer" relation="0"/>
+		<stats name="confed" relation="0"/>
+		<stats name="aera" relation="0"/>
+		<stats name="rlaan" relation="0"/>
+		<stats name="merchant_guild" relation="0"/>
+		<stats name="luddites" relation="0"/>
+		<stats name="pirates" relation="0"/>
+		<stats name="hunter" relation="0"/>
+		<stats name="homeland-security" relation="0"/>
+		<stats name="ISO" relation="0"/>
+		<stats name="unknown" relation="0"/>
+		<stats name="andolian" relation="0"/>
+		<stats name="highborn" relation="0"/>
+		<stats name="shaper" relation="0"/>
+		<stats name="unadorned" relation="0"/>
+		<stats name="purist" relation="0"/>
+		<stats name="forsaken" relation="0"/>
+		<stats name="LIHW" relation="0"/>
+		<stats name="uln" relation="0"/>
+		<stats name="dgn" relation="0"/>
+		<stats name="klkk" relation="0"/>
+		<stats name="mechanist" relation="0"/>
+		<stats name="shmrn" relation="0"/>
+		<stats name="rlaan_briin" relation="0"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
+		<stats name="rlaan_citizen" relation="0"/>
+		<stats name="merchant_guild_citizen" relation="0"/>
+		<stats name="andolian_citizen" relation="0"/>
+		<stats name="highborn_citizen" relation="0"/>
+		<stats name="shaper_citizen" relation="0"/>
+		<stats name="unadorned_citizen" relation="0"/>
 		<stats name="purist_citizen" relation="0"/>
 		<stats name="forsaken_citizen" relation="0"/>
 		<stats name="LIHW_citizen" relation="0"/>
@@ -1404,43 +1395,42 @@
 	<Faction name="purist_citizen" citizen="true" logoRGB="logos/puristPri.texture" secLogoRGB="logos/puristSec.texture" contraband="contraband" sparkred="1" sparkgreen="0.2" sparkblue="0">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-1"/>
+		<stats name="aera" relation="0"/>
 		<stats name="rlaan" relation="0"/>
 		<stats name="merchant_guild" relation="0"/>
 		<stats name="luddites" relation="0"/>
-		<stats name="pirates" relation="-1"/>
+		<stats name="pirates" relation="0"/>
 		<stats name="hunter" relation="0"/>
 		<stats name="homeland-security" relation="0"/>
-		<stats name="ISO" relation="-.5"/>
+		<stats name="ISO" relation="0"/>
 		<stats name="unknown" relation="0"/>
-		<stats name="andolian" relation="-.2"/>
-		<stats name="highborn" relation=".8"/>
-		<stats name="shaper" relation="-.4"/>
+		<stats name="andolian" relation="0"/>
+		<stats name="highborn" relation="0"/>
+		<stats name="shaper" relation="0"/>
 		<stats name="unadorned" relation="0"/>
-		<stats name="purist" relation="1"/>
+		<stats name="purist" relation="0"/>
 		<stats name="forsaken" relation="0"/>
 		<stats name="LIHW" relation="0"/>
 		<stats name="uln" relation="0"/>
 		<stats name="dgn" relation="0"/>
 		<stats name="klkk" relation="0"/>
-		<stats name="mechanist" relation="-.4"/>
+		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-
-		<stats name="aeran_merchant_marine" relation="-1"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
 		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
-		<stats name="andolian_citizen" relation="-.2"/>
-		<stats name="highborn_citizen" relation=".8"/>
-		<stats name="shaper_citizen" relation="-.4"/>
+		<stats name="andolian_citizen" relation="0"/>
+		<stats name="highborn_citizen" relation="0"/>
+		<stats name="shaper_citizen" relation="0"/>
 		<stats name="unadorned_citizen" relation="0"/>
-		<stats name="purist_citizen" relation="1"/>
+		<stats name="purist_citizen" relation="0"/>
 		<stats name="forsaken_citizen" relation="0"/>
 		<stats name="LIHW_citizen" relation="0"/>
 		<stats name="uln_citizen" relation="0"/>
 		<stats name="dgn_citizen" relation="0"/>
 		<stats name="klkk_citizen" relation="0"/>
-		<stats name="mechanist_citizen" relation="-.4"/>
+		<stats name="mechanist_citizen" relation="0"/>
 		<stats name="shmrn_citizen" relation="0"/>
 		<Explosion name="explosion_orange.ani"/>
 <!--		<CommAnimation>  
@@ -1450,53 +1440,7 @@
 	<Faction name="forsaken_citizen" citizen="true" logoRGB="logos/forsakenPri.texture" secLogoRGB="logos/forsakenSec.texture" contraband="contraband" sparkred="0.361" sparkgreen="0.2" sparkblue=".090">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-1"/>
-		<stats name="rlaan" relation="0"/>
-		<stats name="merchant_guild" relation="0"/>
-		<stats name="luddites" relation="0"/>
-		<stats name="pirates" relation="0"/>
-		<stats name="hunter" relation="0"/>
-		<stats name="homeland-security" relation="0"/>
-		<stats name="ISO" relation="0"/>
-		<stats name="unknown" relation="0"/>
-		<stats name="andolian" relation="0"/>
-		<stats name="highborn" relation="0"/>
-		<stats name="shaper" relation="0"/>
-		<stats name="unadorned" relation="0"/>
-		<stats name="purist" relation="0"/>
-		<stats name="forsaken" relation="1"/>
-		<stats name="LIHW" relation="0"/>
-		<stats name="uln" relation="0"/>
-		<stats name="dgn" relation="0"/>
-		<stats name="klkk" relation="0"/>
-		<stats name="mechanist" relation="0"/>
-		<stats name="shmrn" relation="0"/>
-		<stats name="rlaan_briin" relation="0"/>
-
-		<stats name="aeran_merchant_marine" relation="-1"/>
-		<stats name="rlaan_citizen" relation="0"/>
-		<stats name="merchant_guild_citizen" relation="0"/>
-		<stats name="andolian_citizen" relation="0"/>
-		<stats name="highborn_citizen" relation="0"/>
-		<stats name="shaper_citizen" relation="0"/>
-		<stats name="unadorned_citizen" relation="0"/>
-		<stats name="purist_citizen" relation="0"/>
-		<stats name="forsaken_citizen" relation="1"/>
-		<stats name="LIHW_citizen" relation="0"/>
-		<stats name="uln_citizen" relation="0"/>
-		<stats name="dgn_citizen" relation="0"/>
-		<stats name="klkk_citizen" relation="0"/>
-		<stats name="mechanist_citizen" relation="0"/>
-		<stats name="shmrn_citizen" relation="0"/>
-
-<!--		<CommAnimation>  
-			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
-		</CommAnimation>  -->
-	</Faction>
-	<Faction name="LIHW_citizen" citizen="true" logoRGB="logos/LIHWPri.texture" secLogoRGB="logos/LIHWSec.texture" contraband="contraband" sparkred="0.150" sparkgreen="0.250" sparkblue="0.450">
-		<stats name="privateer" relation=".2"/>
-		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-1"/>
+		<stats name="aera" relation="0"/>
 		<stats name="rlaan" relation="0"/>
 		<stats name="merchant_guild" relation="0"/>
 		<stats name="luddites" relation="0"/>
@@ -1511,15 +1455,14 @@
 		<stats name="unadorned" relation="0"/>
 		<stats name="purist" relation="0"/>
 		<stats name="forsaken" relation="0"/>
-		<stats name="LIHW" relation="1"/>
+		<stats name="LIHW" relation="0"/>
 		<stats name="uln" relation="0"/>
 		<stats name="dgn" relation="0"/>
 		<stats name="klkk" relation="0"/>
 		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-
-		<stats name="aeran_merchant_marine" relation="-1"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
 		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
 		<stats name="andolian_citizen" relation="0"/>
@@ -1528,7 +1471,51 @@
 		<stats name="unadorned_citizen" relation="0"/>
 		<stats name="purist_citizen" relation="0"/>
 		<stats name="forsaken_citizen" relation="0"/>
-		<stats name="LIHW_citizen" relation="1"/>
+		<stats name="LIHW_citizen" relation="0"/>
+		<stats name="uln_citizen" relation="0"/>
+		<stats name="dgn_citizen" relation="0"/>
+		<stats name="klkk_citizen" relation="0"/>
+		<stats name="mechanist_citizen" relation="0"/>
+		<stats name="shmrn_citizen" relation="0"/>
+<!--		<CommAnimation>  
+			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
+		</CommAnimation>  -->
+	</Faction>
+	<Faction name="LIHW_citizen" citizen="true" logoRGB="logos/LIHWPri.texture" secLogoRGB="logos/LIHWSec.texture" contraband="contraband" sparkred="0.150" sparkgreen="0.250" sparkblue="0.450">
+		<stats name="privateer" relation="0"/>
+		<stats name="confed" relation="0"/>
+		<stats name="aera" relation="0"/>
+		<stats name="rlaan" relation="0"/>
+		<stats name="merchant_guild" relation="0"/>
+		<stats name="luddites" relation="0"/>
+		<stats name="pirates" relation="0"/>
+		<stats name="hunter" relation="0"/>
+		<stats name="homeland-security" relation="0"/>
+		<stats name="ISO" relation="0"/>
+		<stats name="unknown" relation="0"/>
+		<stats name="andolian" relation="0"/>
+		<stats name="highborn" relation="0"/>
+		<stats name="shaper" relation="0"/>
+		<stats name="unadorned" relation="0"/>
+		<stats name="purist" relation="0"/>
+		<stats name="forsaken" relation="0"/>
+		<stats name="LIHW" relation="0"/>
+		<stats name="uln" relation="0"/>
+		<stats name="dgn" relation="0"/>
+		<stats name="klkk" relation="0"/>
+		<stats name="mechanist" relation="0"/>
+		<stats name="shmrn" relation="0"/>
+		<stats name="rlaan_briin" relation="0"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
+		<stats name="rlaan_citizen" relation="0"/>
+		<stats name="merchant_guild_citizen" relation="0"/>
+		<stats name="andolian_citizen" relation="0"/>
+		<stats name="highborn_citizen" relation="0"/>
+		<stats name="shaper_citizen" relation="0"/>
+		<stats name="unadorned_citizen" relation="0"/>
+		<stats name="purist_citizen" relation="0"/>
+		<stats name="forsaken_citizen" relation="0"/>
+		<stats name="LIHW_citizen" relation="0"/>
 		<stats name="uln_citizen" relation="0"/>
 		<stats name="dgn_citizen" relation="0"/>
 		<stats name="klkk_citizen" relation="0"/>
@@ -1558,13 +1545,12 @@
 		<stats name="purist" relation="0"/>
 		<stats name="forsaken" relation="0"/>
 		<stats name="LIHW" relation="0"/>
-		<stats name="uln" relation="1"/>
+		<stats name="uln" relation="0"/>
 		<stats name="dgn" relation="0"/>
 		<stats name="klkk" relation="0"/>
 		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-
 		<stats name="aeran_merchant_marine" relation="0"/>
 		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
@@ -1575,7 +1561,7 @@
 		<stats name="purist_citizen" relation="0"/>
 		<stats name="forsaken_citizen" relation="0"/>
 		<stats name="LIHW_citizen" relation="0"/>
-		<stats name="uln_citizen" relation="1"/>
+		<stats name="uln_citizen" relation="0"/>
 		<stats name="dgn_citizen" relation="0"/>
 		<stats name="klkk_citizen" relation="0"/>
 		<stats name="mechanist_citizen" relation="0"/>
@@ -1588,7 +1574,7 @@
 	<Faction name="dgn_citizen" citizen="true" logoRGB="logos/dgnPri.texture" secLogoRGB="logos/dgnSec.texture" contraband="contraband" sparkred="0.4" sparkgreen="0" sparkblue="0">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-1"/>
+		<stats name="aera" relation="0"/>
 		<stats name="rlaan" relation="0"/>
 		<stats name="merchant_guild" relation="0"/>
 		<stats name="luddites" relation="0"/>
@@ -1599,30 +1585,29 @@
 		<stats name="unknown" relation="0"/>
 		<stats name="andolian" relation="0"/>
 		<stats name="highborn" relation="0"/>
-		<stats name="shaper" relation="1"/>
+		<stats name="shaper" relation="0"/>
 		<stats name="unadorned" relation="0"/>
 		<stats name="purist" relation="0"/>
 		<stats name="forsaken" relation="0"/>
 		<stats name="LIHW" relation="0"/>
 		<stats name="uln" relation="0"/>
-		<stats name="dgn" relation="1"/>
+		<stats name="dgn" relation="0"/>
 		<stats name="klkk" relation="0"/>
 		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-
-		<stats name="aeran_merchant_marine" relation="-1"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
 		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
 		<stats name="andolian_citizen" relation="0"/>
 		<stats name="highborn_citizen" relation="0"/>
-		<stats name="shaper_citizen" relation="1"/>
+		<stats name="shaper_citizen" relation="0"/>
 		<stats name="unadorned_citizen" relation="0"/>
 		<stats name="purist_citizen" relation="0"/>
 		<stats name="forsaken_citizen" relation="0"/>
 		<stats name="LIHW_citizen" relation="0"/>
 		<stats name="uln_citizen" relation="0"/>
-		<stats name="dgn_citizen" relation="1"/>
+		<stats name="dgn_citizen" relation="0"/>
 		<stats name="klkk_citizen" relation="0"/>
 		<stats name="mechanist_citizen" relation="0"/>
 		<stats name="shmrn_citizen" relation="0"/>
@@ -1634,78 +1619,31 @@
 	<Faction name="klkk_citizen" citizen="true" logoRGB="logos/klkkPri.texture" secLogoRGB="logos/klkkSec.texture" contraband="contraband" sparkred="0.2" sparkgreen=".3" sparkblue=".8">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-1"/>
+		<stats name="aera" relation="0"/>
 		<stats name="rlaan" relation="0"/>
 		<stats name="merchant_guild" relation="0"/>
-		<stats name="luddites" relation="-1"/>
-		<stats name="pirates" relation="-1"/>
+		<stats name="luddites" relation="0"/>
+		<stats name="pirates" relation="0"/>
 		<stats name="hunter" relation="0"/>
 		<stats name="homeland-security" relation="0"/>
 		<stats name="ISO" relation="0"/>
 		<stats name="unknown" relation="0"/>
-		<stats name="andolian" relation="1"/>
+		<stats name="andolian" relation="0"/>
 		<stats name="highborn" relation="0"/>
 		<stats name="shaper" relation="0"/>
-		<stats name="unadorned" relation=".8"/>
+		<stats name="unadorned" relation="0"/>
 		<stats name="purist" relation="0"/>
 		<stats name="forsaken" relation="0"/>
 		<stats name="LIHW" relation="0"/>
 		<stats name="uln" relation="0"/>
 		<stats name="dgn" relation="0"/>
-		<stats name="klkk" relation="1"/>
-		<stats name="mechanist" relation="0"/>
-		<stats name="shmrn" relation=".8"/>
-		<stats name="rlaan_briin" relation="0"/>
-
-		<stats name="aeran_merchant_marine" relation="-1"/>
-		<stats name="rlaan_citizen" relation="0"/>
-		<stats name="merchant_guild_citizen" relation="0"/>
-		<stats name="andolian_citizen" relation="1"/>
-		<stats name="highborn_citizen" relation="0"/>
-		<stats name="shaper_citizen" relation="0"/>
-		<stats name="unadorned_citizen" relation=".8"/>
-		<stats name="purist_citizen" relation="0"/>
-		<stats name="forsaken_citizen" relation="0"/>
-		<stats name="LIHW_citizen" relation="0"/>
-		<stats name="uln_citizen" relation="0"/>
-		<stats name="dgn_citizen" relation="0"/>
-		<stats name="klkk_citizen" relation="1"/>
-		<stats name="mechanist_citizen" relation="0"/>
-		<stats name="shmrn_citizen" relation=".8"/>
-		<Explosion name="explosion_orange.ani"/>
-<!--		<CommAnimation>  
-			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
-		</CommAnimation>  -->
-	</Faction>
-	<Faction name="mechanist_citizen" citizen="true" logoRGB="logos/mechanistPri.texture" secLogoRGB="logos/mechanistSec.texture" contraband="contraband" sparkred=".1" sparkgreen=".1" sparkblue=".2">
-		<stats name="privateer" relation="0"/>
-		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-1"/>
-		<stats name="rlaan" relation="0"/>
-		<stats name="merchant_guild" relation=".8"/>
-		<stats name="luddites" relation="-1"/>
-		<stats name="pirates" relation="-1"/>
-		<stats name="hunter" relation="0"/>
-		<stats name="homeland-security" relation="0"/>
-		<stats name="ISO" relation="0"/>
-		<stats name="unknown" relation="0"/>
-		<stats name="andolian" relation="-.1"/>
-		<stats name="highborn" relation="0"/>
-		<stats name="shaper" relation="-.2"/>
-		<stats name="unadorned" relation="0"/>
-		<stats name="purist" relation="-.2"/>
-		<stats name="forsaken" relation="0"/>
-		<stats name="LIHW" relation="0"/>
-		<stats name="uln" relation="0"/>
-		<stats name="dgn" relation="0"/>
 		<stats name="klkk" relation="0"/>
-		<stats name="mechanist" relation="1"/>
+		<stats name="mechanist" relation="0"/>
 		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-
-		<stats name="aeran_merchant_marine" relation="-1"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
 		<stats name="rlaan_citizen" relation="0"/>
-		<stats name="merchant_guild_citizen" relation=".8"/>
+		<stats name="merchant_guild_citizen" relation="0"/>
 		<stats name="andolian_citizen" relation="0"/>
 		<stats name="highborn_citizen" relation="0"/>
 		<stats name="shaper_citizen" relation="0"/>
@@ -1716,7 +1654,52 @@
 		<stats name="uln_citizen" relation="0"/>
 		<stats name="dgn_citizen" relation="0"/>
 		<stats name="klkk_citizen" relation="0"/>
-		<stats name="mechanist_citizen" relation="1"/>
+		<stats name="mechanist_citizen" relation="0"/>
+		<stats name="shmrn_citizen" relation="0"/>
+		<Explosion name="explosion_orange.ani"/>
+<!--		<CommAnimation>  
+			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
+		</CommAnimation>  -->
+	</Faction>
+	<Faction name="mechanist_citizen" citizen="true" logoRGB="logos/mechanistPri.texture" secLogoRGB="logos/mechanistSec.texture" contraband="contraband" sparkred=".1" sparkgreen=".1" sparkblue=".2">
+		<stats name="privateer" relation="0"/>
+		<stats name="confed" relation="0"/>
+		<stats name="aera" relation="0"/>
+		<stats name="rlaan" relation="0"/>
+		<stats name="merchant_guild" relation="0"/>
+		<stats name="luddites" relation="0"/>
+		<stats name="pirates" relation="0"/>
+		<stats name="hunter" relation="0"/>
+		<stats name="homeland-security" relation="0"/>
+		<stats name="ISO" relation="0"/>
+		<stats name="unknown" relation="0"/>
+		<stats name="andolian" relation="0"/>
+		<stats name="highborn" relation="0"/>
+		<stats name="shaper" relation="0"/>
+		<stats name="unadorned" relation="0"/>
+		<stats name="purist" relation="0"/>
+		<stats name="forsaken" relation="0"/>
+		<stats name="LIHW" relation="0"/>
+		<stats name="uln" relation="0"/>
+		<stats name="dgn" relation="0"/>
+		<stats name="klkk" relation="0"/>
+		<stats name="mechanist" relation="0"/>
+		<stats name="shmrn" relation="0"/>
+		<stats name="rlaan_briin" relation="0"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
+		<stats name="rlaan_citizen" relation="0"/>
+		<stats name="merchant_guild_citizen" relation="0"/>
+		<stats name="andolian_citizen" relation="0"/>
+		<stats name="highborn_citizen" relation="0"/>
+		<stats name="shaper_citizen" relation="0"/>
+		<stats name="unadorned_citizen" relation="0"/>
+		<stats name="purist_citizen" relation="0"/>
+		<stats name="forsaken_citizen" relation="0"/>
+		<stats name="LIHW_citizen" relation="0"/>
+		<stats name="uln_citizen" relation="0"/>
+		<stats name="dgn_citizen" relation="0"/>
+		<stats name="klkk_citizen" relation="0"/>
+		<stats name="mechanist_citizen" relation="0"/>
 		<stats name="shmrn_citizen" relation="0"/>
 		<Explosion name="explosion_orange.ani"/>
 <!--		<CommAnimation>  
@@ -1726,32 +1709,32 @@
 	<Faction name="shmrn_citizen" citizen="true" logoRGB="logos/shmrnPri.texture" secLogoRGB="logos/shmrnSec.texture" contraband="contraband" sparkred="0.840" sparkgreen="0.250" sparkblue="0.090">
 		<stats name="privateer" relation="0"/>
 		<stats name="confed" relation="0"/>
-		<stats name="aera" relation="-1"/>
+		<stats name="aera" relation="0"/>
 		<stats name="rlaan" relation="0"/>
 		<stats name="merchant_guild" relation="0"/>
-		<stats name="luddites" relation="-1"/>
-		<stats name="pirates" relation="-1"/>
+		<stats name="luddites" relation="0"/>
+		<stats name="pirates" relation="0"/>
 		<stats name="hunter" relation="0"/>
 		<stats name="homeland-security" relation="0"/>
 		<stats name="ISO" relation="0"/>
 		<stats name="unknown" relation="0"/>
-		<stats name="andolian" relation=".2"/>
+		<stats name="andolian" relation="0"/>
 		<stats name="highborn" relation="0"/>
 		<stats name="shaper" relation="0"/>
 		<stats name="unadorned" relation="0"/>
 		<stats name="purist" relation="0"/>
 		<stats name="forsaken" relation="0"/>
 		<stats name="LIHW" relation="0"/>
-		<stats name="uln" relation="00"/>
+		<stats name="uln" relation="0"/>
 		<stats name="dgn" relation="0"/>
-		<stats name="klkk" relation=".1"/>
+		<stats name="klkk" relation="0"/>
 		<stats name="mechanist" relation="0"/>
-		<stats name="shmrn" relation="1"/>
+		<stats name="shmrn" relation="0"/>
 		<stats name="rlaan_briin" relation="0"/>
-		<stats name="aeran_merchant_marine" relation="-1"/>
+		<stats name="aeran_merchant_marine" relation="0"/>
 		<stats name="rlaan_citizen" relation="0"/>
 		<stats name="merchant_guild_citizen" relation="0"/>
-		<stats name="andolian_citizen" relation=".2"/>
+		<stats name="andolian_citizen" relation="0"/>
 		<stats name="highborn_citizen" relation="0"/>
 		<stats name="shaper_citizen" relation="0"/>
 		<stats name="unadorned_citizen" relation="0"/>
@@ -1760,9 +1743,9 @@
 		<stats name="LIHW_citizen" relation="0"/>
 		<stats name="uln_citizen" relation="0"/>
 		<stats name="dgn_citizen" relation="0"/>
-		<stats name="klkk_citizen" relation=".1"/>
+		<stats name="klkk_citizen" relation="0"/>
 		<stats name="mechanist_citizen" relation="0"/>
-		<stats name="shmrn_citizen" relation="1"/>
+		<stats name="shmrn_citizen" relation="0"/>
 		<Explosion name="explosion_orange.ani"/>
 <!--		<CommAnimation>  
 			<MoodAnimation name="explosion_orange.ani" sex="0"/>  
@@ -1771,8 +1754,6 @@
 	<Faction name="upgrades" citizen="false" logoRGB="logos/confedPri.texture" logoSec="logos/confedSec.texture"/>
 	<Faction name="planets" citizen="false" logoRGB="logos/confedPri.texture" logoSec="logos/confedSec.texture"/>
 </Factions>
-
-
 
 
 
