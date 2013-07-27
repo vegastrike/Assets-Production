@@ -119,7 +119,7 @@ def getPlanetList (sig):
     res = []
     i = VS.getUnitList()
     if sig: 
-        i.advanceNSignfificant(0)
+        i.advanceNSignficant(0)
         while (not i.isDone()):
             res.append(i.current())
             i.advanceSignificant()
