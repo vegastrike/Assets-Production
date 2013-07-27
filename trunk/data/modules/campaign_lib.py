@@ -974,7 +974,7 @@ class Campaign:
     def isDocked(self):
         plr=VS.getCurrentPlayer()
         if not self.checkPlayer(plr):
-            debug.error("campaign.isDocked() called for invalid player %d"%(str(isdocked),plr))
+            debug.error("campaign.isDocked() called for invalid player %d"%(plr,))
             return False
         player = self.players[plr]
         return player.docked
