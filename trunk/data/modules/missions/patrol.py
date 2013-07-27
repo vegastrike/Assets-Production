@@ -75,6 +75,7 @@ class patrol (Director.Mission):
     def DeletePatrolPoint (self,num,nam):
         VS.IOmessage (0,"patrol",self.mplay,"[Computer] %s scanned, data saved..."%nam)
         VS.setCompleteness(self.objectives[self.jnum],1.0)
+        self.patrolpoints[self.jnum].unsetMissionRelevant()
         self.you.commAnimation("scan_complete.ani")
         del self.objectives[self.jnum]
         del self.patrolpoints[self.jnum]
