@@ -20,7 +20,7 @@ class XGUIRoot:
         self.templates = {}
 
     def getTemplate(self,type,name):
-        if type in self.templates and name in sefl.templates[type]:
+        if type in self.templates and name in self.templates[type]:
             return self.templates[type][name]
         else:
             return None
