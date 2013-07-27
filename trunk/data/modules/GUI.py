@@ -418,7 +418,8 @@ class GUIRoot:
         self.rooms[room.getIndex()] = room
 
     def deregisterObject(self,id):
-        self.objects.erase(id)
+        if id in self.objects:
+            del self.objects[id]
 
     def deregisterAllObjects(self):
         self.objects = {}
