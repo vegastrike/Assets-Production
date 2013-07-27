@@ -110,7 +110,7 @@ def getPlanet (whichsignificant, sig):
     if sig:
         i.advanceNSignificant(whichsignificant)
     else:
-        i.advanceNPlanet(whichshignificant)
+        i.advanceNPlanet(whichsignificant)
     if i.isDone():
         return VS.Unit()
     return i.current()
