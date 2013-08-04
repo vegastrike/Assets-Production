@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<technique fallback="../4_ps2.0/default">
+<technique fallback="../3_arbfp/default">
     <!-- Full-blown shader technique, with Z-write prepass to avoid
          shading overhead for occluded fragments.
          
