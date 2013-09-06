@@ -1,0 +1,3 @@
+When downloading from svn the data folder will contain two files: py27_modules and py3_modules. Currently data uses the py3 modules so you will need to upzip the py27 file to get the game to work. You should be able to do this by right clicking on the file and telling it to extract here. This should put the correct files into \modules\builtin
+
+Hopefully in the next month or so I will switch the windows binary over to use py3 and this will no longer be necessary.
