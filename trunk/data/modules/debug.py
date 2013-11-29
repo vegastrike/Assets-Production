@@ -38,7 +38,7 @@ def _fatal(msg, *fmtargs): # Kill the script!
 
 fatal = _fatal # Really bad error... Kill the script.  Same as a call to raise()
 
-warn = _warn   # Anything that shouldn't happen, but shouldn't cause a crash either.
+warn = _withlineno   # Anything that shouldn't happen, but shouldn't cause a crash either.
 error = _warn  # Different name for the same thing.
 
 # Less important messages that happen a lot.
@@ -48,3 +48,6 @@ info = _warn
 # For release, we can disable unimportant messages:
 info = _devnull
 debug = _devnull
+#info = _withlineno
+#debug = _withlineno
+
