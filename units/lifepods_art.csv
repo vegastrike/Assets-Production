@@ -1,0 +1,6 @@
+,"Name","Directory","Hud_image","Cockpit","CockpitX","CockpitY","CockpitZ","Unit_Scale","Mesh","Rapid_Mesh","BSP_Mesh","Use_BSP","Use_Rapid","Sound","Light","Explosion"
+"Key","string","String","string","string","x=float","y=float","z=float(meters)","float","{filename(string);frame(int);texturetime(float)}","string","string","boolean","boolean","shieldhit(string);armorhit(string);hullhit(string);jump(string);explode(string);cloak(string);engine(string)","{meshfile(string);x(meters);y(meters);z(meters);scale(meters);r(percentage);g(percentage);b(percentage);a(percentage);activationspeed(meters/second)}","string"
+,,,,,,,,,,,,,,,,
+"eject","Lifepod","./eject","ejectpod-hud.spr",,,,,0.5,"{eject.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;-0.249996;0.00000e+0;-1.83758;1.5;;;;;}{supernova.bmp.bfxm;0.250004;0.00000e+0;-1.83758;1.5;;;;;}",
+"eject.blank","Lifepod","./eject","ejectpod-hud.spr",,,,,0.5,"{eject.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;-0.249996;0.00000e+0;-1.83758;1.5;;;;;}{supernova.bmp.bfxm;0.250004;0.00000e+0;-1.83758;1.5;;;;;}",
+"eject.template","Lifepod","./eject","ejectpod-hud.spr",,,,,0.5,"{eject.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;-0.249996;0.00000e+0;-1.83758;1.5;;;;;}{supernova.bmp.bfxm;0.250004;0.00000e+0;-1.83758;1.5;;;;;}",

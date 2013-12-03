@@ -1,0 +1,8 @@
+,"Name","Object_Type","Mass","Moment_Of_Inertia","Repair_Droid"
+"Key","string","string","metric tons","metric tons * meters*meters","int"
+,,,,,
+"repair_droid01__upgrades","Repair Droid I","Upgrade_Replacement",1,1,1
+"repair_droid02__upgrades","Repair Droid II","Upgrade_Replacement",1,1,2
+"repair_droid03__upgrades","Repair Droid III","Upgrade_Replacement",1,1,3
+"repair_droid04__upgrades","Repair Droid IV","Upgrade_Replacement",1,1,4
+"repair_droid05__upgrades","Repair Droid V","Upgrade_Replacement",1,1,5

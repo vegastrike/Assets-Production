@@ -1,0 +1,9 @@
+,"Name","Object_Type","Mass","Moment_Of_Inertia","Armor_Front_Top_Right","Armor_Front_Top_Left","Armor_Front_Bottom_Right","Armor_Front_Bottom_Left","Armor_Back_Top_Right","Armor_Back_Top_Left","Armor_Back_Bottom_Right","Armor_Back_Bottom_Left"
+"Key","string","string","metric tons","metric tons * meters*meters","VSD","VSD","VSD","VSD","VSD","VSD","VSD","VSD"
+,,,,,,,,,,,,
+"armor01__upgrades","Plasteel Armor","Upgrade_Additive",10,10,50,50,50,50,50,50,50,50
+"armor02__upgrades","Isometal Armor","Upgrade_Additive",10,10,100,100,100,100,100,100,100,100
+"armor03__upgrades","Polysteel Armor","Upgrade_Additive",10,10,150,150,150,150,150,150,150,150
+"armor04__upgrades","Tungsten Armor","Upgrade_Additive",10,10,200,200,200,200,200,200,200,200
+"armor05__upgrades","Tantalum Carbide Armor","Upgrade_Additive",10,10,250,250,250,250,250,250,250,250
+"armor06__upgrades","PolyDuranium Armor","Upgrade_Additive",10,10,300,300,300,300,300,300,300,300

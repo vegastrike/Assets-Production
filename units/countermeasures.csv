@@ -1,0 +1,6 @@
+,"Name","Object_Type","Mass","Moment_Of_Inertia","ECM_Rating","ECM_Resist","Ecm_Drain","Spec_Interdiction"
+"Key","string","string","metric tons","metric tons * meters*meters","int","int","800MJ/s",
+,,,,,,,,
+"ecm_package01__upgrades","ECM Package I","Upgrade_Replacement",1,1,1,0.1,5,
+"ecm_package02__upgrades","ECM Package II","Upgrade_Replacement",1,1,2,0.2,8,
+"ecm_package03__upgrades","ECM Package III","Upgrade_Replacement",1,1,3,0.3,12,

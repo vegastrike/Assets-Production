@@ -1,0 +1,18 @@
+,"Name","Object_Type","Mass","Moment_Of_Inertia","Reactor_Recharge","Fuel_Capacity"
+"Key","string","string","metric tons","metric tons * meters*meters","100MJ/s","metric tons"
+,,,,,,
+"reactor01__upgrades","Reactor I","Upgrade_Replacement",10,10,15,
+"reactor02__upgrades","Reactor II","Upgrade_Replacement",10,10,30,
+"reactor03__upgrades","Reactor III","Upgrade_Replacement",10,10,44,
+"reactor04__upgrades","Reactor IV","Upgrade_Replacement",10,10,57,
+"reactor05__upgrades","Reactor V","Upgrade_Replacement",10,10,69,
+"reactor06__upgrades","Reactor VI","Upgrade_Replacement",10,10,80,
+"reactor07__upgrades","Reactor VII","Upgrade_Replacement",10,10,90,
+"reactor08__upgrades","Reactor VIII","Upgrade_Replacement",10,10,99,
+"reactor09__upgrades","Reactor IX","Upgrade_Replacement",10,10,108,
+"reactor10__upgrades","Reactor X","Upgrade_Replacement",10,10,115,
+"reactor11__upgrades","Reactor XI","Upgrade_Replacement",10,10,120,
+"reactor12__upgrades","Reactor XII","Upgrade_Replacement",10,10,125,
+"reactor13__upgrades","Reactor XIII","Upgrade_Replacement",10,10,130,
+"reactor14__upgrades","Reactor XIV","Upgrade_Replacement",10,10,140,
+"reactor15__upgrades","Reactor XV","Upgrade_Replacement",10,10,145,
