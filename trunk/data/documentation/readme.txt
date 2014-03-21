@@ -686,7 +686,7 @@ Multiplayer currently has two modes:
    
    To connect to a server, click on Multiplayer, and in the Online
    Account mode, type in your username and password.
-   Register an account athttp://vegastrike.sourceforge.net/forums/
+   Register an account at http://forums.vega-strike.org/
    and sign up for an account.
    
    It is also in late alpha, so please report any bugs you find (we
