@@ -53,7 +53,7 @@
             srgb_aware="true"
             iteration="1" maxiterations="4"
             blend="multi_alpha_blend">
-        <vertex_program src="planet/ground_vs1.1"/>
+        <vertex_program src="planet/ground_vs1.1.130"/>
         <fragment_program src="planet/ground_ps3.0"/>
         
         <texture_unit src="decal:0" default="file:white.bmp" name="baseMap_20"/>
@@ -132,7 +132,7 @@
             iteration="1" maxiterations="4"
             blend="multi_alpha_blend"
             polygon_offset_units="-1">
-        <vertex_program src="planet/cloud_vs1.1"/>
+        <vertex_program src="planet/cloud_vs1.1.130"/>
         <fragment_program src="planet/cloud_ps3.0"/>
 
         <texture_unit src="environment" name="envMap"/>
