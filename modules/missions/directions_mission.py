@@ -64,13 +64,13 @@ class directions_mission (Director.Mission):
 
     def findUnit(self, name):
         i = VS.getUnitList()
-        un = i.current()
+        testun = i.current()
         while (not i.isDone()):
             if testun.getName().lower()==name.lower() or testun.getFullname().lower()==name.lower():
                 return testun
             testun = i.next()
         i = VS.getUnitList()
-        un = i.current()
+        testun = i.current()
         while (not i.isDone()):
             if testun.isDockableUnit():
                 return testun
