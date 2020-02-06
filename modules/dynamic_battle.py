@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import division
 import VS
 import Director
 import fg_util
@@ -34,7 +35,7 @@ def UpdateCombatTurn():
         if (not SimulateBattles()):
             lastfac=0
     else:
-        for i in xrange(10):
+        for i in range(10):
             if (lastfac<nfac):
                 fac = VS.GetFactionName(lastfac)
                 if (lookorsiege):
@@ -63,7 +64,7 @@ def getImportanceOfType (typ):
 
 def moveSurroundingCapshipsToSiege(fac,sys):
     suc=0
-    for i in xrange(VS.GetNumAdjacentSystems(sys)):
+    for i in range(VS.GetNumAdjacentSystems(sys)):
         asys=VS.GetAdjacentSystem(sys,i)
         for fg in fg_util.AllFGsInSystem(fac,asys):
             if fg_util.CapshipInFG(fg,fac):
@@ -76,12 +77,12 @@ def moveSurroundingCapshipsToSiege(fac,sys):
     return suc
 
 def neighborFaction(sys,fac):
-    for i in xrange(VS.GetNumAdjacentSystems(sys)):
+    for i in range(VS.GetNumAdjacentSystems(sys)):
         asys=VS.GetAdjacentSystem(sys,i)
         if (VS.GetGalaxyFaction(asys)==fac):
             return True
     return False
- 
+
 #returns false if Siege is done going through all its vehicles
 def Siege(fac):
     global siegenumber
@@ -198,10 +199,10 @@ def SimulateBattles():
         else:
             persystemattacklist=cpsal
             cpsal = {}
-            simulateiter= attacklist.iteritems()
+            simulateiter= iter(attacklist.items())
 
     try:
-        ally = simulateiter.next()
+        ally = next(simulateiter)
         godoit=1
     except StopIteration:
         simulateiter = None
@@ -242,7 +243,7 @@ def randomMovement(fg,fac):
     convoywhere=fg.find("->")
     if (convoywhere!=-1):
         endpoints=[fg[0:convoywhere],fg[convoywhere+2:]]
-        
+
     if fg.find("Insys")!=-1:
         return#can't go about moving insys fgs away
     if (sys!='nil' and fg!=fg_util.BaseFGInSystemName(sys)):
@@ -252,7 +253,7 @@ def randomMovement(fg,fac):
             suggestednewsys = l[vsrandom.randrange(0,len(l))]
             sugfac=VS.GetGalaxyFaction(suggestednewsys)
             sugrel=VS.GetRelation(fac,sugfac)
-            
+
             if convoywhere==-1 and (((fac.find(sugfac)!=-1 or sugrel>.5) and citizen) or not citizen):
                 fg_util.TransferFG( fg,fac,suggestednewsys);
                 #debug.debug('moving '+fg+' from '+sys+' to '+ suggestednewsys)
@@ -300,7 +301,7 @@ def AddFighterTo(fgname,fac,isNew=False):
             numfighters=1
     #debug.debug("Generating "+str(numfighters)+ " fighters for "+fac+" at "+sys)
     if isNew:
-        fgk=fg_util.FGsInSystem(fac,sys)        
+        fgk=fg_util.FGsInSystem(fac,sys)
         if len(fgk):
             fgname=fgk[vsrandom.randrange(0,len(fgk))]
             stat=6
@@ -376,7 +377,7 @@ def StopTargettingEachOther (fgname,faction,enfgname,enfaction):
                 (un.getFactionName()==faction and un.getFlightgroupName()==fgname)):
             un.setFgDirective ('b')
         #check to see that its' in this flightgroup or something :-)
-        un=i.next()
+        un=next(i)
 
 def TargetEachOther (fgname,faction,enfgname,enfaction):
     i=VS.getUnitList()
@@ -389,7 +390,7 @@ def TargetEachOther (fgname,faction,enfgname,enfaction):
                 en=un
         if (un.getFactionName()==faction and un.getFlightgroupName()==fgname):
             al=un
-        un=i.next()
+        un=next(i)
     if (en and al):
         al.setFlightgroupLeader(al)
         al.SetTarget(en)
@@ -459,11 +460,11 @@ def countTn (l):
 def findLaunchedShipInFGInSystem (fgname,faction):
     uni = VS.getUnitList()
     un=uni.current()
-    while (uni.notDone()):
+    while (not uni.isDone()):
         if un:
             if (un.getFlightgroupName()==fgname and un.getFactionName()==faction):
                 return un
-        un= uni.next()
+        un= next(uni)
 def LaunchMoreShips(fgname,faction,landedtn,nums):
     shiplaunchlist=[]
     while nums>0 and len(landedtn)>0:
@@ -481,7 +482,7 @@ def LaunchMoreShips(fgname,faction,landedtn,nums):
             pos=k.GetPosition()
     if (pos):
         for i in shiplaunchlist:
-            while j in xrange(i[1]):
+            while j in range(i[1]):
                 pos=launch_recycle.LaunchNext(fgname,faction,"default",pos)
 
 
@@ -500,7 +501,7 @@ def LaunchEqualShips (fgname, faction, enfgname, enfaction):
     if (numlaunch/numland > numenlaunch/numenland):
         LaunchMoreShips (fgname,faction,land,int((numland*numenlaunch/numenland)-numlaunch))
     else:
-        LaunchMoreShips (enfgname,enfaction,enland,int((numenland*numlaunch/numland)-numenlaunch))
+        LaunchMoreShips (enfgname,enfaction,enland,int((numenland*numlaunch//numland)-numenlaunch))
 
 def stopAttack (fgname,faction):
     ally=(fgname,faction)

@@ -36,19 +36,19 @@ class plunder (Director.Mission):
             VS.IOmessage (2,"plunder mission",self.mplay,"After it is destroyed, pick up all %s cargo that got ejected."%self.category)
             VS.IOmessage (3,"plunder mission",self.mplay,"Then return to a %s base with your cargo. #00ff00Good luck!"%self.faction)
         else:
-            print "aboritng plunder constructor..."
+            print("aboritng plunder constructor...")
             VS.terminateMission (0)
 
     def Win (self,un,terminate):
         VS.IOmessage (0,"plunder mission",self.mplay,"#00ff00Excellent work pilot.")
         VS.IOmessage (0,"plunder mission",self.mplay,"#00ff00You have been rewarded for your effort as agreed.")
         VS.IOmessage (0,"plunder mission",self.mplay,"#00ff00Your contribution to the war effort will be remembered.")
-        print "do you win?"
+        print("do you win?")
         un.addCredits(self.cred)
         if len(self.donevar):
             quest.removeQuest(self.you.isPlayerStarship(),self.donevar,1)
         if (terminate):
-            print "you win plunder mission!"
+            print("you win plunder mission!")
             VS.terminateMission(1)
 
     def Lose (self,terminate):
@@ -56,7 +56,7 @@ class plunder (Director.Mission):
         if len(self.donevar):
             quest.removeQuest(int(self.mplay[1:]),self.donevar,-1)
         if (terminate):
-            print "lose plunder mission"
+            print("lose plunder mission")
             VS.terminateMission(0)
 
     def Execute (self):
@@ -73,7 +73,7 @@ class plunder (Director.Mission):
                 VS.setCompleteness(self.obj,0.)
             elif self.you.isDocked(self.gosig.SignificantUnit()) or self.gosig.SignificantUnit().isDocked(self.you):
 #             print "du hast gewonnen!"
-                self.you.removeCargo(self.content,self.quantity,1)
+                self.you.removeCargo(self.content,self.quantity,bool(1))
                 self.Win(self.you,1)
 #           else:
 #             print 'hihohohiho'
@@ -105,7 +105,7 @@ class plunder (Director.Mission):
         else:
             significant=self.gosig.SignificantUnit()
             if (significant.isNull ()):
-                print "sig null"
+                print("sig null")
                 VS.terminateMission(0)
                 return
             else:
@@ -126,19 +126,19 @@ class plunder (Director.Mission):
                     if (self.enemy):
                         self.arrived=1
                     else:
-                        print "enemy null"
+                        print("enemy null")
                         VS.terminateMission(0)
                         return
 
     def initbriefing(self):
-        print "ending briefing"
+        print("ending briefing")
 
     def loopbriefing(self):
-        print "loop briefing"
+        print("loop briefing")
         Briefing.terminate();
 
     def endbriefing(self):
-        print "ending briefing"
+        print("ending briefing")
 
 
 ##def initrandom (minns, maxns, credsmin, credsmax, run_away, minshipdifficulty, maxshipdifficulty):

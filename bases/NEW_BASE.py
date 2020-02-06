@@ -23,4 +23,3 @@ Base.Link (room, 'Conc', -0.7025, -0.756667, 0.3375, 1.75667, 'Main Concourse', 
 Base.Comp (room, 'upg', -0.3625, -0.726667, 0.2925, 1.72, 'Upgrade Ship', 'Upgrade')
 Base.Comp (room, 'shd', 0.06, -0.68, 0.345, 0.74, 'Ship Dealer', 'ShipDealer')
 Base.Texture (room, 'tex', 'bases/commerce/shoppingmall.spr', 0, 0)
-

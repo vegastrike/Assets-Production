@@ -60,9 +60,9 @@ class quest_slaver_factory (quest.quest_factory):
 
 class MissionExecutor(Director.Mission):
 # call this class from the mission file
-   def __init__(self, classesToExecute):
-      Director.Mission.__init__(self)
-      self.classes = classesToExecute
-   def Execute(self):
-      for c in self.classes:
-         c.Execute()
+    def __init__(self, classesToExecute):
+        Director.Mission.__init__(self)
+        self.classes = classesToExecute
+    def Execute(self):
+        for c in self.classes:
+            c.Execute()

@@ -8,11 +8,13 @@ import Briefing
 import launch_recycle
 def moveUnitTo(un,place,radius):
     where=place.LocalPosition()
-    print "moving "+un.getName() +" to "+place.getName()
+    print("moving "+un.getName() +" to "+place.getName())
     prsize=place.rSize();
     prp = VS.getPlanetRadiusPercent()
+    pps = float(VS.vsConfig("physics","planet_port_size","0")) - 1.0
+    pmargin = 1.5
     if (place.isPlanet()):
-        prsize*=1+prp
+        prsize*=1+max(prp,pps)*pmargin
     where=(where[0]+un.rSize()+prsize+radius,where[1],where[2]);
     un.SetPosition(VS.SafeEntrancePoint(where,un.rSize()))
     return un
@@ -24,10 +26,10 @@ class go_somewhere_significant:
 
     def SignificantUnit(self):
         return self.significantun
-    
+
     def getSignificantFullName(self):
         return unit.getUnitFullName(self.significantun,False)
-    
+
     def __init__ (self,you, landable_only, distance_away_to_trigger,base_only=0,capshipfaction="", dyn_fg="", showObjective=1, forcestarship=0):
         self.obj=0
         self.showObjective=showObjective
@@ -44,9 +46,9 @@ class go_somewhere_significant:
             lim=1
             if landable_only and not base_only:
                 lim=10
-            for i in xrange(lim):
+            for i in range(lim):
                 significant = unit.getSignificant (randint,landable_only,base_only)
-                
+
                 if significant.isPlanet():
                     break
                 else:
@@ -60,7 +62,7 @@ class go_somewhere_significant:
                     significant=you
                 self.orbitee="%s" % (significant.getName())
                 self.capship=1
-                print "orbitee %s " % self.orbitee
+                print("orbitee %s " % self.orbitee)
                 if (dyn_fg==""):
                     newship=faction_ships.getRandomCapitol(capshipfaction)
                     found=False
@@ -73,13 +75,13 @@ class go_somewhere_significant:
                         pass
 
                     i=VS.getUnitList()
-                    while i.notDone():
-                        testun = i.current()
-                        i.advance()
+                    testun = i.current()
+                    while (not i.isDone()):
                         if testun.getFactionName()==capshipfaction and faction_ships.isCapital(testun.getName()):
-                           significant=moveUnitTo(testun,significant,near)
-                           found=True
-                           break
+                            significant=moveUnitTo(testun,significant,near)
+                            found=True
+                            break
+                        testun = i.next()
                     if (not found):
                         significant=launch.launch_wave_around_unit("Base",capshipfaction,newship,"sitting_duck",1,near,far,significant,"")
                 else:
@@ -91,20 +93,20 @@ class go_somewhere_significant:
                     found=False
                     aroundthe=" near "+unit.getUnitFullName(significant,True);
                     i = VS.getUnitList()
-                    while i.notDone():
-                        testun = i.current()
-                        i.advance()
+                    testun = i.current()
+                    while (not i.isDone()):
                         if testun.getFactionName()==capshipfaction and faction_ships.isCapital(testun.getName()):
-                           significant=moveUnitTo(testun,significant,near)
-                           found=True
-                           break
+                            significant=moveUnitTo(testun,significant,near)
+                            found=True
+                            break
+                        testun = i.next()
                     if (not found):
                         significant=launch_recycle.launch_dockable_around_unit(dyn_fg,capshipfaction,"sitting_duck",near,significant,4*near,'','Base')
                     significant.setFullname(dyn_fg)
         else:
             significant = universe.getRandomJumppoint ()
         if (significant.isNull()):
-            print "ERROR: no significants found in starsystem %s" % (self.sysfil)
+            print("ERROR: no significants found in starsystem %s" % (self.sysfil))
             self.significantun=VS.getPlayer()
         else:
             self.significantun=significant

@@ -27,16 +27,16 @@ adventures = {
     "Crucible/Elohim":quest_blockade.quest_blockade_factory(),
     "Sol/Alpha_Centauri":quest_shipyardbomb.quest_shipyardbomb_factory(),
     "Sol/Iris":quest_slaver.quest_slaver_factory(),
-#	"Crucible/Cephid_17":quest_drone.quest_drone_factory(),
-#	"Enigma/callimanchius":quest_surplus.quest_surplus_factory(('Supplies/Medical','Research/Environmental',),1.5,.5,0,1,('callimanchius_disaster',),),
-#	"Sol/alpha_centauri":quest_surplus.quest_surplus_factory(('Supplies/Construction_Supplies','Manufactured_Goods',),1.5,.5,0,1,('holman_population',),),
-#	"Enigma/racene":quest_racene.quest_racene_factory(),
-#	"Enigma/defiance":quest_isowing.quest_isowing_factory(),
-#	"Enigma/axis":quest_disappear.quest_disappear_factory(),
-#	"Enigma/novaya_kiev":quest_rlaan_spy.quest_rlaan_spy_factory(),
-#	"Enigma/heinlein":quest_rogue_militia.quest_rogue_militia_factory(),
-#	"Enigma/klondike":quest_contraband_truck.quest_contraband_truck_factory(),
-#	"Crucible/Cephid_17":quest_teleport.quest_teleport_factory(),
+#       "Crucible/Cephid_17":quest_drone.quest_drone_factory(),
+#       "Enigma/callimanchius":quest_surplus.quest_surplus_factory(('Supplies/Medical','Research/Environmental',),1.5,.5,0,1,('callimanchius_disaster',),),
+#       "Sol/alpha_centauri":quest_surplus.quest_surplus_factory(('Supplies/Construction_Supplies','Manufactured_Goods',),1.5,.5,0,1,('holman_population',),),
+#       "Enigma/racene":quest_racene.quest_racene_factory(),
+#       "Enigma/defiance":quest_isowing.quest_isowing_factory(),
+#       "Enigma/axis":quest_disappear.quest_disappear_factory(),
+#       "Enigma/novaya_kiev":quest_rlaan_spy.quest_rlaan_spy_factory(),
+#       "Enigma/heinlein":quest_rogue_militia.quest_rogue_militia_factory(),
+#       "Enigma/klondike":quest_contraband_truck.quest_contraband_truck_factory(),
+#       "Crucible/Cephid_17":quest_teleport.quest_teleport_factory(),
     }
 
 persistent_adventures = [
@@ -44,7 +44,7 @@ persistent_adventures = [
     #quest_tutorial.quest_tutorial_factory(),
     #quest_drone.quest_drone_factory(),
     #quest_isowing.quest_isowing_factory()]
-	]
+        ]
 
 def removePersistentAdventure(newq):
     mylen = len(persistent_adventures)

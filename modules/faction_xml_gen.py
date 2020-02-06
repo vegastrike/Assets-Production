@@ -16,7 +16,7 @@ def GetRelation(fac,fnum,enfac,enfnum):
 
 fp.write('<Factions>\n')
 fp.write('\t<Faction name="neutral" logoRGB="logos/confedPri.png" logoSec="logos/confedSec.png"/>\n')
-for i in  range (len(faction_ships.factions)+1):
+for i in range (len(faction_ships.factions)+1):
     if (i<len(factions)):
         f = factions[i]
     else:

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<technique fallback="../0_fixed_gl/fireglass">
+    <!-- Fallback technique for representing sheet glass, lucite, acrylic
+         or plexiglass. (All look the same, really; almost exactly the same refractive
+	 constant (nD) of about 1.47 to 1.48.).
+
+         It deals with a very old problem:
+         
+         Traditionally, in Vegastrike, sheet glass has been represented with blending
+         mode of "ONE ONE" and cull mode of "none". The former, for performance; and
+         the latter for correctness. The problem is that the former is incorrect, and
+         the latter, in spite of being correct, it looks terrible. The reason it does
+         is that the back-facing glass you see in a cockpit or glass dome would NOT
+         reflect the sky; it would reflect the inside of the cockpit or whatever the
+         dome covers. But due to lack of specular occlusion, what it does reflec is
+         sky, as if the cockpit had no pilot and no floor.
+         One solution I've found works better is to simply use cull="back"; i.e. only
+         show the glass facing you (the camera), and ignore the other side.
+         While better, this neglects the fact that the far side of the cockpit also
+         blocks light coming through, as a function of angle, by Fresnel rules.
+         
+         The sheet_glass technique deals with these problems by,
+         a) Using blending mode of "ONE ONEMINUSSRCALPHA".
+         b) Doing a first rendering pass with cull="front", to render the far side;
+         and applying fresnel to its apparent transparency; but it does NOT apply
+         specular light reflections or environment mapping.
+         c) Doing a second rendering pass with cull="back", to render the near side,
+         with full specularity and with normal-mapping.
+         
+         More details:
+         Five textures are supplied under the /textures game folder, and used for
+         glass by default.
+           * bubble_diff.png (4x4) is black, with alpha of 0.1 to play well with
+           non-shader-capable gpu's. 10% blending for glass looks okay, when it
+           isn't possible to compute angle-based reflectivity and transparency.
+           * bubble_spec.png (4x4) is white, with alpha 1.0, for maximum gloss.
+           * bubble_glow.png (128x128) has a bit of yellow light, and a generic
+           ambient occlusion (for a hemisphere on a plane) in the alpha channel.
+           This AO allows a rough computation of specular occlusion on outer
+           reflections. But you may want to supply your own "bubble_glow.png",
+           with a custom-baked AO for more accurate specular occlusion.
+           * bubble_norm.png (256x256) has generic, tileable bumpiness, which the
+           shader scales down considerably before applying to the outside for
+           perturbing the environmental reflections. (Glass is a high viscosity
+           liquid, rather than a solid. Over the years, windows become wobbly as
+           they "drip down".)
+         Note that clean glass doesn't have much of diffuse reflectivity, ergo
+         the default black diffuse texture. However, if you want to depict dirty
+         or dusty glass, you might want to supply a local "bubble_diff.png" with
+         a very dark, but not totally black color.
+         
+         Number of lights:
+         This is a two-pass algorithm, but NOT two passes over the same geometry,
+         but rather two complementary passes: One with cull="front"; and the other
+         with cull="back".
+         
+         No Z pass necessary:
+         The performance advantage of a Z pre-pass is proportional to overdraw
+         resulting from self-coverage by a mesh. Glass domes and cockpits are
+         very rarely too far from their convex hulls, giving a Z pass less value.
+    -->
+
+    <!-- First pass: Far side of glass cockpits and domes -->
+    
+    <pass type="shader" sequence="15" blend="default" cull="front" srgb_aware="true">
+        <vertex_program src="fireglass_simple"/>
+        <fragment_program src="fireglass_simple"/>
+       
+        <texture_unit src="decal:0" default="file:bubble_diff.texture" name="diffuseMap"/>
+        <texture_unit src="environment" name="envMap"/>
+        <texture_unit src="decal:1" default="file:bubble_spec.texture" name="specMap"/>
+        <texture_unit src="decal:3" default="file:bubble_glow.texture" name="glowMap"/>
+        <texture_unit src="decal:4" default="file:bubble_norm.texture" name="normalMap"/>
+        <texture_unit src="file:grey_metal.png" name="detail0Map"/>
+        <texture_unit src="file:grey_metal.png" name="detail1Map"/>
+       
+        <auto_param name="envColor" semantic="EnvColor" optional="true"/>
+        <auto_param name="light_enabled" semantic="ActiveLightsArray" optional="true"/>
+        <auto_param name="light_size" semantic="ApparentLightSizeArray" optional="true"/>
+        <auto_param name="max_light_enabled" semantic="NumLights" optional="true"/>
+        <auto_param name="detail0plane" semantic="DetailPlane0" optional="true"/>
+        <auto_param name="detail1plane" semantic="DetailPlane1" optional="true"/>
+        <auto_param name="cloaking" semantic="CloakingPhase" optional="true"/>
+        <auto_param name="gameTime" semantic="GameTime" optional="true"/>
+        
+        <param name="pass_num" value="0.0" optional="true"/>
+    </pass>
+   
+    <!-- Second pass: Near side of glass cockpits and domes -->
+    <pass type="shader" sequence="15" blend="default" cull="back" srgb_aware="true">
+        <vertex_program src="fireglass_simple"/>
+        <fragment_program src="fireglass_simple"/>
+       
+        <texture_unit src="decal:0" default="file:bubble_diff.texture" name="diffuseMap"/>
+        <texture_unit src="environment" name="envMap"/>
+        <texture_unit src="decal:1" default="file:bubble_spec.texture" name="specMap"/>
+        <texture_unit src="decal:3" default="file:bubble_glow.texture" name="glowMap"/>
+        <texture_unit src="decal:4" default="file:bubble_norm.texture" name="normalMap"/>
+        <texture_unit src="file:grey_metal.png" name="detail0Map"/>
+        <texture_unit src="file:grey_metal.png" name="detail1Map"/>
+       
+        <auto_param name="envColor" semantic="EnvColor" optional="true"/>
+        <auto_param name="light_enabled" semantic="ActiveLightsArray" optional="true"/>
+        <auto_param name="light_size" semantic="ApparentLightSizeArray" optional="true"/>
+        <auto_param name="max_light_enabled" semantic="NumLights" optional="true"/>
+        <auto_param name="detail0plane" semantic="DetailPlane0" optional="true"/>
+        <auto_param name="detail1plane" semantic="DetailPlane1" optional="true"/>
+        <auto_param name="cloaking" semantic="CloakingPhase" optional="true"/>
+        <auto_param name="gameTime" semantic="GameTime" optional="true"/>
+        
+        <param name="pass_num" value="1.0" optional="true"/>
+    </pass>
+</technique>

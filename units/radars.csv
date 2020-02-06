@@ -1,0 +1,17 @@
+,"Name","Object_Type","Mass","Moment_Of_Inertia","ITTS","Radar_Color","Radar_Range","Tracking_Cone","Max_Cone","Lock_Cone"
+"Key","string","string","metric tons","metric tons * meters*meters","boolean","boolean","meters","Degrees","Degrees","Degrees"
+,,,,,,,,,,
+"hawkeye1__upgrades","Hawkeye ZX-16","Upgrade_Replacement",0.5,0.5,"TRUE","FALSE",84000000,6,180,30
+"hawkeye2__upgrades","Hawkeye ZX-50","Upgrade_Replacement",0.5,0.5,"TRUE","FALSE",240000000,7,180,40
+"hawkeye3__upgrades","Hawkeye ZX-86","Upgrade_Replacement",0.5,0.5,"TRUE","TRUE",300000000,9,180,45
+"hawkeye4__upgrades","Hawkeye ZX-87","Upgrade_Replacement",0.5,0.5,"TRUE","THREAT",300000000,9,180,45
+"skyscope1__upgrades","SkyScope Alpha","Upgrade_Replacement",0.5,0.5,"FALSE","FALSE",30000000,4,180,25
+"skyscope2__upgrades","SkyScope Alpha Plus","Upgrade_Replacement",0.5,0.5,"FALSE","FALSE",60000000,5,180,30
+"skyscope3__upgrades","SkyScope Beta","Upgrade_Replacement",0.5,0.5,"TRUE","FALSE",120000000,8,180,35
+"starscanner1__upgrades","StarScanner 2530","Upgrade_Replacement",0.5,0.5,"FALSE","TRUE",48000000,3,180,40
+"starscanner2__upgrades","StarScanner 2545","Upgrade_Replacement",0.5,0.5,"FALSE","TRUE",84000000,6,180,42
+"starscanner3__upgrades","StarScanner 2600","Upgrade_Replacement",0.5,0.5,"TRUE","TRUE",120000000,10,180,45
+"starscanner4__upgrades","StarScanner 2610","Upgrade_Replacement",0.5,0.5,"TRUE","THREAT",120000000,10,180,45
+"surveyor1__upgrades","SpaceSurveyor H1","Upgrade_Replacement",0.5,0.5,"TRUE","PLANE",50000000,6,180,40
+"surveyor2__upgrades","SpaceSurveyor H2","Upgrade_Replacement",0.5,0.5,"TRUE","PLANE_THREAT",100000000,10,180,45
+"rlaantracker1__upgrades","Ktek Tracker","Upgrade_Replacement",0.5,0.5,"FALSE","BUBBLE_THREAT",300000000,12,180,50

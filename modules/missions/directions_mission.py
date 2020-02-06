@@ -23,8 +23,8 @@ isambushrunning={}
 
 class directions_mission (Director.Mission):
     def dir_privateSetupPlayer(self,cp):
-        print "setting up mission"
-        print self.jumps
+        print("setting up mission")
+        print(self.jumps)
         self.arrived=0
         self.wasnull=0
         self.you=VS.getPlayerX(cp)
@@ -34,14 +34,14 @@ class directions_mission (Director.Mission):
         self.dir_privateSetupPlayer(cp)
     def __init__ (self,savevar,jumps=(),destination=''):
         Director.Mission.__init__(self);
-        print 'Directions: Starting'
+        print('Directions: Starting')
         global isambushrunning
         self.var=savevar
         self.savedCargo=self.getCargo(VS.getPlayer())
 #        print self.savedCargo
         if (self.var,self.savedCargo) in isambushrunning:
             #VS.terminateMission(0)
-            print 'Directions: Stopping: directions already running! (before mission restore)'
+            print('Directions: Stopping: directions already running! (before mission restore)')
         isambushrunning[(self.var,self.savedCargo)]=True
         self.jumps=jumps
         self.cp=VS.getCurrentPlayer()
@@ -61,20 +61,20 @@ class directions_mission (Director.Mission):
             del isambushrunning[(self.var,self.savedCargo)]
         VS.terminateMission(1)
         return
-        
+
     def findUnit(self, name):
         i = VS.getUnitList()
-        while i.notDone():
-            testun=i.current()
-            i.advance()
+        un = i.current()
+        while (not i.isDone()):
             if testun.getName().lower()==name.lower() or testun.getFullname().lower()==name.lower():
                 return testun
+            testun = i.next()
         i = VS.getUnitList()
-        while i.notDone():
-            testun=i.current()
-            i.advance()
+        un = i.current()
+        while (not i.isDone()):
             if testun.isDockableUnit():
                 return testun
+            testun = i.next()
         return VS.getUnit(0)
     def getCargo(self,un):
         lis=[]
@@ -92,7 +92,7 @@ class directions_mission (Director.Mission):
         if (self.arrived and self.base.isNull()):
             return
         if (self.wasnull):
-            print "INEQUALITY"
+            print("INEQUALITY")
             if (not self.checkCargo(VS.getPlayerX(self.cp))):
                 self.takeCargoAndTerminate(self.you,1)
                 return
@@ -118,9 +118,3 @@ class directions_mission (Director.Mission):
             self.obj=VS.addObjective("Deliver cargo to %s." % self.destination);
             VS.setOwner(self.obj,self.you)
             VS.setCompleteness(self.obj,0)
-
-
-
-
-
-

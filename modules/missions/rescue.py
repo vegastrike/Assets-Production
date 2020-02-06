@@ -47,7 +47,7 @@ class rescue (Director.Mission):
 #                mymin*=faction_ships.launch_distance_factor
 #                mymax*=faction_ships.launch_distance_factor
 #            except:
-#                pass            
+#                pass
             self.eject = launch.launch_wave_around_unit("Rescue Pilot",self.faction,"eject","printhello.py",1,mymin,mymax,self.adjsys.SignificantUnit())
             self.eject.setMissionRelevant()
             self.arrived=2
@@ -82,9 +82,9 @@ class rescue (Director.Mission):
                 if (self.enemy):
                     self.enemy.SetTarget(self.you)
                     self.enemy.setFgDirective("A.")
-                print 'numej '+str(self.numejectors)
+                print('numej '+str(self.numejectors))
                 if (self.numejectors<self.you.GetCargo("Pilot").GetQuantity()):
-                    self.you.removeCargo("Pilot",1,1)
+                    self.you.removeCargo("Pilot",1,bool(1))
                     carg=VS.getRandCargo(1,"Passengers/Economy")
                     carg.SetMissionFlag(1)
                     VS.setCompleteness(self.obj,1)
@@ -93,7 +93,7 @@ class rescue (Director.Mission):
                     else:
                         self.arrived=3
                         self.cargname=carg.GetContent()
-                        print 'adding '+self.cargname
+                        print('adding '+self.cargname)
                         self.adjsys = go_somewhere_significant.go_somewhere_significant(self.you,1,25000,base_only=1)
                         VS.IOmessage(0,"Passenger",self.mplay,"Please take me to my home base: %s so I may begin to recover. Thank you!"%self.adjsys.SignificantUnit().getName())
                 else:
@@ -104,7 +104,7 @@ class rescue (Director.Mission):
             if (self.you.GetCargo(self.cargname).GetQuantity()==0):
                 self.Lose(1)
             elif (self.adjsys.SignificantUnit().isDocked(self.you) or self.you.isDocked(self.adjsys.SignificantUnit()) or self.adjsys.SignificantUnit().getDistance(self.you)<10):
-                if (self.you.removeCargo(self.cargname,1,1)):
+                if (self.you.removeCargo(self.cargname,1,bool(1))):
                     self.Win(self.you,1)
                 else:
                     self.Lose(1)
@@ -125,13 +125,13 @@ class rescue (Director.Mission):
         if len(self.donevar):
             quest.removeQuest(int(self.mplay[1:]),self.donevar,-1)
         if (terminate):
-            print "lose plunder mission"
+            print("lose plunder mission")
             VS.terminateMission(0)
     def initbriefing(self):
-        print "ending briefing"
+        print("ending briefing")
     def loopbriefing(self):
-        print "loop briefing"
+        print("loop briefing")
         Briefing.terminate();
 
     def endbriefing(self):
-        print "ending briefing"
+        print("ending briefing")

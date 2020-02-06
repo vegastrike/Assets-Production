@@ -80,4 +80,4 @@ now the one problem with animations is that LODs and Animations are mutually exc
 so I hope you enjoy--no one seems to use lods anyway
 
 
-http://vegastrike.sourceforge.net/forums/viewtopic.php?t=1205
+http://forums.vega-strike.org/viewtopic.php?t=1205

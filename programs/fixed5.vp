@@ -68,10 +68,7 @@ void main()
 
   // init accumulators
 
-  vec4 pc = gl_FrontLightProduct[0].ambient 
-          + gl_FrontMaterial.emission
-          + gl_FrontLightModelProduct.sceneColor
-          + float(light_enabled[1]) * gl_FrontLightProduct[1].ambient;
+  vec4 pc = gl_FrontMaterial.emission;
   vec4 sc = vec4(0.0);
 
   if (light_enabled[0] != 0) lighting0(position, eyetopos, normal, pc, sc);

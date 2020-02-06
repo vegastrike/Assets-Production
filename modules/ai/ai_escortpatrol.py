@@ -71,7 +71,7 @@ class ai_escortpatrol(VS.PythonAI):
             vec = Vector.Sub(self.GetParent().Position(),self.target.Position())
             change = Vector.Cross(Vector.SafeNorm(self.GetParent().GetOrientation()[2]),Vector.SafeNorm(vec))
             self.GetParent().SetAngularVelocity(change)
-            # calculate the required thrust depending on mass and 
+            # calculate the required thrust depending on mass and
             # signed velocity magnitude as result of momentum
             velocity = unit.getSignedVelocity(self.GetParent())
             if (velocity<100):

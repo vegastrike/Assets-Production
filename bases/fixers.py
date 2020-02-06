@@ -64,7 +64,7 @@ class Fixer:
             value = cond[1]
             if not checkSaveValue(VS.getCurrentPlayer(),var,value):
                 return 0
-            
+
         return 1
     def drawobjs(self,room,x,y,wid,hei,imageappend=''):
         Base.Texture(room,self.name,self.image+imageappend+".spr",x+(wid/2.),y+(hei/2.))
@@ -72,9 +72,9 @@ class Fixer:
 
 class CFixer(Fixer):
     """A class class for \'Campaign\' Fixers."""
-    
+
     STANDARDIMPORT = "\nimport VS\n"
-    
+
     def __init__(self, conversation):
         self.conversation = conversation
         self.name, self.text, self.image, self.choices = conversation.getFixerStrings()
@@ -180,7 +180,7 @@ def getCFixers(playernum):
     cfixers = list()
     for fxr in fixerlist:
         tempd = dict()
-        exec fxr[1] in tempd
+        exec(fxr[1], tempd)
         cfixers.append(CFixer(tempd["conversation"]))
     return cfixers
 
@@ -232,7 +232,7 @@ def CreateChoiceButtons (room,buttonlist,vert=0,spacing=.025,wid=.2,hei=.2):
             y-=(spacing+hei)
         else:
             x+=spacing+wid
-        
+
 def CreateCampaignFixers_real (room,locations,j=0):
     fixerlist = getCampaignFixers(room)
     locfixers = fixers.get (VS.getSystemFile())
@@ -246,7 +246,7 @@ def CreateCampaignFixers_real (room,locations,j=0):
                     append=locations[j][4]
                 fixerlist[i].drawobjs (room,locations[j][0],locations[j][1],locations[j][2],locations[j][3],append)
                 j+=1
-    
+
     # Now calls mission fixers with the "j" argument we gathered.
     CreateMissionFixers(room, locations, j)
 
@@ -305,7 +305,7 @@ class Conversation:
         name = str(nam)
         if name == str():
             name = self.ROOT_KEY
-        if self.nodes.has_key(name):
+        if name in self.nodes:
             return self.nodes[name]
         debug.error("Error: Node with name \'%s\' does not exist."%name)
 
@@ -367,7 +367,7 @@ class Conversation:
             Base.Message(text)
 
 class SubNode:
-    
+
     def __init__(self, text=str(), conditions=list(), choices=list(), sprite=str(), motext=str()):
         self.conditions = list(conditions)
         self.text = str(text)

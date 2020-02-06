@@ -147,7 +147,7 @@
 		<edge index="10"/>
 		<edge index="11"/>
 	</node>		
-	<node text="Docking clearence granted, move to docking port in green indicators." relationship="0">
+	<node text="Docking clearance granted, move to docking port in green indicators." relationship="0">
 		<edge index="8"/>
 		<edge index="9"/>
 		<edge index="10"/>

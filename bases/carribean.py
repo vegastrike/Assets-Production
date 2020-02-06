@@ -4,7 +4,7 @@ import dynamic_mission
 import VS
 import fixers
 plist=VS.musicAddList('carribean.m3u')
-VS.musicPlayList(plist)    
+VS.musicPlayList(plist)
 dynamic_mission.CreateMissions()
 
 time_of_day='_day'
@@ -30,5 +30,3 @@ Base.Link (concourse, 'Pool', -0.996094, -0.994792, 1.99219, 0.309896, 'Pool', r
 Base.Link (relax, 'Concourse', -0.310547, -0.078125, 0.638672, 0.273438, 'Concourse', concourse)
 Base.Link (bar, 'Concourse', 0.34375, -0.557292, 0.654297, 1.3151, 'Concourse', concourse)
 Base.Link (bar, 'Concourse', -0.123047, -0.0807292, 0.164063, 0.601563,'Concourse',concourse)
-
-

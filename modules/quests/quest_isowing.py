@@ -24,8 +24,8 @@ class quest_isowing (quest.quest):
         self.names = self.recoverShipTypes ()
         self.SpawnShips ()
     def SpawnShips (self):
-        print "spawning"
-        print self.names
+        print("spawning")
+        print(self.names)
         playa = VS.getPlayer()
         if (playa):
             for n in self.names:

@@ -1,0 +1,4 @@
+,"Name","Object_Type","Mass","Moment_Of_Inertia","Jump_Drive_Present","Jump_Drive_Delay"
+"Key","string","string","metric tons","metric tons * meters*meters","Boolean","seconds"
+,,,,,,
+"jump_drive__upgrades","Interstellar Jump Drive","Upgrade_Replacement",10,10,"TRUE",1

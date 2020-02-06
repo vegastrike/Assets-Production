@@ -25,7 +25,7 @@ class PlayerMissionInfo:
         self.active_missions_nextid = 0
         self.hookargs = None
         self.resetLastMission()
-    
+
     def resetLastMission(self):
         self.last_constructor={}
         self.last_args ={}
@@ -107,22 +107,22 @@ def AddMissionHooks(director):
         debug.debug("CARGO MISSION ABORTING done")
     if doMissionHooks:
         director.mission_hooks___ = missionhook(hookargs)
-    
+
 def SetLastMission(which):
     players[getMissionPlayer()].lastMission = str(which)
     debug.debug('set last mission to "'+str(which)+'"')
 
 def LoadLastMission(which=None):
     """ Makes a mission an active mission. """
-    print "#given mission argument: ", which
+    print("#given mission argument: ", which)
     plr = getMissionPlayer()
     if which is None:
         which = str(players[plr].lastMission)
-        print "#loading mission: ", which
+        print("#loading mission: ", which)
     if VS.networked():
         custom.run('mission_lib', ['LoadLastMission',which], None)
         return
-    
+
     last_constructor = players[plr].last_constructor
     last_args = players[plr].last_args
     last_briefing_vars = players[plr].last_briefing_vars
@@ -158,11 +158,11 @@ mission_lib.SetMissionHookArgs(%(amentry)r)
 %(postscript)s'''
             amentry = last_briefing_vars[0].get(which,dict())
             try:
-                amentry.update(last_briefing_vars[1].get(which,dict()).iteritems())
+                amentry.update(iter(last_briefing_vars[1].get(which,dict()).items()))
                 amentry.update([
                     #('MISSION_NAME',which),
                     ('DESCRIPTION',last_briefing[0].get(which,'')),
-                    ('ACCEPT_MESSAGE',last_briefing[1].get(which,'')) 
+                    ('ACCEPT_MESSAGE',last_briefing[1].get(which,''))
                     ])
             except:
                 debug.error("TRACING BACK")
@@ -185,7 +185,7 @@ def RemoveLastMission(which=None):
     plr = getMissionPlayer()
     if which is None:
         which=players[plr].lastMission
-    
+
     last_constructor = players[plr].last_constructor
     last_args = players[plr].last_args
     last_briefing_vars = players[plr].last_briefing_vars
@@ -201,7 +201,7 @@ def AddActiveMissionEntry(entry):
     plr = getMissionPlayer()
     active_missions = players[plr].active_missions
     active_missions_nextid = players[plr].active_missions_nextid
-    
+
     active_missions.append(entry)
     active_missions[-1].update([('ENTRY_ID',active_missions_nextid)])
     active_missions_nextid += 1
@@ -209,13 +209,12 @@ def AddActiveMissionEntry(entry):
 
 def RemoveActiveMissionEntry(entry_id):
     plr = getMissionPlayer()
-    players[plr].active_missions = filter(lambda x:x.get('ENTRY_ID',None)!=entry_id,
-                    players[plr].active_missions)
+    players[plr].active_missions = [x for x in players[plr].active_missions if x.get('ENTRY_ID',None)!=entry_id]
 
 def CountMissions(first,prefix):
     plr = getMissionPlayer()
     last_briefing = players[plr].last_briefing
-    
+
     nummissions = 0
     for which in last_briefing[first]:
         if str(which).startswith(prefix):
@@ -237,9 +236,9 @@ def BriefLastMission(whichid,first,textbox=None,template='#DESCRIPTION#'):
     # Should not happen anymore, but sometimes missions have all the same id,
     # e.g. 1, and then no missions for id 0 will e found.
     if which == None:
-        which = last_briefing_vars[0].keys()[0]
+        which = list(last_briefing_vars[0].keys())[0]
         debug.warn("mission_lib.BriefLastMission couldn't find mission id"+ str(whichid))
-        
+
     if first<0 or first>=len(last_briefing):
         return
     if (which in last_briefing[first]):
@@ -264,9 +263,9 @@ def BriefLastMission(whichid,first,textbox=None,template='#DESCRIPTION#'):
         template = template.replace('#NUM_MISSIONS#',str(nummissions))
         template = template.replace('#DESCRIPTION#',str(last_briefing[first][which]))
         template = template.replace('#SHORT_DESCRIPTION#',str(last_briefing_vars[first][which]['MISSION_SHORTDESC']))
-        try:    
+        try:
             template = template.replace('#MISSION_TYPE#',last_briefing_vars[first][which]['MISSION_TYPE'])
-        except: 
+        except:
             template = template.replace('#MISSION_TYPE#','')
 
         # set text
@@ -290,11 +289,11 @@ def AddNewMission(which,args,constructor=None,briefing0='',briefing1='',vars0=No
             sendargs.append(key)
             sendargs.append(vars0[key])
         custom.run("mission_lib", sendargs, None)
-    
+
     plr = getMissionPlayer()
     addPlayer(plr, False)
     playerInfo = players[plr]
-    
+
     which = str(which)
     playerInfo.last_constructor[which] = constructor
     playerInfo.last_args[which] = args
@@ -312,11 +311,11 @@ def GetMissionList(activelist=True):
     active_missions = players[plr].active_missions
     last_briefing_vars = players[plr].last_briefing_vars
     last_briefing = players[plr].last_briefing
-    
+
     if activelist:
         return active_missions
     else:
-        return list( dict( list(last_briefing_vars[0][index].iteritems())+
+        return list( dict( list(last_briefing_vars[0][index].items())+
             [('DESCRIPTION',last_briefing[0][index]),
                 ('ACCEPT_MESSAGE',last_briefing[1][index]),
                 ('MISSION_NAME',index)] )
@@ -475,7 +474,7 @@ def PickRandomMission(goodlist):
 def CreateGuildMissions(guildname,nummissions,accepttypes,prefix="#G#",acceptmsg=''):
     plr=getMissionPlayer()
     addPlayer(plr, False)
-    
+
     goodlist=[]
     for indx in range(Director.getSaveStringLength(plr, "mission_scripts")):
         script=Director.getSaveString(plr,"mission_scripts",indx)
@@ -513,6 +512,6 @@ def CreateGuildMissions(guildname,nummissions,accepttypes,prefix="#G#",acceptmsg
         Director.eraseSaveString(plr,"mission_descriptions",i)
         Director.eraseSaveString(plr,"mission_names",i)
         Director.eraseSaveString(plr,"mission_vars",i)
-    #more reliable... sometimes we run out of good missions, 
+    #more reliable... sometimes we run out of good missions,
     #sometimes we have preexistent missions (!)
     return CountMissions(0,guildname)

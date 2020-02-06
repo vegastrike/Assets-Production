@@ -41,7 +41,7 @@ float GLOSS_power( in float mat_gloss_sa, in float light_solid_angle ) //const
 {
   // shininess = ( 0.5 * pi / SolidAngle ) - 0.810660172
   const float MAGIC_TERM = 0.810660172;
-  return ( HALF_PI / (mat_gloss_sa + light_solid_angle) ) - MAGIC_TERM;
+  return ( HALF_PI / (mat_gloss_sa + light_solid_angle + 0.0005) ) - MAGIC_TERM;
 }
 //public:
 #if (SUPRESS_ENVIRONMENT == 0)
@@ -255,7 +255,7 @@ void main()
   
   //Light in a lot of systems is just too dark.
   //Until the universe generator gets fixed, this hack fixes that:
-  vec3 crank_factor = 3.0*normalize(light_acc)/light_acc;
+  float crank_factor = 2.0;
   diffuse_acc *= crank_factor;
   specular_acc *= crank_factor;
 

@@ -1,0 +1,16 @@
+,"Name","Directory","Hud_image","Unit_Scale","Mesh","Rapid_Mesh","BSP_Mesh","Use_BSP","Use_Rapid","NoDamageParticles","Explosion"
+"Key","string","String","string","float","{filename(string);frame(int);texturetime(float)}","string","string","boolean","boolean","boolean","string"
+,,,,,,,,,,,
+"small_asteroid0.cargo","Asteroid","factions/neutral/asteroids","af-hud.spr",0.5,"{smallroid9.bfxm;;}",,,,,1,
+"small_asteroid1.cargo","Asteroid","factions/neutral/asteroids","af-hud.spr",0.75,"{smallroid8.bfxm;;}",,,,,1,
+"small_asteroid2.cargo","Asteroid","factions/neutral/asteroids","af-hud.spr",0.35,"{smallroid2.bfxm;;}",,,,,1,
+"small_asteroid3.cargo","Asteroid","factions/neutral/asteroids","af-hud.spr",0.55,"{smallroid3.bfxm;;}",,,,,1,
+"small_asteroid4.cargo","Asteroid","factions/neutral/asteroids","af-hud.spr",0.4,"{smallroid4.bfxm;;}",,,,,1,
+"small_asteroid5.cargo","Asteroid","factions/neutral/asteroids","af-hud.spr",0.7,"{smallroid5.bfxm;;}",,,,,1,
+"small_asteroid6.cargo","Asteroid","factions/neutral/asteroids","af-hud.spr",0.2,"{smallroid6.bfxm;;}",,,,,1,
+"small_asteroid7.cargo","Asteroid","factions/neutral/asteroids","af-hud.spr",0.4,"{smallroid7.bfxm;;}",,,,,1,
+"generic_cargo","Cargo Pod","./cargo","cargo-hud.spr",,"{cargo.bfxm;;}",,,,,1,
+"generic_cargo__aera","Cargo Pod","./cargo","generic_cargo-hud.spr",,"{generic_cargo.bfxm;;}",,,,,1,
+"generic_cargo__rlaan","Cargo Pod","./cargo","generic_cargo-hud.spr",,"{generic_cargo.bfxm;;}",,,,,1,
+"iron_ore.cargo","minerals","factions/neutral/asteroids","af-hud.spr",0.05,"{smallroid.bfxm;;}",,,,,1,
+"tungsten_ore.cargo","minerals","factions/neutral/asteroids","af-hud.spr",0.05,"{smallroid.bfxm;;}",,,,,1,

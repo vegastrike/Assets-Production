@@ -5,11 +5,11 @@ shipsize = VS.getPlayer().rSize()/35
 #print "Ship Size: " + str(shipsize) #debug
 
 # rooms
-landing = Base.Room ('Landing Pad')    
+landing = Base.Room ('Landing Pad')
 Base.Texture (landing, 'tex', 'bases/forest/landing.sprite', 0, 0)
 Base.Ship (landing, 'ship_l', (-0.3, -0.3, 5/shipsize), (0.20, 1, -0.20), (-1, 0, -1))
 
-landingexterior = Base.Room ('Landing Exterior')    
+landingexterior = Base.Room ('Landing Exterior')
 Base.Texture (landingexterior, 'tex', 'bases/forest/landingexterior.sprite', 0, 0)
 #ship placement in differrent screens is not working
 #Base.Ship (landingexterior, 'ship_e', (0.8, -0.9, 3/shipsize), (0, 1, -0.20), (1, 0, -0.5))
@@ -46,4 +46,3 @@ Base.LaunchPython (landing, 'launch','bases/launch_music.py', -0.5, -0.5, 0.5, 0
 # computer terminals
 Base.Comp (concourse, 'my_comp_id', -0.60, 0.00, 0.30, 0.22, 'Terminal', 'News Missions Info Cargo ShipDealer')
 Base.Comp (upgrades, 'my_comp_id', 0.30, -0.60, 0.30, 0.22, 'Terminal', 'Cargo ShipDealer')
-

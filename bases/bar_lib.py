@@ -11,7 +11,7 @@ def MakeBar (room,time_of_day='_day',bartext='bases/bartender_default.py', BaseT
     file='bases/generic/bartender%d.spr' % (i)
     Base.Texture(bar,'bartender',file,0,-0.0035)
     fixers.CreateFixers(bar,[(-.65,-.815,.25,.667),
-			(.525,-.815,.25,.667),
-			#(-1.05,-.974,.25,.667),
-			])
+                        (.525,-.815,.25,.667),
+                        #(-1.05,-.974,.25,.667),
+                        ])
     return bar

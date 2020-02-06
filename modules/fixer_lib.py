@@ -80,13 +80,13 @@ def evaluateCondition(condition):
         return 1
     elif condition[0] == '#':
         tempd = dict()
-        exec condition[1:] in tempd
-        print "Custom condition code, returning: " + str(tempd["result"])
+        exec(condition[1:], tempd)
+        print("Custom condition code, returning: " + str(tempd["result"]))
         return tempd["result"]
     else:
         con = condition.split('#')
-        print "Checking \'%s : %s\'"%(con[0],con[1])
-        print "Returning: " + str(checkSaveValue(VS.getCurrentPlayer(),con[0],int(con[1])))
+        print("Checking \'%s : %s\'"%(con[0],con[1]))
+        print("Returning: " + str(checkSaveValue(VS.getCurrentPlayer(),con[0],int(con[1]))))
         return checkSaveValue(VS.getCurrentPlayer(),con[0],int(con[1]))
 
 def evaluateConditions(conditions):
@@ -113,7 +113,7 @@ def sampleCon():
 #Root Node:
 # + Conversation preconditions
 # + Text contains strin reference to possible starting nodes
-# + 
+# +
 #Root|pirate.spr|"A Pirate"^preconditions^n1|n2|n3^
 #
 #
@@ -138,7 +138,7 @@ def sampleCon():
 #class Conversation:
 #    """Takes a string of the content making up a fixer converstion, and
 #    provides various methods to access and display the interaction."""
-#    
+#
 #    def __init__(self, content):
 #do error check for type 'content' etc
 #        self.content = content.split()

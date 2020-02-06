@@ -76,6 +76,12 @@ vec2 lerp(vec2 a, vec2 b, float t) { return a+t*(b-a); }
 vec3 lerp(vec3 a, vec3 b, float t) { return a+t*(b-a); }
 vec4 lerp(vec4 a, vec4 b, float t) { return a+t*(b-a); }
 
+// Quadratic lerp, equivalent to lerp(a*(1-t),b,t)
+float qlerp(float a, float b, float t) { return sqr(1.0-t)*a+t*b; }
+vec2 qlerp(vec2 a, vec2 b, float t) { return sqr(1.0-t)*a+t*b; }
+vec3 qlerp(vec3 a, vec3 b, float t) { return sqr(1.0-t)*a+t*b; }
+vec4 qlerp(vec4 a, vec4 b, float t) { return sqr(1.0-t)*a+t*b; }
+
 float  saturatef(float x) { return clamp(x,0.0,1.0); }
 vec2   saturate(vec2 x) { return clamp(x,0.0,1.0); }
 vec3   saturate(vec3 x) { return clamp(x,0.0,1.0); }

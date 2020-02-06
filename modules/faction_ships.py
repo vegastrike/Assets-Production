@@ -1,11 +1,11 @@
 
 #use this to allow more interesting weightings than are feasible to manually enter
 def weightedlist(tuples):
-  rettuple=[]
-  for i in xrange(0,len(tuples)):
-    for j in xrange(tuples[i][1]):
-      rettuple.append(tuples[i][0])
-  return tuple(rettuple)
+    rettuple=[]
+    for i in range(0,len(tuples)):
+        for j in range(tuples[i][1]):
+            rettuple.append(tuples[i][0])
+    return tuple(rettuple)
 
 confed=0
 aera=1
@@ -57,7 +57,7 @@ min_flightgroups={"Gemini/Troy":22,"Gemini/Penders_Star":10,"Gemini/Junction":4,
 
 factions = ("confed","aera","rlaan","merchant_guild","luddites","pirates","hunter","homeland-security","ISO","unknown","andolian","highborn","shaper","unadorned","purist","forsaken","LIHW","uln","dgn","klkk","mechanist","shmrn","rlaan_briin","aeran_merchant_marine","rlaan_citizen","merchant_guild_citizen","andolian_citizen","highborn_citizen","shaper_citizen","unadorned_citizen","purist_citizen","forsaken_citizen","LIHW_citizen","uln_citizen","dgn_citizen","klkk_citizen","mechanist_citizen","shmrn_citizen")
 factiondict={}
-for i in xrange(len(factions)):
+for i in range(len(factions)):
     factiondict[factions[i]]=i
 factiondict["retro"]=luddites
 factiondict["militia"]=homeland_security
@@ -258,7 +258,7 @@ production_centers={"confed":["Sol/Sol"]
 earnable_upgrades={} #tech tree (new)
 
 def Precache():
-	pass#fixme
+    pass#fixme
 
 useStock = (   0    ,  0   ,   0   ,     1    ,   0   ,       0     ,    0   ,         0    ,      0  ,    0,         0    ,    0     ,   0   ,     0      ,   0   ,     1     ,    1 ,  1  ,  0  ,   0 , 0 ,  1 , 1  ,      0,0,0,0,0,0,0,0,0,0,0,0,0,0,0   )#close ones are all civvies
 
@@ -391,7 +391,7 @@ fighters = (("Lancelot","Lancelot","Gawain","Lancelot","Gawain","Progeny","Proge
                         ("Mule","Plowshare"), #merchant_guild
                         ("Redeemer",), #luddites
                         ("Hyena","Plowshare"), #pirates
-                        ("Hyena","Robin","Hyena","Robin","Sickle","Hammer","Vendetta.hunter","Entourage"), #hunter
+                        ("Hyena","Robin","Hyena","Robin","Sickle","Hammer","Vendetta","Entourage"), #hunter
                         ("Admonisher",), #homeland_security
                         ("Hammer","Sickle","Hammer","Sickle","Hammer","Sickle","Hammer","Sickle","Hammer","Sickle","Sickle","Sickle","Franklin","Entourage"), #ISO
                         ("Beholder",), #unknown
@@ -408,33 +408,33 @@ fighters = (("Lancelot","Lancelot","Gawain","Lancelot","Gawain","Progeny","Proge
                         ("Llama","Convolution"),#mechanist
                         ("Dirge","Dirge","Regret"),#shmrn
                         ("Zhuangzong","Zhuangzong","Zhuangzong","Gaozong","Shizong","Shizong","Shizong"), #rlaan_briin
-                        ("Nicander.escort","Nicander.escort","Ariston"), #aeran_merchant_marine
-                        ("Shizu.civvie","Shizu.civvie","Shizu.civvie","Shizu.civvie","Gaozong","Shizong","Shizong","Shizong","Shizong","Shizong"), #rlaan_citizen
-                        ("Mule.civvie","Plowshare.civvie","Llama.civvie","Quicksilver.civvie","Entourage"), #merchant_guild_citizen
-                        ("Franklin.civvie","Sartre.civvie","Sartre.civvie","Kafka.civvie","Kafka.civvie","Llama.civvie","Quicksilver.civvie","MacGyver"),#andolian_citizen
-                        ("Hidalgo.civvie","GTIO.civvie","GTIO.civvie","H496","H496","H496","Entourage","Entourage","Entourage","Entourage","Entourage"),#highborn_citizen
-                        ("Mule.civvie","Plowshare.civvie","Llama.civvie","Quicksilver.civvie","Entourage"),#shaper_citizen
-                        ("Mule.civvie","Plowshare.civvie","Llama.civvie"),#unadorned_citizen
-                        ("Mule.civvie","Llama.civvie","Plowshare.civvie","Mule.civvie","Llama.civvie","Plowshare.civvie","GTIO.civvie","Quicksilver.civvie","Diligence","H496","Entourage"),#purist_citizen
-                        ("Koala.civvie","Koala.civvie","Hyena.civvie","Llama.civvie","H496"),#forsaken_citizen
-                        ("Koala.civvie","Llama.civvie","Llama.civvie","Llama.civvie","Quicksilver.civvie","H496"),#LIHW_citizen
-                        ("Koala.civvie","Koala.civvie","Koala.civvie","Dodo.civvie","Llama.civvie","Entourage"),#uln_citizen
-                        ("Koala.civvie","Dodo.civvie","Quicksilver.civvie"), #dgn_citizen
-                        ("Kafka.civvie","Kafka.civvie","Sartre.civvie","Llama.civvie",), #klkk_citizen
-                        ("Koala.civvie","Kafka.civvie","Llama.civvie"),#mechanist_citizen
-                        ("Koala.civvie","Koala.civvie","Kafka.civvie","Kafka.civvie","Sartre.civvie"),#shmrn_citizen
+                        ("Nicander","Nicander","Ariston"), #aeran_merchant_marine
+                        ("Shizu","Shizu","Shizu","Shizu","Gaozong","Shizong","Shizong","Shizong","Shizong","Shizong"), #rlaan_citizen
+                        ("Mule","Plowshare","Llama","Quicksilver","Entourage"), #merchant_guild_citizen
+                        ("Franklin","Sartre","Sartre","Kafka","Kafka","Llama","Quicksilver","MacGyver"),#andolian_citizen
+                        ("Hidalgo","GTIO","GTIO","H496","H496","H496","Entourage","Entourage","Entourage","Entourage","Entourage"),#highborn_citizen
+                        ("Mule","Plowshare","Llama","Quicksilver","Entourage"),#shaper_citizen
+                        ("Mule","Plowshare","Llama"),#unadorned_citizen
+                        ("Mule","Llama","Plowshare","Mule","Llama","Plowshare","GTIO","Quicksilver","Diligence","H496","Entourage"),#purist_citizen
+                        ("Koala","Koala","Hyena","Llama","H496"),#forsaken_citizen
+                        ("Koala","Llama","Llama","Llama","Quicksilver","H496"),#LIHW_citizen
+                        ("Koala","Koala","Koala","Dodo","Llama","Entourage"),#uln_citizen
+                        ("Koala","Dodo","Quicksilver"), #dgn_citizen
+                        ("Kafka","Kafka","Sartre","Llama",), #klkk_citizen
+                        ("Koala","Kafka","Llama"),#mechanist_citizen
+                        ("Koala","Koala","Kafka","Kafka","Sartre"),#shmrn_citizen
 
            )
-isBomber = {"Areus":6,"Taizong":8,"Pacifier":5,"Goddard":4,"Kierkegaard":5,"Hammer":16,"Admonisher":10,"Areus.blank":6,"Taizong.blank":8,"Pacifier.blank":5,"Goddard.blank":4,"Hammer.blank":16,"Admonisher.blank":10}
+isBomber = {"Areus":6,"Taizong":8,"Pacifier":5,"Goddard":4,"Kierkegaard":5,"Hammer":16,"Admonisher":10,"Areus":6,"Taizong":8,"Pacifier":5,"Goddard":4,"Hammer":16,"Admonisher":10}
 unescortable = {"Tesla":"Ox",
-	"Kahan":"Mule",
-	"Clydesdale":"Ox",
-	"Shundi":"Zhuangzong",
-	"Ruizong":"Taizong",
-	"Agesipolis":"Agasicles",
-	"Watson":"Mule",
-	"Leonidas":"Agasicles",
-	"Anaxidamus":"Agasicles"}
+        "Kahan":"Mule",
+        "Clydesdale":"Ox",
+        "Shundi":"Zhuangzong",
+        "Ruizong":"Taizong",
+        "Agesipolis":"Agasicles",
+        "Watson":"Mule",
+        "Leonidas":"Agasicles",
+        "Anaxidamus":"Agasicles"}
 
 capitals = (("Clydesdale","Watson","Archimedes","Kahan","Hawking"), #confed
             ("Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agasicles","Agesipolis","Leonidas","Anaxidamus","Anaxidamus","Anaxidamus","Anaxidamus","Anaxidamus",), #aera
@@ -488,19 +488,22 @@ stattableexp={
         "Convolution":(0.54,0.7,500,620,50000),
         "Thales":(0.32,0.02,1000,10000,10000),
         "Clydesdale":(1,0.14,40000,1683740,300000),
+        "Vigilance":(1,0.2,4000,168374,30000), # variant of Clydesdale FIXME
         "Cultivator":(0.68,0.16,300,286770,0),
         "Derivative":(0.5,0.46,500,1030,400),
         "Determinant":(0.5,0.62,300,590,400),
+        "Regret":(0.5,0.62,300,590,400), # dupe of Determinant FIXME
         "Diligence":(0.52,0.14,200,18720,400), # dupe of Mule FIXME
         "Dirge":(0.38,0.38,180,290,200),
         "Dodo":(0.4,0.16,10,2500,0),
         "Dostoevsky":(0.6,0.68,200,540,2000),
         "Franklin":(0.76,0.78,200,2590,2000),
-        "Gaozong":(0,0.9,0,40,0), 
+        "Gaozong":(0,0.9,0,40,0),
         "Gawain":(0.67,0.7,500,400,400),
         "Gleaner":(0.52,0.14,200,18720,400), #dupe of Mule FIXME
         "Goddard":(0.86,0.24,800,5200,500000),
         "GTIO":(0.4,0.16,10,2500,0),
+        "Entourage":(0.4,0.16,10,2500,0), #dupe of GTIO FIXME
         "H496":(0.4,0.16,10,2500,0),
         "Hammer":(0.36,0.28,600,550,50000),
         "Hawking":(1,0.2,80000,1887640,0),
@@ -518,7 +521,6 @@ stattableexp={
         "Mule":(0.52,0.14,200,18720,400),
         "Nietzsche":(1,0.18,20000,1564400,100000),
         "Nicander":(0.52,0.46,300,910,300),
-        "Nicander.escort":(0.52,0.46,300,910,300),
         "Ox":(0.68,0.16,300,286770,0),
         "Pacifier":(0.3,0.2,400,1890,100000),
         "Plowshare":(0.3,0.2,100,1380,400),
@@ -531,13 +533,13 @@ stattableexp={
         "Seaxbane":(0.44,0.48,300,350,200), # dupe of Robin FIXME
         "Shenzong":(0.52,0.52,40,320,0),
         "Shizu":(0.52,0.52,40,320,0),
-        "Shizu.civvie":(0.52,0.52,40,320,0),
-        "Shundi":(1,0.18,50000,2017640,3210),        
+        "Shundi":(1,0.18,50000,2017640,3210),
         "Sickle":(0.34,0.34,480,390,800),
         "Taizong":(0.78,0.42,440,1150,100000),
         "Tesla":(1,0.22,100000,1887640,0),
         "Tridacna":(0.68,0.16,300,286770,0), #dupe of Ox FIXME
         "Agasicles":(1,0.22,20000,1366420,600000),
+        "Charillus":(1,0.3,2000,136642,60000), # variant of Agasicles FIXME
         "Vendetta":(0.52,0.5,440,450,0), #dupe of Zhuangzong FIXME
         "Agesipolis":(1,0.16,50000,5738710,3210),
         "Watson":(1,0.16,2000,269400,3210),
@@ -654,7 +656,7 @@ for i in bases:
 def appendName(faction):
     from difficulty import usingDifficulty
     if (useStock[faction] and usingDifficulty()):
-	# DON'T USE .blanks directly if possible-- preserve as templates. Use .stock where possible
+        # DON'T USE .blanks directly if possible-- preserve as templates. Use .stock where possible
         return ".stock"
     else:
         return ""
@@ -680,15 +682,15 @@ def get_non_citizen_X_of (mylist, index):
     rez=intToFaction(enemylist[newindex])
     if VS.isCitizen(rez):
         while (newindex>0):
-          newindex-=1
-          rez=intToFaction(enemylist[newindex])
-          if not VS.isCitizen(rez):
-              return rez
+            newindex-=1
+            rez=intToFaction(enemylist[newindex])
+            if not VS.isCitizen(rez):
+                return rez
         while (newindex+1<len(enemylist)):
-          newindex+=1
-          rez=intToFaction(enemylist[newindex])
-          if not VS.isCitizen(rez):
-              return rez
+            newindex+=1
+            rez=intToFaction(enemylist[newindex])
+            if not VS.isCitizen(rez):
+                return rez
     return rez
 
 def get_X_of (mylist, index):
@@ -763,8 +765,8 @@ def getRandomCapitol (faction):
 
 launch_distance_factor=1
 max_radius=10000
-min_forward_distance=100000 
-min_distance=10000 
+min_forward_distance=100000
+min_distance=10000
 #print len(fightersPerFG)
 #print len (fighterProductionRate)
 #print len(capitalProductionRate)
@@ -784,14 +786,31 @@ def make_stattable(stattableexp):
     def lg (num, log=math.log, ilog2=1.0/math.log(2)):
         return log(1+num)*ilog2
 
-    for i,t in stattableexp.iteritems():
+    for i,t in stattableexp.items():
         stattable[i]=(t[0],t[1],lg(t[2]),lg(t[3]),lg(t[4]))
         stattable[i+'.rgspec']=(t[0],t[1]*.8,lg(t[2])*.8,lg(t[3])*.8,lg(t[4])*.8)
         stattable[i+'.milspec']=(t[0],t[1]*.65,lg(t[2])*.65,lg(t[3])*.65,lg(t[4])*.65)
         stattable[i+'.stock']=(t[0],t[1]*.5,lg(t[2])*.5,lg(t[3])*.5,lg(t[4])*.5)
         stattable[i+'.blank']=(t[0],t[1]*.1,lg(t[2])*.1,lg(t[3])*.1,lg(t[4])*.1)
         stattable[i+'.civvie']=(t[0],t[1]*.2,lg(t[2])*.2,lg(t[3])*.2,lg(t[4])*.2)
-    
+
     return stattable
 
 stattable = make_stattable(stattableexp)
+
+if __name__ == '__main__':
+    ok = True
+    reported = set()
+    for name in generic_bases:
+        if name not in reported and name not in stattable:
+            print("%s not in stattableexp" % name)
+            ok = False
+            reported.add(name)
+    for names in list(capitals) + list(fighters):
+        for name in names:
+            if name not in reported and name not in stattable:
+                print("%s not in stattableexp" % name)
+                ok = False
+                reported.add(name)
+    if not ok:
+        raise AssertionError("Errors in stattables")

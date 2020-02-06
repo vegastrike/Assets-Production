@@ -61,7 +61,7 @@ class patrol (Director.Mission):
                 if (sig.isPlanet()):
                     nam =unit.getUnitFullName(sig)
                     if (sig.isJumppoint()):
-                                obj=VS.addObjective ("Scan Jumppoint %s" % nam)
+                        obj=VS.addObjective ("Scan Jumppoint %s" % nam)
                     else:
                         obj=VS.addObjective ("Scan %s" % nam)
                 else:
@@ -75,6 +75,7 @@ class patrol (Director.Mission):
     def DeletePatrolPoint (self,num,nam):
         VS.IOmessage (0,"patrol",self.mplay,"[Computer] %s scanned, data saved..."%nam)
         VS.setCompleteness(self.objectives[self.jnum],1.0)
+        self.patrolpoints[self.jnum].unsetMissionRelevant()
         self.you.commAnimation("scan_complete.ani")
         del self.objectives[self.jnum]
         del self.patrolpoints[self.jnum]
@@ -103,12 +104,12 @@ class patrol (Director.Mission):
                     self.SuccessMission()
 
     def initbriefing(self):
-        print "ending briefing"
+        print("ending briefing")
     def loopbriefing(self):
-        print "loop briefing"
+        print("loop briefing")
         Briefing.terminate();
     def endbriefing(self):
-        print "ending briefing"
+        print("ending briefing")
 def initrandom (minsysaway,maxsysaway,minsigtopatrol,maxsigtopatrol,mincred,maxcred):
     nsys = vsrandom.randrange (minsysaway, maxsysaway)
     nsig = vsrandom.randrange (minsigtopatrol, maxsigtopatrol)

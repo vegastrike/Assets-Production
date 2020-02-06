@@ -1,0 +1,4 @@
+,"Name","Object_Type","Mass","Moment_Of_Inertia","Shield_Leak","Can_Cloak","Cloak_Min","Cloak_Rate","Cloak_Energy","Cloak_Glass"
+"Key","string","string","metric tons","metric tons * meters*meters","percentage","boolean","percentage","percentage/second","800MJ/s","boolean"
+,,,,,,,,,,
+"cloaking_device01__upgrades","Cloaking Device","Upgrade_Replacement",4,4,0.05,1,0.1,0.4,1,0

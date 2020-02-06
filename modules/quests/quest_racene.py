@@ -58,7 +58,7 @@ class quest_racene_factory (quest.quest_factory):
     def __init__ (self):
         quest.quest_factory.__init__ (self,"quest_racene")
     def precondition(self,playernum):
-        print 'precondition'
+        print('precondition')
         return 1
         return quest.findQuest(playernum,'racene_star_intro') and quest.notLoadedQuest(playernum,'racene_star_loss')
     def create (self):

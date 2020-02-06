@@ -1,0 +1,17 @@
+,"Name","Directory","Hud_image","Cockpit","CockpitX","CockpitY","CockpitZ","Unit_Scale","Mesh","Rapid_Mesh","BSP_Mesh","Use_BSP","Use_Rapid","Sound","Light","Explosion"
+"Key","string","String","string","string","meters","meters","meters","float","{filename(string);frame(int);texturetime(float)}","string","string","boolean","boolean","shieldhit(string);armorhit(string);hullhit(string);jump(string);explode(string);cloak(string);engine(string)","{meshfile(string);x(meters);y(meters);z(meters);scale(meters);r(percentage);g(percentage);b(percentage);a(percentage);activationspeed(meters/second)}","string"
+,,,,,,,,,,,,,,,,
+"pmiss","pmiss","./weapons/pmiss","missile-hud.spr",,,,,,"{pmiss.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-2;8;;;;;}",
+"spacebomb","spacebomb","./weapons/spacebomb","missile-hud.spr",,,,,,"{spacebomb.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-2;.6;;;;;}",
+"capshipmissile","capshipmissile","./weapons/capshipmissile","missile-hud.spr",,,,,3,"{capshipmissile.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-5.90000023841858;2.3;;;;;}","explosion_wave.ani"
+"cluster","cluster","./weapons/cluster","missile-hud.spr",,,,,,"{cluster.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-2;.6;;;;;}",
+"kineticmissile","kineticmissile","./weapons/kineticmissile","missile-hud.spr",,,,,6,"{kineticmissile.bfxm;;}",,,"TRUE","FALSE",";;;;;;","{supernova.bmp.bfxm;0;0;-5.90000023841858;2.3;;;;;}","explosion_wave.ani"
+"torp","torp","./weapons/torp","missile-hud.spr",,,,,2,"{missile.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-2;.6;;;;;}",
+"torpedo","torpedo","./weapons/torpedo","missile-hud.spr",,,,,2.4,"{heatseek.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-2.30000023841858;.8;;;;;}",
+"mine","mine","./weapons/mine","missile-hud.spr",,,,,0.1,"{box.bfxm;;}",,,,,";;;;;;",,
+"capiff","capiff","./weapons/capiff","missile-hud.spr",,,,,1.15,"{capiff.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-4.1;1.2;;;;;}",
+"dumbfire","dumbfire","./weapons/dumbfire","missile-hud.spr",,,,,,"{dumbfire.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-2;.6;;;;;}",
+"friendorfoe","friendorfoe","./weapons/friendorfoe","missile-hud.spr",,,,,0.8,"{friendorfoe.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-2;.6;;;;;}",
+"heatseek","heatseek","./weapons/heatseek","missile-hud.spr",,,,,,"{heatseek.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-2.00000023841858;.6;;;;;}",
+"imrec","imrec","./weapons/imrec","missile-hud.spr",,,,,1.6,"{imrec.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-2;.6;;;;;}",
+"leech","leech","./weapons/leech","missile-hud.spr",,,,,,"{leech.bfxm;;}",,,,,";;;;;;","{supernova.bmp.bfxm;0;0;-2;.6;;;;;}",
