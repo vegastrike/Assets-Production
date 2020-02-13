@@ -11,7 +11,7 @@ Things must start with <Unit scale="scalefactor"> scale factor affects the size
 	-tightness UNKNOWN
 +RapidMesh*
 	-file: xmesh to load and use for collisions instead of xmeshes above (not drawn)
-	-rapid*: boolean whether to uose rapid collision system (defaults to true)
+	-rapid*: boolean whether to use rapid collision system (defaults to true)
 +BspMesh*:
 	-file*: xmesh to use for beam and bolt collisions
 	-usebsp*: whether to use bsp's for bolt collisions (else sphere is used)
