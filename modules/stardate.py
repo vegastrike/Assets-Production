@@ -1,3 +1,18 @@
+#====================================
+# @file   : stardate.py
+# @version: 2020-02-15
+# @created: 2003-08-31
+# @author : hellcatv
+# @author : richard
+# @author : dandandaman
+# @author : safemode
+# @author : ace123
+# @author : pyramid
+# @author : klaussfreire
+# @author : cellsafemode
+# @brief  : faction stardates
+#====================================
+
 from __future__ import division
 import string
 
@@ -12,9 +27,9 @@ def formatStarDate(fac,stdt):
     """Formats the stardate for news"""
     stdtf=getFacCal(fac,stdt)
     if fac == "confed":
-        return "".join([fillZeros(fac,stdtf[2]),str(stdtf[1]),str(stdtf[0]),formatTime(fac,stdt)])
+        return " ".join([fillZeros(fac,stdtf[2]),str(stdtf[1]),str(stdtf[0]),formatTime(fac,stdt)])
     else:
-        return "".join([fillZeros(fac,stdtf[2]),str(stdtf[1]),str(stdtf[0]),formatTime(fac,stdt)])
+        return " ".join([fillZeros(fac,stdtf[2]),str(stdtf[1]),str(stdtf[0]),formatTime(fac,stdt)])
 
 def formatTime(fac,stdt):
     """Formate the stardate time for news"""
