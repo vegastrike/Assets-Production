@@ -1,3 +1,18 @@
+#====================================
+# @file   : dynamic_news.py
+# @version: 2020-02-15
+# @created: 2003-08-21
+# @author : hellcatv
+# @author : dandandaman
+# @author : richard
+# @author : ace123
+# @author : klaussfreire
+# @author : jacks
+# @author : safemode
+# @author : pyramid
+# @author : cellsafemode
+# @brief  : faction stardates
+#====================================
 
 import VS
 import vsrandom
@@ -122,7 +137,7 @@ class NewsTranslator:
         self.vars['system'] = syste_
         for i in range(len(self.item)):
             self.item[i] = self.translateWord(self.item[i])
-        return "".join(self.item) + self.STARDATE_TEXT + stardate.formatStarDate(self.vars['dockedat']['faction'],self.vars['stardate']['value']) + "\\INDY - Independent Daily Yarn"
+        return " ".join(self.item) + self.STARDATE_TEXT + stardate.formatStarDate(self.vars['dockedat']['faction'],self.vars['stardate']['value']) + "\\INDY - Independent Daily Yarn"
 
     def formatText(self, text, punc=[' ' , '_' , '.'], capitalise=True):
         """Runs a quick formatting algorithm over the
@@ -135,7 +150,7 @@ class NewsTranslator:
                     tex[i] = tex[i][0].capitalize() + tex[i][1:]
                 else:
                     tex[i] = tex[i].capitalize()
-            text = "".join(tex)
+            text = " ".join(tex)
         return text
 
 class DynamicNewsData:

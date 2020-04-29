@@ -2,7 +2,9 @@ NOTICE: This readme file is very likely to be out of date.
 For the latest manual, please check the Vega Strike Wiki:
 http://vegastrike.sourceforge.net/wiki/Manual
 
-=== VEGA STRIKE 0.5.2 alpha Upon the Coldest Sea README ===
+=== VEGA STRIKE 0.5.3 - Upon the Coldest Sea ===
+
+README
 
 * 0) New Features*
 
