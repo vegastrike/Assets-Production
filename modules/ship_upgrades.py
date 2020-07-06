@@ -168,10 +168,10 @@ def getItem (cat,parentcat=None):
     list=VS.getRandCargo(1,cat)#try to get a cargo from said category
     if (list.GetQuantity()<=0):#if no such cargo exists in this cateogry
         if (parentcat!=None):
-            debug.warn("Python Upgrade Error: finding %s using %s instead", cat, parentcat)
+#            debug.warn("Python Upgrade Error: finding %s using %s instead", cat, parentcat)
             list=VS.getRandCargo(1,parentcat)#get it from the parent category
         if (list.GetQuantity()<=0):#otherwise get cargo from upgrades category
-            debug.warn("Python Upgrade Error: category %s -- getting random instead", cat)
+#            debug.warn("Python Upgrade Error: category %s -- getting random instead", cat)
             list=VS.getRandCargo(1,"upgrades")#this always succeeds
     return list
 
