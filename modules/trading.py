@@ -75,8 +75,7 @@ class trading:
         self.last_ship=0
         self.quantity=4
         self.price_instability=0.01
-        self.count=-1
-
+        self.count=0
     def SetPriceInstability(self, inst):
         self.price_instability=inst
 
@@ -85,20 +84,9 @@ class trading:
 
     def Execute(self):
         self.count+=1
-        if self.count < 0:
-            self.fullCycle()
-            self.count = 0
-        elif self.count < 3:
+        if (self.count<3):
             return
         self.count=0
-        self.cycle()
-
-    def fullCycle(self):
-        self.cycle()
-        while not un.isNull():
-            self.cycle()
-
-    def cycle(self):
         quant = (vsrandom.random()*(self.quantity-1))+1
         un = VS.getUnit (self.last_ship)
         if (un.isNull()):
@@ -116,11 +104,9 @@ class trading:
                     if None==prad:
                         prad= getImports(name,faction)
                         production[(name,faction)]=prad
-                    debug.debug("%s: %r", name, prad)
                     if len(prad):
                         prod=prad[vsrandom.randrange(0,len(prad))]
                         cargo=VS.getRandCargo(int(prod[3]+prod[4]),prod[0])
-                        debug.debug("Considering %s for %s", cargo.GetCategory(), prod[0])
                         if (cargo.GetCategory()==prod[0]):
                             removeCargo=False
                             if (prod[3] or prod[4]):
@@ -136,7 +122,7 @@ class trading:
                                         cargo.SetQuantity(quant)
                                         price = prod[1]+vsrandom.uniform(-1,1)*prod[2]
                                         cargo.SetPrice(cargo.GetPrice()*price)
-                                        debug.debug("Adding %s of %s cargo for %s", quant, cargo.GetContent(), price)
+                                        debug.debug("Adding "+str(quant)+" of "+cargo.GetContent()+" cargo for "+str(price))
                                         un.addCargo(cargo)
                                     else:
                                         removeCargo=True
@@ -147,7 +133,7 @@ class trading:
                             if removeCargo:
                                 ownedcargo=un.GetCargo(cargo.GetContent())
                                 if (ownedcargo.GetQuantity()):
-                                    debug.debug("Removing one %s", ownedcargo.GetContent())
+                                    debug.debug("Removing one "+ownedcargo.GetContent())
 
                                     un.removeCargo(ownedcargo.GetContent(),ownedcargo.GetQuantity()//3+1,bool(0))
             self.last_ship+=1
