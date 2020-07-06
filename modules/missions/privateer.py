@@ -32,7 +32,7 @@ class privateer (Director.Mission):
             return # Do not want to do anything to get out of sync.
         for i in self.loops:
             i.Execute()
-
+        import sys
     def initbriefing(self):
         print("ending briefing")
     def loopbriefing(self):
