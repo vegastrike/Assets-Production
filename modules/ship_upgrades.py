@@ -32,8 +32,8 @@ import debug
 #    one prefix, and one postfix. All combinations should
 #    be possible
 upgrades_weapons_category             = "upgrades/Weapons"
-upgrades_weapons_prefixes             = [""]
-upgrades_weapons_postfixes            = [""]
+upgrades_weapons_prefixes             = ["Beam_Arrays_","Mounted_Guns_"]
+upgrades_weapons_postfixes            = ["Light","Medium","Heavy"]
 upgrades_weapons_default_weapon       = "laser"
 upgrades_weapons_default_weapon_count = 2
 
@@ -114,7 +114,7 @@ def armorBuildCategory(level):
 
 
 # Ammo - try primary, then secondary
-upgrades_ammo_category_pri = "upgrades/Ammunition"
+upgrades_ammo_category_pri = "upgrades/Ammunition/Common"
 upgrades_ammo_category_sec = "upgrades/Ammunition"
 
 # Repair systems - try primary, then secondary
