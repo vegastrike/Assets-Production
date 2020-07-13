@@ -17,7 +17,7 @@ N25000^red-nebula.xml^red-nebula&planet3000
 N80000^purple-nebula.xml^purple-nebula 
 N80000^purple-nebula.xml^purple-nebula&planet4000 
 N80000^red-nebula.xml^nebula&A8000^ABelt 
-N80000^red-nebula.xml^nebula&U2500^ACommerce_Center 
+N80000^red-nebula.xml^nebula&U2500^Commerce_Center 
 N80000^purple-nebula.xml^purple-nebula&U1000^Fighter_Barracks  
 N80000^purple-nebula.xml^purple-nebula&U2500^Commerce_Center  
 N80000^red-nebula.xml^nebula&gas5000 
