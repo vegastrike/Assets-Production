@@ -40,9 +40,6 @@ INSTALL(DIRECTORY modules/ DESTINATION share/vegastrike/modules
 INSTALL(DIRECTORY music/ DESTINATION share/vegastrike/music
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY parts/ DESTINATION share/vegastrike/parts
-        PATTERN "*.am" EXCLUDE)
-
 INSTALL(DIRECTORY programs/ DESTINATION share/vegastrike/programs
         PATTERN "*.am" EXCLUDE)
 
