@@ -70,7 +70,7 @@ INSTALL(FILES Version.txt DESTINATION share/vegastrike)
 
 INSTALL(FILES factions.xml DESTINATION share/vegastrike)
 
-INSTALL(FILES New_Game DESTINATION share/vegastrike)
+INSTALL(FILES master_part_list.csv DESTINATION share/vegastrike)
 
 INSTALL(FILES py27_modules.7z DESTINATION share/vegastrike)
 
