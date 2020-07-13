@@ -142,7 +142,7 @@ class quest_tutorial (quest.quest):
             vec = Vector.Add(vec,(1000,0,0))
             # launch the tutorial drone.
             #VS.launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
-            self.drone = VS.launch("Oswald","Robin","klkk_citizen","unit","default",1,1,vec,'')
+            self.drone = VS.launch("Oswald","Robin.tutorial","klkk_citizen","unit","default",1,1,vec,'')
             # upgrade drone
             self.drone.upgrade("quadshield15",0,0,1,0)
             self.drone.upgrade("armor06",0,0,1,0)
@@ -937,14 +937,6 @@ class quest_tutorial (quest.quest):
                 self.removeQuest()
                 self.stage += 1 # don't enter this loop anymore
                 return 0
-        # if drone is killed then end this quest
-        if self.drone.isNull() and self.stage > STAGE_AWAY:
-            self.playernum = -1
-            self.name = "quest_tutorial"
-            self.removeQuest()
-            self.stage += 1 # don't enter this loop anymore
-            return 0
-
         # keep the script alive for execution
         return 1
 
