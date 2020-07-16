@@ -15,7 +15,7 @@ class spawner (Director.Mission):
         Director.Mission.__init__(self)
 
         self.fac=[]
-        self.facnames=["confed","homeland-security","merchant","hunter","pirates","luddites","aera","rlaan","ISO","andolian","highborn","shaper","unadorned","purist","forsaken","LIHW","klkk","mechanist","shmrn","rlaan_briin"]
+        self.facnames=["ISO","LIHW","aera","andolian","bzbr","cities","confed","forsaken","highborn","homeland-security","klkk","merchant","purist","rlaan","shaper","uln","unadorned"]
         self.facnames=self.facnames+self.facnames
         for i in range(len(self.facnames)):
             nam=self.facnames[i]+"_SPAWN"

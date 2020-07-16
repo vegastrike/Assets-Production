@@ -114,7 +114,7 @@ Astridia
 Astroloba
 Astrophytum
 Astroworthia_skinneri
-Athyrium_niponicum_ssp._pictum
+Athyrium_niponicum_ssp_pictum
 Atriplex
 Aucuba_japonica
 Austrocactus
@@ -745,7 +745,7 @@ Lychnis
 Lycianthes_rantonnei
 Lycium_fremontii
 Lymanbensonia
-Lysiloma_microphyllum_ssp._thornberi
+Lysiloma_microphyllum_ssp_thornberi
 Lysimachia
 Macfadyena_unguis-cati
 Machaerocereus
@@ -872,7 +872,7 @@ Nerium_oleander
 Nichelia
 Nicotiana_alata
 Nidularium_scheremetiewii
-Nierembergia_hippomanica_ssp._violacea
+Nierembergia_hippomanica_ssp_violacea
 Nolina
 Nopalea_cochenillifera
 Nopalxochia
@@ -938,7 +938,7 @@ Pelargonium
 Pelecyphora
 Pellaea_rotundifolia
 Peniocereus
-Pennisetum_setaceum_ssp._cupreum
+Pennisetum_setaceum_ssp_cupreum
 Penstemon
 Pentas_lanceolata
 Peperomia
@@ -969,7 +969,7 @@ Photinia
 Phyla_nodiflora
 Phyllocactus
 Physalis_philadelphica
-Physocarpus_opulifolius_var._intermedius
+Physocarpus_opulifolius_var_intermedius
 Physostegia_virginiana
 Piaranthus
 Picea
@@ -1012,7 +1012,7 @@ Porfiria
 Porphyrocoma_pohliana
 Portulaca
 Portulacaria_afra
-Potentilla_neumanniana_cv._'Nana'
+Potentilla_neumanniana_cv_'Nana'
 Pouteria
 Praecereus
 Primula
@@ -1152,7 +1152,7 @@ Spathulata
 Spegazzinia
 Sphaeralcea_ambigua
 Spilanthes_acmella
-Spiraea_japonica_cv._'Anthony_Waterer'
+Spiraea_japonica_cv_'Anthony_Waterer'
 Spondias_purpurea
 Sprekelia_formosissima
 Stachys_byzantina

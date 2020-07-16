@@ -130,7 +130,7 @@ Brazilian_Bachelor_Button
 Snow-In-Summer
 Winterfat
 Carob
-St._John's_Bread
+St_John's_Bread
 Bamboo_Cycad
 Sawara_False_Cypress
 Chamomile
@@ -317,7 +317,7 @@ Boxleaf_Hebe
 New_Zealand_Flame_Bush
 English_Ivy
 Common_Sneezeweed
-HelenÅ’s_Flower
+Helens_Flower
 Sunrose
 Blue_Oat_Grass
 Heliotrope
@@ -471,7 +471,7 @@ Royal_Fern
 Wood_Sorrel
 Shamrock
 Elephant_Tree
-Copalquín
+Copalqun
 Torote_Blanco
 Bower_Vine
 Jerusalem_Thorn
@@ -545,7 +545,7 @@ Irish_Moss
 African_violet
 Bladdersage
 Paperbagbush
-Cárdenas
+Crdenas
 Blue_Elderberry
 Mexican_Elderberry
 Winter_Savory
