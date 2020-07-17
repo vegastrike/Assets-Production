@@ -119,7 +119,7 @@ def AddBasesToSystem (faction,sys):
         tn =[]
         for i in range(len(shiplist)):
             tn+=[ (shiplist[i],nums[i])]
-        fg_util.AddShipsToFG(fg_util.BaseFGInSystemName (sys),faction,tn,sys)
+#        fg_util.AddShipsToFG(fg_util.BaseFGInSystemName (sys),faction,tn,sys)
 
 numericalfaction=0
 
