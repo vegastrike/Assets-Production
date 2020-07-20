@@ -391,7 +391,7 @@ fighters = (("Lancelot","Lancelot","Gawain","Lancelot","Gawain","Progeny","Proge
                         ("Mule","Plowshare"), #merchant_guild
                         ("Redeemer",), #luddites
                         ("Hyena","Plowshare"), #pirates
-                        ("Hyena","Robin","Hyena","Robin","Sickle","Hammer","Vendetta","Entourage"), #hunter
+                        ("Hyena","Robin","Hyena","Robin","Sickle","Hammer","Vendetta.hunter","Entourage"), #hunter
                         ("Admonisher",), #homeland_security
                         ("Hammer","Sickle","Hammer","Sickle","Hammer","Sickle","Hammer","Sickle","Hammer","Sickle","Sickle","Sickle","Franklin","Entourage"), #ISO
                         ("Beholder",), #unknown
@@ -408,24 +408,24 @@ fighters = (("Lancelot","Lancelot","Gawain","Lancelot","Gawain","Progeny","Proge
                         ("Llama","Convolution"),#mechanist
                         ("Dirge","Dirge","Regret"),#shmrn
                         ("Zhuangzong","Zhuangzong","Zhuangzong","Gaozong","Shizong","Shizong","Shizong"), #rlaan_briin
-                        ("Nicander","Nicander","Ariston"), #aeran_merchant_marine
-                        ("Shizu","Shizu","Shizu","Shizu","Gaozong","Shizong","Shizong","Shizong","Shizong","Shizong"), #rlaan_citizen
-                        ("Mule","Plowshare","Llama","Quicksilver","Entourage"), #merchant_guild_citizen
-                        ("Franklin","Sartre","Sartre","Kafka","Kafka","Llama","Quicksilver","MacGyver"),#andolian_citizen
-                        ("Hidalgo","GTIO","GTIO","H496","H496","H496","Entourage","Entourage","Entourage","Entourage","Entourage"),#highborn_citizen
-                        ("Mule","Plowshare","Llama","Quicksilver","Entourage"),#shaper_citizen
-                        ("Mule","Plowshare","Llama"),#unadorned_citizen
-                        ("Mule","Llama","Plowshare","Mule","Llama","Plowshare","GTIO","Quicksilver","Diligence","H496","Entourage"),#purist_citizen
-                        ("Koala","Koala","Hyena","Llama","H496"),#forsaken_citizen
-                        ("Koala","Llama","Llama","Llama","Quicksilver","H496"),#LIHW_citizen
-                        ("Koala","Koala","Koala","Dodo","Llama","Entourage"),#uln_citizen
-                        ("Koala","Dodo","Quicksilver"), #dgn_citizen
-                        ("Kafka","Kafka","Sartre","Llama",), #klkk_citizen
-                        ("Koala","Kafka","Llama"),#mechanist_citizen
-                        ("Koala","Koala","Kafka","Kafka","Sartre"),#shmrn_citizen
+                        ("Nicander.escort","Nicander.escort","Ariston"), #aeran_merchant_marine
+                        ("Shizu.civvie","Shizu.civvie","Shizu.civvie","Shizu.civvie","Gaozong","Shizong","Shizong","Shizong","Shizong","Shizong"), #rlaan_citizen
+                        ("Mule.civvie","Plowshare.civvie","Llama.civvie","Quicksilver.civvie","Entourage"), #merchant_guild_citizen
+                        ("Franklin.civvie","Sartre.civvie","Sartre.civvie","Kafka.civvie","Kafka.civvie","Llama.civvie","Quicksilver.civvie","MacGyver"),#andolian_citizen
+                        ("Hidalgo.civvie","GTIO.civvie","GTIO.civvie","H496","H496","H496","Entourage","Entourage","Entourage","Entourage","Entourage"),#highborn_citizen
+                        ("Mule.civvie","Plowshare.civvie","Llama.civvie","Quicksilver.civvie","Entourage"),#shaper_citizen
+                        ("Mule.civvie","Plowshare.civvie","Llama.civvie"),#unadorned_citizen
+                        ("Mule.civvie","Llama.civvie","Plowshare.civvie","Mule.civvie","Llama.civvie","Plowshare.civvie","GTIO.civvie","Quicksilver.civvie","Diligence","H496","Entourage"),#purist_citizen
+                        ("Koala.civvie","Koala.civvie","Hyena.civvie","Llama.civvie","H496"),#forsaken_citizen
+                        ("Koala.civvie","Llama.civvie","Llama.civvie","Llama.civvie","Quicksilver.civvie","H496"),#LIHW_citizen
+                        ("Koala.civvie","Koala.civvie","Koala.civvie","Dodo.civvie","Llama.civvie","Entourage"),#uln_citizen
+                        ("Koala.civvie","Dodo.civvie","Quicksilver.civvie"), #dgn_citizen
+                        ("Kafka.civvie","Kafka.civvie","Sartre.civvie","Llama.civvie",), #klkk_citizen
+                        ("Koala.civvie","Kafka.civvie","Llama.civvie"),#mechanist_citizen
+                        ("Koala.civvie","Koala.civvie","Kafka.civvie","Kafka.civvie","Sartre.civvie"),#shmrn_citizen
 
            )
-isBomber = {"Areus":6,"Taizong":8,"Pacifier":5,"Goddard":4,"Kierkegaard":5,"Hammer":16,"Admonisher":10,"Areus":6,"Taizong":8,"Pacifier":5,"Goddard":4,"Hammer":16,"Admonisher":10}
+isBomber = {"Areus":6,"Taizong":8,"Pacifier":5,"Goddard":4,"Kierkegaard":5,"Hammer":16,"Admonisher":10,"Areus.blank":6,"Taizong.blank":8,"Pacifier.blank":5,"Goddard.blank":4,"Hammer.blank":16,"Admonisher.blank":10}
 unescortable = {"Tesla":"Ox",
         "Kahan":"Mule",
         "Clydesdale":"Ox",
@@ -521,6 +521,7 @@ stattableexp={
         "Mule":(0.52,0.14,200,18720,400),
         "Nietzsche":(1,0.18,20000,1564400,100000),
         "Nicander":(0.52,0.46,300,910,300),
+        "Nicander.escort":(0.52,0.46,300,910,300),
         "Ox":(0.68,0.16,300,286770,0),
         "Pacifier":(0.3,0.2,400,1890,100000),
         "Plowshare":(0.3,0.2,100,1380,400),
@@ -541,6 +542,7 @@ stattableexp={
         "Agasicles":(1,0.22,20000,1366420,600000),
         "Charillus":(1,0.3,2000,136642,60000), # variant of Agasicles FIXME
         "Vendetta":(0.52,0.5,440,450,0), #dupe of Zhuangzong FIXME
+        "Vendetta.hunter":(0.52,0.5,440,450,0), #dupe of Zhuangzong FIXME
         "Agesipolis":(1,0.16,50000,5738710,3210),
         "Watson":(1,0.16,2000,269400,3210),
         "Leonidas":(1,0.12,300000,8138400,2000000),
