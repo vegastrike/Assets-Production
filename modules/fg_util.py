@@ -121,8 +121,9 @@ def GetRandomBaseName (n,faction):
     global basenamelist
     try:
         import seedrandom
-        if (not (faction in basenamelist)):
-            basenamelist[faction]=ReadBaseNameList(faction+'_base')
+#        if (not (faction in basenamelist)):
+#that if statement makes this function return the same name all the time, indented the next line properly
+        basenamelist[faction]=ReadBaseNameList(faction+'_base')
         retval = basenamelist[faction][basecounter:basecounter+n]
         while len(retval)<n:
             basecounter=n-len(retval)
@@ -592,8 +593,9 @@ def launchBaseOrbit(type,faction,loc,orbitradius,orbitspeed,unit):
                                      vsrandom.uniform (1.5*orbitradius,orbitradius)
                                      /Vector.Mag(S))
     SMag = Vector.Mag(S)
-    bas=VS.launch("Base",type,faction,"unit","default",1,1,Vector.Add(loc,R),'')
-    nam=GetRandomBaseName (1,faction);
+    nam=next(iter(GetRandomBaseName (1,faction)));
+    bas=VS.launchJumppoint(nam,faction,type,"Base","default",1,1,Vector.Add(loc,R),'','')
+#    nam=GetRandomBaseName (1,faction);
     R = Vector.Scale (R,(RMag+2.0*bas.rSize())/RMag)
     S = Vector.Scale (S,(SMag+2.0*bas.rSize())/SMag)
     bas.orbit (unit,orbitspeed,R,S,(0.0,0.0,0.0))
