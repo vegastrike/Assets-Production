@@ -127,7 +127,7 @@ def GetRandomBaseName (n,faction):
         while len(retval)<n:
             basecounter=n-len(retval)
             retval = retval + basenamelist[faction][:basecounter]
-        basecounter = basecounter % len(basenamelist[faction])
+        basecounter = (basecounter +n) % len(basenamelist[faction])
     except:
         debug.error('uhoh base lsit wrong')
         retval=[]
@@ -594,6 +594,7 @@ def launchBaseOrbit(type,faction,loc,orbitradius,orbitspeed,unit):
     SMag = Vector.Mag(S)
     bas=VS.launch("Base",type,faction,"unit","default",1,1,Vector.Add(loc,R),'')
     nam=GetRandomBaseName (1,faction);
+    bas.setName(' '.join(['SS',nam[0]]));
     R = Vector.Scale (R,(RMag+2.0*bas.rSize())/RMag)
     S = Vector.Scale (S,(SMag+2.0*bas.rSize())/SMag)
     bas.orbit (unit,orbitspeed,R,S,(0.0,0.0,0.0))
