@@ -24,7 +24,7 @@
 set -e
 
 script/build
-if [ -z "$TRAVIS_TAG" ]
+if ! [ -z "$TRAVIS_TAG" ]
 then
     script/package
 fi
