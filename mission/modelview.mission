@@ -9,7 +9,7 @@
 		<var name="defaultplayer" value="blue"/>
 		<var name="mission_name" value="Vega Strike Model viewer"/>
 		<var name="difficulty" value=".25"/><!--good starting difficulty here-->
-		<var name="system" value="Special/Modelview"/>
+		<var name="system" value="stage_sector/stage"/>
 		<var name="description" value="Welcome to Vega Strike: Upon the Cold Sea."/>
 		<var name="savegame" value="modelview"/>
 	</variables>
