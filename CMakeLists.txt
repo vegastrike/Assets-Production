@@ -137,7 +137,7 @@ SET(CPACK_PACKAGE_VERSION_MINOR "7")
 SET(CPACK_PACKAGE_VERSION_PATCH "0")
 SET(CPACK_PACKAGE_INSTALL_DIRECTORY "vsUTCS-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}")
 SET(CPACK_CONTACT "maintainers@vega-strike.org")
-SET(CPACK_SOURCE_IGNORE_FILES "/build/;/packages/;/script/;/.git/;/.github/;\.gitignore;\.travis.yml;.*\.pyc;.*\.am")
+SET(CPACK_SOURCE_IGNORE_FILES "/build/;/packages/;/.git/;.*\.pyc;.*\.am")
 
 # Source package filename
 IF (DEFINED ENV{TRAVIS_TAG})

@@ -34,7 +34,7 @@ then
     docker run --env TRAVIS_TAG=$TRAVIS_TAG --name $DOCKER_CONTAINER_NAME $DST_DOCKER_IMG_NAME
     if ! [ -z "$TRAVIS_TAG" ]
     then
-        docker cp $DOCKER_CONTAINER_NAME:/usr/src/Vega-Strike-Engine-Source/packages .
+        docker cp $DOCKER_CONTAINER_NAME:/usr/src/vsUTCS/packages .
     fi
     docker rm $DOCKER_CONTAINER_NAME
 else
