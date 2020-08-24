@@ -213,7 +213,7 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
         # See https://cmake.org/cmake/help/v3.3/module/CPackDeb.html
         SET(CPACK_DEBIAN_PACKAGE_NAME "vsUTCS")
         SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "maintainers@vega-strike.org")
-        SET(CPACK_DEBIAN_COMPRESSION_TYPE "xz")
+        SET(CPACK_DEBIAN_COMPRESSION_TYPE "bzip2")
         SET(CPACK_DEBIAN_PACKAGE_DEPENDS "vega-strike")
 
         # Debian Version: /etc/debian_version - <name>/<junk>
