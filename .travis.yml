@@ -82,6 +82,10 @@ jobs:
         #   env:
         #     - FLAGS='-DUSE_PYTHON_3=ON'
     fast_finish: true
+
+script:
+  - script/cibuild
+
 deploy:
     # Use DPL V2
     edge: true
