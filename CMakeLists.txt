@@ -137,7 +137,16 @@ SET(CPACK_PACKAGE_VERSION_MINOR "7")
 SET(CPACK_PACKAGE_VERSION_PATCH "0")
 SET(CPACK_PACKAGE_INSTALL_DIRECTORY "vsUTCS-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}")
 SET(CPACK_CONTACT "maintainers@vega-strike.org")
-SET(CPACK_SOURCE_IGNORE_FILES "/build/;/packages/;/.git/;/.github/;.gitignore;.travis.yml;*.pyc;*.am")
+SET(CPACK_SOURCE_IGNORE_FILES "/build/;/packages/;/script/;/.git/;/.github/;\.gitignore;\.travis.yml;.*\.pyc;.*\.am")
+
+# Source package filename
+IF (DEFINED ENV{TRAVIS_TAG})
+    SET(vsUTCS_PACKAGE_VERSION_STR "$ENV{TRAVIS_TAG}")
+ELSE (DEFINED ENV{TRAVIS_TAG})
+    SET(vsUTCS_PACKAGE_VERSION_STR "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
+ENDIF (DEFINED ENV{TRAVIS_TAG})
+SET(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-Source")
+SET(CPACK_SOURCE_GENERATOR "TXZ")
 
 IF (WIN32 AND NOT UNIX)
     MESSAGE("-- Configuring Packaging for Windows")
@@ -161,16 +170,10 @@ ELSEIF (XCODE)
     #  See https://cmake.org/cmake/help/v3.3/module/CPackDMG.html
     # Bundle -> Compressed Disk Image
     # PackageMaker - see https://cmake.org/cmake/help/v3.3/module/CPackPackageMaker.html
-    SET(CPACK_GENERATOR "DragNDrop" "BUNDLE" "TBZ2" "TGZ" "TXZ")
+    SET(CPACK_GENERATOR "DragNDrop" "BUNDLE" "TXZ")
 ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
     MESSAGE("-- Configuring Packaging for Linux")
-    SET(CPACK_GENERATOR "TBZ2" "TGZ" "TXZ")
-
-    IF (DEFINED ENV{TRAVIS_TAG})
-        SET(vsUTCS_PACKAGE_VERSION_STR "$ENV{TRAVIS_TAG}")
-    ELSE (DEFINED ENV{TRAVIS_TAG})
-        SET(vsUTCS_PACKAGE_VERSION_STR "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
-    ENDIF (DEFINED ENV{TRAVIS_TAG})
+    SET(CPACK_GENERATOR "TXZ")
 
     # Gather info about Linux distro and release (if applicable).
     IF (CMAKE_SYSTEM_NAME STREQUAL Linux)
@@ -185,23 +188,23 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
             OUTPUT_VARIABLE LINUX_VERSION_ID)
     ENDIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
 
-    SET(LSB_EXISTS FALSE)
-    SET(LSB_LINUX_DISTRIBUTION "Unknown")
-    SET(LSB_LINUX_DISTRIBUTION_CODENAME "Unknown")
+    # SET(LSB_EXISTS FALSE)
+    # SET(LSB_LINUX_DISTRIBUTION "Unknown")
+    # SET(LSB_LINUX_DISTRIBUTION_CODENAME "Unknown")
 
-    # Lookup the LSB Data - this is known for Ubuntu, but also used by other distros too.
-    # and may help with distro-sub-selection
-    FIND_PROGRAM(LSB_RELEASE_EXEC lsb_release)
-    IF (LSB_RELEASE_EXEC)
-        EXECUTE_PROCESS(COMMAND ${LSB_RELEASE_EXEC} --codename --short
-            OUTPUT_VARIABLE LSB_LINUX_DISTRIBUTION_CODENAME
-            OUTPUT_STRIP_TRAILING_WHITESPACE)
-        EXECUTE_PROCESS(COMMAND ${LSB_RELEASE_EXEC} --id --short
-            OUTPUT_VARIABLE LSB_LINUX_DISTRIBUTION
-            OUTPUT_STRIP_TRAILING_WHITESPACE)
-        SET(LSB_EXISTS TRUE)
-        MESSAGE("Found Linux Distribution Release Name: ${LSB_LINUX_DISTRIBUTION_CODENAME}")
-    ENDIF (LSB_RELEASE_EXEC)
+    # # Lookup the LSB Data - this is known for Ubuntu, but also used by other distros too.
+    # # and may help with distro-sub-selection
+    # FIND_PROGRAM(LSB_RELEASE_EXEC lsb_release)
+    # IF (LSB_RELEASE_EXEC)
+    #     EXECUTE_PROCESS(COMMAND ${LSB_RELEASE_EXEC} --codename --short
+    #         OUTPUT_VARIABLE LSB_LINUX_DISTRIBUTION_CODENAME
+    #         OUTPUT_STRIP_TRAILING_WHITESPACE)
+    #     EXECUTE_PROCESS(COMMAND ${LSB_RELEASE_EXEC} --id --short
+    #         OUTPUT_VARIABLE LSB_LINUX_DISTRIBUTION
+    #         OUTPUT_STRIP_TRAILING_WHITESPACE)
+    #     SET(LSB_EXISTS TRUE)
+    #     MESSAGE("Found Linux Distribution Release Name: ${LSB_LINUX_DISTRIBUTION_CODENAME}")
+    # ENDIF (LSB_RELEASE_EXEC)
 
     # "DEB"
     FIND_PROGRAM(HAS_APT NAMES apt-get apt)
@@ -210,26 +213,30 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
         # See https://cmake.org/cmake/help/v3.3/module/CPackDeb.html
         SET(CPACK_DEBIAN_PACKAGE_NAME "vsUTCS")
         SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "maintainers@vega-strike.org")
-        # Debian Version: /etc/debian_version - <name>/<junk>
-        IF (NOT LSB_EXISTS)
-            SET(USE_DEBIAN_VERSION TRUE)
-            FILE(READ "/etc/debian_version" DEBIAN_VERSION_DATA)
-            STRING(REGEX MATCH "^(.+)\/.*$" DEBIAN_VERSION_DATA DEBIAN_RELEASE_VERSION)
-        ELSE (NOT LSB_EXISTS)
-            SET(USE_DEBIAN_VERSION FALSE)
-            SET(DEBIAN_RELEASE_VERSION "Debian Derivative Release Version ${LSB_LINUX_DISTRIBUTION_CODENAME}")
-        ENDIF (NOT LSB_EXISTS)
+        SET(CPACK_DEBIAN_COMPRESSION_TYPE "xz")
+        SET(CPACK_DEBIAN_PACKAGE_DEPENDS "vega-strike")
 
-        SET(CPACK_DEBIAN_PACKAGE_DEPENDS "Vega-Strike")
-        IF (USE_DEBIAN_VERSION)
-            SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-debian-${DEBIAN_RELEASE_VERSION}_x86_64")
-        ELSE (USE_DEBIAN_VERSION)
-            SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-${LSB_LINUX_DISTRIBUTION}-${LSB_LINUX_DISTRIBUTION_CODENAME}_x86_64")
-        ENDIF (USE_DEBIAN_VERSION)
+        # Debian Version: /etc/debian_version - <name>/<junk>
+        # IF (NOT LSB_EXISTS)
+        #     SET(USE_DEBIAN_VERSION TRUE)
+        #     FILE(READ "/etc/debian_version" DEBIAN_VERSION_DATA)
+        #     STRING(REGEX MATCH "^(.+)\/.*$" DEBIAN_VERSION_DATA DEBIAN_RELEASE_VERSION)
+        # ELSE (NOT LSB_EXISTS)
+        #     SET(USE_DEBIAN_VERSION FALSE)
+        #     SET(DEBIAN_RELEASE_VERSION "Debian Derivative Release Version ${LSB_LINUX_DISTRIBUTION_CODENAME}")
+        # ENDIF (NOT LSB_EXISTS)
+
+        # IF (USE_DEBIAN_VERSION)
+        #     SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-debian-${DEBIAN_RELEASE_VERSION}_x86_64")
+        # ELSE (USE_DEBIAN_VERSION)
+        #     SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-${LSB_LINUX_DISTRIBUTION}-${LSB_LINUX_DISTRIBUTION_CODENAME}_x86_64")
+        # ENDIF (USE_DEBIAN_VERSION)
+
+        SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}")
 
         SET(CPACK_DEBIAN_PACKAGE_SECTION "Amusements/Games")
         SET(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://www.vega-strike.org")
-        LIST(APPEND CPACK_GENERATOR "DEB")
+        SET(CPACK_GENERATOR "DEB")
     ENDIF (HAS_APT)
 
     #  "RPM"
@@ -249,13 +256,13 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
             SET(vsUTCS_LINUX_VERSION_STR "${LINUX_VERSION_ID}")
         ENDIF (LINUX_CODENAME)
 
-        SET(CPACK_PACKAGE_FILE_NAME "${CPACK_RPM_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-${LINUX_ID}-${vsUTCS_LINUX_VERSION_STR}_x86_64")
-        LIST(APPEND CPACK_GENERATOR "RPM")
+        SET(CPACK_PACKAGE_FILE_NAME "${CPACK_RPM_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-${LINUX_ID}-${vsUTCS_LINUX_VERSION_STR}")
+        SET(CPACK_GENERATOR "RPM")
     ENDIF (HAS_RPMBUILD)
 ELSE (WIN32 AND NOT UNIX)
     MESSAGE("-- Configuring Packaging for Unknown Platforms - \"${CMAKE_SYSTEM_NAME}\"")
-    # Unknown Platform --> Just do the various compressed tarballs
-    SET(CPACK_GENERATOR "TBZ2" "TGZ" "TXZ")
+    # Unknown Platform --> Just do compressed tarball
+    SET(CPACK_GENERATOR "TXZ")
 ENDIF (WIN32 AND NOT UNIX)
 
 INCLUDE(CPack)
