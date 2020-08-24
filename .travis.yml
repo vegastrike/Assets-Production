@@ -82,3 +82,21 @@ jobs:
         #   env:
         #     - FLAGS='-DUSE_PYTHON_3=ON'
     fast_finish: true
+deploy:
+    # Use DPL V2
+    edge: true
+    # GitHub Releases
+    provider: releases
+    token: $GITHUB_TOKEN
+    file_glob: true
+    file:
+       # Upload files in the `packages` directory
+       - ./packages/*
+#    # release is a draft so it can be edited, updated, etc.
+#    # Not needed as we'll do that manually when we'll begin the release.
+#    draft: true
+#    prerelease: true
+#    # GitHub Releases requires a tag; this guarantees a tag is set
+    on:
+        tags: true
+        repo: vegastrike/Assets-Production
