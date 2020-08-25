@@ -1,0 +1,10 @@
+.git/
+.github/
+build/
+packages/
+.gitignore
+.travis.yml
+*.am
+*.pyc
+*.log
+*.bak

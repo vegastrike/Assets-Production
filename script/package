@@ -1,0 +1,104 @@
+#!/bin/bash
+
+#====================================
+# @file: package
+# @brief package up vsUTCS
+# @usage  : script/package
+# @param  : none
+#
+# Copyright (C) 2020 Stephen G. Tuggy and other vsUTCS contributors
+#
+# This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
+#
+# vsUTCS is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# vsUTCS is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with vsUTCS.  If not, see <https://www.gnu.org/licenses/>.
+
+
+ROOT_DIR=$(pwd)
+BUILD_DIR=$ROOT_DIR/build
+SRC_DIR=$ROOT_DIR
+COMMAND=""
+PACKAGE_DIR=$ROOT_DIR/packages
+
+function copyDebFiles()
+{
+    # Verify that there are Debian files to copy
+    local DEB_FILES=`ls *.deb`
+    if [[ ${#DEB_FILES} ]]; then
+        # Copy the Debian Package files
+        for DEB_FILE in ${DEB_FILES}
+        do
+            echo "Copying ${DEB_FILE} to ${PACKAGE_DIR}"
+            cp "${DEB_FILE}" "${PACKAGE_DIR}"
+        done
+    else
+        echo "No Debian Package files"
+    fi
+}
+
+function copyRpmFiles()
+{
+    local RPM_FILES=`ls *.rpm *.srpm`
+    if [[ ${#RPM_FILES} ]]; then
+        # Copy the Red Hat RPM Package files
+        for RPM_FILE in ${RPM_FILES}
+        do
+            echo "Copying ${RPM_FILE} to ${PACKAGE_DIR}"
+            cp "${RPM_FILE}" "${PACKAGE_DIR}"
+        done
+    else
+        echo "No RPM Package files"
+    fi
+}
+
+function copyTarballs()
+{
+    local TAR_FILES=`ls *.tar.*`
+    if [[ ${#TAR_FILES} ]]; then
+        # Copy the Tarball Package files
+        for TAR_FILE in ${TAR_FILES}
+        do
+            echo "Copying ${TAR_FILE} to ${PACKAGE_DIR}"
+            cp "${TAR_FILE}" "${PACKAGE_DIR}"
+        done
+    else
+        echo "No Tarball Package files"
+    fi
+}
+
+function copyFiles()
+{
+    # Ensure the package output directory exists
+    mkdir -p ${PACKAGE_DIR}
+
+    copyDebFiles
+    copyRpmFiles
+    copyTarballs
+}
+
+function buildPackages()
+{
+    make package
+    make package_source
+}
+
+echo "----------------------------"
+echo "--- package | 2020-08-23 ---"
+echo "----------------------------"
+
+cd $BUILD_DIR
+
+buildPackages
+copyFiles
+
+cd $ROOT_DIR
