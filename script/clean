@@ -1,0 +1,44 @@
+#!/bin/bash
+#====================================
+# @file   : clean
+# @brief  : clean vsUTCS build dirs and files
+# @usage  : script/clean
+# @param  : none
+#====================================
+
+# Copyright (C) 2020 Stephen G. Tuggy and other vsUTCS contributors
+#
+# This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
+#
+# vsUTCS is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 2 of the License, or
+# (at your option) any later version.
+#
+# vsUTCS is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with vsUTCS.  If not, see <https://www.gnu.org/licenses/>.
+
+
+set +e
+
+echo "--------------------------"
+echo "--- clean | 2020-08-24 ---"
+echo "--------------------------"
+echo "!!!warning!!! for strict developer use"
+echo "--------------------------"
+
+ROOT_DIR=$(pwd)
+BUILD_DIR=$ROOT_DIR/build
+
+echo "deleting build directory ($BUILD_DIR)"
+rm -r $BUILD_DIR
+
+echo "deleting compiled python files (*.pyc)"
+find $DATA_DIR -name "*.pyc" -delete
+
+echo "clean done!"
