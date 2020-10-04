@@ -33,22 +33,22 @@ dist: focal
 # to the matrix to cover the distro
 jobs:
     include:
-        # - os: linux
-        #   name: "Ubuntu 20.04 focal"
-        #   env:
-        #     - FROM='ubuntu:focal'
-        # - os: linux
-        #   name: "Ubuntu 18.04 bionic"
-        #   env:
-        #     - FROM='ubuntu:bionic'
-        # - os: linux
-        #   name: "Ubuntu 16.04 xenial"
-        #   env:
-        #     - FROM='ubuntu:xenial'
-        # - os: linux
-        #   name: "Debian 10 buster"
-        #   env:
-        #     - FROM='debian:buster'
+        - os: linux
+          name: "Ubuntu 20.04 focal"
+          env:
+            - FROM='ubuntu:focal'
+        - os: linux
+          name: "Ubuntu 18.04 bionic"
+          env:
+            - FROM='ubuntu:bionic'
+        - os: linux
+          name: "Ubuntu 16.04 xenial"
+          env:
+            - FROM='ubuntu:xenial'
+        - os: linux
+          name: "Debian 10 buster"
+          env:
+            - FROM='debian:buster'
         - os: linux
           name: "Debian 9 stretch"
           env:
