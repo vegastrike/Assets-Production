@@ -68,10 +68,6 @@ jobs:
           env:
             - FROM='fedora:31'
         - os: linux
-          name: "Fedora 30"
-          env:
-            - FROM='fedora:30'
-        - os: linux
           name: "CentOS 8"
           env:
             - FROM='centos:8'
