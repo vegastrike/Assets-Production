@@ -33,6 +33,7 @@ dist: focal
 # to the matrix to cover the distro
 jobs:
     include:
+        # Just build one .deb package for all .deb-based platforms
         # - os: linux
         #   name: "Ubuntu 20.04 focal"
         #   env:
@@ -65,10 +66,6 @@ jobs:
           name: "Fedora 31"
           env:
             - FROM='fedora:31'
-        - os: linux
-          name: "Fedora 30"
-          env:
-            - FROM='fedora:30'
         - os: linux
           name: "CentOS 8"
           env:
