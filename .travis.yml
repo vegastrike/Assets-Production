@@ -59,13 +59,13 @@ jobs:
           env:
             - FROM='opensuse/leap'
         - os: linux
+          name: "Fedora 33"
+          env:
+            - FROM='fedora:33'
+        - os: linux
           name: "Fedora 32"
           env:
             - FROM='fedora:32'
-        - os: linux
-          name: "Fedora 31"
-          env:
-            - FROM='fedora:31'
         - os: linux
           name: "CentOS 8"
           env:
