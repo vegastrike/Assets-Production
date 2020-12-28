@@ -14,13 +14,13 @@ if [ -f ~/.vegastrike/console_err.log ]; then
   mv -f ~/.vegastrike/console_err.log ~/.vegastrike/console_err.bak
 fi
 
-echo "Starting Vega Strike, console output will be saved in ~/.vegastrike/console.log, errors in ~/.vegastrike/console_err.log"
+echo "Starting Vega Strike..."
 echo ""
 
-if [ -d "${VEGASTRIKE_LOCAL_SHARE_DIR}" ]; then 
-    vegastrike -d"${VEGASTRIKE_LOCAL_SHARE_DIR}" "$1" --debug=3 >~/.vegastrike/console.log 2>~/.vegastrike/console_err.log
+if [ -d "${VEGASTRIKE_LOCAL_SHARE_DIR}" ]; then
+    vegastrike -d"${VEGASTRIKE_LOCAL_SHARE_DIR}" "$1"
 elif [ -d "${VEGASTRIKE_SHARE_DIR}" ]; then
-    vegastrike -d"${VEGASTRIKE_SHARE_DIR}" "$1" --debug=3 >~/.vegastrike/console.log 2>~/.vegastrike/console_err.log
+    vegastrike -d"${VEGASTRIKE_SHARE_DIR}" "$1"
 else
     echo "Unknown Game Asset Data Location."
     echo "Do you have the game assets installed?"
