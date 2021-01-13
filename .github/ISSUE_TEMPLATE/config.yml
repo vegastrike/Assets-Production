@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ask the Community on Gitter
+    url: https://gitter.im/vegastrike/community
+    about: Join the Vega Strike Gitter Discussion
+  - name: Vega Strike Forums
+    url: https://forums.vega-strike.org/
+    about: Join the Vega Strike Forums
+  - name: Vega Strike Official Wiki
+    url: https://wiki.vega-strike.org/
+    about: Read up at the Vega Strike Wiki 
