@@ -1,4 +1,4 @@
-Thank you for submitting a pull request and becoming a contributor to the Vega Strike: Upon the Coldest Sea.
+Thank you for submitting a pull request and becoming a contributor to Vega Strike: Upon the Coldest Sea.
 
 Please answer the following:
 
