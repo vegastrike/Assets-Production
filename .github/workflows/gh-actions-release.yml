@@ -76,4 +76,4 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        args: 'packages/*'
+        args: 'packages/Vega-Strike_v*.*'
