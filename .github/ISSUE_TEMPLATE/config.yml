@@ -1,0 +1,14 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Ask the Community on Gitter
+    url: https://gitter.im/vegastrike/community
+    about: Join the Vega Strike Gitter Discussion
+  - name: Vega Strike Forums
+    url: https://forums.vega-strike.org/
+    about: Join the Vega Strike Forums
+  - name: Vega Strike Official Wiki
+    url: https://wiki.vega-strike.org/
+    about: Read up at the Vega Strike Wiki 
+  - name: File a Security Issue
+    url: mailto:security@vega-strike.org?subject=Security%20Issue%3A%20%3Cshort%20description%3E&body=%3Clong%20description%3E
+    about: Notify the Vega Strike Security Team about a potential security flaw. This is a moderated mailing list.
