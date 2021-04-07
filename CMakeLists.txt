@@ -111,8 +111,10 @@ INSTALL(FILES weapon_list.xml DESTINATION share/vegastrike)
 INSTALL(FILES vegastrike.config DESTINATION share/vegastrike)
 
 INSTALL(FILES vegastrike.desktop DESTINATION share/applications)
+INSTALL(FILES vegasettings.desktop DESTINATION share/applications)
 
 INSTALL(FILES vegastrike.png DESTINATION share/pixmaps)
+INSTALL(FILES vegastrike_settings.png DESTINATION share/pixmaps)
 
 INSTALL(FILES vegastrike.xpm DESTINATION share/pixmaps)
 
