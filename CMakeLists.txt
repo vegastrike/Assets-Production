@@ -2,7 +2,7 @@
 # @file   : CMakeLists.txt
 # @brief  : cmake configuration file for vsUTCS
 #====================================
-# Copyright (C) 2020 Evert Vorster, Stephen G. Tuggy,
+# Copyright (C) 2020-2021 Evert Vorster, Stephen G. Tuggy,
 # and other vsUTCS contributors.
 #
 # This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
@@ -142,11 +142,11 @@ SET(CPACK_CONTACT "maintainers@vega-strike.org")
 SET(CPACK_SOURCE_IGNORE_FILES "/build/;/packages/;/.git/;.*\.pyc;.*\.am")
 
 # Source package filename
-IF (DEFINED ENV{TRAVIS_TAG})
-    SET(vsUTCS_PACKAGE_VERSION_STR "$ENV{TRAVIS_TAG}")
-ELSE (DEFINED ENV{TRAVIS_TAG})
+IF (DEFINED ENV{TAG_NAME})
+    SET(vsUTCS_PACKAGE_VERSION_STR "$ENV{TAG_NAME}")
+ELSE (DEFINED ENV{TAG_NAME})
     SET(vsUTCS_PACKAGE_VERSION_STR "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
-ENDIF (DEFINED ENV{TRAVIS_TAG})
+ENDIF (DEFINED ENV{TAG_NAME})
 SET(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-Source")
 SET(CPACK_SOURCE_GENERATOR "TXZ")
 

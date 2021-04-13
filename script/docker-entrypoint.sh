@@ -3,7 +3,7 @@
 # @file: docker-entrypoint.sh
 # @brief Docker entry point
 #
-# Copyright (C) 2020 Stephen G. Tuggy and other vsUTCS contributors
+# Copyright (C) 2020-2021 Stephen G Tuggy and other vsUTCS contributors
 #
 # This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
 #
@@ -24,7 +24,7 @@
 set -e
 
 script/build
-if ! [ -z "$TRAVIS_TAG" ]
+if [ $IS_RELEASE -eq 1 ]
 then
     script/package
 fi
