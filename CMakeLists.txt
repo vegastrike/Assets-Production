@@ -22,7 +22,7 @@
 
 
 CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
-PROJECT(vsUTCS)
+PROJECT(vsUTCS NONE)
 
 INSTALL(DIRECTORY .vegastrike/ DESTINATION share/vegastrike/.vegastrike
         PATTERN "*.am" EXCLUDE)
