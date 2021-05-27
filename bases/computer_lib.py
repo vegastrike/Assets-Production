@@ -222,7 +222,8 @@ class QuineComputer:
                     alert = f'  {game} is not UTF-8, convert it before loading'
                     print(alert)
                     self.alert_text = GUI.GUIStaticText(self.guiroom, 'txt_screen', alert,
-                        GUI.GUIRect(60, 90, 657, 100), color=GUI.GUIColor(255, 255, 255), bgcolor=GUI.GUIColor(0, 0, 0))
+                        GUI.GUIRect(40, 60, 438, 100, 'pixel', (800,600)),
+                        color=GUI.GUIColor(255, 255, 255), bgcolor=GUI.GUIColor(0, 0, 0))
                     self.alert_text.show()
                     return
                 else:
