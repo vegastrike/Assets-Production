@@ -119,21 +119,21 @@ SET(CPACK_PACKAGE_VERSION_PATCH "1")
 SET(CPACK_PACKAGE_INSTALL_DIRECTORY "vsUTCS-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}")
 SET(CPACK_CONTACT "maintainers@vega-strike.org")
 SET(CPACK_IGNORE_FILES
-    /build
-    /\\\\.git
-    /\\\\.vs
-    /\\\\.vscode
-    .*\\\\.pyc
-    .*\\\\.am
+    build/
+    packages/
+    \\.git/
+    \\.vs/
+    \\.vscode/
+    ".*\\\\.pyc"
+    ".*\\\\.am"
 )
 SET(CPACK_SOURCE_IGNORE_FILES
-    /build
-    /packages
-    /\\\\.git
-    /\\\\.vs
-    /\\\\.vscode
-    .*\\\\.pyc
-    .*\\\\.am
+    build/
+    packages/
+    \\.git/
+    \\.vs/
+    \\.vscode/
+    ".*\\\\.pyc"
 )
 
 # Source package filename
