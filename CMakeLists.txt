@@ -44,17 +44,17 @@ SET(CPACK_SOURCE_IGNORE_FILES
 INSTALL(DIRECTORY .vegastrike/ DESTINATION share/vegastrike/.vegastrike)
 
 INSTALL(DIRECTORY ai/ DESTINATION share/vegastrike/ai
-    PATTERN "*.am" EXCLUDE)
+        PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY animations/ DESTINATION share/vegastrike/animations
-    PATTERN "*.am" EXCLUDE)
+        PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY bases/ DESTINATION share/vegastrike/bases)
 
 INSTALL(DIRECTORY cgi-accountserver/ DESTINATION share/vegastrike/cgi-accountserver)
 
 INSTALL(DIRECTORY cockpits/ DESTINATION share/vegastrike/cockpits
-    PATTERN "*.am" EXCLUDE)
+        PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY communications/ DESTINATION share/vegastrike/communications)
 
@@ -63,7 +63,7 @@ INSTALL(DIRECTORY documentation/ DESTINATION share/vegastrike/documentation)
 INSTALL(DIRECTORY history/ DESTINATION share/vegastrike/history)
 
 INSTALL(DIRECTORY meshes/ DESTINATION share/vegastrike/meshes
-    PATTERN "*.am" EXCLUDE)
+        PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY mission/ DESTINATION share/vegastrike/mission)
 
@@ -76,18 +76,18 @@ INSTALL(DIRECTORY programs/ DESTINATION share/vegastrike/programs)
 INSTALL(DIRECTORY sectors/ DESTINATION share/vegastrike/sectors)
 
 INSTALL(DIRECTORY sounds/ DESTINATION share/vegastrike/sounds
-    PATTERN "*.am" EXCLUDE)
+        PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY sprites/ DESTINATION share/vegastrike/sprites
-    PATTERN "*.am" EXCLUDE)
+        PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY techniques/ DESTINATION share/vegastrike/techniques)
 
 INSTALL(DIRECTORY textures/ DESTINATION share/vegastrike/textures
-    PATTERN "*.am" EXCLUDE)
+        PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY units/ DESTINATION share/vegastrike/units
-    PATTERN "*.am" EXCLUDE)
+        PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY universe/ DESTINATION share/vegastrike/universe)
 
