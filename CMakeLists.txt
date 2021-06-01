@@ -24,17 +24,37 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 PROJECT(vsUTCS)
 
+SET(CPACK_IGNORE_FILES
+    build/
+    packages/
+    \\\\.git/
+    \\\\.vs/
+    \\\\.vscode/
+    ".*\\\\.pyc"
+)
+SET(CPACK_SOURCE_IGNORE_FILES
+    build/
+    packages/
+    \\\\.git/
+    \\\\.vs/
+    \\\\.vscode/
+    ".*\\\\.pyc"
+)
+
 INSTALL(DIRECTORY .vegastrike/ DESTINATION share/vegastrike/.vegastrike)
 
-INSTALL(DIRECTORY ai/ DESTINATION share/vegastrike/ai)
+INSTALL(DIRECTORY ai/ DESTINATION share/vegastrike/ai
+    PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY animations/ DESTINATION share/vegastrike/animations)
+INSTALL(DIRECTORY animations/ DESTINATION share/vegastrike/animations
+    PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY bases/ DESTINATION share/vegastrike/bases)
 
 INSTALL(DIRECTORY cgi-accountserver/ DESTINATION share/vegastrike/cgi-accountserver)
 
-INSTALL(DIRECTORY cockpits/ DESTINATION share/vegastrike/cockpits)
+INSTALL(DIRECTORY cockpits/ DESTINATION share/vegastrike/cockpits
+    PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY communications/ DESTINATION share/vegastrike/communications)
 
@@ -42,7 +62,8 @@ INSTALL(DIRECTORY documentation/ DESTINATION share/vegastrike/documentation)
 
 INSTALL(DIRECTORY history/ DESTINATION share/vegastrike/history)
 
-INSTALL(DIRECTORY meshes/ DESTINATION share/vegastrike/meshes)
+INSTALL(DIRECTORY meshes/ DESTINATION share/vegastrike/meshes
+    PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY mission/ DESTINATION share/vegastrike/mission)
 
@@ -54,15 +75,19 @@ INSTALL(DIRECTORY programs/ DESTINATION share/vegastrike/programs)
 
 INSTALL(DIRECTORY sectors/ DESTINATION share/vegastrike/sectors)
 
-INSTALL(DIRECTORY sounds/ DESTINATION share/vegastrike/sounds)
+INSTALL(DIRECTORY sounds/ DESTINATION share/vegastrike/sounds
+    PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY sprites/ DESTINATION share/vegastrike/sprites)
+INSTALL(DIRECTORY sprites/ DESTINATION share/vegastrike/sprites
+    PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY techniques/ DESTINATION share/vegastrike/techniques)
 
-INSTALL(DIRECTORY textures/ DESTINATION share/vegastrike/textures)
+INSTALL(DIRECTORY textures/ DESTINATION share/vegastrike/textures
+    PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY units/ DESTINATION share/vegastrike/units)
+INSTALL(DIRECTORY units/ DESTINATION share/vegastrike/units
+    PATTERN "*.am" EXCLUDE)
 
 INSTALL(DIRECTORY universe/ DESTINATION share/vegastrike/universe)
 
@@ -118,23 +143,6 @@ SET(CPACK_PACKAGE_VERSION_MINOR "7")
 SET(CPACK_PACKAGE_VERSION_PATCH "1")
 SET(CPACK_PACKAGE_INSTALL_DIRECTORY "vsUTCS-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}")
 SET(CPACK_CONTACT "maintainers@vega-strike.org")
-SET(CPACK_IGNORE_FILES
-    build/
-    packages/
-    \\.git/
-    \\.vs/
-    \\.vscode/
-    ".*\\\\.pyc"
-    ".*\\\\.am"
-)
-SET(CPACK_SOURCE_IGNORE_FILES
-    build/
-    packages/
-    \\.git/
-    \\.vs/
-    \\.vscode/
-    ".*\\\\.pyc"
-)
 
 # Source package filename
 IF (DEFINED ENV{TAG_NAME})
