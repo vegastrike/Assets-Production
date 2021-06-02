@@ -317,7 +317,7 @@ Boxleaf_Hebe
 New_Zealand_Flame_Bush
 English_Ivy
 Common_Sneezeweed
-Helens_Flower
+Helen's_Flower
 Sunrose
 Blue_Oat_Grass
 Heliotrope
@@ -471,7 +471,7 @@ Royal_Fern
 Wood_Sorrel
 Shamrock
 Elephant_Tree
-Copalqun
+CopalquÃ­n
 Torote_Blanco
 Bower_Vine
 Jerusalem_Thorn
@@ -545,7 +545,7 @@ Irish_Moss
 African_violet
 Bladdersage
 Paperbagbush
-Crdenas
+CÃ¡rdenas
 Blue_Elderberry
 Mexican_Elderberry
 Winter_Savory
