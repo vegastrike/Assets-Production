@@ -7,7 +7,7 @@ import VS
 import ShowProgress
 import methodtype
 import mission_lib
-from utf8_check import is_utf8
+import Director
 
 pirate_bases = {
 }
@@ -218,11 +218,12 @@ class QuineComputer:
                 import dj_lib
                 dj_lib.enable()
                 game = self.picker_screen.items[self.picker_screen.selection].data
-                if not is_utf8(game):
+                if not Director.isUtf8SaveGame(game):
                     alert = f'  {game} is not UTF-8, convert it before loading'
                     print(alert)
                     self.alert_text = GUI.GUIStaticText(self.guiroom, 'txt_screen', alert,
-                        GUI.GUIRect(60, 90, 657, 100), color=GUI.GUIColor(255, 255, 255), bgcolor=GUI.GUIColor(0, 0, 0))
+                        GUI.GUIRect(40, 60, 438, 100, 'pixel', (800,600)),
+                        color=GUI.GUIColor(255, 255, 255), bgcolor=GUI.GUIColor(0, 0, 0))
                     self.alert_text.show()
                     return
                 else:
