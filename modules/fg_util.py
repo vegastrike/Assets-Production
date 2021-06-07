@@ -72,30 +72,20 @@ def ReadBaseNameList(faction):
     bnl=[]
     debug.debug('reading base names %s', faction)
     filename = 'universe/fgnames/'+faction+'.txt'
-    try:
-        f = open (filename,'r')
-        bnl = f.readlines()
-        f.close()
-    except:
+    names = [filename, '../'+filename, 'universe/fgnames/names.txt',
+             '../universe/names.txt', 'universe/names.txt']
+    for name in names:
         try:
-            f = open ('../'+filename,'r')
-            bnl = f.readlines()
-            f.close()
-        except:
-            try:
-                f = open ('../universe/names.txt','r')
+            with open (name,'r') as f:
                 bnl = f.readlines()
-                f.close()
-            except:
-                try:
-                    f = open ('universe/names.txt','r')
-                    bnl = f.readlines()
-                    f.close()
-                except:
-                    global genericalphabet
-                    bnl=genericalphabet
+            break
+        except OSError:
+            continue
+    else:
+        global genericalphabet
+        bnl = genericalphabet
     for i in range(len(bnl)):
-        bnl[i]=bnl[i].rstrip()#.decode('utf8','ignore')
+        bnl[i] = bnl[i].rstrip()#.decode('utf8','ignore')
     import vsrandom
     vsrandom.shuffle(bnl)
     return bnl
