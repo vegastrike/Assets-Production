@@ -7,6 +7,7 @@ import VS
 import ShowProgress
 import methodtype
 import mission_lib
+import Director
 
 pirate_bases = {
 }
@@ -216,7 +217,17 @@ class QuineComputer:
                 ShowProgress.activateProgressScreen('loading',3)
                 import dj_lib
                 dj_lib.enable()
-                VS.loadGame(self.picker_screen.items[self.picker_screen.selection].data)
+                game = self.picker_screen.items[self.picker_screen.selection].data
+                if not Director.isUtf8SaveGame(game):
+                    alert = f'  {game} is not UTF-8, convert it before loading'
+                    print(alert)
+                    self.alert_text = GUI.GUIStaticText(self.guiroom, 'txt_screen', alert,
+                        GUI.GUIRect(40, 60, 438, 100, 'pixel', (800,600)),
+                        color=GUI.GUIColor(255, 255, 255), bgcolor=GUI.GUIColor(0, 0, 0))
+                    self.alert_text.show()
+                    return
+                else:
+                    VS.loadGame(game)
         elif button_index == "btn_save":
             if self.mode != button_index:
                 self.picker_screen.items = [GUI.GUISimpleListPicker.listitem("New Game",NewSaveGame)]+savelist()
