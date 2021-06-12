@@ -24,8 +24,24 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 PROJECT(vsUTCS)
 
-INSTALL(DIRECTORY .vegastrike/ DESTINATION share/vegastrike/.vegastrike
-        PATTERN "*.am" EXCLUDE)
+SET(CPACK_IGNORE_FILES
+    build/
+    packages/
+    \\\\.git/
+    \\\\.vs/
+    \\\\.vscode/
+    ".*\\\\.pyc"
+)
+SET(CPACK_SOURCE_IGNORE_FILES
+    build/
+    packages/
+    \\\\.git/
+    \\\\.vs/
+    \\\\.vscode/
+    ".*\\\\.pyc"
+)
+
+INSTALL(DIRECTORY .vegastrike/ DESTINATION share/vegastrike/.vegastrike)
 
 INSTALL(DIRECTORY ai/ DESTINATION share/vegastrike/ai
         PATTERN "*.am" EXCLUDE)
@@ -33,41 +49,31 @@ INSTALL(DIRECTORY ai/ DESTINATION share/vegastrike/ai
 INSTALL(DIRECTORY animations/ DESTINATION share/vegastrike/animations
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY bases/ DESTINATION share/vegastrike/bases
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY bases/ DESTINATION share/vegastrike/bases)
 
-INSTALL(DIRECTORY cgi-accountserver/ DESTINATION share/vegastrike/cgi-accountserver
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY cgi-accountserver/ DESTINATION share/vegastrike/cgi-accountserver)
 
 INSTALL(DIRECTORY cockpits/ DESTINATION share/vegastrike/cockpits
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY communications/ DESTINATION share/vegastrike/communications
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY communications/ DESTINATION share/vegastrike/communications)
 
-INSTALL(DIRECTORY documentation/ DESTINATION share/vegastrike/documentation
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY documentation/ DESTINATION share/vegastrike/documentation)
 
-INSTALL(DIRECTORY history/ DESTINATION share/vegastrike/history
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY history/ DESTINATION share/vegastrike/history)
 
 INSTALL(DIRECTORY meshes/ DESTINATION share/vegastrike/meshes
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY mission/ DESTINATION share/vegastrike/mission
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY mission/ DESTINATION share/vegastrike/mission)
 
-INSTALL(DIRECTORY modules/ DESTINATION share/vegastrike/modules
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY modules/ DESTINATION share/vegastrike/modules)
 
-INSTALL(DIRECTORY music/ DESTINATION share/vegastrike/music
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY music/ DESTINATION share/vegastrike/music)
 
-INSTALL(DIRECTORY programs/ DESTINATION share/vegastrike/programs
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY programs/ DESTINATION share/vegastrike/programs)
 
-INSTALL(DIRECTORY sectors/ DESTINATION share/vegastrike/sectors
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY sectors/ DESTINATION share/vegastrike/sectors)
 
 INSTALL(DIRECTORY sounds/ DESTINATION share/vegastrike/sounds
         PATTERN "*.am" EXCLUDE)
@@ -75,8 +81,7 @@ INSTALL(DIRECTORY sounds/ DESTINATION share/vegastrike/sounds
 INSTALL(DIRECTORY sprites/ DESTINATION share/vegastrike/sprites
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY techniques/ DESTINATION share/vegastrike/techniques
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY techniques/ DESTINATION share/vegastrike/techniques)
 
 INSTALL(DIRECTORY textures/ DESTINATION share/vegastrike/textures
         PATTERN "*.am" EXCLUDE)
@@ -84,8 +89,7 @@ INSTALL(DIRECTORY textures/ DESTINATION share/vegastrike/textures
 INSTALL(DIRECTORY units/ DESTINATION share/vegastrike/units
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY universe/ DESTINATION share/vegastrike/universe
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY universe/ DESTINATION share/vegastrike/universe)
 
 INSTALL(FILES New_Game DESTINATION share/vegastrike)
 
@@ -135,11 +139,10 @@ SET(CPACK_PACKAGE_VENDOR "Vega Strike")
 SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/documentation/readme.txt")
 SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/vega-license.txt")
 SET(CPACK_PACKAGE_VERSION_MAJOR "0")
-SET(CPACK_PACKAGE_VERSION_MINOR "7")
+SET(CPACK_PACKAGE_VERSION_MINOR "9")
 SET(CPACK_PACKAGE_VERSION_PATCH "0")
 SET(CPACK_PACKAGE_INSTALL_DIRECTORY "vsUTCS-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}")
 SET(CPACK_CONTACT "maintainers@vega-strike.org")
-SET(CPACK_SOURCE_IGNORE_FILES "/build/;/packages/;/.git/;.*\.pyc;.*\.am")
 
 # Source package filename
 IF (DEFINED ENV{TAG_NAME})

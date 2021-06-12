@@ -1,5 +1,7 @@
 .git/
 .github/
+.vs/
+.vscode/
 build/
 packages/
 .gitignore
