@@ -29,6 +29,10 @@ jobs:
             COMPILER: 'clang'
             FLAGS:    '-DUSE_PYTHON_3=ON'
             ARTIFACT_EXT: 'rpm'
+          - FROM:     'fedora:34'
+            COMPILER: 'clang'
+            FLAGS:    '-DUSE_PYTHON_3=ON'
+            ARTIFACT_EXT: 'rpm'
           - FROM:     'fedora:33'
             COMPILER: 'clang'
             FLAGS:    '-DUSE_PYTHON_3=ON'
@@ -37,10 +41,10 @@ jobs:
             COMPILER: 'clang'
             FLAGS:    '-DUSE_PYTHON_3=ON'
             ARTIFACT_EXT: 'rpm'
-          # - FROM:     'centos:8'
-          #   COMPILER: 'clang'
-          #   FLAGS:    '-DUSE_PYTHON_3=ON'
-          #   ARTIFACT_EXT: 'rpm'
+          - FROM:     'rockylinux/rockylinux'
+            COMPILER: 'clang'
+            FLAGS:    '-DUSE_PYTHON_3=ON'
+            ARTIFACT_EXT: 'rpm'
 
     steps:
     - name: Checkout repository
