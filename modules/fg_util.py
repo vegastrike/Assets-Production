@@ -71,9 +71,14 @@ genericalphabet=['Alpha','Beta','Gamma','Delta','Epsilon','Zeta','Phi','Omega']
 def ReadBaseNameList(faction):
     bnl=[]
     debug.debug('reading base names %s', faction)
-    filename = 'universe/fgnames/'+faction+'.txt'
-    names = [filename, '../'+filename, 'universe/fgnames/names.txt',
-             '../universe/names.txt', 'universe/names.txt']
+    filename = os.path.join('universe', 'fgnames', faction + '.txt')
+    names = [
+             filename,
+             os.path.join('..', filename),
+             os.path.join('universe', 'fgnames', 'names.txt'),
+             os.path.join('..', 'universe', 'names.txt'),
+             os.path.join('universe', 'names.txt')
+            ]
     for name in names:
         try:
             with open (name,'r') as f:
