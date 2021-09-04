@@ -73,9 +73,13 @@ def ReadBaseNameList(faction):
     bnl=[]
     debug.debug('reading base names %s', faction)
     filename = os.path.join('universe', 'fgnames', faction + '.txt')
+    base_faction = faction.replace('_citizen', '').replace('_guild', '').replace('_briin', '').replace('n_merchant_marine', '')
+    base_filename = os.path.join('universe', 'fgnames', base_faction + '.txt')
     names = [
              filename,
-             os.path.join('..', filename),
+             base_filename,
+             os.path.join('../', filename),
+             os.path.join('../', base_filename),
              os.path.join('universe', 'fgnames', 'names.txt'),
              os.path.join('..', 'universe', 'names.txt'),
              os.path.join('universe', 'names.txt')
