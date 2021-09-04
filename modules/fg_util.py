@@ -1,6 +1,7 @@
 #WARNING THIS FILE HAS A MIRROR FILE IN C++ FOR SIMILAR ACCESS...
 #SO THAT C++ CAN LEARN ABOUT THE DYNAMIC UNIVERSE SHIPS
 #
+import os
 import Director
 import VS
 import vsrandom
