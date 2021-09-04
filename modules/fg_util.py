@@ -86,7 +86,7 @@ def ReadBaseNameList(faction):
             ]
     for name in names:
         try:
-            with open (name,'r') as f:
+            with open (name,'r', encoding='utf8') as f:
                 bnl = f.readlines()
             break
         except OSError:
