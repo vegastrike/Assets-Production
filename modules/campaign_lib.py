@@ -358,7 +358,7 @@ class AddCargo(Script):
             debug.debug("Successfully added "+str(numsofar))
             numadded=0
             if (numsofar<self.cargnum):
-                rang=list[list(range(you.numCargo()))]
+                rang=list(range(you.numCargo()))
                 rang.reverse()
                 for i in rang:
                     karg=you.GetCargoIndex(i)
