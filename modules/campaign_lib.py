@@ -358,9 +358,7 @@ class AddCargo(Script):
             debug.debug("Successfully added "+str(numsofar))
             numadded=0
             if (numsofar<self.cargnum):
-                rang=list[list(range(you.numCargo()))]
-                rang.reverse()
-                for i in rang:
+                for i in range(you.numCargo() - 1, -1, -1):
                     karg=you.GetCargoIndex(i)
                     if (not karg.GetMissionFlag()):
                         if (karg.GetCategory().find("upgrades")==-1):
