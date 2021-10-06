@@ -354,6 +354,32 @@ class GUIRoot:
         self.needRedraw = {}
         self.modalElement = None
         self.keyTarget = None
+
+        hasVersion = hasattr(VS, 'EngineVersion')
+        # get the engine version tuple in a displayable format
+        # if it needs to be compared, then use the original tuple version
+        ev = (
+            VS.EngineVersion().GetVersion()
+            if hasVersion
+            else (0, 7, 0, 'unknown') # 0.7.x was the last version without this API
+        )
+        engineVersion = '.'.join(
+            [
+                str(i)
+                for i in ev
+            ]
+        )
+
+        apiVersion = (
+            VS.EngineVersion().GetAssetAPIVersion()
+            if hasVersion
+            else 0
+        )
+
+        trace(TRACE_WARNING, "::: What's in VS object %s :::" %(dir(VS)))
+        trace(TRACE_WARNING, "::: Engine Version {0} :::".format(engineVersion))
+        trace(TRACE_WARNING, "::: Asset API Version {0} :::".format(apiVersion))
+
         Base.GlobalKeyPython('#\nfrom GUI import GUIRootSingleton\nGUIRootSingleton.keyEvent()\n')
 
     def setScreenDimensions(self,screenX,screenY):
