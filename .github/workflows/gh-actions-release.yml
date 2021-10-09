@@ -17,33 +17,17 @@ jobs:
         include:
           # Source tarballs only
           - FROM:     'ubuntu:focal'
-            COMPILER: 'clang'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
             ARTIFACT_EXT: 'tar.[xb]z*'
           # only build one Deb File b/c they're so large
-          - FROM:     'debian:stretch'
-            COMPILER: 'gcc'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
+          - FROM:     'debian:buster'
             ARTIFACT_EXT: 'deb'
           - FROM:     'opensuse/leap'
-            COMPILER: 'clang'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
             ARTIFACT_EXT: 'rpm'
           - FROM:     'fedora:34'
-            COMPILER: 'clang'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
             ARTIFACT_EXT: 'rpm'
           - FROM:     'fedora:33'
-            COMPILER: 'clang'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
-            ARTIFACT_EXT: 'rpm'
-          - FROM:     'fedora:32'
-            COMPILER: 'clang'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
             ARTIFACT_EXT: 'rpm'
           - FROM:     'rockylinux/rockylinux'
-            COMPILER: 'clang'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
             ARTIFACT_EXT: 'rpm'
 
     steps:
@@ -68,8 +52,8 @@ jobs:
     - name: Run CI
       env:
         FROM:       ${{ matrix.FROM }}
-        COMPILER:   ${{ matrix.COMPILER }}
-        FLAGS:      ${{ matrix.FLAGS }}
+        COMPILER:   'clang'
+        FLAGS:      ''
         MY_OS_NAME: linux
         IS_RELEASE: 1
       run: script/cibuild $FLAGS
