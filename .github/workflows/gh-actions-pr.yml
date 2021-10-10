@@ -12,42 +12,11 @@ jobs:
       matrix:
         include:
           # only do one Deb file because they're so large
-          #- FROM:     'ubuntu:focal'
-          #  COMPILER: 'gcc'
-          #  FLAGS:    '-DUSE_PYTHON_3=ON'
-          #- FROM:     'ubuntu:focal'
-          #  COMPILER: 'clang'
-          #  FLAGS:    '-DUSE_PYTHON_3=ON'
-          #- FROM:     'ubuntu:bionic'
-          #  COMPILER: 'gcc'
-          #  FLAGS:    '-DUSE_PYTHON_3=ON'
-          #- FROM:     'ubuntu:bionic'
-          #  COMPILER: 'clang'
-          #  FLAGS:    '-DUSE_PYTHON_3=ON'
-          #- FROM:     'ubuntu:xenial'
-          #  COMPILER: 'gcc'
-          #  FLAGS:    '-DUSE_PYTHON_3=ON'
-          #- FROM:     'debian:buster'
-          #  COMPILER: 'clang'
-          #  FLAGS:    '-DUSE_PYTHON_3=ON'
-          - FROM:     'debian:stretch'
-            COMPILER: 'gcc'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
+          - FROM:     'debian:buster'
           - FROM:     'opensuse/leap'
-            COMPILER: 'clang'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
           - FROM:     'fedora:34'
-            COMPILER: 'clang'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
           - FROM:     'fedora:33'
-            COMPILER: 'clang'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
-          - FROM:     'fedora:32'
-            COMPILER: 'clang'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
           - FROM:     'rockylinux/rockylinux'
-            COMPILER: 'clang'
-            FLAGS:    '-DUSE_PYTHON_3=ON'
 
     steps:
     - name: Checkout repository
@@ -65,8 +34,8 @@ jobs:
     - name: Run CI
       env:
         FROM:       ${{ matrix.FROM }}
-        COMPILER:   ${{ matrix.COMPILER }}
-        FLAGS:      ${{ matrix.FLAGS }}
+        COMPILER:   'clang'
+        FLAGS:      ''
         MY_OS_NAME: linux
         IS_RELEASE: 0
       run: script/cibuild $FLAGS
