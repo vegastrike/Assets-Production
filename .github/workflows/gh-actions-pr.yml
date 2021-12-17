@@ -14,8 +14,8 @@ jobs:
           # only do one Deb file because they're so large
           - FROM:     'debian:buster'
           - FROM:     'opensuse/leap'
+          - FROM:     'fedora:35'
           - FROM:     'fedora:34'
-          - FROM:     'fedora:33'
           - FROM:     'rockylinux/rockylinux'
 
     steps:
