@@ -43,6 +43,9 @@ PROJECT(vsUTCS
         "${vsUTCS_VERSION_MAJOR}.${vsUTCS_VERSION_MINOR}.${vsUTCS_VERSION_PATCH}"   #.${vsUTCS_VERSION_TWEAK}   # CMake only allows numeric version components, unfortunately.
 )
 
+# Let cmake find our in-tree modules
+SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${vsUTCS_SOURCE_DIR})
+
 # Detect available Linux Distros that can be built for
 FIND_PACKAGE(LinuxDistro REQUIRED)
 
@@ -216,7 +219,7 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
         SET(CPACK_DEBIAN_PACKAGE_SECTION "Amusements/Games")
         SET(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://www.vega-strike.org")
         SET(CPACK_GENERATOR "DEB")
-    ENDIF (HAS_APT)
+    ENDIF ()
 
     #  "RPM"
     IF (VS_CAN_BUILD_RPM)
@@ -236,7 +239,7 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
 
         SET(CPACK_PACKAGE_FILE_NAME "${CPACK_RPM_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-${LINUX_ID}-${vsUTCS_LINUX_VERSION_STR}")
         SET(CPACK_GENERATOR "RPM")
-    ENDIF (HAS_RPMBUILD)
+    ENDIF ()
 ELSE (WIN32 AND NOT UNIX)
     MESSAGE("-- Configuring Packaging for Unknown Platforms - \"${CMAKE_SYSTEM_NAME}\"")
     # Unknown Platform --> Just do compressed tarball
