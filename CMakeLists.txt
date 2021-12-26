@@ -43,6 +43,9 @@ PROJECT(vsUTCS
         "${vsUTCS_VERSION_MAJOR}.${vsUTCS_VERSION_MINOR}.${vsUTCS_VERSION_PATCH}"   #.${vsUTCS_VERSION_TWEAK}   # CMake only allows numeric version components, unfortunately.
 )
 
+# Detect available Linux Distros that can be built for
+FIND_PACKAGE(LinuxDistro REQUIRED)
+
 SET(CPACK_IGNORE_FILES
     build/
     packages/
@@ -199,62 +202,14 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
     MESSAGE("-- Configuring Packaging for Linux")
     SET(CPACK_GENERATOR "TXZ")
 
-    # Gather info about Linux distro and release (if applicable).
-    IF (CMAKE_SYSTEM_NAME STREQUAL Linux)
-        EXECUTE_PROCESS(
-            COMMAND sh -c "cat /etc/os-release | grep ^ID= | sed 's/^ID=//' | tr -d '\"\n'"
-            OUTPUT_VARIABLE LINUX_ID)
-        EXECUTE_PROCESS(
-            COMMAND sh -c "cat /etc/os-release | grep ^VERSION_CODENAME= | sed 's/^VERSION_CODENAME=//' | tr -d '\"\n'"
-             OUTPUT_VARIABLE LINUX_CODENAME)
-        EXECUTE_PROCESS(
-            COMMAND sh -c "cat /etc/os-release | grep ^VERSION_ID= | sed 's/^VERSION_ID=//' | tr -d '\"\n'"
-            OUTPUT_VARIABLE LINUX_VERSION_ID)
-    ENDIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
-
-    # SET(LSB_EXISTS FALSE)
-    # SET(LSB_LINUX_DISTRIBUTION "Unknown")
-    # SET(LSB_LINUX_DISTRIBUTION_CODENAME "Unknown")
-
-    # # Lookup the LSB Data - this is known for Ubuntu, but also used by other distros too.
-    # # and may help with distro-sub-selection
-    # FIND_PROGRAM(LSB_RELEASE_EXEC lsb_release)
-    # IF (LSB_RELEASE_EXEC)
-    #     EXECUTE_PROCESS(COMMAND ${LSB_RELEASE_EXEC} --codename --short
-    #         OUTPUT_VARIABLE LSB_LINUX_DISTRIBUTION_CODENAME
-    #         OUTPUT_STRIP_TRAILING_WHITESPACE)
-    #     EXECUTE_PROCESS(COMMAND ${LSB_RELEASE_EXEC} --id --short
-    #         OUTPUT_VARIABLE LSB_LINUX_DISTRIBUTION
-    #         OUTPUT_STRIP_TRAILING_WHITESPACE)
-    #     SET(LSB_EXISTS TRUE)
-    #     MESSAGE("Found Linux Distribution Release Name: ${LSB_LINUX_DISTRIBUTION_CODENAME}")
-    # ENDIF (LSB_RELEASE_EXEC)
-
     # "DEB"
-    FIND_PROGRAM(HAS_APT NAMES apt-get apt)
-    IF (HAS_APT)
+    IF (VS_CAN_BUILD_DEB)
         MESSAGE("-- Configuring Debian Packaging")
         # See https://cmake.org/cmake/help/v3.3/module/CPackDeb.html
         SET(CPACK_DEBIAN_PACKAGE_NAME "vsUTCS")
         SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "maintainers@vega-strike.org")
         SET(CPACK_DEBIAN_COMPRESSION_TYPE "bzip2")
         SET(CPACK_DEBIAN_PACKAGE_DEPENDS "vega-strike")
-
-        # Debian Version: /etc/debian_version - <name>/<junk>
-        # IF (NOT LSB_EXISTS)
-        #     SET(USE_DEBIAN_VERSION TRUE)
-        #     FILE(READ "/etc/debian_version" DEBIAN_VERSION_DATA)
-        #     STRING(REGEX MATCH "^(.+)\/.*$" DEBIAN_VERSION_DATA DEBIAN_RELEASE_VERSION)
-        # ELSE (NOT LSB_EXISTS)
-        #     SET(USE_DEBIAN_VERSION FALSE)
-        #     SET(DEBIAN_RELEASE_VERSION "Debian Derivative Release Version ${LSB_LINUX_DISTRIBUTION_CODENAME}")
-        # ENDIF (NOT LSB_EXISTS)
-
-        # IF (USE_DEBIAN_VERSION)
-        #     SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-debian-${DEBIAN_RELEASE_VERSION}_x86_64")
-        # ELSE (USE_DEBIAN_VERSION)
-        #     SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-${LSB_LINUX_DISTRIBUTION}-${LSB_LINUX_DISTRIBUTION_CODENAME}_x86_64")
-        # ENDIF (USE_DEBIAN_VERSION)
 
         SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}")
 
@@ -264,8 +219,7 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
     ENDIF (HAS_APT)
 
     #  "RPM"
-    FIND_PROGRAM(HAS_RPMBUILD rpmbuild)
-    IF (HAS_RPMBUILD)
+    IF (VS_CAN_BUILD_RPM)
         MESSAGE("-- Configuring RPM Packaging")
         # See https://cmake.org/cmake/help/v3.3/module/CPackRPM.html
         SET(CPACK_RPM_PACKAGE_LICENSE "GPLv3") # See ../LICENSE
