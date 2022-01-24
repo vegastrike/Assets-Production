@@ -31,7 +31,7 @@ then
     DST_DOCKER_IMG_NAME="building-vsutcs:$(echo $FROM | sed 's/:/_/' | sed 's/\//_/')"
     DOCKER_CONTAINER_NAME="building-vsutcs_$(echo $FROM | sed 's/:/_/' | sed 's/\//_/')"
     docker build --build-arg from=$SRC_DOCKER_IMG_NAME -t $DST_DOCKER_IMG_NAME .
-    docker run --env IS_RELEASE=$IS_RELEASE --env TAG_NAME=$TAG_NAME --env GITHUB_SHA=$GITHUB_SHA --env SHORT_SHA=$SHORT_SHA --env FLAGS=$FLAGS --name $DOCKER_CONTAINER_NAME $DST_DOCKER_IMG_NAME $FLAGS
+    docker run --env IS_RELEASE=$IS_RELEASE --env TAG_NAME=$TAG_NAME --env GITHUB_SHA=$GITHUB_SHA --env SHORT_SHA=$SHORT_SHA --env FLAGS="${FLAGS}" --name $DOCKER_CONTAINER_NAME $DST_DOCKER_IMG_NAME
     if [ $IS_RELEASE -eq 1 ]
     then
         docker cp $DOCKER_CONTAINER_NAME:/usr/src/vsUTCS/packages .
