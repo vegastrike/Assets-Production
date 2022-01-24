@@ -11,7 +11,7 @@
 # https://github.com/Taose/Vegastrike-taose/wiki/How-to-Build
 #====================================
 
-# Copyright (C) 2020 Stephen G. Tuggy and other vsUTCS contributors
+# Copyright (C) 2020-2022 Stephen G. Tuggy and other vsUTCS contributors
 #
 # This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
 #
@@ -32,7 +32,7 @@
 set -e
 
 echo "--------------------------"
-echo "--- build | 2020-08-23 ---"
+echo "--- build | 2022-01-23 ---"
 echo "--------------------------"
 
 #----------------------------------
@@ -40,20 +40,31 @@ echo "--------------------------"
 #----------------------------------
 
 ROOT_DIR=$(pwd)
-BUILD_DIR=$ROOT_DIR/build
-SRC_DIR=$ROOT_DIR
+BUILD_DIR="${ROOT_DIR}/build"
+BIN_DIR="${ROOT_DIR}/bin"
+SRC_DIR="${ROOT_DIR}/engine"
 COMMAND=""
 
-# -p creates if the target doesn't exist, noop otherwise
-mkdir -pv $BUILD_DIR && cd $BUILD_DIR
+echo "ROOT_DIR: ${ROOT_DIR}"
+echo "BUILD_DIR: ${BUILD_DIR}"
 
-cmake $@ $SRC_DIR
+# -p creates if the target doesn't exist, noop otherwise
+mkdir -pv "${BUILD_DIR}" && cd "${BUILD_DIR}"
+
+cmake $@ "${SRC_DIR}"
 
 # for a clean build only
 # mut we can do it manually
 #make clean
 
 # compile now using all cpus and show compilation commands
-make -j $(nproc) VERBOSE=1
+# MAX_THREADS_TO_BUILD_WITH=8
+NUM_THREADS_TO_BUILD_WITH=$(getconf _NPROCESSORS_ONLN)
+# if [ ${NUM_THREADS_TO_BUILD_WITH} -gt ${MAX_THREADS_TO_BUILD_WITH} ]
+# then
+#     NUM_THREADS_TO_BUILD_WITH=${MAX_THREADS_TO_BUILD_WITH}
+# fi
 
-cd $ROOT_DIR
+VERBOSE=1 cmake --build "${BUILD_DIR}" -j $NUM_THREADS_TO_BUILD_WITH
+
+cd "${ROOT_DIR}"
