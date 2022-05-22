@@ -21,11 +21,52 @@
 # along with vsUTCS.  If not, see <https://www.gnu.org/licenses/>.
 
 
-CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
-PROJECT(vsUTCS)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.5 FATAL_ERROR)
 
-INSTALL(DIRECTORY .vegastrike/ DESTINATION share/vegastrike/.vegastrike
-        PATTERN "*.am" EXCLUDE)
+SET(vsUTCS_VERSION_MAJOR "0")
+SET(vsUTCS_VERSION_MINOR "9")
+SET(vsUTCS_VERSION_PATCH "0")
+# Auto-populate with the git hash of the build
+IF (DEFINED ENV{GITHUB_SHA} AND NOT "$ENV{GITHUB_SHA}" STREQUAL "")
+    SET (vsUTCS_VERSION_TWEAK "$ENV{GITHUB_SHA}")
+ELSE ()
+    EXECUTE_PROCESS(
+        COMMAND git rev-parse --short HEAD
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        OUTPUT_VARIABLE vsUTCS_VERSION_TWEAK
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+ENDIF ()
+
+PROJECT(vsUTCS
+    VERSION
+        "${vsUTCS_VERSION_MAJOR}.${vsUTCS_VERSION_MINOR}.${vsUTCS_VERSION_PATCH}"   #.${vsUTCS_VERSION_TWEAK}   # CMake only allows numeric version components, unfortunately.
+)
+
+# Let cmake find our in-tree modules
+SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${vsUTCS_SOURCE_DIR})
+
+# Detect available Linux Distros that can be built for
+FIND_PACKAGE(LinuxDistro REQUIRED)
+
+SET(CPACK_IGNORE_FILES
+    build/
+    packages/
+    \\\\.git/
+    \\\\.vs/
+    \\\\.vscode/
+    ".*\\\\.pyc"
+)
+SET(CPACK_SOURCE_IGNORE_FILES
+    build/
+    packages/
+    \\\\.git/
+    \\\\.vs/
+    \\\\.vscode/
+    ".*\\\\.pyc"
+)
+
+INSTALL(DIRECTORY .vegastrike/ DESTINATION share/vegastrike/.vegastrike)
 
 INSTALL(DIRECTORY ai/ DESTINATION share/vegastrike/ai
         PATTERN "*.am" EXCLUDE)
@@ -33,41 +74,31 @@ INSTALL(DIRECTORY ai/ DESTINATION share/vegastrike/ai
 INSTALL(DIRECTORY animations/ DESTINATION share/vegastrike/animations
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY bases/ DESTINATION share/vegastrike/bases
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY bases/ DESTINATION share/vegastrike/bases)
 
-INSTALL(DIRECTORY cgi-accountserver/ DESTINATION share/vegastrike/cgi-accountserver
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY cgi-accountserver/ DESTINATION share/vegastrike/cgi-accountserver)
 
 INSTALL(DIRECTORY cockpits/ DESTINATION share/vegastrike/cockpits
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY communications/ DESTINATION share/vegastrike/communications
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY communications/ DESTINATION share/vegastrike/communications)
 
-INSTALL(DIRECTORY documentation/ DESTINATION share/vegastrike/documentation
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY documentation/ DESTINATION share/vegastrike/documentation)
 
-INSTALL(DIRECTORY history/ DESTINATION share/vegastrike/history
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY history/ DESTINATION share/vegastrike/history)
 
 INSTALL(DIRECTORY meshes/ DESTINATION share/vegastrike/meshes
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY mission/ DESTINATION share/vegastrike/mission
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY mission/ DESTINATION share/vegastrike/mission)
 
-INSTALL(DIRECTORY modules/ DESTINATION share/vegastrike/modules
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY modules/ DESTINATION share/vegastrike/modules)
 
-INSTALL(DIRECTORY music/ DESTINATION share/vegastrike/music
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY music/ DESTINATION share/vegastrike/music)
 
-INSTALL(DIRECTORY programs/ DESTINATION share/vegastrike/programs
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY programs/ DESTINATION share/vegastrike/programs)
 
-INSTALL(DIRECTORY sectors/ DESTINATION share/vegastrike/sectors
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY sectors/ DESTINATION share/vegastrike/sectors)
 
 INSTALL(DIRECTORY sounds/ DESTINATION share/vegastrike/sounds
         PATTERN "*.am" EXCLUDE)
@@ -75,8 +106,7 @@ INSTALL(DIRECTORY sounds/ DESTINATION share/vegastrike/sounds
 INSTALL(DIRECTORY sprites/ DESTINATION share/vegastrike/sprites
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY techniques/ DESTINATION share/vegastrike/techniques
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY techniques/ DESTINATION share/vegastrike/techniques)
 
 INSTALL(DIRECTORY textures/ DESTINATION share/vegastrike/textures
         PATTERN "*.am" EXCLUDE)
@@ -84,8 +114,7 @@ INSTALL(DIRECTORY textures/ DESTINATION share/vegastrike/textures
 INSTALL(DIRECTORY units/ DESTINATION share/vegastrike/units
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY universe/ DESTINATION share/vegastrike/universe
-        PATTERN "*.am" EXCLUDE)
+INSTALL(DIRECTORY universe/ DESTINATION share/vegastrike/universe)
 
 INSTALL(FILES New_Game DESTINATION share/vegastrike)
 
@@ -134,18 +163,17 @@ SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "3D space combat and trading game")
 SET(CPACK_PACKAGE_VENDOR "Vega Strike")
 SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/documentation/readme.txt")
 SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/vega-license.txt")
-SET(CPACK_PACKAGE_VERSION_MAJOR "0")
-SET(CPACK_PACKAGE_VERSION_MINOR "7")
-SET(CPACK_PACKAGE_VERSION_PATCH "0")
+SET(CPACK_PACKAGE_VERSION_MAJOR "${vsUTCS_VERSION_MAJOR}")
+SET(CPACK_PACKAGE_VERSION_MINOR "${vsUTCS_VERSION_MINOR}")
+SET(CPACK_PACKAGE_VERSION_PATCH "${vsUTCS_VERSION_PATCH}")
 SET(CPACK_PACKAGE_INSTALL_DIRECTORY "vsUTCS-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}")
 SET(CPACK_CONTACT "maintainers@vega-strike.org")
-SET(CPACK_SOURCE_IGNORE_FILES "/build/;/packages/;/.git/;.*\.pyc;.*\.am")
 
 # Source package filename
 IF (DEFINED ENV{TAG_NAME})
     SET(vsUTCS_PACKAGE_VERSION_STR "$ENV{TAG_NAME}")
 ELSE (DEFINED ENV{TAG_NAME})
-    SET(vsUTCS_PACKAGE_VERSION_STR "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
+    SET(vsUTCS_PACKAGE_VERSION_STR "${vsUTCS_VERSION_MAJOR}.${vsUTCS_VERSION_MINOR}.${vsUTCS_VERSION_PATCH}-0.${vsUTCS_VERSION_TWEAK}")
 ENDIF (DEFINED ENV{TAG_NAME})
 SET(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-Source")
 SET(CPACK_SOURCE_GENERATOR "TXZ")
@@ -177,40 +205,8 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
     MESSAGE("-- Configuring Packaging for Linux")
     SET(CPACK_GENERATOR "TXZ")
 
-    # Gather info about Linux distro and release (if applicable).
-    IF (CMAKE_SYSTEM_NAME STREQUAL Linux)
-        EXECUTE_PROCESS(
-            COMMAND sh -c "cat /etc/os-release | grep ^ID= | sed 's/^ID=//' | tr -d '\"\n'"
-            OUTPUT_VARIABLE LINUX_ID)
-        EXECUTE_PROCESS(
-            COMMAND sh -c "cat /etc/os-release | grep ^VERSION_CODENAME= | sed 's/^VERSION_CODENAME=//' | tr -d '\"\n'"
-             OUTPUT_VARIABLE LINUX_CODENAME)
-        EXECUTE_PROCESS(
-            COMMAND sh -c "cat /etc/os-release | grep ^VERSION_ID= | sed 's/^VERSION_ID=//' | tr -d '\"\n'"
-            OUTPUT_VARIABLE LINUX_VERSION_ID)
-    ENDIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
-
-    # SET(LSB_EXISTS FALSE)
-    # SET(LSB_LINUX_DISTRIBUTION "Unknown")
-    # SET(LSB_LINUX_DISTRIBUTION_CODENAME "Unknown")
-
-    # # Lookup the LSB Data - this is known for Ubuntu, but also used by other distros too.
-    # # and may help with distro-sub-selection
-    # FIND_PROGRAM(LSB_RELEASE_EXEC lsb_release)
-    # IF (LSB_RELEASE_EXEC)
-    #     EXECUTE_PROCESS(COMMAND ${LSB_RELEASE_EXEC} --codename --short
-    #         OUTPUT_VARIABLE LSB_LINUX_DISTRIBUTION_CODENAME
-    #         OUTPUT_STRIP_TRAILING_WHITESPACE)
-    #     EXECUTE_PROCESS(COMMAND ${LSB_RELEASE_EXEC} --id --short
-    #         OUTPUT_VARIABLE LSB_LINUX_DISTRIBUTION
-    #         OUTPUT_STRIP_TRAILING_WHITESPACE)
-    #     SET(LSB_EXISTS TRUE)
-    #     MESSAGE("Found Linux Distribution Release Name: ${LSB_LINUX_DISTRIBUTION_CODENAME}")
-    # ENDIF (LSB_RELEASE_EXEC)
-
     # "DEB"
-    FIND_PROGRAM(HAS_APT NAMES apt-get apt)
-    IF (HAS_APT)
+    IF (VS_CAN_BUILD_DEB)
         MESSAGE("-- Configuring Debian Packaging")
         # See https://cmake.org/cmake/help/v3.3/module/CPackDeb.html
         SET(CPACK_DEBIAN_PACKAGE_NAME "vsUTCS")
@@ -218,32 +214,15 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
         SET(CPACK_DEBIAN_COMPRESSION_TYPE "bzip2")
         SET(CPACK_DEBIAN_PACKAGE_DEPENDS "vega-strike")
 
-        # Debian Version: /etc/debian_version - <name>/<junk>
-        # IF (NOT LSB_EXISTS)
-        #     SET(USE_DEBIAN_VERSION TRUE)
-        #     FILE(READ "/etc/debian_version" DEBIAN_VERSION_DATA)
-        #     STRING(REGEX MATCH "^(.+)\/.*$" DEBIAN_VERSION_DATA DEBIAN_RELEASE_VERSION)
-        # ELSE (NOT LSB_EXISTS)
-        #     SET(USE_DEBIAN_VERSION FALSE)
-        #     SET(DEBIAN_RELEASE_VERSION "Debian Derivative Release Version ${LSB_LINUX_DISTRIBUTION_CODENAME}")
-        # ENDIF (NOT LSB_EXISTS)
-
-        # IF (USE_DEBIAN_VERSION)
-        #     SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-debian-${DEBIAN_RELEASE_VERSION}_x86_64")
-        # ELSE (USE_DEBIAN_VERSION)
-        #     SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-${LSB_LINUX_DISTRIBUTION}-${LSB_LINUX_DISTRIBUTION_CODENAME}_x86_64")
-        # ENDIF (USE_DEBIAN_VERSION)
-
         SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}")
 
         SET(CPACK_DEBIAN_PACKAGE_SECTION "Amusements/Games")
         SET(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://www.vega-strike.org")
         SET(CPACK_GENERATOR "DEB")
-    ENDIF (HAS_APT)
+    ENDIF ()
 
     #  "RPM"
-    FIND_PROGRAM(HAS_RPMBUILD rpmbuild)
-    IF (HAS_RPMBUILD)
+    IF (VS_CAN_BUILD_RPM)
         MESSAGE("-- Configuring RPM Packaging")
         # See https://cmake.org/cmake/help/v3.3/module/CPackRPM.html
         SET(CPACK_RPM_PACKAGE_LICENSE "GPLv3") # See ../LICENSE
@@ -260,7 +239,7 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
 
         SET(CPACK_PACKAGE_FILE_NAME "${CPACK_RPM_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-${LINUX_ID}-${vsUTCS_LINUX_VERSION_STR}")
         SET(CPACK_GENERATOR "RPM")
-    ENDIF (HAS_RPMBUILD)
+    ENDIF ()
 ELSE (WIN32 AND NOT UNIX)
     MESSAGE("-- Configuring Packaging for Unknown Platforms - \"${CMAKE_SYSTEM_NAME}\"")
     # Unknown Platform --> Just do compressed tarball
