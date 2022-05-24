@@ -1,0 +1,7 @@
+A brief guide on how to convert to JSON
+=======================================
+1. Open the CSV file in some kind of CSV editor (not a text editor).
+2. Search and replace all commas in the description with temporary, unused character. I used pipe. 
+3. Save the file.
+4. Run python3 parser.py
+5. (Optional) Open the units.json file in a text editor. Search and replace all pipes back to commas.
