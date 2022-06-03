@@ -21,7 +21,7 @@ class go_to_adjacent_systems:
         return self.jumps
 
     def ChangeObjective(self,newind):
-        if (self.jumps[-1]!=self.jumps[newind]):
+        if 0 <= newind < len(self.jumps) and (self.jumps[-1] != self.jumps[newind]):
             VS.setObjective(self.obj,"Jump to %s enroute to %s." % (formatSystemName(self.jumps[newind]),formatSystemName(self.jumps[-1])))
         else:
             VS.setObjective(self.obj,"Jump to final system: %s." % (formatSystemName(self.jumps[-1])))
@@ -56,7 +56,7 @@ class go_to_adjacent_systems:
         msgply=universe.getMessagePlayer(self.you)
         if (len(self.jumps)>0):
             VS.IOmessage(wait,fro,msgply,beginstr % (formatSystemName(VS.getSystemFile())))
-            for i in range(len(self.jumps)-1):
+            for i in range(1, len(self.jumps) - 1):
                 VS.IOmessage(wait,fro,msgply,midstr % (formatSystemName(self.jumps[i])))
             VS.IOmessage(wait,fro,msgply,endstr % (formatSystemName(self.jumps[len(self.jumps)-1])))
     def HaveArrived(self):
