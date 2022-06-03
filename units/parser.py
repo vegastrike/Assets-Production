@@ -1,3 +1,5 @@
+# Convert unit.csv to unit.json
+
 import random
 import json
 import sys
