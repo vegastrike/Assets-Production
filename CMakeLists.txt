@@ -2,7 +2,7 @@
 # @file   : CMakeLists.txt
 # @brief  : cmake configuration file for vsUTCS
 #====================================
-# Copyright (C) 2020-2021 Evert Vorster, Stephen G. Tuggy,
+# Copyright (C) 2020-2022 Evert Vorster, Stephen G. Tuggy, Roy Falk,
 # and other vsUTCS contributors.
 #
 # This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
@@ -133,7 +133,7 @@ INSTALL(FILES setup.config DESTINATION share/vegastrike)
 INSTALL(FILES vega-license.txt DESTINATION share/vegastrike)
 
 INSTALL(FILES weapon_list.xml DESTINATION share/vegastrike)
-
+INSTALL(FILES weapons.json DESTINATION share/vegastrike)
 
 # Linux specific locations from here on out.
 
