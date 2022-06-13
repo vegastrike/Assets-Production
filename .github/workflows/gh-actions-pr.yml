@@ -14,9 +14,11 @@ jobs:
           # only do one Deb file because they're so large
           - FROM:     'debian:buster'
           - FROM:     'opensuse/leap'
+          - FROM:     'fedora:36'
           - FROM:     'fedora:35'
           - FROM:     'fedora:34'
           - FROM:     'rockylinux/rockylinux'
+          - FROM:     'manjarolinux/base'
 
     steps:
     - name: Checkout repository
