@@ -23,6 +23,8 @@ jobs:
             ARTIFACT_EXT: 'deb'
           - FROM:     'opensuse/leap'
             ARTIFACT_EXT: 'rpm'
+          - FROM:     'fedora:36'
+            ARTIFACT_EXT: 'rpm'
           - FROM:     'fedora:35'
             ARTIFACT_EXT: 'rpm'
           - FROM:     'fedora:34'
