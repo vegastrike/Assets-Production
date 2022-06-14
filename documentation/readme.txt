@@ -2,15 +2,15 @@ NOTICE: This readme file is very likely to be out of date.
 For the latest manual, please check the Vega Strike Wiki:
 http://vegastrike.sourceforge.net/wiki/Manual
 
-=== VEGA STRIKE 0.8.0 - Upon the Coldest Sea ===
+=== VEGA STRIKE 0.8.1 - Upon the Coldest Sea ===
 
 README
 
 * 0) New Features*
 
-Shader Support 
+Shader Support
 
-*VS now supports normal maps 
+*VS now supports normal maps
 (@all artists: yet another chance to contribute -- most units still
  need normal maps)
 
@@ -130,7 +130,7 @@ hostile targets. They should not be difficult at this stage of the
 game, so they should be easy kills. Your initial sensor system,
 however, does not give an indication of presumed intent of the
 starships around you, so you must be cautious until you can
-afford a better one. 
+afford a better one.
 
 When you get near Ataraxia, press *alt-0* to request docking
 clearance. A number of green and red boxes should appear around. A box
@@ -531,11 +531,11 @@ You can use the following keys to switch between different views:
      background You may have to press F1 several times to get back to
      the cockpit. For the 0.5.1 release, only Rlaan and Aeran fighters
      currently have cockpit art.
-    
+
     * 2   left view
     * 3   right view
     * 4   backward view
-      
+
       the camera points either due left, right, or backwards with
       respect to the front of the vessel.
 
@@ -543,7 +543,7 @@ You can use the following keys to switch between different views:
 
       the camera is positioned directly behind your ship and follows
       it as it moves
-    
+
     *  6   pan
 
       the camera is positioned outside your ship, showing your ship if
@@ -551,13 +551,13 @@ You can use the following keys to switch between different views:
       will show different sides of the ship
 
     * 7   follow target
-      
-      shows your target as per follow 
-    
+
+      shows your target as per follow
+
     * 8   pan target
-      
-      shows target, as per pan 
-    
+
+      shows target, as per pan
+
     * 9  zoom in
     * 0  zoom out
 
@@ -583,7 +583,7 @@ There are the following instruments:
           scroll the list of messages up and down with pageup and
           pagedown keys
 
-    * The Radar is located in the bottom middle of the cockpit: 
+    * The Radar is located in the bottom middle of the cockpit:
 
       use the radar to have an overview about what's going on
           o friendly ships are green blips
@@ -594,7 +594,7 @@ There are the following instruments:
           o the currently targeted ship is painted twice as big as the
             other blips
 
-    * Shield Display 
+    * Shield Display
 
       shows your current shield status (front, back, left and right
       shields)
@@ -620,37 +620,37 @@ There are the following instruments:
       options; however certain starships have merely 1 VDU that has some
       of the features of both VDU's. Look forward to more cockpits in
       the future.
-       
+
     * the left VDU can be cycled between the following modes:
-       
-          o Weapons: show your selected weapons 
 
-          o   Hull: shows your hull status 
+          o Weapons: show your selected weapons
 
-          o   Shields: show your shield status 
+          o   Hull: shows your hull status
+
+          o   Shields: show your shield status
 
                 This your starships shield status in case the cockpit
       does not have view.
     *   the right VDU can be cycled between these modes:
-       
-          o Target status 
+
+          o Target status
 
             This display shows on top the targeted flightgroup
             (serpentine) and it's ship type (Areus)
             At the bottom you can see the distance to the target
             In the middle you see the shield status of the target
             The target's hull is unknown from external scans.
-          o   Navigation 
+          o   Navigation
 
             shows the name of the system (Wasteland), the target ship
             type, and the relative location of the target
-          o   various target camera modes 
+          o   various target camera modes
 
-       
+
 * 22) Troubleshooting*
 
 If you should encounter problems, then you should check these things:
-   
+
    - Always check if the setup utility has configured options to ones
      most closely matching your computer
 
@@ -685,12 +685,12 @@ Multiplayer currently has two modes:
  *** MMO (online multiplayer) style play
    This style will act like Single Player mode, but will allow you to
    interact with other players.
-   
+
    To connect to a server, click on Multiplayer, and in the Online
    Account mode, type in your username and password.
    Register an account at http://forums.vega-strike.org/
    and sign up for an account.
-   
+
    It is also in late alpha, so please report any bugs you find (we
    know they're there).  In addition, be aware that the servers may
    have significant downtime.  Do not be surprised if you get an error

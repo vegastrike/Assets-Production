@@ -48,7 +48,7 @@ def enterCredits(self,params):
     global plist_credits
     VS.musicPlayList(plist_credits)
 
-credits_title = """\t=== Vega Strike 0.8.0 ===
+credits_title = """\t=== Vega Strike 0.8.1 ===
 \t        ---Credits---"""
 
 credits_text_col1 = """
@@ -154,7 +154,7 @@ User patience
 #CCCCff... and any we forgot to mention :)
 """
 
-intro_title = """\t=== Vega Strike 0.8.0 ===
+intro_title = """\t=== Vega Strike 0.8.1 ===
 \t ---Intro Monologue---
 """
 
