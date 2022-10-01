@@ -95,11 +95,33 @@ with open("units.csv", "r") as units_file:
             parseLine(line)
         
         line_num +=1
-       
+     
+# Merge unit_description
+with open("units_description.csv") as description_file:
+    lines = description_file.readlines()
+    for line in lines:
+        descriptions = line.split(',',1)
+        if len(descriptions)<2:
+            continue
+        
+        found = False
+        for unit in units:
+            if unit['Key'].lower() == descriptions[0].lower():
+                unit['Textual_Description'] = descriptions[1]
+                found = True
+                print(f"Found {descriptions[0]}. Merged.")
+                break
+        
+        if not found:
+            unit = {'Key': descriptions[0], 'Textual_Description': descriptions[1]}
+            units.append(unit)
+            print(f"Not found {descriptions[0]}. Adding...")
+     
+     
 json_object = json.dumps(units, indent = 4)
 with open("units.json", "w") as json_file:
     json_file.write(json_object)
-print(json_object)
+#print(json_object)
               
               
  
