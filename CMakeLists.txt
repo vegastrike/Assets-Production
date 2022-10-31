@@ -122,6 +122,9 @@ INSTALL(FILES Version.txt DESTINATION share/vegastrike)
 
 INSTALL(FILES factions.xml DESTINATION share/vegastrike)
 
+INSTALL(FILES units.json DESTINATION share/vegastrike)
+INSTALL(FILES ships.json DESTINATION share/vegastrike)
+
 INSTALL(FILES master_part_list.csv DESTINATION share/vegastrike)
 INSTALL(FILES master_part_list.json DESTINATION share/vegastrike)
 
