@@ -1,0 +1,66 @@
+[
+    {
+        "file": "small_asteroid0",
+        "categoryname": "Fragments",
+        "price": "0",
+        "mass": "100",
+        "volume": "1000",
+        "description": "@cargo/gems.image@A chunk of asteroid. Can be mined for ore if further shot upon."
+    },
+    {
+        "file": "small_asteroid1",
+        "categoryname": "Fragments",
+        "price": "0",
+        "mass": "100",
+        "volume": "1000",
+        "description": "@cargo/gems.image@A chunk of asteroid. Can be mined for ore if further shot upon."
+    },
+    {
+        "file": "small_asteroid2",
+        "categoryname": "Fragments",
+        "price": "0",
+        "mass": "100",
+        "volume": "1000",
+        "description": "@cargo/gems.image@A chunk of asteroid. Can be mined for ore if further shot upon."
+    },
+    {
+        "file": "small_asteroid3",
+        "categoryname": "Fragments",
+        "price": "0",
+        "mass": "100",
+        "volume": "1000",
+        "description": "@cargo/gems.image@A chunk of asteroid. Can be mined for ore if further shot upon."
+    },
+    {
+        "file": "small_asteroid4",
+        "categoryname": "Fragments",
+        "price": "0",
+        "mass": "100",
+        "volume": "1000",
+        "description": "@cargo/gems.image@A chunk of asteroid. Can be mined for ore if further shot upon."
+    },
+    {
+        "file": "small_asteroid5",
+        "categoryname": "Fragments",
+        "price": "0",
+        "mass": "100",
+        "volume": "1000",
+        "description": "@cargo/gems.image@A chunk of asteroid. Can be mined for ore if further shot upon."
+    },
+    {
+        "file": "small_asteroid6",
+        "categoryname": "Fragments",
+        "price": "0",
+        "mass": "100",
+        "volume": "1000",
+        "description": "@cargo/gems.image@A chunk of asteroid. Can be mined for ore if further shot upon."
+    },
+    {
+        "file": "small_asteroid7",
+        "categoryname": "Fragments",
+        "price": "0",
+        "mass": "100",
+        "volume": "1000",
+        "description": "@cargo/gems.image@A chunk of asteroid. Can be mined for ore if further shot upon."
+    }
+]
