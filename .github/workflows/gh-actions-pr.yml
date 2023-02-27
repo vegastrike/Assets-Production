@@ -13,19 +13,21 @@ jobs:
         include:
           # only do one Deb file because they're so large
           - FROM:     'debian:buster'
-          - FROM:     'opensuse/leap'
+          - FROM:     'opensuse/leap:15.4'
+          - FROM:     'opensuse/leap:15.3'
+          - FROM:     'opensuse/leap:15.2'
+          - FROM:     'fedora:37'
           - FROM:     'fedora:36'
           - FROM:     'fedora:35'
-          - FROM:     'fedora:34'
-          - FROM:     'rockylinux/rockylinux'
+          - FROM:     'rockylinux:9.0'
+          - FROM:     'rockylinux:8.6'
+          - FROM:     'rockylinux:8.5'
           - FROM:     'manjarolinux/base'
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        # We must fetch at least the immediate parents so that if this is
-        # a pull request then we can checkout the head.
         fetch-depth: 2
         submodules: false
 
