@@ -127,6 +127,10 @@ INSTALL(FILES factions.xml DESTINATION share/vegastrike)
 
 INSTALL(FILES master_part_list.csv DESTINATION share/vegastrike)
 INSTALL(FILES master_part_list.json DESTINATION share/vegastrike)
+INSTALL(FILES master_asteroid_list.json DESTINATION share/vegastrike)
+INSTALL(FILES master_component_list.json DESTINATION share/vegastrike)
+INSTALL(FILES master_ship_list.json DESTINATION share/vegastrike)
+
 
 INSTALL(FILES py27_modules.7z DESTINATION share/vegastrike)
 

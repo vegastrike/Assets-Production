@@ -1,0 +1,682 @@
+[
+    {
+        "file": "Admonisher.stock",
+        "categoryname": "starships/Confed/Heavy",
+        "price": "3000000",
+        "mass": "275",
+        "volume": "5600",
+        "description": "A Purist crafted light assault vessel, the Admonisher is often used for internal policing duties by Homeland Security and others within the Confederation.  As might be expected from a vessel used for such purposes, it excels at neutralizing both small craft and their support vessels, a valuable asset in the suppression of Pirates and the dangerous ideologies of the Luddites and ISO."
+    },
+    {
+        "file": "Admonisher.HSspec",
+        "categoryname": "starships/Homeland-Security/Milspec",
+        "price": "3000000",
+        "mass": "275",
+        "volume": "5600",
+        "description": "A Purist crafted light assault vessel, the Admonisher is often used for internal policing duties by Homeland Security and others within the Confederation.  As might be expected from a vessel used for such purposes, it excels at neutralizing both small craft and their support vessels, a valuable asset in the suppression of Pirates and the dangerous ideologies of the Luddites and ISO."
+    },
+    {
+        "file": "Admonisher.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "3500000",
+        "mass": "275",
+        "volume": "5600",
+        "description": "A Purist crafted light assault vessel, the Admonisher is often used for internal policing duties by Homeland Security and others within the Confederation.  As might be expected from a vessel used for such purposes, it excels at neutralizing both small craft and their support vessels, a valuable asset in the suppression of Pirates and the dangerous ideologies of the Luddites and ISO."
+    },
+    {
+        "file": "Admonisher.puristspec",
+        "categoryname": "starships/Purist/Milspec",
+        "price": "3000000",
+        "mass": "275",
+        "volume": "5600",
+        "description": "A Purist crafted light assault vessel, the Admonisher is often used for internal policing duties by Homeland Security and others within the Confederation.  As might be expected from a vessel used for such purposes, it excels at neutralizing both small craft and their support vessels, a valuable asset in the suppression of Pirates and the dangerous ideologies of the Luddites and ISO."
+    },
+    {
+        "file": "Admonisher.rgspec",
+        "categoryname": "starships/Regional_Guard/Heavy",
+        "price": "3000000",
+        "mass": "275",
+        "volume": "5600",
+        "description": "A Purist crafted light assault vessel, the Admonisher is often used for internal policing duties by Homeland Security and others within the Confederation.  As might be expected from a vessel used for such purposes, it excels at neutralizing both small craft and their support vessels, a valuable asset in the suppression of Pirates and the dangerous ideologies of the Luddites and ISO."
+    },
+    {
+        "file": "Admonisher.salvage",
+        "categoryname": "starships/Pirate/Heavy",
+        "price": "2000000",
+        "mass": "275",
+        "volume": "5600",
+        "description": "A Purist crafted light assault vessel, the Admonisher is often used for internal policing duties by Homeland Security and others within the Confederation.  As might be expected from a vessel used for such purposes, it excels at neutralizing both small craft and their support vessels, a valuable asset in the suppression of Pirates and the dangerous ideologies of the Luddites and ISO."
+    },
+    {
+        "file": "Ancestor.stock",
+        "categoryname": "starships/Shaper/Light",
+        "price": "190000",
+        "mass": "40",
+        "volume": "1000",
+        "description": "The 'ancestors' of the Ancestor class have been flying for hundreds of years. This most recent remodelling of the Shaper's aerospace frame has been in service for 15 years, and has seen action several times in assaults on dirtside criminal bases."
+    },
+    {
+        "file": "Ancestor.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "700000",
+        "mass": "40",
+        "volume": "800",
+        "description": "The 'ancestors' of the Ancestor class have been flying for hundreds of years. This most recent remodelling of the Shaper's aerospace frame has been in service for 15 years, and has seen action several times in assaults on dirtside criminal bases."
+    },
+    {
+        "file": "Ancestor.shaperspec",
+        "categoryname": "starships/Shaper/Milspec",
+        "price": "525000",
+        "mass": "40",
+        "volume": "800",
+        "description": "The 'ancestors' of the Ancestor class have been flying for hundreds of years. This most recent remodelling of the Shaper's aerospace frame has been in service for 15 years, and has seen action several times in assaults on dirtside criminal bases."
+    },
+    {
+        "file": "Areus",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "216",
+        "volume": "4400",
+        "description": "More a fighter than a bomber, this is the secondary assault craft the Aera rely on, after the Agis. These light assault craft are commonly seen as escorts to the larger, more dangerous Agis class assault corvettes, though it is not uncommon to see wings of Areus detatch to spearhead assaults on subcapitals and support vessels. While larger and not as nimble as fighters or interceptors, the Areus is perfectly well equipped to engage any smaller craft foolish enough to wander near its gun sights. Armament on the Areus isn't well suited to assaulting capital vessels directly, but is entirely sufficient for destroying subcapitals, support craft, or softening up craft too large to destroy outright with the limited payload available. The Areus is almost never seen in defensive operations outside of the aforementioned escort of larger strike forces."
+    },
+    {
+        "file": "Areus.milspec",
+        "categoryname": "starships/Aera/Milspec",
+        "price": "6000000",
+        "mass": "216",
+        "volume": "4400",
+        "description": "More a fighter than a bomber, this is the secondary assault craft the Aera rely on, after the Agis. These light assault craft are commonly seen as escorts to the larger, more dangerous Agis class assault corvettes, though it is not uncommon to see wings of Areus detatch to spearhead assaults on subcapitals and support vessels. While larger and not as nimble as fighters or interceptors, the Areus is perfectly well equipped to engage any smaller craft foolish enough to wander near its gun sights. Armament on the Areus isn't well suited to assaulting capital vessels directly, but is entirely sufficient for destroying subcapitals, support craft, or softening up craft too large to destroy outright with the limited payload available. The Areus is almost never seen in defensive operations outside of the aforementioned escort of larger strike forces."
+    },
+    {
+        "file": "Ariston.stock",
+        "categoryname": "starships/Aera/Heavy",
+        "price": "2700000",
+        "mass": "197",
+        "volume": "4000",
+        "description": "The Aeran Ascendancy's Ariston class is not the most nimble fighter and is impotent against large vessels, but it is very well armed and armored against small craft. The Ariston is a defensively oriented fighter, flying escort and superiority missions, and never assault. Significant numbers of Aristons will accompany strike missions, but ordinance loads are universily anti-interceptor. Likewise, a reserve of Aristons tends to be kept near capital vessels to launch alongside Nicander class interceptors, so as to engage enemy fighter escorts."
+    },
+    {
+        "file": "Ariston.escort",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "197",
+        "volume": "4000",
+        "description": "The Aeran Ascendancy's Ariston class is not the most nimble fighter and is impotent against large vessels, but it is very well armed and armored against small craft. The Ariston is a defensively oriented fighter, flying escort and superiority missions, and never assault. Significant numbers of Aristons will accompany strike missions, but ordinance loads are universily anti-interceptor. Likewise, a reserve of Aristons tends to be kept near capital vessels to launch alongside Nicander class interceptors, so as to engage enemy fighter escorts."
+    },
+    {
+        "file": "Ariston.milspec",
+        "categoryname": "starships/Aera/Milspec",
+        "price": "3500000",
+        "mass": "197",
+        "volume": "4000",
+        "description": "The Aeran Ascendancy's Ariston class is not the most nimble fighter and is impotent against large vessels, but it is very well armed and armored against small craft. The Ariston is a defensively oriented fighter, flying escort and superiority missions, and never assault. Significant numbers of Aristons will accompany strike missions, but ordinance loads are universily anti-interceptor. Likewise, a reserve of Aristons tends to be kept near capital vessels to launch alongside Nicander class interceptors, so as to engage enemy fighter escorts."
+    },
+    {
+        "file": "Clydesdale",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "29000000",
+        "volume": "590000000",
+        "description": "The only warship produced at Merchant shipyards, the Clydesdale suffers somewhat from being a truly Confederation designed vessel, with noticeable committee effects. If not posessing unrivaled capabilities, nor visionary design, it is nonetheless a solid, workhorse of a vessel and produced, like all craft rolling off the Merchant shipyards, in some number."
+    },
+    {
+        "file": "Clydesdale.milspec",
+        "categoryname": "starships/Confed/Light_Capship",
+        "price": "400000000",
+        "mass": "29000000",
+        "volume": "590000000",
+        "description": "The only warship produced at Merchant shipyards, the Clydesdale suffers somewhat from being a truly Confederation designed vessel, with noticeable committee effects. If not posessing unrivaled capabilities, nor visionary design, it is nonetheless a solid, workhorse of a vessel and produced, like all craft rolling off the Merchant shipyards, in some number."
+    },
+    {
+        "file": "Clydesdale.merchant",
+        "categoryname": "starships/Merchant/Light_Capship",
+        "price": "300000000",
+        "mass": "29000000",
+        "volume": "590000000",
+        "description": "The only warship produced at Merchant shipyards, the Clydesdale suffers somewhat from being a truly Confederation designed vessel, with noticeable committee effects. If not posessing unrivaled capabilities, nor visionary design, it is nonetheless a solid, workhorse of a vessel and produced, like all craft rolling off the Merchant shipyards, in some number."
+    },
+    {
+        "file": "Convolution.stock",
+        "categoryname": "starships/Confed/Medium",
+        "price": "760000",
+        "mass": "62",
+        "volume": "1280",
+        "description": "Typically used as a light assault craft, the Convolution relies on its heavy energy-weapon firepower rather than missiles to overpower its foes with sequences of strafing runs.  It is an Unadorned design; as befits the faction's name, it is far from an aesthetic marvel, asymmetric and without pretense of beauty, but is well-designed, cost-effective, and the preferred strike craft of a small minority of pilots."
+    },
+    {
+        "file": "Convolution.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "1500000",
+        "mass": "62",
+        "volume": "1280",
+        "description": "Typically used as a light assault craft, the Convolution relies on its heavy energy-weapon firepower rather than missiles to overpower its foes with sequences of strafing runs.  It is an Unadorned design; as befits the faction's name, it is far from an aesthetic marvel, asymmetric and without pretense of beauty, but is well-designed, cost-effective, and the preferred strike craft of a small minority of pilots."
+    },
+    {
+        "file": "Derivative.stock",
+        "categoryname": "starships/Confed/Medium",
+        "price": "800000",
+        "mass": "134",
+        "volume": "2700",
+        "description": "An Unadorned missile-based interceptor, the Derivative is commonly deployed as part of Confederate fleets. It can quikly bring to bear a large amount of firepower from its compact, almost skeletal, frame.  Because of this, its mere presence is often enough to make undesireables reconsider their intended courses of action."
+    },
+    {
+        "file": "Derivative.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "1200000",
+        "mass": "134",
+        "volume": "2700",
+        "description": "An Unadorned missile-based interceptor, the Derivative is commonly deployed as part of Confederate fleets. It can quikly bring to bear a large amount of firepower from its compact, almost skeletal, frame.  Because of this, its mere presence is often enough to make undesireables reconsider their intended courses of action."
+    },
+    {
+        "file": "Determinant.stock",
+        "categoryname": "starships/Confed/Medium",
+        "price": "700000",
+        "mass": "54",
+        "volume": "1100",
+        "description": "Solid and reliable, the Unadorned Determinant-class ships can often be seen prowling Confederate space, and have now even proven themselves in skirmishes with Aeran raiders.  Though its popularity is highest among the Unadorned, it remains well-liked by the rest of the Confederation, and others, due to its relatively low cost to produce."
+    },
+    {
+        "file": "Determinant.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "1200000",
+        "mass": "54",
+        "volume": "1100",
+        "description": "Solid and reliable, the Unadorned Determinant-class ships can often be seen prowling Confederate space, and have now even proven themselves in skirmishes with Aeran raiders.  Though its popularity is highest among the Unadorned, it remains well-liked by the rest of the Confederation, and others, due to its relatively low cost to produce."
+    },
+    {
+        "file": "Dirge",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "123456789",
+        "volume": "123456789",
+        "description": "An insystem fighter design, the Dirge is a sturdy, flexible ship that can be fitted with both guns and missiles.  Versatile, balanced, and agile, it is most often seen in the use of its creators, the Shmrn. "
+    },
+    {
+        "file": "Dodo.stock",
+        "categoryname": "starships/Merchant/Light",
+        "price": "75000",
+        "mass": "1096",
+        "volume": "22000",
+        "description": "As a cargo tug, quite successful - as a piece of art, quite ugly."
+    },
+    {
+        "file": "Dodo.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "400000",
+        "mass": "1096",
+        "volume": "21000",
+        "description": "As a cargo tug, quite successful. As a piece of art - quite ugly."
+    },
+    {
+        "file": "Dostoevsky.stock",
+        "categoryname": "starships/Andolian/Medium",
+        "price": "360000",
+        "mass": "63",
+        "volume": "1300",
+        "description": "A superiority fighter manufactured in massive numbers by the Andolian Protectorate, the Dostoevsky combines a light, efficient design with immediately palpable firepower.  Though designed to engage other fighters, its ability to carry a torpedo, if only one, broadens the range of targets that must stay wary, especially in the numbers that Dostoevskys tend to appear in."
+    },
+    {
+        "file": "Dostoevsky.klkkspec",
+        "categoryname": "starships/klk'k/Medium",
+        "price": "550000",
+        "mass": "63",
+        "volume": "1300",
+        "description": "A superiority fighter manufactured in massive numbers by the Andolian Protectorate, the Dostoevsky combines a light, efficient design with immediately palpable firepower.  Though designed to engage other fighters, its ability to carry a torpedo, if only one, broadens the range of targets that must stay wary, especially in the numbers that Dostoevskys tend to appear in."
+    },
+    {
+        "file": "Dostoevsky.milspec",
+        "categoryname": "starships/klk'k/Milspec",
+        "price": "500000",
+        "mass": "63",
+        "volume": "1300",
+        "description": "A superiority fighter manufactured in massive numbers by the Andolian Protectorate, the Dostoevsky combines a light, efficient design with immediately palpable firepower.  Though designed to engage other fighters, its ability to carry a torpedo, if only one, broadens the range of targets that must stay wary, especially in the numbers that Dostoevskys tend to appear in."
+    },
+    {
+        "file": "Dostoevsky.rgspec",
+        "categoryname": "starships/Regional_Guard/Medium",
+        "price": "450000",
+        "mass": "63",
+        "volume": "1300",
+        "description": "A superiority fighter manufactured in massive numbers by the Andolian Protectorate, the Dostoevsky combines a light, efficient design with immediately palpable firepower.  Though designed to engage other fighters, its ability to carry a torpedo, if only one, broadens the range of targets that must stay wary, especially in the numbers that Dostoevskys tend to appear in."
+    },
+    {
+        "file": "Franklin",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "575",
+        "volume": "12000",
+        "description": "Andolian diplomatic shuttle"
+    },
+    {
+        "file": "Franklin.milspec",
+        "categoryname": "starships/Passenger/Light",
+        "price": "1800000",
+        "mass": "575",
+        "volume": "12000",
+        "description": "Andolian diplomatic shuttle"
+    },
+    {
+        "file": "Franklin.hunter",
+        "categoryname": "starships/Hunter/Heavy",
+        "price": "1000000",
+        "mass": "575",
+        "volume": "12000",
+        "description": "Andolian diplomatic shuttle"
+    },
+    {
+        "file": "Gawain.stock",
+        "categoryname": "starships/Confed/Heavy",
+        "price": "3200000",
+        "mass": "40",
+        "volume": "1000",
+        "description": "A bejeweled sword among more workmanlike interceptors since its introduction three years ago, the Highborn Gawain is an impressively featured and stylish craft.  Magnificently built, it offers an array of features: a number of gun mounts, missile room, and a powerful engine capable of firm acceleration.  It also offers a number of luxuries to the pilot as well, and those that have flown the Gawain consider it an experience to which little can compare.  Like all Highborn vessels, it is known for its durability and reliability even under the worst conditions.  Its features come at a great price, however, and it is one that few can afford.  Perhaps for this reason, there are relatively few Gawains in service, with some buyers opting to requisition several of the much-cheaper Derivative class interceptors instead."
+    },
+    {
+        "file": "Gawain.highbornspec",
+        "categoryname": "starships/Highborn/Heavy",
+        "price": "4000000",
+        "mass": "40",
+        "volume": "800",
+        "description": "The High-Born have a spacecraft manufacturing methodology most other factions reserve for Luxury Yachts. The Gawain class of interceptors stays true to this line of thinking, with exceptional performance being provided for exhorbitant cost. The price tag comes from the manufacturing method itself, the lower scale of production, and the equally important mere 3 years of production on the current version."
+    },
+    {
+        "file": "Gawain.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "4500000",
+        "mass": "40",
+        "volume": "800",
+        "description": "A bejeweled sword among more workmanlike interceptors since its introduction three years ago, the Highborn Gawain is an impressively featured and stylish craft.  Magnificently built, it offers an array of features: a number of gun mounts, missile room, and a powerful engine capable of firm acceleration.  It also offers a number of luxuries to the pilot as well, and those that have flown the Gawain consider it an experience to which little can compare.  Like all Highborn vessels, it is known for its durability and reliability even under the worst conditions.  Its features come at a great price, however, and it is one that few can afford.  Perhaps for this reason, there are relatively few Gawains in service, with some buyers opting to requisition several of the much-cheaper Derivative class interceptors instead."
+    },
+    {
+        "file": "Goddard",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "2150",
+        "volume": "43000",
+        "description": "The Goddard is a heavy bomber of Andolian manufacture, and the current crown jewel of the Confederation's array of small craft.  Created from lessons gleaned from the Aera-Rlaan conflict, the Goddard is a flying fortress, able to weather a considerable amount of punishment.  However, as strong as it is defensively, it is even more impressive offensively.  Its nearly two dozen gun, turrets, and missile mounts allow it to unleash devastation on whatever its target may be."
+    },
+    {
+        "file": "Goddard.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "11000000",
+        "mass": "2150",
+        "volume": "43000",
+        "description": "The Goddard is a heavy bomber of Andolian manufacture, and the current crown jewel of the Confederation's array of small craft.  Created from lessons gleaned from the Aera-Rlaan conflict, the Goddard is a flying fortress, able to weather a considerable amount of punishment.  However, as strong as it is defensively, it is even more impressive offensively.  Its nearly two dozen gun, turrets, and missile mounts allow it to unleash devastation on whatever its target may be."
+    },
+    {
+        "file": "GTIO",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "123456789",
+        "volume": "123456789",
+        "description": "What happens when you maximize speed and style to the exclusion of everything else?  The GTIO happens.  Simply the best sportship on the market today, the GTIO is a redefinition of power and luxury, and carries a pricetag that reflects that."
+    },
+    {
+        "file": "Hammer.stock",
+        "categoryname": "starships/Hunter/Heavy",
+        "price": "200000",
+        "mass": "115",
+        "volume": "2300",
+        "description": "The Hammer assault craft was originally named the 'Toad', a creation of the LIHW.  However, usage of this model by the ISO has made it iconic, to the point where few call it by its original name.  Much larger than the other famous ISO ship, the Sickle, the Hammer  has sometimes been referred to as 'the mighty arm of the proletariat' in ISO propaganda."
+    },
+    {
+        "file": "Hammer.iso",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "115",
+        "volume": "2300",
+        "description": "The Hammer assault craft was originally named the 'Toad', a creation of the LIHW.  However, usage of this model by the ISO has made it iconic, to the point where few call it by its original name.  Much larger than the other famous ISO ship, the Sickle, the Hammer  has sometimes been referred to as 'the mighty arm of the proletariat' in ISO propaganda."
+    },
+    {
+        "file": "Hammer.isospec",
+        "categoryname": "starships/ISO/Heavy",
+        "price": "280000",
+        "mass": "115",
+        "volume": "2300",
+        "description": "The Hammer assault craft was originally named the 'Toad', a creation of the LIHW.  However, usage of this model by the ISO has made it iconic, to the point where few call it by its original name.  Much larger than the other famous ISO ship, the Sickle, the Hammer  has sometimes been referred to as 'the mighty arm of the proletariat' in ISO propaganda."
+    },
+    {
+        "file": "Hyena.stock",
+        "categoryname": "starships/Pirate/Light",
+        "price": "110000",
+        "mass": "40",
+        "volume": "1000",
+        "description": "Like their namesakes from the savannahs of Earth, Hyenas are often seen preferring to engage the damaged, the naive, and the straggler rather than pursuing more solid prey, especially when in the hands of Pirates.  Though they possess neither great speed, nor impressive maneuverability, the Hyenas nonetheless pack enough firepower to give a pilot pause, especially in packs."
+    },
+    {
+        "file": "Hyena.hunter",
+        "categoryname": "starships/Hunter/Light",
+        "price": "140000",
+        "mass": "40",
+        "volume": "1000",
+        "description": "Like their namesakes from the savannahs of Earth, Hyenas are often seen preferring to engage the damaged, the naive, and the straggler rather than pursuing more solid prey, especially when in the hands of Pirates.  Though they possess neither great speed, nor impressive maneuverability, the Hyenas nonetheless pack enough firepower to give a pilot pause, especially in packs."
+    },
+    {
+        "file": "Hyena.pirates",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "40",
+        "volume": "1000",
+        "description": "Like their namesakes from the savannahs of Earth, Hyenas are often seen preferring to engage the damaged, the naive, and the straggler rather than pursuing more solid prey, especially when in the hands of Pirates.  Though they possess neither great speed, nor impressive maneuverability, the Hyenas nonetheless pack enough firepower to give a pilot pause, especially in packs."
+    },
+    {
+        "file": "Kafka",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "123456789",
+        "volume": "123456789",
+        "description": "While the Merchant's Guild has a well-recognized line of cargo vessels, the Kafka is a simple, cost-effective shuttle that can transport a good amount of cargo.  It is most often found in the more lawful regions of space, usually those inhabited by its designers, the Klk'k."
+    },
+    {
+        "file": "Kafka.civvie",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "123456789",
+        "volume": "123456789",
+        "description": "While the Merchant's Guild has a well-recognized line of cargo vessels, the Kafka is a simple, cost-effective shuttle that can transport a good amount of cargo.  It is most often found in the more lawful regions of space, usually those inhabited by its designers, the Klk'k."
+    },
+    {
+        "file": "Kierkegaard",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "800000",
+        "mass": "1800",
+        "volume": "15000",
+        "description": "Used to near exclusion in anti-capital roles, the Kierkegaard is a missile oriented Andolian gunboat.  Its heavy reliance on missiles, coupled with its modest acceleration curves, makes it much more suited to defensive deployments than spearheading strikeforces.  While it excels at weakening and destroying capital vessels, it has been found wanting when faced with packs of nimble fighters, and must hastily return to friendlier space when its missile supplies run low."
+    },
+    {
+        "file": "Lancelot.stock",
+        "categoryname": "starships/Confed/Heavy",
+        "price": "3800000",
+        "mass": "170",
+        "volume": "3500",
+        "description": "A heavy superiority fighter designed by the Highborn, the Lancelot really is superior in almost every sense of the word.  Superbly engineered, even the older Lancelot models seldom have mechanical problems, and the interior, spartan in most other military vessels, is nothing short of luxurious.  The cost, however, as with most Highborn designs, is equally profound."
+    },
+    {
+        "file": "Lancelot.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "6500000",
+        "mass": "170",
+        "volume": "3500",
+        "description": "A heavy superiority fighter designed by the Highborn, the Lancelot really is superior in almost every sense of the word.  Superbly engineered, even the older Lancelot models seldom have mechanical problems, and the interior, spartan in most other military vessels, is nothing short of luxurious.  The cost, however, as with most Highborn designs, is equally profound."
+    },
+    {
+        "file": "Llama.begin",
+        "categoryname": "starships/Lauktk",
+        "price": "1",
+        "mass": "1000",
+        "volume": "20000",
+        "description": "With Lauktk's death, ownership of this vessel has passed on to you."
+    },
+    {
+        "file": "Llama.stock",
+        "categoryname": "starships/Merchant/Light",
+        "price": "900000",
+        "mass": "1000",
+        "volume": "20000",
+        "description": "What can be said of a llama, save for that one is rather less suited to carrying than a mule and not too adept at pulling a plowshare."
+    },
+    {
+        "file": "Mule.stock",
+        "categoryname": "starships/Merchant/Heavy",
+        "price": "8000000",
+        "mass": "28000",
+        "volume": "570000",
+        "description": "The Mule class is the cargo vessel of choice for anything that does not require the immense load of an Ox class. Mule class vessels are the preferred mode of military supply transport, if only because their abundance makes them easier to replace when they meet unfortunate ends."
+    },
+    {
+        "file": "Mule.milspec",
+        "categoryname": "starships/Confed/Light_Capship",
+        "price": "9000000",
+        "mass": "20000",
+        "volume": "570000",
+        "description": "The Mule class is the cargo vessel of choice for anything that does not require the immense load of an Ox class. Mule class vessels are the preferred mode of military supply transport, if only because their abundance makes them easier to replace when they meet unfortunate ends."
+    },
+    {
+        "file": "Nicander.stock",
+        "categoryname": "starships/Aera/Light",
+        "price": "2000000",
+        "mass": "132",
+        "volume": "2700",
+        "description": "The preeminent Aeran interceptor, the Nicander is lithe and supports vicious armaments."
+    },
+    {
+        "file": "Nicander.escort",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "132",
+        "volume": "2700",
+        "description": "A slightly less agressively designed variant of the well known Nicander, the escort variant of the Aeran interceptor is used in a more defensive role than its more well known sibling."
+    },
+    {
+        "file": "Nicander.milspec",
+        "categoryname": "starships/Aera/Milspec",
+        "price": "3200000",
+        "mass": "132",
+        "volume": "2700",
+        "description": "The preeminent Aeran interceptor, the Nicander is lithe and viciously armed"
+    },
+    {
+        "file": "Ox.stock",
+        "categoryname": "starships/Merchant/Light_Capship",
+        "price": "42000000",
+        "mass": "1000000",
+        "volume": "40000000",
+        "description": "A container transport, the Ox is more suited to multi-hop interstellar bulk cargo runs than the smaller mule."
+    },
+    {
+        "file": "Pacifier.stock",
+        "categoryname": "starships/Confed/Heavy",
+        "price": "400000",
+        "mass": "490",
+        "volume": "10000",
+        "description": "An aging heavy craft of Purist make, the Pacifier has seen considerable service in the fifty years since its introduction. Though perhaps a bit unwieldy by modern standards, its firepower remains potent.  What it lacks in speed and maneuverability, it makes up for in its versatility, having been among the first vessels to see action in both fighter and bomber roles in defense against the Aeran invasion."
+    },
+    {
+        "file": "Pacifier.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "1300000",
+        "mass": "490",
+        "volume": "10000",
+        "description": "An aging heavy craft of Purist make, the Pacifier has seen considerable service in the fifty years since its introduction. Though perhaps a bit unwieldy by modern standards, its firepower remains potent.  What it lacks in speed and maneuverability, it makes up for in its versatility, having been among the first vessels to see action in both fighter and bomber roles in defense against the Aeran invasion."
+    },
+    {
+        "file": "Pacifier.rgspec",
+        "categoryname": "starships/Regional_Guard/Heavy",
+        "price": "900000",
+        "mass": "484",
+        "volume": "10000",
+        "description": "An aging heavy craft of Purist make, the Pacifier has seen considerable service in the fifty years since its introduction. Though perhaps a bit unwieldy by modern standards, its firepower remains potent.  What it lacks in speed and maneuverability, it makes up for in its versatility, having been among the first vessels to see action in both fighter and bomber roles in defense against the Aeran invasion."
+    },
+    {
+        "file": "Plowshare.stock",
+        "categoryname": "starships/Merchant/Medium",
+        "price": "180000",
+        "mass": "527",
+        "volume": "10000",
+        "description": "Lovingly referred to as a 'large brick with engines and guns', the Plowshare is a top of the line Purist cargo shuttle, far more spacious than the aged LIHW Llama, and easier to obtain for private use than the Merchant Reindeer. Much of the non-Merchant's Guild traffic within Purist friendly systems occurs via Plowshares."
+    },
+    {
+        "file": "Plowshare__pirates",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "530",
+        "volume": "10000",
+        "description": "Lovingly referred to as a 'large brick with engines and guns', the Plowshare is a top of the line Purist cargo shuttle, far more spacious than the aged LIHW Llama, and easier to obtain for private use than the Merchant Reindeer. Much of the non-Merchant's Guild traffic within Purist friendly systems occurs via Plowshares."
+    },
+    {
+        "file": "Progeny.stock",
+        "categoryname": "starships/Confed/Light",
+        "price": "400000",
+        "mass": "62",
+        "volume": "1200",
+        "description": "A compact ship originally designed for the Shaper military, the Progeny would seem a natural complement to the Dostoevsky, were they ever both to be deployed by the same group at the same time. Though less suited for close engagements than its fighter counterpart, the Progeny nonetheless brings to bear an impressive array of missiles, and excels at its primary role of interceptor."
+    },
+    {
+        "file": "Progeny.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "1200000",
+        "mass": "62",
+        "volume": "1200",
+        "description": "A compact ship originally designed for the Shaper military, the Progeny would seem a natural complement to the Dostoevsky, were they ever both to be deployed by the same group at the same time. Though less suited for close engagements than its fighter counterpart, the Progeny nonetheless brings to bear an impressive array of missiles, and excels at its primary role of interceptor."
+    },
+    {
+        "file": "Progeny.rgspec",
+        "categoryname": "starships/Regional_Guard/Light",
+        "price": "900000",
+        "mass": "63",
+        "volume": "1300",
+        "description": "A compact ship originally designed for the Shaper military, the Progeny would seem a natural complement to the Dostoevsky, were they ever both to be deployed by the same group at the same time. Though less suited for close engagements than its fighter counterpart, the Progeny nonetheless brings to bear an impressive array of missiles, and excels at its primary role of interceptor."
+    },
+    {
+        "file": "Quicksilver",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "123456789",
+        "volume": "123456789",
+        "description": "Sleek and fast, the Quicksilver is often used as a courier ship by the Confederation and its allies.  However, due to this specialization, it is typically unsuitable for combat engagements, and will rely on the robust acceleration of its oversized engine to put a rapidly increasing shield of distance between it and any adversary."
+    },
+    {
+        "file": "Redeemer.stock",
+        "categoryname": "starships/Luddite/Light",
+        "price": "40000",
+        "mass": "38",
+        "volume": "800",
+        "description": "The luddites, being by their nature not given to grand industrialization, rely on a small number of hidden facilities and sympathetic manufacturing plants to supply them with ships. The Redeemer bears the distinction of being the only class of spacecraft officially sanctioned by the reverend Sverde, who, when presented with its initial designs 45 years ago, said that prayer had revealed to her that that this was to be the 'shepherds crook' by which man's sins would be constrained. Inexpensive, even at the time of its introduction, the Redeemer remains a utilitarian craft well suited to the production schedules of backwater worlds."
+    },
+    {
+        "file": "Robin.stock",
+        "categoryname": "starships/Hunter/Medium",
+        "price": "75000",
+        "mass": "42",
+        "volume": "900",
+        "description": "The avian Robins of Terra were never noted as particularly fierce, and many pilots consider the spacefaring Robins of the LIHW in much the same way.  An aging fighter design, the improvements that the Robin has seen over the years have been largely incremental, focusing on small improvements rather than large overhauls.  Due to the relatively limited resource of the LIHW compared to other constituents of the Confederation, most of the improvements have been in the way of reliability.  Because of this, the Robin is known as an inexpensive vessel that rarely breaks down, and perhaps due to this, it is a common sight in the human-controlled regions of space."
+    },
+    {
+        "file": "Robin.hunter",
+        "categoryname": "starships/Hunter/Medium",
+        "price": "190000",
+        "mass": "42",
+        "volume": "900",
+        "description": "The avian Robins of Terra were never noted as particularly fierce, and many pilots consider the spacefaring Robins of the LIHW in much the same way.  An aging fighter design, the improvements that the Robin has seen over the years have been largely incremental, focusing on small improvements rather than large overhauls.  Due to the relatively limited resource of the LIHW compared to other constituents of the Confederation, most of the improvements have been in the way of reliability.  Because of this, the Robin is known as an inexpensive vessel that rarely breaks down, and perhaps due to this, it is a common sight in the human-controlled regions of space."
+    },
+    {
+        "file": "Sartre",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "123456789",
+        "volume": "123456789",
+        "description": "The Sartre is an interplanetary shuttle manufactured by the Klk'k.  It is unarmed, and therefore rarely seen outside the very safest sectors of space. A Sartre is often the only legal method by which one may land directly on many Andolian worlds, due to regulation of private craft to orbital berthing areas."
+    },
+    {
+        "file": "Schroedinger.stock",
+        "categoryname": "starships/Confed/Light",
+        "price": "510000",
+        "mass": "80",
+        "volume": "1600",
+        "description": "The Schroedinger serves as a scout ship, lightly armed when compared to most other vessels.  As per the infamous cat, its acceleration curve and advanced ECM and stealth hardware make it difficult to discern whether its in the same state it was last seen in."
+    },
+    {
+        "file": "Schroedinger.milspec",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "3000000",
+        "mass": "80",
+        "volume": "1600",
+        "description": "The Schroedinger serves as a scout ship, lightly armed when compared to most other vessels.  As per the infamous cat, its acceleration curve and advanced ECM and stealth hardware make it difficult to discern whether its in the same state it was last seen in."
+    },
+    {
+        "file": "Shizu.stock",
+        "categoryname": "starships/Rlaan/Light",
+        "price": "250000",
+        "mass": "57",
+        "volume": "1140",
+        "description": "The Rlaan Shizu is in many ways similar to its Confederate counterpart, the Schroedinger, meant more for reconaissance and scouting patrols than heavy combat.  Nonetheless, its twin gun mountings allow it to mount a basic defense, should it come under attack."
+    },
+    {
+        "file": "Shizu.milspec",
+        "categoryname": "starships/Rlaan/Milspec",
+        "price": "300000",
+        "mass": "57",
+        "volume": "1140",
+        "description": "The Rlaan Shizu is in many ways similar to its Confederate counterpart, the Schroedinger, meant more for reconaissance and scouting patrols than heavy combat.  Nonetheless, its twin gun mountings allow it to mount a basic defense, should it come under attack."
+    },
+    {
+        "file": "Sickle.stock",
+        "categoryname": "starships/Hunter/Medium",
+        "price": "70000",
+        "mass": "55",
+        "volume": "1100",
+        "description": "Like the Hammer, the Sickle is a ship of LIHW design, and was known prior to ISO usage as the 'Goose'. While the Hammer is more feared, the Sickle is more common. By far the most common ship seen in use by the ISO, the Sickle's maneuverability and large missile bays make it a favorite of many Hunters as well."
+    },
+    {
+        "file": "Sickle.iso",
+        "categoryname": "starships/restricted",
+        "price": "1",
+        "mass": "55",
+        "volume": "1100",
+        "description": "Like the Hammer, the Sickle is a ship of LIHW design, and was known prior to ISO usage as the 'Goose'. While the Hammer is more feared, the Sickle is more common. By far the most common ship seen in use by the ISO, the Sickle's maneuverability and large missile bays make it a favorite of many Hunters as well."
+    },
+    {
+        "file": "Sickle.isospec",
+        "categoryname": "starships/ISO/Medium",
+        "price": "90000",
+        "mass": "55",
+        "volume": "1100",
+        "description": "Like the Hammer, the Sickle is a ship of LIHW design, and was known prior to ISO usage as the 'Goose'. While the Hammer is more feared, the Sickle is more common. By far the most common ship seen in use by the ISO, the Sickle's maneuverability and large missile bays make it a favorite of many Hunters as well."
+    },
+    {
+        "file": "Sickle.stock",
+        "categoryname": "starships/Hunter/Medium",
+        "price": "70000",
+        "mass": "55",
+        "volume": "1100",
+        "description": "Like the Hammer, the Sickle is a ship of LIHW design, and was known prior to ISO usage as the 'Goose'. While the Hammer is more feared, the Sickle is more common. By far the most common ship seen in use by the ISO, the Sickle's maneuverability and large missile bays make it a favorite of many Hunters as well."
+    },
+    {
+        "file": "Taizong.stock",
+        "categoryname": "starships/Rlaan/Heavy",
+        "price": "2800000",
+        "mass": "230",
+        "volume": "4600",
+        "description": "The Taizong are a mass-produced assault vessel of the Rlaan.  As with other Rlaan vessels, they do not utilize missile armaments, even in their assault role. Their strength lies instead in miniature, if limited, versions of the Jannisary class' grav-thumper weapon, which allow them to ruthlessly cut down almost any sub-capital vessel."
+    },
+    {
+        "file": "Taizong.milspec",
+        "categoryname": "starships/Rlaan/Milspec",
+        "price": "5600000",
+        "mass": "230",
+        "volume": "4600",
+        "description": "The Taizong are a mass-produced assault vessel of the Rlaan.  As with other Rlaan vessels, they do not utilize missile armaments, even in their assault role. Their strength lies instead in miniature, if limited, versions of the Jannisary class' grav-thumper weapon, which allow them to ruthlessly cut down almost any sub-capital vessel."
+    },
+    {
+        "file": "Vendetta.stock",
+        "categoryname": "starships/Hunter/Medium",
+        "price": "8800000",
+        "mass": "230",
+        "volume": "4600",
+        "description": "Designed by the LTC to exacting Hunter specifications, the Vendetta can be a relentless, if expensive, aid in populating one's trophy walls."
+    },
+    {
+        "file": "Vigilance",
+        "categoryname": "starships/Confed/Milspec",
+        "price": "18500000",
+        "mass": "4500",
+        "volume": "50000",
+        "description": "Mass produced by it's Purist manufacturers, the Vigilance has been a common sight patrolling the inner commerce lanes for over a decade. Now these corvettes have begun trickling into the frontier territories to thwart rampant piracy and Aeran incursions. Though lacking the cutting-edge systems and relative mobility of others in it's class, the Vigilance still holds it's own with greater survivability and firepower at a more affordable price."
+    },
+    {
+        "file": "Zhuangzong.milspec",
+        "categoryname": "starships/Rlaan/Milspec",
+        "price": "2000000",
+        "mass": "65",
+        "volume": "1300",
+        "description": "The backbone of the Rlaan fighter squadrons, the Zhuangzong's four weapon mounts make it deadly at close range, and its maneuverability stats are a dogfighter's dream, even if the linear acceleration is more modest.  Of course, in keeping with the Rlaan disdain for missiles, actually closing to weapons range can be interesting. "
+    },
+    {
+        "file": "Zhuangzong.stock",
+        "categoryname": "starships/Rlaan/Heavy",
+        "price": "500000",
+        "mass": "65",
+        "volume": "1300",
+        "description": "The backbone of the Rlaan fighter squadrons, the Zhuangzong's four weapon mounts make it deadly at close range, and its maneuverability stats are a dogfighter's dream, even if the linear acceleration is more modest.  Of course, in keeping with the Rlaan disdain for missiles, actually closing to weapons range can be interesting. "
+    }
+]
