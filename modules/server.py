@@ -3,7 +3,7 @@ import Director
 import unit
 import sys
 import traceback
-import imp
+import importlib
 import custom
 
 import server_lib
@@ -176,7 +176,7 @@ def processMessage(cp, localhost, command, arglist=None, id=''):
             if authlevel<1:
                 return
             mod=server_lib
-            imp.reload(mod)
+            importlib.reload(mod)
             VS.IOmessage(0,"game","all","The server python script has been reloaded!")
             print(mod.__name__+' has been reloaded!')
         else:
