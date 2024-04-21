@@ -10,7 +10,7 @@ import universe
 import faction_ships
 import custom
 import campaign_lib
-import imp
+import importlib
 
 def serverDirector():
     return server.getDirector()
@@ -142,7 +142,7 @@ def processMessage(player, auth, command, args, id=''):
         if auth<1:
             return
         vsmod=VS
-        imp.reload(__import__('server_lib'))
+        importlib.reload(__import__('server_lib'))
         vsmod.IOmessage(0,"game","all","The server python script has been reloaded.")
     elif command=='userlist':
         cstr = '#44cc44Users on the server:#888800'

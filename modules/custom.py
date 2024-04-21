@@ -1,7 +1,7 @@
 import VS
 import traceback
 import sys
-import imp
+import importlib
 
 procedures = {
         }
@@ -124,7 +124,7 @@ def processMessage(local, cmd, argstr, id):
         for arg in args:
             print(arg)
         if cmd=='reloadlib' and local and len(args)>=1:
-            imp.reload(__import__(args[0]))
+            importlib.reload(__import__(args[0]))
             VS.IOmessage(0, "game", "p"+str(cp), "Reloaded "+str(args[0]))
         elif cmd=='local':
             # simple way of bouncing back message to client....
