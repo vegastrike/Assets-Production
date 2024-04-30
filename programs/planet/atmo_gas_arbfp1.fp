@@ -22,7 +22,7 @@ float cosAngleToDepth(float fNDotV)
    vec2 res = vec2(1.0) / vec2(1024.0,128.0);
    vec2 mn = res * 0.5;
    vec2 mx = vec2(1.0)-res * 0.5;
-   return expandPrecision(texture2DLod(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereHaloType),mn,mx),0.0)) * fAtmosphereHaloThickness;
+   return expandPrecision(textureLod(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereHaloType),mn,mx),0.0)) * fAtmosphereHaloThickness;
 }
 
 float cosAngleToAlpha(float fNDotV)
@@ -74,13 +74,13 @@ vec4 atmosphericScatter(vec3 ambient, vec3 dif, float fNDotV, float fNDotL, floa
    float ldepth     = cosAngleToLDepth(fNDotL);
    float ralpha     = cosAngleToAlpha(fNDotV);
    ralpha           = saturatef(pow(ralpha,fAtmosphereExtrusionSteepness));
-   
+
    vec3 labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth*0.5*fSelfShadowFactor));
-   
-   vec3 lscatter    = gl_LightSource[0].diffuse.rgb 
-                       * dif * labsorption 
+
+   vec3 lscatter    = gl_LightSource[0].diffuse.rgb
+                       * dif * labsorption
                        * (fMinScatterFactor+min(fMaxScatterFactor*2.0-fMinScatterFactor,2.0*vdepth*ralpha));
-   
+
    vec4 rv;
    rv.rgb = regamma( ambient * dif * 0.5
                   + atmosphereLighting(scaleAndOffset(fNDotL))
@@ -96,12 +96,12 @@ vec3 ambientMapping( in vec3 direction )
 }
 
 void main()
-{      
+{
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
-   
+
    vec3 dif = texture2D(baseMap, gl_TexCoord[0].xy, 4.0).rgb;
-   
+
    gl_FragColor = atmosphericScatter( ambientMapping(varWSNormal), dif, V.z, L.z, dot(L,V) );
 }
 

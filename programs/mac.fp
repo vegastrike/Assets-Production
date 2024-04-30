@@ -40,14 +40,18 @@ float shininess2Lod(float shininess) { return max(0.0,7.0-log2(shininess+1.0))+3
 
 vec3 envMapping(in vec3 reflection, in float shininess, in vec4 specmap)
 {
-   float envLod = shininess2Lod(shininessMap(shininess,specmap));
-   return textureLod(envMap, EnvMapGen(reflection), envLod).rgb * specmap.rgb * envColor.rgb;
+    float envLod = shininess2Lod(shininessMap(shininess,specmap));
+    // Turn into bias
+    if (envLod <= 1.0) {
+        envLod = -10.0;
+    }
+    return texture(envMap, EnvMapGen(reflection), envLod - 1.0).rgb * specmap.rgb * envColor.rgb;
 }
 
 
 void main() {
   //begin bumpmapping
-    
+
   vec3 iNormal=tc1.xyz;
   vec3 iTangent=tc2.xyz;
   vec3 iBinormal=tc3.xyz;
@@ -55,7 +59,7 @@ void main() {
   iBinormal=vec3(gl_ModelViewMatrix[2][0],gl_ModelViewMatrix[2][1],gl_ModelViewMatrix[2][2]);
   iTangent=normalize(cross(iBinormal,iNormal));
   iBinormal=normalize(cross(iNormal,iTangent));
-  
+
 
   vec3 iLightVec=tc5.xyz;
   vec3 pos=vec3(tc0.z,tc0.w,tc1.w);
@@ -68,7 +72,7 @@ void main() {
   vec3 half1Angle=normalize(eyeDir+light1Dir);
   vec3 normal;//=normalize(expand(texture2D(normalMap,tc0.xy).wyz));
 //transform normal from normalMap to world space
-  normal=normalize(imatmul(iTangent,iBinormal,iNormal,normalize(expand(texture2D(normalMap,tc0.xy).wyz))));
+  normal=normalize(imatmul(iTangent,iBinormal,iNormal,normalize(expand(texture(normalMap,tc0.xy).wyz))));
   //begin shading
 //compute half angle dot with light (not used)
   float nDotH0=dot(normal,half0Angle);
@@ -87,14 +91,14 @@ void main() {
   float lDotR0=dot(light0Dir,reflection);
   float lDotR1=dot(light1Dir,reflection);
 //get damaged and undamaged colors
-  vec4 undamagedcolor=texture2D(diffuseMap,tc0.xy);
-  vec4 damagecolor=texture2D(damageMap,tc0.xy);
+  vec4 undamagedcolor=texture(diffuseMap,tc0.xy);
+  vec4 damagecolor=texture(damageMap,tc0.xy);
 //mix the colors based on damage... if you had detail maps, these would go here
   vec4 diffsurface=
 	mix(undamagedcolor,damagecolor,damage.x);
 	//	+texture2D(detail0Map,tc0.xy);//do not support yet
 //have a specular surface unless the damage color is quite bright (maybe dark!?)
-  vec4 specsurface=texture2D(specMap,tc0.xy)*(1.0-damagecolor*damage.x*2.0);
+  vec4 specsurface=texture(specMap,tc0.xy)*(1.0-damagecolor*damage.x*2.0);
   float shininess=shininessMap(gl_FrontMaterial.shininess,specsurface);
 //add in lights 1..8 and ambient terms
   vec4 ambient=gl_Color;
@@ -109,5 +113,5 @@ void main() {
   if (light_enabled[1]!=0)
     specularity+=selfShadow1*pow(max(lDotR1,0.0),shininess)*gl_FrontLightProduct[1].specular;
 //sum everything up including glow from surface...and if cloaking, fade it out :-)
-  gl_FragColor=(ambient*diffsurface+specularity*specsurface+texture2D(glowMap,tc0.xy))*cloaking.rrrg;
+  gl_FragColor=(ambient*diffsurface+specularity*specsurface+texture(glowMap,tc0.xy))*cloaking.rrrg;
 }
