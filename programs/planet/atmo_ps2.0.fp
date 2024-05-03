@@ -23,7 +23,7 @@ float cosAngleToDepth(float fNDotV)
    vec2 res = vec2(1.0) / vec2(1024.0,128.0);
    vec2 mn = res * 0.5;
    vec2 mx = vec2(1.0)-res * 0.5;
-   return expandPrecision(texture2DLod(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereHaloType),mn,mx),0.0)) * fAtmosphereHaloThickness;
+   return expandPrecision(textureLod(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereHaloType),mn,mx),0.0)) * fAtmosphereHaloThickness;
 }
 
 float cosAngleToAlpha(float fNDotV)
@@ -71,14 +71,14 @@ vec4 atmosphericScatter(vec3 ambient, float fNDotV, float fNDotL, float fLDotV)
    float ldepth     = cosAngleToLDepth(scaleAndOffset(fNDotL));
    float ralpha     = cosAngleToAlpha(fNDotV);
    ralpha           = saturatef(pow(ralpha,fAtmosphereExtrusionSteepness));
-   
+
    vec3 labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth*0.5*fSelfShadowFactor));
    vec3 vabsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*vadepth));
-   vec3 lscatter    = gl_LightSource[0].diffuse.rgb 
-                       * fAtmosphereScatterColor.rgb 
-                       * labsorption 
+   vec3 lscatter    = gl_LightSource[0].diffuse.rgb
+                       * fAtmosphereScatterColor.rgb
+                       * labsorption
                        * (fMinScatterFactor+soft_min(fMaxScatterFactor*4.0-fMinScatterFactor,4.0*vdepth*ralpha));
-   
+
    vec4 rv;
    rv.rgb = regamma( ambient
                   + atmosphereLighting(scaleAndOffset(fNDotL))
@@ -94,10 +94,10 @@ vec3 ambientMapping( in vec3 direction )
 }
 
 void main()
-{      
+{
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
-   
+
    vec4 rv = atmosphericScatter( ambientMapping(varWSNormal), V.z, L.z, dot(L,V) );
    gl_FragColor.rgb = (rv.rgb);
    gl_FragColor.a = rv.a;
