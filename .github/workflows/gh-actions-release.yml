@@ -10,6 +10,11 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    continue-on-error: true
+
+    defaults:
+      run:
+        shell: bash
 
     strategy:
       fail-fast: false
@@ -19,41 +24,38 @@ jobs:
           - FROM:     'ubuntu:focal'
             ARTIFACT_EXT: 'tar.[xb]z*'
           # only build one Deb File b/c they're so large
-          - FROM:     'debian:buster'
+          - FROM:     'debian:bullseye'
             ARTIFACT_EXT: 'deb'
+          - FROM:     'opensuse/leap:15.5'
+            ARTIFACT_EXT: 'rpm'
           - FROM:     'opensuse/leap:15.4'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'opensuse/leap:15.3'
+          - FROM:     'fedora:40'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'opensuse/leap:15.2'
+          - FROM:     'fedora:39'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'fedora:37'
+          - FROM:     'fedora:38'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'fedora:36'
-            ARTIFACT_EXT: 'rpm'
-          - FROM:     'fedora:35'
-            ARTIFACT_EXT: 'rpm'
-          - FROM:     'rockylinux:9.0'
-            ARTIFACT_EXT: 'rpm'
-          - FROM:     'rockylinux:8.6'
-            ARTIFACT_EXT: 'rpm'
-          - FROM:     'rockylinux:8.5'
+          - FROM:     'rockylinux:9.3'
             ARTIFACT_EXT: 'rpm'
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f #v4.1.3
       with:
         fetch-depth: 2
         submodules: false
 
-    - name: Extract tag name etc
+    - name: Extract tag name and short SHA
       shell: bash
       run: |
         echo "TAG_NAME=$(echo ${GITHUB_REF#refs/tags/} | sed 's/\//_/g')" >> $GITHUB_ENV
-    - name: Test tag name etc
+        echo "SHORT_SHA=`git rev-parse --short HEAD`" >> $GITHUB_ENV
+    - name: Test tag name and short SHA
       run: |
         echo "${TAG_NAME}"
+        echo "${SHORT_SHA}"
+
     - name: Run CI
       env:
         FROM:       ${{ matrix.FROM }}
@@ -62,8 +64,10 @@ jobs:
         MY_OS_NAME: linux
         IS_RELEASE: 1
       run: script/cibuild $FLAGS
+
     - name: Upload the artifacts
-      uses: skx/github-action-publish-binaries@master
+      uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 #v4.3.3
+      #uses: skx/github-action-publish-binaries@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ARTIFACT_EXT: ${{ matrix.ARTIFACT_EXT }}
