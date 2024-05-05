@@ -21,27 +21,54 @@
 # along with vsUTCS.  If not, see <https://www.gnu.org/licenses/>.
 
 
-CMAKE_MINIMUM_REQUIRED(VERSION 3.5 FATAL_ERROR)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.16 FATAL_ERROR)
 
 SET(vsUTCS_VERSION_MAJOR "0")
-SET(vsUTCS_VERSION_MINOR "9")
+SET(vsUTCS_VERSION_MINOR "10")
 SET(vsUTCS_VERSION_PATCH "0")
+
 # Auto-populate with the git hash of the build
-IF (DEFINED ENV{GITHUB_SHA} AND NOT "$ENV{GITHUB_SHA}" STREQUAL "")
-    SET (vsUTCS_VERSION_TWEAK "$ENV{GITHUB_SHA}")
+IF (DEFINED ENV{SHORT_SHA} AND NOT "$ENV{SHORT_SHA}" STREQUAL "")
+    SET (vsUTCS_VERSION_TWEAK "$ENV{SHORT_SHA}")
 ELSE ()
+    SET (GIT_ROOT_DIR "${CMAKE_SOURCE_DIR}")
+    MESSAGE(STATUS "CMAKE_SOURCE_DIR = ${CMAKE_SOURCE_DIR}")
+    MESSAGE(STATUS "GIT_ROOT_DIR = ${GIT_ROOT_DIR}")
     EXECUTE_PROCESS(
         COMMAND git rev-parse --short HEAD
-        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        WORKING_DIRECTORY ${GIT_ROOT_DIR}
         OUTPUT_VARIABLE vsUTCS_VERSION_TWEAK
         OUTPUT_STRIP_TRAILING_WHITESPACE
     )
+ENDIF ()
+
+SET(vsUTCS_VERSION_LONG_STR "${vsUTCS_VERSION_MAJOR}.${vsUTCS_VERSION_MINOR}.${vsUTCS_VERSION_PATCH}-${vsUTCS_VERSION_TWEAK}")
+SET(vsUTCS_VERSION_SHORT_STR "${vsUTCS_VERSION_MAJOR}.${vsUTCS_VERSION_MINOR}.${vsUTCS_VERSION_PATCH}")
+SET(vsUTCS_PKG_VERSION_STR "${vsUTCS_VERSION_MAJOR}.${vsUTCS_VERSION_MINOR}.${vsUTCS_VERSION_PATCH}")
+
+IF (DEFINED ENV{TAG_NAME} AND NOT "$ENV{TAG_NAME}" STREQUAL "")
+    STRING(REGEX REPLACE "^v([0-9]+)\\..*" "\\1" TAG_VERSION_MAJOR "$ENV{TAG_NAME}")
+    STRING(REGEX REPLACE "^v[0-9]+\\.([0-9]+).*" "\\1" TAG_VERSION_MINOR "$ENV{TAG_NAME}")
+    STRING(REGEX REPLACE "^v[0-9]+\\.[0-9]+\\.([0-9]+).*" "\\1" TAG_VERSION_PATCH "$ENV{TAG_NAME}")
+    STRING(REGEX REPLACE "^v[0-9]+\\.[0-9]+\\.[0-9]+(.*)" "\\1" TAG_VERSION_TWEAK "$ENV{TAG_NAME}")
+
+    SET(TAG_VERSION_SHORT_STR "${TAG_VERSION_MAJOR}.${TAG_VERSION_MINOR}.${TAG_VERSION_PATCH}")
+
+    IF (NOT "${vsUTCS_VERSION_SHORT_STR}" VERSION_EQUAL "${TAG_VERSION_SHORT_STR}")
+        MESSAGE(FATAL_ERROR "Project version spelled out in CMake file does not match project version from TAG_NAME environment variable")
+    ENDIF ()
+    IF (NOT "${TAG_VERSION_TWEAK}" STREQUAL "")
+        SET(vsUTCS_VERSION_LONG_STR "${vsUTCS_VERSION_MAJOR}.${vsUTCS_VERSION_MINOR}.${vsUTCS_VERSION_PATCH}${TAG_VERSION_TWEAK}-${vsUTCS_VERSION_TWEAK}")
+        SET(vsUTCS_PKG_VERSION_STR "${vsUTCS_VERSION_MAJOR}.${vsUTCS_VERSION_MINOR}.${vsUTCS_VERSION_PATCH}${TAG_VERSION_TWEAK}")
+    ENDIF ()
 ENDIF ()
 
 PROJECT(vsUTCS
     VERSION
         "${vsUTCS_VERSION_MAJOR}.${vsUTCS_VERSION_MINOR}.${vsUTCS_VERSION_PATCH}"   #.${vsUTCS_VERSION_TWEAK}   # CMake only allows numeric version components, unfortunately.
 )
+
+MESSAGE("== Vega Strike: Upon the Coldest Sea Version: ${vsUTCS_VERSION_LONG_STR}")
 
 # Let cmake find our in-tree modules
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${vsUTCS_SOURCE_DIR})
@@ -179,16 +206,11 @@ SET(CPACK_PACKAGE_INSTALL_DIRECTORY "vsUTCS-${CPACK_PACKAGE_VERSION_MAJOR}.${CPA
 SET(CPACK_CONTACT "maintainers@vega-strike.org")
 
 # Source package filename
-IF (DEFINED ENV{TAG_NAME})
-    SET(vsUTCS_PACKAGE_VERSION_STR "$ENV{TAG_NAME}")
-ELSE (DEFINED ENV{TAG_NAME})
-    SET(vsUTCS_PACKAGE_VERSION_STR "${vsUTCS_VERSION_MAJOR}.${vsUTCS_VERSION_MINOR}.${vsUTCS_VERSION_PATCH}-0.${vsUTCS_VERSION_TWEAK}")
-ENDIF (DEFINED ENV{TAG_NAME})
-SET(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-Source")
+SET(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${vsUTCS_PKG_VERSION_STR}-Source")
 SET(CPACK_SOURCE_GENERATOR "TXZ")
 
 IF (WIN32 AND NOT UNIX)
-    MESSAGE("-- Configuring Packaging for Windows")
+    MESSAGE(STATUS "Configuring Packaging for Windows (not fully implemented)")
     # NSIS - See https://cmake.org/cmake/help/v3.3/module/CPackNSIS.html
     # NSI bug requires at least 1 set of 4 forwards slashes??
     SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}\\\\favicon.ico")
@@ -201,9 +223,8 @@ IF (WIN32 AND NOT UNIX)
     # NSIS, Wix, and compressed archives (7z, Zip)
     SET(CPACK_GENERATOR "NSIS" "NSIS64" "WIX" "7Z" "ZIP")
     # SET(CPACK_PACKAGE_EXECUTABLES "vegastrike.exe" "mesh_tool.exe" "vegasettings.exe")
-ELSEIF (XCODE)
-    MESSAGE("-- Configuring Packaging for Mac OS X")
-    # Mac OS X
+ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Darwin)
+    MESSAGE(STATUS "Configuring Packaging for macOS (not fully implemented)")
     # There's a few options for MacOSX; not sure what we want to use
     # DragNDrop -> DMG
     #  See https://cmake.org/cmake/help/v3.3/module/CPackDMG.html
@@ -211,19 +232,19 @@ ELSEIF (XCODE)
     # PackageMaker - see https://cmake.org/cmake/help/v3.3/module/CPackPackageMaker.html
     SET(CPACK_GENERATOR "DragNDrop" "BUNDLE" "TXZ")
 ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
-    MESSAGE("-- Configuring Packaging for Linux")
+    MESSAGE(STATUS "Configuring Packaging for Linux")
     SET(CPACK_GENERATOR "TXZ")
 
     # "DEB"
     IF (VS_CAN_BUILD_DEB)
-        MESSAGE("-- Configuring Debian Packaging")
+        MESSAGE(STATUS "Configuring Debian Packaging")
         # See https://cmake.org/cmake/help/v3.3/module/CPackDeb.html
         SET(CPACK_DEBIAN_PACKAGE_NAME "vsUTCS")
         SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "maintainers@vega-strike.org")
         SET(CPACK_DEBIAN_COMPRESSION_TYPE "bzip2")
         SET(CPACK_DEBIAN_PACKAGE_DEPENDS "vega-strike")
 
-        SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}")
+        SET(CPACK_PACKAGE_FILE_NAME "${CPACK_DEBIAN_PACKAGE_NAME}_${vsUTCS_PKG_VERSION_STR}")
 
         SET(CPACK_DEBIAN_PACKAGE_SECTION "Amusements/Games")
         SET(CPACK_DEBIAN_PACKAGE_HOMEPAGE "https://www.vega-strike.org")
@@ -232,7 +253,7 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
 
     #  "RPM"
     IF (VS_CAN_BUILD_RPM)
-        MESSAGE("-- Configuring RPM Packaging")
+        MESSAGE(STATUS "Configuring RPM Packaging")
         # See https://cmake.org/cmake/help/v3.3/module/CPackRPM.html
         SET(CPACK_RPM_PACKAGE_LICENSE "GPLv3") # See ../LICENSE
         SET(CPACK_RPM_PACKAGE_URL "https://www.vega-strike.org")
@@ -246,13 +267,13 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
             SET(vsUTCS_LINUX_VERSION_STR "${LINUX_VERSION_ID}")
         ENDIF (LINUX_CODENAME)
 
-        SET(CPACK_PACKAGE_FILE_NAME "${CPACK_RPM_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-${LINUX_ID}-${vsUTCS_LINUX_VERSION_STR}")
+        SET(CPACK_PACKAGE_FILE_NAME "${CPACK_RPM_PACKAGE_NAME}_${vsUTCS_PKG_VERSION_STR}-${LINUX_ID}-${vsUTCS_LINUX_VERSION_STR}")
         SET(CPACK_GENERATOR "RPM")
     ENDIF ()
-ELSE (WIN32 AND NOT UNIX)
-    MESSAGE("-- Configuring Packaging for Unknown Platforms - \"${CMAKE_SYSTEM_NAME}\"")
+ELSE ()
+    MESSAGE(STATUS "Configuring Packaging for Unknown Platform - \"${CMAKE_SYSTEM_NAME}\"")
     # Unknown Platform --> Just do compressed tarball
     SET(CPACK_GENERATOR "TXZ")
-ENDIF (WIN32 AND NOT UNIX)
+ENDIF ()
 
 INCLUDE(CPack)
