@@ -189,19 +189,17 @@
                         "Shield_Front_Bottom_Left": "150",
                         "Shield_Recharge": "8",
                         "Shield_Leak": "0",
-                        "Warp_Capacitor": "325",
+                        "Warp_Capacitor": "400",
                         "Primary_Capacitor": "200",
-                        "Reactor_Recharge": "30",
+                        "Reactor_Recharge": "44",
                         "Outsystem_Jump_Cost": "200",
-                        "Afterburner_Speed_Governor": "120",
-                        "Default_Speed_Governor": "120",
                         "Radar_Range": "300000000",
                         "Tracking_Cone": "4",
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{laser;;15;Light;1.01200;-6.80000e-2;3.40800;;;;;;;;;1;1}{laser;;15;Light;-0.964000;-6.80000e-2;3.40800;;;;;;;;;1;1}{laser;;3;Light;0.380000;0.176000;1.07600;;;;;;;;;1;1}{laser;;3;Light;-0.336000;0.176000;1.07600;;;;;;;;;1;1}{Dumbfire;48;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}{;;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}",
-                        "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;@upgrades/skyscope_alpha.png@Refurbished Part;0}{capacitor02;upgrades/Capacitors/Standard;200;1;4;4;1;1;@upgrades/capacitor.png@Refurbished Part;0}{reactor02;upgrades/Reactors/Standard;200;1;2;3.5;1;1;@upgrades/reactor.png@Refurbished Part;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;@upgrades/reactor_capacitance.png@Refurbished Part;0}{quadshield02;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;2;8;1;1;@upgrades/shield.png@Refurbished Part;0}{armor02;upgrades/Armor;200;1;20;0;1;1;@cargo/plasteel.png@Refurbished Part;0}"
+                        "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;@upgrades/skyscope_alpha.png@Refurbished Part;0}{capacitor02;upgrades/Capacitors/Standard;200;1;4;4;1;1;@upgrades/capacitor.png@Refurbished Part;0}{reactor03;upgrades/Reactors/Standard;200;1;2;3.5;1;1;@upgrades/reactor.png@Refurbished Part;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;@upgrades/reactor_capacitance.png@Refurbished Part;0}{quadshield02;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;2;8;1;1;@upgrades/shield.png@Refurbished Part;0}{armor02;upgrades/Armor;200;1;20;0;1;1;@cargo/plasteel.png@Refurbished Part;0}"
                     }
                 }
             ]
