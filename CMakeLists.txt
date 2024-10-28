@@ -176,6 +176,7 @@ INSTALL(FILES weapons.json DESTINATION share/vegastrike)
 # Linux specific locations from here on out.
 
 INSTALL(FILES vegastrike.config DESTINATION share/vegastrike)
+INSTALL(FILES config.json DESTINATION share/vegastrike)
 
 INSTALL(FILES vegastrike.desktop DESTINATION share/applications)
 INSTALL(FILES vegasettings.desktop DESTINATION share/applications)
