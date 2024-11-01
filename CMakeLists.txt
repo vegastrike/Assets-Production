@@ -143,6 +143,8 @@ INSTALL(DIRECTORY units/ DESTINATION share/vegastrike/units
 
 INSTALL(DIRECTORY universe/ DESTINATION share/vegastrike/universe)
 
+INSTALL(DIRECTORY python/ DESTINATION share/vegastrike/python)
+
 INSTALL(FILES New_Game DESTINATION share/vegastrike)
 
 INSTALL(FILES Version.txt DESTINATION share/vegastrike)

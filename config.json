@@ -6,5 +6,16 @@
     "resolution_y": 1600,
     "screen": 0
 },
+  
+"components": {
+    "drive": {
+        "non_combat_mode_multiplier": 100
+    }
+},
+
+"constants": {
+    "megajoules_multiplier": 100
+},
+  
 "advanced": {}
 }
