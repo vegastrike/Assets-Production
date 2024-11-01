@@ -14,20 +14,11 @@ end_color = "#-c"
 non_combat_speed_multiplier = 1
 megajoules_multiplier = 1
 
-llama_begin = {}
-
 with open('config.json', 'r') as file:
     data = json.load(file)
     non_combat_speed_multiplier = data['components']['drive']['non_combat_mode_multiplier']
     megajoules_multiplier = data['constants']['megajoules_multiplier']
     
-with open('units/units.json', 'r') as file:
-    data = json.load(file)
-    
-    for ship in data:
-        if ship['Key'] == 'Llama.begin':
-            llama_begin = ship
-            break
 
 
 # Format large number
@@ -80,6 +71,11 @@ def get_variant(key):
         return 'Variant: #-cCivilian'
     if key.endswith('milspec'):
         return 'Variant: #-cMilspec'
+    if key.endswith('rg'):
+        return 'Variant: #-cRegional Guard'
+    if key.endswith('rgspec'):
+        return 'Variant: #-cRegional Guard Spec'
+    
     return ''
 
 def get_itts(itts):
@@ -294,11 +290,20 @@ def get_ship_description(ship_stats):
                       
     return text
 
-# Test function
-# Useful to check python script for correctness before running VS
+if __name__ == "__main__":
+    # Test function
+    # Useful to check python script for correctness before running VS
+    
+    with open('units/units.json', 'r') as file:
+        data = json.load(file)
+        
+        for ship in data:
+            if ship['Key'] == 'Llama.begin':
+                t = get_ship_description(ship)
+                t = t.replace('#n#','\n')
+                print(t)
+                break
 
-t = get_ship_description(llama_begin)
-t = t.replace('#n#','\n')
-print(t)
+    
 
 
