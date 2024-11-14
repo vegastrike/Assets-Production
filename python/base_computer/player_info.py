@@ -31,11 +31,7 @@ def get_player_info(names, relations, kills):
     
     for name, relation_str, kills_str in zip(names, relations, kills):
         relation = int(round(float(relation_str) * 100))
-        faction_kills = int(round(float(relation_str)))
-        
-        # For some reason, privateer reports 1 kill
-        if name == 'privateer':
-            faction_kills = 0
+        faction_kills = int(kills_str)
             
         total_kills += faction_kills
         
