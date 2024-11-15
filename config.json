@@ -14,7 +14,9 @@
 },
 
 "constants": {
-    "megajoules_multiplier": 100
+    "megajoules_multiplier": 100,
+    "kilo": 1000,
+    "kj_per_unit_damage": 5400
 },
   
 "advanced": {}

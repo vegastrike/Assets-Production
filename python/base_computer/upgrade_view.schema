@@ -1,0 +1,98 @@
+#c.75:.9:1#Selected Part: #-c<Name>
+#c.75:.9:1#Mass: #-c<mass> metric tons.
+#c.75:.9:1#Space required: #-c<volume> cubic meter.
+#n##c0:1:.5#[DESCRIPTION]#-c
+<description>
+<Show_Stats=true>#n##c0:1:.5#[STATS]
+
+// Ammo & Weapon
+#-cType: #c0:1:1#<mountsize>#-c#c.9:.9:.5#<type> #-c
+#c.75:.9:1#   Damage: #-c<Damage.rate> MJ <nonlethal>
+#c.75:.9:1#   Phase damage: #-c<Damage.phasedamage> MJ <nonlethal>
+#c.75:.9:1#   Energy usage: #-c<Energy.rate> MJ/shot
+#c.75:.9:1#   Refire delay: #-c<Energy.refire> seconds
+#c.75:.9:1#   Range: #-c<Distance.range> meters
+#c.75:.9:1#   Range attenuation factor: #-c<Distance.stability>% per km
+#c.75:.9:1#   Exit velocity: #-c<Distance.speed> meters/second
+#c.75:.9:1#   Rounds remaining: #-c<ammo_quantity>
+<Upgrade_Type=extra_weapon_stats>#n##c.75:.9:1#Average for continuous firing:#-c
+#c.75:.9:1#   Damage: #-c<Damage.continuous_rate> MJ/s
+#c.75:.9:1#   Phase damage: #-c<Damage.continuous_phasedamage> MJ/s
+#c.75:.9:1#   Energy usage: #-c<Energy.continuous_rate> MJ/s
+
+// Afterburner Upgrade
+#c.75:.9:1#Increases afterburner thrust rating by: #-c<Afterburner_Accel> %
+#c.75:.9:1#Increases max afterburner combat speed governor settings by: #-c<Afterburner_Speed_Governor> %
+#c.75:.9:1#Increases afterburner fuel consumption by: #-c<Afterburner_Usage_Cost> %
+
+
+// Armor
+<Upgrade_Type=Armor>#c.75:.9:1#Replaces existing armor, if any.
+<Upgrade_Type=Armor>Armor damage resistance:#-c
+
+#c.675:.925:.825# - Fore-starboard-high: #-c<Armor_Front_Top_Right> MJ
+#c.675:.925:.825# - Aft-starboard-high: #-c<Armor_Back_Top_Right> MJ
+#c.675:.925:.825# - Fore-port-high: #-c<Armor_Front_Top_Left> MJ
+#c.675:.925:.825# - Aft-port-high: #-c<Armor_Back_Top_Left> MJ
+#c.675:.925:.825# - Fore-starboard-low: #-c<Armor_Front_Bottom_Right> MJ
+#c.675:.925:.825# - Aft-starboard-low: #-c<Armor_Back_Bottom_Right> MJ
+#c.675:.925:.825# - Fore-port-low: #-c<Armor_Front_Bottom_Left> MJ
+#c.675:.925:.825# - Aft-port-low: #-c<Armor_Back_Bottom_Left> MJ
+
+// Autotracking
+<Upgrade_Type=Autotrack>#c.75:.9:1#Installs auto-tracking capability on the selected mount.
+
+// Capacitor
+#c.75:.9:1#Installs main capacitor bank with storage capacity: #-c<Primary_Capacitor> MJ
+
+// Cargo
+#c.75:.9:1#Adds #-c<Hold_Volume> cubic meters #c.75:.9:1#to Hold Volume #-c
+
+// Cloak
+<Upgrade_Type=Cloak>#c.75:.9:1#Installs a cloaking device.
+Activated energy usage: #-c<Cloak_Energy> MJ/s
+
+// ECM
+#c.75:.9:#Provides an ECM rating of #-c<ECM_Rating> #-c
+#c.75:.9:#Provides an ECM resistence of #-c<ECM_Resist> #-c
+#c.75:.9:#Energy usage: #-c<Ecm_Drain> MJ/s
+
+// FTL Capacitor
+#c.75:.9:1#Adds a SPEC capacitor with a capacity of #-c<Warp_Capacitor> MJ
+
+// Jump Drive
+<Upgrade_Type=Jump_Drive>#c.75:.9:1#Installs a jump drive.#-c
+
+// Reactor
+#c.75:.9:1#Installs a reactor with an output of #-c<Reactor_Recharge> MJ/s#-c
+
+// Sensor
+// TODO: Check against code
+#c.75:.9:1#Tracking range: #-c<Radar_Range> km
+#c.75:.9:1#Tracking cone: #-c<Tracking_Cone>
+#c.75:.9:1#Assisted targeting cone: #-c<Max_Cone> radians
+#c.75:.9:1#Missile locking cone: #-c<Lock_Cone> radians
+#c.75:.9:1#ITTS (Intelligent Target Tracking System) support: #-c<ITTS>
+#c.75:.9:1#AFHH (Advanced Flag & Hostility Heuristics) support: #-c<Radar_Color>
+
+// Shield
+<Upgrade_Type=Shield>#c.75:.9:1#Installs shield with following protection ratings:#-c
+#c.675:.925:.825# - port: #-c<Shield_Front_Bottom_Left> MJ
+#c.675:.925:.825# - starboard: #-c<Shield_Front_Bottom_Right> MJ
+#c.675:.925:.825# - fore: #-c<Shield_Front_Top_Right> MJ
+#c.675:.925:.825# - aft: #-c<Shield_Back_Top_Left> MJ
+#c.75:.9:1#Shield recharge rate of: #-c<Shield_Recharge> MJ/s
+
+// Tractor Capability
+<Upgrade_Type=Tractor_Capability>#c.75:.9:1#Enhances the mount to support tractor capability.
+
+// Shady upgrades
+#c.75:.9:1#Removes #-c<Shady_Hold_Volume> cubic meters #c.75:.9:1#from Hold Volume #-c
+#c.75:.9:1#Decreases main capacitor capacity by #-c<Shady_Primary_Capacitor>%
+#c.75:.9:1#Increases reactor output by #-c<Shady_Reactor_Recharge>%#-c
+#c.75:.9:1#Increases mass by #-c<Shady_Mass>%#-c
+#c.75:.9:1#Increases shield recharge by #-c<Shady_Shield_Recharge>%#-c
+#c.75:.9:1#Decreases hull integrity by #-c<Shady_Hull>%
+#c.75:.9:1#Decreases Armor thickness by #-c<Shady_Armor_Back_Top_Left>%
+#c.75:.9:1#Increases thrust and afterburning thrust by #-c<Shady_Afterburner_Accel>%#-c
+#c.75:.9:1#Increases turning performance by #-c<Shady_Maneuver_Yaw>%#-c
