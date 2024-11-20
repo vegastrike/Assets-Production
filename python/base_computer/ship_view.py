@@ -276,8 +276,25 @@ def get_durability(ship_stats):
     return text
 
 
+def clean_ship_stats(ship_stats):
+    skip = ['Directory']
     
+    for key, value in ship_stats.items():
+        resource = value.split('/')
+        
+        # Check if resource
+        if len(resource) != 3:
+            continue
+        
+        # Skip?
+        if key in skip:
+            continue
+
+        ship_stats[key] = float(resource[0])
+
+
 def get_ship_description(ship_stats):
+    clean_ship_stats(ship_stats)
     locale.setlocale(locale.LC_ALL, '')
     
     text = get_notes(ship_stats)
