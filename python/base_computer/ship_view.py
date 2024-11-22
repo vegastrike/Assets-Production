@@ -102,9 +102,8 @@ def get_general(ship_stats):
 # Flight Characteristics
 def get_flight(ship_stats):
     mass = get_dbl(ship_stats,'Mass')
-    moment = get_dbl(ship_stats,'Moment_Of_Inertia')
     divider = 9.8 * mass
-    divider_maneuver = moment * 180 / math.pi
+    divider_maneuver = mass * 180 / math.pi
     yaw = get_dbl(ship_stats,'Maneuver_Yaw', divider_maneuver)
     pitch = get_dbl(ship_stats,'Maneuver_Pitch', divider_maneuver)
     roll = get_dbl(ship_stats,'Maneuver_Roll', divider_maneuver)
