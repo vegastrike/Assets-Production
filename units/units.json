@@ -767,7 +767,7 @@
     {
         "Key": "mult_overdrive01__upgrades",
         "Name": "Overdrive I",
-        "Upgrade_Type": "Afterburner",
+        "Upgrade_Type": "Afterburner_Upgrade",
         "Object_Type": "Upgrade_Replacement",
         "Textual_Description": "\"@upgrades/afterburner_generic.png@Engine overdrive. Increases thrust at the expense of decreased fuel efficiency. Comes bundled with appropriate vector-governor firmware updates.\"\n",
         "Mass": "1",
@@ -779,7 +779,7 @@
     {
         "Key": "mult_overdrive02__upgrades",
         "Name": "Overdrive II",
-        "Upgrade_Type": "Afterburner",
+        "Upgrade_Type": "Afterburner_Upgrade",
         "Object_Type": "Upgrade_Replacement",
         "Textual_Description": "\"@upgrades/afterburner_generic.png@Engine overdrive. Increases thrust at the expense of decreased fuel efficiency. Comes bundled with appropriate vector-governor firmware updates.\"\n",
         "Mass": "1",
@@ -791,7 +791,7 @@
     {
         "Key": "mult_overdrive03__upgrades",
         "Name": "Overdrive III",
-        "Upgrade_Type": "Afterburner",
+        "Upgrade_Type": "Afterburner_Upgrade",
         "Object_Type": "Upgrade_Replacement",
         "Textual_Description": "\"@upgrades/afterburner_generic.png@Engine overdrive. Increases thrust at the expense of decreased fuel efficiency. Comes bundled with appropriate vector-governor firmware updates.\"\n",
         "Mass": "1",
@@ -803,7 +803,7 @@
     {
         "Key": "mult_overdrive04__upgrades",
         "Name": "Overdrive IV",
-        "Upgrade_Type": "Afterburner",
+        "Upgrade_Type": "Afterburner_Upgrade",
         "Object_Type": "Upgrade_Replacement",
         "Textual_Description": "\"@upgrades/afterburner.png@Engine overdrive. Increases thrust at the expense of decreased fuel efficiency. Comes bundled with appropriate vector-governor firmware updates.\"\n",
         "Mass": "1",
@@ -815,7 +815,7 @@
     {
         "Key": "mult_overdrive05__upgrades",
         "Name": "Overdrive V",
-        "Upgrade_Type": "Afterburner",
+        "Upgrade_Type": "Afterburner_Upgrade",
         "Object_Type": "Upgrade_Replacement",
         "Textual_Description": "\"@upgrades/afterburner.png@Engine overdrive. Increases thrust at the expense of decreased fuel efficiency. Comes bundled with appropriate vector-governor firmware updates.\"\n",
         "Mass": "1",
@@ -827,7 +827,7 @@
     {
         "Key": "mult_overdrive06__upgrades",
         "Name": "Overdrive VI",
-        "Upgrade_Type": "Afterburner",
+        "Upgrade_Type": "Afterburner_Upgrade",
         "Object_Type": "Upgrade_Replacement",
         "Textual_Description": "\"@upgrades/afterburner.png@Engine overdrive. Increases thrust at the expense of decreased fuel efficiency. Comes bundled with appropriate vector-governor firmware updates.\"\n",
         "Mass": "1",
