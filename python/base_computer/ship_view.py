@@ -8,8 +8,15 @@ red = "#c1:.3:.3#"
 green = "#c0:1:.5#"
 light_grey = "#c.75:.9:1#"
 grey = "#c.6:.7:.8#"
+yellow = "#c.925:.925:.925#"
 light_yellow = "#c.675:.925:.825#"
 end_color = "#-c"
+
+KEY = 'Key'
+NAME = 'Name'
+LC_NAME = 'name' # inconsistent. fix.
+SUB_UNITS = 'Sub_Units'
+MOUNTS = 'Mounts'
 
 non_combat_speed_multiplier = 1
 megajoules_multiplier = 1
@@ -19,7 +26,16 @@ with open('config.json', 'r') as file:
     non_combat_speed_multiplier = data['components']['drive']['non_combat_mode_multiplier']
     megajoules_multiplier = data['constants']['megajoules_multiplier']
     
-
+# Wasteful
+def get_unit(key):
+    with open('units/units.json', 'r') as file:
+        units = json.load(file)
+        
+        for unit in units:
+            if unit[KEY] == key:
+                return unit
+            
+        return None
 
 # Format large number
 def lnum(ship_stats, key, divider = 1.0):
@@ -92,7 +108,7 @@ def get_iff(iff):
 # General
 def get_general(ship_stats):
     text = f"{green}[GENERAL INFORMATION]{newline}"
-    text += f"#-c{newline}{light_grey}Model: #-c{ship_stats['Name']}{light_grey}    {get_variant(ship_stats['Key'])}{newline}"
+    text += f"#-c{newline}{light_grey}Model: #-c{ship_stats['Name']}{light_grey}    {get_variant(ship_stats[KEY])}{newline}"
     text += f"{light_grey}Mass: #-c{lnum(ship_stats,'Mass')} metric tons{newline}"
     text += f"{light_grey}Hold volume: #-c{lnum(ship_stats,'Hold_Volume')} cubic meters{newline}"
     text += f"{light_grey}Upgrade volume: #-c{lnum(ship_stats,'Upgrade_Storage_Volume')} cubic meters{newline}"
@@ -271,13 +287,252 @@ def get_durability(ship_stats):
         for pair in shield4:
             shield_stat = lnum(ship_stats, pair[1])
             text += f"{light_yellow} - {pair[0]}: #-c{shield_stat} MJ{newline}"
+    
+    if 'Can_Cloak' in ship_stats and ship_stats['Can_Cloak'] == '1':
+        text += f"{light_grey}Cloaking device installed.{end_color}{newline}"
+    text += f"{newline}"
+    return text
+
+# this gets a list of subunits as a dictionary of turret type/number of type
+# e.g. {'turret_flaq', 3}
+def get_sub_units_summary(ship_stats):
+    sub_units = {}
+    
+    if SUB_UNITS not in ship_stats:
+        return sub_units
+    
+    sub_units_str = ship_stats[SUB_UNITS]
+    sub_units_str_components = sub_units_str.split('{')
+    
+    for component in sub_units_str_components:
+        semi = component.find(';')
+        if semi == -1:
+            continue
+        sub_unit = component[0:semi]
         
+        if sub_unit in sub_units:
+            sub_units[sub_unit] += 1
+        else:
+            sub_units[sub_unit] = 1
+    
+    return sub_units
+
+# Same as above
+def get_mounts_summary(ship_stats):
+    if MOUNTS not in ship_stats:
+        return {}
+    
+    mounts_str = ship_stats[MOUNTS]
+    
+    mounts = {}
+    
+    primary_components = mounts_str.split('{')
+    
+    for primary_component in primary_components:
+        secondary_components = primary_component.split(';')
+        
+        if len(secondary_components) < 6:
+            continue
+        
+        mount = (secondary_components[0], secondary_components[3])
+        
+        if mount not in mounts:
+            mounts[mount] = 1
+        else:
+            mounts[mount] += 1
+        
+    
+    return mounts
+
+
+def get_weapon_from_json(name):
+    with open('weapons.json', 'r') as file:
+        data = json.load(file)
+        
+        for weapon in data:
+            if LC_NAME in weapon and weapon[LC_NAME] == name:
+                return weapon
+            
+    return None
+
+def get_weapon_details(weapon, vsdm, remaining = ''):
+    # Non-lethal weapons - convert damage to positive and add text
+    text = '' 
+    
+    if 'Damage.rate' in weapon:
+        damage = weapon['Damage.rate']
+        
+        if damage  < 0:
+            text += f"{light_grey}  - Damage: {damage * vsdm}MJ (non-lethal){end_color}{newline}"
+        else:
+            text += f"{light_grey}  - Damage: {damage * vsdm}MJ {end_color}{newline}"
+    
+    if 'Damage.phasedamage' in weapon:
+        damage = weapon['Damage.phasedamage']
+        
+        if damage  < 0:
+            text += f"{light_grey}  - Phase Damage: {damage * vsdm}MJ (non-lethal){end_color}{newline}"
+        else:
+            text += f"{light_grey}  - Phase Damage: {damage * vsdm}MJ {end_color}{newline}"
+    
+    if 'Energy.rate' in weapon and weapon['Energy.rate'] > 0:
+        energy = weapon['Energy.rate']
+        text += f"{light_grey}  - Energy: {energy}{end_color}{newline}"
+        
+    if 'Energy.refire' in weapon:
+        refire = weapon['Energy.refire']
+        text += f"{light_grey}  - Fires every: {refire} seconds{end_color}{newline}"
+        
+    if 'Distance.range' in weapon:
+        range_ = weapon['Distance.range']
+        text += f"{light_grey}  - Range: {range_}{end_color}{newline}"
+    
+    if 'Energy.locktime' in weapon:
+        lock = weapon['Energy.locktime']
+        text += f"{light_grey}  - Time to lock: {lock} seconds{end_color}{newline}"
+        
+        if remaining != '':
+            text += f"{light_grey}  - Missiles remaining: {remaining}{end_color}{newline}"
+        
+        
+    return text
+    
+
+def get_mounts(ship_stats):
+    if MOUNTS not in ship_stats:
+        return []
+    
+    mounts_str = ship_stats[MOUNTS]
+    
+    mounts = []
+    
+    primary_components = mounts_str.split('{')
+    
+    for primary_component in primary_components:
+        secondary_components = primary_component.split(';')
+        
+        if len(secondary_components) < 6:
+            continue
+        
+        mounts.append((secondary_components[0], secondary_components[3], secondary_components[1]))
+    
+    return mounts
+
+def get_weapons(ship_stats):
+    text = f"{green}[ARMAMENTS]{newline}#-c{newline}"
+    text += f"{green}MOUNT POINTS{newline}#-c{newline}"
+    
+    # Print mount points summary
+    mp_summary = get_mounts_summary(ship_stats)
+    for mount,quantity in mp_summary.items():
+        if quantity == 1:
+            text += f"{light_grey}1 mount point of type {green}{mount[0]} {light_yellow}{mount[1]}{end_color}{newline}"
+        else:
+            text += f"{green}{quantity}{light_grey} mount points of type {green}{mount[0]} {light_yellow}{mount[1]}{end_color}{newline}"
+    
+    # TODO: print each weapon info once
+    mounts = get_mounts(ship_stats)
+    for mount in mounts:
+        text += f"{light_grey}{mount[0]} {yellow}{mount[1]}{end_color}{newline}"
+        
+        if len(mount[0]) > 0:
+            # Weapon installed
+            weapon = get_weapon_from_json(mount[0])
+            
+            if weapon != None:
+                text += get_weapon_details(weapon, 5400, mount[2])
+                continue
+            
+            # Can't find weapon. It's a missile
+            ammo_dummy_unit = get_unit(mount[0] + '_ammo__upgrades')
+            if ammo_dummy_unit == None:
+                continue # Couldn't find missile unit
+            
+            ammo_dummy_mounts = get_mounts(ammo_dummy_unit)
+            weapon = get_weapon_from_json(ammo_dummy_mounts[0][0])
+            
+            if weapon != None:
+                text += get_weapon_details(weapon, 5400, mount[2])
+            
+            
+        
+    return text
+        
+
+# This is a recursive function, as some turrets have turrets
+# I didn't check but there may be edge cases where a turret has two turrets or some 
+# nonsense like that. If it does, it won't be printed correctly.
+
+# Also, if there's a loop, e.g. turret pointing to itself, we'll loop infinitely.
+def get_turret_gun(turret_stats, level = 0):
+    text = ''
+    
+    if level == 5:
+        return text
+    
+    if SUB_UNITS in turret_stats:
+        sub_units = get_sub_units_summary(turret_stats)
+        
+        for key in sub_units:
+            sub_unit = get_unit(key)
+            
+            if key == None:
+                continue
+            
+            gun = get_turret_gun(sub_unit, level +1)
+            if gun != None:
+                text += gun
+    
+    # We're processing the ship itself
+    if level == 0:
+        return text
+    
+    
+    mounts = get_mounts(turret_stats)
+        
+    for mount in mounts:
+        text += f"{light_grey}{mount[0]} {mount[1]}{end_color}{newline}"
+        weapon = get_weapon_from_json(mount[0])
+        if weapon != None:
+            text += get_weapon_details(weapon, 5400)
     return text
 
 
+# This returns the text
+def get_turrets(ship_stats):
+    sub_units = get_sub_units_summary(ship_stats)
+    
+    if len(sub_units) == 0:
+        return ''
+    
+    text = f"{green}[SUB-UNITS]{newline}#-c{newline}"
+    
+    for key, quantity in sub_units.items():
+        sub_unit = get_unit(key)
+        
+        if sub_unit == None:
+            continue
+        
+        # Really shouldn't happen
+        if quantity <= 0:
+            continue
+        
+        if quantity == 1:
+            text += f"{light_grey}1 turret of type {sub_unit['Name']}{end_color}{newline}"
+        
+        else:
+            text += f"{light_grey}{quantity} turrets of type {sub_unit['Name']}{end_color}{newline}"
+        
+        gun = get_turret_gun(ship_stats, 0)
+        
+        if gun != None:
+            text += gun
+    
+    return text
+
+ 
 def clean_ship_stats(ship_stats):
     skip = ['Directory']
-    
     for key, value in ship_stats.items():
         resource = value.split('/')
         
@@ -303,6 +558,8 @@ def get_ship_description(ship_stats):
     text += get_radar(ship_stats)
     text += get_energy_spec_and_jump(ship_stats)
     text += get_durability(ship_stats)
+    text += get_weapons(ship_stats)
+    text += get_turrets(ship_stats)
                       
     return text
 
@@ -310,16 +567,17 @@ if __name__ == "__main__":
     # Test function
     # Useful to check python script for correctness before running VS
     
-    with open('units/units.json', 'r') as file:
+    with open('units/units_old.json', 'r') as file:
         data = json.load(file)
         
         for ship in data:
-            if ship['Key'] == 'Llama.begin':
+            if ship[KEY] == 'Vigilance':
                 t = get_ship_description(ship)
                 t = t.replace('#n#','\n')
                 print(t)
+                
                 break
 
-    
+        
 
 
