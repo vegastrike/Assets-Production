@@ -1,0 +1,29 @@
+General
+-------
+We are currently in the process of migrating vegastrike.config (old, XML) to config.json (new, JSON).
+As a result, the structure of the new file changes regularly and overwrites whatever changes the player has introduced.
+As the first thing we ported was the graphics (resolution, monitor), 
+this requires the player to manually edit the file after every relevant pull.
+
+Solution
+--------
+There is a script, conveniently named overwrite_config_defaults, to do this automatically.
+Copy all your changes to config.bak, preserving the relevant structure.
+
+Example:
+If this is your current config.json
+"a": {
+    "b": "modified value",
+    "c": "unmodified value"
+}
+
+Create config.bak with the following:
+"a": {
+    "b": "modified value"
+}
+
+Place config.bak in the same folder as config.json (currently root of data).
+Run the following from root
+python3 python/utilities/overwrite_config_defaults
+
+Your config.json should be updated with your changes.
