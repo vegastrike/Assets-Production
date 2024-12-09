@@ -8,15 +8,50 @@
 },
   
 "components": {
+    "afterburner": {
+    },
+        
     "drive": {
         "non_combat_mode_multiplier": 100
+    },
+    
+    "energy": {
+        "factor": 1
+    },
+    
+    "fuel": {
+        "fuel_equals_warp": false,
+        "factor": 600
+    },
+    
+    "ftl_drive": {
+        "factor": 0.1
+    },
+    
+    "ftl_energy": {
+        "factor": 1.0
+    },
+    
+    "jump_drive": {
+        "factor": 1.0
+    },
+    
+    "reactor": {
+        "factor": 1.0
     }
+    
 },
 
 "constants": {
     "megajoules_multiplier": 100,
     "kilo": 1000,
     "kj_per_unit_damage": 5400
+},
+
+"game_start": {
+    "default_mission": "main_menu.mission",
+    "introduction": 
+        "Welcome to Vega Strike!\nUse #8080FFTab#000000 to afterburn (#8080FF+,-#000000 cruise control),\n#8080FFarrows#000000 to steer.\nThe #8080FFt#000000 key targets objects; #8080FFspace#000000 fires at them & #8080FFa#000000 activates the SPEC drive.\nTo go to another star system, buy a jump drive for about 10000 credits,\nfly to a wireframe jump-point and press #8080FFj#000000 to warp to a near star.\nTarget a base or planet;\nWhen you get close a green box will appear. Inside the box, #8080FFd#000000 will land."    
 },
   
 "advanced": {}
