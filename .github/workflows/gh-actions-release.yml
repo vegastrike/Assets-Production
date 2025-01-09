@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     continue-on-error: true
 
     defaults:
@@ -21,22 +21,18 @@ jobs:
       matrix:
         include:
           # Source tarballs only
-          - FROM:     'ubuntu:focal'
+          - FROM:     'debian:bookworm'
             ARTIFACT_EXT: 'tar.[xb]z*'
           # only build one Deb File b/c they're so large
-          - FROM:     'debian:bullseye'
+          - FROM:     'debian:bookworm'
             ARTIFACT_EXT: 'deb'
-          - FROM:     'opensuse/leap:15.5'
+          - FROM:     'opensuse/leap:15.6'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'opensuse/leap:15.4'
+          - FROM:     'fedora:41'
             ARTIFACT_EXT: 'rpm'
           - FROM:     'fedora:40'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'fedora:39'
-            ARTIFACT_EXT: 'rpm'
-          - FROM:     'fedora:38'
-            ARTIFACT_EXT: 'rpm'
-          - FROM:     'rockylinux:9.3'
+          - FROM:     'rockylinux_rockylinux:9.5'
             ARTIFACT_EXT: 'rpm'
 
     steps:
@@ -59,15 +55,13 @@ jobs:
     - name: Run CI
       env:
         FROM:       ${{ matrix.FROM }}
-        COMPILER:   'clang'
         FLAGS:      ''
         MY_OS_NAME: linux
         IS_RELEASE: 1
       run: script/cibuild $FLAGS
 
     - name: Upload the artifacts
-      uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 #v4.4.3
-      #uses: skx/github-action-publish-binaries@master
+      uses: skx/github-action-publish-binaries@44887b225ceca96efd8a912d39c09ad70312af31 # master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         ARTIFACT_EXT: ${{ matrix.ARTIFACT_EXT }}

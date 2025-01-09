@@ -5,7 +5,7 @@ on: [ pull_request ]
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     defaults:
       run:
@@ -17,12 +17,10 @@ jobs:
         include:
           # only do one Deb file because they're so large
           - FROM:     'debian:bullseye'
-          - FROM:     'opensuse/leap:15.5'
-          - FROM:     'opensuse/leap:15.4'
+          - FROM:     'opensuse/leap:15.6'
+          - FROM:     'fedora:41'
           - FROM:     'fedora:40'
-          - FROM:     'fedora:39'
-          - FROM:     'fedora:38'
-          - FROM:     'rockylinux:9.3'
+          - FROM:     'rockylinux_rockylinux:9.5'
           - FROM:     'manjarolinux/base'
 
     steps:
@@ -48,7 +46,6 @@ jobs:
     - name: Run CI
       env:
         FROM:       ${{ matrix.FROM }}
-        COMPILER:   'clang'
         FLAGS:      ''
         MY_OS_NAME: linux
         IS_RELEASE: 0
