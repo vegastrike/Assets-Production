@@ -16,7 +16,7 @@ jobs:
       matrix:
         include:
           # only do one Deb file because they're so large
-          - FROM:     'debian:bullseye'
+          - FROM:     'debian:bookworm'
           - FROM:     'opensuse/leap:15.6'
           - FROM:     'fedora:41'
           - FROM:     'fedora:40'
