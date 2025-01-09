@@ -33,7 +33,6 @@ jobs:
     - name: Run CI
       env:
         FROM:       ${{ matrix.FROM }}
-        COMPILER:   'clang'
         FLAGS:      ''
         MY_OS_NAME: linux
         IS_RELEASE: 0
