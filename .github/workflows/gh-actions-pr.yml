@@ -16,7 +16,7 @@ jobs:
           - FROM:     'opensuse/leap:15.6'
           - FROM:     'fedora:41'
           - FROM:     'fedora:40'
-          - FROM:     'rockylinux:9.5'
+          - FROM:     'rockylinux_rockylinux:9.5'
           - FROM:     'manjarolinux/base'
 
     steps:
