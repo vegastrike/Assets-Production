@@ -5,28 +5,23 @@ on: [ pull_request ]
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     strategy:
       fail-fast: true
       matrix:
         include:
           # only do one Deb file because they're so large
-          - FROM:     'debian:buster'
-          - FROM:     'opensuse/leap:15.4'
-          - FROM:     'opensuse/leap:15.3'
-          - FROM:     'opensuse/leap:15.2'
-          - FROM:     'fedora:37'
-          - FROM:     'fedora:36'
-          - FROM:     'fedora:35'
-          - FROM:     'rockylinux:9.0'
-          - FROM:     'rockylinux:8.6'
-          - FROM:     'rockylinux:8.5'
+          - FROM:     'debian:bookworm'
+          - FROM:     'opensuse/leap:15.6'
+          - FROM:     'fedora:41'
+          - FROM:     'fedora:40'
+          - FROM:     'rockylinux_rockylinux:9.5'
           - FROM:     'manjarolinux/base'
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       with:
         fetch-depth: 2
         submodules: false
@@ -38,7 +33,6 @@ jobs:
     - name: Run CI
       env:
         FROM:       ${{ matrix.FROM }}
-        COMPILER:   'clang'
         FLAGS:      ''
         MY_OS_NAME: linux
         IS_RELEASE: 0
