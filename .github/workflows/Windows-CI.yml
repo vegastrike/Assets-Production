@@ -13,9 +13,9 @@ jobs:
       matrix:
         include:
           - os:              windows-2019
-            is-release:      1
+            is-release:      0
           - os:              windows-2022
-            is-release:      1
+            is-release:      0
 
     steps:
       - name: Checkout
