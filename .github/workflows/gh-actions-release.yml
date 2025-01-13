@@ -37,13 +37,16 @@ jobs:
         fetch-depth: 2
         submodules: false
 
-    - name: Extract tag name etc
+    - name: Extract tag name and short SHA
       shell: bash
       run: |
         echo "TAG_NAME=$(echo ${GITHUB_REF#refs/tags/} | sed 's/\//_/g')" >> $GITHUB_ENV
-    - name: Test tag name etc
+        echo "SHORT_SHA=`git rev-parse --short HEAD`" >> $GITHUB_ENV
+    - name: Test tag name and short SHA
       run: |
         echo "${TAG_NAME}"
+        echo "${SHORT_SHA}"
+
     - name: Run CI
       env:
         FROM:       ${{ matrix.FROM }}
@@ -51,10 +54,10 @@ jobs:
         MY_OS_NAME: linux
         IS_RELEASE: 1
       run: script/cibuild $FLAGS
+
     - name: Upload the artifacts
-      uses: skx/github-action-publish-binaries@44887b225ceca96efd8a912d39c09ad70312af31 # master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ARTIFACT_EXT: ${{ matrix.ARTIFACT_EXT }}
+      uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191 # v2.0.8
+      if: startsWith(github.ref, 'refs/tags/')
       with:
-        args: "packages/*.${{ matrix.ARTIFACT_EXT }}"
+        token: ${{ secrets.GITHUB_TOKEN }}
+        files: "packages/*.${{ matrix.ARTIFACT_EXT }}"
