@@ -37,3 +37,19 @@ jobs:
         MY_OS_NAME: linux
         IS_RELEASE: 0
       run: script/cibuild $FLAGS
+
+    - name: Extract short SHA
+      shell: bash
+      run: |
+        echo "SHORT_SHA=`git rev-parse --short ${{ github.event.pull_request.head.sha }}`" >> $GITHUB_ENV
+    - name: Test short SHA
+      run: |
+        echo "${SHORT_SHA}"
+
+    - name: Run CI
+      env:
+        FROM:       ${{ matrix.FROM }}
+        FLAGS:      ''
+        MY_OS_NAME: linux
+        IS_RELEASE: 0
+      run: script/cibuild $FLAGS
