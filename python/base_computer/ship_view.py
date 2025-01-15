@@ -38,9 +38,22 @@ def get_unit(key):
         return None
 
 # Format large number
-def lnum(ship_stats, key, divider = 1.0):
-    num = float(ship_stats[key])/divider
-    num = '{:n}'.format(num)
+def lnum(ship_stats, key, divider = 1.0) -> str:
+    try:
+        num = float(ship_stats[key])/divider
+        num = '{:n}'.format(num)
+    except KeyError:
+        print('KeyError in lnum: ', key, ' not found in ship_stats')
+        return ''
+    except ZeroDivisionError:
+        print('ZeroDivisionError in lnum')
+        return ''
+    except TypeError:
+        print('TypeError in lnum')
+        return ''
+    except ValueError:
+        print('ValueError in lnum')
+        return ''
     return num
 
 def get(ship_stats, key):
@@ -58,11 +71,16 @@ def get_int(ship_stats, key):
 def get_dbl(ship_stats, key, divider = 1.0):
     try:
         fl = float(ship_stats[key])/divider
+    except KeyError:
+        print('KeyError in get_dbl: ', key, ' not found in ship_stats')
+        return 0.0
     except ValueError:
         print('ValueError in get_dbl: ', ship_stats[key], ' could not be converted to a double')
         return 0.0
-    #s = f"{key} {fl}"
-    #print(s)
+    except TypeError:
+        print('TypeError in get_dbl')
+        return 0.0
+
     return fl
 
 def get_fmt_dbl(ship_stats, key, divider = 1.0):
