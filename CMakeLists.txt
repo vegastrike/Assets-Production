@@ -2,7 +2,7 @@
 # @file   : CMakeLists.txt
 # @brief  : cmake configuration file for vsUTCS
 #====================================
-# Copyright (C) 2020-2022 Evert Vorster, Stephen G. Tuggy, Roy Falk,
+# Copyright (C) 2020-2025 Evert Vorster, Stephen G. Tuggy, Roy Falk,
 # and other vsUTCS contributors.
 #
 # This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
@@ -21,7 +21,7 @@
 # along with vsUTCS.  If not, see <https://www.gnu.org/licenses/>.
 
 
-CMAKE_MINIMUM_REQUIRED(VERSION 3.16 FATAL_ERROR)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.21 FATAL_ERROR)
 
 SET(vsUTCS_VERSION_MAJOR "0")
 SET(vsUTCS_VERSION_MINOR "10")
@@ -76,6 +76,8 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${vsUTCS_SOURCE_DIR})
 # Detect available Linux Distros that can be built for
 FIND_PACKAGE(LinuxDistro REQUIRED)
 
+INCLUDE(GNUInstallDirs)
+
 SET(CPACK_IGNORE_FILES
     build/
     packages/
@@ -93,108 +95,108 @@ SET(CPACK_SOURCE_IGNORE_FILES
     ".*\\\\.pyc"
 )
 
-INSTALL(DIRECTORY .vegastrike/ DESTINATION share/vegastrike/.vegastrike)
+INSTALL(DIRECTORY .vegastrike/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/.vegastrike)
 
-INSTALL(DIRECTORY ai/ DESTINATION share/vegastrike/ai
+INSTALL(DIRECTORY ai/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/ai
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY animations/ DESTINATION share/vegastrike/animations
+INSTALL(DIRECTORY animations/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/animations
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY bases/ DESTINATION share/vegastrike/bases)
+INSTALL(DIRECTORY bases/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/bases)
 
-INSTALL(DIRECTORY cgi-accountserver/ DESTINATION share/vegastrike/cgi-accountserver)
+INSTALL(DIRECTORY cgi-accountserver/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/cgi-accountserver)
 
-INSTALL(DIRECTORY cockpits/ DESTINATION share/vegastrike/cockpits
+INSTALL(DIRECTORY cockpits/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/cockpits
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY communications/ DESTINATION share/vegastrike/communications)
+INSTALL(DIRECTORY communications/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/communications)
 
-INSTALL(DIRECTORY documentation/ DESTINATION share/vegastrike/documentation)
+INSTALL(DIRECTORY documentation/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/documentation)
 
-INSTALL(DIRECTORY history/ DESTINATION share/vegastrike/history)
+INSTALL(DIRECTORY history/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/history)
 
-INSTALL(DIRECTORY meshes/ DESTINATION share/vegastrike/meshes
+INSTALL(DIRECTORY meshes/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/meshes
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY mission/ DESTINATION share/vegastrike/mission)
+INSTALL(DIRECTORY mission/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/mission)
 
-INSTALL(DIRECTORY modules/ DESTINATION share/vegastrike/modules)
+INSTALL(DIRECTORY modules/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/modules)
 
-INSTALL(DIRECTORY music/ DESTINATION share/vegastrike/music)
+INSTALL(DIRECTORY music/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/music)
 
-INSTALL(DIRECTORY programs/ DESTINATION share/vegastrike/programs)
+INSTALL(DIRECTORY programs/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/programs)
 
-INSTALL(DIRECTORY sectors/ DESTINATION share/vegastrike/sectors)
+INSTALL(DIRECTORY sectors/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/sectors)
 
-INSTALL(DIRECTORY sounds/ DESTINATION share/vegastrike/sounds
+INSTALL(DIRECTORY sounds/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/sounds
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY sprites/ DESTINATION share/vegastrike/sprites
+INSTALL(DIRECTORY sprites/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/sprites
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY techniques/ DESTINATION share/vegastrike/techniques)
+INSTALL(DIRECTORY techniques/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/techniques)
 
-INSTALL(DIRECTORY textures/ DESTINATION share/vegastrike/textures
+INSTALL(DIRECTORY textures/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/textures
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY units/ DESTINATION share/vegastrike/units
+INSTALL(DIRECTORY units/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/units
         PATTERN "*.am" EXCLUDE)
 
-INSTALL(DIRECTORY universe/ DESTINATION share/vegastrike/universe)
+INSTALL(DIRECTORY universe/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/universe)
 
-INSTALL(DIRECTORY python/ DESTINATION share/vegastrike/python)
+INSTALL(DIRECTORY python/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/python)
 
-INSTALL(FILES New_Game DESTINATION share/vegastrike)
+INSTALL(FILES New_Game DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-INSTALL(FILES Version.txt DESTINATION share/vegastrike)
+INSTALL(FILES Version.txt DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-INSTALL(FILES factions.xml DESTINATION share/vegastrike)
+INSTALL(FILES factions.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-#INSTALL(FILES units.json DESTINATION share/vegastrike)
-#INSTALL(FILES ships.json DESTINATION share/vegastrike)
+#INSTALL(FILES units.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
+#INSTALL(FILES ships.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-INSTALL(FILES master_part_list.csv DESTINATION share/vegastrike)
-INSTALL(FILES master_part_list.json DESTINATION share/vegastrike)
-INSTALL(FILES master_asteroid_list.json DESTINATION share/vegastrike)
-INSTALL(FILES master_component_list.json DESTINATION share/vegastrike)
-INSTALL(FILES master_ship_list.json DESTINATION share/vegastrike)
-INSTALL(FILES controls.json DESTINATION share/vegastrike)
+INSTALL(FILES master_part_list.csv DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
+INSTALL(FILES master_part_list.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
+INSTALL(FILES master_asteroid_list.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
+INSTALL(FILES master_component_list.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
+INSTALL(FILES master_ship_list.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
+INSTALL(FILES controls.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
 
-INSTALL(FILES py27_modules.7z DESTINATION share/vegastrike)
+INSTALL(FILES py27_modules.7z DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-INSTALL(FILES py3_modules.7z DESTINATION share/vegastrike)
+INSTALL(FILES py3_modules.7z DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-INSTALL(FILES setup.config DESTINATION share/vegastrike)
+INSTALL(FILES setup.config DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-INSTALL(FILES vega-license.txt DESTINATION share/vegastrike)
+INSTALL(FILES vega-license.txt DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-INSTALL(FILES weapon_list.xml DESTINATION share/vegastrike)
-INSTALL(FILES weapons.json DESTINATION share/vegastrike)
+INSTALL(FILES weapon_list.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
+INSTALL(FILES weapons.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-# Linux specific locations from here on out.
+INSTALL(FILES vegastrike.config DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
+INSTALL(FILES config.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-INSTALL(FILES vegastrike.config DESTINATION share/vegastrike)
-INSTALL(FILES config.json DESTINATION share/vegastrike)
+IF (CMAKE_SYSTEM_NAME STREQUAL Linux)
+    INSTALL(FILES vegastrike.desktop DESTINATION share/applications)
+    INSTALL(FILES vegasettings.desktop DESTINATION share/applications)
 
-INSTALL(FILES vegastrike.desktop DESTINATION share/applications)
-INSTALL(FILES vegasettings.desktop DESTINATION share/applications)
+    INSTALL(FILES vegastrike.png DESTINATION share/pixmaps)
+    INSTALL(FILES vegastrike_settings.png DESTINATION share/pixmaps)
 
-INSTALL(FILES vegastrike.png DESTINATION share/pixmaps)
-INSTALL(FILES vegastrike_settings.png DESTINATION share/pixmaps)
+    INSTALL(FILES vegastrike.xpm DESTINATION share/pixmaps)
 
-INSTALL(FILES vegastrike.xpm DESTINATION share/pixmaps)
-
-INSTALL(FILES vs DESTINATION bin PERMISSIONS
-	OWNER_READ OWNER_WRITE OWNER_EXECUTE
-	GROUP_READ GROUP_EXECUTE
-	WORLD_READ WORLD_EXECUTE)
-
-INSTALL(FILES vsettings DESTINATION bin PERMISSIONS
+    INSTALL(FILES vs DESTINATION bin PERMISSIONS
         OWNER_READ OWNER_WRITE OWNER_EXECUTE
         GROUP_READ GROUP_EXECUTE
         WORLD_READ WORLD_EXECUTE)
+
+    INSTALL(FILES vsettings DESTINATION bin PERMISSIONS
+            OWNER_READ OWNER_WRITE OWNER_EXECUTE
+            GROUP_READ GROUP_EXECUTE
+            WORLD_READ WORLD_EXECUTE)
+ENDIF ()
 
 # CPack stuff
 SET(CPACK_PACKAGE_NAME "vsUTCS")
@@ -213,7 +215,7 @@ SET(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${vsUTCS_PKG_VERSION_S
 SET(CPACK_SOURCE_GENERATOR "TXZ")
 
 IF (WIN32 AND NOT UNIX)
-    MESSAGE(STATUS "Configuring Packaging for Windows (not fully implemented)")
+    MESSAGE(STATUS "Configuring Packaging for Windows")
     # NSIS - See https://cmake.org/cmake/help/v3.3/module/CPackNSIS.html
     # NSI bug requires at least 1 set of 4 forwards slashes??
     SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}\\\\favicon.ico")
@@ -223,17 +225,19 @@ IF (WIN32 AND NOT UNIX)
     SET(CPACK_NSIS_CONTACT "maintainers@vega-strike.org")
     SET(CPACK_NSIS_MODIFY_PATH ON)
 
-    # NSIS, Wix, and compressed archives (7z, Zip)
-    SET(CPACK_GENERATOR "NSIS" "NSIS64" "WIX" "7Z" "ZIP")
-    # SET(CPACK_PACKAGE_EXECUTABLES "vegastrike.exe" "mesh_tool.exe" "vegasettings.exe")
+    SET(CPACK_GENERATOR "NSIS")
+    SET(CPACK_PACKAGE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/packages")
+    SET(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_v${vsUTCS_PKG_VERSION_STR}_Windows_${CMAKE_SYSTEM_VERSION}_${CMAKE_SYSTEM_PROCESSOR}")
 ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Darwin)
-    MESSAGE(STATUS "Configuring Packaging for macOS (not fully implemented)")
+    MESSAGE(STATUS "Configuring Packaging for macOS")
     # There's a few options for MacOSX; not sure what we want to use
     # DragNDrop -> DMG
     #  See https://cmake.org/cmake/help/v3.3/module/CPackDMG.html
     # Bundle -> Compressed Disk Image
     # PackageMaker - see https://cmake.org/cmake/help/v3.3/module/CPackPackageMaker.html
-    SET(CPACK_GENERATOR "DragNDrop" "BUNDLE" "TXZ")
+    SET(CPACK_GENERATOR "DragNDrop")
+    SET(CPACK_PACKAGE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/packages")
+    SET(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_v${vsUTCS_PKG_VERSION_STR}_macOS_${CMAKE_SYSTEM_VERSION}_${CMAKE_SYSTEM_PROCESSOR}")
 ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
     MESSAGE(STATUS "Configuring Packaging for Linux")
     SET(CPACK_GENERATOR "TXZ")

@@ -61,9 +61,8 @@ jobs:
       run: script/cibuild $FLAGS
 
     - name: Upload the artifacts
-      uses: skx/github-action-publish-binaries@44887b225ceca96efd8a912d39c09ad70312af31 # master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ARTIFACT_EXT: ${{ matrix.ARTIFACT_EXT }}
+      uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191 # v2.0.8
+      if: startsWith(github.ref, 'refs/tags/')
       with:
-        args: "packages/*.${{ matrix.ARTIFACT_EXT }}"
+        token: ${{ secrets.GITHUB_TOKEN }}
+        files: "packages/*.${{ matrix.ARTIFACT_EXT }}"
