@@ -56,7 +56,11 @@ def get_int(ship_stats, key):
     return int(ship_stats[key])
 
 def get_dbl(ship_stats, key, divider = 1.0):
-    fl = float(ship_stats[key])/divider
+    try:
+        fl = float(ship_stats[key])/divider
+    except ValueError:
+        print('ValueError in get_dbl: ', ship_stats[key], ' could not be converted to a double')
+        return 0.0
     #s = f"{key} {fl}"
     #print(s)
     return fl
@@ -255,7 +259,7 @@ def get_durability(ship_stats):
     shield_stat = {}
     num_emitters = 0
     for pair in shield4:
-        if ship_stats[pair[1]] == '':
+        if not pair[1] in ship_stats:
             continue
         value = get_dbl(ship_stats,pair[1])
         if value > 0:
@@ -534,7 +538,7 @@ def get_turrets(ship_stats):
 def clean_ship_stats(ship_stats):
     skip = ['Directory']
     for key, value in ship_stats.items():
-        resource = value.split('/')
+        resource: list[str] = value.split('/')
         
         # Check if resource
         if len(resource) != 3:
@@ -544,7 +548,10 @@ def clean_ship_stats(ship_stats):
         if key in skip:
             continue
 
-        ship_stats[key] = float(resource[0])
+        try:
+            ship_stats[key] = float(resource[0])
+        except ValueError:
+            continue
 
 
 def get_ship_description(ship_stats):
@@ -577,7 +584,3 @@ if __name__ == "__main__":
                 print(t)
                 
                 break
-
-        
-
-
