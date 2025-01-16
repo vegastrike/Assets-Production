@@ -38,9 +38,22 @@ def get_unit(key):
         return None
 
 # Format large number
-def lnum(ship_stats, key, divider = 1.0):
-    num = float(ship_stats[key])/divider
-    num = '{:n}'.format(num)
+def lnum(ship_stats, key, divider = 1.0) -> str:
+    try:
+        num = float(ship_stats[key])/divider
+        num = '{:n}'.format(num)
+    except KeyError:
+        print('KeyError in lnum: ', key, ' not found in ship_stats')
+        return ''
+    except ZeroDivisionError:
+        print('ZeroDivisionError in lnum')
+        return ''
+    except TypeError:
+        print('TypeError in lnum')
+        return ''
+    except ValueError:
+        print('ValueError in lnum')
+        return ''
     return num
 
 def get(ship_stats, key):
@@ -56,9 +69,18 @@ def get_int(ship_stats, key):
     return int(ship_stats[key])
 
 def get_dbl(ship_stats, key, divider = 1.0):
-    fl = float(ship_stats[key])/divider
-    #s = f"{key} {fl}"
-    #print(s)
+    try:
+        fl = float(ship_stats[key])/divider
+    except KeyError:
+        print('KeyError in get_dbl: ', key, ' not found in ship_stats')
+        return 0.0
+    except ValueError:
+        print('ValueError in get_dbl: ', ship_stats[key], ' could not be converted to a double')
+        return 0.0
+    except TypeError:
+        print('TypeError in get_dbl')
+        return 0.0
+
     return fl
 
 def get_fmt_dbl(ship_stats, key, divider = 1.0):
@@ -255,7 +277,7 @@ def get_durability(ship_stats):
     shield_stat = {}
     num_emitters = 0
     for pair in shield4:
-        if ship_stats[pair[1]] == '':
+        if not pair[1] in ship_stats:
             continue
         value = get_dbl(ship_stats,pair[1])
         if value > 0:
@@ -534,7 +556,7 @@ def get_turrets(ship_stats):
 def clean_ship_stats(ship_stats):
     skip = ['Directory']
     for key, value in ship_stats.items():
-        resource = value.split('/')
+        resource: list[str] = value.split('/')
         
         # Check if resource
         if len(resource) != 3:
@@ -544,7 +566,10 @@ def clean_ship_stats(ship_stats):
         if key in skip:
             continue
 
-        ship_stats[key] = float(resource[0])
+        try:
+            ship_stats[key] = float(resource[0])
+        except ValueError:
+            continue
 
 
 def get_ship_description(ship_stats):
@@ -577,7 +602,3 @@ if __name__ == "__main__":
                 print(t)
                 
                 break
-
-        
-
-
