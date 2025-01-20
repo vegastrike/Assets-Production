@@ -45,15 +45,11 @@ jobs:
           echo "${TAG_NAME}"
           echo "${SHORT_SHA}"
 
-      - name: Build it
+      - name: Build it and package it
         env:
           MY_OS_NAME: macos
           IS_RELEASE: 1
         run: script/cibuild $FLAGS
-
-      - name: Package it
-        working-directory: ${{github.workspace}}/build
-        run: cpack -V
 
       - name: Upload the artifacts
         uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191 # v2.0.8
