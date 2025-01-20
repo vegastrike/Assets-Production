@@ -193,7 +193,7 @@ ENDIF (DEFINED ENV{TAG_NAME})
 SET(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-Source")
 SET(CPACK_SOURCE_GENERATOR "TXZ")
 
-IF (WIN32 AND NOT UNIX)
+IF (CMAKE_SYSTEM_NAME STREQUAL Windows)
     MESSAGE(STATUS "Configuring Packaging for Windows")
     # NSIS - See https://cmake.org/cmake/help/v3.3/module/CPackNSIS.html
     # NSI bug requires at least 1 set of 4 forwards slashes??
@@ -218,12 +218,12 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Darwin)
     SET(CPACK_PACKAGE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/packages")
     SET(CPACK_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_v${vsUTCS_PKG_VERSION_STR}_macOS_${CMAKE_SYSTEM_VERSION}_${CMAKE_SYSTEM_PROCESSOR}")
 ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
-    MESSAGE("-- Configuring Packaging for Linux")
+    MESSAGE(STATUS "Configuring Packaging for Linux")
     SET(CPACK_GENERATOR "TXZ")
 
     # "DEB"
     IF (VS_CAN_BUILD_DEB)
-        MESSAGE("-- Configuring Debian Packaging")
+        MESSAGE(STATUS "Configuring Debian Packaging")
         # See https://cmake.org/cmake/help/v3.3/module/CPackDeb.html
         SET(CPACK_DEBIAN_PACKAGE_NAME "vsUTCS")
         SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "maintainers@vega-strike.org")
@@ -239,7 +239,7 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
 
     #  "RPM"
     IF (VS_CAN_BUILD_RPM)
-        MESSAGE("-- Configuring RPM Packaging")
+        MESSAGE(STATUS "Configuring RPM Packaging")
         # See https://cmake.org/cmake/help/v3.3/module/CPackRPM.html
         SET(CPACK_RPM_PACKAGE_LICENSE "GPLv3") # See ../LICENSE
         SET(CPACK_RPM_PACKAGE_URL "https://www.vega-strike.org")
@@ -256,10 +256,10 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Linux)
         SET(CPACK_PACKAGE_FILE_NAME "${CPACK_RPM_PACKAGE_NAME}_${vsUTCS_PACKAGE_VERSION_STR}-${LINUX_ID}-${vsUTCS_LINUX_VERSION_STR}")
         SET(CPACK_GENERATOR "RPM")
     ENDIF ()
-ELSE (WIN32 AND NOT UNIX)
-    MESSAGE("-- Configuring Packaging for Unknown Platforms - \"${CMAKE_SYSTEM_NAME}\"")
+ELSE ()
+    MESSAGE(STATUS "Configuring Packaging for Unknown Platforms - \"${CMAKE_SYSTEM_NAME}\"")
     # Unknown Platform --> Just do compressed tarball
     SET(CPACK_GENERATOR "TXZ")
-ENDIF (WIN32 AND NOT UNIX)
+ENDIF ()
 
 INCLUDE(CPack)
