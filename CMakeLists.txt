@@ -214,7 +214,7 @@ SET(CPACK_CONTACT "maintainers@vega-strike.org")
 SET(CPACK_SOURCE_PACKAGE_FILE_NAME "${CPACK_PACKAGE_NAME}_${vsUTCS_PKG_VERSION_STR}-Source")
 SET(CPACK_SOURCE_GENERATOR "TXZ")
 
-IF (WIN32 AND NOT UNIX)
+IF (CMAKE_SYSTEM_NAME STREQUAL Windows)
     MESSAGE(STATUS "Configuring Packaging for Windows")
     # NSIS - See https://cmake.org/cmake/help/v3.3/module/CPackNSIS.html
     # NSI bug requires at least 1 set of 4 forwards slashes??
