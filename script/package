@@ -6,7 +6,7 @@
 # @usage  : script/package
 # @param  : none
 #
-# Copyright (C) 2020 Stephen G. Tuggy and other vsUTCS contributors
+# Copyright (C) 2020-2025 Stephen G. Tuggy and other vsUTCS contributors
 #
 # This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
 #
@@ -88,12 +88,52 @@ function copyFiles()
 
 function buildPackages()
 {
-    make package
-    make package_source
+    # When building on github runner, 'hdiutil create' occasionally fails (resource busy)
+    # so we make several retries
+    try_count=0
+    hdiutil_success=0
+
+    while [ $hdiutil_success -ne 1 ] && [ $try_count -lt 8 ]; do
+        # Create temporary rw image
+        if make package
+        then
+            hdiutil_success=1
+            break
+        fi
+        try_count=$(( $try_count + 1 ))
+        echo "'make package' failed (attempt ${try_count}). Retrying..."
+        sleep 1
+    done
+
+    if [ $hdiutil_success -ne 1 ]; then
+        echo "FATAL: 'make package' FAILED!"
+        exit 1
+    fi
+
+    # Do the same for package_source
+    try_count=0
+    hdiutil_success=0
+
+    while [ $hdiutil_success -ne 1 ] && [ $try_count -lt 8 ]; do
+        # Create temporary rw image
+        if make package_source
+        then
+            hdiutil_success=1
+            break
+        fi
+        try_count=$(( $try_count + 1 ))
+        echo "'make package_source' failed (attempt ${try_count}). Retrying..."
+        sleep 1
+    done
+
+    if [ $hdiutil_success -ne 1 ]; then
+        echo "FATAL: 'make package_source' FAILED!"
+        exit 1
+    fi
 }
 
 echo "----------------------------"
-echo "--- package | 2020-08-23 ---"
+echo "--- package | 2025-01-22 ---"
 echo "----------------------------"
 
 cd $BUILD_DIR
