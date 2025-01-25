@@ -452,7 +452,7 @@ class quest_tutorial (quest.quest):
             angle = unit.facingAngleToUnit(self.player,self.drone)
             velocity = Vector.Mag(self.player.GetVelocity())
             #check if angle to drone is at least 22 degrees (0.20 radians)
-            if (angle>=0.20 and velocity>=295):
+            if (angle>=0.20 and velocity>=115):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"And now set your velocity reference to zero by pressing the #9999FFBACKSPACE"+self.msgColor+" key and come to a complete stop.")
                 self.player.commAnimation("com_tutorial_oswald.ani")
@@ -499,9 +499,9 @@ class quest_tutorial (quest.quest):
                 self.timer = VS.GetGameTime()+12
                 self.practice = 13
         if (self.practice==13):
-            # check if the player has velocity <=-20m/s
+            # check if the player has velocity <-2m/s
             velocity = unit.getSignedVelocity(self.player)
-            if (velocity<=-18):
+            if (velocity<=-2):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Excellent.")
                 VS.IOmessage (2,"Oswald","Privateer",self.msgColor+"You have learned how to target, orient your ship, accellerate, decellerate, and bring your ship to a stop.")
