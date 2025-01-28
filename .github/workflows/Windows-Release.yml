@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Install CMake
-        uses: lukka/get-cmake@acb35cf920333f4dc3fc4f424f1b30d5e7d561b4 #v3.31.4
+        uses: lukka/get-cmake@5f6e04f5267c8133f1273bf2103583fc72c46b17 #v3.31.5
         with:
           cmakeVersion: 3.31.4
 
@@ -56,10 +56,10 @@ jobs:
         run: script/build
 
       - name: Package it
-        run: cpack -V
+        run: cpack -V -G NSIS
 
       - name: Upload the artifacts
-        uses: softprops/action-gh-release@c062e08bd532815e2082a85e87e3ef29c3e6d191 # v2.0.8
+        uses: softprops/action-gh-release@c95fe1489396fe8a9eb87c0abf8aa5b2ef267fda # v2.2.1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
