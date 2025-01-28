@@ -27,4 +27,4 @@ jobs:
           cmakeVersion: 3.31.4
 
       - name: Build it
-        run: script/build
+        run: script/build.ps1
