@@ -142,16 +142,15 @@ def process_line(line, unit):
     if eq_index == -1:
         key = line[start_index+1:end_index]
         if key in unit:
-            # Is there another tag?
             line = line[:start_index] + str(unit[key]) + line[end_index+1:]
             
+            # Is there another tag?
             if line.find('<') != -1:
                 return process_line(line, unit)
             
             return line + "#n#" + '\n'
         else:
-            return ''
-        return 
+            return '' 
     else:
         pair = line[start_index+1:end_index]
         key, value = pair.split('=')
@@ -185,6 +184,24 @@ def get_upgrade_info(key):
                 unit.update(upgrade)
                 break
     
+    # Process shield and armor
+    if 'shield_strength' in unit:
+        shield_strength = unit['shield_strength']
+        unit['shield_front'] = shield_strength
+        unit['shield_back'] = shield_strength
+        unit['shield_left'] = shield_strength
+        unit['shield_right'] = shield_strength
+        del unit['shield_strength']
+
+    if 'armor_strength' in unit:
+        armor_strength = unit['armor_strength']
+        unit['armor_front'] = armor_strength
+        unit['armor_back'] = armor_strength
+        unit['armor_left'] = armor_strength
+        unit['armor_right'] = armor_strength
+        del unit['armor_strength']
+
+
     # Process ammo and weapons
     if 'Mounts' in unit:
         mounts = unit['Mounts'][1:-1]
