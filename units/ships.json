@@ -55,7 +55,8 @@
                 "Upgrades": "{dualshield02;;}{skyscope1;;}{reactor01;;}",
                 "Light": "{supernova.bmp.bfxm;-0.249996;0.00000e+0;-1.83758;1.5;;;;;}{supernova.bmp.bfxm;0.250004;0.00000e+0;-1.83758;1.5;;;;;}",
                 "Mounts": "{;;;LIGHT SPECIAL;-4.07186e-6;-0.150000;1.99709;;;-1.06144e-5;0.00000e+0;2.00000;0.00000e+0;1.00000;0.00000e+0;1;1}",
-                "Upgrade_Storage_Volume": "16"
+                "Upgrade_Storage_Volume": "16",
+                "shield_facets": "2"
             },
             "units": [
                 {
@@ -129,6 +130,7 @@
                 "Mounts": "{;;3;Light medium autotracking;6;-2.75;-4.75;;;;;;;;;1;1}{;;3;Light medium autotracking;-6;-2.75;-4.75;;;;;;;;;1;1}{;;3;Light medium autotracking;6;4.75;-4.75;;;;;;;;;1;1}{;;3;Light medium autotracking;-6;4.75;-4.75;;;;;;;;;1;1}{;;;heavy autotracking;0;-3;3;;;;;;;;;1;1}{;;21;light-missile;6.082913;-.368988;0.747223;;;;;;;;;1;1}{;;21;light-missile;-6.157103;-.379586;1.100964;;;;;;;;;1;1}{;;300;Light-missile medium-missile heavy-missile;6.045031;-3.217878;0.973509;;;;;;;;;1;1}{;;300;Light-missile medium-missile heavy-missile;-6.022359;-3.201684;0.913285;;;;;;;;;1;1}",
                 "Explosion": "explosion_aera.ani",
                 "Upgrade_Storage_Volume": "900",
+                "shield_facets": "4",
                 "accel": "4000"
             },
             "units": [
@@ -163,7 +165,6 @@
                         "Lock_Cone": "10",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{Photon_MKIII;3000;6;Light medium autotracking;6;-2.75;-4.75;;;;;;;;;1;1}{Photon_MKIII;3000;6;Light medium autotracking;-6;-2.75;-4.75;;;;;;;;;1;1}{Photon_MKIII;3000;6;Light medium autotracking;6;4.75;-4.75;;;;;;;;;1;1}{Photon_MKIII;3000;6;Light medium autotracking;-6;4.75;-4.75;;;;;;;;;1;1}{Penetrator;;40;heavy autotracking;0;-3;3;;;;;;;;;1;1}{Heatseeker;7;21;light-missile;6.082913;-.368988;0.747223;;;;;;;;;1;1}{HeatSeeker;7;21;light-missile;-6.157103;-.379586;1.100964;;;;;;;;;1;1}{AdvTorpedo;4;400;Light-missile medium-missile heavy-missile;6.045031;-3.217878;0.973509;;;;;;;;;1;1}{AdvTorpedo;4;400;Light-missile medium-missile heavy-missile;-6.022359;-3.201684;0.913285;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "shield_strength": "1600"
                     }
                 },
@@ -198,7 +199,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;5;Light medium autotracking;6;-2.75;-4.75;;;;;;;;;1;1}{;;5;Light medium autotracking;-6;-2.75;-4.75;;;;;;;;;1;1}{;;5;Light medium autotracking;6;4.75;-4.75;;;;;;;;;1;1}{;;5;Light medium autotracking;-6;4.75;-4.75;;;;;;;;;1;1}{;;30;heavy autotracking;0;-3;3;;;;;;;;;1;1}{;;21;light-missile;6.082913;-.368988;0.747223;;;;;;;;;1;1}{;;21;light-missile;-6.157103;-.379586;1.100964;;;;;;;;;1;1}{;;300;Light-missile medium-missile heavy-missile;6.045031;-3.217878;0.973509;;;;;;;;;1;1}{;;300;Light-missile medium-missile heavy-missile;-6.022359;-3.201684;0.913285;;;;;;;;;1;1}",
                         "Cargo": "{Areus_Milspec_Package;upgrades/Packages/Milspec;200000;1;140;855;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "4",
                         "shield_strength": "600"
                     }
                 }
@@ -243,6 +243,7 @@
                 "Light": "{supernova.bmp.bfxm;0;0;-4.4;1.2;;;;;}{supernova.bmp.bfxm;0.6;0;-4.4;1.2;;;;;}{supernova.bmp.bfxm;-0.6;0;-4.4;1.2;;;;;}{supernova.bmp.bfxm;1.2;0;-4.4;1.2;;;;;}{supernova.bmp.bfxm;-1.2;0;-4.4;1.2;;;;;}{supernova.bmp.bfxm;1.8;0;-4.3;1.2;;;;;}{supernova.bmp.bfxm;-1.8;0;-4.3;1.2;;;;;}{supernova.bmp.bfxm;5;0.275;-2;2;;;;;}{supernova.bmp.bfxm;4;0.275;-2;2;;;;;}{supernova.bmp.bfxm;-5;0.275;-2;2;;;;;}{supernova.bmp.bfxm;-4;0.275;-2;2;;;;;}{supernova.bmp.bfxm;8.75;0.275;-2.75;2;;;;;}{supernova.bmp.bfxm;9.75;0.275;-2.75;2;;;;;}{supernova.bmp.bfxm;-9.75;0.275;-2.75;2;;;;;}{supernova.bmp.bfxm;-8.75;0.275;-2.75;2;;;;;}",
                 "Mounts": "{;8;800;heavy-missile;1;-2;7;;;;;;;;;1;1}{;8;800;heavy-missile;-1;-2;7;;;;;;;;;1;1}{;8;800;heavy-missile;1;-2;-1;;;;;;;;;1;1}{;8;800;heavy-missile;-1;-2;-1;;;;;;;;;1;1}{;;;light autotracking;12.5;0.1;0;;;;;;;;;1;1}{;;;light autotracking;-12.5;0.1;0;;;;;;;;;1;1}{;;;light autotracking;12.5;-0.1;0;;;;;;;;;1;1}{;;;light autotracking;-12.5;-0.1;0;;;;;;;;;1;1}{;;;light medium autotracking;-2;0;12;;;;;;;;;1;1}{;;;light medium autotracking;2;-0;12;;;;;;;;;1;1}{;;;capship-light;-0.1;-2;13;;;;;;;;;1;1}{;;;capship-light;0.1;-2;13;;;;;;;;;1;1}{;5;80;light-missile medium-missile;4.1;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;3.9;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;-4.1;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;-3.9;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;8.1;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;7.9;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;-8.1;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;-7.9;0;-3;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "25000",
+                "shield_facets": "4",
                 "accel": "60000"
             },
             "units": [
@@ -273,7 +274,6 @@
                         "Hold_Volume": "1000",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{torpedo;8;800;heavy-missile;1;-2;7;;;;;;;;;1;1}{torpedo;8;800;heavy-missile;-1;-2;7;;;;;;;;;1;1}{torpedo;8;800;heavy-missile;1;-2;-1;;;;;;;;;1;1}{torpedo;8;800;heavy-missile;-1;-2;-1;;;;;;;;;1;1}{FS_MWRF_Laser;;;light autotracking;12.5;0.1;0;;;;;;;;;1;1}{FS_MWRF_Laser;;;light autotracking;-12.5;0.1;0;;;;;;;;;1;1}{FS_MWRF_Laser;;;light autotracking;12.5;-0.1;0;;;;;;;;;1;1}{FS_MWRF_Laser;;;light autotracking;-12.5;-0.1;0;;;;;;;;;1;1}{DisruptorBeam;;;light medium autotracking;-2;0;12;;;;;;;;;1;1}{DisruptorBeam;;;light medium autotracking;2;-0;12;;;;;;;;;1;1}{RelativisticParticleBeam;;;capship-light;-0.1;-2;13;;;;;;;;;1;1}{RelativisticParticleBeam;;;capship-light;0.1;-2;13;;;;;;;;;1;1}{friendorfoe;5;80;light-missile medium-missile;4.1;0;-3;;;;;;;;;1;1}{friendorfoe;5;80;light-missile medium-missile;3.9;0;-3;;;;;;;;;1;1}{friendorfoe;5;80;light-missile medium-missile;-4.1;0;-3;;;;;;;;;1;1}{friendorfoe;5;80;light-missile medium-missile;-3.9;0;-3;;;;;;;;;1;1}{friendorfoe;5;80;light-missile medium-missile;8.1;0;-3;;;;;;;;;1;1}{friendorfoe;5;80;light-missile medium-missile;7.9;0;-3;;;;;;;;;1;1}{friendorfoe;5;80;light-missile medium-missile;-8.1;0;-3;;;;;;;;;1;1}{friendorfoe;5;80;light-missile medium-missile;-7.9;0;-3;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "850"
                     }
                 },
@@ -310,7 +310,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;800;heavy-missile;1;-2;7;;;;;;;;;1;1}{;;800;heavy-missile;-1;-2;7;;;;;;;;;1;1}{;;800;heavy-missile;1;-2;-1;;;;;;;;;1;1}{;;800;heavy-missile;-1;-2;-1;;;;;;;;;1;1}{;;5;light autotracking;12.5;0.1;0;;;;;;;;;1;1}{;;5;light autotracking;-12.5;0.1;0;;;;;;;;;1;1}{;;5;light autotracking;12.5;-0.1;0;;;;;;;;;1;1}{;;5;light autotracking;-12.5;-0.1;0;;;;;;;;;1;1}{;;5;light medium autotracking;-2;0;12;;;;;;;;;1;1}{;;5;light medium autotracking;2;-0;12;;;;;;;;;1;1}{;;30;medium heavy;0.1;-2;13;;;;;;;;;1;1}{;;30;medium heavy;0.1;-2;13;;;;;;;;;1;1}{;;30;medium heavy;0.1;-2;13;;;;;;;;;1;1}{;;80;light-missile medium-missile;4.1;0;-3;;;;;;;;;1;1}{;;80;light-missile medium-missile;3.9;0;-3;;;;;;;;;1;1}{;;80;light-missile medium-missile;-4.1;0;-3;;;;;;;;;1;1}{;;80;light-missile medium-missile;-3.9;0;-3;;;;;;;;;1;1}{;;80;light-missile medium-missile;8.1;0;-3;;;;;;;;;1;1}{;;80;light-missile medium-missile;7.9;0;-3;;;;;;;;;1;1}{;;80;light-missile medium-missile;-8.1;0;-3;;;;;;;;;1;1}{;;80;light-missile medium-missile;-7.9;0;-3;;;;;;;;;1;1}",
                         "Cargo": "{Goddard_Milspec_Package;upgrades/Packages/Milspec;200000;1;300;24000;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "4",
                         "shield_strength": "1400"
                     }
                 }
@@ -354,6 +353,7 @@
                 "Light": "{supernova.bmp.bfxm;0;0.75;-7.5;4;;;;;}{supernova.bmp.bfxm;0;-2;0.3;1;;;;;}{supernova.bmp.bfxm;0.5;-2;0.3;1;;;;;}{supernova.bmp.bfxm;-0.5;-2;0.3;1;;;;;}{supernova.bmp.bfxm;0.25;-2;0.3;1;;;;;}{supernova.bmp.bfxm;-0.25;-2;0.3;1;;;;;}{supernova.bmp.bfxm;0;-1.6;-1.35;1;;;;;}{supernova.bmp.bfxm;0.4;-1.6;-1.35;1;;;;;}{supernova.bmp.bfxm;-0.4;-1.6;-1.35;1;;;;;}{supernova.bmp.bfxm;0.2;-1.6;-1.35;1;;;;;}{supernova.bmp.bfxm;-0.2;-1.6;-1.35;1;;;;;}",
                 "Mounts": "{;;800;light-missile medium-missile special-missile;2.1;0.75;0;;;;;;;;;1;1}{;;800;light-missile medium-missile special-missile;-2;0.75;0;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "4500",
+                "shield_facets": "4",
                 "accel": "8000"
             },
             "units": [
@@ -383,7 +383,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Sub_Units": "{turretpdlong;0;2.3;-4.5;0;0;1;0;1;0;180.0}{turretpdlong;0;-1.9;5.75;0;0;1;0;-1;0;180.0}{turretbeam;2.1;2;-4.4;1.0;0;0;0;1;0;180.0}{turretbeam;-2.3;-0.65;-4.1;1.0;0;0;0;-1;0;180.0}{turretbeam;-2.1;2;-4.4;1.0;0;0;0;1;0;180.0}{turretbeam;2.3;-0.65;-4.1;1.0;0;0;0;-1;0;180.0}",
                         "Mounts": "{Resignation;32;800;light-missile medium-missile special-missile;2.1;0.75;0;;;;;;;;;1;1}{Resignation;32;800;light-missile medium-missile special-missile;-2;0.75;0;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "650"
                     }
                 }
@@ -427,6 +426,7 @@
                 "Light": "{supernova.bmp.bfxm;4;1.05;-15.5;13;;;;;}{supernova.bmp.bfxm;-4;1.05;-15.5;13;;;;;}{supernova.bmp.bfxm;3.75;-.75;-17;18;;;;;}{supernova.bmp.bfxm;-3.75;-.75;-17;18;;;;;}{supernova.bmp.bfxm;3.5;-3.75;-15.8;8;;;;;}{supernova.bmp.bfxm;-3.5;-3.75;-15.8;8;;;;;}{supernova.bmp.bfxm;5.25;-3.75;-15.8;8;;;;;}{supernova.bmp.bfxm;-5.25;-3.75;-15.8;8;;;;;}{supernova.bmp.bfxm;5.25;-5.1;-15.8;8;;;;;}{supernova.bmp.bfxm;-5.25;-5.1;-15.8;8;;;;;}{supernova.bmp.bfxm;3.5;-5.1;-15.8;8;;;;;}{supernova.bmp.bfxm;-3.5;-5.1;-15.8;8;;;;;}",
                 "Mounts": "{;;3;Light Medium Heavy;1;-5.86;11.5;;;;;;;;;1;1}{;;3;Light Medium Heavy;-1;-5.86;11.5;;;;;;;;;1;1}{;;3;Light Medium Heavy;1;-8;11.5;;;;;;;;;1;1}{;;3;Light Medium Heavy;-1;-8;11.5;;;;;;;;;1;1}{;;3;Light;.65;3.75;7;;;;;;;;;1;1}{;;3;Light;-.65;3.75;7;;;;;;;;;1;1}{;;8;special-missile;4;-3.75;.2;;;;;;;;;1;1}{;;8;special-missile;-4;-3.75;.2;;;;;;;;;1;1}{;;200;heavy-missile;-5.000000;-.9000000;-3.000000;;;;;;;;;1;1}{;;200;heavy-missile;5.000000;-.9000000;-3.000000;;;;;;;;;1;1}{;;16;light-missile medium-missile;3.000000;-.9000000;-1.000000;;;;;;;;;1;1}{;;16;light-missile medium-missile;-3.000000;-.9000000;-1.000000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "2500",
+                "shield_facets": "4",
                 "accel": "4000"
             },
             "units": [
@@ -506,7 +506,6 @@
                         "Upgrades": "{armor06;;}{quadshield10;;}{add_spec_capacitor04;;}{capacitor09;;}{reactor07;;}{jump_drive;;}{hawkeye2;;}{ecm_package03;;}",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Upgrade_Storage_Volume": "125",
-                        "shield_facets": "1",
                         "armor": "1"
                     }
                 },
@@ -526,7 +525,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;15;Light Medium Heavy;1;-5.86;11.5;;;;;;;;;1;1}{;;15;Light Medium Heavy;-1;-5.86;11.5;;;;;;;;;1;1}{;;15;Light Medium Heavy;1;-8;11.5;;;;;;;;;1;1}{;;15;Light Medium Heavy;-1;-8;11.5;;;;;;;;;1;1}{;;3;Light;.65;3.75;7;;;;;;;;;1;1}{;;3;Light;-.65;3.75;7;;;;;;;;;1;1}{;;8;special-missile;4;-3.75;.2;;;;;;;;;1;1}{;;8;special-missile;-4;-3.75;.2;;;;;;;;;1;1}{;;200;heavy-missile;-5.000000;-.9000000;-3.000000;;;;;;;;;1;1}{;;200;heavy-missile;5.000000;-.9000000;-3.000000;;;;;;;;;1;1}{;;16;light-missile medium-missile;3.000000;-.9000000;-1.000000;;;;;;;;;1;1}{;;16;light-missile medium-missile;-3.000000;-.9000000;-1.000000;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -570,6 +568,7 @@
                 "Mounts": "{;;;Light Medium Heavy autotracking;-9;-.25;-.75;;;;;;;;;1;1}{;;;Light Medium Heavy autotracking;9;-.25;-.75;;;;;;;;;1;1}{;;;Light;-4.5;-.6;12.25;;;;;;;;;1;1}{;;;Light;4.5;-.6;12.25;;;;;;;;;1;1}{;;200;special-missile;0;-0.5;0;;;;;;;;;1;1}",
                 "Explosion": "explosion_rlaan.ani",
                 "Upgrade_Storage_Volume": "1500",
+                "shield_facets": "4",
                 "accel": "12000"
             },
             "units": [
@@ -611,8 +610,7 @@
                         "Lock_Cone": "49.46",
                         "Hold_Volume": "50",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
-                        "Mounts": "{KtekBeam;;;Light Medium Heavy autotracking;-9;-.25;-.75;;;;;;;;;1;1}{KtekBeam;;;Light Medium Heavy autotracking;9;-.25;-.75;;;;;;;;;1;1}{Ktek;;;Light;-4.5;-.6;12.25;;;;;;;;;1;1}{Ktek;;;Light;4.5;-.6;12.25;;;;;;;;;1;1}{MiniGravThumper;8;200;special-missile;0;-0.5;0;;;;;;;;;1;1}",
-                        "shield_facets": "4"
+                        "Mounts": "{KtekBeam;;;Light Medium Heavy autotracking;-9;-.25;-.75;;;;;;;;;1;1}{KtekBeam;;;Light Medium Heavy autotracking;9;-.25;-.75;;;;;;;;;1;1}{Ktek;;;Light;-4.5;-.6;12.25;;;;;;;;;1;1}{Ktek;;;Light;4.5;-.6;12.25;;;;;;;;;1;1}{MiniGravThumper;8;200;special-missile;0;-0.5;0;;;;;;;;;1;1}"
                     }
                 },
                 {
@@ -653,8 +651,7 @@
                         "Hold_Volume": "50",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;5;Light Medium Heavy autotracking;-9;-.25;-.75;;;;;;;;;1;1}{;;5;Light Medium Heavy autotracking;9;-.25;-.75;;;;;;;;;1;1}{;;5;Light;-4.5;-.6;12.25;;;;;;;;;1;1}{;;5;Light;4.5;-.6;12.25;;;;;;;;;1;1}{;;200;special-missile;0;-0.5;0;;;;;;;;;1;1}",
-                        "Cargo": "{Taizong_Milspec_Package;upgrades/Packages/Milspec;200000;1;140;1425;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "4"
+                        "Cargo": "{Taizong_Milspec_Package;upgrades/Packages/Milspec;200000;1;140;1425;1;1;Full-Custom Milspec Configuration;0}"
                     }
                 },
                 {
@@ -672,7 +669,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;5;Light Medium Heavy autotracking;-9;-.25;-.75;;;;;;;;;1;1}{;;5;Light Medium Heavy autotracking;9;-.25;-.75;;;;;;;;;1;1}{;;5;Light;-4.5;-.6;12.25;;;;;;;;;1;1}{;;5;Light;4.5;-.6;12.25;;;;;;;;;1;1}{;;200;special-missile;0;-0.5;0;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -999,6 +995,7 @@
                 "Mounts": "{;;;CAPSHIP-HEAVY ;10;-165;270;;;;;;;;;1;1}{;;;CAPSHIP-HEAVY ;0;-170;270;;;;;;;;;1;1}{;;;CAPSHIP-HEAVY ;-10;-165;270;;;;;;;;;1;1}{;12;;HEAVY-CAPSHIP-MISSILE;0;-170;270;;;;;;;;;1;1}",
                 "Dock": "{;0;-100;-220;80;0}",
                 "Upgrade_Storage_Volume": "100000",
+                "shield_facets": "4",
                 "armor": "12000",
                 "accel": "950000000"
             },
@@ -1020,7 +1017,6 @@
                         "Sub_Units": "{rlaanturret;108.5;31.25;234.5;0;1;0;1;.325;0;180.0}{rlaanturret;-108.5;31.25;234.5;0;1;0;-1;.325;0;180.0}{rlaanturret;108;82.25;93;0;1;0;1;.375;0;180.0}{rlaanturret;-108;82.25;93;0;1;0;-1;.375;0;180.0}{rlaanturret;66;179;47.75;0;0;1;1;.5;0;180.0}{rlaanturret;-66;179;47.75;0;0;1;-1;.5;0;180.0}{rlaanturret;0;-177.5;266.5;0;0;-1;0;-1;0;180.0}{rlaanturretpd;108.5;31.25;225.5;0;1;0;1;.325;0;180.0}{rlaanturretpd;-108.5;31.25;225.5;0;1;0;-1;.325;0;180.0}{rlaanturretpd;108;82.25;85;0;1;0;1;.375;0;180.0}{rlaanturretpd;-108;82.25;85;0;1;0;-1;.375;0;180.0}{rlaanturretmini;66;179;40.75;0;0;1;1;.5;0;180.0}{rlaanturretmini;-66;179;40.75;0;0;1;-1;.5;0;180.0}{rlaanturretpd;0;-177.5;258.5;0;0;-1;0;-1;0;180.0}",
                         "Mounts": "{icepick;;;capship-heavy autotracking;10;-165;270;;;;;;;;;1;1}{icepick;;;capship-heavy autotracking;0;-170;270;;;;;;;;;1;1}{icepick;;;capship-heavy autotracking;-10;-165;270;;;;;;;;;1;1}{hellspawn;12;;heavy-capship-missile;0;-170;270;;;;;;;;;1;1}",
                         "Explosion": "explosion_rlaan.ani",
-                        "shield_facets": "4",
                         "armor": "61000",
                         "shield_strength": "4800"
                     }
@@ -1479,6 +1475,7 @@
                 "Mounts": "{;16;;CAPSHIP;-1;0;0;;;;;;;;;1;1}{;16;;CAPSHIP;1;0;0;;;;;;;;;1;1}{;16;;CAPSHIP;-1;.1;0;;;;;;;;;1;1}{;16;;CAPSHIP;1;.1;0;;;;;;;;;1;1}{;16;;CAPSHIP;-1;.2;0;;;;;;;;;1;1}{;16;;CAPSHIP;1;.2;0;;;;;;;;;1;1}{;16;;CAPSHIP;-1;.3;0;;;;;;;;;1;1}{;16;;CAPSHIP;1;.3;0;;;;;;;;;1;1}{;16;;CAPSHIP;-2;0;0;;;;;;;;;1;1}{;16;;CAPSHIP;2;0;0;;;;;;;;;1;1}{;16;;CAPSHIP;-2;.1;0;;;;;;;;;1;1}{;16;;CAPSHIP;2;.1;0;;;;;;;;;1;1}{;16;;CAPSHIP;-2;.2;0;;;;;;;;;1;1}{;16;;CAPSHIP;2;.2;0;;;;;;;;;1;1}{;4;;CAPSHIP;-2;.3;0;;;;;;;;;1;1}{;4;;CAPSHIP;2;.3;0;;;;;;;;;1;1}{;;;CAPSHIP-MASSIVE ;4;0;0;;;;;;;;;1;1}{;;;CAPSHIP-MASSIVE ;-4;0;0;;;;;;;;;1;1}",
                 "Dock": "{;0;4;-10;7;0}",
                 "Upgrade_Storage_Volume": "100000",
+                "shield_facets": "4",
                 "accel": "10000000"
             },
             "units": [
@@ -1501,8 +1498,7 @@
                         "Tracking_Cone": "5.73",
                         "Lock_Cone": "101.54",
                         "Mounts": "{Torpedo;16;;capship;-1;0;0;;;;;;;;;1;1}{Torpedo;16;;capship;1;0;0;;;;;;;;;1;1}{Torpedo;16;;capship;-1;.1;0;;;;;;;;;1;1}{Torpedo;16;;capship;1;.1;0;;;;;;;;;1;1}{Torpedo;16;;capship;-1;.2;0;;;;;;;;;1;1}{Torpedo;16;;capship;1;.2;0;;;;;;;;;1;1}{Torpedo;16;;capship;-1;.3;0;;;;;;;;;1;1}{Torpedo;16;;capship;1;.3;0;;;;;;;;;1;1}{Torpedo;16;;capship;-2;0;0;;;;;;;;;1;1}{Torpedo;16;;capship;2;0;0;;;;;;;;;1;1}{Torpedo;16;;capship;-2;.1;0;;;;;;;;;1;1}{Torpedo;16;;capship;2;.1;0;;;;;;;;;1;1}{Torpedo;16;;capship;-2;.2;0;;;;;;;;;1;1}{Torpedo;16;;capship;2;.2;0;;;;;;;;;1;1}{Torpedo;4;;capship;-2;.3;0;;;;;;;;;1;1}{Torpedo;4;;capship;2;.3;0;;;;;;;;;1;1}{LR_PminusBeam;;;capship-massive autotracking;4;0;0;;;;;;;;;1;1}{LR_PminusBeam;;;capship-massive autotracking;-4;0;0;;;;;;;;;1;1}",
-                        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.2;3;2}{Consumer_and_Commercial_Goods/Electronics;1.2;.2;5;4}{Contraband;;;;}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;.8;.2;1;1}{Industrially_Manufactured_Goods/Electronics;.8;.2;2;1}{Industrially_Manufactured_Goods/Manufacturing;.8;.1;5;3}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1.2;.1;3;1}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;10;7}{Natural_Products/Food;1.1;.2;15;2}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;1.05;.1;1;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;1;1}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Alloys/Confed;1.1;.1;2;2}{Refined_Materials/Chemicals;1.1;.3;1;1}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Specialty_Goods/Entertainment;1;.2;1;1}{Specialty_Goods/Medical;1.1;.1;3;3}{starships/Confed/Heavy;1;;;5}{starships/Confed/Light;1;;;10}{starships/Confed/Medium;1;;;7}{starships/Confed/Milspec;1;;;2}{starships/Regional_Guard/Heavy;1;;;2}{starships/Regional_Guard/Light;1;;;7}{starships/Regional_Guard/Medium;1;;;5}{upgrades/Ammunition/Common;1;.1;500;500}{upgrades/Ammunition/Uncommon;4;.1;50;100}{upgrades/Ammunition/Confed;.8;.1;100;80}{upgrades/Armor;1;.1;;5}{upgrades/ECM_Systems;1;.1;;5}{upgrades/Experimental;1.4;.2;-2;3}{upgrades/Jump_Drives;1;.1;;5}{upgrades/Overdrive;1;.1;;5}{upgrades/Reactors/Standard;1;;;17}{upgrades/Repair_Systems;1.1;.2;;5}{upgrades/Sensors/Confed;1;.1;;1}{upgrades/Sensors/Common;1;;;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;;;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;-2;5}{upgrades/SPEC_Capacitors;1;.1;4;2}{upgrades/Weapons/Beam_Arrays_Confed_Milspec;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;;1}{upgrades/Weapons/Beam_Arrays_Light;1;;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;;2}{upgrades/Weapons/Mount_Enhancements;1;.1;;5}{upgrades/Weapons/Mounted_Guns_Confed_Milspec;1;.1;;2}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;;3}{upgrades/Weapons/Mounted_Guns_Light;1;;20;10}{upgrades/Weapons/Mounted_Guns_Medium;1;;;5}{upgrades/Weapons/Turrets;1;.1;1;1}",
-                        "shield_facets": "4"
+                        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.2;3;2}{Consumer_and_Commercial_Goods/Electronics;1.2;.2;5;4}{Contraband;;;;}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;.8;.2;1;1}{Industrially_Manufactured_Goods/Electronics;.8;.2;2;1}{Industrially_Manufactured_Goods/Manufacturing;.8;.1;5;3}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1.2;.1;3;1}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;10;7}{Natural_Products/Food;1.1;.2;15;2}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;1.05;.1;1;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;1;1}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Alloys/Confed;1.1;.1;2;2}{Refined_Materials/Chemicals;1.1;.3;1;1}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Specialty_Goods/Entertainment;1;.2;1;1}{Specialty_Goods/Medical;1.1;.1;3;3}{starships/Confed/Heavy;1;;;5}{starships/Confed/Light;1;;;10}{starships/Confed/Medium;1;;;7}{starships/Confed/Milspec;1;;;2}{starships/Regional_Guard/Heavy;1;;;2}{starships/Regional_Guard/Light;1;;;7}{starships/Regional_Guard/Medium;1;;;5}{upgrades/Ammunition/Common;1;.1;500;500}{upgrades/Ammunition/Uncommon;4;.1;50;100}{upgrades/Ammunition/Confed;.8;.1;100;80}{upgrades/Armor;1;.1;;5}{upgrades/ECM_Systems;1;.1;;5}{upgrades/Experimental;1.4;.2;-2;3}{upgrades/Jump_Drives;1;.1;;5}{upgrades/Overdrive;1;.1;;5}{upgrades/Reactors/Standard;1;;;17}{upgrades/Repair_Systems;1.1;.2;;5}{upgrades/Sensors/Confed;1;.1;;1}{upgrades/Sensors/Common;1;;;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;;;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;-2;5}{upgrades/SPEC_Capacitors;1;.1;4;2}{upgrades/Weapons/Beam_Arrays_Confed_Milspec;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;;1}{upgrades/Weapons/Beam_Arrays_Light;1;;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;;2}{upgrades/Weapons/Mount_Enhancements;1;.1;;5}{upgrades/Weapons/Mounted_Guns_Confed_Milspec;1;.1;;2}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;;3}{upgrades/Weapons/Mounted_Guns_Light;1;;20;10}{upgrades/Weapons/Mounted_Guns_Medium;1;;;5}{upgrades/Weapons/Turrets;1;.1;1;1}"
                     }
                 }
             ]
@@ -1543,6 +1539,7 @@
                 "Dock": "{;0;-45;-120;30;0}",
                 "Explosion": "explosion_rlaan.ani",
                 "Upgrade_Storage_Volume": "600",
+                "shield_facets": "4",
                 "accel": "550000000"
             },
             "units": [
@@ -1574,7 +1571,6 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "84.26",
                         "Mounts": "{hellspawn;4;;;0;-46;34;;;0;-1;0;;;;1;1}{icepick;;;;0;-40;40;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "shield_strength": "3200"
                     }
                 }
@@ -1615,6 +1611,7 @@
                 "Mounts": "{;;;capship-heavy SPECIAL;-0.025;-0.073;2.75;;;;;;;;;1;1}{;;;capship-heavy SPECIAL;-0.025;-0.073;2.75;;;;;;;;;1;1}{;;;capship-heavy SPECIAL;-0.025;-0.073;2.75;;;;;;;;;1;1}{tractor;;; SPECIAL autotracking;0;0;-1;;;0;-0.17;0.98;0;1;0;1;1}",
                 "Dock": "{;0;-0.3;-0.7;0.3;0}",
                 "Upgrade_Storage_Volume": "600",
+                "shield_facets": "4",
                 "accel": "800000"
             },
             "units": [
@@ -1649,8 +1646,7 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "60",
                         "Mounts": "{capshipdisruptor;;;capship-heavy SPECIAL;-0.025;-0.073;2.75;;;;;;;;;1;1}{capshipdisruptor;;;capship-heavy SPECIAL;-0.025;-0.073;2.75;;;;;;;;;1;1}{capshipdisruptor;;;capship-heavy SPECIAL;-0.025;-0.073;2.75;;;;;;;;;1;1}{tractor;;; SPECIAL autotracking;0;0;-1;;;0;-0.17;0.98;0;1;0;1;1}",
-                        "Cargo_Import": "{Natural_Products/Food;1.3;.2;10;20}{Natural_Products/Liquor;1.05;.1;;1}{upgrades/Ammunition/Common;1;.1;80;90}{upgrades/Ammunition/Uncommon;2;.3;60;180}",
-                        "shield_facets": "4"
+                        "Cargo_Import": "{Natural_Products/Food;1.3;.2;10;20}{Natural_Products/Liquor;1.05;.1;;1}{upgrades/Ammunition/Common;1;.1;80;90}{upgrades/Ammunition/Uncommon;2;.3;60;180}"
                     }
                 },
                 {
@@ -1694,7 +1690,6 @@
                         "Mounts": "{capshipdisruptor;;;capship-heavy SPECIAL;-0.025;-0.073;2.75;;;;;;;;;1;1}{tractor;;; SPECIAL autotracking;0;0;-1;;;0;-0.17;0.98;0;1;0;1;1}",
                         "Cargo_Import": "{Natural_Products/Food;1.3;.2;10;20}{Natural_Products/Liquor;1.05;.1;;1}{upgrades/Ammunition;2;.1;5;10}",
                         "Spec_Interdiction": "-10",
-                        "shield_facets": "4",
                         "shield_strength": "10000",
                         "accel": "750000"
                     }
@@ -1824,6 +1819,7 @@
                 "Light": "{supernova.bmp.bfxm;4.5;1.8;-13.85;5;;;;;}{supernova.bmp.bfxm;5.1;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;3.95;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;-4.5;1.8;-13.85;5;;;;;}{supernova.bmp.bfxm;-5.1;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;-3.95;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;4.5;.35;-13.85;12;;;;;}{supernova.bmp.bfxm;-4.5;.35;-13.85;12;;;;;}{supernova.bmp.bfxm;6.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;5.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;4.5;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-6.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-5.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-4.5;-4.8;-12.3;4;;;;;}",
                 "Mounts": "{;;;Light Medium Heavy;2.35;6;10.3;;;;;;;;;1;1}{;;;Light Medium Heavy;-2.35;6;10.3;;;;;;;;;1;1}{;;;Light Medium Heavy;-1.75;-10.5;9.5;;;;;;;;;1;1}{;;;Light Medium Heavy;1.75;-10.5;9.5;;;;;;;;;1;1}{;;;Light;8.1;-3.5;-1.65;;;;;;;;;1;1}{;;;Light;-8.1;-3.5;-1.65;;;;;;;;;1;1}{;;48;Light-Missile Medium-Missile;-0.300000;-0.100000;0.000000;;;;;;;;;1;1}{;;48;Light-Missile Medium-Missile;0.300000;-0.100000;0.000000;;;;;;;;;1;1}{;;300;Heavy-Missile;-0.000000;0.000000;0.000000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "1400",
+                "shield_facets": "4",
                 "accel": "4000"
             },
             "units": [
@@ -1970,7 +1966,6 @@
                         "Mounts": "{;;15;Light Medium Heavy;2.35;6;10.3;;;;;;;;;1;1}{;;15;Light Medium Heavy;-2.35;6;10.3;;;;;;;;;1;1}{;;15;Light Medium Heavy;-1.75;-10.5;9.5;;;;;;;;;1;1}{;;15;Light Medium Heavy;1.75;-10.5;9.5;;;;;;;;;1;1}{;;5;Light;8.1;-3.5;-1.65;;;;;;;;;1;1}{;;5;Light;-8.1;-3.5;-1.65;;;;;;;;;1;1}{;;48;Light-Missile Medium-Missile;-0.300000;-0.100000;0.000000;;;;;;;;;1;1}{;;48;Light-Missile Medium-Missile;0.300000;-0.100000;0.000000;;;;;;;;;1;1}{;;90;Heavy-Missile;-0.000000;0.000000;0.000000;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
                         "Upgrade_Storage_Volume": "1200",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -2017,6 +2012,7 @@
                 "Light": "{supernova.bmp.bfxm;4.5;1.8;-13.85;5;;;;;}{supernova.bmp.bfxm;5.1;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;3.95;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;-4.5;1.8;-13.85;5;;;;;}{supernova.bmp.bfxm;-5.1;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;-3.95;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;4.5;.35;-13.85;12;;;;;}{supernova.bmp.bfxm;-4.5;.35;-13.85;12;;;;;}{supernova.bmp.bfxm;6.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;5.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;4.5;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-6.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-5.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-4.5;-4.8;-12.3;4;;;;;}",
                 "Mounts": "{;;;Light Medium Heavy;2.35;6;10.3;;;;;;;;;1;1}{;;;Light Medium Heavy;-2.35;6;10.3;;;;;;;;;1;1}{;;;Light Medium Heavy;-1.75;-10.5;9.5;;;;;;;;;1;1}{;;;Light Medium Heavy;1.75;-10.5;9.5;;;;;;;;;1;1}{;;;Light;8.1;-3.5;-1.65;;;;;;;;;1;1}{;;;Light;-8.1;-3.5;-1.65;;;;;;;;;1;1}{;;48;Light-Missile Medium-Missile;-0.300000;-0.100000;0.000000;;;;;;;;;1;1}{;;48;Light-Missile Medium-Missile;0.300000;-0.100000;0.000000;;;;;;;;;1;1}{;;100;Heavy-Missile;-0.000000;0.000000;0.000000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "1200",
+                "shield_facets": "4",
                 "accel": "4000"
             },
             "units": [
@@ -2082,6 +2078,7 @@
                 "Light": "{thrust1.bfxm;0;.5;-7.5;8;;;;;}{thrust1.bfxm;1.3;0;-7.5;10;;;;;}{thrust1.bfxm;-1.3;0;-7.5;10;;;;;}{thrust1.bfxm;.4;-.3;-7;4;;;;;}{thrust1.bfxm;-.4;-.3;-7;4;;;;;}",
                 "Mounts": "{;;;Light Autotrack;1.75;1.5;-1;;;;;;;;;1;1}{;;;Light Autotrack;-1.75;1.5;-1;;;;;;;;;1;1}{;;;Light Medium;3.5;0;3.125;;;;;;;;;1;1}{;;;Light Medium;-3.5;0;3.125;;;;;;;;;1;1}{;4;48;light-missile medium-missile;-2.500000;-0.200000;-2.00000;;;;;;;;;1;1}{;4;48;light-missile medium-missile;2.500000;-0.200000;-2.00000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "400",
+                "shield_facets": "2",
                 "accel": "5000"
             },
             "units": [
@@ -2107,7 +2104,6 @@
                         "Hold_Volume": "175",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{Pugilist;;;Light Autotrack;1.75;1.5;-1;;;;;;;;;1;1}{Pugilist;;;Light Autotrack;-1.75;1.5;-1;;;;;;;;;1;1}{IonBeam;;;Light Medium;3.5;0;3.125;;;;;;;;;1;1}{IonBeam;;;Light Medium;-3.5;0;3.125;;;;;;;;;1;1}{ImageRecognition;4;48;light-missile medium-missile;-2.500000;-0.200000;-2.00000;;;;;;;;;1;1}{ImageRecognition;4;48;light-missile medium-missile;2.500000;-0.200000;-2.00000;;;;;;;;;1;1}",
-                        "shield_facets": "2",
                         "armor": "25"
                     }
                 },
@@ -2135,7 +2131,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;5;Light Autotrack;1.75;1.5;-1;;;;;;;;;1;1}{;;5;Light Autotrack;-1.75;1.5;-1;;;;;;;;;1;1}{;;10;Light Medium;3.5;0;3.125;;;;;;;;;1;1}{;;10;Light Medium;-3.5;0;3.125;;;;;;;;;1;1}{;;48;light-missile medium-missile;-2.500000;-0.200000;-2.00000;;;;;;;;;1;1}{;;48;light-missile medium-missile;2.500000;-0.200000;-2.00000;;;;;;;;;1;1}",
                         "Cargo": "{Ancestor_Milspec_Package;upgrades/Packages/Milspec;200000;1;60;380;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "2",
                         "armor": "19"
                     }
                 },
@@ -2170,7 +2165,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;5;Light Autotrack;1.75;1.5;-1;;;;;;;;;1;1}{;;5;Light Autotrack;-1.75;1.5;-1;;;;;;;;;1;1}{;;10;Light Medium;3.5;0;3.125;;;;;;;;;1;1}{;;10;Light Medium;-3.5;0;3.125;;;;;;;;;1;1}{;4;48;light-missile medium-missile;-2.500000;-0.200000;-2.00000;;;;;;;;;1;1}{;4;48;light-missile medium-missile;2.500000;-0.200000;-2.00000;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{dualshield01;upgrades/Shield_Systems/Standard_Dual_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "2",
                         "armor": "1"
                     }
                 }
@@ -2215,6 +2209,7 @@
                 "Mounts": "{;;;light medium autotracking;8;-3;10.85;;;;;;;;;1;1}{;;;light medium autotracking;-8;-3;10.85;;;;;;;;;1;1}{;;;light medium autotracking;6;-2.9;10.5;;;;;;;;;1;1}{;;;light medium autotracking;-6;-2.9;10.5;;;;;;;;;1;1}{;;;light medium autotracking;9;-1.65;-1;;;;;;;;;1;1}{;;;light medium autotracking;-9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;8;-3;10.85;;;;;;;;;1;1}{;27;27;special-missile autotracking;-8;-3;10.85;;;;;;;;;1;1}{;27;27;special-missile autotracking;6;-2.9;10.5;;;;;;;;;1;1}{;27;27;special-missile autotracking;-6;-2.9;10.5;;;;;;;;;1;1}{;27;27;special-missile autotracking;9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;-9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;3.6;-1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;-3.6;-1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;3.6;1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;-3.6;1.6;1.2;;;;;;;;;1;1}{;3;9;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{;3;9;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}{;6;30;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{;6;30;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}",
                 "Explosion": "explosion_aera.ani",
                 "Upgrade_Storage_Volume": "600",
+                "shield_facets": "4",
                 "accel": "4000"
             },
             "units": [
@@ -2239,7 +2234,6 @@
                         "Lock_Cone": "10",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{Photon_MKIII;3000;6;light medium autotracking;8;-3;10.85;;;;;;;;;1;1}{Photon_MKIII;3000;6;light medium autotracking;-8;-3;10.85;;;;;;;;;1;1}{Photon_MKIII;3000;6;light medium autotracking;6;-2.9;10.5;;;;;;;;;1;1}{Photon_MKIII;3000;6;light medium autotracking;-6;-2.9;10.5;;;;;;;;;1;1}{Photon_MKIII;3000;6;light medium autotracking;9;-1.65;-1;;;;;;;;;1;1}{Photon_MKIII;3000;6;light medium autotracking;-9;-1.65;-1;;;;;;;;;1;1}{Javelin;27;27;special-missile autotracking;8;-3;10.85;;;;;;;;;1;1}{Javelin;27;27;special-missile autotracking;-8;-3;10.85;;;;;;;;;1;1}{Javelin;27;27;special-missile autotracking;6;-2.9;10.5;;;;;;;;;1;1}{Javelin;27;27;special-missile autotracking;-6;-2.9;10.5;;;;;;;;;1;1}{Javelin;27;27;special-missile autotracking;9;-1.65;-1;;;;;;;;;1;1}{Javelin;27;27;special-missile autotracking;-9;-1.65;-1;;;;;;;;;1;1}{Javelin;27;27;special-missile autotracking;3.6;-1.6;1.2;;;;;;;;;1;1}{Javelin;27;27;special-missile autotracking;-3.6;-1.6;1.2;;;;;;;;;1;1}{Javelin;27;27;special-missile autotracking;3.6;1.6;1.2;;;;;;;;;1;1}{Javelin;27;27;special-missile autotracking;-3.6;1.6;1.2;;;;;;;;;1;1}{heatseeker;3;9;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{heatseeker;3;9;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}{porcupinemine;6;30;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{porcupinemine;6;30;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "450",
                         "shield_strength": "600"
                     }
@@ -2264,7 +2258,6 @@
                         "Lock_Cone": "10",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{Photon_MKIII;6000;12;light medium autotracking;8;-3;10.85;;;;;;;;;1;1}{Photon_MKIII;6000;12;light medium autotracking;-8;-3;10.85;;;;;;;;;1;1}{Photon_MKIII;6000;12;light medium autotracking;6;-2.9;10.5;;;;;;;;;1;1}{Photon_MKIII;6000;12;light medium autotracking;-6;-2.9;10.5;;;;;;;;;1;1}{Photon_MKIII;6000;12;light medium autotracking;9;-1.65;-1;;;;;;;;;1;1}{Photon_MKIII;6000;12;light medium autotracking;-9;-1.65;-1;;;;;;;;;1;1}{heatseeker;3;9;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{heatseeker;3;9;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}{heatseeker;10;30;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{heatseeker;10;30;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "120",
                         "shield_strength": "475"
                     }
@@ -2290,7 +2283,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;10;light medium autotracking;8;-3;10.85;;;;;;;;;1;1}{;;10;light medium autotracking;-8;-3;10.85;;;;;;;;;1;1}{;;10;light medium autotracking;6;-2.9;10.5;;;;;;;;;1;1}{;;10;light medium autotracking;-6;-2.9;10.5;;;;;;;;;1;1}{;;10;light medium autotracking;9;-1.65;-1;;;;;;;;;1;1}{;;10;light medium autotracking;-9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;8;-3;10.85;;;;;;;;;1;1}{;27;27;special-missile autotracking;-8;-3;10.85;;;;;;;;;1;1}{;27;27;special-missile autotracking;6;-2.9;10.5;;;;;;;;;1;1}{;27;27;special-missile autotracking;-6;-2.9;10.5;;;;;;;;;1;1}{;27;27;special-missile autotracking;9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;-9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;3.6;-1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;-3.6;-1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;3.6;1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;-3.6;1.6;1.2;;;;;;;;;1;1}{;;9;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{;;9;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}{;;30;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{;;30;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}",
                         "Cargo": "{Ariston_Milspec_Package;upgrades/Packages/Milspec;200000;1;90;590;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "4",
                         "armor": "120",
                         "shield_strength": "475"
                     }
@@ -2310,7 +2302,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;10;light medium autotracking;8;-3;10.85;;;;;;;;;1;1}{;;10;light medium autotracking;-8;-3;10.85;;;;;;;;;1;1}{;;10;light medium autotracking;6;-2.9;10.5;;;;;;;;;1;1}{;;10;light medium autotracking;-6;-2.9;10.5;;;;;;;;;1;1}{;;10;light medium autotracking;9;-1.65;-1;;;;;;;;;1;1}{;;10;light medium autotracking;-9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;8;-3;10.85;;;;;;;;;1;1}{;27;27;special-missile autotracking;-8;-3;10.85;;;;;;;;;1;1}{;27;27;special-missile autotracking;6;-2.9;10.5;;;;;;;;;1;1}{;27;27;special-missile autotracking;-6;-2.9;10.5;;;;;;;;;1;1}{;27;27;special-missile autotracking;9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;-9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;3.6;-1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;-3.6;-1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;3.6;1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;-3.6;1.6;1.2;;;;;;;;;1;1}{;3;9;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{;3;9;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}{;6;30;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{;6;30;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -2411,6 +2402,7 @@
                 "Light": "{supernova.bmp.bfxm;-0.506007;2.40000e-2;-5.16000;.6;;;;;}{supernova.bmp.bfxm;9.59928e-2;3.20000e-2;-3.67200;.6;;;;;}",
                 "Mounts": "{;;;Light;-2.75800;-0.682000;0.628000;;;;;;;;;1;1}{;;;Light;3.94800;-1.03200;1.21200;;;;;;;;;1;1}{;;;Medium;-4.40000e-2;1.22800;-0.508000;;;;;;;;;1;1}{;;;Medium;-0.320000;-0.352000;4.16400;;;;;;;;;1;1}{;20;5;special-missile;-3.00944e-2;0.757442;-1.86303;;;;;;;;;1;1}{;1;100;Light-missile medium-missile heavy-missile;1.65074;-0.522844;1.34526e-3;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "275",
+                "shield_facets": "4",
                 "accel": "3000"
             },
             "units": [
@@ -2435,7 +2427,6 @@
                         "Hold_Volume": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{DisruptorBeam;;;Light;-2.75800;-0.682000;0.628000;;;;;;;;;1;1}{DisruptorBeam;;;Light;3.94800;-1.03200;1.21200;;;;;;;;;1;1}{Dissonance;;;Medium;-4.40000e-2;1.22800;-0.508000;;;;;;;;;1;1}{Dissonance;;;Medium;-0.320000;-0.352000;4.16400;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "41",
                         "shield_strength": "600"
                     }
@@ -2463,7 +2454,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;5;Light;-2.75800;-0.682000;0.628000;;;;;;;;;1;1}{;;5;Light;3.94800;-1.03200;1.21200;;;;;;;;;1;1}{;;10;Medium;-4.40000e-2;1.22800;-0.508000;;;;;;;;;1;1}{;;10;Medium;-0.320000;-0.352000;4.16400;;;;;;;;;1;1}",
                         "Cargo": "{Convolution_Milspec_Package;upgrades/Packages/Milspec;200000;1;40;265;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "4",
                         "armor": "41",
                         "shield_strength": "300"
                     }
@@ -2484,7 +2474,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;5;Light;-2.75800;-0.682000;0.628000;;;;;;;;;1;1}{;;5;Light;3.94800;-1.03200;1.21200;;;;;;;;;1;1}{;;10;Medium;-4.40000e-2;1.22800;-0.508000;;;;;;;;;1;1}{;;10;Medium;-0.320000;-0.352000;4.16400;;;;;;;;;1;1}{;20;5;special-missile;-3.00944e-2;0.757442;-1.86303;;;;;;;;;1;1}{;1;100;Light-missile medium-missile heavy-missile;1.65074;-0.522844;1.34526e-3;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -2528,6 +2517,7 @@
                 "Light": "{supernova.bmp.bfxm;0.158000;2.80064e-2;-4.83800;1;;;;;}{supernova.bmp.bfxm;0.786000;3.40064e-2;-4.83800;1;;;;;}",
                 "Mounts": "{;;;Light;-0.598000;3.19962e-2;2.87600;;;;;;;;;1;1}{;;;Light Medium Heavy;0.270000;-0.418006;3.63600;;;;;;;;;1;1}{;5;80;Light-missile Medium-missile;-1.50600;-0.154000;-1.83200;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "120",
+                "shield_facets": "4",
                 "accel": "3000"
             },
             "units": [
@@ -2560,7 +2550,6 @@
                         "Hold_Volume": "10",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{DisruptorBeam;;;Light;-0.598000;3.19962e-2;2.87600;;;;;;;;;1;1}{Dissonance;;;Light Medium Heavy;0.270000;-0.418006;3.63600;;;;;;;;;1;1}{FriendOrFoe;5;80;Light-missile Medium-missile;-1.50600;-0.154000;-1.83200;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "shield_strength": "600"
                     }
                 },
@@ -2595,7 +2584,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;5;Light;-0.598000;3.19962e-2;2.87600;;;;;;;;;1;1}{;;15;Light Medium Heavy;0.270000;-0.418006;3.63600;;;;;;;;;1;1}{;;80;Light-missile Medium-missile;-1.50600;-0.154000;-1.83200;;;;;;;;;1;1}",
                         "Cargo": "{Determinant_Milspec_Package;upgrades/Packages/Milspec;200000;1;24;115;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "4",
                         "shield_strength": "300"
                     }
                 },
@@ -2615,7 +2603,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;5;Light;-0.598000;3.19962e-2;2.87600;;;;;;;;;1;1}{;;15;Light Medium Heavy;0.270000;-0.418006;3.63600;;;;;;;;;1;1}{;5;80;Light-missile Medium-missile;-1.50600;-0.154000;-1.83200;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -2660,6 +2647,7 @@
                 "Light": "{supernova.bmp.bfxm;0;0;-6.36800;4;;;;;}",
                 "Mounts": "{;4;1;light-missile medium-missile heavy-missile;0;-.13;2;;;;;;;;;1;1}{;;;Light Medium Heavy Special;3.1;-0.13;2.35;;;0;0;1;0;1;0;1;1}{;;;Light Medium Heavy Special;-3.1;-0.13;2.35;;;0;0;1;0;1;0;1;1}",
                 "Upgrade_Storage_Volume": "125",
+                "shield_facets": "4",
                 "accel": "5000"
             },
             "units": [
@@ -2766,7 +2754,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;32;light-missile medium-missile heavy-missile;0;-.13;2;;;;;;;;;1;1}{;;15;Light Medium Heavy Special;3.1;-0.13;2.35;;;0;0;1;0;1;0;1;1}{;;15;Light Medium Heavy Special;-3.1;-0.13;2.35;;;0;0;1;0;1;0;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -2812,6 +2799,7 @@
                 "Light": "{supernova.bmp.bfxm;0.086;-0.269;-14.620000;2.000000;;;;;}",
                 "Mounts": "{;;;Light;3.76500;0.15400;19.31000;;;;;;;;;1;1}{;;;Light;2.80800;0.15400;19.98000;;;;;;;;;1;1}{;;;Light;3.76500;-0.15400;19.31000;;;;;;;;;1;1}{;;;Light;2.80800;-0.15400;19.98000;;;;;;;;;1;1}{;1;100;heavy-missile;-12;0;6.5;;;;;;;;;1;1}{;1;16;medium-missile;-12;0.05;6.55;;;;;;;;;1;1}{;1;16;medium-missile;-12;-0.05;6.55;;;;;;;;;1;1}{;1;16;medium-missile;-12;-0.05;6.45;;;;;;;;;1;1}{;1;16;medium-missile;-12;0.05;6.45;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "325",
+                "shield_facets": "4",
                 "accel": "2000"
             },
             "units": [
@@ -2845,8 +2833,7 @@
                         "Tracking_Cone": "5",
                         "Max_Cone": "180",
                         "Lock_Cone": "10",
-                        "Mounts": "{IonBeam;;;Light;3.76500;0.15400;19.31000;;;;;;;;;1;1}{IonBeam;;;Light;2.80800;0.15400;19.98000;;;;;;;;;1;1}{IonBeam;;;Light;3.76500;-0.15400;19.31000;;;;;;;;;1;1}{IonBeam;;;Light;2.80800;-0.15400;19.98000;;;;;;;;;1;1}{torpedo;1;100;heavy-missile;-12;0;6.5;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;0.05;6.55;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;-0.05;6.55;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;-0.05;6.45;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;0.05;6.45;;;;;;;;;1;1}",
-                        "shield_facets": "4"
+                        "Mounts": "{IonBeam;;;Light;3.76500;0.15400;19.31000;;;;;;;;;1;1}{IonBeam;;;Light;2.80800;0.15400;19.98000;;;;;;;;;1;1}{IonBeam;;;Light;3.76500;-0.15400;19.31000;;;;;;;;;1;1}{IonBeam;;;Light;2.80800;-0.15400;19.98000;;;;;;;;;1;1}{torpedo;1;100;heavy-missile;-12;0;6.5;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;0.05;6.55;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;-0.05;6.55;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;-0.05;6.45;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;0.05;6.45;;;;;;;;;1;1}"
                     }
                 },
                 {
@@ -2880,8 +2867,7 @@
                         "Tracking_Cone": "5",
                         "Max_Cone": "180",
                         "Lock_Cone": "10",
-                        "Mounts": "{ParticleBeam;;;Light;3.76500;0.15400;19.31000;;;;;;;;;1;1}{ParticleBeam;;;Light;2.80800;0.15400;19.98000;;;;;;;;;1;1}{ParticleBeam;;;Light;3.76500;-0.15400;19.31000;;;;;;;;;1;1}{ParticleBeam;;;Light;2.80800;-0.15400;19.98000;;;;;;;;;1;1}{torpedo;1;100;heavy-missile;-12;0;6.5;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;0.05;6.55;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;-0.05;6.55;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;-0.05;6.45;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;0.05;6.45;;;;;;;;;1;1}",
-                        "shield_facets": "4"
+                        "Mounts": "{ParticleBeam;;;Light;3.76500;0.15400;19.31000;;;;;;;;;1;1}{ParticleBeam;;;Light;2.80800;0.15400;19.98000;;;;;;;;;1;1}{ParticleBeam;;;Light;3.76500;-0.15400;19.31000;;;;;;;;;1;1}{ParticleBeam;;;Light;2.80800;-0.15400;19.98000;;;;;;;;;1;1}{torpedo;1;100;heavy-missile;-12;0;6.5;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;0.05;6.55;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;-0.05;6.55;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;-0.05;6.45;;;;;;;;;1;1}{friendorfoe;1;16;medium-missile;-12;0.05;6.45;;;;;;;;;1;1}"
                     }
                 },
                 {
@@ -2916,8 +2902,7 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "10",
                         "Mounts": "{;;5;Light;3.76500;0.15400;19.31000;;;;;;;;;1;1}{;;5;Light;2.80800;0.15400;19.98000;;;;;;;;;1;1}{;;5;Light;3.76500;-0.15400;19.31000;;;;;;;;;1;1}{;;5;Light;2.80800;-0.15400;19.98000;;;;;;;;;1;1}{;1;100;heavy-missile;-12;0;6.5;;;;;;;;;1;1}{;1;16;medium-missile;-12;0.05;6.55;;;;;;;;;1;1}{;1;16;medium-missile;-12;-0.05;6.55;;;;;;;;;1;1}{;1;16;medium-missile;-12;-0.05;6.45;;;;;;;;;1;1}{;1;16;medium-missile;-12;0.05;6.45;;;;;;;;;1;1}",
-                        "Upgrade_Storage_Volume": "16",
-                        "shield_facets": "4"
+                        "Upgrade_Storage_Volume": "16"
                     }
                 },
                 {
@@ -2933,7 +2918,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;5;Light;3.76500;0.15400;19.31000;;;;;;;;;1;1}{;;5;Light;2.80800;0.15400;19.98000;;;;;;;;;1;1}{;;5;Light;3.76500;-0.15400;19.31000;;;;;;;;;1;1}{;;5;Light;2.80800;-0.15400;19.98000;;;;;;;;;1;1}{;1;100;heavy-missile;-12;0;6.5;;;;;;;;;1;1}{;1;16;medium-missile;-12;0.05;6.55;;;;;;;;;1;1}{;1;16;medium-missile;-12;-0.05;6.55;;;;;;;;;1;1}{;1;16;medium-missile;-12;-0.05;6.45;;;;;;;;;1;1}{;1;16;medium-missile;-12;0.05;6.45;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -2978,6 +2962,7 @@
                 "Light": "{supernova.bmp.bfxm;-43.740699;-14.15585;-74.549662;20;;;;;}{supernova.bmp.bfxm;-35.702901;-14.15585;-74.549662;20;;;;;}{supernova.bmp.bfxm;35.702901;-14.15585;-74.549662;20;;;;;}{supernova.bmp.bfxm;43.740699;-14.15585;-74.549662;20;;;;;}",
                 "Mounts": "{;;;Light Special;-12.6;-16.5;4;;;;;;;;;1;1}{;;;Light Special;12.6;-16.5;4;;;;;;;;;1;1}{;;;Light;-12.5;-1.5;-1;;;;;;;;;1;1}{;;;Light;12.5;-1.5;-1;;;;;;;;;1;1}{;1;16;Special;0;-.23;4;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "450",
+                "shield_facets": "4",
                 "accel": "2000"
             },
             "units": [
@@ -3005,7 +2990,6 @@
                         "Lock_Cone": "10",
                         "Hold_Volume": "200",
                         "Mounts": "{MiniDriver;4000;20;Light Medium;-12.6;-16.5;4;;;;;;;;;1;1}{MiniDriver;4000;20;Light Medium;12.6;-16.5;4;;;;;;;;;1;1}{Pugilist;;;Light;-12.5;-1.5;-1;;;;;;;;;1;1}{Pugilist;;;Light;12.5;-1.5;-1;;;;;;;;;1;1}{friendorfoe;1;16;Special light-missile;0;-.23;4;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "44"
                     }
                 },
@@ -3033,7 +3017,6 @@
                         "Lock_Cone": "10",
                         "Hold_Volume": "200",
                         "Mounts": "{Pugilist;;;Light Medium;-12.6;-16.5;4;;;;;;;;;1;1}{Pugilist;;;Light Medium;12.6;-16.5;4;;;;;;;;;1;1}{PlasmaPlume;;;Light;-12.5;-1.5;-1;;;;;;;;;1;1}{PlasmaPlume;;;Light;12.5;-1.5;-1;;;;;;;;;1;1}{tractorbeam;1;16;Special light-missile;0;-.23;4;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "44"
                     }
                 },
@@ -3063,7 +3046,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;5;Light Special;-12.6;-16.5;4;;;;;;;;;1;1}{;;5;Light Special;12.6;-16.5;4;;;;;;;;;1;1}{;;5;Light;-12.5;-1.5;-1;;;;;;;;;1;1}{;;5;Light;12.5;-1.5;-1;;;;;;;;;1;1}{;1;16;Special;0;-.23;4;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -3109,6 +3091,7 @@
                 "Light": "{supernova.bmp.bfxm;-3.35;1.125;-9.25;8;;;;;}{supernova.bmp.bfxm;3.35;1.125;-9.25;8;;;;;}{supernova.bmp.bfxm;-3.5;.125;-9.25;3;;;;;}{supernova.bmp.bfxm;3.5;.125;-9.25;3;;;;;}{supernova.bmp.bfxm;-3;.25;-9.25;3;;;;;}{supernova.bmp.bfxm;3;.25;-9.25;3;;;;;}{supernova.bmp.bfxm;-3.35;-.3;-9.25;3;;;;;}{supernova.bmp.bfxm;3.35;-.3;-9.25;3;;;;;}{supernova.bmp.bfxm;-2.9;-.16;-9.25;3;;;;;}{supernova.bmp.bfxm;2.9;-.16;-9.25;3;;;;;}",
                 "Mounts": "{;;;light medium;-0.6;-2.8;7;;;;;;;;;1;1}{;;;light medium;0.6;-2.8;7;;;;;;;;;1;1}{;;;medium heavy;-2;-0.16;11;;;;;;;;;1;1}{;;;medium heavy;2;-0.16;11;;;;;;;;;1;1}{;4;1;light-missile medium-missile;4.470487;-0.182350;-1.094219;;;;;;;;;1;1}{;4;1;light-missile medium-missile;-4.512798;-0.183760;-1.121801;;;;;;;;;1;1}{;4;1;light-missile medium-missile;3.470487;-0.182350;-1.094219;;;;;;;;;1;1}{;4;1;light-missile medium-missile;-3.512798;-0.183760;-1.121801;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "725",
+                "shield_facets": "4",
                 "accel": "5000"
             },
             "units": [
@@ -3142,8 +3125,7 @@
                         "Lock_Cone": "10",
                         "Hold_Volume": "75",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
-                        "Mounts": "{razor;1000;20;light medium autotracking;-0.6;-2.8;7;;;;;;;;;1;1}{razor;1000;20;light medium autotracking;0.6;-2.8;7;;;;;;;;;1;1}{ShieldBreaker;;;medium heavy;-2;-0.16;11;;;;;;;;;1;1}{ShieldBreaker;;;medium heavy;2;-0.16;11;;;;;;;;;1;1}{HeatSeeker;4;12;light-missile medium-missile;4.470487;-0.182350;-1.094219;;;;;;;;;1;1}{HeatSeeker;4;12;light-missile medium-missile;-4.512798;-0.183760;-1.121801;;;;;;;;;1;1}{HeatSeeker;4;12;light-missile medium-missile;3.470487;-0.182350;-1.094219;;;;;;;;;1;1}{HeatSeeker;4;12;light-missile medium-missile;-3.512798;-0.183760;-1.121801;;;;;;;;;1;1}",
-                        "shield_facets": "4"
+                        "Mounts": "{razor;1000;20;light medium autotracking;-0.6;-2.8;7;;;;;;;;;1;1}{razor;1000;20;light medium autotracking;0.6;-2.8;7;;;;;;;;;1;1}{ShieldBreaker;;;medium heavy;-2;-0.16;11;;;;;;;;;1;1}{ShieldBreaker;;;medium heavy;2;-0.16;11;;;;;;;;;1;1}{HeatSeeker;4;12;light-missile medium-missile;4.470487;-0.182350;-1.094219;;;;;;;;;1;1}{HeatSeeker;4;12;light-missile medium-missile;-4.512798;-0.183760;-1.121801;;;;;;;;;1;1}{HeatSeeker;4;12;light-missile medium-missile;3.470487;-0.182350;-1.094219;;;;;;;;;1;1}{HeatSeeker;4;12;light-missile medium-missile;-3.512798;-0.183760;-1.121801;;;;;;;;;1;1}"
                     }
                 },
                 {
@@ -3179,7 +3161,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;10;light medium;-0.6;-2.8;7;;;;;;;;;1;1}{;;10;light medium;0.6;-2.8;7;;;;;;;;;1;1}{;;15;medium heavy;-2;-0.16;11;;;;;;;;;1;1}{;;15;medium heavy;2;-0.16;11;;;;;;;;;1;1}{;4;1;light-missile medium-missile;4.470487;-0.182350;-1.094219;;;;;;;;;1;1}{;4;1;light-missile medium-missile;-4.512798;-0.183760;-1.121801;;;;;;;;;1;1}{;4;1;light-missile medium-missile;3.470487;-0.182350;-1.094219;;;;;;;;;1;1}{;4;1;light-missile medium-missile;-3.512798;-0.183760;-1.121801;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -3227,6 +3208,7 @@
                 "Light": "{thrust1.bfxm;-0.0;-0.533517;-4.4708;5;;;;;}",
                 "Mounts": "{;;;Light Medium;-0.876000;-0.140000;-0.732000;;;;;;;;;1;1}{;;;Light Medium;0.886000;-0.140000;-0.732000;;;;;;;;;1;1}{;1;32;light-missile;-0.276000;-0.182000;0.00000e+0;;;;;;;;;1;1}{;1;32;light-missile;0.278000;-0.182000;0.00000e+0;;;;;;;;;1;1}{;4;1;Special Special-Missile;-0.582000;-0.182000;0;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "40",
+                "shield_facets": "2",
                 "accel": "700"
             },
             "units": [
@@ -3260,7 +3242,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;5;Light Medium;-0.876000;-0.140000;-0.732000;;;;;;;;;1;1}{;;5;Light Medium;0.886000;-0.140000;-0.732000;;;;;;;;;1;1}{;1;32;light-missile;-0.276000;-0.182000;0.00000e+0;;;;;;;;;1;1}{;1;32;light-missile;0.278000;-0.182000;0.00000e+0;;;;;;;;;1;1}{;4;1;Special Special-Missile;-0.582000;-0.182000;0;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{dualshield01;upgrades/Shield_Systems/Standard_Dual_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "2",
                         "armor": "1"
                     }
                 }
@@ -3305,6 +3286,7 @@
                 "Light": "{supernova.bmp.bfxm;-0.5973;0.48082;-7.39491;4;;;;;}{supernova.bmp.bfxm;0.5973;0.48082;-7.39491;4;;;;;}{supernova.bmp.bfxm;2.0167;0.00188;-7.39491;4;;;;;}{supernova.bmp.bfxm;-2.0167;0.00188;-7.39491;4;;;;;}{supernova.bmp.bfxm;0.61947;-0.49032;-7.39491;4;;;;;}{supernova.bmp.bfxm;-0.61947;-0.49032;-7.39491;4;;;;;}",
                 "Mounts": "{FS_MWRF_Laser;;;Medium;0;-2.8;5.5;.2;.2;;;;;;;1;1}{FS_MWRF_Laser;;;Medium;0;3;7.75;.2;.2;;;;;;;1;1}{Hail;100;25;special special-missile medium-missile;0;0;6.5;;;;;;;;;1;1}{Hail;100;25;special special-missile medium-missile;0;0;6.5;;;;;;;;;1;1}{Hail;100;25;special special-missile medium-missile;0;0;6.5;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "125",
+                "shield_facets": "2",
                 "accel": "5000"
             },
             "units": [
@@ -3321,7 +3303,6 @@
                         "Reactor_Recharge": "25",
                         "ITTS": "1",
                         "Radar_Color": "1",
-                        "shield_facets": "2",
                         "armor": "50"
                     }
                 }
@@ -3367,6 +3348,7 @@
                 "Light": "{supernova.bmp.bfxm;1.500000;0.700000;-8.000000;2.750000;;;;;}{supernova.bmp.bfxm;-1.500000;0.700000;-8.000000;2.750000;;;;;}",
                 "Mounts": "{;;;light;0.800000;-0.600000;8.000000;;;;;;;;;1;1}{;;;light;-0.800000;-0.600000;8.000000;;;;;;;;;1;1}{;;;light;-0.000000;-0.400000;8.200000;;;;;;;;;1;1}{;25;7;Special Special-Missile;2.000000;0.800000;-4.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;-2.000000;0.800000;-4.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;-1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "125",
+                "shield_facets": "2",
                 "accel": "2000"
             },
             "units": [
@@ -3391,7 +3373,6 @@
                         "Lock_Cone": "10",
                         "Hold_Volume": "25",
                         "Mounts": "{Pugilist;;;light;0.800000;-0.600000;8.000000;;;;;;;;;1;1}{Pugilist;;;light;-0.800000;-0.600000;8.000000;;;;;;;;;1;1}{ParticleBeam;;;light;-0.000000;-0.400000;8.200000;;;;;;;;;1;1}{Swarm;25;7;Special Special-Missile;2.000000;0.800000;-4.000000;;;;;;;;;1;1}{Swarm;25;7;Special Special-Missile;-2.000000;0.800000;-4.000000;;;;;;;;;1;1}{Swarm;25;7;Special Special-Missile;1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{Swarm;25;7;Special Special-Missile;-1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
-                        "shield_facets": "2",
                         "armor": "35"
                     }
                 },
@@ -3407,7 +3388,6 @@
                         "Radar_Range": "300000000",
                         "Mounts": "{;;5;light;0.800000;-0.600000;8.000000;;;;;;;;;1;1}{;;5;light;-0.800000;-0.600000;8.000000;;;;;;;;;1;1}{;;5;light;-0.000000;-0.400000;8.200000;;;;;;;;;1;1}{;25;7;Special Special-Missile;2.000000;0.800000;-4.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;-2.000000;0.800000;-4.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;-1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{dualshield01;upgrades/Shield_Systems/Standard_Dual_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "2",
                         "armor": "1"
                     }
                 },
@@ -3428,7 +3408,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;5;light;0.800000;-0.600000;8.000000;;;;;;;;;1;1}{;;5;light;-0.800000;-0.600000;8.000000;;;;;;;;;1;1}{;;5;light;-0.000000;-0.400000;8.200000;;;;;;;;;1;1}{;25;7;Special Special-Missile;2.000000;0.800000;-4.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;-2.000000;0.800000;-4.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;-1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{dualshield01;upgrades/Shield_Systems/Standard_Dual_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "2",
                         "armor": "1"
                     }
                 },
@@ -3611,6 +3590,7 @@
                 "Light": "{supernova.bmp.bfxm;0.058558;0.326294;-1.977969;1.780003;;;;;}{supernova.bmp.bfxm;-1.347379;0.958650;-3.000000;0.40000;;;;;}{supernova.bmp.bfxm;1.347379;0.958650;-3.000000;0.40000;;;;;}{supernova.bmp.bfxm;0.863464;-1.003810;-3.000000;0.40000;;;;;}{supernova.bmp.bfxm;-0.863464;-1.003810;-3.000000;0.40000;;;;;}",
                 "Mounts": "{;2;32;Light-missile Medium-missile;-1.056411;-1.226957;3.200000;;;;;;;;;1;1}{;2;32;Light-missile Medium-missile;1.056411;-1.226957;3.200000;;;;;;;;;1;1}{;;;Light medium;0;0.1;3;;;;;;;;;1;1}{;2;32;light-missile medium-missile Special;-1.629525;1.044771;3.200000;;;;;;;;;1;1}{;2;32;light-missile medium-missile Special;1.629525;1.044771;3.200000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "250",
+                "shield_facets": "2",
                 "accel": "2000"
             },
             "units": [
@@ -3642,8 +3622,7 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "10",
                         "Hold_Volume": "50",
-                        "Mounts": "{friendorfoe;2;32;Light-missile Medium-missile;-1.056411;-1.226957;3.200000;;;;;;;;;1;1}{friendorfoe;2;32;Light-missile Medium-missile;1.056411;-1.226957;3.200000;;;;;;;;;1;1}{HeavyIonBeam;;;Light medium;0;0.1;3;;;;;;;;;1;1}{friendorfoe;2;32;light-missile medium-missile Special;-1.629525;1.044771;3.200000;;;;;;;;;1;1}{friendorfoe;2;32;light-missile medium-missile Special;1.629525;1.044771;3.200000;;;;;;;;;1;1}",
-                        "shield_facets": "2"
+                        "Mounts": "{friendorfoe;2;32;Light-missile Medium-missile;-1.056411;-1.226957;3.200000;;;;;;;;;1;1}{friendorfoe;2;32;Light-missile Medium-missile;1.056411;-1.226957;3.200000;;;;;;;;;1;1}{HeavyIonBeam;;;Light medium;0;0.1;3;;;;;;;;;1;1}{friendorfoe;2;32;light-missile medium-missile Special;-1.629525;1.044771;3.200000;;;;;;;;;1;1}{friendorfoe;2;32;light-missile medium-missile Special;1.629525;1.044771;3.200000;;;;;;;;;1;1}"
                     }
                 },
                 {
@@ -3675,8 +3654,7 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "10",
                         "Hold_Volume": "50",
-                        "Mounts": "{friendorfoe;2;32;Light-missile Medium-missile;-1.056411;-1.226957;3.200000;;;;;;;;;1;1}{friendorfoe;2;32;Light-missile Medium-missile;1.056411;-1.226957;3.200000;;;;;;;;;1;1}{HeavyIonBeam;;;Light medium;0;0.1;3;;;;;;;;;1;1}{friendorfoe;2;32;light-missile medium-missile Special;-1.629525;1.044771;3.200000;;;;;;;;;1;1}{friendorfoe;2;32;light-missile medium-missile Special;1.629525;1.044771;3.200000;;;;;;;;;1;1}",
-                        "shield_facets": "2"
+                        "Mounts": "{friendorfoe;2;32;Light-missile Medium-missile;-1.056411;-1.226957;3.200000;;;;;;;;;1;1}{friendorfoe;2;32;Light-missile Medium-missile;1.056411;-1.226957;3.200000;;;;;;;;;1;1}{HeavyIonBeam;;;Light medium;0;0.1;3;;;;;;;;;1;1}{friendorfoe;2;32;light-missile medium-missile Special;-1.629525;1.044771;3.200000;;;;;;;;;1;1}{friendorfoe;2;32;light-missile medium-missile Special;1.629525;1.044771;3.200000;;;;;;;;;1;1}"
                     }
                 },
                 {
@@ -3709,8 +3687,7 @@
                         "Lock_Cone": "10",
                         "Hold_Volume": "50",
                         "Mounts": "{;2;32;Light-missile Medium-missile;-1.056411;-1.226957;3.200000;;;;;;;;;1;1}{;2;32;Light-missile Medium-missile;1.056411;-1.226957;3.200000;;;;;;;;;1;1}{;;10;Light medium;0;0.1;3;;;;;;;;;1;1}{;2;32;light-missile medium-missile Special;-1.629525;1.044771;3.200000;;;;;;;;;1;1}{;2;32;light-missile medium-missile Special;1.629525;1.044771;3.200000;;;;;;;;;1;1}",
-                        "Upgrade_Storage_Volume": "12",
-                        "shield_facets": "2"
+                        "Upgrade_Storage_Volume": "12"
                     }
                 },
                 {
@@ -3729,7 +3706,6 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{dualshield01;upgrades/Shield_Systems/Standard_Dual_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "2",
                         "armor": "1"
                     }
                 }
@@ -3775,6 +3751,7 @@
                 "Light": "{supernova.bmp.bfxm;7.861;-2.5;2.6;11;;;;;}{supernova.bmp.bfxm;-7.861;-2.5;2.6;11;;;;;}{supernova.bmp.bfxm;7.661;-3.9;4.206;8;;;;;}{supernova.bmp.bfxm;-7.661;-3.9;4.206;8;;;;;}",
                 "Mounts": "{;;;light autotracking;-34.575;0.55;29.427;;;;;;;;;1;1}{;;;light autotracking;-34.575;-4.244;29.427;;;;;;;;;1;1}{;;;light autotracking;-23.535;0.55;33.618;;;;;;;;;1;1}{;;;light autotracking;-23.535;-4.244;33.618;;;;;;;;;1;1}{;;;light autotracking;23.535;0.55;33.618;;;;;;;;;1;1}{;;;light autotracking;23.535;-4.244;33.618;;;;;;;;;1;1}{;;;light autotracking;34.575;0.55;29.427;;;;;;;;;1;1}{;;;light autotracking;34.575;-4.244;29.427;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "680",
+                "shield_facets": "4",
                 "accel": "5000"
             },
             "units": [
@@ -3806,8 +3783,7 @@
                         "Tracking_Cone": "4",
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
-                        "Mounts": "{IonBurster;;;light autotracking;-34.575;0.55;29.427;;;;;;;;;1;1}{IonBurster;;;light autotracking;-34.575;-4.244;29.427;;;;;;;;;1;1}{IonBurster;;;light autotracking;-23.535;0.55;33.618;;;;;;;;;1;1}{IonBurster;;;light autotracking;-23.535;-4.244;33.618;;;;;;;;;1;1}{IonBurster;;;light autotracking;23.535;0.55;33.618;;;;;;;;;1;1}{IonBurster;;;light autotracking;23.535;-4.244;33.618;;;;;;;;;1;1}{IonBurster;;;light autotracking;34.575;0.55;29.427;;;;;;;;;1;1}{IonBurster;;;light autotracking;34.575;-4.244;29.427;;;;;;;;;1;1}",
-                        "shield_facets": "4"
+                        "Mounts": "{IonBurster;;;light autotracking;-34.575;0.55;29.427;;;;;;;;;1;1}{IonBurster;;;light autotracking;-34.575;-4.244;29.427;;;;;;;;;1;1}{IonBurster;;;light autotracking;-23.535;0.55;33.618;;;;;;;;;1;1}{IonBurster;;;light autotracking;-23.535;-4.244;33.618;;;;;;;;;1;1}{IonBurster;;;light autotracking;23.535;0.55;33.618;;;;;;;;;1;1}{IonBurster;;;light autotracking;23.535;-4.244;33.618;;;;;;;;;1;1}{IonBurster;;;light autotracking;34.575;0.55;29.427;;;;;;;;;1;1}{IonBurster;;;light autotracking;34.575;-4.244;29.427;;;;;;;;;1;1}"
                     }
                 },
                 {
@@ -3823,7 +3799,6 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -3868,6 +3843,7 @@
                 "Mounts": "{;;;Light Medium Heavy;-7.5;-1;0;;;;;;;;;1;1}{;;;Light Medium Heavy;7.5;-1;0;;;;;;;;;1;1}{;;;Light Medium Heavy;-.75;-6;3.25;;;;;;;;;1;1}{;;;Light Medium Heavy;.75;-6;3.25;;;;;;;;;1;1}",
                 "Explosion": "explosion_rlaan.ani",
                 "Upgrade_Storage_Volume": "200",
+                "shield_facets": "4",
                 "accel": "12000"
             },
             "units": [
@@ -3894,7 +3870,6 @@
                         "Lock_Cone": "10",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{KtekBeam;;;Light Medium Heavy;-7.5;-1;0;;;;;;;;;1;1}{KtekBeam;;;Light Medium Heavy;7.5;-1;0;;;;;;;;;1;1}{Ktek;;;Light Medium Heavy;-.75;-6;3.25;;;;;;;;;1;1}{Ktek;;;Light Medium Heavy;.75;-6;3.25;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "380"
                     }
                 },
@@ -3920,7 +3895,6 @@
                         "Lock_Cone": "10",
                         "Mounts": "{;;5;Light Medium Heavy;-7.5;-1;0;;;;;;;;;1;1}{;;5;Light Medium Heavy;7.5;-1;0;;;;;;;;;1;1}{;;5;Light Medium Heavy;-.75;-6;3.25;;;;;;;;;1;1}{;;5;Light Medium Heavy;.75;-6;3.25;;;;;;;;;1;1}",
                         "Cargo": "{Zhuangzong_Milspec_Package;upgrades/Packages/Milspec;200000;1;70;190;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "4",
                         "armor": "56"
                     }
                 },
@@ -3938,7 +3912,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;5;Light Medium Heavy;-7.5;-1;0;;;;;;;;;1;1}{;;5;Light Medium Heavy;7.5;-1;0;;;;;;;;;1;1}{;;5;Light Medium Heavy;-.75;-6;3.25;;;;;;;;;1;1}{;;5;Light Medium Heavy;.75;-6;3.25;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -3986,6 +3959,7 @@
                 "Light": "{supernova.bmp.bfxm;0.00000e+0;8.60000e-2;-3.90200;.5;;;;;}{supernova.bmp.bfxm;-0.386000;8.60000e-2;-3.90200;.5;;;;;}{supernova.bmp.bfxm;0.386000;8.60000e-2;-3.90200;.5;;;;;}",
                 "Mounts": "{;;;special heavy;-2.24600;-0.412000;-0.328000;;;;;;;;;1;1}{;;;special heavy;2.24600;-0.422000;-0.328000;;;;;;;;;1;1}{;;;light medium;-0.382000;-5.80000e-2;3.26400;;;;;;;;;1;1}{;;;light medium;0.380000;-5.80000e-2;3.26400;;;;;;;;;1;1}{;2;6;light-missile medium-missile;-0.898000;-0.108000;-1.29000;;;;;;;;;1;1}{;2;6;light-missile medium-missile;0.904000;-0.108000;-1.29000;;;;;;;;;1;1}{;2;6;light-missile medium-missile;-0.152000;-1.80000e-2;2.67800;;;;;;;;;1;1}{;2;6;light-missile medium-missile;0.158000;-1.80000e-2;2.67800;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "100",
+                "shield_facets": "2",
                 "accel": "4000"
             },
             "units": [
@@ -4013,7 +3987,6 @@
                         "Hold_Volume": "10",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{LR_Disruptor;;;special heavy;-2.24600;-0.412000;-0.328000;;;;;;;;;1;1}{LR_Disruptor;;;special heavy;2.24600;-0.422000;-0.328000;;;;;;;;;1;1}{LR_Disruptor;;;light medium;-0.382000;-5.80000e-2;3.26400;;;;;;;;;1;1}{LR_Disruptor;;;light medium;0.380000;-5.80000e-2;3.26400;;;;;;;;;1;1}{HeatSeeker;2;6;light-missile medium-missile;-0.898000;-0.108000;-1.29000;;;;;;;;;1;1}{HeatSeeker;2;6;light-missile medium-missile;0.904000;-0.108000;-1.29000;;;;;;;;;1;1}{Heatseeker;2;6;light-missile medium-missile;-0.152000;-1.80000e-2;2.67800;;;;;;;;;1;1}{Heatseeker;2;6;light-missile medium-missile;0.158000;-1.80000e-2;2.67800;;;;;;;;;1;1}",
-                        "shield_facets": "2",
                         "armor": "62"
                     }
                 },
@@ -4041,7 +4014,6 @@
                         "Hold_Volume": "10",
                         "Mounts": "{;;15;special heavy;-2.24600;-0.412000;-0.328000;;;;;;;;;1;1}{;;15;special heavy;2.24600;-0.422000;-0.328000;;;;;;;;;1;1}{;;10;light medium;-0.382000;-5.80000e-2;3.26400;;;;;;;;;1;1}{;;10;light medium;0.380000;-5.80000e-2;3.26400;;;;;;;;;1;1}{;;6;light-missile medium-missile;-0.898000;-0.108000;-1.29000;;;;;;;;;1;1}{;;6;light-missile medium-missile;0.904000;-0.108000;-1.29000;;;;;;;;;1;1}{;;6;light-missile medium-missile;-0.152000;-1.80000e-2;2.67800;;;;;;;;;1;1}{;;6;light-missile medium-missile;0.158000;-1.80000e-2;2.67800;;;;;;;;;1;1}",
                         "Cargo": "{Derivative_Milspec_Package;upgrades/Packages/Milspec;200000;1;30;90;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "2",
                         "armor": "62"
                     }
                 },
@@ -4062,7 +4034,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;15;special heavy;-2.24600;-0.412000;-0.328000;;;;;;;;;1;1}{;;15;special heavy;2.24600;-0.422000;-0.328000;;;;;;;;;1;1}{;;10;light medium;-0.382000;-5.80000e-2;3.26400;;;;;;;;;1;1}{;;10;light medium;0.380000;-5.80000e-2;3.26400;;;;;;;;;1;1}{;2;6;light-missile medium-missile;-0.898000;-0.108000;-1.29000;;;;;;;;;1;1}{;2;6;light-missile medium-missile;0.904000;-0.108000;-1.29000;;;;;;;;;1;1}{;2;6;light-missile medium-missile;-0.152000;-1.80000e-2;2.67800;;;;;;;;;1;1}{;2;6;light-missile medium-missile;0.158000;-1.80000e-2;2.67800;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{dualshield01;upgrades/Shield_Systems/Standard_Dual_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "2",
                         "armor": "1"
                     }
                 }
@@ -4106,6 +4077,7 @@
                 "Light": "{supernova.bmp.bfxm;1.55;-2.2;-3;4;;;;;}{supernova.bmp.bfxm;-1.55;-2.2;-3;4;;;;;}",
                 "Mounts": "{;;;Light;4.3;0.5;7;;;;;;;;;1;1}{;;;Light;-4.3;0.5;7;;;;;;;;;1;1}{;;;Light;3.8;0.5;7;;;;;;;;;1;1}{;;;Light;-3.8;0.5;7.;;;;;;;;;1;1}{;3;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}{;;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "75",
+                "shield_facets": "4",
                 "accel": "1000"
             },
             "units": [
@@ -4127,7 +4099,6 @@
                         "Lock_Cone": "10",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;jump_drive;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{ParticleBeam;;;Light;4.3;0.5;7;;;;;;;;;1;1}{ParticleBeam;;;Light;-4.3;0.5;7;;;;;;;;;1;1}{ParticleBeam;;;Light;3.8;0.5;7;;;;;;;;;1;1}{ParticleBeam;;;Light;-3.8;0.5;7.;;;;;;;;;1;1}{friendorfoe;3;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}{friendorfoe;3;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "50"
                     }
                 },
@@ -4143,7 +4114,6 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -4189,6 +4159,7 @@
                 "Light": "{supernova.bmp.bfxm;0;-.328;-9.75;8;;;;;}{supernova.bmp.bfxm;0.25;-1.1;-9.75;5;;;;;}{supernova.bmp.bfxm;-0.25;-1.1;-9.75;5;;;;;}",
                 "Mounts": "{;;;Light;1.4;0;.5;.2;.2;;;;;;;1;1}{;;;Light;-1.4;0;.5;.2;.2;;;;;;;1;1}{;;;Light Medium;0;-2.5;10.25;.2;.2;;;;;;;1;1}{;;;Light;0;-2.8;10.25;.2;.2;;;;;;;1;1}{;4;1;special special-missile medium-missile;1.95;.45;-.75;;;;;;;;;1;1}{;4;1;Special special-missile medium-missile;-1.95;.45;-.75;;;;;;;;;1;1}{;4;1;light-missile medium-missile;1.95;.81;-.75;;;;;;;;;1;1}{;4;1;light-missile medium-missile;-1.95;.81;-.75;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "225",
+                "shield_facets": "2",
                 "accel": "5000"
             },
             "units": [
@@ -4266,7 +4237,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;5;Light;1.4;0;.5;.2;.2;;;;;;;1;1}{;;5;Light;-1.4;0;.5;.2;.2;;;;;;;1;1}{;;10;Light Medium;0;-2.5;10.25;.2;.2;;;;;;;1;1}{;;5;Light;0;-2.8;10.25;.2;.2;;;;;;;1;1}{;4;1;special special-missile medium-missile;1.95;.45;-.75;;;;;;;;;1;1}{;4;1;Special special-missile medium-missile;-1.95;.45;-.75;;;;;;;;;1;1}{;4;1;light-missile medium-missile;1.95;.81;-.75;;;;;;;;;1;1}{;4;1;light-missile medium-missile;-1.95;.81;-.75;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{dualshield01;upgrades/Shield_Systems/Standard_Dual_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "2",
                         "armor": "1"
                     }
                 }
@@ -4432,6 +4402,7 @@
                 "Mounts": "{;;;light medium autotracking;5.600000;-1.600000;3.200000;;;;;;;;;1;1}{;;;light medium autotracking;-5.600000;-1.600000;3.200000;;;;;;;;;1;1}{;;;light medium autotracking;.5;-1.65;8;;;;;;;;;1;1}{;;;light medium autotracking;-.5;-1.65;8;;;;;;;;;1;1}{;200;100;special-missile autotracking;3.600000;-1.600000;1.200000;;;;;;;;;1;1}{;200;100;special-missile autotracking;-3.600000;-1.600000;1.200000;;;;;;;;;1;1}",
                 "Explosion": "explosion_aera.ani",
                 "Upgrade_Storage_Volume": "225",
+                "shield_facets": "2",
                 "accel": "4000"
             },
             "units": [
@@ -4459,7 +4430,6 @@
                         "Hold_Volume": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{Photon_MKIII;6000;12;light medium autotracking;5.600000;-1.600000;3.200000;;;;;;;;;1;1}{Photon_MKIII;6000;12;light medium autotracking;-5.600000;-1.600000;3.200000;;;;;;;;;1;1}{Photon_MKII;3000;15;light medium autotracking;.5;-1.65;8;;;;;;;;;1;1}{Photon_MKII;3000;15;light medium autotracking;-.5;-1.65;8;;;;;;;;;1;1}{Photonswarm;200;100;special-missile autotracking;3.600000;-1.600000;1.200000;;;;;;;;;1;1}{Photonswarm;200;100;special-missile autotracking;-3.600000;-1.600000;1.200000;;;;;;;;;1;1}",
-                        "shield_facets": "2",
                         "armor": "180"
                     }
                 },
@@ -4486,7 +4456,6 @@
                         "Hold_Volume": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{Photon_MKIII;6000;12;light medium autotracking;5.600000;-1.600000;3.200000;;;;;;;;;1;1}{Photon_MKIII;6000;12;light medium autotracking;-5.600000;-1.600000;3.200000;;;;;;;;;1;1}{Photon_MKIII;7500;15;light medium autotracking;.5;-1.65;8;;;;;;;;;1;1}{Photon_MKIII;7500;15;light medium autotracking;-.5;-1.65;8;;;;;;;;;1;1}{Photonswarm;200;100;special-missile autotracking;3.600000;-1.600000;1.200000;;;;;;;;;1;1}{Photonswarm;200;100;special-missile autotracking;-3.600000;-1.600000;1.200000;;;;;;;;;1;1}",
-                        "shield_facets": "2",
                         "armor": "90"
                     }
                 },
@@ -4514,7 +4483,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;12;light medium autotracking;5.600000;-1.600000;3.200000;;;;;;;;;1;1}{;;12;light medium autotracking;-5.600000;-1.600000;3.200000;;;;;;;;;1;1}{;;15;light medium autotracking;.5;-1.65;8;;;;;;;;;1;1}{;;15;light medium autotracking;-.5;-1.65;8;;;;;;;;;1;1}{;;100;special-missile autotracking;3.600000;-1.600000;1.200000;;;;;;;;;1;1}{;;100;special-missile autotracking;-3.600000;-1.600000;1.200000;;;;;;;;;1;1}",
                         "Cargo": "{Nicander_Milspec_Package;upgrades/Packages/Milspec;200000;1;20;215;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "2",
                         "armor": "90"
                     }
                 },
@@ -4534,7 +4502,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;10;light medium autotracking;5.600000;-1.600000;3.200000;;;;;;;;;1;1}{;;10;light medium autotracking;-5.600000;-1.600000;3.200000;;;;;;;;;1;1}{;;10;light medium autotracking;.5;-1.65;8;;;;;;;;;1;1}{;;10;light medium autotracking;-.5;-1.65;8;;;;;;;;;1;1}{;200;100;special-missile autotracking;3.600000;-1.600000;1.200000;;;;;;;;;1;1}{;200;100;special-missile autotracking;-3.600000;-1.600000;1.200000;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{dualshield01;upgrades/Shield_Systems/Standard_Dual_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "2",
                         "armor": "1"
                     }
                 }
@@ -4579,6 +4546,7 @@
                 "Light": "{supernova.bmp.bfxm;2.8;2.8;-5;7;;;;;}{supernova.bmp.bfxm;-2.8;2.8;-5;7;;;;;}{supernova.bmp.bfxm;4;2.335;-5;7;;;;;}{supernova.bmp.bfxm;-4;2.335;-5;7;;;;;}",
                 "Mounts": "{;;;light medium;0.95;-2.635;12.000000;;;;;;;;;1;1}{;;;light medium;-0.95;-2.635;12.000000;;;;;;;;;1;1}{;125;32;Special Special-Missile;2.641;-.705;10;;;;;;;;;1;1}{;125;32;Special Special-Missile;-2.641;-.705;10;;;;;;;;;1;1}{;125;32;Special Special-Missile;1.355;-.705;10;;;;;;;;;1;1}{;125;32;Special Special-Missile;-1.355;-.705;10;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "230",
+                "shield_facets": "4",
                 "accel": "5000"
             },
             "units": [
@@ -4614,8 +4582,7 @@
                         "Lock_Cone": "10",
                         "Hold_Volume": "20",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
-                        "Mounts": "{LR_Disruptor;;;light medium;0.95;-2.635;12.000000;;;;;;;;;1;1}{LR_Disruptor;;;light medium;-0.95;-2.635;12.000000;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;2.641;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;-2.641;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;1.355;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;-1.355;-.705;10;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
-                        "shield_facets": "4"
+                        "Mounts": "{LR_Disruptor;;;light medium;0.95;-2.635;12.000000;;;;;;;;;1;1}{LR_Disruptor;;;light medium;-0.95;-2.635;12.000000;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;2.641;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;-2.641;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;1.355;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;-1.355;-.705;10;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}"
                     }
                 },
                 {
@@ -4649,8 +4616,7 @@
                         "Lock_Cone": "10",
                         "Hold_Volume": "20",
                         "Mounts": "{;;10;light medium;0.95;-2.635;12.000000;;;;;;;;;1;1}{;;10;light medium;-0.95;-2.635;12.000000;;;;;;;;;1;1}{;;32;Special Special-Missile;2.641;-.705;10;;;;;;;;;1;1}{;;32;Special Special-Missile;-2.641;-.705;10;;;;;;;;;1;1}{;;32;Special Special-Missile;1.355;-.705;10;;;;;;;;;1;1}{;;32;Special Special-Missile;-1.355;-.705;10;;;;;;;;;1;1}{;;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{;;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
-                        "Cargo": "{Progeny_Milspec_Package;upgrades/Packages/Milspec;200000;1;20;218;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "4"
+                        "Cargo": "{Progeny_Milspec_Package;upgrades/Packages/Milspec;200000;1;20;218;1;1;Full-Custom Milspec Configuration;0}"
                     }
                 },
                 {
@@ -4685,8 +4651,7 @@
                         "Lock_Cone": "10",
                         "Hold_Volume": "20",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
-                        "Mounts": "{Disruptor;;;light medium;0.95;-2.635;12.000000;;;;;;;;;1;1}{Disruptor;;;light medium;-0.95;-2.635;12.000000;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;2.641;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;-2.641;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;1.355;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;-1.355;-.705;10;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
-                        "shield_facets": "4"
+                        "Mounts": "{Disruptor;;;light medium;0.95;-2.635;12.000000;;;;;;;;;1;1}{Disruptor;;;light medium;-0.95;-2.635;12.000000;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;2.641;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;-2.641;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;1.355;-.705;10;;;;;;;;;1;1}{Swarm;125;32;Special Special-Missile;-1.355;-.705;10;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}"
                     }
                 },
                 {
@@ -4721,8 +4686,7 @@
                         "Lock_Cone": "10",
                         "Hold_Volume": "20",
                         "Mounts": "{;;10;light medium;0.95;-2.635;12.000000;;;;;;;;;1;1}{;;10;light medium;-0.95;-2.635;12.000000;;;;;;;;;1;1}{;;32;Special Special-Missile;2.641;-.705;10;;;;;;;;;1;1}{;;32;Special Special-Missile;-2.641;-.705;10;;;;;;;;;1;1}{;;32;Special Special-Missile;1.355;-.705;10;;;;;;;;;1;1}{;;32;Special Special-Missile;-1.355;-.705;10;;;;;;;;;1;1}{;;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{;;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
-                        "Upgrade_Storage_Volume": "15",
-                        "shield_facets": "4"
+                        "Upgrade_Storage_Volume": "15"
                     }
                 },
                 {
@@ -4739,7 +4703,6 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -4787,6 +4750,7 @@
                 "Light": "{supernova.bmp.bfxm;0;-.5;-5.5;10;;;;;}",
                 "Mounts": "{;;;Light Autotracking;0;3;.5;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "325",
+                "shield_facets": "4",
                 "accel": "5000"
             },
             "units": [
@@ -4811,7 +4775,6 @@
                         "Hold_Volume": "75",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{DisruptorBeam;;;Light Autotracking;0;3;.5;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "12",
                         "shield_strength": "360"
                     }
@@ -4839,7 +4802,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;5;Light Autotracking;0;3;.5;;;;;;;;;1;1}",
                         "Cargo": "{Schroedinger_Milspec_Package;upgrades/Packages/Milspec;200000;1;30;307;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "4",
                         "armor": "12",
                         "shield_strength": "360"
                     }
@@ -4859,7 +4821,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;5;Light Autotracking;0;3;.5;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -4906,6 +4867,7 @@
                 "Mounts": "{;;;Light Medium;-4.125;-4.4;0;;;;;;;;;1;1}{;;;Light Medium;4.125;-4.4;0;;;;;;;;;1;1}",
                 "Explosion": "explosion_rlaan.ani",
                 "Upgrade_Storage_Volume": "450",
+                "shield_facets": "4",
                 "accel": "12000"
             },
             "units": [
@@ -4928,7 +4890,6 @@
                         "Lock_Cone": "10",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{Ktek;;;Light Medium;-4.125;-4.4;0;;;;;;;;;1;1}{Ktek;;;Light Medium;4.125;-4.4;0;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "38",
                         "shield_strength": "100"
                     }
@@ -4950,7 +4911,6 @@
                         "Tracking_Cone": "5",
                         "Max_Cone": "180",
                         "Lock_Cone": "10",
-                        "shield_facets": "4",
                         "armor": "38",
                         "shield_strength": "50"
                     }
@@ -4975,7 +4935,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{;;10;Light Medium;-4.125;-4.4;0;;;;;;;;;1;1}{;;10;Light Medium;4.125;-4.4;0;;;;;;;;;1;1}",
                         "Cargo": "{Shizu_Milspec_Package;upgrades/Packages/Milspec;200000;1;60;425;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "4",
                         "armor": "38",
                         "shield_strength": "50"
                     }
@@ -4994,7 +4953,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;5;Light Medium;-4.125;-4.4;0;;;;;;;;;1;1}{;;5;Light Medium;4.125;-4.4;0;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -5039,6 +4997,7 @@
                 "Dock": "{;30;0;-37;30;0}{;-30;0;-37;30;0}",
                 "Upgrade_Storage_Volume": "600",
                 "Spec_Interdiction": "-8",
+                "shield_facets": "4",
                 "accel": "10000"
             },
             "units": [
@@ -5078,8 +5037,7 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "10",
                         "Mounts": "{tractor;;;special autotracking;-4.5;3;32.5;;;;;;;;;1;1}{tractor;;;special autotracking;4.5;3;32.5;;;;;;;;;1;1}{Arc_Device;;;light medium Heavy autotracking;-0;2;30;;;;;;;;;1;1}{heatseeker;15;45;Medium-missile light-missile;6.5;3;12.5;;;;;;;;;1;1}{Heatseeker;15;45;Medium-missile light-missile;-6.5;3;12.5;;;;;;;;;1;1}{imagerecognition;8;72;special-missile Medium-missile;0;3;2.5;;;;;;;;;1;1}",
-                        "Cargo_Import": "{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Contraband/Confed;1.1;.1;;2}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Food;.7;.2;;10}",
-                        "shield_facets": "4"
+                        "Cargo_Import": "{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Contraband/Confed;1.1;.1;;2}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Food;.7;.2;;10}"
                     }
                 },
                 {
@@ -5121,7 +5079,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{tractor;;;special autotracking;-4.5;3;32.5;;;;;;;;;1;1}{tractor;;;special autotracking;4.5;3;32.5;;;;;;;;;1;1}{LR_Disruptor;;;light medium Heavy autotracking;-0;2;30;;;;;;;;;1;1}{heatseeker;15;45;Medium-missile light-missile;6.5;3;12.5;;;;;;;;;1;1}{Heatseeker;15;45;Medium-missile light-missile;-6.5;3;12.5;;;;;;;;;1;1}{imagerecognition;8;72;special-missile Medium-missile;0;3;2.5;;;;;;;;;1;1}",
                         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Food;.7;.2;;10}",
-                        "shield_facets": "4",
                         "accel": "100000"
                     }
                 },
@@ -5181,7 +5138,6 @@
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{tractor;;;special autotracking;-4.5;3;32.5;;;;;;;;;1;1}{tractor;;;special autotracking;4.5;3;32.5;;;;;;;;;1;1}{Arc_Device;;;light medium Heavy autotracking;-0;2;30;;;;;;;;;1;1}{heatseeker;15;45;Medium-missile light-missile;6.5;3;12.5;;;;;;;;;1;1}{Heatseeker;15;45;Medium-missile light-missile;-6.5;3;12.5;;;;;;;;;1;1}{imagerecognition;8;72;special-missile Medium-missile;0;3;2.5;;;;;;;;;1;1}",
                         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Food;.7;.2;;10}",
-                        "shield_facets": "4",
                         "accel": "100000"
                     }
                 }
@@ -5224,6 +5180,7 @@
                 "Mounts": "{;;;Light Medium;-12.6;-16.5;4;;;;;;;;;1;1}{;;;Light Medium;12.6;-16.5;4;;;;;;;;;1;1}{;;;Light;-12.5;-1.5;-1;;;;;;;;;1;1}{;;;Light;12.5;-1.5;-1;;;;;;;;;1;1}{;1;16;Special light-missile;0;-.23;4;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "325",
                 "Spec_Interdiction": "-2",
+                "shield_facets": "4",
                 "accel": "4000"
             },
             "units": [
@@ -5254,7 +5211,6 @@
                         "Lock_Cone": "10",
                         "Hold_Volume": "45",
                         "Mounts": "{Crippler;;;Light Special;-12.6;-16.5;4;;;;;;;;;1;1}{Crippler;;;Light Special;12.6;-16.5;4;;;;;;;;;1;1}{LeechGun;;;Light;-12.5;-1.5;-1;;;;;;;;;1;1}{LeechGun;;;Light;12.5;-1.5;-1;;;;;;;;;1;1}{Tractor;1;16;Special;0;-.23;4;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "44"
                     }
                 }
@@ -5300,6 +5256,7 @@
                 "Mounts": "{;;;special;11.5;-2.5;24;;;;;;;;;1;1}{;;;special;-11.5;-2.5;24;;;;;;;;;1;1}{;;;Light Medium;11.5;-4.5;23;;;;;;;;;1;1}{;;;Light Medium;-11.5;-4.5;23;;;;;;;;;1;1}{;8;24;light-missile medium-missile;-5.3;7;12;;;;;;;;;1;1}{;8;24;light-missile medium-missile;5.3;7;12;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "600",
                 "Spec_Interdiction": "-5",
+                "shield_facets": "4",
                 "accel": "4000"
             },
             "units": [
@@ -5413,7 +5370,6 @@
                         "Hold_Volume": "10000",
                         "Mounts": "{tractorbeam;;;special;11.5;-2.5;24;;;;;;;;;1;1}{tractorbeam;;;special;-11.5;-2.5;24;;;;;;;;;1;1}{MicroDriver;;;Light Medium;11.5;-4.5;23;;;;;;;;;1;1}{MicroDriver;;;Light Medium;-11.5;-4.5;23;;;;;;;;;1;1}",
                         "Cargo_Import": "{Natural_Products/Renewable_Resources;.8;.2;;5}{Raw_Materials/Hydrocarbons;.8;.2;;2}{Specialty_Goods/Entertainment;1;.1;;1}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75",
                         "accel": "10000"
@@ -5446,7 +5402,6 @@
                         "Hold_Volume": "10000",
                         "Mounts": "{;;;special;11.5;-2.5;24;;;;;;;;;1;1}{;;;special;-11.5;-2.5;24;;;;;;;;;1;1}{;;;Light Medium;11.5;-4.5;23;;;;;;;;;1;1}{;;;Light Medium;-11.5;-4.5;23;;;;;;;;;1;1}{;4;1;light-missile medium-missile;-5.3;7;12;;;;;;;;;1;1}{;4;1;light-missile medium-missile;5.3;7;12;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -5496,6 +5451,7 @@
                 "Mounts": "{Disruptor;;;Light;1.01200;-6.80000e-2;3.40800;;;;;;;;;1;1}{Disruptor;;;Light;-0.964000;-6.80000e-2;3.40800;;;;;;;;;1;1}{ParticleBeam;;;Light;0.380000;0.176000;1.07600;;;;;;;;;1;1}{ParticleBeam;;;Light;-0.336000;0.176000;1.07600;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}",
                 "Dock": "{;0;-0.85;1.5;0.5;0}",
                 "Upgrade_Storage_Volume": "360",
+                "shield_facets": "4",
                 "armor": "1",
                 "accel": "4000"
             },
@@ -5547,6 +5503,7 @@
                 "Mounts": "{;;;;64;51;11.8091;;;;;;;;;1;1}{;;;;-64;51;11.8091;;;;;;;;;1;1}{;;;Special autotracking;212;-50;65;;;;;;;;;1;1}{;;;Special autotracking;-212;-50;65;;;;;;;;;1;1}{;;;Special;0;-35;95;;;;;;;;;1;1}{;;;Special;-0;-35;95;;;;;;;;;1;1}{;;;Special;0;-35;95;;;;;;;;;1;1}{;;;Special;-0;-35;95;;;;;;;;;1;1}{;;;Special;0;-35;95;;;;;;;;;1;1}{;;;Special;0;-35;95;;;;;;;;;1;1}",
                 "Dock": "{;0;-4.7;6;25;0}",
                 "Upgrade_Storage_Volume": "1800",
+                "shield_facets": "4",
                 "accel": "10000"
             },
             "units": [
@@ -5581,7 +5538,6 @@
                         "Upgrades": "{armor01;;}{quadshield02;;}{add_spec_capacitor01;;}{capacitor02;;}{reactor03;;}{skyscope2;;}",
                         "Mounts": "{handlaser;;;;64;51;11.8091;;;;;;;;;1;1}{handlaser;;;;-64;51;11.8091;;;;;;;;;1;1}{Heavytractor;;;Special autotracking;212;-50;65;;;;;;;;;1;1}{Heavytractor;;;Special autotracking;-212;-50;65;;;;;;;;;1;1}{Heavytractor;;;Special;0;-35;95;;;;;;;;;1;1}{Heavytractor;;;Special;-0;-35;95;;;;;;;;;1;1}{Heavytractor;;;Special;0;-35;95;;;;;;;;;1;1}{Heavytractor;;;Special;-0;-35;95;;;;;;;;;1;1}{Heavytractor;;;Special;0;-35;95;;;;;;;;;1;1}{Heavytractor;;;Special;0;-35;95;;;;;;;;;1;1}",
                         "Cargo_Import": "{Raw_Materials/Gases;.7;.2;;2}{Raw_Materials/Hydrocarbons;.8;.2;;2}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "25"
                     }
@@ -5615,7 +5571,6 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -5661,6 +5616,7 @@
                 "Hold_Volume": "25",
                 "Prohibited_Upgrades": "upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Upgrade_Storage_Volume": "225",
+                "shield_facets": "2",
                 "accel": "5000"
             },
             "units": [
@@ -5676,7 +5632,6 @@
                         "Primary_Capacitor": "125",
                         "Reactor_Recharge": "15",
                         "Light": "{supernova.bmp.bfxm;0.1;-0.44;-2.95;0.151;;;;;}{supernova.bmp.bfxm;-0.05;-0.44;-2.95;0.151;;;;;}{supernova.bmp.bfxm;-0.3;0.25;-2.99;0.195;;;;;}{supernova.bmp.bfxm;0.35;0.25;-2.99;0.195;;;;;}{supernova.bmp.bfxm;1.67;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;1.36;-0.08;-3.51;0.32;;;;;}{supernova.bmp.bfxm;1.04;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;0.75;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;-1.61;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;-1.31;-0.08;-3.51;0.32;;;;;}{supernova.bmp.bfxm;-0.99;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;-0.7;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;-0.11;0.26;-2.99;0.274;;;;;}{supernova.bmp.bfxm;0.31;-0.43;-2.95;0.274;;;;;}{supernova.bmp.bfxm;-0.26;-0.43;-2.95;0.274;;;;;}{supernova.bmp.bfxm;0.15;0.26;-2.99;0.274;;;;;}",
-                        "shield_facets": "2",
                         "armor": "25"
                     }
                 },
@@ -5692,7 +5647,6 @@
                         "Primary_Capacitor": "125",
                         "Reactor_Recharge": "15",
                         "Light": "{supernova.bmp.bfxm;0.1;-0.44;-2.95;0.151;;;;;}{supernova.bmp.bfxm;-0.05;-0.44;-2.95;0.151;;;;;}{supernova.bmp.bfxm;-0.3;0.25;-2.99;0.195;;;;;}{supernova.bmp.bfxm;0.35;0.25;-2.99;0.195;;;;;}{supernova.bmp.bfxm;1.67;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;1.36;-0.08;-3.51;0.32;;;;;}{supernova.bmp.bfxm;1.04;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;0.75;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;-1.61;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;-1.31;-0.08;-3.51;0.32;;;;;}{supernova.bmp.bfxm;-0.99;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;-0.7;-0.1;-3.51;0.32;;;;;}{supernova.bmp.bfxm;-0.11;0.26;-2.99;0.274;;;;;}{supernova.bmp.bfxm;0.31;-0.43;-2.95;0.274;;;;;}{supernova.bmp.bfxm;-0.26;-0.43;-2.95;0.274;;;;;}{supernova.bmp.bfxm;0.15;0.26;-2.99;0.274;;;;;}",
-                        "shield_facets": "2",
                         "armor": "25"
                     }
                 }
@@ -5736,6 +5690,7 @@
                 "Light": "{supernova.bmp.bfxm;0.00000e+0;2.40000e-2;-1.03600;.5;;;;;}{supernova.bmp.bfxm;-0.298000;2.40000e-2;-1.03600;.5;;;;;}{supernova.bmp.bfxm;0.290000;2.40000e-2;-1.03600;.5;;;;;}",
                 "Mounts": "{;;;Light Medium;-1.45600;-2.00000e-2;-0.396000;;;;;;;;;1;1}{;;;Light Medium;1.45800;-2.00000e-2;-0.396000;;;;;;;;;1;1}{;1;90;Special-missile Heavy-missile;5.00000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;1;90;Special-missile Heavy-missile;-4.20000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;;special;5.00000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;;special;-4.20000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;;Light Medium ;0.160000;-0.102000;2.42200;;;;;;;;;1;1}{;;;Light Medium;-0.132000;-0.102000;2.42200;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "300",
+                "shield_facets": "4",
                 "accel": "10000"
             },
             "units": [
@@ -5759,7 +5714,6 @@
                         "Lock_Cone": "10",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{Disruptor;;;Light Medium;-1.45600;-2.00000e-2;-0.396000;;;;;;;;;1;1}{Disruptor;;;Light Medium;1.45800;-2.00000e-2;-0.396000;;;;;;;;;1;1}{EMPTorpedo;1;90;Special-missile Heavy-missile;5.00000e-2;-0.102000;2.91600;;;;;;;;;1;1}{EMPTorpedo;1;90;Special-missile Heavy-missile;-4.20000e-2;-0.102000;2.91600;;;;;;;;;1;1}{leechgun;;;special;5.00000e-2;-0.102000;2.91600;;;;;;;;;1;1}{leechgun;;;special;-4.20000e-2;-0.102000;2.91600;;;;;;;;;1;1}{Disruptor;;;Light Medium;0.160000;-0.102000;2.42200;;;;;;;;;1;1}{Disruptor;;;Light Medium;-0.132000;-0.102000;2.42200;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "500"
                     }
                 },
@@ -5778,7 +5732,6 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "10",
                         "Mounts": "{ParticleBeam;;;Light Medium Heavy;-1.45600;-2.00000e-2;-0.396000;;;;;;;;;1;1}{ParticleBeam;;;Light Medium Heavy;1.45800;-2.00000e-2;-0.396000;;;;;;;;;1;1}{Disruptor;;;Light Medium Heavy;0.160000;-0.102000;2.42200;;;;;;;;;1;1}{Disruptor;;;Light Medium Heavy;-0.132000;-0.102000;2.42200;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -5796,7 +5749,6 @@
                         "Forward_Accel": "40000",
                         "Radar_Range": "300000000",
                         "Mounts": "{;;15;Light Medium;-1.45600;-2.00000e-2;-0.396000;;;;;;;;;1;1}{;;15;Light Medium;1.45800;-2.00000e-2;-0.396000;;;;;;;;;1;1}{;1;90;Special-missile Heavy-missile;5.00000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;1;90;Special-missile Heavy-missile;-4.20000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;;special;5.00000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;;special;-4.20000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;15;Light Medium;0.160000;-0.102000;2.42200;;;;;;;;;1;1}{;;15;Light Medium;-0.132000;-0.102000;2.42200;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "150"
                     }
@@ -5837,7 +5789,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;;Light Medium Heavy;-1.45600;-2.00000e-2;-0.396000;;;;;;;;;1;1}{;;;Light Medium Heavy;1.45800;-2.00000e-2;-0.396000;;;;;;;;;1;1}{;1;90;Special-missile Heavy-missile;5.00000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;1;90;Special-missile Heavy-missile;-4.20000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;;special;5.00000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;;special;-4.20000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;;Light Medium Heavy;0.160000;-0.102000;2.42200;;;;;;;;;1;1}{;;;Light Medium Heavy;-0.132000;-0.102000;2.42200;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -5880,6 +5831,7 @@
                 "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Light": "{supernova.bmp.bfxm;160;0;-400;800;;;;;}{supernova.bmp.bfxm;-160;0;-400;800;;;;;}",
                 "Upgrade_Storage_Volume": "300",
+                "shield_facets": "4",
                 "accel": "4000"
             },
             "units": [
@@ -5896,7 +5848,6 @@
                         "Tracking_Cone": "4",
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "25"
                     }
@@ -5915,7 +5866,6 @@
                         "Tracking_Cone": "4",
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "25"
                     }
@@ -5960,6 +5910,7 @@
                 "Prohibited_Upgrades": "upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Light": "{supernova.bmp.bfxm;5.25;-0.55;-12.75;6;;;;;}{supernova.bmp.bfxm;-5.25;-0.55;-12.75;6;;;;;}",
                 "Upgrade_Storage_Volume": "225",
+                "shield_facets": "2",
                 "accel": "5000"
             },
             "units": [
@@ -6022,6 +5973,7 @@
                 "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Light": "{supernova.bmp.bfxm;0;1;-5.15;2;;;;;}{supernova.bmp.bfxm;1;1.2;-5.175;3;;;;;}{supernova.bmp.bfxm;-1;1.2;-5.175;3;;;;;}{supernova.bmp.bfxm;3;-1.8;-4.15;1;;;;;}{supernova.bmp.bfxm;-3;-1.8;-4.15;1;;;;;}{supernova.bmp.bfxm;2.7;-1.95;-4.15;1;;;;;}{supernova.bmp.bfxm;-2.7;-1.95;-4.15;1;;;;;}",
                 "Upgrade_Storage_Volume": "250",
+                "shield_facets": "4",
                 "accel": "10000"
             },
             "units": [
@@ -6055,7 +6007,6 @@
                         "Lock_Cone": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;jump_drive;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Cargo_Import": "{Natural_Products/Renewable_Resources;.8;.2;;5}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "25"
                     }
@@ -6097,6 +6048,7 @@
                 "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Light": "{supernova.bmp.bfxm;1.9;1.5;-4.9;4;;;;;}{supernova.bmp.bfxm;-1.8;1.5;-4.9;4;;;;;}{supernova.bmp.bfxm;1.9;-0.5;-4;4;;;;;}{supernova.bmp.bfxm;-1.9;-0.5;-4;4;;;;;}",
                 "Upgrade_Storage_Volume": "250",
+                "shield_facets": "4",
                 "accel": "10000"
             },
             "units": [
@@ -6113,7 +6065,6 @@
                         "Lock_Cone": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;jump_drive;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Cargo_Import": "{Specialty_Goods/Entertainment;1;.1;;1}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "25"
                     }
@@ -6157,6 +6108,7 @@
                 "Light": "{supernova.bmp.bfxm;0.00000e+0;0.350000;-2.09200;2;;;;;}{supernova.bmp.bfxm;1.31600;-6.00000e-3;-1.82200;2;;;;;}{supernova.bmp.bfxm;-1.32800;-6.00000e-3;-1.82200;2;;;;;}{supernova.bmp.bfxm;1.316;0.450;-1.37;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;1.963;0.010;-1.37;0.5;1;1;1;1;0.0005;-1;0;0}{supernova.bmp.bfxm;1.316;-0.431;-1.37;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;-1.316;0.450;-1.37;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;-1.963;0.010;-1.37;0.5;1;1;1;1;0.0005;1;0;0}{supernova.bmp.bfxm;-1.316;-0.431;-1.37;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;1.059;0.346;2.327;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;1.454;0.094;2.327;0.5;1;1;1;1;0.0005;-1;0;0}{supernova.bmp.bfxm;1.059;-0.157;2.327;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;-1.059;0.346;2.327;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;-1.454;0.094;2.327;0.5;1;1;1;1;0.0005;1;0;0}{supernova.bmp.bfxm;-1.059;-0.157;2.327;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;1.652;0.208;1.565;0.8;1;1;1;1;0.0005;0;0;-1}{supernova.bmp.bfxm;-1.652;0.208;1.565;0.8;1;1;1;1;0.0005;0;0;-1}",
                 "Mounts": "{;;;Light;1.01200;-6.80000e-2;3.40800;;;;;;;;;1;1}{;;;Light;-0.964000;-6.80000e-2;3.40800;;;;;;;;;1;1}{;;;Light;0.380000;0.176000;1.07600;;;;;;;;;1;1}{;;;Light;-0.336000;0.176000;1.07600;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "360",
+                "shield_facets": "4",
                 "accel": "4000"
             },
             "units": [
@@ -6183,10 +6135,11 @@
                         "Use_Rapid": "1",
                         "Mass": "250",
                         "Shield_Recharge": "8",
-                        "Warp_Capacitor": "400",
+                        "Warp_Capacitor": "325/400",
                         "Primary_Capacitor": "200",
-                        "Reactor_Recharge": "44",
+                        "Reactor_Recharge": "30/44",
                         "Outsystem_Jump_Cost": "200",
+                        "Afterburner_Speed_Governor": "120/125",
                         "Default_Speed_Governor": "120/125",
                         "Radar_Range": "300000000",
                         "Tracking_Cone": "4",
@@ -6195,7 +6148,6 @@
                         "Light": "{supernova.bmp.bfxm;0;0.35;-2.09200;2;;;;;}{supernova.bmp.bfxm;1.31;0;-1.82200;2;;;;;}{supernova.bmp.bfxm;-1.32800;0;-1.82200;2;;;;;}{supernova.bmp.bfxm;1.316;0.450;-1.37;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;1.963;0.010;-1.37;0.5;1;1;1;1;0.0005;-1;0;0}{supernova.bmp.bfxm;1.316;-0.431;-1.37;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;-1.316;0.450;-1.37;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;-1.963;0.010;-1.37;0.5;1;1;1;1;0.0005;1;0;0}{supernova.bmp.bfxm;-1.316;-0.431;-1.37;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;1.059;0.346;2.327;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;1.454;0.094;2.327;0.5;1;1;1;1;0.0005;-1;0;0}{supernova.bmp.bfxm;1.059;-0.157;2.327;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;-1.059;0.346;2.327;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;-1.454;0.094;2.327;0.5;1;1;1;1;0.0005;1;0;0}{supernova.bmp.bfxm;-1.059;-0.157;2.327;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;1.652;0.208;1.565;0.8;1;1;1;1;0.0005;0;0;-1}{supernova.bmp.bfxm;-1.652;0.208;1.565;0.8;1;1;1;1;0.0005;0;0;-1}",
                         "Mounts": "{laser;;15;Light;1.01200;-6.80000e-2;3.40800;;;;;;;;;1;1}{laser;;15;Light;-0.964000;-6.80000e-2;3.40800;;;;;;;;;1;1}{laser;;3;Light;0.380000;0.176000;1.07600;;;;;;;;;1;1}{laser;;3;Light;-0.336000;0.176000;1.07600;;;;;;;;;1;1}{Dumbfire;48;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}{;;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;@upgrades/skyscope_alpha.png@Refurbished Part;0}{capacitor02;upgrades/Capacitors/Standard;200;1;4;4;1;1;@upgrades/capacitor.png@Refurbished Part;0}{reactor03;upgrades/Reactors/Standard;200;1;2;3.5;1;1;@upgrades/reactor.png@Refurbished Part;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;@upgrades/reactor_capacitance.png@Refurbished Part;0}{quadshield02;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;2;8;1;1;@upgrades/shield.png@Refurbished Part;0}{armor02;upgrades/Armor;200;1;20;0;1;1;@cargo/plasteel.png@Refurbished Part;0}",
-                        "shield_facets": "4",
                         "armor": "100",
                         "shield_strength": "150"
                     }
@@ -6214,7 +6166,6 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
                         "Mounts": "{Laser;;;Light;1.01200;-6.80000e-2;3.40800;;;;;;;;;1;1}{Laser;;;Light;-0.964000;-6.80000e-2;3.40800;;;;;;;;;1;1}{;;;Light;0.380000;0.176000;1.07600;;;;;;;;;1;1}{;;;Light;-0.336000;0.176000;1.07600;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -6234,7 +6185,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;10;Light Medium;1.01200;-6.80000e-2;3.40800;;;;;;;;;1;1}{;;10;Light Medium;-0.964000;-6.80000e-2;3.40800;;;;;;;;;1;1}{;;5;Light;0.380000;0.176000;1.07600;;;;;;;;;1;1}{;;5;Light;-0.336000;0.176000;1.07600;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -6280,6 +6230,7 @@
                 "Light": "{supernova.bmp.bfxm;0;0.8;-5.5;5;;;;;}",
                 "Dock": "{;0;-4.7;6;25;0}",
                 "Upgrade_Storage_Volume": "200",
+                "shield_facets": "2",
                 "accel": "22000"
             },
             "units": [
@@ -6307,7 +6258,6 @@
                         "Lock_Cone": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;jump_drive;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Cargo_Import": "{Raw_Materials/Gases;.7;.2;;2}{Raw_Materials/Hydrocarbons;.8;.2;;2}",
-                        "shield_facets": "2",
                         "armor": "300",
                         "accel": "22231"
                     }
@@ -6337,7 +6287,6 @@
                         "Lock_Cone": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;jump_drive;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Cargo_Import": "{Raw_Materials/Gases;.7;.2;;2}{Raw_Materials/Hydrocarbons;.8;.2;;2}",
-                        "shield_facets": "2",
                         "armor": "300",
                         "accel": "22231"
                     }
@@ -6388,6 +6337,7 @@
                 "Mounts": "{Disruptor;;;Light;1.01200;-6.80000e-2;3.40800;;;;;;;;;1;1}{Disruptor;;;Light;-0.964000;-6.80000e-2;3.40800;;;;;;;;;1;1}{ParticleBeam;;;Light;0.380000;0.176000;1.07600;;;;;;;;;1;1}{ParticleBeam;;;Light;-0.336000;0.176000;1.07600;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}",
                 "Dock": "{;0;-0.85;1.5;0.5;0}",
                 "Upgrade_Storage_Volume": "360",
+                "shield_facets": "4",
                 "armor": "1",
                 "accel": "4000"
             },
@@ -6752,6 +6702,7 @@
                 "Dock": "{0;95;0;25;50;0}{0;-95;0;25;50;0}",
                 "Cargo_Import": "{Industrially_Manufactured_Goods/Agricultural;1.2;.1;;7}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Natural_Products/Food;.7;.2;;30}{Specialty_Goods/Medical;1.2;.1;;3}",
                 "Upgrade_Storage_Volume": "600",
+                "shield_facets": "4",
                 "accel": "50000"
             },
             "units": [
@@ -6769,7 +6720,6 @@
                         "Jump_Drive_Present": "1",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Sub_Units": "{turretbeam;31;25;350;0;0;1;1;0;0;180.0}{turretbeam;33;25;275;0;0;1;1;0;0;180.0}{turretbeam;34;25;160;0;0;1;1;0;0;180.0}{turretbeam;-31;25;350;0;0;1;1;0;0;180.0}{turretbeam;-33;25;275;0;0;1;1;0;0;180.0}{turretbeam;-34;25;160;0;0;1;1;0;0;180.0}",
-                        "shield_facets": "4",
                         "armor": "1000"
                     }
                 }
@@ -6872,6 +6822,7 @@
                 "Mounts": "{;;;special autotracking;-4.5;3;32.5;;;;;;;;;1;1}{;;;special autotracking;4.5;3;32.5;;;;;;;;;1;1}{;;;light medium Heavy autotracking;-0;2;30;;;;;;;;;1;1}{;15;45;Medium-missile light-missile;6.5;3;12.5;;;;;;;;;1;1}{;15;45;Medium-missile light-missile;-6.5;3;12.5;;;;;;;;;1;1}{;8;72;special-missile Medium-missile;0;3;2.5;;;;;;;;;1;1}",
                 "Dock": "{;30;0;-37;30;0}{;-30;0;-37;30;0}",
                 "Upgrade_Storage_Volume": "600",
+                "shield_facets": "4",
                 "accel": "50000"
             },
             "units": [
@@ -6907,8 +6858,7 @@
                         "Lock_Cone": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{tractor;;;special autotracking;-4.5;3;32.5;;;;;;;;;1;1}{tractor;;;special autotracking;4.5;3;32.5;;;;;;;;;1;1}{MiniDriver;;;light medium Heavy autotracking;-0;2;30;;;;;;;;;1;1}{heatseeker;15;45;Medium-missile light-missile;6.5;3;12.5;;;;;;;;;1;1}{Heatseeker;15;45;Medium-missile light-missile;-6.5;3;12.5;;;;;;;;;1;1}{imagerecognition;8;72;special-missile Medium-missile;0;3;2.5;;;;;;;;;1;1}",
-                        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Food;.7;.2;;10}",
-                        "shield_facets": "4"
+                        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Food;.7;.2;;10}"
                     }
                 },
                 {
@@ -6943,8 +6893,7 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
                         "Mounts": "{tractor;;;special autotracking;-4.5;3;32.5;;;;;;;;;1;1}{tractor;;;special autotracking;4.5;3;32.5;;;;;;;;;1;1}{MicroDriver;;;light medium Heavy autotracking;-0;2;30;;;;;;;;;1;1}",
-                        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Food;.7;.2;;10}",
-                        "shield_facets": "4"
+                        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Food;.7;.2;;10}"
                     }
                 },
                 {
@@ -6980,8 +6929,7 @@
                         "Lock_Cone": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{tractor;;;special autotracking;-4.5;3;32.5;;;;;;;;;1;1}{tractor;;;special autotracking;4.5;3;32.5;;;;;;;;;1;1}{;;25;light medium Heavy autotracking;-0;2;30;;;;;;;;;1;1}{;15;45;Medium-missile light-missile;6.5;3;12.5;;;;;;;;;1;1}{;15;45;Medium-missile light-missile;-6.5;3;12.5;;;;;;;;;1;1}{;8;72;special-missile Medium-missile;0;3;2.5;;;;;;;;;1;1}",
-                        "Cargo": "{Mule_Milspec_Package;upgrades/Packages/Milspec;200000;1;500;570;1;1;Full-Custom Milspec Configuration;0}",
-                        "shield_facets": "4"
+                        "Cargo": "{Mule_Milspec_Package;upgrades/Packages/Milspec;200000;1;500;570;1;1;Full-Custom Milspec Configuration;0}"
                     }
                 },
                 {
@@ -6999,7 +6947,6 @@
                         "Lock_Cone": "25",
                         "Mounts": "{;;;special autotracking;-4.5;3;32.5;;;;;;;;;1;1}{;;;special autotracking;4.5;3;32.5;;;;;;;;;1;1}{;;25;light medium Heavy autotracking;-0;2;30;;;;;;;;;1;1}{;15;45;Medium-missile light-missile;6.5;3;12.5;;;;;;;;;1;1}{;15;45;Medium-missile light-missile;-6.5;3;12.5;;;;;;;;;1;1}{;8;72;special-missile Medium-missile;0;3;2.5;;;;;;;;;1;1}",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -7044,6 +6991,7 @@
                 "Light": "{supernova.bmp.bfxm;60;90;-370;22;;;;;}{supernova.bmp.bfxm;-60;90;-370;22;;;;;}{supernova.bmp.bfxm;130;-60;-370;22;;;;;}{supernova.bmp.bfxm;0;-60;-370;22;;;;;}{supernova.bmp.bfxm;-130;-60;-370;22;;;;;}",
                 "Dock": "{;0;-24;477;100;0}{;0;58;504;10;0}",
                 "Upgrade_Storage_Volume": "600",
+                "shield_facets": "4",
                 "accel": "5000000"
             },
             "units": [
@@ -7066,7 +7014,6 @@
                         "Lock_Cone": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Cargo_Import": "{Industrially_Manufactured_Goods/Agricultural;1.2;.1;;7}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Natural_Products/Food;.7;.2;;30}{Specialty_Goods/Medical;1.2;.1;;3}",
-                        "shield_facets": "4",
                         "armor": "1000"
                     }
                 },
@@ -7084,7 +7031,6 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
                         "Cargo": "{skyscope1;upgrades/Sensors/Common;200;1;0.01;1;1;1;;0}{capacitor01;upgrades/Capacitors/Standard;200;1;2;2;1;1;;0}{reactor01;upgrades/Reactors/Standard;200;1;1;2;1;1;;0}{add_spec_capacitor01;upgrades/SPEC_Capacitors;200;1;5;4;1;1;;0}{quadshield01;upgrades/Shield_Systems/Standard_Quad_Shields;200;1;1;4;1;1;;0}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "75"
                     }
@@ -7132,7 +7078,8 @@
                 "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Light": "{supernova.bmp.bfxm;0;0;-6.36800;4;;;;;}",
                 "Mounts": "{;8;24;light-missile medium-missile heavy-missile;0;-.13;2;;;;;;;;;1;1}",
-                "Upgrade_Storage_Volume": "125"
+                "Upgrade_Storage_Volume": "125",
+                "shield_facets": "4"
             },
             "units": [
                 {
@@ -7151,7 +7098,6 @@
                         "Lock_Cone": "25",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Mounts": "{heatseeker;8;24;light-missile medium-missile heavy-missile;0;-.13;2;;;;;;;;;1;1}",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "25",
                         "accel": "4000"
@@ -7172,7 +7118,6 @@
                         "Tracking_Cone": "4",
                         "Max_Cone": "180",
                         "Lock_Cone": "25",
-                        "shield_facets": "4",
                         "armor": "1",
                         "shield_strength": "25",
                         "accel": "4000"
@@ -7338,6 +7283,7 @@
                 "Dock": "{;0;-125;330;60;0}",
                 "Cargo_Import": "{Industrially_Manufactured_Goods/Agricultural;1.2;.1;;7}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Natural_Products/Food;.7;.2;;30}{Specialty_Goods/Medical;1.2;.1;;3}",
                 "Upgrade_Storage_Volume": "600",
+                "shield_facets": "4",
                 "accel": "5000000"
             },
             "units": [
@@ -7355,7 +7301,6 @@
                         "Jump_Drive_Present": "1",
                         "Prohibited_Upgrades": "mult_shady_moreupgrade;mult_shady_morethrust;mult_shady_moreshields;mult_shady_moregunrecharge;mult_shady_moreshieldrecharge;mult_shady_moreturning;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                         "Sub_Units": "{turretbeam;-4;-103.75;375;0;0;1;0;-1;0;120.0}{turretbeam;-4;80;475;0;0;1;0;1;0;120.0}{turretbeam;-4;-93;-575;0;0;-1;0;-1;0;120.0}{turretbeam;1;102;-575;0;0;-1;0;1;0;120.0}",
-                        "shield_facets": "4",
                         "armor": "1000"
                     }
                 }

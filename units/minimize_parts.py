@@ -67,7 +67,7 @@ def add_facets(unit):
     facets = 0
     
     for key in minimize_array[1][1]:
-        if key in unit and float(unit[key]) > 0:
+        if key in unit and float(unit[key]) >= 0:
             facets += 1
     
     if facets > 0:
@@ -142,7 +142,10 @@ def minimize(units, upgrades, base_template):
                 #del unit[k]
         
                 
-        
+def is_shield(unit):
+    if 'Upgrade_Type' not in unit:
+        return False
+    return unit['Upgrade_Type'] == 'Shield'
 
 def is_ship(unit):
     key = unit['Key']

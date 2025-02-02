@@ -874,6 +874,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Upgrades": "{armor04;;}{quadshield08;;}{add_spec_capacitor03;;}{capacitor07;;}{reactor10;;}{jump_drive;;}{starscanner2;;}{ecm_package02;;}",
+        "shield_facets": "4",
         "armor": "1",
         "accel": "4000"
     },
@@ -1236,6 +1237,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Upgrades": "{armor01;;}{quadshield02;;}{add_spec_capacitor01;;}{capacitor02;;}{reactor03;;}{skyscope2;;}",
+        "shield_facets": "4",
         "armor": "1",
         "accel": "10000"
     },
@@ -1277,6 +1279,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Upgrades": "{armor03;;}{quadshield05;;}{add_spec_capacitor03;;}{capacitor04;;}{reactor05;;}{jump_drive;;}{skyscope3;;}{ecm_package01;;}",
+        "shield_facets": "4",
         "armor": "1",
         "accel": "5000"
     },
@@ -1317,6 +1320,7 @@
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
+        "shield_facets": "4",
         "armor": "1",
         "accel": "10000"
     },
@@ -1360,6 +1364,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Upgrades": "{armor03;;}{dualshield04;;}{add_spec_capacitor02;;}{capacitor03;;}{reactor04;;}{jump_drive;;}{starscanner2;;}{ecm_package01;;}",
+        "shield_facets": "2",
         "armor": "1",
         "accel": "5000"
     },
@@ -1455,6 +1460,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Upgrades": "{armor04;;}{quadshield07;;}{add_spec_capacitor03;;}{capacitor06;;}{reactor06;;}{jump_drive;;}{starscanner3;;}{ecm_package02;;}",
+        "shield_facets": "4",
         "armor": "1",
         "accel": "5000"
     },
@@ -1600,6 +1606,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Upgrades": "{armor06;;}{quadshield10;;}{add_spec_capacitor04;;}{capacitor09;;}{reactor07;;}{jump_drive;;}{hawkeye2;;}{ecm_package03;;}",
+        "shield_facets": "4",
         "armor": "1",
         "accel": "4000"
     },
@@ -1887,7 +1894,8 @@
         "FireControl_Functionality": "1",
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
-        "Max_SPECDrive_Functionality": "1"
+        "Max_SPECDrive_Functionality": "1",
+        "shield_facets": "2"
     },
     {
         "Key": "upgrading_dummy_unit__upgrades",
@@ -4238,6 +4246,7 @@
         "Max_SPECDrive_Functionality": "1",
         "Sub_Units": "{wormhole.stableswirlsaccessory;0;0;0;;;;;;;180.0}{wormhole.stableswirlsaccessory;0;0;0;;;-1;;;;180.0}",
         "Spec_Interdiction": "0.5",
+        "shield_facets": "4",
         "armor": "45000"
     },
     {
@@ -4269,6 +4278,7 @@
         "Max_SPECDrive_Functionality": "1",
         "Sub_Units": "{wormhole.unstableswirlsaccessory;0;0;0;;;;;;;180.0}{wormhole.unstableswirlsaccessory;0;0;0;;;-1;;;;180.0}",
         "Spec_Interdiction": "0.5",
+        "shield_facets": "4",
         "armor": "45000"
     },
     {
@@ -4300,6 +4310,7 @@
         "Max_SPECDrive_Functionality": "1",
         "Sub_Units": "{wormhole.stableswirlsaccessory;0;0;0;;;;;;;180.0}{wormhole.stableswirlsaccessory;0;0;0;;;-1;;;;180.0}",
         "Spec_Interdiction": "0.5",
+        "shield_facets": "4",
         "armor": "45000"
     },
     {
@@ -4331,6 +4342,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Spec_Interdiction": "0.5",
+        "shield_facets": "4",
         "armor": "45000"
     },
     {
@@ -4364,6 +4376,7 @@
         "Max_SPECDrive_Functionality": "1",
         "Num_Animation_Stages": "1",
         "Spec_Interdiction": "0.5",
+        "shield_facets": "4",
         "armor": "45000"
     },
     {
@@ -4395,6 +4408,7 @@
         "Max_SPECDrive_Functionality": "1",
         "Sub_Units": "{wormhole.unstableswirlsaccessory;0;0;0;;;;;;;180.0}{wormhole.unstableswirlsaccessory;0;0;0;;;-1;;;;180.0}",
         "Spec_Interdiction": "0.5",
+        "shield_facets": "4",
         "armor": "45000"
     },
     {
@@ -4428,6 +4442,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Spec_Interdiction": "0.5",
+        "shield_facets": "4",
         "armor": "45000"
     },
     {
@@ -4460,6 +4475,7 @@
         "Max_SPECDrive_Functionality": "1",
         "Num_Animation_Stages": "1",
         "Spec_Interdiction": "0.5",
+        "shield_facets": "4",
         "armor": "45000"
     },
     {
@@ -4504,6 +4520,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo_Import": "{Fragments;;;50;50}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -4549,6 +4566,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo_Import": "{Fragments;;;50;50}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -4594,6 +4612,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo_Import": "{Fragments;;;50;50}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -4639,6 +4658,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo_Import": "{Fragments;;;50;50}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -4684,6 +4704,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo_Import": "{Fragments;;;50;50}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -4729,6 +4750,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo_Import": "{Fragments;;;50;50}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -4774,6 +4796,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo_Import": "{Fragments;;;50;50}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -4819,6 +4842,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo_Import": "{Fragments;;;50;50}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -4864,6 +4888,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo": "{Iron_Ore;Raw_Materials/Ores;0;4;1;2;1;1;;0}{Tungsten_Ore;Raw_Materials/Ores;0;1;1;2;1;1;;0}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -4909,6 +4934,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo": "{Iron_Ore;Raw_Materials/Ores;0;4;1;2;1;1;;0}{Tungsten_Ore;Raw_Materials/Ores;0;1;1;2;1;1;;0}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -4954,6 +4980,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo": "{Iron_Ore;Raw_Materials/Ores;0;4;1;2;1;1;;0}{Tungsten_Ore;Raw_Materials/Ores;0;1;1;2;1;1;;0}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -4999,6 +5026,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo": "{Iron_Ore;Raw_Materials/Ores;0;4;1;2;1;1;;0}{Tungsten_Ore;Raw_Materials/Ores;0;1;1;2;1;1;;0}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -5044,6 +5072,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo": "{Iron_Ore;Raw_Materials/Ores;0;4;1;2;1;1;;0}{Tungsten_Ore;Raw_Materials/Ores;0;1;1;2;1;1;;0}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -5089,6 +5118,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo": "{Iron_Ore;Raw_Materials/Ores;0;4;1;2;1;1;;0}{Tungsten_Ore;Raw_Materials/Ores;0;1;1;2;1;1;;0}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -5134,6 +5164,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo": "{Iron_Ore;Raw_Materials/Ores;0;4;1;2;1;1;;0}{Tungsten_Ore;Raw_Materials/Ores;0;1;1;2;1;1;;0}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -5179,6 +5210,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Cargo": "{Iron_Ore;Raw_Materials/Ores;0;4;1;2;1;1;;0}{Tungsten_Ore;Raw_Materials/Ores;0;1;1;2;1;1;;0}",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -5261,7 +5293,8 @@
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
-        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Agricultural;1.2;.1;;7}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Electronics;1;.1;;1}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Life-forms;.8;.2;;2}{Natural_Products/Renewable_Resources;.8;.2;;5}{Raw_Materials/Gases;.7;.2;;2}{Raw_Materials/Hydrocarbons;.8;.2;;2}{Refined_Materials/Chemicals;1.2;.3;;2}{Specialty_Goods/Entertainment;1;.1;;1}{Specialty_Goods/Medical;1.2;.1;;3}"
+        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Agricultural;1.2;.1;;7}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Electronics;1;.1;;1}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Life-forms;.8;.2;;2}{Natural_Products/Renewable_Resources;.8;.2;;5}{Raw_Materials/Gases;.7;.2;;2}{Raw_Materials/Hydrocarbons;.8;.2;;2}{Refined_Materials/Chemicals;1.2;.3;;2}{Specialty_Goods/Entertainment;1;.1;;1}{Specialty_Goods/Medical;1.2;.1;;3}",
+        "shield_facets": "2"
     },
     {
         "Key": "generic_cargo__aera",
@@ -5297,7 +5330,8 @@
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
-        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Agricultural;1.2;.1;;7}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Electronics;1;.1;;1}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Life-forms;.8;.2;;2}{Natural_Products/Renewable_Resources;.8;.2;;5}{Raw_Materials/Gases;.7;.2;;2}{Raw_Materials/Hydrocarbons;.8;.2;;2}{Refined_Materials/Chemicals;1.2;.3;;2}{Specialty_Goods/Entertainment;1;.1;;1}{Specialty_Goods/Medical;1.2;.1;;3}"
+        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Agricultural;1.2;.1;;7}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Electronics;1;.1;;1}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Life-forms;.8;.2;;2}{Natural_Products/Renewable_Resources;.8;.2;;5}{Raw_Materials/Gases;.7;.2;;2}{Raw_Materials/Hydrocarbons;.8;.2;;2}{Refined_Materials/Chemicals;1.2;.3;;2}{Specialty_Goods/Entertainment;1;.1;;1}{Specialty_Goods/Medical;1.2;.1;;3}",
+        "shield_facets": "2"
     },
     {
         "Key": "generic_cargo__rlaan",
@@ -5333,7 +5367,8 @@
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
-        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Agricultural;1.2;.1;;7}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Electronics;1;.1;;1}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Life-forms;.8;.2;;2}{Natural_Products/Renewable_Resources;.8;.2;;5}{Raw_Materials/Gases;.7;.2;;2}{Raw_Materials/Hydrocarbons;.8;.2;;2}{Refined_Materials/Chemicals;1.2;.3;;2}{Specialty_Goods/Entertainment;1;.1;;1}{Specialty_Goods/Medical;1.2;.1;;3}"
+        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;2}{Industrially_Manufactured_Goods/Agricultural;1.2;.1;;7}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Electronics;1;.1;;1}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;1}{Natural_Products/Life-forms;.8;.2;;2}{Natural_Products/Renewable_Resources;.8;.2;;5}{Raw_Materials/Gases;.7;.2;;2}{Raw_Materials/Hydrocarbons;.8;.2;;2}{Refined_Materials/Chemicals;1.2;.3;;2}{Specialty_Goods/Entertainment;1;.1;;1}{Specialty_Goods/Medical;1.2;.1;;3}",
+        "shield_facets": "2"
     },
     {
         "Key": "iron_ore.cargo",
@@ -5375,6 +5410,7 @@
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -5418,6 +5454,7 @@
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
+        "shield_facets": "2",
         "armor": "15",
         "accel": "20000"
     },
@@ -5705,7 +5742,8 @@
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
-        "Spec_Interdiction": "0.75"
+        "Spec_Interdiction": "0.75",
+        "shield_facets": "2"
     },
     {
         "Key": "asteroidsPriv__neutral",
@@ -5744,6 +5782,7 @@
         "Sub_Units": "{asteroid5;-219.188646699;434.550621455;-743.955856173;0;0;-1;1;0;0;180.0}{asteroid7;-317.04732344;-665.817091452;106.114107672;0;-1;0;0;0;-1;180.0}{asteroid4;-216.006100393;549.391759566;-389.285933031;0;-1;0;1;0;0;180.0}{asteroid6;505.667348311;677.683269184;186.214947799;0;0;1;-1;0;0;180.0}{asteroid0;312.434593174;-665.479084605;112.365007701;0;1;0;1;0;0;180.0}{asteroid6;-694.996516604;-82.452111981;-82.759001982;0;1;0;0;0;-1;180.0}{asteroid4;384.297524866;-422.704743284;-206.825766599;0;0;1;-1;0;0;180.0}{asteroid7;732.395900579;-462.292452737;-201.405196702;0;1;0;0;0;-1;180.0}{asteroid2;537.553880644;363.500140834;-426.065336974;0;0;-1;-1;0;0;180.0}{asteroid6;384.109440208;-207.871004029;202.381405574;0;0;1;0;1;0;180.0}{asteroid5;517.536645717;-335.966536222;69.2004056939;0;0;-1;0;-1;0;180.0}{asteroid7;-389.540204265;614.32047476;262.237155788;0;1;0;-1;0;0;180.0}{asteroid0;-560.124647914;-339.407295989;-519.243245984;1;0;0;0;0;-1;180.0}{asteroid1;-125.730750459;297.034235172;257.278834884;0;0;1;-1;0;0;180.0}{asteroid6;450.121421856;41.1136596505;-180.11431494;0;1;0;0;0;-1;180.0}{asteroid7;240.823151333;852.929500262;48.6730836707;1;0;0;0;1;0;180.0}{asteroid5;-241.184773653;837.206416497;-14.0405754957;0;0;1;1;0;0;180.0}{asteroid3;-33.3351963603;179.500204071;681.842409463;0;-1;0;0;0;-1;180.0}{asteroid5;-57.1867355467;348.640916221;478.307464407;0;0;1;-1;0;0;180.0}{asteroid5;511.690502515;-10.4195029382;700.289790193;0;0;1;1;0;0;180.0}{asteroid5;-374.84246787;-75.5443150581;810.421168381;0;0;-1;-1;0;0;180.0}{asteroid6;539.417891041;484.741731384;-484.399033473;-1;0;0;0;-1;0;180.0}{asteroid6;117.152049043;200.984199701;-402.806754525;-1;0;0;0;-1;0;180.0}{asteroid5;236.030462175;-408.540562855;-232.487748628;0;0;1;0;-1;0;180.0}{asteroid6;-509.34133356;212.07600682;-245.541097626;0;0;-1;-1;0;0;180.0}{asteroid1;833.856765996;-35.4934690168;-155.557717756;1;0;0;0;1;0;180.0}{asteroid4;281.122989448;620.437712609;-584.691422828;0;1;0;1;0;0;180.0}{asteroid3;26.6576377945;-254.138653747;712.489404754;0;0;-1;1;0;0;180.0}{asteroid1;-582.902014167;-232.044666878;67.9694240541;0;0;1;0;-1;0;180.0}{asteroid5;-539.756128145;49.9493416385;456.057503593;-1;0;0;0;0;1;180.0}{asteroid6;633.392871323;517.557113355;-110.543969925;0;0;1;-1;0;0;180.0}{asteroid2;-379.303017657;-177.814852987;-115.595839667;1;0;0;0;0;-1;180.0}{asteroid1;383.916348467;477.488449086;-354.322206344;-1;0;0;0;-1;0;180.0}{asteroid0;213.876757316;110.096864419;-648.398194501;0;0;1;1;0;0;180.0}{asteroid4;-281.590426893;816.498350357;-208.667008341;0;0;1;-1;0;0;180.0}{asteroid2;518.058204122;-156.5521677;-714.697231762;0;1;0;0;0;-1;180.0}{asteroid2;423.49810243;237.062632874;62.7776035259;0;1;0;0;0;1;180.0}{asteroid2;123.371115773;190.923348528;-269.980756544;0;0;-1;-1;0;0;180.0}{asteroid0;-443.401031736;-370.08366446;621.342081113;1;0;0;0;-1;0;180.0}{asteroid2;-277.323942571;-447.927447542;108.090514652;0;0;1;-1;0;0;180.0}",
         "Upgrade_Storage_Volume": "16",
         "Num_Chunks": "0",
+        "shield_facets": "4",
         "armor": "500",
         "accel": "20000"
     },
@@ -5796,6 +5835,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Mounts": "{Photon_MKIII;100;;medium autotracking;0;0;0;;;;;;;;;1;1}",
+        "shield_facets": "2",
         "accel": "5"
     },
     {
@@ -11931,6 +11971,7 @@
         "Dock": "{;-3.47;3.47;-20.13;2.21;0}{;-4.91;-0.0;-20.13;2.21;0}{;-3.47;-3.47;-20.13;2.21;0}{;0.0;-4.91;-20.13;2.21;0}{;3.47;-3.47;-20.13;2.21;0}{;4.91;-0.0;-20.13;2.21;0}{;3.47;3.47;-20.13;2.21;0}{;0.0;4.91;-20.13;2.21;0}",
         "Cargo_Import": "{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Specialty_Goods/Medical;1.2;.1;;3}",
         "Upgrade_Storage_Volume": "600",
+        "shield_facets": "4",
         "accel": "5000000"
     },
     {
