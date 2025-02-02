@@ -46,8 +46,7 @@
                 "Light": "{supernova.bmp.bfxm;-0.249996;0.00000e+0;-1.83758;1.5;;;;;}{supernova.bmp.bfxm;0.250004;0.00000e+0;-1.83758;1.5;;;;;}",
                 "Mounts": "{;;;LIGHT SPECIAL;-4.07186e-6;-0.150000;1.99709;;;-1.06144e-5;0.00000e+0;2.00000;0.00000e+0;1.00000;0.00000e+0;1;1}",
                 "Upgrade_Storage_Volume": "16",
-                "armor": "6.0",
-                "shield_facets": "0"
+                "armor": "6.0"
             },
             "units": [
                 {
@@ -121,7 +120,6 @@
                 "Mounts": "{;;3;Light medium autotracking;6;-2.75;-4.75;;;;;;;;;1;1}{;;3;Light medium autotracking;-6;-2.75;-4.75;;;;;;;;;1;1}{;;3;Light medium autotracking;6;4.75;-4.75;;;;;;;;;1;1}{;;3;Light medium autotracking;-6;4.75;-4.75;;;;;;;;;1;1}{;;;heavy autotracking;0;-3;3;;;;;;;;;1;1}{;;21;light-missile;6.082913;-.368988;0.747223;;;;;;;;;1;1}{;;21;light-missile;-6.157103;-.379586;1.100964;;;;;;;;;1;1}{;;300;Light-missile medium-missile heavy-missile;6.045031;-3.217878;0.973509;;;;;;;;;1;1}{;;300;Light-missile medium-missile heavy-missile;-6.022359;-3.201684;0.913285;;;;;;;;;1;1}",
                 "Explosion": "explosion_aera.ani",
                 "Upgrade_Storage_Volume": "900",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -222,7 +220,6 @@
                 "Light": "{supernova.bmp.bfxm;0;0;-4.4;1.2;;;;;}{supernova.bmp.bfxm;0.6;0;-4.4;1.2;;;;;}{supernova.bmp.bfxm;-0.6;0;-4.4;1.2;;;;;}{supernova.bmp.bfxm;1.2;0;-4.4;1.2;;;;;}{supernova.bmp.bfxm;-1.2;0;-4.4;1.2;;;;;}{supernova.bmp.bfxm;1.8;0;-4.3;1.2;;;;;}{supernova.bmp.bfxm;-1.8;0;-4.3;1.2;;;;;}{supernova.bmp.bfxm;5;0.275;-2;2;;;;;}{supernova.bmp.bfxm;4;0.275;-2;2;;;;;}{supernova.bmp.bfxm;-5;0.275;-2;2;;;;;}{supernova.bmp.bfxm;-4;0.275;-2;2;;;;;}{supernova.bmp.bfxm;8.75;0.275;-2.75;2;;;;;}{supernova.bmp.bfxm;9.75;0.275;-2.75;2;;;;;}{supernova.bmp.bfxm;-9.75;0.275;-2.75;2;;;;;}{supernova.bmp.bfxm;-8.75;0.275;-2.75;2;;;;;}",
                 "Mounts": "{;8;800;heavy-missile;1;-2;7;;;;;;;;;1;1}{;8;800;heavy-missile;-1;-2;7;;;;;;;;;1;1}{;8;800;heavy-missile;1;-2;-1;;;;;;;;;1;1}{;8;800;heavy-missile;-1;-2;-1;;;;;;;;;1;1}{;;;light autotracking;12.5;0.1;0;;;;;;;;;1;1}{;;;light autotracking;-12.5;0.1;0;;;;;;;;;1;1}{;;;light autotracking;12.5;-0.1;0;;;;;;;;;1;1}{;;;light autotracking;-12.5;-0.1;0;;;;;;;;;1;1}{;;;light medium autotracking;-2;0;12;;;;;;;;;1;1}{;;;light medium autotracking;2;-0;12;;;;;;;;;1;1}{;;;capship-light;-0.1;-2;13;;;;;;;;;1;1}{;;;capship-light;0.1;-2;13;;;;;;;;;1;1}{;5;80;light-missile medium-missile;4.1;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;3.9;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;-4.1;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;-3.9;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;8.1;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;7.9;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;-8.1;0;-3;;;;;;;;;1;1}{;5;80;light-missile medium-missile;-7.9;0;-3;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "25000",
-                "shield_facets": "0",
                 "accel": "60000"
             },
             "units": [
@@ -324,7 +321,6 @@
                 "Light": "{supernova.bmp.bfxm;0;0.75;-7.5;4;;;;;}{supernova.bmp.bfxm;0;-2;0.3;1;;;;;}{supernova.bmp.bfxm;0.5;-2;0.3;1;;;;;}{supernova.bmp.bfxm;-0.5;-2;0.3;1;;;;;}{supernova.bmp.bfxm;0.25;-2;0.3;1;;;;;}{supernova.bmp.bfxm;-0.25;-2;0.3;1;;;;;}{supernova.bmp.bfxm;0;-1.6;-1.35;1;;;;;}{supernova.bmp.bfxm;0.4;-1.6;-1.35;1;;;;;}{supernova.bmp.bfxm;-0.4;-1.6;-1.35;1;;;;;}{supernova.bmp.bfxm;0.2;-1.6;-1.35;1;;;;;}{supernova.bmp.bfxm;-0.2;-1.6;-1.35;1;;;;;}",
                 "Mounts": "{;;800;light-missile medium-missile special-missile;2.1;0.75;0;;;;;;;;;1;1}{;;800;light-missile medium-missile special-missile;-2;0.75;0;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "4500",
-                "shield_facets": "0",
                 "accel": "8000"
             },
             "units": [
@@ -395,7 +391,6 @@
                 "Light": "{supernova.bmp.bfxm;4;1.05;-15.5;13;;;;;}{supernova.bmp.bfxm;-4;1.05;-15.5;13;;;;;}{supernova.bmp.bfxm;3.75;-.75;-17;18;;;;;}{supernova.bmp.bfxm;-3.75;-.75;-17;18;;;;;}{supernova.bmp.bfxm;3.5;-3.75;-15.8;8;;;;;}{supernova.bmp.bfxm;-3.5;-3.75;-15.8;8;;;;;}{supernova.bmp.bfxm;5.25;-3.75;-15.8;8;;;;;}{supernova.bmp.bfxm;-5.25;-3.75;-15.8;8;;;;;}{supernova.bmp.bfxm;5.25;-5.1;-15.8;8;;;;;}{supernova.bmp.bfxm;-5.25;-5.1;-15.8;8;;;;;}{supernova.bmp.bfxm;3.5;-5.1;-15.8;8;;;;;}{supernova.bmp.bfxm;-3.5;-5.1;-15.8;8;;;;;}",
                 "Mounts": "{;;3;Light Medium Heavy;1;-5.86;11.5;;;;;;;;;1;1}{;;3;Light Medium Heavy;-1;-5.86;11.5;;;;;;;;;1;1}{;;3;Light Medium Heavy;1;-8;11.5;;;;;;;;;1;1}{;;3;Light Medium Heavy;-1;-8;11.5;;;;;;;;;1;1}{;;3;Light;.65;3.75;7;;;;;;;;;1;1}{;;3;Light;-.65;3.75;7;;;;;;;;;1;1}{;;8;special-missile;4;-3.75;.2;;;;;;;;;1;1}{;;8;special-missile;-4;-3.75;.2;;;;;;;;;1;1}{;;200;heavy-missile;-5.000000;-.9000000;-3.000000;;;;;;;;;1;1}{;;200;heavy-missile;5.000000;-.9000000;-3.000000;;;;;;;;;1;1}{;;16;light-missile medium-missile;3.000000;-.9000000;-1.000000;;;;;;;;;1;1}{;;16;light-missile medium-missile;-3.000000;-.9000000;-1.000000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "2500",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -534,7 +529,6 @@
                 "Mounts": "{;;;Light Medium Heavy autotracking;-9;-.25;-.75;;;;;;;;;1;1}{;;;Light Medium Heavy autotracking;9;-.25;-.75;;;;;;;;;1;1}{;;;Light;-4.5;-.6;12.25;;;;;;;;;1;1}{;;;Light;4.5;-.6;12.25;;;;;;;;;1;1}{;;200;special-missile;0;-0.5;0;;;;;;;;;1;1}",
                 "Explosion": "explosion_rlaan.ani",
                 "Upgrade_Storage_Volume": "1500",
-                "shield_facets": "0",
                 "accel": "12000"
             },
             "units": [
@@ -945,7 +939,6 @@
                 "Dock": "{;0;-100;-220;80;0}",
                 "Upgrade_Storage_Volume": "100000",
                 "armor": "24000.0",
-                "shield_facets": "0",
                 "accel": "950000000"
             },
             "units": [
@@ -1385,7 +1378,6 @@
                 "Dock": "{;0;4;-10;7;0}",
                 "Upgrade_Storage_Volume": "100000",
                 "armor": "19750.0",
-                "shield_facets": "0",
                 "accel": "10000000"
             },
             "units": [
@@ -1447,7 +1439,6 @@
                 "Dock": "{;0;-45;-120;30;0}",
                 "Explosion": "explosion_rlaan.ani",
                 "Upgrade_Storage_Volume": "600",
-                "shield_facets": "0",
                 "accel": "550000000"
             },
             "units": [
@@ -1513,7 +1504,6 @@
                 "Mounts": "{;;;capship-heavy SPECIAL;-0.025;-0.073;2.75;;;;;;;;;1;1}{;;;capship-heavy SPECIAL;-0.025;-0.073;2.75;;;;;;;;;1;1}{;;;capship-heavy SPECIAL;-0.025;-0.073;2.75;;;;;;;;;1;1}{tractor;;; SPECIAL autotracking;0;0;-1;;;0;-0.17;0.98;0;1;0;1;1}",
                 "Dock": "{;0;-0.3;-0.7;0.3;0}",
                 "Upgrade_Storage_Volume": "600",
-                "shield_facets": "0",
                 "accel": "800000"
             },
             "units": [
@@ -1706,7 +1696,6 @@
                 "Light": "{supernova.bmp.bfxm;4.5;1.8;-13.85;5;;;;;}{supernova.bmp.bfxm;5.1;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;3.95;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;-4.5;1.8;-13.85;5;;;;;}{supernova.bmp.bfxm;-5.1;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;-3.95;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;4.5;.35;-13.85;12;;;;;}{supernova.bmp.bfxm;-4.5;.35;-13.85;12;;;;;}{supernova.bmp.bfxm;6.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;5.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;4.5;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-6.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-5.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-4.5;-4.8;-12.3;4;;;;;}",
                 "Mounts": "{;;;Light Medium Heavy;2.35;6;10.3;;;;;;;;;1;1}{;;;Light Medium Heavy;-2.35;6;10.3;;;;;;;;;1;1}{;;;Light Medium Heavy;-1.75;-10.5;9.5;;;;;;;;;1;1}{;;;Light Medium Heavy;1.75;-10.5;9.5;;;;;;;;;1;1}{;;;Light;8.1;-3.5;-1.65;;;;;;;;;1;1}{;;;Light;-8.1;-3.5;-1.65;;;;;;;;;1;1}{;;48;Light-Missile Medium-Missile;-0.300000;-0.100000;0.000000;;;;;;;;;1;1}{;;48;Light-Missile Medium-Missile;0.300000;-0.100000;0.000000;;;;;;;;;1;1}{;;300;Heavy-Missile;-0.000000;0.000000;0.000000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "1400",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -1900,7 +1889,6 @@
                 "Light": "{supernova.bmp.bfxm;4.5;1.8;-13.85;5;;;;;}{supernova.bmp.bfxm;5.1;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;3.95;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;-4.5;1.8;-13.85;5;;;;;}{supernova.bmp.bfxm;-5.1;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;-3.95;2.75;-13.85;5;;;;;}{supernova.bmp.bfxm;4.5;.35;-13.85;12;;;;;}{supernova.bmp.bfxm;-4.5;.35;-13.85;12;;;;;}{supernova.bmp.bfxm;6.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;5.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;4.5;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-6.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-5.45;-4.8;-12.3;4;;;;;}{supernova.bmp.bfxm;-4.5;-4.8;-12.3;4;;;;;}",
                 "Mounts": "{;;;Light Medium Heavy;2.35;6;10.3;;;;;;;;;1;1}{;;;Light Medium Heavy;-2.35;6;10.3;;;;;;;;;1;1}{;;;Light Medium Heavy;-1.75;-10.5;9.5;;;;;;;;;1;1}{;;;Light Medium Heavy;1.75;-10.5;9.5;;;;;;;;;1;1}{;;;Light;8.1;-3.5;-1.65;;;;;;;;;1;1}{;;;Light;-8.1;-3.5;-1.65;;;;;;;;;1;1}{;;48;Light-Missile Medium-Missile;-0.300000;-0.100000;0.000000;;;;;;;;;1;1}{;;48;Light-Missile Medium-Missile;0.300000;-0.100000;0.000000;;;;;;;;;1;1}{;;100;Heavy-Missile;-0.000000;0.000000;0.000000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "1200",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -1964,7 +1952,6 @@
                 "Light": "{thrust1.bfxm;0;.5;-7.5;8;;;;;}{thrust1.bfxm;1.3;0;-7.5;10;;;;;}{thrust1.bfxm;-1.3;0;-7.5;10;;;;;}{thrust1.bfxm;.4;-.3;-7;4;;;;;}{thrust1.bfxm;-.4;-.3;-7;4;;;;;}",
                 "Mounts": "{;;;Light Autotrack;1.75;1.5;-1;;;;;;;;;1;1}{;;;Light Autotrack;-1.75;1.5;-1;;;;;;;;;1;1}{;;;Light Medium;3.5;0;3.125;;;;;;;;;1;1}{;;;Light Medium;-3.5;0;3.125;;;;;;;;;1;1}{;4;48;light-missile medium-missile;-2.500000;-0.200000;-2.00000;;;;;;;;;1;1}{;4;48;light-missile medium-missile;2.500000;-0.200000;-2.00000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "400",
-                "shield_facets": "0",
                 "accel": "5000"
             },
             "units": [
@@ -2095,7 +2082,6 @@
                 "Mounts": "{;;;light medium autotracking;8;-3;10.85;;;;;;;;;1;1}{;;;light medium autotracking;-8;-3;10.85;;;;;;;;;1;1}{;;;light medium autotracking;6;-2.9;10.5;;;;;;;;;1;1}{;;;light medium autotracking;-6;-2.9;10.5;;;;;;;;;1;1}{;;;light medium autotracking;9;-1.65;-1;;;;;;;;;1;1}{;;;light medium autotracking;-9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;8;-3;10.85;;;;;;;;;1;1}{;27;27;special-missile autotracking;-8;-3;10.85;;;;;;;;;1;1}{;27;27;special-missile autotracking;6;-2.9;10.5;;;;;;;;;1;1}{;27;27;special-missile autotracking;-6;-2.9;10.5;;;;;;;;;1;1}{;27;27;special-missile autotracking;9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;-9;-1.65;-1;;;;;;;;;1;1}{;27;27;special-missile autotracking;3.6;-1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;-3.6;-1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;3.6;1.6;1.2;;;;;;;;;1;1}{;27;27;special-missile autotracking;-3.6;1.6;1.2;;;;;;;;;1;1}{;3;9;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{;3;9;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}{;6;30;medium-missile autotracking;3.6;-1.6;1.200000;;;;;;;;;1;1}{;6;30;medium-missile autotracking;-3.6;-1.6;1.200000;;;;;;;;;1;1}",
                 "Explosion": "explosion_aera.ani",
                 "Upgrade_Storage_Volume": "600",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -2292,7 +2278,6 @@
                 "Light": "{supernova.bmp.bfxm;-0.506007;2.40000e-2;-5.16000;.6;;;;;}{supernova.bmp.bfxm;9.59928e-2;3.20000e-2;-3.67200;.6;;;;;}",
                 "Mounts": "{;;;Light;-2.75800;-0.682000;0.628000;;;;;;;;;1;1}{;;;Light;3.94800;-1.03200;1.21200;;;;;;;;;1;1}{;;;Medium;-4.40000e-2;1.22800;-0.508000;;;;;;;;;1;1}{;;;Medium;-0.320000;-0.352000;4.16400;;;;;;;;;1;1}{;20;5;special-missile;-3.00944e-2;0.757442;-1.86303;;;;;;;;;1;1}{;1;100;Light-missile medium-missile heavy-missile;1.65074;-0.522844;1.34526e-3;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "275",
-                "shield_facets": "0",
                 "accel": "3000"
             },
             "units": [
@@ -2410,7 +2395,6 @@
                 "Light": "{supernova.bmp.bfxm;0.158000;2.80064e-2;-4.83800;1;;;;;}{supernova.bmp.bfxm;0.786000;3.40064e-2;-4.83800;1;;;;;}",
                 "Mounts": "{;;;Light;-0.598000;3.19962e-2;2.87600;;;;;;;;;1;1}{;;;Light Medium Heavy;0.270000;-0.418006;3.63600;;;;;;;;;1;1}{;5;80;Light-missile Medium-missile;-1.50600;-0.154000;-1.83200;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "120",
-                "shield_facets": "0",
                 "accel": "3000"
             },
             "units": [
@@ -2529,7 +2513,6 @@
                 "Light": "{supernova.bmp.bfxm;0;0;-6.36800;4;;;;;}",
                 "Mounts": "{;4;1;light-missile medium-missile heavy-missile;0;-.13;2;;;;;;;;;1;1}{;;;Light Medium Heavy Special;3.1;-0.13;2.35;;;0;0;1;0;1;0;1;1}{;;;Light Medium Heavy Special;-3.1;-0.13;2.35;;;0;0;1;0;1;0;1;1}",
                 "Upgrade_Storage_Volume": "125",
-                "shield_facets": "0",
                 "accel": "5000"
             },
             "units": [
@@ -2682,7 +2665,6 @@
                 "Light": "{supernova.bmp.bfxm;0.086;-0.269;-14.620000;2.000000;;;;;}",
                 "Mounts": "{;;;Light;3.76500;0.15400;19.31000;;;;;;;;;1;1}{;;;Light;2.80800;0.15400;19.98000;;;;;;;;;1;1}{;;;Light;3.76500;-0.15400;19.31000;;;;;;;;;1;1}{;;;Light;2.80800;-0.15400;19.98000;;;;;;;;;1;1}{;1;100;heavy-missile;-12;0;6.5;;;;;;;;;1;1}{;1;16;medium-missile;-12;0.05;6.55;;;;;;;;;1;1}{;1;16;medium-missile;-12;-0.05;6.55;;;;;;;;;1;1}{;1;16;medium-missile;-12;-0.05;6.45;;;;;;;;;1;1}{;1;16;medium-missile;-12;0.05;6.45;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "325",
-                "shield_facets": "0",
                 "accel": "2000"
             },
             "units": [
@@ -2819,7 +2801,6 @@
                 "Light": "{supernova.bmp.bfxm;-43.740699;-14.15585;-74.549662;20;;;;;}{supernova.bmp.bfxm;-35.702901;-14.15585;-74.549662;20;;;;;}{supernova.bmp.bfxm;35.702901;-14.15585;-74.549662;20;;;;;}{supernova.bmp.bfxm;43.740699;-14.15585;-74.549662;20;;;;;}",
                 "Mounts": "{;;;Light Special;-12.6;-16.5;4;;;;;;;;;1;1}{;;;Light Special;12.6;-16.5;4;;;;;;;;;1;1}{;;;Light;-12.5;-1.5;-1;;;;;;;;;1;1}{;;;Light;12.5;-1.5;-1;;;;;;;;;1;1}{;1;16;Special;0;-.23;4;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "450",
-                "shield_facets": "0",
                 "accel": "2000"
             },
             "units": [
@@ -2945,7 +2926,6 @@
                 "Light": "{supernova.bmp.bfxm;-3.35;1.125;-9.25;8;;;;;}{supernova.bmp.bfxm;3.35;1.125;-9.25;8;;;;;}{supernova.bmp.bfxm;-3.5;.125;-9.25;3;;;;;}{supernova.bmp.bfxm;3.5;.125;-9.25;3;;;;;}{supernova.bmp.bfxm;-3;.25;-9.25;3;;;;;}{supernova.bmp.bfxm;3;.25;-9.25;3;;;;;}{supernova.bmp.bfxm;-3.35;-.3;-9.25;3;;;;;}{supernova.bmp.bfxm;3.35;-.3;-9.25;3;;;;;}{supernova.bmp.bfxm;-2.9;-.16;-9.25;3;;;;;}{supernova.bmp.bfxm;2.9;-.16;-9.25;3;;;;;}",
                 "Mounts": "{;;;light medium;-0.6;-2.8;7;;;;;;;;;1;1}{;;;light medium;0.6;-2.8;7;;;;;;;;;1;1}{;;;medium heavy;-2;-0.16;11;;;;;;;;;1;1}{;;;medium heavy;2;-0.16;11;;;;;;;;;1;1}{;4;1;light-missile medium-missile;4.470487;-0.182350;-1.094219;;;;;;;;;1;1}{;4;1;light-missile medium-missile;-4.512798;-0.183760;-1.121801;;;;;;;;;1;1}{;4;1;light-missile medium-missile;3.470487;-0.182350;-1.094219;;;;;;;;;1;1}{;4;1;light-missile medium-missile;-3.512798;-0.183760;-1.121801;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "725",
-                "shield_facets": "0",
                 "accel": "5000"
             },
             "units": [
@@ -3052,7 +3032,6 @@
                 "Light": "{thrust1.bfxm;-0.0;-0.533517;-4.4708;5;;;;;}",
                 "Mounts": "{;;;Light Medium;-0.876000;-0.140000;-0.732000;;;;;;;;;1;1}{;;;Light Medium;0.886000;-0.140000;-0.732000;;;;;;;;;1;1}{;1;32;light-missile;-0.276000;-0.182000;0.00000e+0;;;;;;;;;1;1}{;1;32;light-missile;0.278000;-0.182000;0.00000e+0;;;;;;;;;1;1}{;4;1;Special Special-Missile;-0.582000;-0.182000;0;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "40",
-                "shield_facets": "0",
                 "accel": "700"
             },
             "units": [
@@ -3128,7 +3107,6 @@
                 "Light": "{supernova.bmp.bfxm;-0.5973;0.48082;-7.39491;4;;;;;}{supernova.bmp.bfxm;0.5973;0.48082;-7.39491;4;;;;;}{supernova.bmp.bfxm;2.0167;0.00188;-7.39491;4;;;;;}{supernova.bmp.bfxm;-2.0167;0.00188;-7.39491;4;;;;;}{supernova.bmp.bfxm;0.61947;-0.49032;-7.39491;4;;;;;}{supernova.bmp.bfxm;-0.61947;-0.49032;-7.39491;4;;;;;}",
                 "Mounts": "{FS_MWRF_Laser;;;Medium;0;-2.8;5.5;.2;.2;;;;;;;1;1}{FS_MWRF_Laser;;;Medium;0;3;7.75;.2;.2;;;;;;;1;1}{Hail;100;25;special special-missile medium-missile;0;0;6.5;;;;;;;;;1;1}{Hail;100;25;special special-missile medium-missile;0;0;6.5;;;;;;;;;1;1}{Hail;100;25;special special-missile medium-missile;0;0;6.5;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "125",
-                "shield_facets": "0",
                 "accel": "5000"
             },
             "units": [
@@ -3188,7 +3166,6 @@
                 "Light": "{supernova.bmp.bfxm;1.500000;0.700000;-8.000000;2.750000;;;;;}{supernova.bmp.bfxm;-1.500000;0.700000;-8.000000;2.750000;;;;;}",
                 "Mounts": "{;;;light;0.800000;-0.600000;8.000000;;;;;;;;;1;1}{;;;light;-0.800000;-0.600000;8.000000;;;;;;;;;1;1}{;;;light;-0.000000;-0.400000;8.200000;;;;;;;;;1;1}{;25;7;Special Special-Missile;2.000000;0.800000;-4.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;-2.000000;0.800000;-4.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{;25;7;Special Special-Missile;-1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "125",
-                "shield_facets": "0",
                 "accel": "2000"
             },
             "units": [
@@ -3331,8 +3308,7 @@
                     "data": {
                         "Key": "Seaxbane__upgrades",
                         "Object_Type": "FIXME",
-                        "Mounts": "{Seaxbane;1;;;;;;;;;;;;;;1;1}",
-                        "shield_facets": "0"
+                        "Mounts": "{Seaxbane;1;;;;;;;;;;;;;;1;1}"
                     }
                 }
             ]
@@ -3428,7 +3404,6 @@
                 "Light": "{supernova.bmp.bfxm;0.058558;0.326294;-1.977969;1.780003;;;;;}{supernova.bmp.bfxm;-1.347379;0.958650;-3.000000;0.40000;;;;;}{supernova.bmp.bfxm;1.347379;0.958650;-3.000000;0.40000;;;;;}{supernova.bmp.bfxm;0.863464;-1.003810;-3.000000;0.40000;;;;;}{supernova.bmp.bfxm;-0.863464;-1.003810;-3.000000;0.40000;;;;;}",
                 "Mounts": "{;2;32;Light-missile Medium-missile;-1.056411;-1.226957;3.200000;;;;;;;;;1;1}{;2;32;Light-missile Medium-missile;1.056411;-1.226957;3.200000;;;;;;;;;1;1}{;;;Light medium;0;0.1;3;;;;;;;;;1;1}{;2;32;light-missile medium-missile Special;-1.629525;1.044771;3.200000;;;;;;;;;1;1}{;2;32;light-missile medium-missile Special;1.629525;1.044771;3.200000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "250",
-                "shield_facets": "0",
                 "accel": "2000"
             },
             "units": [
@@ -3568,7 +3543,6 @@
                 "Light": "{supernova.bmp.bfxm;7.861;-2.5;2.6;11;;;;;}{supernova.bmp.bfxm;-7.861;-2.5;2.6;11;;;;;}{supernova.bmp.bfxm;7.661;-3.9;4.206;8;;;;;}{supernova.bmp.bfxm;-7.661;-3.9;4.206;8;;;;;}",
                 "Mounts": "{;;;light autotracking;-34.575;0.55;29.427;;;;;;;;;1;1}{;;;light autotracking;-34.575;-4.244;29.427;;;;;;;;;1;1}{;;;light autotracking;-23.535;0.55;33.618;;;;;;;;;1;1}{;;;light autotracking;-23.535;-4.244;33.618;;;;;;;;;1;1}{;;;light autotracking;23.535;0.55;33.618;;;;;;;;;1;1}{;;;light autotracking;23.535;-4.244;33.618;;;;;;;;;1;1}{;;;light autotracking;34.575;0.55;29.427;;;;;;;;;1;1}{;;;light autotracking;34.575;-4.244;29.427;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "680",
-                "shield_facets": "0",
                 "accel": "5000"
             },
             "units": [
@@ -3652,7 +3626,6 @@
                 "Mounts": "{;;;Light Medium Heavy;-7.5;-1;0;;;;;;;;;1;1}{;;;Light Medium Heavy;7.5;-1;0;;;;;;;;;1;1}{;;;Light Medium Heavy;-.75;-6;3.25;;;;;;;;;1;1}{;;;Light Medium Heavy;.75;-6;3.25;;;;;;;;;1;1}",
                 "Explosion": "explosion_rlaan.ani",
                 "Upgrade_Storage_Volume": "200",
-                "shield_facets": "0",
                 "accel": "12000"
             },
             "units": [
@@ -3763,7 +3736,6 @@
                 "Light": "{supernova.bmp.bfxm;0.00000e+0;8.60000e-2;-3.90200;.5;;;;;}{supernova.bmp.bfxm;-0.386000;8.60000e-2;-3.90200;.5;;;;;}{supernova.bmp.bfxm;0.386000;8.60000e-2;-3.90200;.5;;;;;}",
                 "Mounts": "{;;;special heavy;-2.24600;-0.412000;-0.328000;;;;;;;;;1;1}{;;;special heavy;2.24600;-0.422000;-0.328000;;;;;;;;;1;1}{;;;light medium;-0.382000;-5.80000e-2;3.26400;;;;;;;;;1;1}{;;;light medium;0.380000;-5.80000e-2;3.26400;;;;;;;;;1;1}{;2;6;light-missile medium-missile;-0.898000;-0.108000;-1.29000;;;;;;;;;1;1}{;2;6;light-missile medium-missile;0.904000;-0.108000;-1.29000;;;;;;;;;1;1}{;2;6;light-missile medium-missile;-0.152000;-1.80000e-2;2.67800;;;;;;;;;1;1}{;2;6;light-missile medium-missile;0.158000;-1.80000e-2;2.67800;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "100",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -3881,7 +3853,6 @@
                 "Light": "{supernova.bmp.bfxm;1.55;-2.2;-3;4;;;;;}{supernova.bmp.bfxm;-1.55;-2.2;-3;4;;;;;}",
                 "Mounts": "{;;;Light;4.3;0.5;7;;;;;;;;;1;1}{;;;Light;-4.3;0.5;7;;;;;;;;;1;1}{;;;Light;3.8;0.5;7;;;;;;;;;1;1}{;;;Light;-3.8;0.5;7.;;;;;;;;;1;1}{;3;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}{;;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "75",
-                "shield_facets": "0",
                 "accel": "1000"
             },
             "units": [
@@ -3960,7 +3931,6 @@
                 "Light": "{supernova.bmp.bfxm;0;-.328;-9.75;8;;;;;}{supernova.bmp.bfxm;0.25;-1.1;-9.75;5;;;;;}{supernova.bmp.bfxm;-0.25;-1.1;-9.75;5;;;;;}",
                 "Mounts": "{;;;Light;1.4;0;.5;.2;.2;;;;;;;1;1}{;;;Light;-1.4;0;.5;.2;.2;;;;;;;1;1}{;;;Light Medium;0;-2.5;10.25;.2;.2;;;;;;;1;1}{;;;Light;0;-2.8;10.25;.2;.2;;;;;;;1;1}{;4;1;special special-missile medium-missile;1.95;.45;-.75;;;;;;;;;1;1}{;4;1;Special special-missile medium-missile;-1.95;.45;-.75;;;;;;;;;1;1}{;4;1;light-missile medium-missile;1.95;.81;-.75;;;;;;;;;1;1}{;4;1;light-missile medium-missile;-1.95;.81;-.75;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "225",
-                "shield_facets": "0",
                 "accel": "5000"
             },
             "units": [
@@ -4195,7 +4165,6 @@
                 "Mounts": "{;;;light medium autotracking;5.600000;-1.600000;3.200000;;;;;;;;;1;1}{;;;light medium autotracking;-5.600000;-1.600000;3.200000;;;;;;;;;1;1}{;;;light medium autotracking;.5;-1.65;8;;;;;;;;;1;1}{;;;light medium autotracking;-.5;-1.65;8;;;;;;;;;1;1}{;200;100;special-missile autotracking;3.600000;-1.600000;1.200000;;;;;;;;;1;1}{;200;100;special-missile autotracking;-3.600000;-1.600000;1.200000;;;;;;;;;1;1}",
                 "Explosion": "explosion_aera.ani",
                 "Upgrade_Storage_Volume": "225",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -4339,7 +4308,6 @@
                 "Light": "{supernova.bmp.bfxm;2.8;2.8;-5;7;;;;;}{supernova.bmp.bfxm;-2.8;2.8;-5;7;;;;;}{supernova.bmp.bfxm;4;2.335;-5;7;;;;;}{supernova.bmp.bfxm;-4;2.335;-5;7;;;;;}",
                 "Mounts": "{;;;light medium;0.95;-2.635;12.000000;;;;;;;;;1;1}{;;;light medium;-0.95;-2.635;12.000000;;;;;;;;;1;1}{;125;32;Special Special-Missile;2.641;-.705;10;;;;;;;;;1;1}{;125;32;Special Special-Missile;-2.641;-.705;10;;;;;;;;;1;1}{;125;32;Special Special-Missile;1.355;-.705;10;;;;;;;;;1;1}{;125;32;Special Special-Missile;-1.355;-.705;10;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "230",
-                "shield_facets": "0",
                 "accel": "5000"
             },
             "units": [
@@ -4508,7 +4476,6 @@
                 "Light": "{supernova.bmp.bfxm;0;-.5;-5.5;10;;;;;}",
                 "Mounts": "{;;;Light Autotracking;0;3;.5;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "325",
-                "shield_facets": "0",
                 "accel": "5000"
             },
             "units": [
@@ -4628,7 +4595,6 @@
                 "Mounts": "{;;;Light Medium;-4.125;-4.4;0;;;;;;;;;1;1}{;;;Light Medium;4.125;-4.4;0;;;;;;;;;1;1}",
                 "Explosion": "explosion_rlaan.ani",
                 "Upgrade_Storage_Volume": "450",
-                "shield_facets": "0",
                 "accel": "12000"
             },
             "units": [
@@ -4762,7 +4728,6 @@
                 "Dock": "{;30;0;-37;30;0}{;-30;0;-37;30;0}",
                 "Upgrade_Storage_Volume": "600",
                 "Spec_Interdiction": "-8",
-                "shield_facets": "0",
                 "accel": "10000"
             },
             "units": [
@@ -4918,7 +4883,6 @@
                 "Mounts": "{;;;Light Medium;-12.6;-16.5;4;;;;;;;;;1;1}{;;;Light Medium;12.6;-16.5;4;;;;;;;;;1;1}{;;;Light;-12.5;-1.5;-1;;;;;;;;;1;1}{;;;Light;12.5;-1.5;-1;;;;;;;;;1;1}{;1;16;Special light-missile;0;-.23;4;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "325",
                 "Spec_Interdiction": "-2",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -4992,7 +4956,6 @@
                 "Mounts": "{;;;special;11.5;-2.5;24;;;;;;;;;1;1}{;;;special;-11.5;-2.5;24;;;;;;;;;1;1}{;;;Light Medium;11.5;-4.5;23;;;;;;;;;1;1}{;;;Light Medium;-11.5;-4.5;23;;;;;;;;;1;1}{;8;24;light-missile medium-missile;-5.3;7;12;;;;;;;;;1;1}{;8;24;light-missile medium-missile;5.3;7;12;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "600",
                 "Spec_Interdiction": "-5",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -5182,7 +5145,6 @@
                 "Dock": "{;0;-0.85;1.5;0.5;0}",
                 "Upgrade_Storage_Volume": "360",
                 "armor": "2.0",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -5233,7 +5195,6 @@
                 "Mounts": "{;;;;64;51;11.8091;;;;;;;;;1;1}{;;;;-64;51;11.8091;;;;;;;;;1;1}{;;;Special autotracking;212;-50;65;;;;;;;;;1;1}{;;;Special autotracking;-212;-50;65;;;;;;;;;1;1}{;;;Special;0;-35;95;;;;;;;;;1;1}{;;;Special;-0;-35;95;;;;;;;;;1;1}{;;;Special;0;-35;95;;;;;;;;;1;1}{;;;Special;-0;-35;95;;;;;;;;;1;1}{;;;Special;0;-35;95;;;;;;;;;1;1}{;;;Special;0;-35;95;;;;;;;;;1;1}",
                 "Dock": "{;0;-4.7;6;25;0}",
                 "Upgrade_Storage_Volume": "1800",
-                "shield_facets": "0",
                 "accel": "10000"
             },
             "units": [
@@ -5346,7 +5307,6 @@
                 "Hold_Volume": "25",
                 "Prohibited_Upgrades": "upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Upgrade_Storage_Volume": "225",
-                "shield_facets": "0",
                 "accel": "5000"
             },
             "units": [
@@ -5420,7 +5380,6 @@
                 "Light": "{supernova.bmp.bfxm;0.00000e+0;2.40000e-2;-1.03600;.5;;;;;}{supernova.bmp.bfxm;-0.298000;2.40000e-2;-1.03600;.5;;;;;}{supernova.bmp.bfxm;0.290000;2.40000e-2;-1.03600;.5;;;;;}",
                 "Mounts": "{;;;Light Medium;-1.45600;-2.00000e-2;-0.396000;;;;;;;;;1;1}{;;;Light Medium;1.45800;-2.00000e-2;-0.396000;;;;;;;;;1;1}{;1;90;Special-missile Heavy-missile;5.00000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;1;90;Special-missile Heavy-missile;-4.20000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;;special;5.00000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;;special;-4.20000e-2;-0.102000;2.91600;;;;;;;;;1;1}{;;;Light Medium ;0.160000;-0.102000;2.42200;;;;;;;;;1;1}{;;;Light Medium;-0.132000;-0.102000;2.42200;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "300",
-                "shield_facets": "0",
                 "accel": "10000"
             },
             "units": [
@@ -5562,7 +5521,6 @@
                 "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Light": "{supernova.bmp.bfxm;160;0;-400;800;;;;;}{supernova.bmp.bfxm;-160;0;-400;800;;;;;}",
                 "Upgrade_Storage_Volume": "300",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -5641,7 +5599,6 @@
                 "Prohibited_Upgrades": "upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Light": "{supernova.bmp.bfxm;5.25;-0.55;-12.75;6;;;;;}{supernova.bmp.bfxm;-5.25;-0.55;-12.75;6;;;;;}",
                 "Upgrade_Storage_Volume": "225",
-                "shield_facets": "0",
                 "accel": "5000"
             },
             "units": [
@@ -5704,7 +5661,6 @@
                 "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Light": "{supernova.bmp.bfxm;0;1;-5.15;2;;;;;}{supernova.bmp.bfxm;1;1.2;-5.175;3;;;;;}{supernova.bmp.bfxm;-1;1.2;-5.175;3;;;;;}{supernova.bmp.bfxm;3;-1.8;-4.15;1;;;;;}{supernova.bmp.bfxm;-3;-1.8;-4.15;1;;;;;}{supernova.bmp.bfxm;2.7;-1.95;-4.15;1;;;;;}{supernova.bmp.bfxm;-2.7;-1.95;-4.15;1;;;;;}",
                 "Upgrade_Storage_Volume": "250",
-                "shield_facets": "0",
                 "accel": "10000"
             },
             "units": [
@@ -5780,7 +5736,6 @@
                 "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Light": "{supernova.bmp.bfxm;1.9;1.5;-4.9;4;;;;;}{supernova.bmp.bfxm;-1.8;1.5;-4.9;4;;;;;}{supernova.bmp.bfxm;1.9;-0.5;-4;4;;;;;}{supernova.bmp.bfxm;-1.9;-0.5;-4;4;;;;;}",
                 "Upgrade_Storage_Volume": "250",
-                "shield_facets": "0",
                 "accel": "10000"
             },
             "units": [
@@ -5841,7 +5796,6 @@
                 "Light": "{supernova.bmp.bfxm;0.00000e+0;0.350000;-2.09200;2;;;;;}{supernova.bmp.bfxm;1.31600;-6.00000e-3;-1.82200;2;;;;;}{supernova.bmp.bfxm;-1.32800;-6.00000e-3;-1.82200;2;;;;;}{supernova.bmp.bfxm;1.316;0.450;-1.37;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;1.963;0.010;-1.37;0.5;1;1;1;1;0.0005;-1;0;0}{supernova.bmp.bfxm;1.316;-0.431;-1.37;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;-1.316;0.450;-1.37;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;-1.963;0.010;-1.37;0.5;1;1;1;1;0.0005;1;0;0}{supernova.bmp.bfxm;-1.316;-0.431;-1.37;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;1.059;0.346;2.327;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;1.454;0.094;2.327;0.5;1;1;1;1;0.0005;-1;0;0}{supernova.bmp.bfxm;1.059;-0.157;2.327;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;-1.059;0.346;2.327;0.5;1;1;1;1;0.0005;0;-1;0}{supernova.bmp.bfxm;-1.454;0.094;2.327;0.5;1;1;1;1;0.0005;1;0;0}{supernova.bmp.bfxm;-1.059;-0.157;2.327;0.5;1;1;1;1;0.0005;0;1;0}{supernova.bmp.bfxm;1.652;0.208;1.565;0.8;1;1;1;1;0.0005;0;0;-1}{supernova.bmp.bfxm;-1.652;0.208;1.565;0.8;1;1;1;1;0.0005;0;0;-1}",
                 "Mounts": "{;;;Light;1.01200;-6.80000e-2;3.40800;;;;;;;;;1;1}{;;;Light;-0.964000;-6.80000e-2;3.40800;;;;;;;;;1;1}{;;;Light;0.380000;0.176000;1.07600;;;;;;;;;1;1}{;;;Light;-0.336000;0.176000;1.07600;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}{;0;48;light-missile medium-missile special-missile;0;0;0;;;;;;;;;1;1}",
                 "Upgrade_Storage_Volume": "360",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -5868,12 +5822,12 @@
                         "Use_Rapid": "1",
                         "Mass": "250",
                         "Shield_Recharge": "8",
-                        "Warp_Capacitor": "325",
+                        "Warp_Capacitor": "325/400",
                         "Primary_Capacitor": "200",
-                        "Reactor_Recharge": "30",
+                        "Reactor_Recharge": "30/44",
                         "Outsystem_Jump_Cost": "200",
-                        "Afterburner_Speed_Governor": "120",
-                        "Default_Speed_Governor": "120",
+                        "Afterburner_Speed_Governor": "120/125",
+                        "Default_Speed_Governor": "120/125",
                         "Radar_Range": "300000000",
                         "Tracking_Cone": "4",
                         "Max_Cone": "180",
@@ -5964,7 +5918,6 @@
                 "Light": "{supernova.bmp.bfxm;0;0.8;-5.5;5;;;;;}",
                 "Dock": "{;0;-4.7;6;25;0}",
                 "Upgrade_Storage_Volume": "200",
-                "shield_facets": "0",
                 "accel": "22000"
             },
             "units": [
@@ -6072,7 +6025,6 @@
                 "Dock": "{;0;-0.85;1.5;0.5;0}",
                 "Upgrade_Storage_Volume": "360",
                 "armor": "2.0",
-                "shield_facets": "0",
                 "accel": "4000"
             },
             "units": [
@@ -6406,7 +6358,6 @@
                 "Dock": "{0;95;0;25;50;0}{0;-95;0;25;50;0}",
                 "Cargo_Import": "{Industrially_Manufactured_Goods/Agricultural;1.2;.1;;7}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Natural_Products/Food;.7;.2;;30}{Specialty_Goods/Medical;1.2;.1;;3}",
                 "Upgrade_Storage_Volume": "600",
-                "shield_facets": "0",
                 "accel": "50000"
             },
             "units": [
@@ -6523,7 +6474,6 @@
                 "Mounts": "{;;;special autotracking;-4.5;3;32.5;;;;;;;;;1;1}{;;;special autotracking;4.5;3;32.5;;;;;;;;;1;1}{;;;light medium Heavy autotracking;-0;2;30;;;;;;;;;1;1}{;15;45;Medium-missile light-missile;6.5;3;12.5;;;;;;;;;1;1}{;15;45;Medium-missile light-missile;-6.5;3;12.5;;;;;;;;;1;1}{;8;72;special-missile Medium-missile;0;3;2.5;;;;;;;;;1;1}",
                 "Dock": "{;30;0;-37;30;0}{;-30;0;-37;30;0}",
                 "Upgrade_Storage_Volume": "600",
-                "shield_facets": "0",
                 "accel": "50000"
             },
             "units": [
@@ -6666,7 +6616,6 @@
                 "Light": "{supernova.bmp.bfxm;60;90;-370;22;;;;;}{supernova.bmp.bfxm;-60;90;-370;22;;;;;}{supernova.bmp.bfxm;130;-60;-370;22;;;;;}{supernova.bmp.bfxm;0;-60;-370;22;;;;;}{supernova.bmp.bfxm;-130;-60;-370;22;;;;;}",
                 "Dock": "{;0;-24;477;100;0}{;0;58;504;10;0}",
                 "Upgrade_Storage_Volume": "600",
-                "shield_facets": "0",
                 "accel": "5000000"
             },
             "units": [
@@ -6752,8 +6701,7 @@
                 "Prohibited_Upgrades": "mult_shady_moreupgrade:1;mult_shady_morethrust:1;mult_shady_moreshields:1;mult_shady_moregunrecharge:1;mult_shady_moreshieldrecharge:1;mult_shady_moreturning:1;upgrades/Overdrive:1;upgrades/Capacitors:1;upgrades/Reactors:1;upgrades/Armor:1;upgrades/Sensors:1;upgrades/Shield_Systems:1;upgrades/Passenger_Quarters:1;upgrades/Repair_Systems:1;upgrades/ECM_Systems:1",
                 "Light": "{supernova.bmp.bfxm;0;0;-6.36800;4;;;;;}",
                 "Mounts": "{;8;24;light-missile medium-missile heavy-missile;0;-.13;2;;;;;;;;;1;1}",
-                "Upgrade_Storage_Volume": "125",
-                "shield_facets": "0"
+                "Upgrade_Storage_Volume": "125"
             },
             "units": [
                 {
@@ -6959,7 +6907,6 @@
                 "Dock": "{;0;-125;330;60;0}",
                 "Cargo_Import": "{Industrially_Manufactured_Goods/Agricultural;1.2;.1;;7}{Industrially_Manufactured_Goods/Construction;1.2;.1;;5}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;4}{Natural_Products/Food;.7;.2;;30}{Specialty_Goods/Medical;1.2;.1;;3}",
                 "Upgrade_Storage_Volume": "600",
-                "shield_facets": "0",
                 "accel": "5000000"
             },
             "units": [

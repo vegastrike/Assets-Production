@@ -63,9 +63,7 @@ def delete_ship_by_key(key, units):
         if unit[KEY] == key:
             units.remove(unit)
             return
-
-
-
+        
 
 # Convert old armor/shield to new format
 def force_minimize_shield_and_armor(unit, new_keys, old_keys, min_key):
@@ -121,7 +119,7 @@ def force_minimize_shield_and_armor(unit, new_keys, old_keys, min_key):
             del(unit[old_key])
 
     # Add shield facets
-    if new_keys[0].startswith('shield'):
+    if 'shield' in unit or 'shield_front' in unit:
         unit['shield_facets'] = str(facets)
                    
 
