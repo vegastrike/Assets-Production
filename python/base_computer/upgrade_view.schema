@@ -65,9 +65,9 @@ Activated energy usage: #-c<Cloak_Energy> MJ/s
 // Sensor
 // TODO: Check against code
 #c.75:.9:1#Tracking range: #-c<Radar_Range> km
-#c.75:.9:1#Tracking cone: #-c<Tracking_Cone>
-#c.75:.9:1#Assisted targeting cone: #-c<Max_Cone> radians
-#c.75:.9:1#Missile locking cone: #-c<Lock_Cone> radians
+#c.75:.9:1#Tracking cone: #-c<Tracking_Cone> degrees
+#c.75:.9:1#Assisted targeting cone: #-c<Max_Cone> degrees
+#c.75:.9:1#Missile locking cone: #-c<Lock_Cone> degrees
 #c.75:.9:1#ITTS (Intelligent Target Tracking System) support: #-c<ITTS>
 #c.75:.9:1#AFHH (Advanced Flag & Hostility Heuristics) support: #-c<Radar_Color>
 
