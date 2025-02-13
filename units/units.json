@@ -1,5 +1,27 @@
 [
     {
+        "Key": "hull__upgrades",
+        "Name": "Hull",
+        "Upgrade_Type": "Hull"
+    },
+    {
+        "Key": "afterburner__upgrades",
+        "Name": "Afterburner",
+        "Upgrade_Type": "Afterburner"
+    },
+    {
+        "Key": "drive__upgrades",
+        "Name": "Drive",
+        "Upgrade_Type": "Drive"
+    },
+    {
+        "Key": "ftl_drive__upgrades",
+        "Name": "FTL Drive",
+        "Upgrade_Type": "FTL_Drive"
+    },
+
+
+    {
         "Key": "armor01__upgrades",
         "Name": "Plasteel Armor",
         "Object_Type": "Upgrade_Additive",

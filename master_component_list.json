@@ -1,5 +1,39 @@
 [
     {
+        "file": "hull",
+        "categoryname": "upgrades/integral",
+        "price": "12000",
+        "mass": "0",
+        "volume": "0",
+        "description": "@cargo/hull_patches.image@The ship's hull."
+    },
+    {
+        "file": "afterburner",
+        "categoryname": "upgrades/integral",
+        "price": "2000",
+        "mass": "0",
+        "volume": "0",
+        "description": "@upgrades/afterburner_generic.image@Engine overdrive. Increases thrust at the expense of decreased fuel efficiency."
+    },
+    {
+        "file": "drive",
+        "categoryname": "upgrades/integral",
+        "price": "6000",
+        "mass": "0",
+        "volume": "0",
+        "description": "@upgrades/afterburner_generic.image@The ship's engine."
+    },
+    {
+        "file": "ftl_drive",
+        "categoryname": "upgrades/integral",
+        "price": "4500",
+        "mass": "0",
+        "volume": "0",
+        "description": "@upgrades/jump_drive.image@The ship's faster than light engine."
+    },
+    
+    
+    {
         "file": "Areus_Milspec_Package",
         "categoryname": "upgrades/Packages/Milspec",
         "price": "4000000",
