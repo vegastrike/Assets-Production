@@ -210,7 +210,15 @@ def get_radar(ship_stats):
     lock_cone = get_dbl(ship_stats,'Lock_Cone', 180 / math.pi)
     itts = ship_stats['ITTS']
     iff = ship_stats['Radar_Color']
-    
+
+    # ecm
+    ecm_parts = ship_stats['ecm'].split('/')
+    ecm_current = int(ecm_parts[0])
+    ecm_max = int(ecm_parts[1])
+    # TODO: drain here is hard coded. Get from config
+    ecm_drain = ecm_max * 0.05 * megajoules_multiplier 
+
+
     text = f"{green}[TARGETTING SUBSYSTEM]{newline}#-c{newline}"
     text += f"{light_grey}Tracking range: #-c{radar_range} km{newline}"
     
@@ -223,6 +231,15 @@ def get_radar(ship_stats):
     text += f"{light_grey}Missile locking cone: #-c{fmt_dbl(lock_cone * 2)} radians{newline}"
     text += f"{light_grey}ITTS (Intelligent Target Tracking System) support: #-c{get_itts(itts)}{newline}"
     text += f"{light_grey}AFHH (Advanced Flag & Hostility Heuristics) support: #-c{get_iff(iff)} {newline}{newline}"
+
+    if ecm_current > 0:
+        text = f"{green}[ELECTRONIC COUNTER-MEASURES]{newline}#-c{newline}"
+        if ecm_current == ecm_max:
+            text += f"{light_grey}ECM pod with a rating of #-c{ecm_current} installed.{newline}"
+        else:
+            text += f"{light_grey}ECM pod with a rating of #-c{ecm_current} (orig. {ecm_max}) installed.{newline}"
+        text += f"{light_grey}ECM energy drain: #-c{ecm_drain} MJ.{newline}{newline}"
+
     return text
 
 def get_energy_spec_and_jump(ship_stats):

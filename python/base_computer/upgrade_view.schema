@@ -53,9 +53,8 @@
 Activated energy usage: #-c<Cloak_Energy> MJ/s
 
 // ECM
-#c.75:.9:#Provides an ECM rating of #-c<ECM_Rating> #-c
-#c.75:.9:#Provides an ECM resistence of #-c<ECM_Resist> #-c
-#c.75:.9:#Energy usage: #-c<Ecm_Drain> MJ/s
+#c.75:.9:#Provides an ECM rating of #-c<ecm> #-c
+#c.75:.9:#Energy usage: #-c<ecm_rating> MJ/s
 
 // FTL Capacitor
 #c.75:.9:1#Adds a SPEC capacitor with a capacity of #-c<Warp_Capacitor> MJ
