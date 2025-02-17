@@ -837,6 +837,78 @@
         "Afterburner_Speed_Governor": "2.1"
     },
     {
+        "Key": "ecm_package01__upgrades",
+        "Name": "ECM Package I",
+        "Object_Type": "Upgrade_Replacement",
+        "Upgrade_Type": "ECM",
+        "Mass": "1",
+        "ecm": "1",
+        "Textual_Description": "\"@upgrades/ecm1.png@Electronic CounterMeasures\\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\"\n"
+    },
+    {
+        "Key": "ecm_package02__upgrades",
+        "Name": "ECM Package II",
+        "Object_Type": "Upgrade_Replacement",
+        "Upgrade_Type": "ECM",
+        "Mass": "1",
+        "ecm": "2",
+        "Textual_Description": "\"@upgrades/ecm2.png@Electronic CounterMeasures\\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\"\n"
+    },
+    {
+        "Key": "ecm_package03__upgrades",
+        "Name": "ECM Package III",
+        "Object_Type": "Upgrade_Replacement",
+        "Upgrade_Type": "ECM",
+        "Mass": "1",
+        "ecm": "3",
+        "Textual_Description": "\"@upgrades/ecm3.png@Electronic CounterMeasures\\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\"\n"
+    },
+    {
+        "Key": "repair_droid01__upgrades",
+        "Name": "Repair Droid I",
+        "Object_Type": "Upgrade_Replacement",
+        "Upgrade_Type": "Repair_Bot",
+        "Textual_Description": "\"@cargo/cargo_hud.png@Repairs ship upgrades in-flight\"\n",
+        "Mass": "1",
+        "repair": "1"
+    },
+    {
+        "Key": "repair_droid02__upgrades",
+        "Name": "Repair Droid II",
+        "Object_Type": "Upgrade_Replacement",
+        "Upgrade_Type": "Repair_Bot",
+        "Textual_Description": "\"@cargo/cargo_hud.png@Repairs ship upgrades in-flight\"\n",
+        "Mass": "1",
+        "repair": "2"
+    },
+    {
+        "Key": "repair_droid03__upgrades",
+        "Name": "Repair Droid III",
+        "Object_Type": "Upgrade_Replacement",
+        "Upgrade_Type": "Repair_Bot",
+        "Textual_Description": "\"@cargo/cargo_hud.png@Repairs ship upgrades in-flight\"\n",
+        "Mass": "1",
+        "repair": "3"
+    },
+    {
+        "Key": "repair_droid04__upgrades",
+        "Name": "Repair Droid IV",
+        "Object_Type": "Upgrade_Replacement",
+        "Upgrade_Type": "Repair_Bot",
+        "Textual_Description": "\"@cargo/cargo_hud.png@Repairs ship upgrades in-flight\"\n",
+        "Mass": "1",
+        "repair": "4"
+    },
+    {
+        "Key": "repair_droid05__upgrades",
+        "Name": "Repair Droid V",
+        "Object_Type": "Upgrade_Replacement",
+        "Upgrade_Type": "Repair_Bot",
+        "Textual_Description": "\"@cargo/cargo_hud.png@Repairs ship upgrades in-flight\"\n",
+        "Mass": "1",
+        "repair": "5"
+    },
+    {
         "Key": "skyscope1__upgrades",
         "Name": "SkyScope Alpha",
         "Upgrade_Type": "Radar",
@@ -3782,7 +3854,7 @@
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
-        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1;.1;1000;.100000000000023}{Consumer_and_Commercial_Goods/Electronics;1;.1;1000;.1}{Consumer_and_Commercial_Goods/Luxury;1;.1;10;.1}{Consumer_and_Commercial_Goods/Personal;1;.1;1000;.1}{Contraband/Aera;1;.1;10;.1}{Contraband/Confed;1;.1;10;.1}{Contraband/Rlaan;1;.1;10;.1}{Industrially_Manufactured_Goods/Agricultural;1;.1;10;.1}{Industrially_Manufactured_Goods/Construction;1;.1;10;.1}{Industrially_Manufactured_Goods/Recycled_Products;1;.1;10000;.1}{Industrially_Manufactured_Goods/Xenoforming;1;.1;10;.1}{Natural_Products/Food/Aera;1;.1;10000;.1}{Natural_Products/Food/Confed;1;.1;10000;.1}{Natural_Products/Food/Generic;1;.1;10000;.1}{Natural_Products/Food/Rlaan;1;.1;10000;.1}{Natural_Products/Life-forms;1;.1;1000;.1}{Natural_Products/Liquor/Confed;1;.1;100;.1}{Natural_Products/Liquor/Uln;1;.1;100;.1}{Natural_Products/Liquor;.9;.1;200;400}{Natural_Products/Plant_Products;1;.1;10;.1}{Natural_Products/Renewable_Resources;1;.1;10000;.1}{Raw_Materials/Gases;1;.1;100000;.1}{Raw_Materials/Hydrocarbons;1;.1;20000;.2}{Raw_Materials/Metals;6;.7;-100;300}{Raw_Materials/Ores;5;.4;-1000;2000}{Refined_Materials/Alloys/Aera;10;.3;-100;150}{Refined_Materials/Alloys/Confed;3;.1;100;45}{Refined_Materials/Alloys/Rlaan;2;.1;10;15}{Refined_Materials/Precious_Metals;3;.1;10;12}{Refined_Materials/Purified_and_Enhanced_Materials;1;.1;10;.1}{Refined_Materials/Radioactive_Metals;1;.1;100;.1}{Research;11;.4;-10;13}{Specialty_Goods/Augmentation;1;.1;-3;5}{Specialty_Goods/Entertainment;1;.2;100;34}{Specialty_Goods/Medical;1.25;.2;80;120}{Specialty_Goods/Pharmaceutical;1;.2;4;5}{starships/Andolian/Medium;1;;;5}{starships/Hunter/Light;1;;;5}{starships/Merchant/Light;1;;;5}{starships/Merchant/Medium;1;;;5}{starships/Regional_Guard/Light;1;;;5}{upgrades/Ammunition/Confed;1;.1;100;280}{upgrades/Ammunition/Common;1;.1;200;280}{upgrades/Ammunition/Uncommon;2;.1;60;180}{upgrades/Ammunition/Rlaan;6;.7;-10;28}{upgrades/Ammunition/Aera;13;.7;-10;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;6;3}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;10;5}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
+        "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1;.1;1000;.100000000000023}{Consumer_and_Commercial_Goods/Electronics;1;.1;1000;.1}{Consumer_and_Commercial_Goods/Luxury;1;.1;10;.1}{Consumer_and_Commercial_Goods/Personal;1;.1;1000;.1}{Contraband/Aera;1;.1;10;.1}{Contraband/Confed;1;.1;10;.1}{Contraband/Rlaan;1;.1;10;.1}{Industrially_Manufactured_Goods/Agricultural;1;.1;10;.1}{Industrially_Manufactured_Goods/Construction;1;.1;10;.1}{Industrially_Manufactured_Goods/Recycled_Products;1;.1;10000;.1}{Industrially_Manufactured_Goods/Xenoforming;1;.1;10;.1}{Natural_Products/Food/Aera;1;.1;10000;.1}{Natural_Products/Food/Confed;1;.1;10000;.1}{Natural_Products/Food/Generic;1;.1;10000;.1}{Natural_Products/Food/Rlaan;1;.1;10000;.1}{Natural_Products/Life-forms;1;.1;1000;.1}{Natural_Products/Liquor/Confed;1;.1;100;.1}{Natural_Products/Liquor/Uln;1;.1;100;.1}{Natural_Products/Liquor;.9;.1;200;400}{Natural_Products/Plant_Products;1;.1;10;.1}{Natural_Products/Renewable_Resources;1;.1;10000;.1}{Raw_Materials/Gases;1;.1;100000;.1}{Raw_Materials/Hydrocarbons;1;.1;20000;.2}{Raw_Materials/Metals;6;.7;-100;300}{Raw_Materials/Ores;5;.4;-1000;2000}{Refined_Materials/Alloys/Aera;10;.3;-100;150}{Refined_Materials/Alloys/Confed;3;.1;100;45}{Refined_Materials/Alloys/Rlaan;2;.1;10;15}{Refined_Materials/Precious_Metals;3;.1;10;12}{Refined_Materials/Purified_and_Enhanced_Materials;1;.1;10;.1}{Refined_Materials/Radioactive_Metals;1;.1;100;.1}{Research;11;.4;-10;13}{Specialty_Goods/Augmentation;1;.1;-3;5}{Specialty_Goods/Entertainment;1;.2;100;34}{Specialty_Goods/Medical;1.25;.2;80;120}{Specialty_Goods/Pharmaceutical;1;.2;4;5}{starships/Andolian/Medium;1;;;5}{starships/Hunter/Light;1;;;5}{starships/Merchant/Light;1;;;5}{starships/Merchant/Medium;1;;;5}{starships/Regional_Guard/Light;1;;;5}{upgrades/Ammunition/Confed;1;.1;100;280}{upgrades/Ammunition/Common;1;.1;200;280}{upgrades/Ammunition/Uncommon;2;.1;60;180}{upgrades/Ammunition/Rlaan;6;.7;-10;28}{upgrades/Ammunition/Aera;13;.7;-10;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;6;3}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;10;5}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}{upgrades/Repair_Systems;1;.1;;3}",
         "Upgrade_Storage_Volume": "100000000"
     },
     {
@@ -11693,37 +11765,6 @@
         "Textual_Description": "\"@cargo/cargo_hud.png@While all mounted weapons have inherent auto-tracking capabilities, these defaults are limited in civilian mounts. A full-powered military auto-tracker like this greatly enhances weapon accuracy.\"\n"
     },
     {
-        "Key": "ecm_package01__upgrades",
-        "Name": "ECM Package I",
-        "Object_Type": "Upgrade_Replacement",
-        "Mass": "1",
-        "ECM_Rating": "1",
-        "ECM_Resist": "0.1",
-        "Ecm_Drain": "5",
-        "Textual_Description": "\"@upgrades/ecm1.png@Electronic CounterMeasures\\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\"\n"
-    },
-    {
-        "Key": "ecm_package02__upgrades",
-        "Name": "ECM Package II",
-        "Object_Type": "Upgrade_Replacement",
-        "Mass": "1",
-        "ECM_Rating": "2",
-        "ECM_Resist": "0.2",
-        "Ecm_Drain": "8",
-        "Textual_Description": "\"@upgrades/ecm2.png@Electronic CounterMeasures\\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\"\n"
-    },
-    {
-        "Key": "ecm_package03__upgrades",
-        "Name": "ECM Package III",
-        "Object_Type": "Upgrade_Replacement",
-        "Mass": "1",
-        "ECM_Rating": "3",
-        "ECM_Resist": "0.3",
-        "Ecm_Drain": "12",
-        "Textual_Description": "\"@upgrades/ecm3.png@Electronic CounterMeasures\\ ECM refers to a broad spectrum of techniques designed to defeat or spoof enemy sensors and communications.\"\n"
-    },
-    
-    {
         "Key": "passenger_quarters_01__upgrades",
         "Name": "Cryochamber",
         "Object_Type": "Upgrade_Replacement",
@@ -11751,47 +11792,6 @@
         "Textual_Description": "\"@upgrades/passenger_comfort_class.png@Life-support, seat and even bunk-beds provide a level of comfort the captain would like to have. Provides life-support and space for up to 2 passengers.\"\n",
         "Mass": "1.2"
     },
-    {
-        "Key": "repair_droid01__upgrades",
-        "Name": "Repair Droid I",
-        "Object_Type": "Upgrade_Replacement",
-        "Textual_Description": "\"@cargo/cargo_hud.png@Repairs ship upgrades in-flight\"\n",
-        "Mass": "1",
-        "Repair_Droid": "1"
-    },
-    {
-        "Key": "repair_droid02__upgrades",
-        "Name": "Repair Droid II",
-        "Object_Type": "Upgrade_Replacement",
-        "Textual_Description": "\"@cargo/cargo_hud.png@Repairs ship upgrades in-flight\"\n",
-        "Mass": "1",
-        "Repair_Droid": "2"
-    },
-    {
-        "Key": "repair_droid03__upgrades",
-        "Name": "Repair Droid III",
-        "Object_Type": "Upgrade_Replacement",
-        "Textual_Description": "\"@cargo/cargo_hud.png@Repairs ship upgrades in-flight\"\n",
-        "Mass": "1",
-        "Repair_Droid": "3"
-    },
-    {
-        "Key": "repair_droid04__upgrades",
-        "Name": "Repair Droid IV",
-        "Object_Type": "Upgrade_Replacement",
-        "Textual_Description": "\"@cargo/cargo_hud.png@Repairs ship upgrades in-flight\"\n",
-        "Mass": "1",
-        "Repair_Droid": "4"
-    },
-    {
-        "Key": "repair_droid05__upgrades",
-        "Name": "Repair Droid V",
-        "Object_Type": "Upgrade_Replacement",
-        "Textual_Description": "\"@cargo/cargo_hud.png@Repairs ship upgrades in-flight\"\n",
-        "Mass": "1",
-        "Repair_Droid": "5"
-    },
-    
     {
         "Key": "surveyor1__upgrades",
         "Name": "SpaceSurveyor H1",
