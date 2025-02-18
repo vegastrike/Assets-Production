@@ -5826,7 +5826,7 @@
                         "Primary_Capacitor": "197/200",
                         "Reactor_Recharge": "39/44",
                         "Outsystem_Jump_Cost": "200",
-                        "Afterburner_Speed_Governor": "200/325",
+                        "Afterburner_Speed_Governor": "120/125",
                         "Default_Speed_Governor": "120/125",
                         "Radar_Range": "300000000",
                         "Tracking_Cone": "4",
