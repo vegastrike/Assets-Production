@@ -144,7 +144,6 @@ class quest_tutorial (quest.quest):
             #VS.launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
             self.drone = VS.launch("Oswald","Robin.tutorial","klkk_citizen","unit","default",1,1,vec,'')
             # upgrade drone
-            self.drone.upgrade("quadshield15",0,0,1,0)
             self.drone.upgrade("armor06",0,0,1,0)
             # when launching give the player some text and ask him to decide if he wants to participate
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Hello traveler.")

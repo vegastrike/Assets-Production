@@ -30,14 +30,10 @@
 <Upgrade_Type=Armor>#c.75:.9:1#Replaces existing armor, if any.
 <Upgrade_Type=Armor>Armor damage resistance:#-c
 
-#c.675:.925:.825# - Fore-starboard-high: #-c<Armor_Front_Top_Right> MJ
-#c.675:.925:.825# - Aft-starboard-high: #-c<Armor_Back_Top_Right> MJ
-#c.675:.925:.825# - Fore-port-high: #-c<Armor_Front_Top_Left> MJ
-#c.675:.925:.825# - Aft-port-high: #-c<Armor_Back_Top_Left> MJ
-#c.675:.925:.825# - Fore-starboard-low: #-c<Armor_Front_Bottom_Right> MJ
-#c.675:.925:.825# - Aft-starboard-low: #-c<Armor_Back_Bottom_Right> MJ
-#c.675:.925:.825# - Fore-port-low: #-c<Armor_Front_Bottom_Left> MJ
-#c.675:.925:.825# - Aft-port-low: #-c<Armor_Back_Bottom_Left> MJ
+#c.675:.925:.825# - Front: #-c<armor_front> MJ
+#c.675:.925:.825# - Back: #-c<armor_back> MJ
+#c.675:.925:.825# - Left: #-c<armor_left> MJ
+#c.675:.925:.825# - Right: #-c<armor_right> MJ
 
 // Autotracking
 <Upgrade_Type=Autotrack>#c.75:.9:1#Installs auto-tracking capability on the selected mount.
@@ -69,18 +65,18 @@ Activated energy usage: #-c<Cloak_Energy> MJ/s
 // Sensor
 // TODO: Check against code
 #c.75:.9:1#Tracking range: #-c<Radar_Range> km
-#c.75:.9:1#Tracking cone: #-c<Tracking_Cone>
-#c.75:.9:1#Assisted targeting cone: #-c<Max_Cone> radians
-#c.75:.9:1#Missile locking cone: #-c<Lock_Cone> radians
+#c.75:.9:1#Tracking cone: #-c<Tracking_Cone> degrees
+#c.75:.9:1#Assisted targeting cone: #-c<Max_Cone> degrees
+#c.75:.9:1#Missile locking cone: #-c<Lock_Cone> degrees
 #c.75:.9:1#ITTS (Intelligent Target Tracking System) support: #-c<ITTS>
 #c.75:.9:1#AFHH (Advanced Flag & Hostility Heuristics) support: #-c<Radar_Color>
 
 // Shield
 <Upgrade_Type=Shield>#c.75:.9:1#Installs shield with following protection ratings:#-c
-#c.675:.925:.825# - port: #-c<Shield_Front_Bottom_Left> MJ
-#c.675:.925:.825# - starboard: #-c<Shield_Front_Bottom_Right> MJ
-#c.675:.925:.825# - fore: #-c<Shield_Front_Top_Right> MJ
-#c.675:.925:.825# - aft: #-c<Shield_Back_Top_Left> MJ
+#c.675:.925:.825# - Front: #-c<shield_front> MJ
+#c.675:.925:.825# - Back: #-c<shield_back> MJ
+#c.675:.925:.825# - Left: #-c<shield_left> MJ
+#c.675:.925:.825# - Right: #-c<shield_right> MJ
 #c.75:.9:1#Shield recharge rate of: #-c<Shield_Recharge> MJ/s
 
 // Tractor Capability

@@ -1,5 +1,6 @@
 import json
 import sys
+import os
 
 KEY  = 'Key'
 NAME = 'Name'
@@ -8,23 +9,23 @@ BLANK = 'blank'
 delete_array = ['box', 'box.blank', 'box.template']
 delete_keys = ['Moment_Of_Inertia']
 
-minimize_array = [('armor', ['Armor_Front_Top_Right',
-                            'Armor_Front_Top_Left',
-                            'Armor_Front_Bottom_Right',
-                            'Armor_Front_Bottom_Left',
-                            'Armor_Back_Top_Right',
-                            'Armor_Back_Top_Left',
-                            'Armor_Back_Bottom_Right',
-                            'Armor_Back_Bottom_Left']),
-                  ('shield_strength',['Shield_Front_Top_Right',
-                            'Shield_Back_Top_Left',
-                            'Shield_Front_Bottom_Right',
-                            'Shield_Front_Bottom_Left']),
+minimize_array = [('armor', ['armor_front', 'armor_rear','armor_left', 'armor_right']),
+                  ('shield_strength',['shield_front', 'shield_back','shield_left', 'shield_right']),
                   ('accel', ['Left_Accel',
                             'Right_Accel',
                             'Top_Accel',
                             'Bottom_Accel'])
                  ]
+
+force_array = [(['armor_front', 'armor_back','armor_left', 'armor_right'], 
+                ['Armor_Front_Top_Right', 'Armor_Front_Top_Left',
+                'Armor_Front_Bottom_Right', 'Armor_Front_Bottom_Left',
+                'Armor_Back_Top_Right', 'Armor_Back_Top_Left',
+                'Armor_Back_Bottom_Right',
+                'Armor_Back_Bottom_Left'], 'armor'),
+                (['shield_front', 'shield_back','shield_left', 'shield_right'],
+                ['Shield_Front_Top_Right', 'Shield_Back_Top_Left',
+                 'Shield_Front_Bottom_Right', 'Shield_Front_Bottom_Left'], 'shield')]
 
 ship_defaults = {"Object_Type": "Vessel",
         "Hud_Functionality": "1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1;1",
@@ -62,18 +63,65 @@ def delete_ship_by_key(key, units):
         if unit[KEY] == key:
             units.remove(unit)
             return
+        
 
-def add_facets(unit):
+# Convert old armor/shield to new format
+def force_minimize_shield_and_armor(unit, new_keys, old_keys, min_key):
+    sum_value = 0
     facets = 0
+    for old_key in old_keys:
+        if old_key not in unit:
+            continue
+        
+        temp_value = int(round(float(unit[old_key])))
+        facets += 1 if temp_value > 0 else 0
+        sum_value += temp_value
     
-    for key in minimize_array[1][1]:
-        if key in unit and float(unit[key]) > 0:
-            facets += 1
-    
-    if facets > 0:
-        unit['shield_facets'] = str(facets)
 
-    
+    if facets == 2:
+        unit[new_keys[0]] = unit[new_keys[1]] = str(sum_value / 2)
+    elif facets == 4:
+        unit[new_keys[0]] = unit[new_keys[1]] = str(sum_value / 4)
+        unit[new_keys[2]] = unit[new_keys[3]] = str(sum_value / 4)
+    elif facets == 8:
+        unit[new_keys[0]] = unit[new_keys[1]] = str(sum_value / 4)
+        unit[new_keys[2]] = unit[new_keys[3]] = str(sum_value / 4)
+    elif facets == 0:
+        # Nothing to do
+        pass
+    else:
+        print(unit)
+        print('\n')
+        print(f"Illegal number of facets {facets} in force_minimize_shield_and_armor for {unit['Key']}")
+        sys.exit(1)
+
+    if facets == 8:
+        facets = 4
+
+    # Try and minimize to one value
+    if facets == 2:
+        if unit[new_keys[0]] == unit[new_keys[1]]:
+            # Minimize new keys. We have a single value
+            unit[min_key] = unit[new_keys[0]]
+            del(unit[new_keys[0]])
+            del(unit[new_keys[1]])
+
+    elif facets == 4:
+        if unit[new_keys[0]] == unit[new_keys[1]] and unit[new_keys[0]] == unit[new_keys[2]] and unit[new_keys[0]] == unit[new_keys[3]]: 
+            unit[min_key] = unit[new_keys[0]]
+            # Minimize new keys. We have a single value
+            for new_key in new_keys:
+                del(unit[new_key])
+
+    # We got to the end, we can minimize
+    for old_key in old_keys:
+        if old_key in unit:
+            del(unit[old_key])
+
+    # Add shield facets
+    if 'shield' in unit or 'shield_front' in unit:
+        unit['shield_facets'] = str(facets)
+                   
 
 def minimize_some_values(unit, new_key, old_keys):
     old_value = None
@@ -86,6 +134,7 @@ def minimize_some_values(unit, new_key, old_keys):
         
         if temp != old_value and old_value != None:
             # values don't match, exit
+            print(f"{unit['Key']} has inconsistent {old_key}")
             return
         
         old_value = temp
@@ -103,6 +152,9 @@ def minimize_some_values(unit, new_key, old_keys):
 def minimize(units, upgrades, base_template):
     for unit in units:
         key = unit['Key']
+
+        if key == 'generic_cargo':
+            print('cargo')
         
         # Delete keys
         for key_to_delete in delete_keys:
@@ -121,9 +173,13 @@ def minimize(units, upgrades, base_template):
             if k in unit and v == unit[k]:
                 del unit[k]
         
-        # Add shield_facets
-        add_facets(unit)
-        
+        # Force minimize shields and armor
+        for force_minimize in force_array:
+            new_keys = force_minimize[0]
+            old_keys = force_minimize[1]
+            min_key = force_minimize[2]
+            force_minimize_shield_and_armor(unit, new_keys, old_keys, min_key)
+
         for minimize_values in minimize_array:
             new_key = minimize_values[0]
             old_keys = minimize_values[1]
@@ -176,6 +232,8 @@ def is_ship(unit):
     
     return True
 
+# Go over units and extract all units with __upgrades into a separate list
+# Remove some keys in the first line as well
 def generate_upgrades(units):
     exclude_list = ['Key', 'Name', 'Object_Type', 'Textual_Description', 'Moment_Of_Inertia', 'Mounts']
     upgrades = {}
@@ -324,6 +382,12 @@ def generate_cargo(unit, upgrades):
     
     
 if __name__ == '__main__':
+    # If run from Asset-Production, change to units folder
+    if os.path.isdir('units'):
+        path = os.getcwd()
+        os.chdir(path + '/units')
+
+
     units = []
     base_template = {}
     
