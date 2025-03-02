@@ -151,6 +151,9 @@ def process_resource(key, resource_text):
 
     return f"{format_number(damaged)} (orig: {format_number(original)})"
 
+# Process a serialized int Resource
+# Output is in the format of <current>/<max_damaged>/<max_original>
+# We convert to <current> (orig: <max_original>)
 def process_range(text):
     parts = text.split('/')
 
