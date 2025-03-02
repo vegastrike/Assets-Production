@@ -150,7 +150,30 @@ def process_resource(key, resource_text):
     original = float(parts[original_index])
 
     return f"{format_number(damaged)} (orig: {format_number(original)})"
+
+# Process a serialized int Resource
+# Output is in the format of <current>/<max_damaged>/<max_original>
+# We convert to <current> (orig: <max_original>)
+def process_range(text):
+    parts = text.split('/')
+
+    damaged_index = 0
+    original_index = 0
+
+    if len(parts) == 2:
+        damaged_index = 0
+        original_index = 1
+    elif len(parts) == 3:
+        damaged_index = 1
+        original_index = 2
+    else:
+        return text
     
+    damaged = int(parts[damaged_index])/1000
+    original = int(parts[original_index])/1000
+
+    return f"{format_number(damaged)} (orig: {format_number(original)})"
+
 # We process a line to find the tag <key> or <key=value>
 # <key> we convert to unit[key] and replace the tag with it.
 # <key=value> we again convert and check if equal to value.
@@ -273,7 +296,7 @@ def get_upgrade_info(unit_stats):
 
     # Radar range in km not meters
     if 'Radar_Range' in unit:
-        unit['Radar_Range'] = format_number(int(unit['Radar_Range'])/ 1000)
+        unit['Radar_Range'] = process_range(unit['Radar_Range'])
 
     text = ''
     
