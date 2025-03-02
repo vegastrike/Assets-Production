@@ -397,7 +397,6 @@ def DeleteLegacyFGLeftovers():
         count += 1
         pct = count*100/len(allsys)
         if pct != oldpct:
-            ShowProgress.setProgressBar("loading",pct/100.)
             ShowProgress.setProgressMessage("loading","Resetting old universe (%d%%)" % (pct))
             oldpct = pct
         DeleteLegacyFGs(sys)

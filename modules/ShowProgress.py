@@ -53,8 +53,3 @@ def setProgressMessage(screen_id,message):
         if prefix != "":
             prefix += ": "
         VS.showSplashMessage(prefix+message)
-
-def setProgressBar(screen_id,progress):
-    global __showing
-    if screen_id == __showing:
-        VS.showSplashProgress(progress)

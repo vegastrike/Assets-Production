@@ -154,7 +154,6 @@ def AddSysDict (cursys):
     #debug.debug("Initializing system %s with %d flightgroups... " % (cursys,numflightgroups))
     progress_percent = (_generatedsys / getSystemCount())
     if progress_percent - _last_progress_percent > 0.01:
-        ShowProgress.setProgressBar("loading",progress_percent)
         ShowProgress.setProgressMessage("loading","Generating dynamic universe (%.2f%%)" % (100*progress_percent))
         _last_progress_percent = progress_percent
     _generatedsys += 1
