@@ -127,6 +127,14 @@ def get_iff(iff):
     if iff=='2': return 'object recognition'
     return iff
 
+def get_ypr(ship_stats, prefix, divider_maneuver, left = '_Left', right = '_Right'):
+    data = get_dbl(ship_stats,prefix, divider_maneuver)
+    if data > 0:
+        return data
+    data = get_dbl(ship_stats,prefix+left, divider_maneuver)
+    data += get_dbl(ship_stats,prefix+right, divider_maneuver)
+    return data/2
+
 # General
 def get_general(ship_stats):
     text = f"{green}[GENERAL INFORMATION]{newline}"
@@ -181,18 +189,10 @@ def get_governor(ship_stats):
     speed = get_int(ship_stats, 'Default_Speed_Governor')
     afterburner = get_int(ship_stats, 'Afterburner_Speed_Governor')
     
-    yaw = get_dbl(ship_stats, 'Yaw_Governor',divider)
-    #yaw_right = get_dbl(ship_stats, 'Yaw_Governor_Right')
-    #yaw_left = get_dbl(ship_stats, 'Yaw_Governor_Left')
-    
-    pitch = get_dbl(ship_stats, 'Pitch_Governor',divider)
-    #pitch_down = get_dbl(ship_stats, 'Pitch_Governor_Up')
-    #pitch_up = get_dbl(ship_stats, 'Pitch_Governor_Down')
-    
-    roll = get_dbl(ship_stats, 'Roll_Governor',divider)
-    #roll_right = get_dbl(ship_stats, 'Roll_Governor_Right')
-    #roll_left = get_dbl(ship_stats, 'Roll_Governor_Left')
-    
+    yaw = get_ypr(ship_stats, 'Yaw_Governor',divider)
+    pitch = get_ypr(ship_stats, 'Pitch_Governor',divider, '_Up', '_Down')
+    roll = get_ypr(ship_stats, 'Roll_Governor',divider)
+     
     text = f"{green}[GOVERNOR SETTINGS]{newline}#-c{newline}"
     text += f"{light_grey}Max combat speed: #-c{speed} m/s{newline}"
     text += f"{light_grey}Max overdrive combat speed: #-c{afterburner} m/s{newline}"
@@ -272,33 +272,25 @@ def get_energy_spec_and_jump(ship_stats):
   
 def get_durability(ship_stats):
     armor = [
-        ('Fore-starboard-high','Armor_Front_Top_Right'),
-        ('Aft-starboard-high','Armor_Back_Top_Right'),
-        ('Fore-port-high','Armor_Front_Top_Left'),
-        ('Aft-port-high','Armor_Back_Top_Left'),
-        ('Fore-starboard-low','Armor_Front_Bottom_Right'),
-        ('Aft-starboard-low','Armor_Back_Bottom_Right'),
-        ('Fore-port-low','Armor_Front_Bottom_Left'),
-        ('Aft-port-low','Armor_Back_Bottom_Left'),
+        ('Front armor','armor_front'),
+        ('Rear armor','armor_back'),
+        ('Port armor','armor_left'),
+        ('Starboard armor','armor_right')
     ]
     
     shield4 = [
-        ('Port','Shield_Front_Bottom_Left'),('Starboard','Shield_Front_Bottom_Right'),('Fore','Shield_Front_Top_Right'),('Aft','Shield_Back_Top_Left'),
+        ('Front shield','shield_front'),
+        ('Rear shield','shield_back'),
+        ('Port shield','shield_left'),
+        ('Starboard shield','shield_right')
     ]
     
     shield2 = [
-        ('Fore','Shield_Front_Top_Right'),('Aft','Shield_Back_Top_Left'),
+        ('Front shield','shield_front'),
+        ('Rear shield','shield_back')
     ]
     
-    # This is a kludge. Should go away when we refactor units.json and unit_csv.cpp
-    shield_stat = {}
-    num_emitters = 0
-    for pair in shield4:
-        if not pair[1] in ship_stats:
-            continue
-        value = get_dbl(ship_stats,pair[1])
-        if value > 0:
-            num_emitters += 1
+    num_emitters = lnum(ship_stats, 'shield_facets')
     
             
     hull = lnum(ship_stats,'Hull')
