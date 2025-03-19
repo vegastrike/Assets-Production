@@ -3,7 +3,7 @@
 # @file: docker-entrypoint.sh
 # @brief Docker entry point
 #
-# Copyright (C) 2020-2021 Stephen G Tuggy and other vsUTCS contributors
+# Copyright (C) 2020-2025 Stephen G Tuggy and other vsUTCS contributors
 #
 # This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
 #
