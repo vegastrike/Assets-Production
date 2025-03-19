@@ -1,6 +1,6 @@
 # Dockerfile
 #
-# Copyright (C) 2020 Stephen G. Tuggy and other vsUTCS contributors
+# Copyright (C) 2020-2025 Stephen G. Tuggy and other vsUTCS contributors
 #
 # This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
 #
