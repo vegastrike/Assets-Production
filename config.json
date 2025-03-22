@@ -12,7 +12,7 @@
     },
         
     "drive": {
-        "non_combat_mode_multiplier": 100
+        "non_combat_mode_multiplier": 1000
     },
     
     "energy": {
