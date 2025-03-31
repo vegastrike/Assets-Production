@@ -582,6 +582,7 @@
     {
         "Key": "add_spec_capacitor02__upgrades",
         "Name": "FTL Energy Capacitor II",
+        "Upgrade_Type": "FTL_Capacitor",
         "Object_Type": "Upgrade_Additive",
         "Textual_Description": "Capacitor for storing energy for FTL travel",
         "Mass": "1",
