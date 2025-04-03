@@ -58,7 +58,7 @@ void main()
   // Sample textures
   vec4 specmap     = texture2D(specMap, texcoord);
   vec4 diffusemap  = texture2D(diffuseMap, texcoord);
-  vec4 citymap     = textureLod(cityMap, refgndcoord, 2.0);
+  vec4 citymap     = texture2DLod(cityMap, refgndcoord, 2.0);
   vec4 gcitymap    = texture2D(cityMap, texcoord);
   vec4 cloudmap    = texture2D(cloudMap, shadowcoord);
   cloudmap.a       = saturatef(cloudmap.a * fCloudLayerDensity);
