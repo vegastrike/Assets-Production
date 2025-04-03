@@ -190,7 +190,7 @@ vec2 EnvMapGen(vec3 f) {
 
 vec3 envMappingLOD( in vec3 direction, in float LoD )
 {
-    vec4 result = textureLod( envMap, EnvMapGen(direction), LoD );
+    vec4 result = texture2DLod( envMap, EnvMapGen(direction), LoD );
     return result.rgb * result.a * 2.0;
 }
 
@@ -537,8 +537,8 @@ void main()
     vec2 Uminu = texcoords2+vec2(-ts,0.0);
     vec2 Vplus = texcoords2+vec2(0.0,ts);
     vec2 Vminu = texcoords2+vec2(0.0,-ts);
-    vec3 Glo_dU = textureLod( glowMap, Uplus, 2.345 ).rgb - textureLod( glowMap, Uminu, 2.345 ).rgb;
-    vec3 Glo_dV = -textureLod( glowMap, Vplus, 2.345 ).rgb + textureLod( glowMap, Vminu, 2.345 ).rgb;
+    vec3 Glo_dU = texture2DLod( glowMap, Uplus, 2.345 ).rgb - texture2DLod( glowMap, Uminu, 2.345 ).rgb;
+    vec3 Glo_dV = -texture2DLod( glowMap, Vplus, 2.345 ).rgb + texture2DLod( glowMap, Vminu, 2.345 ).rgb;
     Glo_dU *= 17.7;
     Glo_dV *= 17.7;
     vec3 redlite_dir = normalize( vec3( Glo_dU.r, Glo_dV.r, GLO_in4.r ));

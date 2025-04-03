@@ -30,7 +30,7 @@ float shininess2Lod(float shininess) { return max(0.0,7.0-log2(shininess+1.0))+3
 vec3 envMapping(in vec2 coord, in vec4 specmap)
 {
    float envLod = shininess2Lod(gl_FrontMaterial.shininess);
-   return textureLod(envMap, coord, envLod).rgb * specmap.rgb * envColor.rgb * 2.0;
+   return texture2DLod(envMap, coord, envLod).rgb * specmap.rgb * envColor.rgb * 2.0;
 }
 
 void main()
