@@ -67,6 +67,7 @@
         "planet_detail_stack_count": 24,
         "reduced_vdus_width": 0.0,
         "reduced_vdus_height": 0.0,
+        "shield_detail_stack_count": 24,
         "shield_technique": "",
         "shield_texture": "shield.bmp",
         "star_body_radius": 0.33,
