@@ -103,6 +103,7 @@
             "draw_arrow_on_pan_target": false,
             "draw_arrow_to_target": true,
             "draw_blips_on_both_radar": false,
+            "draw_rendered_crosshairs": true,
             "draw_damage_sprite": true,
             "draw_gravitational_objects": true,
             "draw_line_to_itts": false,
