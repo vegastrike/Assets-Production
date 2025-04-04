@@ -178,7 +178,7 @@
 
     "components": {
         "afterburner": {
-            "energy_source": "energy"
+            "energy_source": "fuel"
         },
 
         "cloak": {
@@ -240,7 +240,9 @@
         },
 
         "shield": {
-            "energy_source": "energy"
+            "energy_source": "energy",
+            "maintenance_factor": 1.0,
+            "regeneration_factor": 1.0
         }
 
     },
