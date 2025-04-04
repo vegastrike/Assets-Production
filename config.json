@@ -241,8 +241,8 @@
 
         "shield": {
             "energy_source": "energy",
-            "maintenance_factor": 1.0,
-            "regeneration_factor": 1.0
+            "maintenance_factor": 0.1,
+            "regeneration_factor": 0.1
         }
 
     },
