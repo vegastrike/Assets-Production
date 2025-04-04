@@ -64,6 +64,7 @@
         "missile_explosion_radius_mult": 1.0,
         "missile_sparkle": false,
         "num_times_to_draw_shine": 2,
+        "planet_detail_stack_count": 24,
         "reduced_vdus_width": 0.0,
         "reduced_vdus_height": 0.0,
         "shield_technique": "",
@@ -176,6 +177,11 @@
 
     "components": {
         "afterburner": {
+            "energy_source": "energy"
+        },
+
+        "cloak": {
+            "energy_source": "energy"
         },
 
         "computer": {
@@ -185,6 +191,7 @@
         },
 
         "drive": {
+            "energy_source": "energy",
             "non_combat_mode_multiplier": 1000,
             "minimum_drive": 0.15
         },
@@ -213,6 +220,7 @@
         },
 
         "ftl_drive": {
+            "energy_source": "ftl_energy",
             "factor": 0.1
         },
 
@@ -221,11 +229,17 @@
         },
 
         "jump_drive": {
+            "energy_source": "ftl_energy",
             "factor": 1.0
         },
 
         "reactor": {
+            "energy_source": "fuel",
             "factor": 1.0
+        },
+
+        "shield": {
+            "energy_source": "energy"
         }
 
     },
