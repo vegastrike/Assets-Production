@@ -495,7 +495,7 @@
         "warp_energy_multiplier": 0.12,
         "warp_memory_effect": 0.9,
         "warp_multiplier_max": 300000000.0,
-        "warp_multiplier_min": 9.86968440109,
+        "warp_multiplier_min": 1.5,
         "warp_ramp_down_time": 0.5,
         "warp_ramp_up_time": 5.0,
         "warp_stretch_cutoff": 500000.0,
