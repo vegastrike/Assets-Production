@@ -489,7 +489,7 @@
         "bleed_factor": 2.0,
         "computer_warp_ramp_up_time": 10.0,
         "in_system_jump_cost": 0.1,
-        "max_effective_velocity": 2960881320.33,
+        "max_effective_velocity": 29202000000.0,
         "player_warp_energy_multiplier": 0.12,
         "use_warp_energy_for_cloak": true,
         "warp_energy_multiplier": 0.12,
