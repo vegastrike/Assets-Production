@@ -16,7 +16,7 @@
         "load_last_savegame": false,
         "new_game_save_name": "New_Game",
         "num_old_systems": 6,
-        "percentage_speed_change_to_fault_search": 0.5,
+        "percentage_speed_change_to_fault_search": 300.0,
         "persistent_mission_across_ship_switch": true,
         "pitch": 0.0,
         "quick_savegame_summaries": true,
@@ -38,8 +38,8 @@
     },
 
     "graphics": {
-        "resolution_x": 2560,
-        "resolution_y": 1600,
+        "resolution_x": 1920,
+        "resolution_y": 1080,
         "screen": 0,
         "atmosphere_emissive": 1.0,
         "atmosphere_diffuse": 1.0,
@@ -47,6 +47,9 @@
         "automatic_landing_zone_warning1": "comm_docking.ani",
         "automatic_landing_zone_warning2": "comm_docking.ani",
         "automatic_landing_zone_warning_text": "Now Entering an \\\"Automatic Landing Zone\\\".",
+        "base_faction_color_darkness": 0.75,
+        "beam_fadeout_length": 0.8,
+        "beam_fadeout_hit_length": 0.95,
         "city_light_strength": 10.0,
         "day_city_light_strength": 0.0,
         "default_engine_activation": 0.00048828125,
@@ -55,24 +58,53 @@
         "draw_star_body": true,
         "draw_star_glow": true,
         "explosion_animation": "explosion_orange.ani",
-        "fov": 78.0,
+        "font_point": 16.0,
+        "fov": 37.5,
         "glow_ambient_star_light": false,
         "glow_diffuse_star_light": false,
+        "high_quality_font": true,
         "in_system_jump_ani_second_ahead": 4.0,
         "in_system_jump_ani_second_ahead_end": 0.03,
         "in_system_jump_animation": "warp.ani",
         "missile_explosion_radius_mult": 1.0,
         "missile_sparkle": false,
         "num_times_to_draw_shine": 2,
+        "offset_sprites_by_pos": true,
+        "open_picker_categories": false,
         "planet_detail_level": 24,
         "reduced_vdus_width": 0.0,
         "reduced_vdus_height": 0.0,
         "shield_detail_level": 24,
         "shield_technique": "",
         "shield_texture": "shield.bmp",
+        "show_stardate": true,
         "star_body_radius": 0.33,
         "star_glow_radius": 1.33,
+        "text_delay": 0.05,
+        "text_speed": 0.025,
+        "use_faction_gui_background_color": true,
         "wormhole_unit": "wormhole",
+        "bases": {
+            "alpha_test_cutoff": 0.0,
+            "draw_location_borders": false,
+            "draw_location_text": true,
+            "enable_debug_markers": false,
+            "enable_location_markers": true,
+            "include_base_name_on_dock": true,
+            "location_marker_distance": 0.5,
+            "location_marker_draw_always": false,
+            "location_marker_text_color_r": 1.0,
+            "location_marker_text_color_g": 1.0,
+            "location_marker_text_color_b": 1.0,
+            "location_marker_text_offset_x": 0.0,
+            "location_marker_text_offset_y": 0.0,
+            "fov": 60.0,
+            "max_width": 1440,
+            "max_height": 1080,
+            "print_cargo_volume": true,
+            "text_background_alpha": 0.0625,
+            "blur_bases": true
+        },
         "glow_flicker": {
             "flicker_time": 30.0,
             "flicker_off_time": 2.0,
@@ -269,30 +301,75 @@
     "advanced": {},
 
     "ai": {
+        "afterburn_to_no_enemies": true,
+        "always_fire_autotrackers": false,
         "always_obedient": true,
+        "anger_affects_response": 1.0,
         "assist_friend_in_need": true,
+        "comm_initiate_time": 300.0,
+        "comm_to_player_percent": 0.0,
+        "comm_to_target_percent": 0.25,
+        "contraband_initiate_time": 3000.0,
+        "contraband_madness": 5,
+        "contraband_to_player_percent": 0.0,
+        "contraband_to_target_percent": 0.01,
+        "contraband_update_time": 1.0,
+        "debug_level": 0,
+        "default_rank": 0.01,
         "ease_to_anger": -0.5,
         "ease_to_appease": 0.5,
+        "faction_contraband_relation_adjust": -0.025,
+        "fg_nav_select_time": 120.0,
         "friend_factor": 0.1,
+        "hostile_lurk": true,
+        "how_far_to_stop_navigating": 100.0,
         "hull_damage_anger": 10,
         "hull_percent_for_comm": 0.75,
+        "jump_cheat": true,
+        "jump_without_energy": false,
         "kill_factor": 0.2,
+        "lurk_time": 600.0,
         "lowest_negative_comm_choice": -0.00001,
         "lowest_positive_comm_choice": 0.0,
+        "max_faction_contraband_relation": -0.05,
         "min_relationship": -20.0,
+        "min_time_to_auto": 25.0,
+        "missile_gun_delay": 4.0,
+        "mood_affects_response": 0.0,
         "mood_swing_level": 0.2,
+        "num_contraband_scans_per_search": 10,
+        "num_pirates_per_asteroid_field": 12,
+        "percentage_speed_change_to_stop_search": 1.0,
+        "pirate_bonus_for_empty_hold": 0.75,
+        "pirate_nav_select_time": 400.0,
         "random_response_range": 0.8,
+        "reaction_time": 0.2,
+        "resistance_to_side_movement": false,
         "shield_damage_anger": 1,
-        "jump_without_energy": false,
+        "slow_diplomacy_for_enemies": 0.25,
+        "static_relationship_affects_response": 1.0,
+        "unknown_relation_enemy": -0.05,
+        "unknown_relation_hit_cost": 0.01,
+        "warp_to_enemies": true,
+        "warp_to_no_enemies": true,
         "firing": {
-            "missile_probability": 0.01,
-            "aggressivity": 15.0
+            "aggressivity": 15.0,
+            "in_weapon_range": 1.2,
+            "missile_probability": 0.04,
+            "reaction_time": 0.2,
+            "turret_dot_cutoff": 0.4,
+            "turret_missile_probability": 0.01
         },
         "targeting": {
+            "assign_point_def": true,
             "escort_distance": 10.0,
-            "turn_leader_distance": 5.0,
+            "min_time_to_switch_targets": 3.0,
+            "min_null_time_to_switch_targets": 5.0,
+            "obedience": 0.99,
+            "search_max_role_priority": 16,
             "time_to_recommand_wing": 100.0,
-            "min_time_to_switch_targets": 3.0
+            "time_until_switch": 20.0,
+            "turn_leader_distance": 5.0
         }
     },
 
@@ -408,15 +485,35 @@
         "cargo_deals_collide_damage": false
     },
 
+    "economics": {
+        "repair_price": 5000.0,
+        "sellback_shipping_price": 6000.0,
+        "ship_sellback_price": 0.5,
+        "shipping_price_base": 0.0,
+        "shipping_price_insys": 1000.0,
+        "shipping_price_perjump": 25000.0
+    },
+
+    "joystick": {
+        "double_mouse_position": 1280,
+        "double_mouse_factor": 2.0
+    },
+
     "logging": {
         "vsdebug": 0,
         "verbose_debug": false
     },
 
     "physics": {
+        "allow_mission_abort": true,
+        "allow_special_and_normal_gun_combo": true,
+        "asteroid_weapon_collision": false,
+        "auto_undock": true,
         "capship_size": 500.0,
+        "cargo_wingmen_only_with_dockport": false,
         "close_enough_to_autotrack": 4.0,
         "collision_scale_factor": 1.0,
+        "contraband_assist_range": 50000.0,
         "debris_time": 500.0,
         "default_shield_tightness": 0.0,
         "density_of_jump_point": 100000.0,
@@ -425,8 +522,11 @@
         "difficulty_speed_exponent": 0.2,
         "difficulty_based_shield_recharge": true,
         "distance_to_warp": 1000000000000.0,
+        "dockport_allows_upgrade_storage": false,
         "does_missile_bounce": false,
+        "eject_cargo_speed": 1.0,
         "engine_energy_takes_priority": true,
+        "fire_missing_autotrackers": true,
         "friendly_auto_radius": 0.0,
         "game_accel": 1.0,
         "game_speed": 1.0,
@@ -434,6 +534,7 @@
         "indiscriminate_system_destruction": 0.25,
         "inelastic_scale": 0.8,
         "jump_mesh_radius_scale": 0.5,
+        "jump_weapon_collision": false,
         "max_damage": 0.999,
         "max_ecm": 4,
         "max_force_multiplier": 5.0,
@@ -450,12 +551,14 @@
         "min_shield_speeding_discharge": 0.1,
         "minimum_mass": 0.000001,
         "minimum_time": 0.1,
+        "must_repair_to_sell": true,
         "near_autotrack_cone": 0.9,
         "nebula_shield_recharge": 0.5,
         "neutral_auto_radius": 0.0,
         "no_damage_to_docked_ships": true,
         "no_spec_jump": true,
         "no_unit_collisions": false,
+        "only_show_best_downgrade": true,
         "percent_missile_match_target_velocity": 1.0,
         "planet_dock_min_port_size": 300.0,
         "planet_dock_port_size": 1.2,
@@ -465,11 +568,14 @@
         "shield_energy_capacitance": 0.2,
         "shield_maintenance_charge": 0.25,
         "shields_in_spec": false,
+        "simulate_while_docked": false,
         "speeding_discharge": 0.25,
+        "starships_as_cargo": true,
         "steady_itts": false,
         "system_damage_on_armor": false,
         "target_distance_to_warp_bonus": 1.33,
         "thruster_hit_chance": 0.25,
+        "use_hidden_cargo_space": true,
         "use_max_shield_energy_usage": false,
         "velocity_max": 10000.0,
         "ejection": {
@@ -478,6 +584,51 @@
             "max_dumped_cargo": 15,
             "hull_damage_to_eject": 100.0,
             "player_auto_eject": true
+        },
+        "tractor": {
+            "max_relative_speed": 150,
+            "percent_to_tractor": 0.1,
+            "scoop": false,
+            "scoop_alpha_multiplier": 2.5,
+            "scoop_angle": 0.5,
+            "scoop_fov": 0.5,
+            "scoop_long_slices": 10,
+            "scoop_rad_slices": 10,
+            "cargo": {
+                "distance": 0.0,
+                "distance_own_rsize": 1.5,
+                "distance_tgt_rsize": 1.1,
+                "force_push": true,
+                "force_in": true
+            },
+            "disabled": {
+                "distance": 0.0,
+                "distance_own_rsize": 1.5,
+                "distance_tgt_rsize": 1.1,
+                "force_push": true,
+                "force_in": true
+            },
+            "faction": {
+                "distance": 0.0,
+                "distance_own_rsize": 2.2,
+                "distance_tgt_rsize": 2.2,
+                "force_push": true,
+                "force_in": true
+            },
+            "upgrade": {
+                "distance": 0.0,
+                "distance_own_rsize": 1.5,
+                "distance_tgt_rsize": 1.1,
+                "force_push": true,
+                "force_in": true
+            },
+            "others": {
+                "distance": 0.0,
+                "distance_own_rsize": 1.1,
+                "distance_tgt_rsize": 1.1,
+                "force_push": false,
+                "force_in": false
+            }
         }
     },
 
@@ -505,5 +656,9 @@
     "weapons": {
         "can_fire_in_cloak": false,
         "can_fire_in_spec": false
+    },
+
+    "cargo": {
+        "news_from_cargo_list": false
     }
 }
