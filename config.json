@@ -450,11 +450,27 @@
     },
 
     "data": {
+        "animations": "animations",
         "capship_roles": "ESCORTCAP CAPITAL CARRIER BASE TROOP",
+        "cockpits": "cockpits",
+        "data_dir": "",
+        "hqtextures": "hqtextures",
         "master_part_list": "master_part_list",
+        "mod_unit_csv": "",
+        "movies": "movies",
         "python_bases": "bases",
         "python_modules": "modules",
-        "using_templates": true
+        "sectors": "sectors",
+        "serialized_xml": "serialized_xml",
+        "shared_meshes": "meshes",
+        "shared_sounds": "sounds",
+        "shared_textures": "textures",
+        "shared_units": "units",
+        "sprites": "sprites",
+        "techniques_base_path": "techniques",
+        "universe_path": "universe",
+        "using_templates": true,
+        "volume_format": "pk3"
     },
 
     "game_start": {
@@ -736,8 +752,26 @@
     },
 
     "galaxy": {
+        "ambient_light_factor": 0.0,
+        "atmosphere_probability": 0.5,
+        "compactness_scale": 27.0,
+        "default_atmosphere_texture": "sol/earthcloudmaptrans.png",
+        "default_ring_texture": "planets/ring.pngwrapx36wrapy2",
+        "double_ring_probability": 0.025,
+        "inner_ring_radius": 1.5,
+        "jump_compactness_scale": 54.0,
+        "mean_natural_phenomena": 1,
+        "mean_star_bases": 2,
+        "moon_relative_to_moon": 0.8,
+        "moon_relative_to_planet": 0.4,
+        "outer_ring_radius": 2.5,
         "police_faction": "homeland-security",
-        "prison_system": "Sol/Nu_Pheonix"
+        "prison_system": "Sol/Nu_Pheonix",
+        "push_values_to_mean": false,
+        "ring_probability": 0.1,
+        "rocky_relative_to_primary": 0.009,
+        "second_ring_difference": 0.4,
+        "star_radius_scale": 50000.0
     },
 
     "interpreter": {
@@ -767,9 +801,22 @@
         "warp_mouse_zone": 100
     },
 
+    "keyboard": {
+        "enable_unicode": true
+    },
+
     "logging": {
         "vsdebug": 0,
         "verbose_debug": false
+    },
+
+    "network": {
+        "account_server_url": "http://vegastrike.sourceforge.net/cgi-bin/accountserver.py",
+        "chat_only_in_network": false,
+        "force_client_connect": false,
+        "server_ip": "localhost",
+        "server_port": "6777",
+        "use_account_server": true
     },
 
     "physics": {
@@ -796,6 +843,7 @@
         "collision_scale_factor": 1.0,
         "computer_warp_ramp_up_time": 10.0,
         "contraband_assist_range": 50000.0,
+        "debris_mass": 0.00001,
         "debris_time": 500.0,
         "default_interdiction": 0.01,
         "default_shield_tightness": 0.0,
@@ -813,8 +861,11 @@
         "dockport_allows_upgrade_storage": false,
         "does_missile_bounce": false,
         "drone": "beholder",
+        "eject_cargo_on_blowup": 0,
         "eject_cargo_speed": 1.0,
         "engine_energy_takes_priority": true,
+        "explosion_damage_center": 1.0,
+        "explosion_damage_edge": 0.125,
         "extra_space_drag_for_cargo": 0.005,
         "fire_missing_autotrackers": true,
         "friendly_auto_radius": 0.0,
@@ -874,6 +925,7 @@
         "planets_always_neutral": true,
         "planets_can_have_subunits": false,
         "player_tractorability_mask": "p",
+        "refire_difficulty_scaling": 3.0,
         "repair_droid_check_time": 5.0,
         "repair_droid_time": 120.0,
         "respawn_unit_size": 400.0,
@@ -885,7 +937,7 @@
         "simulate_while_docked": false,
         "speeding_discharge": 0.25,
         "star_system_scale": 1.0,
-        "starships_as_cargo",: true,
+        "starships_as_cargo": true,
         "steady_itts": false,
         "system_damage_on_armor": false,
         "target_distance_to_warp_bonus": 1.33,
@@ -984,6 +1036,11 @@
                 "force_in": false
             }
         }
+    },
+
+    "player": {
+        "callsign": "",
+        "password": ""
     },
 
     "splash": {
