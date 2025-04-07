@@ -822,6 +822,8 @@
         "game_speed": 1.0,
         "game_speed_affects_autogen_systems": false,
         "game_speed_lying": false,
+        "gun_speed": 1.0,
+        "gun_speed_adjusted_game_speed": true,
         "hardware_cursor": false,
         "hostile_auto_radius": 1000.0,
         "hud_repair_unit": 0.25,
@@ -901,6 +903,7 @@
         "warp_ramp_down_time": 0.5,
         "warp_region0": 1.0,
         "warp_region1": 5000000.0,
+        "weapon_damage_efficiency": 1.0,
         "year_scale": 16.0,
         "ejection": {
             "auto_eject_percent": 0.5,
