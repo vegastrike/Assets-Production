@@ -10,7 +10,7 @@ until [ "x" = "x$1" ]; do
 		echo "Usage: $0 [--prefix PATH] [-32|-64]"
 		echo "    Installs Vega Strike binaries into PATH (default /usr/bin)"
 		echo "    Specifying -32 or -64 will install binaries for that architecture."
-		exit 
+		exit
 	fi
 	shift
 done
@@ -30,7 +30,7 @@ fi
 SOURCE_PATH="$PWD"
 cd "$SOURCE_PATH"
 
-echo '                     ==== VEGA STRIKE 0.9.0 ===='
+echo '                     ==== VEGA STRIKE 0.9.1 ===='
 echo ''
 echo ''
 if [ "x" = "x$BINARY_APPEND" ]; then
