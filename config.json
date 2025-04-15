@@ -1302,7 +1302,7 @@
         "warp_ramp_down_time": 0.5,
         "warp_ramp_up_time": 5.0,
         "warp_stretch_cutoff": 500000.0,
-        "warp_stretch_decel_cutoff": 2000000.0,
+        "warp_stretch_decel_cutoff": 2500000.0,
         "fov_link": {
             "reference_kps": 0.0,
             "smoothing": 0.4,
