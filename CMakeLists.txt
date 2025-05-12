@@ -206,6 +206,7 @@ ELSEIF (CMAKE_SYSTEM_NAME STREQUAL Windows)
 ENDIF ()
 
 # CPack stuff
+SET(CPACK_VERBATIM_VARIABLES YES)
 SET(CPACK_PACKAGE_NAME "vsUTCS")
 SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "3D space combat and trading game")
 SET(CPACK_PACKAGE_VENDOR "Vega Strike")
@@ -227,8 +228,10 @@ IF (CMAKE_SYSTEM_NAME STREQUAL Windows)
     # NSI bug requires at least 1 set of 4 forwards slashes??
     SET(CPACK_PACKAGE_ICON "${CMAKE_CURRENT_SOURCE_DIR}\\\\favicon.ico")
     SET(CPACK_NSIS_DISPLAY_NAME "Vega Strike Upon the Coldest Sea")
-    SET(CPACK_NSIS_HELP_LINK "https:\\\\vega-strike.org")
-    SET(CPACK_NSIS_URL_INFO_ABOUT "https:\\\\vega-strike.org/about")
+    SET(CPACK_NSIS_MANIFEST_DPI_AWARE true)
+    SET(CPACK_NSIS_ENABLE_UNINSTALL_BEFORE_INSTALL YES)
+    SET(CPACK_NSIS_HELP_LINK "https://vega-strike.org")
+    SET(CPACK_NSIS_URL_INFO_ABOUT "https://vega-strike.org/about")
     SET(CPACK_NSIS_CONTACT "maintainers@vega-strike.org")
     SET(CPACK_NSIS_MODIFY_PATH ON)
 
