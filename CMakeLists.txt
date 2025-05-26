@@ -233,7 +233,13 @@ IF (CMAKE_SYSTEM_NAME STREQUAL Windows)
     SET(CPACK_NSIS_HELP_LINK "https://vega-strike.org")
     SET(CPACK_NSIS_URL_INFO_ABOUT "https://vega-strike.org/about")
     SET(CPACK_NSIS_CONTACT "maintainers@vega-strike.org")
-    SET(CPACK_NSIS_MODIFY_PATH ON)
+    SET(CPACK_NSIS_MODIFY_PATH OFF)
+    SET(CPACK_NSIS_CREATE_ICONS_EXTRA
+        "CreateShortCut '$SMPROGRAMS\\\\$STARTMENU_FOLDER\\\\Vega Strike Upon the Coldest Sea.lnk' 'C:\\\\Program Files\\\\VegaStrike-0.10\\\\bin\\\\vegastrike-engine.exe' -D\"$INSTDIR\\share\\vegastrike\""
+    )
+    SET(CPACK_NSIS_DELETE_ICONS_EXTRA
+        "Delete '$SMPROGRAMS\\\\$START_MENU\\\\Vega Strike Upon the Coldest Sea.lnk'"
+    )
 
     SET(CPACK_GENERATOR "NSIS64")
     SET(CPACK_PACKAGE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/packages")
