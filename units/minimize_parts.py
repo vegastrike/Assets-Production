@@ -73,9 +73,8 @@ def force_minimize_shield_and_armor(unit, new_keys, old_keys, min_key):
         if old_key not in unit:
             continue
         
-        temp_value = int(round(float(unit[old_key])))
-        facets += 1 if temp_value > 0 else 0
-        sum_value += temp_value
+        sum_value += int(round(float(unit[old_key])))
+        facets += 1 
     
 
     if facets == 2:
@@ -119,8 +118,11 @@ def force_minimize_shield_and_armor(unit, new_keys, old_keys, min_key):
             del(unit[old_key])
 
     # Add shield facets
-    if 'shield' in unit or 'shield_front' in unit:
+    if min_key == 'shield' and (facets == 2 or facets == 4):
         unit['shield_facets'] = str(facets)
+    
+    if min_key in unit and unit[min_key] == '0.0':
+        del(unit[min_key])
                    
 
 def minimize_some_values(unit, new_key, old_keys):
