@@ -119,7 +119,7 @@ with open("units_description.csv") as description_file:
      
      
 json_object = json.dumps(units, indent = 4)
-with open("units.json", "w") as json_file:
+with open("units_old.json", "w") as json_file:
     json_file.write(json_object)
 #print(json_object)
               
