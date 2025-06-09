@@ -13,7 +13,7 @@ def modify_item(item):
         item["upgrade"] = True
 
     if item.get("categoryname").startswith("upgrades/Weapons") or item.get("categoryname").startswith("upgrades/Ammunition"):
-        item["weapoon"] = True
+        item["weapon"] = True
 
 
 if __name__ == '__main__':
