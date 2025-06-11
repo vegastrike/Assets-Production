@@ -5,3 +5,9 @@ packages/
 .vscode/
 .editorconfig
 .idea/
+/CMakeFiles/
+*.vcxproj
+*.filters
+*.sln
+*.cmake
+CMakeCache.txt
