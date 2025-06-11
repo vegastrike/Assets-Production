@@ -54,12 +54,13 @@ def get_tab_data(root_element, tab_json, level=0):
             pass
 
 
-# Some quick tests
-# Load JSON file into a variable
-with open('config.json', 'r') as file:
-    config_json = json.load(file)
+# Test Code
+if __name__ == "__main__":
+    # Load JSON file into a variable
+    with open('config.json', 'r') as file:
+        config_json = json.load(file)
 
-# Example usage
-print(get_tabs(config_json))
-print(get_labels(config_json, 'graphics'))
-print(get_labels(config_json, 'physics'))
+    # Example usage
+    print(get_tabs(config_json))
+    print(get_labels(config_json, 'graphics'))
+    print(get_labels(config_json, 'physics'))

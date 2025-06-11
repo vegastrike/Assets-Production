@@ -50,8 +50,8 @@ def get_locations_for_platform():
 
 class AppConfig:
     def __init__(self):
-        CONFIG_FILE_SUFFIX = "/config.json"
-        SETTINGS_APP_CONFIG_FILE_SUFFIX = "/settings_app.json"
+        CONFIG_FILE_SUFFIX = "config.json"
+        SETTINGS_APP_CONFIG_FILE_SUFFIX = "settings_app.json"
 
         self.assets_folder, self.user_folder = get_locations_for_platform()
         self.theme = "equilux" # Default theme, can be overridden by settings_app.json
@@ -60,7 +60,8 @@ class AppConfig:
         if self.user_folder != None:
             # Check if the settings_app.json exists
             # It holds the user defined assets folder location (and theme)
-            self.settings_app_config_filename = self.user_folder + SETTINGS_APP_CONFIG_FILE_SUFFIX
+            self.settings_app_config_filename = os.path.join(self.user_folder, SETTINGS_APP_CONFIG_FILE_SUFFIX)
+
             if os.path.exists(self.settings_app_config_filename):
                 with open(self.settings_app_config_filename, "r") as file:
                     app_settings = json.load(file)
@@ -68,14 +69,23 @@ class AppConfig:
                     self.assets_folder = app_settings.get("assets_folder", self.assets_folder)
                     self.theme = app_settings.get("theme", self.theme)
 
-        # Can't continue if either location is None
-        # TODO: we could create the user folder if it doesn't exist
-        # We can't do the same for the assets folder
+        # Create the user folder if it doesn't exist
+        os_name = platform.system().lower()
+        if self.user_folder is None and (os_name == "linux" or os_name == "darwin"):
+            try:
+                os.makedirs(self.user_folder, exist_ok=True)
+                print(f"Created user folder at {self.user_folder}")
+            except Exception as e:
+                raise RuntimeError(f"Failed to create user folder at {self.user_folder}: {e}")
+
+
+        # Can't continue if assets location is None
         if self.assets_folder is None or self.user_folder is None:
             return 
 
         # We can't recover from this. The assets folder is there but config.json isn't
-        if not os.path.exists(self.assets_folder  + CONFIG_FILE_SUFFIX):
+        # Consider just returning and have the user deal with it.
+        if not os.path.exists(os.path.join(self.assets_folder, CONFIG_FILE_SUFFIX)):
             raise FileNotFoundError(f"Assets location exists at {self.assets_folder} but config.json is missing. Please check your installation.")
         
     def serialize(self):

@@ -5,12 +5,12 @@ import os
 import getpass
 import platform
 
-CONFIG_FILE_NAME = "/config.json"
+CONFIG_FILE_NAME = "config.json"
 
 class ConfigData():
     def __init__(self, assets_config_filename: str, user_config_filename: str = None):
-        self.assets_config_filename = assets_config_filename + CONFIG_FILE_NAME
-        self.user_config_filename = user_config_filename + CONFIG_FILE_NAME
+        self.assets_config_filename = os.path.join(assets_config_filename, CONFIG_FILE_NAME)
+        self.user_config_filename = os.path.join(user_config_filename, CONFIG_FILE_NAME)
 
         with open(self.assets_config_filename, 'r') as file:
             self.assets_config = json.load(file)

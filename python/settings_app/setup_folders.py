@@ -115,7 +115,7 @@ class FolderSetupWindow(tk.Toplevel):
         
         # The assets folder must exist and contain the config file
         # The user folder must exist but may not contain a config file
-        if (not os.path.exists(self.app_config.assets_folder + CONFIG_FILE_NAME) or 
+        if (not os.path.exists(os.path.join(self.app_config.assets_folder, CONFIG_FILE_NAME)) or 
            not os.path.exists(self.app_config.user_folder)):
             return 
         
