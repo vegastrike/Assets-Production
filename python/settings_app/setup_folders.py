@@ -3,23 +3,26 @@ import tkinter as tk
 from tkinter import ttk, filedialog
 from ttkthemes import ThemedTk
 
-from app_config import AppConfig
-from config_data import ConfigData
+import app_config as ac
+import game_config as gc
 
-CONFIG_FILE_NAME = "/config.json"
+CONFIG_FILE_NAME = "config.json"
 
-class FolderSetupWindow(tk.Toplevel):
-    def __init__(self, app_config:AppConfig, config_data: ConfigData, root):
-        super().__init__(root)
+def check_config_file_paths():
+        # Check if we have the paths to the assets and user folders
+        if not ac.app_config.app_configured():
+            x = FolderSetupWindow()
+        else:
+            gc.load_game_config()
 
-        self.app_config = app_config
-        self.config_data = config_data
-        self.root = root
+class FolderSetupWindow(ThemedTk):
+    def __init__(self):
+        super().__init__(theme=ac.app_config.theme)
 
-        # Show on top of main screen
-        # Doesn't actually work
-        # TODO: figure out how to make the filedialog.askdirectory go on top of this
-        #root.wm_attributes('-topmost', 1)
+        # Initialize the main window
+        self.title("Vegastrike Settings")
+        self.geometry("1200x800")
+        #self.configure(bg="#2e2e2e")  # Set dark mode background color
 
         self.success = False
         
@@ -27,17 +30,17 @@ class FolderSetupWindow(tk.Toplevel):
         self.geometry("640x480")
 
         # Variables for entry fields
-        self.assets_entry_var = tk.StringVar(self, app_config.assets_folder)
-        self.user_entry_var = tk.StringVar(self, app_config.user_folder)
+        self.assets_entry_var = tk.StringVar(self, ac.app_config.assets_folder)
+        self.user_entry_var = tk.StringVar(self, ac.app_config.user_folder)
 
         # Add a callback to validate when the assets_entry_var/user_entry_var changes
         self.assets_entry_var.trace_add("write", lambda *args: self.validate())
         self.assets_entry_var.trace_add("write", lambda *args: self.validate())
 
-        if app_config.assets_folder != None:
-            self.assets_entry_var.set(app_config.assets_folder)
-        if app_config.user_folder != None:
-            self.user_entry_var.set(app_config.user_folder)
+        if ac.app_config.assets_folder != None:
+            self.assets_entry_var.set(ac.app_config.assets_folder)
+        if ac.app_config.user_folder != None:
+            self.user_entry_var.set(ac.app_config.user_folder)
 
         # Label and entry for the assets folder
         label1 = ttk.Label(self, text="Assets Folder:")
@@ -61,6 +64,9 @@ class FolderSetupWindow(tk.Toplevel):
         self.ok_button.state(['disabled'])  # Disable the OK button by default
         cancel_button = ttk.Button(self, text="Cancel", command=self.on_cancel)
         cancel_button.grid(row=2, column=2, padx=10, pady=10, sticky="w")
+        #self.ok_button.configure(foreground="red")
+
+        self.mainloop()
 
 
     def show_ask_directory(self, title):
@@ -76,26 +82,23 @@ class FolderSetupWindow(tk.Toplevel):
     def select_assets_folder(self):
         folder = self.show_ask_directory(title="Select Assets Folder")
         if folder:
-            self.app_config.assets_folder = folder
+            ac.app_config.assets_folder = folder
             self.assets_entry_var.set(folder)
             
 
     def select_user_folder(self):
         folder = self.show_ask_directory(title="Select User Folder")
         if folder:
-            self.app_config.user_folder = folder
+            ac.app_config.user_folder = folder
             self.user_entry_var.set(folder)
             
            
 
     def on_ok(self):
-        # TODO: better checks that the config file actually exists
-        # if not, grey out the OK button
         self.destroy()
 
-        self.app_config.serialize()
-        self.root.lazy_load_config_data()
-        self.root.lazy_load_graphics_tab()
+        ac.app_config.serialize()
+        gc.load_game_config()
 
 
     def on_cancel(self):
@@ -110,17 +113,18 @@ class FolderSetupWindow(tk.Toplevel):
         
 
     def validate(self):
-        if not self.app_config.assets_folder or not self.app_config.user_folder:
+        if not ac.app_config.assets_folder or not ac.app_config.user_folder:
             return 
         
         # The assets folder must exist and contain the config file
         # The user folder must exist but may not contain a config file
-        if (not os.path.exists(os.path.join(self.app_config.assets_folder, CONFIG_FILE_NAME)) or 
-           not os.path.exists(self.app_config.user_folder)):
+        if (not os.path.exists(os.path.join(ac.app_config.assets_folder, CONFIG_FILE_NAME)) or 
+           not os.path.exists(ac.app_config.user_folder)):
             return 
         
         # If we reach here, both folders are valid and have a config file
         self.ok_button.state(['!disabled'])
+        #self.ok_button.configure(foreground="green")
         self.success = True
 
 # Test Code

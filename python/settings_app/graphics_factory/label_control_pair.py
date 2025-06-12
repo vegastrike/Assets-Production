@@ -1,35 +1,29 @@
 import tkinter as tk
+import tkinter.ttk as ttk
 from graphics_factory.graphic_attributes import GraphicAttributes 
 
-from config_data import ConfigData
+import game_config as gc
 
 class AbstractLabelControlPair:
     # An abstract class to hold shared code for below pairs
 
-    def __init__(self, parent: tk.Frame, config: ConfigData, key:str, text: str):
+    def __init__(self, parent: tk.Frame, key:list[str], text: str):
         self.parent = parent
-        self.config = config
-        self.key = key
-        self.text = text
+        self.key: list[str] = key
+        self.text: str = text
     
 class LabelCheckboxPair(AbstractLabelControlPair):
-    def __init__(self, parent: tk.Frame, config: ConfigData, key:str, text: str,  
+    def __init__(self, parent: tk.Frame, key:list[str], text: str,  
                  attributes: GraphicAttributes, initial_value: bool = False):
-        super().__init__(parent, config, key, text)
-        frame_row = tk.Frame(parent, bg=attributes.background)
+        super().__init__(parent, key, text)
+        frame_row = ttk.Frame(parent)
         frame_row.pack(pady=attributes.padding_y)
 
-        label = tk.Label(frame_row, text=f"{text}:", fg=attributes.foreground, 
-                         bg=attributes.background, font=attributes.font)
+        label = ttk.Label(frame_row, text=f"{text}:", font=attributes.font)
         label.pack(side=attributes.alignment, padx=attributes.padding_x)
 
         self.toggle_var = tk.BooleanVar(value=initial_value)
-        toggle_button = tk.Checkbutton(frame_row, variable=self.toggle_var, 
-                                       bg=attributes.background, 
-                                       activebackground=attributes.background, 
-                                       fg=attributes.foreground, 
-                                       selectcolor="#444444", 
-                                       font=attributes.font)
+        toggle_button = ttk.Checkbutton(frame_row, variable=self.toggle_var)
         toggle_button.pack(side=attributes.alignment, padx=attributes.padding_x)
 
         self.toggle_var.trace_add("write", lambda *args: self._on_change())
@@ -43,9 +37,9 @@ class LabelCheckboxPair(AbstractLabelControlPair):
             print("No key set for this control pair, cannot update config.")
 
 class LabelComboboxPair(AbstractLabelControlPair):
-    def __init__(self, parent: tk.Frame, config: ConfigData, key:str, text: str, attributes: GraphicAttributes, 
+    def __init__(self, parent: tk.Frame, key:str, text: str, attributes: GraphicAttributes, 
                     options: list, initial_value: str = None, on_change=None):
-        super().__init__(parent, config, key, text)
+        super().__init__(parent, key, text)
         frame_row = tk.Frame(parent, bg=attributes.background)
         frame_row.pack(pady=attributes.padding_y)
 
@@ -67,10 +61,10 @@ class LabelComboboxPair(AbstractLabelControlPair):
 
 # A special case for resolution combo box, which has two keys
 class ResolutionPair(AbstractLabelControlPair):
-    def __init__(self, parent: tk.Frame, config: dict[str,str], first_key:list[str], 
+    def __init__(self, parent: tk.Frame, first_key:list[str], 
                  second_key:list[str], text: str, attributes: GraphicAttributes, 
                     resolutions: dict[str, (int,int)], initial_value: str):
-        super().__init__(parent=parent, config=config, key=None, text=text)
+        super().__init__(parent=parent, key=None, text=text)
         self.first_key = first_key
         self.second_key = second_key
         self.resolutions = resolutions
@@ -93,8 +87,8 @@ class ResolutionPair(AbstractLabelControlPair):
 
     def _on_change(self):
         key = self.combobox_var.get()
-        self.config.set(self.first_key, self.resolutions[key][0]) 
-        self.config.set(self.second_key, self.resolutions[key][1]) 
+        gc.game_config.set(self.first_key, self.resolutions[key][0]) 
+        gc.game_config.set(self.second_key, self.resolutions[key][1]) 
 
 
 # Test Code

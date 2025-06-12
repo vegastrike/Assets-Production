@@ -2,53 +2,56 @@ import tkinter as tk
 import tkinter.ttk as ttk
 import screeninfo
 import json
+import os
 
 import graphics_factory.label_control_pair as label_control_pair
 import graphics_factory.graphic_attributes as graphic_attributes
 
 from os_utils import number_of_screens, resolution_for_screen 
-from config_data import ConfigData
+
+import game_config as gc
 
 class GraphicsTab:
-    def __init__(self, parent, config_data: ConfigData):
+    def __init__(self, parent):
         self.parent = parent
-        self.config_data = config_data
         self.tab_name = "Graphics"
-        self.tab_content = "This is the graphics tab content."
         self.num_screens = number_of_screens()
         self.screens = screeninfo.get_monitors()
         self.screen_resolution = resolution_for_screen(0)
 
         self.frame = ttk.Frame(parent)
 
+        # Make primary screen the first one
+        if len(self.screens) > 1:
+            self.screens.sort(key=lambda screen: screen.is_primary, reverse=True)
+
         # Resolution options
         # Load resolutions from the JSON file
-        with open("templates/resolutions.json", "r") as file:
+        with open(os.path.join("templates","resolutions.json"), "r") as file:
             self.all_resolutions = json.load(file)
         
         # Unlike other settings, here we set some defaults not based on assets
         # but on the current hardware 
 
         self.selected_screen = 0
-        if self.config_data._has_key(["graphics", "screen"], self.config_data.user_config):
-            self.selected_screen = self.config_data.get(["graphics", "screen"])
+        if gc.game_config.has_key(["graphics", "screen"]):
+            self.selected_screen = gc.game_config.get(["graphics", "screen"])
 
         # We just check x but not y
-        if self.config_data._has_key(["graphics", "resolution_x"], self.config_data.user_config):
+        if gc.game_config.has_key(["graphics", "resolution_x"]):
             # Already have a resolution in user config, modify screen_resolution variable only
             self.screen_resolution = (
-                self.config_data.get(["graphics", "resolution_x"]),
-                self.config_data.get(["graphics", "resolution_y"])
+                gc.game_config.get(["graphics", "resolution_x"]),
+                gc.game_config.get(["graphics", "resolution_y"])
             )
         else:
             # Don't have a resolution in user config, set it to the current max screen resolution
-            self.config_data.set(["graphics", "resolution_x"], self.screen_resolution[0])
-            self.config_data.set(["graphics", "resolution_y"], self.screen_resolution[1])
+            gc.game_config.set(["graphics", "resolution_x"], self.screen_resolution[0])
+            gc.game_config.set(["graphics", "resolution_y"], self.screen_resolution[1])
 
         # Full screen
         full_screen_control = label_control_pair.LabelCheckboxPair(
             parent=self.frame,
-            config=self.config_data,
             key=["graphics", "full_screen"],
             text="Full Screen",
             attributes=graphic_attributes.GraphicAttributes(
@@ -60,13 +63,12 @@ class GraphicsTab:
                 padding_y=10,
                 alignment=tk.LEFT
             ),
-            initial_value=self.config_data.get(["graphics", "full_screen"])
+            initial_value=gc.game_config.get(["graphics", "full_screen"])
         )
 
         # Screens
         screens_control = label_control_pair.LabelComboboxPair(
             parent = self.frame,
-            config = self.config_data,
             key = ["graphics","screen"],
             text = "Screen",
             attributes = graphic_attributes.GraphicAttributes(
@@ -86,7 +88,6 @@ class GraphicsTab:
         # Resolutions
         resolutions_control = label_control_pair.ResolutionPair(
             parent=self.frame,
-            config=self.config_data,
             first_key=["graphics", "resolution_x"],
             second_key=["graphics", "resolution_y"],
             text="Resolution",
@@ -113,7 +114,7 @@ class GraphicsTab:
         # Handle screen change logic here
         self.selected_screen = self.get_index_for_screen(screen_name)
         self.screen_resolution = resolution_for_screen(self.selected_screen)
-        self.config_data.set(["graphics", "screen"], self.get_index_for_screen(screen_name))
+        gc.game_config.set(["graphics", "screen"], self.get_index_for_screen(screen_name))
 
     def available_resolutions(self, index: int):
         # This may fail to get the max resolution if the screen is set by the OS to a lower resolution

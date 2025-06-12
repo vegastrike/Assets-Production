@@ -25,11 +25,13 @@ Below is a brief description of the files in this folder:
 
 4. **app_config.py**  
     A class for managing the application configuration. 
+    It is a singleton.
     As the app can't write in its home dir, we have to locate the /home/<user>/.vegastrike folder (or similar).
     We write a file there (settings_app.json), to store a link to the assets folder and other app settings.
 
-5. **config_data.py**  
+5. **game_config.py**  
     A class for managing the actual game configuration.
+    It is a singleton.
     We have two configuration files - assets and user.
     We get values from both. We set values to user only.
     We do not support vegastrike.config (xml).

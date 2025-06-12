@@ -5,12 +5,12 @@ import getpass
 import os
 import json
 
-# Some setup to initialize the assets and user folders based on the platform.
 
+# Some setup to initialize the assets and user folders based on the platform.
 initial_setup_locations = {
     "windows": {
         "assets_location": "C:\\Games\\.vegastrike\\Assets",
-        "user_location": "C:\\Users\\<user>"
+        "user_location": "C:\\Users\\<user>\\AppData\\Local.vegastrike"
     },
     "darwin": {
         "assets_location": "/Applications/.vegastrike/Assets",
@@ -104,6 +104,10 @@ class AppConfig:
     def app_configured(self):
         # Returns True if the app is configured correctly, i.e. both assets and user folders are set.
         return self.assets_folder is not None and self.user_folder is not None
+
+# The app_config singleton instance
+# Don't initialize here. Let settings_app do it after changing folders.
+app_config: AppConfig = None
 
 # Test Code
 if __name__ == "__main__":

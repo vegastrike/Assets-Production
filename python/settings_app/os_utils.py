@@ -2,14 +2,12 @@ import os
 import screeninfo
 import sys
 
+import app_config as ac
+
 # This file cannot be in the utils sub-folder where it belongs
-def change_to_python_settings_app_folder_if_needed():
-    # Check if we're running in the right folder
-    current_folder = os.getcwd()
-    expected_folder_suffix = "python/settings_app"
-    if not current_folder.endswith(expected_folder_suffix):
-        os.chdir(os.path.join(current_folder, expected_folder_suffix))
-        print(f"Changed current working directory from {current_folder} to {os.getcwd()}")
+def change_to_python_settings_app_folder():
+    os.chdir(os.path.join(ac.app_config.assets_folder, "python", "settings_app"))
+    
 
 def append_subfolders_to_system_path():
     subfolders = ['tabs', 'graphics_factory']
