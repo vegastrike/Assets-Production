@@ -4,6 +4,9 @@ import tkinter as tk
 import tkinter.ttk as ttk
 
 import game_config as gc
+import graphics_factory.label_control_pair as lcp
+from graphics_factory.scrollable_frame import ScrollableFrame
+
 
 def get_tabs(config_json):
     return list(config_json.keys())
@@ -83,7 +86,7 @@ def generate_lower_level_section(frame, section: gc.ConfigBranch):
 
 # This section converts the JSON configuration into a GUI representation.
 def generate_first_level_section(right_frame, section:gc.ConfigBranch):
-    inner_frame = create_frame_in_a_scrollbar_frame(right_frame)
+    inner_frame = ScrollableFrame(right_frame)
 
     if not section:
         return
@@ -95,8 +98,13 @@ def generate_first_level_section(right_frame, section:gc.ConfigBranch):
             generate_lower_level_section(inner_frame, value)
         elif isinstance(value, gc.ConfigLeaf):
             # Create a label and control for each key-value pair
-            label = ttk.Label(inner_frame, text=f"{key}: {value.value} (orig: {value.original_value})", font=("Arial", 12))
-            label.pack(anchor="w", padx=10, pady=5)
+            if isinstance(value.value, bool):
+                lcp.BoolLeafGui(inner_frame, value)
+            elif isinstance(value.value, str):
+                lcp.TextLeafGui(inner_frame, value)
+            else:
+                label = ttk.Label(inner_frame, text=f"{key}: {value.value} (orig: {value.original_value})", font=("Arial", 12))
+                label.pack(anchor="w", padx=10, pady=5)
         else:
             # Create a label and control for each key-value pair
             label = ttk.Label(inner_frame, text=f"{key}: {value}", font=("Arial", 12))
@@ -104,29 +112,7 @@ def generate_first_level_section(right_frame, section:gc.ConfigBranch):
             sys.exit(f"Unsupported value type: {type(value)} for key: {key}")
 
 
-def create_frame_in_a_scrollbar_frame(parent_frame):
-    # Add a scrollbar to the left frame
-    scrollbar = ttk.Scrollbar(parent_frame, orient="vertical")
-    scrollbar.pack(side="right", fill="y")
 
-    # Create a canvas to hold the content
-    canvas = tk.Canvas(parent_frame, yscrollcommand=scrollbar.set)
-    canvas.pack(side="left", fill="both", expand=False)
-
-    # Configure the scrollbar to scroll the canvas
-    scrollbar.config(command=canvas.yview)
-
-    # Create an inner frame inside the canvas
-    inner_frame = ttk.Frame(canvas)
-    inner_frame.bind(
-        "<Configure>",
-        lambda e: canvas.configure(scrollregion=canvas.bbox("all"))
-    )
-
-    # Add the inner frame to the canvas
-    canvas.create_window((0, 0), window=inner_frame, anchor="nw")
-
-    return inner_frame
 
 # Test Code
 if __name__ == "__main__":

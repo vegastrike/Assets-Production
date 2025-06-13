@@ -22,7 +22,6 @@ def number_of_screens():
 def resolution_for_screen(index):
     screens = screeninfo.get_monitors()
     screen = screens[index]
-    print(screens)
     return (screen.width, screen.height)
 
 # Test section

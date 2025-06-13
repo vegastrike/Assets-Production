@@ -5,12 +5,14 @@ import getpass
 import os
 import json
 
+CONFIG_FILE_SUFFIX = "config.json"
+SETTINGS_APP_CONFIG_FILE_SUFFIX = "settings_app.json"
 
 # Some setup to initialize the assets and user folders based on the platform.
 initial_setup_locations = {
     "windows": {
         "assets_location": "C:\\Games\\.vegastrike\\Assets",
-        "user_location": "C:\\Users\\<user>\\AppData\\Local.vegastrike"
+        "user_location": "C:\\Users\\<user>\\AppData\\Local\\.vegastrike"
     },
     "darwin": {
         "assets_location": "/Applications/.vegastrike/Assets",
@@ -50,9 +52,6 @@ def get_locations_for_platform():
 
 class AppConfig:
     def __init__(self):
-        CONFIG_FILE_SUFFIX = "config.json"
-        SETTINGS_APP_CONFIG_FILE_SUFFIX = "settings_app.json"
-
         self.assets_folder, self.user_folder = get_locations_for_platform()
         self.theme = "equilux" # Default theme, can be overridden by settings_app.json
 

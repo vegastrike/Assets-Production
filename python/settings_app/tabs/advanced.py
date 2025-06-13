@@ -7,7 +7,8 @@ import graphics_factory.graphic_attributes as graphic_attributes
 
 import game_config as gc
 
-from config_to_gui import generate_first_level_section, create_frame_in_a_scrollbar_frame
+from config_to_gui import generate_first_level_section
+from graphics_factory.scrollable_frame import ScrollableFrame
 
 class AdvancedTab:
     def __init__(self, parent):
@@ -18,10 +19,11 @@ class AdvancedTab:
 
         # Create two frames horizontally
         left_frame = ttk.Frame(self.frame)
+        left_frame.configure(width=200, height=1000)
         left_frame.grid(row=0, column=0, sticky="nsew")
         left_frame.columnconfigure(0, weight=1) # stack widgets vertically
 
-        left_inner_frame = create_frame_in_a_scrollbar_frame(left_frame)
+        left_inner_frame = ScrollableFrame(left_frame)
 
         self.right_frame = ttk.Frame(self.frame)
         self.right_frame.grid(row=0, column=1, sticky="nsew")
@@ -51,6 +53,7 @@ class AdvancedTab:
             self.right_frame.destroy()
 
         self.right_frame = ttk.Frame(self.frame)
+        self.right_frame.configure(width=600, height=1000)
         self.right_frame.grid(row=0, column=1, sticky="nsew")
         self.right_frame.config(borderwidth=2, relief="solid") # Add border
         self.right_frame.columnconfigure(0, weight=1) # stack widgets vertically

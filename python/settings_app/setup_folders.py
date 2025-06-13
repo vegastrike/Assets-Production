@@ -96,6 +96,7 @@ class FolderSetupWindow(ThemedTk):
 
     def on_ok(self):
         self.destroy()
+        ac.app_config.settings_app_config_filename = os.path.join(ac.app_config.user_folder,ac.SETTINGS_APP_CONFIG_FILE_SUFFIX)
 
         ac.app_config.serialize()
         gc.load_game_config()

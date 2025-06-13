@@ -23,7 +23,7 @@ class MainWindow(ThemedTk):
 
         # Initialize the main window
         self.title("Vegastrike Settings")
-        self.geometry("1200x800")
+        self.geometry("800x1200")
         #self.configure(bg="#2e2e2e")  # Set dark mode background color
 
         # Load and process the background image
@@ -53,10 +53,12 @@ class MainWindow(ThemedTk):
 
         # Add graphics tab
         graphics_tab = tabs.graphics.GraphicsTab(self.notebook)
+        graphics_tab.frame.configure(width=800, height=1000)
         self.notebook.add(graphics_tab.frame, text=graphics_tab.tab_name)
 
         # Add advanced tab
         advanced_tab = tabs.advanced.AdvancedTab(self.notebook)
+        advanced_tab.frame.configure(width=800, height=1000)
         self.notebook.add(advanced_tab.frame, text=advanced_tab.tab_name)
 
         # Add content to the second tab

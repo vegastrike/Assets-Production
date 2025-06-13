@@ -36,6 +36,51 @@ class LabelCheckboxPair(AbstractLabelControlPair):
         else:
             print("No key set for this control pair, cannot update config.")
 
+class BoolLeafGui():
+    def __init__(self, parent: tk.Frame, leaf:gc.ConfigLeaf):
+        self.leaf = leaf
+
+        frame_row = ttk.Frame(parent)
+        frame_row.pack(padx=10)
+
+        label = ttk.Label(frame_row, text=f"{leaf.key}:")
+        label.pack(padx=10)
+
+        self.toggle_var = tk.BooleanVar(value=leaf.value)
+        toggle_button = ttk.Checkbutton(frame_row, variable=self.toggle_var)
+        toggle_button.pack(padx=10)
+
+        self.toggle_var.trace_add("write", lambda *args: self.on_change())
+
+    def on_change(self):
+        self.leaf.value = self.toggle_var.get()
+        self.leaf.set_dirty(self.leaf.value != self.leaf.original_value)
+
+# TODO: figure out how to differentiate int from float
+# isinstance(value, int) returns True only if value is an integer (e.g., 5, -3, 0).
+# isinstance(value, float) returns True only if value is a floating-point number (e.g., 3.14, -2.5, 0.0).
+# Floats that represent integers - 5.0 is not considered an integer by isinstance(value, int).
+# This means config.json needs to be sanitised for this to work properly.
+class TextLeafGui():
+    def __init__(self, parent: tk.Frame, leaf:gc.ConfigLeaf):
+        self.leaf = leaf
+
+        frame_row = ttk.Frame(parent)
+        frame_row.pack(pady=10)
+
+        label = ttk.Label(frame_row, text=f"{leaf.key}:")
+        label.pack(padx=10)
+
+        self.text_var = tk.StringVar(value=leaf.value)
+        toggle_button = ttk.Entry(frame_row, textvariable=self.text_var)
+        toggle_button.pack(padx=10)
+
+        self.text_var.trace_add("write", lambda *args: self.on_change())
+
+    def on_change(self):
+        self.leaf.value = self.text_var.get()
+        self.leaf.set_dirty(self.leaf.value != self.leaf.original_value)
+
 class LabelComboboxPair(AbstractLabelControlPair):
     def __init__(self, parent: tk.Frame, key:str, text: str, attributes: GraphicAttributes, 
                     options: list, initial_value: str = None, on_change=None):
