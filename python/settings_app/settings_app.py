@@ -1,8 +1,10 @@
 import os_utils
+import platform
 
 from main_window import MainWindow
 from setup_folders import check_config_file_paths
 import app_config as ac
+import game_config as gc
 import os_utils
 
 if __name__ == "__main__":
@@ -13,9 +15,16 @@ if __name__ == "__main__":
     
     
     # Check if the user folder and assets folder are set up correctly
-    check_config_file_paths()
+    success_configuring_file_paths = check_config_file_paths()
 
-    os_utils.change_to_python_settings_app_folder()
-    
-    # Create the main window
-    main_window = MainWindow()
+    if success_configuring_file_paths:
+        gc.load_game_config()
+        os_utils.change_to_python_settings_app_folder()
+
+        # Create the main window
+        main_window = MainWindow()
+    else:
+        print("Failed to configure file paths. Exiting.")
+
+
+

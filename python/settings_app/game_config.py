@@ -152,7 +152,9 @@ class ConfigLeaf():
 
     # Returns a string for the recursion to add to the print function
     def print(self, tabs = ""):
-        return f"{tabs}{self.key}: {self.value} {f"(original: {self.original_value})" if self.original_value != self.value else ""} {"dirty" if self.dirty else ""}\n"
+        inner_text = f"(original: {self.original_value})" if self.original_value != self.value else ""
+        dirty = "dirty" if self.dirty else ""
+        return f"{tabs}{self.key}: {self.value} {inner_text} {dirty}\n"
 
 class GameConfig(ConfigBranch):
     def __init__(self, assets_config_filename: str, assets_config: dict,

@@ -11,27 +11,35 @@ SETTINGS_APP_CONFIG_FILE_SUFFIX = "settings_app.json"
 # Some setup to initialize the assets and user folders based on the platform.
 initial_setup_locations = {
     "windows": {
+        "home_dir": "C:\\Users\\<user>",
         "assets_location": "C:\\Games\\.vegastrike\\Assets",
         "user_location": "C:\\Users\\<user>\\AppData\\Local\\.vegastrike"
     },
     "darwin": {
+        "home_dir": "/Users/<user>",
         "assets_location": "/Applications/.vegastrike/Assets",
         "user_location": "/Users/<user>"
     },
     "linux": {
+        "home_dir": "/home/<user>",
         "assets_location": "/usr/share/vegastrike",
         "user_location": "/home/<user>/.vegastrike"
     }
 }
 
+home_dir = ""
+
 
 def get_locations_for_platform():
+    global home_dir
+
     os_name = platform.system().lower()
     user_name = getpass.getuser()
 
     if os_name not in initial_setup_locations:
         raise ValueError(f"Unsupported platform: {os_name}")
     
+    home_dir = initial_setup_locations[os_name]["home_dir"].replace("<user>", user_name)
     asset_location = initial_setup_locations[os_name]["assets_location"]
     user_location = initial_setup_locations[os_name]["user_location"].replace("<user>", user_name)
 

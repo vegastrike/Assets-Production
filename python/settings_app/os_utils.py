@@ -6,7 +6,8 @@ import app_config as ac
 
 # This file cannot be in the utils sub-folder where it belongs
 def change_to_python_settings_app_folder():
-    os.chdir(os.path.join(ac.app_config.assets_folder, "python", "settings_app"))
+    if ac.app_config.assets_folder:
+        os.chdir(os.path.join(ac.app_config.assets_folder, "python", "settings_app"))
     
 
 def append_subfolders_to_system_path():

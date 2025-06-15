@@ -12,6 +12,27 @@ It made a hash of this and made stuff up. ;)
 This folder contains files related to the `settings_app` module of the Assets-Production project. 
 Below is a brief description of the files in this folder:
 
+# Install notes:
+1. Python3.12 is not supported. Install the alternative python3.11 using deadsnakes.
+2. Install Python3.11:
+   sudo add-apt-repository ppa:deadsnakes/ppa
+   apt update
+   sudo apt install python3.11
+3. Install kivy for python 3.12: 
+   sudo apt install python3-kivy
+3a.Install kivy for python 3.11:
+   sudo apt install python3.11-venv
+   python3.11 -m venv .venv
+   source .venv/bin/activate
+   pip3 install --upgrade pip wheel cython setuptools
+   pip install kivy[base] screeninfo
+
+    
+
+   If you are using VSCpde, do the following:
+
+
+
 ## Files
 
 1. **settings_app.py**  
@@ -53,3 +74,6 @@ Again, co-pilot just made stuff up.
 - Code lack any real error handling.
 - Missing a lot of unit tests.
 - GUI isn't nice at all. Even with themes.
+- In Kivy, the default scrollbar drag direction follows natural scrolling — dragging the scrollbar thumb up scrolls up, 
+  and dragging it down scrolls down. Reversing that is not supported out-of-the-box.
+- In Kivy window, buttons are only sometimes responsive. Not everywhere is clickable?
