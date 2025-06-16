@@ -19,7 +19,7 @@ class FileChooserPopup(BoxLayout):
 
         self.add_widget(button_row)
         
-        self.file_chooser = FileChooserListView(size_hint=(1, 0.9), dirselect=True, path="/home/roy/git")
+        self.file_chooser = FileChooserListView(size_hint=(1, 0.9), dirselect=True, path=None)
         self.add_widget(self.file_chooser)
 
         
