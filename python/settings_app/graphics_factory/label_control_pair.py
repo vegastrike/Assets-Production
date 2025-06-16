@@ -3,6 +3,10 @@ import tkinter.ttk as ttk
 from graphics_factory.graphic_attributes import GraphicAttributes 
 
 import game_config as gc
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
+from kivy.uix.checkbox import CheckBox
+from kivy.properties import BooleanProperty
 
 class AbstractLabelControlPair:
     # An abstract class to hold shared code for below pairs
@@ -37,23 +41,26 @@ class LabelCheckboxPair(AbstractLabelControlPair):
             print("No key set for this control pair, cannot update config.")
 
 class BoolLeafGui():
-    def __init__(self, parent: tk.Frame, leaf:gc.ConfigLeaf):
+    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, on_toggle = None):
         self.leaf = leaf
 
-        frame_row = ttk.Frame(parent)
-        frame_row.pack(padx=10)
+        frame_row = BoxLayout(orientation='horizontal', padding=10, spacing=10)
+        parent.add_widget(frame_row)
 
-        label = ttk.Label(frame_row, text=f"{leaf.key}:")
-        label.pack(padx=10)
+        label = Label(text=f"{leaf.key}:")
+        frame_row.add_widget(label)
 
-        self.toggle_var = tk.BooleanVar(value=leaf.value)
-        toggle_button = ttk.Checkbutton(frame_row, variable=self.toggle_var)
-        toggle_button.pack(padx=10)
+        self.toggle_var = BooleanProperty(leaf.value)
+        toggle_button = CheckBox(active=self.toggle_var)
+        frame_row.add_widget(toggle_button)
 
-        self.toggle_var.trace_add("write", lambda *args: self.on_change())
+        
+
+        if on_toggle:
+            toggle_button.bind(active=on_toggle)
 
     def on_change(self):
-        self.leaf.value = self.toggle_var.get()
+        self.leaf.value = self.toggle_var
         self.leaf.set_dirty(self.leaf.value != self.leaf.original_value)
 
 # TODO: figure out how to differentiate int from float

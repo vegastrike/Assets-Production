@@ -24,12 +24,13 @@ CONFIG_FILE_NAME = "config.json"
 # This would allow changes in a leaf to propagate upward.
 
 
+
 class ConfigBranch():
     def __init__(self, parent, key: str, asset_dict: dict, user_dict: dict = None):
         self.parent: ConfigBranch = parent
         self.key: str = key
         self.value = {}
-        self.dirty: bool = False  # Indicates if this branch has been modified by the user
+        self.dirty = []  # A list of all dirty leaves
 
         for key, value in asset_dict.items():
             # Branch
@@ -37,7 +38,6 @@ class ConfigBranch():
                 # We have a user branch
                 if user_dict != None and key in user_dict:
                     self.value[key] = ConfigBranch(parent = self, key = key, asset_dict = value, user_dict = user_dict[key])
-                    dirty = True
                 # No user branch
                 else:
                     self.value[key] = ConfigBranch(parent = self, key = key, asset_dict = value)
@@ -46,15 +46,26 @@ class ConfigBranch():
                 # We have a user leaf
                 if user_dict != None and key in user_dict:
                     self.value[key] = ConfigLeaf(parent = self, key = key, value = user_dict[key], original_value = value)
-                    dirty = True
                 # No user branch
                 else:
                     self.value[key] = ConfigLeaf(parent = self, key = key, value = value, original_value = value)
 
-    def set_dirty(self, dirty: bool):
-        self.dirty = dirty
-        if dirty and self.parent:
-            self.parent.set_dirty(True)
+    def is_dirty(self):
+        return len(self.dirty)
+
+    def set_dirty(self, leaf):
+        if leaf not in self.dirty:
+            self.dirty.append(leaf)
+
+            if self.parent:
+                self.parent.set_dirty(leaf=leaf)
+
+    def set_clean(self, leaf):
+        if leaf in self.dirty:
+            self.dirty.remove(leaf)
+
+            if self.parent:
+                self.parent.set_clean(leaf=leaf)
 
     # Recursive get - gets the underlying value
     def get(self, key: list[str]):
@@ -83,7 +94,7 @@ class ConfigBranch():
     def get_changes_dictionary(self):
         dict = {}
         for key, value in self.value.items():
-            if not value.dirty:
+            if value.is_dirty():
                 continue
 
             if isinstance(value, ConfigBranch):
@@ -91,7 +102,7 @@ class ConfigBranch():
             elif isinstance(value, ConfigLeaf):
                 dict[key] = value.value
         return dict
-        
+    
     # Recursive has_key
     def has_key(self, key: list[str]):
         if not key or len(key) == 0:
@@ -106,9 +117,7 @@ class ConfigBranch():
     # Recursive set
     def set(self, key: list[str], new_value):
         if len(key) == 1:
-            self.value[key[0]].value = new_value
-            self.value[key[0]].dirty = True
-            self.dirty = True
+            self.value[key[0]].set(new_value)
             return
         
         if key[0] not in self.value:
@@ -116,7 +125,16 @@ class ConfigBranch():
             raise KeyError(f"{key[0]} not found in ConfigBranch. Cannot set value {new_value}.")
         
         self.value[key[0]].set(key[1:], new_value)
-        self.dirty = True
+
+    # Get path upward. e.g. if 'warp_no_cost' return ['warp', 'warp_no_cost']
+    def get_path(self, path = None):
+        path = path or []
+        if self.key is not None:
+            path.insert(0, self.key)
+        if self.parent:
+            return self.parent.get_path(path)
+        return path
+
 
     def print(self, tabs = ""):
         output = f"{tabs}{self.key}:\n"
@@ -137,25 +155,32 @@ class ConfigLeaf():
         self.original_value = original_value  # Store the original value for comparison
         self.dirty = False  # Indicates if this leaf has been modified by the user
 
-    def override_value(self, new_value):
+    def is_dirty(self):
+        return self.dirty
+
+    def set(self, new_value):
         if new_value != self.original_value:
             self.set_dirty(True)
         else:
             # We can't traverse up for false, as other leaves may also be dirty
-            self.dirty = False
+            self.set_dirty(False)
         self.value = new_value
 
     def set_dirty(self, dirty: bool):
         self.dirty = dirty
-        if dirty and self.parent:
-            self.parent.set_dirty(True)
+        if self.parent:
+            if dirty:
+                self.parent.set_dirty(self)
+            else:
+                self.parent.set_clean(self)
 
     # Returns a string for the recursion to add to the print function
     def print(self, tabs = ""):
         inner_text = f"(original: {self.original_value})" if self.original_value != self.value else ""
         dirty = "dirty" if self.dirty else ""
         return f"{tabs}{self.key}: {self.value} {inner_text} {dirty}\n"
-
+       
+    
 class GameConfig(ConfigBranch):
     def __init__(self, assets_config_filename: str, assets_config: dict,
                  user_config_filename: str = None, user_config: dict = None):

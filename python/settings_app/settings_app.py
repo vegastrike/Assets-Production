@@ -1,7 +1,7 @@
 import os_utils
 import platform
 
-from main_window import MainWindow
+from main_app import MainApp
 from setup_folders import check_config_file_paths
 import app_config as ac
 import game_config as gc
@@ -22,7 +22,7 @@ if __name__ == "__main__":
         os_utils.change_to_python_settings_app_folder()
 
         # Create the main window
-        main_window = MainWindow()
+        MainApp().run()
     else:
         print("Failed to configure file paths. Exiting.")
 

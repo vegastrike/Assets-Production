@@ -1,74 +1,97 @@
-import tkinter as tk
-import tkinter.ttk as ttk
-
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
+from kivy.uix.scrollview import ScrollView
+from kivy.uix.button import Button
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.widget import Widget
+from kivy.uix.relativelayout import RelativeLayout
+from kivy.core.window import Window
+from kivy.clock import Clock
 
 import graphics_factory.label_control_pair as label_control_pair
 import graphics_factory.graphic_attributes as graphic_attributes
+import graphics_factory.config_pane as config_pane
 
 import game_config as gc
 
 from config_to_gui import generate_first_level_section
-from graphics_factory.scrollable_frame import ScrollableFrame
 
-class AdvancedTab:
-    def __init__(self, parent):
-        self.parent = parent
+
+class AdvancedTab(BoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.orientation = 'horizontal'
         self.tab_name = "Advanced"
-        
-        self.frame = ttk.Frame(parent)
 
-        # Create two frames horizontally
-        left_frame = ttk.Frame(self.frame)
-        left_frame.configure(width=200, height=1000)
-        left_frame.grid(row=0, column=0, sticky="nsew")
-        left_frame.columnconfigure(0, weight=1) # stack widgets vertically
+        # Wrap in a ScrollView so layout can expand properly
+        self.scroll = ScrollView(size_hint=(1, 1))
 
-        left_inner_frame = ScrollableFrame(left_frame)
+        # ConfigPane
+        self.config_pane = None
 
-        self.right_frame = ttk.Frame(self.frame)
-        self.right_frame.grid(row=0, column=1, sticky="nsew")
-        self.right_frame.config(borderwidth=2, relief="solid") # Add border
-        self.right_frame.columnconfigure(0, weight=1) # stack widgets vertically
+        # Create the main navigation frame - displays config sections in a grid
+        self.main_frame = GridLayout(cols=4, size_hint=(1.0,1.0))
+        self.main_frame.bind(minimum_height=self.main_frame.setter('height'))
 
-        # Configure grid weights for proper resizing
-        self.frame.columnconfigure(0, weight=1, minsize=150)
-        self.frame.columnconfigure(1, weight=5)
-        self.frame.rowconfigure(0, weight=1)
-
+        self.links = []
 
         # Populate the left frame with config data
         for section, values in gc.game_config.value.items():
-            label = ttk.Label(left_inner_frame, text=section, font=("Arial", 12))
-            label.pack(anchor="w", padx=10, pady=5)
-            label.bind("<Button-1>", self.on_label_click)
-            
+            btn = Button(
+                text=section,
+                size_hint_x=None,
+                width=100,
+                background_normal='',
+                background_color=(0, 0, 0, 0),
+                markup=True
+            )
+            btn.bind(on_press=self.on_label_click)
+            self.links.append(btn)
+            self.main_frame.add_widget(btn)
 
-    def on_label_click(self, event):
-        text = event.widget.cget('text')
-        self.generate_right_frame(text)
-        print(f"Clicked on section: {text}")
+        self.scroll.add_widget(self.main_frame)
+        self.add_widget(self.scroll)
 
-    def generate_right_frame(self, section_name: str):
-        if self.right_frame:
-            self.right_frame.destroy()
+        # Bind mouse position after layout is on screen
+        Clock.schedule_once(lambda dt: Window.bind(mouse_pos=self.on_mouse_move), 0)
 
-        self.right_frame = ttk.Frame(self.frame)
-        self.right_frame.configure(width=600, height=1000)
-        self.right_frame.grid(row=0, column=1, sticky="nsew")
-        self.right_frame.config(borderwidth=2, relief="solid") # Add border
-        self.right_frame.columnconfigure(0, weight=1) # stack widgets vertically
+    def on_mouse_move(self, window, pos):
+        for btn in self.links:
+            if btn.collide_point(*btn.to_widget(*pos)):
+                if not btn.text.startswith("[u]"):
+                    btn.text = f"[u]{btn.text}[/u]"
+            else:
+                if btn.text.startswith("[u]"):
+                    btn.text = btn.text.replace("[u]", "").replace("[/u]", "")
 
-        # Populate the right frame with the first level section data
-        section: gc.ConfigBranch = gc.game_config.get_object([section_name])
-        if not section:
+    def on_label_click(self, instance):
+        section_name = instance.text.replace("[u]", "").replace("[/u]", "")
+        print(f"Clicked on section: {section_name}")
+
+        branch = gc.game_config.get_object([section_name])
+        if not branch:
+            print(f"Branch {branch} not found.")
             return
-        generate_first_level_section(self.right_frame, section)
-    
-        # Configure grid weights for proper resizing
-        self.frame.columnconfigure(0, weight=1)
-        self.frame.columnconfigure(1, weight=5)
-        self.frame.rowconfigure(0, weight=1)
-
-    
-
         
+        self.config_pane = config_pane.ConfigPane(branch=branch, navigate=self.navigate)
+
+        self.scroll.remove_widget(self.main_frame)
+        self.scroll.add_widget(self.config_pane)
+
+    def navigate(self, instance):
+        section_name = instance.text.replace("[u]", "").replace("[/u]", "")
+        print(f"Clicked on section: {section_name}")
+
+        if section_name == 'Home':
+            self.scroll.remove_widget(self.config_pane)
+            self.scroll.add_widget(self.main_frame)
+            return
+
+        branch = gc.game_config.get_object([section_name])
+        if not branch:
+            print(f"Branch {branch} not found.")
+            return
+        
+        self.scroll.remove_widget(self.config_pane)
+        self.config_pane = config_pane.ConfigPane(branch=branch, navigate=self.navigate)
+        self.scroll.add_widget(self.config_pane)
