@@ -94,7 +94,7 @@ class ConfigBranch():
     def get_changes_dictionary(self):
         dict = {}
         for key, value in self.value.items():
-            if value.is_dirty():
+            if not value.is_dirty():
                 continue
 
             if isinstance(value, ConfigBranch):
@@ -137,7 +137,7 @@ class ConfigBranch():
 
 
     def print(self, tabs = ""):
-        output = f"{tabs}{self.key}:\n"
+        output = f"{tabs}{self.key} { '(dirty)' if self.is_dirty() else ''}:\n"
         for key, value in self.value.items():
             output += value.print(tabs + "\t")
         if self.parent:
@@ -153,7 +153,7 @@ class ConfigLeaf():
         self.key = key
         self.value = value
         self.original_value = original_value  # Store the original value for comparison
-        self.dirty = False  # Indicates if this leaf has been modified by the user
+        self.set_dirty(value != original_value)  # Indicates if this leaf has been modified by the user
 
     def is_dirty(self):
         return self.dirty
@@ -253,6 +253,8 @@ def load_game_config():
         assets_config=assets_config,
         user_config=user_config
     )
+
+    game_config.print()
 
 # Test Code
 if __name__ == "__main__":

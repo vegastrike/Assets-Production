@@ -1,6 +1,11 @@
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.filechooser import FileChooserListView
+from kivy.uix.spinner import Spinner
+
+import os
+import platform
+import string
 
 class FileChooserPopup(BoxLayout):
     def __init__(self, on_selection, **kwargs):
@@ -19,10 +24,29 @@ class FileChooserPopup(BoxLayout):
 
         self.add_widget(button_row)
         
-        self.file_chooser = FileChooserListView(size_hint=(1, 0.9), dirselect=True, path=None)
-        self.add_widget(self.file_chooser)
+        # List available drives for windows
+        if platform.system().lower() == 'windows':
+            drives = [f"{d}:/" for d in string.ascii_uppercase if os.path.exists(f"{d}:/")]
+
+            self.drive_spinner = Spinner(
+                text=drives[0],
+                values=drives,
+                size_hint=(1, None),
+                height=40
+            )
+            self.drive_spinner.bind(text=self.switch_drive)
+            self.add_widget(self.drive_spinner)
 
         
+
+        self.file_chooser = FileChooserListView(size_hint=(1, 0.9), dirselect=True)
+        if platform.system().lower() == 'windows':
+            self.file_chooser.path = self.drive_spinner.text
+        self.add_widget(self.file_chooser)
+        
+
+    def switch_drive(self, spinner, text):
+        self.file_chooser.path = text
 
     def on_select(self, instance):
         if self.on_selection and len(self.file_chooser.selection) > 0:

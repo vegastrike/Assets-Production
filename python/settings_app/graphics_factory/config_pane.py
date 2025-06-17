@@ -11,6 +11,7 @@ import json
 sys.path.append('/home/roy/git/Assets-Production/python/settings_app')
 
 import game_config as gc
+from kivy.graphics import Color, Rectangle
 
 import graphics_factory.breadcrumbs as breadcrumbs
 import graphics_factory.label_control_pair as label_control_pair
@@ -18,26 +19,41 @@ import graphics_factory.label_control_pair as label_control_pair
 
 class ConfigPane(BoxLayout):
     def __init__(self, branch:gc.ConfigBranch, navigate):
-        super().__init__()
+        super().__init__(size_hint=(1.0,1.0))
 
         self.branch = branch
         self.navigate = navigate
 
         self.orientation = 'vertical'
         self.padding = 10
-        self.spacing = 10
+        # self.spacing = 10
+       
+
+        # Set background color to pink
+        # with self.canvas.before:
+        #     Color(1, 0.75, 0.8, 1)  # RGBA for pink
+        #     self.rect = Rectangle(size=self.size, pos=self.pos)
+        
+        # Update rectangle size and position on layout changes
+        # self.bind(size=self._update_rect, pos=self._update_rect)
+
 
         # Title
-        title_label = Label(text=self.branch.key.upper(), font_size=24, size_hint=(1, None), height=50)
+        title_label = Label(text=self.branch.key.upper(), font_size=24)
         self.add_widget(title_label)
 
         # Breadcrumb
         self.breadcrumbs = breadcrumbs.Breadcrumbs(branch=branch, navigate=navigate)
         self.add_widget(self.breadcrumbs)
-        self.add_widget(Label(size_hint=(1, None), height=10))  # Padding from below
+        self.add_widget(Label())  # Padding from below
 
         # Configuration
+        limit = 10
+        count = 0
         for key, value in self.branch.value.items():
+            if count == limit:
+                break
+
             if isinstance(value, gc.ConfigBranch):
                 print(f"Branch: {value}")
             elif isinstance(value, gc.ConfigLeaf):
@@ -47,21 +63,23 @@ class ConfigPane(BoxLayout):
                     print(f"Leaf: boolean value {leaf.key} {leaf.value}")
                     label_control_pair.BoolLeafGui(parent=self, leaf=leaf)
                 elif isinstance(leaf.value, str):
-                    self.add_widget(Label(text=f"{leaf.key} {leaf.value}"))
+                    label_control_pair.TextLeafGui(parent=self, leaf=leaf)
                     print(f"Leaf: string value {leaf.value}")
                 elif isinstance(leaf.value, int):
-                    self.add_widget(Label(text=f"{leaf.key} {leaf.value}"))
+                    label_control_pair.TextLeafGui(parent=self, leaf=leaf)
                     print(f"Leaf: int value {leaf.value}")
                 elif isinstance(leaf.value, float):
-                    self.add_widget(Label(text=f"{leaf.key} {leaf.value}"))
+                    label_control_pair.TextLeafGui(parent=self, leaf=leaf)
                     print(f"Leaf: float value {leaf.value}")
             else:
                 print(f"Illegal value: {value}")
 
-            self.add_widget(Label(size_hint=(1, None), height=10))  # Padding from below
+            count += 1
+
         
-
-
+    # def _update_rect(self, instance, value):
+    #     self.rect.size = instance.size
+    #     self.rect.pos = instance.pos
 
 # Test Code
 class ConfigPaneApp(App):

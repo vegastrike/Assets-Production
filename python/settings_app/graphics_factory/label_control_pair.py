@@ -7,6 +7,8 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.checkbox import CheckBox
 from kivy.properties import BooleanProperty
+from kivy.graphics import Color, Rectangle
+from kivy.uix.textinput import TextInput
 
 class AbstractLabelControlPair:
     # An abstract class to hold shared code for below pairs
@@ -40,53 +42,98 @@ class LabelCheckboxPair(AbstractLabelControlPair):
         else:
             print("No key set for this control pair, cannot update config.")
 
-class BoolLeafGui():
+class BoolLeafGui(BoxLayout):
     def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, on_toggle = None):
+        super().__init__(orientation='horizontal')
         self.leaf = leaf
 
-        frame_row = BoxLayout(orientation='horizontal', padding=10, spacing=10)
-        parent.add_widget(frame_row)
+        parent.add_widget(self)
 
-        label = Label(text=f"{leaf.key}:")
-        frame_row.add_widget(label)
+        label = Label(text=f"{leaf.key}:", halign="left")
+        label.bind(size=self.update_text_size)
+        self.add_widget(label)
 
-        self.toggle_var = BooleanProperty(leaf.value)
-        toggle_button = CheckBox(active=self.toggle_var)
-        frame_row.add_widget(toggle_button)
-
-        
+        self.toggle_button = CheckBox(active=self.leaf.value)
+        self.add_widget(self.toggle_button)
 
         if on_toggle:
-            toggle_button.bind(active=on_toggle)
+            self.toggle_button.bind(active=on_toggle)
+        else:
+            self.toggle_button.bind(active=self.on_change)
 
-    def on_change(self):
-        self.leaf.value = self.toggle_var
-        self.leaf.set_dirty(self.leaf.value != self.leaf.original_value)
+        # Set background color to pink
+        # with self.canvas.before:
+        #     Color(0.2, 0.75, 0.8, 1)  # RGBA for pink
+        #     self.rect = Rectangle(size=self.size, pos=self.pos)
+        
+        # Update rectangle size and position on layout changes
+        # self.bind(size=self._update_rect, pos=self._update_rect)
+
+    def on_change(self, checkbox, value):
+        print(f"Checkbox {checkbox} {value} replacing {self.leaf.value}")
+        self.leaf.set(value)
+
+    def update_text_size(self, instance, size):
+        instance.text_size = size
+
+    # def _update_rect(self, instance, value):
+    #     self.rect.size = instance.size
+    #     self.rect.pos = instance.pos
 
 # TODO: figure out how to differentiate int from float
 # isinstance(value, int) returns True only if value is an integer (e.g., 5, -3, 0).
 # isinstance(value, float) returns True only if value is a floating-point number (e.g., 3.14, -2.5, 0.0).
 # Floats that represent integers - 5.0 is not considered an integer by isinstance(value, int).
 # This means config.json needs to be sanitised for this to work properly.
-class TextLeafGui():
-    def __init__(self, parent: tk.Frame, leaf:gc.ConfigLeaf):
+class TextLeafGui(BoxLayout):
+    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, on_change = None):
+        super().__init__(orientation='horizontal')
         self.leaf = leaf
 
-        frame_row = ttk.Frame(parent)
-        frame_row.pack(pady=10)
+        parent.add_widget(self)
 
-        label = ttk.Label(frame_row, text=f"{leaf.key}:")
-        label.pack(padx=10)
+        label = Label(text=f"{leaf.key}:", halign="left")
+        label.bind(size=self.update_text_size)
+        self.add_widget(label)
 
-        self.text_var = tk.StringVar(value=leaf.value)
-        toggle_button = ttk.Entry(frame_row, textvariable=self.text_var)
-        toggle_button.pack(padx=10)
+        self.text_field = TextInput(text=str(self.leaf.value), multiline=False)
+        self.add_widget(self.text_field)
 
-        self.text_var.trace_add("write", lambda *args: self.on_change())
+        if on_change:
+            self.text_field.bind(text=on_change)
+        else:
+            self.text_field.bind(text=self.on_change)
 
-    def on_change(self):
-        self.leaf.value = self.text_var.get()
-        self.leaf.set_dirty(self.leaf.value != self.leaf.original_value)
+        # Set background color to pink
+        # with self.canvas.before:
+        #     Color(0.2, 0.75, 0.8, 1)  # RGBA for pink
+        #     self.rect = Rectangle(size=self.size, pos=self.pos)
+        
+        # Update rectangle size and position on layout changes
+        # self.bind(size=self._update_rect, pos=self._update_rect)
+
+    def on_change(self, instance, value):
+        print(f"Text field changed from {self.leaf.value} to {value}")
+        try:
+            # Attempt to cast the value to the type of the leaf's original value
+            if isinstance(self.leaf.value, int):
+                self.leaf.set(int(value))
+            elif isinstance(self.leaf.value, float):
+                self.leaf.set(float(value))
+            else:
+                self.leaf.set(value)
+        except ValueError:
+            print(f"Invalid value: {value}. Could not cast to {type(self.leaf.value).__name__}.")
+
+    def update_text_size(self, instance, size):
+        instance.text_size = size
+        
+    # def _update_rect(self, instance, value):
+    #     self.rect.size = instance.size
+    #     self.rect.pos = instance.pos
+    # 
+
+
 
 class LabelComboboxPair(AbstractLabelControlPair):
     def __init__(self, parent: tk.Frame, key:str, text: str, attributes: GraphicAttributes, 

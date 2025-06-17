@@ -9,7 +9,7 @@ import game_config as gc
 
 class Breadcrumbs(BoxLayout):
     def __init__(self, branch:gc.ConfigBranch, navigate):
-        super().__init__(orientation='horizontal', spacing=5, padding=5)
+        super().__init__(orientation='horizontal', spacing=5, padding=5, size_hint_y=None, height=40)
 
         self.branch = branch
         self.navigate = navigate
