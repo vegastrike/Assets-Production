@@ -17,6 +17,7 @@ import game_config as gc
 
 from config_to_gui import generate_first_level_section
 
+import key_utils
 
 class AdvancedTab(BoxLayout):
     def __init__(self, **kwargs):
@@ -48,7 +49,7 @@ class AdvancedTab(BoxLayout):
         # Populate the left frame with config data
         for section, values in gc.game_config.value.items():
             btn = Button(
-                text=section,
+                text=key_utils.format_key(section),
                 size_hint=(0.25,0.125),
                 background_normal='',
                 background_color=(0, 0, 0, 0),

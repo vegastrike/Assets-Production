@@ -16,6 +16,7 @@ from kivy.graphics import Color, Rectangle
 import graphics_factory.breadcrumbs as breadcrumbs
 import graphics_factory.label_control_pair as label_control_pair
 
+import key_utils
 
 class ConfigPane(BoxLayout):
     def __init__(self, branch:gc.ConfigBranch, navigate):
@@ -39,7 +40,7 @@ class ConfigPane(BoxLayout):
 
 
         # Title
-        title_label = Label(text=self.branch.key.upper(), font_size=24)
+        title_label = Label(text=key_utils.format_key(self.branch.key).upper(), font_size=24)
         self.add_widget(title_label)
 
         # Breadcrumb

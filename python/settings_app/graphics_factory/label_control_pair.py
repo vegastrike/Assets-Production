@@ -10,6 +10,8 @@ from kivy.properties import BooleanProperty
 from kivy.graphics import Color, Rectangle
 from kivy.uix.textinput import TextInput
 
+import key_utils
+
 class AbstractLabelControlPair:
     # An abstract class to hold shared code for below pairs
 
@@ -49,7 +51,7 @@ class BoolLeafGui(BoxLayout):
 
         parent.add_widget(self)
 
-        label = Label(text=f"{leaf.key}:", halign="left")
+        label = Label(text=f"{key_utils.format_key(leaf.key)}:", halign="left")
         label.bind(size=self.update_text_size)
         self.add_widget(label)
 
@@ -92,7 +94,7 @@ class TextLeafGui(BoxLayout):
 
         parent.add_widget(self)
 
-        label = Label(text=f"{leaf.key}:", halign="left")
+        label = Label(text=f"{key_utils.format_key(leaf.key)}:", halign="left")
         label.bind(size=self.update_text_size)
         self.add_widget(label)
 

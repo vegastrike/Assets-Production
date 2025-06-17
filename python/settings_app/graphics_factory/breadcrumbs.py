@@ -7,6 +7,8 @@ from kivy.clock import Clock
 
 import game_config as gc
 
+import key_utils
+
 class Breadcrumbs(BoxLayout):
     def __init__(self, branch:gc.ConfigBranch, navigate):
         super().__init__(orientation='horizontal', spacing=5, padding=5, size_hint_y=None, height=40)
@@ -14,6 +16,7 @@ class Breadcrumbs(BoxLayout):
         self.branch = branch
         self.navigate = navigate
         self.path = branch.get_path()
+        self.path = list(map(lambda component: key_utils.format_key(component), self.path))
         self.path.insert(0, 'Home')
         self.links = []
 
