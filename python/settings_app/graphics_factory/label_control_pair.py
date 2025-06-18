@@ -9,53 +9,25 @@ from kivy.uix.checkbox import CheckBox
 from kivy.properties import BooleanProperty
 from kivy.graphics import Color, Rectangle
 from kivy.uix.textinput import TextInput
+from kivy.uix.spinner import Spinner
 
 import key_utils
 
-class AbstractLabelControlPair:
-    # An abstract class to hold shared code for below pairs
 
-    def __init__(self, parent: tk.Frame, key:list[str], text: str):
-        self.parent = parent
-        self.key: list[str] = key
-        self.text: str = text
-    
-class LabelCheckboxPair(AbstractLabelControlPair):
-    def __init__(self, parent: tk.Frame, key:list[str], text: str,  
-                 attributes: GraphicAttributes, initial_value: bool = False):
-        super().__init__(parent, key, text)
-        frame_row = ttk.Frame(parent)
-        frame_row.pack(pady=attributes.padding_y)
 
-        label = ttk.Label(frame_row, text=f"{text}:", font=attributes.font)
-        label.pack(side=attributes.alignment, padx=attributes.padding_x)
-
-        self.toggle_var = tk.BooleanVar(value=initial_value)
-        toggle_button = ttk.Checkbutton(frame_row, variable=self.toggle_var)
-        toggle_button.pack(side=attributes.alignment, padx=attributes.padding_x)
-
-        self.toggle_var.trace_add("write", lambda *args: self._on_change())
-
-    def _on_change(self):
-        # This method is called when the combobox value changes
-        # It updates the config with the new value
-        if self.key:
-            self.config.set(self.key, self.toggle_var.get())
-        else:
-            print("No key set for this control pair, cannot update config.")
 
 class BoolLeafGui(BoxLayout):
     def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, on_toggle = None):
-        super().__init__(orientation='horizontal')
+        super().__init__(orientation='horizontal', height=70, size_hint_y=None)
         self.leaf = leaf
 
         parent.add_widget(self)
 
-        label = Label(text=f"{key_utils.format_key(leaf.key)}:", halign="left")
+        label = Label(text=f"{key_utils.format_key(leaf.key)}:", valign='middle', halign="left", height=70)
         label.bind(size=self.update_text_size)
         self.add_widget(label)
 
-        self.toggle_button = CheckBox(active=self.leaf.value)
+        self.toggle_button = CheckBox(active=self.leaf.value, height=70)
         self.add_widget(self.toggle_button)
 
         if on_toggle:
@@ -89,22 +61,24 @@ class BoolLeafGui(BoxLayout):
 # This means config.json needs to be sanitised for this to work properly.
 class TextLeafGui(BoxLayout):
     def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, on_change = None):
-        super().__init__(orientation='horizontal')
+        super().__init__(orientation='horizontal', height=70, size_hint_y=None)
         self.leaf = leaf
 
         parent.add_widget(self)
 
-        label = Label(text=f"{key_utils.format_key(leaf.key)}:", halign="left")
+        label = Label(text=f"{key_utils.format_key(leaf.key)}:", valign='middle', halign="left")
         label.bind(size=self.update_text_size)
         self.add_widget(label)
 
-        self.text_field = TextInput(text=str(self.leaf.value), multiline=False)
+        self.text_field = TextInput(text=str(self.leaf.value), multiline=False, size_hint=(0.8, None), height = 45,
+                                       halign='center')
         self.add_widget(self.text_field)
 
         if on_change:
             self.text_field.bind(text=on_change)
         else:
             self.text_field.bind(text=self.on_change)
+
 
         # Set background color to pink
         # with self.canvas.before:
@@ -133,103 +107,40 @@ class TextLeafGui(BoxLayout):
     # def _update_rect(self, instance, value):
     #     self.rect.size = instance.size
     #     self.rect.pos = instance.pos
-    # 
+
+        
+        
 
 
+class SpinnerLeafGui(BoxLayout):
+    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, initial_value:str, values: list[str], on_change = None, title = None):
+        super().__init__(orientation='horizontal', height=70, size_hint_y=None)
+        self.leaf = leaf
+        title  = title or f"{key_utils.format_key(leaf.key)}:"
 
-class LabelComboboxPair(AbstractLabelControlPair):
-    def __init__(self, parent: tk.Frame, key:str, text: str, attributes: GraphicAttributes, 
-                    options: list, initial_value: str = None, on_change=None):
-        super().__init__(parent, key, text)
-        frame_row = tk.Frame(parent, bg=attributes.background)
-        frame_row.pack(pady=attributes.padding_y)
+        parent.add_widget(self)
 
-        label = tk.Label(frame_row, text=f"{text}:", fg=attributes.foreground, 
-                            bg=attributes.background, font=attributes.font)
-        label.pack(side=attributes.alignment, padx=attributes.padding_x)
+        label = Label(text=title, valign='middle', halign="left", height = 70)
+        label.bind(size=self.update_text_size)
+        self.add_widget(label)
 
-        combobox_var = tk.StringVar(value=initial_value)
-        combobox = tk.OptionMenu(frame_row, combobox_var, *options)
-        combobox.config(bg=attributes.background, fg=attributes.foreground, 
-                        font=attributes.font, activebackground=attributes.background)
-        combobox.pack(side=attributes.alignment, padx=attributes.padding_x)
+        self.screens_spinner = Spinner(text=initial_value, values=values, size_hint=(0.8, None), height = 45,
+                                       halign='center')
+        self.add_widget(self.screens_spinner)
 
         if on_change:
-            # Call the callback function to effect other controls
-            # Used to change the resolution control when selecting a different screen
-            combobox_var.trace_add("write", lambda *args: on_change(combobox_var.get()))
+            self.screens_spinner.bind(text=on_change)
+        else:
+            self.screens_spinner.bind(text=self.on_change)
 
+    def update_text_size(self, instance, size):
+        instance.text_size = size
 
-# A special case for resolution combo box, which has two keys
-class ResolutionPair(AbstractLabelControlPair):
-    def __init__(self, parent: tk.Frame, first_key:list[str], 
-                 second_key:list[str], text: str, attributes: GraphicAttributes, 
-                    resolutions: dict[str, (int,int)], initial_value: str):
-        super().__init__(parent=parent, key=None, text=text)
-        self.first_key = first_key
-        self.second_key = second_key
-        self.resolutions = resolutions
-
-        frame_row = tk.Frame(parent, bg=attributes.background)
-        frame_row.pack(pady=attributes.padding_y)
-
-        label = tk.Label(frame_row, text=f"{text}:", fg=attributes.foreground, 
-                            bg=attributes.background, font=attributes.font)
-        label.pack(side=attributes.alignment, padx=attributes.padding_x)
-
-        self.combobox_var = tk.StringVar(value=initial_value)
-        combobox = tk.OptionMenu(frame_row, self.combobox_var, *resolutions.keys())
-        combobox.config(bg=attributes.background, fg=attributes.foreground, 
-                        font=attributes.font, activebackground=attributes.background)
-        combobox.pack(side=attributes.alignment, padx=attributes.padding_x)
-
-        self.combobox_var.trace_add("write", lambda *args: self._on_change())
-            
-
-    def _on_change(self):
-        key = self.combobox_var.get()
-        gc.game_config.set(self.first_key, self.resolutions[key][0]) 
-        gc.game_config.set(self.second_key, self.resolutions[key][1]) 
+    def on_change(self, instance, text):
+        self.leaf.set(new_value=text)
 
 
 # Test Code
 if __name__ == "__main__":
-
-    # Define some example attributes
-    attributes = GraphicAttributes(
-        background="#333333",
-        foreground="#FFFFFF",
-        font="Arial", 
-        font_size=12,
-        padding_x=10,
-        padding_y=5,
-        alignment=tk.LEFT
-    )
-
-    # Create the main application window
-    root = tk.Tk()
-    root.title("LabelCheckboxPair Example")
-    root.configure(bg=attributes.background)
-
-    # Create a frame to hold the widget
-    main_frame = tk.Frame(root, bg=attributes.background)
-    main_frame.pack(padx=20, pady=20)
-
-    # Create and display the LabelCheckboxPair
-    label_checkbox = LabelCheckboxPair(
-        parent=main_frame,
-        text="Enable Feature",
-        attributes=attributes,
-        initial_value=True
-    )
-
-    label_combo = LabelComboboxPair(
-        parent=main_frame,
-        text="Select Option",
-        attributes=attributes,
-        options=["Option 1", "Option 2", "Option 3"],
-        initial_value="Option 1"
-    )
-
-    # Start the Tkinter event loop
-    root.mainloop()
+    pass
+    

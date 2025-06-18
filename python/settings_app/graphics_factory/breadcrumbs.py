@@ -16,19 +16,19 @@ class Breadcrumbs(BoxLayout):
         self.branch = branch
         self.navigate = navigate
         self.path = branch.get_path()
-        self.path = list(map(lambda component: key_utils.format_key(component), self.path))
         self.path.insert(0, 'Home')
         self.links = []
 
         for i, folder in enumerate(self.path):
             btn = Button(
-                text=f"{folder}",
+                text=f"{key_utils.format_key(folder)}",
                 size_hint_x=None,
                 width=100,
                 background_normal='',
                 background_color=(0, 0, 0, 0),
                 markup=True
             )
+            btn.folder = folder
             btn.bind(on_press=self.navigate)
             self.links.append(btn)
             self.add_widget(btn)

@@ -1,21 +1,13 @@
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.label import Label
-from kivy.uix.scrollview import ScrollView
 from kivy.uix.button import Button
 from kivy.uix.gridlayout import GridLayout
-from kivy.uix.widget import Widget
-from kivy.uix.relativelayout import RelativeLayout
 from kivy.core.window import Window
 from kivy.clock import Clock
 from kivy.graphics import Color, Rectangle
 
-import graphics_factory.label_control_pair as label_control_pair
-import graphics_factory.graphic_attributes as graphic_attributes
 import graphics_factory.config_pane as config_pane
 
 import game_config as gc
-
-from config_to_gui import generate_first_level_section
 
 import key_utils
 
@@ -55,6 +47,7 @@ class AdvancedTab(BoxLayout):
                 background_color=(0, 0, 0, 0),
                 markup=True
             )
+            btn.key = section
             btn.bind(on_press=self.on_label_click)
             self.links.append(btn)
             self.main_frame.add_widget(btn)
@@ -80,11 +73,10 @@ class AdvancedTab(BoxLayout):
 
     def on_label_click(self, instance):
         section_name = instance.text.replace("[u]", "").replace("[/u]", "")
-        print(f"Clicked on section: {section_name}")
 
-        branch = gc.game_config.get_object([section_name])
+        branch = gc.game_config.get_object([instance.key])
         if not branch:
-            print(f"Branch {branch} not found.")
+            print(f"Branch {instance.key} not found.")
             return
         
         self.config_pane = config_pane.ConfigPane(branch=branch, navigate=self.navigate)
@@ -93,7 +85,7 @@ class AdvancedTab(BoxLayout):
         self.add_widget(self.config_pane)
 
     def navigate(self, instance):
-        section_name = instance.text.replace("[u]", "").replace("[/u]", "")
+        section_name = instance.folder
         print(f"Clicked on section: {section_name}")
 
         if section_name == 'Home':

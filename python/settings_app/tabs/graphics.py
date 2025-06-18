@@ -11,8 +11,8 @@ import os
 
 from os_utils import number_of_screens, resolution_for_screen
 import game_config as gc
-from graphics_factory.label_control_pair import BoolLeafGui
-
+from graphics_factory.label_control_pair import BoolLeafGui, SpinnerLeafGui
+from graphics_factory.divider import DividerLine
 
 class GraphicsTab(BoxLayout):
     selected_screen = StringProperty()
@@ -20,6 +20,7 @@ class GraphicsTab(BoxLayout):
 
     def __init__(self, **kwargs):
         super().__init__(orientation="vertical", **kwargs)
+        self.padding = 10
 
         self.tab_name = "Graphics"
 
@@ -49,6 +50,16 @@ class GraphicsTab(BoxLayout):
             gc.game_config.set(["graphics", "resolution_x"], self.screen_resolution[0])
             gc.game_config.set(["graphics", "resolution_y"], self.screen_resolution[1])
 
+
+        # Start adding widgets
+        # Title
+        title_label = Label(text="GRAPHICS", font_size=24, size_hint=(0.8, None), height = 80,
+                            halign='center')
+        self.add_widget(title_label)
+
+        # Divider
+        self.add_widget(DividerLine())
+
         # Full Screen
         full_screen_leaf = gc.game_config.get_object(["graphics", "full_screen"])
         if full_screen_leaf and isinstance(full_screen_leaf, gc.ConfigLeaf):
@@ -57,43 +68,38 @@ class GraphicsTab(BoxLayout):
             print(full_screen_leaf)
 
         # Screens
-        screens_layout = BoxLayout(orientation="horizontal", size_hint_y=None, height=40)
-        screens_label = Label(text="Screen", size_hint_x=0.7)
-        screens_spinner = Spinner(
-            text=self.selected_screen,
-            values=[screen.name for screen in self.screens],
-            size_hint_x=0.3,
-        )
-        screens_spinner.bind(text=self.on_change_screen)
-        screens_layout.add_widget(screens_label)
-        screens_layout.add_widget(screens_spinner)
-        self.add_widget(screens_layout)
+        screen_leaf = gc.game_config.get_object(["graphics", "screen"])
+        screen_layout = SpinnerLeafGui(parent=self, leaf=screen_leaf, initial_value=self.selected_screen,
+                                        values=[screen.name for screen in self.screens],
+                                        on_change=self.on_change_screen)
+
 
         # Resolutions
-        resolutions_layout = BoxLayout(orientation="horizontal", size_hint_y=None, height=40)
-        resolutions_label = Label(text="Resolution", size_hint_x=0.7)
-        resolutions_spinner = Spinner(
-            text=self.get_resolution_for_width(self.screen_resolution[0]),
-            values=list(self.available_resolutions_for_screen(0).keys()),
-            size_hint_x=0.3,
-        )
-        resolutions_spinner.bind(text=self.on_resolution_change)
-        resolutions_layout.add_widget(resolutions_label)
-        resolutions_layout.add_widget(resolutions_spinner)
-        self.add_widget(resolutions_layout)
+        self.resolution_x_leaf = gc.game_config.get_object(["graphics", "resolution_x"])
+        self.resolution_y_leaf = gc.game_config.get_object(["graphics", "resolution_y"])
+        self.resolution_layout = SpinnerLeafGui(parent=self, leaf=None,
+                                          initial_value=self.get_resolution_for_x_and_y(self.screen_resolution),
+                                          values=list(self.available_resolutions_for_screen(0).keys()),
+                                          on_change=self.on_resolution_change, title="Resolution:")
+
+        spacer = BoxLayout(size_hint_y=1)
+        self.add_widget(spacer)
 
     def on_full_screen_change(self, instance, value):
         gc.game_config.set(["graphics", "full_screen"], value)
 
     def on_change_screen(self, instance, screen_name):
         self.selected_screen = screen_name
-        self.screen_resolution = resolution_for_screen(self.get_index_for_screen(screen_name))
+        self.resolution_layout.text = self.get_resolution_for_x_and_y(self.screen_resolution)
+        self.resolution_layout.values = resolution_for_screen(self.get_index_for_screen(screen_name))
         gc.game_config.set(["graphics", "screen"], self.get_index_for_screen(screen_name))
 
     def on_resolution_change(self, instance, resolution_text):
+        print(f"New resolution {resolution_text}")
         resolution = self.all_resolutions[resolution_text]
-        gc.game_config.set(["graphics", "resolution_x"], resolution[0])
-        gc.game_config.set(["graphics", "resolution_y"], resolution[1])
+        print(f"New resolution {resolution}")
+        self.resolution_x_leaf.set(resolution[0])
+        self.resolution_y_leaf.set(resolution[1])
 
     def get_index_for_screen(self, screen_name):
         for index, screen in enumerate(self.screens):
@@ -109,9 +115,9 @@ class GraphicsTab(BoxLayout):
             if resolution[0] <= width and resolution[1] <= height
         }
 
-    def get_resolution_for_width(self, width):
+    def get_resolution_for_x_and_y(self, requested_resolution):
         for text, resolution in self.all_resolutions.items():
-            if resolution[0] == width:
+            if resolution[0] == requested_resolution[0] and resolution[1] == requested_resolution[1]:
                 return text
         return None
 

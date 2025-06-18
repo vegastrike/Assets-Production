@@ -26,6 +26,8 @@ class MainWindow(BoxLayout):
         graphics_tab_item = TabbedPanelItem(text=graphics_tab.tab_name)
         graphics_tab_item.add_widget(graphics_tab)
         self.notebook.add_widget(graphics_tab_item)
+        # Set the default tab to display graphics_tab
+        self.notebook.default_tab = graphics_tab_item
 
         # Add advanced tab
         advanced_tab = tabs.advanced.AdvancedTab()

@@ -15,6 +15,7 @@ from kivy.graphics import Color, Rectangle
 
 import graphics_factory.breadcrumbs as breadcrumbs
 import graphics_factory.label_control_pair as label_control_pair
+import graphics_factory.divider as divider
 
 import key_utils
 
@@ -47,6 +48,9 @@ class ConfigPane(BoxLayout):
         self.breadcrumbs = breadcrumbs.Breadcrumbs(branch=branch, navigate=navigate)
         self.add_widget(self.breadcrumbs)
         self.add_widget(Label())  # Padding from below
+
+        # Divider
+        self.add_widget(divider.DividerLine())
 
         # Configuration
         limit = 10
