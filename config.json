@@ -689,7 +689,7 @@
     "sparkle_engine_size_relative_to_ship": 0.1875,
     "sparkle_rate": 5.0,
     "specmap_with_reflection": true,
-    "splash_audio": "",
+    "splash_audio": "../music/aerapeace.ogg ../music/news1.ogg ../music/isopeace.ogg ../music/asteroids.ogg ../music/militarybase_p.ogg ../music/terranpeace.ogg ../music/industrialmixed.ogg ../music/snow.ogg ../music/terranpeace2.ogg ../music/terranbattle.ogg ../music/galacticbattle.ogg ../music/peace4.ogg ../music/aerathemebattle.ogg ../music/peace3.ogg ../music/battle5_p.ogg ../music/alienrockalectro.ogg ../music/cosmostation_crowded.ogg",
     "splash_screen": "vega_splash.ani",
     "split_dead_subunits": true,
     "star_allowable_sectors": "Vega Sol",
