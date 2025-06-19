@@ -119,7 +119,8 @@ class GraphicsTab(BoxLayout):
         for text, resolution in self.all_resolutions.items():
             if resolution[0] == requested_resolution[0] and resolution[1] == requested_resolution[1]:
                 return text
-        return None
+        print(f"get_resolution_for_x_and_y({requested_resolution}), resolution pair not found")
+        return "1024x768" #None
 
 
 class GraphicsApp(App):
