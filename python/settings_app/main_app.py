@@ -1,5 +1,6 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.tabbedpanel import TabbedPanel
 from kivy.uix.button import Button
 from kivy.uix.label import Label
@@ -9,6 +10,7 @@ import tabs.graphics
 import tabs.advanced
 
 import game_config as gc
+import graphics_factory.tooltip as tooltip
 
 
 class MainWindow(BoxLayout):
@@ -55,9 +57,13 @@ class MainWindow(BoxLayout):
         App.get_running_app().stop()
 
 
+
 class MainApp(App):
     def build(self):
-        return MainWindow()
+        tooltip.root_layout = FloatLayout()
+        main_layout = MainWindow()
+        tooltip.root_layout.add_widget(main_layout)
+        return tooltip.root_layout
 
 
 if __name__ == "__main__":

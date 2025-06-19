@@ -13,7 +13,7 @@ from kivy.uix.spinner import Spinner
 
 import key_utils
 
-
+from graphics_factory.tooltip import TooltipIcon
 
 
 class BoolLeafGui(BoxLayout):
@@ -60,13 +60,15 @@ class BoolLeafGui(BoxLayout):
 # Floats that represent integers - 5.0 is not considered an integer by isinstance(value, int).
 # This means config.json needs to be sanitised for this to work properly.
 class TextLeafGui(BoxLayout):
-    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, on_change = None):
+    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, on_change = None, tooltip = None):
         super().__init__(orientation='horizontal', height=70, size_hint_y=None)
         self.leaf = leaf
 
         parent.add_widget(self)
 
-        label = Label(text=f"{key_utils.format_key(leaf.key)}:", valign='middle', halign="left")
+        tooltip_text = tooltip or "This is a test tooltip"
+
+        label = TooltipIcon(text=f"{key_utils.format_key(leaf.key)} ", tooltip_text=tooltip_text, valign='middle', halign="left")
         label.bind(size=self.update_text_size)
         self.add_widget(label)
 
