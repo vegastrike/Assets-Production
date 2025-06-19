@@ -25,6 +25,8 @@ jobs:
             is-release:      1
           - os:              windows-2022
             is-release:      1
+          - os:              windows-2025
+            is-release:      1
 
     env:
       TAG_NAME: '${{ github.ref_name }}'
