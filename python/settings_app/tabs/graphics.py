@@ -89,10 +89,24 @@ class GraphicsTab(BoxLayout):
         gc.game_config.set(["graphics", "full_screen"], value)
 
     def on_change_screen(self, instance, screen_name):
+        if screen_name == None:
+            print(f"on_change_screen error. screen_name is None.")
+            return
+        
+        index = self.get_index_for_screen(screen_name)
+        if index == -1:
+            print(f"on_change_screen error. index is -1.")
+            return
+        
+        print(f"on_change_screen({screen_name}) => prvious {self.screen_resolution}")
+        print(f"on_change_screen({screen_name}) => {index}")
         self.selected_screen = screen_name
-        self.resolution_layout.text = self.get_resolution_for_x_and_y(self.screen_resolution)
-        self.resolution_layout.values = resolution_for_screen(self.get_index_for_screen(screen_name))
-        gc.game_config.set(["graphics", "screen"], self.get_index_for_screen(screen_name))
+        self.screen_resolution = (self.screens[index].width, self.screens[index].height)
+        print(f"on_change_screen({screen_name}) => {self.screen_resolution}")
+        self.resolution_layout.set_text(self.screen_resolution)
+        self.resolution_layout.set_values(resolution_for_screen(index))
+        
+        gc.game_config.set(["graphics", "screen"], index)
 
     def on_resolution_change(self, instance, resolution_text):
         print(f"New resolution {resolution_text}")
@@ -105,7 +119,7 @@ class GraphicsTab(BoxLayout):
         for index, screen in enumerate(self.screens):
             if screen.name == screen_name:
                 return index
-        return 0
+        return -1
 
     def available_resolutions_for_screen(self, index):
         width, height = resolution_for_screen(index)
@@ -116,12 +130,24 @@ class GraphicsTab(BoxLayout):
         }
 
     def get_resolution_for_x_and_y(self, requested_resolution):
+        default_resolution = "1024x768"
+        if requested_resolution[0]==0 or requested_resolution[1]==0:
+            print(f"get_resolution_for_x_and_y({requested_resolution}) error. Invalid resolution value")
+            return default_resolution
+        
         for text, resolution in self.all_resolutions.items():
             if resolution[0] == requested_resolution[0] and resolution[1] == requested_resolution[1]:
                 return text
         print(f"get_resolution_for_x_and_y({requested_resolution}), resolution pair not found")
-        return "1024x768" #None
+        return default_resolution
 
+    # Warning: This method is for testing only
+    def add_dummy_screen(self):
+        dummy = screeninfo.Monitor(x=0,y=0,width=1920,height=1080,name='dummy')
+        dummy.is_primary = True
+        self.screens[0].is_primary = False
+        self.screens.append(dummy)
+        print(self.screens)
 
 class GraphicsApp(App):
     def build(self):

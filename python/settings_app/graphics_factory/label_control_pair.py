@@ -126,14 +126,14 @@ class SpinnerLeafGui(BoxLayout):
         label.bind(size=self.update_text_size)
         self.add_widget(label)
 
-        self.screens_spinner = Spinner(text=initial_value, values=values, size_hint=(0.8, None), height = 45,
+        self.spinner = Spinner(text=initial_value, values=values, size_hint=(0.8, None), height = 45,
                                        halign='center')
-        self.add_widget(self.screens_spinner)
+        self.add_widget(self.spinner)
 
         if on_change:
-            self.screens_spinner.bind(text=on_change)
+            self.spinner.bind(text=on_change)
         else:
-            self.screens_spinner.bind(text=self.on_change)
+            self.spinner.bind(text=self.on_change)
 
     def update_text_size(self, instance, size):
         instance.text_size = size
@@ -141,6 +141,11 @@ class SpinnerLeafGui(BoxLayout):
     def on_change(self, instance, text):
         self.leaf.set(new_value=text)
 
+    def set_text(self, text):
+        self.spinner.text = text
+    
+    def set_values(self, values):
+        self.spinner.values = values
 
 # Test Code
 if __name__ == "__main__":
