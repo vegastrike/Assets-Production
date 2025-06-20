@@ -63,7 +63,7 @@ class GraphicsTab(BoxLayout):
         # Full Screen
         full_screen_leaf = gc.game_config.get_object(["graphics", "full_screen"])
         if full_screen_leaf and isinstance(full_screen_leaf, gc.ConfigLeaf):
-            full_screen_gui = BoolLeafGui(parent=self, leaf=full_screen_leaf)
+            full_screen_gui = BoolLeafGui(parent=self, leaf=full_screen_leaf, tooltip_text="Run the game in a full screen or windowed mode.")
         else:
             print(full_screen_leaf)
 
@@ -71,7 +71,8 @@ class GraphicsTab(BoxLayout):
         screen_leaf = gc.game_config.get_object(["graphics", "screen"])
         screen_layout = SpinnerLeafGui(parent=self, leaf=screen_leaf, initial_value=self.selected_screen,
                                         values=[screen.name for screen in self.screens],
-                                        on_change=self.on_change_screen)
+                                        on_change=self.on_change_screen, 
+                                        tooltip_text="The monitor to run the game in, in multi-monitor systems.")
 
 
         # Resolutions
@@ -80,7 +81,8 @@ class GraphicsTab(BoxLayout):
         self.resolution_layout = SpinnerLeafGui(parent=self, leaf=None,
                                           initial_value=self.get_resolution_for_x_and_y(self.screen_resolution),
                                           values=list(self.available_resolutions_for_screen(0).keys()),
-                                          on_change=self.on_resolution_change, title="Resolution:")
+                                          on_change=self.on_resolution_change, title="Resolution:", 
+                                          tooltip_text="The resolution of the game.")
 
         spacer = BoxLayout(size_hint_y=1)
         self.add_widget(spacer)
@@ -98,12 +100,12 @@ class GraphicsTab(BoxLayout):
             print(f"on_change_screen error. index is -1.")
             return
         
-        print(f"on_change_screen({screen_name}) => prvious {self.screen_resolution}")
+        print(f"on_change_screen({screen_name}) => previous {self.screen_resolution}")
         print(f"on_change_screen({screen_name}) => {index}")
         self.selected_screen = screen_name
         self.screen_resolution = (self.screens[index].width, self.screens[index].height)
         print(f"on_change_screen({screen_name}) => {self.screen_resolution}")
-        self.resolution_layout.set_text(self.screen_resolution)
+        self.resolution_layout.set_text(self.get_resolution_for_x_and_y(self.screen_resolution))
         self.resolution_layout.set_values(resolution_for_screen(index))
         
         gc.game_config.set(["graphics", "screen"], index)

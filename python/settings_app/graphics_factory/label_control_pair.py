@@ -16,16 +16,37 @@ import key_utils
 from graphics_factory.tooltip import TooltipIcon
 
 
-class BoolLeafGui(BoxLayout):
-    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, on_toggle = None):
+class AbstractLeafGui(BoxLayout):
+    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, title = None, tooltip_text = None):
         super().__init__(orientation='horizontal', height=70, size_hint_y=None)
         self.leaf = leaf
+        title  = title or f"{key_utils.format_key(leaf.key)}:"
 
         parent.add_widget(self)
 
-        label = Label(text=f"{key_utils.format_key(leaf.key)}:", valign='middle', halign="left", height=70)
-        label.bind(size=self.update_text_size)
-        self.add_widget(label)
+        if tooltip_text:
+            label = TooltipIcon(text=title, tooltip_text=tooltip_text, valign='middle', halign="left")
+            label.bind(size=self.update_text_size)
+            self.add_widget(label)
+        else:
+            label = Label(text=title, valign='middle', halign="left", height = 70)
+            label.bind(size=self.update_text_size)
+            self.add_widget(label)
+
+
+    def update_text_size(self, instance, size):
+        instance.text_size = size
+
+    def on_change(self, instance, new_value):
+        print(f"Control {instance} {new_value} replacing {self.leaf.value}")
+        self.leaf.set(new_value=new_value)
+
+
+
+class BoolLeafGui(AbstractLeafGui):
+    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, title = None, tooltip_text = None,
+                 on_toggle = None):
+        super().__init__(parent=parent, leaf=leaf, title=title, tooltip_text=tooltip_text)
 
         self.toggle_button = CheckBox(active=self.leaf.value, height=70)
         self.add_widget(self.toggle_button)
@@ -43,13 +64,6 @@ class BoolLeafGui(BoxLayout):
         # Update rectangle size and position on layout changes
         # self.bind(size=self._update_rect, pos=self._update_rect)
 
-    def on_change(self, checkbox, value):
-        print(f"Checkbox {checkbox} {value} replacing {self.leaf.value}")
-        self.leaf.set(value)
-
-    def update_text_size(self, instance, size):
-        instance.text_size = size
-
     # def _update_rect(self, instance, value):
     #     self.rect.size = instance.size
     #     self.rect.pos = instance.pos
@@ -59,18 +73,9 @@ class BoolLeafGui(BoxLayout):
 # isinstance(value, float) returns True only if value is a floating-point number (e.g., 3.14, -2.5, 0.0).
 # Floats that represent integers - 5.0 is not considered an integer by isinstance(value, int).
 # This means config.json needs to be sanitised for this to work properly.
-class TextLeafGui(BoxLayout):
-    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, on_change = None, tooltip = None):
-        super().__init__(orientation='horizontal', height=70, size_hint_y=None)
-        self.leaf = leaf
-
-        parent.add_widget(self)
-
-        tooltip_text = tooltip or "This is a test tooltip"
-
-        label = TooltipIcon(text=f"{key_utils.format_key(leaf.key)} ", tooltip_text=tooltip_text, valign='middle', halign="left")
-        label.bind(size=self.update_text_size)
-        self.add_widget(label)
+class TextLeafGui(AbstractLeafGui):
+    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, on_change = None, title = None, tooltip_text = None):
+        super().__init__(parent=parent, leaf=leaf, title=title, tooltip_text=tooltip_text)
 
         self.text_field = TextInput(text=str(self.leaf.value), multiline=False, size_hint=(0.8, None), height = 45,
                                        halign='center')
@@ -114,17 +119,10 @@ class TextLeafGui(BoxLayout):
         
 
 
-class SpinnerLeafGui(BoxLayout):
-    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, initial_value:str, values: list[str], on_change = None, title = None):
-        super().__init__(orientation='horizontal', height=70, size_hint_y=None)
-        self.leaf = leaf
-        title  = title or f"{key_utils.format_key(leaf.key)}:"
-
-        parent.add_widget(self)
-
-        label = Label(text=title, valign='middle', halign="left", height = 70)
-        label.bind(size=self.update_text_size)
-        self.add_widget(label)
+class SpinnerLeafGui(AbstractLeafGui):
+    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, initial_value:str, values: list[str], on_change = None, 
+                 title = None, tooltip_text = None):
+        super().__init__(parent=parent, leaf=leaf, title=title, tooltip_text=tooltip_text)
 
         self.spinner = Spinner(text=initial_value, values=values, size_hint=(0.8, None), height = 45,
                                        halign='center')
@@ -134,12 +132,6 @@ class SpinnerLeafGui(BoxLayout):
             self.spinner.bind(text=on_change)
         else:
             self.spinner.bind(text=self.on_change)
-
-    def update_text_size(self, instance, size):
-        instance.text_size = size
-
-    def on_change(self, instance, text):
-        self.leaf.set(new_value=text)
 
     def set_text(self, text):
         self.spinner.text = text
