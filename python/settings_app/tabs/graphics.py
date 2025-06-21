@@ -106,7 +106,7 @@ class GraphicsTab(BoxLayout):
         self.screen_resolution = (self.screens[index].width, self.screens[index].height)
         print(f"on_change_screen({screen_name}) => {self.screen_resolution}")
         self.resolution_layout.set_text(self.get_resolution_for_x_and_y(self.screen_resolution))
-        self.resolution_layout.set_values(resolution_for_screen(index))
+        self.resolution_layout.set_values(self.available_resolutions_for_screen(index))
         
         gc.game_config.set(["graphics", "screen"], index)
 
