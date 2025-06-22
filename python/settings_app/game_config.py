@@ -254,7 +254,6 @@ def load_game_config():
         user_config=user_config
     )
 
-    game_config.print()
 
 # Test Code
 if __name__ == "__main__":

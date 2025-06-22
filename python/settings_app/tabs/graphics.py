@@ -1,8 +1,5 @@
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
-from kivy.uix.checkbox import CheckBox
-from kivy.uix.spinner import Spinner
-from kivy.uix.button import Button
 from kivy.app import App
 from kivy.properties import StringProperty, ListProperty
 import screeninfo
@@ -11,7 +8,8 @@ import os
 
 from os_utils import number_of_screens, resolution_for_screen
 import game_config as gc
-from graphics_factory.label_control_pair import BoolLeafGui, SpinnerLeafGui
+import app_config as ac
+from graphics_factory.label_control_pair import BoolLeafGui, SpinnerLeafGui, SpinnerMultiLeafGui
 from graphics_factory.divider import DividerLine
 
 class GraphicsTab(BoxLayout):
@@ -33,8 +31,13 @@ class GraphicsTab(BoxLayout):
             self.screens.sort(key=lambda screen: screen.is_primary, reverse=True)
 
         # Load resolutions from the JSON file
-        with open(os.path.join("templates", "resolutions.json"), "r") as file:
-            self.all_resolutions = json.load(file)
+        print(ac.app_schema.keys())
+        print(ac.app_schema)
+        self.all_resolutions = ac.app_schema["resolutions"]
+
+        # Load details from details.json
+        
+
 
         self.selected_screen: str = self.screens[0].name
         if gc.game_config.has_key(["graphics", "screen"]):
@@ -83,6 +86,16 @@ class GraphicsTab(BoxLayout):
                                           values=list(self.available_resolutions_for_screen(0).keys()),
                                           on_change=self.on_resolution_change, title="Resolution:", 
                                           tooltip_text="The resolution of the game.")
+
+        # Geometry Details (Mesh)
+        SpinnerMultiLeafGui(parent=self, leaf=gc.game_config.get_object(["settings_app", "details"]),
+                            json=ac.app_schema["details"], title="Geometry Details:", 
+                            tooltip_text="This changes multiple configuration items.")
+
+        # Shaders
+        SpinnerMultiLeafGui(parent=self, leaf=gc.game_config.get_object(["settings_app", "shaders"]),
+                            json=ac.app_schema["shaders"], title="Shaders:", 
+                            tooltip_text="This changes multiple configuration items.")
 
         spacer = BoxLayout(size_hint_y=1)
         self.add_widget(spacer)

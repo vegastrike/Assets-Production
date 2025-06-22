@@ -115,9 +115,6 @@ class TextLeafGui(AbstractLeafGui):
     #     self.rect.size = instance.size
     #     self.rect.pos = instance.pos
 
-        
-        
-
 
 class SpinnerLeafGui(AbstractLeafGui):
     def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, initial_value:str, values: list[str], on_change = None, 
@@ -138,6 +135,45 @@ class SpinnerLeafGui(AbstractLeafGui):
     
     def set_values(self, values):
         self.spinner.values = values
+
+
+class SpinnerMultiLeafGui(SpinnerLeafGui):
+    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, json:dict,  
+                 title = None, tooltip_text = None):
+        self.function_name = f"on_{title.lower()}_change"
+        
+        self.json = json
+        keys = list(json.keys())
+        if leaf:
+            initial_value= leaf.value
+        else:
+            keys[0]
+                                          
+        
+        super().__init__(parent=parent, leaf=leaf, initial_value=initial_value, values=keys,
+                         title=title, tooltip_text=tooltip_text, on_change=self.on_change)
+
+
+    def on_change(self, instance, new_text):
+        print(f"{self.function_name}: {instance} {new_text}")
+
+        # First change the main leaf so we can store the selected value in user config
+        self.leaf.set(new_text)
+
+        # Now edit the various values in JSON
+        if new_text not in self.json:
+            print(f"{self.function_name} error. {new_text} not in json.")
+            return
+
+        json_value = self.json[new_text]
+        for key, value in json_value.items():
+            print(f"Modifying {key} to {value}")
+            key_list = key.split('/')
+            leaf = gc.game_config.get_object(key=key_list)
+            if not leaf:
+                print(f"{self.function_name} error. {key} not in game_config.")
+                continue
+            leaf.set(value)
 
 # Test Code
 if __name__ == "__main__":

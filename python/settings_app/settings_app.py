@@ -20,6 +20,7 @@ if __name__ == "__main__":
     if success_configuring_file_paths:
         gc.load_game_config()
         os_utils.change_to_python_settings_app_folder()
+        ac.load_schema()
 
         # Create the main window
         MainApp().run()
