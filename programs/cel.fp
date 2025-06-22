@@ -33,7 +33,7 @@ vec3 envMapping(in vec2 coord, in vec4 specmap)
    return texture2DLod(envMap, coord, envLod).rgb * specmap.rgb * envColor.rgb * 2.0;
 }
 
-void main() 
+void main()
 {
   // Sample textures
   vec4 damagecolor = texture2D(damageMap , gl_TexCoord[0].xy);
@@ -42,15 +42,15 @@ void main()
   vec4 glowcolor   = texture2D(glowMap   , gl_TexCoord[0].xy);
   vec4 diffusemap  = lerp(damage.x, diffusecolor, damagecolor);
   vec4 specmap     = speccolor;
-  
+
   vec3 d = diffusemap.rgb * gl_Color.rgb;
   vec3 s = specmap.rgb * gl_SecondaryColor.rgb;
   vec3 e = envMapping(gl_TexCoord[1].xy, specmap);
   vec3 g = glowcolor.rgb;
-  
+
   vec4 rv;
   rv.rgb = cel(d + s + g, ambientLevel) + cel(e, 0.0);
   rv.a = diffusemap.a * gl_Color.a;
-  
+
   gl_FragColor = rv * cloaking.rrrg;
 }

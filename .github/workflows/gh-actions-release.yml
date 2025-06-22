@@ -1,0 +1,67 @@
+name: 'GH Actions - Release'
+
+on:
+  release:
+    types:
+      - created
+      - edited
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-24.04
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          # Source tarballs only
+          - FROM:     'debian:bookworm'
+            ARTIFACT_EXT: 'tar.[xb]z*'
+          # only build one Deb File b/c they're so large
+          - FROM:     'debian:bookworm'
+            ARTIFACT_EXT: 'deb'
+          - FROM:     'opensuse/leap:15.6'
+            ARTIFACT_EXT: 'rpm'
+          - FROM:     'fedora:41'
+            ARTIFACT_EXT: 'rpm'
+          - FROM:     'fedora:40'
+            ARTIFACT_EXT: 'rpm'
+          - FROM:     'rockylinux_rockylinux:9.5'
+            ARTIFACT_EXT: 'rpm'
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
+      with:
+        fetch-depth: 2
+        submodules: false
+
+    - name: Extract tag name and short SHA
+      shell: bash
+      run: |
+        echo "TAG_NAME=$(echo ${GITHUB_REF#refs/tags/} | sed 's/\//_/g')" >> $GITHUB_ENV
+        echo "SHORT_SHA=`git rev-parse --short HEAD`" >> $GITHUB_ENV
+    - name: Test tag name and short SHA
+      run: |
+        echo "${TAG_NAME}"
+        echo "${SHORT_SHA}"
+
+    - name: Run CI
+      env:
+        FROM:       ${{ matrix.FROM }}
+        FLAGS:      ''
+        MY_OS_NAME: linux
+        IS_RELEASE: 1
+      run: script/cibuild $FLAGS
+
+    - name: Upload the artifacts
+      uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631 # v2.2.2
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        files: "packages/*.${{ matrix.ARTIFACT_EXT }}"

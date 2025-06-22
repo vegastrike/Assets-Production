@@ -1,6 +1,7 @@
 #WARNING THIS FILE HAS A MIRROR FILE IN C++ FOR SIMILAR ACCESS...
 #SO THAT C++ CAN LEARN ABOUT THE DYNAMIC UNIVERSE SHIPS
 #
+import os
 import Director
 import VS
 import vsrandom
@@ -71,31 +72,30 @@ genericalphabet=['Alpha','Beta','Gamma','Delta','Epsilon','Zeta','Phi','Omega']
 def ReadBaseNameList(faction):
     bnl=[]
     debug.debug('reading base names %s', faction)
-    filename = 'universe/fgnames/'+faction+'.txt'
-    try:
-        f = open (filename,'r')
-        bnl = f.readlines()
-        f.close()
-    except:
+    filename = os.path.join('universe', 'fgnames', faction + '.txt')
+    base_faction = faction.replace('_citizen', '').replace('_guild', '').replace('_briin', '').replace('n_merchant_marine', '')
+    base_filename = os.path.join('universe', 'fgnames', base_faction + '.txt')
+    names = [
+             filename,
+             base_filename,
+             os.path.join('../', filename),
+             os.path.join('../', base_filename),
+             os.path.join('universe', 'fgnames', 'names.txt'),
+             os.path.join('..', 'universe', 'names.txt'),
+             os.path.join('universe', 'names.txt')
+            ]
+    for name in names:
         try:
-            f = open ('../'+filename,'r')
-            bnl = f.readlines()
-            f.close()
-        except:
-            try:
-                f = open ('../universe/names.txt','r')
+            with open (name,'r', encoding='utf8') as f:
                 bnl = f.readlines()
-                f.close()
-            except:
-                try:
-                    f = open ('universe/names.txt','r')
-                    bnl = f.readlines()
-                    f.close()
-                except:
-                    global genericalphabet
-                    bnl=genericalphabet
+            break
+        except OSError:
+            continue
+    else:
+        global genericalphabet
+        bnl = genericalphabet
     for i in range(len(bnl)):
-        bnl[i]=bnl[i].rstrip()#.decode('utf8','ignore')
+        bnl[i] = bnl[i].rstrip()#.decode('utf8','ignore')
     import vsrandom
     vsrandom.shuffle(bnl)
     return bnl

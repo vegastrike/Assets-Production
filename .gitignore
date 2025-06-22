@@ -1,1 +1,7 @@
 *.pyc
+build/
+packages/
+.vs/
+.vscode/
+.editorconfig
+.idea/

@@ -23,7 +23,7 @@ vec3 specEnvMapping( in float shininess, in vec3 direction, in vec3 citymap, in 
   float mipbias = max(0.0, 8.0 - shininess * shininess * 16.0);
   vec4 result = textureCubeLod( envMap, direction, mipbias );
   result = degamma_env(result);
-  
+
   return lerp(result.rgb, citymap, cloudmap);
 }
 
@@ -42,7 +42,7 @@ float cosAngleToAlpha(float fNDotV)
    return texture2D(cosAngleToDepth_20,clamp(vec2(fNDotV,fAtmosphereType),mn,mx)).a;
 }
 
-void main() 
+void main()
 {
   // Compute relevant vectors
   vec2 texcoord    = gl_TexCoord[0].xy;
@@ -65,7 +65,7 @@ void main()
   vec4 gcitydetail2= texture2D(cityDetail, texcoord * 1024.0);
   vec4 cloudmap    = texture2D(cloudMap, shadowcoord);
   cloudmap.a       = saturatef(cloudmap.a * fCloudLayerDensity);
-  
+
   diffusemap.rgb   = degamma_tex(diffusemap.rgb);
   specmap.rgb      = degamma_tex(specmap.rgb);
   citymap.rgb      = degamma_tex(citymap.rgb);
@@ -78,7 +78,7 @@ void main()
   float fNDotV     = dot(normal, eye);
   float fNDotL     = dot(normal, lightpos);
   vec3 specular    = fresnel(fNDotV) * speccol * specmap.rgb;
-  
+
   // Make citymap night-only
   vec3 trigger     = cityLightTrigger(fNDotL) * fvCityLightColor.rgb * cityLightFactor;
   citymap.rgb     *= trigger;
@@ -86,10 +86,10 @@ void main()
 
   float cityDetailAmount = 1.0 - gcitymap.a;
   float cityAmp;
-  
+
   if (cityDetailAmount > 0.01) {
     gcitydetail += gcitydetail2 * 0.3;
-    
+
     // Apply citymap detail
     float cityDetailAmp = dot(gcitydetail.rgb, vec3(1.0/3.0));
     float cityDetailOffset = sqr(1.0 - saturatef(dot(gcitymap.rgb, vec3(1.0/3.0))));
@@ -101,19 +101,19 @@ void main()
     cityAmp = 1.0;
     gcitydetail.rgb = vec3(1.0);
   }
-  
+
   // degamma twice, it's a glowmap and we need a lot of precision near darkness
-  gcitymap.rgb = sqr(gcitymap.rgb); 
-  
+  gcitymap.rgb = sqr(gcitymap.rgb);
+
   // Do lighting
   vec3 result;
-  result = diffusecol * diffusemap.rgb * ambientMapping(normal, cloudmap.a) 
+  result = diffusecol * diffusemap.rgb * ambientMapping(normal, cloudmap.a)
          + specEnvMapping(shininess, reflection, citymap.rgb * cloudmap.rgb, cloudmap.a) * specular
          + gcitymap.rgb * gcitydetail.rgb * cityAmp;
-  
+
   // Do silhouette alpha
   float  alpha     = saturatef(2.0 * (cosAngleToAlpha(fNDotV) - 0.5));
-  
+
   // re-gamma and return
   gl_FragColor.a = diffusemap.a * alpha;
   gl_FragColor.rgb = regamma(result * alpha);

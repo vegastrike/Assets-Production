@@ -1,0 +1,52 @@
+name: 'GH Actions - PR'
+
+on: [ pull_request ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-24.04
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          # only do one Deb file because they're so large
+          - FROM:     'debian:bookworm'
+          - FROM:     'opensuse/leap:15.6'
+          - FROM:     'fedora:41'
+          - FROM:     'fedora:40'
+          - FROM:     'rockylinux_rockylinux:9.5'
+          - FROM:     'manjarolinux/base'
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
+      with:
+        fetch-depth: 2
+        submodules: false
+
+    # Ensure PRs are built against the PR Head
+    # As opposed to the merge commit
+    - name: Move to PR HEAD
+      run: git checkout ${{ github.event.pull_request.head.sha }}
+
+    - name: Extract short SHA
+      shell: bash
+      run: |
+        echo "SHORT_SHA=`git rev-parse --short ${{ github.event.pull_request.head.sha }}`" >> $GITHUB_ENV
+    - name: Test short SHA
+      run: |
+        echo "${SHORT_SHA}"
+
+    - name: Run CI
+      env:
+        FROM:       ${{ matrix.FROM }}
+        FLAGS:      ''
+        MY_OS_NAME: linux
+        IS_RELEASE: 0
+      run: script/cibuild $FLAGS

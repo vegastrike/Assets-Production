@@ -57,16 +57,16 @@ vec4 atmosphericScatter(vec3 amb, vec4 dif, float fNDotV, float fNDotL, float fV
    float  vdepth     = cosAngleToDepth(fNDotV) * sqr(saturatef(1.0-fShadowRelHeight.x));
    float  ldepth     = cosAngleToDepth(fNDotL+fAtmosphereAbsorptionOffset) * sqr(saturatef(1.0-fShadowRelHeight.x));
    float  alpha      = cosAngleToAlpha(fNDotV);
-   
+
    vec3  labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth));
    vec3  vabsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*vdepth*2.0));
-   vec3  lscatter    = gl_LightSource[0].diffuse.rgb 
-                       * fAtmosphereScatterColor.rgb 
-                       * pow(labsorption,vec3(fSelfShadowFactor)) 
+   vec3  lscatter    = gl_LightSource[0].diffuse.rgb
+                       * fAtmosphereScatterColor.rgb
+                       * pow(labsorption,vec3(fSelfShadowFactor))
                        * (fMinScatterFactor+min(fMaxScatterFactor-fMinScatterFactor,vdepth*2.0));
-   
+
    vec4 rv;
-   rv.rgb = regamma( amb + dif.rgb*labsorption*vabsorption 
+   rv.rgb = regamma( amb + dif.rgb*labsorption*vabsorption
                   + atmosphereLighting(fNDotL)
                     *lscatter );
    rv.a = dif.a * alpha;
@@ -80,7 +80,7 @@ vec3 ambientMapping( in vec3 direction )
 
 
 void main()
-{    
+{
    vec2 CloudCoord = inCloudCoord.xy;
    vec2 GroundCoord = inGroundCoord.xy;
    vec2 ShadowCoord = inShadowCoord.xy;
@@ -90,20 +90,20 @@ void main()
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
    vec3 N = varWSNormal;
-   
-   float  fNDotL           = saturatef( L.z ); 
+
+   float  fNDotL           = saturatef( L.z );
    float  fNDotLB          = saturatef(-L.z + fCityLightTriggerBias.x);
    float  fNDotV           = saturatef( V.z );
    float  fVDotL           = dot(L, V);
 
-   // Attack angle density adjustment   
+   // Attack angle density adjustment
    vec3 CloudLayerDensitySVC;
    float  fCloudLayerDensityL = fCloudLayerDensity / (abs(L.z)+0.01);
    float  fCloudLayerDensityV = fCloudLayerDensity / (abs(V.z)+0.01);
    CloudLayerDensitySVC.x     = fCloudLayerDensityL * fCloudSelfShadowFactor;
    CloudLayerDensitySVC.y     = fCloudLayerDensityV;
    CloudLayerDensitySVC.z     = fCloudLayerDensity * fCloudSelfShadowFactor;
-  
+
    // Sample cloudmap
    vec2 gc1              =      CloudCoord                                         ;
    vec2 gc2              = lerp(CloudCoord,GroundCoord,0.25 * fCloudLayerThickness);
@@ -111,24 +111,24 @@ void main()
    vec4 fvCloud1         = texture2D( cloudMap_20, gc1 );
    vec4 fvCloud2         = texture2D( cloudMap_20, gc2 );
    vec4 fvCloud4         = texture2D( cloudMap_20, gc4 );
-   
+
    vec2 sc2              = lerp(gc2,ShadowCoord,0.25 * fCloudLayerThickness);
    vec2 sc4              = lerp(gc4,ShadowCoord,0.75 * fCloudLayerThickness);
    float  fCloudShadow2  = texture2D( cloudMap_20, sc2, 0.5 ).a;
    float  fCloudShadow4  = texture2D( cloudMap_20, sc4, 1.5 ).a;
-   
+
    // Mask heights
    fvCloud1.a            = saturatef((fvCloud1.a-0.5000)*1.0); // 0.5000 - 1.0000
    fvCloud2.a            = saturatef((fvCloud2.a-0.2500)*4.0); // 0.2500 - 0.5000
    fvCloud4.a            = saturatef((fvCloud4.a       )*4.0); // 0.0000 - 0.2500
-   
+
    // Simplified for ps2.a
    const vec2 shadowStep2 = vec2(0.500, 0.800);
    const vec2 shadowStep4 = vec2(0.125, 0.708);
    vec2 fvCloudShadow    = vec2(fCloudShadow2,fCloudShadow4);
    fCloudShadow2         = saturatef( dot(fvCloudShadow - shadowStep2, vec2(0.75)) );
    fCloudShadow4         = saturatef( dot(fvCloudShadow - shadowStep4, vec2(0.75)) );
-   
+
    // Compute self-shadowed cloud color
    vec3 fvAmbient         = gl_Color.rgb * ambientMapping(varWSNormal) * 0.5;
    vec4 fvBaseColor       = vec4(gl_Color.rgb * atmosphereLighting(fNDotL), gl_Color.a);

@@ -1,0 +1,12 @@
+.git/
+.github/
+.vs/
+.vscode/
+build/
+packages/
+.gitignore
+.travis.yml
+*.am
+*.pyc
+*.log
+*.bak

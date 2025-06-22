@@ -1,0 +1,30 @@
+name: Windows-CI
+
+on: [ pull_request, workflow_dispatch ]
+
+jobs:
+  build:
+    name: Build
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os:              windows-2019
+            is-release:      0
+          - os:              windows-2022
+            is-release:      0
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Install CMake
+        uses: lukka/get-cmake@ea004816823209b8d1211e47b216185caee12cc5 #v4.0.2
+        with:
+          cmakeVersion: 4.0.2
+
+      - name: Build it
+        run: script/build.ps1

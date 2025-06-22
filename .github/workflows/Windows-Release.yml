@@ -1,0 +1,66 @@
+name: Windows-Release
+
+# Controls when the action will run.
+on:
+  release:
+    types:
+      - created
+      - edited
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os:              windows-2019
+            is-release:      1
+          - os:              windows-2022
+            is-release:      1
+
+    env:
+      TAG_NAME: '${{ github.ref_name }}'
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea #v7.0.1
+        with:
+          script: |
+            const git_sha = context.sha.substring(0, 7)
+            core.exportVariable('ACTIONS_RUNTIME_TOKEN', process.env.ACTIONS_RUNTIME_TOKEN || '');
+            core.exportVariable('SHORT_SHA', git_sha);
+
+      - name: Test tag name and short SHA
+        run: |
+          echo "${TAG_NAME}"
+          echo "${SHORT_SHA}"
+
+        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Install CMake
+        uses: lukka/get-cmake@ea004816823209b8d1211e47b216185caee12cc5 #v4.0.2
+        with:
+          cmakeVersion: 4.0.2
+
+      - name: Build it
+        run: script/build.ps1
+
+      - name: Package it
+        run: script/package.ps1
+
+      - name: Upload the artifacts
+        uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631 # v2.2.2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: "packages/*.*"
