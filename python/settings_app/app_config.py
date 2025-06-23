@@ -115,6 +115,16 @@ class AppConfig:
 # The app_config singleton instance
 # Don't initialize here. Let settings_app do it after changing folders.
 app_config: AppConfig = None
+app_schema = {}
+
+def load_schema():
+    print("loading app_schame")
+    global app_schema
+
+    # Load schema
+    with open(os.path.join("templates", "schema.json"), "r") as file:
+        app_schema = json.load(file)
+        print(app_schema.keys())
 
 # Test Code
 if __name__ == "__main__":

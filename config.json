@@ -1,4 +1,9 @@
 {
+    "settings_app": {
+        "details": "High",
+        "shaders": "Average",
+        "audio": "All Sounds"
+    },
     "advanced": {},
 
     "ai": {

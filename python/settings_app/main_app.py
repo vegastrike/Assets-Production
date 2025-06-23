@@ -6,7 +6,9 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.tabbedpanel import TabbedPanelItem
 
+import tabs.audio
 import tabs.graphics
+import tabs.performance
 import tabs.advanced
 
 import game_config as gc
@@ -30,6 +32,20 @@ class MainWindow(BoxLayout):
         self.notebook.add_widget(graphics_tab_item)
         # Set the default tab to display graphics_tab
         self.notebook.default_tab = graphics_tab_item
+
+        # Add audio tab
+        audio_tab = tabs.audio.AudioTab()
+        audio_tab_item = TabbedPanelItem(text=audio_tab.tab_name)
+        audio_tab_item.add_widget(audio_tab)
+        self.notebook.add_widget(audio_tab_item)
+        # Set the default tab to display graphics_tab
+        self.notebook.default_tab = graphics_tab_item
+
+        # Add performance tab
+        performance_tab = tabs.performance.PerformanceTab()
+        performance_tab_item = TabbedPanelItem(text=performance_tab.tab_name)
+        performance_tab_item.add_widget(performance_tab)
+        self.notebook.add_widget(performance_tab_item)
 
         # Add advanced tab
         advanced_tab = tabs.advanced.AdvancedTab()
