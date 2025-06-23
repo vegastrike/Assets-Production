@@ -10,6 +10,7 @@ import tabs.audio
 import tabs.graphics
 import tabs.performance
 import tabs.advanced
+import tabs.controls
 
 import game_config as gc
 import graphics_factory.tooltip as tooltip
@@ -38,8 +39,13 @@ class MainWindow(BoxLayout):
         audio_tab_item = TabbedPanelItem(text=audio_tab.tab_name)
         audio_tab_item.add_widget(audio_tab)
         self.notebook.add_widget(audio_tab_item)
-        # Set the default tab to display graphics_tab
-        self.notebook.default_tab = graphics_tab_item
+   
+        # Controls
+        controls_tab = tabs.controls.ControlsTab()
+        controls_tab_item = TabbedPanelItem(text=controls_tab.tab_name)
+        controls_tab_item.add_widget(controls_tab)
+        self.notebook.add_widget(controls_tab_item)
+
 
         # Add performance tab
         performance_tab = tabs.performance.PerformanceTab()

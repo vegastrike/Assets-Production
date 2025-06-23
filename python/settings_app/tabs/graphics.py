@@ -31,8 +31,6 @@ class GraphicsTab(BoxLayout):
             self.screens.sort(key=lambda screen: screen.is_primary, reverse=True)
 
         # Load resolutions from the JSON file
-        print(ac.app_schema.keys())
-        print(ac.app_schema)
         self.all_resolutions = ac.app_schema["resolutions"]
 
         # Load details from details.json
