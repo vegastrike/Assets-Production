@@ -77,8 +77,11 @@ class GraphicsTab(BoxLayout):
 
 
         # Resolutions
+        # TODO: this should be SpinnerMultiLeafGui
         self.resolution_x_leaf = gc.game_config.get_object(["graphics", "resolution_x"])
         self.resolution_y_leaf = gc.game_config.get_object(["graphics", "resolution_y"])
+        self.base_resolution_x_leaf = gc.game_config.get_object(["graphics", "bases", "max_width"])
+        self.base_resolution_y_leaf = gc.game_config.get_object(["graphics", "bases", "max_height"])
         self.resolution_layout = SpinnerLeafGui(parent=self, leaf=None,
                                           initial_value=self.get_resolution_for_x_and_y(self.screen_resolution),
                                           values=list(self.available_resolutions_for_screen(0).keys()),
@@ -127,6 +130,8 @@ class GraphicsTab(BoxLayout):
         print(f"New resolution {resolution}")
         self.resolution_x_leaf.set(resolution[0])
         self.resolution_y_leaf.set(resolution[1])
+        self.base_resolution_x_leaf.set(resolution[0])
+        self.base_resolution_y_leaf.set(resolution[1])
 
     def get_index_for_screen(self, screen_name):
         for index, screen in enumerate(self.screens):

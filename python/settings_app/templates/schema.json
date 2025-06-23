@@ -195,10 +195,18 @@
         }
     },
     "physics": {
-        "Default": 1, 
-        "Classic": 2, 
-        "Realistic": 0.3, 
-        "Ultra-realistic": 0.1
+        "Default (1.0)": {
+            "physics/game_accel": 1
+        }, 
+        "Classic (2.0)": {
+            "physics/game_accel": 2
+        }, 
+        "Realistic (0.3)": {
+            "physics/game_accel": 0.3
+        }, 
+        "Ultra-realistic (0.1)": {
+            "physics/game_accel": 0.1
+        }
     },
     "audio": {
         "No Sound": {
