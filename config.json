@@ -3,7 +3,7 @@
         "details": "High",
         "shaders": "Average",
         "audio": "All Sounds",
-        "physics": "Physics"
+        "physics": "Default (1.0)"
     },
     "advanced": {},
 
