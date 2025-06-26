@@ -89,7 +89,6 @@ class TooltipIcon(Label, HoverBehavior):
             root_layout.add_widget(self.tooltip)
 
     def on_hover(self):
-        print('on hover')
         if not self.tooltip:
             return
 

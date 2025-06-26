@@ -6,6 +6,7 @@ from kivy.clock import Clock
 from kivy.graphics import Color, Rectangle
 
 import graphics_factory.config_pane as config_pane
+from graphics_factory.clickable_label import ClickableLabel
 
 import game_config as gc
 
@@ -40,15 +41,8 @@ class AdvancedTab(BoxLayout):
 
         # Populate the left frame with config data
         for section, values in gc.game_config.value.items():
-            btn = Button(
-                text=key_utils.format_key(section),
-                size_hint=(0.25,0.125),
-                background_normal='',
-                background_color=(0, 0, 0, 0),
-                markup=True
-            )
-            btn.key = section
-            btn.bind(on_press=self.on_label_click)
+            btn = ClickableLabel(text=key_utils.format_key(section),section=section,on_click=self.on_label_click)
+
             self.links.append(btn)
             self.main_frame.add_widget(btn)
 
@@ -64,12 +58,7 @@ class AdvancedTab(BoxLayout):
 
     def on_mouse_move(self, window, pos):
         for btn in self.links:
-            if btn.collide_point(*btn.to_widget(*pos)):
-                if not btn.text.startswith("[u]"):
-                    btn.text = f"[u]{btn.text}[/u]"
-            else:
-                if btn.text.startswith("[u]"):
-                    btn.text = btn.text.replace("[u]", "").replace("[/u]", "")
+            btn.on_hover(pos)
 
     def on_label_click(self, instance):
         section_name = instance.text.replace("[u]", "").replace("[/u]", "")

@@ -1,19 +1,16 @@
-import tkinter as tk
-import tkinter.ttk as ttk
-from graphics_factory.graphic_attributes import GraphicAttributes 
-
 import game_config as gc
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.checkbox import CheckBox
-from kivy.properties import BooleanProperty
-from kivy.graphics import Color, Rectangle
 from kivy.uix.textinput import TextInput
 from kivy.uix.spinner import Spinner
+from kivy.uix.slider import Slider
 
 import key_utils
 
 from graphics_factory.tooltip import TooltipIcon
+from kivy.uix.widget import Widget
+from kivy.core.window import Window
 
 
 class AbstractLeafGui(BoxLayout):
@@ -174,6 +171,65 @@ class SpinnerMultiLeafGui(SpinnerLeafGui):
                 print(f"{self.function_name} error. {key} not in game_config.")
                 continue
             leaf.set(value)
+
+class CaptureKeyStrokePair(AbstractLeafGui):
+        def __init__(self, parent: BoxLayout, key_leaf: gc.ConfigLeaf, modifier_leaf: gc.ConfigLeaf, 
+                     title:str, tooltip_text = None):
+            super().__init__(parent=parent, leaf=None, title=title, tooltip_text=tooltip_text)
+            self.key_leaf = key_leaf
+            self.modifier_leaf = modifier_leaf
+            text = f"{key_leaf.value} ({modifier_leaf.value})"
+            self.keystroke_label = Label(text=text, valign='middle', halign="left", height = 70)
+            self.keystroke_label.bind(size=self.update_text_size)
+            self.add_widget(self.keystroke_label)
+            self._hovered = False
+            Window.bind(mouse_pos=self.on_mouse_pos)
+
+        def on_mouse_pos(self, window, pos):
+            if self.get_root_window():
+                inside = self.collide_point(*self.to_widget(*pos))
+                if inside and not self._hovered:
+                    self._hovered = True
+                    Window.bind(on_key_down=self.on_key_down)
+                elif not inside and self._hovered:
+                    self._hovered = False
+                    Window.unbind(on_key_down=self.on_key_down)
+
+        def on_key_down(self, window, keycode, scancode, codepoint, modifiers):
+            # Does not validate not in use.
+            # Do we want to? If I want to switch two keys around, I'd need a temp value.
+            # TODO: validate?
+            modifier = modifiers[0]
+            self.key_leaf.set(codepoint)
+            self.modifier_leaf.set(modifier)
+            text = f"{codepoint} ({modifier})"
+            self.keystroke_label.text = text
+            if isinstance(keycode, int):
+                print(f"Key pressed: {keycode}, {scancode}, {codepoint}, Modifiers: {modifiers}")
+            
+class SliderLeafGui(AbstractLeafGui):
+    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, min=0, max=100, step=1, title=None, tooltip_text=None, on_change=None):
+        super().__init__(parent=parent, leaf=leaf, title=title, tooltip_text=tooltip_text)
+
+        self.add_widget(Label(text=str(min), size_hint_x=0.1))
+
+        self.volume_slider = Slider(min=min, max=max, value=self.leaf.value, size_hint_x=0.7, step=step)
+        self.add_widget(self.volume_slider)
+
+        self.add_widget(Label(text=str(max), size_hint_x=0.1))
+
+        if on_change:
+            self.volume_slider.bind(value=on_change)
+        else:
+            self.volume_slider.bind(value=self.on_slider_change)
+
+    def on_slider_change(self, instance, value):
+        print(f"Slider changed from {self.leaf.value} to {value}")
+        self.leaf.set(value)
+
+        
+
+
 
 # Test Code
 if __name__ == "__main__":

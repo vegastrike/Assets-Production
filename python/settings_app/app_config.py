@@ -124,7 +124,7 @@ def load_schema():
     # Load schema
     with open(os.path.join("templates", "schema.json"), "r") as file:
         app_schema = json.load(file)
-        print(app_schema.keys())
+        # print(app_schema.keys())
 
 # Test Code
 if __name__ == "__main__":
