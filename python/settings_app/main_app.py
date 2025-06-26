@@ -11,6 +11,7 @@ import tabs.graphics
 import tabs.performance
 import tabs.advanced
 import tabs.controls
+import tabs.bindings
 
 import game_config as gc
 import graphics_factory.tooltip as tooltip
@@ -46,6 +47,11 @@ class MainWindow(BoxLayout):
         controls_tab_item.add_widget(controls_tab)
         self.notebook.add_widget(controls_tab_item)
 
+        # Keyboard bindings
+        bindings_tab = tabs.bindings.BindingsTab()
+        bindings_tab_item = TabbedPanelItem(text=bindings_tab.tab_name)
+        bindings_tab_item.add_widget(bindings_tab)
+        self.notebook.add_widget(bindings_tab_item)
 
         # Add performance tab
         performance_tab = tabs.performance.PerformanceTab()

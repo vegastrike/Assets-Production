@@ -2,10 +2,9 @@ import game_config as gc
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.checkbox import CheckBox
-from kivy.properties import BooleanProperty
-from kivy.graphics import Color, Rectangle
 from kivy.uix.textinput import TextInput
 from kivy.uix.spinner import Spinner
+from kivy.uix.slider import Slider
 
 import key_utils
 
@@ -208,7 +207,29 @@ class CaptureKeyStrokePair(AbstractLeafGui):
             if isinstance(keycode, int):
                 print(f"Key pressed: {keycode}, {scancode}, {codepoint}, Modifiers: {modifiers}")
             
-                
+class SliderLeafGui(AbstractLeafGui):
+    def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, min=0, max=100, step=1, title=None, tooltip_text=None, on_change=None):
+        super().__init__(parent=parent, leaf=leaf, title=title, tooltip_text=tooltip_text)
+
+        self.add_widget(Label(text=str(min), size_hint_x=0.1))
+
+        self.volume_slider = Slider(min=min, max=max, value=self.leaf.value, size_hint_x=0.7, step=step)
+        self.add_widget(self.volume_slider)
+
+        self.add_widget(Label(text=str(max), size_hint_x=0.1))
+
+        if on_change:
+            self.volume_slider.bind(value=on_change)
+        else:
+            self.volume_slider.bind(value=self.on_slider_change)
+
+    def on_slider_change(self, instance, value):
+        print(f"Slider changed from {self.leaf.value} to {value}")
+        self.leaf.set(value)
+
+        
+
+
 
 # Test Code
 if __name__ == "__main__":
