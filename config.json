@@ -131,6 +131,14 @@
         "Cockpit::Quit": {"key": "esc", "modifier": "none"}
     },
 
+    "mouse": {
+        "enabled": true,
+        "FireKey": {"button": 0, "modifier": "none"},
+        "inverse_x": false,
+        "inverse_y": false,
+        "comment": "move joystick and keyboard here. Move bindings down a level."
+    },
+
     "ai": {
         "afterburn_to_no_enemies": true,
         "ai_cheat_dot": 0.99,
@@ -1060,6 +1068,10 @@
     },
 
     "joystick": {
+        "enabled": true,
+        "throttle": false,
+        "hat_enabled": false,
+
         "clamp_axes": true,
         "deadband": 0.05,
         "debug_digital_hatswitch": false,
