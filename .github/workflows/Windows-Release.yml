@@ -50,9 +50,9 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
       - name: Install CMake
-        uses: lukka/get-cmake@ea004816823209b8d1211e47b216185caee12cc5 #v4.0.2
+        uses: lukka/get-cmake@6b3e96a9bc9976b8b546346fdd102effedae0ca8 #v4.0.3
         with:
-          cmakeVersion: 4.0.2
+          cmakeVersion: 4.0.3
 
       - name: Build it
         run: script/build.ps1
