@@ -1,0 +1,226 @@
+{
+    "tabs": ["general", "graphics", "audio", "gameplay", "controls", "networking", "mods", "about"],
+    "resolutions": {
+        "1024x768": [1024, 768],
+        "1280x720": [1280, 720],
+        "1280x800": [1280, 800],
+        "1280x1024": [1280, 1024],
+        "1360x768": [1360, 768],
+        "1366x768": [1366, 768],
+        "1440x900": [1440, 900],
+        "1536x864": [1536, 864],
+        "1600x900": [1600, 900],
+        "1600x1200": [1600, 1200],
+        "1680x1050": [1680, 1050],
+        "1920x1080": [1920, 1080],
+        "1920x1200": [1920, 1200],
+        "2048x1152": [2048, 1152],
+        "2048x1536": [2048, 1536],
+        "2560x1080": [2560, 1080],
+        "2560x1440": [2560, 1440],
+        "2560x1600": [2560, 1600],
+        "3440x1440": [3440, 1440],
+        "3840x2160": [3840, 2160],
+        "5120x2880": [5120, 2880],
+        "6144x3456": [6144, 3456],
+        "7680x2160": [7680, 2160],
+        "7680x4320": [7680, 4320]
+    },
+    "details": {
+        "Extreme": {
+            "graphics/fog": true,
+            "graphics/model_detail": 10,
+            "graphics/mipmap_detail": 3,
+            "graphics/reflection": true,
+            "graphics/draw_star_body": true,
+            "graphics/draw_star_glow": true,
+            "graphics/high_quality_sprites": true,
+            "graphics/blend_panels": true,
+            "graphics/smooth_lines": true,
+            "graphics/per_pixel_lighting": true,
+            "graphics/specmap_with_reflection": true,
+            "graphics/znear": 8,
+            "graphics/zfar": 65536,
+            "graphics/star_blend": true,
+            "graphics/point_sparkles": false,
+            "graphics/background": true,
+            "graphics/cockpit": true,
+            "graphics/planet_detail_level": 96,
+            "graphics/jump_detail": 16
+        },
+        "Very High": {
+            "graphics/fog": true,
+            "graphics/model_detail": 3,
+            "graphics/mipmap_detail": 3,
+            "graphics/reflection": true,
+            "graphics/draw_star_body": false,
+            "graphics/draw_star_glow": true,
+            "graphics/high_quality_sprites": false,
+            "graphics/blend_panels": true,
+            "graphics/smooth_lines": true,
+            "graphics/znear": 8,
+            "graphics/zfar": 65536,
+            "graphics/star_blend": true,
+            "graphics/point_sparkles": false,
+            "graphics/background": true,
+            "graphics/cockpit": true,
+            "graphics/planet_detail_level": 64,
+            "graphics/jump_detail": 16
+        },
+        "High": {
+            "graphics/fog": true,
+            "graphics/model_detail": 1,
+            "graphics/mipmap_detail": 2,
+            "graphics/reflection": true,
+            "graphics/force_lighting": 0,
+            "graphics/draw_star_body": true,
+            "graphics/draw_star_glow": true,
+            "graphics/high_quality_sprites": false,
+            "graphics/blend_panels": true,
+            "graphics/smooth_lines": false,
+            "graphics/znear": 16,
+            "graphics/zfar": 32768,
+            "graphics/star_blend": true,
+            "graphics/point_sparkles": false,
+            "graphics/background": true,
+            "graphics/cockpit": true,
+            "graphics/planet_detail_level": 48,
+            "graphics/jump_detail": 8
+        },
+        "Medium": {
+            "graphics/fog": false,
+            "graphics/model_detail": 0.5,
+            "graphics/mipmap_detail": 2,
+            "graphics/reflection": true,
+            "graphics/force_lighting": 0,
+            "graphics/draw_star_body": true,
+            "graphics/draw_star_glow": true,
+            "graphics/high_quality_sprites": true,
+            "graphics/blend_panels": true,
+            "graphics/smooth_lines": false,
+            "graphics/znear": 16,
+            "graphics/zfar": 32768,
+            "graphics/star_blend": true,
+            "graphics/point_sparkles": false,
+            "graphics/background": true,
+            "graphics/cockpit": true,
+            "graphics/planet_detail_level": 48,
+            "graphics/jump_detail": 8
+        },
+        "Low": {
+            "graphics/fog": false,
+            "graphics/model_detail": 0.2,
+            "graphics/mipmap_detail": 2,
+            "graphics/reflection": false,
+            "graphics/force_lighting": 0,
+            "graphics/draw_star_body": true,
+            "graphics/draw_star_glow": false,
+            "graphics/high_quality_sprites": false,
+            "graphics/blend_panels": true,
+            "graphics/smooth_lines": false,
+            "graphics/per_pixel_lighting": false,
+            "graphics/znear": 16,
+            "graphics/zfar": 32768,
+            "graphics/star_blend": false,
+            "graphics/point_sparkles": true,
+            "graphics/background": false,
+            "graphics/cockpit": false,
+            "graphics/planet_detail_level": 48,
+            "graphics/jump_detail": 8
+        },
+        "Retro": {
+            "graphics/fog": false,
+            "graphics/model_detail": 0.2,
+            "graphics/mipmap_detail": 2,
+            "graphics/reflection": false,
+            "graphics/force_lighting": 0,
+            "graphics/draw_star_body": false,
+            "graphics/draw_star_glow": true,
+            "graphics/high_quality_sprites": false,
+            "graphics/blend_panels": true,
+            "graphics/smooth_lines": false,
+            "graphics/per_pixel_lighting": false,
+            "graphics/znear": 16,
+            "graphics/zfar": 32768,
+            "graphics/star_blend": false,
+            "graphics/point_sparkles": true,
+            "graphics/background": false,
+            "graphics/cockpit": false,
+            "graphics/planet_detail_level": 24,
+            "graphics/jump_detail": 8
+        }
+    },
+    "shaders": {
+        "Extreme": {
+            "graphics/mac_shader_name": "mac",
+            "graphics/default_full_technique": "5_ps3.0/default",
+            "graphics/default_simple_technique": "5_ps3.0/default_simple",
+            "graphics/technique_set": "6_ps4.0"
+        },
+        "Nicest": {
+            "graphics/mac_shader_name": "mac",
+            "graphics/default_full_technique": "default",
+            "graphics/default_simple_technique": "default_simple",
+            "graphics/technique_set": "5_ps3.0"
+        },
+        "Average": {
+            "graphics/mac_shader_name": "mac",
+            "graphics/default_full_technique": "5_ps3.0/default",
+            "graphics/default_simple_technique": "5_ps3.0/default_simple",
+            "graphics/technique_set": "4_ps2.0"
+        },
+        "Simple": {
+            "graphics/mac_shader_name": "maclite",
+            "graphics/default_full_technique": "5_ps3.0/default",
+            "graphics/default_simple_technique": "5_ps3.0/default_simple",
+            "graphics/technique_set": "3_arbfp"
+        },
+        "Simplest": {
+            "graphics/mac_shader_name": "maclite",
+            "graphics/default_full_technique": "default",
+            "graphics/default_simple_technique": "default_simple",
+            "graphics/technique_set": "2_ps1.4"
+        },
+        "On Board": {
+            "graphics/mac_shader_name": "maclite",
+            "graphics/default_full_technique": "default",
+            "graphics/default_simple_technique": "default_simple",
+            "graphics/technique_set": "1_ps1.2"
+        },
+        "No Shader": {
+            "graphics/mac_shader_name": "maclite",
+            "graphics/default_full_technique": "default",
+            "graphics/default_simple_technique": "default_simple",
+            "graphics/technique_set": "0_fixed_gl"
+        }
+    },
+    "physics": {
+        "Default (1.0)": {
+            "physics/game_accel": 1
+        }, 
+        "Classic (2.0)": {
+            "physics/game_accel": 2
+        }, 
+        "Realistic (0.3)": {
+            "physics/game_accel": 0.3
+        }, 
+        "Ultra-realistic (0.1)": {
+            "physics/game_accel": 0.1
+        }
+    },
+    "audio": {
+        "No Sound": {
+            "audio/positional": false,
+            "audio/ai_sound": false
+        },
+        "My Sounds Only": {
+            "audio/positional": true,
+            "audio/ai_sound": false
+        },
+        "All Sounds": {
+            "audio/positional": true,
+            "audio/ai_sound": true
+        }
+    }
+    
+}

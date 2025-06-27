@@ -16,6 +16,8 @@ jobs:
             is-release:      0
           - os:              windows-2022
             is-release:      0
+          - os:              windows-2025
+            is-release:      0
 
     steps:
       - name: Checkout

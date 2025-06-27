@@ -5,7 +5,8 @@
         "price": "0",
         "mass": "4",
         "volume": "100",
-        "description": "@cargo/first_class_passenger.image@If you are taking first class passengers around, they had better have all the amenities one expects."
+        "description": "@cargo/first_class_passenger.image@If you are taking first class passengers around, they had better have all the amenities one expects.",
+        "passenger": true
     },
     {
         "file": "Business_Class_Passenger",
@@ -13,7 +14,8 @@
         "price": "0",
         "mass": "3",
         "volume": "50",
-        "description": "@cargo/business_class_passenger.image@With a laptop and a wide rear, the business class passenger enjoys some of the room of the first class passenger."
+        "description": "@cargo/business_class_passenger.image@With a laptop and a wide rear, the business class passenger enjoys some of the room of the first class passenger.",
+        "passenger": true
     },
     {
         "file": "Frozen_Colonist",
@@ -21,7 +23,8 @@
         "price": "0",
         "mass": "1",
         "volume": "3",
-        "description": "@cargo/frozen_colonist.image@Polite, space-efficient, doesn't try to back-seat pilot, doesn't care how long it takes to get there. Unfortunately, being technically, if only temporarily, deceased - not much for conversation."
+        "description": "@cargo/frozen_colonist.image@Polite, space-efficient, doesn't try to back-seat pilot, doesn't care how long it takes to get there. Unfortunately, being technically, if only temporarily, deceased - not much for conversation.",
+        "passenger": true
     },
     {
         "file": "Hitchhiker",
@@ -29,7 +32,8 @@
         "price": "0",
         "mass": "0.4",
         "volume": "6",
-        "description": "@cargo/steerage_class@Always brings a towel of his/her own."
+        "description": "@cargo/steerage_class@Always brings a towel of his/her own.",
+        "passenger": true
     },
     {
         "file": "Ration_Mealpacks",
@@ -1565,7 +1569,9 @@
         "price": "760",
         "mass": "0.15",
         "volume": "2",
-        "description": "@cargo/pilot.image@Much as you may hate the pilot of the ship that attempted to destroy yours, destroying that pilot's ship does not grant one, under interstellar law, the right to sell said pilot into slavery. That being said, many have been known to justify such actions by claiming it to be an entirely proper form of remuneration. [Note to editors: Do not change name as the code relies on Pilot]"
+        "description": "@cargo/pilot.image@Much as you may hate the pilot of the ship that attempted to destroy yours, destroying that pilot's ship does not grant one, under interstellar law, the right to sell said pilot into slavery. That being said, many have been known to justify such actions by claiming it to be an entirely proper form of remuneration. [Note to editors: Do not change name as the code relies on Pilot]",
+        "passenger": true,
+        "slave": true
     },
     {
         "file": "Slaves",
@@ -1573,7 +1579,9 @@
         "price": "750",
         "mass": "0.1",
         "volume": "2",
-        "description": "@cargo/slaves.image@Illegal due to fears of interspecies domination, among a plethora of other reasons, economic inefficiencies looming largest of all."
+        "description": "@cargo/slaves.image@Illegal due to fears of interspecies domination, among a plethora of other reasons, economic inefficiencies looming largest of all.",
+        "passenger": true,
+        "slave": true
     },
     {
         "file": "Clones",

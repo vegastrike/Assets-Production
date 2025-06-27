@@ -25,6 +25,8 @@ jobs:
             is-release:      1
           - os:              windows-2022
             is-release:      1
+          - os:              windows-2025
+            is-release:      1
 
     env:
       TAG_NAME: '${{ github.ref_name }}'
@@ -59,7 +61,7 @@ jobs:
         run: script/package.ps1
 
       - name: Upload the artifacts
-        uses: softprops/action-gh-release@da05d552573ad5aba039eaac05058a918a7bf631 # v2.2.2
+        uses: softprops/action-gh-release@72f2c25fcb47643c292f7107632f7a47c1df5cd8 # v2.3.2
         if: startsWith(github.ref, 'refs/tags/')
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
