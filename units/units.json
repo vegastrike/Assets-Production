@@ -11489,7 +11489,8 @@
         "Name": "More Upgrade Volume",
         "Object_Type": "Upgrade_Improvement",
         "Textual_Description": "\"@cargo/cargo_hud.png@Trades cargo space for upgrade room\"\n",
-        "Hold_Volume": "-50"
+        "Hold_Volume": "-20",
+        "Upgrade_Storage_Volume": "12"
     },
     {
         "Key": "hud_repair__upgrades",

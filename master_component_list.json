@@ -2044,8 +2044,8 @@
         "file": "mult_shady_moreupgrade",
         "categoryname": "upgrades/Shady_Mechanic",
         "price": "32000",
-        "mass": "10",
-        "volume": "50",
+        "mass": "1",
+        "volume": "0.1",
         "description": "@cargo/cargo_hud.image@Trades cargo space for upgrade room.",
         "upgrade": true
     },
