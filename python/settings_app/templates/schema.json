@@ -44,7 +44,7 @@
             "graphics/star_blend": true,
             "graphics/background": true,
             "graphics/cockpit": true,
-            "graphics/planet_detail_level": 96,
+            "graphics/planet_detail_level": 96
         },
         "Very High": {
             "graphics/fog": true,
@@ -61,7 +61,7 @@
             "graphics/star_blend": true,
             "graphics/background": true,
             "graphics/cockpit": true,
-            "graphics/planet_detail_level": 64,
+            "graphics/planet_detail_level": 64
         },
         "High": {
             "graphics/fog": true,
@@ -79,7 +79,7 @@
             "graphics/star_blend": true,
             "graphics/background": true,
             "graphics/cockpit": true,
-            "graphics/planet_detail_level": 48,
+            "graphics/planet_detail_level": 48
         },
         "Medium": {
             "graphics/fog": false,
@@ -97,7 +97,7 @@
             "graphics/star_blend": true,
             "graphics/background": true,
             "graphics/cockpit": true,
-            "graphics/planet_detail_level": 48,
+            "graphics/planet_detail_level": 48
         },
         "Low": {
             "graphics/fog": false,
@@ -116,7 +116,7 @@
             "graphics/star_blend": false,
             "graphics/background": false,
             "graphics/cockpit": false,
-            "graphics/planet_detail_level": 48,
+            "graphics/planet_detail_level": 48
         },
         "Retro": {
             "graphics/fog": false,
@@ -135,7 +135,7 @@
             "graphics/star_blend": false,
             "graphics/background": false,
             "graphics/cockpit": false,
-            "graphics/planet_detail_level": 24,
+            "graphics/planet_detail_level": 24
         }
     },
     "shaders": {
