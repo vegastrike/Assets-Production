@@ -42,11 +42,9 @@
             "graphics/znear": 8,
             "graphics/zfar": 65536,
             "graphics/star_blend": true,
-            "graphics/point_sparkles": false,
             "graphics/background": true,
             "graphics/cockpit": true,
-            "graphics/planet_detail_level": 96,
-            "graphics/jump_detail": 16
+            "graphics/planet_detail_level": 96
         },
         "Very High": {
             "graphics/fog": true,
@@ -61,11 +59,9 @@
             "graphics/znear": 8,
             "graphics/zfar": 65536,
             "graphics/star_blend": true,
-            "graphics/point_sparkles": false,
             "graphics/background": true,
             "graphics/cockpit": true,
-            "graphics/planet_detail_level": 64,
-            "graphics/jump_detail": 16
+            "graphics/planet_detail_level": 64
         },
         "High": {
             "graphics/fog": true,
@@ -81,11 +77,9 @@
             "graphics/znear": 16,
             "graphics/zfar": 32768,
             "graphics/star_blend": true,
-            "graphics/point_sparkles": false,
             "graphics/background": true,
             "graphics/cockpit": true,
-            "graphics/planet_detail_level": 48,
-            "graphics/jump_detail": 8
+            "graphics/planet_detail_level": 48
         },
         "Medium": {
             "graphics/fog": false,
@@ -101,11 +95,9 @@
             "graphics/znear": 16,
             "graphics/zfar": 32768,
             "graphics/star_blend": true,
-            "graphics/point_sparkles": false,
             "graphics/background": true,
             "graphics/cockpit": true,
-            "graphics/planet_detail_level": 48,
-            "graphics/jump_detail": 8
+            "graphics/planet_detail_level": 48
         },
         "Low": {
             "graphics/fog": false,
@@ -122,11 +114,9 @@
             "graphics/znear": 16,
             "graphics/zfar": 32768,
             "graphics/star_blend": false,
-            "graphics/point_sparkles": true,
             "graphics/background": false,
             "graphics/cockpit": false,
-            "graphics/planet_detail_level": 48,
-            "graphics/jump_detail": 8
+            "graphics/planet_detail_level": 48
         },
         "Retro": {
             "graphics/fog": false,
@@ -143,11 +133,9 @@
             "graphics/znear": 16,
             "graphics/zfar": 32768,
             "graphics/star_blend": false,
-            "graphics/point_sparkles": true,
             "graphics/background": false,
             "graphics/cockpit": false,
-            "graphics/planet_detail_level": 24,
-            "graphics/jump_detail": 8
+            "graphics/planet_detail_level": 24
         }
     },
     "shaders": {
