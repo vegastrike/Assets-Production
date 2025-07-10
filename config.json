@@ -128,7 +128,9 @@
         "ConsoleKeys::BringConsole": {"key": "function-1", "modifier": "ctrl"},
         "SetVelocityRefKey": {"key": "keypad-7", "modifier": "none"},
         "SetVelocityNullKey": {"key": "keypad-1", "modifier": "none"},
-        "Cockpit::Quit": {"key": "esc", "modifier": "none"}
+        "Cockpit::Quit": {"key": "esc", "modifier": "none"},
+        "FreeSlaves": {"key": "f", "modifier": "ctrl"},
+        "Enslave": {"key": "e", "modifier": "ctrl"}
     },
 
     "mouse": {
