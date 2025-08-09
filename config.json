@@ -535,7 +535,7 @@
         "dock_planet_radius_percent": 1.5,
         "planet_dock_port_min_size": 300.0,
         "planet_dock_port_size": 1.2,
-        "simple_dock": false,
+        "simple_dock": true,
         "simple_dock_range": 5000.0
     },
 
