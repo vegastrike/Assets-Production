@@ -613,7 +613,7 @@
         "remove_impossible_downgrades": true,
         "roll": 0.0,
         "screen": 0,
-        "simulation_atom": 0.1,
+        "simulation_atom": 0.05,
         "times_to_show_help_screen": 0,
         "trade_interface_tracks_prices": true,
         "trade_interface_tracks_prices_top_rank": 10,
