@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+# Launch the Python settings app installed under share/vegastrike
+
+# Resolve this script (follow symlinks)
+SELF="$0"
+while [ -h "$SELF" ]; do
+  dir="$(cd -P "$(dirname "$SELF")" && pwd)"
+  SELF="$(readlink "$SELF")"
+  [ "${SELF#/}" = "$SELF" ] && SELF="$dir/$SELF"
+done
+
+BINDIR="$(cd -P "$(dirname "$SELF")" && pwd)"
+PREFIX="$(cd "$BINDIR/.." && pwd)"
+
+APP="$PREFIX/share/vegastrike/python/settings_app/settings_app.py"
+
+# Prefer python3; fall back to python
+PYTHON_BIN="${PYTHON_BIN:-python3}"
+command -v "$PYTHON_BIN" >/dev/null 2>&1 || PYTHON_BIN=python
+
+exec "$PYTHON_BIN" "$APP" "$@"
