@@ -3228,7 +3228,7 @@
                         "Max_Cone": "180",
                         "Lock_Cone": "10",
                         "Hold_Volume": "25",
-                        "Upgrades": "{quadshield15;;}{armor06;;}{autotracking;;}{mult_overdrive02;;}{ecm_package03;;}{reactor08;;}{capacitor05;;}",
+                        "Upgrades": "{quadshield05;;}{armor06;;}{autotracking;;}{mult_overdrive02;;}{ecm_package03;;}{reactor08;;}{capacitor05;;}",
                         "Mounts": "{Pugilist;;;light;0.800000;-0.600000;8.000000;;;;;;;;;1;1}{Pugilist;;;light;-0.800000;-0.600000;8.000000;;;;;;;;;1;1}{ParticleBeam;;;light;-0.000000;-0.400000;8.200000;;;;;;;;;1;1}{Swarm;25;7;Special Special-Missile;2.000000;0.800000;-4.000000;;;;;;;;;1;1}{Swarm;25;7;Special Special-Missile;-2.000000;0.800000;-4.000000;;;;;;;;;1;1}{Swarm;25;7;Special Special-Missile;1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{Swarm;25;7;Special Special-Missile;-1.000000;-1.400000;-1.000000;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}{FriendOrFoe;1;16;Medium-Missile Light-Missile;-2.5000000;-1.400000;-2.000000;;;;;;;;;1;1}",
                         "armor": "1000.0",
                         "shield": "250.0",
