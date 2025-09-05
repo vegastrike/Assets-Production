@@ -28,7 +28,11 @@ jobs:
           # only build one Deb File b/c they're so large
           - FROM:     'debian:bookworm'
             ARTIFACT_EXT: 'deb'
+          - FROM:     'opensuse/leap:16.0'
+            ARTIFACT_EXT: 'rpm'
           - FROM:     'opensuse/leap:15.6'
+            ARTIFACT_EXT: 'rpm'
+          - FROM:     'fedora:42'
             ARTIFACT_EXT: 'rpm'
           - FROM:     'fedora:41'
             ARTIFACT_EXT: 'rpm'
