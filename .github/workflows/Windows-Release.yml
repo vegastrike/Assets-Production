@@ -52,8 +52,6 @@ jobs:
 
       - name: Install CMake
         uses: lukka/get-cmake@2ecc21724e5215b0e567bc399a2602d2ecb48541 #v4.1.1
-        with:
-          cmakeVersion: 4.1.0
 
       - name: Build it
         run: script/build.ps1
