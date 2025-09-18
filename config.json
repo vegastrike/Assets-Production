@@ -1174,7 +1174,7 @@
         "damage_chance": 0.005,
         "damage_player_chance": 0.5,
         "debris_mass": 0.00001,
-        "debris_time": 500.0,
+        "debris_time": 15.0,
         "default_interdiction": 0.01,
         "default_shield_tightness": 0.0,
         "definite_damage_chance": 0.1,
