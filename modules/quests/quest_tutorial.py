@@ -232,7 +232,7 @@ class quest_tutorial (quest.quest):
     def acceptTutorial (self):
         velocity = Vector.Mag(self.player.GetVelocity())
         # if the offer has been placed, and player is put for 10s and drone is near
-        if (VS.GetGameTime()>self.timer and self.drone.getDistance(self.player)<1100 and velocity<=10):
+        if (VS.GetGameTime()>self.timer and self.drone.getDistance(self.player)<11000 and velocity<=10):
             self.player.SetTarget(self.drone)
             self.timer = VS.GetGameTime()
             self.complete = self.getSaveValue()
