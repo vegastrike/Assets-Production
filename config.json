@@ -969,7 +969,7 @@
             "completed_objectives_last": true,
             "crosshairs_on_chase_cam": false,
             "crosshairs_on_padlock": false,
-            "damage_report_heading": "#00ff00DAMAGE REPORT\\n\\n",
+            "damage_report_heading": "#00ff00DAMAGE REPORT",
             "debug_position": false,
             "diamond_line_thickness": 1.0,
             "diamond_rotation_speed": 1.0,
