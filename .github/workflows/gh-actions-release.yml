@@ -38,7 +38,9 @@ jobs:
             ARTIFACT_EXT: 'rpm'
           - FROM:     'fedora:40'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'rockylinux_rockylinux:9.5'
+          - FROM:     'rockylinux_rockylinux:10.0'
+            ARTIFACT_EXT: 'rpm'
+          - FROM:     'rockylinux_rockylinux:9.6'
             ARTIFACT_EXT: 'rpm'
 
     steps:

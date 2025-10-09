@@ -25,7 +25,8 @@ jobs:
           - FROM:     'fedora:42'
           - FROM:     'fedora:41'
           - FROM:     'fedora:40'
-          - FROM:     'rockylinux_rockylinux:9.5'
+          - FROM:     'rockylinux_rockylinux:10.0'
+          - FROM:     'rockylinux_rockylinux:9.6'
           - FROM:     'manjarolinux/base'
 
     steps:
