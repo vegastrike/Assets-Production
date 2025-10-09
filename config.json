@@ -1204,7 +1204,7 @@
         "face_target_on_auto": false,
         "fire_missing_autotrackers": true,
         "friendly_auto_radius": 0.0,
-        "game_accel": 1.0,
+        "game_accel": 4.5,
         "game_speed": 1.0,
         "game_speed_affects_autogen_systems": false,
         "game_speed_lying": false,
