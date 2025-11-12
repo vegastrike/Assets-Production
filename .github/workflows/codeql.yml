@@ -28,7 +28,7 @@ jobs:
         # Supported options are ['csharp', 'cpp', 'go', 'java', 'javascript', 'python']
         include:
         - language: python
-          build-mode: manual
+          build-mode: none
         - language: actions
           build-mode: none
         # Learn more...
