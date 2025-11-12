@@ -22,12 +22,14 @@ jobs:
           - FROM:     'debian:bookworm'
           - FROM:     'opensuse/leap:16.0'
           - FROM:     'opensuse/leap:15.6'
+          - FROM:     'fedora:43'
           - FROM:     'fedora:42'
           - FROM:     'fedora:41'
           - FROM:     'fedora:40'
           - FROM:     'rockylinux_rockylinux:10.0'
           - FROM:     'rockylinux_rockylinux:9.6'
           - FROM:     'manjarolinux/base'
+          - FROM:     'endeavouros'
 
     steps:
     - name: Checkout repository
