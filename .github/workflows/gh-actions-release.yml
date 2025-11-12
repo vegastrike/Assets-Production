@@ -32,6 +32,8 @@ jobs:
             ARTIFACT_EXT: 'rpm'
           - FROM:     'opensuse/leap:15.6'
             ARTIFACT_EXT: 'rpm'
+          - FROM:     'fedora:43'
+            ARTIFACT_EXT: 'rpm'
           - FROM:     'fedora:42'
             ARTIFACT_EXT: 'rpm'
           - FROM:     'fedora:41'
