@@ -29,7 +29,7 @@ jobs:
           - FROM:     'rockylinux_rockylinux:10.0'
           - FROM:     'rockylinux_rockylinux:9.6'
           - FROM:     'manjarolinux/base'
-          - FROM:     'endeavouros'
+          - FROM:     'alex5402_endeavouros'
 
     steps:
     - name: Checkout repository
