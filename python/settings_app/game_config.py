@@ -1,10 +1,8 @@
 # A class to manage the configuration, both from user folder and from the assets folder.
 
+import copy
 import json
 import os
-import getpass
-import platform
-import copy
 
 import app_config as ac
 
@@ -25,10 +23,10 @@ CONFIG_FILE_NAME = "config.json"
 
 
 
-class ConfigBranch():
-    def __init__(self, parent, key: str, asset_dict: dict, user_dict: dict = None):
+class ConfigBranch:
+    def __init__(self, parent, key: str | None, asset_dict: dict, user_dict: dict = None):
         self.parent: ConfigBranch = parent
-        self.key: str = key
+        self.key: str | None = key
         self.value = {}
         self.dirty = []  # A list of all dirty leaves
 
@@ -36,7 +34,7 @@ class ConfigBranch():
             # Branch
             if isinstance(value, dict):
                 # We have a user branch
-                if user_dict != None and key in user_dict:
+                if user_dict is not None and key in user_dict:
                     self.value[key] = ConfigBranch(parent = self, key = key, asset_dict = value, user_dict = user_dict[key])
                 # No user branch
                 else:
@@ -44,7 +42,7 @@ class ConfigBranch():
             # Leaf
             else:
                 # We have a user leaf
-                if user_dict != None and key in user_dict:
+                if user_dict is not None and key in user_dict:
                     self.value[key] = ConfigLeaf(parent = self, key = key, value = user_dict[key], original_value = value)
                 # No user branch
                 else:
@@ -92,16 +90,16 @@ class ConfigBranch():
             return None
         
     def get_changes_dictionary(self):
-        dict = {}
+        return_value = {}
         for key, value in self.value.items():
             if not value.is_dirty():
                 continue
 
             if isinstance(value, ConfigBranch):
-                dict[key] = value.get_changes_dictionary()
+                return_value[key] = value.get_changes_dictionary()
             elif isinstance(value, ConfigLeaf):
-                dict[key] = value.value
-        return dict
+                return_value[key] = value.value
+        return return_value
     
     # Recursive has_key
     def has_key(self, key: list[str]):
@@ -147,7 +145,7 @@ class ConfigBranch():
 
     
 
-class ConfigLeaf():
+class ConfigLeaf:
     def __init__(self, parent: ConfigBranch, key: str, value, original_value):
         self.parent = parent
         self.key = key
