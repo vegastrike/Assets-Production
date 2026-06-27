@@ -1,7 +1,7 @@
 import json
 import locale
 
-locale.setlocale(locale.LC_ALL, '')  
+# locale.setlocale(locale.LC_ALL, '')  
 
 def format_number(number) -> str:
     # large numbers - int with commas
