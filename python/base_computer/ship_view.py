@@ -583,7 +583,7 @@ def clean_ship_stats(ship_stats):
 
 def get_ship_description(ship_stats):
     clean_ship_stats(ship_stats)
-    locale.setlocale(locale.LC_ALL, '')
+    # locale.setlocale(locale.LC_ALL, '')
     
     text = get_notes(ship_stats)
     text += get_general(ship_stats)
