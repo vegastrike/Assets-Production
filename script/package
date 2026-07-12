@@ -6,7 +6,7 @@
 # @usage  : script/package
 # @param  : none
 #
-# Copyright (C) 2020-2025 Stephen G. Tuggy and other vsUTCS contributors
+# Copyright (C) 2020-2026 Stephen G. Tuggy and other vsUTCS contributors
 #
 # This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
 #
@@ -23,6 +23,10 @@
 # You should have received a copy of the GNU General Public License
 # along with vsUTCS.  If not, see <https://www.gnu.org/licenses/>.
 
+
+echo "----------------------------"
+echo "--- package | 2026-07-12 ---"
+echo "----------------------------"
 
 ROOT_DIR=$(pwd)
 BUILD_DIR=$ROOT_DIR/build
@@ -79,7 +83,7 @@ function copyTarballs()
 function copyFiles()
 {
     # Ensure the package output directory exists
-    mkdir -p ${PACKAGE_DIR}
+    mkdir -p "${PACKAGE_DIR}"
 
     copyDebFiles
     copyRpmFiles
@@ -95,18 +99,18 @@ function buildPackages()
 
     while [ $hdiutil_success -ne 1 ] && [ $try_count -lt 8 ]; do
         # Create temporary rw image
-        if make package
+        if cpack -V -G DragNDrop
         then
             hdiutil_success=1
             break
         fi
         try_count=$(( $try_count + 1 ))
-        echo "'make package' failed (attempt ${try_count}). Retrying..."
+        echo "'cpack -V -G DragNDrop' failed (attempt ${try_count}). Retrying..."
         sleep 1
     done
 
     if [ $hdiutil_success -ne 1 ]; then
-        echo "FATAL: 'make package' FAILED!"
+        echo "FATAL: 'cpack -V -G DragNDrop' FAILED!"
         exit 1
     fi
 
@@ -132,13 +136,9 @@ function buildPackages()
     fi
 }
 
-echo "----------------------------"
-echo "--- package | 2025-01-22 ---"
-echo "----------------------------"
-
-cd $BUILD_DIR
+cd "$BUILD_DIR" || exit 2
 
 buildPackages
 copyFiles
 
-cd $ROOT_DIR
+cd "$ROOT_DIR" || exit 2
