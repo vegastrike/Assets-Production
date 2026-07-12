@@ -26,8 +26,10 @@ jobs:
         include:
           - os:              windows-2022
             is-release:      1
+            install-nsis:    0
           - os:              windows-2025
             is-release:      1
+            install-nsis:    1
 
     env:
       TAG_NAME: '${{ github.ref_name }}'
@@ -52,6 +54,12 @@ jobs:
 
       - name: Install CMake
         uses: lukka/get-cmake@f5b8fbb4d77cec1acc5a5f9f0df4beffaf5d98d9 #v4.3.4
+
+      - name: Install NSIS
+        if: ${{ matrix.install-nsis }}
+        uses: repolevedavaj/install-nsis@1ab2f7ba2fe9408db612029be0bb3c0088b0d3e9 # v1.2.1
+        with:
+          nsis-version: '3.12'
 
       - name: Build it
         run: script/build.ps1
