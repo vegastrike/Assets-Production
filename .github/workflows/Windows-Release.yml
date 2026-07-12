@@ -61,10 +61,10 @@ jobs:
         with:
           nsis-version: '3.12'
 
-      - name: Build it
+      - name: Build the code
         run: script/build.ps1
 
-      - name: Package it
+      - name: Package the code
         run: script/package.ps1
 
       - name: Upload the artifacts
