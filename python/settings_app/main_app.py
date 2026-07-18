@@ -16,6 +16,19 @@ import tabs.bindings
 import game_config as gc
 import graphics_factory.tooltip as tooltip
 
+from kivy.lang import Builder
+from kivy.metrics import dp
+
+Builder.load_string('''
+#:import dp kivy.metrics.dp
+
+<ScrollView>:
+    bar_width: dp(14)
+    scroll_type: ['bars', 'content']
+    bar_color: 0.6, 0.6, 0.6, 1
+    bar_inactive_color: 0.6, 0.6, 0.6, 1
+    bar_margin: dp(2)
+''')
 
 class MainWindow(BoxLayout):
     def __init__(self, **kwargs):
