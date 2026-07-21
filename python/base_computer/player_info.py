@@ -38,10 +38,10 @@ def get_player_info(names, relations, kills):
         color = get_color(relation)
         
         if faction_kills == 0 or name == 'privateer':
-            text += f"{light_grey}{name}:{end_color} {color}{relation}{end_color}{newline}"
+            text += f"{light_grey}{name:<24}{end_color} {color}{relation:>3}{end_color}{newline}"
         else: 
-            text += f"{light_grey}{name}:{end_color} {color}{relation}, kills: {faction_kills}{end_color}{newline}"
+            text += f"{light_grey}{name:<24}{end_color} {color}{relation:>3}, kills: {faction_kills:>3}{end_color}{newline}"
     
-    text += f"{newline}{bold}Total Kills: {total_kills}{end_bold}{newline}"
+    text += f"{newline}{bold}{"Total Kills":<24} {total_kills:>3}{end_bold}{newline}"
         
     return text

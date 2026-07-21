@@ -138,11 +138,11 @@ def get_ypr(ship_stats, prefix, divider_maneuver, left = '_Left', right = '_Righ
 # General
 def get_general(ship_stats):
     text = f"{green}[GENERAL INFORMATION]{newline}"
-    text += f"#-c{newline}{light_grey}Model: #-c{ship_stats['Name']}{light_grey}    {get_variant(ship_stats[KEY])}{newline}"
-    text += f"{light_grey}Mass: #-c{lnum(ship_stats,'Mass')} metric tons{newline}"
-    text += f"{light_grey}Hold volume: #-c{lnum(ship_stats,'Hold_Volume')} cubic meters{newline}"
-    text += f"{light_grey}Upgrade volume: #-c{lnum(ship_stats,'Upgrade_Storage_Volume')} cubic meters{newline}"
-    text += f"{light_grey}Fuel capacity: #-c{lnum(ship_stats,'Fuel_Capacity')} metric tons of Lithium-6{newline}{newline}"
+    text += f"#-c{newline}{light_grey}Model:          #-c{ship_stats['Name']}{light_grey}    {get_variant(ship_stats[KEY])}{newline}"
+    text += f"{light_grey}Mass:           #-c{lnum(ship_stats,'Mass'):>5} metric tons{newline}"
+    text += f"{light_grey}Hold volume:    #-c{lnum(ship_stats,'Hold_Volume'):>5} cubic meters{newline}"
+    text += f"{light_grey}Upgrade volume: #-c{lnum(ship_stats,'Upgrade_Storage_Volume'):>5} cubic meters{newline}"
+    text += f"{light_grey}Fuel capacity:  #-c{lnum(ship_stats,'Fuel_Capacity'):>5} metric tons of Lithium-6{newline}{newline}"
     return text
 
 # Flight Characteristics
@@ -150,14 +150,14 @@ def get_flight(ship_stats):
     mass = get_dbl(ship_stats,'Mass')
     divider = 9.8 * mass
     divider_maneuver = mass * 180 / math.pi
-    yaw = get_dbl(ship_stats,'Maneuver_Yaw', divider_maneuver)
+    yaw   = get_dbl(ship_stats,'Maneuver_Yaw', divider_maneuver)
     pitch = get_dbl(ship_stats,'Maneuver_Pitch', divider_maneuver)
-    roll = get_dbl(ship_stats,'Maneuver_Roll', divider_maneuver)
+    roll  = get_dbl(ship_stats,'Maneuver_Roll', divider_maneuver)
     
     forward = get_dbl(ship_stats,'Forward_Accel', divider)
-    retro = get_dbl(ship_stats,'Retro_Accel', divider)
+    retro   = get_dbl(ship_stats,'Retro_Accel', divider)
     
-    lateral = (get_dbl(ship_stats,'Left_Accel', divider) + get_dbl(ship_stats,'Right_Accel', divider))/2
+    lateral  = (get_dbl(ship_stats,'Left_Accel', divider) + get_dbl(ship_stats,'Right_Accel', divider))/2
     vertical = (get_dbl(ship_stats,'Top_Accel', divider) + get_dbl(ship_stats,'Bottom_Accel', divider))/2
     
     afterburner = get_dbl(ship_stats,'Afterburner_Accel', divider)
@@ -165,18 +165,18 @@ def get_flight(ship_stats):
     text = f"{green}[FLIGHT CHARACTERISTICS]{newline}"
     
     if(yaw == pitch and yaw == roll):
-        text += f"#-c{newline}{light_grey}Turning response: #-c{fmt_dbl(yaw)} radians/second²{newline}"
+        text += f"#-c{newline}{light_grey}Turning response:        #-c{fmt_dbl(yaw):>9} radians/second²{newline}"
         text += f"{grey}  (yaw, pitch, roll)#-c{newline}"
     else:
-        text += f"#-c{newline}{light_grey}  yaw #-c{fmt_dbl(yaw)} radians/second²{newline}"
+        text += f"#-c{newline}{light_grey}  yaw   #-c{fmt_dbl(yaw)} radians/second²{newline}"
         text += f"#-c{newline}{light_grey}  pitch #-c{fmt_dbl(pitch)} radians/second²{newline}"
-        text += f"#-c{newline}{light_grey}  roll #-c{fmt_dbl(roll)} radians/second²{newline}"
+        text += f"#-c{newline}{light_grey}  roll  #-c{fmt_dbl(roll)} radians/second²{newline}"
     
-    text += f"{light_grey}Fore acceleration: #-c{fmt_dbl(forward)} gravities{newline}"
-    text += f"{light_grey}Aft acceleration: #-c{fmt_dbl(retro)} gravities{newline}"
+    text += f"{light_grey}Fore acceleration:       #-c{fmt_dbl(forward):>9} gravities{newline}"
+    text += f"{light_grey}Aft acceleration:        #-c{fmt_dbl(retro):>9} gravities{newline}"
     
     if(lateral == vertical):
-        text += f"{light_grey}Orthogonal acceleration: #-c{fmt_dbl(lateral)} gravities{newline}"
+        text += f"{light_grey}Orthogonal acceleration: #-c{fmt_dbl(lateral):>9} gravities{newline}"
         text += f"{grey}(vertical and lateral axes)#-c{newline}"
     else:
         text += f"{light_grey} Lateral acceleration #-c{fmt_dbl(lateral)} gravities{newline}"
@@ -194,13 +194,13 @@ def get_governor(ship_stats):
     roll = get_ypr(ship_stats, 'Roll_Governor',divider)
      
     text = f"{green}[GOVERNOR SETTINGS]{newline}#-c{newline}"
-    text += f"{light_grey}Max combat speed: #-c{speed} m/s{newline}"
-    text += f"{light_grey}Max overdrive combat speed: #-c{afterburner} m/s{newline}"
-    text += f"{light_grey}Max non-combat speed: #-c{speed * non_combat_speed_multiplier} m/s{newline}"
-    text += f"{light_grey}Max turn rates:#-c{newline}"
-    text += f"{light_yellow} - yaw: #-c{fmt_dbl(yaw)} radians/second{newline}"
+    text += f"{light_grey}Max combat speed:           #-c{speed:>8} m/s{newline}"
+    text += f"{light_grey}Max overdrive combat speed: #-c{afterburner:>8} m/s{newline}"
+    text += f"{light_grey}Max non-combat speed:       #-c{speed * non_combat_speed_multiplier:>8} m/s{newline}"
+    text += f"{light_grey}Max turn rates: #-c{newline}"
+    text += f"{light_yellow} - yaw:   #-c{fmt_dbl(yaw)} radians/second{newline}"
     text += f"{light_yellow} - pitch: #-c{fmt_dbl(pitch)} radians/second{newline}"
-    text += f"{light_yellow} - roll: #-c{fmt_dbl(roll)} radians/second{newline}{newline}"
+    text += f"{light_yellow} - roll:  #-c{fmt_dbl(roll)} radians/second{newline}{newline}"
     return text
 
 def get_radar(ship_stats):
@@ -220,17 +220,17 @@ def get_radar(ship_stats):
 
 
     text = f"{green}[TARGETTING SUBSYSTEM]{newline}#-c{newline}"
-    text += f"{light_grey}Tracking range: #-c{radar_range} km{newline}"
+    text += f"{light_grey}Tracking range:          #-c{radar_range:>10} km{newline}"
     
     if(near_equal(max_cone,math.pi)):
-        text += f"{light_grey}Tracking cone: #-cOmni-directional{newline}"
+        text += f"{light_grey}Tracking cone:        #-cOmni-directional{newline}"
     else:
-        text += f"{light_grey}Tracking cone: #-c{fmt_dbl(max_cone * 2)} radians{newline}"
+        text += f"{light_grey}Tracking cone:           #-c{fmt_dbl(max_cone * 2):>5} radians{newline}"
         text += f"{light_grey} (planar angle: 2 pi means full space)#-c{newline}"
-    text += f"{light_grey}Assisted targeting cone: #-c{fmt_dbl(tracking_cone * 2)} radians{newline}"
-    text += f"{light_grey}Missile locking cone: #-c{fmt_dbl(lock_cone * 2)} radians{newline}"
-    text += f"{light_grey}ITTS (Intelligent Target Tracking System) support: #-c{get_itts(itts)}{newline}"
-    text += f"{light_grey}AFHH (Advanced Flag & Hostility Heuristics) support: #-c{get_iff(iff)} {newline}{newline}"
+    text += f"{light_grey}Assisted targeting cone: #-c{fmt_dbl(tracking_cone * 2):>5} radians{newline}"
+    text += f"{light_grey}Missile locking cone:    #-c{fmt_dbl(lock_cone * 2):>5} radians{newline}"
+    text += f"{light_grey}ITTS (Intelligent Target Tracking System) support:   #-c{get_itts(itts):>5}{newline}"
+    text += f"{light_grey}AFHH (Advanced Flag & Hostility Heuristics) support: #-c{get_iff(iff):>5} {newline}{newline}"
 
     if ecm_current > 0:
         text = f"{green}[ELECTRONIC COUNTER-MEASURES]{newline}#-c{newline}"
@@ -254,9 +254,9 @@ def get_energy_spec_and_jump(ship_stats):
 
 
     text = f"{green}[ENERGY SUBSYSTEM]{newline}#-c{newline}"
-    text += f"{light_grey}Recharge: #-c{reactor} MJ/s{newline}"
-    text += f"{light_grey}Main capacitor: #-c{energy} MJ{newline}"
-    text += f"{light_grey}SPEC capacitor: #-c{ftl_energy}0 MJ{newline}{newline}"
+    text += f"{light_grey}Recharge: #-c      {reactor:>9} MJ/s{newline}"
+    text += f"{light_grey}Main capacitor: #-c{energy:>9} MJ{newline}"
+    text += f"{light_grey}SPEC capacitor: #-c{ftl_energy:>9} MJ{newline}{newline}"
     
     text += f"{green}[SPEC SUBSYSTEM]{newline}#-c{newline}"
     text += f"{light_grey}Active SPEC Energy Requirements: #-c{spec_cost} MJ/s{newline}{newline}"
@@ -297,27 +297,27 @@ def get_durability(ship_stats):
     shield_recharge = lnum(ship_stats,'Shield_Recharge')
     
     text = f"{green}[DURABILITY STATISTICS]{newline}#-c{newline}"
-    text += f"{light_grey}Sustainable Hull Damage: #-c{hull} MJ{newline}{newline}"
+    text += f"{light_grey}Sustainable Hull Damage: #-c{hull:>5} MJ{newline}{newline}"
     
     text += f"{light_grey}Armor#-c{newline}"
     for pair in armor:
         armor_stat = lnum(ship_stats, pair[1])
-        text += f"{light_yellow} - {pair[0]}: #-c{armor_stat} MJ{newline}"
+        text += f"{light_yellow} - {pair[0]: <16}: #-c{armor_stat:>9} MJ{newline}"
     
     text += f"{newline}{light_grey}Shields#-c{newline}"
-    text += f"{light_grey}Shield recharge: #-c{shield_recharge} MJ/s{newline}"
+    text += f"{light_grey}Shield recharge: #-c{shield_recharge:>7} MJ/s{newline}"
     if num_emitters == 0:
         text += f"{red}No shielding.{end_color}{newline}{newline}"
     elif num_emitters == 2:
         text += f"{light_grey}Number of shield emitter: 2{end_color}{newline}"
         for pair in shield2:
             shield_stat = lnum(ship_stats, pair[1])
-            text += f"{light_yellow} - {pair[0]}: #-c{shield_stat} MJ{newline}"
+            text += f"{light_yellow} - {pair[0]: <16}: #-c{shield_stat:>9} MJ{newline}"
     else:
         text += f"{light_grey}Number of shield emitter: 4{end_color}{newline}"
         for pair in shield4:
             shield_stat = lnum(ship_stats, pair[1])
-            text += f"{light_yellow} - {pair[0]}: #-c{shield_stat} MJ{newline}"
+            text += f"{light_yellow} - {pair[0]: <16}: #-c{shield_stat:>9} MJ{newline}"
     
     if 'Can_Cloak' in ship_stats and ship_stats['Can_Cloak'] == '1':
         text += f"{light_grey}Cloaking device installed.{end_color}{newline}"
@@ -394,36 +394,36 @@ def get_weapon_details(weapon, vsdm, remaining = ''):
         damage = weapon['Damage.rate']
         
         if damage  < 0:
-            text += f"{light_grey}  - Damage: {damage * vsdm}MJ (non-lethal){end_color}{newline}"
+            text += f"{light_grey}  - Damage:             {damage * vsdm:>10} MJ (non-lethal){end_color}{newline}"
         else:
-            text += f"{light_grey}  - Damage: {damage * vsdm}MJ {end_color}{newline}"
+            text += f"{light_grey}  - Damage:             {damage * vsdm:>10} MJ {end_color}{newline}"
     
     if 'Damage.phasedamage' in weapon:
         damage = weapon['Damage.phasedamage']
         
         if damage  < 0:
-            text += f"{light_grey}  - Phase Damage: {damage * vsdm}MJ (non-lethal){end_color}{newline}"
+            text += f"{light_grey}  - Phase Damage:       {damage * vsdm:>10} MJ (non-lethal){end_color}{newline}"
         else:
-            text += f"{light_grey}  - Phase Damage: {damage * vsdm}MJ {end_color}{newline}"
+            text += f"{light_grey}  - Phase Damage:       {damage * vsdm:>10} MJ {end_color}{newline}"
     
     if 'Energy.rate' in weapon and weapon['Energy.rate'] > 0:
         energy = weapon['Energy.rate']
-        text += f"{light_grey}  - Energy: {energy}{end_color}{newline}"
+        text += f"{light_grey}  - Energy:             {energy:>10}{end_color}{newline}"
         
     if 'Energy.refire' in weapon:
         refire = weapon['Energy.refire']
-        text += f"{light_grey}  - Fires every: {refire} seconds{end_color}{newline}"
+        text += f"{light_grey}  - Fires every:        {refire:>10} seconds{end_color}{newline}"
         
     if 'Distance.range' in weapon:
         range_ = weapon['Distance.range']
-        text += f"{light_grey}  - Range: {range_}{end_color}{newline}"
+        text += f"{light_grey}  - Range:              {range_:>10}{end_color}{newline}"
     
     if 'Energy.locktime' in weapon:
         lock = weapon['Energy.locktime']
-        text += f"{light_grey}  - Time to lock: {lock} seconds{end_color}{newline}"
+        text += f"{light_grey}  - Time to lock: {lock:>16} seconds{end_color}{newline}"
         
         if remaining != '':
-            text += f"{light_grey}  - Missiles remaining: {remaining}{end_color}{newline}"
+            text += f"{light_grey}  - Missiles remaining: {remaining:>10}{end_color}{newline}"
         
         
     return text
@@ -457,14 +457,14 @@ def get_weapons(ship_stats):
     mp_summary = get_mounts_summary(ship_stats)
     for mount,quantity in mp_summary.items():
         if quantity == 1:
-            text += f"{light_grey}1 mount point of type {green}{mount[0]} {light_yellow}{mount[1]}{end_color}{newline}"
+            text += f"{light_grey}1 mount point of type {end_color}{green}{mount[0]}{end_color} {light_yellow}{mount[1]}{end_color}{newline}"
         else:
-            text += f"{green}{quantity}{light_grey} mount points of type {green}{mount[0]} {light_yellow}{mount[1]}{end_color}{newline}"
+            text += f"{green}{quantity}{end_color}{light_grey} mount points of type {end_color}{green}{mount[0]}{end_color} {light_yellow}{mount[1]}{end_color}{newline}"
     
     # TODO: print each weapon info once
     mounts = get_mounts(ship_stats)
     for mount in mounts:
-        text += f"{light_grey}{mount[0]} {yellow}{mount[1]}{end_color}{newline}"
+        text += f"{light_grey}{mount[0]}{end_color} {yellow}{mount[1]}{end_color}{newline}"
         
         if len(mount[0]) > 0:
             # Weapon installed
@@ -601,12 +601,12 @@ if __name__ == "__main__":
     # Test function
     # Useful to check python script for correctness before running VS
     
-    with open('units/units_old.json', 'r') as file:
+    with open('units/ships.json', 'r') as file:
         data = json.load(file)
         
-        for ship in data:
-            if ship[KEY] == 'Vigilance':
-                t = get_ship_description(ship)
+        for ship in data.get('units'):
+            if ship.get("data") and ship.get("data").get("Name") == 'Llama':
+                t = get_ship_description(ship.get("data"))
                 t = t.replace('#n#','\n')
                 print(t)
                 
