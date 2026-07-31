@@ -1,4 +1,7 @@
-import ctypes, json, sys
+import ctypes
+import ctypes.util
+import json
+import sys
 
 SDL_INIT_VIDEO = 0x00000020
 
@@ -16,7 +19,13 @@ class _SDL_DisplayMode(ctypes.Structure):
     ]
 
 def main():
-    sdl = ctypes.CDLL("libSDL3.so.0")
+    # Resolve the SDL3 library name for the current platform (SDL3.dll on
+    # Windows, libSDL3.dylib on macOS, libSDL3.so on Linux) instead of
+    # hardcoding the Linux name, so this works cross-platform.
+    libname = ctypes.util.find_library("SDL3")
+    if libname is None:
+        libname = "libSDL3.so.0"  # fallback for Linux when find_library fails
+    sdl = ctypes.CDLL(libname)
     sdl.SDL_Init(SDL_INIT_VIDEO)
     sdl.SDL_GetDisplays.argtypes = [ctypes.POINTER(ctypes.c_int)]
     sdl.SDL_GetDisplays.restype = ctypes.POINTER(ctypes.c_uint32)
