@@ -12,7 +12,6 @@ license = "GPL-2.0-only"
 #license-files = ["vega-license.txt"]
 dependencies = [
     "kivy>=2.0.0",
-    "screeninfo>=0.8.1",
 ]
 
 [project.scripts]
