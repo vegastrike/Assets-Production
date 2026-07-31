@@ -30,7 +30,7 @@ initial_setup_locations = {
 home_dir = ""
 
 
-def get_locations_for_platform():
+def get_locations_for_platform(assets_dir=None):
     global home_dir
 
     os_name = platform.system().lower()
@@ -40,7 +40,7 @@ def get_locations_for_platform():
         raise ValueError(f"Unsupported platform: {os_name}")
     
     home_dir = initial_setup_locations[os_name]["home_dir"].replace("<user>", user_name)
-    asset_location = initial_setup_locations[os_name]["assets_location"]
+    asset_location = assets_dir if assets_dir else initial_setup_locations[os_name]["assets_location"]
     user_location = initial_setup_locations[os_name]["user_location"].replace("<user>", user_name)
 
     # Ensure the directories exist
@@ -59,8 +59,8 @@ def get_locations_for_platform():
     return asset_location, user_location
 
 class AppConfig:
-    def __init__(self):
-        self.assets_folder, self.user_folder = get_locations_for_platform()
+    def __init__(self, assets_dir=None):
+        self.assets_folder, self.user_folder = get_locations_for_platform(assets_dir)
         self.theme = "equilux" # Default theme, can be overridden by settings_app.json
 
         # User folder exists
@@ -118,7 +118,7 @@ app_config: AppConfig = None
 app_schema = {}
 
 def load_schema():
-    print("loading app_schame")
+    print("loading app_schema")
     global app_schema
 
     # Load schema

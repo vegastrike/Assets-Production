@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vegastrike-settings"
+version = "1.0.0"
+description = "Vega Strike Settings Application"
+#readme = "README.md"
+requires-python = ">=3.8"
+license = "GPL-2.0-only"
+#license-files = ["vega-license.txt"]
+dependencies = [
+    "kivy>=2.0.0",
+    "screeninfo>=0.8.1",
+]
+
+[project.scripts]
+vega-settings = "settings_app:main"
+
+[tool.setuptools]
+packages = ["tabs", "graphics_factory", "templates"]
+py-modules = [
+    "settings_app",
+    "main_app",
+    "app_config",
+    "game_config",
+    "os_utils",
+    "setup_folders",
+    "key_utils"
+]
