@@ -276,10 +276,13 @@ class CaptureBindingButton(AbstractLeafGui):
         Window.unbind(on_joy_button_down=self._on_joy)
 
     def _on_key(self, window, keycode, scancode, codepoint, modifiers):
-        # Only accept if a codepoint is available (printable keys)
-        if not codepoint:
+        # Special keys (tab, arrows, F-keys...) have no codepoint; map the
+        # SDL keycode to the engine's key name. Printable keys use codepoint.
+        import key_utils
+        engine_key = key_utils.keycode_to_engine_name(keycode, codepoint)
+        if not engine_key:
             return
-        new_binding = {"key": codepoint, "modifier": (modifiers[0] if modifiers else 'none')}
+        new_binding = {"key": engine_key, "modifier": (modifiers[0] if modifiers else 'none')}
         self._finish(new_binding)
 
     def _on_mouse(self, window, touch):
