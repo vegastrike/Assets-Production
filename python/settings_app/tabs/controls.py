@@ -5,7 +5,7 @@ from kivy.uix.scrollview import ScrollView
 import game_config as gc
 
 from graphics_factory.divider import DividerLine
-from graphics_factory.label_control_pair import BoolLeafGui, SliderLeafGui, AxisCaptureRow
+from graphics_factory.label_control_pair import BoolLeafGui, SliderLeafGui, AxisExplorer, RoleAxisRow
 
 
 class ControlsTab(BoxLayout):
@@ -67,11 +67,13 @@ class ControlsTab(BoxLayout):
 
         axes = gc.game_config.get_object(["axes"])
         if axes is not None:
-            self.axis_rows = []
+            # One shared live display of all axes (no duplication), then one
+            # compact row per role.
+            roles = {role: axes.get_object([role]) for role in sorted(axes.value.keys())}
+            explorer = AxisExplorer(parent=self, roles=roles)
             for role in sorted(axes.value.keys()):
-                role_leaf = axes.get_object([role])
-                row = AxisCaptureRow(parent=self, role=role, role_leaf=role_leaf)
-                self.axis_rows.append(row)
+                RoleAxisRow(parent=self, role=role, role_leaf=axes.get_object([role]),
+                            explorer=explorer)
         else:
             self.add_widget(Label(text="No 'axes' section found in config.json", height=40, size_hint_y=None))
 

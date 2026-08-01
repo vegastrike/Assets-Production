@@ -423,104 +423,124 @@ class LiveAxisSlider(BoxLayout):
         self.select_btn.background_color = (0.2, 0.8, 0.2, 1) if selected else (0.5, 0.5, 0.5, 1)
 
 
-class AxisCaptureRow(BoxLayout):
-    """One row for one axis role (x/y/z/throttle).
+class AxisExplorer(BoxLayout):
+    """One shared live display of every joystick axis observed via on_joy_axis.
 
-    Shows live sliders for every joystick axis observed via on_joy_axis,
-    plus a capture button that runs deflection detection over a window and
-    picks the clearest-moving axis (or reverts if ambiguous).
+    A single set of live sliders (no duplication across role rows). A role
+    selector says which role a 'pick' assigns to.
     """
-    DETECT_WINDOW = 2.0     # seconds
-    WINNER_RATIO = 1.8      # winner deflection must exceed 2nd by this ratio
-    WINNER_FLOOR = 0.15     # and exceed this absolute deflection to count
-
-    def __init__(self, parent: BoxLayout, role: str, role_leaf: gc.ConfigBranch, **kwargs):
-        super().__init__(orientation='vertical', size_hint_y=None, height=160, **kwargs)
+    def __init__(self, parent: BoxLayout, roles: dict, **kwargs):
+        # roles: {role_name: role_leaf}
+        super().__init__(orientation='vertical', size_hint_y=None, height=300, **kwargs)
         parent.add_widget(self)
 
-        self.role = role
-        self.role_leaf = role_leaf
+        self.roles = roles
         self.live_sliders = {}      # (stickid, axisid) -> LiveAxisSlider
-        self._detecting = False
-        self._deflection = {}       # (stickid, axisid) -> (min, max)
 
-        # Header: role name + source + current axis
+        # Header: role selector + hint
         header = BoxLayout(orientation='horizontal', size_hint_y=None, height=40)
         self.add_widget(header)
-        header.add_widget(Label(text=role, size_hint_x=0.15, halign='left', bold=True))
+        header.add_widget(Label(text="Assign to role:", size_hint_x=0.3))
+        self.role_spinner = Spinner(text=sorted(roles.keys())[0], values=sorted(roles.keys()),
+                                    size_hint_x=0.3)
+        header.add_widget(self.role_spinner)
 
-        # Source spinner (joystick/mouse)
-        if role_leaf.has_key(["source"]):
-            self.source_leaf = role_leaf.get_object(["source"])
-            self.source_spinner = Spinner(text=self.source_leaf.value, values=["joystick", "mouse"],
-                                          size_hint_x=0.2)
-            self.source_spinner.bind(text=self._on_source_change)
-            header.add_widget(self.source_spinner)
-        else:
-            self.source_leaf = None
-            self.source_spinner = None
-
-        # Current axis display
-        self.axis_leaf = role_leaf.get_object(["axis"]) if role_leaf.has_key(["axis"]) else None
-        self.current_axis_label = Label(text=f"axis: {self.axis_leaf.value if self.axis_leaf else '?'}",
-                                        size_hint_x=0.2)
-        header.add_widget(self.current_axis_label)
-
-        # Detect button
-        detect_btn = Button(text="wiggle to detect", size_hint_x=0.25, height=40, size_hint_y=None)
-        detect_btn.bind(on_press=lambda _: self._start_detect())
-        header.add_widget(detect_btn)
-
-        # Inverse toggle
-        if role_leaf.has_key(["inverse"]):
-            self.inverse_leaf = role_leaf.get_object(["inverse"])
-            inv_gui = BoolLeafGui(parent=header, leaf=self.inverse_leaf, title="inverse")
-            inv_gui.size_hint_x = 0.15
-            inv_gui.height = 40
-        else:
-            self.inverse_leaf = None
-
-        # Live sliders area (populated as axes produce events)
+        # Live sliders area
         self.sliders_area = BoxLayout(orientation='vertical', size_hint_y=None)
         self.sliders_area.bind(minimum_height=self.sliders_area.setter('height'))
         self.add_widget(self.sliders_area)
 
-        # Watch for all axes to populate live sliders
         from kivy.core.window import Window
         Window.bind(on_joy_axis=self._watch_axes)
 
     def _watch_axes(self, window, stickid, axisid, value):
-        # Populate a live slider the first time an axis is seen
         key = (stickid, axisid)
         if key not in self.live_sliders:
             slider = LiveAxisSlider(stickid=stickid, axisid=axisid,
                                     label_text=f"Joy{stickid} A{axisid}",
-                                    on_select=self._on_slider_select)
+                                    on_select=self._on_pick)
             self.live_sliders[key] = slider
             self.sliders_area.add_widget(slider)
-            # Mark selected if it matches the configured axis
             self._update_selected()
-        # Track deflection during detection (normalize raw SDL to -1..1)
-        if self._detecting:
-            v = value / 32767.0
-            if key not in self._deflection:
-                self._deflection[key] = [v, v]
-            else:
-                lo, hi = self._deflection[key]
-                self._deflection[key] = [min(lo, v), max(hi, v)]
 
-    def _on_slider_select(self, stickid, axisid):
-        # Direct click: assign immediately
-        self._assign_axis(stickid, axisid)
+    def _on_pick(self, stickid, axisid):
+        role = self.role_spinner.text
+        role_leaf = self.roles.get(role)
+        if role_leaf is None:
+            return
+        if role_leaf.has_key(["axis"]):
+            role_leaf.get_object(["axis"]).set(axisid)
+        if role_leaf.has_key(["joystick"]):
+            role_leaf.get_object(["joystick"]).set(stickid)
+        print(f"Assigned axis {stickid}/{axisid} to role '{role}'")
+        self._update_selected()
+
+    def _update_selected(self):
+        # Highlight sliders that match any role's assigned axis
+        assigned = set()
+        for role, role_leaf in self.roles.items():
+            if role_leaf.has_key(["axis"]):
+                a = role_leaf.get_object(["axis"]).value
+                j = role_leaf.get_object(["joystick"]).value if role_leaf.has_key(["joystick"]) else 0
+                assigned.add((j, a))
+        for key, slider in self.live_sliders.items():
+            slider.set_selected(key in assigned)
+
+
+class RoleAxisRow(BoxLayout):
+    """One compact row per axis role: role name, assigned axis, detect button."""
+    DETECT_WINDOW = 2.0
+    WINNER_RATIO = 1.8
+    WINNER_FLOOR = 0.15
+
+    def __init__(self, parent: BoxLayout, role: str, role_leaf: gc.ConfigBranch,
+                 explorer: AxisExplorer, **kwargs):
+        super().__init__(orientation='horizontal', size_hint_y=None, height=50, **kwargs)
+        parent.add_widget(self)
+
+        self.role = role
+        self.role_leaf = role_leaf
+        self.explorer = explorer
+        self._detecting = False
+        self._deflection = {}
+
+        self.add_widget(Label(text=role, size_hint_x=0.15, halign='left', bold=True))
+
+        # Source spinner
+        if role_leaf.has_key(["source"]):
+            self.source_leaf = role_leaf.get_object(["source"])
+            src = Spinner(text=self.source_leaf.value, values=["joystick", "mouse"], size_hint_x=0.2)
+            src.bind(text=self._on_source_change)
+            self.add_widget(src)
+
+        # Current axis label
+        self.axis_leaf = role_leaf.get_object(["axis"]) if role_leaf.has_key(["axis"]) else None
+        self.axis_label = Label(text=f"axis: {self.axis_leaf.value if self.axis_leaf else '?'}",
+                                size_hint_x=0.2)
+        self.add_widget(self.axis_label)
+
+        # Detect button
+        detect_btn = Button(text="wiggle to detect", size_hint_x=0.3, height=40, size_hint_y=None)
+        detect_btn.bind(on_press=lambda _: self._start_detect())
+        self.add_widget(detect_btn)
+
+        # Inverse toggle
+        if role_leaf.has_key(["inverse"]):
+            self.inverse_leaf = role_leaf.get_object(["inverse"])
+            inv = BoolLeafGui(parent=self, leaf=self.inverse_leaf, title="inverse")
+            inv.size_hint_x = 0.15
+            inv.height = 40
+
+    def _on_source_change(self, instance, text):
+        if self.source_leaf:
+            self.source_leaf.set(text)
 
     def _start_detect(self):
         if self._detecting:
             return
         self._detecting = True
         self._deflection = {}
-        # Seed the baseline with current slider values so a wiggle already in
-        # progress (or a slow single movement) still registers.
-        for (stickid, axisid), slider in self.live_sliders.items():
+        for (stickid, axisid), slider in self.explorer.live_sliders.items():
             v = slider.slider.value
             self._deflection[(stickid, axisid)] = [v, v]
         from kivy.clock import Clock
@@ -529,47 +549,26 @@ class AxisCaptureRow(BoxLayout):
     def _finish_detect(self, dt):
         self._detecting = False
         if not self._deflection:
-            print(f"[{self.role}] No axis movement detected during window.")
             return
-
-        # Compute deflection per axis and rank
-        deflections = {key: (hi - lo) for key, (lo, hi) in self._deflection.items()}
+        deflections = {k: (hi - lo) for k, (lo, hi) in self._deflection.items()}
         ranked = sorted(deflections.items(), key=lambda kv: kv[1], reverse=True)
         winner_key, winner_def = ranked[0]
         runner_up_def = ranked[1][1] if len(ranked) > 1 else 0.0
-
-        print(f"[{self.role}] detect: {deflections}")
-
         if winner_def < self.WINNER_FLOOR:
-            print(f"[{self.role}] No clear winner (deflection {winner_def} < floor {self.WINNER_FLOOR}). Reverting.")
             return
         if len(ranked) > 1 and runner_up_def > 0 and (winner_def / runner_up_def) < self.WINNER_RATIO:
-            print(f"[{self.role}] Ambiguous (winner {winner_def} vs runner-up {runner_up_def}). Reverting.")
             return
+        self._assign(winner_key)
 
-        self._assign_axis(*winner_key)
-
-    def _assign_axis(self, stickid, axisid):
-        print(f"[{self.role}] Assigning axis: stick={stickid} axis={axisid}")
+    def _assign(self, key):
+        stickid, axisid = key
         if self.axis_leaf:
             self.axis_leaf.set(axisid)
-            self.current_axis_label.text = f"axis: {axisid}"
-        # Also record which joystick this axis is on (stickid)
+            self.axis_label.text = f"axis: {axisid}"
         if self.role_leaf.has_key(["joystick"]):
             self.role_leaf.get_object(["joystick"]).set(stickid)
-        self._update_selected()
-
-    def _update_selected(self):
-        cur = (0, self.axis_leaf.value) if self.axis_leaf else None
-        for key, slider in self.live_sliders.items():
-            slider.set_selected(cur is not None and key == cur)
-
-    def _on_source_change(self, instance, text):
-        if self.source_leaf:
-            self.source_leaf.set(text)
-
-        
-
+        self.explorer._update_selected()
+        print(f"[{self.role}] detect assigned axis {stickid}/{axisid}")
 
 
 # Test Code
