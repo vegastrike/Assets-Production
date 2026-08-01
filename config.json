@@ -1991,7 +1991,9 @@
     },
 
     "splash": {
-        "auto_hide": true
+        "auto_hide": true,
+        "loading_sprite": "load_screen.ani",
+        "loading_message": "Loading..."
     },
 
     "terrain": {
