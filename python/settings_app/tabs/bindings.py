@@ -17,7 +17,7 @@ class BindingRow(BoxLayout):
 
     def __init__(self, parent: BoxLayout, action_key: str, device: str, binding: dict,
                  on_capture, on_add, on_delete, **kwargs):
-        super().__init__(orientation='horizontal', size_hint_y=None, height=70, **kwargs)
+        super().__init__(orientation='horizontal', size_hint_y=None, height=40, **kwargs)
         parent.add_widget(self)
 
         self.action_key = action_key
