@@ -1,5 +1,11 @@
 acronyms = ['ai']
 
+# SDL keycodes for modifier keys. These must never be bound as a key on
+# their own - Kivy gives them bogus codepoints (shift -> '\u0130') and they
+# are pressed as part of a chord (Shift+= -> '+').
+MODIFIER_KEYCODES = {303, 304, 305, 306, 307, 308, 309, 310, 311}
+# 303/304 = shift, 305/306 = ctrl, 307/308 = alt, 309/310 = meta, 311 = compose
+
 # Kivy on_key_down passes 'keycode' as the SDL keycode (see
 # kivy/core/window/window_sdl2.py: key = self.key_map[key]). The engine's
 # config uses its own key names (initKeyMap in config_xml.cpp). Translate

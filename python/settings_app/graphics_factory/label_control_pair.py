@@ -292,10 +292,16 @@ class CaptureBindingButton(AbstractLeafGui):
         Window.unbind(on_joy_axis=self._on_hat_as_axis)
 
     def _on_key(self, window, keycode, scancode, codepoint, modifiers):
+        # Modifier keys themselves (shift/ctrl/alt) must never be bound as a
+        # key - Kivy gives them bogus codepoints ('\u0130' for shift) and the
+        # user presses them as part of a chord (e.g. Shift+= -> '+').
+        # Filter them out; wait for the actual key in the chord.
+        import key_utils
+        if keycode in key_utils.MODIFIER_KEYCODES:
+            return
         # Special keys (tab, arrows, F-keys...) have no codepoint; map the
         # SDL keycode to the engine's key name. Printable keys use codepoint
         # (which already encodes shift, e.g. Shift+= -> '+').
-        import key_utils
         engine_key = key_utils.keycode_to_engine_name(keycode, codepoint)
         if not engine_key:
             return
