@@ -6,6 +6,28 @@ acronyms = ['ai']
 MODIFIER_KEYCODES = {303, 304, 305, 306, 307, 308, 309, 310, 311}
 # 303/304 = shift, 305/306 = ctrl, 307/308 = alt, 309/310 = meta, 311 = compose
 
+# US-layout shift map for printable punctuation/digits (letters use upper()).
+_SHIFT_MAP = {
+    '`': '~', '1': '!', '2': '@', '3': '#', '4': '$', '5': '%', '6': '^',
+    '7': '&', '8': '*', '9': '(', '0': ')', '-': '_', '=': '+', '[': '{',
+    ']': '}', '\\': '|', ';': ':', "'": '"', ',': '<', '.': '>', '/': '?'
+}
+
+
+def shift_apply(char: str) -> str:
+    """Return the shift-pressed form of a printable character.
+
+    The engine does not store shift as a modifier; it is encoded in the
+    codepoint (Shift+= -> '+', Shift+a -> 'A'). Non-shiftable chars return
+    unchanged. Non-ASCII layouts are not mapped here (fall back to the
+    raw char).
+    """
+    if len(char) != 1 or ord(char) > 127:
+        return char
+    if char.isalpha():
+        return char.upper()
+    return _SHIFT_MAP.get(char, char)
+
 # Kivy on_key_down passes 'keycode' as the SDL keycode (see
 # kivy/core/window/window_sdl2.py: key = self.key_map[key]). The engine's
 # config uses its own key names (initKeyMap in config_xml.cpp). Translate

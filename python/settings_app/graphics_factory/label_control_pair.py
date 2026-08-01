@@ -319,6 +319,10 @@ class BindingCaptureDialog(ModalView):
         engine_key = key_utils.keycode_to_engine_name(keycode, codepoint)
         if not engine_key:
             return True
+        # Shift is not stored as a modifier (the engine encodes it in the
+        # codepoint: Shift+= -> '+'); apply it to printable characters.
+        if 'shift' in modifiers:
+            engine_key = key_utils.shift_apply(engine_key)
         engine_mod = next((m for m in ('ctrl', 'alt') if m in modifiers), 'none')
         self._set_binding({'key': engine_key, 'modifier': engine_mod})
         return True
