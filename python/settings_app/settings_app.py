@@ -9,6 +9,10 @@ os.environ.setdefault('KIVY_NO_ARGS', '1')
 # disable it before Kivy starts.
 from kivy.config import Config
 Config.set('input', 'mouse', 'mouse,disable_multitouch')
+# Kivy quits the app on Esc by default (exit_on_escape). Esc must not close
+# the settings app (it is a capturable key, and an accidental Esc would
+# discard unsaved changes).
+Config.set('kivy', 'exit_on_escape', '0')
 
 import os_utils
 import argparse

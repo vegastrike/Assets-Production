@@ -309,14 +309,19 @@ class BindingCaptureDialog(ModalView):
     # --- input handlers ---
 
     def _on_key(self, window, keycode, scancode, codepoint, modifiers):
+        # Return True to consume the event: window_sdl2 dispatches on_keyboard
+        # (which quits the app on Esc via exit_on_escape) only when on_key_down
+        # returns falsy. Consuming every key here keeps the app alive while
+        # the capture dialog is open.
         import key_utils
         if keycode in key_utils.MODIFIER_KEYCODES:
-            return
+            return True
         engine_key = key_utils.keycode_to_engine_name(keycode, codepoint)
         if not engine_key:
-            return
+            return True
         engine_mod = next((m for m in ('ctrl', 'alt') if m in modifiers), 'none')
         self._set_binding({'key': engine_key, 'modifier': engine_mod})
+        return True
 
     def _on_mouse(self, window, touch):
         # Ignore clicks on our own buttons (Accept/Retry/Cancel) - those are
