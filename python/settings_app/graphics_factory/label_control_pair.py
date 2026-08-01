@@ -270,15 +270,17 @@ class CaptureBindingButton(AbstractLeafGui):
         return str(b)
 
     def on_click(self, instance):
-        if self._capturing:
-            # Already capturing; click again to cancel
-            self._stop_capture()
-            return
+        # The button is disabled during capture (so a click meant to provide a
+        # mouse binding cannot re-trigger us); press Esc to cancel instead.
         self._start_capture()
 
     def _start_capture(self):
         self._capturing = True
         self.button.text = "Press any key / click / joystick..."
+        # The button must be inert while capturing: clicking it to provide a
+        # mouse binding would otherwise re-trigger on_click and re-enter
+        # capture. Window-level handlers below still receive the input.
+        self.button.disabled = True
         # Auto-detect the device: listen for keyboard, mouse, and joystick
         # simultaneously; whichever fires first wins.
         Window.bind(on_key_down=self._on_key)
@@ -288,6 +290,7 @@ class CaptureBindingButton(AbstractLeafGui):
     def _stop_capture(self):
         self._capturing = False
         self.button.text = self.format_binding()
+        self.button.disabled = False
         Window.unbind(on_key_down=self._on_key)
         Window.unbind(on_touch_down=self._on_mouse)
         Window.unbind(on_joy_button_down=self._on_joy_button)
@@ -297,6 +300,10 @@ class CaptureBindingButton(AbstractLeafGui):
         self.button.state = 'normal'
 
     def _on_key(self, window, keycode, scancode, codepoint, modifiers):
+        # Esc cancels capture without binding anything.
+        if keycode == 27:  # WSK_ESCAPE / SDLK_ESCAPE
+            self._stop_capture()
+            return
         # Modifier keys themselves (shift/ctrl/alt) must never be bound as a
         # key - Kivy gives them bogus codepoints ('\u0130' for shift) and the
         # user presses them as part of a chord (e.g. Shift+= -> '+').
