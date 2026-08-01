@@ -75,7 +75,7 @@ class ActionBindingsGroup(BoxLayout):
         self.rows = []          # BindingRow widgets
 
         # Load existing bindings (flattened across devices, preserving order)
-        for device, _ in DEVICE_CHOICES:
+        for _, device in DEVICE_CHOICES:
             if self.action_branch.has_key([device]):
                 leaf = self.action_branch.get_object([device])
                 for binding in leaf.value:
@@ -132,7 +132,7 @@ class ActionBindingsGroup(BoxLayout):
         for row in self.rows:
             if row.binding:
                 by_device[row.device].append(row.binding)
-        for device, _ in DEVICE_CHOICES:
+        for _, device in DEVICE_CHOICES:
             leaf = self._device_leaf(device)
             if leaf is not None:
                 leaf.set(by_device[device])
