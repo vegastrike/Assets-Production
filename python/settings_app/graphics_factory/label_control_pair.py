@@ -23,14 +23,15 @@ class AbstractLeafGui(BoxLayout):
 
         parent.add_widget(self)
 
-        if tooltip_text:
-            label = TooltipIcon(text=title, tooltip_text=tooltip_text, valign='middle', halign="left")
-            label.bind(size=self.update_text_size)
-            self.add_widget(label)
-        else:
-            label = Label(text=title, valign='middle', halign="left", height = 70)
-            label.bind(size=self.update_text_size)
-            self.add_widget(label)
+        if title:
+            if tooltip_text:
+                label = TooltipIcon(text=title, tooltip_text=tooltip_text, valign='middle', halign="left")
+                label.bind(size=self.update_text_size)
+                self.add_widget(label)
+            else:
+                label = Label(text=title, valign='middle', halign="left", height = 70)
+                label.bind(size=self.update_text_size)
+                self.add_widget(label)
 
 
     def update_text_size(self, instance, size):
@@ -230,7 +231,7 @@ class CaptureBindingButton(AbstractLeafGui):
         self.on_capture = on_capture
         self._capturing = False
 
-        self.button = Button(text=self.format_binding(), size_hint=(0.8, None), height=45)
+        self.button = Button(text=self.format_binding(), size_hint=(0.8, 1.0))
         self.add_widget(self.button)
         self.button.bind(on_press=self.on_click)
 

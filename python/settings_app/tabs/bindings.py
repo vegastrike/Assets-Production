@@ -17,7 +17,7 @@ class BindingRow(BoxLayout):
 
     def __init__(self, parent: BoxLayout, action_key: str, device: str, binding: dict,
                  on_capture, on_add, on_delete, **kwargs):
-        super().__init__(orientation='horizontal', size_hint_y=None, height=45, **kwargs)
+        super().__init__(orientation='horizontal', size_hint_y=None, height=70, **kwargs)
         parent.add_widget(self)
 
         self.action_key = action_key
@@ -40,10 +40,10 @@ class BindingRow(BoxLayout):
         )
 
         # Add and Delete on the same row
-        add_btn = Button(text="+", size_hint_x=0.08, height=40, size_hint_y=None)
+        add_btn = Button(text="+", size_hint_x=0.08)
         add_btn.bind(on_press=lambda _: on_add(self))
         self.add_widget(add_btn)
-        del_btn = Button(text="x", size_hint_x=0.08, height=40, size_hint_y=None)
+        del_btn = Button(text="x", size_hint_x=0.08)
         del_btn.bind(on_press=lambda _: on_delete(self))
         self.add_widget(del_btn)
 
