@@ -309,6 +309,13 @@ class BindingCaptureDialog(ModalView):
         Window.bind(on_joy_button_down=self._on_joy_button)
         Window.bind(on_joy_hat=self._on_joy_hat)
 
+        # Kivy's on_joy_hat event is unreliable (the SDL2 provider often
+        # drops SDL_JOYHATMOTION), so also poll SDL_JoystickGetHat directly.
+        from kivy.clock import Clock
+        self._hat_poll = Clock.schedule_interval(self._poll_hats, 1 / 20)
+        self._hat_state = {}
+        self._hat_poll_active = True
+
     # --- input handlers ---
 
     def _on_key(self, window, keycode, scancode, codepoint, modifiers):
@@ -348,18 +355,81 @@ class BindingCaptureDialog(ModalView):
     def _on_joy_button(self, window, stickid, buttonid):
         self._set_binding({'joystick': stickid, 'button': buttonid, 'modifier': 'none'})
 
-    def _on_joy_hat(self, window, stickid, hatid, value):
-        # Kivy passes the raw SDL hat bitmask (window_sdl2.py dispatches the
-        # SDL_JoyHatEvent.value): 1=UP, 2=RIGHT, 4=DOWN, 8=LEFT, sums for
-        # diagonals, 0=CENTER. Map to the engine's VS_HAT_* names.
-        hat_names = {
-            0: 'center', 1: 'up', 2: 'right', 4: 'down', 8: 'left',
-            3: 'rightup', 6: 'rightdown', 12: 'leftdown', 9: 'leftup',
-        }
-        name = hat_names.get(value)
-        if name is None:
+    def _poll_hats(self, dt):
+        """Poll SDL_JoystickGetHat for every joystick/hat and detect state
+        changes (the reliable way to catch D-pad presses; Kivy's on_joy_hat
+        event is often not delivered).
+        """
+        try:
+            import ctypes
+            import ctypes.util
+            sdl = ctypes.CDLL(ctypes.util.find_library("SDL2") or "libSDL2-2.0.so.0")
+            sdl.SDL_NumJoysticks.restype = ctypes.c_int
+            sdl.SDL_JoystickOpen.argtypes = [ctypes.c_int]
+            sdl.SDL_JoystickOpen.restype = ctypes.c_void_p
+            sdl.SDL_JoystickGetHat.argtypes = [ctypes.c_void_p, ctypes.c_int]
+            sdl.SDL_JoystickGetHat.restype = ctypes.c_uint8
+            sdl.SDL_JoystickNumHats.argtypes = [ctypes.c_void_p]
+            sdl.SDL_JoystickNumHats.restype = ctypes.c_int
+        except (OSError, AttributeError):
             return
+        n = sdl.SDL_NumJoysticks()
+        for i in range(n):
+            joy = sdl.SDL_JoystickOpen(i)
+            if not joy:
+                continue
+            nhats = sdl.SDL_JoystickNumHats(joy)
+            for h in range(nhats):
+                v = sdl.SDL_JoystickGetHat(joy, h)
+                key = (i, h)
+                if key in self._hat_state and self._hat_state[key] != v:
+                    # Convert the SDL bitmask to the (vx, vy) tuple the
+                    # Kivy event path uses (matching _window_sdl2.pyx).
+                    vx = vy = 0
+                    if v & 1:   # SDL_HAT_UP
+                        vy = 1
+                    elif v & 4:  # SDL_HAT_DOWN
+                        vy = -1
+                    if v & 2:   # SDL_HAT_RIGHT
+                        vx = 1
+                    elif v & 8:  # SDL_HAT_LEFT
+                        vx = -1
+                    self._on_hat_value(i, h, (vx, vy))
+                self._hat_state[key] = v
+
+    def _on_hat_value(self, stickid, hatid, value):
+        # Kivy converts the SDL hat bitmask to a (vx, vy) tuple
+        # (_window_sdl2.pyx:691-703): UP=(0,1) DOWN=(0,-1) RIGHT=(1,0)
+        # LEFT=(-1,0), diagonals are sums, CENTER=(0,0).
+        if not isinstance(value, tuple) or len(value) != 2:
+            return
+        vx, vy = value
+        name = None
+        if vx == 0 and vy == 0:
+            name = 'center'
+        elif vx == 0 and vy == 1:
+            name = 'up'
+        elif vx == 0 and vy == -1:
+            name = 'down'
+        elif vx == 1 and vy == 0:
+            name = 'right'
+        elif vx == -1 and vy == 0:
+            name = 'left'
+        elif vx == 1 and vy == 1:
+            name = 'rightup'
+        elif vx == 1 and vy == -1:
+            name = 'rightdown'
+        elif vx == -1 and vy == 1:
+            name = 'leftup'
+        elif vx == -1 and vy == -1:
+            name = 'leftdown'
+        if name is None or name == 'center':
+            return  # ignore release to center
         self._set_binding({'joystick': stickid, 'hatswitch': hatid, 'direction': name})
+
+    def _on_joy_hat(self, window, stickid, hatid, value):
+        # Kivy event path (may not fire); same decoding as the poll.
+        self._on_hat_value(stickid, hatid, value)
 
     # --- flow ---
 
@@ -391,6 +461,8 @@ class BindingCaptureDialog(ModalView):
         Window.unbind(on_touch_down=self._on_mouse)
         Window.unbind(on_joy_button_down=self._on_joy_button)
         Window.unbind(on_joy_hat=self._on_joy_hat)
+        if getattr(self, '_hat_poll', None):
+            self._hat_poll.cancel()
 
 
 class SliderLeafGui(AbstractLeafGui):
