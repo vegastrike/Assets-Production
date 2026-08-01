@@ -34,7 +34,7 @@ class BindingRow(BoxLayout):
         self.add_widget(wipe_btn)
 
 
-class ActionGroup(BoxLayout):
+class ActionBindingsGroup(BoxLayout):
     """One action: header (name + add) + a row per binding."""
 
     def __init__(self, parent: BoxLayout, action_key: str, action_branch: gc.ConfigBranch, **kwargs):
@@ -145,4 +145,4 @@ class BindingsTab(BoxLayout):
 
         for action_key in sorted(actions.value.keys()):
             action_branch = actions.get_object([action_key])
-            ActionGroup(parent=config_layout, action_key=action_key, action_branch=action_branch)
+            ActionBindingsGroup(parent=config_layout, action_key=action_key, action_branch=action_branch)
