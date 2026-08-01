@@ -62,14 +62,13 @@ class ActionRow(BoxLayout):
         )
 
     def _add_binding(self, device):
-        # Append a blank entry and capture into it immediately. The blank is
-        # only written to config once a real binding is captured.
+        # A fresh blank entry; captured into before it is ever written.
         placeholder = {}
         self._bindings[device].append(placeholder)
-        # Add a capture button for the placeholder at the end of the column.
-        col = self.columns[device]
+        # Its capture button appears below the '+ add' button; on capture the
+        # whole column is rebuilt in the proper order anyway.
         CaptureBindingButton(
-            parent=col, binding=placeholder, device=device,
+            parent=self.columns[device], binding=placeholder, device=device,
             on_capture=lambda new_binding, d=device, old=placeholder: self._replace_binding(d, old, new_binding)
         )
 

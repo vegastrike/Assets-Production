@@ -267,7 +267,7 @@ class CaptureBindingButton(AbstractLeafGui):
         elif self.device in ('joystick', 'hat'):
             Window.bind(on_joy_button_down=self._on_joy)
 
-    def _stop_capture(self, cancel=True):
+    def _stop_capture(self):
         self._capturing = False
         self.button.text = self.format_binding()
         Window.unbind(on_key_down=self._on_key)
@@ -303,7 +303,7 @@ class CaptureBindingButton(AbstractLeafGui):
         self._finish(new_binding)
 
     def _finish(self, new_binding):
-        self._stop_capture(cancel=False)
+        self._stop_capture()
         self.binding = new_binding
         if self.on_capture:
             self.on_capture(new_binding)
@@ -342,7 +342,6 @@ class LiveAxisSlider(BoxLayout):
         self.stickid = stickid
         self.axisid = axisid
         self.on_select = on_select
-        self.selected = False
 
         label_text = label_text or f"A{axisid}"
         self.label = Label(text=label_text, size_hint_x=0.2, halign='left')
@@ -353,7 +352,7 @@ class LiveAxisSlider(BoxLayout):
         self.add_widget(self.slider)
 
         self.select_btn = Button(text="pick", size_hint_x=0.15, height=40, size_hint_y=None)
-        self.select_btn.bind(on_press=lambda _: self._do_select())
+        self.select_btn.bind(on_press=lambda _: self.on_select(self.stickid, self.axisid) if self.on_select else None)
         self.add_widget(self.select_btn)
 
         # Live update from Kivy's SDL2 joystick provider
@@ -364,19 +363,9 @@ class LiveAxisSlider(BoxLayout):
         if stickid == self.stickid and axisid == self.axisid:
             self.slider.value = value
 
-    def _do_select(self):
-        self.selected = True
-        if self.on_select:
-            self.on_select(self.stickid, self.axisid)
-
     def set_selected(self, selected: bool):
-        self.selected = selected
         self.select_btn.text = "*" if selected else "pick"
         self.select_btn.background_color = (0.2, 0.8, 0.2, 1) if selected else (0.5, 0.5, 0.5, 1)
-
-    def dispose(self):
-        from kivy.core.window import Window
-        Window.unbind(on_joy_axis=self.on_joy_axis)
 
 
 class AxisCaptureRow(BoxLayout):
@@ -399,7 +388,6 @@ class AxisCaptureRow(BoxLayout):
         self.live_sliders = {}      # (stickid, axisid) -> LiveAxisSlider
         self._detecting = False
         self._deflection = {}       # (stickid, axisid) -> (min, max)
-        self._detect_start = 0.0
 
         # Header: role name + source + current axis
         header = BoxLayout(orientation='horizontal', size_hint_y=None, height=40)
@@ -446,9 +434,6 @@ class AxisCaptureRow(BoxLayout):
         from kivy.core.window import Window
         Window.bind(on_joy_axis=self._watch_axes)
 
-        # For detection: also need a clock source
-        self._clock = None
-
     def _watch_axes(self, window, stickid, axisid, value):
         # Populate a live slider the first time an axis is seen
         key = (stickid, axisid)
@@ -478,7 +463,7 @@ class AxisCaptureRow(BoxLayout):
         self._detecting = True
         self._deflection = {}
         from kivy.clock import Clock
-        self._clock = Clock.schedule_once(self._finish_detect, self.DETECT_WINDOW)
+        Clock.schedule_once(self._finish_detect, self.DETECT_WINDOW)
 
     def _finish_detect(self, dt):
         self._detecting = False
@@ -521,12 +506,6 @@ class AxisCaptureRow(BoxLayout):
     def _on_source_change(self, instance, text):
         if self.source_leaf:
             self.source_leaf.set(text)
-
-    def dispose(self):
-        from kivy.core.window import Window
-        Window.unbind(on_joy_axis=self._watch_axes)
-        for slider in self.live_sliders.values():
-            slider.dispose()
 
         
 
