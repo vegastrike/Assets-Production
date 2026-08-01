@@ -1,3 +1,9 @@
+import os
+
+# Kivy's argument parser would swallow our own CLI args (e.g. -D/--assets-dir).
+# Disable it so argparse below gets them.
+os.environ.setdefault('KIVY_NO_ARGS', '1')
+
 import os_utils
 import argparse
 
