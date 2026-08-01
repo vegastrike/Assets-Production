@@ -7,35 +7,78 @@ import game_config as gc
 from graphics_factory.label_control_pair import CaptureBindingButton
 from graphics_factory.divider import DividerLine
 
-# The per-device binding arrays in the actions section
-DEVICES = ['keyboard', 'mouse', 'joystick', 'hat']
+# Device types (display name -> config key)
+DEVICE_CHOICES = [('Key', 'keyboard'), ('Mouse', 'mouse'), ('Joy', 'joystick')]
+
+
+class DeviceToggleButton(Button):
+    """A button that cycles Key -> Mouse -> Joy when clicked."""
+    def __init__(self, on_change=None, **kwargs):
+        super().__init__(**kwargs)
+        self.on_change = on_change
+        self.index = 0
+        self.text = DEVICE_CHOICES[self.index][0]
+        self.bind(on_press=lambda _: self.cycle())
+
+    def cycle(self):
+        self.index = (self.index + 1) % len(DEVICE_CHOICES)
+        self.text = DEVICE_CHOICES[self.index][0]
+        if self.on_change:
+            self.on_change(self.device_name())
+
+    def device_name(self):
+        return DEVICE_CHOICES[self.index][1]
 
 
 class BindingRow(BoxLayout):
-    """One row = one binding (device + capture button + wipe button)."""
+    """One row = one binding: device toggle + mapping field (click to capture)."""
 
     def __init__(self, parent: BoxLayout, device: str, binding: dict,
-                 on_capture, on_wipe, **kwargs):
+                 on_capture, **kwargs):
         super().__init__(orientation='horizontal', size_hint_y=None, height=45, **kwargs)
         parent.add_widget(self)
 
         self.device = device
         self.binding = binding
 
-        self.add_widget(Label(text=device, size_hint_x=0.2, halign='left'))
+        # Device toggle (Key/Mouse/Joy). Set to the current device's index.
+        self.toggle = DeviceToggleButton(size_hint_x=0.15, height=40, size_hint_y=None,
+                                         on_change=self._on_device_change)
+        names = [n for n, _ in DEVICE_CHOICES]
+        self.toggle.index = names.index(self._display_name(device)) if device in self._display_names() else 0
+        self.toggle.text = DEVICE_CHOICES[self.toggle.index][0]
+        self.add_widget(self.toggle)
 
-        CaptureBindingButton(
+        # The mapping field: click to capture for the current device.
+        self.capture = CaptureBindingButton(
             parent=self, binding=binding, device=device,
             on_capture=on_capture
         )
 
-        wipe_btn = Button(text="x", size_hint_x=0.1, height=40, size_hint_y=None)
-        wipe_btn.bind(on_press=lambda _: on_wipe(self))
-        self.add_widget(wipe_btn)
+    @staticmethod
+    def _display_names():
+        return {d for _, d in DEVICE_CHOICES}
+
+    def _display_name(self, device):
+        for disp, d in DEVICE_CHOICES:
+            if d == device:
+                return disp
+        return 'Key'
+
+    def _on_device_change(self, new_device):
+        # Change which device this row binds to. The binding dict shape needs
+        # to switch to the new device's format (empty until captured).
+        self.device = new_device
+        self.capture.device = new_device
+        self.capture.binding = {}
+        self.capture.button.text = self.capture.format_binding()
+        # Let the parent know the device changed so it can write back.
+        if hasattr(self, 'on_device_changed'):
+            self.on_device_changed()
 
 
 class ActionBindingsGroup(BoxLayout):
-    """One action: header (name + add) + a row per binding."""
+    """One action: header (name + add + delete) + a row per binding."""
 
     def __init__(self, parent: BoxLayout, action_key: str, action_branch: gc.ConfigBranch, **kwargs):
         super().__init__(orientation='vertical', size_hint_y=None, **kwargs)
@@ -45,26 +88,32 @@ class ActionBindingsGroup(BoxLayout):
         self.action_branch = action_branch
         self.rows = []          # BindingRow widgets
 
-        # Header: action name + add button
-        header = BoxLayout(orientation='horizontal', size_hint_y=None, height=40)
+        # Header row: action name + add + delete, all on one line
+        header = BoxLayout(orientation='horizontal', size_hint_y=None, height=45)
         self.add_widget(header)
-        title = Label(text=action_key, valign='middle', halign='left', bold=True)
+        title = Label(text=action_key, valign='middle', halign='left', bold=True, size_hint_x=0.5)
         title.bind(size=lambda inst, sz: setattr(inst, 'text_size', sz))
         header.add_widget(title)
-        add_btn = Button(text="+ add binding", size_hint_x=0.25, height=35, size_hint_y=None)
+        add_btn = Button(text="+ add", size_hint_x=0.15, height=40, size_hint_y=None)
         add_btn.bind(on_press=lambda _: self._add_binding())
         header.add_widget(add_btn)
+        del_btn = Button(text="x", size_hint_x=0.1, height=40, size_hint_y=None)
+        del_btn.bind(on_press=lambda _: self._delete_last())
+        header.add_widget(del_btn)
 
         self.rows_area = BoxLayout(orientation='vertical', size_hint_y=None)
         self.rows_area.bind(minimum_height=self.rows_area.setter('height'))
         self.add_widget(self.rows_area)
 
         # Load existing bindings (flattened across devices, preserving order)
-        for device in DEVICES:
+        for device, _ in DEVICE_CHOICES:
             if self.action_branch.has_key([device]):
                 leaf = self.action_branch.get_object([device])
                 for binding in leaf.value:
                     self._add_row(device, binding)
+        # If no bindings at all, start with one blank row
+        if not self.rows:
+            self._add_binding()
 
     def _device_leaf(self, device):
         if self.action_branch.has_key([device]):
@@ -74,43 +123,40 @@ class ActionBindingsGroup(BoxLayout):
     def _add_row(self, device, binding):
         row = BindingRow(
             parent=self.rows_area, device=device, binding=binding,
-            on_capture=lambda new_binding, d=device, r=None: self._on_capture(d, r, new_binding),
-            on_wipe=lambda r: self._on_wipe(r)
+            on_capture=lambda new_binding, d=device, r=None: self._on_capture(d, r, new_binding)
         )
-        # r defaults to None; fix it to this row after creation
         row.on_capture = lambda new_binding, d=device, r=row: self._on_capture(d, r, new_binding)
+        row.on_device_changed = lambda r=row: self._on_device_changed(r)
         self.rows.append(row)
 
+    def _on_device_changed(self, row):
+        # Device toggle switched; write back the (now empty) binding
+        self._write_all()
+
     def _add_binding(self):
-        # Add a blank row on the first device that has a leaf; it captures
-        # immediately (placeholder only written once captured).
-        for device in DEVICES:
-            leaf = self._device_leaf(device)
-            if leaf is not None:
-                self._add_row(device, {})
-                return
-        # No device leaves exist; nothing to bind to (shouldn't happen)
+        # Add a blank row on keyboard by default; user toggles the device.
+        self._add_row('keyboard', {})
+
+    def _delete_last(self):
+        # Delete the last binding row; keep at least one blank row visible.
+        if self.rows:
+            row = self.rows.pop()
+            self.rows_area.remove_widget(row)
+        if not self.rows:
+            self._add_binding()
+        self._write_all()
 
     def _on_capture(self, device, row, new_binding):
         row.binding = new_binding
         self._write_all()
 
-    def _on_wipe(self, row):
-        if row in self.rows:
-            self.rows.remove(row)
-            self.rows_area.remove_widget(row)
-        # If this was the last row, keep an empty row visible (clear, don't delete)
-        if not self.rows:
-            self._add_binding()
-        self._write_all()
-
     def _write_all(self):
         # Rebuild per-device arrays from the current rows and write each leaf
-        by_device = {d: [] for d in DEVICES}
+        by_device = {d: [] for _, d in DEVICE_CHOICES}
         for row in self.rows:
             if row.binding:
                 by_device[row.device].append(row.binding)
-        for device in DEVICES:
+        for device, _ in DEVICE_CHOICES:
             leaf = self._device_leaf(device)
             if leaf is not None:
                 leaf.set(by_device[device])
