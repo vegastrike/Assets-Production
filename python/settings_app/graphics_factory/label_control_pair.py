@@ -256,9 +256,9 @@ class CaptureBindingButton(AbstractLeafGui):
 
 class BindingCaptureDialog(ModalView):
     """Modal capture dialog. While open, the overlay swallows every touch,
-    so the rest of the app is inert. Any key press, mouse click, or joystick
-    button is captured and shown; the user then chooses Accept / Retry /
-    Cancel. Esc cancels. On accept, on_capture(device, binding_dict) is
+    so the rest of the app is inert. Any key press (including Esc), mouse
+    click, or joystick button is captured and shown; the user then chooses
+    Accept / Retry / Cancel. On accept, on_capture(device, binding_dict) is
     called; on cancel, on_capture(None, None) is called.
     """
     auto_dismiss = False  # only close via Accept/Retry/Cancel/Esc
@@ -309,9 +309,6 @@ class BindingCaptureDialog(ModalView):
     # --- input handlers ---
 
     def _on_key(self, window, keycode, scancode, codepoint, modifiers):
-        if keycode == 27:  # Esc cancels
-            self._cancel()
-            return
         import key_utils
         if keycode in key_utils.MODIFIER_KEYCODES:
             return
