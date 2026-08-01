@@ -365,7 +365,8 @@ class LiveAxisSlider(BoxLayout):
 
     def on_joy_axis(self, window, stickid, axisid, value):
         if stickid == self.stickid and axisid == self.axisid:
-            self.slider.value = value
+            # SDL axis values are raw 16-bit (-32768..32767); normalize to -1..1
+            self.slider.value = value / 32767.0
 
     def set_selected(self, selected: bool):
         self.select_btn.text = "*" if selected else "pick"
@@ -449,13 +450,14 @@ class AxisCaptureRow(BoxLayout):
             self.sliders_area.add_widget(slider)
             # Mark selected if it matches the configured axis
             self._update_selected()
-        # Track deflection during detection
+        # Track deflection during detection (normalize raw SDL to -1..1)
         if self._detecting:
+            v = value / 32767.0
             if key not in self._deflection:
-                self._deflection[key] = [value, value]
+                self._deflection[key] = [v, v]
             else:
                 lo, hi = self._deflection[key]
-                self._deflection[key] = [min(lo, value), max(hi, value)]
+                self._deflection[key] = [min(lo, v), max(hi, v)]
 
     def _on_slider_select(self, stickid, axisid):
         # Direct click: assign immediately
