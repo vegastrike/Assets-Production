@@ -30,7 +30,8 @@ import sys
 
 SDL_INIT_VIDEO = 0x00000020
 
-class _SDL_DisplayMode(ctypes.Structure):
+
+class _SDL3_DisplayMode(ctypes.Structure):
     _fields_ = [
         ("displayID", ctypes.c_uint32),
         ("format", ctypes.c_uint32),
@@ -43,14 +44,29 @@ class _SDL_DisplayMode(ctypes.Structure):
         ("internal", ctypes.c_void_p),
     ]
 
-def main():
-    # Resolve the SDL3 library name for the current platform (SDL3.dll on
-    # Windows, libSDL3.dylib on macOS, libSDL3.so on Linux) instead of
-    # hardcoding the Linux name, so this works cross-platform.
-    libname = ctypes.util.find_library("SDL3")
+
+class _SDL2_DisplayMode(ctypes.Structure):
+    _fields_ = [
+        ("format", ctypes.c_uint32),
+        ("w", ctypes.c_int),
+        ("h", ctypes.c_int),
+        ("refresh_rate", ctypes.c_int),
+        ("driverdata", ctypes.c_void_p),
+    ]
+
+
+def _load_lib(prefix):
+    """Load an SDL library by name prefix (e.g. 'SDL3' or 'SDL2')."""
+    libname = ctypes.util.find_library(prefix)
     if libname is None:
-        libname = "libSDL3.so.0"  # fallback for Linux when find_library fails
-    sdl = ctypes.CDLL(libname)
+        # Fallbacks for the two SDL major versions.
+        libname = {"SDL3": "libSDL3.so.0", "SDL2": "libSDL2-2.0.so.0"}[prefix]
+    return ctypes.CDLL(libname)
+
+
+def _detect_sdl3():
+    """Enumerate displays via SDL3 (master engine)."""
+    sdl = _load_lib("SDL3")
     sdl.SDL_Init(SDL_INIT_VIDEO)
     sdl.SDL_GetDisplays.argtypes = [ctypes.POINTER(ctypes.c_int)]
     sdl.SDL_GetDisplays.restype = ctypes.POINTER(ctypes.c_uint32)
@@ -59,9 +75,10 @@ def main():
     sdl.SDL_GetPrimaryDisplay.argtypes = []
     sdl.SDL_GetPrimaryDisplay.restype = ctypes.c_uint32
     sdl.SDL_GetDesktopDisplayMode.argtypes = [ctypes.c_uint32]
-    sdl.SDL_GetDesktopDisplayMode.restype = ctypes.POINTER(_SDL_DisplayMode)
+    sdl.SDL_GetDesktopDisplayMode.restype = ctypes.POINTER(_SDL3_DisplayMode)
     sdl.SDL_free.argtypes = [ctypes.c_void_p]
     sdl.SDL_free.restype = None
+
     count = ctypes.c_int(0)
     ids = sdl.SDL_GetDisplays(ctypes.byref(count))
     primary = sdl.SDL_GetPrimaryDisplay()
@@ -84,7 +101,59 @@ def main():
         if ids:
             sdl.SDL_free(ids)
         sdl.SDL_Quit()
+    return monitors
+
+
+def _detect_sdl2():
+    """Enumerate displays via SDL2 (0.10.x engine)."""
+    sdl = _load_lib("SDL2")
+    sdl.SDL_Init(SDL_INIT_VIDEO)
+    sdl.SDL_GetNumVideoDisplays.argtypes = []
+    sdl.SDL_GetNumVideoDisplays.restype = ctypes.c_int
+    sdl.SDL_GetDisplayName.argtypes = [ctypes.c_int]
+    sdl.SDL_GetDisplayName.restype = ctypes.c_char_p
+    sdl.SDL_GetDesktopDisplayMode.argtypes = [ctypes.c_int, ctypes.POINTER(_SDL2_DisplayMode)]
+    sdl.SDL_GetDesktopDisplayMode.restype = ctypes.c_int
+    sdl.SDL_GetDisplayDPI.argtypes = [ctypes.c_int,
+                                      ctypes.POINTER(ctypes.c_float),
+                                      ctypes.POINTER(ctypes.c_float),
+                                      ctypes.POINTER(ctypes.c_float)]
+    sdl.SDL_GetDisplayDPI.restype = ctypes.c_int
+
+    n = sdl.SDL_GetNumVideoDisplays()
+    monitors = []
+    for i in range(n):
+        name = sdl.SDL_GetDisplayName(i)
+        mode = _SDL2_DisplayMode()
+        if sdl.SDL_GetDesktopDisplayMode(i, ctypes.byref(mode)) != 0:
+            continue
+        # SDL2 has no pixel_density; SDL_DisplayMode.w/h are in points. For a
+        # physical resolution, scale by the display DPI relative to 96 DPI.
+        ddpi = ctypes.c_float(0)
+        hdpi = ctypes.c_float(0)
+        vdpi = ctypes.c_float(0)
+        sx = sy = 1.0
+        if sdl.SDL_GetDisplayDPI(i, ctypes.byref(ddpi), ctypes.byref(hdpi), ctypes.byref(vdpi)) == 0 and ddpi.value > 0:
+            sx = hdpi.value / ddpi.value if hdpi.value > 0 else 1.0
+            sy = vdpi.value / ddpi.value if vdpi.value > 0 else 1.0
+        monitors.append({
+            "name": name.decode() if name else str(i),
+            "is_primary": i == 0,  # SDL2 has no primary concept; use the first
+            "width": round(mode.w * sx),
+            "height": round(mode.h * sy),
+        })
+    sdl.SDL_Quit()
+    return monitors
+
+
+def main():
+    # Try SDL3 (master engine) first; fall back to SDL2 (0.10.x engine).
+    try:
+        monitors = _detect_sdl3()
+    except OSError:
+        monitors = _detect_sdl2()
     json.dump(monitors, sys.stdout)
+
 
 if __name__ == "__main__":
     main()
