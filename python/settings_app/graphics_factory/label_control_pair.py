@@ -18,7 +18,8 @@ class AbstractLeafGui(BoxLayout):
     def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, title = None, tooltip_text = None):
         super().__init__(orientation='horizontal', height=70, size_hint_y=None)
         self.leaf = leaf
-        title  = title or f"{key_utils.format_key(leaf.key)}:"
+        if title is None:
+            title = f"{key_utils.format_key(leaf.key)}:" if leaf else ""
 
         parent.add_widget(self)
 
