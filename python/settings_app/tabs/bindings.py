@@ -11,27 +11,9 @@ from graphics_factory.divider import DividerLine
 DEVICE_CHOICES = [('Key', 'keyboard'), ('Mouse', 'mouse'), ('Joy', 'joystick')]
 
 
-class DeviceToggleButton(Button):
-    """A button that cycles Key -> Mouse -> Joy when clicked."""
-    def __init__(self, on_change=None, **kwargs):
-        super().__init__(**kwargs)
-        self.on_change = on_change
-        self.index = 0
-        self.text = DEVICE_CHOICES[self.index][0]
-        self.bind(on_press=lambda _: self.cycle())
-
-    def cycle(self):
-        self.index = (self.index + 1) % len(DEVICE_CHOICES)
-        self.text = DEVICE_CHOICES[self.index][0]
-        if self.on_change:
-            self.on_change(self.device_name())
-
-    def device_name(self):
-        return DEVICE_CHOICES[self.index][1]
-
-
 class BindingRow(BoxLayout):
-    """One row: action name + device toggle + mapping field + Add + Delete."""
+    """One row: action name + device type (from config) + binding field
+    (click to capture, auto-detects device) + Add + Delete."""
 
     def __init__(self, parent: BoxLayout, action_key: str, device: str, binding: dict,
                  on_capture, on_add, on_delete, **kwargs):
@@ -45,15 +27,13 @@ class BindingRow(BoxLayout):
         # Action name
         self.add_widget(Label(text=action_key, size_hint_x=0.25, halign='left', valign='middle'))
 
-        # Device toggle (Key/Mouse/Joy)
-        self.toggle = DeviceToggleButton(size_hint_x=0.12, height=40, size_hint_y=None,
-                                         on_change=self._on_device_change)
-        names = [n for n, _ in DEVICE_CHOICES]
-        self.toggle.index = names.index(self._display_name(device)) if device in self._display_names() else 0
-        self.toggle.text = DEVICE_CHOICES[self.toggle.index][0]
-        self.add_widget(self.toggle)
+        # Device type label (from config binding, or '?' if blank)
+        self.device_label = Label(
+            text=self._display_name(device), size_hint_x=0.12, halign='center', valign='middle'
+        )
+        self.add_widget(self.device_label)
 
-        # Mapping field: click to capture
+        # Mapping field: click to capture (auto-detects device)
         self.capture = CaptureBindingButton(
             parent=self, binding=binding, device=device,
             on_capture=on_capture
@@ -68,19 +48,16 @@ class BindingRow(BoxLayout):
         self.add_widget(del_btn)
 
     @staticmethod
-    def _display_names():
-        return {d for _, d in DEVICE_CHOICES}
-
-    def _display_name(self, device):
+    def _display_name(device):
         for disp, d in DEVICE_CHOICES:
             if d == device:
                 return disp
-        return 'Key'
+        return '?'
 
-    def _on_device_change(self, new_device):
-        self.device = new_device
-        self.capture.device = new_device
-        self.capture.binding = {}
+    def refresh(self):
+        # Update device label + capture display after a capture/device change
+        self.device_label.text = self._display_name(self.device)
+        self.capture.device = self.device
         self.capture.button.text = self.capture.format_binding()
         if hasattr(self, 'on_changed'):
             self.on_changed()
@@ -116,7 +93,8 @@ class ActionBindingsGroup(BoxLayout):
         holder = {}
         row = BindingRow(
             parent=self, action_key=self.action_key, device=device, binding=binding,
-            on_capture=lambda new_binding, d=device, h=holder: self._on_capture(d, h['row'], new_binding),
+            on_capture=lambda new_device, new_binding, d=device, h=holder:
+                self._on_capture(d, h['row'], new_device, new_binding),
             on_add=lambda r: self._on_add(r),
             on_delete=lambda r: self._on_delete(r)
         )
@@ -140,8 +118,12 @@ class ActionBindingsGroup(BoxLayout):
             self._add_row('keyboard', {})
         self._write_all()
 
-    def _on_capture(self, device, row, new_binding):
+    def _on_capture(self, old_device, row, new_device, new_binding):
+        # The captured binding may be a different device than the row started
+        # with; update the row to the detected device.
+        row.device = new_device
         row.binding = new_binding
+        row.refresh()
         self._write_all()
 
     def _write_all(self):

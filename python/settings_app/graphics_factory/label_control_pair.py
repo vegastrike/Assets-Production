@@ -211,32 +211,38 @@ class CaptureKeyStrokePair(AbstractLeafGui):
 
 
 class CaptureBindingButton(AbstractLeafGui):
-    """A clickable binding entry (keyboard key, mouse button, or joystick button).
-
-    Clicking it enters capture mode: the next matching input (key press, mouse
-    click, or joystick button press, depending on device) replaces the binding.
+    """A clickable binding entry. Clicking it enters capture mode; the next
+    input (key press, mouse click, or joystick button) is detected and the
+    binding + device type are set from what arrives.
 
     The binding is a dict from the config `actions` section, e.g.
     {"key": "space", "modifier": "none"} (keyboard),
     {"button": 2, "modifier": "none"} (mouse),
     {"joystick": 0, "button": 1, "modifier": "none"} (joystick).
 
-    On capture, on_capture(binding_dict) is called so the caller can write
-    the updated array back to the config leaf.
+    On capture, on_capture(device, binding_dict) is called.
     """
     def __init__(self, parent: BoxLayout, binding: dict, device: str, title: str = None,
                  on_capture = None):
-        # leaf=None: this widget does not own a ConfigLeaf; the caller does
-        # (the per-device array leaf). We just show/capture a single entry.
         super().__init__(parent=parent, leaf=None, title=title)
         self.binding = binding
-        self.device = device          # 'keyboard' | 'mouse' | 'joystick' | 'hat'
+        self.device = device
         self.on_capture = on_capture
         self._capturing = False
 
         self.button = Button(text=self.format_binding(), size_hint=(0.8, None), height=45)
         self.add_widget(self.button)
         self.button.bind(on_press=self.on_click)
+
+    @staticmethod
+    def device_from_binding(binding: dict) -> str:
+        if 'key' in binding:
+            return 'keyboard'
+        if 'joystick' in binding:
+            return 'joystick'
+        if 'button' in binding:
+            return 'mouse'
+        return 'keyboard'
 
     def format_binding(self):
         b = self.binding
@@ -267,20 +273,12 @@ class CaptureBindingButton(AbstractLeafGui):
 
     def _start_capture(self):
         self._capturing = True
-        self.button.text = "Press..."
-        if self.device == 'keyboard':
-            Window.bind(on_key_down=self._on_key)
-        elif self.device == 'mouse':
-            Window.bind(on_touch_down=self._on_mouse)
-        elif self.device == 'joystick':
-            Window.bind(on_joy_button_down=self._on_joy_button)
-        elif self.device == 'hat':
-            # Auto-detect: a real hat fires on_joy_hat (direction tuples); a
-            # 'hat as axes' joystick (e.g. flight stick D-pad) fires
-            # on_joy_axis with near 0/±1 values. Watch both, use whichever
-            # comes first.
-            Window.bind(on_joy_hat=self._on_hat)
-            Window.bind(on_joy_axis=self._on_hat_as_axis)
+        self.button.text = "Press any key / click / joystick..."
+        # Auto-detect the device: listen for keyboard, mouse, and joystick
+        # simultaneously; whichever fires first wins.
+        Window.bind(on_key_down=self._on_key)
+        Window.bind(on_touch_down=self._on_mouse)
+        Window.bind(on_joy_button_down=self._on_joy_button)
 
     def _stop_capture(self):
         self._capturing = False
@@ -288,8 +286,6 @@ class CaptureBindingButton(AbstractLeafGui):
         Window.unbind(on_key_down=self._on_key)
         Window.unbind(on_touch_down=self._on_mouse)
         Window.unbind(on_joy_button_down=self._on_joy_button)
-        Window.unbind(on_joy_hat=self._on_hat)
-        Window.unbind(on_joy_axis=self._on_hat_as_axis)
 
     def _on_key(self, window, keycode, scancode, codepoint, modifiers):
         # Modifier keys themselves (shift/ctrl/alt) must never be bound as a
@@ -329,50 +325,12 @@ class CaptureBindingButton(AbstractLeafGui):
         new_binding = {"joystick": stickid, "button": buttonid, "modifier": "none"}
         self._finish(new_binding)
 
-    def _on_hat(self, window, stickid, hatid, value):
-        # value is a direction tuple, e.g. (0, 1)=up, (1, 0)=right, (-1,-1)=up-left
-        dx, dy = value
-        direction = None
-        if dx == 0 and dy == 1:
-            direction = 'up'
-        elif dx == 0 and dy == -1:
-            direction = 'down'
-        elif dx == 1 and dy == 0:
-            direction = 'right'
-        elif dx == -1 and dy == 0:
-            direction = 'left'
-        elif dx == -1 and dy == 1:
-            direction = 'up-left'
-        elif dx == 1 and dy == 1:
-            direction = 'up-right'
-        elif dx == -1 and dy == -1:
-            direction = 'down-left'
-        elif dx == 1 and dy == -1:
-            direction = 'down-right'
-        if not direction:
-            return
-        new_binding = {"joystick": stickid, "hatswitch": hatid, "direction": direction, "modifier": "none"}
-        self._finish(new_binding)
-
-    def _on_hat_as_axis(self, window, stickid, axisid, value):
-        # Flight-style joysticks expose the D-pad as axes that sit at 0 or +/-1.
-        # Only treat it as a hat when the value is essentially a digital step.
-        v = value / 32767.0
-        if abs(v) < 0.5:
-            return   # analog movement, not a hat step - ignore
-        direction = 'right' if v > 0 else 'left'
-        # For a two-axis D-pad, the direction depends on the axis: the
-        # horizontal axis is left/right; the vertical is up/down. We can't
-        # know which is which in general, so record the axis id so the engine
-        # can interpret it, and note the sign as the direction.
-        new_binding = {"joystick": stickid, "axis": axisid, "direction": direction, "modifier": "none"}
-        self._finish(new_binding)
-
     def _finish(self, new_binding):
         self._stop_capture()
         self.binding = new_binding
+        self.device = self.device_from_binding(new_binding)
         if self.on_capture:
-            self.on_capture(new_binding)
+            self.on_capture(self.device, new_binding)
         self.button.text = self.format_binding()
             
 class SliderLeafGui(AbstractLeafGui):
