@@ -55,6 +55,35 @@ def keycode_to_engine_name(keycode: int, codepoint: str) -> str:
     return None
 
 
+# Friendly display names for engine key names.
+ENGINE_KEY_DISPLAY = {
+    'tab': 'Tab', 'return': 'Enter', 'enter': 'Numpad Enter', 'esc': 'Esc',
+    'backspace': 'Backspace', 'space': 'Space', 'pause': 'Pause', 'break': 'Break',
+    'cursor-up': '\u2191', 'cursor-down': '\u2193', 'cursor-left': '\u2190', 'cursor-right': '\u2192',
+    'cursor-home': 'Home', 'cursor-end': 'End', 'cursor-insert': 'Insert', 'cursor-delete': 'Delete',
+    'cursor-pageup': 'Page Up', 'cursor-pagedown': 'Page Down',
+    'capslock': 'Caps Lock', 'scrollock': 'Scroll Lock', 'keypad-numlock': 'Num Lock',
+    'less-than': '<', 'greater-than': '>',
+    'left-ctrl': 'L Ctrl', 'right-ctrl': 'R Ctrl', 'left-alt': 'L Alt', 'right-alt': 'R Alt',
+    'left-meta': 'L Meta', 'right-meta': 'R Meta', 'shift': 'Shift',
+}
+
+
+def format_key_display(engine_key: str) -> str:
+    """Convert an engine config key name to a friendly display label.
+
+    Handles function-N, keypad-N, and the ENGINE_KEY_DISPLAY table; otherwise
+    returns the key as-is (printable chars).
+    """
+    if engine_key in ENGINE_KEY_DISPLAY:
+        return ENGINE_KEY_DISPLAY[engine_key]
+    if engine_key.startswith('function-'):
+        return 'F' + engine_key[len('function-'):]
+    if engine_key.startswith('keypad-'):
+        return 'Numpad ' + engine_key[len('keypad-'):]
+    return engine_key
+
+
 def format_key(key: str) -> str:
     """
     Formats a key by converting underscores to spaces, capitalizing the first letter of each word,

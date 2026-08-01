@@ -241,8 +241,10 @@ class CaptureBindingButton(AbstractLeafGui):
     def format_binding(self):
         b = self.binding
         if self.device == 'keyboard':
+            import key_utils
             mod = b.get('modifier', 'none')
-            return f"{b.get('key', '?')} ({mod})" if mod != 'none' else str(b.get('key', '?'))
+            key = key_utils.format_key_display(b.get('key', '?'))
+            return f"{key} ({mod})" if mod != 'none' else key
         if self.device == 'mouse':
             return f"Mouse {b.get('button', '?')}"
         if self.device == 'joystick':
@@ -291,12 +293,16 @@ class CaptureBindingButton(AbstractLeafGui):
 
     def _on_key(self, window, keycode, scancode, codepoint, modifiers):
         # Special keys (tab, arrows, F-keys...) have no codepoint; map the
-        # SDL keycode to the engine's key name. Printable keys use codepoint.
+        # SDL keycode to the engine's key name. Printable keys use codepoint
+        # (which already encodes shift, e.g. Shift+= -> '+').
         import key_utils
         engine_key = key_utils.keycode_to_engine_name(keycode, codepoint)
         if not engine_key:
             return
-        new_binding = {"key": engine_key, "modifier": (modifiers[0] if modifiers else 'none')}
+        # Engine modifiers are only none/alt/ctrl. Shift is NOT stored (the
+        # codepoint already reflects it); numlock/capslock/etc. are ignored.
+        engine_mod = next((m for m in ('ctrl', 'alt') if m in modifiers), 'none')
+        new_binding = {"key": engine_key, "modifier": engine_mod}
         self._finish(new_binding)
 
     def _on_mouse(self, window, touch):
