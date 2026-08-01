@@ -348,29 +348,15 @@ class BindingCaptureDialog(ModalView):
     def _on_joy_button(self, window, stickid, buttonid):
         self._set_binding({'joystick': stickid, 'button': buttonid, 'modifier': 'none'})
 
-    def _on_joy_hat(self, window, stickid, hatid, direction):
-        # A real HAT (e.g. Switch D-pad): direction is an (dx, dy) tuple of
-        # -1/0/1. Map to the engine's VS_HAT_* names.
-        dx, dy = direction
-        name = None
-        if dx == 0 and dy == 0:
-            name = 'center'
-        elif dx == 0 and dy == 1:
-            name = 'up'
-        elif dx == 0 and dy == -1:
-            name = 'down'
-        elif dx == 1 and dy == 0:
-            name = 'right'
-        elif dx == -1 and dy == 0:
-            name = 'left'
-        elif dx == 1 and dy == 1:
-            name = 'rightup'
-        elif dx == 1 and dy == -1:
-            name = 'rightdown'
-        elif dx == -1 and dy == 1:
-            name = 'leftup'
-        elif dx == -1 and dy == -1:
-            name = 'leftdown'
+    def _on_joy_hat(self, window, stickid, hatid, value):
+        # Kivy passes the raw SDL hat bitmask (window_sdl2.py dispatches the
+        # SDL_JoyHatEvent.value): 1=UP, 2=RIGHT, 4=DOWN, 8=LEFT, sums for
+        # diagonals, 0=CENTER. Map to the engine's VS_HAT_* names.
+        hat_names = {
+            0: 'center', 1: 'up', 2: 'right', 4: 'down', 8: 'left',
+            3: 'rightup', 6: 'rightdown', 12: 'leftdown', 9: 'leftup',
+        }
+        name = hat_names.get(value)
         if name is None:
             return
         self._set_binding({'joystick': stickid, 'hatswitch': hatid, 'direction': name})
