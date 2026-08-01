@@ -279,8 +279,14 @@ class CaptureBindingButton(AbstractLeafGui):
         self.button.text = "Press any key / click / joystick..."
         # The button must be inert while capturing: clicking it to provide a
         # mouse binding would otherwise re-trigger on_click and re-enter
-        # capture. Window-level handlers below still receive the input.
+        # capture. Disabling makes it swallow touches (widget.py returns True
+        # for disabled+collide), while Window-level handlers below still
+        # receive the input. Override the disabled visuals so it does NOT
+        # grey out - it looks normal but is waiting for input.
         self.button.disabled = True
+        self.button.background_disabled_normal = self.button.background_normal
+        self.button.background_disabled_down = self.button.background_down
+        self.button.disabled_color = self.button.color
         # Auto-detect the device: listen for keyboard, mouse, and joystick
         # simultaneously; whichever fires first wins.
         Window.bind(on_key_down=self._on_key)
