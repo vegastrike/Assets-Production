@@ -6,6 +6,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.spinner import Spinner
 from kivy.uix.slider import Slider
 from kivy.uix.button import Button
+from kivy.uix.modalview import ModalView
 
 import key_utils
 
@@ -175,46 +176,10 @@ class SpinnerMultiLeafGui(SpinnerLeafGui):
                 continue
             leaf.set(value)
 
-class CaptureKeyStrokePair(AbstractLeafGui):
-        def __init__(self, parent: BoxLayout, key_leaf: gc.ConfigLeaf, modifier_leaf: gc.ConfigLeaf, 
-                     title:str, tooltip_text = None):
-            super().__init__(parent=parent, leaf=None, title=title, tooltip_text=tooltip_text)
-            self.key_leaf = key_leaf
-            self.modifier_leaf = modifier_leaf
-            text = f"{key_leaf.value} ({modifier_leaf.value})"
-            self.keystroke_label = Label(text=text, valign='middle', halign="left", height = 70)
-            self.keystroke_label.bind(size=self.update_text_size)
-            self.add_widget(self.keystroke_label)
-            self._hovered = False
-            Window.bind(mouse_pos=self.on_mouse_pos)
-
-        def on_mouse_pos(self, window, pos):
-            if self.get_root_window():
-                inside = self.collide_point(*self.to_widget(*pos))
-                if inside and not self._hovered:
-                    self._hovered = True
-                    Window.bind(on_key_down=self.on_key_down)
-                elif not inside and self._hovered:
-                    self._hovered = False
-                    Window.unbind(on_key_down=self.on_key_down)
-
-        def on_key_down(self, window, keycode, scancode, codepoint, modifiers):
-            # Does not validate not in use.
-            # Do we want to? If I want to switch two keys around, I'd need a temp value.
-            # TODO: validate?
-            modifier = modifiers[0]
-            self.key_leaf.set(codepoint)
-            self.modifier_leaf.set(modifier)
-            text = f"{codepoint} ({modifier})"
-            self.keystroke_label.text = text
-            if isinstance(keycode, int):
-                print(f"Key pressed: {keycode}, {scancode}, {codepoint}, Modifiers: {modifiers}")
-
-
 class CaptureBindingButton(AbstractLeafGui):
-    """A clickable binding entry. Clicking it enters capture mode; the next
-    input (key press, mouse click, or joystick button) is detected and the
-    binding + device type are set from what arrives.
+    """A clickable binding entry. Clicking it opens a modal capture dialog;
+    the next input (key press, mouse click, or joystick button) is detected
+    there with Accept/Retry/Cancel controls.
 
     The binding is a dict from the config `actions` section, e.g.
     {"key": "space", "modifier": "none"} (keyboard),
@@ -232,7 +197,6 @@ class CaptureBindingButton(AbstractLeafGui):
         self.binding = binding
         self.device = device
         self.on_capture = on_capture
-        self._capturing = False
 
         self.button = Button(text=self.format_binding(), size_hint=(0.8, None), height=35,
                              pos_hint={'center_y': 0.5})
@@ -250,18 +214,22 @@ class CaptureBindingButton(AbstractLeafGui):
         return 'keyboard'
 
     def format_binding(self):
-        b = self.binding
-        if self.device == 'keyboard':
+        return CaptureBindingButton.format_binding_for(self.device, self.binding)
+
+    @staticmethod
+    def format_binding_for(device, binding):
+        b = binding
+        if device == 'keyboard':
             import key_utils
             mod = b.get('modifier', 'none')
             key = key_utils.format_key_display(b.get('key', '?'))
             return f"{key} ({mod})" if mod != 'none' else key
-        if self.device == 'mouse':
+        if device == 'mouse':
             return f"Mouse {b.get('button', '?')}"
-        if self.device == 'joystick':
+        if device == 'joystick':
             return f"Joy {b.get('joystick', 0)} Btn {b.get('button', '?')}"
-        if self.device == 'hat':
-            b = self.binding
+        if device == 'hat':
+            b = binding
             if 'direction' in b and 'axis' in b:
                 return f"HatAxis{b.get('axis')} {b.get('direction')}"
             if 'direction' in b:
@@ -270,69 +238,95 @@ class CaptureBindingButton(AbstractLeafGui):
         return str(b)
 
     def on_click(self, instance):
-        # The button is disabled during capture (so a click meant to provide a
-        # mouse binding cannot re-trigger us); press Esc to cancel instead.
-        self._start_capture()
+        # Open a modal capture dialog; the overlay makes the whole app inert
+        # while waiting for input, so nothing else can steal the click.
+        dialog = BindingCaptureDialog(
+            on_capture=lambda device, new_binding: self._accept(device, new_binding))
+        dialog.open()
 
-    def _start_capture(self):
-        self._capturing = True
-        self.button.text = "Press any key / click / joystick..."
-        # The button must be inert while capturing: clicking it to provide a
-        # mouse binding would otherwise re-trigger on_click and re-enter
-        # capture. Disabling makes it swallow touches (widget.py returns True
-        # for disabled+collide), while Window-level handlers below still
-        # receive the input. Override the disabled visuals so it does NOT
-        # grey out - it looks normal but is waiting for input.
-        self.button.disabled = True
-        self.button.background_disabled_normal = self.button.background_normal
-        self.button.background_disabled_down = self.button.background_down
-        self.button.disabled_color = self.button.color
-        # Auto-detect the device: listen for keyboard, mouse, and joystick
-        # simultaneously; whichever fires first wins.
+    def _accept(self, device, new_binding):
+        if new_binding is None:
+            return  # cancelled; keep the old binding
+        self.binding = new_binding
+        self.device = device
+        self.button.text = self.format_binding()
+        if self.on_capture:
+            self.on_capture(device, new_binding)
+
+
+class BindingCaptureDialog(ModalView):
+    """Modal capture dialog. While open, the overlay swallows every touch,
+    so the rest of the app is inert. Any key press, mouse click, or joystick
+    button is captured and shown; the user then chooses Accept / Retry /
+    Cancel. Esc cancels. On accept, on_capture(device, binding_dict) is
+    called; on cancel, on_capture(None, None) is called.
+    """
+    auto_dismiss = False  # only close via Accept/Retry/Cancel/Esc
+
+    def __init__(self, on_capture, **kwargs):
+        super().__init__(size_hint=(0.5, None), height=250, **kwargs)
+        self.on_capture = on_capture
+        self._binding = None
+
+        layout = BoxLayout(orientation='vertical', padding=20, spacing=12)
+        self.add_widget(layout)
+
+        self._status = Label(
+            text="Press any key / click a mouse button / press a joystick button...",
+            size_hint_y=0.4, halign='center', valign='middle')
+        self._status.bind(size=lambda inst, sz: setattr(inst, 'text_size', sz))
+        layout.add_widget(self._status)
+
+        self._captured = Label(text="", size_hint_y=0.3, halign='center', valign='middle',
+                               font_size=20, bold=True)
+        self._captured.bind(size=lambda inst, sz: setattr(inst, 'text_size', sz))
+        layout.add_widget(self._captured)
+
+        buttons = BoxLayout(orientation='horizontal', spacing=12, size_hint_y=0.3)
+        layout.add_widget(buttons)
+
+        accept = Button(text="Accept", disabled=True)
+        accept.bind(on_press=lambda _: self._accept())
+        buttons.add_widget(accept)
+        self._accept_btn = accept
+
+        retry = Button(text="Retry")
+        retry.bind(on_press=lambda _: self._retry())
+        buttons.add_widget(retry)
+
+        cancel = Button(text="Cancel")
+        cancel.bind(on_press=lambda _: self._cancel())
+        buttons.add_widget(cancel)
+
+        # Clicks on the dialog's own buttons are controls, not bindings.
+        self._own_buttons = [accept, retry, cancel]
+
+        # Capture input while open (device auto-detect: first to fire wins)
         Window.bind(on_key_down=self._on_key)
         Window.bind(on_touch_down=self._on_mouse)
         Window.bind(on_joy_button_down=self._on_joy_button)
 
-    def _stop_capture(self):
-        self._capturing = False
-        self.button.text = self.format_binding()
-        self.button.disabled = False
-        Window.unbind(on_key_down=self._on_key)
-        Window.unbind(on_touch_down=self._on_mouse)
-        Window.unbind(on_joy_button_down=self._on_joy_button)
-        # The press that triggered capture (or cancelled it) left the button
-        # in Kivy's 'down' state (blue); its release never reached the button,
-        # so force it back to normal.
-        self.button.state = 'normal'
+    # --- input handlers ---
 
     def _on_key(self, window, keycode, scancode, codepoint, modifiers):
-        # Esc cancels capture without binding anything.
-        if keycode == 27:  # WSK_ESCAPE / SDLK_ESCAPE
-            self._stop_capture()
+        if keycode == 27:  # Esc cancels
+            self._cancel()
             return
-        # Modifier keys themselves (shift/ctrl/alt) must never be bound as a
-        # key - Kivy gives them bogus codepoints ('\u0130' for shift) and the
-        # user presses them as part of a chord (e.g. Shift+= -> '+').
-        # Filter them out; wait for the actual key in the chord.
         import key_utils
         if keycode in key_utils.MODIFIER_KEYCODES:
             return
-        # Special keys (tab, arrows, F-keys...) have no codepoint; map the
-        # SDL keycode to the engine's key name. Printable keys use codepoint
-        # (which already encodes shift, e.g. Shift+= -> '+').
         engine_key = key_utils.keycode_to_engine_name(keycode, codepoint)
         if not engine_key:
             return
-        # Engine modifiers are only none/alt/ctrl. Shift is NOT stored (the
-        # codepoint already reflects it); numlock/capslock/etc. are ignored.
         engine_mod = next((m for m in ('ctrl', 'alt') if m in modifiers), 'none')
-        new_binding = {"key": engine_key, "modifier": engine_mod}
-        self._finish(new_binding)
+        self._set_binding({'key': engine_key, 'modifier': engine_mod})
 
     def _on_mouse(self, window, touch):
-        # touch.button is 'left'/'right'/'middle' or an int for extra buttons
+        # Ignore clicks on our own buttons (Accept/Retry/Cancel) - those are
+        # the dialog controls, not the binding being captured.
+        if any(btn.collide_point(touch.x, touch.y) for btn in self._own_buttons):
+            return
         button = touch.button
-        # Convert common names to the engine's numeric convention
         btn_map = {'left': 0, 'middle': 1, 'right': 2, 'scrollup': 3, 'scrolldown': 4}
         if isinstance(button, str) and button in btn_map:
             btn = btn_map[button]
@@ -340,21 +334,42 @@ class CaptureBindingButton(AbstractLeafGui):
             btn = button
         else:
             return
-        new_binding = {"button": btn, "modifier": "none"}
-        self._finish(new_binding)
+        self._set_binding({'button': btn, 'modifier': 'none'})
 
     def _on_joy_button(self, window, stickid, buttonid):
-        new_binding = {"joystick": stickid, "button": buttonid, "modifier": "none"}
-        self._finish(new_binding)
+        self._set_binding({'joystick': stickid, 'button': buttonid, 'modifier': 'none'})
 
-    def _finish(self, new_binding):
-        self._stop_capture()
-        self.binding = new_binding
-        self.device = self.device_from_binding(new_binding)
-        if self.on_capture:
-            self.on_capture(self.device, new_binding)
-        self.button.text = self.format_binding()
-            
+    # --- flow ---
+
+    def _set_binding(self, binding):
+        self._binding = binding
+        self._captured.text = CaptureBindingButton.format_binding_for(
+            CaptureBindingButton.device_from_binding(binding), binding)
+        self._accept_btn.disabled = False
+
+    def _retry(self):
+        self._binding = None
+        self._captured.text = ""
+        self._accept_btn.disabled = True
+
+    def _accept(self):
+        if self._binding is None:
+            return
+        self._cleanup()
+        self.dismiss()
+        self.on_capture(CaptureBindingButton.device_from_binding(self._binding), self._binding)
+
+    def _cancel(self):
+        self._cleanup()
+        self.dismiss()
+        self.on_capture(None, None)
+
+    def _cleanup(self):
+        Window.unbind(on_key_down=self._on_key)
+        Window.unbind(on_touch_down=self._on_mouse)
+        Window.unbind(on_joy_button_down=self._on_joy_button)
+
+
 class SliderLeafGui(AbstractLeafGui):
     def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, min=0, max=100, step=1, title=None, tooltip_text=None, on_change=None):
         super().__init__(parent=parent, leaf=leaf, title=title, tooltip_text=tooltip_text)
