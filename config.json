@@ -2173,6 +2173,14 @@
       "inverse": false
     }
   },
+  "hats": {
+    "0": {
+      "joystick": 0,
+      "axis": 4,
+      "margin": 0.15,
+      "values": [-1.0, -0.6, -0.19, 0.1]
+    }
+  },
   "logging": {
     "vsdebug": 0,
     "verbose_debug": false

@@ -5,7 +5,7 @@ from kivy.uix.scrollview import ScrollView
 import game_config as gc
 
 from graphics_factory.divider import DividerLine
-from graphics_factory.label_control_pair import BoolLeafGui, SliderLeafGui, AxisExplorer, RoleAxisRow
+from graphics_factory.label_control_pair import BoolLeafGui, SliderLeafGui, AxisExplorer, RoleAxisRow, HatAxisRow
 
 
 class ControlsTab(BoxLayout):
@@ -76,6 +76,22 @@ class ControlsTab(BoxLayout):
                             explorer=explorer)
         else:
             self.add_widget(Label(text="No 'axes' section found in config.json", height=40, size_hint_y=None))
+
+        # ---- Hats (analogue hatswitches: an axis with threshold bands) ----
+        self.add_widget(Label(text="Hats (analogue)".upper(), font_size=18, size_hint=(0.8, None), height=80,
+                              halign='center'))
+        self.add_widget(Label(text="A D-pad exposed as two axes needs threshold bands to act as buttons. "
+                                      "Click 'pick from explorer', then click a slider in the explorer to assign that axis. "
+                                      "Set margin and threshold values (comma-separated) as needed.",
+                              size_hint=(0.9, None), height=60, halign='center'))
+
+        hats = gc.game_config.get_object(["hats"])
+        if hats is not None:
+            for hat in sorted(hats.value.keys()):
+                HatAxisRow(parent=self, hat=hat, hat_leaf=hats.get_object([hat]),
+                           explorer=explorer)
+        else:
+            self.add_widget(Label(text="No 'hats' section found in config.json", height=40, size_hint_y=None))
 
 
     

@@ -8,7 +8,7 @@ from graphics_factory.label_control_pair import CaptureBindingButton
 from graphics_factory.divider import DividerLine
 
 # Device types (display name -> config key)
-DEVICE_CHOICES = [('Key', 'keyboard'), ('Mouse', 'mouse'), ('Joy', 'joystick')]
+DEVICE_CHOICES = [('Key', 'keyboard'), ('Mouse', 'mouse'), ('Joy', 'joystick'), ('Hat', 'hat')]
 
 
 class BindingRow(BoxLayout):
