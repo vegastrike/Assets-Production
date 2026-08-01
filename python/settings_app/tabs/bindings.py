@@ -46,13 +46,14 @@ class ActionRow(BoxLayout):
         header = Label(text=device.upper(), font_size=14, height=30, size_hint_y=None)
         col.add_widget(header)
 
-        for binding in self._bindings[device]:
-            self._add_binding_button(device, col, binding)
-
-        # Add button
-        add_btn = Button(text="+ add", height=35, size_hint_y=None)
-        add_btn.bind(on_press=lambda _: self._add_binding(device))
-        col.add_widget(add_btn)
+        # One binding per device per action: show existing binding, or the
+        # add button only when the device column is empty.
+        if self._bindings[device]:
+            self._add_binding_button(device, col, self._bindings[device][0])
+        else:
+            add_btn = Button(text="+ add", height=35, size_hint_y=None)
+            add_btn.bind(on_press=lambda _: self._add_binding(device))
+            col.add_widget(add_btn)
 
     def _add_binding_button(self, device, col, binding):
         # Replace-mode capture: click -> press new input -> callback replaces this entry
@@ -62,11 +63,10 @@ class ActionRow(BoxLayout):
         )
 
     def _add_binding(self, device):
-        # A fresh blank entry; captured into before it is ever written.
+        # Add an empty entry that captures immediately; it is only written to
+        # config once a real binding is captured (via _replace_binding).
         placeholder = {}
-        self._bindings[device].append(placeholder)
-        # Its capture button appears below the '+ add' button; on capture the
-        # whole column is rebuilt in the proper order anyway.
+        self._bindings[device] = [placeholder]
         CaptureBindingButton(
             parent=self.columns[device], binding=placeholder, device=device,
             on_capture=lambda new_binding, d=device, old=placeholder: self._replace_binding(d, old, new_binding)

@@ -376,9 +376,9 @@ class AxisCaptureRow(BoxLayout):
     plus a capture button that runs deflection detection over a window and
     picks the clearest-moving axis (or reverts if ambiguous).
     """
-    DETECT_WINDOW = 1.5     # seconds
-    WINNER_RATIO = 2.0      # winner deflection must exceed 2nd by this ratio
-    WINNER_FLOOR = 0.2      # and exceed this absolute deflection to count
+    DETECT_WINDOW = 2.0     # seconds
+    WINNER_RATIO = 1.8      # winner deflection must exceed 2nd by this ratio
+    WINNER_FLOOR = 0.15     # and exceed this absolute deflection to count
 
     def __init__(self, parent: BoxLayout, role: str, role_leaf: gc.ConfigBranch, **kwargs):
         super().__init__(orientation='vertical', size_hint_y=None, height=160, **kwargs)
@@ -463,6 +463,11 @@ class AxisCaptureRow(BoxLayout):
             return
         self._detecting = True
         self._deflection = {}
+        # Seed the baseline with current slider values so a wiggle already in
+        # progress (or a slow single movement) still registers.
+        for (stickid, axisid), slider in self.live_sliders.items():
+            v = slider.slider.value
+            self._deflection[(stickid, axisid)] = [v, v]
         from kivy.clock import Clock
         Clock.schedule_once(self._finish_detect, self.DETECT_WINDOW)
 
