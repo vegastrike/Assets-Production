@@ -49,7 +49,12 @@ def main():
     # hardcoding the Linux name, so this works cross-platform.
     libname = ctypes.util.find_library("SDL3")
     if libname is None:
-        libname = "libSDL3.so.0"  # fallback for Linux when find_library fails
+        # Platform-aware fallback if find_library fails.
+        libname = {
+            "win32": "SDL3.dll",
+            "darwin": "libSDL3.dylib",
+            "linux": "libSDL3.so.0",
+        }[sys.platform]
     sdl = ctypes.CDLL(libname)
     sdl.SDL_Init(SDL_INIT_VIDEO)
     sdl.SDL_GetDisplays.argtypes = [ctypes.POINTER(ctypes.c_int)]
