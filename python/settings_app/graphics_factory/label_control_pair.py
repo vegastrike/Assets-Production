@@ -291,6 +291,10 @@ class CaptureBindingButton(AbstractLeafGui):
         Window.unbind(on_key_down=self._on_key)
         Window.unbind(on_touch_down=self._on_mouse)
         Window.unbind(on_joy_button_down=self._on_joy_button)
+        # The press that triggered capture (or cancelled it) left the button
+        # in Kivy's 'down' state (blue); its release never reached the button,
+        # so force it back to normal.
+        self.button.state = 'normal'
 
     def _on_key(self, window, keycode, scancode, codepoint, modifiers):
         # Modifier keys themselves (shift/ctrl/alt) must never be bound as a

@@ -4,6 +4,12 @@ import os
 # Disable it so argparse below gets them.
 os.environ.setdefault('KIVY_NO_ARGS', '1')
 
+# Kivy draws a red circle at the cursor when a mouse button is pressed (its
+# multitouch simulation indicator). It is noise while capturing bindings, so
+# disable it before Kivy starts.
+from kivy.config import Config
+Config.set('input', 'mouse', 'mouse,disable_multitouch')
+
 import os_utils
 import argparse
 
