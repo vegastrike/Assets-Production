@@ -24,12 +24,12 @@ class BindingRow(BoxLayout):
         self.device = device
         self.binding = binding
 
-        # Action name
-        self.add_widget(Label(text=action_key, size_hint_x=0.25, halign='left', valign='middle'))
+        # Action name (wide, bold)
+        self.add_widget(Label(text=action_key, size_hint_x=0.50, halign='left', valign='middle', bold=True))
 
         # Device type label (from config binding, or '?' if blank)
         self.device_label = Label(
-            text=self._display_name(device), size_hint_x=0.12, halign='center', valign='middle'
+            text=self._display_name(device), size_hint_x=0.10, halign='center', valign='middle'
         )
         self.add_widget(self.device_label)
 
@@ -38,12 +38,13 @@ class BindingRow(BoxLayout):
             parent=self, binding=binding, device=device,
             on_capture=on_capture
         )
+        self.capture.size_hint_x = 0.35
 
         # Add and Delete on the same row
-        add_btn = Button(text="+", size_hint_x=0.08)
+        add_btn = Button(text="+", size_hint_x=0.08, height=35, size_hint_y=None, pos_hint={'center_y': 0.5})
         add_btn.bind(on_press=lambda _: on_add(self))
         self.add_widget(add_btn)
-        del_btn = Button(text="x", size_hint_x=0.08)
+        del_btn = Button(text="x", size_hint_x=0.08, height=35, size_hint_y=None, pos_hint={'center_y': 0.5})
         del_btn.bind(on_press=lambda _: on_delete(self))
         self.add_widget(del_btn)
 

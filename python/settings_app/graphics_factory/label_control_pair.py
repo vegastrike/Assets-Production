@@ -231,7 +231,8 @@ class CaptureBindingButton(AbstractLeafGui):
         self.on_capture = on_capture
         self._capturing = False
 
-        self.button = Button(text=self.format_binding(), size_hint=(0.8, 1.0))
+        self.button = Button(text=self.format_binding(), size_hint=(0.8, None), height=35,
+                             pos_hint={'center_y': 0.5})
         self.add_widget(self.button)
         self.button.bind(on_press=self.on_click)
 
