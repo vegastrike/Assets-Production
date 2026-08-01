@@ -466,7 +466,6 @@ class AxisExplorer(BoxLayout):
 
         self.roles = roles
         self.live_sliders = {}      # (stickid, axisid) -> LiveAxisSlider
-        self._pick_target = None    # HatAxisRow in pick mode, else None
 
         # Header: role selector + hint
         header = BoxLayout(orientation='horizontal', size_hint_y=None, height=40)
@@ -494,16 +493,7 @@ class AxisExplorer(BoxLayout):
             self.sliders_area.add_widget(slider)
             self._update_selected()
 
-    def set_pick_target(self, hat_row):
-        self._pick_target = hat_row
-        self._update_selected()
-
     def _on_pick(self, stickid, axisid):
-        # If a hat row is in pick mode, assign there; otherwise to a role.
-        if self._pick_target is not None:
-            self._pick_target.accept_pick(stickid, axisid)
-            self._pick_target = None
-            return
         role = self.role_spinner.text
         role_leaf = self.roles.get(role)
         if role_leaf is None:
@@ -609,93 +599,6 @@ class RoleAxisRow(BoxLayout):
             self.role_leaf.get_object(["joystick"]).set(stickid)
         self.explorer._update_selected()
         print(f"[{self.role}] detect assigned axis {stickid}/{axisid}")
-
-
-class HatAxisRow(BoxLayout):
-    """One compact row per analogue hatswitch: hat index, assigned axis,
-    margin, and the threshold values (the engine's analogue-hatswitch:
-    an axis with threshold bands that act as buttons).
-    """
-    def __init__(self, parent: BoxLayout, hat: str, hat_leaf: gc.ConfigBranch,
-                 explorer: AxisExplorer, **kwargs):
-        super().__init__(orientation='horizontal', size_hint_y=None, height=50, **kwargs)
-        parent.add_widget(self)
-
-        self.hat = hat
-        self.hat_leaf = hat_leaf
-        self.explorer = explorer
-
-        self.add_widget(Label(text=f"Hat {hat}", size_hint_x=0.15, halign='left', bold=True))
-
-        # Joystick number (text entry; defaults to 0)
-        self.joy_leaf = hat_leaf.get_object(["joystick"]) if hat_leaf.has_key(["joystick"]) else None
-        joy = TextInput(text=str(self.joy_leaf.value) if self.joy_leaf else "0",
-                        size_hint_x=0.1, multiline=False)
-        joy.bind(text=self._on_joy_change)
-        self.add_widget(joy)
-
-        # Assigned axis label + pick from explorer
-        self.axis_leaf = hat_leaf.get_object(["axis"]) if hat_leaf.has_key(["axis"]) else None
-        self.axis_label = Label(text=f"axis: {self.axis_leaf.value if self.axis_leaf else '?'}",
-                                size_hint_x=0.15)
-        self.add_widget(self.axis_label)
-        pick_btn = Button(text="pick from explorer", size_hint_x=0.2, height=40, size_hint_y=None)
-        pick_btn.bind(on_press=lambda _: self._start_pick())
-        self.add_widget(pick_btn)
-
-        # Margin
-        self.margin_leaf = hat_leaf.get_object(["margin"]) if hat_leaf.has_key(["margin"]) else None
-        if self.margin_leaf:
-            margin = TextInput(text=str(self.margin_leaf.value), size_hint_x=0.1, multiline=False)
-            margin.bind(text=self._on_margin_change)
-            self.add_widget(margin)
-
-        # Threshold values (comma-separated)
-        self.values_leaf = hat_leaf.get_object(["values"]) if hat_leaf.has_key(["values"]) else None
-        if self.values_leaf:
-            values = TextInput(text=", ".join(str(v) for v in self.values_leaf.value),
-                               size_hint_x=0.3, multiline=False)
-            values.bind(text=self._on_values_change)
-            self.add_widget(values)
-
-        # Explorer pick mode: next pick assigns this hat's axis
-        self._picking = False
-
-    def _on_joy_change(self, instance, text):
-        if self.joy_leaf:
-            try:
-                self.joy_leaf.set(int(text))
-            except ValueError:
-                pass
-
-    def _on_margin_change(self, instance, text):
-        if self.margin_leaf:
-            try:
-                self.margin_leaf.set(float(text))
-            except ValueError:
-                pass
-
-    def _on_values_change(self, instance, text):
-        if self.values_leaf:
-            try:
-                values = [float(v.strip()) for v in text.split(',') if v.strip()]
-                self.values_leaf.set(values)
-            except ValueError:
-                pass
-
-    def _start_pick(self):
-        self._picking = not self._picking
-        self.explorer.set_pick_target(self if self._picking else None)
-        print(f"Hat {self.hat}: pick mode {'ON' if self._picking else 'OFF'}")
-
-    def accept_pick(self, stickid, axisid):
-        if self.axis_leaf:
-            self.axis_leaf.set(axisid)
-            self.axis_label.text = f"axis: {axisid}"
-        if self.joy_leaf:
-            self.joy_leaf.set(stickid)
-        self._picking = False
-        self.explorer._update_selected()
 
 
 # Test Code
