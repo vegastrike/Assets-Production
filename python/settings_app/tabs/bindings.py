@@ -68,6 +68,7 @@ class ActionBindingsGroup(BoxLayout):
 
     def __init__(self, parent: BoxLayout, action_key: str, action_branch: gc.ConfigBranch, **kwargs):
         super().__init__(orientation='vertical', size_hint_y=None, **kwargs)
+        self.bind(minimum_height=self.setter('height'))
         parent.add_widget(self)
 
         self.action_key = action_key
