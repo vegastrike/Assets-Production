@@ -59,8 +59,15 @@ def _load_lib(prefix):
     """Load an SDL library by name prefix (e.g. 'SDL3' or 'SDL2')."""
     libname = ctypes.util.find_library(prefix)
     if libname is None:
-        # Fallbacks for the two SDL major versions.
-        libname = {"SDL3": "libSDL3.so.0", "SDL2": "libSDL2-2.0.so.0"}[prefix]
+        # Platform-aware fallbacks for the two SDL major versions.
+        libname = {
+            ("SDL3", "win32"): "SDL3.dll",
+            ("SDL3", "darwin"): "libSDL3.dylib",
+            ("SDL3", "linux"): "libSDL3.so.0",
+            ("SDL2", "win32"): "SDL2.dll",
+            ("SDL2", "darwin"): "libSDL2-2.0.dylib",
+            ("SDL2", "linux"): "libSDL2-2.0.so.0",
+        }[(prefix, sys.platform)]
     return ctypes.CDLL(libname)
 
 
