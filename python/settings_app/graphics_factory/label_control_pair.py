@@ -226,6 +226,9 @@ class CaptureBindingButton(AbstractLeafGui):
     def __init__(self, parent: BoxLayout, binding: dict, device: str, title: str = None,
                  on_capture = None):
         super().__init__(parent=parent, leaf=None, title=title)
+        # AbstractLeafGui defaults to a fixed 70px height; fill the row
+        # instead so the centered button aligns with sibling rows.
+        self.size_hint_y = 1.0
         self.binding = binding
         self.device = device
         self.on_capture = on_capture
