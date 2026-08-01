@@ -248,7 +248,12 @@ class CaptureBindingButton(AbstractLeafGui):
         if self.device == 'joystick':
             return f"Joy {b.get('joystick', 0)} Btn {b.get('button', '?')}"
         if self.device == 'hat':
-            return f"Hat {b.get('hatswitch', '?')} {b.get('direction', '')}".strip()
+            b = self.binding
+            if 'direction' in b and 'axis' in b:
+                return f"HatAxis{b.get('axis')} {b.get('direction')}"
+            if 'direction' in b:
+                return f"Hat {b.get('hatswitch', '?')} {b.get('direction', '')}".strip()
+            return f"Hat {b.get('hatswitch', '?')} btn {b.get('button', '?')}"
         return str(b)
 
     def on_click(self, instance):
@@ -265,15 +270,24 @@ class CaptureBindingButton(AbstractLeafGui):
             Window.bind(on_key_down=self._on_key)
         elif self.device == 'mouse':
             Window.bind(on_touch_down=self._on_mouse)
-        elif self.device in ('joystick', 'hat'):
-            Window.bind(on_joy_button_down=self._on_joy)
+        elif self.device == 'joystick':
+            Window.bind(on_joy_button_down=self._on_joy_button)
+        elif self.device == 'hat':
+            # Auto-detect: a real hat fires on_joy_hat (direction tuples); a
+            # 'hat as axes' joystick (e.g. flight stick D-pad) fires
+            # on_joy_axis with near 0/±1 values. Watch both, use whichever
+            # comes first.
+            Window.bind(on_joy_hat=self._on_hat)
+            Window.bind(on_joy_axis=self._on_hat_as_axis)
 
     def _stop_capture(self):
         self._capturing = False
         self.button.text = self.format_binding()
         Window.unbind(on_key_down=self._on_key)
         Window.unbind(on_touch_down=self._on_mouse)
-        Window.unbind(on_joy_button_down=self._on_joy)
+        Window.unbind(on_joy_button_down=self._on_joy_button)
+        Window.unbind(on_joy_hat=self._on_hat)
+        Window.unbind(on_joy_axis=self._on_hat_as_axis)
 
     def _on_key(self, window, keycode, scancode, codepoint, modifiers):
         # Special keys (tab, arrows, F-keys...) have no codepoint; map the
@@ -299,11 +313,47 @@ class CaptureBindingButton(AbstractLeafGui):
         new_binding = {"button": btn, "modifier": "none"}
         self._finish(new_binding)
 
-    def _on_joy(self, window, stickid, buttonid):
-        if self.device == 'hat':
-            new_binding = {"hatswitch": buttonid, "button": 0, "modifier": "none"}
-        else:
-            new_binding = {"joystick": stickid, "button": buttonid, "modifier": "none"}
+    def _on_joy_button(self, window, stickid, buttonid):
+        new_binding = {"joystick": stickid, "button": buttonid, "modifier": "none"}
+        self._finish(new_binding)
+
+    def _on_hat(self, window, stickid, hatid, value):
+        # value is a direction tuple, e.g. (0, 1)=up, (1, 0)=right, (-1,-1)=up-left
+        dx, dy = value
+        direction = None
+        if dx == 0 and dy == 1:
+            direction = 'up'
+        elif dx == 0 and dy == -1:
+            direction = 'down'
+        elif dx == 1 and dy == 0:
+            direction = 'right'
+        elif dx == -1 and dy == 0:
+            direction = 'left'
+        elif dx == -1 and dy == 1:
+            direction = 'up-left'
+        elif dx == 1 and dy == 1:
+            direction = 'up-right'
+        elif dx == -1 and dy == -1:
+            direction = 'down-left'
+        elif dx == 1 and dy == -1:
+            direction = 'down-right'
+        if not direction:
+            return
+        new_binding = {"joystick": stickid, "hatswitch": hatid, "direction": direction, "modifier": "none"}
+        self._finish(new_binding)
+
+    def _on_hat_as_axis(self, window, stickid, axisid, value):
+        # Flight-style joysticks expose the D-pad as axes that sit at 0 or +/-1.
+        # Only treat it as a hat when the value is essentially a digital step.
+        v = value / 32767.0
+        if abs(v) < 0.5:
+            return   # analog movement, not a hat step - ignore
+        direction = 'right' if v > 0 else 'left'
+        # For a two-axis D-pad, the direction depends on the axis: the
+        # horizontal axis is left/right; the vertical is up/down. We can't
+        # know which is which in general, so record the axis id so the engine
+        # can interpret it, and note the sign as the direction.
+        new_binding = {"joystick": stickid, "axis": axisid, "direction": direction, "modifier": "none"}
         self._finish(new_binding)
 
     def _finish(self, new_binding):
