@@ -995,16 +995,12 @@
             ],
             "joystick": [
                 {"joystick": 0, "button": 1, "modifier": "none"}
-            ],
-            "hat": []
+            ]
         },
         "ASAP": {
             "keyboard": [
                 {"key": "a", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "AccelKey": {
             "keyboard": [
@@ -1017,298 +1013,189 @@
             ],
             "joystick": [
                 {"joystick": 0, "button": 7, "modifier": "none"}
-            ],
-            "hat": []
+            ]
         },
         "CloakKey": {
             "keyboard": [
                 {"key": "c", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::Behind": {
             "keyboard": [
                 {"key": "5", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::Inside": {
             "keyboard": [
                 {"key": "1", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::InsideBack": {
             "keyboard": [
                 {"key": "4", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::InsideLeft": {
             "keyboard": [
                 {"key": "2", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::InsideRight": {
             "keyboard": [
                 {"key": "3", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::NavScreen": {
             "keyboard": [
                 {"key": "M", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::OutsideTarget": {
             "keyboard": [
                 {"key": "0", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::Pan": {
             "keyboard": [
                 {"key": "6", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::PanTarget": {
             "keyboard": [
                 {"key": "8", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::PitchDown": {
             "keyboard": [
                 {"key": "q", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::PitchUp": {
             "keyboard": [
                 {"key": "z", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::Quit": {
             "keyboard": [
                 {"key": "esc", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::ScrollDown": {
             "keyboard": [
                 {"key": "cursor-pagedown", "modifier": "none"},
                 {"key": "keypad-3", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::ScrollUp": {
             "keyboard": [
                 {"key": "cursor-pageup", "modifier": "none"},
                 {"key": "keypad-9", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::SkipMusicTrack": {
             "keyboard": [
                 {"key": "S", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::SwitchLVDU": {
             "keyboard": [
                 {"key": "m", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::SwitchRVDU": {
             "keyboard": [
                 {"key": "v", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::ViewTarget": {
             "keyboard": [
                 {"key": "7", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::YawLeft": {
             "keyboard": [
                 {"key": "s", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::YawRight": {
             "keyboard": [
                 {"key": "f", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::ZoomIn": {
             "keyboard": [
                 {"key": "9", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Cockpit::ZoomOut": {
             "keyboard": [
                 {"key": "0", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Comm1Key": {
             "keyboard": [
                 {"key": "function-1", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Comm2Key": {
             "keyboard": [
                 {"key": "function-2", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Comm3Key": {
             "keyboard": [
                 {"key": "function-3", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Comm4Key": {
             "keyboard": [
                 {"key": "function-4", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Comm5Key": {
             "keyboard": [
                 {"key": "function-5", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Comm6Key": {
             "keyboard": [
                 {"key": "function-6", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Comm7Key": {
             "keyboard": [
                 {"key": "function-7", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Comm8Key": {
             "keyboard": [
                 {"key": "function-8", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "CommAttackTarget": {
             "keyboard": [
                 {"key": "D", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "CommBreakForm": {
             "keyboard": [
                 {"key": "B", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "CommFormUp": {
             "keyboard": [
                 {"key": "F", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "CommHelpMeOut": {
             "keyboard": [
                 {"key": "H", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ConsoleKeys::BringConsole": {
             "keyboard": [
                 {"key": "function-1", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "DecelKey": {
             "keyboard": [
@@ -1320,58 +1207,39 @@
             ],
             "joystick": [
                 {"joystick": 0, "button": 5, "modifier": "none"}
-            ],
-            "hat": []
+            ]
         },
         "DockKey": {
             "keyboard": [
                 {"key": "d", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "DownKey": {
             "keyboard": [
                 {"key": "cursor-down", "modifier": "none"},
                 {"key": "keypad-2", "modifier": "none"},
                 {"key": "keypad-5", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ECMKey": {
             "keyboard": [
                 {"key": "e", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "EjectCargoKey": {
             "keyboard": [
                 {"key": "Z", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "EjectKey": {
             "keyboard": [
                 {"key": "E", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Enslave": {
             "keyboard": [
                 {"key": "e", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "FireKey": {
             "keyboard": [
@@ -1382,49 +1250,33 @@
             ],
             "joystick": [
                 {"joystick": 0, "button": 0, "modifier": "none"}
-            ],
-            "hat": []
+            ]
         },
         "Flight::Mode::InertialToggle": {
             "keyboard": [
                 {"key": "`", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "FreeSlaves": {
             "keyboard": [
                 {"key": "f", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "JumpKey": {
             "keyboard": [
                 {"key": "j", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "LeftKey": {
             "keyboard": [
                 {"key": "cursor-right", "modifier": "none"},
                 {"key": "keypad-6", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "LockTargetKey": {
             "keyboard": [
                 {"key": "l", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "MisSelKey": {
             "keyboard": [
@@ -1435,8 +1287,7 @@
             ],
             "joystick": [
                 {"joystick": 0, "button": 9, "modifier": "none"}
-            ],
-            "hat": []
+            ]
         },
         "MissileKey": {
             "keyboard": [
@@ -1448,105 +1299,68 @@
             ],
             "joystick": [
                 {"joystick": 0, "button": 2, "modifier": "none"}
-            ],
-            "hat": []
+            ]
         },
         "MissionTargetKey": {
             "keyboard": [
                 {"key": "n", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "MusicVolumeDec": {
             "keyboard": [
                 {"key": "function-12", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "MusicVolumeInc": {
             "keyboard": [
                 {"key": "function-11", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "NearestBaseKey": {
             "keyboard": [
                 {"key": "K", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "NearestDangerousHostileKey": {
             "keyboard": [
                 {"key": "R", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "NearestFriendlyKey": {
             "keyboard": [
                 {"key": "k", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "NearestHostileTargetKey": {
             "keyboard": [
                 {"key": "r", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "NearestJumpKey": {
             "keyboard": [
                 {"key": "k", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "NearestPlanetKey": {
             "keyboard": [
                 {"key": "k", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "NearestTargetKey": {
             "keyboard": [
                 {"key": "h", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "NewShader": {
             "keyboard": [
                 {"key": "v", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "PauseKey": {
             "keyboard": [
                 {"key": "|", "modifier": "none"},
                 {"key": "pause", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "PickTargetKey": {
             "keyboard": [
@@ -1557,337 +1371,217 @@
             ],
             "joystick": [
                 {"joystick": 0, "button": 4, "modifier": "none"}
-            ],
-            "hat": []
+            ]
         },
         "RequestClearenceKey": {
             "keyboard": [
                 {"key": "0", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Respawn": {
             "keyboard": [
                 {"key": ";", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RestoreTarget1": {
             "keyboard": [
                 {"key": "1", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RestoreTarget2": {
             "keyboard": [
                 {"key": "2", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RestoreTarget3": {
             "keyboard": [
                 {"key": "3", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RestoreTarget4": {
             "keyboard": [
                 {"key": "4", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RestoreTarget5": {
             "keyboard": [
                 {"key": "5", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RestoreTarget6": {
             "keyboard": [
                 {"key": "6", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RestoreTarget7": {
             "keyboard": [
                 {"key": "7", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RestoreTarget8": {
             "keyboard": [
                 {"key": "8", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RestoreTarget9": {
             "keyboard": [
                 {"key": "9", "modifier": "ctrl"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ReverseMisSelKey": {
             "keyboard": [
                 {"key": "W", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ReverseMissionTargetKey": {
             "keyboard": [
                 {"key": "N", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ReverseNearestTargetKey": {
             "keyboard": [
                 {"key": "H", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ReverseSigTargetKey": {
             "keyboard": [
                 {"key": "N", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ReverseTargetKey": {
             "keyboard": [
                 {"key": "T", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ReverseUnitTargetKey": {
             "keyboard": [
                 {"key": "U", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ReverseWeapSelKey": {
             "keyboard": [
                 {"key": "G", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RightKey": {
             "keyboard": [
                 {"key": "cursor-left", "modifier": "none"},
                 {"key": "keypad-4", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RollLeftKey": {
             "keyboard": [
                 {"key": "/", "modifier": "none"},
                 {"key": "keypad-divide", "modifier": "none"},
                 {"key": "cursor-insert", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "RollRightKey": {
             "keyboard": [
                 {"key": "*", "modifier": "none"},
                 {"key": "keypad-multiply", "modifier": "none"},
                 {"key": "cursor-delete", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SaveTarget1": {
             "keyboard": [
                 {"key": "1", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SaveTarget2": {
             "keyboard": [
                 {"key": "2", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SaveTarget3": {
             "keyboard": [
                 {"key": "3", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SaveTarget4": {
             "keyboard": [
                 {"key": "4", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SaveTarget5": {
             "keyboard": [
                 {"key": "5", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SaveTarget6": {
             "keyboard": [
                 {"key": "6", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SaveTarget7": {
             "keyboard": [
                 {"key": "7", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SaveTarget8": {
             "keyboard": [
                 {"key": "8", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SaveTarget9": {
             "keyboard": [
                 {"key": "9", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "Screenshot": {
             "keyboard": [
                 {"key": "i", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SetVelocityNullKey": {
             "keyboard": [
                 {"key": "cursor-end", "modifier": "none"},
                 {"key": "keypad-1", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SetVelocityRefKey": {
             "keyboard": [
                 {"key": "cursor-home", "modifier": "none"},
                 {"key": "keypad-7", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SheltonKey": {
-            "keyboard": [],
             "mouse": [
                 {"button": 6, "modifier": "none"}
             ],
             "joystick": [
                 {"joystick": 0, "button": 6, "modifier": "none"}
-            ],
-            "hat": []
+            ]
         },
         "SigTargetKey": {
             "keyboard": [
                 {"key": "n", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "StartKey": {
             "keyboard": [
                 {"key": "\\", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "StopKey": {
             "keyboard": [
                 {"key": "backspace", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SubUnitTargetKey": {
             "keyboard": [
                 {"key": "b", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SuicideKey": {
             "keyboard": [
                 {"key": "!", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "SwitchCombatMode": {
             "keyboard": [
                 {"key": "y", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "TargetKey": {
             "keyboard": [
@@ -1898,129 +1592,83 @@
             ],
             "joystick": [
                 {"joystick": 0, "button": 3, "modifier": "none"}
-            ],
-            "hat": []
+            ]
         },
         "TextMessage": {
             "keyboard": [
                 {"key": "]", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ThrustDown": {
             "keyboard": [
                 {"key": ".", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ThrustLeft": {
             "keyboard": [
                 {"key": "less-than", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ThrustRight": {
             "keyboard": [
                 {"key": "greater-than", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ThrustUp": {
             "keyboard": [
                 {"key": ",", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "ToggleWarpDrive": {
             "keyboard": [
                 {"key": "A", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "TurretAIFireAtWill": {
             "keyboard": [
                 {"key": "O", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "TurretAIOff": {
             "keyboard": [
                 {"key": "o", "modifier": "alt"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "TurretAIOn": {
             "keyboard": [
                 {"key": "o", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "TurretControl": {
             "keyboard": [
                 {"key": "[", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "TurretTargetKey": {
             "keyboard": [
                 {"key": "P", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "UnitTargetKey": {
             "keyboard": [
                 {"key": "u", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "UpKey": {
             "keyboard": [
                 {"key": "cursor-up", "modifier": "none"},
                 {"key": "keypad-8", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "VolumeDec": {
             "keyboard": [
                 {"key": "function-10", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "VolumeInc": {
             "keyboard": [
                 {"key": "function-9", "modifier": "none"}
-            ],
-            "mouse": [],
-            "joystick": [],
-            "hat": []
+            ]
         },
         "WeapSelKey": {
             "keyboard": [
@@ -2031,8 +1679,7 @@
             ],
             "joystick": [
                 {"joystick": 0, "button": 8, "modifier": "none"}
-            ],
-            "hat": []
+            ]
         }
     },
 

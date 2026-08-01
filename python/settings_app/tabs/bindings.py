@@ -91,6 +91,14 @@ class ActionBindingsGroup(BoxLayout):
             return self.action_branch.get_object([device])
         return None
 
+    def _create_leaf(self, device):
+        # The config may not ship empty device arrays (e.g. 'hat': []);
+        # create the leaf on first write so captured bindings still save.
+        leaf = gc.ConfigLeaf(parent=self.action_branch, key=device, value=[],
+                             original_value=[])
+        self.action_branch.value[device] = leaf
+        return leaf
+
     def _add_row(self, device, binding):
         holder = {}
         row = BindingRow(
@@ -129,14 +137,18 @@ class ActionBindingsGroup(BoxLayout):
         self._write_all()
 
     def _write_all(self):
-        # Rebuild per-device arrays from the current rows and write each leaf
+        # Rebuild per-device arrays from the current rows and write each leaf.
+        # Only write devices that have bindings (or had them before) - a
+        # missing array in the config means 'no bindings', and writing an
+        # empty array would add noise to the user overlay.
         by_device = {d: [] for _, d in DEVICE_CHOICES}
         for row in self.rows:
             if row.binding:
                 by_device[row.device].append(row.binding)
         for _, device in DEVICE_CHOICES:
-            leaf = self._device_leaf(device)
-            if leaf is not None:
+            existing = self._device_leaf(device)
+            if existing is not None or by_device[device]:
+                leaf = existing if existing is not None else self._create_leaf(device)
                 leaf.set(by_device[device])
 
 
