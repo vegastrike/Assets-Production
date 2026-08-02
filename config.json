@@ -2066,6 +2066,55 @@
         }
     },
 
+    "colors": {
+        "nav": {
+            "current_system": [1.0, 0.3, 0.3, 1.0],
+            "destination_system": [1.0, 0.77, 0.3, 1.0],
+            "slelection_system": [0.3, 1.0, 0.3, 1.0],
+            "path_system": [1.0, 1.0, 1.0, 1.0]
+        },
+        "absolute": {
+            "red": [1.0, 0.0, 0.0, 1.0],
+            "green": [0.0, 1.0, 0.0, 1.0],
+            "blue": [0.0, 0.0, 1.0, 1.0],
+            "yellow": [1.0, 1.0, 0.0, 1.0],
+            "black": [0.0, 0.0, 0.0, 1.0],
+            "white": [1.0, 1.0, 1.0, 1.0],
+            "grey": [0.5, 0.5, 0.5, 1.0],
+            "light-grey": [0.8, 0.8, 0.8, 1.0],
+            "violet": [1.0, 0.0, 1.0, 1.0],
+            "light-blue": [0.68, 0.9, 1.0, 1.0],
+            "pink": [1.0, 0.47, 0.64, 1.0],
+            "dark-red": [0.1, 0.0, 0.0, 1.0],
+            "dark-blue": [0.0, 0.0, 0.2, 1.0]
+        },
+        "unit": {
+            "ship_ambient": [0.3, 0.3, 0.3, 1.0],
+            "engine": [1.0, 1.0, 1.0, 1.0]
+        },
+        "terrain": {
+            "terrain_ambient": [0.0, 0.0, 0.0, 1.0]
+        },
+        "default": {
+            "enemy": [1.0, 0.0, 0.0, 1.0],
+            "friend": [0.0, 1.0, 0.0, 1.0],
+            "neutral": [1.0, 1.0, 0.0, 1.0],
+            "attacking_ship": [0.0, 0.0, 1.0, 1.0],
+            "locking_ship": [1.0, 0.0, 1.0, 1.0],
+            "targetting_ship": [0.68, 0.9, 1.0, 1.0],
+            "target": [1.0, 0.0, 1.0, 1.0],
+            "planet": [1.0, 1.0, 0.6, 1.0],
+            "docking_box": [1.0, 1.0, 1.0, 1.0],
+            "black_and_white": [0.8, 0.8, 0.8, 1.0],
+            "planet_ambient": [0.0, 0.0, 0.0, 1.0],
+            "planet_mat_ambient": [1.0, 1.0, 1.0, 1.0],
+            "planet_mat_diffuse": [1.0, 1.0, 1.0, 1.0],
+            "planet_mat_specular": [0.0, 0.0, 0.0, 1.0],
+            "planet_mat_emmissive": [0.0, 0.0, 0.0, 1.0],
+            "space_background": [0.0, 0.0, 0.0, 1.0]
+        }
+    },
+
     "weapons": {
         "can_fire_in_cloak": false,
         "can_fire_in_spec": false
