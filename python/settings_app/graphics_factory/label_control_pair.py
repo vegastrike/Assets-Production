@@ -15,6 +15,37 @@ from kivy.uix.widget import Widget
 from kivy.core.window import Window
 
 
+def _load_sdl():
+    """Load the system SDL2 library and set up the joystick ctypes signatures.
+
+    Also ensures the SDL joystick subsystem is initialized (SDL_INIT_JOYSTICK,
+    0x200, which implies SDL_INIT_EVENTS) - Kivy's window provider does NOT
+    initialize the joystick subsystem, so without this SDL_NumJoysticks always
+    returns 0 and no axes can be enumerated. Shared by the joystick
+    enumeration and hat-polling paths. Returns the ctypes handle, or None if
+    SDL2 can't be loaded.
+    """
+    import ctypes
+    import ctypes.util
+    try:
+        sdl = ctypes.CDLL(ctypes.util.find_library("SDL2") or "libSDL2-2.0.so.0")
+    except (OSError, AttributeError):
+        return None
+    sdl.SDL_Init.argtypes = [ctypes.c_uint]
+    sdl.SDL_Init.restype = ctypes.c_int
+    sdl.SDL_Init(0x200)   # SDL_INIT_JOYSTICK (implies SDL_INIT_EVENTS)
+    sdl.SDL_NumJoysticks.restype = ctypes.c_int
+    sdl.SDL_JoystickOpen.argtypes = [ctypes.c_int]
+    sdl.SDL_JoystickOpen.restype = ctypes.c_void_p
+    sdl.SDL_JoystickGetHat.argtypes = [ctypes.c_void_p, ctypes.c_int]
+    sdl.SDL_JoystickGetHat.restype = ctypes.c_uint8
+    sdl.SDL_JoystickNumHats.argtypes = [ctypes.c_void_p]
+    sdl.SDL_JoystickNumHats.restype = ctypes.c_int
+    sdl.SDL_JoystickNumAxes.argtypes = [ctypes.c_void_p]
+    sdl.SDL_JoystickNumAxes.restype = ctypes.c_int
+    return sdl
+
+
 class AbstractLeafGui(BoxLayout):
     def __init__(self, parent: BoxLayout, leaf: gc.ConfigLeaf, title = None, tooltip_text = None):
         super().__init__(orientation='horizontal', height=70, size_hint_y=None)
@@ -360,18 +391,8 @@ class BindingCaptureDialog(ModalView):
         changes (the reliable way to catch D-pad presses; Kivy's on_joy_hat
         event is often not delivered).
         """
-        try:
-            import ctypes
-            import ctypes.util
-            sdl = ctypes.CDLL(ctypes.util.find_library("SDL2") or "libSDL2-2.0.so.0")
-            sdl.SDL_NumJoysticks.restype = ctypes.c_int
-            sdl.SDL_JoystickOpen.argtypes = [ctypes.c_int]
-            sdl.SDL_JoystickOpen.restype = ctypes.c_void_p
-            sdl.SDL_JoystickGetHat.argtypes = [ctypes.c_void_p, ctypes.c_int]
-            sdl.SDL_JoystickGetHat.restype = ctypes.c_uint8
-            sdl.SDL_JoystickNumHats.argtypes = [ctypes.c_void_p]
-            sdl.SDL_JoystickNumHats.restype = ctypes.c_int
-        except (OSError, AttributeError):
+        sdl = _load_sdl()
+        if sdl is None:
             return
         n = sdl.SDL_NumJoysticks()
         for i in range(n):
@@ -487,29 +508,32 @@ class SliderLeafGui(AbstractLeafGui):
 
 
 class LiveAxisSlider(BoxLayout):
-    """A live-updating slider for one physical joystick axis.
-
-    Binds to the window's on_joy_axis events for (stickid, axisid) and
-    reflects the current -1..1 value. Clicking it (in capture mode) selects
-    it as the axis for the role being configured.
+    """A live-updating slider for one physical joystick axis, with a bind
+    dropdown (none/x/y/z/throttle) to assign this axis to a flight role.
     """
-    def __init__(self, stickid: int, axisid: int, label_text: str = None, on_select=None, **kwargs):
+    ROLES = ["none", "x", "y", "z", "throttle"]
+
+    def __init__(self, stickid: int, axisid: int, label_text: str = None,
+                 on_bind=None, **kwargs):
         super().__init__(orientation='horizontal', size_hint_y=None, height=40, **kwargs)
         self.stickid = stickid
         self.axisid = axisid
-        self.on_select = on_select
+        self.on_bind = on_bind
+        self._updating = False
 
         label_text = label_text or f"A{axisid}"
-        self.label = Label(text=label_text, size_hint_x=0.2, halign='left')
+        self.label = Label(text=label_text, size_hint_x=0.18, halign='left',
+                           font_size='12sp')
         self.add_widget(self.label)
 
-        self.slider = Slider(min=-1, max=1, value=0, size_hint_x=0.7)
+        self.slider = Slider(min=-1, max=1, value=0, size_hint_x=0.52)
         self.slider.disabled = True   # display-only; not user-draggable
         self.add_widget(self.slider)
 
-        self.select_btn = Button(text="pick", size_hint_x=0.15, height=40, size_hint_y=None)
-        self.select_btn.bind(on_press=lambda _: self.on_select(self.stickid, self.axisid) if self.on_select else None)
-        self.add_widget(self.select_btn)
+        self.bind_spinner = Spinner(values=self.ROLES, size_hint_x=0.3,
+                                    text="none", font_size='12sp')
+        self.bind_spinner.bind(text=self._on_bind)
+        self.add_widget(self.bind_spinner)
 
         # Live update from Kivy's SDL2 joystick provider
         from kivy.core.window import Window
@@ -520,16 +544,23 @@ class LiveAxisSlider(BoxLayout):
             # SDL axis values are raw 16-bit (-32768..32767); normalize to -1..1
             self.slider.value = value / 32767.0
 
-    def set_selected(self, selected: bool):
-        self.select_btn.text = "*" if selected else "pick"
-        self.select_btn.background_color = (0.2, 0.8, 0.2, 1) if selected else (0.5, 0.5, 0.5, 1)
+    def _on_bind(self, instance, text):
+        if self._updating or self.on_bind is None:
+            return
+        self.on_bind(self.stickid, self.axisid, text)
+
+    def set_bound_role(self, role):
+        """Set the dropdown text without re-firing the bind handler."""
+        self._updating = True
+        self.bind_spinner.text = role if role else "none"
+        self._updating = False
 
 
 class AxisExplorer(BoxLayout):
     """One shared live display of every joystick axis observed via on_joy_axis.
 
-    A single set of live sliders (no duplication across role rows). A role
-    selector says which role a 'pick' assigns to.
+    Each slider carries its own bind dropdown (none/x/y/z/throttle), so there
+    are no separate role rows - the whole block stays compact.
     """
     def __init__(self, parent: BoxLayout, roles: dict, **kwargs):
         # roles: {role_name: role_leaf}
@@ -538,14 +569,14 @@ class AxisExplorer(BoxLayout):
 
         self.roles = roles
         self.live_sliders = {}      # (stickid, axisid) -> LiveAxisSlider
+        # Start as if a joystick were present so the first no-joystick poll
+        # actually hides the (initially visible) sliders.
+        self._have_joystick = True
 
-        # Header: role selector + hint
-        header = BoxLayout(orientation='horizontal', size_hint_y=None, height=40)
-        self.add_widget(header)
-        header.add_widget(Label(text="Assign to role:", size_hint_x=0.3))
-        self.role_spinner = Spinner(text=sorted(roles.keys())[0], values=sorted(roles.keys()),
-                                    size_hint_x=0.3)
-        header.add_widget(self.role_spinner)
+        # "No joystick detected" placeholder, shown until a device appears.
+        self.no_joy_label = Label(text="No Joystick Detected", halign='center',
+                                  size_hint=(1, None), height=40)
+        self.add_widget(self.no_joy_label)
 
         # Live sliders area
         self.sliders_area = BoxLayout(orientation='vertical', size_hint_y=None)
@@ -555,122 +586,133 @@ class AxisExplorer(BoxLayout):
         from kivy.core.window import Window
         Window.bind(on_joy_axis=self._watch_axes)
 
+        # Poll every second: pick up a joystick whenever one appears (and
+        # show the placeholder while none is connected).
+        from kivy.clock import Clock
+        self._enumerate_joysticks()
+        Clock.schedule_interval(lambda dt: self._enumerate_joysticks(), 1.0)
+
+    def _set_joystick_visible(self, present):
+        """Show either the 'No Joystick Detected' placeholder or the sliders."""
+        if present == self._have_joystick:
+            return
+        self._have_joystick = present
+        self.no_joy_label.opacity = 0.0 if present else 1.0
+        self.sliders_area.opacity = 1.0 if present else 0.0
+
+    def _enumerate_joysticks(self):
+        """Create a slider for every axis of every connected joystick right away.
+
+        Kivy only creates on_joy_axis sliders after the user moves the stick,
+        so without this the axis list is empty at startup. Uses the shared
+        _load_sdl() helper (same SDL2 ctypes approach as _poll_hats). Polls
+        every second so a late-plugged joystick is picked up.
+        """
+        sdl = _load_sdl()
+        if sdl is None:
+            self._set_joystick_visible(False)
+            return
+        n = sdl.SDL_NumJoysticks()
+        found_any = False
+        for i in range(n):
+            joy = sdl.SDL_JoystickOpen(i)
+            if not joy:
+                continue
+            found_any = True
+            naxes = sdl.SDL_JoystickNumAxes(joy)
+            for a in range(naxes):
+                key = (i, a)
+                if key not in self.live_sliders:
+                    slider = LiveAxisSlider(stickid=i, axisid=a,
+                                            label_text=f"Joy{i} A{a}",
+                                            on_bind=self._on_bind_axis)
+                    self.live_sliders[key] = slider
+                    self.sliders_area.add_widget(slider)
+        self._set_joystick_visible(found_any)
+        if found_any:
+            self._refresh_slider_binds()
+
     def _watch_axes(self, window, stickid, axisid, value):
         key = (stickid, axisid)
         if key not in self.live_sliders:
             slider = LiveAxisSlider(stickid=stickid, axisid=axisid,
                                     label_text=f"Joy{stickid} A{axisid}",
-                                    on_select=self._on_pick)
+                                    on_bind=self._on_bind_axis)
             self.live_sliders[key] = slider
             self.sliders_area.add_widget(slider)
-            self._update_selected()
+        self._set_joystick_visible(True)
+        self._refresh_slider_binds()
 
-    def _on_pick(self, stickid, axisid):
-        role = self.role_spinner.text
-        role_leaf = self.roles.get(role)
-        if role_leaf is None:
-            return
-        if role_leaf.has_key(["axis"]):
-            role_leaf.get_object(["axis"]).set(axisid)
-        if role_leaf.has_key(["joystick"]):
-            role_leaf.get_object(["joystick"]).set(stickid)
-        print(f"Assigned axis {stickid}/{axisid} to role '{role}'")
-        self._update_selected()
-
-    def _update_selected(self):
-        # Highlight sliders that match any role's assigned axis
-        assigned = set()
+    def _role_for(self, stickid, axisid):
+        """Return the role name bound to this physical axis, or None."""
         for role, role_leaf in self.roles.items():
-            if role_leaf.has_key(["axis"]):
-                a = role_leaf.get_object(["axis"]).value
-                j = role_leaf.get_object(["joystick"]).value if role_leaf.has_key(["joystick"]) else 0
-                assigned.add((j, a))
+            if not role_leaf.has_key(["axis"]):
+                continue
+            if role_leaf.get_object(["axis"]).value != axisid:
+                continue
+            joy = 0
+            if role_leaf.has_key(["joystick"]):
+                joy = role_leaf.get_object(["joystick"]).value
+            if joy == stickid:
+                return role
+        return None
+
+    def _on_bind_axis(self, stickid, axisid, role):
+        """Bind (or unbind) a physical axis to a flight role."""
+        if role == "none":
+            # clear whichever role currently points here
+            for r, role_leaf in self.roles.items():
+                if not role_leaf.has_key(["axis"]):
+                    continue
+                if role_leaf.get_object(["axis"]).value == axisid:
+                    role_leaf.get_object(["axis"]).set(-1)
+            print(f"Unbound Joy{stickid} A{axisid}")
+        else:
+            role_leaf = self.roles.get(role)
+            if role_leaf is None or not role_leaf.has_key(["axis"]):
+                return
+            # this role can only point at one axis; clear its old binding
+            old = self._role_for(stickid, axisid)
+            if old is not None and old != role:
+                self.roles[old].get_object(["axis"]).set(-1)
+            role_leaf.get_object(["axis"]).set(axisid)
+            if role_leaf.has_key(["joystick"]):
+                role_leaf.get_object(["joystick"]).set(stickid)
+            print(f"Bound Joy{stickid} A{axisid} to '{role}'")
+        self._refresh_slider_binds()
+
+    def _refresh_slider_binds(self):
+        """Sync each slider's dropdown to the role currently bound to it."""
         for key, slider in self.live_sliders.items():
-            slider.set_selected(key in assigned)
+            slider.set_bound_role(self._role_for(*key))
 
+    def max_deflection(self):
+        """Largest |current value| across the live sliders of BOUND axes only,
+        excluding the throttle role.
 
-class RoleAxisRow(BoxLayout):
-    """One compact row per axis role: role name, assigned axis, detect button."""
-    DETECT_WINDOW = 2.0
-    WINNER_RATIO = 1.8
-    WINNER_FLOOR = 0.15
-
-    def __init__(self, parent: BoxLayout, role: str, role_leaf: gc.ConfigBranch,
-                 explorer: AxisExplorer, **kwargs):
-        super().__init__(orientation='horizontal', size_hint_y=None, height=50, **kwargs)
-        parent.add_widget(self)
-
-        self.role = role
-        self.role_leaf = role_leaf
-        self.explorer = explorer
-        self._detecting = False
-        self._deflection = {}
-
-        self.add_widget(Label(text=role, size_hint_x=0.15, halign='left', bold=True))
-
-        # Source spinner
-        if role_leaf.has_key(["source"]):
-            self.source_leaf = role_leaf.get_object(["source"])
-            src = Spinner(text=self.source_leaf.value, values=["joystick", "mouse"], size_hint_x=0.2)
-            src.bind(text=self._on_source_change)
-            self.add_widget(src)
-
-        # Current axis label
-        self.axis_leaf = role_leaf.get_object(["axis"]) if role_leaf.has_key(["axis"]) else None
-        self.axis_label = Label(text=f"axis: {self.axis_leaf.value if self.axis_leaf else '?'}",
-                                size_hint_x=0.2)
-        self.add_widget(self.axis_label)
-
-        # Detect button
-        detect_btn = Button(text="wiggle to detect", size_hint_x=0.3, height=40, size_hint_y=None)
-        detect_btn.bind(on_press=lambda _: self._start_detect())
-        self.add_widget(detect_btn)
-
-        # Inverse toggle
-        if role_leaf.has_key(["inverse"]):
-            self.inverse_leaf = role_leaf.get_object(["inverse"])
-            inv = BoolLeafGui(parent=self, leaf=self.inverse_leaf, title="inverse")
-            inv.size_hint_x = 0.15
-            inv.height = 40
-
-    def _on_source_change(self, instance, text):
-        if self.source_leaf:
-            self.source_leaf.set(text)
-
-    def _start_detect(self):
-        if self._detecting:
-            return
-        self._detecting = True
-        self._deflection = {}
-        for (stickid, axisid), slider in self.explorer.live_sliders.items():
-            v = slider.slider.value
-            self._deflection[(stickid, axisid)] = [v, v]
-        from kivy.clock import Clock
-        Clock.schedule_once(self._finish_detect, self.DETECT_WINDOW)
-
-    def _finish_detect(self, dt):
-        self._detecting = False
-        if not self._deflection:
-            return
-        deflections = {k: (hi - lo) for k, (lo, hi) in self._deflection.items()}
-        ranked = sorted(deflections.items(), key=lambda kv: kv[1], reverse=True)
-        winner_key, winner_def = ranked[0]
-        runner_up_def = ranked[1][1] if len(ranked) > 1 else 0.0
-        if winner_def < self.WINNER_FLOOR:
-            return
-        if len(ranked) > 1 and runner_up_def > 0 and (winner_def / runner_up_def) < self.WINNER_RATIO:
-            return
-        self._assign(winner_key)
-
-    def _assign(self, key):
-        stickid, axisid = key
-        if self.axis_leaf:
-            self.axis_leaf.set(axisid)
-            self.axis_label.text = f"axis: {axisid}"
-        if self.role_leaf.has_key(["joystick"]):
-            self.role_leaf.get_object(["joystick"]).set(stickid)
-        self.explorer._update_selected()
-        print(f"[{self.role}] detect assigned axis {stickid}/{axisid}")
+        An axis is bound when some role in the config maps to it (axis != -1).
+        The throttle axis is ignored too - it is a stay-where-you-put-it axis,
+        not a centered stick axis, so its resting value must not feed the
+        deadband calculation.
+        """
+        bound = set()
+        for role, role_leaf in self.roles.items():
+            if role == "throttle":
+                continue
+            if not role_leaf.has_key(["axis"]):
+                continue
+            axis = role_leaf.get_object(["axis"]).value
+            if axis is None or axis == -1:
+                continue
+            joy = 0
+            if role_leaf.has_key(["joystick"]):
+                joy = role_leaf.get_object(["joystick"]).value
+            bound.add((joy, axis))
+        m = 0.0
+        for key, slider in self.live_sliders.items():
+            if key in bound:
+                m = max(m, abs(slider.slider.value))
+        return m
 
 
 # Test Code
