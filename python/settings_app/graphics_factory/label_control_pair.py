@@ -574,8 +574,9 @@ class AxisExplorer(BoxLayout):
         self._have_joystick = True
 
         # "No joystick detected" placeholder, shown until a device appears.
+        # Hidden initially (sliders are the default state when present).
         self.no_joy_label = Label(text="No Joystick Detected", halign='center',
-                                  size_hint=(1, None), height=40)
+                                  size_hint=(1, None), height=40, opacity=0.0)
         self.add_widget(self.no_joy_label)
 
         # Live sliders area
