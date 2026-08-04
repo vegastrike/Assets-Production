@@ -509,31 +509,39 @@ class SliderLeafGui(AbstractLeafGui):
 
 class LiveAxisSlider(BoxLayout):
     """A live-updating slider for one physical joystick axis, with a bind
-    dropdown (none/x/y/z/throttle) to assign this axis to a flight role.
+    dropdown (none/x/y/z/throttle) and an Invert checkbox (per-role).
     """
     ROLES = ["none", "x", "y", "z", "throttle"]
 
     def __init__(self, stickid: int, axisid: int, label_text: str = None,
-                 on_bind=None, **kwargs):
+                 on_bind=None, on_invert=None, **kwargs):
         super().__init__(orientation='horizontal', size_hint_y=None, height=40, **kwargs)
         self.stickid = stickid
         self.axisid = axisid
         self.on_bind = on_bind
+        self.on_invert = on_invert
         self._updating = False
 
         label_text = label_text or f"A{axisid}"
-        self.label = Label(text=label_text, size_hint_x=0.18, halign='left',
+        self.label = Label(text=label_text, size_hint_x=0.16, halign='left',
                            font_size='12sp')
         self.add_widget(self.label)
 
-        self.slider = Slider(min=-1, max=1, value=0, size_hint_x=0.52)
+        self.slider = Slider(min=-1, max=1, value=0, size_hint_x=0.46)
         self.slider.disabled = True   # display-only; not user-draggable
         self.add_widget(self.slider)
 
-        self.bind_spinner = Spinner(values=self.ROLES, size_hint_x=0.3,
+        self.bind_spinner = Spinner(values=self.ROLES, size_hint_x=0.24,
                                     text="none", font_size='12sp')
         self.bind_spinner.bind(text=self._on_bind)
         self.add_widget(self.bind_spinner)
+
+        self.invert_cb = CheckBox(active=False, size_hint_x=0.14)
+        self.invert_cb.bind(active=self._on_invert)
+        self.add_widget(self.invert_cb)
+        self.invert_label = Label(text="Inv", size_hint_x=None, width=28,
+                                  font_size='10sp')
+        self.add_widget(self.invert_label)
 
         # Live update from Kivy's SDL2 joystick provider
         from kivy.core.window import Window
@@ -549,10 +557,21 @@ class LiveAxisSlider(BoxLayout):
             return
         self.on_bind(self.stickid, self.axisid, text)
 
+    def _on_invert(self, instance, active):
+        if self._updating or self.on_invert is None:
+            return
+        self.on_invert(self.stickid, self.axisid, bool(active))
+
     def set_bound_role(self, role):
         """Set the dropdown text without re-firing the bind handler."""
         self._updating = True
         self.bind_spinner.text = role if role else "none"
+        self._updating = False
+
+    def set_inverted(self, inverted):
+        """Set the checkbox state without re-firing the invert handler."""
+        self._updating = True
+        self.invert_cb.active = bool(inverted)
         self._updating = False
 
 
@@ -626,7 +645,8 @@ class AxisExplorer(BoxLayout):
                 if key not in self.live_sliders:
                     slider = LiveAxisSlider(stickid=i, axisid=a,
                                             label_text=f"Joy{i} A{a}",
-                                            on_bind=self._on_bind_axis)
+                                            on_bind=self._on_bind_axis,
+                                            on_invert=self._on_invert_axis)
                     self.live_sliders[key] = slider
                     self.sliders_area.add_widget(slider)
         self._set_joystick_visible(found_any)
@@ -638,7 +658,8 @@ class AxisExplorer(BoxLayout):
         if key not in self.live_sliders:
             slider = LiveAxisSlider(stickid=stickid, axisid=axisid,
                                     label_text=f"Joy{stickid} A{axisid}",
-                                    on_bind=self._on_bind_axis)
+                                    on_bind=self._on_bind_axis,
+                                    on_invert=self._on_invert_axis)
             self.live_sliders[key] = slider
             self.sliders_area.add_widget(slider)
         self._set_joystick_visible(True)
@@ -683,9 +704,29 @@ class AxisExplorer(BoxLayout):
         self._refresh_slider_binds()
 
     def _refresh_slider_binds(self):
-        """Sync each slider's dropdown to the role currently bound to it."""
+        """Sync each slider's dropdown and invert checkbox to the role bound
+        to it (invert is per-role: axes.<role>.inverse)."""
         for key, slider in self.live_sliders.items():
-            slider.set_bound_role(self._role_for(*key))
+            role = self._role_for(*key)
+            slider.set_bound_role(role)
+            inverted = False
+            if role is not None and role in self.roles:
+                role_leaf = self.roles[role]
+                if role_leaf.has_key(["inverse"]):
+                    inverted = bool(role_leaf.get_object(["inverse"]).value)
+            slider.set_inverted(inverted)
+
+    def _on_invert_axis(self, stickid, axisid, inverted):
+        """Set axes.<role>.inverse for the role bound to this axis."""
+        role = self._role_for(stickid, axisid)
+        if role is None or role not in self.roles:
+            print(f"No role bound to Joy{stickid} A{axisid}; invert ignored")
+            return
+        role_leaf = self.roles[role]
+        if role_leaf.has_key(["inverse"]):
+            role_leaf.get_object(["inverse"]).set(inverted)
+            print(f"[{role}] inverse -> {inverted}")
+        self._refresh_slider_binds()
 
     def max_deflection(self):
         """Largest |current value| across the live sliders of BOUND axes only,
