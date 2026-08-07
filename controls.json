@@ -83,7 +83,7 @@
     "textColor": "1, 1, 1, 1",
     "rect": "-.2, .56, .4, .07",
     "color": "0.0, 0.0, 0.0, 0.0",
-    "font": "0.06",
+    "font": "0.06, 1.5",
     "justification": "center",
     "id": "TotalPrice"
   },
@@ -94,7 +94,7 @@
     "textColor": "1, 1, 1, 1",
     "rect": "-.14, .49, .28, .07",
     "color": "0.0, 0.0, 0.0, 0.0",
-    "font": "0.06",
+    "font": "0.06, 1.5",
     "justification": "center",
     "id": "MaxQuantity"
   },
@@ -110,7 +110,7 @@
     "highlightColor": "0, .6, 0, .35",
     "highlightTextColor": "1, 1, 1, 1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": ".07",
+    "font": ".07, 1.0",
     "textMargins": "0.02, 0.01",
     "id": "BaseCargo"
   },
@@ -137,7 +137,7 @@
     "highlightColor": "0, .6, 0, .35",
     "highlightTextColor": "1, 1, 1, 1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": ".07",
+    "font": ".07, 1.0",
     "textMargins": "0.02, 0.01",
     "id": "PlayerCargo"
   },
