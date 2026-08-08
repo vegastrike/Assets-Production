@@ -2,11 +2,10 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.app import App
 from kivy.properties import StringProperty, ListProperty
-import screeninfo
 import json
 import os
 
-from os_utils import number_of_screens, resolution_for_screen
+from os_utils import Monitor, number_of_screens, resolution_for_screen, get_monitors
 import game_config as gc
 import app_config as ac
 from graphics_factory.label_control_pair import BoolLeafGui, SpinnerLeafGui, SpinnerMultiLeafGui
@@ -23,7 +22,7 @@ class GraphicsTab(BoxLayout):
         self.tab_name = "Graphics"
 
         self.num_screens = number_of_screens()
-        self.screens = screeninfo.get_monitors()
+        self.screens = get_monitors()
         self.screen_resolution = resolution_for_screen(0)
 
         # Make primary screen the first one
@@ -161,8 +160,7 @@ class GraphicsTab(BoxLayout):
 
     # Warning: This method is for testing only
     def add_dummy_screen(self):
-        dummy = screeninfo.Monitor(x=0,y=0,width=1920,height=1080,name='dummy')
-        dummy.is_primary = True
+        dummy = Monitor(name='dummy', is_primary=True, width=1920, height=1080)
         self.screens[0].is_primary = False
         self.screens.append(dummy)
         print(self.screens)

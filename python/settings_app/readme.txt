@@ -25,7 +25,7 @@ Below is a brief description of the files in this folder:
    python3.11 -m venv .venv
    source .venv/bin/activate
    pip3 install --upgrade pip wheel cython setuptools
-   pip install kivy[base] screeninfo
+   pip install kivy[base]
 
     
 
