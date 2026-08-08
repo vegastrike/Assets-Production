@@ -492,7 +492,7 @@
 
         "shield": {
             "energy_source": "energy",
-            "maintenance_factor": 0.05,
+            "maintenance_factor": 0.01,
             "regeneration_factor": 0.05
         }
 
