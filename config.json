@@ -188,5 +188,11 @@
     "physics": {
         "game_accel": 4.5,
         "game_speed": 1.0
+    },
+    "settings_app": {
+        "details": "High",
+        "shaders": "Average",
+        "audio": "All Sounds",
+        "physics": "Default (1.0)"
     }
 }

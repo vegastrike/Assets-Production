@@ -9,7 +9,6 @@ from kivy.uix.tabbedpanel import TabbedPanelItem
 import tabs.audio
 import tabs.graphics
 import tabs.performance
-import tabs.advanced
 import tabs.controls
 import tabs.bindings
 
@@ -71,12 +70,6 @@ class MainWindow(BoxLayout):
         performance_tab_item = TabbedPanelItem(text=performance_tab.tab_name)
         performance_tab_item.add_widget(performance_tab)
         self.notebook.add_widget(performance_tab_item)
-
-        # Add advanced tab
-        advanced_tab = tabs.advanced.AdvancedTab()
-        advanced_tab_item = TabbedPanelItem(text=advanced_tab.tab_name)
-        advanced_tab_item.add_widget(advanced_tab)
-        self.notebook.add_widget(advanced_tab_item)
 
         # Bottom buttons row
         bottom_buttons_row = BoxLayout(size_hint_y=None, height=50)
