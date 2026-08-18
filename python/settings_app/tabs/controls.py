@@ -32,31 +32,31 @@ class ControlsTab(BoxLayout):
         self.add_widget(Label(text="Mouse".upper(), font_size=18, size_hint=(0.8, None), height = 80,
                               halign='center'))
         
-        mouse_enabled_leaf = gc.game_config.get_object(["mouse","enabled"])
+        mouse_enabled_leaf = gc.game_config.get_object(["input","mouse","enabled"])
         BoolLeafGui(parent=self, leaf=mouse_enabled_leaf)
 
-        mouse_inverse_x_leaf = gc.game_config.get_object(["mouse","inverse_x"])
+        mouse_inverse_x_leaf = gc.game_config.get_object(["input","mouse","inverse_x"])
         BoolLeafGui(parent=self, leaf=mouse_inverse_x_leaf)
 
-        mouse_inverse_y_leaf = gc.game_config.get_object(["mouse","inverse_y"])
+        mouse_inverse_y_leaf = gc.game_config.get_object(["input","mouse","inverse_y"])
         BoolLeafGui(parent=self, leaf=mouse_inverse_y_leaf)
 
-        mouse_warp_leaf = gc.game_config.get_object(["joystick","warp_mouse"])
+        mouse_warp_leaf = gc.game_config.get_object(["input","joystick","warp_mouse"])
         BoolLeafGui(parent=self, leaf=mouse_warp_leaf)
 
-        mouse_sensitivity_leaf = gc.game_config.get_object(["joystick", "mouse_sensitivity"])
+        mouse_sensitivity_leaf = gc.game_config.get_object(["input","joystick", "mouse_sensitivity"])
         SliderLeafGui(parent=self, leaf=mouse_sensitivity_leaf, min=20, max=200, step=10)
     
         self.add_widget(Label(text="Joystick".upper(), font_size=18, size_hint=(0.8, None), height = 80,
                               halign='center'))
         
-        joystick_enabled_leaf = gc.game_config.get_object(["joystick","enabled"])
+        joystick_enabled_leaf = gc.game_config.get_object(["input","joystick","enabled"])
         BoolLeafGui(parent=self, leaf=joystick_enabled_leaf)
 
-        joystick_throttle_leaf = gc.game_config.get_object(["joystick","throttle"])
+        joystick_throttle_leaf = gc.game_config.get_object(["input","joystick","throttle"])
         BoolLeafGui(parent=self, leaf=joystick_throttle_leaf)
 
-        joystick_hat_leaf = gc.game_config.get_object(["joystick","hat_enabled"])
+        joystick_hat_leaf = gc.game_config.get_object(["input","joystick","hat_enabled"])
         BoolLeafGui(parent=self, leaf=joystick_hat_leaf)
 
 
