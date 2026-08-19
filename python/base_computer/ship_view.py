@@ -21,11 +21,27 @@ MOUNTS = 'Mounts'
 non_combat_speed_multiplier = 1
 megajoules_multiplier = 1
 
-with open('config.json', 'r') as file:
-    data = json.load(file)
-    non_combat_speed_multiplier = data['components']['drive']['non_combat_mode_multiplier']
-    megajoules_multiplier = data['constants']['megajoules_multiplier']
-    
+# components/constants live in engine.json under "base" (post config-split).
+# Fall back to config.json for setups that haven't been split yet.
+def _load_engine_tuning():
+    try:
+        with open('engine.json', 'r') as file:
+            base = json.load(file)['base']
+        return (base['components']['drive']['non_combat_mode_multiplier'],
+                base['constants']['megajoules_multiplier'])
+    except (IOError, KeyError, TypeError, ValueError):
+        pass
+    try:
+        with open('config.json', 'r') as file:
+            data = json.load(file)
+        return (data['components']['drive']['non_combat_mode_multiplier'],
+                data['constants']['megajoules_multiplier'])
+    except (IOError, KeyError, TypeError, ValueError):
+        pass
+    return (1, 1)
+
+non_combat_speed_multiplier, megajoules_multiplier = _load_engine_tuning()
+
 # Wasteful
 def get_unit(key):
     with open('units/units.json', 'r') as file:
