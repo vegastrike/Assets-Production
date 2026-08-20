@@ -93,16 +93,12 @@
                 "font_point": "10"
             },
             "1024x600": {
-                "base_max_width__betternot": "800",
-                "base_max_height__betternot": "600",
                 "resolution_x": "1024",
                 "resolution_y": "600",
                 "aspect": "1.7067",
                 "font_point": "10"
             },
             "1024x640": {
-                "base_max_width__betternot": "853",
-                "base_max_height__betternot": "640",
                 "resolution_x": "1024",
                 "resolution_y": "640",
                 "aspect": "1.6",
@@ -115,8 +111,6 @@
                 "font_point": "10"
             },
             "1280x800": {
-                "base_max_width__betternot": "1067",
-                "base_max_height__betternot": "800",
                 "resolution_x": "1280",
                 "resolution_y": "800",
                 "aspect": "1.6",
@@ -129,8 +123,6 @@
                 "font_point": "12"
             },
             "1280x1024": {
-                "base_max_width__betternot": "1280",
-                "base_max_height__betternot": "960",
                 "resolution_x": "1280",
                 "resolution_y": "1024",
                 "aspect": "1.25",
@@ -143,16 +135,12 @@
                 "font_point": "14"
             },
             "1400x1050": {
-                "base_max_width__betternot": "1400",
-                "base_max_height__betternot": "1050",
                 "resolution_x": "1400",
                 "resolution_y": "1050",
                 "aspect": "1.33",
                 "font_point": "14"
             },
             "1440x900": {
-                "base_max_width__betternot": "1200",
-                "base_max_height__betternot": "900",
                 "resolution_x": "1440",
                 "resolution_y": "900",
                 "aspect": "1.6",
@@ -171,48 +159,36 @@
                 "font_point": "16"
             },
             "1680x1050": {
-                "base_max_width__betternot": "1400",
-                "base_max_height__betternot": "1050",
                 "resolution_x": "1680",
                 "resolution_y": "1050",
                 "aspect": "1.6",
                 "font_point": "16"
             },
             "1920x1200": {
-                "base_max_width__betternot": "1600",
-                "base_max_height__betternot": "1200",
                 "resolution_x": "1920",
                 "resolution_y": "1200",
                 "aspect": "1.6",
                 "font_point": "16"
             },
             "1920x1080": {
-                "base_max_width__betternot": "1440",
-                "base_max_height__betternot": "1080",
                 "resolution_x": "1920",
                 "resolution_y": "1080",
                 "aspect": "1.77778",
                 "font_point": "16"
             },
             "2560x1600": {
-                "base_max_width__betternot": "2133",
-                "base_max_height__betternot": "1600",
                 "resolution_x": "2560",
                 "resolution_y": "1600",
                 "aspect": "1.6",
                 "font_point": "24"
             },
             "3800x2000": {
-                "base_max_width__betternot": "3166",
-                "base_max_height__betternot": "2000",
                 "resolution_x": "3800",
                 "resolution_y": "2000",
                 "aspect": "1.9",
                 "font_point": "28"
             },
             "3840x2160": {
-                "base_max_width__betternot": "3200",
-                "base_max_height__betternot": "2160",
                 "resolution_x": "3840",
                 "resolution_y": "2160",
                 "aspect": "1.7",
@@ -394,10 +370,10 @@
         },
         "FactionTextures": {
             "faction_tex_off": {
-                "faction_textures": "0"
+                "faction_dependent_textures": "0"
             },
             "faction_tex_on": {
-                "faction_textures": "1"
+                "faction_dependent_textures": "1"
             }
         },
         "Textures": {
