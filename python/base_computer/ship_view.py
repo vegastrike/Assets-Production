@@ -38,7 +38,8 @@ def _load_engine_tuning():
                 data['constants']['megajoules_multiplier'])
     except (IOError, KeyError, TypeError, ValueError):
         pass
-    return (1, 1)
+    # Fall back to the module-level default multipliers (1, 1).
+    return (non_combat_speed_multiplier, megajoules_multiplier)
 
 non_combat_speed_multiplier, megajoules_multiplier = _load_engine_tuning()
 
