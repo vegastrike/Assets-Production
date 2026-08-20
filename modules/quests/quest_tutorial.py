@@ -144,7 +144,7 @@ class quest_tutorial (quest.quest):
             vec = Vector.Add(vec,(1000,0,0))
             # launch the tutorial drone.
             #VS.launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
-            self.drone = VS.launch("Oswald","Robin.stock","klkk_citizen","unit","default",1,1,vec,'')
+            self.drone = VS.launch("Oswald","Robin.tutorial","klkk_citizen","unit","default",1,1,vec,'')
             # upgrade drone
             self.drone.upgrade("armor06",0,0,1,0)
             # when launching give the player some text and ask him to decide if he wants to participate
@@ -210,7 +210,6 @@ class quest_tutorial (quest.quest):
     # the drone doesn't quite orbit
     # it will approach the player until 1000 meters and then stop
     def orbitMe (self):
-        return 0
         #self.player.SetTarget(self.drone)
         # if the drone is more than 1000m away it will start instructions
         if (self.drone.getDistance(self.player)>=1100):
