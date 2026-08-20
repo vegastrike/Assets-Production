@@ -59,164 +59,162 @@
         },
         "Color": {
             "win_16": {
-                "colordepth": "16",
+                "color_depth": "16",
                 "zfar": "80000",
-                "fullscreen": "false"
+                "full_screen": "false"
             },
             "win_32": {
-                "colordepth": "32",
+                "color_depth": "32",
                 "zfar": "600000",
-                "fullscreen": "false"
+                "full_screen": "false"
             },
             "full_16": {
-                "colordepth": "16",
+                "color_depth": "16",
                 "zfar": "80000",
-                "fullscreen": "true"
+                "full_screen": "true"
             },
             "full_32": {
-                "colordepth": "32",
+                "color_depth": "32",
                 "zfar": "600000",
-                "fullscreen": "true"
+                "full_screen": "true"
             }
         },
         "Resolution": {
             "512x384": {
-                "x_resolution": "512",
-                "y_resolution": "384",
+                "resolution_x": "512",
+                "resolution_y": "384",
                 "aspect": "1.333",
                 "font_point": "10"
             },
             "800x600": {
-                "x_resolution": "800",
-                "y_resolution": "600",
+                "resolution_x": "800",
+                "resolution_y": "600",
                 "aspect": "1.33",
                 "font_point": "10"
             },
             "1024x600": {
                 "base_max_width__betternot": "800",
                 "base_max_height__betternot": "600",
-                "x_resolution": "1024",
-                "y_resolution": "600",
+                "resolution_x": "1024",
+                "resolution_y": "600",
                 "aspect": "1.7067",
                 "font_point": "10"
             },
             "1024x640": {
                 "base_max_width__betternot": "853",
                 "base_max_height__betternot": "640",
-                "x_resolution": "1024",
-                "y_resolution": "640",
+                "resolution_x": "1024",
+                "resolution_y": "640",
                 "aspect": "1.6",
                 "font_point": "10"
             },
             "1024x768": {
-                "x_resolution": "1024",
-                "y_resolution": "768",
+                "resolution_x": "1024",
+                "resolution_y": "768",
                 "aspect": "1.33",
                 "font_point": "10"
             },
             "1280x800": {
                 "base_max_width__betternot": "1067",
                 "base_max_height__betternot": "800",
-                "x_resolution": "1280",
-                "y_resolution": "800",
+                "resolution_x": "1280",
+                "resolution_y": "800",
                 "aspect": "1.6",
                 "font_point": "12"
             },
             "1280x960": {
-                "x_resolution": "1280",
-                "y_resolution": "960",
+                "resolution_x": "1280",
+                "resolution_y": "960",
                 "aspect": "1.33",
                 "font_point": "12"
             },
             "1280x1024": {
                 "base_max_width__betternot": "1280",
                 "base_max_height__betternot": "960",
-                "x_resolution": "1280",
-                "y_resolution": "1024",
+                "resolution_x": "1280",
+                "resolution_y": "1024",
                 "aspect": "1.25",
                 "font_point": "12"
             },
             "1366x768": {
-                "x_resolution": "1366",
-                "y_resolution": "768",
+                "resolution_x": "1366",
+                "resolution_y": "768",
                 "aspect": "1.77865",
                 "font_point": "14"
             },
             "1400x1050": {
                 "base_max_width__betternot": "1400",
                 "base_max_height__betternot": "1050",
-                "x_resolution": "1400",
-                "y_resolution": "1050",
+                "resolution_x": "1400",
+                "resolution_y": "1050",
                 "aspect": "1.33",
                 "font_point": "14"
             },
             "1440x900": {
                 "base_max_width__betternot": "1200",
                 "base_max_height__betternot": "900",
-                "x_resolution": "1440",
-                "y_resolution": "900",
+                "resolution_x": "1440",
+                "resolution_y": "900",
                 "aspect": "1.6",
                 "font_point": "14"
             },
             "1600x900": {
-                "base_max_width": "1200",
-                "base_max_height": "900",
-                "x_resolution": "1600",
-                "y_resolution": "900",
+                "resolution_x": "1600",
+                "resolution_y": "900",
                 "aspect": "1.6",
                 "font_point": "16"
             },
             "1600x1200": {
-                "x_resolution": "1600",
-                "y_resolution": "1200",
+                "resolution_x": "1600",
+                "resolution_y": "1200",
                 "aspect": "1.33",
                 "font_point": "16"
             },
             "1680x1050": {
                 "base_max_width__betternot": "1400",
                 "base_max_height__betternot": "1050",
-                "x_resolution": "1680",
-                "y_resolution": "1050",
+                "resolution_x": "1680",
+                "resolution_y": "1050",
                 "aspect": "1.6",
                 "font_point": "16"
             },
             "1920x1200": {
                 "base_max_width__betternot": "1600",
                 "base_max_height__betternot": "1200",
-                "x_resolution": "1920",
-                "y_resolution": "1200",
+                "resolution_x": "1920",
+                "resolution_y": "1200",
                 "aspect": "1.6",
                 "font_point": "16"
             },
             "1920x1080": {
                 "base_max_width__betternot": "1440",
                 "base_max_height__betternot": "1080",
-                "x_resolution": "1920",
-                "y_resolution": "1080",
+                "resolution_x": "1920",
+                "resolution_y": "1080",
                 "aspect": "1.77778",
                 "font_point": "16"
             },
             "2560x1600": {
                 "base_max_width__betternot": "2133",
                 "base_max_height__betternot": "1600",
-                "x_resolution": "2560",
-                "y_resolution": "1600",
+                "resolution_x": "2560",
+                "resolution_y": "1600",
                 "aspect": "1.6",
                 "font_point": "24"
             },
             "3800x2000": {
                 "base_max_width__betternot": "3166",
                 "base_max_height__betternot": "2000",
-                "x_resolution": "3800",
-                "y_resolution": "2000",
+                "resolution_x": "3800",
+                "resolution_y": "2000",
                 "aspect": "1.9",
                 "font_point": "28"
             },
             "3840x2160": {
                 "base_max_width__betternot": "3200",
                 "base_max_height__betternot": "2160",
-                "x_resolution": "3840",
-                "y_resolution": "2160",
+                "resolution_x": "3840",
+                "resolution_y": "2160",
                 "aspect": "1.7",
                 "font_point": "32"
             }
@@ -243,50 +241,46 @@
                 "draw_star_body": "false",
                 "draw_star_glow": "true",
                 "fog": "false",
-                "ModelDetail": ".2",
-                "mipmapdetail": "2",
+                "model_detail": ".2",
+                "mipmap_detail": "2",
                 "reflection": "false",
-                "ForceLighting": "0",
+                "force_lighting": "0",
                 "high_quality_sprites": "false",
                 "smooth_lines": "false",
                 "blend_panels": "true",
                 "per_pixel_lighting": "false",
                 "znear": "16",
                 "zfar": "32768",
-                "starblend": "false",
-                "point_sparkles": "true",
+                "star_blend": "false",
                 "background": "false",
                 "cockpit": "false",
-                "planet_detail": "24",
-                "jump_detail": "8"
+                "planet_detail_level": "24"
             },
             "GeomLow": {
                 "draw_star_body": "true",
                 "draw_star_glow": "false",
                 "fog": "false",
-                "ModelDetail": ".2",
-                "mipmapdetail": "2",
+                "model_detail": ".2",
+                "mipmap_detail": "2",
                 "reflection": "false",
-                "ForceLighting": "0",
+                "force_lighting": "0",
                 "high_quality_sprites": "false",
                 "smooth_lines": "false",
                 "blend_panels": "true",
                 "per_pixel_lighting": "false",
                 "znear": "16",
                 "zfar": "32768",
-                "starblend": "false",
-                "point_sparkles": "true",
+                "star_blend": "false",
                 "background": "false",
                 "cockpit": "false",
-                "planet_detail": "48",
-                "jump_detail": "8"
+                "planet_detail_level": "48"
             },
             "GeomMedium": {
                 "fog": "false",
-                "ModelDetail": "0.5",
-                "mipmapdetail": "2",
+                "model_detail": "0.5",
+                "mipmap_detail": "2",
                 "reflection": "true",
-                "ForceLighting": "0",
+                "force_lighting": "0",
                 "draw_star_body": "true",
                 "draw_star_glow": "true",
                 "high_quality_sprites": "true",
@@ -294,19 +288,17 @@
                 "blend_panels": "true",
                 "znear": "16",
                 "zfar": "32768",
-                "starblend": "true",
-                "point_sparkles": "false",
+                "star_blend": "true",
                 "background": "true",
                 "cockpit": "true",
-                "planet_detail": "48",
-                "jump_detail": "8"
+                "planet_detail_level": "48"
             },
             "GeomHigh": {
                 "fog": "true",
-                "ModelDetail": "1",
-                "mipmapdetail": "2",
+                "model_detail": "1",
+                "mipmap_detail": "2",
                 "reflection": "true",
-                "ForceLighting": "0",
+                "force_lighting": "0",
                 "draw_star_body": "true",
                 "draw_star_glow": "true",
                 "high_quality_sprites": "false",
@@ -314,17 +306,15 @@
                 "smooth_lines": "false",
                 "znear": "16",
                 "zfar": "32768",
-                "starblend": "true",
-                "point_sparkles": "false",
+                "star_blend": "true",
                 "background": "true",
                 "cockpit": "true",
-                "planet_detail": "48",
-                "jump_detail": "8"
+                "planet_detail_level": "48"
             },
             "GeomVeryHigh": {
                 "fog": "true",
-                "ModelDetail": "3",
-                "mipmapdetail": "3",
+                "model_detail": "3",
+                "mipmap_detail": "3",
                 "reflection": "true",
                 "draw_star_body": "false",
                 "draw_star_glow": "true",
@@ -333,17 +323,15 @@
                 "smooth_lines": "true",
                 "znear": "8",
                 "zfar": "65536",
-                "starblend": "true",
-                "point_sparkles": "false",
+                "star_blend": "true",
                 "background": "true",
                 "cockpit": "true",
-                "planet_detail": "64",
-                "jump_detail": "16"
+                "planet_detail_level": "64"
             },
             "GeomExtreme": {
                 "fog": "true",
-                "ModelDetail": "10",
-                "mipmapdetail": "3",
+                "model_detail": "10",
+                "mipmap_detail": "3",
                 "reflection": "true",
                 "draw_star_body": "true",
                 "draw_star_glow": "true",
@@ -354,64 +342,62 @@
                 "specmap_with_reflection": "true",
                 "znear": "8",
                 "zfar": "65536",
-                "starblend": "true",
-                "point_sparkles": "false",
+                "star_blend": "true",
                 "background": "true",
                 "cockpit": "true",
-                "planet_detail": "96",
-                "jump_detail": "16"
+                "planet_detail_level": "96"
             }
         },
         "Computer": {
             "4000MHz": {
-                "ForceLighting": "1",
+                "force_lighting": "1",
                 "simulation_atom": "0.02",
-                "numoldsystems": "5",
-                "NumRunningSystems": "5",
-                "InactiveSystemTime": ".1"
+                "num_old_systems": "5",
+                "num_running_systems": "5",
+                "inactive_system_time": ".1"
             },
             "2000MHz": {
-                "ForceLighting": "1",
+                "force_lighting": "1",
                 "every_other_mount": "false",
-                "MaxSingleSounds": "12",
-                "MaxTotalSounds": "32",
+                "max_single_sounds": "12",
+                "max_total_sounds": "32",
                 "simulation_atom": "0.04",
-                "numoldsystems": "4",
-                "NumRunningSystems": "3",
-                "InactiveSystemTime": ".3"
+                "num_old_systems": "4",
+                "num_running_systems": "3",
+                "inactive_system_time": ".3"
             },
             "3000MHz": {
-                "ForceLighting": "1",
+                "force_lighting": "1",
                 "every_other_mount": "false",
-                "MaxSingleSounds": "12",
-                "MaxTotalSounds": "32",
+                "max_single_sounds": "12",
+                "max_total_sounds": "32",
                 "simulation_atom": "0.03",
-                "numoldsystems": "4",
-                "NumRunningSystems": "4",
-                "InactiveSystemTime": ".2"
+                "num_old_systems": "4",
+                "num_running_systems": "4",
+                "inactive_system_time": ".2"
             },
             "1000MHz": {
                 "every_other_mount": "true",
-                "MaxSingleSounds": "5",
-                "MaxTotalSounds": "16",
+                "max_single_sounds": "5",
+                "max_total_sounds": "16",
                 "simulation_atom": "0.05",
-                "numoldsystems": "2",
-                "NumRunningSystems": "2",
-                "InactiveSystemTime": ".5"
+                "num_old_systems": "2",
+                "num_running_systems": "2",
+                "inactive_system_time": ".5"
             },
             "4000MHzPlus": {
                 "simulation_atom": "0.01",
-                "numoldsystems": "8",
-                "NumRunningSystems": "8",
-                "InactiveSystemTime": ".05"
+                "num_old_systems": "8",
+                "num_running_systems": "8",
+                "inactive_system_time": ".05"
             }
         },
         "FactionTextures": {
             "faction_tex_off": {
-                "faction_dependant_textures": "0"
+                "faction_textures": "0"
             },
             "faction_tex_on": {
-                "faction_dependant_textures": "1"
+                "faction_textures": "1"
             }
         },
         "Textures": {
@@ -449,71 +435,58 @@
         "Sound": {
             "audio_3d_windows": {
                 "ai_sound": "false",
-                "Positional": "true",
-                "Sound": "true",
-                "Volume": "55",
+                "positional": "true",
+                "sound": "true",
+                "volume": "55",
                 "sounds_extension_1": "*_female.wav",
                 "sounds_extension_2": "*.wav"
             },
             "audio_3d_linux": {
                 "ai_sound": "false",
-                "Positional": "true",
-                "Sound": "true",
-                "Volume": "1",
+                "positional": "true",
+                "sound": "true",
+                "volume": "1",
                 "sounds_extension_1": "*_female.wav",
                 "sounds_extension_2": "*.wav"
             },
             "audio_3d_linux_male": {
                 "ai_sound": "true",
-                "Positional": "true",
-                "Sound": "true",
-                "Volume": "1",
+                "positional": "true",
+                "sound": "true",
+                "volume": "1",
                 "sounds_extension_2": "*_female.wav",
                 "sounds_extension_1": "*.wav"
             },
             "audio_3d_win_male": {
                 "ai_sound": "true",
-                "Positional": "true",
-                "Sound": "true",
-                "Volume": "55",
+                "positional": "true",
+                "sound": "true",
+                "volume": "55",
                 "sounds_extension_2": "*_female.wav",
                 "sounds_extension_1": "*.wav"
             },
             "audio_off": {
-                "Positional": "false",
-                "Sound": "false",
+                "positional": "false",
+                "sound": "false",
                 "sounds_extension_1": "*_female.wav",
                 "sounds_extension_2": "*.wav"
             }
         },
         "MusicAndVolume": {
             "windows_ext_music_on": {
-                "Music": "true",
-                "use_external_player": "true",
-                "external_player": "C:\\Program Files\\Winamp\\Winamp.exe",
-                "external_play_option": "/PLAY",
-                "external_enqueue_option": "/ADD",
+                "music": "true",
                 "music_volume": ".5"
             },
             "windows_ext_music_low": {
-                "Music": "true",
-                "use_external_player": "true",
-                "external_player": "C:\\Program Files\\Winamp\\Winamp.exe",
-                "external_play_option": "/PLAY",
-                "external_enqueue_option": "/ADD",
+                "music": "true",
                 "music_volume": ".25"
             },
             "windows_ext_music_high": {
-                "Music": "true",
-                "use_external_player": "true",
-                "external_player": "C:\\Program Files\\Winamp\\Winamp.exe",
-                "external_play_option": "/PLAY",
-                "external_enqueue_option": "/ADD",
+                "music": "true",
                 "music_volume": ".75"
             },
             "music_off": {
-                "use_external_player": "false",
-                "Music": "false"
+                "music": "false"
             }
         },
         "Mouse": {
