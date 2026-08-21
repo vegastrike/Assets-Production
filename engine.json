@@ -8,11 +8,6 @@
                 "loading_sprite": "load_screen_censored.ani"
             }
         },
-        "AcceleratedVisual": {
-            "gl_accelerated_visual_off": {
-                "gl_accelerated_visual": "false"
-            }
-        },
         "Shaders": {
             "extremeshader": {
                 "mac_shader_name": "mac",
@@ -55,144 +50,6 @@
                 "default_full_technique": "default",
                 "default_simple_technique": "default_simple",
                 "technique_set": "0_fixed_gl"
-            }
-        },
-        "Color": {
-            "win_16": {
-                "color_depth": "16",
-                "zfar": "80000",
-                "full_screen": "false"
-            },
-            "win_32": {
-                "color_depth": "32",
-                "zfar": "600000",
-                "full_screen": "false"
-            },
-            "full_16": {
-                "color_depth": "16",
-                "zfar": "80000",
-                "full_screen": "true"
-            },
-            "full_32": {
-                "color_depth": "32",
-                "zfar": "600000",
-                "full_screen": "true"
-            }
-        },
-        "Resolution": {
-            "512x384": {
-                "resolution_x": "512",
-                "resolution_y": "384",
-                "aspect": "1.333",
-                "font_point": "10"
-            },
-            "800x600": {
-                "resolution_x": "800",
-                "resolution_y": "600",
-                "aspect": "1.33",
-                "font_point": "10"
-            },
-            "1024x600": {
-                "resolution_x": "1024",
-                "resolution_y": "600",
-                "aspect": "1.7067",
-                "font_point": "10"
-            },
-            "1024x640": {
-                "resolution_x": "1024",
-                "resolution_y": "640",
-                "aspect": "1.6",
-                "font_point": "10"
-            },
-            "1024x768": {
-                "resolution_x": "1024",
-                "resolution_y": "768",
-                "aspect": "1.33",
-                "font_point": "10"
-            },
-            "1280x800": {
-                "resolution_x": "1280",
-                "resolution_y": "800",
-                "aspect": "1.6",
-                "font_point": "12"
-            },
-            "1280x960": {
-                "resolution_x": "1280",
-                "resolution_y": "960",
-                "aspect": "1.33",
-                "font_point": "12"
-            },
-            "1280x1024": {
-                "resolution_x": "1280",
-                "resolution_y": "1024",
-                "aspect": "1.25",
-                "font_point": "12"
-            },
-            "1366x768": {
-                "resolution_x": "1366",
-                "resolution_y": "768",
-                "aspect": "1.77865",
-                "font_point": "14"
-            },
-            "1400x1050": {
-                "resolution_x": "1400",
-                "resolution_y": "1050",
-                "aspect": "1.33",
-                "font_point": "14"
-            },
-            "1440x900": {
-                "resolution_x": "1440",
-                "resolution_y": "900",
-                "aspect": "1.6",
-                "font_point": "14"
-            },
-            "1600x900": {
-                "resolution_x": "1600",
-                "resolution_y": "900",
-                "aspect": "1.6",
-                "font_point": "16"
-            },
-            "1600x1200": {
-                "resolution_x": "1600",
-                "resolution_y": "1200",
-                "aspect": "1.33",
-                "font_point": "16"
-            },
-            "1680x1050": {
-                "resolution_x": "1680",
-                "resolution_y": "1050",
-                "aspect": "1.6",
-                "font_point": "16"
-            },
-            "1920x1200": {
-                "resolution_x": "1920",
-                "resolution_y": "1200",
-                "aspect": "1.6",
-                "font_point": "16"
-            },
-            "1920x1080": {
-                "resolution_x": "1920",
-                "resolution_y": "1080",
-                "aspect": "1.77778",
-                "font_point": "16"
-            },
-            "2560x1600": {
-                "resolution_x": "2560",
-                "resolution_y": "1600",
-                "aspect": "1.6",
-                "font_point": "24"
-            },
-            "3800x2000": {
-                "resolution_x": "3800",
-                "resolution_y": "2000",
-                "aspect": "1.9",
-                "font_point": "28"
-            },
-            "3840x2160": {
-                "resolution_x": "3840",
-                "resolution_y": "2160",
-                "aspect": "1.7",
-                "font_point": "32"
             }
         },
         "Text": {
@@ -489,26 +346,6 @@
             "inv_warp_mouse": {
                 "warp_mouse": "true",
                 "mouse_sensitivity": "120"
-            }
-        },
-        "Joystick": {
-            "joy_axis": {
-                "force_use_of_joystick": "false"
-            },
-            "joy_throttle": {
-                "force_use_of_joystick": "false"
-            },
-            "joy_normal": {
-                "force_use_of_joystick": "false"
-            },
-            "joy_throttle_and_axis": {
-                "force_use_of_joystick": "false"
-            },
-            "joy_t_a_rev": {
-                "force_use_of_joystick": "false"
-            },
-            "no_joy": {
-                "force_use_of_joystick": "false"
             }
         },
         "Physics": {
