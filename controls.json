@@ -486,8 +486,9 @@
     "outlineColor": "0.5, 0.5, 0.5, 1"
   },
   {
-    "type": "staticDisplay",
+    "type": "textInputDisplay",
     "name": "inputText",
+    "invalidChars": "\u001b\n \t\r*?\\/|:<>\"^",
     "parent": "LoadSaveGroup",
     "scroller": "inputTextScroller",
     "rect": "-.6, -.95, 1.21, .2",
