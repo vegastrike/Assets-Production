@@ -2,6 +2,8 @@ import locale
 import math
 import json
 
+import config
+
 
 newline = "#n#"
 red = "#c1:.3:.3#"
@@ -21,10 +23,11 @@ MOUNTS = 'Mounts'
 non_combat_speed_multiplier = 1
 megajoules_multiplier = 1
 
-with open('config.json', 'r') as file:
-    data = json.load(file)
-    non_combat_speed_multiplier = data['components']['drive']['non_combat_mode_multiplier']
-    megajoules_multiplier = data['constants']['megajoules_multiplier']
+# Read the effective (merged) config that the engine uses, instead of a raw file.
+_data = config.load_merged_config()
+non_combat_speed_multiplier = _data['components']['drive']['non_combat_mode_multiplier']
+megajoules_multiplier = _data['constants']['megajoules_multiplier']
+vsdm = _data['constants']['kj_per_unit_damage'] / _data['constants']['kilo']
     
 # Wasteful
 def get_unit(key):
@@ -471,7 +474,7 @@ def get_weapons(ship_stats):
             weapon = get_weapon_from_json(mount[0])
             
             if weapon != None:
-                text += get_weapon_details(weapon, 5400, mount[2])
+                text += get_weapon_details(weapon, vsdm, mount[2])
                 continue
             
             # Can't find weapon. It's a missile
@@ -483,7 +486,7 @@ def get_weapons(ship_stats):
             weapon = get_weapon_from_json(ammo_dummy_mounts[0][0])
             
             if weapon != None:
-                text += get_weapon_details(weapon, 5400, mount[2])
+                text += get_weapon_details(weapon, vsdm, mount[2])
             
             
         
@@ -525,7 +528,7 @@ def get_turret_gun(turret_stats, level = 0):
         text += f"{light_grey}{mount[0]} {mount[1]}{end_color}{newline}"
         weapon = get_weapon_from_json(mount[0])
         if weapon != None:
-            text += get_weapon_details(weapon, 5400)
+            text += get_weapon_details(weapon, vsdm)
     return text
 
 
