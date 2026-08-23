@@ -38,7 +38,7 @@ class quest_blockade (quest.quest):
         self.groups = 2 #vsrandom.randrange(4,8)
         self.capital = []
         self.fighter = []
-        self.msgColor = ("#FFFF99","#FF99FF")
+        self.msgColor = ("#c1:1:.6#","#c1:.6:1#")
 
     # things that could be added
     # (a) more comm chatter

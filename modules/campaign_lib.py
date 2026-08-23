@@ -247,9 +247,9 @@ def textline(strs):
                 debug.debug("playing sound "+str(sound))
                 VS.playSound (sound, (0.,0.,0.), (0.,0.,0.))
             if ret1:
-                return getcolor(str(strs[0]))+str(strs[0])+": #000000"+str(strs[1])
+                return getcolor(str(strs[0]))+str(strs[0])+": #-c"+str(strs[1])
         return strs[0]
-    return "#00ff00"+str(strs)
+    return "#c0:1:0#"+str(strs)
 
 #depends on Base
 def displayText(room,textlist,enqueue=False):

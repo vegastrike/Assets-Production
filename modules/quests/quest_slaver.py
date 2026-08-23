@@ -29,7 +29,7 @@ class quest_slaver (quest.quest):
     def __init__ (self):
         self.system = VS.getSystemName()
         playa = VS.getPlayer()
-        self.msgColor = ("#9999FF","#FF9999")
+        self.msgColor = ("#c.6:.6:1#","#c1:.6:.6#")
         if (playa):
             confed = faction_ships.factions[faction_ships.confed]
             pirates = faction_ships.factions[faction_ships.pirates]

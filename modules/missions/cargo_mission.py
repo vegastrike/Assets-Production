@@ -98,11 +98,11 @@ class cargo_mission (Director.Mission):
             else: # While loop's condition failed... i.e. j got too big.
                 if not category:
                     category='generic'
-                VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000Unable to find suitable %s cargo that is not already loaded. Mission canceled."%category)
+                VS.IOmessage (2,"cargo mission",self.mplay,"#c1:0:0#Unable to find suitable %s cargo that is not already loaded. Mission canceled."%category)
                 VS.terminateMission (0)
                 return
         else:
-            VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000Unable to establish communications. Mission failed.")
+            VS.IOmessage (2,"cargo mission",self.mplay,"#c1:0:0#Unable to establish communications. Mission failed.")
             VS.terminateMission (0)
             return
 #         creds_deducted = (carg.GetPrice()*float(self.quantity)*vsrandom.random()+1)
@@ -110,12 +110,12 @@ class cargo_mission (Director.Mission):
         if (tempquantity>0):
             self.cred*=float(self.quantity)/float(tempquantity)
         else:
-            VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000You do not have space to add our %s cargo to your ship. Mission failed."%self.cargoname)
+            VS.IOmessage (2,"cargo mission",self.mplay,"#c1:0:0#You do not have space to add our %s cargo to your ship. Mission failed."%self.cargoname)
             VS.terminateMission(0)
             return
 
         if (self.quantity==0):
-            VS.IOmessage (2,"cargo mission",self.mplay,"#ff0000You do not have space to add our cargo to the mission. Mission failed.")
+            VS.IOmessage (2,"cargo mission",self.mplay,"#c1:0:0#You do not have space to add our cargo to the mission. Mission failed.")
             VS.terminateMission(0)
             return
 
@@ -125,7 +125,7 @@ class cargo_mission (Director.Mission):
         VS.IOmessage (3,"cargo mission",self.mplay,"You will receive %d of the %s cargo" % (self.quantity,self.cargoname))
 #         VS.IOmessage (4,"cargo mission",self.mplay,"We will deduct %.2f credits from your account for the cargo needed." % (creds_deducted))
         VS.IOmessage (4,"cargo mission",self.mplay,"You will earn %.2f credits when you deliver our cargo." % (creds))
-        VS.IOmessage (4,"cargo mission",self.mplay,"#00ff00Good luck!")
+        VS.IOmessage (4,"cargo mission",self.mplay,"#c0:1:0#Good luck!")
 #         self.you.addCredits (-creds_deducted)
 
     def takeCargoAndTerminate (self,you, remove):
@@ -145,23 +145,23 @@ class cargo_mission (Director.Mission):
                 newcarg.SetQuantity(has)
                 self.you.addCargo(newcarg) #It seems that removing and then adding it again is the only way...
         if ((removenum>=self.quantity) or (self.quantity==0) or removenum>=1):
-            VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00Excellent work pilot.")
-            VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00You have been rewarded for your effort as agreed.")
-            VS.IOmessage (0,"cargo mission",self.mplay,"#00ff00Your excellent work will be remembered.")
+            VS.IOmessage (0,"cargo mission",self.mplay,"#c0:1:0#Excellent work pilot.")
+            VS.IOmessage (0,"cargo mission",self.mplay,"#c0:1:0#You have been rewarded for your effort as agreed.")
+            VS.IOmessage (0,"cargo mission",self.mplay,"#c0:1:0#Your excellent work will be remembered.")
             you.addCredits(self.cred)
             VS.AdjustRelation(you.getFactionName(),self.faction,.01*self.difficulty,1)
             self.SetVar(1)
             VS.terminateMission(1)
             return
         else:
-            VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000You did not follow through on your end of the deal.")
+            VS.IOmessage (0,"cargo mission",self.mplay,"#c1:0:0#You did not follow through on your end of the deal.")
             if (self.difficulty<1):
-                VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000Your pay will be reduced")
-                VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000And we will consider if we will accept you on future missions.")
+                VS.IOmessage (0,"cargo mission",self.mplay,"#c1:0:0#Your pay will be reduced")
+                VS.IOmessage (0,"cargo mission",self.mplay,"#c1:0:0#And we will consider if we will accept you on future missions.")
                 addcred=(float(removenum)/(float(self.quantity*(1+self.difficulty))))*self.cred
                 you.addCredits(addcred)
             else:
-                VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000You will not be paid!")
+                VS.IOmessage (0,"cargo mission",self.mplay,"#c1:0:0#You will not be paid!")
                 universe.punish(self.you,self.faction,self.difficulty)
             self.SetVar(-1)
             VS.terminateMission(0)
@@ -176,7 +176,7 @@ class cargo_mission (Director.Mission):
 ##            takeCargoAndTerminate(you,0)
 ##          return
         if (self.you.isNull() or (self.arrived and self.base.isNull())):
-            VS.IOmessage (0,"cargo mission",self.mplay,"#ff0000You were unable to deliver cargo. Mission failed.")
+            VS.IOmessage (0,"cargo mission",self.mplay,"#c1:0:0#You were unable to deliver cargo. Mission failed.")
             self.SetVar(-1)
             VS.terminateMission(0)
             return

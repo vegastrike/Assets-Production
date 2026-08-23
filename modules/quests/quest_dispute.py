@@ -33,8 +33,8 @@ class quest_dispute (quest.quest):
         self.timer = VS.GetGameTime()
         self.talktime = VS.GetGameTime()
         self.anitime = VS.GetGameTime()
-        self.merColor = "#99FFFF"
-        self.socColor = "#FF9999"
+        self.merColor = "#c.6:1:1#"
+        self.socColor = "#c1:.6:.6#"
         # This will get an agricultural station from the system, and assign it to 'station'
         # this station is the only one that has only one docking port, thus fits perfectly
         # into this quest theme

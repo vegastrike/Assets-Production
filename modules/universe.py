@@ -114,8 +114,8 @@ def getMessagePlayer(un):
 def punish (you,faction,difficulty):
     VS.AdjustRelation(you.getFactionName(),faction,difficulty*-.01,1)
     if (difficulty>=2):
-        VS.IOmessage (0,"mission",getMessagePlayer(you),"#ff0000Your idiocy will be punished.")
-        VS.IOmessage (0,"mission",getMessagePlayer(you),"#ff0000You had better run for what little life you have left.")
+        VS.IOmessage (0,"mission",getMessagePlayer(you),"#c1:0:0#Your idiocy will be punished.")
+        VS.IOmessage (0,"mission",getMessagePlayer(you),"#c1:0:0#You had better run for what little life you have left.")
         for i in range(difficulty):
             un=faction_ships.getRandomFighter(faction)
             newunit=launch.launch_wave_around_unit("shadow", faction, un, "default", 1, 200.0,400.0,you)
@@ -163,13 +163,13 @@ def GetNumSignificantsForSystem (cursys):
 
 def greet(greetingText,enemy=None,you=None):
     for i in range(len(greetingText)):
-        color="#ff0000"
+        color="#c1:0:0#"
         text=greetingText[i]
         if type(greetingText[i])==tuple:
             if not len(greetingText[i]):
                 continue
             if len(greetingText[i])>1 and greetingText[i][1]:
-                color="#0000ff"
+                color="#c0:0:1#"
             if len(greetingText[i])>2 and greetingText[i][2] and you:
                 VS.playSound(greetingText[i][2],(0.,0.,0.),(0.,0.,0.))
                 if enemy:
@@ -178,14 +178,14 @@ def greet(greetingText,enemy=None,you=None):
                 #    you.communicateTo(VS.Unit(),-1)
             text=greetingText[i][0]
         if (enemy):
-            fromname=enemy.getFlightgroupName()+", "+enemy.getName()+"#000000"
+            fromname=enemy.getFlightgroupName()+", "+enemy.getName()+"#-c"
         else:
             fromname="[Unidentified]"
         if (you):
             toname = getMessagePlayer(you)
         else:
             toname="all"
-        VS.IOmessage (8+i*4,color+fromname,toname,"#ff0000"+text+"#000000")
+        VS.IOmessage (8+i*4,color+fromname,toname,"#c1:0:0#"+text+"#-c")
 
 def getDockedBase():
     iter = VS.getUnitList()

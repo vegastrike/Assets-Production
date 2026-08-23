@@ -126,7 +126,7 @@ class defend (Director.Mission):
         self.quantity=0
     def Execute (self):
         if (self.you.isNull() or (self.arrived and self.defendee.isNull())):
-            VS.IOmessage (0,"defend",self.mplay,"#ff0000You were unable to arrive in time to help. Mission failed.")
+            VS.IOmessage (0,"defend",self.mplay,"#c1:0:0#You were unable to arrive in time to help. Mission failed.")
             self.SetVarValue(-1)
             VS.terminateMission(0)
             return
