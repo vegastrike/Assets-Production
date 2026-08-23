@@ -347,9 +347,9 @@ class GUIRoot:
         self.setScreenDimensions(screenX,screenY)
         self.aspect = aspect or (screenX * 1.0 / screenY)
         if (marginX == None):
-            marginX = 0.00
+            marginX = 1 - float(VS.vsConfig("graphics","base_max_width","0")) / float(VS.vsConfig("graphics","x_resolution","0"))
         if (marginY == None):
-            marginY = 0.00
+            marginY = 1 - float(VS.vsConfig("graphics","base_max_height","0")) / float(VS.vsConfig("graphics","y_resolution","0"))
         self.setScreenMargins(marginX,marginY)
         self.needRedraw = {}
         self.modalElement = None
@@ -983,7 +983,7 @@ class GUIStaticText(GUIElement):
             (x,y,w,h) = self.location.getTextRect()
             # the dimensions for Base.TextBox are all screwed up.  the (width height multiplier) value is actually (x2, y2, unused)
             # and the text is always the same size, regardless of how the height or multiplier values get set
-            Base.TextBox(self.room.getIndex(), str(self.index), str(self.text), x, y, (x + w, y - h, self.fontsize), self.bgcolor.getRGB(), self.bgcolor.getAlpha(), self.color.getRGB())
+            Base.TextBox(self.room.getIndex(), str(self.index), str(self.text), x, y, (w, h, self.fontsize), self.bgcolor.getRGB(), self.bgcolor.getAlpha(), self.color.getRGB())
             if _doWhiteHack != 0:
                 """ ugly hack, needed to counter a stupid bug """
                 Base.TextBox(self.room.getIndex(),str(self.index)+"_white_hack","", -100.0, -100.0, (0.01, 0.01, 1), (0,0,0), 0, GUIColor.white().getRGB())
