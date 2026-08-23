@@ -4,12 +4,12 @@ fixers.DestroyActiveButtons ()
 playernum = VS.getPlayer().isPlayerStarship()
 if (fixers.checkSaveValue(playernum,"pirate_mission1",0)):
     fixers.setSaveValue (playernum,"pirate_mission1",0)
-    Base.Message("Great! We will give you four missions to complete and once they are all done, you will earn a lump sum of 80000 credits. The first mission is a cargo mission. Your cargo has already been transported to your ship. See my friend in the #c.333:1:1#rigel#-c system after the cargo has been transported.")
+    Base.Message("Great! We will give you four missions to complete and once they are all done, you will earn a lump sum of 80000 credits. The first mission is a cargo mission. Your cargo has already been transported to your ship. See my friend in the #55ffffrigel#000000 system after the cargo has been transported.")
     #load mission 1
     VS.LoadMission ("cargo/pirates/pirates_cont_1.mission")
 elif (fixers.checkSaveValue(playernum,"pirate_mission2",0) and fixers.checkSaveValue (playernum,"pirate_mission1",1)):
     fixers.setSaveValue (playernum,"pirate_mission2",0)
-    Base.Message("Great! Your cargo has already been transported to your ship. Fly carefully to the #c.333:1:1#tingvallir#-c system and talk to him when the contraband run is complete.")
+    Base.Message("Great! Your cargo has already been transported to your ship. Fly carefully to the #55fffftingvallir#000000 system and talk to him when the contraband run is complete.")
     VS.LoadMission ("cargo/pirates/pirates_cont_2.mission")
     #load mission 2
 elif (fixers.checkSaveValue(playernum,"pirate_mission3",0) and fixers.checkSaveValue (playernum,"pirate_mission2",1)):

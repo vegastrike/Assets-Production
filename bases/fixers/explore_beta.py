@@ -9,7 +9,7 @@ if VS.numActiveMissions()<=1:
         quest.removeQuest(plyr,'gemini_sector/delta_navpoint',2)
     Base.Message('''Congratulations on your first mission! We have decided to go to the next system.
 Based on the data that you have collected, it appears that the other jump point should go
-to a system that we have named #c.333:1:1#beta#-c. Again, collect info
+to a system that we have named #55ffffbeta#000000. Again, collect info
 on six objects there and report back to me with your info.  You will earn 10000 credits.''')
     VS.LoadMission('patrol/explore_beta.mission')
 else:
