@@ -11,3 +11,6 @@ packages/
 *.sln
 *.cmake
 CMakeCache.txt
+
+# runtime ImGui config artifact
+imgui.ini
