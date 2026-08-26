@@ -25,11 +25,12 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          # x86-64
-          - macos-15-intel
-          # M1 processor
-          #- macos-14
-          #- macos-15
+          # x86_64
+          - macOS-15-intel
+          - macOS-26-intel
+          # Apple Silicon
+          #- macOS-15
+          #- macOS-26
 
     steps:
       - name: Check out repository
