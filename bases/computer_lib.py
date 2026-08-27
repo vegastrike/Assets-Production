@@ -27,7 +27,9 @@ def time_sorted_listdir(dir):
 
 def savelist():
     global savefilters
-    return [ GUI.GUISimpleListPicker.listitem(path,path)
+    # Display the save name with underscores as spaces (e.g. "HeadingOut_2" ->
+    # "HeadingOut 2"), but keep the raw filename as the load data.
+    return [ GUI.GUISimpleListPicker.listitem(path.replace("_", " "), path)
             for path in time_sorted_listdir(VS.getSaveDir())
             if path[:1] != '.' and path not in savefilters ]
 
