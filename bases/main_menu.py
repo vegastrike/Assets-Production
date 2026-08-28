@@ -52,7 +52,7 @@ credits_title = """\t=== Vega Strike 0.10.0 ===
 \t        ---Credits---"""
 
 credits_text_col1 = """
-#c1:.6:.6#Developers:
+#ff9999Developers:
 * Daniel Horn (Hellcatv)
 * Patrick Horn (Ace123)
 * Jack Sampson
@@ -67,7 +67,7 @@ credits_text_col1 = """
 * Alan Shieh
 * Spiritplumber
 
-#c.2:.6:1#Artists:
+#3399ffArtists:
 * James Carthew
 * Julien Chateau
 * Chuck_starchaser
@@ -86,7 +86,7 @@ credits_text_col1 = """
 
 
 credits_text_col2 = """
-#c.2:.6:1#Artists (cont):
+#3399ffArtists (cont):
 * Oblivion
 * Kinnear Penman
 * Phlogios
@@ -99,7 +99,7 @@ credits_text_col2 = """
 * Balint Szilard
 * Etheral Walker
 
-#c1:.6:1#Music:
+#ff99ffMusic:
 * Mike Ducharme
 * Falik
 * Peter Griffin
@@ -107,11 +107,11 @@ credits_text_col2 = """
 * Ken Suguro
 * Zaydana
 
-#c1:.8:.2#Web Site Design:
+#ffcc33Web Site Design:
 * Matthew Kruer
 * Aazelone Pyoleri (Zaydana)
 
-#c.6:1:.6#Packaging:
+#99ff99Packaging:
 * Vincent Fourmond
 * Mike Furr
 * Krister Kjellstroem
@@ -121,7 +121,7 @@ credits_text_col2 = """
 
 
 credits_text_col3 = """
-#c.6:1:1#Community:
+#99ffffCommunity:
 * Martin Baldwin
 * Bgaskey
 * Dilloh
@@ -142,7 +142,7 @@ credits_text_col3 = """
 * Wolphin
 * www2
 
-#c.4:.8:1#Acknowledgements and thanks:
+#66ccffAcknowledgements and thanks:
 Sourceforge
 Crystal Space
 gimp
@@ -151,7 +151,7 @@ NVidia (dds tools)
 Open standards
 Freedom of speech
 User patience
-#c.8:.8:1#... and any we forgot to mention :)
+#CCCCff... and any we forgot to mention :)
 """
 
 intro_title = """\t=== Vega Strike 0.10.0 ===
