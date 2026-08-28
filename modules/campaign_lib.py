@@ -203,17 +203,15 @@ InverseCondition=InvertCondition
 NotCondition=InvertCondition
 
 def tohex(r,g,b):
-    # Emit the unified '#cR:G:B#' color tag (floats 0-1) rather than the legacy
-    # '#RRGGBB' hex, which the ImGuiText parser no longer understands (would render
-    # literally, e.g. the campaign-dialogue speaker name colors).
-    def c(v):
-        v = max(0.0, min(1.0, float(v)))
-        s = '%.3f' % v
-        s = s.rstrip('0').rstrip('.')
-        if s.startswith('0.'):
-            s = s[1:]
-        return s
-    return '#c' + c(r) + ':' + c(g) + ':' + c(b) + '#'
+    def bytehex(num):
+        def bytehex2(num):
+            num = int(num)%16
+            if num<10:
+                return chr((num+ord('0'))%256)
+            else:
+                return chr((num+ord('a')-10)%256)
+        return bytehex2(num/16)+bytehex2(num%16)
+    return '#'+bytehex(int(r*255))+bytehex(int(g*255))+bytehex(int(b*255))
 
 def getcolor(strs):
     h=((hash(strs)%2147483647)/2147483647.+1)/2
