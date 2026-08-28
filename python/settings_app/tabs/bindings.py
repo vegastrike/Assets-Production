@@ -26,6 +26,12 @@ class BindingsTab(BoxLayout):
         self.add_widget(DividerLine())
 
         bindings = gc.game_config.get_object(["controls"])
+        if bindings is None:
+            # Bindings are not yet loaded from bindings.json (deferred).
+            message = Label(text="Bindings will be available once bindings.json is integrated.",
+                            size_hint=(1, 0.8), halign='center', valign='middle')
+            self.add_widget(message)
+            return
 
         # Scrollable configuration area
         scroll_view = ScrollView(size_hint=(1, 0.8))
