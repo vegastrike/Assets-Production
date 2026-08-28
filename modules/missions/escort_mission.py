@@ -74,14 +74,14 @@ class escort_mission (Director.Mission):
         if (VS.GetGameTime()-self.gametime>10):
             self.escortee.setFgDirective('F')
         if self.you.isNull():
-            VS.IOmessage (0,"escort",self.mplay,"#c1:0:0#You were to protect your escort. Mission failed.")
+            VS.IOmessage (0,"escort",self.mplay,"#ff0000You were to protect your escort. Mission failed.")
             VS.terminateMission(0)
             return
         self.escortee.setFlightgroupLeader(self.you)
         #print 'name: '+self.escortee.getFlightgroupLeader().getName()
         #self.escortee.SetVelocity(self.you.GetVelocity())
         if (self.escortee.isNull()):
-            VS.IOmessage (0,"escort",self.mplay,"#c1:0:0#You were to protect your escort. Mission failed.")
+            VS.IOmessage (0,"escort",self.mplay,"#ff0000You were to protect your escort. Mission failed.")
             universe.punish(self.you,self.faction,self.difficulty)
             if (self.var_to_set!=''):
                 quest.removeQuest (self.you.isPlayerStarship(),self.var_to_set,-1)
@@ -101,7 +101,7 @@ class escort_mission (Director.Mission):
         elif (self.you.getDistance(self.escortee)<2000):
             self.you.addCredits(self.creds)
             VS.AdjustRelation(self.you.getFactionName(),self.faction,self.difficulty*.01,1)
-            VS.IOmessage (0,"escort",self.mplay,"#c0:1:0#Excellent work! You have completed this mission!")
+            VS.IOmessage (0,"escort",self.mplay,"#00ff00Excellent work! You have completed this mission!")
             self.escortee.setFgDirective('b')
             self.escortee.setFlightgroupLeader(self.escortee)
             self.escortee.performDockingOperations(self.adjsys.SignificantUnit(),0)

@@ -121,23 +121,23 @@ def processMessage(player, auth, command, args, id=''):
         command = aliasinfo[command]
     #cmdinfo = getCommandInfo(command, auth)
     if auth<1 and command in authcommandinfo:
-        player.sendMessage("#c.533:.267:0#You must be authorized to use "+command)
+        player.sendMessage("#884400You must be authorized to use "+command)
         return
     #if cmdinfo and len(args)<cmdinfo[0]:
     #       processMessage(player,True,"help",[command])
     #       return
     if command=='help':
         if len(args)<1:
-            cmdstr = '#c.533:0:.8#'+' '.join(commandinfo)
+            cmdstr = '#8800cc'+' '.join(commandinfo)
             if auth>=1:
-                cmdstr += '#c.8:0:.533# '+' '.join(authcommandinfo)
-            player.sendMessage('#c.533:.533:0#Valid commands: '+cmdstr)
+                cmdstr += '#cc0088 '+' '.join(authcommandinfo)
+            player.sendMessage('#888800Valid commands: '+cmdstr)
         else:
             cmdinfo = getCommandInfo(args[0], True)
             if cmdinfo and len(cmdinfo)>=3:
-                player.sendMessage("#c.533:.533:0#Usage: #c.533:0:.533#"+cmdinfo[1]+"#c.533:.533:0# - "+cmdinfo[2])
+                player.sendMessage("#888800Usage: #880088"+cmdinfo[1]+"#888800 - "+cmdinfo[2])
             else:
-                player.sendMessage("#c.533:.267:0#/"+args[0]+" does not exist. Use /help for a list of commands.")
+                player.sendMessage("#884400/"+args[0]+" does not exist. Use /help for a list of commands.")
     elif command=='reload':
         if auth<1:
             return
@@ -145,7 +145,7 @@ def processMessage(player, auth, command, args, id=''):
         importlib.reload(__import__('server_lib'))
         vsmod.IOmessage(0,"game","all","The server python script has been reloaded.")
     elif command=='userlist':
-        cstr = '#c.267:.8:.267#Users on the server:#c.533:.533:0#'
+        cstr = '#44cc44Users on the server:#888800'
         print(len(serverDirector().playerlist))
         for x in serverDirector().playerlist:
             #print x
@@ -175,7 +175,7 @@ def processMessage(player, auth, command, args, id=''):
         cstr=''
         if 1: #try:
             page=int(args[0])
-            cstr = '#c.267:.8:.267#Available ships (#c.533:.533:0#'+str(page)+'#c.267:.8:.267#):#c.533:.533:0#'
+            cstr = '#44cc44Available ships (#888800'+str(page)+'#44cc44):#888800'
             num=10
             min=(page-1)*num
             max=page*num
@@ -205,7 +205,7 @@ def processMessage(player, auth, command, args, id=''):
         playerto = serverDirector().getPlayerByCallsign(args[0])
         if not playerto:
             print(args[0])
-            player.sendMessage("#c.533:.267:0#Cannot find player "+args[0])
+            player.sendMessage("#884400Cannot find player "+args[0])
             return
         print(args)
         value=0.0
@@ -222,7 +222,7 @@ def processMessage(player, auth, command, args, id=''):
             return
         playerto = serverDirector().getPlayerByCallsign(args[0])
         if not playerto:
-            player.sendMessage("#c.533:.267:0#Cannot find player "+args[0])
+            player.sendMessage("#884400Cannot find player "+args[0])
             return
         playerto.sendMessage(' '.join(args[1:]), player.callsign)
         player.sendMessage('Message to '+args[0]+': '+(' '.join(args[1:])))
@@ -236,7 +236,7 @@ def processMessage(player, auth, command, args, id=''):
         factquan=()
         if command=="launchtarg" or command=="launchme":
             if not player.current_un:
-                player.sendMessage("#c.533:.267:0#Use /launch <unit> <aroundname> to launch when you are null.")
+                player.sendMessage("#884400Use /launch <unit> <aroundname> to launch when you are null.")
                 return
             if len(args)>=3:
                 factquan=(args[1],args[2])

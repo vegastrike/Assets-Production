@@ -34,15 +34,15 @@ class plunder (Director.Mission):
             VS.IOmessage (0,"plunder mission",self.mplay,"Your mission is to destroy a %s merchant unit." % (self.newship))
             VS.IOmessage (1,"plunder mission",self.mplay,"It is orbiting around the %s planet in the system." % (unit.getUnitFullName(self.gosig.SignificantUnit())))
             VS.IOmessage (2,"plunder mission",self.mplay,"After it is destroyed, pick up all %s cargo that got ejected."%self.category)
-            VS.IOmessage (3,"plunder mission",self.mplay,"Then return to a %s base with your cargo. #c0:1:0#Good luck!"%self.faction)
+            VS.IOmessage (3,"plunder mission",self.mplay,"Then return to a %s base with your cargo. #00ff00Good luck!"%self.faction)
         else:
             print("aboritng plunder constructor...")
             VS.terminateMission (0)
 
     def Win (self,un,terminate):
-        VS.IOmessage (0,"plunder mission",self.mplay,"#c0:1:0#Excellent work pilot.")
-        VS.IOmessage (0,"plunder mission",self.mplay,"#c0:1:0#You have been rewarded for your effort as agreed.")
-        VS.IOmessage (0,"plunder mission",self.mplay,"#c0:1:0#Your contribution to the war effort will be remembered.")
+        VS.IOmessage (0,"plunder mission",self.mplay,"#00ff00Excellent work pilot.")
+        VS.IOmessage (0,"plunder mission",self.mplay,"#00ff00You have been rewarded for your effort as agreed.")
+        VS.IOmessage (0,"plunder mission",self.mplay,"#00ff00Your contribution to the war effort will be remembered.")
         print("do you win?")
         un.addCredits(self.cred)
         if len(self.donevar):
@@ -52,7 +52,7 @@ class plunder (Director.Mission):
             VS.terminateMission(1)
 
     def Lose (self,terminate):
-        VS.IOmessage(0,"plunder mission",self.mplay,"#c1:0:0#You have failed this mission and will not be rewarded.")
+        VS.IOmessage(0,"plunder mission",self.mplay,"#ff0000You have failed this mission and will not be rewarded.")
         if len(self.donevar):
             quest.removeQuest(int(self.mplay[1:]),self.donevar,-1)
         if (terminate):

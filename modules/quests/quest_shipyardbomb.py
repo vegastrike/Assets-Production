@@ -30,7 +30,7 @@ class quest_shipyardbomb (quest.quest):
         self.player = VS.getPlayer()
         self.stage = 1
         self.timer = VS.GetGameTime()
-        self.msgColor = ("#c1:.6:.6#","#c1:.6:1#")
+        self.msgColor = ("#FF9999","#FF99FF")
         self.system = VS.getSystemName()
         self.shipyard = unit.getUnitByName('Shipyard')
 

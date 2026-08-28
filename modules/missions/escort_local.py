@@ -184,7 +184,7 @@ class escort_local (Director.Mission):
                     self.FailMission()
             return #nothing more happens inside this control
         if (self.you.isNull() or (self.launchedfriend and self.defendee.isNull())):
-            VS.IOmessage (0,"escort mission",self.mplay,"#c1:0:0#You were unable to arrive in time to help. Mission failed.")
+            VS.IOmessage (0,"escort mission",self.mplay,"#ff0000You were unable to arrive in time to help. Mission failed.")
             self.SetVarValue(-1)
             VS.terminateMission(0)
             return

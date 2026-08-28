@@ -97,7 +97,7 @@ class rescue (Director.Mission):
                         self.adjsys = go_somewhere_significant.go_somewhere_significant(self.you,1,25000,base_only=1)
                         VS.IOmessage(0,"Passenger",self.mplay,"Please take me to my home base: %s so I may begin to recover. Thank you!"%self.adjsys.SignificantUnit().getName())
                 else:
-                    VS.IOmessage(0,"rescue_mission",self.mplay,"#c1:0:0#You Lost the Pilot before you could drop the Pilot at the base.  The Pilot's oxygen is currently empty. You fail.")
+                    VS.IOmessage(0,"rescue_mission",self.mplay,"#ff0000You Lost the Pilot before you could drop the Pilot at the base.  The Pilot's oxygen is currently empty. You fail.")
                     self.Lose(1)
         elif (self.arrived==3):
             #check for dockal
@@ -109,9 +109,9 @@ class rescue (Director.Mission):
                 else:
                     self.Lose(1)
     def Win (self,un,terminate):
-        VS.IOmessage (0,"Passenger",self.mplay,"#c0:1:0#Excellent work pilot.")
-        VS.IOmessage (0,"Passenger",self.mplay,"#c0:1:0#You have been rewarded for your effort as agreed.")
-        VS.IOmessage (0,"Passenger",self.mplay,"#c0:1:0#You saved my life. I owe you a drink, pal")
+        VS.IOmessage (0,"Passenger",self.mplay,"#00ff00Excellent work pilot.")
+        VS.IOmessage (0,"Passenger",self.mplay,"#00ff00You have been rewarded for your effort as agreed.")
+        VS.IOmessage (0,"Passenger",self.mplay,"#00ff00You saved my life. I owe you a drink, pal")
         un.addCredits(self.cred)
         VS.AdjustRelation(self.you.getFactionName(),self.faction,.02,1)
         if len(self.donevar):
@@ -121,7 +121,7 @@ class rescue (Director.Mission):
 
     def Lose (self,terminate):
         VS.AdjustRelation(self.you.getFactionName(),self.faction,-.02,1)
-        VS.IOmessage(0,"rescue_mission",self.mplay,"#c1:0:0#Credit agency reports that you have failed the mission.")
+        VS.IOmessage(0,"rescue_mission",self.mplay,"#ff0000Credit agency reports that you have failed the mission.")
         if len(self.donevar):
             quest.removeQuest(int(self.mplay[1:]),self.donevar,-1)
         if (terminate):

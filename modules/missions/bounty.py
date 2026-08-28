@@ -55,14 +55,14 @@ class bounty (Director.Mission):
 
     def Win (self,un,terminate):
         self.SetVar(1)
-        VS.IOmessage (0,"bounty mission",self.mplay,"[Computer] #c0:1:0#Bounty Mission Accomplished!")
+        VS.IOmessage (0,"bounty mission",self.mplay,"[Computer] #00ff00Bounty Mission Accomplished!")
         un.addCredits(self.cred)
         if (terminate):
             print("you win bounty mission!")
             VS.terminateMission(1)
 
     def Lose (self,terminate):
-        VS.IOmessage(0,"bounty mission",self.mplay,"[Computer] #c1:0:0#Bounty Mission Failed.")
+        VS.IOmessage(0,"bounty mission",self.mplay,"[Computer] #ff0000Bounty Mission Failed.")
         self.SetVar(-1)
         if (terminate):
             print("lose bounty mission")

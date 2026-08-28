@@ -41,7 +41,7 @@ SAVE_KEY = "quest_debug"
 class quest_debug (quest.quest):
     # initialize quest variables
     def __init__ (self):
-        self.msgColor = "#c1:1:0#"
+        self.msgColor = "#FFFF00"
         self.timer = VS.GetGameTime()     # controls the interval timing
         self.player = VS.getPlayer()
         # show if quest was initialized
@@ -80,7 +80,7 @@ class quest_debug (quest.quest):
                 # print something on the stdout console
                 #print "startime: ", VS.getStarTime(), VS.getStarDate(), stardate.formatStarDate("confed",VS.getStarTime())
                 # print something to the ingame messages
-                VS.IOmessage (0, self.msgColor+"debug"+"#c1:1:1#", "Privateer", self.msgColor+"stardate: " + stardate.formatStarDate("confed",VS.getStarTime()) )
+                VS.IOmessage (0, self.msgColor+"debug"+"#FFFFFF", "Privateer", self.msgColor+"stardate: " + stardate.formatStarDate("confed",VS.getStarTime()) )
                 self.timer = VS.GetGameTime()+20
         # keep the script alive for execution
         return 1

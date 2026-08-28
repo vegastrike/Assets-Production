@@ -71,7 +71,7 @@ class quest_tutorial (quest.quest):
         self.talktime = VS.GetGameTime()  #controls individual talk time within animation
         self.anitime = VS.GetGameTime()   # controls the animation time
         self.stayputtime = 0
-        self.msgColor = "#c1:1:.6#"
+        self.msgColor = "#FFFF99"
         self.objectives = []              # list of objectives
         self.objective = 0                # current objective
         self.startobjectname = ""
@@ -151,7 +151,7 @@ class quest_tutorial (quest.quest):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Hello traveler.")
             VS.IOmessage (3,"Oswald","Privateer",self.msgColor+"My name is Oswald and I am offering flight assistance.")
             VS.IOmessage (8,"Oswald","Privateer",self.msgColor+"Would you like to refresh your space faring skills?")
-            VS.IOmessage (12,"Oswald","Privateer",self.msgColor+"To participate in my tutorial mission, cut your engines with the #c.6:.6:1#BACKSPACE"+self.msgColor+" key, let me approach you, and stay put until I contact you again.")
+            VS.IOmessage (12,"Oswald","Privateer",self.msgColor+"To participate in my tutorial mission, cut your engines with the #9999FFBACKSPACE"+self.msgColor+" key, let me approach you, and stay put until I contact you again.")
             #VS.playSound("com_tutorial_oswald/oswald_greet.ogg", self.player.Position(), (0,0,0))
             #VS.musicPlaySong("com_tutorial_oswald/oswald_greet.ogg")
             # set comm animation parameters
@@ -261,9 +261,9 @@ class quest_tutorial (quest.quest):
             VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"Please do not move your ship in order to better focus on my instructions.")
             VS.IOmessage (15,"Oswald","Privateer",self.msgColor+"In the upper left corner you can see the communication messages.")
             VS.IOmessage (20,"Oswald","Privateer",self.msgColor+"Each communication message shows the sender, the game time of the sending, and the message itself, like this one.")
-            VS.IOmessage (25,"Oswald","Privateer",self.msgColor+"To scroll the messages back and forth use the #c.6:.6:1#Page Up"+self.msgColor+" and #c.6:.6:1#Page Down"+self.msgColor+" keys. Try it out now.")
+            VS.IOmessage (25,"Oswald","Privateer",self.msgColor+"To scroll the messages back and forth use the #9999FFPage Up"+self.msgColor+" and #9999FFPage Down"+self.msgColor+" keys. Try it out now.")
             VS.IOmessage (35,"Oswald","Privateer",self.msgColor+"Good.")
-            VS.IOmessage (37,"Oswald","Privateer",self.msgColor+"Now you can send me a message by pressing the #c.6:.6:1#F1"+self.msgColor+" key.")
+            VS.IOmessage (37,"Oswald","Privateer",self.msgColor+"Now you can send me a message by pressing the #9999FFF1"+self.msgColor+" key.")
             # set comm animation parameters
             self.sequence = [[0,1,0],[5,4,0],[10,4,0],[15,4,0],[20,4,0],[25,5,0],[35,1,0],[37,4,0]]
             # set speech files
@@ -282,7 +282,7 @@ class quest_tutorial (quest.quest):
         if (self.practice==1 and VS.GetGameTime()>=self.timer):
             self.practice = 2
         if (self.practice==2 and VS.GetGameTime()>self.timer):
-            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Usually, messages assigned to keys #c.6:.6:1#F1"+self.msgColor+" and #c.6:.6:1#F2"+self.msgColor+" are friendly messages which slightly increase you relation with a faction, while the other keys #c.6:.6:1#F3"+self.msgColor+" and #c.6:.6:1#F4"+self.msgColor+" decrease your relationship.")
+            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Usually, messages assigned to keys #9999FFF1"+self.msgColor+" and #9999FFF2"+self.msgColor+" are friendly messages which slightly increase you relation with a faction, while the other keys #9999FFF3"+self.msgColor+" and #9999FFF4"+self.msgColor+" decrease your relationship.")
             VS.IOmessage (14,"Oswald","Privateer",self.msgColor+"Sometimes it can be very useful to send multiple friendly messages to improve your relation with a hostile faction or taunt an enemy into attacking you instead of a ship you are protecting.")
             VS.IOmessage (26,"Oswald","Privateer",self.msgColor+"That's about it on the messages display.")
             # set comm animation parameters
@@ -380,8 +380,8 @@ class quest_tutorial (quest.quest):
                 self.objective = VS.addObjective("Target %s" % nam)
                 self.objectives+=[int(self.objective)]
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"In the lower right corner you can see the target video display unit (VDU) where you can see your current target.")
-                VS.IOmessage (8,"Oswald","Privateer",self.msgColor+"Target me by repeatedly toggling the #c.6:.6:1#T"+self.msgColor+" key until you see my ship on the right VDU.")
-                VS.IOmessage (16,"Oswald","Privateer",self.msgColor+"Should you pass me, you may reverse the target selection sequence by pressing the #c.6:.6:1#Shift+T"+self.msgColor+" keys.")
+                VS.IOmessage (8,"Oswald","Privateer",self.msgColor+"Target me by repeatedly toggling the #9999FFT"+self.msgColor+" key until you see my ship on the right VDU.")
+                VS.IOmessage (16,"Oswald","Privateer",self.msgColor+"Should you pass me, you may reverse the target selection sequence by pressing the #9999FFShift+T"+self.msgColor+" keys.")
                 # set comm animation parameters
                 self.sequence = [[0,7,0],[8,7,0],[16,6,0]]
                 self.speech = ["com_tutorial_oswald/oswald_target_03.ogg", "com_tutorial_oswald/oswald_target_04.ogg", "com_tutorial_oswald/oswald_target_05.ogg"]
@@ -432,7 +432,7 @@ class quest_tutorial (quest.quest):
             if (angle<=0.05):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Well done.")
-                VS.IOmessage (2,"Oswald","Privateer",self.msgColor+"Now, turn your ship away from my ship and accelerate to full speed using the #c.6:.6:1#\\"+self.msgColor+" key.")
+                VS.IOmessage (2,"Oswald","Privateer",self.msgColor+"Now, turn your ship away from my ship and accelerate to full speed using the #9999FF\\"+self.msgColor+" key.")
                 self.player.commAnimation("com_tutorial_oswald.ani")
                 self.objective = VS.addObjective("Set max velocity")
                 self.objectives+=[int(self.objective)]
@@ -458,7 +458,7 @@ class quest_tutorial (quest.quest):
             #check if angle to drone is at least 22 degrees (0.20 radians)
             if (angle>=0.20 and velocity>=115):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
-                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"And now set your velocity reference to zero by pressing the #c.6:.6:1#BACKSPACE"+self.msgColor+" key and come to a complete stop.")
+                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"And now set your velocity reference to zero by pressing the #9999FFBACKSPACE"+self.msgColor+" key and come to a complete stop.")
                 self.player.commAnimation("com_tutorial_oswald.ani")
                 self.player.commAnimation("com_tutorial_oswald.ani")
                 self.playSoundCockpit("com_tutorial_oswald/oswald_nav_23.ogg")
@@ -471,7 +471,7 @@ class quest_tutorial (quest.quest):
             velocity = Vector.Mag(self.player.GetVelocity())
             if (velocity<=2):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
-                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"You can also increment your velocity gradually with the #c.6:.6:1#+"+self.msgColor+" key. Accelerate to 100 m/s now.")
+                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"You can also increment your velocity gradually with the #9999FF+"+self.msgColor+" key. Accelerate to 100 m/s now.")
                 self.player.commAnimation("com_tutorial_oswald.ani")
                 self.playSoundCockpit("com_tutorial_oswald/oswald_nav_24.ogg")
                 self.objective = VS.addObjective("Set velocity reference to 100m/s")
@@ -483,7 +483,7 @@ class quest_tutorial (quest.quest):
             velocity = Vector.Mag(self.player.GetVelocity())
             if (velocity>=98 and velocity<=110):
                 VS.setCompleteness(self.objectives[3],1.0)
-                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"In the same way you can reduce your velocity gradually with the #c.6:.6:1#-"+self.msgColor+" key. Deccelerate to 50 m/s.")
+                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"In the same way you can reduce your velocity gradually with the #9999FF-"+self.msgColor+" key. Deccelerate to 50 m/s.")
                 self.player.commAnimation("com_tutorial_oswald.ani")
                 self.playSoundCockpit("com_tutorial_oswald/oswald_nav_25.ogg")
                 self.objective = VS.addObjective("Set velocity reference to 50m/s")
@@ -495,7 +495,7 @@ class quest_tutorial (quest.quest):
             velocity = Vector.Mag(self.player.GetVelocity())
             if (velocity<=55 and velocity>=40):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
-                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Great. If you further deccelerate your velocity with the #c.6:.6:1#-"+self.msgColor+" key you can actually reverse your thrust. Deccelerate now to -20 m/s.")
+                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Great. If you further deccelerate your velocity with the #9999FF-"+self.msgColor+" key you can actually reverse your thrust. Deccelerate now to -20 m/s.")
                 self.player.commAnimation("com_tutorial_oswald.ani")
                 self.playSoundCockpit("com_tutorial_oswald/oswald_nav_26.ogg")
                 self.objective = VS.addObjective("Set velocity reference to -20m/s")
@@ -544,7 +544,7 @@ class quest_tutorial (quest.quest):
             self.objective = VS.addObjective("Target %s" % nam)
             self.objectives+=[int(self.objective)]
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Let's practice some faster than light (FTL) travel now.")
-            VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"Target "+unit.getUnitFullName(self.jump)+" navigation point using the #c.6:.6:1#N"+self.msgColor+" or the #c.6:.6:1#Shift+N"+self.msgColor+" keys.")
+            VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"Target "+unit.getUnitFullName(self.jump)+" navigation point using the #9999FFN"+self.msgColor+" or the #9999FFShift+N"+self.msgColor+" keys.")
             self.sequence = [[0,4,0],[5,6,0]]
             self.speech = ["com_tutorial_oswald/oswald_spec_01.ogg", ""]
             self.talktime = VS.GetGameTime()
@@ -562,11 +562,11 @@ class quest_tutorial (quest.quest):
             self.practice = 2
         if (self.practice==2 and self.player.GetTarget()==self.jump):
             VS.setCompleteness(self.objectives[self.objective],1.0)
-            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Set your velocity to maximum with the #c.6:.6:1#\\"+self.msgColor+" key and activate the SPEC auto pilot with the #c.6:.6:1#A"+self.msgColor+" key to get there. Hang on as this might take a while if you are close to massive objects.")
+            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Set your velocity to maximum with the #9999FF\\"+self.msgColor+" key and activate the SPEC auto pilot with the #9999FFA"+self.msgColor+" key to get there. Hang on as this might take a while if you are close to massive objects.")
             VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"You will notice that your SPEC drive indicator (S) is flashing, which indicates that SPEC is active.")
             VS.IOmessage (20,"Oswald","Privateer",self.msgColor+"During FTL travel your shields become inactive, as you can see below on your ship VDU.")
             VS.IOmessage (26,"Oswald","Privateer",self.msgColor+"You will also notice that your steering has no effect on your vessel since the auto pilot has taken over the controls.")
-            VS.IOmessage (32,"Oswald","Privateer",self.msgColor+"You can always interrupt and resume the auto pilot by toggling the #c.6:.6:1#A"+self.msgColor+" key. You may try that, if you wish.")
+            VS.IOmessage (32,"Oswald","Privateer",self.msgColor+"You can always interrupt and resume the auto pilot by toggling the #9999FFA"+self.msgColor+" key. You may try that, if you wish.")
             VS.IOmessage (40,"Oswald","Privateer",self.msgColor+"In the lower left corner, just above your ship staus you will notice two indicators.")
             VS.IOmessage (45,"Oswald","Privateer",self.msgColor+"SPEC shows you if your SPEC drive is enabled.")
             VS.IOmessage (47,"Oswald","Privateer",self.msgColor+"AUTO tells you if auto pilot is engaged.")
@@ -613,7 +613,7 @@ class quest_tutorial (quest.quest):
             VS.setCompleteness(self.objectives[self.objective],1.0)
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Here we are.")
             VS.IOmessage (1,"Oswald","Privateer",self.msgColor+"You may try out manual FTL travel at this point.")
-            VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"Target the planet Atlantis using your significant objects targetting keys #c.6:.6:1#N"+self.msgColor+" and #c.6:.6:1#Shift+N"+self.msgColor+".")
+            VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"Target the planet Atlantis using your significant objects targetting keys #9999FFN"+self.msgColor+" and #9999FFShift+N"+self.msgColor+".")
             # set comm animation parameters
             self.sequence = [[0,1,0],[1,4,0],[5,7,0]]
             self.speech = ["com_tutorial_oswald/oswald_spec_06.ogg", "", ""]
@@ -640,7 +640,7 @@ class quest_tutorial (quest.quest):
             self.practice += 1
         if (self.practice==9 and self.player.GetTarget()==self.destination):
             VS.setCompleteness(self.objectives[self.objective],1.0)
-            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Roger that. Turn towards the planet, set your velocity to maximum with the #c.6:.6:1#\\"+self.msgColor+" key, and enable the manual SPEC with the #c.6:.6:1#Shift+A"+self.msgColor+" key to approach the planet.")
+            VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Roger that. Turn towards the planet, set your velocity to maximum with the #9999FF\\"+self.msgColor+" key, and enable the manual SPEC with the #9999FFShift+A"+self.msgColor+" key to approach the planet.")
             VS.IOmessage (12,"Oswald","Privateer",self.msgColor+"Make sure that the planet is fairly well centered in your targetting reticule.")
             VS.IOmessage (17,"Oswald","Privateer",self.msgColor+"Notice how your speed starts increasing gradually after leaving the jump point range.")
             self.objective = VS.addObjective("Enable manual SPEC")
@@ -669,8 +669,8 @@ class quest_tutorial (quest.quest):
             #if (velocity>=5000):
             if (self.player.getDistance(self.destination)<=(self.distance*0.97)):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
-                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"If your are getting too much off course, stop the SPEC drive toggling the #c.6:.6:1#Shift+A"+self.msgColor+" key, recenter your target, and then re-enable the manual SPEC drive again with the same keys.")
-                VS.IOmessage (13,"Oswald","Privateer",self.msgColor+"When you have approched Atlantis to 10 000km please disble the SPEC drive toggling the #c.6:.6:1#Shift+A"+self.msgColor+" key again and then stop your ship.")
+                VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"If your are getting too much off course, stop the SPEC drive toggling the #9999FFShift+A"+self.msgColor+" key, recenter your target, and then re-enable the manual SPEC drive again with the same keys.")
+                VS.IOmessage (13,"Oswald","Privateer",self.msgColor+"When you have approched Atlantis to 10 000km please disble the SPEC drive toggling the #9999FFShift+A"+self.msgColor+" key again and then stop your ship.")
                 name = unit.getUnitFullName(self.destination)
                 self.objective = VS.addObjective("Approach %s" % name)
                 self.objectives+=[int(self.objective)]
@@ -722,9 +722,9 @@ class quest_tutorial (quest.quest):
         if (self.practice==16):
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Now dock to the planet, go to the mission computer, and save your game.")
             VS.IOmessage (5,"Oswald","Privateer",self.msgColor+"Then get yourself a Jump Drive and an Overdrive and come back for more tutoring if you wish.")
-            VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"To dock, turn towards the planet and press the docking clearance request key #c.6:.6:1#D"+self.msgColor+". A green docking frame will appear.")
+            VS.IOmessage (10,"Oswald","Privateer",self.msgColor+"To dock, turn towards the planet and press the docking clearance request key #9999FFD"+self.msgColor+". A green docking frame will appear.")
             VS.IOmessage (17,"Oswald","Privateer",self.msgColor+"You may still enable the SPEC drive until you close up on the planet and your velocity matches the set velocity.")
-            VS.IOmessage (24,"Oswald","Privateer",self.msgColor+"When you are within range, press again the #c.6:.6:1#D"+self.msgColor+" key to dock. The docking distance will depend on the planet or station size that you are docking to.")
+            VS.IOmessage (24,"Oswald","Privateer",self.msgColor+"When you are within range, press again the #9999FFD"+self.msgColor+" key to dock. The docking distance will depend on the planet or station size that you are docking to.")
             VS.IOmessage (33,"Oswald","Privateer",self.msgColor+"The larger the object the further away you can dock.")
             VS.IOmessage (36,"Oswald","Privateer",self.msgColor+"For Atlantis the docking distance is roughly about 990 kilometers.")
             # set comm animation parameters
@@ -763,8 +763,8 @@ class quest_tutorial (quest.quest):
         # like stop before you destroy the player's ship and mouth off about how he hopes you learned
         # something, 'pirates won't be so forgiving'
         if (self.practice==0 and self.fight==1):
-            VS.IOmessage (0,"Oswald","Privateer","#c1:0:0#"+"So you want to learn how to dodge lasers, eh?")
-            VS.IOmessage (3,"Oswald","Privateer","#c1:0:0#"+"You aren't the first newbie I've had to put down, and you won't be the last!")
+            VS.IOmessage (0,"Oswald","Privateer","#FF0000"+"So you want to learn how to dodge lasers, eh?")
+            VS.IOmessage (3,"Oswald","Privateer","#FF0000"+"You aren't the first newbie I've had to put down, and you won't be the last!")
             # set comm animation parameters
             self.sequence = [[0,3,0],[3,5,0]]
             self.speech = ["com_tutorial_oswald/oswald_intermezzo_01.ogg", ""]
@@ -772,8 +772,8 @@ class quest_tutorial (quest.quest):
             self.timer = VS.GetGameTime()+10
             self.practice = 1
         if (self.practice==0 and self.fight==2):
-            VS.IOmessage (0,"Oswald","Privateer","#c1:0:0#"+"That's over the border, boy!")
-            VS.IOmessage (2,"Oswald","Privateer","#c1:0:0#"+"May God have mercy upon my enemies, because I won't!")
+            VS.IOmessage (0,"Oswald","Privateer","#FF0000"+"That's over the border, boy!")
+            VS.IOmessage (2,"Oswald","Privateer","#FF0000"+"May God have mercy upon my enemies, because I won't!")
             self.speech = ["com_tutorial_oswald/oswald_intermezzo_02.ogg", ""]
             # set comm animation parameters
             self.sequence = [[0,2,0],[2,3,0]]
