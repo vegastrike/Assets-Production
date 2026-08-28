@@ -1,6 +1,8 @@
 import json
 import locale
 
+import config
+
 # locale.setlocale(locale.LC_ALL, '')  
 
 def format_number(number) -> str:
@@ -230,10 +232,9 @@ def get_upgrade_info(unit_stats):
 
 
     vsdm = 5.0
-    with open('config.json', 'r') as file:
-        data = json.load(file)
-        vsdm = data['constants']['kj_per_unit_damage'] / data['constants']['kilo']
-        
+    _data = config.load_merged_config()
+    vsdm = _data['constants']['kj_per_unit_damage'] / _data['constants']['kilo']
+
     unit = {}
     with open('units/units.json', 'r') as file:
         data = json.load(file)
