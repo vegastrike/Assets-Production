@@ -72,7 +72,7 @@ float GLOSS_power( in float mat_gloss_sa, in float light_solid_angle ) //const
 {
   // shininess = ( 0.5 * pi / SolidAngle ) - 0.810660172
   const float MAGIC_TERM = 0.810660172;
-  return max(0, ( HALF_PI / (mat_gloss_sa + light_solid_angle + 0.0005) ) - MAGIC_TERM);
+  return max(0.0, ( HALF_PI / (mat_gloss_sa + light_solid_angle + 0.0005) ) - MAGIC_TERM);
 }
 //public:
 vec3 GLOSS_env_reflection( in vec4 mat_gloss, in vec3 direction ) //const
