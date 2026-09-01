@@ -525,18 +525,12 @@ class GUIRect:
                (2.0 * self.w / screenX * (1.0-marginX)) ,      \
                (2.0 * self.h / screenY * (1.0-marginY))        \
               )
-        elif (self.mode=='normalized_biased_scaled'):
-            """ direct coordinates: top-left = (-1,+1), bottom-right = (+1,-1) - margins WILL NOT be applied """
-            return (self.x,self.y,self.w,self.h)
-        elif (self.mode=='normalized_biased'):
-            """ direct coordinates: top-left = (-1,+1), bottom-right = (+1,-1) - margins WILL be applied """
-            return (self.x*(1.0-marginX),self.y*(1.0-marginY),self.w*(1.0-marginX),self.h*(1.0-marginY))
-        elif (self.mode=='normalized_scaled'):
-            """ normalized coordinates: top-left = (0,0), bottom-right = (1,1) - margins WILL NOT be applied """
-            return ((2.0*self.x-1.0),(-2.0*self.y+1.0),2.0*self.w,2.0*self.h)
         elif (self.mode=='normalized'):
-            """ normalized coordinates: top-left = (0,0), bottom-right = (1,1) - margins WILL be applied """
+            """ normalized 0..1 coordinates: top-left = (0,0), bottom-right = (1,1) - margins WILL be applied """
             return ((2.0*self.x-1.0)*(1.0-marginX),(-2.0*self.y+1.0)*(1.0-marginY),2.0*self.w*(1.0-marginX),2.0*self.h*(1.0-marginY))
+        elif (self.mode=='normalized_absolute'):
+            """ absolute -1..1 coordinates: top-left = (-1,+1), bottom-right = (+1,-1) - margins WILL NOT be applied """
+            return (self.x,self.y,self.w,self.h)
         else:
             trace(_GUITraceLevel, "WARNING! - gui.py - GUIRect::getNormalizedCoords(): unknown coordinate mode\n")
 
@@ -560,24 +554,33 @@ class GUIRect:
         return ( aux[2], aux[3] )
 
     #
-    # The Base module uses inconsistent coordinates.
-    # For the Link/Comp/Python methods, it is the bottom left.
-    # For the Texture methods, it is the center point.
-    # For the TextBox method, it is the top left?
+    # The Base module uses inconsistent origins for the same -1..1 rect.
+    # getNormalXYWH() returns the canonical TOP-LEFT origin -1..1 rect; the
+    # consumers below re-origin it (hotspot = bottom-left, sprite = center,
+    # textbox = top-left).  getNormalized(origin) is the single unified method;
+    # the named helpers are thin aliases kept for clarity at the call sites.
     #
-    def getHotRect(self):
-        """ (BOTTOM, LEFT, WIDTH, HEIGHT) as needed by Base hotspots """
+    def getNormalized(self, origin):
+        """ Return (x,y,w,h) in -1..1 coords with the given origin.
+            origin: 'top_left', 'bottom_left', or 'center'. """
         aux = self.getNormalXYWH()
-        return ( aux[0], aux[1]-aux[3], aux[2], aux[3] )
+        if origin == 'bottom_left':
+            return ( aux[0], aux[1]-aux[3], aux[2], aux[3] )
+        if origin == 'center':
+            return ( aux[0]+aux[2]/2, aux[1]-aux[3]/2, aux[2], -aux[3] )
+        return ( aux[0], aux[1], aux[2], aux[3] )
+
+    def getHotRect(self):
+        """ (BOTTOM-LEFT, WIDTH, HEIGHT) as needed by Base hotspots """
+        return self.getNormalized('bottom_left')
 
     def getSpriteRect(self):
-        """ (CenterX, CenterY, WIDTH, -HEIGHT) as needed by Base sprites """
-        aux = self.getNormalXYWH()
-        return ( aux[0]+aux[2]/2, aux[1]-aux[3]/2, aux[2], -aux[3] )
+        """ (CENTER-X, CENTER-Y, WIDTH, -HEIGHT) as needed by Base sprites """
+        return self.getNormalized('center')
 
     def getTextRect(self):
-        """ (TOP, LEFT, WIDTH, HEIGHT) as needed by Base textboxes """
-        return self.getNormalXYWH()
+        """ (TOP-LEFT, WIDTH, HEIGHT) as needed by Base textboxes """
+        return self.getNormalized('top_left')
 
 
 """----------------------------------------------------------------"""
@@ -1634,7 +1637,7 @@ class GUISimpleListPicker(GUIElement):
         hotx,hoty,hotw,hoth = self.hotspot.getNormalXYWH()
         theight = hoth / nlines
         for i in range(nlines):
-            hot = GUIRect(hotx,hoty-i*hoth/float(nlines),hotw,theight,'normalized_biased_scaled')
+            hot = GUIRect(hotx,hoty-i*hoth/float(nlines),hotw,theight,'normalized_absolute')
             self._listitems.append( GUIRadioButton(self.room,self.linkdesc,"%s[%s]" % (self.index,i),spr,hot,self._radiogroup(),i,onChange=self._notifySelectionChange,owner=self) )
             i += 1
 

@@ -81,7 +81,7 @@ if not VS.isserver():
     screen_bgcolor_nc = GUI.GUIColor(0.1,0.0,0.4)
 
 def makeRect(x,y,wid,hei):
-    return GUI.GUIRect(x,y,wid,hei,'normalized_biased_scaled')
+    return GUI.GUIRect(x,y,wid,hei,'normalized_absolute')
 
 class DialogBox:
     class Item:
