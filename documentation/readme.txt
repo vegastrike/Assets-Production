@@ -1,3 +1,65 @@
+=====================================================================
+ VS-05 0.5.4 - LONG TERM SUPPORT branch - READ THIS FIRST
+=====================================================================
+
+WHAT THIS BRANCH IS
+--------------------
+0.5.4 is the Long Term Support (LTS) line of Vega Strike. It is its
+own thing, separate from the "master" branch: master is where active
+development happens, while 0.5.4 receives only bug fixes and library
+updates so the game stays stable. The 0.5.4 binaries keep their own
+names (vs-05, config-vs-05) and install under /opt/vs-05-lts, so they
+can be installed alongside a master build on the same system without
+conflicting.
+
+HOW ASSETS ARE CONFIGURED FOR THIS BRANCH (IMPORTANT DIFFERENCE)
+----------------------------------------------------------------
+Unlike older Vega Strike releases, 0.5.4 does NOT read its game data
+from one fixed location. It supports several fan-made asset packs and
+lets you switch between them from the settings app (config-vs-05).
+
+Each asset pack is one folder holding a complete data tree (units/,
+sectors/, meshes/, textures/, ...), placed in your home directory:
+
+    ~/.local/share/vs-05/assets/<packname>/
+
+The folder must also contain a file called Version.txt. Its single
+line names the config folder that pack uses, in this form:
+
+    .config/vs-05/<packname>
+
+For example, the standard "vegastrike" assets look like this:
+
+    ~/.local/share/vs-05/assets/vegastrike/
+        units/  sectors/  meshes/  textures/  ...   Version.txt
+
+with Version.txt containing the single line:  .config/vs-05/vegastrike
+
+Place any other fan-made packs next to it, one folder each:
+
+    ~/.local/share/vs-05/assets/my-mod/
+
+QUICK START - FIRST RUN
+-----------------------
+1. Install the 0.5.4 branch (the vs-05 engine + data packages).
+2. Put the asset pack(s) you want into
+   ~/.local/share/vs-05/assets/<packname>/ with their Version.txt.
+3. Run config-vs-05, open the Assets screen, select your pack, and
+   click Save. The app stores the active pack in
+   ~/.config/vs-05/active_asset.
+4. Launch the game. The engine starts pointed at the active pack
+   (it is launched with -D <that pack's data dir>).
+
+Your saved games and settings for each pack live in that pack's own
+folder under ~/.config/vs-05/<packname>/, so packs do not interfere
+with one another.
+
+---------------------------------------------------------------------
+The remainder of this file is the original Vega Strike 0.5.2-era
+manual. It is largely out of date for 0.5.4 and is kept for reference
+only. See the Vega Strike Wiki for the current manual.
+---------------------------------------------------------------------
+
 NOTICE: This readme file is very likely to be out of date.
 For the latest manual, please check the Vega Strike Wiki:
 http://vegastrike.sourceforge.net/wiki/Manual
