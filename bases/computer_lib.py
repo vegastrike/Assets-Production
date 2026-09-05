@@ -143,7 +143,7 @@ class QuineComputer:
         # this doesn't change while docked, so only call it once
         self.str_start = get_location_text(current_base)
 
-        screen_loc = GUI.GUIRect(80,90,350,380,"pixel",(800,600))
+        screen_loc = GUI.GUIRect(80,90,528,380,"pixel",(800,600))
         screen_color = GUI.GUIColor(20/255.0, 22/255.0 ,10/255.0)               # first I tried rgb(56 60 24) and rgb(40 44 20); both were too light
         screen_bgcolor = GUI.GUIColor.clear()
         screen_bgcolor_nc = GUI.GUIColor(0.44,0.47,0.17)
