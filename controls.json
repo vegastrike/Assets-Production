@@ -6,7 +6,7 @@
     "textColor": "0.1, 0.8, 0.1, 1.0",
     "rect": "-.96, .76, 1.9, .08",
     "color": "0.0, 0.0, 0.0, 0.0",
-    "font": "0.07, 1.75",
+    "font": "0.045, 1.75",
     "id": "BaseInfoTitle"
   },
   {
@@ -16,7 +16,7 @@
     "textColor": "0.7, 0.7, 0.9, 1.0",
     "rect": "-.96, .69, 1.9, .07",
     "color": "0.0, 0.0, 0.0, 0.0",
-    "font": "0.06, 1.5",
+    "font": "0.04, 1.5",
     "id": "PlayerInfoTitle"
   },
   {
@@ -30,7 +30,7 @@
     "downTextColor": "0, 0, 0, 0",
     "downColor": "0.75, 0, 0, 0.6",
     "highlightColor": "0, 0, 1, 0.4",
-    "font": "0.08, 1.0"
+    "font": "0.05, 1.0"
   },
   {
     "type": "button",
@@ -43,7 +43,7 @@
     "downTextColor": "0, 0, 0, 0",
     "downColor": "0.75, 0, 0, 0.6",
     "highlightColor": "0, 0, 1, 0.4",
-    "font": "0.08, 1.5"
+    "font": "0.05, 1.5"
   },
   {
     "type": "button",
@@ -55,7 +55,7 @@
     "downTextColor": "0, 0, 0, 0",
     "downColor": "0, 0.5, 0, 0.5",
     "highlightColor": "0, 0.5, 0, 0.4",
-    "font": "0.09, 1.5",
+    "font": "0.055, 1.5",
     "id": "ModeButton"
   },
 
@@ -72,7 +72,7 @@
     "textColor": "1, 1, 1, 1",
     "rect": "-.96, .56, .81, .1",
     "color": "0.0, 0.0, 0.0, 0.0",
-    "font": "0.08, 1.5",
+    "font": "0.05, 1.5",
     "justification": "center",
     "id": "PlayerInfoTitle"
   },
@@ -83,7 +83,7 @@
     "textColor": "1, 1, 1, 1",
     "rect": "-.2, .56, .4, .07",
     "color": "0.0, 0.0, 0.0, 0.0",
-    "font": "0.06, 1.5",
+    "font": "0.04, 1.5",
     "justification": "center",
     "id": "TotalPrice"
   },
@@ -94,7 +94,7 @@
     "textColor": "1, 1, 1, 1",
     "rect": "-.14, .49, .28, .07",
     "color": "0.0, 0.0, 0.0, 0.0",
-    "font": "0.06, 1.5",
+    "font": "0.04, 1.5",
     "justification": "center",
     "id": "MaxQuantity"
   },
@@ -110,7 +110,7 @@
     "highlightColor": "0, .6, 0, .35",
     "highlightTextColor": "1, 1, 1, 1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": ".07, 1.0",
+    "font": "0.045, 1.0",
     "textMargins": "0.02, 0.01",
     "id": "BaseCargo"
   },
@@ -137,7 +137,7 @@
     "highlightColor": "0, .6, 0, .35",
     "highlightTextColor": "1, 1, 1, 1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": ".07, 1.0",
+    "font": "0.045, 1.0",
     "textMargins": "0.02, 0.01",
     "id": "PlayerCargo"
   },
@@ -165,7 +165,7 @@
     "endBorderColor": ".4, .4, .4",
     "shadowWidth": "2",
     "cycleTime": "1.0",
-    "font": "0.1, 1.5",
+    "font": "0.06, 1.5",
     "id": "CommitAll"
   },
   {
@@ -181,7 +181,7 @@
     "endBorderColor": ".4, .4, .4",
     "shadowWidth": "2",
     "cycleTime": "1.0",
-    "font": "0.08, 1.5",
+    "font": "0.05, 1.5",
     "id": "Commit10"
   },
   {
@@ -197,7 +197,7 @@
     "endBorderColor": ".4, .4, .4",
     "shadowWidth": "2",
     "cycleTime": "1.0",
-    "font": "0.08, 1.5",
+    "font": "0.05, 1.5",
     "id": "Commit"
   },
   {
@@ -209,7 +209,7 @@
     "rect": "-.6, -.95, 1.51, .5",
     "color": "0.375, 0.375, 0.75, .1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": "0.06",
+    "font": "0.04",
     "textMargins": "0.02, 0.01",
     "multiline": true,
     "id": "Description"
@@ -247,7 +247,7 @@
     "textColor": "1, 1, 1, 1",
     "rect": "-.96, .55, .81, .1",
     "color": "0, 0, 0, 0",
-    "font": "0.07, 1.5",
+    "font": "0.045, 1.5",
     "justification": "center"
   },
   {
@@ -262,7 +262,7 @@
     "selectionColor": "0, .6, 0, .8",
     "highlightColor": "0, .6, 0, .35",
     "highlightTextColor": "1, 1, 1, 1",
-    "font": "0.07",
+    "font": "0.045",
     "textMargins": "0.02, 0.01",
     "id": "BaseUpgrades"
   },
@@ -289,7 +289,7 @@
     "selectionColor": "0, .6, 0, .8",
     "highlightColor": "0, .6, 0, .35",
     "highlightTextColor": "1, 1, 1, 1",
-    "font": "0.07",
+    "font": "0.045",
     "textMargins": "0.02, 0.01",
     "id": "PlayerUpgrades"
   },
@@ -317,7 +317,7 @@
     "endBorderColor": ".4, .4, .4",
     "shadowWidth": "2.0",
     "cycleTime": "1.0",
-    "font": "0.1, 1.5",
+    "font": "0.06, 1.5",
     "id": "Commit"
   },
   {
@@ -333,7 +333,7 @@
     "endBorderColor": ".4, .4, .4",
     "shadowWidth": "2.0",
     "cycleTime": "1.0",
-    "font": "0.1, 1.5",
+    "font": "0.06, 1.5",
     "id": "CommitFix"
   },
   {
@@ -344,7 +344,7 @@
     "rect": "-.6, -.95, 1.51, .5",
     "color": "0.1, 0.1, 0.1, .1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": "0.06",
+    "font": "0.04",
     "multiline": true,
     "textColor": "1, 1, 1, 1",
     "textMargins": "0.02, 0.01",
@@ -387,7 +387,7 @@
     "selectionColor": "0, .6, 0, .8",
     "highlightColor": "0, .6, 0, .35",
     "highlightTextColor": "1, 1, 1, 1",
-    "font": "0.07",
+    "font": "0.045",
     "textMargins": "0.02, 0.01",
     "id": "NewsPicker"
   },
@@ -410,7 +410,7 @@
     "rect": "-.96, -.95, 1.87, .90",
     "color": "0.1, 0.1, 0.1, .1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": "0.07",
+    "font": "0.045",
     "multiline": true,
     "textColor": "1, 1, 1, 1",
     "textMargins": "0.02, 0.01",
@@ -445,7 +445,7 @@
     "selectionColor": "0, .6, 0, .8",
     "highlightColor": "0, .6, 0, .35",
     "highlightTextColor": "1, 1, 1, 1",
-    "font": "0.07",
+    "font": "0.045",
     "textMargins": "0.02, 0.01",
     "id": "LoadSavePicker"
   },
@@ -468,7 +468,7 @@
     "rect": ".15, -.7, .76, 1.4",
     "color": "0.1, 0.1, 0.1, .1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": "0.07",
+    "font": "0.045",
     "multiline": true,
     "textColor": "1, 1, 1, 1",
     "textMargins": "0.02, 0.01",
@@ -494,7 +494,7 @@
     "rect": "-.6, -.95, 1.21, .2",
     "color": "0.1, 0.1, 0.1, .1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": "0.07",
+    "font": "0.045",
     "multiline": true,
     "textColor": "1, 1, 1, 1",
     "textMargins": "0.02, 0.01",
@@ -526,7 +526,7 @@
     "endBorderColor": ".4, .4, .4",
     "shadowWidth": "2.0",
     "cycleTime": "1.0",
-    "font": "0.08, 1.5",
+    "font": "0.05, 1.5",
     "id": "Commit10"
   },
   {
@@ -544,7 +544,7 @@
     "endBorderColor": ".4, .4, .4",
     "shadowWidth": "2.0",
     "cycleTime": "1.0",
-    "font": "0.08, 1.5",
+    "font": "0.05, 1.5",
     "id": "Commit"
   },
   {
@@ -562,7 +562,7 @@
     "endBorderColor": ".7, .4, .4",
     "shadowWidth": "2.0",
     "cycleTime": "1.0",
-    "font": "0.07, 1.5",
+    "font": "0.045, 1.5",
     "id": "CommitAll"
   },
   {
@@ -580,7 +580,7 @@
     "endBorderColor": ".4, .4, .4",
     "shadowWidth": "2.0",
     "cycleTime": "1.0",
-    "font": "0.08, 1.5",
+    "font": "0.05, 1.5",
     "id": "NewGame"
   },
 
@@ -616,7 +616,7 @@
     "endBorderColor": ".4, .7, .4",
     "shadowWidth": "2.0",
     "cycleTime": "1.0",
-    "font": "0.07, 1.0",
+    "font": "0.045, 1.0",
     "id": "CommitAll"
   },
   {
@@ -634,7 +634,7 @@
     "endBorderColor": ".7, .4, .4",
     "shadowWidth": "2.0",
     "cycleTime": "1.0",
-    "font": "0.07, 1.5",
+    "font": "0.045, 1.5",
     "id": "CommitAll"
   },
 
@@ -655,7 +655,7 @@
     "selectionColor": "0, .6, 0, .8",
     "highlightColor": "0, .6, 0, .35",
     "highlightTextColor": "1, 1, 1, 1",
-    "font": "0.07",
+    "font": "0.045",
     "textMargins": "0.02, 0.01",
     "id": "Missions"
   },
@@ -678,7 +678,7 @@
     "rect": "-.10, -.8, 1.01, 1.45",
     "color": "0.1, 0.1, 0.1, .1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": "0.06",
+    "font": "0.04",
     "multiline": true,
     "textColor": "1, 1, 1, 1",
     "textMargins": "0.02, 0.01",
@@ -708,7 +708,7 @@
     "endBorderColor": ".4, .4, .4",
     "shadowWidth": "2.0",
     "cycleTime": "1.0",
-    "font": "0.08, 1.5",
+    "font": "0.05, 1.5",
     "id": "Commit"
   },
 
@@ -729,7 +729,7 @@
     "selectionColor": "0, .6, 0, .8",
     "highlightColor": "0, .6, 0, .35",
     "highlightTextColor": "1, 1, 1, 1",
-    "font": "0.07",
+    "font": "0.045",
     "textMargins": "0.02, 0.01",
     "id": "Ships"
   },
@@ -752,7 +752,7 @@
     "rect": "-.10, -.5, 1.01, 1.15",
     "color": "0.1, 0.1, 0.1, .1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": "0.06",
+    "font": "0.04",
     "multiline": true,
     "textColor": "1, 1, 1, 1",
     "textMargins": "0.02, 0.01",
@@ -790,7 +790,7 @@
     "endBorderColor": ".4, .4, .4",
     "shadowWidth": "2.0",
     "cycleTime": "1.0",
-    "font": "0.08, 1.5",
+    "font": "0.05, 1.5",
     "id": "Commit"
   },
   {
@@ -806,7 +806,7 @@
     "endBorderColor": ".4, .4, .4",
     "shadowWidth": "2.0",
     "cycleTime": "1.0",
-    "font": "0.08, 1.5",
+    "font": "0.05, 1.5",
     "id": "Commit10"
   },
 
@@ -827,7 +827,7 @@
     "downColor": "0, 0.4, 0, 0.5",
     "downTextColor": "0, 0, 0, 1",
     "highlightColor": "0, 0.4, 0, 0.4",
-    "font": "0.07"
+    "font": "0.045"
   },
   {
     "type": "button",
@@ -841,7 +841,7 @@
     "downColor": "0, 0.4, 0, 0.5",
     "downTextColor": "0, 0, 0, 1",
     "highlightColor": "0, 0.4, 0, 0.4",
-    "font": "0.07"
+    "font": "0.045"
   },
   {
     "type": "staticDisplay",
@@ -851,7 +851,7 @@
     "rect": "-.96, -.95, 1.87, 1.4",
     "color": "0.1, 0.1, 0.1, .1",
     "outlineColor": "0.5, 0.5, 0.5, 1",
-    "font": "0.07",
+    "font": "0.045",
     "multiline": true,
     "textColor": "1, 1, 1, 1",
     "textMargins": "0.02, 0.01",
