@@ -607,6 +607,7 @@
         "vsync": "on",
         "frame_limit_mode": "unlimited",
         "max_framerate": 0,
+        "show_fps": false,
         "full_screen": false,
         "gauge_static": "static.ani",
         "generic_cargo_rotation_speed": 1.0,
