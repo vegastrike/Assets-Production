@@ -105,8 +105,6 @@ INSTALL(DIRECTORY animations/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/an
 
 INSTALL(DIRECTORY bases/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/bases)
 
-INSTALL(DIRECTORY cgi-accountserver/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/cgi-accountserver)
-
 INSTALL(DIRECTORY cockpits/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/cockpits
         PATTERN "*.am" EXCLUDE)
 
