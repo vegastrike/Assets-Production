@@ -479,47 +479,21 @@ attack your previously targetted object when you leave the turret.
 * 19) Single-Player Controls*
 
 The full list of controls can get very exhaustive.
-Check in vegastrike.config, which will lay out each key,
-or find a graphical description of the keys.
+Press Alt-C in-game to open the settings screen, where every action and
+its current binding is listed, or find a graphical description of the keys.
 
 
 * 20) Changing Controls*
 
-If you would like to change the controls of Vega Strike, open either
-vegastrike.config or vegastrike.config.2player They will both have a
-section at the very top called "bindings":
+To change the controls of Vega Strike, press Alt-C in-game and open the
+Bindings screen. Every action can be bound to a key, mouse button,
+joystick button or hat, and conflicts are flagged as you go.
 
-<bindings>
-<bind key="S" player="0" modifier="none" command="Cockpit::SkipMusicTrack" />
-
-The above will start the bindings section and then bind the "S" key to
-SkipMusicTrack for player 0.  The player defaults to and should only
-be 1 in multiplayer.
-
-<bind mouse="0" player="0" button="0" modifier="none" command="FireKey" />
-
-This line will bind the FireKey command to the mouse button #0 (the
-left button) for player 0. Button 1 and 2 will be the midle and right
-buttons. After that, buttons are experimental...
-
-<axis name="x" mouse="0" axis="0" inverse="false" />
-<axis name="y" mouse="0" axis="1" inverse="false" />
-
-This binds the axes of the mouse... should you wish the mouse to drag
-in opposite direction set inverse to true.
-
-<bind joystick="0" player="0" button="0" modifier="none" command="FireKey" />
-
-The previous line will bind the FireKey command to the joystick button
-#0 for player 0. You can add as many buttons as you want, as long as
-your joystick has them.
-
-<axis name="x" joystick="0" axis="0" inverse="false" />
-<axis name="y" joystick="0" axis="1" inverse="false" />
-This binds the axes of the joystick... should you wish the joystick to
-move in opposite direction set inverse to true.
-
-</bindings>
+Bindings are stored in bindings.json - actions (keys, mouse buttons,
+joystick buttons and hats) and axes. The settings screen writes your
+changes to the user overlay in ~/.vegastrike/, so the shipped file is
+never modified. The same applies to config.json (settings and preset
+selections) and theme.json (colours).
 
 * 21) Cockpit Views*
 
@@ -680,7 +654,7 @@ Multiplayer currently has two modes:
    server you are connecting to.
 
    Also, type in a username, and supply a password if one is set up in
-   the "server_password" variable in vegastrike.config.
+   the "server_password" variable in config.json.
 
  *** MMO (online multiplayer) style play
    This style will act like Single Player mode, but will allow you to
