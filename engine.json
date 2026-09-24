@@ -1361,7 +1361,8 @@
             "use_upgrade_template_maxrange": true,
             "use_max_shield_energy_usage": false,
             "velocity_max": 10000.0,
-            "warp_clearance_attract": 0.7,
+            "warp_clearance_attract": 0.9,
+            "warp_clearance_repel_exponent": 2,
             "warp_is_interstellar": false,
             "warp_min_range": 3000.0,
             "weapon_damage_efficiency": 1.0,
@@ -1472,6 +1473,7 @@
             "warp_multiplier_min": 1.5,
             "warp_ramp_down_time": 0.1,
             "warp_ramp_up_time": 5.0,
+            "warp_speed_curve_exponent": 0.2,
             "warp_stretch_cutoff": 500000.0,
             "warp_stretch_decel_cutoff": 2500000.0,
             "fov_link": {
