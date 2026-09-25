@@ -14,10 +14,6 @@ Shader Support
 (@all artists: yet another chance to contribute -- most units still
  need normal maps)
 
-Integrated Multiplayer Support
-*Deathmatch
-*Missions, money, and upgrades
-
 Reimplemented physics system
 *Support for simultaneous simulation at variable fidelity of all ships
  present in a system
@@ -59,8 +55,7 @@ Miscellaneous improvements
   20. Changing Controls
   21. Cockpit Views
   22. Troubleshooting
-  23. ALPHA Multi-player Mode
-  24. License
+  23. License
 
 
 *  2) Starting a New Game
@@ -634,47 +629,7 @@ If you should encounter problems, then you should check these things:
      did to cause it to: vegastrike-users@lists.sourceforge.net
      <mailto:vegastrike-users@lists.sourceforge.net>
 
-* 23) ALPHA Online Multiplayer Mode*
-
-To Connect to a Multiplayer game, start up Vega Strike.
-Then, from the main menu, select "Multiplayer".
-
-Multiplayer currently has two modes:
- *** LAN/Deathmatch mode
-    * Creating a game *
-   To play a LAN game in deathmatch mode, you can run "vegaserver".
-   The terminal window will show connection information...  After this
-   information appears, you can connect to the server.
-
-   The way that information
-
-    * Joining a game *
-   In Vega Strike, click on "Independent Server".  If you are connecting
-   from a different computer, you must type in the "IP Address" of the
-   server you are connecting to.
-
-   Also, type in a username, and supply a password if one is set up in
-   the "server_password" variable in config.json.
-
- *** MMO (online multiplayer) style play
-   This style will act like Single Player mode, but will allow you to
-   interact with other players.
-   
-   To connect to a server, click on Multiplayer, and in the Online
-   Account mode, type in your username and password.
-   Register an account at http://forums.vega-strike.org/
-   and sign up for an account.
-   
-   It is also in late alpha, so please report any bugs you find (we
-   know they're there).  In addition, be aware that the servers may
-   have significant downtime.  Do not be surprised if you get an error
-   message.
-
-   If you would like to run your own server, consult the wiki or
-   forums for more information.  You will need an accountserver,
-   and also will probably have to keep up-to-date with Subversion.
-
-* 24) License*
+* 23) License*
 
 Vega Strike is distributed under the GNU General Public License,
 version 2.  You may find the full text of this license in the
