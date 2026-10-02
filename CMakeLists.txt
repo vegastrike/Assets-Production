@@ -2,8 +2,8 @@
 # @file   : CMakeLists.txt
 # @brief  : cmake configuration file for vsUTCS
 #====================================
-# Copyright (C) 2020-2025 Evert Vorster, Stephen G. Tuggy, Roy Falk,
-# and other vsUTCS contributors.
+# Copyright (C) 2020-2026 Evert Vorster, Stephen G. Tuggy, Roy Falk,
+# Benjamen R. Meyer, and other vsUTCS contributors.
 #
 # This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
 #
