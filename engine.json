@@ -1262,6 +1262,8 @@
             "extra_space_drag_for_cargo": 0.005,
             "face_target_on_auto": false,
             "fire_missing_autotrackers": true,
+            "flt_orthogonal_thrust_smoothing_time": 1.0,
+            "flt_orthogonal_thrust_speed_reduce_factor": 1.0,
             "friendly_auto_radius": 0.0,
             "game_speed_affects_autogen_systems": false,
             "game_speed_lying": false,
