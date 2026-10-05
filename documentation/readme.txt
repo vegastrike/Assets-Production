@@ -14,10 +14,6 @@ Shader Support
 (@all artists: yet another chance to contribute -- most units still
  need normal maps)
 
-Integrated Multiplayer Support
-*Deathmatch
-*Missions, money, and upgrades
-
 Reimplemented physics system
 *Support for simultaneous simulation at variable fidelity of all ships
  present in a system
@@ -59,8 +55,7 @@ Miscellaneous improvements
   20. Changing Controls
   21. Cockpit Views
   22. Troubleshooting
-  23. ALPHA Multi-player Mode
-  24. License
+  23. License
 
 
 *  2) Starting a New Game
@@ -479,47 +474,21 @@ attack your previously targetted object when you leave the turret.
 * 19) Single-Player Controls*
 
 The full list of controls can get very exhaustive.
-Check in vegastrike.config, which will lay out each key,
-or find a graphical description of the keys.
+Press Alt-C in-game to open the settings screen, where every action and
+its current binding is listed, or find a graphical description of the keys.
 
 
 * 20) Changing Controls*
 
-If you would like to change the controls of Vega Strike, open either
-vegastrike.config or vegastrike.config.2player They will both have a
-section at the very top called "bindings":
+To change the controls of Vega Strike, press Alt-C in-game and open the
+Bindings screen. Every action can be bound to a key, mouse button,
+joystick button or hat, and conflicts are flagged as you go.
 
-<bindings>
-<bind key="S" player="0" modifier="none" command="Cockpit::SkipMusicTrack" />
-
-The above will start the bindings section and then bind the "S" key to
-SkipMusicTrack for player 0.  The player defaults to and should only
-be 1 in multiplayer.
-
-<bind mouse="0" player="0" button="0" modifier="none" command="FireKey" />
-
-This line will bind the FireKey command to the mouse button #0 (the
-left button) for player 0. Button 1 and 2 will be the midle and right
-buttons. After that, buttons are experimental...
-
-<axis name="x" mouse="0" axis="0" inverse="false" />
-<axis name="y" mouse="0" axis="1" inverse="false" />
-
-This binds the axes of the mouse... should you wish the mouse to drag
-in opposite direction set inverse to true.
-
-<bind joystick="0" player="0" button="0" modifier="none" command="FireKey" />
-
-The previous line will bind the FireKey command to the joystick button
-#0 for player 0. You can add as many buttons as you want, as long as
-your joystick has them.
-
-<axis name="x" joystick="0" axis="0" inverse="false" />
-<axis name="y" joystick="0" axis="1" inverse="false" />
-This binds the axes of the joystick... should you wish the joystick to
-move in opposite direction set inverse to true.
-
-</bindings>
+Bindings are stored in bindings.json - actions (keys, mouse buttons,
+joystick buttons and hats) and axes. The settings screen writes your
+changes to the user overlay in ~/.vegastrike/, so the shipped file is
+never modified. The same applies to config.json (settings and preset
+selections) and theme.json (colours).
 
 * 21) Cockpit Views*
 
@@ -660,47 +629,7 @@ If you should encounter problems, then you should check these things:
      did to cause it to: vegastrike-users@lists.sourceforge.net
      <mailto:vegastrike-users@lists.sourceforge.net>
 
-* 23) ALPHA Online Multiplayer Mode*
-
-To Connect to a Multiplayer game, start up Vega Strike.
-Then, from the main menu, select "Multiplayer".
-
-Multiplayer currently has two modes:
- *** LAN/Deathmatch mode
-    * Creating a game *
-   To play a LAN game in deathmatch mode, you can run "vegaserver".
-   The terminal window will show connection information...  After this
-   information appears, you can connect to the server.
-
-   The way that information
-
-    * Joining a game *
-   In Vega Strike, click on "Independent Server".  If you are connecting
-   from a different computer, you must type in the "IP Address" of the
-   server you are connecting to.
-
-   Also, type in a username, and supply a password if one is set up in
-   the "server_password" variable in vegastrike.config.
-
- *** MMO (online multiplayer) style play
-   This style will act like Single Player mode, but will allow you to
-   interact with other players.
-   
-   To connect to a server, click on Multiplayer, and in the Online
-   Account mode, type in your username and password.
-   Register an account at http://forums.vega-strike.org/
-   and sign up for an account.
-   
-   It is also in late alpha, so please report any bugs you find (we
-   know they're there).  In addition, be aware that the servers may
-   have significant downtime.  Do not be surprised if you get an error
-   message.
-
-   If you would like to run your own server, consult the wiki or
-   forums for more information.  You will need an accountserver,
-   and also will probably have to keep up-to-date with Subversion.
-
-* 24) License*
+* 23) License*
 
 Vega Strike is distributed under the GNU General Public License,
 version 2.  You may find the full text of this license in the
