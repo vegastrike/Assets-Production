@@ -742,11 +742,7 @@
         },
         "dock": {
             "count_to_dock_range": 100000.0,
-            "dock_planet_radius_percent": 1.5,
-            "planet_dock_port_min_size": 300.0,
-            "planet_dock_port_size": 1.2,
-            "simple_dock": true,
-            "simple_dock_range": 5000.0
+            "planet_dock_port_min_size": 300.0
         },
         "economics": {
             "repair_price": 5000.0,
@@ -1327,8 +1323,6 @@
             "out_of_arc_fire_disrupts_lock": false,
             "percent_missile_match_target_velocity": 1.0,
             "persistent_on_load": true,
-            "planet_dock_min_port_size": 300.0,
-            "planet_dock_port_size": 1.2,
             "planet_ejection_stophack": 100000.0,
             "planets_always_neutral": true,
             "planets_can_have_subunits": false,
