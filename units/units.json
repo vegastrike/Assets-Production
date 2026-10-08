@@ -3496,6 +3496,7 @@
     },
     {
         "Key": "navpoint",
+        "Mass": "1",
         "Directory": "./navpoint",
         "Name": "navpoint",
         "Object_Type": "FIXME",
@@ -3521,6 +3522,7 @@
     },
     {
         "Key": "navpoint.blank",
+        "Mass": "1",
         "Directory": "./navpoint",
         "Name": "navpoint",
         "Object_Type": "FIXME",
@@ -3541,6 +3543,7 @@
     },
     {
         "Key": "navpoint.template",
+        "Mass": "1",
         "Directory": "./navpoint",
         "Name": "navpoint",
         "Object_Type": "FIXME",
@@ -3885,6 +3888,7 @@
     },
     {
         "Key": "pmiss",
+        "Mass": "0.08",
         "Directory": "./weapons/pmiss",
         "Name": "pmiss",
         "Object_Type": "FIXME",
@@ -4374,6 +4378,7 @@
     },
     {
         "Key": "wormhole.neutral.stable",
+        "Mass": "1000",
         "Directory": "./wormhole",
         "Name": "wormhole",
         "Object_Type": "FIXME",
@@ -4399,6 +4404,7 @@
     },
     {
         "Key": "wormhole.neutral.unstable",
+        "Mass": "1000",
         "Directory": "./wormhole",
         "Name": "wormhole",
         "Object_Type": "FIXME",
@@ -4425,6 +4431,7 @@
     },
     {
         "Key": "wormhole.stable",
+        "Mass": "1000",
         "Directory": "./wormhole",
         "Name": "wormhole",
         "Object_Type": "FIXME",
@@ -4451,6 +4458,7 @@
     },
     {
         "Key": "wormhole.stableglownetsaccessory",
+        "Mass": "1",
         "Directory": "./wormhole",
         "Name": "wormhole",
         "Object_Type": "FIXME",
@@ -4477,6 +4485,7 @@
     },
     {
         "Key": "wormhole.stableswirlsaccessory",
+        "Mass": "1",
         "Directory": "./wormhole",
         "Name": "wormhole",
         "Object_Type": "FIXME",
@@ -4505,6 +4514,7 @@
     },
     {
         "Key": "wormhole.unstable",
+        "Mass": "1000",
         "Directory": "./wormhole",
         "Name": "wormhole",
         "Object_Type": "FIXME",
@@ -4531,6 +4541,7 @@
     },
     {
         "Key": "wormhole.unstableglownetsaccessory",
+        "Mass": "1",
         "Directory": "./wormhole",
         "Name": "wormhole",
         "Object_Type": "FIXME",
@@ -4559,6 +4570,7 @@
     },
     {
         "Key": "wormhole.unstableswirlsaccessory",
+        "Mass": "1",
         "Directory": "./wormhole",
         "Name": "wormhole",
         "Object_Type": "FIXME",
@@ -10193,6 +10205,7 @@
     },
     {
         "Key": "Relaysat",
+        "Mass": "31960000",
         "Directory": "./installations/Relaysat",
         "Name": "Relay Satellite",
         "STATUS": "BROKEN",
