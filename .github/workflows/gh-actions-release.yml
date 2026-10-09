@@ -1,7 +1,7 @@
 name: 'GH Actions - Release'
 permissions:
-    contents: write
-    pull-requests: read
+  contents: write
+  pull-requests: read
 
 on:
   release:
@@ -23,51 +23,51 @@ jobs:
       matrix:
         include:
           # Source tarballs only
-          - FROM:     'debian:bookworm'
+          - FROM: 'debian:bookworm'
             ARTIFACT_EXT: 'tar.[xb]z*'
           # only build one Deb File b/c they're so large
-          - FROM:     'debian:bookworm'
+          - FROM: 'debian:bookworm'
             ARTIFACT_EXT: 'deb'
-          - FROM:     'opensuse/leap:16.0'
+          - FROM: 'opensuse/leap:16.0'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'opensuse/leap:15.6'
+          - FROM: 'opensuse/leap:15.6'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'fedora:43'
+          - FROM: 'fedora:43'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'fedora:42'
+          - FROM: 'fedora:42'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'rockylinux_rockylinux:10.1'
+          - FROM: 'rockylinux_rockylinux:10.1'
             ARTIFACT_EXT: 'rpm'
-          - FROM:     'rockylinux_rockylinux:9.7'
+          - FROM: 'rockylinux_rockylinux:9.7'
             ARTIFACT_EXT: 'rpm'
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
-      with:
-        fetch-depth: 2
-        submodules: false
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 #v7.0.1
+        with:
+          fetch-depth: 2
+          submodules: false
 
-    - name: Extract tag name and short SHA
-      shell: bash
-      run: |
-        echo "TAG_NAME=$(echo ${GITHUB_REF#refs/tags/} | sed 's/\//_/g')" >> $GITHUB_ENV
-        echo "SHORT_SHA=`git rev-parse --short HEAD`" >> $GITHUB_ENV
-    - name: Test tag name and short SHA
-      run: |
-        echo "${TAG_NAME}"
-        echo "${SHORT_SHA}"
+      - name: Extract tag name and short SHA
+        shell: bash
+        run: |
+          echo "TAG_NAME=$(echo ${GITHUB_REF#refs/tags/} | sed 's/\//_/g')" >> $GITHUB_ENV
+          echo "SHORT_SHA=`git rev-parse --short HEAD`" >> $GITHUB_ENV
+      - name: Test tag name and short SHA
+        run: |
+          echo "${TAG_NAME}"
+          echo "${SHORT_SHA}"
 
-    - name: Run CI
-      env:
-        FROM:       ${{ matrix.FROM }}
-        FLAGS:      ''
-        IS_RELEASE: 1
-      run: script/cibuild $FLAGS
+      - name: Run CI
+        env:
+          FROM: ${{ matrix.FROM }}
+          FLAGS: ''
+          IS_RELEASE: 1
+        run: script/cibuild $FLAGS
 
-    - name: Upload the artifacts
-      uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        files: "packages/*.${{ matrix.ARTIFACT_EXT }}"
+      - name: Upload the artifacts
+        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: "packages/*.${{ matrix.ARTIFACT_EXT }}"

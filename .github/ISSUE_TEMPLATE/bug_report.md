@@ -17,8 +17,9 @@ Steps to reproduce the behavior. Code examples are appreciated.
 A clear and concise description of what you expected to happen.
 
 **Please complete the following information):**
- - OS: [e.g. iOS]
- - Software Versions [e.g. 22]
+
+- OS: [e.g. iOS]
+- Software Versions [e.g. 22]
 
 **Additional context**
 Add any other context about the problem here.

@@ -1,7 +1,7 @@
 name: 'MacOS-Release'
 permissions:
-    contents: write
-    pull-requests: read
+  contents: write
+  pull-requests: read
 
 on:
   release:
