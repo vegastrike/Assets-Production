@@ -1,4 +1,4 @@
-name: 'GH Actions - PR'
+name: Linux-PR
 permissions:
   contents: read
   pull-requests: read

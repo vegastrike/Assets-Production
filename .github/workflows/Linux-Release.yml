@@ -1,4 +1,4 @@
-name: 'GH Actions - Release'
+name: Linux-Release
 permissions:
   contents: write
   pull-requests: read
