@@ -29,8 +29,8 @@ jobs:
           - macOS-15-intel
           - macOS-26-intel
           # Apple Silicon
-          #- macOS-15
-          #- macOS-26
+          - macOS-15
+          - macOS-26
 
     steps:
       - name: Check out repository
