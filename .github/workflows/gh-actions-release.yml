@@ -30,15 +30,13 @@ jobs:
             ARTIFACT_EXT: 'deb'
           - FROM: 'opensuse/leap:16.0'
             ARTIFACT_EXT: 'rpm'
-          - FROM: 'opensuse/leap:15.6'
+          - FROM: 'fedora:44'
             ARTIFACT_EXT: 'rpm'
           - FROM: 'fedora:43'
             ARTIFACT_EXT: 'rpm'
-          - FROM: 'fedora:42'
+          - FROM: 'rockylinux_rockylinux:10.2'
             ARTIFACT_EXT: 'rpm'
-          - FROM: 'rockylinux_rockylinux:10.1'
-            ARTIFACT_EXT: 'rpm'
-          - FROM: 'rockylinux_rockylinux:9.7'
+          - FROM: 'rockylinux_rockylinux:9.8'
             ARTIFACT_EXT: 'rpm'
 
     steps:
