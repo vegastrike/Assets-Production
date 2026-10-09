@@ -1,12 +1,12 @@
 name: Fortify on Demand Scan
 permissions:
-    contents: read
-    pull-requests: read
+  contents: read
+  pull-requests: read
 
 # Controls when the action will run.
 on:
-#   push:
-#   pull_request:
+  # push:
+  # pull_request:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
