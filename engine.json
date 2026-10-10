@@ -706,7 +706,7 @@
             },
             "shield": {
                 "energy_source": "energy",
-                "maintenance_factor": 0.05,
+                "maintenance_factor": 0.01,
                 "regeneration_factor": 0.05
             }
         },
@@ -742,15 +742,12 @@
         },
         "dock": {
             "count_to_dock_range": 100000.0,
-            "dock_planet_radius_percent": 1.5,
-            "planet_dock_port_min_size": 300.0,
-            "planet_dock_port_size": 1.2,
-            "simple_dock": true,
-            "simple_dock_range": 5000.0
+            "planet_dock_port_min_size": 300.0
         },
         "economics": {
-            "repair_price": 5000.0,
-            "sellback_shipping_price": 6000.0,
+            "component_share": 0.05,
+            "scrap_price_fraction": 0.05,
+            "scrap_price_per_mass": 5.0,
             "ship_sellback_price": 0.5,
             "shipping_price_base": 0.0,
             "shipping_price_insys": 1000.0,
@@ -1201,7 +1198,7 @@
             "auto_landing_warning_distance": 350.0,
             "auto_pilot_compensate_for_interdiction": false,
             "auto_pilot_no_enemies_distance_multiplier": 4.0,
-            "auto_pilot_planet_radius_percent": 0.2,
+            "auto_pilot_planet_radius_percent": 0.495,
             "auto_pilot_spec_lining_up_angle": 30.0,
             "auto_pilot_terminate": true,
             "auto_pilot_termination_distance": 2500.0,
@@ -1261,8 +1258,6 @@
             "extra_space_drag_for_cargo": 0.005,
             "face_target_on_auto": false,
             "fire_missing_autotrackers": true,
-            "flt_orthogonal_thrust_smoothing_time": 1.0,
-            "flt_orthogonal_thrust_speed_reduce_factor": 1.0,
             "friendly_auto_radius": 0.0,
             "game_speed_affects_autogen_systems": false,
             "game_speed_lying": false,
@@ -1327,8 +1322,6 @@
             "out_of_arc_fire_disrupts_lock": false,
             "percent_missile_match_target_velocity": 1.0,
             "persistent_on_load": true,
-            "planet_dock_min_port_size": 300.0,
-            "planet_dock_port_size": 1.2,
             "planet_ejection_stophack": 100000.0,
             "planets_always_neutral": true,
             "planets_can_have_subunits": false,

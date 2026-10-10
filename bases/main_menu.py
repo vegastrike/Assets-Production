@@ -278,46 +278,45 @@ rooms_quine = computer_lib.MakePersonalComputer(room_menu, room_menu,
         1) # and return room map, rather than only root room
 rooms_quine['computer'].setMode('load')
 
-# Link
-sprite_loc = GUI.GUIRect(48,300,150,32,"pixel",(1280,1024))
+# Load game button
+sprite_loc = GUI.GUIRect(50,295,177,43,"pixel",(1280,1024))
 sprite = {
-        '*':None,
-        'down' : ( 'interfaces/main_menu/load_button_pressed.spr', sprite_loc ) }
+        '*': ( 'interfaces/main_menu/load_button.spr', sprite_loc ),
+        'hot' : ( 'interfaces/main_menu/load_button_hover.spr', sprite_loc ) }
 GUI.GUIRoomButton(guiroom, rooms_quine['load'], 'XXXLoad Game','Load_Game',sprite,sprite_loc)
 
-# New game
-sprite_loc = GUI.GUIRect(48,370,128,32,"pixel",(1280,1024))
+# Multiplayer button
+sprite_loc = GUI.GUIRect(50,365,177,43,"pixel",(1280,1024))
 sprite = {
-        '*':None,
-        'down' : ( 'interfaces/main_menu/net_button_pressed.spr', sprite_loc ) }
-GUI.GUICompButton(guiroom, 'Network', 'XXXNetwork Game','Network_Game',sprite,sprite_loc)
+        '*': ( 'interfaces/main_menu/multiplayer_button.spr', sprite_loc ) }
+GUI.GUICompButton(guiroom, 'Network', 'XXXNetwork Game','Network_Game',sprite,sprite_loc,'disabled')
 
-# Link
-sprite_loc = GUI.GUIRect(48,510,92,32,"pixel",(1280,1024))
+# Credits button
+sprite_loc = GUI.GUIRect(50,507,177,43,"pixel",(1280,1024))
 sprite = {
-        '*':None,
-        'down' : ( 'interfaces/main_menu/credits_button_pressed.spr', sprite_loc ) }
+        '*': ( 'interfaces/main_menu/credits_button.spr', sprite_loc ),
+        'hot' : ( 'interfaces/main_menu/credits_button_hover.spr', sprite_loc ) }
 GUI.GUIRoomButton(guiroom, credits_guiroom, 'XXXShow Credits','Show_Credits',sprite,sprite_loc,clickHandler=enterCredits)
 
-# Link
-sprite_loc = GUI.GUIRect(48,440,150,32,"pixel",(1280,1024))
+# Intro button
+sprite_loc = GUI.GUIRect(50,435,177,43,"pixel",(1280,1024))
 sprite = {
-        '*':None,
-        'down' : ( 'interfaces/main_menu/intro_button_pressed.spr', sprite_loc ) }
+        '*': ( 'interfaces/main_menu/intro_button.spr', sprite_loc ),
+        'hot' : ( 'interfaces/main_menu/intro_button_hover.spr', sprite_loc ) }
 GUI.GUIRoomButton(guiroom, intro_guiroom, 'XXXShow Introduction','Show_Introduction',sprite,sprite_loc,clickHandler=enterCredits)
 
-# New game
-sprite_loc = GUI.GUIRect(48,224,128,32,"pixel",(1280,1024))
+# New game / Campaign
+sprite_loc = GUI.GUIRect(50,220,177,43,"pixel",(1280,1024))
 sprite = {
-        '*':None,
-        'down' : ( 'interfaces/main_menu/new_button_pressed.spr', sprite_loc ) }
+        '*': ( 'interfaces/main_menu/new_button.spr', sprite_loc ),
+        'hot' : ( 'interfaces/main_menu/new_button_hover.spr', sprite_loc ) }
 btn = GUI.GUIButton(guiroom, 'XXXNew Game','New_Game',sprite,sprite_loc,'enabled',StartNewGame)
 
 # Quit game
-sprite_loc = GUI.GUIRect(48,580,58,32,"pixel",(1280,1024))
+sprite_loc = GUI.GUIRect(50,580,177,43,"pixel",(1280,1024))
 sprite = {
-        '*':None,
-        'down' : ( 'interfaces/main_menu/quit_button_pressed.spr', sprite_loc ) }
+        '*': ( 'interfaces/main_menu/quit_button.spr', sprite_loc ),
+        'hot' : ( 'interfaces/main_menu/quit_button_hover.spr', sprite_loc ) }
 btn = GUI.GUIButton(guiroom, 'XXXQuit Game','Quit_Game',sprite,sprite_loc,'enabled',QuitGame)
 
 # Draw everything
