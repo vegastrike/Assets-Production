@@ -1,7 +1,7 @@
 name: Windows-CI
 permissions:
-    contents: read
-    pull-requests: read
+  contents: read
+  pull-requests: read
 
 on: [ pull_request, workflow_dispatch ]
 
@@ -15,10 +15,10 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - os:              windows-2022
-            is-release:      0
-          - os:              windows-2025
-            is-release:      0
+          - os: windows-2022
+            is-release: 0
+          - os: windows-2025
+            is-release: 0
 
     steps:
       - name: Checkout

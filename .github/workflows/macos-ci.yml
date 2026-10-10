@@ -1,7 +1,7 @@
 name: 'MacOS-CI'
 permissions:
-    contents: read
-    pull-requests: read
+  contents: read
+  pull-requests: read
 
 on: [ pull_request, workflow_dispatch ]
 
@@ -23,8 +23,8 @@ jobs:
           - macOS-15-intel
           - macOS-26-intel
           # Apple Silicon
-          #- macOS-15
-          #- macOS-26
+          - macOS-15
+          - macOS-26
 
     steps:
       - name: Check out repository
