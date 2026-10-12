@@ -18,9 +18,9 @@ echo "Starting Vega Strike..."
 echo ""
 
 if [ -d "${VEGASTRIKE_LOCAL_SHARE_DIR}" ]; then
-    vegastrike -d"${VEGASTRIKE_LOCAL_SHARE_DIR}" "$1"
+    vegastrike-engine -d"${VEGASTRIKE_LOCAL_SHARE_DIR}" "$1"
 elif [ -d "${VEGASTRIKE_SHARE_DIR}" ]; then
-    vegastrike -d"${VEGASTRIKE_SHARE_DIR}" "$1"
+    vegastrike-engine -d"${VEGASTRIKE_SHARE_DIR}" "$1"
 else
     echo "Unknown Game Asset Data Location."
     echo "Do you have the game assets installed?"
