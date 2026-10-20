@@ -193,10 +193,9 @@
         "num_running_systems": 4,
         "warp_ramp_down_time": 0.1
     },
-    "settings_app": {
-        "details": "High",
-        "shaders": "Average",
-        "audio": "All Sounds",
-        "physics": "Default (1.0)"
+    "dock": {
+        "mode": "simple",
+        "simple_dock_range": 5000.0,
+        "dock_planet_radius_percent": 1.5
     }
 }

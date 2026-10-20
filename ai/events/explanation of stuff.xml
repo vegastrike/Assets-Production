@@ -65,7 +65,7 @@ Target_Going_Your_Direction 0 or 1. No or Yes.
  afterburn vector away          vectors thrusters away from the target while turning away from target and hitting afterburners
  afterburn veer away     	    vectors thrusters away from the target while facing it and shooting with afterburners engaged
  afterburner slide				aim slightly away from the target, fire afterburners forward then aim towards the target and shoot
- aggressive loop around  	    uses whatever mode is selected in the vegastrike.config for use_afterburners and vectors thrust to above or to the left or right of the target in an effort to get past it and get on its tail while aiming at it with its guns
+ aggressive loop around  	    uses whatever mode is selected in the configuration for use_afterburners and vectors thrust to above or to the left or right of the target in an effort to get past it and get on its tail while aiming at it with its guns
  aggressive loop around fast	hits the afterburners and vectors the thrusters to left or above the target while facing it and shooting at it and eventually coming around behind it
  aggressive loop around slow    uses normal thruster to vector thrust just above or to the left or right of the target in an effort to pass it and get behind the target while shooting at it
  barrel roll                    hits the pitch and roll keys at the same time to get a corkscrew effect
@@ -81,7 +81,7 @@ Target_Going_Your_Direction 0 or 1. No or Yes.
  fly straight                   fly in a straight line
  fly straight afterburner	    light afterburners and fly in a straight line
  kick stop	     				stop as fast as possible
- loop around                    uses whatever mode is selected in the vegastrike.config for use_afterburners and aims to above or to the left or right of the target in an effort to get past it and get on its tail
+ loop around                    uses whatever mode is selected in the configuration for use_afterburners and aims to above or to the left or right of the target in an effort to get past it and get on its tail
  loop around fast               hits the afterburner and aims just to the left or above or right of the target in order to hopefully pass it and come around on its tail     
  loop around slow               uses normal thrusters and aims just above or to the left or right of the target in an effort to pass it and get behind it
  match velocity                 vectors thrusters such that the target velocity is matched

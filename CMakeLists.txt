@@ -2,8 +2,8 @@
 # @file   : CMakeLists.txt
 # @brief  : cmake configuration file for vsUTCS
 #====================================
-# Copyright (C) 2020-2025 Evert Vorster, Stephen G. Tuggy, Roy Falk,
-# and other vsUTCS contributors.
+# Copyright (C) 2020-2026 Evert Vorster, Stephen G. Tuggy, Roy Falk,
+# Benjamen R. Meyer, and other vsUTCS contributors.
 #
 # This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
 #
@@ -24,7 +24,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.21 FATAL_ERROR)
 
 SET(vsUTCS_VERSION_MAJOR "0")
-SET(vsUTCS_VERSION_MINOR "10")
+SET(vsUTCS_VERSION_MINOR "11")
 SET(vsUTCS_VERSION_PATCH "0")
 
 # Auto-populate with the git hash of the build
@@ -105,8 +105,6 @@ INSTALL(DIRECTORY animations/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/an
 
 INSTALL(DIRECTORY bases/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/bases)
 
-INSTALL(DIRECTORY cgi-accountserver/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/cgi-accountserver)
-
 INSTALL(DIRECTORY cockpits/ DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike/cockpits
         PATTERN "*.am" EXCLUDE)
 
@@ -170,8 +168,6 @@ INSTALL(FILES py27_modules.7z DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
 INSTALL(FILES py3_modules.7z DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-INSTALL(FILES setup.config DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
-
 INSTALL(FILES vega-license.txt DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
 INSTALL(FILES weapon_list.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
@@ -179,7 +175,6 @@ INSTALL(FILES weapons.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
 INSTALL(FILES cursor1.cur DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
-INSTALL(FILES vegastrike.config DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 INSTALL(FILES config.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 INSTALL(FILES bindings.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 INSTALL(FILES theme.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
@@ -187,20 +182,13 @@ INSTALL(FILES engine.json DESTINATION ${CMAKE_INSTALL_DATADIR}/vegastrike)
 
 IF (CMAKE_SYSTEM_NAME STREQUAL Linux)
     INSTALL(FILES vegastrike.desktop DESTINATION share/applications)
-    INSTALL(FILES vegasettings.desktop DESTINATION share/applications)
 
     INSTALL(FILES vegastrike.png DESTINATION share/pixmaps)
-    INSTALL(FILES vegastrike_settings.png DESTINATION share/pixmaps)
 
     INSTALL(FILES vegastrike.xpm DESTINATION share/pixmaps)
     INSTALL(FILES vslogo.xpm DESTINATION share/pixmaps)
 
     INSTALL(FILES vs DESTINATION bin PERMISSIONS
-        OWNER_READ OWNER_WRITE OWNER_EXECUTE
-        GROUP_READ GROUP_EXECUTE
-        WORLD_READ WORLD_EXECUTE)
-
-    INSTALL(FILES vega-settings DESTINATION bin PERMISSIONS
         OWNER_READ OWNER_WRITE OWNER_EXECUTE
         GROUP_READ GROUP_EXECUTE
         WORLD_READ WORLD_EXECUTE)
