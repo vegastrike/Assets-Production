@@ -4395,7 +4395,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Sub_Units": "{wormhole.stableswirlsaccessory;0;0;0;;;;;;;180.0}{wormhole.stableswirlsaccessory;0;0;0;;;-1;;;;180.0}",
-        "Spec_Interdiction": "0.5"
+        "ftl_interdiction": "0.5"
     },
     {
         "Key": "wormhole.neutral.unstable",
@@ -4421,7 +4421,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Sub_Units": "{wormhole.unstableswirlsaccessory;0;0;0;;;;;;;180.0}{wormhole.unstableswirlsaccessory;0;0;0;;;-1;;;;180.0}",
-        "Spec_Interdiction": "0.5"
+        "ftl_interdiction": "0.5"
     },
     {
         "Key": "wormhole.stable",
@@ -4447,7 +4447,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Sub_Units": "{wormhole.stableswirlsaccessory;0;0;0;;;;;;;180.0}{wormhole.stableswirlsaccessory;0;0;0;;;-1;;;;180.0}",
-        "Spec_Interdiction": "0.5"
+        "ftl_interdiction": "0.5"
     },
     {
         "Key": "wormhole.stableglownetsaccessory",
@@ -4473,7 +4473,7 @@
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
-        "Spec_Interdiction": "0.5"
+        "ftl_interdiction": "0.5"
     },
     {
         "Key": "wormhole.stableswirlsaccessory",
@@ -4501,7 +4501,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Num_Animation_Stages": "1",
-        "Spec_Interdiction": "0.5"
+        "ftl_interdiction": "0.5"
     },
     {
         "Key": "wormhole.unstable",
@@ -4527,7 +4527,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Sub_Units": "{wormhole.unstableswirlsaccessory;0;0;0;;;;;;;180.0}{wormhole.unstableswirlsaccessory;0;0;0;;;-1;;;;180.0}",
-        "Spec_Interdiction": "0.5"
+        "ftl_interdiction": "0.5"
     },
     {
         "Key": "wormhole.unstableglownetsaccessory",
@@ -4555,7 +4555,7 @@
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
-        "Spec_Interdiction": "0.5"
+        "ftl_interdiction": "0.5"
     },
     {
         "Key": "wormhole.unstableswirlsaccessory",
@@ -4582,7 +4582,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Num_Animation_Stages": "1",
-        "Spec_Interdiction": "0.5"
+        "ftl_interdiction": "0.5"
     },
     {
         "Key": "asteroid0",
@@ -5760,7 +5760,7 @@
         "Max_FireControl_Functionality": "1",
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
-        "Spec_Interdiction": "0.75"
+        "ftl_interdiction": "0.75"
     },
     {
         "Key": "asteroidsPriv__neutral",
@@ -8667,7 +8667,7 @@
         "Dock": "{0;-50;100;-185;40;0}",
         "Cargo_Import": "{Industrially_Manufactured_Goods/Agricultural;.6;.2;25;12}{Natural_Products/Life-forms;.7;.1;;}{Natural_Products/Liquor;.9;.1;30;45}{Natural_Products/Renewable_Resources;.9;.1;50;49}{Natural_Products/Food;.4;.1;5000;4123}{upgrades/Ammunition/Common;2.5;.1;4500;5500}{upgrades/Jump_Drives;2;.1;24;12}{upgrades/Reactors/Standard;2;.1;45;22}{upgrades/Sensors/Common;2;.1;20;10}{upgrades/Shield_Systems/Standard_Dual_Shields;2;.1;40;15}{upgrades/Shield_Systems/Standard_Quad_Shields;2;.1;35;12}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "26000.0",
         "shield": "4000.0",
         "shield_facets": "2"
@@ -8708,7 +8708,7 @@
         "Dock": "{0;-50;100;-185;40;0}",
         "Cargo_Import": "{Industrially_Manufactured_Goods/Agricultural;.6;.2;25;12}{Natural_Products/Life-forms;.7;.1;;}{Natural_Products/Liquor;.9;.1;30;45}{Natural_Products/Renewable_Resources;.9;.1;50;49}{Natural_Products/Food;.4;.1;5000;4123}{upgrades/Ammunition/Common;2.5;.1;4500;5500}{upgrades/Jump_Drives;2;.1;24;12}{upgrades/Reactors/Standard;2;.1;45;22}{upgrades/Sensors/Common;2;.1;20;10}{upgrades/Shield_Systems/Standard_Dual_Shields;2;.1;40;15}{upgrades/Shield_Systems/Standard_Quad_Shields;2;.1;35;12}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "26000.0",
         "shield": "4000.0",
         "shield_facets": "2"
@@ -8749,7 +8749,7 @@
         "Dock": "{0;-50;100;-185;40;0}",
         "Cargo_Import": "{Industrially_Manufactured_Goods/Agricultural;.6;.2;25;12}{Natural_Products/Life-forms;.7;.1;;}{Natural_Products/Liquor;.9;.1;30;45}{Natural_Products/Renewable_Resources;.9;.1;50;49}{Natural_Products/Food;.4;.1;5000;4123}{upgrades/Ammunition/Common;2.5;.1;4500;5500}{upgrades/Jump_Drives;2;.1;24;12}{upgrades/Reactors/Standard;2;.1;45;22}{upgrades/Sensors/Common;2;.1;20;10}{upgrades/Shield_Systems/Standard_Dual_Shields;2;.1;40;15}{upgrades/Shield_Systems/Standard_Quad_Shields;2;.1;35;12}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "26000.0",
         "shield": "4000.0",
         "shield_facets": "2"
@@ -8791,7 +8791,7 @@
         "Dock": "{;-14.13;50.99;116.67;16.0;0}{20;-18.43;257.52;-31.63;48.0;0}{10;-18.43;197.63;-31.63;32.0;0}{;-18.43;144.8;-31.63;16.0;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;12;7}{Raw_Materials/Metals;.65;.2;24;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;12;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;15;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Confed/Milspec;1;;12;5}{starships/Purist/Milspec;1;;12;5}{upgrades/Ammunition/Common;1;.1;170;200}{upgrades/Ammunition/Confed;1;.1;170;200}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;12;5}{upgrades/Jump_Drives;1;.1;16;7}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Sensors/Confed;1;.1;12;5}{upgrades/Sensors/Highborn;.9;.3;5;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/Weapons/Beam_Arrays_Confed_Milspec;1;.1;2;1}{upgrades/Weapons/Mounted_Guns_Confed_Milspec;1;.1;12;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "6500.0",
         "shield_facets": "4"
@@ -8839,7 +8839,7 @@
         "Dock": "{11;-11;8;8.5;6;0}{20;-33;24;8.5;6;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.2;;2}{Consumer_and_Commercial_Goods/Electronics;1.2;.2;;4}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;1.1;.2;;1}{Industrially_Manufactured_Goods/Electronics;1.1;.2;;1}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;3}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1.2;.1;;1}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;7}{Natural_Products/Food/Aera;1.9;.2;;2}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;.9;.1;;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;;1}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;1.1;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Alloys/Aera;1.05;.1;;2}{Refined_Materials/Chemicals;.98;.3;;1}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Refined_Materials/Synthetics;1;.3;;1}{Research;12;2;;1}{Specialty_Goods/Entertainment;1.325;.575;;2}{Specialty_Goods/Medical;1.1;.1;;3}{starships/Aera/Heavy;1;;;5}{starships/Aera/Light;1;;;17}{starships/Aera/Milspec;1;;;2}{starships/Hunter/Medium;1;;;5}{upgrades/Ammunition/Aera;1;.1;1000;1200}{upgrades/Armor;1;.1;10;12}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;;7}{upgrades/Experimental;1.4;.2;;}{upgrades/Jump_Drives;1;.1;4;7}{upgrades/Miscellaneous/Aera_Milspec;1;.1;;1}{upgrades/Overdrive;1;.1;3;12}{upgrades/Reactors/Standard;1;.1;10;22}{upgrades/Repair_Systems;1.1;.2;;7}{upgrades/Sensors/Confed;1;.1;;1}{upgrades/Sensors/Common;1;;;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;10}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;8}{upgrades/SPEC_Capacitors;1;.1;4;2}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;;1}{upgrades/Weapons/Beam_Arrays_Light;1;;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;;2}{upgrades/Weapons/Mount_Enhancements;1;.1;;5}{upgrades/Weapons/Mounted_Guns_Aera_Milspec;1;.1;;2}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;;3}{upgrades/Weapons/Mounted_Guns_Light;1;;;10}{upgrades/Weapons/Mounted_Guns_Medium;1;;;5}{upgrades/Weapons/Turrets/Aera;1;.1;1;1}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "6000.0",
         "shield": "8000.0",
         "shield_facets": "4"
@@ -8881,7 +8881,7 @@
         "Dock": "{;-14.13;50.99;116.67;16.0;0}{20;-18.43;257.52;-31.63;48.0;0}{10;-18.43;197.63;-31.63;32.0;0}{;-18.43;144.8;-31.63;16.0;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;12;7}{Raw_Materials/Metals;.65;.2;24;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;12;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;15;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Confed/Milspec;1;;12;5}{starships/Purist/Milspec;1;;12;5}{upgrades/Ammunition/Common;1;.1;170;200}{upgrades/Ammunition/Confed;1;.1;170;200}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;12;5}{upgrades/Jump_Drives;1;.1;16;7}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Sensors/Rlaan;1;.1;12;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/Weapons/Beam_Arrays_Confed_Milspec;1;.1;2;1}{upgrades/Weapons/Mounted_Guns_Confed_Milspec;1;.1;12;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "8000.0",
         "shield_facets": "4"
@@ -8922,7 +8922,7 @@
         "Dock": "{;5.13;7.1;0.0;1.35;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -8963,7 +8963,7 @@
         "Dock": "{;5.13;7.1;0.0;1.35;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9004,7 +9004,7 @@
         "Dock": "{;0.0;1.95;12.17;1.32;0}{;0.0;3.67;12.17;1.32;0}{;0.0;5.6;12.17;1.32;0}",
         "Cargo_Import": "{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Raw_Materials/Metals;.65;.2;42;15}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9046,7 +9046,7 @@
         "Dock": "{0;0;-325;0;325;0} {0;0;2130;0;250;0}{1;-1960;1550;180;200;0}{1;-1960;1550;-180;200;0}{0;-2460;1550;0;900;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.2;.1;4;2}{Consumer_and_Commercial_Goods/Electronics;.8;.2;25;12}{Industrially_Manufactured_Goods/Agricultural;.8;.2;25;12}{Industrially_Manufactured_Goods/Construction;.8;.2;25;12}{Industrially_Manufactured_Goods/Electronics;.8;.2;25;12}{Industrially_Manufactured_Goods/Manufacturing;.8;.2;24;6}{Industrially_Manufactured_Goods/Mining;.8;.2;25;12}{Industrially_Manufactured_Goods/Power_Utilities;1;.1;8;6}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;;}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;1.1;.1;3;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;5;2}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Chemicals;1;.2;8;2}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.7;.1;;}{Research;10;2;;}{Specialty_Goods/Entertainment;.8;.2;25;12}{Specialty_Goods/Medical;1.2;.1;15;3}{starships/Andolian/Medium;1;;12;5}{starships/Confed/Heavy;1;;6;3}{starships/Confed/Light;1;;6;3}{starships/Confed/Medium;1;;12;5}{starships/Highborn/Heavy;1;;6;3}{starships/Hunter/Heavy;1;;6;3}{starships/Hunter/Light;1;;6;3}{starships/Hunter/Medium;1;;12;5}{starships/Merchant/Heavy;1;;6;3}{starships/Merchant/Light;1;;6;3}{starships/Merchant/Medium;1;;12;5}{starships/Regional_Guard/Heavy;1;;6;3}{starships/Regional_Guard/Light;1;;6;3}{starships/Regional_Guard/Medium;1;;12;5}{upgrades/Ammunition/Common;1.5;.1;4500;5500}{upgrades/Ammunition/Uncommon;2.5;.4;500;5500}{upgrades/Ammunition/Confed;2.5;.2;50;60}{upgrades/Armor;1;.1;30;15}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;10;5}{upgrades/Jump_Drives;1;.1;24;12}{upgrades/Overdrive;1;.1;38;19}{upgrades/Reactors/Standard;1;.1;45;22}{upgrades/Repair_Systems;1;.1;15;7}{upgrades/Sensors/Confed;1;.1;5;2}{upgrades/Sensors/Common;1;.1;20;10}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;40;15}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;35;12}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;2;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;10;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;5;2}{upgrades/Weapons/Mount_Enhancements;1;.1;10;5}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;5;2}{upgrades/Weapons/Mounted_Guns_Light;1;.1;20;10}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;10;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "26000.0",
         "shield": "4000.0",
         "shield_facets": "2"
@@ -9087,7 +9087,7 @@
         "Dock": "{;0.0;-3.28;0.0;8.55;0}{;0.0;11.38;0.0;6.79;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9128,7 +9128,7 @@
         "Dock": "{;2.75;0.67;0.0;1.31;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9170,7 +9170,7 @@
         "Dock": "{0;0;300;0;300;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.2;.1;4;2}{Consumer_and_Commercial_Goods/Electronics;.8;.2;25;12}{Industrially_Manufactured_Goods/Agricultural;.8;.2;25;12}{Industrially_Manufactured_Goods/Construction;.8;.2;25;12}{Industrially_Manufactured_Goods/Electronics;.8;.2;25;12}{Industrially_Manufactured_Goods/Manufacturing;.8;.2;24;6}{Industrially_Manufactured_Goods/Mining;.8;.2;25;12}{Industrially_Manufactured_Goods/Power_Utilities;1;.1;8;6}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;;}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;1.1;.1;3;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;5;2}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Chemicals;1;.2;8;2}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.7;.1;;}{Research;10;2;;}{Specialty_Goods/Entertainment;.8;.2;25;12}{Specialty_Goods/Medical;1.2;.1;15;3}{starships/Andolian/Medium;1;;12;5}{starships/Confed/Heavy;1;;6;3}{starships/Confed/Light;1;;6;3}{starships/Confed/Medium;1;;12;5}{starships/Highborn/Heavy;1;;6;3}{starships/Hunter/Heavy;1;;6;3}{starships/Hunter/Light;1;;6;3}{starships/Hunter/Medium;1;;12;5}{starships/Merchant/Heavy;1;;6;3}{starships/Merchant/Light;1;;6;3}{starships/Merchant/Medium;1;;12;5}{starships/Regional_Guard/Heavy;1;;6;3}{starships/Regional_Guard/Light;1;;6;3}{starships/Regional_Guard/Medium;1;;12;5}{upgrades/Ammunition/Common;1.5;.1;4500;5500}{upgrades/Ammunition/Uncommon;2.5;.4;500;5500}{upgrades/Ammunition/Confed;2.5;.2;50;60}{upgrades/Armor;1;.1;30;15}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;10;5}{upgrades/Jump_Drives;1;.1;24;12}{upgrades/Overdrive;1;.1;38;19}{upgrades/Reactors/Standard;1;.1;45;22}{upgrades/Repair_Systems;1;.1;15;7}{upgrades/Sensors/Confed;1;.1;5;2}{upgrades/Sensors/Common;1;.1;20;10}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;40;15}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;35;12}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;2;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;10;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;5;2}{upgrades/Weapons/Mount_Enhancements;1;.1;10;5}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;5;2}{upgrades/Weapons/Mounted_Guns_Light;1;.1;20;10}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;10;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "26000.0",
         "shield": "4000.0",
         "shield_facets": "4"
@@ -9212,7 +9212,7 @@
         "Dock": "{1;165.399868;177.177845;-173.599853;120;0}{1;-185.999833;303.396394;177.799866;120;0}{0;247.930588;-433.502016;20.582228;200;0}{1;482.999618;-208.581288;42.60038;100;0}{1;291.39975;-208.581288;42.60038;100;0}{1;105.39991;-208.581288;42.60038;100;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.8;.3;38;12}{Consumer_and_Commercial_Goods/Electronics;.8;.3;25;7}{Industrially_Manufactured_Goods/Agricultural;.8;.2;26;12}{Industrially_Manufactured_Goods/Construction;.8;.2;17;5}{Industrially_Manufactured_Goods/Electronics;1.1;.2;2;2}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;5;3}{Industrially_Manufactured_Goods/Mining;.8;.2;25;8}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;35;10}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;10;7}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;1.05;.1;1;2}{Natural_Products/Renewable_Resources;1.2;.2;5;5}{Raw_Materials/Gases;1.1;.1;10;5}{Raw_Materials/Hydrocarbons;.8;.2;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.9;.1;;}{Raw_Materials/Stone;1;.1;;}{Refined_Materials/Chemicals;1;.1;2;2}{Refined_Materials/Precious_Metals;1.2;.1;10;3}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.2;25;9}{Refined_Materials/Radioactive_Metals;.7;.1;;}{Research;11.75;2.25;;}{Specialty_Goods/Entertainment;.8;.2;10;7}{Specialty_Goods/Medical;.8;.2;15;3}{starships/Andolian/Medium;1;;12;5}{starships/Confed/Light;1;;24;5}{starships/Confed/Medium;1;;12;5}{starships/Hunter/Heavy;1;;6;5}{starships/Hunter/Light;1;;24;5}{starships/Hunter/Medium;1;;12;5}{starships/ISO/Medium;1;;36;10}{starships/Merchant/Heavy;1;;6;5}{starships/Merchant/Light;1;;24;5}{starships/Merchant/Medium;1;;12;5}{starships/Regional_Guard/Light;1;;24;5}{starships/Regional_Guard/Medium;1;;12;5}{upgrades/Ammunition/Common;1;.1;750;600}{upgrades/Ammunition/Uncommon;3;.6;-50;200}{upgrades/Ammunition/Confed;2;.1;60;75}{upgrades/Armor;1;.1;16;7}{upgrades/Capacitors/Standard;1;.1;14;25}{upgrades/ECM_Systems;1;.1;5;2}{upgrades/Jump_Drives;1;.1;10;4}{upgrades/Overdrive;1;.1;23;8}{upgrades/Reactors/Standard;1;.1;30;11}{upgrades/Repair_Systems;1;.1;8;4}{upgrades/Sensors/Common;1;.1;12;2}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;32;7}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;28;9}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;-2;5}{upgrades/Weapons/Beam_Arrays_Light;1;.1;12;2}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;6;2}{upgrades/Weapons/Mount_Enhancements;1;.1;12;2}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;6;2}{upgrades/Weapons/Mounted_Guns_Light;1;;24;5}{upgrades/Weapons/Mounted_Guns_Medium;1;;12;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9254,7 +9254,7 @@
         "Dock": "{;-2.178137;8.000000;-3.510120;2.229998;0}{;0.435495;8.000000;-3.537666;2.199998;0}{;2.825176;8.000000;-3.906713;2.299998;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.8;.3;38;12}{Consumer_and_Commercial_Goods/Electronics;.8;.3;25;7}{Contraband/Aera;1.2;.4;;}{Industrially_Manufactured_Goods/Agricultural;.8;.2;26;12}{Industrially_Manufactured_Goods/Construction;.8;.2;17;5}{Industrially_Manufactured_Goods/Electronics;1.1;.2;2;2}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;5;3}{Industrially_Manufactured_Goods/Mining;.8;.2;25;8}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;35;10}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;10;7}{Natural_Products/Food/Aera;1.9;.2;15;2}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;.8;.1;1;2}{Natural_Products/Renewable_Resources;1.2;.2;5;5}{Raw_Materials/Gases;1.1;.1;10;5}{Raw_Materials/Hydrocarbons;.8;.2;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.9;.1;;}{Raw_Materials/Stone;1;.1;;}{Refined_Materials/Alloys/Aera;1;.1;2;2}{Refined_Materials/Chemicals;1;.1;2;2}{Refined_Materials/Precious_Metals;1.2;.1;10;3}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.2;25;9}{Refined_Materials/Radioactive_Metals;.7;.1;;}{Refined_Materials/Synthetics;.8;.1;2;2}{Research;11.75;2.25;;}{Specialty_Goods/Entertainment;1.2;.6;20;14}{Specialty_Goods/Medical;.8;.2;15;3}{Specialty_Goods/Pharmaceutical;1.6;.2;15;3}{starships/Aera/Heavy;1;;24;5}{starships/Aera/Light;1;;36;10}{starships/Hunter/Heavy;1;;6;5}{starships/Hunter/Light;1;;24;5}{starships/Hunter/Medium;1;;12;5}{upgrades/Ammunition/Aera;1;.1;750;560}{upgrades/Armor;1;.1;16;7}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;5;2}{upgrades/Jump_Drives;1;.1;10;4}{upgrades/Overdrive;1;.1;23;8}{upgrades/Reactors/Standard;1;.1;30;11}{upgrades/Repair_Systems;1;.1;8;4}{upgrades/Sensors/Common;1;.1;12;2}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;32;7}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;28;9}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;-2;5}{upgrades/Weapons/Beam_Arrays_Light;1;.1;12;2}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;6;2}{upgrades/Weapons/Mount_Enhancements;1;.1;12;2}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;6;2}{upgrades/Weapons/Mounted_Guns_Light;1;;24;5}{upgrades/Weapons/Mounted_Guns_Medium;1;;12;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "1200.0",
         "shield": "1050.0",
         "shield_facets": "4"
@@ -9302,7 +9302,7 @@
         "Dock": "{;1;0;0;.15;0}{;-1;0;0;.15;0}{;0;1;0;.15;0}{;0;-1;0;.15;0}{;0;0;1;.15;0}{;0;0;-1;.15;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.8;.3;38;12}{Consumer_and_Commercial_Goods/Electronics;.8;.3;25;7}{Contraband/Rlaan;1.2;.4;;}{Industrially_Manufactured_Goods/Agricultural;.8;.2;26;12}{Industrially_Manufactured_Goods/Construction;1;.2;5;20}{Industrially_Manufactured_Goods/Electronics;1.1;.2;2;2}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;5;3}{Industrially_Manufactured_Goods/Mining;.8;.2;25;8}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;35;10}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;10;7}{Natural_Products/Food/Rlaan;1.9;.2;15;2}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;.8;.1;1;2}{Natural_Products/Renewable_Resources;1.2;.2;5;5}{Raw_Materials/Gases;1.1;.1;10;5}{Raw_Materials/Hydrocarbons;.8;.2;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.9;.1;;}{Raw_Materials/Stone;1;.1;;}{Refined_Materials/Alloys/Rlaan;1;.1;2;2}{Refined_Materials/Chemicals;.9;.2;4;4}{Refined_Materials/Precious_Metals;1.2;.1;10;3}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.2;25;9}{Refined_Materials/Radioactive_Metals;.7;.1;;}{Research;11.75;2.25;;}{Specialty_Goods/Augmentation;.9;.2;10;15}{Specialty_Goods/Entertainment;1.2;.6;20;14}{Specialty_Goods/Medical;1.6;.2;15;3}{starships/Hunter/Heavy;1;;6;5}{starships/Hunter/Light;1;;24;5}{starships/Hunter/Medium;1;;12;5}{starships/Rlaan/Heavy;1;;36;10}{starships/Rlaan/Light;1;;24;5}{upgrades/Ammunition/Rlaan;1;.1;750;560}{upgrades/Armor;1;.1;16;7}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;5;2}{upgrades/Jump_Drives;1;.1;10;4}{upgrades/Overdrive;1;.1;23;8}{upgrades/Reactors/Standard;1;.1;30;11}{upgrades/Repair_Systems;1;.1;8;4}{upgrades/Sensors/Common;1;.1;12;2}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;32;7}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;28;9}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;-2;5}{upgrades/Weapons/Beam_Arrays_Light;1;.1;12;2}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;6;2}{upgrades/Weapons/Mount_Enhancements;1;.1;12;2}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;6;2}{upgrades/Weapons/Mounted_Guns_Light;1;;24;5}{upgrades/Weapons/Mounted_Guns_Medium;1;;12;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "6200.0",
         "shield": "500.0",
         "shield_facets": "4"
@@ -9344,7 +9344,7 @@
         "Dock": "{1;48.278;-8.092;-371.92;10;0}{11;.6;-7;-400.0;10;0}{20;1.088;-14;-683.52;10;0}{1;-71;-8.1;-345.25;10;0}{1;-305.02;-8.092;-175.9;10;0}{11;-379.9;-7;-125.2.1;10;0}{20;-648.16;-14.006;-213.6;10;0}{1;-349.771;-8.092;-39.872;10;0}{1;-261.3;-8.1;236.1;10;0}{11;-236.1;-7;322.9;10;0}{20;-403;-14;551.2;10;0}{1;-145.8;-8.1;320.77;10;0}{1;145.2;-8.092;321.5;10;0}{11;235.2;-7;323.6;10;0}{20;402.24;-14;553.36;10;0}{1;261.1;-8.092;237.484;10;0}{1;350.9;-8.092;-39.32;10;0}{11;380.2;-7.004;-124.2;10;0}{20;650.66;-14.008;-212.56;10;0}{1;306.4;-8.092;-175.4;10;0}{10;0;-300;0;100;0}{20;0;-600;0;100;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;.7;.1;;}{Natural_Products/Liquor;.8;.1;;}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;;}{Raw_Materials/Metals;.65;.2;;}{Raw_Materials/Stone;.7;.1;;}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;;}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;;}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Confed/Heavy;1;;;6}{starships/Confed/Light;1;;;6}{starships/Confed/Medium;1;;;6}{starships/Confed/Milspec;1;;;6}{starships/Highborn/Heavy;1;;;6}{starships/Purist/Milspec;1;;;6}{upgrades/Ammunition/Confed;2;.1;370;700}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;16;7}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Sensors/Common;1;.1;12;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/Weapons/Beam_Arrays_Confed_Milspec;1;.1;4;4}{upgrades/Weapons/Mounted_Guns_Confed_Milspec;1;.1;2;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "4800.0",
         "shield_facets": "4"
@@ -9392,7 +9392,7 @@
         "Dock": "{10;0;85;888;100;0}{20;0;425;888;100;0}{10;-170;85;1214;100;0}{20;-170;425;1214;100;0}{10;170;85;1214;100;0}{20;170;425;1214;100;0}{10;888;85;0;100;0}{20;888;425;0;100;0}{10;1214;85;170;100;0}{20;1214;425;170;100;0}{10;1214;85;-170;100;0}{20;1214;425;-170;100;0}{10;-888;85;0;100;0}{20;-888;425;0;100;0}{10;-1214;85;170;100;0}{20;-1214;425;170;100;0}{10;-1214;85;-170;100;0}{20;-1214;425;-170;100;0}{10;0;85;-888;100;0}{20;0;425;-888;100;0}{10;-170;85;-1214;100;0}{20;-170;425;-1214;100;0}{10;170;85;-1214;100;0}{20;170;425;-1214;100;0}{10;0;-100;0;200;0}{20;0;-1000;0;200;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.2;;2}{Consumer_and_Commercial_Goods/Electronics;1.2;.2;;4}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;1.1;.2;;1}{Industrially_Manufactured_Goods/Electronics;1.1;.2;;1}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;3}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1.2;.1;;1}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;7}{Natural_Products/Food/Aera;1.9;.2;;2}{Natural_Products/Life-forms;.4;.1;;}{Natural_Products/Liquor;.4;.1;;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;;1}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;1.1;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Alloys/Aera;1.07;.05;;2}{Refined_Materials/Chemicals;1;.3;;1}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Refined_Materials/Synthetics;1;.3;;1}{Research;12;2;;1}{Specialty_Goods/Entertainment;1.1;.2;;1}{Specialty_Goods/Medical;1.1;.1;;3}{starships/Aera/Heavy;1;;;5}{starships/Aera/Light;1;;;17}{starships/Aera/Milspec;1;;;2}{upgrades/Ammunition/Aera;3;.1;100;200}{upgrades/Armor;1;.1;10;12}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;;7}{upgrades/Experimental;1.4;.2;;}{upgrades/Jump_Drives;1;.1;4;7}{upgrades/Miscellaneous/Aera_Milspec;1;.1;;1}{upgrades/Overdrive;1;.1;3;10}{upgrades/Reactors/Standard;1;.1;10;24}{upgrades/Repair_Systems;1.1;.2;;7}{upgrades/Sensors/Confed;1;.1;;1}{upgrades/Sensors/Common;1;;;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;10}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;8}{upgrades/SPEC_Capacitors;1;.1;4;2}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;;1}{upgrades/Weapons/Beam_Arrays_Light;1;;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;;2}{upgrades/Weapons/Mount_Enhancements;1;.1;;5}{upgrades/Weapons/Mounted_Guns_Aera_Milspec;1;.1;;2}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;;3}{upgrades/Weapons/Mounted_Guns_Light;1;;;10}{upgrades/Weapons/Mounted_Guns_Medium;1;;;5}{upgrades/Weapons/Turrets/Aera;1;.1;;2}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "6000.0",
         "shield": "8000.0",
         "shield_facets": "4"
@@ -9433,7 +9433,7 @@
         "Dock": "{10;-2.99;-0.01;0.0;0.57;0}{20;-11.96;-0.04;0.0;0.57;0}{10;3.02;-0.01;0.0;0.57;0}{20;12.08;-0.04;0.0;0.57;0}{10;0.0;-0.01;2.95;0.57;0}{20;0.0;-0.04;11.8;0.57;0}{10;0.0;-0.01;-3.05;0.57;0}{20;0.0;-0.04;-12.2;0.57;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.2;;2}{Consumer_and_Commercial_Goods/Electronics;1.2;.2;;4}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;1.05;.1;;1}{Industrially_Manufactured_Goods/Electronics;1.1;.2;;1}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;;3}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1.2;.1;;1}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;7}{Natural_Products/Food/Rlaan;1.9;.2;;2}{Natural_Products/Life-forms;.4;.1;;}{Natural_Products/Liquor;.4;.1;;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;;1}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;1.1;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Alloys/Rlaan;1.07;.05;;2}{Refined_Materials/Chemicals;1;.3;;2}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Research;12;2;;1}{Specialty_Goods/Augmentation;1.1;.05;;1}{Specialty_Goods/Entertainment;1.1;.2;;1}{Specialty_Goods/Medical;1.95;.1;;3}{starships/Rlaan/Heavy;1;;;12}{starships/Rlaan/Light;1;;;10}{starships/Rlaan/Milspec;1;;;2}{upgrades/Ammunition/Rlaan;4;.1;500;200}{upgrades/Armor;1;.1;10;12}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;;7}{upgrades/Experimental;1.4;.2;;}{upgrades/Jump_Drives;1;.1;4;7}{upgrades/Overdrive;1;.1;3;12}{upgrades/Reactors/Standard;1;.1;10;22}{upgrades/Repair_Systems;1.1;.2;;7}{upgrades/Sensors/Confed;1;.1;;1}{upgrades/Sensors/Rlaan;1;.1;-2;5}{upgrades/Sensors/Common;1;;;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;10}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;8}{upgrades/SPEC_Capacitors;1;.1;4;2}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;;1}{upgrades/Weapons/Beam_Arrays_Light;1;;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;;2}{upgrades/Weapons/Beam_Arrays_Rlaan_Milspec;1;.1;-2;5}{upgrades/Weapons/Mount_Enhancements;1;.1;;5}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;;3}{upgrades/Weapons/Mounted_Guns_Light;1;;;10}{upgrades/Weapons/Mounted_Guns_Medium;1;;;5}{upgrades/Weapons/Mounted_Guns_Rlaan_Milspec;1;.1;;2}{upgrades/Weapons/Turrets/Rlaan;1;.1;1;1}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9474,7 +9474,7 @@
         "Dock": "{1;-150;-302;40;20;0}{1;-72;-302;120;20;0}{1;25;-305;140;20;0}",
         "Cargo_Import": "{Natural_Products/Liquor;3.1;.1;1;1}{Raw_Materials/Gases;.4;.1;7000;6500}{Raw_Materials/Hydrocarbons;.7;.2;;}{Refined_Materials/Chemicals;1.1;.2;3;2}{Specialty_Goods/Entertainment;4.2;.1;1;1}{Specialty_Goods/Medical;2.1;.1;5;3}{starships/Hunter/Light;1;;12;5}{starships/Regional_Guard/Light;1;;12;5}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9515,7 +9515,7 @@
         "Dock": "{1;-150;-302;40;20;0}{1;-72;-302;120;20;0}{1;25;-305;140;20;0}",
         "Cargo_Import": "{Natural_Products/Liquor;3.1;.1;1;1}{Raw_Materials/Gases;.4;.1;7000;6500}{Raw_Materials/Hydrocarbons;.7;.2;;}{Refined_Materials/Chemicals;1.1;.2;3;2}{Specialty_Goods/Entertainment;4.2;.1;1;1}{Specialty_Goods/Medical;2.1;.1;5;3}{starships/Hunter/Light;1;;12;5}{starships/Regional_Guard/Light;1;;12;5}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9556,7 +9556,7 @@
         "Dock": "{1;-150;-302;40;20;0}{1;-72;-302;120;20;0}{1;25;-305;140;20;0}",
         "Cargo_Import": "{Natural_Products/Liquor;3.1;.1;1;1}{Raw_Materials/Gases;.4;.1;7000;6500}{Raw_Materials/Hydrocarbons;.7;.2;;}{Refined_Materials/Chemicals;1.1;.2;3;2}{Specialty_Goods/Entertainment;4.2;.1;1;1}{Specialty_Goods/Medical;2.1;.1;5;3}{starships/Hunter/Light;1;;12;5}{starships/Regional_Guard/Light;1;;12;5}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9603,7 +9603,7 @@
         "Dock": "{1;0;50;0;100;0}{0;4200;0;-10;150;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.1;;}{Consumer_and_Commercial_Goods/Electronics;1;.1;5;2}{Industrially_Manufactured_Goods/Agricultural;.4;.1;;}{Industrially_Manufactured_Goods/Construction;.2;.1;;}{Industrially_Manufactured_Goods/Electronics;1.1;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;.8;.1;;}{Industrially_Manufactured_Goods/Mining;.6;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;;}{Natural_Products/Life-forms;.7;.2;;}{Natural_Products/Liquor;1;.2;2;2}{Natural_Products/Renewable_Resources;.7;.2;;}{Raw_Materials/Gases;.7;.2;;}{Raw_Materials/Hydrocarbons;.8;.2;;}{Raw_Materials/Industrial_Gems;1.2;.2;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.6;.1;;}{Refined_Materials/Chemicals;.8;.3;;}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Research;10.5;1.5;;2}{Specialty_Goods/Augmentation;1.12;.2;;}{Specialty_Goods/Entertainment;1;.1;2;1}{Specialty_Goods/Medical;.8;.1;25;20}{Specialty_Goods/Pharmaceutical;1.4;.25;5;5}{starships/Merchant/Heavy;1;;12;5}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;12;5}{upgrades/Ammunition;8;.1;-52;70}{upgrades/Armor;1;.1;30;10}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-2;4}{upgrades/Sensors/Common;1;.1;20;6}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;40;11}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;16;17}{upgrades/Weapons/Beam_Arrays_Light;1;.1;3;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "20000.0",
         "shield": "800.0",
         "shield_facets": "4"
@@ -9645,7 +9645,7 @@
         "Dock": "{1;10;10;0;4;0}{1;10;-10;0;4;0}{1;-10;-10;0;4;0}{1;-10;10;0;4;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.1;;}{Consumer_and_Commercial_Goods/Electronics;1;.1;5;2}{Industrially_Manufactured_Goods/Agricultural;.4;.1;;}{Industrially_Manufactured_Goods/Construction;.2;.1;;}{Industrially_Manufactured_Goods/Electronics;1.1;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;.8;.1;;}{Industrially_Manufactured_Goods/Mining;.6;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;;}{Natural_Products/Food/Aera;2.15;.2;20;15}{Natural_Products/Life-forms;1;.2;;}{Natural_Products/Liquor;.4;.2;2;2}{Natural_Products/Renewable_Resources;.7;.2;;}{Raw_Materials/Gases;.7;.2;;}{Raw_Materials/Industrial_Gems;1.25;.2;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.6;.1;;}{Refined_Materials/Alloys/Aera;.85;.1;;}{Refined_Materials/Chemicals;.8;.3;;}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Refined_Materials/Synthetics;.75;.3;;}{Research;10.75;1.75;;4}{Specialty_Goods/Augmentation;1.2;.1;;}{Specialty_Goods/Entertainment;1.075;.675;4;2}{Specialty_Goods/Pharmaceutical;1.6;.1;25;20}{starships/Aera/Light;1;;12;5}{upgrades/Ammunition/Aera;4;.1;52;280}{upgrades/Armor;1;.1;30;10}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Miscellaneous/Aera_Milspec;1;.1;2;1}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-2;4}{upgrades/Sensors/Common;1;.1;20;6}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;40;11}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;16;17}{upgrades/Weapons/Beam_Arrays_Light;1;.1;3;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "1000.0",
         "shield": "800.0",
         "shield_facets": "4"
@@ -9686,7 +9686,7 @@
         "Dock": "{;-384.04;0.16;-374.6;86.89;0}{;0.13;0.16;0.12;86.89;0}{;-394.64;0.16;3.53;86.89;0}{;-4.88;0.16;-373.94;86.89;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.1;;}{Consumer_and_Commercial_Goods/Electronics;1;.1;5;2}{Industrially_Manufactured_Goods/Agricultural;.4;.1;;}{Industrially_Manufactured_Goods/Construction;.85;.75;;}{Industrially_Manufactured_Goods/Electronics;1.1;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;.8;.1;;}{Industrially_Manufactured_Goods/Mining;.6;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;;}{Natural_Products/Food/Rlaan;2.15;.2;20;15}{Natural_Products/Life-forms;1;.2;;}{Natural_Products/Liquor;.4;.2;2;2}{Natural_Products/Renewable_Resources;.7;.2;;}{Raw_Materials/Gases;.7;.2;;}{Raw_Materials/Industrial_Gems;1.25;.2;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.6;.1;;}{Refined_Materials/Alloys/Rlaan;.8;.5;;}{Refined_Materials/Chemicals;.8;.3;;}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Refined_Materials/Synthetics;.75;.3;;}{Research;9.75;2.75;;4}{Specialty_Goods/Augmentation;1.2;.2;;}{Specialty_Goods/Entertainment;1.075;.675;4;2}{Specialty_Goods/Medical;1.4;.1;;}{starships/Rlaan/Light;1;;12;5}{upgrades/Armor;1;.1;30;10}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-2;4}{upgrades/Sensors/Common;1;.1;20;6}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;40;11}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;16;17}{upgrades/Weapons/Beam_Arrays_Light;1;.1;3;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9728,7 +9728,7 @@
         "Dock": "{1;250;0;0;400;0}{1;-525;0;0;400;0}{0;2343;-200;0;200;0}{0;2030;-200;530;200;0}{0;2030;-200;-530;200;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9770,7 +9770,7 @@
         "Dock": "{;-92;-158;-123;40;0}{;9;1;26.5;8;0}{;9;0;26.5;8;0}{;9;-1;26.5;8;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Contraband/Aera;1.25;.05;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Food/Aera;1.2;.1;5;3}{Natural_Products/Life-forms;.5;.1;2;2}{Natural_Products/Liquor;.5;.1;1;1}{Natural_Products/Renewable_Resources;.4;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Alloys/Aera;.7;.2;;}{Refined_Materials/Chemicals;1;.2;6;4}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;.95;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.3;.6;2;2}{Specialty_Goods/Medical;.4;.1;;}{Specialty_Goods/Pharmaceutical;2;.2;5;3}{starships/Aera/Light;1;;18;8}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;210;50}{upgrades/Ammunition/Aera;2;.4;40;48}{upgrades/Armor;1;.1;22;11}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;6;3}{upgrades/Jump_Drives;1;.1;7;4}{upgrades/Overdrive;1;.1;6;11}{upgrades/Reactors/Standard;1;.1;22;10}{upgrades/Repair_Systems;1;.1;2;1}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;32;10}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;26;8}{upgrades/Weapons/Beam_Arrays_Light;1;.1;6;3}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-2;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-12;15}{upgrades/Weapons/Mounted_Guns_Light;1;.1;12;5}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;6;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "4500.0",
         "shield": "800.0",
         "shield_facets": "4"
@@ -9810,7 +9810,7 @@
         "Dock": "{1;-0.4;-0.6;-1.5;1;1}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;4;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;.8;.1;;}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1.2;.1;5;2}{Industrially_Manufactured_Goods/Recycled_Products;1;.1;;}{Natural_Products/Life-forms;1.2;.2;;}{Natural_Products/Liquor;1.2;.2;3;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.2;7;2}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Chemicals;1.1;.3;8;2}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Specialty_Goods/Entertainment;1.1;.1;;}{Specialty_Goods/Medical;1.2;.1;1;1}{starships/Aera/Light;1;;-75;81}{starships/Hunter/Light;1;;-25;26}{starships/Hunter/Medium;1;;-50;55}{starships/ISO/Medium;1;;-75;81}{starships/Luddite/Light;1;;12;5}{starships/Merchant/Light;1;;-25;26}{starships/Merchant/Medium;1;;-50;55}{starships/Pirate/Heavy;1;;-3;6}{starships/Pirate/Light;1;;12;6}{upgrades/Ammunition;6;.1;140;200}{upgrades/Armor;1;.1;12;6}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;2;1}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;3;6}{upgrades/Reactors/Standard;1;.1;22;11}{upgrades/Repair_Systems;1;.1;1;1}{upgrades/Sensors/Common;1;.1;12;4}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;24;10}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;22;6}{upgrades/Weapons/Beam_Arrays_Light;1;.1;12;6}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;3;1}{upgrades/Weapons/Mounted_Guns_Light;1;.1;12;6}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;3;1}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "6250.0",
         "shield": "650.0",
         "shield_facets": "4"
@@ -9851,7 +9851,7 @@
         "Dock": "{;-184;-10;79.000000;40.000000;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Contraband/Rlaan;1.25;.05;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.6;.2;5;2}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Food/Rlaan;1.2;.1;5;3}{Natural_Products/Life-forms;.5;.1;2;2}{Natural_Products/Liquor;.5;.1;1;1}{Natural_Products/Renewable_Resources;.4;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Alloys/Rlaan;.7;.2;;}{Refined_Materials/Chemicals;1;.2;6;4}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;.95;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.3;.6;2;2}{Specialty_Goods/Medical;2;.2;5;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Rlaan/Heavy;1;;6;3}{starships/Rlaan/Light;1;;12;5}{upgrades/Ammunition/Common;1;.1;210;50}{upgrades/Ammunition/Rlaan;1.2;.1;20;28}{upgrades/Armor;1;.1;22;11}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;6;3}{upgrades/Jump_Drives;1;.1;7;4}{upgrades/Overdrive;1;.1;6;11}{upgrades/Reactors/Standard;1;.1;12;5}{upgrades/Repair_Systems;1;.1;2;1}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;32;10}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;26;8}{upgrades/Weapons/Beam_Arrays_Light;1;.1;6;3}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-2;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-12;15}{upgrades/Weapons/Mounted_Guns_Light;1;.1;12;5}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;6;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "6250.0",
         "shield": "400.0",
         "shield_facets": "2"
@@ -9892,7 +9892,7 @@
         "Dock": "{;3.33;3.51;-4.09;1.34;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Contraband/Rlaan;1.25;.05;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.6;.2;5;2}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Food/Rlaan;1.2;.1;5;3}{Natural_Products/Life-forms;.5;.1;2;2}{Natural_Products/Liquor;.5;.1;1;1}{Natural_Products/Renewable_Resources;.4;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Alloys/Rlaan;.7;.2;;}{Refined_Materials/Chemicals;1;.2;6;4}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;.95;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.3;.6;2;2}{Specialty_Goods/Medical;2;.2;5;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Rlaan/Heavy;1;;6;3}{starships/Rlaan/Light;1;;12;5}{upgrades/Ammunition/Common;1;.1;210;50}{upgrades/Ammunition/Rlaan;1.2;.1;20;28}{upgrades/Armor;1;.1;22;11}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;6;3}{upgrades/Jump_Drives;1;.1;7;4}{upgrades/Overdrive;1;.1;6;11}{upgrades/Reactors/Standard;1;.1;12;5}{upgrades/Repair_Systems;1;.1;2;1}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;32;10}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;26;8}{upgrades/Weapons/Beam_Arrays_Light;1;.1;6;3}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-2;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-12;15}{upgrades/Weapons/Mounted_Guns_Light;1;.1;12;5}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;6;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9933,7 +9933,7 @@
         "Dock": "{1;-10.25;86.9;23.31;50;0}{1;-10.25;86.9;-23.31;50;0}{0;1.4;-185.4;100;60;0}",
         "Cargo_Import": "{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "4000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -9976,7 +9976,7 @@
         "Dock": "{1;1.385943;4.17939;.46206;2;0}{0;0;-9.8;0;2;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.8;.1;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;1;1}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;.8;.1;;}{Industrially_Manufactured_Goods/Electronics;.8;.1;;}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;10;4}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;.8;.2;45;17}{Natural_Products/Life-forms;.7;.1;;}{Natural_Products/Liquor;1.3;.1;3;2}{Natural_Products/Renewable_Resources;.9;.1;;}{Raw_Materials/Gases;1.1;.1;10;5}{Raw_Materials/Hydrocarbons;1.3;.3;4;2}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;1.2;.1;12;5}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Chemicals;.7;.2;28;25}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.2;;}{Refined_Materials/Radioactive_Metals;.8;.1;25;10}{Specialty_Goods/Entertainment;.9;.1;;}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;6}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;6}{starships/Hunter/Medium;1;;6;3}{starships/ISO/Medium;1;;18;9}{starships/Merchant/Light;1;;12;6}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;6}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;30;60}{upgrades/Armor;1;.1;12;6}{upgrades/Capacitors/Standard;1;.1;10;55}{upgrades/ECM_Systems;1;.1;2;1}{upgrades/Jump_Drives;1;.1;10;5}{upgrades/Overdrive;1;.1;5;3}{upgrades/Reactors/Standard;1;.1;6;3}{upgrades/Repair_Systems;1;.1;2;1}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;26;8}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/Weapons/Beam_Arrays_Light;1;.1;3;2}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;1;1}{upgrades/Weapons/Mounted_Guns_Light;1;.1;6;3}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;2;1}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "28000.0",
         "shield": "8000.0",
         "shield_facets": "4"
@@ -10018,7 +10018,7 @@
         "Dock": "{;33;18.5;0;2;0}{;-33;18.5;0;2;0}{;0;18.5;33;2;0}{;0;18.5;-33;2;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.8;.1;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;1;1}{Contraband/Aera;1.0;.1;;}{Industrially_Manufactured_Goods/Agricultural;.6;.1;;}{Industrially_Manufactured_Goods/Construction;.6;.1;;}{Industrially_Manufactured_Goods/Electronics;.8;.1;;}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;10;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;.6;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;.8;.2;45;17}{Natural_Products/Food/Aera;2.0;.1;10;2}{Natural_Products/Life-forms;.2;.1;;}{Natural_Products/Liquor;.2;.1;3;2}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;10;5}{Raw_Materials/Hydrocarbons;1.4;.3;4;2}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;1.2;.1;12;5}{Raw_Materials/Stone;.4;.1;;}{Refined_Materials/Alloys/Aera;.6;.15;38;12}{Refined_Materials/Chemicals;.7;.2;28;25}{Refined_Materials/Precious_Metals;.2;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.2;;}{Refined_Materials/Radioactive_Metals;.8;.1;25;10}{Refined_Materials/Synthetics;.5;.2;28;25}{Specialty_Goods/Entertainment;1.1;.5;;}{Specialty_Goods/Medical;.4;.1;5;3}{Specialty_Goods/Pharmaceutical;2;.1;5;3}{starships/Aera/Light;1;;18;9}{starships/Hunter/Light;1;;12;6}{starships/Hunter/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;30;60}{upgrades/Armor;1;.1;12;6}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;2;1}{upgrades/Jump_Drives;1;.1;10;5}{upgrades/Overdrive;1;.1;5;3}{upgrades/Reactors/Standard;1;.1;6;3}{upgrades/Repair_Systems;1;.1;2;1}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;26;8}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/Weapons/Beam_Arrays_Light;1;.1;3;2}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;1;1}{upgrades/Weapons/Mounted_Guns_Light;1;.1;6;3}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;2;1}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "8000.0",
         "shield": "800.0",
         "shield_facets": "4"
@@ -10060,7 +10060,7 @@
         "Dock": "{;0;2.4;2.3;.24;0}{;0;2.4;2.1;.24;0}{;0;2.4;1.9;.24;0}{;0;2.4;1.7;.24;0}{;;5.5;;2;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;4;2}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;.8;.1;;}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1.2;.1;5;2}{Industrially_Manufactured_Goods/Recycled_Products;.4;.1;;5}{Natural_Products/Life-forms;1.3;.2;;}{Natural_Products/Liquor;1.2;.2;3;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.2;7;2}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Chemicals;1.1;.3;8;2}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Specialty_Goods/Entertainment;1.3;.1;;}{Specialty_Goods/Medical;1.2;.1;1;1}{starships/Hunter/Heavy;1;;-25;26}{starships/ISO/Heavy;1;;-25;26}{starships/ISO/Medium;1;;-50;55}{starships/Merchant/Heavy;1;;-50;55}{starships/Pirate/Heavy;1;;-3;6}{starships/Pirate/Light;1;;12;6}{upgrades/Ammunition;6;.6;24;70}{upgrades/Armor;1;.1;12;6}{upgrades/Capacitors/Standard;1;.1;14;25}{upgrades/ECM_Systems;1;.1;2;1}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;9;9}{upgrades/Reactors/Standard;1;.1;12;6}{upgrades/Repair_Systems;1;.1;1;1}{upgrades/Sensors/Common;1;.1;12;4}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;24;10}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;12;6}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;12;6}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "8000.0",
         "shield": "800.0",
         "shield_facets": "4"
@@ -10103,7 +10103,7 @@
         "Dock": "{;0;0;0;3;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.8;.1;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;1;1}{Contraband/Rlaan;1.0;.1;;}{Industrially_Manufactured_Goods/Agricultural;.6;.1;;}{Industrially_Manufactured_Goods/Construction;.6;.1;;}{Industrially_Manufactured_Goods/Electronics;.8;.1;;}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;10;4}{Industrially_Manufactured_Goods/Mining;.6;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;.6;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;.8;.2;45;17}{Natural_Products/Food/Rlaan;2.0;.1;10;2}{Natural_Products/Life-forms;.2;.1;;}{Natural_Products/Liquor;.2;.1;3;2}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;10;5}{Raw_Materials/Hydrocarbons;1.4;.3;4;2}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;1.2;.1;12;5}{Raw_Materials/Stone;.4;.1;;}{Refined_Materials/Alloys/Rlaan;.8;.4;48;32}{Refined_Materials/Chemicals;.6;.3;56;50}{Refined_Materials/Precious_Metals;.2;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.2;;}{Refined_Materials/Radioactive_Metals;.8;.1;25;10}{Specialty_Goods/Entertainment;1.1;.5;;}{Specialty_Goods/Medical;2;.1;5;3}{starships/Hunter/Light;1;;12;6}{starships/Hunter/Medium;1;;6;3}{starships/Rlaan/Heavy;1;;6;3}{starships/Rlaan/Light;1;;12;6}{upgrades/Ammunition/Common;1;.1;13;16}{upgrades/Armor;1;.1;12;6}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;2;1}{upgrades/Jump_Drives;1;.1;10;5}{upgrades/Overdrive;1;.1;5;3}{upgrades/Reactors/Standard;1;.1;6;3}{upgrades/Repair_Systems;1;.1;2;1}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;26;8}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/Weapons/Beam_Arrays_Light;1;.1;3;2}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;1;1}{upgrades/Weapons/Mounted_Guns_Light;1;.1;6;3}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;2;1}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "8000.0",
         "shield": "400.0",
         "shield_facets": "2"
@@ -10144,7 +10144,7 @@
         "Dock": "{;12.23;0.0;0.0;6.41;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -10186,7 +10186,7 @@
         "Dock": "{1;-826;1723;3;400;0}{1;826;1723;3;400;0}{1;3;1723;826;400;0}{1;3;1723;-826;400;0}{0;386;-1889;860;600;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;.8;.1;;}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;.7;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;.8;.1;2;2}{Natural_Products/Liquor;.9;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;;}{Raw_Materials/Metals;.65;.2;24;15}{Raw_Materials/Stone;.7;.1;;}{Refined_Materials/Chemicals;1.2;.3;3;2}{Refined_Materials/Precious_Metals;.65;.2;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.65;.2;;}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Confed/Light;1;;1;3}{upgrades/Ammunition/Common;1;.1;10;20}{upgrades/Armor;1;.1;22;10}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;12;5}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;2;4}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Sensors/Confed;1;.1;12;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/Weapons/Beam_Arrays_Confed_Milspec;1;.1;2;4}{upgrades/Weapons/Mounted_Guns_Confed_Milspec;1;.1;2;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "800.0",
         "shield_facets": "4"
@@ -10224,7 +10224,7 @@
         "SPECDrive_Functionality": "1",
         "Max_SPECDrive_Functionality": "1",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "800.0",
         "shield_facets": "4"
@@ -10265,7 +10265,7 @@
         "Dock": "{;400;2;80;200;0}{;-400;2;80;200;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;4;2}{Consumer_and_Commercial_Goods/Electronics;1.25;.2;5;2}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;.8;.1;;}{Industrially_Manufactured_Goods/Electronics;1.2;.2;;1}{Industrially_Manufactured_Goods/Manufacturing;.8;.1;;}{Industrially_Manufactured_Goods/Mining;.5;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1;.1;3;3}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;;}{Natural_Products/Life-forms;.8;.05;;}{Natural_Products/Liquor;.7;.2;;}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;3;3}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;1.2;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.5;.1;;}{Refined_Materials/Chemicals;.8;.1;3;3}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.7;.1;;}{Refined_Materials/Radioactive_Metals;1.2;.3;;}{Research;7.5;3;-80;155}{Specialty_Goods/Augmentation;1.2;.2;;}{Specialty_Goods/Entertainment;.5;.1;;}{Specialty_Goods/Medical;1.05;.1;3;3}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Experimental;.8;.1;-18;28}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-15;22}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "12800.0",
         "shield_facets": "4"
@@ -10308,7 +10308,7 @@
         "Dock": "{0;0;7.5;0;2;0}{1;1.3;5.8;0;0.7;0}{1;-1.3;5.8;0;0.7;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;4;2}{Consumer_and_Commercial_Goods/Electronics;1.25;.2;5;2}{Contraband/Aera;1.3;.1;;}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;.8;.1;;}{Industrially_Manufactured_Goods/Electronics;1.2;.2;;1}{Industrially_Manufactured_Goods/Manufacturing;.8;.1;;}{Industrially_Manufactured_Goods/Mining;.5;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1;.1;3;3}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;;}{Natural_Products/Food/Aera;2;.2;5;2}{Natural_Products/Life-forms;1.3;.2;;}{Natural_Products/Liquor;.4;.2;;}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;3;3}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;1.2;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.5;.1;;}{Refined_Materials/Alloys/Aera;1.05;.1;;}{Refined_Materials/Chemicals;.8;.1;3;3}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.7;.1;;}{Refined_Materials/Radioactive_Metals;1.2;.3;;}{Research;8.5;3;-80;155}{Specialty_Goods/Augmentation;1.2;.2;;2}{Specialty_Goods/Entertainment;.5;.1;;}{Specialty_Goods/Medical;.9;.1;3;3}{Specialty_Goods/Pharmaceutical;1.85;.1;3;3}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Experimental;.8;.1;-18;28}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-15;22}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "8000.0",
         "shield": "800.0",
         "shield_facets": "4"
@@ -10349,7 +10349,7 @@
         "Dock": "{;-4.99;-1.28;6.02;0.98;0}{;0.0;0.0;0.0;10.19;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -10390,7 +10390,7 @@
         "Dock": "{0;0;311;-1261;200;0}{0;0;311;-750;200;0}{0;0;311;-250;200;0}{0;0;-320;-1261;200;0}{0;0;-320;-750;200;0}{0;0;-320;-250;200;0}{0;0;-320;1261;200;0}{0;0;-320;750;200;0}{0;0;-320;250;200;0}{0;503;-320;-750;200;0}{0;503;-320;-250;200;0}{0;503;-320;750;200;0}{0;503;-320;250;200;0}{0;-505;-320;750;200;0}{0;-505;-320;1250;200;0}{0;-320;133;750;128;0}{0;-320;133;1250;128;0}{0;340;133;-750;128;0}{0;340;133;-500;128;0}",
         "Cargo_Import": "{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "4000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -10431,7 +10431,7 @@
         "Dock": "{0;0;311;-1261;200;0}{0;0;311;-750;200;0}{0;0;311;-250;200;0}{0;0;-320;-1261;200;0}{0;0;-320;-750;200;0}{0;0;-320;-250;200;0}{0;0;-320;1261;200;0}{0;0;-320;750;200;0}{0;0;-320;250;200;0}{0;503;-320;-750;200;0}{0;503;-320;-250;200;0}{0;503;-320;750;200;0}{0;503;-320;250;200;0}{0;-505;-320;750;200;0}{0;-505;-320;1250;200;0}{0;-320;133;750;128;0}{0;-320;133;1250;128;0}{0;340;133;-750;128;0}{0;340;133;-500;128;0}",
         "Cargo_Import": "{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "4000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -10471,7 +10471,7 @@
         "Sub_Units": "{Shipyard__forsaken.armature;0;0;0;;;;;;;0}",
         "Cargo_Import": "{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;4;2}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "4000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -10512,7 +10512,7 @@
         "Dock": "{0;0;311;-1261;200;0}{0;0;311;-750;200;0}{0;0;311;-250;200;0}{0;0;-320;-1261;200;0}{0;0;-320;-750;200;0}{0;0;-320;-250;200;0}{0;0;-320;1261;200;0}{0;0;-320;750;200;0}{0;0;-320;250;200;0}{0;503;-320;-750;200;0}{0;503;-320;-250;200;0}{0;503;-320;750;200;0}{0;503;-320;250;200;0}{0;-505;-320;750;200;0}{0;-505;-320;1250;200;0}{0;-320;133;750;128;0}{0;-320;133;1250;128;0}{0;340;133;-750;128;0}{0;340;133;-500;128;0}",
         "Cargo_Import": "{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "4000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -10560,7 +10560,7 @@
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.2;3;2}{Consumer_and_Commercial_Goods/Electronics;1.2;.2;5;4}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;1.1;.2;1;1}{Industrially_Manufactured_Goods/Electronics;1.1;.2;2;1}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;5;3}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1.2;.1;3;1}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;10;7}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;1.05;.1;1;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;1;1}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;1.1;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Chemicals;1.1;.3;1;1}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Research;12;2;3;1}{Specialty_Goods/Entertainment;1.1;.2;1;1}{Specialty_Goods/Medical;1.1;.1;3;3}{starships/Andolian/Medium;1;;10;5}{starships/Confed/Heavy;1;;10;5}{starships/Confed/Light;1;;20;10}{starships/Confed/Medium;1;;15;7}{starships/Confed/Milspec;1;;5;2}{starships/Highborn/Heavy;1;;10;5}{starships/Regional_Guard/Heavy;1;;5;2}{starships/Regional_Guard/Light;1;;15;7}{starships/Regional_Guard/Medium;1;;10;5}{starships/Purist/Milspec;1;;5;2}{upgrades/Ammunition/Confed;1;.1;1000;2000}{upgrades/Armor;1;.1;25;12}{upgrades/Capacitors/Standard;1;.1;14;25}{upgrades/ECM_Systems;1;.1;15;7}{upgrades/Experimental;1.4;.2;;}{upgrades/Jump_Drives;1;.1;16;8}{upgrades/Overdrive;1;.1;22;12}{upgrades/Reactors/Standard;1;.1;45;22}{upgrades/Repair_Systems;1.1;.2;15;7}{upgrades/Sensors/Confed;1;.1;2;1}{upgrades/Sensors/Common;1;;10;5}{upgrades/Sensors/Highborn;1;.1;1;2}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;30;10}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;25;13}{upgrades/Weapons/Beam_Arrays_Confed_Milspec;1;.1;-2;5}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;2;1}{upgrades/Weapons/Beam_Arrays_Light;1;;10;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;5;2}{upgrades/Weapons/Mount_Enhancements;1;.1;10;5}{upgrades/Weapons/Mounted_Guns_Confed_Milspec;1;.1;5;2}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;8;3}{upgrades/Weapons/Mounted_Guns_Light;1;;20;10}{upgrades/Weapons/Mounted_Guns_Medium;1;;10;5}",
         "Cargo": "{Pilot;Contraband;1040;0;.01;1;1;1;;0}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "32000.0",
         "shield": "3141592.0",
         "shield_facets": "4"
@@ -10604,7 +10604,7 @@
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.2;30;20}{Consumer_and_Commercial_Goods/Electronics;1.2;.2;50;40}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;1.1;.2;10;10}{Industrially_Manufactured_Goods/Electronics;1.1;.2;20;10}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;50;30}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1.2;.1;30;10}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;10;7}{Natural_Products/Food/Aera;1.9;.2;150;2}{Natural_Products/Life-forms;.95;.1;;}{Natural_Products/Liquor;.9;.1;10;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;10;10}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;1.1;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Alloys/Aera;1;.1;20;20}{Refined_Materials/Chemicals;1.2;.3;10;10}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Refined_Materials/Synthetics;1.05;.3;10;10}{Research;12;2;3;10}{Specialty_Goods/Entertainment;1.1;.2;10;10}{Specialty_Goods/Medical;.8;.1;;}{Specialty_Goods/Pharmaceutical;1.9;.1;3;3}{starships/Aera/Heavy;1;;10;50}{starships/Aera/Light;1;;35;170}{starships/Aera/Milspec;1;;5;20}{upgrades/Ammunition/Aera;1;.1;3000;2500}{upgrades/Armor;1;.1;25;75}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;15;70}{upgrades/Experimental;1.4;.2;;}{upgrades/Jump_Drives;1;.1;14;52}{upgrades/Miscellaneous/Aera_Milspec;1;.1;2;10}{upgrades/Overdrive;1;.1;22;102}{upgrades/Reactors/Standard;1;.1;45;175}{upgrades/Repair_Systems;1.1;.2;15;70}{upgrades/Sensors/Confed;1;.1;2;10}{upgrades/Sensors/Common;1;;10;50}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;30;55}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;27;35}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;2;10}{upgrades/Weapons/Beam_Arrays_Light;1;;10;50}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;5;20}{upgrades/Weapons/Mount_Enhancements;1;.1;10;50}{upgrades/Weapons/Mounted_Guns_Aera_Milspec;1;.1;5;20}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;8;30}{upgrades/Weapons/Mounted_Guns_Light;1;;20;100}{upgrades/Weapons/Mounted_Guns_Medium;1;;10;50}{upgrades/Weapons/Turrets/Aera;1;.1;1;2}",
         "Cargo": "{Pilot;Contraband;1000;0;.01;1;1;1;;0}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "8000.0",
         "shield": "246802.0",
         "shield_facets": "4"
@@ -10646,7 +10646,7 @@
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.2;30;20}{Consumer_and_Commercial_Goods/Electronics;1.2;.2;50;40}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;1.55;.2;10;10}{Industrially_Manufactured_Goods/Electronics;1.1;.2;20;10}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;50;30}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1.2;.1;30;10}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;10;7}{Natural_Products/Food/Rlaan;1.9;.2;150;2}{Natural_Products/Life-forms;.95;.1;;}{Natural_Products/Liquor;.9;.1;10;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;10;10}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;1.1;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Alloys/Rlaan;1;.1;20;20}{Refined_Materials/Chemicals;1.125;.375;20;20}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Research;12;2;3;10}{Specialty_Goods/Augmentation;1.1;.2;20;10}{Specialty_Goods/Entertainment;1.1;.2;10;10}{Specialty_Goods/Medical;1.9;.1;3;3}{Specialty_Goods/Pharmaceutical;1.85;.1;;3}{starships/Rlaan/Heavy;1;;25;120}{starships/Rlaan/Light;1;;20;100}{starships/Rlaan/Milspec;1;;5;20}{upgrades/Ammunition/Rlaan;1;.1;3000;250}{upgrades/Armor;1;.1;35;80}{upgrades/Capacitors/Standard;1;.1;20;10}{upgrades/ECM_Systems;1;.1;15;70}{upgrades/Experimental;1.4;.2;;}{upgrades/Jump_Drives;1;.1;18;54}{upgrades/Overdrive;1;.1;23;84}{upgrades/Reactors/Standard;1;.1;57;200}{upgrades/Repair_Systems;1.1;.2;15;70}{upgrades/Sensors/Rlaan;1;.1;3;10}{upgrades/Sensors/Common;1;;10;50}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;50;60}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;47;40}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;2;10}{upgrades/Weapons/Beam_Arrays_Light;1;;10;50}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;5;20}{upgrades/Weapons/Beam_Arrays_Rlaan_Milspec;1;.1;-2;50}{upgrades/Weapons/Mount_Enhancements;1;.1;10;50}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;8;30}{upgrades/Weapons/Mounted_Guns_Light;1;;20;100}{upgrades/Weapons/Mounted_Guns_Medium;1;;10;50}{upgrades/Weapons/Mounted_Guns_Rlaan_Milspec;1;.1;5;20}{upgrades/Weapons/Turrets/Rlaan;1;.1;1;4}",
         "Cargo": "{Pilot;Contraband;1200;0;.01;1;1;1;;0}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -10685,7 +10685,7 @@
         "Dock": "{1;-29.5;-4.5;-66;3;0}",
         "Cargo_Import": "{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "50.0",
         "shield": "300.0",
         "shield_facets": "2"
@@ -10726,7 +10726,7 @@
         "Dock": "{0;-50;100;-185;40;0}",
         "Cargo_Import": "{Industrially_Manufactured_Goods/Agricultural;.6;.2;25;12}{Natural_Products/Life-forms;.7;.1;;}{Natural_Products/Liquor;.9;.1;30;45}{Natural_Products/Renewable_Resources;.9;.1;50;49}{Natural_Products/Food;.4;.1;5000;4123}{upgrades/Ammunition/Common;2.5;.1;4500;5500}{upgrades/Jump_Drives;2;.1;24;12}{upgrades/Reactors/Standard;2;.1;45;22}{upgrades/Sensors/Common;2;.1;20;10}{upgrades/Shield_Systems/Standard_Dual_Shields;2;.1;40;15}{upgrades/Shield_Systems/Standard_Quad_Shields;2;.1;35;12}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "26000.0",
         "shield": "4000.0",
         "shield_facets": "2"
@@ -10765,7 +10765,7 @@
         "Mounts": "{Seaxbane;4;;special-missile;2343;-200;0;;;0;0;1;0;1;0;1;1}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;12;5}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Advanced;1;.1;6;5}{upgrades/Sensors/Basic;1;.1;6;3}{upgrades/Sensors/Intermediate;1;.1;6;4}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -10806,7 +10806,7 @@
         "Dock": "{;5.13;7.1;0.0;1.35;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -10847,7 +10847,7 @@
         "Dock": "{;0.0;1.95;12.17;1.32;0}{;0.0;3.67;12.17;1.32;0}{;0.0;5.6;12.17;1.32;0}",
         "Cargo_Import": "{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Raw_Materials/Metals;.65;.2;42;15}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -10889,7 +10889,7 @@
         "Dock": "{0;0;-325;0;325;0} {0;0;2130;0;250;0}{1;-1960;1550;180;200;0}{1;-1960;1550;-180;200;0}{0;-2460;1550;0;900;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.2;.1;4;2}{Consumer_and_Commercial_Goods/Electronics;.8;.2;25;12}{Industrially_Manufactured_Goods/Agricultural;.8;.2;25;12}{Industrially_Manufactured_Goods/Construction;.8;.2;25;12}{Industrially_Manufactured_Goods/Electronics;.8;.2;25;12}{Industrially_Manufactured_Goods/Manufacturing;.8;.2;24;6}{Industrially_Manufactured_Goods/Mining;.8;.2;25;12}{Industrially_Manufactured_Goods/Power_Utilities;1;.1;8;6}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;;}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;1.1;.1;3;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;5;2}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Chemicals;1;.2;8;2}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.7;.1;;}{Research;10;2;;}{Specialty_Goods/Entertainment;.8;.2;25;12}{Specialty_Goods/Medical;1.2;.1;15;3}{starships/Andolian/Medium;1;;12;5}{starships/Confed/Heavy;1;;6;3}{starships/Confed/Light;1;;6;3}{starships/Confed/Medium;1;;12;5}{starships/Highborn/Heavy;1;;6;3}{starships/Hunter/Heavy;1;;6;3}{starships/Hunter/Light;1;;6;3}{starships/Hunter/Medium;1;;12;5}{starships/Merchant/Heavy;1;;6;3}{starships/Merchant/Light;1;;6;3}{starships/Merchant/Medium;1;;12;5}{starships/Regional_Guard/Heavy;1;;6;3}{starships/Regional_Guard/Light;1;;6;3}{starships/Regional_Guard/Medium;1;;12;5}{upgrades/Ammunition/Common;1.5;.1;4500;5500}{upgrades/Ammunition/Uncommon;2.5;.4;500;5500}{upgrades/Ammunition/Confed;2.5;.2;50;60}{upgrades/Armor;1;.1;30;15}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;10;5}{upgrades/Jump_Drives;1;.1;24;12}{upgrades/Overdrive;1;.1;38;19}{upgrades/Reactors/Standard;1;.1;45;22}{upgrades/Repair_Systems;1;.1;15;7}{upgrades/Sensors/Confed;1;.1;5;2}{upgrades/Sensors/Common;1;.1;20;10}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;40;15}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;35;12}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;2;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;10;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;5;2}{upgrades/Weapons/Mount_Enhancements;1;.1;10;5}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;5;2}{upgrades/Weapons/Mounted_Guns_Light;1;.1;20;10}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;10;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "26000.0",
         "shield": "4000.0",
         "shield_facets": "2"
@@ -10931,7 +10931,7 @@
         "Dock": "{0;0;300;0;300;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.2;.1;4;2}{Consumer_and_Commercial_Goods/Electronics;.8;.2;25;12}{Industrially_Manufactured_Goods/Agricultural;.8;.2;25;12}{Industrially_Manufactured_Goods/Construction;.8;.2;25;12}{Industrially_Manufactured_Goods/Electronics;.8;.2;25;12}{Industrially_Manufactured_Goods/Manufacturing;.8;.2;24;6}{Industrially_Manufactured_Goods/Mining;.8;.2;25;12}{Industrially_Manufactured_Goods/Power_Utilities;1;.1;8;6}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;;}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;1.1;.1;3;1}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;5;2}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Chemicals;1;.2;8;2}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.7;.1;;}{Research;10;2;;}{Specialty_Goods/Entertainment;.8;.2;25;12}{Specialty_Goods/Medical;1.2;.1;15;3}{starships/Andolian/Medium;1;;12;5}{starships/Confed/Heavy;1;;6;3}{starships/Confed/Light;1;;6;3}{starships/Confed/Medium;1;;12;5}{starships/Highborn/Heavy;1;;6;3}{starships/Hunter/Heavy;1;;6;3}{starships/Hunter/Light;1;;6;3}{starships/Hunter/Medium;1;;12;5}{starships/Merchant/Heavy;1;;6;3}{starships/Merchant/Light;1;;6;3}{starships/Merchant/Medium;1;;12;5}{starships/Regional_Guard/Heavy;1;;6;3}{starships/Regional_Guard/Light;1;;6;3}{starships/Regional_Guard/Medium;1;;12;5}{upgrades/Ammunition/Common;1.5;.1;4500;5500}{upgrades/Ammunition/Uncommon;2.5;.4;500;5500}{upgrades/Ammunition/Confed;2.5;.2;50;60}{upgrades/Armor;1;.1;30;15}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;10;5}{upgrades/Jump_Drives;1;.1;24;12}{upgrades/Overdrive;1;.1;38;19}{upgrades/Reactors/Standard;1;.1;45;22}{upgrades/Repair_Systems;1;.1;15;7}{upgrades/Sensors/Confed;1;.1;5;2}{upgrades/Sensors/Common;1;.1;20;10}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;40;15}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;35;12}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;2;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;10;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;5;2}{upgrades/Weapons/Mount_Enhancements;1;.1;10;5}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;5;2}{upgrades/Weapons/Mounted_Guns_Light;1;.1;20;10}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;10;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "26000.0",
         "shield": "4000.0",
         "shield_facets": "4"
@@ -10972,7 +10972,7 @@
         "Dock": "{0;0;311;-1261;200;0}{0;0;311;-750;200;0}{0;0;311;-250;200;0}{0;0;-320;-1261;200;0}{0;0;-320;-750;200;0}{0;0;-320;-250;200;0}{0;0;-320;1261;200;0}{0;0;-320;750;200;0}{0;0;-320;250;200;0}{0;503;-320;-750;200;0}{0;503;-320;-250;200;0}{0;503;-320;750;200;0}{0;503;-320;250;200;0}{0;-505;-320;750;200;0}{0;-505;-320;1250;200;0}{0;-320;133;750;128;0}{0;-320;133;1250;128;0}{0;340;133;-750;128;0}{0;340;133;-500;128;0}",
         "Cargo_Import": "{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "4000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -11014,7 +11014,7 @@
         "Dock": "{1;165.399868;177.177845;-173.599853;120;0}{1;-185.999833;303.396394;177.799866;120;0}{0;247.930588;-433.502016;20.582228;200;0}{1;482.999618;-208.581288;42.60038;100;0}{1;291.39975;-208.581288;42.60038;100;0}{1;105.39991;-208.581288;42.60038;100;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.8;.3;38;12}{Consumer_and_Commercial_Goods/Electronics;.8;.3;25;7}{Industrially_Manufactured_Goods/Agricultural;.8;.2;26;12}{Industrially_Manufactured_Goods/Construction;.8;.2;17;5}{Industrially_Manufactured_Goods/Electronics;1.1;.2;2;2}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;5;3}{Industrially_Manufactured_Goods/Mining;.8;.2;25;8}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;35;10}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;10;7}{Natural_Products/Life-forms;.9;.1;;}{Natural_Products/Liquor;1.05;.1;1;2}{Natural_Products/Renewable_Resources;1.2;.2;5;5}{Raw_Materials/Gases;1.1;.1;10;5}{Raw_Materials/Hydrocarbons;.8;.2;;}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;.9;.1;;}{Raw_Materials/Stone;1;.1;;}{Refined_Materials/Chemicals;1;.1;2;2}{Refined_Materials/Precious_Metals;1.2;.1;10;3}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.2;25;9}{Refined_Materials/Radioactive_Metals;.7;.1;;}{Research;11.75;2.25;;}{Specialty_Goods/Entertainment;.8;.2;10;7}{Specialty_Goods/Medical;.8;.2;15;3}{starships/Andolian/Medium;1;;12;5}{starships/Confed/Light;1;;24;5}{starships/Confed/Medium;1;;12;5}{starships/Hunter/Heavy;1;;6;5}{starships/Hunter/Light;1;;24;5}{starships/Hunter/Medium;1;;12;5}{starships/ISO/Medium;1;;36;10}{starships/Merchant/Heavy;1;;6;5}{starships/Merchant/Light;1;;24;5}{starships/Merchant/Medium;1;;12;5}{starships/Regional_Guard/Light;1;;24;5}{starships/Regional_Guard/Medium;1;;12;5}{upgrades/Ammunition/Common;1;.1;750;600}{upgrades/Ammunition/Uncommon;3;.6;-50;200}{upgrades/Ammunition/Confed;2;.1;60;75}{upgrades/Armor;1;.1;16;7}{upgrades/Capacitors/Standard;1;.1;14;25}{upgrades/ECM_Systems;1;.1;5;2}{upgrades/Jump_Drives;1;.1;10;4}{upgrades/Overdrive;1;.1;23;8}{upgrades/Reactors/Standard;1;.1;30;11}{upgrades/Repair_Systems;1;.1;8;4}{upgrades/Sensors/Common;1;.1;12;2}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;32;7}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;28;9}{upgrades/Weapons/Beam_Arrays_Heavy;1;.1;-2;5}{upgrades/Weapons/Beam_Arrays_Light;1;.1;12;2}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;6;2}{upgrades/Weapons/Mount_Enhancements;1;.1;12;2}{upgrades/Weapons/Mounted_Guns_Heavy;1;.1;6;2}{upgrades/Weapons/Mounted_Guns_Light;1;;24;5}{upgrades/Weapons/Mounted_Guns_Medium;1;;12;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -11056,7 +11056,7 @@
         "Dock": "{1;48.278;-8.092;-371.92;10;0}{11;.6;-7;-400.0;10;0}{20;1.088;-14;-683.52;10;0}{1;-71;-8.1;-345.25;10;0}{1;-305.02;-8.092;-175.9;10;0}{11;-379.9;-7;-125.2.1;10;0}{20;-648.16;-14.006;-213.6;10;0}{1;-349.771;-8.092;-39.872;10;0}{1;-261.3;-8.1;236.1;10;0}{11;-236.1;-7;322.9;10;0}{20;-403;-14;551.2;10;0}{1;-145.8;-8.1;320.77;10;0}{1;145.2;-8.092;321.5;10;0}{11;235.2;-7;323.6;10;0}{20;402.24;-14;553.36;10;0}{1;261.1;-8.092;237.484;10;0}{1;350.9;-8.092;-39.32;10;0}{11;380.2;-7.004;-124.2;10;0}{20;650.66;-14.008;-212.56;10;0}{1;306.4;-8.092;-175.4;10;0}{10;0;-300;0;100;0}{20;0;-600;0;100;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;.7;.1;;}{Natural_Products/Liquor;.8;.1;;}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;;}{Raw_Materials/Metals;.65;.2;;}{Raw_Materials/Stone;.7;.1;;}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;;}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;;}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Confed/Heavy;1;;;6}{starships/Confed/Light;1;;;6}{starships/Confed/Medium;1;;;6}{starships/Confed/Milspec;1;;;6}{starships/Highborn/Heavy;1;;;6}{starships/Purist/Milspec;1;;;6}{upgrades/Ammunition/Confed;2;.1;370;700}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;16;7}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Sensors/Common;1;.1;12;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/Weapons/Beam_Arrays_Confed_Milspec;1;.1;4;4}{upgrades/Weapons/Mounted_Guns_Confed_Milspec;1;.1;2;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "4800.0",
         "shield_facets": "4"
@@ -11097,7 +11097,7 @@
         "Dock": "{1;-150;-302;40;20;0}{1;-72;-302;120;20;0}{1;25;-305;140;20;0}",
         "Cargo_Import": "{Natural_Products/Liquor;3.1;.1;1;1}{Raw_Materials/Gases;.4;.1;7000;6500}{Raw_Materials/Hydrocarbons;.7;.2;;}{Refined_Materials/Chemicals;1.1;.2;3;2}{Specialty_Goods/Entertainment;4.2;.1;1;1}{Specialty_Goods/Medical;2.1;.1;5;3}{starships/Hunter/Light;1;;12;5}{starships/Regional_Guard/Light;1;;12;5}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -11144,7 +11144,7 @@
         "Dock": "{1;0;50;0;100;0}{0;4200;0;-10;150;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.9;.1;;}{Consumer_and_Commercial_Goods/Electronics;1;.1;5;2}{Industrially_Manufactured_Goods/Agricultural;.4;.1;;}{Industrially_Manufactured_Goods/Construction;.2;.1;;}{Industrially_Manufactured_Goods/Electronics;1.1;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;.8;.1;;}{Industrially_Manufactured_Goods/Mining;.6;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;;}{Natural_Products/Life-forms;.7;.2;;}{Natural_Products/Liquor;1;.2;2;2}{Natural_Products/Renewable_Resources;.7;.2;;}{Raw_Materials/Gases;.7;.2;;}{Raw_Materials/Hydrocarbons;.8;.2;;}{Raw_Materials/Industrial_Gems;1.2;.2;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.6;.1;;}{Refined_Materials/Chemicals;.8;.3;;}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.8;.1;;}{Research;10.5;1.5;;2}{Specialty_Goods/Augmentation;1.12;.2;;}{Specialty_Goods/Entertainment;1;.1;2;1}{Specialty_Goods/Medical;.8;.1;25;20}{Specialty_Goods/Pharmaceutical;1.4;.25;5;5}{starships/Merchant/Heavy;1;;12;5}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;12;5}{upgrades/Ammunition;8;.1;-52;70}{upgrades/Armor;1;.1;30;10}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-2;4}{upgrades/Sensors/Common;1;.1;20;6}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;40;11}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;16;17}{upgrades/Weapons/Beam_Arrays_Light;1;.1;3;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "20000.0",
         "shield": "800.0",
         "shield_facets": "4"
@@ -11186,7 +11186,7 @@
         "Dock": "{1;250;0;0;400;0}{1;-525;0;0;400;0}{0;2343;-200;0;200;0}{0;2030;-200;530;200;0}{0;2030;-200;-530;200;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Confed;1;.1;6;5}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -11227,7 +11227,7 @@
         "Dock": "{1;-10.25;86.9;23.31;50;0}{1;-10.25;86.9;-23.31;50;0}{0;1.4;-185.4;100;60;0}",
         "Cargo_Import": "{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "4000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -11270,7 +11270,7 @@
         "Dock": "{1;1.385943;4.17939;.46206;2;0}{0;0;-9.8;0;2;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.8;.1;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;1;1}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;.8;.1;;}{Industrially_Manufactured_Goods/Electronics;.8;.1;;}{Industrially_Manufactured_Goods/Manufacturing;1.1;.1;10;4}{Industrially_Manufactured_Goods/Mining;.8;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;.8;.2;45;17}{Natural_Products/Life-forms;.7;.1;;}{Natural_Products/Liquor;1.3;.1;3;2}{Natural_Products/Renewable_Resources;.9;.1;;}{Raw_Materials/Gases;1.1;.1;10;5}{Raw_Materials/Hydrocarbons;1.3;.3;4;2}{Raw_Materials/Industrial_Gems;.8;.1;;}{Raw_Materials/Metals;1.2;.1;12;5}{Raw_Materials/Stone;.8;.1;;}{Refined_Materials/Chemicals;.7;.2;28;25}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.2;;}{Refined_Materials/Radioactive_Metals;.8;.1;25;10}{Specialty_Goods/Entertainment;.9;.1;;}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;6}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;6}{starships/Hunter/Medium;1;;6;3}{starships/ISO/Medium;1;;18;9}{starships/Merchant/Light;1;;12;6}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;6}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;30;60}{upgrades/Armor;1;.1;12;6}{upgrades/Capacitors/Standard;1;.1;10;55}{upgrades/ECM_Systems;1;.1;2;1}{upgrades/Jump_Drives;1;.1;10;5}{upgrades/Overdrive;1;.1;5;3}{upgrades/Reactors/Standard;1;.1;6;3}{upgrades/Repair_Systems;1;.1;2;1}{upgrades/Sensors/Common;1;.1;6;3}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;26;8}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/Weapons/Beam_Arrays_Light;1;.1;3;2}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;1;1}{upgrades/Weapons/Mounted_Guns_Light;1;.1;6;3}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;2;1}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "28000.0",
         "shield": "8000.0",
         "shield_facets": "4"
@@ -11312,7 +11312,7 @@
         "Dock": "{1;-826;1723;3;400;0}{1;826;1723;3;400;0}{1;3;1723;826;400;0}{1;3;1723;-826;400;0}{0;386;-1889;860;600;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;1.1;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;.8;.1;;}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;.7;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;.8;.1;2;2}{Natural_Products/Liquor;.9;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;;}{Raw_Materials/Metals;.65;.2;24;15}{Raw_Materials/Stone;.7;.1;;}{Refined_Materials/Chemicals;1.2;.3;3;2}{Refined_Materials/Precious_Metals;.65;.2;;}{Refined_Materials/Purified_and_Enhanced_Materials;.8;.1;;}{Refined_Materials/Radioactive_Metals;.65;.2;;}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Confed/Light;1;;1;3}{upgrades/Ammunition/Common;1;.1;10;20}{upgrades/Armor;1;.1;22;10}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/ECM_Systems;1;.1;12;5}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;2;4}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Sensors/Confed;1;.1;12;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/Weapons/Beam_Arrays_Confed_Milspec;1;.1;2;4}{upgrades/Weapons/Mounted_Guns_Confed_Milspec;1;.1;2;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "800.0",
         "shield_facets": "4"
@@ -11353,7 +11353,7 @@
         "Dock": "{;400;2;80;200;0}{;-400;2;80;200;0}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;1.1;.1;4;2}{Consumer_and_Commercial_Goods/Electronics;1.25;.2;5;2}{Industrially_Manufactured_Goods/Agricultural;.8;.1;;}{Industrially_Manufactured_Goods/Construction;.8;.1;;}{Industrially_Manufactured_Goods/Electronics;1.2;.2;;1}{Industrially_Manufactured_Goods/Manufacturing;.8;.1;;}{Industrially_Manufactured_Goods/Mining;.5;.1;;}{Industrially_Manufactured_Goods/Power_Utilities;1;.1;3;3}{Industrially_Manufactured_Goods/Recycled_Products;.8;.1;;}{Natural_Products/Life-forms;.8;.05;;}{Natural_Products/Liquor;.7;.2;;}{Natural_Products/Renewable_Resources;.8;.1;;}{Raw_Materials/Gases;1.1;.1;3;3}{Raw_Materials/Hydrocarbons;.8;.1;;}{Raw_Materials/Industrial_Gems;1.2;.1;;}{Raw_Materials/Metals;.8;.1;;}{Raw_Materials/Stone;.5;.1;;}{Refined_Materials/Chemicals;.8;.1;3;3}{Refined_Materials/Precious_Metals;.8;.1;;}{Refined_Materials/Purified_and_Enhanced_Materials;.7;.1;;}{Refined_Materials/Radioactive_Metals;1.2;.3;;}{Research;7.5;3;-80;155}{Specialty_Goods/Augmentation;1.2;.2;;}{Specialty_Goods/Entertainment;.5;.1;;}{Specialty_Goods/Medical;1.05;.1;3;3}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Experimental;.8;.1;-18;28}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-15;22}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "12800.0",
         "shield_facets": "4"
@@ -11394,7 +11394,7 @@
         "Dock": "{0;0;311;-1261;200;0}{0;0;311;-750;200;0}{0;0;311;-250;200;0}{0;0;-320;-1261;200;0}{0;0;-320;-750;200;0}{0;0;-320;-250;200;0}{0;0;-320;1261;200;0}{0;0;-320;750;200;0}{0;0;-320;250;200;0}{0;503;-320;-750;200;0}{0;503;-320;-250;200;0}{0;503;-320;750;200;0}{0;503;-320;250;200;0}{0;-505;-320;750;200;0}{0;-505;-320;1250;200;0}{0;-320;133;750;128;0}{0;-320;133;1250;128;0}{0;340;133;-750;128;0}{0;340;133;-500;128;0}",
         "Cargo_Import": "{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Jump_Drives;1;.1;4;2}{upgrades/Overdrive;1;.1;3;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "4000.0",
         "shield": "3000.0",
         "shield_facets": "4"
@@ -11433,7 +11433,7 @@
         "Mounts": "{Seaxbane;4;;special-missile;2343;-200;0;;;0;0;1;0;1;0;1;1}",
         "Cargo_Import": "{Consumer_and_Commercial_Goods/Domestic;.7;.2;;}{Consumer_and_Commercial_Goods/Electronics;.9;.1;;}{Industrially_Manufactured_Goods/Agricultural;.7;.1;;}{Industrially_Manufactured_Goods/Construction;1.2;.1;1;1}{Industrially_Manufactured_Goods/Electronics;1.2;.1;1;1}{Industrially_Manufactured_Goods/Manufacturing;1.2;.2;;}{Industrially_Manufactured_Goods/Mining;1.3;.1;1;1}{Industrially_Manufactured_Goods/Power_Utilities;.8;.1;;}{Industrially_Manufactured_Goods/Recycled_Products;1.1;.1;;}{Natural_Products/Life-forms;1;.1;2;2}{Natural_Products/Liquor;1.1;.1;1;1}{Natural_Products/Renewable_Resources;.7;.1;;}{Raw_Materials/Gases;1.2;.1;5;5}{Raw_Materials/Hydrocarbons;.7;.2;;}{Raw_Materials/Industrial_Gems;.7;.2;22;7}{Raw_Materials/Metals;.65;.2;42;15}{Raw_Materials/Stone;.7;.1;7;3}{Refined_Materials/Chemicals;1.1;.2;3;2}{Refined_Materials/Precious_Metals;.65;.2;22;5}{Refined_Materials/Purified_and_Enhanced_Materials;1.05;.1;10;}{Refined_Materials/Radioactive_Metals;.65;.2;25;5}{Specialty_Goods/Entertainment;1.2;.1;1;1}{Specialty_Goods/Medical;1.1;.1;5;3}{starships/Andolian/Medium;1;;12;5}{starships/Andolian/Medium;1;;6;3}{starships/Confed/Light;1;;12;5}{starships/Confed/Medium;1;;6;3}{starships/Hunter/Light;1;;12;5}{starships/Hunter/Medium;1;;6;3}{starships/Merchant/Light;1;;12;5}{starships/Merchant/Medium;1;;6;3}{starships/Regional_Guard/Light;1;;12;5}{starships/Regional_Guard/Medium;1;;6;3}{upgrades/Ammunition/Common;1;.1;100;280}{upgrades/Ammunition/Uncommon;3;.4;-10;280}{upgrades/Ammunition/Confed;2;.2;20;28}{upgrades/Armor;1;.1;10;5}{upgrades/Capacitors/Standard;1;.1;10;5}{upgrades/Cargo;1;.1;2;1}{upgrades/ECM_Systems;1;.1;;3}{upgrades/Jump_Drives;1;.1;6;3}{upgrades/Overdrive;1;.1;6;4}{upgrades/Passenger_Quarters;1;.1;10;2}{upgrades/Reactors/Standard;1;.1;10;5}{upgrades/Repair_Systems;1;.1;-1;4}{upgrades/Sensors/Advanced;1;.1;6;5}{upgrades/Sensors/Basic;1;.1;6;3}{upgrades/Sensors/Intermediate;1;.1;6;4}{upgrades/Shady_Mechanic;1;.1;-2;5}{upgrades/Shield_Systems/Standard_Dual_Shields;1;.1;20;5}{upgrades/Shield_Systems/Standard_Quad_Shields;1;.1;20;5}{upgrades/SPEC_Capacitors;1;.1;6;2}{upgrades/Weapons/Beam_Arrays_Light;1;.1;;5}{upgrades/Weapons/Beam_Arrays_Medium;1;.1;-3;5}{upgrades/Weapons/Mount_Enhancements;1;.1;-50;51}{upgrades/Weapons/Mounted_Guns_Light;1;.1;;4}{upgrades/Weapons/Mounted_Guns_Medium;1;.1;;3}",
         "Upgrade_Storage_Volume": "1000000",
-        "Spec_Interdiction": "0.75",
+        "ftl_interdiction": "0.75",
         "armor": "30000.0",
         "shield": "3000.0",
         "shield_facets": "4"
