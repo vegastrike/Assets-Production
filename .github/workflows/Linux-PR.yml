@@ -21,6 +21,7 @@ jobs:
           # only do one Deb file because they're so large
           - FROM: 'debian:bookworm'
           - FROM: 'opensuse/leap:16.0'
+          - FROM: 'fedora:45'
           - FROM: 'fedora:44'
           - FROM: 'fedora:43'
           - FROM: 'rockylinux_rockylinux:10.2'
