@@ -78,7 +78,7 @@
             "include_base_name_on_dock": true,
             "location_marker_distance": 0.5,
             "location_marker_draw_always": false,
-            "location_marker_sprite": "",
+            "location_marker_sprite": "base_locationmarker.spr",
             "location_marker_text_color_r": 1.0,
             "location_marker_text_color_g": 1.0,
             "location_marker_text_color_b": 1.0,
