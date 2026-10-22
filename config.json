@@ -192,5 +192,10 @@
         "inactive_system_time": 0.3,
         "num_running_systems": 4,
         "warp_ramp_down_time": 0.1
+    },
+    "dock": {
+        "mode": "simple",
+        "simple_dock_range": 5000.0,
+        "dock_planet_radius_percent": 1.5
     }
 }
