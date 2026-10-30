@@ -148,11 +148,11 @@ void GAR( in vec3 eye, in vec3 normal, in float blur_radius, out vec3 GAreflecti
 }
 
 
-void main() 
+void main()
 {
   // Retreive texture coordinates
   vec2 tex_coord = gl_TexCoord[0].xy;
-  
+
   // Retrieve vectors
   vec3 iNormal=gl_TexCoord[1].xyz;
   vec3 iTangent=gl_TexCoord[2].xyz;
@@ -161,7 +161,7 @@ void main()
 #if (SUPRESS_HI_Q_VNORM == 0)
   vec3 fnormal = normalize( cross( dFdx(position), dFdy(position) ) );
   fnormal *= sign(dot(fnormal,iNormal)+0.1);
-  
+
   //supplement the vnormal with face normal before normalizing
   float supplemental_fraction=(1.0-length(iNormal));
   vec3 vnormal = normalize( iNormal + supplemental_fraction*fnormal );
@@ -172,16 +172,16 @@ void main()
 #if (SUPRESS_NORMALMAP != 0)
   normal = vnormal;
 #endif
-  
+
   // Other vectors
   vec3 eye = gl_TexCoord[4].xyz;
-  
+
   // Sample textures
   vec4 damagecolor = texture2D(damageMap , tex_coord);
   vec4 diffcolor   = texture2D(diffuseMap, tex_coord);
   vec4 speccolor   = texture2D(specMap   , tex_coord);
   vec4 glowcolor   = texture2D(glowMap   , tex_coord);
-  
+
   // De-gamma input textures
   damagecolor.rgb  = degamma_tex(damagecolor.rgb);
   diffcolor.rgb    = degamma_tex(diffcolor.rgb);
@@ -192,12 +192,12 @@ void main()
   diffcolor.rgb  = lerp(diffcolor, damagecolor, damage.x).rgb;
   speccolor     *= (1.0-damage.x);
   glowcolor.rgb *= (1.0-damage.x);
-  
+
   //materials
   vec4 mtl_gloss;
   vec3 diff_col, mspec_col, glow_col;
   float alpha, UAO;
-  //grab alpha channels  
+  //grab alpha channels
   alpha = diffcolor.a;
   UAO = glowcolor.a;
   float rootUAO = sqrt(UAO);
@@ -212,13 +212,12 @@ void main()
   diff_col *= inverse_insanity;
   mspec_col *= inverse_insanity;
 #endif
-  
+
   //compute gloss-related stuff
 #if (SHININESS_FROM == AD_HOC_SHININESS)
   float crapgloss = saturatef(0.5*dot(mspec_col,vec3(0.3,1.0,0.7)));
   GLOSS_init( mtl_gloss, 0.1 + 0.4 * sqr(crapgloss) );
-#endif
-#if (SHININESS_FROM == GLOSS_IN_SPEC_ALPHA)
+#else
   GLOSS_init( mtl_gloss, speccolor.a );
 #endif
 
@@ -230,7 +229,7 @@ void main()
   reflection = normalize(-reflect(eye,normal));
 #endif
   vec3 vreflection = normalize(-reflect(eye,vnormal));
-  
+
 #if (SUPRESS_NMRELEV == 0)
   //normalmap feature relevance adjustments
   //(Just a way of getting a hint of paralax on the very cheap. Basic idea is to make shading effects on bump
@@ -252,7 +251,7 @@ void main()
      lighting0(normal, vnormal, reflection, vreflection, rel, mtl_gloss_sa, light_acc, diffuse_acc, specular_acc);
   if (light_enabled[1] != 0)
      lighting1(normal, vnormal, reflection, vreflection, rel, mtl_gloss_sa, light_acc, diffuse_acc, specular_acc);
-  
+
   //Light in a lot of systems is just too dark.
   //Until the universe generator gets fixed, this hack fixes that:
   float crank_factor = 2.0;
@@ -284,7 +283,7 @@ void main()
 #if (SUPRESS_AMBIENT == 0)
   incoming_diffuse_light += ( ambMapping( normal, UAO ) * UAO );
 #endif
-  
+
   //Multiply and Add:
   vec3 final_reflected = incoming_specular_light * mspec_col * UAO * rootUAO;
 #if (SUPRESS_DIFFUSE == 0)

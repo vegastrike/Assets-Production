@@ -40,14 +40,14 @@ float shininess2Lod(float shininess) { return max(0.0,7.0-log2(shininess+1.0))+3
 
 vec3 envMapping(in vec3 reflection, in float shininess, in vec4 specmap)
 {
-   float envLod = shininess2Lod(shininessMap(shininess,specmap));
-   return texture2DLod(envMap, EnvMapGen(reflection), envLod).rgb * specmap.rgb * envColor.rgb;
+    float envLod = shininess2Lod(shininessMap(shininess,specmap));
+    return textureLod(envMap, EnvMapGen(reflection), envLod).rgb * specmap.rgb * envColor.rgb;
 }
 
 
 void main() {
   //begin bumpmapping
-    
+
   vec3 iNormal=tc1.xyz;
   vec3 iTangent=tc2.xyz;
   vec3 iBinormal=tc3.xyz;
@@ -55,7 +55,7 @@ void main() {
   iBinormal=vec3(gl_ModelViewMatrix[2][0],gl_ModelViewMatrix[2][1],gl_ModelViewMatrix[2][2]);
   iTangent=normalize(cross(iBinormal,iNormal));
   iBinormal=normalize(cross(iNormal,iTangent));
-  
+
 
   vec3 iLightVec=tc5.xyz;
   vec3 pos=vec3(tc0.z,tc0.w,tc1.w);

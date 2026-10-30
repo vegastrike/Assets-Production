@@ -50,14 +50,14 @@ vec4 atmosphericScatter(vec4 dif, float fNDotV, float fNDotL, float fVDotL, vec3
 {
    float  vdepth     = cosAngleToDepth(fNDotV);
    float  alpha      = saturatef(2.0 * (cosAngleToAlpha(fNDotV) - 0.5));
-   
+
    vec3  vabsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*vdepth));
-   vec3  lscatter    = gl_LightSource[0].diffuse.rgb 
-                       * fAtmosphereScatterColor.rgb 
+   vec3  lscatter    = gl_LightSource[0].diffuse.rgb
+                       * fAtmosphereScatterColor.rgb
                        * min(fMaxScatterFactor-fMinScatterFactor,sqrt(vdepth));
-   
+
    vec4 rv;
-   rv.rgb = regamma( dif.rgb*vabsorption*fvShadow*vabsorption 
+   rv.rgb = regamma( dif.rgb*vabsorption*fvShadow*vabsorption
                   + atmosphereLighting(fNDotL)
                     *lscatter );
    rv.a = dif.a * alpha;
@@ -65,37 +65,37 @@ vec4 atmosphericScatter(vec4 dif, float fNDotV, float fNDotL, float fVDotL, vec3
 }
 
 void main()
-{      
+{
    vec2 texcoord = gl_TexCoord[0].xy;
    vec4 shadowcoord = gl_TexCoord[1];
-   
+
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
    vec3 tN = expand( texture2D( normalMap_20, texcoord ).rgb ) * vec3(-1.0,1.0,1.0); // Do not normalize, to avoid aliasing
-   
+
    vec2 noise = expand( texture2D( noiseMap_20, texcoord * fBumpScale.y ).xy );
    vec3 dN = normalize( vec3( noise * fBumpScale.z, 1 ) ) - vec3(0.0,0.0,1.0);
    vec3 N = dN + tN;
-   
+
    vec3 R = -reflect(L,N);
-   
-   float  fNDotL           = saturatef( dot(N,L) ); 
-   float  fNDotLs          = saturatef( L.z ); 
-   float  fNDotLf          = L.z; 
+
+   float  fNDotL           = saturatef( dot(N,L) );
+   float  fNDotLs          = saturatef( L.z );
+   float  fNDotLf          = L.z;
    float  fNDotLB          = saturatef(-L.z + fCityLightTriggerBias.x);
    float  fRDotV           = saturatef( dot(R,V) );
    float  fNDotV           = saturatef( dot(N,V) );
    float  fNDotVs          = saturatef( V.z );
    float  fVDotL           = dot(L,V);
-   
+
    vec4 fvTexColor         = texture2D( baseMap_20, texcoord );
    fvTexColor.rgb          = degamma_tex(fvTexColor.rgb);
-   
+
    float  fGShadow         = texture2D( cloudMap_20, shadowcoord.xy ).a;
    fGShadow               *= fCloudLayerDensity;
-   
+
    vec3 fvGShadow          = lerp( vec3(1.0), fvShadowColor.rgb, fGShadow );
-   
+
    vec4 fvSpecular         = degamma_tex(texture2D( specularMap_20, texcoord ));
    fvSpecular.rgb         *= fresnel(fNDotV);
    fRDotV                  = pow( fRDotV, fShininess.x*(0.01+0.99*fvSpecular.a)*256.0 );
@@ -104,7 +104,7 @@ void main()
    vec4 fvBaseColor;
    fvBaseColor.rgb         = gl_Color.rgb * groundLighting(fNDotL) * self_shadow(fNDotLs);
    fvBaseColor.a           = gl_Color.a;
-   
+
    vec4 dif                = fvBaseColor * fvTexColor;
    vec4 spec               = 4.0*fvSpecular*self_shadow_smooth_ex(fNDotLs);
 

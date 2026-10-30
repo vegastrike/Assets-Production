@@ -74,13 +74,13 @@ vec4 atmosphericScatter(vec3 ambient, vec3 dif, float fNDotV, float fNDotL, floa
    float ldepth     = cosAngleToLDepth(fNDotL);
    float ralpha     = cosAngleToAlpha(fNDotV);
    ralpha           = saturatef(pow(ralpha,fAtmosphereExtrusionSteepness));
-   
+
    vec3 labsorption = pow(fAtmosphereAbsorptionColor.rgb,vec3(fAtmosphereAbsorptionColor.a*ldepth*0.5*fSelfShadowFactor));
 
-   vec3 lscatter    = gl_LightSource[0].diffuse.rgb 
+   vec3 lscatter    = gl_LightSource[0].diffuse.rgb
                        * dif * labsorption
                        * (fMinScatterFactor+soft_min(fMaxScatterFactor-fMinScatterFactor,vdepth*ralpha));
-   
+
    vec4 rv;
    rv.rgb = regamma( ambient * dif * 0.5
                   + atmosphereLighting(scaleAndOffset(fNDotL))
@@ -96,12 +96,12 @@ vec3 ambientMapping( in vec3 direction )
 }
 
 void main()
-{      
+{
    vec3 L = normalize(varTSLight);
    vec3 V = normalize(varTSView);
-   
+
    vec3 dif = texture2D(baseMap, gl_TexCoord[0].xy, 4.0).rgb;
-   
+
    gl_FragColor = atmosphericScatter( ambientMapping(varWSNormal), dif, V.z, L.z, dot(L,V) );
 }
 

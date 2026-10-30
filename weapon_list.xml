@@ -411,7 +411,7 @@
 <Bolt name="Laser" mountsize="light">  <!-- NOT ACTUALLY A LASER -->
 <Energy rate="4" stability="4" refire=".3">
 </Energy>
-<Damage damage="18" longrange=".4">
+<Damage rate="18" longrange=".4">
 </Damage>
 <Distance speed="2500" radialspeed="1" radius="1.2" length="10" pulsespeed="15" range="2880" >
 </Distance>

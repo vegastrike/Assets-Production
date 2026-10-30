@@ -1,0 +1,82 @@
+#!/bin/bash
+#====================================
+# @file   : cibuild
+# @brief  : Builds vsUTCS for purposes of CI/CD (GH Actions)
+# @usage  : script/cibuild
+# @param  : none
+#====================================
+# Copyright (C) 2020-2026 Stephen G Tuggy and other vsUTCS contributors
+#
+# This file is part of Vega Strike: Upon the Coldest Sea ("vsUTCS").
+#
+# vsUTCS is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# vsUTCS is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with vsUTCS.  If not, see <https://www.gnu.org/licenses/>.
+
+
+set -e
+
+echo "----------------------------"
+echo "--- cibuild | 2026-01-20 ---"
+echo "----------------------------"
+
+#----------------------------------
+# validate parameters
+#----------------------------------
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --from=*)
+      from="${1#*=}"
+      ;;
+    *)
+      printf "***************************\n"
+      printf "* Error: Invalid argument.*\n"
+      printf "***************************\n"
+      exit 1
+      ;;
+  esac
+  shift
+done
+
+if [ -z "$from" ] && [ -n "$FROM" ]
+then
+    from="${FROM}"
+fi
+
+platform="$(uname | tr '[:upper:]' '[:lower:]')"
+
+case "$platform" in
+    "linux"|"linux-gnu")
+        SRC_DOCKER_IMG_NAME="vegastrike/vega-strike-build-env:$(echo "$from" | sed 's/:/_/' | sed 's/\//_/')"
+        DST_DOCKER_IMG_NAME="building-vsutcs:$(echo "$from" | sed 's/:/_/' | sed 's/\//_/')"
+        DOCKER_CONTAINER_NAME="building-vsutcs_$(echo "$from" | sed 's/:/_/' | sed 's/\//_/')"
+        echo "Building docker image for $from"
+        docker build --build-arg from="$SRC_DOCKER_IMG_NAME" -t "$DST_DOCKER_IMG_NAME" .
+        echo "Running docker image for $from"
+        docker run --env IS_RELEASE=$IS_RELEASE --env TAG_NAME="$TAG_NAME" --env GITHUB_SHA=$GITHUB_SHA --env SHORT_SHA="$SHORT_SHA" --env FLAGS=$FLAGS --name "$DOCKER_CONTAINER_NAME" "$DST_DOCKER_IMG_NAME" $FLAGS
+        if [ $IS_RELEASE -eq 1 ]
+        then
+            docker cp $DOCKER_CONTAINER_NAME:/usr/local/src/vsUTCS/packages .
+        fi
+        docker rm $DOCKER_CONTAINER_NAME
+        ;;
+    "darwin")
+        script/docker-entrypoint.sh $@
+        ;;
+    *)
+        echo "Sorry, unrecognized or unsupported operating system"
+        exit 2
+        ;;
+esac
+
+echo "cibuild Done!"

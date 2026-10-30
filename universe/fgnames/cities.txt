@@ -48,7 +48,7 @@ Alexandria, Egypt
 Alexandria, LA 	
 Algiers, Algeria		
 Alice Springs, Australia
-AlingsÂs, Sweden		
+Alings√•s, Sweden		
 Allegan, MI 	
 Allen Park, MI 	
 Allen, TX 	
@@ -131,7 +131,7 @@ Ashford, Kent, England, U.K.
 Ashland, KY 	
 Ashland, WI 	
 Ashtabula, OH 	
-AsnÊs, Denmark		
+Asn√¶s, Denmark		
 Aspen, CO 	
 Assen, Netherlands		
 Astoria, OR 	
@@ -159,8 +159,8 @@ Aurora, CA
 Aurora, IL 	
 Austin, MN 	
 Austin, TX 	
-¡vila, Spain		
-AvilÈs, Spain		
+√Åvila, Spain		
+Avil√©s, Spain		
 Bacolod, Philippines
 Bad Neustadt, Germany
 Baden, Austria		
@@ -268,7 +268,7 @@ Berlin, Germany
 Berlin, NH 	
 Bern, Switzerland		
 Berwick-upon-Tweed, England, U.K.
-BesanÁon, France		
+Besan√ßon, France		
 Bethesda, MD 	
 Bethlehem, NH 	
 Bethlehem, PA 	
@@ -286,7 +286,7 @@ Biloxi, MS
 Binan, Philippines		
 Binghamton, NY 	
 Birkenfeld, Germany
-Birker¯d, Denmark		
+Birker√∏d, Denmark		
 Birmingham, AL 	
 Birmingham, England, U.K.
 Birmingham, MI 	
@@ -333,7 +333,7 @@ Bonne Terre, MO
 Boone, IA 	
 Bordeaux, France		
 Bordentown, NJ 	
-Borl‰nge, Sweden		
+Borl√§nge, Sweden		
 Boston, England, U.K.
 Boston, MA 	
 Boston, NY 	
@@ -441,8 +441,8 @@ Buxtehude, Germany
 Byron Center, MI 	
 Cabanatuan City, Philippines
 Cabot, AR 	
-C·ceres, Spain		
-C·diz, Spain		
+C√°ceres, Spain		
+C√°diz, Spain		
 Caen, France		
 Cagayan de Oro City, Philippines
 Cahors, France		
@@ -696,7 +696,7 @@ Courtenay, BC, Canada
 Coventry, CT 	
 Coventry, England, U.K.
 Coventry, RI 	
-Covilh„, Portugal		
+Covilh√£, Portugal		
 Covington, TN 	
 Covode, PA 	
 Cozumel, Mexico		
@@ -712,9 +712,9 @@ Crow Agency, MT
 Crown Point, IN 	
 Crystal Falls, MI 	
 Cudahy, WI 	
-CuÈllar, Spain		
+Cu√©llar, Spain		
 Cuernavaca, Mexico		
-Culiac·n, Mexico		
+Culiac√°n, Mexico		
 Cullowhee, NC 	
 Culpeper, VA 	
 Cumberland, MD 	
@@ -829,7 +829,7 @@ Durban, South Africa
 Durham, England, U.K.
 Durham, NC 	
 Durham, NH 	
-D¸sseldorf, Germany
+D√ºsseldorf, Germany
 Duxbury, MA 	
 Dyersburg, TN 	
 Eagle Creek, OR 	
@@ -859,7 +859,7 @@ Effingham, IL
 Eggby, Sweden  	
 Eibiswald, Austria		
 Eindhoven, Netherlands
-Eksjˆ, Sweden		
+Eksj√∂, Sweden		
 El Dorado, AR 	
 El Dorado, KS 	
 El Paso, TX 	
@@ -957,7 +957,7 @@ Fayetteville, AR
 Fayetteville, GA 	
 Fayetteville, NC 	
 Fayetteville, TN 	
-FÈcamp, France		
+F√©camp, France		
 Fenton, MI 	
 Fernandina Beach, FL 	
 Ferndale, CA 	
@@ -973,7 +973,7 @@ Flint, MI
 Florence, AL 	
 Florence, SC 	
 FlorenceFirenze, Italy
-FlorianÛpolis, Brazil
+Florian√≥polis, Brazil
 Flower Mound, TX 	
 Floyd, VA 	
 Folkestone, England, U.K.
@@ -1046,7 +1046,7 @@ Galax, VA
 Galesburg, IL 	
 Galion, OH 	
 Gallatin, TN 	
-G‰llivare, Sweden		
+G√§llivare, Sweden		
 Gallup, NM 	
 Galveston, TX 	
 Galway, Ireland		
@@ -1060,7 +1060,7 @@ Gardner, MA
 Garnett, KS 	
 Gary, IN 	
 Garza Garcia, Mexico
-GaspÈ, QU, Canada		
+Gasp√©, QU, Canada		
 Gastonia, GA 	
 Gatineau, QU, Canada
 Gaylord, MI 	
@@ -1088,7 +1088,7 @@ Gimo, Sweden
 Girard, KS 	
 Girona, Spain		
 Gisborne, New Zealand
-Gj¯vik, Norway		
+Gj√∏vik, Norway		
 Gladstone,QU,Australia 
 Gladwin, MI 	
 Glasgow, KY 	
@@ -1117,11 +1117,11 @@ Goose Bay, Canada
 Gordonsville, VA 	
 Gore Bay, ON, Canada
 Goreville, IL 	
-Gˆrlitz, Germany		
+G√∂rlitz, Germany		
 Goshen, IN 	
-Gˆtene, Sweden		
+G√∂tene, Sweden		
 Gothenburg, Sweden		
-Gˆttingen, Germany		
+G√∂ttingen, Germany		
 Gouda, Netherlands 
 Grafton, New South Wales, Australia
 Grahamstown, South Africa
@@ -1140,7 +1140,7 @@ Grand Rapids, MI
 Grand Rapids, MN 	
 Grand Rapids, OH 	
 Grande-Prairie, Canada
-Grand-RiviËre, Canada
+Grand-Rivi√®re, Canada
 Granger, IN 	
 Grantham, England, U.K.
 Grants Pass, OR 	
@@ -1195,7 +1195,7 @@ Guitiriz, Spain
 Gulf Breeze, FL 	
 Gundelfingen, Germany
 Gunnison, CO 	
-G¸tersloh, Germany		
+G√ºtersloh, Germany		
 Gypsumville, Canada
 Haarlem, Netherlands
 Hackensack, NJ 	
@@ -1210,7 +1210,7 @@ Halstead, ES, England, U.K.
 Hamburg, Germany		
 Hamburg, MI 	
 Hamburg, NY 	
-H‰meenlinna, Finland
+H√§meenlinna, Finland
 Hamilton, Bermuda		
 Hamilton, MI 	
 Hamilton, New Zealand 
@@ -1244,7 +1244,7 @@ Hartford, KY
 Hartland, MI 	
 Hartselle, AL 	
 Hasbrouck Heights, NJ
-H‰ssleholm, Sweden		
+H√§ssleholm, Sweden		
 Hastings, England, U.K.
 Hattiesburg, MS 	
 Haugesund, Norway  	
@@ -1312,7 +1312,7 @@ Holmen, WI
 Holyhead, Wales, U.K.
 Holyoke, MA 	
 Holzkirchen, Germany
-HomÈcourt, France		
+Hom√©court, France		
 Homs, Syria		
 Honesdale, PA 	
 Hong Kong, Hong Kong
@@ -1324,10 +1324,10 @@ Hopewell Junction, NY
 Hopkins, SC 	
 Hopkinsville, KY 	
 Horn, Austria		
-HornbÊk, Denmark		
+Hornb√¶k, Denmark		
 Hornbrook, CA 	
 Hornepayne, ON, Canada
-H¯rsholm, Denmark		
+H√∏rsholm, Denmark		
 Hot Springs, AR 	
 Houghton, MI 	
 Houlton, ME 	
@@ -1399,7 +1399,7 @@ Ithaca, NY
 Iwakuni, Japan		
 Izmir, Turkey		
 Jablonec nN, Czech Republic
-JacareÌ, Brazil		
+Jacare√≠, Brazil		
 Jackson, MI 	
 Jackson, MO 	
 Jackson, MS 	
@@ -1429,7 +1429,7 @@ Jersey Shore, PA
 Jerseyville, IL 	
 Jerusalem, Israel  	
 Jesup, GA 	
-Jo„o Pessoa, Brazil
+Jo√£o Pessoa, Brazil
 Joensuu, Finland		
 Johannesburg, South Africa
 Johnson City, TN 	
@@ -1437,7 +1437,7 @@ Johnstown, NY
 Johnstown, PA 	
 Joliet, IL 	
 Jonesboro, AR 	
-Jˆnkˆping, Sweden		
+J√∂nk√∂ping, Sweden		
 Joplin, MO 	
 Jos, Nigeria  	
 Judenburg, Austria		
@@ -1446,7 +1446,7 @@ June Lake, CA
 Juneau, AK 	
 Jupiter, FL 	
 Juva, Finland		
-Jyv‰skyl‰, Finland		
+Jyv√§skyl√§, Finland		
 Kabul, Afghanistan		
 Kadoka, SD 	
 Kaiserslautern, Germany
@@ -1461,7 +1461,7 @@ Kane, PA
 Kankakee, IL 	
 Kansas City, MO 	
 Kapfenberg, Austria
-Kaposv·r, Hungary		
+Kaposv√°r, Hungary		
 Karachi, Pakistan		
 Karlshamn, Sweden		
 Karlskrona, Sweden		
@@ -1529,7 +1529,7 @@ Koblenz, Germany
 Kodiak, AK 	
 Kokomo, IN 	
 Kolding, Denmark		
-KˆlnCologne, Germany
+K√∂lnCologne, Germany
 Kona, HI 	
 Konstanz, Germany		
 Koszalin, Poland		
@@ -1551,7 +1551,7 @@ Kurri Kurri, Australia
 Kuwait City, Kuwait 
 Kwajalein, Marshall Islands
 Kyoto, Japan  	
-La CoruÒa, Spain		
+La Coru√±a, Spain		
 La Crescent, MN 	
 La Crosse, WI 	
 La Grande, OR 	
@@ -1655,12 +1655,12 @@ Lemoore, CA
 Leningrad, Russia		
 Lennon, MI 	
 Lenox, MA 	
-LeÛn, Gto., Mexico		
+Le√≥n, Gto., Mexico		
 Leonardtown, MD 	
 Leonberg, Germany  	
 Lethbridge, AL, Canada
 Letterkenny, Ireland
-LÈvis, QU, Canada		
+L√©vis, QU, Canada		
 Lewes, DE 	
 Lewes, England, U.K. 
 Lewisburg, PA 	
@@ -1678,7 +1678,7 @@ Libby, MT
 Liberia, Costa Rica
 Liberty, MO 	
 Libertyville, IL 	
-LiËgeLuik, Belgium
+Li√®geLuik, Belgium
 Lihue, Kauai, Hawai 	
 Lille, France  	
 Lima, OH 	
@@ -1690,7 +1690,7 @@ Lincoln, ME
 Lincoln, NE 	
 Lincolnton, NC 	
 Lindsay, ON, Canada
-Linkˆping, Sweden		
+Link√∂ping, Sweden		
 Linwood, NJ 	
 Linz, Austria		
 Lisbon, OH 	
@@ -1720,7 +1720,7 @@ Lockport, IL
 Lockport, NY 	
 Lodz, Poland		
 Logan, UT 	
-LogroÒo, Spain  	
+Logro√±o, Spain  	
 Lombard, IL 	
 Lompoc, CA 	
 London, England, U.K. 
@@ -1749,21 +1749,21 @@ Lowell, MA
 Loxahatchee, FL 	
 Luanda, Angola		
 Lubbock, TX 	
-L¸beck, Germany		
+L√ºbeck, Germany		
 Lublin, Poland		
 Lucca, Italy		
 Lucky Lake, SK, Canada
-L¸denscheid, Germany
+L√ºdenscheid, Germany
 Ludington, MI 	
 Ludvika, Sweden		
 Lufkin, TX 	
 Lugano, Switzerland
 Lugansk, Ukraine		
 Lugo, Spain		
-LuleÂ, Sweden  	
+Lule√•, Sweden  	
 Lumpkin, GA 	
 Lund, Sweden		
-L¸neburg, Germany		
+L√ºneburg, Germany		
 Lusaka, Zambia		
 Luton, Bedfordshire, England, U.K.
 Lutz, FL 	
@@ -1777,7 +1777,7 @@ Lynchburg, VA
 Lyon, France		
 Lyons, CO 	
 Maastricht, Netherlands 
-MacaÈ, Brazil		
+Maca√©, Brazil		
 Macedonia, OH 	
 Mackay, Australia		
 Macomb, IL 	
@@ -1792,11 +1792,11 @@ Magdeburg, Germany
 Magnolia Springs, AL 	
 Magnolia, AR 	
 Maidstone, England, U.K. 
-MakesRÈunion, France
+MakesR√©union, France
 Malaga, Spain		
 Malin, OR 	
 Malmesbury, England, U.K.
-Malmˆ, Sweden		
+Malm√∂, Sweden		
 Mamoutzou, Comores 
 Managua, Nicaragua		
 Manassas, VA 	
@@ -1822,7 +1822,7 @@ Manteo, NC
 Mantes-laJolie, France
 Maplewood, MN 	
 Mar del Plata, Argentina
-Marab·, Brazil		
+Marab√°, Brazil		
 Maracaibo, Venezuela
 Marburg, Germany		
 Marche-en-Famenne, Belgium
@@ -1865,11 +1865,11 @@ Massapequa, NY
 Massena, NY 	
 Massillon, OH 	
 Mastic, NY 	
-MatarÛ, Spain		
+Matar√≥, Spain		
 Matera, Italy		
 Mauritius, Mauritius 
 Mauston, WI 	
-Mayag¸ez, Puerto Rico 
+Mayag√ºez, Puerto Rico 
 Mayfield, KY 	
 Mays Landing, NJ 	
 Mbabane, South Africa
@@ -1974,7 +1974,7 @@ Mobridge, SD
 Mocksville, NC 	
 Modena, Italy  	
 Modesto, CA 	
-Mˆdling, Austria		
+M√∂dling, Austria		
 Moline, IL 	
 Monclova, Mexico		
 Moncton, NB, Canada
@@ -2018,7 +2018,7 @@ Morganza, LA
 Morges, Switzerland
 Moriarty, NM 	
 Mornington Isalnd, Australia
-MorÛn, Argentina  	
+Mor√≥n, Argentina  	
 Moroni, Comores		
 Morristown, IN 	
 Morristown, NJ 	
@@ -2049,9 +2049,9 @@ Mt. Newman, Australia
 Mt.Butterwicky, Australia
 Mt.TomPrice, Australia 
 Mulvane, KS 	
-M¸nchen, Germany		
+M√ºnchen, Germany		
 Muncie, IN 	
-M¸nster, Germany		
+M√ºnster, Germany		
 Munster, IN 	
 Murau, Austria  	
 Murcia, Spain		
@@ -2104,7 +2104,7 @@ Nelson, BC, Canada
 Nelson, New Zealand
 Netanya, Israel		
 Netphen, Germany		
-Neuch‚tel, Switzerland 
+Neuch√¢tel, Switzerland 
 NeustadtW., Germany
 Nevada, MO 	
 Nevers, France		
@@ -2157,7 +2157,7 @@ Niceville, FL
 NicosiaLefkara,Cyprus
 Nijmegen, Netherlands
 Niles, MI 	
-NÓmes, France		
+N√Æmes, France		
 Ninety Six, SC 	
 Nipomo, CA 	
 Nixon, TX 	
@@ -2173,7 +2173,7 @@ Noril'sk, Russia
 Norman, AR 	
 Norman, OK 	
 Norristown, PA 	
-Norrkˆping, Sweden		
+Norrk√∂ping, Sweden		
 Norseman, Australia
 North Attleboro, MA 	
 North Bay, ONT, Canada
@@ -2201,15 +2201,15 @@ Norwich, CT
 Norwich, England, U.K.
 Norwood, NC 	
 Nottingham, England, U.K.
-NoumÈa, New Caledonia
+Noum√©a, New Caledonia
 Novato, CA 	
 Novi Sad, Yugoslavia 
 Novosibirsk, Russia
 Nuneaton, England, U.K.
-N¸rnberg, Germany		
-N¸rtingen, Germany		
+N√ºrnberg, Germany		
+N√ºrtingen, Germany		
 Nuuk, Grld., Denmark
-Nykˆping, Sweden  	
+Nyk√∂ping, Sweden  	
 Oak Forest, IL 	
 Oak Harbor, WA 	
 Oak Ridge, NJ 	
@@ -2256,12 +2256,12 @@ Orange, CA
 Orangevale, CA 	
 Oranjestad, Netherlands Antilles
 Orchard Park, NY 	
-÷rebro, Sweden		
+√ñrebro, Sweden		
 Orem, UT 	
 Orense, Spain		
 Orinda, CA 	
 Orlando, FL 	
-OrlÈans, France		
+Orl√©ans, France		
 Oroville, CA 	
 Osage Beach, MO 	
 Osaka, Japan		
@@ -2269,11 +2269,11 @@ Osan, South Korea
 Oshawa, ONT., Canada
 Oshkosh, WI 	
 Oslo, Norway		
-Osnabr¸ck, Germany		
+Osnabr√ºck, Germany		
 Ossining, NY 	
 Ossipee, NH 	
 Osterhofen, Germany
-÷stersund, Sweden  	
+√ñstersund, Sweden  	
 Ostrava, Czech Republic 
 Otego, NY 	
 Otis, MA 	
@@ -2319,7 +2319,7 @@ Palo Alto, CA
 Palominas, AZ 	
 Pamplona, Spain		
 Panama City, FL 	
-Panam· City, Panama 
+Panam√° City, Panama 
 Papeete, Tahiti, French Polynesia
 Paradise, CA 	
 Paramaribo, Suriname 
@@ -2330,7 +2330,7 @@ Paris, TN
 Parkersburg, WV 	
 Parkes, NSW, Australia
 Parksley, VA 	
-Partiz·nske, Slovakia
+Partiz√°nske, Slovakia
 Pasadena, CA 	
 Paso Robles, CA 	
 Passaic, NJ 	
@@ -2410,9 +2410,9 @@ Plymouth, MA
 Plymouth, NH 	
 Pocahontas, AR 	
 Pocatello, ID 	
-PoÁos deCaldas, Brazil
+Po√ßos deCaldas, Brazil
 P'ohang, South Korea
-Pointe-‡-Pitre, Guadeloupe
+Pointe-√†-Pitre, Guadeloupe
 Poitiers, France		
 Polk City, FL 	
 Polo, IL 	
@@ -2424,7 +2424,7 @@ Ponta Delgada,Portugal
 Ponte Vedra, FL 	
 Pontiac, MI 	
 Poole, England, U.K.
-Popay·n, Colombia  	
+Popay√°n, Colombia  	
 Poplar Bluff, MO 	
 Pori, Finland		
 Port Alberni, Canada 
@@ -2499,7 +2499,7 @@ Provo, Utah
 Pt.Elizabeth, South Africa
 Pueblo, CO 	
 Puerto d.l.Cruz,Spain 
-Puerto PeÒasco, Mexico
+Puerto Pe√±asco, Mexico
 PuertoVallarta, Mexico
 Pula, Croatia  	
 Pullman, WA 	
@@ -2566,7 +2566,7 @@ Reston, VA
 Reutlingen, Germany
 Reykjavik, Iceland		
 Rheda-Wdbrck, Germany
-Ribeir„o Preto, Brazil
+Ribeir√£o Preto, Brazil
 Richfield, UT 	
 Richland, WA 	
 Richmond Heights, OH 	
@@ -2647,14 +2647,14 @@ Russellville, AR
 Ruston, LA 	
 Rutland, VT 	
 S.B.Messines, Portugal
-Saarbr¸cken, Germany 
+Saarbr√ºcken, Germany 
 Sabadell, Spain		
 Sabinal, TX 	
 Saco, ME 	
 Sacramento, CA 	
 Saginaw, MI 	
 Sagunt, Spain  	
-Sahag˙n, Spain		
+Sahag√∫n, Spain		
 Saint George's,Grenada
 Saint John, NB, Canada
 Saint Johns, Antigua
@@ -2691,7 +2691,7 @@ San Fernando, CA
 San Francisco, CA 	
 San Jacinto, CA 	
 San Jose, CA 	
-San JosÈ, Costa Rica
+San Jos√©, Costa Rica
 San Jose, Philippines
 San Juan Capistrano,CA
 San Juan, Puerto Rico
@@ -2715,11 +2715,11 @@ Santa Clarita, CA
 Santa Cruz, CA 	
 Santa Fe De Bogota, Columbia
 Santa Fe, NM 	
-Santa LucÌa, Uruguay 
+Santa Luc√≠a, Uruguay 
 Santa Maria, Brazil
 Santa Maria, CA 	
 Santa Marta, Colombia
-Santa Rita Do SapucaÌ, Brazil 
+Santa Rita Do Sapuca√≠, Brazil 
 Santa Rosa, CA 	
 Santander, Spain  	
 Santiago de Qro., Mexico 
@@ -2727,9 +2727,9 @@ Santiago deCom., Spain
 Santiago, Chile		
 Santo Domingo, Dominican Republic 
 Santos, Brazil		
-S„o LuÌs, Brazil		
-SaÙ Mateus, ES, Brazil
-S„o Paulo, Brazil  	
+S√£o Lu√≠s, Brazil		
+Sa√¥ Mateus, ES, Brazil
+S√£o Paulo, Brazil  	
 Sapporo, Japan  	
 Sarajevo, Bosnia and Herzegovina 
 Sarasota, FL 	
@@ -2774,7 +2774,7 @@ Seneca, SC
 Senftenberg, Germany 
 Seoul, South Korea 
 Sequim, WA 	
-Set˙bal, Portugal		
+Set√∫bal, Portugal		
 Seven Mile, OH 	
 SevillaSeville, Spain 
 Sewanee, TN 	
@@ -2873,7 +2873,7 @@ Springfield, OH
 Springfield, VA 	
 Springfield, VT 	
 Spruce Pine, NC 	
-St Denis RÈunion, France 
+St Denis R√©union, France 
 St. Albans, England, U.K.
 St. Andrews, Scotland, U.K.
 St. Augustine, FL 	
@@ -2924,7 +2924,7 @@ Stewartsville, NJ
 St-Georges d.B.,Canada 
 Stillwater, OK 	
 Stirling, Scotland, U.K. 
-St-JÈrÙme, QU, Canada 
+St-J√©r√¥me, QU, Canada 
 Stockholm, Sweden		
 Stockton, CA 	
 Stockton, KS 	
@@ -2961,7 +2961,7 @@ Susanville, CA
 Susice, Czech Republic
 Sutton, WV 	
 Suva, Fiji Islands		
-SvolvÊr, Norway		
+Svolv√¶r, Norway		
 Swansboro, NC 	
 Swansea, Wales, U.K.
 Swindon, England, U.K.
@@ -2971,8 +2971,8 @@ Sylva, NC
 Syracuse, NY 	
 Szczecin, Poland		
 Szeged, Hungary		
-SzÈkesfehÈrv·r, Hungary
-Szeksz·rd, Hungary		
+Sz√©kesfeh√©rv√°r, Hungary
+Szeksz√°rd, Hungary		
 Tabuk, Saudi Arabia
 Tacoma, WA 	
 Tahoe City, CA 	
@@ -3009,7 +3009,7 @@ Tempe, AZ
 Temple, TX 	
 Temuco, Chile		
 Tepic, Mexico  	
-TeresÛpolis, Brazil
+Teres√≥polis, Brazil
 Terneuzen, Netherlands
 Terrace, BC, Canada
 Terre Haute, IN 	
@@ -3032,7 +3032,7 @@ Thunder Bay, Canada
 Thurso, Scotland, U.K.
 TianjinTientsin,China 
 Ticonderoga, NY 	
-TietÍ, SP, Brazil		
+Tiet√™, SP, Brazil		
 Tiffin, OH 	
 Tilburg, Netherlands
 Timisoara, Romania		
@@ -3055,7 +3055,7 @@ Toronto, Canada
 Torrance, CA 	
 Torrelavega, Spain		
 Torremolinos, Spain
-TorreÛn, Mexico		
+Torre√≥n, Mexico		
 Torrington, CT 	
 Toulon, France		
 Toulon, IL 	
@@ -3069,10 +3069,10 @@ Traralgon, Australia
 Traverse City, MI 	
 Trento, Italy		
 Trenton, NJ 	
-TrÍs Pontas, Brazil
+Tr√™s Pontas, Brazil
 Trevor, WI 	
 Trieste, Italy  	
-Trollh‰ttan, Sweden
+Trollh√§ttan, Sweden
 Trondheim, Norway  	
 Trostberg, Germany		
 Trout River, NF,Canada
@@ -3082,11 +3082,11 @@ Truckee, CA
 Trujillo, Peru		
 Truro, England, U.K. 
 Truro, NS, Canada  	
-T¸bingen, Germany		
+T√ºbingen, Germany		
 Tucson, AZ 	
 Tullamore, Ireland		
 Tulsa, OK 	
-Tulu·, Colombia		
+Tulu√°, Colombia		
 Tunis, Tunisia  	
 Tunkhannock, PA 	
 Tupelo, MS 	
@@ -3109,7 +3109,7 @@ Ucon, ID
 Uist Islands, Scotland, U.K.
 Ukiah, CA 	
 Ulm, Germany		
-UmeÂ, Sweden  	
+Ume√•, Sweden  	
 Union City, CA 	
 Union City, TN 	
 Upice, Czech Republic 
@@ -3121,7 +3121,7 @@ Utica, NY
 Utrecht, Netherlands
 Uxbridge, England, U.K.
 Vacaville, CA 	
-Vads¯, Norway		
+Vads√∏, Norway		
 Val d'Or, QU, Canada
 Valaske Mezirici, Czech Republic
 Valdosta, GA 	
@@ -3138,8 +3138,8 @@ Vancouver, Canada
 Vancouver, WA 	
 Vandalia, IL 	
 Vanderbijlpark, South Africa 
-V‰rnamo, Sweden  	
-V‰sterÂs, Sweden  	
+V√§rnamo, Sweden  	
+V√§ster√•s, Sweden  	
 Vega Alta, Puerto Rico
 Vejle, Denmark  	
 Venice, CA 	
@@ -3175,10 +3175,10 @@ Virginia, MN
 Visalia, CA 	
 Visby, Gotld., Sweden
 Vista, CA 	
-VitÛria da Conquista, Brazil 
+Vit√≥ria da Conquista, Brazil 
 Vitoria, Spain		
 Vladivostok, Russia
-Vˆcklabruck, Austria 
+V√∂cklabruck, Austria 
 Vysokov, Czech Republic
 Wabash, IN 	
 Waco, TX 	
@@ -3372,7 +3372,7 @@ Wrexham, Wales, U.K.
 Wroclaw, Poland  	
 Wubin, Australia		
 Wuppertal, Germany		
-W¸rzburg, Germany  	
+W√ºrzburg, Germany  	
 Wykoff, MN 	
 Wyndham, Australia		
 Wyoming, OH 	
@@ -3411,11 +3411,11 @@ Zaragoza, Spain
 Zeeland, MI 	
 Zeist, Netherlands 
 Zephyrsville, FL 	
-Zielona GÛra, Poland 
+Zielona G√≥ra, Poland 
 Zoetermeer, Netherlands
 Zoutelande, Netherlands
-Zruc Nad S·zavou, Czech Republic 
-Z¸rich, Switzerland
+Zruc Nad S√°zavou, Czech Republic 
+Z√ºrich, Switzerland
 Zwijndrecht, Netherlands 
 Zwolle, Netherlands 
 Zywiec, Poland

@@ -1,0 +1,62 @@
+name: 'MacOS-Release'
+permissions:
+  contents: write
+  pull-requests: read
+
+on:
+  release:
+    types:
+      - created
+      - edited
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          # x86_64
+          - macOS-15-intel
+          - macOS-26-intel
+          # Apple Silicon
+          - macOS-15
+          - macOS-26
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+          submodules: false
+
+      - name: Extract tag name and short SHA
+        shell: bash
+        run: |
+          echo "TAG_NAME=$(echo ${GITHUB_REF#refs/tags/} | sed 's/\//_/g')" >> $GITHUB_ENV
+          echo "SHORT_SHA=`git rev-parse --short HEAD`" >> $GITHUB_ENV
+      - name: Test tag name and short SHA
+        run: |
+          echo "${TAG_NAME}"
+          echo "${SHORT_SHA}"
+
+      - name: Build it and package it
+        env:
+          IS_RELEASE: 1
+        run: script/cibuild $FLAGS
+
+      - name: Upload the artifacts
+        uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          files: "packages/*.*"

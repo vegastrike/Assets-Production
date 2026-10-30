@@ -51,6 +51,8 @@ COMPLETE_TUTORIAL4 = 8
 COMPLETE_TUTORIAL5 = 10
 STAGE_DECLINE = 98
 
+oswald_launched = False
+
 # the class that will be executed
 class quest_tutorial (quest.quest):
     # initialize quest variables
@@ -144,7 +146,6 @@ class quest_tutorial (quest.quest):
             #VS.launch(name,type,faction,unittype,ai,nr,nrwaves,pos,squadlogo):
             self.drone = VS.launch("Oswald","Robin.tutorial","klkk_citizen","unit","default",1,1,vec,'')
             # upgrade drone
-            self.drone.upgrade("quadshield15",0,0,1,0)
             self.drone.upgrade("armor06",0,0,1,0)
             # when launching give the player some text and ask him to decide if he wants to participate
             VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Hello traveler.")
@@ -177,6 +178,9 @@ class quest_tutorial (quest.quest):
             #self.stage = COMPLETE_TUTORIAL3 # debug
             # duration of this part until end of animation
             self.timer = VS.GetGameTime() + 20
+
+            global oswald_launched
+            oswald_launched = True
         return 0
 
     # check if drone has been attacked
@@ -227,7 +231,7 @@ class quest_tutorial (quest.quest):
     def acceptTutorial (self):
         velocity = Vector.Mag(self.player.GetVelocity())
         # if the offer has been placed, and player is put for 10s and drone is near
-        if (VS.GetGameTime()>self.timer and self.drone.getDistance(self.player)<1100 and velocity<=10):
+        if (VS.GetGameTime()>self.timer and self.drone.getDistance(self.player)<11000 and velocity<=10):
             self.player.SetTarget(self.drone)
             self.timer = VS.GetGameTime()
             self.complete = self.getSaveValue()
@@ -452,7 +456,7 @@ class quest_tutorial (quest.quest):
             angle = unit.facingAngleToUnit(self.player,self.drone)
             velocity = Vector.Mag(self.player.GetVelocity())
             #check if angle to drone is at least 22 degrees (0.20 radians)
-            if (angle>=0.20 and velocity>=295):
+            if (angle>=0.20 and velocity>=115):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"And now set your velocity reference to zero by pressing the #9999FFBACKSPACE"+self.msgColor+" key and come to a complete stop.")
                 self.player.commAnimation("com_tutorial_oswald.ani")
@@ -499,9 +503,9 @@ class quest_tutorial (quest.quest):
                 self.timer = VS.GetGameTime()+12
                 self.practice = 13
         if (self.practice==13):
-            # check if the player has velocity <=-20m/s
+            # check if the player has velocity <-2m/s
             velocity = unit.getSignedVelocity(self.player)
-            if (velocity<=-18):
+            if (velocity<=-2):
                 VS.setCompleteness(self.objectives[self.objective],1.0)
                 VS.IOmessage (0,"Oswald","Privateer",self.msgColor+"Excellent.")
                 VS.IOmessage (2,"Oswald","Privateer",self.msgColor+"You have learned how to target, orient your ship, accellerate, decellerate, and bring your ship to a stop.")
@@ -937,6 +941,16 @@ class quest_tutorial (quest.quest):
                 self.removeQuest()
                 self.stage += 1 # don't enter this loop anymore
                 return 0
+        # Checks if Oswald is killed after he launches, 
+        # otherwise quest will end before it begins
+        elif (self.drone.isNull() and oswald_launched):
+            self.timer = VS.GetGameTime()+10
+            self.putSaveValue(self.stage)
+            print("Oswald died")
+            print("Tutorial quest terminated")
+            self.removeQuest()
+            self.stage += 1 # don't enter this loop anymore
+            return 0 
         # keep the script alive for execution
         return 1
 

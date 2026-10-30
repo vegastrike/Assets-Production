@@ -1,0 +1,39 @@
+name: 'MacOS-CI'
+permissions:
+  contents: read
+  pull-requests: read
+
+on: [ pull_request, workflow_dispatch ]
+
+jobs:
+  build:
+    name: Build
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+
+    defaults:
+      run:
+        shell: bash
+
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          # x86_64
+          - macOS-15-intel
+          - macOS-26-intel
+          # Apple Silicon
+          - macOS-15
+          - macOS-26
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+          submodules: false
+
+      - name: Build it
+        env:
+          IS_RELEASE: 0
+        run: script/cibuild $FLAGS

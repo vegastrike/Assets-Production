@@ -2,21 +2,17 @@ NOTICE: This readme file is very likely to be out of date.
 For the latest manual, please check the Vega Strike Wiki:
 http://vegastrike.sourceforge.net/wiki/Manual
 
-=== VEGA STRIKE 0.5.3 - Upon the Coldest Sea ===
+=== VEGA STRIKE 0.11.0 - Upon the Coldest Sea ===
 
 README
 
 * 0) New Features*
 
-Shader Support 
+Shader Support
 
-*VS now supports normal maps 
+*VS now supports normal maps
 (@all artists: yet another chance to contribute -- most units still
  need normal maps)
-
-Integrated Multiplayer Support
-*Deathmatch
-*Missions, money, and upgrades
 
 Reimplemented physics system
 *Support for simultaneous simulation at variable fidelity of all ships
@@ -59,8 +55,7 @@ Miscellaneous improvements
   20. Changing Controls
   21. Cockpit Views
   22. Troubleshooting
-  23. ALPHA Multi-player Mode
-  24. License
+  23. License
 
 
 *  2) Starting a New Game
@@ -130,7 +125,7 @@ hostile targets. They should not be difficult at this stage of the
 game, so they should be easy kills. Your initial sensor system,
 however, does not give an indication of presumed intent of the
 starships around you, so you must be cautious until you can
-afford a better one. 
+afford a better one.
 
 When you get near Ataraxia, press *alt-0* to request docking
 clearance. A number of green and red boxes should appear around. A box
@@ -479,47 +474,21 @@ attack your previously targetted object when you leave the turret.
 * 19) Single-Player Controls*
 
 The full list of controls can get very exhaustive.
-Check in vegastrike.config, which will lay out each key,
-or find a graphical description of the keys.
+Press Alt-C in-game to open the settings screen, where every action and
+its current binding is listed, or find a graphical description of the keys.
 
 
 * 20) Changing Controls*
 
-If you would like to change the controls of Vega Strike, open either
-vegastrike.config or vegastrike.config.2player They will both have a
-section at the very top called "bindings":
+To change the controls of Vega Strike, press Alt-C in-game and open the
+Bindings screen. Every action can be bound to a key, mouse button,
+joystick button or hat, and conflicts are flagged as you go.
 
-<bindings>
-<bind key="S" player="0" modifier="none" command="Cockpit::SkipMusicTrack" />
-
-The above will start the bindings section and then bind the "S" key to
-SkipMusicTrack for player 0.  The player defaults to and should only
-be 1 in multiplayer.
-
-<bind mouse="0" player="0" button="0" modifier="none" command="FireKey" />
-
-This line will bind the FireKey command to the mouse button #0 (the
-left button) for player 0. Button 1 and 2 will be the midle and right
-buttons. After that, buttons are experimental...
-
-<axis name="x" mouse="0" axis="0" inverse="false" />
-<axis name="y" mouse="0" axis="1" inverse="false" />
-
-This binds the axes of the mouse... should you wish the mouse to drag
-in opposite direction set inverse to true.
-
-<bind joystick="0" player="0" button="0" modifier="none" command="FireKey" />
-
-The previous line will bind the FireKey command to the joystick button
-#0 for player 0. You can add as many buttons as you want, as long as
-your joystick has them.
-
-<axis name="x" joystick="0" axis="0" inverse="false" />
-<axis name="y" joystick="0" axis="1" inverse="false" />
-This binds the axes of the joystick... should you wish the joystick to
-move in opposite direction set inverse to true.
-
-</bindings>
+Bindings are stored in bindings.json - actions (keys, mouse buttons,
+joystick buttons and hats) and axes. The settings screen writes your
+changes to the user overlay in ~/.vegastrike/, so the shipped file is
+never modified. The same applies to config.json (settings and preset
+selections) and theme.json (colours).
 
 * 21) Cockpit Views*
 
@@ -531,11 +500,11 @@ You can use the following keys to switch between different views:
      background You may have to press F1 several times to get back to
      the cockpit. For the 0.5.1 release, only Rlaan and Aeran fighters
      currently have cockpit art.
-    
+
     * 2   left view
     * 3   right view
     * 4   backward view
-      
+
       the camera points either due left, right, or backwards with
       respect to the front of the vessel.
 
@@ -543,7 +512,7 @@ You can use the following keys to switch between different views:
 
       the camera is positioned directly behind your ship and follows
       it as it moves
-    
+
     *  6   pan
 
       the camera is positioned outside your ship, showing your ship if
@@ -551,13 +520,13 @@ You can use the following keys to switch between different views:
       will show different sides of the ship
 
     * 7   follow target
-      
-      shows your target as per follow 
-    
+
+      shows your target as per follow
+
     * 8   pan target
-      
-      shows target, as per pan 
-    
+
+      shows target, as per pan
+
     * 9  zoom in
     * 0  zoom out
 
@@ -583,7 +552,7 @@ There are the following instruments:
           scroll the list of messages up and down with pageup and
           pagedown keys
 
-    * The Radar is located in the bottom middle of the cockpit: 
+    * The Radar is located in the bottom middle of the cockpit:
 
       use the radar to have an overview about what's going on
           o friendly ships are green blips
@@ -594,7 +563,7 @@ There are the following instruments:
           o the currently targeted ship is painted twice as big as the
             other blips
 
-    * Shield Display 
+    * Shield Display
 
       shows your current shield status (front, back, left and right
       shields)
@@ -620,37 +589,37 @@ There are the following instruments:
       options; however certain starships have merely 1 VDU that has some
       of the features of both VDU's. Look forward to more cockpits in
       the future.
-       
+
     * the left VDU can be cycled between the following modes:
-       
-          o Weapons: show your selected weapons 
 
-          o   Hull: shows your hull status 
+          o Weapons: show your selected weapons
 
-          o   Shields: show your shield status 
+          o   Hull: shows your hull status
+
+          o   Shields: show your shield status
 
                 This your starships shield status in case the cockpit
       does not have view.
     *   the right VDU can be cycled between these modes:
-       
-          o Target status 
+
+          o Target status
 
             This display shows on top the targeted flightgroup
             (serpentine) and it's ship type (Areus)
             At the bottom you can see the distance to the target
             In the middle you see the shield status of the target
             The target's hull is unknown from external scans.
-          o   Navigation 
+          o   Navigation
 
             shows the name of the system (Wasteland), the target ship
             type, and the relative location of the target
-          o   various target camera modes 
+          o   various target camera modes
 
-       
+
 * 22) Troubleshooting*
 
 If you should encounter problems, then you should check these things:
-   
+
    - Always check if the setup utility has configured options to ones
      most closely matching your computer
 
@@ -660,47 +629,7 @@ If you should encounter problems, then you should check these things:
      did to cause it to: vegastrike-users@lists.sourceforge.net
      <mailto:vegastrike-users@lists.sourceforge.net>
 
-* 23) ALPHA Online Multiplayer Mode*
-
-To Connect to a Multiplayer game, start up Vega Strike.
-Then, from the main menu, select "Multiplayer".
-
-Multiplayer currently has two modes:
- *** LAN/Deathmatch mode
-    * Creating a game *
-   To play a LAN game in deathmatch mode, you can run "vegaserver".
-   The terminal window will show connection information...  After this
-   information appears, you can connect to the server.
-
-   The way that information
-
-    * Joining a game *
-   In Vega Strike, click on "Independent Server".  If you are connecting
-   from a different computer, you must type in the "IP Address" of the
-   server you are connecting to.
-
-   Also, type in a username, and supply a password if one is set up in
-   the "server_password" variable in vegastrike.config.
-
- *** MMO (online multiplayer) style play
-   This style will act like Single Player mode, but will allow you to
-   interact with other players.
-   
-   To connect to a server, click on Multiplayer, and in the Online
-   Account mode, type in your username and password.
-   Register an account at http://forums.vega-strike.org/
-   and sign up for an account.
-   
-   It is also in late alpha, so please report any bugs you find (we
-   know they're there).  In addition, be aware that the servers may
-   have significant downtime.  Do not be surprised if you get an error
-   message.
-
-   If you would like to run your own server, consult the wiki or
-   forums for more information.  You will need an accountserver,
-   and also will probably have to keep up-to-date with Subversion.
-
-* 24) License*
+* 23) License*
 
 Vega Strike is distributed under the GNU General Public License,
 version 2.  You may find the full text of this license in the

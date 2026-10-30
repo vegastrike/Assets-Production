@@ -1,1 +1,12 @@
 *.pyc
+build/
+packages/
+.vs/
+.vscode/
+.idea/
+/CMakeFiles/
+*.vcxproj
+*.filters
+*.sln
+*.cmake
+CMakeCache.txt

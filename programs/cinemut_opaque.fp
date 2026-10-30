@@ -262,11 +262,11 @@ float prt_sample( in vec3 dir, in vec3 prtp, in vec3 prtn )
 //float prt_diff_shadow( in vec3 dir, in vec3 prtp, in vec3 prtn, in float hardness, in float biasfactor )
 float prt_diff_shadow( in vec3 dir, in vec3 nor, in vec3 prtp, in vec3 prtn, in float ao )
 {
-    
+
     //float ihardness = 1.0 + 4.0*hardness;
     //hardness = 0.125 * hardness * biasfactor;
     //return clamp( (prt_sample( dir, prtp, prtn ) - hardness) * ihardness, 0.0, 1.0 );
-    
+
     vec3 VUT = normalize( dir );
     vec3 PRT = prtp - prtn;
     vec3 NPRT = normalize( PRT );
@@ -407,7 +407,7 @@ void perlite
     //  (1-fresnel_blend*fresnel reflection), also, and
     //  metallic shininess phong. And we also multiply by the
     //  shininess, as smaller spots get more light concentration
-    MSacc += ( pow(RdotL,ltd_Mgloss) * clamp( ltd_Mgloss, 0.0, gloss_mul_lim ) ); 
+    MSacc += ( pow(RdotL,ltd_Mgloss) * clamp( ltd_Mgloss, 0.0, gloss_mul_lim ) );
     //  * FS - fresnel specularity: Doesn't need fresnel, really,
     //  as the only fresnel applicable is view-vector-dependent,
     //  which can be applied afterwards, to the accumulated value;
@@ -442,7 +442,7 @@ vec3 multibounce_color( in vec3 color, in float refl_factor )
     The formula is: *= (c-refL*c)/(1-refL*c), where refL is the fresnel reflectivity and
     c is the color of the material under the dielectric coating. But blended materials,
     such as plastics, are only partially covered by a specular dielectric layer, so we do
-    have to allow some pure color reflectivity; thus the "blend" thing... 
+    have to allow some pure color reflectivity; thus the "blend" thing...
     Update: blend factor can just be pre-multiplied with the refl_factor; blend removed.*/
     vec3 temp = color * refl_factor;
     return (color-temp)/(vec3(1.0)-temp);
@@ -530,7 +530,7 @@ void main()
     //SPC_in4 = vec4(0.0);
     SPC_in4.a += (0.25*SPC_in4.r);
     SPC_in4.r = (0.8*SPC_in4.r+0.1);
-    
+
     //static light bake specular experiment
     float ts = 1.0/777.7; //ts = "texture stride"
     vec2 Uplus = texcoords2+vec2(ts,0.0);
@@ -544,8 +544,8 @@ void main()
     vec3 redlite_dir = normalize( vec3( Glo_dU.r, Glo_dV.r, GLO_in4.r ));
     vec3 grnlite_dir = normalize( vec3( Glo_dU.g, Glo_dV.g, GLO_in4.g ));
     vec3 blulite_dir = normalize( vec3( Glo_dU.b, Glo_dV.b, GLO_in4.b ));
-    
-    
+
+
     //UNPACK:
     //we use a macro table to ease possible future changes to the texture packing:
     #define _matcolor_in_ ((COL_in4.rgb))

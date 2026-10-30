@@ -1,0 +1,1226 @@
+{
+  "actions": {
+    "ABKey": {
+      "keyboard": [
+        {
+          "key": "tab",
+          "modifier": "none"
+        }
+      ],
+      "mouse": [
+        {
+          "button": 2,
+          "modifier": "none"
+        }
+      ],
+      "joystick": [
+        {
+          "joystick": 0,
+          "button": 1,
+          "modifier": "none"
+        }
+      ]
+    },
+    "ASAP": {
+      "keyboard": [
+        {
+          "key": "a",
+          "modifier": "none"
+        }
+      ]
+    },
+    "AccelKey": {
+      "keyboard": [
+        {
+          "key": "+",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-plus",
+          "modifier": "none"
+        },
+        {
+          "key": "=",
+          "modifier": "none"
+        }
+      ],
+      "mouse": [
+        {
+          "button": 7,
+          "modifier": "none"
+        }
+      ],
+      "joystick": [
+        {
+          "joystick": 0,
+          "button": 7,
+          "modifier": "none"
+        }
+      ]
+    },
+    "CloakKey": {
+      "keyboard": [
+        {
+          "key": "c",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ConfigKey": {
+      "keyboard": [
+        {
+          "key": "c",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "Cockpit::Behind": {
+      "keyboard": [
+        {
+          "key": "5",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::Inside": {
+      "keyboard": [
+        {
+          "key": "1",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::InsideBack": {
+      "keyboard": [
+        {
+          "key": "4",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::InsideLeft": {
+      "keyboard": [
+        {
+          "key": "2",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::InsideRight": {
+      "keyboard": [
+        {
+          "key": "3",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::NavScreen": {
+      "keyboard": [
+        {
+          "key": "M",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::OutsideTarget": {
+      "keyboard": [
+        {
+          "key": "0",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "Cockpit::Pan": {
+      "keyboard": [
+        {
+          "key": "6",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::PanTarget": {
+      "keyboard": [
+        {
+          "key": "8",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::PitchDown": {
+      "keyboard": [
+        {
+          "key": "q",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::PitchUp": {
+      "keyboard": [
+        {
+          "key": "z",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::Quit": {
+      "keyboard": [
+        {
+          "key": "esc",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::ScrollDown": {
+      "keyboard": [
+        {
+          "key": "cursor-pagedown",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-3",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::ScrollUp": {
+      "keyboard": [
+        {
+          "key": "cursor-pageup",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-9",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::SkipMusicTrack": {
+      "keyboard": [
+        {
+          "key": "S",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::SwitchLVDU": {
+      "keyboard": [
+        {
+          "key": "m",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::SwitchRVDU": {
+      "keyboard": [
+        {
+          "key": "v",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::ViewTarget": {
+      "keyboard": [
+        {
+          "key": "7",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::YawLeft": {
+      "keyboard": [
+        {
+          "key": "s",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::YawRight": {
+      "keyboard": [
+        {
+          "key": "f",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::ZoomIn": {
+      "keyboard": [
+        {
+          "key": "9",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Cockpit::ZoomOut": {
+      "keyboard": [
+        {
+          "key": "0",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Comm1Key": {
+      "keyboard": [
+        {
+          "key": "function-1",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Comm2Key": {
+      "keyboard": [
+        {
+          "key": "function-2",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Comm3Key": {
+      "keyboard": [
+        {
+          "key": "function-3",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Comm4Key": {
+      "keyboard": [
+        {
+          "key": "function-4",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Comm5Key": {
+      "keyboard": [
+        {
+          "key": "function-5",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Comm6Key": {
+      "keyboard": [
+        {
+          "key": "function-6",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Comm7Key": {
+      "keyboard": [
+        {
+          "key": "function-7",
+          "modifier": "none"
+        }
+      ]
+    },
+    "Comm8Key": {
+      "keyboard": [
+        {
+          "key": "function-8",
+          "modifier": "none"
+        }
+      ]
+    },
+    "CommAttackTarget": {
+      "keyboard": [
+        {
+          "key": "D",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "CommBreakForm": {
+      "keyboard": [
+        {
+          "key": "B",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "CommFormUp": {
+      "keyboard": [
+        {
+          "key": "F",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "CommHelpMeOut": {
+      "keyboard": [
+        {
+          "key": "H",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "ConsoleKeys::BringConsole": {
+      "keyboard": [
+        {
+          "key": "function-1",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "DecelKey": {
+      "keyboard": [
+        {
+          "key": "-",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-minus",
+          "modifier": "none"
+        }
+      ],
+      "mouse": [
+        {
+          "button": 5,
+          "modifier": "none"
+        }
+      ],
+      "joystick": [
+        {
+          "joystick": 0,
+          "button": 5,
+          "modifier": "none"
+        }
+      ]
+    },
+    "DockKey": {
+      "keyboard": [
+        {
+          "key": "d",
+          "modifier": "none"
+        }
+      ]
+    },
+    "DownKey": {
+      "keyboard": [
+        {
+          "key": "cursor-down",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-2",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-5",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ECMKey": {
+      "keyboard": [
+        {
+          "key": "e",
+          "modifier": "none"
+        }
+      ]
+    },
+    "EjectCargoKey": {
+      "keyboard": [
+        {
+          "key": "Z",
+          "modifier": "none"
+        }
+      ]
+    },
+    "EjectKey": {
+      "keyboard": [
+        {
+          "key": "E",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "Enslave": {
+      "keyboard": [
+        {
+          "key": "e",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "FireKey": {
+      "keyboard": [
+        {
+          "key": "space",
+          "modifier": "none"
+        }
+      ],
+      "mouse": [
+        {
+          "button": 0,
+          "modifier": "none"
+        }
+      ],
+      "joystick": [
+        {
+          "joystick": 0,
+          "button": 0,
+          "modifier": "none"
+        }
+      ]
+    },
+    "Flight::Mode::InertialToggle": {
+      "keyboard": [
+        {
+          "key": "`",
+          "modifier": "none"
+        }
+      ]
+    },
+    "FreeSlaves": {
+      "keyboard": [
+        {
+          "key": "f",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "JumpKey": {
+      "keyboard": [
+        {
+          "key": "j",
+          "modifier": "none"
+        }
+      ]
+    },
+    "LeftKey": {
+      "keyboard": [
+        {
+          "key": "cursor-right",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-6",
+          "modifier": "none"
+        }
+      ]
+    },
+    "LockTargetKey": {
+      "keyboard": [
+        {
+          "key": "l",
+          "modifier": "none"
+        }
+      ]
+    },
+    "MisSelKey": {
+      "keyboard": [
+        {
+          "key": "w",
+          "modifier": "none"
+        }
+      ],
+      "mouse": [
+        {
+          "button": 9,
+          "modifier": "none"
+        }
+      ],
+      "joystick": [
+        {
+          "joystick": 0,
+          "button": 9,
+          "modifier": "none"
+        }
+      ]
+    },
+    "MissileKey": {
+      "keyboard": [
+        {
+          "key": "return",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-enter",
+          "modifier": "none"
+        }
+      ],
+      "mouse": [
+        {
+          "button": 1,
+          "modifier": "none"
+        }
+      ],
+      "joystick": [
+        {
+          "joystick": 0,
+          "button": 2,
+          "modifier": "none"
+        }
+      ]
+    },
+    "MissionTargetKey": {
+      "keyboard": [
+        {
+          "key": "n",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "MusicVolumeDec": {
+      "keyboard": [
+        {
+          "key": "function-12",
+          "modifier": "none"
+        }
+      ]
+    },
+    "MusicVolumeInc": {
+      "keyboard": [
+        {
+          "key": "function-11",
+          "modifier": "none"
+        }
+      ]
+    },
+    "NearestBaseKey": {
+      "keyboard": [
+        {
+          "key": "K",
+          "modifier": "none"
+        }
+      ]
+    },
+    "NearestDangerousHostileKey": {
+      "keyboard": [
+        {
+          "key": "R",
+          "modifier": "none"
+        }
+      ]
+    },
+    "NearestFriendlyKey": {
+      "keyboard": [
+        {
+          "key": "k",
+          "modifier": "none"
+        }
+      ]
+    },
+    "NearestHostileTargetKey": {
+      "keyboard": [
+        {
+          "key": "r",
+          "modifier": "none"
+        }
+      ]
+    },
+    "NearestJumpKey": {
+      "keyboard": [
+        {
+          "key": "k",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "NearestPlanetKey": {
+      "keyboard": [
+        {
+          "key": "k",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "NearestTargetKey": {
+      "keyboard": [
+        {
+          "key": "h",
+          "modifier": "none"
+        }
+      ]
+    },
+    "NewShader": {
+      "keyboard": [
+        {
+          "key": "v",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "PauseKey": {
+      "keyboard": [
+        {
+          "key": "|",
+          "modifier": "none"
+        },
+        {
+          "key": "pause",
+          "modifier": "none"
+        }
+      ]
+    },
+    "PickTargetKey": {
+      "keyboard": [
+        {
+          "key": "p",
+          "modifier": "none"
+        }
+      ],
+      "mouse": [
+        {
+          "button": 4,
+          "modifier": "none"
+        }
+      ],
+      "joystick": [
+        {
+          "joystick": 0,
+          "button": 4,
+          "modifier": "none"
+        }
+      ]
+    },
+    "RequestClearenceKey": {
+      "keyboard": [
+        {
+          "key": "0",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "Respawn": {
+      "keyboard": [
+        {
+          "key": ";",
+          "modifier": "none"
+        }
+      ]
+    },
+    "RestoreTarget1": {
+      "keyboard": [
+        {
+          "key": "1",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "RestoreTarget2": {
+      "keyboard": [
+        {
+          "key": "2",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "RestoreTarget3": {
+      "keyboard": [
+        {
+          "key": "3",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "RestoreTarget4": {
+      "keyboard": [
+        {
+          "key": "4",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "RestoreTarget5": {
+      "keyboard": [
+        {
+          "key": "5",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "RestoreTarget6": {
+      "keyboard": [
+        {
+          "key": "6",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "RestoreTarget7": {
+      "keyboard": [
+        {
+          "key": "7",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "RestoreTarget8": {
+      "keyboard": [
+        {
+          "key": "8",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "RestoreTarget9": {
+      "keyboard": [
+        {
+          "key": "9",
+          "modifier": "ctrl"
+        }
+      ]
+    },
+    "ReverseMisSelKey": {
+      "keyboard": [
+        {
+          "key": "W",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ReverseMissionTargetKey": {
+      "keyboard": [
+        {
+          "key": "N",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "ReverseNearestTargetKey": {
+      "keyboard": [
+        {
+          "key": "H",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ReverseSigTargetKey": {
+      "keyboard": [
+        {
+          "key": "N",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ReverseTargetKey": {
+      "keyboard": [
+        {
+          "key": "T",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ReverseUnitTargetKey": {
+      "keyboard": [
+        {
+          "key": "U",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ReverseWeapSelKey": {
+      "keyboard": [
+        {
+          "key": "G",
+          "modifier": "none"
+        }
+      ]
+    },
+    "RightKey": {
+      "keyboard": [
+        {
+          "key": "cursor-left",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-4",
+          "modifier": "none"
+        }
+      ]
+    },
+    "RollLeftKey": {
+      "keyboard": [
+        {
+          "key": "/",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-divide",
+          "modifier": "none"
+        },
+        {
+          "key": "cursor-insert",
+          "modifier": "none"
+        }
+      ]
+    },
+    "RollRightKey": {
+      "keyboard": [
+        {
+          "key": "*",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-multiply",
+          "modifier": "none"
+        },
+        {
+          "key": "cursor-delete",
+          "modifier": "none"
+        }
+      ]
+    },
+    "SaveTarget1": {
+      "keyboard": [
+        {
+          "key": "1",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "SaveTarget2": {
+      "keyboard": [
+        {
+          "key": "2",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "SaveTarget3": {
+      "keyboard": [
+        {
+          "key": "3",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "SaveTarget4": {
+      "keyboard": [
+        {
+          "key": "4",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "SaveTarget5": {
+      "keyboard": [
+        {
+          "key": "5",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "SaveTarget6": {
+      "keyboard": [
+        {
+          "key": "6",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "SaveTarget7": {
+      "keyboard": [
+        {
+          "key": "7",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "SaveTarget8": {
+      "keyboard": [
+        {
+          "key": "8",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "SaveTarget9": {
+      "keyboard": [
+        {
+          "key": "9",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "Screenshot": {
+      "keyboard": [
+        {
+          "key": "i",
+          "modifier": "none"
+        }
+      ]
+    },
+    "SetVelocityNullKey": {
+      "keyboard": [
+        {
+          "key": "cursor-end",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-1",
+          "modifier": "none"
+        }
+      ]
+    },
+    "SetVelocityRefKey": {
+      "keyboard": [
+        {
+          "key": "cursor-home",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-7",
+          "modifier": "none"
+        }
+      ]
+    },
+    "SheltonKey": {
+      "mouse": [
+        {
+          "button": 6,
+          "modifier": "none"
+        }
+      ],
+      "joystick": [
+        {
+          "joystick": 0,
+          "button": 6,
+          "modifier": "none"
+        }
+      ]
+    },
+    "SigTargetKey": {
+      "keyboard": [
+        {
+          "key": "n",
+          "modifier": "none"
+        }
+      ]
+    },
+    "StartKey": {
+      "keyboard": [
+        {
+          "key": "\\",
+          "modifier": "none"
+        }
+      ]
+    },
+    "StopKey": {
+      "keyboard": [
+        {
+          "key": "backspace",
+          "modifier": "none"
+        }
+      ]
+    },
+    "SubUnitTargetKey": {
+      "keyboard": [
+        {
+          "key": "b",
+          "modifier": "none"
+        }
+      ]
+    },
+    "SuicideKey": {
+      "keyboard": [
+        {
+          "key": "!",
+          "modifier": "none"
+        }
+      ]
+    },
+    "SwitchCombatMode": {
+      "keyboard": [
+        {
+          "key": "y",
+          "modifier": "none"
+        }
+      ]
+    },
+    "TargetKey": {
+      "keyboard": [
+        {
+          "key": "t",
+          "modifier": "none"
+        }
+      ],
+      "mouse": [
+        {
+          "button": 3,
+          "modifier": "none"
+        }
+      ],
+      "joystick": [
+        {
+          "joystick": 0,
+          "button": 3,
+          "modifier": "none"
+        }
+      ]
+    },
+    "TextMessage": {
+      "keyboard": [
+        {
+          "key": "]",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ThrustDown": {
+      "keyboard": [
+        {
+          "key": ".",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ThrustLeft": {
+      "keyboard": [
+        {
+          "key": "less-than",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ThrustRight": {
+      "keyboard": [
+        {
+          "key": "greater-than",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ThrustUp": {
+      "keyboard": [
+        {
+          "key": ",",
+          "modifier": "none"
+        }
+      ]
+    },
+    "ToggleWarpDrive": {
+      "keyboard": [
+        {
+          "key": "A",
+          "modifier": "none"
+        }
+      ]
+    },
+    "TurretAIFireAtWill": {
+      "keyboard": [
+        {
+          "key": "O",
+          "modifier": "none"
+        }
+      ]
+    },
+    "TurretAIOff": {
+      "keyboard": [
+        {
+          "key": "o",
+          "modifier": "alt"
+        }
+      ]
+    },
+    "TurretAIOn": {
+      "keyboard": [
+        {
+          "key": "o",
+          "modifier": "none"
+        }
+      ]
+    },
+    "TurretControl": {
+      "keyboard": [
+        {
+          "key": "[",
+          "modifier": "none"
+        }
+      ]
+    },
+    "TurretTargetKey": {
+      "keyboard": [
+        {
+          "key": "P",
+          "modifier": "none"
+        }
+      ]
+    },
+    "UnitTargetKey": {
+      "keyboard": [
+        {
+          "key": "u",
+          "modifier": "none"
+        }
+      ]
+    },
+    "UpKey": {
+      "keyboard": [
+        {
+          "key": "cursor-up",
+          "modifier": "none"
+        },
+        {
+          "key": "keypad-8",
+          "modifier": "none"
+        }
+      ]
+    },
+    "VolumeDec": {
+      "keyboard": [
+        {
+          "key": "function-10",
+          "modifier": "none"
+        }
+      ]
+    },
+    "VolumeInc": {
+      "keyboard": [
+        {
+          "key": "function-9",
+          "modifier": "none"
+        }
+      ]
+    },
+    "WeapSelKey": {
+      "keyboard": [
+        {
+          "key": "g",
+          "modifier": "none"
+        }
+      ],
+      "mouse": [
+        {
+          "button": 8,
+          "modifier": "none"
+        }
+      ],
+      "joystick": [
+        {
+          "joystick": 0,
+          "button": 8,
+          "modifier": "none"
+        }
+      ]
+    }
+  },
+  "axes": {
+    "throttle": {
+      "source": "joystick",
+      "joystick": 0,
+      "axis": 3,
+      "inverse": false
+    },
+    "x": {
+      "source": "joystick",
+      "joystick": 0,
+      "axis": 0,
+      "inverse": false
+    },
+    "y": {
+      "source": "joystick",
+      "joystick": 0,
+      "axis": 1,
+      "inverse": false
+    },
+    "z": {
+      "source": "joystick",
+      "joystick": 0,
+      "axis": 2,
+      "inverse": false
+    }
+  }
+}
