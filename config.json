@@ -196,5 +196,8 @@
         "mode": "simple",
         "simple_dock_range": 5000.0,
         "dock_planet_radius_percent": 1.5
+    },
+    "warp": {
+        "max_effective_velocity": 292020000000.0
     }
 }
