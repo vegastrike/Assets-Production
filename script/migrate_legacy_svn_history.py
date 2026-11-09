@@ -201,8 +201,8 @@ MIGRATION_PLAN = [
         ]
     },
     {
-        "branch": None,
-        "description": "0.5.x Legacy Asset Tags",
+        "branch": "0.5.x",
+        "description": "0.5 Asset Release Line (0.5.0 to 0.5.2alpha-archive)",
         "steps": [
             {
                 "tag": "legacy_0.5.0",

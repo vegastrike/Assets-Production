@@ -12,7 +12,7 @@ During the CVS and early Subversion eras (2001–2008), the Vega Strike project 
 
 In this era, asset data resided within `trunk/data` (for versions 0.1.x–0.3.x) and later `trunk/data4.x` (for versions 0.4.x–0.5.0). When the project migrated from Subversion to Git, the asset history was migrated into `Assets-Production`. However, historical release tags predating GitHub were preserved only as manufactured tag commits or remained in the Subversion repository's `/tags` path.
 
-This migration reconstructs sequential release branches (`0.1.x`, `0.2.x`, `0.3.x`, `0.4.x`) and standardizes all legacy asset release tags under the `legacy_<tag_name>` naming scheme.
+This migration reconstructs sequential release branches (`0.1.x`, `0.2.x`, `0.3.x`, `0.4.x`, `0.5.x`) and standardizes all legacy asset release tags under the `legacy_<tag_name>` naming scheme.
 
 ---
 
@@ -52,7 +52,7 @@ This migration reconstructs sequential release branches (`0.1.x`, `0.2.x`, `0.3.
 
 1. **Subversion Tag Trees**: The actual release data trees in Subversion resided within the `data/` or `data4.x/` directories of each tag in the Subversion repository.
 2. **Plumbing Operations**: Using `git write-tree` via an isolated temporary index file (`tempfile.gettempdir()`), exact Git tree objects were synthesized from the Subversion tag checkouts.
-3. **Commit Chaining**: Sequential release branches (`0.1.x`, `0.2.x`, `0.3.x`, `0.4.x`) were created using `git commit-tree` to preserve parentage while maintaining historical authorship and committer timestamps.
+3. **Commit Chaining**: Sequential release branches (`0.1.x`, `0.2.x`, `0.3.x`, `0.4.x`, `0.5.x`) were created using `git commit-tree` to preserve parentage while maintaining historical authorship and committer timestamps.
 4. **Annotated Legacy Tags**: Tags were created using `git tag -a -f --no-sign` under the `legacy_*` prefix to prevent collision with modern GitHub release tags.
 
 ---
