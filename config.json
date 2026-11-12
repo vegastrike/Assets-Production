@@ -53,7 +53,6 @@
         "cockpit": true,
         "main_menu": false,
         "screen": 0,
-        "font": "helvetica12",
         "font_antialias": false,
         "font_point": 16.0,
         "font_width_hack": 0.925,
@@ -78,7 +77,7 @@
             "include_base_name_on_dock": true,
             "location_marker_distance": 0.5,
             "location_marker_draw_always": false,
-            "location_marker_sprite": "",
+            "location_marker_sprite": "base_locationmarker.spr",
             "location_marker_text_color_r": 1.0,
             "location_marker_text_color_g": 1.0,
             "location_marker_text_color_b": 1.0,
@@ -197,5 +196,8 @@
         "mode": "simple",
         "simple_dock_range": 5000.0,
         "dock_planet_radius_percent": 1.5
+    },
+    "warp": {
+        "max_effective_velocity": 292020000000.0
     }
 }
