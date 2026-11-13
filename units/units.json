@@ -19,6 +19,41 @@
         "Name": "FTL Drive",
         "Upgrade_Type": "FTL_Drive"
     },
+    {
+        "Key": "integrated_shield__upgrades",
+        "Name": "Shield",
+        "Upgrade_Type": "Shield"
+    },
+    {
+        "Key": "integrated_armor__upgrades",
+        "Name": "Armor",
+        "Upgrade_Type": "Armor"
+    },
+    {
+        "Key": "integrated_spec_capacitor__upgrades",
+        "Name": "SPEC Capacitor",
+        "Upgrade_Type": "FTL_Capacitor"
+    },
+    {
+        "Key": "integrated_capacitor__upgrades",
+        "Name": "Capacitor",
+        "Upgrade_Type": "Capacitor"
+    },
+    {
+        "Key": "integrated_reactor__upgrades",
+        "Name": "Reactor",
+        "Upgrade_Type": "Reactor"
+    },
+    {
+        "Key": "integrated_jump_drive__upgrades",
+        "Name": "Jump Drive",
+        "Upgrade_Type": "Jump_Drive"
+    },
+    {
+        "Key": "integrated_radar__upgrades",
+        "Name": "Radar",
+        "Upgrade_Type": "Radar"
+    },
 
 
     {

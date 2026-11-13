@@ -14,7 +14,7 @@
         "price": "2000",
         "mass": "0",
         "volume": "0",
-        "description": "@upgrades/afterburner_generic.image@Engine overdrive. Increases thrust at the expense of decreased fuel efficiency.",
+        "description": "@upgrades/afterburner_generic.image@Augmented thrust. Increases thrust at the expense of decreased fuel efficiency.",
         "upgrade": true
     },
     {
@@ -33,6 +33,69 @@
         "mass": "0",
         "volume": "0",
         "description": "@upgrades/jump_drive.image@The ship's faster than light engine.",
+        "upgrade": true
+    },
+    {
+        "file": "integrated_shield",
+        "categoryname": "upgrades/integral",
+        "price": "4500",
+        "mass": "0",
+        "volume": "0",
+        "description": "@upgrades/shield.image@The ship's integrated shield generator.",
+        "upgrade": true
+    },
+    {
+        "file": "integrated_armor",
+        "categoryname": "upgrades/integral",
+        "price": "4500",
+        "mass": "0",
+        "volume": "0",
+        "description": "The ship's integrated armor.",
+        "upgrade": true
+    },
+    {
+        "file": "integrated_spec_capacitor",
+        "categoryname": "upgrades/integral",
+        "price": "4500",
+        "mass": "0",
+        "volume": "0",
+        "description": "The ship's integrated SPEC capacitor.",
+        "upgrade": true
+    },
+    {
+        "file": "integrated_capacitor",
+        "categoryname": "upgrades/integral",
+        "price": "4500",
+        "mass": "0",
+        "volume": "0",
+        "description": "The ship's integrated capacitor.",
+        "upgrade": true
+    },
+    {
+        "file": "integrated_reactor",
+        "categoryname": "upgrades/integral",
+        "price": "4500",
+        "mass": "0",
+        "volume": "0",
+        "description": "The ship's integrated reactor.",
+        "upgrade": true
+    },
+    {
+        "file": "integrated_jump_drive",
+        "categoryname": "upgrades/integral",
+        "price": "4500",
+        "mass": "0",
+        "volume": "0",
+        "description": "The ship's integrated jump drive.",
+        "upgrade": true
+    },
+    {
+        "file": "integrated_radar",
+        "categoryname": "upgrades/integral",
+        "price": "4500",
+        "mass": "0",
+        "volume": "0",
+        "description": "The ship's integrated radar.",
         "upgrade": true
     },
     {
