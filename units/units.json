@@ -28,7 +28,7 @@
         "Upgrade_Type": "Armor",
         "Textual_Description": "\"@cargo/plasteel.png@Armor takes up no upgrade volume, but does add to the mass of your ship, affecting maneuverability\"\n",
         "Mass": "10",
-        "armor": "100.0"
+        "armor": "1"
     },
     {
         "Key": "armor02__upgrades",
@@ -37,7 +37,7 @@
         "Upgrade_Type": "Armor",
         "Textual_Description": "\"@cargo/isometal.png@Armor takes up no upgrade volume, but does add to the mass of your ship, affecting maneuverability\"\n",
         "Mass": "10",
-        "armor": "200.0"
+        "armor": "2"
     },
     {
         "Key": "armor03__upgrades",
@@ -46,7 +46,7 @@
         "Upgrade_Type": "Armor",
         "Textual_Description": "\"@cargo/hull_patches.png@Armor takes up no upgrade volume, but does add to the mass of your ship, affecting maneuverability\"\n",
         "Mass": "10",
-        "armor": "300.0"
+        "armor": "3"
     },
     {
         "Key": "armor04__upgrades",
@@ -55,7 +55,7 @@
         "Upgrade_Type": "Armor",
         "Textual_Description": "\"@cargo/tritanium.png@Armor takes up no upgrade volume, but does add to the mass of your ship, affecting maneuverability\"\n",
         "Mass": "10",
-        "armor": "400.0"
+        "armor": "4"
     },
     {
         "Key": "armor05__upgrades",
@@ -64,7 +64,7 @@
         "Upgrade_Type": "Armor",
         "Textual_Description": "\"@cargo/carbonium.png@Armor takes up no upgrade volume, but does add to the mass of your ship, affecting maneuverability\"\n",
         "Mass": "10",
-        "armor": "500.0"
+        "armor": "5"
     },
     {
         "Key": "armor06__upgrades",
@@ -73,7 +73,7 @@
         "Upgrade_Type": "Armor",
         "Textual_Description": "\"@cargo/duranium.png@Armor takes up no upgrade volume, but does add to the mass of your ship, affecting maneuverability\"\n",
         "Mass": "10",
-        "armor": "600.0"
+        "armor": "6"
     },
     {
         "Key": "dualshield01__upgrades",
